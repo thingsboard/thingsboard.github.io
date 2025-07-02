@@ -9,12 +9,12 @@ Device profiles in ThingsBoard allows an administrator to define and centrally m
 This greatly simplifies the management of a large number of similar devices, making it especially valuable in IoT solutions where numerous devices share identical configurations and behaviors.
 
 Typical device profile settings include:
-- Setting a Default **Rule Chain**.
+- Setting a default **Rule Chain**.
 - Configuring **Message Queues** for efficient message handling.
 - Defining **Firmware** and **Software** versions to be distributed automatically to devices.
 - Configuring **transport protocols** used for device communication.
 - Defining and managing **Alarm rules**.
-- Automating **device registration and provisioning**.
+- Setting the **provision strategy**.
 
 ## Create device profile
 

@@ -257,22 +257,22 @@ toc:
       path: /docs/pe/mobile-center/applications/
     - title: Mobile application QR code
       path: /docs/pe/user-guide/ui/mobile-qr-code/
-- title: Other Features
+- title: Other features
   section:
-    - title: Edge Computing
+    - title: Edge computing
       path: /docs/pe/user-guide/edge-computing/
-    - title: Device Connectivity Status
+    - title: Device connectivity status
       path: /docs/pe/user-guide/device-connectivity-status/
-    - title: Claiming Devices
+    - title: Claiming devices
       path: /docs/pe/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/pe/user-guide/device-provisioning/
     - title: Image gallery
       path: /docs/pe/user-guide/image-gallery/
       new: true
-    - title: Entity Views
+    - title: Entity views
       path: /docs/pe/user-guide/entity-views/
-    - title: API Limits
+    - title: API limits
       path: /docs/pe/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/pe/user-guide/advanced-filters/
@@ -280,7 +280,7 @@ toc:
       path: /docs/pe/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/pe/user-guide/psm/
-    - title: Bulk Provisioning
+    - title: Bulk provisioning
       path: /docs/pe/user-guide/bulk-provisioning/
     - title: Scheduler
       path: /docs/pe/user-guide/scheduler/
@@ -288,7 +288,7 @@ toc:
       path: /docs/pe/user-guide/reporting/
     - title: CSV/XLS data export
       path: /docs/pe/user-guide/csv-xls-data-export/
-    - title: File Storage
+    - title: File storage
       path: /docs/pe/user-guide/file-storage/
     - title: ThingsBoard Expression Language (TBEL)
       path: /docs/pe/user-guide/tbel/
@@ -299,7 +299,7 @@ toc:
     path: /docs/pe/user-guide/ui/security-settings/
   - title: Enable HTTPS
     path: /docs/pe/user-guide/ssl/http-over-ssl/
-  - title: Audit Log
+  - title: Audit logs
     path: /docs/pe/user-guide/audit-log/
   - title: Advanced RBAC for IoT
     path: /docs/pe/user-guide/rbac/
@@ -309,33 +309,33 @@ toc:
     path: /docs/pe/user-guide/oauth-2-support/
   - title: Domains
     path: /docs/pe/domains/
-  - title: HTTP Transport
+  - title: HTTP transport
     section:
       - title: HTTP over SSL
         path: /docs/pe/user-guide/ssl/http-transport-over-ssl/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/pe/user-guide/ssl/http-access-token/
-  - title: MQTT Transport
+  - title: MQTT transport
     section:
       - title: MQTT over SSL
         path: /docs/pe/user-guide/mqtt-over-ssl/
       - title: Device authentication options
         path: /docs/pe/user-guide/device-credentials/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/pe/user-guide/access-token/
-      - title: Basic MQTT Credentials
+      - title: Basic MQTT credentials
         path: /docs/pe/user-guide/basic-mqtt/
-      - title: X.509 Certificate based authentication
+      - title: X.509 certificate based authentication
         path: /docs/pe/user-guide/certificates/
-  - title: CoAP Transport
+  - title: CoAP transport
     section:
       - title: CoAP over DTLS
         path: /docs/pe/user-guide/coap-over-dtls/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/pe/user-guide/ssl/coap-access-token/
-      - title: X.509 Certificate based authentication
+      - title: X.509 certificate based authentication
         path: /docs/pe/user-guide/ssl/coap-x509-certificates/
-  - title: LwM2M Transport
+  - title: LwM2M transport
     section:
       - title: LwM2M over DTLS
         path: /docs/pe/user-guide/ssl/lwm2m-over-dtls/
@@ -351,23 +351,23 @@ toc:
     path: /docs/pe/user-guide/ui/assets/
   - title: Devices
     path: /docs/pe/user-guide/ui/devices/
-  - title: Rule Chains
+  - title: Rule chains
     path: /docs/pe/user-guide/ui/rule-chains/
   - title: Dashboards
     path: /docs/pe/user-guide/ui/dashboards/
-  - title: Entity Groups
+  - title: Entity groups
     path: /docs/pe/user-guide/groups/
-  - title: SMS Provider Settings
+  - title: SMS provider settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
-  - title: Slack Settings
+  - title: Slack settings
     path: /docs/pe/user-guide/ui/slack-settings/
-  - title: Microsoft Teams Settings
+  - title: Microsoft Teams settings
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: JWT Security Settings
+  - title: JWT security settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/
-- title: Contribution Guide
+- title: Contribution guide
   section:
     - title: How to contribute your device integration guide
       path: /docs/pe/user-guide/contribution/how-to-contribute-your-device-integration-guide/
@@ -379,7 +379,7 @@ toc:
       path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
-- title: Release Notes
+- title: Release notes
   path: /docs/pe/reference/releases/
 - title: Roadmap
   path: /docs/pe/reference/roadmap/

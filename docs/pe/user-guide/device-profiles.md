@@ -68,30 +68,30 @@ device-profile-queue:
 coap-default:
     0:
         image: /images/user-guide/device-profile/coap-default-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'The default CoAP device type uses a JSON payload. This supports basic CoAP APIs similar to the default transport type. You can also configure devices to transmit data using Protocol Buffers (Protobuf) by changing the CoAP device payload setting to Protobuf.'
     1:
         image: /images/user-guide/device-profile/coap-default-2-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'Protocol Buffers (Protobuf) is a language- and platform-neutral method of serializing structured data, designed primarily to reduce the size of transmitted data.'
 
 coap-efento-nb-iot:
     0:
         image: /images/user-guide/device-profile/coap-efento-nb-iot1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'Efento NB-IoT devices are wireless sensors that use NB-IoT technology for energy-efficient transmission of telemetry data (e.g., temperature, humidity, pressure, open/close, leakage, and more). You can integrate them with ThingsBoard using the built-in CoAP transport, which receives messages from the devices, decodes them using Protobuf, and stores telemetry data on the platform. This data becomes instantly available for viewing, charting, dashboarding, alarm setup, and automation.'
 
 power-saving-mode:
     0:
         image: /images/user-guide/device-profile/power-saving-mode-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'The platform supports the following power-saving mechanisms for optimized device operation: Power Saving Mode (PSM), Discontinuous Reception (DRX), Extended Discontinuous Reception (eDRX).'
 
 lwm2m-transport-type:
     0:
       image: /images/user-guide/device-profile/lwm2m-transport-type-1-pe.png
-      title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+      title: 'LwM2M is a standardized IoT protocol designed for efficient management of resource-constrained devices. It enables centralized configuration, remote firmware updates, and real-time device monitoring.'
 
 snmp-transport-type:
     0:
         image: /images/user-guide/device-profile/snmp-transport-type-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'SNMP is a widely used protocol for managing network devices such as routers, switches, and servers. It enables the collection and analysis of device status and performance data.'
 
 simple-alarm-condition:
     0:
