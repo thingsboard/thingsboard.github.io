@@ -19,6 +19,6 @@ Copy bootstrap server information in plaintext, it`s your Kafka endpoint.
 
 {% include images-gallery.html imageCollection="mskConnectionParams"%}
 
-Edit the `tb-kafka.yml` file and set the replicas value to 0 (`replicas: 0`).
+If you choose to use Amazon MSK instead of local Kafka, edit the `tb-kafka.yml`  file and set the replicas value to 0 (`replicas: 0`) to disable the default local Kafka deployment.
 
 Edit `tb-kafka-configmap.yml` and replace **TB_KAFKA_SERVERS** value with MSK endpoint.
