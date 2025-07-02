@@ -52,8 +52,8 @@ $dark-text-color: #212529
     transform: rotate($deg)
 
 @mixin content-container($marginBottom)
-    padding-right: 272px
-    padding-left: 272px
+    // padding-right: 272px
+    // padding-left: 272px
     margin-bottom: $marginBottom
 
 @mixin content-container-max1919($marginBottom)
@@ -113,28 +113,25 @@ h2
         padding-top: 80px
 
     #first-screen
-        height: 100vh
         min-height: 750px
         width: 100%
         background-color: transparent
         overflow: hidden
         margin-bottom: 40px
-        &::before
-            background: url("/images/development-services/hero-background.webp") no-repeat center / contain
-            content: ''
+        position: relative
+        img
             width: 100%
-            height: 100%
-            position: absolute
-            top: 0
-            left: 0
+            height: auto
 
         .hero-container
             height: 100%
+            width: 100%
             display: flex
             flex-direction: column
             align-items: center
-            justify-content: space-evenly
-            position: relative
+            justify-content: center
+            gap: 60px
+            position: absolute
             margin: 0 20px
 
             #hero-content
@@ -142,10 +139,10 @@ h2
                 display: flex
                 flex-direction: column
                 justify-content: flex-start
+                gap: 40px
                 align-items: center
                 text-align: initial
                 z-index: 1
-                padding-top: 60px
 
                 animation-name: slideup-in
                 animation-duration: 1000ms
@@ -188,186 +185,1319 @@ h2
     .absolute-image
         position: absolute
 
-    .our-customers
-        width: 100%
+    .development-services
         display: flex
-        @include content-container(56px)
-        align-items: center
-        z-index: 1
-        border-radius: 10px
-
-        .customer-logos
-            width: 100%
-            height: 80px
-            display: flex
-            justify-content: space-evenly
-            flex-wrap: wrap
-            gap: 8px
-            padding-bottom: 56px
-
-            .logo
+        justify-content: center
+        .development-services-container
+            width: 1376px
+            .our-customers
+                width: 100%
                 display: flex
-                height: 80px
-                > img
-                    object-fit: contain
-                    width: 100%
-                    height: auto
-                    max-width: fit-content
-
-    .statistics
-        @include content-container(120px)
-        .map-img
-            position: absolute
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            object-fit: cover 
-            z-index: 1
-        .statistics-wrapper
-            position: relative
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-            align-items: flex-start
-            color: $light-text-color
-            padding: 40px
-            background: $section-background-accent-color
-            border: 1px solid #3087EB
-            border-radius: 12px
-            overflow: hidden
-            z-index: 0
-            .statistic-item
-                display: flex
-                flex-direction: column
+                @include content-container(56px)
                 align-items: center
-                padding: 24px 16px
-                gap: 8px
-                z-index: 2
-                .statistic-item-num
-                    font-size: 56px
-                    font-weight: 400
-                    line-height: 67px
-                .statistic-item-text
-                    font-size: 20px
-                    font-weight: 400
-                    line-height: 28px
+                z-index: 1
+                border-radius: 10px
+
+                .customer-logos
+                    width: 100%
+                    height: 80px
+                    display: flex
+                    justify-content: space-evenly
+                    flex-wrap: wrap
+                    gap: 8px
+                    padding-bottom: 56px
+
+                    .logo
+                        display: flex
+                        height: 80px
+                        > img
+                            object-fit: contain
+                            width: 100%
+                            height: auto
+                            max-width: fit-content
+
+            .statistics
+                @include content-container(120px)
+                .map-img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    object-fit: cover 
+                    z-index: 1
+                .statistics-wrapper
+                    position: relative
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: flex-start
+                    color: $light-text-color
+                    padding: 40px
+                    background: $section-background-accent-color
+                    border: 1px solid #3087EB
+                    border-radius: 12px
                     overflow: hidden
-                    padding: 10px
-
-    .custom-solutions
-        @include content-container(100px)
-        .custom-solutions-wrapper
-            text-align: center
-            h2 
-                font-size: 48px
-                font-weight: 400
-                line-height: 57px
-                margin-bottom: 56px
-            .custom-solution-container
-                display: flex
-                gap: 16px
-                .cards
-                    width: 50%
-
-                    .expansion-panel
-                        overflow: hidden
-                        border-bottom: 1px solid #DEE2E6
-                        width: 90%
-                        .expansion-header
-                            padding: 10px
-                            @include expandable-header()
-                            &:hover
-                                background: #E9ECEF
-                                border-radius: 8px
-
-
-                        .header-icon
-                            margin-right: 20px
-                            height: 36px
-                            width: 36px
-
-                        &.expanded
-                            .expansion-header
-                                @include expandable-rotated(270deg)
-                        
-                        .expansion-title
-                            margin: 0
-                            font-size: 20px
-                            font-weight: 400
-                            line-height: 36.4px
-                            color: $dark-text-color
-                            text-align: left
-                            display: flex
-                            align-items: center
-
-                        .expansion-content
-                            max-height: 0
-                            overflow: hidden
-                            text-align: left
-                            //transition: max-height 0.1s cubic-bezier(0.4, 0, 0.2, 1)
-                            .expansion-buttons
-                                margin-bottom: 16px
-                                display: flex
-                                justify-content: flex-start
-                                flex-wrap: wrap
-                                gap: 12px
-                                .multicolored-btn
-                                    padding: 4px 12px
-                                    border-radius: 6px
-                                .pink
-                                    @include themed-style(#FCE7F6, #C11574, #C11574)
-                                .blue
-                                    @include themed-style(#E0F2FE, #065986, #065986)
-                                .orange
-                                    @include themed-style(#FFEAD5, #C4320A, #C4320A)
-                                .green
-                                    @include themed-style(#ECFDF3, #027A48, #027A48)
-                                .purple
-                                    @include themed-style(#EBE9FE, #5925DC, #5925DC)
-                                .red
-                                    @include themed-style(#FEE4E2, #B42318, #B42318)
-                            .expansion-statistic
-                                font-size: 16px
-                                font-weight: 400
-                                line-height: 24px
-                                color: #004B9F
-                                margin-bottom: 16px
-                            .expansion-text
-                                font-size: 16px
-                                font-weight: 400
-                                line-height: 24px
-
-                        &.expanded
-                            .expansion-header
-                                border-bottom: 1px solid #2264BD
-                            .expansion-content
-                                overflow: visible
-                                padding: 16px
-                                max-height: 1000px
-                        
-                .images
-                    width: 55%
-                    .client-feedback-cards
+                    z-index: 0
+                    .statistic-item
                         display: flex
                         flex-direction: column
-                        gap: 15px
-                        right: 272px
-                        width: 680px
-                        .client-info
-                            padding: 24px
+                        align-items: center
+                        padding: 24px 16px
+                        gap: 8px
+                        z-index: 2
+                        .statistic-item-num
+                            font-size: 56px
+                            font-weight: 400
+                            line-height: 67px
+                        .statistic-item-text
+                            font-size: 20px
+                            font-weight: 400
+                            line-height: 28px
+                            overflow: hidden
+                            padding: 10px
+
+            .custom-solutions
+                @include content-container(100px)
+                .custom-solutions-wrapper
+                    text-align: center
+                    h2 
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 57px
+                        margin-bottom: 56px
+                    .custom-solution-container
+                        display: flex
+                        gap: 16px
+                        .cards
+                            width: 50%
+
+                            .expansion-panel
+                                overflow: hidden
+                                border-bottom: 1px solid #DEE2E6
+                                width: 90%
+                                .expansion-header
+                                    padding: 10px
+                                    @include expandable-header()
+                                    &:hover
+                                        background: #E9ECEF
+                                        border-radius: 8px
+
+
+                                .header-icon
+                                    margin-right: 20px
+                                    height: 36px
+                                    width: 36px
+
+                                &.expanded
+                                    .expansion-header
+                                        @include expandable-rotated(270deg)
+                                
+                                .expansion-title
+                                    margin: 0
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 36.4px
+                                    color: $dark-text-color
+                                    text-align: left
+                                    display: flex
+                                    align-items: center
+
+                                .expansion-content
+                                    max-height: 0
+                                    overflow: hidden
+                                    text-align: left
+                                    //transition: max-height 0.1s cubic-bezier(0.4, 0, 0.2, 1)
+                                    .expansion-buttons
+                                        margin-bottom: 16px
+                                        display: flex
+                                        justify-content: flex-start
+                                        flex-wrap: wrap
+                                        gap: 12px
+                                        .multicolored-btn
+                                            padding: 4px 12px
+                                            border-radius: 6px
+                                        .pink
+                                            @include themed-style(#FCE7F6, #C11574, #C11574)
+                                        .blue
+                                            @include themed-style(#E0F2FE, #065986, #065986)
+                                        .orange
+                                            @include themed-style(#FFEAD5, #C4320A, #C4320A)
+                                        .green
+                                            @include themed-style(#ECFDF3, #027A48, #027A48)
+                                        .purple
+                                            @include themed-style(#EBE9FE, #5925DC, #5925DC)
+                                        .red
+                                            @include themed-style(#FEE4E2, #B42318, #B42318)
+                                    .expansion-statistic
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+                                        color: #004B9F
+                                        margin-bottom: 16px
+                                    .expansion-text
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+
+                                &.expanded
+                                    .expansion-header
+                                        border-bottom: 1px solid #2264BD
+                                    .expansion-content
+                                        overflow: visible
+                                        padding: 16px
+                                        max-height: 1000px
+                                
+                        .images
+                            width: 55%
+                            .client-feedback-cards
+                                display: flex
+                                flex-direction: column
+                                gap: 15px
+                                right: 272px
+                                width: 680px
+                                .client-info
+                                    padding: 24px
+                                    display: flex
+                                    flex-direction: column
+                                    background: linear-gradient(187deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
+                                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                                    border-radius: 24px
+                                    .client-avatar-container
+                                        display: flex
+                                        justify-content: flex-start
+                                        gap: 16px
+                                        padding-bottom: 16px
+                                        border-bottom: 1px solid #DEE2E6
+                                        margin-bottom: 12px
+                                        .client-avatar-img
+                                            img
+                                                width: 64px
+                                                height: 64px
+                                        .client-descr
+                                            display: flex
+                                            flex-direction: column
+                                            justify-content: center
+                                            text-align: start
+                                            .client-name
+                                                font-size: 18px
+                                                font-weight: 500
+                                                line-height: 28px
+                                                color: $dark-text-color
+                                            .client-title
+                                                font-size: 16px
+                                                font-weight: 400
+                                                line-height: 24px
+                                    .client-feedback
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+                                        text-align: start
+                                .project-screen-container
+                                    padding: 24px
+                                    display: flex
+                                    flex-direction: column
+                                    background: linear-gradient(187deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
+                                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                                    border-radius: 24px
+                                    .project-screen
+                                        margin-bottom: 20px
+                                        img
+                                            height: 359px
+                                    a
+                                        font-size: 20px
+                                        font-weight: 600
+                                        &::after 
+                                            content: "\f061"
+                                            font-family: "Font Awesome 5 Free" 
+                                            padding-left: 8px
+
+            .vision-section
+                @include content-container(120px)
+                .vision-wrapper
+                    position: relative
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: center
+                    color: $light-text-color
+                    padding: 60px 80px
+                    background: $section-background-accent-color
+                    border: 1px solid #3087EB
+                    border-radius: 12px
+                    overflow: hidden
+                    z-index: 0
+                    .pattern-img
+                        position: absolute
+                        right: -40px
+                    .vision-info
+                        display: flex
+                        flex-direction: column
+                        justify-content: space-between
+                        gap: 56px
+                        width: 100%
+                        z-index: 1
+                        .vision-header
+                            display: flex
+                            gap: 155px
+                            .vision-title
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                flex-direction: column
+                                gap: 16px
+                                .vision-text
+                                    .name
+                                        font-size: 24px
+                                        font-weight: 400
+                                    .title
+                                        font-size: 16px
+                                        font-weight: 400
+                                .vision-img
+                                    width: 132px
+                                    height: 132px
+
+                            .vision-descr
+                                font-size: 16px
+                                font-weight: 400
+                                p
+                                    max-width: 680px
+                                    margin-bottom: 12px
+
+                        .vision-footer
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            border-top: 1px solid #DEE2E6
+                            padding-top: 32px
+                            .vision-footer-text
+                                font-size: 48px
+                                font-weight: 400
+                                width: 718px
+                            .vision-footer-btn
+                                max-height: 64px
+                                background: $light-text-color
+                                padding: 16px 86px
+                                font-size: 20px
+                                font-weight: 600
+                                border-radius: 12px
+                                color: #2A7DEC
+
+            .case-studies
+                @include content-container(120px)
+                .section-title
+                    font-size: 48px
+                    font-weight: 400
+                    margin-bottom: 56px
+                .cards-container
+                    position: relative
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 16px
+                    .ellipse-bottom
+                        width: 2500px
+                        height: 300px
+                        border-radius: 50%
+                        position: absolute
+                        bottom: -200px
+                        left: -400px
+                        background: #BDDCFF99
+                        filter: blur(100px)
+                    .card
+                        max-width: calc( 33% - 16px )
+                        display: flex
+                        flex-direction: column
+                        position: relative
+                        border-radius: 12px
+                        background: #FAFBFC
+                        z-index: 1
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05)
+                        &:hover
+                            transform: scale(1.03)
+                            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15)
+                        .card-label
+                            position: absolute
+                            top: 16px
+                            left: 16px
+                            background: $light-text-color
+                            color: #343A40
+                            border-radius: 6px
+                            padding: 4px 12px
+                        .retail
+                            @include themed-style(#E0F2FE, #065986, #065986)
+                        .manufacturing
+                            @include themed-style(#FCE7F6, #C11574, #C11574)
+                        .energy
+                            @include themed-style(#EBE9FE, #5925DC, #5925DC)
+                        .infrastructure
+                            @include themed-style(#ECFDF3, #027A48, #027A48)
+                        .logistics
+                            @include themed-style(#E0F2FE, #065986, #065986)
+                            
+                        .card-tag
+                            position: absolute
+                            top: 16px
+                            right: 16px
+                            border-radius: 6px
+                            padding: 4px 12px
+                        .card-image
+                            border-top-left-radius: 12px
+                            border-top-right-radius: 12px
+                        .card-content
                             display: flex
                             flex-direction: column
-                            background: linear-gradient(187deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
-                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            padding: 16px 20px 20px 20px
+                            gap: 16px
+                            a
+                                text-decoration: none
+                                color: #212529
+                                h3
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 140%
+                                
+                                h3:hover
+                                    color: #2A7DEC
+
+                            .card-stats
+                                display: flex
+                                justify-content: flex
+                                padding: 20px
+                                gap: 8px
+                                strong
+                                    display: block
+            
+            .services
+                @include content-container(120px)
+                background: transparent
+                .services-container
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    .services-title
+                        font-size: 48px
+                        font-weight: 400
+                        margin-bottom: 20px
+                    .services-sub-title
+                        font-size: 16px
+                        font-weight: 400
+                        margin-bottom: 56px
+                        max-width: 648px
+                        color: #343A40
+                    .cards
+                        display: flex
+                        flex-wrap: wrap
+                        gap: 16px
+                        .expansion-card
+                            width: calc(33.333% - 16px)
+                            max-height: 104px
+                            padding: 24px
                             border-radius: 24px
+                            box-shadow: 0px 0px 2px #00000024
+                            transition: max-height 0.4s ease
+                            .expansion-header
+                                @include expandable-header()
+                                .expansion-title
+                                    display: flex
+                                    gap: 24px
+                                    align-items: center
+                                    h3
+                                        max-width: 280px
+                                        font-size: 20px
+                                        font-weight: 400
+                                        color: $dark-text-color
+                                        line-height: 140%
+                                    .header-icon
+                                        height: 48px
+                                        width: 48px
+                            &.expanded
+                                max-height: 328px
+                                .expansion-header
+                                    padding-bottom: 20px
+                                    border-bottom: 1px solid #BDBDBD
+                                    @include expandable-rotated(180deg)
+                                .expansion-content
+                                    padding: 24px
+                                    overflow: visible
+                                    max-height: 1000px
+                                    opacity: 1
+                            .expansion-content
+                                max-height: 0
+                                overflow: hidden
+                                text-align: left
+                                transition: max-height 0.3s ease, padding 0.4s ease, opacity 0.3s ease
+                                ul
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 8px
+                                    li
+                                        list-style-type: disc
+                                    li::marker
+                                        color: #2A7DEC
+            
+            .get-in-touch-section
+                @include content-container(80px)
+                background: transparent
+                .get-in-touch-container
+                    overflow: hidden
+                    position: relative
+                    display: flex
+                    justify-content: space-between
+                    padding: 76px 80px
+                    border-radius: 12px
+                    background: $section-background-accent-color
+                    z-index: 0
+                    .get-in-touch-title
+                        color: $light-text-color
+                        z-index: 2
+                    .get-in-touch-btn
+                        background-color: $light-text-color
+                        color: #1565C0
+                        border-radius: 12px
+                        padding: 16px 86px
+                        z-index: 2
+                        font-size: 20px
+                        font-weight: 600
+                    .get-in-touch-img
+                        position: absolute
+                        top: -50%
+                        left: 0
+                        z-index: 1
+
+            .multicolored
+                position: relative
+                overflow: hidden
+                margin-bottom: 120px
+                background: linear-gradient(to bottom, #f7faff, #ffffff)
+                border-radius: 80px
+                padding-top: 60px
+                .bg-shape 
+                    position: absolute
+                    z-index: 0
+                    border-radius: 50%
+                    filter: blur(200px)
+                    opacity: 10%
+                .ellipse-top-blue
+                    width: 503px
+                    height: 302px
+                    opacity: 50%
+                    transform: rotate(-30deg)
+                    background: #E0FEFF
+                .ellipse-blue
+                    width: 1732px
+                    height: 1230px
+                    background: #60ABFF
+                    top: -567px
+                    left: 1019px
+                    transform: rotate(-30deg)
+                .rect-orange
+                    width: 1400px
+                    height: 853px
+                    background: #FFF4E5
+                    top: 1613px
+                    left: 919px
+                    transform: rotate(36deg)
+                    opacity: 50%
+                .ellipse-purple
+                    width: 2539px
+                    height: 1113px
+                    background: #5F59FF
+                    top: 1252px
+                    left: -1204px
+                    transform: rotate(60deg)
+                    opacity: 10%
+                .ellipse-bottom-blue
+                        width: 1700px
+                        height: 600px
+                        background: #51A3FF
+                        bottom: 0px
+                        right: 0px
+                .industries
+                    @include content-container(120px)
+                    background-color: transparent
+                    .industries-container
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        .industries-title
+                            font-size: 48px
+                            font-weight: 400
+                            line-height: 120%
+                            margin-bottom: 20px
+                        .industries-subtitle
+                            margin-bottom: 40px
+                            font-size: 16px
+                            font-weight: 400
+                            width: 724px
+                            text-align: center
+                        .content-container
+                            max-height: 460px
+                            display: flex
+                            gap: 16px
+                            .menu
+                                overflow-y: scroll
+                                max-height: 460px
+                                max-width: 632px
+                                padding: 0px 16px
+                                scrollbar-width: thin
+                                scrollbar-color: #ADB5BD transparent
+                                .menu-item
+                                    display: flex
+                                    gap: 12px
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 140%
+                                    align-items: center
+                                    padding: 16px 0px
+                                    border-bottom: 1px solid #DEE2E6
+                                    h3
+                                        font-size: 20px
+                                .menu-item
+                                    &.active
+                                        color: #2264BD
+                                        
+                            .menu::-webkit-scrollbar-thumb
+                                background-color: #ADB5BD
+                                border: 1px solid #ADB5BD
+                                border-radius: 10px !important
+
+                            .industries-card
+                                max-width: 680px
+                                display: flex
+                                position: relative
+                                overflow: hidden
+                                flex-direction: column
+                                padding: 32px
+                                gap: 32px
+                                border-radius: 24px
+                                background-color: $light-text-color
+                                box-shadow: 0px 3px 14px 3px #0000001F
+                                .card-container
+                                    z-index: 2
+                                    .card-img
+                                        width: 48px
+                                        height: 48px
+                                        margin-bottom: 32px
+                                    h3
+                                        margin-bottom: 16px
+                                        font-size: 28px
+                                        font-weight: 400
+                                        line-height: 135%
+                                    .card-text-container
+                                        font-size: 16px 
+                                        font-weight: 400
+                                        .card-descr
+                                            margin-bottom: 20px
+                                        ul
+                                            display: flex
+                                            flex-direction: column
+                                            gap: 8px
+                                            padding-left: 20px
+                                            li
+                                                list-style-type: disc
+                                            li::marker
+                                                color: #2A7DEC
+
+                                &::after
+                                    content: ''
+                                    position: absolute
+                                    bottom: -40px
+                                    transform: rotate(10deg)
+                                    width: 100%
+                                    height: 200px
+                                    background: #EEF7FF
+                                    filter: blur(40px)
+                                    border-radius: 50%
+                                    z-index: 0
+                                &::before
+                                    content: ''
+                                    position: absolute
+                                    bottom: -10px
+                                    left: 50%
+                                    transform: translateX(-50%)
+                                    width: 400px
+                                    height: 70px
+                                    background: #FFF7ED
+                                    border-radius: 50%
+                                    filter: blur(24px)
+                                    z-index: 1
+
+                .trusted-partner
+                    @include content-container(120px)
+                    text-align: center
+                    background: transparent
+                    .trusted-partner-title
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 120%
+                        margin-bottom: 40px
+                    .trusted-partner-container
+                        position: relative
+                        display: flex
+                        flex-direction: column
+                        gap: 32px
+                        padding: 60px 80px
+                        border-radius: 24px
+                        background: $section-background-accent-color
+                        color: $light-text-color
+                        .trusted-partner-header
+                            display: flex
+                            flex-direction: column
+                            justify-content: center
+                            align-items: center
+                            gap: 16px
+                            .trusted-tips
+                                display: flex
+                                justify-content: space-between
+                                .trusted-tip
+                                    padding: 0px 16px
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 12px
+                                    align-items: center
+                                    font-size: 28px
+                                    font-weight: 400
+                                    line-height: 135%
+                                    &::before
+                                        content: "\f00c"
+                                        color: #1565C0
+                                        font-family: 'Font Awesome 5 Free'
+                                        background-color: #FAFBFC
+                                        border-radius: 8px
+                                        font-size: 20px
+                                        padding: 6px
+                                        font-weight: 600
+                                        line-height: 1
+                                        display: block
+                                        width: 32px
+                                        height: 32px
+                            .trusted-partner-header-descr
+                                p
+                                    font-size: 28px
+                                    font-weight: 400
+                                    line-height: 135%
+                        .trusted-partner-footer
+                            border-top: 1px solid #DEE2E6
+                            padding-top: 32px
+                            display: flex
+                            justify-content: space-between
+                            gap: 155px
+                            z-index: 1
+                            .trusted-partner-descr
+                                display: flex
+                                flex-direction: column
+                                max-width: 832px
+                                gap: 12px
+                                text-align: start
+                                font-size: 16px
+                                font-weight: 400
+                            .trusted-partner-avatar
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                width: 229px
+                                gap: 16px
+                                .avatar
+                                    width: 132px
+                                    height: 132px
+                                .trusted-partner-text
+                                    .name
+                                        font-size: 24px
+                                        font-weight: 400
+                                        line-height: 140%
+                                    .title
+                                        font-size: 16px
+                                        font-weight: 400
+                        .pattern-img
+                            position: absolute
+                            width: 519px
+                            height: 517px
+                            right: 0px
+                            bottom: -10px
+                            z-index: 0
+
+                .fast-delivery
+                    @include content-container(64px)
+                    text-align: center
+                    background: transparent
+                    .fast-delivery-title
+                        font-size: 32px
+                        font-weight: 400
+                        line-height: 135%
+                        margin-bottom: 40px
+                        padding: 0px 80px
+                        color: $dark-text-color
+                    table
+                        width: 100%
+                        border-collapse: collapse
+                        background: $light-text-color
+                        border-radius: 24px
+                        box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                        th, td
+                            padding: 40px
+                            text-align: left
+                            vertical-align: top
+                            font-size: 16px
+                            font-weight: 400
+                            border-bottom: 1px solid #E5E7EB
+                            color: #343A40
+
+                        thead
+                        th
+                            font-size: 24px
+                            font-weight: 500
+                            color: #2264BD
+                            border-bottom: 1px solid #E5E7EB
+                            text-align: center
+                            padding: 24px 40px
+
+
+                        thead th:not(:first-child)
+                            border-left: 1px solid #E5E7EB
+
+                        tbody td:first-child
+                            font-weight: 400
+                            color: $dark-text-color
+                            width: 20%
+
+                        tbody td:not(:first-child)
+                            border-left: 1px solid #E5E7EB
+
+                        tr:last-child td
+                            border-bottom: none
+
+                .client-feedback
+                    width: 100%
+                    height: 337px
+                    position: relative
+                    background: transparent
+                    margin-bottom: 64px
+                    .client-feedback-container
+                        padding: 56px 272px
+                        position: relative
+                        text-align: center
+                        background: transparent
+                        z-index: 1
+                        display: flex
+                        align-items: center
+                        flex-direction: column
+                        gap: 27px
+                        .client-feedback-text
+                            max-width: 912px
+                            font-size: 24px
+                            font-weight: 400
+                            line-height: 140%
+                            text-align: start
+                        .client-container
+                            display: flex
+                            width: 912px
+                            justify-content: space-between
+                            align-items: center
+                            .client-avatar
+                                display: flex
+                                gap: 20px
+                                .client-avatar-descr
+                                    display: flex
+                                    flex-direction: column
+                                    justify-content: center
+                                    text-align: start
+                                    .title
+                                        font-size: 18px
+                                        font-weight: 400
+                                        line-height: 140%
+                                        color: #343A40
+                                    .name
+                                        font-size: 24px
+                                        font-weight: 400
+                                        color: $dark-text-color
+                                .client-avatar-img
+                                    width: 64px
+                                    height: 64px
+                        .client-logo
+                            img
+                                width: 169px
+                                height: 39px
+
+                    .pattern-img
+                        position: absolute
+                        width: 100%
+                        height: 300px
+                        top: 0
+                        left: 0
+                        z-index: 0
+                
+                .more-feature
+                    @include content-container(120px)
+                    background: transparent
+                    .more-feature-title
+                        text-align: center
+                        font-size: 32px
+                        font-weight: 400
+                        line-height: 135%
+                        margin-bottom: 40px
+                    .cards
+                        display: flex
+                        justify-content: center
+                        gap: 20px
+                        .card
+                            padding: 24px
+                            border-radius: 24px
+                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            background: #FAFBFC
+                            flex: 1 1 0px
+                            .card-title
+                                height: 68px
+                                font-size: 24px
+                                font-weight: 400
+                                line-height: 140%
+                                margin-bottom: 16px
+                                color: #212529
+                            .card-descr
+                                color: #343A40
+                                font-size: 16px
+                                font-weight: 400
+                                margin-bottom: 16px
+
+                .get-in-touch-section
+                    margin-bottom: 40px
+                    .get-in-touch-container
+                        .get-in-touch-title
+                            width: 680px
+            
+            .project-timeline
+                @include content-container(120px)
+                .project-timeline-container
+                    display: flex
+                    gap: 20px
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    margin-bottom: 40px
+                    .project-timeline-title
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 120%
+                        color: #212529
+                    .project-timeline-descr
+                        text-align: center
+                        max-width: 724px
+                        font-size: 16px
+                        font-weight: 400
+                        color: #343A40
+                .timeline
+                    display: grid
+                    grid-template-columns: repeat(10, 1fr)
+                    position: relative
+                    padding-top: 40px
+                    height: 594px
+                    padding-bottom: 110px
+                    .timeline-column 
+                        position: relative
+                        padding-top: 10px
+                        text-align: center
+                        font-weight: bold
+                        font-size: 12px
+                        color: #666
+                        border-right: 1px solid #eee
+                    .timeline-column:first-child
+                        border-left: 1px solid #eee
+                    .bar-container
+                        position: absolute
+                        .bar
+                            position: absolute
+                            border-radius: 6px
+                            font-size: 16px
+                            color: #212529
+                            background: #cfd3d6
+                            display: flex
+                            flex-direction: column
+                            justify-content: center
+                            cursor: pointer
+                            padding: 8px 16px
+                        .bar span
+                            font-weight: 400
+                            font-size: 16px
+                        .tooltip
+                            position: absolute
+                            top: 80px
+                            left: -130px
+                            background: white
+                            border-radius: 8px
+                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            padding: 12px 14px
+                            width: 250px
+                            font-size: 14px
+                            font-weight: 400
+                            z-index: 1
+                            display: none
+                            color: #343A40
+                            .tooltip-subtitle
+                                margin-bottom: 8px
+
+                    .bar-container:hover .tooltip
+                        display: block
+                    .bar-container .toolbar
+                        padding-bottom: 20px
+                    .bar-container.bar-item-1
+                        top: 74px
+                        left: -40px
+                        .bar
+                            width: 304px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, transparent,#DCDFE3)
+                        .bar:hover
+                            background: #DCDFE3
+                    .bar-container.bar-item-2
+                        top: 138px
+                        left: 20%
+                        .bar
+                            width: 180px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #D9EBFF, transparent)
+                        .bar:hover
+                            background: #D9EBFF
+                    .bar-container.bar-item-3
+                        top: 202px
+                        left: 30%
+                        .bar
+                            width: 180px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #A1CDFF, transparent)
+                        .bar:hover
+                            background: #A1CDFF
+                    .bar-container.bar-item-4
+                        top: 266px
+                        left: 38%
+                        .bar
+                            width: 419px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #3393FF,transparent)
+                        .bar:hover
+                            background: #3393FF
+                    .bar-container.bar-item-5
+                        top: 354px
+                        left: 69%
+                        .bar
+                            width: 195px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #A1CDFF, transparent)
+                        .bar:hover
+                            background: #A1CDFF
+                    .bar-container.bar-item-6
+                        top: 450px
+                        left: 83%
+                        .bar
+                            width: 160px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #D9EBFF,transparent)
+                        .bar:hover
+                            background: #D9EBFF
+                    .bar-container.bar-item-7
+                        top: 512px
+                        left: 94%
+                        .bar
+                            width: 159px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #DCDFE3, transparent)
+                        .bar:hover
+                            background: #DCDFE3
+                    
+            
+            .engagement-models
+                @include content-container(120px)
+                .engagement-model-container
+                    display: flex
+                    gap: 20px
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    margin-bottom: 40px
+                    .engagement-model-title
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 120%
+                        color: #212529
+                    .engagement-model-descr
+                        text-align: center
+                        max-width: 724px
+                        font-size: 16px
+                        font-weight: 400
+                        color: #343A40
+                        margin-bottom: 40px
+                    .container
+                        padding: 40px 0px
+                        table
+                            width: 100%
+                            border-collapse: collapse
+                            background: $light-text-color
+                            border-radius: 24px
+                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            th, td
+                                padding: 40px
+                                text-align: left
+                                vertical-align: top
+                                font-size: 16px
+                                font-weight: 400
+                                border-bottom: 1px solid #E5E7EB
+                                color: #343A40
+                                ul
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 8px
+                                    li
+                                        display: flex
+                                        gap: 12px
+                                        align-items: flex-start
+                                        font-size: 16px
+                                        font-weight: 400
+                                        img
+                                            display: block
+                                            width: 24px
+                                            height: 24px
+
+                            thead
+                            th
+                                font-size: 24px
+                                font-weight: 500
+                                color: #212529
+                                border-bottom: 1px solid #E5E7EB
+                                text-align: center
+                                padding: 24px 40px
+                                position: relative
+                                img
+                                    width: 64px
+                                    height: 64px
+                                    position: absolute
+                                    top: -50%
+                                    left: 50%
+                                    transform: translate(-50%)
+                                    
+                            thead th:not(:first-child)
+                                border-left: 1px solid #E5E7EB
+
+                            tbody td:first-child
+                                font-weight: 400
+                                color: $dark-text-color
+                                width: 20%
+
+                            tbody td:not(:first-child)
+                                border-left: 1px solid #E5E7EB
+
+                            tr:last-child td
+                                border-bottom: none
+            
+            .clients-reviews
+                @include content-container(120px)
+                .clients-reviews-title
+                    text-align: center
+                    font-size: 48px
+                    font-weight: 400
+                    line-height: 120%
+                .clients-reviews-cards
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 16px
+                    .senseing
+                        background: linear-gradient(187deg, #E5EFFE 20%, #E9FAFF 30%, #FAFBFC 40%)
+                    .ositech
+                        background: linear-gradient(360deg, #F7EEFF 20%, #FFFEED 30%, #FAFBFC 40%)
+                    .agrolog
+                        background: linear-gradient(360deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
+                    .circulor
+                        background: linear-gradient(187deg, #FFEEEE 20%, #EDFCFF 30%, #FAFBFC 40%)
+                    .client-info
+                        padding: 24px
+                        display: flex
+                        max-width: 680px
+                        flex: 1 1 600px
+                        flex-direction: column
+                        box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                        border-radius: 24px
+                        margin-top: 86px
+                        position: relative
+                        min-height: 394px
+                        .client-avatar-img
+                            position: absolute
+                            top: -50px
+                            left: 32px
+                            width: 64px
+                            height: 64px
+                        .client-avatar-container
+                            display: flex
+                            justify-content: space-between
+                            padding-bottom: 16px
+                            border-bottom: 1px solid #DEE2E6
+                            margin-bottom: 12px
+                            .client-descr
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                text-align: start
+                                .client-name
+                                    font-size: 18px
+                                    font-weight: 500
+                                    line-height: 28px
+                                    color: $dark-text-color
+                                .client-title
+                                    font-size: 16px
+                                    font-weight: 400
+                                    line-height: 24px
+                            .client-logo-img
+                                height: 50px
+                                padding-bottom: 20px 
+                                img
+                                    height: 100%
+                            .client-logo-img.senseing-logo
+                                padding-bottom: 0px
+                        .client-feedback
+                            font-size: 16px
+                            font-weight: 400
+                            line-height: 24px
+                            .info-btns
+                                display: flex
+                                justify-content: flex-start
+                                gap: 8px
+                                margin-bottom: 20px
+                                .info-btn-label
+                                    background: #FAFBFC
+                                    color: #343A40
+                                    border-radius: 6px
+                                    padding: 4px 12px
+                                    border: 1px solid #DEE2E6
+                                .info-btn-tag
+                                    background: #E0F2FE
+                                    color: #026AA2
+                                    border: 1px solid #065986
+                                    border-radius: 6px
+                                    padding: 4px 12px
+            
+            .questions-section
+                @include content-container(120px)
+                z-index: 1
+                background: transparent
+                .question-section-title
+                    font-size: 48px
+                    line-height: 120%
+                    margin-bottom: 56px
+                    text-align: center
+                .questions-section-cards
+                    display: flex
+                    flex-direction: column
+                    gap: 16px
+                    .questions-section-card
+                        width: 100%
+                        max-height: 76px
+                        padding: 24px 40px
+                        border-radius: 24px
+                        box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                        background: #FAFBFC
+                        transition: max-height 0.6s ease
+                        .questions-section-header
+                            @include expandable-header()
+                            &::after
+                                top: 10px
+                            .questions-section-title
+                                width: 100%
+                                display: flex
+                                align-items: center
+                                h3
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 140%
+                                .questions-section-num
+                                    width: 292px
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 140%
+                        .questions-section-content
+                            max-height: 0px
+                            overflow: hidden
+                            display: flex
+                            flex-direction: column
+                            gap: 20px
+                            .key-services
+                                font-size: 16px
+                                font-weight: 500
+                            ol
+                                li
+                                    list-style: auto
+                        &.expanded
+                            max-height: 1300px
+                            .questions-section-content
+                                max-height: 1300px
+                                overflow: visible
+                                padding: 20px 292px
+                            .questions-section-header
+                                padding-bottom: 20px
+                                border-bottom: 1px solid #BDBDBD
+                                @include expandable-rotated(180deg)
+            
+            .contact-us-section
+                .ellipse-right
+                    position: absolute
+                    width: 1017px
+                    height: 612px
+                    background: #FFF4E5
+                    right: -200px
+                    top: -100px
+                    border-radius: 50%
+                    transform: rotate(-135deg)
+                    filter: blur(200px)
+                .ellipse-left
+                    position: absolute
+                    width: 1017px
+                    height: 612px
+                    background: #E0FEFF
+                    left: -300px
+                    top: -100px
+                    border-radius: 50%
+                    transform: rotate(30deg)
+                    filter: blur(200px)
+                .ellipse-bottom
+                    position: absolute
+                    width: 2528px
+                    height: 824px
+                    bottom: -200px
+                    left: -400px
+                    z-index: 0
+                    border-radius: 50%
+                    filter: blur(200px)
+                    background: #51A3FF
+                    opacity: 15%
+                .contact-us-section-content
+                    @include content-container(120px)
+                    .contact-us-container
+                        position: relative
+                        background: linear-gradient(180deg, #2A7DEC 0%, #2264BD 100%)
+                        border-radius: 24px
+                        display: flex
+                        padding: 8px
+                        gap: 8px
+                        .contact-us-descr
+                            width: 42%
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            padding: 40px
+                            z-index: 1
+                            .contact-us-descr-container
+                                display: flex
+                                flex-direction: column
+                                gap: 16px
+                                h2
+                                    font-size: 48px
+                                    font-weight: 400
+                                    line-height: 120%
+                                    color: $light-text-color
+                                h5
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 140%
+                                    color: $light-text-color
                             .client-avatar-container
                                 display: flex
                                 justify-content: flex-start
                                 gap: 16px
-                                padding-bottom: 16px
-                                border-bottom: 1px solid #DEE2E6
-                                margin-bottom: 12px
                                 .client-avatar-img
                                     img
                                         width: 64px
@@ -381,1447 +1511,319 @@ h2
                                         font-size: 18px
                                         font-weight: 500
                                         line-height: 28px
-                                        color: $dark-text-color
+                                        color: $light-text-color
                                     .client-title
                                         font-size: 16px
                                         font-weight: 400
                                         line-height: 24px
-                            .client-feedback
-                                font-size: 16px
-                                font-weight: 400
-                                line-height: 24px
-                                text-align: start
-                        .project-screen-container
-                            padding: 24px
-                            display: flex
-                            flex-direction: column
-                            background: linear-gradient(187deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
-                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                            border-radius: 24px
-                            .project-screen
-                                margin-bottom: 20px
-                                img
-                                    height: 359px
-                            a
-                                font-size: 20px
-                                font-weight: 600
-                                &::after 
-                                    content: "\f061"
-                                    font-family: "Font Awesome 5 Free" 
-                                    padding-left: 8px
-
-    .vision-section
-        @include content-container(120px)
-        .vision-wrapper
-            position: relative
-            display: flex
-            flex-direction: row
-            justify-content: space-between
-            align-items: center
-            color: $light-text-color
-            padding: 60px 80px
-            background: $section-background-accent-color
-            border: 1px solid #3087EB
-            border-radius: 12px
-            overflow: hidden
-            z-index: 0
-            .pattern-img
-                position: absolute
-                right: -40px
-            .vision-info
-                display: flex
-                flex-direction: column
-                justify-content: space-between
-                gap: 56px
-                width: 100%
-                z-index: 1
-                .vision-header
-                    display: flex
-                    gap: 155px
-                    .vision-title
-                        display: flex
-                        justify-content: center
-                        align-items: center
-                        flex-direction: column
-                        gap: 16px
-                        .vision-text
-                            .name
-                                font-size: 24px
-                                font-weight: 400
-                            .title
-                                font-size: 16px
-                                font-weight: 400
-                        .vision-img
-                            width: 132px
-                            height: 132px
-
-                    .vision-descr
-                        font-size: 16px
-                        font-weight: 400
-                        p
-                            max-width: 680px
-                            margin-bottom: 12px
-
-                .vision-footer
-                    display: flex
-                    justify-content: space-between
-                    align-items: center
-                    border-top: 1px solid #DEE2E6
-                    padding-top: 32px
-                    .vision-footer-text
-                        font-size: 48px
-                        font-weight: 400
-                        width: 718px
-                    .vision-footer-btn
-                        max-height: 64px
-                        background: $light-text-color
-                        padding: 16px 86px
-                        font-size: 20px
-                        font-weight: 600
-                        border-radius: 12px
-                        color: #2A7DEC
-
-    .case-studies
-        @include content-container(120px)
-        .section-title
-            font-size: 48px
-            font-weight: 400
-            margin-bottom: 56px
-        .cards-container
-            position: relative
-            display: flex
-            flex-wrap: wrap
-            gap: 16px
-            .ellipse-bottom
-                width: 2500px
-                height: 300px
-                border-radius: 50%
-                position: absolute
-                bottom: -200px
-                left: -400px
-                background: #BDDCFF99
-                filter: blur(100px)
-            .card
-                max-width: calc( 33% - 16px )
-                display: flex
-                flex-direction: column
-                position: relative
-                border-radius: 12px
-                background: #FAFBFC
-                z-index: 1
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05)
-                &:hover
-                    transform: scale(1.03)
-                    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15)
-                .card-label
-                    position: absolute
-                    top: 16px
-                    left: 16px
-                    background: $light-text-color
-                    color: #343A40
-                    border-radius: 6px
-                    padding: 4px 12px
-                .retail
-                    @include themed-style(#E0F2FE, #065986, #065986)
-                .manufacturing
-                    @include themed-style(#FCE7F6, #C11574, #C11574)
-                .energy
-                    @include themed-style(#EBE9FE, #5925DC, #5925DC)
-                .infrastructure
-                    @include themed-style(#ECFDF3, #027A48, #027A48)
-                .logistics
-                    @include themed-style(#E0F2FE, #065986, #065986)
-                    
-                .card-tag
-                    position: absolute
-                    top: 16px
-                    right: 16px
-                    border-radius: 6px
-                    padding: 4px 12px
-                .card-image
-                    border-top-left-radius: 12px
-                    border-top-right-radius: 12px
-                .card-content
-                    display: flex
-                    flex-direction: column
-                    padding: 16px 20px 20px 20px
-                    gap: 16px
-                    a
-                        text-decoration: none
-                        color: #212529
-                        h3
-                            font-size: 20px
-                            font-weight: 400
-                            line-height: 140%
-                        
-                        h3:hover
-                            color: #2A7DEC
-
-                    .card-stats
-                        display: flex
-                        justify-content: flex
-                        padding: 20px
-                        gap: 8px
-                        strong
-                            display: block
-    
-    .services
-        @include content-container(120px)
-        background: transparent
-        .services-container
-            display: flex
-            flex-direction: column
-            align-items: center
-            .services-title
-                font-size: 48px
-                font-weight: 400
-                margin-bottom: 20px
-            .services-sub-title
-                font-size: 16px
-                font-weight: 400
-                margin-bottom: 56px
-                max-width: 648px
-                color: #343A40
-            .cards
-                display: flex
-                flex-wrap: wrap
-                gap: 16px
-                .expansion-card
-                    width: calc(33.333% - 16px)
-                    max-height: 104px
-                    padding: 24px
-                    border-radius: 24px
-                    box-shadow: 0px 0px 2px #00000024
-                    transition: max-height 0.4s ease
-                    .expansion-header
-                        @include expandable-header()
-                        .expansion-title
-                            display: flex
-                            gap: 24px
-                            align-items: center
-                            h3
-                                max-width: 280px
-                                font-size: 20px
-                                font-weight: 400
-                                color: $dark-text-color
-                                line-height: 140%
-                            .header-icon
-                                height: 48px
-                                width: 48px
-                    &.expanded
-                        max-height: 328px
-                        .expansion-header
-                            padding-bottom: 20px
-                            border-bottom: 1px solid #BDBDBD
-                            @include expandable-rotated(180deg)
-                        .expansion-content
-                            padding: 24px
-                            overflow: visible
-                            max-height: 1000px
-                            opacity: 1
-                    .expansion-content
-                        max-height: 0
-                        overflow: hidden
-                        text-align: left
-                        transition: max-height 0.3s ease, padding 0.4s ease, opacity 0.3s ease
-                        ul
-                            display: flex
-                            flex-direction: column
-                            gap: 8px
-                            li
-                                list-style-type: disc
-                            li::marker
-                                color: #2A7DEC
-    
-    .get-in-touch-section
-        @include content-container(80px)
-        background: transparent
-        .get-in-touch-container
-            overflow: hidden
-            position: relative
-            display: flex
-            justify-content: space-between
-            padding: 76px 80px
-            border-radius: 12px
-            background: $section-background-accent-color
-            z-index: 0
-            .get-in-touch-title
-                color: $light-text-color
-                z-index: 2
-            .get-in-touch-btn
-                background-color: $light-text-color
-                color: #1565C0
-                border-radius: 12px
-                padding: 16px 86px
-                z-index: 2
-                font-size: 20px
-                font-weight: 600
-            .get-in-touch-img
-                position: absolute
-                top: -50%
-                left: 0
-                z-index: 1
-
-    .multicolored
-        position: relative
-        overflow: hidden
-        margin-bottom: 120px
-        background: linear-gradient(to bottom, #f7faff, #ffffff)
-        border-radius: 80px
-        padding-top: 60px
-        .bg-shape 
-            position: absolute
-            z-index: 0
-            border-radius: 50%
-            filter: blur(200px)
-            opacity: 10%
-        .ellipse-top-blue
-            width: 503px
-            height: 302px
-            opacity: 50%
-            transform: rotate(-30deg)
-            background: #E0FEFF
-        .ellipse-blue
-            width: 1732px
-            height: 1230px
-            background: #60ABFF
-            top: -567px
-            left: 1019px
-            transform: rotate(-30deg)
-        .rect-orange
-            width: 1400px
-            height: 853px
-            background: #FFF4E5
-            top: 1613px
-            left: 919px
-            transform: rotate(36deg)
-            opacity: 50%
-        .ellipse-purple
-            width: 2539px
-            height: 1113px
-            background: #5F59FF
-            top: 1252px
-            left: -1204px
-            transform: rotate(60deg)
-            opacity: 10%
-        .ellipse-bottom-blue
-                width: 1700px
-                height: 600px
-                background: #51A3FF
-                bottom: 0px
-                right: 0px
-        .industries
-            @include content-container(120px)
-            background-color: transparent
-            .industries-container
-                display: flex
-                flex-direction: column
-                align-items: center
-                .industries-title
-                    font-size: 48px
-                    font-weight: 400
-                    line-height: 120%
-                    margin-bottom: 20px
-                .industries-subtitle
-                    margin-bottom: 40px
-                    font-size: 16px
-                    font-weight: 400
-                    width: 724px
-                    text-align: center
-                .content-container
-                    max-height: 460px
-                    display: flex
-                    gap: 16px
-                    .menu
-                        overflow-y: scroll
-                        max-height: 460px
-                        max-width: 632px
-                        padding: 0px 16px
-                        scrollbar-width: thin
-                        scrollbar-color: #ADB5BD transparent
-                        .menu-item
-                            display: flex
-                            gap: 12px
-                            font-size: 20px
-                            font-weight: 400
-                            line-height: 140%
-                            align-items: center
-                            padding: 16px 0px
-                            border-bottom: 1px solid #DEE2E6
-                            h3
-                                font-size: 20px
-                        .menu-item
-                            &.active
-                                color: #2264BD
-                                
-                    .menu::-webkit-scrollbar-thumb
-                        background-color: #ADB5BD
-                        border: 1px solid #ADB5BD
-                        border-radius: 10px !important
-
-                    .industries-card
-                        max-width: 680px
-                        display: flex
-                        position: relative
-                        overflow: hidden
-                        flex-direction: column
-                        padding: 32px
-                        gap: 32px
-                        border-radius: 24px
-                        background-color: $light-text-color
-                        box-shadow: 0px 3px 14px 3px #0000001F
-                        .card-container
-                            z-index: 2
-                            .card-img
-                                width: 48px
-                                height: 48px
-                                margin-bottom: 32px
-                            h3
-                                margin-bottom: 16px
-                                font-size: 28px
-                                font-weight: 400
-                                line-height: 135%
-                            .card-text-container
-                                font-size: 16px 
-                                font-weight: 400
-                                .card-descr
-                                    margin-bottom: 20px
-                                ul
-                                    display: flex
-                                    flex-direction: column
-                                    gap: 8px
-                                    padding-left: 20px
-                                    li
-                                        list-style-type: disc
-                                    li::marker
-                                        color: #2A7DEC
-
-                        &::after
-                            content: ''
-                            position: absolute
-                            bottom: -40px
-                            transform: rotate(10deg)
-                            width: 100%
-                            height: 200px
-                            background: #EEF7FF
-                            filter: blur(40px)
-                            border-radius: 50%
-                            z-index: 0
-                        &::before
-                            content: ''
-                            position: absolute
-                            bottom: -10px
-                            left: 50%
-                            transform: translateX(-50%)
-                            width: 400px
-                            height: 70px
-                            background: #FFF7ED
-                            border-radius: 50%
-                            filter: blur(24px)
+                                        color: $light-text-color
+                        .contact-us-form
+                            width: 58%
                             z-index: 1
-
-        .trusted-partner
-            @include content-container(120px)
-            text-align: center
-            background: transparent
-            .trusted-partner-title
-                font-size: 48px
-                font-weight: 400
-                line-height: 120%
-                margin-bottom: 40px
-            .trusted-partner-container
-                position: relative
-                display: flex
-                flex-direction: column
-                gap: 32px
-                padding: 60px 80px
-                border-radius: 24px
-                background: $section-background-accent-color
-                color: $light-text-color
-                .trusted-partner-header
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    align-items: center
-                    gap: 16px
-                    .trusted-tips
-                        display: flex
-                        justify-content: space-between
-                        .trusted-tip
-                            padding: 0px 16px
-                            display: flex
-                            flex-direction: column
-                            gap: 12px
-                            align-items: center
-                            font-size: 28px
-                            font-weight: 400
-                            line-height: 135%
-                            &::before
-                                content: "\f00c"
-                                color: #1565C0
-                                font-family: 'Font Awesome 5 Free'
-                                background-color: #FAFBFC
-                                border-radius: 8px
-                                font-size: 20px
-                                padding: 6px
-                                font-weight: 600
-                                line-height: 1
-                                display: block
-                                width: 32px
-                                height: 32px
-                    .trusted-partner-header-descr
-                        p
-                            font-size: 28px
-                            font-weight: 400
-                            line-height: 135%
-                .trusted-partner-footer
-                    border-top: 1px solid #DEE2E6
-                    padding-top: 32px
-                    display: flex
-                    justify-content: space-between
-                    gap: 155px
-                    z-index: 1
-                    .trusted-partner-descr
-                        display: flex
-                        flex-direction: column
-                        max-width: 832px
-                        gap: 12px
-                        text-align: start
-                        font-size: 16px
-                        font-weight: 400
-                    .trusted-partner-avatar
-                        display: flex
-                        flex-direction: column
-                        align-items: center
-                        width: 229px
-                        gap: 16px
-                        .avatar
-                            width: 132px
-                            height: 132px
-                        .trusted-partner-text
-                            .name
-                                font-size: 24px
-                                font-weight: 400
-                                line-height: 140%
-                            .title
-                                font-size: 16px
-                                font-weight: 400
-                .pattern-img
-                    position: absolute
-                    width: 519px
-                    height: 517px
-                    right: 0px
-                    bottom: -10px
-                    z-index: 0
-
-        .fast-delivery
-            @include content-container(64px)
-            text-align: center
-            background: transparent
-            .fast-delivery-title
-                font-size: 32px
-                font-weight: 400
-                line-height: 135%
-                margin-bottom: 40px
-                padding: 0px 80px
-                color: $dark-text-color
-            table
-                width: 100%
-                border-collapse: collapse
-                background: $light-text-color
-                border-radius: 24px
-                box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                th, td
-                    padding: 40px
-                    text-align: left
-                    vertical-align: top
-                    font-size: 16px
-                    font-weight: 400
-                    border-bottom: 1px solid #E5E7EB
-                    color: #343A40
-
-                thead
-                th
-                    font-size: 24px
-                    font-weight: 500
-                    color: #2264BD
-                    border-bottom: 1px solid #E5E7EB
-                    text-align: center
-                    padding: 24px 40px
-
-
-                thead th:not(:first-child)
-                    border-left: 1px solid #E5E7EB
-
-                tbody td:first-child
-                    font-weight: 400
-                    color: $dark-text-color
-                    width: 20%
-
-                tbody td:not(:first-child)
-                    border-left: 1px solid #E5E7EB
-
-                tr:last-child td
-                    border-bottom: none
-
-        .client-feedback
-            width: 100%
-            height: 337px
-            position: relative
-            background: transparent
-            margin-bottom: 64px
-            .client-feedback-container
-                padding: 56px 272px
-                position: relative
-                text-align: center
-                background: transparent
-                z-index: 1
-                display: flex
-                align-items: center
-                flex-direction: column
-                gap: 27px
-                .client-feedback-text
-                    max-width: 912px
-                    font-size: 24px
-                    font-weight: 400
-                    line-height: 140%
-                    text-align: start
-                .client-container
-                    display: flex
-                    width: 912px
-                    justify-content: space-between
-                    align-items: center
-                    .client-avatar
-                        display: flex
-                        gap: 20px
-                        .client-avatar-descr
-                            display: flex
-                            flex-direction: column
-                            justify-content: center
-                            text-align: start
-                            .title
-                                font-size: 18px
-                                font-weight: 400
-                                line-height: 140%
-                                color: #343A40
-                            .name
-                                font-size: 24px
-                                font-weight: 400
-                                color: $dark-text-color
-                        .client-avatar-img
-                            width: 64px
-                            height: 64px
-                .client-logo
-                    img
-                        width: 169px
-                        height: 39px
-
-            .pattern-img
-                position: absolute
-                width: 100%
-                height: 300px
-                top: 0
-                left: 0
-                z-index: 0
-        
-        .more-feature
-            @include content-container(120px)
-            background: transparent
-            .more-feature-title
-                text-align: center
-                font-size: 32px
-                font-weight: 400
-                line-height: 135%
-                margin-bottom: 40px
-            .cards
-                display: flex
-                justify-content: center
-                gap: 20px
-                .card
-                    padding: 24px
-                    border-radius: 24px
-                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                    background: #FAFBFC
-                    flex: 1 1 0px
-                    .card-title
-                        height: 68px
-                        font-size: 24px
-                        font-weight: 400
-                        line-height: 140%
-                        margin-bottom: 16px
-                        color: #212529
-                    .card-descr
-                        color: #343A40
-                        font-size: 16px
-                        font-weight: 400
-                        margin-bottom: 16px
-
-        .get-in-touch-section
-            margin-bottom: 40px
-            .get-in-touch-container
-                .get-in-touch-title
-                    width: 680px
-    
-    .project-timeline
-        @include content-container(120px)
-        .project-timeline-container
-            display: flex
-            gap: 20px
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            margin-bottom: 40px
-            .project-timeline-title
-                font-size: 48px
-                font-weight: 400
-                line-height: 120%
-                color: #212529
-            .project-timeline-descr
-                text-align: center
-                max-width: 724px
-                font-size: 16px
-                font-weight: 400
-                color: #343A40
-        .timeline
-            display: grid
-            grid-template-columns: repeat(10, 1fr)
-            position: relative
-            padding-top: 40px
-            height: 594px
-            padding-bottom: 110px
-            .timeline-column 
-                position: relative
-                padding-top: 10px
-                text-align: center
-                font-weight: bold
-                font-size: 12px
-                color: #666
-                border-right: 1px solid #eee
-            .timeline-column:first-child
-                border-left: 1px solid #eee
-            .bar-container
-                position: absolute
-                .bar
-                    position: absolute
-                    border-radius: 6px
-                    font-size: 16px
-                    color: #212529
-                    background: #cfd3d6
-                    display: flex
-                    flex-direction: column
-                    justify-content: center
-                    cursor: pointer
-                    padding: 8px 16px
-                .bar span
-                    font-weight: 400
-                    font-size: 16px
-                .tooltip
-                    position: absolute
-                    top: 80px
-                    left: -130px
-                    background: white
-                    border-radius: 8px
-                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                    padding: 12px 14px
-                    width: 250px
-                    font-size: 14px
-                    font-weight: 400
-                    z-index: 1
-                    display: none
-                    color: #343A40
-                    .tooltip-subtitle
-                        margin-bottom: 8px
-
-            .bar-container:hover .tooltip
-                display: block
-            .bar-container .toolbar
-                padding-bottom: 20px
-            .bar-container.bar-item-1
-                top: 74px
-                left: -40px
-                .bar
-                    width: 304px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, transparent,#DCDFE3)
-                .bar:hover
-                    background: #DCDFE3
-            .bar-container.bar-item-2
-                top: 138px
-                left: 20%
-                .bar
-                    width: 180px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, #D9EBFF, transparent)
-                .bar:hover
-                    background: #D9EBFF
-            .bar-container.bar-item-3
-                top: 202px
-                left: 30%
-                .bar
-                    width: 180px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, #A1CDFF, transparent)
-                .bar:hover
-                    background: #A1CDFF
-            .bar-container.bar-item-4
-                top: 266px
-                left: 38%
-                .bar
-                    width: 419px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, #3393FF,transparent)
-                .bar:hover
-                    background: #3393FF
-            .bar-container.bar-item-5
-                top: 354px
-                left: 69%
-                .bar
-                    width: 195px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, #A1CDFF, transparent)
-                .bar:hover
-                    background: #A1CDFF
-            .bar-container.bar-item-6
-                top: 450px
-                left: 83%
-                .bar
-                    width: 160px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, #D9EBFF,transparent)
-                .bar:hover
-                    background: #D9EBFF
-            .bar-container.bar-item-7
-                top: 512px
-                left: 94%
-                .bar
-                    width: 159px
-                    padding: 8px 16px
-                    background: linear-gradient(45deg, #DCDFE3, transparent)
-                .bar:hover
-                    background: #DCDFE3
-            
-    
-    .engagement-models
-        @include content-container(120px)
-        .engagement-model-container
-            display: flex
-            gap: 20px
-            flex-direction: column
-            align-items: center
-            justify-content: center
-            margin-bottom: 40px
-            .engagement-model-title
-                font-size: 48px
-                font-weight: 400
-                line-height: 120%
-                color: #212529
-            .engagement-model-descr
-                text-align: center
-                max-width: 724px
-                font-size: 16px
-                font-weight: 400
-                color: #343A40
-                margin-bottom: 40px
-            .container
-                padding: 40px 0px
-                table
-                    width: 100%
-                    border-collapse: collapse
-                    background: $light-text-color
-                    border-radius: 24px
-                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                    th, td
-                        padding: 40px
-                        text-align: left
-                        vertical-align: top
-                        font-size: 16px
-                        font-weight: 400
-                        border-bottom: 1px solid #E5E7EB
-                        color: #343A40
-                        ul
-                            display: flex
-                            flex-direction: column
-                            gap: 8px
-                            li
-                                display: flex
-                                gap: 12px
-                                align-items: flex-start
-                                font-size: 16px
-                                font-weight: 400
-                                img
-                                    display: block
-                                    width: 24px
-                                    height: 24px
-
-                    thead
-                    th
-                        font-size: 24px
-                        font-weight: 500
-                        color: #212529
-                        border-bottom: 1px solid #E5E7EB
-                        text-align: center
-                        padding: 24px 40px
-                        position: relative
-                        img
-                            width: 64px
-                            height: 64px
-                            position: absolute
-                            top: -50%
-                            left: 50%
-                            transform: translate(-50%)
-                            
-                    thead th:not(:first-child)
-                        border-left: 1px solid #E5E7EB
-
-                    tbody td:first-child
-                        font-weight: 400
-                        color: $dark-text-color
-                        width: 20%
-
-                    tbody td:not(:first-child)
-                        border-left: 1px solid #E5E7EB
-
-                    tr:last-child td
-                        border-bottom: none
-    
-    .clients-reviews
-        @include content-container(120px)
-        .clients-reviews-title
-            text-align: center
-            font-size: 48px
-            font-weight: 400
-            line-height: 120%
-        .clients-reviews-cards
-            display: flex
-            flex-wrap: wrap
-            gap: 16px
-            .senseing
-                background: linear-gradient(187deg, #E5EFFE 20%, #E9FAFF 30%, #FAFBFC 40%)
-            .ositech
-                background: linear-gradient(360deg, #F7EEFF 20%, #FFFEED 30%, #FAFBFC 40%)
-            .agrolog
-                background: linear-gradient(360deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
-            .circulor
-                background: linear-gradient(187deg, #FFEEEE 20%, #EDFCFF 30%, #FAFBFC 40%)
-            .client-info
-                padding: 24px
-                display: flex
-                max-width: 680px
-                flex: 1 1 600px
-                flex-direction: column
-                box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                border-radius: 24px
-                margin-top: 86px
-                position: relative
-                min-height: 394px
-                .client-avatar-img
-                    position: absolute
-                    top: -50px
-                    left: 32px
-                    width: 64px
-                    height: 64px
-                .client-avatar-container
-                    display: flex
-                    justify-content: space-between
-                    padding-bottom: 16px
-                    border-bottom: 1px solid #DEE2E6
-                    margin-bottom: 12px
-                    .client-descr
-                        display: flex
-                        flex-direction: column
-                        justify-content: center
-                        text-align: start
-                        .client-name
-                            font-size: 18px
-                            font-weight: 500
-                            line-height: 28px
-                            color: $dark-text-color
-                        .client-title
-                            font-size: 16px
-                            font-weight: 400
-                            line-height: 24px
-                    .client-logo-img
-                        height: 50px
-                        padding-bottom: 20px 
-                        img
-                            height: 100%
-                    .client-logo-img.senseing-logo
-                        padding-bottom: 0px
-                .client-feedback
-                    font-size: 16px
-                    font-weight: 400
-                    line-height: 24px
-                    .info-btns
-                        display: flex
-                        justify-content: flex-start
-                        gap: 8px
-                        margin-bottom: 20px
-                        .info-btn-label
                             background: #FAFBFC
-                            color: #343A40
-                            border-radius: 6px
-                            padding: 4px 12px
-                            border: 1px solid #DEE2E6
-                        .info-btn-tag
-                            background: #E0F2FE
-                            color: #026AA2
-                            border: 1px solid #065986
-                            border-radius: 6px
-                            padding: 4px 12px
-    
-    .questions-section
-        @include content-container(120px)
-        z-index: 1
-        background: transparent
-        .question-section-title
-            font-size: 48px
-            line-height: 120%
-            margin-bottom: 56px
-            text-align: center
-        .questions-section-cards
-            display: flex
-            flex-direction: column
-            gap: 16px
-            .questions-section-card
-                width: 100%
-                max-height: 76px
-                padding: 24px 40px
-                border-radius: 24px
-                box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
-                background: #FAFBFC
-                transition: max-height 0.6s ease
-                .questions-section-header
-                    @include expandable-header()
-                    &::after
-                        top: 10px
-                    .questions-section-title
-                        width: 100%
-                        display: flex
-                        align-items: center
-                        h3
-                            font-size: 20px
-                            font-weight: 400
-                            line-height: 140%
-                        .questions-section-num
-                            width: 292px
-                            font-size: 20px
-                            font-weight: 400
-                            line-height: 140%
-                .questions-section-content
-                    max-height: 0px
-                    overflow: hidden
-                    display: flex
-                    flex-direction: column
-                    gap: 20px
-                    .key-services
-                        font-size: 16px
-                        font-weight: 500
-                    ol
-                        li
-                            list-style: auto
-                &.expanded
-                    max-height: 1300px
-                    .questions-section-content
-                        max-height: 1300px
-                        overflow: visible
-                        padding: 20px 292px
-                    .questions-section-header
-                        padding-bottom: 20px
-                        border-bottom: 1px solid #BDBDBD
-                        @include expandable-rotated(180deg)
-    
-    .contact-us-section
-        .ellipse-right
-            position: absolute
-            width: 1017px
-            height: 612px
-            background: #FFF4E5
-            right: -200px
-            top: -100px
-            border-radius: 50%
-            transform: rotate(-135deg)
-            filter: blur(200px)
-        .ellipse-left
-            position: absolute
-            width: 1017px
-            height: 612px
-            background: #E0FEFF
-            left: -300px
-            top: -100px
-            border-radius: 50%
-            transform: rotate(30deg)
-            filter: blur(200px)
-        .ellipse-bottom
-            position: absolute
-            width: 2528px
-            height: 824px
-            bottom: -200px
-            left: -400px
-            z-index: 0
-            border-radius: 50%
-            filter: blur(200px)
-            background: #51A3FF
-            opacity: 15%
-        .contact-us-section-content
-            @include content-container(120px)
-            .contact-us-container
-                position: relative
-                background: linear-gradient(180deg, #2A7DEC 0%, #2264BD 100%)
-                border-radius: 24px
-                display: flex
-                padding: 8px
-                gap: 8px
-                .contact-us-descr
-                    width: 42%
-                    display: flex
-                    flex-direction: column
-                    justify-content: space-between
-                    padding: 40px
-                    z-index: 1
-                    .contact-us-descr-container
-                        display: flex
-                        flex-direction: column
-                        gap: 16px
-                        h2
-                            font-size: 48px
-                            font-weight: 400
-                            line-height: 120%
-                            color: $light-text-color
-                        h5
-                            font-size: 20px
-                            font-weight: 400
-                            line-height: 140%
-                            color: $light-text-color
-                    .client-avatar-container
-                        display: flex
-                        justify-content: flex-start
-                        gap: 16px
-                        .client-avatar-img
-                            img
-                                width: 64px
-                                height: 64px
-                        .client-descr
-                            display: flex
-                            flex-direction: column
-                            justify-content: center
-                            text-align: start
-                            .client-name
-                                font-size: 18px
-                                font-weight: 500
-                                line-height: 28px
-                                color: $light-text-color
-                            .client-title
-                                font-size: 16px
-                                font-weight: 400
-                                line-height: 24px
-                                color: $light-text-color
-                .contact-us-form
-                    width: 58%
-                    z-index: 1
-                    background: #FAFBFC
-                    padding: 32px
-                    border-radius: 24px
-                    .form-section
-                        display: flex
-                        justify-content: space-around
-                        .form-element
-                            margin-bottom: 15px
-                            width: 48%
-                            label
-                                position: relative
-                                width: 100%
-                                p
-                                    color: $form-element-label-color
-                                    font-size: 12px
-                                    line-height: 16px 
-                                    font-style: $font-style-normal 
-                                    font-weight: 400
-                                    letter-spacing: 0.4px
-                                    position: absolute
-                                    top: -8px
-                                    left: 10px
-                                    z-index: 2
-                                    padding: 0px 5px
-                                    background: #FAFBFC
+                            padding: 32px
+                            border-radius: 24px
+                            .form-section
+                                display: flex
+                                justify-content: space-around
+                                .form-element
+                                    margin-bottom: 15px
+                                    width: 48%
+                                    label
+                                        position: relative
+                                        width: 100%
+                                        p
+                                            color: $form-element-label-color
+                                            font-size: 12px
+                                            line-height: 16px 
+                                            font-style: $font-style-normal 
+                                            font-weight: 400
+                                            letter-spacing: 0.4px
+                                            position: absolute
+                                            top: -8px
+                                            left: 10px
+                                            z-index: 2
+                                            padding: 0px 5px
+                                            background: #FAFBFC
 
-                                .cdu-form-control, .cdu-text-area
+                                        .cdu-form-control, .cdu-text-area
+                                            width: 100%
+                                            color: #898B8F
+                                            font-size: 16px
+                                            font-style: normal
+                                            font-weight: 400
+                                            line-height: 24px
+                                            letter-spacing: 0.15px
+                                            border-radius: 4px
+                                            border: $form-control-border
+                                            padding: 16px 18px
+
+                                        .cdu-text-area
+                                            height: 170px
+
+                                    .label-select
+                                        select 
+                                            width: 100%
+                                            appearance: none
+                                            -webkit-appearance: none
+                                            -moz-appearance: none
+                                            &::-ms-expand 
+                                                display: none
+
+                                        &::after
+                                            content: ""
+                                            position: absolute
+                                            top: 40%
+                                            right: 10px
+                                            width: 16px
+                                            height: 16px
+                                            background: url(/images/pe/read-more-arrow.svg) no-repeat center
+                                            transform: rotate(90deg)
+                                            transform-origin: center center
+
+                                .next
+                                    width: 98%
+
+                            .secondary
+                                padding-top: 0px
+                            
+                            .questionnaire-section
+                                display: flex
+                                flex-direction: column
+                                gap: 32px
+                                fieldset
+                                    border: none
+                                    padding: 0
+
+                                legend
+                                    font-weight: bold
+                                    margin-bottom: 10px
+                                    display: block
+
+                                span
+                                    font-weight: normal
+                                    color: #888
+                                    font-size: 13px
+                                    margin-left: 6px
+                                
+                                .label-container
+                                    display: flex
+                                    flex-wrap: wrap
+
+                                    label
+                                        display: block
+                                        width: 50%
+                                        margin-bottom: 10px
+                                        cursor: pointer
+
+                                    input[type="radio"]
+                                        margin-right: 8px
+                                        vertical-align: middle
+                                .label-container.last
+                                    label
+                                        width: 100%
+
+                            .submit-button-container
+                                display: flex
+                                justify-content: center
+                                .cdu-button
+                                    padding: 15px
+                                    border-radius: 6px
+                                    color: white
+                                    background-color: $button-background-color
                                     width: 100%
-                                    color: #898B8F
-                                    font-size: 16px
-                                    font-style: normal
-                                    font-weight: 400
-                                    line-height: 24px
-                                    letter-spacing: 0.15px
-                                    border-radius: 4px
-                                    border: $form-control-border
-                                    padding: 16px 18px
-
-                                .cdu-text-area
-                                    height: 170px
-
-                            .label-select
-                                select 
-                                    width: 100%
-                                    appearance: none
-                                    -webkit-appearance: none
-                                    -moz-appearance: none
-                                    &::-ms-expand 
-                                        display: none
-
-                                &::after
-                                    content: ""
-                                    position: absolute
-                                    top: 40%
-                                    right: 10px
-                                    width: 16px
-                                    height: 16px
-                                    background: url(/images/pe/read-more-arrow.svg) no-repeat center
-                                    transform: rotate(90deg)
-                                    transform-origin: center center
-
-                        .next
-                            width: 98%
-
-                    .secondary
-                        padding-top: 0px
+                                    margin-top: 40px
+                        .contact-us-pattern
+                            position: absolute
+                            bottom: 0px
+                            left: 0px
+                            overflow: hidden
                     
-                    .questionnaire-section
-                        display: flex
-                        flex-direction: column
-                        gap: 32px
-                        fieldset
-                            border: none
-                            padding: 0
+                            
+        // .cdu-services
+        //     padding: 140px 0 0px 0
+        //     background-color: white
 
-                        legend
-                            font-weight: bold
-                            margin-bottom: 10px
-                            display: block
+        //     .header
+        //         display: flex
+        //         flex-direction: row
+        //         align-items: flex-start
+        //         position: relative
+        //         z-index: 1
+        //         padding: 0 120px
+        //         opacity: 0
+        //         transform: translate3d(0, 45px, 0)
 
-                        span
-                            font-weight: normal
-                            color: #888
-                            font-size: 13px
-                            margin-left: 6px
-                        
-                        .label-container
-                            display: flex
-                            flex-wrap: wrap
+        //     .header-animation
+        //         animation-name: slideup-in
+        //         animation-duration: 1000ms
+        //         animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+        //         animation-fill-mode: forwards
 
-                            label
-                                display: block
-                                width: 50%
-                                margin-bottom: 10px
-                                cursor: pointer
+        //         .side-title
+        //             margin-right: 100px
+        //             min-width: 202px
+        //             margin-top: 14px
 
-                            input[type="radio"]
-                                margin-right: 8px
-                                vertical-align: middle
-                        .label-container.last
-                            label
-                                width: 100%
+        //         .section-title
+        //             max-width: 700px
+        //             min-width: 700px
+        //             line-height: 68px
+        //             margin-right: 40px
 
-                    .submit-button-container
-                        display: flex
-                        justify-content: center
-                        .cdu-button
-                            padding: 15px
-                            border-radius: 6px
-                            color: white
-                            background-color: $button-background-color
-                            width: 100%
-                            margin-top: 40px
-                .contact-us-pattern
-                    position: absolute
-                    bottom: 0px
-                    left: 0px
-                    overflow: hidden
-                
-                        
-    // .cdu-services
-    //     padding: 140px 0 0px 0
-    //     background-color: white
+        //         .section-text
+        //             margin-top: 12px
 
-    //     .header
-    //         display: flex
-    //         flex-direction: row
-    //         align-items: flex-start
-    //         position: relative
-    //         z-index: 1
-    //         padding: 0 120px
-    //         opacity: 0
-    //         transform: translate3d(0, 45px, 0)
+        //     .poc
+        //         position: relative
+        //         display: flex
+        //         justify-content: space-between
+        //         padding: 110px 120px
+        //         z-index: 1
 
-    //     .header-animation
-    //         animation-name: slideup-in
-    //         animation-duration: 1000ms
-    //         animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-    //         animation-fill-mode: forwards
+        //         #solution-poc
+        //             object-fit: contain
+        //             width: 100%
+        //             max-width: fit-content
 
-    //         .side-title
-    //             margin-right: 100px
-    //             min-width: 202px
-    //             margin-top: 14px
+        //         #solution-widget-1
+        //             object-fit: contain
+        //             width: 38%
+        //             max-width: fit-content
+        //             top: 26%
+        //             left: 74%
 
-    //         .section-title
-    //             max-width: 700px
-    //             min-width: 700px
-    //             line-height: 68px
-    //             margin-right: 40px
+        //         #solution-widget-2
+        //             object-fit: contain
+        //             width: 29%
+        //             max-width: fit-content
+        //             top: 72%
+        //             left: 49%
 
-    //         .section-text
-    //             margin-top: 12px
+        //         .right-block
+        //             display: flex
+        //             flex-direction: column
+        //             justify-content: center
+        //             max-width: 410px
 
-    //     .poc
-    //         position: relative
-    //         display: flex
-    //         justify-content: space-between
-    //         padding: 110px 120px
-    //         z-index: 1
+        //     .left-block
+        //         position: relative
+        //     .rigth-block
+        //         position: relative
 
-    //         #solution-poc
-    //             object-fit: contain
-    //             width: 100%
-    //             max-width: fit-content
+        //     .mvp
+        //         position: relative
+        //         padding: 80px 202px 80px 137px
+        //         display: flex
+        //         justify-content: space-between
+        //         align-items: center
+        //         z-index: 2
 
-    //         #solution-widget-1
-    //             object-fit: contain
-    //             width: 38%
-    //             max-width: fit-content
-    //             top: 26%
-    //             left: 74%
+        //         .left-block
+        //             max-width: 620px
 
-    //         #solution-widget-2
-    //             object-fit: contain
-    //             width: 29%
-    //             max-width: fit-content
-    //             top: 72%
-    //             left: 49%
+        //         #solution-widget-3
+        //             top: 42%
+        //             left: 61%
 
-    //         .right-block
-    //             display: flex
-    //             flex-direction: column
-    //             justify-content: center
-    //             max-width: 410px
+        //     .market-solution
+        //         position: relative
+        //         padding: 120px 130px 200px 130px
+        //         display: flex
+        //         justify-content: space-between
+        //         z-index: 1
+        //         background-color: white
 
-    //     .left-block
-    //         position: relative
-    //     .rigth-block
-    //         position: relative
+        //         .left-block
+        //             padding-left: 230px
+        //             z-index: 1
 
-    //     .mvp
-    //         position: relative
-    //         padding: 80px 202px 80px 137px
-    //         display: flex
-    //         justify-content: space-between
-    //         align-items: center
-    //         z-index: 2
+        //             #solution-market-solution1
+        //                 width: 768px
 
-    //         .left-block
-    //             max-width: 620px
+        //             #solution-market-solution2
+        //                 top: 32%
+        //                 left: 7%
+        //                 width: 768px
 
-    //         #solution-widget-3
-    //             top: 42%
-    //             left: 61%
+        //         .right-block
+        //             padding-top: 76px
+        //             max-width: 520px
 
-    //     .market-solution
-    //         position: relative
-    //         padding: 120px 130px 200px 130px
-    //         display: flex
-    //         justify-content: space-between
-    //         z-index: 1
-    //         background-color: white
+        //     .additionally
+        //         position: relative
+        //         padding: 100px 130px
+        //         display: flex
+        //         flex-direction: column
+        //         z-index: 0
 
-    //         .left-block
-    //             padding-left: 230px
-    //             z-index: 1
+        //         .side-title
+        //             z-index: 1
+        //             margin-bottom: 40px
 
-    //             #solution-market-solution1
-    //                 width: 768px
+        //         .info
+        //             display: flex
+        //             z-index: 1
+        //             .left-block
+        //                 max-width: 1000px
+        //                 .section-title
+        //                     line-height: 68px
 
-    //             #solution-market-solution2
-    //                 top: 32%
-    //                 left: 7%
-    //                 width: 768px
+        //             .right-block
+        //                 padding: 62px 0 0 200px
+        //                 button
+        //                     border-radius: 6px
+        //                     border: 1px solid #3622A4
+        //                     background: #F7F9FC
+        //                     color: #3622A4
+        //                     text-align: center
+        //                     font-size: 20px
+        //                     font-style: normal
+        //                     font-weight: 500
+        //                     line-height: 40px
+        //                     letter-spacing: 0.03px
+        //                     padding: 10px 70px
 
-    //         .right-block
-    //             padding-top: 76px
-    //             max-width: 520px
+        //         #additionally-bg1
+        //             position: absolute
+        //             width: 2000px
+        //             height: 2000px
+        //             border-radius: 50%
+        //             top: -100%
+        //             left: -50%
+        //             opacity: 0.6
+        //             background: radial-gradient(#949ef2 0%, transparent 60%)
 
-    //     .additionally
-    //         position: relative
-    //         padding: 100px 130px
-    //         display: flex
-    //         flex-direction: column
-    //         z-index: 0
+        //         #additionally-bg2
+        //             position: absolute
+        //             width: 2000px
+        //             height: 2000px
+        //             border-radius: 50%
+        //             top: -180%
+        //             left: 50%
+        //             opacity: 0.6
+        //             background: radial-gradient(#949ef2 0%, transparent 60%)
 
-    //         .side-title
-    //             z-index: 1
-    //             margin-bottom: 40px
+        // .testimonials
+        //     position: relative
+        //     background: white
+        //     padding: 180px 0 30px 0
+        //     display: flex
+        //     flex-direction: column
+        //     z-index: 3
 
-    //         .info
-    //             display: flex
-    //             z-index: 1
-    //             .left-block
-    //                 max-width: 1000px
-    //                 .section-title
-    //                     line-height: 68px
+        //     #carousel-wrapper
+        //         max-width: 1200px
 
-    //             .right-block
-    //                 padding: 62px 0 0 200px
-    //                 button
-    //                     border-radius: 6px
-    //                     border: 1px solid #3622A4
-    //                     background: #F7F9FC
-    //                     color: #3622A4
-    //                     text-align: center
-    //                     font-size: 20px
-    //                     font-style: normal
-    //                     font-weight: 500
-    //                     line-height: 40px
-    //                     letter-spacing: 0.03px
-    //                     padding: 10px 70px
+        //     .upper-block
+        //         display: flex
+        //         padding: 0 130px
+        //         .side-title
+        //             margin-top: 15px
+        //             margin-right: 94px
 
-    //         #additionally-bg1
-    //             position: absolute
-    //             width: 2000px
-    //             height: 2000px
-    //             border-radius: 50%
-    //             top: -100%
-    //             left: -50%
-    //             opacity: 0.6
-    //             background: radial-gradient(#949ef2 0%, transparent 60%)
-
-    //         #additionally-bg2
-    //             position: absolute
-    //             width: 2000px
-    //             height: 2000px
-    //             border-radius: 50%
-    //             top: -180%
-    //             left: 50%
-    //             opacity: 0.6
-    //             background: radial-gradient(#949ef2 0%, transparent 60%)
-
-    // .testimonials
-    //     position: relative
-    //     background: white
-    //     padding: 180px 0 30px 0
-    //     display: flex
-    //     flex-direction: column
-    //     z-index: 3
-
-    //     #carousel-wrapper
-    //         max-width: 1200px
-
-    //     .upper-block
-    //         display: flex
-    //         padding: 0 130px
-    //         .side-title
-    //             margin-top: 15px
-    //             margin-right: 94px
-
-    //         .section-title
-    //             line-height: 68px
+        //         .section-title
+        //             line-height: 68px
 
     .get-in-touch
         position: relative
@@ -2054,7 +2056,7 @@ h2
         width: 100%
         height: 100%
         background-color: $modal-background-color
-    
+
         .modal-content 
             animation-name: animatetop
             animation-duration: 0.4s
