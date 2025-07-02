@@ -493,7 +493,7 @@ selfManagedPlan:
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button onclick="openModal()" id="calculate_your_pricing" class="button gtm_button">Calculate your pricing</button>
+                <button id="openCalculatorBtn" class="button clulator gtm_button">Calculate your pricing</button>
             </div>
             <div class="add-ons">
                 <h2>Optional add-ons</h2>
@@ -877,10 +877,28 @@ selfManagedPlan:
                     </div>
                 </div>
            </div>
-            <div class="row justify-content-center" style="margin-top: 60px">
-                <a id="Pricing_PE_SM_Perpetual" class="button btn-pricing gtm_button" href="/docs/contact-us/" style="margin:0">
-                    Contact Us
-                </a>
+            <div class="additional-content">
+                <div class="add-ons">
+                    <h2>Optional add-ons</h2>
+                    <p>Customize your deployment with optional features to suit your business needs.</p>
+                    <div class="cards">
+                        <div class="card">
+                            <h3>Custom IoT solutions</h3>
+                            <a style="margin-bottom: 16px" class="button reset gtm_button" href="/docs/contact-us/">Contact Us</a>
+                            <p>Fast delivery with fixed costs and timeline</p>
+                        </div>
+                        <div class="card">
+                            <h3>Dev/Test Environments</h3>
+                            <h4>$1499</h4>
+                            <p>Accelerate your development and testing cycles</p>
+                        </div>
+                        <div class="card">
+                            <h3>White-labeled Mobile App</h3>
+                            <h4>$99 <span>each per month</span></h4>
+                            <p>+ $1000 one time setup fee</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

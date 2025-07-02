@@ -218,93 +218,79 @@ smart-retail:
     width: 1819
     height: 966
 
-air-quality-monitoring-1:
+air-quality-monitoring:
   0:
-    src: "https://img.thingsboard.io/usecases/air-quality/aq1.png"
-    alt: "air quality 1"
-    width: 1920
-    height: 866
+    src: "https://img.thingsboard.io/usecases/air-quality/aiq-1.webp"
+    alt: "Interactive AQI heatmap of Los Angeles on the ThingsBoard IoT Platform"
+    imageTitleAttribute: "AQI map of Los Angeles monitored via ThingsBoard"
+    width: 1302
+    height: 699
   1:
-    src: "https://img.thingsboard.io/usecases/air-quality/aq2.png"
-    alt: "air quality 2"
-    width: 1920
-    height: 866
-  2:
-    src: "https://img.thingsboard.io/usecases/air-quality/aq3.png"
-    alt: "air quality 3"
-    width: 1920
-    height: 866
-
-air-quality-monitoring-2:
-  0:
-    src: "https://img.thingsboard.io/usecases/air-quality/aq4.png"
-    alt: "air quality 4"
-    width: 1920
-    height: 866
-  1:
-    src: "https://img.thingsboard.io/usecases/air-quality/aq5.png"
-    alt: "air quality 5"
-    width: 1920
-    height: 866
+    src: "https://img.thingsboard.io/usecases/air-quality/aiq-2.webp"
+    alt: "Live PM10 air quality metrics for Beverly Hills on ThingsBoard dashboard"
+    imageTitleAttribute: "PM10 air quality levels in Beverly Hills displayed in ThingsBoard"
+    width: 1302
+    height: 699
+  3:
+    src: "https://img.thingsboard.io/usecases/air-quality/aiq-4.webp"
+    alt: "IoT air quality sensors and alerts visualized on ThingsBoard map dashboard"
+    imageTitleAttribute: "Live air quality sensors and alerts across LA in ThingsBoard"
+    width: 1302
+    height: 699
+  4:
+    src: "https://img.thingsboard.io/usecases/air-quality/aiq-5.webp"
+    alt: "Sensor metrics for Beverly Hills including AQI and battery on ThingsBoard"
+    imageTitleAttribute: "Sensor data for Beverly Hills – AQI, battery and status"
+    width: 1302
+    height: 699
 
 smart-irrigation:
   0:
-    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-1.png"
-    alt: "smart irrigation 1"
-    width: 1500
-    height: 730
+    src: "https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-1.webp"
+    alt: "Satellite view of crop fields with real-time moisture levels and chart in ThingsBoard"
+    imageTitleAttribute: "Soil moisture monitoring for wheat and corn fields using ThingsBoard"
+    width: 1302
+    height: 699
   1:
-    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-2.png"
-    alt: "smart irrigation 2"
-    width: 1500
-    height: 730
-  2:
-    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-3.png"
-    alt: "smart irrigation 3"
-    width: 1500
-    height: 730
+    src: "https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-2.webp"
+    alt: "Field configuration form for setting crop type and moisture range in ThingsBoard"
+    imageTitleAttribute: "Add a new field and define crop type and soil moisture thresholds"
+    width: 1302
+    height: 699
   3:
-    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-4.png"
-    alt: "smart irrigation 4"
-    width: 1500
-    height: 730
-  4:
-    src: "https://img.thingsboard.io/solutions/smart_irrigation/smart-irrigation-5.png"
-    alt: "smart irrigation 5"
-    width: 1500
-    height: 730
+    src: "https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-4.webp"
+    alt: "Dashboard showing irrigation status, alarms, field map, and moisture statistics in ThingsBoard"
+    imageTitleAttribute: "Irrigation and soil monitoring dashboard for smart agriculture"
+    width: 1302
+    height: 699
+  6:
+    src: "https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-7.webp"
+    alt: "Active and cleared alarms for soil moisture and battery levels in ThingsBoard"
+    imageTitleAttribute: "View and manage critical alerts from field sensors in the irrigation system"
+    width: 1302
+    height: 699
 
 waste-management:
   0:
-    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-1.png"
-    alt: "waste monitoring 1"
-    width: 1500
-    height: 741
+    src: "https://img.thingsboard.io/usecases/waste-monitoring/waste-1.webp"
+    alt: "Smart waste management dashboard with bin status, battery levels, and interactive map in ThingsBoard"
+    imageTitleAttribute: "Live overview of smart waste bins, battery alerts, and location tracking via ThingsBoard IoT"
   1:
-    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-2.png"
-    alt: "waste monitoring 2"
-    width: 1500
-    height: 741
+    src: "https://img.thingsboard.io/usecases/waste-monitoring/waste-2.webp"
+    alt: "Sensor registration dialog for uploading CSV file with bin data in ThingsBoard"
+    imageTitleAttribute: "Register multiple smart bin sensors by importing CSV in ThingsBoard"
   2:
-    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-3.png"
-    alt: "waste monitoring 3"
-    width: 1500
-    height: 741
+    src: "https://img.thingsboard.io/usecases/waste-monitoring/waste-3.webp"
+    alt: "Alarm rule configuration for bin fullness and battery level in ThingsBoard"
+    imageTitleAttribute: "Define alarm rules – fullness over 90%, battery below 30% (ThingsBoard IoT)"
   3:
-    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-4.png"
-    alt: "waste monitoring 4"
-    width: 1500
-    height: 741
+    src: "https://img.thingsboard.io/usecases/waste-monitoring/waste-4.webp"
+    alt: "Edit bin sensor data including location and address in ThingsBoard"
+    imageTitleAttribute: "Modify sensor details – serial number, address, GPS coordinates"
   4:
-    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-5.png"
-    alt: "waste monitoring 5"
-    width: 1500
-    height: 741
-  5:
-    src: "https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-6.png"
-    alt: "waste monitoring 6"
-    width: 1500
-    height: 741
+    src: "https://img.thingsboard.io/usecases/waste-monitoring/waste-5.webp"
+    alt: "Smart bin sensor detail view with charts for fullness and battery history in ThingsBoard"
+    imageTitleAttribute: "Sensor data trends – fullness and battery level monitoring over time"
 
 health-care:
   0:

@@ -963,7 +963,7 @@ In other cases Message will be routed via **Success** chain.
 
 ## Create Relation Node 
 
-<table  style="min-width:12%; max-width: 20%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
@@ -1019,7 +1019,7 @@ In other cases Message will be routed via **Success** chain.
 
 ## Delete Relation Node
 
-<table  style="min-width:12%; max-width: 20%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
@@ -1061,7 +1061,7 @@ In other cases Message will be routed via **Success** chain.
 
 ## GPS Geofencing Events Node
 
-<table  style="width:15%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
