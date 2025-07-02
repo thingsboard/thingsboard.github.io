@@ -5,184 +5,184 @@ description: ThingsBoard Trendz - Business Intelligence and Analytics Platform f
 
 demo-topology:
   0:
-    image: /images/trendz/getting-started/demo-topology-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/demo-topology-1.png
     title: "Relationship between business entities that are used in getting-started guide."
   1:
-    image: /images/trendz/getting-started/demo-topology-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/demo-topology-2.png
     title: "Business entity fields of EM building asset."
   2:
-    image: /images/trendz/getting-started/demo-topology-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/demo-topology-3.png
     title: "Business entity fields of EM apartment asset."
   3:
-    image: /images/trendz/getting-started/demo-topology-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/demo-topology-4.png
     title: "Business entity fields of EM energy meter device."
   4:
-    image: /images/trendz/getting-started/demo-topology-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/demo-topology-5.png
     title: "Business entity fields of EM heat meter device."
 
 discover-topology:
   0:
-    image: /images/trendz/getting-started/topology1.png
+    image: https://img.thingsboard.io/trendz/getting-started/topology1.png
     title: "Once logged in you should click on <b>Discover Topology</b> button to discover ThingsBoard entities."
   1:
-    image: /images/trendz/getting-started/topology2.png
+    image: https://img.thingsboard.io/trendz/getting-started/topology2.png
     title: 'When Topology Discovery finished click <b>Finish</b>.'
 
 first-view:
   0:
-    image: /images/trendz/getting-started/first-view-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-1.png
     title: "On the home page, click the <b>Create view</b> button and select <b>Line</b>."
   1:
-    image: /images/trendz/getting-started/first-view-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-2.png
     title: "Drag and drop all necessary fields to each section."
   2:
-    image: /images/trendz/getting-started/first-view-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-3.png
     title: "Set the date picker to <b>Today</b>, and set \"Group by\" to <b>Hour</b>."
   3:
-    image: /images/trendz/getting-started/first-view-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-4.png
     title: "Add `EM building.EM building` into the filters section to view the consumption of a specific building."
   4:
-    image: /images/trendz/getting-started/first-view-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-5.png
     title: "Click <b>Build report</b> — you will see a generated line chart, broken down by buildings."
   5:
-    image: /images/trendz/getting-started/first-view-6.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-6.png
     title: "Rename the view by clicking the pencil icon next to the name and name it \"Building energy consumption trends for today\"."
   6:
-    image: /images/trendz/getting-started/first-view-7.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-7.png
     title: "Click the <b>Save Changes</b> button to save the chart."
   7:
-    image: /images/trendz/getting-started/first-view-8.png
+    image: https://img.thingsboard.io/trendz/getting-started/first-view-8.png
     title: "In the pop-up section, click the <b>Save</b> button."
 
 add-to-tb:
   0:
-    image: /images/trendz/getting-started/add-to-tb-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/add-to-tb-1.png
     title: "Click the <b>Share to ThingsBoard</b> button and choose <b>Add on New Dashboard</b>."
   1:
-    image: /images/trendz/getting-started/add-to-tb-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/add-to-tb-2.png
     title: "Set the dashboard name to `Energy consumption`, leave the rest of the settings as default. Click <b>Add</b> button."
   2:
-    image: /images/trendz/getting-started/add-to-tb-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/add-to-tb-3.png
     title: "On the ThingsBoard platform, you will see a new dashboard named `Energy consumption` with a generated alias and Trendz line view."
 
 create-calculation:
   0:
-    image: /images/trendz/getting-started/create-calculation-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-calculation-1.png
     title: "Go to the <b>Calculated Fields</b> page and Click the <b>Create Calculated Field</b> button"
   1:
-    image: /images/trendz/getting-started/create-calculation-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-calculation-2.png
     title: "Set the name to `Consumption Per Square Meter`, the key to `cons_per_sq_meter` and the entity to `EM apartment`."
   2:
-    image: /images/trendz/getting-started/create-calculation-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-calculation-3.png
     title: "Copy and paste the following code into the code editor, than click <b>Run Test</b>."
   3:
-    image: /images/trendz/getting-started/create-calculation-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-calculation-4.png
     title: "Validate the calculation and click <b>Save Field</b> button to save it."
   4:
-    image: /images/trendz/getting-started/create-calculation-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-calculation-5.png
     title: "In the popup window, click <b>Enable</b>."
   5:
-    image: /images/trendz/getting-started/create-calculation-6.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-calculation-6.png
     title: "Enable calculation result saving and click the <b>Save</b> button."
   
 calculation-view:
   0:
-    image: /images/trendz/getting-started/calculation-view-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-1.png
     title: "On the home page, click the <b>Create view</b> button and select <b>Table</b>."
   1:
-    image: /images/trendz/getting-started/calculation-view-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-2.png
     title: "Add all necessary fields to each section."
   2:
-    image: /images/trendz/getting-started/calculation-view-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-3.png
     title: "Set up date fields and filters."
   3:
-    image: /images/trendz/getting-started/calculation-view-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-4.png
     title: "Click <b>Build report</b>."
   4:
-    image: /images/trendz/getting-started/calculation-view-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-5.png
     title: "Rename the view to \"Apartments total consumption per square meter for today\"."
   5:
-    image: /images/trendz/getting-started/calculation-view-6.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-6.png
     title: "Click the <b>Save Changes</b> button to save the chart."
   6:
-    image: /images/trendz/getting-started/calculation-view-7.png
+    image: https://img.thingsboard.io/trendz/getting-started/calculation-view-7.png
     title: "In the pop-up section, click the <b>Save</b> button."
 
 create-prediction:
   0:
-    image: /images/trendz/getting-started/create-prediction-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-prediction-1.png
     title: "Go to the <b>Prediction Model</b> page and click the <b>Create model</b> button."
   1:
-    image: /images/trendz/getting-started/create-prediction-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-prediction-2.png
     title: "Set the entity to `EM energy meter`, the prediction field to `energyConsumption`, the prediction method to `FOURIER_TRANSFORMATION` and the aggregation to `SUM`."
   2:
-    image: /images/trendz/getting-started/create-prediction-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-prediction-3.png
     title: "Click the <b>Train Model</b> button and wait until the accuracy tab is shown."
   3:
-    image: /images/trendz/getting-started/create-prediction-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-prediction-4.png
     title: "Click the <b>Jobs</b> button."
   4:
-    image: /images/trendz/getting-started/create-prediction-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/create-prediction-5.png
     title: "In the popup window, enable prediction model refreshing and click the <b>Save</b> button."
 
 prediction-view:
   0:
-    image: /images/trendz/getting-started/prediction-view-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-1.png
     title: "Click the <b>Create view</b> button and select <b>Bar</b>."
   1:
-    image: /images/trendz/getting-started/prediction-view-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-2.png
     title: "In the <b>X Axis</b> section, add `Date (DAY Mon-Sun)` (To select it, click on the date field in the <b>X Axis</b> section, and choose the appropriate aggregation using the dropdown. Click anywhere on the screen to close it.)."
   2:
-    image: /images/trendz/getting-started/prediction-view-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-3.png
     title: "Add all other fields to each section."
   3:
-    image: /images/trendz/getting-started/prediction-view-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-4.png
     title: "Click <b>Build report</b>."
   4:
-    image: /images/trendz/getting-started/prediction-view-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-5.png
     title: "Rename the view to \"Energy consumption forecast for this week\"."
   5:
-    image: /images/trendz/getting-started/prediction-view-6.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-6.png
     title: "Click the <b>Save Changes</b> button to save the chart."
   6:
-    image: /images/trendz/getting-started/prediction-view-7.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction-view-7.png
     title: "In the pop-up section, click the <b>Save</b> button."
 
 anomaly:
   0: 
-    image: /images/trendz/getting-started/anomaly-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly-1.png
     title: "Go to the <b>Anomaly Models</b> page and click the <b>Create model</b> button."
   1:
-    image: /images/trendz/getting-started/anomaly-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly-2.png
     title: "Set the entity to `EM energy meter`, the fields to `energyConsumption` only and the name to `Energy Meter Anomaly Model`."
   2:
-    image: /images/trendz/getting-started/anomaly-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly-3.png
     title: "Click <b>Build Model</b>."
   3:
-    image: /images/trendz/getting-started/anomaly-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly-4.png
     title: "Go to the <b>Review</b> tab, and validate the detected anomalies."
   4:
-    image: /images/trendz/getting-started/anomaly-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly-5.png
     title: "Click the <b>Jobs</b> button."
   5:
-    image: /images/trendz/getting-started/anomaly-6.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly-6.png
     title: "Enable anomaly model refreshing, saving anomaly data, anomaly alarms creation and click the <b>Save</b> button."
 
 ai-assistance:
   0:
-    image: /images/trendz/getting-started/ai-assistance-1.png
+    image: https://img.thingsboard.io/trendz/getting-started/ai-assistance-1.png
     title: "Go to the <b>Assistant</b> page and click <b>New Chat</b>."
   1:
-    image: /images/trendz/getting-started/ai-assistance-2.png
+    image: https://img.thingsboard.io/trendz/getting-started/ai-assistance-2.png
     title: "When prompted to select topology entities, click <b>Save</b>."
   2:
-    image: /images/trendz/getting-started/ai-assistance-3.png
+    image: https://img.thingsboard.io/trendz/getting-started/ai-assistance-3.png
     title: "In the chat input, type: \"I want to see how total energy consumption was changing during the last 14 days for each building\"."
   3:
-    image: /images/trendz/getting-started/ai-assistance-4.png
+    image: https://img.thingsboard.io/trendz/getting-started/ai-assistance-4.png
     title: "Review the generated view, validate the results and type a follow-up instruction: \"Show data only about Alpire building\"."
   4:
-    image: /images/trendz/getting-started/ai-assistance-5.png
+    image: https://img.thingsboard.io/trendz/getting-started/ai-assistance-5.png
     title: "Observe that a building filter has been added automatically."
 
 ---

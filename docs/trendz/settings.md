@@ -13,7 +13,7 @@ description: Trendz Settings Description
 
 To access settings, go to the **Settings** page by clicking the **“Settings”** button in the bottom-left corner of the screen.
 
-![Settings Navigation](/images/trendz/signing-key-1.png)
+![Settings Navigation](https://img.thingsboard.io/trendz/signing-key-1.png)
 
 ### Signing Key
 
@@ -36,23 +36,23 @@ An indicator in the settings shows whether the signing key is set and valid.
 Scroll to the bottom of the **Settings** page to find the **Signing Key** panel. You will see one of two options:
 
 - **The signing key is not valid (not set or expired)**  
-  ![Signing Key Invalid](/images/trendz/signing-key-2.png)
+  ![Signing Key Invalid](https://img.thingsboard.io/trendz/signing-key-2.png)
 
 - **The signing key is valid**  
-  ![Signing Key Valid](/images/trendz/signing-key-3.png)
+  ![Signing Key Valid](https://img.thingsboard.io/trendz/signing-key-3.png)
 
 **Setting the Signing Key**
 
 Follow these steps to configure the signing key:
 
 1. **Log in to ThingsBoard as a System Administrator**  
-   ![Login](/images/trendz/signing-key-4.png)
+   ![Login](https://img.thingsboard.io/trendz/signing-key-4.png)
 
 2. Go to **Security → General**  
-   ![Security General Page](/images/trendz/signing-key-5.png)
+   ![Security General Page](https://img.thingsboard.io/trendz/signing-key-5.png)
 
 3. Scroll to the **JWT Security Settings** section  
-   ![JWT Security](/images/trendz/signing-key-6.png)
+   ![JWT Security](https://img.thingsboard.io/trendz/signing-key-6.png)
 
 4. Copy the value from the **Signing key** field.
 
@@ -74,7 +74,7 @@ Follow these steps to configure the signing key:
      export JWT_TOKEN_SIGNING_KEY=<signing-key>
      ```
      {: .copy-code}
-     ![Ubuntu Signing Key](/images/trendz/signing-key-7.png)
+     ![Ubuntu Signing Key](https://img.thingsboard.io/trendz/signing-key-7.png)
 
   4. Save the file and restart the Trendz service.
 
@@ -89,7 +89,7 @@ Follow these steps to configure the signing key:
        - JWT_TOKEN_SIGNING_KEY=<signing-key>
      ```
      {: .copy-code}
-     ![Docker Signing Key](/images/trendz/signing-key-8.png)
+     ![Docker Signing Key](https://img.thingsboard.io/trendz/signing-key-8.png)
 
   3. Save the file and restart the Trendz container.
 
