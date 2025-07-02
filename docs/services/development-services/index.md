@@ -15,7 +15,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </div>
         <div class="request-concultation-container">
             <button id="Serv_DevServ_GetInTouch"
-                                onclick="onContactUsClick(1)"
+                                onclick="onContactUsClick(0)"
                                 class="cdu-button anchor-button gtm_button request-concultation">Request a consultation</button>
         </div>
     </div>
@@ -204,7 +204,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="vision-footer-text">Let’s build something that works and wins</div>
                 <button 
                     id="Serv_DevServ_GetInTouch"
-                    onclick="onContactUsClick(1)"
+                    onclick="onContactUsClick(0)"
                     class="cdu-button anchor-button gtm_button vision-footer-btn">
                     Get in Touch
                 </button>
@@ -529,7 +529,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <h2 class="get-in-touch-title">Discuss your IoT project with us</h2>
         <button 
             id="Serv_DevServ_GetInTouch"
-            onclick="onContactUsClick(1)"
+            onclick="onContactUsClick(0)"
             class="cdu-button anchor-button gtm_button get-in-touch-btn">
             Get in Touch
         </button>
@@ -676,7 +676,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <h2 class="get-in-touch-title">Book a free session with a ThingsBoard architect</h2>
             <button 
                 id="Serv_DevServ_GetInTouch"
-                onclick="onContactUsClick(1)"
+                onclick="onContactUsClick(0)"
                 class="cdu-button anchor-button gtm_button get-in-touch-btn">
                 Get in Touch
             </button>
@@ -857,7 +857,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <h2 class="get-in-touch-title">Let’s build your solution together</h2>
         <button 
             id="Serv_DevServ_GetInTouch"
-            onclick="onContactUsClick(1)"
+            onclick="onContactUsClick(0)"
             class="cdu-button anchor-button gtm_button get-in-touch-btn">
             Get in Touch
         </button>
@@ -1508,6 +1508,48 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         ];
         card.innerHTML = `${cards[index]}`
     }
+    // function populateUTMandClientIdFields() {
+    //     var $form = $('.developmentServicesContactUsForm');
+    //     if (!$form.length) return;
+
+    //     const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+    //     const utmData = {};
+
+    //     utmKeys.forEach(function(key) {
+    //         let value = getURLParam(key);
+    //         if (value) {
+    //             localStorage.setItem(key, value);
+    //         } else {
+    //             value = localStorage.getItem(key);
+    //         }
+
+    //         if (value) {
+    //             value = decodeURIComponent(value);
+    //             utmData[key] = value;
+    //             $form.find('input[name="' + key + '"]').val(value);
+    //         }
+    //     });
+
+    //     const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
+    //     if (gaCookie) {
+    //         const parts = gaCookie.split('.');
+    //         if (parts.length >= 4) {
+    //             const clientId = parts[2] + '.' + parts[3];
+    //             utmData['client_id'] = clientId;
+    //             $form.find('input[name="client_id"]').val(clientId);
+    //         }
+    //     }
+    //     window.dataLayer = window.dataLayer || [];
+    //     window.dataLayer.push({
+    //         event: 'utmDataReady',
+    //         ...utmData
+    //     });
+    // }
+
+    // function getURLParam(name) {
+    //     const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+    //     return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
+    // }
 
 
     var modal = document.getElementById("myModal");
@@ -1638,6 +1680,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             var $contactForm =  jQuery('.developmentServicesContactUsForm');
             $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
+                //populateUTMandClientIdFields();
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
                           }, 0);*/
