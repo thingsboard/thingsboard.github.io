@@ -80,15 +80,15 @@ collections:
     output: true
 
 release:
-  branch: release-4.0
+  branch: release-4.1
   branch_major_next: master
-  ver: 4.0.1
-  ce_ver: 4.0.1
-  ce_tag: v4.0.1
-  ce_full_ver: 4.0.1
-  pe_ver: 4.0.1pe
-  pe_full_ver: 4.0.1PE
-  wd_examples_commit: v4.0.1
+  ver: 4.1
+  ce_ver: 4.1
+  ce_tag: v4.1
+  ce_full_ver: 4.1.0
+  pe_ver: 4.1pe
+  pe_full_ver: 4.1.0PE
+  wd_examples_commit: v4.1
   # >>> EDGE
   edge_ver: 4.0.1
   edge_tag: v4.0.1
