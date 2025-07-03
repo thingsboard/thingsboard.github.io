@@ -46,7 +46,7 @@ Where:
 - `tb-postgres-data` - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-ce`             - friendly local name of the ThingsBoard container
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: "thingsboard/tb-node:4.0.1.1"`          - ThingsBoard docker image and version.
+- `image: "thingsboard/tb-node:{{ site.release.ce_full_ver }}"`          - ThingsBoard docker image and version.
 
 
 ## Initialize database schema & system assets
