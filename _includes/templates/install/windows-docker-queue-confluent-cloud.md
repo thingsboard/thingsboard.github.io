@@ -23,7 +23,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
   thingsboard-ce:
     restart: always
-    image: "thingsboard/tb-node:4.0.1.1"
+    image: "thingsboard/tb-node:{{ site.release.ce_full_ver }}"
     ports:
       - "8080:8080"
       - "7070:7070"
