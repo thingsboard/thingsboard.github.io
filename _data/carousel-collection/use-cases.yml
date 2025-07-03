@@ -55,30 +55,18 @@ tank-level-monitoring:
     width: 1819
     height: 977
   1:
-    src: "/images/usecases/tank-level-monitoring/tank-level-monitoring-2.webp"
-    alt: "Modal window for adding a new sensor with serial number and label fields in the ThingsBoard dashboard."
-    imageTitleAttribute: "Add New Sensor Form"
-    width: 1819
-    height: 977
-  2:
     src: "/images/usecases/tank-level-monitoring/tank-level-monitoring-3.webp"
     alt: "Dialog for setting alarm thresholds for tank monitoring, including fuel level, temperature, and battery."
     imageTitleAttribute: "Alarm Threshold Settings for Tanks"
     width: 1819
     height: 977
-  3:
-    src: "/images/usecases/tank-level-monitoring/tank-level-monitoring-4.webp"
-    alt: "Editing a sensor's serial number and label in the ThingsBoard tank monitoring interface."
-    imageTitleAttribute: "Edit Sensor 001133"
-    width: 1819
-    height: 977
-  4:
+  2:
     src: "/images/usecases/tank-level-monitoring/tank-level-monitoring-5.webp"
     alt: "Tank 1289 status dashboard showing fuel level, temperature, battery, and consumption chart."
     imageTitleAttribute: "Tank 1289 Monitoring Overview"
     width: 1819
     height: 977
-  5:
+  3:
     src: "/images/usecases/tank-level-monitoring/tank-level-monitoring-6.webp"
     alt: "Interface to configure tank shape, size, and measurement system for accurate monitoring."
     imageTitleAttribute: "Configure Tank Shape and Dimensions"
