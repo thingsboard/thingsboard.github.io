@@ -1510,48 +1510,48 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         ];
         card.innerHTML = `${cards[index]}`
     }
-    // function populateUTMandClientIdFields() {
-    //     var $form = $('.developmentServicesContactUsForm');
-    //     if (!$form.length) return;
+    function populateUTMandClientIdFields() {
+        var $form = $('.developmentServicesContactUsForm');
+        if (!$form.length) return;
 
-    //     const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
-    //     const utmData = {};
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        const utmData = {};
 
-    //     utmKeys.forEach(function(key) {
-    //         let value = getURLParam(key);
-    //         if (value) {
-    //             localStorage.setItem(key, value);
-    //         } else {
-    //             value = localStorage.getItem(key);
-    //         }
+        utmKeys.forEach(function(key) {
+            let value = getURLParam(key);
+            if (value) {
+                localStorage.setItem(key, value);
+            } else {
+                value = localStorage.getItem(key);
+            }
 
-    //         if (value) {
-    //             value = decodeURIComponent(value);
-    //             utmData[key] = value;
-    //             $form.find('input[name="' + key + '"]').val(value);
-    //         }
-    //     });
+            if (value) {
+                value = decodeURIComponent(value);
+                utmData[key] = value;
+                $form.find('input[name="' + key + '"]').val(value);
+            }
+        });
 
-    //     const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
-    //     if (gaCookie) {
-    //         const parts = gaCookie.split('.');
-    //         if (parts.length >= 4) {
-    //             const clientId = parts[2] + '.' + parts[3];
-    //             utmData['client_id'] = clientId;
-    //             $form.find('input[name="client_id"]').val(clientId);
-    //         }
-    //     }
-    //     window.dataLayer = window.dataLayer || [];
-    //     window.dataLayer.push({
-    //         event: 'utmDataReady',
-    //         ...utmData
-    //     });
-    // }
+        const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
+        if (gaCookie) {
+            const parts = gaCookie.split('.');
+            if (parts.length >= 4) {
+                const clientId = parts[2] + '.' + parts[3];
+                utmData['client_id'] = clientId;
+                $form.find('input[name="client_id"]').val(clientId);
+            }
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'development_services',
+            ...utmData
+        });
+    }
 
-    // function getURLParam(name) {
-    //     const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
-    //     return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
-    // }
+    function getURLParam(name) {
+        const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
+    }
 
 
     var modal = document.getElementById("myModal");
@@ -1580,20 +1580,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         }
     }
 
-    let cduHeader = document.querySelector(".cdu-services .header");
-
-    const headerObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("header-animation");
-                headerObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.5
-    });
-
-    headerObserver.observe(cduHeader);
 
     const sectionLists = document.querySelectorAll(".section-list");
 
@@ -1645,7 +1631,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     secondaryImages.forEach(element => {
         secondaryImagesObserver.observe(element)
     });
-    jqueryDefer(Owl);
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();
@@ -1682,10 +1667,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             var $contactForm =  jQuery('.developmentServicesContactUsForm');
             $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
-                //populateUTMandClientIdFields();
-               /*  $('html, body').animate({
-                            scrollTop: $('#contact-form').offset().top - 200
-                          }, 0);*/
+                populateUTMandClientIdFields();
                  $contactForm.find('.form-element .form-control').addClass("input--empty");
                  $contactForm.find('.form-element .form-control').on('input', function() {
                       if( !$(this).val() ) {
