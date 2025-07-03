@@ -1,7 +1,7 @@
 ThingsBoard service is running on Java 17. To install OpenJDK 17, follow these instructions
 
 ```bash
-sudo apt update && sudo apt install openjdk-17-jdk
+sudo apt update && sudo apt install openjdk-17-jdk-headless
 ```
 {: .copy-code}
 
