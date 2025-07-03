@@ -685,6 +685,31 @@
 
         .input-group
           position: relative
+
+          .tooltip
+            margin-left: 5px
+            position: relative
+            margin-bottom: 2px
+            &:hover
+              .tooltip-text
+                visibility: visible
+            img
+              width: 15px
+            .tooltip-text
+              position: absolute
+              z-index: 3
+              visibility: hidden
+              background-color: #000000c7
+              color: #fff
+              text-align: left
+              border-radius: 6px
+              padding: 5px
+              font-size: 12px
+              left: 19px
+              top: -3px
+              width: 400px
+              line-height: 24px
+
           label
             display: block
             font-size: 16px
