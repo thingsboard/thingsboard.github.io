@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -147,11 +147,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/tank-level-monitoring/gas-1.svg" alt="Oil & gas" title="Oil & gas"></div>
-            <div class="application-image"><img src="/images/usecases/scada-drilling-system/logistics.svg" alt="Logistics & transportation" title="Logistics & transportation"></div>
-            <div class="application-image"><img src="/images/usecases/smart-irrigation/agriculture-1.svg" alt="Agriculture" title="Agriculture"></div>
-            <div class="application-image"><img src="/images/usecases/tank-level-monitoring/manufacturing-1.svg" alt="Manufacturing & processing" title="Manufacturing & processing"></div>
-            <div class="application-image"><img src="/images/usecases/smart-metering/utilities-1.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/tank-level-monitoring/gas-1.svg" alt="Oil & gas" title="Oil & gas"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada-drilling-system/logistics.svg" alt="Logistics & transportation" title="Logistics & transportation"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/agriculture-1.svg" alt="Agriculture" title="Agriculture"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/tank-level-monitoring/manufacturing-1.svg" alt="Manufacturing & processing" title="Manufacturing & processing"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-metering/utilities-1.svg" alt="Municipal services" title="Municipal services"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -166,7 +166,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/tank-level-monitoring/gas-2.svg" alt="Oil & gas" title="Oil & gas"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/tank-level-monitoring/gas-2.svg" alt="Oil & gas" title="Oil & gas"></div>
             <div class="text-block">
                 <h3>Oil & gas</h3>
                 <p>Enables remote monitoring of fuel tanks with automated alarms and minimal maintenance requirements.</p>
@@ -177,10 +177,10 @@ contactUsModal: "true"
                 <h3>Logistics & transportation</h3>
                 <p>Tracks fuel levels in fleet tankers and depots, integrated with GPS and routing systems.</p>
             </div>
-            <div class="image"><img src="/images/usecases/scada-drilling-system/logistics-2.svg" alt="Logistics & transportation" title="Logistics & transportation"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada-drilling-system/logistics-2.svg" alt="Logistics & transportation" title="Logistics & transportation"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-irrigation/agriculture-2.svg" alt="Agriculture" title="Agriculture"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/agriculture-2.svg" alt="Agriculture" title="Agriculture"></div>
             <div class="text-block">
                 <h3>Agriculture</h3>
                 <p>Tracks water or fertilizer tank levels on farms, with location-based analysis and consumption forecasting.</p>
@@ -191,10 +191,10 @@ contactUsModal: "true"
                 <h3>Manufacturing & processing</h3>
                 <p>Monitors chemical storage tanks for compliance and safety in industrial environments.</p>
             </div>
-            <div class="image"><img src="/images/usecases/tank-level-monitoring/manufacturing-2.svg" alt="Manufacturing & processing" title="Manufacturing & processing"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/tank-level-monitoring/manufacturing-2.svg" alt="Manufacturing & processing" title="Manufacturing & processing"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-metering/utilities-2.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-metering/utilities-2.svg" alt="Municipal services" title="Municipal services"></div>
             <div class="text-block">
                 <h3>Municipal services</h3>
                 <p>Manages city tanks for drinking water or chemicals with centralized monitoring and regulatory reporting.</p>
@@ -209,7 +209,7 @@ contactUsModal: "true"
         <p>The ThingsBoard-based tank level monitoring solution automates fluid storage monitoring for any scale or complexity. With strong support for industrial protocols, real-time visualization, rule-based alarming, and device control, it is a perfect fit for B2B enterprises, public infrastructure, and industrial environments. Enhanced transparency and timely alarms lead to improved operational efficiency and reduced costs.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -330,12 +330,12 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/tank-level-monitoring/tank-level-monitoring-1.webp' data-bg='#F9F9F9' alt='Tank monitoring dashboard in light mode showing fuel level, temperature, battery, and alerts on the ThingsBoard platform' title='Tank Monitoring Dashboard'/>",
-                "<img src='/images/usecases/tank-level-monitoring/tank-level-monitoring-2.webp' data-bg='#A9AAAC' alt='Modal window for adding a new sensor with serial number and label fields in the ThingsBoard dashboard.' title='Add New Sensor Form'/>",
-                "<img src='/images/usecases/tank-level-monitoring/tank-level-monitoring-3.webp' data-bg='#A9AAAC' alt='Dialog for setting alarm thresholds for tank monitoring, including fuel level, temperature, and battery.' title='Alarm Threshold Settings for Tanks'/>",
-                "<img src='/images/usecases/tank-level-monitoring/tank-level-monitoring-4.webp' data-bg='#A9AAAC' alt='Editing a sensors serial number and label in the ThingsBoard tank monitoring interface.' title='Edit Sensor 001133'/>",
-                "<img src='/images/usecases/tank-level-monitoring/tank-level-monitoring-5.webp' data-bg='#F9F9F9' alt='Tank 1289 status dashboard showing fuel level, temperature, battery, and consumption chart.' title='Tank 1289 Monitoring Overview'/>",
-                "<img src='/images/usecases/tank-level-monitoring/tank-level-monitoring-6.webp' data-bg='#A9AAAC' alt='Interface to configure tank shape, size, and measurement system for accurate monitoring.' title='Configure Tank Shape and Dimensions'/>",
+                "<img src='https://img.thingsboard.io/usecases/tank-level-monitoring/tank-level-monitoring-1.webp' data-bg='#F9F9F9' alt='Tank monitoring dashboard in light mode showing fuel level, temperature, battery, and alerts on the ThingsBoard platform' title='Tank Monitoring Dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/tank-level-monitoring/tank-level-monitoring-2.webp' data-bg='#A9AAAC' alt='Modal window for adding a new sensor with serial number and label fields in the ThingsBoard dashboard.' title='Add New Sensor Form'/>",
+                "<img src='https://img.thingsboard.io/usecases/tank-level-monitoring/tank-level-monitoring-3.webp' data-bg='#A9AAAC' alt='Dialog for setting alarm thresholds for tank monitoring, including fuel level, temperature, and battery.' title='Alarm Threshold Settings for Tanks'/>",
+                "<img src='https://img.thingsboard.io/usecases/tank-level-monitoring/tank-level-monitoring-4.webp' data-bg='#A9AAAC' alt='Editing a sensors serial number and label in the ThingsBoard tank monitoring interface.' title='Edit Sensor 001133'/>",
+                "<img src='https://img.thingsboard.io/usecases/tank-level-monitoring/tank-level-monitoring-5.webp' data-bg='#F9F9F9' alt='Tank 1289 status dashboard showing fuel level, temperature, battery, and consumption chart.' title='Tank 1289 Monitoring Overview'/>",
+                "<img src='https://img.thingsboard.io/usecases/tank-level-monitoring/tank-level-monitoring-6.webp' data-bg='#A9AAAC' alt='Interface to configure tank shape, size, and measurement system for accurate monitoring.' title='Configure Tank Shape and Dimensions'/>",
             ];
             return images[index];
         }
