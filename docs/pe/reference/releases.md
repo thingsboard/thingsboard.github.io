@@ -8,6 +8,44 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.1.0 (Jul 3, 2025) {#v41}
+
+Everything from [TB CE v4.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Ability to reprocess historical data with the Calculated Fields;
+  * Added new Calculated Field argument source: current owner;
+  * Secrets storage;
+  * Long-running task manager;
+
+* UI
+
+  * Ability to import data converter from converters library;
+  * Improved layout formatting in the translation map editor;
+  * Added color palette for Value stepper and Two-segment button widgets;
+  * Added MQTT version selection for integrations;
+
+**Bug fixes**
+
+* Fixed requests for saving custom translation;
+* Fixed pagination display in Schedule events/blob entity tables;
+* Updated web report dependencies;
+
+## v4.0.2 (Jul 3, 2025) {#v402}
+
+Everything from [TB CE v4.0.2](https://github.com/thingsboard/thingsboard/releases/tag/v4.0.2) with the following bug fixes.
+
+**Improvements and bug fixes**
+
+* Base64-encoded vendor and model images instead of GitHub url in Converter library
+* Fixed styling in OPC-UA integration configuration form and add integration dialog
+* Fixed issue where 'Apply changes' button was active without changes in TCP integration
+* Fixed issue with adding data converter on slow network
+* Fixed configDirective in twilio rule-nodes
+
 ## v4.0.1 (Apr 22, 2025) {#v401}
 
 Everything from [TB CE v4.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.0.1) with the following bug fixes.
