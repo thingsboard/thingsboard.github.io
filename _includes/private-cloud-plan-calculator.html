@@ -11,27 +11,6 @@
                 <div class="input-parameters">
                     <div class="device-profiles-container">
                     </div>
-                    <div class="input-group">
-                        <div class="input-label-group">
-                            <label for="retention" class="label">
-                                Data Retention (Months)
-                                <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon"><span class="tooltip-text">How long you need to store your data</span></span>
-                            </label>
-                            <input id="retention" type="number" value="12" max="1200" class="input input-right">
-                        </div>
-                        <div class="slider-container">
-                            <label for="retentionSlider" class="visually-hidden">How long you need to store your data</label>
-                            <input type="range" id="retentionSlider" min="1" max="60" step="1" value="12" class="slider">
-                            <div class="tick-marks">
-                                <div class="tick-mark" data-num="1"><span class="tick"></span><span class="tick-label">1</span></div>
-                                <div class="tick-mark" data-num="12"><span class="tick"></span><span class="tick-label">12</span></div>
-                                <div class="tick-mark" data-num="24"><span class="tick"></span><span class="tick-label">24</span></div>
-                                <div class="tick-mark" data-num="36"><span class="tick"></span><span class="tick-label">36</span></div>
-                                <div class="tick-mark" data-num="48"><span class="tick"></span><span class="tick-label">48</span></div>
-                                <div class="tick-mark" data-num="60"><span class="tick"></span><span class="tick-label">60</span></div>
-                            </div>
-                        </div>
-                    </div>
                     <div class="input-group addons">
                         <p class="label">Add-ons</p>
                         <div class="add-ons-container">
@@ -124,9 +103,6 @@
         resetButton: document.getElementById('calculatorReset'),
         deviceProfilesContainer: document.querySelector('.device-profiles-container'),
 
-        retentionInput: document.getElementById('retention'),
-        retentionSlider: document.getElementById('retentionSlider'),
-
         devEnvsCheckbox: document.getElementById('devEnvs'),
         testEnvsCheckbox: document.getElementById('testEnvs'),
         mobileAppCheckbox: document.getElementById('mobileApp'),
@@ -157,7 +133,7 @@
                             <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
                         </span>
                     </label>
-                    <input id="devices-{PROFILE_ID}" type="number" value="5000" class="input input-right" data-profile-input="devices">
+                    <input id="devices-{PROFILE_ID}" type="number" value="5000" min="0" class="input input-right" data-profile-input="devices">
                 </div>
                 <div class="slider-container">
                     <input type="range" id="devicesSlider-{PROFILE_ID}" min="0" max="120000" step="100" value="5000" class="slider" data-profile-slider="devices">
@@ -180,7 +156,7 @@
                         </span>
                     </label>
                     <div class="input-with-select">
-                        <input id="messages-{PROFILE_ID}" type="number" value="1" class="input input-right" data-profile-input="messages">
+                        <input id="messages-{PROFILE_ID}" type="number" value="1" min="0" class="input input-right" data-profile-input="messages">
                         <select id="messageUnit-{PROFILE_ID}" class="select" data-profile-select="messageUnit">
                             <option value="minute">per minute</option>
                             <option value="hour" selected>per hour</option>
@@ -217,7 +193,7 @@
                         <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon" onerror="this.style.display='none'"><span class="tooltip-text">How many data points are included in each message</span></span>
                     </label>
                     <button class="payload" data-profile-payload-btn="{PROFILE_ID}">Submit payload</button>
-                    <input id="dataPoints-{PROFILE_ID}" type="number" value="3" class="input input-right" data-profile-input="dataPoints">
+                    <input id="dataPoints-{PROFILE_ID}" type="number" value="3" min="0" class="input input-right" data-profile-input="dataPoints">
                 </div>
                 <div class="slider-container">
                     <input type="range" id="dataPointsSlider-{PROFILE_ID}" min="1" max="100" step="1" value="3" class="slider" data-profile-slider="dataPoints">
@@ -228,6 +204,29 @@
                         <div class="tick-mark" data-num="60"><span class="tick"></span><span class="tick-label">60</span></div>
                         <div class="tick-mark" data-num="80"><span class="tick"></span><span class="tick-label">80</span></div>
                         <div class="tick-mark" data-num="100"><span class="tick"></span><span class="tick-label">100</span></div>
+                    </div>
+                </div>
+            </div>
+             <div class="input-group">
+                <div class="input-label-group">
+                    <label for="retention-{PROFILE_ID}" class="label">
+                        Data Retention (Months)
+                        <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip-text">How long you need to store your data</span>
+                        </span>
+                    </label>
+                    <input id="retention-{PROFILE_ID}" type="number" value="12" min="0" max="1200" class="input input-right" data-profile-input="retention">
+                </div>
+                <div class="slider-container">
+                    <label for="retentionSlider-{PROFILE_ID}" class="visually-hidden">How long you need to store your data</label>
+                    <input type="range" id="retentionSlider-{PROFILE_ID}" min="1" max="60" step="1" value="12" class="slider" data-profile-slider="retention">
+                    <div class="tick-marks">
+                        <div class="tick-mark" data-num="1"><span class="tick"></span><span class="tick-label">1</span></div>
+                        <div class="tick-mark" data-num="12"><span class="tick"></span><span class="tick-label">12</span></div>
+                        <div class="tick-mark" data-num="24"><span class="tick"></span><span class="tick-label">24</span></div>
+                        <div class="tick-mark" data-num="36"><span class="tick"></span><span class="tick-label">36</span></div>
+                        <div class="tick-mark" data-num="48"><span class="tick"></span><span class="tick-label">48</span></div>
+                        <div class="tick-mark" data-num="60"><span class="tick"></span><span class="tick-label">60</span></div>
                     </div>
                 </div>
             </div>
@@ -335,6 +334,7 @@
 
         const msgSelect = profileElement.querySelector(`[data-profile-select="messageUnit"]`);
         const msgSlider = profileElement.querySelector(`[data-profile-slider="messages"]`);
+        const messagesInput = profileElement.querySelector(`[data-profile-input="messages"]`);
 
         ['msgPerMinute', 'msgPerHour', 'msgPerDay'].forEach(idSuffix => {
             const el = profileElement.querySelector(`#${idSuffix}-${profileId}`);
@@ -343,20 +343,20 @@
 
         if (msgSelect.value === 'minute') {
             msgSlider.max = 60;
-            const targetEl = profileElement.querySelector(`#msgPerMinute-${profileId}`);
-            if (targetEl) targetEl.classList.remove('hidden');
+            profileElement.querySelector(`#msgPerMinute-${profileId}`).classList.remove('hidden');
         } else if (msgSelect.value === 'hour') {
             msgSlider.max = 60;
-            const targetEl = profileElement.querySelector(`#msgPerHour-${profileId}`);
-            if (targetEl) targetEl.classList.remove('hidden');
+            profileElement.querySelector(`#msgPerHour-${profileId}`).classList.remove('hidden');
         } else if (msgSelect.value === 'day') {
             msgSlider.max = 24;
-            msgSlider.value = 1;
-            const messagesInput = profileElement.querySelector(`[data-profile-input="messages"]`);
-            if (messagesInput) messagesInput.value = 1;
-            const targetEl = profileElement.querySelector(`#msgPerDay-${profileId}`);
-            if (targetEl) targetEl.classList.remove('hidden');
+            profileElement.querySelector(`#msgPerDay-${profileId}`).classList.remove('hidden');
         }
+
+        if (parseInt(msgSlider.value) > parseInt(msgSlider.max)) {
+           msgSlider.value = msgSlider.max;
+           if (messagesInput) messagesInput.value = msgSlider.max;
+        }
+
         sliderProgress(msgSlider);
         initTickMarks(profileElement);
     };
@@ -385,9 +385,9 @@
         calculateResults();
     }
 
-    const addDeviceProfile = (options = {}, init) => {
+    const addDeviceProfile = (options = {}, init = false) => {
         const {
-            initialValues = { devices: 5000, messages: 1, messageUnit: 'hour', dataPoints: 3 },
+            initialValues = { devices: 5000, messages: 1, messageUnit: 'hour', dataPoints: 3, retention: 12 },
             insertAfterId = null
         } = options;
 
@@ -398,7 +398,8 @@
             devices: initialValues.devices,
             messages: initialValues.messages,
             messageUnit: initialValues.messageUnit,
-            dataPoints: initialValues.dataPoints
+            dataPoints: initialValues.dataPoints,
+            retention: initialValues.retention
         };
 
         let profileHtml = deviceProfileTemplate
@@ -416,6 +417,8 @@
         profileElement.querySelector(`[data-profile-select="messageUnit"]`).value = profileData.messageUnit;
         profileElement.querySelector(`[data-profile-input="dataPoints"]`).value = profileData.dataPoints;
         profileElement.querySelector(`[data-profile-slider="dataPoints"]`).value = profileData.dataPoints;
+        profileElement.querySelector(`[data-profile-input="retention"]`).value = profileData.retention;
+        profileElement.querySelector(`[data-profile-slider="retention"]`).value = profileData.retention;
 
         const insertionIndex = (insertAfterId === null) ?
             calculatorState.deviceProfiles.length :
@@ -460,14 +463,12 @@
     };
 
     const getCalculatorInputs = () => {
-        const retention = Number(elements.retentionInput.value) || 0;
         const devEnvs = elements.devEnvsCheckbox.checked;
         const testEnvs = elements.testEnvsCheckbox.checked;
         const mobileApp = elements.mobileAppCheckbox.checked;
 
         let totalDataPointsPerMinute = 0;
         let totalDevices = 0;
-        let totalMessages = 0;
         const profilesData = calculatorState.deviceProfiles.map(profile => {
             let messagesPerMinute = profile.messages;
             if (profile.messageUnit === 'hour') messagesPerMinute /= 60;
@@ -476,13 +477,14 @@
             const profileDataPointsPerMinute = profile.devices * messagesPerMinute * profile.dataPoints;
             totalDataPointsPerMinute += profileDataPointsPerMinute;
             totalDevices += profile.devices;
-            totalMessages += profile.messages;
-            return { ...profile, messagesPerMinute, dataPointsPerMinute: profileDataPointsPerMinute };
+            return { ...profile,
+                messagesPerMinute,
+                dataPointsPerMinute: profileDataPointsPerMinute
+            };
         });
 
         return {
             deviceProfiles: profilesData,
-            retention,
             devEnvs,
             testEnvs,
             mobileApp,
@@ -499,17 +501,27 @@
         const matchingPlans = privateCloudPlans.plans.filter(plan => inputs.totalDataPointsPerMinute <= plan.maxMsgPerMin);
 
         if (matchingPlans.length === 0) {
-            displayEnterpriseResults(inputs, inputs.totalDataPointsPerMinute, retentionInMinutes);
+            const totalStorage = inputs.deviceProfiles.reduce((acc, profile) => {
+                 const retentionInMinutes = profile.retention * 30 * 24 * 60;
+                 const storageForProfile = (privateCloudPlans.enterpriseBytesPerDataPoint * retentionInMinutes * profile.dataPointsPerMinute) / 1073741824;
+                 return acc + storageForProfile;
+            }, 0);
+            displayEnterpriseResults(inputs, inputs.totalDataPointsPerMinute, totalStorage);
             return;
         }
 
         const planResults = matchingPlans.map(plan => {
-            const extraDevices = Math.max(0, inputs.deviceProfiles.reduce((sum, p) => sum + p.devices, 0) - plan.includedDevices);
+            const totalDevices = inputs.deviceProfiles.reduce((sum, p) => sum + p.devices, 0);
+            const extraDevices = Math.max(0, totalDevices - plan.includedDevices);
             const extraDeviceCost = extraDevices * plan.extraDevicePrice;
 
-            const storageNeededInGB = (plan.bytesPerDataPoint * retentionInMinutes * inputs.totalDataPointsPerMinute) / 1073741824;
-            const adjustedStorageNeeded = storageNeededInGB * plan.replicationFactor;
-            const extraStorage = Math.max(0, adjustedStorageNeeded - plan.storage);
+            const totalStorageNeededInGB = inputs.deviceProfiles.reduce((acc, profile) => {
+                 const retentionInMinutes = profile.retention * 30 * 24 * 60;
+                 const storageForProfile = (plan.bytesPerDataPoint * retentionInMinutes * profile.dataPointsPerMinute) / 1073741824;
+                 return acc + (storageForProfile * plan.replicationFactor);
+            }, 0);
+
+            const extraStorage = Math.max(0, totalStorageNeededInGB - plan.storage);
             const extraStorageCost = extraStorage * privateCloudPlans.extraStorageCostPerGB;
 
             const basePrice = plan.price + extraDeviceCost + extraStorageCost;
@@ -520,22 +532,27 @@
             if (inputs.mobileApp) addOnsCost += privateCloudPlans.mobileApp;
 
             return {
-                plan, extraDevices, extraDeviceCost, storageNeeded: adjustedStorageNeeded,
+                plan, extraDevices, extraDeviceCost, storageNeeded: totalStorageNeededInGB,
                 extraStorage, extraStorageCost, basePrice, addOnsCost,
-                totalPrice: basePrice + addOnsCost, dataPointsPerMinute: inputs.totalDataPointsPerMinute, retentionInMinutes
+                totalPrice: basePrice + addOnsCost, dataPointsPerMinute: inputs.totalDataPointsPerMinute
             };
         });
 
         const optimalPlan = planResults.reduce((prev, current) => (prev.totalPrice < current.totalPrice ? prev : current));
         if (optimalPlan.totalPrice > 10000) {
-            displayEnterpriseResults(inputs, inputs.totalDataPointsPerMinute, retentionInMinutes);
+            const totalStorage = inputs.deviceProfiles.reduce((acc, profile) => {
+                 const retentionInMinutes = profile.retention * 30 * 24 * 60;
+                 const storageForProfile = (privateCloudPlans.enterpriseBytesPerDataPoint * retentionInMinutes * profile.dataPointsPerMinute) / 1073741824;
+                 return acc + storageForProfile;
+            }, 0);
+            displayEnterpriseResults(inputs, inputs.totalDataPointsPerMinute, totalStorage);
             return;
         }
         displayResults(optimalPlan, inputs);
     };
 
     const displayResults = (results, inputs) => {
-        const { plan, extraDevices, extraDeviceCost, storageNeeded, extraStorage, extraStorageCost, totalPrice, dataPointsPerMinute, retentionInMinutes } = results;
+        const { plan, extraDevices, extraDeviceCost, storageNeeded, extraStorage, extraStorageCost, totalPrice, dataPointsPerMinute } = results;
 
         calculatorState.optimalPlanName = plan.name;
         calculatorState.price = totalPrice;
@@ -546,6 +563,13 @@
             (inputs.devEnvs ? ` + ${formatCurrency(privateCloudPlans.devEnvironments)} (dev environment)` : '') +
             (inputs.testEnvs ? ` + ${formatCurrency(privateCloudPlans.testEnvironments)} (test environment)` : '') +
             (inputs.mobileApp ? ` + ${formatCurrency(privateCloudPlans.mobileApp)} (mobile app monthly)` : '');
+
+        let storageUsedTooltip = 'Storage is calculated for each profile based on its data points and retention, then summed up.<br><br>';
+        inputs.deviceProfiles.forEach((p, index) => {
+            const retentionInMinutes = p.retention * 30 * 24 * 60;
+            const storageForProfile = (plan.bytesPerDataPoint * retentionInMinutes * p.dataPointsPerMinute * plan.replicationFactor) / 1073741824;
+            storageUsedTooltip += `Profile ${index + 1}: ${formatNumber(storageForProfile, 2)} GB<br>`;
+        });
 
         elements.resultsCard.classList.remove('hidden');
         elements.resultsCard.innerHTML = `
@@ -566,7 +590,7 @@
               ${createResultItem('Extra Device Cost', formatCurrency(extraDeviceCost), `The additional cost for devices beyond what\'s included in your base plan.<br>${formatCurrency(extraDeviceCost)} = ${formatNumber(extraDevices, 0)} extra devices × $${plan.extraDevicePrice}/device`)}
               ${createResultItem('Included Storage', `${formatNumber(plan.storage, 0)} GB`, `The amount of storage included in your base plan price.<br>The ${plan.name} plan includes ${formatNumber(plan.storage, 0)} GB of storage.`)}
               ${createResultItem('Time-Series Database', plan.database, 'The Launch plan uses SQL Database (PostgreSQL) with a replication factor of 2, ideal for lightweight deployments. Growth, Scale, and Enterprise plans use NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication. For workloads with large storage requirements, NoSQL-based plans are more cost-efficient thanks to their reduced storage footprint.')}
-              ${createResultItem('Storage Used', `${formatNumber(storageNeeded)} GB`, `Number of data points in storage:<br>${formatNumber(dataPointsPerMinute, 2)}&nbsp;points/minute × 60&nbsp;minutes in hour × 24&nbsp;hours in day × 30&nbsp;days in month × ${elements.retentionInput.value}&nbsp;months = ${formatNumber(retentionInMinutes * dataPointsPerMinute, 0)}&nbsp;data points;<br><br>Storage required:<br>${formatNumber(retentionInMinutes * dataPointsPerMinute, 0)} × ${plan.bytesPerDataPoint}(approximate size of data point in DB) × ${plan.replicationFactor}(replication factor) / bytes in GB = ${formatNumber(storageNeeded, 2)}&nbsp;GB`)}
+              ${createResultItem('Storage Used', `${formatNumber(storageNeeded)} GB`, storageUsedTooltip)}
               ${createResultItem('Extra Storage', `${formatNumber(extraStorage, 2)} GB`, `The amount of storage exceeding what's included in your base plan. <br>${formatNumber(extraStorage, 2)} GB = ${formatNumber(storageNeeded, 2)} GB used - ${formatNumber(plan.storage, 0)} GB included`)}
               ${createResultItem('Extra Storage Cost', formatCurrency(extraStorageCost), `The additional cost for storage beyond what's included in your base plan. <br>${formatCurrency(extraStorageCost)} = ${formatNumber(extraStorage, 2)} GB × $${privateCloudPlans.extraStorageCostPerGB}/GB`)}
             </div>
@@ -581,9 +605,8 @@
         document.getElementById('copyButton').addEventListener('click', (e) => copyToClipboard(e.currentTarget));
     };
 
-    const displayEnterpriseResults = (inputs, totalDataPointsPerMinute, retentionInMinutes) => {
+    const displayEnterpriseResults = (inputs, totalDataPointsPerMinute, totalStorageNeededInGB) => {
         const totalDevices = inputs.deviceProfiles.reduce((sum, p) => sum + p.devices, 0);
-        const storageNeededInGB = (privateCloudPlans.enterpriseBytesPerDataPoint * retentionInMinutes * totalDataPointsPerMinute) / 1073741824;
         calculatorState.optimalPlanName = 'Enterprise';
         calculatorState.price = 0;
         calculatorState.extraStoragePrice = 0;
@@ -602,12 +625,17 @@
             </div>
             <div class="results">
               ${createResultItem('Data Points Rate', `${formatNumber(totalDataPointsPerMinute)} points/minute`)}
-              ${createResultItem('Estimated storage needed', `${formatNumber(storageNeededInGB)} GB`)}
+              ${createResultItem('Estimated storage needed', `${formatNumber(totalStorageNeededInGB, 2)} GB`)}
             </div>
             <p class="contact-us-text">Please contact our sales team for a custom Enterprise solution.</p>
             <a id="contactUs" class="button" href="/docs/contact-us/">Contact Us</a>`;
 
-        updateContactAndClipboard({ isEnterprise: true, totalDataPointsPerMinute, totalDevices, storageNeededInGB }, inputs);
+        updateContactAndClipboard({
+            isEnterprise: true,
+            totalDataPointsPerMinute,
+            totalDevices,
+            storageNeededInGB: totalStorageNeededInGB
+        }, inputs);
         document.getElementById('copyButton').addEventListener('click', (e) => copyToClipboard(e.currentTarget));
     };
 
@@ -655,14 +683,14 @@
                 `Total Monthly Cost: ${formatCurrency(totalPrice)}`;
         }
 
-        message += `\n\nCalculator Input:\n` +
-            `Data Retention: ${formatNumber(inputs.retention, 0)} months`;
+        message += `\n\nCalculator Input:`;
 
         inputs.deviceProfiles.forEach((p, index) => {
             message += `\nProfile ${index + 1}:`;
             message += `\n - Devices: ${formatNumber(p.devices, 0)}`;
             message += `\n - Messages: ${formatNumber(p.messages, 0)} per ${p.messageUnit}`;
             message += `\n - Data Points: ${formatNumber(p.dataPoints, 0)}`;
+            message += `\n - Retention: ${formatNumber(p.retention, 0)} months`;
         });
 
         calculatorState.clipboardMessage = message;
@@ -676,10 +704,6 @@
         calculatorState.deviceProfiles = [];
         elements.deviceProfilesContainer.innerHTML = '';
         addDeviceProfile();
-
-        elements.retentionInput.value = 12;
-        elements.retentionSlider.value = 12;
-        sliderProgress(elements.retentionSlider);
 
         elements.devEnvsCheckbox.checked = false;
         elements.testEnvsCheckbox.checked = false;
@@ -748,13 +772,21 @@
         const profileElement = input.closest('.device-profile');
         if (!profileElement) return;
 
+        if (input.type === 'number' && input.value < 0) {
+            input.value = 0;
+        }
+
         const profileId = parseInt(profileElement.dataset.profileId, 10);
         const profileData = calculatorState.deviceProfiles.find(p => p.id === profileId);
         if (!profileData) return;
 
-        if (input.dataset.profileInput) {
-            profileData[input.dataset.profileInput] = Number(input.value) || 0;
-            const slider = profileElement.querySelector(`[data-profile-slider="${input.dataset.profileInput}"]`);
+        const inputType = input.dataset.profileInput;
+        if (inputType) {
+            if (inputType === 'retention' && input.value > 1200) {
+                input.value = 1200;
+            }
+            profileData[inputType] = Number(input.value) || 0;
+            const slider = profileElement.querySelector(`[data-profile-slider="${inputType}"]`);
             if (slider) {
                 slider.value = input.value;
                 sliderProgress(slider);
@@ -777,42 +809,16 @@
         const profileData = calculatorState.deviceProfiles.find(p => p.id === profileId);
         if (!profileData) return;
 
-        if (slider.dataset.profileSlider) {
-            profileData[slider.dataset.profileSlider] = Number(slider.value) || 0;
-            const input = profileElement.querySelector(`[data-profile-input="${slider.dataset.profileSlider}"]`);
+        const sliderType = slider.dataset.profileSlider;
+        if (sliderType) {
+            profileData[sliderType] = Number(slider.value) || 0;
+            const input = profileElement.querySelector(`[data-profile-input="${sliderType}"]`);
             if (input) {
                 input.value = slider.value;
             }
         }
 
         sliderProgress(slider);
-        calculateResults();
-        debouncedSendToGTM();
-    };
-
-    const handleGlobalSliderChange = (event) => {
-        const slider = event.target;
-        const inputId = slider.id.replace('Slider', '');
-        const input = document.getElementById(inputId);
-        if (input) {
-            input.value = slider.value;
-        }
-        sliderProgress(slider);
-        calculateResults();
-        debouncedSendToGTM();
-    };
-
-    const handleGlobalInputChange = (event) => {
-        const input = event.target;
-        if (input.id === 'retention' && input.value > 1200) {
-            input.value = 1200;
-        }
-        const sliderId = input.id + 'Slider';
-        const slider = document.getElementById(sliderId);
-        if (slider) {
-            slider.value = input.value;
-            sliderProgress(slider);
-        }
         calculateResults();
         debouncedSendToGTM();
     };
@@ -856,7 +862,6 @@
         const inputs = getCalculatorInputs();
         const gtmData = {'event': 'calculator_interaction',
             'calculator_devices': inputs.totalDevices,
-            'calculator_retention_months': inputs.retention,
             'calculator_addon_dev_envs': inputs.devEnvs,
             'calculator_addon_test_envs': inputs.testEnvs,
             'calculator_addon_mobile_app': inputs.mobileApp,
@@ -873,7 +878,8 @@
                 devices: parseInt(profile.devices) || 0,
                 msgs: parseInt(profile.messages) || 0,
                 unit: profile.messageUnit.charAt(0),
-                points: parseInt(profile.dataPoints) || 0
+                points: parseInt(profile.dataPoints) || 0,
+                retention: parseInt(profile.retention) || 0
             });
         });
 
@@ -893,9 +899,6 @@
             if (event.target === elements.modal) closeModal(elements.modal);
         });
         elements.resetButton.addEventListener('click', handleReset);
-
-        elements.retentionInput.addEventListener('input', handleGlobalInputChange);
-        elements.retentionSlider.addEventListener('input', handleGlobalSliderChange);
 
         document.querySelectorAll('.add-on-checkbox').forEach(cb => {
             cb.addEventListener('change', () => {
@@ -953,7 +956,6 @@
         });
         elements.applyPayloadBtn.addEventListener('click', handleApplyPayload);
 
-        sliderProgress(elements.retentionSlider);
         addDeviceProfile({}, true);
         toggleAdvancedMode(elements.advancedModeToggle.checked, false, true);
         initCardResize();
