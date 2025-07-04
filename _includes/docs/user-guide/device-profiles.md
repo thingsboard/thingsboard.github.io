@@ -329,42 +329,6 @@ For this purpose, you should use "Constant" key type and compare it with dynamic
 
 The technique mentioned above may be used to enable or disable rules or combine filters on device telemetry/attributes with filters on tenant or customer attributes.
 
-### Device profile rule node
-
-Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile. 
-By default, this is the first rule node in the chain of processing. 
-The rule node processes all incoming messages and reacts to the attributes and telemetry values.
-
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-1-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-1-pe.png)
-{% endif %}
-
-<br>
-There are two important settings in the rule node:
-
-**Persist state of alarm rules** - forces the rule node to store the state of processing. Disabled by default. This setting is useful if you have duration or repeating conditions. 
-Let&#39;s assume you have a condition "Temperature is greater than 50 for 1 hour", and the first event with a temperature greater than 50 was reported at 1 pm. 
-At 2 pm you should receive the alarm (assuming temperature conditions will not change). 
-However, if you will restart the server after 1 pm and before 2 pm, the rule node needs to lookup the state from DB.
-Basically, if you enable this and the &#39;Fetch state of alarm rules&#39; option, the rule node will be able to raise the alarm. 
-If you leave it disabled, the rule node will not generate the alarm.
-We disable this setting by default for performance reasons. If enabled, and if the incoming message matches at least one of the alarm conditions, it will cause additional write operation to persist in the state.
-
-**Fetch state of alarm rules** - forces rule node to restore the state of processing on initialization. Disabled by default. This setting is useful if you have duration or repeating conditions. 
-It should work in tandem with the &#39;Persist state of alarm rules&#39; option, but on rare occasions, you may want to disable this setting while the &#39;Persist state of alarm rules&#39; option is enabled.
-Assuming you have many devices that send data frequently or constantly, you can avoid loading the state from the DB on initialization. 
-The Rule Node will fetch the state from the database when the first message from a specific device arrives.
-
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-2-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-2-pe.png)
-{% endif %}
-
 ### Notifications about alarms
 
 Assuming you have configured alarm rules you may also want to receive a notification when ThingsBoard creates or updates the alarm.

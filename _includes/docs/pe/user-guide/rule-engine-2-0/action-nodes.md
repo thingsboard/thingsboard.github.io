@@ -5,7 +5,7 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-## Add To Group Node
+## Add to group node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -43,7 +43,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-## Remove From Group Node
+## Remove from group node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -79,7 +79,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-## Generate Report Node
+## Generate report node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -137,7 +137,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-## Integration Downlink Node
+## Integration downlink node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -165,7 +165,7 @@ Configuration:
 
 <br>
 
-## Change Owner Node
+## Change owner node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 

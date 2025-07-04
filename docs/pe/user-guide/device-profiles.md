@@ -108,7 +108,7 @@ simple-alarm-condition:
         title: 'Specify the alarm type, select severity, then click the "+" icon to add a new alarm condition.'
     4:
         image: /images/user-guide/device-profile/alarm-example-1-step-5-pe.png
-        title: 'Select the key type, enter the key name, and choose the value type. Then click "Add" in the "Filters" section.'
+        title: 'Select the key type, specify attribute/time series key name, and choose the value type. Then click "Add" in the "Filters".'
     5:
         image: /images/user-guide/device-profile/alarm-example-1-step-6-pe.png
         title: 'Choose a comparison operator and enter the threshold value. Click "Add" in the bottom-right corner to confirm.'

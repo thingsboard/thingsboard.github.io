@@ -76,26 +76,26 @@ toc:
       path: /docs/user-guide/rule-engine-2-5/queues/
     - title: Nodes
       section:
-        - title: Filter Nodes
+        - title: Filter nodes
           path: /docs/user-guide/rule-engine-2-0/filter-nodes/
-        - title: Enrichment Nodes
+        - title: Enrichment nodes
           path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
-        - title: Transformation Nodes
+        - title: Transformation nodes
           path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action Nodes
+        - title: Action nodes
           path: /docs/user-guide/rule-engine-2-0/action-nodes/
-        - title: External Nodes
+        - title: External nodes
           path: /docs/user-guide/rule-engine-2-0/external-nodes/
-        - title: Flow Nodes
+        - title: Flow nodes
           path: /docs/user-guide/rule-engine-2-0/flow-nodes/
     - title: PE Nodes
       pe: true
       section:
-        - title: Transformation Nodes
+        - title: Transformation nodes
           path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action Nodes
+        - title: Action nodes
           path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
-        - title: Analytics Nodes
+        - title: Analytics nodes
           path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
     - title: Data processing & actions
       section:
