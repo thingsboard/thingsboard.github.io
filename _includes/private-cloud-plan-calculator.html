@@ -133,7 +133,7 @@
                             <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
                         </span>
                     </label>
-                    <input id="devices-{PROFILE_ID}" type="number" value="5000" class="input input-right" data-profile-input="devices">
+                    <input id="devices-{PROFILE_ID}" type="number" value="5000" min="0" class="input input-right" data-profile-input="devices">
                 </div>
                 <div class="slider-container">
                     <input type="range" id="devicesSlider-{PROFILE_ID}" min="0" max="120000" step="100" value="5000" class="slider" data-profile-slider="devices">
@@ -156,7 +156,7 @@
                         </span>
                     </label>
                     <div class="input-with-select">
-                        <input id="messages-{PROFILE_ID}" type="number" value="1" class="input input-right" data-profile-input="messages">
+                        <input id="messages-{PROFILE_ID}" type="number" value="1" min="0" class="input input-right" data-profile-input="messages">
                         <select id="messageUnit-{PROFILE_ID}" class="select" data-profile-select="messageUnit">
                             <option value="minute">per minute</option>
                             <option value="hour" selected>per hour</option>
@@ -193,7 +193,7 @@
                         <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon" onerror="this.style.display='none'"><span class="tooltip-text">How many data points are included in each message</span></span>
                     </label>
                     <button class="payload" data-profile-payload-btn="{PROFILE_ID}">Submit payload</button>
-                    <input id="dataPoints-{PROFILE_ID}" type="number" value="3" class="input input-right" data-profile-input="dataPoints">
+                    <input id="dataPoints-{PROFILE_ID}" type="number" value="3" min="0" class="input input-right" data-profile-input="dataPoints">
                 </div>
                 <div class="slider-container">
                     <input type="range" id="dataPointsSlider-{PROFILE_ID}" min="1" max="100" step="1" value="3" class="slider" data-profile-slider="dataPoints">
@@ -215,7 +215,7 @@
                             <span class="tooltip-text">How long you need to store your data</span>
                         </span>
                     </label>
-                    <input id="retention-{PROFILE_ID}" type="number" value="12" max="1200" class="input input-right" data-profile-input="retention">
+                    <input id="retention-{PROFILE_ID}" type="number" value="12" min="0" max="1200" class="input input-right" data-profile-input="retention">
                 </div>
                 <div class="slider-container">
                     <label for="retentionSlider-{PROFILE_ID}" class="visually-hidden">How long you need to store your data</label>
@@ -771,6 +771,10 @@
         const input = event.target;
         const profileElement = input.closest('.device-profile');
         if (!profileElement) return;
+
+        if (input.type === 'number' && input.value < 0) {
+            input.value = 0;
+        }
 
         const profileId = parseInt(profileElement.dataset.profileId, 10);
         const profileData = calculatorState.deviceProfiles.find(p => p.id === profileId);
