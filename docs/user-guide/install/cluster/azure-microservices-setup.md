@@ -47,7 +47,7 @@ cd thingsboard-ce-k8s/azure/microservices
 
 {% include templates/install/azure/configure-cassandra.md %}
 
-## Step 6. Azure Cache for Redis (optional)
+## Step 6. Azure Cache for Valkey (optional)
 
 {% include templates/install/azure/aks-create-redis.md %}
 
