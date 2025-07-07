@@ -178,6 +178,7 @@ notitle: "true"
                         <option value="ThingsBoard Products">ThingsBoard Products</option>
                         <option value="Private Cloud">Private Cloud</option>
                         <option value="Deployment Options">Deployment Options</option>
+                        <option value="Custom Development">Custom Development</option>
                         <option value="Training">Training</option>
                         <option value="Professional Services">Professional Services</option>
                         <option value="Partnership">Partnership</option>

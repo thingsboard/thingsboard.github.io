@@ -55,6 +55,14 @@ configure-mapping:
         image: /images/lwm2m/configure-mapping-5-pe.png
         title: ''
 
+configure-mapping-observe-strategy:
+     0:
+        image: /images/lwm2m/configure-mapping-observe-strategy-1-pe.png
+        title: 'For the All object of models choose **Composite All**. All resources from all objects are observed via a single Composite Observe request.'
+     1:
+        image: /images/lwm2m/configure-mapping-observe-strategy-2-pe.png
+        title: 'For the All object of models choose  **Composite by Object**. Resources are grouped per object type and each group is observed separately.'
+
 device-credentials:
     0:
         image: /images/lwm2m/device-credentials-lwm2m-1-pe.png
@@ -92,19 +100,25 @@ change-attribute-key-name:
 
 ota-firmware-update-strategy:
     0:
-        image: /images/lwm2m/ota-firmware-update-strategy-1-pe.png
+        image: /images/lwm2m/ota-update-strategy-1-pe.png
         title: 'Open the devices transport configuration settings.'
     1:
         image: /images/lwm2m/ota-firmware-update-strategy-2-pe.png
-        title: 'Select the firmware update strategy, and save changes.'
+        title: 'Select the firmware update strategy, and save changes. Without Object 19.'
+    2:
+        image: /images/lwm2m/ota-firmware-update-strategy-3-pe.png
+        title: 'Select the firmware update strategy, and save changes. With Object 19.'
 
 software-update-strategy:
     0:
-        image: /images/lwm2m/ota-firmware-update-strategy-1-pe.png
+        image: /images/lwm2m/ota-update-strategy-1-pe.png
         title: 'Open the devices transport configuration settings.'
     1:
-        image: /images/lwm2m/software-update-strategy-1-pe.png
-        title: 'Select the software update strategy from the drop down menu, and save changes.'
+        image: /images/lwm2m/ota-software-update-strategy-2-pe.png
+        title: 'Select the software update strategy from the drop down menu, and save changes. Without Object 19.'
+    2:
+        image: /images/lwm2m/ota-software-update-strategy-3-pe.png
+        title: 'Select the software update strategy from the drop down menu, and save changes. With Object 19.'
 
 object-attributes:
     0:

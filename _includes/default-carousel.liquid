@@ -1,6 +1,7 @@
 {% assign collectionMap = include.collectionMap %}
 {% assign collectionKey = include.collectionKey %}
 {% assign customSettings = include.customSettings %}
+{% assign substrate = include.substrate %}
 
 {% if site.data.carousel-collection[collectionMap] %}
     {% assign carouselCollection = site.data.carousel-collection[collectionMap] %}
@@ -19,6 +20,12 @@
     {% assign nonActiveItemsVisibilityClass = "nonActiveItemsVisibilityFalse" %}
 {% endif %}
 
+{% assign substrateClass = "substrateClassFalse" %}
+
+{% if substrate == true %}
+    {% assign substrateClass = "substrateClassTrue" %}
+{% endif %}
+
 {% assign defaultSettings = '{
     "items": 1,
     "stagePadding": 50,
@@ -33,7 +40,7 @@
     {% assign settings = customSettings %}
 {% endif %}
 
-<div class="usecase-carousel owl-carousel owl-theme transitionAnimationEnabled {{ nonActiveItemsVisibilityClass }} thinArrow line" data-settings='{{ settings }}'>
+<div class="usecase-carousel owl-carousel owl-theme transitionAnimationEnabled {{ nonActiveItemsVisibilityClass }} thinArrow line {{ substrateClass }}" data-settings='{{ settings }}'>
     {% for carouselItem in carouselCollection %}
         <div class="carousel-image">
             <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" title="{{carouselItem[1].imageTitleAttribute}}" width="{{carouselItem[1].width}}" height="{{carouselItem[1].height}}">

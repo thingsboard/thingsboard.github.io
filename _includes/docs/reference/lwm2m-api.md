@@ -23,6 +23,54 @@ When an LwM2M device registers with the server, it provides a list of supported 
 - A **version**
 - One or multiple **instances**
 
+### Handling of Object Versions in the LwM2M Model Structure
+
+Each object in the model structure always contains the <ObjectID> tag.
+Example: <ObjectID>3</ObjectID>
+
+When adding a model to a profile, the following logic is applied to determine the ObjectVersion:
+
+If the model explicitly includes the <ObjectVersion> tag for a given <ObjectID>, this value is used as the ObjectVersion.
+
+If the <ObjectVersion> tag is absent, the system sets ObjectVersion = 1.0 when adding the model structure to the device profile.
+
+> ⚠️ **Note**: Important!!! ObjectVersion is always controlled by the ThingsBoard LwM2M transport through the model added to the corresponding device profile.
+
+During LwM2M client registration, the initialization procedure is triggered as defined in the profile configuration: Read (Attributes and/or Telemetry), and Observe of those fields.
+If the ObjectVersion in the profile differs from the ObjectVersion sent by the LwM2M client during registration, all initialization operations for that object will be rejected.
+
+This version must be determined precisely, as it directly affects how requests are generated and sent to the device.
+Therefore, when sending any request from the terminal, the object's ObjectVersion must always be specified.
+If this information is omitted, the system will use ObjectVersion = LwM2MVersion, which is typically provided by the LwM2M device during the registration process.
+If LwM2MVersion is also missing from the registration request, the default value LwM2MVersion = 1.0 is assumed.
+
+Example usage of object version syntax when sending requests from the terminal:
+```bash
+"/3_1.2/0/9"          // ObjectID = 3, ObjectVersion = 1.2
+"/3/0/9"              // ObjectID = 3, ObjectVersion = LwM2MVersion. 
+  // If LwM2MVersion = 1.1, the request sent to the LwM2M client will be: 
+"/3_1.1/0/9"
+  // If LwM2MVersion = 1.2, the request sent to the LwM2M client will be: 
+"/3_1.2/0/9"
+```
+
+#### Handling object versions when sending requests from the terminal
+If an LwM2M client registered in the ThingsBoard LwM2M transport has ObjectID = 3, ObjectVersion = 1.1, then the request "/3_1.1/0/9" will be successfully processed.
+
+If an LwM2M client has ObjectID = 3, ObjectVersion = 1.2, and the request is "/3_1.1/0/9", the request will be rejected and return an error with the message:
+"Invalid object version. Required version: 1.1"
+
+```bash
+  // LwM2M client registered in the ThingsBoard LwM2M transport has ObjectID = 3, ObjectVersion = 1.1
+"/3_1.1/0/9"    // ok
+"/3_1.2/0/9"    // return error
+
+  // LwM2M client registered in the ThingsBoard LwM2M transport has ObjectID = 3, ObjectVersion = 1.2
+"/3_1.1/0/9"    // return error
+"/3_1.2/0/9"    // ok
+````
+
+### Handling of resources
 Each LwM2M object instance contains multiple **resources**.
 
 **What is an LwM2M resource?**
@@ -107,20 +155,26 @@ To do this, follow these steps:
 
 {% include images-gallery.html imageCollection="device-objects"  %}
 
-#### Step 2.3 Configure the mapping
+#### Step 2.3 Configure the Mapping
 
 Now let&#39;s configure how ThingsBoard should process LwM2M object data:
 - The **device object** provides **manufacturer**, **model number**, and **serial number**. Let&#39;s configure ThingsBoard to receive this data as **attributes**.
 - We will observe and collect data such as **radio signal strength**, **link quality**, and **device location**, and store it as **telemetry** in ThingsBoard.
 
-> The **Observe** feature in LwM2M allows the server to receive data only when the values change.
+> The **Observe** feature in LwM2M allows the server to receive data only when the values change.<br>
+  You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).<br>
+  All settings in the device profile are used to initialize the LwM2M client during the **Registration** operation.<br>
+  Any changes in the device profile settings are applied immediately if the LwM2M client session is active, or during the next **Update Registration**.
 
->️ You can also configure conditions for reporting specific resources via LwM2M attributes (covered in the [advanced](#object-and-resource-attributes) section).
+> ⚠️ **Important:** All profile configuration changes are applied **only** if the object version in the profile matches the version used by the LwM2M client, according to the rules described in the [Handling of Object Versions in the LwM2M Model Structure](#handling-of-object-versions-in-the-lwm2m-model-structure).
+
 
 To do this, follow these steps:
 - For each selected object:
-    - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
-    - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
+  - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
+  - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
+- By default, the **observe strategy** - **Single**. You can choose **observe strategy** - **Composite all** or **Composite by object** to reduce traffic or group resources differently.
+- By default, the **observe strategy** is set to **Single**. You can switch to **Composite all** or **Composite by object** to reduce traffic or to group resources more efficiently.
 - Click "Save" to apply the changes.
 
 {% include images-gallery.html imageCollection="configure-mapping" %}
@@ -128,6 +182,43 @@ To do this, follow these steps:
 > ⚠️ **Note**: If you uncheck all items (Attributes, Telemetry, Observe) for an object, it **will not appear** in the device profile configuration.
 
 Additionally, the "**Transport configuration**" tab also allows you to configure **bootstrap settings** and other settings.
+
+##### Step 2.3.1 Observe strategy
+
+ThingsBoard supports multiple observe strategies that define how LwM2M resources are grouped and monitored.
+
+- **Single** (default): Each resource is observed individually.  
+  _✓ Best accuracy_<br>
+  _✗ Higher network traffic._
+
+- **Composite All**: All resources from all objects are observed via a single Composite Observe request.  
+  _✓ Most efficient_<br>
+  _✗ Less granular_
+
+- **Composite by Object**: Resources are grouped per object type and each group is observed separately.  
+  _✓ Balanced accuracy and traffic._
+
+Observe strategy are configured in the "**LWM2M Model**" section of the "**Transport configuration**" tab in the device profile.
+
+{% include images-gallery.html imageCollection="configure-mapping-observe-strategy" %}
+
+<br>
+
+If the observe strategy is changed via the profile after the client has connected, the change is applied:
+
+- **Immediately**, if the LwM2M session is active.
+- **On the next Update Registration**, if the session is inactive.
+
+If you perform Observe operations manually (e.g., via terminal), make sure to account for the current observe strategy:
+
+- **Current strategy: Single**, **New strategy: Single**  
+  You can perform observe-related operations directly, with or without a prior Cancel Observation on the specific resource — as described in the sections [Observe Operation](#observe-operation) and [Cancel Observation Operation](#cancel-observation-operation).
+
+- **Current strategy: Composite by Object**, **New strategy: Composite by Object**  
+  You can perform observe-related operations directly, with or without a prior Cancel Observation, depending on your needs — as described in the sections [Cancel Observation-Composite Operation](#cancel-observation-composite-operation), [Observe-Composite Operation](#observe-composite-operation), and, if needed, [Observe Operation](#observe-operation), [Cancel Observation Operation](#cancel-observation-operation).
+
+- **Current strategy differs from new strategy**  
+  In this case, always execute a  [Cancel All Observations Operation](#cancel-all-observations-operation) before applying the new observe strategy or performing further observe-related operations.
 
 ### Step 3. Define LwM2M device credentials
 
@@ -474,16 +565,42 @@ Read {"key":"batteryLevel"}
 Read {"id":"/3/0"}
 
 # Response:
-{"result":"CONTENT","value":"LwM2mObjectInstance [id=0, resources={0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, 
-type=STRING], 1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 2=LwM2mSingleResource [id=2, value=TH-500-000-0001, 
-type=STRING], 3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 6=LwM2mSingleResource [id=6, 
-value=1, type=INTEGER], 7=LwM2mSingleResource [id=7, value=96, type=INTEGER], 8=LwM2mSingleResource [id=8, value=37, type=INTEGER], 
-9=LwM2mSingleResource [id=9, value=75, type=INTEGER], 10=LwM2mSingleResource [id=10, value=110673, type=INTEGER], 
-11=LwM2mMultipleResource [id=11, values={0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]}, type=INTEGER], 13=LwM2mSingleResource 
-[id=13, value=Thu Jul 01 16:39:49 EEST 2021, type=TIME], 14=LwM2mSingleResource [id=14, value=+03, type=STRING], 15=LwM2mSingleResource 
-[id=15, value=Europe/Kiev, type=STRING], 16=LwM2mSingleResource [id=16, value=U, type=STRING], 17=LwM2mSingleResource
-[id=17, value=smart meters, type=STRING], 18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 19=LwM2mSingleResource [id=19, 
-value=1.02, type=STRING], 20=LwM2mSingleResource [id=20, value=2, type=INTEGER], 21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]}]"}
+{
+  "result":"CONTENT","value":
+    "
+      LwM2mObjectInstance 
+        [
+          id=0, resources=
+            {
+              0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, type=STRING], 
+              1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+              2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
+              3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
+              6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 
+              7=LwM2mSingleResource [id=7, value=96, type=INTEGER], 
+              8=LwM2mSingleResource [id=8, value=37, type=INTEGER], 
+              9=LwM2mSingleResource [id=9, value=75, type=INTEGER], 
+              10=LwM2mSingleResource [id=10, value=110673, type=INTEGER], 
+              11=LwM2mMultipleResource 
+                [
+                  id=11, values=
+                    {
+                      0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]
+                    }, type=INTEGER
+                ], 
+              13=LwM2mSingleResource [id=13, value=Thu Jul 01 16:39:49 EEST 2021, type=TIME], 
+              14=LwM2mSingleResource [id=14, value=+03, type=STRING], 
+              15=LwM2mSingleResource [id=15, value=Europe/Kiev, type=STRING], 
+              16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+              17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 
+              18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
+              19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
+              20=LwM2mSingleResource [id=20, value=2, type=INTEGER], 
+              21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]
+            }
+        ]
+    "
+}
 {% endhighlight %}
 </details>
 
@@ -746,9 +863,17 @@ id=7, value=U, type=STRING]}]}]}"
 ReadComposite {"keys":["state", "updateResult", "pkgversion", "batteryLevel"]}
 
 # Response:
-{"result":"CONTENT","value":"{/5/0/7=LwM2mSingleResource [id=7, value=, type=STRING], /5/0/5=LwM2mSingleResource [id=5, value=0, 
-type=INTEGER], /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], /
-3/0/9=LwM2mSingleResource [id=9, value=81, type=INTEGER]}"}
+{
+  "result":"CONTENT","value":
+    "
+      {
+        /5/0/7=LwM2mSingleResource [id=7, value=, type=STRING], 
+        /5/0/5=LwM2mSingleResource [id=5, value=0, type=INTEGER], 
+        /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], 
+        /3/0/9=LwM2mSingleResource [id=9, value=81, type=INTEGER]
+      }
+    "
+}
 {% endhighlight %}
 </details>
 
@@ -761,24 +886,59 @@ type=INTEGER], /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], /
 ReadComposite {"ids":["/3/0", "/1_1.2/0"]}
 
 # Response:
-{"result":"CONTENT","value":"{/3/0=LwM2mObjectInstance [id=0, resources={0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, 
-type=STRING], 1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
-3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 6=LwM2mSingleResource [id=6, value=1, type=INTEGE
-R], 7=LwM2mSingleResource [id=7, value=2, type=INTEGER], 8=LwM2mSingleResource [id=8, value=61, type=INTEGER], 9=LwM2mSingleResource [id=9, 
-value=25, type=INTEGER], 10=LwM2mSingleResource [id=10, value=102044, type=INTEGER], 11=LwM2mMultipleResource [id=11, 
-values={0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]}, type=INTEGER], 13=LwM2mSingleResource [id=13, 
-value=Thu Jul 01 16:49:25 EEST 2021, type=TIME], 14=LwM2mSingleResource [id=14, value=+03, type=STRING], 15=LwM2mSingleResource [id=15, 
-value=Europe/Kiev, type=STRING], 16=LwM2mSingleResource [id=16, value=U, type=STRING], 17=LwM2mSingleResource [id=17, value=smart meters, 
-type=STRING], 18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
-20=LwM2mSingleResource [id=20, value=1, type=INTEGER], 21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]}], /1/0=LwM2mObjectInstance 
-[id=0, resources={0=LwM2mSingleResource [id=0, value=123, type=INTEGER], 1=LwM2mSingleResource [id=1, value=300, type=INTEGER], 
-6=LwM2mSingleResource [id=6, value=false, type=BOOLEAN], 22=LwM2mSingleResource [id=22, value=U, type=STRING], 7=LwM2mSingleResource [id=7, 
-value=U, type=STRING]}]}"}
+{
+  "result":"CONTENT","value":
+  "
+    {
+      /3/0=LwM2mObjectInstance 
+        [id=0, resources=
+          {
+            0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, type=STRING], 
+            1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+            2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
+            3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
+            6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 
+            7=LwM2mSingleResource [id=7, value=2, type=INTEGER], 
+            8=LwM2mSingleResource [id=8, value=61, type=INTEGER], 
+            9=LwM2mSingleResource [id=9, value=25, type=INTEGER], 
+            10=LwM2mSingleResource [id=10, value=102044, type=INTEGER], 
+            11=LwM2mMultipleResource 
+              [
+                id=11, values=
+                  {
+                    0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]
+                  }, 
+                type=INTEGER
+              ], 
+            13=LwM2mSingleResource [id=13, value=Thu Jul 01 16:49:25 EEST 2021, type=TIME], 
+            14=LwM2mSingleResource [id=14, value=+03, type=STRING], 
+            15=LwM2mSingleResource [id=15, value=Europe/Kiev, type=STRING], 
+            16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+            17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 
+            18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
+            19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
+                    20=LwM2mSingleResource [id=20, value=1, type=INTEGER], 
+            21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]
+          }
+        ], 
+      /1/0=LwM2mObjectInstance 
+        [id=0, resources=
+          {
+            0=LwM2mSingleResource [id=0, value=123, type=INTEGER], 
+            1=LwM2mSingleResource [id=1, value=300, type=INTEGER], 
+            6=LwM2mSingleResource [id=6, value=false, type=BOOLEAN],
+            7=LwM2mSingleResource [id=7, value=U, type=STRING],
+            22=LwM2mSingleResource [id=22, value=U, type=STRING]
+          }
+        ]
+    }
+  "
+}
 
 {% endhighlight %}
 </details>
 
-### Write Composite Operation
+### Write-Composite Operation
 
 The LwM2M Client MAY support the "Write-Composite" operation.
 In contrast to "Write" operation, the scope of which is limited to a Resource(s) of a single Instance of a single Object,
@@ -799,7 +959,7 @@ RPC call example for REST API:
 ```json
 {
    "method": "WriteComposite",
-   "params": {"nodes":{"/3/0/14":"+04", "/1/0/2":100, "/5/0/1":"coap://localhost:5685"}}
+   "params": {"nodes":{"/19_1.1/0":{"0":{"0":"00ad45675600", "25":"25ad45675600cdef"}}, "UtfOffset":"+04", "/3_1.0/0/15":"Kiyv/Europe"}}
 }
 ```
 {: .copy-code}
@@ -809,27 +969,12 @@ Example of corresponding input in the debug terminal:
 
 ```ruby
 # Request:
-WriteComposite {"nodes":{"/3/0/14":"+04", "/1/0/2":100, "/5/0/1":"coap://localhost:5685"}}
+WriteComposite {"nodes":{"/19_1.1/0":{"0":{"0":"00ad45675600", "25":"25ad45675600cdef"}}, "UtfOffset":"+04", "/3_1.0/0/15":"Kiyv/Europe"}}
 
 # Response:
 {"result":"CHANGED"}
 ```
 {: .copy-code}
-
-<b> More examples:</b>
-<br>
-<details>
-<summary>
-<b>WriteComposite with multiple Keys</b>
-</summary>
-{% highlight ruby %}
-# Request:
-WriteComposite {"nodes":{"timezone":"+04", "defaultMinimumPeriod":100, "packageUri":"coap://localhost:5685"}}
-
-# Response:
-{"result":"CHANGED"}
-{% endhighlight %}
-</details>
 
 ### Execute Operation
 
@@ -935,17 +1080,121 @@ Observe {"id":"/3/0/9"}
 Observe {"id":"/3/0"}
  
 # Response:
-{"result":"CONTENT","value":"LwM2mObjectInstance [id=0, resources={0=LwM2mSingleResource [id=0, value=Thingsboard 
-Test Device, type=STRING], 1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 2=LwM2mSingleResource [id=2, 
-value=TH-500-000-0001, type=STRING], 3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
-6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 7=LwM2mSingleResource [id=7, value=90, type=INTEGER], 8=LwM2mSingleResource 
-[id=8, value=29, type=INTEGER], 9=LwM2mSingleResource [id=9, value=19, type=INTEGER], 10=LwM2mSingleResource [id=10, value=76962, 
-type=INTEGER], 11=LwM2mMultipleResource [id=11, values={0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]}, type=INTEGER], 
-13=LwM2mSingleResource [id=13, value=Wed Jul 31 22:49:45 EET 1940, type=TIME], 14=LwM2mSingleResource [id=14, value=+5, type=STRING], 
-15=LwM2mSingleResource [id=15, value=Kiyv/Europe, type=STRING], 16=LwM2mSingleResource [id=16, value=U, type=STRING], 
-17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
-19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 20=LwM2mSingleResource [id=20, value=6, type=INTEGER], 21=LwM2mSingleResource 
-[id=21, value=256000, type=INTEGER]}]"}
+{"result":"CONTENT","value":
+  "LwM2mObjectInstance 
+    [id=0, resources=
+      {
+        0=LwM2mSingleResource [id=0, value=Thingsboard Test Device, type=STRING], 
+        1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+        2=LwM2mSingleResource [id=2, value=TH-500-000-0001, type=STRING], 
+        3=LwM2mSingleResource [id=3, value=TestThingsboard@TestMore1024_2.04, type=STRING], 
+        6=LwM2mSingleResource [id=6, value=1, type=INTEGER], 
+        7=LwM2mSingleResource [id=7, value=90, type=INTEGER], 
+        8=LwM2mSingleResource [id=8, value=29, type=INTEGER], 
+        9=LwM2mSingleResource [id=9, value=19, type=INTEGER], 
+        10=LwM2mSingleResource [id=10, value=76962, type=INTEGER], 
+        11=LwM2mMultipleResource 
+          [
+            id=11, values=
+            {
+              0=LwM2mResourceInstance [id=0, value=1, type=INTEGER]
+            }, type=INTEGER
+          ], 
+        13=LwM2mSingleResource [id=13, value=Wed Jul 31 22:49:45 EET 1940, type=TIME], 
+        14=LwM2mSingleResource [id=14, value=+5, type=STRING], 
+        15=LwM2mSingleResource [id=15, value=Kiyv/Europe, type=STRING], 
+        16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+        17=LwM2mSingleResource [id=17, value=smart meters, type=STRING], 
+        18=LwM2mSingleResource [id=18, value=1.01, type=STRING], 
+        19=LwM2mSingleResource [id=19, value=1.02, type=STRING], 
+        20=LwM2mSingleResource [id=20, value=6, type=INTEGER], 
+        21=LwM2mSingleResource [id=21, value=256000, type=INTEGER]
+      }
+    ]
+  "
+}
+{% endhighlight %}
+</details>
+
+### Observe-Composite Operation
+
+The LwM2M Client MAY support the "Observe-Composite" operation.
+The LwM2M Server can use the "Observe-Composite" operation to initiate observations for a group of resources and/or
+resource instances across multiple object instances within the client. As with the "Read-Composite" operation, the list
+of elements to be observed is provided as a separate parameter to the operation in SenML JSON/CBOR format.
+
+<b> Example: ObserveComposite to many Resources </b>
+
+RPC call example for REST API:
+
+```json
+{
+   "method": "ObserveComposite",
+   "params": {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+}
+```
+{: .copy-code}
+
+Example of corresponding input in the debug terminal:
+
+```ruby
+# Request:
+ObserveComposite {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+
+# Response:
+{"result":"CONTENT","value":"{/5/0/7=LwM2mSingleResource [id=7, value=1.0.0, type=STRING], /5/0/5=LwM2mSingleResource [id=5, value=0, type=INTEGER], /19/1/0/0=LwM2mResourceInstance [id=0, value=1Bytes, type=OPAQUE], /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER], /3/0/9=LwM2mSingleResource [id=9, value=50, type=INTEGER]}"}
+```
+{: .copy-code}
+
+<b> More examples:</b>
+<br>
+<details>
+<summary>
+<b>ObserveComposite many Resources and Object</b>
+</summary>
+{% highlight ruby %}
+# Request:
+ObserveComposite {"ids":["/5_1.2/0/7", "/5_1.2/0/5", "/5_1.2/0/3", "/3", "/19_1.1/1/0/0"]}
+
+# Response:
+{"result":"CONTENT","value":
+  "{
+    /3=LwM2mObject [id=3, instances={0=LwM2mObjectInstance [id=0, 
+      resources={
+        0=LwM2mSingleResource [id=0, value=Thingsboard Demo Lwm2mDevice, type=STRING], 
+        1=LwM2mSingleResource [id=1, value=Model 500, type=STRING], 
+        2=LwM2mSingleResource [id=2, value=Thingsboard-500-000-0001, type=STRING], 
+        3=LwM2mSingleResource [id=3, value=1.0.2, type=STRING], 
+        6=LwM2mMultipleResource [id=6, values={
+          0=LwM2mResourceInstance [id=0, value=0, type=INTEGER], 
+          1=LwM2mResourceInstance [id=1, value=1, type=INTEGER], 
+          2=LwM2mResourceInstance [id=2, value=7, type=INTEGER]}, type=INTEGER], 
+        7=LwM2mMultipleResource [id=7, values={
+          0=LwM2mResourceInstance [id=0, value=12000, type=INTEGER], 
+          1=LwM2mResourceInstance [id=1, value=12400, type=INTEGER], 
+          7=LwM2mResourceInstance [id=7, value=14600, type=INTEGER]}, type=INTEGER], 
+        8=LwM2mMultipleResource [id=8, values={
+          0=LwM2mResourceInstance [id=0, value=72000, type=INTEGER], 
+          1=LwM2mResourceInstance [id=1, value=2000, type=INTEGER], 
+          7=LwM2mResourceInstance [id=7, value=25000, type=INTEGER]}, type=INTEGER], 
+        9=LwM2mSingleResource [id=9, value=22, type=INTEGER], 
+        10=LwM2mSingleResource [id=10, value=207895, type=INTEGER], 
+        11=LwM2mMultipleResource [id=11, values={
+          0=LwM2mResourceInstance [id=0, value=0, type=INTEGER]}, type=INTEGER], 
+        14=LwM2mSingleResource [id=14, value=+03, type=STRING], 
+        15=LwM2mSingleResource [id=15, value=Europe/Kiev, type=STRING], 
+        16=LwM2mSingleResource [id=16, value=U, type=STRING], 
+        17=LwM2mSingleResource [id=17, value=Demo, type=STRING], 
+        18=LwM2mSingleResource [id=18, value=1.0.1, type=STRING], 
+        19=LwM2mSingleResource [id=19, value=1.0.2, type=STRING], 
+        20=LwM2mSingleResource [id=20, value=3, type=INTEGER], 
+        21=LwM2mSingleResource [id=21, value=638976, type=INTEGER]}]}], 
+    /5/0/7=LwM2mSingleResource [id=7, value=1.0.0, type=STRING], 
+    /5/0/5=LwM2mSingleResource [id=5, value=0, type=INTEGER], 
+    /19/1/0/0=LwM2mResourceInstance [id=0, value=1Bytes, type=OPAQUE], 
+    /5/0/3=LwM2mSingleResource [id=3, value=0, type=INTEGER]
+  }"
+}
 {% endhighlight %}
 </details>
 
@@ -965,7 +1214,6 @@ RPC call example for REST API:
 }
 ```
 {: .copy-code}
-
 
 Example of corresponding input in the debug terminal:
 
@@ -991,6 +1239,39 @@ ObserveCancel {"key":"updateResult"}
 # Response:
 {"result":"CONTENT","value":"1"}{% endhighlight %}
 </details>
+
+### Cancel Observation-Composite Operation
+
+If the "Observe-Composite" operation is supported by the client, the "Cancel Observation-Composite" operation MUST
+be supported by the Client.
+The "Cancel Observation-Composite" operation is sent from the LwM2M Server to the LwM2M Client to end the
+previously set up composite observation relationship.
+
+<b> Example: ObserveComposite to many Objects or Resources </b>
+
+RPC call example for REST API:
+
+```json
+{
+   "method": "ObserveCompositeCancel",
+   "params": {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+}
+```
+{: .copy-code}
+
+Example of corresponding input in the debug terminal:
+
+```ruby
+# Request:
+ObserveComposite {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]}
+
+# Request:
+ObserveCompositeCancel {"ids":["/5/0/7", "/5/0/5", "/5/0/3", "/3/0/9", "/19/1/0/0"]} 
+
+# Response:
+{"result":"CONTENT","value":"1"}
+```
+{: .copy-code}
 
 ### Cancel All Observations Operation
 
@@ -1021,7 +1302,6 @@ ObserveCancelAll
 ```
 {: .copy-code}
 
-
 ### Read All Observations Operation
 
 The "Read All Observations" operation is Thingsboard-specific operation and allows to get all observations 
@@ -1038,7 +1318,6 @@ RPC call example for REST API:
 }
 ```
 {: .copy-code}
-
 
 Example of corresponding input in the debug terminal:
 
@@ -1091,31 +1370,78 @@ DiscoverAll
 
 ## Firmware over-the-air updates
 
-LwM2M protocol allows you to upload and distribute over-the-air(OTA) firmware updates to devices. Please read first the 
-following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn about uploading and managing
-firmware packages and the update process.
+The LwM2M protocol enables you to perform over-the-air (OTA) firmware updates for connected devices.
+Before proceeding, please refer to the [OTA updates guide](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn how to upload, manage, and distribute firmware packages, and to understand the update process.
 
-LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update){:target="_blank"}
-for the OTA purpose, which enables management of firmware image and includes resources for installing a firmware package, updating firmware, and performing actions after updating firmware.
+LwM2M defines [Object 5: Firmware Update Object](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#13-6-0-E6-LwM2M-Object-Firmware-Update){:target="_blank"} – specifically for OTA purposes. This object supports:
+- Uploading and managing firmware images
+- Installing firmware packages
+- Tracking update progress and post-update behavior
 
-Please note that Object 5 is an optional object, and may be not supported by some devices.
+> ⚠️ **Note**: Object 5 is optional and may not be supported by some devices.
 
-To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/){:target="_blank"}
-LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from the device on the status of the update process:
+To be able to run the update using Object 5, you have to make sure that Object 5 is present in the [Device profile](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile/) LwM2M model and set up observations of following attributes on the device, which are used by the server to get feedback from the device on the status of the update process:
 
     "/3/0/3" - Firmware Version
     "/5/0/3" - State
     "/5/0/5" - Update Result
     "/5/0/7" - PkgVersion
 
-Firmware update process is illustrated here: [Firmware Update Mechanisms ](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms){:target="_blank"}
-described as a UML 2.0 state diagram. The state diagram consists of states, drawn as rounded rectangles, and transitions,
-drawn as arrows connecting the states.
+### Firmware update strategy
 
-There are several ways to run OTA firmware updates with LwM2M transport. You can choose the strategy in the device
-profile, so it will be applied for all devices of the profile:
+ThingsBoard provides multiple strategies to run OTA firmware updates over LwM2M transport:<br>
+- Push firmware update as binary file using Object 5 and Resource 0 (Package)<br>
+- Auto-generate unique CoAP URL to download the package and push firmware update as Object 5 and Resource 1 (Package URI)<br>
+- Push firmware update as binary file using Object 19 and Resource 0 (Data)
 
-{% include images-gallery.html imageCollection="ota-firmware-update-strategy" %}
+The chosen strategy is configured in the device profile and will be applied to all devices associated with that profile.
+
+To select firmware update strategy:
+1. Open the **device profile settings**. 
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab. 
+3. Enter edit mode and select the **firmware update strategy** from the drop-down menu. 
+4. Save changes.
+
+{% include images-gallery.html imageCollection="firmware-update-strategy-1" %}
+
+### Use Object 19 for OTA file metadata [Optional]
+
+ThingsBoard also supports **Object 19**, which enables delivery of **firmware metadata**.
+
+> ⚠️ This feature is complementary to Object 5, not a replacement.
+
+To enable Object 19 usage:
+1. Open the **device profile settings**. 
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab. 
+3. Enter edit mode and check the option "**Use Object 19 for OTA file metadata (checksum, size, version, name)**". 
+4. Save changes.
+
+{% include images-gallery.html imageCollection="firmware-update-strategy-2" %}
+
+When this option is enabled, ThingsBoard will:
+
+1. At device connection, ThingsBoard verifies that **Object 19 is supported** by the device.
+2. If present, ThingsBoard creates an instance of Object 19 with **InstanceId** = **65534** (used for firmware metadata).
+3. FOTA metadata is sent to this instance as a **Base64-encoded JSON object**.
+
+FOTA metadata JSON structure:
+
+```json
+{
+  "Checksum": "SHA256 hash of the firmware file",
+  "Title": "OTA package name",
+  "Version": "Firmware version",
+  "File Name": "File name for storing the OTA on the client",
+  "File Size": "Size of the firmware file in bytes"
+}
+```
+
+> ⚠️ **Note**: Object 19 is used only for **metadata delivery**. The actual firmware update logic is handled according to the **firmware update strategy** defined in the device profile.
+
+**Firmware update process**
+
+The firmware update mechanism is illustrated in the [Firmware Update Mechanisms UML diagram](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E61-1-Firmware-Update-Mechanisms){:target="_blank"}
+The state diagram consists of states, drawn as rounded rectangles, and transitions, drawn as arrows connecting the states.
 
 ### Push firmware update as binary file using Object 5 and Resource 0.
 The firmware package is pushed from the server directly to the device via the block-wise transfer to the Resource 0 of
@@ -1130,18 +1456,19 @@ be triggered using the executable resource "/5/0/2". The full process is illustr
 
 ## Software over-the-air updates
 
-LwM2M protocol allows you to upload and distribute over-the-air(OTA) software updates to devices. Please read first the
-following article [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to learn about uploading and managing
-software packages and the update process.
+The LwM2M protocol allows remote distribution of software updates via Over-the-Air (OTA) mechanisms.
+Before proceeding, please read the [OTA Updates Guide](/docs/{{docsPrefix}}user-guide/ota-updates/){:target="_blank"} to understand how to upload, manage, and distribute software packages.
 
-Updating of the device software has some differences comparing to the firmware update process: the Software Management
-process is split in 2 sub-processes: a Package Installation Process and a Software Activation Process.
+Unlike firmware updates, the Software Management process in LwM2M is divided into two distinct phases:
+- Package Installation Process
+- Software Activation Process
 
-LwM2M defines Object 9: Software Management Object  for the software management  purpose, which enables remote 
-software management in M2M devices and includes resources for delivering, execution of installation and activating 
-software packages, and reporting states.
+LwM2M defines Object 9 for software management. It supports:
+- Remote delivery of software packages
+- Execution of installation and activation procedures
+- Reporting of software state transitions and results
 
-Please note that Object 9 is an optional object, and not may be supported by some devices.
+> ⚠️ **Note**: Object 9 is optional and may not be supported by some devices.
 
 To be able to run the update using Object 9, you have to make sure that Object 9 is present in the Device profile 
 LwM2M model and set up observations of following attributes on the device, which are used by the server to get 
@@ -1155,10 +1482,74 @@ feedback from the device on the status of the update process:
     "/9/0/7" - Update State
     "/9/0/9" - Update result
 
-There are several ways to run OTA software updates with LwM2M transport. You can choose the strategy in the device 
-profile, so it will be applied for all devices of the profile:
+### Software update strategy
 
-{% include images-gallery.html imageCollection="software-update-strategy" %}
+ThingsBoard supports multiple ways to initiate software updates using the LwM2M transport:<br>
+- **Push binary file using Object 9 and Resource 2 (Package)**<br>
+- **Auto-generate unique CoAP URL to download the package and push software update using Object 9 and Resource 3 (Package URI)**
+
+The chosen strategy is configured in the device profile and will be applied to all devices associated with that profile.
+
+To select software update strategy:
+1. Open the device profile settings. 
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab. 
+3. Enter edit mode and select the **software update strategy** from the drop-down menu. 
+4. Save changes.
+
+{% include images-gallery.html imageCollection="software-update-strategy-1" %}
+
+### Use Object 19 for OTA file metadata [Optional]
+
+ThingsBoard also supports Object 19 to deliver software update metadata (SOTA):
+
+> ⚠️ This feature is complementary to Object 5, not a replacement.
+
+To enable Object 19 usage:
+1. Open the **device profile settings**.
+2. Navigate to the "**Other settings**" of the "**Transport configuration**" tab.
+3. Enter edit mode and check the option "**Use Object 19 for OTA file metadata (checksum, size, version, name)**".
+4. Save changes.
+
+{% include images-gallery.html imageCollection="software-update-strategy-2" %}
+
+When this option is enabled, ThingsBoard will:
+
+1. At device connection, ThingsBoard verifies that **Object 19 is supported** by the device.
+2. If present, ThingsBoard creates an instance of Object 19 with **InstanceId** = **65535** (used for firmware metadata).
+3. SOTA metadata is sent to this instance as a **Base64-encoded JSON object**.
+
+SOTA metadata JSON structure:
+
+```json
+{
+  "Checksum": "SHA256 hash of the software file",
+  "Title": "OTA package name",
+  "Version": "Software version",
+  "File Name": "File name for storing the OTA on the client",
+  "File Size": "Size of the software file in bytes"
+}
+```
+
+> ⚠️ **Note**: Object 19 is used only for **metadata delivery**. The actual software update logic is handled according to the **software update strategy** defined in the device profile.
+
+
+### Software update process: LwM2M software update state transitions
+
+#### Successful software update scenario
+
+| Step | SoftwareUpdateState    | SoftwareUpdateResult                   | Description                               |
+|------|------------------------|----------------------------------------|-------------------------------------------|
+| 1    | `INITIAL (0)`          | `INITIAL (0)`                          | Initial state before any download starts  |
+| 2    | `DOWNLOAD_STARTED (1)` | `DOWNLOADING (1)`                      | Download process has started              |
+| 3    | `DOWNLOADED (2)`       | `DOWNLOADING (1)`                      | Package downloaded and integrity verified |
+| 4    | `DELIVERED (3)`        | `SUCCESSFULLY_DOWNLOADED_VERIFIED (3)` | Package ready to be installed             |
+| 5    | `INSTALLED (4)`        | `SOFTWARE_SUCCESSFULLY_INSTALLED (2)`  | Software successfully installed           |
+| 6    | `INITIAL (0)`          | `INITIAL (0)`                          | Returned to initial state after Uninstall |
+
+
+There are several ways to trigger OTA software updates using the LwM2M transport. 
+You can choose a Software update strategy in the Device Profile, 
+which defines how the update process will be executed for all devices under this profile.
 
 ### Push software update as binary file using Object 9 and Resource 2.
 The software package is pushed from the server directly to the device via the block-wise transfer to the Resource 2 of 
@@ -1168,6 +1559,52 @@ the Object 9.
 This option allows running the software update with the image file located on the 3rd party storage. In this case 
 the server generates a CoAP-URL and  sends it to the client, and the client downloads software image from the external 
 resource directly without transferring image to the server.
+
+## Test OTA using ThingsBoard LwM2M Demo Client
+
+The [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client) is a command-line tool 
+designed to simulate an LwM2M client and connect it to a ThingsBoard server.
+
+This client can be used to test OTA firmware and software updates, as it supports:
+
+    Configurable server connection parameters (host, port, endpoint name)
+    NoSecure communication with NoSec
+    Secure communication using DTLS (with PSK, RPK, x509)
+    Dynamic and static LwM2M object model definitions
+    Simulation of various LwM2M objects, including:
+        Object 5 (Firmware Update)
+        Object 9 (Software Management)
+        Object 19 (OTA Metadata)
+    Logging of update and state transitions
+
+It is particularly useful for validating the "Firmware update strategy" and "Software update strategy" set in the Device Profile, 
+and for ensuring compatibility of OTA metadata delivery via Object 19.
+
+To get started:
+
+1. Clone the project:
+
+```ruby
+git clone https://github.com/thingsboard/thingsboard.lwm2m.demo.client
+```
+{: .copy-code}
+
+
+2. Build the client using Maven:
+
+```ruby
+mvn clean install
+```
+{: .copy-code}
+
+3. Run the client with custom parameters:
+
+```
+java -jar thingsboard-lw-demo-client-{version}.jar -u coap://demo.thingsboard.io -n MyClientNoSec -tota
+```
+{: .copy-code}
+
+Refer to the [README](https://github.com/thingsboard/thingsboard.lwm2m.demo.client/blob/master/README.md) for full usage details and advanced configuration options.
 
 ## Advanced topics
 

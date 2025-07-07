@@ -78,6 +78,43 @@ calculated-field-result:
         image: /images/user-guide/calculated-fields/calculated-field-result-1-pe.png
         title: 'After clicking the "Add" button, the calculated field will be added to your entity or profile.'
 
+how-to-configure-reprocessing:
+    0:
+        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-1-pe.png
+        title: 'Choose the target Entity or Profile, go to the "Calculated fields" tab, and either create a new calculated field or select an existing one that needs historical telemetry reprocessing. Click the "Reprocess calculated field" icon next to the desired field.'
+    1:
+        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-2-pe.png
+        title: 'In the pop-up window, define the time interval for which you want to reprocess telemetry data, and click "Reprocess" — the system will start recalculating and update historical telemetry data according to the latest logic.'
+    2:
+        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-3-pe.png
+        title: 'Once the data reprocessing is complete, click "Finish".'
+
+reprocessing-example-1:
+    0:
+        image: /images/user-guide/calculated-fields/reprocessing-example-1-pe.png
+        title: 'As shown on the widget, that displays time series data for the Smart Device, the dew point was first calculated at 13:44:35. Prior to that, no dew point calculations had been performed.'
+
+reprocessing-example-2:
+    0:
+        image: /images/user-guide/calculated-fields/reprocessing-example-2-pe.png
+        title: 'Navigate to the "<b>Calculated fields</b>" tab of your Smart Device and click the "<b>Reprocess calculated field</b>" icon button in the row of the specific calculated field.'
+    1:
+        image: /images/user-guide/calculated-fields/reprocessing-example-3-pe.png
+        title: 'In the pop-up window, specify the time interval for which the data should be reprocessed. Click "<b>Reprocess</b>".'
+    2:
+        image: /images/user-guide/calculated-fields/reprocessing-example-4-pe.png
+        title: 'Once the data reprocessing is complete, click "<b>Finish</b>".'
+
+reprocessing-example-3:
+    0:
+        image: /images/user-guide/calculated-fields/reprocessing-example-5-pe.png
+        title: 'Dew point values have been recalculated for the historical period you specified during the reprocessing configuration.'
+
+task-manager:
+    0:
+        image: /images/user-guide/calculated-fields/task-manager-1-pe.png
+        title: ''
+
 calculated-field-debug-events-2:
     0:
         image: /images/user-guide/calculated-fields/calculated-field-debug-events-2-pe.png
@@ -120,7 +157,7 @@ example-dew-point-calculated-fields:
         title: 'Similarly, create an argument named "humidity". All other parameters should remain the same, except for the telemetry key name — set it to "humidity".'
     2:
         image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-3-pe.png
-        title: 'Define a mathematical expression for the calculation using the variables defined in the "Arguments" section. In the Output section, set the output type to "Time series" and assign "dew point" as the name of the new variable that will store the calculation result. Finally, click "Add".'
+        title: 'Define a mathematical expression for the calculation using the variables defined in the "Arguments" section. In the Output section, set the output type to "Time series" and assign "dewPoint" as the name of the new variable that will store the calculation result. Finally, click "Add".'
     3:
         image: /images/user-guide/calculated-fields/example-dew-point-calculated-fields-4-pe.png
         title: 'The calculated field has now been added.'

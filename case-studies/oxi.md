@@ -148,9 +148,10 @@ description: Discover how OXI TRADE optimized its alternative energy operations 
             <img src="/images/case-studies/proactive-alert-management.webp" title="Proactive alert management and full system accountability" alt="Call center" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/burning-pellets.webp" title="Burning pellets" alt="Burning pellets" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard Edge helps alternative energy management improve operations with IoT?</h2>
         <div class="block">

@@ -111,9 +111,10 @@ description: Discover how IONA Tech enhanced ESD monitoring by integrating Thing
             <img src="/images/case-studies/successful_outcome.webp" title="Successful outcome and strengthened future partnership" alt="Chart in smartphone" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/male_technician_examining_broken_computer.webp" title="Technician" alt="Technician" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps industry 4.0 improve operations with IoT?</h2>
         <div class="block">
