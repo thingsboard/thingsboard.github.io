@@ -25,21 +25,38 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 <section class="development-services">
     <div class="development-services-container">
         <section class="our-customers">
-            <div class="customer-logos">
-                <div class="logo">
-                    <img src="/images/development-services/Prosegur.webp" alt="Prosegur company logo"/>
-                </div>
-                <div class="logo">
-                    <img src="/images/development-services/t-mobile.webp" alt="T-Mobile logo"/>
-                </div>
-                <div class="logo">
-                    <img src="/images/development-services/Intel.webp" alt="Intel logo"/>
-                </div>
-                <div class="logo">
-                    <img src="/images/development-services/Engie.webp" alt="Engie energy company logo"/>
-                </div>
-                <div class="logo">
-                    <img src="/images/development-services/schwarz.webp" alt="Schwarz Group logo"/>
+            <div>
+                <div class="customer-logos">
+                    <a class="logo">
+                        <img src="/images/development-services/Prosegur.webp" alt="Prosegur company logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/t-mobile.webp" alt="T-Mobile logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/Intel.webp" alt="Intel logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/Engie.webp" alt="Engie energy company logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/schwarz.webp" alt="Schwarz Group logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/Prosegur.webp" alt="Prosegur company logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/t-mobile.webp" alt="T-Mobile logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/Intel.webp" alt="Intel logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/Engie.webp" alt="Engie energy company logo"/>
+                    </a>
+                    <a class="logo">
+                        <img src="/images/development-services/schwarz.webp" alt="Schwarz Group logo"/>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1616,58 +1633,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             jQuery('.developmentServicesContactUsForm').attr('id', formId);
         }
     }
-
-
-    // const sectionLists = document.querySelectorAll(".section-list");
-
-    // const sectionListObserver = new IntersectionObserver(entries => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             entry.target.classList.add("section-list-animation");
-    //             sectionListObserver.unobserve(entry.target);
-    //         }
-    //     })
-    // }, {
-    //     threshold: 0.2
-    // });
-
-    // sectionLists.forEach(sectionList => {
-    //     sectionListObserver.observe(sectionList)
-    // });
-
-    // const baseImages = document.querySelectorAll(".base-image");
-
-    // const baseImagesObserver = new IntersectionObserver(entries => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             entry.target.classList.add("base-image-animation");
-    //             baseImagesObserver.unobserve(entry.target);
-    //         }
-    //     })
-    // }, {
-    //     threshold: 0.3
-    // });
-
-    // baseImages.forEach(element => {
-    //     baseImagesObserver.observe(element)
-    // });
-
-    // const secondaryImages = document.querySelectorAll(".secondary-image");
-
-    // const secondaryImagesObserver = new IntersectionObserver(entries => {
-    //     entries.forEach(entry => {
-    //         if (entry.isIntersecting) {
-    //             entry.target.classList.add("secondary-image-animation");
-    //             secondaryImagesObserver.unobserve(entry.target);
-    //         }
-    //     })
-    // }, {
-    //     threshold: 0.2
-    // });
-
-    // secondaryImages.forEach(element => {
-    //     secondaryImagesObserver.observe(element)
-    // });
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();

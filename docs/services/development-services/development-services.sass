@@ -115,7 +115,7 @@ h2
         padding-top: 80px
 
     #first-screen
-        min-height: 750px
+        min-height: auto
         width: 100%
         background-color: transparent
         overflow: hidden
@@ -195,28 +195,62 @@ h2
             .our-customers
                 width: 100%
                 display: flex
-                @include content-container(56px)
+                flex-direction: column
                 align-items: center
                 z-index: 1
                 border-radius: 10px
+                background: rgba(255, 255, 255, 0.20)
+                backdrop-filter: blur(25px)
+                margin-bottom: 56px
+
+                & > div
+                    position: relative
+                    width: 90vw
+                    overflow: hidden
+                    &:before, &:after
+                        position: absolute
+                        top: 0
+                        width: 15vw
+                        height: 100%
+                        content: ""
+                        z-index: 1
+                        pointer-events: none
+                    &:before
+                        left: 0
+                        background: linear-gradient(to right, #fff 40%, transparent 100%)
+
+                    &:after
+                        right: 0
+                        background: linear-gradient(to left, #fff 40%, transparent 100%)
+
+                .title
+                    color: #000000C2
+                    text-align: center
+                    font-size: 36px
+                    font-style: normal
+                    font-weight: 500
+                    line-height: 32px
+                    letter-spacing: 0.2px
+                    padding: 40px 0
 
                 .customer-logos
-                    width: 100%
-                    height: 80px
                     display: flex
-                    justify-content: space-evenly
-                    flex-wrap: wrap
-                    gap: 8px
-                    padding-bottom: 56px
+                    align-items: center
+                    gap: 150px
+                    animation-name: running
+                    animation-duration: 25s
+                    animation-iteration-count: infinite
+                    animation-timing-function: linear
+                    position: relative
 
                     .logo
-                        display: flex
-                        height: 80px
-                        > img
-                            object-fit: contain
-                            width: 100%
-                            height: auto
-                            max-width: fit-content
+                        filter: grayscale(100%)
+                        opacity: 0.6
+                        &:hover
+                            filter: unset
+                            opacity: unset
+                        img
+                            height: 80px
 
             .statistics
                 @include content-container(120px)
@@ -263,6 +297,10 @@ h2
                 @include content-container(100px)
                 .custom-solutions-wrapper
                     text-align: center
+                    animation-name: slideup-in
+                    animation-duration: 1000ms
+                    animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+                    animation-fill-mode: forwards
                     h2 
                         font-size: 48px
                         font-weight: 400
@@ -1736,96 +1774,6 @@ h2
         line-height: 28px
         letter-spacing: 0.016px
 
-    // .section-list
-    //     li
-    //         list-style-type: disc
-    //         margin-left: 30px
-    //         color: #5E5F62
-    //         font-size: 22px
-    //         font-style: normal
-    //         font-weight: 400
-    //         line-height: 32px
-    //         letter-spacing: 0.022px
-    //         padding-bottom: 24px
-    //         opacity: 0
-
-    // .section-list-animation
-    //     $delay: 500ms
-    //     li
-    //         animation-name: slideup-in
-    //         animation-duration: 1000ms
-    //         animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-    //         animation-fill-mode: forwards
-    //         animation-delay: $delay
-
-    //         @for $i from 1 through 8
-    //             &:nth-child(#{$i + 1})
-    //                 animation-delay: calc(#{$delay} + calc(#{$i} * 200ms))
-
-    // .base-image
-    //     opacity: 0.5
-    //     transform: scale(0.8)
-
-    // .base-image-animation
-    //     animation-name: baseImageAppear
-    //     animation-duration: 500ms
-    //     animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-    //     animation-fill-mode: forwards
-
-    // .secondary-image
-    //     opacity: 0
-    //     transform: scale(0)
-
-    // .secondary-image-animation
-    //     animation-name: secondaryImageAppear
-    //     animation-duration: 750ms
-    //     animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-    //     animation-fill-mode: forwards
-
-    //     &:nth-child(2)
-    //         animation-delay: 200ms
-
-    // .number
-    //     position: absolute
-
-    // .bg-rectangle
-    //     position: absolute
-    //     width: 692px
-    //     height: 659px
-    //     transform: rotate(36.145deg)
-    //     flex-shrink: 0
-    //     border-radius: 60px
-    //     opacity: 0.3
-    //     background: #E9EBFB
-    //     z-index: 0
-
-    // button:hover
-    //     filter: brightness(1.3) contrast(.9)
-
-    // #rectangle1
-    //     top: 20%
-    //     left: 82%
-
-    // #rectangle2
-    //     top: 80%
-    //     left: 82%
-
-    // #rectangle3
-    //     top: 90%
-    //     left: -10%
-
-    // #number-one
-    //     top: 35%
-    //     left: 62%
-
-    // #number-two
-    //     top: 12%
-    //     left: 33%
-
-    // #number-three
-    //     top: 45%
-    //     left: 54%
-
     .header
         margin: 0 0 20px
         font-size: 20px
@@ -2001,6 +1949,14 @@ h2
         .statistics
     
     @media screen and (max-width: $step5)
+        #first-screen
+            .hero-container
+                #hero-content
+                    .cdu-title
+                        font-size: 80px
+            //     .cdu-sub-title
+            // .request-concultation
+
         .statistics
             .statistics-wrapper
                 padding: 32px
@@ -3468,3 +3424,8 @@ h2
     to 
         top: 0 
         opacity: 1
+@keyframes running
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-2825px)
