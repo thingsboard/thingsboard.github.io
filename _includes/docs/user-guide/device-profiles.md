@@ -9,12 +9,12 @@ Device profiles in ThingsBoard allows an administrator to define and centrally m
 This greatly simplifies the management of a large number of similar devices, making it especially valuable in IoT solutions where numerous devices share identical configurations and behaviors.
 
 Typical device profile settings include:
-- Setting a default **Rule Chain**.
-- Configuring **Message Queues** for efficient message handling.
+- Setting a default [rule chain](#default-rule-chain).
+- Configuring message [queues](#queue) for efficient message handling.
 - Defining **Firmware** and **Software** versions to be distributed automatically to devices.
-- Configuring **transport protocols** used for device communication.
-- Defining and managing **Alarm rules**.
-- Setting the **provision strategy**.
+- Configuring [transport protocols](#transport-configuration) used for device communication.
+- Defining and managing [alarm rules](#alarm-rules).
+- Setting the [provision strategy](#device-provisioning).
 
 ## Create device profile
 
@@ -30,22 +30,22 @@ To create a new device profile:
 
 ### Default rule chain
 
-The Default [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} processes all incoming messages and events from any device. 
-As the number of device types increases, the Default Rule Chain may become complex and challenging to manage. Often, users create custom root rule chains to redirect messages to specialized rule chains based on the device type.
+The Default [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} processes all incoming messages and events from any device. As the number of device types grows, the default rule chain can become complex and difficult to manage. 
+Often, users create their own root rule chains to route messages to specialized rule chains based on device type.
 
-To simplify this process, starting from ThingsBoard version 3.2, you can specify separate rule chains for individual device profiles. 
-This enables centralized and flexible management of telemetry processing, device status (active/inactive), and device lifecycle events (creation, update, deletion).
+To simplify this process, you can assign separate rule chains to individual device profiles. 
+This allows you to centrally and flexibly manage telemetry processing, device state (active/inactive), and device lifecycle events (creation, update, deletion).
 
 {% include images-gallery.html imageCollection="device-profile-rule-chain" %}
 
 ### Queue
 
-By default, the [Main](/docs/pe/user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
+By default, the **main** [queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/){:target="_blank"} will be used to store all incoming messages and events from any device.
 The transport layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
 However, for multiple use cases, you might want to use different queues for different devices. 
 For example, you might want to isolate data processing for Fire Alarm/Smoke Detector sensors and other devices.
 This way, even if your system has a peak load produced by millions of water meters, whenever the Fire Alarm is reported, it will be processed without delay.
-Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy){:target="_blank"} and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy){:target="_blank"} strategies.
+Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#submit-settings){:target="_blank"} and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#retries-processing-settings){:target="_blank"} strategies.
 
 > **Please note:** if you choose to use a custom queue, you should configure it with the **system administrator** before you using it.
 
@@ -86,7 +86,7 @@ Custom MQTT topic filters support **single-level (`+`)** and **multi-level (`#`)
 <br>
 Let&#39;s look at an example where we use custom MQTT topic filters to publish time-series data using "MQTT Basic" device credentials:
 
-- Specify custom MQTT topic filters in the Device Profile. For example:
+- Specify custom MQTT topic filters in the device profile. For example:
   - Telemetry topic filter: `/telemetry`
   - Attributes topic filter: `/attributes`
 - Configure MQTT basic credentials for your device:
@@ -171,7 +171,7 @@ When compatibility mode is enabled, ThingsBoard will default to using a Protobuf
 
 <b><font size="3">CoAP device type:</font></b>
 
-- **Default**. The default CoAP device type uses a JSON payload. This supports basic [CoAP APIs](/docs/{{docsPrefix}}reference/coap-api/){:target="_blank"} similar to the [default transport type](#default-transport-type){:target="_blank"}.    
+- **Default**. The default CoAP device type uses a JSON payload. This supports basic [CoAP APIs](/docs/{{docsPrefix}}reference/coap-api/){:target="_blank"} similar to the [default transport type](#default-transport-type).    
 You can also configure devices to transmit data using [Protocol Buffers](https://developers.google.com/protocol-buffers){:target="_blank"} (Protobuf) by changing the **CoAP device payload** setting to **Protobuf**.
 
     - **Protocol Buffers (Protobuf)** is a language- and platform-neutral method of serializing structured data, designed primarily to reduce the size of transmitted data.   
@@ -247,8 +247,11 @@ Alarm rules are configured in device profiles, allowing centralized control over
       - **Active all the time**
       - **Active at a specific times**
       - **Custom**
-  - **Additional info** — an optional alarm details template that supports dynamic substitution of telemetry or attribute values using ${attributeName} syntax.
+  - **Additional info** — an optional alarm details template that supports dynamic substitution of telemetry or attribute values using **${attributeName}** syntax.
 - **Alarm clear condition** — specifies the criteria for clearing or deactivating the alarm.
+
+> By default, ThingsBoard sends notifications about alarm creation or updates to the ThingsBoard [Notification center](/docs/user-guide/notifications/){:target="_blank"}.   
+You can configure additional notification channels, including messages through the ThingsBoard mobile app, SMS, email, Slack, or Microsoft Teams. For detailed instructions on setting up these notification methods, please refer to the [ThingsBoard notifications documentation](/docs/user-guide/notifications/#alarm-1){:target="_blank"}.
 
 ### Alarm rule configurations
 
@@ -257,44 +260,64 @@ Let&#39;s explore some alarm rule configurations to better understand how it wor
 #### Simple alarm condition
 
 Imagine you want to monitor the temperature inside a fridge storing valuable goods.
+We&#39;ll assume you already have a device called **Thermometer**, which uses a device profile named **Thermostats**.
 
-We&#39;ll assume you already have a device called "Thermometer", which uses a **device profile named "Thermostats"**.
-
-We would like to create a **Critical** alarm when the temperature is greater than 10 degrees.
+Create a **Critical** alarm when the temperature exceeds **10°C**:
 
 {% include images-gallery.html imageCollection="simple-alarm-condition" showListImageTitles="true" %} 
 
 #### Alarm condition with a duration
 
-Let&#39;s assume that we would like to modify [simple alarm condition](#simple-alarm-condition) and raise alarms only if the temperature exceeds a certain threshold for 1 minute. 
+Modify the [simple alarm condition](#simple-alarm-condition) to trigger an alarm only if the temperature exceeds the threshold for a specific duration (e.g., 1 minute).   
 
-For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Duration". We should also specify the duration value and unit.
+Edit the existing alarm condition:
+- Change the condition type from **Simple** to **Duration**.
+- Specify the **duration** and **time unit**.
+- Click **Save** and apply changes.
 
-{% include images-gallery.html imageCollection="alarmСonditionsWithDuration" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="alarmСonditionsWithDuration" %}
 
 Now let&#39;s assume you would like to replace the 1 minute duration with a dynamic value that depends on the settings for a particular device, customer or tenant. 
 
-For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
+For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes){:target="_blank"} feature. 
 
-Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“1”* for your device.
+- Please create a server-side attribute **highTemperatureDurationThreshold** with the integer value "**1**: for your device.
+- Edit the alarm condition: 
+  - Go to the dynamic value of the alarm delay by pressing the "**Switch to dynamic value**" button.
+  - Select a value: current device, current customer or current tenant.
+  - Specify the attribute from which the alarm threshold value will be taken.
+  - You may optionally check "Inherit from owner".
 
-{% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
+  > **Inheritance** allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes.
+
+  - Apply all changes.
+
+{% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" %}
 
 #### Repeating alarm condition
 
-Let&#39;s assume we would like to modify [simple alarm condition](#simple-alarm-condition) and raise alarms only if the sensor reports a temperature that exceeds the threshold 3 times in a row.
+Let&#39;s assume we would like to modify [simple alarm condition](#simple-alarm-condition) and trigger an alarm only after a condition repeats several times (e.g., 3 times):
 
-For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify "3" as &#39;Count of events&#39;.
+For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "**Repeating**". We should also specify **3** as **count of events**.
 
-{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" %}
 
 Now let&#39;s assume you would like to replace the set number of times the alarm condition is exceeded with a dynamic value that depends on the settings for a particular device, customer or tenant. 
 
-For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
+For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes){:target="_blank"} feature. 
 
-Please create a server-side attribute *"highTemperatureRepeatingThreshold"*, with the integer value *"3"* for your device.
+- Please create a server-side attribute **highTemperatureRepeatingThreshold**, with the integer value **3** for your device.
+- Edit the alarm condition:
+  - Go to the dynamic value of the repeating alarm condition by pressing the "**Switch to dynamic value**" button.
+  - Select a value: current device, current customer or current tenant.
+  - Specify the attribute from which the value will be taken, how many times the threshold value must be exceeded for an alarm to be triggered. 
+  - You may optionally check "Inherit from owner". 
 
-{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
+  > **Inheritance** allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes.
+
+  - Apply all changes.
+
+{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" %}
 
 #### Clear alarm rule
 
@@ -310,13 +333,29 @@ Let&#39;s assume we would like an alarm rule to evaluate alarms only during work
 
 #### Advanced thresholds
 
-Let&#39;s assume we would like our users to be able to overwrite the thresholds from Dashboard UI. 
-We can also add the flag to enable or disable certain alarms for each device. 
-For this, we will use dynamic values in the alarm rule condition. 
-We will use two attributes: the boolean *temperatureAlarmFlag*, and the numeric *temperatureAlarmThreshold*.
-Our goal is to trigger an alarm creation when "*temperatureAlarmFlag* = True AND *temperature* is greater than *temperatureAlarmThreshold*".
+Let&#39;s assume we want our users to overwrite threshold values directly from the Dashboard UI. 
+We can also add a flag to enable or disable certain alarms for each device. To achieve this, we will use dynamic values in the alarm rule condition.
 
-{% include images-gallery.html imageCollection="alarmСonditionsAdvanced" showListImageTitles="true" %}
+We will use two attributes:
+- **temperatureAlarmFlag** (Boolean)
+- **temperatureAlarmThreshold** (Numeric)
+
+Our goal is to trigger an alarm when the following condition is met:
+**temperatureAlarmFlag** = **True** AND the **temperature value** is greater than **temperatureAlarmThreshold**.
+
+**1.** Add two **server attributes** to your device: **temperatureAlarmFlag** and **temperatureAlarmThreshold**.
+
+{% include images-gallery.html imageCollection="alarmСonditionsAdvanced1" %}
+
+**2. Edit the alarm condition:**
+  - Modify the temperature key filter</b> and change the <b>value type to dynamic</b>.
+  - Select a dynamic source type, enter <b>temperatureAlarmThreshold</b>, and click "<b>Update</b>". 
+  - Optionally, check "Inherit from owner". This allows the threshold value to be taken from the customer if it is not set at the device level. If it is not set at either the device or customer level, the rule will use the value from <b>tenant attributes</b>.
+  - Add another <b>key filter</b> for the <b>temperatureAlarmFlag</b>, then click "<b>Add</b>".
+  - Select the key type "<b>Attribute</b>", specify <b>temperatureAlarmFlag</b> attribute as the key name, and choose "<b>Boolean</b>" value type. Choose a <b>comparison operator</b> and enter <b>threshold value</b>. Then click "<b>Add</b>".
+  - Save all changes.
+
+{% include images-gallery.html imageCollection="alarmСonditionsAdvanced2" %}
 
 #### Dynamic thresholds based on the tenant or customer attributes
 
@@ -325,29 +364,11 @@ But what if you would like to enable or disable certain rule for all devices tha
 To avoid configuration of the attribute for each device, you may configure alarm rule to compare constant value with the value of Tenant or Customer Attribute.
 For this purpose, you should use "Constant" key type and compare it with dynamic value. See configuration example below:
 
-{% include images-gallery.html imageCollection="alarmСonstantFilters" showListImageTitles="false" %}
+{% include images-gallery.html imageCollection="alarmСonstantFilters" %}
 
 The technique mentioned above may be used to enable or disable rules or combine filters on device telemetry/attributes with filters on tenant or customer attributes.
-
-### Notifications about alarms
-
-Assuming you have configured alarm rules you may also want to receive a notification when ThingsBoard creates or updates the alarm.
-The device profile rule node has three main outbound relation types that you can use: &#39;Alarm Created&#39;, &#39;Alarm Severity Updated&#39;, and &#39;Alarm Cleared&#39;.
-See the example rule chain below. Please make sure that the system administrator has configured the SMS/email providers before you proceed or configure your own settings in the rule nodes. 
-
-You may also use existing guides: 
-[Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) (Use part which explains &#39;to email&#39; and &#39;send email&#39; nodes) 
-or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
-There is also an additional &#39;Alarm Updated&#39; relation type that should be ignored in most cases to avoid duplicate notifications.
-
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-notifications-ce.png)
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-notifications-pe.png)
-{% endif %}
 
 ## Device provisioning
 
 Device provisioning allows a device to automatically register in ThingsBoard either during or after manufacturing. 
-**See separate documentation [page](/docs/{{docsPrefix}}user-guide/device-provisioning/) for more details.**
+See separate documentation [page](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"} for more details.

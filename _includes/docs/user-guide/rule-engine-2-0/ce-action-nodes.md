@@ -187,8 +187,6 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br>
-
 ## Clear alarm node
 
 <table  style="width:250px;">
@@ -307,7 +305,6 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br>
 
 ## Create relation node 
 
@@ -388,8 +385,6 @@ When delay period for particular incoming message will be reached it will be rem
   
 Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.  
 
-<br>
-
 ## Delete relation node
 
 <table  style="min-width:12%; max-width: 20%">
@@ -430,8 +425,6 @@ In other cases Message will be routed via **Success** chain.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
-<br>
-
 ## Device profile node
 
 <table  style="width:250px;">
@@ -442,38 +435,38 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/device-profile-node.png)
+![deviceProfileNode](/images/user-guide/rule-engine-2-0/nodes/device-profile-node.png)
 
-Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile. By default, this is the first rule node in the chain of processing. 
-The rule node processes all incoming messages and reacts to the attributes and telemetry values.
+<br>
+
+The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile. By default, it is the first node in the processing chain. This node processes all incoming messages and reacts to both attribute values and telemetry data.
+
+<br>
 
 {% if docsPrefix == null %}
-<object width="65%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-ce.png"></object>
+<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="65%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-pe.png"></object>
+<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-pe.png"></object>
 {% endif %}
 
 Node configuration:
 
 - **Persist state of alarm rules**<br>
 Stores the processing state of alarm rules. **Disabled by default**. 
-This option is useful when using **duration** or **repeating** conditions.<br>
-**For example:** If you have a condition like "**Temperature is greater than 50°C for 1 hour**" and the first temperature reading above 50°C arrives at **13:00**,   
-then at **14:00** PM the alarm should be triggered (assuming the temperature remains above the threshold).   
+This option is useful when using [duration](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-condition-with-a-duration){:target="_blank"} or [repeating](/docs/{{docsPrefix}}user-guide/device-profiles/#repeating-alarm-condition){:target="_blank"} conditions.   
+*For example:* If you have a condition like "**Temperature is greater than 50°C for 1 hour**" and the first temperature reading above 50°C arrives at **13:00**, then at **14:00** PM the alarm should be triggered (assuming the temperature remains above the threshold).   
 However, if the **server is restarted between 13:00 PM and 14:00 PM**, the rule node needs to **retrieve the state from the database** to trigger the alarm as expected.   
 If this option is **enabled together with "Fetch state of alarm rules**", the rule node will be able to create the alarm even after a restart.
 If it remains **disabled**, the rule node will **not generate the alarm** after a restart.   
 It is **disabled by default for performance reasons**. When enabled, every incoming message that matches at least one alarm condition will cause an additional **write operation to persist the state** in the database.
 
 - **Fetch state of alarm rules**<br>
-Restores the alarm rule processing state when the rule node initializes. Disabled by default.   
-This setting is also useful for duration or repeating conditions.   
-It works in tandem with "Persist state of alarm rules", but in certain cases you might want to keep "Persist state" enabled while disabling this option.
-For example, if you have many devices that send data frequently or continuously, disabling this option can avoid loading the state from the database during startup.   
-In this case, the rule node will load the state from the database only when the first message arrives from a specific device.
-
-<br>
+Restores the alarm rule processing state when the rule node initializes. **Disabled by default**.   
+This setting is also useful for [duration](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-condition-with-a-duration){:target="_blank"} or [repeating](/docs/{{docsPrefix}}user-guide/device-profiles/#repeating-alarm-condition){:target="_blank"} conditions.   
+It works in tandem with "**Persist state of alarm rules**", but in certain cases you might want to keep **"Persist state" enabled while disabling this option**.
+For example, if you have many devices that send data frequently or continuously, disabling this option can **avoid loading the state from the database during startup**.   
+In this case, the rule node will **load the state from the database only when the first message arrives from a specific device**.
 
 ## Generator node
 
@@ -519,8 +512,6 @@ Outbound Message from this Node will be new Message that was constructed using c
 JavaScript generator function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 This node can be used for Rule Chain debugging purposes.
-
-<br>
 
 ## Log node
 
@@ -738,8 +729,6 @@ Otherwise Message will be routed via **Success** chain.
 
 For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/{{docsPrefix}}user-guide/rpc/) article.
 
-<br>
-
 ## Save attributes node
 
 <table style="width:250px;">
@@ -859,8 +848,6 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
   * If an incoming message payload cannot be parsed to attribute key-value pairs.
   * If the incoming message metadata includes a non-empty `scope` property whose value does not match one of the valid attribute scopes (i.e. `CLIENT_SCOPE`, `SHARED_SCOPE`, or `SERVER_SCOPE`).
   * If unexpected error occurs during message processing.
-
-<br>
 
 ## Save timeseries node 
 
@@ -1029,8 +1016,6 @@ If specified message field does not exist in the **data** of the message or is n
 
 **NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.  
 
-<br>
-
 ## Assign To Customer node 
 
 <table  style="width:250px;">
@@ -1065,8 +1050,6 @@ Message will be routed via **Failure** chain in the following cases:
 - Target customer doesn't exist and **Create customer if not exists** is unchecked.
 
 In other cases Message will be routed via **Success** chain. 
-
-<br>
 
 ## Unassign From Customer node
 
@@ -1120,8 +1103,6 @@ Produces incoming messages by GPS based parameters. Extracts latitude and longit
 
 The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
 
-<br>
-
 ### Fetch perimeter information from message metadata
 
 There are two options of area definition based on the perimeter type: **Polygon** and **Circle**
@@ -1159,6 +1140,7 @@ There are two options of area definition based on the perimeter type:
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
 
 ### Event Types
+
 There are 4 types of events managed by geofencing rule node:
 
 - **Entered** — is reporting whenever latitude and longitude from the incoming message to belong the required perimeter area for the first time;

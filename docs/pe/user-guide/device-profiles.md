@@ -9,43 +9,49 @@ redirect_from: "/docs/pe/user-guide/ui/device-profiles"
 create-device-profile:
     0:
         image: /images/user-guide/device-profile/create-device-profile-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'Go to the "<b>Device profiles</b>" page in the "<b>Profiles</b>" section. Click the "<b>+</b>" icon in the upper-right corner and select "<b>Create new device profile</b>" from the dropdown menu.'
     1:
         image: /images/user-guide/device-profile/create-device-profile-2-pe.png
-        title: 'Only the Name field is required; all other settings are optional. Click "Add" to create the device profile.'
+        title: 'Only the <b>Name</b> field is required; all other settings are optional. Click "<b>Add</b>" to create the device profile.'
 
 device-profile-rule-chain:
     0:
         image: /images/user-guide/device-profile/device-profile-rule-chain-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'You can simplify the processing of incoming messages and events from any device by assigning separate rule chains to device profiles based on device type, instead of using the default rule chain.'
+
+device-profile-queue:
+    0:
+        image: /images/user-guide/device-profile/device-profile-queue-1-pe.png
+        title: 'Using separate queues for different device types allows isolated and prioritized processing, ensuring critical events like fire alarms are handled promptly despite high system load.'
 
 device-profile-transport:
     0:
         image: /images/user-guide/device-profile/device-profile-transport-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'The current version of ThingsBoard platform supports the following transport types: <b>Default, MQTT, CoAP, LWM2M, SNMP</b>.'
 
 default-transport-type:
     0:
         image: /images/user-guide/device-profile/default-transport-type-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
+        title: 'The <b>Default</b> transport type is designed to ensure compatibility with earlier versions of the platform. Devices using this type can connect through ThingsBoard&#39;s standard APIs: <b>MQTT</b>, <b>HTTP</b>, and <b>CoAP</b>. It requires no special configuration.'
 
 mqtt-device-topic-filters:
     0:
         image: /images/user-guide/device-profile/mqtt-device-topic-filters-1-pe.png
+        title: 'Custom MQTT topic filters support <b>single-level (+)</b> and <b>multi-level (#) wildcards</b>, making it possible to connect to almost any <b>MQTT-based device</b> that sends payloads in <b>JSON</b> or <b>Protobuf</b> format.'
 
 mqtt-transport-setting-example:
     0:
         image: /images/user-guide/device-profile/mqtt-transport-example-1-pe.png
-        title: 'Step 1. Specify custom MQTT device topic filter for the Device profile.'
+        title: 'Specify custom <b>MQTT device topic filters</b> in the device profile.'
     1:
         image: /images/user-guide/device-profile/mqtt-transport-example-2-pe.png
-        title: 'Step 2. Provide basic MQTT credentials for your device with the client id &#39;c1&#39;, username &#39;t1&#39; and password &#39;secret&#39;.'
+        title: 'Click the "<b>Manage credentials</b>" button in your device details.'
     2:
         image: /images/user-guide/device-profile/mqtt-transport-example-3-pe.png
-        title: 'Step 3. Use Terminal to publish time-series data.'
+        title: '<b>Provide basic MQTT credentials</b> for your device with the client id &#39;c1&#39;, username &#39;t1&#39; and password &#39;secret&#39;.'
     3:
         image: /images/user-guide/device-profile/mqtt-transport-example-4-pe.png
-        title: 'Transmitted data will be displayed in the "Latest telemetry" tab of the device.'
+        title: 'Use <b>Terminal</b> to publish time-series data. Transmitted data will be displayed in the <b>"Latest telemetry" tab</b> of the device.'
 
 mqtt-device-payload:
     0:
@@ -58,11 +64,6 @@ mqtt-device-payload:
 compatibility-with-other-payload-formats:
     0:
         image: /images/user-guide/device-profile/mqtt-device-payload-3-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
-
-device-profile-queue:
-    0:
-        image: /images/user-guide/device-profile/device-profile-queue-1-pe.png
         title: 'Go to the "Device profiles" page in the "Profiles" section. Click the "+" icon in the upper-right corner and select "Create new device profile" from the dropdown menu.'
 
 coap-default:
@@ -96,25 +97,25 @@ snmp-transport-type:
 simple-alarm-condition:
     0:
         image: /images/user-guide/device-profile/alarm-example-1-step-1-pe.png
-        title: 'Go to the "Device profiles" page in the "Profiles" section. Click on the desired device profile to open its details.'
+        title: 'Go to the "<b>Device profiles</b>" page in the "<b>Profiles</b>" section. Select your device profile (e.g., Thermostats). Navigate to the "Alarm rules" tab and click the "pencil" icon to edit.'
     1:
         image: /images/user-guide/device-profile/alarm-example-1-step-2-pe.png
-        title: 'Navigate to the "Alarm rules" tab and click the "pencil" icon to enter edit mode.'
+        title: 'Click "<b>Add alarm rule"</b>.'
     2:
         image: /images/user-guide/device-profile/alarm-example-1-step-3-pe.png
-        title: 'Click "Add alarm rule".'
+        title: 'Define alarm type and severity. Then click "<b>+</b>" icon to add a new alarm condition.'
     3:
         image: /images/user-guide/device-profile/alarm-example-1-step-4-pe.png
-        title: 'Specify the alarm type, select severity, then click the "+" icon to add a new alarm condition.'
+        title: 'Click "<b>Add key filter</b>".'
     4:
         image: /images/user-guide/device-profile/alarm-example-1-step-5-pe.png
-        title: 'Select the key type, specify attribute/time series key name, and choose the value type. Then click "Add" in the "Filters".'
+        title: 'Select the <b>key type</b>, <b>specify attribute/time series key name</b>, and choose the <b>value type</b>. Then click "<b>Add</b>" under the "<b>Filters</b>".'
     5:
         image: /images/user-guide/device-profile/alarm-example-1-step-6-pe.png
-        title: 'Choose a comparison operator and enter the threshold value. Click "Add" in the bottom-right corner to confirm.'
+        title: 'Choose a <b>comparison operator</b> and enter the <b>threshold value</b>. Click "<b>Add</b>" in the bottom-right corner to confirm.'
     6:
         image: /images/user-guide/device-profile/alarm-example-1-step-7-pe.png
-        title: 'Click "Save".'
+        title: 'Click "<b>Save</b>".'
     7:
         image: /images/user-guide/device-profile/alarm-example-1-step-8-pe.png
         title: 'Finally, save changes.'
@@ -122,98 +123,104 @@ simple-alarm-condition:
 alarmСonditionsWithDuration:
     0:
         image: /images/user-guide/device-profile/alarm-example-2-step-1-pe.png
-        title: 'Step 1. Edit the alarm condition.'
+        title: 'Edit the alarm condition: change the condition type from "<b>Simple</b>" to "<b>Duration</b>". Specify the <b>duration value</b> and its <b>unit of measurement</b>. Save changes.'
     1:
         image: /images/user-guide/device-profile/alarm-example-2-step-2-pe.png
-        title: 'Change the condition type to "Duration". Specify duration value and unit. Save the condition.'
-    2:
-        image: /images/user-guide/device-profile/alarm-example-2-step-3-pe.png
-        title: 'Apply changes.'
+        title: 'Alarm condition changed.'
 
 alarmСonditionsWithDuration2:
     0:
+        image: /images/user-guide/device-profile/alarm-example-2-step-3-pe.png
+        title: 'Edit the alarm condition. Go to the dynamic value of the alarm delay by pressing the "<b>Switch to dynamic value</b>" button.'
+    1:      
         image: /images/user-guide/device-profile/alarm-example-2-step-4-pe.png
-        title: 'Edit the alarm condition'
-    1:
-        image: /images/user-guide/device-profile/alarm-example-2-step-5-pe.png
-        title: 'Go to the dynamic value of the alarm delay by pressing the "Switch to dynamic value" button;'
-    2:
-        image: /images/user-guide/device-profile/alarm-example-2-step-6-pe.png
         title: 'Select a value: current device, current customer or current tenant. And specify the attribute from which the alarm threshold value will be taken.
-        You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes;'
-    3:
-        image: /images/user-guide/device-profile/alarm-example-2-step-7-pe.png
-        title: 'Apply all changes.'
+        You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes. Save changes.'
+    2:
+        image: /images/user-guide/device-profile/alarm-example-2-step-5-pe.png
+        title: 'Alarm condition changed.'
 
 alarmСonditionsWithRepeating:
     0:
         image: /images/user-guide/device-profile/alarm-example-3-step-1-pe.png
-        title: 'Step 1. Edit the alarm condition and change the condition type to "Repeating". Specify "3" as "Count of events" to trigger the alarm. This value will be used by default, if no attribute is set for your device. Save the condition.'
+        title: 'Edit the alarm condition and set the type to "<b>Repeating</b>". Specify the <b>count of events</b>. Save the condition.'
     1:
         image: /images/user-guide/device-profile/alarm-example-3-step-2-pe.png
-        title: 'Step 2. Apply changes.'
+        title: 'Alarm condition changed.'
 
 alarmСonditionsWithRepeating2:
     0:
         image: /images/user-guide/device-profile/alarm-example-3-step-3-pe.png
-        title: 'Step 4. Go to the dynamic value of the repeating alarm condition by pressing the "Switch to dynamic value" button;'
+        title: 'Go to the dynamic value of the repeating alarm condition by pressing the "<b>Switch to dynamic value" button</b>".'
     1:
         image: /images/user-guide/device-profile/alarm-example-3-step-4-pe.png
-        title: 'Step 5. Select a value: current device, current customer or current tenant. And specify the attribute from which the value will be taken, how many times the threshold value must be exceeded for an alarm to be triggered. You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes;'
+        title: 'Select a value: current device, current customer or current tenant. And specify the attribute from which the value will be taken, how many times the threshold value must be exceeded for an alarm to be triggered. You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes. Save changes.'
     2:
         image: /images/user-guide/device-profile/alarm-example-3-step-5-pe.png
-        title: 'Step 6. Apply all changes.'
+        title: 'Alarm condition changed.'
 
 alarmСonditionsClear:
     0:
         image: /images/user-guide/device-profile/alarm-example-4-step-1-pe.png
-        title: 'Step 1. Open the device profile and toggle edit mode. Click the "Add clear condition" button.'
+        title: 'In the alarm rule configuration click "<b>Add clear condition</b>" button.'
     1:
         image: /images/user-guide/device-profile/alarm-example-4-step-2-pe.png
-        title: 'Step 2. Click on the red "+" sign.'
+        title: 'Click on the red "<b>+</b>" sign.'
     2:
         image: /images/user-guide/device-profile/alarm-example-4-step-3-pe.png
-        title: 'Step 3. Add Key Filter. Then click Add.'
+        title: 'Click "<b>Add key filter</b>".'
     3:
         image: /images/user-guide/device-profile/alarm-example-4-step-4-pe.png
-        title: 'Step 4. Save the alarm rule condition.'
+        title: 'Select the <b>key type</b>, specify <b>attribute/time series key name</b>, and choose the <b>value type</b>. Then click "<b>Add</b>" under the "<b>Filters</b>".'
     4:
         image: /images/user-guide/device-profile/alarm-example-4-step-5-pe.png
-        title: 'Step 4. Finally, apply changes.'
+        title: 'Choose a <b>comparison operator</b> and enter the <b>threshold value</b>. Click "<b>Add</b>" in the bottom-right corner to confirm. Click "Add".'
+    5:
+        image: /images/user-guide/device-profile/alarm-example-4-step-6-pe.png
+        title: 'Click "Save".'
+    6:
+        image: /images/user-guide/device-profile/alarm-example-4-step-7-pe.png
+        title: 'Added alarm clearing condition. Finally, apply changes.'
 
 alarmСonditionsSchedule:
     0:
         image: /images/user-guide/device-profile/alarm-example-5-step-1-pe.png
-        title: 'Step 1. Edit the schedule of the alarm rule.'
+        title: 'Edit the schedule of the alarm rule.'
     1:
         image: /images/user-guide/device-profile/alarm-example-5-step-2-pe.png
-        title: 'Step 2. Select timezone, days, time interval, and click "Save".'
+        title: 'Specify timezone, days, time interval during which the alarm rule should be active. Click "Save".'
     2:
         image: /images/user-guide/device-profile/alarm-example-5-step-3-pe.png
-        title: 'Step 3. Finally, apply changes.'
+        title: 'Finally, apply changes.'
 
-alarmСonditionsAdvanced:
+
+alarmСonditionsAdvanced1:
+    0:
+        image: /images/user-guide/device-profile/alarm-example-6-step-6-pe.png
+        title: 'Provide <b>temperatureAlarmFlag</b> and <b>temperatureAlarmThreshold</b> as server attributes for your device.'
+
+alarmСonditionsAdvanced2:
     0:
         image: /images/user-guide/device-profile/alarm-example-6-step-1-pe.png  
-        title: 'Step 1. Modify the temperature key filter and change the value type to dynamic.'
+        title: '<b>Modify the temperature key filter</b> and change the <b>value type to dynamic</b>.'
     1:
         image: /images/user-guide/device-profile/alarm-example-6-step-2-pe.png
-        title: 'Step 2. Select a dynamic source type and input the *temperatureAlarmThreshold*, then click "Update". You may optionally check "Inherit from owner". Inheritance allows to take the threshold value from customer if it is not set on the device level. If the attribute value is not set on both device and customer levels, rule will take the value from the tenant attributes.'
+        title: 'Select a dynamic source type, enter <b>temperatureAlarmThreshold</b>, and click "<b>Update</b>". Optionally, check "Inherit from owner". This allows the threshold value to be taken from the customer if it is not set at the device level. If it is not set at either the device or customer level, the rule will use the value from <b>tenant attributes</b>.'
     2:
         image: /images/user-guide/device-profile/alarm-example-6-step-3-pe.png
-        title: 'Step 3. Add another key filter for the *temperatureAlarmFlag*, then click "Add".'
+        title: 'Add another <b>key filter</b> for the <b>temperatureAlarmFlag</b>, then click "<b>Add</b>".'
     3:
         image: /images/user-guide/device-profile/alarm-example-6-step-4-pe.png
-        title: 'Step 4. Finally, click "Save" and apply changes.'
+        title: 'Select the key type "<b>Attribute</b>", specify <b>temperatureAlarmFlag</b> attribute as the key name, and choose "<b>Boolean</b>" value type. Choose a <b>comparison operator</b> and enter <b>threshold value</b>. Then click "<b>Add</b>".'
     4:
         image: /images/user-guide/device-profile/alarm-example-6-step-5-pe.png
-        title: 'Step 5. Provision device attributes either manually or via the script.'
+        title: 'Save all changes.'
 
 alarmСonstantFilters:
     0:
         image: /images/user-guide/device-profile/alarm-example-7-step-1-pe.png
-        title: 'Choose constant type and value and compare it with the value of the tenant or customer attribute. Apply all changes.'
-      
+        title: 'Use the <b>"Constant" key type</b> and specify the <b>constant value</b> you want to compare with the tenant or customer attribute value. Apply all changes.'
+
 ---
 
 {% assign docsPrefix = "pe/" %}
