@@ -27,34 +27,34 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="our-customers">
             <div>
                 <div class="customer-logos">
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/Prosegur.webp" alt="Prosegur company logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/t-mobile.webp" alt="T-Mobile logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/Intel.webp" alt="Intel logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/Engie.webp" alt="Engie energy company logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/schwarz.webp" alt="Schwarz Group logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/Prosegur.webp" alt="Prosegur company logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/t-mobile.webp" alt="T-Mobile logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/Intel.webp" alt="Intel logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/Engie.webp" alt="Engie energy company logo"/>
                     </a>
-                    <a class="logo">
+                    <a class="logo" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/schwarz.webp" alt="Schwarz Group logo"/>
                     </a>
                 </div>
