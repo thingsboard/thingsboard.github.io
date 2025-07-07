@@ -12,7 +12,23 @@ toc:
     - title: TBMQ Integration Executor
       path: /docs/mqtt-broker/install/ie-config/
 - title: Security
-  path: /docs/mqtt-broker/security/
+  section:
+    - title: Overview
+      path: /docs/mqtt-broker/security/overview/
+    - title: MQTT Listeners
+      path: /docs/mqtt-broker/security/listeners/
+    - title: Authentication
+      section:
+      - title: Overview
+        path: /docs/mqtt-broker/security/authentication/overview/
+      - title: Basic
+        path: /docs/mqtt-broker/security/authentication/basic/
+      - title: X.509 Certificate Chain
+        path: /docs/mqtt-broker/security/authentication/x509/
+      - title: JWT
+        path: /docs/mqtt-broker/security/authentication/jwt/
+      - title: SCRAM
+        path: /docs/mqtt-broker/security/authentication/scram/
 - title: Integration with ThingsBoard
   path: /docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
 - title: MQTT Features
