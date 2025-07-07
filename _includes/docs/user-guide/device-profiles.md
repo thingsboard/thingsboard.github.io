@@ -10,8 +10,8 @@ This greatly simplifies the management of a large number of similar devices, mak
 
 Typical device profile settings include:
 - Setting a default [rule chain](#default-rule-chain).
-- Configuring message [queues](#queue) for efficient message handling.
-- Defining **Firmware** and **Software** versions to be distributed automatically to devices.
+- Configuring message [queue](#queue) for efficient message handling.
+- Defining **firmware** and **software** versions to be distributed automatically to devices.
 - Configuring [transport protocols](#transport-configuration) used for device communication.
 - Defining and managing [alarm rules](#alarm-rules).
 - Setting the [provision strategy](#device-provisioning).
