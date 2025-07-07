@@ -225,7 +225,7 @@ If these nodes are missing, the result **will not be saved** and will not appear
 ## Data reprocessing
 
 {% if docsPrefix == null %}
-> The **telemetry data reprocessing** feature is not available in [ThingsBoard CE](/docs/user-guide/install/installation-options/){:target="_blank"}. It is supported only in [ThingsBoard PE](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} and [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} editions.
+> The **telemetry data reprocessing** feature is available only in [ThingsBoard PE](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} and [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} editions.
 
 {% endif %}
 
@@ -244,7 +244,7 @@ This is especially useful when you modify existing calculations or add new field
 - **Store results as telemetry** — processed data is saved in ThingsBoard as telemetry, enabling further use in widgets, rules, or analytics.
 
 {% if docsPrefix == null %}
-Learn how to configure data reprocessing in the [ThingsBoard PE documentation](http://0.0.0.0:4000/docs/pe/user-guide/calculated-fields/#data-reprocessing){:target="_blank"}.
+Learn how to configure data reprocessing in the [ThingsBoard PE documentation](/docs/pe/user-guide/calculated-fields/#data-reprocessing){:target="_blank"}.
 {% endif %}
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
