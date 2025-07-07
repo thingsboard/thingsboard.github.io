@@ -12,7 +12,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Air Temperature and Humidity Sensor]({{deviceVendorLink}}){: target="_blank"} uses the AHT20 sensor, to measures temperature and humidity in the atmosphere at the range of -40℃ to 85℃ and 0 to 100 %RH with accuracy ±0.2℃ and ±0.2%RH respectively, also with highly waterproof performance tested to IP68, making it widely applicable in agricultural environmental sensing scenarios to support the smart agricultural production.
 
 The sensor benefits from LoRaWAN , which ensures stability and reliability. It is capable of covering a long transmission range while maintaining low power consumption. Unlike wireline devices, it is battery-powered, reducing the workload and complexity of deployment, design and development for end-users that can work via powering it , and setting the configuration in the cloud server, for LoRaWAN® remote monitoring.  It monitors the air temperature and humidity and report them every 1 hour.  
@@ -58,7 +58,7 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/devices-library/lorawan-aths-data.png)
+![LoRaWAN device data](https://img.thingsboard.io/devices-library/lorawan-aths-data.png)
 
 
 ## Conclusion
