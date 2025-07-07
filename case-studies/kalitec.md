@@ -155,9 +155,10 @@ description: Discover how Kalitec partnered with ThingsBoard to deliver reliable
             <img src="/images/case-studies/scalable_growth.webp" title="Reliable infrastructure and scalable growth" alt="Smartphone" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/information_sign_by_road_against_sky.webp" title="Road sign" alt="Road sign" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart infrastructure improve operations with IoT?</h2>
         <div class="block">

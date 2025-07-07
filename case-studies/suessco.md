@@ -118,6 +118,7 @@ description: Discover how SuessCo Sensors and ThingsBoard enable real-time monit
             <h2>SuessCo Sensors GmbH</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps facility management improve operations with IoT?</h2>
         <div class="block">

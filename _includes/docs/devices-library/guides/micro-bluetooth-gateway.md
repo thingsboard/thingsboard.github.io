@@ -1,5 +1,5 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: " to ThingsBoard?" %}
-{% assign deviceVendorLink = "https://www.lansitec.com/products/" %}
+{% assign deviceVendorLink = "https://www.lansitec.com/products/lorawan-micro-bluetooth-gateway/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>

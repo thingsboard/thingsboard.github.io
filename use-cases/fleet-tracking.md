@@ -5,6 +5,7 @@ description: Track, analyze, and optimize your fleet in real time with the Thing
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -31,6 +32,8 @@ includeAdvantages: "true"
 <section class="fleet-tracking-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'fleet-tracking' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="fleet-tracking-solution-structure">
     <h2>Solution structure of IoT fleet tracking</h2>
@@ -309,7 +312,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>
-                <a id="UseCases_FleetTracking_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_FleetTracking_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
 
             applyImageBg(block);

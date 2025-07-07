@@ -22,7 +22,7 @@ description: Discover how Keners boosted agricultural efficiency using ThingsBoa
             </div>
         </div>
     </section>
-    <section class="quote-with-mark">
+    <section class="quote-with-mark fill-background">
         <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allows us to create dashboards and combine data from multiple data sources. <br><br> We highly appreciate the support of the creators, their feedback is simply excellent!”</p>
@@ -80,9 +80,10 @@ description: Discover how Keners boosted agricultural efficiency using ThingsBoa
             <img src="/images/case-studies/agriculture_green.webp" title="Scaling AgriTech with stability and support" alt="Scaling AgriTech with stability and support" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/field.webp" title="Irrigated Field" alt="Irrigated Field" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps agriculture improve operations with IoT?</h2>
         <div class="block">

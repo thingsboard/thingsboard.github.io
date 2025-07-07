@@ -5,6 +5,7 @@ description: Smart Office is a ready-to-use IoT solution powered by ThingsBoard 
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -23,7 +24,7 @@ includeAdvantages: "true"
             </div>
         <div class="long">
             <p>Smart office solutions are designed to optimize workplace environments by monitoring key operational parameters and automating building systems in real time. ThingsBoard, as a robust IoT platform, provides all the necessary tools for collecting, processing, and visualizing data from devices that use protocols like BLE or LoRaWAN gateways, enabling seamless integration and support for flexible solutions.</p>
-            <p>Thanks to ThingsBoard, an open-source IoT platform, it's easy to integrate and visualize data from various devices and sensors, enabling the creation of intelligent, data-driven solutions. This approach allows not only real-time monitoring of office conditions but also active management—turning systems on or off, receiving alerts, and configuring automation scenarios. All of these capabilities are fully demonstrated in our smart office solution.</p>
+            <p>Thanks to ThingsBoard, an open-source IoT platform, it's easy to integrate and visualize data from various devices and sensors, enabling the creation of intelligent, data-driven solutions. This approach allows not only real-time monitoring of office conditions but also active management—turning systems on or off, receiving alerts, and configuring automation scenarios. All of these capabilities are fully demonstrated in our <a href="/docs/pe/solution-templates/smart-office/">smart office solution</a>.</p>
         </div>
     </div>
 </section>
@@ -31,6 +32,8 @@ includeAdvantages: "true"
 <section class="smart-office-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-office' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-office-solution-structure">
     <h2>Solution structure of smart office use case</h2>
@@ -294,7 +297,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

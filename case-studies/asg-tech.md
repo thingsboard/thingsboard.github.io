@@ -10,7 +10,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
     <section class="case-study-hero">
         <div class="card">
             <div class="text">
-                <p class="category"> MART IOT SOLUTIONS</p>
+                <p class="category"> SMART IOT SOLUTIONS</p>
                 <h1>From Concept to Launch: ASG Tech’s Rapid IoT Innovation with ThingsBoard</h1>
                 <div class="image inner" style="background-image: url('/images/case-studies/asg-tech.webp')">
                     <img src="/images/case-studies/asg-tech.svg" title="ASG Tech" alt="ASG Tech logo" width="500" height="126">
@@ -22,7 +22,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
             </div>
         </div>
     </section>
-    <section class="quote-with-mark">
+    <section class="quote-with-mark fill-background">
         <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative loT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.”</p>
@@ -88,9 +88,10 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
             <img src="/images/case-studies/custom-development.webp" title="Custom development that delivers real value" alt="Custom development that delivers real value" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/asg-engineer.webp" title="Road sign" alt="Road sign" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps the IoT solutions field improve operations?</h2>
         <div class="block">

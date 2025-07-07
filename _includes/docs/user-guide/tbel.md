@@ -752,6 +752,32 @@ return toFixed(0.345, 2); // returns 0.35
 ```
 {: .copy-code}
 
+### toInt
+
+Rounds the double value to the nearest integer.
+
+**Syntax:**
+
+*double toInt(double value)*
+
+**Parameters:**
+
+<ul>
+  <li><b>value:</b> <code>double</code> - the double value.</li>
+</ul>
+
+**Return value:**
+
+Rounded integer
+
+**Examples:**
+
+```java
+return toInt(0.3);   // returns 0
+return toInt(0.5);   // returns 1
+return toInt(2.7);   // returns 3
+```
+{: .copy-code}
 
 ### stringToBytes
 
@@ -966,6 +992,34 @@ An integer value indicating the result:
 ```java
 return isHexadecimal("F5D7039"); // Returns 16
 return isHexadecimal("K100110"); // Returns -1
+```
+{: .copy-code}
+
+#### isNaN
+
+Checks whether a double value is "Not-a-Number" (NaN).
+
+**Syntax:**
+
+*boolean isNaN(double value)*
+
+**Parameters:**
+
+<ul>
+  <li><b>value:</b> <code>double</code> - The value to be checked for NaN.</li>
+</ul>
+
+**Return value:**
+
+A boolean indicating the result:
+- `true` if the value is NaN.
+- `false` if the value is a valid number.
+
+**Examples:**
+
+```java
+return isNaN(0.0 / 0.0); // Returns true
+return isNaN(1.0);       // Returns false
 ```
 {: .copy-code}
 
@@ -2730,5 +2784,88 @@ d.toISOString();                                     // return 2022-11-24T09:58:
 
 d.addNanos(-1000000);
 d.toISOString();                                     // return 2022-11-24T09:58:58.999999999Z
+```
+{: .copy-code}
+
+### Geofencing utility functions
+
+#### isInsidePolygon
+
+Checks whether the given geographic coordinate is within the perimeter of the given polygon.
+
+**Syntax:**
+
+*boolean isInsidePolygon(double latitude, double longitude, String perimeter)*
+
+**Parameters:**
+
+<ul>
+  <li><b>latitude:</b> <code>double</code> – The latitude of the coordinate.</li>
+  <li><b>longitude:</b> <code>double</code> – The longitude of the coordinate.</li>
+  <li><b>perimeter:</b> <code>String</code> – A string that represents a polygon using a nested array format:
+    <ul>
+      <li>The first array defines the outer boundary of the polygon.</li>
+      <li>Any additional arrays define inner boundaries (holes).</li>
+      <li>Each point is defined as a pair <code>[latitude, longitude]</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+**Return value:**
+
+A boolean indicating the result:
+- `true` if the coordinate is inside the polygon. 
+- `false` otherwise.
+
+**Examples:**
+
+```java
+var perimeter = "[[[37.7810,-122.4210],[37.7890,-122.3900],[37.7700,-122.3800],[37.7600,-122.4000],[37.7700,-122.4250],[37.7810,-122.4210]],[[37.7730,-122.4050],[37.7700,-122.3950],[37.7670,-122.3980],[37.7690,-122.4100],[37.7730,-122.4050]]]";
+// Outside the polygon
+return isInsidePolygon(37.8000, -122.4300, perimeter); // Returns false
+// Inside the polygon
+return isInsidePolygon(37.7725, -122.4010, perimeter); // Returns true
+// Inside the hole
+return isInsidePolygon(37.7700, -122.4030, perimeter); // Returns false
+```
+{: .copy-code}
+
+#### isInsideCircle
+
+Checks whether the given geographic coordinate is within a circular perimeter.
+
+**Syntax:**
+
+*boolean isInsideCircle(double latitude, double longitude, String perimeter)*
+
+**Parameters:**
+
+<ul>
+  <li><b>latitude:</b> <code>double</code> – The latitude of the coordinate.</li>
+  <li><b>longitude:</b> <code>double</code> – The longitude of the coordinate.</li>
+  <li><b>perimeter:</b> <code>String</code> – A JSON string representing a circle with fields: 
+    <ul>
+      <li><code>latitude</code>: latitude of the circle center.</li>
+      <li><code>longitude</code>: longitude of the circle center.</li>
+      <li><code>radius</code>: radius of the circle.</li>
+      <li><code>radiusUnit</code>: optional, defines the unit of the radius. Defaults to <code>METER</code>. Supported values are: <code>METER</code>, <code>KILOMETER</code>, <code>FOOT</code>, <code>MILE</code>, <code>NAUTICAL_MILE</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+**Return value:**
+
+A boolean indicating the result:
+- `true` if the coordinate is inside the circle.
+- `false` otherwise.
+
+**Examples:**
+
+```java
+var perimeter = "{\"latitude\":37.7749,\"longitude\":-122.4194,\"radius\":3000,\"radiusUnit\":\"METER\"}";
+// Outside the circle
+return isInsideCircle(37.8044, -122.2712, perimeter); // Returns false
+// Inside the circle
+return isInsideCircle(37.7599, -122.4148, perimeter); // Returns true
 ```
 {: .copy-code}

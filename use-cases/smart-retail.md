@@ -5,6 +5,7 @@ description: Discover how ThingsBoard's Smart Retail Solutions enable real-time 
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -22,7 +23,7 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="long">
-            <p>The smart retail solution template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
+            <p>The <a href="/docs/pe/solution-templates/smart-retail/">smart retail solution</a> template represents a flexible, ready-to-use structure for building intelligent retail infrastructures using the ThingsBoard IoT platform. As a solution provider, you can provision multiple customers and assign each one a dedicated pool of IoT devices to monitor key assets across their supermarkets. Customers can easily upload custom floor plans, install devices on-site, and place them logically within the dashboard layout to reflect the physical environment.</p>
             <p>With built-in alarm logic and fully configurable thresholds per device, users can detect anomalies such as temperature fluctuations or unauthorized access without needing a complex setup. The template also includes interactive dashboards that allow both providers and customers to monitor the current and historical state of their supermarkets—empowering data-driven decisions, operational efficiency, and a higher standard of safety and service.</p>        
         </div>
     </div>
@@ -31,6 +32,8 @@ includeAdvantages: "true"
 <section class="smart-retail-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-retail' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="smart-retail-solution-structure">
     <h2>Solution structure of smart retail</h2>
@@ -316,7 +319,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
  
             return block;

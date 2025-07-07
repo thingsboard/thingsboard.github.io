@@ -206,6 +206,7 @@
       .problem
         .title-block
           display: flex
+          align-items: baseline
           margin-bottom: 56px
           gap: 36px
 
@@ -260,6 +261,9 @@
                   font-size: 20px
 
       .tb-power
+        &.mb
+          margin-bottom: 100px
+
         .block
           display: flex
           align-items: center
@@ -311,10 +315,26 @@
           width: 137.55%
           transform: translateX(-14%)
 
+      .full-width-img.bannerMargin
+        margin-bottom: 100px
+        @media (max-width: 599px)
+          margin-bottom: 40px
+
       .quote-with-mark
         display: flex
         gap: 64px
         align-items: flex-start
+
+        &.fill-background
+          &:before
+            content: ""
+            position: absolute
+            width: 300%
+            height: 100%
+            background-color: #F4F8FE
+            z-index: -1
+            left: -100%
+            top: 0
 
         .quote-text
           h2
@@ -396,7 +416,7 @@
 
               &:nth-child(2)
                 position: absolute
-                right: 15px
+                right: 44px
                 top: 54px
                 display: block
 
@@ -444,6 +464,66 @@
               li
                 margin-bottom: 16px
                 list-style: disc
+
+        .services-banner
+          position: relative
+          z-index: 1
+          padding: 46px
+          background: #fff
+          border-radius: 24px
+          box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+          max-width: 1408px
+          width: 100%
+          overflow: hidden
+          white-space: nowrap
+          img
+            position: absolute
+            right: 46px
+            top: -7px
+            @media (max-width: 1150px)
+              display: none
+          .services-content
+            max-width: 600px
+            h2
+              font-size: 36px
+              font-weight: 500
+              line-height: 48px
+              margin-bottom: 16px
+              padding: 0
+              @media (max-width: 599px)
+                font-size: 28px
+            p
+              font-size: 18px
+              font-weight: 400
+              line-height: 30px
+              color: rgba(0, 0, 0, 0.76)
+              margin-bottom: 32px
+              margin-top: 0
+              @media (max-width: 599px)
+                font-size: 14px
+            .contact-us-banner-buttons
+              display: flex
+              gap: 16px
+              flex-wrap: wrap
+              button
+                background: #2A7DEC
+                color: #fff
+              a
+                color: #2A7DEC
+                border: 1px solid #2A7DEC
+              button, a
+                text-align: center
+                font-size: 16px
+                font-weight: 500
+                line-height: 28px
+                width: 154px
+                border-radius: 6px
+                padding: 10px 0
+                @media (max-width: 600px)
+                  width: 100%
+                &:hover
+                  text-decoration: none
+                  filter: brightness(1.3) contrast(0.9)
 
       .contact
         text-align: center
@@ -586,6 +666,8 @@
               img
                 &:nth-child(3)
                   left: 27%
+          .services-banner
+            white-space: normal
 
         .contact
           .bg-wrap
@@ -649,11 +731,8 @@
                 &:nth-child(3)
                   left: 17%
 
-            &:nth-child(odd)
-              .image-container
-                img
-                  &:nth-child(3)
-                    top: 169px
+          .services-banner
+            margin-bottom: 40px
 
         .contact
           .bg-wrap

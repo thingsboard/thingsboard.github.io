@@ -59,7 +59,6 @@
     }
 
     function onPopPricingState() {
-        console.log(123132)
         const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
         let sectionId = params['section'] || params['active'];
         if (!sectionId) {

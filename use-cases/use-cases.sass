@@ -783,7 +783,7 @@
                     overflow: hidden
                     vertical-align: middle
 
-        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-carousel, .health-solution-structure, .health-key-functions, .environment-monitoring-about, .environment-monitoring-carousel, .environment-monitoring-solution-structure, smart-energy-solution-structure, .smart-energy-overview, .smart-office-about, .smart-office-carousel, .water-metering-about, .water-metering-carousel, .fleet-tracking-carousel, .fleet-tracking-about, .smart-retail-about, .smart-retail-carousel
+        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-solution-structure, .health-key-functions, .environment-monitoring-about, .environment-monitoring-carousel, .environment-monitoring-solution-structure, smart-energy-solution-structure, .smart-energy-overview, .smart-office-about, .smart-office-carousel, .water-metering-about, .water-metering-carousel, .fleet-tracking-carousel, .fleet-tracking-about, .smart-retail-about, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .smart-metering-solution-structure, .smart-metering-about, .air-quality-about, .air-quality-carousel, .air-quality-solution-structure, .waste-management-about, .waste-management-carousel, .waste-management-solution-structure, .smart-irrigation-about, .smart-irrigation-carousel, .smart-irrigation-solution-structure, .smart-farming-about, .smart-farming-overview, .smart-farming-solution-structure, .tank-monitoring-about, .tank-monitoring-carousel, .tank-monitoring-solution-structure
             h2
                 margin-bottom: 60px
                 padding-top: 50px
@@ -813,6 +813,19 @@
 
                     @media screen and (max-width: 375px)
                         width: 100%
+
+        .scada-overview.addedBanner, .scada-solution-structure.addedBanner, .health-solution-structure.addedBanner
+            margin-bottom: 170px
+            h2
+                padding-top: 0
+
+        .health-solution-structure.addedBanner
+            h2
+                padding-top: 0
+
+        .scada-overview.addedBanner
+            .img-comp-container
+                margin-bottom: 100px
 
         section
             padding: 0
@@ -953,7 +966,7 @@
                     padding: 8px
 
 
-        .scada-overview, .health-carousel
+        .scada-overview
 
             &::before
                 content: ""
@@ -965,21 +978,21 @@
                 top: -61px
                 z-index: -1
 
-        .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel
+        .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .tank-monitoring-carousel
             .owl-carousel
                 margin: 0
 
-        .smart-energy-overview
+        .smart-energy-overview, .smart-farming-overview
             padding: 80px 0
             @media screen and (max-width: 959px)
                 padding: 40px 0
 
-        .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel
+        .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .tank-monitoring-carousel
             padding: 90px 0 40px
             @media screen and (max-width: 959px)
                 padding: 45px 0 20px
 
-        .smart-energy-overview, .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel
+        .smart-energy-overview, .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .smart-farming-overview, .tank-monitoring-carousel
             margin-bottom: 100px
             @media screen and (max-width: 599px)
                 margin-bottom: 40px
@@ -995,7 +1008,7 @@
             @media screen and (max-width: 959px)
                 margin-bottom: 50px
 
-        .smart-energy-overview, .smart-energy-benefits, .applications.applications-additional, .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel
+        .smart-energy-overview, .smart-energy-benefits, .applications.applications-additional, .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .smart-farming-overview, .tank-monitoring-carousel
             position: relative
             &::before
                 content: ""
@@ -1008,14 +1021,14 @@
                 top: 0
                 z-index: -1
 
-        .smart-energy-solution-structure, .smart-office-solution-structure, .water-metering-solution-structure, .fleet-tracking-solution-structure, .smart-retail-solution-structure
+        .smart-energy-solution-structure, .smart-office-solution-structure, .water-metering-solution-structure, .fleet-tracking-solution-structure, .smart-retail-solution-structure, .smart-farming-solution-structure
             margin: 0
             h2
                 font-size: 36px
                 @media screen and (max-width: 599px)
                     font-size: 28px
 
-        .smart-energy-solution-structure, .environment-monitoring-solution-structure, .env-monitoring
+        .smart-energy-solution-structure, .environment-monitoring-solution-structure, .env-monitoring, .smart-metering-solution-structure, .air-quality-solution-structure, .waste-management-solution-structure, .smart-irrigation-solution-structure, .smart-farming-solution-structure, .tank-monitoring-solution-structure
             h2
                 padding-top: 0
 
@@ -1029,7 +1042,7 @@
                 @media screen and (max-width: 599px)
                     top: -16px
 
-        .scada-overview, .smart-energy-overview
+        .scada-overview, .smart-energy-overview, .smart-farming-overview
 
             .img-comp-container
                 position: relative
@@ -1175,7 +1188,7 @@
                             height: 160px
                             align-content: center
 
-        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure, .environment-monitoring-solution-structure, .smart-office-solution-structure, .water-metering-solution-structure, .fleet-tracking-solution-structure, .smart-retail-solution-structure
+        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure, .environment-monitoring-solution-structure, .smart-office-solution-structure, .water-metering-solution-structure, .fleet-tracking-solution-structure, .smart-retail-solution-structure, .smart-metering-solution-structure, .air-quality-solution-structure, .waste-management-solution-structure, .smart-irrigation-solution-structure, .smart-farming-solution-structure, .tank-monitoring-solution-structure
             .scheme
                 margin-bottom: 48px
 
@@ -1237,7 +1250,7 @@
                     @media screen and (max-width: 599px)
                         height: 107%
 
-        .smart-energy-solution-structure
+        .smart-energy-solution-structure, .smart-farming-solution-structure
             .scheme
                 margin-bottom: 100px
 
