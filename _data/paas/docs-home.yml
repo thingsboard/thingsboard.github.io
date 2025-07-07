@@ -67,10 +67,13 @@ toc:
   section:
     - title: Overview
       path: /docs/paas/user-guide/dashboards/
-    - title: Layouts
-      path: /docs/paas/user-guide/ui/layouts/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
+    - title: Unit conversion
+      path: /docs/paas/user-guide/ui/unit-conversion/
+      new: true
+    - title: Layouts
+      path: /docs/paas/user-guide/ui/layouts/
     - title: SCADA
       new: true
       section:
@@ -295,6 +298,9 @@ toc:
       path: /docs/paas/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/paas/user-guide/rbac/
+    - title: Secrets storage
+      path: /docs/paas/user-guide/secrets-storage/
+      new: true
     - title: Two-factor authentication
       path: /docs/paas/user-guide/two-factor-authentication/
     - title: OAuth 2.0

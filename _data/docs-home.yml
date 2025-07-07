@@ -36,10 +36,13 @@ toc:
   section:
   - title: Overview
     path: /docs/user-guide/dashboards/
-  - title: Layouts
-    path: /docs/user-guide/ui/layouts/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
+  - title: Unit conversion
+    path: /docs/user-guide/ui/unit-conversion/
+    new: true
+  - title: Layouts
+    path: /docs/user-guide/ui/layouts/
   - title: SCADA
     new: true
     section:
@@ -289,6 +292,9 @@ toc:
       path: /docs/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/pe/user-guide/rbac/
+      pe: true
+    - title: Secrets storage
+      path: /docs/pe/user-guide/secrets-storage/
       pe: true
     - title: Two-factor authentication
       path: /docs/user-guide/two-factor-authentication/
