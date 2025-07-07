@@ -1259,6 +1259,37 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 </div>
 
 <script type="text/javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("visible");
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        const getInTouchSections = document.querySelectorAll(".get-in-touch-section");
+        getInTouchSections.forEach(item => {
+            if (item) observer.observe(item);
+        })
+
+        const section = document.querySelector(".vision-section");
+        if (section) observer.observe(section);
+        const trustedPartner = document.querySelector(".trusted-partner")
+        if (trustedPartner) observer.observe(trustedPartner);
+        const engagementModels = document.querySelector(".engagement-models")
+        if (engagementModels) observer.observe(engagementModels);
+        const fastDelivery = document.querySelector(".fast-delivery")
+        if (fastDelivery) observer.observe(fastDelivery);
+        const clientFeedback = document.querySelector(".client-feedback")
+        if (clientFeedback) observer.observe(clientFeedback);
+        const moreFeature = document.querySelector(".more-feature")
+        if (moreFeature) observer.observe(moreFeature);
+        
+    });
     function animateCountUp(el, target, suffix = '', duration = 2000) {
         let start = 0;
         const startTime = performance.now();
