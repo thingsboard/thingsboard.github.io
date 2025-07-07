@@ -46,23 +46,23 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="statistics">
             <div class="statistics-wrapper">
                 <div class="statistic-item">
-                    <div class="statistic-item-num">9</div>
+                    <div class="statistic-item-num" data-target="9">0</div>
                     <div class="statistic-item-text">Years in IoT domain</div>
                 </div>
                 <div class="statistic-item">
-                    <div class="statistic-item-num">112</div>
+                    <div class="statistic-item-num" data-target="112">112</div>
                     <div class="statistic-item-text">Countries</div>
                 </div>
                 <div class="statistic-item">
-                    <div class="statistic-item-num">326+</div>
+                    <div class="statistic-item-num" data-target="326" data-suffix="+">0</div>
                     <div class="statistic-item-text">Delivered projects</div>
                 </div>
                 <div class="statistic-item">
-                    <div class="statistic-item-num">94%</div>
+                    <div class="statistic-item-num" data-target="94" data-suffix="%">0</div>
                     <div class="statistic-item-text">Success rate</div>
                 </div>
                 <div class="statistic-item">
-                    <div class="statistic-item-num">65%</div>
+                    <div class="statistic-item-num" data-target="65" data-suffix="%">0</div>
                     <div class="statistic-item-text">Clients return for a <br> 2nd+ project</div>
                 </div>
                 <img class="map-img" src="/images/development-services/world map 2webp.webp" alt="map">
@@ -1242,6 +1242,43 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 </div>
 
 <script type="text/javascript">
+    function animateCountUp(el, target, suffix = '', duration = 2000) {
+        let start = 0;
+        const startTime = performance.now();
+
+        function update(currentTime) {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            const value = Math.floor(progress * target);
+            el.textContent = value + suffix;
+
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            }
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    function initCounters() {
+        const counters = document.querySelectorAll('.statistic-item-num');
+
+        const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = parseInt(el.getAttribute('data-target'), 10);
+            const suffix = el.getAttribute('data-suffix') || '';
+            animateCountUp(el, target, suffix);
+            obs.unobserve(el); // Only run once
+            }
+        });
+        }, { threshold: 0.6 });
+
+        counters.forEach(counter => observer.observe(counter));
+    }
+
+    document.addEventListener('DOMContentLoaded', initCounters);
     document.addEventListener('DOMContentLoaded', function() {
         const expansionPanels = document.querySelectorAll('.expansion-panel');
         const expansionTitles = document.querySelectorAll('.expansion-title');

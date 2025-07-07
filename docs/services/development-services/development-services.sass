@@ -1998,11 +1998,27 @@ h2
         .development-services
             .development-services-container
                 width: 1216px
+        .statistics
+    
+    @media screen and (max-width: $step5)
+        .statistics
+            .statistics-wrapper
+                padding: 32px
+                .statistic-item
+                    .statistic-item-num
+                        font-size: 50px
+                        line-height: 60px
+                    .statistic-item-text
+                        font-size: 18px
     
     @media screen and (max-width: $step4)
         .development-services
             .development-services-container
                 width: 704px
+        .statistics
+            .statistics-wrapper
+                justify-content: center
+                gap: 24px
         //     .our-customers
     //         @include content-container-max1919(56px)
     //     .statistics
@@ -2018,6 +2034,44 @@ h2
     //     .clients-reviews
     //     .questions-section
     //     .contact-us-section
+    @media screen and (max-width: $step3)
+        .statistics
+            .statistics-wrapper
+                flex-direction: row
+                flex-wrap: wrap
+                justify-content: center
+                .statistic-item
+                    flex: 1 1 45%
+                    max-width: 300px
+                    .statistic-item-num
+                        font-size: 44px
+                    .statistic-item-text
+                        font-size: 16px
+                        text-align: center
+
+    @media screen and (max-width: $step2)
+        .statistics
+            .statistics-wrapper
+                flex-direction: column
+                align-items: center
+                padding: 24px
+                .statistic-item
+                    width: 100%
+                    max-width: 320px
+                    .statistic-item-num
+                        font-size: 36px
+                    .statistic-item-text
+                        font-size: 15px
+    @madia screen and (max-width: $step1)
+        .statistics
+            .statistics-wrapper
+                padding: 20px
+                .statistic-item
+                    .statistic-item-num
+                        font-size: 30px
+                        line-height: 38px
+                    .statistic-item-text
+                        font-size: 14px
 
     // @media screen and (max-width: $step6)
     //     .noToc
