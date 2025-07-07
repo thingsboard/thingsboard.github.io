@@ -3,95 +3,7 @@ Action Nodes execute various actions based on incoming Message.
 * TOC
 {:toc}
 
-## Math Function Node
-
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
-     </tr>
-   </thead>
-</table> 
-
-The rule node applies math function and saves the result into the message and/or database. See table of supported functions below:
-
-<style>
-
-  div.mathFunctionsTable + table tr th:nth-child(1) {
-     width: 10%
-  }
-
-  div.mathFunctionsTable + table tr th:nth-child(2) {
-     width: 10%
-  }
-
-  div.mathFunctionsTable + table tr th:nth-child(3) {
-     width: 65%
-  }
-
-  div.mathFunctionsTable + table tr th:nth-child(4) {
-     width: 15%
-  }
-
-</style>
-
-<div class="mathFunctionsTable"></div>
-
-| Function | Number of arguments | Description   | Reference
-|-----------|---|-------------|--------|
-| ADD       | 2 | x + y       | |
-| SUB       | 2 | x - y       | |
-| MULT      | 2 | x * y       | |
-| DIV       | 2 | x / y       | |
-| SIN       | 1 | Returns the trigonometric sine of an angle.      | [Math.sin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sin(double))|
-| SINH      | 1 | Returns the hyperbolic sine of a double value. The hyperbolic sine of x is defined to be (*e*<sup>x</sup> - *e*<sup>-x</sup>)/2 where *e* is Euler's number.     | [Math.sinh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sinh(double))|
-| COS       | 1 | Returns the trigonometric cosine of an angle.       | [Math.cos](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cos(double))|
-| COSH      | 1 | Returns the hyperbolic cosine of a double value. The hyperbolic cosine of x is defined to be (*e*<sup>x</sup> + *e*<sup>-x</sup>)/2 where *e* is Euler's number.     | [Math.cosh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cosh(double))|
-| TAN       | 1 | Returns the trigonometric tangent of an angle.      | [Math.tan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#tan(double))|
-| TANH      | 1 | Returns the hyperbolic tangent of a double value.      | [Math.tanh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#tanh(double))|
-| ACOS      | 1 | Returns the arc cosine of a value; the returned angle is in the range *0.0* through *pi*.     | [Math.acos](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#acos(double))|
-| ASIN      | 1 | Returns the arc sine of a value; the returned angle is in the range *-pi/2* through *pi/2*.     | [Math.asin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#asin(double))|
-| ATAN      | 1 | Returns the arc tangent of a value; the returned angle is in the range -pi/2 through pi/2.     | [Math.atan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan(double))|
-| ATAN2     | 2 | Returns the angle theta from the conversion of rectangular coordinates (x, y) to polar coordinates (r, theta). | [Math.atan2](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan2(double,double))|
-| EXP       | 1 | Returns the value *e*<sup>x</sup>, where *e* is the base of the natural logarithms.         |  [Math.exp](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#exp(double))|
-| EXPM1     | 1 | Returns *e*<sup>x</sup>-1. Note that for values of x near 0, the exact sum of expm1(x) + 1 is much closer to the true result of *e*<sup>x</sup> than exp(x).            |  [Math.expm1](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#expm1(double)) |
-| SQRT      | 1 | Returns the correctly rounded positive square root of a double value. | [Math.sqrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sqrt(double))|
-| CBRT      | 1 | Returns the cube root of a double value. | [Math.cbrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cbrt(double))| 
-| GET_EXP   | 1 | Returns the unbiased exponent used in the representation of a double.            |  [Math.getExponent](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#getExponent(double))|
-| HYPOT     | 2 | Returns sqrt(x2 +y2) without intermediate overflow or underflow.   | [Math.getExponent](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#hypot(double,double)) |
-| LOG       | 1 | Returns the natural logarithm (base e) of a double value. | [Math.log](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log(double))|
-| LOG10     | 1 | Returns the base 10 logarithm of a double value. |  [Math.log10](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log10(double))  |
-| LOG1P     | 1 | Returns the natural logarithm of the sum of the argument and 1. Note that for small values x, the result of log1p(x) is much closer to the true result of ln(1 + x) than the floating-point evaluation of log(1.0+x).            |  [Math.log1p](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log1p(double))|
-| CEIL      | 1 | Returns the smallest (closest to negative infinity) double value that is greater than or equal to the argument and is equal to a mathematical integer. |  [Math.ceil](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#ceil(double)) |
-| FLOOR     | 1 | Returns the largest (closest to positive infinity) double value that is less than or equal to the argument and is equal to a mathematical integer. |  [Math.floor](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floor(double)) |
-| FLOOR_DIV | 2 | Returns the largest (closest to positive infinity) long value that is less than or equal to the algebraic quotient. |  [Math.floorDiv](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floorDiv(long,long)) |
-| FLOOR_MOD | 2 | Returns the floor modulus of the long arguments. |  [Math.floorMod](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floorMod(long,long)) |
-| ABS       | 1 | Returns the absolute value of a double value.             |  [Math.abs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#abs(double)) |
-| MIN       | 2 | Returns the smaller of two double values.            |  [Math.min](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#min(double,double)) |
-| MAX       | 2 | Returns the greater of two double values.             |  [Math.max](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#max(double,double)) |
-| POW       | 2 | Returns the value of the first argument raised to the power of the second argument.             |  [Math.pow](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#pow(double,double)) |
-| SIGNUM    | 1 | Returns the signum function of the argument; zero if the argument is zero, 1.0 if the argument is greater than zero, -1.0 if the argument is less than zero.            |  [Math.signum](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#signum(double)) |
-| RAD       | 1 | Converts an angle measured in degrees to an approximately equivalent angle measured in radians.             |  [Math.toRadians](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toRadians(double)) |
-| DEG       | 1 | Converts an angle measured in radians to an approximately equivalent angle measured in degrees.            |  [Math.toDegrees](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toDegrees(double)) |
-| CUSTOM    | 1-16| Use this function to specify complex math expressions. For example, transform Fahrenheit to Celsius using (x - 32) / 1.8) | [exp4j](https://github.com/fasseg/exp4j)  |
-
-You may use 5 types of arguments:
-
- * Constant;
- * Value from the message body;
- * Value from the message meta data;
- * Value of the attribute that belongs to the message originator (device, asset, etc). Value should be of Numeric type or string that is convertible to float;
- * Value of the latest time-series that belongs to the message originator (device, asset, etc). Value should be of Numeric type or string that is convertible to float;
-
-Primary use case for this rule node is to take one or more values from the database and modify them based on data from the message. For example, you may increase `totalWaterConsumption` based on the `deltaWaterConsumption` reported by device.
-
-Alternative use case is the replacement of simple JS `script` nodes with more light-weight and performant implementation. For example, you may transform Fahrenheit to Celsius (*C = (F - 32) / 1.8*) using CUSTOM operation and expression: *(x - 32) / 1.8)*.
-
-The execution is synchronized in scope of message originator (e.g. device) and server node. If you have rule nodes in different rule chains, they will process messages from the same originator synchronously in the scope of the server node.
-
-The result of the function may be added to the message body or metadata. You may also save the result to the database as an attribute or time-series.
-
-## Calculated Fields Node
+## Calculated fields node
 
 <table  style="width:250px;">
    <thead>
@@ -138,7 +50,7 @@ This message enters rule chain where the [device profile switch](/docs/{{docsPre
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
 
-## Create Alarm Node
+## Create alarm node
 
 <table  style="width:250px;">
    <thead>
@@ -275,9 +187,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br>
-
-## Clear Alarm Node
+## Clear alarm node
 
 <table  style="width:250px;">
    <thead>
@@ -395,9 +305,64 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
+
+## Create relation node 
+
+<table  style="min-width:12%; max-width: 20%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
+
+Create the relation from the selected entity to originator of the message by type and direction.
+
+Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**, **Customer**, **Tenant**, **Dashboard**.
+
+Finds target Entity by metadata key patterns and then create a relation between Originator Entity and the target entity.
+
+If selected entity type **Asset**, **Device** or **Customer**  rule node will create new Entity if it doesn’t exist and selected checkbox: **Create new Entity if not exists**.
+
+**Note:** if selected entity type **Asset** or **Device** you need to set two patterns:
+
+- entity name pattern;
+
+- entity type pattern.
+
+Otherwise, only name pattern should be set.
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
+
+- **Direction** - following types are allowed: **From**, **To**.
+- **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
+- **Name pattern** and **Type pattern** - can be set direct entity name/type or pattern can be used, that will be resolved to the real entity name/type using Message metadata.
+- **Entities cache expiration time** - specifies maximum time interval is seconds allowed to store found target entity records. 0 value means that records will never expire.
+
+Message will be routed via **Failure** chain in the following cases:
+
+- When Originator entity type is not supported.
+- Target entity doesn't exist.
+
+In other cases Message will be routed via **Success** chain.
+
+**Note:** Since TB Version 2.3 the rule node has the ability to:
+
+- remove current relations from the originator of the incoming message based on direction and type:
+
+  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
+
+- change the originator of the incoming message to the selected entity and process outboud messages as messages from another entity:
+
+  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
+
 <br>
 
-## Delay Node (deprecated)
+## Delay node (deprecated)
 
 <table  style="width:250px;">
    <thead>
@@ -420,9 +385,90 @@ When delay period for particular incoming message will be reached it will be rem
   
 Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.  
 
+## Delete relation node
+
+<table  style="min-width:12%; max-width: 20%">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.2.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
+
+Delete the relation from the selected entity to originator of the message by type and direction.
+
+Following Message Originator types are allowed: **Asset**, **Device**, **Entity View**, **Customer**, **Tenant**, **Dashboard**.
+
+Finds target Entity by entity name pattern and then delete a relation between Originator Entity and this entity.
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
+
+- **Direction** - following types are allowed: **From**, **To**.
+- **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
+- **Name pattern** - can be set direct entity name or pattern can be used, that will be resolved to the real entity name using Message metadata.
+- **Entities cache expiration time** - specifies maximum time interval is seconds allowed to store found target entity records. 0 value means that records will never expire.
+
+Message will be routed via **Failure** chain in the following cases:
+
+- When Originator entity type is not supported.
+- Target entity doesn't exist.
+
+In other cases Message will be routed via **Success** chain.
+
+
+**Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
+
+## Device profile node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![deviceProfileNode](/images/user-guide/rule-engine-2-0/nodes/device-profile-node.png)
+
 <br>
 
-## Generator Node
+The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile. By default, it is the first node in the processing chain. This node processes all incoming messages and reacts to both attribute values and telemetry data.
+
+<br>
+
+{% if docsPrefix == null %}
+<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-ce.png"></object>
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-pe.png"></object>
+{% endif %}
+
+Node configuration:
+
+- **Persist state of alarm rules**<br>
+Stores the processing state of alarm rules. **Disabled by default**. 
+This option is useful when using [duration](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-condition-with-a-duration){:target="_blank"} or [repeating](/docs/{{docsPrefix}}user-guide/device-profiles/#repeating-alarm-condition){:target="_blank"} conditions.   
+*For example:* If you have a condition like "**Temperature is greater than 50°C for 1 hour**" and the first temperature reading above 50°C arrives at **13:00**, then at **14:00** PM the alarm should be triggered (assuming the temperature remains above the threshold).   
+However, if the **server is restarted between 13:00 PM and 14:00 PM**, the rule node needs to **retrieve the state from the database** to trigger the alarm as expected.   
+If this option is **enabled together with "Fetch state of alarm rules**", the rule node will be able to create the alarm even after a restart.
+If it remains **disabled**, the rule node will **not generate the alarm** after a restart.   
+It is **disabled by default for performance reasons**. When enabled, every incoming message that matches at least one alarm condition will cause an additional **write operation to persist the state** in the database.
+
+- **Fetch state of alarm rules**<br>
+Restores the alarm rule processing state when the rule node initializes. **Disabled by default**.   
+This setting is also useful for [duration](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-condition-with-a-duration){:target="_blank"} or [repeating](/docs/{{docsPrefix}}user-guide/device-profiles/#repeating-alarm-condition){:target="_blank"} conditions.   
+It works in tandem with "**Persist state of alarm rules**", but in certain cases you might want to keep **"Persist state" enabled while disabling this option**.
+For example, if you have many devices that send data frequently or continuously, disabling this option can **avoid loading the state from the database during startup**.   
+In this case, the rule node will **load the state from the database only when the first message arrives from a specific device**.
+
+## Generator node
 
 <table  style="width:250px;">
    <thead>
@@ -467,9 +513,7 @@ JavaScript generator function can be verified using [Test JavaScript function](/
 
 This node can be used for Rule Chain debugging purposes.
 
-<br>
-
-## Log Node 
+## Log node
 
 <table  style="width:250px;">
    <thead>
@@ -501,7 +545,95 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#log-unknown-request)
 
-## RPC Call Reply Node
+## Math function node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+The rule node applies math function and saves the result into the message and/or database. See table of supported functions below:
+
+<style>
+
+  div.mathFunctionsTable + table tr th:nth-child(1) {
+     width: 10%
+  }
+
+  div.mathFunctionsTable + table tr th:nth-child(2) {
+     width: 10%
+  }
+
+  div.mathFunctionsTable + table tr th:nth-child(3) {
+     width: 65%
+  }
+
+  div.mathFunctionsTable + table tr th:nth-child(4) {
+     width: 15%
+  }
+
+</style>
+
+<div class="mathFunctionsTable"></div>
+
+| Function  | Number of arguments | Description                                                                                                                                                                                                           | Reference                                                                                                                 
+|-----------|---------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
+| ADD       | 2                   | x + y                                                                                                                                                                                                                 |                                                                                                                           |
+| SUB       | 2                   | x - y                                                                                                                                                                                                                 |                                                                                                                           |
+| MULT      | 2                   | x * y                                                                                                                                                                                                                 |                                                                                                                           |
+| DIV       | 2                   | x / y                                                                                                                                                                                                                 |                                                                                                                           |
+| SIN       | 1                   | Returns the trigonometric sine of an angle.                                                                                                                                                                           | [Math.sin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sin(double))                  |
+| SINH      | 1                   | Returns the hyperbolic sine of a double value. The hyperbolic sine of x is defined to be (*e*<sup>x</sup> - *e*<sup>-x</sup>)/2 where *e* is Euler's number.                                                          | [Math.sinh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sinh(double))                |
+| COS       | 1                   | Returns the trigonometric cosine of an angle.                                                                                                                                                                         | [Math.cos](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cos(double))                  |
+| COSH      | 1                   | Returns the hyperbolic cosine of a double value. The hyperbolic cosine of x is defined to be (*e*<sup>x</sup> + *e*<sup>-x</sup>)/2 where *e* is Euler's number.                                                      | [Math.cosh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cosh(double))                |
+| TAN       | 1                   | Returns the trigonometric tangent of an angle.                                                                                                                                                                        | [Math.tan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#tan(double))                  |
+| TANH      | 1                   | Returns the hyperbolic tangent of a double value.                                                                                                                                                                     | [Math.tanh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#tanh(double))                |
+| ACOS      | 1                   | Returns the arc cosine of a value; the returned angle is in the range *0.0* through *pi*.                                                                                                                             | [Math.acos](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#acos(double))                |
+| ASIN      | 1                   | Returns the arc sine of a value; the returned angle is in the range *-pi/2* through *pi/2*.                                                                                                                           | [Math.asin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#asin(double))                |
+| ATAN      | 1                   | Returns the arc tangent of a value; the returned angle is in the range -pi/2 through pi/2.                                                                                                                            | [Math.atan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan(double))                |
+| ATAN2     | 2                   | Returns the angle theta from the conversion of rectangular coordinates (x, y) to polar coordinates (r, theta).                                                                                                        | [Math.atan2](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan2(double,double))       |
+| EXP       | 1                   | Returns the value *e*<sup>x</sup>, where *e* is the base of the natural logarithms.                                                                                                                                   | [Math.exp](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#exp(double))                  |
+| EXPM1     | 1                   | Returns *e*<sup>x</sup>-1. Note that for values of x near 0, the exact sum of expm1(x) + 1 is much closer to the true result of *e*<sup>x</sup> than exp(x).                                                          | [Math.expm1](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#expm1(double))              |
+| SQRT      | 1                   | Returns the correctly rounded positive square root of a double value.                                                                                                                                                 | [Math.sqrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sqrt(double))                |
+| CBRT      | 1                   | Returns the cube root of a double value.                                                                                                                                                                              | [Math.cbrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cbrt(double))                | 
+| GET_EXP   | 1                   | Returns the unbiased exponent used in the representation of a double.                                                                                                                                                 | [Math.getExponent](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#getExponent(double))  |
+| HYPOT     | 2                   | Returns sqrt(x2 +y2) without intermediate overflow or underflow.                                                                                                                                                      | [Math.getExponent](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#hypot(double,double)) |
+| LOG       | 1                   | Returns the natural logarithm (base e) of a double value.                                                                                                                                                             | [Math.log](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log(double))                  |
+| LOG10     | 1                   | Returns the base 10 logarithm of a double value.                                                                                                                                                                      | [Math.log10](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log10(double))              |
+| LOG1P     | 1                   | Returns the natural logarithm of the sum of the argument and 1. Note that for small values x, the result of log1p(x) is much closer to the true result of ln(1 + x) than the floating-point evaluation of log(1.0+x). | [Math.log1p](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log1p(double))              |
+| CEIL      | 1                   | Returns the smallest (closest to negative infinity) double value that is greater than or equal to the argument and is equal to a mathematical integer.                                                                | [Math.ceil](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#ceil(double))                |
+| FLOOR     | 1                   | Returns the largest (closest to positive infinity) double value that is less than or equal to the argument and is equal to a mathematical integer.                                                                    | [Math.floor](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floor(double))              |
+| FLOOR_DIV | 2                   | Returns the largest (closest to positive infinity) long value that is less than or equal to the algebraic quotient.                                                                                                   | [Math.floorDiv](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floorDiv(long,long))     |
+| FLOOR_MOD | 2                   | Returns the floor modulus of the long arguments.                                                                                                                                                                      | [Math.floorMod](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floorMod(long,long))     |
+| ABS       | 1                   | Returns the absolute value of a double value.                                                                                                                                                                         | [Math.abs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#abs(double))                  |
+| MIN       | 2                   | Returns the smaller of two double values.                                                                                                                                                                             | [Math.min](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#min(double,double))           |
+| MAX       | 2                   | Returns the greater of two double values.                                                                                                                                                                             | [Math.max](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#max(double,double))           |
+| POW       | 2                   | Returns the value of the first argument raised to the power of the second argument.                                                                                                                                   | [Math.pow](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#pow(double,double))           |
+| SIGNUM    | 1                   | Returns the signum function of the argument; zero if the argument is zero, 1.0 if the argument is greater than zero, -1.0 if the argument is less than zero.                                                          | [Math.signum](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#signum(double))            |
+| RAD       | 1                   | Converts an angle measured in degrees to an approximately equivalent angle measured in radians.                                                                                                                       | [Math.toRadians](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toRadians(double))      |
+| DEG       | 1                   | Converts an angle measured in radians to an approximately equivalent angle measured in degrees.                                                                                                                       | [Math.toDegrees](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toDegrees(double))      |
+| CUSTOM    | 1-16                | Use this function to specify complex math expressions. For example, transform Fahrenheit to Celsius using (x - 32) / 1.8)                                                                                             | [exp4j](https://github.com/fasseg/exp4j)                                                                                  |
+
+You may use 5 types of arguments:
+
+* Constant;
+* Value from the message body;
+* Value from the message meta data;
+* Value of the attribute that belongs to the message originator (device, asset, etc). Value should be of Numeric type or string that is convertible to float;
+* Value of the latest time-series that belongs to the message originator (device, asset, etc). Value should be of Numeric type or string that is convertible to float;
+
+Primary use case for this rule node is to take one or more values from the database and modify them based on data from the message. For example, you may increase `totalWaterConsumption` based on the `deltaWaterConsumption` reported by device.
+
+Alternative use case is the replacement of simple JS `script` nodes with more light-weight and performant implementation. For example, you may transform Fahrenheit to Celsius (*C = (F - 32) / 1.8*) using CUSTOM operation and expression: *(x - 32) / 1.8)*.
+
+The execution is synchronized in scope of message originator (e.g. device) and server node. If you have rule nodes in different rule chains, they will process messages from the same originator synchronously in the scope of the server node.
+
+The result of the function may be added to the message body or metadata. You may also save the result to the database as an attribute or time-series.
+
+## RPC call reply node
 
 <table  style="width:250px;">
    <thead>
@@ -550,7 +682,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial)
 
-## RPC Call Request Node
+## RPC call request node
 
 <table  style="width:250px;">
    <thead>
@@ -597,9 +729,7 @@ Otherwise Message will be routed via **Success** chain.
 
 For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/{{docsPrefix}}user-guide/rpc/) article.
 
-<br>
-
-## Save Attributes Node
+## Save attributes node
 
 <table style="width:250px;">
    <thead>
@@ -719,9 +849,7 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
   * If the incoming message metadata includes a non-empty `scope` property whose value does not match one of the valid attribute scopes (i.e. `CLIENT_SCOPE`, `SHARED_SCOPE`, or `SERVER_SCOPE`).
   * If unexpected error occurs during message processing.
 
-<br>
-
-## Save Timeseries Node 
+## Save timeseries node 
 
 <table style="width:250px;">
    <thead>
@@ -858,7 +986,7 @@ Due to the scenarios described above, the ability to configure each persistence 
   * If an incoming message payload is empty (for example, `{}` or `[]` or even `[{}, {}, {}]`).
   * If unexpected error occurs during message processing.
 
-## Save to Custom Table
+## Save to custom table node
 
 <table  style="width:250px;">
    <thead>
@@ -888,9 +1016,7 @@ If specified message field does not exist in the **data** of the message or is n
 
 **NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.  
 
-<br>
-
-## Assign To Customer Node 
+## Assign To Customer node 
 
 <table  style="width:250px;">
    <thead>
@@ -925,9 +1051,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br>
-
-## Unassign From Customer Node
+## Unassign From Customer node
 
 <table  style="width:250px;">
    <thead>
@@ -961,7 +1085,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-## Create Relation Node 
+## Create relation node 
 
 <table  style="width:250px;">
    <thead>
@@ -1017,7 +1141,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-## Delete Relation Node
+## Delete relation node
 
 <table  style="width:250px;">
    <thead>
@@ -1059,7 +1183,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-## GPS Geofencing Events Node
+## GPS geofencing events node
 
 <table  style="width:250px;">
    <thead>
@@ -1076,8 +1200,6 @@ Produces incoming messages by GPS based parameters. Extracts latitude and longit
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
 
 The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
-
-<br>
 
 ### Fetch perimeter information from message metadata
 
@@ -1115,7 +1237,8 @@ There are two options of area definition based on the perimeter type:
                   
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)       
 
-### Event Types
+### Event types
+
 There are 4 types of events managed by geofencing rule node:
 
 - **Entered** — is reporting whenever latitude and longitude from the incoming message to belong the required perimeter area for the first time;
@@ -1134,7 +1257,7 @@ Minimal outside time defines whenever message originator is considered as out of
 
 <br>
 
-## REST Call Reply Node
+## REST call reply node
 
 <table  style="width:250px;">
   <thead>
