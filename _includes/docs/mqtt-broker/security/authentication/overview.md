@@ -11,24 +11,20 @@ Each authentication method can be enabled or disabled based on your security req
 
 ### Managing Authentication Providers
 
-You can enable or disable each authentication provider directly from the **Broker Settings** card on the **Home** page of the ThingsBoard MQTT Broker UI. This provides a quick way to adjust your authentication strategy without navigating through multiple menus.
+{% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
-Additionally, each provider can also be managed individually in the **Authentication Providers** table, where more advanced settings for each method are available.
-
-> Changes to provider status (enabled/disabled) affect how the **Authentication Execution Order** operates, since disabled methods are automatically skipped.
+Changes to provider status (enabled/disabled) affect how the **Authentication Execution Order** operates, since disabled methods are automatically skipped.
 
 ### Authentication Execution Order
 
-In the MQTT Authentication Settings...
-
-The Authentication Execution Order setting defines the priority in which the broker will evaluate the enabled authentication providers. How It Works:
+The Authentication Execution Order setting in the **MQTT Authentication Settings** defines the priority in which the broker will evaluate the enabled authentication providers. How It Works:
 
 - The broker attempts to authenticate an incoming MQTT client using the first available (enabled) method in the list.
 - If authentication fails or the method is disabled, the broker moves to the next one in order.
 - The process stops as soon as one provider successfully authenticates the client.
 - Disabled providers are completely skipped.
 
-> **Example:** If the order is set to `X.509 Certificate Chain → Basic → JWT` and the certificate validation fails or the provider is disabled, the broker will attempt to authenticate using Basic credentials, and finally JWT if needed.
+**Example:** If the order is set to `X.509 Certificate Chain → Basic → JWT` and the certificate validation fails or the provider is disabled, the broker will attempt to authenticate using Basic credentials, and finally JWT if needed.
 
 This ordered approach ensures flexibility and performance optimization by allowing the most reliable or secure method to be attempted first.
 
