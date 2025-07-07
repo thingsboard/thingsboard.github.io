@@ -1,4 +1,4 @@
-# Device configuration
+### Device configuration
 
 To connect and send data we should configure the device and network server.  
 First, we are going to configure the device and save the required information for the network server configuration.  

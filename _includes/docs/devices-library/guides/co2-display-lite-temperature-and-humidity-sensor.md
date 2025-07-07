@@ -13,7 +13,7 @@
 ## Introduction
 
 ![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[CO2 Display lite Temperature and humidity sensor]({{deviceVendorLink}}){: target="_blank"} MClimate CO2 Display, the lite version is equipped with temperature and humidity sensor, LUX sensor and NDIR CO2 sensor. Featuring smaller 1.54" e-ink screen the device is showing the current levels of CO2 as well as historical trends. The data from the CO2 Display lite can be used in any LoRaWAN® compatible system, incl. Building Management Systems to control demand-based ventilation. Sensor information can be exposed as datapoints in Modbus, BACnet and KNX systems through the use of a special gateway.  
+[The MClimate CO2 Display lite ]({{deviceVendorLink}}){: target="_blank"} the lite version is equipped with temperature and humidity sensor, LUX sensor and NDIR CO2 sensor. Featuring smaller 1.54" e-ink screen the device is showing the current levels of CO2 as well as historical trends. The data from the CO2 Display lite can be used in any LoRaWAN® compatible system, incl. Building Management Systems to control demand-based ventilation. Sensor information can be exposed as datapoints in Modbus, BACnet and KNX systems through the use of a special gateway.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 <br>

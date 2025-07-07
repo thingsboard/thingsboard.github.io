@@ -13,7 +13,7 @@
 ## Introduction
 
 ![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[Vicki Smart Radiator Thermostat]({{deviceVendorLink}}){: target="_blank"} Vicki LoRaWAN® Smart Radiator Thermostat is tailored specifically to improve energy efficiency, achieve substantial cost savings and reduce the CO2 footprint within all types of buildings through its remote temperature control capabilities and innovative data analytics. With seamless integration into various heating systems, the device has 99% compatibility ensuring effortless installation.  
+[The MClimate Vicki Smart Radiator Thermostat]({{deviceVendorLink}}){: target="_blank"} is tailored specifically to improve energy efficiency, achieve substantial cost savings and reduce the CO2 footprint within all types of buildings through its remote temperature control capabilities and innovative data analytics. With seamless integration into various heating systems, the device has 99% compatibility ensuring effortless installation.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 <br>
