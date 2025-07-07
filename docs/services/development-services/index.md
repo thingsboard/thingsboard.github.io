@@ -1581,56 +1581,56 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     }
 
 
-    const sectionLists = document.querySelectorAll(".section-list");
+    // const sectionLists = document.querySelectorAll(".section-list");
 
-    const sectionListObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("section-list-animation");
-                sectionListObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.2
-    });
+    // const sectionListObserver = new IntersectionObserver(entries => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             entry.target.classList.add("section-list-animation");
+    //             sectionListObserver.unobserve(entry.target);
+    //         }
+    //     })
+    // }, {
+    //     threshold: 0.2
+    // });
 
-    sectionLists.forEach(sectionList => {
-        sectionListObserver.observe(sectionList)
-    });
+    // sectionLists.forEach(sectionList => {
+    //     sectionListObserver.observe(sectionList)
+    // });
 
-    const baseImages = document.querySelectorAll(".base-image");
+    // const baseImages = document.querySelectorAll(".base-image");
 
-    const baseImagesObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("base-image-animation");
-                baseImagesObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.3
-    });
+    // const baseImagesObserver = new IntersectionObserver(entries => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             entry.target.classList.add("base-image-animation");
+    //             baseImagesObserver.unobserve(entry.target);
+    //         }
+    //     })
+    // }, {
+    //     threshold: 0.3
+    // });
 
-    baseImages.forEach(element => {
-        baseImagesObserver.observe(element)
-    });
+    // baseImages.forEach(element => {
+    //     baseImagesObserver.observe(element)
+    // });
 
-    const secondaryImages = document.querySelectorAll(".secondary-image");
+    // const secondaryImages = document.querySelectorAll(".secondary-image");
 
-    const secondaryImagesObserver = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("secondary-image-animation");
-                secondaryImagesObserver.unobserve(entry.target);
-            }
-        })
-    }, {
-        threshold: 0.2
-    });
+    // const secondaryImagesObserver = new IntersectionObserver(entries => {
+    //     entries.forEach(entry => {
+    //         if (entry.isIntersecting) {
+    //             entry.target.classList.add("secondary-image-animation");
+    //             secondaryImagesObserver.unobserve(entry.target);
+    //         }
+    //     })
+    // }, {
+    //     threshold: 0.2
+    // });
 
-    secondaryImages.forEach(element => {
-        secondaryImagesObserver.observe(element)
-    });
+    // secondaryImages.forEach(element => {
+    //     secondaryImagesObserver.observe(element)
+    // });
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();

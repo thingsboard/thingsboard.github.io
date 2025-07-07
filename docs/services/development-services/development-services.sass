@@ -1736,71 +1736,71 @@ h2
         line-height: 28px
         letter-spacing: 0.016px
 
-    .section-list
-        li
-            list-style-type: disc
-            margin-left: 30px
-            color: #5E5F62
-            font-size: 22px
-            font-style: normal
-            font-weight: 400
-            line-height: 32px
-            letter-spacing: 0.022px
-            padding-bottom: 24px
-            opacity: 0
+    // .section-list
+    //     li
+    //         list-style-type: disc
+    //         margin-left: 30px
+    //         color: #5E5F62
+    //         font-size: 22px
+    //         font-style: normal
+    //         font-weight: 400
+    //         line-height: 32px
+    //         letter-spacing: 0.022px
+    //         padding-bottom: 24px
+    //         opacity: 0
 
-    .section-list-animation
-        $delay: 500ms
-        li
-            animation-name: slideup-in
-            animation-duration: 1000ms
-            animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-            animation-fill-mode: forwards
-            animation-delay: $delay
+    // .section-list-animation
+    //     $delay: 500ms
+    //     li
+    //         animation-name: slideup-in
+    //         animation-duration: 1000ms
+    //         animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+    //         animation-fill-mode: forwards
+    //         animation-delay: $delay
 
-            @for $i from 1 through 8
-                &:nth-child(#{$i + 1})
-                    animation-delay: calc(#{$delay} + calc(#{$i} * 200ms))
+    //         @for $i from 1 through 8
+    //             &:nth-child(#{$i + 1})
+    //                 animation-delay: calc(#{$delay} + calc(#{$i} * 200ms))
 
-    .base-image
-        opacity: 0.5
-        transform: scale(0.8)
+    // .base-image
+    //     opacity: 0.5
+    //     transform: scale(0.8)
 
-    .base-image-animation
-        animation-name: baseImageAppear
-        animation-duration: 500ms
-        animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-        animation-fill-mode: forwards
+    // .base-image-animation
+    //     animation-name: baseImageAppear
+    //     animation-duration: 500ms
+    //     animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+    //     animation-fill-mode: forwards
 
-    .secondary-image
-        opacity: 0
-        transform: scale(0)
+    // .secondary-image
+    //     opacity: 0
+    //     transform: scale(0)
 
-    .secondary-image-animation
-        animation-name: secondaryImageAppear
-        animation-duration: 750ms
-        animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-        animation-fill-mode: forwards
+    // .secondary-image-animation
+    //     animation-name: secondaryImageAppear
+    //     animation-duration: 750ms
+    //     animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+    //     animation-fill-mode: forwards
 
-        &:nth-child(2)
-            animation-delay: 200ms
+    //     &:nth-child(2)
+    //         animation-delay: 200ms
 
-    .number
-        position: absolute
+    // .number
+    //     position: absolute
 
-    .bg-rectangle
-        position: absolute
-        width: 692px
-        height: 659px
-        transform: rotate(36.145deg)
-        flex-shrink: 0
-        border-radius: 60px
-        opacity: 0.3
-        background: #E9EBFB
-        z-index: 0
+    // .bg-rectangle
+    //     position: absolute
+    //     width: 692px
+    //     height: 659px
+    //     transform: rotate(36.145deg)
+    //     flex-shrink: 0
+    //     border-radius: 60px
+    //     opacity: 0.3
+    //     background: #E9EBFB
+    //     z-index: 0
 
-    button:hover
-        filter: brightness(1.3) contrast(.9)
+    // button:hover
+    //     filter: brightness(1.3) contrast(.9)
 
     // #rectangle1
     //     top: 20%
@@ -1995,21 +1995,29 @@ h2
                     width: 100%
 
     @media screen and (max-width: $step6)
-        .our-customers
-            @include content-container-max1919(56px)
-        .statistics
-        .custom-solutions
-        .vision-section
-        .case-studies
-        .services
-        .get-in-touch-section
-        .multicolored
-        .project-timeline
-        .engagement-models
-        .get-in-touch-section
-        .clients-reviews
-        .questions-section
-        .contact-us-section
+        .development-services
+            .development-services-container
+                width: 1216px
+    
+    @media screen and (max-width: $step4)
+        .development-services
+            .development-services-container
+                width: 704px
+        //     .our-customers
+    //         @include content-container-max1919(56px)
+    //     .statistics
+    //     .custom-solutions
+    //     .vision-section
+    //     .case-studies
+    //     .services
+    //     .get-in-touch-section
+    //     .multicolored
+    //     .project-timeline
+    //     .engagement-models
+    //     .get-in-touch-section
+    //     .clients-reviews
+    //     .questions-section
+    //     .contact-us-section
 
     // @media screen and (max-width: $step6)
     //     .noToc
