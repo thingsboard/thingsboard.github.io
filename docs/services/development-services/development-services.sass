@@ -137,6 +137,7 @@ h2
 
         .hero-container
             height: 100%
+            max-height: 992px
             width: 100%
             display: flex
             flex-direction: column
@@ -279,6 +280,7 @@ h2
                     justify-content: space-between
                     align-items: flex-start
                     color: $light-text-color
+                    flex-wrap: wrap
                     padding: 40px
                     background: $section-background-accent-color
                     border: 1px solid #3087EB
@@ -539,6 +541,7 @@ h2
                     font-size: 48px
                     font-weight: 400
                     margin-bottom: 56px
+                    text-align: center
                 .cards-container
                     position: relative
                     display: flex
@@ -1960,13 +1963,13 @@ h2
                     background-color: $button-background-color
                     width: 100%
 
-    @media screen and (max-width: $step6)
+    @media screen and (max-width: $step6) //1919px
         .development-services
             .development-services-container
                 width: 1216px
         .statistics
     
-    @media screen and (max-width: $step5)
+    @media screen and (max-width: $step5) //1439px
         #first-screen
             .hero-container
                 #hero-content
@@ -1985,14 +1988,59 @@ h2
                     .statistic-item-text
                         font-size: 18px
     
-    @media screen and (max-width: $step4)
+    @media screen and (max-width: $step4) //1279px
+        #first-screen
+            .hero-container
+                #hero-content
+                    .cdu-title
+                        font-size: 64px
+                        line-height: 120%
+                    .cdu-sub-title
+                        line-height: 140%
+                        width: 60%
         .development-services
             .development-services-container
-                width: 704px
-        .statistics
-            .statistics-wrapper
-                justify-content: center
-                gap: 24px
+                padding: 32px
+                min-width: 704px
+                .statistics
+                    .statistics-wrapper
+                        justify-content: center
+                        gap: 24px
+                .custom-solutions
+                    .custom-solutions-wrapper
+                        .custom-solution-container
+                            flex-direction: column
+                            gap: 20px
+                            .cards
+                                width: 100%
+                .vision-section
+                    .vision-wrapper
+                        padding: 40px
+                        .vision-info
+                            .vision-header
+                                width: 100%
+                                flex-direction: row-reverse
+                                gap: 40px
+                                .vision-title
+                                    justify-content: start
+                                    width: 70%
+                            .vision-footer
+                                flex-direction: column
+                                gap: 48px
+                                .vision-footer-text
+                                    text-align: center
+                .case-studies
+                    .section-title
+                        margin-bottom: 40px
+                    .cards-container
+                        .card
+                            max-width: calc(50% - 16px)
+                            .card-tag
+                                top: unset
+                                right: unset
+                                bottom: 50%
+                                left: 16px
+                
         //     .our-customers
     //         @include content-container-max1919(56px)
     //     .statistics
@@ -2008,7 +2056,12 @@ h2
     //     .clients-reviews
     //     .questions-section
     //     .contact-us-section
-    @media screen and (max-width: $step3)
+    @media screen and (max-width: $step3) //768px
+        #first-screen
+            .hero-container
+                #hero-content
+                    .cdu-title
+                        font-size: 64px
         .statistics
             .statistics-wrapper
                 flex-direction: row
@@ -2022,6 +2075,15 @@ h2
                     .statistic-item-text
                         font-size: 16px
                         text-align: center
+        .development-services 
+            .development-services-container
+                .custom-solutions
+                    .custom-solutions-wrapper
+                        .custom-solution-container
+                            flex-direction: column
+                            gap: 20px
+                            .cards
+                                width: 100%
 
     @media screen and (max-width: $step2)
         .statistics
