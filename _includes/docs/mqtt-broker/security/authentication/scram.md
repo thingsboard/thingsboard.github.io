@@ -1,9 +1,7 @@
 * TOC
 {:toc}
 
-#### SCRAM Authentication
-
-### Authorization
+![image](/images/coming-soon.jpg)
 
 ## Next steps
 

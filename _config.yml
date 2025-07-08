@@ -38,10 +38,22 @@ incremental: true
 exclude:
   - .idea
 #  - docs
-#  - blog
-#  - careers
-#  - case-study
-#  - case-studies
+  - docs/devices-library
+  - docs/user-guide
+  - docs/pe
+  - docs/paas
+  - docs/trendz
+  - docs/edge
+  - docs/iot-gateway
+  - docs/getting-started-guides
+  - docs/samples
+  - docs/mobile
+  - docs/gw
+  - docs/license
+  - blog
+  - careers
+  - case-study
+  - case-studies
 #  - _includes/docs
 
 safe: false

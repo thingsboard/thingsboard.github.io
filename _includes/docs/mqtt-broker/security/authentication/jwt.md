@@ -11,9 +11,9 @@ Starting from version [2.2.0](/docs/mqtt-broker/releases/#v210-april-29-2025), T
 This enables secure, flexible, and scalable identity verification without relying on static credentials like usernames or passwords.
 Instead, clients present a signed token that contains all the necessary authentication information, allowing integration with centralized identity systems and improving overall security.
 
-#### Authentication Flow
+## Authentication Flow
 
-The MQTT client includes a signed JWT token in its connection request by placing it in the password field of the MQTT CONNECT packet.
+The MQTT client includes a signed JWT token in its connection request by placing it in the `password` field of the `MQTT CONNECT` packet.
 TBMQ uses the configured secret key, public key, or JWKS endpoint to verify the token’s signature. 
 If a JWKS endpoint is configured, TBMQ retrieves the list of public keys from the endpoint and uses them to validate the token dynamically.
 
@@ -29,11 +29,66 @@ These values determine the client’s type (e.g., `DEVICE` or `APPLICATION`) and
 
 The client is granted access only if the signature is valid and all required claims pass validation.
 
-Currently, TBMQ performs JWT validation only at the time of connection. 
-If the token expires after the connection is established, the client remains connected. 
+{% capture future-release-tip %}
+
+Currently, TBMQ performs JWT validation only at the time of connection.
+If the token expires after the connection is established, the client remains connected.
 This behavior may become configurable in a future release.
 
-### Authorization
+{% endcapture %}
+{% include templates/info-banner.md content=future-release-tip %}
+
+## Configure Provider
+
+JWT authentication for MQTT clients is configured through the TBMQ Admin UI. 
+
+{% include images-gallery.html imageCollection="configure-jwt-auth-provider" %}
+
+This section explains how to set up:
+
+- signature verification
+- authorization rules
+- custom claim checks (optional)
+- dynamic client type classification (optional)
+
+Once the configuration is complete, you can enable the provider to start authenticating clients using JWT tokens.
+
+### Signature Verification
+
+The Signature verifier mechanism determines how TBMQ validates the JWT token's signature 
+to ensure the token was issued by a trusted authority and hasn’t been tampered with. There are two options:
+
+ - Algorithm-based (HMAC or PEM) - Uses preconfigured secret or public key to verify incoming tokens.
+ - JWKS (JSON Web Key Set) - Dynamically fetch a list of public keys from a remote JWKS endpoint. 
+   This is commonly used with identity platforms that publish key sets (e.g., Auth0, AWS Cognito, Keycloak).
+
+{% include images-gallery.html imageCollection="configure-signature-verifier-mechanism" %}
+
+#### HMAC-based
+
+HMAC is a symmetric algorithm that uses the same secret for both signing and verifying JWTs.
+This is often used in internal systems or when tokens are issued by a trusted service you control.
+
+{% include images-gallery.html imageCollection="configure-hmac-based-verifier-mechanism" %}
+
+Supported algorithms: **HS256, HS384, HS512**. The secret should match the one used to sign the tokens.
+
+#### Public key (PEM)
+
+Use this method if your JWTs are signed with an asymmetric private key.
+TBMQ will use the matching public key in PEM format to verify the signature.
+
+{% include images-gallery.html imageCollection="configure-pem-based-verifier-mechanism" %}
+
+Supported key types: **RSA, EC, and Ed25519**. Make sure the uploaded key matches the private key used to sign the JWTs.
+
+#### JWKS
+
+JWKS (JSON Web Key Set) allows TBMQ to fetch a list of public keys from a remote endpoint.
+This is especially useful when using identity providers that rotate signing keys automatically.
+TBMQ will periodically download and cache keys from the endpoint and use them to verify incoming tokens.
+
+{% include images-gallery.html imageCollection="configure-jwks-based-verifier-mechanism" %}
 
 ## Next steps
 
