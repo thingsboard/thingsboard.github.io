@@ -1,5 +1,8 @@
 {% assign foundPage = nil %}
 {% if pageUrl contains productInfo.docsPrefix %}
+    {% if pageUrl contains "/eu" %}
+        {% assign pageUrl = pageUrl | replace_first: "/eu", '' %}
+    {% endif %}
     {% assign pageUrl = pageUrl | replace_first: productInfo.docsPrefix, product.docsPrefix %}
     {% assign foundPage = site.pages | where: "url", pageUrl %}
     {% if foundPage.size == 0 %}
