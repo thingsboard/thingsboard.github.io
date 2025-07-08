@@ -239,80 +239,92 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="card">
                     <div class="card-label industry">SMART RETAIL</div>
                     <div class="card-tag retail">Retail</div>
-                    <img src="/images/development-services/Shwarz.webp" alt="A Schwarz Group (Lidl) store building with signs, symbolizing retail digitalization with ThingsBoard." class="card-image" />
-                    <div class="card-content">
-                        <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/schwarz/"><h3>IoT in retail: how Schwarz Group accelerated digitalization with ThingsBoard</h3></a>
-                        <ul class="card-stats">
-                            <li><strong>500,000+</strong> Connected devices</li>
-                            <li><strong>13,900</strong> Stores</li>
-                            <li><strong>32</strong> Countries</li>
-                        </ul>
-                    </div>
+                    <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/schwarz/">
+                        <img src="/images/development-services/Shwarz.webp" alt="A Schwarz Group (Lidl) store building with signs, symbolizing retail digitalization with ThingsBoard." class="card-image" />
+                        <div class="card-content">
+                            <h3>IoT in retail: how Schwarz Group accelerated digitalization with ThingsBoard</h3>
+                            <ul class="card-stats">
+                                <li><strong>500,000+</strong> Connected devices</li>
+                                <li><strong>13,900</strong> Stores</li>
+                                <li><strong>32</strong> Countries</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
                     <div class="card-label industry">INDUSTRY 4.0</div>
                     <div class="card-tag manufacturing">Manufacturing</div>
-                    <img src="/images/development-services/Superbock.webp" alt="Superbock" class="A partial view of a production hall with tanks featuring the Super Bock Group logo, illustrating the revolution in beer distribution using ThingsBoard." class="card-image" />
-                    <div class="card-content">
-                        <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/super-bock/"><h3>Revolutionizing beer distribution: how ThingsBoard empowered Super Bock Group</h3></a>
-                        <ul class="card-stats">
-                            <li><strong>100%</strong> Visibility of beer stock in real-time</li>
-                            <li><strong>13,900</strong> Reduction in manual operations</li>
-                            <li><strong>3+</strong> Integrated solutions</li>
-                        </ul>
-                    </div>
+                    <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/super-bock/">
+                        <img src="/images/development-services/Superbock.webp" alt="Superbock" class="A partial view of a production hall with tanks featuring the Super Bock Group logo, illustrating the revolution in beer distribution using ThingsBoard." class="card-image" />
+                        <div class="card-content">
+                            <h3>Revolutionizing beer distribution: how ThingsBoard empowered Super Bock Group</h3>
+                            <ul class="card-stats">
+                                <li><strong>100%</strong> Visibility of beer stock in real-time</li>
+                                <li><strong>13,900</strong> Reduction in manual operations</li>
+                                <li><strong>3+</strong> Integrated solutions</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
                     <div class="card-label industry">INDUSTRY 4.0</div>
                     <div class="card-tag manufacturing">Manufacturing</div>
-                    <img src="/images/development-services/IONA Tech’s.webp" alt="A worker in protective glasses at an IONA Tech manufacturing facility, working with electronics, showing the protection of electronics and workers through IoT transformation with ThingsBoard." class="card-image" />
-                    <div class="card-content">
-                        <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/iona/"><h3>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</h3></a>
-                        <ul class="card-stats">
-                            <li><strong>90%</strong>ESD event detection accuracy</li>
-                            <li><strong>25%</strong>Fewer defective units</li>
-                            <li><strong>30m</strong>Wireless coverage range</li>
-                        </ul>
-                    </div>
+                    <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/iona/">
+                        <img src="/images/development-services/IONA Tech’s.webp" alt="A worker in protective glasses at an IONA Tech manufacturing facility, working with electronics, showing the protection of electronics and workers through IoT transformation with ThingsBoard." class="card-image" />
+                        <div class="card-content">
+                            <h3>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</h3>
+                            <ul class="card-stats">
+                                <li><strong>90%</strong>ESD event detection accuracy</li>
+                                <li><strong>25%</strong>Fewer defective units</li>
+                                <li><strong>30m</strong>Wireless coverage range</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
                     <div class="card-label industry">SMART ENERGY</div>
                     <div class="card-tag energy">Energy</div>
-                    <img src="/images/development-services/OXI.webp" alt="A worker in a protective helmet and goggles, working with pellet burner equipment, symbolizing the optimization of IoT infrastructure for OXI TRADE's alternative energy." class="card-image" />
-                    <div class="card-content">
-                        <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/oxi/"><h3>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</h3></a>
-                        <ul class="card-stats">
-                            <li><strong>10+</strong>Years experience in the alternative energy sector</li>
-                            <li><strong>7,000 +</strong>pellet burners sold</li>
-                            <li><strong>96%</strong>Efficiency performance of pellet burners</li>
-                        </ul>
-                    </div>
+                    <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/oxi/">
+                        <img src="/images/development-services/OXI.webp" alt="A worker in a protective helmet and goggles, working with pellet burner equipment, symbolizing the optimization of IoT infrastructure for OXI TRADE's alternative energy." class="card-image" />
+                        <div class="card-content">
+                            <h3>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with ThingsBoard</h3>
+                            <ul class="card-stats">
+                                <li><strong>10+</strong>Years experience in the alternative energy sector</li>
+                                <li><strong>7,000 +</strong>pellet burners sold</li>
+                                <li><strong>96%</strong>Efficiency performance of pellet burners</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
                 <div class="card">
                     <div class="card-label industry">SMART INFRASTRUCTURE</div>
                     <div class="card-tag infrastructure">Infrastructure</div>
-                    <img src="/images/development-services/ÖBB-Infrastruktur AG.webp" alt="Railway tracks and trains, representing the digital transformation of ÖBB-Infrastruktur AG's smart railway infrastructure" class="card-image" />
-                    <div class="card-content">
-                        <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/obb-infra/"><h3>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG</h3></a>
-                        <ul class="card-stats">
-                            <li><strong>25,888</strong>Manage signalsto control and safety</li>
-                            <li><strong>5</strong>Operational control centers</li>
-                            <li><strong>6,634</strong>Bridges maintenance</li>
-                        </ul>
-                    </div>
+                    <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/obb-infra/">
+                        <img src="/images/development-services/ÖBB-Infrastruktur AG.webp" alt="Railway tracks and trains, representing the digital transformation of ÖBB-Infrastruktur AG's smart railway infrastructure" class="card-image" />
+                        <div class="card-content">
+                            <h3>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG</h3>
+                            <ul class="card-stats">
+                                <li><strong>25,888</strong>Manage signalsto control and safety</li>
+                                <li><strong>5</strong>Operational control centers</li>
+                                <li><strong>6,634</strong>Bridges maintenance</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
                     <div class="card">
                     <div class="card-label industry">COLD CHAIN MONITORING</div>
                     <div class="card-tag logistics">Logistics</div>
-                    <img src="/images/development-services/Transforming food logistics with IoT-powered temperature monitoring.webp" alt="A truck with refrigeration equipment and containers of fresh produce, illustrating the transformation of food logistics with IoT-powered temperature monitoring in the cold chain." class="card-image" />
-                    <div class="card-content">
-                        <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/senseing/"><h3>Transforming food logistics with IoT-powered temperature monitoring</h3></a>
-                        <ul class="card-stats">
-                            <li><strong>100%</strong>Automated temperature monitoring</li>
-                            <li><strong>90%</strong>Reduction in human error</li>
-                            <li><strong>3+</strong>Storage and transportation units</li>
-                        </ul>
-                    </div>
+                    <a target="_blank" class="navigate-to-client-page" href="https://thingsboard.io/case-studies/senseing/">
+                        <img src="/images/development-services/Transforming food logistics with IoT-powered temperature monitoring.webp" alt="A truck with refrigeration equipment and containers of fresh produce, illustrating the transformation of food logistics with IoT-powered temperature monitoring in the cold chain." class="card-image" />
+                        <div class="card-content">
+                            <h3>Transforming food logistics with IoT-powered temperature monitoring</h3>
+                            <ul class="card-stats">
+                                <li><strong>100%</strong>Automated temperature monitoring</li>
+                                <li><strong>90%</strong>Reduction in human error</li>
+                                <li><strong>3+</strong>Storage and transportation units</li>
+                            </ul>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
