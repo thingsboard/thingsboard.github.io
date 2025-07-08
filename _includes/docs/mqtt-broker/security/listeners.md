@@ -67,6 +67,6 @@ If you choose Pem as the credentials type, you need to configure the following:
 Do not forget to configure the TrustStore by adding the trusted certificates/chains if you require two-way TLS.
 WSS listener is set to the same negotiation subprotocols as [WS](#ws-listener) listener. If you need to change this default behavior, update `WSS_NETTY_SUB_PROTOCOLS` parameter appropriately.
 
-### Connectivity Settings
+### Custom Host and Port Configuration
 
 {% include docs/mqtt-broker/user-guide/ui/connectivity-settings.md %}

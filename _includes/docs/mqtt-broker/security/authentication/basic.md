@@ -2,19 +2,15 @@
 {:toc}
 
 **MQTT Basic Authentication** is a simple and widely supported method that verifies clients using a username and password.
-The client provides these credentials during the MQTT CONNECT request. 
+The client provides these credentials during the MQTT `CONNECT` request. 
 The broker then validates them against the configured authentication provider, which may use a local user database, an external identity service, or custom logic.
 This method is easy to configure and suitable for scenarios where secure credential storage and transmission (e.g., over TLS) can be ensured.
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
-To enable basic authentication based on a **username, password, and clientId** in your system, follow these steps:
+### Authentication
 
-1. Set the `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true`.
-2. Create MQTT client credentials of type `Basic` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/).
-3. Once the credentials are created, the `credentialsId` field is auto-generated. See below for more information.
-
-### Credentials Matching
+#### Credentials Matching
 
 The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId** - checks if the connecting client has specified clientId.
@@ -24,7 +20,7 @@ The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId and password** - checks if the connecting client has specified both clientId and password.
 - **clientId, username and password** - checks if the connecting client has specified clientId, username, and password.
 
-### Credentials ID
+#### Credentials ID
 
 When a client connects, the combination of the username, password, and clientId from the `CONNECT` packet is matched with the persisted credentials to authenticate the client.
 The matching is based on the auto-generated `credentialsId` field from the MQTT client credentials. 

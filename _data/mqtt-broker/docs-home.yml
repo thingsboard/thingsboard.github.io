@@ -19,8 +19,6 @@ toc:
       path: /docs/mqtt-broker/security/listeners/
     - title: Authentication
       section:
-      - title: Overview
-        path: /docs/mqtt-broker/security/authentication/overview/
       - title: Basic
         path: /docs/mqtt-broker/security/authentication/basic/
       - title: X.509 Certificate Chain
