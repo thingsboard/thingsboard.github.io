@@ -44,6 +44,10 @@ configure-jwt-authorization:
   0:
     image: /images/mqtt-broker/security/auth-providers/jwt/configure-jwt-authorization.png
     title: 'The JWT claim "pub" restricts publish access to "devices/.*/data", while claim "sub" expands subscribe access to include "alerts/.*".'
+enable-and-save-jwt-provider:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/enable-and-save-jwt-provider.png
+    title: 'Enable the JWT authentication provider and save the configuration.'
 ---
 
 {% include docs/mqtt-broker/security/authentication/jwt.md %}
