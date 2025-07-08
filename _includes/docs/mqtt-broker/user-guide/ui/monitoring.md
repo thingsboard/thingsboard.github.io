@@ -35,8 +35,10 @@ For more information regarding the different types of Credentials, please refer 
 ## Config
 
 Contains information regarding some commonly used configuration parameters:
-  - **Basic Auth.** By default, basic authentication based on username, password, and clientId is disabled. To enable it, set the `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true`.
-  - **X.509 Certificate Chain Auth.** By default, X.509 certificate chain authentication is disabled. To enable it, set the `SECURITY_MQTT_SSL_ENABLED` environment variable to `true`.
+  - **Basic Authentication.** To enable/disable authentication method, click on the switch button.
+  - **X.509 Certificate Chain Authentication.**
+  - **JWT Authentication.**
+  - **SCRAM Authentication.**
   - **TCP Port.** By default, the TCP listener is enabled on the `1883` port. To modify the port, you can set the `LISTENER_TCP_BIND_PORT` environment variable.
   - **TLS Port.** The SSL/TLS listener is disabled by default on port `8883`. To change the default port, set the `LISTENER_SSL_BIND_PORT` environment variable.
   - **WS Port.** By default, the WS listener is enabled on the `8084` port. To modify the port, you can set the `LISTENER_WS_BIND_PORT` environment variable.

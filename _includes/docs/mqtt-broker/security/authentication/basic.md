@@ -6,6 +6,8 @@ The client provides these credentials during the MQTT `CONNECT` request.
 The broker then validates them against the configured authentication provider, which may use a local user database, an external identity service, or custom logic.
 This method is easy to configure and suitable for scenarios where secure credential storage and transmission (e.g., over TLS) can be ensured.
 
+### Managing Provider
+
 {% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
 ### Authentication

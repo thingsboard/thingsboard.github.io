@@ -47,9 +47,7 @@ sysadmin
 
 ## Configure client authentication & authorization
 
-In order to secure the connection to the broker we should enable Basic or TLS authentication.
-In this tutorial, we will focus on the [Basic](/docs/mqtt-broker/security/#basic-authentication) authentication type.
-For this, we have set `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true` in the `docker-compose.yml` downloaded in the previous step.
+In order to secure the connection to the broker, we should [enable Basic authentication](/docs/mqtt-broker/security/authentication/basic/).
 
 Once Basic authentication is enabled, it is necessary to create MQTT Client Credentials of type `Basic` to authenticate and validate the connecting client.
 

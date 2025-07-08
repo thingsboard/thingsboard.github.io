@@ -1,5 +1,3 @@
-### Managing Provider
-
 You can check the authentication provider status, enable or disable it directly from the TBMQ user interface, making it easy to manage authentication behavior without modifying configuration files or restarting the broker.
 
 * On the **Home** page, in the **Broker Settings** card, you’ll find quick-toggle buttons for each available authentication provider.
