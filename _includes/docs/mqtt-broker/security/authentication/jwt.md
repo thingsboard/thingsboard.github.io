@@ -90,6 +90,98 @@ TBMQ will periodically download and cache keys from the endpoint and use them to
 
 {% include images-gallery.html imageCollection="configure-jwks-based-verifier-mechanism" %}
 
+### JWT Claims and Access Control Flow
+
+After the JWT token is successfully verified, TBMQ performs a multi-stage validation and classification process 
+to determine if the client is allowed to connect, how it should be identified, and what topics it can access.
+
+#### Standard Claim Validation
+
+Before anything else, TBMQ checks a few standard claims embedded in the JWT:
+
+- `exp` (expiration) claim to ensure the token is not expired
+- `nbf` (not before) claim to ensure the token is currently valid
+
+If the token is expired or not yet valid, the client connection is rejected immediately. 
+These checks happen automatically and do not require any configuration.
+
+#### Authentication Claims (Optional)
+
+You can define custom claim validation rules as key-value pairs, where each pair consists of:
+
+ - Claim – the name of the claim in the JWT
+ - Value – the expected value to compare against
+
+If any listed claim does not match the actual value in the token, the client’s authentication will fail — even if the token’s signature is valid.
+
+To support dynamic checks, you can use placeholders like <code>${username}</code> and <code>${clientId}</code>. 
+These will resolve to the MQTT client’s username or client ID at connection time. 
+This mechanism adds an extra layer of security by ensuring that the JWT is not only valid, but also intended for the specific MQTT client making the request.
+
+{% include images-gallery.html imageCollection="configure-auth-claims" %}
+
+#### Client Type Configuration (Optional)
+
+This section configures how the broker determines the client type during authentication. Either `DEVICE` or `APPLICATION`.
+
+By default, all clients are assigned the type selected using the "Device / Application" toggle. 
+You can optionally define one or more claim conditions. If all conditions match, TBMQ will assign the opposite client type.
+This allows you to classify clients dynamically during authentication.
+
+{% include images-gallery.html imageCollection="configure-client-type" %}
+
+#### Authorization
+
+After a client has successfully passed the validation and classification steps, TBMQ applies topic-level authorization rules
+to determine which topics the client is allowed to publish to and subscribe from.
+
+For JWT-based clients, TBMQ supports two layers of regex-based authorization rules:
+
+ - Default authorization rules – manually configured topic filters defined in the provider settings
+ - Dynamic authorization rules – topic filters extracted from JWT claims at runtime (if configured)
+
+You can define default topic filters for both publish and subscribe directions using regular expressions. 
+These rules are always required and serve as a fallback if dynamic rules are not configured or cannot be applied.
+
+Examples of regex filters:
+
+ - `.*` – allow all topics
+ - `sensors/.*` – allow access only to topics that begin with `sensors/`
+ - (empty field) – deny access to that direction
+
+To enable dynamic authorization, specify the names of JWT claims that contain the publish and/or subscribe topic filters (e.g., pub, sub). 
+If present, TBMQ will attempt to extract a list of topic patterns from these claims and apply them as the client's effective authorization rules.
+
+{% capture dynamic-filters-claim-type-warn %}
+
+Dynamic claims must contain an array of strings. Each string will be treated as a topic filter pattern and compiled as a regular expression.
+
+{% endcapture %}
+{% include templates/info-banner.md content=dynamic-filters-claim-type-warn %}
+
+If the claim is missing or malformed, TBMQ gracefully falls back to the default rule for that direction.
+This fallback behavior is independent for publish and subscribe. You can use a dynamic rule for one and a default for the other.
+
+To better understand how default and dynamic authorization rules work together, consider the following example.
+
+A client connects with a JWT that includes these claims:
+
+```json
+{
+  "pub": ["devices/.*/data"],
+  "sub": ["sensors/.*/cmd", "alerts/.*"]
+}
+```
+
+In this case:
+
+ - The `pub` claim overrides the default publish rule and **restricts** access to `devices/.*/data`.
+ - The `sub` claim **extends** the default subscribe rule by additionally allowing `alerts/.*`.
+
+{% include images-gallery.html imageCollection="configure-jwt-authorization" %}
+
+This demonstrates how dynamic rules can be used to customize access per client while still providing reliable fallbacks when needed.
+
 ## Next steps
 
 {% assign currentGuide = "SecurityGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

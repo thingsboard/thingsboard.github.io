@@ -32,6 +32,18 @@ configure-jwks-based-verifier-mechanism:
   3:
     image: /images/mqtt-broker/security/auth-providers/jwt/configure-jwks-based-verifier-mechanism-3.png
     title: 'Add a custom HTTP header to JWKS requests. This example shows the Content-Type: application/json header and a placeholder for an additional custom header.'
+configure-auth-claims:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/configure-auth-claims.png
+    title: 'Authentication claims example: "sub" and "mqtt_user" match MQTT client ID and username; "env" is checked against static value "prod".'
+configure-client-type:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/configure-client-type.png
+    title: 'Client type is set to "DEVICE" by default. If the JWT contains claim "role" with the value "app", the client will be classified as "APPLICATION".'
+configure-jwt-authorization:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/configure-jwt-authorization.png
+    title: 'The JWT claim "pub" restricts publish access to "devices/.*/data", while claim "sub" expands subscribe access to include "alerts/.*".'
 ---
 
 {% include docs/mqtt-broker/security/authentication/jwt.md %}
