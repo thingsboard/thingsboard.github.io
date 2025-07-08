@@ -19,7 +19,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                                 class="cdu-button anchor-button gtm_button request-concultation">Request a consultation</button>
         </div>
     </div>
-    <img class="first-screen-img" loading="lazy" src="/images/development-services/Hero variant 3_1.webp" alt="Development services background">
+    <img class="first-screen-img" loading="lazy" src="/images/development-services/Hero variant 3_2.webp" alt="Development services background">
 </section>
 
 <section class="development-services">
