@@ -8,7 +8,7 @@ hasIntegrationDeviceConfiguration: true
 deviceImageFileName: air-temperature-and-humidity-sensor.png
 converters20: true
 model: Air_Temperature_Humidity_Sensor
-docsPrefix: paas/
+docsPrefix: paas/eu/
 ---
 
 * TOC
