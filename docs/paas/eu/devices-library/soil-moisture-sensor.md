@@ -8,7 +8,7 @@ hasIntegrationDeviceConfiguration: true
 deviceImageFileName: soil-moisture-sensor.png
 converters20: true
 model: Soil_Moisture_Sensor
-docsPrefix: pe/
+docsPrefix: paas/eu/
 ---
 
 * TOC
