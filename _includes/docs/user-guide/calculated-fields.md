@@ -186,13 +186,9 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 
 #### Output
 
-<<<<<<< HEAD
-The calculated values are returned as a JSON object containing **keys** that represent the computed results. These keys, along with their values, are then stored in the system.
-=======
 > See [how calculated field output is processed](#calculated-field-output-processing) for details on rule engine behavior and data persistence.
 
 The calculated values are returned as a JSON object containing **keys** that represent the computed results, which are then used to store those values in the system.
->>>>>>> origin/develop/4.1
 
 - Specify the **Output type** for storing the calculation result:
   - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: function must return a JSON object or array with or without a timestamp containing the computed value.
