@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: How to connect Positioning Water Leak Sensor to ThingsBoard?
+title: How to connect AgroSense Positioning Water Leak Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN®
 vendor: AgroSense

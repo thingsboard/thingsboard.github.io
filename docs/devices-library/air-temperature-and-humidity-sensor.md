@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: How to connect Air Temperature and Humidity Sensor to ThingsBoard?
+title: How to connect AgroSense Air Temperature and Humidity Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN®
 vendor: AgroSense

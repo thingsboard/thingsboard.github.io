@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: How to connect Soil Moisture Sensor to ThingsBoard?
+title: How to connect AgroSense Soil Moisture Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN®
 vendor: AgroSense
