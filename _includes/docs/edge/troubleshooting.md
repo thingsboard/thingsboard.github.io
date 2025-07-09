@@ -154,6 +154,58 @@ Here's the list of metrics ThingsBoard pushes to Prometheus.
 - <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database.
   Note that there are several queues (threads) in order to reach maximum performance.
 
+## The state of downlink messages (from Cloud to Edge)
+
+To diagnose and resolve issues when messages from the Cloud fail to reach Edge devices or services, you can monitor the state of downlink messages. 
+
+### Queue Type: in-memory
+
+If Edge uses the in-memory queue, you can monitor downlink messages from the **Edge management** section on the Server.
+
+Ensure your devices are assigned to the Edge, and that the Rule chain is properly configured. 
+You can do this by editing the relevant **Rule Chain** in **ThingsBoard Server** and adding the **"push to edge"** node connected to 
+a previous processing step (e.g., save time series). Read more about the Rule chain in this [article](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
+
+To view the downlinks massages:
+* Go to the **Edge management > Instances** section
+* Click on your Edge and select the **"Downlinks"** tab.
+
+{% include images-gallery.html imageCollection="in-memory" %}
+
+### Queue Type: Kafka
+
+To monitor **downlink messages state across multiple Edge instances**, you can configure a dashboard in **Grafana**.
+
+> Stop the ThingsBoard services before proceeding with configuration.
+
+To configure downlink monitoring, follow the [instructions on the server side](/docs/{{peDocsPrefix}}user-guide/troubleshooting/#metrics){: target="_blank"}. 
+
+#### Access Grafana and import Edge dashboard
+
+Once deployed, you can access **Grafana** at [http://localhost:3000](http://localhost:3000){: target="_blank"}.
+
+The default credentials for local installation are:
+* **Username:** admin
+* **Password:** foobar
+
+{% if docsPrefix == "edge/" %}
+You can download the **preconfigured Edge dashboard** (_edge_kafka_lag_metrics.json_) from [GitHub](https://github.com/thingsboard/thingsboard/tree/master/docker/monitoring/grafana/provisioning/dashboards){: target="_blank"}. 
+{% else %}
+You can download the **preconfigured Edge dashboard** (_edge_kafka_lag_metrics.json_) from [GitHub](https://github.com/thingsboard/thingsboard-pe-docker-compose/tree/master/basic/monitoring/grafana/provisioning/dashboards){: target="_blank"}.
+{% endif %}
+
+* Log in to Grafana and go to the **Dashboard** section. To import the Edge dashboard, click the **"New"** button and select **_Import_**.
+* View the dashboard
+
+{% include images-gallery.html imageCollection="grafana" %}
+
+### ThingsBoard internal monitoring feature
+
+Starting from **Edge 4.2**, you can configure a dashboard at the **ThingsBoard Server** to monitor the downlink messages state.
+To simplify the process, you can [download](/docs/edge/user-guide/download-dashboard/edge_downlink_lag.zip) and import the preconfigured Edge dashboard.
+
+{% include images-gallery.html imageCollection="internal-monitoring" %}
+
 ## Getting help
 
 <section id="talkToUs">
