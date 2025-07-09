@@ -64,11 +64,10 @@ Advanced%,%advancedConfig%,%templates/device-library/ready-to-go-devices/temco-c
 
 ## Check data on ThingsBoard
 
-Once you have successfully done all the steps above and Gateway sent data, you can see it in the 
-Device Telemetry Tab:
+Once you have successfully done all the steps above and Gateway sent data, you can see it in the device telemetry tab:
 
-- Click on the device row in the table to open device details;
-- Navigate to the telemetry tab.
+- Click on the device row in the table to open its details;
+- Navigate to the "Latest telemetry" tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![imagePe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-pe.png)
@@ -76,7 +75,7 @@ Device Telemetry Tab:
 ![imageCe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-ce.png)
 {% endif %}
 
-Let’s display Temco Tstat10 time series on a dashboard. For this purpose, you can create your own dashboard with your 
+Let&#39;s display Temco Tstat10 time series on a dashboard. For this purpose, you can create your own dashboard with your 
 custom widgets or use a ready-made dashboard and simply import it.
 
 {% capture readytogodevicestogglespec %}

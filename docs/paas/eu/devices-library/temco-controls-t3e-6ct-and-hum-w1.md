@@ -5,7 +5,8 @@ category: Other devices
 connectivity: HTTP, BACnet, Ethernet, WIFI, RS485
 vendor: Temco Controls
 deviceImageFileName: temco-t3e-6ct.jpg
-docsPrefix: paas
+docsPrefix: paas/eu/
+docsTag: paas-eu
 ---
 
 
