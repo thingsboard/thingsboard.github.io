@@ -1,18 +1,28 @@
 * TOC
 {:toc}
 
-**MQTT Basic Authentication** is a simple and widely supported method that verifies clients using a username and password.
-The client provides these credentials during the MQTT `CONNECT` request. 
-The broker then validates them against the configured authentication provider, which may use a local user database, an external identity service, or custom logic.
+**MQTT Basic Authentication** is a straightforward and widely supported method for verifying client identity using a **username and password**. 
+It offers a simple way to secure MQTT connections and is commonly used in systems where ease of configuration and compatibility are priorities.
+
+### Basic authentication overview
+
+Basic Authentication is handled during the MQTT `CONNECT` phase, where the client includes its username and password in the request.
+The broker forwards these credentials to the configured authentication provider, which may validate them using a local user database, an external identity system (such as LDAP or OAuth-based services), or custom logic.
 This method is easy to configure and suitable for scenarios where secure credential storage and transmission (e.g., over TLS) can be ensured.
 
-### Managing Provider
+### Configure provider
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
-### Authentication
+#### Authentication
 
-#### Credentials Matching
+TBMQ supports flexible credential matching strategies for Basic Authentication, allowing different combinations of MQTT client identifiers—such as **clientId, username, and password** — to be used for authentication. 
+This enables administrators to define how strictly clients must identify themselves when connecting. 
+
+The system uses these fields to generate a unique `credentialsId`, which is then used to locate and validate stored credentials. 
+This approach ensures consistent and configurable authentication behavior across a variety of deployment scenarios.
+
+##### Credentials matching
 
 The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId** - checks if the connecting client has specified clientId.
@@ -22,7 +32,7 @@ The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId and password** - checks if the connecting client has specified both clientId and password.
 - **clientId, username and password** - checks if the connecting client has specified clientId, username, and password.
 
-#### Credentials ID
+##### Credentials ID
 
 When a client connects, the combination of the username, password, and clientId from the `CONNECT` packet is matched with the persisted credentials to authenticate the client.
 The matching is based on the auto-generated `credentialsId` field from the MQTT client credentials. 
@@ -37,7 +47,7 @@ Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers t
 
 {% include images-gallery.html imageCollection="security-authentication-basic" %}
 
-### Authorization
+#### Authorization
 
 After the user has been authenticated, it is possible to restrict the client's access to topics they can publish or subscribe to.
 

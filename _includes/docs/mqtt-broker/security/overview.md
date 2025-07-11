@@ -7,7 +7,7 @@ TBMQ includes comprehensive security features designed to protect MQTT communica
 
 **Authentication** ensures that only verified MQTT clients can connect to the broker. TBMQ supports several authentication methods such as Basic, X.509 certificates, JWT, and SCRAM, all of which can be enabled, disabled, and prioritized.
 
-### MQTT Listeners
+### MQTT listeners
 
 TBMQ provides flexible options for configuring how it accepts client connections across multiple protocols, including **MQTT over TCP**, **SSL/TLS**, and **WebSockets**.
 Each listener can be enabled or disabled and customized to use specific host addresses and ports, allowing the broker to adapt to different network environments. 
@@ -29,7 +29,7 @@ You will learn how to assign topic authorization rules to clients to control the
 By understanding and implementing the authentication and authorization options outlined in this guide,
 you can ensure secure and controlled access to the MQTT broker, protecting your infrastructure and data from unauthorized access or misuse.
 
-#### Providers Management
+#### Providers management
 
 ThingsBoard MQTT Broker supports multiple authentication methods to validate clients connecting via MQTT protocol:
 - **Basic** — Username and password-based authentication.
@@ -37,22 +37,21 @@ ThingsBoard MQTT Broker supports multiple authentication methods to validate cli
 - **JWT (JSON Web Token)** — Authenticates clients using a signed JWT passed in the password field of the CONNECT packet.
 - **SCRAM** — Performs a secure challenge-response using hashed credentials to authenticate without sending the actual password (MQTT 5.0 only).
 
-Each authentication method can be enabled or disabled based on your security requirements.
+{% assign sinceVersion = "2.2" %}
+{% include templates/mqtt-broker/since.md %}
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
-Changes to provider status (enabled/disabled) affect how the **Authentication Execution Order** operates, since disabled methods are automatically skipped.
+#### Settings
 
-#### Execution Order
+{% assign sinceVersion = "2.2" %}
+{% include templates/mqtt-broker/since.md %}
 
-The `Authentication Execution Order` setting in the **MQTT Authentication Settings** defines the priority in which the broker will evaluate the enabled authentication providers. How It Works:
+The **MQTT Authentication Settings** page provides a place in the UI to configure key authentication-related parameters for MQTT clients. 
 
-- The broker attempts to authenticate an incoming MQTT client using the first available (enabled) method in the list.
-- If authentication fails or the method is disabled, the broker moves to the next one in order.
-- The process stops as soon as one provider successfully authenticates the client.
-- Disabled providers are completely skipped.
+##### Authentication execution order
 
-{% include images-gallery.html imageCollection="security-authorization-tls" %}
+{% include docs/mqtt-broker/user-guide/ui/authentication-settings.md %}
 
 **Example:** If the order is set to `X.509 Certificate Chain → Basic → JWT` and the certificate validation fails or the provider is disabled, the broker will attempt to authenticate using Basic credentials, and finally JWT if needed.
 

@@ -26,6 +26,11 @@ delete-user-broker:
     1:
       image: /images/mqtt-broker/user-guide/ui/delete-user-broker-2.png
       title: 'Click the Delete user button and confirm the action by selecting Yes.'
+      
+login-as-user:
+  0:
+    image: /images/mqtt-broker/user-guide/ui/login-as-user.png
+    title: 'In the Admins table, select the desired user and click the Login button to proceed.'
 
 ---
 

@@ -20,7 +20,7 @@ requirements and performance expectations of each use case.
 This segregation of clients simplifies the implementation of different IoT scenarios, thereby optimizing overall system performance.
 
 The determination of client type occurs during the processing of the _CONNECT_ packet, with client authentication playing 
-a pivotal role in identifying the client type. Further details regarding client authentication can be found in the [security](/docs/mqtt-broker/security/) guide, 
+a pivotal role in identifying the client type. Further details regarding client authentication can be found in the [security](/docs/mqtt-broker/security/overview/) guide, 
 which provides comprehensive information on securing client connections.
 
 If both Basic and TLS authentications are disabled, the connecting client will always be assigned the DEVICE type. 

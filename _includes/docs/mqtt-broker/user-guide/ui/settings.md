@@ -9,15 +9,25 @@ TBMQ offers users the convenience of configuring various settings directly from 
 
 ## Security settings
 
-To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password. 
+### Authentication
+
+The **MQTT Authentication Settings** page provides a place in the UI to configure key authentication-related parameters for MQTT clients.
+
+#### Authentication execution order
+
+{% include docs/mqtt-broker/user-guide/ui/authentication-settings.md %}
+
+### Password
+
+To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password.
 You can enhance the security of your account by updating your security settings, including the **password policy**.
 
-For example, you can increase a minimum password length, require a mix of uppercase and lowercase letters, and specify the minimum number of digits and special characters. 
-Additionally, you can set a password expiration period to ensure that passwords are updated regularly. 
+For example, you can increase a minimum password length, require a mix of uppercase and lowercase letters, and specify the minimum number of digits and special characters.
+Additionally, you can set a password expiration period to ensure that passwords are updated regularly.
 
 These measures will help ensure stronger and more secure passwords, thereby promoting better overall account security.
 
-### Password policy
+#### Password policy
 
 The password policy sets the rules that passwords for the TBMQ users must meet. You can specify the following options to ensure stronger security:
 - **Minimum password length** - the parameter determines the minimum number of characters in the password. Minimum password length should be in a range from 6 to 50 and is the only required field.
@@ -37,11 +47,11 @@ When the password policy is updated, new users will be required to adhere to the
 Note that if you have enabled the **Force to reset password if not valid** option, all users (not only new ones) who do not meet the new requirements will be forced to update their passwords.
 
 {% capture securityDocumentation %}
-To see other security-related settings, please refer to our [Security documentation](/docs/mqtt-broker/security/).
+To see other security-related settings, please refer to our [Security documentation](/docs/mqtt-broker/security/overview/).
 {% endcapture %}
 {% include templates/info-banner.md content=securityDocumentation %}
 
-### Change password
+#### Change password
 
 To change your account password to comply with the new requirements, you should follow these steps:
 

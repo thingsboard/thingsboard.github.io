@@ -5,7 +5,7 @@ User management can be performed through TBMQ's Web UI or [REST API](/docs/mqtt-
 * TOC
 {:toc}
 
-## Add User
+## Add user
 
 To add a new User, please follow these steps:
 
@@ -16,7 +16,7 @@ To add a new User, please follow these steps:
 
 Note that all new users are initially created with the default password `sysadmin`. Upon first logging in, users will be required to change default password.
 
-## Edit User
+## Edit user
 
 To edit the details of an existing administrator, please follow these steps:
 
@@ -26,7 +26,7 @@ To edit the details of an existing administrator, please follow these steps:
 
 {% include images-gallery.html imageCollection="edit-user-broker" %}
 
-## Delete User
+## Delete user
 
 Logged-in user can delete other users, but not itself. To delete user follow these steps:
 
@@ -34,3 +34,12 @@ Logged-in user can delete other users, but not itself. To delete user follow the
 2. Click the _Delete user_ button and confirm the action by selecting _Yes_.
 
 {% include images-gallery.html imageCollection="delete-user-broker" %}
+
+## Login as admin user
+
+TBMQ allows administrators to securely log in as other users automatically, without requiring their credentials or manual authentication.
+
+1. Find the user in the _Admins_ table (you can only log in as other users).
+2. Click the _Login_ button in the corresponding row.
+
+{% include images-gallery.html imageCollection="login-as-user" %}

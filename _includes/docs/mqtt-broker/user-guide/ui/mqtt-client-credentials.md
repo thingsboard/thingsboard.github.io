@@ -17,13 +17,13 @@ TBMQ supports the following types of client credentials to authenticate client c
 
 Before using any of the client credential types mentioned above, please ensure that they are [enabled](/docs/mqtt-broker/security/authentication/basic/).
 
-For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/).
+For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/overview/).
 
-## Adding MQTT Client Credentials
+## Adding MQTT client credentials
 
 To add new client credentials, please follow these steps:
 
-1. Go to the _Credentials_ page and click the Add _Client Credentials_ button, represented by a plus icon.
+1. Go to the _Authentication_ - _Credentials_ page and click the Add _Client Credentials_ button, represented by a plus icon.
 2. Fill in the Name field (which does not need to be unique).
 3. Select the appropriate _Client Type_:
    - **Device**. Use for clients that usually publish a lot of messages, but subscribe to a few topics with low message rate, i.e. IoT devices.
@@ -35,7 +35,7 @@ To add new client credentials, please follow these steps:
 
 {% include images-gallery.html imageCollection="add-client-credentials" %}
 
-### MQTT Basic Credentials
+### MQTT Basic credentials
 
 #### Authentication
 
@@ -49,10 +49,10 @@ MQTT Basic authentication is based on different combinations of the client ID, u
 
 {% include templates/mqtt-broker/authorization-rules.md %}
 
-#### Changing Password for MQTT Basic Credentials
+#### Changing password for MQTT Basic credentials
 
 Broker administrators can modify the password for MQTT Basic client credentials. To do this, follow these instructions:
-1. Go to _Client Credentials_ page.
+1. Go to _Authentication_ - _Client Credentials_ page.
 2. Click on the corresponding row of the Credentials.
 3. Click the _Edit_ button.
 4. Click the _Change password_ button. Input your current password and set a new one.
@@ -60,7 +60,7 @@ Broker administrators can modify the password for MQTT Basic client credentials.
 
 {% include images-gallery.html imageCollection="change-password-basic-credentials" %}
 
-### X.509 Certificate Chain Credentials
+### X.509 certificate chain credentials
 
 **X.509 Certificate chain** is a secure two-way authentication method over TLS with a chain of public-key certificates.
 
@@ -77,7 +77,7 @@ Authentication will fail if none of the certificate CN in the chain match the re
 
 {% include images-gallery.html imageCollection="security-authentication-tls" %}
 
-#### Authorization Rules
+#### Authorization rules
 
 Authorization rules allow controlling what topics authenticated clients can publish/subscribe to based on the successful combination of:
 
@@ -103,7 +103,7 @@ Please consider the following examples:
 
 {% include templates/mqtt-broker/authorization-rules.md %}
 
-## Delete Client Credentials
+## Delete client credentials
 
 Broker administrators can remove client credentials from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
 

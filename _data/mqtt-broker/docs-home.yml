@@ -24,6 +24,7 @@ toc:
       - title: X.509 Certificate Chain
         path: /docs/mqtt-broker/security/authentication/x509/
       - title: JWT
+        new: true
         path: /docs/mqtt-broker/security/authentication/jwt/
       - title: SCRAM
         path: /docs/mqtt-broker/security/authentication/scram/

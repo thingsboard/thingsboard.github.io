@@ -25,6 +25,11 @@ settings-connectivity-settings:
     image: /images/mqtt-broker/user-guide/ui/settings-connectivity-settings-4.png
     title: 'WebSocket Credentials window uses new host.'
 
+authentication-settings:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/authentication-settings.png
+    title: 'MQTT Authentication Settings.'
+
 ---
 
 {% include docs/mqtt-broker/user-guide/ui/settings.md %}

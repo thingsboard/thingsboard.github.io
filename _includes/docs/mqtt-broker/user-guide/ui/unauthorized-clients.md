@@ -85,7 +85,7 @@ Below are the reasons related to SSL/TLS for why a client could not be authorize
 ## Manage Unauthorized Clients
 
 To delete client that had failed to pass the authentication from the Unauthorized Clients table please follow these steps:
-1. Find the client in the _Unauthorized Clients_ table and click on the delete icon.
+1. Find the client in the _Authentication_ - _Unauthorized Clients_ table and click on the delete icon.
 2. Confirm the action by selecting _Yes_.
 
 To delete all unauthorized clients:
