@@ -772,7 +772,7 @@
         const profileElement = input.closest('.device-profile');
         if (!profileElement) return;
 
-        if (input.type === 'number' && input.value < 0) {
+        if (input.type === 'number' && (input.value < 0 || input.value === null || input.value === '')) {
             input.value = 0;
         }
 
