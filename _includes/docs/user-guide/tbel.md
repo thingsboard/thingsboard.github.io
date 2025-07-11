@@ -375,6 +375,148 @@ return unmodifiable;      // An error occurs with the message: 'Error: unmodifia
 ```
 {: .copy-code}
 
+### Sets
+
+TBEL allows you to create Sets. We use our own implementation of the Set to control memory usage of the script.
+That is why TBEL allows only inline creation of sets. 
+
+In TBEL there are two supported ways to create a Set as ExecutionLinkedHashSet:
+
+- Using entrySet() from a Map. You can obtain a Set of key-value pairs directly from a Map:
+
+```java
+var list = ["B", "A", "C", "A"];
+var originalMap = {};
+var set1 = originalMap.entrySet();         // create new Set from map, Empty
+var set2 = set1.clone();                   // clone new Set, Empty
+var result1 = set1.addAll(list);           // addAll list, no sort, size = 3 ("A" - duplicate), result = true
+```
+{: .copy-code}
+
+- Using the createSetTb(List list) method. You can convert a List to a Set by calling the built-in createSetTb() method:
+
+```java
+var list = ["B", "A", "C", "A"];
+var set1 = createSetTb(list);             // create new Set from createSetTb() with list, no sort, size = 3 ("A" - duplicate)
+var set2 = createSetTb();                 // create new Set from createSetTb(), Empty
+```
+{: .copy-code}
+
+- Supported Methods
+
+| Method                  | Description                                                          |
+|:------------------------|:---------------------------------------------------------------------|
+| `add(value)`            | Adds a value to the set                                              |
+| `remove(value)`         | Removes the value from the set                                       |
+| `clear()`               | Removes all elements                                                 |
+| `contains(value)`       | Checks if the set contains a value                                   |
+| `size()`                | Returns the number of elements                                       |
+| `toList()`              | Converts the set to a `List`                                         |
+| `sort()`                | Sorts the set in ascending order (modifies the original set)         |
+| `sort(boolean asc)`     | Sorts the set in ascending or descending order (in-place)            |
+| `toSorted()`            | Returns a new sorted list in ascending order (original is unchanged) |
+| `toSorted(boolean asc)` | Returns a new sorted list in desired order                           |
+
+
+**Examples:**
+
+- Foreach and For-Loop
+
+```java
+// Create a new set with value
+var set = createSet(["A", "B", "C"]);
+var set2 = createSetTb(msg.list);       // create new from list, size = 3
+var set2_0 = set2.toArray()[0];         // return "A", value with index = 0 from Set 
+var set2Size = set2.size();             // return size = 3
+var smthForeach = "";
+foreach (item : set2) {                 // foreach for Set
+    smthForeach += item;                  // return "ABC"
+}
+var smthForLoop= "";
+var set2Array = set2.toArray();         // for loop for Set (Set to array))
+for (var i =0; i < set2.size; i++) {
+    smthForLoop += set2Array[i];        // return "ABC"            
+}
+```
+{: .copy-code}
+
+- Add/Remove
+
+```java
+// add
+var list = ["B", "C", "A", "B", "C", "hello", 34567];
+var setAdd = createSetTb(["thigsboard", 4, 67]);      // create new, size = 3
+var setAdd1_value = setAdd.clone();                   // clone setAdd, size = 3
+var setAdd2_result = setAdd.add(35);                  // add value = 35, result = true
+var setAdd2_value = setAdd.clone();                   // clone setAdd (fixing the result add = 35), size = 4
+var setAddList1 = createSetTb(list);                  // create new from list without duplicate value ("B" and "C" - only one), size = 5
+var setAdd3_result = setAdd.addAll(setAddList1);      // add all without duplicate values, result = true
+var setAdd3_value = setAdd.clone();                   // clone setAdd (with addAll), size = 9  
+var setAdd4_result = setAdd.add(35);                  // add duplicate value = 35,  result = false  
+var setAdd4_value = setAdd.clone();                   // clone setAdd (after add duplicate value = 35), size = 9  
+var setAddList2 = createSetTb(list);                  // create new from list without duplicate value ("B" and "C" - only one), start: size = 5, finish: size = 7       
+var setAdd5_result1 = setAddList2.add(72);            // add is not duplicate value = 72,  result = true   
+var setAdd5_result2 = setAddList2.add(72);            // add duplicate value = 72,  result = false   
+var setAdd5_result3 = setAddList2.add("hello25");     // add  is not duplicate value = "hello25",  result = true    
+
+// addAll
+var setAdd5_value = setAddList2.clone();              // clone setAddList2, size = 7 
+var setAdd6_result = setAdd.addAll(setAddList2);      // add all with duplicate values, result = true  
+var setAdd6_value = setAdd.clone();                   // clone setAdd (after addAll setAddList2), before size = 9, after size = 11, added only is not duplicate values {"hello25", 72}  
+
+// remove
+var setAdd7_value = setAdd6_value.clone();            // clone setAdd6_value, before size = 11, after remove value = 4 size = 10
+var setAdd7_result = setAdd7_value.remove(4);         // remove value = 4, result = true   
+var setAdd8_value = setAdd7_value.clone();            // clone setAdd7_value, before size = 10, after clear size = 0
+setAdd8_value.clear();                                // setAdd8_value clear, result size = 0  
+```
+{: .copy-code}
+
+- sort/toSorted
+
+```java
+var list = ["C", "B", "A", 34567, "B", "C", "hello", 34];
+var set1 = createSetTb(list);                   // create new from method createSetTb(List list) no sort, size = 6  ("A" and "C" is duplicated)
+var set2 = createSetTb(list);                   // create new from method createSetTb(List list) no sort, size = 6  ("A" and "C" is duplicated)
+var set1_asc = set1.clone();                    // clone set1, size = 6
+var set1_desc = set1.clone();                   // clone set1, size = 6
+set1.sort();                                    // sort set1 -> asc
+set1_asc.sort(true);                            // sort set1_asc -> asc
+set1_desc.sort(false);                          // sort set1_desc -> desc
+var set3 = set2.toSorted();                     // toSorted set3 -> asc new Set
+var set3_asc = set2.toSorted(true);             // toSorted set3 -> asc new Set
+var set3_desc = set2.toSorted(false);           // toSorted set3 -> desc new Set
+```
+{: .copy-code}
+
+- contains/toList/isSet
+
+```java
+var list = ["C", "B", "A", 34567, "B", "C", "hello", 34];
+var set1 = createSetTb(list);                   // create new from method createSetTb(List list) no sort, size = 6  ("A" and "C" is duplicated)
+var result1 = set1.contains("A");               // return true
+var result2 = set1.contains("H");               // return false
+var tolist = set1.toList();                     // create new List from Set, size = 6
+var result3 = isSet(set1);                      // rerturn true
+var result4 = isSet(tolist);                    // rerturn false
+```
+{: .copy-code}
+
+#### Set - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable set.
+
+**Examples:**
+
+```java
+var original = createSet();
+original.add(0x67);
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionArrayList that is unmodifiable.
+unmodifiable.add(0x35);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.add(0x35): set is unmodifiable'."
+```
+{: .copy-code}
+
 ### Arrays
 
 TBEL allows you to create Arrays. To control the memory usage, we permit only arrays of primitive types. String arrays are automatically converted to lists.
