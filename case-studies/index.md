@@ -118,13 +118,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
-                <a class="content" href="/case-studies/nettra">
-                    <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
-                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
+        <div class="client-card" id="Smart agriculture">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/agrolog.webp');">
+                <a class="content" href="/case-studies/agrolog">
+                    <img class="logo" src="/images/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
+                    <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
+                    <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -138,13 +138,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart agriculture">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/agrolog.webp');">
-                <a class="content" href="/case-studies/agrolog">
-                    <img class="logo" src="/images/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
-                    <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
+                <a class="content" href="/case-studies/nettra">
+                    <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
+                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
+                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
                 </a>
             </div>
         </div>

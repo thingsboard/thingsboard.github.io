@@ -24,10 +24,10 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/christoph-beck.webp" title="Oneserve CTO Christoph Beck" alt="Christoph Beck" width="658" height="424">
+        <img src="/images/case-studies/christoph-beck.webp" title="mdeg Founder and CEO Christoph Beck" alt="Christoph Beck" width="658" height="424">
         <div class="text">
-            <h2>Oneserve</h2>
-            <p class="quote">“Being dedicated for Medical Devices only, we have to meet the highest standards  reliability, independence, security and scalability. With ThingsBoard we regardingfound the right solution and partner.”</p>
+            <h2>mdeg GmbH</h2>
+            <p class="quote">“Being dedicated for Medical Devices only, we have to meet the highest standards reliability, independence, security and scalability. With ThingsBoard we regardingfound the right solution and partner.”</p>
             <p class="author">Christoph Beck</p>
             <p class="title">Founder and CEO</p>
         </div>
@@ -125,7 +125,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         <h2>How ThingsBoard helps smart IoT solutions improve operations with IoT?</h2>
         <div class="block">
             <div class="text">
-                <h3>Scalable Device Connectivity and Data Management</h3>
+                <h3>Scalable device connectivity and data management</h3>
                 <p>ThingsBoard simplifies the integration of millions of devices and sensors, regardless of vendor or protocol.</p>
                 <p>How It Works:</p>
                 <ul>
@@ -141,7 +141,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         </div>
         <div class="block">
             <div class="text">
-                <h3>Custom Dashboards for Real-Time Visualization</h3>
+                <h3>Custom dashboards for real-time visualization</h3>
                 <p>A good IoT solution isn't complete without real-time insights and actionable data. ThingsBoard offers powerful dashboarding tools tailored to specific use cases.</p>
                 <p>How It Works:</p>
                 <ul>
@@ -157,7 +157,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         </div>
         <div class="block">
             <div class="text">
-                <h3>Powerful Rule Engine for Smart Automation</h3>
+                <h3>Powerful rule engine for smart automation</h3>
                 <p>ThingsBoard's Rule Engine enables real-time decision-making and system automation without writing complex backend code.</p>
                 <p>How It Works:</p>
                 <ul>
@@ -173,7 +173,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         </div>
         <div class="block">
             <div class="text">
-                <h3>Powerful Rule Engine for Smart Automation</h3>
+                <h3>Powerful rule engine for smart automation</h3>
                 <p>ThingsBoard's Rule Engine enables real-time decision-making and system automation without writing complex backend code.</p>
                 <p>How It Works:</p>
                 <ul>
