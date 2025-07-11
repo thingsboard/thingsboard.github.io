@@ -1,16 +1,17 @@
 * TOC
 {:toc}
 
-The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
+This guide demonstrates basic usage of popular ThingsBoard features. You will learn how to:
 
-- Connect devices to ThingsBoard;
-- Push data from devices to ThingsBoard;
-- Build real-time end-user dashboards;
-- Define thresholds and trigger alarms;
-- Set up push notifications about new alarms over email, SMS, or other systems.
+- Connect devices to ThingsBoard
+- Push data from devices to ThingsBoard
+- Build real-time dashboards
+- Create a Customer and share the dashboard with them.
+- Define thresholds and trigger alarms
+- Set up notifications via email, SMS, mobile apps, or integrate with third-party services.
 
-**In this guide, we will connect and visualize data from the temperature sensor to keep it simple.**
- 
+For simplicity, we&#39;ll visualize data from a temperature sensor.
+
 {% include templates/prerequisites-pe.md %}
 
 ## Step 1. Provision device
@@ -26,13 +27,13 @@ When adding a new device, you will receive a notification. You can view it by cl
 
 {% include images-gallery.html imageCollection="step11" %}
 
-Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+[Learn more about notifications here](#step-6-alarm-notifications).
 
 <br>
-You may also use:
- * [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don&#39;t need to configure each device manually;
- * [REST API](/docs/{{docsPrefix}}api/) to provision devices and other entities programmatically;
+**Additional provisioning methods**
+- [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
+- [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
+- [REST API](/docs/{{docsPrefix}}api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
 
 ## Step 2. Connect device
 
@@ -128,13 +129,16 @@ We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide
 
 ## Step 6. Alarm notifications
 
-The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} allows personalized notifications to end-users regarding device activities, environmental changes, or events in your IoT ecosystem, and more.
+Notifications can be delivered via email, SMS, or integrated third-party systems.
 
 {% include images-gallery.html imageCollection="notification-center" %}
 
-Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be promptly informed about any events in your IoT solution, no matter where you are.
-Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
+Additionally, [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} provides instant push notifications directly to your smartphone, ensuring you&#39;re always informed of critical events wherever you are.
+
+Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications.
+
+Enjoy exploring ThingsBoard!
 
 ## Step 7. Share dashboard with customers
 

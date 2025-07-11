@@ -8,24 +8,24 @@ description: Getting started with ThingsBoard open-source IoT platform and simul
 step1:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
-        title: 'Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section;'
+        title: 'Log in to ThingsBoard and navigate to the "Devices" page of the "Entities" section.'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png 
-        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
+        title: 'Click on the "+" icon in the top right corner of the table and select "Add new device" from drop-down menu.'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
-        title: 'Enter the device name. For example, "My New Device". No other changes required at this time. Click "Add";'
+        title: 'Enter a device name (e.g., "My New Device") No other changes required at this time. Click "Add".'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
-        title: 'A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
+        title: 'A window will open to verify the device connection – we&#39;ll skip this step for now and return to connection checking in more detail in the next step.'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
-        title: 'Congratulations on adding your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
+        title: 'Congratulations, you&#39;ve added your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
 
 step11:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png 
-        title: 'You can view notification about adding a new device by clicking on the "bell" icon in the top right corner.'
+        title: 'You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.'
 
 step2:
     0:
@@ -33,10 +33,10 @@ step2:
         title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window;'
     1:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
-        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+        title: 'Choose your preferred messaging protocol and your operating system, then install any required tools.'
     2:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
-        title: 'Execute previously copied command. Once you have successfully published the “temperature” readings, the device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Now, close the connectivity window.'
+        title: 'Copy and execute the provided command in Terminal. After successfully publishing data, your device status will change from "Inactive" to "Active", and you will see the temperature data. You can now close the connectivity window.'
 
 step21:
     0:
@@ -300,38 +300,47 @@ mosquitto-windows:
 
 {% include get-hosts-name.html %}
 
-The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
+This guide demonstrates basic usage of popular ThingsBoard features. You will learn how to:
 
-- Connect devices to ThingsBoard;
-- Push data from devices to ThingsBoard;
-- Build real-time end-user dashboards;
-- Define thresholds and trigger alarms;
-- Set up push notifications about new alarms over email, SMS, or other systems.
+- Connect devices to ThingsBoard
+- Push data from devices to ThingsBoard
+- Build real-time dashboards
+- Create a Customer and assign the dashboard with them.
+- Define thresholds and trigger alarms
+- Set up notifications via email, SMS, mobile apps, or integrate with third-party services.
 
-**In this guide, we will connect and visualize data from the temperature sensor to keep it simple.**
+For simplicity, we&#39;ll visualize data from a temperature sensor.
+
+## Video tutorial
+
+Prefer visual learning? Check out our step-by-step getting started video tutorial:
+
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/80L0ubQLXsc" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 {% include templates/prerequisites.md %}
 
 ## Step 1. Provision device
 
-As an example, let&#39;s add a device that will transmit the following data to ThingsBoard platform: the device&#39;s name and temperature readings as telemetry.
+Let&#39;s add a device that sends temperature data to ThingsBoard:
 
-To add a new device, follow these steps:
- 
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
-<br>
-When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.
+You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.
 
 {% include images-gallery.html imageCollection="step11" %}
 
-Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+[Learn more about notifications here](#step-6-alarm-notifications).
 
 <br>
-You may also use:
- * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don&#39;t need to configure each device manually; 
- * [REST API](/docs/api/) to provision devices and other entities programmatically;
+**Additional provisioning methods**
+- [Bulk provisioning](/docs/user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
+- [Device provisioning](/docs/user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
+- [REST API](/docs/api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
 
 ## Step 2. Connect device
 
@@ -341,7 +350,7 @@ To accomplish this, use the "Check connectivity" functionality to publish teleme
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
 <br>
-You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you can find more detailed information about all supported protocols for device connectivity.
+Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
 
 ## Step 3. Create dashboard
 
@@ -428,13 +437,16 @@ We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide
 
 ## Step 6. Alarm notifications
 
-The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} allows personalized notifications to end-users regarding device activities, environmental changes, or events in your IoT ecosystem, and more. 
+Notifications can be delivered via email, SMS, or integrated third-party systems.
 
 {% include images-gallery.html imageCollection="notification-center" %}
 
-Additionally, the [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be promptly informed about any events in your IoT solution, no matter where you are.
-Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
+Additionally, [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} provides instant push notifications directly to your smartphone, ensuring you&#39;re always informed of critical events wherever you are.
+
+Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications. 
+
+Enjoy exploring ThingsBoard!
 
 ## Step 7. Assign device and dashboard to customer
 
