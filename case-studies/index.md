@@ -188,6 +188,36 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/circutor.webp');">
+                <a class="content" href="/case-studies/circutor">
+                    <img style="height: 42px" class="logo" src="/images/case-studies/circutor.svg" title="co.met" alt="circutor logo">
+                    <p>Circutor scales global energy management with ThingsBoard IoT platform</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Circutor scales global energy management with ThingsBoard IoT platform</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Facility management">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/oneserve.webp');">
+                <a class="content" href="/case-studies/oneserve">
+                    <img class="logo" src="/images/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo">
+                    <p>Oneserve builds agile FSM platform using ThingsBoard IoT <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how Oneserve builds agile FSM platform using ThingsBoard IoT</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart IoT solution">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/mdeg.webp');">
+                <a class="content" href="/case-studies/mdeg">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/mdeg.svg" title="Environmental Energy Controls" alt="Environmental Energy Controls logo">
+                    <p>How mdeg scaled secure medical device connectivity with ThingsBoard <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about mdeg scaled secure medical device connectivity with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
     </section>
     <div id="successStoryBlock" class="success-story-promo" style="display: none;">
         <div class="content">
