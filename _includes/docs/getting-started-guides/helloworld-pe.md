@@ -22,8 +22,7 @@ To add a new device, follow these steps:
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
 
-<br>
-When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.
+You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.
 
 {% include images-gallery.html imageCollection="step11" %}
 
@@ -37,13 +36,12 @@ When adding a new device, you will receive a notification. You can view it by cl
 
 ## Step 2. Connect device
 
-Now, let&#39;s check the connection of our device to the ThingsBoard platform.
-To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
+Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
 <br>
-You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you can find more detailed information about all supported protocols for device connectivity.
+Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
 
 ## Step 3. Create dashboard
 

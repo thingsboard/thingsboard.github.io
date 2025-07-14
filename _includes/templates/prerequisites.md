@@ -23,4 +23,4 @@ You can use:
 - Username: **tenant@thingsboard.org**
 - Password: **tenant**
 
-[More demo account info](/docs/samples/demo-account/){:target="_blank"}.
+[More information about the demo account](/docs/samples/demo-account/){:target="_blank"}.

@@ -17,7 +17,7 @@ step1:
         title: 'Enter a device name (e.g., "My New Device") No other changes required at this time. Click "Add".'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
-        title: 'A window will open to verify the device connection – we&#39;ll skip this step for now and return to connection checking in more detail in the next step.'
+        title: 'A window for checking the device connection will open — we&#39;ll skip this step for now and return to connection checking in the next step.'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
         title: 'Congratulations, you&#39;ve added your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
@@ -30,18 +30,18 @@ step11:
 step2:
     0:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
-        title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window;'
+        title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window.'
     1:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
-        title: 'Choose your preferred messaging protocol and your operating system, then install any required tools.'
+        title: 'In the opened window, choose your messaging protocol and operating system. Install any necessary client tools and copy the provided command.'
     2:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
-        title: 'Copy and execute the provided command in Terminal. After successfully publishing data, your device status will change from "Inactive" to "Active", and you will see the temperature data. You can now close the connectivity window.'
+        title: 'Execute the copied command in Terminal. Once telemetry data (e.g., temperature readings) is successfully published, the device status will change from "Inactive" to "Active," and you&#39;ll see the data displayed. You can now close the connectivity window.'
 
 step21:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
-        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
+        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings.'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
         title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
@@ -49,13 +49,13 @@ step21:
 step31:
     0:
         image: /images/helloworld/getting-started-ce/create-dashboard-1-ce.png
-        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
+        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu.'
     1:
         image: /images/helloworld/getting-started-ce/create-dashboard-2-ce.png
-        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
+        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add".'
     2:
         image: /images/helloworld/getting-started-ce/create-dashboard-3-ce.png
-        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
+        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner.'
     3:
         image: /images/helloworld/getting-started-ce/create-dashboard-4-ce.png
         title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
@@ -344,8 +344,7 @@ You will also receive a notification upon adding devices. Click the bell icon (t
 
 ## Step 2. Connect device
 
-Now, let&#39;s check the connection of our device to the ThingsBoard platform.
-To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
+Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
