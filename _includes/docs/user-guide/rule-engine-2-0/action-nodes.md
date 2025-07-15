@@ -14,7 +14,7 @@ Action nodes execute various actions based on incoming Message.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
 
 Assign Message Originator Entity to [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
 
@@ -26,7 +26,7 @@ Will create new Customer if it doesn't exists and **Create new Customer if not e
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node-configuration.png)
 
 - **Customer name pattern** - can be set direct customer name or pattern can be used, that will be resolved to the real customer name using Message metadata.
 - **Create new customer if not exists** - if checked will create new customer if it doesn't exist.
@@ -53,7 +53,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group.png)
 
 Adds Message Originator Entity to [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -64,7 +64,7 @@ Will create new Entity Group if it doesn't exist and **Create new group if not e
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group-config.png)
 
 - **Group name pattern** - can be set direct group name or pattern can be used, that will be resolved to the real group name using Message metadata.
 - **Create new group if not exists** - if checked will create new entity group if it doesn't exist.
@@ -89,7 +89,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-calculated-fields.png)
 
 This node is used to trigger calculated field processing **without storing the incoming telemetry in the database**.
 By default, the processing of calculated fields are triggered by the [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"} and [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} nodes.
@@ -124,7 +124,7 @@ When telemetry message, for example, from the flow meter, enters the rule chain,
 As a result of calculation a new message is generated with the **HVAC controller** as the originator, containing the calculated value.
 This message enters rule chain where the [device profile switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"} node routes it to the **save time series** node to persist the result.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Change owner node
@@ -137,17 +137,17 @@ This message enters rule chain where the [device profile switch](/docs/{{docsPre
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node.png)
 
 Changes Owner of the Originator entity to the selected Owner by type:
 
 - Tenant
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-tenent-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-tenent-config.png)
 
 - Customer
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-customer-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-customer-config.png)
 
 Rule node finds target Owner by owner name pattern and then change the owner of the originator entity.
 
@@ -168,7 +168,7 @@ If an entity already belongs to this owner or entity owner is successfully chang
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
 
 This Node loads the latest Alarm with configured **Alarm Type** for Message Originator and Clear the Alarm if it exist.
 
@@ -179,14 +179,14 @@ Node Configuration:
 
 Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
 
 **Alarm Details Builder** script used for updating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
 
 **Alarm Details Builder** script should return **details** object.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
 
 - Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br>
 - Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br>
@@ -278,7 +278,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ## Copy to view node
 
-![image](/images/user-guide/rule-engine-2-0/nodes/copy-to-view-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/copy-to-view-1.png)
 
 Copy attributes from asset/device to related entity view according to entity view configuration. Copy will be done only for attributes that are between start and end dates and according to attribute keys configuration.
 Changes message originator to related entity view and produces new messages according to count of updated entity views
@@ -286,10 +286,10 @@ Changes message originator to related entity view and produces new messages acco
 Configuration:
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/copy-to-view-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/copy-to-view-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/copy-to-view-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/copy-to-view-2-pe.png"></object>
 {% endif %}
 
 ## Create alarm node
@@ -302,7 +302,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
 This Node tries to load the latest Alarm with configured **Alarm Type** for Message Originator.
 If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
@@ -320,20 +320,20 @@ Note: Since TB Version 2.3.0 the rule node has the ability to:
 
 -  get alarm type using pattern with fields from message metadata:
 
-   ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
 
 Note: Since TB Version 2.4.3 the rule node has the ability to:
 
 - filter propagation to parent entities by relation types:
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
 
 **Alarm Details Builder** script used for generating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
 
 **Alarm Details Builder** script should return **details** object.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
 
 - Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br>
 - Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br>
@@ -439,7 +439,7 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
 
 Create the relation from the selected entity to originator of the message by type and direction.
 
@@ -459,7 +459,7 @@ Otherwise, only name pattern should be set.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -477,11 +477,11 @@ In other cases Message will be routed via **Success** chain.
 
 - remove current relations from the originator of the incoming message based on direction and type:
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
 
 - change the originator of the incoming message to the selected entity and process outboud messages as messages from another entity:
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
 
 <br>
 
@@ -499,7 +499,7 @@ Delays incoming messages for configurable period.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
 
 - **Period in seconds** - specifies the value of the period during which incoming message should be suspended
 - **Maximum pending messages** - specifies the amount of maximum allowed pending messages (queue of suspended messages)
@@ -519,7 +519,7 @@ Each next message will be routed via **Failure** chain if the maximum pending me
 </table> 
 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
 
 Delete the relation from the selected entity to originator of the message by type and direction.
 
@@ -529,7 +529,7 @@ Finds target Entity by entity name pattern and then delete a relation between Or
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -546,7 +546,7 @@ In other cases Message will be routed via **Success** chain.
 
 **Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
 ## Device profile node
 
@@ -558,7 +558,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![deviceProfileNode](/images/user-guide/rule-engine-2-0/nodes/device-profile-node.png)
+![deviceProfileNode](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-profile-node.png)
 
 <br>
 
@@ -567,10 +567,10 @@ The Device profile rule node creates and clears alarms based on the alarm rules 
 <br>
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-profile-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-profile-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-profile-node-2-pe.png"></object>
 {% endif %}
 
 Node configuration:
@@ -593,7 +593,7 @@ Node configuration:
 
 ## Device state node
 
-![image](/images/user-guide/rule-engine-2-0/nodes/device-state-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-state-1.png)
 
 Triggers device connectivity events.
 If the incoming message originator is a device, this node registers the configured event for that device in the Device State Service, which then sends the appropriate message to the Rule Engine. If the metadata **ts** property is present, it will be used as the event timestamp; otherwise, the message timestamp will be used.
@@ -612,10 +612,10 @@ This node is particularly useful when the device does not use transport protocol
 Configuration:
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-state-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-state-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-state-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-state-2-pe.png"></object>
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
@@ -629,7 +629,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
 
 Generates report files by capturing target dashboard with specific configuration.
 
@@ -647,7 +647,7 @@ used by [**Send Email Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/ext
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-generate-report-config.png)
 
 - **Use system reports server** - if set, [Reports Server](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server) endpoint URL will be taken from system configuration (**thingsboard.yml**).
 - **Reports server endpoint URL** - endpoint URL of [Reports Server](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server).
@@ -685,7 +685,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-generator.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-generator.png)
 
 Generates Messages with configurable period. JavaScript function is used for message generation.
 
@@ -710,7 +710,7 @@ msgType: new msgType
 }
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-generator-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-generator-config.png)
 
 All fields in resulting object are optional and will be taken from previously generated Message if not specified.
 
@@ -730,11 +730,11 @@ This node can be used for Rule Chain debugging purposes.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
 
 Produces incoming messages by GPS based parameters. Extracts latitude and longitude from incoming message data or metadata and returns different events based on configuration parameters (geo fence).
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
 
 The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
 
@@ -768,11 +768,11 @@ There are two options of area definition based on the perimeter type:
 
 - Polygon
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)
 
 - Circle
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)
 
 ### Event types
 
@@ -785,7 +785,7 @@ There are 4 types of events managed by geofencing rule node:
 Administrator can configure duration time threshold for reporting inside or outside event. For example, whenever minimal inside time is set to 1 minute the message originator is considered as being inside the perimeter 60 seconds after entering the area.
 Minimal outside time defines whenever message originator is considered as out of the perimeter as well.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)
 
 **Failure** chain will to be used when:
 
@@ -803,7 +803,7 @@ Minimal outside time defines whenever message originator is considered as out of
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
 
 Forwards Message to selected [Integration](/docs/{{peDocsPrefix}}user-guide/integrations/) as downlink message.
 
@@ -811,7 +811,7 @@ Message will be pushed to the selected integration downlink queue.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink-config.png)
 
 - **Integration** - target Integration for downlink message processing.
 
@@ -828,7 +828,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-log.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-log.png)
 
 Transform incoming Message with configured JavaScript function to String and log final value into the Thingsboard log file.
 
@@ -842,7 +842,7 @@ JavaScript function receive 3 input parameters
 
 Script should return String value.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-log-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-log-config.png)
 
 JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
@@ -940,17 +940,17 @@ The result of the function may be added to the message body or metadata. You may
 
 ## Message count node
 
-![image](/images/user-guide/rule-engine-2-0/nodes/message-count-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-count-1.png)
 
 Cont incoming messages for specified interval and produces POST_TELEMETRY_REQUEST msg with messages count
 
 Configuration:
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/message-count-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-count-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/message-count-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-count-2-pe.png"></object>
 {% endif %}
 
 {% include templates/edge/edge-nodes.md %}
@@ -966,7 +966,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
 
 Removes Message Originator Entity from [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -976,7 +976,7 @@ Finds target Entity Group by group name pattern and then removes Originator Enti
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group-config.png)
 
 - **Group name pattern** - can be set direct group name or pattern can be used, that will be resolved to the real group name using Message metadata.
 - **Groups cache expiration time** - specifies maximum time interval is seconds allowed to store found entity group records. 0 value means that records will never expire.
@@ -1007,7 +1007,7 @@ In other cases Message will be routed via **Success** chain.
   </thead>
 </table>
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
 
 Sends reply to REST API call that was originally sent to rule engine.
 
@@ -1015,7 +1015,7 @@ Expects messages with any message type. Forwards incoming message as a reply to 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
 ## RPC call reply node
 
@@ -1027,7 +1027,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
 
 Sends response to the RPC Call originator. All incoming RPC requests are passed through Rule Chain as Messages.
 Also all RPC requests have request ID field. It is used for mapping requests and responses.
@@ -1035,7 +1035,7 @@ Message Originator must be a **Device** entity because RPC response is initiated
 
 Node configuration has special request ID field mapping. If the mapping is not specified, **requestId** metadata field is used by default.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
 
 RPC request can be received via different transports:
 
@@ -1076,14 +1076,14 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
 
 Sends RPC requests to the Device and routing response to the next Rule nodes.
 Message Originator must be a **Device** entity as RPC request can be initiated only to device.
 
 Node configuration has **Timeout** field used to specify timeout waiting for response from device.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-request-config.png)
 
 Message payload must have correct format for RPC request. It must contains **method** and **params** fields.
 Example:
@@ -1150,9 +1150,9 @@ For each of these actions, you can choose from the following **processing strate
 Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
 {% endif %}
 
 - **Basic processing settings** - provide predefined strategies for all actions:
@@ -1162,17 +1162,17 @@ Processing strategies can be set using either **Basic** or **Advanced processing
       Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
 {% endif %}
 
 - **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-pe.png)
 {% endif %}
 
 When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
@@ -1184,9 +1184,9 @@ Due to the scenarios described above, the ability to configure each persistence 
 **Configuration: Scope**
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-pe.png)
 {% endif %}
 
 The node determines the attribute scope for each incoming message by evaluating the `scope` property in its metadata.
@@ -1202,7 +1202,7 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
 
 **Configuration: Advanced settings**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
 
 * **Save attributes only if the value changes** – if enabled, the node first retrieves the current values for the specified attribute keys and then compares them with the incoming values.
   If an attribute is missing, its value has changed, or its data type differs from what’s stored, it is marked for saving. If no changes are detected, the node skips the save operation.
@@ -1304,9 +1304,9 @@ For each of these actions, you can choose from the following **processing strate
 Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
 {% endif %}
 
 - **Basic processing settings** - provide predefined strategies for all actions:
@@ -1316,17 +1316,17 @@ Processing strategies can be set using either **Basic** or **Advanced processing
       Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
 {% endif %}
 
 - **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-pe.png)
 {% endif %}
 
 When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
@@ -1338,9 +1338,9 @@ Due to the scenarios described above, the ability to configure each persistence 
 **Configuration: Advanced settings**
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-pe.png)
 {% endif %}
 
 * **Use server timestamp** - if enabled, rule node will use current server time when time series data does not have an explicit timestamp associated with it (**payload format 1** is used). Available since TB Version 3.3.3
@@ -1380,7 +1380,7 @@ Due to the scenarios described above, the ability to configure each persistence 
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table.png)
 
 Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have **cs_tb_** prefix, to avoid the data insertion to the common TB tables.
 
@@ -1390,11 +1390,11 @@ Configuration:
 
 Administrator should set the custom table name without prefix: **cs_tb_**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
 
 Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **$entityId**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
 
 If specified message field does not exist in the **data** of the message or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
 
@@ -1411,7 +1411,7 @@ If specified message field does not exist in the **data** of the message or is n
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
 
 Unassign Message Originator Entity from [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
 
@@ -1421,7 +1421,7 @@ Finds target Customer by customer name pattern and then unassign Originator Enti
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node-configuration.png)
 
 - **Customer name pattern** - can be set direct customer name or pattern can be used, that will be resolved to the real customer name using Message metadata.
 - **Customers cache expiration time** - specifies maximum time interval is seconds allowed to store found customers records. 0 value means that records will never expire.

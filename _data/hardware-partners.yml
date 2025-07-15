@@ -450,7 +450,7 @@
 - type:
     - LoRaWAN
   name: Makerfabs
-  logo: /images/partners/makerfabs-logo.png
+  logo: https://img.thingsboard.io/partners/makerfabs-logo.png
   site:
     href: https://www.makerfabs.com/agrosense
   links:

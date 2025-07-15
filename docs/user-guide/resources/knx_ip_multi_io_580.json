@@ -1,6 +1,6 @@
 {
   "title": "KNX IP Multi IO 580",
-  "image": "tb-image;/api/images/tenant/knx_dashboard_example_dashboard_image.png",
+  "image": "tb-image;/apihttps://img.thingsboard.io/tenant/knx_dashboard_example_dashboard_image.png",
   "mobileHide": false,
   "mobileOrder": null,
   "configuration": {
