@@ -448,6 +448,23 @@
       href: "/docs/pe/devices-library/dsgw-210-iot-gateway-hub/"
   description: Dusun provides various kinds of gateways, hardware products and IOT service
 - type:
+    - LoRaWAN
+  name: Makerfabs
+  logo: /images/partners/makerfabs-logo.png
+  site:
+    href: https://www.makerfabs.com/agrosense
+  links:
+    0:
+      label: How to connect AgroSense Air Temperature and Humidity Sensor to ThingsBoard?
+      href: "/docs/devices-library/air-temperature-and-humidity-sensor/"
+    1:
+      label: How to connect AgroSense Positioning Water Leak Sensor to ThingsBoard?
+      href: "/docs/devices-library/positioning-water-leak-sensor/"
+    2:
+      label: How to connect AgroSense Soil Moisture Sensor to ThingsBoard?
+      href: "/docs/devices-library/soil-moisture-sensor/"
+  description: Makerfabs is a professional open-source hardware provider based in Shenzhen, China, offering end-to-end support from concept design, prototyping, small-batch manufacturing, to full-scale production. We are especially experienced in LoRa and LoRaWAN technologies and have helped many clients realize custom IoT solutions across agriculture, smart cities, and industrial monitoring. To better serve these industries, we have established the AgroSense brand – a comprehensive line of LoRaWAN sensors, designed for reliability, adaptability, and ease of integration.
+- type:
     - Ethernet
     - Wi-Fi
     - LoRaWAN

@@ -12,8 +12,8 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[Soil Moisture Sensor]({{deviceVendorLink}}){: target="_blank"} measures the Humidity at the range of 12-bit ADC, -40℃ to 85℃with capacitive method ，also with highly waterproof performance tested to IP68, making it widely applicable in agricultural environmental sensing scenarios to support the smart agricultural production.  
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+[AgroSense LoRaWAN® Soil Moisture Sensor]({{deviceVendorLink}}){: target="_blank"} measures the Humidity at the range of 12-bit ADC, -40℃ to 85℃with capacitive method ，also with highly waterproof performance tested to IP68, making it widely applicable in agricultural environmental sensing scenarios to support the smart agricultural production.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 <br>
@@ -56,7 +56,7 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](https://img.thingsboard.io/devices-library/lorawan-soil-moisture-data.png)
+![LoRaWAN device data](/images/devices-library/lorawan-soil-moisture-data.png)
 
 
 ## Conclusion

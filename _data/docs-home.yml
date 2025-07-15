@@ -11,11 +11,11 @@ toc:
   section:
   - title: Entities and relations
     path: /docs/user-guide/entities-and-relations/
-  - title: Tenant Profiles
+  - title: Tenant profiles
     path: /docs/user-guide/tenant-profiles/
-  - title: Device Profiles
+  - title: Device profiles
     path: /docs/user-guide/device-profiles/
-  - title: Asset Profiles
+  - title: Asset profiles
     path: /docs/user-guide/asset-profiles/
   - title: Attributes
     path: /docs/user-guide/attributes/
@@ -79,26 +79,26 @@ toc:
       path: /docs/user-guide/rule-engine-2-5/queues/
     - title: Nodes
       section:
-        - title: Filter Nodes
+        - title: Filter nodes
           path: /docs/user-guide/rule-engine-2-0/filter-nodes/
-        - title: Enrichment Nodes
+        - title: Enrichment nodes
           path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
-        - title: Transformation Nodes
+        - title: Transformation nodes
           path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action Nodes
+        - title: Action nodes
           path: /docs/user-guide/rule-engine-2-0/action-nodes/
-        - title: External Nodes
+        - title: External nodes
           path: /docs/user-guide/rule-engine-2-0/external-nodes/
-        - title: Flow Nodes
+        - title: Flow nodes
           path: /docs/user-guide/rule-engine-2-0/flow-nodes/
     - title: PE Nodes
       pe: true
       section:
-        - title: Transformation Nodes
+        - title: Transformation nodes
           path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action Nodes
+        - title: Action nodes
           path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
-        - title: Analytics Nodes
+        - title: Analytics nodes
           path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
     - title: Data processing & actions
       section:
@@ -239,22 +239,22 @@ toc:
       path: /docs/mobile-center/applications/
     - title: Mobile application QR code
       path: /docs/user-guide/ui/mobile-qr-code/
-- title: Other Features
+- title: Other features
   section:
-    - title: Edge Computing
+    - title: Edge computing
       path: /docs/user-guide/edge-computing/
-    - title: Device Connectivity Status
+    - title: Device connectivity status
       path: /docs/user-guide/device-connectivity-status/
-    - title: Claiming Devices
+    - title: Claiming devices
       path: /docs/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/user-guide/device-provisioning/
     - title: Image gallery
       path: /docs/user-guide/image-gallery/
       new: true
-    - title: Entity Views
+    - title: Entity views
       path: /docs/user-guide/entity-views/
-    - title: API Limits
+    - title: API limits
       path: /docs/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/user-guide/advanced-filters/
@@ -262,9 +262,9 @@ toc:
       path: /docs/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
-    - title: Bulk Provisioning
+    - title: Bulk provisioning
       path: /docs/user-guide/bulk-provisioning/
-    - title: Entity Groups
+    - title: Entity groups
       path: /docs/pe/user-guide/groups/
       pe: true
     - title: Scheduler
@@ -276,7 +276,7 @@ toc:
     - title: CSV/XLS data export
       path: /docs/pe/user-guide/csv-xls-data-export/
       pe: true
-    - title: File Storage
+    - title: File storage
       path: /docs/pe/user-guide/file-storage/
       pe: true
     - title: ThingsBoard Expression Language (TBEL)
@@ -288,7 +288,7 @@ toc:
       path: /docs/user-guide/ui/security-settings/
     - title: Enable HTTPS
       path: /docs/user-guide/ssl/http-over-ssl/
-    - title: Audit Log
+    - title: Audit logs
       path: /docs/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/pe/user-guide/rbac/
@@ -302,33 +302,33 @@ toc:
       path: /docs/user-guide/oauth-2-support/
     - title: Domains
       path: /docs/domains/
-    - title: HTTP Transport
+    - title: HTTP transport
       section:
         - title: HTTP over SSL
           path: /docs/user-guide/ssl/http-transport-over-ssl/
-        - title: Access Token based authentication
+        - title: Access token based authentication
           path: /docs/user-guide/ssl/http-access-token/
-    - title: MQTT Transport
+    - title: MQTT transport
       section:
       - title: MQTT over SSL
         path: /docs/user-guide/mqtt-over-ssl/
       - title: Device authentication options
         path: /docs/user-guide/device-credentials/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/user-guide/access-token/
-      - title: Basic MQTT Credentials
+      - title: Basic MQTT credentials
         path: /docs/user-guide/basic-mqtt/
-      - title: X.509 Certificate based authentication
+      - title: X.509 certificate based authentication
         path: /docs/user-guide/certificates/
-    - title: CoAP Transport
+    - title: CoAP transport
       section:
       - title: CoAP over DTLS
         path: /docs/user-guide/coap-over-dtls/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/user-guide/ssl/coap-access-token/
-      - title: X.509 Certificate based authentication
+      - title: X.509 certificate based authentication
         path: /docs/user-guide/ssl/coap-x509-certificates/
-    - title: LwM2M Transport
+    - title: LwM2M transport
       section:
         - title: LwM2M over DTLS
           path: /docs/user-guide/ssl/lwm2m-over-dtls/
@@ -344,24 +344,24 @@ toc:
     path: /docs/user-guide/ui/assets/
   - title: Devices
     path: /docs/user-guide/ui/devices/
-  - title: Rule Chains
+  - title: Rule chains
     path: /docs/user-guide/ui/rule-chains/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
-  - title: Entity Groups
+  - title: Entity groups
     path: /docs/pe/user-guide/groups/
     pe: true
-  - title: SMS Provider Settings
+  - title: SMS provider settings
     path: /docs/user-guide/ui/sms-provider-settings/
-  - title: Slack Settings
+  - title: Slack settings
     path: /docs/user-guide/ui/slack-settings/
-  - title: Microsoft Teams Settings
+  - title: Microsoft Teams settings
     path: /docs/user-guide/ui/microsoft-teams-settings/
   - title: Mail server
     path: /docs/user-guide/ui/mail-settings/
-  - title: JWT Security Settings
+  - title: JWT security settings
     path: /docs/user-guide/ui/jwt-security-settings/
-- title: Contribution Guide
+- title: Contribution guide
   section:
     - title: How to contribute
       path: /docs/user-guide/contribution/how-to-contribute/
@@ -375,7 +375,7 @@ toc:
       path: /docs/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
-- title: Release Notes
+- title: Release notes
   path: /docs/reference/releases/
 - title: Roadmap
   path: /docs/reference/roadmap/

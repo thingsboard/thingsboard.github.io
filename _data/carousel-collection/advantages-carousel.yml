@@ -17,7 +17,7 @@
   title: "Data visualization"
   description: "Visualize data with interactive, multi-state dashboards—no coding needed. Use built-in charts, gauges, maps, tables, and control widgets. Customize every detail via advanced settings or custom widget bundles. Real-time, low-latency updates supported via embedded web-sockets."
   linkLabel: "Learn more"
-  href: "/docs/user-guide/dashboards/"
+  href: "/iot-data-visualization/"
   imageWidth: 92
   imageHeight: 92
 2:

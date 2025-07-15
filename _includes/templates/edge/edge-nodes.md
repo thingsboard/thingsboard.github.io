@@ -1,5 +1,7 @@
 ## Push to cloud 
 
+> Only [EDGE](/docs/edge/){:target="_blank"} feature
+
 <table  style="width:250px;">
    <thead>
      <tr>
@@ -8,7 +10,7 @@
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/edge/nodes/push-to-cloud.png)
+![image](/images/edge/nodes/push-to-cloud.png)
 
 Push messages from edge to cloud. This node used only on edge to push messages from edge to cloud. Once message arrived into this node it’s going to be converted into cloud event and saved to the local database. Node doesn't push messages directly to cloud, but stores event(s) in the cloud queue.
 Supports next originator types:
@@ -29,7 +31,7 @@ As well node supports next message types:
 
 In case successful storage edge event to database message will be routed via **Success** route.
 
-![image](https://img.thingsboard.io/edge/nodes/push-to-cloud-form.png)
+<object width="70%" data="/images/edge/nodes/push-to-cloud-node-2-edge.png"></object>
 
 Message will be routed via **Failure** chain in the following cases:
 - Node was not able to save edge event to database
@@ -46,7 +48,7 @@ Message will be routed via **Failure** chain in the following cases:
    </thead>
 </table> 
 
-![image](https://img.thingsboard.io/edge/nodes/push-to-edge.png)
+![image](/images/edge/nodes/push-to-edge.png)
 
 Push messages from cloud to edge. Message originator must be assigned to particular edge or message originator is **EDGE** entity itself. This node used only on cloud instances to push messages from cloud to edge. Once message arrived into this node it’s going to be converted into edge event and saved to the database. Node doesn't push messages directly to edge, but stores event(s) in the edge queue.
 Supports next originator types:
@@ -67,7 +69,12 @@ As well node supports next message types:
 
 In case successful storage edge event to database message will be routed via **Success** route.
 
-![image](https://img.thingsboard.io/edge/nodes/push-to-edge-form.png)
+{% if docsPrefix == null %}
+<object width="70%" data="/images/edge/nodes/push-to-edge-node-2-ce.png"></object>
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+<object width="70%" data="/images/edge/nodes/push-to-edge-node-2-pe.png"></object>
+{% endif %}
 
 Message will be routed via **Failure** chain in the following cases:
 - Node was not able to save edge event to database
