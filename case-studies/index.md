@@ -118,13 +118,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/nettra.webp');">
-                <a class="content" href="/case-studies/nettra">
-                    <img class="logo" src="https://img.thingsboard.io/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
-                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
+        <div class="client-card" id="Smart agriculture">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/agrolog.webp');">
+                <a class="content" href="/case-studies/agrolog">
+                    <img class="logo" src="https://img.thingsboard.io/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
+                    <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
+                    <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -138,13 +138,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart agriculture">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/agrolog.webp');">
-                <a class="content" href="/case-studies/agrolog">
-                    <img class="logo" src="https://img.thingsboard.io/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
-                    <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/nettra.webp');">
+                <a class="content" href="/case-studies/nettra">
+                    <img class="logo" src="https://img.thingsboard.io/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
+                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
+                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
                 </a>
             </div>
         </div>
@@ -185,6 +185,36 @@ modalDescription: "Get your brand featured across our global channels — websit
                     <p>Smarter buildings made simple: Environmental Energy Controls chooses ThingsBoard for scalable BMS Solutions</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about how Smarter buildings made simple by Environmental Energy Controls with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/circutor.webp');">
+                <a class="content" href="/case-studies/circutor">
+                    <img style="height: 42px" class="logo" src="https://img.thingsboard.io/case-studies/circutor.svg" title="co.met" alt="circutor logo">
+                    <p>Circutor scales global energy management with ThingsBoard IoT platform</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Circutor scales global energy management with ThingsBoard IoT platform</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Facility management">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/oneserve.webp');">
+                <a class="content" href="/case-studies/oneserve">
+                    <img class="logo" src="https://img.thingsboard.io/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo">
+                    <p>Oneserve builds agile FSM platform using ThingsBoard IoT <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how Oneserve builds agile FSM platform using ThingsBoard IoT</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart IoT solution">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/mdeg.webp');">
+                <a class="content" href="/case-studies/mdeg">
+                    <img style="height: 87px" class="logo" src="https://img.thingsboard.io/case-studies/mdeg.svg" title="Environmental Energy Controls" alt="Environmental Energy Controls logo">
+                    <p>How mdeg scaled secure medical device connectivity with ThingsBoard <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about mdeg scaled secure medical device connectivity with ThingsBoard</span>
                 </a>
             </div>
         </div>

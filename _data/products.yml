@@ -31,18 +31,21 @@
   tag: edge
   icon: https://img.thingsboard.io/thingsboard-e-icon.svg
   path: /docs/edge/
+  docsPrefix: /docs/edge/
 - title: PE Edge
   fulltitle: ThingsBoard PE Edge
   description: ThingsBoard PE Edge Documentation
   tag: edge-pe
   icon: https://img.thingsboard.io/thingsboard-e-icon.svg
   path: /docs/pe/edge/
+  docsPrefix: /docs/pe/edge/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
   description: ThingsBoard Documentation
   tag: gw
   icon: https://img.thingsboard.io/gateway-icon.svg
   path: /docs/iot-gateway/
+  docsPrefix: /docs/iot-gateway/
   getStarted: /docs/iot-gateway/getting-started/
 - title: License Server
   fulltitle: ThingsBoard License Server
@@ -56,6 +59,7 @@
   tag: trendz
   icon: https://img.thingsboard.io/trendz-icon.svg
   path: /docs/trendz/
+  docsPrefix: /docs/trendz/
   getStarted: /docs/trendz/getting-started/
 - title: Mobile Application
   fulltitle: ThingsBoard Mobile Application
@@ -79,4 +83,5 @@
   tag: mqtt-broker
   icon: https://img.thingsboard.io/tbmq-icon.svg
   path: /docs/mqtt-broker/
+  docsPrefix: /docs/mqtt-broker/
   getStarted: /docs/mqtt-broker/getting-started/
