@@ -1,0 +1,165 @@
+{% assign containerId = include.containerId %}
+{% assign filterSelector = include.filterSelector %}
+{% assign itemsSelector = include.itemsSelector %}
+{% assign itemsPerPage = include.itemsPerPage %}
+
+<div
+    class="pagination-wrapper"
+    data-container-id="{{ containerId }}"
+    data-filter-selector="{{ filterSelector }}"
+    data-items-to-paginate="{{ itemsSelector }}"
+    data-items-per-page="{{ itemsPerPage }}"
+>
+    <div class="pagination-container">
+        <button id="showMoreBtn" class="show-more-btn">Show More</button>
+        <nav class="pagination-nav">
+            <ul id="pagination-controls" class="pagination"></ul>
+            <div id="paginationStatus" class="pagination-status"></div>
+        </nav>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.pagination-wrapper').forEach(wrapper => {
+            const containerId = wrapper.dataset.containerId;
+            const filterSelector = wrapper.dataset.filterSelector;
+            const itemsSelector = wrapper.dataset.itemsToPaginate;
+            const itemsPerPage = parseInt(wrapper.dataset.itemsPerPage, 10);
+
+            const container = document.getElementById(containerId);
+            const filterControl = document.querySelector(filterSelector);
+
+            if (!container || !filterControl) return;
+
+            const paginationContainer = wrapper.querySelector('.pagination-container');
+            const showMoreBtn = wrapper.querySelector('#showMoreBtn');
+            const paginationControls = wrapper.querySelector('#pagination-controls');
+            const paginationStatus = wrapper.querySelector('#paginationStatus');
+
+            let activePages = [1];
+
+            function render() {
+                const allItems = Array.from(container.querySelectorAll(itemsSelector));
+                const filteredCards = allItems.filter(card =>
+                    !card.classList.contains('success-story-promo') &&
+                    !card.classList.contains('filter-hidden')
+                );
+
+                allItems.forEach(card => card.classList.add('pagination-hidden'));
+                activePages.forEach(page => {
+                    const start = (page - 1) * itemsPerPage;
+                    const end = start + itemsPerPage;
+                    const pageItems = filteredCards.slice(start, end);
+                    pageItems.forEach(card => card.classList.remove('pagination-hidden'));
+                });
+
+                const promoBlock = document.getElementById('successStoryBlock');
+                if (promoBlock) {
+                    promoBlock.remove();
+                    if (filteredCards.length > 0) {
+                        promoBlock.style.display = '';
+                        promoBlock.classList.remove('pagination-hidden');
+                        if (activePages.length > 1) {
+                            const insertionPoint = filteredCards[itemsPerPage - 1];
+                            if (insertionPoint) insertionPoint.after(promoBlock);
+                        } else {
+                            const currentlyVisibleCards = filteredCards.filter(card => !card.classList.contains('pagination-hidden'));
+                            if (currentlyVisibleCards.length > 0) {
+                                const lastVisibleCard = currentlyVisibleCards[currentlyVisibleCards.length - 1];
+                                lastVisibleCard.after(promoBlock);
+                            }
+                        }
+                    } else {
+                        promoBlock.style.display = 'none';
+                    }
+                }
+
+                const pageCount = Math.ceil(filteredCards.length / itemsPerPage);
+                if (filteredCards.length === 0) {
+                    paginationContainer.classList.add('hidden');
+                    return;
+                }
+                paginationContainer.classList.remove('hidden');
+
+                const minPage = Math.min(...activePages);
+                const maxPage = Math.max(...activePages);
+
+                showMoreBtn.classList.toggle('hidden', maxPage >= pageCount);
+
+                if (paginationStatus) {
+                    paginationStatus.textContent = activePages.length > 1
+                        ? `Pages ${minPage}-${maxPage} of ${pageCount}`
+                        : `Page ${minPage} of ${pageCount}`;
+                }
+
+                paginationControls.innerHTML = "";
+
+                for (let i = 1; i <= pageCount; i++) {
+                    const isActive = activePages.includes(i);
+                    const li = document.createElement('li');
+                    li.className = `page-item ${isActive ? 'active' : ''}`;
+                    const a = document.createElement('a');
+                    a.className = 'page-link';
+                    a.href = '#';
+                    a.innerText = i;
+                    a.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        activePages = [i];
+                        render();
+                    });
+                    li.appendChild(a);
+                    paginationControls.appendChild(li);
+                }
+
+                const isPrevDisabled = minPage <= 1;
+                const prevLi = document.createElement('li');
+                prevLi.className = `page-item ${isPrevDisabled ? 'disabled' : ''}`;
+                const prevLink = document.createElement('a');
+                prevLink.className = 'page-link';
+                prevLink.href = '#';
+                prevLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (isPrevDisabled) return;
+                    activePages = [minPage - 1];
+                    render();
+                });
+                prevLi.appendChild(prevLink);
+                paginationControls.insertBefore(prevLi, paginationControls.firstChild);
+
+                const isNextDisabled = maxPage >= pageCount;
+                const nextLi = document.createElement('li');
+                nextLi.className = `page-item ${isNextDisabled ? 'disabled' : ''}`;
+                const nextLink = document.createElement('a');
+                nextLink.className = 'page-link';
+                nextLink.href = '#';
+                nextLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (isNextDisabled) return;
+                    activePages = [maxPage + 1];
+                    render();
+                });
+                nextLi.appendChild(nextLink);
+                paginationControls.appendChild(nextLi);
+            }
+
+            showMoreBtn.addEventListener('click', function () {
+                const pageCount = Math.ceil(
+                    container.querySelectorAll(`${itemsSelector}:not(.filter-hidden):not(.success-story-promo)`).length / itemsPerPage
+                );
+                const maxPage = Math.max(...activePages);
+                if (maxPage < pageCount) {
+                    activePages.push(maxPage + 1);
+                    render();
+                }
+            });
+
+            filterControl.addEventListener('click', function () {
+                activePages = [1];
+                render();
+            });
+
+            setTimeout(render, 150);
+        });
+    });
+</script>
