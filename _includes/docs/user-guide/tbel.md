@@ -393,12 +393,12 @@ var result1 = set1.addAll(list);           // addAll list, no sort, size = 3 ("A
 ```
 {: .copy-code}
 
-- Using the createSetTb(List list) method. You can convert a List to a Set by calling the built-in createSetTb() method:
+- Using the toSet(List list) method. You can convert a List to a Set by calling the built-in newSet() method:
 
 ```java
 var list = ["B", "A", "C", "A"];
-var set1 = createSetTb(list);             // create new Set from createSetTb() with list, no sort, size = 3 ("A" - duplicate)
-var set2 = createSetTb();                 // create new Set from createSetTb(), Empty
+var set1 = toSet(list);             // create new Set from newSet() with list, no sort, size = 3 ("A" - duplicate)
+var set2 = newSet();                 // create new Set from newSet(), Empty
 ```
 {: .copy-code}
 
@@ -425,7 +425,7 @@ var set2 = createSetTb();                 // create new Set from createSetTb(), 
 ```java
 // Create a new set with value
 var set = createSet(["A", "B", "C"]);
-var set2 = createSetTb(msg.list);       // create new from list, size = 3
+var set2 = toSet(msg.list);       // create new from list, size = 3
 var set2_0 = set2.toArray()[0];         // return "A", value with index = 0 from Set 
 var set2Size = set2.size();             // return size = 3
 var smthForeach = "";
@@ -445,16 +445,16 @@ for (var i =0; i < set2.size; i++) {
 ```java
 // add
 var list = ["B", "C", "A", "B", "C", "hello", 34567];
-var setAdd = createSetTb(["thigsboard", 4, 67]);      // create new, size = 3
+var setAdd = toSet(["thigsboard", 4, 67]);      // create new, size = 3
 var setAdd1_value = setAdd.clone();                   // clone setAdd, size = 3
 var setAdd2_result = setAdd.add(35);                  // add value = 35, result = true
 var setAdd2_value = setAdd.clone();                   // clone setAdd (fixing the result add = 35), size = 4
-var setAddList1 = createSetTb(list);                  // create new from list without duplicate value ("B" and "C" - only one), size = 5
+var setAddList1 = toSet(list);                  // create new from list without duplicate value ("B" and "C" - only one), size = 5
 var setAdd3_result = setAdd.addAll(setAddList1);      // add all without duplicate values, result = true
 var setAdd3_value = setAdd.clone();                   // clone setAdd (with addAll), size = 9  
 var setAdd4_result = setAdd.add(35);                  // add duplicate value = 35,  result = false  
 var setAdd4_value = setAdd.clone();                   // clone setAdd (after add duplicate value = 35), size = 9  
-var setAddList2 = createSetTb(list);                  // create new from list without duplicate value ("B" and "C" - only one), start: size = 5, finish: size = 7       
+var setAddList2 = toSet(list);                  // create new from list without duplicate value ("B" and "C" - only one), start: size = 5, finish: size = 7       
 var setAdd5_result1 = setAddList2.add(72);            // add is not duplicate value = 72,  result = true   
 var setAdd5_result2 = setAddList2.add(72);            // add duplicate value = 72,  result = false   
 var setAdd5_result3 = setAddList2.add("hello25");     // add  is not duplicate value = "hello25",  result = true    
@@ -476,8 +476,8 @@ setAdd8_value.clear();                                // setAdd8_value clear, re
 
 ```java
 var list = ["C", "B", "A", 34567, "B", "C", "hello", 34];
-var set1 = createSetTb(list);                   // create new from method createSetTb(List list) no sort, size = 6  ("A" and "C" is duplicated)
-var set2 = createSetTb(list);                   // create new from method createSetTb(List list) no sort, size = 6  ("A" and "C" is duplicated)
+var set1 = toSet(list);                   // create new from method toSet(List list) no sort, size = 6  ("A" and "C" is duplicated)
+var set2 = toSet(list);                   // create new from method toSet(List list) no sort, size = 6  ("A" and "C" is duplicated)
 var set1_asc = set1.clone();                    // clone set1, size = 6
 var set1_desc = set1.clone();                   // clone set1, size = 6
 set1.sort();                                    // sort set1 -> asc
@@ -493,7 +493,7 @@ var set3_desc = set2.toSorted(false);           // toSorted set3 -> desc new Set
 
 ```java
 var list = ["C", "B", "A", 34567, "B", "C", "hello", 34];
-var set1 = createSetTb(list);                   // create new from method createSetTb(List list) no sort, size = 6  ("A" and "C" is duplicated)
+var set1 = toSet(list);                   // create new from method toSet(List list) no sort, size = 6  ("A" and "C" is duplicated)
 var result1 = set1.contains("A");               // return true
 var result2 = set1.contains("H");               // return false
 var tolist = set1.toList();                     // create new List from Set, size = 6
