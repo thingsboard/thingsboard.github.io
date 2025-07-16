@@ -14,7 +14,7 @@ This method is easy to configure and suitable for scenarios where secure credent
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
-#### Authentication
+### Authentication
 
 TBMQ supports flexible credential matching strategies for Basic Authentication, allowing different combinations of MQTT client identifiers—such as **clientId, username, and password** — to be used for authentication. 
 This enables administrators to define how strictly clients must identify themselves when connecting. 
@@ -22,7 +22,7 @@ This enables administrators to define how strictly clients must identify themsel
 The system uses these fields to generate a unique `credentialsId`, which is then used to locate and validate stored credentials. 
 This approach ensures consistent and configurable authentication behavior across a variety of deployment scenarios.
 
-##### Credentials matching
+#### Credentials matching
 
 The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId** - checks if the connecting client has specified clientId.
@@ -32,7 +32,7 @@ The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId and password** - checks if the connecting client has specified both clientId and password.
 - **clientId, username and password** - checks if the connecting client has specified clientId, username, and password.
 
-##### Credentials ID
+#### Credentials ID
 
 When a client connects, the combination of the username, password, and clientId from the `CONNECT` packet is matched with the persisted credentials to authenticate the client.
 The matching is based on the auto-generated `credentialsId` field from the MQTT client credentials. 
@@ -47,7 +47,7 @@ Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers t
 
 {% include images-gallery.html imageCollection="security-authentication-basic" %}
 
-#### Authorization
+### Authorization
 
 After the user has been authenticated, it is possible to restrict the client's access to topics they can publish or subscribe to.
 

@@ -31,14 +31,16 @@ you can ensure secure and controlled access to the MQTT broker, protecting your 
 
 #### Providers management
 
-ThingsBoard MQTT Broker supports multiple authentication methods to validate clients connecting via MQTT protocol:
+TBMQ supports multiple authentication methods to validate clients connecting via MQTT protocol:
 - **Basic** — Username and password-based authentication.
 - **X.509 Certificate Chain** — Client authentication using an X.509 certificate presented during the TLS handshake.
 - **JWT (JSON Web Token)** — Authenticates clients using a signed JWT passed in the password field of the CONNECT packet.
 - **SCRAM** — Performs a secure challenge-response using hashed credentials to authenticate without sending the actual password (MQTT 5.0 only).
 
-{% assign sinceVersion = "2.2" %}
-{% include templates/mqtt-broker/since.md %}
+{% capture providerEditOnly %}
+Adding or deleting authentication providers is not allowed. Users can only edit their configuration.
+{% endcapture %}
+{% include templates/info-banner.md title="Edit-only access" content=providerEditOnly %}
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-provider-control.md %}
 
@@ -48,8 +50,6 @@ ThingsBoard MQTT Broker supports multiple authentication methods to validate cli
 {% include templates/mqtt-broker/since.md %}
 
 The **MQTT Authentication Settings** page provides a place in the UI to configure key authentication-related parameters for MQTT clients. 
-
-##### Authentication execution order
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-settings.md %}
 
