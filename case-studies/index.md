@@ -8,6 +8,10 @@ formSubject: "General Feedback"
 modalTitle: "Tell us about your success"
 modalDescription: "Get your brand featured across our global channels — website, social media, and community."
 pagination: "true"
+containerId: "case-studies-clients"
+filterSelector: ".filter[data-container-id='case-studies-clients']"
+itemsSelector: ".client-card"
+itemsPerPage: "9"
 
 ---
 

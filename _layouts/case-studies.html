@@ -9,11 +9,7 @@
     {{content}}
 </div>
 {% if page.pagination == "true" %}
-{% include pagination.html
-    containerId="case-studies-clients"
-    filterSelector=".filter[data-container-id='case-studies-clients']"
-    itemsSelector=".client-card"
-    itemsPerPage="9" %}
+{% include pagination.html %}
 {% endif %}
 
 {% include contact-us-modal.html

@@ -1,0 +1,55 @@
+{% assign filterCollection = page.filterCollection %}
+
+<div class="big-filter">
+    {% for item in filterCollection %}
+        <div class="big-filter-section{% if forloop.index0 == 0 %} opened{% endif %}">
+            <div class="big-filter-section-label">
+                <span class="big-filter-section-label-title">{{ item[1].label }}</span>
+                <span class="big-filter-section-label-chevron">
+                    <i class="fas fa-chevron-down fa-lg" style="color: #2A7DEC"></i>
+                </span>
+            </div>
+            <div class="big-filter-section-filters">
+                <ul class="big-filter-section-list">
+                    {% for filter in item[1].filters %}
+                        <li class="big-filter-section-filter">
+                            <input type="checkbox" id="{{ filter[1] }}" value="{{ filter[1] }}">
+                            <label for="{{ filter[1] }}">{{ filter[1] }}</label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('.big-filter-section-filter input[type="checkbox"]');
+        const cards = document.querySelectorAll('.card');
+        const filterSectionLabels = document.querySelectorAll('.big-filter-section-label');
+
+        function applyFilter() {
+            const selectedFilters = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            cards.forEach(card => {
+                const cardTypes = card.id.split('|');
+                const match = selectedFilters.length === 0 || cardTypes.some(type => selectedFilters.includes(type));
+                card.style.display = match ? 'block' : 'none';
+            });
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', applyFilter);
+        });
+
+        filterSectionLabels.forEach(label => {
+            label.addEventListener('click', function () {
+                const section = label.closest('.big-filter-section');
+                section.classList.toggle('opened');
+            });
+        });
+    });
+</script>

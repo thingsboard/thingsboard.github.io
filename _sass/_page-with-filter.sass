@@ -1,0 +1,101 @@
+#page-with-filter-content
+  padding: 0
+  .main-content
+    max-width: 1440px
+    padding: 0 20px
+    margin: 0 auto
+  .search-block
+    padding: 24px
+    display: flex
+    align-items: flex-end
+    input
+      width: 240px
+      padding: 7px 16px
+      border-radius: 6px
+      border: 1px solid rgba(0, 0, 0, 0.12)
+      color: rgba(0, 0, 0, 0.76)
+  .content-block
+    display: flex
+    .filter-block
+      position: relative
+      border-right: 1px solid #EBEBEB
+      width: 326px
+      flex-shrink: 0
+      .big-filter
+        display: flex
+        flex-direction: column
+        position: sticky
+        top: 100px
+        overflow-y: auto
+        max-height: calc(100vh - 100px)
+        .big-filter-section
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+          .big-filter-section-label
+            padding: 12px 16px 12px
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 8px
+            .big-filter-section-label-chevron
+              transition: ease-in-out 0.3s
+          .big-filter-section-filters
+            overflow: hidden
+            max-height: 0
+            transition: max-height 0.3s ease
+            .big-filter-section-list
+              padding: 0 16px 16px
+              display: flex
+              flex-direction: column
+              gap: 4px
+              li
+                display: flex
+                gap: 8px
+                cursor: pointer
+                padding: 2px
+                input
+                  cursor: pointer
+                label
+                  font-size: 14px
+                  font-weight: 400
+                  line-height: 24px
+                  margin-bottom: 0
+          &.opened
+            .big-filter-section-filters
+              max-height: 1000px
+            .big-filter-section-label-chevron
+              transform: rotate(180deg)
+
+    .cards-block
+      padding: 32px
+      .card-collection
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 16px
+        .card
+          display: flex
+          flex-direction: column
+          max-width: 336px
+          padding: 20px
+          border-radius: 12px
+          border: 1px solid #EBEBEB
+          background: #FFF
+          img
+            max-height: 80px
+          .crisp
+            font-size: 14px
+            font-weight: 400
+            line-height: 24px
+            border-radius: 6px
+            background: #EEF5FD
+            padding: 4px 8px
+          .card-title
+            font-size: 18px
+            font-weight: 500
+            line-height: 30px
+          .card-description
+            font-size: 14px
+            font-weight: 400
+            line-height: 24px
+
+

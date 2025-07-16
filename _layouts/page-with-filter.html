@@ -1,0 +1,36 @@
+<!Doctype html>
+<html id="page-with-filter" lang="en">
+
+{% include head-header.html%}
+
+<section id="page-with-filter-content">
+    <div class="hero-content">
+        {{content}}
+    </div>
+    <div class="main-content">
+        <div class="search-block">
+            <input type="text" id="searchGuideInput" placeholder="Find..." />
+        </div>
+        <div class="content-block">
+            <div class="filter-block">
+                {% include big-filter.liquid %}
+            </div>
+            <div class="cards-block">
+                {% include cards-collection.liquid %}
+            </div>
+            <div class="pagination-block">
+                {% if page.pagination == "true" %}
+                {% include pagination.html %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+
+</script>
+{% include cookie-consent.html %}
+
+</body>
+</html>
