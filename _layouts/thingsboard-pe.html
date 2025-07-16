@@ -19,12 +19,13 @@
             <a id="Products_PE_TryItNow" href="/pricing/" class="button try-pe gtm_button">Try it now</a>
         </div>
         <div class="pe-arrow">
-            <a href="#docsContent"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+            <a href="#docsContent" aria-hidden="true"><i class="fa fa-chevron-down fa-2x"></i></a>
         </div>
     </div>
 </section>
 
 <section id="encyclopedia">
+    {% include customers-logo-section.liquid collectionMap = 'customers-logo' productTag="pe" %}
     <div id="peContent" class="noToc">
         {{ content }}
     </div>

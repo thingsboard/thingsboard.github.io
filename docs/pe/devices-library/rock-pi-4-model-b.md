@@ -13,4 +13,5 @@ docsPrefix: pe/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/rock-pi-4-model-b.md %}

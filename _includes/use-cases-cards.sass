@@ -1,0 +1,307 @@
+#docsContent
+  #usecase-list
+    display: grid
+    gap: 32px
+    grid-template-columns: repeat(2, 1fr)
+    grid-auto-flow: row dense
+
+    .parent-box
+      overflow: hidden
+      background: #FFF
+      padding: 8px
+      border-radius: 24px
+      box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+      transition: padding 0.3s ease-in-out
+      height: 100%
+      &.filter-hidden
+        display: none
+      &:hover
+        text-decoration: none
+        .card-content
+          .dashboard-frame-wrapper
+            padding: 9px 20px
+          .text
+            padding: 0 32px 70px 32px
+            .title
+              color: #2A7DEC
+            .read-more-button
+              bottom: 24px
+              opacity: 1
+
+      &:nth-child(3n)
+        grid-column: span 2
+        height: 100%
+        .card-content
+          .dashboard-frame-wrapper
+            width: 50%
+          .dashboard-frame
+            transition: ease-in-out 0.3s
+          .text
+            width: 50%
+            .read-more-button
+              bottom: -50px
+
+        &:hover
+          .card-content
+            .dashboard-frame-wrapper
+              padding: 32px 20px
+              .dashboard-frame
+                transform: scale(1.03)
+            .text
+              padding: 0 32px 46px 32px
+              .read-more-button
+                bottom: 0
+
+        .card-content
+          .desktop-flex-content
+            flex-direction: row-reverse
+            gap: 32px
+
+          .text
+            height: auto
+            gap: 16px
+            padding: 32px
+
+
+      &:nth-child(6n)
+        .card-content
+          .desktop-flex-content
+            flex-direction: row
+
+      .card-content
+        height: 100%
+        .desktop-flex-content
+          display: flex
+          flex-direction: column
+          align-items: center
+          gap: 32px
+          height: 100%
+
+        .tablet-res
+          display: none
+
+        .text
+          height: 100%
+          width: 100%
+          padding: 0 32px 24px 32px
+          transition: padding 0.3s ease-in-out
+          display: flex
+          flex-direction: column
+          gap: 8px
+          position: relative
+
+          .description
+            margin: 0
+            font-size: 16px
+            line-height: 28px
+            color: #000000C2
+
+          .title
+            margin: 0
+            font-size: 28px
+            line-height: 44px
+            font-weight: 500
+            color: #000000DE
+            transition: ease-in-out 0.3s
+
+          .read-more-button
+            position: absolute
+            bottom: -200px
+            opacity: 0
+            transition: ease-in-out 0.3s
+
+        .dashboard-frame-wrapper
+          transition: padding 0.3s ease-in-out
+          width: 100%
+          background: #F4F8FE
+          border-radius: 16px
+          padding: 32px 20px
+          position: relative
+          .dashboard-frame
+            .frame-image
+              z-index: 1
+            .frame-video
+              z-index: 2
+              video
+                border-radius: 6px
+
+        .overlay
+          border-radius: 16px
+
+          .eye
+            left: 50%
+            transform: translateX(-50%)
+            width: max-content
+
+  @media screen and (max-width: 1279px)
+    #usecase-list
+      .parent-box
+        &:hover
+          .card-content
+            .dashboard-frame-wrapper
+              padding: 32px 20px
+        &:nth-child(3n)
+          grid-column: span 1
+          &:hover
+            padding: 8px
+            .card-content
+              .text
+                padding: 0 32px 70px 32px
+                .read-more-button
+                  bottom: 24px
+                  opacity: 1
+              .dashboard-frame-wrapper
+                padding: 32px 20px
+                .dashboard-frame
+                  transform: scale(1)
+          .card-content
+            .desktop-flex-content
+              flex-direction: column
+            .dashboard-frame-wrapper
+              width: 100%
+            .text
+              height: 100%
+              padding: 0 32px 70px 32px
+              width: 100%
+              .read-more-button
+                bottom: 24px
+                opacity: 1
+        .card-content
+          .text
+            padding: 0 32px 70px 32px
+            width: 100%
+            .read-more-button
+              bottom: 24px
+              opacity: 1
+
+        &:nth-child(6n)
+          .card-content
+            .desktop-flex-content
+              flex-direction: column
+
+  @media screen and (max-width: 959px)
+    #usecase-list
+      grid-template-columns: 1fr
+      .parent-box
+        padding: 27px 24px 32px
+        &:hover
+          .card-content
+            .text
+              padding: 0
+            .dashboard-frame-wrapper
+              .dashboard-frame
+                transform: scale(1)
+        &:nth-child(3n)
+          .card-content
+            .desktop-flex-content
+              flex-direction: row
+            .text
+              padding: 0
+              height: auto
+          &:hover
+            padding: 27px 24px 32px
+            .card-content
+              .text
+                padding: 0
+              .dashboard-frame-wrapper
+                .dashboard-frame
+                  transform: scale(1)
+        &:nth-child(6n)
+          .card-content
+            flex-direction: column
+            align-items: center
+            .text
+              height: auto
+        .card-content
+          display: flex
+          flex-direction: column
+          align-items: center
+          gap: 20px
+          .desktop-flex-content
+            flex-direction: row
+            justify-content: space-between
+            align-items: center
+            position: relative
+            &:before
+              content: ''
+              left: 0
+              position: absolute
+              width: 49%
+              height: 100%
+              background: #F4F8FE
+              border-radius: 16px
+          .tablet-res
+            display: block
+            margin: 0 !important
+          .text
+            height: auto
+            padding: 0
+            .title
+              display: none
+            .read-more-button
+              display: none
+      .img-button
+        .overlay
+          display: none
+
+  @media screen and (max-width: 599px)
+    #usecase-list
+      gap: 24px
+      .parent-box
+        padding: 8px
+        &:nth-child(3n)
+            &:hover
+              padding: 8px
+              .card-content
+                .text
+                  padding: 0 16px 66px 16px
+                .dashboard-frame-wrapper
+                  padding: 20px 12px
+            .card-content
+              .desktop-flex-content
+                flex-direction: column
+              .text
+                padding: 0 16px 66px 16px
+                .read-more-button
+                  opacity: 1
+                  bottom: 24px
+        &:nth-child(6n)
+          &:hover
+            .card-content
+              .text
+                padding: 0 16px 66px 16px
+              .dashboard-frame-wrapper
+                padding: 20px 12px
+          .card-content
+            .desktop-flex-content
+              flex-direction: column
+        .card-content
+          .desktop-flex-content
+            flex-direction: column
+            gap: 16px
+            &:before
+              display: none
+          .tablet-res
+            display: none
+          .text
+            padding: 0 16px 66px 16px
+            .description
+              font-size: 14px !important
+              line-height: 24px !important
+            .title
+              display: block
+              font-size: 24px
+              line-height: 36px
+            .read-more-button
+              display: block
+              font-size: 16px
+              .arrow
+                top: 5px
+          .dashboard-frame-wrapper
+            padding: 20px 12px
+        &:hover
+          .card-content
+            .text
+              padding: 0 16px 66px 16px
+            .dashboard-frame-wrapper
+              padding: 20px 12px

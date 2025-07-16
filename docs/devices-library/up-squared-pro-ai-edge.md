@@ -13,4 +13,5 @@ deviceImageFileName: up-squared-pro-ai-edge.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/up-squared-pro-ai-edge.md %}

@@ -138,7 +138,7 @@
 
   #searchBox
     display: block
-    z-index: 9999
+    z-index: 8000
     position: fixed
     top: 89px
     right: 22px
@@ -151,6 +151,7 @@
     @media screen and (max-width: 1280px)
       top: 18px
       right: 91px
+      z-index: 9999
     @media screen and (max-width: 768px)
       top: 164px
       left: 22px
@@ -170,7 +171,7 @@
       padding: 0 16px
       height: 44px
       line-height: 30px
-      font-size: 18px
+      font-size: 16px
       vertical-align: middle
       border: 1px solid #ebebeb
       background-color: transparent
@@ -336,25 +337,27 @@
           display: flex
           align-items: center
           height: 100%
-          margin-left: 28px
+          margin-left: 17px
           float: left
-          @media screen and (max-width: 1500px)
+          @media screen and (min-width: 1500px)
             margin-left: 20px
+          @media screen and (min-width: 1700px)
+            margin-left: 28px
           a
             position: relative
             display: block
-            color: #212529
-            opacity: 0.6
-            font-size: 18px
+            color: #0000008A
+            font-size: 14px
             font-weight: normal
-            @media screen and (max-width: 1500px)
-              font-size: 17px
+            @media screen and (min-width: 1500px)
+              font-size: 16px
             &.YAH
               position: relative
               opacity: 1
               font-weight: 500
+              color: #000000DE
             &:hover
-              opacity: 1
+              color: #000000DE
               text-decoration: none !important
 
   #githubButtonContainer
@@ -433,14 +436,15 @@
         font-weight: 500
     & > .container:first-child > .item.yah:first-child > .title
       padding-left: 0
-      font-size: 1.2em
+      font-size: 18px
       font-weight: 600
+      line-height: 30px
     .item
       display: block
       position: relative
       overflow: visible
     .title
-      color: #75767C
+      color: #0000008A
       line-height: 24px
       &:hover
         color: #2a7dec
@@ -451,9 +455,9 @@
       padding-left: 38px
       &:before
         content: "\f054"
-        font-family: FontAwesome
+        font-family: 'Font Awesome 5 Free'
         font-size: 14px
-        font-weight: 400
+        font-weight: 900
         display: block
         position: absolute
         left: 18px
@@ -461,6 +465,7 @@
         transform: rotate(0deg)
         transition: transform 0.3s
         border: none
+        color: #0000008A
     .item.on
       overflow: visible
       & > .title
@@ -507,9 +512,9 @@
         color: var(--tb-main-color)
       &:before
         content: "\f054"
-        font-family: FontAwesome
+        font-family: 'Font Awesome 5 Free'
         font-size: 14px
-        font-weight: 400
+        font-weight: 900
         display: block
         width: 10px
         position: relative
@@ -533,7 +538,6 @@
         .filter-label
           cursor: pointer
           color: #75767C
-          line-height: 24px
         input[type=checkbox]
           -webkit-appearance: none
           appearance: none
@@ -600,14 +604,14 @@ a.feature-card, .feature-card
     margin-right: 7px
   .feature-title
     color: #212529
-    font-size: 18px
+    font-size: 16px
     font-weight: 500
     line-height: 28px
     padding-bottom: 8px
     span
       vertical-align: middle
   .feature-text
-    color: #75767C
+    color: rgba(0, 0, 0, 0.76)
     font-size: 14px
     font-weight: 400
     line-height: 24px
@@ -657,25 +661,19 @@ a.feature-card
   display: flex
   flex-direction: row
   align-items: center
-  z-index: 10001
+  z-index: 8000
   @media screen and (min-width: 769px)
-    width: 250px
+    width: 270px
   @media screen and (min-width: 870px)
     width: 348px
   @media screen and (min-width: 1281px)
-    width: 250px
+    width: 270px
     top: 80px
   @media screen and (min-width: 1601px)
-    width: 316px
-  img
-    width: 54px
-    height: 54px
-    margin-right: 16px
-    @media screen and (max-width: 1024px)
-      width: 46px
-      height: 46px
-      margin-right: 10px
-      margin-left: -10px
+    width: 338px
+  @media screen and (max-width: 1280px)
+    z-index: 10001
+
   .product-info
     display: flex
     flex-direction: column
@@ -686,8 +684,18 @@ a.feature-card
     justify-content: center
     border-radius: 8px
     background: var(--tb-main-background)
+    @media screen and (max-width: 769px)
+      width: 270px
+    @media screen and (min-width: 769px)
+      width: 270px
+    @media screen and (min-width: 870px)
+      width: 348px
+    @media screen and (min-width: 1281px)
+      width: 272px
+    @media screen and (min-width: 1601px)
+      width: 338px
     .product-title
-      font-size: 18px
+      font-size: 16px
       font-weight: 500
       line-height: 24px
       position: relative
@@ -696,9 +704,9 @@ a.feature-card
         font-size: 16px
       &::after
         content: "\f054"
-        font-family: FontAwesome
+        font-family: 'Font Awesome 5 Free'
         font-size: 14px
-        font-weight: 500
+        font-weight: 900
         line-height: 1
         display: block
         position: absolute
@@ -731,7 +739,7 @@ a.feature-card
     opacity: 0
     a.product
       color: #75767C
-      font-size: 16px
+      font-size: 14px
       font-weight: 400
       line-height: 24px
       padding: 8px 12px
@@ -741,16 +749,67 @@ a.feature-card
       &.active
         font-weight: 500
         background: rgba(42, 125, 236, 0.04)
-  &:hover, &.active
-    cursor: pointer
-  &.active
-    .product-title
-      &::after
-        transform: rotate(-90deg)
-    .products
-      visibility: visible
-      opacity: 1
 
+  .product-selector, .server-selector
+    &:hover, &.active
+      cursor: pointer
+    &.active
+      .product-title
+        &::after
+          transform: rotate(-90deg)
+      .products
+        visibility: visible
+        opacity: 1
+
+.products-selector-cloud
+  gap: 10px
+  .server-selector
+    min-width: 150px
+    display: flex
+    flex: 1
+    .products
+      a.product
+        &:hover, &.active
+          color: #75767C
+          .server-option-title
+            color: #2a7dec
+    .server-option
+      display: flex
+      flex-direction: column
+      &-title
+        color: #000000
+      &-subtitle
+        font-size: 14px
+  @media screen and (max-width: 769px)
+    .product-info
+      .product-title
+        font-size: 14px
+    .product-selector
+      display: flex
+      flex: 1
+  @media screen and (min-width: 769px)
+    .product-selector
+      width: 94px
+    .product-info
+      .product-title
+        font-size: 14px
+  @media screen and (min-width: 870px)
+    .product-selector
+      width: 124px
+  @media screen and (min-width: 1281px)
+    .product-selector
+      width: 94px
+    .product-info
+      .product-title
+        font-size: 14px
+  @media screen and (min-width: 1601px)
+    .product-selector
+      width: 124px
+    .product-info
+      .product-title
+        font-size: 18px
+  .product-info
+    width: 100%
 details
   summary
     outline: none

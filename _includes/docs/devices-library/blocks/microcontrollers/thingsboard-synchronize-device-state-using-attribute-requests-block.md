@@ -2,6 +2,22 @@ In order to get the state of the device from ThingsBoard during booting we have 
 
 Below are the relevant parts of the code example:  
 
+- Connecting modules to use API functionality:  
+```cpp
+...
+#include <AttributeRequest.h>
+...
+Attribute_Request<2U, MAX_ATTRIBUTES> attr_request;
+...
+const std::array<IAPI_Implementation*, ...> apis = {
+    ...
+    &attr_request,
+    ...
+};
+...
+```
+We need to define what API we will use in our code.
+
 - Attribute callbacks:  
     
 ```cpp
@@ -34,16 +50,23 @@ void processClientAttributes(const JsonObjectConst &data) {
   }
 }
 ...
-const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
+// Attribute request did not receive a response in the expected amount of microseconds 
+void requestTimedOut() {
+  Serial.printf("Attribute request timed out did not receive a response in (%llu) microseconds. Ensure client is connected to the MQTT broker and that the keys actually exist on the target device\n", REQUEST_TIMEOUT_MICROSECONDS);
+}
+...
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, SHARED_ATTRIBUTES_LIST);
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(&processClientAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, CLIENT_ATTRIBUTES_LIST);
 ...
 ```
 
-We have two callbacks:
+We have three callbacks:
 * Shared Attributes Callback: 
   This callback is specific to shared attributes. Its primary function is to receive a response containing the blinking interval, which determines the appropriate blinking period.;
 * Client Attributes Callback: 
   This callback is specific to client attributes. It receives information regarding the mode and state of the LED. Once this data is received, the system saves and sets these parameters.
+* Request Timeout Callback: 
+  This callback is triggered when the request for attribute data times out. It is used to handle the timeout event.
 
 This functionality allows us to keep the actual state after rebooting.  
 
@@ -51,13 +74,13 @@ This functionality allows us to keep the actual state after rebooting.
 ```cpp
 ...
     // Request current states of shared attributes
-    if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
+    if (!attr_request.Shared_Attributes_Request(attribute_shared_request_callback)) {
       Serial.println("Failed to request for shared attributes");
       return;
     }
 
     // Request current states of client attributes
-    if (!tb.Client_Attributes_Request(attribute_client_request_callback)) {
+    if (!attr_request.Client_Attributes_Request(attribute_client_request_callback)) {
       Serial.println("Failed to request for client attributes");
       return;
     }

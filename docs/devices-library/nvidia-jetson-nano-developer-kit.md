@@ -13,4 +13,5 @@ deviceImageFileName: nvidia-jetson-nano-developer-kit.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/nvidia-jetson-nano-developer-kit.md %}

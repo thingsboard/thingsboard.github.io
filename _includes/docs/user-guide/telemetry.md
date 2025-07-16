@@ -84,7 +84,7 @@ You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-librar
 
 ## Data storage
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ThingsBoard Cloud stores time-series data in the Cassandra database with replication factor of 3. 
 The on-prem installation of ThingsBoard support storage of time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
@@ -101,10 +101,10 @@ See [SQL vs NoSQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybr
 
 ## Data retention
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ThingsBoard Cloud stores data with configurable time-to-live (TTL) parameter. 
-The value of the parameter is part of the [Subscription](/products/paas/subscription/) plan.
+The value of the parameter is part of the [Subscription](/docs/{{docsPrefix}}subscription/) plan.
 You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
 This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
 For example, you may store "raw" data for 3 month and aggregated data for 3 years.
@@ -162,7 +162,7 @@ This is extremely powerful technique that allows to modify processing logic and 
 
 **Use analytics rule nodes to aggregate data for related assets**
 
-{% if docsPrefix == "paas/" or docsPrefix == "pe/" %}
+{% if docsPrefix contains "paas/" or docsPrefix == "pe/" %}
 Use [analytics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
 {% else %}
 Use [analytics](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
@@ -180,7 +180,7 @@ The API is backward compatible with TB v1.0+ and this is the main reason why API
 {% endcapture %}
 {% include templates/info-banner.md content=api_note %}
 
-##### Get time-series data keys for specific entity
+### Get time-series data keys for specific entity
 
 You can fetch list of all time-series *data keys* for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -196,7 +196,7 @@ B,get-telemetry-keys-result.json,json,resources/get-telemetry-keys-result.json,/
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-##### Get latest time-series data values for specific entity
+### Get latest time-series data values for specific entity
 
 You can fetch list of latest values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -212,7 +212,7 @@ B,get-latest-telemetry-values-result.json,json,resources/get-latest-telemetry-va
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-##### Get historical time-series data values for specific entity
+### Get historical time-series data values for specific entity
 
 You can also fetch list of historical values for particular *entity type* and *entity id* using GET request to the following URL  
  
@@ -274,7 +274,7 @@ where
  - **startTs** - start time of fetch interval for historical data query, in milliseconds.
  - **endTs** - end time of fetch interval for historical data query, in milliseconds.
  
-#### Example 
+### Example 
 
 Change values of the following variables : 
 

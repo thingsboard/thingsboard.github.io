@@ -42,7 +42,7 @@ RESULT_CODES = {
     }
 
 
-THINGSBOARD_HOST = "mqtt.thingsboard.cloud"  # ThingsBoard instance host
+THINGSBOARD_HOST = "{{mqttHostName}}"  # ThingsBoard instance host
 THINGSBOARD_PORT = 1883  # ThingsBoard instance MQTT port
 
 PROVISION_DEVICE_KEY = "PUT_PROVISION_KEY_HERE"  # Provision device key, replace this value with your value from device profile.

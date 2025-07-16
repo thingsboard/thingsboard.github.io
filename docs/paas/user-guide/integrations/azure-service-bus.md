@@ -13,4 +13,5 @@ uplink-converter-events:
 
 ---
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/integrations/azure-service-bus.md %}

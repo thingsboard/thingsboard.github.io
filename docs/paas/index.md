@@ -5,4 +5,5 @@ description: ThingsBoard Cloud documentation - learn about the platform and get 
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/index.md %}

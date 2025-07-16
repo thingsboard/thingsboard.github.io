@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -13,7 +13,6 @@
 OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
-
 
 ## OPC-UA Integration Tutorial
 
@@ -57,8 +56,10 @@ However, you can use another mapping in your specific use cases.
 
 Also, we will retrieve the values of the *temperature*, *humidity* and *powerConsumption* fields and use them as device telemetries.
 
-<br>
-Go to the **Integrations center** section -> **Data converters** page and create a new uplink converter
+Go to the **Data converters** page of the **"Integrations center"** section, and create a new uplink converter.
+To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
+
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 

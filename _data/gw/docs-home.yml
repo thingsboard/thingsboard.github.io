@@ -37,6 +37,8 @@ toc:
       path: /docs/iot-gateway/config/xmpp/
     - title: OCPP Connector
       path: /docs/iot-gateway/config/ocpp/
+    - title: KNX Connector
+      path: /docs/iot-gateway/config/knx/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
@@ -50,15 +52,17 @@ toc:
       path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
     - title: Device renaming/removing handling
       path: /docs/iot-gateway/how-device-removing-renaming-works/
-    - title: Gateway Configurator
-      path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
     - title: GET/SET RPC methods
       path: /docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/
-    - title: Remote converter update
-      path: /docs/iot-gateway/guides/how-to-use-remote-converter-update/
-    - title: Gateway Shell
-      path: /docs/iot-gateway/guides/how-to-use-gateway-shell/
+    - title: Report Strategies
+      path: /docs/iot-gateway/features-overview/report-strategy/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
-- title: Customization guide
-  path: /docs/iot-gateway/custom/
+- title: Customization
+  section:
+    - title: Overview
+      path: /docs/iot-gateway/custom/
+    - title: Customization guide (Serial connector)
+      path: /docs/iot-gateway/custom/serial-connector/
+    - title: Methods and data types
+      path: /docs/iot-gateway/custom/methods-and-datatypes/

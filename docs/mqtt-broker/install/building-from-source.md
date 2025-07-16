@@ -10,17 +10,17 @@ description: Building TBMQ from sources
 
 This guide will help you to download and build TBMQ from sources. Instructions listed below are tested on Ubuntu 20.04 LTS.
 
-#### Required tools
+## Required tools
 
 This section contains installation instructions for build tools.
 
-##### Java
+### Java
 
 TBMQ is build using Java 17. Follow these instructions to install OpenJDK 17:
 
 ```bash
 sudo apt update
-sudo apt install openjdk-17-jdk
+sudo apt install openjdk-17-jdk-headless
 ```
 {: .copy-code}
 
@@ -47,7 +47,7 @@ OpenJDK Runtime Environment (...)
 OpenJDK 64-Bit Server VM (build ...)
 ```
 
-##### Maven
+### Maven
 
 TBMQ build requires Maven 3.6.3+.
 
@@ -59,7 +59,7 @@ sudo apt install maven
 **Please note** that maven installation may set Java 7 as a default JVM on certain Linux machines. 
 Use java installation [instructions](#java) to fix this. 
 
-#### Source code
+## Source code
 
 You can clone source code of the project from the official [GitHub repo](https://github.com/thingsboard/tbmq).
 
@@ -69,7 +69,7 @@ cd tbmq
 ```
 {: .copy-code}
 
-#### Build
+## Build
 
 Run the following command from the TBMQ folder to build the project:
 
@@ -78,7 +78,7 @@ mvn clean install -DskipTests
 ```
 {: .copy-code}
 
-#### Build local docker images
+## Build local docker images
 
 Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
 
@@ -87,7 +87,7 @@ mvn clean install -DskipTests -Ddockerfile.skip=false
 ```
 {: .copy-code}
 
-#### Build artifacts
+## Build artifacts
 
 You can find debian, rpm and windows packages in the target folder:
  
@@ -96,7 +96,7 @@ cd application/target
 ```
 {: .copy-code}
 
-#### Running tests
+## Running tests
 
 We are using [Docker](https://docs.docker.com/engine/install/) to run all kind of integration and black-box tests.
 
@@ -111,7 +111,7 @@ mvn clean install
 ```
 {: .copy-code}
 
-#### Tips and tricks
+## Tips and tricks
 
 TBMQ is quite easy to build from sources on a brand-new clear environment.
 

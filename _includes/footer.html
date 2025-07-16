@@ -12,7 +12,7 @@
                     $('#mlb2-7341216').css('display', 'block');
                 }
             </script>
-            <button id="Footer_SignUpForNews" class="n-button price subscribe gtm_button "
+            <button id="Footer_SignUpForNews" class="n-button try subscribe gtm_button "
                     onClick="subscribeForNewsletter(event)">Sign up for ThingsBoard news</button>
             <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none; max-width: 100%;">
                 <!--            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: block;">-->
@@ -46,7 +46,7 @@
                             </div>
                             <input type="hidden" name="ml-submit" value="1">
                             <div class="form-section horizontal ml-button-position">
-                                <button id="Footer_SignUpForNews_Subscribe" class="primary n-button price subscribe gtm_button"
+                                <button id="Footer_SignUpForNews_Subscribe" class="primary n-button try subscribe gtm_button"
                                         type="submit">
                                     Subscribe
                                 </button>
@@ -68,34 +68,14 @@
                 <a href="/docs/">Documentation</a>
                 <a href="/iot-use-cases/">Use cases</a>
                 <a href="/blog/">Blog</a>
-                <a href="/docs/services/">Services</a>
+                <a href="/services/">Services</a>
                 <a href="/docs/contact-us/">Contact us</a>
             </nav>
         </div>
         <div class="deepmost">
             <div class="copyright">&copy; {{ 'now' | date: "%Y" }} The ThingsBoard Authors</div>
             <div class="social">
-                <a href="https://github.com/thingsboard/thingsboard">
-                    <img src="/images/social-git-icon.svg" alt="Link to our Github" width="20" height="20" loading="lazy">
-                </a>
-                <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
-                    <img src="/images/social-gitter-icon.svg" alt="Link to our Gitter" width="20" height="20" loading="lazy">
-                </a>
-                <a href="https://www.youtube.com/thingsboard">
-                    <img src="/images/social-youtube-icon.svg" alt="Link to our Youtube channel" width="20" height="20" loading="lazy">
-                </a>
-                <a href="https://stackoverflow.com/questions/tagged/thingsboard">
-                    <img src="/images/social-stack-icon.svg" alt="Link to our Stack Overflow page" width="20" height="20" loading="lazy">
-                </a>
-                <a href="https://groups.google.com/forum/#!forum/thingsboard">
-                    <img src="/images/social-google-icon.svg" alt="Link to our Google Group" width="20" height="20" loading="lazy">
-                </a>
-                <a href="https://www.facebook.com/thingsboard">
-                    <img src="/images/social-face-icon.svg" alt="Link to our Facebook" width="20" height="20" loading="lazy">
-                </a>
-                <a href="https://twitter.com/thingsboard">
-                    <img src="/images/social-twitt-icon.svg" alt="Link to our X" width="20" height="20" loading="lazy">
-                </a>
+                {% include footer-social-networks.liquid %}
             </div>
         </div>
     </div>

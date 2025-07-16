@@ -4,11 +4,11 @@ You can use our example of Downlink Converter, or write your own according to yo
 /** Encoder **/
 
 var command = {};
-command["code"] = msg.method;
+command["method"] = msg.method;
 if (msg.params == "false" || msg.params == "true") {
-    command["value"] = Boolean.valueOf(msg.params);
+    command["params"] = Boolean.valueOf(msg.params);
 } else {
-    command["value"] = msg.params;
+    command["params"] = msg.params;
 }
 
 var result = {

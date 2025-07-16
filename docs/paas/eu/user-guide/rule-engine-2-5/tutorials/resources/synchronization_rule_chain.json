@@ -1,0 +1,130 @@
+{
+  "ruleChain": {
+    "additionalInfo": null,
+    "name": "Synchronization Rule Chain",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null
+  },
+  "metadata": {
+    "firstNodeIndex": null,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "layoutX": 288,
+          "layoutY": 304
+        },
+        "type": "org.thingsboard.rule.engine.flow.TbCheckpointNode",
+        "name": "CheckPoint",
+        "debugMode": false,
+        "configuration": {
+          "queueName": "SequentialByOriginator"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 53,
+          "layoutY": 246
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Generator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 7,
+          "periodInSeconds": 1,
+          "originatorId": "aab2bd90-8614-11ea-80a1-a7a96773bb43",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = {\n    counter: 101\n};\nvar metadata = {};\nvar msgType = \"POST_ATTRIBUTES_REQUEST\";\n\nreturn {\n    msg: msg,\n    metadata: metadata,\n    msgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 52,
+          "layoutY": 374
+        },
+        "type": "org.thingsboard.rule.engine.debug.TbMsgGeneratorNode",
+        "name": "Generator",
+        "debugMode": false,
+        "configuration": {
+          "msgCount": 7,
+          "periodInSeconds": 1,
+          "originatorId": "aab2bd90-8614-11ea-80a1-a7a96773bb43",
+          "originatorType": "DEVICE",
+          "jsScript": "var msg = {\n    counter: 10\n};\nvar metadata = {};\nvar msgType = \"POST_ATTRIBUTES_REQUEST\";\n\nreturn {\n    msg: msg,\n    metadata: metadata,\n    msgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 548,
+          "layoutY": 307
+        },
+        "type": "org.thingsboard.rule.engine.metadata.TbGetAttributesNode",
+        "name": "Originator Attributes",
+        "debugMode": true,
+        "configuration": {
+          "clientAttributeNames": [],
+          "sharedAttributeNames": [],
+          "serverAttributeNames": [
+            "counter"
+          ],
+          "latestTsKeyNames": [],
+          "tellFailureIfAbsent": false,
+          "getLatestValueWithTs": false
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 808,
+          "layoutY": 306
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Counter Script",
+        "debugMode": true,
+        "configuration": {
+          "jsScript": "var newMsg = {};\nvar newCounter;\n\nif (metadata.ss_counter !== undefined) {\n    newCounter = Number(metadata.ss_counter) + msg.counter;\n} else {\n    newCounter = msg.counter;\n}\nnewMsg.counter = newCounter;\n\nreturn {\n    msg: newMsg,\n    metadata: metadata,\n    msgType: msgType\n};"
+        }
+      },
+      {
+        "additionalInfo": {
+          "layoutX": 1065,
+          "layoutY": 309
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Save Attributes",
+        "debugMode": true,
+        "configuration": {
+          "scope": "SERVER_SCOPE"
+        }
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 3,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 0,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 3,
+        "toIndex": 4,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 4,
+        "toIndex": 5,
+        "type": "Success"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

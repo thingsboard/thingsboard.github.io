@@ -99,10 +99,15 @@ The main idea is to sacrifice small performance/latency penalties in favor of pe
 [Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform. ThingsBoard uses Kafka to persist incoming telemetry from HTTP/MQTT/CoAP transpots 
 until it is processed by the rule engine. ThingsBoard also uses Kafka for some API calls between micro-services.
 
-### Redis
+### Cache database
 
-[Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store used by ThingsBoard for caching. 
 ThingsBoard caches assets, entity views, devices, device credentials, device sessions and entity relations.
+
+##### Redis
+[Redis](https://redis.io/) is source-available (under [RSALv2](https://redis.io/legal/rsalv2-agreement/) and [SSPLv1](https://redis.io/legal/server-side-public-license-sspl/)) in-memory data structure store used by ThingsBoard for caching.
+
+##### Valkey
+[Valkey](https://valkey.io/) is an open-source (BSD licensed), in-memory data structure store that could be used as a drop-in replacement for Redis.
 
 ### Zookeeper
 

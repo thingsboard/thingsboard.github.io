@@ -8,4 +8,5 @@ description: Software development kit for client-side integration of your Python
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/python-client-sdk.md %}

@@ -3,9 +3,9 @@ This configuration section contains settings of the connection to broker, such a
 | **Parameter** | **Default value**        | **Description**                                                    |
 |:--------------|:-------------------------|--------------------------------------------------------------------
 | name          | **Default Local Broker** | Broker name for logs and saving to persistent devices.             |
-| host          | **localhost**            | MQTT broker hostname or ip address.                                |
+| host          | **127.0.0.1**            | MQTT broker hostname or ip address.                                |
 | port          | **1883**                 | MQTT port on the broker.                                           |
-| version       | **5**                    | MQTT protocol version.                                             |
+| version       | **5**                    | MQTT protocol version may be 3 (3.1), 4(3.11) or 5(5)              |
 | clientId      | **tb_gw_li06e**          | This is the client ID. It must be unique for each session.         |
 | security      | **anonymous**            | This is the configuration for client authorization at MQTT Broker. |
 | ---           

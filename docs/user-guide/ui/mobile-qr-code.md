@@ -44,7 +44,7 @@ authorize-with-qr-code:
 mobile-app-qr-code-widget-settings:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-1-ce.png
-        title: 'Log in as the <b>system administrator</b> and navigate to the "Mobile app" tab on the "Settings" page. Here, you&#39;ll find two settings blocks: "Applications" and "Appearance on Home page";'
+        title: 'Log in as the <b>system administrator</b> and navigate to the "QR code widget" tab on the "Mobile center" page. Here, you&#39;ll find two settings blocks: "Applications" and "Appearance on Home page";'
 
 application-settings-default:
     0:
@@ -54,7 +54,7 @@ application-settings-default:
 application-settings-custom:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-3-ce.png
-        title: 'If you prefer to use your custom application, switch to the custom settings and input the necessary application credentials for your Android and iOS apps.'
+        title: 'If you prefer to use your custom application, switch to the custom settings, and specify the bundle preconfigured on the "Bundle" tab. Then, save changes.'
 
 disable-platforms:
     0:
@@ -64,7 +64,7 @@ disable-platforms:
 appearance-on-home-page:
     0:
         image: /images/user-guide/ui/qr-code/mobile-app-qr-code-widget-settings-5-ce.png
-        title: 'You can disable the widget on the home page, configure badges (or turn them off altogether), and update the QR code label.'
+        title: 'You can disable the QR code widget on the "Home" page, adjust the positioning of the badges, and update the QR code label.'
 
 add-qr-code-widget:
     0:
@@ -89,4 +89,5 @@ add-qr-code-widget:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/mobile-qr-code.md %}

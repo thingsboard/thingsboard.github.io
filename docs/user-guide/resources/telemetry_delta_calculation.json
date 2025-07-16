@@ -1,0 +1,28 @@
+{
+  "type": "SCRIPT",
+  "name": "Telemetry delta calculation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1747907250537
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SCRIPT",
+    "arguments": {
+      "temperature": {
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_ROLLING"
+        },
+        "limit": 2,
+        "timeWindow": 300000
+      }
+    },
+    "expression": "var delta = 0;\n\nif (temperature.values.size() >= 2) {\n    delta = temperature.last - temperature.first;\n}\n\nreturn {\n    \"deltaTemperature\": Math.abs(toInt(delta))\n}",
+    "output": {
+      "name": "",
+      "type": "TIME_SERIES"
+    }
+  }
+}

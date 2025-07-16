@@ -1,3 +1,9 @@
+#### Docker installation
+
+Install Docker for [CentOS/RHEL](https://docs.docker.com/engine/install/centos/)
+
+{% include templates/install/docker-install-note.md %}
+
 {% include templates/install/queue-kafka-in-docker.md %}
 
 ##### ThingsBoard Configuration

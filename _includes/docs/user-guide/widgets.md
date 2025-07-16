@@ -52,7 +52,7 @@ Switching between modes is done in the top right corner of the widget creation w
 **Basic functionality**
 
 Basic functionality is suitable for a quick start when you are using a single data source type without additional conditions or filters.
-It includes settings for the timewindow, datasource selection (entity alias or device), and a basic set of settings for the appearance of widgets, which depends on the widget's purpose.
+It includes settings for the time window, datasource selection (entity alias or device), and a basic set of settings for the appearance of widgets, which depends on the widget's purpose.
 
 {% include images-gallery.html imageCollection="add-widget-basic-mode" %}
 
@@ -68,14 +68,14 @@ Additionally, in the advanced functionality, there are additional [datasource](#
 
 #### Widget time window
 
-A widget timewindow defines a time interval and aggregation function that should be used to fetch the time series or alarm data.
-By default, every widget uses the main [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow) determined in the dashboard's [toolbar](/docs/{{docsPrefix}}user-guide/dashboards/#dashboard-toolbar).
-You can overwrite the default timewindow by toggling the option to "Use widget timewindow" parameter.
-You can also hide the timewindow selection for a specific widget from the user using the "Display timewindow" checkbox.
+A widget time window defines a time interval and aggregation function that should be used to fetch the time series or alarm data.
+By default, every widget uses the main [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) determined in the dashboard's [toolbar](/docs/{{docsPrefix}}user-guide/dashboards/#dashboard-toolbar).
+You can overwrite the default time window by toggling the option to "Use widget time window" parameter.
+You can also hide the time window selection for a specific widget from the user using the "Display time window" checkbox.
 
 {% include images-gallery.html imageCollection="timewindow" %}
 
-Learn more about time window configuration [here](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow).
+Learn more about time window configuration [here](/docs/{{docsPrefix}}user-guide/dashboards/#time-window).
 
 #### Data source types
 
@@ -162,11 +162,11 @@ The list of entity fields depends on the entity type and may extend in the futur
 
 The data keys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/widgets/#widget-types):
 
-* **Timeseries widgets** allow choosing time series data keys. Additionally, you can configure [timewindow](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window);
+* **Timeseries widgets** allow choosing time series data keys. Additionally, you can configure [time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window);
 * **Latest values widgets** allow choosing time series, attributes and entity fields;
 * **Static and Control widgets** do not require a data key;
 * **Alarm widgets** allow choosing all data keys: time series, attributes, entity and alarm fields.
-  Additionally, you can configure [timewindow](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) and [alarm filter](/docs/{{docsPrefix}}user-guide/widgets/#alarm-filter).
+  Additionally, you can configure [time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) and [alarm filter](/docs/{{docsPrefix}}user-guide/widgets/#alarm-filter).
 
 To add a time series or attribute key to the data source, click on the data keys row and select the desired key from the dropdown menu.
 
@@ -216,6 +216,8 @@ There are four types of keys: Attributes, Time Series, Entity Field and Alarm Fi
 - **Units.** You can indicate a special symbol that will be displayed next to the value. Enter the desired character in the units field and click "Save".
 
 {% include images-gallery.html imageCollection="data-key-configuration-units" %}
+
+> Starting from ThingsBoard 4.1, widgets also support automatic data conversion and unit switching based on the selected unit system. Learn more about this [here](/docs/{{docsPrefix}}user-guide/ui/unit-conversion/){:target="_blank"}.
 
 - **Decimals.** Specify the desired number of digits to be displayed after floating-point number and click “Save”.
 
@@ -499,7 +501,7 @@ Widget style from the screen above:
 
 #### Widget buttons settings
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 
 **Enable data export**
 

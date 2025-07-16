@@ -1,4 +1,4 @@
-<nav class="usecase-nav">
+<nav id="nav" class="usecase-nav">
     <div class="crop-nav">
         <ul>
             {% for usecase in site.data.use-cases %}
@@ -6,12 +6,69 @@
             {% endfor %}
         </ul>
     </div>
+    <div class="nav-buttons">
+        <button class="prev disabled"><img src="/images/usecase-arrow.svg" alt="Navigation arrow"></button>
+        <button class="next disabled"><img src="/images/usecase-arrow.svg" alt="Navigation arrow"></button>
+    </div>
 </nav>
 <script>
-    document.querySelector('.crop-nav ul li a.active').parentElement.scrollIntoView();
     jqueryDefer(function () {
         $( document ).ready(function() {
-            var x,left,down;
+            const cropNav = document.querySelector('.crop-nav');
+            const prev = document.querySelector('.prev');
+            const next = document.querySelector('.next');
+            const active = document.querySelector('.crop-nav ul li a.active');
+
+            const savedScrollPos = sessionStorage.getItem('useCaseMenuScrollPos');
+            if (savedScrollPos !== null) {
+                cropNav.scrollLeft = savedScrollPos;
+            }
+            if (!isActiveInView()) {
+                active.parentElement.scrollIntoView();
+            }
+
+            checkScroll();
+
+            $('.prev').click(function() {
+                $('.crop-nav').animate( { scrollLeft: `-=${$('.crop-nav').width() / 1.6}` }, 450, 'swing', () => checkScroll());
+            });
+            $('.next').click(function() {
+                $('.crop-nav').animate( { scrollLeft: `+=${$('.crop-nav').width() / 1.6}` }, 450, 'swing', () => checkScroll());
+            });
+
+            function checkScroll() {
+                if (cropNav.scrollLeft === 0 && !(cropNav.scrollTop > 5)) {
+                    prev.classList.add('disabled');
+                    next.classList.remove('disabled');
+                } else if (cropNav.scrollLeft >= cropNav.scrollWidth - cropNav.clientWidth - 5) {
+                    next.classList.add('disabled');
+                    prev.classList.remove('disabled');
+                } else {
+                    next.classList.remove('disabled');
+                    prev.classList.remove('disabled');
+                }
+            }
+
+            function isActiveInView() {
+                const elRect = active.getBoundingClientRect();
+                const containerRect = cropNav.getBoundingClientRect();
+                return elRect.left >= containerRect.left && elRect.right <= containerRect.right;
+            }
+
+            if (window.screen.width < 600) {
+                let prevScrollPos = window.scrollY;
+                window.onscroll = function() {
+                    let currentScrollPos = window.scrollY;
+                    if (prevScrollPos > currentScrollPos) {
+                        document.getElementById("nav").style.top = "78px";
+                    } else {
+                        document.getElementById("nav").style.top = "-78px";
+                    }
+                    prevScrollPos = currentScrollPos;
+                }
+            }
+
+            let x,left,down;
 
             $('.crop-nav').mousedown(function(e){
                 e.preventDefault();
@@ -23,15 +80,24 @@
 
             $('body').mousemove(function(e){
                 if(down){
-                    var newX = e.pageX;
+                    let newX = e.pageX;
                     $('.crop-nav').scrollLeft(left - newX + x);
+                    checkScroll();
                 }
             });
 
             $('body').mouseup(function(e){
+                checkScroll();
                 down = false;
                 $('.crop-nav').css('cursor', 'grab');
             });
+
+            $('.crop-nav ul li').each(function(){
+                $(this).click(function(){
+                    sessionStorage.setItem('useCaseMenuScrollPos', cropNav.scrollLeft);
+                })
+            })
         });
+
     });
 </script>

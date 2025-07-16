@@ -13,4 +13,5 @@ deviceImageFileName: hummingboard-gate.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/hummingboard-gate.md %}

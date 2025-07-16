@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -26,8 +26,8 @@ In this tutorial, we will use:
 {% if docsPrefix == "pe/" %}
  - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} installed locally;
 {% endif %}
-{% if docsPrefix == "paas/" %}
- - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud){:target="_blank"};
+{% if docsPrefix contains "paas/" %}
+ - ThingsBoard Professional Edition instance — [{{hostName}}](https://{{hostName}}){:target="_blank"};
 {% endif %}
  - TCP Integration, running externally and connected to the cloud ThingsBoard PE instance;
  - **echo** command which intended to display a line of text, and will redirect it's output to **netcat** (**nc**) utility;
@@ -107,8 +107,6 @@ JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-js
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
-
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-4-pe.png)
 
 We leave other options by default, but there is brief description of them:
 - **Max number of pending connects on the socket** - The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection is refused;

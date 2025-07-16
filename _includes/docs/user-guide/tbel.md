@@ -24,7 +24,7 @@ Our search for existing Script/Expression Language (EL) implementations led us t
 The ThingsBoard Expression Language (TBEL) is basically a [fork](https://github.com/thingsboard/tbel) of MVEL with some important security constraints, 
 built-in memory management, and frequently used helper functions that are specific to ThingsBoard.
  
-#### TBEL vs Nashorn
+### TBEL vs Nashorn
 
 TBEL is lightweight and is super fast compared to Nashorn. For example, the execution of 1000 simple scripts like:
 "return msg.temperature > 20" took 16 seconds for Nashorn and 12 milliseconds for MVEL. More than 1000 times faster.
@@ -32,15 +32,15 @@ We have forked the TBEL codebase and added additional security improvements to e
 So, no need to run Nashorn with the sandbox environment.
 
 Of course, TBEL is not as powerful as JS, but the majority of the use cases do not need this.
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 The one who requires JS flexibility may use remote [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) as usual.
 {% else %}
 The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual.
 {% endif %}
 
-#### TBEL vs JS Executors
+### TBEL vs JS Executors
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
 {% else %}
 [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
@@ -58,7 +58,48 @@ TBEL execution consumes much less resources and has no extra latency for inter-p
 TBEL is used to evaluate expressions written using Java syntax. Unlike Java however, TBEL is dynamically typed (with optional typing), meaning that the source code does not require type qualification.
 The TBEL expression can be as simple as a single identifier, or as complicated as an expression with method calls and inline collections.
 
-#### Simple Property Expression
+
+### Syntax Constraints for Loops and Conditions
+
+In TBEL (ThingsBoard Expression Language), certain syntax restrictions are enforced to ensure compatibility and reliability within the scripting environment. Use <code style="color: sienna;">foreach</code> instead of traditional <code style="color: sienna;">for</code> loops, and always wrap <code style="color: sienna;">ternary (? :) expressions</code> in parentheses when used without an explicit <code style="color: sienna;">if</code> statement.
+
+✅ Allowed:
+
+```java
+foreach (ValueType value : map) {
+    // Process each value
+}
+```
+{: .copy-code}
+
+❌ Not allowed:
+
+```java
+for (ValueType value : map) {
+    // Process each value
+}
+```
+{: .copy-code}
+
+✅ Correct:
+
+```java
+var msgNew = {
+        keyNew: (msg.humidity > 50 ? 3 : 0)    // if (msg.humidity > 50) == true, result msgNew = { keyNew: : 3  } 
+     };
+```
+{: .copy-code}
+
+❌ Incorrect:
+
+```java
+var msgNew = {
+        keyNew: msg.humidity > 50 ? 3 : 0       // result msgNew = { 3 : 0  }
+     };
+```
+{: .copy-code}
+
+### Simple Property Expression
 
 ```java
 msg.temperature
@@ -69,7 +110,7 @@ In this expression, we simply have a single identifier (msg.temperature), which 
 in that the only purpose of the expression is to extract a property out of a variable or context object.
 
 TBEL can even be used for evaluating a boolean expression. 
-Assuming you are using TBEL in the Rule Engine to define a simple script [filter node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node):
+Assuming you are using TBEL in the Rule Engine to define a simple script [filter node](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#script-filter-node):
 
 ```java
 return msg.temperature > 10;
@@ -83,7 +124,7 @@ return (msg.temperature > 10 && msg.temperature < 20) || (msg.humidity > 10 && m
 ```
 {: .copy-code}
 
-#### Multiple statements
+### Multiple statements
 
 You may write scripts with an arbitrary number of statements using the semi-colon to denote the termination of a statement. 
 This is required in all cases except in cases where there is only one statement, or for the last statement in a script.
@@ -97,7 +138,7 @@ return a + b
 
 Note the lack of a semi-colon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
 
-#### Value Coercion
+### Value Coercion
 
 MVEL’s type coercion system is applied in cases where two incomparable types are presented by attempting to coerce the ‘’right’‘value to that of the type of the’‘left’’ value, and then vice-versa.
 
@@ -110,81 +151,118 @@ For example:
 
 This expression is *true* in TBEL because the type coercion system will coerce the untyped number *123* to a String in order to perform the comparison.
 
-#### Maps
+### Maps
 
 TBEL allows you to create Maps. We use our own implementation of the Map to control memory usage.
-That is why TBEL allows only inline creation of maps. Most common operation with the map:
+That is why TBEL allows only inline creation of maps.
 
 ```java
 // Create new map
-var map = {"temperature": 42, "nested" : {"rssi": 130}};
+var map = {"temperature": 42, "nested" : "508"};
+```
+{: .copy-code}
+
+There are two syntax variations for iterating over a map:
+1. Explicit entrySet() iteration:
+
+```java
+// Iterate through the map
+foreach(element : map.entrySet()){
+        // Get the key
+        element.getKey();
+        //or 
+        element.key;
+        
+        // Get the value
+        element.getValue();
+        //or 
+        element.value;
+}
+
+```
+{: .copy-code}
+
+2. Implicit iteration without entrySet():
+
+```java
+// Iterate through the map without entrySet()
+foreach (ValueType value : map) {
+        // Process each value
+}
+```
+{: .copy-code}
+
+Most common operation with the map:
+
+**Examples:**
+
+```java
 // Change value of the key
 map.temperature = 0;
 
 // Check existance of the key
 if(map.temperature != null){
-    // <you code>
+// <you code>
 }
 // Null-Safe expressions using ?
 if(map.?nonExistingKey.smth > 10){
-        // <you code>
-}
-// Iterate through the map
-foreach(element : map.entrySet()){
-    // Get the key
-    element.key
-    // Get the value
-    element.value;
+// <you code>
 }
 
 // get Info
-var size = map.size()                           // return  2 
-var memorySize = map.memorySize()               // return 29 
+var size = map.size();                           // return  2 
+var memorySize = map.memorySize();               // return 24 
+
+map.humidity = 73;                              // return nothing => map = {"temperature": 0, "nested": "508", "humidity": 73}
+map.put("humidity", 73);                        // return nothing => map ={"temperature": 0, "nested": "508", "humidity": 73}
+map.putIfAbsent("temperature1", 73);            // return nothing => map = {"temperature": 0, "nested": "508", "humidity": 73, "temperature1": 73}
+
+//change Value   
+map.temperature = 73;                           // return nothing => map = {"temperature": 73, "nested": "508", "humidity": 73, "temperature1": 73}        
+var put1 = map.put("temperature", 73);          // return put1 = 73 => map = {"temperature": 73, "nested": "508", "humidity": 73, "temperature1": 73}
+var putIfAbsent1 = map.putIfAbsent("temperature", 73); // return putIfAbsent1 = 73 => map = {"temperature": 73, "nested": "508", "humidity": 73, "temperature1": 73}       
+var replace = map.replace("temperature", 56);          // return 73 => map = {"temperature": 56, "nested": "508", "humidity": 73, "temperature1": 73}       
+var replace1 = map.replace("temperature", 56, 42);     // return true => map = {"temperature": 42, "nested": "508", "humidity": 73, "temperature1": 73}       
+var replace3 = map.replace("temperature", 48, 56);     // return false => map = {"temperature": 42, "nested": "508", "humidity": 73, "temperature1": 73}       
+
+// remove Entry from the map by key
+map.remove("temperature");                             // return nothing => map = {"nested": "508", "humidity": 73, "temperature1": 73}
+
+// get Keys/Values  
+var keys = map.keys();                                 // return ["nested", "humidity", "temperature1"]      
+var values = map.values();                             // return ["508", 73, 73]      
+
+// sort
+map.sortByKey();                                       // return nothing => map = {"humidity": 73, "nested": "508", "temperature1": 73}                                      
+var sortByValue = map.sortByValue();                   // return nothing => map = {"humidity": 73, "temperature1": 73, "nested": "508"}
 
 // add new Entry/(new key/new value)
-var mapAdd = {"test": 12, "input" : {"http": 130}};       
-map.humidity = 73;                              // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
-map.put("humidity", 73);                        // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
-map.putIfAbsent("temperature1", 73);            // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "temperature1": 73}
-map.putAll(mapAdd);                             // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, {"test": 12, "input" : {"http": 130}}}
+var mapAdd = {"test": 12, "input" : {"http": 130}};
+map.putAll(mapAdd);
 
-// change Value   
-map.temperature = 73;                                  // return nothing => map = {"temperature": 73, "nested" : {"rssi": 130}}        
-var put1 = map.put("temperature", 73)                  // return 42      => map = {"temperature": 73, "nested" : {"rssi": 130}}         
-var putIfAbsent1 = map.putIfAbsent("temperature", 73); // return 42      => map = {"temperature": 42, "nested" : {"rssi": 130}}       
-var replace = map.replace("temperature", 56);          // return 42      => map = {"temperature": 56, "nested" : {"rssi": 130}}       
-var replace1 = map.replace("temperature", 42, 56);     // return true    => map = {"temperature": 56, "nested" : {"rssi": 130}}       
-var replace3 = map.replace("temperature", 48, 56);     // return false   => map = {"temperature": 42, "nested" : {"rssi": 130}}       
-        
-// remove Entry from the map by key
-map.remove("temperature");                             // return nothing => map = {"nested" : {"rssi": 130}}
-        
-// get Keys/Values  
-var keys = map.keys();                                 // return ["temperature", "nested"]       
-var values = map.values();                             // return [42, {"rssi": 130}]       
-        
-// sort
-var sortByKey = map.sortByKey();                       // return nothing => map = {"nested": {"rssi": 130}, "temperature": 42}                                       
-var sortByValue = map.sortByValue();                   // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}}
+// isMap(Object obj): checks if the given object is an instance of Map
+isMap(mapAdd);                                          // return true
+
 ```
 {: .copy-code}
 
-In development: in our own Maps implementation, the *Tbel* library is planned to use additional methods:
+
+#### Map - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable map.
+
+**Examples:**
 
 ```java
-- slice()
-- slice(int start)
-- slice(int start, int end)
-- toSortedByValue()
-- toSortedByValue(asc)
-- toSortedByKey()
-- toSortedByKey(asc)
-- invert()
-- toInverted()
-- reverse()
+var original = {};
+original.humidity = 73;
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionHashMap that is unmodifiable.
+unmodifiable.put("temperature1", 96);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.put("temperature1", 96): Map is unmodifiable'."
 ```
+{: .copy-code}
 
-#### Lists
+### Lists
 
 TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script.
 That is why TBEL allows only inline creation of lists. For example:
@@ -201,7 +279,7 @@ foreach (item : list) {
     var smth = item;
 }
 // For loop 
-for (int i =0; i < list.size; i++) { 
+for (var i =0; i < list.size; i++) { 
     var smth = list[i];
 }
 ```
@@ -213,55 +291,63 @@ In our own list implementation The *Tbel* library uses most of the standard Java
 
 ```java
 var list = ["A", "B", "C", "B", "C", "hello", 34567];
-var listAdd = [ "thigsboard", 4, 67];
+var listAdd = ["thigsboard", 4, 67];
 
     // add/push
 var addAll = list.addAll(listAdd);         // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
-var addAllI = list.addAll(2, listAdd);     // return true    => list = ["A", "B", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567]
-var add = list.add(3, "thigsboard");       // return true    => list = ["A", "B", "C", "thigsboard", "B", "C", "hello", 34567]
-var push = list.push("thigsboard");        // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard"]
-var unshift = list.unshift("Q", 4);        // return nothing => list = ["Q" "4", "A", "B", "C", "B", "C", "hello", 34567]
-
+var addAllI = list.addAll(2, listAdd);     // return true    => list = ["A", "B", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var add = list.add(3, "thigsboard");       // return nothing => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var push = list.push("thigsboard");        // return true    => list = ["A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var unshift = list.unshift("r");           // return nothing => list = ["r", "A", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var unshiftQ = ["Q", 4];
+var unshiftQun = list.unshift(unshift);    // return nothing => list = [[["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
     // delete  
-var removeI = list.remove(2);              // return "C"                           => list = ["A", "B", "B", "C", "hello", 34567]    
-var removeO = list.remove("C");            // return true                          => list = ["A", "B", "B", "C", "hello", 34567] 
-var shift = list.shift();                  // return "A"                           => list = ["B", "C", "B", "C", "hello", 34567]
-var pop = list.pop();                      // return "34567"                       => list = ["A", "B", "C", "B", "C", "hello"]
-var splice1 = list.splice(3)               // return ["B", "C", "hello", 34567]    => list = ["A", "B", "C"]
-var splice2 = list.splice(2, 2)            // return ["C", "B"]                    => list = ["A", "B", "C", "hello", 34567]
-var splice3 = list.splice(1, 4, "start", 5, "end"); // return ["B", "C", "B", "C"]  => list = ["A", "start", 5, "end", "hello", 34567]
-        
+var removeIndex2 = list.remove(2);         // return "A" => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]    
+var removeValueC = list.remove("C");       // return true => list = [["Q", 4], "r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"] 
+var shift = list.shift();                  // return ["Q", 4] => list = ["r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67, "thigsboard"]
+var pop = list.pop();                      // return "thigsboard" => list =  ["r", "B", "thigsboard", "thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var splice3 = list.splice(3);              // return ["thigsboard", 4, 67, "B", "C", "hello", 34567, "thigsboard", 4, 67] => list = ["r", "B", "thigsboard"]
+var splice2 = list.splice(2, 2);           // return ["thigsboard"] => list = ["r", "B"]
+var splice1_4 = list.splice(1, 4, "start", 5, "end"); // return ["B"]  => list =  ["r", "start", 5, "end"]
+
     // change
-var set = list.set(5, "thigs");            // return "hello" => list = ["A", "B", "C", "B", "C", "thigs", 34567]
-list[5] = "thigs";                         // return nothing => list = ["A", "B", "C", "B", "C", "thigs", 34567]          
-list.sort();                               // return nothing => list = [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)
-list.sort(true);                           // return nothing => list = [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)
-list.sort(false);                          // return nothing => list = ["hello", "C", "C", "B", "B", "A", 34567] (sort Desc)
-list.reverse();                            // return nothing => list = [34567, "hello", "C", "B", "C", "B", "A"]
-var fill = list.fill(67);                  // return new List [67, 67, 67, 67, 67, 67, 67] => list = [67, 67, 67, 67, 67, 67, 67]
-var fill = list.fill(67, 4);               // return new List ["A", "B", "C", "B", 67, 67, 67] => list = ["A", "B", "C", "B", 67, 67, 67]
-var fill = list.fill(67, 4, 6);            // return new List ["A", "B", "C", "B", 67, 67, 34567] => list = ["A", "B", "C", "B", 67, 67, 34567]
-        
+var set = list.set(3, "65");                 // return "end"" => list =  ["r", "start", 5, "65"]
+list[1] = "98";                              // return nothing => list = ["r", "98", 5, "65"] 
+list[0] = 2096;                              // return nothing => list = [2096, "98", 5, "65"]
+
+list.sort();                                 // return nothing => list = [5, "65", "98", 2096] (sort Asc)
+list.sort(true);                             // return nothing => list = [5, "65", "98", 2096] (sort Asc)
+list.sort(false);                            // return nothing => list = [2096, "98", "65", 5] (sort Desc)
+list.reverse();                              // return nothing => list = [5, "65", "98", 2096]
+var fill = list.fill(67);                    // return new List [67, 67, 67, 67] => list = [67, 67, 67, 67]
+var fill4 = list.fill(4, 1);                 // return new List [67, 4, 4, 4] => list = [67, 4, 4, 4]
+var fill4_6 = list.fill(2, 1, 4);            // return new List [67, 2, 2, 2] => list = [67, 2, 2, 2]
+
     // return new List/new String 
-var toSorted = list.toSorted();            // return new List [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc) 
-var toSorted_true = list.toSorted(true);   // return new List [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)  
-var toSorted_false = list.toSorted(false); // return new List ["hello", "C", "C", "B", "B", "A", 34567] (sort Desc)
-var toReversed = list.toReversed();        // return new List [34567, "hello", "C", "B", "C", "B", "A"] 
-var slice = list.slice();                  // return new List ["A", "B", "C", "B", "C", "hello", 34567]  
-var slice4 = list.slice(4);                // return new List ["C", "hello", 34567]    
-var slice1_5 = list.slice(1,5);            // return new List ["B", "C", "B", "C"]   
-var with = list.with(1, 67);               // return new List ["A", 67, "B", "C", "B", "C", "hello", 34567] 
-var concat = list.concat(listAdd);         // return new List ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67] 
-var join = list.join() ;                   // return new String "A,B,C,B,C,hello,34567"        
-var toSpliced1 = list.toSpliced(2)                       // return new List ["A", "B",]  
-var toSpliced2 = list.toSpliced(2, 4)                    // return new List ["A", "B", 34567]  
-var toSpliced3 = list.toSpliced(2, 4, "start", 5, "end"); // return new List ["A", "B", "start", 5, "end", 34567] 
+var toSorted = list.toSorted();            // return new List [2, 2, 2, 67] (sort Asc) 
+var toSorted_true = list.toSorted(true);   // return new List [2, 2, 2, 67] (sort Asc)  
+var toSorted_false = list.toSorted(false); // return new List [67, 2, 2, 2] (sort Desc)
+var toReversed = list.toReversed();        // return new List [2, 2, 2, 67] 
+var slice = list.slice();                  // return new List [67, 2, 2, 2]  
+var slice4 = list.slice(3);                // return new List [2]   
+var slice1_5 = list.slice(0,2);            // return new List [67, 2]  
+var with1 = list.with(1, 69);               // return new List [67, 69, 2, 2, 2] => list = [67, 2, 2, 2]
+var concat = list.concat(listAdd);         // return new List [67, 2, 2, 2, "thigsboard", 4, 67] => list = [67, 2, 2, 2]
+var join = list.join();                    // return new String "67,2,2,2" => list = [67, 2, 2, 2]        
+var toSpliced2 = list.toSpliced(1, 0, "Feb"); // return new List [67, "Feb", 2, 2, 2] => list = [67, 2, 2, 2] 
+var toSpliced0_2 = list.toSpliced(0, 2);     // return new List [2, 2] => list = [67, 2, 2, 2] 
+var toSpliced2_2 = list.toSpliced(2, 2);     // return new List [67, 2] => list = [67, 2, 2, 2] 
+var toSpliced4_5 = list.toSpliced(2, 4, "start", 5, "end"); // return new List[67, 2, "start", 5, "end"] => list = [67, 2, 2, 2] 
 
     // get Info        
-var length = list.length()                  // return  7 
-var memorySize = list.memorySize()          // return 42 
-var indOf1 = list.indexOf("B", 1);          // return 1  
-var indOf2 = list.indexOf("B", 2);          // return 3  
+var length = list.length();                 // return  4 
+var memorySize = list.memorySize();         // return 32L 
+var indOf1 = list.indexOf("B", 1);          // return -1  
+var indOf2 = list.indexOf(2, 2);            // return 2  
+var sNumber = list.validateClazzInArrayIsOnlyNumber(); // return true
+
+// isList(Object obj): checks if the given object is an instance of List
+isList(list);                               // return true
 ```
 {: .copy-code}
 
@@ -274,36 +360,61 @@ var indOf2 = list.indexOf("B", 2);          // return 3
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-#### Arrays
+#### List - Unmodifiable
+
+TBEL use our own implementation of an unmodifiable list.
+
+**Examples:**
+
+```java
+var original = [];
+original.add(0x67);
+var unmodifiable = original.toUnmodifiable();   // Create an ExecutionArrayList that is unmodifiable.
+unmodifiable.add(0x35);
+return unmodifiable;      // An error occurs with the message: 'Error: unmodifiable.add(0x35): List is unmodifiable'."
+```
+{: .copy-code}
+
+### Arrays
 
 TBEL allows you to create Arrays. To control the memory usage, we permit only arrays of primitive types. String arrays are automatically converted to lists.
 
 ```java
 // Create new array
-int[] array = new int[3];
+var array = new int[3];
 array[0] = 1;
 array[1] = 2;
 array[2] = 3;
 
-str = "My String";
-str[0]; // returns 'M';
+var str = "My String";
+var str0 = str[0]; // returns 'M';
 
 function sum(list){
-    int result = 0;
+    var result = 0;
     for(var i = 0; i < list.length; i++){
         result += list[i];
     }
     return result;
 };
 
-sum(array); // returns 6
+var sum = sum(array); // returns 6
 
+// isArray(Object obj): checks if the given object is an array
+isArray(array);       // return true
+```
 
-array[3] = 4; // Will cause ArrayIndexOutOfBoundsException
+```java
+// Will cause ArrayIndexOutOfBoundsException.
+var array = new int[3];
+array[0] = 1;
+array[1] = 2;
+array[2] = 3;
+
+array[3] = 4; return: Error with message:"Invalid statement: 4" and "[Line: 5, Column: 12]"
 ```
 {: .copy-code}
 
-#### Literals
+### Literals
 
 A literal is used to represent a fixed-value in the source of a particular script.
 
@@ -371,7 +482,7 @@ Boolean literals are represented by the reserved keywords `true` and `false`.
 
 The null literal is denoted by the reserved keywords `null` or `nil`.
 
-#### Using Java Classes
+### Using Java Classes
 
 The TBEL implementation allows the usage of **some** Java classes from the `java.util` and `java.lang` packages. For example:
 
@@ -381,7 +492,7 @@ var foo = Math.sqrt(4);
 {: .copy-code}
 
 
-##### Convert Number to Hexadecimal/Octal/Binary String
+#### Convert Number to Hexadecimal/Octal/Binary String
 - Byte
 
 ```java
@@ -425,7 +536,7 @@ var l2 = Long.toString(9223372036854775807, 2);   // Binary      "11111111111111
 
 ```java
 var dd0 = 99993219.156013e-002;
-var dd16 = Double.toHexString(dd0);              // Hexadecimal ""0x1.e83f862142b5bp19"
+var dd16 = Double.toHexString(dd0);              // Hexadecimal "0x1.e83f862142b5bp19"
 var dd10 = String.format("%.8f",dd0);            // Decimal     "999932,19156013"
 ```
 {: .copy-code}
@@ -439,10 +550,22 @@ list = new java.util.ArrayList(); // Not allowed
 ```
 {: .copy-code}
 
-To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similarly to JS. For example:
-For the same purpose, we have added `Date` class that you are able to use without the package name.
+To simplify migration from JavaScript, we introduced a JSON class with static methods JSON.stringify and JSON.parse, which function similarly to their JavaScript counterparts. 
+
+For example:
+
+```java
+var metadataStr = JSON.stringify(metadata);
+var metadata = JSON.parse(metadataStr);
+```
+{: .copy-code}
+
+For the same purpose:
+- Added [decodeToJson](#decodetojson) method.
+- Added [Date](#tbdate)class, which can be used without specifying a package name.
+- In the `tbel` library, the  [map](#maps) and [list](#lists) classes have extended support for their primary methods, similar to Java.
  
-#### Flow Control
+### Flow Control
 
 **If-Then-Else**
 
@@ -478,7 +601,8 @@ It accepts two parameters separated by a colon. The first is the local variable 
 For example:
 
 ```java
-sum = 0;
+var numbers = [1, 2, 3];
+var sum = 0;
 foreach (n : numbers) {
    sum+=n;
 }
@@ -488,7 +612,7 @@ foreach (n : numbers) {
 Since TBEL treats Strings as iterable objects, you can iterate a String (character by character) with a foreach block:
 
 ```java
-str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 foreach (c : str) {
    //do something 
 }
@@ -499,7 +623,7 @@ foreach (c : str) {
 
 ```java
 var sum = 0;
-for (int i =0; i < 100; i++) { 
+for (var i =0; i < 100; i++) { 
    sum += i;
 }
 ```
@@ -549,7 +673,7 @@ until (isFalse()) {
 
 ## Helper functions
 
-#### btoa
+### btoa
 
 Creates a Base64-encoded ASCII string from a binary string (i.e., a string in which each character in the string is treated as a byte of binary data)
 
@@ -565,7 +689,7 @@ Creates a Base64-encoded ASCII string from a binary string (i.e., a string in wh
 
 **Return value:**
 
-An ASCII string containing the Base64 representation of the input.
+Returns an ASCII string that represents the Base64 encoding of the input.
 
 **Examples:**
 
@@ -575,7 +699,7 @@ var decodedData = atob(encodedData); // decode the string
 ```
 {: .copy-code}
 
-#### atob
+### atob
 
 Decodes a string of data which has been encoded using Base64 encoding.
 
@@ -601,66 +725,61 @@ var decodedData = atob(encodedData); // decode the string
 ```
 {: .copy-code}
 
-#### bytesToString
+### toFixed
 
-Creates a string from the list of bytes
+Rounds the double value towards "nearest neighbor".
 
 **Syntax:**
 
-*String bytesToString(List<Byte> bytesList[, String charsetName])*
+*double toFixed(double value, int precision)*
 
 **Parameters:**
 
 <ul>
-  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
-  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF-8 by default.</li>
+  <li><b>value:</b> <code>double</code> - the double value.</li>
+  <li><b>precision:</b> <code>int</code> - the precision.</li>
 </ul>
 
 **Return value:**
 
-A string constructed from the specified byte list.
+Rounded double
 
 **Examples:**
 
 ```java
-var bytes = [0x48,0x45,0x4C,0x4C,0x4F];
-return bytesToString(bytes); // Returns "HELLO"
+return toFixed(0.345, 1); // returns 0.3
+return toFixed(0.345, 2); // returns 0.35
 ```
 {: .copy-code}
 
-#### decodeToString
+### toInt
 
-Alias for the [bytesToString](#bytestostring)
-
-#### decodeToJson
-
-Decodes a list of bytes to the JSON document.
+Rounds the double value to the nearest integer.
 
 **Syntax:**
 
-*String decodeToJson(List<Byte> bytesList)*
+*double toInt(double value)*
 
 **Parameters:**
 
 <ul>
-  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+  <li><b>value:</b> <code>double</code> - the double value.</li>
 </ul>
 
 **Return value:**
 
-A JSON object or primitive.
+Rounded integer
 
 **Examples:**
 
 ```java
-var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}'
-var bytesStr = atob(base64Str);
-var bytes = stringToBytes(bytesStr);
-return decodeToJson(bytes); // Returns '{"hello": "world"}'
+return toInt(0.3);   // returns 0
+return toInt(0.5);   // returns 1
+return toInt(2.7);   // returns 3
 ```
 {: .copy-code}
 
-#### stringToBytes
+### stringToBytes
 
 Converts input binary string to the list of bytes.
 
@@ -688,7 +807,7 @@ return stringToBytes(bytesStr); // Returns [123, 34, 104, 101, 108, 108, 111, 34
 
 var inputStr = "hello world";
 return stringToBytes(inputStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
-var charsetStr = "UTF8"
+var charsetStr = "UTF8";
 return stringToBytes(inputStr, charsetStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
 ```
 {: .copy-code}
@@ -704,6 +823,1117 @@ return stringToBytes(dataJson.inputStr); // Returns  [104, 101, 108, 108, 111, 3
 ```
 {: .copy-code}
 
+### bytesToString
+
+Creates a string from the list of bytes
+
+**Syntax:**
+
+*String bytesToString(List<Byte> bytesList[, String charsetName])*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF-8 by default.</li>
+</ul>
+
+**Return value:**
+
+A string constructed from the specified byte list.
+
+**Examples:**
+
+```java
+var bytes = [0x48,0x45,0x4C,0x4C,0x4F];
+return bytesToString(bytes); // Returns "HELLO"
+```
+{: .copy-code}
+
+### decodeToString
+
+Alias for the [bytesToString](#bytestostring)
+
+### decodeToJson
+
+Decodes a list of bytes to the JSON document.
+
+**Syntax:**
+
+*String decodeToJson(List<Byte> bytesList)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+</ul>
+
+**Return value:**
+
+A JSON object or primitive.
+
+**Examples:**
+
+```java
+var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}'
+var bytesStr = atob(base64Str);
+var bytes = stringToBytes(bytesStr);
+return decodeToJson(bytes); // Returns '{"hello": "world"}'
+```
+{: .copy-code}
+
+### isTypeInValue
+#### isBinary
+
+Validates whether a string represents a binary (base-2) value.
+
+**Syntax:**
+
+*int isBinary(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a binary number. UTF-8 is the default character set.</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '2' if the string is binary.
+- '-1' if the string is not binary.
+
+**Examples:**
+
+```java
+return isBinary("1100110"); // Returns 2
+return isBinary("2100110"); // Returns -1
+```
+{: .copy-code}
+
+#### isOctal
+
+Validates whether a string represents an octal (base-8) value.
+
+**Syntax:**
+
+*int isOctal(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a octal number. UTF-8 is the default character set.</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '8' if the string is octal.
+- '-1' if the string is not octal.
+
+**Examples:**
+
+```java
+return isOctal("4567734"); // Returns 8
+return isOctal("8100110"); // Returns -1
+```
+{: .copy-code}
+
+#### isDecimal
+
+Validates whether a string represents a decimal (base-10) value.
+
+**Syntax:**
+
+*int isDecimal(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a decimal number. UTF-8 is the default character set..</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '10' if the string is decimal.
+- '-1' if the string is not decimal.
+
+**Examples:**
+
+```java
+return isDecimal("4567039"); // Returns 10
+return isDecimal("C100110"); // Returns -1
+```
+{: .copy-code}
+
+#### isHexadecimal
+
+Validates whether a string represents a hexadecimal (base-16) value.
+
+**Syntax:**
+
+*int isHexadecimal(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - The string to be checked if it represents a hexadecimal number. UTF-8 is the default character set.</li>
+</ul>
+
+**Return value:**
+
+An integer value indicating the result:
+- '16' if the string is hexadecimal.
+- '-1' if the string is not hexadecimal.
+
+**Examples:**
+
+```java
+return isHexadecimal("F5D7039"); // Returns 16
+return isHexadecimal("K100110"); // Returns -1
+```
+{: .copy-code}
+
+#### isNaN
+
+Checks whether a double value is "Not-a-Number" (NaN).
+
+**Syntax:**
+
+*boolean isNaN(double value)*
+
+**Parameters:**
+
+<ul>
+  <li><b>value:</b> <code>double</code> - The value to be checked for NaN.</li>
+</ul>
+
+**Return value:**
+
+A boolean indicating the result:
+- `true` if the value is NaN.
+- `false` if the value is a valid number.
+
+**Examples:**
+
+```java
+return isNaN(0.0 / 0.0); // Returns true
+return isNaN(1.0);       // Returns false
+```
+{: .copy-code}
+
+### encodeDecodeUri
+#### encodeURI
+{% capture difference %}
+**Note**:
+<br>
+The encodeURI() function:
+- The encodeURI() function escapes characters as UTF-8 code units, with each octet encoded in the format %XX, left-padded with 0 if necessary. Lone surrogates in UTF-16 do not represent valid Unicode characters.
+- The Tbel library includes most standard JavaScript methods, such as [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+- *encodeURI()* escapes all characters except:
+
+```java
+A–Z a–z 0–9 - _ . ! ~ * ' ( ) ; / ? : @ & = + $ , #
+```
+
+**Syntax:**
+
+*String encodeURI(String uri)*
+
+**Parameters:**
+
+<ul>
+  <li><b>uri:</b> <code>String</code> - A string to be encoded as a URI.</li>
+</ul>
+
+**Return value:**
+
+A new string representing the provided string encoded as a URI.
+
+**Examples:**
+
+```java
+var uriOriginal = "-_.!~*'();/?:@&=+$,#ht://example.ж д a/path with spaces/?param1=Київ 1&param2=Україна2";
+return encodeURI(uriOriginal); // Returns "-_.!~*'();/?:@&=+$,#ht://example.%D0%B6%20%D0%B4%20a/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02"
+```
+{: .copy-code}
+
+#### decodeURI
+{% capture difference %}
+**Note**:
+<br>
+The decodeURI() function:
+- The decodeURI() function decodes a Uniform Resource Identifier (URI) that was previously encoded using encodeURI() or a similar method.
+- The Tbel library incorporates most standard JavaScript methods, including [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+**Syntax:**
+
+*String decodeURI(String uri)*
+
+**Parameters:**
+
+<ul>
+  <li><b>uri:</b> <code>String</code> - A complete, encoded Uniform Resource Identifier.</li>
+</ul>
+
+**Return value:**
+
+A new string that represents the unencoded version of the specified encoded Uniform Resource Identifier (URI).
+
+**Examples:**
+
+```java
+var uriEncode = "-_.!~*'();/?:@&=+$,#ht://example.%D0%B6%20%D0%B4%20a/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02";
+return decodeURI(uriEncode); // Returns "-_.!~*'();/?:@&=+$,#ht://example.ж д a/path with spaces/?param1=Київ 1&param2=Україна2"
+```
+{: .copy-code}
+
+### raiseError
+
+**Syntax:**
+
+*void raiseError(String message)*
+
+**Parameters:**
+
+<ul>
+  <li><b>message:</b> <code>String</code> - Info about Exception message.</li>
+</ul>
+
+**Return value:**
+
+new RuntimeException with msg = message;
+
+**Examples:**
+
+```java
+var message = "frequency_weighting_type must be 0, 1 or 2.";
+return raiseError(message);        // Returns "frequency_weighting_type must be 0, 1 or 2."
+var value = 4;
+message = "frequency_weighting_type must be 0, 1 or 2. A value of " + value + " is invalid.";
+return raiseError(message, value); // Returns "frequency_weighting_type must be 0, 1 or 2. A value of 4 is invalid."
+```
+{: .copy-code}
+
+### printUnsignedBytes
+
+Converts List<Signed byte> to List<Unsigned integer>
+
+**Syntax:**
+
+*List<Integer> printUnsignedBytes(List<Byte> byteArray)*
+
+**Parameters:**
+
+<ul>
+  <li><b>byteArray:</b> <code>List of byte</code> - the  list of byte values, where each integer represents a single byte</li>
+</ul>
+
+**Return value:**
+
+List<Integer>
+
+**Examples:**
+
+```java
+var hexStrBe = "D8FF";                     // [-40, -1]
+var listBe = hexToBytes(hexStrBe);
+return printUnsignedBytes(listBe);         // Returns [216, 255]
+
+var hexStrLe = "FFD8";                     // [-1, -40]
+var listLe = hexToBytes(hexStrLe);
+return printUnsignedBytes(listLe);         // Returns [255, 216]
+```
+{: .copy-code}
+
+### pad
+#### padStart
+- Pads this string with another string (multiple times, if needed) until the resulting string reaches the given length. 
+- The padding is applied from the start of this string.
+
+**Syntax:**
+
+*String padEnd(String str, int targetLength, char padString)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - String values pads this string with a given string (repeated, if needed)</li>
+  <li><b>targetLength:</b> <code>List of byte</code> - The length of the resulting string once the current str has been padded. If the value is less than or equal to str.length, then str is returned as-is.</li>
+  <li><b>padString:</b> <code>List of byte</code> - The string to pad the current str with. If padString is too long to stay within the targetLength, it will be truncated from the end.</li>
+</ul>
+
+**Return value:**
+
+String
+
+**Examples:**
+
+```java
+var str = "010011";
+return padStart(str, 8, '0');                           // Returns  "00010011"
+var str ="1001010011";        
+return padStart(str, 8, '0');                           // Returns  "1001010011"
+return padStart(str, 16, '*');                          // Returns  "******1001010011"
+var fullNumber = "203439900FFCD5581";
+var last4Digits = fullNumber.substring(11);
+return padStart(last4Digits, fullNumber.length(), '*'); // Returns "***********CD5581"
+```
+{: .copy-code}
+
+#### padEnd
+- Pads this string with a given string (repeated, if needed) so that the resulting string reaches a given length. 
+- The padding is applied from the end of this string.
+
+**Syntax:**
+
+*String padEnd(String str, int targetLength, char padString)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>String</code> - String values pads this string with a given string (repeated, if needed)</li>
+  <li><b>targetLength:</b> <code>List of byte</code> - The length of the resulting string once the current str has been padded. If the value is less than or equal to str.length, the current string will be returned as-is.</li>
+  <li><b>padString:</b> <code>List of byte</code> - The string to pad the current str with. If padString is too long to stay within targetLength, it will be truncated: for left-to-right languages the left-most part and for right-to-left languages the right-most will be applied.</li>
+</ul>
+
+**Return value:**
+
+String
+
+**Examples:**
+
+```java
+var str = "010011";
+padEnd(str, 8, '0');                           // Returns  "01001100"
+        
+var str ="1001010011";        
+padEnd(str, 8, '0');                           // Returns  "1001010011"        
+padEnd(str, 16, '*');                          // Returns  "1001010011******"
+        
+var fullNumber = "203439900FFCD5581";
+var last4Digits = fullNumber.substring(0, 11);
+padEnd(last4Digits, fullNumber.length(), '*'); // Returns "203439900FF******"
+```
+{: .copy-code}
+
+### numberToRadixString
+#### intToHex
+#### longToHex
+#### floatToHex
+#### doubleToHex
+
+Converts input number (int, long, float, double) to hexString.
+
+**Syntax:**
+
+*String intToHex(Integer i[, boolean bigEndian, boolean pref, int len])*
+*String longToHex(Long l[, boolean bigEndian, boolean pref, int len])*
+*String floatToHex(Float f[, boolean bigEndian])*
+*String doubleToHex(Double d[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+    <li><b>i, l, f, d:</b> <code>Number</code> - Format: Integer, Long, Float, Double.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional, the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional, the format output with "0x". Default: false</li>
+    <li><b>len:</b> <code>int</code> - optional, the number of bytes of the number to convert to text.</li>
+</ul>
+
+**Return value:**
+
+A string in HexDecimal format.
+
+**Examples:**
+
+```java
+var i = 0x7FFFFFFF;                             // (2147483647);
+intToHex(i, true, true);                        // Returns "0x7FFFFFFF"
+intToHex(171, true, false);                     // Returns "AB"
+intToHex(0xABCDEF, false, true, 4);             // Returns "0xCDAB"
+intToHex(0xABCD, false, false, 2);              // Returns "AB"
+
+longToHex(9223372036854775807, true, true);     // Returns "0x7FFFFFFFFFFFFFFF"
+longToHex(0x7A12BCD3, true, true, 4);           // Returns "0xBCD3"
+longToHex(0x7A12BCD3, false, false, 4);         // Returns "127A"
+
+floatToHex(123456789.00);                       // Returns "0x4CEB79A3"
+floatToHex(123456789.00, false);                // Returns "0xA379EB4C"
+
+doubleToHex(1729.1729d);                        // Returns "0x409B04B10CB295EA"
+doubleToHex(1729.1729d, false);                 // Returns "0xEA95B20CB1049B40"
+```
+{: .copy-code}
+
+#### intLongToRadixString
+
+Converts input number (int, long) to radix String (default Dec).
+
+**Syntax:**
+
+*String intLongToRadixString(Long number[, int radix, boolean bigEndian, boolean pref])*
+
+**Parameters:**
+
+<ul>
+    <li><b>number:</b> <code>Number</code> - Format: Long.</li>
+    <li><b>radix:</b> <code>int</code> - optional radix to use when parsing to string format(BinaryString, OctalString, DecimalString, HexDecimalString). Default: DecimalString.</li>
+    <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise. Default: true (BE).</li>
+    <li><b>pref:</b> <code>boolean</code> - optional format output with "0x". Default: false</li>
+</ul>
+
+**Return value:**
+
+A string in BinaryString, OctalString, DecimalString, HexDecimalString format.
+
+**Examples:**
+
+```java
+intLongToRadixString(58, 2);                         // Returns "00111010"
+intLongToRadixString(9223372036854775807, 2);        // Returns "0111111111111111111111111111111111111111111111111111111111111111"
+intLongToRadixString(13158, 8);                      // Returns "31546"
+intLongToRadixString(-13158, 8);                     // Returns "1777777777777777746232"
+intLongToRadixString(-13158, 10);                    // Returns "-13158"
+intLongToRadixString(13158, 16);                     // Returns "3366"
+intLongToRadixString(-13158, 16);                    // Returns "FFCC9A"
+intLongToRadixString(9223372036854775807, 16);       // Returns "7FFFFFFFFFFFFFFF"
+intLongToRadixString(-13158, 16, true, true);        // Returns "0xFFCC9A"
+```
+{: .copy-code}
+
+### parseHex
+#### parseHexToInt
+
+Converts the hex string to integer.
+
+**Syntax:**
+
+*int parseHexToInt(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> -  optional the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+parseHexToInt("BBAA");        // Returns 48042
+parseHexToInt("BBAA", true);  // Returns 48042
+parseHexToInt("AABB", false); // Returns 48042
+parseHexToInt("BBAA", false); // Returns 43707
+```
+{: .copy-code}
+
+##### parseLittleEndianHexToInt
+
+Alias for [parseHexToInt(hex, false)](#parsehextoint)
+
+**Syntax:**
+
+*int parseLittleEndianHexToInt(String hex)*
+
+##### parseBigEndianHexToInt
+
+Alias for [parseHexToInt(hex, true)](#parsehextoint)
+
+**Syntax:**
+
+*int parseBigEndianHexToInt(String hex)*
+
+#### parseHexToFloat
+
+Converts the hex string to float from HexString.
+
+**Syntax:**
+
+*Float parseHexToFloat(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> -  optional the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed float value.
+
+**Examples:**
+
+```java
+parseHexToFloat("41EA62CC");         // Returns 29.29824f
+parseHexToFloat("41EA62CC", true);   // Returns 29.29824f
+parseHexToFloat("41EA62CC", false);  // Returns -5.948442E7f
+parseHexToFloat("CC62EA41", false);  // Returns 29.29824f
+```
+{: .copy-code}
+
+##### parseLittleEndianHexToFloat
+
+Alias for [parseHexToFloat(hex, false)](#parsehextofloat)
+
+**Syntax:**
+
+*float parseLittleEndianHexToFloat(String hex)*
+
+##### parseBigEndianHexToFloat
+
+Alias for [parseBigEndianHexToFloat(hex, true)](#parsehextofloat)
+
+**Syntax:**
+
+*float parseBigEndianHexToFloat(String hex)*
+
+#### parseHexIntLongToFloat
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *10.0f*:
+- In this method, we process it as an integer.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts the hex string to float from HexString.
+
+**Syntax:**
+
+*Float parseHexIntLongToFloat(String hex, boolean bigEndian)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed float value.
+
+**Examples:**
+
+```java
+return parseHexIntLongToFloat("0x0A", true);         // Returns 10.0f
+return parseHexIntLongToFloat("0x0A", false);        // Returns 10.0f
+return parseHexIntLongToFloat("0x00000A", true);     // Returns 10.0f
+return parseHexIntLongToFloat("0x0A0000", false);    // Returns 10.0f
+return parseHexIntLongToFloat("0x000A0A", true);     // Returns 2570.0f
+return parseHexIntLongToFloat("0x0A0A00", false);    // Returns 2570.0f
+```
+{: .copy-code}
+
+#### parseHexToDouble
+
+Converts the hex string to Double.
+
+**Syntax:**
+
+*int parseHexToDouble(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed double value.
+
+**Examples:**
+
+```java
+return parseHexToDouble("409B04B10CB295EA");            // Returns 1729.1729
+return parseHexToDouble("409B04B10CB295EA", false);      // Returns -2.7208640774822924E205
+return parseHexToDouble("409B04B10CB295EA", true);       // Returns 1729.1729
+return parseHexToDouble("EA95B20CB1049B40", false);      // Returns 1729.1729
+```
+{: .copy-code}
+
+##### parseLittleEndianHexToDouble
+
+Alias for [parseHexToDouble(hex, false)](#parsehextodouble)
+
+**Syntax:**
+
+*double parseLittleEndianHexToDouble(String hex)*
+
+##### parseBigEndianHexToDouble
+
+Alias for [parseBigEndianHexToDouble(hex, true)](#parsehextodouble)
+
+**Syntax:**
+
+*double parseBigEndianHexToDouble(String hex)*
+
+#### hexToBytes List or Array
+
+##### hexToBytes
+
+Converts the hex string to list of integer values, where each integer represents single byte.
+
+**Syntax:**
+
+*List<Integer> hexToBytes(String hex)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+</ul>
+
+**Return value:**
+
+Parsed list of integer values.
+
+**Examples:**
+
+```java
+return hexToBytes("0x01752B0367FA000500010488FFFFFFFFFFFFFFFF33"); // Returns [1, 117, 43, 3, 103, -6, 0, 5, 0, 1, 4, -120, -1, -1, -1, -1, -1, -1, -1, -1, 51]
+```
+{: .copy-code}
+
+###### hexToBytesArray
+
+Converts the hex string to Array of single byte values.
+
+**Syntax:**
+
+*byte[] hexToBytesArray(String hex)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+</ul>
+
+**Return value:**
+
+Parsed array of single byte values.
+
+**Examples:**
+
+```java
+return hexToBytesArray("AABBCCDDEE"); // Returns [(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD, (byte) 0xEE]
+                                      //  Returns [-86, -69, -52, -35, -18]  
+```
+{: .copy-code}
+
+### parseBytes
+#### bytesToHex
+
+Converts the list of integer values, where each integer represents a single byte, to the hex string.
+
+**Syntax:**
+
+*String bytesToHex(List<Integer> bytes)*
+*String bytesToHex(byte[] bytes)*~~~~
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>byte[]</code> or <code>List of integer</code> - the byte array or the list of integer values, where each integer represents a single byte</li>
+</ul>
+
+**Return value:**
+
+Returns a hexadecimal string.
+
+**Examples:**
+
+```java
+var bytes = [0xBB, 0xAA];
+return bytesToHex(bytes); // Returns "BBAA"
+var list = [-69, 83];
+return bytesToHex(list);   // Returns "BB53"
+```
+{: .copy-code}
+
+#### parseBytesToInt
+
+Converts a byte array with the given offset to an int, length, and optional byte order.
+
+**Syntax:**
+
+*int parseBytesToInt([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+integer value.
+
+**Examples:**
+
+```java
+var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
+return parseBytesToInt(bytes, 0, 3); // Returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(bytes, 0, 3, true); // Returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(bytes, 0, 3, false); // Returns 13417386 in Decimal or 0xCCBBAA
+```
+{: .copy-code}
+
+#### parseBytesToLong
+
+Converts a byte array with the given offset to a long, length, and optional byte order.
+
+**Syntax:**
+
+*int parseBytesToInt([byte[] or List<Byte>] data[,int offset, int length, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+long value.
+
+**Examples:**
+
+```java
+var longValByte = [64, -101, 4, -79, 12, -78, -107, -22];
+return parseBytesToLong(longValByte, 0, 8);         // Returns 4655319798286292458L  == 0x409B04B10CB295EAL  
+return parseBytesToLong(longValByte, 0, 8, false);  // Returns -1543131529725306048L == 0xEA95B20CB1049B40L  
+
+```
+{: .copy-code}
+
+#### parseBytesToFloat
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *1.4E-44f*:
+- In this method, we process it as an float.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts a byte array with the given offset to a floating-point number, length, and optional byte order.
+
+**Syntax:**
+
+*int parseBytesToFloat([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+float value.
+
+**Examples:**
+
+```java
+var bytes = [0x0A];
+return parseBytesToFloat(bytes);                       // Returns 1.4E-44f  
+var floatValByte = [0x41, 0xEA, 0x62, 0xCC];
+return parseBytesToFloat(floatValByte, 0);             // Returns 29.29824f  
+return parseBytesToFloat(floatValByte, 0, 2, false);   // Returns 8.4034E-41f 
+return parseBytesToFloat(floatValByte, 0, 2, true);    // Returns 2.3646E-41f 
+return parseBytesToFloat(floatValByte, 0, 3, false);   // Returns 9.083913E-39f  
+return parseBytesToFloat(floatValByte, 0, 3, true);    // Returns 6.053388E-39f  
+return parseBytesToFloat(floatValByte, 0, 4, false);   // Returns -5.948442E7f  
+var floatValList = [65, -22, 98, -52];
+return parseBytesToFloat(floatValList, 0);             // Returns 29.29824f  
+return parseBytesToFloat(floatValList, 0, 4, false);   // Returns -5.948442E7f 
+
+```
+{: .copy-code}
+
+#### parseBytesIntToFloat
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *10.0f*, *"0x0A00"* for *2560.0f*:
+- In this method, we process it as an integer.
+- Converts a byte array to a floating-point number equal to the value that would be found if the hexadecimal string were converted to an Integer number.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts a byte array with the given offset to a floating-point number, length, and optional byte order.
+
+**Syntax:**
+
+*int parseBytesToFloat([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+float value.
+
+**Examples:**
+
+```java
+var intValByte = [0x00, 0x00, 0x00, 0x0A];
+return parseBytesIntToFloat(intValByte, 3, 1, true);     // Returns 10.0f
+return parseBytesIntToFloat(intValByte, 3, 1, false);    // Returns 10.0f
+return parseBytesIntToFloat(intValByte, 2, 2, true);     // Returns 10.0f
+return parseBytesIntToFloat(intValByte, 2, 2, false);    // Returns 2560.0f
+return parseBytesIntToFloat(intValByte, 0, 4, true);     // Returns 10.0f 
+return parseBytesIntToFloat(intValByte, 0, 4, false);    // Returns 1.6777216E8f
+```
+{: .copy-code}
+
+**Examples (latitude, longitude):**
+
+```java
+var dataAT101 = "0x01756403671B01048836BF7701F000090722050000";
+var byteAT101 = hexToBytes(dataAT101);
+var offset = 9;
+return parseBytesIntToFloat(byteAT101, offset, 4, false) / 1000000;     // Returns 24.62495f
+return parseBytesIntToFloat(byteAT101, offset + 4, 4, false) / 1000000; // Returns 118.030576f
+
+```
+{: .copy-code}
+
+#### parseBytesLongToDouble
+
+{% capture difference %}
+**Note**:
+<br>
+eg *"0x0A"* for *10.0d*, *"0x0A00"* for *2'560.0d*, *"0x0A0A0A0A"* for *168'430'090.0d*:
+- In this method, we process it as an long.
+- Converts a byte array to a floating-point number equal to the value that would be found if the hexadecimal string were converted to an Long number.
+- Using double has enough precision for accurate lat/lon down to inches for 6-7 decimal places.
+- The 6th decimal place  for lat/lon is for sub-foot accuracy.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Converts a byte array with the given offset to a double, length, and optional byte order.
+
+**Syntax:**
+
+*int parseBytesToDouble([byte[] or List<Byte>] data[, int offset, int length, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> -optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+double value.
+
+**Examples (latitude, longitude):**
+
+```java
+var coordinatesAsHex = "0x32D009423F23B300B0106E08D96B6C00";
+var coordinatesasBytes = hexToBytes(coordinatesAsHex);
+var offset = 0;
+var factor = 1e15;
+return parseBytesLongToDouble(coordinatesasBytes, offset, 8, false) / factor;     // Returns 50.422775429058610d, latitude
+return parseBytesLongToDouble(coordinatesasBytes, offset + 8, 8, false) / factor; // Returns 30.517877378257072d, longitude
+
+```
+{: .copy-code}
+
+#### bytesToExecutionArrayList
+
+Converts a byte array to an Array List implementation of a byte array with the given offset, length, and optional byte order.
+
+**Syntax:**
+
+*ExecutionArrayList<Byte> bytesToExecutionArrayList([byte[] bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>byte[]</code> - the byte array.</li>
+</ul>
+
+**Return value:**
+
+ExecutionArrayList<Byte> value.
+
+**Examples:**
+
+```java
+var bytes = [0xAA, 0xBB, 0xCC, 0xDD];
+return bytesToExecutionArrayList(bytes); // Returns ExecutionArrayList<Byte> value with size = 4,  includes: [-86, -69, -52, -35]
+```
+{: .copy-code}
+
+
+### parseBinaryArray
+#### parseByteToBinaryArray
+
+Converts a byte to binary array.
+
+Parses  one byte to binary array from the byte given the optional binLength and endianness.
+
+**Syntax:**
+
+*byte[] parseByteToBinaryArray(byte byteValue[, int binLength, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>byteValue:</b> <code>byte</code>  - the byte value.</li>
+  <li><b>binLength:</b> <code>int</code> - optional, the length of the output binary array.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+byte[] value.
+
+**Examples:**
+
+```java
+var byteVal = 0x39;
+return parseByteToBinaryArray(byteVal);               // Returns byte[8] value => [0, 0, 1, 1, 1, 0, 0, 1]
+return parseByteToBinaryArray(byteVal, 3);            // Returns byte[3] value => [0, 0, 1]
+return parseByteToBinaryArray(byteVal, 8, false);     // Returns byte[8] value => [1, 0, 0, 1, 1, 1, 0, 0]
+return parseByteToBinaryArray(byteVal, 5, false);     // Returns byte[5] value => [1, 0, 0, 1, 1]
+return parseByteToBinaryArray(byteVal, 4, false);     // Returns byte[4] value => [1, 0, 0, 1]        
+return parseByteToBinaryArray(byteVal, 3, false);     // Returns byte[3] value => [1, 0, 0]
+
+var value = parseByteToBinaryArray(byteVal, 6, false);     // Returns byte[6] value => [1, 0, 0, 1, 1, 1]
+var actualLowCurrent1Alarm = value[0];
+var actualHighCurrent1Alarm = value[1];
+var actualLowCurrent2Alarm = value[2];
+var actualHighCurrent2Alarm = value[3];
+var actualLowCurrent3Alarm = value[4];
+var actualHighCurrent3Alarm = value[5];
+```
+{: .copy-code}
+
+#### parseBytesToBinaryArray
+
+Converts a byte Array to binary Array from the byte Array/List with the given length.
+
+**Syntax:**
+
+*byte[] parseBytesToBinaryArray([byte[] or List<Byte>] byteValue[, int binLength])*
+
+**Parameters:**
+
+<ul>
+  <li><b>byteValue:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>binLength:</b> <code>int</code> - optional, the length of the output binary array.</li>
+</ul>
+
+**Return value:**
+
+byte[] value.
+
+**Examples:**
+
+```java
+var bytesVal = [0xCE, 0xB2];
+return parseBytesToBinaryArray(bytesVal);              // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseBytesToBinaryArray(bytesVal, 15);          // Returns byte[15] value =>    [1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseBytesToBinaryArray(bytesVal, 14);          // Returns byte[14] value =>       [0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseBytesToBinaryArray(bytesVal, 2);           // Returns byte[2]  value =>                                           [1, 0]
+```
+{: .copy-code}
+
+#### parseLongToBinaryArray
+
+Converts a long value to binary Array from the long value with the given length.
+
+**Syntax:**
+
+*byte[] parseLongToBinaryArray(long longValue[, int binLength])*
+
+**Parameters:**
+
+<ul>
+   <li><b>longValue:</b> <code>long</code> - the long value.</li>
+  <li><b> binLength:</b> <code>int</code> - optional, the length of the output binary array.</li>
+</ul>
+
+**Return value:**
+
+byte[] value.
+
+**Examples:**
+
+```java
+var longValue = 52914L;
+return parseLongToBinaryArray(longValue);        // Returns byte[64] value => [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+return parseLongToBinaryArray(longValue, 16);    // Returns byte[16] value => [1, 1, 0, 0, 1, 1, 1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
+```
+{: .copy-code}
+
+#### parseBinaryArrayToInt
+
+Converts a binary array to an int value from a binary array, optionally specifying an integer offset, length, and byte order.
+
+**Syntax:**
+
+*int parseBinaryArrayToInt([byte[] or List<Byte>] data[, int offset, int length])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - optional, the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - optional, the length in bytes.</li>
+</ul>
+
+**Return value:**
+
+int value.
+
+**Examples:**
+
+```java
+var binaryArrayToInt = parseBinaryArrayToInt([1, 0, 0, 1, 1, 1, 1, 1]);  // Returns -97
+var actualVolt = parseBinaryArrayToInt([1, 0, 0, 1, 1, 1, 1, 1], 1, 7);  // Returns 31
+```
+{: .copy-code}
+
+### parseNumber
 #### parseInt
 
 Converts input string to integer.
@@ -726,19 +1956,19 @@ An integer value.
 **Examples:**
 
 ```java
-return parseInt("0") // returns 0
-return parseInt("473") // returns 473
-return parseInt("+42") // returns 42
-return parseInt("-0", 10) // returns 0
-return parseInt("-0xFF") // returns -255        
-return parseInt("-FF", 16) // returns -255
-return parseInt("1100110", 2) // returns 102
-return parseInt("2147483647", 10) // returns 2147483647
-return parseInt("-2147483648", 10) // returns -2147483648
-return parseInt("2147483648", 10) throws a NumberFormatException
-return parseInt("99", 8) throws a NumberFormatException
-return parseInt("Kona", 10) throws a NumberFormatException
-return parseInt("Kona", 27) // returns 411787
+return parseInt("0");               // Returns 0
+return parseInt("473");             // Returns 473
+return parseInt("+42");             // Returns 42
+return parseInt("-0", 10);          // Returns 0
+return parseInt("-0xFF");           // Returns -255        
+return parseInt("-FF", 16);         // Returns -255
+return parseInt("1100110", 2);      // Returns 102
+return parseInt("2147483647", 10);  // Returns 2147483647
+return parseInt("-2147483648", 10); // Returns -2147483648
+return parseInt("Kona", 27);        // Returns 411787        
+return parseInt("2147483648", 10);  // throws a NumberFormatException
+return parseInt("99", 8);           // throws a NumberFormatException
+return parseInt("Kona", 10);        // throws a NumberFormatException
 ```
 {: .copy-code}
 
@@ -764,23 +1994,23 @@ A long value.
 **Examples:**
 
 ```java
-return parseLong("0") // returns 0L
-return parseLong("473") // returns 473L
-return parseLong("+42") // returns 42L
-return parseLong("-0", 10) // returns 0L
-return parseLong("-0xFFFF") // returns -65535L        
-return parseLong("-FFFF", 16) // returns -65535L
-return parseLong("11001101100110", 2) // returns 13158L
-return parseLong("777777777777777777777", 8) // returns 9223372036854775807L
-return parseLong("KonaLong", 27) // returns 218840926543L
-return parseLong("9223372036854775807", 10) // returns 9223372036854775807L
-return parseLong("-9223372036854775808", 10) // returns -9223372036854775808L
-return parseLong("9223372036854775808", 10) throws a NumberFormatException
-return parseLong("0xFGFFFFFF", 16) throws a NumberFormatException
-return parseLong("FFFFFFFF", 16) throws a NumberFormatException
-return parseLong("1787", 8) throws a NumberFormatException
-return parseLong("KonaLong", 10) throws a NumberFormatException
-return parseLong("KonaLong", 16) throws a NumberFormatException
+return parseLong("0");                          // Returns 0L
+return parseLong("473");                        // Returns 473L
+return parseLong("+42");                        // Returns 42L
+return parseLong("-0", 10);                     // Returns 0L
+return parseLong("-0xFFFF");                    // Returns -65535L        
+return parseLong("-FFFF", 16);                  // Returns -65535L
+return parseLong("11001101100110", 2);          // Returns 13158L
+return parseLong("777777777777777777777", 8);   // Returns 9223372036854775807L
+return parseLong("KonaLong", 27);               // Returns 218840926543L
+return parseLong("9223372036854775807", 10);    // Returns 9223372036854775807L
+return parseLong("-9223372036854775808", 10);   // Returns -9223372036854775808L
+return parseLong("9223372036854775808", 10);    // throws a NumberFormatException
+return parseLong("0xFGFFFFFF", 16);             // throws a NumberFormatException
+return parseLong("FFFFFFFF", 16);               // throws a NumberFormatException
+return parseLong("1787", 8);                    // throws a NumberFormatException
+return parseLong("KonaLong", 10);               // throws a NumberFormatException
+return parseLong("KonaLong", 16);               // throws a NumberFormatException
 ```
 {: .copy-code}
 
@@ -805,7 +2035,7 @@ A float value.
 **Examples:**
 
 ```java
-return parseFloat("4.2"); // returns 4.2
+return parseFloat("4.2"); // Returns 4.2f
 ```
 {: .copy-code}
 
@@ -830,157 +2060,103 @@ A double precision value.
 **Examples:**
 
 ```java
-return parseDouble("4.2"); // returns 4.2
+return parseDouble("4.2"); // Returns 4.2d
 ```
 {: .copy-code}
 
-#### parseHexToInt
+### Bitwise Operations
 
-Converts the hex string to integer.
+Bitwise operations in ThingsBoard allow manipulation of individual bits within integer, long, and boolean values. These operations support mixed-type operands (Integer, Long, Boolean) without implicit type conversions, and the result type depends on the operation's outcome: either Integer or Long.
 
-**Syntax:**
+**Supported operators:**
 
-*int parseHexToInt(String hex[, boolean bigEndian])*
+```markdown
+- AND `&`: Performs a bit-by-bit comparison, where the result bit is `1` if both bits are `1`.
+- OR `|`: Sets a bit to `1` if at least one of the corresponding bits is `1`.
+- XOR `^` Sets a bit to `1` if the corresponding bits are different.
+- Left shift `<<`: Shifts bits to the left, effectively multiplying the number by `2^n`.
+- Right shift `>>`: Shifts bits to the right, effectively dividing the number by `2^n` (preserving the sign).
+- Unsigned Right shift `>>>`: Shifts bits to the right, filling with zeroes, regardless of the sign.
+```
 
-**Parameters:**
+Supported Data Type Combinations
 
-<ul>
-  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
-  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
-</ul>
+1. Integer - Integer: Produces an Integer result.
+2. Long - Long: Produces a Long result.
+3. Boolean - Boolean: Produces an Integer result.
+3. Mixed Types (e.g., Integer - Long, Long - Boolean, Boolean - Integer): The operation ensures compatibility between input types, and the result type is determined based on precision or hierarchy:
 
-**Return value:**
+- If one of the types is Long, the result is Long.
+- If one type is Boolean and the other is Integer, the result is Integer.
+- If both types are Boolean, the result is also Integer.
 
-Parsed integer value.
+{% capture difference %}
+**Note**:
+<br>
+eg *Boolean* - (Integer / Long) or (Integer / Long) - *Boolean*:
+- Boolean values are interpreted as 1 (true) or 0 (false) and can interact with integers or longs directly.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 **Examples:**
 
+*Boolean - Boolean*
+
 ```java
-return parseHexToInt("BBAA"); // returns 48042
-return parseHexToInt("BBAA", true); // returns 48042
-return parseHexToInt("AABB", false); // returns 48042
-return parseHexToInt("BBAA", false); // returns 43707
+var x = true;
+var y = false;
+
+var andResult = x & y; 
+return andResult;       // Returns 0   
+        
+var orResult = x | y;  
+return orResult;        // Returns 1 
+        
+var xorResult = x ^ y;  
+return xorResult;       // Returns 1 
+        
+var leftShift = x << y; 
+return leftShift;       // Returns 1 
+        
+var rightShift = x >> y;
+return rightShift;      // Returns 1 
+        
+var rightUnShift = x >>> y;
+return rightUnShift;     // Returns 1 
 ```
 {: .copy-code}
 
-#### parseLittleEndianHexToInt
 
-Alias for [parseHexToInt(hex, false)](#parsehextoint)
-
-**Syntax:**
-
-*int parseLittleEndianHexToInt(String hex)*
-
-#### parseBigEndianHexToInt
-
-Alias for [parseHexToInt(hex, true)](#parsehextoint)
-
-**Syntax:**
-
-*int parseBigEndianHexToInt(String hex)*
-
-#### toFixed
-
-Rounds the double value towards "nearest neighbor". 
-
-**Syntax:**
-
-*double toFixed(double value, int precision)*
-
-**Parameters:**
-
-<ul>
-  <li><b>value:</b> <code>double</code> - the double value.</li>
-  <li><b>precision:</b> <code>int</code> - the precision.</li>
-</ul>
-
-**Return value:**
-
-Rounded double
-
-**Examples:**
+*Mixed*
 
 ```java
-return toFixed(0.345, 1); // returns 0.3
-return toFixed(0.345, 2); // returns 0.35
+var x = true;
+var y = false;
+var i = 10;
+var b = -14;
+var l = 9223372036854775807;
+
+var andResult = x & b; 
+return andResult;       // Returns 0   
+        
+var orResult = i | y;  
+return orResult;        // Returns 10 
+        
+var xorResult = i ^ l;  
+return xorResult;       // Returns 9223372036854775797L
+        
+var leftShift = l << i; 
+return leftShift;       // Returns -1024L 
+        
+var rightShift = l >> b;
+return rightShift;      // Returns 8191L 
+        
+var rightUnShift = i >>> x;
+return rightUnShift;     // Returns 5 
 ```
 {: .copy-code}
 
-#### hexToBytes
-
-Converts the hex string to list of integer values, where each integer represents single byte.
-
-**Syntax:**
-
-*List<Integer> hexToBytes(String hex)*
-
-**Parameters:**
-
-<ul>
-  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
-</ul>
-
-**Return value:**
-
-Parsed list of integer values.
-
-**Examples:**
-
-```java
-return hexToBytes("BBAA"); // returns [-69, -86]
-```
-{: .copy-code}
-
-#### bytesToHex
-
-Converts the list of integer values, where each integer represents a single byte, to the hex string.
-
-**Syntax:**
-
-*String bytesToHex(List<Integer> bytes)*
-
-**Parameters:**
-
-<ul>
-  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
-</ul>
-
-**Return value:**
-
-Hex string.
-
-**Examples:**
-
-```java
-return bytesToHex([-69, -86]); // returns "BBAA"
-```
-{: .copy-code}
-
-#### bytesToBase64
-
-Converts the byte array, to Base64 string.
-
-**Syntax:**
-
-*String bytesToBase64(byte[] bytes)*
-
-**Parameters:**
-
-<ul>
-  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
-</ul>
-
-**Return value:**
-
-Base64 string.
-
-**Examples:**
-
-```java
-return bytesToBase64([42, 73]); // returns "Kkk="
-```
-{: .copy-code}
-
+### base64
 #### base64ToHex
 
 Decodes the Base64 string, to hex string.
@@ -1002,13 +2178,39 @@ Hex string
 **Examples:**
 
 ```java
-return base64ToHex("Kkk="); // returns "2A49"
+return base64ToHex("Kkk="); // Returns "2A49"
 ```
 {: .copy-code}
 
-#### base64ToBytes
+#### bytesToBase64
 
-Decodes the Base64 string, to byte array.
+Encodes a byte array into a Base64 string.
+
+**Syntax:**
+
+*String bytesToBase64(byte[] bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
+</ul>
+
+**Return value:**
+
+Base64 string.
+
+**Examples:**
+
+```java
+return bytesToBase64([42, 73]); // Returns "Kkk="
+```
+{: .copy-code}
+
+#### base64 To Bytes Array or List
+##### base64ToBytes
+
+Decodes a Base64 string into a byte array.
 
 **Syntax:**
 
@@ -1027,40 +2229,36 @@ Byte array.
 **Examples:**
 
 ```java
-return base64ToBytes("Kkk="); // returns [42, 73]
+return base64ToBytes("Kkk="); // Returns [42, 73]
 ```
 {: .copy-code}
 
-#### parseBytesToInt
+###### base64ToBytesList
 
-Parses int from the byte array given the offset, length and optional endianness.
+Decodes a Base64 string into a byte list.
 
 **Syntax:**
 
-*int parseBytesToInt([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+*List<Byte> base64ToBytesList(String input)*
 
 **Parameters:**
 
 <ul>
-  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
-  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
-  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
-  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+  <li><b>input:</b> <code>String</code> - the Base64 string.</li>
 </ul>
 
 **Return value:**
 
-integer value.
+Byte array.
 
 **Examples:**
 
 ```java
-return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, true); // returns 11189196 in Decimal or 0xAABBCC  
-return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
+return base64ToBytesList("AQIDBAU="); // Returns ExecutionArrayList<Byte> value with size = 5,  includes: [1, 2, 3, 4, 5]
 ```
 {: .copy-code}
 
-#### toFlatMap
+### toFlatMap
 
 Iterates recursive over the given object and creates a single level json object.  
 If the incoming message contains arrays, the key for transformed value will contain index of the element.  
@@ -1073,6 +2271,7 @@ Map<String, Object> toFlatMap(Map<String, Object> json, boolean pathInKey)
 Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList)
 Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList, boolean pathInKey)
 ```
+{: .copy-code}
 
 **Parameters:**
 
@@ -1121,7 +2320,7 @@ JSON Object
 }
 ```
 
-##### toFlatMap(json)
+#### toFlatMap(json)
 
 Expected behavior - get the single level object with paths in keys. 
 
@@ -1149,8 +2348,9 @@ return toFlatMap(json);
     "key11.key_to_overwrite": "second_level_value"
 }
 ```
+{: .copy-code}
 
-##### toFlatMap(json, pathInKey)
+#### toFlatMap(json, pathInKey)
 
 Expected behavior - get the single level object without paths in keys.  
 **key_to_overwrite** should contain the value from **key11.key_to_overwrite**.  
@@ -1178,10 +2378,11 @@ return toFlatMap(json, false);
     "key_to_overwrite": "second_level_value"
 }
 ```
+{: .copy-code}
 
 As you can see, **key_to_overwrite** is **second_level_value** instead of **root_value**.  
   
-##### toFlatMap(json, excludeList)
+#### toFlatMap(json, excludeList)
 
 Expected behavior - get the single level object with paths in keys, without keys **key1** and **key3**.  
 
@@ -1202,7 +2403,7 @@ return toFlatMap(json, ["key1", "key3"]);
 
 As you can see, **key1** and **key3** were removed from output. Excluding works on any level with incoming keys.   
   
-##### toFlatMap(json, excludeList, pathInKey)
+#### toFlatMap(json, excludeList, pathInKey)
 
 Expected behavior - get the single level object without paths in keys, without keys **key2** and **key4**.  
 **key_to_overwrite** should contain the value from **key11.key_to_overwrite**.    
@@ -1231,11 +2432,11 @@ return toFlatMap(json, ["key2", "key4"], false);
 
 As you can see, **key2** and **key4** was excluded from the output and **key_to_overwrite** is **second_level_value**.  
 
-####  tbDate: 
+### tbDate: 
 
 The *Tbel* library uses all standard JavaScript methods in the [JavaScript Date](https://www.w3schools.com/jsref/jsref_getdate.asp), such as **"toLocaleString"**,  **"toISOString"** and other methods;
 
-##### Input format data:
+#### Input format data:
 - String with Optional: pattern, locale, time zone
 - ints (year, month and etc) with Optional: pattern, locale, time zone
 
@@ -1247,7 +2448,7 @@ Time zone Id default: *ZoneId.systemDefault()*;
 
 a Date object as a string, using locale default: "UTC", time zone Id default: ZoneId.systemDefault().
 
-###### String with Optional: pattern, locale, time zone 
+##### String with Optional: pattern, locale, time zone 
 
 **Examples:**
 - Input data format: Only one - String (Variable the Time Zone in the input parameter), without pattern:
@@ -1267,8 +2468,8 @@ var dIso = d.toISOString();                          //  return "2023-08-06T04:0
 {: .copy-code}
 
 ```java
-var d = new Date("2023-08-06T04:04:05.123");        // TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                         //  return "2023-08-06T01:04:05.123Z"   ZoneId  "Europe/Kiev" = "+03:00"
+var d = new Date("2023-08-06T12:04:05.123");        // TZ => Default
+var dIso = d.toISOString();                         //  return "2023-08-06T16:04:05.123Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")                                                               
 ```
 {: .copy-code}
 
@@ -1286,7 +2487,7 @@ var dIso = d.toISOString();                         //  return "2023-08-06T02:04
 
 ```java
 var d = new Date("2023-08-06T04:04:05.00+03:00:00");   //  TZ => "+03:00:00"
-var dIso = d.toISOString();                            //  return "2023-08-06T01:04:05Z"   ZoneId  "Europe/Kiev" = "+03:00"
+var dIso = d.toISOString();                            //  return "2023-08-06T01:04:05Z"   ZoneId  "Europe/Kyiv" = "+03:00"
 ```
 {: .copy-code}
 
@@ -1314,8 +2515,8 @@ var dIso = d.toISOString();                             //  return "2008-06-03T0
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
-var d = new Date("2023-08-06 04:04:05.000Z", pattern);        //  Pattern without TZ => "UTC"
-var dIso = d.toISOString();                                   //  return "2008-06-03T08:05:30Z"    ZoneId "UTC" = "00:00"
+var d = new Date("2023-08-06 04:04:05.000Z", pattern);        // Pattern without TZ => ZoneId "UTC"
+var dIso = d.toISOString();                                   // return "2023-08-06T04:04:05Z"    ZoneId "UTC" = "00:00"
 ```
 {: .copy-code}
 
@@ -1323,14 +2524,14 @@ var dIso = d.toISOString();                                   //  return "2008-0
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
 var d = new Date("2023-08-06 04:04:05.000-04:00", pattern);   // Pattern with TZ => "-04:00"
-var dIso = d.toISOString();                                   //  return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
+var dIso = d.toISOString();                                   // return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
 ```
 {: .copy-code}
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSS";
-var d = new Date("2023-08-06 04:04:05.000", pattern);         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                                   //  return "2023-08-06T08:04:05Z"    ZoneId  "Europe/Kiev" = "+03:00"
+var d = new Date("2023-08-06 12:04:05.000", pattern);         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
+var dIso = d.toISOString();                                   //  return "2023-08-06T16:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
@@ -1338,23 +2539,24 @@ var dIso = d.toISOString();                                   //  return "2023-0
 
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
-var d = new Date("09:15:30 PM, So. 10/09/2022", pattern, "de");         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                                             //  return "2022-10-09T18:15:30Z"    ZoneId  "Europe/Kiev" = "+03:00"
-var dLocal= d.toLocaleString("de");                                     //  return "09.10.22, 21:15:30"      
+var d = new Date("12:15:30 PM, So. 10/09/2022", pattern, "de");         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
+var dIso = d.toISOString();                                             //  return "2022-10-09T16:15:30Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dLocal= d.toLocaleString("de");                                     //  return "09.10.22, 12:15:30"
 ```
 {: .copy-code}
 
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
-var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "en-US");         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                                                //  return "2022-10-09T11:15:30Z"    ZoneId  "Europe/Kiev" = "+03:00"
-var dLocal = d.toLocaleString("en-US");                                    //  return "10/9/22, 2:15:30 PM"      
+var d = new Date("12:15:30 PM, Sun 10/09/2022", pattern, "en-US");         //  Pattern without TZ, TZ = ZoneId.systemDefault() instant
+var dIso = d.toISOString();                                                //  return "2022-10-09T16:15:30Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dLocal = d.toLocaleString("en-US");                                    //  return "10/9/22, 12:15:30 PM"
 ```
 {: .copy-code}
 
 ```java
 var pattern = "hh:mm:ss a, EEE M/d/uuuu";
-var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // return: error. The pattern with input parameter of date does not match the locale
+var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // return: Error: could not create constructor 
+                                                                            // The pattern with input parameter of date does not match the locale
                                                                             // Locale = "de", input parameter "day of the week" is "Sun", should be "So.". 
 ```
 {: .copy-code}
@@ -1362,32 +2564,32 @@ var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             // r
 
 ```java
 var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
-var d = new Date("2023-08-06 04:04:05.000-04:00", pattern, "de", "Europe/Kiev");    // Pattern with TZ => "-04:00" but `Time Zone` as parameter = "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                                                         // return "2023-08-06T01:04:05Z"    ZoneId  "Europe/Kiev" = "+03:00"
-var dLocal_de = d.toLocaleString("de");                                             // return "06.08.23, 04:04:05"     
+var d = new Date("2023-08-06 04:04:05.000+02:00", pattern, "de", "America/New_York");    // Pattern with TZ => "+02:00" but `Time Zone` as parameter = "America/New_York" = "-04:00"
+var dIso = d.toISOString();                                                         // return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
+var dLocal_de = d.toLocaleString("de");                                             // return "06.08.23, 04:04:05" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")   
 var dLocal_us = d.toLocaleString("en-US");                                          // return "8/6/23, 4:04:05 AM"      
 ```
 {: .copy-code}
 
-###### Ints (year, month and etc) with Optional: time zone
+##### Instant (year, month and etc) with Optional: time zone
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5);
-var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kiev")
-var dIso = d.toISOString();             //  return 2023-08-06T01:04:05Z"
-var dDate = d;                          //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом"
+var d = new Date(2023, 8, 6, 4, 4, 5, "America/New_York");
+var dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "America/New_York")
+var dIso = d.toISOString();             //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var dDate = d;                          //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time"
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");
-var dLocal = d.toLocaleString();                                    // return "2023-08-06 05:04:05" (Locale: "UTC", ZoneId "Europe/Kiev")
-var dLocal_us = d.toLocaleString("en-us",  "America/New_York");     // return "8/5/23, 10:04:05 PM" (Locale: "en-us", ZoneId "America/New_York")
-var dIso = d.toISOString();                                         // return 2023-08-06T02:04:05Z"
-var dDate = d;                                                      // return "неділя, 6 серпня 2023 р. о 05:04:05 за східноєвропейським літнім часом"```
+var dLocal = d.toLocaleString();                                    // return "2023-08-05 22:04:05" (Locale: "UTC", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"))
+var dLocal_us = d.toLocaleString("en-us", "America/New_York");      // return "8/5/23, 10:04:05 PM" (Locale: "en-us", ZoneId "America/New_York")
+var dIso = d.toISOString();                                         // return "2023-08-06T02:04:05Z"
+var dDate = d;                                                      // return "Saturday, August 5, 2023 at 22:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
 ```
 {: .copy-code}
 
-##### locale
+#### locale
 
 **Syntax:**
 
@@ -1409,16 +2611,16 @@ _Input date Without TZ (TZ Default = ZoneId.systemDefault())_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5);          //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds) => TZ Default = ZoneId.systemDefault();
 var dLocal = d.toLocaleString("en-US");         //  return "8/6/23, 4:04:05 AM" (Locale: "en-US")
-var dIso = d.toISOString();                     //  return "2023-08-06T01:04:05Z", ZoneId:  Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00";
-var dDate = d;                                  //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом";
+var dIso = d.toISOString();                     //  return Default = ZoneId.systemDefault: "2023-08-06T08:04:05Z", (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dDate = d;                                  //  return "Sunday, August 6, 2023 at 4:04:05 AM Eastern Daylight Time" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
 ```
 {: .copy-code}
         
 ```java
 var d = new Date("2023-08-06T04:04:05.000");     //  Parameter (String 'yyyy-MM-ddThh:mm:ss.ms') => TZ Default = ZoneId.systemDefault():
-var dIso = d.toISOString();                      //  return "2023-08-06T01:04:05Z"
-var dLocal_de = d.toLocaleString("de");          //  return "06.08.23, 04:04:05"  (Locale: "de",  ZoneId "Europe/Kiev" = "+03:00")
-var dLocal_utc = d.toLocaleString("UTC");        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kiev" = "+03:00")
+var dIso = d.toISOString();                      //  return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dLocal_de = d.toLocaleString("de");          //  return "06.08.23, 04:04:05"  (Locale: "de",  ZoneId.systemDefault());
+var dLocal_utc = d.toLocaleString("UTC");        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId.systemDefault());
 ```
 {: .copy-code}
 
@@ -1426,13 +2628,13 @@ _Input date With TZ (TZ = parameter TZ or 'Z' equals 'UTC')_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin"); //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin";
 var dIso = d.toISOString();                             //  return "2023-08-06T02:04:05Z";
-var dLocal1 = d.toLocaleString("UTC");                  //  return "2023-08-06 05:04:05" (Locale: "UTC",  ZoneId Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00");
-var dLocal2 = d.toLocaleString("en-us");                //  return "8/6/23, 5:04:05 AM" (Locale: "en-US", ZoneId Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00");
-var dLocal3 = d.toLocaleString("de");                   // return "06.08.23, 05:04:05"  (Locale: "de",   ZoneId Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00");
+var dLocal1 = d.toLocaleString("UTC");                  //  return "2023-08-05 22:04:05" (Locale: "UTC",  (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal2 = d.toLocaleString("en-us");                //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal3 = d.toLocaleString("de");                   // return "05.08.23, 22:04:05"  (Locale: "de",   (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 ```     
 {: .copy-code}
 
-##### locale, time zone
+#### locale, time zone
 
 **Syntax:**
 
@@ -1451,15 +2653,15 @@ a Date object as a string, using locale settings and Id time zone.
 **Examples:**
 
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");         //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin"
-var dIso = d.toISOString();                                     //  return "2023-08-06T02:04:05Z"
-var dLocal1 = d.toLocaleString("UTC");                          //  return "2023-08-06 05:04:05" (Locale: "UTC",   ZoneId Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00");
-var dLocal2 = d.toLocaleString("en-us",  "America/New_York");   //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", ZoneId "America/New_York" = "-04:00")
-var dLocal3 = d.toLocaleString("de",  "Europe/Berlin");         //  return "06.08.23, 04:04:05"  (Locale: "de",    ZoneId "Europe/Berlin" =    "+02:00")
+var d = new Date(2023, 8, 6, 4, 4, 5, "Europe/Berlin");         //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds, TZ) => TZ "Europe/Berlin";
+var dIso = d.toISOString();                                     //  return "2023-08-06T02:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("UTC");                          //  return "2023-08-05 22:04:05" (Locale: "UTC",   (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
+var dLocal2 = d.toLocaleString("en-us", "America/New_York");    //  return "8/5/23, 10:04:05 PM" (Locale: "en-US", ZoneId "America/New_York" = "-04:00")
+var dLocal3 = d.toLocaleString("de", "Europe/Berlin");          //  return "06.08.23, 04:04:05"  (Locale: "de",    ZoneId "Europe/Berlin" = "+02:00")
 ```
 {: .copy-code}
 
-##### local, pattern (With Map options)
+#### local, pattern (With Map options)
 
 **Syntax:**
 
@@ -1483,102 +2685,187 @@ a Date object as a string, using locale settings, {"timeZone": "Id time zone",
 ```java
 var d = new Date("2023-08-06T04:04:05.00Z");         // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"
-var dLocal1 = d.toLocaleString();                    // return "2023-08-06 07:04:05" (Locale: Default "UTC",   ZoneId Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00");
+var dLocal1 = d.toLocaleString();                    // return "2023-08-06 00:04:05" (Locale: Default "UTC", ZoneId: (if ZoneId.systemDefault(): "America/New_York" = "-04:00"));
 
-var options = {"timeZone":"America/New_York"};       // TZ = "-04:00"
+var options = {"timeZone":"Europe/Berlin"};       // TZ = "+02:00"
 var optionsStr = JSON.stringify(options);       
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // "8/6/23, 12:04:05 AM"  ("8/6/23, 00:04:05 AM", Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // "8/6/23, 6:04:05 AM"  (Locale:  "en-US",  options: ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
-var d = new Date("2023-08-06T04:04:05.000");         // TZ => Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                          // return "2023-08-06T01:04:05Z"
-var options = {"timeZone":"America/New_York"};
+var d = new Date("2023-08-06T04:04:05.000");         // TZ => Default = ZoneId.systemDefault
+var dIso = d.toISOString();                          // return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var options = {"timeZone":"Europe/Berlin"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8/5/23, 9:04:05 PM" (Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8/6/23, 10:04:05 AM" (Locale: "en-US",  options: ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5);               // TZ => Default = ZoneId.systemDefault => "Europe/Kiev" = "+03:00"
-var dIso = d.toISOString();                          // return "2023-08-06T01:04:05Z"
-var options = {"timeZone":"America/New_York", "pattern": "M-d/yyyy, h:mm=ss a"};
+var d = new Date(2023, 8, 6, 4, 4, 5);               // TZ => Default = ZoneId.systemDefault
+var dIso = d.toISOString();                          // return "2023-08-06T08:04:05Z" (if ZoneId.systemDefault(): "America/New_York" = "-04:00")
+var options = {"timeZone":"Europe/Berlin", "pattern": "M-d/yyyy, h:mm=ss a"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8-5/2023, 9:04=05 PM" (pattern, Locale:  "en-US",   ZoneId  => "America/New_York" = "-04:00");
+var dLocal1 = d.toLocaleString("en-US", optionsStr); // return "8-6/2023, 10:04=05 AM" (options: pattern,  Locale = "en-US", ZoneId  => "Europe/Berlin" = "+02:00");
 ```
 {: .copy-code}
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5, "UTC");        // TZ => "UTC"
 var dIso = d.toISOString();                          // return "2023-08-06T04:04:05Z"       
-var options = {"timeZone":"America/New_York","dateStyle":"full","timeStyle":"full"};
+var options = {"timeZone":"Europe/Berlin","dateStyle":"full","timeStyle":"full"};
 var optionsStr = JSON.stringify(options);
-var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 00:04:05 за північноамериканським східним літнім часом"
-var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 12:04:05 AM Eastern Daylight Time"
-var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 00:04:05 Nordamerikanische Ostküsten-Sommerzeit"
+var dLocal1 = d.toLocaleString("uk-UA", optionsStr); // return  "неділя, 6 серпня 2023 р. о 06:04:05 за центральноєвропейським літнім часом"
+var dLocal2 = d.toLocaleString("en-US", optionsStr); // return  "Sunday, August 6, 2023 at 6:04:05 AM Central European Summer Time"
+var dLocal3 = d.toLocaleString("de", optionsStr);    // return  "Sonntag, 6. August 2023 um 06:04:05 Mitteleuropäische Sommerzeit"
 ```
 {: .copy-code}
 
-
-####  encodeURI: 
-
-The encodeURI() function escapes characters by UTF-8 code units, with each octet encoded in the format ***%XX***, left-padded with 0 if necessary. Because lone surrogates in UTF-16 do not encode any valid Unicode character.
-
-The Tbel library uses most of the standard JavaScript methods from the [encodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURI).
-
-*encodeURI()* escapes all characters except:
-
-```java
-A–Z a–z 0–9 - _ . ! ~ * ' ( ) ; / ? : @ & = + $ , #
-```
-
-**Syntax:**
-
-*String encodeURI(String uri)*
-
-**Parameters:**
-
-<ul>
-  <li><b>uri:</b> <code>string</code> - A string to be encoded as a URI.</li>
-</ul>
-
-**Return value:**
-
-A new string representing the provided string encoded as a URI.
+##### functions to add time units separately: years, months, weeks, days, hours, minutes, seconds, and milliseconds.
 
 **Examples:**
 
 ```java
-var uri = "https://mozilla.org/path with spaces/?param1=Київ 1&param2=Україна2";
-var encodedData = encodeURI(uri); // return "https://mozilla.org/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02"
+var stringDateUTC = "2024-01-01T10:00:00.00Z";
+var d = new Date(stringDateUTC);            // TZ => "UTC"
+var dIso = d.toISOString();                           // return 2024-01-01T10:00:00Z 
+        
+d.addYears(1);
+d.toISOString();                                     // return 2025-01-01T10:00:00Z
+
+d.addYears(-2);
+d.toISOString();                                     // return 2023-01-01T10:00:00Z
+
+d.addMonths(2);
+d.toISOString();                                     // return 2023-03-01T10:00:00Z
+
+d.addMonths(10);
+d.toISOString();                                     // return 2024-01-01T10:00:00Z
+
+d.addMonths(-13);
+d.toISOString();                                     // return 2022-12-01T10:00:00Z
+
+d.addWeeks(4);
+d.toISOString();                                     // return 2022-12-29T10:00:00Z
+
+d.addWeeks(-5);
+d.toISOString();                                     // return 2022-11-24T10:00:00Z
+
+d.addDays(6);
+d.toISOString();                                     // return 2022-11-30T10:00:00Z
+
+d.addDays(45);
+d.toISOString();                                     // return 2023-01-14T10:00:00Z
+
+d.addDays(-50);
+d.toISOString();                                     // return 2022-11-25T10:00:00Z
+
+d.addHours(23);
+d.toISOString();                                     // return 2022-11-26T09:00:00Z
+
+d.addHours(-47);
+d.toISOString();                                     // return 2022-11-24T10:00:00Z
+
+d.addMinutes(59);
+d.toISOString();                                     // return 2022-11-24T10:59:00Z
+        
+d.addMinutes(-60);
+d.toISOString();                                     // return 2022-11-24T09:59:00Z
+
+d.addSeconds(59);
+d.toISOString();                                     // return 2022-11-24T09:59:59Z
+
+d.addSeconds(-60);
+d.toISOString();                                     // return 2022-11-24T09:58:59Z
+
+d.addNanos(999999);
+d.toISOString();                                     // return 2022-11-24T09:58:59.000999999Z
+
+d.addNanos(-1000000);
+d.toISOString();                                     // return 2022-11-24T09:58:58.999999999Z
 ```
 {: .copy-code}
 
-####  decodeURI:
+### Geofencing utility functions
 
-The decodeURI() function decodes a Uniform Resource Identifier (URI) previously created by encodeURI() or a similar routine.
+#### isInsidePolygon
 
-The Tbel library uses most of the standard JavaScript methods from the [decodeURI()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/decodeURI).
+Checks whether the given geographic coordinate is within the perimeter of the given polygon.
 
 **Syntax:**
 
-*String decodeURI(String uri)*
+*boolean isInsidePolygon(double latitude, double longitude, String perimeter)*
 
 **Parameters:**
 
 <ul>
-  <li><b>uri:</b> <code>string</code> - A complete, encoded Uniform Resource Identifier.</li>
+  <li><b>latitude:</b> <code>double</code> – The latitude of the coordinate.</li>
+  <li><b>longitude:</b> <code>double</code> – The longitude of the coordinate.</li>
+  <li><b>perimeter:</b> <code>String</code> – A string that represents a polygon using a nested array format:
+    <ul>
+      <li>The first array defines the outer boundary of the polygon.</li>
+      <li>Any additional arrays define inner boundaries (holes).</li>
+      <li>Each point is defined as a pair <code>[latitude, longitude]</code>.</li>
+    </ul>
+  </li>
 </ul>
 
 **Return value:**
 
-A new string representing the unencoded version of the given encoded Uniform Resource Identifier (URI).
+A boolean indicating the result:
+- `true` if the coordinate is inside the polygon. 
+- `false` otherwise.
 
 **Examples:**
 
 ```java
-var uri = "https://mozilla.org/path%20with%20spaces/?param1=%D0%9A%D0%B8%D1%97%D0%B2%201&param2=%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B02";
-var decodedData = encodeURI(uri); // return "https://mozilla.org/path with spaces/?param1=Київ 1&param2=Україна2"
+var perimeter = "[[[37.7810,-122.4210],[37.7890,-122.3900],[37.7700,-122.3800],[37.7600,-122.4000],[37.7700,-122.4250],[37.7810,-122.4210]],[[37.7730,-122.4050],[37.7700,-122.3950],[37.7670,-122.3980],[37.7690,-122.4100],[37.7730,-122.4050]]]";
+// Outside the polygon
+return isInsidePolygon(37.8000, -122.4300, perimeter); // Returns false
+// Inside the polygon
+return isInsidePolygon(37.7725, -122.4010, perimeter); // Returns true
+// Inside the hole
+return isInsidePolygon(37.7700, -122.4030, perimeter); // Returns false
 ```
-{: .copy-code} 
+{: .copy-code}
+
+#### isInsideCircle
+
+Checks whether the given geographic coordinate is within a circular perimeter.
+
+**Syntax:**
+
+*boolean isInsideCircle(double latitude, double longitude, String perimeter)*
+
+**Parameters:**
+
+<ul>
+  <li><b>latitude:</b> <code>double</code> – The latitude of the coordinate.</li>
+  <li><b>longitude:</b> <code>double</code> – The longitude of the coordinate.</li>
+  <li><b>perimeter:</b> <code>String</code> – A JSON string representing a circle with fields: 
+    <ul>
+      <li><code>latitude</code>: latitude of the circle center.</li>
+      <li><code>longitude</code>: longitude of the circle center.</li>
+      <li><code>radius</code>: radius of the circle.</li>
+      <li><code>radiusUnit</code>: optional, defines the unit of the radius. Defaults to <code>METER</code>. Supported values are: <code>METER</code>, <code>KILOMETER</code>, <code>FOOT</code>, <code>MILE</code>, <code>NAUTICAL_MILE</code>.</li>
+    </ul>
+  </li>
+</ul>
+
+**Return value:**
+
+A boolean indicating the result:
+- `true` if the coordinate is inside the circle.
+- `false` otherwise.
+
+**Examples:**
+
+```java
+var perimeter = "{\"latitude\":37.7749,\"longitude\":-122.4194,\"radius\":3000,\"radiusUnit\":\"METER\"}";
+// Outside the circle
+return isInsideCircle(37.8044, -122.2712, perimeter); // Returns false
+// Inside the circle
+return isInsideCircle(37.7599, -122.4148, perimeter); // Returns true
+```
+{: .copy-code}

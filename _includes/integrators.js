@@ -64,9 +64,9 @@ function createBox(integrator) {
      textSite.textContent = 'Visit us at: ';
 
      var linkSite = document.createElement('a');
-     var link = integrator.site.href.replace('https://', '').replace('http://', '').replace('www.', '').replace('/', '');
+     var link = integrator.site.href.replace('https://', '').replace('http://', '').replace('/', '');
      linkSite.href = 'https://' + link;
-     linkSite.textContent = link;
+     linkSite.textContent = link.replace('www.', '');
      linkSite.target = integrator.site.target;
      linkSite.className = 'links';
      box.appendChild(Site);

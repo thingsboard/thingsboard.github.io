@@ -1,4 +1,3 @@
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-javascript-2-pe.png)
 
 The script used in the example:
 
@@ -64,4 +63,4 @@ function decodeToJson(payload) {
 
 return result;
 ```
-{:.copy-code.expandable-15}
+{:.copy-code.expandable-10}

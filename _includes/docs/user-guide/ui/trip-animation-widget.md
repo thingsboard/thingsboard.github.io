@@ -10,7 +10,7 @@
 {% assign EMULATOR = "device-emulator-pe.png" %}
 {% assign TERMINAL = "timeseries-map-bus-pe.js" %}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 {% assign NEW_DEVICE = "[create a new device](/docs/paas/getting-started-guides/helloworld/#step-1-provision-device)" %}
 {% assign YOUR_HOST = "[download the script](/docs/user-guide/resources/timeseries-map-bus-cloud.js)" %}
 {% assign EMULATOR = "device-emulator-paas.png" %}
@@ -70,26 +70,26 @@ All further actions will be performed in the widget settings window on the "Appe
 
 Now let's proceed directly to reviewing each item on the "Appearance" tab in the Trip Animation widget settings.
 
-#### Data settings
+### Data settings
 
 In the "Data settings" section you can add a special symbol that will be displayed next to the entity values. Additionally, you can set the number of digits to be displayed after the floating point number, and an alternative message when there is no data to display.
 
 {% include images-gallery.html imageCollection="data-settings" %}
 
-#### Map provider settings
+### Map provider settings
 
 Choose a map provider from the list or use custom provider.
 
 {% include images-gallery.html imageCollection="map-provider" %}
 
-#### Trip animation settings
+### Trip animation settings
 
 Here, you specify the names of the data keys containing the coordinates of your entity. By default, these are "latitude" and "longitude".
 You also specify the normalization data step in milliseconds. By default, this value is set to 1000.
 
 {% include images-gallery.html imageCollection="latitude-longitude-key-name" %}
 
-##### Tooltip
+#### Tooltip
 
 Make use of this feature to display a tooltip. You can also customize the tooltip to better match your style by changing the background and font colors, as well as adjusting its opacity.
 Alternatively, take advantage of the tooltip function to provide more dynamic content. In our example, the tooltip displays the entity's speed, offering a quick and informative glance at its current pace.
@@ -109,13 +109,13 @@ return res;
 ```
 {: .copy-code}
 
-#### Markers settings
+### Markers settings
 
 Set the initial rotation angle of the marker (in degrees).
 
 {% include images-gallery.html imageCollection="advanced-settings-additional-rotation-angle-for-marker" %}
 
-##### Label function
+#### Label function
 
 Show or hide the entity's label. You can also change the label text or utilize a label function for more dynamic information. 
 For example, the label could display the movement status of the entity, providing a quick and clear understanding of its current state.
@@ -135,7 +135,7 @@ return res;
 ```
 {: .copy-code}
 
-##### Marker function
+#### Marker function
 
 You can specify the following parameters to configure the marker:
 
@@ -163,7 +163,7 @@ return res;
 ```
 {: .copy-code}
 
-#### Path settings
+### Path settings
 
 You have the option to choose the path color or use the path color function. For example, the path color can change with increasing or decreasing speed, providing an intuitive visual cue about the pace at which the object is moving.
 
@@ -182,13 +182,13 @@ return res;
 ```
 {: .copy-code}
 
-##### Path decorator
+#### Path decorator
 
 Set the path decorator symbol, its color, end/start offset, repeatability, and size in pixels.
 
 {% include images-gallery.html imageCollection="advanced-settings-path-decorator" %}
 
-#### Points settings
+### Points settings
 
 The points represent telemetry data updates, allowing you to check each one individually. 
 
@@ -227,7 +227,7 @@ if (speed > 55) {
 ```
 {: .copy-code}
 
-#### Polygon settings
+### Polygon settings
 
 What’s a polygon? It’s a plane figure that’s described by a finite number of dots. You may mark your assets and any other entities with a polygon option.
 We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity.
@@ -275,7 +275,7 @@ The following settings are available for the polygon:
 
 {% include images-gallery.html imageCollection="advanced-settings-polygon-settings-6" %}
 
-#### Circle settings
+### Circle settings
 
 Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. You may mark your assets and any other entities with a circle option.
 We use circle which is based on coordinates that are specified within the device we use, but you can use any other entity.

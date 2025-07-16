@@ -11,7 +11,7 @@
 BeagleBone Black is a low-cost, community-supported development platform suitable for both professionals and hobbyists. 
 Boot into Linux in less than 10 seconds and start developing your projects with just one USB cable.
 The BeagleBone Black is the latest addition to the BeagleBoard.org family and, like its predecessors, is aimed at the 
-open source development community, early adopters, and anyone interested in a low-cost ARM Cortex-A8-based processor. 
+open-source development community, early adopters, and anyone interested in a low-cost ARM Cortex-A8-based processor. 
 It was equipped with a minimal set of features to allow the user to experience the power of the processor, and is not 
 intended as a full-fledged development platform, as many functions and interfaces provided by the processor are not 
 available with the BeagleBone Black through the embedded system. It is not a complete product designed to perform any 

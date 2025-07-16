@@ -162,6 +162,16 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001
 ![image](/images/gateway/mqtt-message-1.png)
 {: refdef}
 
+To use a configurable format for a timeseries entry, include a datetime string in the field defined by the *tsField* parameter. For example:  
+```bash
+mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58, "timestampField":"10.11.24 10:10:10.252"}'
+```
+{: .copy-code}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/mqtt-message-with-timestampField.png)
+{: refdef}
+
 The device will be created and displayed in ThingsBoard based on the passed parameters.
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-created-device-1.png)
@@ -355,6 +365,193 @@ Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/workers-sett
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/workers-settings-section-advanced.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
+
+## Configuration file
+
+Example of MQTT Connector configuration file:
+
+```json
+{
+  "broker": {
+    "name": "Default Local Broker",
+    "host": "127.0.0.1",
+    "port": 1883,
+    "clientId": "ThingsBoard_gateway",
+    "version": 5,
+    "maxMessageNumberPerWorker": 10,
+    "maxNumberOfWorkers": 100,
+    "sendDataOnlyOnChange": false,
+    "security": {
+      "type": "basic",
+      "username": "user",
+      "password": "password"
+    }
+  },
+  "mapping": [
+    {
+      "topicFilter": "sensor/data",
+      "converter": {
+        "type": "json",
+        "deviceNameJsonExpression": "${serialNumber}",
+        "deviceTypeJsonExpression": "${sensorType}",
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "string",
+            "key": "model",
+            "value": "${sensorModel}"
+          },
+          {
+            "type": "string",
+            "key": "${sensorModel}",
+            "value": "on"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
+          },
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${hum}"
+          },
+          {
+            "type": "string",
+            "key": "combine",
+            "value": "${hum}:${temp}"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "sensor/+/data",
+      "converter": {
+        "type": "json",
+        "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
+        "deviceTypeTopicExpression": "Thermometer",
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "string",
+            "key": "model",
+            "value": "${sensorModel}"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
+          },
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${hum}"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "sensor/raw_data",
+      "converter": {
+        "type": "bytes",
+        "deviceNameExpression": "[0:4]",
+        "deviceTypeExpression": "default",
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "raw",
+            "key": "rawData",
+            "value": "[:]"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "raw",
+            "key": "temp",
+            "value": "[4:]"
+          }
+        ]
+      }
+    },
+    {
+      "topicFilter": "custom/sensors/+",
+      "converter": {
+        "type": "custom",
+        "extension": "CustomMqttUplinkConverter",
+        "cached": true,
+        "extension-config": {
+          "temperatureBytes": 2,
+          "humidityBytes": 2,
+          "batteryLevelBytes": 1
+        }
+      }
+    }
+  ],
+  "connectRequests": [
+    {
+      "topicFilter": "sensor/connect",
+      "deviceNameJsonExpression": "${serialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/connect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
+    }
+  ],
+  "disconnectRequests": [
+    {
+      "topicFilter": "sensor/disconnect",
+      "deviceNameJsonExpression": "${serialNumber}"
+    },
+    {
+      "topicFilter": "sensor/+/disconnect",
+      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
+    }
+  ],
+  "attributeRequests": [
+    {
+      "retain": false,
+      "topicFilter": "v1/devices/me/attributes/request",
+      "deviceNameJsonExpression": "${serialNumber}",
+      "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
+      "topicExpression": "devices/${deviceName}/attrs",
+      "valueExpression": "${attributeKey}: ${attributeValue}"
+    }
+  ],
+  "attributeUpdates": [
+    {
+      "retain": true,
+      "deviceNameFilter": ".*",
+      "attributeFilter": "firmwareVersion",
+      "topicExpression": "sensor/${deviceName}/${attributeKey}",
+      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+    }
+  ],
+  "serverSideRpc": [
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "echo",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "responseTimeout": 10000,
+      "valueExpression": "${params}"
+    },
+    {
+      "deviceNameFilter": ".*",
+      "methodFilter": "no-reply",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "valueExpression": "${params}"
+    }
+  ]
+}
+```
+{:.copy-code.expandable-15}
 
 ## Next steps
 

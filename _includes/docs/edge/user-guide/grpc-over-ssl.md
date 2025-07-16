@@ -7,7 +7,7 @@ You can configure SSL termination in two ways: by utilizing the built-in SSL cap
 
 The instructions are divided into two main parts: configuring the server side (platform) and the client side (edge).
 
-### Server SSL Configuration
+## Server SSL Configuration
 
 Choose between the built-in mechanism or using a load balancer for SSL termination for gRPC traffic. Use the content toggle below to select and view the instructions for each option.
 
@@ -17,9 +17,9 @@ Load Balancer%,%load_balancer%,%templates/edge/user-guide/grpc-over-ssl-load-bal
 
 {% include content-toggle.html content-toggle-id="platformOption" toggle-spec=contenttogglespec %}
 
-### Configuring Edge to Use SSL Connection
+## Configuring Edge to Use SSL Connection
 
-#### Ubuntu or CentOS/RHEL
+### Ubuntu or CentOS/RHEL
 
 To enable SSL communication on the Edge for Ubuntu or CentOS/RHEL installations, execute the following command:
 
@@ -46,7 +46,7 @@ sudo systemctl restart tb-edge
 ```
 {: .copy-code}
 
-#### Docker
+### Docker
 
 In Docker setups, make sure the **CLOUD_RPC_SSL_ENABLED** variable in the `docker-compose.yml` file is set to 'true'. 
 If using self-signed certificates, also set **CLOUD_RPC_SSL_CERT** accordingly.

@@ -11,4 +11,5 @@ deviceImageFileName: orangepizero.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/orangepi-zero.md %}

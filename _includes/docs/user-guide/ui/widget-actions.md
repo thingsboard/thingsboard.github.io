@@ -1,4 +1,4 @@
-{% if docsPrefix == 'pe/' or docsPrefix == 'paas/' %}
+{% if docsPrefix == 'pe/' or docsPrefix contains 'paas/' %}
 {% assign mobileDocsPrefix = "pe/" %}
 {% assign mobilePrefix = "ThingsBoard PE Mobile Application" %}
 {% else %}
@@ -20,11 +20,11 @@ To fully understand how to use Actions, you have to add a State to your dashboar
 
 ## Add action
 
-Let's add your first action. In this step, we will outline only the general steps without going into the details of each setting. Examples of using each  [type of action](#action-types) and [action source](#action-sources) will be covered later in the guide for better understanding.
+Let&#39;s add your first action. In this step, we will outline only the general steps without going into the details of each setting. Examples of using each  [type of action](#action-types) and [action source](#action-sources) will be covered later in the guide for better understanding.
 
 Most widgets offer two configuration options: *basic* and *advanced*. Accordingly, the process of adding actions differs slightly between these modes. Let's explore both:
 
-If you're using the *basic* widget configuration:
+If you&#39;re using the *basic* widget configuration:
 
 - Enter the editing mode of the widget to which you want to add an action, scroll down and find the "Actions" menu item;
 - Click the "Add action" button (once you have created one or more actions, the "Add actions" button will change to the `+` icon).
@@ -36,10 +36,10 @@ If you're using the *basic* widget configuration:
 
 {% include images-gallery.html imageCollection="add-new-action-1" %}
 
-If you're using the *advanced* widget settings:
+If you&#39;re using the *advanced* widget settings:
 
 - Enter the widget editing mode, and navigate to the "Actions" tab. Currently, it is empty, but later all created actions will be displayed here;
-- Click the 'plus' icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
+- Click the "plus" icon in the top right corner of the screen to open a new "Add action" window. Here you must configure a new action by entering a name, specifying the action source, and selecting the action type. Further action configuration will depend on the selected action type. Then, click "Add" to proceed;
 - Now, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
 - Click "Apply" to save the widget settings;
 - Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
@@ -60,9 +60,12 @@ There are seven action types that are applicable to all widgets:
 - **Mobile action** - allows the use of various mobile device functions such as taking photos, scanning QR codes, getting device location, making phone calls and so on;
 - **Open URL** - allows you to go to any resource represented by a URL.
 
-Let's consider each of these types of actions separately.
+There is also a special action type available exclusively for [Map widgets](/docs/{{docsPrefix}}user-guide/widgets/map-widgets/){:target="_blank"}:
+- **Place map item** — allows you to create and place a new entity directly on the map widget in just a few clicks.
 
-#### Navigate to new dashboard state
+Let&#39;s consider each of these types of actions separately.
+
+### Navigate to new dashboard state
 
 States are so-called levels that allow you to navigate between different devices, assets, and widget objects to see the information you need in more detail.
 When choosing the _Navigate to new dashboard state_ action type, you will be transferred to the previously created state of your choice.
@@ -84,7 +87,7 @@ After saving your changes, you'll see an action icon next to each entity. Click 
 
 {% include images-gallery.html imageCollection="navigate-to-new-dashboard-state-2" %}
 
-##### Open new dashboard state in a separate dialog or in a popup window
+#### Open new dashboard state in a separate dialog or in a popup window
 
 There are times when it doesn't make sense to move to a separate dashboard state to view the details of a widget, and you just want to open it on the same dashboard page.
 For these situations, there is an _Dashboard state display option_ feature that allows opening another [state](/docs/{{docsPrefix}}user-guide/dashboards/#states) on the same page in a separate dialog box or in a popup window.  
@@ -102,7 +105,7 @@ To perform an action and open a dialog window with the new state, click an actio
 
 {% include images-gallery.html imageCollection="navigate-to-new-dashboard-state-3" %}
 
-#### Update current dashboard state
+### Update current dashboard state
 
 This action type allows updating a dashboard that you are currently on.
 While using a dashboard, you can view detailed information about a specific device/asset in real-time.
@@ -129,7 +132,7 @@ After saving changes, you will see icons opposite the entity names in the "Entit
 
 {% include images-gallery.html imageCollection="update-current-dashboard-state-3" %}
 
-#### Navigate to other dashboard
+### Navigate to other dashboard
 
 This type of action transfers you to a previously created dashboard of your choice.
 
@@ -148,7 +151,7 @@ After saving the changes, you can see an icon in the upper right part of the wid
 
 {% include images-gallery.html imageCollection="navigate-to-other-dashboard" %}
 
-#### Custom action
+### Custom action
 
 A Custom action allows manually configuring a function that can be used to add an individual action to your widget (for example deleting listed devices/assets).
 To configure a custom action with a function (with an example of a device deletion):
@@ -208,7 +211,7 @@ Clicking on one of them will perform the action of deleting the corresponding ob
 
 {% include images-gallery.html imageCollection="custom-action-2" %}
 
-#### Custom action (with HTML template)
+### Custom action (with HTML template)
 
 A Custom action with an HTML template allows manually entering a function in an existing HTML template (for example creating dialog windows with an opportunity to create or edit listed devices/assets).
 After choosing a Custom action type (with HTML template), four tabs appear for setting up the action:
@@ -988,11 +991,11 @@ Click on the action button next to the name of the device you want to edit. Afte
 
 {% include images-gallery.html imageCollection="custom-action-html-4" %}
 
-#### Mobile action
+### Mobile action
 
 Mobile action is explained in mobile application configuration. See [Mobile actions](/docs/{{mobileDocsPrefix}}mobile/mobile-actions/) for details.
 
-#### Open URL
+### Open URL
 
 This type of action will transfer you to the resource represented by the URL. This resource can be an HTML page, a document, an image, internal ThingsBoard page (for example, Alarms), etc.
 
@@ -1014,6 +1017,44 @@ After saving the changes, you can see an icon in the upper right part of the wid
 
 {% include images-gallery.html imageCollection="open-url-2" %}
 
+#### Place map item
+
+The **Place map item** action type allows users to create new entities and immediately place them on the map widget.
+
+<br>
+As an example, let&#39;s add a button that allows users to place charging stations on the map:
+
+To start, and to ensure that newly created entities are instantly displayed on the map, you need to configure the data source.
+
+- In the "**Overlays**" section, under the "**Marker**" tab, create a new entity alias as the data source. Name it "**EV stations**".
+- Since we&#39;ll be creating entities of the type "**EV station**", set the filter type to "**Asset type**" and specify the type as "**EV station**".
+- Apply changes.
+
+{% include images-gallery.html imageCollection="data-source-for-action" %}
+
+Now let&#39;s move on to configuring the action:
+
+- Scroll down to the "**Actions**" section and click the "**Add action**" button.
+- A new window will open, displaying all your created actions. Click the "plus" icon button in the top-right corner to add one.
+- Select the action source as "**Widget header button**", enter a name for the button, and choose its type.
+- Optionally, change the icon that will appear next to the button or hide it entirely. You can also set a custom color for the button.
+- From the dropdown menu, select the type of action to be performed. In our case, it&#39;s "**Place map item**".
+- Next, choose the **type of map item** to be placed — we&#39;ll be placing a "**Marker**".
+- The **custom action function** field already contains a default function that opens a dialog for creating a device or an asset — exactly what we need.
+- In the "**Action**" section, choose "**Place map item**" from the dropdown menu. Select the type of map item to be placed — in our case, it&#39;s "**Marker**". The Custom action function field contains a default function that opens a dialog to create a device or an asset — exactly what we need.
+- Then click "**Add**".
+- Apply all changes and save the dashboard.
+
+{% include images-gallery.html imageCollection="action" %}
+
+A new action button labeled "**Add EV station**" has now appeared at the top of the map. Let&#39;s use it.
+
+{% include images-gallery.html imageCollection="action-place-marker" showListImageTitles="true" %}
+
+Go to the "**Assets**" page — there you&#39;ll find your newly created asset, "**EV station 1**".
+
+{% include images-gallery.html imageCollection="action-created-asset" %}
+
 ## Action sources
 
 Action sources are specific actions that need to be performed to achieve a goal (like clicking a widget header button, double-clicking a row, or a map's marker). They vary across different widgets. 
@@ -1022,7 +1063,7 @@ Action sources will be explained separately for each widget type, separately usi
 Next, we will demonstrate how to utilize each action source using the "Entities table" widget as an example.
 If you're unfamiliar with adding an Entity table widget to your dashboard, you can [learn how to do so here](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget).
 
-#### Action cell button
+### Action cell button
 
 The "Action cell button" action adds an action button to each individual entity in the widget, such as deleting devices/assets or editing them.
 This action button is often used in the "Entity table" widget. In the example of this widget, let's consider the use of "Action cell button".
@@ -1045,7 +1086,7 @@ As you can see, there is an action cell button next to each entity name. By clic
 
 {% include images-gallery.html imageCollection="action-cell-button-2" %}
 
-#### On cell click 
+### On cell click 
 
 <i>* only in Entities table, Alarms table, Device admin table, and Asset admin table widgets.</i>
 
@@ -1096,7 +1137,7 @@ Similarly, clicking on a cell in the "humidity" column will appear with detailed
 
 {% include images-gallery.html imageCollection="on-cell-click-4" %}
 
-#### Widget header button
+### Widget header button
 
 The "Widget header button" action adds an action button in the header of the widget. Clicking this button executes an action. This button is responsible for the whole widget, not for separate entities. 
 The widget header button is the most commonly used action source, and it can be found in all widgets. To configure the _Widget header button_ action source, you should follow these steps:
@@ -1118,7 +1159,7 @@ As you see now, an action button has appeared in the header of the widget. After
 
 {% include images-gallery.html imageCollection="widget-header-button-2" %}
 
-#### On row click
+### On row click
 
 The "On row click" action triggers an action when a row in the widget is clicked. This action button is often used in the "Entity table" widget. Let's illustrate the use of the "On row click" action with the aforementioned widget as an example. Clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
 
@@ -1139,7 +1180,7 @@ Click on any entity row to perform an action, namely, to navigate to the selecte
 
 {% include images-gallery.html imageCollection="on-row-click-2" %}
 
-#### On row double click
+### On row double click
 
 The "On row double click" action triggers an action when a row in the widget is double-clicked. Let's explore its use with the "Entities table" widget, where this action is often used.
 Double-clicking on a row of the selected entity in the widget will navigate us to another state with detailed information about that entity.
@@ -1161,7 +1202,7 @@ Double-click on an entity row to perform an action, namely, navigate to the sele
 
 {% include images-gallery.html imageCollection="on-row-double-click-2" %}
 
-#### On node selected
+### On node selected
 
 <i>* only in Entities Hierarchy widget.</i>
 
@@ -1176,7 +1217,7 @@ To perform an action you should click any of the nodes in the Entities hierarchy
 
 {% include images-gallery.html imageCollection="on-node-selected-2" %}
 
-#### On HTML element click
+### On HTML element click
 
 <i>* only in HTML widgets.</i>
 
@@ -1245,7 +1286,7 @@ To execute an action, click on the widget title. This will navigate you to a sta
 
 {% include images-gallery.html imageCollection="on-html-element-click-4" %}
 
-#### Map widget action sources
+### Map widget action sources
 
 Map widget has unique action sources that need to be considered separately. 
 
@@ -1254,14 +1295,14 @@ Let's start by adding a map widget, namely OpenStreetMap widget. We have a separ
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
 {% endif %}
 
 Now it's time to add an action.
 All further explanations concerning actions assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
-##### On circle click
+#### On circle click
 
 Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. We use circle which is based on coordinates that are specified within the device we use.
 Learn how to add a circle on the Map widget, by reading [here](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/#circle-settings){:target="_blank"}.
@@ -1283,7 +1324,7 @@ After clicking on the circle on the map, action will be performed, namely, the t
 
 {% include images-gallery.html imageCollection="on-circle-click-3" %}
 
-##### On marker click
+#### On marker click
 
 The action will be executed by clicking on the red entity marker on the map.
 
@@ -1302,7 +1343,7 @@ Clicking on the marker on the map will take you to the specified state.
 
 {% include images-gallery.html imageCollection="on-marker-click-2" %}
 
-##### On polygon click
+#### On polygon click
 
 Polygon is a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates specified within the device we use, but you can use any other entity.
 You may mark your assets and any other entities with a polygon option.
@@ -1325,7 +1366,7 @@ To execute an action click anywhere inside the polygon.
 
 {% include images-gallery.html imageCollection="on-polygon-click-3" %}
 
-##### Tooltip tag action
+#### Tooltip tag action
 
 You can configure the map widget settings so that when you click on a marker, a tooltip appears. The tooltip can contain a link that will execute the configured action.
 Please note, in this manual explains only the basic usage of the tooltip tag action source. It is possible to configure several links for various devices/assets that return different values.
@@ -1360,7 +1401,7 @@ Click on the marker on the map to display the tooltip. To perform the action, cl
 
 ## Special actions settings
 
-#### Open right dashboard layout (mobile view)
+### Open right dashboard layout (mobile view)
 
 {% capture difference %}
 These settings will be useful to you if you are using the [{{mobilePrefix}}](/docs/{{mobileDocsPrefix}}mobile/). If you're not using it yet, [give it a try](/docs/{{mobileDocsPrefix}}mobile/getting-started/)! Stay informed about all events in your IoT solution, even when you're on the go.
@@ -1403,7 +1444,7 @@ Now open this dashboard in your [{{mobilePrefix}}](/docs/{{mobileDocsPrefix}}mob
 
 {% include images-gallery.html imageCollection="mob-layout-5" %}
 
-#### Set entity from widget
+### Set entity from widget
 
 _Set entity from widget_ checkbox is responsible for adding specific entity from the widget to the state. This allows you to use the entity in the target dashboard state by creating the "[Entity from dashboard state](/docs/{{docsPrefix}}user-guide/ui/aliases/#entity-from-dashboard-state)" or other aliases. For example, if you have a list of devices in the table widget and would like to display specific device details when you click on the table row.
 

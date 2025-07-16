@@ -5,4 +5,5 @@ description: ThingsBoard architecture
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/msa.md %}

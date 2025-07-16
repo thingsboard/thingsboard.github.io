@@ -11,23 +11,23 @@ Of course, this is a very simplified case, and real scenarios can be much more c
 
 Let's review the main concepts of the alarm below:
 
-#### Originator
+### Originator
 
 The alarm originator is an entity that causes the alarm. For example, "Device A" is the initiator of an alarm if ThingsBoard receives a temperature reading from it that exceeds the threshold value specified in the alarm rule, and it creates a "High Temperature" alarm.
 
-#### Type
+### Type
 
 Alarm type helps to identify the root cause of the alarm. It is set when [creating an alarm rule](#how-to-create-the-alarm). For example, "High Temperature" and "Low Humidity" are two different alarms.
 
 {% include images-gallery.html imageCollection="alarm-type" %}
 
-#### Severity
+### Severity
 
 Each alarm has severity which is either **Critical**, **Major**, **Minor**, **Warning**, or **Indeterminate** (sorted by priority in descending order). Also, set when [creating an alarm rule](#how-to-create-the-alarm).
 
 {% include images-gallery.html imageCollection="alarm-severity" %}
 
-#### Status
+### Status
 
 Alarms in ThingsBoard can be **active** or **cleared**. The system can automatically clear an alarm if a predefined condition is met, though setting such an Alarm clear condition is optional. 
 Additionally, users have the option to manually clear alarms.
@@ -42,7 +42,7 @@ To summarize, there are four alarm statuses:
 
 [Managing alarms](#view-and-manage-alarms) can be done through the "Alarms" page, via a dashboard widget, or within an entity's details tab.
 
-#### Alarm uniqueness
+### Alarm uniqueness
 
 ThingsBoard identifies alarm using a combination of originator, type, and start time. 
 Thus, at a single point in time, there is only one active alarm with the same originator, type, and start time.
@@ -59,7 +59,7 @@ Assuming the following sequence of events:
 
 So, a single "High Temperature" alarm will be generated with start time = 12:30 and end time = 13:00.
 
-#### Alarm timing details
+### Alarm timing details
 
 The alarm has a start time and a creation time. The alarm start time is determined by the moment the set threshold is exceeded (i.e., when the conditions for triggering the alarm first occurred), while the alarm creation time refers to the moment when the ThingsBoard system received telemetry from the device and processed it.
 By default, start time and creation time are the same.
@@ -93,7 +93,7 @@ Also, within the alarm's rule settings, you can define specific conditions under
 When ThingsBoard creates an alarm, in addition to the creation and start time, it also stores the **end time** of the alarm. By default, the start time and the end time are the same. 
 If the alarm trigger condition repeats, the platform updates the end time.
 
-#### Assignee
+### Assignee
 
 You can assign an alarm to a specific user so that, for example, he can respond to the elevated temperature in the room and take appropriate action.
 
@@ -110,7 +110,7 @@ Once the alarm is assigned, the user will receive a notification about it.
 
 {% include images-gallery.html imageCollection="assignee-alarm-2" %}
 
-#### Propagation of alarms
+### Propagation of alarms
 
 Suppose you have a topology where one Tenant has 1000 Customers and each Customer has 1000 Devices.
 Thus, you have 1M Devices in your server installation.

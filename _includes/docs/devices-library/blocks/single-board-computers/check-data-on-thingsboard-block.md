@@ -20,7 +20,7 @@ Once you have successfully published the attributes and telemetry data, you shou
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryCE %}

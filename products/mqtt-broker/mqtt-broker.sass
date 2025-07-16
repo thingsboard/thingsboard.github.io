@@ -127,7 +127,6 @@
         filter: brightness(0) saturate(100%) invert(97%) sepia(63%) saturate(13%) hue-rotate(226deg) brightness(102%) contrast(100%)
 
     #top-features
-      margin-bottom: 24px
       #cards
         display: flex
         flex-direction: column
@@ -160,35 +159,35 @@
               margin: 0 0 18px
 
     #scenarios
-      margin-bottom: 140px
-      .first-scenario
+      margin-bottom: 50px
+      .scenarios-header
         padding-top: 50px
       .block
         display: flex
         flex-direction: column
         gap: 20px
         justify-content: center
-        align-items: center
-        margin-bottom: 40px
-        .feature-des
-          flex: 1 0 50%
+        align-items: stretch
+        .scenarios-title
+          flex: 1
           width: 100%
           h3
             font-size: 42px
             color: #fff
-        .feature-details
+        .scenarios-details
           width: 100%
-          flex: 1 0 50%
+          flex: 1
           p
             font-size: 18px
             color: rgba(255, 255, 255, 0.8)
-        .fan-out-img
+        .reverse-img
           order: 1
         .image-container
+          flex: 3
           img
             width: 100%
         .description
-          flex: 1 0 45%
+          flex: 2
           padding: 24px
           border-radius: 12px
           background: #fff
@@ -198,7 +197,8 @@
             line-height: 32px
             color: rgba(0, 0, 0, 0.54)
             font-weight: 400
-        .fan-title
+            letter-spacing: 0.15px
+        .scenario-title
           text-align: center
           margin-bottom: 12px
           a
@@ -326,10 +326,10 @@
               filter: brightness(0) saturate(100%) invert(39%) sepia(74%) saturate(382%) hue-rotate(93deg) brightness(96%) contrast(103%)
 
     #get-started
-      padding-bottom: 160px
+      padding-bottom: 150px
       main
         .row
-          padding-top: 150px
+          padding-top: 50px
           .container
             text-align: center
             .block
@@ -357,17 +357,19 @@
                 color: #1F8B4D
                 transition: 0.6s
 
-    #latest-news
+    #news
       main
         max-width: 1500px
         margin-bottom: 24px
         h3
           font-size: 42px
-          padding-bottom: 20px
+          padding-bottom: 40px
         #cards
           display: flex
-          justify-content: center
+          justify-content: flex-start
           gap: 36px
+          flex-wrap: wrap
+          align-items: center
           &>div
             margin-bottom: 36px
             .block
@@ -418,8 +420,11 @@
                 img
                   height: fit-content
                   width: 100%
+                  max-height: 260px
                   &:hover
                     background: rgba(0, 0, 0, 0.38)
+            &.col-lg-6
+              max-width: 670px !important
 
     #background
       z-index: -1
@@ -432,66 +437,29 @@
         width: 436px
         height: 90px
         &.main1
-          top: 0
+          top: 10px
           width: 2560px
-          height: 2280px
+          height: 3000px
           left: -1280px
           background-color: #00240F
-        &.small1
-          top: 90px
-          right: -1000px
-          border: 2px solid #1F8B4D
-          mix-blend-mode: luminosity
-        &.small2
-          right: -1200px
-          top: -7px
-          background-color: #1F8B4D
         &.main2
-          top: -70px
+          top: -30px
           width: 3000px
-          height: 900px
+          height: 855px
           left: -1300px
           background-color: #f2f8f5
-        &.small3
-          top: 250px
-          right: -1020px
-          border: 2px solid #1F8B4D
-          mix-blend-mode: luminosity
-        &.small4
-          top: 286px
-          right: -1200px
-          background-color: #1F8B4D
         &.main3
           top: 60px
-          width: 2560px
-          height: 3600px
-          left: -1280px
+          width: 2760px
+          height: 5100px
+          left: -1380px
           background-color: #1F8B4D0F
-        &.small5
-          top: 150px
-          left: -1200px
-          border: 2px solid #1F8B4D
-          mix-blend-mode: luminosity
-        &.small6
-          top: 90px
-          left: -1050px
-          background-color: #1F8B4D
         &.main4
-          top: 60px
+          top: 0
           width: 2560px
           height: 650px
           left: -1280px
           background-color: #00240F
-        &.small7
-          top: 450px
-          right: -1000px
-          border: 2px solid #1F8B4D
-          mix-blend-mode: luminosity
-        &.small8
-          top: 485px
-          right: -1200px
-          background-color: #1F8B4D
-
 
   .header-animation
     max-width: 100%
@@ -521,27 +489,30 @@
       opacity: 1
       transform: translate3d(0, 0, 0)
 
-  @media screen and (min-width: 400px)
-    #tbmqContent
-      #background
-        div
-          &.main3
-            height: 3200px
   @media screen and (min-width: 600px)
     #tbmqContent
       #installation-options
         main
           .row
             padding-top: 0
+      #middle-features
+        main
+          padding-top: 50px
+      #get-started
+        padding-bottom: 100px
+        main
+          .row
+            padding-top: 150px
       #background
         div
           &.main2
-            top: -140px
-            height: 690px
+            top: -50px
+            height: 560px
           &.main3
-            height: 2000px
+            height: 3000px
           &.main4
-            height: 500px
+            top: 60px
+            height: 480px
   @media screen and (max-width: 500px)
     #tbmqContent
       #installation-options
@@ -565,7 +536,7 @@
           max-width: 80%
     #tbmqContent
       #top-features
-        margin-bottom: 24px
+        margin: 24px 0 24px
         #cards
           display: flex
           flex-direction: row
@@ -600,8 +571,8 @@
                 height: fit-content
                 margin: 0 0 18px
       #scenarios
-        .first-scenario
-          padding-top: 300px
+        .scenarios-header
+          padding-top: 230px
       #installation-options
         main
           .row
@@ -609,46 +580,36 @@
             flex-direction: column
       #middle-features
         main
-          padding-top: 190px
+          padding-top: 100px
       #bottom-features
         h3
-          padding-top: 250px
+          padding-top: 120px
+        #cards
+          flex-direction: row
+          &>div
+            .block
+              padding: 40px
+              display: flex
+              flex-direction: row
+              gap: 40px
+              text-align: unset
+              div
+                .title
+                  text-align: unset
       #get-started
-        padding-bottom: 230px
+        padding-bottom: 200px
       #background
         div
           &.main1
-            top: 170px
-            height: 2900px
-          &.small1
-            right: -620px
-            top: 95px
-          &.small2
-            top: 15px
-            right: -690px
+            top: 100px
+            height: 3200px
           &.main2
-            height: 640px
-          &.small3
-            top: 400px
-            right: -700px
-          &.small4
-            top: 445px
-            right: -800px
+            height: 500px
           &.main3
-            top: 90px
-            height: 1750px
-          &.small5
-            top: 145px
-            left: -700px
-          &.small6
-            top: 80px
-            left: -600px
-          &.small7
-            top: 477px
-            right: -700px
-          &.small8
-            top: 530px
-            right: -770px
+            top: 40px
+            height: 2200px
+          &.main4
+            height: 450px
   @media screen and (min-width: 992px)
     .col-lg-6
       max-width: 100% !important
@@ -679,11 +640,12 @@
       #scenarios
         .block
           flex-direction: row
-          .fan-out-img
+          align-items: center
+          .reverse-img
             order: unset
       #middle-features
         main
-          padding-top: 230px
+          padding-top: 100px
           .row
             flex-direction: row
             flex-wrap: nowrap
@@ -691,55 +653,27 @@
               .image-container
                 order: 1 !important
       #bottom-features
-        #cards
-          flex-direction: row
-          &>div
-            .block
-              padding: 40px
-              display: flex
-              flex-direction: row
-              gap: 40px
-              text-align: unset
-              div
-                .title
-                  text-align: unset
+        h3
+          padding-top: 130px
       #installation-options
         main
           .row
             flex-direction: row
             gap: 160px
+            padding-top: 140px
+      #news
+        main
+          #cards
+            flex-direction: row
       #background
         div
           &.main1
-            height: 1650px
-          &.small1
-            right: -900px
-            top: 75px
-          &.small2
-            right: -1020px
-            top: -15px
+            height: 2200px
           &.main2
-            height: 579px
-          &.small3
-            top: 370px
-            right: -765px
-          &.small4
-            top: 407px
-            right: -885px
-          &.small5
-            top: 110px
-            left: -940px
-          &.small6
-            top: 45px
-            left: -840px
+            height: 479px
+            top: 0
           &.main3
-            height: 1250px
-          &.small7
-            top: 435px
-            right: -900px
-          &.small8
-            top: 495px
-            right: -1000px
+            height: 1600px
   @media screen and (min-width: 1920px)
     #hero
       #hero-content
@@ -754,32 +688,17 @@
           margin-bottom: 40px
           line-height: 40px
           width: 65%
+    #tbmqContent
+      #middle-features
+        main
+          padding-top: 150px
+      #bottom-features
+        h3
+          padding-top: 150px
       #background
         div
-          &.small1
-            right: -880px
-            top: 50px
-          &.small2
-            right: -1020px
-            top: -20px
-          &.small3
-            top: 290px
-            right: -1000px
-          &.small4
-            top: 335px
-            right: -1200px
-          &.small5
-            top: 120px
-            left: -1130px
-          &.small6
-            top: 60px
-            left: -1060px
-          &.small7
-            top: 400px
-            right: -1110px
-          &.small8
-            top: 455px
-            right: -1200px
+          &.main3
+            height: 1400px
   @media screen and (min-width: 2480px)
     #hero
       #hero-content
@@ -791,27 +710,3 @@
           &.main1
             width: 3000px
             left: -1440px
-          &.small1
-            right: -1110px
-            top: 60px
-          &.small2
-            right: -1250px
-            top: -30px
-          &.small3
-            top: 300px
-            right: -1300px
-          &.small4
-            top: 350px
-            right: -1400px
-          &.small5
-            top: 135px
-            left: -1450px
-          &.small6
-            top: 80px
-            left: -1320px
-          &.small7
-            top: 410px
-            right: -1300px
-          &.small8
-            top: 460px
-            right: -1400px

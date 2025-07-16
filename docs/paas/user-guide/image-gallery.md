@@ -120,4 +120,5 @@ delete-image-3:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/image-gallery.md %}

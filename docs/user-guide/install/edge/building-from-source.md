@@ -11,15 +11,15 @@ description: Building ThingsBoard Edge from sources
 This guide will help you to download and build ThingsBoard Edge from sources. Instructions listed below are tested on Ubuntu 20.04 LTS
 and CentOS 7/8
 
-#### Required tools
+## Required tools
 
 This section contains installation instructions for build tools.
 
-##### Java
+### Java
 
 ThingsBoard Edge is build using Java 17. You can use [following instructions](/docs/user-guide/install/linux#java) to install Java 17.
 
-##### Maven
+### Maven
 
 ThingsBoard build requires Maven 3.1.0+.
 
@@ -31,7 +31,7 @@ B,CentOS,shell,resources/maven-centos-installation.sh,/docs/user-guide/install/r
 **Please note** that maven installation may set Java 7 as a default JVM on certain Linux machines. 
 Use java installation [instructions](#java) to fix this. 
 
-#### Source code
+## Source code
 
 You can clone source code of the project from the official [github repo](https://github.com/thingsboard/thingsboard-edge).
 
@@ -42,7 +42,7 @@ cd thingsboard-edge
 ```
 {: .copy-code}
 
-#### Build
+## Build
 
 Run the following command from the thingsboard edge folder to build the project:
 
@@ -51,7 +51,7 @@ mvn clean install -DskipTests
 ```
 {: .copy-code}
 
-#### Build local docker images
+## Build local docker images
 
 Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
 
@@ -60,7 +60,7 @@ mvn clean install -DskipTests -Ddockerfile.skip=false
 ```
 {: .copy-code}
 
-#### Build artifacts
+## Build artifacts
 
 You can find debian, rpm and windows packages in the target folder:
  
@@ -68,7 +68,7 @@ You can find debian, rpm and windows packages in the target folder:
 application/target
 ```
 
-#### Tips and tricks
+## Tips and tricks
 
 Thingsboard Edge is quite easy to build from sources on a brand-new clear environment.
 

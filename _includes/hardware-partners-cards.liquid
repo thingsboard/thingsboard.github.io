@@ -1,0 +1,36 @@
+{% assign hardwarePartnersCollection = site.data.hardware-partners %}
+
+{% for card in hardwarePartnersCollection %}
+    <div class="partner-box" id="{{ card.type | join: '|' }}">
+        <div class="box-background"></div>
+        <div class="wrapper">
+            <div class="card-content">
+                <div class="cardHeader">
+                    <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
+                    {% if card.showcase %}
+                        <a class="siteLink" href="{{ card.showcase.href }}" target="_blank">See showcase</a>
+                    {% endif %}
+                </div>
+                <div class="text">
+                    <p class="title">
+                        <a href="{{ card.site.href }}" target="_blank" {% if card.site.href == "/#" %} style="pointer-events: none" {% endif %}>
+                            {{ card.name }}
+                        </a>
+                    </p>
+                    <p class="description">{{ card.description }}</p>
+                </div>
+            </div>
+            {% assign linksCount = card.links | size %}
+            <div class="links{% if linksCount >= 4 %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
+                {% for link in card.links %}
+                    <a href="{{ link[1].href }}">{{ link[1].label }}</a>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+
+
+
+

@@ -6,10 +6,10 @@ toc:
 - title: What is ThingsBoard?
   path: /docs/paas/getting-started-guides/what-is-thingsboard/
 - title: What is ThingsBoard Cloud?
-  path: /products/paas/what-is-thingsboard-cloud/
+  path: /docs/paas/getting-started-guides/what-is-thingsboard-cloud/
 - title: How to connect your device?
   path: /docs/paas/getting-started-guides/connectivity/
-- title: Solution Templates
+- title: Solution templates
   new: true
   section:
     - title: Overview
@@ -18,11 +18,18 @@ toc:
       path: /docs/paas/solution-templates/temperature-humidity-sensors/
     - title: Smart office
       path: /docs/paas/solution-templates/smart-office/
+    - title: SCADA Oil & Gas Drilling system
+      path: /docs/paas/solution-templates/scada-drilling-system/
+      new: true
+    - title: SCADA Energy management
+      path: /docs/paas/solution-templates/scada-energy-management/
+      new: true
     - title: Fleet tracking
       path: /docs/paas/solution-templates/fleet-tracking/
     - title: Fuel Level Monitoring
       path: /docs/paas/solution-templates/fuel-level-monitoring/
-      new: true
+    - title: Swimming Pool SCADA system
+      path: /docs/paas/solution-templates/swimming-pool-scada-system/
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
     - title: Smart retail
@@ -37,14 +44,17 @@ toc:
   section:
     - title: Entities and Relations
       path: /docs/paas/user-guide/entities-and-relations/
-    - title: Device Profiles
+    - title: Device profiles
       path: /docs/paas/user-guide/device-profiles/
-    - title: Asset Profiles
+    - title: Asset profiles
       path: /docs/paas/user-guide/asset-profiles/
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
       path: /docs/paas/user-guide/telemetry/
+    - title: Calculated fields
+      path: /docs/paas/user-guide/calculated-fields/
+      new: true
     - title: Alarms
       path: /docs/paas/user-guide/alarms/
     - title: Remote commands to devices
@@ -53,29 +63,42 @@ toc:
       path: /docs/paas/user-guide/ota-updates/
     - title: Notification center
       path: /docs/paas/user-guide/notifications/
-    - title: Domains
-      path: /products/paas/domains/
 - title: Dashboards
   section:
     - title: Overview
       path: /docs/paas/user-guide/dashboards/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
+    - title: Unit conversion
+      path: /docs/paas/user-guide/ui/unit-conversion/
+      new: true
+    - title: Layouts
+      path: /docs/paas/user-guide/ui/layouts/
+    - title: SCADA
+      new: true
+      section:
+        - title: Overview
+          path: /docs/paas/user-guide/scada/
+        - title: SCADA symbols development guide
+          path: /docs/paas/user-guide/scada/scada-symbols-dev-guide/
     - title: Widgets
       section:
         - title: Overview
           path: /docs/paas/user-guide/widgets/
-        - title: Widget Actions
+        - title: Widget actions
           path: /docs/paas/user-guide/ui/widget-actions/
-        - title: Widgets Library
+        - title: Widgets library
           path: /docs/paas/user-guide/ui/widget-library/
         - title: Widgets development
           path: /docs/paas/user-guide/contribution/widgets-development/
         - title: Chart widgets
-          path: /docs/pe/user-guide/ui/chart-widget/
-        - title: Entities Table widget
+          path: /docs/paas/user-guide/ui/chart-widget/
+        - title: Map widgets
+          path: /docs/paas/user-guide/widgets/map-widgets/
+          new: true
+        - title: Entities table widget
           path: /docs/paas/user-guide/ui/entity-table-widget/
-        - title: Trip Animation Widget
+        - title: Trip animation widget
           path: /docs/paas/user-guide/ui/trip-animation-widget/
         - title: Advanced data key configuration
           path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
@@ -87,19 +110,19 @@ toc:
       path: /docs/paas/user-guide/rule-engine-2-0/overview/
     - title: Nodes
       section:
-        - title: Filter Nodes
+        - title: Filter nodes
           path: /docs/paas/user-guide/rule-engine-2-0/filter-nodes/
-        - title: Enrichment Nodes
+        - title: Enrichment nodes
           path: /docs/paas/user-guide/rule-engine-2-0/enrichment-nodes/
-        - title: Transformation Nodes
+        - title: Transformation nodes
           path: /docs/paas/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action Nodes
+        - title: Action nodes
           path: /docs/paas/user-guide/rule-engine-2-0/action-nodes/
-        - title: External Nodes
+        - title: External nodes
           path: /docs/paas/user-guide/rule-engine-2-0/external-nodes/
-        - title: Analytics Nodes
+        - title: Analytics nodes
           path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
-        - title: Flow Nodes
+        - title: Flow nodes
           path: /docs/paas/user-guide/rule-engine-2-0/flow-nodes/
     - title: Data processing & actions
       section:
@@ -154,7 +177,6 @@ toc:
       path: /docs/paas/user-guide/mail-templates/
     - title: Custom translation
       path: /docs/paas/user-guide/custom-translation/
-      new: true
     - title: Custom menu
       path: /docs/paas/user-guide/custom-menu/
 - title: Integrations
@@ -173,15 +195,15 @@ toc:
       path: /docs/paas/user-guide/integrations/kafka/
     - title: OPC-UA
       path: /docs/paas/user-guide/integrations/opc-ua/
-    - title: Actility ThingPark
+    - title: ThingPark
       path: /docs/paas/user-guide/integrations/thingpark/
-    - title: TheThingsStack
+    - title: The Things Stack Community
       path: /docs/paas/user-guide/integrations/ttn/
-    - title: TheThingsIndustries
+    - title: The Things Stack Industries
       path: /docs/paas/user-guide/integrations/tti/
     - title: KPN Things
       path: /docs/paas/user-guide/integrations/kpn-things/
-    - title: LORIOT
+    - title: Loriot
       path: /docs/paas/user-guide/integrations/loriot/
     - title: ChirpStack
       path: /docs/paas/user-guide/integrations/chirpstack/
@@ -210,6 +232,14 @@ toc:
     - title: Particle
       path: /docs/paas/user-guide/integrations/particle/
       new: true
+    - title: Apache Pulsar
+      path: /docs/paas/user-guide/integrations/apache-pulsar/
+    - title: AWS SQS
+      path: /docs/paas/user-guide/integrations/aws-sqs/
+    - title: RabbitMQ
+      path: /docs/paas/user-guide/integrations/rabbitmq/
+    - title: T-Mobile – IoT CDP
+      path: /docs/paas/user-guide/integrations/t-mobile-iot-cdp/
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -220,28 +250,38 @@ toc:
       path: /docs/trendz/
     - title: Kafka Streams
       path: /docs/paas/samples/analytics/kafka-streams/
-- title: Other Features
+- title: Mobile center
   section:
-    - title: Device Connectivity Status
+    - title: Overview
+      path: /docs/paas/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/paas/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/paas/user-guide/ui/mobile-qr-code/
+- title: Other features
+  section:
+    - title: Edge computing
+      path: /docs/pe/user-guide/edge-computing/
+    - title: Device connectivity status
       path: /docs/paas/user-guide/device-connectivity-status/
-    - title: Claiming Devices
+    - title: Claiming devices
       path: /docs/paas/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/paas/user-guide/device-provisioning/
     - title: Image gallery
       path: /docs/paas/user-guide/image-gallery/
       new: true
-    - title: Entity Views
+    - title: Entity views
       path: /docs/paas/user-guide/entity-views/
-    - title: API Limits
+    - title: API limits
       path: /docs/paas/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/paas/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/paas/user-guide/version-control/
-    - title: PSM and eDRX Support
-      path: /docs/user-guide/psm/
-    - title: Bulk Provisioning
+    - title: PSM and eDRX support
+      path: /docs/paas/user-guide/psm/
+    - title: Bulk provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
     - title: Scheduler
       path: /docs/paas/user-guide/scheduler/
@@ -249,38 +289,45 @@ toc:
       path: /docs/paas/user-guide/reporting/
     - title: CSV/XLS data export
       path: /docs/paas/user-guide/csv-xls-data-export/
-    - title: File Storage
+    - title: File storage
       path: /docs/paas/user-guide/file-storage/
     - title: ThingsBoard Expression Language (TBEL)
       path: /docs/paas/user-guide/tbel/
       new: true
 - title: Security
   section:
-    - title: Audit Log
+    - title: Audit logs
       path: /docs/paas/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/paas/user-guide/rbac/
-    - title: OAuth 2 Support
+    - title: Secrets storage
+      path: /docs/paas/user-guide/secrets-storage/
+      new: true
+    - title: Two-factor authentication
+      path: /docs/paas/user-guide/two-factor-authentication/
+    - title: OAuth 2.0
       path: /docs/paas/user-guide/oauth-2-support/
-    - title: HTTP Transport
+    - title: Domains
+      path: /docs/paas/domains/
+    - title: HTTP transport
       section:
-        - title: Access Token based authentication
+        - title: Access token based authentication
           path: /docs/paas/user-guide/ssl/http-access-token/
-    - title: MQTT Transport
+    - title: MQTT transport
       section:
         - title: Device authentication options
           path: /docs/paas/user-guide/device-credentials/
-        - title: Access Token based authentication
+        - title: Access token based authentication
           path: /docs/paas/user-guide/access-token/
-        - title: Basic MQTT Credentials
+        - title: Basic MQTT credentials
           path: /docs/paas/user-guide/basic-mqtt/
-        - title: X.509 Certificate based authentication
+        - title: X.509 certificate based authentication
           path: /docs/paas/user-guide/certificates/
-    - title: CoAP Transport
+    - title: CoAP transport
       section:
-        - title: Access Token based authentication
+        - title: Access token based authentication
           path: /docs/paas/user-guide/ssl/coap-access-token/
-        - title: X.509 Certificate based authentication
+        - title: X.509 certificate based authentication
           path: /docs/paas/user-guide/ssl/coap-x509-certificates/
 - title: Administration UI
   section:
@@ -304,12 +351,9 @@ toc:
       path: /docs/paas/user-guide/ui/slack-settings/
     - title: Microsoft Teams Settings
       path: /docs/paas/user-guide/ui/microsoft-teams-settings/
-    - title: Mail Settings
+    - title: Mail server
       path: /docs/paas/user-guide/ui/mail-settings/
-    - title: Mobile application QR code
-      path: /docs/paas/user-guide/ui/mobile-qr-code/
-      new: true
 - title: Subscriptions
-  path: /products/paas/subscription/
+  path: /docs/paas/subscription/
 - title: Plan and billing
-  path: /products/paas/billing-info/
+  path: /docs/paas/billing-info/

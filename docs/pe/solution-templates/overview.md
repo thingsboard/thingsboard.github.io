@@ -38,4 +38,5 @@ remove-solution-template:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/solution-templates/overview.md %}

@@ -13,4 +13,5 @@ deviceImageFileName: banana-pi-bpi-m5.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/banana-pi-bpi-m5.md %}

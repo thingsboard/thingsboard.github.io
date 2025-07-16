@@ -47,12 +47,7 @@ Before setting up a **Particle integration**, you need to create an **Uplink Con
 
 To create an **Uplink Converter**, go to the **Data Converters** section and click **Add new data converter** -> **Create new converter**, name it **"Uplink data converter for Particle Integration"** and select type **Uplink**. Use debug mode for now.
 
-{% capture difference %}
-**NOTE**
-<br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space used by the database because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when debugging is done.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 

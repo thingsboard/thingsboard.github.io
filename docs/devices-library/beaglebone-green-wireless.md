@@ -13,4 +13,5 @@ deviceImageFileName: beaglebone-green-wireless.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/beaglebone-green-wireless.md %}

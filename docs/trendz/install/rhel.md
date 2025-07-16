@@ -10,7 +10,7 @@ description: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install Trendz Analytics on RHEL/CentOS 7/8. 
 
@@ -43,11 +43,11 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 ```
 {: .copy-code}
 
-### Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 2. Trendz Analytics service installation
+## Step 2. Trendz Analytics service installation
 
 Download installation package.
 
@@ -63,7 +63,7 @@ sudo rpm -Uvh trendz-{{ site.release.trendz_ver }}.rpm
 ```
 {: .copy-code}
 
-### Step 3. Obtain and configure license key 
+## Step 3. Obtain and configure license key 
 
 We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
@@ -83,7 +83,7 @@ Add the following lines to the configuration file and put your license secret:
 export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
-### Step 4. Configure connection with ThingsBoard Platform
+## Step 4. Configure connection with ThingsBoard Platform
 
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
@@ -102,23 +102,20 @@ export TB_API_URL=http://localhost:8080
 ```
 {: .copy-code}
 
-### Step 5. Configure Trendz database
+## Step 5. Configure Trendz database
 Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
 service from your cloud vendor.
 
-#### PostgreSQL Installation
+### PostgreSQL Installation
 
 {% include templates/install/postgres-install-rhel.md %}
 
-Then, press "Ctrl+D" to return to main user console.
+After configuring the password, edit the **pg_hba.conf** to use MD5 authentication with the postgres user.
 
-After configuring the password, edit the pg_hba.conf to use MD5 authentication with the postgres user.
-
-Edit pg_hba.conf file: 
+Edit the **pg_hba.conf** file: 
 
 ```bash
-sudo nano /var/lib/pgsql/15/data/pg_hba.conf
-
+sudo nano /var/lib/pgsql/16/data/pg_hba.conf
 ```
 {: .copy-code}
 
@@ -138,18 +135,16 @@ host    all             all             127.0.0.1/32            md5
 Finally, you should restart the PostgreSQL service to initialize the new configuration:
 
 ```bash
-sudo systemctl restart postgresql-15.service
-
+sudo systemctl restart postgresql-16.service
 ```
 {: .copy-code}
 
-#### Create Database for Trendz
+### Create Database for Trendz
 
 Connect to the database to create trendz DB:
 
 ```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-
 ```
 {: .copy-code}
 
@@ -157,12 +152,13 @@ Execute create database statement
 
 ```bash
 CREATE DATABASE trendz;
-\q
-
 ```
 {: .copy-code}
 
-#### Configure database connection for Trendz
+Then, press “Ctrl+D” to return to main user console.
+
+
+### Configure database connection for Trendz
 
 Edit Trendz configuration file 
 
@@ -181,7 +177,7 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
-### Step 6. Run installation script
+## Step 6. Run installation script
 
 Once Trendz service is installed and DB configuration is updated, you can execute the following script:
 
@@ -189,7 +185,7 @@ Once Trendz service is installed and DB configuration is updated, you can execut
 sudo /usr/share/trendz/bin/install/install.sh
 ``` 
 
-### Step 7. Start Trendz service
+## Step 7. Start Trendz service
 
 Execute the following command to start Trendz Analytics:
 
@@ -207,14 +203,14 @@ http://localhost:8888/trendz
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
 the server or with a domain name. Also, check that port 8888 opened for public access.
 
-#### Authentication
+### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Step 8. Install Trendz Python executor
+## Step 8. Install Trendz Python executor
 For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed.
 Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
 But in this section we will write how to install Python libraries directly on the server with Trendz.
@@ -242,7 +238,7 @@ sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
 {: .copy-code}
 
 
-### Step 9. HTTPS configuration
+## Step 9. HTTPS configuration
 
 You may want to configure HTTPS access using HAProxy. 
 This is possible in case you are hosting Trendz in the cloud and have a valid DNS name assigned to your instance.
@@ -291,7 +287,7 @@ https://new-trendz-domain.com
 
 Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
 
-### Step 10. Host ThingsBoard and Trendz on the same domain
+## Step 10. Host ThingsBoard and Trendz on the same domain
 ThingsBoard and Trendz can share same domain name. In this case ThingsBoard web page would be loaded using following link:
 
 ```bash
@@ -320,7 +316,10 @@ acl trendz_acl path_beg /trendz path_beg /apiTrendz
 use_backend tb-trendz if trendz_acl
 ```
 
-### Troubleshooting
+## Post-installation steps
+It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
+
+## Troubleshooting
 
 Trendz logs are stored in the following directory:
  
@@ -333,6 +332,6 @@ You can issue the following command in order to check if there are any errors on
 ```bash
 cat /var/log/trendz/trendz.log | grep ERROR
 ```
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

@@ -10,7 +10,7 @@ as well as route details, status of the asset on the route, etc.
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we created a "Fleet Tracking" dashboard that displays data from multiple buses. This dashboard contains 2 states - **Main state** and **Bus state**.
 
@@ -34,7 +34,7 @@ Also, for the convenience of viewing information, the user can switch from day t
 You may always customize the "Fleet Tracking" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
 
-### Devices
+## Devices
 
 We have already created four bus tracking devices and loaded some demo data for them. 
 See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
@@ -50,6 +50,6 @@ The most simple example of the expected payload is in JSON format:
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
+## Alarms
 
 Alarms are generated using two Alarm rules in the "bus" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/).

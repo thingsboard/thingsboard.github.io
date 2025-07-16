@@ -1,7 +1,7 @@
 {% include docs/user-guide/rule-engine-2-0/ce-transformation-nodes.md %}
 
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 

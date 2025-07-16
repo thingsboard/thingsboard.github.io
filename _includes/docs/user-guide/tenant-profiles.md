@@ -26,7 +26,7 @@ This group of settings allows the System Administrator to configure a maximum nu
 **[ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/)** supports limits for everything listed above and as well additional constraint support for the following entities: integrations, converters, and scheduler events.
 {% endif %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 **[ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/)** supports limits for the following entities: devices, dashboards, assets, users, integrations, scheduler events, customers, rule chains, and converters.
 {% endif %}
 

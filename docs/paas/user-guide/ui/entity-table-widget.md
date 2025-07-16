@@ -171,4 +171,5 @@ actions-column:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/entity-table-widget.md %}

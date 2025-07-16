@@ -15,7 +15,7 @@ mkdir -p ~/.tb-pe-http-integration-logs && sudo chown -R 799:799 ~/.tb-pe-http-i
 Execute the following command to run the integration:
 
 ```bash
-docker run -it -v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration \
+docker run -it -p 8082:8082 -v ~/.tb-pe-http-integration-logs:/var/log/tb-http-integration \
 -e "RPC_HOST=thingsboard.cloud" -e "RPC_PORT=9090" \
 -e "INTEGRATION_ROUTING_KEY=YOUR_ROUTING_KEY"  -e "INTEGRATION_SECRET=YOUR_SECRET" \
 --name my-tb-pe-http-integration --restart always thingsboard/tb-pe-http-integration:{{ site.release.pe_full_ver }}

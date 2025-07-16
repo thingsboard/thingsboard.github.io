@@ -11,4 +11,5 @@ deviceImageFileName: nodemcuv2.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/nodemcuv2.md %}

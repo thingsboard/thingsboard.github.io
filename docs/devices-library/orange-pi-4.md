@@ -13,4 +13,5 @@ deviceImageFileName: orange-pi-4.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/orange-pi-4.md %}

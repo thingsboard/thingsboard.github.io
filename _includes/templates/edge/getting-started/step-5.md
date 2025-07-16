@@ -1,10 +1,10 @@
-To provision dashboard to Edge we need to open Edge dashboards on **{{currentThingsBoardVersion}}** server and assign the newly created dashboard. 
-Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the Edge.
+The **entities** can also be created on the **Server** and then assigned to the **Edge instance**. 
+This approach simplifies the management of entities across multiple **Edge instances**.
+
+To assign entities to the **Edge**, log in to your **{{currentThingsBoardVersion}} Server** at **SERVER_URL** and create an **entity**, for example, a dashboard. 
 
 {% include images-gallery.html imageCollection="step5Server" showListImageTitles="true" %}
 
-Now, open ThingsBoard **Edge** UI using the URL **EDGE_URL** to verify that dashboard is accessible.
+To confirm that assigned entity is available on the **Edge**, open the **EDGE_URL** and go to the corresponding entity section:
 
 {% include images-gallery.html imageCollection="step5Edge" showListImageTitles="true" %}
-
-Congratulations! Dashboard has been provisioned to the Edge. Now you can send new telemetry reading, and it will immediately appear in the chart on the Edge.

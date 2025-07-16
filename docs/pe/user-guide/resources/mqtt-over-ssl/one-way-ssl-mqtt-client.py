@@ -25,8 +25,8 @@ def collect_required_data():
     print(" " * 20, "ThingsBoard one way RPC example script.", sep="")
     print("=" * 80, "\n\n", sep="")
     host = input("Please write your ThingsBoard host or leave it blank to use default (thingsboard.cloud): ")
-    config["host"] = host if host else "mqtt.thingsboard.cloud"
-    if config["host"] != "mqtt.thingsboard.cloud":
+    config["host"] = host if host else "{{mqttHostName}}"
+    if config["host"] != "{{mqttHostName}}":
         ca_cert = input(
             "Please write path to your server public certificate or leave it blank to use default (mqttserver.pub.pem): ")
         config["ca_cert"] = ca_cert if ca_cert else "mqttserver.pub.pem"

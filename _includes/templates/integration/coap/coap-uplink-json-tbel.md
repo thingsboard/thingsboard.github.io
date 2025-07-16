@@ -29,6 +29,6 @@ return result;
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/coap/coap-uplink-converter-json-tbel-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/coap/coap-uplink-converter-json-tbel-paas.png)
 {% endif %}

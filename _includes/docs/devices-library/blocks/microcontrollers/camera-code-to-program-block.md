@@ -13,7 +13,7 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 
 {% endcapture %}
 
-{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
 {% include templates/warn-banner.md content=demoExample %}
 {% endunless %}
 
@@ -24,8 +24,11 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 
-#define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}0{% else %}1{% endif %}
+#define DEMO_MODE {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}0{% else %}1{% endif %}
 
+#include <Server_Side_RPC.h>
+#include <Attribute_Request.h>
+#include <Shared_Attribute_Update.h>
 #include <ThingsBoard.h>
 #include <esp_heap_caps.h>
 
@@ -36,12 +39,12 @@ extern "C" {
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
-// See https://thingsboard.io/docs/getting-started-guides/helloworld/
+// See https://thingsboard.io/docs/{{page.docsPrefix}}getting-started-guides/helloworld/
 // to understand how to obtain an access token
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
 // Thingsboard we want to establish a connection too
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{{hostName}}";
 // MQTT port used to communicate with the server, 1883 is the default unencrypted MQTT port.
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
@@ -55,7 +58,9 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Maximum amount of attributs we can request or subscribe, has to be set both in the ThingsBoard template list and Attribute_Request_Callback template list
 // and should be the same as the amount of variables in the passed array. If it is less not all variables will be requested or subscribed
-constexpr size_t MAX_ATTRIBUTES = 2U;
+constexpr size_t MAX_ATTRIBUTES = 3U;
+
+constexpr uint64_t REQUEST_TIMEOUT_MICROSECONDS = 5000U * 1000U;
 
 // Definitions for camera pins
 #define PWDN_GPIO_NUM -1
@@ -75,19 +80,32 @@ constexpr size_t MAX_ATTRIBUTES = 2U;
 #define HREF_GPIO_NUM 26
 #define PCLK_GPIO_NUM 21
 
-// Initialize underlying client, used to establish a connection
-WiFiClient wifiClient;
-// Initalize the Mqtt client instance
-Arduino_MQTT_Client mqttClient(wifiClient);
-// Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoardSized<Default_Fields_Amount, Default_Subscriptions_Amount, MAX_ATTRIBUTES> tb(mqttClient, MAX_MESSAGE_SIZE);
-
 // Attribute names for attribute request and attribute updates functionality
 
 constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
 constexpr char LED_STATE_ATTR[] = "ledState";
 constexpr char PICTURE_ATTR[] = "photo";
+
+// Initialize underlying client, used to establish a connection
+WiFiClient wifiClient;
+
+// Initalize the Mqtt client instance
+Arduino_MQTT_Client mqttClient(wifiClient);
+
+// Initialize used apis
+Server_Side_RPC<3U, 5U> rpc;
+Attribute_Request<2U, MAX_ATTRIBUTES> attr_request;
+Shared_Attribute_Update<3U, MAX_ATTRIBUTES> shared_update;
+
+const std::array<IAPI_Implementation*, 3U> apis = {
+    &rpc,
+    &attr_request,
+    &shared_update
+};
+
+// Initialize ThingsBoard instance with the maximum needed buffer size, stack size and the apis we want to use
+ThingsBoard tb(mqttClient, MAX_MESSAGE_SIZE, Default_Max_Stack_Size, apis);
 
 // handle led state and mode changes
 volatile bool attributesChanged = false;
@@ -176,13 +194,13 @@ bool initCamera() {
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
-  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
   if (DEMO_MODE == 1) {
     config.frame_size = FRAMESIZE_96X96;
     config.jpeg_quality = 63;
   } else { {% endunless %}
   config.frame_size = FRAMESIZE_240X240;
-  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
   }{% endunless %}
 
   esp_err_t err = esp_camera_init(&config);
@@ -211,7 +229,7 @@ bool captureImage() {
   return true;
 }
 
-void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" %}
   if (DEMO_MODE == 1) {
     length = 756;
   }{% endunless %} 
@@ -311,9 +329,14 @@ void processClientAttributes(const JsonObjectConst &data) {
   }
 }
 
+// Attribute request did not receive a response in the expected amount of microseconds 
+void requestTimedOut() {
+  Serial.printf("Attribute request timed out did not receive a response in (%llu) microseconds. Ensure client is connected to the MQTT broker and that the keys actually exist on the target device\n", REQUEST_TIMEOUT_MICROSECONDS);
+}
+
 const Shared_Attribute_Callback<MAX_ATTRIBUTES> attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
-const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
-const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_shared_request_callback(&processSharedAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, SHARED_ATTRIBUTES_LIST);
+const Attribute_Request_Callback<MAX_ATTRIBUTES> attribute_client_request_callback(&processClientAttributes, REQUEST_TIMEOUT_MICROSECONDS, &requestTimedOut, CLIENT_ATTRIBUTES_LIST);
 
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
@@ -332,10 +355,10 @@ void setup() {
   delay(1000);
   InitWiFi();
   tb.connect(THINGSBOARD_SERVER, TOKEN, THINGSBOARD_PORT);
-  tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend());
-  tb.Shared_Attributes_Subscribe(attributes_callback);
-  tb.Shared_Attributes_Request(attribute_shared_request_callback);
-  tb.Client_Attributes_Request(attribute_client_request_callback);
+  rpc.RPC_Subscribe(callbacks.cbegin(), callbacks.cend());
+  shared_update.Shared_Attributes_Subscribe(attributes_callback);
+  attr_request.Shared_Attributes_Request(attribute_shared_request_callback);
+  attr_request.Client_Attributes_Request(attribute_client_request_callback);
 }
 
 void loop() {
@@ -363,12 +386,12 @@ void loop() {
   // Perform a subscription. All consequent data processing will happen in
   // processSetLedState() and processSetLedMode() functions,
   // as denoted by callbacks array.
-  if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
+  if (!rpc.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
     Serial.println("Failed to subscribe for RPC");
     return;
   }
 
-  if (!tb.Shared_Attributes_Subscribe(attributes_callback)) {
+  if (!shared_update.Shared_Attributes_Subscribe(attributes_callback)) {
     Serial.println("Failed to subscribe for shared attribute updates");
     return;
   }
@@ -376,13 +399,13 @@ void loop() {
   Serial.println("Subscribe done");
 
   // Request current states of shared attributes
-  if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
+  if (!attr_request.Shared_Attributes_Request(attribute_shared_request_callback)) {
     Serial.println("Failed to request for shared attributes");
     return;
   }
 
   // Request current states of client attributes
-  if (!tb.Client_Attributes_Request(attribute_client_request_callback)) {
+  if (!attr_request.Client_Attributes_Request(attribute_client_request_callback)) {
     Serial.println("Failed to request for client attributes");
     return;
   }
@@ -428,6 +451,7 @@ void loop() {
 
   tb.loop();
 }
+
 ```
 {:.copy-code.expandable-20}
 
@@ -486,16 +510,16 @@ Don’t forget to replace placeholders with your real WiFi network SSID, passwor
 
 Necessary variables for connection:    
 
-| Variable name | Default value                                                                                                                | Description                                                                                                                                  | 
-|-|------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| WIFI_SSID | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                                                                      | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                                                                                  |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard                                                      | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                                                                         |
-| THINGSBOARD_PORT | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                                                                                 |
-| MAX_MESSAGE_SIZE | **100U*1024**                                                                                                                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.                                                             |
-| SERIAL_DEBUG_BAUD | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                                                                                    |
-| DEMO_MODE | **1**                                                                                                                       | If you want to use **demo.thingsboard.io** set this value to **1**. This reduces the resolution, quality and cut the encoded photo to avoid size limit. |
+| Variable name | Default value                | Description                                                                                                                                  | 
+|-|------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| WIFI_SSID | **YOUR_WIFI_SSID**           | Your WiFi network name.                                                                                                                      | 
+| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**       | Your WiFi network password.                                                                                                                  |
+| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard                                                      | 
+| THINGSBOARD_SERVER | **{{hostName}}**             | Your ThingsBoard host or ip address.                                                                                                         |
+| THINGSBOARD_PORT | **1883U**                    | ThingsBoard server MQTT port. Can be default for this guide.                                                                                 |
+| MAX_MESSAGE_SIZE | **100U*1024**                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.                                                             |
+| SERIAL_DEBUG_BAUD | **1883U**                    | Baud rate for serial port. Can be default for this guide.                                                                                    |
+| DEMO_MODE | **1**                        | If you want to use **demo.thingsboard.io** set this value to **1**. This reduces the resolution, quality and cut the encoded photo to avoid size limit. |
 
 ```cpp
 ...
@@ -505,7 +529,7 @@ constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
-constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{{hostName}}";
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 constexpr uint32_t MAX_MESSAGE_SIZE = 100U * 1024;

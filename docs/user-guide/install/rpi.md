@@ -12,28 +12,21 @@ description: Installing ThingsBoard IoT Platform on Raspberry Pi
 * TOC
 {:toc}
 
-This guide describes how to install ThingsBoard on a Raspberry Pi running Raspbian Buster.
 
-### Third-party components installation
 
-### Step 1. Install Java 17 (OpenJDK) 
+## Prerequisites
 
-```bash
-# Add repository.
-echo "deb http://deb.debian.org/debian unstable main non-free contrib" | sudo tee /etc/apt/sources.list
+This guide describes how to install ThingsBoard on a Raspberry Pi.
+Hardware requirements depend on chosen database and amount of devices connected to the system. 
+To run ThingsBoard and PostgreSQL you will need at least 4Gb of RAM.
+To run ThingsBoard and Cassandra you will need at least 8Gb of RAM.
 
-# Run system update.
-sudo apt update
 
-# Install JAVA
-sudo apt install openjdk-17-jdk
-
-#Check installation
-java -version
-```
+## Step 1. Install Java 17 (OpenJDK) 
+{% include templates/install/ubuntu-java-install.md %}
 {: .copy-code}
 
-### Step 2. ThingsBoard service installation
+## Step 2. ThingsBoard service installation
 
 Download installation package.
 
@@ -49,32 +42,29 @@ sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 3. Configure ThingsBoard database
+## Step 3. Configure ThingsBoard database
 
 {% include templates/install/rpi-db-postgresql.md %}
 
-### Step 4. Choose ThingsBoard queue service
+## Step 4. Choose ThingsBoard queue service
 
 {% include templates/install/rpi-install-queue.md %}
 
 {% capture contenttogglespecqueue %}
 In Memory <small>(built-in and default)</small>%,%inmemory%,%templates/install/queue-in-memory.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/ubuntu-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/ubuntu-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/ubuntu-queue-service-bus.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/ubuntu-queue-confluent-cloud.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
-### Step 5. Memory update for slow machines (4GB of RAM) 
+## Step 5. Memory update for slow machines (4GB of RAM) 
 
 {% include templates/install/memory-on-slow-machines.md %} 
 
-### Step 6. Run installation script
+## Step 6. Run installation script
 {% include templates/run-install.md %} 
 
 
-### Step 7. Start ThingsBoard service
+## Step 7. Start ThingsBoard service
 
 {% include templates/start-service.md %}
 
@@ -82,7 +72,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 Please allow up to 90 seconds for the Web UI to start.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Troubleshooting
+## Troubleshooting
 
 {% include templates/install/troubleshooting.md %}
 

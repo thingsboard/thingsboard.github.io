@@ -12,4 +12,5 @@ docsPrefix: pe/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/esp32-dev-kit-v4.md %}

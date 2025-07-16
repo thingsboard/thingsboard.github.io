@@ -40,19 +40,4 @@ This feature is very useful for container based setups.
 
 Once you purchase a subscription, you can flexibly upgrade or downgrade your subscription plan. If the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour) negative Amount due (***Account credit***) with the remain units will appear in [Billing section](/products/license-server/billing-info/) of License portal. This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.
 
-![image](/images/license/subscription.png)  
- 
-
-### User Guide
-
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
-
-
+![image](/images/license/subscription.png)

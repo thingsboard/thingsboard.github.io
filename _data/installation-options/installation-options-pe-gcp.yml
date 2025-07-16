@@ -1,0 +1,20 @@
+gcpSetup:
+  0:
+    title: Google Cloud Platform
+    description: This guide describes how to install ThingsBoard PE (BYOL) via Google Cloud Marketplace.
+    link: /docs/user-guide/install/pe/gcp-marketplace/
+    icon: /images/install/cloud/gcp-vm.svg
+    alt: Google Cloud Platform logo
+    imageTitleAttribute: Install ThingsBoard PE via Google Cloud Marketplace
+    imageWidth: 40
+    imageHeight: 36
+  1:
+    title: Google Kubernetes Engine
+    description: Here you can find scripts for different deployment scenarios using GCP infrastructure.
+    link: /docs/user-guide/install/pe/cluster/gcp-gke-setup/
+    icon: /images/install/cloud/gke.svg
+    alt: Google Kubernetes Engine logo
+    imageTitleAttribute: Deploy ThingsBoard using Google Kubernetes Engine
+    imageWidth: 40
+    imageHeight: 36
+

@@ -11,8 +11,18 @@
     {% elsif docsTag == "gw" %}
         {% assign githubLink = "https://github.com/thingsboard/thingsboard-gateway" %}
         {% assign githubLabel = "Star thingsboard/thingsboard-gateway on GitHub" %}
+    {% elsif docsTag == "edge" %}
+        {% assign githubLink = "https://github.com/thingsboard/thingsboard-edge" %}
+        {% assign githubLabel = "Star thingsboard/thingsboard-edge on GitHub" %}
+    {% elsif docsTag == "edge-pe" %}
+        {% assign githubLink = "https://github.com/thingsboard/thingsboard-edge" %}
+        {% assign githubLabel = "Star thingsboard/thingsboard-edge on GitHub" %}
     {% endif %}
-    {% assign foundProduct = site.data.products | where: "tag", docsTag %}
+    {% if docsTag == "paas-eu" %}
+        {% assign foundProduct = site.data.products | where: "tag", "paas" %}
+    {% else %}
+        {% assign foundProduct = site.data.products | where: "tag", docsTag %}
+    {% endif %}
     {% assign productInfo = foundProduct[0] %}
     {% unless page.customTitle == "true" %}
         {% assign customTitle = title | append: " | " %}
@@ -25,6 +35,9 @@
     {% if productTag == "mqtt-broker" %}
         {% assign githubLink = "https://github.com/thingsboard/tbmq" %}
         {% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
+    {% elsif productTag == "edge" %}
+        {% assign githubLink = "https://github.com/thingsboard/thingsboard-edge" %}
+        {% assign githubLabel = "Star thingsboard/thingsboard-edge on GitHub" %}
     {% endif %}
 {% endif %}
 <head>
@@ -47,7 +60,7 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
-    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' %}
+    {% elsif page.url contains '/docs/' or cssTag == 'docs' %}
     <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/products/' %}
     <link href="/css/products.css" rel="stylesheet">
@@ -55,19 +68,21 @@
     <link href="/css/industries.css" rel="stylesheet">
     {% elsif page.url contains '/partners/' %}
     <link href="/css/partners.css" rel="stylesheet">
-    {% elsif page.url contains '/use-cases/' or page.url == '/smart-energy/' or page.url == '/smart-farming/' or page.url == '/fleet-tracking/' or page.url == '/smart-metering/' or page.url == '/iot-use-cases/' %}
+    {% elsif page.url contains '/use-cases/' or cssTag == 'use-case' %}
     <link href="/css/use-cases.css" rel="stylesheet">
     {% elsif page.url == '/pricing/' %}
     <link href="/css/pricing.css" rel="stylesheet">
     {% elsif page.url == '/company/' or page.url == '/careers/' or page.url == '/mediakit/' %}
     <link href="/css/company.css" rel="stylesheet">
-    {% elsif page.url == '/iot-solutions/' or page.url == '/device-management/' or page.url == '/monitoring-dashboard/' or page.url == '/asset-management/' %}
+    {% elsif page.url == '/device-management/' or page.url == '/monitoring-dashboard/' or page.url == '/asset-management/' %}
     <link href="/css/solutions.css" rel="stylesheet">
+    {% elsif page.url contains '/case-studies/' %}
+    <link href="/css/case-studies.css" rel="stylesheet">
     {% else %}
     <link href="/css/styles.css" rel="stylesheet">
     {% endif %}
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
     <noscript>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap">
@@ -75,6 +90,96 @@
     <script async defer>
         window.onload = function() {
             Gifffer();
+
+            setCloudServerHref();
+        }
+    </script>
+    <script async defer>
+        function setCookie(name, value, attributes) {
+            if (typeof document === 'undefined') {
+                return
+            }
+
+            attributes = Object.assign({}, {path: '/'}, attributes)
+
+            if (typeof attributes.expires === 'number') {
+                attributes.expires = new Date(Date.now() + attributes.expires * 864e5)
+            }
+            if (attributes.expires) {
+                attributes.expires = attributes.expires.toUTCString()
+            }
+
+            name = encodeURIComponent(name)
+                .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
+                .replace(/[()]/g, escape)
+
+            var stringifiedAttributes = ''
+            for (var attributeName in attributes) {
+                if (!attributes[attributeName]) {
+                    continue
+                }
+
+                stringifiedAttributes += '; ' + attributeName
+
+                if (attributes[attributeName] === true) {
+                    continue
+                }
+
+                // Considers RFC 6265 section 5.2:
+                // ...
+                // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+                //     character:
+                // Consume the characters of the unparsed-attributes up to,
+                // not including, the first %x3B (";") character.
+                // ...
+                stringifiedAttributes += '=' + attributes[attributeName].split(';')[0]
+            }
+
+            return (document.cookie =
+                name + '=' + writeCookieValue(value) + stringifiedAttributes)
+        }
+
+        function getCookie(name) {
+            if (typeof document === 'undefined' || (arguments.length && !name)) {
+                return
+            }
+
+            // To prevent the for loop in the first place assign an empty array
+            // in case there are no cookies at all.
+            var cookies = document.cookie ? document.cookie.split('; ') : []
+            var jar = {}
+            for (var i = 0; i < cookies.length; i++) {
+                var parts = cookies[i].split('=')
+                var value = parts.slice(1).join('=')
+
+                try {
+                    var found = decodeURIComponent(parts[0])
+                    jar[found] = readCookieValue(value)
+
+                    if (name === found) {
+                        break
+                    }
+                } catch (e) {
+                }
+            }
+
+            return name ? jar[name] : jar
+        }
+
+        function setCloudServerCookie(cookieValue) {
+            setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
+        }
+
+        function setCloudServerHref() {
+            const cloudServer = getCookie('cloudServer');
+            if (cloudServer) {
+                document.getElementById('cloud-documentation').href = cloudServer;
+                const cloudProductOption = document.getElementById('cloud-product-option');
+                if (cloudProductOption) {
+                    const cloudProductOptionHref = cloudProductOption.href;
+                    cloudProductOption.href = cloudProductOptionHref.replace('/docs/paas/', cloudServer);
+                }
+            }
         }
     </script>
     <script async defer>
@@ -213,7 +318,7 @@
         }
 
         var initialScriptsList = [
-            {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
+            {src: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css', type: 'css'},
             {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
             {src: 'https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js', type: 'script'},
             {src: '/js/jquery-2.2.0.min.js', type: 'script'},
@@ -356,6 +461,7 @@
                         if (!submenuContainer.is(':hover')) {
                             subMenuActive = false;
                             submenuContainer.removeClass('active bounds-transition');
+                            $('nav.head-menu > div.sub-menu-container > div').removeClass('open');
                             menuItems.removeClass('active');
                             indicator.removeClass('left-transition active');
                         }
@@ -368,6 +474,7 @@
                     submenuContainer.removeClass('active bounds-transition');
                     menuItems.removeClass('active');
                     indicator.removeClass('left-transition active');
+                    $('nav.head-menu > div.sub-menu-container > div').removeClass('open');
                 }
             });
             menuItems.each(function() {
@@ -377,19 +484,22 @@
                     setTimeout(function() {
                         if (item.is(':hover')) {
                             let submenus = $('nav.head-menu > div.sub-menu-container > div');
-                            submenus.css('display', 'none');
+                            submenus.removeClass('open');
                             menuItems.removeClass('active');
                             item.addClass('active');
                             if (subMenuId) {
                                 let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
-                                targetSubMenu.css('display', 'block');
+                                targetSubMenu.addClass('open');
                                 submenuContainer.css('overflow', 'visible');
                                 let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
                                 let left = item.position().left + offset;
                                 let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
                                 indicator.css('opacity', 1);
+                                let windowOverflowLeft = left + windowOverflow;
                                 if (windowOverflow < 0) {
                                     left += windowOverflow;
+                                } else if (windowOverflowLeft < 0) {
+                                    left -= windowOverflowLeft;
                                 }
                                 submenuContainer.css('left', left + 'px');
                                 if (!subMenuActive) {
@@ -479,6 +589,7 @@
             var body = $('body');
             body.css('overflow', '');
             let targetSubMenus = $('nav.head-menu > ul > li > div');
+            targetSubMenus.css('display', '');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             submenuContainer.removeClass('active');
             submenuContainer.css('display', 'block');
@@ -553,76 +664,89 @@
                 <ul class="sub-menu products">
                     <li class="sub-groups">
                         <div class="group">
-                            <p class="group-name">IoT platforms</p>
-                            <a class="com-lnk" href="/">
-                                <img src="/images/thingsboard-cm-icon.svg" alt="Community Edition icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Community Edition</span>
-                                    <p>Open source platform</p>
-                                </div>
-                            </a>
-                            <a class="prof-lnk" href="/products/thingsboard-pe/">
-                                <img src="/images/thingsboard-p-icon.svg" alt="Professional Edition icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Professional Edition</span>
-                                    <p>Advanced IoT platform</p>
-                                </div>
-                            </a>
-                            <a class="cloud-lnk" href="/products/paas/">
-                                <img src="/images/thingsboard-c-icon.svg" alt="Cloud icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Cloud</span>
-                                    <p>Platform as a service</p>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <p class="group-name">IoT platforms</p>
+                                <a class="com-lnk" href="/">
+                                    <img src="/images/thingsboard-cm-icon.svg" alt="Community Edition icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Community Edition</span>
+                                        <p>Open-source platform</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="prof-lnk" href="/products/thingsboard-pe/">
+                                    <img src="/images/thingsboard-p-icon.svg" alt="Professional Edition icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Professional Edition</span>
+                                        <p>Advanced IoT platform</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="cloud-lnk" href="/products/paas/">
+                                    <img src="/images/thingsboard-c-icon.svg" alt="Cloud icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Cloud</span>
+                                        <p>Platform as a service</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div class="group">
-                            <p class="group-name">Product ecosystem</p>
-                            <a class="edge-lnk" href="/products/thingsboard-edge/">
-                                <img src="/images/thingsboard-e-icon.svg" alt="Edge icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Edge</span>
-                                    <p>Edge computing</p>
-                                </div>
-                            </a>
-                            <a class="gateway-lnk" href="/docs/iot-gateway/what-is-iot-gateway/">
-                                <img src="/images/gateway-icon.svg" alt="IoT Gateway icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">IoT Gateway</span>
-                                    <p>Connect legacy protocols</p>
-                                </div>
-                            </a>
-                            <a class="mqtt-broker-lnk" href="/products/mqtt-broker/">
-                                <img src="/images/tbmq-icon.svg" alt="MQTT Broker icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">MQTT Broker</span>
-                                    <p>Connect MQTT clients</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="group">
-                            <p class="group-name">&nbsp;</p>
-                            <a class="trendz-lnk" href="/products/trendz/">
-                                <img src="/images/trendz-icon.svg" alt="Trendz Analytics icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Trendz Analytics</span>
-                                    <p>Data analytics and Prediction</p>
-                                </div>
-                            </a>
-                            <a class="mobile-lnk" href="/products/mobile/">
-                                <img src="/images/tb-mobile-icon.svg" alt="Device icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Mobile Application</span>
-                                    <p>IoT mobile product</p>
-                                </div>
-                            </a>
-                            <a class="mobile-pe-lnk" href="/products/mobile-pe/">
-                                <img src="/images/tb-pe-mobile-icon.svg" alt="PE Mobile Application icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">PE Mobile Application</span>
-                                    <p>Advanced IoT mobile product</p>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <p class="group-name">Product ecosystem</p>
+                                <a class="edge-lnk" href="/products/thingsboard-edge/">
+                                    <img src="/images/thingsboard-e-icon.svg" alt="Edge icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Edge</span>
+                                        <p>Edge computing</p>
+                                    </div>
+                                </a>
+                                <a class="gateway-lnk" href="/docs/iot-gateway/what-is-iot-gateway/">
+                                    <img src="/images/gateway-icon.svg" alt="IoT Gateway icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">IoT Gateway</span>
+                                        <p>Connect legacy protocols</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="mobile-lnk" href="/products/mobile/">
+                                    <img src="/images/tb-mobile-icon.svg" alt="Device icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Mobile Application</span>
+                                        <p>IoT mobile product</p>
+                                    </div>
+                                </a>
+                                <a class="mobile-pe-lnk" href="/products/mobile-pe/">
+                                    <img src="/images/tb-pe-mobile-icon.svg" alt="PE Mobile Application icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">PE Mobile Application</span>
+                                        <p>Advanced IoT mobile product</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="mqtt-broker-lnk" href="/products/mqtt-broker/">
+                                    <img src="/images/tbmq-icon.svg" alt="MQTT Broker icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">TBMQ</span>
+                                        <p>Scalable MQTT broker</p>
+                                    </div>
+                                </a>
+                                <a class="trendz-lnk" href="/products/trendz/">
+                                    <img src="/images/trendz-icon.svg" alt="Trendz Analytics icon" width="32" height="32" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Trendz Analytics</span>
+                                        <p>Data analytics and Prediction</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -631,135 +755,29 @@
                 <ul class="sub-menu services">
                     <li class="sub-groups">
                         <div class="group">
-                            <a href="/docs/services/development-services/">
-                                <img src="/images/development-services.svg" alt="Development services icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Development services</span>
-                                    <p>Customization and complete IoT Solutions development</p>
-                                </div>
-                            </a>
-                            <a href="/docs/services/support/">
-                                <img src="/images/support-icon.svg" alt="Support icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Support</span>
-                                    <p>Support packages</p>
-                                </div>
-                            </a>
-                            <a href="/docs/services/trainings/">
-                                <img src="/images/train-icon.svg" alt="Trainings icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Trainings</span>
-                                    <p>ThingsBoard education courses</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="group">
-                            <a href="/iot-solutions/">
-                                <img src="/images/iot-solutions.svg" alt="IoT solutions icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">IoT Solutions</span>
-                                    <p>Overview of IoT Solutions and Applications</p>
-                                </div>
-                            </a>
-                            <a href="/device-management/">
-                                <img src="/images/device-management.svg" alt="Device management icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Device management</span>
-                                    <p>Streamline Your IoT Device Operations</p>
-                                </div>
-                            </a>
-                            <a href="/monitoring-dashboard/">
-                                <img src="/images/monitoring-dashboard.svg" alt="Monitoring dashboard icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Monitoring dashboard</span>
-                                    <p>Visualizing IoT Data on Live Dashboards</p>
-                                </div>
-                            </a>
-                            <a href="/asset-management">
-                                <img src="/images/asset-management.svg" alt="Asset management icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Asset Management</span>
-                                    <p>IoT Asset Tracking and inventory management</p>
-                                </div>
-                            </a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div id="nav-docs" class="centered-sub">
-                <ul class="sub-menu products">
-                    <li class="sub-groups">
-                        <div class="group">
-                            <p class="group-name">IoT platforms</p>
-                            <a class="com-lnk" href="/docs/">
-                                <img src="/images/thingsboard-cm-icon.svg" alt="Community Edition icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Community Edition</span>
-                                    <p>Open source platform</p>
-                                </div>
-                            </a>
-                            <a class="prof-lnk" href="/docs/pe/">
-                                <img src="/images/thingsboard-p-icon.svg" alt="Professional Edition icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Professional Edition</span>
-                                    <p>Advanced IoT platform</p>
-                                </div>
-                            </a>
-                            <a class="cloud-lnk" href="/docs/paas/">
-                                <img src="/images/thingsboard-c-icon.svg" alt="Cloud icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Cloud</span>
-                                    <p>Platform as a service</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="group">
-                            <p class="group-name">Product ecosystem</p>
-                            <a class="edge-lnk" href="/docs/edge/">
-                                <img src="/images/thingsboard-e-icon.svg" alt="Edge icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Edge</span>
-                                    <p>Edge computing</p>
-                                </div>
-                            </a>
-                            <a class="gateway-lnk" href="/docs/iot-gateway/">
-                                <img src="/images/gateway-icon.svg" alt="IoT Gateway icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">IoT Gateway</span>
-                                    <p>Connect legacy protocols</p>
-                                </div>
-                            </a>
-                            <a class="mqtt-broker-lnk" href="/docs/mqtt-broker/">
-                                <img src="/images/tbmq-icon.svg" alt="MQTT Broker icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">MQTT Broker</span>
-                                    <p>Connect MQTT clients</p>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="group">
-                            <p class="group-name">&nbsp;</p>
-                            <a class="trendz-lnk" href="/docs/trendz/">
-                                <img src="/images/trendz-icon.svg" alt="Trendz Analytics icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Trendz Analytics</span>
-                                    <p>Data analytics and Prediction</p>
-                                </div>
-                            </a>
-                            <a class="mobile-lnk" href="/docs/mobile/">
-                                <img src="/images/tb-mobile-icon.svg" alt="Device icon icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Mobile Application</span>
-                                    <p>IoT mobile product</p>
-                                </div>
-                            </a>
-                            <a class="mobile-pe-lnk" href="/docs/pe/mobile/">
-                                <img src="/images/tb-pe-mobile-icon.svg" alt="PE Mobile Application icon" width="54" height="54" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">PE Mobile Application</span>
-                                    <p>Advanced IoT mobile product</p>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <a href="/services/development-services/">
+                                    <img src="/images/development-services.svg" alt="Development services icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Development services</span>
+                                        <p>IoT Solutions development</p>
+                                    </div>
+                                </a>
+                                <a href="/services/support/">
+                                    <img src="/images/support-icon.svg" alt="Support icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Support</span>
+                                        <p>Support packages</p>
+                                    </div>
+                                </a>
+                                <a href="/services/trainings/">
+                                    <img src="/images/train-icon.svg" alt="Trainings icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Trainings</span>
+                                        <p>ThingsBoard education courses</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -768,92 +786,135 @@
                 <ul class="sub-menu cases">
                     <li class="sub-groups">
                         <div class="group">
-                            <a href="/smart-energy/">
-                                <img src="/images/case-eng-icon.svg" alt="Smart Energy icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Energy</span>
-                                    <p>Energy monitoring and efficiency analysis</p>
-                                </div>
-                            </a>
-                            <a href="/smart-farming/">
-                                <img src="/images/case-fam-icon.svg" alt="Smart Farming icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Farming</span>
-                                    <p>Remote soil, products and equipment monitoring</p>
-                                </div>
-                            </a>
-                            <a href="/fleet-tracking/">
-                                <img src="/images/case-trk-icon.svg" alt="Fleet Tracking icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Fleet Tracking</span>
-                                    <p>Fleet tracking and fleet management</p>
-                                </div>
-                            </a>
-                            <a href="/smart-metering/">
-                                <img src="/images/case-met-icon.svg" alt="Smart Metering icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Metering</span>
-                                    <p>Collection, analysis and visualization of data from meters</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/air-quality-monitoring/">
-                                <img src="/images/case-aq-icon.svg" alt="Air Quality Monitoring icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Air Quality Monitoring</span>
-                                    <p>Monitor outdoor air quality using a wide range of sensors</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/waste-management/">
-                                <img src="/images/case-waste-icon.svg" alt="Waste Management icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Waste Management</span>
-                                    <p>Real-time waste management for streamlined processes</p>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <a href="/use-cases/smart-energy/">
+                                    <img src="/images/case-eng-icon.svg" alt="Smart Energy icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Smart energy</span>
+                                        <p>Energy monitoring and efficiency</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/environment-monitoring/">
+                                    <img src="/images/case-env-icon.svg" alt="Environment Monitoring icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Environment monitoring</span>
+                                        <p>Indoor & outdoor environment analysis</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/smart-office/">
+                                    <img src="/images/case-off-icon.svg" alt="Smart Office icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Smart office</span>
+                                        <p>Boost productivity & optimize resources</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/water-metering/">
+                                    <img src="/images/case-wat-icon.svg" alt="Water Metering icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Water metering</span>
+                                        <p>Water use analysis & fraud detection</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/smart-retail/">
+                                    <img src="/images/case-ret-icon.svg" alt="Smart Retail icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Smart retail</span>
+                                        <p>Food storage & safety monitoring</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <a href="/use-cases/smart-farming/">
+                                    <img src="/images/case-fam-icon.svg" alt="Smart Farming icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Smart farming</span>
+                                        <p>Remote soil & equipment monitoring</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/fleet-tracking/">
+                                    <img src="/images/case-trk-icon.svg" alt="Fleet Tracking icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Fleet tracking</span>
+                                        <p>Fleet tracking & management</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/health-care/">
+                                    <img src="/images/case-health-care-icon.svg" alt="Health Care icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Health care</span>
+                                        <p>Smart assisted living solution</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/smart-metering/">
+                                    <img src="/images/case-met-icon.svg" alt="Smart Metering icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Smart metering</span>
+                                        <p>Meter data collection & analysis</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/air-quality-monitoring/">
+                                    <img src="/images/case-aq-icon.svg" alt="Air Quality Monitoring icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Air quality monitoring</span>
+                                        <p>Monitor AQI using wide range of sensors</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <a href="/use-cases/smart-irrigation/">
+                                    <img src="/images/smart-irrigation.svg" alt="Smart Irrigation icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Smart irrigation</span>
+                                        <p>Soil moisture & irrigation control</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/waste-management/">
+                                    <img src="/images/case-waste-icon.svg" alt="Waste Management icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Waste management</span>
+                                        <p>Real-time waste management</p>
+                                    </div>
+                                </a>
+                                <a href="/use-cases/tank-level-monitoring/">
+                                    <img src="/images/case-level-icon.svg" alt="Tank Level Monitoring icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Tank level monitoring</span>
+                                        <p>Fuel tank location & level monitoring</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                         <div class="group">
-                            <a href="/use-cases/environment-monitoring/">
-                                <img src="/images/case-env-icon.svg" alt="Environment Monitoring icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Environment Monitoring</span>
-                                    <p>Monitor and analyze indoor and outdoor environments</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/smart-office/">
-                                <img src="/images/case-off-icon.svg" alt="Smart Office icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Office</span>
-                                    <p>Increase productivity and optimize resource consumption</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/water-metering/">
-                                <img src="/images/case-wat-icon.svg" alt="Water Metering icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Water Metering</span>
-                                    <p>Water consumption analysis and fraud detection</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/smart-retail/">
-                                <img src="/images/case-ret-icon.svg" alt="Smart Retail icon" width="34" height="44" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Retail</span>
-                                    <p>Control quality of food storage, indoor environment and safety</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/smart-irrigation/">
-                                <img src="/images/smart-irrigation.svg" alt="Smart Irrigation icon" width="32" height="32" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Irrigation</span>
-                                    <p>Soil moisture monitoring and irrigation control</p>
-                                </div>
-                            </a>
-                            <a href="/use-cases/tank-level-monitoring/">
-                                <img src="/images/case-level-icon.svg" alt="Tank Level Monitoring icon" width="34" height="34" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Tank Level Monitoring</span>
-                                    <p>Monitor the location of fuel tanks and control the level of remaining fuel in them</p>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <p class="group-name">SCADA</p>
+                                <a href="/use-cases/scada/">
+                                    <img src="/images/case-scada-icon.svg" alt="SCADA icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Swimming pool</span>
+                                        <p>Control industrial processes in real time</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a href="/use-cases/scada-oil-and-gas-drilling-system/">
+                                    <img src="/images/case-scada-drilling-system-icon.svg" alt="SCADA icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Oil and gas drilling system</span>
+                                        <p>Control drilling operations</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a href="/use-cases/scada-energy-management/">
+                                    <img src="/images/case-scada-energy-management.svg" alt="SCADA icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Energy management</span>
+                                        <p>Monitor & control energy systems</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -862,50 +923,20 @@
                 <ul class="sub-menu customers">
                     <li class="sub-groups">
                         <div class="group">
-                            <a class="small-link" href="/industries/smart-energy/">
-                                <img src="/images/se-s-icon.svg" alt="Smart Energy icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Energy</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/industries/agriculture/">
-                                <img src="/images/agr-s-icon.svg" alt="Agriculture icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Agriculture</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/industries/telecom/">
-                                <img src="/images/tel-s-icon.svg" alt="Telecom icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Telecom</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/industries/warehouse-monitoring/">
-                                <img src="/images/sb-s-icon.svg" alt="Warehouse Monitoring icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Warehouse Monitoring</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="group">
-                            <a class="small-link" href="/industries/smart-city/">
-                                <img src="/images/sc-s-icon.svg" alt="Smart City icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart City</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/industries/smart-buildings/">
-                                <img src="/images/sb-s-icon.svg" alt="Smart Buildings icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Smart Buildings</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/industries/industry40/">
-                                <img src="/images/in-s-icon.svg" alt="Industry 4.0 icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Industry 4.0</span>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <a class="small-link" href="/case-studies/">
+                                    <img src="/images/case-studies.svg" alt="Case studeies icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Case studies</span>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/industries/smart-energy/">
+                                    <img src="/images/feedback.svg" alt="Clients feedback icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Clients feedback</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -914,38 +945,32 @@
                 <ul class="sub-menu about">
                     <li class="sub-groups">
                         <div class="group">
-                            <a class="small-link" href="/company/">
-                                <img src="/images/about-s-icon.svg" alt="About Our Company icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Our Company</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/docs/contact-us/">
-                                <img src="/images/contact-s-icon.svg" alt="Contact Us icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Contact Us</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/careers/">
-                                <img src="/images/careers-s-icon.svg" alt="Careers icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Careers</span>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="group">
-                            <a class="small-link" href="/mediakit/">
-                                <img src="/images/media-s-icon.svg" alt="Media Kit icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Media Kit</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/blog/">
-                                <img src="/images/blog-s-icon.svg" alt="Blog icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Blog</span>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <a class="small-link" href="/company/">
+                                    <img src="/images/about-s-icon.svg" alt="About Our Company icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Our company</span>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/docs/contact-us/">
+                                    <img src="/images/contact-s-icon.svg" alt="Contact Us icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Contact us</span>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/mediakit/">
+                                    <img src="/images/media-s-icon.svg" alt="Media Kit icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Media kit</span>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/careers/">
+                                    <img src="/images/careers-s-icon.svg" alt="Careers icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Careers</span>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -954,24 +979,108 @@
                 <ul class="sub-menu about">
                     <li class="sub-groups">
                         <div class="group">
-                            <a class="small-link" href="/partners/hardware/">
-                                <img src="/images/hard-s-icon.svg" alt="Hardware partners icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Hardware partners</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/partners/distributors/">
-                                <img src="/images/dis-s-icon.svg" alt="Distributors icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Distributors</span>
-                                </div>
-                            </a>
-                            <a class="small-link" href="/partners/marketplace/">
-                                <img src="/images/marketplace-s-icon.svg" alt="Marketplace icon" width="24" height="24" loading="lazy">
-                                <div class="sub-text">
-                                    <span class="item-heading">Marketplace</span>
-                                </div>
-                            </a>
+                            <div class="column">
+                                <a class="small-link" href="/partners/hardware/">
+                                    <img src="/images/hard-s-icon.svg" alt="Hardware partners icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Hardware partners</span>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/partners/distributors/">
+                                    <img src="/images/dis-s-icon.svg" alt="Distributors icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Distributors</span>
+                                    </div>
+                                </a>
+                                <a class="small-link" href="/partners/marketplace/">
+                                    <img src="/images/marketplace-s-icon.svg" alt="Marketplace icon" width="24" height="24" loading="lazy">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Marketplace</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div id="nav-docs" class="centered-sub">
+                <ul class="sub-menu products">
+                    <li class="sub-groups">
+                        <div class="group">
+                            <div class="column">
+                                <p class="group-name">IoT platforms</p>
+                                <a class="com-lnk" href="/docs/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Community Edition</span>
+                                        <p>Open-source platform</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="prof-lnk" href="/docs/pe/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Professional Edition</span>
+                                        <p>Advanced IoT platform</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a id="cloud-documentation" class="cloud-lnk" href="/docs/paas/" >
+                                    <div class="sub-text">
+                                        <span class="item-heading">Cloud</span>
+                                        <p>Platform as a service</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="group">
+                            <div class="column">
+                                <p class="group-name">Product ecosystem</p>
+                                <a class="edge-lnk" href="/docs/edge/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Edge</span>
+                                        <p>Edge computing</p>
+                                    </div>
+                                </a>
+                                <a class="gateway-lnk" href="/docs/iot-gateway/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">IoT Gateway</span>
+                                        <p>Connect legacy protocols</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="mobile-lnk" href="/docs/mobile/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Mobile Application</span>
+                                        <p>IoT mobile product</p>
+                                    </div>
+                                </a>
+                                <a class="mobile-pe-lnk" href="/docs/pe/mobile/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">PE Mobile Application</span>
+                                        <p>Advanced IoT mobile product</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column">
+                                <p class="group-name">&nbsp;</p>
+                                <a class="mqtt-broker-lnk" href="/docs/mqtt-broker/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">TBMQ</span>
+                                        <p>Scalable MQTT broker</p>
+                                    </div>
+                                </a>
+                                <a class="trendz-lnk" href="/docs/trendz/">
+                                    <div class="sub-text">
+                                        <span class="item-heading">Trendz Analytics</span>
+                                        <p>Data analytics and Prediction</p>
+                                    </div>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>
@@ -979,7 +1088,7 @@
         </div>
     </nav>
     <div class="head-buttons">
-        <a id="Menu_TryItNow" href="/installations/" class="n-button try gtm_button">Try it now</a>
         <a id="Menu_Pricing" href="/pricing/" class="n-button price gtm_button">Pricing</a>
+        <a id="Menu_TryItNow" href="/installations/" class="n-button try gtm_button">Try it now</a>
     </div>
 </header>

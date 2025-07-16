@@ -19,13 +19,7 @@ Before creating the integration, you need to create an Uplink converter in Data 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
-{% capture difference %}
-**NOTE**
-<br>
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.  
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 
@@ -44,7 +38,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/add-integration-1-pe.png)
 {% endif %}
 
@@ -53,7 +47,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/add-integration-2-pe.png)
 {% endif %}
 
@@ -62,7 +56,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-3-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/add-integration-3-pe.png)
 {% endif %}
 
@@ -77,7 +71,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-4-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/add-integration-4-pe.png)
 {% endif %}
 
@@ -95,7 +89,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"deviceType\":\"$DEVICE_TY
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-send-uplink-message-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/send-uplink-message-1-pe.png)
 {% endif %}
 
@@ -105,7 +99,7 @@ Go to the "**Events**" tab in your HTTP integration. If you have done everything
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-send-uplink-message-3-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/send-uplink-message-3-pe.png)
 {% endif %}
 
@@ -126,7 +120,7 @@ Learn more about **notifications** and how to configure them [here](/docs/{{docs
 
 {% endif %}
 
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 <br>
 The created device with data can be seen in the section "**Device groups**" -> "**All**".
 
@@ -152,11 +146,11 @@ ThingsBoard has examples of several types of dashboards that you can use. Learn 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-solution-templates.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/solution-templates.png)
 {% endif %}
 
-#### Enable security option
+### Enable security option
 
 If necessary, you can specify additional parameters, without which the data will not be included in the integration.
 To do this, check the Enable security checkbox and click on the Headers filter. Specify an arbitrary value and save the changes.
@@ -164,7 +158,7 @@ To do this, check the Enable security checkbox and click on the Headers filter. 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-enable-security-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/security-1-pe.png)
 {% endif %}
 
@@ -184,7 +178,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"deviceType\":\"$DEVICE_TY
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-enable-security-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/security-2-pe.png)
 {% endif %}
 
@@ -204,7 +198,7 @@ Now you need to add the created downlink converter to the integration.
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-downlink-converter-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/http-add-downlink-converter-1-pe.png)
 {% endif %}
 
@@ -217,7 +211,7 @@ To be able to send downlink over integration we need to modify a "**Root Rule ch
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-downlink-rule-chain-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/downlink-rule-chain-1-pe.png)
 {% endif %}
 
@@ -226,7 +220,7 @@ To be able to send downlink over integration we need to modify a "**Root Rule ch
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-downlink-rule-chain-2-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/downlink-rule-chain-2-pe.png)
 {% endif %}
 
@@ -239,7 +233,7 @@ Then set the attribute name, its value (for example, the key name is 'firmware',
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-downlink-add-attribute-1-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/downlink-add-attribute-1-pe.png)
 {% endif %}
 

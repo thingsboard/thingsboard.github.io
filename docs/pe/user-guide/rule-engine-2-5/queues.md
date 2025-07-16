@@ -9,4 +9,5 @@ redirect_from:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/rule-engine-2-5/queues.md %}

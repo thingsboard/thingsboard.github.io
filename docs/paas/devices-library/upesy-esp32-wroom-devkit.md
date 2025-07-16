@@ -12,4 +12,5 @@ docsPrefix: paas/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/upesy-esp32-wroom-dev-kit-v2.md %}

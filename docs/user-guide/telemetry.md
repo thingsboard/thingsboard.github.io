@@ -7,4 +7,5 @@ description: IoT device time-series data collection using various IoT protocols 
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/telemetry.md %}

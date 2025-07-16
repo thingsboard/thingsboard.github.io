@@ -17,7 +17,7 @@ subscribers, in our case of integration.
 You should already have an [AWS account](https://aws.amazon.com/iot/) prepared, on which 
 perform a few settings. To establish a correct and secure connection between the service and ThingsBoard, you need to create Policies, devices, and certificates for them.
 
-#### Create Policy
+### Create Policy
 
 A policy is an object in AWS that, when associated with an entity or resource, defines their permissions. 
 Permissions in the policies determine whether the request is allowed or denied. Most policies are stored in 
@@ -86,7 +86,7 @@ After that, click the **Create** button. The policy will be added to the list, a
 
 {% include images-gallery.html imageCollection="create-policies_3" %}
 
-#### Create Things and Certificates
+### Create Things and Certificates
 A Thing is a digital representation of a physical device or logical entity in AWS IoT.
 
 You can create a conditional device in several steps, but for it need to go to the appropriate section. 
@@ -139,11 +139,7 @@ them in ThingsBoard. Click on the “plus” and on “Create new converter”. 
 In the function decoder field, specify a script, for it copy the example Uplink converter, or
 use own configuration to parse and transform data.
 
-{% capture noteDebug %}
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode
-can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.
-{% endcapture %}
-{% include templates/info-banner.md title="Note:" content=noteDebug %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
 
 {% include templates/tbel-vs-js.md %}
 
@@ -233,7 +229,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-do
 {% include content-toggle.liquid content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
 Next, configure the conditions under which a message will be sent through the AWS IoT Downlink integration.
-To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
+To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
 
 {% include images-gallery.html imageCollection="downlink_2-3" %}
 

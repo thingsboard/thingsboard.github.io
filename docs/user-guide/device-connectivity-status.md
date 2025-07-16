@@ -8,6 +8,7 @@ redirect_from: "/docs/user-guide/rule-engine-2-0/tutorials/device-online-offline
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/device-connectivity-status.md %}
 
  

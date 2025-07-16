@@ -1,0 +1,111 @@
+0:
+  title: "ThingsBoard UI fundamentals: data modeling and visual representation"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Learn how to navigate the ThingsBoard UI confidently, understanding its layout, navigation, and key features."
+    1:
+      textContent: "Explore the ThingsBoard hierarchy: SysAdmin, Tenants, Customers, and Users, along with roles and permissions."
+    2:
+      textContent: "Learn how to configure Tenant Profiles."
+    3:
+      textContent: "Manage core entities like Devices, Assets, and Entity Views."
+    4:
+      textContent: "Learn how to group Devices and Assets for better scalability (PE Feature)."
+    5:
+      textContent: "Work with entity attributes and telemetry data to retrieve both real-time and historical insights."
+    6:
+      textContent: "Understand entity relations, different relationship types, and how they define connections between entities."
+    7:
+      textContent: "Explore real-world use cases of entity relations in ThingsBoard."
+    8:
+      textContent: "Identify common limitations and best practices to avoid performance bottlenecks."
+    9:
+      textContent: "Apply knowledge through real-world scenarios."
+    10:
+      textContent: "Discuss best practices for ThingsBoard UI and data management."
+1:
+  title: "ThingsBoard dashboard & widget mastery"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Deep Dive into ThingsBoard Dashboards to understand Entity Aliases, Time Window selection, General Settings, and Dashboard States."
+    1:
+      textContent: "Explore state transitions and how to enhance user experience."
+    2:
+      textContent: "Learn how to customize Chart, Markdown/HTML Card, and Map widgets."
+    3:
+      textContent: "Utilize Custom Tooltips and Dashboard Actions to improve usability and interaction."
+    4:
+      textContent: "Create dashboards with multiple states to display Asset hierarchy."
+    5:
+      textContent: "Implement drill-down functionality for detailed views of assets and devices."
+    6:
+      textContent: "Discuss advanced visualization strategies."
+    7:
+      textContent: "Gain hands-on experience with dashboard configurations."
+2:
+  title: "ThingsBoard custom widget development (session 1)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Recommended for users with JavaScript and Angular experience"
+      faIcon: "fas fa-exclamation-circle"
+      faIconColor: "#F36500"
+    1:
+      textContent: "Learn how to use the ThingsBoard Widget Editor, its layout, and key features."
+    2:
+      textContent: "Explore how to navigate, create, and configure widget bundles."
+    3:
+      textContent: "Manage widgets efficiently through importing, modifying, and exporting."
+    4:
+      textContent: "Learn how to build Control Widgets: develop widgets for real-time user interactions."
+    5:
+      textContent: "Develop Static Widgets: Create non-interactive elements for structured data display."
+    6:
+      textContent: "Understand how to develop Markdown/HTML Widgets: Enhance dashboards with flexible content."
+    7:
+      textContent: "Learn how to structure widgets for performance, scalability, and maintainability."
+    8:
+      textContent: "Troubleshoot common widget development challenges."
+    9:
+      textContent: "Gain hands-on experience in custom widget creation."
+3:
+  title: "ThingsBoard custom widget development (session 2)"
+  additionalText: "2 hours"
+  additionalFaIcon : "far fa-clock fa-lg"
+  allTextContentIcon: "fas fa-check"
+  allTextContentIconColor: "#2A7DEC"
+  textContentCollection:
+    0:
+      textContent: "Recommended for users with JavaScript and Angular experience"
+      faIcon: "fas fa-exclamation-circle"
+      faIconColor: "#F36500"
+    1:
+      textContent: "Understand complex widget structures and custom logic implementation."
+    2:
+      textContent: "Work with the Last Values widgets for real-time data representation."
+    3:
+      textContent: "Learn how to Develop Time-Series Widgets."
+    4:
+      textContent: "Build a Time-Series Table to structure historical data."
+    5:
+      textContent: "Create a Dynamic Line Chart to visualize trends in telemetry data."
+    6:
+      textContent: "Implement custom action templates for interactive dashboards."
+    8:
+      textContent: "Use HTML extensions for advanced data manipulation."
+    9:
+      textContent: "Discuss common custom widget challenges."
+    10:
+      textContent: "Learn best practices for scalable and maintainable widget development."
+

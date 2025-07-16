@@ -14,18 +14,4 @@ The way for creating a new user as same as any customer os user account in Thing
 
  ![image](/images/license/users.png)     
 
-Within User management page you may log in as particular user or delete the user also. 
-
-### User Guide
-
- - **Launching TB PE using pay-as-you-go subscription**
- 
- - **Launching TB PE using perpetual license**
- 
- - **Migrating from AWS IoT Marketplace**
- 
- - **Upgrading your TB PE subscription** 
- 
- - **Moving ThingsBoard to another hardware instance** 
-
-
+Within User management page you may log in as particular user or delete the user also.

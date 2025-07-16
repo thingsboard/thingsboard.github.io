@@ -54,7 +54,7 @@ The RPC response may be any number, string or JSON. For example:
 1631881236974
 ```
 
-#### Sending the client-side RPC from the device
+### Sending the client-side RPC from the device
 
 ThingsBoard provides an API to send RPC commands from the device.
 The API is specific for each supported network protocol.
@@ -66,7 +66,7 @@ You may review the API and examples on the corresponding reference page:
 
 LwM2M and SNMP protocols do not support the client-side RPC yet.
 
-#### Processing the client-side RPC by the platform
+### Processing the client-side RPC by the platform
 
 The client-side RPC command is transformed to the Rule Engine 
 message with the "TO_SERVER_RPC_REQUEST" [message type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types). 
@@ -126,7 +126,7 @@ Persistent RPC has a configurable lifetime and is stored in the database.
 Persistent RPC is extremely useful when your device may not be reachable for long period of time. 
 This typically happens in case of poor network connection or [Power-Saving Mode](/docs/{{docsPrefix}}user-guide/psm) (PSM).
 
-#### Server-side RPC structure
+### Server-side RPC structure
 
 The body of server-side RPC request consists of multiple fields:
 
@@ -163,7 +163,7 @@ The RPC response may be any JSON. For example:
 }
 ```
 
-#### Sending server-side RPC
+### Sending server-side RPC
 
 The server-side RPC are typically sent using REST API or dashboard widgets. In fact, dashboard widgets use the same REST API. 
 Once platform received the RPC, it validates the payload and runs permission checks.
@@ -172,7 +172,7 @@ The Rule Engine may enrich the command with additional parameters and finally is
 
 Let's review how to send the command in details:
 
-##### Using the REST API
+#### Using the REST API
 
 In order to send an RPC request you need to execute an HTTP POST request to the following URL:
 
@@ -182,7 +182,7 @@ http(s)://host:port/api/plugins/rpc/{callType}/{deviceId}
 
 where
 
-- **http(s)://host:port** is your ThingsBoard server base URL. For example, [https://thingsboard.cloud](https://thingsboard.cloud)
+- **http(s)://host:port** is your ThingsBoard server base URL. For example, [{{hostName}}](https://{{hostName}})
 - **callType** is either **oneway** or **twoway**;
 - **deviceId** is your target [Device ID](/docs/{{docsPrefix}}user-guide/ui/devices/#get-device-id).
 
@@ -220,14 +220,14 @@ When user sends the **persistent** RPC via REST API, the response contains the u
 You may use this identifier to track the state of the command. See persistent RPC [states](#persistent-rpc-states) for more details.
 
 
-##### Using the Dashboard
+#### Using the Dashboard
 
 The [Control Widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) are used to send RPC commands to the device.
 The most popular widgets are "RPC Button", "Round Switch", "Switch Control" and "Knob Control". 
 The advanced settings of those widgets allow you to define RPC method name and params.
 You may also develop [custom widgets](/docs/{{docsPrefix}}user-guide/contribution/widgets-development) and use [control api](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/#control-api) to send RPC commands.
 
-##### Using the Rule Engine
+#### Using the Rule Engine
 
 All server-side RPC commands that are sent from the widgets or REST API are eventually transformed to the rule engine message 
 with the "RPC_CALL_FROM_SERVER_TO_DEVICE" [message type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types).
@@ -254,7 +254,7 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 
 {% include images-gallery.html imageCollection="server-side-rpc-rule-chain" %}
 
-#### Processing server-side RPC on the device
+### Processing server-side RPC on the device
 
 ThingsBoard provides a convenient API to receive and process server-side RPC commands on the device.
 This API is specific for each supported network protocol.
@@ -265,13 +265,13 @@ You can review API and examples on the corresponding reference page:
  - [HTTP RPC API reference](/docs/{{docsPrefix}}reference/http-api/#rpc-api) 
 
 
-#### Persistent RPC
+### Persistent RPC
 
-##### States
+#### States
 
 ThingsBoard tracks state of the persistent RPC. There are 7 available states:
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
 * **QUEUED** - RPC was created and saved to the database; 
   No attempt to send the RPC to device yet; 
@@ -318,7 +318,7 @@ If sequential RPC delivery is enabled and your device will not be able to handle
 {% endcapture %}
 {% include templates/info-banner.md content=sequential-rpc-deadlock-warning %} 
 
-##### Rule chain events 
+#### Rule chain events 
 
 Changes to the [RPC states](/docs/{{docsPrefix}}user-guide/rpc/#rpc-states) are pushed to the Rule Engine as separate messages. 
 Each RPC state has corresponding message type. See image below:
@@ -375,11 +375,11 @@ See example of successful RPC message below:
 ```
 
 
-##### TTL configuration
+#### TTL configuration
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
-The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TTL' parameter in [Subscriptions](/products/paas/subscription/) for more details.
+The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TTL' parameter in [Subscriptions](/docs/{{docsPrefix}}subscription/) for more details.
 
 {% else %}
 The time-to-live of persistent RPC is configured by the System Administrator in the [Tenant Profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/) using **RPC TTL days configuration** parameter.

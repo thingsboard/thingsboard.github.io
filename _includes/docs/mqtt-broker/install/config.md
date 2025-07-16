@@ -1,6 +1,6 @@
 
 
-####  HTTP server parameters
+###  HTTP server parameters
 
 <table>
 	<thead>
@@ -97,7 +97,7 @@
 </table>
 
 
-####  MQTT listeners parameters
+###  MQTT listeners parameters
 
 <table>
 	<thead>
@@ -106,6 +106,19 @@
 		</tr>
 	</thead>
 	<tbody>
+		<tr>
+			<td>listener.proxy_enabled</td>
+			<td>MQTT_PROXY_PROTOCOL_ENABLED</td>
+			<td>false</td>
+			<td> Enable proxy protocol support. Disabled by default. If enabled, supports both v1 and v2.
+ Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature</td>
+		</tr>
+		<tr>
+			<td>listener.leak_detector_level</td>
+			<td>NETTY_LEAK_DETECTOR_LVL</td>
+			<td>DISABLED</td>
+			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID. It is set globally for all listeners</td>
+		</tr>
 		<tr>
 			<td>listener.tcp.enabled</td>
 			<td>LISTENER_TCP_ENABLED</td>
@@ -123,12 +136,6 @@
 			<td>LISTENER_TCP_BIND_PORT</td>
 			<td>1883</td>
 			<td> MQTT TCP listener bind port</td>
-		</tr>
-		<tr>
-			<td>listener.tcp.netty.leak_detector_level</td>
-			<td>TCP_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.tcp.netty.boss_group_thread_count</td>
@@ -252,12 +259,6 @@
 			<td> Optional password to access the private key. If not set, the platform will attempt to load the private keys that are not protected with the password</td>
 		</tr>
 		<tr>
-			<td>listener.ssl.netty.leak_detector_level</td>
-			<td>SSL_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
-		</tr>
-		<tr>
 			<td>listener.ssl.netty.boss_group_thread_count</td>
 			<td>SSL_NETTY_BOSS_GROUP_THREADS</td>
 			<td>1</td>
@@ -316,12 +317,6 @@
 			<td>WS_NETTY_SUB_PROTOCOLS</td>
 			<td>mqttv3.1,mqtt</td>
 			<td> Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
-		</tr>
-		<tr>
-			<td>listener.ws.netty.leak_detector_level</td>
-			<td>WS_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
 		</tr>
 		<tr>
 			<td>listener.ws.netty.boss_group_thread_count</td>
@@ -451,12 +446,6 @@
 			<td> Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
 		</tr>
 		<tr>
-			<td>listener.wss.netty.leak_detector_level</td>
-			<td>WSS_NETTY_LEAK_DETECTOR_LVL</td>
-			<td>DISABLED</td>
-			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID</td>
-		</tr>
-		<tr>
 			<td>listener.wss.netty.boss_group_thread_count</td>
 			<td>WSS_NETTY_BOSS_GROUP_THREADS</td>
 			<td>1</td>
@@ -496,7 +485,7 @@
 </table>
 
 
-####  Kafka parameters
+###  Kafka parameters
 
 <table>
 	<thead>
@@ -588,13 +577,13 @@
 		<tr>
 			<td>queue.device-persisted-msg.consumers-count</td>
 			<td>TB_DEVICE_PERSISTED_MSG_CONSUMERS_COUNT</td>
-			<td>2</td>
+			<td>3</td>
 			<td> Number of parallel consumers for 'tbmq.msg.persisted' topic. Should not be more than the number of partitions in topic</td>
 		</tr>
 		<tr>
 			<td>queue.device-persisted-msg.threads-count</td>
 			<td>TB_DEVICE_PERSISTED_MSG_THREADS_COUNT</td>
-			<td>2</td>
+			<td>3</td>
 			<td> Number of threads in the pool to process consumers tasks</td>
 		</tr>
 		<tr>
@@ -602,6 +591,12 @@
 			<td>TB_DEVICE_PERSISTED_MSG_POLL_INTERVAL</td>
 			<td>100</td>
 			<td> Interval in milliseconds to poll messages from 'tbmq.msg.persisted' topic</td>
+		</tr>
+		<tr>
+			<td>queue.device-persisted-msg.pack-processing-timeout</td>
+			<td>TB_DEVICE_PERSISTED_MSG_PACK_PROCESSING_TIMEOUT</td>
+			<td>20000</td>
+			<td> Timeout in milliseconds for processing the pack of messages from 'tbmq.msg.persisted' topic</td>
 		</tr>
 		<tr>
 			<td>queue.device-persisted-msg.ack-strategy.type</td>
@@ -772,6 +767,18 @@
 			<td> Interval in milliseconds to poll messages from 'tbmq.sys.historical.data' topic</td>
 		</tr>
 		<tr>
+			<td>queue.integration-uplink.poll-interval</td>
+			<td>TB_IE_UPLINK_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.ie.uplink' topic</td>
+		</tr>
+		<tr>
+			<td>queue.integration-uplink-notifications.poll-interval</td>
+			<td>TB_IE_UPLINK_NOTIFICATIONS_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.ie.uplink.notifications' topics</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
@@ -906,7 +913,7 @@
 		<tr>
 			<td>queue.kafka.msg-all.topic-properties</td>
 			<td>TB_KAFKA_MSG_ALL_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:24;replication.factor:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:16;replication.factor:1</td>
 			<td> Kafka topic properties separated by semicolon for `tbmq.msg.all` topic</td>
 		</tr>
 		<tr>
@@ -1062,7 +1069,7 @@
 		<tr>
 			<td>queue.kafka.client-session-event.topic-properties</td>
 			<td>TB_KAFKA_CLIENT_SESSION_EVENT_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:48;replication.factor:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:24;replication.factor:1</td>
 			<td> Kafka topic properties separated by semicolon for `tbmq.client.session.event.request` topic</td>
 		</tr>
 		<tr>
@@ -1221,11 +1228,143 @@
 			<td></td>
 			<td> Additional Kafka producer configs separated by semicolon for `tbmq.sys.historical.data` topic</td>
 		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.topic-prefix</td>
+			<td>TB_KAFKA_IE_DOWNLINK_TOPIC_PREFIX</td>
+			<td>tbmq.ie.downlink</td>
+			<td> Prefix for topics for sending integration configurations and validation requests from tbmq to integration executors</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.http.topic-properties</td>
+			<td>TB_KAFKA_IE_DOWNLINK_HTTP_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.downlink.http` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.http.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_HTTP_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.downlink.http` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.http.additional-producer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_HTTP_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.downlink.http` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.kafka.topic-properties</td>
+			<td>TB_KAFKA_IE_DOWNLINK_KAFKA_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.downlink.kafka` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.kafka.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_KAFKA_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.downlink.kafka` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.kafka.additional-producer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_KAFKA_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.downlink.kafka` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.mqtt.topic-properties</td>
+			<td>TB_KAFKA_IE_DOWNLINK_MQTT_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.downlink.mqtt` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.mqtt.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_MQTT_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.downlink.mqtt` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-downlink.mqtt.additional-producer-config</td>
+			<td>TB_KAFKA_IE_DOWNLINK_MQTT_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.downlink.mqtt` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.topic</td>
+			<td>TB_KAFKA_IE_UPLINK_TOPIC</td>
+			<td>tbmq.ie.uplink</td>
+			<td> Topic for sending messages/events from integration executors to tbmq</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.topic-properties</td>
+			<td>TB_KAFKA_IE_UPLINK_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:6;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.uplink` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.uplink` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink.additional-producer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.uplink` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.topic-prefix</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_TOPIC_PREFIX</td>
+			<td>tbmq.ie.uplink.notifications</td>
+			<td> Prefix for topics for sending notifications or replies from integration executors to specific tbmq node</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.topic-properties</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.ie.uplink.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.ie.uplink.notifications` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-uplink-notifications.additional-producer-config</td>
+			<td>TB_KAFKA_IE_UPLINK_NOTIF_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.ie.uplink.notifications` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-msg.topic-properties</td>
+			<td>TB_KAFKA_IE_MSG_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.msg.ie` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-msg.additional-consumer-config</td>
+			<td>TB_KAFKA_IE_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td>max.poll.records:50</td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.msg.ie` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.integration-msg.additional-producer-config</td>
+			<td>TB_KAFKA_IE_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.msg.ie` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.kafka-prefix</td>
+			<td>TB_KAFKA_PREFIX</td>
+			<td></td>
+			<td> The common prefix for all Kafka topics, producers, consumer groups, and consumers. Defaults to empty string meaning no prefix is added</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  General service parameters
+###  General service parameters
 
 <table>
 	<thead>
@@ -1235,16 +1374,34 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>service.type</td>
+			<td>TB_SERVICE_TYPE</td>
+			<td>tbmq</td>
+			<td> Microservice type. Allowed value: tbmq</td>
+		</tr>
+		<tr>
 			<td>service.id</td>
 			<td>TB_SERVICE_ID</td>
 			<td></td>
 			<td> Unique id for this service (autogenerated if empty)</td>
 		</tr>
+		<tr>
+			<td>service.singleton-mode</td>
+			<td>TB_SERVICE_SINGLETON_MODE</td>
+			<td>true</td>
+			<td> Set this parameter to 'true' if your TBMQ is operating as a single-node deployment and you enable limitations for client sessions, Application clients, etc. See 'MQTT_SESSIONS_LIMIT', 'MQTT_APPLICATION_CLIENTS_LIMIT', 'MQTT_TOTAL_RATE_LIMITS_ENABLED', 'MQTT_DEVICE_PERSISTED_MSGS_RATE_LIMITS_ENABLED'.
+ In this mode, rate limiting will be managed locally using an in-memory approach: LocalBucket.
+ This avoids the overhead of communicating with a Redis for rate limiting,
+ which is unnecessary in single-node setups where no other instances are sharing rate limit data.
+ Set this parameter to 'false' if your TBMQ is a cluster deployment (with 2 or more nodes in the cluster).
+ In this mode, rate limiting will be managed using Redis, allowing all nodes
+ in the cluster to enforce consistent rate limits across the entire cluster</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  Actor system parameters
+###  Actor system parameters
 
 <table>
 	<thead>
@@ -1286,7 +1443,7 @@
 		<tr>
 			<td>actors.persisted-device.dispatcher-pool-size</td>
 			<td>ACTORS_SYSTEM_PERSISTED_DEVICE_DISPATCHER_POOL_SIZE</td>
-			<td>4</td>
+			<td>8</td>
 			<td> Number of threads processing the Device actor's messages</td>
 		</tr>
 		<tr>
@@ -1329,7 +1486,40 @@
 </table>
 
 
-####  Database time series parameters
+###  Platform integrations parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>integrations.init.connection-check-api-request-timeout-sec</td>
+			<td>INTEGRATIONS_INIT_CONNECTION_CHECK_API_REQUEST_TIMEOUT_SEC</td>
+			<td>20</td>
+			<td> Connection check timeout for API request in seconds</td>
+		</tr>
+		<tr>
+			<td>integrations.cleanup.period</td>
+			<td>INTEGRATIONS_CLEANUP_PERIOD_SEC</td>
+			<td>10800</td>
+			<td> The parameter to specify the period of execution cleanup task for disconnected integrations. Value set in seconds. Default value corresponds to three hours</td>
+		</tr>
+		<tr>
+			<td>integrations.cleanup.ttl</td>
+			<td>INTEGRATIONS_CLEANUP_TTL_SEC</td>
+			<td>604800</td>
+			<td> Administration TTL (in seconds) for cleaning up disconnected integrations.
+ The cleanup removes integration topics that persist messages.
+ The current value is set to one week. A value of 0 or negative disables this TTL</td>
+		</tr>
+	</tbody>
+</table>
+
+
+###  Database time series parameters
 
 <table>
 	<thead>
@@ -1348,7 +1538,7 @@
 </table>
 
 
-####  SQL configuration parameters
+###  SQL configuration parameters
 
 <table>
 	<thead>
@@ -1370,9 +1560,15 @@
 			<td> Specify partitioning size for timestamp key-value storage. Example: DAYS, MONTHS, YEARS, INDEFINITE</td>
 		</tr>
 		<tr>
+			<td>sql.remove_null_chars</td>
+			<td>SQL_REMOVE_NULL_CHARS</td>
+			<td>true</td>
+			<td> Specify whether to remove null characters from strValue before insert</td>
+		</tr>
+		<tr>
 			<td>sql.ts.batch_size</td>
 			<td>SQL_TS_BATCH_SIZE</td>
-			<td>10000</td>
+			<td>1000</td>
 			<td> Batch size for persisting time series inserts</td>
 		</tr>
 		<tr>
@@ -1386,6 +1582,90 @@
 			<td>SQL_TS_BATCH_THREADS</td>
 			<td>3</td>
 			<td> Number of threads that execute batch insert/update statements for time series data. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+		</tr>
+		<tr>
+			<td>sql.ts_latest.batch_size</td>
+			<td>SQL_TS_LATEST_BATCH_SIZE</td>
+			<td>1000</td>
+			<td> Batch size for persisting latest time series inserts</td>
+		</tr>
+		<tr>
+			<td>sql.ts_latest.batch_max_delay</td>
+			<td>SQL_TS_LATEST_BATCH_MAX_DELAY_MS</td>
+			<td>50</td>
+			<td> Max timeout for latest time series entries queue polling. Value set in milliseconds</td>
+		</tr>
+		<tr>
+			<td>sql.ts_latest.batch_threads</td>
+			<td>SQL_TS_LATEST_BATCH_THREADS</td>
+			<td>3</td>
+			<td> Number of threads that execute batch insert/update statements for latest time series data. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+		</tr>
+		<tr>
+			<td>sql.unauthorized-client.insert.batch_size</td>
+			<td>SQL_UNAUTHORIZED_CLIENT_INSERT_BATCH_SIZE</td>
+			<td>1000</td>
+			<td> Batch size for persisting unauthorized client inserts</td>
+		</tr>
+		<tr>
+			<td>sql.unauthorized-client.insert.batch_max_delay</td>
+			<td>SQL_UNAUTHORIZED_CLIENT_INSERT_BATCH_MAX_DELAY_MS</td>
+			<td>50</td>
+			<td> Max timeout for unauthorized client insert entries queue polling. Value set in milliseconds</td>
+		</tr>
+		<tr>
+			<td>sql.unauthorized-client.insert.batch_threads</td>
+			<td>SQL_UNAUTHORIZED_CLIENT_INSERT_BATCH_THREADS</td>
+			<td>3</td>
+			<td> Number of threads that execute batch insert/update statements for unauthorized client data. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+		</tr>
+		<tr>
+			<td>sql.unauthorized-client.delete.batch_size</td>
+			<td>SQL_UNAUTHORIZED_CLIENT_DELETE_BATCH_SIZE</td>
+			<td>1000</td>
+			<td> Batch size for processing unauthorized client deletes</td>
+		</tr>
+		<tr>
+			<td>sql.unauthorized-client.delete.batch_max_delay</td>
+			<td>SQL_UNAUTHORIZED_CLIENT_DELETE_BATCH_MAX_DELAY_MS</td>
+			<td>50</td>
+			<td> Max timeout for unauthorized client delete entries queue polling. Value set in milliseconds</td>
+		</tr>
+		<tr>
+			<td>sql.unauthorized-client.delete.batch_threads</td>
+			<td>SQL_UNAUTHORIZED_CLIENT_DELETE_BATCH_THREADS</td>
+			<td>3</td>
+			<td> Number of threads that execute batch delete statements for unauthorized client data. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+		</tr>
+		<tr>
+			<td>sql.events.batch_size</td>
+			<td>SQL_EVENTS_BATCH_SIZE</td>
+			<td>10000</td>
+			<td> Batch size for persisting events updates</td>
+		</tr>
+		<tr>
+			<td>sql.events.batch_max_delay</td>
+			<td>SQL_EVENTS_BATCH_MAX_DELAY_MS</td>
+			<td>100</td>
+			<td> Max timeout for events entries queue polling. The value set in milliseconds</td>
+		</tr>
+		<tr>
+			<td>sql.events.batch_threads</td>
+			<td>SQL_EVENTS_BATCH_THREADS</td>
+			<td>3</td>
+			<td> Batch size for processing events insert/update. Batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+		</tr>
+		<tr>
+			<td>sql.events.partition_size</td>
+			<td>SQL_EVENTS_REGULAR_PARTITION_SIZE_HOURS</td>
+			<td>168</td>
+			<td> Number of hours to partition the events. The current value corresponds to one week</td>
+		</tr>
+		<tr>
+			<td>sql.events.max-symbols</td>
+			<td>SQL_EVENTS_MAX_SYMBOLS</td>
+			<td>4096</td>
+			<td> Maximum number of symbols per event. The event content will be truncated if needed</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.ts.enabled</td>
@@ -1405,11 +1685,131 @@
 			<td>604800</td>
 			<td> The parameter to specify system TTL(Time To Live) value for time series records. Value set in seconds. 0 - records are never expired. Default value corresponds to seven days</td>
 		</tr>
+		<tr>
+			<td>sql.ttl.unauthorized_client.enabled</td>
+			<td>SQL_TTL_UNAUTHORIZED_CLIENT_ENABLED</td>
+			<td>true</td>
+			<td> The parameter to specify whether to use TTL (Time To Live) for unauthorized clients</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.unauthorized_client.execution_interval_ms</td>
+			<td>SQL_TTL_UNAUTHORIZED_CLIENT_EXECUTION_INTERVAL_MS</td>
+			<td>86400000</td>
+			<td> The parameter to specify the period of execution TTL task for unauthorized clients. Value set in milliseconds. Default value corresponds to one day</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.unauthorized_client.ttl</td>
+			<td>SQL_TTL_UNAUTHORIZED_CLIENT_TTL</td>
+			<td>259200</td>
+			<td> The parameter to specify system TTL(Time To Live) value for unauthorized clients. Value set in seconds. 0 - records are never expired. Default value corresponds to three days</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.events.enabled</td>
+			<td>SQL_TTL_EVENTS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable TTL (Time To Live) for event records</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.events.execution_interval_ms</td>
+			<td>SQL_TTL_EVENTS_EXECUTION_INTERVAL_MS</td>
+			<td>3600000</td>
+			<td> Number of milliseconds (max random initial delay and fixed period). Defaults to 1 hour</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.events.events_ttl</td>
+			<td>SQL_TTL_EVENTS_TTL_SEC</td>
+			<td>1209600</td>
+			<td> Number of seconds for TTL. TTL is set to 14 days by default. The accuracy of the cleanup depends on the sql.events.partition_size parameter</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  SQL DAO configuration parameters
+###  Redis lettuce configuration parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>lettuce.auto-flush</td>
+			<td>REDIS_LETTUCE_CMDS_AUTO_FLUSH_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable auto-flush. If disabled, commands are buffered and flushed based on cmd count or time interval</td>
+		</tr>
+		<tr>
+			<td>lettuce.buffered-cmd-count</td>
+			<td>REDIS_LETTUCE_BUFFERED_CMDS_COUNT</td>
+			<td>5</td>
+			<td> Number of buffered commands before flush is triggered. Used when auto-flush is disabled</td>
+		</tr>
+		<tr>
+			<td>lettuce.flush-interval-ms</td>
+			<td>REDIS_LETTUCE_FLUSH_INTERVAL_MS</td>
+			<td>5</td>
+			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.shutdown-quiet-period</td>
+			<td>REDIS_LETTUCE_SHUTDOWN_QUIET_PERIOD_SEC</td>
+			<td>1</td>
+			<td> The shutdown quiet period for lettuce client set in seconds</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.shutdown-timeout</td>
+			<td>REDIS_LETTUCE_SHUTDOWN_TIMEOUT_SEC</td>
+			<td>10</td>
+			<td> The shutdown timeout for lettuce client set in seconds</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.cluster.topology-refresh.enabled</td>
+			<td>REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_ENABLED</td>
+			<td>false</td>
+			<td> Enables or disables periodic cluster topology updates.
+ Useful for Redis Cluster setup to handle topology changes,
+ such as node failover, restarts, or IP address changes</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.cluster.topology-refresh.period</td>
+			<td>REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_PERIOD_SEC</td>
+			<td>60</td>
+			<td> Specifies the interval (in seconds) for periodic cluster topology updates</td>
+		</tr>
+	</tbody>
+</table>
+
+
+###  Redis jedis configuration parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>jedis.cluster.topology-refresh.enabled</td>
+			<td>REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED</td>
+			<td>false</td>
+			<td> Enables or disables periodic cluster topology updates.
+ Useful for Redis cluster setup to handle topology changes,
+ such as node failover, restarts, or IP address changes</td>
+		</tr>
+		<tr>
+			<td>jedis.cluster.topology-refresh.period</td>
+			<td>REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_PERIOD_SEC</td>
+			<td>60</td>
+			<td> Specifies the interval (in seconds) for periodic cluster topology updates</td>
+		</tr>
+	</tbody>
+</table>
+
+
+###  SQL DAO configuration parameters
 
 <table>
 	<thead>
@@ -1437,13 +1837,6 @@
 			<td> You can set a Hibernate feature that controls the DDL behavior in a more fine-grained way.
  The standard Hibernate property values are none, validate, update, create-drop.
  Spring Boot chooses a default value for you based on whether it thinks your database is embedded (default create-drop) or not (default none)</td>
-		</tr>
-		<tr>
-			<td>spring.jpa.database-platform</td>
-			<td>SPRING_JPA_DATABASE_PLATFORM</td>
-			<td>org.hibernate.dialect.PostgreSQLDialect</td>
-			<td> The name of the database platform to be used by the JPA provider.
- This property is used to set the underlying SQL dialect that should be used when interacting with the database</td>
 		</tr>
 		<tr>
 			<td>spring.datasource.driverClassName</td>
@@ -1486,7 +1879,7 @@
 </table>
 
 
-####  General Spring parameters
+###  General Spring parameters
 
 <table>
 	<thead>
@@ -1541,7 +1934,7 @@
 </table>
 
 
-####  Security parameters
+###  Security parameters
 
 <table>
 	<thead>
@@ -1597,7 +1990,7 @@
 		<tr>
 			<td>security.jwt.tokenSigningKey</td>
 			<td>JWT_TOKEN_SIGNING_KEY</td>
-			<td>thingsboardDefaultSigningKey</td>
+			<td>Qk1xUnloZ0VQTlF1VlNJQXZ4cWhiNWt1cVd1ZzQ5cWpENUhMSHlaYmZIM0JrZ2pPTVlhQ3N1Z0ZMUnd0SDBieg==</td>
 			<td> User JWT Token sign key</td>
 		</tr>
 		<tr>
@@ -1616,7 +2009,7 @@
 </table>
 
 
-####  MQTT parameters
+###  MQTT parameters
 
 <table>
 	<thead>
@@ -1712,7 +2105,7 @@
 			<td>mqtt.write-and-flush</td>
 			<td>MQTT_MSG_WRITE_AND_FLUSH</td>
 			<td>true</td>
-			<td> If enabled, each message is published to subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
+			<td> If enabled, each message is published to non-persistent subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
 		</tr>
 		<tr>
 			<td>mqtt.buffered-msg-count</td>
@@ -1723,7 +2116,7 @@
 		<tr>
 			<td>mqtt.keep-alive.monitoring-delay-ms</td>
 			<td>MQTT_KEEP_ALIVE_MONITORING_DELAY_MS</td>
-			<td>100</td>
+			<td>1000</td>
 			<td> Time in milliseconds between subsequent checks for the non-active clients</td>
 		</tr>
 		<tr>
@@ -1836,7 +2229,7 @@
 		<tr>
 			<td>mqtt.persistent-session.device.persisted-messages.limit</td>
 			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT</td>
-			<td>1000</td>
+			<td>10000</td>
 			<td> Maximum number of PUBLISH messages stored for each persisted DEVICE client</td>
 		</tr>
 		<tr>
@@ -1846,58 +2239,47 @@
 			<td> TTL of persisted DEVICE messages in seconds. The current value corresponds to one week</td>
 		</tr>
 		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.clean-up.cron</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_CLEAN_UP_CRON</td>
-			<td>0 0 2 * * *</td>
-			<td> Cron job to schedule clearing of outdated persisted DEVICE messages. Defaults to 'every day at 2 o'clock'</td>
+			<td>mqtt.persistent-session.device.persisted-messages.write-and-flush</td>
+			<td>MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH</td>
+			<td>true</td>
+			<td> If enabled, each message is published to persistent DEVICE client subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
 		</tr>
 		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.clean-up.zone</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_CLEAN_UP_ZONE</td>
-			<td>UTC</td>
-			<td> Timezone for the DEVICE messages clearing cron-job</td>
+			<td>mqtt.persistent-session.device.persisted-messages.buffered-msg-count</td>
+			<td>MQTT_PERSISTENT_BUFFERED_MSG_COUNT</td>
+			<td>5</td>
+			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH` = false</td>
 		</tr>
 		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.clean-up.session-ctx-page-size</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_CLEAN_UP_SESSION_CTX_PAGE_SIZE</td>
-			<td>1000</td>
-			<td> Max number of client sessions in one SELECT request</td>
+			<td>mqtt.rate-limits.threads-count</td>
+			<td>MQTT_RATE_LIMITS_THREADS_COUNT</td>
+			<td>1</td>
+			<td> The number of parallel threads dedicated to processing total rate limit checks for incoming messages</td>
 		</tr>
 		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.sql.update-packet-queue.batch-threads</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_SQL_UPDATE_PACKET_QUEUE_BATCH_THREADS</td>
-			<td>3</td>
-			<td> Number of parallel threads that process queue. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
-		</tr>
-		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.sql.update-packet-queue.batch-size</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_SQL_UPDATE_PACKET_QUEUE_BATCH_SIZE</td>
-			<td>100</td>
-			<td> Batch size for processing packet updates</td>
-		</tr>
-		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.sql.update-packet-queue.max-delay</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_SQL_UPDATE_PACKET_QUEUE_MAX_DELAY</td>
+			<td>mqtt.rate-limits.batch-size</td>
+			<td>MQTT_RATE_LIMITS_BATCH_SIZE</td>
 			<td>50</td>
-			<td> Max timeout for packet updates queue polling. Value set in milliseconds</td>
+			<td> The number of messages to process in each batch when checking total rate limits for incoming messages</td>
 		</tr>
 		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.sql.delete-packet-queue.batch-threads</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_SQL_DELETE_PACKET_QUEUE_BATCH_THREADS</td>
-			<td>3</td>
-			<td> Number of parallel threads that process queue. Batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
-		</tr>
-		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.sql.delete-packet-queue.batch-size</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_SQL_DELETE_PACKET_QUEUE_BATCH_SIZE</td>
-			<td>100</td>
-			<td> Batch size for processing packet deletes</td>
-		</tr>
-		<tr>
-			<td>mqtt.persistent-session.device.persisted-messages.sql.delete-packet-queue.max-delay</td>
-			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_SQL_DELETE_PACKET_QUEUE_MAX_DELAY</td>
+			<td>mqtt.rate-limits.period-ms</td>
+			<td>MQTT_RATE_LIMITS_PERIOD_MS</td>
 			<td>50</td>
-			<td> Max timeout for packet deletes queue polling. Value set in milliseconds</td>
+			<td> The period, in milliseconds, to wait before processing a batch of messages for total rate limits for incoming messages</td>
+		</tr>
+		<tr>
+			<td>mqtt.rate-limits.total.enabled</td>
+			<td>MQTT_TOTAL_RATE_LIMITS_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable total incoming and outgoing messages rate limits for the broker (per whole cluster)</td>
+		</tr>
+		<tr>
+			<td>mqtt.rate-limits.total.config</td>
+			<td>MQTT_TOTAL_RATE_LIMITS_CONFIG</td>
+			<td>1000:1,50000:60</td>
+			<td> Limit the maximum count of total incoming and outgoing messages for specified time intervals in seconds. Comma separated list of limit:seconds pairs.
+ Example: 1000 messages per second or 50000 messages per minute</td>
 		</tr>
 		<tr>
 			<td>mqtt.rate-limits.incoming-publish.enabled</td>
@@ -1926,12 +2308,43 @@
  Example: 10 messages per second or 300 messages per minute</td>
 		</tr>
 		<tr>
+			<td>mqtt.rate-limits.device-persisted-messages.enabled</td>
+			<td>MQTT_DEVICE_PERSISTED_MSGS_RATE_LIMITS_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable Device clients persisted messages rate limits for the broker (per whole cluster)</td>
+		</tr>
+		<tr>
+			<td>mqtt.rate-limits.device-persisted-messages.config</td>
+			<td>MQTT_DEVICE_PERSISTED_MSGS_RATE_LIMITS_CONFIG</td>
+			<td>100:1,1000:60</td>
+			<td> Limit the maximum count of Device clients persisted messages for specified time intervals in seconds. Comma separated list of limit:seconds pairs.
+ Example: 100 messages per second or 1000 messages per minute</td>
+		</tr>
+		<tr>
 			<td>mqtt.sessions-limit</td>
 			<td>MQTT_SESSIONS_LIMIT</td>
 			<td>0</td>
 			<td> Limit the total number of sessions (connected + disconnected) stored on the broker, not individually for each server (node) if it is a cluster, but as a collective limit.
  For example, when set to 1000 either the single broker node or cluster of 2 or X nodes can store 1000 sessions in total. It is a soft limit meaning a bit more than 1000 sessions can be stored.
  A setting of 0 means the limitation is disabled</td>
+		</tr>
+		<tr>
+			<td>mqtt.sessions-limit-correction</td>
+			<td>MQTT_SESSIONS_LIMIT_CORRECTION</td>
+			<td>false</td>
+			<td> Enable/disable sessions limit value correction in the cache</td>
+		</tr>
+		<tr>
+			<td>mqtt.sessions-limit-correction-period-ms</td>
+			<td>MQTT_SESSIONS_LIMIT_CORRECTION_PERIOD_MS</td>
+			<td>10800000</td>
+			<td> Period in milliseconds to execute the job to correct the value of sessions limit in the cache. Defaults to 3 hours</td>
+		</tr>
+		<tr>
+			<td>mqtt.application-clients-limit</td>
+			<td>MQTT_APPLICATION_CLIENTS_LIMIT</td>
+			<td>0</td>
+			<td> Limit the total number of Application persistent clients. A setting of 0 means the limitation is disabled</td>
 		</tr>
 		<tr>
 			<td>mqtt.handler.all_msg_callback_threads</td>
@@ -1952,6 +2365,12 @@
 			<td> Number of threads in thread pool for processing application persisted publish messages callbacks after sending them to Kafka</td>
 		</tr>
 		<tr>
+			<td>mqtt.handler.downlink_msg_callback_threads</td>
+			<td>MQTT_HANDLER_DOWNLINK_MSG_CALLBACK_THREADS</td>
+			<td>2</td>
+			<td> Number of threads in thread pool for processing downlink messages callbacks after sending them to Kafka</td>
+		</tr>
+		<tr>
 			<td>mqtt.response-info</td>
 			<td>MQTT_RESPONSE_INFO</td>
 			<td></td>
@@ -1963,7 +2382,7 @@
 </table>
 
 
-####  DB connectivity parameters
+###  Cache parameters
 
 <table>
 	<thead>
@@ -1972,31 +2391,6 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr>
-			<td>db.connection-check-rate-ms</td>
-			<td>DB_CONNECTION_CHECK_RATE_MS</td>
-			<td>10000</td>
-			<td> The parameter to specify time interval in milliseconds to periodically check if the connection to the DB is still established</td>
-		</tr>
-	</tbody>
-</table>
-
-
-####  Cache parameters
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>cache.type</td>
-			<td>CACHE_TYPE</td>
-			<td>caffeine</td>
-			<td> Cache type: caffeine or redis</td>
-		</tr>
 		<tr>
 			<td>cache.stats.enabled</td>
 			<td>CACHE_STATS_ENABLED</td>
@@ -2010,46 +2404,46 @@
 			<td> Cache stats logging interval in seconds</td>
 		</tr>
 		<tr>
-			<td>cache.specs.packetIdAndSerialNumber.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_PACKET_ID_SERIAL_NUMBER_TTL</td>
-			<td>1440</td>
-			<td> Cache TTL in minutes</td>
-		</tr>
-		<tr>
-			<td>cache.specs.packetIdAndSerialNumber.maxSize</td>
-			<td>CACHE_SPECS_PACKET_ID_SERIAL_NUMBER_MAX_SIZE</td>
-			<td>10000</td>
-			<td> Cache max size. 0 means the cache is disabled in case CACHE_TYPE=caffeine</td>
+			<td>cache.cache-prefix</td>
+			<td>CACHE_PREFIX</td>
+			<td></td>
+			<td> The common prefix for all cache keys. Defaults to empty string meaning no prefix is added</td>
 		</tr>
 		<tr>
 			<td>cache.specs.mqttClientCredentials.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_MQTT_CLIENT_CREDENTIALS_TTL</td>
 			<td>1440</td>
-			<td> Cache TTL in minutes</td>
-		</tr>
-		<tr>
-			<td>cache.specs.mqttClientCredentials.maxSize</td>
-			<td>CACHE_SPECS_MQTT_CLIENT_CREDENTIALS_MAX_SIZE</td>
-			<td>0</td>
-			<td> Cache max size. 0 means the cache is disabled in case CACHE_TYPE=caffeine</td>
+			<td> Cache TTL in minutes. Defaults to 1 day</td>
 		</tr>
 		<tr>
 			<td>cache.specs.basicCredentialsPassword.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_BASIC_CREDENTIALS_PASSWORD_TTL</td>
 			<td>1</td>
-			<td> Cache TTL in minutes. It is recommended to set this TTL as a small value to not store them for a long time (e.g. 1-5 minutes)</td>
+			<td> Cache TTL in minutes. It is recommended to set this TTL as a small value to not store them for a long time (e.g., 1-5 minutes)</td>
 		</tr>
 		<tr>
-			<td>cache.specs.basicCredentialsPassword.maxSize</td>
-			<td>CACHE_SPECS_BASIC_CREDENTIALS_PASSWORD_MAX_SIZE</td>
+			<td>cache.specs.sslRegexBasedCredentials.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_SSL_REGEX_BASED_CREDENTIALS_TTL</td>
+			<td>1440</td>
+			<td> Cache TTL in minutes. Defaults to 1 day</td>
+		</tr>
+		<tr>
+			<td>cache.specs.clientSessionCredentials.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CLIENT_SESSION_CREDENTIALS_TTL</td>
 			<td>0</td>
-			<td> Cache max size. 0 means the cache is disabled in case CACHE_TYPE=caffeine</td>
+			<td> Cache TTL in minutes. Defaults to 0 meaning the cache is eternal</td>
+		</tr>
+		<tr>
+			<td>cache.specs.clientMqttVersion.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CLIENT_MQTT_VERSION_TTL</td>
+			<td>0</td>
+			<td> Cache TTL in minutes. Defaults to 0 meaning the cache is eternal</td>
 		</tr>
 	</tbody>
 </table>
 
 
-####  Redis configuration parameters
+###  Redis configuration parameters
 
 <table>
 	<thead>
@@ -2230,7 +2624,7 @@
 </table>
 
 
-####  Statistics parameters
+###  Statistics parameters
 
 <table>
 	<thead>
@@ -2252,6 +2646,12 @@
 			<td> Period in milliseconds to print stats. Default value corresponds to 1 minute</td>
 		</tr>
 		<tr>
+			<td>stats.timer.percentiles</td>
+			<td>STATS_TIMER_PERCENTILES</td>
+			<td>0.5</td>
+			<td> Metrics percentiles returned by actuator for timer metrics. List of comma-separated (,) double values</td>
+		</tr>
+		<tr>
 			<td>stats.application-processor.enabled</td>
 			<td>APPLICATION_PROCESSOR_STATS_ENABLED</td>
 			<td>true</td>
@@ -2261,7 +2661,7 @@
 </table>
 
 
-####  Historical data statistics parameters
+###  Historical data statistics parameters
 
 <table>
 	<thead>
@@ -2292,7 +2692,7 @@
 </table>
 
 
-####  Metrics management parameters
+###  Metrics management parameters
 
 <table>
 	<thead>
@@ -2311,7 +2711,7 @@
 </table>
 
 
-####  Spring CORS configuration
+###  Spring CORS configuration
 
 <table>
 	<thead>
@@ -2324,7 +2724,7 @@
 			<td>spring.mvc.cors.mappings."[/api/**]".allowed-origin-patterns</td>
 			<td>MVC_CORS_API_ALLOWED_ORIGIN_PATTERNS</td>
 			<td>*</td>
-			<td> Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled</td>
+			<td> Comma-separated list of origins to allow. '*' allows all origins. When not set, CORS support is disabled</td>
 		</tr>
 		<tr>
 			<td>spring.mvc.cors.mappings."[/api/**]".allowed-methods</td>
@@ -2354,7 +2754,7 @@
 </table>
 
 
-####  Swagger parameters
+###  Spring doc common parameters
 
 <table>
 	<thead>
@@ -2364,9 +2764,34 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>swagger.api_path_regex</td>
-			<td>SWAGGER_API_PATH_REGEX</td>
-			<td>/api/.*</td>
+			<td>springdoc.api-docs.enabled</td>
+			<td>SWAGGER_ENABLED</td>
+			<td>true</td>
+			<td> If false swagger API docs will be unavailable</td>
+		</tr>
+		<tr>
+			<td>springdoc.default-produces-media-type</td>
+			<td>SWAGGER_DEFAULT_PRODUCES_MEDIA_TYPE</td>
+			<td>application/json</td>
+			<td> Swagger default produces media-type</td>
+		</tr>
+	</tbody>
+</table>
+
+
+###  Swagger common parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>swagger.api_path</td>
+			<td>SWAGGER_API_PATH</td>
+			<td>/api/**</td>
 			<td> General swagger match pattern of swagger UI links</td>
 		</tr>
 		<tr>
@@ -2396,13 +2821,13 @@
 		<tr>
 			<td>swagger.contact.name</td>
 			<td>SWAGGER_CONTACT_NAME</td>
-			<td>Thingsboard team</td>
+			<td>TBMQ team</td>
 			<td> The contact name on the API doc UI page</td>
 		</tr>
 		<tr>
 			<td>swagger.contact.url</td>
 			<td>SWAGGER_CONTACT_URL</td>
-			<td>https://thingsboard.io</td>
+			<td>https://thingsboard.io/products/mqtt-broker/</td>
 			<td> The contact URL on the API doc UI page</td>
 		</tr>
 		<tr>
@@ -2433,7 +2858,7 @@
 </table>
 
 
-####  Application info parameters
+###  Application info parameters
 
 <table>
 	<thead>
@@ -2452,7 +2877,7 @@
 </table>
 
 
-####  Analysis parameters
+###  Analysis parameters
 
 <table>
 	<thead>

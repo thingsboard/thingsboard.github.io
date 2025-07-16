@@ -7,7 +7,7 @@ description: ThingsBoard IoT platform monolith setup with Kubernetes in AWS EKS
 rdsSetup:
     0:
         image: /images/install/cloud/aws/rds-1.png
-        title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
+        title: 'Make sure your PostgreSQL version is latest 16.x.'
     1:
         image: /images/install/cloud/aws/rds-2.png
         title: 'Keep your PostgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
@@ -47,7 +47,7 @@ K8S will restart the service on another instance. We will use Amazon RDS for man
 ## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/monolith
 ```
 

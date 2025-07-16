@@ -8,7 +8,7 @@ description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS
 rdsSetup:
     0:
         image: /images/install/cloud/aws/rds-1.png
-        title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
+        title: 'Make sure your PostgreSQL version is latest 16.x.'
     1:
         image: /images/install/cloud/aws/rds-2.png
         title: 'Keep your PostgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
@@ -33,7 +33,7 @@ rdsEndpointUrl:
 mskSetup:
     0:
         image: /images/install/cloud/aws/msk-1.png
-        title: 'Make sure your Apache Kafka version is 2.6.x.'
+        title: 'Make sure your Apache Kafka version is 3.7.x.'
     1:
         image: /images/install/cloud/aws/msk-2.png
         title: 'Make sure your MSK instance is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the MSK instance in the same VPC. We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet.'
@@ -58,7 +58,7 @@ mskConnectionParams:
 redisSetup:
     0:
         image: /images/install/cloud/aws/redis-single-1.png
-        title: 'Specify Redis Engine version 6.x and node type with at least 1 GB of RAM.'
+        title: 'Specify Redis Engine version 7.x and node type with at least 1 GB of RAM.'
     1:
         image: /images/install/cloud/aws/redis-single-2.png
         title: 'Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
@@ -92,7 +92,7 @@ This guide will help you to setup ThingsBoard in microservices mode in AWS EKS.
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
+git clone -b release-{{ site.release.ce_full_ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/aws/microservices
 ```
 {: .copy-code}

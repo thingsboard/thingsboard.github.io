@@ -1,9 +1,7 @@
-{% assign feature = "White Labeling" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "White labeling" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
-
-## Introduction
 
 ThingsBoard web interface allows you to configure your company or product logo and color scheme in a few clicks with zero coding efforts and no service restart required.
 
@@ -13,18 +11,27 @@ But only System and Tenant Administrators are able to set up customer email temp
 
 By default, the Tenant inherits the Sysadmin UI configuration, and the Customer inherits the Tenant UI configuration. But Tenant and Customer Administrators are able to set up their own White Labeling configuration.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Tenant and Customer Administrators can configure color scheme, icon, favicon and custom translation of system components and end-user dashboard elements.
 But only Tenant Administrator are able to set up customer email templates to interact with the users.
 
 By default, the Customer inherits the Tenant UI configuration. But the Customer Administrator are able to set up their own White Labeling configuration.
 {% endif %}
 
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/jSXuHj3lbG0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## White labeling settings
 
-To configure your company or product logo and color scheme, go to the "White Labeling" page.
+To configure your company or product logo and color scheme, go to the "White labeling" page.
 
 {% include images-gallery.html imageCollection="white-labeling-default" %}
+
+### Customize ThingsBoard web interface
 
 In the "General" tab you can set or change the following options:
 
@@ -33,7 +40,7 @@ In the "General" tab you can set or change the following options:
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/application-title.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/white-labeling/application-title-paas.png)
 {% endif %}
 
@@ -42,7 +49,7 @@ In the "General" tab you can set or change the following options:
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/website-icon.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/white-labeling/website-icon-paas.png)
 {% endif %}
 
@@ -51,7 +58,7 @@ In the "General" tab you can set or change the following options:
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/logo.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/white-labeling/logo-paas.png)
 {% endif %}
 
@@ -69,11 +76,11 @@ In the "General" tab you can set or change the following options:
 
 ![image](/images/user-guide/white-labeling/show-platform-name-and-version.png)
 
-Final look of our customize user interface:
+The final look of the customized user interface:
 
 {% include images-gallery.html imageCollection="white-labeling-custom" %}
 
-## Advanced CSS
+#### Advanced CSS
 
 Using CSS, you can stylize any elements of the ThingsBoard user interface as you wish. Such elements can be background, icons, fonts, etc.
 
@@ -81,6 +88,7 @@ To use CSS in your UI design, do the following:
 
 {% include images-gallery.html imageCollection="advanced-css-1" showListImageTitles="true" %}
 
+<br>
 CSS code example for customize icons color and scroll color:
 
 ```css
@@ -111,8 +119,7 @@ ng-component::-webkit-scrollbar-thumb {
 ```
 {: .copy-code}
 
-<br>
-Let's also add a gradient to the left menu.
+Let's also add a gradient to the left menu:
 
 {% include images-gallery.html imageCollection="advanced-css-2" showListImageTitles="true" %}
 
@@ -129,19 +136,25 @@ An example of CSS code to customize the appearance of the sidebar menu:
 
 Using the functionality described in this documentation, you can customize the appearance of the ThingsBoard UI according to your preferences.
 
-## Video tutorial
+### Customize the login page
 
-Watch the detailed video tutorial with examples of how you can configure the white labeling to suit your needs.
+On the "Login" tab, you can configure the login page for your clients.
+
+- Enter the registered domain name, or refer to [this documentation](/docs/{{docsPrefix}}domains/#domain-registration){:target="_blank"} to learn how to register a new domain;
+- It is recommended to prevent usage of hostnames from headers of the request;
+- Enter a custom application title;
+- Replace the default website icon and logo with your own;
+- Define the primary and accent color palettes;
+- Set the page background color.
+
+Once done, save the changes.
+
+{% include images-gallery.html imageCollection="customize-login-page" %}
 
 <br>
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div> 
+Now, use your custom domain name to access the ThingsBoard web interface login page and verify the result of your configuration.
 
-<br>
-[Contact us](/docs/contact-us/) to suggest missing feature for your use case.
+{% include images-gallery.html imageCollection="verify-result-customize-login-page" %}
 
 ## Next steps
 

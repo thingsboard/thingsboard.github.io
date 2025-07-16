@@ -90,4 +90,5 @@ delete-rule-chain-3:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/rule-chains.md %}

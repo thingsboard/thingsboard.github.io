@@ -1,17 +1,24 @@
 This section in configuration file looks like:
 
 ```json
-  "disconnectRequests": [
-    {
-      "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/disconnect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
-    }
-  ]
+"disconnectRequests": [
+  {
+    "topicFilter": "sensor/disconnect",
+    "deviceInfo": {
+      "deviceNameExpressionSource": "message",
+      "deviceNameExpression": "${serialNumber}"
+  }
+},
+  {
+    "topicFilter": "sensor/+/disconnect",
+    "deviceInfo": {
+      "deviceNameExpressionSource": "topic",
+      "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+      }
+  }
+]
 ```
+{: .copy-code}
 
 ![image](/images/gateway/mqtt-connector/disconnect-request-example-1-ce.png)
 
@@ -20,7 +27,7 @@ This section in configuration file looks like:
 | **Parameter**                 | **Default value**                    | **Description**                                                                                   |
 |:-|:-------------------------------------|-
 | topicFilter                   | **sensor/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
-| deviceNameJsonExpression      | **${serialNumber}**                  | JSON-path expression, for looking the new device name.                                            |
+| deviceNameExpression      | **${serialNumber}**                  | JSON-path expression, for looking the new device name.                                            |
 |---
 
 In this case the following messages are valid:

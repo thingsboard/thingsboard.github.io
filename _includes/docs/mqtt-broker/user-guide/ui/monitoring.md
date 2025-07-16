@@ -5,33 +5,34 @@ TBMQ offers user-friendly tools that enable users to monitor broker activity and
 
 ![image](/images/mqtt-broker/user-guide/ui/home-page.png)
 
-### Charts
+## Charts
 
-At the top of the **Home** page, you will find a set of five charts that display essential information about the broker's activity over the last 10 minutes:
+At the top of the **Home** page, you will find a set of six charts that display essential information about the broker's activity over the last 10 minutes:
   - **Incoming messages.** This chart shows the number of messages published by MQTT clients to the broker.
   - **Outgoing messages.** Here, you can view the count of messages delivered by the broker to subscribing clients.
   - **Dropped messages.** This chart indicates messages that either lack subscribers or couldn't be delivered to subscribers due to network issues, client disconnections, or resource limitations.
   - **Sessions.** The number of current MQTT sessions is represented in this chart.
   - **Subscriptions.** This chart displays the number of current subscriptions.
+  - **Network traffic.** This chart demonstrates the size of processed data, sent or received by the MQTT clients.
 
 Please note that on the Monitoring page, users have the ability to delve deeper into the chart data. 
 They can zoom in on specific sections, set custom date ranges to display data, or open the charts in full-screen mode.
 
 ![image](/images/mqtt-broker/user-guide/ui/monitoring-page.png)
 
-### Sessions
+## Sessions
 
 The Sessions card provides an overview of both connected and disconnected sessions. 
 Users can access comprehensive information about these sessions, including their status, duration, and additional details by going to the [Sessions](/docs/mqtt-broker/user-guide/ui/sessions/) page.
 
-### Credentials
+## Credentials
 
 The system displays the number of Client Credentials categorized into two types: **Device** and **Application**. 
 For more information regarding the different types of Credentials, please refer to the [documentation](/docs/mqtt-broker/user-guide/mqtt-client-type/).
 
 ![image](/images/mqtt-broker/user-guide/ui/sessions-credentials-card.png)
  
-### Config
+## Config
 
 Contains information regarding some commonly used configuration parameters:
   - **Basic Auth.** By default, basic authentication based on username, password, and clientId is disabled. To enable it, set the `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true`.
@@ -51,7 +52,7 @@ Contains information regarding some commonly used configuration parameters:
 
 ![image](/images/mqtt-broker/user-guide/ui/config-card.png)
 
-### Kafka Brokers
+## Kafka Brokers
 
 Displays basic information regarding the Kafka Brokers:
 - **Address.** Address of the Kafka broker.
@@ -59,7 +60,7 @@ Displays basic information regarding the Kafka Brokers:
 
 ![image](/images/mqtt-broker/user-guide/ui/kafka-brokers-card.png)
 
-### Kafka Topics
+## Kafka Topics
 
 Displays basic information regarding the Kafka Topics:
 - **Name.** Name of Kafka topic.
@@ -69,7 +70,7 @@ Displays basic information regarding the Kafka Topics:
 
 ![image](/images/mqtt-broker/user-guide/ui/kafka-topics-card.png)
 
-### Kafka Consumer Groups
+## Kafka Consumer Groups
 
 Displays basic information regarding the Kafka Consumer Groups (CG):
 - **ID.** Consumer Group ID.

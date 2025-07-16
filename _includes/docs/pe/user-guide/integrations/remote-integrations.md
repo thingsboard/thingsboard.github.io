@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -22,13 +22,13 @@ That is why we propose each tenant to launch a TCP/UDP integration as a remote o
 
 It is possible to execute any ThingsBoard Integration separately from the ThingsBoard instance.
 
-This guide contains step-by-step instructions on how to launch MQTT remote integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+This guide contains step-by-step instructions on how to launch MQTT remote integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://{{hostName}}/signup).
 
 You can find additional information about the ThingsBoard Platform integrations feature [here](/docs/{{peDocsPrefix}}user-guide/integrations/).
 
 ## ThingsBoard configuration
 
-We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://{{hostName}}/signup).
 
 ### Create remote integration in ThingsBoard
 
@@ -46,7 +46,7 @@ Let's create remote integration in ThingsBoard that will connect to the local br
 
 ![image](/images/user-guide/integrations/remote/remote-integration-3-paas.png)
 
-- Specify **host**: "**thingsboard.cloud**" and **port**: "**1883**" at the connection step;
+- Specify **host**: "**{{hostName}}**" and **port**: "**1883**" at the connection step;
 - Subscribe to all **topics**;
 - You can also select an MQTT **QoS** level. We use MQTT QoS level 0 (At most once) by default;
 - Copy and save the "**Integration key**" and "**Integration secret**". We will use this values later;
@@ -79,7 +79,7 @@ Please use one of the next steps.
 
 {% capture contenttogglespec %}
 HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
-MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Stack Community)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
 AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-docker.md%br%
 Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-docker.md%br%
 OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-docker.md%br%
@@ -96,7 +96,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker.md{%
 
 ### Docker on Windows
 
-- **[Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)**
+- **[Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)**
 
 - **Choose Integration to install**
 

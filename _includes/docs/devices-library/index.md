@@ -174,4 +174,4 @@ In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors in
 
 <br>
 
-<a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="n-button add-device">Add your device</a>
+<a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="button">Add your device</a>

@@ -4,9 +4,7 @@
 {% assign sinceVersion = "3.4" %}
 {% include templates/since.md %}
 
-## Feature Overview
-
-ThingsBoard Version Control service provides the ability to export and restore ThingsBoard Entities using Git.
+ThingsBoard Version control service provides the ability to export and restore ThingsBoard Entities using Git.
 As a Tenant administrator, you can configure access to the Git repository using UI or REST API.
 As a platform user, you can export single or multiple ThingsBoard Entities, browse version history and restore entities to the specific version.
 
@@ -15,7 +13,7 @@ It also allows you to easily clone the solution between tenants or platform inst
 
 ## Architecture
 
-#### Entity External ID
+### Entity External ID
 
 Every ThingsBoard entity has the "id" field, which is the unique identifier of the entity in scope of a particular ThingsBoard environment.
 Every exportable ThingsBoard entity contains new filed "externalId". 
@@ -25,7 +23,7 @@ Both "id" and "externalId" fields is of type [UUID](https://en.wikipedia.org/wik
 The "externalId" is also used to automatically substitute entity ids in the rule chains (rule nodes) and dashboards (aliases and widget actions).
 So, if you decide to import rule chain that is referencing some devices or assets, make sure you have exported/imported the corresponding devices or assets as well.
 
-#### Exportable Entities and settings
+### Exportable Entities and settings
 
 {% if docsPrefix == 'ce/' %}
 Initial release of this feature supports following entities: Device, Asset, Entity View, Customer, Dashboard, Widget Bundle, Rule Chain.
@@ -37,7 +35,7 @@ We intentionally omit support of the User entity, since user email is unique in 
 
 While exporting the entity, we store the JSON representation of the entity in Git. It is also possible to export entity attributes, relations and credentials (device only).
 
-#### Repository structure
+### Repository structure
 
 When you first export the entity to Git, the entity "id" is used to name the file inside git repository. 
 Then, when you import entities from Git to ThingsBoard, the "id" from the file name becomes "externalId" of the entity.
@@ -63,16 +61,14 @@ Reserved group 'All' does not contain the 'id_entities.json' file because group 
 
 {% include images-gallery.html imageCollection="gitRepoStructure" %}
 
-
-#### Sync strategy
+### Sync strategy
 
 Platform supports two sync strategies for export to Git: Merge and Overwrite. 
 "Merge" is the default sync strategy which simply appends the selected entities to the repository. This strategy is useful when you want to save one or multiple files without deleting all other files from the repository.
 "Overwrite" strategy completely rewrite the corresponding repository files. This strategy is useful when you want to completely synchronize the list of entities (e.g. Dashboards) in your instance and your Git repository. 
 All entities that were previously save to the Git but are not present in your platform instance will be deleted from the Git repository in the corresponding commit.
 
-
-#### Scalability
+### Scalability
 
 ThingsBoard Version Control service is available as part of a monolithic ThingsBoard instance or as a separate microservice for horizontal scalability.
 Every instance of the Version Control service is responsible for handling synchronization tasks for the specific partition(s) of the Tenants in the cluster.
@@ -81,30 +77,40 @@ The system will cancel the "commit" API call if it is in progress and the new "c
 
 ## Usage
 
-#### Git Settings configuration
+### Git Settings configuration
 
-As a Tenant administrator, you can navigate to **System Settings -> Git settings** page. The page allows you to provision Git repository URL, default branch name and authentication settings.
+As a Tenant administrator, you can navigate to the "Version control" page of the "Advanced features" section. The page allows you to provision Git repository URL, default branch name and authentication settings.
 We expect you to provide URL to the empty Git repository.
 
 {% include images-gallery.html imageCollection="gitConfiguration" %}
 
-#### Export to Git
+### Export to Git
 
-##### Single Entity Export
+#### Single Entity Export
 
-Navigate to entity details and open the 'Version Control' tab. 
+Navigate to entity details and open the "Version control" tab. 
 Rule Chains and Dashboards have built-in version control button and popup widget to the corresponding editors.
 See screenshots below.
 
-{% include images-gallery.html imageCollection="singleEntityExport" %}
+**Device:**
 
-##### Multiple Entity Export
+{% include images-gallery.html imageCollection="singleEntityExportDevice" %}
+
+**Rule Chain:**
+
+{% include images-gallery.html imageCollection="singleEntityExportRuleChain" %}
+
+**Dashboard:**
+
+{% include images-gallery.html imageCollection="singleEntityExportDashboard" %}
+
+#### Multiple Entity Export
 
 Navigate to version control page. You may select one or more entity types to restore. By default, all entity types are selected.
 
 {% include images-gallery.html imageCollection="multipleEntityExport" %}
 
-##### Auto-commit
+#### Auto-commit
 
 Auto-commit is a useful feature to automatically commit the Dashboard and Rule Chains when we save the entity via UI or REST API call. 
 The auto-commit happens asynchronously to improve UI experience. 
@@ -113,7 +119,7 @@ In such case you should commit all entities of the specific entity type with the
 
 {% include images-gallery.html imageCollection="autoCommitConfiguration" %}
 
-#### Restore from Git
+### Restore from Git
 
 Navigate to version control page. Select the commit and specify restore settings.
 

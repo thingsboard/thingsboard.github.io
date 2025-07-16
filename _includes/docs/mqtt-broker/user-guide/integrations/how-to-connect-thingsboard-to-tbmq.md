@@ -3,8 +3,6 @@
 * TOC
 {:toc}
 
-**TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, message publishing, and distribution among subscribers.
-
 In this guide, we integrate the TBMQ with the ThingsBoard using MQTT integration. 
 We utilize TBMQ client credentials with the type **APPLICATION** to connect ThingsBoard integration as an APPLICATION client.
 APPLICATION clients specialize in subscribing to topics with high message rates. 
@@ -13,18 +11,18 @@ Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-b
 
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
 In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
-Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
-ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network with no internet connection.
+Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or public static IP address. 
+ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local network with no internet connection.
 
-### Prerequisites
+## Prerequisites
 
 In this tutorial, we will use:
 
- - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed locally;
- - [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/) installed locally and accessible by ThingsBoard PE instance;
+ - The instance of [ThingsBoard Professional Edition](https://thingsboard.io/docs/user-guide/install/pe/installation-options/) installed **locally**;
+ - [TBMQ](https://thingsboard.io/docs/mqtt-broker/install/installation-options/) installed **locally** and accessible by ThingsBoard PE instance;
  - mosquitto_pub MQTT client to send messages.
 
-### TBMQ setup
+## TBMQ setup
 
 First, we need to create TBMQ client credentials to use them for connecting ThingsBoard integration to TBMQ.
 
@@ -35,18 +33,18 @@ To do this, login to your TBMQ user interface and follow the next steps.
 {% capture difference %}
 **Please note**:
 <br>
-The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true".
+The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true" in the TBMQ configuration.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 Now you can proceed to the next step - configuration of ThingsBoard integration.
 
-### ThingsBoard setup
+## ThingsBoard setup
 
 In this example, we will use the MQTT integration to connect the ThingsBoard to TBMQ.
 Before setting up an MQTT integration, you need to create uplink converter.
 
-#### Uplink Converter
+### Uplink Converter
 
 The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume.
 
@@ -64,7 +62,7 @@ JavaScript<small></small>%,%anonymous%,%templates/mqtt-broker/user-guide/integra
 
 {% include content-toggle.liquid content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
 
-#### MQTT Integration Setup
+### MQTT Integration Setup
 
 Now create an integration.
 
@@ -78,7 +76,7 @@ And on the "Topics" page of the "Kafka Management" menu section you will see a n
 
 {% include images-gallery.html imageCollection="tbmq-home-page" %}
 
-#### Send Uplink message
+### Send Uplink message
 
 Now let's simulate the device sending a temperature reading to TBMQ. 
 
@@ -109,6 +107,6 @@ Click on the device, go to "Latest Telemetry" tab to see "temperature" key and i
 
 {% include images-gallery.html imageCollection="tbmq-create-device" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "TBIntegrationGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

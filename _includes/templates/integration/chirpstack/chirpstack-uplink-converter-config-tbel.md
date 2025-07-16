@@ -1,4 +1,3 @@
-![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-tbel-2-pe.png)
 
 The script used in the example:
 
@@ -142,4 +141,4 @@ var result = {
 
 return result;
 ```
-{:.copy-code.expandable-15}
+{:.copy-code.expandable-10}

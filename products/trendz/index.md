@@ -5,13 +5,13 @@ description: IoT solution for real-time data analysis, anomaly detection, predic
 
 cloudPlan:
     0:
-        image: /images/trendz/cloud-1.png
-        title: 'Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
+        image: /images/trendz/cloud-1.webp
+        title: 'Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
     1:
-        image: /images/trendz/cloud-2.png
+        image: /images/trendz/cloud-2.webp
         title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'
     2:
-        image: /images/trendz/cloud-3.png
+        image: /images/trendz/cloud-3.webp
         title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
 
 selfManagedPlan:
@@ -44,8 +44,8 @@ selfManagedPlan:
                     <p class="text">Identify when a machine is likely to fail, and take preventive measures to avoid downtime</p>
                 </div>
                 <div class="content-block">
-                    <h3 class="header">Self-service Analytics</h3>
-                    <p class="text">Give users simple instrument for answering their own questions in minutes.</p>
+                    <h3 class="header">AI Assistant</h3>
+                    <p class="text">Chat with your data to get instant, AI-driven insights.</p>
                 </div>
             </div>
         </main>
@@ -148,7 +148,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Plot and aggregate your data with any granularity</h3>
                 <p class="text">See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level. Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.</p>
-                <a id="Products_TA_StartAnalysis3" href="/docs/trendz/data-grouping-aggregation/" class="button try-pe gtm_button">Start Analysis</a>
+                <a id="Products_TA_StartAnalysis3" href="/docs/trendz/telemetry-aggregation/" class="button try-pe gtm_button">Start Analysis</a>
             </div>
             <div class="image-block accent-circle accent-circle-center">
                 <div class="image-wrapper chart-wrapper line-chart">
@@ -162,18 +162,16 @@ selfManagedPlan:
 
 <div class="main-bg accent-bg">
     <main>
-        <div class="title-block">
-            <p class="accent-text">Get it and learn easy</p>
-            <h2 class="title">Learn fast</h2>
-            <div class="btn-container">
-                <a id="Products_TA_WatchTutorials" target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe gtm_button">Watch Tutorials<span class="triangle-right"></span></a>
-            </div>
-        </div>
         <div class="get-started">
             <div class="get-started-container">
                 <h3 class="header">Trendz Cloud</h3>
-                <p class="text">Once your upgrade your plan - you will find Trendz Analytics tab in your Things Board menu</p>
-                <a href="https://thingsboard.cloud/billing" class="link">Upgrade your Things Board Plan</a>
+                <p class="text">Upgrade your plan to gain deeper insights into your data</p>
+                <a href="https://thingsboard.cloud/billing" class="link">Upgrade your ThingsBoard Plan</a>
+            </div>
+            <div class="get-started-container">
+                <h3 class="header">Trendz EU Cloud</h3>
+                <p class="text">Unlock powerful analytics tools by upgrading your plan</p>
+                <a href="https://eu.thingsboard.cloud/billing" class="link">Upgrade your ThingsBoard EU Plan</a>
             </div>
             <div class="get-started-container">
                 <h3 class="header">Trendz Self-Hosted</h3>

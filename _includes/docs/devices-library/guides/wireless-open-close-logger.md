@@ -30,11 +30,8 @@ Efento NB-IoT sensors can be integrated with any cloud platform.
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-- [ThingsBoard account](https://thingsboard.cloud)
-{% else %}
-- [ThingsBoard account](https://demo.thingsboard.io)
-{% endif %}
+
+- [ThingsBoard account](https://{{hostName}})
 
 ## Create device on ThingsBoard
 

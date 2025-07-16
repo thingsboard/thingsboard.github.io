@@ -28,4 +28,5 @@ shared-attrs-ui:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/attributes.md %}

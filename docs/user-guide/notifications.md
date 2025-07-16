@@ -250,4 +250,5 @@ notification-center-add-rule-exceeded-rate-limits:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/notifications.md %}

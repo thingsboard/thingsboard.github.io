@@ -20,7 +20,7 @@ def sync_state(result, exception=None):
 Attribute request:
 ```python
 def main():
-    client = TBDeviceMqttClient("thingsboard.cloud", username="ACCESS_TOKEN")
+    client = TBDeviceMqttClient("{{hostName}}", username="ACCESS_TOKEN")
     client.connect()
     client.request_attributes(shared_keys=['blinkingPeriod'], callback=sync_state)
     ...

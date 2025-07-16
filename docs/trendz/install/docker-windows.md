@@ -15,7 +15,7 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Prerequisites
 
-- [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
+- [Install Docker Toolbox for Windows](https://docker-docs.uclv.cu/toolbox/toolbox_install_windows/)
 
 ## Step 1. Obtain the license key 
 
@@ -26,7 +26,7 @@ Note: We will reference the license key you have obtained during this step as PU
 
 ## Step 2. Running Trendz service
 
-##### Docker Compose setup
+### Docker Compose setup
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
@@ -107,7 +107,7 @@ Where:
 - `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}`          - Trendz python script executor docker image
 - `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
     
-##### Setup Docker volumes    
+### Setup Docker volumes    
     
 Windows users should use docker managed volume for Trendz DataBase. Create docker volume (for ex. `mytrendz-data`) before 
 executing docker run command: Open “Docker Quickstart Terminal”. Execute the following command to create docker volume:
@@ -121,19 +121,22 @@ docker volume create mytrendz-logs
 
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
-##### Running service
+### Running service
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
     
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). You should see Trendz login page.
    
-##### Authentication
+### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
+
+## Post-installation steps
+It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
 
 ## Detaching, stop and start commands
 

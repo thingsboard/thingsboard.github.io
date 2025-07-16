@@ -5,7 +5,7 @@ Nevertheless, it is possible to configure ThingsBoard to enable SSL and avoid SS
 We recommend to use valid SSL certificates generated using trusted CA authorities and avoid spending time on resolving issues with [self-signed certificates](#self-signed-certificates-generation). 
 See instructions below on how to configure SSL for certificates stored in PEM file format or Java Keystore.   
 
-### SSL configuration using PEM certificates file
+## SSL configuration using PEM certificates file
 
 {% assign sinceVersion = "3.3.2" %}
 {% include templates/since.md %}

@@ -1,0 +1,91 @@
+{% if docsTag == "paas" or docsTag == 'paas-eu' %}
+    {% assign serverTag = "us" %}
+    {% if docsTag == 'paas-eu'  %}
+        {% assign serverTag = "eu" %}
+    {% endif %}
+    {% assign foundServer = site.data.paas-servers | where: "server", serverTag %}
+    {% assign serverInfo = foundServer[0] %}
+{% endif %}
+
+{% if docsTag == "paas-eu" %}
+{% assign foundProduct = site.data.products | where: "tag", "paas" %}
+{% else %}
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% endif %}
+
+{% assign productInfo = foundProduct[0] %}
+
+<div class="products-selector{% if serverTag %} products-selector-cloud{% endif %}">
+    <div class="product-selector">
+        <div class="product-info">
+            <div class="product-title">
+                {{ productInfo.title }}
+            </div>
+        </div>
+        <div class="products">
+            {% for product in site.data.products %}
+            {% include find-product-url.html %}
+            <a href="{{ productUrl }}"
+               {% if product.tag == 'paas' %}id="cloud-product-option"{% endif %}
+               class="product{% if product.tag == docsTag or (product.tag == 'paas' and docsTag == "paas-eu") %} active{% endif %}">{{ product.title }}</a>
+            {% endfor %}
+        </div>
+    </div>
+    {% if serverTag %}
+    <div class="server-selector">
+        <div class="product-info">
+            <div class="product-title">
+                {{ serverInfo.title }}
+            </div>
+        </div>
+        <div class="products">
+            {% for product in site.data.paas-servers %}
+            {% include find-product-server-url.html %}
+            <a href="{{ productUrl }}"
+               onClick="setCloudServerCookie('{{ product.path }}')"
+               class="server-option product{% if product.server == serverTag %} active{% endif %}">
+                <span class="server-option-title">{{ product.title }}</span>
+                <span class="server-option-subtitle">{{ product.description }}</span>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+<script defer>
+    jqueryDefer(function () {
+        $(document).ready(function () {
+            // Products selector
+
+            let productsSelector = $('.product-selector');
+            $(window).click(function(e) {
+                if (productsSelector[0].contains(e.target)) {
+                    if (productsSelector.hasClass('active')) {
+                        productsSelector.removeClass('active');
+                    } else {
+                        productsSelector.addClass('active');
+                    }
+                } else {
+                    productsSelector.removeClass('active');
+                }
+            });
+            //Cloud server selector
+
+            let serverSelector = $('.server-selector');
+            if (serverSelector.length){
+                $(window).click(function (e) {
+                    if (serverSelector[0].contains(e.target)) {
+                        if (serverSelector.hasClass('active')) {
+                            serverSelector.removeClass('active');
+                        } else {
+                            serverSelector.addClass('active');
+                        }
+                    } else {
+                        serverSelector.removeClass('active');
+                    }
+                });
+            }
+        });
+    });
+</script>

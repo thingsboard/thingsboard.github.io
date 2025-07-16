@@ -1,0 +1,32 @@
+- tag: ce
+  hostLabel: ThingsBoard Demo
+  hostName: demo.thingsboard.io
+  mqttHostName: demo.thingsboard.io
+  coapHostName: demo.thingsboard.io
+  httpsUrl: https://demo.thingsboard.io
+  lwm2mHostName: demo.thingsboard.io
+  apiHostName: demo.thingsboard.io
+- tag: pe
+  hostLabel: ThingsBoard Cloud
+  hostName: thingsboard.cloud
+  mqttHostName: mqtt.thingsboard.cloud
+  coapHostName: coap.thingsboard.cloud
+  httpsUrl: https://thingsboard.cloud
+  lwm2mHostName: lwm2m.thingsboard.cloud
+  apiHostName: YOUR_SERVER_HOSTNAME
+- tag: paas
+  hostLabel: ThingsBoard Cloud
+  hostName: thingsboard.cloud
+  mqttHostName: mqtt.thingsboard.cloud
+  coapHostName: coap.thingsboard.cloud
+  httpsUrl: https://thingsboard.cloud
+  lwm2mHostName: lwm2m.thingsboard.cloud
+  apiHostName: thingsboard.cloud
+- tag: paas-eu
+  hostLabel: ThingsBoard Cloud EU
+  hostName: eu.thingsboard.cloud
+  mqttHostName: mqtt.eu.thingsboard.cloud
+  coapHostName: coap.eu.thingsboard.cloud
+  httpsUrl: https://eu.thingsboard.cloud
+  lwm2mHostName: lwm2m.eu.thingsboard.cloud
+  apiHostName: eu.thingsboard.cloud

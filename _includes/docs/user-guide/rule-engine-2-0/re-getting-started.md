@@ -30,13 +30,13 @@ DHT22 sensor can measure temperature from -40°C to +80°C.
 
 In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and log all other readings to the system log.
 
-#### Adding temperature validation node
+### Adding temperature validation node
 In Thingsboard UI go to **Rule Chains** section and open **Root Rule Chain**.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-pe.png)
 {% endif %}
 
@@ -59,7 +59,7 @@ relation between **Message Type Switch** node and **Save Telemetry** node:
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation-pe.png)
 {% endif %}
 
@@ -68,14 +68,14 @@ And connect **Message Type Switch** node with **Script Filter** node using **Pos
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window-pe.png)
 {% endif %}
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script-pe.png)
 {% endif %}
 
@@ -85,7 +85,7 @@ Next, we need to connect **Script Filter** node with **Save Telemetry** node usi
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save-pe.png)
 {% endif %}
 
@@ -94,19 +94,19 @@ Also, we will connect **Script Filter** node with **Log Other** node using **Fal
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/false-log-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/false-log-pe.png)
 {% endif %}
 
 Press Save button to apply changes.
 
-#### Validate results
+### Validate results
 For validating results we will need to create Device and submit telemetry to the Thingsboard. So go to **Devices** section and create new Device:
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/create-device-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/create-device-pe.png)
 {% endif %}
 
@@ -116,7 +116,7 @@ copy device access token from the device **DHT22**.
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-pe.png)
 {% endif %}
 
@@ -139,9 +139,9 @@ curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-localhost-2.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-curl -v -X POST -d '{"temperature":99}' https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":99}' {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
@@ -153,7 +153,7 @@ We will see that telemetry **was not** added in Device **Latest Telemetry** sect
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-pe.png)
 {% endif %}
 
@@ -177,9 +177,9 @@ curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-localhost-1.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```bash
-curl -v -X POST -d '{"temperature":24}' https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d '{"temperature":24}' {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
@@ -191,7 +191,7 @@ We will see that telemetry was saved successfully.
 {% if docsPrefix == null %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-pe.png)
 {% endif %}
 

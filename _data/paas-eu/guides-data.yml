@@ -1,0 +1,526 @@
+- bigheader: Getting started guides
+- title: Getting started guides
+  subtitle: These guides provide quick overview of main ThingsBoard features. Designed to be completed in 15-30 minutes.
+  id: GettingStartedGuides
+  section:
+    - path: /docs/paas/eu/getting-started-guides/helloworld/
+      title: Hello world
+      subtitle: Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard. Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
+      keywords: mqtt http coap visualization helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/eu/user-guide/dashboards/
+      title: Working with IoT dashboards
+      subtitle: Learn how to perform basic operations over Dashboards.
+      keywords: dashboards
+      video: false
+      pe: false
+    - path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
+      title: Getting started with Rule Engine
+      subtitle: Learn about ThingsBoard rule engine and typical use cases you can implement. Review Hello World example and learn how-to enable filtering of incoming telemetry messages.
+      keywords: device management attributes
+      video: false
+      pe: false
+- title: Advanced guides for working with the main features of ThingsBoard
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
+  id: AdvancedGettingStartedGuides
+  section:
+    - path: /docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
+      title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets
+      subtitle: "Explore this guide to learn how to: create assets and devices and define their relationships; add server attributes; develop a new dashboard; visualize data using the ”Entities table” and ”OpenStreet Map” widgets."
+      keywords: asset device server attribute visualization dashboard Entities table OpenStreet Map widget helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/
+      title: Lesson 2. Dashboard states, widget actions, and Image Map widget
+      subtitle: "Explore this guide to learn how to: add and configure new dashboard states, create different aliases, visualize devices data on the ”Image Map” widget, and set up actions in various widgets to navigate between states."
+      keywords: Line chart aliases attribute Image Map Auto fill layout height actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/
+      title: Lesson 3. Charts and card widgets
+      subtitle: "Explore this guide to learn how to: add separate states for each device, simulate telemetry data for the devices using the Rule Engine, and display them using card and chart widgets."
+      keywords: Line chart aliases attribute Image Map actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/
+      title: Lesson 4. Alarm management
+      subtitle: "Explore this guide to learn how to: create alarm rules, and handle alarms using the Alarms widget."
+      keywords: alarm alarms widget helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/
+      title: Lesson 5. Adding customers & sharing or changing ownership of assets.
+      subtitle: "Explore this guide to learn how to: grant access to the dashboard by assigning ownership or shared access to specific entities (such as devices, assets, etc.) to different clients; create customer and customer users."
+      keywords: customer user share change owner helloworld
+      video: false
+      pe: false
+- title: Connect your device
+  subtitle: Learn how to connect devices based on your connectivity technology or solution.
+  id: ConnectYourDevice
+  section:
+    - path: /docs/paas/eu/reference/http-api/
+      title: Connect devices using ThingsBoard HTTP API
+      subtitle: Learn how to connect your devices using HTTP protocol and ThingsBoard built-in payload format.
+      keywords: http connect
+      pe: false
+      video: false
+    - path: /docs/paas/eu/reference/mqtt-api/
+      title: Connect devices using ThingsBoard MQTT API
+      subtitle: Learn how to connect your devices using MQTT protocol and ThingsBoard built-in payload format.
+      keywords: mqtt connect
+      pe: false
+      video: false
+    - path: /docs/paas/eu/reference/mqtt-sparkplug-api/
+      title: Connect devices using  ThingsBoard MQTT Sparkplug API
+      subtitle: Learn how to connect your devices using MQTT Sparkplug protocol and ThingsBoard built-in payload format.
+      keywords: sparkplug connect
+      pe: false
+      video: false
+    - path: /docs/paas/eu/reference/lwm2m-api/
+      title: Connect devices using ThingsBoard LwM2M API
+      subtitle: Learn how to connect your devices using LwM2M protocol and ThingsBoard built-in payload format.
+      keywords: lwm2m connect
+      pe: false
+      video: false
+    - path: /docs/paas/eu/reference/coap-api/
+      title: Connect devices using ThingsBoard CoAP API
+      subtitle: Learn how to connect your devices using CoAP protocol and ThingsBoard built-in payload format.
+      keywords: coap connect
+      pe: false
+      video: false
+    - path: /docs/iot-gateway/getting-started/
+      title: Connect devices through ThingsBoard IoT Gateway
+      subtitle: Learn how to deploy IoT Gateway in your local network and route messages from your devices to the cloud.
+      keywords: gateway connect
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/
+      title: ThingsBoard Integrations basics
+      subtitle: Learn about ThingsBoard Integrations feature and how you can use it to connect devices and apps that use custom payload formats.
+      keywords:
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/#platform-integrations-vs-iot-gateway
+      title: ThingsBoard Integrations vs IoT Gateway
+      subtitle: Learn the differences between the Platform Integrations and IoT Gateway.
+      keywords:
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/http/
+      title: Connect devices with custom payload using ThingsBoard HTTP Integration
+      subtitle: Convert existing protocols and payload formats to ThingsBoard message format.
+      keywords: http connect
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/mqtt/
+      title: Connect devices with custom payload using ThingsBoard MQTT Integration.
+      subtitle: Connect to external brokers and consume MQTT data stream
+      keywords: mqtt connect
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/kafka/
+      title: Connect devices with custom payload using ThingsBoard Kafka Integration.
+      subtitle: Connect to external brokers and consume Kafka data stream
+      keywords: kafka connect
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/sigfox/
+      title: Connect SigFox devices using TB PE Integration
+      subtitle: Learn how to route messages from Sigfox backend to ThingsBoard and decode binary device payloads.
+      keywords: sigfox connect
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/ttn/
+      title: Connect LoRaWAN devices using TheThingsStack
+      subtitle: Learn how to route messages from TheThingsStack backend to ThingsBoard and vise-versa.
+      keywords: ttn connect
+      pe: true
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/opc-ua/
+      title: Connect OPC-UA servers to ThingsBoard
+      subtitle: Learn how to connect OPC-UA devices to ThingsBoard.
+      keywords: opcua connect
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/thingpark/
+      title: Connect LoRaWAN devices using Actility ThingPark
+      subtitle: Learn how to route messages from ThingPark to ThingsBoard and vise-versa.
+      keywords:
+      pe: true
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/aws-iot/
+      title: Connect devices through AWS IoT
+      subtitle: Learn how to connect to AWS IoT broker, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords:
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/aws-kinesis/
+      title: Connect devices through AWS Kinesis
+      subtitle: Learn how to connect to AWS Kinesis stream, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords:
+      pe: true
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/ibm-watson-iot/
+      title: Connect devices through IBM Watson IoT
+      subtitle: Learn how to connect to IBM Watson IoT broker, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords:
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/azure-event-hub/
+      title: Connect devices through Azure Event Hub
+      subtitle: Learn how to connect to Azure Event Hub, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords:
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/azure-iot-hub/
+      title: Connect devices through Azure IoT Hub
+      subtitle: Learn how to connect to Azure IoT Hub and transform the incoming messages using ThingsBoard.
+      keywords:
+      pe: true
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/tcp/
+      title: Devices uses TCP protocol
+      subtitle: How to connect to ThingsBoard TCP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect TCP devices
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/integrations/udp/
+      title: Devices uses UDP protocol
+      subtitle: How to connect to ThingsBoard UDP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
+      keywords: Connect UDP devices
+      pe: true
+      video: true
+    - path: /docs/samples/tektelic/
+      title: Connect Tektelic LoRaWAN sensors using TEKTELIC KONA Core Network Server
+      subtitle: Learn how to route messages from TEKTELIC KONA Core Network Server to ThingsBoard.
+      keywords: Tektelic connect
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/integrations/tuya/
+      title: Connect smart devices through Tuya Smart
+      subtitle: Learn how to connect smart devices using Tuya Smart to ThingsBoard.
+      keywords:
+      pe: true
+      video: false
+    - path: /docs/paas/eu/samples/sia-connect
+      title: Connect OPC-UA devices through SIA Connect
+      subtitle: Learn how to connect OPC-UA devices using the SIA Connect to the ThingsBoard.
+      keywords:
+      pe: true
+      video: false
+- title: Data visualization
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
+  id: DataVisualization
+  section:
+    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
+      title: Visualizing assets data using Maps and Tables
+      subtitle: "Learn how to: create assets and devices and define their relationships; add the server attributes and create a new dashboard; visualize data from the asset attributes using “Entities Table” and “Map” widgets."
+      keywords:
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
+      title: Dashboard states, aliases and widget actions
+      subtitle: "Learn how to: add and configure new dashboard states; create various aliases; visualize the attributes data using the Image Map widget; create actions in different widgets in order to navigate between states; visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget."
+      keywords:
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-3-of-3-remote-device-control-and-alarm-management
+      title: Remote device control and alarm management
+      subtitle: "Learn how to: add and use the Knob Control widget; create alarm rules; handle alarms using the Alarms widget; make a dashboard public."
+      keywords:
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-1-of-3-basic-settings
+      title: Basic widget settings
+      subtitle: "Learn how to: change widget title, background, colors, fonts, shadows, etc."
+      keywords:
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-2-of-3-latest-values-map-widget
+      title: Latest Values Map widget
+      subtitle: "Learn how to create Map widget, based on latitude and longitude, and customize the Map widget layout and properties."
+      keywords:
+      pe: false
+      video: true
+    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-3-of-3-time-series-map-widget
+      title: Time Series Map widget
+      subtitle: "Learn how to display your devices with the latest telemetry data on the Time Series Map widget and modify the widget properties."
+      keywords:
+      pe: false
+      video: true
+    - path: /docs/paas/eu/user-guide/ui/trip-animation-widget
+      title: Trip Animation widget
+      subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
+      keywords: 
+      pe: false
+      video: false
+- title: Data processing & actions
+  subtitle: Learn how to process data in ThingsBoard.
+  id: DataProcessing
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+      title: Validate incoming telemetry
+      subtitle: Learn how to configure Rule Engine to discard invalid telemetry readings based on JavaScript filter function.
+      pe: false
+    - path: /docs/paas/eu/tutorials/telemetry-delta-calculation/
+      title: Telemetry delta calculation
+      subtitle: Learn how to calculate telemetry delta readings using the Calculated fields feature.
+      pe: true
+    - path: /docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/
+      title: Data function based on telemetry from 2 devices
+      subtitle: Learn how to generate a new telemetry value based on telemetry readings from multiple devices using the Calculated fields feature.
+      pe: true
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
+      title: Transform incoming telemetry
+      subtitle: Learn how to configure Rule Engine to transform incoming telemetry based on JavaScript function before it is stored to the database.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
+      title: Transform telemetry using previous record
+      subtitle: Learn how to configure Rule Engine to calculate “delta” of the counter readings based on current and previous reading.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+      title: Create & clear alarms
+      subtitle: Learn how to configure Rule Engine to create and clear alarms based on incoming data from devices.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
+      title: Working with Alarm details
+      subtitle: Learn how to configure Alarm Details function in Alarm nodes and how to add an Alarm widget to the dashboard.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
+      title: Send email on alarm
+      subtitle: Learn how to configure Rule Engine to send email when new alarm is created.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
+      title: Send email to customer
+      subtitle: Learn how to configure Rule Engine to send email to the customer of the assigned device.
+      pe: false
+    - path: /docs/paas/eu/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+      title: Notifications and Alarms on your smartphone using Telegram Bot
+      subtitle: Learn how to configure Rule Engine to send notification using Telegram Bot when new alarm is created.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
+      title: Create alarm when the device is offline
+      subtitle: Learn how to create an alarm when the device is offline for a certain period of time using RuleEngine.
+      keys: active inactive connected disconnected online offline
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/
+      title: Check relation between Entities
+      subtitle: Learn how the Check Relation node can be used to check the relation between Entities.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/
+      title: RPC Request to related Device
+      subtitle: Learn how to send a remote request call to a Related Device using Rule Engine.
+      keys: rpc Request
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
+      title: Using REST API to get weather data
+      subtitle: Learn how to use REST API to get weather data in a specified location.
+      keys: rest api
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
+      title: Add & remove devices to group dynamically
+      subtitle: Learn how to how to dynamically add & remove device from the device group based on incoming data from device.
+      keys: device group dynamic relation
+      pe: true
+    - path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
+      title: Send data to external MQTT brokers
+      subtitle: Connect to external brokers and send MQTT data stream
+      keys: mqtt connect
+      pe: true
+    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+      title: Using queues for synchronization
+      subtitle: Learn how to use Rule Engine 2.5 queues for message processing synchronization.
+      pe: false
+    - path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
+      title: Using queues for message reprocessing
+      subtitle: Learn how to use Rule Engine 2.5 queues for message reprocessing in case of failure or timeout.
+      pe: false
+- title: IoT Data analytics
+  subtitle: Learn how to use rule engine to perform basic analytics tasks.
+  id: DataAnalytics
+  section:
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/
+      title: Aggregate incoming data stream
+      subtitle: Calculate total water consumption in the building based on readings from multiple water meters within a building.
+      keywords: aggregation water meter analytics rule engine
+      pe: true
+    - path: /docs/user-guide/rule-engine-2-0/tutorials/aggregate-latest-data/
+      title: Aggregate latest telemetry values periodically
+      subtitle: Calculate average temperature in the warehouse based on readings from multiple temperature sensors.
+      keywords: average temperature analytics rule engine
+      pe: true
+    - path: /docs/trendz/prediction/
+      title: Predict timeseries
+      subtitle: Build prediction model based on vibration of water pump
+      keywords: analytics forecast prediction
+      pe: false
+#- title: Pushing data to external systems
+#  subtitle: lorem ipsum dolor
+#  section:
+#    - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+#      title: lorem ipsum dolor
+#      subtitle: lorem ipsum dolor
+#      keywords: key1 key2 key3
+#      pe: false
+- title: Hardware samples
+  subtitle: Learn how to connect various hardware platforms to ThingsBoard.
+  id: HardwareSamples
+  section:
+    - path: /docs/samples/esp32/ota/
+      title: ESP32 OTA using ThingsBoard
+      subtitle: Learn how to make ESP32 OTA update using ThingsBoard custom widget, rule chain and dashboard
+      pe: false
+      video: true
+    - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
+      title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+      video: false
+    - path: /docs/samples/arduino/temperature/
+      title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+    - title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
+      path: /docs/samples/arduino/sim808-htu21d/
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+    - path: /docs/samples/esp8266/temperature/
+      title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
+      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
+      pe: false
+      video: true
+    - path: /docs/samples/esp8266/gpio/
+      title: ESP8266 GPIO control over MQTT using ThingsBoard
+      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
+      pe: false
+      video: true
+    - path: /docs/samples/nodemcu/temperature/
+      title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+      video: false
+    - path: /docs/samples/raspberry/gpio/
+      title: Raspberry Pi GPIO control over MQTT using ThingsBoard
+      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
+      pe: false
+      video: true
+    - path: /docs/samples/raspberry/gpio-android-things/
+      title: Raspberry Pi GPIO control using Android Things and ThingsBoard
+      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
+      pe: false
+      video: true
+    - path: /docs/samples/raspberry/temperature/
+      title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
+      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
+      pe: false
+      video: true
+    - path: /docs/samples/linkit-one/gps/
+      title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
+      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
+      pe: false
+      video: false
+    - path: /docs/user-guide/integrations/sodaq/
+      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
+      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via T-Mobile – IoT CDP Integration.
+      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+      pe: true
+      video: false
+    - path: /docs/user-guide/integrations/sodaq-udp
+      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
+      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via UDP Integration.
+      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
+      pe: true
+      video: false
+    - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d
+      title: ThingsBoard BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
+    - path: /docs/samples/nettrartu+/rtu_temp_sensor/
+      title: Temperature upload over MQTT using Nettra RTU
+      subtitle: Contains wiring diagram and dashboard setup guide.
+      pe: false
+      video: false
+- title: Advanced features
+  subtitle: Learn about advanced ThingsBoard features
+  id: AdvancedFeatures
+  section:
+    - path: /docs/paas/eu/user-guide/device-connectivity-status/
+      title: Connectivity status
+      subtitle: "Learn how to track connectivity status of the devices: connected, disconnected, active, inactive"
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/audit-log/
+      title: Audit log
+      subtitle: Learn how to track user actions in order to keep audit log.
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/api-limits/
+      title: API limits
+      subtitle: Learn how to control API usage, by limiting number of requests from single host during single time unit (Minutes, Hours, etc.)
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/white-labeling/
+      title: White-labeling
+      subtitle: Learn how to configure your company or product logo and color scheme in 2 minutes with zero coding efforts.
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/groups/
+      title: Device and Asset groups
+      subtitle: Learn how to work with entity groups and perform bulk operations
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/scheduler/
+      title: Scheduler
+      subtitle: Learn how to schedule various types of events and trigger actions.
+      pe: true
+      video: true
+    - path: /docs/paas/eu/user-guide/reporting/
+      title: Reporting
+      subtitle: Learn how to schedule and generate reports based on existing dashboards.
+      pe: true
+      video: true
+
+- title: OAuth 2.0
+  subtitle: Learn how to step-by-step setup OAuth with different providers.
+  id: OAuth
+  paaspage: "false"
+  section:
+  - path: /docs/paas/eu/user-guide/oauth-2-support/#login-with-google
+    title: Google OAuth example
+    subtitle: Learn how to step-by-step setup OAuth with Google.
+  - path: /docs/paas/eu/user-guide/oauth-2-support/#login-with-auth0
+    title: OAuth0 OAuth example
+    subtitle: Learn how to step-by-step setup OAuth with OAuth0.
+  - path: /docs/paas/eu/user-guide/oauth-2-support
+    title: OAuth0 Okta example
+    subtitle: Learn how to step-by-step setup OAuth with Okta.
+  - path: /docs/paas/eu/user-guide/oauth-2-support
+    title: OAuth0 Azure Active Directory example
+    subtitle: Learn how to step-by-step setup OAuth with Azure Active Directory.
+
+- title: Contribution and Development
+  subtitle: Learn how to contribute to Thingsboard, customize & develop custom widgets and rule nodes
+  id: Contribution
+  section:
+    - path: /docs/user-guide/contribution/how-to-contribute/
+      title: How to Contribute
+      subtitle: "Learn how to contribute to Thingsboard"
+      pe: false
+      video: false
+    - path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
+      title: How to contribute your device integration guide
+      subtitle: "Learn how to contribute to Thingsboard"
+      pe: false
+      video: false
+    - path: /docs/user-guide/contribution/rule-node-development/
+      title: Rule Node Development Guide
+      subtitle: "Learn how to customize and create custom rule nodes"
+      pe: false
+      video: false
+    - path: /docs/paas/eu/user-guide/contribution/widgets-development/
+      title: Widgets Development Guide
+      subtitle: "Learn how to customize and create custom widgets"
+      pe: false
+      video: false

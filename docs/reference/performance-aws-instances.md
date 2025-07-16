@@ -324,4 +324,5 @@ cassandra-disk-usage:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include /docs/reference/performance-aws-instances.md %}

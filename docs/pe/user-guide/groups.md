@@ -176,4 +176,5 @@ batch-operations:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/groups.md %}

@@ -1,0 +1,17 @@
+{% assign targetKey = include.targetKey %}
+{% assign data = site.data.clients-feedback %}
+
+<div class="clients-title">
+    <img src="{{ data[targetKey].icon }}" width="64" height="64" alt="{{ data[targetKey].label }} icon" title="{{ data[targetKey].label }}">
+    <h1>
+        <span class="key">{{ data[targetKey].label }}</span> <span class="customers">customers</span>
+    </h1>
+</div>
+
+<div class="clients-nav">
+    {% for key in data %}
+        <a href="/industries/{{key[0]}}" class="clients-nav-item{% if targetKey == key[0] %} active{% endif %}">
+            {{ key[1].label }}
+        </a>
+    {% endfor %}
+</div>

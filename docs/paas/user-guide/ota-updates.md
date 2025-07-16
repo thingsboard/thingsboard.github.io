@@ -128,6 +128,7 @@ fw-calendar:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ota-updates.md %}
 
 ## Assign OTA package to device group

@@ -13,6 +13,7 @@
 </section>
 
 {% include trendz-wizard.html %}
+{% include private-cloud-plan-calculator.html %}
 
 {% include footer.html %}
 
@@ -41,31 +42,54 @@
 
     function initPricingState() {
         $(function(){
+            setCloudServerDefault();
             window.addEventListener('popstate', onPopPricingState);
             onPopPricingState();
+            setTimeout(()=> popCopyButton(), 200);
         });
     }
 
+    function setCloudServerDefault() {
+        const cloudServer = getCookie('cloudServer')
+        if (cloudServer === '/docs/paas/eu/') {
+            document.getElementById('Pricing_PE_Cloud_Europe')?.classList.add("defaultselection");
+        } else {
+            document.getElementById('Pricing_PE_Cloud_NorthAmerica')?.classList.add("defaultselection");
+        }
+    }
+
     function onPopPricingState() {
-        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-        var sectionId = params['section'] || params['active'];
+        const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        let sectionId = params['section'] || params['active'];
         if (!sectionId) {
             sectionId = '{{page.defaultActivePricingSection}}';
         }
         setActivePricingSection(sectionId);
-        var productId = params['product'];
+        animateSupportCards(sectionId);
+        const productId = params['product'];
         if (productId) {
             setActiveProductSection(productId);
         }
-        var solutionId = params['solution'];
+        let solutionId = params['solution'];
         if (solutionId) {
             setActiveSolutionSection(solutionId);
+        }
+        let faqSection = params['faqSection'];
+        if (faqSection) {
+            switchFaqSection(faqSection);
+            const questionEl = document.querySelector(`div[data-item-id="${window.location.hash.replace('#', '')}"]`);
+            if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
+                loadMoreFaq(questionEl.parentNode.children[6]);
+            }
+            checkIfOpenedRetryClear(`div[data-item-id="${window.location.hash.replace('#', '')}"]`);
         }
     }
 
     function activatePricingSection(sectionId) {
         updateQueryParam({section: sectionId, product: null, solution: null});
         setActivePricingSection(sectionId);
+        switchFaqContainer(sectionId);
+        animateSupportCards(sectionId);
     }
 
     function activateProductSection(productId) {
@@ -78,7 +102,14 @@
         setActiveSolutionSection(solutionId);
     }
 
-    function updateQueryParam(setParams) {
+    function activateServerSection(solutionId, cookieValue) {
+        setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
+        setCloudServerHref();
+        updateQueryParam({solution: solutionId});
+        setActiveSolutionSection(solutionId);
+    }
+
+    function updateQueryParam(setParams, clear = false) {
         var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
         for (var paramName of Object.keys(setParams)) {
             var paramValue = setParams[paramName];
@@ -88,8 +119,11 @@
                 params[paramName] = undefined;
             }
         }
+        if (clear) {
+            delete params.faqSection;
+        }
         var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
-        if (window.location.hash) {
+        if (window.location.hash && !clear) {
             newurl += window.location.hash;
         }
         window.history.pushState({ path: newurl }, '', newurl);
@@ -114,6 +148,8 @@
             var solutionId = getDefaultSolutionIdBySectionId(sectionId);
             if (solutionId) {
                 setActiveSolutionSection(solutionId);
+            } else {
+                switchFaqContainer(sectionId);
             }
         }
 
@@ -131,6 +167,7 @@
             var solutionId = getDefaultSolutionIdBySectionId(sectionId);
             setActiveSolutionSection(solutionId);
             reportPriceOpen(sectionId);
+            switchFaqContainer(sectionId);
         }
     }
 
@@ -143,8 +180,8 @@
 
     function setActiveSolutionSection(sectionId) {
         $('.solution-selector .solution').removeClass("active");
-        $('.pricing-div .pricing-section:not(.pricing-community):not(.pricing-cloud)').removeClass("active");
-        $('.pricing-content-header .pricing-content-description:not(.pricing-cloud)').removeClass("active");
+        $('.pricing-div .pricing-section:not(.pricing-community):not(.always-display)').removeClass("active");
+        $('.pricing-content-header .pricing-content-description:not(.always-display)').removeClass("active");
         if (sectionId) {
             var $solutionButtonElement = $('.solution-selector .solution'+`[data-solutionid=${sectionId}]`);
             $solutionButtonElement.addClass("active");
@@ -152,6 +189,7 @@
             var headerId = $solutionButtonElement.attr("data-description-toggle");
             $('.pricing-div .pricing-section'+id).addClass("active");
             $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
+            switchFaqContainer(sectionId);
         }
     }
 
@@ -230,9 +268,152 @@
             "event_category": solutionId
         });
     }
+
+    let currentFaqContainer = 'thingsboard-cloud';
+    let sectionSwitched = false;
+
+    function switchFaqContainer(containerId) {
+        if (changeFaqHeader(containerId)) {
+            currentFaqContainer = containerId;
+            document.querySelectorAll('#FAQ section').forEach(el => el.classList.remove('active'));
+            document.getElementById(`faq-${containerId}`)?.classList.add('active');
+        }
+    }
+
+    function changeFaqHeader(id) {
+        let correspondingHeader;
+        switch (id) {
+            case 'thingsboard-ce':
+                correspondingHeader = 'ThingsBoard Community Edition FAQs';
+                break;
+            case 'thingsboard-cloud':
+                correspondingHeader = 'ThingsBoard Cloud FAQs';
+                break;
+            case 'thingsboard-private-cloud':
+                correspondingHeader = 'ThingsBoard Private Cloud FAQs';
+                break;
+            case 'pe-pay-as-you-go':
+                correspondingHeader = 'ThingsBoard Professional Edition: Self-managed Subscriptions FAQs';
+                break;
+            case 'pe-perpetual':
+                correspondingHeader = 'ThingsBoard Professional Edition: Self-managed Perpetual FAQs';
+                break;
+            case 'trendz-pay-as-you-go':
+                correspondingHeader = 'Trendz Analytics: Self-managed Subscriptions FAQs';
+                break;
+            case 'trendz-perpetual':
+                correspondingHeader = 'Trendz Analytics: Self-managed Perpetual FAQs';
+                break;
+            case 'trendz-cloud':
+                correspondingHeader = 'Trendz Analytics Cloud FAQs';
+                break;
+            case 'edge-community':
+                correspondingHeader = 'Edge Community FAQs';
+                break;
+            case 'edge-pay-as-you-go':
+                correspondingHeader = 'Edge Subscriptions FAQs';
+                break;
+            case 'edge-perpetual':
+                correspondingHeader = 'Edge Perpetual FAQs';
+                break;
+            case 'tbmq':
+                correspondingHeader = 'TBMQ FAQs';
+                break;
+        }
+        if (correspondingHeader && document.getElementById('faq-header')) {
+            document.getElementById('faq-header').innerText = correspondingHeader;
+        }
+        return correspondingHeader;
+    }
+
+    function switchFaqSection(sectionId, el) {
+        if (el?.classList.contains('active')) return
+        document.querySelectorAll(`#faq-${currentFaqContainer} .faq-section-option`).forEach(el => el.classList.remove('active'));
+        document.querySelectorAll(`#faq-${currentFaqContainer} .pi-accordion`).forEach(el => el.classList.remove('active'));
+        document.getElementById(`faq-${currentFaqContainer}-${sectionId}`).classList.add('active');
+        el ? el.classList.add('active') : document.querySelector(`#faq-${currentFaqContainer} #${sectionId}`).classList.add('active');
+        sectionSwitched = true;
+    }
+
+    function loadMoreFaq(el) {
+        el.classList.add('hidden');
+        el = el.nextElementSibling;
+        while(el) {
+            el.classList.remove('hidden');
+            el = el.nextElementSibling;
+        }
+    }
+
+    function copyQuestionLink(event, questionId, button) {
+        event.stopPropagation();
+        const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        params['faqSection'] = document.querySelector(`#faq-${currentFaqContainer} .faq-section-option.active`).id;
+        const questionUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params) + '#' + questionId;
+        const $temp = $("<input>");
+        $("body").append($temp);
+        window.getSelection().removeAllRanges();
+        $temp.val(questionUrl).select();
+        document.execCommand("copy");
+        $temp.remove();
+        button.classList.toggle('copied');
+        const tooltipEl = button.firstElementChild;
+        tooltipEl.innerHTML = "Copied";
+        setTimeout(() => {
+            tooltipEl.innerHTML = 'Copy question link';
+            button.classList.toggle('copied');
+        }, 1500);
+    }
+
+    function popCopyButton() {
+        if (document.querySelector('.item').querySelector('.title')) {
+            document.querySelectorAll('.item').forEach(el => {
+                const clipButton = $(`
+                <button class="clipboard-btn" onmousedown="this.style.backgroundColor='#e8f1ff'"
+                  onmouseup="this.style.removeProperty('background-color')"
+                  onclick="copyQuestionLink(event, '${el.getAttribute('data-item-id')}', this)">
+                    <span class="tooltiptext">Copy question link</span>
+                </button>`);
+                $(el).find('.title').append(clipButton);
+            });
+        } else {
+            setTimeout(() => popCopyButton(), 100);
+        }
+    }
+
+    function checkIfOpenedRetryClear(questionId) {
+        const question = document.querySelector(questionId);
+        if (question.classList.contains('on')){
+            updateQueryParam({}, true);
+        } else {
+            setTimeout(() => checkIfOpenedRetryClear(questionId), 100);
+        }
+    }
+
+    function animateSupportCards(sectionId) {
+        const currentSection = document.querySelector(`#${sectionId}`);
+        const cards = currentSection.querySelectorAll('.card-to-animate');
+
+        cards.forEach((card) => {
+            setTimeout(() => {
+                card.classList.add(`card-animation`)
+            }, 1)
+        })
+    }
+
+    function switchPrice(product) {
+        document.querySelectorAll(`#${product} .pricing-square-price:not(.always-display)`)
+            .forEach(elem => elem.classList.toggle('hidden'));
+        document.querySelectorAll(`#${product} .billing-toggle .label-text`)
+            .forEach(elem => elem.classList.toggle('selected'));
+    }
+
+    function switchToPrivateCloud() {
+        window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
+    }
 </script>
 
 {% include cookie-consent.html %}
 
 </body>
 </html>
+

@@ -212,4 +212,5 @@ thresholds:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/advanced-data-key-configuration.md %}

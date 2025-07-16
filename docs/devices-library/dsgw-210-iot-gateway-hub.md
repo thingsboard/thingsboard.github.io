@@ -12,4 +12,5 @@ docsPrefix: pe/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/dsgw-210-iot-gateway-hub.md %}

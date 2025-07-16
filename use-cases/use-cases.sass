@@ -1,18 +1,16 @@
 #common.use-cases
-    @media screen and (min-width: 1500px)
-        #encyclopedia
-            #content
-                max-width: 1400px
-
-#common.use-cases
     #docsContent
         p, ul, ol
-            color: #75767C
-            font-size: 18px
+            color: #000000C2
+            font-size: 16px
             font-weight: normal
             line-height: 27px
         p
             margin: 4px 0 18px
+    @media screen and (min-width: 1500px)
+        #encyclopedia
+            #content
+                max-width: 1400px
 
 .usecase-title
     font-size: 36px
@@ -92,13 +90,19 @@
     text-align: left
     color: #333333
 
+.filters
+    animation: slide-in-from-top 0.8s ease-out forwards
+
 #usecase-list
+    animation: slide-in 0.8s ease-out forwards
     position: relative
     .list
         margin-bottom: 80px
         width: 100%
     .dashboard-item
-        margin-top: 80px
+        &:first-of-type
+            margin-top: 80px
+        margin-top: 180px
         flex-direction: column
         justify-content: space-between
         display: flex !important
@@ -163,7 +167,7 @@
             right: 0
             font-weight: 400
             opacity: 0
-            background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
+            background: linear-gradient(180deg, rgba(14, 20, 39, 0.50) 0%, rgba(14, 20, 39, 0.70) 100%)
             transition-duration: 0.3s
             &:hover
                 opacity: 1
@@ -238,6 +242,167 @@
                             height: fit-content
                             margin: 0 0 18px
 
+.usecase-background-main
+    z-index: -1
+    position: absolute
+    top: 4%
+    left: 50%
+    img
+        position: absolute
+        top: -650px
+        left: 134px
+        box-shadow: none !important
+    div
+        position: absolute
+        -ms-transform: skewY(-6deg)
+        transform: skewY(-6deg)
+        width: 436px
+        height: 90px
+        &.bottom-features1
+            top: -950px
+            width: 2560px
+            height: 3000px
+            left: -1280px
+            background-color: #F7F9FC
+        &.bottom-features2
+            top: -240px
+            width: 2560px
+            height: 525px
+            left: -1280px
+            background-color: #252628
+        &.small11
+            top: -382px
+            left: 757px
+            background-color: #2A7DEC
+        &.small12
+            top: 334px
+            right: 789px
+            border: 4px solid #305680
+        &.usecase-big-bg1
+            top: -850px
+            width: 2560px
+            height: 937px
+            left: -1280px
+            background-color: #F7F9FC
+        &.usecase-big-bg2
+            top: 1034px
+            width: 2560px
+            height: 1427px
+            left: -1280px
+            background-color: #F7F9FC
+        &.usecase-big-bg3
+            top: 3936px
+            width: 2560px
+            height: 989px
+            left: -1280px
+            background-color: #F7F9FC
+        &.small1
+            width: 640px
+            top: 4975px
+            right: 642px
+            background-color: #2A7DEC
+        &.small2
+            top: 3823px
+            left: 580px
+            border: 4px solid #305680
+        &.small3
+            top: 3768px
+            left: 776px
+            background-color: #2A7DEC
+        &.small4
+            top: 2509px
+            right: 705px
+            border: 4px solid #305680
+        &.small5
+            top: 1558px
+            right: 766px
+            background-color: #305680
+            transform: skewY(-7deg)
+        &.small6
+            border: 4px solid #2A7DEC
+            top: 1338px
+            left: 749px
+        &.small7
+            z-index: 1
+            top: 1086px
+            right: 727px
+            background-color: #2A7DEC
+        &.small8
+            top: 1148px
+            right: 872px
+            background-color: #305680
+        &.small9
+            top: -51px
+            left: 650px
+            border: 4px solid #0D2743
+        &.small10
+            top: -43px
+            left: 814px
+            background-color: #2A7DEC
+
+#encyclopedia:has(#usecase-list)
+    padding-top: 0
+    padding-left: 40px
+    padding-right: 40px
+
+
+#docsContent
+    .iot-use-cases-hero
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 100px
+        position: relative
+        padding: 100px 0 50px
+        .iot-use-cases-hero-left
+            display: flex
+            flex-direction: column
+            gap: 32px
+            max-width: 1000px
+            .iot-use-cases-title
+                font-size: 56px !important
+                font-weight: 600 !important
+                line-height: 72px !important
+                margin: 0 !important
+                padding: 0 !important
+            .iot-use-cases-description
+                display: flex
+                flex-direction: column
+                gap: 20px
+                p
+                    margin: 0 !important
+                    font-size: 16px !important
+                    line-height: 28px !important
+                    color: #000000C2 !important
+        &::before
+            background: #F4F8FE
+            content: ''
+            width: 100vw
+            left: 50%
+            transform: translateX(-50%)
+            height: 100%
+            position: absolute
+            top: 0
+            z-index: -1
+
+@media screen and (max-width: 959px)
+    #docsContent
+        .iot-use-cases-hero
+            flex-direction: column
+            align-items: initial
+            gap: 40px
+            .iot-use-cases-hero-right
+                .contact-us-card
+                    padding: 32px
+                    max-width: 570px
+                    width: 100%
+                    margin: 0 auto
+                    .contact-us-card-title
+                        max-width: 275px
+                    .icon
+                        top: -17px
+                        right: -49px
+
 .usecase-background
     z-index: -1
     position: absolute
@@ -302,7 +467,6 @@
             top: -133px
             left: 658px
             background-color: #2A7DEC
-
 #contact-us
     padding: 70px 0 160px 0
     .block-content
@@ -389,7 +553,16 @@
                                 width: calc(100% - 122px)
                             img, object
                                 margin: 0 30px 0 0
-   
+
+@media screen and (max-width: 1024px)
+    .usecase-background-main
+        display: none
+
+    #usecase-list
+        .list
+            .dashboard-item
+                margin-top: 80px
+
 @media screen and (min-width: 1025px)
     #usecase-list
         .list
@@ -525,3 +698,1023 @@
 
                 &.one-to-one-and-half
                     grid-template-columns: 1fr
+
+@media screen and (max-width: 1280px)
+    .iot-use-cases-hero
+        padding: 50px 0
+
+@media screen and (max-width: 599px)
+    #encyclopedia:has(#usecase-list)
+        padding-left: 16px
+        padding-right: 16px
+        .iot-use-cases-hero
+            padding: 40px 0
+
+
+@keyframes slide-in
+    from
+        opacity: 0
+        transform: translateY(100px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+
+
+@keyframes slide-in-from-top
+    from
+        opacity: 0
+        transform: translateY(-50%)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+
+#common.use-cases
+    #docsContent
+        h1.usecase-title
+            font-size: 56px
+            font-weight: 600
+
+            @media screen and (max-width: 599px)
+                font-size: 36px
+
+        #scada-fullpage
+            display: none
+            position: absolute
+            z-index: 9999
+            top: 0
+            left: -260px
+            width: 100vw
+            height: 110vh
+            background: rgba(0, 0, 0, 0.55)
+
+            @media screen and (max-width: 1500px)
+                left: -10px
+
+            .image
+                margin-top: 15.5vh
+                margin-left: auto
+                margin-right: auto
+                width: 67.9vw
+                height: 72.3vh
+                img
+                    width: 100%
+                    border: 4px solid white
+                    border-radius: 36px
+
+            .close-icon
+                background: rgba(0, 0, 0, 0.75)
+                cursor: pointer
+                position: fixed
+                z-index: 99999999999999999999
+                right: 24px
+                top: 24px
+                border-radius: 8px
+                padding: 16px
+                transition: ease-in-out 0.15s
+                opacity: 1
+
+                &:hover
+                    opacity: 0.76
+
+                svg
+                    fill: #fff
+                    overflow: hidden
+                    vertical-align: middle
+
+        .scada-about, .scada-overview, .scada-solution-structure, .scada-key-functions, .dashboard-structure, .applications, .advantages, .health-about, .health-solution-structure, .health-key-functions, .environment-monitoring-about, .environment-monitoring-carousel, .environment-monitoring-solution-structure, smart-energy-solution-structure, .smart-energy-overview, .smart-office-about, .smart-office-carousel, .water-metering-about, .water-metering-carousel, .fleet-tracking-carousel, .fleet-tracking-about, .smart-retail-about, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .smart-metering-solution-structure, .smart-metering-about, .air-quality-about, .air-quality-carousel, .air-quality-solution-structure, .waste-management-about, .waste-management-carousel, .waste-management-solution-structure, .smart-irrigation-about, .smart-irrigation-carousel, .smart-irrigation-solution-structure, .smart-farming-about, .smart-farming-overview, .smart-farming-solution-structure, .tank-monitoring-about, .tank-monitoring-carousel, .tank-monitoring-solution-structure
+            h2
+                margin-bottom: 60px
+                padding-top: 50px
+                font-size: 36px
+                @media screen and (max-width: 599px)
+                    font-size: 32px
+                    margin-bottom: 0
+
+            h3
+                font-size: 28px
+                font-weight: 500
+                margin-bottom: 0
+                @media screen and (max-width: 599px)
+                    font-size: 20px
+
+            p
+                font-size: 16px
+                @media screen and (max-width: 599px)
+                    font-size: 16px
+
+            .demo-button
+                a
+                    width: 208px
+                    font-size: 16px
+                    text-align: center
+                    margin-bottom: 18px
+
+                    @media screen and (max-width: 375px)
+                        width: 100%
+
+        .scada-overview.addedBanner, .scada-solution-structure.addedBanner, .health-solution-structure.addedBanner
+            margin-bottom: 170px
+            h2
+                padding-top: 0
+
+        .health-solution-structure.addedBanner
+            h2
+                padding-top: 0
+
+        .scada-overview.addedBanner
+            .img-comp-container
+                margin-bottom: 100px
+
+        section
+            padding: 0
+            margin-bottom: 70px
+
+            @media screen and (max-width: 599px)
+                margin-bottom: 50px
+
+            .about-text
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                gap: 50px
+
+                @media screen and (max-width: 599px)
+                    margin-bottom: unset
+
+                @media screen and (max-width: 959px)
+                    flex-direction: column
+                    gap: unset
+
+                .short
+                    flex: 1
+                    display: flex
+                    flex-direction: column
+
+                    @media screen and (max-width: 1279px)
+                        justify-content: unset
+
+                    .block
+                        .text
+                            font-size: 18px
+
+                .long
+                    flex: 2
+                    p
+                        font-size: 16px
+
+            .header-selector
+                display: flex
+                justify-content: space-between
+                align-items: center
+                margin-bottom: 0
+
+                @media screen and (max-width: 1115px)
+                    flex-direction: column
+                    align-items: start
+                    margin-bottom: 50px
+                    h1
+                        margin-bottom: 0
+
+                .scada-mode-selector
+                    margin-top: 25px
+                    display: flex
+                    border: 1px solid rgba(0, 0, 0, 0.08)
+                    height: 44px
+                    max-width: 350px
+                    @media (max-width: 480px)
+                        max-width: 348px
+                    border-radius: 26px
+                    background-color: rgba(42, 125, 236, 0.08)
+                    .mode
+                        position: relative
+                        color: #707275
+                        cursor: pointer
+                        height: 100%
+                        display: flex
+                        align-items: center
+                        padding-left: 14px
+                        padding-right: 12px
+                        &:nth-of-type(1)
+                            margin-right: 0
+                        h3
+                            margin-bottom: 0
+                            font-weight: 500
+                            a.faq-link
+                                &:after
+                                    margin-left: 2px
+                            font-size: 14px
+                            line-height: 20px
+                            @media (min-width: 480px)
+                                font-size: 18px
+                                line-height: 27px
+                        &.active
+                            &:before
+                                filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
+                            border-radius: 22px
+                            color: #fff
+                            background: #2A7DEC
+                            box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
+                            &:after
+                                background-color: #fff
+                        &:hover:not(.active)
+                            &:before
+                                filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
+                            color: #000
+
+        .svg-animation
+            visibility: hidden
+
+        .scada-about, .health-about
+
+            .short
+                .demo-button > a
+                    @media screen and (max-width: 599px)
+                        width: 100%
+
+        .section-header
+            display: flex
+            flex-direction: column
+            gap: 32px
+            max-width: 928px
+            margin-bottom: 60px
+            @media screen and (max-width: 599px)
+                margin-bottom: 20px
+            h2
+                font-size: 36px
+                padding: 0
+                margin: 0
+                @media screen and (max-width: 599px)
+                    font-size: 28px
+                    margin-bottom: 0 !important
+            p
+                margin: 0
+                @media screen and (max-width: 599px)
+                    font-size: 14px
+
+        .section-header.water-section-header
+            max-width: 1079px
+            p
+                max-width: 928px
+
+        .carousel-padding
+            .carousel-item
+                img
+                    border-radius: 24px
+                    background: #EDEDED
+                    padding: 8px
+
+
+        .scada-overview
+
+            &::before
+                content: ""
+                width: 200%
+                height: 123%
+                background-color: #f4f8fe
+                position: absolute
+                left: -50%
+                top: -61px
+                z-index: -1
+
+        .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .tank-monitoring-carousel
+            .owl-carousel
+                margin: 0
+
+        .smart-energy-overview, .smart-farming-overview
+            padding: 80px 0
+            @media screen and (max-width: 959px)
+                padding: 40px 0
+
+        .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .tank-monitoring-carousel
+            padding: 90px 0 40px
+            @media screen and (max-width: 959px)
+                padding: 45px 0 20px
+
+        .smart-energy-overview, .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .smart-farming-overview, .tank-monitoring-carousel
+            margin-bottom: 100px
+            @media screen and (max-width: 599px)
+                margin-bottom: 40px
+
+        .section-padding
+            margin: 0
+            padding: 100px 0
+            @media screen and (max-width: 959px)
+                padding: 40px 0
+
+        .applications.summary-margin
+            margin-bottom: 100px
+            @media screen and (max-width: 959px)
+                margin-bottom: 50px
+
+        .smart-energy-overview, .smart-energy-benefits, .applications.applications-additional, .smart-office-carousel, .environment-monitoring-carousel, .water-metering-carousel, .fleet-tracking-carousel, .smart-retail-carousel, .health-carousel, .smart-metering-carousel, .air-quality-carousel, .waste-management-carousel, .smart-irrigation-carousel, .smart-farming-overview, .tank-monitoring-carousel
+            position: relative
+            &::before
+                content: ""
+                background: #F4F8FE
+                width: 100vw
+                left: 50%
+                transform: translateX(-50%)
+                height: 100%
+                position: absolute
+                top: 0
+                z-index: -1
+
+        .smart-energy-solution-structure, .smart-office-solution-structure, .water-metering-solution-structure, .fleet-tracking-solution-structure, .smart-retail-solution-structure, .smart-farming-solution-structure
+            margin: 0
+            h2
+                font-size: 36px
+                @media screen and (max-width: 599px)
+                    font-size: 28px
+
+        .smart-energy-solution-structure, .environment-monitoring-solution-structure, .env-monitoring, .smart-metering-solution-structure, .air-quality-solution-structure, .waste-management-solution-structure, .smart-irrigation-solution-structure, .smart-farming-solution-structure, .tank-monitoring-solution-structure
+            h2
+                padding-top: 0
+
+        .scada-overview
+            &::before
+                height: 110%
+
+                @media screen and (max-width: 959px)
+                    height: 107%
+
+                @media screen and (max-width: 599px)
+                    top: -16px
+
+        .scada-overview, .smart-energy-overview, .smart-farming-overview
+
+            .img-comp-container
+                position: relative
+
+                .img-comp-img
+                    position: absolute
+                    overflow: hidden
+                    &.img-comp-overlay
+                        max-height: 65vh
+                        img
+                            max-width: unset
+
+                .img-comp-img img
+                    display: block
+                    vertical-align: middle
+                    max-width: 100%
+                    height: auto
+                    border-radius: 24px
+
+                .img-comp-slider
+                    position: absolute
+                    top: 0
+                    z-index: 2
+                    cursor: ew-resize
+                    width: 1px
+                    border: 1px solid grey
+                    box-shadow: #fff 0 0 11px 8px
+                    animation: 0.7s linear infinite alternate swingSlider
+                    div
+                        height: 100%
+                        width: 10px
+                        margin-left: -5px
+                    &:before
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-33px)
+                        left: -24px
+                        content: "\2039"
+                        font-size: 50px
+                    &:after
+                        position: absolute
+                        top: 50%
+                        transform: translateY(-33px)
+                        right: -24px
+                        content: "\203A"
+                        font-size: 50px
+
+                        @keyframes swingSlider
+                            from
+                                transform: translateX(-3px)
+                            to
+                                transform: translateX(5px)
+
+            .table-lg
+                @media screen and (max-width: 1800px)
+                    display: none
+                display: flex
+                gap: 32px
+                div
+                    display: flex
+                    flex-direction: column
+
+                .criteria-col
+                    padding-top: 140px
+                    p
+                        padding-bottom: 36px
+                        font-size: 24px
+                        font-weight: 500
+                        border-bottom: 1px solid #3E9AF81F
+                        color: #000000C2
+                        white-space: nowrap
+
+                        &:last-of-type
+                            border-bottom: none
+
+                .compare-col
+                    padding: 46px
+                    gap: 32px
+                    border-radius: 24px
+                    background: #FFF
+                    box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+
+                    p
+                        color: rgba(68, 71, 74, 0.80)
+                        font-size: 18px
+                        font-weight: 400
+                        letter-spacing: 0.15px
+
+                        &:first-of-type
+                            color: #212529
+                            font-size: 32px
+                            font-weight: 500
+
+            .table-md-sm
+                @media screen and (max-width: 1800px)
+                    display: flex
+                display: none
+                flex-direction: column
+                align-items: center
+                gap: 16px
+
+                .header
+                    display: flex
+                    width: 100%
+                    justify-content: space-around
+
+                    p
+                        color: #212529
+                        font-size: 32px
+                        font-weight: 500
+                        @media screen and (max-width: 959px)
+                            font-size: 24px
+
+                .title
+                    font-size: 24px
+                    font-weight: 500
+                    color: #000000C2
+                    @media screen and (max-width: 959px)
+                        font-size: 18px
+
+                .compare-container
+                    display: flex
+                    gap: 32px
+                    width: 100%
+
+                    @media screen and (max-width: 959px)
+                        gap: 16px
+
+                    div
+                        width: 100%
+                        padding: 46px
+                        color: #44474ACC
+                        font-size: 18px
+                        font-weight: 400
+                        border-radius: 24px
+                        background: #FFF
+                        box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+                        text-align: center
+
+                        @media screen and (max-width: 959px)
+                            padding: 16px
+                            font-size: 16px
+                            height: 160px
+                            align-content: center
+
+        .scada-solution-structure, .health-solution-structure, .smart-energy-solution-structure, .environment-monitoring-solution-structure, .smart-office-solution-structure, .water-metering-solution-structure, .fleet-tracking-solution-structure, .smart-retail-solution-structure, .smart-metering-solution-structure, .air-quality-solution-structure, .waste-management-solution-structure, .smart-irrigation-solution-structure, .smart-farming-solution-structure, .tank-monitoring-solution-structure
+            .scheme
+                margin-bottom: 48px
+
+                img
+                    width: 100%
+
+            .use-cases-solution-structure-cards, .health-solution-structure-cards
+                display: flex
+                flex-direction: row
+                flex-wrap: wrap
+                gap: 32px
+
+                @media screen and (max-width: 1919px)
+                    gap: 24px
+
+                .use-cases-solution-structure-card, .health-solution-structure-card
+                    flex-basis: 31%
+                    padding: 46px
+                    border-radius: 24px
+                    background: #FFF
+                    box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+
+                    h3
+                        margin-bottom: 24px
+                    p
+                        margin: 0
+
+                    @media screen and (max-width: 1919px)
+                        flex-basis: 48.6%
+                        min-height: unset
+
+                    @media screen and (max-width: 959px)
+                        flex-basis: 100%
+                        max-height: unset
+                        min-height: unset
+
+                    @media screen and (max-width: 599px)
+                        padding: 24px
+
+
+                .health-solution-structure-card
+                    background-color: white
+                    min-height: unset
+
+            .health-solution-structure-cards
+                &::before
+                    content: ""
+                    width: 200%
+                    height: 112%
+                    background-color: #f4f8fe
+                    position: absolute
+                    left: -50%
+                    z-index: -1
+                    top: -4px
+
+                    @media screen and (max-width: 959px)
+                        height: 106%
+
+                    @media screen and (max-width: 599px)
+                        height: 107%
+
+        .smart-energy-solution-structure, .smart-farming-solution-structure
+            .scheme
+                margin-bottom: 100px
+
+        .scada-key-functions, .health-key-functions
+            margin-bottom: 0
+            .high-performance
+                display: none
+                &.active
+                    display: block
+            .traditional
+                display: none
+                &.active
+                    display: block
+
+            @media screen and (max-width: 599px)
+                margin-bottom: 50px
+
+            &::before
+                content: ""
+                width: 200%
+                height: 100%
+                background-color: #f4f8fe
+                position: absolute
+                left: -50%
+                z-index: -1
+
+                @media screen and (max-width: 599px)
+                    height: 101%
+                    top: 28px
+
+
+            .scada-key-function-block, .health-key-function-block
+                display: flex
+                flex-direction: row
+                justify-content: space-between
+                align-items: center
+                padding-bottom: 40px
+                margin-bottom: 40px
+                border-bottom: 1px solid #3E9AF81F
+
+                @media screen and (max-width: 599px)
+                    flex-direction: column
+                    text-align: center
+
+                &:last-of-type
+                    border-bottom: none
+                    margin-bottom: 0
+
+                .key-function-description
+                    max-width: 50%
+
+                    @media screen and (max-width: 959px)
+                        max-width: 60%
+
+                    @media screen and (max-width: 599px)
+                        max-width: unset
+
+                        li
+                            text-align: left
+
+                    h3
+                        margin-bottom: 24px
+
+                img
+                    width: 24%
+
+                    @media screen and (max-width: 599px)
+                        width: 60%
+
+        .dashboard-structure
+            @media screen and (max-width: 599px)
+                margin-bottom: 45px
+                #dashboard-structure
+                    margin-bottom: 45px
+
+            .dashboard-structure-block
+                &.high-performance
+                    display: none
+                    &.active
+                        display: flex
+                &.traditional
+                    display: none
+                    &.active
+                        display: flex
+
+                display: flex
+                flex-direction: row
+                gap: 7%
+
+                .menu
+                    width: 45%
+                    position: relative
+                    z-index: 2
+
+                    @media screen and (max-width: 1279px)
+                        width: 100%
+
+                    .expansion-block
+                        border-bottom: 1.5px solid #3E9AF81F
+
+                        &:has(+ .expanded)
+                            border-bottom: none
+
+                        &:last-of-type
+                            border-bottom: none
+
+                        &.expanded
+                            border-bottom: none
+
+                            .expansion-panel
+                                background: #F4F8FE
+                                border-radius: 24px
+
+                                .expansion-header
+                                    color: #000
+                                    margin-bottom: 16px
+
+                                    &::after
+                                        color: #000
+
+                                @media screen and (max-width: 1279px)
+                                    margin-bottom: 48px
+
+                                .expansion-header
+                                    &::after
+                                        transform: rotate(180deg)
+
+                                .expansion-content
+                                    max-height: 1200px
+
+                        .expansion-panel
+                            padding: 34px
+                            cursor: pointer
+
+                            @media screen and (max-width: 599px)
+                                padding: 16px
+
+                            .expansion-header
+                                display: flex
+                                position: relative
+                                padding-right: 30px
+
+                                &::after
+                                    content: "\f078"
+                                    color: #75767C
+                                    font-family: 'Font Awesome 5 Free', serif
+                                    font-size: 23px
+                                    font-weight: 900
+                                    line-height: 1
+                                    display: block
+                                    position: absolute
+                                    top: 9px
+                                    right: -5px
+                                    transform: rotate(0deg)
+                                    transition: transform .3s
+                                    border: none
+
+                            .expansion-content
+                                max-height: 0
+                                overflow: hidden
+
+                        .image-block-small
+                            width: 70%
+                            margin: 0 auto 48px
+
+                            @media screen and (min-width: 1280px)
+                                display: none
+
+                            @media screen and (max-width: 1279px)
+                                display: flex
+                                gap: 70px
+
+                                .image-container
+                                    .image-background
+                                        &:nth-of-type(1)
+                                            right: -42px
+                                            top: -39px
+
+                                        &:nth-of-type(2)
+                                            left: -47px
+                                            top: -16px
+
+                                        &:nth-of-type(3)
+                                            bottom: -37px
+                                            right: -60px
+
+                            @media screen and (max-width: 959px)
+                                width: 100%
+                                .image-container
+                                    .image-background
+
+                                        &:nth-of-type(1)
+                                            right: -20px
+                                            top: -26px
+
+                                        &:nth-of-type(2)
+                                            left: -20px
+                                            top: -16px
+
+                                        &:nth-of-type(3)
+                                            bottom: -26px
+                                            right: -25px
+
+                .image-block-large, .image-block-small
+                    width: 45%
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    gap: 60px
+                    position: relative
+                    margin-top: 37px
+
+                    @media screen and (max-width: 1279px)
+                        display: none
+
+                    .image-container
+                        width: 100%
+                        position: relative
+
+                        .image-background
+                            position: absolute
+                            width: 100%
+                            height: 100%
+                            border-radius: 24px
+
+                            &:nth-of-type(1)
+                                right: -42px
+                                top: -72px
+                                z-index: -3
+                                background-color: #F4F8FE
+
+                            &:nth-of-type(2)
+                                left: -47px
+                                top: -35px
+                                border: 1.5px solid #D1E9FF
+                                z-index: -2
+
+                            &:nth-of-type(3)
+                                bottom: -37px
+                                right: -65px
+                                border: 1.5px solid #3E9AF8
+                                z-index: -1
+
+                        .image
+                            img
+                                border-radius: 24px
+                                box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.25), 0px 2px 8px 0px rgba(0, 0, 0, 0.08)
+
+                    .image-container.image-background
+                        padding: 16px
+                        border-radius: 24px
+                        background: #F2F2F2
+                        .image
+                            img
+                                border-radius: 0
+                                box-shadow: unset
+
+                .image-block-large
+                    .image-container
+                        cursor: pointer
+
+                .buttons-block
+                    display: flex
+                    flex-direction: row
+                    justify-content: center
+                    gap: 32px
+
+                    @media screen and (max-width: 599px)
+                        flex-direction: column
+                        width: 100%
+
+                        a.button
+                            width: 100%
+
+                    .button
+                        width: 208px
+                        text-align: center
+
+                    .button.contact-us
+                        background-color: unset
+                        color: #2A7DEC
+                        border: 1px solid #2A7DEC
+
+
+
+        .applications
+            #applications-of-scada-systems
+                margin-bottom: 40px
+
+            &::before
+                content: ""
+                width: 200%
+                height: 109%
+                background-color: #f4f8fe
+                position: absolute
+                left: -50%
+                z-index: -1
+
+                @media screen and (max-width: 599px)
+                    height: 104%
+
+            &.health
+                margin-bottom: 200px
+
+                &::before
+                    height: 107%
+
+                    @media screen and (max-width: 599px)
+                        height: 104%
+
+            .applications-container-large
+                display: flex
+                flex-direction: column
+                gap: 35px
+
+                @media screen and (max-width: 1279px)
+                    display: none
+
+                .text-row-top
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+
+                .images-row
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-evenly
+                    align-self: center
+                    max-height: 420px
+
+                    .application-image
+                        align-self: start
+
+                        &:nth-of-type(1)
+                            margin-right: 7px
+
+                        &:nth-of-type(even)
+                            margin-top: 9%
+
+                .text-row-bottom
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-evenly
+
+                div
+                    .text-block
+                        display: flex
+                        flex-direction: column
+                        max-width: 373px
+                        text-align: center
+                        gap: 12px
+
+                        h3
+                            letter-spacing: 0.249px
+                            color: #3A3B3D
+
+                        p
+                            font-size: 16px
+
+            .applications-container-small
+                @media screen and (min-width: 1280px)
+                    display: none
+
+                .application-block
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: center
+                    gap: 10px
+                    margin-bottom: 36px
+
+                    @media screen and (max-width: 599px)
+                        flex-direction: column
+
+                        &:nth-of-type(odd)
+                            flex-direction: column-reverse
+
+                    .image
+                        flex: 1
+
+                        &:nth-of-type(even)
+                            text-align: end
+
+                        @media screen and (max-width: 599px)
+                            &:nth-of-type(odd)
+                                padding-left: 23%
+
+                            &:nth-of-type(even)
+                                padding-right: 23%
+
+                    .text-block
+                        flex: 1
+                        text-align: center
+                        h3
+                            font-size: 24px
+
+        .summary
+            position: relative
+            border-radius: 24px
+            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+            padding: 46px 480px 46px 46px
+            overflow: hidden
+            margin-bottom: 50px
+            width: 100%
+            display: flex
+            flex-direction: row
+            gap: 16px
+            @media screen and (max-width: 959px)
+                padding: 46px
+            .summary-text
+                display: flex
+                flex-direction: column
+                gap: 32px
+                position: relative
+                max-width: 882px
+                @media screen and (max-width: 959px)
+                    max-width: 100%
+                h2
+                    font-size: 36px
+                    line-height: 48px
+                    margin: 0
+                p
+                    font-size: 18px
+                    line-height: 30px
+                    margin: 0
+            .summary-icon
+                position: absolute
+                top: 46px
+                right: 85px
+                width: 294px
+                height: 421px
+                @media screen and (max-width: 959px)
+                    display: none
+
+        .advantages
+            h2
+                margin: 0
+                padding-top: 110px
+
+            .owl-carousel.owl-theme.usecase-carousel.cardMode
+                margin: 10px 0 24px
+
+                .owl-stage
+                    padding: 50px 0
+
+                .card
+                    justify-content: unset
+                    gap: 16px
+                    align-items: start
+
+                    .card-header
+                        align-items: start
+                        gap: 16px
+
+                        span
+                            text-align: left !important
+                        li
+                            margin-bottom: 0
+                            padding: 0
+                            background: unset
+                    p
+                        margin: 0
+                        text-align: left
+                    .card-link
+                        font-size: 18px
+
+

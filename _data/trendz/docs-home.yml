@@ -9,6 +9,8 @@ toc:
   section:
     - title: Business entities
       path: /docs/trendz/business-entities/
+    - title: Aggregate telemetry and delta
+      path: /docs/trendz/telemetry-aggregation/
     - title: Group by time
       path: /docs/trendz/group-by-time/
     - title: Group by category
@@ -19,24 +21,26 @@ toc:
   section:
     - title: Overview
       path: /docs/trendz/visualizations-overview/
-    - title: Tables
-      path: /docs/trendz/visualizations-tables/
-    - title: Line Chart
-      path: /docs/trendz/visualizations-line/
-    - title: Bar & Histogram
-      path: /docs/trendz/visualizations-bar/
-    - title: Pie Chart
-      path: /docs/trendz/visualizations-pie/
-    - title: Scatter Plot
-      path: /docs/trendz/visualizations-scatter/
-    - title: Heat Map
-      path: /docs/trendz/visualizations-heatmap/
-    - title: Calendar
-      path: /docs/trendz/visualizations-calendar/
-    - title: Cards with line chart
-      path: /docs/trendz/visualizations-card-with-line/
-    - title: Cards
-      path: /docs/trendz/visualizations-card/
+    - title: View Types
+      section:
+        - title: Tables
+          path: /docs/trendz/visualizations-tables/
+        - title: Line Chart
+          path: /docs/trendz/visualizations-line/
+        - title: Bar & Histogram
+          path: /docs/trendz/visualizations-bar/
+        - title: Pie Chart
+          path: /docs/trendz/visualizations-pie/
+        - title: Scatter Plot
+          path: /docs/trendz/visualizations-scatter/
+        - title: Heat Map
+          path: /docs/trendz/visualizations-heatmap/
+        - title: Calendar
+          path: /docs/trendz/visualizations-calendar/
+        - title: Cards with line chart
+          path: /docs/trendz/visualizations-card-with-line/
+        - title: Cards
+          path: /docs/trendz/visualizations-card/
     - title: View settings
       path: /docs/trendz/view-settings/
     - title: View collections
@@ -44,25 +48,27 @@ toc:
 - title: Anomaly detection
   section:
     - title: Overview
-      path: /docs/trendz/anomaly/anomaly-detection-overview/
-    - title: Model properties
-      path: /docs/trendz/anomaly/model-properties/
-    - title: Anomaly autodiscovery job
-      path: /docs/trendz/anomaly/anomaly-autodiscovery/
-    - title: Visualize anomalies
-      path: /docs/trendz/anomaly/anomaly-view/
-    - title: Report anomaly to ThingsBoard
-      path: /docs/trendz/anomaly/anomaly-score-save-to-thingsboard/
+      path: /docs/trendz/anomaly/overview/
+    - title: Anomaly Model Properties
+      path: /docs/trendz/anomaly/build/
+    - title: Anomaly Refresh & Reprocess
+      path: /docs/trendz/anomaly/refresh-reprocess/
+    - title: Saving Telemetry to ThingsBoard
+      path: /docs/trendz/anomaly/save-to-tb/
+    - title: Anomaly Visualization
+      path: /docs/trendz/anomaly/visualization/
+    - title: Anomaly-Driven Alarm Creation
+      path: /docs/trendz/anomaly/alarms/
 - title: Calculated Fields
   section:
     - title: Overview
       path: /docs/trendz/calculated-fields/
     - title: Batch calculations
       path: /docs/trendz/batch-calculated-fields/
-    - title: Test functions
-      path: /docs/trendz/test-calculated-fields/
     - title: Save metric to ThingsBoard
       path: /docs/trendz/save-calculated-to-thingsboard/
+    - title: Calculate time to value
+      path: /docs/trendz/calculate-time-to-value/
 - title: Prediction
   section:
     - title: Overview
@@ -73,6 +79,18 @@ toc:
       path: /docs/trendz/predict-remaining-time/
     - title: Save predictions into ThingsBoard
       path: /docs/trendz/prediction-save-to-tb/
+- title: AI Features
+  section:
+    - title: Trendz AI Assistant
+      path: /docs/trendz/ai-assistance-overview/
+    - title: AI Assistant Widget
+      path: /docs/trendz/ai-assistance-widget/
+    - title: AI Widget Summary
+      path: /docs/trendz/ai-widget-summary/
+    - title: Trendz Prompts
+      path: /docs/trendz/ai-assistance-prompts/
+    - title: Large Language Model (LLM) Configuration
+      path: /docs/trendz/custom-ai-model-configuration/
 - title: Share views
   section:
     - title: Trendz widget bundle
@@ -85,18 +103,24 @@ toc:
       path: /docs/trendz/widget-actions/
     - title: Widget settings
       path: /docs/trendz/widget-settings/
+- title: White labeling
+  section:
+    - title: Overview
+      path: /docs/trendz/white-labeling/
+    - title: Custom translation
+      path: /docs/trendz/custom-translation/
 - title: External datasources
   path: /docs/trendz/mix-sql-datasource/
-- title: Sync to ThingsBoard
-  path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States
   path: /docs/trendz/states/
 - title: Caching
   path: /docs/trendz/cache-settings/
 - title: Processing jobs
   path: /docs/trendz/background-jobs/
-- title: White labeling
-  path: /docs/trendz/white-labeling/
+- title: Tasks
+  path: /docs/trendz/tasks-service/
+- title: Settings
+  path: /docs/trendz/settings/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
 - title: Trendz release notes

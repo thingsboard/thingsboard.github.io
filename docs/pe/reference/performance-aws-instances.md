@@ -325,4 +325,5 @@ cassandra-disk-usage:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include /docs/reference/performance-aws-instances.md %}

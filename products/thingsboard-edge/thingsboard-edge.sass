@@ -161,74 +161,88 @@
         padding: 0
 
     #matrix
-      margin: 60px -100% 0
-      padding: 0px 100% 48px
+      margin: 80px -100% 0
+      padding: 0 100% 88px
       h3
         color: #212529
         font-weight: 600
-        text-align: left
-        font-size: 22px
+        text-align: center
+        font-size: 20px
         line-height: 40px
       #backg-matrix
         position: relative
         margin-left: -20px
         margin-right: -20px
         width: calc(100% + 40px)
-        .edge, .gateway
-          padding: 0 20px
-          width: 30%
+        .gateway, .edge, .cloud
+          padding: 0 2px
+          width: 20%
           position: absolute
           z-index: -1
           top: 127px
         .coln
-          height: 1006px
+          height: 840px
           border-radius: 6px
         .gateway
-          right: 0
+          right: 40%
           .coln
             border: 2px solid #7A4DC3
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
             .head
               height: 106px
-              box-shadow: 0 2px 0 0 rgba(122, 77, 195, 0.08)
+              background-color: #7A4DC3
         .edge
-          right: 30%
+          right: 20%
           .coln
             border: 2px solid #009688
             box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
             .head
               height: 106px
               background-color: #009688
+        .cloud
+          right: 0
+          .coln
+            border: 2px solid #2A7DEC
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+            .head
+              height: 106px
+              background-color: #2A7DEC
       table
         width: calc(100% + 40px)
-        margin: 160px -20px 16px
+        margin: 64px -20px 16px
+        border: none
+        top: 40px
         td, th
           margin: 0 2px
-          &:nth-child(3n-1)
+          padding: 2px
+          align-content: center
+          &:nth-child(3n)
             color: #009688
             img
               filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
-          &:nth-child(3n)
+          &:nth-child(2n)
             color: #7A4DC3
             img
               filter: invert(43%) sepia(48%) saturate(952%) hue-rotate(223deg) brightness(78%) contrast(96%)
-        border: none
-        margin-top: 64px
-        top: 40px
+          &:nth-child(4n)
+            color: #2A7DEC
+            img
+              filter: invert(32%) sepia(100%) saturate(700%) hue-rotate(207deg) brightness(100%) contrast(102%)
         thead
           color: #212529
           font-size: 12px
           line-height: 30px
           background-color: unset
           tr
-            height: 152px
+            height: 110px
             th
-              width: 30%
+              width: 20%
               text-align: center
               vertical-align: center
               font-weight: 600
               font-size: 11px
-              padding: 40px 0 40px
-              &:nth-child(2n)
+              padding: 46px 0 30px
+              &:nth-child(1n)
                 color: white
             td
               width: 40%
@@ -239,7 +253,7 @@
             th, a
               font-weight: 600
               font-size: 12px
-              padding-right: 12px
+              padding-right: 5px
               color: #212529
               img
                 vertical-align: top
@@ -249,8 +263,62 @@
               font-size: 11px
               img
                 width: 32px
+    #products
+      margin-bottom: 143px
+      #typical-usage-scenario
+        font-size: 42px
+      #background
+        .main2
+          height: 877px
+      .product-title
+        text-align: center
+        margin-bottom: 72px
+      .product-list
+        display: flex
+        gap: 40px
+        align-items: flex-start
+        @media screen and (max-width: 1450px)
+          flex-direction: column
+        div
+          width: 100%
+          display: flex
+          flex-direction: column
+          align-items: center
+          gap: 40px
+          padding: 40px
+          border-radius: 6px
+          text-align: center
+          background-color: white
+          box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
+          @media screen and (max-width: 1450px)
+            gap: 30px
+            padding: 30px
+          p
+            font-size: 16px
+          h4
+            font-size: 40px
+          &:first-of-type
+            p
+              margin-bottom: 45px
+          &.main
+            height: 820px
+            h4
+              font-size: 55px
+            p
+              font-size: 18px
+              margin: 0
+            a
+              padding-top: 20px
+              color: #009688
+              font-weight: 500
+    #minimal-requirements
+      main
+        #background
+          .main1
+            top: -200px
+            height: 890px
 
-    #local-deployment, #data-filtering, #local-alarms, #batch-update
+    #local-deployment, #data-filtering, #local-alarms, #batch-update, #minimal-requirements
       .block
         justify-content: space-between
         display: flex
@@ -285,6 +353,9 @@
         filter: brightness(100%) invert(100%)
 
     #batch-update .block
+      padding: 80px 0 120px
+
+    #minimal-requirements .block .feature-des
       padding: 80px 0 120px
 
     #bottom-features
@@ -455,20 +526,24 @@
         h3
           font-size: 42px
           line-height: 63px
+        #backg-matrix
+          .gateway, .edge, .cloud
+            padding: 0 20px
+            width: 20%
         table
           thead
-            font-size: 20px
+            font-size: 30px
             tr
               th
-                width: 30%
-                padding: 0 0 40px
+                width: 20%
+                padding: 0 0 10px
                 font-size: 20px
               td
                 width: 40%
           tbody
             tr
               th, a
-                padding-right: 48px
+                padding-right: 30px
                 font-size: 18px
               td
                 font-size: 20px
@@ -481,6 +556,31 @@
           width: calc(100% - 122px)
         img
           margin: 0 30px 0 0
+
+  @media screen and (max-width: 750px)
+    #matrix
+      h3
+        font-size: 38px
+        line-height: 42px
+        table
+          width: 100%
+          thead
+            font-size: 20px
+            tr
+              th
+                width: 20%
+                padding: 0 0 2px
+                font-size: 16px
+              td
+                width: 40%
+          tbody
+            tr
+              th, a
+                font-size: 16px
+              td
+                font-size: 18px
+                img
+                  width: unset
 
   @media screen and (min-width: 1025px)
     section, header
@@ -528,7 +628,6 @@
           padding: 0 7%
         .labeling
           padding: 0 13%
-
 
   @media screen and (min-width: 1500px)
     #edgeContent

@@ -119,4 +119,5 @@ delete-image-3:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/image-gallery.md %}

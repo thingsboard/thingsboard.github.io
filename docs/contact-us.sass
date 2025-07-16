@@ -1,306 +1,218 @@
 #docsContent
     #content
-        h1.contact-us-title
-            z-index: 1
-            text-align: center
+        .contact-form
+            z-index: 2
             position: relative
-            padding: 0
-            margin: 0 0 56px
-            font-size: 36px
-            line-height: 54px
-            &:before
-                content: none
-    .background
-        z-index: 0
-        position: absolute
-        top: 524px
-        left: 50%
-        img
-            position: absolute
-            top: -650px
-            left: 134px
-            box-shadow: none !important
-        div
-            position: absolute
-            -ms-transform: skewY(-6deg)
-            transform: skewY(-6deg)
-            width: 436px
-            height: 90px
-            &.main1
-                top: -900px
-                width: 2560px
-                height: 700px
-                left: -1280px
-                background-color: #F7F9FC
-                transition: opacity 0.5s
-                opacity: 1
-            &.small1
-                top: -345px
-                right: -989px
-                background-color: #305680
-                transition: top 0.5s, right 0.5s
-            &.small2
-                top: -177px
-                right: 566px
-                background-color: #2A7DEC
-                transition: top 0.5s, right 0.5s
-            &.small3
-                top: -406px
-                left: 808px
-                background-color: #2A7DEC
-                transition: top 0.5s, left 0.5s
-            &.small4
-                top: -96px
-                right: 750px
-                border: 2px solid #0D2743
-                transition: top 0.5s, right 0.5s
-        &.opened
-            div
-                &.main1
-                    opacity: 0
-                &.small1
-                    top: -370px
-                    right: -1128px
-                &.small2
-                    top: -152px
-                    right: 705px
-                &.small3
-                    top: -430px
-                    left: 944px
-                &.small4
-                    top: -71px
-                    right: 889px
-
-    .contact-form
-        z-index: 2
-        position: relative
-        background: #fff
-        color: #212529
-        box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
-        border-radius: 6px
-        margin-bottom: 20px
-        padding: 54px 56px
-        .form-section
-            width: 100%
-            display: inline-block
-            &.mb30
-                margin-bottom: 30px
-        .form-element
-            display: inline-block
-            position: relative
-            width: 100%
-            float: none
-            clear: both
-            &.half
-                width: 100%
-                float: left
-                margin-left: 0
-                clear: both
-            &.first
-                clear: both
-                margin-left: 0
-            input.form-control, select.form-control
-                height: 44px
-            input.form-control
-                padding: 0 16px
-                &:hover
-                    padding: 1px 15px
-                &:focus
-                    padding: 1px 15px
-                +autofill
-            select.form-control
+            background: #fff
+            color: #212529
+            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+            border-radius: 24px
+            padding: 46px
+            margin: 0 auto
+            max-width: 915px
+            h1.contact-us-title
                 position: relative
-                padding: 0 36px 0 12px
-                cursor: pointer
-                -webkit-appearance: none
-                -moz-appearance: none
-                appearance: none
-                &::-ms-expand
-                    display: none
-                &:hover
-                    padding: 1px 35px 1px 11px
-                &:focus
-                    padding: 1px 35px 1px 11px
-                option[value=""][disabled]
-                    display: none
-            label.select-label
-                &:after
-                    content: ""
-                    background-image: url(/images/pe/read-more-arrow.svg)
-                    background-size: contain
-                    display: block
-                    position: absolute
-                    top: 42px
-                    right: 18px
-                    width: 10px
-                    height: 10px
-                    transform: rotate(90deg)
-                    transition: transform .3s
-                    border: none
-                &:hover
-                    &:after
-                        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
-                //&:active
-                //    &:after
-                //        transform: rotate(-90deg)
-
-            textarea.form-control
-                padding: 8px 16px
-                &:hover
-                    padding: 7px 15px
-                &:focus
-                    padding: 7px 15px
-            .form-control
-                width: 100%
-                margin: 24px 0 0 0
-                line-height: 30px
-                font-size: 18px
-                vertical-align: middle
-                border: 1px solid #ebebeb
-                background-color: transparent
-                border-radius: 4px
-                color: #212529
-                box-shadow: none
-                +placeholder
-                    color: #212529
-                    opacity: 0.6
-                &:hover
-                    border: 2px solid #000
-                    cursor: pointer
-                &:focus
-                    cursor: initial
-                    border: 2px solid #2a7dec
-                    color: #212529
-                    +placeholder
-                        opacity: 0.2
-                &.select.input--empty
-                    color: rgba(33, 37, 41, 0.6)
-                    &:focus
-                        color: rgba(33, 37, 41, 0.2)
-                        option
-                            color: #212529
-            label
-                float: left
-                width: 100%
-                line-height: 100%
-                font-size: 14px
+                padding: 0
+                font-size: 56px
+                line-height: 72px
                 margin-bottom: 24px
-                p
-                    cursor: text
-                    position: absolute
-                    margin: 0 0 0 10px
-                    padding: 11px 0
-                    font-size: 18px
-                    transition: 150ms
-                    transform: scale(1) translate(-10px, -86px)
-                    pointer-events: none
-                    &.text-area-label
-                        position: absolute
-                        top: 68px
-            .form-control:focus + p, .form-control:not(.input--empty) + p
-                color: inherit
-        .submit-button-container
-            float: right
-
-        //label
-          display: block
-          position: relative
-          margin-bottom: 5px
-          margin-left: 2px
-          font-weight: bold
-          font-size: 16px
-        //.text-input, .text-area, .select
-          outline: none
-          font-size: 16px
-          margin-bottom: 0
-          background-color: #f8f8f8
-          border: 2px solid #e1e1e1
-          color: #666666
-          width: 100%
-          display: inline
-          min-width: 50px
-          padding: 6px
-          border-radius: 4px
-          box-shadow: none
-          transition: 0.3s
-          &:focus
-            background-color: $light-grey
-            color: $dark-grey
-            border-color: #2fd1ff
-            box-shadow: 0 0 8px rgba(0, 201, 255, .5)
-        //input.button
-          width: 150px
-        input.button
-            min-width: 150px
-
-    #contact-us-thanks
-        position: relative
-        height: 619px
-        padding: 30px
-        color: #212529
-        display: flex
-        align-items: center
-        justify-content: center
-        transition: margin-bottom 0.5s
-        margin: auto
-        margin-bottom: 130px
-        &.opened
-            margin-bottom: 0
-        .thanks-content
-            p
-                font-size: 18px
-                font-weight: normal
-                color: #75767C
-                &.thank-you
-                    font-size: 36px
-                    font-weight: 600
-                    color: #212529
-            a.homepage
-                margin-top: 48px
-                position: relative
-                display: inline-block
-                font-size: 18px
-                font-weight: 500
-                &:after
-                    content: ""
-                    background-image: url(/images/pe/read-more-arrow.svg)
-                    background-size: contain
-                    display: block
-                    position: absolute
-                    top: 6px
-                    right: -22px
-                    width: 12px
-                    height: 12px
-                    border: none
-                    filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
-
-@media screen and (max-width: 768px)
-    .contact-form
-        padding: 32px!important
-
-@media screen and (min-width: 1025px)
-    #docsContent
-        .contact-form
+                &:before
+                    content: none
+            .form-section
+                width: 100%
+                display: flex
+                flex-wrap: wrap
+                gap: 16px
+                &.mb30
+                    margin-bottom: 30px
             .form-element
-                float: left
-                &.half
-                    width: calc(50% - 12px)
-                    float: left
-                    margin-left: 24px
-                    clear: none
-                &.first
-                    clear: both
-                    margin-left: 0
+                display: inline-block
+                position: relative
+                width: 49%
+                margin-bottom: 8px
+                &:last-of-type, &:nth-last-of-type(2)
+                    width: 100%
+                input.form-control, select.form-control
+                    height: 44px
+                input.form-control
+                    padding: 0 16px
+                    &:focus
+                        padding: 1px 15px
+                    +autofill
+                select.form-control
+                    position: relative
+                    padding: 0 36px 0 12px
+                    cursor: pointer
+                    -webkit-appearance: none
+                    -moz-appearance: none
+                    appearance: none
+                    &::-ms-expand
+                        display: none
+                    &:focus
+                        padding: 1px 35px 1px 11px
+                    option[value=""][disabled]
+                        display: none
+                label.select-label
+                    &:after
+                        content: ""
+                        background-image: url(/images/pe/read-more-arrow.svg)
+                        background-size: contain
+                        display: block
+                        position: absolute
+                        top: 42px
+                        right: 18px
+                        width: 10px
+                        height: 10px
+                        transform: rotate(90deg)
+                        transition: transform .3s
+                        border: none
+                    &:hover
+                        &:after
+                            filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
 
-@media screen and (min-width: 1700px)
-    #docsContent
-        .contact-form, #contact-us-thanks
-            width: 75%
-        .contact-form
-            left: 12.5%
+                textarea.form-control
+                    resize: vertical
+                    padding: 8px 16px
+                    margin-bottom: 16px
+                    &:focus
+                        padding: 7px 15px
+                    &:focus
+                        cursor: initial
+                        border: 2px solid #2a7dec
+                        color: #212529
+                        +placeholder
+                            opacity: 0.2
+                .form-control
+                    width: 100%
+                    margin: 24px 0 0 0
+                    line-height: 30px
+                    font-size: 16px
+                    vertical-align: middle
+                    border: 1px solid #E0E1E2
+                    background-color: transparent
+                    border-radius: 6px
+                    color: #212529
+                    box-shadow: none
+                    +placeholder
+                        color: #9E9E9E
+                    &.invalid-input
+                        border: 1px solid #D9534F
+                    &.invalid-input:focus
+                        border-color: #D9534F
+                        box-shadow: 0 0 0 0.2rem rgba(217, 83, 79, 0.25)
+                    &:focus
+                        cursor: initial
+                        border: 2px solid #2a7dec
+                        color: #212529
+                        +placeholder
+                            opacity: 0.2
+                    &.select.input--empty
+                        color: rgba(33, 37, 41, 0.6)
+                        &:focus
+                            color: rgba(33, 37, 41, 0.2)
+                            option
+                                color: #212529
+                label
+                    width: 100%
+                    line-height: 100%
+                    font-size: 14px
+                    margin-bottom: 0
+                    p
+                        cursor: text
+                        position: absolute
+                        margin: 0 0 0 10px
+                        padding: 11px 0
+                        font-size: 14px
+                        font-weight: 500
+                        color: #3D3D3D
+                        transition: 150ms
+                        transform: scale(1) translate(-10px, -86px)
+                        pointer-events: none
+                        &.text-area-label
+                            position: absolute
+                            top: 68px
+                .form-control:focus + p, .form-control:not(.input--empty) + p
+                    color: inherit
+                .error-message-hint
+                    color: #D9534F
+                    font-size: 14px
+                    font-weight: 400
+                    margin-bottom: 0
+                    width: 100%
+                    display: block
+                    box-sizing: border-box
+                &:last-child
+                    label
+                        .error-message-hint
+                            transform: translateY(-15px)
+            .submit-button-container
+                input
+                    width: 100%
+
+            input.button
+                min-width: 150px
+
+        #contact-us-thanks
+            position: relative
+            height: 619px
+            padding: 30px
+            color: #212529
+            display: flex
+            align-items: center
+            justify-content: center
+            transition: margin-bottom 0.5s
+            margin: auto
+            margin-bottom: 130px
+            &.opened
+                margin-bottom: 0
+            .thanks-content
+                p
+                    font-size: 18px
+                    font-weight: normal
+                    color: #75767C
+                    &.thank-you
+                        font-size: 36px
+                        font-weight: 600
+                        color: #212529
+                a.homepage
+                    margin-top: 48px
+                    position: relative
+                    display: inline-block
+                    font-size: 18px
+                    font-weight: 500
+                    &:after
+                        content: ""
+                        background-image: url(/images/pe/read-more-arrow.svg)
+                        background-size: contain
+                        display: block
+                        position: absolute
+                        top: 6px
+                        right: -22px
+                        width: 12px
+                        height: 12px
+                        border: none
+                        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+
 @media screen and (min-width: 1921px)
     #docsContent
         .contact-form, #contact-us-thanks
             width: 1050px
-        .contact-form
-            left: calc(50% - 525px)
+
+
+@media screen and (max-width: 972px)
+    #docsContent
+        #content
+            .contact-form, #contact-us-thanks
+                fieldset
+                    .form-section
+                        .form-element
+                            width: 100%
+
+
+@media screen and (max-width: 599px)
+    #docsContent
+        #content
+            .contact-form, #contact-us-thanks
+                padding: 16px
+                h1.contact-us-title
+                    font-size: 36px

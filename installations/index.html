@@ -35,6 +35,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<a id="TryItNow_TA" class="gtm_button" href="javascript:void(0);"
 					   onClick="activatePricingSection('thingsboard-trendz')">Trendz</a>
 				</li>
+				<li id="menu-item-mqtt-broker" class="menu-item tb-logo">
+					<a id="TryItNow_TBMQ" class="gtm_button" href="javascript:void(0);"
+					   onClick="activatePricingSection('mqtt-broker')">TBMQ</a>
+				</li>
 			</ul>
 		</nav>
 	</div>
@@ -48,16 +52,19 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			<div class="install-content-description col-lg-7">
 				<h1>ThingsBoard Professional Edition Cloud</h1>
 				<div class="install-content-details">
-					<p>The ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
+					<p class="margin">The ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
 						ThingsBoard Cloud is for everyone who would like to use ThingsBoard Professional Edition but don’t want to host their own instance of the platform.
+					</p>
+					<p class="margin">The ThingsBoard cluster stores your data within the European and the United States, complying with their respective regulations.</p>
+					<p>Select your region and start using ThingsBoard Professional Edition Cloud <b>for free</b>.
 					</p>
 				</div>
 				<div class="row container button-container">
-					<a id="TryItNow_Cloud_StartFree" class="btn-blue gtm_button" href="https://thingsboard.cloud/signup">
-						Start Free
+					<a id="TryItNow_Cloud_NorthAmerica" class="btn-blue gtm_button" href="https://thingsboard.cloud/signup">
+						North America
 					</a>
-					<a id="TryItNow_Cloud_Pricing" class="btn-blue gtm_button" href="/pricing/">
-						Pricing
+					<a id="TryItNow_Cloud_Europe" class="btn-blue gtm_button" href="https://eu.thingsboard.cloud/signup">
+						Europe
 					</a>
 				</div>
 			</div>
@@ -202,7 +209,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 						</div>
 						<div class="deployment-card-block">
 							<a href="/docs/user-guide/install/rpi/" class="deployment-logo">
-								<img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi 3" alt="Raspberry Pi 3">
+								<img width="" src="/images/install/platform/rpi3.svg" title="Raspberry Pi" alt="Raspberry Pi">
 							</a>
 						</div>
 						<div class="deployment-card-block">
@@ -265,10 +272,10 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<a id="TryItNow_PE_Install" class="btn-blue gtm_button" href="/docs/user-guide/install/pe/installation-options/">
 						Install
 					</a>
-					<a id="TryItNow_PE_StartFree" class="btn-blue gtm_button" href="https://thingsboard.cloud/signup">
+					<a id="TryItNow_PE_StartFree" class="btn-blue gtm_button" href="/installations/choose-region/">
 						Start Free
 					</a>
-					<a id="TryItNow_PE_Pricing" class="btn-blue gtm_button" href="/pricing/">
+					<a id="TryItNow_PE_Pricing" class="btn-blue gtm_button" href="/pricing/?product=thingsboard-pe">
 						Pricing
 					</a>
 				</div>
@@ -411,7 +418,9 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			<div class="install-content-description col-lg-7">
 				<h1>ThingsBoard Edge</h1>
 				<div class="install-content-details">
-					<p>It allows bringing data analysis and management to the edge, where the data is created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs. <a href="/products/thingsboard-edge/">Read More</a>.</p>
+					<p class="margin">The ThingsBoard Edge empowers businesses with real-time data analysis and management right at the source, enhancing agility and efficiency in data-driven decisions.</p>
+					<p class="margin">Seamlessly connected to your preferred ThingsBoard platform—whether it’s ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE, or ThingsBoard CE—it ensures continuous synchronization that adapts to your unique business needs, delivering the power of edge intelligence.</p>
+					<p>Maximize efficiency and gain immediate, actionable insights with ThingsBoard Edge! <a href="/products/thingsboard-edge/">Read More</a>.</p>
 				</div>
 				<div class="row container button-container">
 					<a id="TryItNow_Edge_Install_Edge_CE" class="btn-blue gtm_button" href="/docs/user-guide/install/edge/installation-options/">
@@ -498,6 +507,16 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 						<div class="deployment-card-block">
 							<a href="/docs/user-guide/install/edge/docker/" class="deployment-logo">
 								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/user-guide/install/edge/building-from-source/" class="deployment-logo">
+								<img width="" src="/images/install/platform/sources.svg" title="Building from source" alt="Building from source">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/edge/config/edge-cluster-setup/" class="deployment-logo">
+								<img width="" src="/images/pe/edge/integrations/docker-cluster.svg" title="Edge Cluster Setup" alt="Edge Cluster Setup">
 							</a>
 						</div>
 					</div>
@@ -601,6 +620,132 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 						<div class="deployment-card-block">
 							<a href="https://thingsboard.io/docs/trendz/install/docker/" class="deployment-logo">
 								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="mqtt-broker" class="install-content" style="display: none">
+	<div class="container">
+		<div class="install-content-header row">
+			<div class="install-content-description col-lg-7">
+				<h1>MQTT Broker</h1>
+				<div class="install-content-details">
+					<p>TBMQ represents an open-source MQTT message  broker. It has the capacity to handle more than 4M concurrent client connections, supporting a minimum of 3M messages per second throughput per single cluster node with low latency delivery. In the cluster mode, its capabilities are further enhanced, enabling it to support more than 100M concurrently connected clients. <a href="/docs/mqtt-broker">Read More</a>.</p>
+				</div>
+				<div class="row container button-container">
+					<a id="TryItNow_TBMQ_Install" class="btn-blue gtm_button" href="/docs/mqtt-broker/install/installation-options/">
+						Install
+					</a>
+					<a id="TryItNow_TBMQ_Pricing" class="btn-blue gtm_button" href="/pricing/?section=mqtt-broker/">
+						Pricing
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex justify-content-start">
+				<div class="image-content">
+					<img src="/images/mqtt-broker/product/tbmq-try-1.png" alt="ThingsBoard MQTT Broker Sessions Page" class="main">
+					<img src="/images/mqtt-broker/product/tbmq-try-2.png" alt="ThingsBoard MQTT Broker Home Page" class="bg">
+				</div>
+			</div>
+		</div>
+		<div class="feature">
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Scalability</a>
+						<p>
+							Scale horizontally to manage more than 100M MQTT connections on a single cluster
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/">Performance</a>
+						<p>
+							Process millions of messages per second with 1 TBMQ server and single-digit latency
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/mqtt-broker/architecture/">Fault tolerance</a>
+						<p>
+							Prevent single point of failure with masterless nodes in the cluster
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/mqtt-broker/getting-started/">MQTT version compatibility</a>
+						<p>
+							MQTT 3.x and 5.0 compatible for a seamless and secure connection experience
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/mqtt-broker/architecture/">Durability</a>
+						<p>
+							Guarantee the persistence and replication of your data to ensure it's never lost
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/mqtt-broker/install/installation-options/">Cloud-Native and K8s-Compliant</a>
+						<p>
+							Deploy in cloud or on-premise using K8s scripts with ease
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="deploy">
+			<h2>Deployment options</h2>
+			<div class="wrapper">
+				<div class="column">
+					<h3 class="premise">On premise</h3>
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/mqtt-broker/install/docker/" class="deployment-logo">
+								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/mqtt-broker/install/docker-windows/" class="deployment-logo">
+								<img src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/mqtt-broker/install/cluster/docker-compose-setup/" class="deployment-logo">
+								<img src="/images/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/mqtt-broker/install/cluster/minikube-cluster-setup/" class="deployment-logo">
+								<img src="/images/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube">
+							</a>
+						</div>
+					</div>
+				</div>
+				<dic class="divider"></dic>
+				<div class="column">
+					<h3 class="cloud">Cloud</h3>
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/mqtt-broker/install/cluster/aws-cluster-setup/" class="deployment-logo">
+								<img height="70px" width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="Cluster setup on EKS">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/" class="deployment-logo">
+								<img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Cluster setup on AKS">
 							</a>
 						</div>
 					</div>

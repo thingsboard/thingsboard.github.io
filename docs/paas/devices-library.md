@@ -7,4 +7,5 @@ notitle: "true"
 docsPrefix: "paas/"
 ---
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include docs/devices-library/index.md %}

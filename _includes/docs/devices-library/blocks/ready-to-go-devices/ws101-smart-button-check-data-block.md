@@ -12,7 +12,7 @@ You can download a simple dashboard for this device, it is configured to display
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/ws_101_smart_button.json" %}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-chenge-entity-alias-block.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/ws_101_smart_button.json" %}
+{% include /docs/devices-library/blocks/basic/thingsboard-change-entity-alias-block.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/ws_101_smart_button.json" %}
 
 Example of the dashboard with data:  
 

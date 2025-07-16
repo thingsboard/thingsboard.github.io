@@ -9,14 +9,39 @@
     justify-content: center
     background-color: rgba(255, 255, 255, 0.95)
     backdrop-filter: blur(7px)
+    transition: top 0.3s
+    .nav-buttons
+      position: absolute
+      z-index: -1
+      top: 0
+      left: 0
+      right: 0
+      margin: auto
+      height: 100%
+      button
+        display: inline-block
+        width: 48px
+        height: 48px
+        position: absolute
+        margin: auto
+        padding: 0
+        top: 0
+        bottom: 0
+        filter: invert(38%) sepia(34%) saturate(5858%) hue-rotate(203deg) brightness(101%) contrast(85%)
+        &:hover
+          filter: brightness(0) saturate(100%) invert(78%) sepia(21%) saturate(5961%) hue-rotate(186deg) brightness(102%) contrast(103%)
+        &.next
+          right: 0
+          transform: rotate(180deg)
+        &.disabled
+          filter: unset
     &.nav-fixed
       border-bottom: solid 1px #ebebeb
     .crop-nav
-      overflow-x: auto
+      overflow-x: hidden
       display: flex
-      margin: 0 30px
+      margin: 0 48px
       cursor: grab
-      +tiny-scrollbar(4px)
       ul
         flex-wrap: unset
         display: flex
@@ -45,6 +70,8 @@
               img
                 filter: grayscale(1) brightness(0.75) contrast(2)
             &.active
+              border-bottom: 3px solid #2A7DEC
+              padding-bottom: 15px
               color: #2A7DEC
               font-weight: 500
               img
@@ -56,14 +83,29 @@
   #docsContent
     .usecase-nav
       .crop-nav
-        max-width: 1200px
+        max-width: 950px
         margin: auto
         ul
           flex-wrap: unset
+    .nav-buttons
+      max-width: 1200px
 
 @media screen and (min-width: 1500px)
   #docsContent
     .usecase-nav
       .crop-nav
+        width: calc(100% - 620px)
+        max-width: 1280px
+      .nav-buttons
         width: calc(100% - 520px)
         max-width: 1400px
+
+@media screen and (max-width: 599px)
+  #docsContent
+    .usecase-nav
+      .crop-nav
+        cursor: grab
+        overflow-x: auto
+        margin: 0 30px
+    .nav-buttons
+      display: none

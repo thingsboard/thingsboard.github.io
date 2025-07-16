@@ -4,7 +4,7 @@
 ## Use case
 
 Let's assume you need to implement the "counter" logic using ThingsBoard Rule Engine.
-Basically, message processing is executed asynchronously inside the Rule Nodes. Due to this fact, in most cases, the logic "get present counter value -> add new counter value -> save counter value" 
+Basically, message processing is executed asynchronously inside the rule nodes. Due to this fact, in most cases, the logic "get present counter value -> add new counter value -> save counter value" 
 leads to the incorrect final result (unlike your expectations) due to the race condition issue. 
 It is a well-known problem for all who dealt with multi-threading programming.
 You can refer to this [article](https://opensourceforgeeks.blogspot.com/2014/01/race-condition-synchronization-atomic.html) which nicely describes the problem and the existed solutions.
@@ -23,40 +23,40 @@ We assume you have completed the following guides and reviewed the articles list
   
 In addition, you need to have at least one device provisioned in your environment.
 
-## Step 1: Creating the Rule Chain
+## Step 1: Creating the rule chain
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
+![Rule chain image](/images/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
 
 We will add two generator nodes that will generate seven messages each. First generator will produce a message with the counter value of 101.
-Second - with the value of 10. So the result should be 777.
+The second one - with the value of 10. So the result should be 777.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/generator1.png)
-![image](/images/user-guide/rule-engine-2-5/tutorials/generator2.png)
+![First generator image](/images/user-guide/rule-engine-2-5/tutorials/generator1.png)
+![Second generator image](/images/user-guide/rule-engine-2-5/tutorials/generator2.png)
 
-Both messages will be put into the queue with the name **"SequentialByOriginator"**. It uses the message submit strategy called **"SEQUENTIAL_WITHIN_ORIGINATOR"** 
-{% unless docsPrefix == "paas/" %}(please, refer to [**configuration guide**](/docs/user-guide/install/{{docsPrefix}}config/) for more details){% endunless %} which means that
-the subsequent message will start being processed when the preceding message is acknowledged (is processed and deleted from the queue) based on the originator.
+Both messages will be put into the **SequentialByOriginator** queue. It uses the [message submit strategy](/docs/user-guide/rule-engine-2-5/queues/#submit-settings/) 
+**SEQUENTIAL_BY_ORIGINATOR** which means that the subsequent message will start being processed when the preceding message is acknowledged (is processed and deleted from the queue) based on the originator.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/checkpoint.png)
+We will get the present "counter" value using **originator attributes** node. **Tell failure if any of the attributes are missing** is currently disabled because the device does not have the required attribute and will cause an error.
+This attribute will be set to the device after the first message reaches the **save attributes** node.
+![Originator attributes node image](/images/user-guide/rule-engine-2-5/tutorials/sync_originator_attributes.png)
 
-We will get the present "counter" value using **"Originator Attributes"** node.
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_originator_attributes.png)
+The calculations will be done using **script** node. 
 
-The calculations will be done using **"Counter Script"** node. 
+![Script node image](/images/user-guide/rule-engine-2-5/tutorials/sync_counter_script.png)
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_counter_script.png)
+The last step will be to save the new counter value using **save attributes** node.
 
-The last step will be to save the new counter value using **"Save Attributes"** node.
+![Save attributes node image](/images/user-guide/rule-engine-2-5/tutorials/sync_save_counter_attribute.png)
 
-## Step 2: Validation the Rule Chain logic
+## Step 2: Validation the rule chain logic
 
 Let's check that our logic is correct by saving the Rule Chain. The generators will automatically produce 14 messages:
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_events.png)
+![Events image](/images/user-guide/rule-engine-2-5/tutorials/sync_events.png)
 
 The final counter value that is persisted for a device is:
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_result.png)
+![Device attributes image](/images/user-guide/rule-engine-2-5/tutorials/sync_result.png)
 
 That means that our logic works correctly.
 

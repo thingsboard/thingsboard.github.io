@@ -10,26 +10,7 @@ See links/instructions below on how to configure each of the suggested options.
 
 #### HTTP Load Balancer
 
-Execute the following command to deploy plain http load balancer:
-
-```bash
-kubectl apply -f receipts/http-load-balancer.yml
-```
-{: .copy-code}
-
-The process of load balancer provisioning may take some time. You may periodically check the status of the load balancer using the following command:
-
-```bash
-kubectl get ingress
-```
-{: .copy-code}
-
-Once provisioned, you should see similar output:
-
-```text
-NAME                   CLASS    HOSTS   ADDRESS         PORTS   AGE
-tb-http-loadbalancer   <none>   *       34.111.24.134   80      7m25s
-```
+{% include templates/install/cloud-cluster-common/http-lb.md %}
 
 Now, you may use the address (the one you see instead of 34.111.24.134 in the command output) to access HTTP web UI (port 80) and connect your devices via [HTTP API](/docs/{{docsPrefix}}reference/http-api/)
 Use the following default credentials:

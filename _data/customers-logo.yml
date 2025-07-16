@@ -1,0 +1,28 @@
+0:
+  src: "https://img.thingsboard.io/customers/clear/prosegur.svg"
+  aria-label: "Prosegur logo"
+  href: "https://www.prosegur.com/"
+1:
+  src: "https://img.thingsboard.io/customers/clear/engie.svg"
+  aria-label: "Engie logo"
+  href: "https://www.engie.sk/en/kontakt"
+2:
+  src: "https://img.thingsboard.io/customers/clear/t-mobile.svg"
+  aria-label: "T-mobile logo"
+  href: "/industries/telecom/#tmobile"
+3:
+  src: "https://img.thingsboard.io/customers/clear/intel.svg"
+  aria-label: "Intel logo"
+  href: "https://www.intel.com/"
+4:
+  src: "https://img.thingsboard.io/customers/clear/schwarz-gruppe.svg"
+  aria-label: "Schwarz logo"
+  href: "https://gruppe.schwarz/en"
+5:
+  src: "https://img.thingsboard.io/customers/clear/bosch.svg"
+  aria-label: "Bosch logo"
+  href: "https://www.bosch.com/"
+6:
+  src: "https://img.thingsboard.io/customers/clear/tektelic.svg"
+  aria-label: "Tektelic logo"
+  href: "/industries/telecom/#tektelic"

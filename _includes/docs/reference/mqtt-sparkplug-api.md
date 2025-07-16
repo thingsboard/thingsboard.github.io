@@ -1,26 +1,29 @@
-
 * TOC
 {:toc}
 
-## Prerequisites
-
-We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide
-to get familiar with ThingsBoard. We also recommend to review the [Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) documentation first.
+> Before proceeding, we recommend reviewing the general [Getting Started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} to become familiar with ThingsBoard basics. Additionally, it is advisable to explore the [Device profiles](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} documentation.
 
 ## Sparkplug basics
 
-[Sparkplug](https://sparkplug.eclipse.org/) is an open source software specification that provides MQTT clients the framework 
-to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
+[Sparkplug](https://sparkplug.eclipse.org/) is an open-source software specification that provides MQTT clients the framework
+to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure, and is implemented up to Sparkplug version 3.0.
+
+### Sparkplug B Edge Node
 
 ThingsBoard acts as an MQTT Server which support the SparkPlug payload and topic structure and allows connections from the 
 MQTT Edge of Network (EoN) Node.
 
-The EoN Node is any V3.1.1 compliant MQTT Client application that manages an MQTT Session and provides the physical and/or 
-logical gateway functions. The EoN node is responsible for any local protocol interface to existing legacy devices 
-(PLCs, RTUs, Flow Computers, Sensors, etc.) and/or any local discrete I/O, and/or any logical internal process variables(PVs).
+The EoN Node is any v3.1.1 or v5.0 compliant MQTT Client application that manages an MQTT Session and provides the
+physical and/or logical gateway functions required to participate in the Topic Namespace and Payload
+definitions described in this document. The Edge Node is responsible for any local protocol interface to
+existing devices (PLCs, RTUs, Flow Computers, Sensors, etc.) and/or any local discrete I/O, and/or any
+logical internal process variables (PVs).
 
 The protocol [specification](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf) 
 defines both MQTT topic and message structure for the EoN Nodes to communicate with the MQTT Server.
+
+### Sparkplug B Device
+
 Single EoN Node may represent multiple physical devices and sensors and upload device metrics for each of those devices.
 ThingsBoard decodes the device metrics from the Sparkplug payload and stores it as a corresponding device 
 [attributes](/docs/{{docsPrefix}}user-guide/attributes/) or [time series](/docs/{{docsPrefix}}user-guide/telemetry/) data. 
@@ -34,6 +37,101 @@ You may also issue an update to the Sparkplug device using
 ThingsBoard supports **Sparkplug™ B** payloads only.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+### Sparkplug B topic and type messages
+
+Sparkplug B payloads in conjunction with the Sparkplug topic namespace result in hierarchical data
+structures that can be represented in folder structures with metrics which are often called tags.
+
+```shell
+spBv1.0/Sparkplug Group 1/NBIRTH /Sparkplug Node 1/Sparkplug Device 1
+````
+
+#### Sparkplug B Message Type in The Thingsboard
+
+| Type      | Description                                            |
+|:----------|:-------------------------------------------------------|
+| NBIRTH    | Birth certificate for MQTT Edge of Network (EoN) Nodes |
+| NDEATH    | Death certificate for MQTT Edge of Network (EoN) Nodes |
+| DBIRTH    | Birth certificate for MQTT Devices                     |
+| DDEATH    | Death certificate for MQTT Devices                     |
+| NDATA     | Edge of Network (EoN) Node data message                |
+| DDATA     | Device data message                                    |
+| NCMD      | Edge of Network (EoN) Node command message             |
+| DCMD      | Device command message                                 |
+| STATE     | Device online/offline status (activity)                |
+| DRECORD   | Device record message                                  |
+| NRECORD   | Edge of Network (EoN) Node record message              |
+
+
+The format of the Group ID, the edge_node_id, device_id MUST be a valid UTF-8 string with the exception of the reserved characters of + (plus), / (forward slash), and # (number sign).
+BIRTH MQTT QoS MUST be 0. -dcmd-subscribe MUST subscribe on this topic with a QoS of 1, The MQTT Will Message’s MQTT QoS MUST be 1 (at least once)
+ACLs can be defined for Sparkplug clients to restrict each Edge Node to a specific set of topics it can publish and subscribe on. (Edge Nodes publishing NBIRTH, device publishing DBIRTH).
+
+- Example topic with Message Type
+
+```shell
+    $sparkplug/certificates:  spBv1.0/group_id/NBIRTH/edge_node_id
+    Subscribe:  spBv1.0/group_id/NBIRTH/edge_node_id/#
+    $sparkplug/certificates: spBv1.0/group_id/DBIRTH/edge_node_id/device_id
+    Subscribe: spBv1.0/group_id/DBIRTH/edge_node_id/device_id/#
+    $sparkplug/state: spBv1.0/STATE/sparkplug_host_id 
+
+````
+
+- validate Topic Data Subscribe
+
+```shell
+    Subscribe: spBv1.0/G1/DDATA/E1
+    Subscribe: spBv1.0/G1/DDATA/E1/#
+    Subscribe: spBv1.0/G1/DDATA/E1/+
+    Subscribe: spBv1.0/G1/DDATA/E1/D1
+    Subscribe: spBv1.0/G1/DDATA/E1/D1/#
+    Subscribe: spBv1.0/G1/DDATA/E1/D1/+
+````
+
+### Persistent vs Non-Persistent Connections for Edge Nodes
+#### Persistent Connections
+
+- Remain connected at all times
+- Never send MQTT DISCONNECT during normal operation
+- Allow Host Applications to track real-time status via BIRTH/DEATH messages within the Keep Alive period
+
+#### Non-Persistent Connections (e.g., GPS trackers or periodic sensor updates)
+
+- Connect temporarily and send data periodically
+- Should send MQTT DISCONNECT before going offline to disconnect gracefully
+- Do not send DEATH messages — Host Applications only see the Last Known Good data with a timestamp, not the real-time state
+
+#### Recommendation for Non-Persistent Devices:
+
+- Upon reconnecting, send a DEATH Certificate before disconnecting again
+- This helps the Host Application maintain accurate state tracking
+
+#### MQTT Protocol Requirements:
+
+MQTT 3.1.1 → Clean Session = true
+MQTT 5.0 → Clean Start = true and Session Expiry Interval = 0
+
+#### Alias Usage in Sparkplug B Payloads
+
+- **Alias** is an optional unsigned 64-bit integer used to identify a metric, helping reduce payload size.
+- If **no alias** is used, the **metric Name MUST be included** in every message.
+- **Aliases are optional**, but when used, the following rules apply:
+
+##### Rules for Using Aliases
+
+- **[tck-id-payloads-alias-uniqueness]**  
+  If an alias is provided in an **NBIRTH** or **DBIRTH**, it **MUST be unique** across all metrics of the Edge Node.  
+  ▪ *No two metrics of the same node can share the same alias.*
+
+- Once defined in NBIRTH/DBIRTH, **subsequent messages** (NDATA, DDATA, etc.) can use **only the alias** instead of the full metric name.
+
+- **[tck-id-payloads-alias-birth-requirement]**  
+  **NBIRTH and DBIRTH** messages **MUST include both** the metric name **and** its alias.
+
+- **[tck-id-payloads-alias-data-cmd-requirement]**  
+  **NDATA, DDATA, NCMD, and DCMD** messages **MUST include only the alias**, and the metric name **MUST be omitted**.
 
 ## Getting started
 
@@ -68,33 +166,13 @@ First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/de
 We have prepared sparkplug node [emulator](https://github.com/thingsboard/sparkplug-emulator) for the testing purposes.
 Let's launch it and connect to our platform instance. We will use access token credentials from the previous step:
 
-{% if docsPrefix == null %}
 ```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://demo.thingsboard.io:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
+docker run -e SPARKPLUG_SERVER_URL='tcp://{{apiHostName}}:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
 ```
 {: .copy-code}
 
 Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>demo.thingsboard.io</code> with your server hostname.
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://YOUR_SERVER_HOSTNAME:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
-```
-{: .copy-code}
-
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>YOUR_SERVER_HOSTNAME</code> with your server hostname.
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```bash
-docker run -e SPARKPLUG_SERVER_URL='tcp://thingsboard.cloud:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
-```
-{: .copy-code}
-
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
-You should also replace <code>thingsboard.cloud</code> with your server hostname.
-{% endif %}
+You should also replace <code>{{apiHostName}}</code> with your server hostname.
 
 {% capture difference %}
 **Please note**
@@ -106,10 +184,7 @@ You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> insi
 {% if docsPrefix == null %}
 ![image](/images/reference/sparkplug/sparkplug-emulator-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
-![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
 {% endif %}
 
@@ -187,6 +262,36 @@ When the new value for the "*Device Control/Scan Rate*" attribute is sent to the
 The attribute values for "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*" have been changed and sent to the "*Sparkplug Device 1*" device.
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-5" %}
+
+- the ability to send **CMD**, **DATA**, **DCM**, **DATA** commands both via the shared attributes and rom the RPC terminal(Json):
+
+```json
+{"NCMD":{"MyFloat":123.345}}
+ ```
+{: .copy-code}
+
+```json
+{"NDATA":{"MyFloat":123.345}}
+ ```
+{: .copy-code}
+
+
+```json
+{"DCMD":{"MyFloat":123.345}}
+ ```
+{: .copy-code}
+
+```json
+{"DDATA":{"MyFloat":123.345}}
+ ```
+{: .copy-code}
+
+- if send from the shared attributes (ts/kv):
+
+```shell
+{"MyFloat":123.345}      // by default if from Edge Node "NCMD"  will be added
+{"MyFloat":123.345}      // by default if from Device "DCMD"  will be added
+```
 
 #### Update Metrics  using the ThingsBoard RPC command from server to MQTT EON/Device
 

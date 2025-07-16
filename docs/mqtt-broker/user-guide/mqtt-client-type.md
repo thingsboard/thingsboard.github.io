@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mqtt-broker
-title: MQTT Client Type
+title: TBMQ Client Type
 description: TBMQ MQTT Client types overview
 
 mqtt-client-type:

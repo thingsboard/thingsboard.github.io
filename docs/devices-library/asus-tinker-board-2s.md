@@ -13,4 +13,5 @@ deviceImageFileName: asus-tinker-board-2s.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/asus-tinker-board-2s.md %}

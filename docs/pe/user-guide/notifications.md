@@ -262,4 +262,5 @@ notification-center-add-rule-exceeded-rate-limits:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/notifications.md %}

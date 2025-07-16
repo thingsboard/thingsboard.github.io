@@ -28,4 +28,5 @@ device-claiming-widget-carousel:
         title: 'Finally, you can relate the claimed device to the current state entity of the dashboard.<br> This is useful if you have multiple assets and would like to relate your device to one of them. '
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/claiming-devices.md %}

@@ -25,8 +25,8 @@
 		<tr>
 			<td>server.forward_headers_strategy</td>
 			<td>HTTP_FORWARD_HEADERS_STRATEGY</td>
-			<td>NONE</td>
-			<td> Server forward headers strategy</td>
+			<td>framework</td>
+			<td> Server forward headers strategy. Required for SWAGGER UI when reverse proxy is used</td>
 		</tr>
 		<tr>
 			<td>server.ssl.enabled</td>
@@ -87,6 +87,12 @@
 			<td>SSL_KEY_PASSWORD</td>
 			<td>thingsboard</td>
 			<td> Password used to access the key</td>
+		</tr>
+		<tr>
+			<td>server.http.max_payload_size</td>
+			<td>HTTP_MAX_PAYLOAD_SIZE_LIMIT_CONFIGURATION</td>
+			<td>/api/image*/**=52428800;/api/resource/**=52428800;/api/**=16777216</td>
+			<td> Semi-colon-separated list of urlPattern=maxPayloadSize pairs that define max http request size for specified url pattern. After first match all other will be skipped</td>
 		</tr>
 		<tr>
 			<td>server.http2.enabled</td>
@@ -161,6 +167,24 @@
 			<td> Maximum time between WS session opening and sending auth command</td>
 		</tr>
 		<tr>
+			<td>server.ws.rate_limits.subscriptions_per_tenant</td>
+			<td>TB_SERVER_WS_SUBSCRIPTIONS_PER_TENANT_RATE_LIMIT</td>
+			<td></td>
+			<td> Per-tenant rate limit for WS subscriptions</td>
+		</tr>
+		<tr>
+			<td>server.ws.rate_limits.subscriptions_per_user</td>
+			<td>TB_SERVER_WS_SUBSCRIPTIONS_PER_USER_RATE_LIMIT</td>
+			<td></td>
+			<td> Per-user rate limit for WS subscriptions</td>
+		</tr>
+		<tr>
+			<td>server.ws.alarms_per_alarm_status_subscription_cache_size</td>
+			<td>TB_ALARMS_PER_ALARM_STATUS_SUBSCRIPTION_CACHE_SIZE</td>
+			<td>10</td>
+			<td> Maximum number of active originator alarm ids being saved in cache for single alarm status subscription. For example, no more than 10 alarm ids on the alarm widget</td>
+		</tr>
+		<tr>
 			<td>server.rest.server_side_rpc.min_timeout</td>
 			<td>MIN_SERVER_SIDE_RPC_TIMEOUT</td>
 			<td>5000</td>
@@ -197,43 +221,43 @@
 			<td>cloud.routingKey</td>
 			<td>CLOUD_ROUTING_KEY</td>
 			<td></td>
-			<td></td>
+			<td> Routing key for edge instance, typically a UUID</td>
 		</tr>
 		<tr>
 			<td>cloud.secret</td>
 			<td>CLOUD_ROUTING_SECRET</td>
 			<td></td>
-			<td></td>
+			<td> Secret key for secure communication with the cloud</td>
 		</tr>
 		<tr>
 			<td>cloud.reconnect_timeout</td>
 			<td>CLOUD_RECONNECT_TIMEOUT</td>
 			<td>3000</td>
-			<td> in milliseconds</td>
+			<td> Reconnection timeout in milliseconds if cloud connectivity is lost</td>
 		</tr>
 		<tr>
 			<td>cloud.uplink_pack_timeout_sec</td>
 			<td>CLOUD_UPLINK_PACK_TIMEOUT_SEC</td>
 			<td>60</td>
-			<td> in seconds</td>
+			<td> Timeout in seconds for packaging uplink data to the cloud</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.host</td>
 			<td>CLOUD_RPC_HOST</td>
 			<td>localhost</td>
-			<td></td>
+			<td> Hostname or IP of the ThingsBoard platform, e.g. thingsboard.cloud, demo.thingsboard.io, X.X.X.X or localhost</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.port</td>
 			<td>CLOUD_RPC_PORT</td>
 			<td>7070</td>
-			<td></td>
+			<td> Port for RPC communication with the ThingsBoard server</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.timeout</td>
 			<td>CLOUD_RPC_TIMEOUT</td>
 			<td>5</td>
-			<td> Timeout in seconds for channel termination</td>
+			<td> Timeout in seconds for terminating an RPC channel</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.keep_alive_time_sec</td>
@@ -256,37 +280,67 @@
 			<td>cloud.rpc.ssl.enabled</td>
 			<td>CLOUD_RPC_SSL_ENABLED</td>
 			<td>false</td>
-			<td></td>
+			<td> Enables TLS for secure communication</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.ssl.cert</td>
 			<td>CLOUD_RPC_SSL_CERT</td>
 			<td></td>
-			<td></td>
+			<td> Path to the TLS certificate for secure communication</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.storage.max_read_records_count</td>
 			<td>CLOUD_RPC_STORAGE_MAX_READ_RECORDS_COUNT</td>
 			<td>50</td>
-			<td></td>
+			<td> Maximum number of cloud event records to read from the local DB for sending</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.storage.no_read_records_sleep</td>
 			<td>CLOUD_RPC_NO_READ_RECORDS_SLEEP</td>
 			<td>1000</td>
-			<td></td>
+			<td> Interval in milliseconds to check for new cloud events in the local DB</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.storage.sleep_between_batches</td>
 			<td>CLOUD_RPC_SLEEP_BETWEEN_BATCHES</td>
 			<td>1000</td>
-			<td></td>
+			<td> Interval in milliseconds to retry sending a failed batch of cloud events</td>
 		</tr>
 		<tr>
 			<td>cloud.rpc.max_inbound_message_size</td>
 			<td>CLOUD_RPC_MAX_INBOUND_MESSAGE_SIZE</td>
 			<td>4194304</td>
+			<td> Maximum size in bytes of inbound messages from the cloud</td>
+		</tr>
+		<tr>
+			<td>cloud.rpc.proxy.enabled</td>
+			<td>CLOUD_RPC_PROXY_ENABLED</td>
+			<td>false</td>
+			<td> Enable or disable the use of a proxy server</td>
+		</tr>
+		<tr>
+			<td>cloud.rpc.proxy.host</td>
+			<td>CLOUD_RPC_PROXY_HOST</td>
 			<td></td>
+			<td> Hostname or IP of the proxy server</td>
+		</tr>
+		<tr>
+			<td>cloud.rpc.proxy.port</td>
+			<td>CLOUD_RPC_PROXY_PORT</td>
+			<td>0</td>
+			<td> Port number of the proxy server</td>
+		</tr>
+		<tr>
+			<td>cloud.rpc.proxy.username</td>
+			<td>CLOUD_RPC_PROXY_USERNAME</td>
+			<td></td>
+			<td> Username for proxy server authentication</td>
+		</tr>
+		<tr>
+			<td>cloud.rpc.proxy.password</td>
+			<td>CLOUD_RPC_PROXY_PASSWORD</td>
+			<td></td>
+			<td> Password for proxy server authentication</td>
 		</tr>
 	</tbody>
 </table>
@@ -552,8 +606,14 @@
 		<tr>
 			<td>usage.stats.report.interval</td>
 			<td>USAGE_STATS_REPORT_INTERVAL</td>
-			<td>10</td>
+			<td>60</td>
 			<td> Statistics reporting interval, set to send summarized data every 10 seconds by default</td>
+		</tr>
+		<tr>
+			<td>usage.stats.report.pack_size</td>
+			<td>USAGE_STATS_REPORT_PACK_SIZE</td>
+			<td>1024</td>
+			<td> Amount of statistic messages in pack</td>
 		</tr>
 		<tr>
 			<td>usage.stats.check.cycle</td>
@@ -595,8 +655,14 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.7</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.0</td>
 			<td> Base URL for UI help assets</td>
+		</tr>
+		<tr>
+			<td>ui.solution_templates.docs_base_url</td>
+			<td>UI_SOLUTION_TEMPLATES_DOCS_BASE_URL</td>
+			<td>https://thingsboard.io/docs/pe</td>
+			<td> Base URL for solution templates docs</td>
 		</tr>
 	</tbody>
 </table>
@@ -621,13 +687,328 @@
 			<td>database.ts.type</td>
 			<td>DATABASE_TS_TYPE</td>
 			<td>sql</td>
-			<td> sql or timescale (for hybrid mode, DATABASE_TS_TYPE value should be timescale)</td>
+			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
 		</tr>
 		<tr>
 			<td>database.ts_latest.type</td>
 			<td>DATABASE_TS_LATEST_TYPE</td>
 			<td>sql</td>
-			<td> sql or timescale (for hybrid mode, DATABASE_TS_TYPE value should be timescale)</td>
+			<td> cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
+		</tr>
+	</tbody>
+</table>
+
+
+####  Cassandra driver configuration parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>cassandra.cluster_name</td>
+			<td>CASSANDRA_CLUSTER_NAME</td>
+			<td>Thingsboard Edge Cluster</td>
+			<td> Thingsboard Edge cluster name</td>
+		</tr>
+		<tr>
+			<td>cassandra.keyspace_name</td>
+			<td>CASSANDRA_KEYSPACE_NAME</td>
+			<td>thingsboard</td>
+			<td> Thingsboard Edge keyspace name</td>
+		</tr>
+		<tr>
+			<td>cassandra.url</td>
+			<td>CASSANDRA_URL</td>
+			<td>127.0.0.1:9042</td>
+			<td> Specify node list</td>
+		</tr>
+		<tr>
+			<td>cassandra.local_datacenter</td>
+			<td>CASSANDRA_LOCAL_DATACENTER</td>
+			<td>datacenter1</td>
+			<td> Specify the local data center name</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.enabled</td>
+			<td>CASSANDRA_USE_SSL</td>
+			<td>false</td>
+			<td> Enable/disable secure connection</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.hostname_validation</td>
+			<td>CASSANDRA_SSL_HOSTNAME_VALIDATION</td>
+			<td>true</td>
+			<td> Enable/disable validation of Cassandra server hostname
+ If enabled, the hostname of the Cassandra server must match the CN of the server certificate</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.trust_store</td>
+			<td>CASSANDRA_SSL_TRUST_STORE</td>
+			<td></td>
+			<td> Set trust store for client authentication of the server (optional, uses trust store from default SSLContext if not set)</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.trust_store_password</td>
+			<td>CASSANDRA_SSL_TRUST_STORE_PASSWORD</td>
+			<td></td>
+			<td> The password for Cassandra trust store key</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.key_store</td>
+			<td>CASSANDRA_SSL_KEY_STORE</td>
+			<td></td>
+			<td> Set key store for server authentication of the client (optional, uses key store from default SSLContext if not set)
+ A key store is only needed if the Cassandra server requires client authentication</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.key_store_password</td>
+			<td>CASSANDRA_SSL_KEY_STORE_PASSWORD</td>
+			<td></td>
+			<td> The password for the Cassandra key store</td>
+		</tr>
+		<tr>
+			<td>cassandra.ssl.cipher_suites</td>
+			<td>CASSANDRA_SSL_CIPHER_SUITES</td>
+			<td></td>
+			<td> Comma-separated list of cipher suites (optional, uses Java default cipher suites if not set)</td>
+		</tr>
+		<tr>
+			<td>cassandra.jmx</td>
+			<td>CASSANDRA_USE_JMX</td>
+			<td>false</td>
+			<td> Enable/disable JMX</td>
+		</tr>
+		<tr>
+			<td>cassandra.metrics</td>
+			<td>CASSANDRA_USE_METRICS</td>
+			<td>false</td>
+			<td> Enable/disable metrics collection.</td>
+		</tr>
+		<tr>
+			<td>cassandra.compression</td>
+			<td>CASSANDRA_COMPRESSION</td>
+			<td>none</td>
+			<td> NONE SNAPPY LZ4</td>
+		</tr>
+		<tr>
+			<td>cassandra.init_timeout_ms</td>
+			<td>CASSANDRA_CLUSTER_INIT_TIMEOUT_MS</td>
+			<td>300000</td>
+			<td> Specify cassandra cluster initialization timeout in milliseconds (if no hosts are available during startup)</td>
+		</tr>
+		<tr>
+			<td>cassandra.init_retry_interval_ms</td>
+			<td>CASSANDRA_CLUSTER_INIT_RETRY_INTERVAL_MS</td>
+			<td>3000</td>
+			<td> Specify cassandra cluster initialization retry interval (if no hosts available during startup)</td>
+		</tr>
+		<tr>
+			<td>cassandra.max_requests_per_connection_local</td>
+			<td>CASSANDRA_MAX_REQUESTS_PER_CONNECTION_LOCAL</td>
+			<td>32768</td>
+			<td> Cassandra max local requests per connection</td>
+		</tr>
+		<tr>
+			<td>cassandra.max_requests_per_connection_remote</td>
+			<td>CASSANDRA_MAX_REQUESTS_PER_CONNECTION_REMOTE</td>
+			<td>32768</td>
+			<td> Cassandra max remote requests per connection</td>
+		</tr>
+		<tr>
+			<td>cassandra.credentials</td>
+			<td>CASSANDRA_USE_CREDENTIALS</td>
+			<td>false</td>
+			<td> Credential parameters</td>
+		</tr>
+		<tr>
+			<td>cassandra.username</td>
+			<td>CASSANDRA_USERNAME</td>
+			<td></td>
+			<td> Specify your username</td>
+		</tr>
+		<tr>
+			<td>cassandra.password</td>
+			<td>CASSANDRA_PASSWORD</td>
+			<td></td>
+			<td> Specify your password</td>
+		</tr>
+		<tr>
+			<td>cassandra.cloud.secure_connect_bundle_path</td>
+			<td>CASSANDRA_CLOUD_SECURE_BUNDLE_PATH</td>
+			<td></td>
+			<td> /etc/thingsboard/astra/secure-connect-thingsboard.zip</td>
+		</tr>
+		<tr>
+			<td>cassandra.cloud.client_id</td>
+			<td>CASSANDRA_CLOUD_CLIENT_ID</td>
+			<td></td>
+			<td> DucitQPHMzPCBOZqFYexAfKk</td>
+		</tr>
+		<tr>
+			<td>cassandra.cloud.client_secret</td>
+			<td>CASSANDRA_CLOUD_CLIENT_SECRET</td>
+			<td></td>
+			<td> ZnF7FpuHp43FP5BzM+KY8wGmSb4Ql6BhT4Z7sOU13ze+gXQ-n7OkFpNuB,oACUIQObQnK0g4bSPoZhK5ejkcF9F.j6f64j71Sr.tiRe0Fsq2hPS1ZCGSfAaIgg63IydG</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.connect_timeout</td>
+			<td>CASSANDRA_SOCKET_TIMEOUT</td>
+			<td>5000</td>
+			<td> Sets the timeout, in milliseconds, of a native connection from ThingsBoard to Cassandra. The default value is 5000</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.read_timeout</td>
+			<td>CASSANDRA_SOCKET_READ_TIMEOUT</td>
+			<td>20000</td>
+			<td> Timeout before closing the connection. Value set in milliseconds</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.keep_alive</td>
+			<td>CASSANDRA_SOCKET_KEEP_ALIVE</td>
+			<td>true</td>
+			<td> Gets if TCP keep-alive must be used</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.reuse_address</td>
+			<td>CASSANDRA_SOCKET_REUSE_ADDRESS</td>
+			<td>true</td>
+			<td> Enable/Disable reuse-address. The socket option allows for the reuse of local addresses and ports</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.so_linger</td>
+			<td>CASSANDRA_SOCKET_SO_LINGER</td>
+			<td></td>
+			<td> Sets the linger-on-close timeout. By default, this option is not set by the driver. The actual value will be the default from the underlying Netty transport</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.tcp_no_delay</td>
+			<td>CASSANDRA_SOCKET_TCP_NO_DELAY</td>
+			<td>false</td>
+			<td> Enable/Disable Nagle's algorithm</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.receive_buffer_size</td>
+			<td>CASSANDRA_SOCKET_RECEIVE_BUFFER_SIZE</td>
+			<td></td>
+			<td> Sets a hint to the size of the underlying buffers for incoming network I/O. By default, this option is not set by the driver. The actual value will be the default from the underlying Netty transport</td>
+		</tr>
+		<tr>
+			<td>cassandra.socket.send_buffer_size</td>
+			<td>CASSANDRA_SOCKET_SEND_BUFFER_SIZE</td>
+			<td></td>
+			<td> Returns the hint to the size of the underlying buffers for outgoing network I/O. By default, this option is not set by the driver. The actual value will be the default from the underlying Netty transport</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.read_consistency_level</td>
+			<td>CASSANDRA_READ_CONSISTENCY_LEVEL</td>
+			<td>ONE</td>
+			<td> Consistency levels in Cassandra can be configured to manage availability versus data accuracy. The consistency level defaults to ONE for all write and read operations</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.write_consistency_level</td>
+			<td>CASSANDRA_WRITE_CONSISTENCY_LEVEL</td>
+			<td>ONE</td>
+			<td> Consistency levels in Cassandra can be configured to manage availability versus data accuracy. The consistency level defaults to ONE for all write and read operations</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.default_fetch_size</td>
+			<td>CASSANDRA_DEFAULT_FETCH_SIZE</td>
+			<td>2000</td>
+			<td> The fetch size specifies how many rows will be returned at once by Cassandra (in other words, it’s the size of each page)</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.ts_key_value_partitioning</td>
+			<td>TS_KV_PARTITIONING</td>
+			<td>MONTHS</td>
+			<td> Specify partitioning size for timestamp key-value storage. Example: MINUTES, HOURS, DAYS, MONTHS, INDEFINITE</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.use_ts_key_value_partitioning_on_read</td>
+			<td>USE_TS_KV_PARTITIONING_ON_READ</td>
+			<td>true</td>
+			<td> Enable/Disable timestamp key-value partioning on read queries</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.ts_key_value_partitions_max_cache_size</td>
+			<td>TS_KV_PARTITIONS_MAX_CACHE_SIZE</td>
+			<td>100000</td>
+			<td> The number of partitions that are cached in memory of each service. It is useful to decrease the load of re-inserting the same partitions again</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.ts_key_value_ttl</td>
+			<td>TS_KV_TTL</td>
+			<td>0</td>
+			<td> Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record has never expired</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.buffer_size</td>
+			<td>CASSANDRA_QUERY_BUFFER_SIZE</td>
+			<td>200000</td>
+			<td> Maximum number of Cassandra queries that are waiting for execution</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.concurrent_limit</td>
+			<td>CASSANDRA_QUERY_CONCURRENT_LIMIT</td>
+			<td>1000</td>
+			<td> Maximum number of concurrent Cassandra queries</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.permit_max_wait_time</td>
+			<td>PERMIT_MAX_WAIT_TIME</td>
+			<td>120000</td>
+			<td> Max time in milliseconds query waits for execution</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.dispatcher_threads</td>
+			<td>CASSANDRA_QUERY_DISPATCHER_THREADS</td>
+			<td>2</td>
+			<td> Amount of threads to dispatch cassandra queries</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.callback_threads</td>
+			<td>CASSANDRA_QUERY_CALLBACK_THREADS</td>
+			<td>4</td>
+			<td> Buffered rate executor (read, write) for managing I/O rate. See "nosql-*-callback" threads in JMX</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.result_processing_threads</td>
+			<td>CASSANDRA_QUERY_RESULT_PROCESSING_THREADS</td>
+			<td>50</td>
+			<td> Result set transformer and processing. See "cassandra-callback" threads in JMX</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.poll_ms</td>
+			<td>CASSANDRA_QUERY_POLL_MS</td>
+			<td>50</td>
+			<td> Cassandra query queue polling interval in milliseconds</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.rate_limit_print_interval_ms</td>
+			<td>CASSANDRA_QUERY_RATE_LIMIT_PRINT_MS</td>
+			<td>10000</td>
+			<td> Interval in milliseconds for printing Cassandra query queue statistic</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.set_null_values_enabled</td>
+			<td>CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED</td>
+			<td>true</td>
+			<td> set all data type values except target to null for the same ts on save</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.print_queries_freq</td>
+			<td>CASSANDRA_QUERY_PRINT_FREQ</td>
+			<td>0</td>
+			<td> log one of cassandra queries with specified frequency (0 - logging is disabled)</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.tenant_rate_limits.print_tenant_names</td>
+			<td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_PRINT_TENANT_NAMES</td>
+			<td>false</td>
+			<td> Whether to print rate-limited tenant names when printing Cassandra query queue statistic</td>
 		</tr>
 	</tbody>
 </table>
@@ -736,19 +1117,19 @@
 			<td>sql.events.batch_size</td>
 			<td>SQL_EVENTS_BATCH_SIZE</td>
 			<td>10000</td>
-			<td> Batch size for persisting latest telemetry updates</td>
+			<td> Batch size for persisting events inserts</td>
 		</tr>
 		<tr>
 			<td>sql.events.batch_max_delay</td>
 			<td>SQL_EVENTS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td> Max timeout for latest telemetry entries queue polling. The value set in milliseconds</td>
+			<td> Max timeout for events entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.events.stats_print_interval_ms</td>
 			<td>SQL_EVENTS_BATCH_STATS_PRINT_MS</td>
 			<td>10000</td>
-			<td> Interval in milliseconds for printing latest telemetry updates statistic</td>
+			<td> Interval in milliseconds for printing events insert statistic</td>
 		</tr>
 		<tr>
 			<td>sql.events.batch_threads</td>
@@ -772,25 +1153,25 @@
 			<td>sql.edge_events.batch_size</td>
 			<td>SQL_EDGE_EVENTS_BATCH_SIZE</td>
 			<td>1000</td>
-			<td> Batch size for persisting latest telemetry updates</td>
+			<td> Batch size for persisting edge events inserts</td>
 		</tr>
 		<tr>
 			<td>sql.edge_events.batch_max_delay</td>
 			<td>SQL_EDGE_EVENTS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td> Max timeout for latest telemetry entries queue polling. The value set in milliseconds</td>
+			<td> Max timeout for edge events entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.edge_events.stats_print_interval_ms</td>
 			<td>SQL_EDGE_EVENTS_BATCH_STATS_PRINT_MS</td>
 			<td>10000</td>
-			<td> Interval in milliseconds for printing latest telemetry updates statistic</td>
+			<td> Interval in milliseconds for printing edge events insert statistic</td>
 		</tr>
 		<tr>
 			<td>sql.edge_events.partition_size</td>
 			<td>SQL_EDGE_EVENTS_PARTITION_SIZE_HOURS</td>
 			<td>168</td>
-			<td> Number of hours to partition the events. The current value corresponds to one week.</td>
+			<td> Number of hours to partition the edge events. The current value corresponds to one week.</td>
 		</tr>
 		<tr>
 			<td>sql.audit_logs.partition_size</td>
@@ -802,25 +1183,25 @@
 			<td>sql.cloud_events.batch_size</td>
 			<td>SQL_CLOUD_EVENTS_BATCH_SIZE</td>
 			<td>1000</td>
-			<td></td>
+			<td> Batch size for persisting cloud events inserts</td>
 		</tr>
 		<tr>
 			<td>sql.cloud_events.batch_max_delay</td>
 			<td>SQL_CLOUD_EVENTS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td></td>
+			<td> Max timeout for cloud events entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.cloud_events.stats_print_interval_ms</td>
 			<td>SQL_CLOUD_EVENTS_BATCH_STATS_PRINT_MS</td>
 			<td>10000</td>
-			<td></td>
+			<td> Interval in milliseconds for printing cloud events insert statistic</td>
 		</tr>
 		<tr>
 			<td>sql.cloud_events.partition_size</td>
 			<td>SQL_CLOUD_EVENTS_PARTITION_SIZE_HOURS</td>
 			<td>24</td>
-			<td> Number of hours to partition the events. The current value corresponds to one day.</td>
+			<td> Number of hours to partition the cloud events. The current value corresponds to one week.</td>
 		</tr>
 		<tr>
 			<td>sql.alarm_comments.partition_size</td>
@@ -1001,7 +1382,7 @@
 			<td>sql.ttl.cloud_events.enabled</td>
 			<td>SQL_TTL_CLOUD_EVENTS_ENABLED</td>
 			<td>true</td>
-			<td></td>
+			<td> Enable/disable TTL (Time To Live) for cloud event records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.cloud_events.execution_interval_ms</td>
@@ -1131,6 +1512,18 @@
 			<td> Thread pool size for actor system dispatcher that process messages for edge actors</td>
 		</tr>
 		<tr>
+			<td>actors.system.cfm_dispatcher_pool_size</td>
+			<td>ACTORS_SYSTEM_CFM_DISPATCHER_POOL_SIZE</td>
+			<td>2</td>
+			<td> Thread pool size for actor system dispatcher that process messages for CalculatedField manager actors</td>
+		</tr>
+		<tr>
+			<td>actors.system.cfe_dispatcher_pool_size</td>
+			<td>ACTORS_SYSTEM_CFE_DISPATCHER_POOL_SIZE</td>
+			<td>8</td>
+			<td> Thread pool size for actor system dispatcher that process messages for CalculatedField entity actors</td>
+		</tr>
+		<tr>
 			<td>actors.tenant.create_components_on_init</td>
 			<td>ACTORS_TENANT_CREATE_COMPONENTS_ON_INIT</td>
 			<td>true</td>
@@ -1206,7 +1599,7 @@
 			<td>actors.rule.chain.debug_mode_rate_limits_per_tenant.configuration</td>
 			<td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
 			<td>50000:3600</td>
-			<td> The value of DEBUG mode rate limit. By default, no more then 50 thousand events per hour</td>
+			<td> The value of DEBUG mode rate limit. By default, no more than 50 thousand events per hour</td>
 		</tr>
 		<tr>
 			<td>actors.rule.node.error_persist_frequency</td>
@@ -1231,6 +1624,7 @@
 			<td>ACTORS_RULE_EXTERNAL_NODE_FORCE_ACK</td>
 			<td>false</td>
 			<td> Force acknowledgment of the incoming message for external rule nodes to decrease processing latency.
+ The Generate Report node also adheres to this forced acknowledgment, as it operates similarly to a REST API call.
  Enqueue the result of external node processing as a separate message to the rule engine.</td>
 		</tr>
 		<tr>
@@ -1252,22 +1646,56 @@
 			<td> Time in milliseconds for RPC to receive a response after delivery. Used only for SEQUENTIAL_ON_RESPONSE_FROM_DEVICE submit strategy.</td>
 		</tr>
 		<tr>
+			<td>actors.rpc.close_session_on_rpc_delivery_timeout</td>
+			<td>ACTORS_RPC_CLOSE_SESSION_ON_RPC_DELIVERY_TIMEOUT</td>
+			<td>false</td>
+			<td> Close transport session if RPC delivery timed out. If enabled, RPC will be reverted to the queued state.
+ Note:
+ - For MQTT transport:
+   - QoS level 0: This feature does not apply, as no acknowledgment is expected, and therefore no timeout is triggered.
+   - QoS level 1: This feature applies, as an acknowledgment is expected.
+   - QoS level 2: Unsupported.
+ - For CoAP transport:
+   - Confirmable requests: This feature applies, as delivery confirmation is expected.
+   - Non-confirmable requests: This feature does not apply, as no delivery acknowledgment is expected.
+ - For HTTP and SNPM transports: RPC is considered delivered immediately, and there is no logic to await acknowledgment.</td>
+		</tr>
+		<tr>
 			<td>actors.statistics.enabled</td>
 			<td>ACTORS_STATISTICS_ENABLED</td>
 			<td>true</td>
 			<td> Enable/disable actor statistics</td>
 		</tr>
 		<tr>
-			<td>actors.statistics.js_print_interval_ms</td>
-			<td>ACTORS_JS_STATISTICS_PRINT_INTERVAL_MS</td>
-			<td>10000</td>
-			<td> Frequency of printing the JS executor statistics</td>
-		</tr>
-		<tr>
 			<td>actors.statistics.persist_frequency</td>
 			<td>ACTORS_STATISTICS_PERSIST_FREQUENCY</td>
 			<td>3600000</td>
 			<td> Actors statistic persistence frequency in milliseconds</td>
+		</tr>
+		<tr>
+			<td>actors.calculated_fields.debug_mode_rate_limits_per_tenant.enabled</td>
+			<td>ACTORS_CALCULATED_FIELD_DEBUG_MODE_RATE_LIMITS_PER_TENANT_ENABLED</td>
+			<td>true</td>
+			<td> Enable/Disable the rate limit of persisted debug events for all calculated fields per tenant</td>
+		</tr>
+		<tr>
+			<td>actors.calculated_fields.debug_mode_rate_limits_per_tenant.configuration</td>
+			<td>ACTORS_CALCULATED_FIELD_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
+			<td>50000:3600</td>
+			<td> The value of DEBUG mode rate limit. By default, no more than 50 thousand events per hour</td>
+		</tr>
+		<tr>
+			<td>actors.calculated_fields.calculation_timeout</td>
+			<td>ACTORS_CALCULATION_TIMEOUT_SEC</td>
+			<td>5</td>
+			<td> Time in seconds to receive calculation result.</td>
+		</tr>
+		<tr>
+			<td>debug.settings.default_duration</td>
+			<td>DEBUG_SETTINGS_DEFAULT_DURATION_MINUTES</td>
+			<td>15</td>
+			<td> Default duration (in minutes) for debug mode. Min value is 1 minute. Tenant profile settings override this one.
+ If value from this setting is invalid, the default value (15 minutes) will be used.</td>
 		</tr>
 	</tbody>
 </table>
@@ -1327,7 +1755,7 @@
 		<tr>
 			<td>integrations.rpc.enabled</td>
 			<td>INTEGRATIONS_RPC_ENABLED</td>
-			<td>false</td>
+			<td>true</td>
 			<td> Enable/Disable RPC call via integrations</td>
 		</tr>
 		<tr>
@@ -1378,6 +1806,32 @@
  - 'LAST': Only the last activity event in the reporting period is reported.
  - 'FIRST_AND_LAST': Both the first and last activity events in the reporting period are reported.
  - 'ALL': All activity events in the reporting period are reported.</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.enabled</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable data converters library</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.url</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_URL</td>
+			<td>https://github.com/thingsboard/data-converters.git</td>
+			<td> URL of the data converters repository</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.branch</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_BRANCH</td>
+			<td>release/4.0.0</td>
+			<td> Branch of the data converters repository to use. By default, a release branch with compatible version.
+ Whenever non-backward-compatible changes are needed in the library - a new branch with min supported TB version should be created,
+ and the default branch here - updated.</td>
+		</tr>
+		<tr>
+			<td>integrations.converters.library.fetch_frequency</td>
+			<td>TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_FETCH_FREQUENCY</td>
+			<td>24</td>
+			<td> Fetch frequency in hours for data converters repository</td>
 		</tr>
 	</tbody>
 </table>
@@ -1452,6 +1906,13 @@
 			<td>CACHE_ATTRIBUTES_ENABLED</td>
 			<td>true</td>
 			<td> make sure that if cache.type is 'redis' and cache.attributes.enabled is 'true' if you change 'maxmemory-policy' Redis config property to 'allkeys-lru', 'allkeys-lfu' or 'allkeys-random'</td>
+		</tr>
+		<tr>
+			<td>cache.ts_latest.enabled</td>
+			<td>CACHE_TS_LATEST_ENABLED</td>
+			<td>true</td>
+			<td> Will enable cache-aside strategy for SQL timeseries latest DAO.
+ make sure that if cache.type is 'redis' and cache.ts_latest.enabled is 'true' if you change 'maxmemory-policy' Redis config property to 'allkeys-lru', 'allkeys-lfu' or 'allkeys-random'</td>
 		</tr>
 		<tr>
 			<td>cache.specs.relations.timeToLiveInMinutes</td>
@@ -1670,6 +2131,18 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.tsLatest.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_TS_LATEST_TTL</td>
+			<td>1440</td>
+			<td> Timeseries latest cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.tsLatest.maxSize</td>
+			<td>CACHE_SPECS_TS_LATEST_MAX_SIZE</td>
+			<td>100000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.specs.userSessionsInvalidation.timeToLiveInMinutes</td>
 			<td></td>
 			<td>"0"</td>
@@ -1714,6 +2187,30 @@
 		<tr>
 			<td>cache.specs.edges.maxSize</td>
 			<td>CACHE_SPECS_EDGES_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.edgeSessions.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_EDGE_SESSIONS_TTL</td>
+			<td>0</td>
+			<td> Edge Sessions cache TTL; no expiration time if set to '0'</td>
+		</tr>
+		<tr>
+			<td>cache.specs.edgeSessions.maxSize</td>
+			<td>CACHE_SPECS_EDGE_SESSIONS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.relatedEdges.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_RELATED_EDGES_TTL</td>
+			<td>1440</td>
+			<td> Related Edges cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.relatedEdges.maxSize</td>
+			<td>CACHE_SPECS_RELATED_EDGES_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
@@ -1826,13 +2323,13 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
-			<td>cache.specs.mobileAppSettings.timeToLiveInMinutes</td>
+			<td>cache.specs.qrCodeSettings.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_TTL</td>
 			<td>1440</td>
-			<td> Mobile application cache TTL</td>
+			<td> Qr code settings cache TTL</td>
 		</tr>
 		<tr>
-			<td>cache.specs.mobileAppSettings.maxSize</td>
+			<td>cache.specs.qrCodeSettings.maxSize</td>
 			<td>CACHE_SPECS_MOBILE_APP_SETTINGS_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
@@ -1946,6 +2443,30 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.customMenu.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_TTL</td>
+			<td>1440</td>
+			<td> Custom menu cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.customMenu.maxSize</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.entityGroups.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_ENTITY_GROUPS_TTL</td>
+			<td>1440</td>
+			<td> entity groups cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.entityGroups.maxSize</td>
+			<td>CACHE_SPECS_ENTITY_GROUPS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.notificationRules.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_NOTIFICATION_RULES_TTL</td>
 			<td>30</td>
@@ -2014,6 +2535,18 @@
 		<tr>
 			<td>cache.translation.etag.maxSize</td>
 			<td>CACHE_SPECS_TRANSLATION_ETAGS_MAX_SIZE</td>
+			<td>1000000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.customMenu.etag.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_ETAGS_TTL</td>
+			<td>44640</td>
+			<td> Custom Menu ETags cache TTL in minutes (one month by default)</td>
+		</tr>
+		<tr>
+			<td>cache.customMenu.etag.maxSize</td>
+			<td>CACHE_SPECS_CUSTOM_MENU_ETAGS_MAX_SIZE</td>
 			<td>1000000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
@@ -2465,7 +2998,57 @@
 			<td>spring.datasource.hikari.registerMbeans</td>
 			<td>SPRING_DATASOURCE_HIKARI_REGISTER_MBEANS</td>
 			<td>false</td>
-			<td> true - enable MBean to diagnose pools state via JMX</td>
+			<td> Enable MBean to diagnose pools state via JMX</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.enabled</td>
+			<td>SPRING_DEDICATED_EVENTS_DATASOURCE_ENABLED</td>
+			<td>false</td>
+			<td> Enable dedicated datasource (a separate database) for events and audit logs.
+ Before enabling this, make sure you have set up the following tables in the new DB:
+ error_event, lc_event, rule_chain_debug_event, rule_node_debug_event, stats_event, converter_debug_event, integration_debug_event, raw_data_event, audit_log, cf_debug_event</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.driverClassName</td>
+			<td>SPRING_EVENTS_DATASOURCE_DRIVER_CLASS_NAME</td>
+			<td>org.postgresql.Driver</td>
+			<td> Database driver for Spring JPA for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.url</td>
+			<td>SPRING_EVENTS_DATASOURCE_URL</td>
+			<td>jdbc:postgresql://localhost:5432/thingsboard_events</td>
+			<td> Database connection URL for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.username</td>
+			<td>SPRING_EVENTS_DATASOURCE_USERNAME</td>
+			<td>postgres</td>
+			<td> Database username for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.password</td>
+			<td>SPRING_EVENTS_DATASOURCE_PASSWORD</td>
+			<td>postgres</td>
+			<td> Database user password for events datasource</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.hikari.leakDetectionThreshold</td>
+			<td>SPRING_EVENTS_DATASOURCE_HIKARI_LEAK_DETECTION_THRESHOLD</td>
+			<td>0</td>
+			<td> This property controls the amount of time that a connection can be out of the pool before a message is logged indicating a possible connection leak for events datasource. A value of 0 means leak detection is disabled</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.hikari.maximumPoolSize</td>
+			<td>SPRING_EVENTS_DATASOURCE_MAXIMUM_POOL_SIZE</td>
+			<td>4</td>
+			<td> This property increases the number of connections in the pool as demand increases for events datasource. At the same time, the property ensures that the pool doesn't grow to the point of exhausting a system's resources, which ultimately affects an application's performance and availability</td>
+		</tr>
+		<tr>
+			<td>spring.datasource.events.hikari.registerMbeans</td>
+			<td>SPRING_EVENTS_DATASOURCE_HIKARI_REGISTER_MBEANS</td>
+			<td>false</td>
+			<td> Enable MBean to diagnose pools state via JMX for events datasource</td>
 		</tr>
 	</tbody>
 </table>
@@ -2605,6 +3188,12 @@
 			<td>AUDIT_LOG_MASK_OTA_PACKAGE</td>
 			<td>W</td>
 			<td> Ota package logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+		</tr>
+		<tr>
+			<td>audit-log.logging-level.mask."calculated_field"</td>
+			<td>AUDIT_LOG_MASK_CALCULATED_FIELD</td>
+			<td>W</td>
+			<td> Calculated field logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."role"</td>
@@ -3053,6 +3642,12 @@
 			<td> HTTP maximum request processing timeout in milliseconds</td>
 		</tr>
 		<tr>
+			<td>transport.http.max_payload_size</td>
+			<td>HTTP_TRANSPORT_MAX_PAYLOAD_SIZE_LIMIT_CONFIGURATION</td>
+			<td>/api/v1/*/rpc/**=65536;/api/v1/**=52428800</td>
+			<td> Semi-colon-separated list of urlPattern=maxPayloadSize pairs that define max http request size for specified url pattern. After first match all other will be skipped</td>
+		</tr>
+		<tr>
 			<td>transport.mqtt.enabled</td>
 			<td>MQTT_ENABLED</td>
 			<td>true</td>
@@ -3094,6 +3689,12 @@
 			<td>MQTT_MSG_QUEUE_SIZE_PER_DEVICE_LIMIT</td>
 			<td>100</td>
 			<td> messages await in the queue before the device connected state. This limit works on the low level before TenantProfileLimits mechanism</td>
+		</tr>
+		<tr>
+			<td>transport.mqtt.gateway_metrics_report_interval_sec</td>
+			<td>MQTT_GATEWAY_METRICS_REPORT_INTERVAL_SEC</td>
+			<td>60</td>
+			<td> Interval of periodic report of the gateway metrics</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.netty.leak_detector_level</td>
@@ -3560,10 +4161,16 @@
 			<td> Enable/disable SNMP transport protocol</td>
 		</tr>
 		<tr>
+			<td>transport.snmp.bind_address</td>
+			<td>SNMP_BIND_ADDRESS</td>
+			<td>0.0.0.0</td>
+			<td> SNMP bind address</td>
+		</tr>
+		<tr>
 			<td>transport.snmp.bind_port</td>
 			<td>SNMP_BIND_PORT</td>
-			<td>1620</td>
-			<td> Snmp bind port</td>
+			<td>0</td>
+			<td> SNMP bind port. Zero (random) by default. When using SNMP TRAPs - make sure to specify some static value, e.g. 1620</td>
 		</tr>
 		<tr>
 			<td>transport.snmp.response_processing.parallelism_level</td>
@@ -3613,6 +4220,30 @@
 			<td>60000</td>
 			<td> Interval of transport statistics logging</td>
 		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.enabled</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable gateways dashboard sync with git repository</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.repository_url</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_REPOSITORY_URL</td>
+			<td>https://github.com/thingsboard/gateway-management-extensions-dist.git</td>
+			<td> URL of gateways dashboard repository</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.branch</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_BRANCH</td>
+			<td>release/4.0.0</td>
+			<td> Branch of gateways dashboard repository to work with</td>
+		</tr>
+		<tr>
+			<td>transport.gateway.dashboard.sync.fetch_frequency</td>
+			<td>TB_GATEWAY_DASHBOARD_SYNC_FETCH_FREQUENCY</td>
+			<td>24</td>
+			<td> Fetch frequency in hours for gateways dashboard repository</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -3627,7 +4258,7 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>coap.enabled</td>
+			<td>coap.server.enabled</td>
 			<td>COAP_SERVER_ENABLED</td>
 			<td>true</td>
 			<td> Enable/disable coap server.</td>
@@ -3681,6 +4312,38 @@
  - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
  - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
  - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_transmission_unit</td>
+			<td>COAP_DTLS_MAX_TRANSMISSION_UNIT</td>
+			<td>1024</td>
+			<td> Specify the MTU (Maximum Transmission Unit).
+ Should be used if LAN MTU is not used, e.g. if IP tunnels are used or if the client uses a smaller value than the LAN MTU.
+ Default = 1024
+ Minimum value = 64
+ If set to 0 - LAN MTU is used.</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_fragment_length</td>
+			<td>COAP_DTLS_MAX_FRAGMENT_LENGTH</td>
+			<td>1024</td>
+			<td> DTLS maximum fragment length (RFC 6066, Section 4).
+ Default = 1024
+ Possible values: 512, 1024, 2048, 4096.
+ If set to 0, the default maximum fragment size of 2^14 bytes (16,384 bytes) is used.
+ Without this extension, TLS specifies a fixed maximum plaintext fragment length of 2^14 bytes.
+ It may be desirable for constrained clients to negotiate a smaller maximum fragment length due to memory limitations or bandwidth limitations.
+ In order to negotiate smaller maximum fragment lengths,
+ clients MAY include an extension of type "max_fragment_length" in the (extended) client hello.
+ The "extension_data" field of this extension SHALL contain:
+ enum {
+   2^9(1) == 512,
+   2^10(2) == 1024,
+   2^11(3) == 2048,
+   2^12(4) == 4096,
+   (255)
+ } MaxFragmentLength;
+ TLS already requires clients and servers to support fragmentation of handshake messages.</td>
 		</tr>
 		<tr>
 			<td>coap.dtls.credentials.type</td>
@@ -3881,6 +4544,12 @@
 			<td>5684</td>
 			<td> Port of coap transport service. If empty, the default port for coaps will be used.</td>
 		</tr>
+		<tr>
+			<td>device.connectivity.coaps.pem_cert_file</td>
+			<td>DEVICE_CONNECTIVITY_COAPS_CA_ROOT_CERT</td>
+			<td>cafile.pem</td>
+			<td> Path to the COAP CA root certificate file</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -3979,21 +4648,27 @@
 			<td> Number of milliseconds to wait before resending failed batch of edge events to edge</td>
 		</tr>
 		<tr>
+			<td>edges.max_high_priority_queue_size_per_session</td>
+			<td>EDGES_MAX_HIGH_PRIORITY_QUEUE_SIZE_PER_SESSION</td>
+			<td>10000</td>
+			<td> Max number of high priority edge events per edge session. No persistence - stored in memory</td>
+		</tr>
+		<tr>
 			<td>edges.scheduler_pool_size</td>
 			<td>EDGES_SCHEDULER_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to check DB for edge events</td>
 		</tr>
 		<tr>
 			<td>edges.send_scheduler_pool_size</td>
 			<td>EDGES_SEND_SCHEDULER_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to send downlink messages to edge over gRPC</td>
 		</tr>
 		<tr>
 			<td>edges.grpc_callback_thread_pool_size</td>
 			<td>EDGES_GRPC_CALLBACK_POOL_SIZE</td>
-			<td>1</td>
+			<td>4</td>
 			<td> Number of threads that are used to convert edge events from DB into downlink messages and send them for delivery</td>
 		</tr>
 		<tr>
@@ -4048,7 +4723,7 @@
 		</tr>
 		<tr>
 			<td>swagger.exclude_api_path</td>
-			<td>SWAGGER_API_PATH</td>
+			<td>SWAGGER_EXCLUDE_API_PATH</td>
 			<td>/api/v1/integrations/**</td>
 			<td> Excluded API path match pattern of swagger UI links</td>
 		</tr>
@@ -4113,12 +4788,10 @@
 			<td> The version of the API doc to display. Default to the package version.</td>
 		</tr>
 		<tr>
-			<td>edge_license.instance_data_file</td>
-			<td>EDGE_LICENSE_INSTANCE_DATA_FILE</td>
-			<td>instance-edge-license.data</td>
-			<td> Instance data is auto-generated and is used to identify particular ThingsBoard Edge Instance.
- Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.
- Please make sure that thingsboard edge process has access to the instance data file, in case you use absolute path.</td>
+			<td>swagger.group_name</td>
+			<td>SWAGGER_GROUP_NAME</td>
+			<td>thingsboard</td>
+			<td> The group name (definition) on the API doc UI page.</td>
 		</tr>
 	</tbody>
 </table>
@@ -4137,7 +4810,7 @@
 			<td>queue.type</td>
 			<td>TB_QUEUE_TYPE</td>
 			<td>in-memory</td>
-			<td> in-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+			<td> in-memory or kafka (Apache Kafka)</td>
 		</tr>
 		<tr>
 			<td>queue.prefix</td>
@@ -4344,6 +5017,18 @@
 			<td> Example of specific consumer properties value per topic for VC</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Example of specific consumer properties value per topic for edge event</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENT_MAX_POLL_RECORDS</td>
+			<td>50</td>
+			<td> Example of specific consumer properties value per topic for edge event</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
 			<td></td>
 			<td>max.poll.records</td>
@@ -4366,6 +5051,54 @@
 			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_REPROCESSING_MAX_POLL_RECORDS</td>
 			<td>1</td>
 			<td> Amount of records to be returned in a single poll. For Housekeeper reprocessing topic, we should consume messages (tasks) one by one</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_cloud_event.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Consumer properties for Kafka tb_cloud_event topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_cloud_event.key.value</td>
+			<td>TB_QUEUE_KAFKA_CLOUD_EVENT_MAX_POLL_RECORDS</td>
+			<td>50</td>
+			<td> Amount of records to be returned in a single poll for cloud event topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_cloud_event_ts.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Consumer properties for Kafka tb_cloud_event_ts topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_cloud_event_ts.key.value</td>
+			<td>TB_QUEUE_KAFKA_CLOUD_EVENT_TS_MAX_POLL_RECORDS</td>
+			<td>50</td>
+			<td> Amount of records to be returned in a single poll for cloud event timeseries topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.events.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Key-value properties for Kafka consumer for edqs.events topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.events.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDQS_EVENTS_MAX_POLL_RECORDS</td>
+			<td>512</td>
+			<td> Max poll records for edqs.events topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.state.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Key-value properties for Kafka consumer for edqs.state topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.edqs.state.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDQS_STATE_MAX_POLL_RECORDS</td>
+			<td>512</td>
+			<td> Max poll records for edqs.state topic</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.other-inline</td>
@@ -4434,6 +5167,60 @@
 			<td> Kafka properties for Housekeeper reprocessing topic; retention.ms is set to 90 days; partitions is set to 1 since only one reprocessing service is running at a time</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.topic-properties.edge</td>
+			<td>TB_QUEUE_KAFKA_EDGE_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Edge topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edge-event</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENT_TOPIC_PROPERTIES</td>
+			<td>retention.ms:2592000000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Edge event topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.cloud_event</td>
+			<td>TB_QUEUE_KAFKA_CLOUD_EVENT_TOPIC_PROPERTIES</td>
+			<td>retention.ms:2678400000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for CloudEvent topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.cloud_event_ts</td>
+			<td>TB_QUEUE_KAFKA_CLOUD_EVENT_TS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:2678400000;segment.bytes:52428800;retention.bytes:10485760000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for TsCloudEvent topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.calculated-field</td>
+			<td>TB_QUEUE_KAFKA_CF_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for Calculated Field topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.calculated-field-state</td>
+			<td>TB_QUEUE_KAFKA_CF_STATE_TOPIC_PROPERTIES</td>
+			<td>retention.ms:-1;segment.bytes:52428800;retention.bytes:104857600000;partitions:1;min.insync.replicas:1;cleanup.policy:compact</td>
+			<td> Kafka properties for Calculated Field State topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edqs-events</td>
+			<td>TB_QUEUE_KAFKA_EDQS_EVENTS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:86400000;segment.bytes:52428800;retention.bytes:-1;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for EDQS events topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edqs-requests</td>
+			<td>TB_QUEUE_KAFKA_EDQS_REQUESTS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:180000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for EDQS requests topic (default: 3 minutes retention)</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.edqs-state</td>
+			<td>TB_QUEUE_KAFKA_EDQS_STATE_TOPIC_PROPERTIES</td>
+			<td>retention.ms:-1;segment.bytes:52428800;retention.bytes:-1;partitions:1;min.insync.replicas:1;cleanup.policy:compact</td>
+			<td> Kafka properties for EDQS state topic (infinite retention, compaction)</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
 			<td>true</td>
@@ -4450,324 +5237,6 @@
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
 			<td>1000</td>
 			<td> Time to wait for the stats-loading requests to Kafka to finish</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.use_default_credential_provider_chain</td>
-			<td>TB_QUEUE_AWS_SQS_USE_DEFAULT_CREDENTIAL_PROVIDER_CHAIN</td>
-			<td>false</td>
-			<td> Use the default credentials provider for AWS SQS</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.access_key_id</td>
-			<td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
-			<td>YOUR_KEY</td>
-			<td> Access key ID from AWS IAM user</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.secret_access_key</td>
-			<td>TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY</td>
-			<td>YOUR_SECRET</td>
-			<td> Secret access key from AWS IAM user</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.region</td>
-			<td>TB_QUEUE_AWS_SQS_REGION</td>
-			<td>YOUR_REGION</td>
-			<td> Region from AWS account</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.threads_per_topic</td>
-			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
-			<td>1</td>
-			<td> Number of threads per each AWS SQS queue in consumer</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.producer_thread_pool_size</td>
-			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
-			<td>50</td>
-			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_AWS_SQS_RE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.core</td>
-			<td>TB_QUEUE_AWS_SQS_CORE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.transport-api</td>
-			<td>TB_QUEUE_AWS_SQS_TA_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.notifications</td>
-			<td>TB_QUEUE_AWS_SQS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.js-executor</td>
-			<td>TB_QUEUE_AWS_SQS_JE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.ota-updates</td>
-			<td>TB_QUEUE_AWS_SQS_OTA_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.version-control</td>
-			<td>TB_QUEUE_AWS_SQS_VC_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.integration-api</td>
-			<td>TB_QUEUE_AWS_SQS_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.project_id</td>
-			<td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
-			<td>YOUR_PROJECT_ID</td>
-			<td> Project ID from Google Cloud</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.service_account</td>
-			<td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
-			<td>YOUR_SERVICE_ACCOUNT</td>
-			<td> API Credentials in JSON format</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.max_msg_size</td>
-			<td>TB_QUEUE_PUBSUB_MAX_MSG_SIZE</td>
-			<td>1048576</td>
-			<td> Message size for PubSub queue.Value in bytes</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.max_messages</td>
-			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
-			<td>1000</td>
-			<td> Number of messages per consumer</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.executor_thread_pool_size</td>
-			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
-			<td>0</td>
-			<td> Thread pool size for pubsub queue executor provider. If set to 0 - default pubsub executor provider value will be used (5 * number of available processors)</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_PUBSUB_RE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Rule Engine subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.core</td>
-			<td>TB_QUEUE_PUBSUB_CORE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Core subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.transport-api</td>
-			<td>TB_QUEUE_PUBSUB_TA_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport API subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.notifications</td>
-			<td>TB_QUEUE_PUBSUB_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Version Control subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.js-executor</td>
-			<td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> PubSub queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.version-control</td>
-			<td>TB_QUEUE_PUBSUB_VC_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.integration-api</td>
-			<td>TB_QUEUE_PUBSUB_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.namespace_name</td>
-			<td>TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME</td>
-			<td>YOUR_NAMESPACE_NAME</td>
-			<td> Azure namespace</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.sas_key_name</td>
-			<td>TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME</td>
-			<td>YOUR_SAS_KEY_NAME</td>
-			<td> Azure Service Bus Shared Access Signatures key name</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.sas_key</td>
-			<td>TB_QUEUE_SERVICE_BUS_SAS_KEY</td>
-			<td>YOUR_SAS_KEY</td>
-			<td> Azure Service Bus Shared Access Signatures key</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.max_messages</td>
-			<td>TB_QUEUE_SERVICE_BUS_MAX_MESSAGES</td>
-			<td>1000</td>
-			<td> Number of messages per a consumer</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Rule Engine queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.core</td>
-			<td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Core queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.transport-api</td>
-			<td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Transport Api queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.notifications</td>
-			<td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Notification queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.js-executor</td>
-			<td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.version-control</td>
-			<td>TB_QUEUE_SERVICE_BUS_VC_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Version Control queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.integration-api</td>
-			<td>TB_QUEUE_SERVICE_BUS_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Integration Api queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.exchange_name</td>
-			<td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
-			<td></td>
-			<td> By default empty</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.host</td>
-			<td>TB_QUEUE_RABBIT_MQ_HOST</td>
-			<td>localhost</td>
-			<td> RabbitMQ host used to establish connection</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.port</td>
-			<td>TB_QUEUE_RABBIT_MQ_PORT</td>
-			<td>5672</td>
-			<td> RabbitMQ host used to establish a connection</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.virtual_host</td>
-			<td>TB_QUEUE_RABBIT_MQ_VIRTUAL_HOST</td>
-			<td>/</td>
-			<td> Virtual hosts provide logical grouping and separation of resources</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.username</td>
-			<td>TB_QUEUE_RABBIT_MQ_USERNAME</td>
-			<td>YOUR_USERNAME</td>
-			<td> Username for RabbitMQ user account</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.password</td>
-			<td>TB_QUEUE_RABBIT_MQ_PASSWORD</td>
-			<td>YOUR_PASSWORD</td>
-			<td> User password for RabbitMQ user account</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.automatic_recovery_enabled</td>
-			<td>TB_QUEUE_RABBIT_MQ_AUTOMATIC_RECOVERY_ENABLED</td>
-			<td>false</td>
-			<td> Network connection between clients and RabbitMQ nodes can fail. RabbitMQ Java client supports automatic recovery of connections and topology (queues, exchanges, bindings, and consumers)</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.connection_timeout</td>
-			<td>TB_QUEUE_RABBIT_MQ_CONNECTION_TIMEOUT</td>
-			<td>60000</td>
-			<td> The connection timeout for the RabbitMQ connection factory</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.handshake_timeout</td>
-			<td>TB_QUEUE_RABBIT_MQ_HANDSHAKE_TIMEOUT</td>
-			<td>10000</td>
-			<td> RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Rule Engine queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.core</td>
-			<td>TB_QUEUE_RABBIT_MQ_CORE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Core queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.transport-api</td>
-			<td>TB_QUEUE_RABBIT_MQ_TA_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Transport API queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.notifications</td>
-			<td>TB_QUEUE_RABBIT_MQ_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Notification queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.js-executor</td>
-			<td>TB_QUEUE_RABBIT_MQ_JE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.version-control</td>
-			<td>TB_QUEUE_RABBIT_MQ_VC_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Version Control queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.integration-api</td>
-			<td>TB_QUEUE_RABBIT_MQ_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Integration Api queues</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>
@@ -4827,7 +5296,13 @@
 			<td>queue.core.topic</td>
 			<td>TB_QUEUE_CORE_TOPIC</td>
 			<td>tb_core</td>
-			<td> Default topic name of Kafka, RabbitMQ, etc. queue</td>
+			<td> Default topic name</td>
+		</tr>
+		<tr>
+			<td>queue.core.notifications_topic</td>
+			<td>TB_QUEUE_CORE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_core.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.core.poll-interval</td>
@@ -4875,7 +5350,7 @@
 			<td>queue.core.usage-stats-topic</td>
 			<td>TB_QUEUE_US_TOPIC</td>
 			<td>tb_usage_stats</td>
-			<td> Stats topic name for queue Kafka, RabbitMQ, etc.</td>
+			<td> Stats topic name</td>
 		</tr>
 		<tr>
 			<td>queue.core.stats.enabled</td>
@@ -4934,6 +5409,12 @@
 			<td> Maximum amount of task reprocessing attempts. After exceeding, the task will be dropped</td>
 		</tr>
 		<tr>
+			<td>queue.core.housekeeper.entities-cleanup-frequency</td>
+			<td>TB_HOUSEKEEPER_ENTITIES_CLEANUP_FREQUENCY</td>
+			<td>3600</td>
+			<td> Expiration check frequency in seconds for entities that have ttl</td>
+		</tr>
+		<tr>
 			<td>queue.core.housekeeper.stats.enabled</td>
 			<td>TB_HOUSEKEEPER_STATS_ENABLED</td>
 			<td>true</td>
@@ -4946,10 +5427,112 @@
 			<td> Statistics printing interval for Housekeeper</td>
 		</tr>
 		<tr>
+			<td>queue.edqs.sync.enabled</td>
+			<td>TB_EDQS_SYNC_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable EDQS synchronization</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.sync.entity_batch_size</td>
+			<td>TB_EDQS_SYNC_ENTITY_BATCH_SIZE</td>
+			<td>10000</td>
+			<td> Batch size of entities being synced with EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.sync.ts_batch_size</td>
+			<td>TB_EDQS_SYNC_TS_BATCH_SIZE</td>
+			<td>10000</td>
+			<td> Batch size of timeseries data being synced with EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.api.supported</td>
+			<td>TB_EDQS_API_SUPPORTED</td>
+			<td>false</td>
+			<td> Whether to forward entity data query requests to EDQS (otherwise use PostgreSQL implementation)</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.api.auto_enable</td>
+			<td>TB_EDQS_API_AUTO_ENABLE</td>
+			<td>true</td>
+			<td> Whether to auto-enable EDQS API (if queue.edqs.api.supported is true) when sync of data to Kafka is finished</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.mode</td>
+			<td>TB_EDQS_MODE</td>
+			<td>local</td>
+			<td> Mode of EDQS: local (for monolith) or remote (with separate EDQS microservices)</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.local.rocksdb_path</td>
+			<td>TB_EDQS_ROCKSDB_PATH</td>
+			<td>${user.home}/.rocksdb/edqs</td>
+			<td> Path to RocksDB for EDQS backup when running in local mode</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.partitions</td>
+			<td>TB_EDQS_PARTITIONS</td>
+			<td>12</td>
+			<td> Number of partitions for EDQS topics</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.partitioning_strategy</td>
+			<td>TB_EDQS_PARTITIONING_STRATEGY</td>
+			<td>tenant</td>
+			<td> EDQS partitioning strategy: tenant (partition is resolved by tenant id) or none (no specific strategy, resolving by message key)</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.events_topic</td>
+			<td>TB_EDQS_EVENTS_TOPIC</td>
+			<td>edqs.events</td>
+			<td> EDQS events topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.state_topic</td>
+			<td>TB_EDQS_STATE_TOPIC</td>
+			<td>edqs.state</td>
+			<td> EDQS state topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.requests_topic</td>
+			<td>TB_EDQS_REQUESTS_TOPIC</td>
+			<td>edqs.requests</td>
+			<td> EDQS requests topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.responses_topic</td>
+			<td>TB_EDQS_RESPONSES_TOPIC</td>
+			<td>edqs.responses</td>
+			<td> EDQS responses topic</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.poll_interval</td>
+			<td>TB_EDQS_POLL_INTERVAL_MS</td>
+			<td>125</td>
+			<td> Poll interval for EDQS topics</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.max_pending_requests</td>
+			<td>TB_EDQS_MAX_PENDING_REQUESTS</td>
+			<td>10000</td>
+			<td> Maximum amount of pending requests to EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.max_request_timeout</td>
+			<td>TB_EDQS_MAX_REQUEST_TIMEOUT</td>
+			<td>20000</td>
+			<td> Maximum timeout for requests to EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.stats.enabled</td>
+			<td>TB_EDQS_STATS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable statistics for EDQS</td>
+		</tr>
+		<tr>
 			<td>queue.vc.topic</td>
 			<td>TB_QUEUE_VC_TOPIC</td>
 			<td>tb_version_control</td>
-			<td> Default topic name for Kafka, RabbitMQ, etc.</td>
+			<td> Default topic name</td>
 		</tr>
 		<tr>
 			<td>queue.vc.partitions</td>
@@ -4979,7 +5562,7 @@
 			<td>queue.vc.msg-chunk-size</td>
 			<td>TB_QUEUE_VC_MSG_CHUNK_SIZE</td>
 			<td>250000</td>
-			<td> Queue settings for Kafka, RabbitMQ, etc. Limit for single message size</td>
+			<td> Limit for single queue message size</td>
 		</tr>
 		<tr>
 			<td>queue.js.request_topic</td>
@@ -5030,6 +5613,12 @@
 			<td> Deprecated. It will be removed in the nearest releases</td>
 		</tr>
 		<tr>
+			<td>queue.rule-engine.notifications_topic</td>
+			<td>TB_QUEUE_RULE_ENGINE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_rule_engine.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
+		</tr>
+		<tr>
 			<td>queue.rule-engine.poll-interval</td>
 			<td>TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS</td>
 			<td>25</td>
@@ -5072,6 +5661,48 @@
 			<td> Size of the thread pool that handles such operations as partition changes, config updates, queue deletion</td>
 		</tr>
 		<tr>
+			<td>queue.calculated_fields.event_topic</td>
+			<td>TB_QUEUE_CF_EVENT_TOPIC</td>
+			<td>tb_cf_event</td>
+			<td> Topic name for Calculated Field (CF) events from Rule Engine</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.state_topic</td>
+			<td>TB_QUEUE_CF_STATE_TOPIC</td>
+			<td>tb_cf_state</td>
+			<td> Topic name for Calculated Field (CF) compacted states</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.notifications_topic</td>
+			<td>TB_QUEUE_CF_NOTIFICATIONS_TOPIC</td>
+			<td>calculated_field.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.poll_interval</td>
+			<td>TB_QUEUE_CF_POLL_INTERVAL_MS</td>
+			<td>1000</td>
+			<td> Interval in milliseconds to poll messages by CF (Rule Engine) microservices</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.pack_processing_timeout</td>
+			<td>TB_QUEUE_CF_PACK_PROCESSING_TIMEOUT_MS</td>
+			<td>60000</td>
+			<td> Timeout for processing a message pack by CF microservices</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.pool_size</td>
+			<td>TB_QUEUE_CF_POOL_SIZE</td>
+			<td>8</td>
+			<td> Thread pool size for processing of the incoming messages</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.rocks_db_path</td>
+			<td>TB_QUEUE_CF_ROCKS_DB_PATH</td>
+			<td>${user.home}/.rocksdb/edge_cf_states</td>
+			<td> RocksDB path for storing CF states</td>
+		</tr>
+		<tr>
 			<td>queue.transport.notifications_topic</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_transport.notifications</td>
@@ -5084,6 +5715,66 @@
 			<td> Interval in milliseconds to poll messages</td>
 		</tr>
 		<tr>
+			<td>queue.edge.topic</td>
+			<td>TB_QUEUE_EDGE_TOPIC</td>
+			<td>tb_edge</td>
+			<td> Default topic name</td>
+		</tr>
+		<tr>
+			<td>queue.edge.notifications_topic</td>
+			<td>TB_QUEUE_EDGE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_edge.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
+		</tr>
+		<tr>
+			<td>queue.edge.event_notifications_topic</td>
+			<td>TB_QUEUE_EDGE_EVENT_NOTIFICATIONS_TOPIC</td>
+			<td>tb_edge_event.notifications</td>
+			<td> For edge events messages</td>
+		</tr>
+		<tr>
+			<td>queue.edge.partitions</td>
+			<td>TB_QUEUE_EDGE_PARTITIONS</td>
+			<td>10</td>
+			<td> Amount of partitions used by Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.poll-interval</td>
+			<td>TB_QUEUE_EDGE_POLL_INTERVAL_MS</td>
+			<td>25</td>
+			<td> Poll interval for topics related to Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.pack-processing-timeout</td>
+			<td>TB_QUEUE_EDGE_PACK_PROCESSING_TIMEOUT_MS</td>
+			<td>10000</td>
+			<td> Timeout for processing a message pack by Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.pack-processing-retries</td>
+			<td>TB_QUEUE_EDGE_MESSAGE_PROCESSING_RETRIES</td>
+			<td>3</td>
+			<td> Retries for processing a failure message pack by Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.consumer-per-partition</td>
+			<td>TB_QUEUE_EDGE_CONSUMER_PER_PARTITION</td>
+			<td>false</td>
+			<td> Enable/disable a separate consumer per partition for Edge queue</td>
+		</tr>
+		<tr>
+			<td>queue.edge.stats.enabled</td>
+			<td>TB_QUEUE_EDGE_STATS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable statistics for Edge services</td>
+		</tr>
+		<tr>
+			<td>queue.edge.stats.print-interval-ms</td>
+			<td>TB_QUEUE_EDGE_STATS_PRINT_INTERVAL_MS</td>
+			<td>60000</td>
+			<td> Statistics printing interval for Edge services</td>
+		</tr>
+		<tr>
 			<td>queue.integration.partitions</td>
 			<td>TB_QUEUE_INTEGRATION_PARTITIONS</td>
 			<td>3</td>
@@ -5092,14 +5783,21 @@
 		<tr>
 			<td>queue.integration.notifications_topic</td>
 			<td>TB_QUEUE_INTEGRATION_NOTIFICATIONS_TOPIC</td>
-			<td>tb_ie.notifications</td>
-			<td> Default notification topic name used by queue</td>
+			<td>tb_integration_executor.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.integration.downlink_topic</td>
 			<td>TB_QUEUE_INTEGRATION_DOWNLINK_TOPIC</td>
 			<td>tb_ie.downlink</td>
 			<td> Default downlink topic name used by queue</td>
+		</tr>
+		<tr>
+			<td>queue.integration.downlink_topics</td>
+			<td>TB_QUEUE_INTEGRATION_DOWNLINK_TOPICS</td>
+			<td></td>
+			<td> Downlink topic names for integration type (semicolon separated). Example: "MQTT:tb_ie.downlink.mqtt;HTTP:tb_ie.downlink.http"
+ If not specified, the default topic will construct as before - 'downlink_topic' + IntegrationType.name()</td>
 		</tr>
 		<tr>
 			<td>queue.integration.uplink_topic</td>
@@ -5160,6 +5858,30 @@
 			<td>TB_QUEUE_INTEGRATION_EXECUTOR_RESPONSE_POLL_INTERVAL_MS</td>
 			<td>25</td>
 			<td> Interval in milliseconds to poll api response from integration executor microservices</td>
+		</tr>
+		<tr>
+			<td>queue.cloud-event.topic</td>
+			<td>TB_QUEUE_CLOUD_EVENT_TOPIC</td>
+			<td>tb_cloud_event</td>
+			<td> Default topic name for Kafka, RabbitMQ, etc.</td>
+		</tr>
+		<tr>
+			<td>queue.cloud-event.poll-interval</td>
+			<td>TB_QUEUE_CLOUD_EVENT_POLL_INTERVAL_MS</td>
+			<td>25</td>
+			<td> Poll interval for topics related to Cloud Event services</td>
+		</tr>
+		<tr>
+			<td>queue.cloud-event-ts.topic</td>
+			<td>TB_QUEUE_CLOUD_EVENT_TS_TOPIC</td>
+			<td>tb_cloud_event_ts</td>
+			<td> Default topic name for Kafka, RabbitMQ, etc.</td>
+		</tr>
+		<tr>
+			<td>queue.cloud-event-ts.poll-interval</td>
+			<td>TB_QUEUE_CLOUD_EVENT_TS_POLL_INTERVAL_MS</td>
+			<td>25</td>
+			<td> Poll interval for topics related to Cloud Event services</td>
 		</tr>
 	</tbody>
 </table>

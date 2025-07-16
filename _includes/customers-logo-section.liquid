@@ -1,0 +1,18 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign productTag = include.productTag %}
+
+{% if site.data[collectionMap] %}
+    {% assign customersLogosCollection = site.data[collectionMap] %}
+{% else %}
+    {% assign customersLogosCollection = page[collectionMap] %}
+{% endif %}
+
+<section id="tb-customers" class="{{ productTag }}">
+    <div class="tb-customers-content">
+        {% for customerLogo in customersLogosCollection %}
+            <a href="{{ customerLogo[1].href }}">
+                <object data="{{ customerLogo[1].src }}" aria-label="{{ customerLogo[1].aria-label }}"></object>
+            </a>
+        {% endfor %}
+    </div>
+</section>

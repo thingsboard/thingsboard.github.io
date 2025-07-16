@@ -38,3 +38,65 @@ This documentation can help you set up and run your first IoT mobile app, learn 
         </a>
     </div>
 </div>
+
+<br>A compatibility table between the Flutter ThingsBoard PE mobile application and the version of your ThingsBoard PE instance.
+
+<table>
+    <thead>
+        <tr>
+          <td style="width: 50%"><b>ThingsBoard PE version</b></td><td style="width: 50%"><b>Flutter ThingsBoard PE Mobile Application</b></td><td style="width: 50%"><b>Dart ThingsBoard PE Client</b></td>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+            <td>4.0.0PE</td>
+            <td>1.6.0</td>
+            <td>4.0.0</td>
+        </tr>
+         <tr>
+            <td>3.9.0PE</td>
+            <td>1.5.0</td>
+            <td>3.0.0</td>
+        </tr>
+        <tr>
+            <td>3.8.1PE</td>
+            <td>1.4.0</td>
+            <td>2.0.0</td>
+        </tr>
+        <tr>
+            <td>3.8.0PE+</td>
+            <td>1.3.0</td>
+            <td>1.3.0</td>
+        </tr>
+        <tr>
+            <td>3.6.3PE+</td>
+            <td>1.1.0</td>
+            <td>1.1.0</td>
+        </tr>
+        <tr>
+            <td>3.6.2PE+</td>
+            <td>1.0.9</td>
+            <td>1.0.9</td>
+        </tr>
+        <tr>
+            <td>3.6.0PE+</td>
+            <td>1.0.8</td>
+            <td>1.0.8</td>
+        </tr>
+        <tr>
+            <td>3.5.0PE+</td>
+            <td>1.0.7</td>
+            <td>1.0.7</td>
+        </tr>
+        <tr>
+            <td>3.4.2PE+</td>
+            <td>1.0.5</td>
+            <td>1.0.5</td>
+        </tr>
+        <tr>
+            <td>3.4.0PE+</td>
+            <td>1.0.4</td>
+            <td>1.0.4</td>
+        </tr>
+    </tbody>
+</table>

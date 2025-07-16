@@ -34,3 +34,4 @@ Port depends on operation system and may be different:
 - for Windows - **COM**X.  
 
 {% assign wifininaInstallationRequired = "true" %}
+{% assign mbedtlsInstallationRequired="true" %}

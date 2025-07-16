@@ -1,74 +1,134 @@
-
 * TOC
 {:toc}
 
-## Interactive Documentation
+ThingsBoard provides interactive REST API documentation via [Swagger UI](https://swagger.io/){:target="_blank"}. This tool allows you to explore available API methods, understand their parameters, and execute API requests directly from your browser.
 
-{% if docsPrefix == "paas/" or docsPrefix == "pe/"  %}
-ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse ThingsBoard Cloud API documentation using the **[Swagger UI link.](https://thingsboard.cloud/swagger-ui.html)**. 
-{% else %}
-ThingsBoard REST API interactive documentation is available via Swagger UI. For example, you may browse Community Edition demo server API documentation using the **[Swagger UI link.](https://demo.thingsboard.io/swagger-ui.html)**.
-{% endif %}
+## Where to find Swagger UI?
 
-{% if docsPrefix == "paas/" %}
-{% else %}
-Once you will install ThingsBoard server you can open an interactive documentation using the following URL:
-    
-``` 
-http://YOUR_HOST:PORT/swagger-ui.html
+{% if docsPrefix == "pe/" %}
+Every ThingsBoard instance has its own Swagger UI page, accessible at:
+
+```text
+http://$THINGSBOARD_HOST:PORT/swagger-ui.html
 ```
+{: .copy-code}
 
+&#42;Replace **$THINGSBOARD_HOST:PORT** with your actual ThingsBoard server address.
+
+For example, you may browse ThingsBoard Cloud API documentation using the [Swagger UI link](https://{{hostName}}/swagger-ui.html){:target="_blank"}.
+{% endif %}
+{% if docsPrefix == null %}
+Every ThingsBoard instance has its own Swagger UI page, accessible at:
+
+```text
+http://$THINGSBOARD_HOST:PORT/swagger-ui.html
+```
+{: .copy-code}
+
+&#42;Replace **$THINGSBOARD_HOST:PORT** with your actual ThingsBoard server address.
+
+For example, you may browse Community Edition demo server API documentation using the [Swagger UI link](https://demo.thingsboard.io/swagger-ui.html){:target="_blank"}.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+Every [ThingsBoard Cloud](https://thingsboard.cloud/){:target="_blank"} instance has its own Swagger UI page.   
+Browse ThingsBoard Cloud REST API documentation by clicking the button below:
+
+<br>
+<p><a href="https://thingsboard.cloud/swagger-ui.html" target="_blank" class="n-button add-device">ThingsBoard Cloud REST API documentation</a></p>
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+Every [ThingsBoard EU Cloud](https://eu.thingsboard.cloud/){:target="_blank"} instance has its own Swagger UI page.   
+Browse ThingsBoard EU Cloud REST API documentation by clicking the button below:
+
+<br>
+<p><a href="https://eu.thingsboard.cloud/swagger-ui.html" target="_blank" class="n-button add-device">ThingsBoard EU Cloud REST API documentation</a></p>
 {% endif %}
 
-Documentation page will automatically use your credentials, if you have previously authorized on the main login page. 
-You may use “Authorize” button in the top right corner of the documentation page to manually authorize. You may also use this button to authorize as a different user. See below:
+## How to authenticate in Swagger UI?
+
+- If you are already logged in via the main ThingsBoard login page, Swagger UI will automatically use your credentials.
+- You can manually authenticate or authorize as a different user using the "**Authorize**" button in the top-right corner of the Swagger page. Enter the username and password. Then, click "Authorize".
 
 {% include images-gallery.html imageCollection="swagger-ui" %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-
-The easiest way to get your account is to use [ThingsBoard Cloud](https://thingsboard.cloud/signup) server.
-
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" or (docsPrefix == "paas/eu/") %}
+The easiest way to get your account is to use [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"} server.
 {% else %}
-
-See **[live-demo](/docs/{{docsPrefix}}user-guide/live-demo/)** page for more details how to get your account.
-
+See [Live Demo ThingsBoard](/docs/{{docsPrefix}}user-guide/live-demo/){:target="_blank"} page for more details how to get your account.
 {% endif %}
 
-## JWT Tokens
+## How API authentication works?
 
-ThingsBoard uses [JWT](https://jwt.io/) tokens for representing claims securely between the API client (browser, scripts, etc) and the platform. 
-When you login to the platform, your username and password is exchanged to the pair of tokens. 
+ThingsBoard uses [JWT](https://jwt.io/){:target="_blank"} tokens for representing claims securely between the API client (browser, scripts, etc) and the platform.
+When you login to the platform, your username and password is exchanged to the pair of tokens.
 
+- **Access Token (JWT)** – short-lived token, used for executing API calls.
+- **Refresh Token** – used to obtain a new access token when the current one expires.
 
+{% if docsPrefix == "pe/" or docsPrefix == null %}
+The expiration time of main and refresh tokens is [configurable](/docs/user-guide/install/{{docsPrefix}}config/){:target="_blank"} in system settings via **JWT_TOKEN_EXPIRATION_TIME** and **JWT_REFRESH_TOKEN_EXPIRATION_TIME** parameters.
+{% endif %}
+
+Default token expiration:
+
+- **Access Token** is valid for **2.5 hours**.
+- **Refresh Token** is valid for **1 week**.
+
+## How to obtain a JWT token?
+
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+To obtain a JWT token for the user "tenant@thingsboard.org" with password "tenant" on "$THINGSBOARD_URL" (actual ThingsBoard server address), execute the following command:
+
+```text
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             -d '{"username":"tenant@thingsboard.org", "password":"tenant"}' \
+             'http://$THINGSBOARD_URL/api/auth/login'
+```
+{: .copy-code}
+{% endif %}
 {% if docsPrefix == "paas/" %}
-The main token is short-lived token you should use to perform the API calls. The refresh token is used to get new main token once it is expired.
-Default expiration time values are 2.5 hours and 1 week respectively.
+To obtain a JWT token for the user "your_user@company.com" with password "secret", execute the following command:
 
-See sample command below to get the token for user "your_user@company.com" and password "secret":
+```text
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             -d '{"username":"your_user@company.com", "password":"secret"}' \
+             'https://thingsboard.cloud/api/auth/login'
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+To obtain a JWT token for the user "your_user@company.com" with password "secret", execute the following command:
 
-{% else %}
-The main token is short-lived token you should use to perform the API calls. The refresh token is used to get new main token once it is expired.
-The expiration time of main and refresh tokens is [configurable](/docs/user-guide/install/{{docsPrefix}}config/) in system settings 
-via JWT_TOKEN_EXPIRATION_TIME and JWT_REFRESH_TOKEN_EXPIRATION_TIME parameters. Default expiration time values are 2.5 hours and 1 week respectively.
-
-See sample command below to get the token for user "tenant@thingsboard.org", password "tenant" and server "THINGSBOARD_URL":
-
+```text
+curl -X POST --header 'Content-Type: application/json' \
+             --header 'Accept: application/json' \
+             -d '{"username":"your_user@company.com", "password":"secret"}' \
+             'https://eu.thingsboard.cloud/api/auth/login'
+```
+{: .copy-code}
 {% endif %}
 
-{% capture tabspec %}token
-A,get-token.sh,shell,resources/get-token.sh,/docs/reference/resources/get-token.sh
-B,response.json,json,resources/get-token-response.json,/docs/reference/resources/get-token-response.json{% endcapture %}
-{% include tabs.html %}
+Response:
 
-- Now, you should set  'X-Authorization' header to "Bearer $YOUR_JWT_TOKEN". **Make sure** you use main JWT token and not the refresh token.
+```json
+{"token":"$YOUR_JWT_TOKEN", "refreshToken":"$YOUR_JWT_REFRESH_TOKEN"}
+```
+{: .copy-code}
 
-## Java REST API Client
+Once authenticated, use the obtained JWT token in the X-Authorization header for all API requests:
 
-ThingsBoard team provides client library written in Java to simplify consumption of the REST API.
-Please see Java REST API Client [documentation page](/docs/{{docsPrefix}}reference/rest-client/) for more details.
+```text
+X-Authorization: Bearer $YOUR_JWT_TOKEN
+```
+{: .copy-code}
 
-## Python REST API Client
+## Additional tools
 
-ThingsBoard team provides client library written in Python to simplify consumption of the REST API.
-Please see Python REST API Client [documentation page](/docs/{{docsPrefix}}reference/python-rest-client/) for more details.
+For easier integration with the ThingsBoard API, you can use ThingsBoard team client libraries:
+
+- [Java REST API Client](/docs/{{docsPrefix}}reference/rest-client/){:target="_blank"} – client library written in Java to simplify consumption of the REST API.
+- [Python REST API Client](/docs/{{docsPrefix}}reference/python-rest-client/){:target="_blank"} – client library written in Python to simplify the consumption of the REST API.
+
+These clients allow you to create devices, assets, users, and other entities, as well as manage their relationships within ThingsBoard.

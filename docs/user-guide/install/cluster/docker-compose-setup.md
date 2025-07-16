@@ -59,12 +59,7 @@ cd thingsboard/docker
 
 {% capture contenttogglespecqueue %}
 Kafka <small>(default, recommended for on-prem, production installations)</small>%,%kafka%,%templates/install/cluster-queue-kafka.md%br%
-AWS SQS <small>(managed service from AWS)</small>%,%aws-sqs%,%templates/install/cluster-queue-aws-sqs.md%br%
-Google Pub/Sub <small>(managed service from Google)</small>%,%pubsub%,%templates/install/cluster-queue-pub-sub.md%br%
-Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%templates/install/cluster-queue-service-bus.md%br%
-RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/cluster-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/cluster-queue-confluent-cloud.md{% endcapture %}
-
 {% include content-toggle.liquid content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 ## Step 6. Enable monitoring (optional)
@@ -73,6 +68,10 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 ## Step 7. Running
 
+### Create and check required host volumes
+{% include templates/install/docker/docker-compose-setup-volumes.md %}
+
+### Install and run ThingsBoard
 {% assign dockerComposeFileLocation = "" %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 

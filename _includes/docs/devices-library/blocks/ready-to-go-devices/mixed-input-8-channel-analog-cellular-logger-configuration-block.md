@@ -31,7 +31,7 @@ These are the fields which are present in configuration file.
       "mode":"post",
       "path":"api/v1/YOUR_ACCESS_TOKEN/telemetry",
       "attributes_path":"api/v1/YOUR_ACCESS_TOKEN/attributes",
-      "server": "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}",
+      "server": "{{hostName}}",
       "port":80,
       "username":"",
       "password":"",
@@ -64,7 +64,7 @@ Necessary parameters to change for connection:
 |-|-|
 | path | **api/v1/YOUR_ACCESS_TOKEN/telemetry** | Replace **YOUR_ACCESS_TOKEN** with your access token for the device on ThingsBoard. |
 | attributes_path | **api/v1/YOUR_ACCESS_TOKEN/attributes** | Replace **YOUR_ACCESS_TOKEN** with your access token for the device on ThingsBoard. | 
-| server | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard instance address. |
+| server | **{{hostName}}** | Your ThingsBoard instance address. |
 | port | **80** | Your ThingsBoard instance HTTP port. You can Set **port** equal to 443 and **use_ssl** equal to true to use SSL encryption (HTTPS). Either protocol is supported, but HTTPS will consume more cellular data each time data is pushed to the server.|
 
 Other configuration parameters:

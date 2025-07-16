@@ -14,7 +14,7 @@ To install ThingsBoard Arduino SDK - we will need to do the following steps:
 
 {% capture libraryVersion %}
 
-All provided code examples require ThingsBoard Library version {% if wifininaInstallationRequired == "true" %}**0.10.2**{% else %}**0.13.0** or above{% endif %}.  
+All provided code examples require ThingsBoard Library version {% if wifininaInstallationRequired == "true" %}**0.10.2**{% else %}**0.14.0**{% endif %}.  
 
 {% endcapture %}
 
@@ -22,12 +22,15 @@ All provided code examples require ThingsBoard Library version {% if wifininaIns
 
 {% if mbedtlsInstallationRequired == "true" %}
 
-Also, for boards, based on ESP8266 chip we should install the "mbedtls" library.  
+Also, for boards, based on ESP8266 or RP2040 chip we should install the "mbedtls" and "arduino-timer" libraries.  
 
 {% assign mbedtlsInstallation='
     ===
         image: /images/devices-library/basic/arduino-ide/install-mbedtls.png,
         title: Put into library search field "**mbedtls**" and install the library - "***Seeed_Arduino_mbedtls by Peter Yang***"
+    ===
+        image: /images/devices-library/basic/arduino-ide/install-arduino-timer.png,
+        title: Put into library search field "**arduino-timer**" and install the library - "***arduino-timer by Michael Contreras***"
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=mbedtlsInstallation %}

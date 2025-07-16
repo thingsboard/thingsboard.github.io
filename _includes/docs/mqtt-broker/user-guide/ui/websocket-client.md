@@ -9,12 +9,12 @@ TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) 
 
 ![image](/images/mqtt-broker/user-guide/ui/ws-overview.png)
 
-### Connections
+## Connections
 
 TBMQ WebSocket Client allows managing multiple MQTT client connections simultaneously.
 It provides an interface where you can conveniently initiate, monitor and terminate multiple MQTT clients.
 
-#### Add connection
+### Add connection
 
 To add a new Connection, please follow these steps:
 
@@ -23,7 +23,7 @@ To add a new Connection, please follow these steps:
 
 {% include images-gallery.html imageCollection="ws-connection-add" %}
 
-#### Edit connection
+### Edit connection
 
 TBMQ enables modification of WebSocket Client connection parameters even after the connection has been established.
 It is important to understand that changes made to the connection parameters will have immediate effect.
@@ -38,7 +38,7 @@ In order to modify your WebSocket Client connection, please follow these steps:
 
 {% include images-gallery.html imageCollection="ws-connection-edit" %}
 
-#### Delete connection
+### Delete connection
 
 In order to delete the WebSocket Client connection, please follow these steps:
 1. Go to the _WebSocket Client_ page and click on the arrow icon to expand the list of connections.
@@ -47,11 +47,11 @@ In order to delete the WebSocket Client connection, please follow these steps:
 
 {% include images-gallery.html imageCollection="ws-connection-delete" %}
 
-#### Connection settings
+### Connection settings
 
 WebSocket connections allow users to establish and configure various parameters, including client credentials, session settings, and last will settings.
 
-##### Connection details
+#### Connection details
 * **Name**. Name of the WebSocket Client connection, must be unique.
 * **URL**. Typically, contains the protocol (e.g., 'ws', 'wss'), followed by the hostname and port number of your MQTT broker. 
 /mqtt is standard path that should be used for MQTT over Websockets. Example: 'ws://localhost:8084/mqtt'.
@@ -64,7 +64,7 @@ Password input field appears when the selected credentials require password to e
 
 {% include images-gallery.html imageCollection="ws-connection-details" %}
 
-##### Advanced settings
+#### Advanced settings
 
 * **Clean start**. When enabled (true), the broker will discard any previous session and will start a new one. This means that all subscriptions will be removed and all undelivered messages will be lost.
 * **Keep alive**.  This is the idle time the MQTT client is willing to wait between control packets (PUBLISH, PINGREQ, etc.) sent to the server. It allows you to keep the connection alive during periods of inactivity.
@@ -81,9 +81,9 @@ If you select MQTT Version 5, additional parameters are available:
 
 {% include images-gallery.html imageCollection="ws-connection-advanced" %}
 
-##### Last will
+#### Last will
 
-The Last Will is an optional feature in MQTT that lets user specify a message to be sent by the MQTT broker, in the event of an ungraceful disconnection of the client.
+The Last Will (optional) is the feature in MQTT that lets user specify a message to be sent by the MQTT broker, in the event of an ungraceful disconnection of the client.
 Here's a closer look at the Last will properties:
 * **Topic**. MQTT topic on which your Last Will message will be published.
 * **QoS**. Quality of Service level for the Last Will message.
@@ -94,14 +94,14 @@ In case you select MQTT Version 5, please configure additional features:
 * **Payload Format Indicator**. When set to true, it indicates the payload is UTF-8 encoded character data. If false or unset, the payload is assumed to be unspecified binary data.
 * **Content Type**. Describes the form of the content carried by the will message.
 * **Will Delay Interval**. The time period the broker needs to wait after the client gets disconnected ungracefully, before publishing the will message.
-* **Message Expiry Interval**. The duration within which the will message should be delivered since it was published.
+* **Message Expiry Interval**. The duration within which the will message can be delivered since it was published.
 * **Response Topic**. A topic to which the broker may publish a response after broadcasting the will message.
 * **Correlation Data**. Binary data used to match the response message from the broker after it broadcasts the will message.
 * **User Properties**. It allows the client to include additional customized metadata to the Will message, in the form of an object of key-value pairs.
 
 {% include images-gallery.html imageCollection="ws-connection-will" %}
 
-#### Connection status
+### Connection status
 
 In TBMQ, we provide a feature to store the temporary logs of the WebSocket Client statuses for your convenience. This allows you to monitor and troubleshoot the behavior of your client connections more effectively.
 To access these logs, simply hover your cursor over the current status label. This action brings up a detailed status update history, providing vital insight into the sequence of connection-related events.
@@ -114,12 +114,12 @@ The status of the WebSocket Client may be one of the following:
 
 ![image](/images/mqtt-broker/user-guide/ui/ws-logs.png)
 
-### Subscriptions
+## Subscriptions
 
 MQTT subscriptions are an integral part of the MQTT publish-subscribe messaging protocol, allowing clients to subscribe to one or more topics.
 Users can manage subscriptions by creating new ones, modifying existing ones, or deleting unnecessary ones.
 
-#### Add subscription
+### Add subscription
 
 In order to add Subscription please follow next steps:
 1. Go to the _WebSocket Client_ page and click on the button _Add Subscription_, represented by the _plus_ icon.
@@ -127,7 +127,7 @@ In order to add Subscription please follow next steps:
 
 {% include images-gallery.html imageCollection="ws-subscription-add" %}
 
-#### Edit subscription
+### Edit subscription
 
 To modify a subscription, select the edit icon located in the respective row to open the dialog _Edit subscription_.
 After making necessary changes,  remember to confirm by clicking on the _Save_ button.
@@ -137,7 +137,7 @@ After successfully resubscribing, the client will begin receiving messages publi
 
 {% include images-gallery.html imageCollection="ws-subscription-edit" %}
 
-#### Delete subscription
+### Delete subscription
 
 Below are the steps to remove a subscription:
 1. Identify the specific subscription in the Subscriptions list. Click on the delete icon situated in the corresponding row.
@@ -145,7 +145,7 @@ Below are the steps to remove a subscription:
    
 {% include images-gallery.html imageCollection="ws-subscription-delete" %}
 
-#### Subscription settings
+### Subscription settings
 
 Subscription settings encompass various configurations related to how a client subscribes to MQTT topics. 
 These settings typically include parameters such as the topic filter, QoS (Quality of Service) level, and any additional options specific to the MQTT client or broker being used.
@@ -160,10 +160,11 @@ If false, messages have the RETAIN flag set to 0.
   * 2 - do not send retained messages at subscription time.
 * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
 * **Color**. Color is used for easier differentiation of the messages in the messages table. Can be changed.
+* **Subscription Identifier**. A unique identifier (numeric value greater than 0) assigned to a subscription. It is used to track, manage, and reference a specific subscription, ensuring that each subscription can be uniquely distinguished from others.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-subscription-overview.png)
+{% include images-gallery.html imageCollection="ws-subscription-overview" %}
 
-### Messages
+## Messages
 
 The Messages table functions as a message log, displaying the most recent messages for your review and reference. 
 Each row in this table corresponds to a single published or received message and provides a snapshot of key message attributes:
@@ -177,14 +178,14 @@ Each row in this table corresponds to a single published or received message and
 
 {% include images-gallery.html imageCollection="ws-table-msg" %}
 
-#### Messages filtering
+### Messages filtering
 The table messages can be filtered by:
 * **Type 'All/Received/Published'** - click on the type label in the header of the Messages table.
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
 ![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
 
-#### Publish a message
+### Publish a message
 
 The WebSocket Client page includes a user-friendly interface features that allow users to publish messages using the WebSocket MQTT protocol.
 In order to successfully publish a message using TBMQ, please make sure that:

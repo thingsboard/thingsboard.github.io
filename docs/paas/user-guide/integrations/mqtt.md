@@ -52,4 +52,5 @@ add_rule_node:
 
 ---
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/integrations/mqtt.md %}

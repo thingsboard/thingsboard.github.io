@@ -7,39 +7,66 @@
     </p>
   </div>
   <div id="choose-plan">
-    <div class="options">
-      <div class="options__container" id="cloud-option" onClick="openChosenPlan('cloud-content')">
-        <span>Cloud</span>
-      </div>
-      <div class="options__container" id="self-managed-option" onClick="openChosenPlan('self-managed-content')">
-        <span>Self-Managed</span>
-      </div>
-      <div class="background bg-left" id="options-bg"></div>
-    </div>
-    <div id="cloud-content" class="tab-content">
-      <div class="steps-container">
-        <div class="step step-1">
-          <h4 class="step__header">Step 1</h4>
-          <p class="step__content">Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button</p>
+    <div id="cloud-options" class="col justify-content-center hidden cloud-options">
+      <div class="cloud-options__wrapper">
+        <div class="cloud-options__item" id="north-america-cloud-option" onClick="selectCloudOption('north-america-cloud-option')">
+          <h3>North America</h3>
         </div>
-        <div class="step step-2">
-          <h4 class="step__header">Step 2</h4>
-          <p class="step__content">Choose “ThingsBoard + Trendz” and select the most suitable plan for you</p>
+        <div class="cloud-options__item" id="europe-cloud-option" onClick="selectCloudOption('europe-cloud-option')">
+          <h3>Europe</h3>
         </div>
-        <div class="step step-3">
-          <h4 class="step__header">Step 3</h4>
-          <p class="step__content">Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu</p>
-        </div>
-      </div>
-      {% include images-gallery.html imageCollection="cloudPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
-      <div class="modal-wizard__button">
-        <a href="https://thingsboard.cloud/billing"
-           target="_blank"
-           class="gtm_button goToTBCloud"
-           onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
       </div>
     </div>
-    <div id="self-managed-content" class="tab-content">
+    <div id="cloud-content" class="plan-content">
+      <div id="north-america-cloud-tab" class="tab-content">
+        <div class="steps-container">
+          <div class="step step-1">
+            <h4 class="step__header">Step 1</h4>
+            <p class="step__content">Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button</p>
+          </div>
+          <div class="step step-2">
+            <h4 class="step__header">Step 2</h4>
+            <p class="step__content">Choose “ThingsBoard + Trendz” and select the most suitable plan for you</p>
+          </div>
+          <div class="step step-3">
+            <h4 class="step__header">Step 3</h4>
+            <p class="step__content">Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu</p>
+          </div>
+        </div>
+        {% include images-gallery.html imageCollection="northAmericaCloudPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
+        <div class="modal-wizard__button">
+          <a href="https://thingsboard.cloud/billing"
+             target="_blank"
+             class="gtm_button goToTBCloud"
+             onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
+        </div>
+      </div>
+
+      <div id="europe-cloud-tab" class="tab-content">
+        <div class="steps-container">
+          <div class="step step-1">
+            <h4 class="step__header">Step 1</h4>
+            <p class="step__content">Log in to ThingsBoard Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button</p>
+          </div>
+          <div class="step step-2">
+            <h4 class="step__header">Step 2</h4>
+            <p class="step__content">Choose “ThingsBoard + Trendz” and select the most suitable plan for you</p>
+          </div>
+          <div class="step step-3">
+            <h4 class="step__header">Step 3</h4>
+            <p class="step__content">Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu</p>
+          </div>
+        </div>
+        {% include images-gallery.html imageCollection="europeCloudPlan" max-width="100%" max-height="100%" preview="false" align="space-between" %}
+        <div class="modal-wizard__button">
+          <a href="https://eu.thingsboard.cloud/billing"
+             target="_blank"
+             class="gtm_button goToTBCloud"
+             onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard EU Cloud</a>
+        </div>
+      </div>
+    </div>
+    <div id="self-managed-content" class="plan-content tab-content">
         <div class="steps-container" >
           <div class="step step-1">
             <h4 class="step__header">Step 1</h4>
@@ -105,28 +132,53 @@
 
     if(plan) {
       chosenPlan = plan;
-      console.log(plan)
+    }
+
+    if(id === 'cloud-content') {
+      let isNorthAmericaCloud = e.target.classList.contains('north-america');
+      selectCloudOption(isNorthAmericaCloud ? 'north-america-cloud-option' : 'europe-cloud-option')
     }
 
     changePurchaseButtonId(id, plan);
   }
 
   function openChosenPlan(id){
-    $(`.tab-content`).hide();
+    $(`.plan-content`).hide();
     $(`#${id}`).show();
 
     if(id === 'cloud-content') {
+      $('#cloud-options').removeClass('hidden');
       $('#options-bg').removeClass('bg-right');
       $('#options-bg').addClass('bg-left');
       $('#cloud-option').addClass('selected');
       $('#self-managed-option').removeClass('selected');
     } else {
+      $('#cloud-options').addClass('hidden');
       $('#options-bg').removeClass('bg-left');
       $('#options-bg').addClass('bg-right');
       $('#cloud-option').removeClass('selected');
       $('#self-managed-option').addClass('selected');
     }
   }
+
+  function selectCloudOption(id) {
+    if(id === 'north-america-cloud-option') {
+      $('#options-bg').removeClass('bg-right');
+      $('#options-bg').addClass('bg-left');
+      $('#north-america-cloud-option').addClass('active');
+      $('#europe-cloud-option').removeClass('active');
+      $('#europe-cloud-tab').hide();
+      $('#north-america-cloud-tab').show();
+    } else {
+      $('#options-bg').addClass('bg-right');
+      $('#options-bg').removeClass('bg-left');
+      $('#north-america-cloud-option').removeClass('active');
+      $('#europe-cloud-option').addClass('active');
+      $('#europe-cloud-tab').show();
+      $('#north-america-cloud-tab').hide();
+    }
+  }
+
   function closeWizard(e){
     e.preventDefault();
     $('.modal-wizard').addClass('hidden');
@@ -142,13 +194,13 @@
     reportTrendzWizrdAction('wizard', plan);
 
     if(plan === 'maker') {
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '10ba4770-e4f4-11ed-aaaa-83bc8f41f932', 'Trendz Analytics Maker', 'R9G5JCVJZG')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '10ba4770-e4f4-11ed-aaaa-83bc8f41f932', 'Trendz Analytics Maker', 'ROQSSS8UGU')
     } else if(plan === 'prototype') {
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '2985f1a0-7afd-11ea-951e-b77b877a367b', 'Trendz Analytics Prototype', 'R9G5JCVJZG')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '2985f1a0-7afd-11ea-951e-b77b877a367b', 'Trendz Analytics Prototype', 'ROQSSS8UGU')
     } else if(plan === 'startup'){
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '018b7520-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'R9G5JCVJZG')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '018b7520-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'ROQSSS8UGU')
     } else if(plan === 'business') {
-      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '6e3bb4f0-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'R9G5JCVJZG')
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '6e3bb4f0-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'ROQSSS8UGU')
     }
   }
 

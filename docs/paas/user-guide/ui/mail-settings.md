@@ -2,8 +2,22 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: Mail Settings
+title: Mail server configuration
 description: ThingsBoard IoT platform mail settings
+
+mail-server-configuration-1:
+    0:
+        image: /images/user-guide/ui/mail/mail-server-configuration-1-paas.png
+        title: 'Go to the "Mail server" tab of the "Settings" page. Uncheck the "Use System Mail Server Settings" option to configure your own mail server settings;'
+    1:
+        image: /images/user-guide/ui/mail/mail-server-configuration-2-paas.png
+        title: 'Fill in the "Mail From" field, select an SMTP provider, and proceed to the connection settings: choose the SMTP protocol, specify host and port of the SMTP server, and set the timeout;'
+    2:
+        image: /images/user-guide/ui/mail/mail-server-configuration-3-paas.png
+        title: 'Optionally, enable TLS and Proxy;'
+    3:
+        image: /images/user-guide/ui/mail/mail-server-configuration-4-paas.png
+        title: 'Enter credentials for SMTP authentication. Use either the "Basic" or "OAuth 2.0" authentication method. Now, you can send a test email to verify the settings. Finally, click "Save" to complete the mail server configuration.'
 
 sendgrid-configuration:
     0:
@@ -102,4 +116,5 @@ add-api-permissions:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/mail-settings.md %}

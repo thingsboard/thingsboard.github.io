@@ -12,21 +12,21 @@ You can send Slack notifications to users from your workspace only
 
 Tenant administrator is able to setup to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
 
-### Create an application in Slack. Get Slack API token
+## Create an application in Slack. Get Slack API token
 
 To configure Slack settings in Thingsboard, first register an application in Slack API. To do this, open [get Slack API token](https://api.slack.com/tutorials/tracks/getting-a-token) page. Next, follow these steps:
 
 {% include images-gallery.html imageCollection="slackProviderSettings" showListImageTitles="true" %}
 
-{% unless docsPrefix == 'paas/' %}
-### Slack settings configuration as System administrator
+{% unless docsPrefix contains 'paas/' %}
+## Slack settings configuration as System administrator
 
 Login to your ThingsBoard UI as a system administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".
 
 {% include images-gallery.html imageCollection="thingsboardSystemAdminSettings" %}
 {% endunless %}
 
-### Slack settings configuration as Tenant administrator
+## Slack settings configuration as Tenant administrator
 
 Login to your ThingsBoard UI as a tenant administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".
 

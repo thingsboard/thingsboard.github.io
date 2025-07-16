@@ -11,7 +11,7 @@ description: Triggering email notifications upon IoT Device data thresholds
 {:toc}
 
 In this short tutorial, we will explain how to configure Email Plugin to distribute alarms to recipients via email.
-We will use [Live Demo](https://demo.thingsboard.io) Thignsboard server and [SendGrid](http://www.sendgrid.com) SMTP API in this tutorial. 
+We will use [Live Demo](https://demo.thingsboard.io) Thignsboard server and [SendGrid](https://sendgrid.com/) SMTP API in this tutorial. 
 The Email plugin implementation is based on [Java Mail](https://en.wikipedia.org/wiki/JavaMail) and may be easily configured to other mail servers.
   
 ## SMTP server parameters

@@ -8,6 +8,212 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.1.0 (Jul 3, 2025) {#v41}
+
+Everything from [TB CE v4.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Ability to reprocess historical data with the Calculated Fields;
+  * Added new Calculated Field argument source: current owner;
+  * Secrets storage;
+  * Long-running task manager;
+
+* UI
+
+  * Ability to import data converter from converters library;
+  * Improved layout formatting in the translation map editor;
+  * Added color palette for Value stepper and Two-segment button widgets;
+  * Added MQTT version selection for integrations;
+
+**Bug fixes**
+
+* Fixed requests for saving custom translation;
+* Fixed pagination display in Schedule events/blob entity tables;
+* Updated web report dependencies;
+
+## v4.0.2 (Jul 3, 2025) {#v402}
+
+Everything from [TB CE v4.0.2](https://github.com/thingsboard/thingsboard/releases/tag/v4.0.2) with the following bug fixes.
+
+**Improvements and bug fixes**
+
+* Base64-encoded vendor and model images instead of GitHub url in Converter library
+* Fixed styling in OPC-UA integration configuration form and add integration dialog
+* Fixed issue where 'Apply changes' button was active without changes in TCP integration
+* Fixed issue with adding data converter on slow network
+* Fixed configDirective in twilio rule-nodes
+
+## v4.0.1 (Apr 22, 2025) {#v401}
+
+Everything from [TB CE v4.0.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.0.1) with the following bug fixes.
+
+**Bug fixes**
+
+* Fixed entities-table-widget export data if column is not included in export
+* Fixed email issue with '+' in self-registration and improve user activation flow
+* Fixed raw payload update in Data Converter 2.0 test dialog
+* Fixed issue where changing script language in Data Converter reset function content to default
+
+## v4.0.0 (Apr 15, 2025) {#v40}
+
+Everything from [TB CE v4.0](https://github.com/thingsboard/thingsboard/releases/tag/v4.0) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Typed uplink data converters designed for use with a specific integration type;
+  * Improved performance of the aggregation rule node;
+  * Improved vendors and models selection in converter library;
+  * Improved integration executor performance using parallel requests to Redis cache;
+
+* UI
+
+  * SCADA: Oil & Gas drilling system solution template;
+  * SCADA: Energy management solution template;
+  * Solution templates cards redesign;
+  * Added debug configuration option to the Data converters table;
+  * Added scheduler event types autocomplete in alias configuration;
+  * Added option of data export for gauge widgets basic settings;
+  * Added home dashboard handling for mobile signup;
+  * Changed sort order in scheduler events;
+  * Captcha version is now required for self-registration form;
+
+* Edge
+
+  * Avoid creation of unnecessary public customers during Edge connection;
+
+**Bug fixes**
+
+* Fixed the customer details dashboard autocomplete;
+* Fixed converter library arrow button position for small description;
+* Fixed converter library model search;
+* Fixed entities table content export;
+* Fixed help link for mail template settings;
+* Fixed incorrect help container size for custom actions in group actions;
+* Fixed placement of IoT Hub name input for Azure Event Hub;
+* Fixed converter library for ThingPark and ThingParkEnterprise;
+* Fixed entity data query bug;
+* Fixed integration daily activity stats when using dedicated events datasource;
+* Fixed relations cleanup from group after OTA removing;
+* Fixed timeseries table export data with latest;
+* Fixed untranslated error message on login page;
+* Prevented converter type changes via API;
+
+## v3.9.1 (Feb 19, 2025) {#v391}
+
+Everything from [TB CE v3.9.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.9.1) with the following improvements and bug fixes.
+
+**Bug fixes**
+
+  * White labeling: Added validation for custom translation keys;
+  * White labeling: Custom menu encoding fix;
+  * White labeling: Fixed OAuth 2 login redirect for white-labeled domains;
+  * Integrations: Fixed debug settings translation;
+  * Assets: Fixed database error when customer user is filtering assets by profile;
+  * Notification center: Fixed permission check;
+  * Queries: Fixed some corner cases in "entities by group name" query;
+  * Queries: Fixed swagger description for entities by group name filter;
+  * Dashboards: Fixed opening the default dashboard without dashboard group permission in fullscreen;
+
+
+## v3.9.0 (Dec 31, 2024) {#v39}
+
+Everything from [TB CE v3.9](https://github.com/thingsboard/thingsboard/releases/tag/v3.9) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Notifications localization;
+  * Updated default converters;
+  * Migrated self-registration notifications to notification center;
+  * Single storage for all tenant domains across all related entities;
+  * Housekeeper TTL cleanup implementation for blob entities;
+  * Advanced debug mode settings for Integrations and Converters;
+
+* UI
+
+  * Improved generation of help links;
+  * Added description column for converters table;
+  * Added ability to reset white labeling to default;
+  * Added auto scroll down when adding new subitem in custom menu;
+  * Updated navigation buttons of the Water Metering solution template;
+
+**Bug fixes**
+
+* Fixed entity hierarchy widget not displaying entity groups;
+* Fixed integration rate limits per tenant;
+* Fixed fuel level monitoring template;
+* Fixed error when making entity group private;
+* Fixed incorrect display of copy button in custom translate (Firefox);
+* Fixed user activation link refresh when resending activation email;
+* Fixed entitiesByGroupNameFilter with non-empty ownerId;
+* Fixed opening default dashboard without dashboard group permission;
+* Fixed missing new menu items in previously created custom menu;
+* Fixed mail template and self-registration editor configuration;
+* Fixed updated base URL in login white labeling;
+* Fixed NPE during persist integration statistics;
+* Fixed vendor logo display in converter library;
+* Fixed issue with entity groups import by version control;
+* Solutions template custom actions typo fixes;
+
+
+## v3.8.1 (Oct 15, 2024) {#v381}
+
+Everything from [TB CE v3.8.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.8.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Improved resource cleanup on 'check connection' in the integration center;
+
+**Bug fixes**
+
+* Fixed autoplay of the solution template video in Chrome;
+* Added support for Ubuntu 24.04 in the web report;
+* Fixed custom menu retrieval for public users;
+
+## v3.8.0 (Oct 3, 2024) {#v38}
+
+Everything from [TB CE v3.8](https://github.com/thingsboard/thingsboard/releases/tag/v3.8) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Improved query performance for findByTenantsIdsAndRoleId (notification system);
+  * Added validation for domain and base URL;
+  * Added data converter library;
+  * Added caching for entity group service;
+  * Refactoring of the 'Change Owner' node;
+
+* UI
+
+  * Entity groups 'On row click' action hint;
+  * Changed example of 'Copy Entity Id to buffer' custom action function for entity groups;
+  * Added error handling for crash and close events on web pages, and improved logging for WebReport component;
+  * Added possibility to choose converter for specific device using converter library;
+
+**Bug fixes**
+
+  * Fixed group entities table 'navigate to other dashboard' action 'open in a new browser tab' option not working;
+  * Fixed permission denied when opening user profile if WL is disabled;
+  * Fixed deeplink retrieval for cases when tenant/customer set base url without http schema;
+  * Fixed default uplink converter for ChirpStack, LORIOT, TTN, and TTI integrations;
+  * Fixed NoClassDefFoundError in Twilio voice node;
+  * Fixed getEntityGroupPermissions;
+  * Fixed typo in scheduler short labels for day week;
+  * Fixed issue where login WL baseURL auto-generates after saving instead of displaying the URL saved on the server;
+  * Fixed color KPN icon integration and optimize this icon;
+  * Fixed Kinesis integration;
+  * Fixed NPE during saving events from remote integration;
+  * Fixed mobile dashboard configuration for Waste Management and Assisted Living solution templates;
+  * Removed 'enable data export' option for static widgets;
+  * Hidden configuration hint button of mobile qr code widget for customers or users without permissions;
+
 ## v3.7.0 (Jun 17, 2024) {#v37}
 
 Everything from [TB CE v3.7](https://github.com/thingsboard/thingsboard/releases/tag/v3.7) with the following improvements and bug fixes.
@@ -119,7 +325,7 @@ Everything from [TB CE v3.6.1](https://github.com/thingsboard/thingsboard/releas
 
 **Bug fixes**
 
- * Fixed add edge dialog by @deaflynx;
+ * Fixed add edge dialog;
  * Fixed converters component debug mode slider always on;
  * Fixed Smart Irrigation template;
  * Fixed incorrect recipient dialog title;
@@ -133,7 +339,7 @@ Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases
 
 * Core & Rule Engine
 
-  * Default converters for most Integrations with well-defined message forma;
+  * Default converters for most Integrations with well-defined message format;
   * Fuel level monitoring solution template;
   * Move integration rate limits configuration to tenant profile;
   * Improved validation for group permissions, group owner, and resource deletion;
@@ -168,7 +374,7 @@ Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases
 * UI:
 
   * Fixed dashboard fullscreen button;
-  * Fixed initial value for scheduler event start time when creating by clicking on calendar day;
+  * Fixed initial value for scheduler event start time when creating;
   * Fixed for group entities table excessive api call;
   * Fixed for custom translation and menu json content placeholder displayed in one line on firefox;
   * Fixed tenant administrators recipients filter in notification center;
@@ -183,13 +389,13 @@ Everything from [TB CE v3.5.1](https://github.com/thingsboard/thingsboard/releas
 
 * UI:
   
-  * Fixed missing query params when redirecting old dashboard URL by @vvlladd28
-  * Fixed dashboard link resent dashboard widget by @vvlladd28
-  * Fixed buttons trigger by enter press fortegrations by @ArtemDzhereleiko
-  * Fixed TCP integration handler configuration by @ArtemDzhereleiko
-  * Fixed customer hierarchy update for entity group by @ArtemDzhereleiko
-  * Fixed solution template documentation links by @ArtemDzhereleiko
-  * Removed change owner action for system administrator by @ArtemDzhereleiko
+  * Fixed missing query params when redirecting old dashboard URL;
+  * Fixed dashboard link resent dashboard widget;
+  * Fixed buttons trigger;
+  * Fixed TCP integration handler configuration;
+  * Fixed customer hierarchy update for entity group;
+  * Fixed solution template documentation links;
+  * Removed change owner action for system administrator;
   
 ## v3.5.0 (May 9, 2023) {#v35}
 
@@ -219,7 +425,7 @@ Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases
 * Fixed deletion of solution template entities;
 * Fixed solution template scheduler event creation;
 * Fixed column key mapping for asset_profile;
-* Fixed search for entity views by customer;
+* Fixed search for entity views;
 * fixed opc integration host configuration;
 * Fixed no outgoing message issue when doCalculate fails in Aggregate Latest node;
 * Fixed telemetry/attribute update while device bulk import;
@@ -233,7 +439,7 @@ Everything from [TB CE v3.4.4](https://github.com/thingsboard/thingsboard/releas
 
 * Core & Rule Engine:
   
-  * Fixed check alarm permissions by originator;
+  * Fixed check alarm permissions;
   * Fixed TBEL to MVEL in air quality monitoring template;
   * Fixed SI attribute filtering;
   * Fixed 'twilio voice' node;
@@ -311,7 +517,7 @@ Everything from [TB CE v3.4.1](https://github.com/thingsboard/thingsboard/releas
   * Fixed Azure IoT Hub integration;
 * UI:
   * Added support Login WL advanced CSS in 2FA login form;
-  * Fixed filtering by error text in Integrations and Data Converters event tables;
+  * Fixed filtering;
   * Fixed entity group autocomplete;  
   * Upgraded ExcelJS and fixed style in empty cell data;
 * Web Report:
@@ -362,7 +568,7 @@ Everything from [TB CE v3.3.4](https://github.com/thingsboard/thingsboard/releas
 **Bug Fixes**
 
 * Core & Rule Engine:
-  * Origin Service ID is not present in RPC requests triggered by scheduler events;
+  * Origin Service ID is not present in RPC requests triggered;
   * Jenkins Repository url fix;
 * UI:
   * Fixed scheduler dialog;
@@ -441,7 +647,7 @@ Main features:
   * Ignore emails api usage when using external mail sender;
 * UI: 
   * Added "Terms Of Use" for Self Registration;
-  * Added the ability to set the background for login page by Advanced CSS 
+  * Added the ability to set the background for login page;
   * Added Role, Integration, Converter, Group and Scheduler max length fields validation;
   * Added disable export (for notification) in Api Usage dashboard; 
 * Integrations: 
@@ -489,7 +695,7 @@ Everything from [TB CE v3.3](https://github.com/thingsboard/thingsboard/releases
 
 Main features:
 
-* Improve MQTT integration performance by using async implementation;
+* Improve MQTT integration performance;
 * Improve ChirpStack integration validation - application server url and API token are now required;
 * CoAP integration with DTLS mode support;
 * Confirm dialog in save device group;
@@ -501,7 +707,7 @@ Main features:
 Bug fixes:
 
 * Customer can not see some data of sub-customer in the dashboard;
-* MQTT based integrations, added field for setting up max bytes in message;
+* MQTT based integrations, added field for setting up max;
 * TLS connectivity for remote integrations;
 * Incorrect work of the asset menu when the user is active / inactive edit mode;
 * Manage credentials button in the device group;
@@ -518,7 +724,7 @@ Main features:
 * Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
 * Azure Event Hub Integration is updated to use new SDK;
 * Added new version of ["Alarms Count Node"](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/#alarms-count-node).
-* Added "Duplicate to group entities by group name" rule node;
+* Added "Duplicate to group entities;
 * Added ability to aggregate data on each message in the "Aggregate stream node".
 * Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".
 * Extend column export parameters in entities and alarms table for CSV export;
@@ -536,7 +742,7 @@ Bug Fixes:
 * Can't change the role type (Generic vs Group) if it is already used;
 * Fix tb-web-report docker image;
 * UI: Fixed validation of credentials in the LORIOT integration;
-* UI: Fix entities by group name alias - do not set owner id when groupStateEntity is disabled;
+* UI: Fix entities;
 
 ## v3.2.1 (January 26, 2021)
 
@@ -584,7 +790,7 @@ Main features:
 
 Bug Fixes:
 
- * Critical bug fix for alarm search query when sorting by entity key;
+ * Critical bug fix for alarm search query when sorting;
  * Show correct time for device profiles scheduler preview; 
  * Added proxy for reCaptcha.
 
@@ -620,7 +826,7 @@ Bug Fixes:
 * UI: Limit Aggregation Time Unit;
 * Fixed query in case generic is not set and entity group ids is present;
 * Fixed entity data query - replace bool_or with max;
-* Fixed search by type for user entities query;
+* Fixed search;
 * Fixed for text search in entity selection;
 * Fixed Tenant User queries with a combination of generic and group permissions;
 * Removed PostgreSQL from tb-pe image;
@@ -725,7 +931,7 @@ Everything from [TB CE v2.4.3](https://github.com/thingsboard/thingsboard/releas
 Main features:
 
  - New Integration: Actility ThingPark Enterprise;
- - Added new alias: "Entities by group name". 
+ - Added new alias: "Entities;
  
 Additional features:
 
@@ -796,7 +1002,7 @@ Additional features:
 
 Bug fixes:
 
-- Fixed matching by FQN and ID in OPC-UA integration;
+- Fixed matching;
 - Fixed whitelabeling issues for subcustomers;
 - Fixed owners cache;
 - Add validation to Group Permissions Controller;
@@ -843,7 +1049,7 @@ Bug fixes:
 
 - Fixed timezone processing of scheduler events;
 - Fixed OPC-UA integration reconnect procedure;
-- Fixed issue with multiple creation of devices by integration;
+- Fixed issue with multiple creation of devices;
 - Improve Platform Integrations initialization;
 - UI: Fixed "Allow white-labeling" settings;
 - UI: Fixed issue with labels rendering on IE9+;

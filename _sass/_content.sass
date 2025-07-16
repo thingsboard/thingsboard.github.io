@@ -2,7 +2,7 @@
   position: relative
   padding: 50px 30px 20px 30px
   overflow: hidden
-  font-size: 16px
+  font-size: 14px
 
   & > div
     height: 100%
@@ -82,7 +82,7 @@ $header-clearance: 210px
     pointer-events: none
 
   h1
-    font-size: 32px
+    font-size: 36px
     padding-right: 60px
 
   h2
@@ -99,9 +99,9 @@ $header-clearance: 210px
     font-weight: 500
 
   p
-    font-size: 16px
+    font-size: 14px
     font-weight: 400
-    line-height: 1.5em
+    line-height: 24px
 
   p + p
     margin-top: 10px
@@ -131,6 +131,7 @@ $header-clearance: 210px
 
   li
     margin-bottom: 0.75em
+    line-height: 24px
 
   table.includecode
     width: 100%
@@ -158,11 +159,15 @@ $header-clearance: 210px
     > tbody, > thead
       > tr
         > th, > td
-          font-size: 16px
+          font-size: 14px
           padding: 12px 16px
           text-align: left
           margin: 0
           word-break: break-word
+          b
+            font-weight: 500
+          strong
+            font-weight: 500
         > th
           font-weight: normal
     > thead
@@ -215,8 +220,8 @@ $header-clearance: 210px
 
     li
       padding: 0
-      line-height: 1.5em
-      margin-bottom: 0
+      line-height: 24px
+      margin-bottom: 4px
 
     a
       position: relative
@@ -653,9 +658,6 @@ $header-clearance: 210px
           background-image: url(/images/github_icon.png)
 
         a:nth-child(3)
-          background-image: url(/images/gitter_icon.png)
-
-        a:nth-child(4)
           background-image: url(/images/stackoverflow_icon.png)
 
       #gettingHelp
@@ -673,12 +675,10 @@ $header-clearance: 210px
             max-width: 400px
 
         a:nth-child(1)
-          background-image: url(/images/gitter_icon.png)
+
+          background-image: url(/images/github_icon.png)
 
         a:nth-child(2)
-          background-image: url(/images/google_groups_icon.png)
-
-        a:nth-child(3)
           background-image: url(/images/stackoverflow_icon.png)
 
   a.feature-card, .feature-card

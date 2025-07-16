@@ -109,7 +109,7 @@ Approximate infrastructure cost, respectively, is ~100 USD per month.
 Single ThingsBoard PE perpetual license (below v3.0) cost is 2,999 USD (including with optional updates and basic support within initial year of usage). 1,199 USD is the respective pricing for the subsequent years of software updates + basic support.
 
 TCO: ~350 USD per month. This price correlates with 0.035 USD per month per device, while the amount of devices is 10k. 
-Adding [Premium support](/docs/services/support/) package results in ~850 USD per month or 0.085 USD per month per device.  
+Adding [Premium support](/services/support/) package results in ~850 USD per month or 0.085 USD per month per device.  
 
 **Comments and Recommendations**:
 
@@ -158,7 +158,7 @@ Approximate infrastructure cost: ~250 USD/month.
 Single ThingsBoard PE perpetual license costs 2,999 USD (including optional updates and basic support within initial year of usage). 1,199 USD  is the respective pricing for the subsequent years of software updates + basic support.
 
 TCO: ~500 USD per month or 0.05 USD per month per device for up to 10k devices use case. 
-Adding [Premium support](/docs/services/support/) package results in ~1000 USD per month or 0.1 USD per month per device.  
+Adding [Premium support](/services/support/) package results in ~1000 USD per month or 0.1 USD per month per device.  
 
 ### Cluster deployment with the Microservices architecture (Scenario C)
 

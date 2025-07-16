@@ -5,6 +5,7 @@ description:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 
 * TOC
 {:toc}

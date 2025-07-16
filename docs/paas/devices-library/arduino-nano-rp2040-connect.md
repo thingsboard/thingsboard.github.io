@@ -12,4 +12,5 @@ docsPrefix: paas/
 * TOC
 {:toc}
 
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/arduino-nano-rp2040-connect.md %}

@@ -27,7 +27,7 @@ Note: We will reference the license key you have obtained during this step as PU
 
 ## Step 2. Running Trendz service
 
-##### Docker Compose setup
+### Docker Compose setup
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
@@ -115,7 +115,7 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
-##### Running service
+### Running service
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
@@ -123,12 +123,15 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). 
 You should see Trendz login page.
 
-##### Authentication
+### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
+
+## Post-installation steps
+It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
 
 ## Detaching, stop and start commands
 
@@ -138,26 +141,7 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.10.3 to {{ site.release.trendz_ver }}
-
-**Note:** starting from version 1.10.2 we add support of Python script execution. During an upgrade you need to add Python executor image into your docker compose file. 
-Full content of docker compose file you can find at the beginning of this article. Here is an example of the python executor service
-```yml
-  mypyexecutor:
-    restart: always
-    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
-    ports:
-      - "8181:8181"
-    environment:
-      MAX_HEAP_SIZE: 750M
-      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
-      EXECUTOR_MANAGER: 1
-      EXECUTOR_SCRIPT_ENGINE: 6
-      THROTTLING_QUEUE_CAPACITY: 10
-      THROTTLING_THREAD_POOL_SIZE: 6
-      NETWORK_BUFFER_SIZE: 5242880
-```
-{: .copy-code}
+Below is example on how to upgrade from 1.13.1 to {{ site.release.trendz_ver }}
 
 * Create a dump of your database:
 
@@ -175,17 +159,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.10.3' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.13.1' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.10.3' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.13.1' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.10.3:
+* After this you need to update docker-compose.yml as in [Step 2](#docker-compose-setup) but with {{ site.release.trendz_ver }} instead of 1.13.1:
 
 * Restart Trendz container
 

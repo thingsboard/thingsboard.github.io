@@ -1,0 +1,768 @@
+#case-studies
+  #case-studies-content
+    overflow: hidden
+
+    .case-study-page-wrapper
+      padding: 0 32px
+      max-width: 1460px
+      margin: 0 auto
+
+      section
+        padding: 100px 0
+        background-color: transparent
+
+      h1, h2
+        font-size: 36px
+        font-weight: 500
+        line-height: 48px
+        margin-bottom: 24px
+        color: #212121
+
+      h3
+        font-size: 28px
+        line-height: 44px
+        font-weight: 500
+        margin-bottom: 16px
+
+      p
+        font-size: 16px
+        font-weight: 400
+        line-height: 28px
+        letter-spacing: 0.15px
+        color: #3A3B3D
+
+      .case-study-hero
+
+        &.no-padding-bottom
+          padding-bottom: 0
+
+        .card
+          display: flex
+          gap: 32px
+
+          .image
+            height: 424px
+            width: 684px
+            background-position: center
+            background-size: cover
+            display: flex
+            align-items: center
+            align-self: center
+            justify-content: center
+            border-radius: 24px
+
+            img
+              height: auto
+              width: 50%
+
+          .text
+            display: flex
+            flex-direction: column
+            flex: 1
+            align-items: start
+
+            .image.inner
+              display: none
+
+            .category
+              display: inline-block
+              padding: 5px 16px
+              background-color: #EEF5FD
+              border-radius: 6px
+              margin-bottom: 16px
+              font-size: 16px
+              font-weight: 400
+              line-height: 28px
+              letter-spacing: 9px
+              color: #000
+
+            h1
+              margin-bottom: 24px
+
+            p
+              margin-bottom: 16px
+
+      .statistics
+        display: flex
+        justify-content: space-around
+        padding: 40px 0
+
+        &:before
+          content: ""
+          position: absolute
+          width: 300%
+          height: 100%
+          background-color: #899AAB
+          z-index: -1
+          left: -100%
+          top: 0
+
+        .block
+          text-align: center
+
+          p
+            color: #fff
+
+          p:first-child
+            font-size: 64px
+            font-weight: 500
+            line-height: 58px
+            margin-bottom: 16px
+            display: flex
+            justify-content: center
+
+      .quote
+        &:before
+          content: ""
+          position: absolute
+          width: 300%
+          height: 100%
+          background-color: #F4F8FE
+          z-index: -1
+          left: -100%
+          top: 0
+
+        h2
+          color: #202021
+          font-size: 28px
+          font-weight: 400
+          line-height: 44px
+          letter-spacing: 0.249px
+
+        p
+          display: inline-block
+          padding-left: 17px
+          border-left: 3px solid #2A7DEC
+          color: #3A3B3D
+          font-style: italic
+          font-size: 18px
+          font-weight: 400
+          line-height: 30px
+          letter-spacing: 0.249px
+
+      .authored-quote
+        display: flex
+        gap: 32px
+
+        &:before
+          content: ""
+          position: absolute
+          width: 300%
+          height: 100%
+          background-color: #F4F8FE
+          z-index: -1
+          left: -100%
+          top: 0
+
+        img
+          height: auto
+          width: 658px
+          border-radius: 25px
+
+        div.text
+          flex: 1
+          align-content: center
+
+          h2
+            color: #202021
+            font-size: 28px
+            font-weight: 400
+            line-height: 44px
+            letter-spacing: 0.249px
+
+          p
+            &.quote
+              display: inline-block
+              padding-left: 17px
+              border-left: 3px solid #2A7DEC
+              color: #3A3B3D
+              font-style: italic
+              font-size: 18px
+              font-weight: 400
+              line-height: 30px
+              letter-spacing: 0.249px
+              margin-bottom: 32px
+
+            &.author
+              color: #212529
+              text-align: end
+              font-size: 24px
+              font-weight: 500
+              line-height: 36px
+              display: block
+              border: none
+              letter-spacing: 0.15px
+
+            &.title
+              color: #212529
+              text-align: end
+              font-size: 18px
+              font-weight: 400
+              line-height: 30px
+              display: block
+              border: none
+              letter-spacing: 0.15px
+
+      .problem
+        .title-block
+          display: flex
+          align-items: baseline
+          margin-bottom: 56px
+          gap: 36px
+
+          h2
+            flex: 0.5
+
+          p
+            flex: 1
+
+        .cards-row
+          display: flex
+          gap: 32px
+
+          .card
+            flex: 1
+            padding: 46px
+            border-radius: 24px
+            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+            opacity: 0
+
+            &:first-child
+              transform: translateX(-180px)
+
+              &.animated
+                animation-name: caseStudyPageProblemsAnimation1
+                animation-duration: 1000ms
+                animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                animation-fill-mode: forwards
+
+            &:last-child
+              transform: translateX(180px)
+
+              &.animated
+                animation-name: caseStudyPageProblemsAnimation2
+                animation-duration: 1000ms
+                animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                animation-fill-mode: forwards
+
+            h3
+              margin-bottom: 32px
+
+            ul
+              li
+                position: relative
+                margin-bottom: 24px
+                padding-left: 40px
+
+                .far
+                  position: absolute
+                  left: 0
+                  top: 4px
+                  font-size: 20px
+
+      .tb-power
+        &.mb
+          margin-bottom: 100px
+
+        .block
+          display: flex
+          align-items: center
+          gap: 32px
+          padding: 40px 0
+          border-bottom: 1px solid #DDECFD
+
+          &:last-child
+            padding-bottom: 0
+
+          .text
+            & > p
+              margin-bottom: 16px
+            ul
+              margin-left: 34px
+              list-style: disc
+
+              li
+                margin-bottom: 16px
+                list-style: disc
+
+          &:before
+            content: ""
+            position: absolute
+            width: 300%
+            height: 100%
+            background-color: #F4F8FE
+            z-index: -1
+            left: -100%
+            top: 0
+
+          &:nth-child(odd)
+            flex-direction: row-reverse
+
+          &:last-child
+            border-bottom: none
+
+
+          img
+            width: 450px
+            border-radius: 24px
+            height: 250px
+
+      .full-width-img
+        padding: 0
+
+        img
+          height: auto
+          width: 137.55%
+          transform: translateX(-14%)
+
+      .full-width-img.bannerMargin
+        margin-bottom: 100px
+        @media (max-width: 599px)
+          margin-bottom: 40px
+
+      .quote-with-mark
+        display: flex
+        gap: 64px
+        align-items: flex-start
+
+        &.fill-background
+          &:before
+            content: ""
+            position: absolute
+            width: 300%
+            height: 100%
+            background-color: #F4F8FE
+            z-index: -1
+            left: -100%
+            top: 0
+
+        .quote-text
+          h2
+            color: #202021
+            font-size: 28px
+            font-weight: 400
+            line-height: 44px
+            letter-spacing: 0.249px
+            margin-bottom: 0
+
+          p
+            color: #3A3B3D
+            font-style: italic
+            font-size: 18px
+            font-weight: 400
+            line-height: 30px
+            letter-spacing: 0.249px
+            margin-bottom: 32px
+
+      .award
+        display: flex
+        gap: 32px
+
+        .image-container
+          flex: 1
+          box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+          border-radius: 24px
+          display: flex
+          justify-content: center
+          align-items: center
+
+        .text
+          flex: 1
+
+          p
+            margin-bottom: 16px
+
+      .tb-help
+
+        h2
+          margin-bottom: 46px
+
+        &:before
+          content: ""
+          position: absolute
+          width: 300%
+          height: 100%
+          background-color: #F4F8FE
+          z-index: -1
+          left: -100%
+          top: 0
+
+        .block
+          display: flex
+          gap: 32px
+          margin-bottom: 130px
+
+          &:last-child
+            margin-bottom: 0
+
+          .image-container
+            flex: 1
+            position: relative
+
+            img
+              height: auto
+              width: 356px
+              opacity: 0
+              transform: scale(0)
+
+              &.animated
+                animation-name: caseStudyPageImagesAnimation
+                animation-duration: 1000ms
+                animation-timing-function: cubic-bezier(0.5, 0.35, 0.15, 1)
+                animation-fill-mode: forwards
+
+              &:nth-child(1)
+                display: block
+
+              &:nth-child(2)
+                position: absolute
+                right: 44px
+                top: 54px
+                display: block
+
+              &:nth-child(3)
+                position: absolute
+                top: 168px
+                left: 100px
+
+          &:nth-child(odd)
+            flex-direction: row-reverse
+
+            .image-container
+              img:nth-child(1)
+                margin-left: auto
+
+              img:nth-child(2)
+                left: 15px
+                z-index: 2
+
+              img:nth-child(3)
+                right: 77px
+                top: 229px
+                left: unset
+
+          .text
+            flex: 1
+
+            h3
+              margin-bottom: 24px
+
+            & > p
+              margin-bottom: 16px
+
+            .quote-text
+              display: inline-block
+              padding-left: 16px
+              border-left: 3px solid #2A7DEC
+              margin: 0 32px 16px
+              font-weight: 500
+
+            ul
+              margin-left: 34px
+              list-style: disc
+
+              li
+                margin-bottom: 16px
+                list-style: disc
+
+        .services-banner
+          position: relative
+          z-index: 1
+          padding: 46px
+          background: #fff
+          border-radius: 24px
+          box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+          max-width: 1408px
+          width: 100%
+          overflow: hidden
+          white-space: nowrap
+          img
+            position: absolute
+            right: 46px
+            top: -7px
+            @media (max-width: 1150px)
+              display: none
+          .services-content
+            max-width: 600px
+            h2
+              font-size: 36px
+              font-weight: 500
+              line-height: 48px
+              margin-bottom: 16px
+              padding: 0
+              @media (max-width: 599px)
+                font-size: 28px
+            p
+              font-size: 18px
+              font-weight: 400
+              line-height: 30px
+              color: rgba(0, 0, 0, 0.76)
+              margin-bottom: 32px
+              margin-top: 0
+              @media (max-width: 599px)
+                font-size: 14px
+            .contact-us-banner-buttons
+              display: flex
+              gap: 16px
+              flex-wrap: wrap
+              button
+                background: #2A7DEC
+                color: #fff
+              a
+                color: #2A7DEC
+                border: 1px solid #2A7DEC
+              button, a
+                text-align: center
+                font-size: 16px
+                font-weight: 500
+                line-height: 28px
+                width: 154px
+                border-radius: 6px
+                padding: 10px 0
+                @media (max-width: 600px)
+                  width: 100%
+                &:hover
+                  text-decoration: none
+                  filter: brightness(1.3) contrast(0.9)
+
+      .contact
+        text-align: center
+
+        .bg-wrap
+          background-position: center
+          background-size: cover
+          padding: 54px 0
+          border-radius: 24px
+          margin-bottom: 48px
+
+          .outer-frame
+            width: 728px
+            border: 2px solid white
+            padding: 20px
+            margin: 0 auto
+
+            .inner-frame
+              padding: 30px
+              position: relative
+
+              &:before,
+              &:after
+                position: absolute
+                content: ""
+                width: 300px
+                height: 150px
+
+              &:before
+                right: 0
+                top: 0
+                border-right: 2px solid white
+                border-top: 2px solid white
+
+              &:after
+                left: 0
+                bottom: 0
+                border-left: 2px solid white
+                border-bottom: 2px solid white
+
+              img
+                display: block
+
+                &:first-child
+                  margin-bottom: 184px
+                  margin-left: auto
+
+                &:last-child
+                  width: 60%
+                  height: auto
+                  margin-right: auto
+
+        p
+          font-size: 28px
+          font-weight: 400
+          line-height: 44px
+          letter-spacing: 0.249px
+          margin-bottom: 32px
+
+        a
+          width: 200px
+
+@media screen and (max-width: 1279px)
+  #case-studies
+    #case-studies-content
+      .case-study-page-wrapper
+        .case-study-hero
+          .card
+            flex-direction: column
+
+            .text
+              .image.inner
+                min-height: 424px
+
+        .authored-quote
+          flex-direction: column
+          img
+            align-self: center
+
+        .tb-power
+          .block
+            img
+              align-self: center
+              height: unset
+
+@media screen and (max-width: 959px)
+  #case-studies
+    #case-studies-content
+      .case-study-page-wrapper
+        .case-study-hero
+          .card
+            .image.large
+              display: none
+
+            .text
+              div.image.inner
+                display: flex
+                width: 100%
+                margin-bottom: 24px
+
+        .statistics
+          .block
+            p:first-child
+              font-size: 54px
+
+        .problem
+          .title-block
+            flex-direction: column
+
+            h2
+              margin-bottom: 0
+
+          .cards-row
+            flex-direction: column
+
+        .tb-power
+          .block
+            flex-direction: column
+
+            &:nth-child(odd)
+              flex-direction: column
+
+            img
+              width: 65%
+
+        .award
+          flex-direction: column
+
+        .tb-help
+          .block
+            flex-direction: column
+
+            &.triple-img
+              margin-bottom: 240px
+
+            &:nth-child(odd)
+              flex-direction: column
+
+            .image-container
+              img
+                &:nth-child(3)
+                  left: 27%
+          .services-banner
+            white-space: normal
+
+        .contact
+          .bg-wrap
+            .outer-frame
+              width: unset
+              margin: 0 24px
+
+              img
+                width: 50vw
+                height: auto
+
+@media screen and (max-width: 599px)
+  #case-studies
+    #case-studies-content
+      .case-study-page-wrapper
+        padding: 0 16px
+
+        section
+          padding: 40px 0
+
+        h2
+          font-size: 28px
+
+        h3
+          font-size: 20px
+
+        p
+          font-size: 14px
+
+        .case-study-page-wrapper
+          padding: 0 16px
+
+        .statistics
+          .block
+            p:first-child
+              font-size: 32px
+
+        .quote
+          p
+            font-size: 14px
+
+        .tb-power
+          h2
+            margin-bottom: 0
+
+          .block
+            img
+              width: 100%
+
+        .quote-with-mark
+          .quote-text
+            p
+              font-size: 14px
+
+        .tb-help
+          .block
+            .image-container
+              img
+                width: 60vw
+
+                &:nth-child(3)
+                  left: 17%
+
+          .services-banner
+            margin-bottom: 40px
+
+        .contact
+          .bg-wrap
+            .outer-frame
+              .inner-frame
+                &:before,
+                &:after
+                  width: 200px
+
+
+@keyframes caseStudyPageImagesAnimation
+  from
+    opacity: 0
+    transform: scale(0)
+  to
+    opacity: 1
+    transform: scale(1)
+
+@keyframes caseStudyPageProblemsAnimation1
+  from
+    opacity: 0
+    transform: translateX(-180px)
+  to
+    opacity: 1
+    transform: translateX(0)
+
+@keyframes caseStudyPageProblemsAnimation2
+  from
+    opacity: 0
+    transform: translateX(180px)
+  to
+    opacity: 1
+    transform: translateX(0)

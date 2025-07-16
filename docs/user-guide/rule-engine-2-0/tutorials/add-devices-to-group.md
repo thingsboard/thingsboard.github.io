@@ -4,6 +4,7 @@ title: Add & remove devices to group dynamically
 description: Add & remove devices to group
 
 ---
+{% assign hostName = "thingsboard.cloud" %}
 
 {% assign feature = "Device & Asset Groups" %}{% include templates/pe-feature-banner.md %}
 

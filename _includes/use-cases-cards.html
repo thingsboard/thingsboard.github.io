@@ -1,0 +1,80 @@
+{% assign useCasesCollection = site.data.iot-use-cases %}
+
+<div id="usecase-list">
+{% for card in useCasesCollection %}
+<div class="parent-box" id="{{ card[1].type }}">
+    <div class="card-content">
+        <h2 class="title tablet-res">{{ card[1].name }}</h2>
+        <div class="desktop-flex-content">
+            <a href="{{ card[1].href }}" class="dashboard-frame-wrapper img-button">
+                <div class="dashboard-frame">
+                    <div class="frame-image">
+                        <img src="{{ card[1].media.image }}" alt="{{ card[1].media.alt }}" loading="lazy">
+                    </div>
+                    {% if card[1].media.video %}
+                    <div class="frame-video">
+                        <video loop muted preload="none" playsinline>
+                            {% for videoSrc in card[1].media.video %}
+                            {% assign video_extension = videoSrc | split: '.' | last %}
+                            <source src="{{ videoSrc }}" type="video/{{ video_extension }}">
+                            {% endfor %}
+                        </video>
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="overlay">
+                    <div class="eye">
+                        <img src="https://img.thingsboard.io/eye-icon.svg" alt="See more about {{ card[1].name }} dashboard">
+                        <span>{{ card[1].name }}</span>
+                    </div>
+                </div>
+            </a>
+            <div class="text">
+                <h2 class="title">{{ card[1].name }}</h2>
+                <p class="description">{{ card[1].description }}</p>
+                <a href="{{ card[1].href }}" class="read-more-button">
+                    <span>Read use case</span>
+                    <img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="More information about {{ card[1].name }} dashboard">
+                    <img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="">
+                    <img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <a href="{{ card[1].href }}" class="read-more-button tablet-res">
+            <span>Read use case</span>
+            <img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="More information about {{ card[1].name }} dashboard">
+            <img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="">
+            <img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="">
+        </a>
+    </div>
+</div>
+{% endfor %}
+</div>
+
+<script>
+    const cardsContainer = document.getElementById('usecase-list');
+
+    const cards = Array.from(cardsContainer.children);
+
+    cards.forEach((item) => {
+        const video = item.getElementsByTagName('video');
+
+        item.addEventListener('mouseenter', () => {
+            if (video.length) {
+                if (video[0].readyState === 0) {
+                    video[0].load();
+                }
+
+                video[0].play();
+            }
+        })
+
+        item.addEventListener('mouseleave', () => {
+            if (video.length) {
+                video[0].currentTime = 0;
+                video[0].pause();
+            }
+        })
+    })
+</script>
+

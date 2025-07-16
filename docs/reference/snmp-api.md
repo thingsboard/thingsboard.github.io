@@ -41,4 +41,5 @@ deviceProfileConfiguring5:
         image: /images/reference/snmp-api/snmp-api-device-profile-configuring-6-ce.png
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/reference/snmp-api.md %}

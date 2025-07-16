@@ -1,0 +1,50 @@
+.contact-us-card
+  position: relative
+  padding: 116px 32px 32px 32px
+  background: #FFF
+  box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+  display: flex
+  flex-direction: column
+  gap: 16px
+  border-radius: 12px
+  width: 300px
+  overflow: hidden
+  opacity: 0
+  animation: fadeInScale 0.8s ease-out forwards
+  .contact-us-card-title
+    font-size: 24px !important
+    font-weight: 500 !important
+    line-height: 36px !important
+    color: #000000DE !important
+    margin: 0 !important
+  .contact-us-card-link
+    border-radius: 6px
+    border: 1px solid #2A7DEC
+    padding: 10px 24px
+    color: #2A7DEC
+    font-size: 16px
+    font-weight: 500
+    line-height: 28px
+    transition: ease-in-out 0.3s
+    width: fit-content
+    cursor: pointer
+    &:hover
+      text-decoration: none
+      background: #2A7DEC
+      color: #FFF
+  .icon
+    opacity: 0.16
+    transform: rotate(30deg)
+    transition: ease-in-out 0.3s
+    position: absolute
+    top: -90px
+    right: -60px
+
+@keyframes fadeInScale
+  0%
+    opacity: 0
+    transform: scale(0.5)
+
+  100%
+    opacity: 1
+    transform: scale(1)

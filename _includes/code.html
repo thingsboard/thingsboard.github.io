@@ -1,3 +1,13 @@
+{% assign extension = include.file | split: '.' | last %}
+
+{% if extension == "md" %}
+<table class="includecode">
+    <tr><td>
+        {% capture content %}{% include_relative {{ include.file }} %}{% endcapture %}
+        {{ content | markdownify }}
+    </td></tr>
+</table>
+{% else %}
 {% capture samplecode %}{% include_relative {{include.file}} %}{% endcapture %}
 {% capture mysample %}
 ```{{include.language}}
@@ -8,3 +18,4 @@
 {% endcapture %}
 <table class="includecode">
 <tr><td>{{ mysample | markdownify }}</td></tr></table>
+{% endif %}

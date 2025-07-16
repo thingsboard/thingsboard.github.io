@@ -95,4 +95,5 @@ user-delete-1-pe:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/ui/users-pe.md %}

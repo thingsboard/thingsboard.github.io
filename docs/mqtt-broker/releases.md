@@ -8,6 +8,185 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v2.1.0 (April 29, 2025)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#201](https://github.com/thingsboard/tbmq/pull/201) **Core & UI**: Implemented Integration Executor microservice and HTTP integration by @dmytro-landiak and @deaflynx;
+* [#202](https://github.com/thingsboard/tbmq/pull/202) **Core & UI**: Added Kafka integration by @dmytro-landiak and @deaflynx;
+* [#203](https://github.com/thingsboard/tbmq/pull/203) **Core & UI**: Added MQTT integration by @dmytro-landiak and @deaflynx;
+* [#200](https://github.com/thingsboard/tbmq/pull/200) **UI**: Migrated to Angular 19 by @deaflynx.
+
+**Helm chart support:** Official [Helm chart](/docs/mqtt-broker/install/cluster/helm-cluster-setup-options/) for deploying TBMQ is now available, enabling simplified Kubernetes deployments with customizable configuration options.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#191](https://github.com/thingsboard/tbmq/pull/191) Incremental upgrade by @ShvaykaD;
+  * [#217](https://github.com/thingsboard/tbmq/pull/217) Proxy protocol support by @dmytro-landiak.
+
+* UI:
+
+  * [#200](https://github.com/thingsboard/tbmq/pull/200) Updates by @deaflynx:
+    * Switched from flex-layout to pure CSS with Tailwind;
+    * Switched to Angular esbuild;
+    * Monitoring charts: extended time-window options to include minutes, added custom legend;
+    * Menu: switched from toggle menu to tabs.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#207](https://github.com/thingsboard/tbmq/issues/207) Fixed persistent message loss in Redis persistence by @dmytro-landiak;
+  * [#205](https://github.com/thingsboard/tbmq/pull/205) Fix MqttConnAckMessage incorrectly returns auth method property even if no enhanced auth is used by @Nanabell.
+
+**We welcome our new contributors:**
+
+  * @Nanabell made their first contribution in [#205](https://github.com/thingsboard/tbmq/pull/205)
+
+**Third-party versions update:**
+
+  * [#218](https://github.com/thingsboard/tbmq/pull/218) Bump Kafka, Redis and PostgreSQL versions by @ShvaykaD.
+
+## v2.0.1 (December 31, 2024)
+
+Patch release with the following improvements and bug fixes.
+
+**Improvements:**
+
+* Core:
+
+  * [#178](https://github.com/thingsboard/tbmq/pull/178) MQTT processing improvement to eliminate unnecessary object creation;
+  * [#183](https://github.com/thingsboard/tbmq/pull/183) Improved Redis integration by enhancing Lettuce connection handling and cluster topology refresh logic;
+  * [#185](https://github.com/thingsboard/tbmq/pull/185) Allow semicolon (`;`) as a character in Kafka configurations;
+  * [#188](https://github.com/thingsboard/tbmq/pull/188) Vulnerabilities fixes;
+  * [#189](https://github.com/thingsboard/tbmq/pull/189) Added sort order support for aggregation queries of historical statistics;
+  * [#190](https://github.com/thingsboard/tbmq/pull/190) Removed search_text column from PostgreSQL.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#176](https://github.com/thingsboard/tbmq/pull/176) Added missing parameter for WebSocket client admin settings;
+  * [#182](https://github.com/thingsboard/tbmq/pull/182) Last will delivery error on broker shutdown;
+  * [#184](https://github.com/thingsboard/tbmq/pull/184) Added Redis cluster topology refresh options for Jedis implementation.
+
+With the changes in this release, we have conducted performance testing, which can be reviewed [here](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/).
+
+## v2.0.0 (October 29, 2024)
+
+Major release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#142](https://github.com/thingsboard/tbmq/pull/142) **Core**: Migrated Device persistent storage from PostgreSQL to Redis;
+* [#149](https://github.com/thingsboard/tbmq/pull/149) **Core**: MQTT 5: Subscription Identifier;
+* [#158](https://github.com/thingsboard/tbmq/pull/158) **Core**: MQTT 5: Enhanced authentication;
+* [#139](https://github.com/thingsboard/tbmq/pull/139) **Core & UI**: Client session details: added MQTT client credentials that authenticated the client;
+* [#139](https://github.com/thingsboard/tbmq/pull/139) **Core & UI**: Client session details: added client MQTT version info;
+* [#151](https://github.com/thingsboard/tbmq/pull/151) **UI**: Getting started page;
+* [#152](https://github.com/thingsboard/tbmq/pull/152) **Core**: Added PostgreSQL table to persist latest key-value pairs;
+* [#154](https://github.com/thingsboard/tbmq/pull/154) **Core & UI**: Advanced client session metrics;
+* [#157](https://github.com/thingsboard/tbmq/pull/157) **Core & UI**: Unauthorized clients;
+* [#159](https://github.com/thingsboard/tbmq/pull/159) **Core & UI**: Added subscriptions page to display all broker subscriptions;
+* [#168](https://github.com/thingsboard/tbmq/pull/168) **Core & UI**: Retained messages added advanced filter.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#164](https://github.com/thingsboard/tbmq/pull/164) MQTT publish ordered processing performance improvement;
+  * [#165](https://github.com/thingsboard/tbmq/pull/165) Updated default parameters and added write-and-flush option control for persistent Device clients;
+  * [#166](https://github.com/thingsboard/tbmq/pull/166) Client sessions filter improvement: added search filter by client IP, and enhanced filtering by subscriptions number;
+  * [#167](https://github.com/thingsboard/tbmq/pull/167) MQTT client credentials filter improvement: added search filters by client ID, username, and certificate common name;
+  * [#169](https://github.com/thingsboard/tbmq/pull/169) TBMQ's latest version available logic moved from frontend to backend, works in a scheduled fashion to prevent rate limiting;
+  * [#170](https://github.com/thingsboard/tbmq/pull/170) Library versions update and vulnerabilities fixes;
+  * [#149](https://github.com/thingsboard/tbmq/pull/149) MQTT client subscriptions management improvement: admins can update shared subscriptions and MQTT 5 subscription options;
+  * Performance improvement of get all client sessions, subscriptions, and retained messages queries;
+  * Added backup and restore guides for PostgreSQL.
+
+* UI:
+  * [#147](https://github.com/thingsboard/tbmq/pull/147) Added Subscription Identifier feature parameters;
+  * [#158](https://github.com/thingsboard/tbmq/pull/158) MQTT client credentials: added enhanced authentication (SCRAM) credentials;
+  * [#155](https://github.com/thingsboard/tbmq/pull/155) Added entity details page;
+  * [#166](https://github.com/thingsboard/tbmq/pull/166) Client sessions filter improvement: added search filter for client IP, and enhanced filtering by subscriptions number;
+  * [#167](https://github.com/thingsboard/tbmq/pull/167) MQTT client credentials filter improvement: added search filters by client ID, username, and certificate common name;
+  * Check connectivity: added topic generation based on authorization rule regex pattern;
+  * WebSocket client page: added pagination, control of maximum messages limit, improved topic validation.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#172](https://github.com/thingsboard/tbmq/pull/172) Allow edit system WebSocket MQTT client credentials;
+  * Do not allow to publish message with topic starting with "$".
+
+* UI:
+
+  * MQTT client credentials: fixed authorization rule editing;
+  * Fixed HTTP request URL encoding;
+  * Fixed table sorting.
+
+## v1.4.0 (August 19, 2024)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#118](https://github.com/thingsboard/tbmq/pull/118) Extended X.509 Certificate Chain authentication based on CN regex;
+* [#121](https://github.com/thingsboard/tbmq/pull/121) Added feature to limit the count of Application clients;
+* [#128](https://github.com/thingsboard/tbmq/pull/128) Added Device persisted messages rate limits;
+* [#132](https://github.com/thingsboard/tbmq/pull/132) Added rate limits for total incoming and outgoing messages per broker cluster;
+* [#144](https://github.com/thingsboard/tbmq/pull/144) New historical data for network traffic metric.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#119](https://github.com/thingsboard/tbmq/pull/119) Client sessions limit by using cache;
+  * [#125](https://github.com/thingsboard/tbmq/pull/125) Major versions update and vulnerabilities fixes;
+  * [#134](https://github.com/thingsboard/tbmq/pull/134) Added possibility to set Kafka prefix for all topics, producers, consumers, and consumer groups;
+  * [#135](https://github.com/thingsboard/tbmq/pull/135) Added possibility to set cache prefix for all keys;
+  * [#143](https://github.com/thingsboard/tbmq/pull/143) Improvements to the upgrade script logic.
+
+* UI:
+  * [#130](https://github.com/thingsboard/tbmq/pull/130) Update UI dependencies versions;
+  * [#146](https://github.com/thingsboard/tbmq/pull/146) Monitoring: added network traffic chart;
+  * [#137](https://github.com/thingsboard/tbmq/pull/137) Updates:
+    * Settings: added Connectivity, Security and General settings;
+    * Profile page: renamed to Account, added Security page with password configuration;
+    * Websocket client: added control over client activity logging in browser console;
+    * Websocket client: added Reset button in Publish properties dialog;
+    * Websocket connection: in add/edit dialogs added https/ws incompatibility warning;
+    * Home: updated Version card when no updates are available;
+    * Corrected browser tab titles;
+    * Basic client credentials: moved Change Password button to the top of details panel.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#123](https://github.com/thingsboard/tbmq/pull/123) NPE fix for get all shared subscriptions;
+  * [#124](https://github.com/thingsboard/tbmq/pull/124) Fix for subscription matching and message forwarding to subscribers;
+  * [#131](https://github.com/thingsboard/tbmq/pull/131) Fix for packet id sequence for publish messages.
+
+* UI:
+
+  * [#137](https://github.com/thingsboard/tbmq/pull/137) Fixes:
+    * Client credentials: fixed issue with non-clickable button in disabled mode;
+    * Websocket Client: fixed broken help link.
+
+**Important notice:**
+
+If you have previously overridden the default value of `JWT_TOKEN_SIGNING_KEY` in your configuration, 
+please be advised that you must now update your custom JWT token signing key to ensure it is at least 512 bits in length.
+Failure to comply with this update may result in authentication issues.
+
+Example of the value: _Qk1xUnloZ0VQTlF1VlNJQXZ4cWhiNWt1cVd1ZzQ5cWpENUhMSHlaYmZIM0JrZ2pPTVlhQ3N1Z0ZMUnd0SDBieg==_.
+
 ## v1.3.0 (April 3, 2024)
 
 Minor release with the following features, improvements, and bug fixes.

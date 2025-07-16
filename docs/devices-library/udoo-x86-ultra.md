@@ -13,4 +13,5 @@ deviceImageFileName: udoo-x86-ultra.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/udoo-x86-ultra.md %}

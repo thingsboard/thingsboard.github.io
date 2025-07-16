@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -16,7 +16,7 @@ After integrating TheThingsIndustries with the ThingsBoard, you can connect, com
 
 ## The Things Stack
 
-##### Register Application
+### Register Application
 The first step is to create an **application** in TheThingsIndustries console. Go to console by , open 
 **Applications** section, press **add application** button and fill required fields.
 
@@ -25,7 +25,7 @@ The first step is to create an **application** in TheThingsIndustries console. G
 ![image](/images/user-guide/integrations/tti/tti-create-app.png)
 
 
-##### Payload Decoder
+### Payload Decoder
 Our device submits data in binary format. We have 2 options where to decode this data:
 
 - **TheThingsIndustries decoder** - data will be decoded before entering the ThingsBoard
@@ -55,7 +55,7 @@ Output json:
 
 Press **Save payload function**
 
-##### Device Registration in TheThingsIndustries
+### Device Registration in TheThingsIndustries
 
 Next step is a Device creation in the TTI. Open **End devices** page and press **Add end device**
 
@@ -85,7 +85,7 @@ Copy username and password we will need it later.
 
 Now we can start configuring the ThingsBoard.
 
-##### ThingsBoard Uplink Data Converter
+### ThingsBoard Uplink Data Converter
 
 First, we need to create Uplink Data converter that will be used for receiving messaged from the TTI. The converter should transform incoming payload into the required message format.
 Message must contains **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found then new device will be created.
@@ -158,7 +158,7 @@ return result;
 ![image](/images/user-guide/integrations/tti/tb-uplink.png)
 
 
-##### ThingsBoard Downlink Data Converter
+### ThingsBoard Downlink Data Converter
 For sending Downlink messages from the ThingsBoard to the device inside TTI, we need to define downlink Converter.
 In general, output from Downlink converter should have the following structure:
 {% highlight json %}
@@ -201,7 +201,7 @@ This converter will take **version** field from the incoming message and add it 
 
 ![image](/images/user-guide/integrations/tti/tb-downlink.png)
 
-##### TTI Integration
+### TTI Integration
 
 Next we will create Integration with TheThingsIndustries inside the ThingsBoard. Open **Integrations** section and add new Integration with type
 **TheThingsIndustries**
@@ -220,7 +220,7 @@ Next we will create Integration with TheThingsIndustries inside the ThingsBoard.
 
 ## Validation
 
-##### Validate Uplink Messages
+### Validate Uplink Messages
 Lets verify our integration. 
 
 When device sends data, we can check it in the ThingsBoard, to do this:
@@ -232,7 +232,7 @@ Go to **Device Group** -> **All** -> **thermostat1** - you can see that
 
 ![image](/images/user-guide/integrations/tti/tb-device-telemetry.png)
 
-##### Validate Downlink Messages
+### Validate Downlink Messages
 For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when device attribute is changed.
 Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using relation 
 **Attributes Updated**

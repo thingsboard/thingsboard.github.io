@@ -7,7 +7,7 @@ toc:
   path: /docs/pe/getting-started-guides/what-is-thingsboard/
 - title: How to connect your device?
   path: /docs/pe/getting-started-guides/connectivity/
-- title: Solution Templates
+- title: Solution templates
   new: true
   section:
   - title: Overview
@@ -16,11 +16,18 @@ toc:
     path: /docs/pe/solution-templates/temperature-humidity-sensors/
   - title: Smart office
     path: /docs/pe/solution-templates/smart-office/
+  - title: SCADA Oil & Gas Drilling system
+    path: /docs/pe/solution-templates/scada-drilling-system/
+    new: true
+  - title: SCADA Energy management
+    path: /docs/pe/solution-templates/scada-energy-management/
+    new: true
   - title: Fleet tracking
     path: /docs/pe/solution-templates/fleet-tracking/
   - title: Fuel Level Monitoring
     path: /docs/pe/solution-templates/fuel-level-monitoring/
-    new: true
+  - title: Swimming Pool SCADA system
+    path: /docs/pe/solution-templates/swimming-pool-scada-system/
   - title: Water metering
     path: /docs/pe/solution-templates/water-metering/
   - title: Smart retail
@@ -35,16 +42,19 @@ toc:
   section:
   - title: Entities and Relations
     path: /docs/pe/user-guide/entities-and-relations/
-  - title: Tenant Profiles
+  - title: Tenant profiles
     path: /docs/pe/user-guide/tenant-profiles/
-  - title: Device Profiles
+  - title: Device profiles
     path: /docs/pe/user-guide/device-profiles/
-  - title: Asset Profiles
+  - title: Asset profiles
     path: /docs/pe/user-guide/asset-profiles/
   - title: Attributes
     path: /docs/pe/user-guide/attributes/
   - title: Time-series data
     path: /docs/pe/user-guide/telemetry/
+  - title: Calculated fields
+    path: /docs/pe/user-guide/calculated-fields/
+    new: true
   - title: Alarms
     path: /docs/pe/user-guide/alarms/
   - title: Remote commands to devices
@@ -59,19 +69,34 @@ toc:
     path: /docs/pe/user-guide/dashboards/
   - title: Aliases
     path: /docs/pe/user-guide/ui/aliases/
+  - title: Unit conversion
+    path: /docs/pe/user-guide/ui/unit-conversion/
+    new: true
+  - title: Layouts
+    path: /docs/pe/user-guide/ui/layouts/
+  - title: SCADA
+    new: true
+    section:
+      - title: Overview
+        path: /docs/pe/user-guide/scada/
+      - title: SCADA symbols development guide
+        path: /docs/pe/user-guide/scada/scada-symbols-dev-guide/
   - title: Widgets
     section:
       - title: Overview
         path: /docs/pe/user-guide/widgets/
-      - title: Widget Actions
+      - title: Widget actions
         path: /docs/pe/user-guide/ui/widget-actions/
-      - title: Widgets Library
+      - title: Widgets library
         path: /docs/pe/user-guide/ui/widget-library/
-      - title: Chart Widgets
+      - title: Chart widgets
         path: /docs/pe/user-guide/ui/chart-widget/
-      - title: Entities Table widget
+      - title: Map widgets
+        path: /docs/pe/user-guide/widgets/map-widgets/
+        new: true
+      - title: Entities table widget
         path: /docs/pe/user-guide/ui/entity-table-widget/
-      - title: Trip Animation Widget
+      - title: Trip animation widget
         path: /docs/pe/user-guide/ui/trip-animation-widget/
       - title: Advanced data key configuration
         path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
@@ -85,19 +110,19 @@ toc:
     path: /docs/pe/user-guide/rule-engine-2-5/queues/
   - title: Nodes
     section:
-    - title: Filter Nodes
+    - title: Filter nodes
       path: /docs/pe/user-guide/rule-engine-2-0/filter-nodes/
-    - title: Enrichment Nodes
+    - title: Enrichment nodes
       path: /docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/
-    - title: Transformation Nodes
+    - title: Transformation nodes
       path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
-    - title: Action Nodes
+    - title: Action nodes
       path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
-    - title: External Nodes
+    - title: External nodes
       path: /docs/pe/user-guide/rule-engine-2-0/external-nodes/
-    - title: Analytics Nodes
+    - title: Analytics nodes
       path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
-    - title: Flow Nodes
+    - title: Flow nodes
       path: /docs/pe/user-guide/rule-engine-2-0/flow-nodes/
   - title: Data processing & actions
     section:
@@ -154,7 +179,6 @@ toc:
       path: /docs/pe/user-guide/mail-templates/
     - title: Custom translation
       path: /docs/pe/user-guide/custom-translation/
-      new: true
     - title: Custom menu
       path: /docs/pe/user-guide/custom-menu/
 - title: Integrations
@@ -173,15 +197,15 @@ toc:
     path: /docs/user-guide/integrations/kafka/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
-  - title: Actility ThingPark
+  - title: ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsStack
+  - title: The Things Stack Community
     path: /docs/user-guide/integrations/ttn/
-  - title: TheThingsIndustries
+  - title: The Things Stack Industries
     path: /docs/user-guide/integrations/tti/
   - title: KPN Things
     path: /docs/user-guide/integrations/kpn-things/
-  - title: LORIOT
+  - title: Loriot
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
     path: /docs/user-guide/integrations/chirpstack/
@@ -210,6 +234,14 @@ toc:
   - title: Particle
     path: /docs/user-guide/integrations/particle/
     new: true
+  - title: Apache Pulsar
+    path: /docs/user-guide/integrations/apache-pulsar/
+  - title: AWS SQS
+    path: /docs/user-guide/integrations/aws-sqs/
+  - title: RabbitMQ
+    path: /docs/user-guide/integrations/rabbitmq/
+  - title: T-Mobile – IoT CDP
+    path: /docs/user-guide/integrations/t-mobile-iot-cdp/
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -220,30 +252,38 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/pe/samples/analytics/kafka-streams/
-- title: Other Features
+- title: Mobile center
   section:
-    - title: Edge Computing
+    - title: Overview
+      path: /docs/pe/mobile-center/mobile-center/
+    - title: Applications
+      path: /docs/pe/mobile-center/applications/
+    - title: Mobile application QR code
+      path: /docs/pe/user-guide/ui/mobile-qr-code/
+- title: Other features
+  section:
+    - title: Edge computing
       path: /docs/pe/user-guide/edge-computing/
-    - title: Device Connectivity Status
+    - title: Device connectivity status
       path: /docs/pe/user-guide/device-connectivity-status/
-    - title: Claiming Devices
+    - title: Claiming devices
       path: /docs/pe/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/pe/user-guide/device-provisioning/
     - title: Image gallery
       path: /docs/pe/user-guide/image-gallery/
       new: true
-    - title: Entity Views
+    - title: Entity views
       path: /docs/pe/user-guide/entity-views/
-    - title: API Limits
+    - title: API limits
       path: /docs/pe/user-guide/api-limits/
     - title: Advanced filters
       path: /docs/pe/user-guide/advanced-filters/
-    - title: Version Control
+    - title: Version control
       path: /docs/pe/user-guide/version-control/
     - title: PSM and eDRX Support
-      path: /docs/user-guide/psm/
-    - title: Bulk Provisioning
+      path: /docs/pe/user-guide/psm/
+    - title: Bulk provisioning
       path: /docs/pe/user-guide/bulk-provisioning/
     - title: Scheduler
       path: /docs/pe/user-guide/scheduler/
@@ -251,7 +291,7 @@ toc:
       path: /docs/pe/user-guide/reporting/
     - title: CSV/XLS data export
       path: /docs/pe/user-guide/csv-xls-data-export/
-    - title: File Storage
+    - title: File storage
       path: /docs/pe/user-guide/file-storage/
     - title: ThingsBoard Expression Language (TBEL)
       path: /docs/pe/user-guide/tbel/
@@ -262,41 +302,46 @@ toc:
     path: /docs/pe/user-guide/ui/security-settings/
   - title: Enable HTTPS
     path: /docs/pe/user-guide/ssl/http-over-ssl/
-  - title: Audit Log
+  - title: Audit logs
     path: /docs/pe/user-guide/audit-log/
   - title: Advanced RBAC for IoT
     path: /docs/pe/user-guide/rbac/
-  - title: Two-Factor Authentication
+  - title: Secrets storage
+    path: /docs/pe/user-guide/secrets-storage/
+    new: true
+  - title: Two-factor authentication
     path: /docs/pe/user-guide/two-factor-authentication/
-  - title: OAuth 2 Support
+  - title: OAuth 2.0
     path: /docs/pe/user-guide/oauth-2-support/
-  - title: HTTP Transport
+  - title: Domains
+    path: /docs/pe/domains/
+  - title: HTTP transport
     section:
       - title: HTTP over SSL
         path: /docs/pe/user-guide/ssl/http-transport-over-ssl/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/pe/user-guide/ssl/http-access-token/
-  - title: MQTT Transport
+  - title: MQTT transport
     section:
       - title: MQTT over SSL
         path: /docs/pe/user-guide/mqtt-over-ssl/
       - title: Device authentication options
         path: /docs/pe/user-guide/device-credentials/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/pe/user-guide/access-token/
-      - title: Basic MQTT Credentials
+      - title: Basic MQTT credentials
         path: /docs/pe/user-guide/basic-mqtt/
-      - title: X.509 Certificate based authentication
+      - title: X.509 certificate based authentication
         path: /docs/pe/user-guide/certificates/
-  - title: CoAP Transport
+  - title: CoAP transport
     section:
       - title: CoAP over DTLS
         path: /docs/pe/user-guide/coap-over-dtls/
-      - title: Access Token based authentication
+      - title: Access token based authentication
         path: /docs/pe/user-guide/ssl/coap-access-token/
-      - title: X.509 Certificate based authentication
+      - title: X.509 certificate based authentication
         path: /docs/pe/user-guide/ssl/coap-x509-certificates/
-  - title: LwM2M Transport
+  - title: LwM2M transport
     section:
       - title: LwM2M over DTLS
         path: /docs/pe/user-guide/ssl/lwm2m-over-dtls/
@@ -312,26 +357,23 @@ toc:
     path: /docs/pe/user-guide/ui/assets/
   - title: Devices
     path: /docs/pe/user-guide/ui/devices/
-  - title: Rule Chains
+  - title: Rule chains
     path: /docs/pe/user-guide/ui/rule-chains/
   - title: Dashboards
     path: /docs/pe/user-guide/ui/dashboards/
-  - title: Entity Groups
+  - title: Entity groups
     path: /docs/pe/user-guide/groups/
-  - title: SMS Provider Settings
+  - title: SMS provider settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
-  - title: Slack Settings
+  - title: Slack settings
     path: /docs/pe/user-guide/ui/slack-settings/
-  - title: Microsoft Teams Settings
+  - title: Microsoft Teams settings
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
-  - title: Mail Settings
+  - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Mobile application QR code
-    path: /docs/pe/user-guide/ui/mobile-qr-code/
-    new: true
-  - title: JWT Security Settings
+  - title: JWT security settings
     path: /docs/pe/user-guide/ui/jwt-security-settings/
-- title: Contribution Guide
+- title: Contribution guide
   section:
     - title: How to contribute your device integration guide
       path: /docs/pe/user-guide/contribution/how-to-contribute-your-device-integration-guide/
@@ -343,7 +385,7 @@ toc:
       path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
-- title: Release Notes
+- title: Release notes
   path: /docs/pe/reference/releases/
 - title: Roadmap
   path: /docs/pe/reference/roadmap/

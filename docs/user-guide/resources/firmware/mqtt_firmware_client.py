@@ -42,8 +42,8 @@ def collect_required_data():
     print("="*80, "\n\n", sep="")
     host = input("Please write your ThingsBoard host or leave it blank to use default (localhost): ")
     config["host"] = host if host else "localhost"
-    host = input("Please write your ThingsBoard port or leave it blank to use default (1883): ")
-    config["port"] = host if host else 1883
+    port = input("Please write your ThingsBoard port or leave it blank to use default (1883): ")
+    config["port"] = int(port) if port else 1883
     token = ""
     while not token:
         token = input("Please write accessToken for device: ")

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: TheThingsStack Integration
-description: TheThingsStack Integration Guide 
+title: The Things Stack Community integration
+description: The Things Stack Community integration guide
 
 api_key_access:
     0:
@@ -13,5 +13,6 @@ api_key_access:
 
 ---
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsTag="pe" %}
 {% include docs/pe/user-guide/integrations/the-things-stack.md %}
 

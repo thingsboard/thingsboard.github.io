@@ -6,39 +6,77 @@ toc:
 - title: What is TBMQ?
   path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
 - title: Configuration
-  path: /docs/mqtt-broker/install/config/
+  new: true
+  section:
+    - title: TBMQ
+      path: /docs/mqtt-broker/install/config/
+    - title: TBMQ Integration Executor
+      path: /docs/mqtt-broker/install/ie-config/
+      new: true
 - title: Security
   path: /docs/mqtt-broker/security/
 - title: Integration with ThingsBoard
   path: /docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
 - title: Features
   section:
-    - title: MQTT client type
+    - title: MQTT protocol
+      path: /docs/mqtt-broker/user-guide/mqtt-protocol/
+    - title: Topics & Wildcards
+      path: /docs/mqtt-broker/user-guide/topics/
+    - title: Quality of Service (QoS)
+      path: /docs/mqtt-broker/user-guide/qos/
+    - title: TBMQ client type
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
     - title: MQTT over WebSocket
       path: /docs/mqtt-broker/user-guide/mqtt-over-ws/
-      new: true
     - title: Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/shared-subscriptions/
     - title: Retained Messages
       path: /docs/mqtt-broker/user-guide/retained-messages/
+    - title: Last Will & Testament
+      path: /docs/mqtt-broker/user-guide/last-will/
+    - title: Keep Alive
+      path: /docs/mqtt-broker/user-guide/keep-alive/
+- title: Integrations
+  new: true
+  section:
+    - title: Overview
+      path: /docs/mqtt-broker/integrations/
+    - title: HTTP
+      path: /docs/mqtt-broker/integrations/http/
+    - title: MQTT
+      path: /docs/mqtt-broker/integrations/mqtt/
+    - title: Kafka
+      path: /docs/mqtt-broker/integrations/kafka/
 - title: Administration UI
   section:
     - title: Monitoring
       path: /docs/mqtt-broker/user-guide/ui/monitoring/
     - title: Sessions
       path: /docs/mqtt-broker/user-guide/ui/sessions/
+    - title: Subscriptions
+      path: /docs/mqtt-broker/user-guide/ui/subscriptions/
+    - title: Unauthorized Clients
+      path: /docs/mqtt-broker/user-guide/ui/unauthorized-clients/
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
     - title: WebSocket Client
       path: /docs/mqtt-broker/user-guide/ui/websocket-client/
-      new: true
     - title: Application Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/ui/shared-subscriptions/
     - title: Users
       path: /docs/mqtt-broker/user-guide/ui/users/
-    - title: Mail Server
-      path: /docs/mqtt-broker/user-guide/ui/mail-server/
+    - title: Settings
+      path: /docs/mqtt-broker/user-guide/ui/settings/
+- title: Other Features
+  new: true
+  section:
+    - title: PROXY Protocol
+      path: /docs/mqtt-broker/other/proxy-protocol/
+- title: Subscriptions
+  path: /docs/mqtt-broker/subscription/
+- title: Need Help?
+  path: /docs/mqtt-broker/help/
 - title: Troubleshooting
   path: /docs/mqtt-broker/troubleshooting/
 - title: Release Notes

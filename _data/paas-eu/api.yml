@@ -1,0 +1,41 @@
+bigheader: "ThingsBoard API reference"
+abstract: "Device connectivity and server-side APIs."
+toc:
+  - title: ThingsBoard API reference
+    path: /docs/paas/eu/api/
+  - title: Device Connectivity Protocols
+    path: /docs/paas/eu/reference/protocols/
+  - title: Device Connectivity APIs
+    section:
+      - title: MQTT Device API
+        path: /docs/paas/eu/reference/mqtt-api/
+      - title: MQTT Gateway API Reference
+        path: /docs/paas/eu/reference/gateway-mqtt-api/
+      - title: MQTT Sparkplug API
+        path: /docs/paas/eu/reference/mqtt-sparkplug-api/
+        new: true
+      - title: CoAP Device API
+        path: /docs/paas/eu/reference/coap-api/
+      - title: HTTP Device API
+        path: /docs/paas/eu/reference/http-api/
+      - title: LWM2M Transport API
+        path: /docs/paas/eu/reference/lwm2m-api/
+        new: true
+      - title: SNMP Transport API
+        path: /docs/paas/eu/reference/snmp-api/
+        new: true
+  - title: REST APIs and clients
+    section:
+      - title: Administration REST API
+        path: /docs/paas/eu/reference/rest-api/
+      - title: Java REST Client
+        path: /docs/paas/eu/reference/rest-client/
+      - title: Python REST Client
+        path: /docs/paas/eu/reference/python-rest-client/
+      - title: Dart API Client
+        path: /docs/paas/eu/reference/dart-client/
+  - title: Software development kits
+    new: true
+    section:
+      - title: Python Client SDK
+        path: /docs/reference/python-client-sdk

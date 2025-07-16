@@ -8,4 +8,5 @@ description: Supported REST API Reference for server-side integration of your py
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/python-rest-client.md %}

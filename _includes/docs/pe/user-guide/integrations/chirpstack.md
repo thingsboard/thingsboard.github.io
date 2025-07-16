@@ -7,46 +7,75 @@ The ChirpStack open-source LoRaWAN Network Server stack provides open-source com
 
 ## Prerequisites
 
-In order to get data you should have configured instance of ChirpStack Network server stack. In this guide we will use the **configured local instance**, installed by docker compose.
-[Click to learn, how to install ChirpStack Network server stack using docker compose](https://www.chirpstack.io/project/guides/docker-compose/){:target="_blank"}.
+To receive data, you need to have a configured instance of the ChirpStack Network Server stack. In this guide, we’ll use a local instance installed via Docker compose.   
+[Click here to learn how to install the ChirpStack Network Server using Docker Compose](https://www.chirpstack.io/project/guides/docker-compose/){:target="_blank"}.
 
-Also, you must connect the device. How to connect it you can find in [connection guide from the official site](https://www.chirpstack.io/project/guides/connect-device/){:target="_blank"}.
+Additionally, you must connect your device to the network. You can find detailed instructions in the [official ChirpStack device connection guide](https://www.chirpstack.io/project/guides/connect-device/){:target="_blank"}.
 
-## Add ChirpStack integration
+## Create ChirpStack integration
+
+You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
+The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+
+<br>
+Let's move on to setting up the integration between the ThingsBoard platform and ChirpStack.
 
 **1. Basic settings**.
 
-Go to the "Integrations" page of the "Integrations center" section. Click "plus" button to start adding new integration. Select type "ChirpStack" integration and click "Next";
+- Sign in to your ThingsBoard account.
+- Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click "**plus**" button to add a new integration.
+- From the list, select the integration type "**ChirpStack**".
+- If you'd like to monitor events and troubleshoot, enable [debug mode](/docs/user-guide/integrations/#debug-mode){:target="_blank"}.
 
-{% capture kafka_please_note %}
-**Note:** While debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all debug data is stored there. After debugging is complete, it is highly recommended turning off debug mode.
-{% endcapture %}
-{% include templates/info-banner.md content=kafka_please_note %}
+{% assign feature = "integrations" %}{% include templates/debug-mode.md %}
+
+- Click "**Next**".
 
 ![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-1-pe.png)
 
 <br>
+
 **2. Uplink data converter**. 
 
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in the ThingsBoard.
-Click on the "plus" and on "Create new converter". To view the events, use "Debug mode".
+Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard.
 
-In the function decoder field, specify a script to parse and transform data. For our example, use the default decoder function (or use your own configuration) when adding the integration. Then, click "Next";
+Starting from **ThingsBoard 4.0**, we have simplified the process of writing converters for Loriot integration. You can now easily choose where the message fields from the integration should go (attributes or telemetry) without manually defining this in the decoder function.
+
+> **Note**: Converters created before the release of ThingsBoard 4.0 will still be available and will continue to function properly.
+
+- Enter a name for the converter. It must be unique.
+- To view the events, enable [debug mode](/docs/user-guide/integrations/#debug-mode){:target="_blank"}.
+- In the "**Main decoding configuration**" section
+    - Select the entity type (**Device** or **Asset**) that will be created as a result of the integration, and specify the entity name. The **$eui** pattern will dynamically fetch the device&#39;s unique identifier from the Loriot message.
+    - Use the existing script for parsing and transforming data, or provide your own custom script.
+
+{% capture difference %}
+**Note:** The converter shown below will work **only with ThingsBoard versions 3.9 and earlier**.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture chirpstackuplinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/chirpstack/chirpstack-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/chirpstack/chirpstack-uplink-converter-config-javascript.md{% endcapture %}
-
 {% include content-toggle.liquid content-toggle-id="chirpstackuplinkconverterconfig" toggle-spec=chirpstackuplinkconverterconfig %}
 
-You can always change the decoder function after creating it.
+![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-2-1-pe.png)
+
+- **Advanced decoding parameters**" section:
+    - The **Device profile**, **Device label**, **Customer name**, and **Device group name** fields are not mandatory, and you can also use the $ pattern to populate them dynamically.
+    - In the **Attributes** and **Telemetry** sections specify the keys that should be interpreted as attributes and telemetry, respectively.
+    - In the **Update only keys list** section, define keys whose values will be saved to the database only if they have changed from the previous incoming message.This applies to both Attributes and Telemetry, helping optimize data storage.
+- Once the uplink converter is set up, click "**Next**".
+
+![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-2-2-pe.png)
 
 <br>
+
 **3. Downlink data converter**.
 
-At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "Skip";
+At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "**Skip**";
 
 ![image](/images/user-guide/integrations/chirpstack/chirpstack-integration-setup-3-pe.png)
 

@@ -8,4 +8,5 @@ description: Supported IoT protocols for IoT device connectivity
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/protocols.md %}

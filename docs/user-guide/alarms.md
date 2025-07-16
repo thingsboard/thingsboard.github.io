@@ -137,4 +137,5 @@ propagate-alarm-created:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/alarms.md %}

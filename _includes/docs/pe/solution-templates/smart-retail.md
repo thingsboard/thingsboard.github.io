@@ -8,10 +8,10 @@ Smart retail solution represent the generic smart retail solution as a solution 
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 As part of this solution, we have created 2 dashboards that display data from multiple sensors - **Smart Supermarkets Dashboard** and **Administration Dashboard**.
 
-#### Smart Supermarkets Dashboard
+### Smart Supermarkets Dashboard
 
 The **Supermarkets Dashboard** has multiple states:
 - **Main** state contains a map of the supermarkets, and a list of alarms. Alarms are propagated from devices to the corresponding supermarket. The platform calculates state of each supermarket based on the highest severity of the propagated alarms. As a user, you are able to filter supermarkets on the map based on the state of the supermarket.
@@ -25,7 +25,7 @@ Some dashboard features (for example, ability to delete devices) were disabled o
 <br>
 Once you install the solution template, you will also receive access to “Smart Supermarket Administration” that allows you to provision customers, their users, supermarkets and devices.
 
-#### Smart Supermarket Administration Dashboard
+### Smart Supermarket Administration Dashboard
 
 The **Smart Supermarkets Administration Dashboard** has multiple states:
 - **Main** state allows you to list the retail companies (customers). We assume that the customer is a retail company that own one or multiple supermarkets. We have provisioned two “fake” retail companies with number of supermarkets for demonstration purposes.
@@ -37,12 +37,12 @@ The **Smart Supermarkets Administration Dashboard** has multiple states:
 
 You may always customize the "Smart Retail" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-### Devices
+## Devices
 
 We have already created multiple sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials.
 
 
-#### Smart Shelf
+### Smart Shelf
 
 The profile is configured to raise alarms if the value of "weight" telemetry is lower than a threshold. Major alarm is raised when the value is below 20 units (kg or lbs depends on what is reported by the device). Critical alarm is raised when the value is below 10 units.
 Sample device payload:
@@ -52,7 +52,7 @@ Sample device payload:
 ```
 {: .copy-code}
 
-#### Smart Shelf
+### Smart Shelf
 
 The profile is configured to raise alarms if the value of "temperature" telemetry is above or below certain thresholds. Major alarm is raised when the value is above -2 degrees or below -25. Critical alarm is raised when the value is above -1 degrees or below -30.
 Sample device payload:
@@ -62,7 +62,7 @@ Sample device payload:
 ```
 {: .copy-code}
 
-#### Chiller
+### Chiller
 
 Chiller profile is very similar to Freezer but with different default threshold values.
 Sample device payload:
@@ -72,7 +72,7 @@ Sample device payload:
 ```
 {: .copy-code}
 
-#### Door sensor
+### Door sensor
 
 The profile is configured to raise major alarm if the door is left open for more than 30 minutes or critical alarm if the door is left opened for 1 hour. The profile is also configured to raise critical alarm if the door is opened during non-working hours. You may configure schedule of the non-working hours in the alarm rule of the device profile.
 Since door sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
@@ -84,7 +84,7 @@ Sample device payload:
 {: .copy-code}
 
 
-#### Motion sensor
+### Motion sensor
 
 Similar to Door sensor, motion sensor is configured to raise critical alarm if the motion is detected during non-working hours. You may configure schedule of the non-working hours in the alarm rule of the device profile.
 
@@ -93,7 +93,7 @@ Similar to Door sensor, motion sensor is configured to raise critical alarm if t
 ```
 {: .copy-code}
 
-#### Smoke sensor
+### Smoke sensor
 
 Smoke sensor will raise critical alarm if the smoke is detected. Since smoke sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
 ```json
@@ -101,7 +101,7 @@ Smoke sensor will raise critical alarm if the smoke is detected. Since smoke sen
 ```
 {: .copy-code}
 
-#### Smart Bin
+### Smart Bin
 The profile is configured to raise alarms if the fullness level is above certain threshold. Major alarm is raised when the level is above 70%. Critical alarm is raised when the level is above 90%.
 Smart bin sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
 Sample device payload:
@@ -112,7 +112,7 @@ Sample device payload:
 {: .copy-code}
 
 
-#### Liquid Level Sensor
+### Liquid Level Sensor
 The profile is configured to raise alarms if the liquid level is below certain threshold. Major alarm is raised when the level is below 30%. Critical alarm is raised when the level is below 10%.
 Liquid Level sensors are usually battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
 Sample device payload:
@@ -122,7 +122,7 @@ Sample device payload:
 ```
 {: .copy-code}
 
-#### Occupancy sensor
+### Occupancy sensor
 The profile is configured to raise major alarm if the room is occupied for more than 30 minutes or critical alarm if the room is occupied for more then 1 hour.
 Since occupancy sensors may be battery powered, the corresponding alarms are raised when the battery level is below 30(major) or 10(critical) percent. If your sensor is not battery powered, you may simply ignore the alarm rule.
 
@@ -137,8 +137,8 @@ Since occupancy sensors may be battery powered, the corresponding alarms are rai
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
-User may turn alarms on and off as well as configure the alarm thresholds via the <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">“Smart Retail”</a> dashboard. 
+## Alarms
+User may turn alarms on and off as well as configure the alarm thresholds via the <a href="https://thingsboard.io/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules" target="_blank">“Smart Retail”</a> dashboard. 
 
 
 

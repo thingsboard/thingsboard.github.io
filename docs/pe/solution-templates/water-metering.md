@@ -40,4 +40,5 @@ rule-chains:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/solution-templates/water-metering.md %}

@@ -8,11 +8,11 @@ AIR Quality Monitoring template represents a solution for general air pollution 
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we have created 2 dashboards that display data from multiple sensors - **Public Air Quality Monitoring Dashboard** and **Administration Air Quality Monitoring Dashboard**.
 
-#### Public Dashboard
+### Public Dashboard
 
 The **Public Air Quality Monitoring Dashboard** has multiple states - **City state** and  **Sensor state**.
 
@@ -31,7 +31,7 @@ You may use the **Sensor state** to:
 - observe a section of specific pollutants: PM2.5, PM10, NO2, CO, SO2, and O3. Click on one of these tiles, and a pop-up will appear, which will display a description, general recommendations, as well as its statistics for this pollutant.
 - see the history of a specific sensor with AQI level in the current, weekly, and monthly range;
 
-#### Administration Dashboard
+### Administration Dashboard
 
 The **Administration Dashboard** has multiple states too - **Main state** and  **Sensor state**.
 
@@ -57,7 +57,7 @@ You may use the **Sensor state** to:
 
 You may always customize the "AIR Quality Monitoring" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-### Devices
+## Devices
 
 We have already created five air quality monitoring sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created devices and their credentials. **The solution expects that the sensor device will upload all pollution values, temperature, humidity, and battery level. The most simple example of the expected payload is in JSON format:**
 
@@ -69,9 +69,9 @@ We have already created five air quality monitoring sensors and loaded some demo
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
-Alarms are generated using two <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
-"AIR Sensor" <a href="/docs/pe/user-guide/device-profiles/" target="_blank">device profile</a>.
+## Alarms
+Alarms are generated using two <a href="https://thingsboard.io/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
+"AIR Sensor" <a href="/docs/{{docsPrefix}}user-guide/device-profiles/" target="_blank">device profile</a>.
 User may turn alarms on and off as well as configure the alarm thresholds via the "Air Quality Monitoring" dashboard using "Edit Sensor" form.
 
 

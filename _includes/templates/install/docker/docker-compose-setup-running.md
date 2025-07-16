@@ -1,11 +1,3 @@
-Execute the following command to create log folders for the services and chown of these folders to the docker container users.
-To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access):
-
-```bash
-./docker-create-log-folders.sh
-```
-{: .copy-code}
-
 Execute the following command to run installation:
 
 ```bash

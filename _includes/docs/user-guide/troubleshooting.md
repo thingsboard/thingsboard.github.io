@@ -54,14 +54,13 @@ After this you can find the following messages in your [logs](#logs):
 2021-03-24 17:01:21,028 [tb-rule-engine-consumer-24-thread-3] INFO  o.t.s.s.q.TbMsgPackProcessingContext - [Main][3f6debf0-8cc0-11eb-bcd9-d343878c0c7f] execution count: 1. [RuleChain: Thermostat|RuleNode: Message Type Switch(3f6debf0-8cc0-11eb-bcd9-d343878c0c7f)]
 ```
 
-### Clearing Redis Cache
+### Clearing Redis/Valkey Cache
 
-**Note:** This can be used only if Redis is selected as a cache.
+**Note:** This can be used only if Redis or Valkey is selected as a cache.
 
-It is possible that the data inside the cache somehow got corrupted. Regardless of the reason, it is always safe to clear cache, ThingsBoard will just refill it at the runtime.
-To clear Redis cache you need to log into the server/container/pod with Redis on it and call <code>redis-cli FLUSHALL</code> command. To clear the cache in Redis Sentinel mode, access the master container and execute the cache-clearing command.
+It is possible that the data inside the cache has become corrupted. Regardless of the reason, it is always safe to clear the cache — ThingsBoard will simply refill it at runtime. To clear the cache, you need to log into the server/container/pod where it is deployed, open the application command-line tool (<code>redis-cli</code> for Redis and <code>valkey-cli</code> for Valkey), and run the <code>FLUSHALL</code>command. To clear the cache in Sentinel mode, access the master container and execute the cache-clearing command.
 
-So if you are struggling with identifying the reason of some problem, you can safely clear Redis cache to make sure it isn't the reason of the issue.
+So if you are struggling with identifying the reason of some problem, you can safely clear cache to make sure it isn't the reason of the issue.
 
 
 ## Logs
@@ -156,7 +155,7 @@ Some internal state metrics can be exposed by the Spring Actuator using Promethe
 
 Here's the list of metrics ThingsBoard pushes to Prometheus.
 
-#### <b>tb-node</b> metrics
+### <b>tb-node</b> metrics
 - <i>attributes_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>attributes</b> to the database. 
 Note that there are several queues (threads) for persisting attributes in order to reach maximum performance.
 - <i>ruleEngine_${name_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>): 
@@ -184,7 +183,7 @@ Note that there are several queues (threads) for persisting attributes in order 
 - <i>attributes_cache</i> (results - <i>hit, miss</i>): stats about how much attribute requests went to the cache
 
 
-#### <b>transport</b> metrics
+### <b>transport</b> metrics
 - <i>transport</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests received by Transport from TB nodes 
 - <i>ruleEngine_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the Rule Engine.
 - <i>core_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the TB node Device actor.
@@ -193,13 +192,13 @@ Note that there are several queues (threads) for persisting attributes in order 
 
 <b>Some metrics depends on the type of the database you are using to persist timeseries data.</b>
 
-#### PostgreSQL-specific metrics
+### PostgreSQL-specific metrics
 - <i>ts_latest_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>latest telemetry</b> to the database. 
 Note that there are several queues (threads) in order to reach maximum performance.
 - <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database. 
 Note that there are several queues (threads) in order to reach maximum performance.
 
-#### Cassandra-specific metrics
+### Cassandra-specific metrics
 - <i>rateExecutor_currBuffer</i>: number of messages that are currently being persisted inside the Cassandra.
 - <i>rateExecutor_tenant</i> (for each present <i>tenantId</i>): number of requests that got rate-limited
 - <i>rateExecutor</i> (statsNames - <i>totalAdded, totalRejected, totalLaunched, totalReleased, totalFailed, totalExpired, totalRateLimited</i>)
@@ -249,13 +248,9 @@ For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-sup
 
 <section id="talkToUs">
     <div id="gettingHelp">
-        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
-            <span class="phrase-heading">Community chat</span>
-            <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
-        </a>
-        <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <span class="phrase-heading">Q&A forum</span>
-            <p>Our user forum is a great place to go for community support.</p>
+        <a href="https://github.com/thingsboard/thingsboard">
+            <span class="phrase-heading">Github Project</span>
+            <p>Check out the project and consider contributing.</p>
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>

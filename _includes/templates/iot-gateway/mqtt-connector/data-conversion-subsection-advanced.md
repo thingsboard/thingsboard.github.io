@@ -16,10 +16,14 @@ Also, you can combine values from MQTT message in attributes, telemetry and serv
 {
     {
         "topicFilter": "sensor/data",
+        "subscriptionQos": 1,
         "converter": {
             "type": "json",
-            "deviceNameJsonExpression": "${serialNumber}",
-            "deviceTypeJsonExpression": "${sensorType}",
+            "deviceInfo": {
+            "deviceNameExpressionSource": "message",
+            "deviceNameExpression": "${serialNumber}",
+            "deviceProfileExpressionSource": "message",
+            "deviceProfileExpression": "${sensorType}"
             "timeout": 60000,
             "attributes": [],
             "timeseries": [

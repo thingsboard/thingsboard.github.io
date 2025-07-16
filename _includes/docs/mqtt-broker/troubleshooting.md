@@ -1,9 +1,9 @@
 * TOC
 {:toc}
 
-### Troubleshooting Tools and Tips
+## Troubleshooting Tools and Tips
 
-#### Kafka Queue: Consumer Group Message Lag 
+### Kafka Queue: Consumer Group Message Lag 
 
 You can use the log shown below to identify any issues with the processing of messages or other parts of TBMQ infrastructure. 
 Since Kafka is used for MQTT message processing and other major parts of the system, such as `client sessions`, `client subscriptions`, `retained messages`, etc., 
@@ -37,7 +37,7 @@ Where:
 
 **NOTE:** Logs about consumer lag are printed only if there is a lag for this consumer group.
 
-#### CPU/Memory Usage
+### CPU/Memory Usage
 
 Sometimes, a problem arises due to a lack of resources for a particular service. 
 You can view CPU and Memory usage by logging into your `server/container/pod` and executing the `top` Linux command.
@@ -47,9 +47,9 @@ For more convenient monitoring, it is better to configure Prometheus and Grafana
 If you see that some services sometimes use 100% of the CPU, you should either scale the service horizontally by creating new nodes 
 in the cluster or scale it vertically by increasing the total amount of CPU.
 
-### Logs
+## Logs
 
-#### Reading Logs
+### Reading Logs
 
 Regardless of the deployment type, TBMQ logs are stored in the following directory:
 
@@ -65,7 +65,7 @@ Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/
 
 {% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
-#### Enabling Certain Logs
+### Enabling Certain Logs
 
 To facilitate troubleshooting, TBMQ allows users to enable or disable logging for specific parts of the system. 
 This can be achieved by modifying the **logback.xml** file, which is located in the following directory:
@@ -122,7 +122,7 @@ Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/
 
 {% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype2 %}
 
-### Metrics
+## Metrics
 
 To enable Prometheus metrics in TBMQ you must: 
 - Set the `STATS_ENABLED` environment variable to `true`.
@@ -130,13 +130,13 @@ To enable Prometheus metrics in TBMQ you must:
 
 The metrics can then be accessed via the following path: `https://<yourhostname>/actuator/prometheus`, and scraped by Prometheus (authentication is not required).
 
-### Prometheus metrics
+## Prometheus metrics
 
 The Spring Actuator in TBMQ can expose some internal state metrics through Prometheus.
 
 Here is a list of the metrics that TBMQ pushes to Prometheus:
 
-#### TBMQ-specific metrics:
+### TBMQ-specific metrics:
 
 - <i>incomingPublishMsg_published</i> (statsNames - <i>totalMsgs, successfulMsgs, failedMsgs</i>): stats about incoming Publish messages to be persisted in the general queue.
 - <i>incomingPublishMsg_consumed</i> (statsNames - <i>totalMsgs, successfulMsgs, timeoutMsgs, failedMsgs, tmpTimeout,
@@ -176,6 +176,7 @@ Here is a list of the metrics that TBMQ pushes to Prometheus:
 - <i>retainMsgTrieNodes</i>: stats about retain message nodes count in trie data structure.
 - <i>lastWillClients</i>: stats about last will clients count.
 - <i>connectedSessions</i>: stats about connected sessions count.
+- <i>connectedSslSessions</i>: stats about connected via TLS sessions count.
 - <i>allClientSessions</i>: stats about all client sessions count.
 - <i>clientSubscriptions</i>: stats about client subscriptions count in the in-memory map.
 - <i>retainedMessages</i>: stats about retain messages count in the in-memory map.
@@ -183,14 +184,15 @@ Here is a list of the metrics that TBMQ pushes to Prometheus:
 - <i>activeSharedAppProcessors</i>: stats about active APPLICATION processors count for shared subscriptions.
 - <i>runningActors</i>: stats about running actors count.
 
-#### PostgreSQL-specific metrics:
-- <i>sqlQueue_UpdatePacketTypeQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating <b>persisted packet's type</b> to the database.
-- <i>sqlQueue_DeletePacketQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about deleting <b>persisted packets</b> from the database.
-- <i>sqlQueue_TimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about <b>historical stats persistence</b> to the database.
+### PostgreSQL-specific metrics:
+- <i>sqlQueue_InsertUnauthorizedClientQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating **unauthorized clients** to the database.
+- <i>sqlQueue_DeleteUnauthorizedClientQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about removing **unauthorized clients** to the database.
+- <i>sqlQueue_LatestTimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about **latest historical stats persistence** to the database.
+- <i>sqlQueue_TimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about **historical stats persistence** to the database.
 
 Please note that in order to achieve maximum performance, **TBMQ uses several queues (threads)** per each of the specified queues above.
 
-### Getting help
+## Getting help
 
 <section id="talkToUs">
     <div id="gettingHelp">

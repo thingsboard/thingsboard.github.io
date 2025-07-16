@@ -120,4 +120,5 @@ downlink_6:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsTag="pe" %}
 {% include docs/pe/user-guide/integrations/aws-iot.md %}

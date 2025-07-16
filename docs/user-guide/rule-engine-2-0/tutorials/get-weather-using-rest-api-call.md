@@ -142,7 +142,7 @@ Be aware that you need to set the asset you created in the beginning as an origi
 
 The following section shows you how to create this rule chain from scratch.
 
-#### Create new Rule Chain (**Outside Temperature/Humidity**)
+### Create new Rule Chain (**Outside Temperature/Humidity**)
 
 Go to **Rule Chains** -> **Add new Rule Chain**
 
@@ -154,11 +154,11 @@ Configuration:
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
-###### Adding the required nodes
+#### Adding the required nodes
 
 In this rule chain, you will create 5 nodes as it will be explained in the following sections:
 
-###### Node A: **Generator node**
+#### Node A: **Generator node**
    - Add the **Generator** node. This rule node Generates empty messages to trigger REST API calls.
    - Fill its fields the following way:
    <table style="width: 50%">
@@ -197,7 +197,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
 
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-A.png)
 
-###### Node B: **Customer attributes enrichment node**
+#### Node B: **Customer attributes enrichment node**
 
    - Add the **Customer attributes node** and connect it to a  **Generator node** with a relation type **Success**.
    This node will put customer attribute APPID into the metadata of message.
@@ -229,7 +229,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
    </table>
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-B.png)
 
-###### Node C: **Originator attributes enrichment node**
+#### Node C: **Originator attributes enrichment node**
    - Add the **Originator attributes enrichment node** and connect it to **Customer attributes node** node with a
    relation type **Success**. This node will fetch server attributes latitude, longitude and units of the
    originator set up in a **Generator** node into metadata
@@ -253,7 +253,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
        </table>
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-C.png)
 
-###### Node D: **External REST API call node**
+#### Node D: **External REST API call node**
    - Add the **External REST API call node** and connect it to **Originator attributes enrichment node** with a relation
    type **Success**. This node will perform REST API calls to OpenWeatherMap.
    - Fill its fields the following way:
@@ -287,7 +287,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
 
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-D.png)
 
-###### Node E: **Script transformation node**
+#### Node E: **Script transformation node**
    - Add the **Script transformation node** and connect it to **External REST API call node** with a relation 
    type **Success**. This node will put outside temperature, maximal temperature, minimal temperature and humidity into
    the message.
@@ -306,7 +306,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
 ```
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-E.png)
 
-###### Node F: **Save timeseries node**
+#### Node F: **Save timeseries node**
 
    - Add the **Script transformation node** and connect it to **External REST API call node** with a relation
         type **Success**. This node will put message into telemetry.

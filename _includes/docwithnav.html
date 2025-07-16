@@ -1,10 +1,19 @@
 {% assign siteData = site.data %}
 {% assign searchPath = "/docs/search/?q=" %}
 {% assign docsTag = include.docsTag %}
+{% assign cssTag = include.cssTag %}
 {% if docsTag %}
-   {% assign siteData = site.data[docsTag] %}
-   {% assign searchPath = "/docs/" | append: docsTag %}
-   {% assign searchPath = searchPath | append: "/search/?q=" %}
+    {% assign siteData = site.data[docsTag] %}
+    {% if docsTag == "edge-pe" %}
+        {% assign searchPath = "/docs/" | append: "pe/edge" %}
+    {% elsif docsTag == "mobile-pe" %}
+        {% assign searchPath = "/docs/" | append: "pe/mobile" %}
+    {% elsif docsTag == "paas-eu" %}
+        {% assign searchPath = "/docs/" | append: "paas/eu" %}
+    {% else %}
+        {% assign searchPath = "/docs/" | append: docsTag %}
+    {% endif %}
+    {% assign searchPath = searchPath | append: "/search/?q=" %}
 {% else %}
    {% assign docsTag = "ce" %}
 {% endif %}
@@ -17,26 +26,15 @@
 <!Doctype html>
 <html id="docs" class="{{siteData[foundTOC].bigheader}} {{productInfo.tag}}">
 
-{% include head-header.html docsTag=docsTag %}
+{% include head-header.html docsTag=docsTag cssTag=cssTag %}
 
 <div id="searchBox">
     <input type="text" id="search" placeholder="Search" onkeydown="if (event.keyCode==13) window.location.replace('{{ searchPath }}' + this.value)">
     <button class="searchButton"></button>
 </div>
 
-<div class="products-selector">
-    <div class="product-info">
-        <div class="product-title">
-            {{productInfo.title}}
-        </div>
-    </div>
-    <div class="products">
-        {% for product in site.data.products %}
-        {% include find-product-url.html %}
-        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
-        {% endfor %}
-    </div>
-</div>
+{% include product-selector.html %}
+
 <!--  HERO  -->
 <section id="hero">
   <div id="hero-content">
@@ -157,21 +155,6 @@
 <script>
     jqueryDefer(function () {
         $(document).ready(function () {
-
-            // Products selector
-
-            let productsSelector = $('.products-selector');
-            $(window).click(function(e) {
-                if (productsSelector[0].contains(e.target)) {
-                    if (productsSelector.hasClass('active')) {
-                        productsSelector.removeClass('active');
-                    } else {
-                        productsSelector.addClass('active');
-                    }
-                } else {
-                    productsSelector.removeClass('active');
-                }
-            });
 
             $('#search').focus(
                 function(){

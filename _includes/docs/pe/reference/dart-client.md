@@ -1,4 +1,4 @@
-{% assign flutterAppVer = site.release.pe_flutter_app_ver %}
+{% assign dartClientVer = site.release.pe_dart_client_ver %}
 * TOC
 {:toc}
 
@@ -34,7 +34,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```yaml
 dependencies:
-  thingsboard_pe_client: ^{{flutterAppVer}}
+  thingsboard_pe_client: ^{{dartClientVer}}
 ```
 {: .copy-code}
 

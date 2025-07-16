@@ -11,7 +11,7 @@ toc:
     path: /docs/user-guide/install/rhel/
   - title: Windows
     path: /docs/user-guide/install/windows/
-  - title: Raspberry Pi 3
+  - title: Raspberry Pi
     path: /docs/user-guide/install/rpi/
   - title: Docker (Windows)
     path: /docs/user-guide/install/docker-windows/

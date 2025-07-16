@@ -7,4 +7,5 @@ redirect_from: "/docs/user-guide/csv-xls-data-export/"
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/pe/user-guide/csv-xls-data-export.md %}

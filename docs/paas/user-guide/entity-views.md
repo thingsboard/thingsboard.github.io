@@ -8,4 +8,5 @@ redirect_from: "/docs/pe/user-guide/ui/entity-views"
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/entity-views.md %}

@@ -1,25 +1,26 @@
 * TOC
 {:toc}
 
-#### Overview
+### Overview
 
-Edge Queues are designed in the same way, as [Platform (Cloud) Queues](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-5/queues/).
-Please read Platform Queues documentation to get knowledge on Queues functionality in general.
+In **ThingsBoard**, **queues** guarantee the message processing, handle occasional spikes, and keep the system up and running on extreme loads. 
+**Edge Queues** are designed in the same way as **Platform (Cloud) Queues**.
+For a better understanding, read the [Platform Queues documentation](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-5/queues/){: target="_blank"}.
 
-#### Propagation Queues to Edge
+**Tenant administrators** can use any **queue** in the **Edge Rule Chain**, the same as the **Platform Rule Chain**.
+**Queues** can be used in [checkpoint node](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#checkpoint-node){: target="_blank"} 
+or any [analytics nodes](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/){: target="_blank"} (for a Professional Edition).
 
-Queues are created on the *Platform*. In the current version you **can not** create, modify or delete them on the *Edge*.
+Starting with **Edge 3.9**, Edge supports **Kafka** and **in-memory** types of message queues:
+* **In-Memory:** The built-in and default queue implementation. It is useful for development or proof-of-concept (PoC) environments, but is not recommended for production or any type of clustered deployments due to limited scalability.
+* **Kafka:** A widely used, distributed, and durable message queue system designed to handle large volumes of data. It is well-suited for production environments where high throughput, fault tolerance, and scalability are critical.
 
-All the Queues, that are created on the Platform, are automatically propagated to every Edge instance, that is connected to the Platform. 
-No additional assignment actions required from Tenant administrator or user.
+All **queues** are created on the **Platform** and automatically propagated to each **Edge** instance connected to the **Platform**.
+Only a **system administrator** user can configure queues. After configuration, new changes will apply immediately.
+No additional assignment actions are required by **tenant administrator** or **user**.
 
-#### Queues Usage in the Rule Engine
+In the current release, you cannot create, modify, or delete **queues** on the **Edge**. 
 
-Tenant administrator is able to use any Queue in the *Edge* Rule Chain, in the same way as it used for *Platform* Rule Chain.
-
-You can use Queues in *Checkpoint* or any analytics (**PE**) rule nodes. 
-No additional configuration steps required. 
- 
-## Next steps
+### Next steps
 
 {% include templates/edge/guides-banner-edge.md %}

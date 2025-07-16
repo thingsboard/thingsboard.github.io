@@ -9,31 +9,10 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.7.1
+### v4.2
 
-* Mobile application configuration via Web UI;
-* Dashboard layout improvements;
-* Time window improvements;
-* Interactive SCADA widgets based on SVG;
-* New label and notification widgets;
-* Adding version to entities;
-* Improvements to caching of attributes and time series data;
-
-### v3.7.2
-
-* Basic settings for Map widgets;
-* Rule chain UI/UX improvements;
-
-### v3.8
-
-* Migration to Angular 18;
-* Attributes and time series writes scalability improvement;
-* Advanced data query service;
-* Global entities Search;
-* Alarm rules:
-  * refactoring to separate entity;
-  * simplified configuration;
-  * support of more complex conditions;
+* Ability to disable tenants;
+* Partitioning of Attributes and Time Series Data into different PostgreSQL database instances to improve scalability;
 
 See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).
 
@@ -43,4 +22,3 @@ See active development in progress [here](https://github.com/thingsboard/thingsb
 * Improvements to IoT Gateway;
 * Ability to save dashboard parameters (time intervals, etc) per user;
 * JavaScript Device/Gateway SDK;
-* Single sign on;

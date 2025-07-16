@@ -94,7 +94,7 @@ The following screenshot shows how the **Tutorial of RPC Call Request** Rule Cha
 Also, you can create the new Rule Chain from scratch. The following section shows you how to create it.
 
 
-#### Creating a new Rule Chain (**Tutorial of RPC Call Request**)
+### Creating a new Rule Chain (**Tutorial of RPC Call Request**)
 
 - Go to **Rule Chains** -> **Add new Rule Chain**
 - Enter the Name field as **Tutorial of RPC Call Request**, then click the **ADD** button.
@@ -103,11 +103,11 @@ Also, you can create the new Rule Chain from scratch. The following section show
 
 - The new Rule Chain is now created. Don’t forget to mark it as “root”.
 
-##### Adding the required nodes
+#### Adding the required nodes
 
 In this tutorial, you will create 8 nodes as it will be explained in the following sections:
 
-###### Node A: **Message Type Switch**
+##### Node A: **Message Type Switch**
 - Add the **Message Type Switch** node and connect it to the **Input** node. <br>
   This node will route the incoming messages according to the message type, namely **POST_TELEMETRY_REQUEST**.
 
@@ -116,7 +116,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/message-type-switch.png)
 
-######  Node B: **Save TimeSeries**
+#####  Node B: **Save TimeSeries**
 - Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relation type **Post telemetry**. <br>
   This node will store TimeSeries data from incoming Message payload to the database and associate them to the Device, that is identified by the Message Originator, namely **Wind Direction Sensor** and **Rotating System**.
 
@@ -125,7 +125,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/save-ts.png)
 
-###### Node C: **Related attributes**
+##### Node C: **Related attributes**
 - Add the **Related attributes** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
   This node will load the source telemetry **windDirection** from the related **Wind Direction Sensor** to **Rotating System** and save it into the Message metadata with the name **windDirection**.
 - Fill in the fields with the input data shown in the following table:
@@ -176,7 +176,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/get-related.png)
 
-###### Node D: **Change Originator**
+##### Node D: **Change Originator**
 - Add the **Change Originator** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
   This node will change the originator from Devices **Wind Direction Sensor** and **Rotating System** to the Related Asset **Wind Turbine** that has a relation of the type **Contains** from each of them. 
   <br>As a result, the submitted message will be processed as a message from this Entity
@@ -218,7 +218,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/change-originator.png)
 
-###### Node E: **Save TimeSeries**
+##### Node E: **Save TimeSeries**
 - Add the **Save TimeSeries** node and connect it to the **Change Orignator** node with a relation type **Success**. <br>
   This node will store the TimeSeries data from the incoming Message payload into the database from the Asset **Wind Turbine** that is Message Originator.
 - Enter the Name field as **Save Time Series**.
@@ -226,7 +226,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/save-ts.png)
 
-###### Node F: **Transform Script**
+##### Node F: **Transform Script**
 - Add the **Transform Script** node and connect it to the **Related attributes** node with a relation type **Success**. <br>
 This node will transform an original message into RPC request message. 
 - The RPC call will have 2 properties:
@@ -255,7 +255,7 @@ This node will transform an original message into RPC request message.
  return {msg: newMsg, metadata: metadata, msgType: msgType}; {% endhighlight %}
 
 
-###### Node G: **Filter Script**
+##### Node G: **Filter Script**
 
 - Add the the **Filter Script** node and connect it to the **Transform Script** node with a relation type **Success**. <br> 
   This node will check if msgType of incoming message is **RPC message**.
@@ -266,7 +266,7 @@ This node will transform an original message into RPC request message.
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/check-validity.png)
 
 
-###### Node H: **RPC call request**
+##### Node H: **RPC call request**
 - Add the **RPC call request** node and connect it to the **Filter Script** node with a relation type **True**. <br>
   This node takes the message payload and sends it as a response to the Message Originator.
 - Enter the Name field as **Rotating System**.

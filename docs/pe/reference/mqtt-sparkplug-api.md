@@ -101,4 +101,5 @@ sparkplug-update-metrics-using-the-thingsboard-rpc-command-3:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/reference/mqtt-sparkplug-api.md %}

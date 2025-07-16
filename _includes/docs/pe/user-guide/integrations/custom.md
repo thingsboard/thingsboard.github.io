@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -8,28 +8,28 @@
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 Custom integration is **only executed remotely** from the main ThingsBoard instance. It allows to create integration with custom configuration 
 that will use any transport protocol for communication with your devices.
 
 This guide contains step-by-step instructions on how to create and launch ThingsBoard custom integration.
 For example, we will launch custom integration that uses TCP transport protocol to stream data from devices and pushes the converted data to 
-[thingsboard.cloud](https://thingsboard.cloud/signup).
+[{{hostName}}](https://{{hostName}}/signup).
 
 Before we start, you can find the full code of custom integration example that we will use in this guide [here](https://github.com/thingsboard/remote-integration-example).
  
-### Prerequisites
+## Prerequisites
 
-We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.1+ instance or thingsboard.cloud.
+We assume you already have a tenant administrator account on your own ThingsBoard PE v2.4.1+ instance or {{hostName}}.
 
 Let’s assume that we have a sensor which is sending current temperature, humidity and battery level readings respectively in the following format: **“25,40,94”**.
  
-### Uplink and Downlink Converters
+## Uplink and Downlink Converters
 
 Before setting up a custom integration, you need to create an Uplink and a Downlink converters.
 
-#### Uplink Converter
+### Uplink Converter
 
 Let's create uplink converter.
 
@@ -81,12 +81,12 @@ The purpose of the decoder function is to parse the incoming data and metadata t
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
 **Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
 
-#### Downlink Converter
+### Downlink Converter
 
 We will not use the Downlink converter in this guide so there is no need to create one.
 In case you have another use case, please refer to the following [instructions](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter).
  
-### Custom Integration Setup
+## Custom Integration Setup
  
 Let's create custom integration. 
 
@@ -102,9 +102,9 @@ The **Integration JSON configuration** is the custom configuration that has two 
 
 We will get back to this later in this guide.
 
-### Custom Integration Application
+## Custom Integration Application
 
-#### Download the sample application
+### Download the sample application
 
 Feel free to grab the [code from the ThingsBoard repository](https://github.com/thingsboard/remote-integration-example) and build the project with maven:
 
@@ -114,7 +114,7 @@ mvn clean install
 
 Go ahead and add that maven project to your favorite IDE.
 
-#### Dependencies review
+### Dependencies review
 
 Main dependencies that are used in the project:
 
@@ -139,7 +139,7 @@ Main dependencies that are used in the project:
 </dependency>
 ```
 
-#### Source code review
+### Source code review
 
 Main source code is the [CustomIntegration](https://github.com/thingsboard/remote-integration-example/blob/master/src/main/java/org/thingsboard/integration/custom/basic/CustomIntegration.java) Java class.
 Integration is expecting "Hello to ThingsBoard" message from the TCP client and replies with the "Hello from ThingsBoard!".

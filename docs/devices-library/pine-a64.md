@@ -13,4 +13,5 @@ deviceImageFileName: pine-a64.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/pine-a64.md %}

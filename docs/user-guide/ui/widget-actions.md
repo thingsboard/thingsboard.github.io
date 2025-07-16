@@ -2,8 +2,8 @@
 layout: docwithnav
 assignees:
 - ashvayka
-title: Widget Actions
-description: ThingsBoard Dashboard Widget Actions
+title: Widget actions
+description: ThingsBoard dashboard widget actions
 
 add-new-action-1:
     0:
@@ -251,6 +251,53 @@ open-url-2:
     1:
         image: /images/user-guide/ui/widgets/actions/guide/types/open-url-6-ce.png
         title: 'You will be transferred to the URL specified in the action. In our case, it&#39;s the "Working with ThingsBoard widgets" documentation page.'
+
+data-source-for-action:
+    0:
+        image: /images/user-guide/widgets/maps/data-source-for-action-1-ce.png
+        title: 'In the "Overlays" section, under the "Marker" tab, create a new entity alias as the data source. Name it "EV stations".'
+    1:
+        image: /images/user-guide/widgets/maps/data-source-for-action-2-ce.png
+        title: 'Since we&#39;ll be creating entities of the type "EV station", set the filter type to "Asset type" and specify the type as "EV station". Apply changes.'
+
+action:
+    0:
+        image: /images/user-guide/widgets/maps/action-1-ce.png
+        title: 'Scroll down to the "Actions" section and click the "Add action" button.'
+    1:
+        image: /images/user-guide/widgets/maps/action-2-ce.png
+        title: 'A new window will open, displaying all your created actions. Click the "plus" icon button in the top-right corner to add one.'
+    2:
+        image: /images/user-guide/widgets/maps/action-3-ce.png
+        title: 'Select the action source as "Widget header button", enter a name for the button, and choose its type.'
+    3:
+        image: /images/user-guide/widgets/maps/action-4-ce.png
+        title: 'Optionally, change the icon that will appear next to the button or hide it entirely. You can also set a custom color for the button.'
+    4:
+        image: /images/user-guide/widgets/maps/action-5-ce.png
+        title: 'From the dropdown menu, select the type of action to be performed. In our case, it&#39;s "Place map item". Next, choose the type of map item to be placed — we&#39;ll be placing a "Marker". The custom action function field already contains a default function that opens a dialog for creating a device or an asset — exactly what we need. Then, click "Add".'
+    5:
+        image: /images/user-guide/widgets/maps/action-6-ce.png
+        title: 'Apply all changes and save the dashboard.'
+    6:
+        image: /images/user-guide/widgets/maps/action-7-ce.png
+        title: 'A new action button labeled "Add EV station" has now appeared at the top of the map.'
+
+action-place-marker:
+    0:
+        image: /images/user-guide/widgets/maps/action-place-marker-1-ce.png
+        title: 'Click the newly created "Add EV station" button. Then, find the location on the map where you want to place the EV station and click on it.'
+    1:
+        image: /images/user-guide/widgets/maps/action-place-marker-2-ce.png
+        title: 'In the "Add entity" dialog that appears, make sure to enter a name for the new entity and select its type — Asset. The other fields are optional. Then click "Create".'
+    2:
+        image: /images/user-guide/widgets/maps/action-place-marker-3-ce.png
+        title: 'The new "EV station" marker is now added to the map.'
+    
+action-created-asset:
+    0:
+        image: /images/user-guide/widgets/maps/action-created-asset-1-ce.png
+        title: 'Go to the "Assets" page — there you&#39;ll find your newly created asset, "EV station 1".'
 
 action-cell-button-1:
     0:
@@ -653,4 +700,5 @@ entityfromwidget:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-actions.md %}

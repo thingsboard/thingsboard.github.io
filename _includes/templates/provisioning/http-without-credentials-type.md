@@ -58,8 +58,8 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*10, "\033[1m\033[94mThingsBoard device provisioning without authorization example script. HTTP API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (https://thingsboard.cloud): ")
-    config["host"] = host if host else "https://thingsboard.cloud"
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default ({{httpsUrl}}): ")
+    config["host"] = host if host else "{{httpsUrl}}"
     port = input("Please write your ThingsBoard \033[93mHTTP port\033[0m or leave it blank to use default (443): ")
     config["port"] = int(port) if port else 443
     config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")

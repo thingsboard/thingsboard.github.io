@@ -12,4 +12,4 @@ Also, MQTT connector supports shared subscriptions.
 To create shared subscription you need to add "**$share/**" as a prefix for topic filter and shared subscription group name. 
 For example to subscribe to the *my-shared-topic* in group ***my-group-name*** you can set the topic filter to "$share/***my-group-name***/*my-shared-topic*".
 
-M**QTT Quality of Service** (QoS) is an agreement between the message sender and receiver that defines the level of delivery guarantee for a specific message.
+**MQTT Quality of Service** (QoS) is an agreement between the message sender and receiver that defines the level of delivery guarantee for a specific message. (0-At most once, 1-At least once, 2-Exactly once)

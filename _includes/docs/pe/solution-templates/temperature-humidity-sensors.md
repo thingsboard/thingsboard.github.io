@@ -12,7 +12,7 @@ Those users will have the dashboard assigned to them, and the user will see the 
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we have created the "Temperature & Humidity" dashboard that displays data from multiple sensors. You may use the dashboard to:
 
@@ -26,7 +26,7 @@ You may drill down to the sensor details state by clicking on the table row. The
 
 You may always customize the "Temperature & Humidity" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-### Devices
+## Devices
 
 We have already created two sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) 
 for the list of created devices and their credentials.
@@ -42,20 +42,20 @@ The most simple example of the expected payload is in JSON format:
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
+## Alarms
 
 Alarms are generated using two Alarm rules in the "Temperature Sensor" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/). 
 User may turn alarms on and off as well as configure the alarm thresholds via the "Temperature & Humidity" dashboard using "Edit Sensor" form.
 
 {% include images-gallery.html imageCollection="solution-alarms" %}
 
-### Customers
+## Customers
 
 "Sensor C1" is assigned to a newly created customer "Customer A".
 You may notice that "Customer A" has two users, and the "Temperature & Humidity" dashboard is accessible for those users.
 You may create more [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/) and more [Users](/docs/{{docsPrefix}}user-guide/ui/users/) via administration UI.
 
-### Role Based Access Control (RBAC)
+## Role Based Access Control (RBAC)
 
 We have created two users for "Customer A" customer. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created users and their passwords.
 Those users are members of the "Customer Administrator" group. So, they have access to all entities of the Customer, including device "Sensor C1". 

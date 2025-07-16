@@ -12,11 +12,11 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 - Active [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} account.
 
-### Step 1. Subscribe to ThingsBoard PE BYOL
+## Step 1. Subscribe to ThingsBoard PE BYOL
 
 Open [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/things-board.tb-pe-byol) product page from Azure Marketplace.
 
@@ -32,12 +32,12 @@ Open [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.
 
 ![image](/images/user-guide/install/azure-marketplace/create.png)
 
-### Step 2. General configuration
+## Step 2. General configuration
 
 - You will be redirected to "Create a virtual machine" dialog with tons of setting. 
 No worries, we are going to leave most of them with default values.
 
-###### Step 2.1 Basics 
+### Step 2.1 Basics 
 
 - Create new "Resource group", e.g. "thingsboard";
 - Add recognizable virtual machine name, e.g. "ThingsBoardPE-PROD";
@@ -47,14 +47,14 @@ No worries, we are going to leave most of them with default values.
  
 ![image](/images/user-guide/install/azure-marketplace/config-basics.png)
 
-###### Step 2.2 Disks
+### Step 2.2 Disks
 
 - We suggest to leave this as-is, but you can optionally add new disks here;
 - Click the "Next: Networking" button.
 
 ![image](/images/user-guide/install/azure-marketplace/config-disks.png)
 
-###### Step 2.3 Networking
+### Step 2.3 Networking
 
 - Leave all settings as-is; 
 - Make sure This VM uses preconfigured network security group;
@@ -62,12 +62,12 @@ No worries, we are going to leave most of them with default values.
 
 ![image](/images/user-guide/install/azure-marketplace/config-networking.png)
 
-###### Step 2.3 Management, Advanced, Tags
+### Step 2.3 Management, Advanced, Tags
 
 - Leave all settings as-is on all three tabs;
 - Click the "Next" button until you reach "Review + create" tab.
  
-###### Step 2.4 Review + create
+### Step 2.4 Review + create
 
 - Review the final product details;
 - Make sure your name, email address and phone number is correct;
@@ -83,7 +83,7 @@ No worries, we are going to leave most of them with default values.
 
 ![image](/images/user-guide/install/azure-marketplace/launch-completed.png)
 
-### Step 3. Review created resource
+## Step 3. Review created resource
 
 You will be navigated to the resource overview page. 
 We should use this page to copy the external IP address of your instance. 
@@ -94,7 +94,7 @@ We will use it in our next steps.
 
 ![image](/images/user-guide/install/azure-marketplace/resource-overview.png)
 
-### Step 4. Obtain your license secret
+## Step 4. Obtain your license secret
 
 In order to activate your ThingsBoard instance you will need to get the license secret. 
 ThingsBoard Licenses are managed by [ThingsBoard License Portal](https://license.thingsboard.io/signup).   
@@ -104,17 +104,17 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
  
 Please save your license secret to a safe place. We will use them later in this guide.
 
-### Step 5. Configure your license secret
+## Step 5. Configure your license secret
 
 Once you get the license secret, you should put it to the thingsboard configuration file. 
 
-#### Step 5.1. Connect to your Thingsboard Instance over SSH
+### Step 5.1. Connect to your Thingsboard Instance over SSH
 
 Please use the [official Azure guide](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to connect to Azure VM using SSH keys. 
 
 Note: You will need to use instance Public IP (see [Step 3](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-3-review-created-resource)) and the key file (see [Step 2.1](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-21-basics))
 
-#### Step 5.2. Put License Secret to thingsboard configuration file
+### Step 5.2. Put License Secret to thingsboard configuration file
 
 Open the file for editing using the following command:
 
@@ -139,7 +139,7 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
-### Step 6. Launch ThingsBoard service
+## Step 6. Launch ThingsBoard service
 
 Execute the following command to start ThingsBoard:
 
@@ -152,7 +152,7 @@ sudo service thingsboard start
 Please allow up to 120 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
 {% include templates/info-banner.md content=90-sec-ui %}
 
-### Step 7. Connect to Thingsboard UI
+## Step 7. Connect to Thingsboard UI
 
 Now you can open this link in your browser:
 
@@ -172,7 +172,7 @@ Default password for System Administrator is:
 
 Now you can proceed to the next steps.
 
-### Post-installation steps
+## Post-installation steps
 
 **Configure HAProxy to enable HTTPS**
 
@@ -186,6 +186,6 @@ Now you can proceed to the next steps.
     where **smth.yourcompany.com** is your DNS name from the second step
     and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

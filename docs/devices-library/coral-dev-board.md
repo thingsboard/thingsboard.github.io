@@ -13,4 +13,5 @@ deviceImageFileName: coral-dev-board.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/coral-dev-board.md %}

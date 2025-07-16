@@ -10,4 +10,5 @@ deviceImageFileName: mixed-input-8-channel-analog-cellular-logger.jpg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/mixed-input-8-channel-analog-cellular-logger.md %}

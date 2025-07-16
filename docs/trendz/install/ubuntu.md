@@ -10,7 +10,7 @@ description: Installing ThingsBoard Trendz Analytics on Ubuntu
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install Trendz Analytics on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 
@@ -19,11 +19,11 @@ To run Trendz Analytics on a single machine you will need at least 1Gb of free R
 
 In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
 
-### Step 1. Install Java 17 (OpenJDK) 
+## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
-### Step 2. Trendz Analytics service installation
+## Step 2. Trendz Analytics service installation
 
 Download installation package.
 
@@ -39,7 +39,7 @@ sudo dpkg -i trendz-{{ site.release.trendz_ver }}.deb
 ```
 {: .copy-code}
 
-### Step 3. Obtain and configure license key 
+## Step 3. Obtain and configure license key 
 
 We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
@@ -59,7 +59,7 @@ Add the following lines to the configuration file and put your license secret:
 export TRENDZ_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ```
 
-### Step 4. Configure connection with ThingsBoard Platform
+## Step 4. Configure connection with ThingsBoard Platform
 
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
@@ -78,25 +78,32 @@ export TB_API_URL=http://localhost:8080
 ```
 {: .copy-code}
 
-### Step 5. Configure Trendz database
+## Step 5. Configure Trendz database
 Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
 service from your cloud vendor.
 
-#### PostgreSQL Installation
+### PostgreSQL Installation
 
 {% include templates/install/postgres-install-ubuntu.md %}
 
-#### Create Database for Trendz
+### Create Database for Trendz
 
-Then, press "Ctrl+D" to return to main user console and connect to the database to create trendz DB:
+Connect to the database to create trendz DB:
 
-```text
+```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-CREATE DATABASE trendz;
-\q
 ```
+{: .copy-code}
 
-#### Configure database connection for Trendz
+Create database named "trendz":
+```bash
+CREATE DATABASE trendz;
+```
+{: .copy-code}
+
+Press “Ctrl+D” twice to logout.
+
+### Configure database connection for Trendz
 
 Edit Trendz configuration file 
 
@@ -115,7 +122,63 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
-### Step 6. Run installation script
+## Step 6. Install Trendz Python executor
+
+For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed.
+Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
+But in this section we will write how to install Python libraries directly on the server with Trendz.
+
+#### Install Python3
+
+```bash
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+```
+{: .copy-code}
+
+#### Create a Virtual Environment
+
+```bash
+sudo mkdir -p /opt/venvs
+sudo python3 -m venv /opt/venvs/trendz_venv
+sudo chown -R trendz: /opt/venvs/trendz_venv
+```
+{: .copy-code}
+
+#### Install required python packages
+
+```bash
+sudo -u trendz /opt/venvs/trendz_venv/bin/pip install --no-cache-dir \
+  numpy==1.26.3 \
+  scikit-learn==1.4.2 \
+  statsmodels==0.14.2 \
+  tensorflow==2.16.1 \
+  pandas==2.1.4 \
+  matplotlib==3.8.4 \
+  prophet==1.1.5 \
+  xgboost==2.0.3
+```
+{: .copy-code}
+
+#### Configure venv connection for Trendz
+
+Edit Trendz configuration file
+
+```bash 
+sudo nano /etc/trendz/conf/trendz.conf
+``` 
+{: .copy-code}
+
+Add the following lines to the configuration file:
+
+```bash
+export SCRIPT_ENGINE_USE_CUSTOM_VENV=true
+export SCRIPT_ENGINE_CUSTOM_VENV_PATH=/opt/venvs/trendz_venv/bin/python3
+```
+{: .copy-code}
+
+## Step 7. Run installation script
 
 Once Trendz service is installed and DB configuration is updated, you can execute the following script:
 
@@ -124,7 +187,7 @@ sudo /usr/share/trendz/bin/install/install.sh
 ```
 {: .copy-code} 
 
-### Step 7. Start Trendz service
+## Step 8. Start Trendz service
 
 Execute the following command to start Trendz Analytics:
 
@@ -142,41 +205,14 @@ http://localhost:8888/trendz
 the server or with a domain name. Also, check that port 8888 opened for public access.
 
 
-#### Authentication
+### Authentication
 
 For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Step 8. Install Trendz Python executor
-For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed. 
-Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
-But in this section we will write how to install Python libraries directly on the server with Trendz.
-
-* Install Python3
-```bash
-sudo apt update
-sudo apt install python3
-sudo apt install python3-pip
-```
-{: .copy-code}
-
-* Install required python packages
-```bash
-echo "flask == 2.3.2" > requirements.txt
-echo "numpy == 1.24.1" >> requirements.txt
-echo "statsmodels == 0.13.5" >> requirements.txt
-echo "pandas == 1.5.3" >> requirements.txt
-echo "scikit-learn == 1.2.2" >> requirements.txt
-echo "prophet == 1.1.3" >> requirements.txt
-echo "seaborn == 0.12.2" >> requirements.txt
-echo "pmdarima == 2.0.3" >> requirements.txt
-sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
-```
-{: .copy-code}
-
-### Step 9. HTTPS configuration
+## Step 9. HTTPS configuration
 
 You may want to configure HTTPS access using HAProxy. 
 This is possible in case you are hosting Trendz in the cloud and have a valid DNS name assigned to your instance.
@@ -225,7 +261,7 @@ https://new-trendz-domain.com
 
 Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
 
-### Step 10. Host ThingsBoard and Trendz on the same domain
+## Step 10. Host ThingsBoard and Trendz on the same domain
 ThingsBoard and Trendz can share same domain name. In this case ThingsBoard web page would be loaded using following link:
 
 ```bash
@@ -254,7 +290,10 @@ acl trendz_acl path_beg /trendz path_beg /apiTrendz
 use_backend tb-trendz if trendz_acl
 ```
 
-### Troubleshooting
+## Post-installation steps
+It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
+
+## Troubleshooting
 
 Trendz logs are stored in the following directory:
  
@@ -268,6 +307,6 @@ You can issue the following command in order to check if there are any errors on
 cat /var/log/trendz/trendz.log | grep ERROR
 ```
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

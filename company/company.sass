@@ -1,136 +1,231 @@
-#docsContent
-  #content
-    h1.aboutus-title, h1.who-we-are, h1.our-mission, div.our-goal h1,
-    span.aboutus-title, span.who-we-are, span.our-mission, div.our-goal span.heading
-      z-index: 1
-      position: relative
-      padding: 0
-      &:before
-        content: none
-    h1.aboutus-title, span.aboutus-title
-      text-align: center
-      font-size: 36px
-      font-weight: 500
-      line-height: 54px
-      margin: 0 0 82px
-    h1.who-we-are, h1.our-mission, span.who-we-are, span.our-mission
-      font-size: 36px
-      line-height: 54px
-      font-weight: 600
-      margin: 0 0 8px
-    p.company-info
-      font-weight: 400
-      font-size: 18px
-      line-height: 27px
-    div.our-mission
-      margin-top: 56px
-      display: flex
-      flex-direction: row
-      align-items: center
-      div.our-mission-logos
-        flex: 40%
-        position: relative
-        div.spacer
-          margin-top: 52%
-        div.about-mission-background
-          position: absolute
-          background: #F7F9FC
-          height: 45%
-          width: 1400px
-          top: 27.5%
-          right: 25%
-        img
-          border-radius: 4px
-        img.about-mission-index
-          position: absolute
-          top: 0
-          left: 0
-          width: 75%
-          margin: 5% 0
-        img.about-mission-left
-          position: absolute
-          width: 33%
-          bottom: 0
-          left: -8%
-          box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
-        img.about-mission-right
-          position: absolute
-          width: 33%
-          top: 0
-          right: 16%
-          box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
-      div.our-mission-info
-        flex: 60%
-      @media screen and (max-width: 1024px)
-        flex-direction: column
-        div.our-mission-logos
-          flex: 100%
-          margin-left: 20%
-          width: 60%
-          margin-bottom: 56px
-        div.our-mission-info
-          flex: 100%
-      @media screen and (max-width: 768px)
-        div.our-mission-logos
-          width: 100%
-    div.our-goal
-      margin-top: 56px
-      h1
-        text-align: center
-        font-weight: 500
-        font-size: 24px
-        line-height: 36px
-        color: #75767C
-        margin-bottom: 18px
-      p
-        text-align: center
-        font-weight: 600
-        font-size: 32px
-        line-height: 48px
-    div.company-contacts
-      margin-top: 120px
-      margin-bottom: 70px
-      display: flex
-      flex-direction: row
-      font-weight: normal
-      font-size: 18px
-      line-height: 27px
-      div.company-contact
-        > div
-          text-align: left
-          display: inline-block
-          padding-left: 44px
+#company
+
+  .owl-carousel.owl-theme
+    margin: 40px 0 0
+
+  .owl-carousel.owl-theme.smooth-carousel
+    margin: 0
+
+  #companyBg
+    padding: 0
+    overflow: hidden
+    background: #FFFFFF
+
+    #companyContent
+
+      --company-hero-carousel-animation: 0.1
+      --company-aboutus-content-animation: 0.4
+      --company-history-content-animation: 0.2
+      --company-timeline-content-animation: 0.5
+      --company-values-content-animation: 0.3
+
+      .company-content
+
+        .company-hero-carousel
+            opacity: 0
+        .company-hero-carousel-animation
+            animation: revealFromRightToLeft 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+        .company-aboutus-container
           position: relative
-          &:before
-            content: ""
-            background-size: contain
-            display: block
-            position: absolute
-            left: 10px
-            top: 5px
-            width: 18px
-            height: 18px
-            border: none
-      div.phone
-        &:before
-          background-image: url("/images/about-phone-icon.svg")
-      div.mail
-        a
-          color: #212529
-          &:hover
-            color: #212529
-        &:before
-          background-image: url("/images/about-mail-icon.svg")
-      div.address
-        &:before
-          background-image: url("/images/about-location-icon.svg")
-      @media screen and (max-width: 1024px)
-        flex-direction: column
-        div.company-contact
-          margin-bottom: 6px
-      @media screen and (min-width: 1025px)
-        padding-left: 5%
-        padding-right: 5%
-        div.company-contact
-          flex: 1
-          text-align: center
+          background: #F7F9FC
+          padding: 50px 0px
+          overflow: hidden
+          .company-content-title
+            margin-bottom: 50px
+            padding: 0
+          .company-aboutus-image-block
+            display: flex
+            flex-direction: column
+            align-items: center
+            gap: 15px
+            .company-aboutus-image
+              max-width: 257px
+            span
+              font-size: 70px
+              font-weight: 500
+              color: #305680
+        .company-aboutus-content-animation
+          .company-flex-content-default
+            animation: opacityTransform 0.8s ease-out forwards
+            .company-aboutus-image-block
+              transform: translateX(-100%)
+              animation: slideInFromLeft 0.8s ease-out forwards
+            .company-text-content-default
+              transform: translateX(100%)
+              animation: slideInFromRight 0.8s ease-out forwards
+
+      .company-history-container
+        .company-aboutus-image
+          max-width: 400px
+      .company-history-content-animation
+        .company-flex-content-default
+          animation: slideInFromBottom 0.8s ease-out forwards, opacityTransform 1s ease-out forwards
+          transform: translateY(100%)
+
+      .company-aboutus-container .company-flex-content-default
+        align-items: center
+
+      .company-history-container .company-flex-content-default
+        align-items: flex-start
+
+      .company-timeline
+        opacity: 0
+
+      .company-timeline-content-animation
+        animation: revealFromLeftToRight 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+      .company-values
+        opacity: 0
+
+      .company-values-content-animation
+        animation: revealFromLeftToRight 0.8s ease-in-out forwards, opacityTransform 1.5s ease-out forwards
+
+      .company-aboutus-image
+        width: 100%
+        height: auto
+
+  @keyframes slideInFromLeft
+    0%
+      transform: translateX(-100%)
+
+    100%
+      transform: translateX(0)
+
+  @keyframes slideInFromRight
+    0%
+      transform: translateX(100%)
+
+    100%
+      transform: translateX(0)
+
+  @keyframes slideInFromBottom
+    0%
+      transform: translateY(100%)
+
+    100%
+      transform: translateY(0)
+
+  @keyframes revealFromLeftToRight
+    0%
+      clip-path: inset(0 100% 0 0)
+
+    100%
+      clip-path: inset(0 0 0 0)
+
+  @keyframes revealFromRightToLeft
+    0%
+      clip-path: inset(0 0 0 100%)
+
+    100%
+      clip-path: inset(0 0 0 0)
+
+  @keyframes opacityTransform
+    0%
+      opacity: 0
+
+    100%
+      opacity: 1
+
+  .company-wrapper
+    max-width: 1390px
+    padding: 0 20px
+    margin: 0 auto
+
+  .company-team-wrapper
+    max-width: 1775px
+    padding: 0 36px
+    margin: 0 auto
+    .join-link
+      margin: 120px auto 0
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 4px
+      border-radius: 6px
+      padding: 10px 21.5px
+      width: 200px
+      border: 2px solid #305680
+      background: #305680
+      transition: ease-in-out 0.3s
+      span
+        font-size: 18px
+        font-weight: 400
+        color: #FFF
+      .fas
+        font-size: 20px
+        color: #FFF
+        transform: rotate(-45deg)
+      &:hover
+        text-decoration: none
+        background: #FFF
+        span, .fas
+          color: #305680
+
+  .company-values-wrapper
+    max-width: 1920px
+    margin: 0 auto
+
+  .company-flex-content-default
+    display: flex
+    justify-content: space-between
+    gap: 80px
+    opacity: 0
+
+  .company-text-content-default
+    display: flex
+    flex-direction: column
+    gap: 30px
+
+  .company-content-title
+    padding: 50px 0
+    text-align: center
+    font-size: 48px
+    font-weight: 600
+    line-height: 72px
+    color: #212529
+
+  .company-text
+    font-size: 18px
+    font-weight: 400
+    line-height: 32px
+    letter-spacing: 0.15px
+    color: #000000c2
+
+  footer
+    position: static
+
+@media (max-width: 959px)
+  #company
+    #companyBg
+      #companyContent
+
+        --company-aboutus-content-animation: 0.2
+        --company-history-content-animation: 0.1
+        --company-values-content-animation: 0.2
+
+        .company-aboutus-container .company-flex-content-default
+          flex-direction: column
+        .company-history-container .company-flex-content-default:last-child
+          flex-direction: column-reverse
+          align-items: center
+
+@media (max-width: 600px)
+  #company
+    .company-content-title
+      padding: 60px 0
+    #companyBg
+      #companyContent
+        .company-content
+          .company-aboutus-container
+            padding: 70px 0
+            .company-aboutus-image-block
+              .company-aboutus-image
+                max-width: 160px
+              span
+                font-size: 40px
+          .company-flex-content-default
+            gap: 50px
+
+
+

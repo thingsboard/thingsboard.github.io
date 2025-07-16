@@ -40,4 +40,5 @@ isolatedQueueConfiguration:
         title: 'Step 4. Now tenant profile is ready to assign for particular tenants.'
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/tenant-profiles.md %}

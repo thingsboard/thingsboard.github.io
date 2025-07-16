@@ -8,4 +8,5 @@ description: ThingsBoard  X.509 Certificate based authentication for IoT devices
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/certificates.md %}

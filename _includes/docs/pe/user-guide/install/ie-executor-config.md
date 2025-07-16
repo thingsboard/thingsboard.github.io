@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-####  Server common parameters
+##  Server common parameters
 
 <table>
 	<thead>
@@ -32,7 +32,7 @@
 </table>
 
 
-####  Spring common parameters
+##  Spring common parameters
 
 <table>
 	<thead>
@@ -63,7 +63,7 @@
 </table>
 
 
-####  Zookeeper connection parameters. Used for service discovery.
+##  Zookeeper connection parameters. Used for service discovery.
 
 <table>
 	<thead>
@@ -120,7 +120,7 @@
 </table>
 
 
-####  Integration common parameters
+##  Integration common parameters
 
 <table>
 	<thead>
@@ -175,7 +175,7 @@
 </table>
 
 
-####  Queue common parameters
+##  Queue common parameters
 
 <table>
 	<thead>
@@ -188,7 +188,7 @@
 			<td>queue.type</td>
 			<td>TB_QUEUE_TYPE</td>
 			<td>kafka</td>
-			<td> kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+			<td> kafka (Apache Kafka)</td>
 		</tr>
 		<tr>
 			<td>queue.prefix</td>
@@ -437,294 +437,6 @@
 			<td> Time to wait for the stats-loading requests to Kafka to finis</td>
 		</tr>
 		<tr>
-			<td>queue.aws_sqs.use_default_credential_provider_chain</td>
-			<td>TB_QUEUE_AWS_SQS_USE_DEFAULT_CREDENTIAL_PROVIDER_CHAIN</td>
-			<td>false</td>
-			<td> Use the default credentials provider for AWS SQS</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.access_key_id</td>
-			<td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
-			<td>YOUR_KEY</td>
-			<td> Access key ID from AWS IAM user</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.secret_access_key</td>
-			<td>TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY</td>
-			<td>YOUR_SECRET</td>
-			<td> Secret access key from AWS IAM user</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.region</td>
-			<td>TB_QUEUE_AWS_SQS_REGION</td>
-			<td>YOUR_REGION</td>
-			<td> Region from AWS account</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.threads_per_topic</td>
-			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
-			<td>1</td>
-			<td> Number of threads per each AWS SQS queue in consumer</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.producer_thread_pool_size</td>
-			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
-			<td>50</td>
-			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_AWS_SQS_RE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.core</td>
-			<td>TB_QUEUE_AWS_SQS_CORE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.transport-api</td>
-			<td>TB_QUEUE_AWS_SQS_TA_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.notifications</td>
-			<td>TB_QUEUE_AWS_SQS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> AWS SQS queue properties. VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.js-executor</td>
-			<td>TB_QUEUE_AWS_SQS_JE_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-		</tr>
-		<tr>
-			<td>queue.aws_sqs.queue-properties.integration-api</td>
-			<td>TB_QUEUE_AWS_SQS_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.project_id</td>
-			<td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
-			<td>YOUR_PROJECT_ID</td>
-			<td> Project ID from Google Cloud</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.service_account</td>
-			<td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
-			<td>YOUR_SERVICE_ACCOUNT</td>
-			<td> API Credentials in JSON format</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.max_msg_size</td>
-			<td>TB_QUEUE_PUBSUB_MAX_MSG_SIZE</td>
-			<td>1048576</td>
-			<td>in bytes</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.max_messages</td>
-			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
-			<td>1000</td>
-			<td> Number of messages per consumer</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.executor_thread_pool_size</td>
-			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
-			<td>0</td>
-			<td> Thread pool size for pubsub queue executor provider. If set to 0 - default pubsub executor provider value will be used (5 * number of available processors)</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_PUBSUB_RE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Rule Engine subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.core</td>
-			<td>TB_QUEUE_PUBSUB_CORE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Core subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.transport-api</td>
-			<td>TB_QUEUE_PUBSUB_TA_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport API subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.notifications</td>
-			<td>TB_QUEUE_PUBSUB_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Version Control subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.js-executor</td>
-			<td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> PubSub queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.integration-api</td>
-			<td>TB_QUEUE_PUBSUB_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.namespace_name</td>
-			<td>TB_QUEUE_SERVICE_BUS_NAMESPACE_NAME</td>
-			<td>YOUR_NAMESPACE_NAME</td>
-			<td> Azure namespace</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.sas_key_name</td>
-			<td>TB_QUEUE_SERVICE_BUS_SAS_KEY_NAME</td>
-			<td>YOUR_SAS_KEY_NAME</td>
-			<td> Azure Service Bus Shared Access Signatures key name</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.sas_key</td>
-			<td>TB_QUEUE_SERVICE_BUS_SAS_KEY</td>
-			<td>YOUR_SAS_KEY</td>
-			<td> Azure Service Bus Shared Access Signatures key</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.max_messages</td>
-			<td>TB_QUEUE_SERVICE_BUS_MAX_MESSAGES</td>
-			<td>1000</td>
-			<td> Number of messages per a consumer</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_SERVICE_BUS_RE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Rule Engine queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.core</td>
-			<td>TB_QUEUE_SERVICE_BUS_CORE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Core queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.transport-api</td>
-			<td>TB_QUEUE_SERVICE_BUS_TA_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Transport Api queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.notifications</td>
-			<td>TB_QUEUE_SERVICE_BUS_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Notification queues</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.js-executor</td>
-			<td>TB_QUEUE_SERVICE_BUS_JE_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.service_bus.queue-properties.integration-api</td>
-			<td>TB_QUEUE_SERVICE_BUS_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Integration Api queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.exchange_name</td>
-			<td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
-			<td></td>
-			<td> By default empty</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.host</td>
-			<td>TB_QUEUE_RABBIT_MQ_HOST</td>
-			<td>localhost</td>
-			<td> RabbitMQ host used to establish connection</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.port</td>
-			<td>TB_QUEUE_RABBIT_MQ_PORT</td>
-			<td>5672</td>
-			<td> RabbitMQ host used to establish a connection</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.virtual_host</td>
-			<td>TB_QUEUE_RABBIT_MQ_VIRTUAL_HOST</td>
-			<td>/</td>
-			<td> Virtual hosts provide logical grouping and separation of resources</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.username</td>
-			<td>TB_QUEUE_RABBIT_MQ_USERNAME</td>
-			<td>YOUR_USERNAME</td>
-			<td> Username for RabbitMQ user account</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.password</td>
-			<td>TB_QUEUE_RABBIT_MQ_PASSWORD</td>
-			<td>YOUR_PASSWORD</td>
-			<td> User password for RabbitMQ user account</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.automatic_recovery_enabled</td>
-			<td>TB_QUEUE_RABBIT_MQ_AUTOMATIC_RECOVERY_ENABLED</td>
-			<td>false</td>
-			<td> Network connection between clients and RabbitMQ nodes can fail. RabbitMQ Java client supports automatic recovery of connections and topology (queues, exchanges, bindings, and consumers)</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.connection_timeout</td>
-			<td>TB_QUEUE_RABBIT_MQ_CONNECTION_TIMEOUT</td>
-			<td>60000</td>
-			<td> The connection timeout for the RabbitMQ connection factory</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.handshake_timeout</td>
-			<td>TB_QUEUE_RABBIT_MQ_HANDSHAKE_TIMEOUT</td>
-			<td>10000</td>
-			<td> RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.rule-engine</td>
-			<td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Rule Engine queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.core</td>
-			<td>TB_QUEUE_RABBIT_MQ_CORE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Core queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.transport-api</td>
-			<td>TB_QUEUE_RABBIT_MQ_TA_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Transport API queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.notifications</td>
-			<td>TB_QUEUE_RABBIT_MQ_NOTIFICATIONS_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Notification queues</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.js-executor</td>
-			<td>TB_QUEUE_RABBIT_MQ_JE_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ queue properties</td>
-		</tr>
-		<tr>
-			<td>queue.rabbitmq.queue-properties.integration-api</td>
-			<td>TB_QUEUE_RABBIT_MQ_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Integration Api queues</td>
-		</tr>
-		<tr>
 			<td>queue.partitions.hash_function_name</td>
 			<td>TB_QUEUE_PARTITIONS_HASH_FUNCTION_NAME</td>
 			<td>murmur3_128</td>
@@ -776,7 +488,13 @@
 			<td>queue.core.topic</td>
 			<td>TB_QUEUE_CORE_TOPIC</td>
 			<td>tb_core</td>
-			<td> Default topic name of Kafka, RabbitMQ, etc. queue</td>
+			<td> Default topic name</td>
+		</tr>
+		<tr>
+			<td>queue.core.notifications_topic</td>
+			<td>TB_QUEUE_CORE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_core.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.core.poll-interval</td>
@@ -818,7 +536,7 @@
 			<td>queue.core.usage-stats-topic</td>
 			<td>TB_QUEUE_US_TOPIC</td>
 			<td>tb_usage_stats</td>
-			<td> Stats topic name for queue Kafka, RabbitMQ, etc.</td>
+			<td> Stats topic name</td>
 		</tr>
 		<tr>
 			<td>queue.core.stats.enabled</td>
@@ -879,6 +597,12 @@
 			<td>TB_QUEUE_RULE_ENGINE_TOPIC</td>
 			<td>tb_rule_engine</td>
 			<td> Deprecated. It will be removed in the nearest releases</td>
+		</tr>
+		<tr>
+			<td>queue.rule-engine.notifications_topic</td>
+			<td>TB_QUEUE_RULE_ENGINE_NOTIFICATIONS_TOPIC</td>
+			<td>tb_rule_engine.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.rule-engine.poll-interval</td>
@@ -991,14 +715,21 @@
 		<tr>
 			<td>queue.integration.notifications_topic</td>
 			<td>TB_QUEUE_INTEGRATION_NOTIFICATIONS_TOPIC</td>
-			<td>tb_ie.notifications</td>
-			<td> Default notification topic name used by queue</td>
+			<td>tb_integration_executor.notifications</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.integration.downlink_topic</td>
 			<td>TB_QUEUE_INTEGRATION_DOWNLINK_TOPIC</td>
 			<td>tb_ie.downlink</td>
 			<td> Default downlink topic name used by queue</td>
+		</tr>
+		<tr>
+			<td>queue.integration.downlink_topics</td>
+			<td>TB_QUEUE_INTEGRATION_DOWNLINK_TOPICS</td>
+			<td></td>
+			<td> Downlink topic names for integration type (semicolor separated). Example: "MQTT:tb_ie.downlink.mqtt,HTTP:tb_ie.downlink.http"
+ If not specified, the default topic will construct as before - 'downlink_topic' + IntegrationType.name()</td>
 		</tr>
 		<tr>
 			<td>queue.integration.uplink_topic</td>
@@ -1064,7 +795,7 @@
 </table>
 
 
-####  Tbel parameters
+##  Tbel parameters
 
 <table>
 	<thead>
@@ -1143,7 +874,7 @@
 </table>
 
 
-####  JS parameters
+##  JS parameters
 
 <table>
 	<thead>
@@ -1246,7 +977,7 @@
 </table>
 
 
-####  Cache parameters
+##  Cache parameters
 
 <table>
 	<thead>
@@ -1319,7 +1050,7 @@
 </table>
 
 
-####  Redis configuration parameters
+##  Redis/Valkey configuration parameters
 
 <table>
 	<thead>
@@ -1524,7 +1255,7 @@
 </table>
 
 
-####  CoAP server parameters
+##  CoAP server parameters
 
 <table>
 	<thead>
@@ -1534,10 +1265,10 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>coap.enabled</td>
+			<td>coap.server.enabled</td>
 			<td>COAP_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable coap transport protocol.</td>
+			<td> Enable/disable coap server.</td>
 		</tr>
 		<tr>
 			<td>coap.bind_address</td>
@@ -1580,6 +1311,38 @@
 			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
 			<td></td>
 			<td> CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_transmission_unit</td>
+			<td>COAP_DTLS_MAX_TRANSMISSION_UNIT</td>
+			<td>1024</td>
+			<td> Specify the MTU (Maximum Transmission Unit).
+ Should be used if LAN MTU is not used, e.g. if IP tunnels are used or if the client uses a smaller value than the LAN MTU.
+ Default = 1024
+ Minimum value = 64
+ If set to 0 - LAN MTU is used.</td>
+		</tr>
+		<tr>
+			<td>coap.dtls.max_fragment_length</td>
+			<td>COAP_DTLS_MAX_FRAGMENT_LENGTH</td>
+			<td>1024</td>
+			<td> DTLS maximum fragment length (RFC 6066, Section 4).
+ Default = 1024
+ Possible values: 512, 1024, 2048, 4096.
+ If set to 0, the default maximum fragment size of 2^14 bytes (16,384 bytes) is used.
+ Without this extension, TLS specifies a fixed maximum plaintext fragment length of 2^14 bytes.
+ It may be desirable for constrained clients to negotiate a smaller maximum fragment length due to memory limitations or bandwidth limitations.
+ In order to negotiate smaller maximum fragment lengths,
+ clients MAY include an extension of type "max_fragment_length" in the (extended) client hello.
+ The "extension_data" field of this extension SHALL contain:
+ enum {
+   2^9(1) == 512,
+   2^10(2) == 1024,
+   2^11(3) == 2048,
+   2^12(4) == 4096,
+   (255)
+ } MaxFragmentLength;
+ TLS already requires clients and servers to support fragmentation of handshake messages.</td>
 		</tr>
 		<tr>
 			<td>coap.dtls.credentials.type</td>
@@ -1657,7 +1420,7 @@
 </table>
 
 
-####  Event parameters
+##  Event parameters
 
 <table>
 	<thead>
@@ -1712,7 +1475,7 @@
 </table>
 
 
-####  Usage statistics parameters
+##  Usage statistics parameters
 
 <table>
 	<thead>
@@ -1736,14 +1499,20 @@
 		<tr>
 			<td>usage.stats.report.interval</td>
 			<td>USAGE_STATS_REPORT_INTERVAL</td>
-			<td>10</td>
+			<td>60</td>
 			<td> Interval of reporting the statistics. By default, the summarized statistics are sent every 10 seconds</td>
+		</tr>
+		<tr>
+			<td>usage.stats.report.pack_size</td>
+			<td>USAGE_STATS_REPORT_PACK_SIZE</td>
+			<td>1024</td>
+			<td> Amount of statistic messages in pack</td>
 		</tr>
 	</tbody>
 </table>
 
 
-####  Metrics parameters
+##  Metrics parameters
 
 <table>
 	<thead>
@@ -1768,7 +1537,7 @@
 </table>
 
 
-####  General management parameters
+##  General management parameters
 
 <table>
 	<thead>
@@ -1787,7 +1556,7 @@
 </table>
 
 
-####  Notification system parameters
+##  Notification system parameters
 
 <table>
 	<thead>

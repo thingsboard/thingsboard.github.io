@@ -20,9 +20,9 @@ $install-color: #506dad
             color: #000
             border: none
             margin-bottom: 0
-            font-size: 32px
+            font-size: 36px
             font-weight: 500
-            line-height: 56px
+            line-height: 48px
             margin-top: 0
             &:before
               display: none
@@ -30,89 +30,78 @@ $install-color: #506dad
             margin: 12px auto auto
             p
               color: #000
-              font-weight: 300
-              font-size: 16px
+              font-weight: 500
+              font-size: 14px
               line-height: 24px
               margin-bottom: 0
         .deployment-container
-          padding-top: 48px
           .deployment-div
-            margin-top: 54px
+            margin-top: 40px
             padding-bottom: 20px
             .deployment-section
               display: none
               &.active
                 display: block
-            .deployment-cards
-              padding-bottom: 40px
-              .deployment-cards-container
+              .installation-card-content-wrapper
                 display: flex
-                flex-wrap: wrap
                 justify-content: center
-                .deployment-card-block
-                  margin-right: 12px
-                  margin-bottom: 12px
-                  a
-                    display: block
-                    width: 190px
-                    height: 120px
-                    min-width: 190px
-                    border: 1px solid #ebebeb
-                    padding: 3px
-                    border-radius: 6px
-                    cursor: pointer
-                    text-decoration: none
-                    &:hover
-                      border: 4px solid #2A7DEC
-                      padding: 0
-                      box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.05), 0px 30px 30px -20px rgba(0, 0, 0, 0.15)
-                  .deployment-logo
-                    width: 100%
-                    height: 100%
-                    padding: 15px 25px
-                    position: relative
+                flex-wrap: wrap
+                gap: 20px
+                .installation-card-container.installation-card-content-coming-soon
+                  &:hover
+                    background: #F5F5F5
+                  .installation-card-content
+                    filter: grayscale(100%)
+                .installation-card-container
+                  scale: 0.7
+                  opacity: 0
+                  border-radius: 16px
+                  background: #FFF
+                  transition: ease-in-out 0.3s
+                  border: 1px solid rgba(0, 0, 0, 0.08)
+                  width: 258px
+                  min-height: 244px
+                  position: relative
+                  &:hover
+                    box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+                    background: #F4F8FE
+                    .installation-card-content
+                      text-decoration: none
+                      img
+                        scale: 1.22
+                  .installation-card-content
                     display: flex
-                    justify-content: center
-                    align-items: center
-                    align-content: center
+                    flex-direction: column
+                    padding: 24px
+                    text-decoration: none
                     img
-                      flex: 0 0 auto
-                      object-fit: contain
-                      vertical-align: middle
-                      width: 100%
-                      height: 100%
-                    &.coming-soon
-                      &:after
-                        content: ""
-                        position: absolute
-                        top: 0
-                        left: 0
-                        right: 0
-                        bottom: 0
-                        background-image: url("/images/install/coming-soon.png")
-                        background-size: contain
-                        opacity: 0.5
-                        background-color: #fff
-                  &.text
-                    a
-                      height: 200px
-                      width: 240px
-                      text-align: center
-                      .deployment-logo
-                        display: table-row
-                        h5
-                          margin-top: unset
-                          color: #212529
-                          display: flex
-                          padding-left: 20px
-                          padding-right: 20px
-                        img
-                          height: 120px
-                          width: 152px
-                          padding: 20px
-                      &:hover
-                        .deployment-logo h5
-                          color: #2a7dec
+                      transition: ease-in-out 0.3s
+                      margin-bottom: 28px
+                      transform-origin: top left
+                    span
+                      font-size: 16px
+                      font-weight: 500
+                      line-height: 28px
+                      color: rgba(0, 0, 0, 0.87)
+                      margin-bottom: 8px
+                    p
+                      font-size: 14px
+                      font-weight: 400
+                      line-height: 24px
+                      color: rgba(0, 0, 0, 0.76)
+                  .coming-soon-crisp
+                    position: absolute
+                    top: 16px
+                    right: 16px
+                    padding: 4px 8px
+                    border-radius: 6px
+                    background: #EEF5FD
+                    filter: none
+                    z-index: 2
+                .installation-card-container.installation-card-animation
+                  scale: 1
+                  opacity: 1
+
         .one-line-deployment-container
           padding-top: 0
         .install-navigation
@@ -120,6 +109,7 @@ $install-color: #506dad
           display: flex
           justify-content: center
           align-items: center
+          margin-top: 40px
           ul
             list-style-type: none
             display: flex
@@ -128,66 +118,40 @@ $install-color: #506dad
             align-items: center
             margin: 0
             padding: 0
+            border-radius: 100px
+            border: 1px solid rgba(0, 0, 0, 0.12)
+            @media (max-width: 600px)
+              flex-direction: column
+              gap: 30px
+              border: none
             li
               position: relative
-              display: table
-              height: 68px
-              padding-left: 6px
-              padding-right: 6px
-              margin-bottom: 12px
-              a
+              padding: 6.5px 25px
+              border: 1px solid transparent
+              border-radius: 100px
+              margin: 0
+              list-style: none
+              transition: ease-in-out 0.3s
+              p
+                display: flex
+                align-items: center
+                gap: 12px
                 text-decoration: none
-                display: block
                 line-height: initial
                 text-align: center
-                border: 1px solid rgba(0, 0, 0, 0.08)
                 box-sizing: border-box
                 border-radius: 34px
                 font-size: 18px
-                color: #212529
+                color: rgba(0, 0, 0, 0.54)
+                transition: ease-in-out 0.3s
                 font-weight: 400
                 cursor: pointer
-                padding: 14px 32px 14px 24px
-                letter-spacing: 1px
-                &:hover
-                  border-color: #212529
-                  border-width: 2px
-                  margin: -1px
-                &:before
-                  display: inline-block
-                  content: ""
-                  vertical-align: middle
-                  margin-right: 12px
-                  width: 38px
-                  height: 38px
-                  filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
-                  background-size: contain
-                @media (min-width: 1600px)
-                  font-size: 24px
-              &.tb-live-demo
-                a
-                  &:before
-                    background: url('/images/livedemo-icon.svg')
-                    background-size: contain
-              &.tb-on-premise
-                a
-                  &:before
-                    background: url('/images/pricing/self-icon.svg')
-                    background-size: contain
-              &.tb-cloud
-                a
-                  &:before
-                    background: url('/images/pricing/cloud-icon.svg')
-                    background-size: contain
+                img
+                  filter: brightness(0) saturate(100%) invert(49%) sepia(0%) saturate(1%) hue-rotate(204deg) brightness(93%) contrast(92%)
               &.active
                 z-index: 5
-                a
-                  color: #fff
-                  background-color: #2A7DEC
-                  box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
-                  &:hover
-                    border-color: #2A7DEC
-                    border-width: 1px
-                    margin: unset
-                  &:before
-                    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
+                border: 1px solid #2A7DEC
+                p
+                  color: #2A7DEC
+                img
+                  filter: brightness(0) saturate(100%) invert(41%) sepia(28%) saturate(3464%) hue-rotate(197deg) brightness(95%) contrast(94%)

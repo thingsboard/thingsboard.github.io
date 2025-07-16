@@ -28,7 +28,7 @@ We will add a **"Generator"** node to simulate 6 messages with a 1-second delay.
 ![image](/images/user-guide/rule-engine-2-5/tutorials/generator_reprocessing.png)
 
 All messages will be put into the queue with the name **"HighPriority"**. It uses the message process strategy called **"RETRY_FAILED_AND_TIMED_OUT"** 
-{% unless docsPrefix == "paas/" %}(please, refer to [**configuration guide**](/docs/user-guide/install/{{docsPrefix}}config/) for more details){% endunless %} which means that
+{% unless docsPrefix contains "paas/" %}(please, refer to [**configuration guide**](/docs/user-guide/install/{{docsPrefix}}config/) for more details){% endunless %} which means that
 the failed or timed out messages will be processed again.
 
 ![image](/images/user-guide/rule-engine-2-5/tutorials/checkpoint_reprocessing.png)

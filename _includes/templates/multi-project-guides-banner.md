@@ -2,7 +2,7 @@
 
 {% include templates/guides-banner-pe.md %}
 
-{% elsif docsPrefix == "paas/" %}
+{% elsif docsPrefix contains "paas/" %}
 
 {% include templates/guides-banner-paas.md %}
 

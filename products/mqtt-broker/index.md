@@ -68,19 +68,19 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="scenarios">
     <main>
         <div id="background">
-            <div class="main1"></div><div class="small1"></div><div class="small2"></div>
+            <div class="main1"></div>
         </div>
-        <div class="block first-scenario">
-            <div class="feature-des">
+        <div class="block scenarios-header">
+            <div class="scenarios-title">
                 <h3 class="item-heading">MQTT broker for real-life IoT scenarios</h3>
             </div>
-            <div class="feature-details">
-                <p>Utilize diverse communication patterns effectively, ensuring comprehensive coverage of your use cases. TBMQ places particular emphasis on mastering fan-in and fan-out messaging.</p>
+            <div class="scenarios-details">
+                <p>Utilize diverse communication patterns effectively, ensuring comprehensive coverage of your use cases. TBMQ places particular emphasis on mastering fan-in, fan-out, and point-to-point (p2p) messaging.</p>
             </div>
         </div>
         <div class="block">
             <div class="description">
-                <div class="fan-title">
+                <div class="scenario-title">
                     <a href="/docs/mqtt-broker/reference/100m-connections-performance-test/" class="item-heading">Fan-in</a>
                 </div>
                 <div>
@@ -88,20 +88,33 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 </div>
             </div>            
             <div class="image-container">
-                <img src="/images/mqtt-broker/product/fan-in.gif" alt="Fan in" loading="lazy">
+                <img src="/images/mqtt-broker/product/fan-in.svg" alt="Fan in" loading="lazy">
             </div>
         </div>
         <div class="block">
-            <div class="image-container fan-out-img">
-                <img src="/images/mqtt-broker/product/fan-out.gif" alt="Fan out" loading="lazy">
+            <div class="image-container reverse-img">
+                <img src="/images/mqtt-broker/product/fan-out.svg" alt="Fan out" loading="lazy">
             </div>            
             <div class="description">
-                <div class="fan-title">
+                <div class="scenario-title">
                     <a href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/" class="item-heading">Fan-out</a>
                 </div>
                 <div>
                     <span>This scenario facilitates one-to-many messaging. It involves numerous devices subscribing to specific updates or notifications that must be delivered. This leads to a few incoming requests that cause a high volume of outgoing data.</span>
                 </div>
+            </div>
+        </div>
+        <div class="block">
+            <div class="description">
+                <div class="scenario-title">
+                    <a href="/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/" class="item-heading">Point-to-point</a>
+                </div>
+                <div>
+                    <span>A targeted messaging pattern, primarily used for one-to-one communication. Achieved through uniquely defined topics, p2p is ideal for use cases such as private messaging or command-based interactions. Persistent clients with QoS levels set to 1 or 2 are often utilized to ensure reliable message delivery, even during temporary disconnections or client downtime.</span>
+                </div>
+            </div>            
+            <div class="image-container">
+                <img src="/images/mqtt-broker/product/p2p.svg" alt="Point to point" loading="lazy">
             </div>
         </div>
     </main>
@@ -110,7 +123,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="installation-options">
     <main>
         <div id="background">
-            <div class="main2"></div><div class="small3"></div><div class="small4"></div>
+            <div class="main2"></div>
         </div>
         <div class="row">
             <div class="col-lg-6">
@@ -126,6 +139,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     <img src="/images/mqtt-broker/product/aws.webp" alt="Aws">
                     <img src="/images/mqtt-broker/product/azure.webp" alt="Azure">
                     <img src="/images/mqtt-broker/product/google-cloud.webp" alt="Google Cloud">
+                    <img src="/images/mqtt-broker/product/helm-charts.webp" alt="Helm charts">
                 </div>
             </div>
         </div>
@@ -144,6 +158,19 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
             <div class="col-lg-6 image-container">
                 <div class="block">
                     <img src="/images/mqtt-broker/product/administer-client-session.webp" alt="Administer client sessions" loading="lazy">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="block">
+                    <h4 class="title">Administer client subscriptions</h4>
+                    <p>Efficiently manage subscriptions with a powerful and intuitive interface, ensuring optimal client communication and data flow across your IoT network.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 image-container">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/administer-client-subscriptions.webp" alt="Administer client subscriptions" loading="lazy">
                 </div>
             </div>
         </div>
@@ -186,22 +213,35 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="block">
+                    <h4 class="title">Integrate with external systems</h4>
+                    <p>Enable smooth data transmission between IoT devices, the broker, and external platforms with a reliable and scalable solution — all without impacting core broker performance.</p>
+                </div>
+            </div>
+            <div class="col-lg-6 image-container">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/integrations.webp" alt="Integrations" loading="lazy">
+                </div>
+            </div>
+        </div>
     </main>
 </section>
 
 <section id="bottom-features">
     <main>
         <div id="background">
-            <div class="main3"></div><div class="small5"></div><div class="small6"></div>
+            <div class="main3"></div>
         </div>
-        <h3>TBMQ Features</h3>
+        <h3>TBMQ features</h3>
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
                     <img src="/images/thingsboard-logo.svg" alt="MQTT client type">
                     <div>
                         <a href="/docs/mqtt-broker/user-guide/mqtt-client-type/"><h4 class="title">MQTT client type</h4></a>
-                        <p>Supports two distinct client types to provide customized messaging solutions for diverse IoT scenarios. One type efficiently handles frequent data transmissions and effectively manages incoming moderate message volumes (fan-out). The other specializes in high-rate topic subscriptions, perfect for data analytics and processing (fan-in).</p>
+                        <p>Supports two distinct client types to provide customized messaging solutions for diverse IoT scenarios. One type efficiently handles frequent data transmissions and effectively manages incoming moderate message volumes (fan-out and p2p). The other specializes in high-rate topic subscriptions, perfect for data analytics and processing (fan-in).</p>
                     </div>
                 </div>
             </div>
@@ -229,6 +269,28 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
                     </div>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/unauthorized-clients.svg" alt="Unauthorized clients">
+                    <div>
+                        <a href="/docs/mqtt-broker/user-guide/ui/unauthorized-clients/">
+                            <h4 class="title">Unauthorized clients</h4>
+                        </a>
+                        <p>Secure your IoT network with real-time monitoring of unauthorized access attempts. Gain critical details into potential security threats, enabling you to take proactive measures and strengthen overall system protection.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <img src="/images/mqtt-broker/product/client-session-metrics.svg" alt="Client session metrics">
+                    <div>
+                        <a href="/docs/mqtt-broker/user-guide/ui/sessions/#metrics">
+                            <h4 class="title">Client session metrics</h4>
+                        </a>
+                        <p>Gain valuable insights into client behavior and performance with detailed session metrics, allowing you to identify messaging anomalies and proactively troubleshoot issues.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 </section>
@@ -236,7 +298,7 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
 <section id="get-started">
     <main>
         <div id="background">
-            <div class="main4"></div><div class="small7"></div><div class="small8"></div>
+            <div class="main4"></div>
         </div>
         <div class="row">
             <div class="container">
@@ -250,15 +312,63 @@ description: TBMQ is an industry-ready MQTT broker that facilitates MQTT client 
     </main>
 </section>
 
-<section id="latest-news">
+<section id="news">
     <main>
-        <h3>Latest news</h3>
+        <h3>TBMQ news</h3>
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
                     <div class="image-container">
+                        <a href="/blog/introducing-tbmq-2-1-a-new-chapter-in-extensible-iot-messaging/">
+                            <img src="/images/mqtt-broker/product/news-4.webp" alt="TBMQ 2.1: New chapter in MQTT messaging with embedded Integrations" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="tags">
+                            <a href="/blog/category/updates/">Updates</a>
+                        </div>
+                        <a class="title" href="/blog/introducing-tbmq-2-1-a-new-chapter-in-extensible-iot-messaging/">TBMQ 2.1: New chapter in MQTT messaging with embedded Integrations</a>
+                        <p>We're excited to announce the release of TBMQ 2.1.0! This version marks a major milestone by introducing the Integration Executor microservice, responsible for managing integrations. It powers scalable and multi-protocol message delivery to external systems, starting with support for HTTP, Kafka, and MQTT outbound integrations. We've also released the official Helm Chart for TBMQ, simplifying deployment and management of the infrastructure in K8s environments.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <div class="image-container">
+                        <a href="/blog/1-million-reasons-to-choose-tbmq-as-high-performance-mqtt-broker/">
+                            <img src="/images/mqtt-broker/product/news-3.webp" alt="TBMQ one million messages per second" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="tags">
+                            <a href="/blog/category/tech/">Tech</a>
+                        </div>
+                        <a class="title" href="/blog/1-million-reasons-to-choose-tbmq-as-high-performance-mqtt-broker/">1 Million reasons to choose TBMQ as a high-performance MQTT broker</a>
+                        <p>Can an open-source MQTT broker handle one million messages per second for persistent sessions? TBMQ 2.x proves it can! Even more importantly, it achieves this with no single point of failure and ensures no data loss, even when hardware fails, making it a robust self-hosted MQTT broker solution for IIoT applications</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <div class="image-container">
+                        <a href="/blog/tbmq-2-0-migration-to-redis-mqtt-5-0-support-and-more/">
+                            <img src="/images/mqtt-broker/product/news-2.webp" alt="TBMQ 2.0.0 release" loading="lazy">
+                        </a>
+                    </div>
+                    <div class="content">
+                        <div class="tags">
+                            <a href="/blog/category/updates/">Updates</a>
+                        </div>
+                        <a class="title" href="/blog/tbmq-2-0-migration-to-redis-mqtt-5-0-support-and-more/">TBMQ 2.0.0 release: migration to Redis, MQTT 5.0 support, and more</a>
+                        <p>TBMQ 2.0.0 release brings a major update with data migration of persistent sessions for devices from PostgreSQL to Redis. It also expands TBMQ’s MQTT 5.0 feature set, achieving full compatibility with the MQTT 5.0 standard. Here’s an overview of the features and updates included in this release</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block">
+                    <div class="image-container">
                         <a href="/blog/tbmq-1-3-0-release-websocket-client-advanced-mqtt-5-features-and-more/">
-                            <img src="/images/mqtt-broker/product/latest-news-1.webp" alt="TBMQ 1.3.0 release" loading="lazy">
+                            <img src="/images/mqtt-broker/product/news-1.webp" alt="TBMQ 1.3.0 release" loading="lazy">
                         </a>
                     </div>
                     <div class="content">

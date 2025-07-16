@@ -19,7 +19,6 @@ A custom converter is converter written for some device:
 |--- 
 
 {% capture difference %}
-<br>
   
 **Custom converter usually needed if you want to collect data from some device with not regular structure in response or when the data needs some processing before sending it to the ThingsBoard.**  
 {% endcapture %}  

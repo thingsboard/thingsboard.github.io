@@ -1,0 +1,583 @@
+- type:
+    - LoRaWAN
+    - Wi-Fi
+    - LTE-M
+    - MQTT
+    - Modbus
+  name: ACE AUTOMATION
+  logo: /images/partners/ace-automation-logo.png
+  site:
+    href: https://aceautomation.eu/
+  links:
+    0:
+      label: Connect ACE MQTT 4G GPS Gateway to ThingsBoard
+      href: https://thingsboard.io/docs/devices-library/ace-iot-gateway-and-siemens-logo/
+  description: ACE Automation Europe designs compact PLCs, touchscreen HMIs, and LTE/4G MQTT gateways. The “Nano ACE” series stands out for its ultra-low power consumption, compact form factor, and PCB-mount version. Our HMIs are powerful, affordable, and easy to use. The LTE/4G multi-operator gateway is ideal for remote IoT monitoring and control via MQTT.
+- type:
+    - LoRaWAN
+    - Wi-Fi
+  name: Atomsenses
+  logo: /images/partners/atomsenses-logo.png
+  site:
+    href: https://www.atomsenses.com/
+  links:
+    0:
+      label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
+      href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
+  description: Atomsenses is a specialist IoT solution provider focusing on Lorawan sensors for indoor air quality monitoring, our vision is to transform how we manage and maintain healthy indoor environments.
+- type:
+    - Bluetooth LE
+    - NB-IoT
+    - LTE-M
+  name: Efento
+  logo: /images/partners/efento.png
+  site:
+    href: https://getefento.com/
+  links:
+    0:
+      label: Integration guide
+      href: https://getefento.com/library/efento-nb-iot-sensors-and-things-board/
+  description: Efento offers a wide portfolio of battery powered NB-IoT wireless sensors. Company has been founded in 2014 and since day one focuses on low power consumption wireless IoT devices. You can select a sensor form over 20 types of devices from our portfolio, or talk to us if you need a custom solution to meet your needs.
+- type:
+    - NB-IoT
+    - LTE-M
+    - Wi-Fi
+  name: Teltonika Networks
+  logo: /images/partners/teltonika-networks.png
+  site:
+    href: https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard
+  links:
+    0:
+      label: Integration guide
+      href: https://wiki.teltonika-networks.com/view/Monitoring_with_ThingsBoard_IoT_Platform#Configuring_data_to_server_with_MQTT_protocol
+  description: Teltonika Networks is a rapidly growing technology company, manufacturing professional network connectivity equipment for international markets. It has developed a wide portfolio of products for the most complex areas of Industry 4.0, Smart City, and Green Energy.
+- type:
+    - Bluetooth LE
+    - Wi-Fi
+  name: Espressif Systems
+  logo: /images/partners/espressif.svg
+  site:
+    href: https://www.espressif.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+  description: Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules.
+- type:
+    - LTE-M
+    - NB-IoT
+    - LoRaWAN
+    - Wi-Fi
+    - Bluetooth LE
+  name: Elastel
+  logo: /images/partners/elastel-logo.png
+  site:
+    href: https://www.elastel.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/devices-library/raspberry-pi-cm4/"
+  description: Elastel is a technology-driven company providing IIoT products and services globally. With 10+ years of industry experience, Elastel has developed series Open, High-performance, Reliable, and Easy-to-use IIoT devices like Industrial Raspberry Pi, Arm-based IIoT Gateway, Industrial Cellular Router, etc. These edge hardware allows customers flexibly develop their specific applications for IoT needs.
+- type:
+    - LTE-M
+    - Wirepas
+  name: Haltian
+  logo: /images/partners/haltian-logo.png
+  site:
+    href: https://haltian.com/
+  links:
+    0:
+      label: Integration guide
+      href: https://files.haltian.io/apps/collectives/p/JaQDHYga32dD9fZ/Haltian%20IoT%20developer%20guide
+  description: Haltian's Thingsee IoT solution is a secure IoT sensor solution for enterprises. Includes mesh-connected sensors, gateways, cellular connectivity and device management cloud. Implemented in commercial real estate, hospitals and warehouses supporting occupancy and utilization analytics, data-driven cleaning, smart FM and RLTS. Global cellular connectivity included with open APIs to integrate with everything. Built in Finland.
+- type:
+    - Bluetooth LE
+    - NB-IoT
+    - LTE-M
+    - Sigfox
+    - Wi-Fi
+  name: Seeed Technology Co.,Ltd.
+  logo: /images/partners/seeed.png
+  site:
+    href: https://www.seeedstudio.com/
+  showcase:
+    href: https://seeed-projects.github.io/Tutorial-of-AI-Kit-with-Raspberry-Pi-From-Zero-to-Hero/docs/Chapter_6-RaspberryPi_and_AIoT/Car_Park_Solution_Management_with_Thingsboard/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/raspberry/grove/"
+    1:
+      label: reComputer R1000
+      href: "/docs/edge/devices-library/recomputer-r1000/"
+    2:
+      label: reComputer R1100
+      href: "/docs/edge/devices-library/recomputer-r1100/"
+  description: Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs.
+- type:
+    - Bluetooth LE
+    - LoRaWAN
+  name: Lansitec
+  logo: /images/partners/lansitec-logo.svg
+  site:
+    href: https://www.lansitec.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/devices-library/#AnchorIDOtherdevices"
+  description: Lansitec is at the forefront of technological innovation, specializing in the provision of affordable, compact, and highly efficient hardware designed to accurately locate people, resources, and assets. Our unique approach combines cutting-edge trackers, gateways, tags, and sensors with advanced software and algorithms to optimize performance and ensure the best possible outcomes.
+- type:
+    - LoRaWAN
+  name: Milesight
+  logo: /images/partners/milesight-logo.png
+  site:
+    href: https://www.milesight.com/
+  links:
+    0:
+      label: UG56 LoRaWAN® Gateway
+      href: "/docs/pe/devices-library/ug56-lorawan-gateway/"
+    1:
+      label: UG65 LoRaWAN® Semi-Industrial Gateway
+      href: "/docs/pe/devices-library/ug65-lorawan-gateway/"
+    2:
+      label: UG67 LoRaWAN® Gateway
+      href: "/docs/pe/devices-library/ug67-lorawan-gateway/"
+    3:
+      label: WS101 LoRaWAN® Smart Button
+      href: "/docs/pe/devices-library/ws101-smart-button/"
+    4:
+      label: WS202 PIR & Light LoRaWAN® Sensor
+      href: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
+    5:
+      label: Thingsboard-Milesight LoRaWAN Gateways&Devices Integration
+      href: https://support.milesight-iot.com/support/solutions/articles/73000646805-thingsboard-milesight-lorawan-gateways-devices-integration
+  description: Milesight, a leading innovator in IoT technologies such as sensing, LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array of advanced products, like dependable gateways, indoor air quality sensors, occupancy trackers, water leak detectors, and more.
+- type:
+    - NB-IoT
+    - LoRaWAN
+  name: Smartico
+  logo: /images/partners/smartico.png
+  site:
+    href: https://www.smartico.biz/en/
+  links:
+    0:
+      label: Electricity Meter
+      href: "/docs/samples/smartico/elec-meter-lorawan/Electricity_Meter_LoRaWAN/"
+    1:
+      label: Gas Meter
+      href: "/docs/samples/smartico/gas-meter-lorawan/Gas_Meter_LoRaWAN/"
+    2:
+      label: Gas Shutoff Valve
+      href: "/docs/samples/smartico/gas-valve-lorawan/Gas_Valve_LoRaWAN/"
+    3:
+      label: Leaks Detector
+      href: "/docs/samples/smartico/leaks-detector-lorawan/Leaks_Detector_LoRaWAN/"
+    4:
+      label: Water meter Pulse Sensor
+      href: "/docs/samples/smartico/pulse-sensor-lorawan/Pulse_Sensor_LoRaWAN/"
+    5:
+      label: Water meter wM-Bus Reader
+      href: "/docs/samples/smartico/wm-bus-lorawan/wMBus_Reader_LoRaWAN/"
+  description: Smartico is a research and production complex with its own design bureau, production base, and specialized software development department
+- type:
+    - Bluetooth LE
+    - LTE-M
+    - Wi-Fi
+  name: Digital Communications Technologies, LLC.
+  logo: /images/partners/DCT-Logo-Standard-Color-01.png
+  site:
+    href: https://www.digitalcomtech.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/syrus/syrus/"
+  description: Since 2000, DCT has been developing IoT devices and accessories for Fleet Telematics Applications and Industrial Solutions that are trusted by integrators and service providers around the globe. Their expertise in product design and development together with firmware and software makes the perfect combination for developers to start building amazing applications.
+- type:
+    - LoRaWAN
+    - Wi-Fi
+    - LTE-M
+  name: MOKO SMART
+  logo: /images/partners/moko-smart-logo.png
+  site:
+    href: https://www.mokosmart.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/moko-smart/moko-smart-guide/"
+  description: MOKO Technology Ltd. is a leading manufacturer and provider of ODM, OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand, MOKO SMART, which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS, LTE, UWB, and other wireless technologies. This commitment to innovation and diverse wireless products drives MOKO’s vision of a connected future.
+- type:
+    - Ethernet
+    - Bluetooth LE
+    - Wi-Fi
+    - Modbus
+    - GSM/GPRS
+    - LTE-M
+    - NB-IoT
+  name: Digicom B810 Spa
+  logo: /images/partners/digicom-logo.png
+  site:
+    href: https://www.digicom.it/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-plaƞorm/"
+  description: Digicom is a brand with over 45 years of history and experience in the development and management of Internet-connected products. In 2017, Digicom Spa joined the B810 Group, becoming a leading company in the IoT sector enriching its skills and expanding its offer to advanced solutions in various industrial sectors. We offer a wide range of “connected solutions” in the fields of telecommunications, industrial applications, energy, elevators and escalators, providing design, manufacturing, assembly, testing, logistics and support services.
+- type:
+    - Bluetooth LE
+    - Wi-Fi
+    - NB-IoT
+  name: Nettra
+  logo: /images/partners/nettra.png
+  site:
+    href: https://nettra.tech/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/nettrartu+/rtu_temp_sensor/"
+  description: We provide comprehensive hardware and software IoT solutions.
+- type:
+    - Ethernet
+  name: Solandtec
+  logo: /images/partners/solandtec.png
+  site:
+    href: https://solandtec.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/solandtec/thingsboard-guide-solandtec/"
+  description: With 5+ years' experience, SOLANDTEC excels in tailored automation, enhancing production and cutting costs. We adeptly apply tech to meet unique needs, reflecting commitment to excellence. Embracing Industry 4.0, we seamlessly integrate IoT, enabling data-driven decisions and proactive steps. We pride in enhancing efficiency and connectivity for evolving businesses.
+- type:
+    - LoRaWAN
+    - LTE-M
+    - NB-IoT
+  name: Actility
+  logo: /images/partners/actility.png
+  site:
+    href: https://www.actility.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/abeeway/tracker"
+  description: Actility has a strong background in large-scale project delivery and a heritage in carrier-grade systems, with leading customer deployments worldwide, making it the global leader in IoT connectivity solutions deployment.
+- type:
+    - NB-IoT
+    - LTE-M
+    - Bluetooth LE
+  name: SODAQ
+  logo: /images/partners/sodaq.jpg
+  site:
+    href: https://sodaq.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/user-guide/integrations/sodaq/"
+  description: What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact.
+- type:
+    - LoRaWAN
+    - Bluetooth LE
+  name: SensiEDGE
+  logo: /images/partners/sensiedge_logo.png
+  site:
+    href: https://www.sensiedge.com/
+  links:
+    0:
+      label: SensiLoRa 2.0 V1.2
+      href: "/docs/samples/sensiedge/getting_started_sensiLoRa.pdf"
+    1:
+      label: SensiBLE 1.0 & 2.1
+      href: "/docs/samples/sensiedge/connect_sensi_ble.pdf"
+  description: SensiEDGE IoT SoM is a fully customisable solution for developers who want to focus on their own applications and core competencies rather than the underlying hardware platform or production logistics when creating products for the IoT.
+- type:
+    - LoRaWAN
+    - Bluetooth LE
+    - Wi-Fi
+    - CAT-M/NB
+    - NB-IoT
+  name: Shenzhen Dragino Technology Development  Co.,Ltd
+  logo: /images/partners/dragino-logo.png
+  site:
+    href: http://www.dragino.com/
+  links:
+    0:
+      label: Integration guide
+      href: https://wiki.dragino.com/xwiki/bin/view/Main/ThingsBoard
+  description: Shenzhen Dragino Technology Development Co., Ltd. specializes in IoT solutions, with a focus on LoRaWAN and NB-IoT technologies. We offer end-to-end IoT services, including hardware, software, and network solutions, enabling customers to deploy and manage IoT networks efficiently. Our globally trusted products and solutions ensure rapid deployment, scalability, and customer success in the competitive IoT market.
+- type:
+    - LoRaWAN
+    - Bluetooth LE
+    - Wi-Fi
+  name: ioThings
+  logo: /images/partners/iothings-logo.png
+  site:
+    href: https://iotracker.eu/
+  links:
+    0:
+      label: ioTracker Multi-sensor tracker
+      href: "https://thingsboard.io/docs/pe/devices-library/iotracker-multi-sensor-tracker/"
+    1:
+      label: ioButton Panic button
+      href: "https://thingsboard.io/docs/pe/devices-library/iobutton-panic-button/"
+  description: ioThings, the company behind the ioTracker and ioButton, is a Dutch company and was established in 2016 by three technology enthusiasts with a professional background in electronics, security, IT and telecom. We mainly operate in the domain of emergency response, together with indoor and outdoor localisation. Our devices are highly and easy configurable to make sure it can be finetuned for a lot of use cases.
+- type:
+    - GSM/GPRS
+  name: DECODE
+  logo: /images/partners/decode.png
+  site:
+    href: https://www.decode.rs/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/user-guide/integrations/decode/"
+  description: Decode is a Serbian company with extensive experience in design, engineering and production of devices for industrial communication and telemetry.
+- type:
+    - LoRaWAN
+  name: TEKTELIC Communications Inc.
+  logo: /images/partners/tektelic.png
+  site:
+    href: https://tektelic.com/
+  links: {}
+  description: TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices.
+- type:
+    - LoRaWAN
+    - Bluetooth LE
+    - Wi-Fi
+    - Ethernet
+  name: National Control Devices, LLC
+  logo: /images/partners/ncd-logo.png
+  site:
+    href: https://ncd.io/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/pe/devices-library/ncd-vibration-temperature-sensor/"
+  description: NCD.io is an IoT Hardware Design and Development Company specializing in Wireless IoT sensors. It offers a wide range of plug-and-play devices for monitoring temperature, humidity, pressure, energy, acceleration, gas, and industrial I/O. NCD devices allow control over pumps, valves, motors, relays, and more. All NCD products are manufactured in the USA. Since 1995, NCD.io has been providing custom IoT hardware and firmware solutions.
+- type:
+    - LoRaWAN
+    - Bluetooth LE
+    - Wi-Fi
+  name: Netvox
+  logo: /images/partners/netvox-logo.jpg
+  site:
+    href: http://www.netvox.com.tw/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/netvox/netvox-guide/"
+  description: Netvox LoRaWAN products follow the standard LoRaWAN V1.0.2 specification and they will be compatible as long as the network server and gateway device also follow the protocol. We have developed over 400 LoRaWAN end devices to work with existing systems. There are more than 200 items in our LoRaWAN magnetic-mounted R718 series that comes with an IP 65/67 housing, and most of them are battery powered with long battery life.
+- type:
+    - NB-IoT
+    - LTE-M
+  name: AKKR8
+  logo: /images/partners/akkr8.png
+  site:
+    href: https://www.akkr8.io/
+  links: {}
+  description: AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the ThingsBoard platform.
+- type:
+    - Wi-Fi
+  name: ROLTEK
+  logo: /images/partners/roltek_logo_dark.png
+  site:
+    href: https://www.roltek.com.tr/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/roltek/roltek/"
+  description: Roltek provides end-to-end IoT solutions that enable rapid development, management, and scalability of IoT projects, either through cloud-based or on-premise deployments. Roltek hardware IoT Gateway products come with different communication options such as ISM and NarrowBand RF, 4G/LTE, WiFi, NB-IoT, and LoRaWan, making them suitable for harsh field conditions.
+- type:
+    - Modbus
+  name: Kernel Sistemi
+  logo: /images/partners/kernel_logo.jpg
+  site:
+    href: https://www.kernelgroup.it/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/kernel/kernel/"
+  description: KERNEL Sistemi s.r.l. designs and produces electronic solutions for automation, industrial process control, photovoltaics, energy management and home automation.
+- type:
+    - Modbus
+    - LoRaWAN
+  name: KingPigeon Technology Co., Ltd.
+  logo: /images/partners/kingpigeon.png
+  site:
+    href: https://www.iot-solution.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/kingpigeon/kingpigeon/"
+  description: King Pigeon Communication Co.,Ltd. specialized in LTE Industrial Router, Industial IOT Gateways, IIOT Gateways, 4G Industrial Router, Cellular RTU, 4G RTU, PLC Gateways, Ethernet IO Module OEM ODM Since 2005.
+- type:
+    - Bluetooth LE
+    - LTE-M
+    - Wi-Fi
+  name: Senquip
+  logo: /images/partners/senquip.png
+  site:
+    href: https://www.senquip.com
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/senquip/senquip/"
+  description: Rugged, programmable telemetry devices that connect to any industrial sensor or system.
+- type:
+    - Bluetooth LE
+    - LTE-M
+    - Wi-Fi
+    - Ethernet
+  name: Sixfab, Inc.
+  logo: /images/partners/sixfab-logo.png
+  site:
+    href: https://sixfab.com/alpon
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/pe/devices-library/alpon-x4/"
+  description: Sixfab builds modular, always online, industrial-grade edge computers based on Raspberry Pi, designed for real-world deployments. Our ALPON™ devices integrate seamlessly with ThingsBoard and support remote fleet provisioning, resilient multi-network connectivity, and local data processing. Engineered for reliability in harsh conditions, Sixfab products focus on practical deployment, automation, and maintainability at scale.
+- type:
+    - Bluetooth LE
+    - Wi-Fi
+    - LTE-M
+    - LoRaWAN
+  name: Dusun
+  logo: /images/partners/dusun.png
+  site:
+    href: https://www.dusuniot.com/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/pe/devices-library/dsgw-210-iot-gateway-hub/"
+  description: Dusun provides various kinds of gateways, hardware products and IOT service
+- type:
+    - LoRaWAN
+  name: Makerfabs
+  logo: /images/partners/makerfabs-logo.png
+  site:
+    href: https://www.makerfabs.com/agrosense
+  links:
+    0:
+      label: How to connect AgroSense Air Temperature and Humidity Sensor to ThingsBoard?
+      href: "/docs/devices-library/air-temperature-and-humidity-sensor/"
+    1:
+      label: How to connect AgroSense Positioning Water Leak Sensor to ThingsBoard?
+      href: "/docs/devices-library/positioning-water-leak-sensor/"
+    2:
+      label: How to connect AgroSense Soil Moisture Sensor to ThingsBoard?
+      href: "/docs/devices-library/soil-moisture-sensor/"
+  description: Makerfabs is a professional open-source hardware provider based in Shenzhen, China, offering end-to-end support from concept design, prototyping, small-batch manufacturing, to full-scale production. We are especially experienced in LoRa and LoRaWAN technologies and have helped many clients realize custom IoT solutions across agriculture, smart cities, and industrial monitoring. To better serve these industries, we have established the AgroSense brand – a comprehensive line of LoRaWAN sensors, designed for reliability, adaptability, and ease of integration.
+- type:
+    - Ethernet
+    - Wi-Fi
+    - LoRaWAN
+    - Bluetooth LE
+    - LTE-M
+    - Modbus
+    - CAT-M/NB
+    - NB-IoT
+  name: MikroTik
+  logo: /images/partners/mikrotik-logo.svg
+  site:
+    href: https://mikrotik.com/
+  links:
+    0:
+      label: MQTT and ThingsBoard configuration
+      href: https://help.mikrotik.com/docs/spaces/ROS/pages/105742352/MQTT+and+ThingsBoard+configuration
+    1:
+      label: Bluetooth tag-tracking using MQTT and ThingsBoard
+      href: https://help.mikrotik.com/docs/spaces/ROS/pages/176914435/Bluetooth+tag-tracking+using+MQTT+and+ThingsBoard
+    2:
+      label: GPS-tracking using MQTT and ThingsBoard
+      href: https://help.mikrotik.com/docs/spaces/ROS/pages/166920428/GPS-tracking+using+MQTT+and+ThingsBoard
+    3:
+      label: Container - ThingsBoard MQTT/HTTP server
+      href: https://help.mikrotik.com/docs/spaces/ROS/pages/166920348/Container+-+ThingsBoard+MQTT+HTTP+server
+    4:
+      label: TG-BT5-OUT tag
+      href: https://help.mikrotik.com/docs/spaces/UM/pages/143327239/Sending+temperature+readings+from+the+TG-BT5-OUT+tag+to+ThingsBoard
+  description: MikroTik is an EU-based leader in networking hardware and software, providing high-performance routers, switches, 5G and wireless solutions. Our technology powers ISPs, enterprises, and IoT networks—enabling everything from asset tracking to smart city integration and adding wireless connectivity to legacy sensors. We focus on efficiency, security, and scalability to build reliable, cost-effective networks worldwide.
+- type:
+    - NB-IoT
+    - LTE-M
+  name: monoZ
+  logo: /images/partners/monoz-logo.png
+  site:
+    href: https://monoz.io/
+  links:
+    0:
+      label: Integration guide
+      href: "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ"
+  description: MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time. MonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality.
+- type:
+    - Bacnet
+    - Modbus
+    - Wi-Fi
+    - Ethernet
+  name: Temco Controls
+  logo: /images/partners/temco-controls-logo.jpg
+  site:
+    href: https://temcocontrols.com/
+  links:
+    0:
+      label: Temco T3E-6CT
+      href: /docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/
+    1:
+      label: Temco Tstat10
+      href: /docs/devices-library/temco-controls-tstat-10/
+  description: Temco Controls Ltd. specializes in manufacturing low-cost sensors and controllers for the HVAC industry. We proudly provide solutions with no license or recurring fees to our customers from all over the world. Both our software and device firmware are open source, making us one of the most open building automation systems on the market. We make collaboration simple and straightforward with easy purchases on the web and open, long-term support on the forum.
+- type:
+    - Bluetooth LE
+    - NB-IoT
+    - Wi-Fi
+    - Sigfox
+    - LoRaWAN
+    - GSM/GPRS
+    - Modbus
+  name: EXXN
+  logo: /images/partners/exxn.jpg
+  site:
+    href: https://exxn.es/en/
+  links:
+    0:
+      label: Integration guide
+      href: /docs/samples/exxn/exxn
+  description: At EXXN, we specialize in integrating technology into your business to enhance efficiency and productivity. Our multipurpose gateways, equipped with an ARM processor, are customizable to meet the specific needs of each customer and use case.
+- type:
+    - NB-IoT
+    - LTE-M
+  name: Fusion DAQ
+  logo: /images/partners/FusionDAQ-Nav-Logo.png
+  site:
+    href: https://fusiondaq.com/
+  links:
+    0:
+      label: Integration guide
+      href: /docs/samples/fusion-daq/fusion-daq
+  description: Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC.
+- type:
+    - NB-IoT
+    - LoRaWAN
+    - LTE-M
+  name: Yobiiq B.V.
+  logo: /images/partners/Yobiiq_Logo_Primary.svg
+  site:
+    href: https://yobiiq.com/
+  links:
+    0:
+      label: Integration guide
+      href: https://docs.yobiiq.com/thingsboard/sd-1001-integration-guide#introduction
+  description: The best way to predict the future is by creating it. As an IoT Solutions Company, we develop smart solutions daily, tailored to your business and objectives. We pride ourselves on being a bit different, boosted by a healty dose of honest, straightforward communication without exaggeration. Manufacturing and creating devices that work, period is what we do at YOBIIQ.
+- type:
+    - GSM/GPRS
+    - LTE-M
+    - Modbus
+    - Wi-Fi
+    - Ethernet
+  name: YuDash
+  logo: /images/partners/yudash_logo.png
+  site:
+    href: https://www.yudash.com/
+  links:
+    0:
+      label: Integration guide
+      href: https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard
+  description: YuDash is an Industrial IoT gateway manufacturer, offering flexible, user-friendly, and cost-effective products. Cloud connectivity through 4G/LTE, Ethernet and WiFi is available. Industrial protocols like Modbus-RS485, Modbus-TCP/IP, Analog and I2C are supported to IoT enable Industrial PLCs, Instruments and Sensors. YuDash products are used in Environment, Weather, Energy, Remote Asset Management and Industry 4.0 applications.
+

@@ -12,7 +12,7 @@ C:\Program Files (x86)\tb-edge\conf\tb-edge.yml
 ``` 
 {: .copy-code}
 
-##### Database configuration
+#### Database configuration
 
 In the file "tb-edge.yml" from the previous step locate "# SQL DAO Configuration" block. 
 
@@ -34,7 +34,7 @@ spring:
     username: "${SPRING_DATASOURCE_USERNAME:postgres}"
     password: "${SPRING_DATASOURCE_PASSWORD:YOUR_POSTGRES_PASSWORD_HERE}"
 ``` 
-##### Configure cloud connectivity
+#### Configure cloud connectivity
 
 {% include templates/edge/install/copy-edge-credentials.md %}
 

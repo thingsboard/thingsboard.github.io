@@ -67,7 +67,7 @@
                 .pe-arrow
                     display: none
 
-    #intro, #matrix, #features, #integration, #scheduler, #export, #labeling
+    #intro, #matrix, #features, #integration, #scheduler-section, #export, #labeling
         color: #212924
         text-align: left
         h1, main .item h2, main .item h3.item-heading, div.main-div .item h2, div.main-div .item h3.item-heading
@@ -192,6 +192,10 @@
         table
             width: calc(100% + 40px)
             margin: 160px -20px 16px
+            i
+                font-size: 25px
+                &.disabled
+                    opacity: 0.2
             td, th
                 margin: 0 2px
                 &:nth-child(4n-2)
@@ -244,6 +248,18 @@
                         font-size: 11px
                         img
                             width: 32px
+                    .faq-icon
+                        cursor: pointer
+                        font-family: 'Font Awesome 5 Free'
+                        font-weight: bold
+                        vertical-align: super
+                        font-size: smaller
+                        display: inline-block
+                        &:after
+                            content: "\f059"
+                            font-size: 12px
+                            position: absolute
+                            transform: translate(15%, -100%)
 
     #intro
         padding-top: 28px
@@ -253,7 +269,7 @@
             text-transform: none
             margin-bottom: 100px
 
-    #labeling, #integration, #scheduler, #export
+    #labeling, #integration, #scheduler-section, #export
         #features-top, #features-top-2, #features-top-3, #features-top-4
             img
                 border-radius: 6px
@@ -277,6 +293,7 @@
                         margin-top: 100px
                 .feature-des, img
                     width: 100%
+                    height: auto
                 &.dark
                     margin-bottom: 10px
                     div
@@ -312,7 +329,7 @@
                         li
                             padding: 6px 0
                             margin-right: 22px
-                            a
+                            button
                                 color: #757C76
                                 font-weight: normal
                                 font-size: 16px
@@ -320,7 +337,7 @@
                                 padding: 6px 14px
                                 background-color: #17BB52
                                 border-radius: 6px
-                                a
+                                button
                                     color: white
                                     text-decoration: none
                     img
@@ -334,32 +351,6 @@
                         width: 100%
                         img
                             width: inherit
-
-    #tb-customers
-        margin: -50px -100% 0
-        padding: 50px 100%
-        text-align: justify
-        -moz-text-align-last: justify
-        text-align-last: justify
-        display: none
-        @media(min-width: 992px)
-            display: block
-        img
-            height: 60px
-            margin-bottom: 20px
-        main, div.main-div
-            display: flex
-            flex-wrap: wrap
-            flex-direction: row
-            justify-content: space-around
-            align-items: center
-            padding: 0 50px
-            a
-                display: block
-                padding: 10px
-                object
-                    pointer-events: none
-                    filter: invert(79%) sepia(25%) saturate(246%) hue-rotate(93deg) brightness(185%) contrast(82%)
 
     #lists-first, #lists-second
         position: absolute
@@ -453,9 +444,9 @@
         position: relative
         transition-duration: 0.3s
         .arrow
+            font-size: 13px
             transform: translate(0px)
             transition-duration: 0.3s
-            filter: invert(60%) sepia(22%) saturate(7500%) hue-rotate(102deg) brightness(98%) contrast(82%)
             box-shadow: none !important
             width: 12px !important
             margin-left: 12px
@@ -540,7 +531,7 @@
                                 font-size: 20px
                                 img
                                     width: unset
-            #labeling, #integration, #scheduler, #export
+            #labeling, #integration, #scheduler-section, #export
                 #features-top, #features-top-2, #features-top-3, #features-top-4
                     .block
                         .feature-des, img
@@ -584,7 +575,7 @@
                 table
                     td, th
                         margin: 0 14px
-            #labeling, #integration, #scheduler, #export
+            #labeling, #integration, #scheduler-section, #export
                 #features-top, #features-top-2, #features-top-3, #features-top-4
                     .block
                         flex-direction: row

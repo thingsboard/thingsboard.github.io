@@ -8,6 +8,113 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.13.2 (June 27, 2025)
+
+**Improvements:**
+
+* Redesign anomaly autodiscovery tasks
+* Add job for saving anomaly scores as a telemetry in ThingsBoard
+* Create alerts based on discovered anomalies
+* Add new filter conditions - 'not in' and 'does not contain'
+* Filter business entities based on user permissions
+* AI Assistant - improve conversation interface
+
+**Bug fixes:**
+
+* Fix fill gaps strategy during anomaly detection
+* Fix issue with failed topology rediscovery
+* Fix query planner for calculated fields
+* Invalidate jwt tokens based on user activity
+* Fix multitenant validation procedure
+
+## v1.13.1 (May 2, 2025)
+
+**Improvements:**
+
+* Prompt templates for agentic knowledge and instructions management
+* Add summarization and explanation for visualizations with AI assistant
+* Conversation interfaces for AI assistant
+* Add ThingsBoard widget action to interact with AI assistant
+* Added support for OpenAI API-compatible models
+* Add support for custom and self-hosted LLM providers
+* Added support for OpenAI o4 family model
+* Add Trendz task sequencing API
+
+**Bug fixes:**
+
+* Fix heatmap translation
+* Fix AI assistant memory aggregation
+* Fix drag and drop after unsuccessful view config save
+* Fix issue with renamed calculated fields
+* Fixed manual task execution failures
+
+
+## v1.13.0 (March 10, 2025)
+
+**Improvements:**
+
+* Add AI assistant for creating visualization
+* Add AI Assistant widget for ThingsBoard dashboards
+* Configurable LLM providers for assistant
+
+**Bug fixes:**
+
+* Fix access denied error for public dashboards
+* Improve fill gap strategy for time series fields
+* Fix translations for chart tooltips
+* Fix task automated refresh for calculated fields
+* Fix delta aggregation for raw data loading mode
+* Fixed issues with UNIQUE + COUNT operations in calculated fields
+* Fixed issues related to model retraining in Prophet and multi-Prophet scenarios.
+* Corrected the AUTO segmentation strategy for prediction models
+
+
+## v1.12.0 (December 31, 2024)
+
+**Improvements:**
+
+* Prediction model training and validation framework
+* Background tasks for prediction models
+* Add prediction fields support in calculated fields and views
+* Persisting forecasts as telemetry in ThingsBoard
+* Custom translation and locales management
+* Add support of new ThingsBoard widgets (ThingBoard 3.9+)
+* Add support of Two-factor authentication
+* Filter data by Date fields inside views
+
+## v1.11.2 (November, 2024)
+
+**Improvements:**
+
+* Configurable data gap for state fields
+* Add manual calculation task repeat
+* Extend calculation jobs configuration
+* Add failed execution details page
+* Add option to show selected date range and filters information in exported XLS/XLSX files
+
+**Bug fixes:**
+
+* Optimize export latency for large datasets
+* Fix relative dashboard time-window and interval time ranges
+
+## v1.11.1 (October, 2024)
+
+**Improvements:**
+
+* Add possibility to choose several entities in row click event
+* Add advanced formatting for filters in table view
+* Add quantile based classification method for heatmaps
+* Add additional settings for pie chart labels
+* Add time range strategy for calculation fields
+* Add export to XLSX
+
+**Bug fixes:**
+
+* Fix export from views (order of rows, formatting strings that contains scientific notation)
+* Fix filters in anomaly model settings
+* Fix table dynamic columns sorting
+* Fix showing units in views tooltips
+
 ## v1.11.0 (March, 2024)
 
 **Improvements:**

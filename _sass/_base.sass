@@ -127,6 +127,17 @@ a
     &:focus
       background-color: $orange-02
 
+.visually-hidden
+  position: absolute
+  width: 1px
+  height: 1px
+  margin: -1px
+  padding: 0
+  overflow: hidden
+  clip: rect(0, 0, 0, 0)
+  border: 0
+
+
 // HEADER
 #home, #thingsboard-paas, #thingsboard-pe, #thingsboard-edge, #mqtt-broker
   header
@@ -165,7 +176,7 @@ a
                 color: #2A7DEC
 
     .n-button
-      &.try
+      &.price
         color: #fff
         transition-duration: 0s
         border: unset
@@ -176,7 +187,7 @@ a
           color: #212529
           background-color: rgba(255, 255, 255, 1)
 
-      &.price:hover
+      &.try:hover
         color: #2A7DEC
         box-shadow: unset
         background-color: #fff
@@ -244,7 +255,7 @@ header
       top: 84px
       left: 0
       transition: visibility, opacity ease-in-out
-      transition-duration: 0.3s
+      transition-duration: .3s
       border-radius: 4px
       box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
       background-color: #fff
@@ -253,140 +264,134 @@ header
       &.active
         visibility: visible
         opacity: 1
+        background-color: #f7f9fe
         &.bounds-transition
-          transition: visibility 0.3s, opacity ease-in-out 0.3s, left ease-in-out 0.2s, width ease-in-out 0.2s, height ease-in-out 0.2s
+          transition: left ease-in-out .4s, width ease-in-out .4s, height ease-in-out .4s
+        & > div.open
+          opacity: 1
+          display: block
+          transition-property: display, opacity
+          transition-duration: .4s
+          transition-behavior: allow-discrete
+          @starting-style
+            opacity: 0
+      & > div
+        opacity: 0
+        display: none
+
+      div#nav-cases
+        .group:last-child
+          .column
+            min-width: 320px
 
     .sub-menu-container, ul
       .centered-sub
         width: max-content
         .sub-menu
           width: max-content
-          padding: 40px 70px 40px 40px
           display: block
           z-index: 1
 
-          &.products
-            @media screen and (min-width: 1281px)
-              .sub-groups
-                .group
-                  &:first-child
-                    padding-right: 35px
-                  &:nth-child(2)
-                    padding-left: 35px
-                    border-left: 1px solid #d7d7d7
+          li
+            padding: 0
 
           .sub-groups
             display: flex
-            align-items: flex-start
+            flex-direction: column
+            align-items: stretch
             .group
-              padding-right: 70px
-              &:last-child
-                padding-right: 0
-              .group-name
-                height: 62px
-                text-transform: uppercase
-                font-weight: 500
-                color: #899AAB
-                font-size: 15px
-                line-height: normal
-
-          .bottom-group
-            background-color: #F9FBFF
-            border-radius: 4px
-            width: calc(100% + 94px)
-            margin: 32px -32px -32px
-            padding: 32px
+              display: flex
+              padding: 32px
+              gap: 36px
+              margin: 5px 5px 0
+              &:first-child
+                border-radius: 4px
+                background-color: #fff
+              &:first-child:last-child
+                margin: 0
+                .column
+                  width: 100%
+                  min-width: unset
+              &:not(only-child)
+                .column
+                  min-width: 250px
+              .column
+                display: flex
+                flex-direction: column
+                gap: 24px
+                .group-name
+                  text-transform: uppercase
+                  font-weight: 500
+                  color: #305680
+                  font-size: 14px
+                  line-height: normal
 
           a
             text-align: left
             display: flex
-            margin-bottom: 22px
 
             &:hover
               .sub-text
-                h1, span.item-heading
+                span.item-heading
                   color: #2A7DEC
                 p
                   color: #212529
 
-            &.prof-lnk:hover, &.license-lnk:hover
-              .sub-text
-                h1, span.product-name
-                  color: #1F8B4D
-
-            &.com-lnk:hover .sub-text h1, &.com-lnk:hover .sub-text span.item-heading
-              color: #305680
-
-            &.edge-lnk:hover .sub-text h1, &.edge-lnk:hover .sub-text span.item-heading
-              color: #009688
-
-            &.gateway-lnk:hover .sub-text h1, &.gateway-lnk:hover .sub-text span.item-heading
-              color: #7A4DC3
-
-            &.trendz-lnk:hover .sub-text h1, &.trendz-lnk:hover .sub-text span.item-heading
-              color: #2696F3
-
-            &.mobile-lnk:hover .sub-text h1, &.mobile-lnk:hover .sub-text span.item-heading
-              color: #305680
-
-            &.mobile-pe-lnk:hover .sub-text h1, &.mobile-pe-lnk:hover .sub-text span.item-heading
+            &.prof-lnk:hover .sub-text span.item-heading
               color: #1F8B4D
 
-            &.mqtt-broker-lnk:hover .sub-text h1, &.mqtt-broker-lnk:hover .sub-text span.item-heading
+            &.com-lnk:hover .sub-text span.item-heading
+              color: #305680
+
+            &.edge-lnk:hover .sub-text span.item-heading
+              color: #009688
+
+            &.gateway-lnk:hover .sub-text span.item-heading
+              color: #7A4DC3
+
+            &.trendz-lnk:hover .sub-text span.item-heading
+              color: #2696F3
+
+            &.mobile-lnk:hover .sub-text span.item-heading
+              color: #305680
+
+            &.mobile-pe-lnk:hover .sub-text span.item-heading
+              color: #1F8B4D
+
+            &.mqtt-broker-lnk:hover .sub-text span.item-heading
               color: #1F8B4D
 
             &:last-child
               margin-bottom: 0
 
             .sub-text
-              padding-top: 4px
-              max-width: 300px
+              max-width: 284px
               h1, span.item-heading
                 color: #212529
                 font-size: 16px
-                font-weight: 600
-                line-height: normal
+                font-weight: 400
+                line-height: 24px
               p
                 color: #899AAB
-                font-size: 15px
-                font-weight: normal
-                line-height: normal
+                font-size: 14px
+                font-weight: 400
+                line-height: 24px
+                white-space: nowrap
             img
               margin-right: 12px
               height: fit-content
 
             &.small-link
-              margin-bottom: 15px
               .sub-text
                 padding: 0
                 h1, span.item-heading
-                  font-weight: 500
+                  font-weight: 400
+                  white-space: nowrap
               &:last-child
                 margin-bottom: 0
 
     ul
       display: flex
-
-      .nav-products
-        width: 108px
-
-      .nav-services
-        width: 103px
-
-      .nav-cases
-        width: 122px
-
-      .nav-customers
-        width: 127px
-
-      .nav-company
-        width: 118px
-
-      .nav-partners
-        width: 104px
-
-      .nav-docs
-        width: 74px
 
       li
         cursor: default
@@ -396,7 +401,6 @@ header
         height: calc(100% + 4px)
 
         a, span.main-menu-link
-          width: 100%
           text-align: center
 
         &:hover a
@@ -405,7 +409,7 @@ header
       a, span.main-menu-link
         display: block
         color: #212529
-        font-size: 18px
+        font-size: 16px
         font-weight: normal
         text-decoration: none
 
@@ -436,16 +440,16 @@ header
 
 .indicator.active
   transition-delay: 0s
-  transition-duration: 0.3s
+  transition-duration: 0.2s
   .line
     transition-delay: 0s
-    transition-duration: 0.3s
+    transition-duration: 0.2s
     width: 100%
     left: 0
     opacity: 1
   .head-arrow
     transition-delay: 0.1s
-    transition-duration: 0.3s
+    transition-duration: 0.2s
     opacity: 1
 .indicator
   width: 0
@@ -455,7 +459,7 @@ header
   height: 4px
   bottom: -4px
   transition-delay: 0s
-  transition-duration: 0.3s
+  transition-duration: 0.2s
   z-index: -1
   padding: 0 14px
   transition-property: none
@@ -473,7 +477,7 @@ header
     bottom: 4px
     opacity: 0
     transition-delay: 0s
-    transition-duration: 0.3s
+    transition-duration: 0.2s
 
   .line
     position: relative
@@ -482,11 +486,11 @@ header
     height: 100%
     left: 50%
     opacity: 0
-    transition-duration: 0.3s
+    transition-duration: 0.2s
 
 .n-button
-  font-size: 18px
-  font-weight: 500
+  font-size: 16px
+  font-weight: 400
   text-align: center
   height: 47px
   transition-duration: 0.3s
@@ -495,7 +499,7 @@ header
   margin-left: 10px
   padding: 11px 20px
 
-  &.try
+  &.price
     border: solid 1px #EBEBEB
     padding: 10px 11px
     color: #212529
@@ -506,7 +510,7 @@ header
       border: solid 2px #212529
       text-decoration: none
 
-  &.price
+  &.try
     background-color: #2A7DEC
     color: white
     padding: 11px 14px
@@ -585,7 +589,7 @@ header
                 color: #2A7DEC
 
       .n-button
-        &.try
+        &.price
           border: solid 1px #EBEBEB
           color: #212529
           background-color: unset
@@ -593,7 +597,7 @@ header
           &:hover
             border: solid 2px #212529
 
-        &.price:hover
+        &.try:hover
           color: #fff
           background-color: #2A7DEC
           box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
@@ -661,7 +665,7 @@ footer
           text-align: right
           display: inline-block
           margin: 0 14px
-          font-size: 18px
+          font-size: 16px
           color: white
           transition: 300ms
           &:hover
@@ -785,7 +789,7 @@ footer
     justify-content: space-between
     .copyright
       color: #847989
-      font-size: 16px
+      font-size: 14px
     .social
       width: fit-content
       display: flex
@@ -797,6 +801,9 @@ footer
         margin-left: 16px
         &:hover
           filter: brightness(200%)
+      .twitter
+        display: flex
+        justify-content: flex-start
 
 section
   background-color: white
@@ -826,30 +833,6 @@ dd
         li
           padding: 10px 10px 14px
 
-          &.nav-products
-            width: 94px
-
-          &.nav-services
-            width: 91px
-
-          &.nav-cases
-            width: 109px
-
-          &.nav-customers
-            width: 114px
-
-          &.nav-company
-            width: 105px
-
-          &.nav-partners
-            width: 90px
-
-          &.nav-docs
-            width: 61px
-
-          a
-            font-size: 17px
-
         .indicator
           padding: 0 10px
 
@@ -861,29 +844,9 @@ dd
   header
     .head-menu
       ul
+        gap: 10px
         li
           padding: 10px 6px 14px
-
-          &.nav-products
-            width: 78px
-
-          &.nav-services
-            width: 74px
-
-          &.nav-cases
-            width: 92px
-
-          &.nav-customers
-            width: 96px
-
-          &.nav-company
-            width: 88px
-
-          &.nav-partners
-            width: 73px
-
-          &.nav-docs
-            width: 50px
 
           a, span.main-menu-link
             font-size: 15px
@@ -933,11 +896,9 @@ dd
 
                 &:hover a
                   color: #2A7DEC
-              .bottom-group
-                width: calc(100% + 94px)
 
       .n-button
-        &.try
+        &.price
           border: solid 1px #EBEBEB
           color: #212529
           background-color: unset
@@ -945,7 +906,7 @@ dd
           &:hover
             border: solid 2px #212529
 
-        &.price:hover
+        &.try:hover
           color: #fff
           background-color: #2A7DEC
           box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
@@ -1021,26 +982,36 @@ dd
               position: unset
               box-shadow: unset
               padding: 12px 0
-              background-color: unset
 
               &.open-sub
                 display: flex
                 width: 100%
                 flex-wrap: wrap
 
-              .bottom-group
-                margin: 0 -32px 0
-                padding: 10px 32px 0
+                .sub-groups
+                  gap: 60px
+                  flex-flow: row wrap
+                  align-items: flex-start
+                  padding-left: 25px
 
-              .sub-groups
-                flex-wrap: wrap
-                .group .group-name
-                  display: none
+                  .group
+                    flex-direction: column
+                    gap: 15px
+                    padding: 0
 
-              a:last-child
-                margin-bottom: 22px
-                &.small-link
-                  margin-bottom: 15px
+                    &:first-child
+                      width: unset
+                      align-self: unset
+
+                    .column
+                      gap: 15px
+
+                      .small-link
+                        margin: 0
+
+                      &:not(:first-child)
+                        .group-name
+                          display: none
 
       .indicator
         display: none

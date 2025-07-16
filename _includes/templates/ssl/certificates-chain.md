@@ -1,18 +1,19 @@
-#### X.509 Certificate chain:
+## X.509 Certificate chain:
 
-#### Step 1. Prepare your server and certificate chain
+### Step 1. Prepare your server and certificate chain
 
-ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
-{% if docsPrefix != 'paas/' %}
-Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://{{hostName}}/signup){:target="_blank"}.
+{% endif %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/){:target="_blank"} guide to provision server certificate if you are hosting your own ThingsBoard instance.
 {% endif %}
 
 Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
 Save the CA root certificate to your working directory as "**ca-root.pem**".
-An example of CA root certificate for *mqtt.thingsboard.cloud* is located 
-[here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+An example of CA root certificate for *{{mqttHostName}}* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
 
-#### Step 2. Generate Client certificate chain
+### Step 2. Generate Client certificate chain
 
 We should generate a certificate chain with **reasonable** Common Names (CNs). We will use the intermediate certificate to sign certificates for our devices.
 For example, the certificate chain CNs might be the following: 
@@ -189,20 +190,20 @@ cat deviceCert.pem intermediateCert.pem rootCert.pem > chain.pem
 The output of the commands will be private keys and certificates for each level of chain. In the next steps
 we will use device key file *deviceKey.pem* and a chain of certificates *chain.pem*.
 
-#### Step 3. Provision Client Intermediate Public Key as Device Profile X509 provision strategy
+### Step 3. Provision Client Intermediate Public Key as Device Profile X509 provision strategy
 
 Go to **ThingsBoard Web UI -> Profiles -> Device profiles -> Your Device profile -> Device provisioning**.
 Select **X.509 Certificates Chain** provision strategy, insert the contents of *intermediateCert.pem* file
 and regular expression pattern to fetch common name from *deviceCert.pem*, choose allow to create new devices or not and click save.
 Alternatively, the same can be done through the [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-#### Step 4. Test the connection
+### Step 4. Test the connection
 
 Execute the following command to upload temperature readings to ThingsBoard Cloud using secure channel:
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 ```bash
-mosquitto_pub --cafile ca-root.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "{{mqttHostName}}" -p "8883" \
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}

@@ -212,4 +212,5 @@ thresholds:
 
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/advanced-data-key-configuration.md %}

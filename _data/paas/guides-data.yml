@@ -21,6 +21,40 @@
       keywords: device management attributes
       video: false
       pe: false
+- title: Advanced guides for working with the main features of ThingsBoard
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
+  id: AdvancedGettingStartedGuides
+  section:
+    - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
+      title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets
+      subtitle: "Explore this guide to learn how to: create assets and devices and define their relationships; add server attributes; develop a new dashboard; visualize data using the ”Entities table” and ”OpenStreet Map” widgets."
+      keywords: asset device server attribute visualization dashboard Entities table OpenStreet Map widget helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/
+      title: Lesson 2. Dashboard states, widget actions, and Image Map widget
+      subtitle: "Explore this guide to learn how to: add and configure new dashboard states, create different aliases, visualize devices data on the ”Image Map” widget, and set up actions in various widgets to navigate between states."
+      keywords: Line chart aliases attribute Image Map Auto fill layout height actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/
+      title: Lesson 3. Charts and card widgets
+      subtitle: "Explore this guide to learn how to: add separate states for each device, simulate telemetry data for the devices using the Rule Engine, and display them using card and chart widgets."
+      keywords: Line chart aliases attribute Image Map actions telemetry analog gauges digital gauge data helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/
+      title: Lesson 4. Alarm management
+      subtitle: "Explore this guide to learn how to: create alarm rules, and handle alarms using the Alarms widget."
+      keywords: alarm alarms widget helloworld
+      video: false
+      pe: false
+    - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/
+      title: Lesson 5. Adding customers & sharing or changing ownership of assets.
+      subtitle: "Explore this guide to learn how to: grant access to the dashboard by assigning ownership or shared access to specific entities (such as devices, assets, etc.) to different clients; create customer and customer users."
+      keywords: customer user share change owner helloworld
+      video: false
+      pe: false
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
@@ -222,21 +256,21 @@
       pe: false
       video: false
 - title: Data processing & actions
-  subtitle: Learn how to use ThingsBoard Rule Engine.
+  subtitle: Learn how to process data in ThingsBoard.
   id: DataProcessing
   section:
     - path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
       title: Validate incoming telemetry
       subtitle: Learn how to configure Rule Engine to discard invalid telemetry readings based on JavaScript filter function.
       pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/
+    - path: /docs/paas/tutorials/telemetry-delta-calculation/
       title: Telemetry delta calculation
-      subtitle: Learn how to configure Rule Engine to calculate telemetry delta readings based on Originator telemetry rule node.
-      pe: false
-    - path: /docs/user-guide/rule-engine-2-0/tutorials/function-based-on-telemetry-from-two-devices/
+      subtitle: Learn how to calculate telemetry delta readings using the Calculated fields feature.
+      pe: true
+    - path: /docs/paas/tutorials/function-based-on-telemetry-from-two-devices/
       title: Data function based on telemetry from 2 devices
-      subtitle: Learn how to configure Rule Engine to create new telemetry based on telemetry readings from multiple devices.
-      pe: false
+      subtitle: Learn how to generate a new telemetry value based on telemetry readings from multiple devices using the Calculated fields feature.
+      pe: true
     - path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
       title: Transform incoming telemetry
       subtitle: Learn how to configure Rule Engine to transform incoming telemetry based on JavaScript function before it is stored to the database.

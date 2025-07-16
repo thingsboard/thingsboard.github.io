@@ -3,6 +3,74 @@ External Nodes used are used to interact with external systems.
 * TOC
 {:toc}
 
+## AWS Lambda Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.7.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![Node example image](/images/user-guide/rule-engine-2-0/nodes/external-aws-lambda.png)
+
+Node publishes messages to AWS Lambda, a service that lets you run code without provisioning or managing servers. 
+It sends messages using a RequestResponse invocation type. The node uses a pre-configured client and specified function to run.
+
+**Configuration**
+
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/external-aws-lambda-config.png)
+
+Function configuration
+
+- **Function name**: required parameter to specify which AWS Lambda function should be invoked.
+- **Qualifier**: optional parameter to specify a version or alias of the Lambda function. If the qualifier is not specified, the default qualifier **$LATEST** will be used.
+
+> **Note**: **Function name** and **Qualifier** fields support templatization.
+
+AWS Credentials
+
+- **AWS Access Key ID** and **AWS Secret Access Key** are the credentials of an AWS IAM User with programmatic access.
+  More information on AWS access keys can be found [here](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+- **AWS Region** must correspond to the one in which the Lambda function is created. Current list of AWS Regions can be found [here](https://docs.aws.amazon.com/general/latest/gr/rande.html).
+
+Advanced settings
+
+- **Connection timeout**: amount of time to wait (in seconds) when initially establishing a connection before giving up and timing out.
+A value of 0 means infinity, and is not recommended.
+- **Request timeout**: amount of time to wait (in seconds) for the request to complete before giving up and timing out.
+A value of 0 means infinity, and is not recommended.
+- **Tell Failure if AWS Lambda function execution raises exception**: if enabled, forces failure of message processing if AWS Lambda function execution raises exception. 
+If disabled, the error information is added to the response payload, and the message will be routed via success chain.
+
+**Output**
+- **Success**: If message was processed successfully.
+- **Failure**: If an error occurs during message processing or if the AWS Lambda function execution raises an exception, and the option **Tell Failure if AWS Lambda function execution raises exception** is enabled.
+
+**Usage example: monitoring and processing water meter data with AWS Lambda**
+
+Consider the following scenario: we have a water meter IoT device that sends periodic updates about water usage to our system.
+We need to process these updates to check for anomalies and perform specific actions based on the water usage patterns.
+
+Solution with AWS Lambda node:
+1. **Receive water meter data**: Our rule chain starts with receiving water meter updates. Each update contains the water usage data.
+2. **Preprocess the data**: The message passes through a Transformation Node to format the data appropriately for AWS Lambda.
+3. **Invoke AWS Lambda function**: The formatted message is then sent to the AWS Lambda Node. This node is configured with the necessary AWS credentials and function details.
+4. **Process data with Lambda**: The AWS Lambda function is invoked, processing the water usage data. It checks for anomalies, such as unusually high water usage, and logs the results or triggers further actions.
+5. **Handle Lambda response**: Upon successful execution, the Lambda function returns a response. The AWS Lambda Node captures this response, including the requestId in the message metadata.
+6. **Route based on Lambda response**: Based on the response from AWS Lambda, the message is routed through either the Success or Failure path. The Success path can continue to further processing, while the Failure path handles any errors or issues encountered.
+
+By utilizing the AWS Lambda Node in this manner, we can efficiently process and respond to real-time water meter data, leveraging AWS Lambda's capabilities for data processing and anomaly detection.
+
+![Rule chain example image](/images/user-guide/rule-engine-2-0/nodes/external-aws-lambda-chain.png)
+
+**Published payload** - node will publish message payload to the AWS Lambda. If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload to the AWS Lambda.
+
+**Outbound message** from this node will contain response **requestId** in message metadata.
+Message payload will contain result of the function execution.
+
+<br>
 
 ## AWS SNS Node
 
@@ -121,17 +189,21 @@ Kafka Node sends messages to Kafka brokers. Expects messages with any message ty
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka-config.png)
+{% if docsPrefix == null %}
+![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka-config-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+![image](/images/user-guide/rule-engine-2-0/nodes/external-kafka-config-pe.png)
+{% endif %}
 
 - **Topic pattern** - can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>
-- **bootstrap servers** - list of kafka brokers separated with comma.
+- **Key pattern** - Use <code>${metadataKey}</code> for value from metadata, <code>$[messageKey]</code> for value from message body.
+- **Bootstrap servers** - list of kafka brokers separated with comma.
 - **Automatically retry times** - number of attempts to resend message if connection fails.
 - **Produces batch size** - batch size in bytes for grouping messages with the same partition.
 - **Time to buffer locally** - max local buffering window duration in ms.
 - **Client buffer max size** - max buffer size in bytes for sending messages.
 - **Number of acknowledgments** - number of acknowledgments node requires to received before considering a request complete.
-- **Key serializer** - by default org.apache.kafka.common.serialization.StringSerializer
-- **Value serializer** - by default org.apache.kafka.common.serialization.StringSerializer
 - **Other properties** - any other additional properties could be provided for kafka broker connection.
 
 **Published body** - Node will send full Message payload to the Kafka topic. 
@@ -217,6 +289,18 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
+
+**MQTT retransmission mechanism**
+
+The MQTT node uses ThingsBoard's internal MQTT client.
+
+{% if docsPrefix contains "paas" %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=false %}
+{% else %}
+{% include docs/user-guide/mqtt-retransmission-mechanism.md show-yml-config=true %}
+{% endif %}
+
+When the message is dropped, the corresponding rule engine message is routed via **Failure** chain with the appropriate exception message.
 
 <br>
 
@@ -481,9 +565,9 @@ Configuration:
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-send-sms.png)
 
 - **Use system SMS provider settings** - if enabled default SMS Provider Server configured on System level will be used.
-{% if docsPrefix != "paas/" %} 
+{% unless docsPrefix contains "paas/" %}
 See [SMS Provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings) settings for more details;
-{% endif %}
+{% endunless %}
 - **Phone Numbers To template** - Allows to configure multiple phone numbers where the SMS will be sent to. Optionally, you may reference fields from the message metadata.  
 - **SMS message template** - Allows to configure body of the SMS message. Optionally, you may reference fields from the message metadata.
 

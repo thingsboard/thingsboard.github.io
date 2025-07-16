@@ -19,7 +19,7 @@ This approach ensures that the system remains secure and that only authorized cl
 
 {% include templates/mqtt-broker/authentication.md %}
 
-##### Create/update MQTT Client Credentials
+## Create/update MQTT Client Credentials
 
 **MQTT_BASIC** credentials example:
 
@@ -42,7 +42,7 @@ Clients authenticated with these credentials will be limited to publishing messa
 Additionally, they will be allowed to subscribe exclusively to topics that start with _my/_. 
 This configuration ensures that the clients' access is constrained to specific topic patterns, thereby maintaining a controlled and secure environment.
 
-**SSL** credentials example:
+**SSL** credentials examples:
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/mqtt/client/credentials' \
@@ -51,20 +51,34 @@ curl --location --request POST 'http://localhost:8083/api/mqtt/client/credential
 --data-raw '{
     "name": "testSSLCreds",
     "credentialsType":"SSL",
-    "credentialsValue":"{ \"certCommonName\": \"Root Common Name\", \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
+    "credentialsValue":"{ \"certCnPattern\": \"Root Common Name\", \"certCnIsRegex\": false, \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
+}'
+```
+{: .copy-code}
+
+```bash
+curl --location --request POST 'http://localhost:8083/api/mqtt/client/credentials' \
+--header "X-Authorization: Bearer $ACCESS_TOKEN" \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name": "testSSLCredsWithPattern",
+    "credentialsType":"SSL",
+    "credentialsValue":"{ \"certCnPattern\": \".* Pattern Common Name .*\", \"certCnIsRegex\": true, \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
 }'
 ```
 {: .copy-code}
 
 Where:
-- **certCommonName** - the common name (CN) of the specific certificate in the certificate chain.
-- **authRulesMapping** - mapping rules to map extracted from the CN keyword to the authorization rules (to allow clients to publish and subscribe only to certain topics).
+- **certCnPattern** - the pattern for the common name that should be present in the certificate chain.
+- **certCnIsRegex** - option to control whether the common name (CN) pattern is treated as a regular expression (regex) for matching.
+- **authRulesMapping** - mapping rules to map extracted from the client's CN keyword to the authorization rules (to allow clients to publish and subscribe only to certain topics).
 
-By employing the above configuration, clients connecting with an SSL certificate chain will be permitted to log in based on specific criteria.
-The SSL certificate chain should have the root certificate CN that matches the _Root Common Name_ string, and the certificate's CN should contain the string _test_.
+By employing the above configurations, clients connecting with an X.509 Certificate chain will be permitted to log in based on specific criteria.
+The X.509 Certificate chain should have the certificate CN that matches exactly with the _Root Common Name_ string in the first case, 
+matches with _.* Pattern Common Name .*_ in the second case, and the certificate's CN should contain the string _test_.
 Once authenticated using these credentials, clients will gain access to publishing and subscribing privileges limited to topics that start with _test_ssl/_.
 
-##### Get all MQTT Client Credentials
+## Get all MQTT Client Credentials
 
 ```bash
 curl --location --request GET 'http://localhost:8083/api/mqtt/client/credentials?pageSize=100&page=0' \
@@ -73,7 +87,7 @@ curl --location --request GET 'http://localhost:8083/api/mqtt/client/credentials
 {: .copy-code}
 **Note**, _pageSize_ parameter equal to 100 and _page_ parameter equal to 0, so the above request will fetch first 100 MQTT client credentials.
 
-##### Delete MQTT Client Credentials
+## Delete MQTT Client Credentials
 
 ```bash
 curl --location --request DELETE 'http://localhost:8083/api/mqtt/client/credentials/$CREDENTIALS_ID' \

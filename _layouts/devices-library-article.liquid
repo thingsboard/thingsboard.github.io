@@ -1,21 +1,30 @@
 {% assign siteData = site.data %}
 {% assign searchPath = "/docs/search/?q=" %}
-{% if page.docsPrefix %}
-    {% assign docsTag = page.docsPrefix | remove: "/" %}
+
+{% if page.docsTag %}
+    {% assign docsTag = page.docsTag %}
 {% elsif include.docsTag %}
     {% assign docsTag = include.docsTag %}
-{% elsif page.docsTag %}
-    {% assign docsTag = page.docsTag %}
+{% elsif page.docsPrefix %}
+    {% assign docsTag = page.docsPrefix | remove: "/" %}
 {% endif %}
+
 {% if docsTag %}
     {% assign siteData = site.data[docsTag] %}
-    {% assign searchPath = "/docs/" | append: docsTag %}
+    {% if docsTag == "edge-pe" %}
+        {% assign searchPath = "/docs/" | append: "pe/edge" %}
+    {% elsif docsTag == "mobile-pe" %}
+        {% assign searchPath = "/docs/" | append: "pe/mobile" %}
+    {% elsif docsTag == "paas-eu" %}
+        {% assign searchPath = "/docs/" | append: "paas/eu" %}
+    {% else %}
+        {% assign searchPath = "/docs/" | append: docsTag %}
+    {% endif %}
     {% assign searchPath = searchPath | append: "/search/?q=" %}
 {% else %}
     {% assign docsTag = "ce" %}
 {% endif %}
-{% assign foundProduct = site.data.products | where: "tag", docsTag %}
-{% assign productInfo = foundProduct[0] %}
+
 {% for thistoc in siteData.globals.tocs %}
     {% if foundTOC %}
         {% break %}
@@ -31,6 +40,9 @@
 {% endfor %}
 {% if siteData[foundTOC].notitle == "true" or page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
 
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
+
 <!Doctype html>
 <html id="docs" class="{{ siteData[foundTOC].bigheader }} {{ productInfo.tag }}">
 
@@ -42,20 +54,8 @@
     <button class="searchButton"></button>
 </div>
 
-<div class="products-selector">
-    <div class="product-info">
-        <div class="product-title">
-            {{ productInfo.title }}
-        </div>
-    </div>
-    <div class="products">
-        {% for product in site.data.products %}
-            {% include find-product-url.html %}
-            <a href="{{ productUrl }}"
-               class="product{% if product.tag == docsTag %} active{% endif %}">{{ product.title }}</a>
-        {% endfor %}
-    </div>
-</div>
+{% include product-selector.html %}
+
 <!--  HERO  -->
 <section id="hero">
     <div id="hero-content">
@@ -183,21 +183,6 @@
 <script>
     jqueryUiDefer(function () {
         $(document).ready(function () {
-
-            // Products selector
-
-            let productsSelector = $('.products-selector');
-            $(window).click(function (e) {
-                if (productsSelector[0].contains(e.target)) {
-                    if (productsSelector.hasClass('active')) {
-                        productsSelector.removeClass('active');
-                    } else {
-                        productsSelector.addClass('active');
-                    }
-                } else {
-                    productsSelector.removeClass('active');
-                }
-            });
 
             $('#search').focus(
                 function () {

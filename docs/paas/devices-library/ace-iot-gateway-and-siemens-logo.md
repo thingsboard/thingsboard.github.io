@@ -6,10 +6,11 @@ connectivity: HTTP, MQTT, Ethernet, WIFI
 vendor: ACE Automation
 deviceImageFileName: ace-iot-gateway.png
 docsPrefix: paas/
+docsTag: paas
 ---
 
 
 * TOC
 {:toc}
-
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/ace-iot-gateway-and-siemens-logo.md %}

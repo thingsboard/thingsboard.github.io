@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -16,7 +16,7 @@ After integrating TheThingsStack with Thingsboard, you can connect, communicate,
 
 ## The Things Stack Community setup
 
-##### Register Application
+### Register Application
 The first step is to create an **application** in TheThingsStack console. Go to [console](https://console.thethingsnetwork.org/){:target="_blank"}, open 
 **Applications** section, press **add application** button and fill required fields.
 
@@ -27,7 +27,7 @@ will be *eu* region.
 
 ![image](/images/user-guide/integrations/ttn/ttn-add-application.png)
 
-##### Payload Decoder
+### Payload Decoder
 Our device submits data in binary format. We have 2 options where to decode this data:
 
 - **TheThingsStack decoder** - data will be decoded before entering the Thingsboard
@@ -49,7 +49,7 @@ function Decoder(bytes, port) {
 
 Press **Save payload function**
 
-##### Device Registration in TheThingsStack
+### Device Registration in TheThingsStack
 
 Next step is a Device creation in the TTS. Open **Devices** page and press **register device**
 
@@ -65,7 +65,7 @@ Next step is a Device creation in the TTS. Open **Devices** page and press **reg
 
 Press **Register** button.
 
-##### Payload formatter (optionally)
+### Payload formatter (optionally)
 
 After device added in TTS, you can test your decoder and payload. Go to your device the **thermostat-a**, and select tab **payload_formatters**. We will take the first byte as a temperature value from a device
 and transform it into JSON.
@@ -85,7 +85,7 @@ and transform it into JSON.
 
 ![image](/images/user-guide/integrations/ttn/payload_format.png)
 
-#### Access key (API key)
+### Access key (API key)
 
 Also, an access key will be needed to configure the integration, it can be generated in the API keys menu. It's important to save it.
 
@@ -94,7 +94,7 @@ Also, an access key will be needed to configure the integration, it can be gener
 ## Integration with Thingsboard
 We made all required configurations in the TheThingsStack (register application, add decoder function and register device). Now we can start configuring Thingsboard.
 
-##### Thingsboard Uplink Data Converter
+### Thingsboard Uplink Data Converter
 
 First, we need to create an Uplink Data Converter which will be used for receiving messages from the TTS. 
 The converter should transform incoming payload into the required message format. Message must 
@@ -177,7 +177,7 @@ return result;
 
 ![image](/images/user-guide/integrations/ttn/tb-converter_1.png)
 
-##### Thingsboard Downlink Data Converter
+### Thingsboard Downlink Data Converter
 For sending Downlink messages from Thingsboard to the device inside TTS, we need to define a Downlink 
 Converter. In general, the output from the Downlink Converter should have the following structure:
 ```json
@@ -192,7 +192,7 @@ Converter. In general, the output from the Downlink Converter should have the fo
 {: .copy-code}
 
 - **contentType** - defines how data will be encoded {TEXT \| JSON \| BINARY}
-- **data** - actual data that will be sent to the device in TTS. More details about API can be found in this [TTS API](https://www.thethingsnetwork.org/docs/applications/mqtt/api.html){:target="_blank"}
+- **data** - actual data that will be sent to the device in TTS. More details about API can be found in this [TTS API](https://www.thethingsnetwork.org/docs/applications/mqtt/api){:target="_blank"}
 - **metadata** - in this object you should place correct devId value that will be used to identify target device in TTS
 
 Go to **Data Converters** and create new **downlink** Converter with this function:
@@ -224,7 +224,7 @@ in the outbound message. The destination device is a **thermostat-a** device.
 
 ![image](/images/user-guide/integrations/ttn/tb-downlink-converter.png)
 
-##### TTS Integration
+### TTS Integration
 
 Next we will create the integration with TheThingsStack inside Thingsboard. Open **Integrations** section and add new Integration with type
 **TheThingsStack**
@@ -247,7 +247,7 @@ after all required configurations, click the **Check connection** button.
 
 ## Validation
 
-##### Validate Uplink Messages
+### Validate Uplink Messages
 Let's verify our integration. Go to the device **thermostat-a** page in TheThingsStack. Scroll to the **Simulate Uplink** section.
 Our device will publish temperature **0F** (15). So enter **0F** into the payload field and press the **Send** button.
 
@@ -260,7 +260,7 @@ In Thingsboard go to **Device Group** -> **All** -> **thermostat-a** - here you 
 
 ![image](/images/user-guide/integrations/ttn/tb-device-telemetry.png)
 
-##### Validate Downlink Messages
+### Validate Downlink Messages
 For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when a device attribute is changed.
 Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using the relation 
 **Attributes Updated**

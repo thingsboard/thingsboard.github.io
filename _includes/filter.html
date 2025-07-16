@@ -1,0 +1,26 @@
+{% assign filters = include.filters %}
+{% assign mode = include.mode | default: "checkbox" %}
+{% assign containerId = include.containerId %}
+{% assign filterLabel = include.filterLabel %}
+
+<div class="filter" data-container-id="{{ containerId }}" data-mode="{{ mode }}">
+    <div class="filter-content">
+        {% if filterLabel %}
+        <span>{{ filterLabel }}</span>
+        {% endif %}
+        <div class="filter-scroll-wrapper">
+            <button id="filterScrollLeft" class="scroll-arrow left-arrow hidden"><i class="fas fa-chevron-left"></i></button>
+            <div class="actions" id="filterScrollContainer">
+                <div class="check-box checked" id="main">
+                    All
+                </div>
+                {% for filter in filters %}
+                <div class="check-box" id="{{ filter }}">
+                    {{ filter }}
+                </div>
+                {% endfor %}
+            </div>
+            <button id="filterScrollRight" class="scroll-arrow right-arrow"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+</div>

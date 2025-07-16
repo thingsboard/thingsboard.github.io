@@ -123,31 +123,15 @@ return "running" === currentState;
 
 ### Supported Aggregation Functions
 
-State fields supports following aggregation functions:
-
-* none()
+State fields supports only following aggregation function: **none()**
 
 Each function allows only 1 argument - reference to the filed on format EntityName.fieldName. For example:
 
 ```
-sum(Machine.temperature)
+none(Machine.temperature)
 ```
 
-Commonly, states are used for calculating how much time device/asset spent in different states. To get more precise results 
-it is recommended you use **none()** aggregation - in this case system will process only raw telemetry to define is device inside 
-defined state or not.
-
-Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
-
-### Save and reuse state fields
-
-Once the state field created you can save it for future reuse by pressing **Save Field** button under function editor. 
-Current field label would be used as a field name. If a field with such name already exists - the system will overwrite it.
-
-Saved state field is only a template. Once it is dropped from the left navigation tree into some axis, a new 
-state field created and this field would not be connected with the original template.
-It means that if you will update field configuration in the future, it will only update a template, 
-but real state fields that are added to View configuration are not affected.
+Commonly, states are used for calculating how much time device/asset spent in different states. 
 
 ### Language
 

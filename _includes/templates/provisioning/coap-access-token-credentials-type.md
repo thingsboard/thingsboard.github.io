@@ -75,8 +75,8 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with access token authorization example script. CoAP API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (thingsboard.cloud): ")
-    config["host"] = host if host else "coap.thingsboard.cloud"
+    host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default ({{coapHostName}}): ")
+    config["host"] = host if host else "{{coapHostName}}"
     port = input("Please write your ThingsBoard \033[93mCoAP port\033[0m or leave it blank to use default (5683): ")
     config["port"] = int(port) if port else 5683
     config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")

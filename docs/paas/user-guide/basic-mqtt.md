@@ -87,4 +87,5 @@ mqtts-options-2:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/basic-mqtt.md %}

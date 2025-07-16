@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Add Trandz widgets on dashboard
-description: Add Trandz widgets on dashboard 
+title: Add Trendz widgets on dashboard
+description: Add Trendz widgets on dashboard 
 
 ---
 
@@ -19,7 +19,7 @@ You should [import Trendz widget bundle into ThingsBoard](/docs/trendz/trendz-bu
 
 ## Add visualization on ThingsBoard Dashboard
 
-#### Add using share wizard
+### Add using share wizard
 
 * Click on **Share** button in the top right corner of the visualization.
 * Select whether you want to add view on new or existing dashboard.
@@ -27,7 +27,7 @@ You should [import Trendz widget bundle into ThingsBoard](/docs/trendz/trendz-bu
 * Enable `Create alias from filter` - enable this option if you want to create dashboard alias that would be used to filter data in view. For example if you created view that shows data from multiple devices - you can use dashboard state alias to filter data by device name. Once alias value changed - filter inside Trendz view would be automatically updated.
 * Press Save button.
 
-#### Add via direct link to Trendz view
+### Add via direct link to Trendz view
 
 Once widgets bundle imported, and you already have saved Trendz Visualization - follow next steps to add them on the dashboard:
 * In Trendz, open required visualization

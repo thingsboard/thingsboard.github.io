@@ -175,4 +175,5 @@ visualize-data-on-thingsboard:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/samples/sia-connect.md %}

@@ -1,0 +1,55 @@
+{% assign startNum = include.startNum %}
+{% assign targetNum = include.targetNum %}
+{% assign useGrouping = include.useGrouping %}
+
+<span class="animated-num" data-start="{{ startNum }}" data-target="{{ targetNum }}" data-grouping="{{ useGrouping }}">{{ startNum }}</span>
+
+<style>
+    .animated-num {
+        opacity: 0;
+        transition: ease-in-out 0.3s;
+    }
+</style>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        function animateNumber(el, target, duration = 800) {
+            let start = parseInt(el.dataset.start, 10);
+            let startTime = performance.now();
+
+            function updateNumber(currentTime) {
+                let elapsedTime = currentTime - startTime;
+                let progress = Math.min(elapsedTime / duration, 1);
+                el.textContent = Math.floor(progress * (target - start) + start);
+
+                if (progress < 1) {
+                    requestAnimationFrame(updateNumber);
+                } else {
+                    el.textContent = el.dataset.grouping === 'true' ? target.toLocaleString('en-US', {useGrouping:true}).replace(/,/g, ' ') : target;
+                }
+            }
+
+            requestAnimationFrame(updateNumber);
+        }
+
+        function observeElements() {
+            const elements = document.querySelectorAll(".animated-num");
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        let target = parseInt(entry.target.dataset.target, 10);
+
+                        entry.target.style.opacity = 1;
+                        animateNumber(entry.target, target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        observeElements();
+    });
+</script>

@@ -25,7 +25,7 @@ Claiming using <b>device-side</b> key scenario%,%deviceside%,%templates/claiming
 Claiming using <b>server-side</b> key scenario%,%serverside%,%templates/claiming/server-key-scenario.md%br%{%endcapture%}
 {% include content-toggle.liquid content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 
 ## Device Claiming Permissions in PE
 
@@ -76,7 +76,7 @@ See the following for more details regarding the above steps.
 In order to reclaim the device, you can send DELETE request to the following URL (Don't forget to replace device name with the correct name):
 
 ```shell
-curl -X DELETE https://thingsboard.cloud/api/customer/device/$DEVICE_NAME/claim
+curl -X DELETE {{httpsUrl}}/api/customer/device/$DEVICE_NAME/claim
 ```
 {: .copy-code}
 
@@ -136,8 +136,8 @@ def collect_required_data():
     print("\n\n", "="*80, sep="")
     print(" "*20, "ThingsBoard basic device claiming example script.", sep="")
     print("="*80, "\n\n", sep="")
-    host = input("Please write your ThingsBoard server hostname or leave it blank to use default (thingsboard.cloud): ")
-    config["host"] = host if host else "mqtt.thingsboard.cloud"
+    host = input("Please write your ThingsBoard server hostname or leave it blank to use default ({{mqttHostName}}): ")
+    config["host"] = host if host else "{{mqttHostName}}"
     token = ""
     while not token:
         token = input("Please write accessToken for device: ")

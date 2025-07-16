@@ -38,3 +38,65 @@ This documentation can help you set up and run your first IoT mobile app, learn 
         </a>
     </div>
 </div>
+
+<br>A compatibility table between the Flutter ThingsBoard mobile application and the version of your ThingsBoard instance.
+
+<table>
+    <thead>
+        <tr>
+          <td style="width: 50%"><b>ThingsBoard version</b></td><td style="width: 50%"><b>Flutter ThingsBoard Mobile Application</b></td><td style="width: 50%"><b>Dart ThingsBoard Client</b></td>
+        </tr>
+    </thead>
+    <tbody>
+         <tr>
+            <td>4.0.0</td>
+            <td>1.6.0</td>
+            <td>4.0.0</td>
+        </tr>
+         <tr>
+            <td>3.9.0</td>
+            <td>1.5.0</td>
+            <td>3.0.0</td>
+        </tr>
+        <tr>
+            <td>3.8.1</td>
+            <td>1.4.0</td>
+            <td>2.0.0</td>
+        </tr>
+        <tr>
+            <td>3.8.0+</td>
+            <td>1.3.0</td>
+            <td>1.3.0</td>
+        </tr>
+        <tr>
+            <td>3.6.3+</td>
+            <td>1.1.0</td>
+            <td>1.1.0</td>
+        </tr>      
+        <tr>
+            <td>3.6.2+</td>
+            <td>1.0.8</td>
+            <td>1.0.8</td>
+        </tr>
+        <tr>
+            <td>3.6.0+</td>
+            <td>1.0.7</td>
+            <td>1.0.7</td>
+        </tr>
+        <tr>
+            <td>3.5.0+</td>
+            <td>1.0.6</td>
+            <td>1.0.6</td>
+        </tr>
+        <tr>
+            <td>3.4.2+</td>
+            <td>1.0.4</td>
+            <td>1.0.4</td>
+        </tr>
+        <tr>
+            <td>3.4.0+</td>
+            <td>1.0.3</td>
+            <td>1.0.3</td>
+        </tr>
+    </tbody>
+</table>

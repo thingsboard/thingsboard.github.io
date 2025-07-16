@@ -1,9 +1,65 @@
-p, h1, h3, h5 {
-	color: #212529;
-}
-
 body {
 	background-color: #F7F9FC;
+}
+
+.marketplace-title {
+	color: #212529;
+	font-size: 56px;
+	font-weight: 600;
+	line-height: 72px;
+	letter-spacing: 0.14px;
+	text-align: center;
+	margin-bottom: 32px;
+}
+
+.marketplace-desc {
+	color: rgba(0, 0, 0, 0.76);
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 32px;
+	letter-spacing: 0.15px;
+	text-align: center;
+}
+
+.marketplace-cards {
+	display: flex;
+	justify-content: space-between;
+	gap: 32px;
+	margin: 56px 0;
+}
+
+.marketplace-card {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	padding: 46px;
+	border-radius: 24px;
+	background: #FFF;
+	box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08);
+	width: 100%;
+	animation: slide-in 0.8s ease-out forwards
+}
+
+.marketplace-card .marketplace-card-icon {
+	padding: 25px;
+	border-radius: 24px;
+	border: 3px solid #3E9AF8;
+	width: fit-content;
+}
+
+.marketplace-card .marketplace-card-title {
+	font-size: 28px;
+	font-weight: 500;
+	line-height: 44px;
+	letter-spacing: 0.249px;
+	color: #2A7DEC;
+}
+
+.marketplace-card .marketplace-card-desc {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 28px;
+	letter-spacing: 0.15px;
 }
 
 .background {
@@ -36,36 +92,13 @@ body {
 }
 
 /*#hardwareContainer:after*/
-#users main h1 {
-	font-size: 36px;
-	font-weight: 500;
-	line-height: 54px;
-	margin: 10px 0 32px;
-	text-align: center;
-}
-
-#users main h3 {
-	font-size: 30px;
-	font-weight: 500;
-	line-height: 54px;
-	margin: 10px 0 32px;
-	text-align: center;
-}
-
-#users main h5 {
-	text-align: center;
-	font-size: 20px;
-	line-height: 1.5em;
-	font-weight: normal;
-	margin-bottom: 60px;
-}
-
 p.button-section {
+	margin-top: 32px;
 	padding-bottom: 48px;
 }
 
 .button {
-	font-size: 18px;
+	font-size: 16px;
 	padding: 12px 20px;
 }
 
@@ -84,23 +117,31 @@ section {
 	}
 }
 
-@media screen and (max-width: 768px) {
-	#users {
-		padding: 30px 20px 0;
+@keyframes slide-in {
+	from {
+		opacity: 0;
+		transform: translateY(30%);
 	}
 
-	#users main h1 {
-		font-size: 32px;
-		line-height: 50px;
+	to {
+		opacity: 1;
+		transform: translateY(0);
 	}
+}
 
-	#users main h3 {
-		font-size: 26px;
-		line-height: 50px;
+@media screen and (max-width: 1100px) {
+	.marketplace-cards {
+		flex-wrap: wrap;
 	}
+}
 
-	#users main h5 {
+@media screen and (max-width: 500px) {
+	.marketplace-title {
+		font-size: 46px;
+		line-height: 65px;
+	}
+	.marketplace-desc {
 		font-size: 16px;
+		line-height: 25px;
 	}
-
 }

@@ -2,7 +2,7 @@
 ThingsBoard is an open-source IoT platform that enables rapid development, management, and scaling of IoT projects. 
 Our goal is to provide the out-of-the-box IoT cloud or on-premises solution that will enable server-side infrastructure for your IoT applications. 
 
-#### Features
+## Features
 
 With ThingsBoard, you are able to:
 
@@ -18,14 +18,17 @@ With ThingsBoard, you are able to:
  
 See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more features and useful links to the specific feature documentation. 
 
-{% if docsPrefix == null %}
+{% if docsPrefix == 'pe/' %}
+<object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
+{% elsif docsPrefix == 'paas/' %}
+<object width="100%" data="/images/reference/thingsboard-architecture-paas.svg"></object>
+{% elsif docsPrefix == 'paas/eu/' %}
+<object width="100%" data="/images/reference/thingsboard-architecture-paas-eu.svg"></object>
+{% else %}
 <object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-<object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
-{% endif %}
 
-#### Architecture
+## Architecture
 
 ThingsBoard is designed to be:
 
@@ -36,18 +39,18 @@ ThingsBoard cluster can handle millions of devices.
 * **customizable**: adding new functionality is easy with customizable widgets and rule engine nodes.
 * **durable**: never lose your data.
 
-{% if docsPrefix != "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 
 See [**ThingsBoard Architecture**](/docs/{{docsPrefix}}reference) for more details.
 
-{% endif %}
+{% endunless %}
 
-#### Ready to get started?
+## Ready to get started?
 
 <p><a href="/docs/{{docsPrefix}}getting-started-guides/helloworld" class="button">Hello World Application</a></p>
 
 {% if (docsPrefix == "pe/") %}
-#### ThingsBoard as a Google IoT Core alternative
+## ThingsBoard as a Google IoT Core alternative
 
 <p><a href="/google-iot-core-alternative" class="button">Learn more</a></p>
 

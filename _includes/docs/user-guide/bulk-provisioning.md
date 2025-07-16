@@ -66,7 +66,7 @@ A,test-import-device.csv,text,resources/test-import-device.csv,/docs/{{docsPrefi
 
 <br>File was created using the CSV file editor, it contains data for 10 devices. Also, the **Data2** parameter was omitted for **Device 5**, it will not be created for this device.
 
-####  Upload file
+###  Upload file
 
 Go to **Devices** -> **Import device**
 
@@ -74,7 +74,7 @@ Upload sample file: **test-import-device.csv**
 
 ![image](/images/user-guide/bull-provisioning/import-device-select-file.png)
 
-####  Import configuration
+###  Import configuration
 
  - **CSV delimiter** - select your editor separation symbol. In the sample file delimiter is ",";
  - **First line contains column names** - the sample file contains column names, so we leave this option selected;
@@ -82,7 +82,7 @@ Upload sample file: **test-import-device.csv**
 
 ![image](/images/user-guide/bull-provisioning/import-device-config.png)
 
-####  Select columns type
+###  Select columns type
 
 The first column of the table displays the first file line that contains data.<br>
 Since the **First line contains column names** checkbox has been set on the previous step, values for the third column have already been initiated based on the first line of the document.<br>
@@ -92,7 +92,7 @@ The last row in the following table is responsible for the token so change **Ser
 ![image](/images/user-guide/bull-provisioning/import-device-column-type.png)<br>
 **Note:** such column types as Name, Type and Access token can be selected only for one row.
 
-####  Import finished
+###  Import finished
 
 After the creation process was completed, some statistics information will be shown.<br>
 On the following example, we can see that 8 devices were created successfully, and an error occurred while creating 2 devices. The reason is that Device 1, Device 2 and Device 3 have the same token in the given sample file. ThingsBoard system prohibits that.

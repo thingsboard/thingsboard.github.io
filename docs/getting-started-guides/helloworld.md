@@ -8,40 +8,40 @@ description: Getting started with ThingsBoard open-source IoT platform and simul
 step1:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
-        title: 'Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section;'
+        title: 'Log in to ThingsBoard and navigate to the "Devices" page of the "Entities" section.'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png 
-        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
+        title: 'Click on the "+" icon in the top right corner of the table and select "Add new device" from drop-down menu.'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
-        title: 'Enter the device name. For example, "My New Device". No other changes required at this time. Click "Add";'
+        title: 'Enter a device name (e.g., "My New Device") No other changes required at this time. Click "Add".'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
-        title: 'A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
+        title: 'A window for checking the device connection will open — we&#39;ll skip this step for now and return to connection checking in the next step.'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
-        title: 'Congratulations on adding your first device! As you add more devices, the will be added at the top of the table, since the table automatically sorts devices by their creation time, with the newest ones first.'
+        title: 'Congratulations, you&#39;ve added your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
 
 step11:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png 
-        title: 'You can view notification about adding a new device by clicking on the "bell" icon in the top right corner.'
+        title: 'You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.'
 
 step2:
     0:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
-        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
+        title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window.'
     1:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
-        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+        title: 'In the opened window, choose your messaging protocol and operating system. Install any necessary client tools and copy the provided command.'
     2:
         image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
-        title: 'Execute previously copied command. Once you have successfully published the “temperature” readings, the device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Now, close the connectivity window.'
+        title: 'Execute the copied command in Terminal. Once telemetry data (e.g., temperature readings) is successfully published, the device status will change from "Inactive" to "Active," and you&#39;ll see the data displayed. You can now close the connectivity window.'
 
 step21:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
-        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
+        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings.'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
         title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
@@ -49,13 +49,13 @@ step21:
 step31:
     0:
         image: /images/helloworld/getting-started-ce/create-dashboard-1-ce.png
-        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
+        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu.'
     1:
         image: /images/helloworld/getting-started-ce/create-dashboard-2-ce.png
-        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
+        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add".'
     2:
         image: /images/helloworld/getting-started-ce/create-dashboard-3-ce.png
-        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
+        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner.'
     3:
         image: /images/helloworld/getting-started-ce/create-dashboard-4-ce.png
         title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
@@ -106,7 +106,7 @@ step33:
 step33_2:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-6-ce.png
-        title: 'You can open the time selection window and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
+        title: 'You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval. To do this, open the Time window and make the necessary adjustments. Update the time window settings by clicking the "Update" button.'
 
 step34:
     0:
@@ -120,7 +120,7 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
-        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severity and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severities and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
         title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'   
@@ -167,6 +167,11 @@ step5:
     2:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
         title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'   
+
+notification-center:
+    0:
+        image: /images/helloworld/getting-started-ce/notification-center-getting-started-1-ce.png
+        title: 'The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.'
 
 step71:
     0:
@@ -252,10 +257,10 @@ step74:
 step75:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically log in as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press the "Enter" key. Now create a password by entering it twice and clicking "Create Password".'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
-        title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
+        title: 'You are now logged in as a customer user. You may browse the data and acknowledge/clear alarms.'
 
 mqttWindows:
     0:
@@ -293,54 +298,64 @@ mosquitto-windows:
 * TOC
 {:toc}
 
-The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
+{% include get-hosts-name.html %}
 
-- Connect devices to ThingsBoard;
-- Push data from devices to ThingsBoard;
-- Build real-time end-user dashboards;
-- Define thresholds and trigger alarms;
-- Set up push notifications about new alarms over email, SMS, or other systems.
+This guide demonstrates basic usage of popular ThingsBoard features. You will learn how to:
 
-**In this guide, we will connect and visualize data from the temperature sensor to keep it simple.**
+- Connect devices to ThingsBoard
+- Push data from devices to ThingsBoard
+- Build real-time dashboards
+- Create a Customer and assign the dashboard with them.
+- Define thresholds and trigger alarms
+- Set up notifications via email, SMS, mobile apps, or integrate with third-party services.
+
+For simplicity, we&#39;ll visualize data from a temperature sensor.
+
+## Video tutorial
+
+Prefer visual learning? Check out our step-by-step getting started video tutorial:
+
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/80L0ubQLXsc" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 {% include templates/prerequisites.md %}
 
 ## Step 1. Provision device
 
-As an example, let's add a device that will transmit the following data to ThingsBoard platform: the device's name and temperature readings as telemetry.
+Let&#39;s add a device that sends temperature data to ThingsBoard:
 
-To add a new device, follow these steps:
- 
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
-<br>
-When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.
+You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.
 
 {% include images-gallery.html imageCollection="step11" %}
 
-Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+[Learn more about notifications here](#step-6-alarm-notifications).
 
 <br>
-You may also use:
- * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don't need to configure each device manually; 
- * [REST API](/docs/api/) to provision devices and other entities programmatically;
+**Additional provisioning methods**
+- [Bulk provisioning](/docs/user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
+- [Device provisioning](/docs/user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
+- [REST API](/docs/api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
 
 ## Step 2. Connect device
 
-Now, let's check the connection of our device to the ThingsBoard platform.
-To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
+Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
 <br>
-You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you can find more detailed information about all supported protocols for device connectivity.
+Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
 
 ## Step 3. Create dashboard
 
 A dashboard in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
 
-Let's create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
+Let&#39;s create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
 
 ### Step 3.1 Create an empty dashboard
 
@@ -357,14 +372,14 @@ To add the table widget we need to select it from the widget library. Widgets ar
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
 
-Let's add your first widget:
+Let&#39;s add your first widget:
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
-Congratulations! You've added your first widget.
+Congratulations! You&#39;ve added your first widget.
 
 In the "Entities table" widget, there are two columns.
-The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry).
+The first column displays the device&#39;s name, and the second column displays the value of the "temperature" key (device telemetry).
 So, each column corresponds to an added key.
 
 Now you are able to send a new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
@@ -381,7 +396,8 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart.
 
-Also, you can open the timewindow and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
+You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval.
+To do this, open the [Time window](/docs/user-guide/dashboards/#time-window){:target="_blank"} and make the necessary adjustments. Update the time window settings by clicking the "Update" button.
 
 {% include images-gallery.html imageCollection="step33_2" %}
 
@@ -392,19 +408,19 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Now it's time to configure alarm rules and raise some alarms.
+Now it&#39;s time to configure alarm rules and raise some alarms.
 
-**Note:** in this documentation, we are using a single device as a data source for the widgets. 
+> **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
-You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
+You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise the alarm when the temperature reading is greater than 25 degrees.
-For this purpose, we should edit the device profile and add a new alarm rule. 
+We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
+To do this, we should edit the device profile and add a new alarm rule. 
 The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/) for each corresponding device type but will skip this step for simplicity.
+We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
@@ -416,16 +432,20 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
-and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
+We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms){:target="_blank"}.
 
 ## Step 6. Alarm notifications
 
-The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/) allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} allows personalized notifications to end-users regarding device activities, environmental changes, or events in your IoT ecosystem, and more. 
+Notifications can be delivered via email, SMS, or integrated third-party systems.
 
-Additionally, the [ThingsBoard Mobile Application](/docs/mobile/) allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
-Follow [this guide](/docs/mobile/getting-started/) to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
+{% include images-gallery.html imageCollection="notification-center" %}
+
+Additionally, [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} provides instant push notifications directly to your smartphone, ensuring you&#39;re always informed of critical events wherever you are.
+
+Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications. 
+
+Enjoy exploring ThingsBoard!
 
 ## Step 7. Assign device and dashboard to customer
 
@@ -434,17 +454,17 @@ You may assign different devices to different customers. Then, you may create a 
 Each customer user will see his own devices and will not be able to see devices or any other data that belongs to a different customer.
 
 We have already created a Device (see [Step 1](#step-1-provision-device)), and a Dashboard (see [Step 3](#step-3-create-dashboard)).
-Now it's time to create a Customer and a Customer User and make sure they will have access to the device's data and the dashboard.
+Now it&#39;s time to create a Customer and a Customer User and make sure they will have access to the device's data and the dashboard.
 
 ### Step 7.1 Create customer
 
-Let's create a customer with the title "My New Customer". Please see the instruction below:
+Let&#39;s create a customer with the title "My New Customer". Please see the instruction below:
 
 {% include images-gallery.html imageCollection="step71" showListImageTitles="true" %}
 
 ### Step 7.2 Assign the device to customer
 
-Let's assign device to the customer. The customer users will have ability to read and write telemetry and send commands to devices. 
+Let&#39;s assign device to the customer. The customer users will have ability to read and write telemetry and send commands to devices. 
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
@@ -452,24 +472,26 @@ Make sure that the device is assigned to your customer.
 
 {% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
 
-You can make the customer the owner of the device during its creation stage.
+You can make the customer the owner of the device during its creation stage. To do this, follow this steps:
 
 {% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
 
 ### Step 7.3 Assign the dashboard to customer
 
-Let's share our dashboard with the customer. The customer users will have read-only access to the dashboard. 
+Let&#39;s share our dashboard with the customer. The customer users will have read-only access to the dashboard. 
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
 ### Step 7.4 Create customer user
 
-Finally, let's create a user that will belong to the customer and will have `read-only` access to the dashboard and the device.
-You may optionally configure the dashboard to appear just after user login to the platform web UI.
+Now, let&#39;s create a user that will belong to the customer and will have `read-only` access both to the dashboard and the device.
+You may optionally configure the dashboard to appear just after user logs in to the platform&#39;s web UI.
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
 
 ### Step 7.5 Activate customer user
+
+Finally, log in to ThingsBoard as a customer user.
 
 {% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
@@ -479,5 +501,5 @@ You may optionally configure the dashboard to appear just after user login to th
 
 ## Your feedback
 
-Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word. 
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

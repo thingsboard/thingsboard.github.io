@@ -39,4 +39,4 @@ The developer also provides the possibility of connecting through a computer if 
 
 ![Device connect](/images/devices-library/ready-to-go-devices/am308/am308-connect-to-pc.png)
 
-See the [manual](https://resource.milesight-iot.com/milesight/document/am300-series-user-guide-en.pdf){: target="_blank"} for details.
+See the [manual](https://resource.milesight.com/milesight/iot/document/am300-series-user-guide-en.pdf){: target="_blank"} for details.

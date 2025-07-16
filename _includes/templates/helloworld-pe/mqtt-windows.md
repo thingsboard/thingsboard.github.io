@@ -8,19 +8,19 @@ To add the Mosquitto directory to the "Path" variable, follow these steps:
 
 {% include images-gallery.html imageCollection="mosquitto-windows" showListImageTitles="true" %}
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 
 Open the Terminal and replace $ACCESS_TOKEN with corresponding value.
 
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m {"temperature":25}
 ```
 {: .copy-code}
 
 For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-mosquitto_pub -d -q 1 -h "mqtt.thingsboard.cloud" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
+mosquitto_pub -d -q 1 -h "{{mqttHostName}}" -p "1883" -t "v1/devices/me/telemetry" -u "ABC123" -m {"temperature":25}
 ```
 {: .copy-code}
 

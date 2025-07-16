@@ -1,5 +1,5 @@
 {% assign peDocsPrefix = '' %}
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
@@ -17,7 +17,7 @@ Please make sure that you know [AWS Kinesis basics](https://docs.aws.amazon.com/
 
 ## AWS Kinesis setup
 
-##### Install and configure AWS CLI
+### Install and configure AWS CLI
 The first step is to obtain [AWS Access Keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){:target="_blank"} for your AWS account. Access key to your AWS account must be able to create **AWS Kinesis** stream, put data to the stream and get data from the stream. Please go to [Managing Access Keys for Your AWS Account Root User](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html){:target="_blank"} to create your AWS access key.
 
 Additionally, please make sure that access key for your account has access to **AWS Kinesis**, **AWS DynamoDB** and **AWS CloudWatch** services.
@@ -66,7 +66,7 @@ AVAILABLE COMMANDS
 
 Please click **q** to close help.
 
-##### Kinesis stream data format
+### Kinesis stream data format
 Kinesis uses **Base64** format for data inside streams. In mean time **Thingsboard AWS Kinesis** integration will automatically convert **Base64** encoding into character payload. 
 
 If your application sends data as **CSV**, you will receive the same **CSV** payload on the Thingsboard converter. If your application sends data as **JSON** string, Thingsboard converter will receive **JSON** string in the text payload.
@@ -74,7 +74,7 @@ If your application sends data as **CSV**, you will receive the same **CSV** pay
 In this tutorial, we will use JSON string to put records into Kinesis data stream. As well we will send data back to Kinesis streams from the Thingsboard in the JSON string.
 In real life scenario, it is up to you what data format to use to decode/encode data.
 
-##### AWS Kinesis demo streams
+### AWS Kinesis demo streams
 
 In this demo we will use two AWS Kinesis streams:
  - **uplink** stream - for the incoming data into the Thingsboard. 
@@ -167,7 +167,7 @@ The output should be similar to this:
 ## Integration with the Thingsboard
 We have done all necessary steps on the AWS Kinesis side. Now we can start configuring the Thingsboard.
 
-##### Thingsboard Uplink Data Converter
+### Thingsboard Uplink Data Converter
 
 First, we need to create Uplink Data converter that will be used for converting messages received from the AWS Kinesis. The converter should transform incoming payload into the required message format.
 Message must contains **deviceName** and **deviceType**. Those fields are used for submitting data to the correct device. If a device was not found then new device will be created.
@@ -213,7 +213,7 @@ return result;
 ![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-uplink-converter.png)
 
 
-##### Thingsboard Downlink Data Converter
+### Thingsboard Downlink Data Converter
 For sending Downlink messages from the Thingsboard to the Kinesis stream, we need to define downlink Converter.
 In general, output from Downlink converter should have the following structure:
 {% highlight json %}
@@ -255,7 +255,7 @@ This converter will take **version** field from the incoming message and add it 
 
 ![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-downlink-converter.png)
 
-##### AWS Kinesis Integration
+### AWS Kinesis Integration
 
 Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **Integrations** section and add new Integration with type
 **AWS Kinesis**
@@ -277,7 +277,7 @@ Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **
 
 ## Validation
 
-##### Validate Uplink Messages
+### Validate Uplink Messages
 Lets verify our integration. First, lets put message into uplink stream, so Thingsboard will fetch this message. 
 Type in the console:
 ```bash
@@ -291,7 +291,7 @@ Go to **Device Group** -> **All** -> **kitchen_thermostat** - you can see that
 
 ![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-validate-telemetry.png)
 
-##### Validate Downlink Messages
+### Validate Downlink Messages
 For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when device attribute is changed.
 Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using relation 
 **Attributes Updated**

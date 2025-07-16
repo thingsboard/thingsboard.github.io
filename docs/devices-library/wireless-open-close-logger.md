@@ -11,4 +11,5 @@ deviceImageFileName: wireless-open-close-logger.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/wireless-open-close-logger.md %}

@@ -189,9 +189,22 @@ time-window:
         image: /images/user-guide/dashboards/overview/timewindow-history-mode-1-ce.png
         title: 'In the history mode, widgets receive data only during the initial load and no updates are issued over WebSockets.'
 
+time-window-key-parameters:
+    0:
+        image: /images/user-guide/dashboards/overview/time-window-key-parameters-1-ce.png
+        title: ''
+
+displaying-data-for-desired-time-period:
+    0:
+        image: /images/user-guide/dashboards/overview/displaying-data-for-desired-time-period-1-ce.png
+        title: 'To display data for your desired time period, set the time range in the time window and click "Update";'
+    1:
+        image: /images/user-guide/dashboards/overview/displaying-data-for-desired-time-period-2-ce.png
+        title: 'The widget displays data for the specified time period.'
+
 time-window-aggregation:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-aggregation-ce.png
+        image: /images/user-guide/dashboards/overview/timewindow-aggregation-1-ce.png
 
 time-window-interval:
     0:
@@ -204,17 +217,104 @@ time-window-interval:
         image: /images/user-guide/dashboards/overview/timewindow-interval-2-ce.png
         title: 'The chart shows from the begging of the day (12 am at night) until the time when the time window was updated.'
 
+time-window-grouping-interval:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-grouping-interval-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-grouping-interval-2-ce.png
+        title: ''
+    
+time-window-settings:
+    0:
+        image: /images/user-guide/dashboards/overview/time-window-settings-1-ce.png
+        title: 'Enter the editing mode of the dashboard, click the "edit time window" icon on the dashboard toolbar. In the popup window, click the "gear" icon;'
+    1:
+        image: /images/user-guide/dashboards/overview/time-window-settings-2-ce.png
+        title: 'The time window configuration window will open.'
+    
+hide-time-window-section:
+    0:
+        image: /images/user-guide/dashboards/overview/hide-time-window-section-from-end-users-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/hide-time-window-section-from-end-users-2-ce.png
+        title: ''
+    
+hide-only-last-or-relative-interval:
+    0:
+        image: /images/user-guide/dashboards/overview/hide-only-last-or-relative-interval-from-end-users-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/hide-only-last-or-relative-interval-from-end-users-2-ce.png
+        title: ''
+    
+edit-list-of-intervals:
+    0:
+        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-2-ce.png
+        title: ''
+    2:
+        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-3-ce.png
+        title: ''
+    3:
+        image: /images/user-guide/dashboards/overview/edit-list-of-intervals-4-ce.png
+        title: ''
+    
+hide-aggregation:
+    0:
+        image: /images/user-guide/dashboards/overview/hide-aggregation-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/hide-aggregation-2-ce.png
+        title: ''
+    2:
+        image: /images/user-guide/dashboards/overview/hide-aggregation-3-ce.png
+        title: ''
+    
+edit-aggregation-list:
+    0:
+        image: /images/user-guide/dashboards/overview/edit-aggregation-list-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/edit-aggregation-list-2-ce.png
+        title: ''
+
+hide-grouping-interval:
+    0:
+        image: /images/user-guide/dashboards/overview/hide-grouping-interval-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/hide-grouping-interval-2-ce.png
+        title: ''
+    2:
+        image: /images/user-guide/dashboards/overview/hide-grouping-interval-3-ce.png
+        title: ''
+
+hide-time-zone:
+    0:
+        image: /images/user-guide/dashboards/overview/hide-time-zone-1-ce.png
+        title: ''
+    1:
+        image: /images/user-guide/dashboards/overview/hide-time-zone-2-ce.png
+        title: ''
+
 time-window-time-zone:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-timezone-ce.png
+        image: /images/user-guide/dashboards/overview/timewindow-timezone-1-ce.png
 
 time-window-zoom-in:
     0:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-1-ce.png
-        title: 'Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look.'
+        title: 'Move the two sliders towards each other to specify the time period for displaying the data.'
     1:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-2-ce.png
-        title: 'To zoom out to the original size of the chart, double-click on the widget.'
+        title: 'The data for the selected period is displayed on the chart.'
+    2:
+        image: /images/user-guide/dashboards/overview/timewindow-zoom-3-ce.png
+        title: 'To zoom out to the original size of the chart, move the sliders back to their default position.'
 
 filters:
     0:
@@ -283,7 +383,7 @@ dashboard-logo-settings:
 toolbar-dashboard-1:
     0:
         image: /images/user-guide/dashboards/overview/toolbar-settings-1-ce.png
-        title: 'Hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page;'
+        title: 'Hide "Display dashboards selection", "Display time window" and "Display export" icons on the dashboard page;'
     1:
         image: /images/user-guide/dashboards/overview/toolbar-settings-2-ce.png
         title: 'The specified icons are hidden on the dashboard page.'
@@ -303,82 +403,6 @@ toolbar-dashboard-3:
     1:
         image: /images/user-guide/dashboards/overview/toolbar-settings-6-ce.png
         title: 'Instead of the toolbar, on the upper right of the screen you find the three-dots icon. By clicking on it, the hidden toolbar will be opened.'
-
-layout-1:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-1-ce.png
-        title: 'Enter edit mode and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window. It opens the small window for layouts’ control;'
-
-layout-2:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-2-ce.png
-        title: 'Click the "gear" icon named "Layout setting" to open layout settings window.'
-    1:    
-        image: /images/user-guide/dashboards/overview/manage-layouts-3-ce.png
-        title: 'The layouts’ settings are identical to the layout settings and the background settings of the dashboard settings.'
-
-layout-3:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-4-ce.png
-        title: 'Toggle the "Divider" to divide the dashboard into two separate parts.'
-
-layout-4:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-5-ce.png
-        title: 'Set up both layouts in completely different ways. Set a different background for each window. And resize the window sizes in a certain percentage ratio to each other. Then save changes;'
-    1:
-        image: /images/user-guide/dashboards/overview/manage-layouts-6-ce.png
-
-columns:
-    0:
-        image: /images/user-guide/dashboards/overview/layout-settings-columns-count-1-ce.png
-        title: 'Specify the number of columns;'
-    1:
-        image: /images/user-guide/dashboards/overview/layout-settings-columns-count-2-ce.png
-
-margin:
-    0:
-        image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-1-ce.png
-        title: 'Specify the margin between widgets;'
-    1:
-        image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-2-ce.png
-        title: 'By default, the margin is set to 10;'
-    2:
-        image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-3-ce.png
-        title: 'The maximum margin is 50.'
-
-autofill:
-    0:
-        image: /images/user-guide/dashboards/overview/layout-settings-auto-fill-layout-height-1-ce.png
-        title: 'When the checkbox is ticked, all the widgets fit vertically in the space of a screen;'
-    1:
-        image: /images/user-guide/dashboards/overview/layout-settings-auto-fill-layout-height-2-ce.png
-        title: 'Auto fill layout height disabled, so we have to scroll down the widgets;'
-    2:
-        image: /images/user-guide/dashboards/overview/layout-settings-auto-fill-layout-height-3-ce.png
-        title: 'When auto fill layout height is enabled, the widgets fit on the screen.'
-
-background-settings:
-    0:
-        image: /images/user-guide/dashboards/overview/layout-settings-background-color-1-ce.png
-        title: 'Click on the "Background color" row;'
-    1:
-        image: /images/user-guide/dashboards/overview/layout-settings-background-color-2-ce.png
-        title: 'In the pop-up window with sliders choose the needed color and wished transparency. Then, press “Save” to apply changes;'
-    2:
-        image: /images/user-guide/dashboards/overview/layout-settings-background-color-3-ce.png
-        title: 'After saving, you can see the customized background.'
-
-background-image:
-    0:
-        image: /images/user-guide/dashboards/overview/layout-settings-background-image-1-ce.png
-        title: 'Drop an image in the appropriate field, or upload it from a folder on your computer;'
-    1:
-        image: /images/user-guide/dashboards/overview/layout-settings-background-image-2-ce.png
-        title: 'To adjust the position of the image more precisely, click the "Background size mode" drop-down menu and choose how exactly the picture will fill the background space. And apply changes;'
-    2:
-        image: /images/user-guide/dashboards/overview/layout-settings-background-image-3-ce.png
-        title: 'After saving changes, you can see the customized background.'
 
 states-1:
     0:
@@ -449,7 +473,7 @@ states-entity-name:
         image: /images/user-guide/dashboards/overview/dashboard-states-18-ce.png
         title: 'After clicking, you will be transitioned to a state that is called the same as the entity that took part in the action.'
 
---- 
+---
 
-
+{% include get-hosts-name.html %}
 {% include docs/user-guide/dashboards.md %}

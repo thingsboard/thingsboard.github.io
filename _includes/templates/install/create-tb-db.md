@@ -1,7 +1,14 @@
-Then, press "Ctrl+D" to return to main user console and connect to the database to create thingsboard DB:
+Then, connect to the "postgres" database as the "postgres" user:
 
-```text
+```bash
 psql -U postgres -d postgres -h 127.0.0.1 -W
-CREATE DATABASE thingsboard;
-\q
 ```
+{: .copy-code}
+
+Create the ThingsBoard database named "thingsboard" :
+```bash
+CREATE DATABASE thingsboard;
+```
+{: .copy-code}
+
+Press "Ctrl+D" twice to exit PostgreSQL.

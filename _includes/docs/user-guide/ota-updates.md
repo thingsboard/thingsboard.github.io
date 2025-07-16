@@ -175,11 +175,11 @@ There you can see a list of all devices with full information about their softwa
 
 {% include images-gallery.html imageCollection="sw-dashboard" %}
 
-{% if docsPrefix != 'paas/' %}
+{% unless docsPrefix contains "paas/" %}
 
 ### Configuration
 
-##### Queue processing pace
+#### Queue processing pace
 
 To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/user-guide/install/{{docsPrefix}}config/) properties:
 
@@ -189,8 +189,8 @@ export TB_QUEUE_CORE_FW_PACK_SIZE=100
 ```
 {: .copy-code}
 
-##### Max size setting
+#### Max size setting
 
 By default, the maximum size of firmware that we can save in database is 2 gb. It can not be configured.
 
-{% endif %}
+{% endunless %}

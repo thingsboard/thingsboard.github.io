@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-### Overview
+## Overview
 
 ThingsBoard allows you to schedule various types of events with flexible schedule configuration.
 ThingsBoard Scheduler fires configured scheduler events according to their schedule.
@@ -14,7 +14,7 @@ the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#r
 
 ![image](/images/user-guide/scheduler.svg)
 
-### Video tutorial
+## Video tutorial
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
@@ -25,7 +25,7 @@ See video tutorial below for step-by-step instruction how to use this feature.
     </div>
 </div>
 
-### Scheduler Administration
+## Scheduler Administration
 
 Tenant administrator and customer users are able to configure **Scheduler events** in ThingsBoard.
 
@@ -48,7 +48,7 @@ By default calendar view is presented as **Month** view type.
 
 New scheduler event can be created by clicking on `+` button in top right corner or by clicking on any cell of Calendar view.
 
-#### Scheduler Event Dialog
+### Scheduler Event Dialog
 
 Scheduler event edit dialog consist of two forms **Configuration** and **Schedule**.
 
@@ -71,11 +71,11 @@ Schedule form has the following parameters:
 - **Ends on** - date until which this scheduler event should be repeated.
  
 
-### Scheduler Event Types
+## Scheduler Event Types
 
 In Configuration **Event type** field can be selected existing event type or specified custom one.
 
-#### Custom Type
+### Custom Type
 
 Custom type uses default scheduler event configuration form according to message structure.
 
@@ -86,7 +86,7 @@ Custom type uses default scheduler event configuration form according to message
 - **Message body** - message body in JSON representation.
 - **Metadata** - key/value table representing message metadata fields.
 
-#### Generate Report
+### Generate Report
 
 Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefix}}user-guide/reporting/#generate-report-rule-chain) feature.
 
@@ -99,8 +99,8 @@ Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefi
     - **Dashboard** - dashboard that will be used for report generation.
     - **Dashboard state parameter value** - used to specify target dashboard state for report generation. Can be set automatically by clicking on right most button of the field and invoking **Select dashboard state** dialog.
     - **Timezone** - timezone in which target dashboard will be presented in report.
-    - **Use dashboard timewindow** - if set, timewindow configured in the target dashboard will be used during report generation.
-    - **Timewindow** - specific dashboard timewindow that will be used during report generation.
+    - **Use dashboard time window** - if set, time window configured in the target dashboard will be used during report generation.
+    - **Time window** - specific dashboard time window that will be used during report generation.
     - **Report name pattern** - file name pattern of generated report, can contain date-time pattern in form of `%d{date-time pattern}`. See [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) documentation for date-time pattern details.
     - **Report type** - report file type, can be *PDF \| PNG \| JPEG*.
     - **Use current user credentials** - if set, credentials of user created this report configuration will be used to open dashboard UI during report generation.
@@ -117,7 +117,7 @@ Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefi
     - **Subject** - mail subject, can contain date-time pattern in form of `%d{date-time pattern}` according to [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html).
     - **Body** - mail body, can contain date-time pattern in form of `%d{date-time pattern}` according to [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html).
 
-#### Update Attributes
+### Update Attributes
 
 Allows to schedule update of attributes for entity or group of entities.
 
@@ -127,7 +127,7 @@ Allows to schedule update of attributes for entity or group of entities.
 - **Entity attributes scope** - [scope](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) of updated attributes. Can be selected if Device entity type is specified in **Target**. Can be either **Server attributes** or **Shared attributes**. For all other entity types **Server attributes** scope is used. 
 - **Server / Shared attributes** - key/value table representing attributes with values to update.
 
-#### Send RPC Request to Device
+### Send RPC Request to Device
 
 Allows to schedule command ([RPC call](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc-api)) to device or group of devices.
 
@@ -137,7 +137,7 @@ Allows to schedule command ([RPC call](/docs/{{docsPrefix}}user-guide/rpc/#serve
 - **Method** - RPC call method.
 - **Params** - RPC call params in JSON representation.
 
-### Scheduler Widget
+## Scheduler Widget
 
 ThingsBoard provides ability to manage scheduler events via **Scheduler events** or **Reports schedule** Widgets which is part of **Scheduling** Widgets Bundle.
 

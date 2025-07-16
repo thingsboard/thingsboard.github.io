@@ -11,7 +11,7 @@ description: Learn how to get data from Tektelic LoRaWAN sensors at ThingsBoard
 [Tektelic](https://tektelic.com) is a premier supplier of LoRaWAN® IoT Gateways, Sensors and custom applications.
 This guide describes how to stream data from TEKTELIC KONA Core Network Server to ThingsBoard.
 
-### Prerequisites
+## Prerequisites
  A gateway and a sensor that is designed to work in EU868 frequency band will be used.
 
  To start it necessary to have:
@@ -24,8 +24,8 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
 
  <img src="/images/samples/tektelic/setup_scheme.png" width="800" alt="setup scheme">
 
-### Step 1. Register hardware in Network Server
-##### Step 1.1 Add a gateway
+## Step 1. Register hardware in Network Server
+### Step 1.1 Add a gateway
  - Create a new gateway group.
  - Create a new gateway in the group. The GW-ID could be found at a sticker at the gateway body.
  - Change the gateway credentials, below is the format of default username and password:
@@ -43,7 +43,7 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
 
  <img src="/images/samples/tektelic/gateway_statistics.png" width="800" alt="gateway statistics">
 
-##### Step 1.2 Add a sensor
+### Step 1.2 Add a sensor
  - Create a new application, for example, *Local sensors*.
  - Create a new device in the application.
 Smart Room Sensor has a sticker with QR code with data required by Network Server.
@@ -68,18 +68,18 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
 
  Smart Room Sensor sends the uplinks periodically, but you can trigger an uplink with a magnet.
  It is enough to bring closer a magnet to the sensor body.
- Network Server shows packets in encoded Base64 form. To decode a packet and see the whole LoRa packet payload, including LoRa related data and the sensor data itself, you could use a free [LoRaWAN 1.0.x packet decoder](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/).
+ Network Server shows packets in encoded Base64 form. To decode a packet and see the whole LoRa packet payload, including LoRa related data and the sensor data itself, you could use a free LoRaWAN 1.0.x packet decoder.
  The decoder requires *Application* and *Network* session keys could be found in the *ACTIVATION* tab.
 
  <img src="/images/samples/tektelic/sensor_activation_tab.png" width="800" alt="sensor activation tab">
 
  Be aware, *Application* and *Network* session keys are changing whenever a sensor has been rejoined.
  Smart Room Sensor is rejoining every time after the battery has been disconnected.
-### Step 2. Configure integration with ThingsBoard
+## Step 2. Configure integration with ThingsBoard
  ThingsBoard provides [MQTT Gateway API](/docs/reference/gateway-mqtt-api/).
  Network Server integration, in turn, uses this MQTT Gateway API.
  So sensors and gateways will be created automatically at ThingsBoard side.
-##### Step 2.1 Add a gateway device in ThingsBoard
+### Step 2.1 Add a gateway device in ThingsBoard
  - Create a new device in ThingsBoard. Just for convenience, let’s set its type as *ns_integration*, the type name doesn't affect the functionality.
  *Is gateway* checkbox has to be set to make a device using [MQTT Gateway API](/docs/reference/gateway-mqtt-api/).
  Please don’t confuse gateway-device in ThingsBoard with a LoRa gateway, it’s just name matching.
@@ -87,7 +87,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
 
  <img src="/images/samples/tektelic/tb_gateway.png" width="800" alt="gateway">
 
-##### Step 2.2 Add an integration in Network Server
+### Step 2.2 Add an integration in Network Server
  Open *Local sensors* application in Network Server and click *MANAGE INTEGRATIONS* button.
  Now it's necessary to create a new integration with a ThingsBoard.
  Click the *Add integration* icon in the right top corner and set the next fields:
@@ -101,7 +101,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
 
  Leave the rest of the fields with default values.
 
-### Step 3. Integration verification
+## Step 3. Integration verification
  After the integration has been created, wait for a new uplink (or trigger it) from the sensor.
  **Only after a new uplink** Network Server, through [MQTT Gateway API](/docs/reference/gateway-mqtt-api/), will create new devices in ThingsBoard.
  In ThingsBoard open device-gateway from step 2.1, go to the *RELATIONS* tab, and select outbound relations with a direction *From*.

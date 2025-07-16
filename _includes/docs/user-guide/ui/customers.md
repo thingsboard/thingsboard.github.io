@@ -14,7 +14,7 @@ In Thingsboard Community Edition a customer user cannot create their own custome
 **Important:**
 <br>
 In **Thingsboard Professional Edition** customer user can create other customers, users and subcustomers.
-To try this functionality, use the [ThingsBoard Cloud](https://thingsboard.cloud/signup) server.
+To try this functionality, use the [ThingsBoard Cloud](https://{{hostName}}/signup) server.
 The alternative option is to install ThingsBoard locally using this [installation guide](/docs/user-guide/install/pe/installation-options/)
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

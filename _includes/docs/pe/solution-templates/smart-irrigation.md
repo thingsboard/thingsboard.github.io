@@ -8,7 +8,7 @@ The Smart Irrigation template represents a generic field irrigation solution, to
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
-### Dashboard
+## Dashboard
 
 As part of this solution, we have created the Smart Irrigation dashboard that displays data from multiple soil moisture sensors. This dashboard contains 2 states - **Main state** and  **Field state**.
 
@@ -33,11 +33,11 @@ You may use the **Field state** to:
 
 You may always customize the "Smart Irrigation" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
 
-### Devices
+## Devices
 
-We have already created multiple devices and loaded some demo data for them. See solution <a href="https://thingsboard.io/docs/paas/solution-templates/overview/#install-solution-template">instructions</a> for the list of created devices and their credentials.
+We have already created multiple devices and loaded some demo data for them. See solution <a href="https://thingsboard.io/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template">instructions</a> for the list of created devices and their credentials.
 
-#### SI Water Meter
+### SI Water Meter
 The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30.
 The device also uploads the "pulseCounter" which is used to calculate water consumption. Sample device payload:
 
@@ -46,7 +46,7 @@ The device also uploads the "pulseCounter" which is used to calculate water cons
 ```
 {: .copy-code}
 
-#### SI Soil Moisture Sensor
+### SI Soil Moisture Sensor
 The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30.
 The device also uploads the "moisture" level. Sample device payload:
 ```json
@@ -54,7 +54,7 @@ The device also uploads the "moisture" level. Sample device payload:
 ```
 {: .copy-code}
 
-#### SI Smart Valve
+### SI Smart Valve
 The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30. Sample device payload:
 ```json
 {"battery": 99}
@@ -70,7 +70,7 @@ The device also accepts the RPC command to enable or disable the water flow. Sam
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
-### Alarms
+## Alarms
 User may turn alarms on and off as well as configure the alarm thresholds via the "Smart Irrigation" dashboard.
 
 

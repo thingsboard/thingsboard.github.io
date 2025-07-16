@@ -10,11 +10,11 @@
 {% if currentGuide != "States" %}
 - [**States**](/docs/trendz/states) - Learn how to define and analyse states for assets based on raw telemetry.
 {% endif %}
-{% if currentGuide != "GroupAndAggregateData" %}
-- [**Group and Aggregate data**](/docs/trendz/data-grouping-aggregation) - Learn how to group and aggregate data in Trendz.
-{% endif %}
 {% if currentGuide != "Prediction" %}
 - [**Prediction**](/docs/trendz/prediction) - Learn how to make forecasts and predict telemetry behavior.
+{% endif %}
+{% if currentGuide != "AnomalyDetection" %}
+- [**Anomaly Detection**](/docs/trendz/anomaly/overview.md) - Learn how to identify anomalies in the data.
 {% endif %}
 {% if currentGuide != "Filtering" %}
 - [**Filters**](/docs/trendz/data-filtering) - Learn how filter dataset during analysis.
@@ -25,4 +25,7 @@
 {% if currentGuide != "EmbedVisualizations" %}
 - [**Share and embed Visualizations**](/docs/trendz/embed-visuals) - Learn how to add Trendz visualizations on ThingsBoard dashboard or 3rd party web pages.
 {% endif %}  
+{% if currentGuide != "AiAssistant" %}
+- [**AI Assistant**](/docs/trendz/ai-assistance-overview) - Learn how to utilize Trendz AI capabilities.
+{% endif %}
 <br>

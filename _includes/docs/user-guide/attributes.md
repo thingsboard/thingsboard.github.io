@@ -74,7 +74,7 @@ https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SER
 
 The example below creates attribute with the name "newAttributeName" and value "newAttributeValue" for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
 ```shell
-curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SERVER_SCOPE' \
+curl -v '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SERVER_SCOPE' \
 -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
 -H 'content-type: application/json' \
 --data-raw '{"newAttributeName":"newAttributeValue"}'
@@ -84,7 +84,7 @@ curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11
 Similar, you can fetch all server-side attributes using the following command:
 
 ```shell
-curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SERVER_SCOPE' \
+curl -v -X GET '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SERVER_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' 
 ```
@@ -143,7 +143,7 @@ https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/SHA
 
 The example below creates attribute with the name "newAttributeName" and value "newAttributeValue" for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
 ```shell
-curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SHARED_SCOPE' \
+curl -v '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/SHARED_SCOPE' \
 -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
 -H 'content-type: application/json' \
 --data-raw '{"newAttributeName":"newAttributeValue"}'
@@ -153,7 +153,7 @@ curl -v 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11
 Similar, you can fetch all shared attributes using the following command:
 
 ```shell
-curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SHARED_SCOPE' \
+curl -v -X GET '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/SHARED_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```
@@ -219,7 +219,7 @@ https://$YOUR_THINGSBOARD_HOST/api/plugins/telemetry/$ENTITY_TYPE/$ENTITY_ID/CLI
 The example below gets all attributes for device with ID 'ad17c410-914c-11eb-af0c-d5862211a5f6' and ThingsBoard Cloud server:
 
 ```shell
-curl -v -X GET 'https://thingsboard.cloud/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/CLIENT_SCOPE' \
+curl -v -X GET '{{httpsUrl}}/api/plugins/telemetry/DEVICE/ad17c410-914c-11eb-af0c-d5862211a5f6/values/attributes/CLIENT_SCOPE' \
   -H 'x-authorization: Bearer $YOUR_JWT_TOKEN_HERE' \
   -H 'content-type: application/json' \
 ```
@@ -296,7 +296,7 @@ Then, use [action](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/)
 Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
 This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes. 
 
-{% unless docsPrefix == "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 
 ## Performance enhancement
 
@@ -304,7 +304,7 @@ You can achieve higher performance with Attributes Cache enabled (see <b>cache.a
 
 Having attributes cache enabled ThingsBoard will load the specific attribute from the database only once, all subsequent requests to the attribute will be loaded from the faster cache connection.
 
-**NOTE:** If you are using Redis cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent Redis from filling up all available memory.
+**NOTE:** If you are using Redis or Valkey cache, make sure that you change <b>maxmemory-policy</b> to <b>allkeys-random</b> to prevent the service from filling up all available memory.
 
 {% endunless %}
 

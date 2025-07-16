@@ -92,4 +92,5 @@ user-details-ce:
         image: /images/user-guide/tenant-profile/CE/user-details-ce.png
 ---
 
+{% include get-hosts-name.html %}
 {% include docs/user-guide/ui/tenants.md %}

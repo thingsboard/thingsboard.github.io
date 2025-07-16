@@ -57,7 +57,7 @@ Specific domain name: srd.thingsboard.io (srd stands for “self registration de
 
 Login to your instance as a tenant administrator and navigate to Whitelabeling —> Mail server.
 Configure ThingsBoard using your SMTP server settings. If you don't have one, the easiest way is to use [SendGrid](https://sendgrid.com/).
-See more info in mail settings [guide](/docs/pe/user-guide/ui/mail-settings/).
+See more info in mail settings [guide](/docs/{{docsPrefix}}user-guide/ui/mail-settings/).
 
 Don't forget to validate the mail server settings using "Send Test Mail" button.
 

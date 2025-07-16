@@ -11,5 +11,5 @@ docsPrefix: paas/
 
 * TOC
 {:toc}
-
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/am308-sensor.md %}

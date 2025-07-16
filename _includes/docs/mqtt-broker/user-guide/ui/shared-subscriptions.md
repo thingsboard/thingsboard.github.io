@@ -5,7 +5,7 @@
 The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
 feature for **APPLICATION** clients. This feature enables multiple clients to subscribe and receive messages from a shared subscription.
 
-### Usage Notes
+## Usage Notes
 
 In TBMQ Application shared subscriptions are entities that used for management of shared subscriptions.
 
@@ -15,7 +15,7 @@ In TBMQ Application shared subscriptions are entities that used for management o
 
 Broker administrators are able to manage shared subscriptions via Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
 
-### Adding Shared Subscription
+## Adding Shared Subscription
 
 In order to add new shared subscriptions please follow next steps:
 1. Open _Shared Subscriptions_ page and click on the plus icon button Add Application Shared Subscription.
@@ -33,7 +33,7 @@ In order to add new shared subscriptions please follow next steps:
 Upon executing the aforementioned actions, a Kafka topic named `tbmq.msg.app.shared.city.slw.home.mlw` will be added.
 {% include templates/mqtt-broker/application-shared-subscriptions.md %}
 
-### Editing Shared Subscriptions
+## Editing Shared Subscriptions
 
 In the current version of TBMQ only field Name of shared subscription can be edited after creation.
 
@@ -43,7 +43,7 @@ To edit entity please do the following steps:
 3. Modify name.
 4. Click _Apply changes_ button to save changes.
 
-### Deleting Shared Subscriptions
+## Deleting Shared Subscriptions
 
 Shared Subscriptions entities can be removed from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
 

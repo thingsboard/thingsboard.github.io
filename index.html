@@ -34,17 +34,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 	</section>
 
 	<section id="overflow">
-		<section id="tb-customers">
-			<div class="main-div">
-				<a href="/industries/telecom/#tmobile"><object data="https://img.thingsboard.io/customers/clear/t-mobile.svg" aria-label="T-mobile logo"></object></a>
-				<a href="https://www.bosch.com/"><object data="https://img.thingsboard.io/customers/clear/bosch.svg" aria-label="Bosch logo"></object></a>
-				<a href="https://www.prosegur.com/"><object data="https://img.thingsboard.io/customers/clear/prosegur.svg" aria-label="Prosegur logo"></object></a>
-				<a href="http://www.engie.sk/en/kontakt"><object data="https://img.thingsboard.io/customers/clear/engie.svg" aria-label="Engie logo"></object></a>
-				<a href="/industries/smart-energy/#circutor"><object data="https://img.thingsboard.io/customers/clear/circutor.svg" aria-label="Circutor logo"></object></a>
-				<a href="/industries/telecom/#tektelic"><object data="https://img.thingsboard.io/customers/clear/tektelic.svg" aria-label="Tektelic logo"></object></a>
-			</div>
-		</section>
-
+		{% include customers-logo-section.liquid collectionMap = 'customers-logo' productTag="ce" %}
 		<section id="intro">
 			<div class="main-div">
 				<h1><a href="docs/getting-started-guides/what-is-thingsboard/">ThingsBoard</a> is an open-source IoT platform for data collection, processing, visualization, and device management</h1>
@@ -61,22 +51,65 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 					<div class="block">
 						<div class="feature-des"><span class="phrase-heading">Provision and manage devices and assets</span>
 							<p>Provision, monitor and control your IoT entities in secure way using rich server-side APIs. Define relations between your devices, assets, customers or any other entities.</p>
-							<a class="read-more-button" href="/docs/user-guide/entities-and-relations/">Read more about entities and relations<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="Read more about entities and relations arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third mobile-arrow" src="/images/pe/read-more-arrow.svg" alt=""></a>
+							<a class="read-more-button" href="/docs/user-guide/entities-and-relations/">Read more about entities and relations
+								<i class="fas fa-chevron-right arrow first"></i>
+								<i class="fas fa-chevron-right arrow second"></i>
+								<i class="fas fa-chevron-right arrow third"></i>
+							</a>
 						</div>
 						<div class="manage">
-						<img class="device-list" src="/images/device-list.svg" alt="Device list with checkboxes" width="626" height="335" loading="lazy">
-						<img class="device-manage" src="/images/device-manage.svg" alt="Device managing panel" width="543" height="509" loading="lazy">
+							<img class="device-list" src="/images/device-list.svg" alt="Device list with checkboxes" width="626" height="335" loading="lazy">
+							<img class="device-manage" src="/images/device-manage.svg" alt="Device managing panel" width="543" height="509" loading="lazy">
 						</div>
 					</div>
 					<div class="block vis">
 						<div class="visualize">
-							<img class="vis1" src="/images/visualize1.svg" alt="Linear chart" width="626" height="209" loading="lazy">
-							<img class="vis2" src="/images/visualize2.svg" alt="Common chart with points" width="449" height="311" loading="lazy">
-							<img class="vis3" src="/images/visualize3.svg" alt="Digital level chart" width="161" height="311" loading="lazy">
+							<img class="vis1" src="/images/visualize1.svg" alt="Linear chart" width="668" height="263" loading="lazy">
+							<img class="vis2" src="/images/visualize2.svg" alt="Common chart with points" width="457" height="263" loading="lazy">
+							<img class="vis3" src="/images/visualize3.svg" alt="Digital level chart" width="197" height="263" loading="lazy">
 						</div>
 						<div class="feature-des"><span class="phrase-heading">Collect and visualize data</span>
 							<p>Collect and store telemetry data in scalable and fault-tolerant way. Visualize your data with built-in or custom widgets and flexible dashboards. Share dashboards with your customers.</p>
-							<a class="read-more-button" href="/docs/user-guide/visualization/">Read more about visualization<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="Read more about visualization arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+							<a class="read-more-button" href="/iot-data-visualization/">Read more about visualization
+								<i class="fas fa-chevron-right arrow first"></i>
+								<i class="fas fa-chevron-right arrow second"></i>
+								<i class="fas fa-chevron-right arrow third"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="scada">
+			<div class="main-div">
+				<div id="features-top-1">
+					<div class="background">
+						<div class="main2"></div>
+					</div>
+					<div class="block scada">
+						<div class="feature-des">
+							<div class="scada-mode-selector">
+								<div class="mode active gtm_button" onClick="activateScadaSection(this, 'performance')">
+									<h3>High-performance</h3>
+								</div>
+								<div class="mode gtm_button" onClick="activateScadaSection(this, 'traditional')">
+									<h3>Traditional</h3>
+								</div>
+							</div>
+							<span class="phrase-heading scada-title">SCADA High-performance</span>
+							<p>Monitor and control your industrial processes in real time with SCADA. Use SCADA symbols on dashboards to create and manage any workflow, offering full flexibility to design and oversee operations according to your requirements.</p>
+							<a class="read-more-button" href="/use-cases/scada/">Read more about SCADA
+								<i class="fas fa-chevron-right arrow first"></i>
+								<i class="fas fa-chevron-right arrow second"></i>
+								<i class="fas fa-chevron-right arrow third"></i>
+							</a>
+						</div>
+						<div class="scada-svg">
+							<img class="scada-scheme high-perf" src="/images/high-perf-scada-background.svg" alt="SCADA background block schema" width="1144" height="655" loading="lazy">
+							<img class="scada-scheme trad hidden" src="/images/scada-background.svg" alt="SCADA background block schema" width="1144" height="655" loading="lazy">
+							<div class="scada-fade"></div>
+							<div class="scada-background"></div>
 						</div>
 					</div>
 				</div>
@@ -87,25 +120,32 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 			<div class="main-div">
 				<div id="features-top-2">
 					<div class="background">
-						<div class="main2"></div><img src="/images/grid.svg" alt="Grid background" loading="lazy"><div class="small5"></div><div class="small6"></div>
+						<div class="main3"></div><img src="/images/grid.svg" alt="Grid background" loading="lazy"><div class="small5"></div><div class="small6"></div>
 					</div>
 					<div class="block dark">
-						<div class="feature-des"><span class="phrase-heading">Process and React</span>
-							<p>Define data processing rule chains. Transform and normalize your device data. Raise alarms on incoming telemetry events, attribute updates, device inactivity and user actions.</p>
-							<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more about rule engine<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="Read more about rule engine arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
 						<div class="process">
 							<img class="react" src="/images/react.svg" alt="Rule nodes chain" width="1031" height="230" loading="lazy">
-							<div></div>
 							<img class="add-rule" src="/images/add-rule.svg" alt="Add rule node example" width="626" height="482" loading="lazy">
+						</div>
+						<div class="feature-des"><span class="phrase-heading">Process and React</span>
+							<p>Define data processing rule chains. Transform and normalize your device data. Raise alarms on incoming telemetry events, attribute updates, device inactivity and user actions.</p>
+							<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more about rule engine
+								<i class="fas fa-chevron-right arrow first"></i>
+								<i class="fas fa-chevron-right arrow second"></i>
+								<i class="fas fa-chevron-right arrow third"></i>
+							</a>
 						</div>
 					</div>
 					<div class="block micro">
-						<img src="/images/microservices.svg" alt="Microservices block schema" width="569" height="327" loading="lazy">
 						<div class="feature-des microservices"><h2>Microservices</h2>
 							<p>Construct your ThingsBoard cluster and get maximum scalability and fault-tolerance with microservices architecture. ThingsBoard also supports both cloud and on-premises deployments.</p>
-							<a class="read-more-button" href="/docs/reference/msa/">Read more about microservices<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="Read more about microservices arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+							<a class="read-more-button" href="/docs/reference/msa/">Read more about microservices
+								<i class="fas fa-chevron-right arrow first"></i>
+								<i class="fas fa-chevron-right arrow second"></i>
+								<i class="fas fa-chevron-right arrow third"></i>
+							</a>
 						</div>
+						<img src="/images/microservices.svg" alt="Microservices block schema" width="569" height="327" loading="lazy">
 					</div>
 				</div>
 			</div>
@@ -140,8 +180,70 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 						<a href="/products/thingsboard-pe/">See Professional Edition documentation</a>
 					</div>
 				</div>
-				<div class="row justify-content-center">
-					<a href="products/">View all products</a>
+			</div>
+		</section>
+
+		<section id="product-ecosystem">
+			<div class="main-div">
+				<div class="background">
+					<div class="product-ecosystem"></div>
+				</div>
+				<h3 class="product-ecosystem-title">Product ecosystem</h3>
+				<div class="product-ecosystem-list">
+					<div>
+						<h2>Edge</h2>
+						<h3>Edge computing</h3>
+						<img src="/images/thingsboard-e-icon.svg" alt="Thingsboard Edge" width="100" height="100" loading="lazy">
+						<a href="/products/thingsboard-edge/" aria-label="Thingsboard Edge">
+							Read more
+							<span class="visually-hidden">about ThingsBoard Edge</span>
+						</a>
+					</div>
+					<div>
+						<h2>IoT Gateway</h2>
+						<h3>Connect legacy protocols</h3>
+						<img src="/images/gateway-icon.svg" alt="IoT Gateway" width="100" height="100" loading="lazy">
+						<a href="/docs/iot-gateway/what-is-iot-gateway/">
+							Read more
+							<span class="visually-hidden">about ThingsBoard IoT Gateway</span>
+						</a>
+					</div>
+					<div>
+						<h2>MQTT Broker</h2>
+						<h3>Connect MQTT clients</h3>
+						<img src="/images/tbmq-icon.svg" alt="MQTT Broker" width="100" height="100" loading="lazy">
+						<a href="/products/mqtt-broker/">
+							Read more
+							<span class="visually-hidden">about ThingsBoard MQTT Broker</span>
+						</a>
+					</div>
+					<div>
+						<h2>Trendz Analytics</h2>
+						<h3>Data analytics and Prediction</h3>
+						<img src="/images/trendz-icon.svg" alt="Trendz Analytics" width="100" height="100" loading="lazy">
+						<a href="/products/trendz/">
+							Read more
+							<span class="visually-hidden">about ThingsBoard Trendz Analytics</span>
+						</a>
+					</div>
+					<div>
+						<h2>Mobile Application</h2>
+						<h3>IoT mobile product</h3>
+						<img src="/images/tb-mobile-icon.svg" alt="Mobile Application" width="100" height="100" loading="lazy">
+						<a href="/products/mobile/">
+							Read more
+							<span class="visually-hidden">about ThingsBoard Mobile Application</span>
+						</a>
+					</div>
+					<div>
+						<h2>PE Mobile Application</h2>
+						<h3>Advanced IoT mobile product</h3>
+						<img src="/images/tb-pe-mobile-icon.svg" alt="PE Mobile Application" width="100" height="100" loading="lazy">
+						<a href="/products/mobile-pe/">
+							Read more
+							<span class="visually-hidden">about ThingsBoard PE Mobile Application</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</section>
@@ -152,89 +254,8 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 					<div class="dashboards"></div><div class="small9"></div><div class="small10"></div>
 				</div>
 				<h3>Real-Time IoT Dashboards</h3>
-				<p>ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time. More than 30 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
-				<div class="usecase-carousel owl-carousel owl-theme">
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart energy</h2>
-							<p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-							<a class="read-more-button dash" href="/smart-energy/">Smart energy use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Smart energy posibilities arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/smart-energy/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Smart energy</div></div><img class="item-image" src="/images/usecases/smart-energy/se4.png" alt="Smart energy dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart farming</h2>
-							<p>Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
-							<a class="read-more-button dash" href="/smart-farming/">Smart farming use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about Smart farming arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/smart-farming/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Smart farming</div></div><img class="item-image" src="/images/usecases/smart-farming/sf1.png" alt="Smart farming dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Fleet tracking</h2>
-							<p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
-							<a class="read-more-button dash" href="/fleet-tracking/">Fleet tracking use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about fleet tracking arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/fleet-tracking/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Fleet tracking</div></div><img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" alt="Fleet tracking dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart metering</h2>
-							<p>Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users.</p>
-							<a class="read-more-button dash" href="/smart-metering/">Smart metering use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about smart metering arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Smart metering</div></div><img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="Smart metering dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Environment Monitoring</h2>
-							<p>Monitor and analyze indoor and outdoor environments using a wide range of sensors. ThingsBoard supports data acquisition using modern connectivity technologies and protocols: NB IoT, LoRaWAN, SigFox, MQTT, CoAP, HTTP, LwM2M, and others.</p>
-							<a class="read-more-button dash" href="/use-cases/environment-monitoring/">Environment Monitoring use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about environment monitoring arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/environment-monitoring/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Environment Monitoring</div></div><img class="item-image" src="/images/usecases/environment-monitoring/em1.png" alt="Environment monitoring dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart Office</h2>
-							<p>Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities.</p>
-							<a class="read-more-button dash" href="/use-cases/smart-office/">Smart Office use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about smart office arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/smart-office/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Smart Office</div></div><img class="item-image" src="/images/usecases/smart-office/so1.png" alt="Smart office dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Water Metering</h2>
-							<p>Enable water consumption data collection, analysis and fraud detection using ThingsBoard. Use interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. Enable alarms over SMS and email and integrate with external billing systems.</p>
-							<a class="read-more-button dash" href="/use-cases/water-metering/">Water Metering use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about water metering arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/water-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Water Metering</div></div><img class="item-image" src="/images/usecases/water-metering/wm4.png" alt="Water metering dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-					<div class="dashboard-item">
-						<div class="item-description">
-							<h2>Smart Retail</h2>
-							<p>Control quality of food storage by monitoring chillers and freezers. Ensure availability of the goods using smart shelves. Ensure safety using motion detection and fire alarms. ThingsBoard provides a solution template to monitor supermarket assets, browse historical data and generate alarms based on user-defined thresholds.</p>
-							<a class="read-more-button dash" href="/use-cases/smart-retail/">Smart Retail use case<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="More information about smart retail arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
-						</div>
-						<div class="item-image-container">
-							<a class="img-button" href="/use-cases/smart-retail/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt>See more about Smart Retail</div></div><img class="item-image" src="/images/usecases/smart-retail/sr3.png" alt="Smart retail dashboard example" width="924" height="416" loading="lazy"></a>
-						</div>
-					</div>
-				</div>
+				<p>ThingsBoard allows you to create rich IoT Dashboards for data visualization and remote device control in real-time. More than 600 customizable widgets allows you to build end-user custom dashboards for most IoT use-cases.</p>
+				{% include home-page-carousel.liquid collectionMap = 'home-page-carousel' %}
 			</div>
 			<div class="row justify-content-center">
 				<a href="products/">View all products</a>
@@ -244,10 +265,14 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 		<section id="rule-engine">
 			<div class="main-div">
 				<div class="rule hidden" data-loading="false">
-					<a class="rule-button img-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg" width="24" height="24" alt="Getting started with rule engine">See more about IoT Rule Engine</div></div><img src="/images/demo/send-email-rule-chain.gif" alt="Send email rule chain creation" width="890" height="375" loading="lazy"></a>
+					<a class="rule-button img-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/"><div class="overlay"><div class="eye"><i class="far fa-eye"></i>See more about IoT Rule Engine</div></div><img src="/images/demo/send-email-rule-chain.gif" alt="Send email rule chain creation" width="890" height="375" loading="lazy"></a>
 					<div class="des"><h3>IoT Rule Engine</h3>
 						<p>ThingsBoard allows you to create complex <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Rule Chains</a> to process data from your devices and match your application specific use cases.</p>
-						<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more about rule engine<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="Read more about rule engine arrow"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt=""><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt=""></a>
+						<a class="read-more-button" href="/docs/user-guide/rule-engine-2-0/re-getting-started/">Read more about rule engine
+							<i class="fas fa-chevron-right arrow first"></i>
+							<i class="fas fa-chevron-right arrow second"></i>
+							<i class="fas fa-chevron-right arrow third"></i>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -303,10 +328,10 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="block"><img src="/images/tolerance-icon.svg" alt="Fault tolerance" loading="lazy">
+						<div class="block"><img src="/images/integration-icon.svg" alt="Customization and integration" loading="lazy">
 							<div>
-								<a class="title" href="/docs/reference/#thingsboard-services">Fault-tolerance</a>
-								<p>All thingsboard servers are identical. No master-workers or hot standby. Node failure is automatically detected. Failed nodes can be replaced without downtime. Persisted data is replicated using reliable NoSQL database.</p>
+								<a class="title" href="/docs/user-guide/contribution/how-to-contribute/">Customization and Integration</a>
+								<p>Extend default platform functionality using customizable <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">rule chains</a>, <a href="/docs/user-guide/ui/widget-library/">widgets</a> and <a href="/docs/reference/protocols/">transport implementations</a>. In addition to MQTT, CoAP and HTTP support, ThingsBoard users can use their own transport implementations or customize behaviour of existing protocols. You can also take advantage of our <a href="/services/development-services/">IoT development services</a> to create tailored solutions for your needs.</p>
 							</div>
 						</div>
 					</div>
@@ -335,10 +360,10 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 						</div>
 					</div>
 					<div class="col-lg-6">
-						<div class="block"><img src="/images/integration-icon.svg" alt="Customization and integration" loading="lazy">
+						<div class="block"><img src="/images/tolerance-icon.svg" alt="Fault tolerance" loading="lazy">
 							<div>
-								<a class="title" href="/docs/user-guide/contribution/how-to-contribute/">Customization and Integration</a>
-								<p>Extend default platform functionality using customizable <a href="/docs/user-guide/rule-engine-2-0/re-getting-started/">rule chains</a>, <a href="/docs/user-guide/ui/widget-library/">widgets</a> and <a href="/docs/reference/protocols/">transport implementations</a>. In addition to MQTT, CoAP and HTTP support, ThingsBoard users can use their own transport implementations or customize behaviour of existing protocols.</p>
+								<a class="title" href="/docs/reference/#thingsboard-services">Fault-tolerance</a>
+								<p>All thingsboard servers are identical. No master-workers or hot standby. Node failure is automatically detected. Failed nodes can be replaced without downtime. Persisted data is replicated using reliable NoSQL database.</p>
 							</div>
 						</div>
 					</div>
@@ -410,8 +435,6 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 
 
 <script>
-
-	jqueryDefer(initOwl);
 
 	jqueryDefer(function () {
 		vis(function() {
@@ -504,34 +527,15 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 		el.remove();
 	}
 
-	function initOwl() {
-		var scriptsList = [
-            {src: '/css/owl.carousel.min.css', type: 'css'},
-            {src: '/css/owl.theme.default.min.css', type: 'css'},
-            {src: '/js/owl.carousel.min.js', type: 'script'}
-		];
-		loadNextScript(0, scriptsList,
-				function() {
-					$(document).ready(function(){
-                        $('.owl-carousel').owlCarousel({
-                            items:1,
-                            margin:50,
-                            stagePadding: 0,
-                            autoHeight:true,
-                            loop:true,
-                            autoplay:true,
-                            autoplayTimeout:5000,
-                            autoplayHoverPause:true,
-                            nav:false,
-                            responsive: {
-                                1025: {
-                                    nav:true,
-                                }
-                            }
-						});
-					});
-				}
-		);
+	function activateScadaSection(el, scadaMode) {
+		if (el.classList.contains('active')) return;
+		el.classList.add('active');
+		const performanceMode = scadaMode === 'performance';
+		el.previousElementSibling ? el.previousElementSibling.classList.remove('active') : el.nextElementSibling.classList.remove('active');
+		const schemes = document.getElementsByClassName('scada-scheme');
+		schemes[0].classList.toggle('hidden');
+		schemes[1].classList.toggle('hidden');
+		document.getElementsByClassName('scada-title')[0].innerText = performanceMode ? 'SCADA High-performance' : 'SCADA Traditional';
 	}
 
 </script>

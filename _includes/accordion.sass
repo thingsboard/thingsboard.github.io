@@ -1,0 +1,84 @@
+.accordion-collection
+  display: flex
+  flex-direction: column
+  .accordion-item
+    padding: 57.5px 32px
+    border-bottom: 1.5px solid #3E9AF81F
+    .accordion-toggle
+      cursor: pointer
+    .accordion-preview
+      display: flex
+      align-items: center
+      justify-content: space-between
+      gap: 20px
+      .accordion-title
+        margin: 0
+        font-size: 28px
+        font-style: normal
+        font-weight: 400
+        line-height: normal
+        max-width: 981px
+      .accordion-additional
+        display: flex
+        align-items: center
+        gap: 24px
+      .accordion-additional-content
+        display: flex
+        align-items: center
+        flex-direction: row
+        gap: 12px
+        p
+          font-size: 24px
+      .accordion-chevron
+        transition: ease-in-out 0.3s
+    .accordion-content
+      display: grid
+      grid-template-rows: 0fr
+      transition: ease-in-out 0.3s
+      opacity: 0
+      ul
+        overflow: hidden
+        display: flex
+        flex-direction: column
+        gap: 16px
+        padding-left: 0
+        li
+          display: flex
+          align-items: center
+          gap: 16px
+          list-style: none
+          padding: 0 1px
+          p
+            color: #0000008A
+    .accordion-toggle.opened
+      .accordion-chevron
+        transform: rotate(180deg)
+    .accordion-content.opened
+      height: auto
+      opacity: 1
+      grid-template-rows: 1fr
+      padding-top: 30px
+@media screen and (max-width: 1279px)
+  .accordion-collection
+    .accordion-item
+      .accordion-preview
+        .accordion-title
+          max-width: 600px
+@media screen and (max-width: 959px)
+  .accordion-collection
+    .accordion-item
+      padding: 57.5px 0px
+      .accordion-preview
+        .accordion-title
+          max-width: 280px
+@media screen and (max-width: 599px)
+  .accordion-collection
+    .accordion-item
+      .accordion-preview
+        gap: 25px
+        align-items: flex-start
+        flex-direction: column
+        .accordion-additional
+          width: 100%
+          justify-content: space-between
+

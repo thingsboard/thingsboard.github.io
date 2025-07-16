@@ -4,7 +4,7 @@
 
 ## Getting started
 
-##### HTTP basics
+### HTTP basics
 
 [HTTP](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is a general-purpose network protocol that can be used in IoT applications. 
 You can find more information about HTTP [here](https://www.w3.org/Protocols/rfc2616/rfc2616.txt).
@@ -12,12 +12,12 @@ HTTP protocol is TCP based and uses request-response model.
 
 ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS protocols.
 
-##### Client libraries setup
+### Client libraries setup
 
 You can find HTTP client libraries for different programming languages on the web. The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
 
-##### HTTP Authentication and error codes
+### HTTP Authentication and error codes
 
 In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to include **$ACCESS_TOKEN** as a path parameter in each HTTP request.
@@ -54,10 +54,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
 
@@ -97,7 +97,7 @@ Don't forget to replace <code>demo.thingsboard.io</code> with your host and <cod
 {% if docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -120,9 +120,9 @@ curl -v -X POST --data "{"temperature":42,"humidity":73}" http://$THINGSBOARD_HO
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST --data "{"temperature":42,"humidity":73}" https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST --data "{"temperature":42,"humidity":73}" {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -155,9 +155,9 @@ curl -v -X POST -d @telemetry-data-as-object.json http://$THINGSBOARD_HOST_NAME/
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST -d @telemetry-data-as-object.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-as-object.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -200,9 +200,9 @@ curl -v -X POST -d @telemetry-data-as-array.json http://$THINGSBOARD_HOST_NAME/a
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST -d @telemetry-data-as-array.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-as-array.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -235,9 +235,9 @@ curl -v -X POST -d @telemetry-data-with-ts.json http://$THINGSBOARD_HOST_NAME/ap
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST -d @telemetry-data-with-ts.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-with-ts.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -277,7 +277,7 @@ ThingsBoard attributes API allows devices to
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
  
-##### Publish attribute update to the server
+### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
@@ -300,10 +300,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
@@ -319,7 +319,7 @@ Don't forget to replace <code>demo.thingsboard.io</code> with your host and <cod
 {% if docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -340,9 +340,9 @@ curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3"
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
+curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" {{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -368,9 +368,9 @@ curl -v -X POST -d @new-attributes-values.json http://$THINGSBOARD_HOST_NAME/api
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST -d @new-attributes-values.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
+curl -v -X POST -d @new-attributes-values.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -398,7 +398,7 @@ The content of the JSON file:
 ```
 {: .copy-code}
 
-##### Request attribute values from the server
+### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
@@ -421,10 +421,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
 
@@ -437,7 +437,7 @@ Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> wi
 {% if docsPrefix == "pe/" %}
 Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -456,9 +456,9 @@ curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?cli
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X GET "https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
+curl -v -X GET "{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
 ```
 {: .copy-code}
 {% endif %}
@@ -482,7 +482,7 @@ However, it is still possible to have same keys for client, shared or even serve
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### Subscribe to attribute updates from the server
+### Subscribe to attribute updates from the server
 
 In order to subscribe to shared device attribute changes, send GET request with optional "timeout" request parameter to the following URL:
 
@@ -505,10 +505,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes/updates
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
 {: .copy-code}
 
@@ -524,7 +524,7 @@ Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> wi
 {% if docsPrefix == "pe/" %}
 Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
@@ -543,9 +543,9 @@ curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/upd
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X GET https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
+curl -v -X GET {{httpsUrl}}/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
 ```
 {: .copy-code}
 {% endif %}
@@ -590,10 +590,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -639,10 +639,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
 
@@ -664,11 +664,11 @@ curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeout=20
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 - Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
-curl -v -X GET https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
+curl -v -X GET {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
 ```
 {: .copy-code}
 {% endif %}
@@ -693,9 +693,9 @@ curl -v -X POST -d @rpc-response.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCE
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ```shell
-curl -v -X POST -d @rpc-response.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/1 --header "Content-Type:application/json"
+curl -v -X POST -d @rpc-response.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc/1 --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -737,10 +737,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
@@ -772,11 +772,11 @@ curl -X POST -d @rpc-client-request.json http://$THINGSBOARD_HOST_NAME/api/v1/$A
 ```
 {: .copy-code}
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 - Now, send request to the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
-curl -X POST -d @rpc-client-request.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
+curl -X POST -d @rpc-client-request.json {{httpsUrl}}/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -822,10 +822,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/claim
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
@@ -870,10 +870,10 @@ https://demo.thingsboard.io/api/v1/provision
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/provision
+{{httpsUrl}}/api/v1/provision
 ```
 {: .copy-code}
 {% endif %}
@@ -914,10 +914,10 @@ https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$
 {: .copy-code}
 
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 
 ```shell
-https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
+{{httpsUrl}}/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 

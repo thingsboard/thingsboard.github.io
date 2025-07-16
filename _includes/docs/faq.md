@@ -12,7 +12,7 @@ You can find more information on the dedicated page.
 
 ## How do I get started?
 
-{% if docsPrefix == 'paas/' %}
+{% if docsPrefix contains 'paas/' %}
 We recommend to follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
 {% else %}
 We recommend to [install](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard locally on your laptop or PC using Docker
@@ -24,7 +24,7 @@ and follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guide
 ThingsBoard provides out-of-the-box IoT solution that will enable server-side infrastructure for your IoT applications.
 You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [hardware samples](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples)
 
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 ## Where can I host ThingsBoard?
 
 You can host ThingsBoard in the cloud, on-premises or locally on your laptop, PC or even Raspberry Pi. We recommend to get started with Docker installation
@@ -64,7 +64,7 @@ Each device has unique access token credentials that is used to setup connection
 ThingsBoard platform is horizontally scalable. Each server node in the cluster is unique.
 Scalability is achieved using [consistent-hashing](https://en.wikipedia.org/wiki/Consistent_hashing) load balancing algorithm between the cluster nodes.
 Actual performance depends on usage scenario of connected devices.
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco) of devices connected over MQTT.
 {% endunless %}
   
@@ -79,4 +79,4 @@ It is free for both personal and commercial usage and you can deploy it anywhere
 
 ## How to get support?
 
-You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/docs/services/) we provide.
+You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/services/) we provide.

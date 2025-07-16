@@ -36,7 +36,7 @@ Users with the same rank cannot see each other's collections or visualizations.
 
 ## Collection and view management
 
-#### Creation
+### Creation
 A new collection is created by pressing the "Add new" button on the previously created collection, within which the new one will appear.
 
 ![image](/images/trendz/view_collections_3.png)
@@ -45,14 +45,14 @@ When creating a new visualization, it is not automatically associated with any c
 
 ![image](/images/trendz/view_collections_4.png)
 
-#### Sorting
+### Sorting
 Collections can be sorted either by name or by date. By default, the sorting is based on the collection names. 
 To switch to sorting by date, simply click on the "Sort by date" button located next to the name of the root collection. 
 The sort order is not preserved. After reloading the page, it will be changed back to default.
 
 ![image](/images/trendz/view_collections_5.png)
 
-#### Editing
+### Editing
 A previously created collection (except for the root one) can be renamed. To do this, click on the "Change name" button.
 
 ![image](/images/trendz/view_collections_6.png)
@@ -66,7 +66,7 @@ Additionally, you have the option to perform bulk actions on multiple visualizat
 
 ![image](/images/trendz/view_collections_8.png)
 
-#### Deletion
+### Deletion
 To ensure data integrity, it is not possible to delete a collection that still contains at least one visualization or non-empty subcollection. 
 In order to delete a collection, you must first remove or move all the visualizations within it to another collection.
 

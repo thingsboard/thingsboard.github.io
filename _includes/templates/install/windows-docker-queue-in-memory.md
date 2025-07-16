@@ -3,32 +3,47 @@
 Create docker compose file for ThingsBoard queue service:
 
 ```text
-docker-compose.yml
+notepad docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file:
+Add the following lines to the yml file:
 
 ```yml
-version: '3.0'
 services:
-  mytb:
+  postgres:
     restart: always
-    image: "thingsboard/tb-postgres"
+    image: "postgres:16"
     ports:
-      - "8080:9090"
-      - "1883:1883"
-      - "7070:7070"
-      - "5683-5688:5683-5688/udp"
+      - "5432"
     environment:
-      TB_QUEUE_TYPE: in-memory
+      POSTGRES_DB: thingsboard
+      POSTGRES_PASSWORD: postgres
     volumes:
-      - mytb-data:/data
-      - mytb-logs:/var/log/thingsboard
+      - postgres-data:/var/lib/postgresql/data
+  thingsboard-ce:
+    restart: always
+    image: "thingsboard/tb-node:{{ site.release.ce_full_ver }}"
+    ports:
+      - "8080:8080"
+      - "7070:7070"
+      - "1883:1883"
+      - "8883:8883"
+      - "5683-5688:5683-5688/udp"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
+    environment:
+      TB_SERVICE_ID: tb-ce-node
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
+    depends_on:
+      - postgres
+
 volumes:
-  mytb-data:
-    external: true
-  mytb-logs:
-    external: true
+  postgres-data:
+    name: tb-postgres-data
+    driver: local
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}

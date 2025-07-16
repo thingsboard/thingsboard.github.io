@@ -1,4 +1,4 @@
-##### Authentication
+## Authentication
 
 To carry out administrative operations with the broker, it is imperative to log into the system and obtain an Access Token. 
 This Access Token is essential for authenticating and authorizing your administrative actions.

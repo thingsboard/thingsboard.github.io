@@ -29,4 +29,5 @@ device-claiming-widget-carousel:
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include docs/user-guide/claiming-devices.md %}

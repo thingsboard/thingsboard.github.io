@@ -7,7 +7,7 @@ You are also able to trigger various actions, for example, notifications or comm
   
 ## Key Concepts
 
-#### Rule Engine Message 
+### Rule Engine Message 
 
 Rule Engine Message is a serializable, immutable data structure that represent various messages in the system. For example:
 
@@ -24,12 +24,12 @@ Rule Engine Message contains the following information:
   * Payload of the message: JSON body with actual message payload;
   * Metadata: List of key-value pairs with additional data about the message. 
 
-#### Rule Node
+### Rule Node
 
 Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
 Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
 
-#### Rule Node Connection
+### Rule Node Connection
 
 Rule Nodes may be connected to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
 When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
@@ -46,7 +46,7 @@ Some rule nodes support custom connection names. Just type your custom connectio
 
 All connection names are **case-sensitive**.
 
-#### Rule Chain
+### Rule Chain
 
 Rule Chain is a logical group of rule nodes and their relations. For example, the rule chain below will:
 
@@ -69,7 +69,7 @@ For example, the rule chain below will:
  
 ![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
 
-#### Message Processing Result
+### Message Processing Result
 
 There are three possible results of message processing: Success, Failure and Timeout.
 The message processing attempt is marked as "Success" when the last rule node in the processing chain successfully process the message.
@@ -90,19 +90,19 @@ Similar, if "Save to DB" call will succeed, the message will be successfully pro
 However, if the external system will not reply within 20 seconds, the message processing attempt will be marked as "timed-out".
 Similar, if "Save to DB" call will fail, the message will be marked as failed.
 
-#### Rule Engine Queue
+### Rule Engine Queue
 
 See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)
 
-##### Queue submit strategy
+#### Queue submit strategy
 
 See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy)
 
-##### Queue processing strategy
+#### Queue processing strategy
 
 See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)
 
-##### Default queues
+#### Default queues
 
 See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues)
 
@@ -420,12 +420,12 @@ In order to export rule chain, you should navigate to the **Rule Chains** page a
 
 Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
 
-{% if docsPrefix != "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 ## Architecture
 
 To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
 
-{% endif %}
+{% endunless %}
 ## Custom REST API calls to Rule Engine
 
 {% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}
@@ -455,7 +455,7 @@ ThingsBoard authors have prepared several tutorials to help you get started with
   
 See more tutorials [here](/docs/{{docsPrefix}}guides/).
 
-{% unless docsPrefix == "paas/" %}
+{% unless docsPrefix contains "paas/" %}
 
 ## Troubleshooting
 

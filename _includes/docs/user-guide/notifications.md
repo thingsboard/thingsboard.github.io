@@ -1,4 +1,4 @@
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 {% assign mobilePrefix = "ThingsBoard PE Mobile Application" %}
 {% assign mobileUrl = "/docs/pe/mobile/" %}
 {% assign mobileGuide = "/docs/pe/mobile/getting-started/" %}
@@ -19,7 +19,7 @@ The Notification center is accessible through the sidebar menu and includes opti
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/notification-center-1-ce.png)
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
 ![image](/images/user-guide/notifications/notification-center-1-pe.png)
 {% endif %}
 
@@ -34,7 +34,7 @@ ThingsBoard offers several notification delivery methods to keep you and your cu
 To use this notification delivery method, you first need to configure the {{mobilePrefix}} and make some settings in the "Mobile settings" section on the ThingsBoard platform itself.
 These steps are detailed in this [documentation]({{mobileGuide}}).
 - **SMS**. The ThingsBoard supports notification delivery via SMS to mobile devices, providing the ability to deliver important information even in the absence of internet access. {% if docsPrefix == 'pe/' %}To send SMS notifications, you need to set up an [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/) properly.{% endif %}
-- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}To send email notifications, you must configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via email, a system administrator should configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/) properly.{% endif %}
+- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}To send email notifications, you must configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via email, a system administrator should configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/) properly.{% endif %}
 - **Slack**. Integrate Slack with ThingsBoard to send notifications as messages to individual users or channels within your Slack workspace. To use this method of notification delivery, you first need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
 - **Microsoft Teams**. Integration of Microsoft Teams with ThingsBoard allows for delivering notifications in the form of messages to specific channels in your Microsoft Teams environment. To use this method a tenant administrator must get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
 
@@ -85,7 +85,7 @@ For delivering notifications through the ThingsBoard platform, Microsoft Teams, 
 
 Depending on the type of recipient you choose, the setup process will vary. Therefore, we will take a closer look at each option individually:
 
-#### ThingsBoard platform users
+### ThingsBoard platform users
 
 To add recipient from the ThingsBoard user list, follow these steps:
 
@@ -105,7 +105,7 @@ You can also add a new recipient at the stage of manually sending a new notifica
 <br>
 There are several user filters that help you to define a recipients:
 
-{% unless docsPrefix == 'paas/' %}
+{% unless docsPrefix contains 'paas/' %}
 For *System administrator*:
 
  * *All users* - all users of the platform. Includes all tenant administrators and all customer users;
@@ -125,13 +125,13 @@ For *Tenant administrator*:
 
  * *User list* - selected users;
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
  * *User group list* - selected user group;
 {% endif %}
 
  * *Customer users* - all users that belong to customers of the current tenant;
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
  * *User role* - selected user role;
 {% endif %}
 
@@ -139,7 +139,7 @@ For *Tenant administrator*:
 
  * *Affected user* - The user that is affected by the notification trigger event. For example, the person that is assigned to investigate the alarm event.
 
-#### Slack
+### Slack
 
 Send ThingsBoard notifications as Slack messages to a public or private channel, or direct message.
 
@@ -158,7 +158,7 @@ first, you need to configure the Slack settings in ThingsBoard using [this guide
 
 {% include images-gallery.html imageCollection="notification-center-recipients-slack" %}
 
-#### Microsoft Teams
+### Microsoft Teams
 
 Send ThingsBoard notifications as messages to your Microsoft Teams channel.
 
@@ -196,7 +196,7 @@ You may also modify the value of the parameter with one of the sufixes:
  * `lowerCase`, for example - `${recipientFirstName:lowerCase}`
  * `capitalize`, for example - `${recipientFirstName:capitalize}`
 
-#### Add new template
+### Add new template
 
 To add a new template, follow these steps:
 
@@ -213,7 +213,7 @@ To add a new template, follow these steps:
 <br>
 Let's take a closer look at all the available template types.
 
-#### General
+### General
 
 The general template is used to send generic notifications. For example, system maintenance or important announcement. 
 Available template parameters:
@@ -227,14 +227,14 @@ Let's consider an example with the following event: maintenance work for the ser
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-general-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-general-ce.png)
 {% endif %}
 
-#### Alarm
+### Alarm
 
 The alarm template is used to send notification about alarms. For example, alarm creation or acknowledgment. 
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -248,7 +248,7 @@ Available template parameters contain all parameters available for the [General]
   * *alarmOriginatorName* - the name of the alarm originator, e.g. 'Sensor T1';
   * *alarmOriginatorId* - the alarm originator entity id as uuid string.
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 Let's consider an example with the following event: A new alarm with the type 'High Temperature' has been created for the device 'Compressor NM-56'.
 
 The notification in ThingsBoard may look like this:
@@ -263,7 +263,7 @@ The notification in ThingsBoard may look like this:
 ![image](/images/user-guide/notifications/templates/templates-alarms-ce.png)
 {% endif %}
 
-#### Device activity
+### Device activity
 
 The device activity template is used to send notifications about whether a device is active or inactive.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -274,7 +274,7 @@ Available template parameters contain all parameters available for the [General]
 * *deviceType* - the device type;
 * *eventType* - one of: 'inactive', 'active'.
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 Let's consider an example with the following event: the device 'Compressor MN-56' became inactive.
 
 The notification in ThingsBoard may look like this:
@@ -289,7 +289,7 @@ The notification in ThingsBoard may look like this:
 ![image](/images/user-guide/notifications/templates/templates-device-activity-ce.png)
 {% endif %}
 
-#### Entity action
+### Entity action
 
 The entity action template is used to send notification about entity action: creation, update or deletion.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -307,14 +307,14 @@ Let's consider an example with the following event: user johndoe@thingsboard.io 
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-entity-action-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-entity-action-ce.png)
 {% endif %}
 
-#### Alarm comment
+### Alarm comment
 
 The alarm comment template is used to send notification about comments on alarms.
 Available template parameters contain all parameters available for the [Alarm](#alarm) template, plus:
@@ -329,14 +329,14 @@ Let's consider an example with the following event: John Doe left a comment for 
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-alarm-comment-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-alarm-comment-ce.png)
 {% endif %}
 
-#### Alarm assignment
+### Alarm assignment
 
 The alarm assignment template is used to send notification when alarm is assigned or unassigned. 
 Available template parameters contain all parameters available for the [Alarm](#alarm) template, plus:
@@ -354,14 +354,14 @@ Let's consider an example with the following event: johndoe@thingsboard.io assig
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-alarm-assignment-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-alarm-assignment-ce.png)
 {% endif %}
 
-#### Rule engine lifecycle event
+### Rule engine lifecycle event
 
 The rule engine lifecycle event template is used to send notification about rule chain or rule node lifecycle events. 
 For example, notify when new rule node fails to start. 
@@ -380,14 +380,14 @@ Let's consider an example with the following event: the "Kafka" rule node miscon
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-ce.png)
 {% endif %}
 
-#### Rule node
+### Rule node
 
 The rule node template is used to send notifications from the '[send notification](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-notification-node)' rule node.
 You may use data or metadata from the incoming message to build the notification subject and body.
@@ -406,15 +406,15 @@ Let's consider an example with the following event: the incoming message to the 
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/tempalates-rule-node-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/tempalates-rule-node-ce.png)
 {% endif %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-#### Integration lifecycle event
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+### Integration lifecycle event
 
 The integration lifecycle event template is used to send notification about integration lifecycle events. For example, notify when new integration fails to start.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -433,7 +433,7 @@ The notification in ThingsBoard may look like this:
 ![image](/images/user-guide/notifications/templates/templates-integration-lifecycle-event-pe.png) 
 {% endif %}
  
-#### Edge connection
+### Edge connection
 
 The Edge connection template is used to send notifications about changes in the connection status between ThingsBoard and the Edge.
 
@@ -447,14 +447,14 @@ Let's consider an example with the following event: ThingsBoard connected to Edg
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-edge-connection-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-edge-connection-ce.png)
 {% endif %}
 
-#### Edge communication failure
+### Edge communication failure
 
 The Edge communication failure template is used to send notifications about ThingsBoard connection failures with the Edge.
 
@@ -468,15 +468,15 @@ Let's consider an example with the following event: failed to connect ThingsBoar
 
 The notification in ThingsBoard may look like this:
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 ![image](/images/user-guide/notifications/templates/templates-edge-communication-failure-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-edge-communication-failure-ce.png)
 {% endif %}
 
-{% unless docsPrefix == 'paas/' %}
-#### Entities limit
+{% unless docsPrefix contains 'paas/' %}
+### Entities limit
 
 This template is intended to notify tenants that they will reach the limit on the number of entities (devices, assets, etc.). Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -503,7 +503,7 @@ The notification in ThingsBoard may look like this:
 ![image](/images/user-guide/notifications/templates/templates-entities-limit-ce.png)
 {% endif %}
 
-#### API usage limit
+### API usage limit
 
 This template is intended to notify tenants when they hit a specific API limit. Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -527,7 +527,7 @@ The notification in ThingsBoard may look like this:
 ![image](/images/user-guide/notifications/templates/templates-api-usage-limit-ce.png)
 {% endif %}
 
-#### New platform version
+### New platform version
 
 This template is intended to notify tenants about the release of a new version of the ThingsBoard platform. Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -549,7 +549,7 @@ The notification in ThingsBoard may look like this:
 ![image](/images/user-guide/notifications/templates/templates-new-platform-version-ce.png)
 {% endif %}
 
-#### Exceeded rate limits
+### Exceeded rate limits
 
 This template is for notifying about exceeding rate limits. Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -585,7 +585,7 @@ The trigger event types are tightly coupled to the notification template types.
 <br>
 Let's take a closer look at all rules:
 
-#### Alarm
+### Alarm
 
 Using the "Alarm" rule the system sends notifications on specific events: alarm is created, acknowledged, cleared, severity updated, or alarm deleted.
 
@@ -623,7 +623,7 @@ Template message: `Severity: ${alarmSeverity}, originator: ${alarmOriginatorEnti
 
 See [Alarm](#alarm) template for a list of the available template parameters.
 
-#### Device activity
+### Device activity
 
 Using the "Device activity" rule the system sends notifications when the device becomes active or inactive.
 
@@ -650,7 +650,7 @@ Template message: `Device '${deviceName}' of type '${deviceType}' is now ${event
 
 See [Device activity](#device-activity) template for a list of the available template parameters.
 
-#### Entity action
+### Entity action
 
 Using the "Entity action" rule the system sends notifications when an entity is created, updated or deleted.
 
@@ -677,7 +677,7 @@ Template message: `${entityType} '${entityName}' was ${actionType} by user ${use
 
 See [Entity action](#entity-action) template for a list of the available template parameters.
 
-#### Alarm comment
+### Alarm comment
 
 Using the "Alarm comment" rule the system sends notifications when an alarm is commented.
 
@@ -704,7 +704,7 @@ Template message: `${userEmail} ${action} comment: ${comment}`
 
 See [Alarm comment](#alarm-comment) template for a list of the available template parameters.
 
-#### Alarm assignment
+### Alarm assignment
 
 Using the "Alarm assignment" rule the system sends notifications when an alarm is assigned or unassigned.
 
@@ -731,7 +731,7 @@ Template message: `${userEmail} assigned alarm on ${alarmOriginatorEntityType} '
 
 See [Alarm assignment](#alarm-assignment) template for a list of the available template parameters.
 
-#### Rule engine lifecycle event
+### Rule engine lifecycle event
 
 Using the "Rule engine lifecycle event" rule the system sends notifications about the rule chain or rule node lifecycle events.
 For example, notify when a new rule node fails to start (typically due to misconfiguration).
@@ -761,8 +761,8 @@ Template message: `${componentType} '${componentName}' failed to ${action}`
 
 See [Rule engine lifecycle event](#rule-engine-lifecycle-event) template for a list of the available template parameters.
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-#### Integration lifecycle event
+{% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+### Integration lifecycle event
 
 Using the "Integration lifecycle event" rule the system sends notifications about the integration lifecycle events.
 For example, notify when a integration fails to start (typically due to misconfiguration).
@@ -793,7 +793,7 @@ Template message: `Integration '${integrationName}' failed to start:<br/>${error
 See [Integration lifecycle event](#integration-lifecycle-event) template for a list of the available template parameters.
 {% endif %}
 
-#### Edge connection
+### Edge connection
 
 Using the "Edge connection" rule the system sends a notification to tenant admins when the connection status between TB and Edge changes.
 
@@ -822,7 +822,7 @@ Template message: `Edge '${edgeName}' is now ${eventType}`
 
 See [Edge connection](#edge-connection) template for a list of the available template parameters.
 
-#### Edge communication failure
+### Edge communication failure
 
 Using the "Edge communication failure" rule the system sends a notification to tenant admins when communication failures occur.
 
@@ -848,8 +848,8 @@ Template message: `Failure message: '${failureMsg}'`
 
 See [Edge communication failure](#edge-communication-failure) template for a list of the available template parameters.
 
-{% unless docsPrefix == 'paas/' %}
-#### Entities limit
+{% unless docsPrefix contains 'paas/' %}
+### Entities limit
 
 The system administrator can use the "Entities limit" rule to notify tenants that they will reach the limit on the number of entities (devices or assets). 
 For example, notify when tenant has reached 80% of the 100 devices allowed. The max number of devices is extracted from the tenant profile. 
@@ -876,7 +876,7 @@ Template message: `${entityType}s usage: ${currentCount}/${limit} (${percents}%)
 
 See [Entities limit](#entities-limit) template for a list of the available template parameters.
 
-#### API usage limit
+### API usage limit
 
 The system administrator can use the "API usage limit" rule to notify tenants that they have reached the limit of used units.
 
@@ -905,7 +905,7 @@ Template message: `${feature} feature - ${status:upperCase} (usage: ${currentVal
 
 See [API usage limit](#api-usage-limit) template for a list of the available template parameters.
 
-#### New platform version
+### New platform version
 
 The system administrator can use the "New platform version" rule to notify tenants and system administrators about the release of a new version of the ThingsBoard platform.
 
@@ -930,7 +930,7 @@ Template message: `Current version is ${currentVersion}. You can upgrade your Th
 
 See [New platform version](#new-platform-version) template for a list of the available template parameters.
 
-#### Exceeded rate limits
+### Exceeded rate limits
 
 The system administrator can use the "Exceeded rate limits" rule to notify tenants and system administrators about the exceeded rate limits.
 

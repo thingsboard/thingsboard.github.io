@@ -1,18 +1,13 @@
-Instructions listed below will help you to install PostgreSQL.
+To install the **PostgreSQL** database, run these commands:
 
 ```bash
-# install **wget** if not already installed:
-sudo apt install -y wget
-
-# import the repository signing key:
-wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
-
-# add repository contents to your system:
-echo "deb https://apt.postgresql.org/pub/repos/apt/ $(lsb_release -cs)-pgdg main" | sudo tee  /etc/apt/sources.list.d/pgdg.list
+# Automated repository configuration:
+sudo apt install -y postgresql-common
+sudo /usr/share/postgresql-common/pgdg/apt.postgresql.org.sh
 
 # install and launch the postgresql service:
 sudo apt update
-sudo apt -y install postgresql-15
+sudo apt -y install postgresql-16
 sudo service postgresql start
 ```
 {: .copy-code}

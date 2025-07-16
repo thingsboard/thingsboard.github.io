@@ -1,7 +1,7 @@
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-create-data-converters-1-tbel-pe.png)
 {% endif %}
-{% if docsPrefix == "paas/" %}
+{% if docsPrefix contains "paas/" %}
 ![image](/images/user-guide/integrations/http/data-converters-2-tbel-pe.png)
 {% endif %}
 

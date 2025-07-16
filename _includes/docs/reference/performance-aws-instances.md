@@ -1186,7 +1186,7 @@ tb_1         | 2022-01-06 16:37:11,716 [TB-Scheduling-3] INFO  o.t.s.c.t.s.Defau
 
 ## Disk usage
 
-##### Postgres
+### Postgres
 
 By the end of the day in [Scenario B](#scenario-b), the system run out of the disk space.
 
@@ -1214,7 +1214,7 @@ Tip: to plan and manage the Kafka disk space, please, adjust the [size retention
 
 {% include images-gallery.html imageCollection="postgres-kafka-disk-usage" %}
 
-##### Cassandra - disk usage
+### Cassandra - disk usage
 
 For 24 hours (100k devices, 432M msg) total datapoint stored is 1.3B
 
@@ -1224,7 +1224,7 @@ Cassandra's disk usage is about 20 GiB per 1.3B data points. It is about 65M dat
 
 Note: data size on disk may vary depends on the content.
 
-##### Disk usage summary
+### Disk usage summary
 
 Compared with Postgresql, Cassandra's disk space consumption is about x5-x10 times less.
 

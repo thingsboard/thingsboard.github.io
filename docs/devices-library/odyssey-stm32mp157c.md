@@ -13,4 +13,5 @@ deviceImageFileName: odyssey-stm32mp157c.png
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/odyssey-stm32mp157c.md %}

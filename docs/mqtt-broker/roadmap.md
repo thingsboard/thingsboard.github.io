@@ -10,8 +10,9 @@ description: TBMQ upcoming releases
 
 The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.
 
-### Upcoming releases
+## Upcoming releases
 
-* MQTT 5 full support;
-* Redis support for storing messages of **DEVICE** persistent clients;
-* MQTT clients monitoring enhancements.
+* More integrations with external third-party services;
+* Tracking dropped messages;
+* Banned clients;
+* JWT authentication.

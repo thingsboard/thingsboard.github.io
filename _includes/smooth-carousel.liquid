@@ -1,0 +1,44 @@
+{% assign collectionMap = include.collectionMap %}
+{% assign customSettings = include.customSettings %}
+
+{% if site.data.carousel-collection[include.collectionMap] %}
+    {% assign carouselCollection = site.data.carousel-collection[include.collectionMap] %}
+{% else %}
+    {% assign carouselCollection = page[include.collectionMap] %}
+{% endif %}
+
+{% assign defaultSettings = '{
+    "items": 4,
+    "autoWidth": true,
+    "stagePadding": 0,
+    "margin": 0,
+    "nav": false,
+    "dots": false,
+    "autoplayTimeout": 0,
+    "autoplaySpeed": 15000,
+    "autoplayHoverPause": false
+}' %}
+
+{% assign settings = defaultSettings %}
+
+{% if customSettings %}
+    {% assign settings = customSettings %}
+{% endif %}
+
+<div class="owl-carousel owl-theme smooth-carousel" data-settings='{{ settings }}'>
+    {% for carouselItem in carouselCollection %}
+        <div class="carousel-image" style="width: {{ carouselItem[1].width | default: '100%' }}">
+            {% if carouselItem[1].src %}
+                <img class="owl-lazy" data-src="{{ carouselItem[1].src }}" alt="{{ carouselItem[1].alt }}" width="900" height="600">
+            {% endif %}
+            {% if carouselItem[1].multipleImage %}
+                <div class="multiple-image">
+                    {% for multipleImageItem in carouselItem[1].multipleImage %}
+                        <img class="owl-lazy" data-src="{{ multipleImageItem[1].src }}" alt="{{ multipleImageItem[1].alt }}" width="451" height="300">
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+

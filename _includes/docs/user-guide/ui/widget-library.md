@@ -40,8 +40,8 @@ Digital Gauge in the example is displays the current temperature value.
 
 The Time series widget type displays historical values for the selected period of time, or the latest values in the certain time window (e.g., Timeseries Line Chart or Timeseries Bar Chart).
 This widget type uses only the values of entity time series as a data source.
-In order to specify the time frame of displayed values, _Timewindow_ settings are used.
-The timewindow can be specified on the dashboard page or via widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
+In order to specify the time frame of displayed values, _Time window_ settings are used.
+The time window can be specified on the dashboard page or via widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
 All these settings are part of Timeseries widget configuration.
 In the example, the "Timeseries Line Chart" displays the speed value of the device in real-time.
 
@@ -59,7 +59,7 @@ In the example, the “Basic GPIO Control” widget sends GPIO switch commands a
 
 The Alarm Widget type displays alarms related to the specified entity in the certain time window (e.g., Alarms table).
 To configure the Alarm widget, you designate an entity as the alarm source and define the corresponding alarm fields.
-As the _Timeseries widgets_, Alarm widgets have the _timewindow_ configuration to specify the time frame of the displayed alarms.
+As the _Timeseries widgets_, Alarm widgets have the _time window_ configuration to specify the time frame of the displayed alarms.
 Additionally, the configuration includes parameters such as "Alarm status", "Alarm severity", and "Alarm type".
 The “Alarm status” parameter shows the status of the alarms being fetched.
 The "Alarm severity" parameter shows the frequency of alarm fetches in seconds.
@@ -148,6 +148,12 @@ The Analog Gauges widgets bundle is useful for visualization of temperature, hum
 
 {% include images-gallery.html imageCollection="wl-analog-gauges-bundle" %}
 
+### Buttons
+
+The Buttons bundle allows you to organize navigation between dashboard states, send RPC commands to devices, and update device attributes or time-series data.
+
+{% include images-gallery.html imageCollection="wl-buttons-bundle" %}
+
 ### Cards
 
 The Cards bundle is useful for visualization of time series data or attributes in table or card widgets.
@@ -219,11 +225,40 @@ The Gateway widgets bundle is useful for managing extensions.
 
 {% include images-gallery.html imageCollection="wl-gateway-bundle" %}
 
+### General high-performance SCADA symbols
+
+This bundle contains high-performance SCADA widgets for broad industrial monitoring and control. It covers elements ranging from panels and gauges to mechanical assets and site facilities. 
+Use it to assemble clean, high-contrast HMI screens that convey status at a glance across mixed-equipment dashboards.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-general-symbols" %}
+
 ### GPIO widgets
 
 The GPIO widgets bundle is useful for visualization and controlling GPIO state for target devices.
 
 {% include images-gallery.html imageCollection="wl-gpio" %}
+
+### High-performance SCADA energy system
+
+This bundle contains high-performance SCADA symbols that cover the complete electrical flow — from renewable generation (solar, wind) and backup generators through storage, conversion, protection, metering, and low/high-voltage distribution to residential and industrial consumers. 
+It is ideal for building interactive dashboards that visualize production, quality, and consumption across modern energy infrastructures.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-energy-system" %}
+
+### High-performance SCADA fluid system
+
+This high-performance symbol bundle is focused on fluid-handling processes in oil-and-gas, chemical, and water-treatment domains. 
+It spans drilling and well-control components, pumps and pipelines, separators, heat-exchange units, turbines, and related equipment—ideal for flow diagrams, production dashboards, and process-safety views.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-fluid-system" %}
+
+### High-performance SCADA oil & gas
+
+The bundle of high-performance SCADA symbols designed for upstream and early-stage processing workflows in the oil and gas sector.
+It covers drilling and well-control equipment, artificial lift and drive units, surface gathering lines, separator trains, heat exchange, and power generation assets — everything needed to visualize the complete flow from wellhead to initial treatment in a clean High-performance SCADA style.
+Perfect for real-time dashboards that track drilling progress, production efficiency, and safety barriers across both onshore and offshore installations.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-fluid-oil-and-gas" %}
 
 ### Home page widgets
 
@@ -242,6 +277,12 @@ The HTML widgets bundle is useful for injecting custom HTML code. Or for display
 The Indoor Environment widget bundle is effective in visualizing data related to indoor environments.
 
 {% include images-gallery.html imageCollection="wl-indoor-environment-bundle" %}
+
+### Industrial widgets
+
+The Industrial widgets bundle is useful for displaying industrial telemetry data.
+
+{% include images-gallery.html imageCollection="wl-industrial-bundle" %}
 
 ### Input widgets
 
@@ -273,13 +314,13 @@ The Outdoor Environment widget bundle is effective in visualizing data related t
 
 {% include images-gallery.html imageCollection="wl-outdoor-environment-bundle" %}
 
-### Status indicators
+### SCADA symbols
 
-The Status indicators widgets bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+Use for uploading SVG symbols to your SCADA dashboard.
 
-{% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
+{% include images-gallery.html imageCollection="wl-scada-symbols-bundle" %}
 
-### Scheduling widgets
+### Scheduling
 
 {% capture difference %}
 **Available only in PE and PaaS.**
@@ -290,13 +331,26 @@ The Scheduling widgets bundle is useful for [scheduling](/docs/{{docsPrefix}}use
 
 {% include images-gallery.html imageCollection="wl-scheduling-bundle" %}
 
-### Tables Widgets
+### Status indicators
+
+The Status indicators widgets bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+
+{% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
+
+### Tables
 
 The Tables widgets bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
 Additionally, this widget bundle showcases Persistent RPC requests, which are based on entity alias. 
 It can also be filtered optionally and supports pagination for enhanced usability.
 
 {% include images-gallery.html imageCollection="wl-tables-bundle" %}
+
+### Traditional SCADA fluid system
+
+This bundle of SCADA symbols in a traditional design style covers the essentials for many industrial diagrams. 
+It packs straight and elbow pipes, tees, drains, flow & level meters, pumps, filters, valves, tanks of various shapes, pools, and other core components - everything you need to assemble piping, hydraulic, and other process-control schematics with ease.
+
+{% include images-gallery.html imageCollection="wl-scada-traditional-fluid-system" %}
 
 ## Operations with Widget
 

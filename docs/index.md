@@ -58,7 +58,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
     </div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/devices-library/">
-            <img class="feature-logo" src="/images/feature-logo/guides.svg" alt="Guides icon">
+            <img class="feature-logo" src="/images/feature-logo/devices-library.svg" alt="Guides icon">
             <div class="feature-title">Devices library</div>
             <div class="feature-text">
                 Learn how to connect different devices to ThingsBoard.
@@ -162,10 +162,10 @@ description: ThingsBoard documentation - learn about the platform and get your I
     </div>
 </div>
 
-<h3>Security</h3>
+<h2>Security</h2>
 
 <p>Contains description of available device authentication <b><a href="/docs/user-guide/device-credentials/">options</a></b>.</p>
 
-<h3>Samples</h3>
+<h2>Samples</h2>
 
 <p>Contains a list of hardware platform specific <b><a href="/docs/samples/">samples</a></b>.</p>

@@ -1201,7 +1201,7 @@ header .head-menu .sub-menu-container {
     transition: visibility,opacity ease-in-out;
     transition-duration: .3s;
     border-radius: 4px;
-    box-shadow: 0 30px 60px -30px rgba(0,0,0,.3),0 50px 100px -20px rgba(0,0,0,.25);
+    box-shadow: 0 30px 60px -30px rgba(0,0,0,0.3),0 50px 100px -20px rgba(0,0,0,0.25);
     background-color: #fff;
     visibility: hidden;
     opacity: 0
@@ -1209,11 +1209,35 @@ header .head-menu .sub-menu-container {
 
 header .head-menu .sub-menu-container.active {
     visibility: visible;
-    opacity: 1
+    opacity: 1;
+    background-color: #f7f9fe
 }
 
 header .head-menu .sub-menu-container.active.bounds-transition {
-    transition: visibility .3s,opacity ease-in-out .3s,left ease-in-out .2s,width ease-in-out .2s,height ease-in-out .2s
+    transition: left ease-in-out .4s,width ease-in-out .35s,height ease-in-out .35s
+}
+
+header .head-menu .sub-menu-container.active .centered-sub.open {
+    opacity: 1;
+    display: block;
+    transition-property: display,opacity;
+    transition-duration: .6s;
+    transition-behavior: allow-discrete;
+	animation: opacityChange 0.6s ease forwards;
+}
+
+@keyframes opacityChange {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+header .head-menu .sub-menu-container>div {
+    opacity: 0;
+    display: none
 }
 
 header .head-menu .sub-menu-container .centered-sub,header .head-menu ul .centered-sub {
@@ -1221,61 +1245,66 @@ header .head-menu .sub-menu-container .centered-sub,header .head-menu ul .center
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu,header .head-menu ul .centered-sub .sub-menu {
+	padding: 0;
     width: max-content;
-    padding: 40px 70px 40px 40px;
     display: block;
     z-index: 1
 }
 
-@media screen and (min-width: 1281px) {
-    header .head-menu .sub-menu-container .centered-sub .sub-menu.products .sub-groups .group:first-child,header .head-menu ul .centered-sub .sub-menu.products .sub-groups .group:first-child {
-        padding-right:35px
-    }
-
-    header .head-menu .sub-menu-container .centered-sub .sub-menu.products .sub-groups .group:nth-child(2),header .head-menu ul .centered-sub .sub-menu.products .sub-groups .group:nth-child(2) {
-        padding-left: 35px;
-        border-left: 1px solid #d7d7d7
-    }
+header .head-menu .sub-menu-container .centered-sub .sub-menu li,header .head-menu ul .centered-sub .sub-menu li {
+    padding: 0
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups,header .head-menu ul .centered-sub .sub-menu .sub-groups {
     display: flex;
-    align-items: flex-start
+    flex-direction: column;
+    align-items: stretch
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group,header .head-menu ul .centered-sub .sub-menu .sub-groups .group {
-    padding-right: 70px
+    display: flex;
+    padding: 32px;
+    gap: 36px
 }
 
-header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:last-child,header .head-menu ul .centered-sub .sub-menu .sub-groups .group:last-child {
-    padding-right: 0
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:first-child,header .head-menu ul .centered-sub .sub-menu .sub-groups .group:first-child {
+    margin: 5px;
+    border-radius: 4px;
+    background-color: #fff
 }
 
-header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group .group-name,header .head-menu ul .centered-sub .sub-menu .sub-groups .group .group-name {
-    height: 62px;
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:first-child:last-child,header .head-menu ul .centered-sub .sub-menu .sub-groups .group:first-child:last-child {
+    margin: 0
+}
+
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:first-child:last-child .column,header .head-menu ul .centered-sub .sub-menu .sub-groups .group:first-child:last-child .column {
+    width: 100%;
+    min-width: unset
+}
+
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group .column,header .head-menu ul .centered-sub .sub-menu .sub-groups .group .column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-width: 250px
+}
+
+header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group .column .group-name,header .head-menu ul .centered-sub .sub-menu .sub-groups .group .column .group-name {
     text-transform: uppercase;
     font-weight: 500;
-    color: #899aab;
-    font-size: 15px;
-    line-height: normal
-}
-
-header .head-menu .sub-menu-container .centered-sub .sub-menu .bottom-group,header .head-menu ul .centered-sub .sub-menu .bottom-group {
-    background-color: #f9fbff;
-    border-radius: 4px;
-    width: calc(100% + 94px);
-    margin: 32px -32px -32px;
-    padding: 32px
+    color: #305680;
+    font-size: 14px;
+    line-height: normal;
+	margin: 0;
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a,header .head-menu ul .centered-sub .sub-menu a {
     text-align: left;
-    display: flex;
-    margin-bottom: 22px
+    display: flex
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a:hover .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a:hover .sub-text span.item-heading {
-    color: #2a7dec
+    color: #2A7DEC
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a:hover .sub-text p,header .head-menu ul .centered-sub .sub-menu a:hover .sub-text p {
@@ -1283,7 +1312,7 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu a:hover .sub-text 
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.prof-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.prof-lnk:hover .sub-text span.product-name,header .head-menu .sub-menu-container .centered-sub .sub-menu a.license-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.license-lnk:hover .sub-text span.product-name,header .head-menu ul .centered-sub .sub-menu a.prof-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.prof-lnk:hover .sub-text span.product-name,header .head-menu ul .centered-sub .sub-menu a.license-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.license-lnk:hover .sub-text span.product-name {
-    color: #1f8b4d
+    color: #1F8B4D
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.com-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.com-lnk:hover .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a.com-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.com-lnk:hover .sub-text span.item-heading {
@@ -1299,7 +1328,7 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu a.gateway-lnk:hove
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.trendz-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.trendz-lnk:hover .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a.trendz-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.trendz-lnk:hover .sub-text span.item-heading {
-    color: #2696f3
+    color: #2696F3
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.mobile-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.mobile-lnk:hover .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a.mobile-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.mobile-lnk:hover .sub-text span.item-heading {
@@ -1307,11 +1336,11 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu a.mobile-lnk:hover
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.mobile-pe-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.mobile-pe-lnk:hover .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a.mobile-pe-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.mobile-pe-lnk:hover .sub-text span.item-heading {
-    color: #1f8b4d
+    color: #1F8B4D
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.mqtt-broker-lnk:hover .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.mqtt-broker-lnk:hover .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a.mqtt-broker-lnk:hover .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.mqtt-broker-lnk:hover .sub-text span.item-heading {
-    color: #1f8b4d
+    color: #1F8B4D
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a:last-child,header .head-menu ul .centered-sub .sub-menu a:last-child {
@@ -1319,22 +1348,22 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu a:last-child,heade
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text,header .head-menu ul .centered-sub .sub-menu a .sub-text {
-    padding-top: 4px;
-    max-width: 300px
+    max-width: 284px
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a .sub-text h1,header .head-menu ul .centered-sub .sub-menu a .sub-text span.item-heading {
     color: #212529;
     font-size: 16px;
-    font-weight: 600;
-    line-height: normal
+    font-weight: 400;
+    line-height: 24px
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a .sub-text p,header .head-menu ul .centered-sub .sub-menu a .sub-text p {
-    color: #899aab;
-    font-size: 15px;
+    color: #899AAB;
+    font-size: 14px;
     font-weight: 400;
-    line-height: normal
+    line-height: 24px;
+	margin: 0;
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a img,header .head-menu ul .centered-sub .sub-menu a img {
@@ -1342,16 +1371,12 @@ header .head-menu .sub-menu-container .centered-sub .sub-menu a img,header .head
     height: fit-content
 }
 
-header .head-menu .sub-menu-container .centered-sub .sub-menu a.small-link,header .head-menu ul .centered-sub .sub-menu a.small-link {
-    margin-bottom: 15px
-}
-
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.small-link .sub-text,header .head-menu ul .centered-sub .sub-menu a.small-link .sub-text {
     padding: 0
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.small-link .sub-text h1,header .head-menu .sub-menu-container .centered-sub .sub-menu a.small-link .sub-text span.item-heading,header .head-menu ul .centered-sub .sub-menu a.small-link .sub-text h1,header .head-menu ul .centered-sub .sub-menu a.small-link .sub-text span.item-heading {
-    font-weight: 500
+    font-weight: 400
 }
 
 header .head-menu .sub-menu-container .centered-sub .sub-menu a.small-link:last-child,header .head-menu ul .centered-sub .sub-menu a.small-link:last-child {
@@ -1411,7 +1436,7 @@ header .head-menu ul li:hover a {
 header .head-menu ul a,header .head-menu ul span.main-menu-link {
     display: block;
     color: #212529;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 400;
     text-decoration: none
 }
@@ -1503,8 +1528,8 @@ header .logo {
 
 
 .n-button {
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 16px;
+    font-weight: 400;
     text-align: center;
     height: 47px;
     transition-duration: .3s;
@@ -1529,7 +1554,7 @@ header .logo {
 }
 
 .n-button.try:hover {
-    border: solid 1px rgba(0, 0, 0, 0.87);
+    border: solid 2px rgba(0, 0, 0, 0.87);
     text-decoration: none
 }
 
@@ -1925,6 +1950,25 @@ header .logo {
     header.opened-burger .burger {
         background-image: url(https://img.thingsboard.io/close-icon.svg)
     }
+	
+	header .head-menu ul li .centered-sub .sub-menu.open-sub .sub-groups .group .column:not(:first-child) .group-name {
+        display: none
+    }
+	
+	header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group, header .head-menu ul .centered-sub .sub-menu .sub-groups .group {
+		flex-direction: column;	
+		gap: 0;
+	}
+	
+	header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups, header .head-menu ul .centered-sub .sub-menu .sub-groups {
+		flex-direction: row;
+	}
+	
+	header .head-menu .sub-menu-container .centered-sub .sub-menu .sub-groups .group:first-child, header .head-menu ul .centered-sub .sub-menu .sub-groups .group {
+		background: #fff;
+		margin: 5px;
+		border-radius: 4px;
+	}
 }
 
 @media screen and (max-width: 1280px) and (max-width:1024px) {
@@ -2033,7 +2077,7 @@ header .logo {
     }
 
     header .head-menu ul li .centered-sub .sub-menu .sub-groups .group .group-name {
-        display: none
+        display: block;
     }
 
     header .head-menu ul li .centered-sub .sub-menu a:last-child {
@@ -4086,24 +4130,62 @@ body{
 }
 
 /* codeblock */
+
 .wp-block-code code{
 	max-width: 740px;
 	padding: 0px 10px;
 }
 
 .wp-block-code{
+	display: flex;
 	overflow: visible !important;
 	position: relative;
 	padding-top: 16px;
 	padding-left: 16px;
 	padding-bottom: 16px;
 	padding-right: 50px !important;
+	padding-bottom: 40px; 
+}
+
+.wp-block-code code{
+	max-height: 180px;
+	transition: max-height 0.5s ease-in-out;
+}
+
+.wp-block-code.expanded code{
+	max-height: 100%;
+}
+
+.expand-container {
+	margin-top: 1px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.triangle {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 13px solid #2a7dec;
+}
+
+.expand-text {
+  font-size: 16px;
+  color: #2a7dec;
+  text-align: center;
 }
 
 .code-button-parent{
 	position: absolute;
-	top: 16px;
-	right: 16px;	
+	top: 0;
+	right: 0;	
 }
 
 .code-button-link-copy{
@@ -4422,9 +4504,9 @@ blockquote p{
 }
 
 /* header burger */
-.open{
+/* .open{
     display: block !important;
-}
+} */
 
 /* .burger {
     display: none;
@@ -4533,6 +4615,10 @@ blockquote p{
 .wp-block-image{
 	cursor: pointer;
 	text-align: center;
+}
+
+.no-popup {
+	cursor: unset;
 }
 
 .gif-parent{
@@ -5412,4 +5498,8 @@ blockquote p{
 @keyframes burgerAnimation {
     from {opacity: 0}
     to {opacity: 1}
+}
+
+.extra-hidden{
+	overflow: hidden !important
 }

@@ -6,4 +6,5 @@ description: IoT device data analytics sample using Kafka, Kafka Streams and Thi
 ---
 
 {% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include /docs/samples/analytics/kafka-streams.md %}

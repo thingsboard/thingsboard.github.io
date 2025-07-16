@@ -13,4 +13,5 @@ deviceImageFileName: hikey-970-development-board.jpeg
 * TOC
 {:toc}
 
+{% include get-hosts-name.html %}
 {% include /docs/devices-library/guides/hikey-970-development-board.md %}
