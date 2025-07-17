@@ -7,15 +7,15 @@ an access token, which is used to authenticate API calls, and a refresh token, w
 These tokens contain essential information about the user’s identity and permissions, enabling secure communication with the platform.
 For more information, please refer to the [Administration REST API](https://thingsboard.io/docs/mqtt-broker/rest-api/#swagger-ui) documentation.
 
-Starting from version [2.2.0](/docs/mqtt-broker/releases/#v210-april-29-2025), TBMQ also supports JWT-based authentication for MQTT clients as one of its pluggable MQTT authentication providers.
+Starting from version [2.2.0](https://github.com/thingsboard/tbmq/releases/tag/v2.2.0), TBMQ also supports JWT-based authentication for MQTT clients as one of its pluggable MQTT authentication providers.
 This enables secure, flexible, and scalable identity verification without relying on static credentials like usernames or passwords.
 Instead, clients present a signed token that contains all the necessary authentication information, allowing integration with centralized identity systems and improving overall security.
 
-## JWT Authentication Overview
+## JWT authentication overview
 
 When a client connects using a JWT token, TBMQ performs a multi-step validation process to verify the token, check its claims, and determine the client’s permissions.
 The client includes a signed JWT token in the `password` field of the `MQTT CONNECT` packet. 
-TBMQ uses the configured verifier (HMAC, PEM, or JWKS) to validate the token's signature. If the signature is valid, the broker proceeds to check the token’s claims. It validates:
+TBMQ uses the configured verifier (HMAC-based, PEM, or JWKS) to validate the token's signature. If the signature is valid, the broker proceeds to check the token’s claims. It validates:
 
  - `exp` (expiration) claim to ensure the token is not expired
  - `nbf` (not before) claim to ensure the token is currently valid
@@ -36,22 +36,16 @@ This behavior may become configurable in a future release.
 {% endcapture %}
 {% include templates/info-banner.md content=future-release-tip %}
 
-## Configure Provider
+## Configure provider
 
-JWT authentication for MQTT clients is configured through the TBMQ Admin UI. 
+JWT authentication for MQTT clients is configured through the TBMQ user interface. 
+This section explains how to configure signature verification, define optional authentication claim checks, 
+set up dynamic client type classification, and manage authorization rules. Once the configuration is complete, 
+you can enable the provider to start authenticating clients using JWT tokens.
 
 {% include images-gallery.html imageCollection="configure-jwt-auth-provider" %}
 
-This section explains how to set up:
-
-- signature verification
-- custom authentication claim checks (optional)
-- dynamic client type classification (optional)
-- authorization rules
-
-Once the configuration is complete, you can enable the provider to start authenticating clients using JWT tokens.
-
-### Signature Verification
+### Signature verification
 
 The Signature verifier mechanism determines how TBMQ validates the JWT token's signature 
 to ensure the token was issued by a trusted authority and hasn’t been tampered with. There are two options:
@@ -69,7 +63,7 @@ This is often used in internal systems or when tokens are issued by a trusted se
 
 {% include images-gallery.html imageCollection="configure-hmac-based-verifier-mechanism" %}
 
-Supported algorithms: **HS256, HS384, HS512**. The secret should match the one used to sign the tokens.
+Supported all [JWT-standard](https://datatracker.ietf.org/doc/html/rfc7518#section-3.2) HMAC algorithms: **HS256, HS384, HS512**. The secret should match the one used to sign the tokens.
 
 #### Public key (PEM)
 
@@ -88,7 +82,7 @@ TBMQ will periodically download and cache keys from the endpoint and use them to
 
 {% include images-gallery.html imageCollection="configure-jwks-based-verifier-mechanism" %}
 
-### JWT Claims and Access Control Flow
+### JWT claims and access control flow
 
 After the JWT token is successfully verified, TBMQ performs a multi-stage validation and classification process 
 to determine if the client is allowed to connect, how it should be identified, and what topics it can access.
@@ -157,7 +151,7 @@ This allows you to classify clients dynamically during authentication.
 To better understand how dynamic client type classification works, consider the following example.
 
 Client type is set to `DEVICE` by default.
-Also in the configuration defined a custom claim `role` with expected value `app` to compare against:
+Also in the configuration defined a custom claim `role` with expected value `app` to compare against.
 
 {% include images-gallery.html imageCollection="configure-client-type" %}
 
@@ -171,24 +165,25 @@ to determine which topics the client is allowed to publish to and subscribe from
 
 For JWT-based clients, TBMQ supports two layers of regex-based authorization rules:
 
- - Default authorization rules – manually configured topic filters defined in the provider settings
- - Dynamic authorization rules – topic filters extracted from JWT claims at runtime (if configured)
+ - Default authorization rules – manually configured sets of topic patterns defined in the provider settings.
+ - Dynamic authorization rules – lists of topic patterns extracted from JWT claims at runtime (if configured).
 
-You can define default topic filters for both publish and subscribe directions using regular expressions. 
-These rules are always required and serve as a fallback if dynamic rules are not configured or cannot be applied.
+Default topic patterns can be defined separately for publishing and subscribing. These patterns use regular expressions and are always required.
+They also serve as a fallback if dynamic patterns are not configured or cannot be applied.
 
 Examples of regex filters:
 
- - `.*` – allow all topics
- - `sensors/.*` – allow access only to topics that begin with `sensors/`
- - (empty field) – deny access to that direction
+ - Allow particular topic(s) - rule `country/.*` will allow clients to publish/subscribe only to topics that start with `country/`.
+ - Allow any topic - rule `.*` (default) will allow clients to publish/subscribe to any topic.
+ - Forbid all topics - if the rule is empty, the client is forbidden to publish/subscribe.
 
-To enable dynamic authorization, specify the names of JWT claims that contain the publish and/or subscribe topic filters (e.g., pub, sub). 
-If present, TBMQ will attempt to extract a list of topic patterns from these claims and apply them as the client's effective authorization rules.
+To enable dynamic authorization, specify the names of JWT claims that contain the publish and/or subscribe topic patterns
+(e.g., pub_rules, sub_rules). 
+If configured, TBMQ will attempt to extract a list of topic patterns from these claims and apply them as the client's effective authorization rules.
 
 {% capture dynamic-filters-claim-type-warn %}
 
-Dynamic claims must contain an array of strings. Each string will be treated as a topic filter pattern and compiled as a regular expression.
+Dynamic claims must be definded as JSON array of strings. Each string will be treated as a topic filter pattern and compiled as a regular expression.
 
 {% endcapture %}
 {% include templates/info-banner.md content=dynamic-filters-claim-type-warn %}
@@ -206,22 +201,23 @@ A client connects with a JWT that includes these claims:
 
 ```json
 {
-  "pub": ["devices/.*/data"],
-  "sub": ["sensors/.*/cmd", "alerts/.*"]
+  "pub_rules": ["devices/.*/data"],
+  "sub_rules": ["sensors/.*/cmd", "alerts/.*"]
 }
 ```
 
 In this case:
 
- - The `pub` claim overrides the default publish rule and **restricts** access to `devices/.*/data`.
- - The `sub` claim **extends** the default subscribe rule by additionally allowing `alerts/.*`.
+ - The `pub_rules` claim overrides the default publish rule and **restricts** access to `devices/.*/data` only.
+ - The `sub_rules` claim **extends** the default subscribe rule by additionally allowing `alerts/.*`.
 
 This demonstrates how dynamic rules can be used to customize access per client while still providing reliable fallbacks when needed.
 
-## Enable and Save the Provider
+### Enable and save provider
 
 Once you've completed the configuration, make sure to enable the JWT authentication provider by toggling the "Enable provider"
-switch at the top of the provider configuration page. Then click the "apply changes" button to save your configuration.
+switch at the top of the provider configuration page.
+Then click the "Apply changes" button to save your configuration.
 
 {% include images-gallery.html imageCollection="enable-and-save-jwt-provider" %}
 
