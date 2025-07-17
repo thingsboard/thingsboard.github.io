@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap')
 
-$step1: 360px
-$step2: 671px
-$step3: 999px
+$step3: 768px
 $step4: 1279px
 $step5: 1439px
 $step6: 1919px
-$verticalStep1: 450px
 $modal-z-index: 13000
 $modal-background-color: rgba(0, 0, 0, 0.4)
 $modal-content-background-color: #fefefe
@@ -72,7 +69,6 @@ $dark-text-color: #212529
         opacity: 1
         transform: translateY(0)
         animation: fadeInUp 1s ease forwards
-    
 
 h2
     color: #212529
@@ -81,7 +77,6 @@ h2
     font-weight: 400
     line-height: 120%
   
-    
 #development-services
     .noToc
         position: relative
@@ -150,8 +145,6 @@ h2
             justify-content: center
             gap: 60px
             position: absolute
-            margin: 0 20px
-
             #hero-content
                 width: 100%
                 display: flex
@@ -254,7 +247,7 @@ h2
                     align-items: center
                     gap: 150px
                     animation-name: running
-                    animation-duration: 25s
+                    animation-duration: 15s
                     animation-iteration-count: infinite
                     animation-timing-function: linear
                     position: relative
@@ -333,6 +326,8 @@ h2
                                 overflow: hidden
                                 border-bottom: 1px solid #DEE2E6
                                 width: 90%
+                                .images
+                                    display: none
                                 .expansion-header
                                     padding: 10px
                                     @include expandable-header()
@@ -405,6 +400,7 @@ h2
                                         max-height: 1000px
                                 
                         .images
+                            display: block
                             width: 55%
                             .client-feedback-cards
                                 display: flex
@@ -486,7 +482,9 @@ h2
                     z-index: 0
                     .pattern-img
                         position: absolute
-                        right: -40px
+                        right: -100px
+                        top: 50px
+                        opacity: 0.5
                     .vision-info
                         display: flex
                         flex-direction: column
@@ -503,6 +501,7 @@ h2
                                 align-items: center
                                 flex-direction: column
                                 gap: 16px
+                                text-align: center
                                 .vision-text
                                     .name
                                         font-size: 24px
@@ -649,6 +648,7 @@ h2
                         margin-bottom: 56px
                         max-width: 648px
                         color: #343A40
+                        text-align: center
                     .cards
                         display: flex
                         flex-wrap: wrap
@@ -707,6 +707,7 @@ h2
                     position: relative
                     display: flex
                     justify-content: space-between
+                    align-items: center
                     padding: 76px 80px
                     border-radius: 12px
                     background: $section-background-accent-color
@@ -714,6 +715,8 @@ h2
                     .get-in-touch-title
                         color: $light-text-color
                         z-index: 2
+                        font-size: 48px
+                        width: 543px
                     .get-in-touch-btn
                         background-color: $light-text-color
                         color: #1565C0
@@ -722,6 +725,7 @@ h2
                         z-index: 2
                         font-size: 20px
                         font-weight: 600
+                        height: 64px
                     .get-in-touch-img
                         position: absolute
                         top: -50%
@@ -784,6 +788,7 @@ h2
                     background-color: transparent
                     padding-top: 60px
                     .industries-container
+                        width: 100%
                         display: flex
                         flex-direction: column
                         align-items: center
@@ -805,7 +810,8 @@ h2
                             .menu
                                 overflow-y: scroll
                                 max-height: 460px
-                                max-width: 632px
+                                max-width: 50%
+                                width: 50%
                                 padding: 0px 16px
                                 scrollbar-width: thin
                                 scrollbar-color: #ADB5BD transparent
@@ -821,6 +827,12 @@ h2
                                         cursor: pointer
                                     h3
                                         font-size: 20px
+                                    .menu-item-header
+                                        display: flex
+                                        align-items: center
+                                        justify-content: start
+                                        width: 100%
+                                    
                                 .menu-item
                                     &.active
                                         color: #2264BD
@@ -831,7 +843,7 @@ h2
                                 border-radius: 10px !important
 
                             .industries-card
-                                max-width: 680px
+                                max-width: 50%
                                 display: flex
                                 position: relative
                                 overflow: hidden
@@ -890,6 +902,10 @@ h2
                                     border-radius: 50%
                                     filter: blur(24px)
                                     z-index: 1
+
+                            .industries-card.inline
+                                color: #343A40
+                                display: none
 
                 .trusted-partner
                     @include content-container(120px)
@@ -1005,36 +1021,67 @@ h2
                         th, td
                             padding: 40px
                             text-align: left
-                            vertical-align: top
+                            vertical-align: middle
                             font-size: 16px
                             font-weight: 400
                             border-bottom: 1px solid #E5E7EB
                             color: #343A40
 
-                        thead
-                        th
+                        thead th
                             font-size: 24px
                             font-weight: 500
                             color: #2264BD
                             border-bottom: 1px solid #E5E7EB
                             text-align: center
                             padding: 24px 40px
-                            vertical-align: middle
 
-
+                        thead th:first-child
+                            width: 30%
+                        
                         thead th:not(:first-child)
+                            width: 35%
                             border-left: 1px solid #E5E7EB
 
                         tbody td:first-child
                             font-weight: 400
                             color: $dark-text-color
-                            width: 25%
+                            width: 30%
 
                         tbody td:not(:first-child)
+                            width: 35%
                             border-left: 1px solid #E5E7EB
 
                         tr:last-child td
                             border-bottom: none
+                    .fast-delivery-mobile
+                        width: 100%
+                        display: none
+                        flex-direction: column
+                        gap: 30px
+                        .fast-delivery-block
+                            width: 100%
+                            display: flex
+                            flex-direction: column
+                            text-align: left
+                            gap: 10px
+                            .fast-delivery-title
+                                font-weight: 400
+                                font-size: 20px
+                                line-height: 140%
+                                color: #212529
+                                margin: 0
+                            .fast-delivery-text
+                                font-weight: 400
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #343A40
+                            .fast-delivery-sub-title
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #2264BD
 
                 .client-feedback
                     width: 100%
@@ -1269,7 +1316,66 @@ h2
                             background: linear-gradient(45deg, #DCDFE3, transparent)
                         .bar:hover
                             background: #DCDFE3
-                    
+                .timeline-container-mobile
+                    width: 100%
+                    display: none
+                    flex-direction: column
+                    gap: 6px
+                    .timeline-row, .timeline-group
+                        display: flex
+                        align-items: stretch
+                        gap: 12px
+                        .week-label
+                            width: 40px
+                            font-size: 14px
+                            font-weight: bold
+                            color: #212529
+                            text-align: center
+                            border-right: 1px solid #ddd
+                            padding-top: 10px
+                            flex-shrink: 0
+            
+                        .timeline-bar
+                            background: #e0e0e0
+                            border-radius: 8px
+                            padding: 12px 16px
+                            flex-grow: 1
+                            font-size: 14px
+
+                            .bar-title
+                                font-weight: 600
+                                margin-bottom: 4px
+                                color: #212529
+                            
+                            .bar-sub
+                                font-size: 13px
+                                color: #212529
+
+                            .multi
+                                display: flex
+                                flex-direction: column
+                                justify-content: center                
+            
+                        .week-label-stack
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            width: 40px
+                            border-right: 1px solid #ddd
+                            flex-shrink: 0
+            
+                            .week-label
+                                border: none
+                                padding: 8px 0
+                            
+                        .light 
+                            background-color: #DCDFE3
+                        .blue-light
+                            background-color: #D9EBFF
+                        .blue-mid
+                            background-color: #A1CDFF
+                        .blue-deep
+                            background-color: #3393FF
             
             .engagement-models
                 @include content-container(120px)
@@ -1324,8 +1430,7 @@ h2
                                             width: 24px
                                             height: 24px
 
-                            thead
-                            th
+                            thead th
                                 font-size: 24px
                                 font-weight: 500
                                 color: #212529
@@ -1341,7 +1446,11 @@ h2
                                     left: 50%
                                     transform: translate(-50%)
                                     
+                            thead th:first-child
+                                width: 30%
+                            
                             thead th:not(:first-child)
+                                width: 35%
                                 border-left: 1px solid #E5E7EB
 
                             tbody td:first-child
@@ -1349,12 +1458,50 @@ h2
                                 color: $dark-text-color
                                 width: 20% 
 
+                            tbody td:first-child
+                                width: 30%
+
                             tbody td:not(:first-child)
+                                width: 35%
                                 border-left: 1px solid #E5E7EB
 
                             tr:last-child td
                                 border-bottom: none
-            
+                    .engagement-model-mobile
+                        width: 100%
+                        display: none
+                        flex-direction: column
+                        gap: 30px
+                        text-align: left
+                        .engagement-mobile-block
+                            width: 100%
+                            display: flex
+                            flex-direction: column
+                            text-align: left
+                            gap: 10px
+                            img
+                                width: 44px
+                                height: 44px
+                                box-shadow: 0px 2px 15px 3px #044B9A33
+                            .engagement-mobile-title
+                                font-weight: 400
+                                font-size: 20px
+                                line-height: 140%
+                                color: #212529
+                                margin: 0
+                            .engagement-mobile-text
+                                font-weight: 400
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #343A40
+                            .engagement-mobile-sub-title
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #2264BD
+
             .clients-reviews
                 @include content-container(120px)
                 .clients-reviews-title
@@ -1622,7 +1769,7 @@ h2
                                             padding: 16px 18px
 
                                         .cdu-text-area
-                                            height: 170px
+                                            height: 80px
 
                                     .label-select
                                         select 
@@ -1653,13 +1800,13 @@ h2
                             .questionnaire-section
                                 display: flex
                                 flex-direction: column
-                                gap: 32px
+                                gap: 16px
                                 fieldset
                                     border: none
                                     padding: 0
 
                                 legend
-                                    font-weight: bold
+                                    font-weight: 500
                                     margin-bottom: 10px
                                     display: block
 
@@ -1843,24 +1990,41 @@ h2
         width: 100%
         height: 100%
         background-color: $modal-background-color
-
         .modal-content 
+            display: flex
+            flex-direction: column
             animation-name: animatetop
             animation-duration: 0.4s
             background-color: $modal-content-background-color
-            padding: 20px 20px 30px
             border: $modal-content-border
             width: 950px
+            max-width: 90%
+            max-height: 90%
             border-radius: 24px
+            overflow: hidden
+            form
+                height: 100%
+                display: flex
+                flex-direction: column
+                flex: 1
+                overflow: auto
+            
             .title-container
+                position: sticky
+                top: 0
+                background: $modal-content-background-color
+                z-index: 1
                 display: flex
                 justify-content: space-between
                 align-items: center
-                padding: 0px 45px
+                padding: 20px 45px
+                border-bottom: 1px solid #ddd
 
             .sub-content
-                overflow: auto
-                height: 95%
+                flex: 1
+                overflow-y: auto
+                min-height: 0
+                padding: 20px 40px
                 
             .close
                 width: 28px
@@ -1868,7 +2032,6 @@ h2
                 cursor: pointer
 
             .form-section
-                padding: 30px 40px 0px 40px
                 display: flex
                 justify-content: space-around
                 .form-element
@@ -1904,7 +2067,7 @@ h2
                             padding: 12px 18px
 
                         .cdu-text-area
-                            height: 121px
+                            height: 80px
 
                     .label-select
                         select 
@@ -1934,14 +2097,13 @@ h2
             .questionnaire-section
                 display: flex
                 flex-direction: column
-                gap: 32px
-                padding: 20px 40px
+                gap: 16px
                 fieldset
                     border: none
                     padding: 0
 
                 legend
-                    font-weight: bold
+                    font-weight: 500
                     margin-bottom: 10px
                     display: block
 
@@ -1969,9 +2131,13 @@ h2
                         width: 100%
 
             .submit-button-container
-                display: flex
-                justify-content: center
+                position: sticky
+                bottom: 0
+                background: $modal-content-background-color
                 padding: 20px 40px
+                z-index: 1
+                border-top: 1px solid #ddd
+
                 .cdu-button
                     padding: 20px 40px
                     border-radius: 6px
@@ -1979,13 +2145,12 @@ h2
                     background-color: $button-background-color
                     width: 100%
 
-    @media screen and (max-width: $step6) //1919px
+    @media screen and (max-width: $step6) //1439px-1919px
         .development-services
             .development-services-container
-                width: 1216px
-        .statistics
+                width: 1376px
     
-    @media screen and (max-width: $step5) //1439px
+    @media screen and (max-width: $step5) //1279px-1439px
         #first-screen
             .hero-container
                 #hero-content
@@ -2007,8 +2172,12 @@ h2
             align-items: center
             .timeline
                 width: 1000px
+
+        .development-services
+            .development-services-container
+                width: 1216px
     
-    @media screen and (max-width: $step4) //1279px
+    @media screen and (max-width: $step4) //768px-1279px
         #first-screen
             .hero-container
                 #hero-content
@@ -2024,8 +2193,20 @@ h2
                 min-width: 704px
                 .statistics
                     .statistics-wrapper
+                        flex-direction: row-reverse
                         justify-content: center
-                        gap: 24px
+                        gap: 0
+                        padding: 10px
+                        .statistic-item
+                            flex: 1 1 45%
+                            max-width: 200px
+                            gap: 0
+                            padding: 5px
+                            .statistic-item-num
+                                font-size: 44px
+                            .statistic-item-text
+                                font-size: 16px
+                                text-align: center
                 .custom-solutions
                     .custom-solutions-wrapper
                         .custom-solution-container
@@ -2033,6 +2214,30 @@ h2
                             gap: 20px
                             .cards
                                 width: 100%
+                                .expansion-panel
+                                    width: 100%
+                                    &.expanded
+                                        .expansion-content
+                                            display: flex
+                                            flex-direction: column
+                                            gap: 10px
+                                            max-height: 100%
+
+                                        .images
+                                            display: block
+                                            width: 100%
+                                            .client-feedback-cards
+                                                width: 100%
+                                                .project-screen-container 
+                                                    a
+                                                        text-align: center
+                                                    .project-screen img
+                                                        height: auto
+                                                        width: 100%
+
+                            .images
+                                display: none
+
                 .vision-section
                     .vision-wrapper
                         padding: 40px
@@ -2060,64 +2265,607 @@ h2
                                 right: unset
                                 left: 16px
                 .services
+                    .services-title
+                        text-align: center
                     .services-container
                         .cards
                             .expansion-card
                                 width: calc(50% - 16px)
+                            .expansion-card.expanded
+                                max-height: fit-content
 
+                .multicolored
+                    .multicolored-container
+                        left: -4%
+                    .industries
+                        .industries-container
+                            .industries-title
+                                text-align: center
+                            .content-container
+                                width: 100%
+                                max-width: 100%
+                                max-height: 100%
+                                .menu
+                                    max-height: 100%
+                                    width: 100%
+                                    max-width: 100%
+                                    padding: 0
+                                    overflow-y: hidden
+                                    .menu-item
+                                        flex-direction: column
+                                        .menu-item-header
+                                            padding: 0 16px
+                                .industries-card
+                                    max-width: 95%
+                                .industries-card.global
+                                    display: none
+                                .industries-card.inline
+                                    display: flex
+
+                    .trusted-partner
+                        .trusted-partner-container
+                            padding: 40px
+
+                    .fast-delivery table td
+                        padding: 20px
+
+                    .client-feedback 
+                        .client-feedback-container
+                            padding: 0
+
+                    .more-feature
+                        .cards
+                            flex-wrap: wrap
+                            width: 100%
+                            .card
+                                flex: none
+                                width: 48%
                 
-    @media screen and (max-width: $step3) //768px
+                .engagement-models 
+                    .engagement-model-container 
+                        .container 
+                            table 
+                                thead th
+                                    padding: 20px
+                                    img
+                                        top: -50%
+
+                                td
+                                    padding: 20px
+
+                .clients-reviews 
+                    .clients-reviews-cards 
+                        .client-info
+                            width: 100%
+                            max-width: 100%
+                            min-height: auto
+
+                .questions-section 
+                    .questions-section-cards 
+                        .questions-section-card 
+                            max-height: fit-content
+                            .questions-section-header
+                                .questions-section-title
+                                    gap: 20px
+                                    .questions-section-num
+                                        width: auto
+                            .questions-section-content
+                                display: none
+                                padding: 10px
+                        .questions-section-card.expanded
+                            .questions-section-content
+                                display: flex
+                                padding: 10px
+                                                        
+                .get-in-touch-section
+                    .get-in-touch-container
+                        flex-direction: column
+                        align-items: center
+                        gap: 48px
+                        .get-in-touch-title
+                            font-size: 48px
+                            line-height: 57.6px
+                            text-align: center
+                        img 
+                            width: 100%
+
+                .contact-us-section
+                    .contact-us-section-content
+                        .contact-us-container
+                            flex-direction: column
+                            .contact-us-descr
+                                width: 100%
+                                gap: 25px
+                            .contact-us-form
+                                width: 100%
+                            .contact-us-pattern
+                                display: none
+
+                .project-timeline
+                    .timeline
+                        display: none
+                    .project-timeline-container 
+                        .project-timeline-title
+                            font-size: 40px
+                            text-align: center
+
+                    .timeline-container-mobile
+                        display: flex                    
+
+    @media screen and (max-width: $step3) //320px-768px
         #first-screen
+            img 
+                height: 600px
             .hero-container
+                padding: 10px
                 #hero-content
                     .cdu-title
-                        font-size: 64px
-        .statistics
-            .statistics-wrapper
-                flex-direction: row
-                flex-wrap: wrap
-                justify-content: center
-                .statistic-item
-                    flex: 1 1 45%
-                    max-width: 300px
-                    .statistic-item-num
-                        font-size: 44px
-                    .statistic-item-text
+                        font-size: 40px
+                    .cdu-sub-title
+                        width: 100%
                         font-size: 16px
-                        text-align: center
-        .development-services 
+                        line-height: 24px
+                .request-concultation-container
+                    width: 100%
+                    padding: 10px
+                .request-concultation
+                    height: 64px
+                    padding: 0
+                    width: 100%
+        .development-services
             .development-services-container
+                padding: 0
+                min-width: 304px
+                .statistics
+                    margin-bottom: 50px
+                    .statistics-wrapper
+                        justify-content: center
+                        gap: 0
+                        padding: 10px
+                        flex-wrap: wrap
+                        .statistic-item
+                            flex: 1 1 45%
+                            width: 50%
+                            .statistic-item-num
+                                font-size: 28px
+                            .statistic-item-text
+                                font-size: 14px
+                                text-align: center
+                                padding: 0
                 .custom-solutions
+                    padding: 10px
+                    margin-bottom: 50px
                     .custom-solutions-wrapper
+                        h2
+                            font-size: 24px
+                            line-height: 140%
                         .custom-solution-container
                             flex-direction: column
                             gap: 20px
                             .cards
                                 width: 100%
+                                .expansion-panel
+                                    width: 100%
+                                    .expansion-content
+                                        .expansion-buttons
+                                            font-size: 14px
+                                    .header-icon
+                                        display: none
+                            .images
+                                width: 100%
+                                .client-feedback-cards
+                                    width: 100%
+                                    .client-info
+                                        .client-avatar-img
+                                            display: none
+                                    .project-screen-container
+                                        .project-screen
+                                            display: none
+                .vision-section
+                    margin-bottom: 30px
+                    .vision-wrapper
+                        padding: 20px
+                        .vision-info
+                            gap: 28px
+                            .vision-header
+                                width: 100%
+                                flex-direction: column-reverse
+                                gap: 40px
+                                .vision-title
+                                    flex-direction: row
+                                    justify-content: start
+                                    width: 100%
+                                    margin-bottom: 0
+                                    .vision-img
+                                        width: 50px
+                                        height: 50px
+                                    .vision-text
+                                        text-align: left
+                                        .name
+                                            font-size: 16px
+                                        .title
+                                            font-size: 14px
+                            .vision-footer
+                                flex-direction: column
+                                gap: 28px
+                                .vision-footer-text
+                                    text-align: center
+                                    width: 90%
+                                    font-size: 28px
+                                .vision-footer-btn
+                                    height: 64px
+                                    width: 100%
+                                    padding: 0
+                .case-studies
+                    padding: 10px
+                    margin-bottom: 50px
+                    .section-title
+                        font-size: 24px
+                        line-height: 140%
+                        margin-bottom: 0
+                    .cards-container
+                        .card
+                            max-width: 100%
+                            .card-content
+                                .card-stats
+                                    padding: 0
+                                    flex-direction: column
+                            .card-tag
+                                top: 165px
+                                right: unset
+                                left: 16px
+                .services
+                    padding: 10px
+                    margin-bottom: 50px
+                    .services-container
+                        .services-title
+                            font-size: 24px
+                            line-height: 140%
+                        .cards
+                            .expansion-card
+                                width: 100%
+                                .expansion-header
+                                    &::after
+                                        position: sticky
+                                        vertical-align: middle
+                                    .expansion-title
+                                        .header-icon
+                                            display: none
+                                        h3
+                                            font-size: 16px
+                                            line-height: 24px
+                            .expansion-card.expanded
+                                max-height: fit-content
 
-    @media screen and (max-width: $step2)
-        .statistics
-            .statistics-wrapper
-                flex-direction: column
-                align-items: center
-                padding: 24px
-                .statistic-item
-                    width: 100%
-                    max-width: 320px
-                    .statistic-item-num
-                        font-size: 36px
-                    .statistic-item-text
-                        font-size: 15px
-    @madia screen and (max-width: $step1)
-        .statistics
-            .statistics-wrapper
-                padding: 20px
-                .statistic-item
-                    .statistic-item-num
-                        font-size: 30px
-                        line-height: 38px
-                    .statistic-item-text
-                        font-size: 14px
+                .multicolored
+                    .multicolored-container
+                        left: 0
+                    .industries
+                        margin-bottom: 50px
+                        .industries-container
+                            padding: 10px
+                            .industries-title
+                                font-size: 24px
+                                line-height: 140%
+                            .industries-subtitle
+                                width: 100%
+                                font-size: 14px
+                                line-height: 21px
+                            .content-container
+                                width: 100%
+                                max-width: 100%
+                                max-height: 100%
+                                .menu
+                                    max-height: 100%
+                                    width: 100%
+                                    max-width: 100%
+                                    padding: 0
+                                    overflow-y: hidden
+                                    .menu-item
+                                        flex-direction: column
+                                        .menu-item-header
+                                            padding: 0 16px
+                                            font-size: 16px
+                                            gap: 10px
+                                .industries-card
+                                    max-width: 95%
+                                    .card-container
+                                        .card-img
+                                            display: none
+                                        h3
+                                            font-size: 20px
+                                .industries-card.global
+                                    display: none
+                                .industries-card.inline
+                                    display: flex
+                                    padding: 15px
+                                    font-size: 14px
+                                    line-height: 21px
+
+                    .trusted-partner
+                        margin-bottom: 50px
+                        .trusted-partner-title
+                            font-size: 24px
+                            line-height: 140%
+                        .trusted-partner-container
+                            padding: 20px
+                            .trusted-partner-header
+                                .trusted-tips
+                                    .trusted-tip                                            
+                                        font-size: 14px
+                                        line-height: 21px
+                                        &::before
+                                            width: 24px
+                                            height: 24px
+                                            font-size: 12px
+                                .trusted-partner-header-descr
+                                    p
+                                        font-size: 16px
+                                        line-height: 24px
+                            .trusted-partner-footer
+                                flex-direction: column
+                                gap: 20px
+                                padding-top: 16px
+                                .trusted-partner-avatar
+                                    flex-direction: row
+                                    .trusted-partner-text
+                                        text-align: left
+                                        .name
+                                            font-size: 16px
+                                            line-height: 24px
+                                        .title
+                                            font-size: 14px
+                                            line-height: 21px
+                                    .avatar
+                                        width: 50px
+                                        height: 50px
+
+                    .fast-delivery
+                        padding: 10px
+                        opacity: 1
+                        margin-bottom: 50px
+                        .fast-delivery-title
+                            font-size: 24px
+                            line-height: 140%
+                            padding: 0
+                            width: 100%
+                        .fast-delivery-mobile
+                            display: flex
+                        table
+                            display: none
+
+                    .client-feedback
+                        height: auto
+                        padding: 10px
+                        margin-bottom: 50px
+                        .client-feedback-container
+                            padding: 0
+                            .client-feedback-text
+                                font-size: 14px
+                                line-height: 21px
+                            .client-container
+                                .client-avatar
+                                    align-items: center
+                                    .client-avatar-img
+                                        width: 45px
+                                        height: 45px
+                                    .client-avatar-descr
+                                        .name
+                                            font-size: 16px
+                                            line-height: 24px
+                                        .title
+                                            font-size: 14px
+                                            line-height: 21px
+                                .client-logo
+                                    display: none
+                        .pattern-img
+                            display: none
+
+                    .more-feature
+                        padding: 10px
+                        margin-bottom: 50px
+                        .more-feature-title
+                            font-size: 24px
+                            line-height: 140%
+                        .cards
+                            flex-wrap: wrap
+                            width: 100%
+                            .card
+                                width: 100%
+                                padding: 15px
+                                height: auto
+                                display: flex
+                                flex-direction: column
+                                gap: 10px
+                                .card-title
+                                    font-size: 20px
+                                    line-height: 140%
+                                    margin: 0
+                                    padding: 0
+                                .card-descr
+                                    font-size: 14px
+                                    line-height: 21px
+                                    margin: 0
+                                    padding: 0
+                
+                    .get-in-touch-section
+                        .get-in-touch-container
+                            .get-in-touch-title
+                                width: 100%
+
+                .engagement-models
+                    padding: 10px
+                    margin-bottom: 50px
+                    .engagement-model-container 
+                        .engagement-model-title
+                            text-align: center
+                            font-size: 24px
+                            line-height: 140%
+                        .engagement-model-descr
+                            font-size: 14px
+                            line-height: 21px
+                        .container
+                            padding: 0
+                            table
+                                display: none
+                        .engagement-model-mobile
+                            display: flex
+
+                .clients-reviews
+                    padding: 10px
+                    display: flex
+                    flex-direction: column
+                    gap: 30px
+                    margin-bottom: 50px
+                    .clients-reviews-title
+                        font-size: 24px
+                        line-height: 140%
+                    .clients-reviews-cards 
+                        .client-info
+                            width: 100%
+                            max-width: 100%
+                            min-height: auto
+                            margin-top: 0
+                            padding: 16px
+                            .client-avatar-img
+                                display: none
+                            .client-avatar-container
+                                margin-bottom: 0
+                                border-bottom: none
+                                .client-logo-img 
+                                    img
+                                        display: none
+                            .client-feedback
+                                .info-btns
+                                    flex-direction: column
+                                    .info-btn-label
+                                        width: max-content
+                                        font-size: 14px
+                                        line-height: 21px
+                                    .info-btn-tag
+                                        width: max-content
+                                        font-size: 14px
+                                        line-height: 21px
+                                p
+                                    font-size: 14px
+                                    line-height: 21px
+
+                .questions-section
+                    flex-direction: column
+                    display: flex
+                    gap: 30px
+                    padding: 10px
+                    margin-bottom: 50px
+                    .question-section-title
+                        font-size: 24px
+                        line-height: 140%
+                        margin-bottom: 0
+                    .questions-section-cards 
+                        .questions-section-card 
+                            padding: 15px
+                            .questions-section-header
+                                display: flex
+                                justify-content: space-between
+                                align-items: center
+                                &::after
+                                    position: sticky
+                                    vertical-align: middle
+                                .questions-section-title
+                                    gap: 20px
+                                    .questions-section-num
+                                        display: none
+                                    h3
+                                        font-size: 16px
+                                        line-height: 24px
+                                        display: flex
+                                        justify-content: space-between
+                                        align-items: center
+                                        position: relative
+                                        cursor: pointer
+                            .questions-section-content
+                                display: none
+                                padding: 10px
+                        .questions-section-card.expanded
+                            .questions-section-content
+                                display: flex
+                                padding: 10px
+                                                        
+                .get-in-touch-section
+                    margin-bottom: 50px
+                    .get-in-touch-container
+                        padding: 20px
+                        gap: 24px
+                        .get-in-touch-title
+                            font-size: 28px
+                            line-height: 135%
+                            text-align: center
+                            width: 100%
+                        img 
+                            width: 100%
+                        .get-in-touch-btn
+                            width: 100%
+                            height: 64px
+                            padding: 0
+
+                .contact-us-section
+                    margin-bottom: 50px
+                    .contact-us-section-content
+                        .contact-us-container
+                            .contact-us-descr
+                                padding: 10px
+                                .contact-us-descr-container
+                                    h2
+                                        font-size: 24px
+                                        line-height: 140%
+                                    h5
+                                        font-size: 14px
+                                        line-height: 21px
+                                .client-avatar-container
+                                    display: none
+                            .contact-us-form
+                                padding: 15px
+                                .form-section
+                                    flex-direction: column
+                                    .form-element
+                                        width: 100%
+                                    .next
+                                        width: 100%
+                                .questionnaire-section
+                                    display: none
+                            .contact-us-pattern
+                                display: none
+
+                .project-timeline
+                    margin-bottom: 50px
+                    padding-top: 0
+                    padding: 10px
+                    .timeline
+                        display: none
+                    .project-timeline-container 
+                        width: 100%
+                        .project-timeline-title
+                            width: 100%
+                            font-size: 24px
+                            line-height: 140%
+                        .project-timeline-descr
+                            font-size: 14px
+                            line-height: 21px
+                    .timeline-container-mobile
+                        display: flex
+        .modal
+            .modal-content
+                .title-container
+                    padding: 20px
+                    h2
+                        font-size: 18px
+                .sub-content
+                    padding: 20px
+                .form-section
+                    flex-direction: column
+                    .form-element
+                        width: 100%
+                .questionnaire-section
+                    display: none
 
 @keyframes slideup-in
     from
@@ -2150,14 +2898,6 @@ h2
     to
         opacity: 1
         transform: translateY(-2%) scale(1)
-
-// @keyframes backgroundFadeout
-//     from
-//         opacity: 0
-//         transform: translateY(-11%)
-//     to
-//         opacity: 1
-//         transform: translateY(-11%)
 
 @keyframes backgroundFadeoutMobile
     from
