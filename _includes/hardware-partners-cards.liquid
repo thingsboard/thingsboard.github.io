@@ -21,7 +21,7 @@
                 </div>
             </div>
             {% assign linksCount = card.links | size %}
-            <div class="links{% if linksCount >= 4 %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
+            <div class="links{% if linksCount >= 4 or card.carousel == true %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
                 {% for link in card.links %}
                     <a href="{{ link[1].href }}">{{ link[1].label }}</a>
                 {% endfor %}

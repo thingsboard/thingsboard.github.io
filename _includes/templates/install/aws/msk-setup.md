@@ -1,21 +1,27 @@
-You'll need to set up Kafka using Amazon MSK. ThingsBoard will use it to communicate between microservices, store unprocessed messages, etc.
-Kafka is useful to survive peak loads and hardware failures to make sure that all messages from devices will be processed.
+ThingsBoard uses **Kafka as an external queue** for exchanging data between microservices, storing unprocessed messages, and more. 
+Kafka is useful for **handling peak loads and failures**, ensuring that all messages from devices are processed reliably. 
+By default, the deployment uses **local Kafka**, but ThingsBoard is also compatible with **managed services such as Amazon MSK**.
 
-Please open AWS console and navigate to MSK, press `Create cluster` button and choose `Custom create` mode.
+Here are the steps to create a **basic Kafka MSK cluster**:
 
-* Make sure your Apache Kafka version is 3.7.x;
-* Make sure your MSK instance is accessible from the ThingsBoard cluster.
-  The easiest way to achieve this is to deploy the MSK instance in the same VPC.
-  We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
-* Use m5.large or similar instance types;
-* Choose default security settings. Make sure 'Plaintext' mode is enabled;
-* Use default 'Monitoring' settings or enable 'Enhenced topic level monitoring'.
+- Open the **AWS console**, go to [MSK](https://console.aws.amazon.com/msk){:target="_blank"} and click the "**Create Cluster**" button.
+- Select "**Custom creation**" method.
+- Specify a **name for your cluster** and select "**Cluster type**" - "**Provisioned**", which will allow you to specify the **number of brokers and storage volume**.
+- Select **Apache Kafka version 3.8.x** to use **Express brokers** or **version 4.0.x** for **Standard brokers**.
+- Choose **kafka.m7.large** or similar instance types.
+- Select the **storage size** for the broker (with the default ThingsBoard partition settings, Kafka can use up to **100 GB**).
+- Make sure your **MSK instance is accessible** from the **ThingsBoard cluster**. The easiest way to achieve this is by **deploying the MSK instance in the same VPC**.
+  We also recommend using **private subnets**, as this will make it virtually impossible to accidentally expose the instance to the **Internet**.
+- Use the **default security settings**. Make sure that "**Plaintext" mode** is enabled.
+- Use either the "**Basic monitoring**" or "**Enhanced topic-level monitoring**" settings.
 
-{% include images-gallery.html imageCollection="mskSetup"%}
+{% include images-gallery.html imageCollection="mskSetup" %}
 
-Once the MSK cluster switch to the 'Active' state, navigate to 'Details' and click 'View client information'.
-Copy bootstrap server information in plaintext, it`s **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
+Once the <b>MSK cluster</b> switches to the "<b>Active</b>" state, navigate to "<b>Details</b>" and click "<b>View client information</b>".   
+Copy the <b>bootstrap server information in plaintext</b> – this is your <b>Kafka endpoint</b>.
 
-{% include images-gallery.html imageCollection="mskConnectionParams"%}
+{% include images-gallery.html imageCollection="mskConnectionParams" %}
 
-Edit “tb-kafka-configmap.yml” and replace **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
+Edit the `tb-kafka.yml` file, find the **StatefulSet section** named `tb-kafka`, and set the `spec.replicas` value to **0** to disable the default local **Kafka deployment**.
+
+Edit `tb-kafka-configmap.yml` and replace **TB_KAFKA_SERVERS** value with **MSK endpoint**.

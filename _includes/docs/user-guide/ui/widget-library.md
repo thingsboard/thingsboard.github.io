@@ -148,6 +148,12 @@ The Analog Gauges widgets bundle is useful for visualization of temperature, hum
 
 {% include images-gallery.html imageCollection="wl-analog-gauges-bundle" %}
 
+### Buttons
+
+The Buttons bundle allows you to organize navigation between dashboard states, send RPC commands to devices, and update device attributes or time-series data.
+
+{% include images-gallery.html imageCollection="wl-buttons-bundle" %}
+
 ### Cards
 
 The Cards bundle is useful for visualization of time series data or attributes in table or card widgets.
@@ -221,7 +227,8 @@ The Gateway widgets bundle is useful for managing extensions.
 
 ### General high-performance SCADA symbols
 
-Bundle with high-performance SCADA symbols.
+This bundle contains high-performance SCADA widgets for broad industrial monitoring and control. It covers elements ranging from panels and gauges to mechanical assets and site facilities. 
+Use it to assemble clean, high-contrast HMI screens that convey status at a glance across mixed-equipment dashboards.
 
 {% include images-gallery.html imageCollection="wl-scada-hp-general-symbols" %}
 
@@ -231,11 +238,27 @@ The GPIO widgets bundle is useful for visualization and controlling GPIO state f
 
 {% include images-gallery.html imageCollection="wl-gpio" %}
 
+### High-performance SCADA energy system
+
+This bundle contains high-performance SCADA symbols that cover the complete electrical flow — from renewable generation (solar, wind) and backup generators through storage, conversion, protection, metering, and low/high-voltage distribution to residential and industrial consumers. 
+It is ideal for building interactive dashboards that visualize production, quality, and consumption across modern energy infrastructures.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-energy-system" %}
+
 ### High-performance SCADA fluid system
 
-Bundle with high-performance SCADA symbols for fluid system.
+This high-performance symbol bundle is focused on fluid-handling processes in oil-and-gas, chemical, and water-treatment domains. 
+It spans drilling and well-control components, pumps and pipelines, separators, heat-exchange units, turbines, and related equipment—ideal for flow diagrams, production dashboards, and process-safety views.
 
 {% include images-gallery.html imageCollection="wl-scada-hp-fluid-system" %}
+
+### High-performance SCADA oil & gas
+
+The bundle of high-performance SCADA symbols designed for upstream and early-stage processing workflows in the oil and gas sector.
+It covers drilling and well-control equipment, artificial lift and drive units, surface gathering lines, separator trains, heat exchange, and power generation assets — everything needed to visualize the complete flow from wellhead to initial treatment in a clean High-performance SCADA style.
+Perfect for real-time dashboards that track drilling progress, production efficiency, and safety barriers across both onshore and offshore installations.
+
+{% include images-gallery.html imageCollection="wl-scada-hp-fluid-oil-and-gas" %}
 
 ### Home page widgets
 
@@ -254,6 +277,12 @@ The HTML widgets bundle is useful for injecting custom HTML code. Or for display
 The Indoor Environment widget bundle is effective in visualizing data related to indoor environments.
 
 {% include images-gallery.html imageCollection="wl-indoor-environment-bundle" %}
+
+### Industrial widgets
+
+The Industrial widgets bundle is useful for displaying industrial telemetry data.
+
+{% include images-gallery.html imageCollection="wl-industrial-bundle" %}
 
 ### Input widgets
 
@@ -291,7 +320,7 @@ Use for uploading SVG symbols to your SCADA dashboard.
 
 {% include images-gallery.html imageCollection="wl-scada-symbols-bundle" %}
 
-### Scheduling widgets
+### Scheduling
 
 {% capture difference %}
 **Available only in PE and PaaS.**
@@ -308,7 +337,7 @@ The Status indicators widgets bundle includes widgets for visualizing battery le
 
 {% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
 
-### Tables Widgets
+### Tables
 
 The Tables widgets bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
 Additionally, this widget bundle showcases Persistent RPC requests, which are based on entity alias. 
@@ -318,7 +347,8 @@ It can also be filtered optionally and supports pagination for enhanced usabilit
 
 ### Traditional SCADA fluid system
 
-Bundle with high-performance SCADA symbols for fluid system.
+This bundle of SCADA symbols in a traditional design style covers the essentials for many industrial diagrams. 
+It packs straight and elbow pipes, tees, drains, flow & level meters, pumps, filters, valves, tanks of various shapes, pools, and other core components - everything you need to assemble piping, hydraulic, and other process-control schematics with ease.
 
 {% include images-gallery.html imageCollection="wl-scada-traditional-fluid-system" %}
 

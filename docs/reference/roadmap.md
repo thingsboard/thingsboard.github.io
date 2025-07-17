@@ -9,12 +9,10 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v4.1
+### v4.2
 
-* Support for automatic unit conversion between measurement systems;
 * Ability to disable tenants;
 * Partitioning of Attributes and Time Series Data into different PostgreSQL database instances to improve scalability;
-* Valkey and Cassandra 5.0 support;
 
 See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).
 

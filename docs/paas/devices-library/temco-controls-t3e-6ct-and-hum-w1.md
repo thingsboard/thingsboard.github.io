@@ -12,5 +12,5 @@ docsPrefix: paas
 * TOC
 {:toc}
 
-{% include get-hosts-name.html %}
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/temco-controls-t3e-6ct-and-hum-w1.md %}

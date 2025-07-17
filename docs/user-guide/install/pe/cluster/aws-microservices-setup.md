@@ -45,7 +45,7 @@ mskSetup:
         title: 'Choose default security settings. Make sure "Plaintext" mode is enabled.'
     4:
         image: /images/install/cloud/aws/msk-5.png
-        title: 'Use default "Monitoring" settings or enable "Enhenced topic level monitoring".'
+        title: 'Use either the "<b>Basic monitoring</b>" or "<b>Enhanced topic-level monitoring</b>" settings.'
 
 mskConnectionParams:
     0:
@@ -57,20 +57,19 @@ mskConnectionParams:
 
 redisSetup:
     0:
-        image: /images/install/cloud/aws/redis-single-1.png
-        title: 'Specify Redis Engine version 7.x and node type with at least 1 GB of RAM.'
+        image: /images/install/cloud/aws/valkey-1.png
+        title: 'Specify <b>Valkey Engine version 8.x</b> and node type with at least 1 GB of RAM.'
     1:
-        image: /images/install/cloud/aws/redis-single-2.png
-        title: 'Make sure your Redis cluster is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the Redis cluster in the same VPC. We also recommend to use private subnets. Use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
+        image: /images/install/cloud/aws/valkey-3.png
+        title: 'Make sure your <b>Valkey cluster</b> is accessible from the <b>ThingsBoard cluster</b>. The easiest way to achieve this is by <b>deploying the Valkey cluster in the same VPC</b>. We also recommend using <b>private subnets</b>. Use your <b>group ID</b>.'
     2:
-        image: /images/install/cloud/aws/redis-single-3.png
-        title: 'Disable automatic backups.'
+        image: /images/install/cloud/aws/valkey-2.png
+        title: 'Disable the "<b>Enable automatic backups</b>" option.'
 
 redisEndpointUrl:
     0:
-        image: /images/install/cloud/aws/redis-endpoint-url.png
-        title: 'Once the Redis cluster switch to the "Available" state, navigate to "Details" and copy "Primary Endpoint" without ":6379" port sufix. We will refer to it later in this guide using **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.'
-
+        image: /images/install/cloud/aws/valkey-4.png
+        title: 'Once the <b>Valkey cluster</b> switches to the "<b>Available" state</b>, navigate to the "<b>Details</b>" section and copy the "<b>Endpoint</b>" field <b>without the ":6379" port suffix</b> – this is the <b>Valkey endpoint</b> for ThingsBoard.'
 
 ---
 

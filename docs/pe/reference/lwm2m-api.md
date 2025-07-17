@@ -50,10 +50,15 @@ configure-mapping:
         title: 'For the Firmware Update object (#5_1.1), check the "Telemetry" and/or "Observe" boxes for resource #3 (State) and resource #5 (Update Result) so that the server can track these values, receive updates, and store them as telemetry in ThingsBoard.'
     3:
         image: /images/lwm2m/configure-mapping-4-pe.png
-        title: 'For the Location object (#6_1.0), check the "Attribute" box for resource #0 (Latitude) and resource #1 (Longitude) so that the server can track these values, receive updates, and store them as attributes in ThingsBoard. Then, save changes.'
+        title: 'For the Location object (#6_1.0), check the "Attribute" box for resource #0 (Latitude) and resource #1 (Longitude) so that the server can track these values, receive updates, and store them as attributes in ThingsBoard.'
     4:
         image: /images/lwm2m/configure-mapping-5-pe.png
-        title: ''
+        title: 'By default, the observe strategy is set to "Single". You can switch to "Composite all" or "Composite by object" to reduce traffic or to group resources more efficiently. Then, save changes.'
+
+configure-mapping-observe-strategy:
+    0:
+        image: /images/lwm2m/configure-mapping-observe-strategy-1-pe.png
+        title: 'ThingsBoard supports multiple observe strategies that define how LwM2M resources are grouped and monitored.'
 
 device-credentials:
     0:
@@ -90,21 +95,31 @@ change-attribute-key-name:
         image: /images/lwm2m/change-key-name-2-pe.png
         title: 'On the "LWM2M Model" tab select the target object and expand the "Attributes" list. Tick the "Attribute" checkbox on the desired attribute and input the custom name for the key. Then, save changes.'
 
-ota-firmware-update-strategy:
+firmware-update-strategy-1:
     0:
-        image: /images/lwm2m/ota-firmware-update-strategy-1-pe.png
-        title: 'Open the devices transport configuration settings.'
+        image: /images/lwm2m/update-strategy-1-pe.png
+        title: 'Open the devices transport configuration settings. Navigate to the "Other settings" of the "Transport configuration" tab, and enter edit mode.'
     1:
-        image: /images/lwm2m/ota-firmware-update-strategy-2-pe.png
-        title: 'Select the firmware update strategy, and save changes.'
+        image: /images/lwm2m/firmware-update-strategy-1-pe.png
+        title: 'Select the firmware update strategy from the drop down menu. Then, save changes.'
 
-software-update-strategy:
+firmware-update-strategy-2:
     0:
-        image: /images/lwm2m/ota-firmware-update-strategy-1-pe.png
-        title: 'Open the devices transport configuration settings.'
+        image: /images/lwm2m/firmware-update-strategy-2-pe.png
+        title: 'Check the option "Use Object 19 for OTA file metadata (checksum, size, version, name)". Then, save changes.'
+
+software-update-strategy-1:
+    0:
+        image: /images/lwm2m/update-strategy-1-pe.png
+        title: 'Open the devices transport configuration settings. Navigate to the "Other settings" of the "Transport configuration" tab, and enter edit mode.'
     1:
         image: /images/lwm2m/software-update-strategy-1-pe.png
-        title: 'Select the software update strategy from the drop down menu, and save changes.'
+        title: 'Select the software update strategy from the drop down menu. Then, save changes.'
+
+software-update-strategy-2:
+    0:
+        image: /images/lwm2m/firmware-update-strategy-2-pe.png
+        title: 'Check the option "Use Object 19 for OTA file metadata (checksum, size, version, name)". Then, save changes.'
 
 object-attributes:
     0:
