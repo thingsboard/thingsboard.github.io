@@ -5,19 +5,19 @@
 {% assign sinceVersion = "2.0" %}
 {% include templates/mqtt-broker/since.md %}
 
-TBMQ offers users the convenience of configuring various settings directly from the user interface.
+TBMQ provides a dedicated Settings page that allows administrators to manage key system configurations directly from the user interface.
+The Settings page is divided into three tabs, each focused on a specific category of system configuration.
 
 ## Security settings
 
-### Authentication
+Configure the execution order of MQTT authentication providers, controlling the priority in which client credentials are validated.
+Define broker user password policies, including password strength requirements, expiration settings, and reuse restrictions to enforce strong account security.
 
-The **MQTT Authentication Settings** page provides a place in the UI to configure key authentication-related parameters for MQTT clients.
-
-#### Authentication execution order
+### MQTT Authentication
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-settings.md %}
 
-### Password
+### Password policy
 
 To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password.
 You can enhance the security of your account by updating your security settings, including the **password policy**.
@@ -26,8 +26,6 @@ For example, you can increase a minimum password length, require a mix of upperc
 Additionally, you can set a password expiration period to ensure that passwords are updated regularly.
 
 These measures will help ensure stronger and more secure passwords, thereby promoting better overall account security.
-
-#### Password policy
 
 The password policy sets the rules that passwords for the TBMQ users must meet. You can specify the following options to ensure stronger security:
 - **Minimum password length** - the parameter determines the minimum number of characters in the password. Minimum password length should be in a range from 6 to 50 and is the only required field.
@@ -63,6 +61,9 @@ To change your account password to comply with the new requirements, you should 
 {% include images-gallery.html imageCollection="settings-password-policy" %}
 
 ## General settings
+
+Define global MQTT connectivity settings used across the TBMQ UI (such as default host and port values) and configure WebSocket client behavior,
+including activity logging options and message retention limits for the in-browser message table.
 
 ### Connectivity
 

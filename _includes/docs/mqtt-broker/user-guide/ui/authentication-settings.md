@@ -1,13 +1,15 @@
-The `Authentication Execution Order` parameter defines the priority in which the broker will evaluate the enabled authentication providers. How It Works:
+At the current stage, we have only one parameter in this section called **Authentication Execution Order**.
+It defines the order in which the broker will use authentication providers to validate MQTT client authentication.
 
-- The broker attempts to authenticate an incoming MQTT client using the first available (enabled) method in the list.
-- If authentication fails or the method is disabled, the broker moves to the next one in order.
-- The process stops as soon as one provider successfully authenticates the client.
-- Disabled providers are completely skipped.
+**Key rules:**
+ 
+ - Disabled providers will be skipped in the authentication flow.
+ - The authentication flow stops at the first successful result or after evaluation of all enabled providers.
+ - If all providers are disabled, the client will be authenticated without MQTT client credentials validation.
 
 {% include images-gallery.html imageCollection="authentication-settings" %}
 
-{% capture authExecutionOrder %}
-Changes to provider status (enabled/disabled) affect how the Authentication Execution Order operates, since disabled methods are automatically skipped.
+{% capture scramExecution %}
+The SCRAM authentication method is always handled by the broker according to the MQTT 5.0 specification and does not follow the configured execution order of authentication providers.
 {% endcapture %}
-{% include templates/info-banner.md title="Disabled providers in Authentication execution order" content=authExecutionOrder %}
+{% include templates/info-banner.md content=scramExecution %}
