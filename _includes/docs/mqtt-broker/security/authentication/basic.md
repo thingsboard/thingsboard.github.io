@@ -1,14 +1,16 @@
 * TOC
 {:toc}
 
-**MQTT Basic Authentication** is a straightforward and widely supported method for verifying client identity using a **username and password**. 
-It offers a simple way to secure MQTT connections and is commonly used in systems where ease of configuration and compatibility are priorities.
+Basic authentication remains one of the most common methods for authenticating MQTT clients due to its simplicity and native support in the MQTT protocol.
+It is often used in scenarios where clients are provisioned with predefined credentials — such as IoT devices connecting to private networks, internal system integrations, or deployments with straightforward access control requirements. 
+When combined with secure transport (TLS), it provides a reliable and widely adopted authentication option for many MQTT use cases.
 
 ### Basic authentication overview
 
-Basic Authentication is handled during the MQTT `CONNECT` phase, where the client includes its username and password in the request.
-The broker forwards these credentials to the configured authentication provider, which may validate them using a local user database, an external identity system (such as LDAP or OAuth-based services), or custom logic.
-This method is easy to configure and suitable for scenarios where secure credential storage and transmission (e.g., over TLS) can be ensured.
+Basic authentication allows MQTT clients to authenticate using credentials sent in the `CONNECT` packet — such as `clientId`, `username`, and `password`.
+TBMQ matches these credentials against the stored records using flexible matching strategies.
+To optimize authentication performance, TBMQ maintains credentials in Redis for fast lookups, while PostgreSQL ensures reliable persistence.
+The following sections cover provider configuration, credential matching logic, `credentialsId` generation, and the overall authentication workflow.
 
 ### Configure provider
 

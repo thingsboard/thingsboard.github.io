@@ -28,10 +28,10 @@ Supported authentication methods include: Basic (username/password), X.509 Certi
 
 Authentication methods are implemented as pluggable authentication providers:
 
-- **Basic** — Authenticates clients using a clientId, username, and password sent in the `CONNECT` packet.
-- **X.509 Certificate Chain** — Uses the client’s X.509 certificate chain during TLS handshake for authentication.
-- **JWT (JSON Web Token)** — Authenticates clients using a signed JWT passed in the password field of the `CONNECT` packet.
-- **SCRAM** — Performs a secure challenge-response using hashed credentials to authenticate without sending the actual password (MQTT 5.0 only).
+- [Basic](/docs/mqtt-broker/security/authentication/basic/) — Authenticates clients using a clientId, username, and password sent in the `CONNECT` packet.
+- [X.509 Certificate Chain](/docs/mqtt-broker/security/authentication/x509/) — Uses the client’s X.509 certificate chain during TLS handshake for authentication.
+- [JWT (JSON Web Token)](/docs/mqtt-broker/security/authentication/jwt/) — Authenticates clients using a signed JWT passed in the password field of the `CONNECT` packet.
+- [SCRAM](/docs/mqtt-broker/security/authentication/scram/) — Performs a secure challenge-response using hashed credentials to authenticate without sending the actual password (MQTT 5.0 only).
 
 which can be individually enabled, disabled, and configured to meet requirements for different deployment use cases.
 
