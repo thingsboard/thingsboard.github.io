@@ -1,12 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap')
 
-$step1: 360px
-$step2: 671px
-$step3: 999px
+$step3: 768px
 $step4: 1279px
 $step5: 1439px
 $step6: 1919px
-$verticalStep1: 450px
 $modal-z-index: 13000
 $modal-background-color: rgba(0, 0, 0, 0.4)
 $modal-content-background-color: #fefefe
@@ -18,149 +15,1871 @@ $form-element-label-color: rgba(0, 0, 0, 0.54)
 $form-control-border: 1px solid rgba(0, 0, 0, 0.12)
 $button-background-color: #2A7DEC
 $font-style-normal: normal
+$section-background-accent-color: linear-gradient(180deg, #2A7DEC 0%, #2264BD 100%)
+$light-text-color: #FAFBFC
+$dark-text-color: #212529
+@mixin themed-style($bg, $color, $border-color) 
+  background: $bg
+  color: $color
+  border: 1px solid $border-color
 
-#development-services-reviews
-    .development-services-reviews-content
+@mixin expandable-header($icon: "\f078") 
+  display: flex
+  justify-content: space-between
+  align-items: center
+  position: relative
+  cursor: pointer
+  &::after 
+    content: $icon
+    color: #6B7178
+    font-family: 'Font Awesome 5 Free'
+    font-size: 14px
+    font-weight: 900
+    line-height: 1
+    display: block
+    position: absolute
+    top: 20px
+    right: 10px
+    transform: rotate(0deg)
+    transition: transform 0.6s
+    border: none
+
+@mixin expandable-rotated($deg: 180deg)
+  &::after 
+    transform: rotate($deg)
+
+@mixin content-container($marginBottom)
+    margin-bottom: $marginBottom
+
+@mixin content-container-max1919($marginBottom)
+    padding-right: 32px
+    padding-left: 32px
+    margin-bottom: $marginBottom
+
+@mixin text-styles($font-size)
+    font-size: $font-size
+    font-weight: 400
+    line-height: 140%
+
+@mixin scroll-animation
+    opacity: 0
+    transform: translateY(50px)
+    transition: opacity 1s ease, transform 1s ease
+    &.visible 
+        opacity: 1
+        transform: translateY(0)
+        animation: fadeInUp 1s ease forwards
+
+h2
+    color: #212529
+    padding: 0px  
+    font-size: 48px
+    font-weight: 400
+    line-height: 120%
+  
+#development-services
+    .noToc
+        position: relative
         overflow: hidden
-    footer
-        position: relative
 
-    .content-wrapper
-        position: relative
-        z-index: 1
+        .content-wrapper
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            position: relative
+            > *
+                width: 100%
+                max-width: 1920px
+                position: relative
+                z-index: 3
 
-    .full-review
+        #content-mvp
+            z-index: 2
+            border-radius: 10px
+            background: rgba(255,255,255,0.2)
+            box-shadow: 0px 0px 10px 0px rgba(21,29,111,0.08)
+            backdrop-filter: blur(25px)
+
+        #content-market-solution
+            z-index: 1
+            background-color: white
+
+        #content-get-in-touch
+            display: flex
+            flex-direction: row
+            align-items: unset
+            justify-content: space-between
+            padding: 0 130px
+            max-width: 1920px
+
+    #hero
+        padding-top: 80px
+    .hero
+        padding-top: 80px
+
+    #first-screen
+        min-height: auto
+        width: 100%
+        background-color: transparent
+        overflow: hidden
+        margin-bottom: 40px
+        position: relative
+        background-image: url("https://img.thingsboard.io/development-services/hero image.webp")
+        background-size: cover
+        background-repeat: no-repeat
+        background-position: center
+        img
+            width: 100%
+            height: auto
+            min-width: 1920px
+
+        .hero-container
+            height: 100%
+            max-height: 992px
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            gap: 60px
+            position: absolute
+            #hero-content
+                width: 100%
+                display: flex
+                flex-direction: column
+                justify-content: flex-start
+                gap: 40px
+                align-items: center
+                text-align: initial
+                z-index: 1
+
+                animation-name: slideup-in
+                animation-duration: 1000ms
+                animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
+                animation-fill-mode: forwards
+
+                .cdu-title
+                    color: #2A7DEC
+                    text-align: center
+                    font-size: 100px
+                    font-style: normal
+                    font-weight: 400
+                    line-height: 96px
+                    letter-spacing: -0.84px
+
+                .cdu-sub-title
+                    color: $dark-text-color
+                    text-align: center
+                    font-size: 24px
+                    font-style: normal
+                    font-weight: 400
+                    line-height: 40px
+                    letter-spacing: 0.036px
+                    width: 50%
+
+            .request-concultation
+                padding: 16px 48px
+                background: #2A7DEC
+                border: 1px solid #3087EB
+                color: $light-text-color
+                border-radius: 12px
+                font-size: 20px
+                font-weight: 600
+
+    section
+        padding-top: 0
+        padding-left: 0
+        padding-right: 0
+
+    .absolute-image
+        position: absolute
+
+    .development-services
         display: flex
         justify-content: center
+        .development-services-container
+            width: 1376px
+            .our-customers
+                width: 100%
+                display: flex
+                flex-direction: column
+                align-items: center
+                z-index: 1
+                border-radius: 10px
+                background: rgba(255, 255, 255, 0.20)
+                backdrop-filter: blur(25px)
+                margin-bottom: 56px
 
-    #encyclopedia
-        padding: 20px 0
-        position: relative
-        overflow: auto
+                & > div
+                    position: relative
+                    width: 90vw
+                    overflow: hidden
+                    &:before, &:after
+                        position: absolute
+                        top: 0
+                        width: 15vw
+                        height: 100%
+                        content: ""
+                        z-index: 1
+                        pointer-events: none
+                    &:before
+                        left: 0
+                        background: linear-gradient(to right, #fff 40%, transparent 100%)
 
-        #content
-            position: inherit
+                    &:after
+                        right: 0
+                        background: linear-gradient(to left, #fff 40%, transparent 100%)
 
-    .back-link
-        display: flex
-        color: #727381
-        font-size: 24px
-        font-style: normal
-        font-weight: 500
-        line-height: 30px
-        letter-spacing: 0.024px
-        padding: 10px
-        margin-bottom: 25px
-        align-items: center
-        &:hover
-            text-decoration: none
+                .title
+                    color: #000000C2
+                    text-align: center
+                    font-size: 36px
+                    font-style: normal
+                    font-weight: 500
+                    line-height: 32px
+                    letter-spacing: 0.2px
+                    padding: 40px 0
 
-        .icon
-            margin-right: 14px
-            display: flex
+                .customer-logos
+                    display: flex
+                    align-items: center
+                    gap: 150px
+                    animation-name: running
+                    animation-duration: 15s
+                    animation-iteration-count: infinite
+                    animation-timing-function: linear
+                    position: relative
 
-    .header
-        display: flex
-        margin-bottom: 80px
+                    .logo
+                        filter: grayscale(100%)
+                        opacity: 0.6
+                        &:hover
+                            filter: unset
+                            opacity: unset
+                        img
+                            height: 80px
 
-        .title
-            color: #333
-            font-size: 48px
-            font-style: normal
-            font-weight: 600
-            line-height: 68px
-            letter-spacing: 0.48px
+            .statistics
+                @include content-container(120px)
+                .map-img
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 100%
+                    object-fit: cover 
+                    z-index: 1
+                .statistics-wrapper
+                    position: relative
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: flex-start
+                    color: $light-text-color
+                    flex-wrap: wrap
+                    padding: 40px
+                    background: $section-background-accent-color
+                    border: 1px solid #3087EB
+                    border-radius: 12px
+                    overflow: hidden
+                    z-index: 0
+                    .statistic-item
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        padding: 24px 16px
+                        gap: 8px
+                        z-index: 2
+                        .statistic-item-num
+                            font-size: 56px
+                            font-weight: 400
+                            line-height: 67px
+                        .statistic-item-text
+                            font-size: 20px
+                            font-weight: 400
+                            line-height: 28px
+                            overflow: hidden
+                            padding: 10px
 
-    .side-title
-        padding-top: 10px
-        margin-right: 91px
-        z-index: 2
-        span
-            display: inline-block
-            border-radius: 6px
-            padding: 7px 0
-            color: #3622A4
-            text-align: center
-            font-size: 26px
-            font-style: normal
-            font-weight: 700
-            line-height: 30px
-            letter-spacing: 0.26px
-            text-transform: uppercase
-            width: max-content
+            .custom-solutions
+                @include content-container(100px)
+                .custom-solutions-wrapper
+                    text-align: center
+                    animation-name: slideup-in
+                    animation-duration: 1000ms
+                    animation-timing-function: cubic-bezier(.25, .46, .4, 1)
+                    animation-fill-mode: forwards
+                    h2 
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 57px
+                        margin-bottom: 56px
+                    .custom-solution-container
+                        display: flex
+                        gap: 16px
+                        .cards
+                            width: 50%
 
-    #review-asg
-        padding-top: 50px
-        padding-bottom: 150px
-        &::before
-            content: ""
-            border-radius: 1478px
-            background: rgba(62, 103, 251, 0.16)
-            filter: blur(250px)
-            position: absolute
-            z-index: 0
-            width: 100%
-            height: 100%
+                            .expansion-panel
+                                overflow: hidden
+                                border-bottom: 1px solid #DEE2E6
+                                width: 90%
+                                .images
+                                    display: none
+                                .expansion-header
+                                    padding: 10px
+                                    @include expandable-header()
+                                    &:hover
+                                        background: #E9ECEF
+                                        border-radius: 8px
 
-    #review-superbockgroup
-        padding-top: 200px
-        padding-bottom: 120px
 
-    #review-kalitec
-        padding: 120px 130px
-        background: #F7F9FC
-        z-index: 1
+                                .header-icon
+                                    margin-right: 20px
+                                    height: 36px
+                                    width: 36px
 
-    #review-ionatech
-        padding: 120px 130px
-        background: #F7F9FC
-        z-index: 1
+                                &.expanded
+                                    .expansion-header
+                                        @include expandable-rotated(270deg)
+                                
+                                .expansion-title
+                                    margin: 0
+                                    font-size: 20px
+                                    font-weight: 400
+                                    line-height: 36.4px
+                                    color: $dark-text-color
+                                    text-align: left
+                                    display: flex
+                                    align-items: center
+
+                                .expansion-content
+                                    max-height: 0
+                                    overflow: hidden
+                                    text-align: left
+                                    .expansion-buttons
+                                        margin-bottom: 16px
+                                        display: flex
+                                        justify-content: flex-start
+                                        flex-wrap: wrap
+                                        gap: 12px
+                                        .multicolored-btn
+                                            padding: 4px 12px
+                                            border-radius: 6px
+                                        .pink
+                                            @include themed-style(#FCE7F6, #C11574, #C11574)
+                                        .blue
+                                            @include themed-style(#E0F2FE, #065986, #065986)
+                                        .orange
+                                            @include themed-style(#FFEAD5, #C4320A, #C4320A)
+                                        .green
+                                            @include themed-style(#ECFDF3, #027A48, #027A48)
+                                        .purple
+                                            @include themed-style(#EBE9FE, #5925DC, #5925DC)
+                                        .red
+                                            @include themed-style(#FEE4E2, #B42318, #B42318)
+                                    .expansion-statistic
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+                                        color: #004B9F
+                                        margin-bottom: 16px
+                                    .expansion-text
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+
+                                &.expanded
+                                    .expansion-header
+                                        border-bottom: 1px solid #2264BD
+                                    .expansion-content
+                                        overflow: visible
+                                        padding: 16px
+                                        max-height: 1000px
+                                
+                        .images
+                            display: block
+                            width: 55%
+                            .client-feedback-cards
+                                display: flex
+                                flex-direction: column
+                                gap: 15px
+                                right: 272px
+                                width: 680px
+                                .client-info
+                                    padding: 24px
+                                    display: flex
+                                    flex-direction: column
+                                    background: linear-gradient(187deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
+                                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                                    border-radius: 24px
+                                    .client-avatar-container
+                                        display: flex
+                                        justify-content: flex-start
+                                        gap: 16px
+                                        padding-bottom: 16px
+                                        border-bottom: 1px solid #DEE2E6
+                                        margin-bottom: 12px
+                                        .client-avatar-img
+                                            img
+                                                width: 64px
+                                                height: 64px
+                                        .client-descr
+                                            display: flex
+                                            flex-direction: column
+                                            justify-content: center
+                                            text-align: start
+                                            .client-name
+                                                font-size: 18px
+                                                font-weight: 500
+                                                line-height: 28px
+                                                color: $dark-text-color
+                                            .client-title
+                                                font-size: 16px
+                                                font-weight: 400
+                                                line-height: 24px
+                                    .client-feedback
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+                                        text-align: start
+                                .project-screen-container
+                                    padding: 24px
+                                    display: flex
+                                    flex-direction: column
+                                    background: linear-gradient(187deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
+                                    box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                                    border-radius: 24px
+                                    .project-screen
+                                        margin-bottom: 20px
+                                        img
+                                            height: 359px
+                                    a
+                                        font-size: 20px
+                                        font-weight: 600
+                                        &::after 
+                                            content: "\f061"
+                                            font-family: "Font Awesome 5 Free" 
+                                            padding-left: 8px
+
+            .vision-section
+                @include content-container(120px)
+                @include scroll-animation
+                .vision-wrapper
+                    position: relative
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-between
+                    align-items: center
+                    color: $light-text-color
+                    padding: 60px 80px
+                    background: $section-background-accent-color
+                    border: 1px solid #3087EB
+                    border-radius: 12px
+                    overflow: hidden
+                    z-index: 0
+                    .pattern-img
+                        position: absolute
+                        right: -100px
+                        top: 50px
+                        opacity: 0.5
+                    .vision-info
+                        display: flex
+                        flex-direction: column
+                        justify-content: space-between
+                        gap: 56px
+                        width: 100%
+                        z-index: 1
+                        .vision-header
+                            display: flex
+                            gap: 155px
+                            .vision-title
+                                display: flex
+                                justify-content: center
+                                align-items: center
+                                flex-direction: column
+                                gap: 16px
+                                text-align: center
+                                .vision-text
+                                    .name
+                                        font-size: 24px
+                                        font-weight: 400
+                                    .title
+                                        font-size: 16px
+                                        font-weight: 400
+                                .vision-img
+                                    width: 132px
+                                    height: 132px
+
+                            .vision-descr
+                                font-size: 16px
+                                font-weight: 400
+                                p
+                                    max-width: 680px
+                                    margin-bottom: 12px
+
+                        .vision-footer
+                            display: flex
+                            justify-content: space-between
+                            align-items: center
+                            border-top: 1px solid #DEE2E6
+                            padding-top: 32px
+                            .vision-footer-text
+                                font-size: 48px
+                                font-weight: 400
+                                width: 718px
+                            .vision-footer-btn
+                                max-height: 64px
+                                background: $light-text-color
+                                padding: 16px 86px
+                                font-size: 20px
+                                font-weight: 600
+                                border-radius: 12px
+                                color: #2A7DEC
+
+            .case-studies
+                @include content-container(120px)
+                .section-title
+                    font-size: 48px
+                    font-weight: 400
+                    margin-bottom: 56px
+                    text-align: center
+                .cards-container
+                    position: relative
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 16px
+                    .ellipse-bottom
+                        width: 2500px
+                        height: 300px
+                        border-radius: 50%
+                        position: absolute
+                        bottom: -200px
+                        left: -400px
+                        background: #BDDCFF99
+                        filter: blur(100px)
+                    .card
+                        max-width: calc(33% - 16px )
+                        flex: 1 1 calc(33% - 32px)
+                        display: flex
+                        flex-direction: column
+                        position: relative
+                        border-radius: 12px
+                        background: #FAFBFC
+                        z-index: 1
+                        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05)
+                        &:hover
+                            transform: scale(1.03)
+                            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15)
+                        .card-label
+                            position: absolute
+                            top: 16px
+                            left: 16px
+                            background: $light-text-color
+                            color: #343A40
+                            border-radius: 6px
+                            padding: 4px 12px
+                        .retail
+                            @include themed-style(#E0F2FE, #065986, #065986)
+                        .manufacturing
+                            @include themed-style(#FCE7F6, #C11574, #C11574)
+                        .energy
+                            @include themed-style(#EBE9FE, #5925DC, #5925DC)
+                        .infrastructure
+                            @include themed-style(#ECFDF3, #027A48, #027A48)
+                        .logistics
+                            @include themed-style(#E0F2FE, #065986, #065986)
+
+                        a.navigate-to-client-page
+                            display: flex
+                            flex-direction: column
+                            text-decoration: none
+                            color: #212529
+                            height: 100%
+
+                        .card-image
+                            width: 100%
+                            height: 210px
+                            object-fit: cover
+                            border-top-left-radius: 12px
+                            border-top-right-radius: 12px
+                            
+                        .card-tag
+                            position: absolute
+                            top: 16px
+                            right: 16px
+                            border-radius: 6px
+                            padding: 4px 12px
+
+                        .card-content
+                            display: flex
+                            flex-direction: column
+                            padding: 16px 20px 20px 20px
+                            gap: 16px
+                            h3
+                                @include text-styles(20px)                                
+                            h3:hover
+                                color: #2A7DEC
+
+                            .card-stats
+                                display: flex
+                                padding: 20px 0px
+                                gap: 8px
+                                strong
+                                    display: block
+                                    color: #1849A9
+            
+            .services
+                @include content-container(120px)
+                background: transparent
+                .services-container
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    .services-title
+                        font-size: 48px
+                        font-weight: 400
+                        margin-bottom: 20px
+                    .services-sub-title
+                        font-size: 16px
+                        font-weight: 400
+                        margin-bottom: 56px
+                        max-width: 648px
+                        color: #343A40
+                        text-align: center
+                    .cards
+                        display: flex
+                        flex-wrap: wrap
+                        gap: 16px
+                        .expansion-card
+                            width: calc(33.333% - 16px)
+                            max-height: 104px
+                            padding: 24px
+                            border-radius: 24px
+                            box-shadow: 0px 0px 2px #00000024
+                            transition: max-height 0.4s ease
+                            .expansion-header
+                                @include expandable-header()
+                                .expansion-title
+                                    display: flex
+                                    gap: 24px
+                                    align-items: center
+                                    h3
+                                        max-width: 280px
+                                        @include text-styles(20px)
+                                        color: $dark-text-color
+                                    .header-icon
+                                        height: 48px
+                                        width: 48px
+                            &.expanded
+                                max-height: 328px
+                                .expansion-header
+                                    padding-bottom: 20px
+                                    border-bottom: 1px solid #BDBDBD
+                                    @include expandable-rotated(180deg)
+                                .expansion-content
+                                    padding: 24px
+                                    overflow: visible
+                                    max-height: 1000px
+                                    opacity: 1
+                            .expansion-content
+                                max-height: 0
+                                overflow: hidden
+                                text-align: left
+                                transition: max-height 0.3s ease, padding 0.4s ease, opacity 0.3s ease
+                                ul
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 8px
+                                    li
+                                        list-style-type: disc
+                                    li::marker
+                                        color: #2A7DEC
+            
+            .get-in-touch-section
+                @include content-container(80px)
+                background: transparent
+                @include scroll-animation
+                .get-in-touch-container
+                    overflow: hidden
+                    position: relative
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    padding: 76px 80px
+                    border-radius: 12px
+                    background: $section-background-accent-color
+                    z-index: 0
+                    .get-in-touch-title
+                        color: $light-text-color
+                        z-index: 2
+                        font-size: 48px
+                        width: 543px
+                    .get-in-touch-btn
+                        background-color: $light-text-color
+                        color: #1565C0
+                        border-radius: 12px
+                        padding: 16px 86px
+                        z-index: 2
+                        font-size: 20px
+                        font-weight: 600
+                        height: 64px
+                    .get-in-touch-img
+                        position: absolute
+                        top: -50%
+                        left: 0
+                        z-index: 1
+
+            .multicolored
+                position: relative
+                margin-bottom: 60px
+                .multicolored-container
+                    background: linear-gradient(to bottom, #f7faff, #ffffff)
+                    border-radius: 80px
+                    position: absolute
+                    width: 100vw
+                    height: 100%
+                    left: calc(893px - 50vw - 290px)
+                    .bg-shape 
+                        position: absolute
+                        z-index: 0
+                        border-radius: 50%
+                        filter: blur(200px)
+                        opacity: 10%
+                    .ellipse-top-blue
+                        width: 503px
+                        height: 302px
+                        opacity: 50%
+                        transform: rotate(-30deg)
+                        background: #E0FEFF
+                    .ellipse-blue
+                        width: 1732px
+                        height: 1230px
+                        background: #60ABFF
+                        top: -167px
+                        left: 1019px
+                        transform: rotate(-30deg)
+                    .rect-orange
+                        width: 1400px
+                        height: 853px
+                        background: #FFF4E5
+                        top: 1613px
+                        left: 919px
+                        transform: rotate(36deg)
+                        opacity: 50%
+                    .ellipse-purple
+                        width: 2539px
+                        height: 1113px
+                        background: #5F59FF
+                        top: 1252px
+                        left: -1204px
+                        transform: rotate(60deg)
+                        opacity: 10%
+                    .ellipse-bottom-blue
+                            width: 1700px
+                            height: 600px
+                            background: #51A3FF
+                            bottom: 0px
+                            right: 0px
+                .industries
+                    @include content-container(120px)
+                    background-color: transparent
+                    padding-top: 60px
+                    .industries-container
+                        width: 100%
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        .industries-title
+                            font-size: 48px
+                            font-weight: 400
+                            line-height: 120%
+                            margin-bottom: 20px
+                        .industries-subtitle
+                            margin-bottom: 40px
+                            font-size: 16px
+                            font-weight: 400
+                            width: 724px
+                            text-align: center
+                        .content-container
+                            max-height: 460px
+                            display: flex
+                            gap: 16px
+                            .menu
+                                overflow-y: scroll
+                                max-height: 460px
+                                max-width: 50%
+                                width: 50%
+                                padding: 0px 16px
+                                scrollbar-width: thin
+                                scrollbar-color: #ADB5BD transparent
+                                .menu-item
+                                    display: flex
+                                    gap: 12px
+                                    @include text-styles(20px)
+                                    align-items: center
+                                    padding: 16px 0px
+                                    border-bottom: 1px solid #DEE2E6
+                                    &:hover
+                                        color: black
+                                        cursor: pointer
+                                    h3
+                                        font-size: 20px
+                                    .menu-item-header
+                                        display: flex
+                                        align-items: center
+                                        justify-content: start
+                                        width: 100%
+                                    
+                                .menu-item
+                                    &.active
+                                        color: #2264BD
+                                        
+                            .menu::-webkit-scrollbar-thumb
+                                background-color: #ADB5BD
+                                border: 1px solid #ADB5BD
+                                border-radius: 10px !important
+
+                            .industries-card
+                                max-width: 50%
+                                display: flex
+                                position: relative
+                                overflow: hidden
+                                flex-direction: column
+                                padding: 32px
+                                gap: 32px
+                                border-radius: 24px
+                                background-color: $light-text-color
+                                box-shadow: 0px 3px 14px 3px #0000001F
+                                .card-container
+                                    z-index: 2
+                                    .card-img
+                                        width: 48px
+                                        height: 48px
+                                        margin-bottom: 32px
+                                    h3
+                                        margin-bottom: 16px
+                                        font-size: 28px
+                                        font-weight: 400
+                                        line-height: 135%
+                                    .card-text-container
+                                        font-size: 16px 
+                                        font-weight: 400
+                                        .card-descr
+                                            margin-bottom: 20px
+                                        ul
+                                            display: flex
+                                            flex-direction: column
+                                            gap: 8px
+                                            padding-left: 20px
+                                            li
+                                                list-style-type: disc
+                                            li::marker
+                                                color: #2A7DEC
+
+                                &::after
+                                    content: ''
+                                    position: absolute
+                                    bottom: -40px
+                                    transform: rotate(10deg)
+                                    width: 100%
+                                    height: 200px
+                                    background: #EEF7FF
+                                    filter: blur(40px)
+                                    border-radius: 50%
+                                    z-index: 0
+                                &::before
+                                    content: ''
+                                    position: absolute
+                                    bottom: -10px
+                                    left: 50%
+                                    transform: translateX(-50%)
+                                    width: 400px
+                                    height: 70px
+                                    background: #FFF7ED
+                                    border-radius: 50%
+                                    filter: blur(24px)
+                                    z-index: 1
+
+                            .industries-card.inline
+                                color: #343A40
+                                display: none
+
+                .trusted-partner
+                    @include content-container(120px)
+                    text-align: center
+                    background: transparent
+                    @include scroll-animation
+                    .trusted-partner-title
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 120%
+                        margin-bottom: 40px
+                    .trusted-partner-container
+                        position: relative
+                        display: flex
+                        flex-direction: column
+                        gap: 32px
+                        padding: 60px 80px
+                        border-radius: 24px
+                        background: $section-background-accent-color
+                        color: $light-text-color
+                        .trusted-partner-header
+                            display: flex
+                            flex-direction: column
+                            justify-content: center
+                            align-items: center
+                            gap: 16px
+                            .trusted-tips
+                                display: flex
+                                justify-content: space-between
+                                .trusted-tip
+                                    padding: 0px 16px
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 12px
+                                    align-items: center
+                                    font-size: 28px
+                                    font-weight: 400
+                                    line-height: 135%
+                                    &::before
+                                        content: "\f00c"
+                                        color: #1565C0
+                                        font-family: 'Font Awesome 5 Free'
+                                        background-color: #FAFBFC
+                                        border-radius: 8px
+                                        font-size: 20px
+                                        padding: 6px
+                                        font-weight: 600
+                                        line-height: 1
+                                        display: block
+                                        width: 32px
+                                        height: 32px
+                            .trusted-partner-header-descr
+                                p
+                                    font-size: 28px
+                                    font-weight: 400
+                                    line-height: 135%
+                        .trusted-partner-footer
+                            border-top: 1px solid #DEE2E6
+                            padding-top: 32px
+                            display: flex
+                            justify-content: space-between
+                            gap: 155px
+                            z-index: 1
+                            .trusted-partner-descr
+                                display: flex
+                                flex-direction: column
+                                max-width: 832px
+                                gap: 12px
+                                text-align: start
+                                font-size: 16px
+                                font-weight: 400
+                            .trusted-partner-avatar
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                width: 229px
+                                gap: 16px
+                                .avatar
+                                    width: 132px
+                                    height: 132px
+                                .trusted-partner-text
+                                    .name
+                                        @include text-styles(24px)
+                                    .title
+                                        font-size: 16px
+                                        font-weight: 400
+                        .pattern-img
+                            position: absolute
+                            width: 519px
+                            height: 517px
+                            right: 0px
+                            bottom: -10px
+                            z-index: 0
+
+                .fast-delivery
+                    @include content-container(64px)
+                    text-align: center
+                    background: transparent
+                    @include scroll-animation
+                    .fast-delivery-title
+                        font-size: 32px
+                        font-weight: 400
+                        line-height: 135%
+                        margin-bottom: 40px
+                        padding: 0px 80px
+                        color: $dark-text-color
+                    table
+                        width: 100%
+                        border-collapse: collapse
+                        background: $light-text-color
+                        border-radius: 24px
+                        box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                        th, td
+                            padding: 40px
+                            text-align: left
+                            vertical-align: middle
+                            font-size: 16px
+                            font-weight: 400
+                            border-bottom: 1px solid #E5E7EB
+                            color: #343A40
+
+                        thead th
+                            font-size: 24px
+                            font-weight: 500
+                            color: #2264BD
+                            border-bottom: 1px solid #E5E7EB
+                            text-align: center
+                            padding: 24px 40px
+
+                        thead th:first-child
+                            width: 30%
+                        
+                        thead th:not(:first-child)
+                            width: 35%
+                            border-left: 1px solid #E5E7EB
+
+                        tbody td:first-child
+                            font-weight: 400
+                            color: $dark-text-color
+                            width: 30%
+
+                        tbody td:not(:first-child)
+                            width: 35%
+                            border-left: 1px solid #E5E7EB
+
+                        tr:last-child td
+                            border-bottom: none
+                    .fast-delivery-mobile
+                        width: 100%
+                        display: none
+                        flex-direction: column
+                        gap: 30px
+                        .fast-delivery-block
+                            width: 100%
+                            display: flex
+                            flex-direction: column
+                            text-align: left
+                            gap: 10px
+                            .fast-delivery-title
+                                font-weight: 400
+                                font-size: 20px
+                                line-height: 140%
+                                color: #212529
+                                margin: 0
+                            .fast-delivery-text
+                                font-weight: 400
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #343A40
+                            .fast-delivery-sub-title
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #2264BD
+
+                .client-feedback
+                    width: 100%
+                    height: 337px
+                    position: relative
+                    background: transparent
+                    margin-bottom: 64px
+                    @include scroll-animation
+                    .client-feedback-container
+                        padding: 56px 272px
+                        position: relative
+                        text-align: center
+                        background: transparent
+                        z-index: 1
+                        display: flex
+                        align-items: center
+                        flex-direction: column
+                        gap: 27px
+                        .client-feedback-text
+                            max-width: 912px
+                            @include text-styles(24px)
+                            text-align: start
+                        .client-container
+                            display: flex
+                            width: 100%
+                            justify-content: space-between
+                            align-items: center
+                            .client-avatar
+                                display: flex
+                                gap: 20px
+                                .client-avatar-descr
+                                    display: flex
+                                    flex-direction: column
+                                    justify-content: center
+                                    text-align: start
+                                    .title
+                                        @include text-styles(18px)
+                                        color: #343A40
+                                    .name
+                                        font-size: 24px
+                                        font-weight: 400
+                                        color: $dark-text-color
+                                .client-avatar-img
+                                    width: 64px
+                                    height: 64px
+                        .client-logo
+                            img
+                                width: 169px
+                                height: 39px
+
+                    .pattern-img
+                        position: absolute
+                        width: 100%
+                        height: 300px
+                        top: 0
+                        left: 0
+                        z-index: 0
+                
+                .more-feature
+                    @include content-container(120px)
+                    @include scroll-animation
+                    background: transparent
+                    .more-feature-title
+                        text-align: center
+                        font-size: 32px
+                        font-weight: 400
+                        line-height: 135%
+                        margin-bottom: 40px
+                    .cards
+                        display: flex
+                        justify-content: center
+                        gap: 20px
+                        .card
+                            padding: 24px
+                            border-radius: 24px
+                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            background: #FAFBFC
+                            flex: 1 1 0px
+                            .card-title
+                                height: 68px
+                                @include text-styles(24px)
+                                margin-bottom: 16px
+                                color: #212529
+                            .card-descr
+                                color: #343A40
+                                font-size: 16px
+                                font-weight: 400
+                                margin-bottom: 16px
+
+                .get-in-touch-section
+                    margin-bottom: 40px
+                    @include scroll-animation
+                    .get-in-touch-container
+                        .get-in-touch-title
+                            width: 680px
+            
+            .project-timeline
+                @include content-container(120px)
+                padding-top: 100px
+                .project-timeline-container
+                    display: flex
+                    gap: 20px
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    margin-bottom: 40px
+                    .project-timeline-title
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 120%
+                        color: #212529
+                    .project-timeline-descr
+                        text-align: center
+                        max-width: 724px
+                        font-size: 16px
+                        font-weight: 400
+                        color: #343A40
+                .timeline
+                    display: grid
+                    grid-template-columns: repeat(10, 1fr)
+                    position: relative
+                    padding-top: 40px
+                    height: 594px
+                    padding-bottom: 110px
+                    .timeline-column 
+                        position: relative
+                        padding-top: 10px
+                        text-align: center
+                        font-weight: bold
+                        font-size: 12px
+                        color: #666
+                        border-right: 1px solid #eee
+                    .timeline-column:first-child
+                        border-left: 1px solid #eee
+                    .bar-container
+                        position: absolute
+                        .bar
+                            position: absolute
+                            border-radius: 6px
+                            font-size: 16px
+                            color: #212529
+                            background: #cfd3d6
+                            display: flex
+                            flex-direction: column
+                            justify-content: center
+                            cursor: pointer
+                            padding: 8px 16px
+                        .bar span
+                            font-weight: 400
+                            font-size: 16px
+                        .tooltip
+                            position: absolute
+                            top: 80px
+                            left: -130px
+                            background: white
+                            border-radius: 8px
+                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            padding: 12px 14px
+                            width: 250px
+                            font-size: 14px
+                            font-weight: 400
+                            z-index: 1
+                            display: none
+                            color: #343A40
+                            .tooltip-subtitle
+                                margin-bottom: 8px
+
+                    .bar-container:hover .tooltip
+                        display: block
+                    .bar-container .toolbar
+                        padding-bottom: 20px
+                    .bar-container.bar-item-1
+                        top: 74px
+                        left: -40px
+                        .bar
+                            width: 304px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, transparent,#DCDFE3)
+                        .bar:hover
+                            background: #DCDFE3
+                    .bar-container.bar-item-2
+                        top: 138px
+                        left: 20%
+                        .bar
+                            width: 180px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #D9EBFF, transparent)
+                        .bar:hover
+                            background: #D9EBFF
+                    .bar-container.bar-item-3
+                        top: 202px
+                        left: 30%
+                        .bar
+                            width: 180px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #A1CDFF, transparent)
+                        .bar:hover
+                            background: #A1CDFF
+                    .bar-container.bar-item-4
+                        top: 266px
+                        left: 38%
+                        .bar
+                            width: 419px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #3393FF,transparent)
+                        .bar:hover
+                            background: #3393FF
+                    .bar-container.bar-item-5
+                        top: 354px
+                        left: 69%
+                        .bar
+                            width: 195px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #A1CDFF, transparent)
+                        .bar:hover
+                            background: #A1CDFF
+                    .bar-container.bar-item-6
+                        top: 450px
+                        left: 83%
+                        .bar
+                            width: 160px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #D9EBFF,transparent)
+                        .bar:hover
+                            background: #D9EBFF
+                    .bar-container.bar-item-7
+                        top: 512px
+                        left: 94%
+                        .bar
+                            width: 159px
+                            padding: 8px 16px
+                            background: linear-gradient(45deg, #DCDFE3, transparent)
+                        .bar:hover
+                            background: #DCDFE3
+                .timeline-container-mobile
+                    width: 100%
+                    display: none
+                    flex-direction: column
+                    gap: 6px
+                    .timeline-row, .timeline-group
+                        display: flex
+                        align-items: stretch
+                        gap: 12px
+                        .week-label
+                            width: 40px
+                            font-size: 14px
+                            font-weight: bold
+                            color: #212529
+                            text-align: center
+                            border-right: 1px solid #ddd
+                            padding-top: 10px
+                            flex-shrink: 0
+            
+                        .timeline-bar
+                            background: #e0e0e0
+                            border-radius: 8px
+                            padding: 12px 16px
+                            flex-grow: 1
+                            font-size: 14px
+
+                            .bar-title
+                                font-weight: 600
+                                margin-bottom: 4px
+                                color: #212529
+                            
+                            .bar-sub
+                                font-size: 13px
+                                color: #212529
+
+                            .multi
+                                display: flex
+                                flex-direction: column
+                                justify-content: center                
+            
+                        .week-label-stack
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            width: 40px
+                            border-right: 1px solid #ddd
+                            flex-shrink: 0
+            
+                            .week-label
+                                border: none
+                                padding: 8px 0
+                            
+                        .light 
+                            background-color: #DCDFE3
+                        .blue-light
+                            background-color: #D9EBFF
+                        .blue-mid
+                            background-color: #A1CDFF
+                        .blue-deep
+                            background-color: #3393FF
+            
+            .engagement-models
+                @include content-container(120px)
+                @include scroll-animation
+                .engagement-model-container
+                    display: flex
+                    gap: 20px
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    margin-bottom: 40px
+                    .engagement-model-title
+                        font-size: 48px
+                        font-weight: 400
+                        line-height: 120%
+                        color: #212529
+                    .engagement-model-descr
+                        text-align: center
+                        max-width: 724px
+                        font-size: 16px
+                        font-weight: 400
+                        color: #343A40
+                        margin-bottom: 40px
+                    .container
+                        padding: 40px 0px
+                        table
+                            width: 100%
+                            border-collapse: collapse
+                            background: $light-text-color
+                            border-radius: 24px
+                            box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                            th, td
+                                padding: 40px
+                                text-align: left
+                                vertical-align: middle
+                                font-size: 16px
+                                font-weight: 400
+                                border-bottom: 1px solid #E5E7EB
+                                color: #343A40
+                                ul
+                                    display: flex
+                                    flex-direction: column
+                                    gap: 8px
+                                    li
+                                        display: flex
+                                        gap: 12px
+                                        align-items: flex-start
+                                        font-size: 16px
+                                        font-weight: 400
+                                        img
+                                            display: block
+                                            width: 24px
+                                            height: 24px
+
+                            thead th
+                                font-size: 24px
+                                font-weight: 500
+                                color: #212529
+                                border-bottom: 1px solid #E5E7EB
+                                text-align: center
+                                padding: 24px 40px
+                                position: relative
+                                img
+                                    width: 64px
+                                    height: 64px
+                                    position: absolute
+                                    top: -50%
+                                    left: 50%
+                                    transform: translate(-50%)
+                                    
+                            thead th:first-child
+                                width: 30%
+                            
+                            thead th:not(:first-child)
+                                width: 35%
+                                border-left: 1px solid #E5E7EB
+
+                            tbody td:first-child
+                                font-weight: 400
+                                color: $dark-text-color
+                                width: 20% 
+
+                            tbody td:first-child
+                                width: 30%
+
+                            tbody td:not(:first-child)
+                                width: 35%
+                                border-left: 1px solid #E5E7EB
+
+                            tr:last-child td
+                                border-bottom: none
+                    .engagement-model-mobile
+                        width: 100%
+                        display: none
+                        flex-direction: column
+                        gap: 30px
+                        text-align: left
+                        .engagement-mobile-block
+                            width: 100%
+                            display: flex
+                            flex-direction: column
+                            text-align: left
+                            gap: 10px
+                            img
+                                width: 44px
+                                height: 44px
+                                box-shadow: 0px 2px 15px 3px #044B9A33
+                            .engagement-mobile-title
+                                font-weight: 400
+                                font-size: 20px
+                                line-height: 140%
+                                color: #212529
+                                margin: 0
+                            .engagement-mobile-text
+                                font-weight: 400
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #343A40
+                            .engagement-mobile-sub-title
+                                font-weight: 500
+                                font-size: 14px
+                                line-height: 21px
+                                letter-spacing: 0.2px
+                                color: #2264BD
+
+            .clients-reviews
+                @include content-container(120px)
+                .clients-reviews-title
+                    text-align: center
+                    font-size: 48px
+                    font-weight: 400
+                    line-height: 120%
+                .clients-reviews-cards
+                    display: flex
+                    flex-wrap: wrap
+                    gap: 16px
+                    .senseing
+                        background: linear-gradient(187deg, #E5EFFE 20%, #E9FAFF 30%, #FAFBFC 40%)
+                    .ositech
+                        background: linear-gradient(360deg, #F7EEFF 20%, #FFFEED 30%, #FAFBFC 40%)
+                    .agrolog
+                        background: linear-gradient(360deg, #EEF7FF 20%, #FFF7ED 30%, #FAFBFC 40%)
+                    .circulor
+                        background: linear-gradient(187deg, #FFEEEE 20%, #EDFCFF 30%, #FAFBFC 40%)
+                    .client-info
+                        padding: 24px
+                        display: flex
+                        max-width: 680px
+                        flex: 1 1 600px
+                        flex-direction: column
+                        box-shadow: 0px 3px 14px 3px rgba(0, 0, 0, 0.12)
+                        border-radius: 24px
+                        margin-top: 86px
+                        position: relative
+                        min-height: 394px
+                        .client-avatar-img
+                            position: absolute
+                            top: -50px
+                            left: 32px
+                            width: 64px
+                            height: 64px
+                        .client-avatar-container
+                            display: flex
+                            justify-content: space-between
+                            padding-bottom: 16px
+                            border-bottom: 1px solid #DEE2E6
+                            margin-bottom: 12px
+                            .client-descr
+                                display: flex
+                                flex-direction: column
+                                justify-content: center
+                                text-align: start
+                                .client-name
+                                    font-size: 18px
+                                    font-weight: 500
+                                    line-height: 28px
+                                    color: $dark-text-color
+                                .client-title
+                                    font-size: 16px
+                                    font-weight: 400
+                                    line-height: 24px
+                            .client-logo-img
+                                height: 50px
+                                padding-bottom: 20px 
+                                img
+                                    height: 100%
+                            .client-logo-img.senseing-logo
+                                padding-bottom: 0px
+                        .client-feedback
+                            font-size: 16px
+                            font-weight: 400
+                            line-height: 24px
+                            .info-btns
+                                display: flex
+                                justify-content: flex-start
+                                gap: 8px
+                                margin-bottom: 20px
+                                .info-btn-label
+                                    background: #FAFBFC
+                                    color: #343A40
+                                    border-radius: 6px
+                                    padding: 4px 12px
+                                    border: 1px solid #DEE2E6
+                                .info-btn-tag
+                                    background: #E0F2FE
+                                    color: #026AA2
+                                    border: 1px solid #065986
+                                    border-radius: 6px
+                                    padding: 4px 12px
+            
+            .questions-section
+                @include content-container(120px)
+                z-index: 1
+                background: transparent
+                .question-section-title
+                    font-size: 48px
+                    line-height: 120%
+                    margin-bottom: 56px
+                    text-align: center
+                .questions-section-cards
+                    display: flex
+                    flex-direction: column
+                    gap: 16px
+                    .questions-section-card
+                        width: 100%
+                        max-height: 76px
+                        padding: 24px 40px
+                        border-radius: 24px
+                        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.14)
+                        background: #FAFBFC
+                        transition: max-height 0.6s ease
+                        .questions-section-header
+                            @include expandable-header()
+                            &::after
+                                top: 10px
+                            .questions-section-title
+                                width: 100%
+                                display: flex
+                                align-items: center
+                                h3
+                                    @include text-styles(20px)
+                                .questions-section-num
+                                    width: 292px
+                                    @include text-styles(20px)
+                        .questions-section-content
+                            max-height: 0px
+                            overflow: hidden
+                            display: flex
+                            flex-direction: column
+                            gap: 20px
+                            .key-services
+                                font-size: 16px
+                                font-weight: 500
+                            ol
+                                li
+                                    list-style: auto
+                        &.expanded
+                            max-height: 1300px
+                            .questions-section-content
+                                max-height: 1300px
+                                overflow: visible
+                                padding: 20px 292px
+                            .questions-section-header
+                                padding-bottom: 20px
+                                border-bottom: 1px solid #BDBDBD
+                                @include expandable-rotated(180deg)
+            
+            .contact-us-section
+                .ellipse-right
+                    position: absolute
+                    width: 1017px
+                    height: 612px
+                    background: #FFF4E5
+                    right: -200px
+                    top: -100px
+                    border-radius: 50%
+                    transform: rotate(-135deg)
+                    filter: blur(200px)
+                .ellipse-left
+                    position: absolute
+                    width: 1017px
+                    height: 612px
+                    background: #E0FEFF
+                    left: -300px
+                    top: -100px
+                    border-radius: 50%
+                    transform: rotate(30deg)
+                    filter: blur(200px)
+                .ellipse-bottom
+                    position: absolute
+                    width: 2528px
+                    height: 824px
+                    bottom: -200px
+                    left: -400px
+                    z-index: 0
+                    border-radius: 50%
+                    filter: blur(200px)
+                    background: #51A3FF
+                    opacity: 15%
+                .contact-us-section-content
+                    @include content-container(120px)
+                    .contact-us-container
+                        position: relative
+                        background: linear-gradient(180deg, #2A7DEC 0%, #2264BD 100%)
+                        border-radius: 24px
+                        display: flex
+                        padding: 8px
+                        gap: 8px
+                        .contact-us-descr
+                            width: 42%
+                            display: flex
+                            flex-direction: column
+                            justify-content: space-between
+                            padding: 40px
+                            z-index: 1
+                            .contact-us-descr-container
+                                display: flex
+                                flex-direction: column
+                                gap: 16px
+                                h2
+                                    font-size: 48px
+                                    font-weight: 400
+                                    line-height: 120%
+                                    color: $light-text-color
+                                h5
+                                    @include text-styles(24px)
+                                    color: $light-text-color
+                            .client-avatar-container
+                                display: flex
+                                justify-content: flex-start
+                                gap: 16px
+                                .client-avatar-img
+                                    img
+                                        width: 64px
+                                        height: 64px
+                                .client-descr
+                                    display: flex
+                                    flex-direction: column
+                                    justify-content: center
+                                    text-align: start
+                                    .client-name
+                                        font-size: 18px
+                                        font-weight: 500
+                                        line-height: 28px
+                                        color: $light-text-color
+                                    .client-title
+                                        font-size: 16px
+                                        font-weight: 400
+                                        line-height: 24px
+                                        color: $light-text-color
+                        .contact-us-form
+                            width: 58%
+                            z-index: 1
+                            background: #FAFBFC
+                            padding: 32px
+                            border-radius: 24px
+                            .form-section
+                                display: flex
+                                justify-content: space-around
+                                .form-element
+                                    margin-bottom: 15px
+                                    width: 48%
+                                    label
+                                        position: relative
+                                        width: 100%
+                                        p
+                                            color: $form-element-label-color
+                                            font-size: 12px
+                                            line-height: 16px 
+                                            font-style: $font-style-normal 
+                                            font-weight: 400
+                                            letter-spacing: 0.4px
+                                            position: absolute
+                                            top: -8px
+                                            left: 10px
+                                            z-index: 2
+                                            padding: 0px 5px
+                                            background: #FAFBFC
+
+                                        .cdu-form-control, .cdu-text-area
+                                            width: 100%
+                                            color: #898B8F
+                                            font-size: 16px
+                                            font-style: normal
+                                            font-weight: 400
+                                            line-height: 24px
+                                            letter-spacing: 0.15px
+                                            border-radius: 4px
+                                            border: $form-control-border
+                                            padding: 16px 18px
+
+                                        .cdu-text-area
+                                            height: 80px
+
+                                    .label-select
+                                        select 
+                                            width: 100%
+                                            appearance: none
+                                            -webkit-appearance: none
+                                            -moz-appearance: none
+                                            &::-ms-expand 
+                                                display: none
+
+                                        &::after
+                                            content: ""
+                                            position: absolute
+                                            top: 40%
+                                            right: 10px
+                                            width: 16px
+                                            height: 16px
+                                            background: url(https://img.thingsboard.io/pe/read-more-arrow.svg) no-repeat center
+                                            transform: rotate(90deg)
+                                            transform-origin: center center
+
+                                .next
+                                    width: 98%
+
+                            .secondary
+                                padding-top: 0px
+                            
+                            .questionnaire-section
+                                display: flex
+                                flex-direction: column
+                                gap: 16px
+                                fieldset
+                                    border: none
+                                    padding: 0
+
+                                legend
+                                    font-weight: 500
+                                    margin-bottom: 10px
+                                    display: block
+
+                                span
+                                    font-weight: normal
+                                    color: #888
+                                    font-size: 13px
+                                    margin-left: 6px
+                                
+                                .label-container
+                                    display: flex
+                                    flex-wrap: wrap
+
+                                    label
+                                        display: block
+                                        width: 50%
+                                        margin-bottom: 10px
+                                        cursor: pointer
+
+                                    input[type="radio"]
+                                        margin-right: 8px
+                                        vertical-align: middle
+                                .label-container.last
+                                    label
+                                        width: 100%
+
+                            .submit-button-container
+                                display: flex
+                                justify-content: center
+                                .cdu-button
+                                    padding: 15px
+                                    border-radius: 6px
+                                    color: white
+                                    background-color: $button-background-color
+                                    width: 100%
+                                    margin-top: 40px
+                        .contact-us-pattern
+                            position: absolute
+                            bottom: 0px
+                            left: 0px
+                            overflow: hidden
 
     .get-in-touch
         position: relative
         display: flex
+        justify-content: center
         background-color: white
-        padding: 100px
-
-        .content-get-in-touch
-            display: flex
-            justify-content: space-between
-            width: 100%
+        padding: 50px 0 100px 0
+        background: transparent
 
         .section-title
             margin-right: 94px
 
         .info
             margin-right: 70px
+            z-index: 2
 
         .side-title
+            margin-top: 15px
             margin-right: 94px
+            max-width: 200px
 
         .section-title
-            max-width: 700px
-            min-width: 700px
+            max-width: 610px
             line-height: 68px
-            margin-right: 40px
-            color: #333
-            font-size: 48px
-            font-style: normal
-            font-weight: 600
-            letter-spacing: 0.48px
-            padding-bottom: 30px
 
         .section-text
-            color: #5E5F62
-            font-size: 16px
-            font-style: normal
-            font-weight: 400
-            line-height: 28px
-            letter-spacing: 0.016px
             max-width: 470px
 
         .contact-form
             padding-top: 30px
-            width: 100%
             z-index: 2
+            width: 400px
             .form-element
                 margin-bottom: 28px
                 label
@@ -177,8 +1896,8 @@ $font-style-normal: normal
                         top: -8px
                         left: 10px
                         z-index: 2
-                        padding: 0 5px
-                        background: white
+                        padding: 0px 5px
+                        background: #FAFBFC
 
         .cdu-form-control
             width: 100%
@@ -193,1316 +1912,51 @@ $font-style-normal: normal
             padding: 16px 18px
 
         .cdu-button
-            padding: 15px
-            border-radius: 6px
+            padding: 11px 14px
             color: white
             background-color: #2A7DEC
             width: 100%
-
-    .review
-        display: flex
-        position: relative
-        flex-direction: column
-        width: 100%
-        padding: 0 290px
-        z-index: 2
-
-        .logo
-            display: flex
-            margin-bottom: 30px
-            > img
-                object-fit: contain
-                width: 100%
-                height: auto
-                max-width: fit-content
-
-        .review-header
-            color: #2E2F3B
-            font-size: 28px
-            font-style: normal
+            font-size: 18px
             font-weight: 500
-            line-height: 40px
-            letter-spacing: 0.028px
-            margin-bottom: 20px
-
-        .review-body
-            max-width: 900px
-            h6, h5
-                color: #5E5F62
-                font-size: 22px
-                font-style: normal
-                font-weight: 400
-                line-height: 40px
-                letter-spacing: 0.022px
-            h6
-                margin-bottom: 22px
-
-            h5
-                margin-bottom: 5px
-
-    .bg-rectangle
-        position: absolute
-        width: 692px
-        height: 659px
-        transform: rotate(36.145deg)
-        flex-shrink: 0
-        border-radius: 60px
-        opacity: 0.3
-        background: #E9EBFB
-        z-index: 0
-
-    #rectangle1
-        top: 4%
-        left: 82%
-
-    #rectangle2
-        top: 45%
-        left: -10%
-
-    #rectangle3
-        top: 20%
-        left: 82%
-
-    #rectangle4
-        top: 45%
-        left: -10%
-
-    .modal
-        display: none
-        position: fixed
-        align-items: center
-        justify-content: center
-        z-index: $modal-z-index
-        left: 0
-        top: 0
-        width: 100%
-        height: 100%
-        background-color: $modal-background-color
-
-        .modal-content
-            animation-name: animatetop
-            animation-duration: 0.4s
-            background-color: $modal-content-background-color
-            padding: 20px 20px 30px
-            border: $modal-content-border
-            width: 950px
-
-            .sub-content
-                overflow: auto
-                height: 95%
-
-            .close-button
-                display: flex
-                justify-content: end
-
-            .close
-                width: 28px
-                height: 28px
-                cursor: pointer
-
-            .title, .sub-title, .sub-sub-title
-                letter-spacing: 0.01em
-                text-align: center
-                display: flex
-                justify-content: center
-                font-style: $font-style-normal
-
-            .title
-                font: $title-font
-                color: #3622A4
-
-            .sub-title
-                font: $sub-title-font
-                color: #333333
-
-            .sub-sub-title
-                font: $sub-sub-title-font
-                color: #5E5F62
-                letter-spacing: .001em
-                span
-                    width: 556px
-                    height: 56px
-
-            .form-section
-                padding: 30px 40px 0 40px
-                display: flex
-                justify-content: space-around
-                .form-element
-                    margin-bottom: 15px
-                    width: 48%
-                    label
-                        position: relative
-                        width: 100%
-                        p
-                            color: $form-element-label-color
-                            font-size: 12px
-                            line-height: 16px
-                            font-style: $font-style-normal
-                            font-weight: 400
-                            letter-spacing: 0.4px
-                            position: absolute
-                            top: -8px
-                            left: 10px
-                            z-index: 2
-                            padding: 0 5px
-                            background: white
-
-                        .cdu-form-control, .cdu-text-area
-                            width: 100%
-                            color: #898B8F
-                            font-size: 16px
-                            font-style: normal
-                            font-weight: 400
-                            line-height: 24px
-                            letter-spacing: 0.15px
-                            border-radius: 4px
-                            border: $form-control-border
-                            padding: 16px 18px
-
-                        .cdu-text-area
-                            height: 170px
-
-                    .label-select
-                        select
-                            width: 100%
-                            appearance: none
-                            -webkit-appearance: none
-                            -moz-appearance: none
-                            &::-ms-expand
-                                display: none
-
-                        &::after
-                            content: ""
-                            position: absolute
-                            top: 40%
-                            right: 10px
-                            width: 16px
-                            height: 16px
-                            background-image: url(https://img.thingsboard.io/pe/read-more-arrow.svg) no-repeat center
-                            transform: rotate(90deg)
-                            transform-origin: center center
-
-                .next
-                    width: 98%
-
-            .secondary
-                padding-top: 0
-
-            .submit-button-container
-                display: flex
-                justify-content: center
-                .cdu-button
-                    padding: 15px
-                    border-radius: 6px
-                    color: white
-                    background-color: $button-background-color
-                    width: 400px
-
-    @media screen and (max-width: $step6)
-        .review
-            padding: 0 100px
-
-        .header
-            .title
-                font-size: 36px
-
-        .get-in-touch
-            .info
-                margin-right: 0
-                .section-title
-                    min-width: 570px
-
-            .side-title
-                span
-                    text-wrap: nowrap
-                    width: 210px
-                    height: 44px
-
-            .section-title
-                min-width: 570px
-                height: 136px
-                line-height: 60px
-
-            .section-text
-                line-height: 40px
-
-    @media screen and (max-width: $step5)
-        .review
-            padding: 0 100px
-
-        .header
-            .title
-                font-size: 36px
-
-        .get-in-touch
-            .content-get-in-touch
-                max-width: 1280px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
-
-                .info
-                    grid-area: info
-                    margin-right: 0
-                    .section-title
-                        width: 609px
-
-                .side-title
-                    grid-area: side-title
-                    span
-                        text-wrap: nowrap
-                        width: 210px
-                        height: 44px
-
-                .section-title
-                    width: 610px
-                    height: 136px
-
-                .contact-form
-                    grid-area: contact-form
-                    display: flex
-                    align-items: center
-                    width: 100%
-                    padding-top: 0
-                    fieldset
-                        width: 100%
-
-        .modal
-            .modal-content
-                width: 800px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 130px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step4) and (min-width: $step3)
-        #review-kalitec
-            padding: 120px 20px
-
-        #review-ionatech
-            padding: 120px 20px
-
-        .review
-            padding: 0 20px
-
-        .get-in-touch
-            padding: 150px 50px 200px 50px
-            .content-get-in-touch
-                max-width: 1000px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title contact-form" "info contact-form"
-
-                .info
-                    grid-area: info
-                    margin-right: 0
-                    max-width: 50%
-
-                    .section-title
-                        height: auto
-                        line-height: 40px
-                        width: 100%
-                        margin: 0
-                        font-size: 30px
-
-                    .section-text
-                        max-width: 100%
-
-                .side-title
-                    grid-area: side-title
-                    span
-                        text-wrap: nowrap
-                        width: 210px
-                        height: 44px
-                        text-align: start
-
-                .contact-form
-                    grid-area: contact-form
-                    width: 100%
-
-            .info
-                grid-area: info
-                margin-right: 0
-
-                .section-title
-                    width: 341px
-                    height: auto
-                    line-height: 40px
-
-                .section-text
-                    max-width: 327px
-
-            .cdu-button
-                width: 100%
-
-        .modal
-            .modal-content
-                width: 693px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 80px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step3)
-        .back-link
-            margin-bottom: 10px
-
-        .side-title
-            margin-bottom: 10px
-
-        .header
-            display: flex
-            flex-direction: column
-            margin-left: 0
-            margin-bottom: 40px
-
-            .title
-                font-size: 30px
-                line-height: 48px
-
-        .review
-            padding: 0
-            max-width: 750px
-            .review-header
-                font-size: 30px
-                line-height: 48px
-
-            .review-body
-                h6, h5
-                    font-size: 14px
-                    line-height: 30px
-                h6
-                    margin-bottom: 8px
-
-                h5
-                    margin-bottom: 3px
-
-        .get-in-touch
-            padding: 50px 40px 80px 40px
-
-            .content-get-in-touch
-                flex-direction: column
-                padding: 0
-                max-width: 750px
-                display: flex
-
-                .section-title
-                    height: fit-content
-
-            .info
-                margin-right: 70px
-
-            .side-title
-                margin-right: 94px
-                span
-                    text-align: start
-
-            .section-title
-                font-size: 25px
-                line-height: 30px
-                min-width: 300px
-                margin-right: 94px
-                height: fit-content
-                max-width: fit-content
-
-            .section-text
-                font-size: 16px
-                line-height: 28px
-                max-width: fit-content
-
-            .contact-form
-                padding-top: 30px
-                max-width: 100%
-                z-index: 2
-                .form-element
-                    margin-bottom: 28px
-                    width: 100%
-                    label
-                        position: relative
-                        p
-                            font-size: 12px
-                            line-height: 16px
-
-        #review-asg
-            padding: 40px 40px
-
-        #review-superbockgroup
-            padding: 40px 40px
-
-        #review-kalitec
-            padding: 40px 40px
-            z-index: 1
-
-        #review-ionatech
-            padding: 40px 40px
-
-        .side-title
-            margin-right: 0
-            margin-bottom: 10px
-
-        .modal
-            .modal-content
-                width: 620px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 110px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step2)
-        .back-link
-            margin-bottom: 10px
-
-        .side-title
-            margin-bottom: 10px
-
-        .header
-            display: flex
-            flex-direction: column
-            margin-left: 0
-            margin-bottom: 40px
-
-            .title
-                font-size: 20px
-                line-height: 30px
-
-        .review
-            padding: 0
-            .review-header
-                font-size: 20px
-
-            .review-body
-                h6, h5
-                    font-size: 14px
-                    line-height: 30px
-                h6
-                    margin-bottom: 8px
-
-                h5
-                    margin-bottom: 3px
-
-        .get-in-touch
-            padding: 50px 20px 80px 20px
-
-            .content-get-in-touch
-                flex-direction: column
-                padding: 0
-
-            .info
-                margin-right: 70px
-
-                .section-title
-                    min-width: 300px
-
-            .side-title
-                margin-right: 94px
-
-            .section-title
-                margin-right: 94px
-                font-size: 25px
-                line-height: 30px
-                height: fit-content
-                width: fit-content
-                max-width: fit-content
-
-            .section-text
-                font-size: 16px
-                line-height: 28px
-                max-width: fit-content
-
-            .contact-form
-                padding-top: 30px
-                z-index: 2
-                width: 100%
-                .form-element
-                    margin-bottom: 28px
-                    width: 100%
-                    label
-                        position: relative
-                        p
-                            font-size: 12px
-                            line-height: 16px
-
-            fieldset
-                width: 100%
-
-            .cdu-button
-                width: 100%
-
-        #review-asg
-            padding: 50px 20px 40px 20px
-
-        #review-superbockgroup
-            padding: 40px 20px
-
-        #review-kalitec
-            padding: 40px 20px
-            z-index: 1
-
-        #review-ionatech
-            padding: 40px 20px
-
-        .side-title
-            margin-right: 0
-            margin-bottom: 10px
-
-        .modal
-            .modal-content
-                width: 331px
-                padding: 15px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 24px
-
-                .sub-sub-title
-                    font-size: 14px
-                    span
-                        width: 271px
-                        height: 84px
-
-                .form-section
-                    padding-top: 40px
-                    flex-direction: column
-                    .form-element
-                        margin-bottom: 15px
-                        width: 98%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-    @media screen and (max-width: $step3) and (max-height: $verticalStep1)
-        .modal
-            .modal-content
-                width: 90%
-                height: 90%
-                padding: 10px
-                .title
-                    font-size: 12px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 15px
-
-                .sub-sub-title
-                    font-size: 12px
-                    span
-                        width: auto
-
-                .form-section
-                    padding-top: 10px
-                    display: flex
-                    flex-direction: row
-                    .form-element
-                        margin-bottom: 5px
-                        width: 48%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-                    .next
-                        width: 98%
-
-    @media screen and (max-width: $step2) and (max-height: $verticalStep1)
-        .modal
-            .modal-content
-                width: 90%
-                height: 90%
-                padding: 10px
-                .title
-                    font-size: 12px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 15px
-
-                .sub-sub-title
-                    font-size: 12px
-
-                .form-section
-                    padding-top: 10px
-                    display: flex
-                    flex-direction: row
-                    .form-element
-                        margin-bottom: 5px
-                        width: 48%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-                    .next
-                        width: 98%
-
-    @media screen and (max-width: $step3) and (min-height: $verticalStep1)
-        .modal
-            .modal-content
-                width: 620px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 110px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step2) and (min-height: $verticalStep1)
-        .modal
-            .modal-content
-                width: 90%
-                height: 90%
-                padding: 15px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 24px
-
-                .sub-sub-title
-                    font-size: 14px
-                    span
-                        width: 271px
-                        height: 84px
-
-                .form-section
-                    padding: 40px 15px 0
-                    flex-direction: column
-                    .form-element
-                        margin-bottom: 15px
-                        width: 98%
-                        label
-                            .cdu-text-area
-                                height: 90px
-
-                .secondary
-                    padding-top: 0
-
-#development-services
-    .noToc
-        position: relative
-        overflow: hidden
-
-        .content-wrapper
-            width: 100%
-            display: flex
-            justify-content: center
-            flex-direction: column
-            align-items: center
-            position: relative
-            > *
-                width: 100%
-                max-width: 2100px
-                position: relative
-                z-index: 3
-            button.secondary
-                color: #2A7DEC
-                background-color: #fff
-                border-radius: 6px
-                border: 1px solid  #2A7DEC
-                width: 200px
-                opacity: 0
-                &:hover
-                    filter: brightness(1.2)
-
-            button:hover
-                filter: brightness(1.3) contrast(.9)
-
-            &.additionally
-                background-color: #F4F8FE
-                margin-bottom: 100px
-                .header
-                    display: flex
-                    flex-direction: row
-                    align-items: flex-start
-                    position: relative
-                    z-index: 1
-                    padding: 0 120px
-                    opacity: 1
-
-                    .side-title
-                        min-width: 202px
-                        margin-right: 60px
-
-                    .section-title
-                        max-width: 700px
-                        min-width: 700px
-
-        #content-mvp
-            z-index: 2
-            border-radius: 10px
-            background: rgba(255,255,255,0.2)
-            backdrop-filter: blur(25px)
-
-        #content-market-solution
-            z-index: 1
-            background-color: white
-
-
-    #hero
-        padding-top: 80px
-    .hero
-        padding-top: 80px
-
-    #first-screen
-        height: 950px
-        width: 100%
-        background-color: #F8F9FD
-        overflow: hidden
-        &::before
-            background: url("https://img.thingsboard.io/development-services/graph-line.svg") no-repeat center / contain
-            content: ''
-            width: 100%
-            height: 100%
-            position: absolute
-            top: 0
-            left: 0
-            transform: translateY(-11%)
-            opacity: 0
-            animation-name: backgroundFadeout
-            animation-duration: 1000ms
-            animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
-            animation-fill-mode: forwards
-            animation-delay: 100ms
-
-        .hero-container
-            height: 100%
-            display: flex
-            flex-direction: column
-            align-items: center
-            position: relative
-            margin: 0 20px
-
-            #hero-content
-                width: 100%
-                display: flex
-                flex-direction: column
-                justify-content: flex-start
-                gap: 16px
-                align-items: center
-                text-align: initial
-                z-index: 1
-                padding-top: 60px
-                margin-bottom: 20px
-
-                animation-name: slideup-in
-                animation-duration: 1000ms
-                animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
-                animation-fill-mode: forwards
-
-                .cdu-title
-                    color: #000000DE
-                    text-align: center
-                    font-size: 56px
-                    font-style: normal
-                    font-weight: 600
-                    line-height: 76px
-
-                .cdu-sub-title
-                    color: #4F5662
-                    text-align: center
-                    font-size: 20px
-                    font-style: normal
-                    font-weight: 400
-                    line-height: 40px
-                    letter-spacing: 0.036px
-                    width: 40%
-
-            .hero-image
-                display: flex
-                align-items: center
-                width: 100%
-                height: 100%
-                position: relative
-                max-width: 1880px
-
-                .image-wrapper-icon-laptop
-                    position: absolute
-                    top: 0
-                    left: 50%
-
-                    .schedule
-                        display: none
-
-                .image-wrapper-icon-phone
-                    position: absolute
-                    top: 18%
-                    left: 11%
-                    z-index: 2
-
-                #icon-laptop
-                    position: relative
-                    top: 0
-                    left: -50%
-                    z-index: 1
-                    opacity: 0
-                    transform: translateY(-2%)
-                    animation-name: fadeoutCenter
-                    animation-duration: 750ms
-                    animation-timing-function: cubic-bezier(0.07, 0.43, 0.17, 0.81)
-                    animation-fill-mode: forwards
-
-                #icon-phone
-                    opacity: 0
-                    animation-name: fadeoutLeft
-                    animation-duration: 1500ms
-                    animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
-                    animation-fill-mode: forwards
-                    animation-delay: 500ms
-
-                .schedule-block
-                    position: absolute
-                    top: 17%
-                    right: 13%
-                    background-color: white
-                    width: 344px
-                    height: 401px
-                    border-radius: 20px
-                    opacity: 0
-                    animation-name: fadeoutRight
-                    animation-duration: 1000ms
-                    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
-                    animation-fill-mode: forwards
-                    animation-delay: 1000ms
-                    padding: 60px 24px 40px 24px
-                    display: flex
-                    flex-direction: column
-                    align-items: center
-                    z-index: 1
-                    box-shadow: 0 0 10.65px 0 rgba(16, 14, 111, 0.10)
-
-                    #progress
-                        position: absolute
-
-                    .result-number
-                        color: #1E1B39
-                        text-align: center
-                        font-feature-settings: 'clig' off, 'liga' off
-                        font-family: Inter
-                        font-size: 49px
-                        font-style: normal
-                        font-weight: 700
-                        line-height: 60px
-                        padding-top: 75px
-
-                    .result-text
-                        color: #1E1B39
-                        text-align: center
-                        font-feature-settings: 'clig' off, 'liga' off
-                        font-family: Inter
-                        font-size: 18px
-                        font-style: normal
-                        font-weight: 400
-                        line-height: 32px
-                        padding-top: 20px
-                        margin-bottom: 54px
-
-                    .button
-                        border-radius: 6px
-                        background: #2A7DEC
-                        width: 100%
-                        height: 60px
-
-    section
-        padding-top: 0
-        padding-left: 0
-        padding-right: 0
-
-    .absolute-image
-        position: absolute
-
-    .our-customers
-        width: 100%
-        display: flex
-        flex-direction: column
-        align-items: center
-        z-index: 1
-        border-radius: 10px
-        background: rgba(255, 255, 255, 0.20)
-        backdrop-filter: blur(25px)
-
-        & > div
-            position: relative
-            width: 90vw
-            overflow: hidden
-            &:before, &:after
-                position: absolute
-                top: 0
-                width: 15vw
-                height: 100%
-                content: ""
-                z-index: 1
-                pointer-events: none
-            &:before
-                left: 0
-                background: linear-gradient(to right, #fff 40%, transparent 100%)
-
-            &:after
-                right: 0
-                background: linear-gradient(to left, #fff 40%, transparent 100%)
-
-        .title
-            color: #000000C2
             text-align: center
-            font-size: 36px
-            font-style: normal
-            font-weight: 500
-            line-height: 32px
-            letter-spacing: 0.2px
-            padding: 40px 0
-
-        .customer-logos
-            display: flex
-            align-items: center
-            gap: 150px
-            animation-name: running
-            animation-duration: 25s
-            animation-iteration-count: infinite
-            animation-timing-function: linear
-            position: relative
-
-            .logo
-                filter: grayscale(100%)
-                opacity: 0.6
-                &:hover
-                    filter: unset
-                    opacity: unset
-
-    .cdu-services
-        padding: 140px 0 0 0
-        background-color: white
-
-        .header
-            display: flex
-            flex-direction: row
-            align-items: flex-start
-            position: relative
-            z-index: 1
-            padding: 0 120px
-            opacity: 0
-            transform: translate3d(0, 45px, 0)
-
-        .header-animation
-            animation-name: slideup-in
-            animation-duration: 1000ms
-            animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-            animation-fill-mode: forwards
-
-            .side-title
-                margin-right: 65px
-                min-width: 202px
-
-            .section-title
-                max-width: 700px
-                min-width: 700px
-                margin-right: 40px
-
-        .poc
-            position: relative
-            display: flex
-            justify-content: space-between
-            padding: 110px 120px
-            z-index: 1
-
-            #solution-poc
-                object-fit: contain
-                width: 100%
-                max-width: fit-content
-
-            #solution-widget-1
-                top: 42%
-                left: 35%
-
-            .right-block
-                display: flex
-                flex-direction: column
-                justify-content: center
-                max-width: 410px
-
-        .left-block
-            position: relative
-        .rigth-block
-            position: relative
-
-        .mvp
-            position: relative
-            padding: 80px 202px 80px 137px
-            display: flex
-            justify-content: space-between
-            align-items: center
-            z-index: 2
-
-            .left-block
-                max-width: 620px
-
-            #solution-widget-2
-                object-fit: contain
-                width: 29%
-                max-width: fit-content
-                top: 68%
-                left: 66%
-
-            #solution-widget-3
-                top: 37%
-                left: 77%
-
-        .market-solution
-            position: relative
-            padding: 120px 130px 280px 130px
-            display: flex
-            justify-content: space-between
-            z-index: 1
-            background-color: white
-
-            .left-block
-                padding-left: 230px
-                z-index: 1
-
-                #solution-market-solution1
-                    width: 768px
-
-                #solution-market-solution2
-                    top: 32%
-                    left: 7%
-                    width: 768px
-
-            .right-block
-                padding-top: 76px
-                max-width: 520px
-
-        .additionally
-            position: relative
-            padding: 100px 0
-            display: flex
-            flex-direction: column
-            align-items: center
-            z-index: 0
-
-    .testimonials
-        position: relative
-        background: white
-        padding: 30px 0
-        display: flex
-        flex-direction: column
-        z-index: 3
-
-        #carousel-wrapper
-            max-width: 1200px
-            button:hover
-                filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
-
-        .upper-block
-            display: flex
-            align-items: baseline
-            padding: 0 130px
-            .side-title
-                margin-right: 94px
-
-        button.anchor-button
-            max-width: 290px
-            height: 60px
-            padding: 0
+            text-decoration: none
+            border-radius: 4px
 
     .side-title
         z-index: 2
         span
-            text-transform: uppercase
             display: inline-block
-            color: #2A7DEC
-            font-size: 24px
-            font-weight: 500
-            line-height: 48px
+            flex-direction: column
+            align-items: flex-start
+            gap: 4px
+            border-radius: 6px
+            padding: 7px 0px
+            color: #3622A4
+            text-align: center
+            font-size: 26px
+            font-style: normal
+            font-weight: 700
+            line-height: 30px
+            letter-spacing: 0.26px
+            text-transform: uppercase
+            text-wrap: nowrap
+            width: max-content
 
     .section-title
         color: #333
-        font-size: 36px
+        font-size: 48px
         font-style: normal
-        font-weight: 500
-        line-height: 48px
-        letter-spacing: 0.48px
-        margin-bottom: 15px
+        font-weight: 600
+        line-height: 76px
+        padding-bottom: 30px
 
     .section-text
-        color: #000000C2
-        font-size: 18px
+        color: #5E5F62
+        font-size: 16px
         font-style: normal
         font-weight: 400
         line-height: 28px
         letter-spacing: 0.016px
-
-    .section-list
-        li
-            list-style-type: none
-            margin-left: 30px
-            color: #000000C2
-            font-size: 16px
-            font-style: normal
-            font-weight: 400
-            line-height: 28px
-            letter-spacing: 0.022px
-            padding-bottom: 16px
-            opacity: 0
-            &:before
-                content: "\f00c"
-                position: absolute
-                margin-left: -32px
-                padding: 0 5px
-                font-family: "Font Awesome 5 Free"
-                font-weight: 600
-                font-size: 14px
-                color: #2A7DEC
-
-    .section-list-animation
-        $delay: 500ms
-        li, button.secondary
-            animation-name: slideup-in
-            animation-duration: 1000ms
-            animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-            animation-fill-mode: forwards
-            animation-delay: $delay
-
-            @for $i from 1 through 8
-                &:nth-child(#{$i + 1})
-                    animation-delay: calc(#{$delay} + calc(#{$i} * 200ms))
-
-    .base-image
-        opacity: 0.5
-        transform: scale(0.8)
-
-    .base-image-animation
-        animation-name: baseImageAppear
-        animation-duration: 500ms
-        animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-        animation-fill-mode: forwards
-
-    .secondary-image
-        opacity: 0
-        transform: scale(0)
-
-    .secondary-image-animation
-        animation-name: secondaryImageAppear
-        animation-duration: 750ms
-        animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-        animation-fill-mode: forwards
-
-        &:nth-child(2)
-            animation-delay: 200ms
-
-    .number
-        position: absolute
-
-    .bg-rectangle
-        position: absolute
-        width: 692px
-        height: 659px
-        transform: rotate(36.145deg)
-        flex-shrink: 0
-        border-radius: 60px
-        opacity: 0.3
-        background: #E9EBFB
-        z-index: 0
-
-    #rectangle2
-        top: 80%
-        left: 82%
-
-    #rectangle3
-        top: 90%
-        left: -10%
-
-    #number-one
-        top: 35%
-        left: 62%
-
-    #number-two
-        z-index: -1
-        top: 12%
-        left: 33%
-
-    #number-three
-        top: 45%
-        left: 54%
 
     .header
         margin: 0 0 20px
@@ -1536,58 +1990,54 @@ $font-style-normal: normal
         width: 100%
         height: 100%
         background-color: $modal-background-color
-    
         .modal-content 
+            width: 950px
+            height: auto
+            display: flex
+            flex-direction: column
             animation-name: animatetop
             animation-duration: 0.4s
             background-color: $modal-content-background-color
-            padding: 20px 20px 30px
             border: $modal-content-border
-            width: 950px
+            max-width: 90%
+            max-height: 90%
+            border-radius: 24px
+            overflow: hidden
+            padding: 30px
+            form
+                height: 100%
+                display: flex
+                flex-direction: column
+                flex: 1
+                overflow: auto
+            
+            .title-container
+                position: sticky
+                top: 0
+                background: $modal-content-background-color
+                z-index: 1
+                display: flex
+                justify-content: space-between
+                align-items: center
 
             .sub-content
-                overflow: auto
-                height: 95%
-
-            .close-button
-                display: flex
-                justify-content: end
-                
+                flex: 1
+                overflow-y: auto
+                min-height: 0
+                padding: 20px 0
             .close
                 width: 28px
                 height: 28px
                 cursor: pointer
 
-            .title, .sub-title, .sub-sub-title 
-                letter-spacing: 0.01em
-                text-align: center
-                display: flex
-                justify-content: center 
-                font-style: $font-style-normal
-
-            .title
-                font: $title-font
-                color: #3622A4
-
-            .sub-title
-                font: $sub-title-font
-                color: #333333
-
-            .sub-sub-title
-                font: $sub-sub-title-font
-                color: #5E5F62
-                letter-spacing: .001em
-                span
-                    width: 556px
-                    height: 56px
-
             .form-section
-                padding: 30px 40px 0 40px
                 display: flex
-                justify-content: space-around
+                justify-content: space-between
+                padding: 0
+                gap: 10px
                 .form-element
                     margin-bottom: 15px
-                    width: 48%
+                    width: 50%
                     label
                         position: relative
                         width: 100%
@@ -1602,8 +2052,8 @@ $font-style-normal: normal
                             top: -8px
                             left: 10px
                             z-index: 2
-                            padding: 0 5px
-                            background: white
+                            padding: 0px 5px
+                            background: #FAFBFC
 
                         .cdu-form-control, .cdu-text-area
                             width: 100%
@@ -1615,10 +2065,10 @@ $font-style-normal: normal
                             letter-spacing: 0.15px
                             border-radius: 4px
                             border: $form-control-border
-                            padding: 16px 18px
+                            padding: 12px 18px
 
                         .cdu-text-area
-                            height: 170px
+                            height: 80px
 
                     .label-select
                         select 
@@ -1641,1027 +2091,774 @@ $font-style-normal: normal
                             transform-origin: center center
 
                 .next
-                    width: 98%
+                    width: 100%
 
-            .secondary
-                padding-top: 0
+            .questionnaire-section
+                display: flex
+                flex-direction: column
+                gap: 16px
+                fieldset
+                    border: none
+                    padding: 0
+
+                legend
+                    font-weight: 500
+                    margin-bottom: 10px
+                    display: block
+
+                span
+                    font-weight: normal
+                    color: #888
+                    font-size: 13px
+                    margin-left: 6px
+                
+                .label-container
+                    display: flex
+                    flex-wrap: wrap
+
+                    label
+                        display: block
+                        width: 50%
+                        margin-bottom: 10px
+                        cursor: pointer
+
+                    input[type="radio"]
+                        margin-right: 8px
+                        vertical-align: middle
+                .label-container.last
+                    label
+                        width: 100%
 
             .submit-button-container
-                display: flex
-                justify-content: center
+                position: sticky
+                bottom: 0
+                background: $modal-content-background-color
+                z-index: 1
+
                 .cdu-button
-                    padding: 15px
                     border-radius: 6px
                     color: white
                     background-color: $button-background-color
-                    width: 400px
+                    width: 100%
 
-    @media screen and (max-width: $step6)
-        .content-wrapper.additionally
-            .header
-                flex-direction: column !important
-
-        .noToc
-            .content-wrapper
-                > *
-                    max-width: 1540px
-
-        #first-screen
-            .hero-container
-                .hero-image
-                    width: 1440px
-                    .image-wrapper-icon-phone
-                        top: 21%
-                        left: 5%
-
-                    #icon-laptop
-                        width: 1000px
-
-                    #icon-phone
-                        width: 400px
-
-                    .schedule-block
-                        top: 21%
-                        right: 4%
-
-        .cdu-services
-            padding: 100px 0 0 0
-            .header
-                padding: 0 40px
-
-            .header-animation
-                .side-title
-                    margin-right: 50px
-                    min-width: 198px
-
-                .section-title
-                    max-width: 528px
-                    min-width: 528px
-                    font-size: 36px
-
-            .poc
-                padding: 110px 40px
-
-                #solution-poc
-                    width: 800px
-
-                #solution-widget-1
-                    top: 42%
-                    left: 28%
-                    width: 562px
-
-            .mvp
-                #solution-mvp1
-                    width: 720px
-
-                #solution-widget-2
-                    width: 237px
-                    max-width: fit-content
-                    top: 65%
-                    left: 59%
-
-                #solution-widget-3
-                    top: 35%
-                    left: 72%
-                    width: 19%
-
-            .market-solution
-                padding: 100px 102px 285px 50px
-
-                .left-block
-                    padding-left: 80px
-
-                    #solution-market-solution1
-                        width: 700px
-
-                    #solution-market-solution2
-                        top: 32%
-                        left: 0
-                        width: 700px
-
-                .right-block
-                    padding-top: 80px
-                    max-width: 460px
-
-            .additionally
-                padding: 100px 0
-
-        .testimonials
-            padding: 30px 0
-
-            .upper-block
-                padding: 0 50px
-
-        #number-one
-            top: 20%
-            left: 62%
-
-        #number-three
-            top: 50%
-            left: 50%
-
-        .section-title
-            font-size: 36px
-            letter-spacing: 0.3px
-
-        .section-list
-            li
-                font-size: 16px
-
-        #rectangle3
-            top: 92%
-            left: -28%
-
-    @media screen and (max-width: $step5)
-        .noToc
-            .content-wrapper
-                > *
-                    max-width: 1280px
-
+    @media screen and (max-width: $step6) //1439px-1919px
+        .development-services
+            .development-services-container
+                width: 1376px
+    
+    @media screen and (max-width: $step5) //1279px-1439px
         #first-screen
             .hero-container
                 #hero-content
                     .cdu-title
-                        font-size: 56px
+                        font-size: 80px
 
-                    .cdu-sub-title
-                        font-size: 24px
+        .statistics
+            .statistics-wrapper
+                padding: 32px
+                .statistic-item
+                    .statistic-item-num
+                        font-size: 50px
+                        line-height: 60px
+                    .statistic-item-text
+                        font-size: 18px
+        .project-timeline
+            display: flex
+            flex-direction: column
+            align-items: center
+            .timeline
+                width: 1000px
 
-                .hero-image
-                    width: 1440px
-                    .image-wrapper-icon-phone
-                        top: 21%
-                        left: 6%
-
-                    #icon-laptop
-                        width: 1000px
-
-                    #icon-phone
-                        width: 400px
-
-                    .schedule-block
-                        top: 21%
-                        right: 8%
-
-        .cdu-services
-            padding: 100px 0 0 0
-            .header
-                padding: 0 55px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title section-text" "section-title section-text"
-                align-items: start
-
-                .side-title
-                    margin-right: 50px
-                    min-width: 198px
-                    grid-area: side-title
-                    span
-                        padding: 6px 0
-
-                .section-title
-                    grid-area: section-title
-                    max-width: 528px
-                    min-width: 528px
-                    font-size: 36px
-
-                .section-text
-                    grid-area: section-text
-
-            .poc
-                padding: 110px 40px
-
-                #solution-poc
-                    width: 700px
-
-                #solution-widget-1
-                    top: 43%
-                    left: 23%
-                    width: 562px
-
-            .mvp
-                padding: 100px 50px 109px 50px
-
-                #solution-mvp1
-                    width: 660px
-
-                #solution-widget-2
-                    width: 257px
-                    max-width: fit-content
-                    top: 65%
-                    left: 66%
-
-                #solution-widget-3
-                    top: 36%
-                    left: 82%
-                    width: 246px
-
-            .market-solution
-                padding: 100px 65px 185px 50px
-
-                .left-block
-                    padding-left: 50px
-
-                    #solution-market-solution1
-                        width: 600px
-
-                    #solution-market-solution2
-                        top: 32%
-                        left: 0
-                        width: 600px
-
-                .right-block
-                    padding-top: 80px
-                    max-width: 460px
-
-            .additionally
-                padding: 100px 0
-
-        .testimonials
-            padding: 130px 0 30px 0
-
-            .upper-block
-                padding: 0 50px
-
-        #number-one
-            top: 15%
-            left: 60%
-
-        #number-three
-            top: 44%
-            left: 48%
-
-        .section-title
-            font-size: 36px
-            letter-spacing: 0.3px
-
-        .section-list
-            li
-                font-size: 16px
-                color: #000000C2
-
-        #rectangle3
-            top: 92%
-            left: -28%
-
-        .modal 
-            .modal-content 
-                width: 800px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 130px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step4)
-        .noToc
-            .content-wrapper
-                > *
-                    max-width: 1000px
-
+        .development-services
+            .development-services-container
+                width: 1216px
+    
+    @media screen and (max-width: $step4) //768px-1279px
         #first-screen
             .hero-container
                 #hero-content
                     .cdu-title
-                        font-size: 56px
-
+                        font-size: 64px
+                        line-height: 120%
                     .cdu-sub-title
-                        font-size: 24px
-                        min-width: 622px
+                        line-height: 140%
+                        width: 60%
+        .development-services
+            .development-services-container
+                padding: 32px
+                min-width: 704px
+                .statistics
+                    .statistics-wrapper
+                        flex-direction: row-reverse
+                        justify-content: center
+                        gap: 0
+                        padding: 10px
+                        .statistic-item
+                            flex: 1 1 45%
+                            max-width: 200px
+                            gap: 0
+                            padding: 5px
+                            .statistic-item-num
+                                font-size: 44px
+                            .statistic-item-text
+                                font-size: 16px
+                                text-align: center
+                .custom-solutions
+                    .custom-solutions-wrapper
+                        .custom-solution-container
+                            flex-direction: column
+                            gap: 20px
+                            .cards
+                                width: 100%
+                                .expansion-panel
+                                    width: 100%
+                                    &.expanded
+                                        .expansion-content
+                                            display: flex
+                                            flex-direction: column
+                                            gap: 10px
+                                            max-height: 100%
 
-                .hero-image
-                    .image-wrapper-icon-phone
-                        top: 23%
-                        left: 16%
+                                        .images
+                                            display: block
+                                            width: 100%
+                                            .client-feedback-cards
+                                                width: 100%
+                                                .project-screen-container 
+                                                    a
+                                                        text-align: center
+                                                    .project-screen img
+                                                        height: auto
+                                                        width: 100%
 
-                    #icon-laptop
-                        width: 800px
+                            .images
+                                display: none
 
-                    #icon-phone
-                        width: 300px
+                .vision-section
+                    .vision-wrapper
+                        padding: 40px
+                        .vision-info
+                            .vision-header
+                                width: 100%
+                                flex-direction: row-reverse
+                                gap: 40px
+                                .vision-title
+                                    justify-content: start
+                                    width: 70%
+                            .vision-footer
+                                flex-direction: column
+                                gap: 48px
+                                .vision-footer-text
+                                    text-align: center
+                .case-studies
+                    .section-title
+                        margin-bottom: 40px
+                    .cards-container
+                        .card
+                            max-width: calc(50% - 16px)
+                            .card-tag
+                                top: 165px
+                                right: unset
+                                left: 16px
+                .services
+                    .services-title
+                        text-align: center
+                    .services-container
+                        .cards
+                            .expansion-card
+                                width: calc(50% - 16px)
+                            .expansion-card.expanded
+                                max-height: fit-content
 
-                    .schedule-block
-                        width: 284px
-                        height: 347px
-                        top: 22%
-                        right: 20%
-                        padding-top: 40px
+                .multicolored
+                    .multicolored-container
+                        left: -4%
+                    .industries
+                        .industries-container
+                            .industries-title
+                                text-align: center
+                            .content-container
+                                width: 100%
+                                max-width: 100%
+                                max-height: 100%
+                                .menu
+                                    max-height: 100%
+                                    width: 100%
+                                    max-width: 100%
+                                    padding: 0
+                                    overflow-y: hidden
+                                    .menu-item
+                                        flex-direction: column
+                                        .menu-item-header
+                                            padding: 0 16px
+                                .industries-card
+                                    max-width: 95%
+                                .industries-card.global
+                                    display: none
+                                .industries-card.inline
+                                    display: flex
 
-                        #progress
-                            width: 243px
+                    .trusted-partner
+                        .trusted-partner-container
+                            padding: 40px
 
-                        .result-number
-                            font-size: 44px
+                    .fast-delivery table td
+                        padding: 20px
 
-                        .result-text
-                            font-size: 16px
-                            margin-bottom: 10px
+                    .client-feedback 
+                        .client-feedback-container
+                            padding: 0
 
-        .cdu-services
-            padding: 100px 0 0 0
-            .header
-                padding: 0 55px
-                display: grid
-                grid-auto-flow: column
-                grid-template-rows: 1fr 3fr
-                grid-template-columns: 1fr 1fr
-                grid-template-areas: "side-title section-text" "section-title section-text"
-                align-items: center
+                    .more-feature
+                        .cards
+                            flex-wrap: wrap
+                            width: 100%
+                            .card
+                                flex: none
+                                width: 48%
+                
+                .engagement-models 
+                    .engagement-model-container 
+                        .container 
+                            table 
+                                thead th
+                                    padding: 20px
+                                    img
+                                        top: -50%
 
-                .section-title
-                    grid-area: section-title
-                    max-width: 420px
-                    min-width: 420px
-                    font-size: 30px
+                                td
+                                    padding: 20px
 
-                .section-text
-                    grid-area: section-text
-                    font-size: 14px
+                .clients-reviews 
+                    .clients-reviews-cards 
+                        .client-info
+                            width: 100%
+                            max-width: 100%
+                            min-height: auto
 
-            .poc
-                padding: 110px 40px
+                .questions-section 
+                    .questions-section-cards 
+                        .questions-section-card 
+                            max-height: fit-content
+                            .questions-section-header
+                                .questions-section-title
+                                    gap: 20px
+                                    .questions-section-num
+                                        width: auto
+                            .questions-section-content
+                                display: none
+                                padding: 10px
+                        .questions-section-card.expanded
+                            .questions-section-content
+                                display: flex
+                                padding: 10px
+                                                        
+                .get-in-touch-section
+                    .get-in-touch-container
+                        flex-direction: column
+                        align-items: center
+                        gap: 48px
+                        .get-in-touch-title
+                            font-size: 48px
+                            line-height: 57.6px
+                            text-align: center
+                        img 
+                            width: 100%
 
-                .right-block
-                    max-width: 260px
-                    max-height: 228px
-                    margin: 50px 0
+                .contact-us-section
+                    .contact-us-section-content
+                        .contact-us-container
+                            flex-direction: column
+                            .contact-us-descr
+                                width: 100%
+                                gap: 25px
+                            .contact-us-form
+                                width: 100%
+                            .contact-us-pattern
+                                display: none
 
-                #solution-poc
-                    width: 600px
+                .project-timeline
+                    .timeline
+                        display: none
+                    .project-timeline-container 
+                        .project-timeline-title
+                            font-size: 40px
+                            text-align: center
 
-                #solution-widget-1
-                    top: 46%
-                    left: 23%
-                    width: 446px
+                    .timeline-container-mobile
+                        display: flex                    
 
-            .mvp
-                padding: 100px 35px 109px 40px
-
-                .left-block
-                    margin-bottom: 50px
-
-                #solution-mvp1
-                    width: 500px
-
-                #solution-widget-2
-                    width: 200px
-                    max-width: fit-content
-                    top: 59%
-                    left: 61%
-
-                #solution-widget-3
-                    top: 32%
-                    left: 79%
-                    width: 226px
-
-            .market-solution
-                padding: 100px 40px 185px 40px
-
-                .left-block
-                    padding-left: 30px
-
-                    #solution-market-solution1
-                        width: 500px
-
-                    #solution-market-solution2
-                        top: 50%
-                        left: 0
-                        width: 500px
-
-                .right-block
-                    padding-top: 80px
-                    max-width: 352px
-                    max-height: 288px
-
-            .content-wrapper.additionally
-                div.header
-                    padding: 0
-
-        .testimonials
-            padding: 130px 0 30px 0
-
-            .upper-block
-                padding: 0 50px
-                display: flex
-                flex-direction: column
-                align-items: flex-start
-
-            #carousel-wrapper
-                max-width: 1000px
-                padding: 0 50px
-
-        #number-one
-            top: 15%
-            left: 81%
-
-        #number-two
-            top: 17%
-            left: 20%
-
-        #number-three
-            top: 50%
-            left: 50%
-
-        .section-title
-            font-size: 30px
-            line-height: 45px
-            letter-spacing: 0.3px
-            padding-bottom: 10px
-
-        .section-list
-            li
-                font-size: 14px
-                padding: 0
-
-        #rectangle3
-            top: 92%
-            left: -28%
-
-        .modal 
-            .modal-content 
-                width: 693px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
-                                font-size: 14px
-
-                            .cdu-text-area
-                                height: 80px
-
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
-
-    @media screen and (max-width: $step3) and (max-height: $verticalStep1)
-        .modal 
-            .modal-content 
-                width: 90%
-                height: 90%
-                padding: 10px
-                .title
-                    font-size: 12px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 15px
-
-                .sub-sub-title
-                    font-size: 12px
-
-                .form-section
-                    padding-top: 10px
-                    display: flex
-                    flex-direction: row
-                    .form-element
-                        margin-bottom: 5px
-                        width: 48%
-                        label
-                            .cdu-text-area
-                                height: 90px
-                                        
-                    .next
-                        width: 98%
-
-    @media screen and (max-width: $step2) and (max-height: $verticalStep1)
-        .modal 
-            .modal-content 
-                width: 90%
-                height: 90%
-                padding: 10px
-                .title
-                    font-size: 12px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 15px
-
-                .sub-sub-title
-                    font-size: 12px
-
-                .form-section
-                    padding-top: 10px
-                    display: flex
-                    flex-direction: row
-                    .form-element
-                        margin-bottom: 5px
-                        width: 48%
-                        label
-                            .cdu-text-area
-                                height: 90px
-                    .next
-                        width: 98%
-
-    @media screen and (max-width: $step3) and (min-height: $verticalStep1)
-        .noToc
-            .content-wrapper
-                > *
-                    max-width: 761px
-
+    @media screen and (max-width: $step3) //320px-768px
         #first-screen
-            height: 70vh
-            min-height: unset
-            &::before
-                transform: translate(-56%, -5%) scale(3.5)
-                animation-name: backgroundFadeoutMobile
+            img 
+                height: 600px
             .hero-container
-                .hero-image
-                    width: 671px
-                    #icon-laptop
-                        width: 560px
-
-                    .schedule-block
-                        width: 212px
-                        height: 243px
-
-                        top: 28%
-                        right: 3%
-
-                        padding: 32px 20px 32px 20px
-                        animation-delay: 500ms
-
-                        #progress
-                            width: 78%
-
-                        .result-number
-                            font-size: 28px
-                            line-height: 40px
-                            padding-top: 32px
-
-                        .result-text
-                            font-size: 14px
-                            line-height: 20px
-                            margin-bottom: 17px
-
-                        .button
-                            height: fit-content
-                            font-weight: 400
-
-
-            .hero-container
+                padding: 10px
                 #hero-content
                     .cdu-title
                         font-size: 40px
-                        line-height: 76px
-
                     .cdu-sub-title
-                        font-size: 20px
-                        line-height: 40px
                         width: 100%
+                        font-size: 16px
+                        line-height: 24px
+                .request-concultation-container
+                    width: 100%
+                    padding: 10px
+                .request-concultation
+                    height: 64px
+                    padding: 0
+                    width: 100%
+        .development-services
+            .development-services-container
+                padding: 0
+                min-width: 304px
+                .statistics
+                    margin-bottom: 50px
+                    .statistics-wrapper
+                        justify-content: center
+                        gap: 0
+                        padding: 10px
+                        flex-wrap: wrap
+                        .statistic-item
+                            flex: 1 1 45%
+                            width: 50%
+                            .statistic-item-num
+                                font-size: 28px
+                            .statistic-item-text
+                                font-size: 14px
+                                text-align: center
+                                padding: 0
+                .custom-solutions
+                    padding: 10px
+                    margin-bottom: 50px
+                    .custom-solutions-wrapper
+                        h2
+                            font-size: 24px
+                            line-height: 140%
+                        .custom-solution-container
+                            flex-direction: column
+                            gap: 20px
+                            .cards
+                                width: 100%
+                                .expansion-panel
+                                    width: 100%
+                                    .expansion-content
+                                        .expansion-buttons
+                                            font-size: 14px
+                                    .header-icon
+                                        display: none
+                            .images
+                                width: 100%
+                                .client-feedback-cards
+                                    width: 100%
+                                    .client-info
+                                        .client-avatar-img
+                                            display: none
+                                    .project-screen-container
+                                        .project-screen
+                                            display: none
+                .vision-section
+                    margin-bottom: 30px
+                    .vision-wrapper
+                        padding: 20px
+                        .vision-info
+                            gap: 28px
+                            .vision-header
+                                width: 100%
+                                flex-direction: column-reverse
+                                gap: 40px
+                                .vision-title
+                                    flex-direction: row
+                                    justify-content: start
+                                    width: 100%
+                                    margin-bottom: 0
+                                    .vision-img
+                                        width: 50px
+                                        height: 50px
+                                    .vision-text
+                                        text-align: left
+                                        .name
+                                            font-size: 16px
+                                        .title
+                                            font-size: 14px
+                            .vision-footer
+                                flex-direction: column
+                                gap: 28px
+                                .vision-footer-text
+                                    text-align: center
+                                    width: 90%
+                                    font-size: 28px
+                                .vision-footer-btn
+                                    height: 64px
+                                    width: 100%
+                                    padding: 0
+                .case-studies
+                    padding: 10px
+                    margin-bottom: 50px
+                    .section-title
+                        font-size: 24px
+                        line-height: 140%
+                        margin-bottom: 0
+                    .cards-container
+                        .card
+                            max-width: 100%
+                            .card-content
+                                .card-stats
+                                    padding: 0
+                                    flex-direction: column
+                            .card-tag
+                                top: 165px
+                                right: unset
+                                left: 16px
+                .services
+                    padding: 10px
+                    margin-bottom: 50px
+                    .services-container
+                        .services-title
+                            font-size: 24px
+                            line-height: 140%
+                        .cards
+                            .expansion-card
+                                width: 100%
+                                .expansion-header
+                                    &::after
+                                        position: sticky
+                                        vertical-align: middle
+                                    .expansion-title
+                                        .header-icon
+                                            display: none
+                                        h3
+                                            font-size: 16px
+                                            line-height: 24px
+                            .expansion-card.expanded
+                                max-height: fit-content
 
-                .hero-image
-                    .image-wrapper-icon-laptop
-                        position: absolute
-                        top: 8%
-                        left: 50%
+                .multicolored
+                    .multicolored-container
+                        left: 0
+                    .industries
+                        margin-bottom: 50px
+                        .industries-container
+                            padding: 10px
+                            .industries-title
+                                font-size: 24px
+                                line-height: 140%
+                            .industries-subtitle
+                                width: 100%
+                                font-size: 14px
+                                line-height: 21px
+                            .content-container
+                                width: 100%
+                                max-width: 100%
+                                max-height: 100%
+                                .menu
+                                    max-height: 100%
+                                    width: 100%
+                                    max-width: 100%
+                                    padding: 0
+                                    overflow-y: hidden
+                                    .menu-item
+                                        flex-direction: column
+                                        .menu-item-header
+                                            padding: 0 16px
+                                            font-size: 16px
+                                            gap: 10px
+                                .industries-card
+                                    max-width: 95%
+                                    .card-container
+                                        .card-img
+                                            display: none
+                                        h3
+                                            font-size: 20px
+                                .industries-card.global
+                                    display: none
+                                .industries-card.inline
+                                    display: flex
+                                    padding: 15px
+                                    font-size: 14px
+                                    line-height: 21px
 
-                        .schedule
+                    .trusted-partner
+                        margin-bottom: 50px
+                        .trusted-partner-title
+                            font-size: 24px
+                            line-height: 140%
+                        .trusted-partner-container
+                            padding: 20px
+                            .trusted-partner-header
+                                .trusted-tips
+                                    .trusted-tip                                            
+                                        font-size: 14px
+                                        line-height: 21px
+                                        &::before
+                                            width: 24px
+                                            height: 24px
+                                            font-size: 12px
+                                .trusted-partner-header-descr
+                                    p
+                                        font-size: 16px
+                                        line-height: 24px
+                            .trusted-partner-footer
+                                flex-direction: column
+                                gap: 20px
+                                padding-top: 16px
+                                .trusted-partner-avatar
+                                    flex-direction: row
+                                    .trusted-partner-text
+                                        text-align: left
+                                        .name
+                                            font-size: 16px
+                                            line-height: 24px
+                                        .title
+                                            font-size: 14px
+                                            line-height: 21px
+                                    .avatar
+                                        width: 50px
+                                        height: 50px
+
+                    .fast-delivery
+                        padding: 10px
+                        opacity: 1
+                        margin-bottom: 50px
+                        .fast-delivery-title
+                            font-size: 24px
+                            line-height: 140%
+                            padding: 0
+                            width: 100%
+                        .fast-delivery-mobile
+                            display: flex
+                        table
                             display: none
 
-                    #icon-phone
-                        display: none
-
-        .cdu-services
-            padding: 60px 0 0 0
-            .header
-                flex-direction: column
-                padding: 0 20px
-                display: flex
-                align-items: flex-start
-
-            .poc
-                padding: 20px
-                padding-bottom: 180px
-                flex-direction: column-reverse
-                #solution-poc
-                    width: 100%
-                    max-width: unset
-
-                #solution-widget-1
-                    top: 43%
-                    left: 35%
-
-            .mvp
-                padding: 40px 20px 80px 20px
-                flex-direction: column
-                align-items: flex-start
-                .right-block
-                    position: relative
-                    width: 100%
-
-                    #solution-mvp1
-                        width: 100%
-
-                    #solution-widget-2
-                        width: 227px
-                        max-width: fit-content
-                        top: 63%
-                        left: 65%
-
-                    #solution-widget-3
-                        width: 302px
-                        top: 30%
-                        left: 78%
-
-            .market-solution
-                padding: 60px 20px 260px 20px
-                flex-direction: column-reverse
-                .left-block
-                    padding-left: 0
-                    #solution-market-solution1
-                        width: 90%
-
-                    #solution-market-solution2
-                        width: 90%
-                        top: 60%
-                        left: 7%
-
-                .right-block
-                    padding-top: 0
-                    margin-bottom: 170px
-                    .section-title
-                        padding-bottom: 0
-
-            .additionally
-                padding: 40px 20px
-                .side-title
-                    margin-bottom: 10px
-                    button
-                        padding: 5px 50px
-
-            .header-animation
-                .section-title
-                    min-width: unset
-                    line-height: 48px
-                    font-size: 30px
-
-        .noToc
-            position: relative
-
-
-        .our-customers
-            .title
-                font-size: 14px
-                line-height: 32px
-                padding: 40px 0
-
-        .testimonials
-            padding: 80px 0 30px 0
-            .upper-block
-                flex-direction: column
-                padding: 0 20px
-                .side-title
-                    margin-bottom: 10px
-                .section-title
-                    margin-bottom: 0
-                    padding-bottom: 0
-
-            #carousel-wrapper
-                max-width: 870px
-
-        .side-title
-            margin-bottom: 10px
-            span
-                font-size: 20px
-                line-height: 20px
-                padding: 8px 0
-
-        .section-title
-            font-size: 30px
-            line-height: 40px
-            margin-bottom: 10px
-            padding-bottom: 0
-
-        .section-text
-            font-size: 14px
-            line-height: 28px
-            padding-bottom: 10px
-
-        .section-list
-            li
-                font-size: 14px
-                line-height: 32px
-                padding-bottom: 10px
-
-        #rectangle2
-            top: 80%
-            left: 82%
-
-        #rectangle3
-            top: 90%
-            left: -10%
-
-        #number-one
-            top: -5%
-            left: 70%
-            transform: scale(0.55)
-
-        #number-two
-            top: -5%
-            left: 65%
-            transform: scale(0.55)
-
-        #number-three
-            top: -1%
-            left: 61%
-            transform: scale(0.55)
-
-        .header
-            margin: 0 0 20px
-            font-size: 20px
-
-        .text
-            font-size: 16px
-
-        .accent-text
-            font-size: 14px
-            line-height: 1.5
-
-        .modal 
-            .modal-content 
-                width: 620px
-                .title
-                    font-size: 15px
-
-                .sub-title
-                    font-size: 27px
-
-                .sub-sub-title
-                    font-size: 14px
-
-                .form-section
-                    .form-element
-                        label
-                            p
-                                font-size: 11px
-                            .cdu-form-control
+                    .client-feedback
+                        height: auto
+                        padding: 10px
+                        margin-bottom: 50px
+                        .client-feedback-container
+                            padding: 0
+                            .client-feedback-text
                                 font-size: 14px
+                                line-height: 21px
+                            .client-container
+                                .client-avatar
+                                    align-items: center
+                                    .client-avatar-img
+                                        width: 45px
+                                        height: 45px
+                                    .client-avatar-descr
+                                        .name
+                                            font-size: 16px
+                                            line-height: 24px
+                                        .title
+                                            font-size: 14px
+                                            line-height: 21px
+                                .client-logo
+                                    display: none
+                        .pattern-img
+                            display: none
 
-                            .cdu-text-area
-                                height: 110px
+                    .more-feature
+                        padding: 10px
+                        margin-bottom: 50px
+                        .more-feature-title
+                            font-size: 24px
+                            line-height: 140%
+                        .cards
+                            flex-wrap: wrap
+                            width: 100%
+                            .card
+                                width: 100%
+                                padding: 15px
+                                height: auto
+                                display: flex
+                                flex-direction: column
+                                gap: 10px
+                                .card-title
+                                    font-size: 20px
+                                    line-height: 140%
+                                    margin: 0
+                                    padding: 0
+                                .card-descr
+                                    font-size: 14px
+                                    line-height: 21px
+                                    margin: 0
+                                    padding: 0
+                
+                    .get-in-touch-section
+                        .get-in-touch-container
+                            .get-in-touch-title
+                                width: 100%
 
-                .submit-button-container
-                    .cdu-button
-                        width: 250px
+                .engagement-models
+                    padding: 10px
+                    margin-bottom: 50px
+                    .engagement-model-container 
+                        .engagement-model-title
+                            text-align: center
+                            font-size: 24px
+                            line-height: 140%
+                        .engagement-model-descr
+                            font-size: 14px
+                            line-height: 21px
+                        .container
+                            padding: 0
+                            table
+                                display: none
+                        .engagement-model-mobile
+                            display: flex
 
-    @media screen and (max-width: $step2) and (min-height: $verticalStep1)
-        #first-screen
-            &::before
-                transform: translate(-56%, -5%) scale(3.5)
-                animation-name: backgroundFadeoutMobile
-            .hero-container
-                .hero-image
-                    width: 100%
-                    #icon-laptop
-                        width: 360px
+                .clients-reviews
+                    padding: 10px
+                    display: flex
+                    flex-direction: column
+                    gap: 30px
+                    margin-bottom: 50px
+                    .clients-reviews-title
+                        font-size: 24px
+                        line-height: 140%
+                    .clients-reviews-cards 
+                        .client-info
+                            width: 100%
+                            max-width: 100%
+                            min-height: auto
+                            margin-top: 0
+                            padding: 16px
+                            .client-avatar-img
+                                display: none
+                            .client-avatar-container
+                                margin-bottom: 0
+                                border-bottom: none
+                                .client-logo-img 
+                                    img
+                                        display: none
+                            .client-feedback
+                                .info-btns
+                                    flex-direction: column
+                                    .info-btn-label
+                                        width: max-content
+                                        font-size: 14px
+                                        line-height: 21px
+                                    .info-btn-tag
+                                        width: max-content
+                                        font-size: 14px
+                                        line-height: 21px
+                                p
+                                    font-size: 14px
+                                    line-height: 21px
 
-            .hero-container
-                #hero-content
-                    .cdu-title
-                        font-size: 36px
-                        line-height: 48px
+                .questions-section
+                    flex-direction: column
+                    display: flex
+                    gap: 30px
+                    padding: 10px
+                    margin-bottom: 50px
+                    .question-section-title
+                        font-size: 24px
+                        line-height: 140%
+                        margin-bottom: 0
+                    .questions-section-cards 
+                        .questions-section-card 
+                            padding: 15px
+                            .questions-section-header
+                                display: flex
+                                justify-content: space-between
+                                align-items: center
+                                &::after
+                                    position: sticky
+                                    vertical-align: middle
+                                .questions-section-title
+                                    gap: 20px
+                                    .questions-section-num
+                                        display: none
+                                    h3
+                                        font-size: 16px
+                                        line-height: 24px
+                                        display: flex
+                                        justify-content: space-between
+                                        align-items: center
+                                        position: relative
+                                        cursor: pointer
+                            .questions-section-content
+                                display: none
+                                padding: 10px
+                        .questions-section-card.expanded
+                            .questions-section-content
+                                display: flex
+                                padding: 10px
+                                                        
+                .get-in-touch-section
+                    margin-bottom: 50px
+                    .get-in-touch-container
+                        padding: 20px
+                        gap: 24px
+                        .get-in-touch-title
+                            font-size: 28px
+                            line-height: 135%
+                            text-align: center
+                            width: 100%
+                        img 
+                            width: 100%
+                        .get-in-touch-btn
+                            width: 100%
+                            height: 64px
+                            padding: 0
 
-                    .cdu-sub-title
-                        font-size: 16px
-                        line-height: 28px
-                        width: 100%
-                        min-width: unset
+                .contact-us-section
+                    margin-bottom: 50px
+                    .contact-us-section-content
+                        .contact-us-container
+                            .contact-us-descr
+                                padding: 10px
+                                .contact-us-descr-container
+                                    h2
+                                        font-size: 24px
+                                        line-height: 140%
+                                    h5
+                                        font-size: 14px
+                                        line-height: 21px
+                                .client-avatar-container
+                                    display: none
+                            .contact-us-form
+                                padding: 15px
+                                .form-section
+                                    flex-direction: column
+                                    .form-element
+                                        width: 100%
+                                    .next
+                                        width: 100%
+                                .questionnaire-section
+                                    display: none
+                            .contact-us-pattern
+                                display: none
 
-                .hero-image
-                    .image-wrapper-icon-laptop
-                        position: absolute
-                        top: 8%
-                        left: 50%
-
-                        .schedule
-                            display: block
-                            border-radius: 6px
-                            background: #2A7DEC
-                            height: 60px
-                            padding: 0 60px
-                            transform: translateX(-50%)
-
-                    #icon-phone
-                        display: none
-
-                    .schedule-block
-                        display: none
-
-        .cdu-services
-            padding: 60px 0 0 0
-            .header
-                flex-direction: column
-                padding: 0 20px
-
-            .poc
-                padding: 20px
-                padding-bottom: 100px
-                flex-direction: column-reverse
-                #solution-poc
-                    width: 100%
-                    max-width: unset
-
-                #solution-widget-1
-                    width: 70%
-                    top: 43%
-                    left: 35%
-
-            .mvp
-                padding: 40px 20px 80px 20px
-                flex-direction: column
-                .right-block
-                    position: relative
-                    width: 100%
-
-                    #solution-mvp1
-                        width: 100%
-
-                    #solution-widget-2
-                        max-width: unset
-                        width: 30%
-                        top: 72%
-                        left: 43%
-
-                    #solution-widget-3
-                        width: 40%
-                        top: 28%
-                        left: 64%
-
-            .market-solution
-                padding: 60px 20px 215px 20px
-                flex-direction: column-reverse
-                .left-block
-                    padding-left: 0
-                    #solution-market-solution1
-                        width: 90%
-
-                    #solution-market-solution2
-                        width: 90%
-                        top: 60%
-                        left: 7%
-
-                .right-block
+                .project-timeline
+                    margin-bottom: 50px
                     padding-top: 0
-                    .section-title
-                        padding-bottom: 0
-
-            .additionally
-                padding: 40px 20px
-                .side-title
-                    margin-bottom: 10px
-
-            .header-animation
-                .section-title
-                    min-width: unset
-                    line-height: 30px
-                    font-size: 20px
-
-        .noToc
-            position: relative
-
-        .our-customers
-            .title
-                font-size: 14px
-                line-height: 32px
-                padding: 40px 0
-
-        .testimonials
-            padding: 80px 0 30px 0
-            .upper-block
-                flex-direction: column
-                padding: 0 20px
-                .side-title
-                    margin-bottom: 10px
-                .section-title
-                    margin-bottom: 0
-                    padding-bottom: 0
-            #carousel-wrapper
-                padding: 0
-
-        .side-title
-            margin-bottom: 10px
-            span
-                font-size: 18px
-
-        .section-title
-            font-size: 20px
-            line-height: 30px
-            margin-bottom: 10px
-            padding-bottom: 0
-
-        .section-text
-            font-size: 14px
-            line-height: 28px
-            padding-bottom: 10px
-
-        .section-list
-            li
-                font-size: 14px
-                line-height: 32px
-                padding-bottom: 10px
-
-        #rectangle2
-            top: 80%
-            left: 82%
-
-        #rectangle3
-            top: 90%
-            left: -10%
-
-        #number-one
-            top: -11%
-            left: 70%
-            transform: scale(0.35)
-
-        #number-two
-            top: -13%
-            left: 55%
-            transform: scale(0.35)
-
-        #number-three
-            top: 12%
-            left: 54%
-            transform: scale(0.35)
-
-        .header
-            margin: 0 0 20px
-            font-size: 20px
-
-        .text
-            font-size: 16px
-
-        .accent-text
-            font-size: 14px
-            line-height: 1.5
-
-        .modal 
-            .modal-content 
-                width: 90%
-                height: 90%
-                padding: 15px
-                .close
-                    width: 20px
-                    height: 20px
-
-                .sub-title
-                    font-size: 24px
-
-                .sub-sub-title
-                    font-size: 14px
-                    span    
-                        width: 271px
-                        height: 84px
-
+                    padding: 10px
+                    .timeline
+                        display: none
+                    .project-timeline-container 
+                        width: 100%
+                        .project-timeline-title
+                            width: 100%
+                            font-size: 24px
+                            line-height: 140%
+                        .project-timeline-descr
+                            font-size: 14px
+                            line-height: 21px
+                    .timeline-container-mobile
+                        display: flex
+        .modal
+            .modal-content
+                .title-container
+                    h2
+                        font-size: 18px
                 .form-section
-                    padding-left: 15px
-                    padding-right: 15px
                     flex-direction: column
                     .form-element
-                        margin-bottom: 15px
-                        width: 98%
-                        label
-                            .cdu-text-area
-                                height: 90px
-@keyframes running
-    from
-        transform: translateX(0)
-    to
-        transform: translateX(-2825px)
+                        width: 100%
+                .questionnaire-section
+                    display: none
 
 @keyframes slideup-in
     from
@@ -2695,14 +2892,6 @@ $font-style-normal: normal
         opacity: 1
         transform: translateY(-2%) scale(1)
 
-@keyframes backgroundFadeout
-    from
-        opacity: 0
-        transform: translateY(-11%)
-    to
-        opacity: 1
-        transform: translateY(-11%)
-
 @keyframes backgroundFadeoutMobile
     from
         opacity: 0
@@ -2734,3 +2923,16 @@ $font-style-normal: normal
     to 
         top: 0 
         opacity: 1
+@keyframes running
+    from
+        transform: translateX(0)
+    to
+        transform: translateX(-2825px)
+
+@keyframes fadeInUp 
+    from 
+        opacity: 0
+        transform: translateY(50px)
+    to 
+        opacity: 1
+        transform: translateY(0)
