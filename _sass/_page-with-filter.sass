@@ -1,14 +1,30 @@
 #page-with-filter-content
   padding: 0
+  .hero-content
+    padding: 100px 0 50px
+    background: #F4F8FE
+    .hero-content-wrapper
+      max-width: 1440px
+      padding: 0 20px
+      margin: 0 auto
   .main-content
     max-width: 1440px
     padding: 0 20px
     margin: 0 auto
   .search-block
+    position: sticky
+    top: 80px
+    background: #FFF
+    z-index: 1
     padding: 24px 0
-    display: flex
-    justify-content: space-between
-    gap: 60px
+    border-bottom: 1px solid #EBEBEB
+    .search-block-wrapper
+      display: flex
+      justify-content: space-between
+      gap: 60px
+      max-width: 1440px
+      padding: 0 20px
+      margin: 0 auto
     .search-crisps
       display: flex
       flex-wrap: wrap
@@ -75,12 +91,21 @@
       width: 326px
       flex-shrink: 0
       .big-filter
+        overflow-y: auto
         display: flex
         flex-direction: column
         position: sticky
-        top: 100px
-        overflow-y: auto
-        max-height: calc(100vh - 100px)
+        top: 165px
+        max-height: calc(100vh - 165px)
+        &::-webkit-scrollbar
+          width: 0
+        &:hover
+          &::-webkit-scrollbar
+            width: 8px
+            background: #F5F5F5
+          &::-webkit-scrollbar-thumb
+            background: rgba(0, 0, 0, 0.12)
+            border-radius: 10px
         .big-filter-section
           border-bottom: 1px solid rgba(0, 0, 0, 0.12)
           .big-filter-section-label

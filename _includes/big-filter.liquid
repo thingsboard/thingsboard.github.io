@@ -42,8 +42,8 @@
                 .map(cb => cb.value);
 
             cards.forEach(card => {
-                const cardTypes = card.id.toLowerCase().split('|');
-                const match = selectedFilters.length === 0 || cardTypes.some(type => selectedFilters.includes(type.toLowerCase()));
+                const cardTypes = card.id.split('|');
+                const match = selectedFilters.length === 0 || cardTypes.some(type => selectedFilters.includes(type));
                 card.style.display = match ? 'block' : 'none';
             });
 

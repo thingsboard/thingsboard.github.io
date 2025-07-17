@@ -5,10 +5,12 @@
 
 <section id="page-with-filter-content">
     <div class="hero-content">
-        {{content}}
+        <div class="hero-content-wrapper">
+            {{content}}
+        </div>
     </div>
-    <div class="main-content">
-        <div class="search-block">
+    <div class="search-block">
+        <div class="search-block-wrapper">
             <div class="search-crisps">
                 <div class="search-crisps-clear-btn">
                     Clear All
@@ -21,6 +23,8 @@
             </div>
             <input type="text" id="searchGuideInput" placeholder="Find..." />
         </div>
+    </div>
+    <div class="main-content">
         <div class="content-block">
             <div class="filter-block">
                 {% include big-filter.liquid %}
