@@ -5,15 +5,68 @@
     padding: 0 20px
     margin: 0 auto
   .search-block
-    padding: 24px
+    padding: 24px 0
     display: flex
-    align-items: flex-end
+    justify-content: space-between
+    gap: 60px
+    .search-crisps
+      display: flex
+      flex-wrap: wrap
+      gap: 8px
+      .search-crisps-toggle-btn
+        position: relative
+        cursor: pointer
+        border-radius: 6px
+        padding: 7px 36px 7px 10px
+        border: 1px solid #2A7DEC
+        i
+          position: absolute
+          top: 50%
+          transform: translateY(-50%)
+          right: 10px
+      .search-crisps-clear-btn
+        font-size: 14px
+        font-weight: 500
+        line-height: 24px
+        padding: 7px 36px 7px 10px
+        border-radius: 6px
+        position: relative
+        display: none
+        cursor: pointer
+        .search-crisps-clear-btn-close
+          position: absolute
+          top: 50%
+          transform: translateY(-44%)
+          font-size: 28px
+          right: 10px
+      .crisp
+        display: inline-block
+        position: relative
+        font-size: 14px
+        font-weight: 500
+        line-height: 24px
+        background: #2A7DEC
+        color: #FFF
+        border-radius: 6px
+        padding: 7px 36px 7px 12px
+        &.hidden
+          display: none
+        .crisp-close
+          position: absolute
+          cursor: pointer
+          top: 50%
+          transform: translateY(-44%)
+          font-size: 28px
+          right: 10px
     input
+      height: 38px
       width: 240px
       padding: 7px 16px
       border-radius: 6px
       border: 1px solid rgba(0, 0, 0, 0.12)
       color: rgba(0, 0, 0, 0.76)
+    .crisp:has(.crisp-close:hover), .search-crisps-clear-btn:hover, .search-crisps-toggle-btn:hover
+      opacity: 0.8
   .content-block
     display: flex
     .filter-block
@@ -51,11 +104,11 @@
               li
                 display: flex
                 gap: 8px
-                cursor: pointer
                 padding: 2px
                 input
                   cursor: pointer
                 label
+                  cursor: pointer
                   font-size: 14px
                   font-weight: 400
                   line-height: 24px
