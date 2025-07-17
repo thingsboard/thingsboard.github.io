@@ -12,14 +12,14 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
             <div class="text">
                 <p class="category">TELECOM</p>
                 <h1>From sensors to dashboards: TEKTELIC's rapid IoT deployment with ThingsBoard</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/tektelic.webp')">
-                    <img src="/images/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/tektelic.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo" width="126" height="56">
                 </div>
                 <p>TEKTELIC is a global leader in the design and manufacturing of LoRaWAN® IoT solutions. With a mission to simplify IoT deployments, TEKTELIC provides end-to-end wireless solutions that include high-performance gateways, sensors, and network infrastructure. Their products are known for their carrier-grade reliability, scalability, and efficiency, supporting diverse use cases from smart cities to industrial IoT.</p>
                 <p>Founded and headquartered in Calgary, Canada, TEKTELIC operates globally and partners with major telecom operators, enterprises, and smart city initiatives. Their comprehensive ecosystem of hardware and software solutions ensures quick deployment and maximum interoperability, making them a trusted vendor in the fast-evolving IoT industry.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/tektelic.webp')">
-                <img src="/images/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo" width="126" height="56">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/tektelic.webp')">
+                <img src="https://img.thingsboard.io/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo" width="126" height="56">
             </div>
         </div>
     </section>
@@ -44,7 +44,7 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
         </div>
     </section>
     <section class="quote-with-mark fill-background">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“We were able to dramatically reduce time to market, de-risk our technology investment and delight our customers by delivering a complete, high-quality application which exceeded expectations.”</p>
             <h2>Roman Nemish, President at TEKTELIC</h2>
@@ -123,40 +123,40 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 <h3>Multi-sensor data integration</h3>
                 <p>ThingsBoard enabled TEKTELIC to ingest and normalize data from a range of LoRaWAN® sensors, including industrial and smart home devices. Its flexible data model and device templates allowed for streamlined onboarding and uniform processing of heterogeneous sensor data.</p>
             </div>
-            <img src="/images/case-studies/tektelic-1.webp" title="Multi-sensor data integration" alt="Multi-sensor data integration" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tektelic-1.webp" title="Multi-sensor data integration" alt="Multi-sensor data integration" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Real-time visualization & historical analytics</h3>
                 <p>With ThingsBoard’s powerful dashboard engine, TEKTELIC was able to build interactive visualizations for both live and historical data. This empowered their users to monitor environments, detect anomalies, and access performance trends directly from an intuitive interface.</p>
             </div>
-            <img src="/images/case-studies/tektelic-2.webp" title="Real-time visualization & historical analytics" alt="Real-time visualization & historical analytics” devices" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tektelic-2.webp" title="Real-time visualization & historical analytics" alt="Real-time visualization & historical analytics” devices" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Trigger-based alerts & automation</h3>
                 <p>The platform’s rule engine helped define custom alarms and automation flows for various scenarios. TEKTELIC configured alerts for threshold breaches and automated commands to end devices, all without custom development overhead.</p>
             </div>
-            <img src="/images/case-studies/tektelic-3.webp" title="Trigger-based alerts & automation" alt="Trigger-based alerts & automation" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tektelic-3.webp" title="Trigger-based alerts & automation" alt="Trigger-based alerts & automation" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Bi-directional control commands</h3>
                 <p>Using ThingsBoard’s RPC capabilities, the application enabled end-users to send direct commands to TEKTELIC’s devices. This was critical for remote configuration, device management, and real-time operational response.</p>
             </div>
-            <img src="/images/case-studies/tektelic-4.webp" title="Bi-directional control commands" alt="Bi-directional control commands" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tektelic-4.webp" title="Bi-directional control commands" alt="Bi-directional control commands" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Seamless LoRaWAN integration</h3>
                 <p>Thanks to ThingsBoard’s LoRaWAN integrations and connector flexibility, the platform integrated smoothly with TEKTELIC’s existing Network Server. This ensured consistent communication, security, and device synchronization across the entire IoT stack.</p>
             </div>
-            <img src="/images/case-studies/tektelic-5.webp" title="Seamless LoRaWAN integration" alt="Seamless LoRaWAN integration" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tektelic-5.webp" title="Seamless LoRaWAN integration" alt="Seamless LoRaWAN integration" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“The ThingsBoard team is made up of highly skilled engineers who have solid experience in building complex systems.”</p>
             <h2>Roman Nemish, President at TEKTELIC</h2>
@@ -176,8 +176,8 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -192,8 +192,8 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -207,8 +207,8 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -223,17 +223,17 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
-                <img src="/images/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget" width="776" height="776">
             </div>
         </div>
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="/images/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo" width="126" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo" width="126" height="56">
                 </div>
             </div>
         </div>

@@ -12,14 +12,14 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
             <div class="text">
                 <p class="category">TELECOM</p>
                 <h1>Scaling IoT prototyping at T-Mobile CZ with ThingsBoard</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/t-mobile-cz.webp')">
-                    <img src="/images/case-studies/t-mobile-cz.svg" title="T-Mobile CZ" alt="T-Mobile CZ logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/t-mobile-cz.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/t-mobile-cz.svg" title="T-Mobile CZ" alt="T-Mobile CZ logo" width="126" height="56">
                 </div>
                 <p>T-Mobile Czech Republic is one of the leading telecommunications providers in the Czech Republic and a key player in the country’s digital transformation. As part of Deutsche Telekom Group, the company delivers a wide range of services, including mobile and fixed-line connectivity, broadband, and a robust portfolio of IoT solutions.</p>
                 <p>T-Mobile is a pioneer in IoT connectivity, offering NB-IoT and Sigfox networks and complete ICT services for businesses. Their innovative approach to IoT enables rapid prototyping, seamless integration of new devices, and scalable deployment of smart solutions across industries including utilities, manufacturing, and public infrastructure.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/t-mobile-cz.webp')">
-                <img src="/images/case-studies/t-mobile-cz.svg" title="T-Mobile CZ" alt="T-Mobile CZ logo" width="126" height="56">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/t-mobile-cz.webp')">
+                <img src="https://img.thingsboard.io/case-studies/t-mobile-cz.svg" title="T-Mobile CZ" alt="T-Mobile CZ logo" width="126" height="56">
             </div>
         </div>
     </section>
@@ -38,7 +38,7 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
         </div>
     </section>
     <section class="quote-with-mark fill-background">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“In comparison to other IoT platforms and tools we value the most the easy-to-use approach without compromising functionality, very logical structure and in-build support of various technologies and protocols.”</p>
             <h2>David Týr, Innovation Manager at T-Mobile Czech Republic</h2>
@@ -109,33 +109,33 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
                 <h3>Rapid prototyping and PoC delivery</h3>
                 <p>ThingsBoard enabled T-Mobile to quickly create and present fully functional PoCs and MVPs. Thanks to its visual dashboards and powerful Rule Engine, development timelines were dramatically shortened.</p>
             </div>
-            <img src="/images/case-studies/t-mobile-cz-1.webp" title="Rapid prototyping and PoC delivery" alt="Rapid prototyping and PoC delivery" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/t-mobile-cz-1.webp" title="Rapid prototyping and PoC delivery" alt="Rapid prototyping and PoC delivery" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Seamless handling of “App-less” devices</h3>
                 <p>Many IoT devices under evaluation had no user-facing applications. With ThingsBoard, T-Mobile could easily connect these devices and provide real-time data visualization through flexible and customizable dashboards.</p>
             </div>
-            <img src="/images/case-studies/t-mobile-cz-2.webp" title="Seamless handling of “App-less” devices" alt="Seamless handling of “App-less” devices" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/t-mobile-cz-2.webp" title="Seamless handling of “App-less” devices" alt="Seamless handling of “App-less” devices" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Simplicity meets functionality</h3>
                 <p>The platform offers an intuitive interface that simplifies onboarding and development — without losing depth. Native support for MQTT, HTTP, CoAP, LWM2M and other protocols allowed easy device integration.</p>
             </div>
-            <img src="/images/case-studies/t-mobile-cz-3.webp" title="Simplicity meets functionality" alt="Simplicity meets functionality" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/t-mobile-cz-3.webp" title="Simplicity meets functionality" alt="Simplicity meets functionality" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Reliable innovation infrastructure</h3>
                 <p>ThingsBoard became a core tool in the innovation workflow at T-Mobile, powering quick experiments and helping deliver market-ready solutions based on NB-IoT and Sigfox without unnecessary overhead.</p>
             </div>
-            <img src="/images/case-studies/t-mobile-cz-4.webp" title="Reliable innovation infrastructure" alt="Reliable innovation infrastructure" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/t-mobile-cz-4.webp" title="Reliable innovation infrastructure" alt="Reliable innovation infrastructure" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
             <p>“With ThingsBoard we are able finish such tasks with visually attractive result with sleek user interface and done in nearly no time.”</p>
             <h2>David Týr, Innovation Manager, T-Mobile Czech Republic</h2>
@@ -155,8 +155,8 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -171,8 +171,8 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -186,8 +186,8 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -202,17 +202,17 @@ description: Learn how T-Mobile Czech Republic leverages ThingsBoard to streamli
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
-                <img src="/images/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget" width="776" height="776">
             </div>
         </div>
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img style="width: 25%" src="/images/case-studies/t-mobile-cz.svg" title="T-Mobile CZ" alt="T-Mobile CZ logo" width="126" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img style="width: 25%" src="https://img.thingsboard.io/case-studies/t-mobile-cz.svg" title="T-Mobile CZ" alt="T-Mobile CZ logo" width="126" height="56">
                 </div>
             </div>
         </div>
