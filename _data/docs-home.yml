@@ -144,7 +144,6 @@ toc:
       path: /docs/user-guide/contribution/rule-node-development/
     - title: Templatization
       path: /docs/user-guide/templatization/
-      new: true
 - title: White labeling
   pe: true
   section:
