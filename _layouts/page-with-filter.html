@@ -41,8 +41,167 @@
     </div>
 </section>
 
-<script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const checkboxes = document.querySelectorAll('.big-filter-section-filter input[type="checkbox"]');
+        const cards = document.querySelectorAll('.card');
+        const filterSectionLabels = document.querySelectorAll('.big-filter-section-label');
+        const crispsContainer = document.querySelector('.search-crisps');
+        const clearAllBtn = document.querySelector('.search-crisps-clear-btn');
+        const toggleBtn = document.querySelector('.search-crisps-toggle-btn');
+        const toggleLabel = toggleBtn.querySelector('.toggle-label');
+        const toggleIcon = toggleBtn.querySelector('i');
+
+        let isCollapsed = false;
+
+        const searchInput = document.getElementById('searchGuideInput');
+
+        function applySearch() {
+            const query = searchInput.value.trim().toLowerCase();
+
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+                const match = title.includes(query);
+                card.classList.toggle('search-hidden', !match);
+            });
+        }
+
+        function applyFilter() {
+            const selectedFilters = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            cards.forEach(card => {
+                const isHiddenBySearch = card.classList.contains('search-hidden');
+                if (isHiddenBySearch) {
+                    card.classList.add('filter-hidden');
+                    return;
+                }
+
+                const cardTypes = card.id.split('|');
+                const match = selectedFilters.length === 0 || cardTypes.some(type => selectedFilters.includes(type));
+                card.classList.toggle('filter-hidden', !match);
+            });
+
+            updateCrisps(selectedFilters);
+        }
+
+        function updateVisibility() {
+            applySearch();
+            applyFilter();
+        }
+
+        function updateCrisps(selectedFilters) {
+            if (!crispsContainer) return;
+
+            crispsContainer.querySelectorAll('.crisp').forEach(el => el.remove());
+
+            if (clearAllBtn) {
+                clearAllBtn.style.display = selectedFilters.length > 0 ? 'inline-block' : 'none';
+            }
+
+            selectedFilters.forEach(filter => {
+                const crisp = document.createElement('span');
+                crisp.className = 'crisp';
+                crisp.textContent = filter;
+
+                const close = document.createElement('span');
+                close.textContent = '×';
+                close.className = 'crisp-close';
+                crisp.appendChild(close);
+
+                close.addEventListener('click', () => {
+                    const checkbox = Array.from(checkboxes).find(cb => cb.value === filter);
+                    if (checkbox) {
+                        checkbox.checked = false;
+                        updateVisibility();
+                    }
+                });
+
+                crispsContainer.insertBefore(crisp, clearAllBtn);
+            });
+
+            setTimeout(checkIfMultiline, 0);
+        }
+
+        function checkIfMultiline() {
+            const crisps = crispsContainer.querySelectorAll('.crisp');
+            if (crisps.length <= 3) {
+                toggleBtn.style.display = 'none';
+                return;
+            }
+
+            const firstTop = crisps[0]?.offsetTop;
+            let multiline = false;
+            for (let i = 1; i < crisps.length; i++) {
+                if (crisps[i].offsetTop > firstTop) {
+                    multiline = true;
+                    break;
+                }
+            }
+
+            if (multiline) {
+                toggleBtn.style.display = 'inline-block';
+                toggleLabel.textContent = 'Hide';
+                toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
+                isCollapsed = false;
+            } else {
+                toggleBtn.style.display = 'none';
+            }
+        }
+
+        function collapseCrisps() {
+            const crisps = crispsContainer.querySelectorAll('.crisp');
+            crisps.forEach((crisp, index) => {
+                crisp.classList.toggle('hidden', index >= 3);
+            });
+            toggleLabel.textContent = 'Show';
+            toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
+            isCollapsed = true;
+        }
+
+        function expandCrisps() {
+            crispsContainer.querySelectorAll('.crisp').forEach(crisp => {
+                crisp.classList.remove('hidden');
+            });
+            toggleLabel.textContent = 'Hide';
+            toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
+            isCollapsed = false;
+        }
+
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                if (isCollapsed) {
+                    expandCrisps();
+                } else {
+                    collapseCrisps();
+                }
+            });
+        }
+
+        if (clearAllBtn) {
+            clearAllBtn.addEventListener('click', () => {
+                checkboxes.forEach(cb => cb.checked = false);
+                updateVisibility();
+            });
+        }
+
+        checkboxes.forEach(cb => {
+            cb.addEventListener('change', updateVisibility);
+        });
+
+        searchInput.addEventListener('input', updateVisibility);
+
+        filterSectionLabels.forEach(label => {
+            label.addEventListener('click', function () {
+                const section = label.closest('.big-filter-section');
+                section.classList.toggle('opened');
+            });
+        });
+
+        updateVisibility();
+    });
 </script>
 {% include cookie-consent.html %}
 
