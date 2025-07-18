@@ -166,7 +166,6 @@ toc:
           path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
     - title: Templatization
       path: /docs/paas/user-guide/templatization/
-      new: true
 - title: White labeling
   section:
     - title: Overview
