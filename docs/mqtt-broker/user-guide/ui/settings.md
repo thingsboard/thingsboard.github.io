@@ -6,7 +6,7 @@ description: Settings management
 settings-password-policy:
   0:
     image: /images/mqtt-broker/user-guide/ui/settings-password-policy-1.png
-    title: 'On the "Security" tab of the "Settings" page, update the password policy and click "Save" to apply changes.'
+    title: 'Navigate to the Settings > Security page, update the password policy and click "Save" to apply changes.'
   1:
     image: /images/mqtt-broker/user-guide/ui/settings-password-policy-2.png
     title: 'In your Account settings, you can change password to comply with the new password policy.'
@@ -28,7 +28,7 @@ settings-connectivity-settings:
 authentication-settings:
   0:
     image: /images/mqtt-broker/security/auth-providers/authentication-settings.png
-    title: 'MQTT Authentication Settings.'
+    title: 'Navigate to the Settings > Security page to check the MQTT Authentication Settings.'
 
 ---
 

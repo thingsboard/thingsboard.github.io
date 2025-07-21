@@ -22,15 +22,15 @@ edit-user-broker:
 delete-user-broker:
     0:
         image: /images/mqtt-broker/user-guide/ui/delete-user-broker-1.png
-        title: 'Find the user in the Admins table and click on the corresponding row.'
+        title: 'Find the user in the Users table and click on the Delete button.'
     1:
       image: /images/mqtt-broker/user-guide/ui/delete-user-broker-2.png
-      title: 'Click the Delete user button and confirm the action by selecting Yes.'
+      title: 'Confirm the action by selecting Yes.'
       
 login-as-user:
   0:
     image: /images/mqtt-broker/user-guide/ui/login-as-user.png
-    title: 'In the Admins table, select the desired user and click the Login button to proceed.'
+    title: 'In the Users table, select the desired user and click the Login button to proceed.'
 
 ---
 

@@ -16,7 +16,7 @@ The Unauthorized Clients feature functions only if the corresponding authenticat
 
 ## Unauthorized Clients table
 
-On the Unauthorized Clients page, you can view and filter a list of all unauthorized client connection attempts to the broker.
+On the Unauthorized Clients tab of the Authorization page, you can view and filter a list of all unauthorized client connection attempts to the broker.
 The table contains the following information about each unauthorized client:
 * **Last update time**. The timestamp of the last connection attempt.
 * **Client ID**. The unique identifier for the client attempting to connect.

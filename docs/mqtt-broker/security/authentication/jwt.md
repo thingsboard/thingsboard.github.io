@@ -6,7 +6,7 @@ description: JWT Authentication
 configure-jwt-auth-provider:
   0:
     image: /images/mqtt-broker/security/auth-providers/jwt/configure-jwt-auth-provider.png
-    title: 'Open the Authentication > Providers page, select the JWT row, and click the "edit" button to configure the provider.'
+    title: 'Open the Authentication > Providers page, select the JWT row, and click the "Edit" button to configure the provider.'
 configure-signature-verifier-mechanism:
   0:
     image: /images/mqtt-broker/security/auth-providers/jwt/configure-signature-verifier-mechanism.png

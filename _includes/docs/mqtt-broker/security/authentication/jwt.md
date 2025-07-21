@@ -50,8 +50,8 @@ you can enable the provider to start authenticating clients using JWT tokens.
 The Signature verifier mechanism determines how TBMQ validates the JWT token's signature 
 to ensure the token was issued by a trusted authority and hasn’t been tampered with. There are two options:
 
- - Algorithm-based (HMAC or PEM) - Uses preconfigured secret or public key to verify incoming tokens.
- - JWKS (JSON Web Key Set) - Dynamically fetch a list of public keys from a remote JWKS endpoint. 
+ - Algorithm-based (HMAC or PEM) - uses preconfigured secret or public key to verify incoming tokens.
+ - JWKS (JSON Web Key Set) - dynamically fetch a list of public keys from a remote JWKS endpoint. 
    This is commonly used with identity platforms that publish key sets (e.g., Auth0, AWS Cognito, Keycloak).
 
 {% include images-gallery.html imageCollection="configure-signature-verifier-mechanism" %}

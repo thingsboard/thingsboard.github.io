@@ -33,7 +33,7 @@ Authentication methods are implemented as pluggable authentication providers:
 - [JWT (JSON Web Token)](/docs/mqtt-broker/security/authentication/jwt/) — Authenticates clients using a signed JWT passed in the password field of the `CONNECT` packet.
 - [SCRAM](/docs/mqtt-broker/security/authentication/scram/) — Performs a secure challenge-response using hashed credentials to authenticate without sending the actual password (MQTT 5.0 only).
 
-which can be individually enabled, disabled, and configured to meet requirements for different deployment use cases.
+Each provider can be individually enabled, disabled, and configured to meet requirements for different deployment use cases.
 
 {% capture providerEditOnly %}
 Adding or deleting authentication providers is not allowed. Users can only edit their configuration.
@@ -48,14 +48,14 @@ Adding or deleting authentication providers is not allowed. Users can only edit 
 {% include templates/mqtt-broker/since.md %}
 
 TBMQ processes authentication providers in a configurable execution order.
-This can be configured from the [MQTT Authentication Settings](/docs/mqtt-broker/user-guide/ui/settings/#authentication) page designed to configure key MQTT authentication-related parameters.
+This can be configured from the [MQTT Authentication Settings](/docs/mqtt-broker/user-guide/ui/settings/#mqtt-authentication) page designed to configure key MQTT authentication-related parameters.
 
 {% include docs/mqtt-broker/user-guide/ui/authentication-settings.md %}
 
 ## Authorization
 
 Define topic-level access control by applying configurable rules that determine whether a client can publish to or subscribe from specific topics. TBMQ uses regular expression–based topic patterns to enforce these rules. 
-Authorization settings are typically configured per [client credentials](https://thingsboard.io/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/). Only JWT-based authentication supports defining authorization rules at the provider level, allowing dynamic, token-driven access control.
+Authorization settings are typically configured per [client credentials](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials). Only JWT-based authentication supports defining authorization rules at the provider level, allowing dynamic, token-driven access control.
 
 ## Next steps
 

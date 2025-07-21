@@ -30,7 +30,7 @@ To edit the details of an existing administrator, please follow these steps:
 
 Logged-in user can delete other users, but not itself. To delete user follow these steps:
 
-1. Find the user in the _Admins_ table and click on the corresponding row.
+1. Find the user in the _Users_ table and click on the corresponding row.
 2. Click the _Delete user_ button and confirm the action by selecting _Yes_.
 
 {% include images-gallery.html imageCollection="delete-user-broker" %}
@@ -39,7 +39,7 @@ Logged-in user can delete other users, but not itself. To delete user follow the
 
 TBMQ allows administrators to securely log in as other users automatically, without requiring their credentials or manual authentication.
 
-1. Find the user in the _Admins_ table (you can only log in as other users).
+1. Find the user in the _Users_ table (you can only log in as other users).
 2. Click the _Login_ button in the corresponding row.
 
 {% include images-gallery.html imageCollection="login-as-user" %}
