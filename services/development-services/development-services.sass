@@ -242,24 +242,27 @@ h2
                     letter-spacing: 0.2px
                     padding: 40px 0
 
-                .customer-logos
+                .customer-carousel
                     display: flex
-                    align-items: center
-                    gap: 150px
-                    animation-name: running
-                    animation-duration: 15s
-                    animation-iteration-count: infinite
-                    animation-timing-function: linear
-                    position: relative
+                    overflow: hidden
+                    width: 100%
+                    max-width: 100%
+                    > *
+                        flex: 0 0 100%
 
-                    .logo
-                        filter: grayscale(100%)
-                        opacity: 0.6
-                        &:hover
-                            filter: unset
-                            opacity: unset
-                        img
-                            height: 80px
+                    .customer-logos
+                        display: flex
+                        gap: 150px
+                        margin-right: 150px
+                        will-change: transform
+                        animation: scroll 5s linear infinite
+                        .logo
+                            width: 216px
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            img
+                                height: 80px
 
             .statistics
                 @include content-container(120px)
@@ -321,18 +324,19 @@ h2
                         gap: 16px
                         .cards
                             width: 50%
-
                             .expansion-panel
                                 overflow: hidden
                                 border-bottom: 1px solid #DEE2E6
                                 width: 90%
+                                &:hover
+                                    border-radius: 12px
+                                    border-bottom: none
+                                    background: #E9ECEF
                                 .images
                                     display: none
                                 .expansion-header
                                     padding: 10px
                                     @include expandable-header()
-                                    &:hover
-                                        background: #E9ECEF
 
                                 .header-icon
                                     margin-right: 20px
@@ -340,6 +344,9 @@ h2
                                     width: 36px
 
                                 &.expanded
+                                    border-bottom: none
+                                    &:hover
+                                        background: transparent
                                     .expansion-header
                                         @include expandable-rotated(270deg)
                                 
@@ -559,7 +566,7 @@ h2
                         background: #BDDCFF99
                         filter: blur(100px)
                     .card
-                        max-width: calc(33% - 16px )
+                        max-width: 33%
                         flex: 1 1 calc(33% - 32px)
                         display: flex
                         flex-direction: column
@@ -571,7 +578,8 @@ h2
                         &:hover
                             transform: scale(1.03)
                             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15)
-                        .card-label
+                        .card-tag
+                            width: max-content
                             position: absolute
                             top: 16px
                             left: 16px
@@ -586,9 +594,9 @@ h2
                         .energy
                             @include themed-style(#EBE9FE, #5925DC, #5925DC)
                         .infrastructure
-                            @include themed-style(#ECFDF3, #027A48, #027A48)
+                            @include themed-style(#FFF5F5, #C92A2A, #C92A2A)
                         .logistics
-                            @include themed-style(#E0F2FE, #065986, #065986)
+                            @include themed-style(#ECFDF3, #027A48, #027A48)
 
                         a.navigate-to-client-page
                             display: flex
@@ -612,22 +620,27 @@ h2
                             padding: 4px 12px
 
                         .card-content
+                            height: calc(100% - 210px)
                             display: flex
                             flex-direction: column
                             padding: 16px 20px 20px 20px
-                            gap: 16px
+                            gap: 5px
                             h3
+                                height: 50%
                                 @include text-styles(20px)                                
                             h3:hover
                                 color: #2A7DEC
 
                             .card-stats
+                                height: 50%
+                                width: 100%
                                 display: flex
-                                padding: 20px 0px
                                 gap: 8px
                                 strong
                                     display: block
                                     color: #1849A9
+                                li
+                                    width: 33%
             
             .services
                 @include content-container(120px)
@@ -674,6 +687,8 @@ h2
                                         height: 48px
                                         width: 48px
                             &.expanded
+                                &:hover
+                                    background: transparent
                                 max-height: 328px
                                 .expansion-header
                                     padding-bottom: 20px
@@ -819,8 +834,6 @@ h2
                                     gap: 12px
                                     @include text-styles(20px)
                                     align-items: center
-                                    padding: 16px 0px
-                                    border-bottom: 1px solid #DEE2E6
                                     &:hover
                                         color: black
                                         cursor: pointer
@@ -832,13 +845,19 @@ h2
                                         justify-content: start
                                         width: 100%
                                         gap: 10px
-                                        padding: 0 10px
+                                        padding: 16px 0px
+                                        margin: 0 10px
+                                        border-bottom: 1px solid #DEE2E6
                                     
                                 .menu-item
                                     &:hover
                                         background: #E9ECEF
+                                        border-radius: 12px
+                                        border-bottom: none
                                     &.active
                                         color: #2264BD
+                                        &:hover
+                                            background: transparent
                                         
                             .menu::-webkit-scrollbar-thumb
                                 background-color: #ADB5BD
@@ -2939,3 +2958,10 @@ h2
     to 
         opacity: 1
         transform: translateY(0)
+
+
+@keyframes scroll
+    0%
+        transform: translateX(0)
+    100%
+        transform: translateX(-100%)
