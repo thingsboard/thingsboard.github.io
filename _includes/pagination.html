@@ -40,7 +40,7 @@
 
             let activePages = [1];
 
-            function render() {
+            window.render = function () {
                 const allItems = Array.from(container.querySelectorAll(itemsSelector));
                 const filteredCards = allItems.filter(card =>
                     !card.classList.contains('success-story-promo') &&
