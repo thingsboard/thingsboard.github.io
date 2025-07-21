@@ -28,7 +28,8 @@
             const itemsPerPage = parseInt(wrapper.dataset.itemsPerPage, 10);
 
             const container = document.getElementById(containerId);
-            const filterControl = document.querySelector(filterSelector);
+            const filterControl = document.querySelectorAll(filterSelector);
+            const searchControl = document.querySelector("#searchGuideInput");
 
             if (!container || !filterControl) return;
 
@@ -43,7 +44,8 @@
                 const allItems = Array.from(container.querySelectorAll(itemsSelector));
                 const filteredCards = allItems.filter(card =>
                     !card.classList.contains('success-story-promo') &&
-                    !card.classList.contains('filter-hidden')
+                    !card.classList.contains('filter-hidden') &&
+                    !card.classList.contains('search-hidden')
                 );
 
                 allItems.forEach(card => card.classList.add('pagination-hidden'));
@@ -154,10 +156,19 @@
                 }
             });
 
-            filterControl.addEventListener('click', function () {
-                activePages = [1];
-                render();
-            });
+            filterControl.forEach((item) => {
+                item.addEventListener('click', function () {
+                    activePages = [1];
+                    setTimeout(render, 100);
+                });
+            })
+
+            if(searchControl) {
+                searchControl.addEventListener('input', function () {
+                    activePages = [1];
+                    setTimeout(render, 100);
+                });
+            }
 
             setTimeout(render, 150);
         });

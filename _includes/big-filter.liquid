@@ -13,8 +13,8 @@
                 <ul class="big-filter-section-list">
                     {% for filter in item[1].filters %}
                         <li class="big-filter-section-filter">
-                            <input type="checkbox" id="{{ filter[1] }}" value="{{ filter[1] }}">
-                            <label for="{{ filter[1] }}">{{ filter[1] }}</label>
+                            <input class="pagination-render-trigger" type="checkbox" id="{{ filter[1] }}" value="{{ filter[1] }}">
+                            <label class="pagination-render-trigger" for="{{ filter[1] }}">{{ filter[1] }}</label>
                         </li>
                     {% endfor %}
                 </ul>

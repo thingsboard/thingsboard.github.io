@@ -1,8 +1,6 @@
 ---
 layout: page-with-filter
 title: Partners on hardware area
-pagination: true
-
 filterCollection: 
     0:
         label: Hardware types
@@ -29,14 +27,13 @@ filterCollection:
             10: NB-IoT
             11: LTE-M
             12: GPS
-            13: LoRaWAN
-            14: Zigbee
-            15: BACnet
-            16: RS485
-            17: UDP
-            18: LTE
-            19: 3G
-            20: CoAP
+            13: Zigbee
+            14: BACnet
+            15: RS485
+            16: UDP
+            17: LTE
+            18: 3G
+            19: CoAP
     2:
         label: Industry
         filters:
@@ -67,6 +64,11 @@ filterCollection:
             11: Smart Metering
             12: Smart Retail
             13: Air Quality Monitoring
+pagination: "true"
+containerId: "card-collection"
+filterSelector: ".pagination-render-trigger"
+itemsSelector: ".card"
+itemsPerPage: "9"
 ---
 
 

@@ -1,6 +1,6 @@
 {% assign sorted_collection = site.data.hardware-partners | sort: 'name' %}
 
-<div class="card-collection">
+<div class="card-collection" id="card-collection">
     {% for card in sorted_collection %}
         <div class="card" id="{{ card.type | join: '|' }}">
             <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">

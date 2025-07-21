@@ -12,7 +12,7 @@
     <div class="search-block">
         <div class="search-block-wrapper">
             <div class="search-crisps">
-                <div class="search-crisps-clear-btn">
+                <div class="search-crisps-clear-btn pagination-render-trigger">
                     Clear All
                     <span class="search-crisps-clear-btn-close">×</span>
                 </div>
@@ -31,11 +31,11 @@
             </div>
             <div class="cards-block">
                 {% include cards-collection.liquid %}
-            </div>
-            <div class="pagination-block">
-                {% if page.pagination == "true" %}
-                {% include pagination.html %}
-                {% endif %}
+                <div class="pagination-block">
+                    {% if page.pagination == "true" %}
+                    {% include pagination.html %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
