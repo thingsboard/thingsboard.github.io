@@ -2,12 +2,23 @@
 
 <div class="card-collection" id="card-collection">
     {% for card in sorted_collection %}
-        <div class="card" id="{{ card.type | join: '|' }}">
-            <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
-            <span class="crisp">Test</span>
-            <p class="card-title">{{ card.name }}</p>
-            <p class="card-description">{{ card.description }}</p>
-            <a href="#">Learn more</a>
-        </div>
+        <a class="card" href="#" id="{{ card.type | join: '|' }}">
+            <div class="card-wrapper">
+                <div class="card-image">
+                    <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
+                </div>
+                <span class="crisp">Test</span>
+                <p class="card-title">{{ card.name }}</p>
+                <p class="card-description">{{ card.description }}</p>
+                <div class="card-link-wrapper">
+                    <span class="card-link" href="#">
+                        Learn more
+                        <i class="fas fa-chevron-right arrow first" style="color: #2a7dec"></i>
+                        <i class="fas fa-chevron-right arrow second" style="color: #2a7dec"></i>
+                        <i class="fas fa-chevron-right arrow third" style="color: #2a7dec"></i>
+                    </span>
+                </div>
+            </div>
+        </a>
     {% endfor %}
 </div>

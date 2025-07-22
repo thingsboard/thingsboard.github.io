@@ -15,7 +15,7 @@
     position: sticky
     top: 80px
     background: #FFF
-    z-index: 1
+    z-index: 2
     padding: 24px 0
     border-bottom: 1px solid #EBEBEB
     .search-block-wrapper
@@ -142,39 +142,104 @@
               transform: rotate(180deg)
 
     .cards-block
-      padding: 32px
+      padding: 32px 0 32px 32px
       .card-collection
         display: grid
         grid-template-columns: repeat(3, 1fr)
         gap: 16px
         .card
+          position: relative
           display: flex
           flex-direction: column
-          max-width: 336px
+          align-items: flex-start
           padding: 20px
           border-radius: 12px
           border: 1px solid #EBEBEB
           background: #FFF
+          transition: height 0.3s ease
+          max-width: 336px
+          height: 100%
+          &:hover
+            text-decoration: none
+            height: 115%
+            z-index: 1
+            .card-link-wrapper
+              opacity: 1
+              .card-link
+                transition-duration: 0.3s
+                .first
+                  transform: translate(10px)
+                .second
+                  transform: translate(20px)
+                .third
+                  transform: translate(30px)
           &.filter-hidden
             display: none
           &.search-hidden
             display: none
           &.pagination-hidden
             display: none
-          img
-            max-height: 80px
+          .card-image
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 80px
+            margin-bottom: 16px
+            width: 100%
+            img
+              max-height: 80px
+              max-width: 250px
           .crisp
+            display: inline-block
+            margin-bottom: 12px
             font-size: 14px
             font-weight: 400
             line-height: 24px
             border-radius: 6px
             background: #EEF5FD
+            color: #000000
             padding: 4px 8px
           .card-title
             font-size: 18px
             font-weight: 500
             line-height: 30px
+            color: #000000
           .card-description
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+            overflow: hidden
             font-size: 14px
             font-weight: 400
             line-height: 24px
+            color: #000000
+          .card-link-wrapper
+            transition: ease-in-out 0.3s
+            position: absolute
+            opacity: 0
+            bottom: 20px
+            .card-link
+              position: relative
+              color: #2A7DEC
+              .arrow
+                font-size: 13px
+                transform: translate(0px)
+                transition-duration: 0.3s
+                box-shadow: none
+                width: 12px
+                margin-left: 6px
+                position: absolute
+                top: 5px
+                &.first
+                  opacity: 0.2
+                &.second
+                  opacity: 0.5
+              &:hover
+                transition-duration: 0.3s
+                .first
+                  transform: translate(10px)
+                .second
+                  transform: translate(20px)
+                .third
+                  transform: translate(30px)
+
