@@ -15,7 +15,7 @@ TBMQ supports the following types of client credentials to authenticate client c
   - **Advantages:** Higher security level compared to basic authentication. It uses a challenge-response process to exchange hashed credentials, ensuring the password is never sent in plain text.
   - **Disadvantages:** Requires additional computational resources to generate and validate the salted password hashes.
 
-Before using any of the client credential types mentioned above, please ensure that they are [enabled](/docs/mqtt-broker/security/authentication/basic/).
+Before using any of the client credential types mentioned above, please ensure that the appropriate _Authentication_ is [enabled](/docs/mqtt-broker/security/authentication/basic/).
 
 For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/overview/).
 

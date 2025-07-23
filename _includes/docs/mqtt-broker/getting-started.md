@@ -114,7 +114,7 @@ This tool uses your host, port, and client credentials data to construct `mosqui
 
 Please follow these steps to generate commands for "Getting Started Credentials":
 
-1. Open the _Authentication_ _Credentials_ page from the left-hand menu.
+1. Open the _Authentication_ - _Credentials_ page from the left-hand menu.
 2. Click on row with client credentials "Getting Started Credentials" to open the details.
 3. Click on the "Check connectivity" button.
 4. In the opened window, select your operating system and install the necessary client tools.
