@@ -11,7 +11,13 @@
     </div>
     <div class="search-block">
         <div class="search-block-wrapper">
-            <div class="search-crisps">
+            <div class="filter-button">
+                <img src="/images/filter-icon.svg" alt="Filter icon">
+                <span>
+                    Filters
+                </span>
+            </div>
+            <div class="search-crisps desktop">
                 <div class="search-crisps-clear-btn pagination-render-trigger">
                     Clear All
                     <span class="search-crisps-clear-btn-close">×</span>
@@ -47,15 +53,18 @@
         const checkboxes = document.querySelectorAll('.big-filter-section-filter input[type="checkbox"]');
         const cards = document.querySelectorAll('.card');
         const filterSectionLabels = document.querySelectorAll('.big-filter-section-label');
-        const crispsContainer = document.querySelector('.search-crisps');
-        const clearAllBtn = document.querySelector('.search-crisps-clear-btn');
-        const toggleBtn = document.querySelector('.search-crisps-toggle-btn');
-        const toggleLabel = toggleBtn.querySelector('.toggle-label');
-        const toggleIcon = toggleBtn.querySelector('i');
-
-        let isCollapsed = false;
-
+        const crispsContainers = document.querySelectorAll('.search-crisps');
+        const filterBtn = document.querySelector('.filter-button');
+        const closeFilterBtn = document.querySelector('.close-filter-button');
         const searchInput = document.getElementById('searchGuideInput');
+
+        filterBtn.addEventListener('click', () => {
+            document.body.classList.add('filter-opened')
+        });
+
+        closeFilterBtn.addEventListener('click', () => {
+            document.body.classList.remove('filter-opened')
+        });
 
         function applySearch() {
             const query = searchInput.value.trim().toLowerCase();
@@ -83,19 +92,28 @@
                 const match = selectedFilters.length === 0 || cardTypes.some(type => selectedFilters.includes(type));
                 card.classList.toggle('filter-hidden', !match);
             });
-
-            updateCrisps(selectedFilters);
         }
 
         function updateVisibility() {
             applySearch();
             applyFilter();
+
+            const selectedFilters = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => cb.value);
+
+            crispsContainers.forEach(container => {
+                updateCrisps(selectedFilters, container);
+            });
         }
 
-        function updateCrisps(selectedFilters) {
-            if (!crispsContainer) return;
+        function updateCrisps(selectedFilters, container) {
+            const clearAllBtn = container.querySelector('.search-crisps-clear-btn');
+            const toggleBtn = container.querySelector('.search-crisps-toggle-btn');
+            const toggleLabel = toggleBtn?.querySelector('.toggle-label');
+            const toggleIcon = toggleBtn?.querySelector('i');
 
-            crispsContainer.querySelectorAll('.crisp').forEach(el => el.remove());
+            container.querySelectorAll('.crisp').forEach(el => el.remove());
 
             if (clearAllBtn) {
                 clearAllBtn.style.display = selectedFilters.length > 0 ? 'inline-block' : 'none';
@@ -122,14 +140,55 @@
                     }
                 });
 
-                crispsContainer.insertBefore(crisp, clearAllBtn);
+                container.insertBefore(crisp, clearAllBtn);
             });
 
-            setTimeout(checkIfMultiline, 0);
+            setTimeout(() => checkIfMultiline(container), 0);
+
+            if (clearAllBtn) {
+                clearAllBtn.addEventListener('click', () => {
+                    checkboxes.forEach(cb => cb.checked = false);
+                    updateVisibility();
+                });
+            }
+
+            if (toggleBtn) {
+                let isCollapsed = false;
+                toggleBtn.addEventListener('click', () => {
+                    if (isCollapsed) {
+                        expandCrisps(container, toggleLabel, toggleIcon);
+                    } else {
+                        collapseCrisps(container, toggleLabel, toggleIcon);
+                    }
+                    isCollapsed = !isCollapsed;
+                });
+            }
+
+            const filterHeader = document.querySelector('.big-filter-header-title');
+            let counter = document.querySelector('.big-filter-header-counter');
+            const currentLength = selectedFilters.length;
+
+            if(currentLength > 0) {
+                if(!counter) {
+                    counter = document.createElement('span');
+                    counter.className = 'big-filter-header-counter';
+                    filterHeader.appendChild(counter);
+                }
+
+                counter.textContent = `${currentLength}`;
+            } else {
+                if(counter) {
+                    counter.remove();
+                }
+            }
         }
 
-        function checkIfMultiline() {
-            const crisps = crispsContainer.querySelectorAll('.crisp');
+        function checkIfMultiline(container) {
+            const crisps = container.querySelectorAll('.crisp');
+            const toggleBtn = container.querySelector('.search-crisps-toggle-btn');
+            const toggleLabel = toggleBtn?.querySelector('.toggle-label');
+            const toggleIcon = toggleBtn?.querySelector('i');
+
             if (crisps.length <= 3) {
                 toggleBtn.style.display = 'none';
                 return;
@@ -148,46 +207,26 @@
                 toggleBtn.style.display = 'inline-block';
                 toggleLabel.textContent = 'Hide';
                 toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
-                isCollapsed = false;
             } else {
                 toggleBtn.style.display = 'none';
             }
         }
 
-        function collapseCrisps() {
-            const crisps = crispsContainer.querySelectorAll('.crisp');
+        function collapseCrisps(container, toggleLabel, toggleIcon) {
+            const crisps = container.querySelectorAll('.crisp');
             crisps.forEach((crisp, index) => {
                 crisp.classList.toggle('hidden', index >= 3);
             });
             toggleLabel.textContent = 'Show';
             toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
-            isCollapsed = true;
         }
 
-        function expandCrisps() {
-            crispsContainer.querySelectorAll('.crisp').forEach(crisp => {
+        function expandCrisps(container, toggleLabel, toggleIcon) {
+            container.querySelectorAll('.crisp').forEach(crisp => {
                 crisp.classList.remove('hidden');
             });
             toggleLabel.textContent = 'Hide';
             toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
-            isCollapsed = false;
-        }
-
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                if (isCollapsed) {
-                    expandCrisps();
-                } else {
-                    collapseCrisps();
-                }
-            });
-        }
-
-        if (clearAllBtn) {
-            clearAllBtn.addEventListener('click', () => {
-                checkboxes.forEach(cb => cb.checked = false);
-                updateVisibility();
-            });
         }
 
         checkboxes.forEach(cb => {
@@ -206,6 +245,7 @@
         updateVisibility();
     });
 </script>
+
 {% include cookie-consent.html %}
 
 </body>

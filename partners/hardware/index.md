@@ -68,7 +68,7 @@ pagination: "true"
 containerId: "card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
-itemsPerPage: "21"
+itemsPerPage: "9"
 ---
 
 

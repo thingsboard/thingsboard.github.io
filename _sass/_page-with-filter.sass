@@ -1,3 +1,8 @@
+body.filter-opened
+  overflow: hidden
+  #page-with-filter-content
+    .filter-block
+      display: block
 #page-with-filter-content
   padding: 0
   .hero-content
@@ -13,11 +18,13 @@
     margin: 0 auto
   .search-block
     position: sticky
-    top: 80px
+    top: 78px
     background: #FFF
-    z-index: 2
+    z-index: 4
     padding: 24px 0
     border-bottom: 1px solid #EBEBEB
+    @media (max-width: 960px)
+      z-index: 3
     .search-block-wrapper
       display: flex
       justify-content: space-between
@@ -25,55 +32,23 @@
       max-width: 1440px
       padding: 0 20px
       margin: 0 auto
-    .search-crisps
-      display: flex
-      flex-wrap: wrap
-      gap: 8px
-      .search-crisps-toggle-btn
-        position: relative
-        cursor: pointer
+      .filter-button
+        display: flex
+        align-items: center
+        gap: 4px
+        padding: 7px 26.5px 7px 22.5px
         border-radius: 6px
-        padding: 7px 36px 7px 10px
-        border: 1px solid #2A7DEC
-        i
-          position: absolute
-          top: 50%
-          transform: translateY(-50%)
-          right: 10px
-      .search-crisps-clear-btn
-        font-size: 14px
-        font-weight: 500
-        line-height: 24px
-        padding: 7px 36px 7px 10px
-        border-radius: 6px
-        position: relative
-        display: none
-        cursor: pointer
-        .search-crisps-clear-btn-close
-          position: absolute
-          top: 50%
-          transform: translateY(-44%)
-          font-size: 28px
-          right: 10px
-      .crisp
-        display: inline-block
-        position: relative
-        font-size: 14px
-        font-weight: 500
-        line-height: 24px
         background: #2A7DEC
-        color: #FFF
-        border-radius: 6px
-        padding: 7px 36px 7px 12px
-        &.hidden
+        cursor: pointer
+        @media (min-width: 960px)
           display: none
-        .crisp-close
-          position: absolute
-          cursor: pointer
-          top: 50%
-          transform: translateY(-44%)
-          font-size: 28px
-          right: 10px
+        &:hover
+          opacity: 0.9
+        span
+          font-size: 14px
+          font-weight: 500
+          line-height: 24px
+          color: #FFF
     input
       height: 38px
       width: 240px
@@ -81,6 +56,62 @@
       border-radius: 6px
       border: 1px solid rgba(0, 0, 0, 0.12)
       color: rgba(0, 0, 0, 0.76)
+  .search-crisps
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+    &.desktop
+      @media (max-width: 960px)
+        display: none
+    &.mobile
+      &:has(.crisp)
+        padding: 12px 16px 12px
+        border-bottom: 1px solid #EBEBEB
+    .search-crisps-toggle-btn
+      position: relative
+      cursor: pointer
+      border-radius: 6px
+      padding: 7px 36px 7px 10px
+      border: 1px solid #2A7DEC
+      i
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 10px
+    .search-crisps-clear-btn
+      font-size: 14px
+      font-weight: 500
+      line-height: 24px
+      padding: 7px 36px 7px 10px
+      border-radius: 6px
+      position: relative
+      display: none
+      cursor: pointer
+      .search-crisps-clear-btn-close
+        position: absolute
+        top: 50%
+        transform: translateY(-44%)
+        font-size: 28px
+        right: 10px
+    .crisp
+      display: inline-block
+      position: relative
+      font-size: 14px
+      font-weight: 500
+      line-height: 24px
+      background: #2A7DEC
+      color: #FFF
+      border-radius: 6px
+      padding: 7px 36px 7px 12px
+      &.hidden
+        display: none
+      .crisp-close
+        position: absolute
+        cursor: pointer
+        top: 50%
+        transform: translateY(-44%)
+        font-size: 28px
+        right: 10px
     .crisp:has(.crisp-close:hover), .search-crisps-clear-btn:hover, .search-crisps-toggle-btn:hover
       opacity: 0.8
   .content-block
@@ -89,20 +120,66 @@
       position: relative
       border-right: 1px solid #EBEBEB
       width: 326px
-      flex-shrink: 0
+      display: none
+      @media (min-width: 960px)
+        display: block
       .big-filter
         overflow-y: auto
         display: flex
         flex-direction: column
-        position: sticky
-        top: 165px
-        max-height: calc(100vh - 165px)
+        position: fixed
+        top: 78px
+        left: 0
+        width: 100%
+        height: 100%
+        background: #FFF
+        z-index: 3
+        max-height: calc(100vh - 78px)
         &::-webkit-scrollbar
           width: 8px
           background: #F5F5F5
         &::-webkit-scrollbar-thumb
           background: rgba(0, 0, 0, 0.12)
           border-radius: 10px
+        @media (min-width: 960px)
+          position: sticky
+          top: 165px
+          max-height: calc(100vh - 165px)
+        .big-filter-header-crisps
+          position: sticky
+          top: 0
+          background: #FFF
+          z-index: 1
+          @media (min-width: 960px)
+            display: none
+        .big-filter-header
+          display: flex
+          justify-content: space-between
+          align-items: center
+          padding: 22px 16px
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+          .close-filter-button
+            cursor: pointer
+          .big-filter-header-title
+            display: flex
+            align-items: center
+            gap: 8px
+            .big-filter-header-label
+              font-size: 24px
+              font-weight: 500
+              line-height: 36px
+            .big-filter-header-counter
+              width: 28px
+              height: 28px
+              text-align: center
+              font-size: 16px
+              font-weight: 500
+              line-height: 28px
+              color: #FFF
+              border-radius: 100px
+              background: #2A7DEC
+          @media (min-width: 960px)
+            display: none
         .big-filter-section
           border-bottom: 1px solid rgba(0, 0, 0, 0.12)
           .big-filter-section-label
@@ -142,7 +219,9 @@
               transform: rotate(180deg)
 
     .cards-block
-      padding: 32px 0 32px 32px
+      padding: 32px 0
+      @media (min-width: 960px)
+        padding: 32px 0 32px 32px
       .card-collection
         display: grid
         grid-template-columns: repeat(3, 1fr)
@@ -188,7 +267,7 @@
             width: 100%
             img
               max-height: 80px
-              max-width: 250px
+              max-width: 100%
           .crisp
             display: inline-block
             margin-bottom: 12px
