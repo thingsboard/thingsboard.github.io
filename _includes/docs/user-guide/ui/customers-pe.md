@@ -3,17 +3,15 @@
 
 ## Introduction
 
-A Customer can be a separate business-entity: an individual, or an organization that purchases or uses tenant devices and/or assets. 
-Customer can also be a division within the tenant organization. 
-Customer can have multiple users, inner customers, and millions of devices and/or assets.
+A **Customer** in ThingsBoard can represent a distinct business entity — either an **individual or an organization** — that **purchases or uses the tenant’s devices and/or assets**. 
+A customer can also act as a **department or subdivision** within the tenant&#39;s organization.
+Customers can scale from small units to large ecosystems with **many users, sub-customers**, and **a large number of devices and assets**.
 
-[Tenant administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) can create customer groups and customers. 
-In turn, customers have an opportunity to add and edit their own customers, users, assets, devices, entity views, and dashboards.
-All of these you and your customers are able to do in the user details:
-to manage such options as customer groups, [user groups](/docs/{{docsPrefix}}user-guide/ui/users/), [asset groups](/docs/{{docsPrefix}}user-guide/ui/assets/),
-[device groups](/docs/{{docsPrefix}}user-guide/ui/devices/), [entity view groups](/docs/{{docsPrefix}}user-guide/entity-views/),
-[dashboard groups](/docs/{{docsPrefix}}user-guide/dashboards/), [edges](/docs/pe/edge/), and [delete a customer](#delete-customer).
+[Tenant Administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) have the ability to create customer groups as well as individual customers.
 
+Customers, once created, can manage their own environment, including:
+- Creating and managing customer users
+- Adding and editing devices, assets, dashboards and other entities.
 
 ## Create new customer
 

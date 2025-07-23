@@ -4,7 +4,7 @@
 **Asset** is an abstract entity in the IoT system of ThingsBoard that represents any physical object, space, or organizational unit. 
 Examples include a building, room, production area, field, streetlight, substation, or vehicle.
 
-Key characteristics of an Asset:
+**Key characteristics of an asset:**
 - **Does not generate telemetry** on its own but can be associated with devices that do.
 - **Can have its own attributes**, such as location, type, or responsible personnel.
 - **Used for grouping** devices and other entities.
