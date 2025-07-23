@@ -47,13 +47,11 @@ sysadmin
 
 ## Configure client authentication & authorization
 
-In order to secure the connection to the broker we should enable Basic or TLS authentication.
-In this tutorial, we will focus on the [Basic](/docs/mqtt-broker/security/#basic-authentication) authentication type.
-For this, we have set `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true` in the `docker-compose.yml` downloaded in the previous step.
+In order to secure the connection to the broker, we should [enable Basic authentication](/docs/mqtt-broker/security/authentication/basic/).
 
 Once Basic authentication is enabled, it is necessary to create MQTT Client Credentials of type `Basic` to authenticate and validate the connecting client.
 
-* Navigate to "Credentials" tab, click "+" in the top right corner of the table.
+* Navigate to _Authentication_ - _Credentials_ tab, click "+" in the top right corner of the table.
 * Input credentials name. For example, "Getting Started Credentials".
 * Input "username" and "password" with chosen values. For example, use `username` and `password` values respectively.
 * Authorization rules are set to allow publishing/subscribing to any topic by default.
@@ -61,7 +59,7 @@ Once Basic authentication is enabled, it is necessary to create MQTT Client Cred
 
 {% include images-gallery.html imageCollection="broker-mqtt-creds-creation" %}
 
-A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/), offering enhanced options for ensuring secure access.
+A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/overview/), offering enhanced options for ensuring secure access.
 
 ## Publishing and Subscribing to Topics
 
@@ -116,7 +114,7 @@ This tool uses your host, port, and client credentials data to construct `mosqui
 
 Please follow these steps to generate commands for "Getting Started Credentials":
 
-1. Open the 'Client Credentials' page from the left-hand menu.
+1. Open the _Authentication_ _Credentials_ page from the left-hand menu.
 2. Click on row with client credentials "Getting Started Credentials" to open the details.
 3. Click on the "Check connectivity" button.
 4. In the opened window, select your operating system and install the necessary client tools.

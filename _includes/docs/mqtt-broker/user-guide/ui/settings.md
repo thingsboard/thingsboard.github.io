@@ -5,19 +5,27 @@
 {% assign sinceVersion = "2.0" %}
 {% include templates/mqtt-broker/since.md %}
 
-TBMQ offers users the convenience of configuring various settings directly from the user interface.
+TBMQ provides a dedicated Settings page that allows administrators to manage key system configurations directly from the user interface.
+The Settings page is divided into three tabs, each focused on a specific category of system configuration.
 
 ## Security settings
 
-To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password. 
-You can enhance the security of your account by updating your security settings, including the **password policy**.
+Configure the execution order of MQTT authentication providers, controlling the priority in which client credentials are validated.
+Define broker user password policies, including password strength requirements, expiration settings, and reuse restrictions to enforce strong account security.
 
-For example, you can increase a minimum password length, require a mix of uppercase and lowercase letters, and specify the minimum number of digits and special characters. 
-Additionally, you can set a password expiration period to ensure that passwords are updated regularly. 
+### MQTT Authentication
 
-These measures will help ensure stronger and more secure passwords, thereby promoting better overall account security.
+{% include docs/mqtt-broker/user-guide/ui/authentication-settings.md %}
 
 ### Password policy
+
+To log into TBMQ, the [user](/docs/mqtt-broker/user-guide/ui/users/) uses an email and password.
+You can enhance the security of your account by updating your security settings, including the **password policy**.
+
+For example, you can increase a minimum password length, require a mix of uppercase and lowercase letters, and specify the minimum number of digits and special characters.
+Additionally, you can set a password expiration period to ensure that passwords are updated regularly.
+
+These measures will help ensure stronger and more secure passwords, thereby promoting better overall account security.
 
 The password policy sets the rules that passwords for the TBMQ users must meet. You can specify the following options to ensure stronger security:
 - **Minimum password length** - the parameter determines the minimum number of characters in the password. Minimum password length should be in a range from 6 to 50 and is the only required field.
@@ -37,11 +45,11 @@ When the password policy is updated, new users will be required to adhere to the
 Note that if you have enabled the **Force to reset password if not valid** option, all users (not only new ones) who do not meet the new requirements will be forced to update their passwords.
 
 {% capture securityDocumentation %}
-To see other security-related settings, please refer to our [Security documentation](/docs/mqtt-broker/security/).
+To see other security-related settings, please refer to our [Security documentation](/docs/mqtt-broker/security/overview/).
 {% endcapture %}
 {% include templates/info-banner.md content=securityDocumentation %}
 
-### Change password
+#### Change password
 
 To change your account password to comply with the new requirements, you should follow these steps:
 
@@ -54,23 +62,12 @@ To change your account password to comply with the new requirements, you should 
 
 ## General settings
 
+Define global MQTT connectivity settings used across the TBMQ UI (such as default host and port values) and configure WebSocket client behavior,
+including activity logging options and message retention limits for the in-browser message table.
+
 ### Connectivity
 
-In this section, you can override the default **host** and **port** for **MQTT, MQTTS, WS**, and **WSS** protocols.
-These custom values will be used in various parts of the TBMQ application where protocol-specific connectivity is required.
-
-* **Host**. The hostname or IP address of the server. The default value is set to `window.location.hostname`, which is the hostname of the web page's URL.
-* **Port**. Default values:
-  * **MQTT** - `1883`. The TCP listener port for plain MQTT connections (`LISTENER_TCP_BIND_PORT` environment variable).
-  * **MQTTS** - `8883`. The SSL/TLS port for secure MQTT connections (`LISTENER_SSL_BIND_PORT`).
-  * **WS** - `8084`. The WebSocket listener port for MQTT over WebSockets (`LISTENER_WS_BIND_PORT`).
-  * **WSS** - `8085`. The secure WebSocket listener port for MQTT over secure WebSockets (`LISTENER_WSS_BIND_PORT`).
-
-Here are two examples of pages where the custom host and port settings are applied:
-* **Check connectivity** window. Uses the **MQTT** connectivity settings to generate commands with custom host and port.
-* **Add WebSocket Connection** window. Uses the **WS** connectivity settings to auto-generate a WebSocket connection URL address with a custom host and port.
-
-{% include images-gallery.html imageCollection="settings-connectivity-settings" %}
+{% include docs/mqtt-broker/user-guide/ui/connectivity-settings.md %}
 
 ### WebSocket client
 
