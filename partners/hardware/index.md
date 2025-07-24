@@ -81,7 +81,7 @@ itemsPerPage: "9"
         <div class="hardware-hero-banner">
             <p>Want to become ThingsBoard Hardware Partner?</p>
             <a>Apply for program</a>
-            <img src="/images/hardware-partners-icon.svg" width="160" height="160">
+            <img src="/images/hardware-partners-icon.svg" width="210" height="210">
         </div>
     </div>
 </div>

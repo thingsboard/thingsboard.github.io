@@ -5,10 +5,14 @@
     align-items: center
     gap: 100px
     position: relative
+    @media (max-width: 800px)
+      gap: 50px
+      flex-direction: column
     .hardware-hero-text
       display: flex
       flex-direction: column
       gap: 32px
+      max-width: 1000px
       h1
         font-size: 56px
         font-weight: 600
@@ -27,6 +31,13 @@
       flex-direction: column
       gap: 16px
       width: 300px
+      overflow: hidden
+      flex-shrink: 0
+      @media (max-width: 800px)
+        max-width: 570px
+        width: 100%
+        padding: 32px
+        margin: 0 auto
       p
         font-size: 24px
         font-weight: 500
@@ -42,9 +53,11 @@
         border: 1px solid #2A7DEC
         background: #FFF
         transition: ease-in-out 0.3s
+        text-align: center
         &:hover
           color: #FFF
           background: #2A7DEC
       img
         position: absolute
-        top: 0
+        top: -55px
+        right: -46px

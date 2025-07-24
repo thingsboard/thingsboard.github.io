@@ -5,6 +5,8 @@ body.filter-opened
       display: block
 #page-with-filter-content
   padding: 0
+  .pagination-block
+    margin-top: 40px
   .hero-content
     padding: 100px 0 50px
     background: #F4F8FE
@@ -28,7 +30,7 @@ body.filter-opened
     .search-block-wrapper
       display: flex
       justify-content: space-between
-      gap: 60px
+      gap: 30px
       max-width: 1440px
       padding: 0 20px
       margin: 0 auto
@@ -51,7 +53,8 @@ body.filter-opened
           color: #FFF
     input
       height: 38px
-      width: 240px
+      width: 100%
+      max-width: 240px
       padding: 7px 16px
       border-radius: 6px
       border: 1px solid rgba(0, 0, 0, 0.12)
@@ -61,7 +64,7 @@ body.filter-opened
     flex-wrap: wrap
     gap: 8px
     &.desktop
-      @media (max-width: 960px)
+      @media (max-width: 959px)
         display: none
     &.mobile
       &:has(.crisp)
@@ -226,6 +229,8 @@ body.filter-opened
         display: grid
         grid-template-columns: repeat(3, 1fr)
         gap: 16px
+        @media (max-width: 600px)
+          grid-template-columns: repeat(2, 1fr)
         .card
           position: relative
           display: flex
@@ -283,6 +288,7 @@ body.filter-opened
             font-weight: 500
             line-height: 30px
             color: #000000
+            word-break: break-word
           .card-description
             display: -webkit-box
             -webkit-line-clamp: 3
@@ -292,6 +298,8 @@ body.filter-opened
             font-weight: 400
             line-height: 24px
             color: #000000
+            @media (max-width: 400px)
+              word-break: break-word
           .card-link-wrapper
             transition: ease-in-out 0.3s
             position: absolute
@@ -300,15 +308,17 @@ body.filter-opened
             .card-link
               position: relative
               color: #2A7DEC
+              font-size: 14px
+              font-weight: 500
               .arrow
                 font-size: 13px
                 transform: translate(0px)
                 transition-duration: 0.3s
                 box-shadow: none
                 width: 12px
-                margin-left: 6px
+                margin-left: 0
                 position: absolute
-                top: 5px
+                top: 4px
                 &.first
                   opacity: 0.2
                 &.second
