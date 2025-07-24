@@ -1,9 +1,10 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign deviceVendorLink = "" %}
+{% assign deviceVendorLink = "https://www.iotrouter.com/product/eg8200-competitive-edge-computing-gateway/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
+- [EG8200 gateway user manual](https://www.iotrouter.com/wp-content/uploads/pdf-down/EG%20and%20EV%20Series_Quick%20Start%20Instructions.pdf){:target="_blank"}
   '
   %}
 
@@ -21,7 +22,7 @@
 
 ## Introduction
 
-EG8200 series products are edge computing gateways launched by IOTRouter Chengdu. With its rich hardware interfaces, drag-and-drop programming method, Zero Code designconcept, convenient remote management and other characteristics, It can quickly, flexibly, accurately and efficiently respond to various IOT industry needs. 
+[EG8200]({{deviceVendorLink}}){: target="_blank"} series products are edge computing gateways launched by IOTRouter Chengdu. With its rich hardware interfaces, drag-and-drop programming method, Zero Code designconcept, convenient remote management and other characteristics, It can quickly, flexibly, accurately and efficiently respond to various IOT industry needs. 
 
 EG series products abstract complex hardware interfaces, different industrial network protocols, etc. into Nodes one by one. Users can use these Nodes flexibly to replace the traditional complex and inefficient coding process by dragging and connecting. Really let customers focus on business logic and quickly create their own gateway equipment. The mission of EG series products is to continuously develop new Nodes to serve industry customers to adapt to the fragmentation of IOT industry needs.
 
@@ -39,11 +40,11 @@ According to the official user manual and this guide you can connect the gateway
 
 **Step 1: Collect Modbus RTU data**
 
-A. Wiring EG8200 with Sensor
+**A.** Wiring EG8200 with Sensor
 
 ![image](/images/devices-library/ready-to-go-devices/eg8200-gateway/wiring.png)
 
-B. Visit default IP address 192.168.88.1.of EG8200 to Configure for reading temperature and humidity data.
+**B.** Visit default IP address 192.168.88.1.of EG8200 to Configure for reading temperature and humidity data.
 
 {% assign collectModbusRTUData = '
     ===
@@ -100,7 +101,7 @@ Add a new MQTT publishing node, refer to the second step of platform configurati
 
 ## Platform configuration
 
-Step 1: Add device
+**Step 1: Add device**
 
 - Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section.
 - Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu.
@@ -119,7 +120,7 @@ Step 1: Add device
 
 {% include images-gallery.liquid imageCollection=addDevice %}
 
-Step 2: Configure MQTT
+**Step 2: Configure MQTT**
 
 Click on the created device and fill in the configuration information in the following figure into the gateway, where the device ID is the MQTT client ID and the access token is the MQTT username. 
 
