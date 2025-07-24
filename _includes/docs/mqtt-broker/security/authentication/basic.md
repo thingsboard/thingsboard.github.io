@@ -9,7 +9,7 @@ When combined with secure transport (TLS), it provides a reliable and widely ado
 ### Basic authentication overview
 
 Basic authentication allows MQTT clients to authenticate using credentials sent in the `CONNECT` packet — such as clientId, username, and password.
-TBMQ uses these credentials to generate a unique `credentialsId` and match against the stored records using flexible matching strategies.
+TBMQ uses these credentials to generate a unique `credentialsId` and match against the stored [MQTT client credential](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) records using flexible matching strategies.
 To optimize authentication performance, TBMQ maintains credentials in Redis for fast lookups, while PostgreSQL ensures reliable persistence.
 The following sections explain provider configuration, credential matching, `credentialsId` generation, and how authorization is applied after successful authentication.
 
@@ -50,7 +50,7 @@ To provide flexible control over authorization rules, TBMQ uses regular expressi
 
 For example, to **allow clients to publish or subscribe to all topics** that begin with **city/**, an authorization rule should be created with the value **city/.***.
 
-For the Basic type authorization is configured through the **pubAuthRulePatterns** and **subAuthRulePatterns** of the corresponding MQTT client credentials. 
+For the Basic type, authorization is configured through the **pubAuthRulePatterns** and **subAuthRulePatterns** of the corresponding MQTT client credentials. 
 Therefore, for each Basic MQTT client credential, you can configure the authorization rules for the topics that these clients can access. 
 
 The **pubAuthRulePatterns** and **subAuthRulePatterns** are based on regular expression syntax. For example,

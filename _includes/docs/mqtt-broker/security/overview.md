@@ -30,7 +30,7 @@ Authentication methods are implemented as pluggable authentication providers:
 
 - [Basic](/docs/mqtt-broker/security/authentication/basic/) — Authenticates clients using a clientId, username, and password sent in the `CONNECT` packet.
 - [X.509 Certificate Chain](/docs/mqtt-broker/security/authentication/x509/) — Uses the client’s X.509 certificate chain during TLS handshake for authentication.
-- [JWT (JSON Web Token)](/docs/mqtt-broker/security/authentication/jwt/) — Authenticates clients using a signed JWT passed in the password field of the `CONNECT` packet.
+- [JWT (JSON Web Token)](/docs/mqtt-broker/security/authentication/jwt/) — Authenticates clients using a signed JWT passed in the **password** field of the `CONNECT` packet.
 - [SCRAM](/docs/mqtt-broker/security/authentication/scram/) — Performs a secure challenge-response using hashed credentials to authenticate without sending the actual password (MQTT 5.0 only).
 
 Each provider can be individually enabled, disabled, and configured to meet requirements for different deployment use cases.
@@ -54,7 +54,8 @@ This can be configured from the [MQTT Authentication Settings](/docs/mqtt-broker
 
 ## Authorization
 
-Define topic-level access control by applying configurable rules that determine whether a client can publish to or subscribe from specific topics. TBMQ uses regular expression–based topic patterns to enforce these rules. 
+Authorization involves granting or denying access to specific resources or actions based on the authenticated client’s privileges.
+To achieve this, define topic-level access control by applying configurable rules that determine whether a client can publish to or subscribe from specific topics. TBMQ uses regular expression–based topic patterns to enforce these rules. 
 Authorization settings are typically configured per [client credentials](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials). Only JWT-based authentication supports defining authorization rules at the provider level, allowing dynamic, token-driven access control.
 
 ## Next steps

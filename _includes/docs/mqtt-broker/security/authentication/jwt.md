@@ -127,8 +127,8 @@ Also JWT from a `password` field includes these claims:
 
 ```json
 {
-   "sub": "thermostat-007",
-   "mqtt_user": "client-007",
+   "sub": "client-007",
+   "mqtt_user": "thermostat-007",
    "env": "prod"
 }
 ```
@@ -183,7 +183,7 @@ If configured, TBMQ will attempt to extract a list of topic patterns from these 
 
 {% capture dynamic-filters-claim-type-warn %}
 
-Dynamic claims must be definded as JSON array of strings. Each string will be treated as a topic filter pattern and compiled as a regular expression.
+Dynamic claims must be definded as JSON array of strings. Each string will be treated as a topic pattern and compiled as a regular expression.
 
 {% endcapture %}
 {% include templates/info-banner.md content=dynamic-filters-claim-type-warn %}
@@ -202,7 +202,7 @@ A client connects with a JWT that includes these claims:
 ```json
 {
   "pub_rules": ["devices/.*/data"],
-  "sub_rules": ["sensors/.*/cmd", "alerts/.*"]
+  "sub_rules": ["sensors/.*", "alerts/.*"]
 }
 ```
 
