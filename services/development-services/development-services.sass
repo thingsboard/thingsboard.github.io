@@ -248,14 +248,14 @@ h2
                     width: 100%
                     max-width: 100%
                     > *
-                        flex: 0 0 100%
+                        flex: 0 0 auto
 
                     .customer-logos
                         display: flex
                         gap: 150px
-                        margin-right: 150px
+                        // margin-right: 150px
                         will-change: transform
-                        animation: scroll 5s linear infinite
+                        animation: scroll 15s linear infinite
                         .logo
                             width: 216px
                             display: flex
@@ -2961,7 +2961,7 @@ h2
 
 
 @keyframes scroll
-    0%
+    from
         transform: translateX(0)
-    100%
+    to
         transform: translateX(-100%)
