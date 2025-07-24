@@ -18,18 +18,18 @@ $font-style-normal: normal
 $section-background-accent-color: linear-gradient(180deg, #2A7DEC 0%, #2264BD 100%)
 $light-text-color: #FAFBFC
 $dark-text-color: #212529
-@mixin themed-style($bg, $color, $border-color) 
+@mixin themed-style($bg, $color, $border-color)
   background: $bg
   color: $color
   border: 1px solid $border-color
 
-@mixin expandable-header($icon: "\f078") 
+@mixin expandable-header($icon: "\f078")
   display: flex
   justify-content: space-between
   align-items: center
   position: relative
   cursor: pointer
-  &::after 
+  &::after
     content: $icon
     color: #6B7178
     font-family: 'Font Awesome 5 Free'
@@ -45,7 +45,7 @@ $dark-text-color: #212529
     border: none
 
 @mixin expandable-rotated($deg: 180deg)
-  &::after 
+  &::after
     transform: rotate($deg)
 
 @mixin content-container($marginBottom)
@@ -61,22 +61,28 @@ $dark-text-color: #212529
     font-weight: 400
     line-height: 140%
 
-@mixin scroll-animation
-    opacity: 0
-    transform: translateY(50px)
-    transition: opacity 1s ease, transform 1s ease
-    &.visible 
-        opacity: 1
-        transform: translateY(0)
-        animation: fadeInUp 1s ease forwards
+.animation-prepare
+  opacity: 0
+  transform: translateY(50px)
+
+.animation-trigger
+  opacity: 1
+  transform: translateY(0)
+  transition: opacity 1s ease, transform 1s ease
+
+.visible-no-anim
+  opacity: 1
+  transform: translateY(0)
+  transition: none
+
 
 h2
     color: #212529
-    padding: 0px  
+    padding: 0px
     font-size: 48px
     font-weight: 400
     line-height: 120%
-  
+
 #development-services
     .noToc
         position: relative
@@ -272,7 +278,7 @@ h2
                     left: 0
                     width: 100%
                     height: 100%
-                    object-fit: cover 
+                    object-fit: cover
                     z-index: 1
                 .statistics-wrapper
                     position: relative
@@ -314,7 +320,7 @@ h2
                     animation-duration: 1000ms
                     animation-timing-function: cubic-bezier(.25, .46, .4, 1)
                     animation-fill-mode: forwards
-                    h2 
+                    h2
                         font-size: 48px
                         font-weight: 400
                         line-height: 57px
@@ -349,7 +355,7 @@ h2
                                         background: transparent
                                     .expansion-header
                                         @include expandable-rotated(270deg)
-                                
+
                                 .expansion-title
                                     margin: 0
                                     font-size: 20px
@@ -403,7 +409,7 @@ h2
                                         overflow: visible
                                         padding: 16px
                                         max-height: 1000px
-                                
+
                         .images
                             display: block
                             width: 55%
@@ -464,14 +470,14 @@ h2
                                     a
                                         font-size: 20px
                                         font-weight: 600
-                                        &::after 
+                                        &::after
                                             content: "\f061"
-                                            font-family: "Font Awesome 5 Free" 
+                                            font-family: "Font Awesome 5 Free"
                                             padding-left: 8px
 
             .vision-section
                 @include content-container(120px)
-                @include scroll-animation
+                // @include scroll-animation
                 .vision-wrapper
                     position: relative
                     display: flex
@@ -611,7 +617,7 @@ h2
                             object-fit: cover
                             border-top-left-radius: 12px
                             border-top-right-radius: 12px
-                            
+
                         .card-tag
                             position: absolute
                             top: 16px
@@ -627,7 +633,7 @@ h2
                             gap: 5px
                             h3
                                 height: 50%
-                                @include text-styles(20px)                                
+                                @include text-styles(20px)
                             h3:hover
                                 color: #2A7DEC
 
@@ -641,7 +647,7 @@ h2
                                     color: #1849A9
                                 li
                                     width: 33%
-            
+
             .services
                 @include content-container(120px)
                 background: transparent
@@ -712,11 +718,11 @@ h2
                                         list-style-type: disc
                                     li::marker
                                         color: #2A7DEC
-            
+
             .get-in-touch-section
                 @include content-container(80px)
                 background: transparent
-                @include scroll-animation
+                // @include scroll-animation
                 .get-in-touch-container
                     overflow: hidden
                     position: relative
@@ -757,7 +763,7 @@ h2
                     width: 100vw
                     height: 100%
                     left: calc(893px - 50vw - 290px)
-                    .bg-shape 
+                    .bg-shape
                         position: absolute
                         z-index: 0
                         border-radius: 50%
@@ -848,7 +854,7 @@ h2
                                         padding: 16px 0px
                                         margin: 0 10px
                                         border-bottom: 1px solid #DEE2E6
-                                    
+
                                 .menu-item
                                     &:hover
                                         background: #E9ECEF
@@ -858,7 +864,7 @@ h2
                                         color: #2264BD
                                         &:hover
                                             background: transparent
-                                        
+
                             .menu::-webkit-scrollbar-thumb
                                 background-color: #ADB5BD
                                 border: 1px solid #ADB5BD
@@ -887,7 +893,7 @@ h2
                                         font-weight: 400
                                         line-height: 135%
                                     .card-text-container
-                                        font-size: 16px 
+                                        font-size: 16px
                                         font-weight: 400
                                         .card-descr
                                             margin-bottom: 20px
@@ -933,7 +939,7 @@ h2
                     @include content-container(120px)
                     text-align: center
                     background: transparent
-                    @include scroll-animation
+                    // @include scroll-animation
                     .trusted-partner-title
                         font-size: 48px
                         font-weight: 400
@@ -1026,7 +1032,7 @@ h2
                     @include content-container(64px)
                     text-align: center
                     background: transparent
-                    @include scroll-animation
+                    // @include scroll-animation
                     .fast-delivery-title
                         font-size: 32px
                         font-weight: 400
@@ -1059,7 +1065,7 @@ h2
 
                         thead th:first-child
                             width: 30%
-                        
+
                         thead th:not(:first-child)
                             width: 35%
                             border-left: 1px solid #E5E7EB
@@ -1111,7 +1117,7 @@ h2
                     position: relative
                     background: transparent
                     margin-bottom: 64px
-                    @include scroll-animation
+                    // @include scroll-animation
                     .client-feedback-container
                         padding: 56px 272px
                         position: relative
@@ -1161,10 +1167,10 @@ h2
                         top: 0
                         left: 0
                         z-index: 0
-                
+
                 .more-feature
                     @include content-container(120px)
-                    @include scroll-animation
+                    // @include scroll-animation
                     background: transparent
                     .more-feature-title
                         text-align: center
@@ -1195,11 +1201,11 @@ h2
 
                 .get-in-touch-section
                     margin-bottom: 40px
-                    @include scroll-animation
+                    // @include scroll-animation
                     .get-in-touch-container
                         .get-in-touch-title
                             width: 680px
-            
+
             .project-timeline
                 @include content-container(120px)
                 padding-top: 100px
@@ -1228,7 +1234,7 @@ h2
                     padding-top: 40px
                     height: 594px
                     padding-bottom: 110px
-                    .timeline-column 
+                    .timeline-column
                         position: relative
                         padding-top: 10px
                         text-align: center
@@ -1356,7 +1362,7 @@ h2
                             border-right: 1px solid #ddd
                             padding-top: 10px
                             flex-shrink: 0
-            
+
                         .timeline-bar
                             background: #e0e0e0
                             border-radius: 8px
@@ -1368,7 +1374,7 @@ h2
                                 font-weight: 600
                                 margin-bottom: 4px
                                 color: #212529
-                            
+
                             .bar-sub
                                 font-size: 13px
                                 color: #212529
@@ -1376,8 +1382,8 @@ h2
                             .multi
                                 display: flex
                                 flex-direction: column
-                                justify-content: center                
-            
+                                justify-content: center
+
                         .week-label-stack
                             display: flex
                             flex-direction: column
@@ -1385,12 +1391,12 @@ h2
                             width: 40px
                             border-right: 1px solid #ddd
                             flex-shrink: 0
-            
+
                             .week-label
                                 border: none
                                 padding: 8px 0
-                            
-                        .light 
+
+                        .light
                             background-color: #DCDFE3
                         .blue-light
                             background-color: #D9EBFF
@@ -1398,10 +1404,10 @@ h2
                             background-color: #A1CDFF
                         .blue-deep
                             background-color: #3393FF
-            
+
             .engagement-models
                 @include content-container(120px)
-                @include scroll-animation
+                // @include scroll-animation
                 .engagement-model-container
                     display: flex
                     gap: 20px
@@ -1467,10 +1473,10 @@ h2
                                     top: -50%
                                     left: 50%
                                     transform: translate(-50%)
-                                    
+
                             thead th:first-child
                                 width: 30%
-                            
+
                             thead th:not(:first-child)
                                 width: 35%
                                 border-left: 1px solid #E5E7EB
@@ -1478,7 +1484,7 @@ h2
                             tbody td:first-child
                                 font-weight: 400
                                 color: $dark-text-color
-                                width: 20% 
+                                width: 20%
 
                             tbody td:first-child
                                 width: 30%
@@ -1582,7 +1588,7 @@ h2
                                     line-height: 24px
                             .client-logo-img
                                 height: 50px
-                                padding-bottom: 20px 
+                                padding-bottom: 20px
                                 img
                                     height: 100%
                             .client-logo-img.senseing-logo
@@ -1608,7 +1614,7 @@ h2
                                     border: 1px solid #065986
                                     border-radius: 6px
                                     padding: 4px 12px
-            
+
             .questions-section
                 @include content-container(120px)
                 z-index: 1
@@ -1665,7 +1671,7 @@ h2
                                 padding-bottom: 20px
                                 border-bottom: 1px solid #BDBDBD
                                 @include expandable-rotated(180deg)
-            
+
             .contact-us-section
                 .ellipse-right
                     position: absolute
@@ -1767,8 +1773,8 @@ h2
                                         p
                                             color: $form-element-label-color
                                             font-size: 12px
-                                            line-height: 16px 
-                                            font-style: $font-style-normal 
+                                            line-height: 16px
+                                            font-style: $font-style-normal
                                             font-weight: 400
                                             letter-spacing: 0.4px
                                             position: absolute
@@ -1794,12 +1800,12 @@ h2
                                             height: 80px
 
                                     .label-select
-                                        select 
+                                        select
                                             width: 100%
                                             appearance: none
                                             -webkit-appearance: none
                                             -moz-appearance: none
-                                            &::-ms-expand 
+                                            &::-ms-expand
                                                 display: none
 
                                         &::after
@@ -1818,7 +1824,7 @@ h2
 
                             .secondary
                                 padding-top: 0px
-                            
+
                             .questionnaire-section
                                 display: flex
                                 flex-direction: column
@@ -1837,7 +1843,7 @@ h2
                                     color: #888
                                     font-size: 13px
                                     margin-left: 6px
-                                
+
                                 .label-container
                                     display: flex
                                     flex-wrap: wrap
@@ -2001,7 +2007,7 @@ h2
     .flyout-button
         display: none
 
-    .modal 
+    .modal
         display: none
         position: fixed
         align-items: center
@@ -2012,7 +2018,7 @@ h2
         width: 100%
         height: 100%
         background-color: $modal-background-color
-        .modal-content 
+        .modal-content
             width: 950px
             height: auto
             display: flex
@@ -2032,7 +2038,7 @@ h2
                 flex-direction: column
                 flex: 1
                 overflow: auto
-            
+
             .title-container
                 position: sticky
                 top: 0
@@ -2066,8 +2072,8 @@ h2
                         p
                             color: $form-element-label-color
                             font-size: 12px
-                            line-height: 16px 
-                            font-style: $font-style-normal 
+                            line-height: 16px
+                            font-style: $font-style-normal
                             font-weight: 400
                             letter-spacing: 0.4px
                             position: absolute
@@ -2093,12 +2099,12 @@ h2
                             height: 80px
 
                     .label-select
-                        select 
+                        select
                             width: 100%
                             appearance: none
                             -webkit-appearance: none
                             -moz-appearance: none
-                            &::-ms-expand 
+                            &::-ms-expand
                                 display: none
 
                         &::after
@@ -2133,7 +2139,7 @@ h2
                     color: #888
                     font-size: 13px
                     margin-left: 6px
-                
+
                 .label-container
                     display: flex
                     flex-wrap: wrap
@@ -2167,7 +2173,7 @@ h2
         .development-services
             .development-services-container
                 width: 1376px
-    
+
     @media screen and (max-width: $step5) //1279px-1439px
         #first-screen
             .hero-container
@@ -2194,7 +2200,7 @@ h2
         .development-services
             .development-services-container
                 width: 1216px
-    
+
     @media screen and (max-width: $step4) //768px-1279px
         #first-screen
             .hero-container
@@ -2246,7 +2252,7 @@ h2
                                             width: 100%
                                             .client-feedback-cards
                                                 width: 100%
-                                                .project-screen-container 
+                                                .project-screen-container
                                                     a
                                                         text-align: center
                                                     .project-screen img
@@ -2327,7 +2333,7 @@ h2
                     .fast-delivery table td
                         padding: 20px
 
-                    .client-feedback 
+                    .client-feedback
                         .client-feedback-container
                             padding: 0
 
@@ -2338,11 +2344,11 @@ h2
                             .card
                                 flex: none
                                 width: 48%
-                
-                .engagement-models 
-                    .engagement-model-container 
-                        .container 
-                            table 
+
+                .engagement-models
+                    .engagement-model-container
+                        .container
+                            table
                                 thead th
                                     padding: 20px
                                     img
@@ -2351,16 +2357,16 @@ h2
                                 td
                                     padding: 20px
 
-                .clients-reviews 
-                    .clients-reviews-cards 
+                .clients-reviews
+                    .clients-reviews-cards
                         .client-info
                             width: 100%
                             max-width: 100%
                             min-height: auto
 
-                .questions-section 
-                    .questions-section-cards 
-                        .questions-section-card 
+                .questions-section
+                    .questions-section-cards
+                        .questions-section-card
                             max-height: fit-content
                             .questions-section-header
                                 .questions-section-title
@@ -2374,7 +2380,7 @@ h2
                             .questions-section-content
                                 display: flex
                                 padding: 10px
-                                                        
+
                 .get-in-touch-section
                     .get-in-touch-container
                         flex-direction: column
@@ -2384,7 +2390,7 @@ h2
                             font-size: 48px
                             line-height: 57.6px
                             text-align: center
-                        img 
+                        img
                             width: 100%
 
                 .contact-us-section
@@ -2402,17 +2408,17 @@ h2
                 .project-timeline
                     .timeline
                         display: none
-                    .project-timeline-container 
+                    .project-timeline-container
                         .project-timeline-title
                             font-size: 40px
                             text-align: center
 
                     .timeline-container-mobile
-                        display: flex                    
+                        display: flex
 
     @media screen and (max-width: $step3) //320px-768px
         #first-screen
-            img 
+            img
                 height: 600px
             .hero-container
                 padding: 10px
@@ -2609,7 +2615,7 @@ h2
                             padding: 20px
                             .trusted-partner-header
                                 .trusted-tips
-                                    .trusted-tip                                            
+                                    .trusted-tip
                                         font-size: 14px
                                         line-height: 21px
                                         &::before
@@ -2705,7 +2711,7 @@ h2
                                     line-height: 21px
                                     margin: 0
                                     padding: 0
-                
+
                     .get-in-touch-section
                         .get-in-touch-container
                             .get-in-touch-title
@@ -2714,7 +2720,7 @@ h2
                 .engagement-models
                     padding: 10px
                     margin-bottom: 50px
-                    .engagement-model-container 
+                    .engagement-model-container
                         .engagement-model-title
                             text-align: center
                             font-size: 24px
@@ -2738,7 +2744,7 @@ h2
                     .clients-reviews-title
                         font-size: 24px
                         line-height: 140%
-                    .clients-reviews-cards 
+                    .clients-reviews-cards
                         .client-info
                             width: 100%
                             max-width: 100%
@@ -2750,7 +2756,7 @@ h2
                             .client-avatar-container
                                 margin-bottom: 0
                                 border-bottom: none
-                                .client-logo-img 
+                                .client-logo-img
                                     img
                                         display: none
                             .client-feedback
@@ -2778,8 +2784,8 @@ h2
                         font-size: 24px
                         line-height: 140%
                         margin-bottom: 0
-                    .questions-section-cards 
-                        .questions-section-card 
+                    .questions-section-cards
+                        .questions-section-card
                             padding: 15px
                             .questions-section-header
                                 display: flex
@@ -2807,7 +2813,7 @@ h2
                             .questions-section-content
                                 display: flex
                                 padding: 10px
-                                                        
+
                 .get-in-touch-section
                     margin-bottom: 50px
                     .get-in-touch-container
@@ -2818,7 +2824,7 @@ h2
                             line-height: 135%
                             text-align: center
                             width: 100%
-                        img 
+                        img
                             width: 100%
                         .get-in-touch-btn
                             width: 100%
@@ -2859,7 +2865,7 @@ h2
                     padding: 10px
                     .timeline
                         display: none
-                    .project-timeline-container 
+                    .project-timeline-container
                         width: 100%
                         .project-timeline-title
                             width: 100%
@@ -2939,11 +2945,11 @@ h2
         transform: scale(1)
 
 @keyframes animatetop
-    from 
-        top: -300px 
+    from
+        top: -300px
         opacity: 0
-    to 
-        top: 0 
+    to
+        top: 0
         opacity: 1
 @keyframes running
     from
@@ -2951,11 +2957,11 @@ h2
     to
         transform: translateX(-2825px)
 
-@keyframes fadeInUp 
-    from 
+@keyframes fadeInUp
+    from
         opacity: 0
         transform: translateY(50px)
-    to 
+    to
         opacity: 1
         transform: translateY(0)
 

@@ -236,7 +236,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="vision-footer">
                         <div class="vision-footer-text">Let’s build something that works and wins</div>
-                        <button 
+                        <button
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
                             class="cdu-button anchor-button gtm_button vision-footer-btn">
@@ -564,7 +564,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="get-in-touch-section">
             <div class="get-in-touch-container">
                 <h2 class="get-in-touch-title">Discuss your IoT project with us</h2>
-                <button 
+                <button
                     id="Serv_DevServ_GetInTouch"
                     onclick="onContactUsClick(0)"
                     class="cdu-button anchor-button gtm_button get-in-touch-btn">
@@ -676,31 +676,31 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <div class="fast-delivery-block">
                         <h3 class="fast-delivery-title">ThingsBoard at the Core</h3>
                         <span class="fast-delivery-text">We build on ThingsBoard’s micro-service stack and re-using components instead of wiring them from scratch</span>
-                        <h3 class="fast-delivery-sub-title">What it gives</h3>                    
+                        <h3 class="fast-delivery-sub-title">What it gives</h3>
                         <span class="fast-delivery-text">8x faster process: regular 8-month MVP delivered in just 1 month</span>
                     </div>
                     <div class="fast-delivery-block">
                         <h3 class="fast-delivery-title">Low-code accelerators</h3>
                         <span class="fast-delivery-text">Dashboards, workflows, and rules are configured, not coded</span>
-                        <h3 class="fast-delivery-sub-title">What it gives</h3>                    
+                        <h3 class="fast-delivery-sub-title">What it gives</h3>
                         <span class="fast-delivery-text">About 70 % of UI built via drag-and-drop</span>
                     </div>
                     <div class="fast-delivery-block">
                         <h3 class="fast-delivery-title">Vertical starter kits</h3>
                         <span class="fast-delivery-text">Reusable blueprints for 10+ industries cut uncertainty and tighten estimates.</span>
-                        <h3 class="fast-delivery-sub-title">What it gives</h3>                    
+                        <h3 class="fast-delivery-sub-title">What it gives</h3>
                         <span class="fast-delivery-text">40 – 50 % of configuration is reused across engagements</span>
                     </div>
                     <div class="fast-delivery-block">
                         <h3 class="fast-delivery-title">Architecture-as-a-Service</h3>
                         <span class="fast-delivery-text">Scaling, HA, observability, and DevOps patterns come pre-hardened and cloud-agnostic</span>
-                        <h3 class="fast-delivery-sub-title">What it gives</h3>                    
+                        <h3 class="fast-delivery-sub-title">What it gives</h3>
                         <span class="fast-delivery-text">Scalable production-ready setup for 50k msg/s deployed in 5–8 days</span>
                     </div>
                     <div class="fast-delivery-block">
                         <h3 class="fast-delivery-title">Fixed-price transparency</h3>
                         <span class="fast-delivery-text">Budget is locked on day one; no surprises down the line</span>
-                        <h3 class="fast-delivery-sub-title">What it gives</h3>                    
+                        <h3 class="fast-delivery-sub-title">What it gives</h3>
                         <span class="fast-delivery-text">Projects delivered on agreed cost and timeline</span>
                     </div>
                 </div>
@@ -783,7 +783,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <section class="get-in-touch-section">
                 <div class="get-in-touch-container">
                     <h2 class="get-in-touch-title">Book a free session with a ThingsBoard architect</h2>
-                    <button 
+                    <button
                         id="Serv_DevServ_GetInTouch"
                         onclick="onContactUsClick(0)"
                         class="cdu-button anchor-button gtm_button get-in-touch-btn">
@@ -969,11 +969,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         <img src="/images/development-services/End-to-end development.webp" alt="IoT End-to-end development icon">
                         <h3 class="engagement-mobile-title">End-to-end development</h3>
                         <span class="engagement-mobile-text">We manage the entire development lifecycle, from initial architecture to final deployment, delivering a production-ready solution on a fixed timeline and budget.</span>
-                        <h3 class="engagement-mobile-sub-title">Choose this when you want to</h3>                    
+                        <h3 class="engagement-mobile-sub-title">Choose this when you want to</h3>
                         <span class="engagement-mobile-text">Analyze business processes to define effective IoT strategy</span>
                         <span class="engagement-mobile-text">Design system architecture and identify areas for improvement</span>
                         <span class="engagement-mobile-text">Develop detailed roadmap for successful IoT solution implementation</span>
-                        <h3 class="engagement-mobile-sub-title">What you get</h3>                    
+                        <h3 class="engagement-mobile-sub-title">What you get</h3>
                         <span class="engagement-mobile-text">Dedicated cross-functional team</span>
                         <span class="engagement-mobile-text">A single, expert point of contact managing the entire project</span>
                         <span class="engagement-mobile-text">Maximum development speed by leveraging our pre-built components</span>
@@ -1051,7 +1051,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="get-in-touch-section">
             <div class="get-in-touch-container">
                 <h2 class="get-in-touch-title">Let’s build your solution together</h2>
-                <button 
+                <button
                     id="Serv_DevServ_GetInTouch"
                     onclick="onContactUsClick(0)"
                     class="cdu-button anchor-button gtm_button get-in-touch-btn">
@@ -1445,15 +1445,40 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
 <script type="text/javascript">
     document.addEventListener("DOMContentLoaded", function () {
+        let lastScrollY = window.scrollY;
+        let isScrollingDown = true;
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            isScrollingDown = currentScrollY > lastScrollY;
+            lastScrollY = currentScrollY <= 0 ? 0 : currentScrollY;
+        }, { passive: true });
+
+        const elementsToAnimate = document.querySelectorAll('.get-in-touch-section, .vision-section, .trusted-partner, .engagement-models, .fast-delivery, .client-feedback, .more-feature');
+
+        elementsToAnimate.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top >= window.innerHeight) {
+                el.classList.add('animation-prepare');
+            }
+        });
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target); 
+                    if (isScrollingDown) {
+                        entry.target.classList.add('animation-trigger');
+                    } else {
+                        entry.target.classList.add('visible-no-anim');
+                    }
+                    observer.unobserve(entry.target);
                 }
             });
         }, {
             threshold: 0.1
+        });
+
+        elementsToAnimate.forEach(el => {
+            observer.observe(el);
         });
 
         const getInTouchSections = document.querySelectorAll(".get-in-touch-section");
@@ -1473,7 +1498,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         if (clientFeedback) observer.observe(clientFeedback);
         const moreFeature = document.querySelector(".more-feature")
         if (moreFeature) observer.observe(moreFeature);
-        
+
     });
     function animateCountUp(el, target, suffix = '', duration = 2000) {
         let start = 0;
@@ -1526,7 +1551,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         expansionPanels.forEach((panel, index) => {
             panel.addEventListener('click', function() {
                 if (index === currentExpandedIndex) {
-                    return; 
+                    return;
                 }
                 updateIconsGray(currentExpandedIndex);
 
@@ -1535,8 +1560,8 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 });
 
                 this.classList.add('expanded');
-                currentExpandedIndex = index; 
-                
+                currentExpandedIndex = index;
+
                 updateImages(index);
                 updateIconsBlue(index)
             });
