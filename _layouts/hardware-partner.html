@@ -1,0 +1,29 @@
+<!Doctype html>
+<html id="hardware-partner" lang="en">
+
+{% include head-header.html%}
+
+{% assign partner = site.data.hardware-partners | where: "name", page.hardware-partner | first %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="hardware-partner-content">
+    <div class="breadcrumbs"></div>
+    <div class="hardware-partner-main">
+        {% include hardware-partner.liquid partner=partner %}
+    </div>
+    <div class="hardware-banner">
+        <h2>
+            Want to become ThingsBoard Hardware Partner?
+        </h2>
+        <a href="/partners/hardware/program/">Apply for program</a>
+    </div>
+</section>
+
+<script></script>
+
+{% include cookie-consent.html %}
+
+</body>
+</html>
