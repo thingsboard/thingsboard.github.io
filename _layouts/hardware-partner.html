@@ -9,7 +9,11 @@
 </section>
 
 <section id="hardware-partner-content">
-    <div class="breadcrumbs"></div>
+    <div class="breadcrumbs">
+        <a href="/partners/hardware">Hardware partners</a>
+        <i class="fas fa-chevron-right fa-sm" style="color: rgba(0, 0, 0, 0.76)"></i>
+        <span>{{ partner.name }}</span>
+    </div>
     <div class="hardware-partner-main">
         {% include hardware-partner.liquid partner=partner %}
     </div>

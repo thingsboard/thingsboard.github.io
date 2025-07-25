@@ -2,7 +2,7 @@
 
 <div class="card-collection" id="card-collection">
     {% for card in sorted_collection %}
-        <a class="card" href="#" id="{{ card.type | join: '|' }}">
+        <a class="card" href="{{ card.page }}" id="{{ card.type | join: '|' }}">
             <div class="card-wrapper">
                 <div class="card-image">
                     <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">

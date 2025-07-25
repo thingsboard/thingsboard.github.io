@@ -1,11 +1,33 @@
 #hardware-partner-content
   max-width: 1400px
-  margin: 0 auto
+  padding: 0 40px
+  margin: 22px auto 80px
+  .breadcrumbs
+    display: flex
+    gap: 10px
+    align-items: center
+    margin-bottom: 62px
+    a
+      color: rgba(0, 0, 0, 0.54)
+      &:hover
+        text-decoration: none
+        color: rgba(0, 0, 0, 0.76)
+    span
+      color: rgba(0, 0, 0, 0.76)
+    a, span
+      font-size: 16px
+      font-weight: 400
+      line-height: 28px
   .hardware-partner-main
+    margin-bottom: 80px
     .hardware-partner
       display: flex
       align-items: flex-start
       gap: 65px
+      @media (max-width: 960px)
+        gap: 40px
+      @media (max-width: 600px)
+        flex-direction: column
       .hardware-partner-card
         padding: 40px
         border-radius: 24px
@@ -87,8 +109,10 @@
         .guide-list
           display: flex
           flex-wrap: wrap
+          gap: 8px
           max-width: 700px
         .hardware-crisp
+          display: inline-block
           border-radius: 6px
           padding: 5px 12px
           background: #EEF5FD
@@ -96,14 +120,16 @@
           font-size: 16px
           font-weight: 500
           line-height: 28px
-
   .hardware-banner
     display: flex
     justify-content: space-between
+    gap: 30px
     align-items: center
     padding: 48px
     border-radius: 24px
     background: #F4F8FE
+    @media (max-width: 600px)
+      flex-direction: column
     h2
       font-size: 36px
       font-weight: 500
@@ -119,6 +145,7 @@
       border: 1px solid #2A7DEC
       background: transparent
       transition: ease-in-out 0.3s
+      white-space: nowrap
       &:hover
         text-decoration: none
         color: #FFF

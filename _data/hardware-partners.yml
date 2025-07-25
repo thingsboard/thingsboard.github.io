@@ -19,6 +19,7 @@
     - Wi-Fi
   name: Atomsenses
   logo: /images/partners/atomsenses-logo.png
+  page: /partners/hardware/atomsenses
   site:
     href: https://www.atomsenses.com/
   links:
@@ -32,6 +33,7 @@
     - LTE-M
   name: Efento
   logo: /images/partners/efento.png
+  page: /partners/hardware/efento
   site:
     href: https://getefento.com/
   links:
@@ -45,6 +47,7 @@
     - Wi-Fi
   name: Teltonika Networks
   logo: /images/partners/teltonika-networks.png
+  page: /partners/hardware/teltonika
   site:
     href: https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard
   links:
@@ -57,6 +60,7 @@
     - Wi-Fi
   name: Espressif Systems
   logo: /images/partners/espressif.svg
+  page: /partners/hardware/espressif
   site:
     href: https://www.espressif.com/
   links:
@@ -72,6 +76,7 @@
     - Bluetooth LE
   name: Elastel
   logo: /images/partners/elastel-logo.png
+  page: /partners/hardware/elastel
   site:
     href: https://www.elastel.com/
   links:
@@ -84,6 +89,7 @@
     - Wirepas
   name: Haltian
   logo: /images/partners/haltian-logo.png
+  page: /partners/hardware/haltian
   site:
     href: https://haltian.com/
   links:
@@ -99,6 +105,7 @@
     - Wi-Fi
   name: Seeed Technology Co.,Ltd.
   logo: /images/partners/seeed.png
+  page: /partners/hardware/seeed
   site:
     href: https://www.seeedstudio.com/
   showcase:
@@ -119,6 +126,7 @@
     - LoRaWAN
   name: Lansitec
   logo: /images/partners/lansitec-logo.svg
+  page: /partners/hardware/lansitec
   site:
     href: https://www.lansitec.com/
   links:
@@ -130,6 +138,7 @@
     - LoRaWAN
   name: Milesight
   logo: /images/partners/milesight-logo.png
+  page: /partners/hardware/milesight
   site:
     href: https://www.milesight.com/
   links:
@@ -149,7 +158,7 @@
       label: WS202 PIR & Light LoRaWAN® Sensor
       href: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
     5:
-      label: Thingsboard-Milesight LoRaWAN Gateways&Devices Integration
+      label: LoRaWAN Gateways&Devices Integration
       href: https://support.milesight-iot.com/support/solutions/articles/73000646805-thingsboard-milesight-lorawan-gateways-devices-integration
   description: Milesight, a leading innovator in IoT technologies such as sensing, LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array of advanced products, like dependable gateways, indoor air quality sensors, occupancy trackers, water leak detectors, and more.
 - type:
@@ -157,6 +166,7 @@
     - LoRaWAN
   name: Smartico
   logo: /images/partners/smartico.png
+  page: /partners/hardware/smartico
   site:
     href: https://www.smartico.biz/en/
   links:
@@ -185,6 +195,7 @@
     - Wi-Fi
   name: Digital Communications Technologies, LLC.
   logo: /images/partners/DCT-Logo-Standard-Color-01.png
+  page: /partners/hardware/digitalcomtech
   site:
     href: https://www.digitalcomtech.com/
   links:
@@ -198,6 +209,7 @@
     - LTE-M
   name: MOKO SMART
   logo: /images/partners/moko-smart-logo.png
+  page: /partners/hardware/mokosmart
   site:
     href: https://www.mokosmart.com/
   links:
@@ -215,6 +227,7 @@
     - NB-IoT
   name: Digicom B810 Spa
   logo: /images/partners/digicom-logo.png
+  page: /partners/hardware/digicom
   site:
     href: https://www.digicom.it/
   links:
@@ -228,6 +241,7 @@
     - NB-IoT
   name: Nettra
   logo: /images/partners/nettra.png
+  page: /partners/hardware/nettra
   site:
     href: https://nettra.tech/
   links:
@@ -239,6 +253,7 @@
     - Ethernet
   name: Solandtec
   logo: /images/partners/solandtec.png
+  page: /partners/hardware/solandtec
   site:
     href: https://solandtec.com/
   links:
@@ -252,6 +267,7 @@
     - NB-IoT
   name: Actility
   logo: /images/partners/actility.png
+  page: /partners/hardware/actility
   site:
     href: https://www.actility.com/
   links:
@@ -265,6 +281,7 @@
     - Bluetooth LE
   name: SODAQ
   logo: /images/partners/sodaq.jpg
+  page: /partners/hardware/sodaq
   site:
     href: https://sodaq.com/
   links:
@@ -277,6 +294,7 @@
     - Bluetooth LE
   name: SensiEDGE
   logo: /images/partners/sensiedge_logo.png
+  page: /partners/hardware/sensiedge
   site:
     href: https://www.sensiedge.com/
   links:
@@ -295,6 +313,7 @@
     - NB-IoT
   name: Shenzhen Dragino Technology Development  Co.,Ltd
   logo: /images/partners/dragino-logo.png
+  page: /partners/hardware/dragino
   site:
     href: http://www.dragino.com/
   links:
@@ -308,6 +327,7 @@
     - Wi-Fi
   name: ioThings
   logo: /images/partners/iothings-logo.png
+  page: /partners/hardware/iotracker
   site:
     href: https://iotracker.eu/
   links:
@@ -322,6 +342,7 @@
     - GSM/GPRS
   name: DECODE
   logo: /images/partners/decode.png
+  page: /partners/hardware/decode
   site:
     href: https://www.decode.rs/
   links:
@@ -333,6 +354,7 @@
     - LoRaWAN
   name: TEKTELIC Communications Inc.
   logo: /images/partners/tektelic.png
+  page: /partners/hardware/tektelic
   site:
     href: https://tektelic.com/
   links: {}
@@ -344,6 +366,7 @@
     - Ethernet
   name: National Control Devices, LLC
   logo: /images/partners/ncd-logo.png
+  page: /partners/hardware/ncd
   site:
     href: https://ncd.io/
   links:
@@ -357,6 +380,7 @@
     - Wi-Fi
   name: Netvox
   logo: /images/partners/netvox-logo.jpg
+  page: /partners/hardware/netvox
   site:
     href: http://www.netvox.com.tw/
   links:
@@ -369,6 +393,7 @@
     - LTE-M
   name: AKKR8
   logo: /images/partners/akkr8.png
+  page: /partners/hardware/akkr8
   site:
     href: https://www.akkr8.io/
   links: {}
@@ -377,6 +402,7 @@
     - Wi-Fi
   name: ROLTEK
   logo: /images/partners/roltek_logo_dark.png
+  page: /partners/hardware/roltek
   site:
     href: https://www.roltek.com.tr/
   links:
@@ -388,6 +414,7 @@
     - Modbus
   name: Kernel Sistemi
   logo: /images/partners/kernel_logo.jpg
+  page: /partners/hardware/kernelgroup
   site:
     href: https://www.kernelgroup.it/
   links:
@@ -400,6 +427,7 @@
     - LoRaWAN
   name: KingPigeon Technology Co., Ltd.
   logo: /images/partners/kingpigeon.png
+  page: /partners/hardware/kingpigeon
   site:
     href: https://www.iot-solution.com/
   links:
@@ -413,6 +441,7 @@
     - Wi-Fi
   name: Senquip
   logo: /images/partners/senquip.png
+  page: /partners/hardware/senquip
   site:
     href: https://www.senquip.com
   links:
@@ -427,6 +456,7 @@
     - Ethernet
   name: Sixfab, Inc.
   logo: /images/partners/sixfab-logo.png
+  page: /partners/hardware/sixfab
   site:
     href: https://sixfab.com/alpon
   links:
@@ -441,6 +471,7 @@
     - LoRaWAN
   name: Dusun
   logo: /images/partners/dusun.png
+  page: /partners/hardware/dusun
   site:
     href: https://www.dusuniot.com/
   links:
@@ -452,6 +483,7 @@
     - LoRaWAN
   name: Makerfabs
   logo: /images/partners/makerfabs-logo.png
+  page: /partners/hardware/makerfabs
   site:
     href: https://www.makerfabs.com/agrosense
   links:
@@ -476,6 +508,7 @@
     - NB-IoT
   name: MikroTik
   logo: /images/partners/mikrotik-logo.svg
+  page: /partners/hardware/mikrotik
   site:
     href: https://mikrotik.com/
   links:
@@ -500,6 +533,7 @@
     - LTE-M
   name: monoZ
   logo: /images/partners/monoz-logo.png
+  page: /partners/hardware/monoz
   site:
     href: https://monoz.io/
   links:
@@ -514,6 +548,7 @@
     - Ethernet
   name: Temco Controls
   logo: /images/partners/temco-controls-logo.jpg
+  page: /partners/hardware/temcocontrols
   site:
     href: https://temcocontrols.com/
   links:
@@ -534,6 +569,7 @@
     - Modbus
   name: EXXN
   logo: /images/partners/exxn.jpg
+  page: /partners/hardware/exxn
   site:
     href: https://exxn.es/en/
   links:
@@ -546,6 +582,7 @@
     - LTE-M
   name: Fusion DAQ
   logo: /images/partners/FusionDAQ-Nav-Logo.png
+  page: /partners/hardware/fusiondaq
   site:
     href: https://fusiondaq.com/
   links:
@@ -559,6 +596,7 @@
     - LTE-M
   name: Yobiiq B.V.
   logo: /images/partners/Yobiiq_Logo_Primary.svg
+  page: /partners/hardware/yobiiq
   site:
     href: https://yobiiq.com/
   links:
@@ -574,6 +612,7 @@
     - Ethernet
   name: YuDash
   logo: /images/partners/yudash_logo.png
+  page: /partners/hardware/yudash
   site:
     href: https://www.yudash.com/
   links:
