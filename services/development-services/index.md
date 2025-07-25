@@ -1134,106 +1134,86 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 </div>
             </div>
         </section>
-        <section class="questions-section">
-            <h2 class="question-section-title">Frequently asked questions about IoT Development</h2>
-            <div class="questions-section-cards">
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">01</div><h3>What is IoT development?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        <div class="content-descr">IoT development services cover the design, development, deployment, and maintenance of IoT solutions. They include the creation of software ecosystems that allow you to manage communication between devices, collect data, map ingested data to digital twin, visualise it, and work as one integrated system. Think of smart electricity, water, heat meters, wearable health monitors, or asset tracking devices that provide critical information about asset health, allow decision makers to effectively strategies and improve the efficiency of key operational aspects. IoT development services bring these innovations to life.</div>
-                        <div class="key-services">Key IoT development services:</div>
-                        <ol>
-                            <li>Device Management and Connectivity*: Securely connects, provisions, and monitors IoT devices and assets</li>
-                            <li>Data Ingestion and Processing*: Collects real-time telemetry and processes it for storage, analytics, and triggering events.</li>
-                            <li>Digital Twin and Modeling*: Represents physical assets and their relationships through a scalable, structured data model.</li>
-                            <li>Analytics and KPIs*: Calculates key metrics such as energy usage, costs, or emissions across different system levels.</li>
-                            <li>Dashboards and Visualization*: Provides real-time dashboards and drill-down interfaces for monitoring and control.</li>
-                            <li>Alerts and Notifications*: Automatically triggers alerts based on predefined conditions and notifies users via multiple channels.</li>
-                            <li>User Roles and Access Control*: Manages user permissions to ensure secure, role-based access to data and actions.</li>
-                            <li>Security and Scalability*: Ensures encrypted data transfer, secure authentication, and high availability across large-scale deployments.</li>
-                        </ol>
-                    </div>
+        <section class="faq-iot-development" id="faq-iot-development">
+            <h2 class="faq-section-title">Frequently asked questions about IoT Development</h2>
+            <div class="faq-section-content">
+                <div class="faq-section-selector">
+                    <div class="faq-section-option active" id="general" onClick="switchFaqSection('understandingIoTDevelopment', this)">Understanding IoT Development</div>
+                    <div class="faq-section-option" id="billingAndPayments" onClick="switchFaqSection('buildingAndManagingIoTSolutions', this)">Building and Managing IoT Solutions</div>
+                    <div class="faq-section-option" id="usageAndLimits" onClick="switchFaqSection('costAndSecurity', this)">Cost and Security</div>
                 </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">02</div><h3>What industries can benefit from IoT application development services?</h3></div>
+                <div class="answers">
+                    <div id="faq-iot-development-understandingIoTDevelopment" class="pi-accordion active">
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-definition" data-title="What is IoT development?">
+                            <div class="container">
+                                <p>IoT development services cover the design, development, deployment, and maintenance of IoT solutions. They include the creation of software ecosystems that allow you to manage communication between devices, collect data, map ingested data to digital twin, visualise it, and work as one integrated system. Think of smart electricity, water, heat meters, wearable health monitors, or asset tracking devices that provide critical information about asset health, allow decision makers to effectively strategies and improve the efficiency of key operational aspects. IoT development services bring these innovations to life.</p>
+                                <h5>Key IoT development services:</h5>
+                                <ol>
+                                    <li>Device Management and Connectivity*: Securely connects, provisions, and monitors IoT devices and assets</li>
+                                    <li>Data Ingestion and Processing*: Collects real-time telemetry and processes it for storage, analytics, and triggering events.</li>
+                                    <li>Digital Twin and Modeling*: Represents physical assets and their relationships through a scalable, structured data model.</li>
+                                    <li>Analytics and KPIs*: Calculates key metrics such as energy usage, costs, or emissions across different system levels.</li>
+                                    <li>Dashboards and Visualization*: Provides real-time dashboards and drill-down interfaces for monitoring and control.</li>
+                                    <li>Alerts and Notifications*: Automatically triggers alerts based on predefined conditions and notifies users via multiple channels.</li>
+                                    <li>User Roles and Access Control*: Manages user permissions to ensure secure, role-based access to data and actions.</li>
+                                    <li>Security and Scalability*: Ensures encrypted data transfer, secure authentication, and high availability across large-scale deployments.</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What industries can benefit from IoT application development services?">
+                            <div class="container">
+                                <p>Almost every industry can benefit from the IoT, including manufacturing, healthcare, retail, logistics, agriculture, energy, automotive, smart cities, education, and construction. IoT helps to improve efficiency, safety, productivity and provides companies with critical data tailored to their unique needs of each sector.</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What are some common IoT development challenges?">
+                            <div class="container">
+                                <p>The main challenges of the IoT include ensuring seamless connectivity of all devices, data security and privacy, managing large amounts of information, visualising and analysing the data, ensuring that different devices work together and meeting the high requirements of industry standards.</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="Do I need specialized hardware for IoT development?">
+                            <div class="container">
+                                <p>No, you don't need to have hardware to start developing, you can add it in the next phases of the development process, and use simulated data to start with. But for a full product, IoT solutions usually require specialised hardware, such as sensors and gateways for data collection and transmission. The specific hardware depends on the goals of your project, such as temperature monitoring, location tracking, or remote equipment management.</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="questions-section-content">
-                        Almost every industry can benefit from the IoT, including manufacturing, healthcare, retail, logistics, agriculture, energy, automotive, smart cities, education, and construction. IoT helps to improve efficiency, safety, productivity and provides companies with critical data tailored to their unique needs of each sector.
+                    <div id="faq-iot-development-buildingAndManagingIoTSolutions" class="pi-accordion">
+                        <div class="item" data-tag="h4" data-item-id="how-tb-cloud-billing-works" data-title="What is an IoT platform, and do I need one?">
+                            <div class="container">
+                                <p>An IoT platform is software that helps you easily manage connected devices, collect data, and visualise it in a clear and easy way. If you plan to effectively manage multiple devices and data streams, you'll definitely need an IoT platform, and we recommend using an IoT platform like ThingsBoard.</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="How long does it take to develop an IoT solution?">
+                            <div class="container">
+                                <p>Development time is highly dependent on many factors, such as your specific needs, hardware availability, required integrations; simple projects can take weeks, while more complex ones can take several months.</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="Does your IoT development company provide ongoing support and maintenance?">
+                            <div class="container">
+                                <p>Yes, we offer ongoing support, including problem analysis, problem resolution, upgrades, scaling services, and continuous enhancements to ensure your IoT system is running smoothly and meeting your ever-changing needs.</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="Can existing IoT solutions be integrated with the ThingsBoard platform?">
+                            <div class="container">
+                                <p>Yes, existing IoT solutions can be easily integrated with ThingsBoard. We help with seamless integration, ensuring that your current setup receives enhanced functionality and improved management capabilities.</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">03</div><h3>What are some common IoT development challenges?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        The main challenges of the IoT include ensuring seamless connectivity of all devices, data security and privacy, managing large amounts of information, visualising and analysing the data, ensuring that different devices work together and meeting the high requirements of industry standards.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">04</div><h3>Do I need specialized hardware for IoT development?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        No, you don't need to have hardware to start developing, you can add it in the next phases of the development process, and use simulated data to start with. But for a full product, IoT solutions usually require specialised hardware, such as sensors and gateways for data collection and transmission. The specific hardware depends on the goals of your project, such as temperature monitoring, location tracking, or remote equipment management.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">05</div><h3>What is an IoT platform, and do I need one?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        An IoT platform is software that helps you easily manage connected devices, collect data, and visualise it in a clear and easy way. If you plan to effectively manage multiple devices and data streams, you'll definitely need an IoT platform, and we recommend using an IoT platform like ThingsBoard.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">06</div><h3>How long does it take to develop an IoT solution?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        Development time is highly dependent on many factors, such as your specific needs, hardware availability, required integrations; simple projects can take weeks, while more complex ones can take several months.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">07</div><h3>Does your IoT development company provide ongoing support and maintenance?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        Yes, we offer ongoing support, including problem analysis, problem resolution, upgrades, scaling services, and continuous enhancements to ensure your IoT system is running smoothly and meeting your ever-changing needs.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">08</div><h3>Can existing IoT solutions be integrated with the ThingsBoard platform?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        Yes, existing IoT solutions can be easily integrated with ThingsBoard. We help with seamless integration, ensuring that your current setup receives enhanced functionality and improved management capabilities.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">09</div><h3>What factors affect the cost of IoT development?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        Costs depend on the complexity of the project, hardware requirements, custom software development needs, integration with existing systems, and ongoing support needs. Each of these elements can have a significant impact on the total investment in your IoT project.
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">10</div><h3>IoT Security</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        Taking into account industry standards and regulations (HIPAA, GDPR, etc.). Regular audit of infrastructure and application security. Development of a comprehensive security strategy (encryption, multi-level authentication, access control).
-                    </div>
-                </div>
-                <div class="questions-section-card">
-                    <div class="questions-section-header">
-                        <div class="questions-section-title"><div class="questions-section-num">11</div><h3>How is IoT security ensured in your solutions?</h3></div>
-                    </div>
-                    <div class="questions-section-content">
-                        We keep the IoT secure with strong encryption, multiple levels of authentication, and strict access controls. We also regularly audit our systems and comply with regulations such as GDPR and HIPAA to ensure your data is fully protected.
+                    <div id="faq-iot-development-costAndSecurity" class="pi-accordion">
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-title="What factors affect the cost of IoT development?">
+                            <div class="container">
+                                <p>Costs depend on the complexity of the project, hardware requirements, custom software development needs, integration with existing systems, and ongoing support needs. Each of these elements can have a significant impact on the total investment in your IoT project.</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-device-usage-calculation" data-title="IoT Security">
+                            <div class="container">
+                                <p>Taking into account industry standards and regulations (HIPAA, GDPR, etc.). Regular audit of infrastructure and application security. Development of a comprehensive security strategy (encryption, multi-level authentication, access control).</p>
+                            </div>
+                        </div>
+                        <div class="item" data-tag="h4" data-item-id="tb-cloud-device-usage-calculation" data-title="How is IoT security ensured in your solutions?">
+                            <div class="container">
+                                <p>We keep the IoT secure with strong encryption, multiple levels of authentication, and strict access controls. We also regularly audit our systems and comply with regulations such as GDPR and HIPAA to ensure your data is fully protected.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1534,6 +1514,16 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         }, { threshold: 0.6 });
 
         counters.forEach(counter => observer.observe(counter));
+    }
+
+    let currentFaqContainer = 'iot-development';
+
+    function switchFaqSection(sectionId, el) {
+        if (el?.classList.contains('active')) return
+        document.querySelectorAll(`#faq-${currentFaqContainer} .faq-section-option`).forEach(el => el.classList.remove('active'));
+        document.querySelectorAll(`#faq-${currentFaqContainer} .pi-accordion`).forEach(el => el.classList.remove('active'));
+        document.getElementById(`faq-${currentFaqContainer}-${sectionId}`).classList.add('active');
+        el ? el.classList.add('active') : document.querySelector(`#faq-${currentFaqContainer} #${sectionId}`).classList.add('active');
     }
 
     document.addEventListener('DOMContentLoaded', initCounters);

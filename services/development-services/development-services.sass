@@ -1608,6 +1608,175 @@ h2
                                     border-radius: 6px
                                     padding: 4px 12px
 
+            .faq-iot-development
+                display: flex
+                flex-direction: column
+                margin-bottom: 120px
+                z-index: 10
+                .faq-section-title
+                    font-size: 48px
+                    font-weight: 400
+                    line-height: 120%
+                    margin-bottom: 56px
+                    text-align: center
+                .faq-section-content
+                    display: flex
+                    gap: 40px
+                    @media (max-width: 1200px)
+                        flex-direction: column
+                .faq-section-selector
+                    display: flex
+                    flex-direction: column
+                    gap: 16px
+                    align-items: flex-start
+                    padding: 8px
+                    width: fit-content
+                    margin-bottom: 24px
+                    color: #00000061
+                    @media (max-width: 690px)
+                        width: 100%
+                    .faq-section-option
+                        width: 100%
+                        font-size: 24px
+                        font-weight: 400
+                        line-height: 140%
+                        padding: 16px 24px
+                        border: 1.5px solid transparent
+                        border-radius: 16px
+                        cursor: pointer
+                        color: #343A40
+                        &:hover
+                            color: #2A2E33
+                        &.active
+                            color: #000000DE
+                            background: #E9ECEF
+                .answers
+                    flex: 1.5
+                    .pi-accordion
+                        display: none
+                        &.active
+                            display: block
+                        div.item, div.load-more
+                            border-bottom: 1.5px solid #DEE2E6
+                            overflow: visible
+                            &.hidden
+                                display: none
+                            &:not(:last-of-type)
+                                margin-bottom: 7px
+                            &:before
+                                display: block
+                                content: " "
+                                margin-top: -70px
+                                height: 70px
+                                visibility: hidden
+                            & > h4.title
+                                font-size: 18px
+                                font-weight: 500
+                                line-height: 30px
+                                color: #212529
+                                padding: 22px 37px 22px 20px
+                                transition: none
+                                &:hover
+                                    color: rgba(33, 33, 33, 0.78)
+                                &:after
+                                    font-family: "Font Awesome 5 Free"
+                                    font-weight: 900
+                                    color: #00000061
+                                    content: "\f078"
+                                    position: absolute
+                                    right: 8px
+                                    top: 22px
+                                    transform: rotate(0deg)
+                                    transition: transform 0.3s
+                                &:before
+                                    display: none
+                                    color: #0000008A
+                                .clipboard-btn
+                                    display: none
+                                    padding: 0
+                                    width: 25px
+                                    height: 25px
+                                    font-size: 14px
+                                    border-radius: 50%
+                                    position: relative
+                                    margin-left: 4px
+                                    &:after
+                                        font-family: "Font Awesome 5 Free"
+                                        font-weight: 900
+                                        content: "\f0c1"
+                                        color: #00000061
+                                    &:hover
+                                        background-color: #F4F8FE
+                                        .tooltiptext
+                                            visibility: visible
+                                    .tooltiptext
+                                        position: absolute
+                                        top: -32px
+                                        left: -57px
+                                        width: max-content
+                                        padding: 0 7px
+                                        visibility: hidden
+                                        background-color: #0000008F
+                                        color: #fff
+                                        text-align: center
+                                        border-radius: 6px
+                                    &.copied
+                                        &:after
+                                            content: "\f00c"
+                                        .tooltiptext
+                                            left: -20px
+                            .content
+                                border: none
+                                box-shadow: none
+                                border-radius: 4px
+                                padding: 5px 50px 16px 10px
+                                margin: 0 10px 10px
+                                font-size: 16px
+                                font-weight: 400
+                                line-height: 28px
+
+                                .container
+                                    > *:not(:last-child)
+                                        padding-bottom: 20px
+                                ol
+                                    list-style-type: decimal
+                                    li
+                                        list-style: decimal
+                                p, li
+                                    font-size: 16px
+                                    font-weight: 400
+                                    color: #343A40
+                                    line-height: 24px
+                                h5
+                                    font-size: 16px
+                                    font-weight: 500
+                                    color: #212529
+                                    line-height: 24px
+                                    padding-bottom: 16px
+                            &.on
+                                h4.title
+                                    &:after
+                                        transform: rotate(180deg)
+                                        transition: transform 0.3s
+                                        margin: unset
+                                    .clipboard-btn
+                                        @media screen and (max-width: 700px)
+                                            display: inline-block
+                                &:hover
+                                    .clipboard-btn
+                                        display: inline-block
+                        div.load-more
+                            & > h4.title
+                                color: #0094FF
+                                &:hover
+                                    color: #0095ff
+                                &:after
+                                    content: '+'
+                                    color: #0094FF
+                                    border: 0
+                                    font-size: 25px
+                                    transform: rotate(0deg)
+
             .questions-section
                 @include content-container(120px)
                 z-index: 1
