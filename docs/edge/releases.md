@@ -8,7 +8,7 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
-## v4.1.0 (July 23, 2025) {#v410}
+## v4.1.0 (July 23, 2025) {#v41}
 
 **Major** release with everything from [TB CE v4.1.0](/docs/reference/releases/#v41){: target="_blank"}:
 
