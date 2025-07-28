@@ -45,6 +45,30 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/bosch.webp" alt="Bosch Group logo"/>
                     </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/tectelic.webp" alt="Tectelic logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/kalitek.webp" alt="Kalitek logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/super-bock-group.webp" alt="Super Bock Group logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/asg-tech.webp" alt="ASGTECH logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/asl.webp" alt="Always Connected logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/iona-tech.webp" alt="Iona Tech logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/senseing-simple.webp" alt="Senseing logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/x-telia.webp" alt="X-Telia logo"/>
+                    </a>
                 </div>
                 <div class="customer-logos">
                     <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
@@ -64,6 +88,30 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </a>
                     <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
                         <img src="/images/development-services/bosch.webp" alt="Bosch Group logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/tectelic.webp" alt="Tectelic logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/kalitek.webp" alt="Kalitek logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/super-bock-group.webp" alt="Super Bock Group logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/asg-tech.webp" alt="ASGTECH logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/asl.webp" alt="Always Connected logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/iona-tech.webp" alt="Iona Tech logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/senseing-simple.webp" alt="Senseing logo"/>
+                    </a>
+                    <a class="logo" target="_blank" href="https://thingsboard.io/case-studies/">
+                        <img src="/images/development-services/x-telia.webp" alt="X-Telia logo"/>
                     </a>
                 </div>
             </div>
@@ -1585,7 +1633,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             const darkMapImages = [
                 '<div class="client-feedback-cards fleet-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Eric Bourbeau.webp" alt="avatar"></div><div class="client-descr"><div class="client-name">Eric Bourbeau</div><div class="client-title">Founder and CEO X-TELIA</div></div></div><div class="client-feedback">I can say that the dedication of ThingsBoard team blew me away. ThingsBoard engineers worked hand in hand with our developers to develop the MQTT-based communication protocol between the X-TELIA network and ThingsBoard, developed a beautiful custom widget and provided incredible support.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Fleet tracking.webp" alt="A map with markers and vehicle monitoring data, demonstrating real-time fleet tracking, including speed, fuel level, and status (e.g., en route, breakdown, refueling)."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a></div><div>',
                 '<div class="client-feedback-cards energy-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Nairn Harrison.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Nairn Harrison</div><div class="client-title">Director Environmental Energy Controls</div></div></div><div class="client-feedback">What we especially like from the Thingsboard team are the continual evolving development cycles, real people you can talk to and understand ideas, concepts and use cases. We look forward to expanding our future solutions to all customers with the support from the Thingsboard team.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Energy monitoring.webp" alt="A monitoring dashboard showing real-time electricity consumption data (voltage, current, frequency) from multiple smart meters, with graphs and alarm threshold indicators."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0">View live demo</a></div><div>',
-                '<div class="client-feedback-cards asset-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Jeppe Walther.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Jeppe Walther</div><div class="client-title">CTO Supertech Agroline</div></div></div><div class="client-feedback">ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/image 1025.webp" alt="An interactive map or diagram with asset locations and their status (e.g., equipment condition, temperature, humidity), displaying movement history and alerts."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3ee93e10-3495-11f0-9664-ff13eccb47ff">View live demo</a></div><div>',
+                '<div class="client-feedback-cards asset-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Jeppe Walther.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Jeppe Walther</div><div class="client-title">CTO Supertech Agroline</div></div></div><div class="client-feedback">ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/image 1025.webp" alt="An interactive map or diagram with asset locations and their status (e.g., equipment condition, temperature, humidity), displaying movement history and alerts."></div><a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14">View live demo</a></div><div>',
                 '<div class="client-feedback-cards scada-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Mamadou Ly.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Mamadou Ly</div><div class="client-title">Project Manager at Farinia Group</div></div></div><div class="client-feedback">Thanks to the team of ThingsBoard who helped us, advised and developed the features and services we needed to facilitate the adoption of their products by our users. Recently we have deployed ThingsBoard in 3 companies of the group. Our goal is to equip our 11 production sites.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/SCADA.webp" alt="A SCADA control panel with mimic diagrams visualizing industrial processes (e.g., oil and gas drilling system, pumping station, water treatment), with equipment status indicators, sensor readings, and control elements."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboards/3efced20-3495-11f0-9664-ff13eccb47ff">View live demo</a></div><div>',
                 '<div class="client-feedback-cards smart-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Peter Backes.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Peter Backes</div><div class="client-title">CEO co.met GmbH</div></div></div><div class="client-feedback">ThingsBoard meets our requirements perfectly and far better than any other solution we’ve been testing so far. The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Smart Metering.webp" alt="A dashboard displaying smart water, gas, or electricity metering data, broken down by areas, buildings, or apartments, with historical consumption graphs and anomaly alerts."></div><a target="_blank" class="try-demo-button" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909">View live demo</a></div><div>',
                 '<div class="client-feedback-cards tank-cards"><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Patricia Crispim.webp" alt="Avatar"></div><div class="client-descr"><div class="client-name">Patricia Crispim</div><div class="client-title">Super Bock Group</div></div></div><div class="client-feedback">ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency.</div></div><div class="project-screen-container"><div class="project-screen"><img src="/images/development-services/Tank level.webp" alt="A dashboard monitoring liquid levels in tanks, showing current fuel level, temperature, and battery status, with fill level visualization and consumption history."></div><a target="_blank" class="try-demo-button" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14">View live demo</a></div><div>',
@@ -1625,24 +1673,56 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
     function handleClickOnIndustries(){
         const menuItems = document.querySelectorAll('.menu-item');
+        let activeItemIndex = -1;
 
-        let activeItemIndex = 0;
-        menuItems[0].classList.add('active');
-        updateIndustriesCard(0)
+        function activateItem(index) {
+            if (activeItemIndex > -1 && window.innerWidth <= 1280) {
+                const oldCard = menuItems[activeItemIndex].querySelector('.industries-card.inline');
+                if (oldCard) oldCard.remove();
+            }
+
+            if (activeItemIndex > -1) {
+                menuItems[activeItemIndex].classList.remove('active');
+            }
+
+
+            menuItems[index].classList.add('active');
+            updateIndustriesCard(index);
+            activeItemIndex = index;
+        }
+
+        function deactivateItem(index) {
+            const item = menuItems[index];
+            item.classList.remove('active');
+            activeItemIndex = -1;
+
+            const isMobile = window.innerWidth <= 1280;
+            if (isMobile) {
+                const card = item.querySelector('.industries-card.inline');
+                if (card) {
+                    card.remove();
+                }
+            } else {
+                const globalCard = document.querySelector('.industries-card.global');
+                if (globalCard) {
+                    globalCard.innerHTML = '';
+                }
+            }
+        }
+
+        activateItem(0);
 
         menuItems.forEach((item, index) => {
-            item.addEventListener('click', function(){
-                if(index === activeItemIndex){
-                    return;
+            item.addEventListener('click', function() {
+                if (index === activeItemIndex) {
+                    if (window.innerWidth <= 1151) {
+                        deactivateItem(index);
+                    }
+                } else {
+                    activateItem(index);
                 }
-                menuItems.forEach(item => {
-                    item.classList.remove('active')
-                })
-                item.classList.add('active')
-                activeItemIndex = index
-                updateIndustriesCard(index)
-            })
-        })
+            });
+        });
     }
     function handleClickOnQuestions(){
         const questions = document.querySelectorAll('.questions-section-card');

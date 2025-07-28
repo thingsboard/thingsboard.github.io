@@ -258,10 +258,11 @@ h2
 
                     .customer-logos
                         display: flex
-                        gap: 150px
+                        gap: 60px
+                        padding: 0px 30px
                         // margin-right: 150px
                         will-change: transform
-                        animation: scroll 15s linear infinite
+                        animation: scroll 25s linear infinite
                         .logo
                             width: 216px
                             display: flex
@@ -558,8 +559,9 @@ h2
                     text-align: center
                 .cards-container
                     position: relative
-                    display: flex
-                    flex-wrap: wrap
+                    display: grid
+                    grid-template-columns: repeat(3, 1fr)
+                    // flex-wrap: wrap
                     gap: 16px
                     .ellipse-bottom
                         width: 2500px
@@ -571,8 +573,8 @@ h2
                         background: #BDDCFF99
                         filter: blur(100px)
                     .card
-                        max-width: 33%
-                        flex: 1 1 calc(33% - 32px)
+                        // max-width: 33%
+                        // flex: 1 1 calc(33% - 32px)
                         display: flex
                         flex-direction: column
                         position: relative
@@ -625,11 +627,11 @@ h2
                             padding: 4px 12px
 
                         .card-content
-                            height: calc(100% - 210px)
-                            display: flex
-                            flex-direction: column
+                            height: 100%
+                            display: grid
+                            grid-template-rows: 1fr 1fr
                             padding: 16px 20px 20px 20px
-                            gap: 5px
+                            gap: 16px
                             h3
                                 height: 50%
                                 @include text-styles(20px)
@@ -637,7 +639,7 @@ h2
                                 color: #2A7DEC
 
                             .card-stats
-                                height: 50%
+                                // height: 50%
                                 width: 100%
                                 display: flex
                                 gap: 8px
@@ -837,6 +839,7 @@ h2
                                 .menu-item
                                     display: flex
                                     gap: 12px
+                                    border-bottom: 1px solid #DEE2E6
                                     @include text-styles(20px)
                                     align-items: center
                                     &:hover
@@ -852,7 +855,6 @@ h2
                                         gap: 10px
                                         padding: 16px 0px
                                         margin: 0 10px
-                                        border-bottom: 1px solid #DEE2E6
 
                                 .menu-item
                                     &:hover
@@ -2444,10 +2446,10 @@ h2
                     .section-title
                         margin-bottom: 40px
                     .cards-container
+                        grid-template-columns: repeat(2, 1fr)
                         .card
-                            max-width: calc(50% - 16px)
                             .card-tag
-                                top: 165px
+                                top: 16px
                                 right: unset
                                 left: 16px
                 .services
@@ -2479,6 +2481,7 @@ h2
                                     overflow-y: hidden
                                     .menu-item
                                         flex-direction: column
+                                        padding: 16px 0px
                                         .menu-item-header
                                             padding: 0 16px
                                 .industries-card
@@ -2690,14 +2693,17 @@ h2
                         line-height: 140%
                         margin-bottom: 0
                     .cards-container
+                        grid-template-columns: 1fr
                         .card
                             max-width: 100%
                             .card-content
+                                grid-template-rows: 1fr 1fr
+                                gap: 16px
                                 .card-stats
                                     padding: 0
-                                    flex-direction: column
+                                    flex-direction: row
                             .card-tag
-                                top: 165px
+                                top: 16px
                                 right: unset
                                 left: 16px
                 .services
@@ -2749,6 +2755,7 @@ h2
                                     overflow-y: hidden
                                     .menu-item
                                         flex-direction: column
+                                        padding: 12px 0px
                                         .menu-item-header
                                             padding: 0 16px
                                             font-size: 16px
