@@ -391,7 +391,7 @@ sudo service tb-edge start
 
 ### Docker (Linux or Mac OS) {#docker-linux-mac-41}
 
-{% assign versionName = "4.1EDGEPE" %}
+{% assign versionName = "4.1.0EDGEPE" %}
 {% assign previousVersion = "4.0.1EDGEPE" %}
 
 {% include templates/edge/user-guide/start-upgrade-pe.md %}
