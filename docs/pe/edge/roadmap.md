@@ -10,11 +10,9 @@ description: Upcoming releases
 
 The product roadmap below covers only **major features** and does not include minor enhancements and bug fixes.
 
-### Edge 4.2.0
+### v4.2
 
-The upcoming release will include all updates form [ThingsBoard PE](/docs/pe/reference/roadmap/){: target="_blank"} and [ThingsBoard Edge](/docs/edge/roadmap/){: target="_blank"}. 
+Everything in [ThingsBoard PE](/docs/pe/reference/roadmap/){: target="_blank"} and [ThingsBoard Edge](/docs/edge/roadmap/){: target="_blank"}. 
 
-The updates related to the **Edge PE**:
+* Support for **synchronizing Secrets** from the Cloud to the Edge.
 
-**New feature** 
-* Support for synchronizing **Secrets** from the Cloud to the Edge.
