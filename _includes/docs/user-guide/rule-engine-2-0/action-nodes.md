@@ -177,7 +177,7 @@ Node Configuration:
 - **Alarm Details Builder** script
 - **Alarm Type** - any string that represents Alarm Type
 
-Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
+> Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
 
@@ -193,8 +193,8 @@ inside Alarm. For example you can save attribute name/value pair from Original M
 - Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 - Current Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>.
 
-**Note** that  <code>metadata.prevAlarmDetails</code>
-is a raw String field and it needs to be converted into object using this construction:
+**Note** that  <code>metadata.prevAlarmDetails</code> is a raw String field and it needs to be converted into object using this construction:
+
 {% highlight javascript %}
 var details = {};
 if (metadata.prevAlarmDetails) {
@@ -314,7 +314,7 @@ Node Configuration:
 - **Alarm Severity** - {CRITICAL \| MAJOR \| MINOR \| WARNING \| INDETERMINATE}
 - is **Propagate** - whether Alarm should be propagated to all parent related entities.
 
-Note: Since TB Version 2.3.0 the rule node has the ability to:
+> Note: Since TB Version 2.3.0 the rule node has the ability to:
 
 -  read alarm config from message:
 
@@ -322,7 +322,7 @@ Note: Since TB Version 2.3.0 the rule node has the ability to:
 
    ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
 
-Note: Since TB Version 2.4.3 the rule node has the ability to:
+> Note: Since TB Version 2.4.3 the rule node has the ability to:
 
 - filter propagation to parent entities by relation types:
 
@@ -473,7 +473,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-**Note:** Since TB Version 2.3 the rule node has the ability to:
+> **Note:** Since TB Version 2.3 the rule node has the ability to:
 
 - remove current relations from the originator of the incoming message based on direction and type:
 
@@ -543,8 +543,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-
-**Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
+> **Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
@@ -1398,7 +1397,7 @@ Administrator can configure the mapping between the Message field names and Tabl
 
 If specified message field does not exist in the **data** of the message or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
 
-**NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.
+**Note**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.
 
 {% if docsPrefix == null %}
 ## Unassign from Customer node
