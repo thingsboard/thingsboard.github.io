@@ -281,6 +281,7 @@ h2
                     height: 100%
                     object-fit: cover
                     z-index: 1
+                    opacity: 0.2
                 .statistics-wrapper
                     position: relative
                     display: flex
@@ -290,8 +291,8 @@ h2
                     color: $light-text-color
                     flex-wrap: wrap
                     padding: 40px
-                    background: $section-background-accent-color
-                    border: 1px solid #3087EB
+                    background: #F4F8FE
+                    box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.12)
                     border-radius: 12px
                     overflow: hidden
                     z-index: 0
@@ -306,12 +307,18 @@ h2
                             font-size: 56px
                             font-weight: 400
                             line-height: 67px
+                            color: #2A7DEC
                         .statistic-item-text
                             font-size: 20px
                             font-weight: 400
                             line-height: 28px
                             overflow: hidden
                             padding: 10px
+                            color: #343A40
+                            font-size: 20px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 140%
 
             .custom-solutions
                 @include content-container(100px)
@@ -732,16 +739,21 @@ h2
                     align-items: center
                     padding: 76px 80px
                     border-radius: 12px
-                    background: $section-background-accent-color
+                    background: #F4F8FE
                     z-index: 0
+                    box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.12)
                     .get-in-touch-title
-                        color: $light-text-color
+                        color: #2A7DEC
                         z-index: 2
                         font-size: 48px
                         width: 543px
+                        font-size: 48px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 120%
                     .get-in-touch-btn
-                        background-color: $light-text-color
-                        color: #1565C0
+                        background-color: #2A7DEC
+                        color: #FAFBFC
                         border-radius: 12px
                         padding: 16px 86px
                         z-index: 2
@@ -753,6 +765,7 @@ h2
                         top: -50%
                         left: 0
                         z-index: 1
+                        opacity: 0.2
 
             .multicolored
                 position: relative
@@ -860,7 +873,6 @@ h2
                                     &:hover
                                         background: #E9ECEF
                                         border-radius: 12px
-                                        border-bottom: none
                                     &.active
                                         color: #2264BD
                                         &:hover
@@ -952,8 +964,9 @@ h2
                         gap: 32px
                         padding: 60px 80px
                         border-radius: 24px
-                        background: $section-background-accent-color
-                        color: $light-text-color
+                        background: #FAFBFC
+                        color: #212529
+                        box-shadow: 0 3px 14px 3px rgba(0, 0, 0, 0.12)
                         .trusted-partner-header
                             display: flex
                             flex-direction: column
@@ -974,9 +987,9 @@ h2
                                     line-height: 135%
                                     &::before
                                         content: "\f00c"
-                                        color: #1565C0
+                                        color: #FAFBFC
                                         font-family: 'Font Awesome 5 Free'
-                                        background-color: #FAFBFC
+                                        background-color: #2A7DEC
                                         border-radius: 8px
                                         font-size: 20px
                                         padding: 6px
@@ -1027,6 +1040,7 @@ h2
                             right: 0px
                             bottom: -10px
                             z-index: 0
+                            opacity: 0.2
 
                 .fast-delivery
                     @include content-container(64px)
@@ -1671,7 +1685,7 @@ h2
                                 margin-top: -70px
                                 height: 70px
                                 visibility: hidden
-                            & > h4.title
+                            & > h3.title
                                 font-size: 18px
                                 font-weight: 500
                                 line-height: 30px
@@ -1749,14 +1763,14 @@ h2
                                     font-weight: 400
                                     color: #343A40
                                     line-height: 24px
-                                h5
+                                span
                                     font-size: 16px
                                     font-weight: 500
                                     color: #212529
                                     line-height: 24px
                                     padding-bottom: 16px
                             &.on
-                                h4.title
+                                h3.title
                                     &:after
                                         transform: rotate(180deg)
                                         transition: transform 0.3s
@@ -1768,7 +1782,7 @@ h2
                                     .clipboard-btn
                                         display: inline-block
                         div.load-more
-                            & > h4.title
+                            & > h3.title
                                 color: #0094FF
                                 &:hover
                                     color: #0095ff
@@ -1893,7 +1907,7 @@ h2
                                     font-weight: 400
                                     line-height: 120%
                                     color: $light-text-color
-                                h5
+                                span
                                     @include text-styles(24px)
                                     color: $light-text-color
                             .client-avatar-container
@@ -2903,6 +2917,29 @@ h2
                                 display: none
                         .engagement-model-mobile
                             display: flex
+
+                .faq-iot-development
+                    .faq-section-title
+                        font-size: 24px
+                    .faq-section-selector
+                        .faq-section-option
+                            font-size: 18px
+                    .answers
+                        flex: 1.5
+                        .pi-accordion
+                            display: none
+                            &.active
+                                display: block
+                            div.item, div.load-more
+                                & > h3.title
+                                    font-size: 16px
+                                .content
+                                    p, li
+                                        font-size: 14px
+                                        line-height: 20px
+                                    span
+                                        font-size: 15px
+                                        line-height: 22px
 
                 .clients-reviews
                     padding: 10px

@@ -719,7 +719,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 </div>
             </section>
             <section class="fast-delivery">
-                <h2 class="fast-delivery-title">Fast delivery it's not about time management, it's about expertise, knowledge, and a ready-to-develop core platform</h2>
+                <h3 class="fast-delivery-title">Fast delivery it's not about time management, it's about expertise, knowledge, and a ready-to-develop core platform</h3>
                 <div class="fast-delivery-mobile">
                     <div class="fast-delivery-block">
                         <h3 class="fast-delivery-title">ThingsBoard at the Core</h3>
@@ -935,7 +935,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="tooltip">
                         <strong>Scope & Proposal</strong>
-                        <div class="tooltip-subtitle">5 business days after the final workshop.</div>
+                        <div class="tooltip-subtitle">5 business days after the final workshop</div>
                         <div class="tooltip-descr">
                             Based on the workshop, we prepare a technical proposal. It includes the detailed system architecture, project scope, a fixed-cost breakdown, and an implementation plan with clear deliverables for each phase.
                         </div>
@@ -1192,10 +1192,10 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 </div>
                 <div class="answers">
                     <div id="faq-iot-development-understandingIoTDevelopment" class="pi-accordion active">
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-definition" data-title="What is IoT development?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-definition" data-title="What is IoT development?">
                             <div class="container">
                                 <p>IoT development services cover the design, development, deployment, and maintenance of IoT solutions. They include the creation of software ecosystems that allow you to manage communication between devices, collect data, map ingested data to digital twin, visualise it, and work as one integrated system. Think of smart electricity, water, heat meters, wearable health monitors, or asset tracking devices that provide critical information about asset health, allow decision makers to effectively strategies and improve the efficiency of key operational aspects. IoT development services bring these innovations to life.</p>
-                                <h5>Key IoT development services:</h5>
+                                <span>Key IoT development services:</span>
                                 <ol>
                                     <li>Device Management and Connectivity*: Securely connects, provisions, and monitors IoT devices and assets</li>
                                     <li>Data Ingestion and Processing*: Collects real-time telemetry and processes it for storage, analytics, and triggering events.</li>
@@ -1208,56 +1208,56 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                                 </ol>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What industries can benefit from IoT application development services?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-pricing-plans" data-title="What industries can benefit from IoT application development services?">
                             <div class="container">
                                 <p>Almost every industry can benefit from the IoT, including manufacturing, healthcare, retail, logistics, agriculture, energy, automotive, smart cities, education, and construction. IoT helps to improve efficiency, safety, productivity and provides companies with critical data tailored to their unique needs of each sector.</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What are some common IoT development challenges?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-pricing-plans" data-title="What are some common IoT development challenges?">
                             <div class="container">
                                 <p>The main challenges of the IoT include ensuring seamless connectivity of all devices, data security and privacy, managing large amounts of information, visualising and analysing the data, ensuring that different devices work together and meeting the high requirements of industry standards.</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="Do I need specialized hardware for IoT development?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-pricing-plans" data-title="Do I need specialized hardware for IoT development?">
                             <div class="container">
                                 <p>No, you don't need to have hardware to start developing, you can add it in the next phases of the development process, and use simulated data to start with. But for a full product, IoT solutions usually require specialised hardware, such as sensors and gateways for data collection and transmission. The specific hardware depends on the goals of your project, such as temperature monitoring, location tracking, or remote equipment management.</p>
                             </div>
                         </div>
                     </div>
                     <div id="faq-iot-development-buildingAndManagingIoTSolutions" class="pi-accordion">
-                        <div class="item" data-tag="h4" data-item-id="how-tb-cloud-billing-works" data-title="What is an IoT platform, and do I need one?">
+                        <div class="item" data-tag="h3" data-item-id="how-tb-cloud-billing-works" data-title="What is an IoT platform, and do I need one?">
                             <div class="container">
                                 <p>An IoT platform is software that helps you easily manage connected devices, collect data, and visualise it in a clear and easy way. If you plan to effectively manage multiple devices and data streams, you'll definitely need an IoT platform, and we recommend using an IoT platform like ThingsBoard.</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="How long does it take to develop an IoT solution?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-payment-methods" data-title="How long does it take to develop an IoT solution?">
                             <div class="container">
                                 <p>Development time is highly dependent on many factors, such as your specific needs, hardware availability, required integrations; simple projects can take weeks, while more complex ones can take several months.</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="Does your IoT development company provide ongoing support and maintenance?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-payment-methods" data-title="Does your IoT development company provide ongoing support and maintenance?">
                             <div class="container">
                                 <p>Yes, we offer ongoing support, including problem analysis, problem resolution, upgrades, scaling services, and continuous enhancements to ensure your IoT system is running smoothly and meeting your ever-changing needs.</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="Can existing IoT solutions be integrated with the ThingsBoard platform?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-payment-methods" data-title="Can existing IoT solutions be integrated with the ThingsBoard platform?">
                             <div class="container">
                                 <p>Yes, existing IoT solutions can be easily integrated with ThingsBoard. We help with seamless integration, ensuring that your current setup receives enhanced functionality and improved management capabilities.</p>
                             </div>
                         </div>
                     </div>
                     <div id="faq-iot-development-costAndSecurity" class="pi-accordion">
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-title="What factors affect the cost of IoT development?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-title="What factors affect the cost of IoT development?">
                             <div class="container">
                                 <p>Costs depend on the complexity of the project, hardware requirements, custom software development needs, integration with existing systems, and ongoing support needs. Each of these elements can have a significant impact on the total investment in your IoT project.</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-device-usage-calculation" data-title="IoT Security">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-device-usage-calculation" data-title="IoT Security">
                             <div class="container">
                                 <p>Taking into account industry standards and regulations (HIPAA, GDPR, etc.). Regular audit of infrastructure and application security. Development of a comprehensive security strategy (encryption, multi-level authentication, access control).</p>
                             </div>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="tb-cloud-device-usage-calculation" data-title="How is IoT security ensured in your solutions?">
+                        <div class="item" data-tag="h3" data-item-id="tb-cloud-device-usage-calculation" data-title="How is IoT security ensured in your solutions?">
                             <div class="container">
                                 <p>We keep the IoT secure with strong encryption, multiple levels of authentication, and strict access controls. We also regularly audit our systems and comply with regulations such as GDPR and HIPAA to ensure your data is fully protected.</p>
                             </div>
@@ -1275,7 +1275,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <div class="contact-us-descr">
                         <div class="contact-us-descr-container">
                             <h2>Let’s talk about your project</h2>
-                            <h5>Fill out the form — we’ll get back to you shortly to clarify the details and prepare a tailored estimate.</h5>
+                            <span>Fill out the form — we’ll get back to you shortly to clarify the details and prepare a tailored estimate.</span>
                         </div>
                         <div class="client-avatar-container">
                             <div class="client-avatar-img"><img src="/images/development-services/Artur.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard"></div>
