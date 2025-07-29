@@ -174,6 +174,57 @@ docker exec haproxy-certbot haproxy-refresh
 
 **Note**: Valid certificate is used only when you visit web UI by domain in URL.
 
+## Enable MQTTs
+
+To enable **MQTT over SSL (MQTTS)**, you need to provide valid SSL certificates and configure TBMQ to use them.
+
+For more information on supported certificate formats and options, refer to the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) documentation.
+
+**Provide SSL Certificates**
+
+Obtain a valid SSL certificate and private key. For example:
+
+* `mqttserver.pem` – your public certificate (may include full chain);
+* `mqttserver_key.pem` – your private key.
+
+> Self-signed certificates are supported for testing, but we recommend using certificates from a trusted Certificate Authority for production environments.
+
+**Mount Certificates into Containers**
+
+Open your `docker-compose.yml` file and **uncomment** the volume line that mounts the certificate files:
+
+```yaml
+volumes:
+  - PATH_TO_CERTS:/config/certificates
+```
+
+Replace `PATH_TO_CERTS` with the path to the folder containing your certificate files. Make sure TBMQ can access those file.
+
+**Configure Environment Variables**
+
+Edit the `tb-mqtt-broker.env` file and **uncomment/configure** the following lines to enable SSL:
+
+```yaml
+LISTENER_SSL_ENABLED=true
+LISTENER_SSL_PEM_CERT=/config/certificates/mqttserver.pem
+LISTENER_SSL_PEM_KEY=/config/certificates/mqttserver_key.pem
+LISTENER_SSL_PEM_KEY_PASSWORD=server_key_password
+```
+
+> Adjust the file paths and password as needed. If your private key is not password-protected, you can leave `LISTENER_SSL_PEM_KEY_PASSWORD` empty.
+
+**Restart Services**
+
+Apply the changes by restarting TBMQ services:
+
+```bash
+./scripts/docker-stop-services.sh
+./scripts/docker-start-services.sh
+```
+{: .copy-code}
+
+Once started, your MQTT clients will be able to securely connect to port **8883** using TLS/SSL.
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}
