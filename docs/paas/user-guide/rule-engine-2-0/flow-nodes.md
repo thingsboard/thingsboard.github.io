@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
-title: Flow Nodes
-description: Rule Engine 2.0 Flow Nodes
+title: Flow nodes
+description: Rule Engine 2.0 Flow nodes
 ---
 
 {% assign docsPrefix = "paas/" %}
