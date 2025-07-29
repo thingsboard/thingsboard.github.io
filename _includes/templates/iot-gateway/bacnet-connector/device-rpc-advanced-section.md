@@ -23,7 +23,7 @@ This subsection in configuration file looks like this:
     "requestType": "writeProperty",
     "requestTimeout": 10000,
     "objectType": "binaryOutput",
-    "objectId": "1",
+    "objectId": 1,
     "propertyId": "presentValue"
   },
 ],
