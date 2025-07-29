@@ -33,7 +33,7 @@ If you choose Pem as the credentials type, you need to configure the following:
 - Set `LISTENER_SSL_PEM_KEY_PASSWORD` variable to the password of your server certificate private key.
 
 If you require two-way TLS, you also need to configure the TrustStore by adding the trusted certificates/chains to the configured KeyStore/PEM files.
-For more information about configuration possibilities and certificate generation, please review the following ThingsBoard security [pages](/docs/user-guide/mqtt-over-ssl/).
+For more information about configuration possibilities and certificate generation, please review the following security [pages](/docs/mqtt-broker/security/mqtts/).
 
 ### WS Listener
 
