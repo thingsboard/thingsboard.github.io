@@ -100,7 +100,7 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
             </div>
         </div>
     </section>
-    <section class="tb-power mb">
+    <section class="tb-power">
         <h2>How ThingsBoard powers Oneserve?</h2>
         <div class="block">
             <div class="text">
