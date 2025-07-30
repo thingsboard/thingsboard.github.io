@@ -27,13 +27,19 @@ description: Discover how Schwarz Group, operating over 13,000 stores globally, 
     <section class="statistics">
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 500000 useGrouping = true %}+
+                {% include number-animation.html startNum = 1 targetNum = 500000 useMobileMode = true useGrouping = true %}+
             </p>
             <p>connected devices</p>
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 13900 useGrouping = true %}
+                {% include number-animation.html startNum = 1 targetNum = 32 useGrouping = true %}
+            </p>
+            <p>countries of operation</p>
+        </div>
+        <div class="block">
+            <p>
+                {% include number-animation.html startNum = 1 targetNum = 13900 useMobileMode = true useGrouping = true %}
             </p>
             <p>stores</p>
         </div>
