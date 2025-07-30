@@ -22,15 +22,18 @@
             </div>
             <div class="search-crisps desktop">
                 <div class="search-crisps-clear-btn pagination-render-trigger">
-                    Clear All
-                    <span class="search-crisps-clear-btn-close">×</span>
+                    Clear all
+                    <img src="/images/s-close-icon.svg" class="search-crisps-clear-btn-close" alt="Close icon">
                 </div>
                 <div class="search-crisps-toggle-btn" style="display: none;">
                     <span class="toggle-label">Hide</span>
                     <i class="fas fa-chevron-up" style="color: #2A7DEC"></i>
                 </div>
             </div>
-            <input type="text" id="searchGuideInput" placeholder="Find..." />
+            <div class="search-item">
+                <input type="text" id="searchCompanyInput" placeholder="Find..." />
+                <span class="searchButton"></span>
+            </div>
         </div>
     </div>
     <div class="main-content">
@@ -59,7 +62,71 @@
         const crispsContainers = document.querySelectorAll('.search-crisps');
         const filterBtn = document.querySelector('.filter-button');
         const closeFilterBtn = document.querySelector('.close-filter-button');
-        const searchInput = document.getElementById('searchGuideInput');
+        const searchInput = document.getElementById('searchCompanyInput');
+
+        document.querySelectorAll('.big-filter-section').forEach(section => {
+            const searchInput = section.querySelector('#searchFilterInput');
+            const toggleBtn = section.querySelector('.toggle-extra-btn');
+            const extraItems = section.querySelectorAll('.extra-filter');
+            const filterItems = section.querySelectorAll('.big-filter-section-filter');
+
+            let isExpanded = false;
+
+            const originalExtraItems = Array.from(filterItems).filter((_, index) => index >= 10);
+
+            if (toggleBtn) {
+                toggleBtn.addEventListener('click', () => {
+                    isExpanded = !isExpanded;
+                    toggleBtn.classList.toggle('opened', isExpanded);
+
+                    originalExtraItems.forEach(el => {
+                        el.classList.toggle('shown', isExpanded);
+                        el.classList.toggle('hidden', !isExpanded);
+                    });
+
+                    toggleBtn.textContent = isExpanded ? 'Hide' : 'More';
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', () => {
+                    const query = searchInput.value.trim().toLowerCase();
+
+                    if (query.length > 0) {
+                        if (toggleBtn) toggleBtn.style.display = 'none';
+
+                        filterItems.forEach(item => {
+                            item.classList.remove('extra-filter');
+                        });
+
+                        filterItems.forEach(item => {
+                            const label = item.querySelector('label');
+                            const text = label ? label.textContent.toLowerCase() : '';
+                            if (text.includes(query)) {
+                                item.classList.remove('hidden');
+                            } else {
+                                item.classList.add('hidden');
+                            }
+                        });
+                    } else {
+                        if (toggleBtn) toggleBtn.style.display = 'inline-block';
+
+                        filterItems.forEach((item, index) => {
+                            item.classList.remove('hidden', 'shown');
+
+                            if (index >= 10) {
+                                item.classList.add('extra-filter');
+                                if (!isExpanded) {
+                                    item.classList.add('hidden');
+                                } else {
+                                    item.classList.add('shown');
+                                }
+                            }
+                        });
+                    }
+                });
+            }
+        });
 
         filterBtn.addEventListener('click', () => {
             document.body.classList.add('filter-opened')
@@ -127,8 +194,8 @@
                 crisp.className = 'crisp';
                 crisp.textContent = filter;
 
-                const close = document.createElement('span');
-                close.textContent = '×';
+                const close = document.createElement('img');
+                close.src = '/images/s-close-icon.svg';
                 close.className = 'crisp-close';
                 crisp.appendChild(close);
 
@@ -220,7 +287,7 @@
             crisps.forEach((crisp, index) => {
                 crisp.classList.toggle('hidden', index >= 3);
             });
-            toggleLabel.textContent = 'Show';
+            toggleLabel.textContent = 'Show more';
             toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
         }
 
@@ -248,6 +315,8 @@
         updateVisibility();
     });
 </script>
+
+{% include footer.html %}
 
 {% include cookie-consent.html %}
 
