@@ -554,6 +554,18 @@
       href: /docs/samples/fusion-daq/fusion-daq
   description: Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC.
 - type:
+    - Modbus
+    - KNX
+  name: Weinzierl Engineering GmbH
+  logo: /images/partners/weinzierl-logo.svg
+  site:
+    href: https://weinzierl.de/en/
+  links:
+    0:
+      label: Connect KNX IP Multi IO 580 to ThingsBoard
+      href: /docs/devices-library/knx-ip-multi-io-580/
+  description: We from Weinzierl develop, produce, and market complex software and hardware components for building system technology. Our focus lies in building networks based on the KNX standard. Because of this focus, we cover the KNX system with our products and solutions comprehensively. In addition, we offer gateways as well as software solutions for other standards.
+- type:
     - NB-IoT
     - LoRaWAN
     - LTE-M
