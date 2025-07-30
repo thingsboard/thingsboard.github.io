@@ -25,7 +25,7 @@ description: Discover how Circutor centralized multi-protocol energy devices and
     <section class="quote-with-mark fill-background">
         <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
-            <p>"I am deeply impressed by the dynamism and professionalism of the ThingsBoard team. I appreciate greatly the ability to attend our technical suggestions and adopt them in the form of new functionalities. I highly recommend ThingsBoard for its reliability, its flexibility and above all, the quality of the product and its technical service."</p>
+            <p>CIRCUTOR owns a wide portfolio of connected energy control and metering devices. Despite the diversity of proprietary and off-the-shelf data protocols, Thingsboard has made it easy to accommodate most of our products in a common data plat... <a target="_blank" href="/industries/smart-energy/?company=circutor">read more</a></p>
             <h2>Circutor, Cloud & App Development Manager</h2>
         </div>
     </section>
@@ -136,14 +136,7 @@ description: Discover how Circutor centralized multi-protocol energy devices and
                 <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
-        <div class="services-banner">
-            <div class="services-content">
-                <h3>Want to achieve similarly impactful results?</h3>
-                <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
-                <a id="CaseStudyToServices" class="button gtm_button" href="/services/development-services/">Explore our service</a>
-            </div>
-            <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
-        </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

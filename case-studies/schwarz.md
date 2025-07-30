@@ -177,6 +177,7 @@ description: Discover how Schwarz Group, operating over 13,000 stores globally, 
                 <img src="/images/case-studies/scalable-2.webp" title="Scalable and grows with your business" alt="Thingsboard widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

@@ -32,7 +32,7 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 99 %}.{% include number-animation.html startNum = 1 targetNum = 99 %}%
+                {% include number-animation.html startNum = 1 targetNum = 99 %}%
             </p>
             <p>uptime availability for LoRaWAN® gateways</p>
         </div>
@@ -46,7 +46,7 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
     <section class="quote-with-mark fill-background">
         <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
-            <p>“We were able to dramatically reduce time to market, de-risk our technology investment and delight our customers by delivering a complete, high-quality application which exceeded expectations.”</p>
+            <p>We engaged ThingsBoard to complete our end-to-end solution and to address several of our clients’ LoRaWAN IoT applications and Proof-of-Concept trials. Working with ThingsBoard we were able to dramatically reduce time to market, de-risk our technology investment and delight our customers by delivering a complete, high-quality applications which exc...<a target="_blank" href="/industries/telecom/?company=tektelic">read more</a></p>
             <h2>Roman Nemish, President at TEKTELIC</h2>
         </div>
     </section>
@@ -155,13 +155,6 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
-    <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“The ThingsBoard team is made up of highly skilled engineers who have solid experience in building complex systems.”</p>
-            <h2>Roman Nemish, President at TEKTELIC</h2>
-        </div>
-    </section>
     <section class="tb-help">
         <h2>How ThingsBoard helps telecom improve operations with IoT?</h2>
         <div class="block">
@@ -170,9 +163,9 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 <p>With networks distributed across wide geographies, telecom providers require real-time monitoring of thousands of remote assets such as base stations, towers, and data centers. ThingsBoard enables centralized visibility and automated alerts across the entire infrastructure.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>IoT gateways and sensors are connected to telecom towers, power systems, UPS, HVAC, and access doors.</li>
-                    <li>ThingsBoard collects data from all sites and presents it on custom dashboards.</li>
-                    <li>Rule Engine triggers real-time alarms when anomalies or failures occur.</li>
+                    <li><p>IoT gateways and sensors are connected to telecom towers, power systems, UPS, HVAC, and access doors.</p></li>
+                    <li><p>ThingsBoard collects data from all sites and presents it on custom dashboards.</p></li>
+                    <li><p>Rule Engine triggers real-time alarms when anomalies or failures occur.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -186,9 +179,9 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 <p>Telecom infrastructure is highly energy-intensive, especially in remote or off-grid locations. ThingsBoard enables smart energy monitoring and optimization, helping operators lower fuel usage, reduce emissions, and cut costs.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Smart meters, solar panels, diesel generators, and battery banks are connected via IoT.</li>
-                    <li>ThingsBoard visualizes energy consumption, generator runtime, fuel levels, and battery health.</li>
-                    <li>Automatic alerts warn of power failures, overloads, or low battery voltage.</li>
+                    <li><p>Smart meters, solar panels, diesel generators, and battery banks are connected via IoT.</p></li>
+                    <li><p>ThingsBoard visualizes energy consumption, generator runtime, fuel levels, and battery health.</p></li>
+                    <li><p>Automatic alerts warn of power failures, overloads, or low battery voltage.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -202,8 +195,8 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 <p>Network outages and equipment failure can lead to major revenue loss and customer churn. ThingsBoard supports predictive maintenance for telecom gear—helping teams resolve issues before downtime occurs.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Sensors track equipment temperature, vibration, runtime, and fault codes from BTS, routers, UPS, etc.</li>
-                    <li>Maintenance teams receive early alerts, enabling scheduled servicing instead of reactive repair.</li>
+                    <li><p>Sensors track equipment temperature, vibration, runtime, and fault codes from BTS, routers, UPS, etc.</p></li>
+                    <li><p>Maintenance teams receive early alerts, enabling scheduled servicing instead of reactive repair.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -217,9 +210,9 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 <p>Many telecom sites use legacy PLCs and SCADA systems for managing HVAC, power, and environmental control. ThingsBoard provides SCADA-style capabilities for modern visualization and automation.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Supports SCADA symbols and layout editors to create interactive site dashboards.</li>
-                    <li>Operators can control relays, HVAC, or lighting remotely through the UI.</li>
-                    <li>SCADA integration simplifies monitoring of mission-critical systems at scale.</li>
+                    <li><p>Supports SCADA symbols and layout editors to create interactive site dashboards.</p></li>
+                    <li><p>Operators can control relays, HVAC, or lighting remotely through the UI.</p></li>
+                    <li><p>SCADA integration simplifies monitoring of mission-critical systems at scale.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -227,6 +220,7 @@ description: Discover how TEKTELIC reduced time-to-market and built high-quality
                 <img src="/images/case-studies/value-stepper-widget.webp" title="Thingsboard value stepper widget" alt="Thingsboard value stepper widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
