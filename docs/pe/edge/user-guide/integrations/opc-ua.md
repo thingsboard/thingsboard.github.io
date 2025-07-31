@@ -176,7 +176,8 @@ In the **"Function decoder"** field, enter a script to parse and transform data.
 
 var data = decodeToJson(payload);
 var deviceName = metadata['opcUaNode_name'];
-var deviceType = 'default';
+var namespaceIndex = metadata['opcUaNode_namespaceIndex'];
+var deviceType = 'airconditioner';
 
 var result = {
    deviceName: deviceName,
@@ -184,38 +185,31 @@ var result = {
    telemetry: {
    },
    attributes: {
+       namespaceIndex: namespaceIndex
    }
 };
 
-if (data.temperature) {
-    result.telemetry.temperature = Number(Number(data.temperature).toFixed(2));
+if (data.temperature != null) {
+    result.telemetry.temperature = toFixed(data.temperature, 2);
 }
 
-if (data.humidity) {
-    result.telemetry.humidity = Number(Number(data.humidity).toFixed(2));
+if (data.humidity != null) {
+   result.telemetry.humidity = toFixed(data.humidity, 2);
 }
 
-if (data.powerConsumption) {
-    result.telemetry.powerConsumption = Number(Number(data.powerConsumption).toFixed(2));
+if (data.powerConsumption != null) {
+   result.telemetry.powerConsumption = toFixed(data.powerConsumption, 2);
 }
 
-if (data.state !== undefined) {
-    result.attributes.state = data.state === '1' ? true : false;
+if (data.state != null) {
+   result.attributes.state = data.state == '1' ? true : false;
 }
 
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   var str = decodeToString(payload);
-   var data = JSON.parse(str);
-   return data;
-}
+/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ```
-{: .copy-code.expandable-14}
+{: .copy-code.expandable-10}
 
 The purpose of the decoder function is to parse the incoming data and metadata into a format that **ThingsBoard Edge** can consume.
 * **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
@@ -277,10 +271,15 @@ var data = {
 if (msgType === 'RPC_CALL_FROM_SERVER_TO_DEVICE') {
     if (msg.method === 'setState') {
         var targetMethod = msg.params === 'true' ? 'Start' : 'Stop';
+        var writeValue = {
+              nodeId: 'ns=' + metadata['cs_namespaceIndex'] +';s=' + metadata['deviceName'],
+              value: msg.params
+        };
+        data.writeValues.push(writeValue);
         var callMethod = {
-            objectId: 'ns=3;s=' + metadata['deviceName'],
-            methodId: 'ns=3;s=' +metadata['deviceName']+'.'+targetMethod,
-            args: []
+              objectId: 'ns=' + metadata['cs_namespaceIndex'] +';s=' + metadata['deviceName'],
+              methodId: 'ns=' + metadata['cs_namespaceIndex'] +';s=' + metadata['deviceName']+'.'+targetMethod,
+              args: []
         };
         data.callMethods.push(callMethod);
     }

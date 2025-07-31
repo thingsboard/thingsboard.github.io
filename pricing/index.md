@@ -2402,7 +2402,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-cloud-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The Maker and Prototype subscriptions include Community-level support. Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.</p>
+                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br>Please note: Support for the Startup plan becomes available from the second month of usage.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
@@ -3208,7 +3208,7 @@ selfManagedPlan:
                 <div id="faq-pe-pay-as-you-go-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-support-included" data-title="What support is included in my subscription?">
                         <div class="container">
-                            <p>"Maker and Prototype: Community support<br>Startup: Support with 36-hour response time during regular working shifts via Support Portal<br>Enterprise: Support with 12-hour response time during regular working shifts via Support Portal"</p>
+                            <p>- Maker and Prototype: Community support.<br>- Startup: Support with 36-hour response time during regular working shifts via Support Portal.<br>&#8195;Please note: Support for the Startup plan becomes available from the second month of usage.<br>- Enterprise: Support with 12-hour response time during regular working shifts via Support Portal.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-24-7-support" data-title="Do you offer 24/7 support?">

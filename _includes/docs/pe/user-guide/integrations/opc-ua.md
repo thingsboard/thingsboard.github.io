@@ -8,17 +8,13 @@
 * TOC
 {:toc}
 
-## Overview
-
 OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
 <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/opc-ua-integration.svg"></object>
 
-## OPC-UA Integration Tutorial
+## OPC-UA integration tutorial
 
-In this tutorial, we will configure the integration between ThingsBoard and OPC-UA
-to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html)
-and allow the user to switch on/off any Airconditioner using the Integration downlink feature.
+In this tutorial, we will configure the integration between ThingsBoard and OPC-UA to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html){:target="_blank"} and allow the user to switch on/off any Airconditioner using the integration downlink feature.
 
 ## Prerequisites
 
@@ -26,7 +22,7 @@ and allow the user to switch on/off any Airconditioner using the Integration dow
 
 ## ThingsBoard setup
 
-### Uplink Data Converter
+### Uplink data converter
 
 First, we need to create the Uplink Data converter that will be used for receiving the messages from the OPC UA server. The converter should transform the incoming payload into the required message format.
 The message must contain the *deviceName* and *deviceType*. These fields are used to submit the data to the correct device. If a device cannot not be found, a new device will be created.
@@ -69,7 +65,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-upli
 
 {% include content-toggle.liquid content-toggle-id="opcuauplinkconverterconfig" toggle-spec=opcuauplinkconverterconfig %}
 
-### Downlink Data Converter
+### Downlink data converter
 
 For sending Downlink messages from the Thingsboard to the OPC UA node, we need to define a
 downlink Converter.
@@ -111,14 +107,14 @@ and a boolean *params* value to call the 'Start' or 'Stop' method of the aircond
 
 Destination node is detected using the *deviceName* field of the incoming message metadata.
 
-### OPC-UA Integration
+### OPC-UA integration
 
- - Open the "**Integrations center**" section -> "**Integrations**" page and click `+` icon to create new integration. 
-Name it **OPC-UA Integration**, select type "**OPC-UA**". Click "**Next**";
+ - Open the "**Integrations center**" section -> "**Integrations**" page and click `+` icon to create new integration.
+ - From the list of available types, select "**OPC-UA**" as the integration type.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-1.png)
 
- - The next steps is to add the recently created uplink and downlink converters;
+ - The next steps is to add the recently created uplink and downlink converters.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-2.png)
 
@@ -165,7 +161,7 @@ To demonstrate OPC-UA integration and Rule Engine capabilities, we will create a
 
 Let's create the **Airconditioners** rule chain.
 
- - Download the [**airconditioners.json**](/docs/user-guide/resources/airconditioners.json) file;
+ - Download the [airconditioners.json](/docs/user-guide/resources/airconditioners.json){:target="_blank" download="airconditioners.json"} file;
  - Go to the "**Rule Chains**" page. To import this JSON file, click the `+` icon in the upper right corner of the screen and select "**Import rule chain**";
  - Drag and drop downloaded JSON file to the **Import rule chain** window. Click "**Import**";
  - The "**Airconditioners**" rule chain will open. Double-click on the "**integration downlink**" node and specify **OPC-UA Integration** in the integration field;
@@ -180,11 +176,11 @@ Let's create the **Airconditioners** rule chain.
 
 {% include images-gallery.html imageCollection="create_rule_chain_2" %}
 
-### Airconditioners Dashboard
+### Airconditioners dashboard
 
 To visualize the Airconditioners data and test RPC commands, we will create the **Airconditioners** dashboard.
 
-- Download the [**airconditioners_dashboard.json**](/docs/user-guide/resources/airconditioners_dashboard.json) file;
+- Download the [airconditioners_dashboard.json](/docs/user-guide/resources/airconditioners_dashboard.json){:target="_blank" download="airconditioners_dashboard.json"} file;
 - Go to the "**Dashboards**" page;
 - To import this JSON file, click the `+` icon in the upper right corner of the screen and select "**Import dashboard**";
 - Drag and drop downloaded JSON file to the **Import dashboard** window. Click "Import".

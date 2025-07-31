@@ -1,3 +1,20 @@
+@mixin read-more
+  cursor: pointer
+  color: #212121
+  font-size: 18px
+  font-style: normal
+  line-height: 30px
+  text-decoration-line: underline
+  text-decoration-style: solid
+  text-decoration-skip-ink: none
+  text-decoration-thickness: auto
+  text-underline-offset: auto
+  text-underline-position: from-font
+  &:hover
+    color: #0094FF
+  @media (max-width: 599px)
+    font-size: 16px
+
 #case-studies
   #case-studies-content
     overflow: hidden
@@ -139,6 +156,8 @@
           font-weight: 400
           line-height: 30px
           letter-spacing: 0.249px
+          a
+            @include read-more
 
       .authored-quote
         display: flex
@@ -182,6 +201,8 @@
               line-height: 30px
               letter-spacing: 0.249px
               margin-bottom: 32px
+              a
+                @include read-more
 
             &.author
               color: #212529
@@ -354,11 +375,15 @@
             letter-spacing: 0.249px
             margin-bottom: 32px
 
+            a
+              @include read-more
+
       .award
         display: flex
         gap: 32px
 
         .image-container
+          padding: 16px
           flex: 1
           box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
           border-radius: 24px
@@ -416,7 +441,7 @@
 
               &:nth-child(2)
                 position: absolute
-                right: 44px
+                right: 30px
                 top: 54px
                 display: block
 
@@ -697,8 +722,16 @@
         p
           font-size: 14px
 
-        .case-study-page-wrapper
-          padding: 0 16px
+        .case-study-hero
+          .category
+            width: 100%
+            text-align: center
+          h1
+            font-size: 23px
+            line-height: 36px
+
+        .authored-quote
+          padding: 0
 
         .statistics
           .block
@@ -710,6 +743,8 @@
             font-size: 14px
 
         .tb-power
+          &.mb
+            margin-bottom: 40px
           h2
             margin-bottom: 0
 
@@ -718,11 +753,17 @@
               width: 100%
 
         .quote-with-mark
+          flex-direction: column
           .quote-text
+            h2
+              font-size: 16px
+              line-height: 28px
             p
               font-size: 14px
 
         .tb-help
+          &:before
+            height: 100.7%
           .block
             .image-container
               img
@@ -730,17 +771,23 @@
 
                 &:nth-child(3)
                   left: 17%
-
           .services-banner
-            margin-bottom: 40px
+            text-align: center
+            .services-content
+              a
+                width: 100%
 
         .contact
           .bg-wrap
             .outer-frame
               .inner-frame
+                img:last-child
+                  width: 90%
                 &:before,
                 &:after
                   width: 200px
+          a
+            width: 100%
 
 
 @keyframes caseStudyPageImagesAnimation

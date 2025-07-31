@@ -101,7 +101,7 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
             </div>
         </div>
     </section>
-    <section class="tb-power">
+    <section class="tb-power mb">
         <h2>How ThingsBoard powers Vypin?</h2>
         <div class="block">
             <div class="text">
@@ -123,13 +123,6 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 <p>The ThingsBoard platform enables smooth integration with existing enterprise systems. Warehouse managers can now access all sensor data in a unified interface, eliminating inconsistencies between different monitoring tools and improving decision-making processes.</p>
             </div>
             <img src="https://img.thingsboard.io/case-studies/seamless_data_synchronization_integration.webp" title="Seamless data synchronization & integration" alt="Synchronized devices and tablets" width="900" height="480">
-        </div>
-    </section>
-    <section class="quote-with-mark">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.”</p>
-            <h2>Vypin LLC</h2>
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -195,6 +188,7 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 <img src="https://img.thingsboard.io/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">

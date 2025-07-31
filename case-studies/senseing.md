@@ -46,7 +46,7 @@ description: Discover how SenseING GmbH enhanced food logistics by integrating T
         <img src="https://img.thingsboard.io/case-studies/Steven_Kruse.webp" title="SenseING GmbH CEO Steven Kruse" alt="Steven Kruse" width="658" height="424">
         <div class="text">
             <h2>SenseING GmbH</h2>
-            <p class="quote">“With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time.”</p>
+            <p class="quote">“With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Tha...<a target="_blank" href="/industries/warehouse-monitoring/?company=senseing">read more</a></p>
             <p class="author">Steven Kruse</p>
             <p class="title">CEO</p>
         </div>
@@ -101,7 +101,7 @@ description: Discover how SenseING GmbH enhanced food logistics by integrating T
             </div>
         </div>
     </section>
-    <section class="tb-power">
+    <section class="tb-power mb">
         <h2>How ThingsBoard powers SenseING GmbH?</h2>
         <div class="block">
             <div class="text">
@@ -123,13 +123,6 @@ description: Discover how SenseING GmbH enhanced food logistics by integrating T
                 <p>As the company expands its logistics network, the flexibility of ThingsBoard ensures seamless integration of new sensor solutions without development overhead.</p>
             </div>
             <img src="https://img.thingsboard.io/case-studies/internal_process_optimization.webp" title="Internal process optimization" alt="Pallets elevating" width="900" height="480">
-        </div>
-    </section>
-    <section class="quote-with-mark">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“In addition to fulfilling customer requirements, we also use ThingsBoard for internal use cases, such as controlling our production. This dual use emphasises the versatility and robustness of the platform. It is impossible to imagine our product range without ThingsBoard.”</p>
-            <h2>SenseING GmbH</h2>
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -225,6 +218,7 @@ description: Discover how SenseING GmbH enhanced food logistics by integrating T
                 <img src="https://img.thingsboard.io/case-studies/control-widgets.webp" title="Thingsboard control widgets" alt="Thingsboard control widgets" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">

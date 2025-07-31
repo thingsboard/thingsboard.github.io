@@ -1157,6 +1157,7 @@ var tb = (function () {
 		const container = document.getElementById(containerId);
 		const content = container ? Array.from(container.children) : null;
 		const checkboxes = $('.filter .check-box');
+		const isCaseStudies = document.URL.includes('case-studies');
 
 		checkboxes.on('click', function() {
 			const checkboxId = $(this).attr('id');
@@ -1164,6 +1165,10 @@ var tb = (function () {
 			const checkedIds = getCheckedIds();
 
 			filter(checkedIds);
+
+			if (isCaseStudies) {
+				addUrlParameter('category', checkboxId);
+			}
 		});
 
 		function handleCheckboxes(clickedElement, checkboxId) {
@@ -1206,6 +1211,16 @@ var tb = (function () {
 
 				$(item).toggleClass('filter-hidden', !shouldBeVisible);
 			});
+		}
+
+		if (document.URL.includes('case-studies')) {
+			console.log(document.URL);
+		}
+
+		function addUrlParameter(key, value) {
+			const url = new URL(window.location.href);
+			url.searchParams.set(key, value.replaceAll(' ', '-'));
+			window.history.pushState({ path: url.toString() }, '', url.toString());
 		}
 
 		const slider = document.getElementById('filterScrollContainer');

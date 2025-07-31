@@ -26,6 +26,19 @@
       href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
   description: Atomsenses is a specialist IoT solution provider focusing on Lorawan sensors for indoor air quality monitoring, our vision is to transform how we manage and maintain healthy indoor environments.
 - type:
+    - LoRaWAN
+    - Wi-Fi
+    - LTE-M
+  name: Chengdu IOTRouter Tech. Co., Ltd.
+  logo: https://img.thingsboard.io/partners/iotrouter-logo.png
+  site:
+    href: http://www.iotrouter.com/
+  links:
+    0:
+      label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
+      href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
+  description: Established in 2015, Chengdu IOTRouter is a high-tech enterprise specializing in the research, development, production, and sales of industrial IoT Edge Gateway, HMI, Remote IO, AI Edge Box, and other digital integration products and solutions. lOTRouter combines traditional industry with new technologies such as IoT, edge computing, and AI to help users easily integrate OT (Operational Technology) and IT (information technology), thereby building a bridge between traditional industry infrastructure and digital applications. We serve more than 3,000 customers in more than 20 countries. With operations in the US, UK, Germany, Italy, and Southeast Asian countries, we are well placed to meet your needs around the globe.
+- type:
     - Bluetooth LE
     - NB-IoT
     - LTE-M
@@ -553,6 +566,18 @@
       label: Integration guide
       href: /docs/samples/fusion-daq/fusion-daq
   description: Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC.
+- type:
+    - Modbus
+    - KNX
+  name: Weinzierl Engineering GmbH
+  logo: https://img.thingsboard.io/partners/weinzierl-logo.svg
+  site:
+    href: https://weinzierl.de/en/
+  links:
+    0:
+      label: Connect KNX IP Multi IO 580 to ThingsBoard
+      href: /docs/devices-library/knx-ip-multi-io-580/
+  description: We from Weinzierl develop, produce, and market complex software and hardware components for building system technology. Our focus lies in building networks based on the KNX standard. Because of this focus, we cover the KNX system with our products and solutions comprehensively. In addition, we offer gateways as well as software solutions for other standards.
 - type:
     - NB-IoT
     - LoRaWAN

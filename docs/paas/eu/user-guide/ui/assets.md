@@ -1,77 +1,96 @@
 ---
 layout: docwithnav-paas-eu
 assignees:
-- ikulikov
+- stitenko
 title: Assets
 description: Thingsboard IoT Asset management
-asset-intro-pe:
-    0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-pe.png
-        title: 'Asset groups'
-    1:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-1-pe.png
-        title: 'List of assets'
 
-asset-pe:
+creating-asset:
     0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-groups-pe.png
-        title: 'Click the plus icon to add a new asset group and enter the name for it in the opened dialog box'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-1-pe.png
+        title: 'Navigate to "<b>Entities</b>" &#8702; "<b>Assets</b>". By default, you will see the "<b>All</b>" asset group. Click the "<b>+</b>" icon in the upper-right corner and select "<b>Add new asset</b>" from drop-down menu.'
     1:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-groups-1-pe.png
-        title: 'To share an asset group, check the box and select customers. Then, click Add'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-2-pe.png
+        title: 'In the asset creation form, fill in the required fields: <b>Name</b> – a unique name for the asset; <b>Asset profile</b> – by default, the profile is set to "<b>default</b>", but you can choose a different profile if needed. Click "<b>Add</b>".'
     2:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-groups-2-pe.png
-        title: 'To delete an asset group, click the trash can icon opposite an asset and confirm it in the dialog box'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-3-pe.png
+        title: 'The asset has been successfully created and is now available in the list.'
 
-asset-id-pe:
+creating-asset-group:
     0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-id-pe.png
-        title: 'Open an asset group, then click the asset name to open its details.'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-group-1-pe.png
+        title: 'From the <b>Assets</b> screen, go to the <b>"Group" tab</b>. Click the "<b>+</b>" icon in the upper-right corner.'
     1:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-id-1-pe.png
-        title: 'There, click the Copy Asset ID button.'
-
-asset-attributes-pe:
-    0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-id-pe.png
-        title: 'Click on the asset to open its details'
-    1:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-attributes-1-pe.png
-        title: 'Go to attributes tab'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-group-2-pe.png
+        title: 'Enter the <b>name</b> of the new asset group. (Optional) Configure <b>shared access</b> to this group for your customers, if needed. Click "<b>Add</b>" to create the group.'
     2:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-attributes-2-pe.png
-        title: 'By checking the box next to asset attribute, you can delete it or display it on a widget'
-
-asset-alarms-pe:
-    0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-alarms-9-pe.png
-        title: 'Triggered alarm from the connected device in the asset details'
-
-asset-events-pe:
-    0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-events-pe.png
-
-asset-relations-pe:
-    0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-relations-pe.png
-        title: 'In the relations tab of asset details, add a new relation by clicking the plus icon'
-    1:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-relations-1-pe.png
-        title: 'Select entity type and add a list of entities'
-    2:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-relations-2-pe.png
-        title: 'Save applied changes'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-group-3-pe.png
+        title: 'To share an asset group, check the "<b>Share entity group</b>" checkbox, select the customers and permissions. Then click "<b>Add</b>".'
     3:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-relations-3-pe.png
-        title: 'From asset created relation to two devices'
+        image: https://img.thingsboard.io/user-guide/ui/assets/creating-asset-group-4-pe.png
+        title: 'The asset group has been successfully created and is now available in the list.'
 
-asset-auditlogs-pe:
+editing-asset:
     0:
-        image: https://img.thingsboard.io/user-guide/ui/assets/pe/asset-auditlogs-pe.png
-        title: 'Track user actions in order to keep audit log'
+        image: https://img.thingsboard.io/user-guide/ui/assets/editing-asset-1-pe.png
+        title: 'In the assets list, locate and click on the desired asset, then click the "<b>pencil</b>" (✏️ <b>Edit</b>) icon on the right to open the edit form.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/editing-asset-2-pe.png
+        title: 'In the edit window, you can <b>modify</b> the following fields: name, label, asset profile and description. After making the necessary changes, click "<b>Apply changes</b>" to save.'
+
+deleting-asset:
+    0:
+        image: https://img.thingsboard.io/user-guide/ui/assets/deleting-asset-1-pe.png
+        title: 'Find the item in the list and click the "<b>trash bin</b>" icon next to it.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/deleting-asset-2-pe.png
+        title: '<b>Confirm the deletion</b> in the popup dialog.'
+
+manage-owner-and-groups:
+    0:
+        image: https://img.thingsboard.io/user-guide/ui/assets/manage-owner-and-groups-1-pe.png
+        title: 'Click asset to open its <b>details</b> view and click the "<b>Manage owner and groups</b>" button.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/manage-owner-and-groups-2-pe.png
+        title: 'Select the new owner of the asset from the list. If needed, add the asset to an existing group or create a new one. Confirm the change to update the asset&#39;s ownership.'
+    2:
+        image: https://img.thingsboard.io/user-guide/ui/assets/manage-owner-and-groups-3-pe.png
+        title: 'In the <b>"Customer name" column</b>, you can see the current owner of the asset.'
+
+include-customer-entities:
+    0:
+        image: https://img.thingsboard.io/user-guide/ui/assets/include-customer-entities-1-pe.png
+        title: 'The "<b>Include customer entities</b>" option allows you to show or hide customer-owned entities in the list view.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/include-customer-entities-2-pe.png
+        title: ''
+
+make-asset-group-public:
+    0:
+        image: https://img.thingsboard.io/user-guide/ui/assets/make-asset-group-public-1-pe.png
+        title: 'Locate the desired asset group in the list, and click the "<b>Make public</b>" icon next to it.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/make-asset-group-public-2-pe.png
+        title: 'Confirm your action in the popup dialog.'
+
+make-asset-group-private:
+    0:
+        image: https://img.thingsboard.io/user-guide/ui/assets/make-asset-group-private-1-pe.png
+        title: 'To make the group private again, follow the same steps using the "<b>Make private</b>" icon.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/make-asset-group-private-2-pe.png
+        title: 'Confirm your action in the popup dialog.'
+
+share-asset-group:
+    0:
+        image: https://img.thingsboard.io/user-guide/ui/assets/share-asset-group-1-pe.png
+        title: 'Locate the desired asset group in the list, and click the "<b>Share</b>" icon next to it.'
+    1:
+        image: https://img.thingsboard.io/user-guide/ui/assets/share-asset-group-2-pe.png
+        title: 'Select the <b>target customer</b> from the dropdown list. (Optional) Specify the <b>user group</b> within that customer to share the asset group with. Confirm the action by clicking "<b>Share</b>".'
 
 ---
 
 {% assign docsPrefix = "paas/eu/" %}
-{% include get-hosts-name.html docsTag="paas-eu" %}
-{% include docs/user-guide/ui/assets-pe.md %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
+{% include docs/user-guide/ui/assets.md %}

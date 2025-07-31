@@ -218,7 +218,7 @@ sudo service thingsboard stop
 ```
 {: .copy-code}
 
-{% capture tabspec %}thingsboard-installation-4-0
+{% capture tabspec %}thingsboard-installation-4-1
 thingsboard-installation-4-1-ubuntu,Ubuntu,shell,resources/4.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/4.1/thingsboard-ubuntu-installation.sh
 thingsboard-installation-4-1-centos,CentOS,shell,resources/4.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/4.1/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
@@ -321,7 +321,7 @@ sudo service thingsboard stop
 ```
 {: .copy-code}
 
-{% capture tabspec %}thingsboard-installation-4-0
+{% capture tabspec %}thingsboard-installation-4-0-2
 thingsboard-installation-4-0-2-ubuntu,Ubuntu,shell,resources/4.0.2/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/4.0.2/thingsboard-ubuntu-installation.sh
 thingsboard-installation-4-0-2-centos,CentOS,shell,resources/4.0.2/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/4.0.2/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}

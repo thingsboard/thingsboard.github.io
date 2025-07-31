@@ -25,7 +25,7 @@ description: Discover how Keners boosted agricultural efficiency using ThingsBoa
     <section class="quote-with-mark fill-background">
         <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
-            <p>“We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allows us to create dashboards and combine data from multiple data sources. <br><br> We highly appreciate the support of the creators, their feedback is simply excellent!”</p>
+            <p>“We started using the Thingsboard (TB) in 2017, and later switched to the professional edition (PE). We are very satisfied with the platform as it provides us with high flexibility and stability. We highly appreciate the visual editor for Rule engine new Multitenancy approach. The platform provides for us a unique possibility to create our own data connectors, which allo...<a target="_blank" href="/industries/agriculture/?company=keners">read more</a></p>
             <h2>Miroslav Holubec, Director</h2>
         </div>
     </section>
@@ -136,6 +136,7 @@ description: Discover how Keners boosted agricultural efficiency using ThingsBoa
                 <img src="https://img.thingsboard.io/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">

@@ -26,7 +26,7 @@ description: Learn how Berliner Energieinstitut launched a fully custom energy I
         <img src="https://img.thingsboard.io/case-studies/david-eitzinger.webp" title="Berliner Energieinstitut Managing Director David Eitzinger" alt="David Eitzinger" width="987" height="636">
         <div class="text">
             <h2>Berliner Energieinstitut GmbH</h2>
-            <p class="quote">“We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior.”</p>
+            <p class="quote">“We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior. Our business needed some spec...<a target="_blank" href="/industries/smart-energy/?company=berliner">read more</a></p>
             <p class="author">David Eitzinger</p>
             <p class="title">Managing Director</p>
         </div>
@@ -112,13 +112,6 @@ description: Learn how Berliner Energieinstitut launched a fully custom energy I
             <img src="https://img.thingsboard.io/case-studies/berliner-energieinstitut-4.webp" title="Enterprise quality and open source flexibility combined" alt="Enterprise quality and open source flexibility combined" width="450" height="240">
         </div>
     </section>
-    <section class="quote-with-mark">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“Our business needed some special features on the frontend and some major modifications on the backend but after exchanging a few emails it was clear that ThingsBoard was the way to go. The necessary changes were implemented in a matter of a few weeks and the quality and thoroughness of the implementation far exceed our expectations. I've been working with OSS since the mid 1990s and know of it's many benefits but the quality of ThingsBoard as well as the speed of development continues to impress me.”</p>
-            <h2>Berliner Energieinstitut GmbH</h2>
-        </div>
-    </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart energy improve operations with IoT?</h2>
@@ -172,14 +165,7 @@ description: Learn how Berliner Energieinstitut launched a fully custom energy I
                 <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
-        <div class="services-banner">
-            <div class="services-content">
-                <h3>Want to achieve similarly impactful results?</h3>
-                <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
-                <a id="CaseStudyToServices" class="button gtm_button" href="/services/development-services/">Explore our service</a>
-            </div>
-            <img src="https://img.thingsboard.io/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
-        </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">

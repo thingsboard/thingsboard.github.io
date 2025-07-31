@@ -373,7 +373,6 @@ Example of MQTT Connector configuration file:
 ```json
 {
   "broker": {
-    "name": "Default Local Broker",
     "host": "127.0.0.1",
     "port": 1883,
     "clientId": "ThingsBoard_gateway",
@@ -382,18 +381,21 @@ Example of MQTT Connector configuration file:
     "maxNumberOfWorkers": 100,
     "sendDataOnlyOnChange": false,
     "security": {
-      "type": "basic",
-      "username": "user",
-      "password": "password"
+      "type": "anonymous"
     }
   },
   "mapping": [
     {
       "topicFilter": "sensor/data",
+      "subscriptionQos": 1,
       "converter": {
         "type": "json",
-        "deviceNameJsonExpression": "${serialNumber}",
-        "deviceTypeJsonExpression": "${sensorType}",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "message",
+          "deviceProfileExpression": "${sensorType}"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
@@ -410,7 +412,7 @@ Example of MQTT Connector configuration file:
         ],
         "timeseries": [
           {
-            "type": "double",
+            "type": "string",
             "key": "temperature",
             "value": "${temp}"
           },
@@ -429,10 +431,15 @@ Example of MQTT Connector configuration file:
     },
     {
       "topicFilter": "sensor/+/data",
+      "subscriptionQos": 1,
       "converter": {
         "type": "json",
-        "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
-        "deviceTypeTopicExpression": "Thermometer",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "Thermometer"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
@@ -449,7 +456,7 @@ Example of MQTT Connector configuration file:
             "value": "${temp}"
           },
           {
-            "type": "double",
+            "type": "string",
             "key": "humidity",
             "value": "${hum}"
           }
@@ -458,10 +465,15 @@ Example of MQTT Connector configuration file:
     },
     {
       "topicFilter": "sensor/raw_data",
+      "subscriptionQos": 1,
       "converter": {
         "type": "bytes",
-        "deviceNameExpression": "[0:4]",
-        "deviceTypeExpression": "default",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "[0:4]",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
@@ -482,73 +494,99 @@ Example of MQTT Connector configuration file:
     },
     {
       "topicFilter": "custom/sensors/+",
+      "subscriptionQos": 1,
       "converter": {
         "type": "custom",
         "extension": "CustomMqttUplinkConverter",
         "cached": true,
-        "extension-config": {
-          "temperatureBytes": 2,
-          "humidityBytes": 2,
-          "batteryLevelBytes": 1
+        "extensionConfig": {
+          "temperature": 2,
+          "humidity": 2,
+          "batteryLevel": 1
         }
       }
     }
   ],
-  "connectRequests": [
-    {
-      "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/connect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
-    }
-  ],
-  "disconnectRequests": [
-    {
-      "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/disconnect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
-    }
-  ],
-  "attributeRequests": [
-    {
-      "retain": false,
-      "topicFilter": "v1/devices/me/attributes/request",
-      "deviceNameJsonExpression": "${serialNumber}",
-      "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
-      "topicExpression": "devices/${deviceName}/attrs",
-      "valueExpression": "${attributeKey}: ${attributeValue}"
-    }
-  ],
-  "attributeUpdates": [
-    {
-      "retain": true,
-      "deviceNameFilter": ".*",
-      "attributeFilter": "firmwareVersion",
-      "topicExpression": "sensor/${deviceName}/${attributeKey}",
-      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
-    }
-  ],
-  "serverSideRpc": [
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "echo",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
-      "responseTimeout": 10000,
-      "valueExpression": "${params}"
-    },
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "no-reply",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "valueExpression": "${params}"
-    }
-  ]
+  "requestsMapping": {
+    "connectRequests": [
+      {
+        "topicFilter": "sensor/connect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "Thermometer"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/connect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "Thermometer"
+        }
+      }
+    ],
+    "disconnectRequests": [
+      {
+        "topicFilter": "sensor/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}"
+        }
+      },
+      {
+        "topicFilter": "sensor/+/disconnect",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "topic",
+          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+        }
+      }
+    ],
+    "attributeRequests": [
+      {
+        "retain": false,
+        "topicFilter": "v1/devices/me/attributes/request",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}"
+        },
+        "attributeNameExpressionSource": "message",
+        "attributeNameExpression": "${versionAttribute}, ${pduAttribute}",
+        "topicExpression": "devices/${deviceName}/attrs",
+        "valueExpression": "${attributeKey}: ${attributeValue}"
+      }
+    ],
+    "attributeUpdates": [
+      {
+        "retain": true,
+        "deviceNameFilter": ".*",
+        "attributeFilter": "firmwareVersion",
+        "topicExpression": "sensor/${deviceName}/${attributeKey}",
+        "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+      }
+    ],
+    "serverSideRpc": [
+      {
+        "type": "twoWay",
+        "deviceNameFilter": ".*",
+        "methodFilter": "echo",
+        "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+        "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+        "responseTopicQoS": 1,
+        "responseTimeout": 10000,
+        "valueExpression": "${params}"
+      },
+      {
+        "type": "oneWay",
+        "deviceNameFilter": ".*",
+        "methodFilter": "no-reply",
+        "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+        "valueExpression": "${params}"
+      }
+    ]
+  }
 }
 ```
 {:.copy-code.expandable-15}

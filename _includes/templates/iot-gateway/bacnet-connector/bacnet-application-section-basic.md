@@ -7,8 +7,8 @@ This configuration section contains application settings, such as:
 - **Object ID** - the gateway object identifier in the BACnet network;
 - **Vendor ID** - the gateway vendor identifier in the BACnet network;
 - **Advanced settings**:
-  - **Max APDU Length Accepted** - maximal length of the APDU;
-  - **Segmentation Supported** - the type of segmentation:
+  - **Max APDU Length** - maximal length of the APDU;
+  - **Segmentation** - the type of segmentation:
     - **Both** - supports both sending and receiving segmented messages;
     - **Transmit** - supports only sending segmented messages;
     - **Receive** - supports only receiving segmented messages;
