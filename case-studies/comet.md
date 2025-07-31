@@ -46,7 +46,7 @@ description: Discover how co.met GmbH modernized smart metering and LoRaWAN serv
         <img src="/images/case-studies/peter_backes.webp" title="co.met CEO Peter Backes" alt="Peter Backes" width="987" height="636">
         <div class="text">
             <h2>co.met GmbH</h2>
-            <p class="quote">“We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN carrier for the city of Saarbrücken and a Solution Provider for LoRa-WAN Backendsystems.”</p>
+            <p class="quote">“We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN car...<a target="_blank" href="/industries/smart-energy/?company=comet">read more</a></p>
             <p class="author">Peter Backes</p>
             <p class="title">CEO</p>
         </div>
@@ -125,13 +125,6 @@ description: Discover how co.met GmbH modernized smart metering and LoRaWAN serv
             <img src="/images/case-studies/comet-3.webp" title="A reliable and responsive technology partner" alt="Hands with phone" width="450" height="240">
         </div>
     </section>
-    <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains. ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.”</p>
-            <h2>co.met GmbH</h2>
-        </div>
-    </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart energy improve operations with IoT?</h2>
@@ -185,14 +178,7 @@ description: Discover how co.met GmbH modernized smart metering and LoRaWAN serv
                 <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
-        <div class="services-banner">
-            <div class="services-content">
-                <h3>Want to achieve similarly impactful results?</h3>
-                <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
-                <a id="CaseStudyToServices" class="button gtm_button" href="/services/development-services/">Explore our service</a>
-            </div>
-            <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
-        </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

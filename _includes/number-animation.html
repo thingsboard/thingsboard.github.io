@@ -1,8 +1,9 @@
 {% assign startNum = include.startNum %}
 {% assign targetNum = include.targetNum %}
 {% assign useGrouping = include.useGrouping %}
+{% assign useMobileMode = include.useMobileMode %}
 
-<span class="animated-num" data-start="{{ startNum }}" data-target="{{ targetNum }}" data-grouping="{{ useGrouping }}">{{ startNum }}</span>
+<span class="animated-num" data-start="{{ startNum }}" data-target="{{ targetNum }}" data-grouping="{{ useGrouping }}" data-mobile="{{ useMobileMode }}">{{ startNum }}</span>
 
 <style>
     .animated-num {
@@ -25,7 +26,11 @@
                 if (progress < 1) {
                     requestAnimationFrame(updateNumber);
                 } else {
-                    el.textContent = el.dataset.grouping === 'true' ? target.toLocaleString('en-US', {useGrouping:true}).replace(/,/g, ' ') : target;
+                    if (el.dataset.mobile === 'true' && target > 999 && window.screen.width < 600) {
+                       el.textContent =  Math.trunc(target / 1000) + 'K';
+                    } else {
+                        el.textContent = el.dataset.grouping === 'true' ? target.toLocaleString('en-US', {useGrouping:true}).replace(/,/g, ' ') : target;
+                    }
                 }
             }
 
