@@ -9,16 +9,14 @@ description: Upcoming releases
 {:toc}
 
 The product roadmap below covers only **major features** and does not include minor enhancements and bug fixes.
-View active development and bug fixes for the latest release [on our GitHub repository](https://github.com/thingsboard/thingsboard-edge/tree/master){: target="_blank"}.
+View active development and bug fixes for the latest release [on our GitHub repository](https://github.com/thingsboard/thingsboard-edge/tree/rc){: target="_blank"}.
 
-### Edge 4.0.1
+### v4.2
 
-The upcoming release will include all updates form [ThingsBoard CE](/docs/reference/roadmap/){: target="_blank"}, except the **Calculated Fields** feature.
+Everything in [ThingsBoard CE](/docs/reference/roadmap/){: target="_blank"}.
 
-The updates related to the Edge:
-* **Edge Clustering:** Ability to run multiple Edge nodes in a clustered, high-availability setup.
-* **Edge Rule Chain Editing:** Ability to create and edit Rule Chains directly on Edge.
+* **Telemetry for Downlink messages:** New metrics to monitor synchronization between the Cloud and the Edge device via custom dashboards.
+* **Enhanced monitoring for Edge connectivity:** Track the status of data delivery between Edge and Cloud, including success rates, failures, and queue status for both uplink and downlink.
+* **Edge Rule Chain:** Fixed a bug that caused some connections to disappear after saving the Edge Rule Chain.
 
-### Edge 4.1
-
-* **Calculated Fields:** Ability to create new attributes and time series data based on data points from multiple entities
+See active development in progress and work on the latest release bug fixes [here](https://github.com/thingsboard/thingsboard-edge/tree/rc){: target="_blank"}.

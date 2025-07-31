@@ -1,1 +1,1 @@
-sudo rpm -Uvh tb-edge-4.0.1.rpm
+sudo rpm -Uvh tb-edge-4.1.rpm
