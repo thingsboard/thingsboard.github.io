@@ -13,17 +13,17 @@ External nodes used are used to interact with external systems.
    </thead>
 </table> 
 
-![Node example image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda.png)
+![Node example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda.png)
 
 Node publishes messages to AWS Lambda, a service that lets you run code without provisioning or managing servers. 
 It sends messages using a RequestResponse invocation type. The node uses a pre-configured client and specified function to run.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-pe.png"></object>
 {% endif %}
 
 Function configuration
@@ -67,7 +67,7 @@ Solution with AWS Lambda node:
 
 By utilizing the AWS Lambda Node in this manner, we can efficiently process and respond to real-time water meter data, leveraging AWS Lambda's capabilities for data processing and anomaly detection.
 
-![Rule chain example image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda-chain.png)
+![Rule chain example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda-chain.png)
 
 **Published payload** - node will publish message payload to the AWS Lambda. If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload to the AWS Lambda.
 
@@ -86,16 +86,16 @@ Message payload will contain result of the function execution.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sns.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sns.png)
 
 Node publish messages to AWS SNS (Amazon Simple Notification Service).
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sns-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sns-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sns-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sns-node-2-pe.png"></object>
 {% endif %}
 
 - **Topic ARN pattern** - can be set direct topic name for message publishing 
@@ -136,13 +136,13 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs.png)
 
 Node publish messages to the AWS SQS (Amazon Simple Queue Service).
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs-config.png)
 
 - **Queue Type** - SQS queue type. Can be *Standard* or *FIFO*.
 - **Queue URL Pattern** - Pattern for building Queue URL. For example <code>${deviceType}</code>.
@@ -189,11 +189,11 @@ and **sequenceNumber** in Message metadata. Original Message payload, type and o
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-iot-hub.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-iot-hub.png)
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-iot-hub-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-iot-hub-config.png)
 
 - **Topic** - for more information about IoT Hub topic use [link](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support#sending-device-to-cloud-messages).
 - **Hostname** - Azure IoT Hub Hostname.
@@ -230,7 +230,7 @@ otherwise **Failure** chain is used.
 
 ## GCP PubSub node
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/gcp-pubsub-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/gcp-pubsub-node.png)
 
 **Publish message to the Google Cloud PubSub.**
 
@@ -247,17 +247,17 @@ Will publish message payload to the Google Cloud Platform PubSub topic. Outbound
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka.png)
 
 Kafka Node sends messages to Kafka brokers. Expects messages with any message type. Will send record via Kafka producer to Kafka server.
 
 Configuration:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-pe.png)
 {% endif %}
 
 - **Topic pattern** - can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>
@@ -315,13 +315,13 @@ Original Message payload, type and originator will not be changed.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt.png)
 
 Publish incoming message payload to the topic of the configured MQTT broker with QoS **AT_LEAST_ONCE**. 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt-config.png)
 
 - **Topic pattern** - can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>.
 - **Host** - MQTT broker host.
@@ -376,13 +376,13 @@ When the message is dropped, the corresponding rule engine message is routed via
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq.png)
 
 Publish incoming message payload to the RabbitMQ.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq-config.png)
 
 - **Exchange name pattern** - the exchange to publish the message to. Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code> .
 - **Routing key pattern** - the routing key. Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code> .
@@ -415,13 +415,13 @@ otherwise **Failure** chain is used.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-rest-api-call.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-rest-api-call.png)
 
 Invoke REST API calls to the external REST server.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-rest-api-call-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-rest-api-call-config.png)
 
 - **Endpoint URL pattern** - Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>
 - **Request method** - *GET*, *POST*, *PUT*, *DELETE*
@@ -486,14 +486,14 @@ otherwise **Failure** chain is used.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email.png)
 
 Node sends incoming message using configured Mail Server. This Node works only with messages that where created using 
 [**To Email**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) transformation Node, please connect this Node with **To Email** Node using **Success** chain.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email-config.png)
 
 - **Use system SMTP settings** - if enabled default Mail Server configured on System level will be used
 - **Protocol** - Mail Server transport protocol: *SMTP* or *SMTPS*
@@ -544,14 +544,14 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-notification.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-notification.png)
 
 The node can send notification to recipients group using the template.
 The template needs to be of a 'Rule node' type. You can use incoming message data and metadata in your template (see [templatization help page](/docs/{{docsPrefix}}user-guide/notifications/#rule-node) for this notification type).
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-notification-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-notification-config.png)
 
 - **Template** - specify a notification template;
 - **Recipients** - notification recipients.
@@ -573,7 +573,7 @@ We recommend enabling debug mode for the rule node.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-sms.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-sms.png)
 
 - **Use system SMS provider settings** - if enabled default SMS Provider Server configured on System level will be used.
 {% unless docsPrefix contains "paas/" %}
@@ -595,7 +595,7 @@ If SMS message will be sent to all recipients successfully, original Message wil
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack.png)
 
 The node create a message based on the incoming data and metadata, and send it via [Slack](https://slack.com/) to a public channel, private channel or direct message.
 If chosen to use system Slack settings, the node will take the Slack API token from system settings. Otherwise, you need to specify the token in the node configuration.
@@ -603,7 +603,7 @@ Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{d
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack-config.png)
 
 - **Message template** - the template for a Slack message; you may optionally reference fields from incoming message data and metadata;
 - **Use system slack settings** - if enabled, the node will take the Slack API token from system settings;
@@ -624,13 +624,13 @@ Configuration:
 
 {% assign rulenode = "Twilio SMS" %}{% include templates/pe-rule-node-banner.md %}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms.png)
 
 Sends incoming message payload as SMS message via Twilio service.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms-config.png)
 
 - **Phone Number From** - can be set direct phone number as Number From of SMS
                           or pattern can be used, that will be resolved to the real Number From using Message metadata.
@@ -644,7 +644,7 @@ If SMS message will be sent to all recipients successfully, original Message wil
 
 ## Twilio voice node
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/twilio-voice-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/twilio-voice-node.png)
 
 **Sends voice message via Twilio.**
 

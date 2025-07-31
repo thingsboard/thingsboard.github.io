@@ -5,7 +5,7 @@ Filter nodes are used for message filtering and routing. You may find list of av
 
 ## Alarm status filter {#check-alarm-status}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter-node.png)
 
 Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/alarms/) statuses.
 
@@ -14,10 +14,10 @@ Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/a
 * **Alarm status** - controls the statuses to filter by. Available statuses: **_Active Acknowledged_**, **_Active Unacknowledged_**, **_Cleared Acknowledged_**, **_Cleared Unacknowledged_**.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter-2-pe.png"></object>
 {% endif %}
 
 **Output connections**
@@ -34,13 +34,13 @@ Consider a scenario where you want to process alarms that are currently active.
 You can configure the rule node to filter for **_Active Unacknowledged_** and **_Active Acknowledged_** statuses.
 This setup ensures that only alarms which are currently active, whether they have been acknowledged or not, are processed further.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
 
 You may [download](https://gist.github.com/ShvaykaD/dce641880a78013a273f8f8c82fa7f1e#file-alarm-status-filter-example-json) and import the rule chain.
 
 ## Asset profile switch
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/asset-profile-switch-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/asset-profile-switch-node.png)
 
 Routes incoming messages based on the name of the asset profile. The asset profile name is case-sensitive.
 
@@ -64,14 +64,14 @@ Let's assume we have temperature sensors in the room assets with profiles: "Free
 We also take that there is a relation between room asset and temperature device of type "Contains". 
 The below rule chain will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler Room" rule chains.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain.   
 ⚠️ Note that the [rule chain nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) will point to not existing rule chains in your environment.
 
 ## Check fields presence {#check-existence-fields-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence-node.png)
 
 Checks the presence of the specified fields in the message and/or metadata.
 Both message and metadata is typically a JSON object.
@@ -83,10 +83,10 @@ Both message and metadata is typically a JSON object.
 * **Check that all specified fields are present** - if enabled, checks the presence of all fields, otherwise at least one.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence-configuration-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence-configuration-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence-configuration-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence-configuration-2-pe.png"></object>
 {% endif %}
 
 **Output connections**
@@ -105,7 +105,7 @@ See configuration screenshot.
 
 ## Check relation presence {#check-relation-filter-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-presence-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-presence-node.png)
 
 Checks the presence of the [relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the message originator and other entities.
 
@@ -118,10 +118,10 @@ Checks the presence of the [relation](/docs/{{docsPrefix}}user-guide/entities-an
   > **Note:** The configuration to specify a particular entity appears, only if **Check relation to specific entity** is enabled.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-configuration-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-configuration-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-configuration-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-configuration-2-pe.png"></object>
 {% endif %}
 
 **Output connections**
@@ -143,7 +143,7 @@ See configuration screenshot to learn how to configure the rule node for this sp
 
 ## Device profile switch
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter-node.png)
 
 Routes incoming messages based on the name of the device profile. The device profile name is case-sensitive.
 
@@ -171,14 +171,14 @@ For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payloa
 Let's assume you have different beacon profiles - indoor air quality "IAQ sensor" device profile and leak sensors "Leak sensor" device profile. 
 The below rule chain will change the originator of the message from gateway to device and forward the message to the corresponding rule chain:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain.   
 ⚠️ Note that the [rule chain nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) will point to not existing rule chains in your environment.
 
 ## Entity type filter {#originator-type-filter-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-switch-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-switch-node.png)
 
 Filters incoming messages by type of message originator entity. 
 Checks that the entity type of the incoming message originator matches one of the values specified in the filter.
@@ -188,10 +188,10 @@ Checks that the entity type of the incoming message originator matches one of th
 * **Select entity types** - list of entity types to filter messages: **Device**, **Asset**, **User**, etc.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter-2-pe.png"></object>
 {% endif %}
 
 **Output connections**
@@ -208,7 +208,7 @@ See configuration screenshot.
 
 ## Entity type switch {#originator-type-switch-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-switch-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-switch-node.png)
 
 Routes incoming messages based on the entity type of the message originator.
 
@@ -228,11 +228,11 @@ Let's assume you have messages from different entities processed in one rule cha
 You may want to split the message flow based on entity type.
 See below:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
 ## GPS geofencing filter {#gps-geofencing-filter-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-filter-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-filter-node.png)
 
 Filters incoming messages by GPS-based geofencing.
 Extracts latitude and longitude parameters from the incoming message and checks them according to configured perimeter.
@@ -288,10 +288,10 @@ The coordinates of the monument are the following:
 The configuration of the rule node is quite simple:
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-circle-static-configuration-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-circle-static-configuration-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-circle-static-configuration-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-circle-static-configuration-2-pe.png"></object>
 {% endif %}
 
 **Usage example: static polygon perimeter**
@@ -310,14 +310,14 @@ You may test that rule node returns **True** if you submit the following coordin
 {"latitude": 48.198618758582384, "longitude": 24.65322245153503}
 ```
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
 
 **Usage example: dynamic circle/polygon perimeter**
 
 Let's review more complex livestock location monitoring case, where you may have sheeps located in different farms.
 Let's assume we have created two farms: "Farm A" and "Farm B". Each livestock tracker device is related either to "Farm A" or "Farm B" asset.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
 
 We will configure server-side attribute called "perimeter" with the JSON value:
 
@@ -325,15 +325,15 @@ We will configure server-side attribute called "perimeter" with the JSON value:
 [[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]
 ```
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
 
 The below rule chain will fetch the attribute from the related asset "Farm A" and use it in the geofencing node:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
 
 Rule node configuration is fairly simple. Please note that perimeter key name is without any prefix:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) and import the rule chain.
 ⚠️ Note that the "Sheep Tracker Generator" [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) will point to not existing device.
@@ -341,7 +341,7 @@ You will need to provision device and asset to replicate the example.
 
 ## Message type filter {#message-type-filter-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter-node.png)
 
 Filters incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types. 
 Checks that the message type of the incoming message matches one of the values specified in the configuration.
@@ -351,10 +351,10 @@ Checks that the message type of the incoming message matches one of the values s
 * **Select message types** - list of message types. Both [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) and custom message types are supported.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter-2-pe.png"></object>
 {% endif %}
 
 **Output connections**
@@ -389,11 +389,11 @@ Let's assume you have messages with different types processed in one rule chain.
 You may want to split the message flow based on message type.
 See below:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
 
 ## Script {#script-filter-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/script-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/script-node.png)
 
 Evaluates boolean function using incoming message. The function may be written using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or plain JavaScript. 
 Script function should return boolean value and accepts three parameters.
@@ -406,10 +406,10 @@ Script function should return boolean value and accepts three parameters.
   * <code>msgType</code> - is a message type, string.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/script-filter-node-configuration-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/script-filter-node-configuration-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/script-filter-node-configuration-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/script-filter-node-configuration-2-pe.png"></object>
 {% endif %}
 
 **Output connections**
@@ -450,7 +450,7 @@ You can see the real life examples, where this node is used, in the next tutoria
 
 ## Switch {#switch-node}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-nodes/filter-switch.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/filter-switch.png)
 
 Routes incoming message to one or multiple output connections. 
 Node executes configured [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or JavaScript function that returns array of strings (connection names).
@@ -466,10 +466,10 @@ The script should return an array of node connection names where incoming messag
 If returned array is empty - message will not be routed to any node and discarded.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/switch-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/switch-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/filter-nodes/switch-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-nodes/switch-2-pe.png"></object>
 {% endif %}
 
 > **Note:** The output connection of the rule node corresponds to the result of the script execution. For example: "Low Temperature Telemetry", "Normal Temperature Telemetry", "Idle State", etc.

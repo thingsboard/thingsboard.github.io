@@ -13,7 +13,7 @@ Transformation nodes are used for changing incoming Message fields like Originat
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-change-originator.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-change-originator.png)
 
 All incoming Messages in the Thingsboard have originator field that identifies an entity that submits Message. 
 It could be a Device, Asset, Customer, Tenant, etc.
@@ -31,7 +31,7 @@ The originator can be changed to:
 In 'Relations query' configuration Administrator can select required **Direction** and **relation depth level**. 
 Also set of **Relation filters** can be configured with required Relation type and Entity Types.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-change-originator-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-change-originator-config.png)
 
 If multiple Related Entities are found, **_only the first Entity is used_** as new originator, other entities are discarded.
 
@@ -41,7 +41,7 @@ Outbound Message will have new originator Id.
 
 ## Copy key-value pairs
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs-node.png)
 
 **Copies key-value pairs from message to message metadata or vice-versa.**
 
@@ -51,15 +51,15 @@ Output connections: `Success`, `Failure`.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs-node-2-pe.png"></object>
 {% endif %}
 
 ## Deduplication
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node.png)
 
 **Deduplicate messages within the same Originator entity for a configurable period based on a specified deduplication strategy.** 
 
@@ -70,15 +70,15 @@ Deduplication strategies:
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-pe.png"></object>
 {% endif %}
 
 ## Delete key-value pairs
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs-node.png)
 
 **Deletes key-value pairs from message or message metadata.**
 
@@ -88,10 +88,10 @@ Output connections: `Success`, `Failure`.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs-node-2-pe.png"></object>
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
@@ -105,7 +105,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
 
 Duplicates message to all entities belonging to specific [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -117,7 +117,7 @@ For each entity from group new message is created with entity as originator and 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group-config.png)
 
 - **Entity group is message originator** - if set, message originator will be considered as Entity Group used to fetch entities.
   In this case incoming message will be routed via **Failure** chain if message originator type is not Entity Group.
@@ -128,7 +128,7 @@ Otherwise original message will be forwarded via **Failure** chain.
 
 ## Duplicate to group by name
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group-by-name-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group-by-name-node.png)
 
 **Duplicates message to all entities belonging to resolved Entity group.**
 
@@ -137,7 +137,7 @@ Entities are fetched from entity group that is detected according to the configu
 Output connections: `Success`, `Failure`.
 
 Configuration:
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group-by-name-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group-by-name-node-2-pe.png"></object>
 
 ## Duplicate to related
 
@@ -149,7 +149,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related.png)
 
 Duplicates message to related entities fetched by relation query.
 
@@ -159,7 +159,7 @@ For each found related entity new message is created with related entity as orig
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related-config.png)
 
 - **Relations query** - query used to find new entities starting from incoming message originator.
   In ‘Relations query’ configuration Administrator can select required **Direction** and **relation depth level**. Also set of **Relation filters** can be configured with required Relation type and Entity Types.
@@ -171,7 +171,7 @@ Otherwise original message will be forwarded via **Failure** chain.
 
 ## JSON path
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path-node.png)
 
 **Transforms incoming message body using JSONPath expression.**
 
@@ -181,15 +181,15 @@ Output connections: `Success`, `Failure`.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path-node-2-pe.png"></object>
 {% endif %}
 
 ## Rename keys
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys-node.png)
 
 **Renames message or message metadata keys.**
 
@@ -199,10 +199,10 @@ Output connections: `Success`, `Failure`.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys-node-2-pe.png"></object>
 {% endif %}
 
 ## Script
@@ -215,7 +215,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-script.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-script.png)
 
 Changes Message payload, Metadata or Message type using configured JavaScript function.
 
@@ -234,7 +234,7 @@ Script should return the following structure:
 }
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-script-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-script-config.png)
 
 All fields in resulting object are optional and will be taken from original message if not specified.
 
@@ -283,7 +283,7 @@ You can see real life example, how to use this node in those tutorials:
 
 ## Split array msg
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg-node.png)
 
 **Split array message into several messages.**
 
@@ -293,10 +293,10 @@ Output connections: `Success`, `Failure`.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg-node-2-pe.png"></object>
 {% endif %}
 
 ## To email
@@ -309,13 +309,13 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-to-email.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-to-email.png)
 
 Transforms message to Email Message by populating email fields using values derived from Message metadata.
 Set 'SEND_EMAIL' output Message type that can be accepted later by [**Send Email Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-email-node).
 All email fields can be configured to use values from metadata. Supports sending of HTML pages and images.
   
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-to-email-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/transformation-to-email-config.png)
 
 For example incoming message has **deviceName** field in metadata and email body should contain its value.
 

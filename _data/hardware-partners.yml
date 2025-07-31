@@ -30,7 +30,7 @@
     - Wi-Fi
     - LTE-M
   name: Chengdu IOTRouter Tech. Co., Ltd.
-  logo: /images/partners/iotrouter-logo.png
+  logo: https://img.thingsboard.io/partners/iotrouter-logo.png
   site:
     href: http://www.iotrouter.com/
   links:
@@ -570,7 +570,7 @@
     - Modbus
     - KNX
   name: Weinzierl Engineering GmbH
-  logo: /images/partners/weinzierl-logo.svg
+  logo: https://img.thingsboard.io/partners/weinzierl-logo.svg
   site:
     href: https://weinzierl.de/en/
   links:

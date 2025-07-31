@@ -6,7 +6,7 @@ You may find list of available nodes below.
 
 ## Calculate delta
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta-node.png)
 
 Calculates delta based on the previous time series reading and current reading and adds it to the message.
 Delta calculation is done in scope of the message originator, e.g. device, asset or customer.
@@ -25,7 +25,7 @@ Delta calculation is done in scope of the message originator, e.g. device, asset
     > **Note:** The cache will not be updated if the **Input value key** value is modified elsewhere in the system or by other rule nodes.
   The rule node will use the cached value to compute the delta upon the arrival of the next message.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta-config.png)
 
 **Output connections**
 * **Success:**
@@ -65,7 +65,7 @@ msg: {"pulseCounter": 53.1245}, metadata: {"ts": "1718117634000"}, "output conne
 
 ## Customer attributes
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes-node.png)
 
 Identifies the message originator's customer and enriches the outgoing message with the customer's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/). 
 
@@ -81,10 +81,10 @@ Identifies the message originator's customer and enriches the outgoing message w
 * **Add mapped attributes/latest telemetry to** - controls whether the mapped **_Attributes/Latest telemetry_** should be added to the **_Message_** or **_Metadata_**.
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes-node-2-pe.png"></object>
 {% endif %}
 
 > **Note:** Following message originator's entity types are supported: **Customer**, **User**, **Asset**, **Device**.
@@ -109,7 +109,7 @@ We have a device "TrainA" that belongs to a customer "SubwayOperator".
 
 "SubwayOperator" has the following attributes:
 
-![SubwayOperator attributes](/images/user-guide/rule-engine-2-0/nodes/customer-attributes-example.png)
+![SubwayOperator attributes](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/customer-attributes-example.png)
 
 The incoming message from "TrainA" will be as follows:
 
@@ -129,13 +129,13 @@ Consider a smart traffic management system where intersection reports telemetry 
 
 This scenario will have the following configuration:
 
-![Configuration usage example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config-example.png)
+![Configuration usage example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config-example.png)
 
 We have a device "TrafficLight" that belongs to a customer "Intersection".
 
 "Intersection" has the following latest telemetry:
 
-![Intersection latest telemetry](/images/user-guide/rule-engine-2-0/nodes/customer-latest-telemetry-example.png)
+![Intersection latest telemetry](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/customer-latest-telemetry-example.png)
 
 The incoming message from "TrafficLight" will be as follows:
 
@@ -153,7 +153,7 @@ You can see the real life example, where this node is used, in the tutorial [Sen
 
 ## Customer details
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-details-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-details-node.png)
 
 Enriches the outgoing message with the customer's details.
 
@@ -162,7 +162,7 @@ Enriches the outgoing message with the customer's details.
 * **Select details** - list of the details to be fetched from the customer.
 * **Add selected details to** - controls whether the fetched details should be added to the **_Message_** or **_Metadata_**.
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
+![Configuration example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
 
 Selected details are added into the outgoing message with prefix: <code>customer_</code>.
 
@@ -188,7 +188,7 @@ We have a device "Greenhouse Sensor 01" that belongs to a customer "Warehouse Ma
 
 Here is information about customer:
 
-![Customer details image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-example.png)
+![Customer details image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-example.png)
 
 The incoming message from "Greenhouse Sensor 01" will be as follows:
 
@@ -204,7 +204,7 @@ msg: {"temperature": 25.0, "humidity": 70, "customer_title": "Warehouse manager"
 
 ## Fetch device credentials
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/fetch-device-credentials-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/fetch-device-credentials-node.png)
 
 Enriches the outgoing message with the device credentials.
 
@@ -212,7 +212,7 @@ Enriches the outgoing message with the device credentials.
 
 * **Fetch credentials to** - controls whether the fetched credentials should be added to the **_Message_** or **_Metadata_**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-fetch-device-credentials-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-fetch-device-credentials-config.png)
 
 **Output connections**
 * **Success:**
@@ -242,7 +242,7 @@ msg: {"humidity": 75}, metadata: {"deviceType": "Hygrometer", "deviceName": "HG-
 
 ## Originator attributes
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-attributes-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-attributes-node.png)
 
 Enriches the outgoing message with the message originator's [attributes](/docs/user-guide/attributes/) and/or [latest telemetry](/docs/user-guide/telemetry/).
 
@@ -256,7 +256,7 @@ Enriches the outgoing message with the message originator's [attributes](/docs/u
 * **Tell failure if any of the attributes are missing** - if enabled, fails message processing if at least one selected key does not exist.
   > **Note:** Even in case of failure, the outgoing message will contain telemetry keys that were successfully fetched.
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
+![Configuration example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
 
 Attributes are added into outgoing message with scope prefix:
 
@@ -283,7 +283,7 @@ You can see the real life example, where this node is used, in the following tut
 
 ## Originator fields
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-fields-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-fields-node.png)
 
 Enriches the outgoing message with the message originator's details.
 
@@ -294,17 +294,17 @@ Enriches the outgoing message with the message originator's details.
   * **Target key** - key that will store fetched value in the outgoing message. 
     > **Note:** Target key fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/). 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-mapping.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-mapping.png)
 
 > **Note:** If configured mapping contains fields that are not available for originator's entity type (for example, `phone` when originator is a device), then such mapping will be ignored.
 
 * **Add mapped originator fields to** - controls whether the mapped fields should be added to the **_Message_** or **_Metadata_**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-fetch-to.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-fetch-to.png)
 
 * **Skip empty fields** - if enabled, fields with no value or an empty string will not be added in the outgoing message.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-skip-empty-fields.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-skip-empty-fields.png)
 
 > **Note:** Following message originator's entity types are supported: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule chain**, **Entity view** and **Edge**.
 
@@ -317,7 +317,7 @@ Enriches the outgoing message with the message originator's details.
 
 ## Originator telemetry
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-telemetry-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-telemetry-node.png)
 
 Adds message originator's time series data, found using configured **Fetch interval** and **Fetch strategy**, into message metadata.
 
@@ -325,7 +325,7 @@ Adds message originator's time series data, found using configured **Fetch inter
 - **Time series keys** - list of time series keys that will be used to fetch originator's time series data.
   > **Note:** All input keys support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-time-series-keys.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-time-series-keys.png)
 
 **Configuration: Fetch interval**
 
@@ -333,11 +333,11 @@ Fetch interval is the time period for which time series data will be fetched. Th
 
 - **Fixed interval** - both **Interval start** and **Interval end** are configured by specifying a duration value and a time unit. This interval is relative, meaning that for each message, the start and end times are calculated by subtracting the specified duration from the time the message is processed.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fixed-interval.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fixed-interval.png)
 
 - **Use dynamic interval** - if enabled, **Interval start** and **Interval end** are configured by specifying templates. Values extracted using these templates are considered to be [UNIX millisecond timestamps](https://en.wikipedia.org/wiki/Unix_time). This interval is absolute, meaning that start and end times are based on specific points in time provided by the templates.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-dynamic-interval.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-dynamic-interval.png)
 
 > **Note:** In both cases, interval start must be before the interval end.
 
@@ -346,11 +346,11 @@ Fetch interval is the time period for which time series data will be fetched. Th
 Fetch strategy controls what values to fetch from the specified **Fetch interval**. There are three strategies:
 - **First** - fetch the first time series entry within the interval.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-first.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-first.png)
 
 - **Last** - fetch the last time series entry within the interval.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-last.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-last.png)
 
 The fetched time series entry will be placed in the outgoing message metadata as a simple key-value entry. Example:
 ```json
@@ -366,7 +366,7 @@ In this case, you can specify **Order by timestamp** direction and **Limit** for
 
 > **Note:** Maximum number of time series entries fetched is 1000.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-all-none-aggregation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-all-none-aggregation.png)
 
 Fetched time series entries will be placed in the outgoing message metadata as an array of objects, each containing a `ts` (timestamp) and `value` fields. Example:
 ```json
@@ -377,7 +377,7 @@ Fetched time series entries will be placed in the outgoing message metadata as a
 
 You can specify a **Data aggregation function** to apply to fetched data. Available functions: Min, Max, Average, Sum and Count.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-all-average-aggregation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-strategy-all-average-aggregation.png)
 
 Aggregated data will be placed in the outgoing message's metadata as a simple key-value entry, like in the **First** or **Last** strategies.
 
@@ -402,7 +402,7 @@ Aggregated data will be placed in the outgoing message's metadata as a simple ke
 
 ## Related device attributes {#device-attributes}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-device-attributes-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-device-attributes-node.png)
 
 Finds related device of the message originator entity using configured [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query and enriches the outgoing message
 with the device's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/).
@@ -418,7 +418,7 @@ with the device's [attributes](/docs/user-guide/attributes/) or [latest telemetr
 > **Note:** By default set to **_Contains_**. However, you can specify your own relation type.
 * **Device profiles** - device profile filter. Only devices with specified profiles will be found.
 
-![Configuration: Device relations query example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-device-relations-query.png)
+![Configuration: Device relations query example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-device-relations-query.png)
 
 **Configuration: Related device attributes**
 
@@ -428,14 +428,14 @@ with the device's [attributes](/docs/user-guide/attributes/) or [latest telemetr
     > **Note:** Available only when the configuration has at least one latest telemetry key set.
 * **Add selected attributes to** - controls whether the mapped attributes should be added to the **_Message_** or **_Metadata_**.
 
-![Configuration: Related device attributes example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-related-device-attributes.png)
+![Configuration: Related device attributes example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-related-device-attributes.png)
 
 **Configuration: other**
 
 * **Tell failure if any of the attributes are missing** - if enabled, fails message processing if at least one selected key does not exist.
   > **Note:** Even in case of failure, outgoing message will contain telemetry keys that were successfully fetched.
 
-![Configuration: other example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-other.png)
+![Configuration: other example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config-other.png)
 
 Attributes are added into outgoing message with scope prefix:
 
@@ -463,13 +463,13 @@ For this case, we will use the configuration provided earlier.
 
 We have a device "ControlUnitDevice" that manages a device "WaterPressureSensor".
 
-![ControlUnitDevice relations](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-example-device-relations.png)
+![ControlUnitDevice relations](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-example-device-relations.png)
 
 ControlUnitDevice has the following attributes and latest telemetry:
 
-![ControlUnitDevice attributes](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-example-device-attributes.png)
+![ControlUnitDevice attributes](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-example-device-attributes.png)
 
-![ControlUnitDevice latest telemetry](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-device-telemetry.png)
+![ControlUnitDevice latest telemetry](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-device-telemetry.png)
 
 The incoming message from "WaterPressureSensor" will be as follows:
 
@@ -485,7 +485,7 @@ msg: {"pressure": 75.5, "ss_pressureThreshold": "80", "temperature": "{"ts":1718
 
 ## Related entity data {#related-attributes}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-entity-data-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-entity-data-node.png)
 
 Finds entity related to the message originator using configured [relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) query
 and adds related entity attributes, latest telemetry or fields to the outgoing message.
@@ -499,7 +499,7 @@ and adds related entity attributes, latest telemetry or fields to the outgoing m
     > **Note:** Available only when **Max relation level** is greater than one.
 * **Relation filters** - query filters based on relation type and entity type. Optional. If filters are not set the relation query will search for relations with any type.
 
-![Configuration: Relations query example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
+![Configuration: Relations query example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
 
 **Configuration: Data to fetch**
 
@@ -510,7 +510,7 @@ and adds related entity attributes, latest telemetry or fields to the outgoing m
   > **Note:** All input fields support [templatization](/docs/{{docsPrefix}}user-guide/templatization/).
 * **Add mapped attributes/latest telemetry/fields to** - controls whether fetched data should be added to the **_Message_** or **_Metadata_**.
 
-![Configuration: Data to fetch example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
+![Configuration: Data to fetch example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
 
 **Output connections**
 * **Success:**
@@ -525,7 +525,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 ## Tenant attributes
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-attributes-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-attributes-node.png)
 
 Identifies the message originator's tenant and enriches the outgoing message with the tenant's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/).
 
@@ -540,7 +540,7 @@ Identifies the message originator's tenant and enriches the outgoing message wit
 
 * **Add mapped attributes/latest telemetry to** - controls whether the mapped **_Attributes/Latest telemetry_** should be added to the **_Message_** or **_Metadata_**.
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
+![Configuration example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
 
 **Output connections**
 * **Success:**
@@ -554,7 +554,7 @@ while the customer attributes node fetches them from the customer. For a usage e
 
 ## Tenant details
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-details-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-details-node.png)
 
 Enriches the outgoing message with the tenant's details.
 
@@ -563,7 +563,7 @@ Enriches the outgoing message with the tenant's details.
 * **Select details** - list of the details to be fetched from the tenant.
 * **Add selected details to** - controls whether the fetched details should be added to the **_Message_** or **_Metadata_**.
 
-![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
+![Configuration example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
 
 Selected details are added into the outgoing message with prefix: <code>tenant_</code>.
 
