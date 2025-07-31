@@ -3,6 +3,8 @@
     position: static
 body.filter-opened
   overflow: hidden
+  header
+    box-shadow: unset
   #page-with-filter-content
     .filter-block
       display: block
@@ -34,14 +36,20 @@ body.filter-opened
   .hero-content
     padding: 100px 0 50px
     background: #F4F8FE
+    @media (max-width: 960px)
+      padding: 50px 0 50px
     .hero-content-wrapper
       max-width: 1440px
-      padding: 0 20px
+      padding: 0 40px
       margin: 0 auto
+      @media (max-width: 600px)
+        padding: 0 16px
   .main-content
     max-width: 1440px
-    padding: 0 20px
+    padding: 0 40px
     margin: 0 auto
+    @media (max-width: 600px)
+      padding: 0 16px
   .search-block
     position: sticky
     top: 78px
@@ -145,6 +153,8 @@ body.filter-opened
       opacity: 0.8
   .content-block
     display: flex
+    @media (max-width: 600px)
+      justify-content: center
     .filter-block
       position: relative
       border-right: 1px solid #EBEBEB
@@ -303,7 +313,7 @@ body.filter-opened
         grid-template-columns: repeat(3, 1fr)
         gap: 16px
         @media (max-width: 600px)
-          grid-template-columns: repeat(2, 1fr)
+          grid-template-columns: repeat(1, 1fr)
         .card
           position: relative
           display: flex
