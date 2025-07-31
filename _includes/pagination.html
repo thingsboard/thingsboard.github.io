@@ -2,6 +2,7 @@
 {% assign filterSelector = page.filterSelector %}
 {% assign itemsSelector = page.itemsSelector %}
 {% assign itemsPerPage = page.itemsPerPage %}
+{% assign searchControl = page.searchControl %}
 
 <div
     class="pagination-wrapper"
@@ -9,6 +10,7 @@
     data-filter-selector="{{ filterSelector }}"
     data-items-to-paginate="{{ itemsSelector }}"
     data-items-per-page="{{ itemsPerPage }}"
+    data-search="{{ searchControl }}"
 >
     <div class="pagination-container">
         <button id="showMoreBtn" class="show-more-btn">Show More</button>
@@ -26,10 +28,11 @@
             const filterSelector = wrapper.dataset.filterSelector;
             const itemsSelector = wrapper.dataset.itemsToPaginate;
             const itemsPerPage = parseInt(wrapper.dataset.itemsPerPage, 10);
+            const searchSelector = wrapper.dataset.search;
 
             const container = document.getElementById(containerId);
             const filterControl = document.querySelectorAll(filterSelector);
-            const searchControl = document.querySelector("#searchGuideInput");
+            const searchControl = document.querySelector(searchSelector);
 
             if (!container || !filterControl) return;
 
@@ -165,6 +168,7 @@
 
             if(searchControl) {
                 searchControl.addEventListener('input', function () {
+                    console.log('123')
                     activePages = [1];
                     setTimeout(render, 100);
                 });

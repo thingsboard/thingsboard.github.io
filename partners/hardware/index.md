@@ -6,6 +6,7 @@ containerId: "card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
 itemsPerPage: "15"
+searchControl: "#searchCompanyInput"
 
 filterCollection:
   0:
