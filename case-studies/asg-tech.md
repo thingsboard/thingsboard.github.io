@@ -25,7 +25,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
     <section class="quote-with-mark fill-background">
         <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
-            <p>“We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative loT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.”</p>
+            <p>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative loT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's devel...<a target="_blank" href="/industries/industry40/?company=asgtech">read more</a></p>
             <h2>ASG Tech</h2>
         </div>
     </section>
@@ -102,7 +102,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
                 <ul>
                     <li><p>Rapidly develop and deploy end-to-end IoT solutions without extensive internal development efforts.</p></li>
                     <li><p>Seamlessly integrate custom widgets and components, ensuring user-friendly and high-performing applications.</p></li>
-                    <li><p>Achieve greater scalability with ThingsBoard’s microservices architecture, supporting millions of devices and data points</p>.</li>
+                    <li><p>Achieve greater scalability with ThingsBoard’s microservices architecture, supporting millions of devices and data points.</p></li>
                     <li><p>Ensure security and compliance through robust authentication, authorization, and data encryption mechanisms.</p></li>
                     <li><p>Optimize operations with flexible data visualization, rule-based event processing, and integration with external systems like cloud platforms and analytics tools.</p></li>
                 </ul>
@@ -122,6 +122,7 @@ description: Discover how ASG Tech leveraged ThingsBoard platform to rapidly del
                 <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">

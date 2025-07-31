@@ -1,5 +1,4 @@
-This converter is designed for binary payloads, and interprets binary data to retrieve attributes and 
-time series, using specific byte positions for data extraction.
+This converter is designed for binary payloads, and interprets binary data to retrieve attributes and time series, using specific byte positions for data extraction.
 
 | **Parameter**  | **Description**                                                                                                |
 |----------------|----------------------------------------------------------------------------------------------------------------|
@@ -18,21 +17,21 @@ time series, using specific byte positions for data extraction.
 Example:
 
 ```json
-"attributes": [
-    {
-      "key": "temperature",
-      "objectType": "analogOutput",
-      "objectId": "1",
-      "propertyId": "presentValue"
-    }
-],
 "timeseries": [
-    {
-      "key": "state",
-      "objectType": "binaryValue",
-      "objectId": "1",
-      "propertyId": "presentValue"
-    }
+  {
+    "key": "temperature",
+    "objectType": "analogInput",
+    "objectId": 2,
+    "propertyId": "presentValue"
+  }
+],
+"attributes": [
+  {
+    "key": "voltage",
+    "objectType": "analogInput",
+    "objectId": 1,
+    "propertyId": "presentValue"
+  }
 ],
 ```
 

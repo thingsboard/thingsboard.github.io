@@ -9,9 +9,14 @@ var data = {
 if (msgType === 'RPC_CALL_FROM_SERVER_TO_DEVICE') {
     if (msg.method === 'setState') {
         var targetMethod = msg.params === 'true' ? 'Start' : 'Stop';
+        var writeValue = {
+              nodeId: 'ns=' + metadata['cs_namespaceIndex'] +';s=' + metadata['deviceName'],
+              value: msg.params
+        };
+        data.writeValues.push(writeValue);
         var callMethod = {
-              objectId: 'ns=3;s=' + metadata['deviceName'],
-              methodId: 'ns=3;s=' +metadata['deviceName']+'.'+targetMethod,
+              objectId: 'ns=' + metadata['cs_namespaceIndex'] +';s=' + metadata['deviceName'],
+              methodId: 'ns=' + metadata['cs_namespaceIndex'] +';s=' + metadata['deviceName']+'.'+targetMethod,
               args: []
         };
         data.callMethods.push(callMethod);
@@ -26,6 +31,6 @@ var result = {
 
 return result;
 ```
-{: .copy-code}
+{: .copy-code.expandable-10}
 
 ![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-downlink-converter-java.png)

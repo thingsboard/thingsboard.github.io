@@ -1,5 +1,4 @@
-The “attributeUpdates” configuration allows you to set up the format of the corresponding attribute data 
-that will be sent to the BACnet device.
+The "attributeUpdates" configuration allows you to set up the format of the corresponding attribute data that will be sent to the BACnet device.
 
 | **Parameter** | **Description**                                    |
 |---------------|----------------------------------------------------|
@@ -13,12 +12,12 @@ This subsection in configuration file looks like:
 
 ```json
 "attributeUpdates": [
-    {
-      "key": "brightness",
-      "objectType": "analogOutput",
-      "objectId": "1",
-      "propertyId": "presentValue"
-    }
+  {
+    "key": "brightness",
+    "objectType": "analogOutput",
+    "objectId": 1,
+    "propertyId": "presentValue"
+  }
 ],
 ```
 

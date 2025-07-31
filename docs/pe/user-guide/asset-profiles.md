@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - ikulikov
-title: Asset Profiles
-description: IoT asset profiles
+title: Asset profiles
+description: IoT Asset profiles
 redirect_from: "/docs/pe/user-guide/ui/asset-profiles"
 
 ---

@@ -12,14 +12,14 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
             <div class="text">
                 <p class="category">SMART INFRASTRUCTURE</p>
                 <h1>Digitalizing cultural heritage: how TPS connects museums with ThingsBoard</h1>
-                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/tps.webp')">
-                    <img src="https://img.thingsboard.io/case-studies/tps.svg" title="TPS" alt="TPS logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('/images/case-studies/tps.webp')">
+                    <img src="/images/case-studies/tps.svg" title="TPS" alt="TPS logo" width="126" height="56">
                 </div>
                 <p>TOURISTIC PLATFORM SYSTEMS SRL (TPS) is an Italian company specializing in the development of integrated and innovative digital systems for cultural heritage. TPS creates cutting-edge platforms and services that focus on enhancing the experience of visitors to museums, exhibitions, and historic sites. By combining cultural value with modern technology, TPS builds advanced tools that connect heritage institutions with their audiences.</p>
                 <p>The company’s mission is to make cultural sites more accessible, interactive, and sustainable using IoT, big data, and smart analytics. TPS helps administrators and curators gain valuable insights while delivering a richer, more personalized experience for visitors.</p>
             </div>
-            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/tps.webp')">
-                <img src="https://img.thingsboard.io/case-studies/tps.svg" title="TPS" alt="TPS logo" width="126" height="56">
+            <div class="image large" style="background-image: url('/images/case-studies/tps.webp')">
+                <img src="/images/case-studies/tps.svg" title="TPS" alt="TPS logo" width="126" height="56">
             </div>
         </div>
     </section>
@@ -44,9 +44,9 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
         </div>
     </section>
     <section class="quote-with-mark fill-background">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
-            <p>"Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites."</p>
+            <p>We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be deliver...<a target="_blank" href="/industries/smart-buildings/?company=tps">read more</a></p>
             <h2>Antonio Chianese, CTO at TPS</h2>
         </div>
     </section>
@@ -107,38 +107,31 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <h3>Centralized sensor data collection</h3>
                 <p>TPS used ThingsBoard to integrate all museum sensors into one scalable IoT platform. Thanks to support for multiple protocols (MQTT, REST API), compatibility with existing hardware was seamless.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/tps-1.webp" title="Centralized sensor data collection" alt="Centralized sensor data collection" width="450" height="240">
+            <img src="/images/case-studies/tps-1.webp" title="Centralized sensor data collection" alt="Centralized sensor data collection" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Customizable dashboards</h3>
                 <p>ThingsBoard’s powerful dashboard engine enabled TPS to build user-specific interfaces for museum administrators, technical teams, and researchers — improving data clarity and accessibility.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/tps-2.webp" title="Customizable dashboards" alt="Customizable dashboards" width="450" height="240">
+            <img src="/images/case-studies/tps-2.webp" title="Customizable dashboards" alt="Customizable dashboards" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Real-time analytics and alerts</h3>
                 <p>Using ThingsBoard’s Rule Engine, TPS configured real-time alerts, event triggers, and processing logic. This ensured museum staff could react instantly to changes in environmental conditions like temperature and humidity.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/tps-3.webp" title="Alert and notification systems" alt="Real-time analytics and alerts" width="450" height="240">
+            <img src="/images/case-studies/tps-3.webp" title="Alert and notification systems" alt="Real-time analytics and alerts" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Scalable deployment across multiple sites</h3>
                 <p>With ThingsBoard, TPS scaled their solution from a single museum to an entire network of cultural sites — maintaining performance and visibility across the entire infrastructure.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/tps-4.webp" title="Scalable deployment across multiple sites" alt="Scalable deployment across multiple sites" width="450" height="240">
+            <img src="/images/case-studies/tps-4.webp" title="Scalable deployment across multiple sites" alt="Scalable deployment across multiple sites" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
-    <section class="quote-with-mark">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>"The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage."</p>
-            <h2>Antonio Chianese, CTO at TPS</h2>
-        </div>
-    </section>
     <section class="tb-help">
         <h2>How ThingsBoard helps smart infrastructure improve operations with IoT?</h2>
         <div class="block">
@@ -147,14 +140,14 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <p>Whether managing utility systems, building equipment, security devices, or exhibit environments, ThingsBoard consolidates all data into unified dashboards for real-time visibility and management.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Integrate devices and sensors for HVAC, lighting, environmental monitoring, and security.</li>
-                    <li>Display all operational data in a single, customizable dashboard.</li>
-                    <li>Enable real-time alerts, analytics, and status monitoring across assets and locations.</li>
+                    <li><p>Integrate devices and sensors for HVAC, lighting, environmental monitoring, and security.</p></li>
+                    <li><p>Display all operational data in a single, customizable dashboard.</p></li>
+                    <li><p>Enable real-time alerts, analytics, and status monitoring across assets and locations.</p></li>
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -163,14 +156,14 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <p>From HVAC systems in galleries to lift mechanisms or pumps in utility tunnels, infrastructure components require timely servicing. ThingsBoard enables data-based maintenance planning to prevent downtime.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Monitor equipment status in real time via sensors.</li>
-                    <li>Detect abnormal behavior (temperature rise, increased vibration) before failures.</li>
-                    <li>Automate alerts and schedule preventive service actions.</li>
+                    <li><p>Monitor equipment status in real time via sensors.</p></li>
+                    <li><p>Detect abnormal behavior (temperature rise, increased vibration) before failures.</p></li>
+                    <li><p>Automate alerts and schedule preventive service actions.</p></li>
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -179,14 +172,14 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <p>For both public and private infrastructure, energy and utility costs are significant. ThingsBoard helps track, analyze, and optimize lighting, climate control, and electricity usage across facilities.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Connect smart meters, lighting controllers, HVAC systems.</li>
-                    <li>Analyze energy use by building, time, or function.</li>
-                    <li>Automate energy-saving scenarios based on occupancy or schedule.</li>
+                    <li><p>Connect smart meters, lighting controllers, HVAC systems.</p></li>
+                    <li><p>Analyze energy use by building, time, or function.</p></li>
+                    <li><p>Automate energy-saving scenarios based on occupancy or schedule.</p></li>
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
+                <img src="/images/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
+                <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -195,14 +188,14 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <p>In exhibition spaces, lecture halls, offices, and public areas, maintaining a safe and pleasant indoor climate is essential. ThingsBoard ensures air quality, temperature, and humidity are continuously tracked and optimized.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Collect real-time data on CO₂, PM2.5, humidity, and temperature.</li>
-                    <li>Trigger alerts and automation when values exceed safe levels.</li>
-                    <li>Enable comfort optimization by zone, floor, or time of day.</li>
+                    <li><p>Collect real-time data on CO₂, PM2.5, humidity, and temperature.</p></li>
+                    <li><p>Trigger alerts and automation when values exceed safe levels.</p></li>
+                    <li><p>Enable comfort optimization by zone, floor, or time of day.</p></li>
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/indoor-environment.webp" title="Thingsboard indoor environment widget" alt="Thingsboard indoor environment widget" width="582" height="582">
-                <img src="https://img.thingsboard.io/case-studies/indoor-range-chart.webp" title="Thingsboard indoor range chart widget" alt="Thingsboard indoor range chart widget" width="582" height="582">
+                <img src="/images/case-studies/indoor-environment.webp" title="Thingsboard indoor environment widget" alt="Thingsboard indoor environment widget" width="582" height="582">
+                <img src="/images/case-studies/indoor-range-chart.webp" title="Thingsboard indoor range chart widget" alt="Thingsboard indoor range chart widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -211,14 +204,14 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <p>Infrastructure often requires controlled access and rapid response to incidents. ThingsBoard allows real-time security monitoring with custom alerts, camera feeds, and automation.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Connect access control systems, cameras, and motion sensors.</li>
-                    <li>Detect unauthorized entry or abnormal activity.</li>
-                    <li>Automate alerts, logs, or on-site reactions.</li>
+                    <li><p>Connect access control systems, cameras, and motion sensors.</p></li>
+                    <li><p>Detect unauthorized entry or abnormal activity.</p></li>
+                    <li><p>Automate alerts, logs, or on-site reactions.</p></li>
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/power_button.webp" title="Thingsboard power button widget" alt="Thingsboard power button widget" width="776" height="776">
+                <img src="/images/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
+                <img src="/images/case-studies/power_button.webp" title="Thingsboard power button widget" alt="Thingsboard power button widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -227,23 +220,24 @@ description: Discover how TPS uses ThingsBoard to connect sensors across museums
                 <p>Reduce human error and operational load by automating repetitive or time-sensitive processes—like lighting schedules, ventilation logic, or system reactions to sensor data.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Build logic using a visual rule editor.</li>
-                    <li>Define automated responses to triggers (e.g., open vent if CO₂ > 1000 ppm).</li>
-                    <li>Allow manual override via dashboards when needed.</li>
+                    <li><p>Build logic using a visual rule editor.</p></li>
+                    <li><p>Define automated responses to triggers (e.g., open vent if CO₂ > 1000 ppm).</p></li>
+                    <li><p>Allow manual override via dashboards when needed.</p></li>
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/scheduler-events.webp" title="Thingsboard scheduler events widget" alt="Thingsboard scheduler events widget" width="582" height="582">
+                <img src="/images/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
+                <img src="/images/case-studies/scheduler-events.webp" title="Thingsboard scheduler events widget" alt="Thingsboard scheduler events widget" width="582" height="582">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img style="width: 25%" src="https://img.thingsboard.io/case-studies/tps.svg" title="TPS" alt="TPS logo" width="126" height="56">
+                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img style="width: 25%" src="/images/case-studies/tps.svg" title="TPS" alt="TPS logo" width="126" height="56">
                 </div>
             </div>
         </div>

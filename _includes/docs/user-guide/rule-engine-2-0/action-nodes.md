@@ -177,7 +177,7 @@ Node Configuration:
 - **Alarm Details Builder** script
 - **Alarm Type** - any string that represents Alarm Type
 
-Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
+> Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
 
@@ -193,8 +193,8 @@ inside Alarm. For example you can save attribute name/value pair from Original M
 - Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 - Current Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>.
 
-**Note** that  <code>metadata.prevAlarmDetails</code>
-is a raw String field and it needs to be converted into object using this construction:
+**Note** that  <code>metadata.prevAlarmDetails</code> is a raw String field and it needs to be converted into object using this construction:
+
 {% highlight javascript %}
 var details = {};
 if (metadata.prevAlarmDetails) {
@@ -314,7 +314,7 @@ Node Configuration:
 - **Alarm Severity** - {CRITICAL \| MAJOR \| MINOR \| WARNING \| INDETERMINATE}
 - is **Propagate** - whether Alarm should be propagated to all parent related entities.
 
-Note: Since TB Version 2.3.0 the rule node has the ability to:
+> Note: Since TB Version 2.3.0 the rule node has the ability to:
 
 -  read alarm config from message:
 
@@ -322,7 +322,7 @@ Note: Since TB Version 2.3.0 the rule node has the ability to:
 
    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
 
-Note: Since TB Version 2.4.3 the rule node has the ability to:
+> Note: Since TB Version 2.4.3 the rule node has the ability to:
 
 - filter propagation to parent entities by relation types:
 
@@ -473,7 +473,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-**Note:** Since TB Version 2.3 the rule node has the ability to:
+> **Note:** Since TB Version 2.3 the rule node has the ability to:
 
 - remove current relations from the originator of the incoming message based on direction and type:
 
@@ -482,8 +482,6 @@ In other cases Message will be routed via **Success** chain.
 - change the originator of the incoming message to the selected entity and process outboud messages as messages from another entity:
 
   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
-
-<br>
 
 ## Delay node (deprecated)
 
@@ -507,6 +505,32 @@ Configuration:
 When delay period for particular incoming message will be reached it will be removed from pending queue and routed to the next nodes via **Success** chain.
 
 Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.
+
+## Delete attributes node
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-attributes.png)
+
+**Delete attributes for Message Originator.**
+
+This rule node attempts to delete attributes for the message originator entity (e.g., a device) based on the specified keys.
+
+**Behavior:**
+- If the attribute with the specified key is missing – it will be ignored.
+- If the attribute with the given key exists – it will be removed.
+- On **successful deletion**:
+  - An "Attributes Deleted" event is sent the root chain of the message originator.
+  - Send the incoming message via **Success** chain.
+- On **deletion failure**:
+  - The message is routed through the **Failure** chain.
+
+Configuration:
+
+{% if docsPrefix == null %}
+<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/action-delete-attributes-2-ce.png"></object>
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/action-delete-attributes-2-pe.png"></object>
+{% endif %}
 
 ## Delete relation node
 
@@ -543,8 +567,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-
-**Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
+> **Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
@@ -1398,7 +1421,7 @@ Administrator can configure the mapping between the Message field names and Tabl
 
 If specified message field does not exist in the **data** of the message or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
 
-**NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.
+**Note**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.
 
 {% if docsPrefix == null %}
 ## Unassign from Customer node

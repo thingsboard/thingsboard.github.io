@@ -4,16 +4,24 @@
 
 ## User overview
 
-There are three levels of roles on the ThingsBoard platform. It is possible to create a user on each level.
+In ThingsBoard, a **User** is an entity with credentials to access the platform.
 
+ThingsBoard supports a three-level role hierarchy:
 
-These roles are as follows:
+1) **System administrator**. 
+- Has full access to the entire platform instance.
+- Can create and manage Tenant Administrators.
 
-1) **System administrator**. The System administrator can create a tenant administrator user.
+2) **Tenant administrator**.
+- Has full control over a specific tenant environment.
+- Can create and manage:
+  - Customers
+  - Customer Users
+- Responsible for assigning access to dashboards, devices, assets, and other resources.
 
-2) **Tenant administrator**. The Tenant administrator can create a customer user.
-
-3) **Customer user**. The Customer user has read permissions to view dashboards and other entities assigned by the Tenant administrator. The Customer user by himself doesn’t create any customers and subcustomers.
+3) **Customer user**.
+- Has limited access to view dashboards, entities, and their data assigned by the Tenant Administrator.
+- Cannot create other customers or sub-customers.
 
 {% capture difference %}
 **Important:**

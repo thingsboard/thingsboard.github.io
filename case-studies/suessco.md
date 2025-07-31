@@ -211,6 +211,7 @@ description: Discover how SuessCo Sensors and ThingsBoard enable real-time monit
                 <img src="https://img.thingsboard.io/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">

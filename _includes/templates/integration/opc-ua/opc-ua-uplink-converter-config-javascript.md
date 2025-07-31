@@ -42,6 +42,6 @@ function decodeToJson(payload) {
 
 return result;
 ```
-{: .copy-code}
+{:.copy-code.expandable-10}
 
 ![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-uplink-converter-java.png)

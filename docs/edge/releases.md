@@ -8,12 +8,19 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v4.1.0 (July 23, 2025) {#v41}
+
+**Major** release with everything from [TB CE v4.1.0](/docs/reference/releases/#v41){: target="_blank"}:
+
+* [#13494](https://github.com/thingsboard/thingsboard/pull/13494){: target="_blank"} **Calculated Fields Support:** Added support for syncing calculated fields to Edge by [@jekka001](https://github.com/jekka001){: target="_blank"};
+* [#182](https://github.com/thingsboard/thingsboard-edge/pull/182){: target="_blank"} **Timeseries Cloud Delivery Fixes:** Ensure that timeseries events are not dropped after X delivery attempts by [@volodymyr-babak](https://github.com/volodymyr-babak){: target="_blank"};
+
 ## v4.0.1 (May 15, 2025) {#v401}
 
 **Major** release with everything (except the Calculated Fields feature) from [TB CE v4.0](/docs/reference/releases/#v40){: target="_blank"} and [TB CE v4.0.1](/docs/reference/releases/#v401){: target="_blank"}:
 
-* [#9195](https://github.com/thingsboard/thingsboard/pull/9195){: target="_blank"} Run multiple Edge nodes in a high-availability cluster by @AndriiLandiak;
-* [#131](https://github.com/thingsboard/thingsboard-edge/pull/131){: target="_blank"} Create and edit Rule Chains directly on Edge by @AndriiLandiak;
+* [#9195](https://github.com/thingsboard/thingsboard/pull/9195){: target="_blank"} Run multiple Edge nodes in a high-availability cluster by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#131](https://github.com/thingsboard/thingsboard-edge/pull/131){: target="_blank"} Create and edit Rule Chains directly on Edge by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
 
 ## v3.9.1 (Mar 14, 2025) {#v391}
 
@@ -23,26 +30,26 @@ description: ThingsBoard Edge Release Notes
 
 **Major** release with everything from [TB CE v3.9](/docs/reference/releases/#v39){: target="_blank"}:
 
-* [#125](https://github.com/thingsboard/thingsboard-edge/pull/125){: target="_blank"} Use of Kafka to store and process Cloud Events to improve processing throughput by @jekka001;
-* [#136](https://github.com/thingsboard/thingsboard-edge/pull/136){: target="_blank"} Access Edge Attributes on edge instance itself @jekka001;
-* Cassandra support as Timeseries storage by @AndriiLandiak;
+* [#125](https://github.com/thingsboard/thingsboard-edge/pull/125){: target="_blank"} Use of Kafka to store and process Cloud Events to improve processing throughput by [@jekka001](https://github.com/jekka001){: target="_blank"};
+* [#136](https://github.com/thingsboard/thingsboard-edge/pull/136){: target="_blank"} Access Edge Attributes on edge instance itself [@jekka001](https://github.com/jekka001){: target="_blank"};
+* Cassandra support as Timeseries storage by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
 
 ## v3.8.0 (Oct 15, 2024) {#v38}
 
 **Major** release with everything from [TB CE v3.8](/docs/reference/releases/#v38){: target="_blank"}:
 
-* [#11521](https://github.com/thingsboard/thingsboard/pull/11521){: target="_blank"} Queue to handle edge notification messages by @AndriiLandiak;
-* [#11139](https://github.com/thingsboard/thingsboard/pull/11139){: target="_blank"} Proxy for grpc client by @AndriiLandiak;
-* [#11494](https://github.com/thingsboard/thingsboard/pull/11494){: target="_blank"} Performance improvement via caching related edges for entity by @AndriiLandiak;
-* [#120](https://github.com/thingsboard/thingsboard-edge/pull/120){: target="_blank"} Introduce Timeseries Cloud events table to slowly process timeseries updates by @AndriiLandiak;
+* [#11521](https://github.com/thingsboard/thingsboard/pull/11521){: target="_blank"} Queue to handle edge notification messages by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#11139](https://github.com/thingsboard/thingsboard/pull/11139){: target="_blank"} Proxy for grpc client by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#11494](https://github.com/thingsboard/thingsboard/pull/11494){: target="_blank"} Performance improvement via caching related edges for entity by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#120](https://github.com/thingsboard/thingsboard-edge/pull/120){: target="_blank"} Introduce Timeseries Cloud events table to slowly process timeseries updates by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
 
 ## v3.7.0 (Jun 18, 2024) {#v37}
 
 **Major** release with everything from [TB CE v3.7](/docs/reference/releases/#v37){: target="_blank"}:
 
-* [#10548](https://github.com/thingsboard/thingsboard/pull/10548){: target="_blank"} Add support for notification center by @AndriiLandiak;
-* [#10239](https://github.com/thingsboard/thingsboard/pull/10239){: target="_blank"} Sync up OAuth2 configuration by @AndriiLandiak;
-* [#10471](https://github.com/thingsboard/thingsboard/pull/10471){: target="_blank"} YAML configuration for telemetry message size limit with Edge Notification by @AndriiLandiak;
+* [#10548](https://github.com/thingsboard/thingsboard/pull/10548){: target="_blank"} Add support for notification center by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#10239](https://github.com/thingsboard/thingsboard/pull/10239){: target="_blank"} Sync up OAuth2 configuration by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#10471](https://github.com/thingsboard/thingsboard/pull/10471){: target="_blank"} YAML configuration for telemetry message size limit with Edge Notification by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
 
 ## v3.6.4 (Apr 11, 2024) {#v364}
 
@@ -52,33 +59,33 @@ description: ThingsBoard Edge Release Notes
 
 **Minor** release with everything from [TB CE v3.6.3](/docs/reference/releases/#v363){: target="_blank"}:
 
-* [#9968](https://github.com/thingsboard/thingsboard/pull/9968){: target="_blank"} Alarm comment support by @AndriiLandiak;
-* [#10021](https://github.com/thingsboard/thingsboard/pull/10021){: target="_blank"} Notification rules for connection status and errors. Rate limits for Edge events by @AndriiLandiak;
+* [#9968](https://github.com/thingsboard/thingsboard/pull/9968){: target="_blank"} Alarm comment support by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#10021](https://github.com/thingsboard/thingsboard/pull/10021){: target="_blank"} Notification rules for connection status and errors. Rate limits for Edge events by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
 
 ## v3.6.2 (Dec 28, 2023) {#v362}
 
 **Minor** release with everything from [TB CE v3.6.2](/docs/reference/releases/#v362){: target="_blank"}:
 
-* [#9688](https://github.com/thingsboard/thingsboard/pull/9688){: target="_blank"} Edge upgrade instructions in TB Server by @AndriiLandiak and @deaflynx;
-* [#9617](https://github.com/thingsboard/thingsboard/pull/9617){: target="_blank"} Edge - JSON converter for proto by @AndriiLandiak;
-* [#9712](https://github.com/thingsboard/thingsboard/pull/9712){: target="_blank"} Edge Requests Service - fetch only first level of relation from cloud by @volodymyr-babak; 
+* [#9688](https://github.com/thingsboard/thingsboard/pull/9688){: target="_blank"} Edge upgrade instructions in TB Server by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"} and [@deaflynx](https://github.com/deaflynx){: target="_blank"};
+* [#9617](https://github.com/thingsboard/thingsboard/pull/9617){: target="_blank"} Edge - JSON converter for proto by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#9712](https://github.com/thingsboard/thingsboard/pull/9712){: target="_blank"} Edge Requests Service - fetch only first level of relation from cloud by [@volodymyr-babak](https://github.com/volodymyr-babak){: target="_blank"}; 
 
 ## v3.6.1 (Nov 14, 2023) {#v361}
 
 **Minor** release with everything from [TB CE v3.6.1](/docs/reference/releases/#v361){: target="_blank"} with the following improvements and bug fixes:
 
-* [#9226](https://github.com/thingsboard/thingsboard/pull/9226){: target="_blank"} TB Resource functionality support for Edge by @AndriiLandiak;
-* [#9515](https://github.com/thingsboard/thingsboard/pull/9515){: target="_blank"} Increased default value of EDGES_SLEEP_BETWEEN_BATCHES to handle 2G/3G connections by @volodymyr-babak;
+* [#9226](https://github.com/thingsboard/thingsboard/pull/9226){: target="_blank"} TB Resource functionality support for Edge by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#9515](https://github.com/thingsboard/thingsboard/pull/9515){: target="_blank"} Increased default value of EDGES_SLEEP_BETWEEN_BATCHES to handle 2G/3G connections by [@volodymyr-babak](https://github.com/volodymyr-babak){: target="_blank"};
 
 ## v3.6.0 (Sep 22, 2023) {#v36}
 
 **Major** release with everything from [TB CE v3.6](/docs/reference/releases/#v36){: target="_blank"} with the following improvements and bug fixes:
 
-* [#9087](https://github.com/thingsboard/thingsboard/pull/9087){: target="_blank"} Add possibility to create Assets, Dashboards, EntityViews, AssetProfile, DeviceProfile on edge by @AndriiLandiak;
-* [#9062](https://github.com/thingsboard/thingsboard/pull/9062){: target="_blank"} Push tenant and tenant profile entities to the edge by @AndriiLandiak;
-* [#9052](https://github.com/thingsboard/thingsboard/pull/9052){: target="_blank"} Introduce Event Pub/Sub Model for Detecting Changes in Entities by @AndriiLandiak;
-* [#8830](https://github.com/thingsboard/thingsboard/pull/8830){: target="_blank"} Edge event table - added sequential ID column to handle properly heavy load and cluster cases by @volodymyr-babak;
-* [#9245](https://github.com/thingsboard/thingsboard/pull/9245){: target="_blank"} Edge instructions for ubuntu, centos by @deaflynx and @AndriiLandiak;
+* [#9087](https://github.com/thingsboard/thingsboard/pull/9087){: target="_blank"} Add possibility to create Assets, Dashboards, EntityViews, AssetProfile, DeviceProfile on edge by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#9062](https://github.com/thingsboard/thingsboard/pull/9062){: target="_blank"} Push tenant and tenant profile entities to the edge by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#9052](https://github.com/thingsboard/thingsboard/pull/9052){: target="_blank"} Introduce Event Pub/Sub Model for Detecting Changes in Entities by [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
+* [#8830](https://github.com/thingsboard/thingsboard/pull/8830){: target="_blank"} Edge event table - added sequential ID column to handle properly heavy load and cluster cases by [@volodymyr-babak](https://github.com/volodymyr-babak){: target="_blank"};
+* [#9245](https://github.com/thingsboard/thingsboard/pull/9245){: target="_blank"} Edge instructions for ubuntu, centos by [@deaflynx](https://github.com/deaflynx){: target="_blank"} and [@AndriiLandiak](https://github.com/AndriiLandiak){: target="_blank"};
 
 ## v3.5.1.1 (Jul 4, 2023) {#v3511}
 

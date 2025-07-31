@@ -32,14 +32,14 @@ This configuration section contains general connector settings, such as:
 - **Name** - connector name used for logs and saving to persistent devices;
 - Logs configuration:
   - **Enable remote logging** - enables remote logging for the connector;
-  - **Logging level** - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
+  - **Logging level** - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE, TRACE;
 - **Send data only on change** - sends data only if it has changed since the last check, otherwise – data will be sent after every check;
 - **Report strategy** - strategy for sending data to ThingsBoard:
   - **Report period** - period for sending data to ThingsBoard in milliseconds;
   - **Type** - type of the report strategy:
     - **On report period** - sends data to ThingsBoard after the report period;
     - **On value change** - sends data to ThingsBoard when the value changes;
-    - **On value change and report period** - sends data to ThingsBoard when the value changes or after the report period;
+    - **On value change or report period** - sends data to ThingsBoard when the value changes or after the report period;
     - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
 {% capture difference %}

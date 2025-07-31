@@ -12,13 +12,13 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
             <div class="text">
                 <p class="category">FACILITY MANAGEMENT</p>
                 <h1>Oneserve builds agile FSM platform using ThingsBoard IoT</h1>
-                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/oneserve.webp')">
-                    <img src="https://img.thingsboard.io/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('/images/case-studies/oneserve.webp')">
+                    <img src="/images/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo" width="126" height="56">
                 </div>
                 <p>Oneserve is a UK-based Field Service Management (FSM) platform delivering end-to-end digital solutions for asset maintenance and service delivery. Their technology powers thousands of engineers and service teams across housing, utilities, and manufacturing sectors. By integrating scheduling, workforce tracking, compliance, and reporting into one streamlined system, Oneserve helps organizations improve first-time fix rates, reduce operational costs, and drive customer satisfaction through smart automation. </p>
             </div>
-            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/oneserve.webp')">
-                <img style="width: 80%" src="https://img.thingsboard.io/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo" width="126" height="56">
+            <div class="image large" style="background-image: url('/images/case-studies/oneserve.webp')">
+                <img style="width: 80%" src="/images/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo" width="126" height="56">
             </div>
         </div>
     </section>
@@ -43,10 +43,10 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
         </div>
     </section>
     <section class="authored-quote">
-        <img src="https://img.thingsboard.io/case-studies/mark-hunt.webp" title="Oneserve CTO Mark Hunt" alt="Mark Hunt" width="658" height="424">
+        <img src="/images/case-studies/mark-hunt.webp" title="Oneserve CTO Mark Hunt" alt="Mark Hunt" width="658" height="424">
         <div class="text">
             <h2>Oneserve</h2>
-            <p class="quote">“We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior.”</p>
+            <p class="quote">“We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our deli... <a target="_blank" href="/industries/smart-energy/?company=oneserve">read more</a></p>
             <p class="author">Mark Hunt</p>
             <p class="title">CTO</p>
         </div>
@@ -100,49 +100,42 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
             </div>
         </div>
     </section>
-    <section class="tb-power">
+    <section class="tb-power mb">
         <h2>How ThingsBoard powers Oneserve?</h2>
         <div class="block">
             <div class="text">
                 <h3>Scalable growth made simple</h3>
                 <p>ThingsBoard played an important role in helping Oneserve transform and improve its field service management solution. As Oneserve continued to grow, they needed a platform that could keep up with their increasing demands without making their systems more complicated or expensive. ThingsBoard provided exactly what they needed — a flexible, powerful, and easy-to-use IoT platform that fit their business strategy perfectly.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/oneserve-1.webp" title="Scalable growth made simple" alt="Scalable growth made simple" width="450" height="240">
+            <img src="/images/case-studies/oneserve-1.webp" title="Scalable growth made simple" alt="Scalable growth made simple" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Fast and flexible IoT integration</h3>
                 <p>With ThingsBoard, Oneserve was able to quickly and easily add IoT capabilities to their services. The platform’s flexibility allowed them to adapt it to different projects and customer needs without needing complex technical changes. This helped them deliver solutions faster and with less effort.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/oneserve-3.webp" title="Fast and flexible IoT integration" alt="Fast and flexible IoT integration" width="450" height="240">
+            <img src="/images/case-studies/oneserve-3.webp" title="Fast and flexible IoT integration" alt="Fast and flexible IoT integration" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Smart data, smarter decisions</h3>
                 <p>Another big advantage was ThingsBoard’s built-in tools for integration and visualisation. Oneserve could connect ThingsBoard smoothly with their existing systems, making it easier to collect, manage, and understand data from their field operations. The visualisation features allowed them to create useful dashboards and reports, helping their teams make better and faster decisions.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/oneserve-2.webp" title="Smart data, smarter decisions" alt="Smart data, smarter decisions" width="450" height="240">
+            <img src="/images/case-studies/oneserve-2.webp" title="Smart data, smarter decisions" alt="Smart data, smarter decisions" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Support that drives success</h3>
                 <p>Support from the ThingsBoard team was also a key benefit. Whenever Oneserve had questions or needed help, the ThingsBoard team was available, responsive, and ready to offer solutions. This strong partnership gave Oneserve confidence that the platform would continue to grow and improve along with their business needs.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/oneserve-4.webp" title="Support that drives success" alt="Support that drives success" width="450" height="240">
+            <img src="/images/case-studies/oneserve-4.webp" title="Support that drives success" alt="Support that drives success" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>A future-proof IoT foundation</h3>
                 <p>Thanks to ThingsBoard, Oneserve now has a strong and reliable IoT foundation. They are able to innovate faster, provide better services to their clients, and stay competitive in important sectors like housing management, utilities, and manufacturing.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/oneserve-5.webp" title="A future-proof IoT foundation" alt="A future-proof IoT foundation" width="450" height="240">
-        </div>
-    </section>
-    <section class="quote-with-mark">
-        <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box. The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. <br> We now have a robust industrial platform that unlocks our IoT service goals.”</p>
-            <h2>Oneserve, CTO</h2>
+            <img src="/images/case-studies/oneserve-5.webp" title="A future-proof IoT foundation" alt="A future-proof IoT foundation" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -159,8 +152,8 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/supermarkets_2.webp" title="Thingsboard supermarkets widget" alt="Thingsboard supermarkets widget" width="776" height="776">
+                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="/images/case-studies/supermarkets_2.webp" title="Thingsboard supermarkets widget" alt="Thingsboard supermarkets widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -174,8 +167,8 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/alarms-table-3.webp" title="Thingsboard alarms widget" alt="Thingsboard alarms widget" width="776" height="776">
+                <img src="/images/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
+                <img src="/images/case-studies/alarms-table-3.webp" title="Thingsboard alarms widget" alt="Thingsboard alarms widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -189,8 +182,8 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget" width="776" height="776">
+                <img src="/images/case-studies/donut-widget.webp" title="Thingsboard donut chart widget" alt="Thingsboard donut chart widget" width="776" height="776">
+                <img src="/images/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -204,8 +197,8 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
+                <img src="/images/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
+                <img src="/images/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -219,8 +212,8 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/power_button.webp" title="Thingsboard power button widget" alt="Thingsboard power button widget" width="776" height="776">
+                <img src="/images/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
+                <img src="/images/case-studies/power_button.webp" title="Thingsboard power button widget" alt="Thingsboard power button widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -234,17 +227,18 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/alarm_widgets.webp" title="Thingsboard alarm widgets" alt="Thingsboard alarm widgets" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget" width="776" height="776">
+                <img src="/images/case-studies/alarm_widgets.webp" title="Thingsboard alarm widgets" alt="Thingsboard alarm widgets" width="776" height="776">
+                <img src="/images/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="https://img.thingsboard.io/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo" width="126" height="56">
+                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="/images/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo" width="126" height="56">
                 </div>
             </div>
         </div>
