@@ -8,6 +8,13 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v4.1.0 (July 28, 2025) {#v41}
+
+**Major** release with everything from [TB Edge v4.1.0](/docs/edge/releases/#v41){: target="_blank"}, and [TB PE v4.1.0](/docs/pe/reference/releases/#v41){: target="_blank"}.
+
+**Bug fixes**
+* Reset the WhiteLabeling on Edge in case of a reset on the Cloud.
+
 ## v4.0.1 (May 15, 2025) {#v401}
 
 **Major** release with everything (except the Calculated Fields feature) from [TB Edge v4.0.1](/docs/edge/releases/#v401){: target="_blank"}, [TB PE v4.0](/docs/pe/reference/releases/#v40){: target="_blank"}, and [TB PE v4.0.1](/docs/pe/reference/releases/#v401){: target="_blank"}.
