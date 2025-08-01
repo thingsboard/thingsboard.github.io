@@ -1,11 +1,11 @@
 {% assign feature = "PE Analytics Nodes" %}{% include templates/pe-feature-banner.md %}
 
-Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of streamed or persisted data.
+Analytics nodes that are specific to ThingsBoard PE. Used for analysis of streamed or persisted data.
 
 * TOC
 {:toc}
 
-## Aggregate Latest Node
+## Aggregate latest node
 
 <table  style="width:250px;">
    <thead>
@@ -77,7 +77,7 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 <br>
 
-## Aggregate Stream Node
+## Aggregate stream node
 
 <table  style="width:250px;">
    <thead>
@@ -118,7 +118,7 @@ specifying "Buildings" entity group.
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-## Alarms Count Node
+## Alarms count node
 
 <table  style="width:250px;">
    <thead>
@@ -165,7 +165,7 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 <br>
 
-## Alarms Count Node (deprecated)
+## Alarms count node (deprecated)
 
 <table  style="width:250px;">
    <thead>
@@ -218,5 +218,3 @@ with failure reason and entity as originator. Failure message is forwarded via *
 **Since TB Version 3.3.3** you can select the queue name:
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
-
-<br>

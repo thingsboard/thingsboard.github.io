@@ -27,7 +27,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         <img src="/images/case-studies/christoph-beck.webp" title="mdeg Founder and CEO Christoph Beck" alt="Christoph Beck" width="658" height="424">
         <div class="text">
             <h2>mdeg GmbH</h2>
-            <p class="quote">“Being dedicated for Medical Devices only, we have to meet the highest standards reliability, independence, security and scalability. With ThingsBoard we regardingfound the right solution and partner.”</p>
+            <p class="quote">“One of our core products is the mdeg Medical Device Cloud, a connectivity solution for medical devices to record, track, and monitor. Being dedicated for Medical Devices only, we have to meet the highest standards regarding reliability, independence, security and scalability. We also need to stay within judicial area with our infra...<a target="_blank" href="/industries/smart-buildings/?company=mdeg">read more</a></p>
             <p class="author">Christoph Beck</p>
             <p class="title">Founder and CEO</p>
         </div>
@@ -89,7 +89,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
             </div>
         </div>
     </section>
-    <section class="tb-power">
+    <section class="tb-power mb">
         <h2>How ThingsBoard powers mdeg GmbH?</h2>
         <div class="block">
             <div class="text">
@@ -113,13 +113,6 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
             <img src="/images/case-studies/mdeg-3.webp" title="Industry-grade compliance" alt="Industry-grade compliance" width="450" height="240">
         </div>
     </section>
-    <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“To meet the highest standards in medical IoT — from reliability to compliance — we needed the right partner. ThingsBoard proved to be exactly that.”</p>
-            <h2>mdeg GmbH, Founder and CEO</h2>
-        </div>
-    </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart IoT solutions improve operations with IoT?</h2>
@@ -129,9 +122,9 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
                 <p>ThingsBoard simplifies the integration of millions of devices and sensors, regardless of vendor or protocol.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Supports MQTT, HTTP, CoAP, LwM2M, and OPC-UA for seamless connectivity.</li>
-                    <li>Built-in device provisioning, telemetry collection, and lifecycle management.</li>
-                    <li>Scales from small proof-of-concepts to nationwide IoT deployments.</li>
+                    <li><p>Supports MQTT, HTTP, CoAP, LwM2M, and OPC-UA for seamless connectivity.</p></li>
+                    <li><p>Built-in device provisioning, telemetry collection, and lifecycle management.</p></li>
+                    <li><p>Scales from small proof-of-concepts to nationwide IoT deployments.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -145,9 +138,9 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
                 <p>A good IoT solution isn't complete without real-time insights and actionable data. ThingsBoard offers powerful dashboarding tools tailored to specific use cases.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Drag-and-drop widgets for charts, gauges, maps, tables, and SCADA elements.</li>
-                    <li>Role-based views for operators, analysts, or customers.</li>
-                    <li>Interactive dashboards with real-time updates and control elements.</li>
+                    <li><p>Drag-and-drop widgets for charts, gauges, maps, tables, and SCADA elements.</p></li>
+                    <li><p>Role-based views for operators, analysts, or customers.</p></li>
+                    <li><p>Interactive dashboards with real-time updates and control elements.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -161,9 +154,9 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
                 <p>ThingsBoard's Rule Engine enables real-time decision-making and system automation without writing complex backend code.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Define logic to process incoming telemetry, trigger alerts, store data, or control devices.</li>
-                    <li>Chain multiple actions (send email → log alert → execute RPC).</li>
-                    <li>Integrate with external systems via REST API, MQTT, or cloud connectors.</li>
+                    <li><p>Define logic to process incoming telemetry, trigger alerts, store data, or control devices.</p></li>
+                    <li><p>Chain multiple actions (send email → log alert → execute RPC).</p></li>
+                    <li><p>Integrate with external systems via REST API, MQTT, or cloud connectors.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -177,9 +170,9 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
                 <p>ThingsBoard's Rule Engine enables real-time decision-making and system automation without writing complex backend code.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li>Define logic to process incoming telemetry, trigger alerts, store data, or control devices.</li>
-                    <li>Chain multiple actions (send email → log alert → execute RPC).</li>
-                    <li>Integrate with external systems via REST API, MQTT, or cloud connectors.</li>
+                    <li><p>Define logic to process incoming telemetry, trigger alerts, store data, or control devices.</p></li>
+                    <li><p>Chain multiple actions (send email → log alert → execute RPC).</p></li>
+                    <li><p>Integrate with external systems via REST API, MQTT, or cloud connectors.</p></li>
                 </ul>
             </div>
             <div class="image-container">
@@ -187,14 +180,7 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
                 <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
             </div>
         </div>
-        <div class="services-banner">
-            <div class="services-content">
-                <h3>Want to achieve similarly impactful results?</h3>
-                <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
-                <a id="CaseStudyToServices" class="button gtm_button" href="/services/development-services/">Explore our service</a>
-            </div>
-            <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
-        </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

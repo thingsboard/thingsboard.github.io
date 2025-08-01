@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/tb-edge-4.0.1pe.deb
+wget https://dist.thingsboard.io/tb-edge-4.1pe.deb

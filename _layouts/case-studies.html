@@ -18,6 +18,13 @@
 
 <script async type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('category') && params.get('category')) {
+            setTimeout(() => {
+                document.getElementById(params.get('category').replaceAll('-', ' ')).click()
+            }, 600);
+        }
+
         const imagesAnimations = document.querySelectorAll(".tb-help img");
         const imagesObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {
@@ -52,8 +59,8 @@
 
         const paginationContainer = document.querySelector('.pagination-container');
         const showMoreBtn = document.getElementById('showMoreBtn');
-        const paginationControls = document.getElementById('pagination-controls'); // The <ul>
-        const paginationStatus = document.getElementById('paginationStatus');     // The <div> for mobile text
+        const paginationControls = document.getElementById('pagination-controls');
+        const paginationStatus = document.getElementById('paginationStatus');
 
         const itemsPerPage = 9;
         let activePages = [1];

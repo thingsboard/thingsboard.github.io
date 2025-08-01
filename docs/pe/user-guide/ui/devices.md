@@ -8,24 +8,24 @@ description: ThingsBoard IoT Device management
 add-device:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
-        title: 'Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;'
+        title: 'Login to your ThingsBoard instance. Navigate to "<b>Entities</b>" &#8702; "<b>Devices</b>".'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
-        title: 'By default, you navigate to the device group "All". Click on the "+" icon in the top right corner of the table and then select "Add new device";'
+        title: 'By default, you will see the "<b>All</b>" device group. Click the "<b>+</b>" icon in the upper-right corner and select "<b>Add new device</b>" from drop-down menu.'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
-        title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
+        title: 'In the device creation form, fill in the required fields: <b>Name</b> – a unique name for the device; <b>Device profile</b> – by default, the profile is set to "<b>default</b>", but you can choose a different profile if needed. Click "<b>Add</b>".'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
-        title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
+        title: 'A window will immediately open where you can check the device&#39;s connection to ThingsBoard platform. This step is optional. For now, let&#39;s close this window and return to the connection check in more detail later.'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.'
+        title: 'Device successfully created and is now available in the list.'
 
 add-device-notification:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-6-pe.png
-        title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
+        title: 'You&#39;ll also receive a notification (bell icon) indicating the device was added.'
 
 add-device-group-pe:
     0:
@@ -41,15 +41,15 @@ add-device-group-pe:
 device-details:
     0:
         image: /images/user-guide/ui/devices/pe/device-details-1-pe.png
-        title: 'Clicking the device row to open its details, then click the "pencil" icon in the upper right corner of the dialog;'
+        title: 'In the devices list, locate and click on the desired asset, then click the "<b>pencil</b>" (✏️ <b>Edit</b>) icon on the right to open the edit form.'
     1:
         image: /images/user-guide/ui/devices/pe/device-details-2-pe.png
-        title: 'If necessary, change the device name and its profile. Also, you can input label and description, or check the "Is gateway" box. After editing, click the orange check mark to save all applied changes.'
+        title: 'Make the necessary changes and click the "<b>Apply changes</b>" button to save them.'
 
 device-delete-1:
     0:
         image: /images/user-guide/ui/devices/pe/device-delete-1-pe.png
-        title: 'Click on the “trash can” icon can opposite the device&#39;s name you want to delete.'
+        title: 'Click on the "<b>trash can</b>" icon can opposite the device&#39;s name you want to delete.'
     1:
         image: /images/user-guide/ui/devices/pe/device-delete-2-pe.png
         title: 'Confirm deleting the device in the dialog box.'
@@ -57,7 +57,7 @@ device-delete-1:
 device-delete-2:
     0:
         image: /images/user-guide/ui/devices/pe/device-delete-3-pe.png
-        title: 'Click on the device that you want to delete. In the device details window, click the "Delete device" button;'
+        title: 'Click on the device that you want to delete. In the device details window, click the "<b>Delete device</b>" button;'
     1:
         image: /images/user-guide/ui/devices/pe/device-delete-4-pe.png
         title: 'Confirm deleting the device in the dialog box.'
@@ -65,37 +65,37 @@ device-delete-2:
 manage-device-credentials:
     0:
         image: /images/user-guide/ui/devices/pe/manage-device-credentials-1-pe.png
-        title: 'Open "Device details" window and click the "Manage credentials" button;'
+        title: 'Open "<b>Device details</b>" window and click the "<b>Manage credentials</b>" button;'
     1:
         image: /images/user-guide/ui/devices/pe/manage-device-credentials-2-pe.png
-        title: 'Choose your preferred credential type, generate the necessary data in the fields, and click "Save".'
+        title: 'Select the desired credential type and generate or enter required fields. Click "<b>Save</b>".'
 
 manage-owner-and-groups-pe:
     0:
         image: /images/user-guide/ui/devices/pe/manage-owner-and-groups-1-pe.png
-        title: 'Open "Device details" window and click the "Manage credentials" button;'
+        title: 'Click device to open its <b>details</b> view and click the "<b>Manage owner and groups</b>" button.'
     1:
         image: /images/user-guide/ui/devices/pe/manage-owner-and-groups-2-pe.png
-        title: 'Specify the new device owner and the group you want to add the device to. Click "Update";'
+        title: 'Select the new owner of the device from the list. If needed, add the device to an existing group or create a new one. Confirm the change to update the device&#39;s ownership.'
     2:
         image: /images/user-guide/ui/devices/pe/manage-owner-and-groups-3-pe.png
-        title: 'We have changed the device owner and added the device to a device group.'
+        title: 'In the <b>"Customer name" column</b>, you can see the current owner of the device.'
 
 check-connectivity:
     0:
         image: /images/user-guide/ui/devices/pe/check-connectivity-1-pe.png
-        title: 'Open "Device details" window and click the "Check connectivity" button;'
+        title: 'Open the "<b>Device details</b>" window and click "<b>Check connectivity</b>"'
     1:
         image: /images/user-guide/ui/devices/pe/check-connectivity-2-pe.png
-        title: 'Select the messaging protocol and your operating system, then copy the command;'
+        title: 'Select the communication protocol (MQTT, HTTP, etc.) and your operating system, then copy the command.'
     2:
         image: /images/user-guide/ui/devices/pe/check-connectivity-3-pe.png
-        title: 'Send telemetry to the ThingsBoard instance on behalf of the device by executing the command via terminal. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
+        title: 'Run copied command in a <b>Terminal</b>. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
 
 copy-device-id:
     0:
         image: /images/user-guide/ui/devices/pe/copy-device-id-1-pe.png
-        title: 'Copy device id to the clipboard using “Copy Device Id” button.'
+        title: 'Open the device&#39;s detail page by clicking on the device name in the list. Click the "<b>Copy device Id</b>" button.'
 
 copy-access-token:
     0:

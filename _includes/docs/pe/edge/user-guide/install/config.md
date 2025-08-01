@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-####  Server common parameters
+##  Server common parameters
 
 <table>
 	<thead>
@@ -208,7 +208,7 @@
 </table>
 
 
-####  Cloud configuration
+##  Cloud configuration
 
 <table>
 	<thead>
@@ -346,7 +346,7 @@
 </table>
 
 
-####  Application info parameters
+##  Application info parameters
 
 <table>
 	<thead>
@@ -365,7 +365,7 @@
 </table>
 
 
-####  Zookeeper connection parameters
+##  Zookeeper connection parameters
 
 <table>
 	<thead>
@@ -422,7 +422,7 @@
 </table>
 
 
-####  Cluster parameters
+##  Cluster parameters
 
 <table>
 	<thead>
@@ -447,7 +447,7 @@
 </table>
 
 
-####  Plugins configuration parameters
+##  Plugins configuration parameters
 
 <table>
 	<thead>
@@ -466,7 +466,7 @@
 </table>
 
 
-####  Security parameters
+##  Security parameters
 
 <table>
 	<thead>
@@ -557,7 +557,7 @@
 </table>
 
 
-####  Mail settings parameters
+##  Mail settings parameters
 
 <table>
 	<thead>
@@ -582,7 +582,7 @@
 </table>
 
 
-####  Usage statistics parameters
+##  Usage statistics parameters
 
 <table>
 	<thead>
@@ -637,7 +637,7 @@
 </table>
 
 
-####  UI settings parameters
+##  UI settings parameters
 
 <table>
 	<thead>
@@ -655,7 +655,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.0</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.1</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 		<tr>
@@ -668,7 +668,7 @@
 </table>
 
 
-####  Database telemetry parameters
+##  Database telemetry parameters
 
 <table>
 	<thead>
@@ -699,7 +699,7 @@
 </table>
 
 
-####  Cassandra driver configuration parameters
+##  Cassandra driver configuration parameters
 
 <table>
 	<thead>
@@ -1014,7 +1014,7 @@
 </table>
 
 
-####  SQL configuration parameters
+##  SQL configuration parameters
 
 <table>
 	<thead>
@@ -1082,6 +1082,12 @@
 			<td>SQL_TS_VALUE_NO_XSS_VALIDATION</td>
 			<td>false</td>
 			<td> If true telemetry values will be checked for XSS vulnerability</td>
+		</tr>
+		<tr>
+			<td>sql.ts.callback_thread_pool_size</td>
+			<td>SQL_TS_CALLBACK_THREAD_POOL_SIZE</td>
+			<td>12</td>
+			<td> Thread pool size for telemetry callback executor</td>
 		</tr>
 		<tr>
 			<td>sql.ts_latest.batch_size</td>
@@ -1454,7 +1460,7 @@
 </table>
 
 
-####  Actor system parameters
+##  Actor system parameters
 
 <table>
 	<thead>
@@ -1701,7 +1707,7 @@
 </table>
 
 
-####  Platform integrations parameters
+##  Platform integrations parameters
 
 <table>
 	<thead>
@@ -1837,7 +1843,7 @@
 </table>
 
 
-####  Reports parameters
+##  Reports parameters
 
 <table>
 	<thead>
@@ -1880,7 +1886,7 @@
 </table>
 
 
-####  Cache settings parameters
+##  Cache settings parameters
 
 <table>
 	<thead>
@@ -2347,6 +2353,18 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.trendzSettings.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_TRENDZ_SETTINGS_TTL</td>
+			<td>1440</td>
+			<td> Trendz settings cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.trendzSettings.maxSize</td>
+			<td>CACHE_SPECS_TRENDZ_SETTINGS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.specs.downlink.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_DOWNLINK_TTL</td>
 			<td>1440</td>
@@ -2554,7 +2572,7 @@
 </table>
 
 
-####  Spring data parameters
+##  Spring data parameters
 
 <table>
 	<thead>
@@ -2573,7 +2591,7 @@
 </table>
 
 
-####  Redis configuration parameters
+##  Redis/Valkey configuration parameters
 
 <table>
 	<thead>
@@ -2784,7 +2802,7 @@
 </table>
 
 
-####  Update version parameters
+##  Update version parameters
 
 <table>
 	<thead>
@@ -2803,7 +2821,7 @@
 </table>
 
 
-####  Spring CORS configuration parameters
+##  Spring CORS configuration parameters
 
 <table>
 	<thead>
@@ -2846,7 +2864,7 @@
 </table>
 
 
-####  General spring parameters
+##  General spring parameters
 
 <table>
 	<thead>
@@ -2925,7 +2943,7 @@
 </table>
 
 
-####  SQL DAO Configuration parameters
+##  SQL DAO Configuration parameters
 
 <table>
 	<thead>
@@ -3054,7 +3072,7 @@
 </table>
 
 
-####  Audit log parameters
+##  Audit log parameters
 
 <table>
 	<thead>
@@ -3263,7 +3281,7 @@
 </table>
 
 
-####  Device state parameters
+##  Device state parameters
 
 <table>
 	<thead>
@@ -3307,6 +3325,12 @@
  0 means time-to-live mechanism is disabled.</td>
 		</tr>
 		<tr>
+			<td>state.initFetchPackSize</td>
+			<td>TB_DEVICE_STATE_INIT_FETCH_PACK_SIZE</td>
+			<td>50000</td>
+			<td> Number of device records to fetch per batch when initializing device activity states</td>
+		</tr>
+		<tr>
 			<td>state.rule.node.deviceState.rateLimit</td>
 			<td>DEVICE_STATE_NODE_RATE_LIMIT_CONFIGURATION</td>
 			<td>1:1,30:60,60:3600</td>
@@ -3318,7 +3342,7 @@
 </table>
 
 
-####  Tbel parameters
+##  Tbel parameters
 
 <table>
 	<thead>
@@ -3403,7 +3427,7 @@
 </table>
 
 
-####  JS parameters
+##  JS parameters
 
 <table>
 	<thead>
@@ -3530,7 +3554,7 @@
 </table>
 
 
-####  Transport configuration parameters
+##  Transport configuration parameters
 
 <table>
 	<thead>
@@ -4248,7 +4272,7 @@
 </table>
 
 
-####  CoAP server parameters
+##  CoAP server parameters
 
 <table>
 	<thead>
@@ -4421,7 +4445,7 @@
 </table>
 
 
-####  Device connectivity parameters
+##  Device connectivity parameters
 
 <table>
 	<thead>
@@ -4550,11 +4574,17 @@
 			<td>cafile.pem</td>
 			<td> Path to the COAP CA root certificate file</td>
 		</tr>
+		<tr>
+			<td>device.connectivity.gateway.image_version</td>
+			<td>DEVICE_CONNECTIVITY_GATEWAY_IMAGE_VERSION</td>
+			<td>3.7-stable</td>
+			<td> The docker tag for thingsboard/tb-gateway image used in docker-compose file for gateway launch</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  Edges parameters
+##  Edges parameters
 
 <table>
 	<thead>
@@ -4681,7 +4711,7 @@
 </table>
 
 
-####  Spring doc common parameters
+##  Spring doc common parameters
 
 <table>
 	<thead>
@@ -4706,7 +4736,7 @@
 </table>
 
 
-####  Swagger common parameters
+##  Swagger common parameters
 
 <table>
 	<thead>
@@ -4793,11 +4823,19 @@
 			<td>thingsboard</td>
 			<td> The group name (definition) on the API doc UI page.</td>
 		</tr>
+		<tr>
+			<td>edge_license.instance_data_file</td>
+			<td>EDGE_LICENSE_INSTANCE_DATA_FILE</td>
+			<td>instance-edge-license.data</td>
+			<td> Instance data is auto-generated and is used to identify particular ThingsBoard Edge Instance.
+ Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.
+ Please make sure that thingsboard edge process has access to the instance data file, in case you use absolute path.</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  Queue configuration parameters
+##  Queue configuration parameters
 
 <table>
 	<thead>
@@ -5017,16 +5055,43 @@
 			<td> Example of specific consumer properties value per topic for VC</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Properties for consumers targeting edge service update topics.</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_EVENTS_MAX_POLL_RECORDS</td>
+			<td>10</td>
+			<td> Define the maximum number of records that can be polled from tb_edge topics per request.</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.notifications.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Properties for consumers targeting high-priority edge notifications.
+ These notifications include RPC calls, lifecycle events, and new queue messages,
+ requiring minimal latency and swift processing.</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tb_edge.notifications.key.value</td>
+			<td>TB_QUEUE_KAFKA_EDGE_HP_EVENTS_MAX_POLL_RECORDS</td>
+			<td>10</td>
+			<td> Define the maximum number of records that can be polled from tb_edge.notifications.SERVICE_ID topics.</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key</td>
 			<td></td>
 			<td>max.poll.records</td>
-			<td> Example of specific consumer properties value per topic for edge event</td>
+			<td> Properties for consumers targeting downlinks meant for specific edge topics.
+ Topic names are dynamically constructed using tenant and edge identifiers.</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_edge_event.notifications.key.value</td>
-			<td>TB_QUEUE_KAFKA_EDGE_EVENT_MAX_POLL_RECORDS</td>
-			<td>50</td>
-			<td> Example of specific consumer properties value per topic for edge event</td>
+			<td>TB_QUEUE_KAFKA_EDGE_NOTIFICATIONS_MAX_POLL_RECORDS</td>
+			<td>10</td>
+			<td> Define the maximum number of records that can be polled from tb_edge_event.notifications.TENANT_ID.EDGE_ID topics.</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-properties-per-topic.tb_housekeeper.key</td>
@@ -5099,6 +5164,28 @@
 			<td>TB_QUEUE_KAFKA_EDQS_STATE_MAX_POLL_RECORDS</td>
 			<td>512</td>
 			<td> Max poll records for edqs.state topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tasks.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Key-value properties for Kafka consumer for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tasks.key.value</td>
+			<td>TB_QUEUE_KAFKA_TASKS_MAX_POLL_RECORDS</td>
+			<td>1</td>
+			<td> Max poll records for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic-inline</td>
+			<td>TB_QUEUE_KAFKA_CONSUMER_PROPERTIES_PER_TOPIC_INLINE</td>
+			<td></td>
+			<td> If you override any default Kafka topic name using environment variables, you must also specify the related consumer properties
+ for the new topic in `consumer-properties-per-topic-inline`. Otherwise, the topic will not inherit its expected configuration (e.g., max.poll.records, timeouts, etc).
+ Each entry sets a single property for a specific topic. To define multiple properties for a topic, repeat the topic key.
+ Format: "topic1:key=value;topic1:key=value;topic2:key=value"
+ Example: tb_core_updated:max.poll.records=10;tb_core_updated:bootstrap.servers=kafka1:9092,kafka2:9092;tb_edge_updated:auto.offset.reset=latest</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.other-inline</td>
@@ -5219,6 +5306,12 @@
 			<td>TB_QUEUE_KAFKA_EDQS_STATE_TOPIC_PROPERTIES</td>
 			<td>retention.ms:-1;segment.bytes:52428800;retention.bytes:-1;partitions:1;min.insync.replicas:1;cleanup.policy:compact</td>
 			<td> Kafka properties for EDQS state topic (infinite retention, compaction)</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.tasks</td>
+			<td>TB_QUEUE_KAFKA_TASKS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for tasks topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -5457,6 +5550,12 @@
 			<td> Whether to auto-enable EDQS API (if queue.edqs.api.supported is true) when sync of data to Kafka is finished</td>
 		</tr>
 		<tr>
+			<td>queue.edqs.readiness_check_interval</td>
+			<td>TB_EDQS_READINESS_CHECK_INTERVAL_MS</td>
+			<td>60000</td>
+			<td> Interval in milliseconds to check for ready EDQS servers</td>
+		</tr>
+		<tr>
 			<td>queue.edqs.mode</td>
 			<td>TB_EDQS_MODE</td>
 			<td>local</td>
@@ -5507,7 +5606,7 @@
 		<tr>
 			<td>queue.edqs.poll_interval</td>
 			<td>TB_EDQS_POLL_INTERVAL_MS</td>
-			<td>125</td>
+			<td>25</td>
 			<td> Poll interval for EDQS topics</td>
 		</tr>
 		<tr>
@@ -5523,10 +5622,34 @@
 			<td> Maximum timeout for requests to EDQS</td>
 		</tr>
 		<tr>
+			<td>queue.edqs.request_executor_size</td>
+			<td>TB_EDQS_REQUEST_EXECUTOR_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for EDQS requests executor</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.versions_cache_ttl</td>
+			<td>TB_EDQS_VERSIONS_CACHE_TTL_MINUTES</td>
+			<td>60</td>
+			<td> Time to live for EDQS versions cache in minutes. Must be bigger than the time taken for the sync process.</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.string_compression_length_threshold</td>
+			<td>TB_EDQS_STRING_COMPRESSION_LENGTH_THRESHOLD</td>
+			<td>512</td>
+			<td> Strings longer than this threshold will be compressed</td>
+		</tr>
+		<tr>
 			<td>queue.edqs.stats.enabled</td>
 			<td>TB_EDQS_STATS_ENABLED</td>
 			<td>true</td>
 			<td> Enable/disable statistics for EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.stats.slow_query_threshold</td>
+			<td>TB_EDQS_SLOW_QUERY_THRESHOLD_MS</td>
+			<td>3000</td>
+			<td> Threshold for slow queries to log, in milliseconds</td>
 		</tr>
 		<tr>
 			<td>queue.vc.topic</td>
@@ -5703,6 +5826,30 @@
 			<td> RocksDB path for storing CF states</td>
 		</tr>
 		<tr>
+			<td>queue.calculated_fields.init_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_FETCH_PACK_SIZE</td>
+			<td>50000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for initial fetching</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.init_tenant_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_TENANT_FETCH_PACK_SIZE</td>
+			<td>1000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for per-tenant fetching</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.telemetry_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_TELEMETRY_FETCH_PACK_SIZE</td>
+			<td>2000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for telemetry fetching</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.reprocessing_timeout</td>
+			<td>TB_QUEUE_CF_REPROCESSING_TIMEOUT_MS</td>
+			<td>300000</td>
+			<td> Timeout for CF reprocessing in milliseconds, default is 5 minutes</td>
+		</tr>
+		<tr>
 			<td>queue.transport.notifications_topic</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_transport.notifications</td>
@@ -5718,19 +5865,21 @@
 			<td>queue.edge.topic</td>
 			<td>TB_QUEUE_EDGE_TOPIC</td>
 			<td>tb_edge</td>
-			<td> Default topic name</td>
+			<td> Topic name to notify edge service on entity updates, assignment, etc.</td>
 		</tr>
 		<tr>
 			<td>queue.edge.notifications_topic</td>
 			<td>TB_QUEUE_EDGE_NOTIFICATIONS_TOPIC</td>
 			<td>tb_edge.notifications</td>
-			<td> For high-priority notifications that require minimum latency and processing time</td>
+			<td> Topic prefix for high-priority edge notifications (rpc, lifecycle, new messages in queue) that require minimum latency and processing time.
+ Each tb-core has its own topic: PREFIX.SERVICE_ID</td>
 		</tr>
 		<tr>
 			<td>queue.edge.event_notifications_topic</td>
 			<td>TB_QUEUE_EDGE_EVENT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_edge_event.notifications</td>
-			<td> For edge events messages</td>
+			<td> Topic prefix for downlinks to be pushed to specific edge.
+ Every edge has its own unique topic: PREFIX.TENANT_ID.EDGE_ID</td>
 		</tr>
 		<tr>
 			<td>queue.edge.partitions</td>
@@ -5883,11 +6032,54 @@
 			<td>25</td>
 			<td> Poll interval for topics related to Cloud Event services</td>
 		</tr>
+		<tr>
+			<td>queue.tasks.poll_interval</td>
+			<td>TB_QUEUE_TASKS_POLL_INTERVAL_MS</td>
+			<td>500</td>
+			<td> Poll interval in milliseconds for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitions</td>
+			<td>TB_QUEUE_TASKS_PARTITIONS</td>
+			<td>12</td>
+			<td> Partitions count for tasks queues</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitions_per_type</td>
+			<td>TB_QUEUE_TASKS_PARTITIONS_PER_TYPE</td>
+			<td></td>
+			<td> Custom partitions count for tasks queues per type. Format: 'TYPE1:24;TYPE2:36', e.g. 'CF_REPROCESSING:24;TENANT_EXPORT:6'</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitioning_strategy</td>
+			<td>TB_QUEUE_TASKS_PARTITIONING_STRATEGY</td>
+			<td>tenant</td>
+			<td> Tasks partitioning strategy: 'tenant' or 'entity'. By default, using 'tenant' - tasks of a specific tenant are processed in the same partition.
+ In a single-tenant environment, use 'entity' strategy to distribute the tasks among multiple partitions.</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.stats.topic</td>
+			<td>TB_QUEUE_TASKS_STATS_TOPIC</td>
+			<td>jobs.stats</td>
+			<td> Name for the tasks stats topic</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.stats.poll_interval</td>
+			<td>TB_QUEUE_TASKS_STATS_POLL_INTERVAL_MS</td>
+			<td>500</td>
+			<td> Poll interval in milliseconds for tasks stats topic</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.stats.processing_interval</td>
+			<td>TB_QUEUE_TASKS_STATS_PROCESSING_INTERVAL_MS</td>
+			<td>1000</td>
+			<td> Interval in milliseconds to process job stats</td>
+		</tr>
 	</tbody>
 </table>
 
 
-####  Event configuration parameters
+##  Event configuration parameters
 
 <table>
 	<thead>
@@ -5924,7 +6116,7 @@
 </table>
 
 
-####  General service parameters
+##  General service parameters
 
 <table>
 	<thead>
@@ -5974,7 +6166,7 @@
 </table>
 
 
-####  Metrics parameters
+##  Metrics parameters
 
 <table>
 	<thead>
@@ -6011,7 +6203,7 @@
 </table>
 
 
-####  Version control parameters
+##  Version control parameters
 
 <table>
 	<thead>
@@ -6042,7 +6234,7 @@
 </table>
 
 
-####  Notification system parameters
+##  Notification system parameters
 
 <table>
 	<thead>
@@ -6067,7 +6259,7 @@
 </table>
 
 
-####  General management parameters
+##  General management parameters
 
 <table>
 	<thead>
@@ -6092,7 +6284,7 @@
 </table>
 
 
-####  Mobile application settings for Thingsboard mobile application
+##  Mobile application settings for Thingsboard mobile application
 
 <table>
 	<thead>
@@ -6118,6 +6310,29 @@
 			<td>TB_MOBILE_APP_APP_STORE_LINK</td>
 			<td>https://apps.apple.com/ua/app/thingsboard-cloud/id6499209395</td>
 			<td> Link to App Store for Thingsboard Live mobile application</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.max_attempts</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_MAX_ATTEMPTS</td>
+			<td>3</td>
+			<td> Maximum number of retransmission attempts allowed.
+ If the attempt count exceeds this value, retransmissions will stop and the pending message will be dropped.</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.initial_delay_millis</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_INITIAL_DELAY_MILLIS</td>
+			<td>5000</td>
+			<td> Base delay (in milliseconds) before the first retransmission attempt, measured from the moment the message is sent.
+ Subsequent delays are calculated using exponential backoff.
+ This base delay is also used as the reference value for applying jitter.</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.jitter_factor</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_JITTER_FACTOR</td>
+			<td>0.15</td>
+			<td> Jitter factor applied to the calculated retransmission delay.
+ The actual delay is randomized within a range defined by multiplying the base delay by a factor between (1 - jitter_factor) and (1 + jitter_factor).
+ For example, a jitter_factor of 0.15 means the actual delay may vary by up to ±15% of the base delay.</td>
 		</tr>
 	</tbody>
 </table>
