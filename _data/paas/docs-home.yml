@@ -90,7 +90,15 @@ toc:
         - title: Widgets library
           path: /docs/paas/user-guide/ui/widget-library/
         - title: Widgets development
-          path: /docs/paas/user-guide/contribution/widgets-development/
+          section:
+            - title: Overview
+              path: /docs/paas/user-guide/contribution/widgets-development/
+            - title: Basic widget API
+              path: /docs/paas/user-guide/contribution/ui/basic-widget-api/
+            - title: Custom subscriptions
+              path: /docs/paas/user-guide/contribution/ui/custom-subscriptions/
+            - title: Advanced widget development
+              path: /docs/paas/user-guide/contribution/ui/advanced-development/
         - title: Chart widgets
           path: /docs/paas/user-guide/ui/chart-widget/
         - title: Map widgets

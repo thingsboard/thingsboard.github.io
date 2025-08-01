@@ -380,7 +380,15 @@ toc:
     - title: Rule Node development
       path: /docs/pe/user-guide/contribution/rule-node-development/
     - title: Widgets development (ThingsBoard v3.x)
-      path: /docs/pe/user-guide/contribution/widgets-development/
+      section:
+        - title: Overview
+          path: /docs/pe/user-guide/contribution/widgets-development/
+        - title: Basic widget API
+          path: /docs/pe/user-guide/contribution/ui/basic-widget-api/
+        - title: Custom subscriptions
+          path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
+        - title: Advanced widget development
+          path: /docs/pe/user-guide/contribution/ui/advanced-development/
     - title: Widgets development (ThingsBoard v2.x)
       path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
