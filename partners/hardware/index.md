@@ -24,23 +24,37 @@ filterCollection:
       0: HTTP
       1: MQTT
       2: Ethernet
-      3: WIFI
+      3: Wi-Fi
       4: LoRaWAN
       5: Bluetooth
-      6: SIGFOX
+      6: Sigfox
       7: 4G
-      8: 5G
-      9: BLE
-      10: NB-IoT
-      11: LTE-M
-      12: GPS
-      13: Zigbee
-      14: BACnet
-      15: RS485
-      16: UDP
-      17: LTE
-      18: 3G
-      19: CoAP
+      8: Bluetooth LE
+      9: NB-IoT
+      10: LTE-M
+      11: GNSS/GPS
+      12: BACnet
+      13: RS485
+      14: LTE
+      15: CAN Bus
+      16: CAT-1
+      17: CAT-M/NB
+      18: Cellular 4G Cat 4 and 4G Cat1
+      19: DI and DO
+      20: GPIO(UART/SPI/I2C)
+      21: GSM/GPRS
+      22: IEC 104
+      23: LTEeSIM (eUICC)
+      24: Modbus
+      25: OPC UA
+      26: PLC
+      27: RS232
+      28: SMS
+      29: Satellite (Iridium/Orbcom)
+      30: TCP
+      31: USB
+      32: Wi-Fi/BLE
+      33: Wirepas
   2:
     label: Industry
     filters:
@@ -53,24 +67,24 @@ filterCollection:
       6: Smart Buildings
       7: Energy Management
       8: Security
-      9: Environmental monitoring
+      9: Environmental Monitoring
+      10: Mining
   3:
     label: Use cases
     filters:
       0: Smart Energy
-      1: SCADA Swimming Pool System
-      2: SCADA Oil & Gas drilling system
-      3: SCADA Energy management
-      4: Environment Monitoring
-      5: Fleet Tracking
-      6: Waste Management
-      7: Smart Office
-      8: Health Care
-      9: Tank Level Monitoring
-      10: Water Metering
-      11: Smart Metering
-      12: Smart Retail
-      13: Air Quality Monitoring
+      1: Environment Monitoring
+      2: Fleet Tracking
+      3: Waste Management
+      4: Smart Office
+      5: Health Care
+      6: Tank Level Monitoring
+      7: Water Metering
+      8: Smart Metering
+      9: Smart Retail
+      10: Air Quality Monitoring
+      11: Smart Farming
+      12: Smart Irrigation
 ---
 
 

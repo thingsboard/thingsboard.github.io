@@ -39,13 +39,13 @@ body.filter-opened
     @media (max-width: 960px)
       padding: 50px 0 50px
     .hero-content-wrapper
-      max-width: 1440px
+      max-width: 1480px
       padding: 0 40px
       margin: 0 auto
       @media (max-width: 600px)
         padding: 0 16px
   .main-content
-    max-width: 1440px
+    max-width: 1480px
     padding: 0 40px
     margin: 0 auto
     @media (max-width: 600px)
@@ -63,8 +63,8 @@ body.filter-opened
       display: flex
       justify-content: space-between
       gap: 30px
-      max-width: 1440px
-      padding: 0 20px
+      max-width: 1480px
+      padding: 0 40px
       margin: 0 auto
       .filter-button
         display: flex
@@ -235,11 +235,15 @@ body.filter-opened
             .big-filter-section-label-chevron
               transition: ease-in-out 0.3s
           .big-filter-section-filters
+            display: grid
+            grid-template-rows: 0fr
+            transition: grid-template-rows 0.3s ease
             overflow: hidden
-            max-height: 0
-            transition: max-height 0.3s ease
             .big-filter-section-list
-              padding: 0 16px 16px
+              padding: 0
+              opacity: 0
+              transition: ease-in-out 0.4s
+              overflow: hidden
               display: flex
               gap: 8px
               flex-direction: column
@@ -300,7 +304,10 @@ body.filter-opened
                   margin-bottom: 0
           &.opened
             .big-filter-section-filters
-              max-height: 1000px
+              grid-template-rows: 1fr
+              .big-filter-section-list
+                opacity: 1
+                padding: 0 16px 16px
             .big-filter-section-label-chevron
               transform: rotate(180deg)
 

@@ -32,7 +32,7 @@
 
             const container = document.getElementById(containerId);
             const filterControl = document.querySelectorAll(filterSelector);
-            const searchControl = document.querySelector(searchSelector);
+            const searchControl = searchSelector ? document.querySelector(searchSelector) : null;
 
             if (!container || !filterControl) return;
 
@@ -168,7 +168,6 @@
 
             if(searchControl) {
                 searchControl.addEventListener('input', function () {
-                    console.log('123')
                     activePages = [1];
                     setTimeout(render, 100);
                 });
