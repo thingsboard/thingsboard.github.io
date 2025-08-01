@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="138.185mm" height="24.1554mm" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 13721 2398"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .fil0 {fill:#008DD2}
+    .fil1 {fill:#2B2A29;fill-rule:nonzero}
+   ]]>
+  </style>
+ </defs>
+ <g id="Ebene_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_666320224">
+   <polygon class="fil0" points="12827,1505 13721,1505 13721,2398 12827,2398 "/>
+   <path class="fil1" d="M396 1505l-396 -1505 207 0 225 987c25,103 46,206 65,307 40,-160 63,-253 69,-277l285 -1017 240 0 216 762c52,189 92,367 117,532 20,-95 45,-204 77,-327l235 -967 200 0 -412 1505 -194 0 -316 -1147c-26,-96 -42,-154 -48,-176 -17,68 -33,127 -46,176l-316 1147 -208 0z"/>
+   <polygon id="1" class="fil1" points="2198,1505 2198,0 3285,0 3285,177 2398,177 2398,639 3228,639 3228,815 2398,815 2398,1328 3321,1328 3321,1505 "/>
+   <polygon id="2" class="fil1" points="3704,1505 3704,0 3903,0 3903,1505 "/>
+   <polygon id="3" class="fil1" points="4326,1505 4326,0 4530,0 5320,1181 5320,0 5511,0 5511,1505 5306,1505 4517,324 4517,1505 "/>
+   <path id="4" class="fil1" d="M5800 1505l0 -184 770 -965c56,-68 107,-128 157,-179l-839 0 0 -177 1076 0 0 177 -845 1043 -91 108 961 0 0 177 -1189 0z"/>
+   <polygon id="5" class="fil1" points="7311,1505 7311,0 7510,0 7510,1505 "/>
+   <polygon id="6" class="fil1" points="7939,1505 7939,0 9026,0 9026,177 8139,177 8139,639 8969,639 8969,815 8139,815 8139,1328 9061,1328 9061,1505 "/>
+   <path id="7" class="fil1" d="M9415 1505l0 -1505 667 0c134,0 236,14 306,41 69,27 125,74 167,143 41,68 62,144 62,226 0,107 -35,197 -104,270 -69,73 -175,120 -319,140 52,25 92,50 120,75 58,53 113,120 164,200l261 410 -249 0 -199 -313c-58,-91 -106,-160 -143,-208 -38,-48 -72,-81 -102,-101 -29,-19 -59,-32 -90,-40 -23,-4 -59,-7 -111,-7l-230 0 0 669 -200 0zm200 -841l427 0c91,0 162,-9 213,-28 51,-19 90,-49 116,-91 27,-41 40,-86 40,-134 0,-72 -26,-130 -77,-176 -51,-46 -133,-69 -244,-69l-475 0 0 498z"/>
+   <polygon id="8" class="fil1" points="10994,1505 10994,0 11194,0 11194,1328 11933,1328 11933,1505 "/>
+   <polygon class="fil0" points="0,1803 13274,1803 13274,2101 0,2101 "/>
+  </g>
+ </g>
+</svg>

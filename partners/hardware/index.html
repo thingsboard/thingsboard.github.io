@@ -25,7 +25,7 @@ title: Partners on hardware area
 				<a class="button" href="/partners/hardware/program/">Apply for Hardware Partner Program</a>
 			</p>
 		</div>
-        {% assign filters = "Bluetooth LE,GSM/GPRS,LoRaWAN,LTE-M,Modbus,Bacnet,NB-IoT,Sigfox,CAT-M/NB,MQTT,Wi-Fi,Ethernet,Wirepas" | split: "," %}
+        {% assign filters = "Bluetooth LE,GSM/GPRS,LoRaWAN,LTE-M,Modbus,Bacnet,NB-IoT,Sigfox,CAT-M/NB,MQTT,Wi-Fi,Ethernet,KNX,Wirepas" | split: "," %}
         {% include filter.html filters = filters containerId = "hardwareContainer" filterLabel = "Filter"%}
         <div id="hardwareContainer">
             {% include hardware-partners-cards.liquid %}

@@ -43,8 +43,10 @@ This flexibility allows users to either define unique calculations per entity or
 ## Create new calculated field
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
->**Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
+> **Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
 {% endif %}
+
+> **Note:** Only [tenants](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} have access to configure and manage calculated fields.
 
 To create a calculated field, follow these steps:
 
