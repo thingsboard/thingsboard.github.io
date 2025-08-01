@@ -16,7 +16,6 @@ notitle: "true"
                 <div class="company-flex-content-default">
                     <div class="company-aboutus-image-block">
                         <img class="company-aboutus-image" src="/images/thingsboard_blue.svg" alt="Thingsboard logo" width="257" height="257">
-                        <span>ThingsBoard</span>
                     </div>
                     <div class="company-text-content-default">
                         <p class="company-text">At ThingsBoard, we help organizations worldwide unlock the full potential of IoT. Established with a vision to simplify and speed up IoT adoption, we provide a complete open-source IoT platform that enables easy device connectivity, data collection, processing, visualization, and management.</p>
