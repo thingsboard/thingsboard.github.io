@@ -686,7 +686,7 @@ footer
     .subscribe
       margin: 0
       height: fit-content
-      padding: 12px 20px
+      padding: 13px 20px
       transition-duration: unset
       &:hover
         transition-duration: unset
@@ -699,19 +699,21 @@ footer
       .subscribe-form
         background: none !important
         border: none !important
-        padding: 0px
+        padding: 0
         width: 520px !important
         @media (max-width: 768px)
           width: 100% !important
 
         &.horizontal
-          padding-bottom: 0px
+          padding-bottom: 0
+          display: flex
+          flex-wrap: wrap
 
       .form-section
         p
           line-height: 150%
-          padding: 0px !important
-          margin: 0px 0px 10px 0px
+          padding: 0 !important
+          margin: 0 0 10px 0
 
         &.mb10
           margin-bottom: 10px
@@ -755,7 +757,7 @@ footer
         .form-control
           background-color: white !important
           height: 47px
-          padding: 16px
+          width: 100%
           font-size: 18px
           line-height: 16px
           font-weight: 400
