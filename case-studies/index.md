@@ -34,7 +34,7 @@ itemsPerPage: "9"
             </div>
         </div>
     </section>
-    {% assign filters = "Industry 4.0,Smart energy,Smart infrastructure,Cold chain monitoring,Warehouse monitoring,Facility management,Smart IoT solution,Smart agriculture" | split: "," %}
+    {% assign filters = "Industry 4.0,Smart energy,Smart infrastructure,Cold chain monitoring,Warehouse monitoring,Facility management,Smart IoT solution,Smart agriculture,Telecom" | split: "," %}
     {% include filter.html filters = filters mode = "tab" containerId = "case-studies-clients" hyphenSplit = "true" %}
     {% assign linksCount = card.links | size %}
     <div class="links{% if linksCount >= 2 %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
@@ -103,13 +103,13 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart infrastructure">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/kalitec.webp');">
-                <a class="content" href="/case-studies/kalitec">
-                    <img class="logo" src="/images/case-studies/kalitec.svg" title="Kalitec" alt="Kalitec logo">
-                    <p>How Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation <br> &nbsp;</p>
+        <div class="client-card" id="Telecom">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tektelic.webp');">
+                <a class="content" href="/case-studies/tektelic">
+                    <img style="height: 56px" class="logo" src="/images/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo">
+                    <p>From sensors to dashboards: <br> TEKTELIC's rapid IoT deployment with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about how Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation</span>
+                    <span class="visually-hidden">about TEKTELIC's rapid IoT deployment with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -123,13 +123,13 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
-                <a class="content" href="/case-studies/nettra">
-                    <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
-                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
+        <div class="client-card" id="Smart agriculture">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/agrolog.webp');">
+                <a class="content" href="/case-studies/agrolog">
+                    <img class="logo" src="/images/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
+                    <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
+                    <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -143,13 +143,13 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart agriculture">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/agrolog.webp');">
-                <a class="content" href="/case-studies/agrolog">
-                    <img class="logo" src="/images/case-studies/agrolog.svg" title="Agrolog" alt="ASG-Tech logo">
-                    <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
+        <div class="client-card" id="Telecom">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/t-mobile-cz.webp');">
+                <a class="content" href="/case-studies/t-mobile-cz">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/t-mobile-cz.svg" title="T-Mobile-CZ" alt="T-Mobile-CZ logo">
+                    <p>Scaling IoT prototyping at T-Mobile CZ with ThingsBoard <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
+                    <span class="visually-hidden">about scaling IoT prototyping at T-Mobile CZ with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -190,6 +190,66 @@ itemsPerPage: "9"
                     <p>Smarter buildings made simple: Environmental Energy Controls chooses ThingsBoard for scalable BMS Solutions</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about how Smarter buildings made simple by Environmental Energy Controls with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/circutor.webp');">
+                <a class="content" href="/case-studies/circutor">
+                    <img style="height: 42px" class="logo" src="/images/case-studies/circutor.svg" title="co.met" alt="circutor logo">
+                    <p>Circutor scales global energy management with ThingsBoard IoT platform</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Circutor scales global energy management with ThingsBoard IoT platform</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Facility management">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/oneserve.webp');">
+                <a class="content" href="/case-studies/oneserve">
+                    <img class="logo" src="/images/case-studies/oneserve.svg" title="Oneserve" alt="Oneserve logo">
+                    <p>Oneserve builds agile FSM platform using ThingsBoard IoT <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how Oneserve builds agile FSM platform using ThingsBoard IoT</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart IoT solution">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/mdeg.webp');">
+                <a class="content" href="/case-studies/mdeg">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/mdeg.svg" title="mdeg" alt="mdeg logo">
+                    <p>How mdeg scaled secure medical device connectivity with ThingsBoard <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about mdeg scaled secure medical device connectivity with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart infrastructure">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tps.webp');">
+                <a class="content" href="/case-studies/tps">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/tps.svg" title="TPS" alt="TPS logo">
+                    <p>From Digitalizing cultural heritage: how TPS connects museums with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how TPS connects museums with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
+                <a class="content" href="/case-studies/nettra">
+                    <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
+                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart infrastructure">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/kalitec.webp');">
+                <a class="content" href="/case-studies/kalitec">
+                    <img class="logo" src="/images/case-studies/kalitec.svg" title="Kalitec" alt="Kalitec logo">
+                    <p>How Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation</span>
                 </a>
             </div>
         </div>

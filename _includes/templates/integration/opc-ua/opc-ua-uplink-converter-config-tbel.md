@@ -3,6 +3,7 @@ Use this function:
 ```ruby
 var data = decodeToJson(payload);
 var deviceName = metadata['opcUaNode_name'];
+var namespaceIndex = metadata['opcUaNode_namespaceIndex'];
 var deviceType = 'airconditioner';
 
 var result = {
@@ -11,6 +12,7 @@ var result = {
    telemetry: {
    },
    attributes: {
+       namespaceIndex: namespaceIndex
    }
 };
 
@@ -34,6 +36,6 @@ if (data.state != null) {
 
 return result;
 ```
-{: .copy-code}
+{:.copy-code.expandable-10}
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-uplink-converter-tbel.png)

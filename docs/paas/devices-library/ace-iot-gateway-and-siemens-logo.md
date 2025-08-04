@@ -6,6 +6,7 @@ connectivity: HTTP, MQTT, Ethernet, WIFI
 vendor: ACE Automation
 deviceImageFileName: ace-iot-gateway.png
 docsPrefix: paas/
+docsTag: paas
 ---
 
 

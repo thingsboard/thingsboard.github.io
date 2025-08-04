@@ -60,6 +60,12 @@
 
     function onPopPricingState() {
         const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        const navEntries = performance.getEntriesByType('navigation');
+
+        if (Object.hasOwn(params, 'calculator') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
+            elements.openCalculatorBtn.click();
+        }
+
         let sectionId = params['section'] || params['active'];
         if (!sectionId) {
             sectionId = '{{page.defaultActivePricingSection}}';

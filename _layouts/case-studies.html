@@ -22,6 +22,13 @@
 
 <script async type="text/javascript">
     document.addEventListener('DOMContentLoaded', function() {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('category') && params.get('category')) {
+            setTimeout(() => {
+                document.getElementById(params.get('category').replaceAll('-', ' ')).click()
+            }, 600);
+        }
+
         const imagesAnimations = document.querySelectorAll(".tb-help img");
         const imagesObserver = new IntersectionObserver((entries, obs) => {
             entries.forEach(entry => {

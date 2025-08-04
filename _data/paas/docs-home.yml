@@ -118,10 +118,10 @@ toc:
           path: /docs/paas/user-guide/rule-engine-2-0/transformation-nodes/
         - title: Action nodes
           path: /docs/paas/user-guide/rule-engine-2-0/action-nodes/
-        - title: External nodes
-          path: /docs/paas/user-guide/rule-engine-2-0/external-nodes/
         - title: Analytics nodes
           path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
+        - title: External nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/external-nodes/
         - title: Flow nodes
           path: /docs/paas/user-guide/rule-engine-2-0/flow-nodes/
     - title: Data processing & actions

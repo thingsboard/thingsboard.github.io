@@ -43,8 +43,10 @@ This flexibility allows users to either define unique calculations per entity or
 ## Create new calculated field
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
->**Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
+> **Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
 {% endif %}
+
+> **Note:** Only [tenants](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} have access to configure and manage calculated fields.
 
 To create a calculated field, follow these steps:
 
@@ -186,13 +188,9 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 
 #### Output
 
-<<<<<<< HEAD
-The calculated values are returned as a JSON object containing **keys** that represent the computed results. These keys, along with their values, are then stored in the system.
-=======
 > See [how calculated field output is processed](#calculated-field-output-processing) for details on rule engine behavior and data persistence.
 
 The calculated values are returned as a JSON object containing **keys** that represent the computed results, which are then used to store those values in the system.
->>>>>>> origin/develop/4.1
 
 - Specify the **Output type** for storing the calculation result:
   - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: function must return a JSON object or array with or without a timestamp containing the computed value.
