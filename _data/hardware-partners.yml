@@ -91,7 +91,7 @@
     - Smart Office
     - Smart Retail
     - Smart Farming
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
   hardware-types:
@@ -174,7 +174,7 @@
     - Smart Retail
     - Smart Farming
     - Fleet Tracking
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -558,7 +558,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -609,7 +609,7 @@
     - Smart Retail
     - Smart Farming
     - Fleet Tracking
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Tank Level Monitoring
@@ -735,7 +735,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -816,7 +816,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Tank Level Monitoring
@@ -1048,7 +1048,7 @@
     - Smart Office
     - Smart Retail
     - Fleet Tracking
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
   hardware-types:
     - Microcontrollers
@@ -1133,7 +1133,7 @@
     - Smart Retail
     - Smart Farming
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1180,7 +1180,7 @@
     - Air Quality Monitoring
     - Smart Metering
     - Smart Retail
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
   hardware-types:
     - Sensors
     - Gateways
@@ -1214,7 +1214,7 @@
     - Environment Monitoring
     - Smart Office
     - Smart Farming
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1259,7 +1259,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1325,7 +1325,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1447,7 +1447,7 @@
   use-case:
     - Fleet Tracking
     - Smart Farming
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Smart Office
     - Smart Retail
   hardware-types:
@@ -1546,7 +1546,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1592,7 +1592,7 @@
     - Waste Management
     - Tank Level Monitoring
     - Fleet Tracking
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
   hardware-types:
     - Sensors
     - Gateways
@@ -1607,7 +1607,7 @@
     - USB
     - GPIO(UART/SPI/I2C)
   name: Sixfab, Inc.
-  logo: /cached_assets_used/sixfab-logo-nr-2.png
+  logo: /images/partners/sixfab-logo.webp
   page: /partners/hardware/sixfab
   site:
     href: https://sixfab.com/alpon
@@ -1641,7 +1641,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1651,12 +1651,18 @@
     - Gateways
     - Trackers
 - name: ioTracker
-  logo: ''
+  logo: /images/partners/iothings-logo.png
   page: /partners/hardware/iotracker
   site:
-    href: ''
-  links: {}
-  description: ''
+    href: https://iotracker.eu/
+  links:
+    0:
+      label: ioTracker Multi-sensor tracker
+      href: "https://thingsboard.io/docs/pe/devices-library/iotracker-multi-sensor-tracker/"
+    1:
+      label: ioButton Panic button
+      href: "https://thingsboard.io/docs/pe/devices-library/iobutton-panic-button/"
+  description: ioThings, the company behind the ioTracker and ioButton, is a Dutch company and was established in 2016 by three technology enthusiasts with a professional background in electronics, security, IT and telecom. We mainly operate in the domain of emergency response, together with indoor and outdoor localisation. Our devices are highly and easy configurable to make sure it can be finetuned for a lot of use cases.
   type:
     - Wi-Fi
     - Bluetooth LE
@@ -1680,8 +1686,8 @@
     - Wi-Fi
     - Bluetooth LE
     - Modbus
-  name: ACE AUTOMATION
-  logo: /images/partners/ace-automation-logo.webp
+  name: ACE PLC
+  logo: /images/partners/ace-automation-logo.png
   page: /partners/hardware/ace-automation
   site:
     href: https://aceautomation.eu/
@@ -1712,12 +1718,21 @@
     - Gateways
     - Other devices
 - name: Agrosense | Makerfabs
-  logo: ''
+  logo: /images/partners/makerfabs-logo.png
   page: /partners/hardware/agrosense-makerfabs
   site:
-    href: ''
-  links: {}
-  description: ''
+    href: https://www.makerfabs.com/agrosense
+  links:
+    0:
+      label: How to connect AgroSense Air Temperature and Humidity Sensor to ThingsBoard?
+      href: "/docs/devices-library/air-temperature-and-humidity-sensor/"
+    1:
+      label: How to connect AgroSense Positioning Water Leak Sensor to ThingsBoard?
+      href: "/docs/devices-library/positioning-water-leak-sensor/"
+    2:
+      label: How to connect AgroSense Soil Moisture Sensor to ThingsBoard?
+      href: "/docs/devices-library/soil-moisture-sensor/"
+  description: Makerfabs is a professional open-source hardware provider based in Shenzhen, China, offering end-to-end support from concept design, prototyping, small-batch manufacturing, to full-scale production. We are especially experienced in LoRa and LoRaWAN technologies and have helped many clients realize custom IoT solutions across agriculture, smart cities, and industrial monitoring. To better serve these industries, we have established the AgroSense brand – a comprehensive line of LoRaWAN sensors, designed for reliability, adaptability, and ease of integration.
   type:
     - LoRaWAN
   industry:
@@ -1736,18 +1751,21 @@
     - Smart Irrigation
   hardware-types:
     - Sensors
-- name: iotrouter
-  logo: ''
+- type:
+  - 5G/4G LTE
+  - Ethernet
+  - Wi-Fi
+  - RS485
+  name: Chengdu IOTRouter Tech. Co., Ltd.
+  logo: /images/partners/iotrouter-logo.png
   page: /partners/hardware/iotrouter
   site:
-    href: ''
-  links: {}
-  description: ''
-  type:
-    - 5G/4G LTE
-    - Ethernet
-    - Wi-Fi
-    - RS485
+    href: http://www.iotrouter.com/
+  links:
+    0:
+      label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
+      href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
+  description: Established in 2015, Chengdu IOTRouter is a high-tech enterprise specializing in the research, development, production, and sales of industrial IoT Edge Gateway, HMI, Remote IO, AI Edge Box, and other digital integration products and solutions. lOTRouter combines traditional industry with new technologies such as IoT, edge computing, and AI to help users easily integrate OT (Operational Technology) and IT (information technology), thereby building a bridge between traditional industry infrastructure and digital applications. We serve more than 3,000 customers in more than 20 countries. With operations in the US, UK, Germany, Italy, and Southeast Asian countries, we are well placed to meet your needs around the globe.
   industry:
     - Smart Cities
     - Retail
@@ -1768,7 +1786,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
@@ -1777,16 +1795,20 @@
     - Microcontrollers
     - Gateways
     - Other devices
-- name: Weinzierl Engineering GmbH
-  logo: ''
-  page: /partners/hardware/weinzierl-engineering-gmbh
-  site:
-    href: ''
-  links: {}
-  description: ''
-  type:
+- type:
     - KNX
     - Modbus
+    - Modbus TCP
+  name: Weinzierl Engineering GmbH
+  logo: /images/partners/weinzierl-logo.svg
+  page: /partners/hardware/weinzierl-engineering-gmbh
+  site:
+    href: https://weinzierl.de/en/
+  links:
+    0:
+      label: Connect KNX IP Multi IO 580 to ThingsBoard
+      href: /docs/devices-library/knx-ip-multi-io-580/
+  description: We from Weinzierl develop, produce, and market complex software and hardware components for building system technology. Our focus lies in building networks based on the KNX standard. Because of this focus, we cover the KNX system with our products and solutions comprehensively. In addition, we offer gateways as well as software solutions for other standards.
   industry:
     - Smart Cities
     - Retail
@@ -1807,7 +1829,7 @@
     - Smart Farming
     - Fleet Tracking
     - Smart Metering
-    - 'Health Care: Smart Assisted Living Solution'
+    - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management

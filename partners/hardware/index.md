@@ -55,6 +55,11 @@ filterCollection:
       31: USB
       32: Wi-Fi/BLE
       33: Wirepas
+      34: 4G/LTE
+      35: 5G/4G LTE
+      36: KNX
+      37: M-Bus
+      38: Modbus TCP
   2:
     label: Industry
     filters:
@@ -69,6 +74,7 @@ filterCollection:
       8: Security
       9: Environmental Monitoring
       10: Mining
+      11: Environment Monitoring
   3:
     label: Use cases
     filters:
