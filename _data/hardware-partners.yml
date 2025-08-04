@@ -29,14 +29,14 @@
     - LoRaWAN
     - Wi-Fi
     - LTE-M
-  name: Chengdu IOTRouter Tech. Co., Ltd.
+  name: IOTRouter
   logo: /images/partners/iotrouter-logo.png
   site:
     href: http://www.iotrouter.com/
   links:
     0:
-      label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
-      href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
+      label: Connect EG8200 Gateway to ThingsBoard
+      href: "/docs/pe/devices-library/eg8200-gateway/"
   description: Established in 2015, Chengdu IOTRouter is a high-tech enterprise specializing in the research, development, production, and sales of industrial IoT Edge Gateway, HMI, Remote IO, AI Edge Box, and other digital integration products and solutions. lOTRouter combines traditional industry with new technologies such as IoT, edge computing, and AI to help users easily integrate OT (Operational Technology) and IT (information technology), thereby building a bridge between traditional industry infrastructure and digital applications. We serve more than 3,000 customers in more than 20 countries. With operations in the US, UK, Germany, Italy, and Southeast Asian countries, we are well placed to meet your needs around the globe.
 - type:
     - Bluetooth LE
