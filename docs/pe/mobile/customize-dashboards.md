@@ -35,6 +35,14 @@ hide-dashboard:
   image: /images/mobile/pe/hide-dashboard-3.png
   title: 'Dashboard will be hidden from the mobile home screen'
 
+layout-1:
+ 0:
+  image: /images/mobile-center/mobile-layout-1-pe.png
+  title: ''
+ 1:
+  image: /images/mobile-center/mobile-layout-2-pe.png
+  title: ''
+
 ---
 
 {% assign docsPrefix = "pe/" %}
