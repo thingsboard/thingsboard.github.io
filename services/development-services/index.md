@@ -1990,7 +1990,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     }
 
     function validateContactForm(form) {
-        console.log('form', form);
         var name = $('input[name=first-name]', form).val() || $('input[name=first-name-popup]', form).val();
         var email = $('input[name=email]', form).val() || $('input[name=email-popup]', form).val();
 
