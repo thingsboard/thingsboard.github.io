@@ -27,7 +27,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
     <section class="statistics">
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 25888 useGrouping = true %}
+                {% include number-animation.html startNum = 1 targetNum = 25888 useMobileMode = true useGrouping = true %}
             </p>
             <p>manage signals <br> to control and safety</p>
         </div>
@@ -171,6 +171,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

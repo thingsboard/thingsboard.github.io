@@ -39,7 +39,7 @@ export INTEGRATION_ROUTING_KEY=b75**************************34d
 export INTEGRATION_SECRET=vna**************mik
 ```
 
-Execute the following command to start ThingsBoard:
+Execute the following command to start integration:
 
 ```bash
 sudo service tb-opc-ua-integration start

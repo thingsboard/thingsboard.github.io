@@ -32,7 +32,7 @@ description: Discover how OXI TRADE optimized its alternative energy operations 
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 7000 useGrouping = true %}+
+                {% include number-animation.html startNum = 1 targetNum = 7 useGrouping = true %}K+
             </p>
             <p>pellet burners sold</p>
         </div>
@@ -117,28 +117,28 @@ description: Discover how OXI TRADE optimized its alternative energy operations 
                 <h3>Customized IoT backbone for pellet burner operations</h3>
                 <p>ThingsBoard serves as the backbone of OXI TRADE's IoT infrastructure, providing all the tools necessary to connect, manage, and operate their pellet burner devices. The platform was tailored to meet the company’s specific requirements, ensuring flexibility, automation, and effective collaboration across OXI TRADE’s distribution network.</p>
             </div>
-            <img src="/images/case-studies/pellet-burner-operations.webp" title="Customized IoT backbone for pellet burner operations" alt="Pellets pile" width="900" height="480">
+            <img src="/images/case-studies/pallet_1.webp" title="Customized IoT backbone for pellet burner operations" alt="Pellets pile" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Seamless and scalable device provisioning</h3>
                 <p>One of the key features is automated device provisioning. ThingsBoard enables OXI TRADE’s pellet burners to self-register upon activation. Each device, pre-configured with unique credentials, sends a provisioning request with a secure key and secret to ThingsBoard. Once validated, the platform registers the device, assigns proper credentials, and integrates it into the system—without any manual setup. This smooth process makes it easy to scale and reduces the amount of administrative effort.</p>
             </div>
-            <img src="/images/case-studies/device-provisionig.webp" title="Seamless and scalable device provisioning" alt="Laptop" width="900" height="480">
+            <img src="/images/case-studies/pallet_2.webp" title="Seamless and scalable device provisioning" alt="Laptop" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Role-based access for the entire distribution network</h3>
                 <p>To support its expanding network of partners and customers, OXI TRADE required a way to manage multiple user roles across the entire distribution chain. ThingsBoard delivered a clear and flexible user hierarchy aligned with the company’s business model. As the main system owner (tenant), OXI TRADE has full control over all devices and user groups. Distributors operate under the tenant and manage their respective resellers, assign devices, and oversee performance in their regions. Resellers, in turn, support end customers and help them connect their devices. Customers have access only to their own equipment, while service departments are granted extended permissions to perform remote configurations, diagnostics, and technical support. This role-based model enables OXI TRADE to securely and efficiently manage thousands of devices and users from one centralized platform.</p>
             </div>
-            <img src="/images/case-studies/role-based-access.webp" title="Role-based access for the entire distribution network" alt="Virtual hierarchy" width="900" height="480">
+            <img src="/images/case-studies/oxi-map.webp" title="Role-based access for the entire distribution network" alt="Virtual hierarchy" width="450" height="254">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Real-time monitoring and remote control via dashboards</h3>
                 <p>Using ThingsBoard dashboards, OXI TRADE and its partners can monitor all connected pellet burners in real-time. Depending on their access level, users—whether customers, resellers, or service teams—can view key device data, such as operational mode, temperature, and overall system status. This insight helps users stay informed and proactive. In addition to monitoring, they can also control devices remotely. Common actions include starting or stopping a device, triggering the fuel feeder, or adjusting temperature settings. All of this can be done through the platform, without being physically present near the equipment. Remote control capabilities save time, reduce service visits, and enable quicker responses to customer needs and technical issues.</p>
             </div>
-            <img src="/images/case-studies/real-time-monitoring.webp" title="Real-time monitoring and remote control via dashboards" alt="Hands with tablet" width="900" height="480">
+            <img src="/images/case-studies/pallet_3.webp" title="Real-time monitoring and remote control via dashboards" alt="Hands with tablet" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
@@ -194,6 +194,7 @@ description: Discover how OXI TRADE optimized its alternative energy operations 
                 <img src="/images/case-studies/single-switch-widget.webp" title="Thingsboard single switch widget" alt="Thingsboard single switch widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

@@ -25,7 +25,7 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
     <section class="quote-with-mark fill-background">
         <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
         <div class="quote-text">
-            <p>“Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but no other could match this platform in terms of its capability. Once learning the basics, we could quickly deploy and add customers sites without the need for continual support.”</p>
+            <p>“Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but no other could match this platform in terms of its capabil...<a target="_blank" href="/industries/smart-energy/?company=e2cbms">read more</a></p>
             <h2>Nairn Harrison, Director</h2>
         </div>
     </section>
@@ -156,14 +156,7 @@ description: Discover how E2CBMS delivers flexible, scalable BMS and EMS solutio
                 <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
-        <div class="services-banner">
-            <div class="services-content">
-                <h3>Want to achieve similarly impactful results?</h3>
-                <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
-                <a id="CaseStudyToServices" class="button gtm_button" href="/services/development-services/">Explore our service</a>
-            </div>
-            <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
-        </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
