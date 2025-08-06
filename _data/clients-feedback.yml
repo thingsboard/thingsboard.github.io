@@ -440,7 +440,20 @@ industry40:
         0: "Exceptional experience working with ThingsBoard's unit"
         1: "We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess."
         2: 'Their careful estimation process significantly enhanced our understanding of the project scope, making planning and collaboration more effective. Additionally, their team attentively listened to our detailed requirements and skilfully transformed them into thoughtfully designed custom widgets. The development process was smooth, with regular updates and transparent communication.'
-        3: "The custom widgets showcased impressive quality, surpassing our initial expectations. The team's attention to detail and commitment to following our design guidelines were commendable. The widgets successfully integrate with the ThingsBoard Professional Edition platform, contributing to a user-friendly experience and improving the functionality of our solutions. We wholeheartedly recommend ThingsBoard's development unit for any custom development requirements. Their dedication to excellence, reliability, and their ability to transform ideas into tangible solutions make them an invaluable partner in driving innovation and delivering superior customer experiences. We look forward to continuing our collaboration with ThingsBoard and their development unit in future projects."
+    - author: Andreas Kücker
+      position: Manager Digital
+      companyName:  süc//dacor GmbH
+      id: dacor
+      link: https://dacor.de/
+      authorImage: /images/customers/andreas-kucker.webp
+      companyImage: /images/customers/dacor.svg
+      companyImageWidth: 170
+      companyImageHeight: 30
+      text:
+        0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing"
+        1: "A well-established medium-sized company specializes in the machining of profiles used in roof opening systems and sunroofs for the automotive sector. The machining process is semi-automated, but lacked the capability to transmit production data. Our client had a need for greater transparency in their manufacturing process, especially regarding downtime and productivity tracking."
+        2: 'To address this requirement, we implemented a solution that involves integrating a trigger within the machine’s program. This trigger, connected via cable, captures the power status of the milling motor and transmits this data to an IoT module. From there, we wirelessly transmit the data over LoRaWAN technology. The collected data is then processed and aggregated in our Thingsboard platform, allowing us to present it in an understandable dashboard format for production management and control purposes.'
+        3: "The aggregated data is presented in a digital twin format on a dashboard, which accurately reflects the layout of the manufacturing facility, including the various machines on the floor. Each machine displays the status of its milling motors, and some machines operate with two milling heads. Performance metrics, such as efficiency and the number of production cycles (representing the produced units), are indicated with color-coded values. Green values indicate good performance, orange suggests suboptimal performance, and red signals poor performance. This visual representation enables the plant manager to quickly identify machines that may require optimization or attention."
 warehouse-monitoring:
   label: Warehouse Monitoring
   icon: /images/warehouse-monitoring-icon.svg
