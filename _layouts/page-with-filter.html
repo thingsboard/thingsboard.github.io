@@ -42,11 +42,17 @@
                 {% include big-filter.liquid %}
             </div>
             <div class="cards-block">
-                {% include cards-collection.liquid %}
-                <div class="pagination-block">
-                    {% if page.pagination == "true" %}
-                    {% include pagination.html %}
-                    {% endif %}
+                <div class="cards-block-content">
+                    {% include cards-collection.liquid %}
+                    <div class="pagination-block">
+                        {% if page.pagination == "true" %}
+                        {% include pagination.html %}
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="not-found">
+                    <img src="/images/not-found.svg" alt="Not found image" width="200px" height="200px">
+                    <p>No partners have been found...</p>
                 </div>
             </div>
         </div>

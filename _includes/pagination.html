@@ -162,14 +162,14 @@
             filterControl.forEach((item) => {
                 item.addEventListener('click', function () {
                     activePages = [1];
-                    setTimeout(render, 100);
+                    setTimeout(render, 0);
                 });
             })
 
             if(searchControl) {
                 searchControl.addEventListener('input', function () {
                     activePages = [1];
-                    setTimeout(render, 100);
+                    setTimeout(render, 1);
                 });
             }
 

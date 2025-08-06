@@ -152,13 +152,14 @@ body.filter-opened
     .crisp:has(.crisp-close:hover), .search-crisps-clear-btn:hover, .search-crisps-toggle-btn:hover
       opacity: 0.8
   .content-block
+    position: relative
     display: flex
     @media (max-width: 600px)
       justify-content: center
     .filter-block
       position: relative
       border-right: 1px solid #EBEBEB
-      width: 326px
+      min-width: 325px
       display: none
       @media (min-width: 960px)
         padding-bottom: 20px
@@ -311,16 +312,23 @@ body.filter-opened
                 padding: 0 16px 16px
             .big-filter-section-label-chevron
               transform: rotate(180deg)
-
     .cards-block
+      position: relative
+      min-height: 509px
+      width: 100%
+      height: 100%
       padding: 32px 0
       @media (min-width: 960px)
         padding: 32px 0 32px 32px
+      .cards-block-content
+        background: #FFF
       .card-collection
         display: grid
         grid-template-columns: repeat(3, 1fr)
         gap: 16px
         @media (max-width: 600px)
+          width: 336px
+          margin: 0 auto
           grid-template-columns: repeat(1, 1fr)
         .card
           position: relative
@@ -428,4 +436,19 @@ body.filter-opened
                   transform: translate(20px)
                 .third
                   transform: translate(30px)
-
+    .not-found
+      position: absolute
+      top: 50%
+      right: 50%
+      transform: translate(50%, -50%)
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 16px
+      z-index: -1
+      p
+        text-align: center
+        font-size: 16px
+        line-height: 28px
+        font-weight: 500
+        color: rgba(0, 0, 0, 0.76)
