@@ -2876,7 +2876,14 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-does-geo-region-deployment-selection-include" data-title="What does geo-region deployment selection include?">
                         <div class="container">
-                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.<br><br></p>
+                            <p><b>For the Launch plan, region selection is limited to the following supported regions:</b>
+                            <ul>
+                                <li><b>North America:</b> US West, US East, Mexico;</li>
+                                <li><b>Europe:</b> Ireland, Stockholm;</li>
+                                <li><b>Asia:</b> Taipei, Thailand, Mumbai.</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window" data-title="Can I choose a specific maintenance window?">
@@ -5432,7 +5439,14 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-geo-region-deployment" data-title="What does geo-region deployment selection include?">
                         <div class="container">
-                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.<br><br></p>
+                            <p><b>For the Launch plan, region selection is limited to the following supported regions:</b>
+                            <ul>
+                                <li><b>North America:</b> US West, US East, Mexico;</li>
+                                <li><b>Europe:</b> Ireland, Stockholm;</li>
+                                <li><b>Asia:</b> Taipei, Thailand, Mumbai.</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-maintenance-window-selection" data-title="Can I choose a specific maintenance window?">
