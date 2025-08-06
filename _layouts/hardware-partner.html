@@ -1,9 +1,12 @@
 <!Doctype html>
 <html id="hardware-partner" lang="en">
 
-{% include head-header.html%}
-
 {% assign partner = site.data.hardware-partners | where: "name", page.hardware-partner | first %}
+
+{% assign customTitle = partner.name | append: " | ThingsBoard Hardware Partner" %}
+{% assign layoutDescription = partner.description %}
+
+{% include head-header.html %}
 
 <section id="hero" class="light-text">
 </section>

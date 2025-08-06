@@ -703,7 +703,7 @@
     - PLC
   name: Shenzhen Beilai Technology Co., Ltd.
   logo: /images/partners/bliiot-logo.webp
-  page: /partners/hardware/kingpigeon
+  page: /partners/hardware/beilai
   site:
     href: https://www.iot-solution.com/
   links:
@@ -1688,7 +1688,7 @@
     - Modbus
   name: ACE PLC
   logo: /images/partners/ace-automation-logo.png
-  page: /partners/hardware/ace-automation
+  page: /partners/hardware/ace-plc
   site:
     href: https://aceautomation.eu/
   links:
@@ -1801,7 +1801,7 @@
     - Modbus TCP
   name: Weinzierl Engineering GmbH
   logo: /images/partners/weinzierl-logo.svg
-  page: /partners/hardware/weinzierl-engineering-gmbh
+  page: /partners/hardware/weinzierl
   site:
     href: https://weinzierl.de/en/
   links:

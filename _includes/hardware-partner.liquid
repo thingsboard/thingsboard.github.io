@@ -20,15 +20,15 @@
             </tr>
             <tr>
                 <th>Industry</th>
-                <td>Smart Cities, Industrial Manufacturing, Smart Buildings, Environmental Monitoring</td>
+                <td>{{ partner.industry | join: ', ' }}</td>
             </tr>
             <tr>
                 <th>Use cases</th>
-                <td>Air Quality Monitoring, SCADA Swimming Pool, Smart Energy, SCADA Oil & Gas drilling system, Water Metering</td>
+                <td>{{ partner.use-case | join: ', ' }}</td>
             </tr>
             <tr>
                 <th>Hardware types</th>
-                <td>Environmental & Condition Sensors, Event & Status Sensors/Loggers, Vision Systems & Cameras, Gateways, Trackers (LPWAN/Cellular)</td>
+                <td>{{ partner.hardware-types | join: ', ' }}</td>
             </tr>
         </table>
         {% if partner.showcase.href %}

@@ -1,12 +1,14 @@
 ---
 layout: page-with-filter
-title: Partners on hardware area
+title: Official Thingsboard hardware partners
+description: Meet our official hardware partners and explore IoT devices tailored for seamless ThingsBoard integration. Join the partnership program or find the right vendor for your IoT deployment needs.
 pagination: "true"
 containerId: "card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
 itemsPerPage: "15"
 searchControl: "#searchCompanyInput"
+customTitle: "true"
 
 filterCollection:
   0:
