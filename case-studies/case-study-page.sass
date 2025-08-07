@@ -298,6 +298,21 @@
           .text
             & > p
               margin-bottom: 16px
+            p a
+              position: relative
+              text-decoration: underline
+              font-size: 16px
+              line-height: 28px
+              font-weight: 500
+              &:after
+                content: ""
+                background-image: url(https://img.thingsboard.io/case-studies/link-arrow.svg)
+                font-size: 13px
+                position: absolute
+                right: -14px
+                top: 0
+                width: 10px
+                height: 10px
             ul
               margin-left: 34px
               list-style: disc

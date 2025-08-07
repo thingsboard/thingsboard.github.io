@@ -6,11 +6,13 @@
     //color: #424242
     .inner-navigation
         position: relative
-        margin: 36px 0 56px
+        margin: 36px 0
         height: 68px
         display: flex
         justify-content: center
         align-items: center
+        @media (max-width: 600px)
+            margin-bottom: 156px
         ul
             list-style-type: none
             display: flex
@@ -34,7 +36,7 @@
                     box-sizing: border-box
                     border-radius: 34px
                     font-size: 12px
-                    color: #212529
+                    color: #3D3D3D
                     font-weight: 400
                     cursor: pointer
                     padding: 8px 12px
@@ -56,7 +58,7 @@
                         font-size: 16px
                         padding: 16px 28px
                         &:before
-                            margin-right: 12px
+                            margin-right: 8px
                             width: 30px
                             height: 30px
                     @media (min-width: 1400px)
@@ -64,7 +66,7 @@
                 &.tb-logo
                     a
                         &:before
-                            background: url('https://img.thingsboard.io/thingsboard-logo-black.svg')
+                            background: url('https://img.thingsboard.io/thingsboard-logo-black.svg') no-repeat
                             background-size: contain
                         @media (min-width: 1200px) and (max-width: 1400px)
                             .hidden-title
@@ -72,34 +74,36 @@
                 &.active
                     z-index: 5
                     a
-                        color: #fff
-                        background-color: #2A7DEC
+                        color: #2A7DEC
                         box-shadow: 0 6px 8px rgba(42,125,236,0.25)
-                        &:hover
-                            border-color: #2A7DEC
+                        border-color: #2A7DEC
                     &.tb-logo
                         a
                             &:before
-                                background: url('https://img.thingsboard.io/thingsboard-logo-white.svg')
+                                background: url('https://img.thingsboard.io/thingsboard-logo-white.svg') no-repeat
                                 background-size: contain
+                                filter: invert(62%) sepia(84%) saturate(891%) hue-rotate(184deg) brightness(105%) contrast(88%)
 
     div.install-content
         position: relative
         z-index: 4
         padding-top: 0
         padding-bottom: 102px
-        background-color: #fbfbfb
+        background-color: #F4F8FE
+        overflow: hidden
 
         .install-content-header
             flex-direction: row
             padding-top: 10px
-            @media (min-width: 992px)
-                padding-top: 64px
+
+            &.margin-bottom
+                margin-bottom: 28px
 
             h1
-                font-size: 24px
-                line-height: 36px
-                font-weight: 600
+                font-size: 36px
+                line-height: 48px
+                font-weight: 500
+                color: #202021
                 @media (min-width: 1200px)
                     font-size: 30px
                     line-height: 46px
@@ -122,27 +126,27 @@
                         margin-bottom: 90px
                         justify-content: start
 
+            .margin-mobile
+                margin: 50px 0
+
             .install-content-details
                 padding-top: 12px
-                color: #707275
-                font-size: 14px
-                line-height: 18px
+                color: #3B3C3D
+                font-size: 18px
+                line-height: 30px
                 p
-                    font-size: 14px
-                    line-height: 18px
+                    font-weight: 400
+                    font-size: 18px
+                    line-height: 30px
                     &.margin
                         margin-bottom: 1rem
-                    @media (min-width: 992px)
-                        font-size: 16px
-                        line-height: 24px
-                    @media (min-width: 1400px)
-                        font-size: 18px
-                        line-height: 27px
 
             .image-content
                 position: relative
                 width: 100%
                 padding-top: 60%
+                &.width-85
+                    width: 85%
                 @media (min-width: 768px)
                     padding-top: 50%
                 img
@@ -159,6 +163,10 @@
                         left: 0
                         top: 3rem
                         z-index: 2
+                        &.left-negative
+                            left: -40px
+                            @media (max-width: 600px)
+                                left: 0
 
         a, button
             &.btn-blue
@@ -171,14 +179,17 @@
                 font-weight: 500
                 outline: none
                 border-radius: 4px
-                border: solid 2px #2A7DEC
-                box-shadow: 0 6px 14px 0 rgba(42,125,236,0.25)
+                border: solid 1px #2A7DEC
                 line-height: 28px
                 letter-spacing: -0.03em
                 &:hover
-                    background-color: #fff
+                    filter: brightness(1.3)
+                &.secondary
+                    background-color: transparent
                     color: #2A7DEC
-                    box-shadow: 0 6px 14px 0 rgba(0,0,0,0.15)
+
+                @media (max-width: 600px)
+                    width: 100%
 
     a.btn-blue
         text-decoration: none
@@ -187,7 +198,7 @@
         display: flex
         flex-direction: column
         gap: 28px
-        margin-bottom: 68px
+        margin-bottom: 100px
         @media (min-width: 992px)
             flex-direction: row
         .column
@@ -203,18 +214,35 @@
                     font-size: 26px
                     line-height: 30px
                     margin-right: 22px
-                    color: #212529
+                    color: #2A7DEC
                     display: inline-block
                 .item-text
                     .item-title
-                        font-weight: 600
+                        color: #2A7DEC
+                        font-weight: 400
                         font-size: 20px
-                        line-height: 30px
+                        line-height: 32px
                         margin-bottom: 2px
+                    p
+                        font-size: 16px
+                        font-weight: 400
+                        line-height: 28px
+                        color: #202021
                 &:not(:last-of-type)
                     margin-bottom: 28px
 
     .deploy
+        position: relative
+        &:before
+            content: ""
+            display: block
+            width: 300%
+            height: 150%
+            top: -46px
+            left: -100%
+            background-color: #fff
+            position: absolute
+            z-index: -1
         h2
             font-weight: 600
             font-size: 24px
@@ -228,11 +256,6 @@
                 flex-direction: row
             .column
                 flex: 1
-                &:first-of-type
-                    margin-right: 0
-                @media (min-width: 992px)
-                    &:first-of-type
-                        margin-right: 45px
                 h3
                     font-weight: 400
                     font-size: 20px
@@ -247,7 +270,7 @@
                     &.premise
                         &:before
                             height: 28px
-                            background: url('https://img.thingsboard.io/server-icon-blue.svg') no-repeat
+                            background: url('https://img.thingsboard.io/server-icon.svg') no-repeat
                             background-size: contain
                     &.cloud
                         margin-top: 22px
@@ -255,42 +278,57 @@
                             margin-top: 0
                         &:before
                             height: 22px
-                            background: url('https://img.thingsboard.io/cloud-blue-symbol.svg') no-repeat
+                            background: url('https://img.thingsboard.io/cloud-symbol.svg') no-repeat
                             background-size: contain
 
                 .deployment-cards
                     display: flex
                     flex-wrap: wrap
                     justify-content: center
+                    gap: 20px
                     @media (min-width: 992px)
                         justify-content: start
 
                     .deployment-card-block
+                        padding: 24px
                         background-color: #fff
-                        margin: 0 10px 10px 0
-                        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15)
-                        border-radius: 4px
+                        border: 1px solid #EBEBEB
+                        border-radius: 16px
+                        height: 140px
+                        width: 312px
+                        text-decoration: none
+                        &:hover
+                            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+                            background: #F4F8FE
+                            img
+                                scale: 1.22
                         .deployment-logo
                             position: relative
-                            width: 190px
-                            height: 120px
-                            min-width: 190px
+                            width: 180px
+                            height: 36px
+                            min-width: 180px
                             display: flex
-                            justify-content: center
-                            align-items: center
                             align-content: center
+                            margin-bottom: 28px
                             img
                                 flex: 0 0 auto
                                 object-fit: contain
-                                width: 100%
                                 height: 100%
-                                padding: 15px 25px
                                 vertical-align: middle
+                                transition: ease-in-out 0.3s
+                                transform-origin: top left
+                        h4
+                            text-align: left
+                            font-size: 16px
+                            font-weight: 500
+                            color: #212121
+                            &:before
+                                display: none
 
             .divider
                 display: none
                 flex: 0
-                margin: 10px 45px 0 -45px
+                margin: 0 40px
                 border-color: #ddd
                 border-right-width: 1px
                 border-right-style: solid
