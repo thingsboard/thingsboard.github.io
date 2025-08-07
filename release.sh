@@ -5,12 +5,21 @@ echo "$(date +"%H:%M") Replacing image urls.. "
 extensions=( "*.md" "*.yml" "*.html" "*.liquid" "*.sass" "*.css" "*.js" "*.json" "*.sql" "*.cql")
 cleanup_dirs=( "user-guide" "reference" "edge" "lwm2m")
 
+# Detect OS and set sed in-place edit flags
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  # macOS
+  SED_OPTS=(-i '')
+else
+  # Linux and others
+  SED_OPTS=(-i)
+fi
+
 for ext in "${extensions[@]}"
 do
   echo "Replacing the image url in $ext files"
-  find . -type f -iname "$ext" -not -path "./_site/*" -exec sed -i '' -e '/https/! s/\/images\//https:\/\/img.thingsboard.io\//g' {} \;
-  find . -type f -iname "$ext" -not -path "./_site/*" -exec sed -i '' -e 's/https:\/\/thingsboard.io\/images\//https:\/\/img.thingsboard.io\//g' {} \;
-  find . -type f -iname "$ext" -not -path "./_site/*" -exec sed -i '' -e '/https:\/\/img.thingsboard.io\/partners\/map-of-distributors\.svg/ s/https:\/\/img.thingsboard.io\/partners\/map-of-distributors\.svg/\/images\/partners\/map-of-distributors.svg/g' {} \;
+  find . -type f -iname "$ext" -not -path "./_site/*" -exec sed "${SED_OPTS[@]}" -e '/https/! s/\/images\//https:\/\/img.thingsboard.io\//g' {} \;
+  find . -type f -iname "$ext" -not -path "./_site/*" -exec sed "${SED_OPTS[@]}" -e 's/https:\/\/thingsboard.io\/images\//https:\/\/img.thingsboard.io\//g' {} \;
+  find . -type f -iname "$ext" -not -path "./_site/*" -exec sed "${SED_OPTS[@]}" -e '/https:\/\/img.thingsboard.io\/partners\/map-of-distributors\.svg/ s/https:\/\/img.thingsboard.io\/partners\/map-of-distributors\.svg/\/images\/partners\/map-of-distributors.svg/g' {} \;
 done
 
 echo "$(date +"%H:%M") Replacing image urls.. done."
