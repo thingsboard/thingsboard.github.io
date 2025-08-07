@@ -15,8 +15,7 @@ notitle: "true"
             <div class="company-wrapper">
                 <div class="company-flex-content-default">
                     <div class="company-aboutus-image-block">
-                        <img class="company-aboutus-image" src="https://img.thingsboard.io/thingsboard_blue.svg" alt="Thingsboard logo" width="257" height="257">
-                        <span>ThingsBoard</span>
+                        <img class="company-aboutus-image" src="/images/thingsboard_blue.svg" alt="Thingsboard logo" width="257" height="257">
                     </div>
                     <div class="company-text-content-default">
                         <p class="company-text">At ThingsBoard, we help organizations worldwide unlock the full potential of IoT. Established with a vision to simplify and speed up IoT adoption, we provide a complete open-source IoT platform that enables easy device connectivity, data collection, processing, visualization, and management.</p>
@@ -36,7 +35,7 @@ notitle: "true"
                         <p class="company-text">As we listened to our community, we expanded the ThingsBoard ecosystem with powerful tools like ThingsBoard Gateway, enabling seamless integration of legacy systems, and ThingsBoard Edge, bringing real-time processing and reliability to on-site deployments. In 2019, we introduced Trendz, a dedicated data analytics tool for advanced visualization. In 2020, we launched ThingsBoard Cloud, a fully managed IoT platform, offering a quick and hassle-free way to deploy and scale IoT solutions. Most recently, in 2023, we released TBMQ, our scalable and fault-tolerant MQTT broker designed to handle deployments with hundreds of millions of clients.</p>
                         <p class="company-text">From just two co-founders, ThingsBoard has grown into a team of over 100 talented innovators. Trusted by thousands of organizations globally, we continue to innovate and shape the future of IoT, one device at a time.</p> 
                     </div>
-                    <img class="company-aboutus-image" src="https://img.thingsboard.io/company-images/history-image.webp" alt="Co-founders of ThingsBoard" width="400" height="600">
+                    <img class="company-aboutus-image" src="/images/company-images/history-image.webp" alt="Co-founders of ThingsBoard" width="400" height="600">
                 </div>
             </div>
         </div>
