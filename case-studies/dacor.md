@@ -11,7 +11,7 @@ description: Learn how an automotive parts manufacturer uses ThingsBoard and LoR
         <div class="card">
             <div class="text">
                 <p class="category">INDUSTRY 4.0</p>
-                <h1>Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</h1>
+                <h1>Real-Time production monitoring for automotive supplier by süc//dacor GmbH using ThingsBoard</h1>
                 <div class="image inner" style="background-image: url('/images/case-studies/dacor.webp')">
                     <img src="/images/case-studies/dacor.svg" title="süc//dacor GmbH" alt="süc//dacor GmbH logo" width="126" height="56">
                 </div>
@@ -138,6 +138,14 @@ description: Learn how an automotive parts manufacturer uses ThingsBoard and LoR
                 <p>ThingsBoard provides an intuitive web interface that gives plant management instant access to key machine performance data — without the need for external tools or complex configurations. This level of visibility drives operational transparency, reduces downtime, and supports informed, data-driven decision-making.</p>
             </div>
             <img src="/images/case-studies/dacor-5.webp" title="Operational transparency and control" alt="Operational transparency and control" width="450" height="240">
+        </div>
+        <div class="block">
+            <div class="text">
+                <h3>Increasing productivity with retrofit devices</h3>
+                <p>Watch Andreas Kücker, Manager Digital at süc//dacor GmbH, share insights from his conference presentation on how retrofit IoT solutions transformed their manufacturing processes and increased operational efficiency.</p>
+                <p><a target="_blank" href="https://www.youtube.com/watch?v=qxQHQtXjfEg">Watch conference presentation</a></p>
+            </div>
+            <img src="/images/case-studies/dacor-6.webp" title="Increasing productivity with retrofit devices" alt="Increasing productivity with retrofit devices" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
