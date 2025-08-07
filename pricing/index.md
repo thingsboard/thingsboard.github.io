@@ -111,168 +111,173 @@ selfManagedPlan:
 </div>
 
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
-    <div class="container">
+    <div class="container no-padding">
       <div class="pricing-content-header row">
           <div id="northAmericaHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                  All subscription plans include hosting and email costs.
               </div>
           </div>
           <div id="europeHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                  All subscription plans include hosting and email costs.
               </div>
           </div>
           <div class="col d-flex justify-content-end">
-              <div class="solution-selector solution-selector-cloud">
-                  <div id="Pricing_PE_Cloud_NorthAmerica"
-                       data-solutionId="cloud-north-america"
-                       class="solution north-america active gtm_button"
-                       data-toggle="#northAmerica"
-                       data-description-toggle="#northAmericaHeader"
-                       onClick="activateServerSection('cloud-north-america', '/docs/paas/')">
-                      <h3 id="Pricing_PE_Cloud_NorthAmerica" class="gtm_button">North America</h3>
-                  </div>
-                  <div id="Pricing_PE_Cloud_Europe"
-                       data-solutionId="cloud-europe"
-                       class="solution europe gtm_button"
-                       data-toggle="#europe"
-                       data-description-toggle="#europeHeader"
-                       onClick="activateServerSection('cloud-europe', '/docs/paas/eu/')">
-                      <h3 id="Pricing_PE_Cloud_Europe" class="gtm_button">Europe</h3>
-                  </div>
-              </div>
+            <div class="toggle-container">
+                <div class="billing-toggle solution-selector">
+                    <span style="width: 117px" id="Pricing_PE_Cloud_NorthAmerica" data-solutionId="cloud-north-america" data-toggle="#northAmerica" data-description-toggle="#northAmericaHeader" class="label-text selected solution north-america">North America</span>
+                    <label class="switch">
+                        <input onclick="activateServerSection(event)" type="checkbox" id="regionSelect">
+                        <span class="slider"></span>
+                    </label>
+                    <span style="width: 42px" id="Pricing_PE_Cloud_Europe" data-solutionId="cloud-europe" data-toggle="#europe" data-description-toggle="#europeHeader" class="label-text solution europe">Europe</span>
+                </div>
+            </div>
           </div>
       </div>
         <div class="pricing-div">
             <div class="pricing-section pricing-cloud active" id="northAmerica">
-               <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description">
-                                <p>Become familiar with ThingsBoard features</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $10
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Start Free
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 30 Devices</div>
-                            <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Community support
-                            </div>
+               <div class="cards-row">
+                    <div class="pricing-square">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description">
+                            <p>Start exploring features</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $10
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Start Free
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 30 Devices</div>
+                        <div class="pricing-square-item">Up to 30 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description">
-                                <p>For PoCs and MVPs</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $149
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 100 Devices</div>
-                            <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Community support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square popular">
+                        <span class="popular-badge">POPULAR</span>
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description">
+                            <p>For PoCs and MVPs</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $149
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 100 Devices</div>
+                        <div class="pricing-square-item">Up to 100 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>
-                            <div class="pricing-square-description">
-                                <p>For upcoming IoT Unicorns</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $399
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 500 Devices</div>
-                            <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square">
+                        <h2>Startup</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $399
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 500 Devices</div>
+                        <div class="pricing-square-item">Up to 500 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $749
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square">
+                        <h2>Business</h2>
+                        <div class="pricing-square-description">
+                            <p>Defined long term projects</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $749
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 1 000 Devices</div>
+                        <div class="pricing-square-item">Up to 1 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    </div>
+                    <div class="pricing-square">
+                        <h2>New</h2>
+                        <div class="pricing-square-description">
+                            <p>Built for scalable IoT growth</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $1199
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 2 000 Devices</div>
+                        <div class="pricing-square-item">Up to 2 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                </div>
             </div>
             <div class="pricing-section pricing-cloud" id="europe">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
+                <div class="cards-row">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
-                                <p>Become familiar with ThingsBoard features</p>
+                                <p>Start exploring features</p>
                             </div>
                             <h4 class="pricing-square-price">
                                 €9
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Start Free
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 30 Devices</div>
                             <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
-                        </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
+                        <div class="pricing-square popular">
+                            <span class="popular-badge">POPULAR</span>
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
                                 <p>For PoCs and MVPs</p>
@@ -288,14 +293,12 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>
                             <div class="pricing-square-description">
@@ -306,42 +309,61 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
+                                Email support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
+                                <p>Defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price">
                                 €725
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Up to 1 000 Devices</div>
+                            <div class="pricing-square-item">Up to 1 000 Assets</div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
+                                Email support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
+                    <div class="pricing-square">
+                        <h2>New</h2>
+                        <div class="pricing-square-description">
+                            <p>Built for scalable IoT growth</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €1165
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 2 000 Devices</div>
+                        <div class="pricing-square-item">Up to 2 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                </div>
             </div>
@@ -349,7 +371,7 @@ selfManagedPlan:
         <div class="additional-content">
             <div class="plan-calculator-block">
                 <div class="text">
-                    <h2 class="no-margin">Ready to scale past 1,000 devices?</h2>
+                    <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
                 </div>
                 <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
@@ -388,11 +410,11 @@ selfManagedPlan:
                             <p>Suitable for pilots and early stage deployments.</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            $1199
+                            $1499
                             <span>/month</span>
                         </h4>
                         <h4 class="pricing-square-price hidden">
-                            $1079
+                            $1349
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
@@ -403,7 +425,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">20 000 data points per minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">50 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">200 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
@@ -430,7 +452,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 data points per minute</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 msg/minute</div> 
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
@@ -457,7 +479,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 data points per minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
@@ -579,8 +601,8 @@ selfManagedPlan:
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
-                                <td>SQL</td>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database</td>
+                                <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
