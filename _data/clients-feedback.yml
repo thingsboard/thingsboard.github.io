@@ -445,8 +445,8 @@ industry40:
       companyName:  süc//dacor GmbH
       id: dacor
       link: https://dacor.de/
-      authorImage: /images/customers/andreas-kucker.webp
-      companyImage: /images/customers/dacor.svg
+      authorImage: https://img.thingsboard.io/customers/andreas-kucker.webp
+      companyImage: https://img.thingsboard.io/customers/dacor.svg
       companyImageWidth: 170
       companyImageHeight: 30
       text:

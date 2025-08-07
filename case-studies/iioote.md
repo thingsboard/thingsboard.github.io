@@ -12,19 +12,19 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
             <div class="text">
                 <p class="category">SMART CITY</p>
                 <h1>From Prototyping to Commercial Services: How iiOOTE Scaled IoT with ThingsBoard</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/iioote.webp')">
-                    <img src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/iioote.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo" width="126" height="56">
                 </div>
                 <p>iiOOTE is an independent systems integrator with deep technical expertise in LPWAN technologies (LoRaWAN®, NB-IoT, etc.) and a strong international network across the IoT ecosystem. Headquartered in Sweden, iiOOTE designs and delivers scalable, end-to-end IoT solutions tailored for smart cities, utilities, environmental monitoring, and healthcare.</p>
                 <p>By combining hardware, connectivity, and platform services, iiOOTE helps public sector and enterprise customers rapidly deploy and manage sensor networks. Their focus is on long-range, energy-efficient solutions that unlock data-driven insights and improve operational efficiency across verticals.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/iioote.webp')">
-                <img src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo" width="126" height="56">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/iioote.webp')">
+                <img src="https://img.thingsboard.io/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo" width="126" height="56">
             </div>
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/bertil-moberg.webp" title="Co-Founder & Head of IoT Solutions" alt="Bertil Moberg" width="658" height="424">
+        <img src="https://img.thingsboard.io/case-studies/bertil-moberg.webp" title="Co-Founder & Head of IoT Solutions" alt="Bertil Moberg" width="658" height="424">
         <div class="text">
             <h2>iiOOTE</h2>
             <p class="quote">“During our evaluation of several different IoT platforms we decided using ThingsBoard Community Edition to quickly get started with testing of our concept solutions. Since it offers an easy way to get access to data from all our sensors and supports building dashboards for visualization. However, we soon discovered that ThingsBoard also fulfilled our need to build commercial services. With increasing number of sensors...<a target="_blank" href="/industries/smart-buildings/?company=iioote">read more</a></p>
@@ -97,35 +97,35 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 <h3>Rapid prototyping with Community Edition</h3>
                 <p>ThingsBoard CE allowed iiOOTE to quickly launch IoT proof-of-concepts. Thanks to built-in protocol support and drag-and-drop dashboards, they accelerated initial development without writing custom code.</p>
             </div>
-            <img src="/images/case-studies/iioote-1.webp" title="Rapid prototyping with Community Edition" alt="Rapid prototyping with Community Edition" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/iioote-1.webp" title="Rapid prototyping with Community Edition" alt="Rapid prototyping with Community Edition" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Scalable migration to Professional Edition</h3>
                 <p>As customer demand grew, iiOOTE upgraded to ThingsBoard PE, unlocking multi-tenancy, access control, and advanced features critical for managing commercial IoT services at scale.</p>
             </div>
-            <img src="/images/case-studies/iioote-2.webp" title="Scalable migration to Professional Edition" alt="Scalable migration to Professional Edition" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/iioote-2.webp" title="Scalable migration to Professional Edition" alt="Scalable migration to Professional Edition" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Centralized LPWAN data aggregation</h3>
                 <p>Using ThingsBoard’s flexible integration capabilities, iiOOTE connects thousands of LPWAN-enabled sensors and visualizes their data on a single platform. This centralized approach simplifies maintenance and operations.</p>
             </div>
-            <img src="/images/case-studies/iioote-3.webp" title="Centralized LPWAN data aggregation" alt="Centralized LPWAN data aggregation" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/iioote-3.webp" title="Centralized LPWAN data aggregation" alt="Centralized LPWAN data aggregation" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Tailored dashboards for diverse stakeholders</h3>
                 <p>ThingsBoard’s customizable dashboards allow iiOOTE to provide each customer with a personalized view of their IoT ecosystem—essential when supporting municipalities, enterprises, and service providers.</p>
             </div>
-            <img src="/images/case-studies/iioote-4.webp" title="Tailored dashboards for diverse stakeholders" alt="Tailored dashboards for diverse stakeholders" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/iioote-4.webp" title="Tailored dashboards for diverse stakeholders" alt="Tailored dashboards for diverse stakeholders" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Future-ready and expandable architecture</h3>
                 <p>With support for server clustering and horizontal scaling, ThingsBoard gives iiOOTE the freedom to grow with demand and add infrastructure as needed—ensuring service continuity and performance.</p>
             </div>
-            <img src="/images/case-studies/iioote-5.webp" title="Future-ready and expandable architecture" alt="Future-ready and expandable architecture" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/iioote-5.webp" title="Future-ready and expandable architecture" alt="Future-ready and expandable architecture" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -143,8 +143,8 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -159,8 +159,8 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -175,8 +175,8 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/entities-table-3.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
-                <img src="/images/case-studies/parking-status-widget.webp" title="Thingsboard parking-status-widget" alt="Thingsboard parking-status-widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/entities-table-3.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/parking-status-widget.webp" title="Thingsboard parking-status-widget" alt="Thingsboard parking-status-widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -191,8 +191,8 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
-                <img src="/images/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -207,8 +207,8 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
-                <img src="/images/case-studies/hp-centrifugal-pump.webp" title="Thingsboard HP centrifugal-pump widget" alt="Thingsboard HP centrifugal-pump widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-centrifugal-pump.webp" title="Thingsboard HP centrifugal-pump widget" alt="Thingsboard HP centrifugal-pump widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -223,8 +223,8 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
-                <img src="/images/case-studies/map-widget.webp" title="Thingsboard map widget" alt="Thingsboard map widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/map-widget.webp" title="Thingsboard map widget" alt="Thingsboard map widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -239,18 +239,18 @@ description: See how iiOOTE used ThingsBoard to launch, scale, and manage LPWAN 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/hierarchy-widget.webp" title="Thingsboard hierarchy widget" alt="Thingsboard hierarchy widget" width="776" height="776">
-                <img src="/images/case-studies/roles-table.webp" title="Thingsboard roles table widget" alt="Thingsboard roles table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hierarchy-widget.webp" title="Thingsboard hierarchy widget" alt="Thingsboard hierarchy widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/roles-table.webp" title="Thingsboard roles table widget" alt="Thingsboard roles table widget" width="776" height="776">
             </div>
         </div>
         {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo" width="126" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo" width="126" height="56">
                 </div>
             </div>
         </div>
