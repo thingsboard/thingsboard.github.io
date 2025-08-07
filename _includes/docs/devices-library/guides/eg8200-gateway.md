@@ -148,3 +148,7 @@ Click the created device and find the latest telemetry data received by the plat
 %}
 
 {% include images-gallery.liquid imageCollection=verifyDataTransmission %}
+
+## Conclusion
+
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
