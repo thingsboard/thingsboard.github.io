@@ -154,7 +154,7 @@ mosquitto_pub -h {{mqttHostName}} -t v1/devices/me/attributes -i "c1" -u "t1" -P
 
 - **JSON**. By default, ThingsBoard expects devices to send data in JSON format. However, it is also possible to transmit data using [Protocol Buffers](https://developers.google.com/protocol-buffers) (Protobuf).
 - **Protocol Buffers (Protobuf)** is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.   
-The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates). 
+The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls). 
 > ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
 {% include images-gallery.html imageCollection="mqtt-device-payload" %}
@@ -175,7 +175,7 @@ When compatibility mode is enabled, ThingsBoard will default to using a Protobuf
 You can also configure devices to transmit data using [Protocol Buffers](https://developers.google.com/protocol-buffers){:target="_blank"} (Protobuf) by changing the **CoAP device payload** setting to **Protobuf**.
 
     - **Protocol Buffers (Protobuf)** is a language- and platform-neutral method of serializing structured data, designed primarily to reduce the size of transmitted data.   
-  The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api){:target="_blank"} and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server){:target="_blank"} and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
+  The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api){:target="_blank"} and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server){:target="_blank"} and implemented the ability to define a schema for downlink messages (RPC calls).
   ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
 {% include images-gallery.html imageCollection="coap-default" %}
