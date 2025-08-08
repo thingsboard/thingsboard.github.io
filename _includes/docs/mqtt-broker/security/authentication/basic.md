@@ -65,6 +65,46 @@ The following configuration allows clients to publish messages to topics that st
 
 {% include images-gallery.html imageCollection="security-authorization-basic" %}
 
+### MQTT Example based on Client ID, Username and Password
+
+For this option, you should populate Client ID, Username and Password in the MQTT client credential. MQTT clients will be able to connect if they specify correct combination of client ID, username and password.
+
+Let's review a simple command to publish message using MQTT client ID, username and password to the TBMQ. The command is using plain MQTT without TLS:
+
+```bash
+mosquitto_pub -d -q 1 -h "YOUR_TBMQ_HOST" -p "1883" -t "sensors/temperature" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
+```
+{: .copy-code}
+
+where:
+
+* **YOUR_TBMQ_HOST** is the host of your TBMQ instance;
+* **YOUR_CLIENT_ID** is your client id;
+* **YOUR_CLIENT_USERNAME**, **YOUR_CLIENT_PASSWORD** is your client username and password.
+
+{% include images-gallery.html imageCollection="tbmq-client-id-username-and-password" %}
+
+### MQTTS Example based on Client ID, Username and Password
+
+One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
+Follow the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) guide to provision server certificate for your own TBMQ instance.
+
+Let's review a simple command to publish message using MQTT client ID, username and password to the TBMQ. The command is using MQTTS:
+
+```bash
+mosquitto_pub -d -q 1 --cafile YOUR_PEM_FILE -h "YOUR_TBMQ_HOST" -p 8883 -t "sensors/temperature" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
+```
+{: .copy-code}
+
+where:
+
+* **YOUR_PEM_FILE** is your CA file;
+* **YOUR_TBMQ_HOST** is the host of your TBMQ instance;
+* **YOUR_CLIENT_ID** is your client id;
+* **YOUR_CLIENT_USERNAME**, **YOUR_CLIENT_PASSWORD** is your client username and password.
+
+{% include images-gallery.html imageCollection="tbmq-tls-client-id-username-and-password" %}
+
 ## Next steps
 
 {% assign currentGuide = "SecurityGuide" %}{% include templates/mqtt-broker-guides-banner.md %}
