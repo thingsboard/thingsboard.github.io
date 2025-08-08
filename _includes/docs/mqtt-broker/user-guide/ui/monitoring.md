@@ -42,15 +42,15 @@ Contains information regarding some commonly used configuration parameters:
   - **TCP Port.** By default, the TCP listener is enabled on the `1883` port. To modify the port, you can set the `LISTENER_TCP_BIND_PORT` environment variable.
   - **TLS Port.** The SSL/TLS listener is disabled by default on port `8883`. To change the default port, set the `LISTENER_SSL_BIND_PORT` environment variable.
   - **WS Port.** By default, the WS listener is enabled on the `8084` port. To modify the port, you can set the `LISTENER_WS_BIND_PORT` environment variable.
-  - **WSs Port.** By default, the WSs listener is disabled on the `8085` port. To modify the port, you can set the `LISTENER_WSS_BIND_PORT` environment variable.
+  - **WSS Port.** By default, the WSS listener is disabled on the `8085` port. To modify the port, you can set the `LISTENER_WSS_BIND_PORT` environment variable.
   - **TCP Listener.** Is enabled by default. To disable it, set the `LISTENER_TCP_ENABLED` environment variable to `false`.
   - **TLS Listener.** Is disabled by default. To enable the SSL/TLS listener, set the `LISTENER_SSL_ENABLED` environment variable to `true`.
   - **WS Listener.** Is enabled by default. To disable it, set the `LISTENER_WS_ENABLED` environment variable to `false`.
-  - **WSs Listener.** Is disabled by default. To enable it, set the `LISTENER_WSS_ENABLED` environment variable to `true`.
+  - **WSS Listener.** Is disabled by default. To enable it, set the `LISTENER_WSS_ENABLED` environment variable to `true`.
   - **TCP Listener Max Payload Size.** This parameter defines the maximum allowed size of the payload in a TCP message. The default value is `65536` bytes. To modify it, set the `TCP_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
   - **TLS Listener Max Payload Size.** Similar to the TCP listener, this parameter specifies the maximum allowed size of the payload in an SSL/TLS-encrypted message. The default value is `65536` bytes. To change it, set the `SSL_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
   - **WS Listener Max Payload Size.** Specifies the maximum allowed size of the payload in a WS message. The default value is `65536` bytes. To modify it, set the `WS_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
-  - **WSs Listener Max Payload Size.** Defines the maximum allowed size of the payload in a WSS-encrypted message. The default value is `65536` bytes. To change it, set the `WSS_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
+  - **WSS Listener Max Payload Size.** Defines the maximum allowed size of the payload in a WSS-encrypted message. The default value is `65536` bytes. To change it, set the `WSS_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
 
 ![image](/images/mqtt-broker/user-guide/ui/config-card.png)
 

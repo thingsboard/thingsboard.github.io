@@ -46,7 +46,7 @@ you can modify the `LISTENER_WS_BIND_ADDRESS` and `LISTENER_WS_BIND_PORT` variab
 WS listener is configured to negotiate via all MQTT versions by default, i.e. `WS_NETTY_SUB_PROTOCOLS` is set to `mqttv3.1,mqtt`.
 The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5.
 
-### WSs Listener
+### WSS Listener
 
 To enable the WebSocket Secure listener, set the `LISTENER_WSS_ENABLED` environment variable to `true`. By default, the broker is listening on the `8085` port.
 To change the host and/or port that the broker is listening to, update the `LISTENER_WSS_BIND_ADDRESS` and `LISTENER_WSS_BIND_PORT` variables, respectively.
@@ -65,7 +65,7 @@ If you choose Pem as the credentials type, you need to configure the following:
 - Set `LISTENER_WSS_PEM_KEY_PASSWORD` variable to the password of your server certificate private key.
 
 Do not forget to configure the TrustStore by adding the trusted certificates/chains if you require two-way TLS.
-WSs listener is set to the same negotiation subprotocols as [WS](#ws-listener) listener. If you need to change this default behavior, update `WSS_NETTY_SUB_PROTOCOLS` parameter appropriately.
+WSS listener is set to the same negotiation subprotocols as [WS](#ws-listener) listener. If you need to change this default behavior, update `WSS_NETTY_SUB_PROTOCOLS` parameter appropriately.
 
 ### Next steps
 

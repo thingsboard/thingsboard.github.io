@@ -239,6 +239,8 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ si
 
 {% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
 
+{% include templates/mqtt-broker/install/ssl/mqtts.md %}
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

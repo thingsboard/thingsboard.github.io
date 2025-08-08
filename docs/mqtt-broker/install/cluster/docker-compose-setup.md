@@ -174,7 +174,7 @@ docker exec haproxy-certbot haproxy-refresh
 
 **Note**: Valid certificate is used only when you visit web UI by domain in URL.
 
-## Enable MQTTs
+## Enable MQTTS (MQTT over SSL/TLS)
 
 To enable **MQTT over SSL (MQTTS)**, you need to provide valid SSL certificates and configure TBMQ to use them.
 
@@ -197,6 +197,7 @@ Open your `docker-compose.yml` file and **uncomment** the volume line that mount
 volumes:
   - PATH_TO_CERTS:/config/certificates
 ```
+{: .copy-code}
 
 Replace `PATH_TO_CERTS` with the path to the folder containing your certificate files. Make sure TBMQ can access those file.
 
@@ -210,6 +211,7 @@ LISTENER_SSL_PEM_CERT=/config/certificates/mqttserver.pem
 LISTENER_SSL_PEM_KEY=/config/certificates/mqttserver_key.pem
 LISTENER_SSL_PEM_KEY_PASSWORD=server_key_password
 ```
+{: .copy-code}
 
 > Adjust the file paths and password as needed. If your private key is not password-protected, you can leave `LISTENER_SSL_PEM_KEY_PASSWORD` empty.
 
@@ -218,7 +220,6 @@ LISTENER_SSL_PEM_KEY_PASSWORD=server_key_password
 Apply the changes by restarting TBMQ services:
 
 ```bash
-./scripts/docker-stop-services.sh
 ./scripts/docker-start-services.sh
 ```
 {: .copy-code}
