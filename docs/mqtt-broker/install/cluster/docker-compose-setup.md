@@ -176,6 +176,20 @@ docker exec haproxy-certbot haproxy-refresh
 
 ## Enable MQTTS (MQTT over SSL/TLS)
 
+**MQTTS** allows clients to connect to TBMQ over an encrypted TLS/SSL channel, ensuring the confidentiality and integrity of MQTT messages in transit.
+There are two common deployment options:
+
+* **Two-way MQTTS (Mutual TLS)** – TBMQ terminates TLS, and clients must present valid certificates for authentication.
+* **One-way MQTTS (TLS termination at Load Balancer)** – HAProxy or another load balancer handles TLS termination, and forwards plain MQTT traffic to TBMQ over a trusted internal network.
+
+Both approaches protect external connections with encryption, but **two-way MQTTS** adds client certificate verification for higher security, 
+while **one-way MQTTS** simplifies broker configuration and can reuse existing HTTPS certificates on the load balancer.
+
+### Two-way MQTTS
+
+In this configuration, TBMQ itself handles TLS termination and (optionally) client certificate authentication. 
+This approach is suitable when you want the broker to fully control SSL/TLS and mutual authentication without relying on a load balancer for security.
+
 To enable **MQTT over SSL (MQTTS)**, you need to provide valid SSL certificates and configure TBMQ to use them.
 
 For more information on supported certificate formats and options, refer to the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) documentation.
@@ -225,6 +239,30 @@ Apply the changes by restarting TBMQ services:
 {: .copy-code}
 
 Once started, your MQTT clients will be able to securely connect to port **8883** using TLS/SSL.
+
+### One-way MQTTS
+
+In this setup, TLS is terminated at the load balancer (HAProxy). 
+Clients connect securely to HAProxy over MQTTS (port 8883), and HAProxy forwards plain MQTT (unencrypted) to TBMQ over the internal network (port 1883).
+You can reuse the same certificate you already use for HTTPS.
+
+Point HAProxy to your certificate bundle (PEM with full chain + private key). If you reuse the HTTPS cert, reference the same bundle.
+
+```text
+ listen mqtts-in
+  bind *:${MQTTS_PORT} ssl crt /usr/local/etc/haproxy/certs.d/fullchain-and-key.pem
+  mode tcp
+  option clitcpka # For TCP keep-alive
+  timeout client 3h
+  timeout server 3h
+  option tcplog
+  balance leastconn
+  server tbMqtt1 tbmq1:1883 check inter 5s resolvers docker_resolver resolve-prefer ipv4
+  server tbMqtt2 tbmq2:1883 check inter 5s resolvers docker_resolver resolve-prefer ipv4
+```
+{: .copy-code}
+
+> **Note:** Replace _fullchain-and-key.pem_ with the actual filename of your certificate bundle.
 
 ## Next steps
 
