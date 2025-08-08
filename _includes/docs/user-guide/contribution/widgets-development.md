@@ -10,15 +10,15 @@ Each widget definition represents a specific [Widget Type](/docs/{{docsPrefix}}u
 
 In order to create a new widget definition, navigate to "Widget Library" and open existing "Widgets Bundle" or create a new one.  In the "Widgets Bundle" view, click the “+” button at the top-right part of the screen and then click the "Create new widget" button.
 
-![image](/images/user-guide/contribution/widgets/create-new-widget-type.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/create-new-widget-type.png)
 
 "Select widget type" window should appear with select options corresponding to the [widget type](/docs/{{docsPrefix}}user-guide/ui/widget-library/#widget-types) you intend to develop.
 
-![image](/images/user-guide/contribution/widgets/select-widget-type.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/select-widget-type.png)
 
 After that, the pre-populated "Widget Editor" page will open with starter widget template according to previously selected widget type.
 
-![image](/images/user-guide/contribution/widgets/widget-editor.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor.png)
 
 ### Widget Editor overview
 
@@ -32,7 +32,7 @@ It consists of [top toolbar](#widget-editor-toolbar) and four main sections:
 
 #### Widget Editor Toolbar
 
-![image](/images/user-guide/contribution/widgets/widget-editor-toolbar.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-toolbar.png)
 
 Widget Editor Toolbar consists of the following items:
 
@@ -50,21 +50,21 @@ This section consists of three tabs:
 
 The first **Resources** tab is used to specify external JavaScript/CSS resources used by the widget.
 
-![image](/images/user-guide/contribution/widgets/widget-editor-resources.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-resources.png)
 
 Second **HTML** tab contains the widget's HTML code *(Note: some widgets create HTML content dynamically, thus their initial HTML content can be empty).*
 
-![image](/images/user-guide/contribution/widgets/widget-editor-html.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-html.png)
 
 Third **CSS** tab contains widget specific CSS style definitions. 
 
-![image](/images/user-guide/contribution/widgets/widget-editor-css.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-css.png)
 
 #### JavaScript section
 
 This section contains all widget related JavaScript code according to the [Widget API](#basic-widget-api).  
 
-![image](/images/user-guide/contribution/widgets/widget-editor-javascript.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-javascript.png)
 
 #### Settings schema section
 
@@ -74,14 +74,14 @@ The first tab, **Settings schema**, is used to specify the JSON schema of widget
 This generated UI form is displayed in the **Advanced** mode in the **Appearance** tab of widget settings. 
 The Settings Object serialized by this schema, is used to store specific widget settings and is accessible from the widget's JavaScript code.
 
-![image](/images/user-guide/contribution/widgets/widget-editor-settings-schema.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-settings-schema.png)
  
 The second tab, **Data key settings schema**, is used to specify JSON schema of data key settings for automatically generating a UI form using the react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
 This generated UI form is displayed in **Advanced** tab of the **Data key configuration** dialog.
 The Settings Object serialized by this schema is used to store specific settings for each data key of the datasource defined in the widget. 
 These settings are accessible from widget's JavaScript code.
 
-![image](/images/user-guide/contribution/widgets/widget-editor-datakey-settings-schema.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-datakey-settings-schema.png)
 
 The third tab, **Latest data key settings schema**, is used to specify JSON schema of the latest data key for automatically generating a UI form using the react-schema-form [builder](http://networknt.github.io/react-schema-form/).
 The **Latest data key settings schema** is available only for **Time series** widgets.
@@ -89,12 +89,12 @@ This generated UI form is displayed in **Advanced** tab of the **Data key config
 The Settings Object serialized by this schema is used to store specific settings for each data key of the datasource defined in the widget.
 These settings are accessible from widget JavaScript code.
 
-![image](/images/user-guide/contribution/widgets/widget-editor-latest-datakey-setting-schema.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-latest-datakey-setting-schema.png)
 
 Starting from v3.4, auto-generated advanced widget settings JSON forms are replaced with [Angular components](https://github.com/thingsboard/thingsboard/pull/6545).
 When creating new settings schemas for custom widgets, don't forget to remove components from **Widget Settings** tab.
 
-![image](/images/user-guide/contribution/widgets/widget-editor-widget-settings-selectors.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-widget-settings-selectors.png)
 
 Here is the basic example of the **settings schema**:
 
@@ -143,7 +143,7 @@ Here is the basic example of the **settings schema**:
 
 Here is the result of applying **settings schema**, will be visible in **Appearance** tab of the widget settings:
 
-![image](/images/user-guide/contribution/widgets/widget-editor-schema-example.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-schema-example.png)
 
 
 The **schema** property supports types such as **Number**, **Boolean**, **String** and **Object**.
@@ -262,7 +262,7 @@ Here is the complex example of the custom **settings schema**:
 
 The result of applying custom **settings schema** to the widget:
 
-![image](/images/user-guide/contribution/widgets/widget-editor-appearence-example.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-appearence-example.png)
 
 
 #### Widget preview section
@@ -272,7 +272,7 @@ It is presented as a mini dashboard containing one widget instantiated from the 
 It has most of the functionality provided by a typical ThingsBoard dashboard, with some limitations.
 For example, "Function" can only be selected as datasource type in widget datasources section for debugging purposes.    
 
-![image](/images/user-guide/contribution/widgets/widget-editor-preview.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/widget-editor-preview.png)
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ## Troubleshooting
@@ -280,7 +280,7 @@ For example, "Function" can only be selected as datasource type in widget dataso
 ### Empty web report
 Sometimes, while working with reports, you may encounter the following problem:
 Heavy widgets may not load in time before the web report begins to be generated. As a result, the report will be empty(because, at the time of creation, data is not present on the dashboard):
-![image](/images/user-guide/contribution/widgets/web-report-error.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/web-report-error.png)
 
 To resolve this problem report service contains a special feature that allows us to inform it that the widget was loaded.
 

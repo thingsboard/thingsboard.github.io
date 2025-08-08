@@ -235,7 +235,7 @@ The Broadcast Service ([BroadcastService](https://github.com/thingsboard/thingsb
 
 For example, consider sending data from Widget 1 to Widget 2.
 
-![image](/images/user-guide/contribution/widgets/broadcast-service-start.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/broadcast-service-start.png)
 
 In Widget 1 you must send data using broadcast(...) function:
 ```
@@ -267,7 +267,7 @@ self.onInit = function() {
 
 as a result on Widget 2 you can see your data:
 
-![image](/images/user-guide/contribution/widgets/broadcast-service-finish.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/broadcast-service-finish.png)
 
 #### Type parameters object
 
@@ -342,7 +342,7 @@ The **Widget Editor** will open, pre-populated with the content of the default *
 
 - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
 
-![image](/images/user-guide/contribution/widgets/latest-values-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/latest-values-widget-sample.png)
 
 In this example, the **data** property of [subscription](#subscription-object) is assigned to the **$scope** and becomes accessible within the HTML template.
 Inside the HTML, a special [***ngFor**](https://angular.io/api/common/NgForOf) structural angular directive is used in order to iterate over available dataKeys & datapoints then render latest values with their corresponding timestamps.
@@ -418,7 +418,7 @@ self.onDataUpdated = function() {
 
 - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
 
-![image](/images/user-guide/contribution/widgets/timeseries-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/timeseries-widget-sample.png)
 
 In this example, the [subscription](#subscription-object) **datasources** and **data** properties are assigned to **$scope** and become accessible within the HTML template.
 The **$scope.datasourceData** property is introduced to map datasource specific dataKeys data by datasource index for flexible access within the HTML template.
@@ -537,7 +537,7 @@ self.onInit = function() {
 - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
 - Click dashboard edit button on the preview section to change the size of the resulting widget. Then click dashboard apply button. The final widget should look like the image below.
 
-![image](/images/user-guide/contribution/widgets/control-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/control-widget-sample.png)
 
 - Click the **Save** button on the **Widget Editor Toolbar** to save widget type.
 
@@ -552,7 +552,7 @@ To test how this widget performs RPC commands, we will need to place it in a das
 - Navigate to **Dashboards** and create a new dashboard with some name, for ex. "My first control dashboard". Open this dashboard.
 - Click dashboard "edit" button. In the dashboard edit mode, click the "Entity aliases" button located on the dashboard toolbar.
 
-![image](/images/user-guide/contribution/widgets/dashboard-toolbar-entity-aliases.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/dashboard-toolbar-entity-aliases.png)
 
 - Inside **Entity aliases** pop-up click "Add alias".
 - Fill "Alias name" field, for ex. "My RPC Device Alias".
@@ -560,12 +560,12 @@ To test how this widget performs RPC commands, we will need to place it in a das
 - Choose "Device" in "Type" field.
 - Select your device in "Entity list" field. In this example "My RPC Device".
 
-![image](/images/user-guide/contribution/widgets/add-rpc-device-alias.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/add-rpc-device-alias.png)
 
 - Click "Add" and then "Save" in **Entity aliases**.
 - Click dashboard "+" button then click "Create new widget" button.
 
-![image](/images/user-guide/contribution/widgets/dashboard-create-new-widget-button.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/dashboard-create-new-widget-button.png)
 
 - Then select **Widget Bundle** where your RPC widget was saved. Select "Control widget" tab.
 - Click your widget. In this example, "My first control widget".
@@ -575,7 +575,7 @@ To test how this widget performs RPC commands, we will need to place it in a das
 - Fill **RPC params** field with RPC params. For ex. "{ param1: "value1" }".
 - Click **Send RPC command** button. You should see the following response in the widget.
 
-![image](/images/user-guide/contribution/widgets/control-widget-sample-response-one-way.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/control-widget-sample-response-one-way.png)
 
 The following output should be printed in the device console:
 
@@ -589,18 +589,18 @@ In order to test "Two way" RPC command mode, we need to change the corresponding
 - Click dashboard "edit" button. In dashboard edit mode, click **Edit widget** button located in the header of Control widget.
 - In the widget details, select "Advanced" tab and uncheck "Is One Way Command" checkbox.
 
-![image](/images/user-guide/contribution/widgets/control-widget-sample-settings.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/control-widget-sample-settings.png)
 
 - Click **Apply changes** button on the widget details header. Close details and click dashboard **Apply changes** button.
 - Fill widget fields with RPC method name and params like in previous steps.
   Click **Send RPC command** button. You should see the following response in the widget.
 
-![image](/images/user-guide/contribution/widgets/control-widget-sample-response-two-way.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/control-widget-sample-response-two-way.png)
 
 - stop **mqtt-js-rpc-from-server.sh** script.
   Click **Send RPC command** button. You should see the following response in the widget.
 
-![image](/images/user-guide/contribution/widgets/control-widget-sample-response-timeout.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/control-widget-sample-response-timeout.png)
 
 In this example, **controlApi** is used to send RPC commands. Additionally, custom widget settings were introduced in order to configure RPC command mode and RPC request timeout.
 The response from the device is handled by **commandObservable**.  It has success and failed callbacks with corresponding response, or rejection objects containing information about request execution result.
@@ -727,7 +727,7 @@ self.onDataUpdated = function() {
 
 - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
 
-![image](/images/user-guide/contribution/widgets/alarm-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/alarm-widget-sample.png)
 
 In this example, the **alarmSource** and **alarms** properties of [subscription](#subscription-object) are assigned to **$scope** and become accessible within HTML template.
 Inside the HTML, a special [***ngFor**](https://angular.io/api/common/NgForOf) structural angular directive is used in order to iterate over available alarm **dataKeys** of **alarmSource** and render corresponding columns.
@@ -791,7 +791,7 @@ self.onInit = function() {
 
 - Click the **Run** button on the **Widget Editor Toolbar** to see the resulting **Widget preview** section.
 
-![image](/images/user-guide/contribution/widgets/static-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/static-widget-sample.png)
 
 This is just a static HTML widget.  There is no subscription data and no special widget API was used.
 Only custom **showAlert** function was implemented showing an alert with the content of **alertContent** property of widget settings.

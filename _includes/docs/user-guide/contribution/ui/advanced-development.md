@@ -133,7 +133,7 @@ self.onDataUpdated = function() {
 
 - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
 
-![image](/images/user-guide/contribution/widgets/external-js-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/external-js-widget-sample.png)
 
 In this example, the external JS library API was used, which becomes available after injecting the corresponding URL in **Resources** section.
 The displayed value was obtained from [subscription](/docs/{{docsPrefix}}user-guide/contribution/ui/basic-widget-api/#subscription-object) **data** property for the first dataKey.
@@ -232,7 +232,7 @@ self.onDataUpdated = function() {
 
 - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section.
 
-![image](/images/user-guide/contribution/widgets/external-js-timeseries-widget-sample.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/external-js-timeseries-widget-sample.png)
 
 In this example, the external JS library API was used, which becomes available after injecting the corresponding URL in **Resources** section.
 Initially chart datasets prepared using configured dataKeys from **data** property of **ctx**.
