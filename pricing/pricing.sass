@@ -1,8 +1,13 @@
 $pricing-color: #506dad
 
-@media (min-width: 1400px)
-  .container
-    max-width: 1400px
+.container
+  &.no-padding
+    padding: 0
+    @media (max-width: 1000px)
+      padding-right: 15px
+      padding-left: 15px
+  @media (min-width: 1400px)
+      max-width: 1400px
 
 html#pricing
   .tCenter
@@ -400,7 +405,7 @@ html#pricing
       .pricing-square.support-cards
         h2
           margin-bottom: 8px
-    .solution-selector
+    .solution-selector:not(.billing-toggle)
       height: 44px
       border-radius: 26px
       margin-bottom: 30px
@@ -422,7 +427,7 @@ html#pricing
         &.active
           border-radius: 22px
 
-      &-cloud
+      .solution-selector-cloud
         .solution
           padding-right: 12px
           &:nth-of-type(1)
@@ -452,7 +457,7 @@ html#pricing
       &:after
         transform: translate(5%, -80%)
 
-    .solution-selector, .product-selector
+    .solution-selector:not(.billing-toggle), .product-selector
       display: flex
       border: 1px solid rgba(0, 0, 0, 0.08)
       .solution
@@ -604,7 +609,7 @@ html#pricing
 
           .billing-toggle
             display: flex
-            gap: 7px
+            gap: 10px
             font-family: sans-serif
             padding-left: 7px
 
@@ -678,6 +683,57 @@ html#pricing
               margin-bottom: 30vh
             //&.tbmq
             //  margin-bottom: 14vh
+          .cards-row
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: space-between
+            gap: 24px
+            .pricing-square
+              height: 439px
+              box-shadow: unset
+              @media (min-height: 1260px)
+                height: 515px
+              @media (max-width: 1400px)
+                height: unset
+                width: unset
+              @media (max-width: 600px)
+                width: 100%
+              .button.secondary
+                background-color: #fff
+                color: #2A7DEC
+                width: 200px
+                align-self: flex-end
+                border: solid 1px #2A7DEC
+                outline: none
+                &:hover
+                  background-color: #fff
+                  color: #2A7DEC
+                  filter: brightness(1.2)
+              &.popular
+                position: relative
+                width: 290px
+                height: 477px
+                border: 1px solid #2A7DEC
+                box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
+                @media (min-height: 1260px)
+                  height: 555px
+                @media (max-width: 1400px)
+                  height: unset
+                  width: unset
+                @media (max-width: 600px)
+                  width: 100%
+                .popular-badge
+                  position: absolute
+                  top: 17px
+                  right: 22px
+                  color: white
+                  background-color: #2A7DEC
+                  padding: 0 8px
+                  border-radius: 4px
+                  font-size: 12px
+                  line-height: 21px
+                  font-weight: 400
           @media (max-width: 1400px)
             div
               margin-bottom: 16px
