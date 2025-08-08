@@ -823,6 +823,15 @@
 "/docs/mqtt-broker/mqtt-client-credentials-management/":
   url: "/docs/mqtt-broker/mqtt-client-credentials-management/"
   redirect_from: []
+"/docs/mqtt-broker/other/blocked-client/":
+  url: "/docs/mqtt-broker/other/blocked-client/"
+  redirect_from: []
+"/docs/mqtt-broker/other/health/":
+  url: "/docs/mqtt-broker/other/health/"
+  redirect_from: []
+"/docs/mqtt-broker/other/msg-delivery-strategy/":
+  url: "/docs/mqtt-broker/other/msg-delivery-strategy/"
+  redirect_from: []
 "/docs/mqtt-broker/other/proxy-protocol/":
   url: "/docs/mqtt-broker/other/proxy-protocol/"
   redirect_from: []
@@ -847,14 +856,38 @@
 "/docs/mqtt-broker/search/":
   url: "/docs/mqtt-broker/search/"
   redirect_from: []
-"/docs/mqtt-broker/security/":
-  url: "/docs/mqtt-broker/security/"
+"/docs/mqtt-broker/security/authentication/basic/":
+  url: "/docs/mqtt-broker/security/authentication/basic/"
+  redirect_from: []
+"/docs/mqtt-broker/security/authentication/jwt/":
+  url: "/docs/mqtt-broker/security/authentication/jwt/"
+  redirect_from: []
+"/docs/mqtt-broker/security/authentication/scram/":
+  url: "/docs/mqtt-broker/security/authentication/scram/"
+  redirect_from: []
+"/docs/mqtt-broker/security/authentication/x509/":
+  url: "/docs/mqtt-broker/security/authentication/x509/"
+  redirect_from: []
+"/docs/mqtt-broker/security/https/":
+  url: "/docs/mqtt-broker/security/https/"
+  redirect_from: []
+"/docs/mqtt-broker/security/listeners/":
+  url: "/docs/mqtt-broker/security/listeners/"
+  redirect_from: []
+"/docs/mqtt-broker/security/mqtts/":
+  url: "/docs/mqtt-broker/security/mqtts/"
+  redirect_from: []
+"/docs/mqtt-broker/security/overview/":
+  url: "/docs/mqtt-broker/security/overview/"
   redirect_from: []
 "/docs/mqtt-broker/subscription/":
   url: "/docs/mqtt-broker/subscription/"
   redirect_from: []
 "/docs/mqtt-broker/troubleshooting/":
   url: "/docs/mqtt-broker/troubleshooting/"
+  redirect_from: []
+"/docs/mqtt-broker/user-guide/backpressure/":
+  url: "/docs/mqtt-broker/user-guide/backpressure/"
   redirect_from: []
 "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
   url: "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"

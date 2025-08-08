@@ -247,6 +247,7 @@ Clients connect securely to HAProxy over MQTTS (port 8883), and HAProxy forwards
 You can reuse the same certificate you already use for HTTPS.
 
 Point HAProxy to your certificate bundle (PEM with full chain + private key). If you reuse the HTTPS cert, reference the same bundle.
+Locate and update the _haproxy.cfg_ file:
 
 ```text
  listen mqtts-in
