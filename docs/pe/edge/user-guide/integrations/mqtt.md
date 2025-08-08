@@ -29,7 +29,7 @@ assign-integration:
 send-uplink-edge:
     0:
         image: /images/pe/edge/integrations/mqtt/send-mqtt-uplink-1-edge.png
-        title: 'In the integration <b>"Events"</b> tab, you should find the uplink message with the <b>"OK"</b> status. To see the message, click the three dots in the <b>"Message" column.'
+        title: 'In the integration <b>"Events"</b> tab, you should find the uplink message with the <b>"OK"</b> status. To see the message, click the three dots in the <b>"Message"</b> column.'
     1:
         image: /images/pe/edge/integrations/mqtt/send-mqtt-uplink-2-edge.png
 
@@ -256,7 +256,11 @@ To ensure that the downlink message is sent to the integration, you can check th
 Received and sent data can be viewed in the downlink converter.
 The **"In"** block of the Events tab shows what data has been entered, and the **"Out"** field shows the message sent to the device:
 
+Here 1
+
 {% include images-gallery.html imageCollection="downlink-converter-message" %}
+
+Here 2
 
 ### Next steps
 

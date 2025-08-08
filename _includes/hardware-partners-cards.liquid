@@ -7,15 +7,21 @@
             <div class="card-content">
                 <div class="cardHeader">
                     <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
-                    <a class="siteLink" href="{{ card.site.href }}" target="_blank">Website</a>
+                    {% if card.showcase %}
+                        <a class="siteLink" href="{{ card.showcase.href }}" target="_blank">See showcase</a>
+                    {% endif %}
                 </div>
                 <div class="text">
-                    <p class="title">{{ card.name }}</p>
+                    <p class="title">
+                        <a href="{{ card.site.href }}" target="_blank" {% if card.site.href == "/#" %} style="pointer-events: none" {% endif %}>
+                            {{ card.name }}
+                        </a>
+                    </p>
                     <p class="description">{{ card.description }}</p>
                 </div>
             </div>
             {% assign linksCount = card.links | size %}
-            <div class="links{% if linksCount >= 2 %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
+            <div class="links{% if linksCount >= 4 or card.carousel == true %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
                 {% for link in card.links %}
                     <a href="{{ link[1].href }}">{{ link[1].label }}</a>
                 {% endfor %}

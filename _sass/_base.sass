@@ -176,7 +176,7 @@ a
                 color: #2A7DEC
 
     .n-button
-      &.try
+      &.price
         color: #fff
         transition-duration: 0s
         border: unset
@@ -187,7 +187,7 @@ a
           color: #212529
           background-color: rgba(255, 255, 255, 1)
 
-      &.price:hover
+      &.try:hover
         color: #2A7DEC
         box-shadow: unset
         background-color: #fff
@@ -499,7 +499,7 @@ header
   margin-left: 10px
   padding: 11px 20px
 
-  &.try
+  &.price
     border: solid 1px #EBEBEB
     padding: 10px 11px
     color: #212529
@@ -510,7 +510,7 @@ header
       border: solid 2px #212529
       text-decoration: none
 
-  &.price
+  &.try
     background-color: #2A7DEC
     color: white
     padding: 11px 14px
@@ -589,7 +589,7 @@ header
                 color: #2A7DEC
 
       .n-button
-        &.try
+        &.price
           border: solid 1px #EBEBEB
           color: #212529
           background-color: unset
@@ -597,7 +597,7 @@ header
           &:hover
             border: solid 2px #212529
 
-        &.price:hover
+        &.try:hover
           color: #fff
           background-color: #2A7DEC
           box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)
@@ -686,7 +686,7 @@ footer
     .subscribe
       margin: 0
       height: fit-content
-      padding: 12px 20px
+      padding: 13px 20px
       transition-duration: unset
       &:hover
         transition-duration: unset
@@ -699,19 +699,21 @@ footer
       .subscribe-form
         background: none !important
         border: none !important
-        padding: 0px
+        padding: 0
         width: 520px !important
         @media (max-width: 768px)
           width: 100% !important
 
         &.horizontal
-          padding-bottom: 0px
+          padding-bottom: 0
+          display: flex
+          flex-wrap: wrap
 
       .form-section
         p
           line-height: 150%
-          padding: 0px !important
-          margin: 0px 0px 10px 0px
+          padding: 0 !important
+          margin: 0 0 10px 0
 
         &.mb10
           margin-bottom: 10px
@@ -755,7 +757,7 @@ footer
         .form-control
           background-color: white !important
           height: 47px
-          padding: 16px
+          width: 100%
           font-size: 18px
           line-height: 16px
           font-weight: 400
@@ -898,7 +900,7 @@ dd
                   color: #2A7DEC
 
       .n-button
-        &.try
+        &.price
           border: solid 1px #EBEBEB
           color: #212529
           background-color: unset
@@ -906,7 +908,7 @@ dd
           &:hover
             border: solid 2px #212529
 
-        &.price:hover
+        &.try:hover
           color: #fff
           background-color: #2A7DEC
           box-shadow: 0 18px 16px -10px rgba(42, 125, 236, 0.25)

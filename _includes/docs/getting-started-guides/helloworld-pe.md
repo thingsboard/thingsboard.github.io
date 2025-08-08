@@ -1,16 +1,17 @@
 * TOC
 {:toc}
 
-The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
+This guide demonstrates basic usage of popular ThingsBoard features. You will learn how to:
 
-- Connect devices to ThingsBoard;
-- Push data from devices to ThingsBoard;
-- Build real-time end-user dashboards;
-- Define thresholds and trigger alarms;
-- Set up push notifications about new alarms over email, SMS, or other systems.
+- Connect devices to ThingsBoard
+- Push data from devices to ThingsBoard
+- Build real-time dashboards
+- Create a Customer and share the dashboard with them.
+- Define thresholds and trigger alarms
+- Set up notifications via email, SMS, mobile apps, or integrate with third-party services.
 
-**In this guide, we will connect and visualize data from the temperature sensor to keep it simple.**
- 
+For simplicity, we&#39;ll visualize data from a temperature sensor.
+
 {% include templates/prerequisites-pe.md %}
 
 ## Step 1. Provision device
@@ -21,28 +22,26 @@ To add a new device, follow these steps:
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
 
-<br>
-When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.
+You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.
 
 {% include images-gallery.html imageCollection="step11" %}
 
-Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+[Learn more about notifications here](#step-6-alarm-notifications).
 
 <br>
-You may also use:
- * [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don&#39;t need to configure each device manually;
- * [REST API](/docs/{{docsPrefix}}api/) to provision devices and other entities programmatically;
+**Additional provisioning methods**
+- [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
+- [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
+- [REST API](/docs/{{docsPrefix}}api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
 
 ## Step 2. Connect device
 
-Now, let&#39;s check the connection of our device to the ThingsBoard platform.
-To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
+Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
 <br>
-You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you can find more detailed information about all supported protocols for device connectivity.
+Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
 
 ## Step 3. Create dashboard
 
@@ -110,16 +109,16 @@ You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide
 
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
-To do this, we should edit the device profile and add a new alarm rule.
-The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
+We&#39;ll use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to define a rule that triggers an alarm when the temperature exceeds 25 °C.
+Alarm rules are configured in the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} used by the target device. 
+
+In our example, "My new device" uses the "default" device profile. While it&#39;s best practice to create separate profiles for each device type, we&#39;ll skip that step here for simplicity.
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 3](#step-3-configure-alarm-rules-and-trigger-an-alarm)), and we should send new telemetry on behalf of the device (see [Step 1.2](#step-12-connect-a-device)) to trigger the alarm.
+Now, our alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), and we should send new telemetry on behalf of the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
 > Note that the temperature value should be **26 or higher** to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
@@ -128,13 +127,16 @@ We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide
 
 ## Step 6. Alarm notifications
 
-The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} allows personalized notifications to end-users regarding device activities, environmental changes, or events in your IoT ecosystem, and more.
+Notifications can be delivered via email, SMS, or integrated third-party systems.
 
 {% include images-gallery.html imageCollection="notification-center" %}
 
-Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be promptly informed about any events in your IoT solution, no matter where you are.
-Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
+Additionally, [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_blank"} provides instant push notifications directly to your smartphone, ensuring you&#39;re always informed of critical events wherever you are.
+
+Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications.
+
+Enjoy exploring ThingsBoard!
 
 ## Step 7. Share dashboard with customers
 
@@ -171,12 +173,13 @@ You can make the customer the owner of the device during its creation stage. To 
 ### Step 7.3 Share the dashboard
 
 Let&#39;s share our dashboard with the customer.
-In ThingsBoard, you can&#39;t share a single dashboard directly—you can only share a dashboard group that includes the dashboard you want to share.
-By default, our dashboard is in the "All" group. Ideally, we would create a new dashboard group and move our dashboard there, but to keep things simple, we&#39;ll use the existing "All" group for this guide.
+In ThingsBoard, you can&#39;t share an individual dashboard directly — you can only share a dashboard group that contains the dashboard you want to share.
+By default, your dashboard is located in the "All" group.
+While the recommended approach is to create a dedicated dashboard group and move your dashboard there, for simplicity, we&#39;ll use the existing "All" group in this guide.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
-You can also share the dashboard with your customer or user during its creation stage.
+You can also share the dashboard with a customer during its creation:
 
 {% include images-gallery.html imageCollection="step73_1" showListImageTitles="true" %}
 

@@ -1,6 +1,8 @@
 ## Push to cloud 
 
-<table  style="width:12%">
+> Only [EDGE](/docs/edge/){:target="_blank"} feature
+
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 3.3</em></strong></td>
@@ -29,7 +31,7 @@ As well node supports next message types:
 
 In case successful storage edge event to database message will be routed via **Success** route.
 
-![image](/images/edge/nodes/push-to-cloud-form.png)
+<object width="70%" data="/images/edge/nodes/push-to-cloud-node-2-edge.png"></object>
 
 Message will be routed via **Failure** chain in the following cases:
 - Node was not able to save edge event to database
@@ -38,7 +40,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 ## Push to edge 
 
-<table  style="width:12%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 3.3</em></strong></td>
@@ -67,7 +69,12 @@ As well node supports next message types:
 
 In case successful storage edge event to database message will be routed via **Success** route.
 
-![image](/images/edge/nodes/push-to-edge-form.png)
+{% if docsPrefix == null %}
+<object width="70%" data="/images/edge/nodes/push-to-edge-node-2-ce.png"></object>
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+<object width="70%" data="/images/edge/nodes/push-to-edge-node-2-pe.png"></object>
+{% endif %}
 
 Message will be routed via **Failure** chain in the following cases:
 - Node was not able to save edge event to database

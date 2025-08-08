@@ -38,6 +38,13 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
             <p>monitoring points installed</p>
         </div>
     </section>
+    <section class="quote-with-mark fill-background">
+        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <div class="quote-text">
+            <p>We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer. The platform has proven to be very reliable, wi... <a target="_blank" href="/industries/smart-energy/?company=nettra">read more</a></p>
+            <h2>Agustin Derregibus, CEO and Co-Founder of Nettra</h2>
+        </div>
+    </section>
     <section class="problem">
         <div class="title-block">
             <h2>What problem did they face?</h2>
@@ -87,7 +94,7 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
             </div>
         </div>
     </section>
-    <section class="tb-power">
+    <section class="tb-power mb">
         <h2>How ThingsBoard powers Nettra?</h2>
         <div class="block">
             <div class="text">
@@ -97,13 +104,7 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
             <img src="/images/case-studies/telemetry.webp" title="Scales with confidence" alt="Nettra's dashboard" width="900" height="480">
         </div>
     </section>
-    <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>"We had been working on the development of our own software platform for almost 6 months when we came across Thingsboard. Not only Thingsboard had all the functionalities we had already developed, but also included many more that were on our pipeline for the coming months. Switching to Thingsboard was a no-brainer. <br> The platform has proven to be very reliable, with great support and constant evolution. Definitely the right choice for our company."</p>
-            <h2>Agustin Derregibus, CEO and Co-Founder of Nettra</h2>
-        </div>
-    </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart energy improve operations?</h2>
         <div class="block">
@@ -156,6 +157,7 @@ description: Discover how Nettra, an IoT company in telecom and energy, replaced
                 <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

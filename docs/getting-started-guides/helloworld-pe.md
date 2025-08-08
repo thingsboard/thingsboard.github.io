@@ -9,49 +9,49 @@ redirect_from: "/docs/pe/getting-started-guides/helloworld/"
 step1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
-        title: 'Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section;'
+        title: 'Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section.'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
-        title: 'By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
+        title: 'By default, you navigate to the device group "All". Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu.'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
-        title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
+        title: 'Enter a device name (e.g., "My New Device") No other changes required at this time. Click "Add".'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
-        title: 'A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
+        title: 'A window for checking the device connection will open — we&#39;ll skip this step for now and return to connection checking in the next step.'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
-        title: 'Congratulations on adding your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
+        title: 'Congratulations, you&#39;ve added your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
 
 step11:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-6-pe.png
-        title: 'You can view notification about adding a new device by clicking on the "bell" icon in the top right corner.'
+        title: 'You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.'
 
 step2:
     0:
         image: /images/helloworld/getting-started-pe/check-connectivity-device-1-pe.png
-        title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window;'
+        title: 'Click on your device, then click the "Check connectivity" button in the "Device details" window.'
     1:
         image: /images/helloworld/getting-started-pe/check-connectivity-device-2-pe.png
-        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+        title: 'In the opened window, choose your messaging protocol and operating system. Install any necessary client tools and copy the provided command.'
     2:
         image: /images/helloworld/getting-started-pe/check-connectivity-device-3-pe.png
-        title: 'Execute previously copied command. Once you have successfully published the “temperature” readings, the device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Now, close the connectivity window.'
+        title: 'Execute the copied command in Terminal. Once telemetry data (e.g., temperature readings) is successfully published, the device status will change from "Inactive" to "Active," and you&#39;ll see the data displayed. You can now close the connectivity window.'
 
 step31:
     0:
         image: /images/helloworld/getting-started-pe/create-dashboard-1-pe.png
-        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
+        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All".'
     1:
         image: /images/helloworld/getting-started-pe/create-dashboard-2-pe.png
-        title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
+        title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu.'
     2:
         image: /images/helloworld/getting-started-pe/create-dashboard-3-pe.png
-        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
+        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add".'
     3:
         image: /images/helloworld/getting-started-pe/create-dashboard-4-pe.png
-        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
+        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner.'
     4:
         image: /images/helloworld/getting-started-pe/create-dashboard-5-pe.png
         title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
@@ -240,10 +240,10 @@ step72_2:
 step73:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-3-pe.png
-        title: 'Open the "Dashboards" page, and navigate to the "Groups" tab. Click the "Share" icon for the "All" dashboard group;'
+        title: 'Open the "Dashboards" page and go to the "Groups" tab. Click the "Share" icon next to the "All" dashboard group;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-4-pe.png
-        title: 'Select the customer you wish to share our dashboard with and specify the permission level. In our case, choose "Read". Then click "Share".'
+        title: 'Select the customer you want to share the dashboard with and set the permission level. In this case, choose "Read", then click "Share".'
 
 step73_1:
     0:
@@ -251,22 +251,22 @@ step73_1:
         title: 'On the "All" tab of the "Dashboards" page, click on the "+" icon in the top right corner of the table and select "Create new dashboard" from the drop-down menu;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-6-pe.png
-        title: 'Input dashboard name (for example, "Thermostats"). In the "Groups" field of the "Owner and groups" section, select an existing group or enter a name for a new dashboard group (for example, "Thermostats group") and click "Create a new one!";'
+        title: 'Enter a name for the dashboard (e.g., "Thermostats"). In the "Groups" field of the "Owner and groups" section, select an existing group or enter a name for a new dashboard group (for example, "Thermostats group") and click "Create a new one!";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-7-pe.png
-        title: 'In the opened "Add entity group" window, click "Next: Share entity group" button;'
+        title: 'In the "Add entity group" window that opens, click "Next: Share entity group";'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-8-pe.png
-        title: 'Tick the "Share entity group" checkbox, then select the customer you want to share the dashboard group with and specify permissions. Then, click "Add";'
+        title: 'Check the "Share entity group" box, select the customer to share the dashboard with, and set their permissions. Then click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-9-pe.png
-        title: 'Click "Add" to confirm the creation of the new dashboard;'
+        title: 'Click "Add" again to confirm dashboard creation;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-10-pe.png
-        title: 'After creating the dashboard, it will open automatically. Click "Save" button in the upper right corner;'
+        title: 'The new dashboard will open automatically — click "Save" in the top-right corner;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-11-pe.png
-        title: 'The dashboard has been created and is located in the "Thermostats group" group. You can navigate to this group by clicking on its name.'
+        title: 'Your dashboard has been created and placed in the "Thermostats group". You can quickly access it by clicking the group name.'
 
 step74:
     0:

@@ -48,11 +48,12 @@ services:
       - kafka-data:/bitnami
   thingsboard-ce:
     restart: always
-    image: "thingsboard/tb-node:4.0.1.1"
+    image: "thingsboard/tb-node:{{ site.release.ce_full_ver }}"
     ports:
       - "8080:8080"
       - "7070:7070"
       - "1883:1883"
+      - "8883:8883"
       - "5683-5688:5683-5688/udp"
     logging:
       driver: "json-file"
@@ -70,11 +71,11 @@ services:
 
 volumes:
   postgres-data:
-    name: tb-ce-postgres-data
+    name: tb-postgres-data
     driver: local
   kafka-data:
     name: tb-ce-kafka-data
     driver: local
 
 ```
-{: .copy-code}
+{: .copy-code.expandable-15}

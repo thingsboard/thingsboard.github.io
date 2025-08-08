@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas-eu
-title: Analytics Nodes
-description: Rule Engine 2.0 Analytics Nodes
+title: Analytics nodes
+description: Rule Engine 2.0 Analytics nodes
 ---
 
 {% assign docsPrefix = "paas/eu/" %}

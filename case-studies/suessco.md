@@ -118,6 +118,7 @@ description: Discover how SuessCo Sensors and ThingsBoard enable real-time monit
             <h2>SuessCo Sensors GmbH</h2>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps facility management improve operations with IoT?</h2>
         <div class="block">
@@ -210,6 +211,7 @@ description: Discover how SuessCo Sensors and ThingsBoard enable real-time monit
                 <img src="/images/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

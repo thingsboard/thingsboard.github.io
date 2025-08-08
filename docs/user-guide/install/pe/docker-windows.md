@@ -43,10 +43,12 @@ Where:
 - `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
+- `8883:8883`            - connect local port 8883 to exposed internal MQTT over SSL port 8883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
+- `9090:9090`            - connect local port 9090 to exposed internal Remote Integration port 9090
 - `5683-5688:5683-5688/udp`            - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports
-- `tb-pe-license-data`   - name of the docker volume that stores the Thingsboard's license instance data file
-- `tb-pe-postgres-data`   - name of the docker volume that stores the PostgreSQL's data
+- `tb-pe-license-data`   - name of the docker volume that stores the ThingsBoard's license instance data file
+- `tb-postgres-data`   - name of the docker volume that stores the PostgreSQL's data
 - `thingsboard-pe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-pe-node:{{ site.release.pe_full_ver }}`          - docker image.
@@ -65,12 +67,21 @@ Environment variables:
 - `INSTALL_TB=true` - Installs the core database schema and system resources (widgets, images, rule chains, etc.).
 - `LOAD_DEMO=true` - Loads sample tenant account, dashboards and devices for evaluation and testing.
 
+## Step 4. Start the platform & tail logs
+
+Bring up all containers in detached mode, then follow the ThingsBoard logs (use PowerShell for the command below):
+
+```bash
+docker compose up -d; docker compose logs -f thingsboard-pe
+```
+{: .copy-code}
+
 After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
 
 {% capture tb_web_report_localhost_info %}
-**Note that web-reports will generate only if you access Thingsboard via external IP address or domain name.**
+**Note that web-reports will generate only if you access ThingsBoard via external IP address or domain name.**
 
-**Web-report will not generate if you access Thingsboard by** `http://localhost:8080`
+**Web-report will not generate if you access ThingsBoard by** `http://localhost:8080`
 {% endcapture %}
 {% include templates/info-banner.md content=tb_web_report_localhost_info %}
 
@@ -81,15 +92,6 @@ Use the following default credentials:
 - **Customer User**: customer@thingsboard.org / customer
     
 You can always change passwords for each account in account profile page.
-
-## Step 4. Start the platform & tail logs
-
-Bring up all containers in detached mode, then follow the ThingsBoard logs:
-
-```bash
-docker compose up -d; if ($?) {docker compose logs -f thingsboard-pe}
-```
-{: .copy-code}
 
 You can safely detach from the log stream (e.g. Ctrl+C); containers will continue running.
 
@@ -120,7 +122,12 @@ docker compose up -d
 
 When a new PE release is available, follow these steps to update your installation without losing data:
 
-1. Change the version of the `thingsboard/tb-pe-node` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.pe_full_ver }}) 
+{% capture old_manifests_info %}
+**If you upgrade using previous version of manifests make sure to follow these steps first** [instructions](/docs/user-guide/install/pe/old-docker-migrate-windows/)
+{% endcapture %}
+{% include templates/info-banner.md content=old_manifests_info %}
+
+1. Change the version of the `thingsboard/tb-pe-node` and `thingsboard/tb-web-report` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.pe_full_ver }}) 
 
 2. Execute the following commands:
  

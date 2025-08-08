@@ -27,7 +27,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
     <section class="statistics">
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 25888 useGrouping = true %}
+                {% include number-animation.html startNum = 1 targetNum = 25888 useMobileMode = true useGrouping = true %}
             </p>
             <p>manage signals <br> to control and safety</p>
         </div>
@@ -125,9 +125,10 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
             <img src="/images/case-studies/secure-resilient.webp" title="Secure and resilient data flow for ÖBB-Infrastruktur AG" alt="Server" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/railway.webp" title="Railways" alt="Railways" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard Edge helps smart rail infrastructure management improve operations with IoT?</h2>
         <div class="block">
@@ -170,6 +171,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
                 <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

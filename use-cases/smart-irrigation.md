@@ -1,143 +1,366 @@
 ---
 layout: use-case
-title: Smart Irrigation solution
-description: Irrigation management, fields provision and data visualization with ThingsBoard IoT Platform
+title: Smart Irrigation with ThingsBoard for Farms and Cities
+description: Discover how ThingsBoard’s smart irrigation solution transforms water management through IoT. Ideal for agriculture, landscaping, urban systems, and research—with real-time monitoring, automation, and analytics at scale.
 notitle: "true"
+customTitle: "true"
+includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-irrigation" %}
 
-<h1 class="usecase-title">Smart Irrigation solution</h1>
-
-Everyone knows that when it comes to agriculture, the critical indicator of success is the yield and high quality of the product. However, achieving these indicators costs farmers a lot of effort and resources. One of the main conditions for the stable production of agricultural products is the necessary soil moisture for the growth of crops. However, not all regions can boast of ideal climatic conditions. Sometimes the lack of soil moisture and improper monitoring and care of crops during growth can lead to negative consequences: loss of harvest and, as a result - profit.
-
-An irrigation system is usually used to solve the problem of agricultural and irrigated land, which helps farmers achieve good results in growing and harvesting products.
-
-We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation/">template</a> to represent a generic field irrigation solution.
-
-<h2>Solution Structure</h2>
-
-Smart Irrigation dashboard allows you to monitor the irrigation system and respond in time to changes in field conditions and has components that you may easily embed into your IoT solution.
-
-Also, this dashboard has several states: **Main state** and **Field state**:
-- **Main state**  is intended for the user to list the fields and monitor their soil moisture, location, statistics, etc.;
-- **Field state** displays detailed information about the field. It allows you to manage moisture monitoring sensors, observes soil moisture levels, schedule irrigation, view statistics, etc.
-
-<h2>Smart Irrigation Benefits</h2>
-Save up to 90% of development time for your smart irrigation solution by utilizing the following platform benefits:
-- reliable and scalable data collection for your smart sensors and soil moisture monitors;
-- powerful rule engine to process collected data and produce alarms and valuable insights;
-- advanced and flexible visualization for real-time and historical data;
-- customizable end-user dashboards to analyze and share the results of soil moisture monitoring;
-- integration with third-party analytics frameworks and solutions for advanced usage analytics;
-- remote control and OTA updates for your smart sensors and other devices;
-- customizable mobile applications with minimum coding efforts.
-
-
-{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
-
-<div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_SmartIrrigation_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/a4640cc0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
-</div>
-
-## ThingsBoard advantages
-<section class="usecase-advantages">
-    <div class="usecase-background">
-        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+<div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
+<h1 class="usecase-title">Smart irrigation solution</h1>
+<section class="smart-irrigation-about">
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">The global challenges of water scarcity, rising agricultural costs, and the need for sustainable farming have made smart irrigation not just a trend, but a necessity. Traditional watering systems often lack responsiveness, leading to water overuse and crop stress. Modern agriculture requires a platform that can bring automation, precision, and adaptability — exactly what ThingsBoard delivers.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_SmartIrrigation_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/a4640cc0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>            
+            </div>
+        </div>
+        <div class="long">
+            <p>ThingsBoard IoT Platform is purpose-built to address these needs with its robust architecture, supporting seamless integration of diverse sensors, reliable data collection via MQTT, CoAP, or HTTP, and powerful real-time analytics. By enabling farmers to monitor soil conditions, receive threshold-based alarms, and automate irrigation actions through intuitive rule chains, ThingsBoard ensures optimal water distribution and timely response to changing field conditions.</p>
+            <p>From small farms to enterprise-scale agricultural operations, ThingsBoard scales effortlessly thanks to its edge computing capabilities, multi-tenant model, and rich dashboard customization. It empowers agribusinesses to implement smart irrigation that not only conserves water and boosts yield, but also reduces manual labor, improves traceability, and aligns with long-term sustainability goals.</p>
+        </div>
     </div>
-    <div class="cards row">
-        <div class="col-lg-6">
+</section>
+
+<section class="smart-irrigation-carousel carousel-padding">
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'smart-irrigation' %}
+</section> 
+
+{% include contact-us-banner.liquid %}
+
+<section class="smart-irrigation-solution-structure">
+    <h2>Solution structure of smart irrigation</h2>
+    <div class="about-text">
+        <div class="short">
             <div class="block">
-                <object data="/images/microservices-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters.</p>
-                </div>
+                <p class="text">In the <a href="/docs/pe/solution-templates/smart-irrigation/">smart irrigation</a> setup, soil moisture sensors and water meters are installed in each field zone. These devices continuously collect real-time environmental data such as moisture level, temperature, and water flow. The data is transmitted via lightweight and reliable communication protocols such as MQTT, CoAP, or HTTP directly to the ThingsBoard platform.</p>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/telemetry-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+        <div class="long">
+            <p>Once received, data is processed by ThingsBoard’s rule engine, stored, and visualized on dashboards. If thresholds are exceeded—like low soil moisture—the platform can automatically trigger irrigation or notify personnel, ensuring timely response and water efficiency.</p>
+            <p>With flexible device provisioning, edge processing, and a multi-tenant architecture, ThingsBoard scales seamlessly from small farms to enterprise operations, supporting both manual oversight and fully automated control.</p>
+        </div>
+    </div>
+    <div class="scheme">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+    </div>
+</section>
+
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Smart irrigation dashboard structure</h2>
+        <p>
+            The smart irrigation dashboard on ThingsBoard provides a clear, real-time view of irrigation processes. It includes map-based tracking, sensor panels, scheduling tools, and alarm systems—enabling fast decisions, automation, and efficient water use across varied field conditions.
+        </p>
+    </div>
+    <div class="dashboard-structure-block">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Field overview dashboard state</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This high-level map displays all monitored fields and their average moisture levels in real time. It includes interactive polygons that represent specific fields, labeled with crop types and live sensor values. This allows operators to instantly assess field health. Visualizing field data geographically accelerates decision-making and localizes issues within seconds.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/integration-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Add field</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This interface allows users to add new fields, define crop types, and set individual soil moisture thresholds. These values are used to trigger automated irrigation actions or alarms. Custom moisture thresholds per field help tailor irrigation plans to specific crop needs, increasing efficiency.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/security-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Edit field</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Users can edit field parameters, update crop labels, and reconfigure map boundaries using a visual map editor. This ensures that geospatial information is always accurate and actionable. Accurate geolocation enhances field-specific analytics and irrigation zoning precision.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/engine-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>SI Field 1 dashboard with sensor data and irrigation logs</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Displays real-time soil moisture readings from all sensors, average moisture levels, water consumption, alarms, and detailed irrigation task logs. Combining sensor data and water logs offers a complete view for effective irrigation planning and validation.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/visualization-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Add new sensor</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Quickly integrate a new sensor by assigning a name and label, seamlessly extending system coverage as your infrastructure grows. Easy sensor addition supports scalability and fast deployment across multiple zones.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/phone-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/mobile">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Create irrigation schedule</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Users can define irrigation conditions such as start time, repetition, water volume, and stop rules (e.g., water volume or duration). The system then triggers irrigation commands automatically. Automating irrigation based on real thresholds reduces human error and conserves water.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/tenancy-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Alarm monitoring panel</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This view aggregates all critical and warning-level alarms related to soil moisture and device health, helping users quickly react to anomalies. Centralized alarm management ensures prompt responses to avoid crop stress or system failures.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>SI Field 2 dashboard statex</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Similar to the first field dashboard, this view provides detailed monitoring for another crop zone (corn), showcasing ThingsBoard’s multi-field, multi-crop support. Supporting multiple field dashboards promotes centralized yet granular monitoring for large-scale operations.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-## Smart Irrigation solution overview
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header">
+        <h2>Applications of smart irrigation solution</h2>
+        <p>This solution can be effectively used across multiple industries, addressing specific operational needs through real-time data, automation, and scalability powered by the ThingsBoard IoT platform:</p>
+    </div>
+    <div class="applications-container-large">
+        <div class="text-row-top">
+            <div class="text-block">
+                <h3>Precision agriculture</h3>
+                <p>Covers the need for data-driven water management by providing real-time moisture analytics, alarming, and automated irrigation, improving crop yield while reducing resource waste.</p>
+            </div>
+            <div class="text-block">
+                <h3>Municipal parks & landscaping</h3>
+                <p>Solves the challenge of wide-area water efficiency by offering centralized dashboard control, alarm notifications, and device management for public green spaces.</p>
+            </div>
+            <div class="text-block">
+                <h3>Agri-Tech research & experimental farms</h3>
+                <p>Meets the need for accurate environmental data collection and testing flexibility by enabling detailed telemetry tracking, custom rule chains, and rapid integration of new devices.</p>
+            </div>
+        </div>
+        <div class="images-row">
+            <div class="application-image"><img src="/images/usecases/smart-irrigation/agriculture-1.svg" alt="Precision agriculture" title="Precision agriculture"></div>
+            <div class="application-image"><img src="/images/usecases/smart-irrigation/greenhouse-1.svg" alt="Smart greenhouses" title="Smart greenhouses"></div>
+            <div class="application-image"><img src="/images/usecases/smart-irrigation/parks-1.svg" alt="Municipal parks & landscaping" title="Municipal parks & landscaping"></div>
+            <div class="application-image"><img src="/images/usecases/smart-irrigation/fields-1.svg" alt="Golf courses & sports fields" title="Golf courses & sports fields"></div>
+            <div class="application-image"><img src="/images/usecases/smart-irrigation/research-1.svg" alt="Agri-Tech research & experimental farms" title="Agri-Tech research & experimental farms"></div>
+        </div>
+        <div class="text-row-bottom">
+            <div class="text-block">
+                <h3>Smart greenhouses</h3>
+                <p>Fulfills the demand for microclimate-based watering by supporting multi-zone sensor management and conditional scheduling, ensuring healthy plant growth with minimal manual intervention.</p>
+            </div>
+            <div class="text-block">
+                <h3>Golf courses & sports fields</h3>
+                <p>Addresses the requirement for uniform turf quality with zone-specific moisture monitoring, historical analytics, and rule-based irrigation triggers to maintain optimal soil conditions.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-irrigation/agriculture-2.svg" alt="Precision agriculture" title="Precision agriculture"></div>
+            <div class="text-block">
+                <h3>Precision agriculture</h3>
+                <p>Covers the need for data-driven water management by providing real-time moisture analytics, alarming, and automated irrigation, improving crop yield while reducing resource waste.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Smart greenhouses</h3>
+                <p>Fulfills the demand for microclimate-based watering by supporting multi-zone sensor management and conditional scheduling, ensuring healthy plant growth with minimal manual intervention.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-irrigation/greenhouse-2.svg" alt="Smart greenhouses" title="Smart greenhouses"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-irrigation/parks-2.svg" alt="Municipal parks & landscaping" title="Municipal parks & landscaping"></div>
+            <div class="text-block">
+                <h3>Municipal parks & landscaping</h3>
+                <p>Solves the challenge of wide-area water efficiency by offering centralized dashboard control, alarm notifications, and device management for public green spaces.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Golf courses & sports fields</h3>
+                <p>Addresses the requirement for uniform turf quality with zone-specific moisture monitoring, historical analytics, and rule-based irrigation triggers to maintain optimal soil conditions.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/smart-irrigation/fields-2.svg" alt="Golf courses & sports fields" title="Golf courses & sports fields"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-irrigation/research-2.svg" alt="Agri-Tech research & experimental farms" title="Agri-Tech research & experimental farms"></div>
+            <div class="text-block">
+                <h3>Agri-Tech research & experimental farms</h3>
+                <p>Meets the need for accurate environmental data collection and testing flexibility by enabling detailed telemetry tracking, custom rule chains, and rapid integration of new devices.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-The diagram below identifies data flow and integration points for a typical smart irrigation monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from sensors.
+<section class="summary">
+    <div class="summary-text">
+        <h2>Summary of smart irrigation</h2>
+        <p>The smart irrigation solution built on ThingsBoard empowers users to manage irrigation processes intelligently, reduce water waste, and maintain crop health with precision. Leveraging real-time data collection, powerful automation, and rich visualizations, it enables scalable deployments across diverse sectors—from agriculture to urban landscapes. With its flexible architecture and low-code configurability, the solution can be rapidly deployed, customized, and expanded as needs grow.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    </div>
+</section>
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
 
-You may notice plenty of connectivity options for the soil moisture sensors: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
-## Learn more
-<div class="usecases-bottom-nav">
-    <a id="UseCases_SmartIrrigation_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
-    <a id="UseCases_SmartIrrigation_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
-    <a id="UseCases_SmartIrrigation_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
-    <a id="UseCases_SmartIrrigation_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
-    <a id="UseCases_SmartIrrigation_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
-</div>
+        document.querySelectorAll('.card-link').forEach((link) => {
+            link.classList.add('linkDefault');
+        });
 
+        const expansionBlocks = document.querySelectorAll('.expansion-block');
+        const structureBlock = document.querySelector('.dashboard-structure-block');
+        const smallImageBlock = createImageBlock('small');
+        const largeImageBlock = createImageBlock('large');
+
+        expansionBlocks[0].appendChild(smallImageBlock);
+        structureBlock.appendChild(largeImageBlock);
+
+        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
+        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
+
+        let currentExpandedIndex = 0;
+
+        expansionBlocks[0].classList.add('expanded');
+
+        expansionBlocks.forEach((panel, index) => {
+            panel.addEventListener('click', function() {
+                if (index === currentExpandedIndex) {
+                    return; 
+                }
+
+                smallImageElement.innerHTML = getImage(index);
+                this.appendChild(smallImageBlock);
+                largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
+                largeImageElement.innerHTML = getImage(index);
+
+                applyImageBg(smallImageBlock);
+                applyImageBg(largeImageBlock);
+
+                expansionBlocks.forEach(item => {
+                    item.classList.remove('expanded');
+                });
+
+                this.classList.add('expanded');
+                currentExpandedIndex = index; 
+                if (window.screen.width < 600) {
+                    const blockRect = expansionBlocks[index].getBoundingClientRect();
+                    const target = blockRect.top + window.scrollY - 80;
+                    window.scrollTo(0, target);
+                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                }
+                if (index === 4) {
+                    window.scrollTo(0, window.scrollY +1);
+                }
+            });
+        });
+
+        window.onscroll = function() {
+            const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
+            const large = document.querySelector('.image-block-large');
+
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 150 && elemCoor.top < 0) {
+                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+            }
+        };
+
+        if (window.screen.width > 960) {
+            const fullPage = document.querySelector('#scada-fullpage');
+            largeImageElement.addEventListener('click', function(image) {
+                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                fullPage.style.display = 'block';
+                fullPage.style.top = window.scrollY + 'px';
+                document.querySelector('body').style.overflow = 'hidden';
+            });
+        }
+
+        function createImageBlock(layout) {
+            let block = document.createElement('div');
+            block.className = `image-block-${layout}`;
+            block.innerHTML = `
+            <div class="image-container image-background">
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class=image>${getImage(0)}</div>
+            </div>
+            <div class="buttons-block">
+                <a id="UseCases_SmartIrrigation_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/a4640cc0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>            
+                <a id="UseCases_SmartIrrigation_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
+            </div>`;
+
+            applyImageBg(block);
+    
+            return block;
+        }
+
+        function applyImageBg(block) {
+            const img = block.querySelector('.image img');
+            const container = block.querySelector('.image-container');
+            if (img && container) {
+                const bg = img.dataset.bg;
+                container.style.backgroundColor = bg || '';
+            }
+        }
+
+        function getImage(index) {
+            const images = [
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-1.webp' data-bg='#F9FAFF' alt='Satellite view of crop fields with real-time moisture levels and chart in ThingsBoard' title='Soil moisture monitoring for wheat and corn fields using ThingsBoard'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-2.webp' data-bg='#A9AAAC' alt='Field configuration form for setting crop type and moisture range in ThingsBoard' title='Add a new field and define crop type and soil moisture thresholds'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-3.webp' data-bg='#A9AAAC' alt='Edit field details with boundary selection and moisture settings in ThingsBoard' title='Update field boundaries and soil moisture limits for precision farming'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-4.webp' data-bg='#F9FAFF' alt='Dashboard showing irrigation status, alarms, field map, and moisture statistics in ThingsBoard' title='Irrigation and soil monitoring dashboard for smart agriculture'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-5.webp' data-bg='#A9AAAC' alt='Dialog to add a new soil moisture sensor on the map in ThingsBoard' title='Register a new soil moisture sensor and assign a label'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-6.webp' data-bg='#A9AAAC' alt='Form to create an automated irrigation schedule based on consumption or time' title='Define irrigation rules by water usage or duration for field automation'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-7.webp' data-bg='#F9FAFF' alt='Active and cleared alarms for soil moisture and battery levels in ThingsBoard' title='View and manage critical alerts from field sensors in the irrigation system'/>",
+                "<img src='/images/usecases/smart-irrigation/smart-irrigation-8.webp' data-bg='#F9FAFF' alt='Dashboard view for a second field showing multiple active alarms and irrigation tasks' title='Monitor critical issues and manage irrigation for corn field using ThingsBoard'/>"
+            ];
+            return images[index];
+        }
+    });
+</script>

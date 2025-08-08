@@ -5,6 +5,7 @@ description: Discover scalable and secure IoT environment monitoring solutions w
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
@@ -22,7 +23,7 @@ includeAdvantages: "true"
             </div>
         </div>
         <div class="long">
-            <p>ThingsBoard provides a scalable, reliable, and secure platform for environment monitoring. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
+            <p>ThingsBoard provides a scalable, reliable, and secure platform for <a href="/docs/pe/solution-templates/temperature-humidity-sensors/">environment monitoring</a>. With built-in support for LoRaWAN, NB-IoT, and Sigfox, it enables efficient integration of numerous low-power sensors over long distances, minimizing infrastructure complexity. The platform supports standard IoT protocols like HTTP, MQTT, CoAP, and LwM2M, making it easy to connect a wide range of devices and scale with your project.</p>
             <p>Automated features—from real-time alerts on critical changes to forwarding data into external analytics tools—ensure proactive monitoring. Intuitive dashboards, customizable logic, and seamless integrations turn raw environmental data into actionable insights, enabling smarter and faster decisions.</p>        </div>
     </div>
 </section>
@@ -30,6 +31,8 @@ includeAdvantages: "true"
 <section class="environment-monitoring-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'environment-monitoring' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="environment-monitoring-solution-structure">
     <h2>Solution structure of environment monitoring</h2>
@@ -52,7 +55,7 @@ includeAdvantages: "true"
     <div class="section-header">
         <h2>Environment monitoring dashboard structure</h2>
         <p>
-            The Smart Office solution includes a sample dashboard designed for clear visualization of key metrics. It displays energy and water consumption, air quality, temperature, humidity, and HVAC system status. Alarms are also shown to enable prompt response to abnormal conditions. While the provided dashboard is relatively simple, ThingsBoard allows users to create much more complex and customized dashboards based on their specific Smart Office requirements.
+            The dashboard has several states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location. The live dashboard is part of the solution template        
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -104,7 +107,7 @@ includeAdvantages: "true"
 <section class="applications applications-additional summary-margin section-padding">
     <div class="section-header">
         <h2>Applications of environment monitoring solution</h2>
-        <p>A similar IoT-based monitoring and management solution, like Smart Assisted Living, can be adapted and applied in various fields and directions. Here are some of them:</p>
+        <p>An IoT-powered environmental monitoring system can be deployed across various sectors to ensure safety, compliance, and sustainability. Below are key areas where such solutions bring significant value.</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
@@ -118,7 +121,7 @@ includeAdvantages: "true"
             </div>
             <div class="text-block">
                 <h3>Warehouses and cold storage facilities</h3>
-                <p>tMonitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
+                <p>Monitoring temperature, humidity, and air circulation to ensure proper storage conditions for perishable goods and pharmaceutical products.</p>
             </div>
         </div>
         <div class="images-row">
@@ -182,7 +185,7 @@ includeAdvantages: "true"
 <section class="summary">
     <div class="summary-text">
         <h2>Summary of environment monitoring</h2>
-        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to Air quality or other sensors and add remote control scenarios.</p>
+        <p>The following interactive dashboard represents an environment monitoring component that you may easily embed into your IoT solution. This particular dashboard allows users to monitor temperature and humidity sensors. You may quickly adapt it to air quality or other sensors and add remote control scenarios.</p>
     </div>
     <div class="summary-icon">
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
@@ -270,7 +273,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_EnvMon_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/dfaef940-8a91-11ec-83d0-83ba2015b874?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_EnvMon_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
     
             return block;

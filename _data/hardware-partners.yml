@@ -1,6 +1,21 @@
 - type:
     - LoRaWAN
     - Wi-Fi
+    - LTE-M
+    - MQTT
+    - Modbus
+  name: ACE AUTOMATION
+  logo: /images/partners/ace-automation-logo.png
+  site:
+    href: https://aceautomation.eu/
+  links:
+    0:
+      label: Connect ACE MQTT 4G GPS Gateway to ThingsBoard
+      href: https://thingsboard.io/docs/devices-library/ace-iot-gateway-and-siemens-logo/
+  description: ACE Automation Europe designs compact PLCs, touchscreen HMIs, and LTE/4G MQTT gateways. The “Nano ACE” series stands out for its ultra-low power consumption, compact form factor, and PCB-mount version. Our HMIs are powerful, affordable, and easy to use. The LTE/4G multi-operator gateway is ideal for remote IoT monitoring and control via MQTT.
+- type:
+    - LoRaWAN
+    - Wi-Fi
   name: Atomsenses
   logo: /images/partners/atomsenses-logo.png
   site:
@@ -10,6 +25,19 @@
       label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
       href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
   description: Atomsenses is a specialist IoT solution provider focusing on Lorawan sensors for indoor air quality monitoring, our vision is to transform how we manage and maintain healthy indoor environments.
+- type:
+    - LoRaWAN
+    - Wi-Fi
+    - LTE-M
+  name: IOTRouter
+  logo: /images/partners/iotrouter-logo.png
+  site:
+    href: http://www.iotrouter.com/
+  links:
+    0:
+      label: Connect EG8200 Gateway to ThingsBoard
+      href: "/docs/pe/devices-library/eg8200-gateway/"
+  description: IOTRouter specializes in the research, development, production, and sales of Industrial IoT Edge Gateway, HMI, Remote IO, AI Edge Box, and other digital integration products and solutions. Committed to integrating OT (Operational Technology) and IT (information technology), thereby building a bridge between traditional industry infrastructure and digital applications.
 - type:
     - Bluetooth LE
     - NB-IoT
@@ -85,15 +113,17 @@
   logo: /images/partners/seeed.png
   site:
     href: https://www.seeedstudio.com/
+  showcase:
+    href: https://seeed-projects.github.io/Tutorial-of-AI-Kit-with-Raspberry-Pi-From-Zero-to-Hero/docs/Chapter_6-RaspberryPi_and_AIoT/Car_Park_Solution_Management_with_Thingsboard/
   links:
     0:
       label: Integration guide
       href: "/docs/samples/raspberry/grove/"
     1:
-      label: Connect reComputer R1000 to ThingsBoard
+      label: reComputer R1000
       href: "/docs/edge/devices-library/recomputer-r1000/"
     2:
-      label: Connect reComputer R1100 to ThingsBoard
+      label: reComputer R1100
       href: "/docs/edge/devices-library/recomputer-r1100/"
   description: Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs.
 - type:
@@ -116,19 +146,19 @@
     href: https://www.milesight.com/
   links:
     0:
-      label: Connect UG56 LoRaWAN® Gateway to ThingsBoard
+      label: UG56 LoRaWAN® Gateway
       href: "/docs/pe/devices-library/ug56-lorawan-gateway/"
     1:
-      label: Connect UG65 LoRaWAN® Semi-Industrial Gateway to ThingsBoard
+      label: UG65 LoRaWAN® Semi-Industrial Gateway
       href: "/docs/pe/devices-library/ug65-lorawan-gateway/"
     2:
-      label: Connect UG67 LoRaWAN® Gateway to ThingsBoard
+      label: UG67 LoRaWAN® Gateway
       href: "/docs/pe/devices-library/ug67-lorawan-gateway/"
     3:
-      label: Connect WS101 LoRaWAN® Smart Button to ThingsBoard
+      label: WS101 LoRaWAN® Smart Button
       href: "/docs/pe/devices-library/ws101-smart-button/"
     4:
-      label: Connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard
+      label: WS202 PIR & Light LoRaWAN® Sensor
       href: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
     5:
       label: Thingsboard-Milesight LoRaWAN Gateways&Devices Integration
@@ -218,17 +248,6 @@
       href: "/docs/samples/nettrartu+/rtu_temp_sensor/"
   description: We provide comprehensive hardware and software IoT solutions.
 - type:
-    - Wi-Fi
-  name: Things On Edge
-  logo: /images/partners/things-on-edge.svg
-  site:
-    href: https://thingsonedge.com/
-  links:
-    0:
-      label: Integration guide
-      href: "/docs/samples/cricket-wifi/cricket-wifi/"
-  description: Things On Edge designs easy to use, ultra low power Wi-Fi modules.
-- type:
     - Ethernet
   name: Solandtec
   logo: /images/partners/solandtec.png
@@ -274,10 +293,10 @@
     href: https://www.sensiedge.com/
   links:
     0:
-      label: Getting Started SensiLoRa 2.0 V1.2
+      label: SensiLoRa 2.0 V1.2
       href: "/docs/samples/sensiedge/getting_started_sensiLoRa.pdf"
     1:
-      label: Connect SensiBLE 1.0 & 2.1 to ThingsBoard
+      label: SensiBLE 1.0 & 2.1
       href: "/docs/samples/sensiedge/connect_sensi_ble.pdf"
   description: SensiEDGE IoT SoM is a fully customisable solution for developers who want to focus on their own applications and core competencies rather than the underlying hardware platform or production logistics when creating products for the IoT.
 - type:
@@ -305,10 +324,10 @@
     href: https://iotracker.eu/
   links:
     0:
-      label: Connect ioTracker Multi-sensor tracker to ThingsBoard
+      label: ioTracker Multi-sensor tracker
       href: "https://thingsboard.io/docs/pe/devices-library/iotracker-multi-sensor-tracker/"
     1:
-      label: Connect ioButton Panic button to ThingsBoard
+      label: ioButton Panic button
       href: "https://thingsboard.io/docs/pe/devices-library/iobutton-panic-button/"
   description: ioThings, the company behind the ioTracker and ioButton, is a Dutch company and was established in 2016 by three technology enthusiasts with a professional background in electronics, security, IT and telecom. We mainly operate in the domain of emergency response, together with indoor and outdoor localisation. Our devices are highly and easy configurable to make sure it can be finetuned for a lot of use cases.
 - type:
@@ -442,6 +461,24 @@
       href: "/docs/pe/devices-library/dsgw-210-iot-gateway-hub/"
   description: Dusun provides various kinds of gateways, hardware products and IOT service
 - type:
+    - LoRaWAN
+  name: Makerfabs
+  carousel: true
+  logo: /images/partners/makerfabs-logo.png
+  site:
+    href: https://www.makerfabs.com/agrosense
+  links:
+    0:
+      label: How to connect AgroSense Air Temperature and Humidity Sensor to ThingsBoard?
+      href: "/docs/devices-library/air-temperature-and-humidity-sensor/"
+    1:
+      label: How to connect AgroSense Positioning Water Leak Sensor to ThingsBoard?
+      href: "/docs/devices-library/positioning-water-leak-sensor/"
+    2:
+      label: How to connect AgroSense Soil Moisture Sensor to ThingsBoard?
+      href: "/docs/devices-library/soil-moisture-sensor/"
+  description: Makerfabs is a professional open-source hardware provider based in Shenzhen, China, offering end-to-end support from concept design, prototyping, small-batch manufacturing, to full-scale production. We are especially experienced in LoRa and LoRaWAN technologies and have helped many clients realize custom IoT solutions across agriculture, smart cities, and industrial monitoring. To better serve these industries, we have established the AgroSense brand – a comprehensive line of LoRaWAN sensors, designed for reliability, adaptability, and ease of integration.
+- type:
     - Ethernet
     - Wi-Fi
     - LoRaWAN
@@ -468,7 +505,7 @@
       label: Container - ThingsBoard MQTT/HTTP server
       href: https://help.mikrotik.com/docs/spaces/ROS/pages/166920348/Container+-+ThingsBoard+MQTT+HTTP+server
     4:
-      label: Sending temperature readings from the TG-BT5-OUT tag to ThingsBoard
+      label: TG-BT5-OUT tag
       href: https://help.mikrotik.com/docs/spaces/UM/pages/143327239/Sending+temperature+readings+from+the+TG-BT5-OUT+tag+to+ThingsBoard
   description: MikroTik is an EU-based leader in networking hardware and software, providing high-performance routers, switches, 5G and wireless solutions. Our technology powers ISPs, enterprises, and IoT networks—enabling everything from asset tracking to smart city integration and adding wireless connectivity to legacy sensors. We focus on efficiency, security, and scalability to build reliable, cost-effective networks worldwide.
 - type:
@@ -494,10 +531,10 @@
     href: https://temcocontrols.com/
   links:
     0:
-      label: Connect Temco T3E-6CT to ThingsBoard
+      label: Temco T3E-6CT
       href: /docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/
     1:
-      label: Connect Temco Tstat10 to ThingsBoard
+      label: Temco Tstat10
       href: /docs/devices-library/temco-controls-tstat-10/
   description: Temco Controls Ltd. specializes in manufacturing low-cost sensors and controllers for the HVAC industry. We proudly provide solutions with no license or recurring fees to our customers from all over the world. Both our software and device firmware are open source, making us one of the most open building automation systems on the market. We make collaboration simple and straightforward with easy purchases on the web and open, long-term support on the forum.
 - type:
@@ -529,6 +566,18 @@
       label: Integration guide
       href: /docs/samples/fusion-daq/fusion-daq
   description: Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC.
+- type:
+    - Modbus
+    - KNX
+  name: Weinzierl Engineering GmbH
+  logo: /images/partners/weinzierl-logo.svg
+  site:
+    href: https://weinzierl.de/en/
+  links:
+    0:
+      label: Connect KNX IP Multi IO 580 to ThingsBoard
+      href: /docs/devices-library/knx-ip-multi-io-580/
+  description: We from Weinzierl develop, produce, and market complex software and hardware components for building system technology. Our focus lies in building networks based on the KNX standard. Because of this focus, we cover the KNX system with our products and solutions comprehensively. In addition, we offer gateways as well as software solutions for other standards.
 - type:
     - NB-IoT
     - LoRaWAN

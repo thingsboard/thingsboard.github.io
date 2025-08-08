@@ -44,7 +44,7 @@ description: Discover how Kalitec partnered with ThingsBoard to deliver reliable
     </section>
     <section class="quote">
         <h2>Kalitec</h2>
-        <p>«We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.»</p>
+        <p>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable profe...<a target="_blank" href="/industries/smart-city/?company=kalitec">read more</a></p>
     </section>
     <section class="problem">
         <div class="cards-row">
@@ -155,9 +155,10 @@ description: Discover how Kalitec partnered with ThingsBoard to deliver reliable
             <img src="/images/case-studies/scalable_growth.webp" title="Reliable infrastructure and scalable growth" alt="Smartphone" width="900" height="480">
         </div>
     </section>
-    <section class="full-width-img">
+    <section class="full-width-img bannerMargin">
         <img src="/images/case-studies/information_sign_by_road_against_sky.webp" title="Road sign" alt="Road sign" width="1920" height="946">
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps smart infrastructure improve operations with IoT?</h2>
         <div class="block">
@@ -190,6 +191,7 @@ description: Discover how Kalitec partnered with ThingsBoard to deliver reliable
                 <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

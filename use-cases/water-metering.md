@@ -1,9 +1,12 @@
 ---
 layout: use-case
-title: IoT water metering solutions with ThingsBoard
-description: IoT water metering solutions with ThingsBoard
+title: Smart Water Metering with ThingsBoard IoT Platform
+description: Discover how ThingsBoard enables real-time water monitoring, automated alerts, and consumption analytics with a scalable IoT water metering solution for utilities, buildings, and agriculture.
 notitle: "true"
+customTitle: "true"
 includeAdvantages: "true"
+contactUsModal: "true"
+
 ---
 
 {% include usecase-nav.html usecase="water-metering" %}
@@ -21,7 +24,7 @@ includeAdvantages: "true"
             </div>
         <div class="long">
             <p>Traditional water metering methods often fall short in providing real-time data, accurate billing, and predictive maintenance insights. By leveraging connected sensors and intelligent dashboards, organizations can unlock powerful insights into water usage, detect anomalies like leaks, and automate alarm systems. At the core of these solutions is ThingsBoard, a flexible IoT platform enabling the collection, processing, and visualization of telemetry data from water meters in real time.</p>
-            <p>This ThingsBoard-powered water metering solution provides complete real-time visibility into water usage, instant response to anomalies, and valuable analytics for long-term infrastructure planning. Scalable across municipalities, residential complexes, and commercial facilities, it offers a powerful tool for smart and efficient water resource management.</p>
+            <p>This ThingsBoard-powered <a href="/docs/pe/solution-templates/water-metering/">water metering solution</a> provides complete real-time visibility into water usage, instant response to anomalies, and valuable analytics for long-term infrastructure planning. Scalable across municipalities, residential complexes, and commercial facilities, it offers a powerful tool for smart and efficient water resource management.</p>
         </div>
     </div>
 </section>
@@ -29,6 +32,8 @@ includeAdvantages: "true"
 <section class="water-metering-carousel carousel-padding">
     {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'water-metering' %}
 </section> 
+
+{% include contact-us-banner.liquid %}
 
 <section class="water-metering-solution-structure">
     <h2>Solution structure of water metering use case</h2>
@@ -334,7 +339,7 @@ includeAdvantages: "true"
             </div>
             <div class="buttons-block">
                 <a id="UseCases_WaterMeter_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/aff5f200-8b48-11ec-a344-c767c1ab1bb8?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button gtm_button">View live demo</a>
-                <a id="UseCases_WaterMeter_ContactUs" target="_blank" href="https://thingsboard.io/docs/contact-us/" class="button contact-us gtm_button">Contact us</a>
+                <a id="UseCases_WaterMeter_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
             </div>`;
 
             applyImageBg(block);

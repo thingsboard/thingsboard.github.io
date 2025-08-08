@@ -1,144 +1,332 @@
 ---
 layout: use-case
-title: Waste Management solution
-description: Waste management of garbage containers, data visualization, and device management with the ThingsBoard IoT Platform
+title: Smart Waste Management with ThingsBoard for Cities & Industry
+description: Optimize waste collection across cities, industries, and campuses with ThingsBoard’s IoT platform — featuring real-time monitoring, smart alarms, and interactive dashboards for data-driven efficiency and sustainability.
 notitle: "true"
-
+customTitle: "true"
+includeAdvantages: "true"
+contactUsModal: "true"
 
 ---
 
 {% include usecase-nav.html usecase="waste-management" %}
 
-<h1 class="usecase-title">Waste Management solution</h1>
-
-Efficient waste management is crucial for businesses seeking to reduce costs and improve environmental sustainability. Inaccurate waste monitoring can lead to inefficient disposal, environmental harm, and unnecessary expenses.
- 
-Our Waste Management <a href="/docs/paas/solution-templates/waste-management/">template</a> provides real-time visibility into waste levels, enabling proactive management of waste inventory and optimization of operations. The solution utilizes cutting-edge technology, including customizable sensors and secure communication protocols. With our user-friendly dashboard, you can easily monitor waste levels, set custom alerts, and track waste usage. By taking control of your waste management processes, you can minimize environmental harm and waste, leading to streamlined operations and increased sustainability.
-
-Additionally, our solution is fully customizable to meet the specific needs of your industry, whether you're in manufacturing, healthcare, or any other sector. With our Waste Management solution, you can gain a competitive advantage and achieve greater efficiency in your operations. Transform waste management and optimize your business with our Waste Management solution.
-
-
-<h2>Solution Structure</h2>
-
-As a part of this solution we have created a Waste Management dashboard that displays data from multiple sensors.
-
-The **Waste Management** dashboard is designed for tenant administrators to perform basic device management tasks, and has multiple states:
-- **Main state** - intended for monitoring garbage bin filling, control over the alarm, and sensors management;
-- **Bin state** - designed to edit and revise a particular garbage bin.
-
-
-<h2>Waste Management Benefits</h2>
-Save up to 90% of development time for your waste management solution by utilizing the following platform benefits:
-- reliable and scalable data collection for your waste monitors;
-- powerful rule engine to process collected data and produce alarms and valuable insights;
-- advanced and flexible visualization for real-time and historical data;
-- customizable end-user dashboards to analyze and share the results of waste monitoring;
-- integration with third-party analytics frameworks and solutions for advanced usage analytics;
-- remote control and OTA updates for your smart sensors and other devices;
-- customizable mobile applications with minimum coding efforts.
-
-{% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'waste-management' %}
-
-<div class="center" style="margin-bottom: 64px;">
-    <a id="UseCases_WasteManagement_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>
-</div>
-
-## ThingsBoard advantages
-<section class="usecase-advantages">
-    <div class="usecase-background">
-        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+<div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
+<h1 class="usecase-title">Waste management solution</h1>
+<section class="waste-management-about">
+    <div class="about-text">
+        <div class="short">
+            <div class="block">
+                <p class="text">As urban populations grow and sustainability standards tighten, waste management systems must evolve to be more efficient, scalable, and data-driven. Traditional methods — based on fixed collection schedules and manual checks —often result in overflows, resource waste, and high operational costs. ThingsBoard IoT Platform effectively addresses these challenges, offering powerful tools for real-time monitoring, automation, and optimization of waste operations.</p>
+            </div>
+            <div class="demo-button">
+                <a id="UseCases_WasteManagement_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>            
+            </div>
+        </div>
+        <div class="long">
+            <p>ThingsBoard IoT platform transforms waste collection logistics for cities, campuses, and enterprises by enabling real-time monitoring through sensor-equipped bins. As these sensors transmit live data on fill levels, battery status, and connectivity, ThingsBoard processes the telemetry instantly, allowing operators to reduce unnecessary pickups, lower emissions, and respond proactively to service needs. With its flexible device integration, rule-based automation, and customizable dashboards, ThingsBoard empowers waste management teams to deploy quickly, scale easily, and make smarter decisions based on actionable insights.</p>
+            <p>Supporting industry-standard protocols like MQTT, CoAP, and HTTP, ThingsBoard enables seamless sensor connectivity at scale. Its Rule Engine allows for complex event processing and alarming, while multi-tenant architecture supports parallel use by multiple stakeholders — from city departments to private contractors. Combined with powerful analytics and visualization tools, ThingsBoard delivers a complete, future-ready solution for intelligent waste management.</p>
+        </div>
     </div>
-    <div class="cards row">
-        <div class="col-lg-6">
+</section>
+
+<section class="waste-management-carousel carousel-padding">
+    {% include default-carousel.liquid collectionMap = 'use-cases' collectionKey = 'waste-management' %}
+</section> 
+
+{% include contact-us-banner.liquid %}
+
+<section class="waste-management-solution-structure">
+    <h2>Solution structure of waste management</h2>
+    <div class="about-text">
+        <div class="short">
             <div class="block">
-                <object data="/images/microservices-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
-                    <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. Platform components are horizontally scalable. ThingsBoard has production deployments with more than 500 000 smart-meters.</p>
-                </div>
+                <p class="text">The ThingsBoard-powered <a href="/docs/pe/solution-templates/waste-management/">waste management solution</a> begins at the edge — where IoT sensors installed in bins monitor fill levels and battery status in real time. These devices send telemetry data to ThingsBoard using supported protocols such as MQTT, CoAP, or HTTP. Thanks to ThingsBoard gateway and built-in integration capabilities, even legacy systems and non-IP sensors can be seamlessly connected.</p>
             </div>
         </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/telemetry-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
-                    <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. Connect devices in your local network to the cloud using ThingsBoard Gateway via Modbus, BLE, BACnet, OPC-UA, and other protocols.</p>
+        <div class="long">
+            <p>Once the data reaches the platform, it is processed and stored in a time-series database. Rule Engine chains trigger alarms based on predefined conditions such as low battery or bins nearing capacity. Finally, this structured information is presented on interactive dashboards, allowing operators to make timely decisions and optimize collection routes. All of this can be managed in a multi-tenant environment, enabling smart city operators, private contractors, and utility providers to co-manage waste operations securely.</p>
+        </div>
+    </div>
+    <div class="scheme">
+        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+    </div>
+</section>
+
+<section class="dashboard-structure section-padding">
+    <div class="section-header">
+        <h2>Waste management dashboard structure</h2>
+        <p>
+            The dashboard structure in the ThingsBoard waste management solution is modular and intuitive, combining high-level overviews with detailed sensor-level insights. It includes map-based bin tracking, alarm configuration panels, device management interfaces, and historical analytics — ensuring full operational visibility and control from a single interface.        
+        </p>
+    </div>
+    <div class="dashboard-structure-block">
+        <div class="menu">
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Dashboard overview and sensor states</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>This main dashboard view combines a real-time map with bin locations and a set of dynamic widgets showing battery status, fill levels, and device connectivity. Key metrics such as total bins, low battery alarms, and offline units are summarized for instant system awareness. This visual structure allows operators to monitor geographical distribution, detect anomalies at a glance, and make fast, informed decisions.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/integration-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
-                    <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Sensor registration panel</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>New sensors can be added directly through this panel using a simple CSV import, with required metadata such as GPS coordinates, addresses, and serial numbers. The intuitive interface streamlines onboarding, allowing operators to register and configure devices quickly without leaving the dashboard. This automation ensures accurate geo-tagging and immediate visibility on the map, significantly improving deployment speed and routing efficiency.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/security-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
-                    <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Alarm configuration panel</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Operators can define and adjust threshold values that trigger alarms — such as battery dropping below 30% or bin fill level exceeding 90%. These thresholds are fully configurable, allowing the system to adapt to evolving operational needs or seasonal waste patterns. This flexibility ensures timely maintenance, prevents overflow, and keeps devices functioning reliably, while the visual rule editor makes it easy to fine-tune alarm logic in just a few clicks.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/engine-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
-                    <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Sensor edit interface</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Device metadata such as address, serial number, and coordinates can be updated manually. This flexibility helps in field corrections and GPS updates post-deployment. Correct metadata ensures better filtering and dashboard grouping.</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/visualization-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
-                    <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/phone-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
-                    <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6">
-            <div class="block">
-                <object data="/images/tenancy-icon.svg"></object>
-                <div>
-                    <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
-                    <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Device insights view</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Detailed sensor views include trend graphs for fill level and battery life. Historical visualization helps detect usage patterns and forecast maintenance. Dashboards convert raw telemetry into actionable insights.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-## Waste Management solution overview
+<section class="applications applications-additional summary-margin section-padding">
+    <div class="section-header">
+        <h2>Applications of waste management solution</h2>
+        <p>This solution, built on ThingsBoard IoT platform, is highly adaptable and can meet the operational needs of multiple industries—offering real-time monitoring, flexible device integration, smart alarming, and powerful analytics. Here are five key sectors where it delivers value:</p>
+    </div>
+    <div class="applications-container-large">
+        <div class="text-row-top">
+            <div class="text-block">
+                <h3>Municipal services</h3>
+                <p>Enables city authorities to optimize waste collection routes and respond faster to bin overflow alarms using ThingsBoard’s real-time telemetry, automated rules, and geospatial dashboards.</p>
+            </div>
+            <div class="text-block">
+                <h3>University and corporate campuses</h3>
+                <p>Promotes sustainability goals with smart bin tracking, usage analytics, and seamless deployment across distributed locations, all from a centralized dashboard.</p>
+            </div>
+            <div class="text-block">
+                <h3>Event venues and stadiums</h3>
+                <p>Handles fluctuating waste loads during events with scalable sensor connectivity and predictive analytics, ensuring clean environments and resource efficiency.</p>
+            </div>
+        </div>
+        <div class="images-row">
+            <div class="application-image"><img src="/images/usecases/waste-monitoring/municipal-1.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="application-image"><img src="/images/usecases/air-quality/industrial-1.svg" alt="Industrial facilities" title="Industrial facilities"></div>
+            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="University and corporate campuses" title="University and corporate campuses"></div>
+            <div class="application-image"><img src="/images/usecases/waste-monitoring/transportation-1.svg" alt="Transportation hubs (airports, ports, stations)" title="Transportation hubs (airports, ports, stations)"></div>
+            <div class="application-image"><img src="/images/usecases/waste-monitoring/stadium-1.svg" alt="Event venues and stadiums" title="Event venues and stadiums"></div>
+        </div>
+        <div class="text-row-bottom">
+            <div class="text-block">
+                <h3>Industrial facilities</h3>
+                <p>Ensures safe and compliant handling of waste in manufacturing zones through detailed sensor insights, custom alarms, and support for legacy device integration.</p>
+            </div>
+            <div class="text-block">
+                <h3>Transportation hubs (airports, ports, stations)</h3>
+                <p>Maintains hygiene and safety in high-traffic zones by enabling dynamic monitoring and maintenance scheduling via ThingsBoard’s event-driven automation.</p>
+            </div>
+        </div>
+    </div>
+    <div class="applications-container-small">
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/waste-monitoring/municipal-2.svg" alt="Municipal services" title="Municipal services"></div>
+            <div class="text-block">
+                <h3>Municipal services</h3>
+                <p>Enables city authorities to optimize waste collection routes and respond faster to bin overflow alarms using ThingsBoard’s real-time telemetry, automated rules, and geospatial dashboards.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Industrial facilities</h3>
+                <p>Ensures safe and compliant handling of waste in manufacturing zones through detailed sensor insights, custom alarms, and support for legacy device integration.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/air-quality/industrial-2.svg" alt="Industrial facilities" title="Industrial facilities"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="University and corporate campuses" title="University and corporate campuses"></div>
+            <div class="text-block">
+                <h3>University and corporate campuses</h3>
+                <p>Promotes sustainability goals with smart bin tracking, usage analytics, and seamless deployment across distributed locations, all from a centralized dashboard.</p>
+            </div>
+        </div>
+        <div class="application-block">
+            <div class="text-block">
+                <h3>Transportation hubs (airports, ports, stations)</h3>
+                <p>Maintains hygiene and safety in high-traffic zones by enabling dynamic monitoring and maintenance scheduling via ThingsBoard’s event-driven automation.</p>
+            </div>
+            <div class="image"><img src="/images/usecases/waste-monitoring/transportation-2.svg" alt="Transportation hubs (airports, ports, stations)" title="Transportation hubs (airports, ports, stations)"></div>
+        </div>
+        <div class="application-block">
+            <div class="image"><img src="/images/usecases/waste-monitoring/stadium-2.svg" alt="Event venues and stadiums" title="Event venues and stadiums"></div>
+            <div class="text-block">
+                <h3>Event venues and stadiums</h3>
+                <p>Handles fluctuating waste loads during events with scalable sensor connectivity and predictive analytics, ensuring clean environments and resource efficiency.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-The diagram below identifies data flow and integration points for a typical waste management solution that uses the ThingsBoard platform to collect and analyze monitoring data from waste sensors.
+<section class="summary">
+    <div class="summary-text">
+        <h2>Summary of waste management</h2>
+        <p>ThingsBoard’s waste management solution addresses a critical urban and industrial challenge with precision, scalability, and real-time intelligence. From seamless sensor integration to customizable dashboards and proactive alarming, it empowers stakeholders to manage waste efficiently and sustainably. With IoT at its core, this solution lays the foundation for smarter, cleaner cities and optimized resource management.</p>
+    </div>
+    <div class="summary-icon">
+        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+    </div>
+</section>
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const svgAnimations = document.querySelectorAll(".svg-animation");
+        const svgObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.style.visibility = 'visible';
+                    img.src = img.dataset.src;
+                    obs.unobserve(img);
+                }
+            });
+        }, {threshold: 1.0});
 
-You may notice plenty of connectivity options for the waste sensors: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
+        svgAnimations.forEach(img => svgObserver.observe(img));
 
-## Learn more
-<div class="usecases-bottom-nav">
-    <a id="UseCases_WasteManage_GetStart" href="/docs/getting-started-guides/helloworld/" class="button gtm_button">Getting started</a>
-    <a id="UseCases_WasteManage_CustomersFb" href="/industries/smart-energy/" class="button gtm_button">Customers feedback</a>
-    <a id="UseCases_WasteManage_PlatformFeatures" href="/docs/#platform-features" class="button gtm_button">Platform features</a>
-    <a id="UseCases_WasteManage_Architecture" href="/docs/reference/" class="button gtm_button">Architecture</a>
-    <a id="UseCases_WasteManage_ContactUs" href="/docs/contact-us/" class="button gtm_button">Contact us</a>
-</div>
+        document.querySelectorAll('.card-link').forEach((link) => {
+            link.classList.add('linkDefault');
+        });
+
+        const expansionBlocks = document.querySelectorAll('.expansion-block');
+        const structureBlock = document.querySelector('.dashboard-structure-block');
+        const smallImageBlock = createImageBlock('small');
+        const largeImageBlock = createImageBlock('large');
+
+        expansionBlocks[0].appendChild(smallImageBlock);
+        structureBlock.appendChild(largeImageBlock);
+
+        const largeImageElement = document.querySelector('.image-block-large > .image-container > .image');
+        const smallImageElement = document.querySelector('.image-block-small > .image-container > .image');
+
+        let currentExpandedIndex = 0;
+
+        expansionBlocks[0].classList.add('expanded');
+
+        expansionBlocks.forEach((panel, index) => {
+            panel.addEventListener('click', function() {
+                if (index === currentExpandedIndex) {
+                    return; 
+                }
+
+                smallImageElement.innerHTML = getImage(index);
+                this.appendChild(smallImageBlock);
+                largeImageElement.style.height = largeImageElement.firstChild.getBoundingClientRect().height + 'px';
+                largeImageElement.innerHTML = getImage(index);
+
+                applyImageBg(smallImageBlock);
+                applyImageBg(largeImageBlock);
+
+                expansionBlocks.forEach(item => {
+                    item.classList.remove('expanded');
+                });
+
+                this.classList.add('expanded');
+                currentExpandedIndex = index; 
+                if (window.screen.width < 600) {
+                    const blockRect = expansionBlocks[index].getBoundingClientRect();
+                    const target = blockRect.top + window.scrollY - 80;
+                    window.scrollTo(0, target);
+                    setTimeout(()=> document.getElementById("nav").style.top = "-78px");
+                }
+                if (index === 4) {
+                    window.scrollTo(0, window.scrollY +1);
+                }
+            });
+        });
+
+        window.onscroll = function() {
+            const elemCoor = document.querySelector('.dashboard-structure').getBoundingClientRect();
+            const large = document.querySelector('.image-block-large');
+
+            if (Math.abs(elemCoor.top) < elemCoor.height / 2 - 300 && elemCoor.top < 0) {
+                large.style.marginTop = Math.abs(elemCoor.top) + 20 + 'px';
+            }
+        };
+
+        if (window.screen.width > 960) {
+            const fullPage = document.querySelector('#scada-fullpage');
+            largeImageElement.addEventListener('click', function(image) {
+                fullPage.children[0].innerHTML = `<img src=${image.currentTarget.children[0].src} />`;
+                fullPage.style.display = 'block';
+                fullPage.style.top = window.scrollY + 'px';
+                document.querySelector('body').style.overflow = 'hidden';
+            });
+        }
+
+        function createImageBlock(layout) {
+            let block = document.createElement('div');
+            block.className = `image-block-${layout}`;
+            block.innerHTML = `
+            <div class="image-container image-background">
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class="image-background"></div>
+                <div class=image>${getImage(0)}</div>
+            </div>
+            <div class="buttons-block">
+                <a id="UseCases_WasteManagement_ViewLiveDemo" target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="button gtm_button">View live demo</a>            
+                <a id="UseCases_WasteManagement_ContactUs" target="_blank" href="/docs/contact-us/?subject=Custom%20Development" class="button contact-us gtm_button">Contact us</a>
+            </div>`;
+
+            applyImageBg(block);
+    
+            return block;
+        }
+
+        function applyImageBg(block) {
+            const img = block.querySelector('.image img');
+            const container = block.querySelector('.image-container');
+            if (img && container) {
+                const bg = img.dataset.bg;
+                container.style.backgroundColor = bg || '';
+            }
+        }
+
+        function getImage(index) {
+            const images = [
+                "<img src='/images/usecases/waste-monitoring/waste-1.webp' data-bg='#F9F9FB' alt='Smart waste management dashboard with bin status, battery levels, and interactive map in ThingsBoard' title='Live overview of smart waste bins, battery alerts, and location tracking via ThingsBoard IoT'/>",
+                "<img src='/images/usecases/waste-monitoring/waste-2.webp' data-bg='#A4A4A4' alt='Sensor registration dialog for uploading CSV file with bin data in ThingsBoard' title='Register multiple smart bin sensors by importing CSV in ThingsBoard'/>",
+                "<img src='/images/usecases/waste-monitoring/waste-3.webp' data-bg='#A4A4A4' alt='Alarm rule configuration for bin fullness and battery level in ThingsBoard' title='Define alarm rules – fullness over 90%, battery below 30% (ThingsBoard IoT)'/>",
+                "<img src='/images/usecases/waste-monitoring/waste-4.webp' data-bg='#A4A4A4' alt='Edit bin sensor data including location and address in ThingsBoard' title='Modify sensor details – serial number, address, GPS coordinates'/>",
+                "<img src='/images/usecases/waste-monitoring/waste-5.webp' data-bg='#F9F9FB' alt='Smart bin sensor detail view with charts for fullness and battery history in ThingsBoard' title='Sensor data trends – fullness and battery level monitoring over time'/>"
+            ];
+            return images[index];
+        }
+    });
+</script>

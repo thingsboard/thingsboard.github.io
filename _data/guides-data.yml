@@ -5,9 +5,9 @@
   section:
     - path: /docs/getting-started-guides/helloworld/
       title: Hello world
-      subtitle: Learn how to collect IoT device data using MQTT, HTTP or CoAP and visualize it on a simple dashboard. Provides variety of sample scripts that you can run on your PC or laptop to simulate the device.
+      subtitle: Learn how to collect data from IoT devices using MQTT, HTTP, or CoAP and visualize it on a simple dashboard.
       keywords: mqtt http coap visualization helloworld
-      video: false
+      video: true
       pe: false
     - path: /docs/user-guide/dashboards/
       title: Working with IoT dashboards

@@ -69,22 +69,22 @@ selfManagedPlan:
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector product-selector-outlined">
-            <div id="Pricing_PE_Cloud" 
+            <div id="Pricing_PE_Cloud"
                  class="solution thingsboard-cloud active defaultselection gtm_button" 
                  data-product-id="thingsboard-cloud" 
                  onClick="activateProductSection('thingsboard-cloud')">
-                <h3 data-faq-id="tb-cloud-definition" 
+                <h3 id="Pricing_PE_Cloud" class="gtm_button" data-faq-id="tb-cloud-definition" 
                     data-faq-link-size="70%">Cloud</h3>
             </div>
             <div id="Pricing_PE_PrivateCloud"
                  class="solution thingsboard-private-cloud gtm_button"
                  data-product-id="thingsboard-private-cloud"
                  onClick="activateProductSection('thingsboard-private-cloud')">
-                <h3 data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for"
+                <h3 id="Pricing_PE_PrivateCloud" class="gtm_button"  data-faq-id="tb-private-cloud-what-does-thingsboard-private-cloud-stand-for"
                     data-faq-link-size="70%">Private Cloud</h3>
             </div>
             <div id="Pricing_PE_SM" class="solution thingsboard-pe gtm_button" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
-                <h3 data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%">Self-managed</h3>
+                <h3 id="Pricing_PE_SM" class="gtm_button" data-faq-id="pe-pay-as-you-go-self-managed-definition" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
     </div>
@@ -95,14 +95,14 @@ selfManagedPlan:
                  class="solution trendz-cloud gtm_button" 
                  data-product-id="trendz-cloud" 
                  onClick="activateProductSection('trendz-cloud')">
-                <h3 data-faq-id="trendz-cloud-definition" data-faq-link-size="70%">Cloud</h3>
+                <h3 id="Pricing_TA_Cloud" class="gtm_button" data-faq-id="trendz-cloud-definition" data-faq-link-size="70%">Cloud</h3>
             </div>
             <div id="Pricing_TA_SM"
                  data-solutionId="trendz-self-managed"
                  class="solution trendz-self-managed active defaultselection gtm_button"
                  data-product-id="trendz-self-managed"
                  onClick="activateProductSection('trendz-self-managed')">
-                <h3 data-faq-id="trendz-pay-as-you-go-self-managed" data-faq-link-size="70%">Self-managed</h3>
+                <h3 id="Pricing_TA_SM" class="gtm_button" data-faq-id="trendz-pay-as-you-go-self-managed" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
     </div>
@@ -111,168 +111,173 @@ selfManagedPlan:
 </div>
 
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
-    <div class="container">
+    <div class="container no-padding">
       <div class="pricing-content-header row">
           <div id="northAmericaHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                  All subscription plans include hosting and email costs.
               </div>
           </div>
           <div id="europeHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                  All subscription plans include hosting and email costs.
               </div>
           </div>
           <div class="col d-flex justify-content-end">
-              <div class="solution-selector solution-selector-cloud">
-                  <div id="Pricing_PE_Cloud_NorthAmerica"
-                       data-solutionId="cloud-north-america"
-                       class="solution north-america active gtm_button"
-                       data-toggle="#northAmerica"
-                       data-description-toggle="#northAmericaHeader"
-                       onClick="activateServerSection('cloud-north-america', '/docs/paas/')">
-                      <h3>North America</h3>
-                  </div>
-                  <div id="Pricing_PE_Cloud_Europe"
-                       data-solutionId="cloud-europe"
-                       class="solution europe gtm_button"
-                       data-toggle="#europe"
-                       data-description-toggle="#europeHeader"
-                       onClick="activateServerSection('cloud-europe', '/docs/paas/eu/')">
-                      <h3>Europe</h3>
-                  </div>
-              </div>
+            <div class="toggle-container">
+                <div class="billing-toggle solution-selector">
+                    <span style="width: 117px" id="Pricing_PE_Cloud_NorthAmerica" data-solutionId="cloud-north-america" data-toggle="#northAmerica" data-description-toggle="#northAmericaHeader" class="label-text selected solution north-america">North America</span>
+                    <label class="switch">
+                        <input onclick="activateServerSection(event)" type="checkbox" id="regionSelect">
+                        <span class="slider"></span>
+                    </label>
+                    <span style="width: 42px" id="Pricing_PE_Cloud_Europe" data-solutionId="cloud-europe" data-toggle="#europe" data-description-toggle="#europeHeader" class="label-text solution europe">Europe</span>
+                </div>
+            </div>
           </div>
       </div>
         <div class="pricing-div">
             <div class="pricing-section pricing-cloud active" id="northAmerica">
-               <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description">
-                                <p>Become familiar with ThingsBoard features</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $10
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Start Free
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 30 Devices</div>
-                            <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Community support
-                            </div>
+               <div class="cards-row">
+                    <div class="pricing-square">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description">
+                            <p>Start exploring features</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $10
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Start Free
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 30 Devices</div>
+                        <div class="pricing-square-item">Up to 30 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description">
-                                <p>For PoCs and MVPs</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $149
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 100 Devices</div>
-                            <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Community support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square popular">
+                        <span class="popular-badge">POPULAR</span>
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description">
+                            <p>For PoCs and MVPs</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $149
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 100 Devices</div>
+                        <div class="pricing-square-item">Up to 100 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>
-                            <div class="pricing-square-description">
-                                <p>For upcoming IoT Unicorns</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $399
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 500 Devices</div>
-                            <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square">
+                        <h2>Startup</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $399
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 500 Devices</div>
+                        <div class="pricing-square-item">Up to 500 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $749
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square">
+                        <h2>Business</h2>
+                        <div class="pricing-square-description">
+                            <p>Defined long term projects</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $749
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 1 000 Devices</div>
+                        <div class="pricing-square-item">Up to 1 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    </div>
+                    <div class="pricing-square">
+                        <h2>Business+</h2>
+                        <div class="pricing-square-description">
+                            <p>Built for scalable IoT growth</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $1199
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 2 000 Devices</div>
+                        <div class="pricing-square-item">Up to 2 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                </div>
             </div>
             <div class="pricing-section pricing-cloud" id="europe">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
+                <div class="cards-row">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
-                                <p>Become familiar with ThingsBoard features</p>
+                                <p>Start exploring features</p>
                             </div>
                             <h4 class="pricing-square-price">
                                 €9
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Start Free
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 30 Devices</div>
                             <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
-                        </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
+                        <div class="pricing-square popular">
+                            <span class="popular-badge">POPULAR</span>
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
                                 <p>For PoCs and MVPs</p>
@@ -288,14 +293,12 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>
                             <div class="pricing-square-description">
@@ -306,42 +309,61 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
+                                Email support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
+                                <p>Defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price">
                                 €725
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Up to 1 000 Devices</div>
+                            <div class="pricing-square-item">Up to 1 000 Assets</div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
+                                Email support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
+                    <div class="pricing-square">
+                        <h2>Business+</h2>
+                        <div class="pricing-square-description">
+                            <p>Built for scalable IoT growth</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €1165
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 2 000 Devices</div>
+                        <div class="pricing-square-item">Up to 2 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                </div>
             </div>
@@ -349,9 +371,9 @@ selfManagedPlan:
         <div class="additional-content">
             <div class="plan-calculator-block">
                 <div class="text">
-                    <h2 class="no-margin">Ready to scale past 1,000 devices?</h2>
+                    <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
                 </div>
-                <button onclick="switchToPrivateCloud()" class="button clulator gtm_button">See Private Cloud Options</button>
+                <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
         </div>
     </div>
@@ -388,11 +410,11 @@ selfManagedPlan:
                             <p>Suitable for pilots and early stage deployments.</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            $1199
+                            $1499
                             <span>/month</span>
                         </h4>
                         <h4 class="pricing-square-price hidden">
-                            $1079
+                            $1349
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
@@ -403,8 +425,8 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">20 000 data points per minute</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">200 GB of storage included</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">50 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">500 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
                 </div>
@@ -430,7 +452,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 data points per minute</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 msg/minute</div> 
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
@@ -457,7 +479,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 data points per minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
@@ -493,7 +515,7 @@ selfManagedPlan:
                     <h2>Not sure which plan fits?</h2>
                     <p>Use our calculator to estimate the best plan for your needs.</p>
                 </div>
-                <button onclick="openModal()" class="button clulator gtm_button">Calculate your pricing</button>
+                <button id="openCalculatorBtn" class="button clulator gtm_button">Calculate your pricing</button>
             </div>
             <div class="add-ons">
                 <h2>Optional add-ons</h2>
@@ -516,7 +538,7 @@ selfManagedPlan:
             </div>
             <div class="plans-comparison">
                 <h2>Additional features</h2>
-                <p>See key subscription plan features in the table below. View the full subscription plan <a href="/docs/private-cloud/subscription/">description</a> <a href="/docs/private-cloud/subscription/">here </a>.</p>
+                <p>See key subscription plan features in the table below. View the full subscription plan description <a href="/docs/private-cloud/subscription/">here</a>.</p>
                 <div class="comparison-table-container">
                     <table>
                         <thead>
@@ -529,6 +551,13 @@ selfManagedPlan:
                             </tr>
                         </thead>
                         <tbody>
+                            <tr>
+                                <td data-faq-id="tb-private-cloud-migrate-data-and-config">Data & configuration migration</td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                            </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-is-automatic-backup">Automatic backups</td>
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
@@ -572,8 +601,8 @@ selfManagedPlan:
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
-                                <td>SQL</td>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database</td>
+                                <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
@@ -660,7 +689,7 @@ selfManagedPlan:
                      data-toggle="#payAsYouGo"
                      data-description-toggle="#payAsYouGoHeader"
                      onClick="activateSolutionSection('pe-pay-as-you-go')">
-                    <h3 data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    <h3 id="Pricing_PE_SM_PayAsYouGo" class="gtm_button" data-faq-id="pe-pay-as-you-go-self-managed-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
                 <div id="Pricing_PE_SM_Perpetual"
                      data-solutionId="pe-perpetual"
@@ -668,7 +697,7 @@ selfManagedPlan:
                      data-toggle="#perpetual"
                      data-description-toggle="#perpetualHeader"
                      onClick="activateSolutionSection('pe-perpetual')">
-                    <h3 data-faq-id="pe-perpetual-perpetual-meaning" data-faq-link-size="70%">Perpetual</h3>
+                    <h3 id="Pricing_PE_SM_Perpetual" class="gtm_button" data-faq-id="pe-perpetual-perpetual-meaning" data-faq-link-size="70%">Perpetual</h3>
                 </div>
             </div>
         </div>
@@ -870,10 +899,28 @@ selfManagedPlan:
                     </div>
                 </div>
            </div>
-            <div class="row justify-content-center" style="margin-top: 60px">
-                <a id="Pricing_PE_SM_Perpetual" class="button btn-pricing gtm_button" href="/docs/contact-us/" style="margin:0">
-                    Contact Us
-                </a>
+            <div class="additional-content">
+                <div class="add-ons">
+                    <h2>Optional add-ons</h2>
+                    <p>Customize your deployment with optional features to suit your business needs.</p>
+                    <div class="cards">
+                        <div class="card">
+                            <h3>Custom IoT solutions</h3>
+                            <a style="margin-bottom: 16px" class="button reset gtm_button" href="/docs/contact-us/">Contact Us</a>
+                            <p>Fast delivery with fixed costs and timeline</p>
+                        </div>
+                        <div class="card">
+                            <h3>Dev/Test Environments</h3>
+                            <h4>$1499</h4>
+                            <p>Accelerate your development and testing cycles</p>
+                        </div>
+                        <div class="card">
+                            <h3>White-labeled Mobile App</h3>
+                            <h4>$99 <span>each per month</span></h4>
+                            <p>+ $1000 one time setup fee</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -897,7 +944,7 @@ selfManagedPlan:
                          data-toggle="#trendzPayAsYouGo"
                          data-description-toggle="#trendzPayAsYouGoHeader" 
                          onClick="activateSolutionSection('trendz-pay-as-you-go')">
-                        <h3 data-faq-id="trendz-pay-as-you-go-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
+                        <h3 id="Pricing_TA_SM_PayAsYouGo" class="gtm_button" data-faq-id="trendz-pay-as-you-go-subscription-plans" data-faq-link-size="70%">Pay-as-you-go</h3>
                     </div>
                     <div id="Pricing_TA_SM_Perpetual" 
                          data-solutionId="trendz-perpetual"
@@ -905,7 +952,7 @@ selfManagedPlan:
                          data-toggle="#trendzPerpetual"
                          data-description-toggle="#trendzPerpetualHeader" 
                          onClick="activateSolutionSection('trendz-perpetual')">
-                        <h3 data-faq-id="trendz-perpetual-license-meaning" data-faq-link-size="70%">Perpetual</h3>
+                        <h3 id="Pricing_TA_SM_Perpetual" class="gtm_button" data-faq-id="trendz-perpetual-license-meaning" data-faq-link-size="70%">Perpetual</h3>
                     </div>
                 </div>
             </div>
@@ -1086,7 +1133,7 @@ selfManagedPlan:
                        data-toggle="#trendzNorthAmerica"
                        data-description-toggle="#trendzNorthAmericaHeader"
                        onClick="setActiveSolutionSection('trendz-cloud-north-america')">
-                      <h3>North America</h3>
+                      <h3 id="Pricing_Trendz_Cloud_NorthAmerica" class="gtm_button">North America</h3>
                   </div>
                   <div id="Pricing_Trendz_Cloud_Europe"
                        data-solutionId="trendz-cloud-europe"
@@ -1094,7 +1141,7 @@ selfManagedPlan:
                        data-toggle="#trendzEurope"
                        data-description-toggle="#trendzEuropeHeader"
                        onClick="setActiveSolutionSection('trendz-cloud-europe')">
-                      <h3>Europe</h3>
+                      <h3 id="Pricing_Trendz_Cloud_Europe" class="gtm_button">Europe</h3>
                   </div>
               </div>
           </div>
@@ -1386,7 +1433,7 @@ selfManagedPlan:
                      data-toggle="#community-edition"
                      data-description-toggle="#communityEditionHeader"
                      onClick="activateSolutionSection('edge-community')">
-                    <h3>Community Edition</h3>
+                    <h3 id="Pricing_Edge_CE" class="gtm_button">Community Edition</h3>
                 </div>
                 <div id="Pricing_Edge_PayAsYouGo"
                      data-solutionId="edge-pay-as-you-go"
@@ -1394,7 +1441,7 @@ selfManagedPlan:
                      data-toggle="#payAsYouGo"
                      data-description-toggle="#payAsYouGoHeader"
                      onClick="activateSolutionSection('edge-pay-as-you-go')">
-                    <h3 data-faq-id="edge-pay-as-you-go-model" data-faq-link-size="70%">Pay-as-you-go</h3>
+                    <h3 id="Pricing_Edge_PayAsYouGo" class="gtm_button" data-faq-id="edge-pay-as-you-go-model" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
                 <div id="Pricing_Edge_Perpetual"
                      data-solutionId="edge-perpetual"
@@ -1402,7 +1449,7 @@ selfManagedPlan:
                      data-toggle="#perpetual"
                      data-description-toggle="#perpetualHeader"
                      onClick="activateSolutionSection('edge-perpetual')">
-                    <h3 data-faq-id="edge-perpetual-license" data-faq-link-size="70%">Perpetual</h3>
+                    <h3 id="Pricing_Edge_Perpetual" class="gtm_button" data-faq-id="edge-perpetual-license" data-faq-link-size="70%">Perpetual</h3>
                 </div>
             </div>
         </div>
@@ -1608,7 +1655,7 @@ selfManagedPlan:
     </div>
  </div>  
 </div>
-<div id="tbmq" class="pricing-content" style="display: none;">
+<div id="tbmq" class="pricing-content" style="display: none; margin-bottom: 12vh">
     <div class="container">
         <div class="pricing-content-header row not-reverse-column">
             <div class="pricing-content-description always-display active col-lg-6">
@@ -1740,6 +1787,14 @@ selfManagedPlan:
                     </div>
                 </div>
                </div>
+            </div>
+        </div>
+        <div class="additional-content">
+            <div class="plan-calculator-block">
+                <div class="text">
+                    <h2 class="no-margin">Want to know more about the subscription?</h2>
+                </div>
+                <a class="button reset gtm_button" href="/docs/mqtt-broker/subscription/">See full details</a>
             </div>
         </div>
     </div>
@@ -1955,6 +2010,11 @@ selfManagedPlan:
                             <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/">GitHub</a>.</p>
                         </div>    
                     </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="ce-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>    
+                    </div>
                 </div>
                 <div id="faq-thingsboard-ce-upgradingToEnterpriseEdition" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="upgrade-ce-to-pe" data-title="Can I upgrade from Community Edition to the Professional Edition?">
@@ -2028,7 +2088,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What pricing plans does ThingsBoard Cloud offer?">
                         <div class="container">
-                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 4 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
+                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-structure" data-title="How is ThingsBoard Cloud pricing structured?">
@@ -2364,7 +2424,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-cloud-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The Maker and Prototype subscriptions include Community-level support. Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.</p>
+                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br></p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
@@ -2391,6 +2451,11 @@ selfManagedPlan:
                         <div class="container">
                             <p>Response times vary by plan; enterprise subscription customers receive better SLAs.</p>
                         </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tb-cloud-support-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -2453,13 +2518,24 @@ selfManagedPlan:
                             <p>All plans are powered by Kubernetes, with built-in load balancers to ensure resilient, scalable operations. AWS is our first-choice IaaS, but Azure or GCP regions are also supported on request.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup">
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-migrate-data-and-config" data-title="Can you help migrate data and configurations to Private Cloud?">
                         <div class="container">
-                            <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
+                            <p>Yes, we offer configuration and historical data migration as part of the Private Cloud onboarding process. <br> <br></p>
+                            <p>If you’re moving from ThingsBoard public Cloud or a self-hosted Professional Edition, our team will:</p>
+                            <ul>
+                                <li>Migrate platform configuration (devices, dashboards, rule chains, assets, customers, etc.)</li>
+                                <li>Transfer historical telemetry and attribute data to the new Private Cloud instance</li>
+                            </ul>
+                            <p>This ensures a smooth transition with minimal disruption.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup?">
+                        <div class="container">
+                            <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
+                        </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-support-is-included" data-title="What support is included?">
                         <div class="container">
@@ -2477,6 +2553,30 @@ selfManagedPlan:
                             <p>2. Submit the request form – we schedule a short onboarding call.</p>
                             <p>3. For Enterprise deals we run a light discovery workshop and issue a custom proposal. <br> <br></p>
                             <p>You are welcome to reach out at any stage — we’ll help you choose the most suitable plan and guide you through the next steps.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-determine-right-plan" data-title="How do I determine the right Private Cloud plan for my workload?">
+                        <div class="container">
+                            <p>To select an appropriate Private Cloud plan, you’ll need to estimate your expected platform usage based on three key indicators: <br> <br></p>
+                            <p>1. Number of Devices:</p>
+                            <ul>
+                                <li>Navigate to the Home page of your ThingsBoard Tenant account.</li>
+                                <li>Check the total number of devices currently connected.</li>
+                            </ul>
+                            <p>2. Number of Messages per Day per Device:</p>
+                            <ul>
+                                <li>Navigate to API Usage → Transport Messages chart</li>
+                                <li>Find the monthly total of transport messages</li>
+                                <li>Use this formula: Messages per day per device = (Monthly Transport Messages) / (Number of Devices × Number of Days in Month)</li>
+                            </ul>
+                            <p>3. Number of Data Points per Message:</p>
+                            <ul>
+                                <li>In the same API Usage → Transport Messages chart</li>
+                                <li>Identify the Data Points per Month figure</li>
+                                <li>Use this formula: Data Points per Message = Data Points per Month / Transport Messages per Month</li>
+                            </ul>
+                            <p>Once you’ve collected these three values, you can match your usage against the limits defined in each Private Cloud plan tier (Launch, Growth, Scale, Enterprise) to determine the best fit.<br> <br></p>
+                            <p>For more guidance, you can share these metrics with our team, we’ll be happy to help you size your environment.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-is-there-a-minimum-commitment" data-title="Is there a minimum commitment?">
@@ -2532,7 +2632,7 @@ selfManagedPlan:
                         <div class="container">
                             <p>The pricing for Private Cloud is based on the selected service tier. Each plan includes a specific device and data point rate limit to ensure proper resource allocation and SLA compliance. The available plans are: <br><br></p>
                             <ul>
-                                <li>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
+                                <li>Launch: $1,499/month — includes up to 5,000 devices and up to 50,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
                                 <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 data points per minute; additional devices are billed at $0.09/device/month.</li>
                                 <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 data points per minute; additional devices are billed at $0.08/device/month.</li>
                                 <li>Enterprise: Custom pricing — includes 100,000 devices by default and no data point rate limits. Extendable as needed based on specific deployment requirements.</li>
@@ -2661,7 +2761,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-title="What telemetry storage is included and what data consumes it?">
                         <div class="container">
-                            <p>Each plan bundles a block-storage pool (Launch 200 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
+                            <p>Each plan bundles a block-storage pool (Launch 500 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
                             <p><strong>Replication overhead</strong> <br></p>
                             <p>The figures above represent raw logical data. For durability the underlying databases keep multiple physical copies:</p>
                             <ul>
@@ -2738,7 +2838,7 @@ selfManagedPlan:
                             <p>Each Private Cloud plan includes a predefined data point rate limit measured in data points per minute. This is the most critical technical limit in our offering, as it defines how much telemetry and integration data your system can process without impacting performance or SLA. <br><br></p>
                             <p>The message rate limits per plan are:</p>
                             <ul>
-                                <li>Launch: up to 20,000 data points per minute</li>
+                                <li>Launch: up to 50,000 data points per minute</li>
                                 <li>Growth: up to 100,000 data points per minute</li>
                                 <li>Scale: up to 200,000 data points per minute</li>
                                 <li>Enterprise: Unlimited</li>
@@ -2748,7 +2848,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
                         <div class="container">
-                            <p>The Launch plan uses SQL Database (PostgreSQL) with a replication factor of 2, ideal for lightweight deployments. Growth, Scale, and Enterprise plans use NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
+                            <p>All plans use PostgreSQL (SQL) with replication factor of 2 for entities storage and NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
                             <p>For workloads with large storage requirements, NoSQL-based plans are more cost-efficient thanks to their reduced storage footprint.</p>
                         </div>
                     </div>
@@ -2762,9 +2862,9 @@ selfManagedPlan:
                         <div class="container">
                             <p>Data replication ensures durability and high availability of your data within the Private Cloud infrastructure. The replication level defines how many copies of your data are stored across different nodes: <br></p>
                             <ul>
-                                <li>Launch: 2x replication — your data is stored in two copies to ensure durability.</li>
-                                <li>Growth: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
-                                <li>Scale: 3x replication — same as Growth, this tier also provides high availability through triple replication.</li>
+                                <li>Launch: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
+                                <li>Growth: 3x replication — same as Launch, this tier also provides high availability through triple replication.</li>
+                                <li>Scale: 3x replication — same as Launch and Growth, this tier also provides high availability through triple replication.</li>
                             </ul>
                             <p>Higher replication enhances fault tolerance and system resilience, particularly for production-grade deployments.</p>
                         </div>
@@ -2776,12 +2876,19 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-does-geo-region-deployment-selection-include" data-title="What does geo-region deployment selection include?">
                         <div class="container">
-                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.<br><br></p>
+                            <p><b>For the Launch plan, region selection is limited to the following supported regions:</b>
+                            <ul>
+                                <li><b>North America:</b> US West, US East, Mexico;</li>
+                                <li><b>Europe:</b> Ireland, Stockholm;</li>
+                                <li><b>Asia:</b> Taipei, Thailand, Mumbai.</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window" data-title="Can I choose a specific maintenance window?">
                         <div class="container">
-                            <p>Yes, you can. All Private Cloud plans allow customers to request and define a preferred maintenance window. This ensures any upgrades or maintenance activities are scheduled at a time that minimizes disruption to your operations. Our team coordinates with you to honor this window whenever changes are required.</p>
+                            <p>Yes, you can. All Private Cloud plans imply scheduled maintenance windows. For Launch and Growth plans, our team will suggest available time slots within our standard working hours for you to choose from. For Scale and Enterprise plans, you can define any preferred maintenance window that best fits your operations. We coordinate with you to ensure that any upgrades or maintenance activities are performed within the agreed timeframe to minimize disruption.</p>
                         </div>
                     </div>
                 </div>
@@ -3130,7 +3237,7 @@ selfManagedPlan:
                 <div id="faq-pe-pay-as-you-go-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-support-included" data-title="What support is included in my subscription?">
                         <div class="container">
-                            <p>"Maker and Prototype: Community support<br>Startup: Support with 36-hour response time during regular working shifts via Support Portal<br>Enterprise: Support with 12-hour response time during regular working shifts via Support Portal"</p>
+                            <p>- Maker and Prototype: Community support.<br>- Startup: Support with 36-hour response time during regular working shifts via Support Portal.<br>&#8195;Please note: Support for the Startup plan becomes available from the second month of usage.<br>- Enterprise: Support with 12-hour response time during regular working shifts via Support Portal.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-24-7-support" data-title="Do you offer 24/7 support?">
@@ -3152,6 +3259,11 @@ selfManagedPlan:
                         <div class="container">
                             <p>"Access to the ThingsBoard Support Portal is available for users with Startup and higher subscriptions, as well as perpetual license holders. Without the need for a separate support agreement, all support inquiries are seamlessly managed through a unified queue, ensuring efficient handling of your requests. Our support team is dedicated to providing an initial response within 24 hours to address your needs promptly.<br><br>The support service includes assistance with installation and migration for default deployments, as well as resolving any questions related to the platform's out-of-the-box functionalities, as detailed in our documentation. For specialized services such as consulting, code reviews, health assessments, or development projects, we offer tailored solutions to meet your specific requirements. Should your request involve additional expertise, our support engineers will guide you to the best resources to ensure your success."</p>
                         </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -3194,7 +3306,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-prod-vs-dev" data-title="What is the difference between Production and Development instances?">
                         <div class="container">
-                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI.</p>
+                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled), The development instance, meant for testing and staging, features a <b>DEVELOPMENT MODE</b> watermark in the UI. The Development license is available as add-on, one can purchase it via the <a href="https://license.thingsboard.io" target="_blank">License portal</a> or by following regular sales process.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -3210,9 +3322,9 @@ selfManagedPlan:
                             <p>The Perpetual Kit is a perpetual license package that includes two license keys (activation codes) in scope of a license. This package permits the deployment of one production instance and one development instance. No programmatic limits by entities for both servers.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development Instance separately?">
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-dev-instance" data-title="Can I purchase a Development license separately?">
                         <div class="container">
-                            <p>Development instances can only be purchased separately by owners of Perpetual packages. To request an additional development instance, please contact the ThingsBoard sales team through the <a href="https://thingsboard.io/docs/contact-us/">Contact us</a> page.</p>
+                            <p>Yes, via the <a href="https://license.thingsboard.io" target="_blank">License portal</a>, one can order development licenses for ThingsBoard PE Platform and for Trendz. If the card payments are restricted in your company, please <a href="https://thingsboard.io/docs/contact-us/">submit your request</a> to our sales team.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-enterprise-bundle" data-title="What is within the scope of Enterprise Bundle?">
@@ -3320,7 +3432,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-migration" data-title="Can I migrate from one server or Virtual machine to another using the same license?">
                         <div class="container">
-                            <p>Yes, definitely! For that purpose we made a possibility to Activate/Deactivate instance on License Server. In order to migrate between servers customer must deactivate its instance, install the software on new server and then use already existing license secret. Backup of all data from previous instance is necessary if customer wants to continue utilizing same environment after migration. Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).</p>
+                            <p>Yes, definitely! For that purpose, we made a possible to Activate/Deactivate an instance on the License Server. In order to migrate between servers customer must deactivate its instance, install the software on a new server and then use the already existing license secret. A backup of all data from the previous instance is necessary if a customer wants to continue utilizing the same environment after migration. Notice: license check mechanism won't allow using ThingsBoard Professional Edition on two or more servers simultaneously (unless you purchase two instances of the same subscription plan).</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-perpetual-usage-limits" data-title="Are there any device, asset, user, etc., limits for perpetual licenses?">
@@ -3463,6 +3575,11 @@ selfManagedPlan:
                         <div class="container">
                             <p>All perpetual license packages provide dedicated support with predefined response time and access to the ThingsBoard Support Portal. Our expert support team is available to assist you with system deployment by following our recommended installation methods and architecture, ensuring a smooth and efficient setup. For custom installation scripts or alternative deployment scenarios, additional support options are available and you can <a href="https://thingsboard.io/docs/contact-us/">contact us</a> to discuss your needs.</p>
                         </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-perpetual-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>    
                     </div>
                 </div>
             </div>
@@ -3775,6 +3892,11 @@ selfManagedPlan:
                             <p>Community support is a free initiative provided by the Trendz team and other contributors as a voluntary effort. While our engineers often assist with community requests during their free time, this support comes with no formal obligation from the Trendz team. We highly encourage users to consult the documentation for guidance.</p>
                         </div>
                     </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-cloud-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>    
+                    </div>
                 </div>
             </div>
         </section>
@@ -4026,50 +4148,55 @@ selfManagedPlan:
                     </div>
                 </div>
                 <div id="faq-trendz-pay-as-you-go-supportAndAssistance" class="pi-accordion">
-                        <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-support-included" data-title="What support is included in my subscription?">
-                            <div class="container">
-                                <p>
-                                    <ul>
-                                        <li>Maker and Prototype: Community support</li>
-                                        <li>Startup: Basic support (36-hour response time during regular working shifts) via Support Portal</li>
-                                        <li>Enterprise: Priority email support (12-hour response time during regular working shifts) via Support Portal</li>
-                                    </ul>
-                                </p>
-                            </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-support-included" data-title="What support is included in my subscription?">
+                        <div class="container">
+                            <p>
+                                <ul>
+                                    <li>Maker and Prototype: Community support</li>
+                                    <li>Startup: Basic support (36-hour response time during regular working shifts) via Support Portal</li>
+                                    <li>Enterprise: Priority email support (12-hour response time during regular working shifts) via Support Portal</li>
+                                </ul>
+                            </p>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-24-7-support" data-title="Do you offer 24/7 support?">
-                            <div class="container">
-                                <p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> for more details.</p>
-                            </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-24-7-support" data-title="Do you offer 24/7 support?">
+                        <div class="container">
+                            <p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> for more details.</p>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-installation-help" data-title="How can I get help with installation and setup?">
-                            <div class="container">
-                                <p>If your subscription plan includes basic support and you have access to the Support Portal, the Trendz support team can assist with system deployment as part of basic support. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under basic support. If your subscription plan does not include basic support, we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a>.</p>
-                            </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-installation-help" data-title="How can I get help with installation and setup?">
+                        <div class="container">
+                            <p>If your subscription plan includes basic support and you have access to the Support Portal, the Trendz support team can assist with system deployment as part of basic support. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under basic support. If your subscription plan does not include basic support, we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a>.</p>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-contact-support" data-title="How do I contact support?">
-                            <div class="container">
-                                <p>Users of Startup and higher subscriptions, as well as perpetual license holders, are automatically added to the ThingsBoard Support Portal after purchasing a license.</p>
-                            </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-contact-support" data-title="How do I contact support?">
+                        <div class="container">
+                            <p>Users of Startup and higher subscriptions, as well as perpetual license holders, are automatically added to the ThingsBoard Support Portal after purchasing a license.</p>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-basic-support" data-title="What issues are included in basic support?">
-                            <div class="container">
-                                <p>Users of Startup and higher subscriptions, as well as perpetual license holders, are added to the ThingsBoard Support Portal. If a separate support agreement is not signed, all basic support tickets are processed in a common queue. Basic support guarantees an initial response time of 24 hours. The scope of the service covers installation or migration support (only default deployments) and issues with the out-of-the-box functionality of the platform (e.g. if something does not work as per documentation). Consulting, code review, health check, and development are not included in the scope of Basic support service. If the request is beyond the support engineer’s capacity, you will be promptly informed.</p>
-                            </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-basic-support" data-title="What issues are included in basic support?">
+                        <div class="container">
+                            <p>Users of Startup and higher subscriptions, as well as perpetual license holders, are added to the ThingsBoard Support Portal. If a separate support agreement is not signed, all basic support tickets are processed in a common queue. Basic support guarantees an initial response time of 24 hours. The scope of the service covers installation or migration support (only default deployments) and issues with the out-of-the-box functionality of the platform (e.g. if something does not work as per documentation). Consulting, code review, health check, and development are not included in the scope of Basic support service. If the request is beyond the support engineer’s capacity, you will be promptly informed.</p>
                         </div>
-                        <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-server-requirements" data-title="Which server should Trendz Analytics be installed on?">
-                            <div class="container">
-                                <p>Trendz can be installed on the same server as your ThingsBoard instance or on a separate server, depending on your preferences and infrastructure.</p>
-                            </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pay-as-you-go-server-requirements" data-title="Which server should Trendz Analytics be installed on?">
+                        <div class="container">
+                            <p>Trendz can be installed on the same server as your ThingsBoard instance or on a separate server, depending on your preferences and infrastructure.</p>
                         </div>
-                        <div class="load-more" onClick="loadMoreFaq(this)">
-                            <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-pay-as-you-go-community-support" data-title="What does community support mean?">
+                        <div class="container">
+                            <p>Community support is a free initiative provided by the Trendz team and other contributors as a voluntary effort. While our engineers often assist with community requests during their free time, this support comes with no formal obligation from the Trendz team. We highly encourage users to consult the documentation for guidance.</p>
                         </div>
-                        <div class="item hidden" data-tag="h4" data-item-id="trendz-pay-as-you-go-community-support" data-title="What does community support mean?">
-                            <div class="container">
-                                <p>Community support is a free initiative provided by the Trendz team and other contributors as a voluntary effort. While our engineers often assist with community requests during their free time, this support comes with no formal obligation from the Trendz team. We highly encourage users to consult the documentation for guidance.</p>
-                            </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-pay-as-you-go-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
                         </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -4111,7 +4238,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-perpetual-prod-dev-difference" data-title="What is the difference between Production and Development instances?">
                         <div class="container">
-                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled). The Development instance, meant for testing and staging, features a DEVELOPMENT MODE watermark in the UI.</p>
+                            <p>The Production instance is used for live environments with tested-in-advance applications. It can be branded (white-labelled). The Development instance, meant for testing and staging, features a DEVELOPMENT MODE watermark in the UI. The Development license is available as add-on, one can purchase it via the <a href="https://license.thingsboard.io" target="_blank">License portal</a> or by following regular sales process.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -4281,6 +4408,11 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="trendz-perpetual-installation-support" data-title="How can I get help with installation and setup?">
                         <div class="container">
                             <p>If your subscription plan includes basic support and you have access to the Support Portal, the Trendz support team can assist with system deployment as part of basic support. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under basic support. If your subscription plan does not include basic support, we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a>.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-perpetual-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
                         </div>
                     </div>
                 </div>
@@ -4506,6 +4638,11 @@ selfManagedPlan:
                             <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/thingsboard-edge">GitHub</a>. By the way, please consider starring our repository.</p>
                         </div>
                     </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-community-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="faq-edge-community-upgradingToEnterpriseEdition" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="edge-community-upgrade" data-title="Can I upgrade from the Community Edition to a paid edition?">
@@ -4696,6 +4833,11 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-24-7-support" data-title="Do you offer 24/7 customer support?">
                         <div class="container">
                             <p>Yes, we do provide 24/7 support. If this is what you're looking for, please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> for a more detailed discussion about your specific needs.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
                         </div>
                     </div>
                 </div>
@@ -4996,6 +5138,11 @@ selfManagedPlan:
                             <p>All perpetual license packages provide dedicated support with predefined response time and access to the ThingsBoard Support Portal. Our expert support team is available to assist you with system deployment by following our recommended installation methods and architecture, ensuring a smooth and efficient setup. For custom installation scripts or alternative deployment scenarios, additional support options are available, and you can <a href="https://thingsboard.io/docs/contact-us/">contact us</a> to discuss your needs.</p>
                         </div>
                     </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-perpetual-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                        <div class="container">
+                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -5040,7 +5187,6 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-pc-vs-sh" data-title="What are the benefits of Private Cloud versus self-hosting?">
                         <div class="container">
-                            <p>Unlimited number of devices and assets means there are no software limits on creating devices and assets on the edge side. However, in real-world deployments, several factors must be considered to host a large number of devices:</p>
                             <ul>
                                 <li>Zero DevOps overhead – no servers to set up, patch or monitor.</li>
                                 <li>Guaranteed availability – written SLA of 99.9 – 99.99 %, with service-credit remedies.</li>
@@ -5271,7 +5417,7 @@ selfManagedPlan:
                             </ul>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tbmq-telemetry-storage-included" data-title="What telemetry storage is included and what data consumes it?">
                         <div class="container">
                             <p>Each TBMQ Private Cloud plan includes persistent storage for undelivered messages, used by Kafka (for Application clients) and Redis (for Device clients). While there is no fixed storage quota, the system enforces internal limits to ensure stability and performance.<br><br></p>
                             <p>Kafka and Redis are both deployed with replication for durability, which means actual disk usage is higher than the logical size of retained data. Undelivered messages are retained based on session type and expiration settings.<br><br></p>
@@ -5293,7 +5439,14 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-geo-region-deployment" data-title="What does geo-region deployment selection include?">
                         <div class="container">
-                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.<br><br></p>
+                            <p><b>For the Launch plan, region selection is limited to the following supported regions:</b>
+                            <ul>
+                                <li><b>North America:</b> US West, US East, Mexico;</li>
+                                <li><b>Europe:</b> Ireland, Stockholm;</li>
+                                <li><b>Asia:</b> Taipei, Thailand, Mumbai.</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-maintenance-window-selection" data-title="Can I choose a specific maintenance window?">

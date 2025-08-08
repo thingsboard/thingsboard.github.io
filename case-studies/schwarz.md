@@ -27,13 +27,19 @@ description: Discover how Schwarz Group, operating over 13,000 stores globally, 
     <section class="statistics">
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 500000 useGrouping = true %}+
+                {% include number-animation.html startNum = 1 targetNum = 500000 useMobileMode = true useGrouping = true %}+
             </p>
             <p>connected devices</p>
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 13900 useGrouping = true %}
+                {% include number-animation.html startNum = 1 targetNum = 32 useGrouping = true %}
+            </p>
+            <p>countries of operation</p>
+        </div>
+        <div class="block">
+            <p>
+                {% include number-animation.html startNum = 1 targetNum = 13900 useMobileMode = true useGrouping = true %}
             </p>
             <p>stores</p>
         </div>
@@ -114,6 +120,7 @@ description: Discover how Schwarz Group, operating over 13,000 stores globally, 
             <p>This collaboration goes beyond just fixing technical issues—it represents a step towards the future of retail, where smart, flexible, and secure IoT solutions play a key role. With ThingsBoard, the Schwarz Group has created a more connected, efficient, and technology-driven shopping experience, setting new standards for innovation and digital transformation in the retail industry.</p>
         </div>
     </section>
+    {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
     <section class="tb-help">
         <h2>How ThingsBoard helps retail businesses improve operations with IoT?</h2>
         <div class="block">
@@ -176,6 +183,7 @@ description: Discover how Schwarz Group, operating over 13,000 stores globally, 
                 <img src="/images/case-studies/scalable-2.webp" title="Scalable and grows with your business" alt="Thingsboard widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

@@ -17,50 +17,7 @@ notitle: "true"
             </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
-                    <div class="container">
-                        <div class="deployment-section deployment-on-premise active" id="onPremise">
-                           <div class="deployment-cards">
-                                <div class="deployment-cards-container">
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-minikube/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Helm cluster setup with Minikube" alt="Helm Minikube K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-aws/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Helm cluster setup on EKS" alt="Helm AWS K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-azure/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Helm cluster setup on AKS" alt="Helm Azure K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/mqtt-broker/install/cluster/helm-cluster-setup-gcp/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gcp.svg" title="Helm cluster setup on GKE" alt="Helm GCP K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                              </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% include installation-options-cards.liquid installationOptions="installation-options-mqtt-broker-helm" active=true %}
                 </div>
             </div>
           </div>

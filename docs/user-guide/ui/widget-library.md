@@ -72,6 +72,11 @@ wl-analog-gauges-bundle:
         image: /images/user-guide/ui/widgets/widget-library/wl-analog-gauges-bundle-ce.png
         title: 'For visualization of temperature, humidity, speed, and other integer or float values.'
 
+wl-buttons-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-buttons-bundle-ce.png
+        title: 'The Buttons bundle allows you to organize navigation between dashboard states, send RPC commands to devices, and update device attributes or time-series data.'
+
 wl-cards-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-cards-bundle-ce.png
@@ -125,18 +130,28 @@ wl-files-bundle:
 wl-scada-hp-general-symbols:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-general-symbols-1-ce.png
-        title: 'Bundle with high-performance SCADA symbols.'
+        title: 'This bundle contains high-performance SCADA widgets for broad industrial monitoring and control. It covers elements ranging from panels and gauges to mechanical assets and site facilities. Use it to assemble clean, high-contrast HMI screens that convey status at a glance across mixed-equipment dashboards.'
 
 wl-gpio:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-gpio-ce.png
         title: 'For visualization and control of GPIO state for target devices.'
 
+wl-scada-hp-energy-system:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-energy-system-1-ce.png
+        title: 'This bundle contains high-performance SCADA symbols that cover the complete electrical flow — from renewable generation (solar, wind) and backup generators through storage, conversion, protection, metering, and low/high-voltage distribution to residential and industrial consumers. It is ideal for building interactive dashboards that visualize production, quality, and consumption across modern energy infrastructures.'
+
 wl-scada-hp-fluid-system:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-fluid-system-1-ce.png
-        title: 'Bundle with high-performance SCADA symbols for fluid system.'
+        title: 'This high-performance symbol bundle is focused on fluid-handling processes in oil-and-gas, chemical, and water-treatment domains. It spans drilling and well-control components, pumps and pipelines, separators, heat-exchange units, turbines, and related equipment—ideal for flow diagrams, production dashboards, and process-safety views.'
 
+wl-scada-hp-fluid-oil-and-gas:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scada-hp-fluid-oil-and-gas-1-ce.png
+        title: 'The bundle of high-performance SCADA symbols designed for upstream and early-stage processing workflows in the oil and gas sector. It covers drilling and well-control equipment, artificial lift and drive units, surface gathering lines, separator trains, heat exchange, and power generation assets — everything needed to visualize the complete flow from wellhead to initial treatment in a clean High-performance SCADA style. Perfect for real-time dashboards that track drilling progress, production efficiency, and safety barriers across both onshore and offshore installations.'
+    
 wl-home:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-home-page-bundles-ce.png
@@ -155,12 +170,17 @@ wl-maps-bundle:
 wl-gateway-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-gateway-bundle-ce.png
-        title: 'For managing extensions.'
+        title: 'The Gateway widgets bundle is useful to manage ThingsBoard IoT Gateway instances.'
 
 wl-indoor-environment-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-indoor-environment-bundle-ce.png
-        title: 'For changing entity attributes.'
+        title: 'The Indoor Environment widgets bundle is useful for displaying indoor environment telemetry data.'
+
+wl-industrial-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-industrial-bundle-1-ce.png
+        title: 'The Industrial widgets bundle is useful for displaying industrial telemetry data.'
 
 wl-input-bundle:
     0:
@@ -205,7 +225,7 @@ wl-tables-bundle:
 wl-scada-traditional-fluid-system:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-scada-traditional-fluid-system-1-ce.png
-        title: 'Bundle with high-performance SCADA symbols for fluid system.'
+        title: 'This bundle of SCADA symbols in a traditional design style covers the essentials for many industrial diagrams. It packs straight and elbow pipes, tees, drains, flow & level meters, pumps, filters, valves, tanks of various shapes, pools, and other core components - everything you need to assemble piping, hydraulic, and other process-control schematics with ease.'
 
 add-widget:
     0:

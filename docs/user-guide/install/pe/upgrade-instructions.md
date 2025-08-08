@@ -13,6 +13,28 @@ description: ThingsBoard PE IoT platform upgrade instructions
         <a href="#prepare-for-upgrading-thingsboard-centos-ubuntu" id="markdown-toc-prepare-for-upgrading-thingsboard-centos-ubuntu">Prepare for upgrading ThingsBoard (CentOS, Ubuntu)</a>
   </li>
   <li>
+      <a href="#upgrading-to-41pe" id="markdown-toc-upgrading-to-41pe">Upgrading to 4.1PE</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-41" id="markdown-toc-ubuntucentos-41">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-41" id="markdown-toc-windows-41">Windows</a>
+          </li>
+      </ul>
+  </li>
+  <li>
+      <a href="#upgrading-to-402pe" id="markdown-toc-upgrading-to-402pe">Upgrading to 4.0.2PE</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-402" id="markdown-toc-ubuntucentos-402">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-402" id="markdown-toc-windows-402">Windows</a>
+          </li>
+      </ul>
+  </li>
+  <li>
       <a href="#upgrading-to-401pe" id="markdown-toc-upgrading-to-401pe">Upgrading to 4.0.1PE</a>
       <ul>
           <li>
@@ -286,6 +308,216 @@ sudo systemctl start cassandra
 
 **PostgreSQL**
 Do nothing, postgresql is already running.
+
+## Upgrading to 4.1PE
+
+### Ubuntu/CentOS {#ubuntucentos-41}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 4.0.xPE. In order to upgrade to 4.1PE you need to [**upgrade to 4.0.2PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-402).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+
+#### ThingsBoard PE package download
+
+{% capture tabspec %}thingsboard-download-4-1
+thingsboard-download-4-1-ubuntu,Ubuntu,shell,resources/4.1pe/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/4.1pe/thingsboard-ubuntu-download.sh
+thingsboard-download-4-1-centos,CentOS,shell,resources/4.1pe/thingsboard-centos-download.sh,/docs/user-guide/install/resources/4.1pe/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard PE service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```bash
+sudo service thingsboard stop
+```
+{: .copy-code}
+
+* Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
+
+{% capture tabspec %}thingsboard-installation-4-1
+thingsboard-installation-4-1-ubuntu,Ubuntu,shell,resources/4.1pe/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/4.1pe/thingsboard-ubuntu-installation.sh
+thingsboard-installation-4-1-centos,CentOS,shell,resources/4.1pe/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/4.1pe/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/thingsboard/bin/install/upgrade.sh
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service thingsboard start
+```
+{: .copy-code}
+
+### Windows {#windows-41}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.9.xPE and ThingsBoard version 4.0.xPE. In order to upgrade to 4.1PE you need to [**upgrade to 4.0.2PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-402).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### ThingsBoard PE package download
+
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-4.1pe.zip](https://dist.thingsboard.io/thingsboard-windows-4.1pe.zip).
+
+#### ThingsBoard PE service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Copy content of the **thingsboard-windows-4.1pe.zip** to the same location.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```text
+C:\thingsboard>upgrade.bat
+```
+{: .copy-code}
+
+#### Start the service
+
+```text
+net start thingsboard
+```
+{: .copy-code}
+
+
+
+## Upgrading to 4.0.2PE
+
+### Ubuntu/CentOS {#ubuntucentos-402}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.9.xPE and ThingsBoard version 4.0.xPE. In order to upgrade to 4.0.2PE you need to [**upgrade to 3.9.1PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-391).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+
+#### ThingsBoard PE package download
+
+{% capture tabspec %}thingsboard-download-4-0-2
+thingsboard-download-4-0-2-ubuntu,Ubuntu,shell,resources/4.0.2pe/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/4.0.2pe/thingsboard-ubuntu-download.sh
+thingsboard-download-4-0-2-centos,CentOS,shell,resources/4.0.2pe/thingsboard-centos-download.sh,/docs/user-guide/install/resources/4.0.2pe/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard PE service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```bash
+sudo service thingsboard stop
+```
+{: .copy-code}
+
+* Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
+
+{% capture tabspec %}thingsboard-installation-4-0-2
+thingsboard-installation-4-0-2-ubuntu,Ubuntu,shell,resources/4.0.2pe/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/4.0.2pe/thingsboard-ubuntu-installation.sh
+thingsboard-installation-4-0-2-centos,CentOS,shell,resources/4.0.2pe/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/4.0.2pe/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/thingsboard/bin/install/upgrade.sh
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service thingsboard start
+```
+{: .copy-code}
+
+### Windows {#windows-402}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.9.xPE and ThingsBoard version 4.0.xPE. In order to upgrade to 4.0.2PE you need to [**upgrade to 3.9.1PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-391).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### ThingsBoard PE package download
+
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-4.0.2pe.zip](https://dist.thingsboard.io/thingsboard-windows-4.0.2pe.zip).
+
+#### ThingsBoard PE service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Copy content of the **thingsboard-windows-4.0.2pe.zip** to the same location.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```text
+C:\thingsboard>upgrade.bat
+```
+{: .copy-code}
+
+#### Start the service
+
+```text
+net start thingsboard
+```
+{: .copy-code}
 
 
 ## Upgrading to 4.0.1PE
