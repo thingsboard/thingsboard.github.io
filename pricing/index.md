@@ -230,7 +230,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                     <div class="pricing-square">
-                        <h2>New</h2>
+                        <h2>Business+</h2>
                         <div class="pricing-square-description">
                             <p>Built for scalable IoT growth</p>
                         </div>
@@ -344,7 +344,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
                     <div class="pricing-square">
-                        <h2>New</h2>
+                        <h2>Business+</h2>
                         <div class="pricing-square-description">
                             <p>Built for scalable IoT growth</p>
                         </div>
@@ -2088,7 +2088,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What pricing plans does ThingsBoard Cloud offer?">
                         <div class="container">
-                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 4 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
+                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-structure" data-title="How is ThingsBoard Cloud pricing structured?">
@@ -2424,7 +2424,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-cloud-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br>Please note: Support for the Startup plan becomes available from the second month of usage.</p>
+                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br></p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
@@ -2532,7 +2532,7 @@ selfManagedPlan:
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup?">
                         <div class="container">
                             <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
                         </div>
@@ -2632,7 +2632,7 @@ selfManagedPlan:
                         <div class="container">
                             <p>The pricing for Private Cloud is based on the selected service tier. Each plan includes a specific device and data point rate limit to ensure proper resource allocation and SLA compliance. The available plans are: <br><br></p>
                             <ul>
-                                <li>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
+                                <li>Launch: $1,499/month — includes up to 5,000 devices and up to 50,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
                                 <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 data points per minute; additional devices are billed at $0.09/device/month.</li>
                                 <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 data points per minute; additional devices are billed at $0.08/device/month.</li>
                                 <li>Enterprise: Custom pricing — includes 100,000 devices by default and no data point rate limits. Extendable as needed based on specific deployment requirements.</li>
@@ -2761,7 +2761,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-title="What telemetry storage is included and what data consumes it?">
                         <div class="container">
-                            <p>Each plan bundles a block-storage pool (Launch 200 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
+                            <p>Each plan bundles a block-storage pool (Launch 500 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
                             <p><strong>Replication overhead</strong> <br></p>
                             <p>The figures above represent raw logical data. For durability the underlying databases keep multiple physical copies:</p>
                             <ul>
@@ -2838,7 +2838,7 @@ selfManagedPlan:
                             <p>Each Private Cloud plan includes a predefined data point rate limit measured in data points per minute. This is the most critical technical limit in our offering, as it defines how much telemetry and integration data your system can process without impacting performance or SLA. <br><br></p>
                             <p>The message rate limits per plan are:</p>
                             <ul>
-                                <li>Launch: up to 20,000 data points per minute</li>
+                                <li>Launch: up to 50,000 data points per minute</li>
                                 <li>Growth: up to 100,000 data points per minute</li>
                                 <li>Scale: up to 200,000 data points per minute</li>
                                 <li>Enterprise: Unlimited</li>
@@ -2848,7 +2848,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
                         <div class="container">
-                            <p>The Launch plan uses SQL Database (PostgreSQL) with a replication factor of 2, ideal for lightweight deployments. Growth, Scale, and Enterprise plans use NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
+                            <p>All plans use PostgreSQL (SQL) with replication factor of 2 for entities storage and NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
                             <p>For workloads with large storage requirements, NoSQL-based plans are more cost-efficient thanks to their reduced storage footprint.</p>
                         </div>
                     </div>
@@ -2862,9 +2862,9 @@ selfManagedPlan:
                         <div class="container">
                             <p>Data replication ensures durability and high availability of your data within the Private Cloud infrastructure. The replication level defines how many copies of your data are stored across different nodes: <br></p>
                             <ul>
-                                <li>Launch: 2x replication — your data is stored in two copies to ensure durability.</li>
-                                <li>Growth: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
-                                <li>Scale: 3x replication — same as Growth, this tier also provides high availability through triple replication.</li>
+                                <li>Launch: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
+                                <li>Growth: 3x replication — same as Launch, this tier also provides high availability through triple replication.</li>
+                                <li>Scale: 3x replication — same as Launch and Growth, this tier also provides high availability through triple replication.</li>
                             </ul>
                             <p>Higher replication enhances fault tolerance and system resilience, particularly for production-grade deployments.</p>
                         </div>
