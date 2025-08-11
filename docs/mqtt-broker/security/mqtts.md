@@ -86,6 +86,28 @@ You may configure following additional environment variables via [configuration]
 
 {% include templates/mqtt-broker/ssl/pem-to-keystore.md %}
 
+## Adding certificate into Java Truststore
+
+In Java-based applications, a **truststore** is a special keystore that contains certificates of entities (Certificate Authorities or servers) that the application trusts.
+Adding a certificate to the truststore ensures that Java applications running with that truststore will accept SSL/TLS connections signed by that certificate or its issuing CA.
+
+```bash
+keytool -importcert -file CERT.pem -alias ALIAS -keystore keystore.jks -storepass KEYSTOREPASS
+```
+{: .copy-code}
+
+**Explanation of parameters:**
+
+* `-importcert` — tells `keytool` to import a certificate into the specified keystore/truststore.
+* `-file CERT.pem` — the path to the certificate file you want to import.
+* `-alias ALIAS` — a unique name to reference this certificate within the keystore.
+* `-keystore keystore.jks` — the Java keystore/truststore file (.jks or .p12) to which the certificate will be added. If it doesn’t exist, it will be created.
+* `-storepass KEYSTOREPASS` — the password protecting the keystore.
+
+> Ensure you configure TBMQ to enable MQTTS using the appropriate [Keystore parameters](#ssl-configuration-using-java-keystore).
+ 
+To use the *keytool* command, a Java Development Kit (JDK) must be installed on your system.
+
 ## MQTT over WebSocket Secure
 
 To enable secure MQTT over WebSockets (WSS), you can follow the same SSL configuration steps described above. 
