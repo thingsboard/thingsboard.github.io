@@ -382,7 +382,7 @@ Let's look at each operation.
 
 ### Export dashboard
 
-In the ThingsBoard you can export a dashboard as a configuration file in JSON format.
+In the ThingsBoard you can export a dashboard as a configuration file in JSON format..
 You can use this file to transfer your Dashboard or widget configuration to another instance.
 
 To export a dashboard, go to the “Dashboards” page. Find the dashboard you want to export in the list and click on the "Export dashboard" button located next to the dashboard's name. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
