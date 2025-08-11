@@ -1763,6 +1763,15 @@
 "/docs/paas/eu/user-guide/claiming-devices/":
   url: "/docs/paas/eu/user-guide/claiming-devices/"
   redirect_from: []
+"/docs/paas/eu/user-guide/contribution/ui/advanced-development/":
+  url: "/docs/paas/eu/user-guide/contribution/ui/advanced-development/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/contribution/ui/basic-widget-api/":
+  url: "/docs/paas/eu/user-guide/contribution/ui/basic-widget-api/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/contribution/ui/custom-subscriptions/":
+  url: "/docs/paas/eu/user-guide/contribution/ui/custom-subscriptions/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/contribution/widgets-development/":
   url: "/docs/paas/eu/user-guide/contribution/widgets-development/"
   redirect_from: []
@@ -2281,6 +2290,15 @@
   redirect_from: []
 "/docs/paas/user-guide/claiming-devices/":
   url: "/docs/paas/user-guide/claiming-devices/"
+  redirect_from: []
+"/docs/paas/user-guide/contribution/ui/advanced-development/":
+  url: "/docs/paas/user-guide/contribution/ui/advanced-development/"
+  redirect_from: []
+"/docs/paas/user-guide/contribution/ui/basic-widget-api/":
+  url: "/docs/paas/user-guide/contribution/ui/basic-widget-api/"
+  redirect_from: []
+"/docs/paas/user-guide/contribution/ui/custom-subscriptions/":
+  url: "/docs/paas/user-guide/contribution/ui/custom-subscriptions/"
   redirect_from: []
 "/docs/paas/user-guide/contribution/widgets-development/":
   url: "/docs/paas/user-guide/contribution/widgets-development/"
@@ -3367,6 +3385,15 @@
 "/docs/pe/user-guide/contribution/rule-node-development/":
   url: "/docs/pe/user-guide/contribution/rule-node-development/"
   redirect_from: []
+"/docs/pe/user-guide/contribution/ui/advanced-development/":
+  url: "/docs/pe/user-guide/contribution/ui/advanced-development/"
+  redirect_from: []
+"/docs/pe/user-guide/contribution/ui/basic-widget-api/":
+  url: "/docs/pe/user-guide/contribution/ui/basic-widget-api/"
+  redirect_from: []
+"/docs/pe/user-guide/contribution/ui/custom-subscriptions/":
+  url: "/docs/pe/user-guide/contribution/ui/custom-subscriptions/"
+  redirect_from: []
 "/docs/pe/user-guide/contribution/widgets-development-before-3.0/":
   url: "/docs/pe/user-guide/contribution/widgets-development-before-3.0/"
   redirect_from: []
@@ -4292,6 +4319,15 @@
   redirect_from: []
 "/docs/user-guide/contribution/rule-node-development/":
   url: "/docs/user-guide/contribution/rule-node-development/"
+  redirect_from: []
+"/docs/user-guide/contribution/ui/advanced-development/":
+  url: "/docs/user-guide/contribution/ui/advanced-development/"
+  redirect_from: []
+"/docs/user-guide/contribution/ui/basic-widget-api/":
+  url: "/docs/user-guide/contribution/ui/basic-widget-api/"
+  redirect_from: []
+"/docs/user-guide/contribution/ui/custom-subscriptions/":
+  url: "/docs/user-guide/contribution/ui/custom-subscriptions/"
   redirect_from: []
 "/docs/user-guide/contribution/widgets-development-before-3.0/":
   url: "/docs/user-guide/contribution/widgets-development-before-3.0/"

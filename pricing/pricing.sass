@@ -296,6 +296,8 @@ html#pricing
       box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
       background-color: #fff
       height: 100%
+      &.small-padding
+        padding: 16px 24px
       h2
         font-size: 28px
         font-weight: 500
@@ -310,6 +312,8 @@ html#pricing
         p
           font-size: 14px
           min-height: 48px
+          &.no-min-height
+            min-height: unset
 
       .community-support-card
         display: flex
@@ -367,12 +371,14 @@ html#pricing
           height: 53px
       .pricing-square-item
         font-size: 14px
-        line-height: 21px
+        line-height: 24px
         padding-bottom: 12px
+        letter-spacing: 0.15px
         @media (min-height: 1260px)
           padding-bottom: 16px
         margin-left: 32px
         font-weight: 400
+        color: #3D3D3D
         &:before
           background: url("https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg") no-repeat
           content: ""
@@ -600,8 +606,6 @@ html#pricing
           white-space: nowrap
           @media (max-width: 1000px)
             white-space: wrap
-          @media (min-height: 1260px)
-            white-space: wrap
 
         .toggle-container
           margin-left: auto
@@ -681,23 +685,22 @@ html#pricing
               margin-bottom: 17vh
             &.pricing-community
               margin-bottom: 30vh
-            //&.tbmq
-            //  margin-bottom: 14vh
           .cards-row
             display: flex
             flex-wrap: wrap
             align-items: center
             justify-content: space-between
-            gap: 24px
+            &.stretch
+              align-items: stretch
             .pricing-square
               height: 439px
               box-shadow: unset
+              &.unset-height
+                height: unset
               @media (min-height: 1260px)
                 height: 515px
               @media (max-width: 1400px)
                 height: unset
-                width: unset
-              @media (max-width: 600px)
                 width: 100%
               .button.secondary
                 background-color: #fff
