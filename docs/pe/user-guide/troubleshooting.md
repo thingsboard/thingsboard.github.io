@@ -25,9 +25,6 @@ metrics-dashboards:
   6:
     image: /images/user-guide/troubleshooting/transport-metrics-grafana.webp
     title: 'Statistics about messages in Transport services.'
-  7:
-    image: /images/edge/user-guide/troubleshooting/downlinks-state-grafana.webp
-    title: 'The state of downlink messages from Cloud to Edge'
 ---
 
 {% assign docsPrefix = "pe/" %}

@@ -3,21 +3,21 @@ layout: docwithnav-pe-edge
 title: Troubleshooting
 description: ThingsBoard Edge troubleshooting
 
-in-memory:
+how-to-import-dashboard:
   0:
-    image: /images/edge/user-guide/troubleshooting/in-memory-downlinks-1-pe.webp
+    image: /images/edge/user-guide/troubleshooting/download.webp
   1:
-    image: /images/edge/user-guide/troubleshooting/in-memory-downlinks-2-pe.webp
+    image: /images/edge/user-guide/troubleshooting/import-pe.webp
+  2:
+    image: /images/edge/user-guide/troubleshooting/import-pe-1.webp
 
-grafana:
+internal-monitoring-main:
   0:
-    image: /images/edge/user-guide/troubleshooting/grafana-1.webp
-  1:
-    image: /images/edge/user-guide/troubleshooting/downlinks-state-grafana.webp
+    image: /
 
-internal-monitoring:
+internal-monitoring-details:
   0:
-    image: /images/edge/user-guide/troubleshooting/internal-monitoring-pe.webp
+    image: /
 
 ---
 
