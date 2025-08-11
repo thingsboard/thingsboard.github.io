@@ -48,6 +48,18 @@ enable-and-save-jwt-provider:
   0:
     image: /images/mqtt-broker/security/auth-providers/jwt/enable-and-save-jwt-provider.png
     title: 'Enable the JWT authentication provider and save the configuration.'
+jwt-validate:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/jwt-validate.png
+    title: ''
+jwt-mqtt-example:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/jwt-mqtt-example.png
+    title: ''
+jwt-mqtts-example:
+  0:
+    image: /images/mqtt-broker/security/auth-providers/jwt/jwt-mqtts-example.png
+    title: ''
 ---
 
 {% include docs/mqtt-broker/security/authentication/jwt.md %}

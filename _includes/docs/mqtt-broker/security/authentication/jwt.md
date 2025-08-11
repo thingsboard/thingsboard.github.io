@@ -223,6 +223,88 @@ Then click the "Apply changes" button to save your configuration.
 
 Once enabled, this provider will be used to authenticate any MQTT client that includes a JWT token in the `password` field during connection.
 
+### MQTT Example based on HMAC-based algorithm
+
+You need to have a valid JWT token, or you can generate it with any language that supports HS256 signing. Here’s a simple **Python** example.
+
+Save the following script as `generate_jwt.py` and run it on your machine.
+
+```python
+import jwt
+import time
+
+# Replace with your TBMQ JWT secret
+secret_key = "please-change-this-32-char-jwt-secret"
+
+payload = {
+    "sub": "mqtt-client-id",   # subject / client ID
+    "iat": int(time.time()),   # issued at
+    "exp": int(time.time()) + 3600  # expires in 1 hour
+}
+
+token = jwt.encode(payload, secret_key, algorithm="HS256")
+
+# In PyJWT 2.x, this returns a string; in PyJWT < 2.x, you may need to decode to str
+if isinstance(token, bytes):
+    token = token.decode("utf-8")
+
+print(token)
+```
+{: .copy-code.expandable-10}
+
+**Run the script:**
+
+```bash
+python3 generate_jwt.py
+```
+{: .copy-code}
+
+**Example output:**
+
+```text
+eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9...
+```
+
+You can verify the token’s claims and signature using [jwt.io](https://www.jwt.io/).
+
+{% include images-gallery.html imageCollection="jwt-validate" %}
+
+Below is an example of publishing a message using the **mosquitto_pub** client with JWT authentication over plain MQTT (no TLS):
+
+```bash
+mosquitto_pub -d -q 1 -h "YOUR_TBMQ_HOST" -p "1883" -t "sensors/temperature" -i "YOUR_CLIENT_ID" -P "YOUR_JWT_TOKEN" -m {"temperature":25} -V 5
+```
+{: .copy-code}
+
+**Notes:**
+
+* **YOUR_TBMQ_HOST** – Hostname or IP of your TBMQ instance.
+* **YOUR_CLIENT_ID** – Your client id. In our case, it should be equal to "mqtt-client-id" to pass the authentication claim check _sub=${clientId}_ in the JWT provider.
+* **YOUR_JWT_TOKEN** – The token generated with the Python script above.
+
+{% include images-gallery.html imageCollection="jwt-mqtt-example" %}
+
+### MQTTS Example based on HMAC-based algorithm
+
+One-way TLS ensures your client verifies the server’s identity using its certificate.
+Follow the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) guide to provision a server certificate for TBMQ.
+
+Here’s an example of connecting with JWT authentication over MQTTS (TLS):
+
+```bash
+mosquitto_pub -d -q 1 --cafile YOUR_PEM_FILE -h "YOUR_TBMQ_HOST" -p 8883 -t "sensors/temperature" -i "YOUR_CLIENT_ID" -P "YOUR_JWT_TOKEN" -m {"temperature":25} -V 5
+```
+{: .copy-code}
+
+**Notes:**
+
+* **YOUR_PEM_FILE** – Path to your CA certificate file.
+* **YOUR_TBMQ_HOST** – Hostname or IP of your TBMQ instance.
+* **YOUR_CLIENT_ID** – Must match the `sub` claim in the JWT payload.
+* **YOUR_JWT_TOKEN** – The token generated earlier.
+
+{% include images-gallery.html imageCollection="jwt-mqtts-example" %}
+
 ## Next steps
 
 {% assign currentGuide = "SecurityGuide" %}{% include templates/mqtt-broker-guides-banner.md %}
