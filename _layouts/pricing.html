@@ -132,7 +132,10 @@
         updateQueryParam({solution: solutionId});
         setActiveSolutionSection(solutionId);
         document.querySelectorAll(`#thingsboard-cloud .billing-toggle.solution-selector .label-text`)
-            .forEach(elem => elem.classList.toggle('selected'));
+            .forEach(elem => {
+                elem.classList.toggle('selected');
+                elem.classList.toggle('defaultselection');
+            });
     }
 
     function updateQueryParam(setParams, clear = false) {
@@ -440,7 +443,10 @@
     function switchTrendzCloudRegion(event) {
         setActiveSolutionSection(!event.target.checked ? 'trendz-cloud-north-america' : 'trendz-cloud-europe');
         document.querySelectorAll(`#trendz-cloud .billing-toggle.solution-selector .label-text`)
-            .forEach(elem => elem.classList.toggle('selected'));
+            .forEach(elem => {
+                elem.classList.toggle('selected');
+                elem.classList.toggle('defaultselection');
+            });
     }
 </script>
 
