@@ -235,7 +235,7 @@ selfManagedPlan:
                             <p>Built for scalable IoT growth</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            $1199
+                            $1099
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
@@ -349,7 +349,7 @@ selfManagedPlan:
                             <p>Built for scalable IoT growth</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            €1165
+                            €1065
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
