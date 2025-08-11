@@ -60,15 +60,14 @@ To view only your dashboards, disable the "Include customer entities" option.
 
 Before starting working with a dashboard, get familiar with its interface to understand which features are responsible for what actions.
 
-The dashboard toolbar allows you to manage
-[states](/docs/{{docsPrefix}}user-guide/dashboards/#states),
+The dashboard toolbar allows you to 
+[add new widgets](#add-new-widget),
+manage [states](/docs/{{docsPrefix}}user-guide/dashboards/#states),
 [layouts](/docs/{{docsPrefix}}user-guide/dashboards/#layouts),
 [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings),
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases),
 [filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters),
-[version control](/docs/{{docsPrefix}}user-guide/version-control/),
-configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window),
-[enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
+[version control](/docs/{{docsPrefix}}user-guide/version-control/), {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}[generate report from dashboard, ](/docs/pe/user-guide/dashboards/#generate-report-from-dashboard){% endif %}and configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) using the corresponding icons in the toolbar.
 
 Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" modes.
 You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings).
@@ -367,6 +366,29 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 For the state to be named after the entity, use **${entityName}** as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
 
 {% include images-gallery.html imageCollection="states-entity-name" %}
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+### Generate report from dashboard
+
+A Tenant Administrator or Customer User can **generate a report** from the currently opened dashboard in **PDF**, **PNG**, or **JPEG** format.
+- Click the "**Export Dashboard**" button, located on the right side of the dashboard toolbar.
+
+<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-1-pe.png"></object>
+
+- In the expanded drop-down menu, select the desired export format. 
+
+<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-2-pe.png"></object>
+
+- The report generation process will start automatically.
+
+<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-3-pe.png"></object>
+
+And finally, the report file will be automatically downloaded and saved to your PC.
+
+**Generate dashboard report by schedule**
+
+Report generation can also be automated on a schedule using the [event scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report){:target="_blank"} with the "**Generate Dashboard Report**" event type.
+{% endif %}
 
 ## Managing dashboard
 
