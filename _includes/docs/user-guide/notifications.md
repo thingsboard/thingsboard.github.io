@@ -33,16 +33,21 @@ ThingsBoard offers several notification delivery methods to keep you and your cu
 - **Mobile app**. Receive instant push notifications directly to your smartphone through the [{{mobilePrefix}}]({{mobileUrl}}). Stay informed about all events in your IoT solution, even when you're on the go.<br>
 To use this notification delivery method, you first need to configure the {{mobilePrefix}} and make some settings in the "Mobile settings" section on the ThingsBoard platform itself.
 These steps are detailed in this [documentation]({{mobileGuide}}).
-- **SMS**. The ThingsBoard supports notification delivery via SMS to mobile devices, providing the ability to deliver important information even in the absence of internet access. {% if docsPrefix == 'pe/' %}To send SMS notifications, you need to set up an [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/) properly.{% endif %}
-- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}To send email notifications, you must configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via email, a system administrator should configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/) properly.{% endif %}
-- **Slack**. Integrate Slack with ThingsBoard to send notifications as messages to individual users or channels within your Slack workspace. To use this method of notification delivery, you first need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
-- **Microsoft Teams**. Integration of Microsoft Teams with ThingsBoard allows for delivering notifications in the form of messages to specific channels in your Microsoft Teams environment. To use this method a tenant administrator must get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
+- **SMS**. The ThingsBoard supports notification delivery via SMS to mobile devices, providing the ability to deliver important information even in the absence of internet access. {% if docsPrefix == 'pe/' %}To send SMS notifications, you need to set up an [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/){:target="_blank"}. Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/){:target="_blank"} properly.{% endif %}
+- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}To send email notifications, you must configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/){:target="_blank"}. Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via email, a system administrator should configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/){:target="_blank"} properly.{% endif %}
+- **Slack**. Integrate Slack with ThingsBoard to send notifications as messages to individual users or channels within your Slack workspace. To use this method of notification delivery, you first need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/){:target="_blank"}.
+- **Microsoft Teams**. Integration of Microsoft Teams with ThingsBoard allows for delivering notifications in the form of messages to specific channels in your Microsoft Teams environment. To use this method a tenant administrator must get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/){:target="_blank"}.
 
 ## Send notification
 
 To send a notification manually, follow these steps:
 
-{% include images-gallery.html imageCollection="notification-center-send-notification" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="notification-center-send-notification-1" showListImageTitles="true" %}
+
+The recipient will receive the notification in the ThingsBoard interface and can view it on the Notification center page or by clicking the bell icon in the top-right corner of the screen.
+Clicking the "Open this dashboard" button in the notification will open the corresponding dashboard.
+
+{% include images-gallery.html imageCollection="notification-center-send-notification-2" %}
 
 ## Inbox
 
@@ -145,7 +150,7 @@ Send ThingsBoard notifications as Slack messages to a public or private channel,
 
 {% capture difference %}
 **Please note:**
-first, you need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
+first, you need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -164,7 +169,7 @@ Send ThingsBoard notifications as messages to your Microsoft Teams channel.
 
 {% capture difference %}
 **Please note:**
-first, you need to get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
+first, you need to get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -187,6 +192,11 @@ The template defines the content of the notification and the set of delivery met
 Each template contains a notification subject and message. 
 The user may adjust the notification content for specific delivery methods. 
 For example, you may use a concise message for SMS and an advanced HTML template for the Email.
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+You can also **attach a report** generated from the specified [report template](/docs/{{docsPrefix}}user-guide/reporting/#report-templates){:target="_blank"} to the notification being sent. 
+> **Attach report** option is available only for **Email** and **Slack** notification delivery methods.
+{% endif %}
 
 Notification subject and message fields support templatization. The list of available templatization parameters depends on the template type. See the available types and parameters below.
 Parameter names must be wrapped using `${...}`. For example: `${recipientFirstName}`. 

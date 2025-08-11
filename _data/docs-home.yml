@@ -242,6 +242,9 @@ toc:
   section:
     - title: Edge computing
       path: /docs/user-guide/edge-computing/
+    - title: Reporting
+      path: /docs/pe/user-guide/reporting/
+      pe: true
     - title: Device connectivity status
       path: /docs/user-guide/device-connectivity-status/
     - title: Claiming devices
@@ -268,9 +271,6 @@ toc:
       pe: true
     - title: Scheduler
       path: /docs/pe/user-guide/scheduler/
-      pe: true
-    - title: Reporting
-      path: /docs/pe/user-guide/reporting/
       pe: true
     - title: CSV/XLS data export
       path: /docs/pe/user-guide/csv-xls-data-export/

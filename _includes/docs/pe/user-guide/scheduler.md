@@ -137,7 +137,7 @@ Allows to schedule command ([RPC call](/docs/{{docsPrefix}}user-guide/rpc/#serve
 - **Method** - RPC call method.
 - **Params** - RPC call params in JSON representation.
 
-## Scheduler Widget
+## Scheduler widget
 
 ThingsBoard provides ability to manage scheduler events via **Scheduler events** or **Reports schedule** Widgets which is part of **Scheduling** Widgets Bundle.
 
@@ -155,7 +155,57 @@ This can be achieved by configuring list of **Custom event types** in **Advanced
 - **Display message type select** - whether to allow select message type in scheduler event configuration form.
 - **Display message metadata table** - whether to display metadata table in scheduler event configuration form.
 - **Configuration HTML template** - HTML code used to generate custom event configuration form used to edit event configuration object.
-      
+
+## Dashboard reports widget
+
+You can view generated dashboard reports in ThingsBoard using the "**Dashboard reports**" widget, available in the "**Files**" widget bundle. 
+
+![image](/images/user-guide/ui/reporting-reports-widget.png)
+
+Main widget features:
+
+- Filter reports by time range to see only those generated during a selected period.
+- Search by report name to easily find what you need. 
+- Download reports using the "**Download file**" button.
+
+## Generate report rule chain [deprecated]
+
+Scheduled reports generation is supported by the default **Root Rule Chain** of ThingsBoard PE.
+By default, a message of type **Generate Report** is routed to the **Generate Report Rule Chain**.
+
+![image](/images/user-guide/ui/reporting-pe-root-rule-chain-switch.png)
+
+The **Generate Report Rule Chain** has a [**Generate Report** Rule Node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generate-report-node)
+that performs the report generation according to the report configuration retrieved from the message body.
+
+If the message body has a field ```sendEmail``` and its value is set to ```true```,
+the message with a report file reference in the ```attachments``` field of the metadata will be routed to the email related Rule Nodes.
+The Email Rule Nodes will prepare the email message with a report file in the attachments and send it to the configured recipients.
+
+![image](/images/user-guide/ui/reporting-generate-report-rule-chain.png)
+
+## Reports server [deprecated]
+
+The Reports Server is a standalone service used to generate reports by rendering dashboards in a headless browser.
+
+On each generate report request, ThingsBoard node sends a request to the Reports Server using the configured endpoint URL.
+
+The Reports Server opens a web page with the target dashboard URL in the headless browser and waits until the page renders,
+then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
+
+{% if docsPrefix == 'pe/' %}
+The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/pe/config/).
+
+The following is a sample configuration:
+
+```yml
+# Reports parameters
+reports:
+  server:
+    endpointUrl: "${REPORTS_SERVER_ENDPOINT_URL:http://localhost:8383}"
+```
+{% endif %}
+
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
