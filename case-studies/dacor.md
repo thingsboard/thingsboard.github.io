@@ -120,7 +120,7 @@ description: Learn how an automotive parts manufacturer uses ThingsBoard and LoR
         </div>
         <div class="block">
             <div class="text">
-                <h3>Advanced data aggregation and digital twin vsualization</h3>
+                <h3>Advanced data aggregation and digital twin visualization</h3>
                 <p>All collected data is aggregated and visualized using ThingsBoard’s powerful dashboard engine. The dashboards display a digital twin of the manufacturing facility, accurately reflecting the position and configuration of each machine — including setups with dual milling heads — along with their real-time operational status.</p>
             </div>
             <img src="/images/case-studies/dacor-3.webp" title="Advanced data aggregation and digital twin vsualization" alt="Advanced data aggregation and digital twin vsualization" width="450" height="240">

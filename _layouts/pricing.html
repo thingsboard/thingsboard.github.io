@@ -151,7 +151,6 @@
     }
 
     function setActivePricingSection(sectionId) {
-        console.log(sectionId);
         var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options';
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
@@ -431,6 +430,12 @@
 
     function switchToPrivateCloud() {
         window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
+    }
+
+    function switchTrendzCloudRegion(event) {
+        setActiveSolutionSection(!event.target.checked ? 'trendz-cloud-north-america' : 'trendz-cloud-europe');
+        document.querySelectorAll(`#trendz-cloud .billing-toggle.solution-selector .label-text`)
+            .forEach(elem => elem.classList.toggle('selected'));
     }
 </script>
 
