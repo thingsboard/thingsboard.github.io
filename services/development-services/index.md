@@ -1399,13 +1399,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="form-section">
                     <div class="form-element">
                         <label for="first-name">
-                            <input id="first-name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                            <input id="first-name-popup" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name-popup" type="text" size="40" maxlength="50">
                             <p>Name*</p>
                         </label>
                     </div>
                     <div class="form-element">
                         <label for="email">
-                            <input id="email" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                            <input id="email-popup" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email-popup" type="email" size="40" maxlength="80">
                             <p>Email Address*</p>
                         </label>
                     </div>
@@ -1413,7 +1413,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="form-section secondary">
                     <div class="form-element next">
                         <label for="subject" class="label-select">
-                            <select class="form-control cdu-form-control" name="subject">
+                            <select id="subject-popup" class="form-control cdu-form-control" name="subject-popup">
                                 <option value="Custom Development" selected>Custom Development</option>
                                 <option value="Technical Support">Technical Support</option>
                                 <option value="ThingsBoard Products">ThingsBoard Products</option>
@@ -1432,7 +1432,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="form-section secondary">
                     <div class="form-element next">
                         <label for="msg">
-                            <textarea id="msg" class="form-control cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                            <textarea id="msg-popup" class="form-control cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message-popup" type="text" size="40" maxlength="800"></textarea>
                             <p>Your message*</p>
                         </label>
                     </div>
@@ -1441,36 +1441,36 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <fieldset>
                         <legend>1. Engagement model <span>(optional)</span></legend>
                         <div class="label-container">
-                            <label><input type="radio" name="engagement" value="I don’t know yet" /> I don’t know yet</label>
-                            <label><input type="radio" name="engagement" value="Full-cycle development" /> Full-cycle development</label>
-                            <label><input type="radio" name="engagement" value="Dedicated team"/> Dedicated team</label>
-                            <label><input type="radio" name="engagement" value="Consulting or audit only"/> Consulting or audit only</label>
+                            <label><input id="engagement-model-dont-know-popup" type="radio" name="engagement-popup" value="I don’t know yet" /> I don’t know yet</label>
+                            <label><input id="engagement-model-full-cycle-popup" type="radio" name="engagement-popup" value="Full-cycle development" /> Full-cycle development</label>
+                            <label><input id="engagement-model-dedicated-team-popup" type="radio" name="engagement-popup" value="Dedicated team"/> Dedicated team</label>
+                            <label><input id="engagement-model-consulting-or-auidit-popup" type="radio" name="engagement-popup" value="Consulting or audit only"/> Consulting or audit only</label>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>2. Project stage <span>(optional)</span></legend>
                         <div class="label-container">
-                            <label><input type="radio" name="project" value="Idea"/> Idea</label>
-                            <label><input type="radio" name="project" value="Requirements defined"/> Requirements defined</label>
-                            <label><input type="radio" name="project" value="MVP in progress"/> MVP in progress</label>
-                            <label><input type="radio" name="project" value="Scaling an existing solution"/> Scaling an existing solution</label>
+                            <label><input id="project-stage-idea-popup" type="radio" name="project-popup" value="Idea"/> Idea</label>
+                            <label><input id="project-stage-requirements-popup" type="radio" name="project-popup" value="Requirements defined"/> Requirements defined</label>
+                            <label><input id="project-stage-mvp-popup" type="radio" name="project-popup" value="MVP in progress"/> MVP in progress</label>
+                            <label><input id="project-stage-scaling-popup" type="radio" name="project-popup" value="Scaling an existing solution"/> Scaling an existing solution</label>
                         </div>
                     </fieldset>
                     <fieldset>
                         <legend>3. Are you familiar with ThingsBoard? <span>(optional)</span></legend>
                         <div class="label-container last">
-                            <label><input type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
-                            <label><input type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
-                            <label><input type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
+                            <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard-popup" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
+                            <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard-popup" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
+                            <label><input id="familiarity-not-familiar-popup" type="radio" name="thingsboard-popup" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
                         </div>
                     </fieldset>
                 </div>
-                <input type="hidden" name="utm_source" id="utm_source">
-                <input type="hidden" name="utm_medium" id="utm_medium">
-                <input type="hidden" name="utm_campaign" id="utm_campaign">
-                <input type="hidden" name="utm_term" id="utm_term">
-                <input type="hidden" name="utm_content" id="utm_content">
-                <input type="hidden" name="client_id" id="client_id">
+                <input type="hidden" name="utm_source-popup" id="utm_source-popup">
+                <input type="hidden" name="utm_medium-popup" id="utm_medium-popup">
+                <input type="hidden" name="utm_campaign-popup" id="utm_campaign-popup">
+                <input type="hidden" name="utm_term-popup" id="utm_term-popup">
+                <input type="hidden" name="utm_content-popup" id="utm_content-popup">
+                <input type="hidden" name="client_id-popup" id="client_id-popup">
             </div>
             <div class="submit-button-container">
                 <input class="cdu-button" value="Submit request" type="submit"/>
@@ -1990,8 +1990,8 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     }
 
     function validateContactForm(form) {
-        var name = $('input[name=first-name]', form).val();
-        var email = $('input[name=email]', form).val();
+        var name = $('input[name=first-name]', form).val() || $('input[name=first-name-popup]', form).val();
+        var email = $('input[name=email]', form).val() || $('input[name=email-popup]', form).val();
 
         if (!validateValue('Name', name)) {
             return false;

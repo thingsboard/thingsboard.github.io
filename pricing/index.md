@@ -111,168 +111,173 @@ selfManagedPlan:
 </div>
 
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
-    <div class="container">
-      <div class="pricing-content-header row">
+    <div class="container no-padding">
+      <div class="pricing-content-header row not-reverse-column">
           <div id="northAmericaHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                  All subscription plans include hosting and email costs.
               </div>
           </div>
           <div id="europeHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  All subscription plans include <b>hosting</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                  All subscription plans include hosting and email costs.
               </div>
           </div>
           <div class="col d-flex justify-content-end">
-              <div class="solution-selector solution-selector-cloud">
-                  <div id="Pricing_PE_Cloud_NorthAmerica"
-                       data-solutionId="cloud-north-america"
-                       class="solution north-america active gtm_button"
-                       data-toggle="#northAmerica"
-                       data-description-toggle="#northAmericaHeader"
-                       onClick="activateServerSection('cloud-north-america', '/docs/paas/')">
-                      <h3 id="Pricing_PE_Cloud_NorthAmerica" class="gtm_button">North America</h3>
-                  </div>
-                  <div id="Pricing_PE_Cloud_Europe"
-                       data-solutionId="cloud-europe"
-                       class="solution europe gtm_button"
-                       data-toggle="#europe"
-                       data-description-toggle="#europeHeader"
-                       onClick="activateServerSection('cloud-europe', '/docs/paas/eu/')">
-                      <h3 id="Pricing_PE_Cloud_Europe" class="gtm_button">Europe</h3>
-                  </div>
-              </div>
+            <div class="toggle-container">
+                <div class="billing-toggle solution-selector">
+                    <span style="width: 117px" id="Pricing_PE_Cloud_NorthAmerica" data-solutionId="cloud-north-america" data-toggle="#northAmerica" data-description-toggle="#northAmericaHeader" class="label-text selected solution north-america">North America</span>
+                    <label class="switch">
+                        <input onclick="activateServerSection(event)" type="checkbox" id="regionSelect">
+                        <span class="slider"></span>
+                    </label>
+                    <span style="width: 42px" id="Pricing_PE_Cloud_Europe" data-solutionId="cloud-europe" data-toggle="#europe" data-description-toggle="#europeHeader" class="label-text solution europe">Europe</span>
+                </div>
+            </div>
           </div>
       </div>
         <div class="pricing-div">
             <div class="pricing-section pricing-cloud active" id="northAmerica">
-               <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description">
-                                <p>Become familiar with ThingsBoard features</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $10
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Start Free
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 30 Devices</div>
-                            <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Community support
-                            </div>
+               <div class="cards-row">
+                    <div class="pricing-square">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description">
+                            <p>Start exploring features</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $10
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Start Free
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 30 Devices</div>
+                        <div class="pricing-square-item">Up to 30 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description">
-                                <p>For PoCs and MVPs</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $149
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 100 Devices</div>
-                            <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Community support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square popular">
+                        <span class="popular-badge">POPULAR</span>
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description">
+                            <p>For PoCs and MVPs</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $149
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 100 Devices</div>
+                        <div class="pricing-square-item">Up to 100 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>
-                            <div class="pricing-square-description">
-                                <p>For upcoming IoT Unicorns</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $399
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 500 Devices</div>
-                            <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square">
+                        <h2>Startup</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $399
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 500 Devices</div>
+                        <div class="pricing-square-item">Up to 500 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $749
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    <div class="pricing-square">
+                        <h2>Business</h2>
+                        <div class="pricing-square-description">
+                            <p>Defined long term projects</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $749
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 1 000 Devices</div>
+                        <div class="pricing-square-item">Up to 1 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    </div>
+                    <div class="pricing-square">
+                        <h2>Business+</h2>
+                        <div class="pricing-square-description">
+                            <p>Built for scalable IoT growth</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $1099
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 2 000 Devices</div>
+                        <div class="pricing-square-item">Up to 2 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                </div>
             </div>
             <div class="pricing-section pricing-cloud" id="europe">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
+                <div class="cards-row">
                         <div class="pricing-square">
                             <h2>Maker</h2>
                             <div class="pricing-square-description">
-                                <p>Become familiar with ThingsBoard features</p>
+                                <p>Start exploring features</p>
                             </div>
                             <h4 class="pricing-square-price">
                                 €9
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Maker" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Start Free
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 30 Devices</div>
                             <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
-                        </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
+                        <div class="pricing-square popular">
+                            <span class="popular-badge">POPULAR</span>
                             <h2>Prototype</h2>
                             <div class="pricing-square-description">
                                 <p>For PoCs and MVPs</p>
@@ -288,14 +293,12 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div> 
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div> 
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                                 Community support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Startup</h2>
                             <div class="pricing-square-description">
@@ -306,42 +309,61 @@ selfManagedPlan:
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
+                                Email support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>For the fast grown, defined long term projects</p>
+                                <p>Defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price">
                                 €725
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a id="Pricing_PE_Cloud_Business" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
                             </div>
-                            <div class="pricing-square-item">Up to 1000 Devices</div>
-                            <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">data points</span><br> per month</div>
+                            <div class="pricing-square-item">Up to 1 000 Devices</div>
+                            <div class="pricing-square-item">Up to 1 000 Assets</div>
+                            <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                                Support
+                                Email support
                             </div>
                             <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                         </div>
+                    <div class="pricing-square">
+                        <h2>Business+</h2>
+                        <div class="pricing-square-description">
+                            <p>Built for scalable IoT growth</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €1065
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 2 000 Devices</div>
+                        <div class="pricing-square-item">Up to 2 000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Email support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
                </div>
             </div>
@@ -349,7 +371,7 @@ selfManagedPlan:
         <div class="additional-content">
             <div class="plan-calculator-block">
                 <div class="text">
-                    <h2 class="no-margin">Ready to scale past 1,000 devices?</h2>
+                    <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
                 </div>
                 <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
@@ -388,11 +410,11 @@ selfManagedPlan:
                             <p>Suitable for pilots and early stage deployments.</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            $1199
+                            $1499
                             <span>/month</span>
                         </h4>
                         <h4 class="pricing-square-price hidden">
-                            $1079
+                            $1349
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
@@ -403,8 +425,8 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">5 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">20 000 data points per minute</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">200 GB of storage included</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">50 000 msg/minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">500 GB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
                     </div>
                 </div>
@@ -430,7 +452,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">25 000 devices included</div>
                         <div class="pricing-square-item">99.9% uptime guarantee </div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 data points per minute</div> 
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">100 000 msg/minute</div> 
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
@@ -457,7 +479,7 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item highlight">50 000 devices included</div>
                         <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 data points per minute</div>
+                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">500 000 msg/minute</div>
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
@@ -579,8 +601,8 @@ selfManagedPlan:
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database</td>
-                                <td>SQL</td>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database</td>
+                                <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
@@ -1090,300 +1112,289 @@ selfManagedPlan:
 
 <div id="trendz-cloud" class="pricing-content" style="display: none;">
     <div class="container">
-        <div class="pricing-content-header row">
+        <div class="pricing-content-header row not-reverse-column">
             <div id="trendzNorthAmericaHeader" class="pricing-content-description col-lg-6">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                  <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
+                  Trendz Cloud subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
                 </div>
             </div>
             <div id="trendzEuropeHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
-                  <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
+                  Trendz Cloud subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
               </div>
             </div>
             <div class="col d-flex justify-content-end">
-              <div class="solution-selector solution-selector-cloud">
-                  <div id="Pricing_Trendz_Cloud_NorthAmerica"
-                       data-solutionId="trendz-cloud-north-america"
-                       class="solution north-america active gtm_button defaultselection"
-                       data-toggle="#trendzNorthAmerica"
-                       data-description-toggle="#trendzNorthAmericaHeader"
-                       onClick="setActiveSolutionSection('trendz-cloud-north-america')">
-                      <h3 id="Pricing_Trendz_Cloud_NorthAmerica" class="gtm_button">North America</h3>
-                  </div>
-                  <div id="Pricing_Trendz_Cloud_Europe"
-                       data-solutionId="trendz-cloud-europe"
-                       class="solution europe gtm_button"
-                       data-toggle="#trendzEurope"
-                       data-description-toggle="#trendzEuropeHeader"
-                       onClick="setActiveSolutionSection('trendz-cloud-europe')">
-                      <h3 id="Pricing_Trendz_Cloud_Europe" class="gtm_button">Europe</h3>
-                  </div>
-              </div>
-          </div>
-        </div>
-        <div class="pricing-div">
-            <div class="pricing-section trendz-pricing-cloud active" id="trendzNorthAmerica">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 30 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $10
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Community support
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 100 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $100
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Community support
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>                            
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 500 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $250
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Support
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 1000 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $450
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Support
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Enterprise</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Custom plan and SLA</p> 
-                            </div>
-                            <h4 class="pricing-square-price">
-                                Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
-                                    Contact Us
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Dedicated server instances</div>
-                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-limits">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
-                                Custom <b>SLA</b>
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                        </div>
+                <div class="toggle-container">
+                    <div class="billing-toggle solution-selector">
+                        <span style="width: 117px" id="Pricing_Trendz_Cloud_NorthAmerica" data-solutionId="trendz-cloud-north-america" data-toggle="#trendzNorthAmerica" data-description-toggle="#trendzNorthAmericaHeader" class="label-text selected solution north-america defaultselection">North America</span>
+                        <label class="switch">
+                            <input onclick="switchTrendzCloudRegion(event)" type="checkbox" id="regionSelect">
+                            <span class="slider"></span>
+                        </label>
+                        <span style="width: 42px" id="Pricing_Trendz_Cloud_Europe" data-solutionId="trendz-cloud-europe" data-toggle="#trendzEurope" data-description-toggle="#trendzEuropeHeader" class="label-text solution europe">Europe</span>
                     </div>
                 </div>
             </div>
-            <div class="pricing-section trendz-pricing-cloud active" id="trendzEurope">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 30 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                €9
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Community support
-                            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section trendz-pricing-cloud active" id="trendzNorthAmerica">
+                <div class="cards-row stretch">
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 30 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $10
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 100 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                €100
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Community support
-                            </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 100 Devices and Assets</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $100
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>                            
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 500 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                €250
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Support
-                            </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Startup</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 500 Devices and Assets</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $250
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 1000 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                €450
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button europe" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
-                                    Get Started
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
-                                Support
-                            </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Business</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 1 000 Devices and Assets</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $450
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Enterprise</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Custom plan and SLA</p> 
-                            </div>
-                            <h4 class="pricing-square-price">
-                                Custom <span data-faq-id="trendz-cloud-enterprise-price" data-faq-link-size="70%"></span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
-                                    Contact Us
-                                </a>
-                            </div>
-                            <div class="pricing-square-item">Dedicated server instances</div>
-                            <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="trendz-cloud-limits">data points</span><br> per month</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-enterprise-sla">
-                                Custom <b>SLA</b>
-                            </div>
-                            <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Business+</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 2 000 Devices and Assets</p>
                         </div>
+                        <h4 class="pricing-square-price">
+                            $800
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_BusinessPlus" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business+')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                     </div>
                 </div>
+            </div>
+            <div class="pricing-section trendz-pricing-cloud" id="trendzEurope">
+                <div class="cards-row stretch">
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 30 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €9
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Community support
+                        </div>
+                    </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 100 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €100
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                    </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Startup</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 500 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €250
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                    </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Business</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 1 000 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €450
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                    </div>
+                    <div class="pricing-square small-padding unset-height">
+                        <h2>Business+</h2>
+                        <div class="pricing-square-description">
+                            <p class="no-min-height">Up to 2 000 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €800
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a id="Pricing_TA_Cloud_BusinessPlus" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business+')">
+                                Get Started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive analytics</div>
+                        <div class="pricing-square-item">Calculated fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-support-included">
+                            Support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="additional-content">
+            <div class="plan-calculator-block">
+                <div class="text">
+                    <h2 class="no-margin">Enterprise-grade needs?</h2>
+                    <p>Get a fully custom plan with dedicated hosting, unlimited devices and data, white-labeling, and a SLA tailored to your business.</p>
+                </div>
+                <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                    Contact Us
+                </a>
             </div>
         </div>
     </div>
@@ -2066,7 +2077,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What pricing plans does ThingsBoard Cloud offer?">
                         <div class="container">
-                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 4 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
+                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="https://thingsboard.io/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-structure" data-title="How is ThingsBoard Cloud pricing structured?">
@@ -2402,7 +2413,7 @@ selfManagedPlan:
                 <div id="faq-thingsboard-cloud-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br>Please note: Support for the Startup plan becomes available from the second month of usage.</p>
+                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br></p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
@@ -2510,7 +2521,7 @@ selfManagedPlan:
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-automatic-backup" data-title="What is Automatic Backup?">
                         <div class="container">
                             <p>It is a configured process that regularly creates secure copies of the database with all telemetry, configurations, entities, and related data to avoid data loss in case of failure and enable recovery.</p>
                         </div>
@@ -2610,7 +2621,7 @@ selfManagedPlan:
                         <div class="container">
                             <p>The pricing for Private Cloud is based on the selected service tier. Each plan includes a specific device and data point rate limit to ensure proper resource allocation and SLA compliance. The available plans are: <br><br></p>
                             <ul>
-                                <li>Launch: $1,199/month — includes up to 5,000 devices and up to 20,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
+                                <li>Launch: $1,499/month — includes up to 5,000 devices and up to 50,000 data points per minute; additional devices are billed at $0.1/device/month.</li>
                                 <li>Growth: $2,199/month — includes up to 25,000 devices and up to 100,000 data points per minute; additional devices are billed at $0.09/device/month.</li>
                                 <li>Scale: $3,999/month — includes up to 50,000 devices and up to 500,000 data points per minute; additional devices are billed at $0.08/device/month.</li>
                                 <li>Enterprise: Custom pricing — includes 100,000 devices by default and no data point rate limits. Extendable as needed based on specific deployment requirements.</li>
@@ -2739,7 +2750,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it" data-title="What telemetry storage is included and what data consumes it?">
                         <div class="container">
-                            <p>Each plan bundles a block-storage pool (Launch 200 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
+                            <p>Each plan bundles a block-storage pool (Launch 500 GB, Growth 1 TB, Scale 2 TB; Enterprise custom). Telemetry, attributes, events, and file assets all consume this pool. When usage approaches the quota you can: (a) request to prune old data, (b) expand storage at $0.50 / GB / month, or (c) upgrade the plan. <br> <br></p>
                             <p><strong>Replication overhead</strong> <br></p>
                             <p>The figures above represent raw logical data. For durability the underlying databases keep multiple physical copies:</p>
                             <ul>
@@ -2816,7 +2827,7 @@ selfManagedPlan:
                             <p>Each Private Cloud plan includes a predefined data point rate limit measured in data points per minute. This is the most critical technical limit in our offering, as it defines how much telemetry and integration data your system can process without impacting performance or SLA. <br><br></p>
                             <p>The message rate limits per plan are:</p>
                             <ul>
-                                <li>Launch: up to 20,000 data points per minute</li>
+                                <li>Launch: up to 50,000 data points per minute</li>
                                 <li>Growth: up to 100,000 data points per minute</li>
                                 <li>Scale: up to 200,000 data points per minute</li>
                                 <li>Enterprise: Unlimited</li>
@@ -2826,7 +2837,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
                         <div class="container">
-                            <p>The Launch plan uses SQL Database (PostgreSQL) with a replication factor of 2, ideal for lightweight deployments. Growth, Scale, and Enterprise plans use NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
+                            <p>All plans use PostgreSQL (SQL) with replication factor of 2 for entities storage and NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
                             <p>For workloads with large storage requirements, NoSQL-based plans are more cost-efficient thanks to their reduced storage footprint.</p>
                         </div>
                     </div>
@@ -2840,9 +2851,9 @@ selfManagedPlan:
                         <div class="container">
                             <p>Data replication ensures durability and high availability of your data within the Private Cloud infrastructure. The replication level defines how many copies of your data are stored across different nodes: <br></p>
                             <ul>
-                                <li>Launch: 2x replication — your data is stored in two copies to ensure durability.</li>
-                                <li>Growth: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
-                                <li>Scale: 3x replication — same as Growth, this tier also provides high availability through triple replication.</li>
+                                <li>Launch: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
+                                <li>Growth: 3x replication — same as Launch, this tier also provides high availability through triple replication.</li>
+                                <li>Scale: 3x replication — same as Launch and Growth, this tier also provides high availability through triple replication.</li>
                             </ul>
                             <p>Higher replication enhances fault tolerance and system resilience, particularly for production-grade deployments.</p>
                         </div>
@@ -2854,7 +2865,14 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-does-geo-region-deployment-selection-include" data-title="What does geo-region deployment selection include?">
                         <div class="container">
-                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.<br><br></p>
+                            <p><b>For the Launch plan, region selection is limited to the following supported regions:</b>
+                            <ul>
+                                <li><b>North America:</b> US West, US East, Mexico;</li>
+                                <li><b>Europe:</b> Ireland, Stockholm;</li>
+                                <li><b>Asia:</b> Taipei, Thailand, Mumbai.</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window" data-title="Can I choose a specific maintenance window?">
@@ -3574,7 +3592,7 @@ selfManagedPlan:
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-pricing-plans" data-title="What pricing plans does Trendz Cloud offer?">
                         <div class="container">
-                            <p>Trendz Cloud offers a range of monthly subscription plans tailored to different needs, with tiers based on device, message, and storage limits. Available plans include Maker, Prototype, Startup, Business, and Enterprise.</p>
+                            <p>Trendz Cloud offers a range of monthly subscription plans tailored to different needs, with tiers based on device, message, and storage limits. Available plans include Maker, Prototype, Startup, Business and Business+.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-cloud-pricing-structure" data-title="How is Trendz Cloud pricing structured?">
@@ -5410,7 +5428,14 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-geo-region-deployment" data-title="What does geo-region deployment selection include?">
                         <div class="container">
-                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.</p>
+                            <p>Geo-region deployment selection allows you to choose the specific geographic region where your Private Cloud instance will be hosted. This ensures your data is stored and processed in a location that meets your compliance or data sovereignty requirements. During onboarding, you can select region, and our team will deploy your environment accordingly. This feature is particularly valuable for organizations subject to regional data protection regulations or those with distributed global operations.<br><br></p>
+                            <p><b>For the Launch plan, region selection is limited to the following supported regions:</b>
+                            <ul>
+                                <li><b>North America:</b> US West, US East, Mexico;</li>
+                                <li><b>Europe:</b> Ireland, Stockholm;</li>
+                                <li><b>Asia:</b> Taipei, Thailand, Mumbai.</li>
+                            </ul>
+                            </p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-maintenance-window-selection" data-title="Can I choose a specific maintenance window?">
