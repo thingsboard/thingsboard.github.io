@@ -65,8 +65,6 @@ toc:
         new: true
       - title: Entities table widget
         path: /docs/user-guide/ui/entity-table-widget/
-      - title: Trip animation widget
-        path: /docs/user-guide/ui/trip-animation-widget/
       - title: Advanced data key configuration
         path: /docs/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
