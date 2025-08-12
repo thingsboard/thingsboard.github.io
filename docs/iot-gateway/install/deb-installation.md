@@ -60,10 +60,10 @@ systemctl restart thingsboard-gateway
 ```
 {: .copy-code}
 
-## Full Build Version
+## Offline Build Version
 
-The Full Build is a special variant of the ThingsBoard Gateway package designed for installation and execution without 
-internet access. Also, the full build allows you to use any connector without installing dependencies in runtime. 
+The Offline Build is a special variant of the ThingsBoard Gateway package designed for installation and execution without 
+internet access. Also, the offline build allows you to use any connector without installing dependencies in runtime. 
 It contains all necessary dependencies bundled in advance, including:
 - A prebuilt Python virtual environment.
 - All required Python packages.
@@ -78,7 +78,7 @@ OPC-UA and MQTT sources inside the network but cannot access the internet due to
 
 ### Prerequisites
 
-The Full Build requires the same prerequisites as the standard package installation, and also it's important to have 
+The Offline Build requires the same prerequisites as the standard package installation, and also it's important to have 
 installed **Python 3.11**. If a Python version is incompatible, the installation gracefully exits with instructions 
 for installing the correct Python version.
 
@@ -91,14 +91,6 @@ sudo apt-get install -y python3.11 python3.11-venv
 ```
 {: .copy-code}
 
-Make installed Python 3.11 the default Python version:
-
-```bash
-sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
-sudo update-alternatives --config python3
-```
-{: .copy-code}
-
 ### Installation
 
 #### Step 1. Download the deb file
@@ -106,7 +98,7 @@ sudo update-alternatives --config python3
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/python3.11-thingsboard-gateway-full.deb
+wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/python3.11-thingsboard-gateway-offline.deb
 ```
 {: .copy-code}
 
@@ -115,7 +107,7 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
 
 ```bash
-sudo apt install ./python3.11-thingsboard-gateway-full.deb -y
+sudo apt install ./python3.11-thingsboard-gateway-offline.deb -y
 ```
 {: .copy-code}
 
@@ -130,7 +122,7 @@ systemctl status thingsboard-gateway
 
 - **Wrong Python version**
 
-  The installer will show a detailed guide for installing the required version and setting it as default.
+  The installer will show a detailed guide for installing the required version.
 - **Need to remove installed ThingsBoard IoT Gateway after fixing Python**
 
   When the required Python version is installed, remove the previously installed Gateway package using:
@@ -140,4 +132,4 @@ systemctl status thingsboard-gateway
   ```
   {: .copy-code}
 
-  Then, you can install the Full Build package as described above.
+  Then, you can install the Offline Build package as described above.
