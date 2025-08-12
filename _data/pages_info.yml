@@ -581,6 +581,9 @@
 "/docs/iot-gateway/custom/serial-connector/":
   url: "/docs/iot-gateway/custom/serial-connector/"
   redirect_from: []
+"/docs/iot-gateway/features-overview/provisioning/":
+  url: "/docs/iot-gateway/features-overview/provisioning/"
+  redirect_from: []
 "/docs/iot-gateway/features-overview/report-strategy/":
   url: "/docs/iot-gateway/features-overview/report-strategy/"
   redirect_from: []
