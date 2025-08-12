@@ -62,3 +62,10 @@ You can hide particular dashboards from mobile app home screen:
 5. Click **Apply changes** button;
 
 {% include images-gallery.html imageCollection="hide-dashboard" %}
+
+
+## Modify navigation bar
+
+You can use [Mobile Center](/docs/{{docsPrefix}}mobile-center/mobile-center/#layout) to reorder items and show or hide tabs in the navigation bar.
+
+{% include images-gallery.html imageCollection="layout-1" %}

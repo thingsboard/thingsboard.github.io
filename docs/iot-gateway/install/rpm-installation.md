@@ -21,7 +21,7 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 
 ## Step 2. Install the gateway using yum
 
-Install ThingsBoard IoT Gateway as package and run it as daemon use the following command:<br><br>
+Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
 
 ```bash
 sudo yum install -y ./python3-thingsboard-gateway.rpm
@@ -52,3 +52,77 @@ Now you can go to [**configuration guide**](/docs/iot-gateway/configuration/) to
 systemctl restart thingsboard-gateway
 ```
 {: .copy-code}
+
+## Offline Build Version
+
+The Offline Build is a special variant of the ThingsBoard Gateway package designed for installation and execution without 
+internet access. Also, the offline build allows you to use any connector without installing dependencies in runtime. 
+It contains all necessary dependencies bundled in advance, including:
+- A prebuilt Python virtual environment.
+- All required Python packages.
+- The application wheel (`.whl`).
+
+This ensures seamless deployment in air-gapped, offline, or restricted-network environments.
+
+### Example of usage
+
+A company runs all their infrastructure inside a private datacenter. Their ThingsBoard Gateway needs to connect to 
+OPC-UA and MQTT sources inside the network but cannot access the internet due to strict firewall rules.
+
+### Prerequisites
+
+The Offline Build requires the same prerequisites as the standard package installation, and also it's important to have 
+installed **Python 3.11**. If a Python version is incompatible, the installation gracefully exits with instructions 
+for installing the correct Python version.
+
+For installing a right Python version, you can use the following commands:
+
+```bash
+sudo yum install -y epel-release
+sudo yum install -y https://repo.ius.io/ius-release-el$(rpm -E %{rhel}).rpm
+sudo yum install -y python3.11 python3.11-venv
+```
+{: .copy-code}
+
+### Installation
+
+#### Step 1. Download the rpm file
+
+Download installation package.
+
+```bash
+wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/python3.11-thingsboard-gateway-offline.rpm
+```
+{: .copy-code}
+
+#### Step 2. Install the gateway using yum
+
+Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
+
+```bash
+sudo yum install -y ./python3.11-thingsboard-gateway-offline.rpm
+```
+{: .copy-code}  
+
+#### Step 3. Check gateway status 
+
+```bash
+systemctl status thingsboard-gateway
+```
+{: .copy-code}
+
+### Troubleshooting
+
+- **Wrong Python version**
+
+  The installer will show a detailed guide for installing the required version.
+- **Need to remove installed ThingsBoard IoT Gateway after fixing Python**
+
+  When the required Python version is installed, remove the previously installed Gateway package using:
+
+  ```bash
+  sudo rpm -e --noscripts python3-thingsboard-gateway
+  ```
+  {: .copy-code}
+
+  Then, you can install the Offline Build package as described above.
