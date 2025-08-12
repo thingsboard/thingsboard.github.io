@@ -1,7 +1,7 @@
 ---
 layout: hardware-partner
-title: Elastel
 hardware-partner: Elastel
+description: Efento is an official ThingsBoard hardware partner. Learn about Efento products, supported use cases, and integration guides with the ThingsBoard IoT platform.
 
 ---
 
