@@ -38,7 +38,7 @@ Select **X.509 Certificate Chain** type, insert the CN of *cert.pem* file.
 
 For the MQTT client to establish a secure TLS connection, its certificate must be trusted.
 If the certificate is signed by a well-known public CA, it is already trusted by default.
-If it is signed by a private or internal CA, import the client certificate (`cert.pem`) into the Java truststore used by TBMQ.
+If it is a self-signed, import the client certificate (`cert.pem`) into the Java truststore used by TBMQ.
 
 Run the [following command](/docs/mqtt-broker/security/mqtts/#adding-certificate-into-java-truststore) to import the certificate into the truststore.
 
