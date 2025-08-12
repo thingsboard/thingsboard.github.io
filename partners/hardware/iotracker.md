@@ -1,7 +1,7 @@
 ---
 layout: hardware-partner
-title: ioThings
-hardware-partner: ioThings
+title: ioTracker
+hardware-partner: ioTracker
 
 ---
 

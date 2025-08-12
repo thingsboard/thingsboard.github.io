@@ -97,7 +97,7 @@
                 btn.onclick = () => {
                     const open = btn.classList.toggle('is-open');
                     extraItems.forEach(li => li.classList.toggle('collapsed', !open));
-                    label.textContent = open ? 'Show less' : 'Show more';
+                    label.textContent = open ? 'Hide' : 'Show more';
                 };
             }
         }

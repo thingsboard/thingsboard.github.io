@@ -1,7 +1,7 @@
 ---
 layout: hardware-partner
-title: Digital Communications Technologies, LLC.
-hardware-partner: Digital Communications Technologies, LLC.
+title: Digital Communications Technologies
+hardware-partner: Digital Communications Technologies
 
 ---
 
