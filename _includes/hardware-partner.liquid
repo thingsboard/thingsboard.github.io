@@ -51,3 +51,66 @@
         {% endif %}
     </div>
 </div>
+
+<script>
+    (function () {
+        const containers = document.querySelectorAll('.guides');
+
+        function applyRowClamp(container) {
+            const list = container.querySelector('.guide-list');
+            const items = Array.from(list?.children || []);
+            const btn = container.querySelector('.toggle-guides-btn') || (() => {
+                const b = document.createElement('button');
+                b.type = 'button';
+                b.className = 'toggle-guides-btn';
+                b.hidden = true;
+                b.innerHTML =
+                    '<span class="label">Show more</span>' +
+                    '<i class="fas fa-chevron-down fa-sm" aria-hidden="true" style="color: rgba(0,0,0,.76)"></i>';
+                container.appendChild(b);
+                return b;
+            })();
+            const label = btn.querySelector('.label');
+
+            items.forEach(li => {
+                li.classList.remove('collapsed')
+            });
+            btn.classList.remove('is-open');
+            label.textContent = 'Show more';
+
+            if (!items.length) { btn.hidden = true; return; }
+
+            const rowTops = [];
+            const extraItems = [];
+            for (const li of items) {
+                const top = li.offsetTop;
+                if (!rowTops.includes(top)) rowTops.push(top);
+                if (rowTops.length > 2) extraItems.push(li);
+            }
+
+            if (rowTops.length <= 3) { btn.hidden = true; return; }
+
+            extraItems.forEach(li => li.classList.add('collapsed'));
+
+            btn.hidden = extraItems.length === 0;
+            if (!btn.hidden) {
+                btn.onclick = () => {
+                    const open = btn.classList.toggle('is-open');
+                    extraItems.forEach(li => li.classList.toggle('collapsed', !open));
+                    label.textContent = open ? 'Show less' : 'Show more';
+                };
+            }
+        }
+
+        const run = () => document.querySelectorAll('.guides').forEach(applyRowClamp);
+        run();
+
+        let t;
+        window.addEventListener('resize', () => {
+            clearTimeout(t);
+            t = setTimeout(run, 250);
+        });
+    })();
+</script>
+
+

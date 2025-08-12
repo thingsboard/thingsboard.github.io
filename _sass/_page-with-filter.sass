@@ -11,6 +11,7 @@ body.filter-opened
 #page-with-filter-content
   padding: 0
   .search-item
+    height: 38px
     position: relative
     .searchButton
       position: absolute
@@ -159,13 +160,12 @@ body.filter-opened
     .filter-block
       position: relative
       border-right: 1px solid #EBEBEB
-      min-width: 325px
       display: none
       @media (min-width: 960px)
+        min-width: 325px
         padding-bottom: 20px
         display: block
       .big-filter
-        overflow-y: auto
         display: flex
         flex-direction: column
         position: fixed
@@ -176,16 +176,18 @@ body.filter-opened
         background: #FFF
         z-index: 3
         max-height: calc(100vh - 78px)
-        &::-webkit-scrollbar
-          width: 8px
-          background: #F5F5F5
-        &::-webkit-scrollbar-thumb
-          background: rgba(0, 0, 0, 0.12)
-          border-radius: 10px
         @media (min-width: 960px)
           position: sticky
           top: 165px
           max-height: calc(100vh - 165px)
+        .filters
+          overflow-y: auto
+          &::-webkit-scrollbar
+            width: 8px
+            background: #F5F5F5
+          &::-webkit-scrollbar-thumb
+            background: rgba(0, 0, 0, 0.12)
+            border-radius: 10px
         .big-filter-header-crisps
           position: sticky
           top: 0
@@ -251,6 +253,7 @@ body.filter-opened
               flex-direction: column
               align-items: flex-start
               .search-item
+                width: 100%
                 margin-bottom: 4px
               input[type="text"]
                 max-width: 100%

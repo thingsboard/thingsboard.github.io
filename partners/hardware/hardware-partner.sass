@@ -38,7 +38,7 @@
         border-radius: 24px
         background: #FFF
         box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0 0 8px 0 rgba(0, 0, 0, 0.08)
-        min-width: unset
+        min-width: 300px
         @media (min-width: 960px)
           min-width: 445px
         .hardware-partner-card-wrapper
@@ -52,6 +52,9 @@
             line-height: 48px
             margin-bottom: 12px
             word-break: break-word
+            @media (max-width: 600px)
+              font-size: 28px
+              line-height: 44px
           p
             font-size: 14px
             line-height: 24px
@@ -104,14 +107,17 @@
             font-weight: 500
             color: rgba(0, 0, 0, 0.87)
             width: 160px
+            @media (max-width: 960px)
+              width: 120px
+              padding-right: 20px
           td
             padding: 12px 0
             color: rgba(0, 0, 0, 0.76)
             font-size: 14px
             font-weight: 400
             line-height: 24px
-            span
-              white-space: unset
+            @media (max-width: 960px)
+              word-break: break-word
         .section-label
           display: inline-block
           margin-bottom: 12px
@@ -122,10 +128,44 @@
         .guide-list
           display: flex
           flex-wrap: wrap
-          gap: 8px
           max-width: 700px
           @media (max-width: 600px)
             flex-direction: column
+          li
+            height: 100%
+            margin-bottom: 8px
+            margin-right: 8px
+            @media (max-width: 600px)
+              margin-right: 0
+          li.collapsed
+            height: 0
+            margin: 0
+            overflow: hidden
+            pointer-events: none
+        .toggle-guides-btn
+          font-size: 16px
+          font-weight: 500
+          line-height: 28px
+          display: flex
+          align-items: center
+          gap: 8px
+          cursor: pointer
+          padding: 5px 12px
+          border-radius: 6px
+          color: rgba(0, 0, 0, 0.76)
+          @media (max-width: 600px)
+            margin: 0 auto
+            width: 100%
+            justify-content: center
+          &[hidden]
+            display: none
+          &:hover
+            background: #EEF5FD
+          i
+            transition: transform .2s ease
+          &.is-open
+            i
+              transform: rotate(180deg)
         .hardware-crisp
           display: inline-block
           border-radius: 6px
@@ -153,6 +193,10 @@
       font-weight: 500
       line-height: 48px
       margin-bottom: 12px
+      @media (max-width: 600px)
+        text-align: center
+        font-size: 28px
+        line-height: 44px
     a
       font-size: 16px
       font-weight: 400
@@ -164,6 +208,9 @@
       background: transparent
       transition: ease-in-out 0.3s
       white-space: nowrap
+      @media (max-width: 600px)
+        width: 100%
+        text-align: center
       &:hover
         text-decoration: none
         color: #FFF
