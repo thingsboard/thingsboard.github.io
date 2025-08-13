@@ -251,6 +251,17 @@ toc:
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/pe/samples/analytics/kafka-streams/
+- title: Reporting
+  new: true
+  section:
+    - title: Getting started with reporting
+      path: /docs/pe/user-guide/reporting/reporting-getting-started/
+    - title: Subreport
+      path: /docs/pe/user-guide/reporting/subreport/
+    - title: Scheduling reports
+      path: /docs/pe/user-guide/reporting/scheduling-reports/
+    - title: Attaching reports to notifications
+      path: /docs/pe/user-guide/reporting/
 - title: Mobile center
   section:
     - title: Overview
@@ -263,9 +274,6 @@ toc:
   section:
     - title: Edge computing
       path: /docs/pe/user-guide/edge-computing/
-    - title: Reporting
-      path: /docs/pe/user-guide/reporting/
-      new: true
     - title: Device connectivity status
       path: /docs/pe/user-guide/device-connectivity-status/
     - title: Claiming devices

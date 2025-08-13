@@ -1,9 +1,9 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
-title: Reporting
-description: Reporting guide
+title: Reporting overview
+description: Reporting overview guide
 
 create-new-report-template:
     0:
@@ -28,18 +28,29 @@ report-example:
 
 variables-and-dynamic-content-1:
     0:
-        image: /images/user-guide/reporting/variables-and-dynamic-content-1-pe.png
-        title: 'Select a component. In the editor, go to the "Data" tab and click "Add datasource".'
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-1-pe.png
+        title: 'In the Report Builder, add a component (for example, Rich text). In the editor, go to the "Data" tab and click "Add datasource".'
     1:
-        image: /images/user-guide/reporting/variables-and-dynamic-content-2-pe.png
-        title: 'Specify the entity and the data keys you want to use.'
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-2-pe.png
+        title: 'Specify the target entity and the data keys you want to use in the report.'
     2:
-        image: /images/user-guide/reporting/variables-and-dynamic-content-3-pe.png
-        title: 'Type the $ symbol — a list of available variables will appear. Select the variable you want to use from the list.'
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-3-pe.png
+        title: 'Next, in the component&#39;s text field, type the <b>$</b> symbol where you want to insert a variable&#39;s value. This will open a list of all available variables in the current context. <b>Select a variable</b> (for example, ${reportCreatedTime}), and its value will be inserted into the report during generation.'
     3:
-        image: /images/user-guide/reporting/variables-and-dynamic-content-4-pe.png
-        title: 'To apply your changes, click "Save" in the top-right corner.'
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-4-pe.png
+        title: 'Continue entering text and adding variables as needed.'
+    4:
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-5-pe.png
+        title: 'After entering your text, click the "Save" button in the top-right corner to apply the changes.'
 
+variables-and-dynamic-content-2:
+    0:
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-6-pe.png
+        title: 'To verify the result, generate a test report sample by clicking the corresponding button in the top-right corner.'
+    1:
+        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-7-pe.png
+        title: 'The test report.'
+    
 reporting-new-entity-aliases-1:
     0:
         image: /images/user-guide/reporting/reporting-new-entity-aliases-1-pe.png
@@ -49,14 +60,6 @@ reporting-new-entity-aliases-2:
     0:
         image: /images/user-guide/reporting/reporting-new-entity-aliases-2-pe.png
         title: '- <b>Entity from master report</b> - the entity retrieved from the data source configured for the subreport component. If multiple entities are present, a separate subreport component will be generated for each entity.<br> - <b>Owner of entity from master report</b> - the owner of entity retrieved from the data source configured for the <b>subreport</b> component. If multiple entities are present, a separate <b>subreport</b> component will be generated for each entity.'
-
-variables-and-dynamic-content-2:
-    0:
-        image: /images/user-guide/reporting/variables-and-dynamic-content-5-pe.png
-        title: 'To verify the result, generate a test report sample by clicking the corresponding button in the top-right corner.'
-    1:
-        image: /images/user-guide/reporting/variables-and-dynamic-content-6-pe.png
-        title: 'The test report.'
 
 create-subreport-template:
     0:
@@ -95,6 +98,6 @@ reports:
 
 ---
 
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "paas/eu/" %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
-{% include docs/user-guide/reporting.md %}
+{% include docs/user-guide/reporting/reporting-getting-started.md %}
