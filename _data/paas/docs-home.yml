@@ -249,6 +249,17 @@ toc:
       path: /docs/trendz/
     - title: Kafka Streams
       path: /docs/paas/samples/analytics/kafka-streams/
+- title: Reporting
+  new: true
+  section:
+    - title: Getting started with reporting
+      path: /docs/paas/user-guide/reporting/reporting-getting-started/
+    - title: Subreport
+      path: /docs/paas/user-guide/reporting/subreport/
+    - title: Scheduling reports
+      path: /docs/paas/user-guide/reporting/scheduling-reports/
+    - title: Attaching reports to notifications
+      path: /docs/paas/user-guide/reporting/
 - title: Mobile center
   section:
     - title: Overview
@@ -284,8 +295,6 @@ toc:
       path: /docs/paas/user-guide/bulk-provisioning/
     - title: Scheduler
       path: /docs/paas/user-guide/scheduler/
-    - title: Reporting
-      path: /docs/paas/user-guide/reporting/
     - title: CSV/XLS data export
       path: /docs/paas/user-guide/csv-xls-data-export/
     - title: File storage
