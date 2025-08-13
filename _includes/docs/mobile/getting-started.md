@@ -19,6 +19,8 @@
 
 Welcome! This guide will walk you through building and setting up a custom {{appPrefix}} mobile application from scratch for your own instance of the {{appPrefix}} platform.
 
+**Before you begin:** Choose an appropriate mobile app version for your {{appPrefix}} platform version using the [compatibility table](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table). Using incompatible versions may cause sign-in issues or unexpected behavior.
+
 ## Prerequisites
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
@@ -29,9 +31,7 @@ The alternative option is to install ThingsBoard PE using [installation guide](/
 The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/installation-options/){:target="_blank"}.
 {% endif %}
 
-> **Note**: The mobile app requires {{appPrefix}} platform version **3.9.0** or later to work properly.
-
-- Prepare the environment for building your {{appPrefix}} mobile application. Install the Flutter SDK (version 2.12.0 or later) by following [these instructions](https://flutter.dev/docs/get-started/install){:target="_blank"}.
+- Prepare the environment for building your {{appPrefix}} mobile application. Install the appropriate Flutter SDK version for your app version from the [compatibility table](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table) by following [these instructions](https://flutter.dev/docs/get-started/install){:target="_blank"}.
 - For the best development experience and performance, we also recommend configuring your IDE (such as Visual Studio Code) using [these guidelines](https://flutter.dev/docs/get-started/editor){:target="_blank"}.
 - You can also check out the documentation on how to [write your first Flutter app](https://flutter.dev/docs/get-started/test-drive){:target="_blank"}.
 
@@ -164,6 +164,16 @@ After adding the bundle, a dialog window will appear with step-by-step instructi
 
 Follow these steps carefully to successfully configure and deploy your custom {{appPrefix}} mobile application.
 
+{% capture 1_7_config_tip %}
+**Note: Available from mobile app version 1.7.0**
+
+Starting with version 1.7.0, we've significantly improved the app configuration mechanism. Now you can download a configuration file directly from the platform, place it in the root directory of your custom application's code, and you're ready to go.
+
+**Important:** When building or running your application, add the `--dart-define-from-file configs.json` flag to your Flutter commands. 
+
+You can maintain multiple configuration files by using different names and passing the appropriate file name to the `--dart-define-from-file` flag.
+{% endcapture %}
+{% include templates/info-banner.md content=1_7_config_tip %}
 {% assign configurationDialogCE = '
     ===
         image: /images/mobile/getting-started/add-new-bundle-8-ce.png,
