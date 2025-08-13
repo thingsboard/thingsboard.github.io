@@ -601,7 +601,7 @@ selfManagedPlan:
                                 <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
-                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database</td>
+                                <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">Database structure</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
                                 <td>SQL + NoSQL</td>
@@ -2835,16 +2835,11 @@ selfManagedPlan:
                             <p>If your usage exceeds the limit of your current plan, a mandatory upgrade will be required to maintain service stability and SLA guarantees. Data points throughput is actively monitored by the ThingsBoard team.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What are the database options in each plan?">
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-are-the-database-options-in-each-plan" data-title="What is the underlying database structure?">
                         <div class="container">
                             <p>All plans use PostgreSQL (SQL) with replication factor of 2 for entities storage and NoSQL (Cassandra) with a replication factor of 3 to store time-series data. Cassandra storage is more efficient—each data point occupies on average five times less space before replication.<br><br></p> 
-                            <p>For workloads with large storage requirements, NoSQL-based plans are more cost-efficient thanks to their reduced storage footprint.</p>
-                        </div>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-sql-and-cassandra-support" data-title="What is the difference between SQL and Cassandra support?">
-                        <div class="container">
-                            <p>PostgreSQL (SQL) is a relational database ideal for structured queries, transactional operations, and smaller workloads. It offers simplicity and consistency, making it perfect for monolithic deployments like the Launch plan. <br><br></p>
-                            <p>Cassandra is a distributed NoSQL database designed for high availability, horizontal scalability, and large data volumes. It is better suited for microservice architectures and use cases requiring high throughput and fault tolerance, as used in Growth, Scale, and Enterprise plans. Combining both allows us to optimize for both operational analytics and real-time performance depending on the data model.</p>
+                            <p>PostgreSQL (SQL) is a relational database ideal for structured queries, transactional operations, and smaller workloads. It offers simplicity and consistency, making it perfect for monolithic deployments like the Launch plan.<br><br></p>
+                            <p>Cassandra is a distributed NoSQL database designed for high availability and horizontal scalability. It is more than five times more efficient for storing large volumes of telemetry data, requiring significantly less storage space, while also delivering high performance and enabling seamless horizontal scaling.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-2x-and-3x-replication" data-title="What is the difference between 2x and 3x replication?">
