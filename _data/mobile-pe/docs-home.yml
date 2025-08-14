@@ -25,5 +25,7 @@ toc:
         path: /docs/pe/mobile/self-registration/
       - title: QR code settings
         path: /docs/pe/mobile/qr-code-settings/
+  - title: Add your own localization
+    path: /docs/pe/mobile/localization/
   - title: Publish your app
     path: /docs/pe/mobile/release/

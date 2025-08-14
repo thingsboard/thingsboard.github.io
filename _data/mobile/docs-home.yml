@@ -21,5 +21,7 @@ toc:
         path: /docs/mobile/oauth2/
       - title: QR code settings
         path: /docs/mobile/qr-code-settings/
+  - title: Add your own localization
+    path: /docs/mobile/localization/
   - title: Publish your app
     path: /docs/mobile/release/

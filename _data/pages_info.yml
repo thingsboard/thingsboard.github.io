@@ -694,6 +694,9 @@
 "/docs/mobile/":
   url: "/docs/mobile/"
   redirect_from: []
+"/docs/mobile/localization/":
+  url: "/docs/mobile/localization/"
+  redirect_from: []
 "/docs/mobile/mobile-actions/":
   url: "/docs/mobile/mobile-actions/"
   redirect_from: []
@@ -3180,6 +3183,9 @@
   redirect_from: []
 "/docs/pe/mobile/":
   url: "/docs/pe/mobile/"
+  redirect_from: []
+"/docs/pe/mobile/localization/":
+  url: "/docs/pe/mobile/localization/"
   redirect_from: []
 "/docs/pe/mobile/mobile-actions/":
   url: "/docs/pe/mobile/mobile-actions/"
