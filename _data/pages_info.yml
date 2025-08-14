@@ -706,6 +706,9 @@
 "/docs/mobile/oauth2/":
   url: "/docs/mobile/oauth2/"
   redirect_from: []
+"/docs/mobile/qr-code-settings-before-v1.7/":
+  url: "/docs/mobile/qr-code-settings-before-v1.7/"
+  redirect_from: []
 "/docs/mobile/qr-code-settings/":
   url: "/docs/mobile/qr-code-settings/"
   redirect_from: []
@@ -3198,6 +3201,9 @@
   redirect_from: []
 "/docs/pe/mobile/oauth2/":
   url: "/docs/pe/mobile/oauth2/"
+  redirect_from: []
+"/docs/pe/mobile/qr-code-settings-before-v1.7/":
+  url: "/docs/pe/mobile/qr-code-settings-before-v1.7/"
   redirect_from: []
 "/docs/pe/mobile/qr-code-settings/":
   url: "/docs/pe/mobile/qr-code-settings/"
