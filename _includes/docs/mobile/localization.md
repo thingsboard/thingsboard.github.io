@@ -67,6 +67,7 @@ Run the following command to integrate your changes and generate new localizatio
 ```bash
 flutter gen-l10n
 ```
+{: .copy-code}
 
 This command will generate the necessary localization files for your added language or update existing localizations.
 
@@ -86,11 +87,13 @@ If you prefer not to install the extension, you can use the manual approach:
    ```bash
    flutter pub add -d intl_utils
    ```
+{: .copy-code}
 
 2. **Generate localization files after each change:**
    ```bash
    dart run intl_utils:generate
    ```
+{: .copy-code}
 
 Run this command after each change in your localization files to integrate those changes into your app.
 
