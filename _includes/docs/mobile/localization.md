@@ -25,6 +25,8 @@ Navigate to the `lib/l10n` directory in your project. You will see files like:
 - `intl_en.arb`
 - And other language files
 
+![image](/images/mobile/localization-l10n-folder.png)
+
 ### Step 2: Create Your Language File
 
 Add a new `.arb` file with your translation using the format:
