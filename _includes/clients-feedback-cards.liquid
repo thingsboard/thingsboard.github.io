@@ -41,7 +41,7 @@
             </div>
             <div class="clients-card-text {% if info.collapse == "true" %}collapsed{% endif %}">
                 {% for text in info.text %}
-                    <p class="{% if forloop.index == 1 %}clients-card-bold-text{% else %}clients-card-default-text{% endif %} {% if info.collapse == "true" and forloop.index == info.collapseIndex %}collapse-text collapsed{% endif %}">
+                    <p class="{% if forloop.index == 1 and info.noHeading != "true" %}clients-card-bold-text{% else %}clients-card-default-text{% endif %} {% if info.collapse == "true" and forloop.index == info.collapseIndex %}collapse-text collapsed{% endif %}">
                         {{ text[1] }}
                     </p>
                     {% if info.collapse == "true" and forloop.index == info.collapseIndex %}<p data-index="{{ info.collapseIndex }}" class="read-more">read more</p>{% endif %}
