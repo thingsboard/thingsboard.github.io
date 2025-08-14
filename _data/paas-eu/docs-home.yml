@@ -245,6 +245,9 @@ toc:
       path: /docs/paas/eu/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
   section:
+    - title: IoT Anomaly Detection with AI
+      path: /docs/paas/eu/samples/analytics/ai-predictive-maintenance/
+      new: true
     - title: Trendz Analytics
       path: /docs/trendz/
     - title: Kafka Streams
