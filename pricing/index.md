@@ -2844,13 +2844,12 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-the-difference-between-2x-and-3x-replication" data-title="What is the difference between 2x and 3x replication?">
                         <div class="container">
-                            <p>Data replication ensures durability and high availability of your data within the Private Cloud infrastructure. The replication level defines how many copies of your data are stored across different nodes: <br></p>
+                            <p>Data replication ensures durability and high availability of your data within the Private Cloud infrastructure. The replication level defines how many copies of your data are stored across different Availability Zones: <br></p>
                             <ul>
-                                <li>Launch: 3x replication — your data is stored in three copies, supporting high availability and failover.</li>
-                                <li>Growth: 3x replication — same as Launch, this tier also provides high availability through triple replication.</li>
-                                <li>Scale: 3x replication — same as Launch and Growth, this tier also provides high availability through triple replication.</li>
+                                <li><b>PostgreSQL (SQL) — 2× replication:</b> data is stored in two copies across separate Availability Zones, using a primary–standby architecture.</li>
+                                <li><b>Cassandra (NoSQL) — 3× replication:</b> data is stored in three copies across different Availability Zones, enabling quorum-based consistency.</li>
                             </ul>
-                            <p>Higher replication enhances fault tolerance and system resilience, particularly for production-grade deployments.</p>
+                            <p>These replication settings apply to all planes. Higher replication improves fault tolerance and system resilience, making it especially important for production-grade deployments.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-does-multi-az-database-replication-mean" data-title="What does multi-AZ database replication mean?">
