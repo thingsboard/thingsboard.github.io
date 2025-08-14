@@ -311,6 +311,25 @@ telecom:
   label: Telecom
   icon: /images/telecom-icon.svg
   feedback:
+    - author: Tamati Iro
+      position: VAS Manager
+      companyName: Vodafone
+      id: vodafone
+      link: https://www.vodafone.co.ck/
+      authorImage: /images/customers/tamati-iro.webp
+      companyImage: /images/customers/vodafone.svg
+      companyImageWidth: 120
+      companyImageHeight: 48
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: 'Working with the ThingsBoard Development team on our custom Mobile App has been an outstanding experience.'
+        1: 'The development process was smooth, well-structured, and highly professional. From the initial requirements gathering to the final delivery, the team demonstrated deep technical expertise and a clear understanding of our vision.'
+        2: 'The development team was highly responsive, transparent, and easy to work with, keeping us informed at every milestone. Any questions or concerns were addressed promptly, which gave us confidence that the project was always on track.'
+        3: 'The final mobile app exceeded our expectations. It’s user-friendly, visually appealing, and performs reliably in real-world use. The mobile app was also designed in a way where my team could maintain widgets in the app without depending on mobile app developers.'
+        4: 'This custom development has played a key role in advancing our business goals. The mobile app has allowed us to better serve our customers, and bring our IoT data to the palm of their hands in a seamless way. It’s already proving to be a valuable tool for both our team and our clients.'
+        5: 'The fixed-price, fast delivery approach worked perfectly for us. It gave us cost certainty, kept the project moving at a great pace, and ensured that we met our timelines without compromising on quality.'
+        6: 'We look forward to working with the ThingsBoard team again in the future and highly recommend their services to anyone looking for expert IoT and mobile development!'
     - author: David Týr
       position: Innovation Manager
       companyName: T-Mobile Czech Republic a.s.
@@ -365,6 +384,8 @@ industry40:
       companyImage: /images/customers/dacor.svg
       companyImageWidth: 170
       companyImageHeight: 30
+      collapse: "true"
+      collapseIndex: 4
       text:
         0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing"
         1: "A well-established medium-sized company specializes in the machining of profiles used in roof opening systems and sunroofs for the automotive sector. The machining process is semi-automated, but lacked the capability to transmit production data. Our client had a need for greater transparency in their manufacturing process, especially regarding downtime and productivity tracking."
@@ -384,6 +405,25 @@ industry40:
         1: "They also guided me through setting up critical components such as data history storage, the early warning system, and automated monthly reports. Each stage of the development was handled with great attention to detail, always ensuring that the solutions aligned with the system architecture and functional goals."
         2: 'Communication has been clear, responsive, and solution-oriented. I always felt that I had a reliable partner on the other side, ready to face challenges with me, especially when integrating ThingsBoard’s services with third-party tools. Their willingness to adapt and help troubleshoot integration issues in real time made a huge difference.'
         3: "The final result is a robust, scalable system that performs exactly as envisioned. I also appreciate their continued openness to collaborate on the next stages of the project."
+    - author: Tamati Iro
+      position: VAS Manager
+      companyName: Vodafone
+      id: vodafone
+      link: https://www.vodafone.co.ck/
+      authorImage: /images/customers/tamati-iro.webp
+      companyImage: /images/customers/vodafone.svg
+      companyImageWidth: 120
+      companyImageHeight: 48
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: 'Working with the ThingsBoard Development team on our custom Mobile App has been an outstanding experience.'
+        1: 'The development process was smooth, well-structured, and highly professional. From the initial requirements gathering to the final delivery, the team demonstrated deep technical expertise and a clear understanding of our vision.'
+        2: 'The development team was highly responsive, transparent, and easy to work with, keeping us informed at every milestone. Any questions or concerns were addressed promptly, which gave us confidence that the project was always on track.'
+        3: 'The final mobile app exceeded our expectations. It’s user-friendly, visually appealing, and performs reliably in real-world use. The mobile app was also designed in a way where my team could maintain widgets in the app without depending on mobile app developers.'
+        4: 'This custom development has played a key role in advancing our business goals. The mobile app has allowed us to better serve our customers, and bring our IoT data to the palm of their hands in a seamless way. It’s already proving to be a valuable tool for both our team and our clients.'
+        5: 'The fixed-price, fast delivery approach worked perfectly for us. It gave us cost certainty, kept the project moving at a great pace, and ensured that we met our timelines without compromising on quality.'
+        6: 'We look forward to working with the ThingsBoard team again in the future and highly recommend their services to anyone looking for expert IoT and mobile development!'
     - author: Sudhir Ravindramohan
       position: Co-founder and CTO
       companyName: Utvyakta
