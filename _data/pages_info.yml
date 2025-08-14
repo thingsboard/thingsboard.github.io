@@ -425,6 +425,9 @@
 "/docs/edge/reference/lwm2m-api/":
   url: "/docs/edge/reference/lwm2m-api/"
   redirect_from: []
+"/docs/edge/reference/mcp-server/":
+  url: "/docs/edge/reference/mcp-server/"
+  redirect_from: []
 "/docs/edge/reference/mqtt-api/":
   url: "/docs/edge/reference/mqtt-api/"
   redirect_from:
@@ -1628,6 +1631,9 @@
 "/docs/paas/eu/reference/lwm2m-api/":
   url: "/docs/paas/eu/reference/lwm2m-api/"
   redirect_from: []
+"/docs/paas/eu/reference/mcp-server/":
+  url: "/docs/paas/eu/reference/mcp-server/"
+  redirect_from: []
 "/docs/paas/eu/reference/mqtt-api/":
   url: "/docs/paas/eu/reference/mqtt-api/"
   redirect_from:
@@ -2154,6 +2160,9 @@
   - "/docs/paas/reference/http-api"
 "/docs/paas/reference/lwm2m-api/":
   url: "/docs/paas/reference/lwm2m-api/"
+  redirect_from: []
+"/docs/paas/reference/mcp-server/":
+  url: "/docs/paas/reference/mcp-server/"
   redirect_from: []
 "/docs/paas/reference/mqtt-api/":
   url: "/docs/paas/reference/mqtt-api/"
@@ -3044,6 +3053,9 @@
 "/docs/pe/edge/reference/lwm2m-api/":
   url: "/docs/pe/edge/reference/lwm2m-api/"
   redirect_from: []
+"/docs/pe/edge/reference/mcp-server/":
+  url: "/docs/pe/edge/reference/mcp-server/"
+  redirect_from: []
 "/docs/pe/edge/reference/mqtt-api/":
   url: "/docs/pe/edge/reference/mqtt-api/"
   redirect_from:
@@ -3227,6 +3239,9 @@
   redirect_from: []
 "/docs/pe/reference/lwm2m-api/":
   url: "/docs/pe/reference/lwm2m-api/"
+  redirect_from: []
+"/docs/pe/reference/mcp-server/":
+  url: "/docs/pe/reference/mcp-server/"
   redirect_from: []
 "/docs/pe/reference/monolithic/":
   url: "/docs/pe/reference/monolithic/"
@@ -3750,6 +3765,9 @@
   redirect_from: []
 "/docs/reference/lwm2m-api/":
   url: "/docs/reference/lwm2m-api/"
+  redirect_from: []
+"/docs/reference/mcp-server/":
+  url: "/docs/reference/mcp-server/"
   redirect_from: []
 "/docs/reference/monolithic/":
   url: "/docs/reference/monolithic/"
