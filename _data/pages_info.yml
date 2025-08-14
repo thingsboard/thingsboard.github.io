@@ -712,6 +712,9 @@
 "/docs/mobile/qr-code-settings/":
   url: "/docs/mobile/qr-code-settings/"
   redirect_from: []
+"/docs/mobile/release-before-v1.7/":
+  url: "/docs/mobile/release-before-v1.7/"
+  redirect_from: []
 "/docs/mobile/release/":
   url: "/docs/mobile/release/"
   redirect_from: []
@@ -3207,6 +3210,9 @@
   redirect_from: []
 "/docs/pe/mobile/qr-code-settings/":
   url: "/docs/pe/mobile/qr-code-settings/"
+  redirect_from: []
+"/docs/pe/mobile/release-before-v1.7/":
+  url: "/docs/pe/mobile/release-before-v1.7/"
   redirect_from: []
 "/docs/pe/mobile/release/":
   url: "/docs/pe/mobile/release/"

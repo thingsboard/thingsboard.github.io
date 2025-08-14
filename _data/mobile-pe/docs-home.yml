@@ -31,5 +31,7 @@ toc:
         path: /docs/pe/mobile/qr-code-settings-before-v1.7/
   - title: Add your own localization
     path: /docs/pe/mobile/localization/
-  - title: Publish your app
+  - title: Publish your app (Mobile app v1.6.x)
+    path: /docs/pe/mobile/release-before-v1.7/
+  - title: Publish your app (Mobile app v1.7.x)
     path: /docs/pe/mobile/release/
