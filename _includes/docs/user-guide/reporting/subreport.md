@@ -52,7 +52,7 @@ In the **Subreport Builder**, components are added using a **drag-and-drop actio
 
 ## Adding subreport to master report
 
-- Open or create the **main report template**.
+- Open or create the **main (master) report template**.
 - From the list of available components, **select Subreport** and **drag** it to the desired position in the report layout.
 - **Configure the subreport component**:
   - In the "**Datasource**" section, specify the entity whose data will be passed to the subreport template. Use the **Filter** field to apply additional conditions for entity selection.
@@ -70,13 +70,13 @@ Imagine you need a daily report template that lists all alarms triggered for eac
 
 This can be achieved by using subreport:
 - **Subreport** — contains a table of alarms for a single device.
-- **Main report** — iterates through all devices and inserts the subreport for each one.
+- **Master report** — iterates through all devices and inserts the subreport for each one.
 
 ### Step 1: Create the subreport template
 
 First, create a **Subreport** template that will contain the alarm table for a single device.
 For its **datasource**, use a **new entity alias** with the filter type "**Entity from master report**".
-This will allow the main report to pass data about a specific device into the subreport.
+This will allow the master report to pass data about a specific device into the subreport.
 
 - Open the "**Reporting**" page from the left-hand sidebar. You will automatically land on the "**Templates**" tab.
 - Click the "**+ Add report template**" button in the top-right corner and select "**Create new report template**" from the dropdown menu.
@@ -91,7 +91,7 @@ This will allow the main report to pass data about a specific device into the su
 
 **Configure the subreport in Report Builder:**
 - **Add a "Rich text" component** by dragging it from the **components library** into the **content area**. In its configurations:
-    - Set the **Datasource** by creating a new Entity Alias with filter type "**Entity from master report**". This allows the main report to pass the specific device to the subreport.
+    - Set the **Datasource** by creating a new Entity Alias with filter type "**Entity from master report**". This allows the master report to pass the specific device to the subreport.
     - Add the **data key** "**name**" with the type "**Entity field**".
     - In the **Content** tab, enter your desired text and include the variable **${Name}** to dynamically display the current entity name.
   - Save the component.
@@ -99,7 +99,7 @@ This will allow the main report to pass data about a specific device into the su
 {% include images-gallery.html imageCollection="example-create-subreport-2" %}
 - **Add an "Alarm table" component** by dragging it from the **components library** into the **content area**. In its configurations:
   - Set the **time window** to display alarms from the **current day**.
-  - Use the previously created "**Entity from master report**" as the **datasource** so that the table displays alarms for the device whose data is passed by the main report.
+  - Use the previously created "**Entity from master report**" as the **datasource** so that the table displays alarms for the device whose data is passed by the master report.
   - Set the table **title** and include the variable **${entityName}** to dynamically display the current entity name.
   - Save the component.
 
@@ -113,9 +113,9 @@ Subreport configuration is complete. Save the subreport by clicking the "**Save*
 
 {% include images-gallery.html imageCollection="example-create-subreport-5" %}
 
-### Step 2: Create the Main Report Template
+### Step 2: Create the master report template
 
-Now create another **template for the main report**.
+Now create another **template for the master report**.
 We&#39;ll configure it to pass the data of **each of your devices** to the **subreport** template. The subreport template will then generate a report for each device according to its own configuration.
 
 - Go to "**Reports**" page → "**Templates**" tab, then click "**+ Add report template**".
@@ -128,7 +128,7 @@ We&#39;ll configure it to pass the data of **each of your devices** to the **sub
 {% include images-gallery.html imageCollection="example-create-report-1" %}
 
 <br>
-**Configure the main report in Report Builder:**
+**Configure the master report in Report Builder:**
 - **Add a "Heading" component** by dragging it from the **components library** into the **content area**.
   - Enter the heading text, for example: "**Daily device alarms report**"'
   - Save the component.
@@ -139,7 +139,7 @@ We&#39;ll configure it to pass the data of **each of your devices** to the **sub
   - In the "**Datasource**" section, create a new entity alias that retrieves all your entities of type Device. 
   - In the "**Subreport**" section, select the previously created subreport **Daily Device Alarms (Subreport)**.
   - Save the component.
-- Finally, save the main report template.
+- Finally, save the master report template.
 
 {% include images-gallery.html imageCollection="example-create-report-3" %}
 

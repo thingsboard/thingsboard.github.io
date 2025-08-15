@@ -6,7 +6,13 @@
 
 {% assign feature = "Scheduling" %}{% include templates/pe-feature-banner.md %}
 
-The **Scheduler** is a mechanism for automatic report generation. It allows you to configure reports to be created and distributed automatically — whether one-time, daily, weekly, monthly, or at a specific time — based on a predefined report template.
+The **Scheduler** is a mechanism for automating report generation. It allows you to set up automatic creation and distribution of reports at a specified time — based on a pre-defined [report template](/docs/{{docsPrefix}}user-guide/reporting/reporting-key-concepts/){:target="_blank"}.
+
+With the Scheduler, you can:
+- <b>Receive reports regularly without manual execution</b> — no need to trigger them yourself.
+- <b>Set custom intervals</b> — daily, weekly, monthly, or any custom schedule.
+- <b>Define recipients and formats</b> — choose who gets the report and in what format (PDF, CSV).
+- <b>Use one template for multiple recipients with different data filters</b> — tailor the same report for different audiences.
 
 ## Creating a new scheduler event
 
