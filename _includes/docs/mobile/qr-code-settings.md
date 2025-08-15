@@ -8,7 +8,11 @@
 
 This guide provides instructions on how to configure a custom mobile application to launch directly from a [QR code scan](/docs/{{peDocsPrefix}}user-guide/ui/mobile-qr-code/) using your phone's camera.
 
-In application version 1.7.0+, we have made QR code settings configuration much easier through the platform interface.
+In application version 1.7.0+, we have made QR code settings configuration much easier by using configuration file.
+
+{% capture pre_1_7_0_link %} 
+Important Notice: Please use [this guide](/docs/{{peDocsPrefix}}mobile/qr-code-settings-before-v1.7/) for pre 1.7.x qr code configuration 
+{% endcapture %} {% include templates/info-banner.md content=pre_1_7_0_link %}
 
 ## Platform Configuration
 
