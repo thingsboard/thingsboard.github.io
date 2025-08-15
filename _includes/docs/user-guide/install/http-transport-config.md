@@ -1012,8 +1012,8 @@
 	<tbody>
 		<tr>
 			<td>management.endpoints.web.exposure.include</td>
-			<td></td>
-			<td>'${METRICS_ENDPOINTS_EXPOSE:info}'</td>
+			<td>METRICS_ENDPOINTS_EXPOSE</td>
+			<td>info</td>
 			<td> Expose metrics endpoint (use value 'prometheus' to enable prometheus metrics).</td>
 		</tr>
 	</tbody>

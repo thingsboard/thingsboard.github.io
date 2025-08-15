@@ -1,37 +1,6 @@
 * TOC
 {:toc}
 
-##  Spring common parameters
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>spring.main.web-environment</td>
-			<td>WEB_APPLICATION_ENABLE</td>
-			<td>false</td>
-			<td> If you enabled process metrics you should also enable 'web-environment'.</td>
-		</tr>
-		<tr>
-			<td>spring.main.web-application-type</td>
-			<td>WEB_APPLICATION_TYPE</td>
-			<td>none</td>
-			<td> If you enabled process metrics you should set 'web-application-type' to 'servlet' value.</td>
-		</tr>
-		<tr>
-			<td>spring.main.allow-circular-references</td>
-			<td></td>
-			<td>"true" </td>
-			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed.</td>
-		</tr>
-	</tbody>
-</table>
-
-
 ##  Server common parameters
 
 <table>
@@ -45,19 +14,38 @@
 			<td>server.address</td>
 			<td>HTTP_BIND_ADDRESS</td>
 			<td>0.0.0.0</td>
-			<td> Server bind address (has no effect if web-environment is disabled).</td>
+			<td> Server bind-address</td>
 		</tr>
 		<tr>
 			<td>server.port</td>
 			<td>HTTP_BIND_PORT</td>
-			<td>8086</td>
-			<td> Server bind port (has no effect if web-environment is disabled).</td>
+			<td>8081</td>
+			<td> Server bind port</td>
 		</tr>
 	</tbody>
 </table>
 
 
-##  Zookeeper connection parameters. Used for service discovery.
+##  Application info parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>app.version</td>
+			<td></td>
+			<td>"@project.version@"</td>
+			<td> Application version</td>
+		</tr>
+	</tbody>
+</table>
+
+
+##  Zookeeper connection parameters
 
 <table>
 	<thead>
@@ -110,6 +98,12 @@
  This property provides a pause to ensure that when a rule-engine service is restarted, other nodes don't immediately attempt to recalculate their partitions.
  The delay is recommended because the initialization of rule chain actors is time-consuming. Avoiding unnecessary recalculations during a restart can enhance system performance and stability.</td>
 		</tr>
+		<tr>
+			<td>spring.main.allow-circular-references</td>
+			<td></td>
+			<td>"true" </td>
+			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed.</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -136,16 +130,10 @@
 			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
 		</tr>
 		<tr>
-			<td>queue.in_memory.stats.print-interval-ms</td>
-			<td>TB_QUEUE_IN_MEMORY_STATS_PRINT_INTERVAL_MS</td>
-			<td>60000</td>
-			<td> For debug lvl</td>
-		</tr>
-		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
-			<td> Kafka Bootstrap Servers</td>
+			<td> Kafka Bootstrap nodes in "host:port" format</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.ssl.enabled</td>
@@ -187,7 +175,7 @@
 			<td>queue.kafka.acks</td>
 			<td>TB_KAFKA_ACKS</td>
 			<td>all</td>
-			<td> The number of acknowledgments the producer requires the leader to have received before considering a request complete. This controls the durability of records that are sent. The following settings are allowed:0,1 and all</td>
+			<td> The number of acknowledgments the producer requires the leader to have received before considering a request complete. This controls the durability of records that are sent. The following settings are allowed:0, 1 and all</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.retries</td>
@@ -241,13 +229,13 @@
 			<td>queue.kafka.max_poll_interval_ms</td>
 			<td>TB_QUEUE_KAFKA_MAX_POLL_INTERVAL_MS</td>
 			<td>300000</td>
-			<td> The maximum delay between invocations of poll() when using consumer group management. This places an upper bound on the amount of time that the consumer can be idle before fetching more records</td>
+			<td> The maximum delay between invocations of poll() method when using consumer group management. This places an upper bound on the amount of time that the consumer can be idle before fetching more records</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.max_poll_records</td>
 			<td>TB_QUEUE_KAFKA_MAX_POLL_RECORDS</td>
 			<td>8192</td>
-			<td> The maximum number of records returned in a single call to poll()</td>
+			<td> The maximum number of records returned in a single call of poll() method</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.max_partition_fetch_bytes</td>
@@ -310,40 +298,16 @@
 			<td> Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL</td>
 		</tr>
 		<tr>
-			<td>queue.kafka.consumer-properties-per-topic.tb_ota_package.key</td>
+			<td>queue.kafka.consumer-properties-per-topic.tasks.key</td>
 			<td></td>
 			<td>max.poll.records</td>
-			<td> Key-value properties for Kafka consumer per specific topic, e.g. tb_ota_package is a topic name for ota, tb_rule_engine.sq is a topic name for default SequentialByOriginator queue. Check TB_QUEUE_CORE_OTA_TOPIC and TB_QUEUE_RE_SQ_TOPIC params</td>
+			<td> Key-value properties for Kafka consumer for tasks topics</td>
 		</tr>
 		<tr>
-			<td>queue.kafka.consumer-properties-per-topic.tb_ota_package.key.value</td>
-			<td>TB_QUEUE_KAFKA_OTA_MAX_POLL_RECORDS</td>
-			<td>10</td>
-			<td> Example of specific consumer properties value per topic</td>
-		</tr>
-		<tr>
-			<td>queue.kafka.consumer-properties-per-topic.tb_version_control.key</td>
-			<td></td>
-			<td>max.poll.interval.ms</td>
-			<td> Example of specific consumer properties value per topic for VC</td>
-		</tr>
-		<tr>
-			<td>queue.kafka.consumer-properties-per-topic.tb_version_control.key.value</td>
-			<td>TB_QUEUE_KAFKA_VC_MAX_POLL_INTERVAL_MS</td>
-			<td>600000</td>
-			<td> Example of specific consumer properties value per topic for VC</td>
-		</tr>
-		<tr>
-			<td>queue.kafka.consumer-properties-per-topic-inline</td>
-			<td>TB_QUEUE_KAFKA_CONSUMER_PROPERTIES_PER_TOPIC_INLINE</td>
-			<td></td>
-			<td>      tb_rule_engine.sq:
-        - key: max.poll.records
-          value: "${TB_QUEUE_KAFKA_SQ_MAX_POLL_RECORDS:1024}"
- If you override any default Kafka topic name using environment variables, you must also specify the related consumer properties
- for the new topic in `consumer-properties-per-topic-inline`. Otherwise, the topic will not inherit its expected configuration (e.g., max.poll.records, timeouts, etc).
- Format: "topic1:key1=value1,key2=value2;topic2:key=value"
- Example: "tb_core_modified.notifications:max.poll.records=10;tb_edge_modified:max.poll.records=10,enable.auto.commit=true"</td>
+			<td>queue.kafka.consumer-properties-per-topic.tasks.key.value</td>
+			<td>TB_QUEUE_KAFKA_TASKS_MAX_POLL_RECORDS</td>
+			<td>1</td>
+			<td> Max poll records for tasks topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.other-inline</td>
@@ -352,28 +316,10 @@
 			<td> In this section you can specify custom parameters (semicolon separated) for Kafka consumer/producer/admin </td>
 		</tr>
 		<tr>
-			<td>queue.kafka.topic-properties.core</td>
-			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
-			<td> Kafka properties for Core topics</td>
-		</tr>
-		<tr>
-			<td>queue.kafka.topic-properties.notifications</td>
-			<td>TB_QUEUE_KAFKA_NOTIFICATIONS_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
-			<td> Kafka properties for Notifications topics</td>
-		</tr>
-		<tr>
-			<td>queue.kafka.topic-properties.version-control</td>
-			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
-			<td> Kafka properties for Core topics</td>
-		</tr>
-		<tr>
-			<td>queue.kafka.topic-properties.housekeeper</td>
-			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
-			<td> Kafka properties for Housekeeper tasks topic</td>
+			<td>queue.kafka.topic-properties.tasks</td>
+			<td>TB_QUEUE_KAFKA_TASKS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for tasks topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -391,7 +337,44 @@
 			<td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
 			<td>1000</td>
-			<td> Time to wait for the stats-loading requests to Kafka to finis</td>
+			<td> Time to wait for the stats-loading requests to Kafka to finish</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.poll_interval</td>
+			<td>TB_QUEUE_TASKS_POLL_INTERVAL_MS</td>
+			<td>500</td>
+			<td> Poll interval in milliseconds for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitions</td>
+			<td>TB_QUEUE_TASKS_PARTITIONS</td>
+			<td>12</td>
+			<td> Partitions count for tasks queues</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitions_per_type</td>
+			<td>TB_QUEUE_TASKS_PARTITIONS_PER_TYPE</td>
+			<td></td>
+			<td> Custom partitions count for tasks queues per type. Format: 'TYPE1:24;TYPE2:36', e.g. 'CF_REPROCESSING:24;TENANT_EXPORT:6'</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitioning_strategy</td>
+			<td>TB_QUEUE_TASKS_PARTITIONING_STRATEGY</td>
+			<td>tenant</td>
+			<td> Tasks partitioning strategy: 'tenant' or 'entity'. By default, using 'tenant' - tasks of a specific tenant are processed in the same partition.
+ In a single-tenant environment, use 'entity' strategy to distribute the tasks among multiple partitions.</td>
+		</tr>
+		<tr>
+			<td>queue.report.notifications_topic</td>
+			<td>TB_QUEUE_REPORT_NOTIFICATIONS_TOPIC</td>
+			<td>tb_report.notifications</td>
+			<td> TB Report notifications topic name</td>
+		</tr>
+		<tr>
+			<td>queue.report.poll_interval</td>
+			<td>TB_QUEUE_REPORT_POLL_INTERVAL_MS</td>
+			<td>125</td>
+			<td> Poll interval in milliseconds for TB Report queues</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>
@@ -399,113 +382,11 @@
 			<td>murmur3_128</td>
 			<td> murmur3_32, murmur3_128 or sha256</td>
 		</tr>
-		<tr>
-			<td>queue.core.topic</td>
-			<td>TB_QUEUE_CORE_TOPIC</td>
-			<td>tb_core</td>
-			<td> Default topic name</td>
-		</tr>
-		<tr>
-			<td>queue.core.notifications_topic</td>
-			<td>TB_QUEUE_CORE_NOTIFICATIONS_TOPIC</td>
-			<td>tb_core.notifications</td>
-			<td> For high-priority notifications that require minimum latency and processing time</td>
-		</tr>
-		<tr>
-			<td>queue.core.poll-interval</td>
-			<td>TB_QUEUE_CORE_POLL_INTERVAL_MS</td>
-			<td>25</td>
-			<td> Interval in milliseconds to poll messages by Core microservices</td>
-		</tr>
-		<tr>
-			<td>queue.core.partitions</td>
-			<td>TB_QUEUE_CORE_PARTITIONS</td>
-			<td>10</td>
-			<td> Amount of partitions used by Core microservices</td>
-		</tr>
-		<tr>
-			<td>queue.core.pack-processing-timeout</td>
-			<td>TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS</td>
-			<td>2000</td>
-			<td> Timeout for processing a message pack by Core microservices</td>
-		</tr>
-		<tr>
-			<td>queue.core.ota.topic</td>
-			<td>TB_QUEUE_CORE_OTA_TOPIC</td>
-			<td>tb_ota_package</td>
-			<td> Default topic name for OTA updates</td>
-		</tr>
-		<tr>
-			<td>queue.core.ota.pack-interval-ms</td>
-			<td>TB_QUEUE_CORE_OTA_PACK_INTERVAL_MS</td>
-			<td>60000</td>
-			<td> The interval of processing the OTA updates for devices. Used to avoid any harm to the network due to many parallel OTA updates</td>
-		</tr>
-		<tr>
-			<td>queue.core.ota.pack-size</td>
-			<td>TB_QUEUE_CORE_OTA_PACK_SIZE</td>
-			<td>100</td>
-			<td> The size of OTA updates notifications fetched from the queue. The queue stores pairs of firmware and device ids</td>
-		</tr>
-		<tr>
-			<td>queue.core.usage-stats-topic</td>
-			<td>TB_QUEUE_US_TOPIC</td>
-			<td>tb_usage_stats</td>
-			<td> Stats topic name</td>
-		</tr>
-		<tr>
-			<td>queue.core.stats.enabled</td>
-			<td>TB_QUEUE_CORE_STATS_ENABLED</td>
-			<td>true</td>
-			<td> Enable/disable statistics for Core microservices</td>
-		</tr>
-		<tr>
-			<td>queue.core.stats.print-interval-ms</td>
-			<td>TB_QUEUE_CORE_STATS_PRINT_INTERVAL_MS</td>
-			<td>60000</td>
-			<td> Statistics printing interval for Core microservices</td>
-		</tr>
-		<tr>
-			<td>queue.core.housekeeper.topic</td>
-			<td>TB_HOUSEKEEPER_TOPIC</td>
-			<td>tb_housekeeper</td>
-			<td> Topic name for Housekeeper tasks</td>
-		</tr>
-		<tr>
-			<td>queue.vc.topic</td>
-			<td>TB_QUEUE_VC_TOPIC</td>
-			<td>tb_version_control</td>
-			<td> Default topic name</td>
-		</tr>
-		<tr>
-			<td>queue.vc.partitions</td>
-			<td>TB_QUEUE_VC_PARTITIONS</td>
-			<td>10</td>
-			<td> Number of partitions to associate with this queue. Used for scaling the number of messages that can be processed in parallel</td>
-		</tr>
-		<tr>
-			<td>queue.vc.poll-interval</td>
-			<td>TB_QUEUE_VC_INTERVAL_MS</td>
-			<td>25</td>
-			<td> Interval in milliseconds between polling of the messages if no new messages arrive</td>
-		</tr>
-		<tr>
-			<td>queue.vc.pack-processing-timeout</td>
-			<td>TB_QUEUE_VC_PACK_PROCESSING_TIMEOUT_MS</td>
-			<td>180000</td>
-			<td> Timeout before retrying all failed and timed-out messages from the processing pack</td>
-		</tr>
-		<tr>
-			<td>queue.vc.msg-chunk-size</td>
-			<td>TB_QUEUE_VC_MSG_CHUNK_SIZE</td>
-			<td>250000</td>
-			<td> Limit for single queue message size</td>
-		</tr>
 	</tbody>
 </table>
 
 
-##  Version control parameters
+##  Tbel parameters
 
 <table>
 	<thead>
@@ -515,28 +396,82 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>vc.thread_pool_size</td>
-			<td>TB_VC_POOL_SIZE</td>
-			<td>6</td>
-			<td> Pool size for handling export tasks</td>
+			<td>tbel.enabled</td>
+			<td>TBEL_ENABLED</td>
+			<td>true</td>
+			<td> Enable/Disable TBEL feature.</td>
 		</tr>
 		<tr>
-			<td>vc.git.io_pool_size</td>
-			<td>TB_VC_GIT_POOL_SIZE</td>
+			<td>tbel.max_total_args_size</td>
+			<td>TBEL_MAX_TOTAL_ARGS_SIZE</td>
+			<td>100000</td>
+			<td> Limit the number of arguments that are passed to the function to execute the script</td>
+		</tr>
+		<tr>
+			<td>tbel.max_result_size</td>
+			<td>TBEL_MAX_RESULT_SIZE</td>
+			<td>300000</td>
+			<td> Maximum allowed symbols in a result after processing a script</td>
+		</tr>
+		<tr>
+			<td>tbel.max_script_body_size</td>
+			<td>TBEL_MAX_SCRIPT_BODY_SIZE</td>
+			<td>50000</td>
+			<td> Maximum allowed symbols in the script body</td>
+		</tr>
+		<tr>
+			<td>tbel.max_memory_limit_mb</td>
+			<td>TBEL_MAX_MEMORY_LIMIT_MB</td>
+			<td> 8</td>
+			<td> Maximum allowed TBEL script execution memory</td>
+		</tr>
+		<tr>
+			<td>tbel.max_errors</td>
+			<td>TBEL_MAX_ERRORS</td>
 			<td>3</td>
-			<td> Pool size for handling the git IO operations</td>
+			<td> Maximum allowed TBEL script execution errors before it will be blacklisted</td>
 		</tr>
 		<tr>
-			<td>vc.git.repositories-folder</td>
-			<td>TB_VC_GIT_REPOSITORIES_FOLDER</td>
-			<td>${java.io.tmpdir}/repositories</td>
-			<td> Default storing repository path</td>
+			<td>tbel.max_requests_timeout</td>
+			<td>TBEL_MAX_REQUEST_TIMEOUT</td>
+			<td>500</td>
+			<td> TBEL Eval max request timeout in milliseconds. 0 - no timeout</td>
+		</tr>
+		<tr>
+			<td>tbel.max_black_list_duration_sec</td>
+			<td>TBEL_MAX_BLACKLIST_DURATION_SEC</td>
+			<td>60</td>
+			<td> Maximum time in seconds for black listed function to stay in the list.</td>
+		</tr>
+		<tr>
+			<td>tbel.thread_pool_size</td>
+			<td>TBEL_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Specify thread pool size for javascript executor service</td>
+		</tr>
+		<tr>
+			<td>tbel.compiled_scripts_cache_size</td>
+			<td>TBEL_COMPILED_SCRIPTS_CACHE_SIZE</td>
+			<td>1000</td>
+			<td> Maximum cache size of TBEL compiled scripts</td>
+		</tr>
+		<tr>
+			<td>tbel.stats.enabled</td>
+			<td>TB_TBEL_STATS_ENABLED</td>
+			<td>false</td>
+			<td> Enable/Disable stats collection for TBEL engine</td>
+		</tr>
+		<tr>
+			<td>tbel.stats.print_interval_ms</td>
+			<td>TB_TBEL_STATS_PRINT_INTERVAL_MS</td>
+			<td>10000</td>
+			<td> Interval of logging for TBEL stats</td>
 		</tr>
 	</tbody>
 </table>
 
 
-##  Usage statistics parameters
+##  General service parameters
 
 <table>
 	<thead>
@@ -546,28 +481,34 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>usage.stats.report.enabled</td>
-			<td>USAGE_STATS_REPORT_ENABLED</td>
-			<td>true</td>
-			<td> Enable/Disable the collection of statistics about API usage. Collected on a system and tenant level by default</td>
+			<td>service.type</td>
+			<td>TB_SERVICE_TYPE</td>
+			<td>tb-report</td>
+			<td> service type</td>
 		</tr>
 		<tr>
-			<td>usage.stats.report.enabled_per_customer</td>
-			<td>USAGE_STATS_REPORT_PER_CUSTOMER_ENABLED</td>
-			<td>false</td>
-			<td> Enable/Disable collection of statistics about API usage on a customer level</td>
+			<td>service.id</td>
+			<td>TB_SERVICE_ID</td>
+			<td></td>
+			<td> Unique id for this service (autogenerated if empty)</td>
 		</tr>
 		<tr>
-			<td>usage.stats.report.interval</td>
-			<td>USAGE_STATS_REPORT_INTERVAL</td>
-			<td>60</td>
-			<td> Interval of reporting the statistics. By default, the summarized statistics are sent every 10 seconds</td>
+			<td>service.tb_core.base_url</td>
+			<td>TB_CORE_BASE_URL</td>
+			<td>http://localhost:8080</td>
+			<td> ThingsBoard Core service URL, used for communication with ThingsBoard Core (e.g. for REST API calls, etc.)</td>
 		</tr>
 		<tr>
-			<td>usage.stats.report.pack_size</td>
-			<td>USAGE_STATS_REPORT_PACK_SIZE</td>
-			<td>1024</td>
-			<td> Amount of statistic messages in pack</td>
+			<td>reports.web_report.base_url</td>
+			<td>REPORTS_SERVER_ENDPOINT_URL</td>
+			<td>http://localhost:8383</td>
+			<td> Report server endpoint</td>
+		</tr>
+		<tr>
+			<td>reports.web_report.max_response_size</td>
+			<td>MAX_RESPONSE_SIZE</td>
+			<td>52428800</td>
+			<td> 50MB</td>
 		</tr>
 	</tbody>
 </table>
@@ -612,50 +553,6 @@
 			<td>METRICS_ENDPOINTS_EXPOSE</td>
 			<td>info</td>
 			<td> Expose metrics endpoint (use value 'prometheus' to enable prometheus metrics).</td>
-		</tr>
-	</tbody>
-</table>
-
-
-##  Service common properties
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>service.type</td>
-			<td>TB_SERVICE_TYPE</td>
-			<td>tb-vc-executor</td>
-			<td> service type</td>
-		</tr>
-		<tr>
-			<td>service.id</td>
-			<td>TB_SERVICE_ID</td>
-			<td></td>
-			<td> Unique id for this service (autogenerated if empty)</td>
-		</tr>
-	</tbody>
-</table>
-
-
-##  Notification system parameters
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>notification_system.rules.deduplication_durations</td>
-			<td>TB_NOTIFICATION_RULES_DEDUPLICATION_DURATIONS</td>
-			<td>RATE_LIMITS:14400000;</td>
-			<td> Semicolon-separated deduplication durations (in millis) for trigger types. Format: 'NotificationRuleTriggerType1:123;NotificationRuleTriggerType2:456'</td>
 		</tr>
 	</tbody>
 </table>

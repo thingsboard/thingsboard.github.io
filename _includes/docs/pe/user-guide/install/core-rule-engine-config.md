@@ -4647,6 +4647,26 @@
 			<td>600000</td>
 			<td> How often to report edge communication stats in milliseconds</td>
 		</tr>
+		<tr>
+			<td>license.secret</td>
+			<td>TB_LICENSE_SECRET</td>
+			<td></td>
+			<td> license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)</td>
+		</tr>
+		<tr>
+			<td>license.instance_data_file</td>
+			<td>TB_LICENSE_INSTANCE_DATA_FILE</td>
+			<td>instance-license.data</td>
+			<td> Instance data is auto-generated and is used to identify particular ThingsBoard Instance.
+ Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.
+ Please make sure that thingsboard process has access to the instance data file, in case you use absolute path.</td>
+		</tr>
+		<tr>
+			<td>license.stats.enabled</td>
+			<td>TB_ANONYMOUS_USAGE_REPORTING</td>
+			<td>true</td>
+			<td> Enable/disable anonymous usage statistics collection.</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -6160,8 +6180,8 @@
 	<tbody>
 		<tr>
 			<td>management.endpoints.web.exposure.include</td>
-			<td></td>
-			<td>'${METRICS_ENDPOINTS_EXPOSE:info}'</td>
+			<td>METRICS_ENDPOINTS_EXPOSE</td>
+			<td>info</td>
 			<td> Expose metrics endpoint (use value 'prometheus' to enable prometheus metrics).</td>
 		</tr>
 		<tr>
