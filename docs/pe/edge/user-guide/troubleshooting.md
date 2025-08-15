@@ -5,11 +5,11 @@ description: ThingsBoard Edge troubleshooting
 
 how-to-import-dashboard:
   0:
-    image: /images/edge/user-guide/troubleshooting/download.webp
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/download.webp
   1:
-    image: /images/edge/user-guide/troubleshooting/import-pe.webp
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/import-pe.webp
   2:
-    image: /images/edge/user-guide/troubleshooting/import-pe-1.webp
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/import-pe-1.webp
 
 internal-monitoring-main:
   0:

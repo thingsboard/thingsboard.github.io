@@ -24,9 +24,9 @@ When you select a model from the list, all of its settings defined on that page 
 For convenience, you can also add a new model directly from this interface by clicking the "Create new" button, which will open the model configuration form.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-ai-model-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-ai-model-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-ai-model-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-ai-model-pe.png)
 {% endif %}
 
 **Prompt settings**
@@ -35,18 +35,18 @@ For convenience, you can also add a new model directly from this interface by cl
 > **Example**: "You are a helpful agricultural expert. Your goal is to analyze sensor data and provide farming advice. Respond only in valid JSON."
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-system-prompt.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-system-prompt.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-system-prompt.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-system-prompt.png)
 {% endif %}
 
 - **User prompt** - contains the specific, immediate task or question you want the AI to answer. This is the main input for the model, which will be processed according to the rules set in the system prompt. This field is required, cannot be blank, and also has a maximum length of 10,000 characters.
 > **Example**: "Based on these readings, is the soil moisture optimal for planting corn? Readings: `$[*]`"
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-user-prompt.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-user-prompt.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-user-prompt.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-user-prompt.png)
 {% endif %}
 
 You can make both prompts dynamic (incorporate data from an incoming message) using [templatization](/docs/{{docsPrefix}}user-guide/templatization/). This is the recommended approach when you need to provide the context of a message to the AI model.
@@ -78,24 +78,24 @@ Example: If the prompt is `Device context: ${*}` and the incoming metadata is:
 - **Text** - most flexible format, supported by all models. In this mode, the AI can generate free-form text without any structural constraints. While the output is not guaranteed to be in any specific format, you can still guide the model to produce structured data (like JSON) through clear instructions in your prompts.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-text-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-text-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-text-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-text-pe.png)
 {% endif %}
 
 - **JSON** - instructs the model to generate a response that is always a syntactically valid JSON. The model decides on the JSON structure itself based on the context of the prompt.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-pe.png)
 {% endif %}
 
 - **JSON Schema** - forces the model to generate a JSON that strictly conforms to a specific structure you define using a [JSON Schema](https://json-schema.org/). This is useful for ensuring reliable output.
   {% if docsPrefix == null %}
-  ![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-schema-ce.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-schema-ce.png)
   {% else %}
-  ![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-schema-pe.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-response-format-json-schema-pe.png)
   {% endif %}
   - **Schema** - JSON Schema that the model's output must adhere to. The schema parser supports a specific subset of the JSON Schema specification:
     - Types - `string`, `integer`, `number`, `boolean`, `object`, `array`, `null`.
@@ -110,17 +110,17 @@ Example: If the prompt is `Device context: ${*}` and the incoming metadata is:
 
 - **Timeout** - the maximum time the node will wait for a response from the AI model before the request fails. The value must be from 1 second to 10 minutes (600 seconds).
   {% if docsPrefix == null %}
-  ![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-timeout.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-timeout.png)
   {% else %}
-  ![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-timeout.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-timeout.png)
   {% endif %}
   > **Note**: Be careful when setting this value. Complex tasks or slower models may require more time to generate a response. A timeout that is too low for your use case might cause requests to fail unnecessarily.
 
 - **Force acknowledgement**
   {% if docsPrefix == null %}
-  ![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-force-ack.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-force-ack.png)
   {% else %}
-  ![image](/images/user-guide/rule-engine-2-0/nodes/external-ai-request-force-ack.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-force-ack.png)
   {% endif %}
   - If enabled, the incoming message is acknowledged immediately. A new message is created to carry the AI's response and is then added to the queue for processing by the next node. This is useful for long-running AI requests to prevent message processing timeouts.
   - If disabled, the original incoming message is transformed. Its payload is replaced with the AI's response, and this message is passed to the next node.

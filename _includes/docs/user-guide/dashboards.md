@@ -373,15 +373,15 @@ For the state to be named after the entity, use **${entityName}** as the name of
 A Tenant Administrator or Customer User can **generate a report** from the currently opened dashboard in **PDF**, **PNG**, or **JPEG** format.
 - Click the "**Export Dashboard**" button, located on the right side of the dashboard toolbar.
 
-<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-1-pe.png"></object>
+<object width="40%" data="https://img.thingsboard.io/user-guide/dashboards/overview/generate-report-from-dashboard-1-pe.png"></object>
 
 - In the expanded drop-down menu, select the desired export format. 
 
-<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-2-pe.png"></object>
+<object width="40%" data="https://img.thingsboard.io/user-guide/dashboards/overview/generate-report-from-dashboard-2-pe.png"></object>
 
 - The report generation process will start automatically.
 
-<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-3-pe.png"></object>
+<object width="40%" data="https://img.thingsboard.io/user-guide/dashboards/overview/generate-report-from-dashboard-3-pe.png"></object>
 
 And finally, the report file will be automatically downloaded and saved to your PC.
 

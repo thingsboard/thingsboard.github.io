@@ -20,7 +20,7 @@ Navigate to **Mobile Center → Applications → Your custom iOS app** in the Th
 
 Provide the **App Site Association ID** in your app store info settings:
 
-![App Site Association ID Configuration](/images/mobile/{{peDocsPrefix}}qr-code-settings-ios-store-info.png)
+![App Site Association ID Configuration](https://img.thingsboard.io/mobile/{{peDocsPrefix}}qr-code-settings-ios-store-info.png)
 
 The App Site Association ID consists of two parts separated by a dot:
 
@@ -28,7 +28,7 @@ The App Site Association ID consists of two parts separated by a dot:
 - Get your Team ID from [Apple Developer Account](https://developer.apple.com/account)
 - Look for it in the "Membership details" block
 
-![Team ID Location](/images/mobile/qr-code-settings-team-id.png)
+![Team ID Location](https://img.thingsboard.io/mobile/qr-code-settings-team-id.png)
 
 **2. App Bundle ID**
 - Must be the same as the Application package in your app settings
@@ -42,13 +42,13 @@ Navigate to **Mobile Center → Applications → Your custom Android app** in th
 
 Provide the **SHA-256 fingerprint** of your app's signing key:
 
-![SHA-256 Fingerprint Configuration](/images/mobile/{{peDocsPrefix}}qr-code-settings-sha256.png)
+![SHA-256 Fingerprint Configuration](https://img.thingsboard.io/mobile/{{peDocsPrefix}}qr-code-settings-sha256.png)
 
 **For Google Play distributed apps:**
 Use the SHA-256 certificate fingerprint located in your Google Play Console under:
 **Release → Setup → App Integrity → App Signing tab**
 
-![Google Play SHA-256 Fingerprint](/images/mobile/sha256-fingerprint.png)
+![Google Play SHA-256 Fingerprint](https://img.thingsboard.io/mobile/sha256-fingerprint.png)
 
 **For locally distributed apps:**
 Use the SHA-256 key that your APK is signed with.

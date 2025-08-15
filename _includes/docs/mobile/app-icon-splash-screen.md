@@ -36,7 +36,7 @@ Choose one of this options, depending on how you want your splash screen to look
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="/images/mobile/pe/splash_screen_sizes_template.png" title="Splash screen icon layout" alt="Splash screen icon layout">
+        <img width="" src="https://img.thingsboard.io/mobile/pe/splash_screen_sizes_template.png" title="Splash screen icon layout" alt="Splash screen icon layout">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Splash screen icon layout</span>
     </div>
 </div>
@@ -190,7 +190,7 @@ If you have configured push notifications (see [push notifications setup guide](
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="/images/mobile/asset_studio.png" title="Android asset studio flow" alt="Android asset studio flow">
+        <img width="" src="https://img.thingsboard.io/mobile/asset_studio.png" title="Android asset studio flow" alt="Android asset studio flow">
     </div>
 </div>
 

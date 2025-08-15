@@ -12,7 +12,7 @@ Your app package name and app name will come preconfigured from your Mobile Cent
 
 If you need to change some settings, we recommend updating them in the Mobile Center and redownloading the configuration file from the Mobile Center. This ensures consistency and prevents configuration conflicts.
 
-![image](/images/mobile/{{peDocsPrefix}}release-redownload-config.png)
+![image](https://img.thingsboard.io/mobile/{{peDocsPrefix}}release-redownload-config.png)
 
 {% capture config_note %}
 **Note:** Always use the Mobile Center to manage your app configuration rather than manually editing configuration files. This approach ensures all settings remain synchronized and reduces the risk of errors.
