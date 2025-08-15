@@ -679,6 +679,9 @@
 "/docs/mobile/alarm-dashboard/":
   url: "/docs/mobile/alarm-dashboard/"
   redirect_from: []
+"/docs/mobile/app-icon-splash-screen/":
+  url: "/docs/mobile/app-icon-splash-screen/"
+  redirect_from: []
 "/docs/mobile/customization/":
   url: "/docs/mobile/customization/"
   redirect_from: []
@@ -697,14 +700,23 @@
 "/docs/mobile/":
   url: "/docs/mobile/"
   redirect_from: []
+"/docs/mobile/localization/":
+  url: "/docs/mobile/localization/"
+  redirect_from: []
 "/docs/mobile/mobile-actions/":
   url: "/docs/mobile/mobile-actions/"
   redirect_from: []
 "/docs/mobile/oauth2/":
   url: "/docs/mobile/oauth2/"
   redirect_from: []
+"/docs/mobile/qr-code-settings-before-v1.7/":
+  url: "/docs/mobile/qr-code-settings-before-v1.7/"
+  redirect_from: []
 "/docs/mobile/qr-code-settings/":
   url: "/docs/mobile/qr-code-settings/"
+  redirect_from: []
+"/docs/mobile/release-before-v1.7/":
+  url: "/docs/mobile/release-before-v1.7/"
   redirect_from: []
 "/docs/mobile/release/":
   url: "/docs/mobile/release/"
@@ -3203,6 +3215,9 @@
 "/docs/pe/mobile/alarm-dashboard/":
   url: "/docs/pe/mobile/alarm-dashboard/"
   redirect_from: []
+"/docs/pe/mobile/app-icon-splash-screen/":
+  url: "/docs/pe/mobile/app-icon-splash-screen/"
+  redirect_from: []
 "/docs/pe/mobile/customization/":
   url: "/docs/pe/mobile/customization/"
   redirect_from: []
@@ -3221,14 +3236,23 @@
 "/docs/pe/mobile/":
   url: "/docs/pe/mobile/"
   redirect_from: []
+"/docs/pe/mobile/localization/":
+  url: "/docs/pe/mobile/localization/"
+  redirect_from: []
 "/docs/pe/mobile/mobile-actions/":
   url: "/docs/pe/mobile/mobile-actions/"
   redirect_from: []
 "/docs/pe/mobile/oauth2/":
   url: "/docs/pe/mobile/oauth2/"
   redirect_from: []
+"/docs/pe/mobile/qr-code-settings-before-v1.7/":
+  url: "/docs/pe/mobile/qr-code-settings-before-v1.7/"
+  redirect_from: []
 "/docs/pe/mobile/qr-code-settings/":
   url: "/docs/pe/mobile/qr-code-settings/"
+  redirect_from: []
+"/docs/pe/mobile/release-before-v1.7/":
+  url: "/docs/pe/mobile/release-before-v1.7/"
   redirect_from: []
 "/docs/pe/mobile/release/":
   url: "/docs/pe/mobile/release/"
