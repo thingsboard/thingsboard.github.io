@@ -41,10 +41,10 @@
             </div>
             <div class="clients-card-text {% if info.collapse == "true" %}collapsed{% endif %}">
                 {% for text in info.text %}
-                    <p class="{% if forloop.index == 1 %}clients-card-bold-text{% else %}clients-card-default-text{% endif %} {% if info.collapse == "true" and forloop.index == info.collapseIndex %}collapse-text collapsed{% endif %}">
+                    <p class="{% if forloop.index == 1 and info.noHeading != "true" %}clients-card-bold-text{% else %}clients-card-default-text{% endif %} {% if info.collapse == "true" and forloop.index == info.collapseIndex %}collapse-text collapsed{% endif %}">
                         {{ text[1] }}
                     </p>
-                    {% if info.collapse == "true" and forloop.index == info.collapseIndex %}<p data-index="{{ info.collapseIndex }}" class="read-more">read more</p>{% endif %}
+                    {% if info.collapse == "true" and forloop.index == info.collapseIndex %}<p data-index="{{ info.collapseIndex }}" class="read-more">Read more</p>{% endif %}
                 {% endfor %}
                 {% if info.feedbackLink %}
                     <a href="{{ info.feedbackLink.link }}">{{ info.feedbackLink.label }}</a>
@@ -86,8 +86,8 @@
                     });
 
                     readMore.addEventListener('click', function() {
-                        const expand = readMore.innerText === 'read more';
-                        expand ? readMore.innerText = 'read less' : readMore.innerText = 'read more';
+                        const expand = readMore.innerText === 'Read more';
+                        expand ? readMore.innerText = 'Read less' : readMore.innerText = 'Read more';
                         if (expand) {
                             container.appendChild(readMore);
                             collapseText.classList.remove('collapsed');
