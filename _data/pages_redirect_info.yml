@@ -68,9 +68,6 @@
 "/docs/pe/user-guide/ui/entity-views":
   url: "/docs/pe/user-guide/entity-views/"
   redirect_from: "/docs/pe/user-guide/ui/entity-views"
-"/docs/user-guide/reporting/":
-  url: "/docs/pe/user-guide/reporting/"
-  redirect_from: "/docs/user-guide/reporting/"
 "/docs/paas/eu/user-guide/ui/templatization":
   url: "/docs/paas/eu/user-guide/templatization/"
   redirect_from: "/docs/paas/eu/user-guide/ui/templatization"
