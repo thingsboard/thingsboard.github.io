@@ -108,7 +108,7 @@
       href: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
   description: Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE
     chipsets and modules.
-- name: Seeed Technology Co.,Ltd.
+- name: Seeed Studio
   type:
     - Wi-Fi
     - Ethernet
@@ -141,6 +141,12 @@
       label: Integration guide
       href: /docs/samples/raspberry/grove/
     1:
+      label: Integration guide
+      href: /docs/edge/devices-library/recomputer-r1000/
+    2:
+      label: Integration guide
+      href: /docs/edge/devices-library/recomputer-r1100/
+    3:
       label: Seeed Wiki integration
       href: https://wiki.seeedstudio.com/thingsboard_integrated/
   description: Whether you are a developer, technical supplier, or industry player,
@@ -600,12 +606,10 @@
   description: 'Developed and manufactured in Sweden, AKKR8 is a flexible sensor-to-platform
     solution designed for scalable, low-maintenance IoT deployments. It is well-suited
     for smart buildings, facility management, utilities, and industrial environments
-    requiring robust connectivity and modular sensor integration.
-
+    requiring robust connectivity and modular sensor integration.<br>
     AKKR8 supports multiple power options—battery, solar, or mains—making it adaptable
     to both remote and on-site installations. It connects over LTE-M for reliable,
-    low-power communication in constrained network conditions.
-
+    low-power communication in constrained network conditions.<br>
     As a BLE gateway, AKKR8 integrates seamlessly with sensors from industry leaders
     such as Aguardio, ELA Innovation, and Smart Sensor Devices, enabling applications
     like leak detection, environmental monitoring, occupancy sensing, and air quality
@@ -1002,7 +1006,7 @@
   links:
     0:
       label: Integration guide
-      href: https://www.yudash.com/
+      href: https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard
   description: YuDash is an Industrial IoT gateway manufacturer, offering flexible,
     user-friendly, and cost-effective products. Cloud connectivity through 4G/LTE,
     Ethernet and WiFi is available. Industrial protocols like Modbus-RS485, Modbus-TCP/IP,
@@ -1370,8 +1374,53 @@
     href: https://www.lansitec.com/
   links:
     0:
-      label: Solar Bluetooth Gateway
+      label: How to connect Asset Management Tracker to ThingsBoard?
+      href: /docs/devices-library/asset-management-tracker/
+    1:
+      label: How to connect Badge Tracker to ThingsBoard?
+      href: /docs/devices-library/badge-tracker/
+    2:
+      label: How to connect Cat-1 Badge Tracker to ThingsBoard?
+      href: /docs/devices-library/cat1-badge-tracker/
+    3:
+      label: How to connect Cat-1 Compact Bluetooth Gateway to ThingsBoard?
+      href: /docs/devices-library/cat1-compact-bluetooth-gateway/
+    4:
+      label: How to connect Cat-1 Container Tracker to ThingsBoard?
+      href: /docs/devices-library/cat1-container-tracker/
+    5:
+      label: How to connect Cat-1 Macro Tracker to ThingsBoard?
+      href: /docs/devices-library/cat1-macro-tracker/
+    6:
+      label: How to connect Macro Bluetooth Gateway to ThingsBoard?
+      href: /docs/devices-library/macro-bluetooth-gateway/
+    7:
+      label: How to connect Container Tracker to ThingsBoard?
+      href: /docs/devices-library/container-tracker/
+    8:
+      label: How to connect Compact Bluetooth Gateway to ThingsBoard?
+      href: /docs/devices-library/compact-bluetooth-gateway/
+    9:
+      label: How to connect Solar Bluetooth Gateway to ThingsBoard?
       href: /docs/samples/lansitec/solar-bluetooth-gateway/
+    10:
+      label: How to connect Cat-1 Solar Bluetooth Gateway to ThingsBoard?
+      href: /docs/devices-library/cat1-solar-bluetooth-gateway/
+    11:
+      label: How to connect Tracking Label to ThingsBoard?
+      href: /docs/devices-library/tracking-label/
+    12:
+      label: How to connect Temperature and Humidity Sensor to ThingsBoard?
+      href: /docs/devices-library/temperature-humidity-sensor/
+    13:
+      label: How to connect UWB Asset Management Tracker to ThingsBoard?
+      href: /docs/devices-library/uwb-asset-management-tracker/
+    14:
+      label: How to connect UWB Badge Tracker to ThingsBoard?
+      href: /docs/devices-library/uwb-badge-tracker/
+    15:
+      label: How to connect UWB Container Tracker to ThingsBoard?
+      href: /docs/devices-library/uwb-container-tracker/
   description: Lansitec is at the forefront of technological innovation, specializing
     in the provision of affordable, compact, and highly efficient hardware designed
     to accurately locate people, resources, and assets. Our unique approach combines
@@ -1726,8 +1775,8 @@
     href: http://www.iotrouter.com/
   links:
     0:
-      label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
-      href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
+      label: Connect EG8200 Gateway to ThingsBoard
+      href: /docs/pe/devices-library/eg8200-gateway/
   description: Established in 2015, Chengdu IOTRouter is a high-tech enterprise specializing
     in the research, development, production, and sales of industrial IoT Edge Gateway,
     HMI, Remote IO, AI Edge Box, and other digital integration products and solutions.

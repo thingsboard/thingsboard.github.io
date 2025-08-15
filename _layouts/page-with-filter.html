@@ -155,7 +155,7 @@
         function applyFilter() {
             const selectedFilters = Array.from(checkboxes)
                 .filter(cb => cb.checked)
-                .map(cb => cb.value);
+                .map(cb => cb.value.trim().toLowerCase());
 
             cards.forEach(card => {
                 const isHiddenBySearch = card.classList.contains('search-hidden');
@@ -164,8 +164,12 @@
                     return;
                 }
 
-                const cardTypes = card.id.split('|');
-                const match = selectedFilters.length === 0 || cardTypes.some(type => selectedFilters.includes(type));
+                const cardTypes = card.id.split('|').map(s => s.trim().toLowerCase());
+
+                const match =
+                    selectedFilters.length === 0 ||
+                    selectedFilters.every(f => cardTypes.includes(f));
+
                 card.classList.toggle('filter-hidden', !match);
             });
         }

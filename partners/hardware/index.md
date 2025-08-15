@@ -9,6 +9,7 @@ itemsSelector: ".card"
 itemsPerPage: "15"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
+firstCompaniesInList: "Milesight%Seeed Studio%Lansitec%Shenzhen Beilai Technology Co., Ltd.%MikroTik%MOKO SMART" 
 
 filterCollection:
   0:
