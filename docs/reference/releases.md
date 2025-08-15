@@ -15,7 +15,7 @@ description: ThingsBoard architecture
 
 * Core & Rule Engine
 
-  * [#13371](https://github.com/thingsboard/thingsboard/pull/13371) 🧠 Added AI request rule node by @dskarzh
+  * [#13371](https://github.com/thingsboard/thingsboard/pull/13371) 🧠 Added AI request rule node by @dskarzh and @ArtemDzhereleiko
   * [#13556](https://github.com/thingsboard/thingsboard/pull/13556) 📊 Added entity and key filters support for alarm count query by @dashevchenko
   * [#13747](https://github.com/thingsboard/thingsboard/pull/13747) 🔒 Updated libraries to fix critical and major vulnerabilities by @ViacheslavKlimov
 

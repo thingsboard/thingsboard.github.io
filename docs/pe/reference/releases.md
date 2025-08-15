@@ -19,7 +19,7 @@ Everything from [TB CE v4.2](https://github.com/thingsboard/thingsboard/releases
   * Report service 2.0 with rich PDF and CSV capabilities;
   * Secrets storage support for Version Control, SMS, Mail server, OAuth and AI model settings;
   * Version control support and search improvements for scheduler events;
-  * Migrated tenant settings from attibutes to admin settings table;
+  * Migrated tenant settings from attributes to admin settings table;
 
 * UI
 

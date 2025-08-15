@@ -388,7 +388,7 @@ These upgrade steps are applicable for ThingsBoard version 4.1.xPE. In order to 
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-4.2pe.exe](https://dist.thingsboard.io/thingsboard-windows-4.2pe.exe).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-4.2pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-4.2pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -400,7 +400,7 @@ net stop thingsboard
 {: .copy-code}
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Run the **thingsboard-windows-4.2pe.exe**.
+* Run the **thingsboard-windows-setup-4.2pe.exe**.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 

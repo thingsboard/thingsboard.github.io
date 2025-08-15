@@ -4739,6 +4739,9 @@
 "/docs/user-guide/install/pe/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/old-upgrade-instructions/"
   redirect_from: []
+"/docs/user-guide/install/pe/report-service-config/":
+  url: "/docs/user-guide/install/pe/report-service-config/"
+  redirect_from: []
 "/docs/user-guide/install/pe/rhel/":
   url: "/docs/user-guide/install/pe/rhel/"
   redirect_from: []
