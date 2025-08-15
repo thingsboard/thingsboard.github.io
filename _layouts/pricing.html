@@ -50,9 +50,14 @@
     }
 
     function setCloudServerDefault() {
-        const cloudServer = getCookie('cloudServer')
+        const cloudServer = getCookie('cloudServer');
         if (cloudServer === '/docs/paas/eu/') {
             document.getElementById('Pricing_PE_Cloud_Europe')?.classList.add("defaultselection");
+            const toggle = document.getElementById('regionSelect');
+            if (toggle) {
+                toggle.checked = true;
+                document.querySelectorAll(`#thingsboard-cloud .billing-toggle.solution-selector .label-text`).forEach(elem => elem.classList.toggle('selected'));
+            }
         } else {
             document.getElementById('Pricing_PE_Cloud_NorthAmerica')?.classList.add("defaultselection");
         }
@@ -60,6 +65,12 @@
 
     function onPopPricingState() {
         const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        const navEntries = performance.getEntriesByType('navigation');
+
+        if (Object.hasOwn(params, 'calculator') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
+            elements.openCalculatorBtn.click();
+        }
+
         let sectionId = params['section'] || params['active'];
         if (!sectionId) {
             sectionId = '{{page.defaultActivePricingSection}}';
@@ -73,6 +84,10 @@
         let solutionId = params['solution'];
         if (solutionId) {
             setActiveSolutionSection(solutionId);
+            if (solutionId === 'cloud-north-america' || solutionId === 'cloud-europe') {
+                document.querySelectorAll(`.billing-toggle.solution-selector .label-text`).forEach(elem => elem.classList.remove('selected'));
+                document.querySelector(`.billing-toggle.solution-selector .label-text[data-solutionid=${solutionId}]`).classList.add('selected');
+            }
         }
         let faqSection = params['faqSection'];
         if (faqSection) {
@@ -102,11 +117,25 @@
         setActiveSolutionSection(solutionId);
     }
 
-    function activateServerSection(solutionId, cookieValue) {
+    function activateServerSection(event) {
+        let solutionId;
+        let cookieValue;
+        if (!event.target.checked) {
+            solutionId = 'cloud-north-america';
+            cookieValue = '/docs/paas/';
+        } else {
+            solutionId = 'cloud-europe';
+            cookieValue = '/docs/paas/eu/';
+        }
         setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
         setCloudServerHref();
         updateQueryParam({solution: solutionId});
         setActiveSolutionSection(solutionId);
+        document.querySelectorAll(`#thingsboard-cloud .billing-toggle.solution-selector .label-text`)
+            .forEach(elem => {
+                elem.classList.toggle('selected');
+                elem.classList.toggle('defaultselection');
+            });
     }
 
     function updateQueryParam(setParams, clear = false) {
@@ -409,6 +438,15 @@
 
     function switchToPrivateCloud() {
         window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
+    }
+
+    function switchTrendzCloudRegion(event) {
+        setActiveSolutionSection(!event.target.checked ? 'trendz-cloud-north-america' : 'trendz-cloud-europe');
+        document.querySelectorAll(`#trendz-cloud .billing-toggle.solution-selector .label-text`)
+            .forEach(elem => {
+                elem.classList.toggle('selected');
+                elem.classList.toggle('defaultselection');
+            });
     }
 </script>
 

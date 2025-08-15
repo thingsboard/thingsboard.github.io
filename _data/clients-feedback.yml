@@ -5,6 +5,7 @@ smart-energy:
     - author: Daniel Portero
       position: Cloud & App Development Manager
       companyName: Circutor
+      id: circutor
       link: https://circutor.com/
       authorImage: /images/customers/circutor-person.webp
       companyImage: /images/customers/circutor.svg
@@ -17,6 +18,7 @@ smart-energy:
     - author: Mark Hunt
       position: CTO
       companyName: Oneserve Limited
+      id: oneserve
       link: https://oneserve.co.uk/
       authorImage: /images/customers/oneserve-person.webp
       companyImage: /images/customers/oneserve.svg
@@ -30,6 +32,7 @@ smart-energy:
     - author: Agustin Derregibus
       position: CEO & Co-Founder
       companyName: Nettra
+      id: nettra
       link: https://www.nettra.tech/
       companyImage: /images/customers/nettra.webp
       companyImageWidth: 127
@@ -41,6 +44,7 @@ smart-energy:
     - author: David Eitzinger
       position: Managing Director
       companyName: Berliner Energieinstitut GmbH
+      id: berliner
       link: https://www.berliner-energieinstitut.de/
       authorImage: /images/customers/bei-person.webp
       companyImage: /images/customers/bei.svg
@@ -52,6 +56,7 @@ smart-energy:
     - author: Nairn Harrison
       position: Director
       companyName: Environmental Energy Controls
+      id: e2cbms
       link:  https://www.e2cbms.com/
       companyImage: /images/customers/eec.svg
       companyImageWidth: 111
@@ -65,6 +70,7 @@ smart-energy:
     - author: Peter Backes
       position: CEO
       companyName: co.met GmbH
+      id: comet
       link: https://www.co-met.info/
       authorImage: /images/customers/comet-person.webp
       companyImage: /images/customers/comet.svg
@@ -81,6 +87,7 @@ agriculture:
     - author: Jeppe Walther
       position: CTO
       companyName: Supertech Agroline
+      id: supertech
       link: https://www.agrolog.io/
       companyImage: /images/customers/supertech-agroline.svg
       companyImageWidth: 122
@@ -92,6 +99,7 @@ agriculture:
     - author: Mark Morris
       position: Founder & Managing Director
       companyName: Enviroeye
+      id: enviroeye
       companyImage: /images/customers/enviroeye.svg
       companyImageWidth: 134
       companyImageHeight: 38
@@ -102,6 +110,7 @@ agriculture:
     - author: Miroslav Holubec
       position: Director
       companyName: Keners s.r.o.
+      id: keners
       link: https://keners.sk/
       companyImage: /images/customers/keners.svg
       companyImageWidth: 153
@@ -117,6 +126,7 @@ smart-buildings:
     - author: Andreas Brandl
       position: Founder & CEO
       companyName: Sensolyze GmbH
+      id: sensolyze
       link: https://www.sensolyze.com/
       authorImage: /images/customers/sensolyze-person.webp
       companyImage: /images/customers/sensolyze.svg
@@ -129,6 +139,7 @@ smart-buildings:
     - author: Christoph Beck
       position: Founder and CEO
       companyName: mdeg GmbH
+      id: mdeg
       link: https://www.mdeg-digital.com/
       authorImage: /images/customers/mdeg-person.webp
       companyImage: /images/customers/mdeg.webp
@@ -141,6 +152,7 @@ smart-buildings:
     - author: Nairn Harrison
       position: Director
       companyName: Environmental Energy Controls
+      id: e2cbms
       link: https://www.e2cbms.com/
       companyImage: /images/customers/eec.svg
       companyImageWidth: 111
@@ -154,6 +166,7 @@ smart-buildings:
     - author: Mark Hunt
       position: CTO
       companyName: Oneserve Limited
+      id: oneserve
       link: https://oneserve.co.uk/
       authorImage: /images/customers/oneserve-person.webp
       companyImage: /images/customers/oneserve.svg
@@ -167,6 +180,7 @@ smart-buildings:
     - author: Simon Judge
       position: Co-founder
       companyName: BeaconZone
+      id: beacon
       link: https://www.beaconzone.co.uk/
       authorImage: /images/customers/beaconzone-person.webp
       companyImage: /images/customers/beaconzone.svg
@@ -178,6 +192,7 @@ smart-buildings:
     - author: Michael Nickolai
       position: Co-Founder & Executive Manager
       companyName: Conbee
+      id: conbee
       companyImage: /images/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
@@ -202,6 +217,7 @@ smart-city:
     - author: Eric Bourbeau
       position: Président fondateur / Founder and CEO
       companyName: X-TELIA
+      id: xtelia
       link: https://en.x-telia.com/
       authorImage: /images/customers/x-telia-person.webp
       companyImage: /images/customers/x-telia.svg
@@ -216,6 +232,7 @@ smart-city:
     - author: Bertil Moberg
       position: Co-Founder & Head of IoT Solutions
       companyName: iiOOTE AB
+      id: iioote
       link: https://www.iioote.com/
       authorImage: /images/customers/iioote-person.webp
       companyImage: /images/customers/iioote.svg
@@ -228,6 +245,7 @@ smart-city:
     - author: Daniel Bartozzi
       position: VP Engineering
       companyName: Ositech Communications, Inc.
+      id: ositech
       link: https://ositech.com/
       companyImage: /images/customers/ositech.svg
       companyImageWidth: 145
@@ -238,6 +256,7 @@ smart-city:
     - author: Michael Nickolai
       position: Co-Founder & Executive Manager
       companyName: Conbee
+      id: conbee
       companyImage: /images/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
@@ -248,6 +267,7 @@ smart-city:
     - author: Pawel Ostropolski
       position: Founder & Managing Director
       companyName: IoT Squad
+      id: iotsquad
       link: https://iotsquad.tech/
       authorImage: /images/customers/iotsquad-tech-person.webp
       companyImage: /images/customers/iot-squad.svg
@@ -259,6 +279,7 @@ smart-city:
     - author: Ján Masaryk
       position: Co-Founder
       companyName: MAKERS s. r. o.
+      id: makers
       link: https://www.makers.sk/
       companyImage: /images/customers/makers.svg
       companyImageWidth: 66
@@ -266,13 +287,53 @@ smart-city:
       text:
         0: 'MAKERS s. r. o. is a Slovak IoT solutions software house.'
         1: 'While building the Smart City solution for OMS, a. s. we were looking for IoT platform serving as core backend for our solutions. ThingsBoard became our first clear choice. It contains necessary business functionality and support all needed technologies/protocols which we required. Later on, ThingsBoard became the heart of the upcoming solution. In any implementation of complex systems cooperation and support are crucial to success achievement. We are glad that we found stable partners in design, implementation and deployment of ThingsBoard in the Smart City solution.'
+    - author: Kalitec
+      companyName: Kalitec
+      id: kalitec
+      link: https://www.kalitec.com/
+      companyImage: /images/customers/kalitec.svg
+      companyImageWidth: 166
+      companyImageHeight: 60
+      collapse: 'true'
+      collapseIndex: 7
+      text:
+        0: 'Very professional in its approach to projects'
+        1: 'Custom Development'
+        2: 'The ThingsBoard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.'
+        3: 'They helped us implement our IoT solutions for major transport industry clients, and all projects were completed on time and on budget. Their solutions architect also improved how we use the platform to get the most out of what ThingsBoard has to give.'
+        4: 'The communication with the team is fluid, and requests are handled quickly. Has the maker of the platform, they are the best to help you in developing and implementing your requirements.'
+        5: 'Service Monitoring and Tech Support'
+        6: 'I cannot remember the last time our services were unavailable. The team monitors our infrastructure closely so we can sleep tight at night. They are also very responsive when we have technical questions or need guidance when implementing a new feature in our IoT devices.'
+        7: 'ThingsBoard Platform'
+        8: 'ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.'
+        9: 'It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!'
 telecom:
   label: Telecom
   icon: /images/telecom-icon.svg
   feedback:
+    - author: Tamati Iro
+      position: VAS Manager
+      companyName: Vodafone
+      id: vodafone
+      link: https://www.vodafone.co.ck/
+      authorImage: /images/customers/tamati-iro.webp
+      companyImage: /images/customers/vodafone.svg
+      companyImageWidth: 120
+      companyImageHeight: 48
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: 'Working with the ThingsBoard Development team on our custom Mobile App has been an outstanding experience.'
+        1: 'The development process was smooth, well-structured, and highly professional. From the initial requirements gathering to the final delivery, the team demonstrated deep technical expertise and a clear understanding of our vision.'
+        2: 'The development team was highly responsive, transparent, and easy to work with, keeping us informed at every milestone. Any questions or concerns were addressed promptly, which gave us confidence that the project was always on track.'
+        3: 'The final mobile app exceeded our expectations. It’s user-friendly, visually appealing, and performs reliably in real-world use. The mobile app was also designed in a way where my team could maintain widgets in the app without depending on mobile app developers.'
+        4: 'This custom development has played a key role in advancing our business goals. The mobile app has allowed us to better serve our customers, and bring our IoT data to the palm of their hands in a seamless way. It’s already proving to be a valuable tool for both our team and our clients.'
+        5: 'The fixed-price, fast delivery approach worked perfectly for us. It gave us cost certainty, kept the project moving at a great pace, and ensured that we met our timelines without compromising on quality.'
+        6: 'We look forward to working with the ThingsBoard team again in the future and highly recommend their services to anyone looking for expert IoT and mobile development!'
     - author: David Týr
       position: Innovation Manager
       companyName: T-Mobile Czech Republic a.s.
+      id: tmobile
       link: https://www.t-mobile.cz/
       companyImage: /images/customers/t-mobile.svg
       companyImageWidth: 87
@@ -284,6 +345,7 @@ telecom:
     - author: Roman Nemish
       position: President
       companyName: TEKTELIC Communications Inc.
+      id: tektelic
       link: https://tektelic.com/
       authorImage: /images/customers/tektelic-person.webp
       companyImage: /images/customers/tektelic.svg
@@ -297,6 +359,7 @@ telecom:
     - author: Eric Bourbeau
       position: Président fondateur / Founder and CEO
       companyName: X-TELIA
+      id: xtelia
       link: https://en.x-telia.com/
       authorImage: /images/customers/x-telia-person.webp
       companyImage: /images/customers/x-telia.svg
@@ -312,9 +375,59 @@ industry40:
   label: Industry 4.0
   icon: /images/industry40-icon.svg
   feedback:
+    - author: Andreas Kücker
+      position: Manager Digital
+      companyName: süc//dacor GmbH
+      id: dacor
+      link: https://dacor.de/
+      authorImage: /images/customers/andreas-kucker.webp
+      companyImage: /images/customers/dacor.svg
+      companyImageWidth: 170
+      companyImageHeight: 30
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing"
+        1: "A well-established medium-sized company specializes in the machining of profiles used in roof opening systems and sunroofs for the automotive sector. The machining process is semi-automated, but lacked the capability to transmit production data. Our client had a need for greater transparency in their manufacturing process, especially regarding downtime and productivity tracking."
+        2: 'To address this requirement, we implemented a solution that involves integrating a trigger within the machine’s program. This trigger, connected via cable, captures the power status of the milling motor and transmits this data to an IoT module. From there, we wirelessly transmit the data over LoRaWAN technology. The collected data is then processed and aggregated in our Thingsboard platform, allowing us to present it in an understandable dashboard format for production management and control purposes.'
+        3: "The aggregated data is presented in a digital twin format on a dashboard, which accurately reflects the layout of the manufacturing facility, including the various machines on the floor. Each machine displays the status of its milling motors, and some machines operate with two milling heads. Performance metrics, such as efficiency and the number of production cycles (representing the produced units), are indicated with color-coded values. Green values indicate good performance, orange suggests suboptimal performance, and red signals poor performance. This visual representation enables the plant manager to quickly identify machines that may require optimization or attention."
+    - author: Mario Garcia Torres
+      position: R&D Director
+      companyName: süc//dacor GmbH
+      id: dacor
+      link: https://poligiot.com/
+      companyImage: /images/customers/poligiot.svg
+      companyImageWidth: 170
+      companyImageHeight: 30
+      noHeading: "true"
+      text:
+        0: "Working with the ThingsBoard team throughout this project has been a very positive and productive experience. From the beginning, the development process was well-structured and collaborative. The team supported me in migrating device communications, configuring message flows, and building a complete messaging system tailored to my needs."
+        1: "They also guided me through setting up critical components such as data history storage, the early warning system, and automated monthly reports. Each stage of the development was handled with great attention to detail, always ensuring that the solutions aligned with the system architecture and functional goals."
+        2: 'Communication has been clear, responsive, and solution-oriented. I always felt that I had a reliable partner on the other side, ready to face challenges with me, especially when integrating ThingsBoard’s services with third-party tools. Their willingness to adapt and help troubleshoot integration issues in real time made a huge difference.'
+        3: "The final result is a robust, scalable system that performs exactly as envisioned. I also appreciate their continued openness to collaborate on the next stages of the project."
+    - author: Tamati Iro
+      position: VAS Manager
+      companyName: Vodafone
+      id: vodafone
+      link: https://www.vodafone.co.ck/
+      authorImage: /images/customers/tamati-iro.webp
+      companyImage: /images/customers/vodafone.svg
+      companyImageWidth: 120
+      companyImageHeight: 48
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: 'Working with the ThingsBoard Development team on our custom Mobile App has been an outstanding experience.'
+        1: 'The development process was smooth, well-structured, and highly professional. From the initial requirements gathering to the final delivery, the team demonstrated deep technical expertise and a clear understanding of our vision.'
+        2: 'The development team was highly responsive, transparent, and easy to work with, keeping us informed at every milestone. Any questions or concerns were addressed promptly, which gave us confidence that the project was always on track.'
+        3: 'The final mobile app exceeded our expectations. It’s user-friendly, visually appealing, and performs reliably in real-world use. The mobile app was also designed in a way where my team could maintain widgets in the app without depending on mobile app developers.'
+        4: 'This custom development has played a key role in advancing our business goals. The mobile app has allowed us to better serve our customers, and bring our IoT data to the palm of their hands in a seamless way. It’s already proving to be a valuable tool for both our team and our clients.'
+        5: 'The fixed-price, fast delivery approach worked perfectly for us. It gave us cost certainty, kept the project moving at a great pace, and ensured that we met our timelines without compromising on quality.'
+        6: 'We look forward to working with the ThingsBoard team again in the future and highly recommend their services to anyone looking for expert IoT and mobile development!'
     - author: Sudhir Ravindramohan
       position: Co-founder and CTO
       companyName: Utvyakta
+      id: utvyakta
       link: https://www.utvyakta.com/
       authorImage: /images/customers/utvyakta-person.webp
       companyImage: /images/customers/utvyakta.svg
@@ -326,6 +439,7 @@ industry40:
     - author: Mamadou Ly
       position: Project Manager at Safir (Farinia Group)
       companyName: Farinia Group
+      id: farinia
       link: https://www.farinia.com/
       authorImage: /images/customers/farinia-person.webp
       companyImage: /images/customers/farinia.svg
@@ -338,6 +452,7 @@ industry40:
     - author: Júlio Sá
       position: I4.0 researcher at CITEVE
       companyName: CITEVE
+      id: citeve
       link: https://www.citeve.pt/
       authorImage: /images/customers/citeve-person.webp
       companyImage: /images/customers/citeve.webp
@@ -350,6 +465,7 @@ industry40:
     - author: Simone Pürzer
       position: Head of Supply Chain Center
       companyName: INSYS icom
+      id: insys
       link: https://www.insys-icom.com/
       companyImage: /images/customers/insys.svg
       companyImageWidth: 107
@@ -360,6 +476,7 @@ industry40:
     - author: Charles-Henri Hallard
       position: Président
       companyName: CH2i
+      id: ch2i
       link: https://ch2i.eu/
       authorImage: /images/customers/ch2i-person.webp
       companyImage: /images/customers/ch2i.svg
@@ -368,6 +485,29 @@ industry40:
       text:
         0: 'CH2i is managing and implementing complex IoT infrastructure. Coming from building sensors to Information System Integration with all security rules. With high backend of IT security and electronic they provide any optimized infrastructure when deploying IoT solutions.'
         1: 'We first tried Thingsboard with the free version to build a customer POC. We liked the Open side of the product and the ability to get it working out of the cloud. Then, we had more and more customers that asked us to be able to see their data. So, we migrated to the Professional Edition. We installed it on dedicated cloud instance. Help and support from Thingsboard team was awesome. They installed the product on our VM and they customized the installation to fit our need. Same availability when new version was available. They updated our instance with new version. To go further, we then asked Thingsboard to customize some dashboards for a dedicated customer. Once again, all was straightforward and Thingsboard team was professional. We are now also creating custom application using powerfull API integrated in the product.We highly recommend Thingsboard for their products and support.'
+    - author: IONA Tech
+      companyName: IONA Tech
+      id: iona
+      link: https://https://www.iona.tech/
+      companyImage: /images/customers/iona-tech.svg
+      companyImageWidth: 130
+      companyImageHeight: 60
+      text:
+        0: 'Expertise, attention to detail, and client satisfaction'
+        1: "We have found the ThingsBoard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running."
+        2: 'We worked with the ThingsBoard Development Unit to unlock some additional features with custom software that helped us tailor the ThingsBoard solution to our needs.'
+        3: 'Throughout the development journey, the TBU exhibited professionalism, clear communication, and a genuine commitment to our success. We wholeheartedly recommend the ThingsBoard Development Unit for their expertise, attention to detail, and client satisfaction. We look forward to future collaborations.'
+    - author: ASG Tech AG
+      companyName: ASG Tech AG
+      id: asgtech
+      link: https://www.asgtechsrl.it/
+      companyImage: /images/customers/asg-tech.svg
+      companyImageWidth: 170
+      companyImageHeight: 60
+      text:
+        0: "Exceptional experience working with ThingsBoard's unit"
+        1: "We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess."
+        2: 'Their careful estimation process significantly enhanced our understanding of the project scope, making planning and collaboration more effective. Additionally, their team attentively listened to our detailed requirements and skilfully transformed them into thoughtfully designed custom widgets. The development process was smooth, with regular updates and transparent communication.'
 warehouse-monitoring:
   label: Warehouse Monitoring
   icon: /images/warehouse-monitoring-icon.svg
@@ -375,6 +515,7 @@ warehouse-monitoring:
     - author: Steven Kruse
       position: CEO
       companyName: SenseING GmbH
+      id: senseing
       link: https://senseing.de/
       authorImage: /images/customers/senseing-person.webp
       companyImage: /images/customers/senseing.webp
@@ -387,6 +528,7 @@ warehouse-monitoring:
     - author: JT McGibbon
       position: General manager
       companyName: Vypin LLC
+      id: vypin
       link: https://www.vypin.com/
       authorImage: /images/customers/vypin-person.webp
       companyImage: /images/customers/vypin.svg

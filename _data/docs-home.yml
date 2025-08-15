@@ -65,8 +65,6 @@ toc:
         new: true
       - title: Entities table widget
         path: /docs/user-guide/ui/entity-table-widget/
-      - title: Trip animation widget
-        path: /docs/user-guide/ui/trip-animation-widget/
       - title: Advanced data key configuration
         path: /docs/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
@@ -383,7 +381,15 @@ toc:
     - title: Rule Node development
       path: /docs/user-guide/contribution/rule-node-development/
     - title: Widgets development (ThingsBoard v3.x)
-      path: /docs/user-guide/contribution/widgets-development/
+      section:
+        - title: Overview
+          path: /docs/user-guide/contribution/widgets-development/
+        - title: Basic widget API
+          path: /docs/user-guide/contribution/ui/basic-widget-api/
+        - title: Custom subscriptions
+          path: /docs/user-guide/contribution/ui/custom-subscriptions/
+        - title: Advanced widget development
+          path: /docs/user-guide/contribution/ui/advanced-development/
     - title: Widgets development (ThingsBoard v2.x)
       path: /docs/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting

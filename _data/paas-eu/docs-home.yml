@@ -90,7 +90,15 @@ toc:
         - title: Widgets library
           path: /docs/paas/eu/user-guide/ui/widget-library/
         - title: Widgets development
-          path: /docs/paas/eu/user-guide/contribution/widgets-development/
+          section:
+            - title: Overview
+              path: /docs/paas/eu/user-guide/contribution/widgets-development/
+            - title: Basic widget API
+              path: /docs/paas/eu/user-guide/contribution/ui/basic-widget-api/
+            - title: Custom subscriptions
+              path: /docs/paas/eu/user-guide/contribution/ui/custom-subscriptions/
+            - title: Advanced widget development
+              path: /docs/paas/eu/user-guide/contribution/ui/advanced-development/
         - title: Chart widgets
           path: /docs/paas/eu/user-guide/ui/chart-widget/
         - title: Map widgets
@@ -98,8 +106,6 @@ toc:
           new: true
         - title: Entities table widget
           path: /docs/paas/eu/user-guide/ui/entity-table-widget/
-        - title: Trip animation widget
-          path: /docs/paas/eu/user-guide/ui/trip-animation-widget/
         - title: Advanced data key configuration
           path: /docs/paas/eu/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
@@ -118,10 +124,10 @@ toc:
           path: /docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/
         - title: Action nodes
           path: /docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/
-        - title: External nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/
         - title: Analytics nodes
           path: /docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/
+        - title: External nodes
+          path: /docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/
         - title: Flow nodes
           path: /docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/
     - title: Data processing & actions

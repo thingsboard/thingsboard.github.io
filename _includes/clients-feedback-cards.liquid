@@ -3,7 +3,7 @@
 
 <div class="clients-cards">
     {% for info in targetKeyCustomers.feedback %}
-        <div class="clients-card">
+        <div class="clients-card" id="{{ info.id }}">
             <div class="clients-card-header">
                 <div class="clients-card-header-author-side">
                     {% if info.authorImage %}
@@ -39,11 +39,12 @@
                     {% endif %}
                 </div>
             </div>
-            <div class="clients-card-text">
+            <div class="clients-card-text {% if info.collapse == "true" %}collapsed{% endif %}">
                 {% for text in info.text %}
-                    <p class="{% if forloop.index == 1 %}clients-card-bold-text{% else %}clients-card-default-text{% endif %}">
+                    <p class="{% if forloop.index == 1 and info.noHeading != "true" %}clients-card-bold-text{% else %}clients-card-default-text{% endif %} {% if info.collapse == "true" and forloop.index == info.collapseIndex %}collapse-text collapsed{% endif %}">
                         {{ text[1] }}
                     </p>
+                    {% if info.collapse == "true" and forloop.index == info.collapseIndex %}<p data-index="{{ info.collapseIndex }}" class="read-more">Read more</p>{% endif %}
                 {% endfor %}
                 {% if info.feedbackLink %}
                     <a href="{{ info.feedbackLink.link }}">{{ info.feedbackLink.label }}</a>
@@ -56,7 +57,50 @@
         <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
         <div class="contact-us-buttons">
             <button onclick="openContactUsModal()">Contact Us</button>
-            <a href="/case-studies/">Other success stories</a>
+            <a href="/case-studies/">Case studies</a>
+            <a href="/use-cases/">Use cases</a>
         </div>
     </div>
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        initReadMore();
+
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('company') && params.get('company')) {
+            document.getElementById(params.get('company')).scrollIntoView({
+                behavior: 'smooth',
+                block: 'center',
+            });
+        }
+
+        function initReadMore() {
+            const collapsedContainers = document.querySelectorAll('.clients-card-text.collapsed');
+            if (collapsedContainers) {
+                collapsedContainers.forEach(container => {
+                    const readMore = container.querySelector('.read-more');
+                    const textToHide =  container.querySelectorAll('.read-more ~ *');
+                    const collapseText = container.querySelector('.collapse-text');
+                    textToHide.forEach(element => {
+                        element.classList.add('hidden');
+                    });
+
+                    readMore.addEventListener('click', function() {
+                        const expand = readMore.innerText === 'Read more';
+                        expand ? readMore.innerText = 'Read less' : readMore.innerText = 'Read more';
+                        if (expand) {
+                            container.appendChild(readMore);
+                            collapseText.classList.remove('collapsed');
+                        } else {
+                            container.children[Number(readMore.dataset.index) - 1].after(readMore);
+                            collapseText.classList.add('collapsed');
+                        }
+                        textToHide.forEach(element => {
+                            element.classList.toggle('hidden');
+                        });
+                    });
+                })
+            }
+        }
+    });
+</script>

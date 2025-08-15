@@ -93,8 +93,13 @@
 				padding: 8px
 				border-radius: 24px
 				border: 1px solid rgba(42, 125, 236, 0.05)
-				box-shadow: 0px 6px 8px 0px rgba(75, 80, 88, 0.06), 0px 1px 6px 0px rgba(75, 80, 88, 0.04)
+				box-shadow: 0 6px 8px 0 rgba(75, 80, 88, 0.06), 0 1px 6px 0 rgba(75, 80, 88, 0.04)
 				max-width: 684px
+				.read-more
+					font-size: 14px
+					color: #2A7DEC
+					cursor: pointer
+					margin-top: 0
 				.clients-card-bold-text
 					font-size: 16px
 					font-weight: 500
@@ -106,6 +111,14 @@
 					line-height: 24px
 					color: rgba(0, 0, 0, 0.87)
 					margin: 0
+					&.collapse-text
+						&.collapsed
+							display: -webkit-box
+							-webkit-box-orient: vertical
+							-webkit-line-clamp: 1
+							overflow: hidden
+					&.hidden
+						display: none
 				.clients-card-header
 					display: flex
 					justify-content: space-between
@@ -167,7 +180,7 @@
 			background: #fff
 			border-radius: 24px
 			padding: 48px 48px
-			box-shadow: 0px 6px 8px 0px rgba(75,80,88,0.06),0px 1px 6px 0px rgba(75,80,88,0.04)
+			box-shadow: 0 6px 8px 0 rgba(75,80,88,0.06),0 1px 6px 0 rgba(75,80,88,0.04)
 			@media (max-width: 600px)
 				grid-column: span 1
 			h2

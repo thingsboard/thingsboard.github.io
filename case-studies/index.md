@@ -29,7 +29,7 @@ modalDescription: "Get your brand featured across our global channels — websit
             </div>
         </div>
     </section>
-    {% assign filters = "Industry 4.0,Smart energy,Smart infrastructure,Cold chain monitoring,Warehouse monitoring,Facility management,Smart IoT solution,Smart agriculture" | split: "," %}
+    {% assign filters = "Industry 4.0,Smart energy,Smart infrastructure,Cold chain monitoring,Smart city,Warehouse monitoring,Facility management,Smart IoT solution,Smart agriculture,Telecom" | split: "," %}
     {% include filter.html filters = filters mode = "tab" containerId = "case-studies-clients" hyphenSplit = "true" %}
     {% assign linksCount = card.links | size %}
     <div class="links{% if linksCount >= 2 %} partnersCarousel owl-carousel owl-theme{% endif %}"{% if linksCount >= 2 %} data-settings='{"nav":true,"loop":false,"margin":10,"autoWidth":true,"dots":false,"autoplay":false,"smartSpeed":200}'{% endif %}>
@@ -88,33 +88,23 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Warehouse monitoring">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/vypin.webp');">
-                <a class="content" href="/case-studies/vypin">
-                    <img class="logo" src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
-                    <p>Smart reliable T&H monitoring with WhereView (ThingsBoard) <br> &nbsp;</p>
+        <div class="client-card" id="Industry 4.0">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/dacor.webp');">
+                <a class="content" href="/case-studies/dacor">
+                    <img class="logo" src="/images/case-studies/dacor.svg" title="süc//dacor GmbH" alt="süc//dacor GmbH logo">
+                    <p>Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Smart reliable T&H monitoring with WhereView (ThingsBoard)</span>
+                    <span class="visually-hidden">about Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</span>
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart infrastructure">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/kalitec.webp');">
-                <a class="content" href="/case-studies/kalitec">
-                    <img class="logo" src="/images/case-studies/kalitec.svg" title="Kalitec" alt="Kalitec logo">
-                    <p>How Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation <br> &nbsp;</p>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
+                <a class="content" href="/case-studies/xtelia">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo">
+                    <p>Smart signage at scale: X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about how Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Facility management">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/suessco.webp');">
-                <a class="content" href="/case-studies/suessco">
-                    <img class="logo" src="/images/case-studies/suessco.svg" title="SuessCo Sensors GmbH" alt="SuessCo Sensors GmbH logo">
-                    <p>SuessCo: IoT hub as a platform for monitoring sensors <br> &nbsp;</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about SuessCo: IoT hub as a platform for monitoring sensors</span>
+                    <span class="visually-hidden">about X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -128,6 +118,26 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
+                <a class="content" href="/case-studies/iioote">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo">
+                    <p>From Prototyping to Commercial Services: How iiOOTE Scaled IoT with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about iiOOTE deploys LoRaWAN™ parking management with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Facility management">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/suessco.webp');">
+                <a class="content" href="/case-studies/suessco">
+                    <img class="logo" src="/images/case-studies/suessco.svg" title="SuessCo Sensors GmbH" alt="SuessCo Sensors GmbH logo">
+                    <p>SuessCo: IoT hub as a platform for monitoring sensors <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about SuessCo: IoT hub as a platform for monitoring sensors</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" id="Smart IoT solution">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/asg-tech.webp');">
                 <a class="content" href="/case-studies/asg-tech">
@@ -138,13 +148,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
-                <a class="content" href="/case-studies/nettra">
-                    <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
-                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
+        <div class="client-card" id="Telecom">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/t-mobile-cz.webp');">
+                <a class="content" href="/case-studies/t-mobile-cz">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/t-mobile-cz.svg" title="T-Mobile-CZ" alt="T-Mobile-CZ logo">
+                    <p>Scaling IoT prototyping at T-Mobile CZ with ThingsBoard <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
+                    <span class="visually-hidden">about scaling IoT prototyping at T-Mobile CZ with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -211,10 +221,60 @@ modalDescription: "Get your brand featured across our global channels — websit
         <div class="client-card" id="Smart IoT solution">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/mdeg.webp');">
                 <a class="content" href="/case-studies/mdeg">
-                    <img style="height: 87px" class="logo" src="/images/case-studies/mdeg.svg" title="Environmental Energy Controls" alt="Environmental Energy Controls logo">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/mdeg.svg" title="mdeg" alt="mdeg logo">
                     <p>How mdeg scaled secure medical device connectivity with ThingsBoard <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about mdeg scaled secure medical device connectivity with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart infrastructure">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tps.webp');">
+                <a class="content" href="/case-studies/tps">
+                    <img style="height: 87px" class="logo" src="/images/case-studies/tps.svg" title="TPS" alt="TPS logo">
+                    <p>From Digitalizing cultural heritage: how TPS connects museums with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how TPS connects museums with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/nettra.webp');">
+                <a class="content" href="/case-studies/nettra">
+                    <img class="logo" src="/images/case-studies/nettra.svg" title="Nettra" alt="Nettra logo">
+                    <p>Cutting time and costs: Nettra’s shortcut to IoT platform success <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Cutting time and costs: Nettra’s shortcut to IoT platform success</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart infrastructure">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/kalitec.webp');">
+                <a class="content" href="/case-studies/kalitec">
+                    <img class="logo" src="/images/case-studies/kalitec.svg" title="Kalitec" alt="Kalitec logo">
+                    <p>How Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about how Kalitec and ThingsBoard Redefined Urban Safety with IoT Innovation</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Warehouse monitoring">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/vypin.webp');">
+                <a class="content" href="/case-studies/vypin">
+                    <img class="logo" src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo">
+                    <p>Smart reliable T&H monitoring with WhereView (ThingsBoard) <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Smart reliable T&H monitoring with WhereView (ThingsBoard)</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Telecom">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tektelic.webp');">
+                <a class="content" href="/case-studies/tektelic">
+                    <img style="height: 56px" class="logo" src="/images/case-studies/tektelic.svg" title="TEKTELIC" alt="TEKTELIC logo">
+                    <p>From sensors to dashboards: <br> TEKTELIC's rapid IoT deployment with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about TEKTELIC's rapid IoT deployment with ThingsBoard</span>
                 </a>
             </div>
         </div>

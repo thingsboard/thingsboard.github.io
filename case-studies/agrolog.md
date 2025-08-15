@@ -31,7 +31,7 @@ description: Discover how Supertech Agroline, a leading Romanian AgTech innovato
         </div>
         <div class="block">
             <p>
-                {% include number-animation.html startNum = 1 targetNum = 180000 useGrouping = true %}+
+                {% include number-animation.html startNum = 1 targetNum = 180000 useMobileMode = true useGrouping = true %}+
             </p>
             <p>sensors installed</p>
         </div>
@@ -40,6 +40,13 @@ description: Discover how Supertech Agroline, a leading Romanian AgTech innovato
                 {% include number-animation.html startNum = 1 targetNum = 4 %}.{% include number-animation.html startNum = 1 targetNum = 5 %}M
             </p>
             <p>tons of grain monitored</p>
+        </div>
+    </section>
+    <section class="quote-with-mark fill-background">
+        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+        <div class="quote-text">
+            <p>"ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added to the platform for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations. The real time UI system proved useful both in development phase and for our final user interface. Using TB as our platform allo...<a target="_blank" href="/industries/agriculture/?company=supertech">read more</a></p>
+            <h2>Jeppe Walther, CTO</h2>
         </div>
     </section>
     <section class="problem">
@@ -92,7 +99,7 @@ description: Discover how Supertech Agroline, a leading Romanian AgTech innovato
             </div>
         </div>
     </section>
-    <section class="tb-power">
+    <section class="tb-power mb">
         <h2>How ThingsBoard powers Supertech Agroline?</h2>
         <div class="block">
             <div class="text">
@@ -121,13 +128,6 @@ description: Discover how Supertech Agroline, a leading Romanian AgTech innovato
                 <p>With ThingsBoard, Supertech Agroline quickly achieved a flexible, scalable platform that could meet their current demands and adapt to future growth. The platform now serves as a key component in their digital transformation strategy and will continue to support their scaling efforts in the years ahead.</p>
             </div>
             <img src="/images/case-studies/agrolog-4.webp" title="Scalable platform for ongoing digital transformation" alt="Scalable platform for ongoing digital transformation" width="450" height="240">
-        </div>
-    </section>
-    <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>"ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added to the platform for our needs, among these the Asset system and PostgreSQL support. These new features gave us the possibility to model our data structure using only TB as the backend, both on the multi-tenant cloud server and on-premise installations. The real time UI system proved useful both in development phase and for our final user interface. <br><br> Using TB as our platform allowed us to rapidly achieve a very genetic solution that will serve our scaling needs for years to come."</p>
-            <h2>Jeppe Walther, CTO</h2>
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -183,6 +183,7 @@ description: Discover how Supertech Agroline, a leading Romanian AgTech innovato
                 <img src="/images/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

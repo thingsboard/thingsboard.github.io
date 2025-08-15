@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/tb-edge-4.0.1pe.rpm
+wget https://dist.thingsboard.io/tb-edge-4.1pe.rpm

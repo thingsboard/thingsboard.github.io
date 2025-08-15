@@ -33,12 +33,13 @@ Please see table below to compare the entity limits of the subscription plans.
 <table>
   <thead>
       <tr>
-          <td><b>Parameter name</b></td>
-          <td><b>Maker</b></td>
-          <td><b>Prototype</b></td>
-          <td><b>Startup</b></td>
-          <td><b>Business</b></td>
-          <td><b>Description</b></td>
+          <td style="width: 15%"><b>Parameter name</b></td>
+          <td style="width: 8%"><b>Maker</b></td>
+          <td style="width: 8%"><b>Prototype</b></td>
+          <td style="width: 8%"><b>Startup</b></td>
+          <td style="width: 8%"><b>Business</b></td>
+          <td style="width: 8%"><b>Business+</b></td>
+          <td style="width: 45%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -48,6 +49,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>100</td>
           <td>500</td>
           <td>1000</td>
+          <td>2000</td>
           <td>Maximum number of devices</td>
       </tr>
       <tr>
@@ -56,6 +58,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>100</td>
           <td>500</td>
           <td>1000</td>
+          <td>2000</td>
           <td>Maximum number of assets</td>
       </tr>
       <tr>
@@ -64,6 +67,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>50</td>
           <td>100</td>
           <td>500</td>
+          <td>1000</td>
           <td>Maximum number of customers</td>
       </tr>
       <tr>
@@ -72,6 +76,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>50</td>
           <td>100</td>
           <td>500</td>
+          <td>1000</td>
           <td>Maximum number of users</td>
       </tr>
       <tr>
@@ -80,6 +85,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>100</td>
           <td>200</td>
           <td>500</td>
+          <td>1000</td>
           <td>Maximum number of dashboards</td>
       </tr>
       <tr>
@@ -88,6 +94,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>20</td>
           <td>50</td>
           <td>100</td>
+          <td>200</td>
           <td>Maximum number of rule chains</td>
       </tr>
       <tr>
@@ -96,6 +103,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>5</td>
           <td>10</td>
           <td>20</td>
+          <td>40</td>
           <td>Maximum number of integrations</td>
       </tr>
       <tr>
@@ -104,6 +112,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>25</td>
           <td>50</td>
           <td>100</td>
+          <td>200</td>
           <td>Maximum number of converters</td>
       </tr>
       <tr>
@@ -112,6 +121,7 @@ Please see table below to compare the entity limits of the subscription plans.
           <td>20</td>
           <td>50</td>
           <td>100</td>
+          <td>200</td>
           <td>Maximum number of scheduler events</td>
       </tr>            
   </tbody>
@@ -125,12 +135,13 @@ Please see table below to compare the API limits of the subscription plans. The 
 <table>
   <thead>
       <tr>
-          <td><b>Parameter name</b></td>
-          <td><b>Maker</b></td>
-          <td><b>Prototype</b></td>
-          <td><b>Startup</b></td>
-          <td><b>Business</b></td>
-          <td><b>Description</b></td>
+          <td style="width: 15%"><b>Parameter name</b></td>
+          <td style="width: 8%"><b>Maker</b></td>
+          <td style="width: 8%"><b>Prototype</b></td>
+          <td style="width: 8%"><b>Startup</b></td>
+          <td style="width: 8%"><b>Business</b></td>
+          <td style="width: 8%"><b>Business+</b></td>
+          <td style="width: 45%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -140,6 +151,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>50M</td>
           <td>250M</td>
           <td>500M</td>
+          <td>1B</td>
           <td>Total number of messages received by any of the Transports (MQTT, HTTP, CoAP, etc) or Integrations</td>
       </tr>
       <tr>
@@ -148,6 +160,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>100M</td>
           <td>500M</td>
           <td>1B</td>
+          <td>2B</td>
           <td>Total number of key-value pairs that your telemetry or attribute transport messages contain</td>
       </tr>
       <tr>
@@ -156,6 +169,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>250M</td>
           <td>1B</td>
           <td>2B</td>
+          <td>4B</td>
           <td>Total number of any execution of the rule node.<br> Processing of a single telemetry message may cause multiple Rule Engine executions.<br> The platform will also count periodic messages produced by Generator nodes, etc.</td>
       </tr>
       <tr>
@@ -164,12 +178,14 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>10M</td>
           <td>50M</td>
           <td>100M</td>
+          <td>200M</td>
           <td>Total number of any execution of user defined functions. For example, processing of the “Script” filter or transformation node, invocation of the data converter, etc.</td>
       </tr>
       <tr>
           <td>Default storage TTL</td>
           <td>60 days</td>
           <td>180 days</td>
+          <td>365 days</td>
           <td>365 days</td>
           <td>365 days</td>
           <td>Default value of the "time to live" parameter that is used to store time-series data.<br>
@@ -184,6 +200,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>10B</td>
           <td>100B</td>
           <td>200B</td>
+          <td>400B</td>
           <td>Data points storage days are calculated for all time-series data points that are stored to the database.<br>
           Platform multiplies number of data points by the number of days those data points will be stored.<br> 
           The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days</td>
@@ -194,12 +211,14 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>180 days</td>
           <td>365 days</td>
           <td>365 days</td>
+          <td>365 days</td>
           <td>How many days to store alarms in the database</td>
       </tr>
       <tr>
           <td>RPC TTL</td>
           <td>60 days</td>
           <td>180 days</td>
+          <td>365 days</td>
           <td>365 days</td>
           <td>365 days</td>
           <td>How many days to store persistent RPC in the database</td>
@@ -210,6 +229,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>4K</td>
           <td>20K</td>
           <td>40K</td>
+          <td>60K</td>
           <td>Total number of alarms created per month</td>
       </tr>
       <tr>
@@ -218,6 +238,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>2K</td>
           <td>10K</td>
           <td>40K</td>
+          <td>80K</td>
           <td>Total number of emails sent</td>
       </tr>
       <tr>
@@ -226,6 +247,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>100</td>
           <td>500</td>
           <td>1000</td>
+          <td>2000</td>
           <td>Total number of SMS sent</td>
       </tr>
   </tbody>
@@ -243,6 +265,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td><b>Prototype</b></td>
           <td><b>Startup</b></td>
           <td><b>Business</b></td>
+          <td><b>Business+</b></td>
           <td><b>Description</b></td>
       </tr>
   </thead>
@@ -253,6 +276,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 2,000 per second,<br>not exceeding 60,000 per minute,<br>and capped at 1,400,000 per hour</td>
           <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 6,000,000 per hour</td>
           <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 12,000,000 per hour</td>
+          <td>Up to 40,000 per second,<br>not exceeding 1,200,000 per minute,<br>and capped at 24,000,000 per hour</td>
           <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
@@ -261,6 +285,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 700,000 per hour</td>
           <td>Up to 5,000 per second,<br>not exceeding 150,000 per minute,<br>and capped at 3,500,000 per hour</td>
           <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,000,000 per hour</td>
+          <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 14,000,000 per hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
@@ -269,10 +294,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 2,000 per second,<br>not exceeding 60,000 per minute,<br>and capped at 1,400,000 per hour</td>
           <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,000,000 per hour</td>
           <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 14,000,000 per hour</td>
+          <td>Up to 40,000 per second,<br>not exceeding 1,200,000 per minute,<br>and capped at 28,000,000 per hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>            
       <tr>
           <td>All Transport messages (Device)</td>
+          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
           <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
           <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
           <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
@@ -285,10 +312,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
           <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
           <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Device)</td>
+          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
           <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
           <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
           <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
@@ -301,10 +330,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 700,000 per hour</td>
           <td>Up to 5,000 per second,<br>not exceeding 150,000 per minute,<br>and capped at 3,500,000 per hour</td>
           <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,000,000 per hour</td>
+          <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 14,000,000 per hour</td>
           <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Integration messages (Device)</td>
+          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
           <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
           <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
           <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
@@ -317,10 +348,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Total number of REST API calls received by any of the users belong to the tenant</td>
       </tr>
       <tr>
           <td>REST requests (Customer)</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
@@ -333,10 +366,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
-          <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
+          <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
+          <td>Total number of messages received by particular WebSocket session</td>
       </tr>
       <tr>
           <td>WS Sessions (Tenant)</td>
+          <td>1K</td>
           <td>1K</td>
           <td>1K</td>
           <td>1K</td>
@@ -349,10 +384,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>20K</td>
           <td>20K</td>
           <td>20K</td>
-          <td>Maximum number of Web socket subscription for the tenant</td>
+          <td>20K</td>
+          <td>Maximum number of Web socket subscriptions for the tenant</td>
       </tr>
       <tr>
           <td>WS Sessions (Customer)</td>
+          <td>500</td>
           <td>500</td>
           <td>500</td>
           <td>500</td>
@@ -365,10 +402,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>10K</td>
           <td>10K</td>
           <td>10K</td>
+          <td>10K</td>
           <td>Maximum number of Web socket subscription for the сustomer</td>
       </tr>
       <tr>
           <td>WS Sessions (Public user)</td>
+          <td>250</td>
           <td>250</td>
           <td>250</td>
           <td>250</td>
@@ -381,10 +420,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>5K</td>
           <td>5K</td>
           <td>5K</td>
+          <td>5K</td>
           <td>Maximum number of subscriptions per public user</td>
       </tr> 
       <tr>
           <td>WS Sessions (Regular user)</td>
+          <td>100</td>
           <td>100</td>
           <td>100</td>
           <td>100</td>
@@ -397,10 +438,12 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>2K</td>
           <td>2K</td>
           <td>2K</td>
+          <td>2K</td>
           <td>Maximum number of subscriptions per regular user</td>
       </tr>
       <tr>
           <td>WS queue message (Session)</td>
+          <td>500</td>
           <td>500</td>
           <td>500</td>
           <td>500</td>

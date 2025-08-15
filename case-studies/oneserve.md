@@ -46,7 +46,7 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
         <img src="/images/case-studies/mark-hunt.webp" title="Oneserve CTO Mark Hunt" alt="Mark Hunt" width="658" height="424">
         <div class="text">
             <h2>Oneserve</h2>
-            <p class="quote">“We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior.”</p>
+            <p class="quote">“We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our deli... <a target="_blank" href="/industries/smart-energy/?company=oneserve">read more</a></p>
             <p class="author">Mark Hunt</p>
             <p class="title">CTO</p>
         </div>
@@ -136,13 +136,6 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 <p>Thanks to ThingsBoard, Oneserve now has a strong and reliable IoT foundation. They are able to innovate faster, provide better services to their clients, and stay competitive in important sectors like housing management, utilities, and manufacturing.</p>
             </div>
             <img src="/images/case-studies/oneserve-5.webp" title="A future-proof IoT foundation" alt="A future-proof IoT foundation" width="450" height="240">
-        </div>
-    </section>
-    <section class="quote-with-mark">
-        <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
-        <div class="quote-text">
-            <p>“The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box. The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. <br> We now have a robust industrial platform that unlocks our IoT service goals.”</p>
-            <h2>Oneserve, CTO</h2>
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -238,6 +231,7 @@ description: Discover how Oneserve uses ThingsBoard to deliver scalable, integra
                 <img src="/images/case-studies/supermarkets.webp" title="Supermarkets widget" alt="Supermarkets widget" width="776" height="776">
             </div>
         </div>
+        {% include services-banner.liquid %}
     </section>
     <section class="contact">
         <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">

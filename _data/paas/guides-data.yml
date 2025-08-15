@@ -249,12 +249,6 @@
       keywords:
       pe: false
       video: true
-    - path: /docs/paas/user-guide/ui/trip-animation-widget
-      title: Trip Animation widget
-      subtitle: "Learn how to display your devices with the latest telemetry data on the Trip Animation widget and modify the widget properties."
-      keywords: 
-      pe: false
-      video: false
 - title: Data processing & actions
   subtitle: Learn how to process data in ThingsBoard.
   id: DataProcessing
