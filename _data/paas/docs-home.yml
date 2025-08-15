@@ -90,7 +90,15 @@ toc:
         - title: Widgets library
           path: /docs/paas/user-guide/ui/widget-library/
         - title: Widgets development
-          path: /docs/paas/user-guide/contribution/widgets-development/
+          section:
+            - title: Overview
+              path: /docs/paas/user-guide/contribution/widgets-development/
+            - title: Basic widget API
+              path: /docs/paas/user-guide/contribution/ui/basic-widget-api/
+            - title: Custom subscriptions
+              path: /docs/paas/user-guide/contribution/ui/custom-subscriptions/
+            - title: Advanced widget development
+              path: /docs/paas/user-guide/contribution/ui/advanced-development/
         - title: Chart widgets
           path: /docs/paas/user-guide/ui/chart-widget/
         - title: Map widgets
@@ -98,8 +106,6 @@ toc:
           new: true
         - title: Entities table widget
           path: /docs/paas/user-guide/ui/entity-table-widget/
-        - title: Trip animation widget
-          path: /docs/paas/user-guide/ui/trip-animation-widget/
         - title: Advanced data key configuration
           path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
@@ -166,7 +172,6 @@ toc:
           path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
     - title: Templatization
       path: /docs/paas/user-guide/templatization/
-      new: true
 - title: White labeling
   section:
     - title: Overview
@@ -246,10 +251,26 @@ toc:
       path: /docs/paas/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
   section:
+    - title: IoT Anomaly Detection with AI
+      path: /docs/paas/samples/analytics/ai-predictive-maintenance/
+      new: true
     - title: Trendz Analytics
       path: /docs/trendz/
     - title: Kafka Streams
       path: /docs/paas/samples/analytics/kafka-streams/
+- title: Reporting
+  new: true
+  section:
+    - title: Key concepts
+      path: /docs/paas/user-guide/reporting/reporting-key-concepts/
+    - title: Getting started with Reporting
+      path: /docs/paas/user-guide/reporting/reporting-getting-started/
+    - title: Subreport
+      path: /docs/paas/user-guide/reporting/subreport/
+    - title: Scheduling reports
+      path: /docs/paas/user-guide/reporting/scheduling-reports/
+    - title: Attaching report to notification
+      path: /docs/paas/user-guide/reporting/attaching-report-to-notification/
 - title: Mobile center
   section:
     - title: Overview
@@ -285,8 +306,6 @@ toc:
       path: /docs/paas/user-guide/bulk-provisioning/
     - title: Scheduler
       path: /docs/paas/user-guide/scheduler/
-    - title: Reporting
-      path: /docs/paas/user-guide/reporting/
     - title: CSV/XLS data export
       path: /docs/paas/user-guide/csv-xls-data-export/
     - title: File storage

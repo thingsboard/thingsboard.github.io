@@ -15,6 +15,7 @@ Cookies allow us to:
 
  * Understand the behavior of visitors, measure the number of visits and page views using [Google Analytics](https://analytics.google.com/);
  * Improve load-balancing and page load speed using [Cloudflare](https://cloudflare.com).
+ * Enhance user experience and provide personalized features through [YourGPT](https://yourgpt.ai/), which uses cookies to analyze user interactions and improve service functionality.
 
 These cookies are enabled by default on your web browser. 
 However, you may configure your browser to alert you each time cookies are created. It is also possible to prevent their installation. 
@@ -35,6 +36,10 @@ See Google Analytics privacy [page](https://policies.google.com/technologies/coo
 ### Cloudflare
 
 See Cloudflare documentation [page](https://developers.cloudflare.com/fundamentals/get-started/reference/cloudflare-cookies/) for more details.
+
+### YourGPT
+
+See YourGPT privacy [page](https://yourgpt.ai/privacy) for more details.
 
 ### Other Cookies
 

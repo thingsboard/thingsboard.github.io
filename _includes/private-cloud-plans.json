@@ -8,14 +8,14 @@
   "plans": [
     {
       "name": "Launch",
-      "price": 1199,
+      "price": 1499,
       "includedDevices": 5000,
-      "maxMsgPerMin": 20000,
-      "storage": 200,
+      "maxMsgPerMin": 50000,
+      "storage": 512,
       "extraDevicePrice": 0.1,
-      "database": "SQL",
-      "replicationFactor": 2,
-      "bytesPerDataPoint": 150
+      "database": "NoSQL",
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 30
     },
     {
       "name": "Growth",

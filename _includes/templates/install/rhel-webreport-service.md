@@ -1,5 +1,5 @@
 
-Download installation package for the [Reports Server](/docs/user-guide/reporting/#reports-server) component:
+Download installation package for the [Reports Server](/docs/pe/user-guide/reporting/#reports-server) component:
 
 ```bash
 wget https://dist.thingsboard.io/tb-web-report-{{ site.release.pe_ver }}.rpm
