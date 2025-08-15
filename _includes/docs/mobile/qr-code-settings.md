@@ -1,94 +1,56 @@
+{% if docsPrefix == 'pe/' %}
+{% assign peDocsPrefix = "pe/" %}
+{% else %}
+{% assign peDocsPrefix = "" %}
+{% endif %}
 * TOC
 {:toc}
 
-This guide provides instructions on how to configure a custom mobile application to launch directly from a [QR code scan](/docs/{{peDocsPrefix}}user-guide/ui/mobile-qr-code/) using your phone's camera. 
-Whether you're looking to customize an existing app with your own source code from {% if docsPrefix == "pe/" %}[GitHub](https://github.com/thingsboard/flutter_thingsboard_pe_app){:target="_blank"}{% endif %}{% if docsPrefix == null %}[GitHub](https://github.com/thingsboard/flutter_thingsboard_app){:target="_blank"}{% endif %} or direct it to a custom host, this document will walk you through the necessary steps.
+This guide provides instructions on how to configure a custom mobile application to launch directly from a [QR code scan](/docs/{{peDocsPrefix}}user-guide/ui/mobile-qr-code/) using your phone's camera.
 
-## Android app settings
+In application version 1.7.0+, we have made QR code settings configuration much easier through the platform interface.
 
-### Direct Android application to your own host
+## Platform Configuration
 
-To direct your custom application to your own host, you need to modify `AndroidManifest.xml` file:
+### iOS Application Setup
 
-- Open the Flutter project with VS Code or Android Studio;
-- Navigate to `android/app/src/main/AndroidManifest.xml` file;
-- Modify **AndroidManifest.xml**. You have to update `android:host=` with your host:
+Navigate to **Mobile Center → Applications → Your custom iOS app** in the ThingsBoard platform.
 
-```text
-<!-- App Links -->
-<intent-filter android:autoVerify="true">
-    <action android:name="android.intent.action.VIEW" />
-    <category android:name="android.intent.category.DEFAULT" />
-    <category android:name="android.intent.category.BROWSABLE" />
-    <data
-        android:scheme="https"
-        android:host="thingsboard.cloud"
-        android:pathPrefix="/api/noauth/qr" />
-</intent-filter>
-```
+#### App Site Association ID
 
-### Mobile app QR code widget settings for Android
+Provide the **App Site Association ID** in your app store info settings:
 
-To launch your custom mobile application when scanning a QR code, you need to specify the "[App package name](#app-package-name)" and "[SHA256 certificate fingerprints](#sha256-certificate-fingerprints)" in the [ThingsBoard Mobile app QR code widget settings](/docs/{{peDocsPrefix}}user-guide/ui/mobile-qr-code/#configuring-qr-code-widget-on-home-page){:target="_blank"}.
+![App Site Association ID Configuration](/images/mobile/{{peDocsPrefix}}qr-code-settings-ios-store-info.png)
 
-#### App package name
+The App Site Association ID consists of two parts separated by a dot:
 
-Find the app package name **applicationId** in **build.gradle** file located at `android/app/build.gradle`:
+**1. App Store Team ID**
+- Get your Team ID from [Apple Developer Account](https://developer.apple.com/account)
+- Look for it in the "Membership details" block
 
-```text
-    defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "org.thingsboard.pe.app"
-    }
-```
+![Team ID Location](/images/mobile/qr-code-settings-team-id.png)
 
-#### SHA256 certificate fingerprints
+**2. App Bundle ID**
+- Must be the same as the Application package in your app settings
+- This is your app's unique identifier
 
-If your app distributed via Google Play you need to use SHA-256 certificate fingerprint located in your developer account under **Release> Setup > App Integrity> App Signing tab:**
+### Android Application Setup
 
-![image](https://img.thingsboard.io/mobile/sha256-fingerprint.png)
+Navigate to **Mobile Center → Applications → Your custom Android app** in the ThingsBoard platform.
 
-If you app distributed locally you need to use the sha256 key your apk signed with
+#### SHA-256 Fingerprint
 
-Read more in the guide "[Set up app links for Android](https://docs.flutter.dev/cookbook/navigation/set-up-app-links#sha256-fingerprint){:target="_blank"}", available in the official Firebase documentation.
+Provide the **SHA-256 fingerprint** of your app's signing key:
 
-## iOS app settings
+![SHA-256 Fingerprint Configuration](/images/mobile/{{peDocsPrefix}}qr-code-settings-sha256.png)
 
-### Direct iOS application to your own host
+**For Google Play distributed apps:**
+Use the SHA-256 certificate fingerprint located in your Google Play Console under:
+**Release → Setup → App Integrity → App Signing tab**
 
-To direct your iOS application to your own host, you need to modify `entitlements.xml` file:
+![Google Play SHA-256 Fingerprint](/images/mobile/sha256-fingerprint.png)
 
-- Open and modify `ios/YOUR_APP_NAME/YOUR_APP_NAME.entitlements.xml` file in your preferred IDE;
-- Modify **entitlements.xml** with your domain: You have to update `applinks` with your host:
+**For locally distributed apps:**
+Use the SHA-256 key that your APK is signed with.
 
-```text
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>aps-environment</key>
-	<string>development</string>
-	<key>com.apple.developer.associated-domains</key>
-	<array>
-		<string>applinks:thingsboard.cloud</string>
-	</array>
-</dict>
-</plist>
-```
-
-### Mobile app QR code widget settings for iOS
-
-To launch your custom iOS mobile application when scanning a QR code, you need to specify the "[App ID](#app-id)" in the [ThingsBoard Mobile app QR code widget settings](/docs/{{peDocsPrefix}}user-guide/ui/mobile-qr-code/#configuring-qr-code-widget-on-home-page){:target="_blank"}.
-
-#### App ID
-
-When you create your Xcode project from a template, the bundle ID ([CFBundleIdentifier](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleidentifier){:target="_blank"}) uniquely identifies your app throughout the system.
-This ID combines the organization ID and the app name that you enter in reverse-DNS format.
-For example, if you enter "Runner" as the app name for your organization, the bundle identifier will be `com.mycompany.app.Runner`.
-
-To find the bundle ID (**App ID**), you need to:
-- Choose the target;
-- Click the "Signing & Capabilities" pane;
-- Find the bundle identifier (App ID) in the "Signing" section.
-
-![image](https://img.thingsboard.io/mobile/qr-code-app-id.png)
+For more detailed information, read the guide "[Set up app links for Android](https://docs.flutter.dev/cookbook/navigation/set-up-app-links)" in the official Flutter documentation.

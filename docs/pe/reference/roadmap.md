@@ -7,9 +7,9 @@ description: ThingsBoard architecture
 
 The product roadmap listed below covers only main features and does not cover small improvements and bug fixes.         
 
-## v4.2
+## v4.3
 
-Everything in [CE 4.2](/docs/reference/roadmap/#v42).
+Everything in [CE 4.3](/docs/reference/roadmap/#v43).
 
 * AI-Powered IoT Solution Architect;
-* Report Service 2.0;
+* JS, TBEL, Dashboard and Rule Chain editor AI assistants;
