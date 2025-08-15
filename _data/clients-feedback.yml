@@ -311,6 +311,25 @@ telecom:
   label: Telecom
   icon: https://img.thingsboard.io/telecom-icon.svg
   feedback:
+    - author: Tamati Iro
+      position: VAS Manager
+      companyName: Vodafone
+      id: vodafone
+      link: https://www.vodafone.co.ck/
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
+      companyImageWidth: 120
+      companyImageHeight: 48
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: 'Working with the ThingsBoard Development team on our custom Mobile App has been an outstanding experience.'
+        1: 'The development process was smooth, well-structured, and highly professional. From the initial requirements gathering to the final delivery, the team demonstrated deep technical expertise and a clear understanding of our vision.'
+        2: 'The development team was highly responsive, transparent, and easy to work with, keeping us informed at every milestone. Any questions or concerns were addressed promptly, which gave us confidence that the project was always on track.'
+        3: 'The final mobile app exceeded our expectations. It’s user-friendly, visually appealing, and performs reliably in real-world use. The mobile app was also designed in a way where my team could maintain widgets in the app without depending on mobile app developers.'
+        4: 'This custom development has played a key role in advancing our business goals. The mobile app has allowed us to better serve our customers, and bring our IoT data to the palm of their hands in a seamless way. It’s already proving to be a valuable tool for both our team and our clients.'
+        5: 'The fixed-price, fast delivery approach worked perfectly for us. It gave us cost certainty, kept the project moving at a great pace, and ensured that we met our timelines without compromising on quality.'
+        6: 'We look forward to working with the ThingsBoard team again in the future and highly recommend their services to anyone looking for expert IoT and mobile development!'
     - author: David Týr
       position: Innovation Manager
       companyName: T-Mobile Czech Republic a.s.
@@ -356,6 +375,55 @@ industry40:
   label: Industry 4.0
   icon: https://img.thingsboard.io/industry40-icon.svg
   feedback:
+    - author: Andreas Kücker
+      position: Manager Digital
+      companyName: süc//dacor GmbH
+      id: dacor
+      link: https://dacor.de/
+      authorImage: https://img.thingsboard.io/customers/andreas-kucker.webp
+      companyImage: https://img.thingsboard.io/customers/dacor.svg
+      companyImageWidth: 170
+      companyImageHeight: 30
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing"
+        1: "A well-established medium-sized company specializes in the machining of profiles used in roof opening systems and sunroofs for the automotive sector. The machining process is semi-automated, but lacked the capability to transmit production data. Our client had a need for greater transparency in their manufacturing process, especially regarding downtime and productivity tracking."
+        2: 'To address this requirement, we implemented a solution that involves integrating a trigger within the machine’s program. This trigger, connected via cable, captures the power status of the milling motor and transmits this data to an IoT module. From there, we wirelessly transmit the data over LoRaWAN technology. The collected data is then processed and aggregated in our Thingsboard platform, allowing us to present it in an understandable dashboard format for production management and control purposes.'
+        3: "The aggregated data is presented in a digital twin format on a dashboard, which accurately reflects the layout of the manufacturing facility, including the various machines on the floor. Each machine displays the status of its milling motors, and some machines operate with two milling heads. Performance metrics, such as efficiency and the number of production cycles (representing the produced units), are indicated with color-coded values. Green values indicate good performance, orange suggests suboptimal performance, and red signals poor performance. This visual representation enables the plant manager to quickly identify machines that may require optimization or attention."
+    - author: Mario Garcia Torres
+      position: R&D Director
+      companyName: süc//dacor GmbH
+      id: dacor
+      link: https://poligiot.com/
+      companyImage: https://img.thingsboard.io/customers/poligiot.svg
+      companyImageWidth: 170
+      companyImageHeight: 30
+      noHeading: "true"
+      text:
+        0: "Working with the ThingsBoard team throughout this project has been a very positive and productive experience. From the beginning, the development process was well-structured and collaborative. The team supported me in migrating device communications, configuring message flows, and building a complete messaging system tailored to my needs."
+        1: "They also guided me through setting up critical components such as data history storage, the early warning system, and automated monthly reports. Each stage of the development was handled with great attention to detail, always ensuring that the solutions aligned with the system architecture and functional goals."
+        2: 'Communication has been clear, responsive, and solution-oriented. I always felt that I had a reliable partner on the other side, ready to face challenges with me, especially when integrating ThingsBoard’s services with third-party tools. Their willingness to adapt and help troubleshoot integration issues in real time made a huge difference.'
+        3: "The final result is a robust, scalable system that performs exactly as envisioned. I also appreciate their continued openness to collaborate on the next stages of the project."
+    - author: Tamati Iro
+      position: VAS Manager
+      companyName: Vodafone
+      id: vodafone
+      link: https://www.vodafone.co.ck/
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
+      companyImageWidth: 120
+      companyImageHeight: 48
+      collapse: "true"
+      collapseIndex: 4
+      text:
+        0: 'Working with the ThingsBoard Development team on our custom Mobile App has been an outstanding experience.'
+        1: 'The development process was smooth, well-structured, and highly professional. From the initial requirements gathering to the final delivery, the team demonstrated deep technical expertise and a clear understanding of our vision.'
+        2: 'The development team was highly responsive, transparent, and easy to work with, keeping us informed at every milestone. Any questions or concerns were addressed promptly, which gave us confidence that the project was always on track.'
+        3: 'The final mobile app exceeded our expectations. It’s user-friendly, visually appealing, and performs reliably in real-world use. The mobile app was also designed in a way where my team could maintain widgets in the app without depending on mobile app developers.'
+        4: 'This custom development has played a key role in advancing our business goals. The mobile app has allowed us to better serve our customers, and bring our IoT data to the palm of their hands in a seamless way. It’s already proving to be a valuable tool for both our team and our clients.'
+        5: 'The fixed-price, fast delivery approach worked perfectly for us. It gave us cost certainty, kept the project moving at a great pace, and ensured that we met our timelines without compromising on quality.'
+        6: 'We look forward to working with the ThingsBoard team again in the future and highly recommend their services to anyone looking for expert IoT and mobile development!'
     - author: Sudhir Ravindramohan
       position: Co-founder and CTO
       companyName: Utvyakta
@@ -440,20 +508,6 @@ industry40:
         0: "Exceptional experience working with ThingsBoard's unit"
         1: "We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess."
         2: 'Their careful estimation process significantly enhanced our understanding of the project scope, making planning and collaboration more effective. Additionally, their team attentively listened to our detailed requirements and skilfully transformed them into thoughtfully designed custom widgets. The development process was smooth, with regular updates and transparent communication.'
-    - author: Andreas Kücker
-      position: Manager Digital
-      companyName:  süc//dacor GmbH
-      id: dacor
-      link: https://dacor.de/
-      authorImage: https://img.thingsboard.io/customers/andreas-kucker.webp
-      companyImage: https://img.thingsboard.io/customers/dacor.svg
-      companyImageWidth: 170
-      companyImageHeight: 30
-      text:
-        0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing"
-        1: "A well-established medium-sized company specializes in the machining of profiles used in roof opening systems and sunroofs for the automotive sector. The machining process is semi-automated, but lacked the capability to transmit production data. Our client had a need for greater transparency in their manufacturing process, especially regarding downtime and productivity tracking."
-        2: 'To address this requirement, we implemented a solution that involves integrating a trigger within the machine’s program. This trigger, connected via cable, captures the power status of the milling motor and transmits this data to an IoT module. From there, we wirelessly transmit the data over LoRaWAN technology. The collected data is then processed and aggregated in our Thingsboard platform, allowing us to present it in an understandable dashboard format for production management and control purposes.'
-        3: "The aggregated data is presented in a digital twin format on a dashboard, which accurately reflects the layout of the manufacturing facility, including the various machines on the floor. Each machine displays the status of its milling motors, and some machines operate with two milling heads. Performance metrics, such as efficiency and the number of production cycles (representing the produced units), are indicated with color-coded values. Green values indicate good performance, orange suggests suboptimal performance, and red signals poor performance. This visual representation enables the plant manager to quickly identify machines that may require optimization or attention."
 warehouse-monitoring:
   label: Warehouse Monitoring
   icon: https://img.thingsboard.io/warehouse-monitoring-icon.svg

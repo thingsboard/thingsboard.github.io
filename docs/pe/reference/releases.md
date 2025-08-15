@@ -8,6 +8,38 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.2.0 (Aug 15, 2025) {#v42}
+
+Everything from [TB CE v4.2](https://github.com/thingsboard/thingsboard/releases/tag/v4.2) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Report service 2.0 with rich PDF and CSV capabilities;
+  * Secrets storage support for Version Control, SMS, Mail server, OAuth and AI model settings;
+  * Version control support and search improvements for scheduler events;
+  * Migrated tenant settings from attributes to admin settings table;
+
+* UI
+
+  * Added scheduler events pagination and search;
+  * Added support for version control of individual scheduler events;
+
+* Edge
+  
+  * Added support of Secrets Storage;
+
+**Bug fixes**
+
+  * Fixed web report generation for widgets with lazy-loaded content;
+  * Fixed Scheduler calendar event display;
+  * Fixed layout issues in TCP binary integration form;
+  * Fixed credentials validation for LORIOT and Particle integration;
+  * Fixed generated scheduler event config;
+  * Fixed OAuth 2 mail auth issues in cluster deployments;
+  * Fixed permission check for UI interactions in Profile and Notification settings;
+
 ## v4.1.0 (Jul 3, 2025) {#v41}
 
 Everything from [TB CE v4.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.1) with the following improvements and bug fixes.

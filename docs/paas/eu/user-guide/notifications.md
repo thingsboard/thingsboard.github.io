@@ -5,31 +5,33 @@ assignees:
 title: Notification center
 description: IoT alarm notifications
 
-notification-center-send-notification:
+notification-center-send-notification-1:
     0:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-1-pe.png
-        title: 'Click the "Send notification" button in the upper right corner of the "Notification center" page to open the new notification wizard;'
+        title: 'Click the "<b>Send notification</b>" button in the top-right corner to open the new notification wizard.'
     1:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-2-pe.png
-        title: 'Select recipients and one or more delivery methods. In this example, let&#39;s consider the Web delivery method;'
+        title: '<b>Specify recipients</b> and <b>at least one delivery method</b>.<br><i>In this example, we&#39;ll select the Web delivery method.</i>'
     2:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-3-pe.png
-        title: 'If necessary, use the scheduler. Click "Next";'
+        title: '<b>Optionally</b>:<br> - <b>Attach a report</b> (available only for <b>Email</b> and <b>Slack</b> delivery methods).<br> - <b>Schedule the notification</b> for a later time.<br> Click "<b>Next</b>".'
     3:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-4-pe.png
-        title: 'Enter subject and text of the message;'
+        title: 'At this step, <b>configure the subject and message content</b> for each selected delivery method.'
     4:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-5-pe.png
-        title: 'You can use the action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
+        title: 'For the <b>Web</b> delivery method, you can add an <b>action button</b> to the notification:<br> - Enter the <b>button text</b>.<br> - Select the <b>action type</b> ("<b>Open dashboard</b>" or "<b>Open URL link</b>").<br> - <b>Specify the URL link or the dashboard</b> that should open when the button is clicked. <br>You can also display the icon in the notification and set its color.<br> Then, click "<b>Next</b>";'
     5:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-6-pe.png
-        title: 'In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";'
-    6:
+        title: 'Review the <b>notification preview</b> and <b>recipient list</b>.<br> Click "<b>Send</b>".'
+
+notification-center-send-notification-2:
+    0:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-7-pe.png
-        title: 'The user received a new notification and can view it on the Notification center page or by clicking on the bell icon in the upper right corner of the screen;'
-    7:
+        title: 'The recipient will receive the notification in the ThingsBoard interface and can view it on the Notification center page or by clicking the bell icon in the top-right corner of the screen.'
+    1:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-send-notification-8-pe.png
-        title: 'By clicking on the "Open this dashboard" button in the message, the user will open the dashboard window.'
+        title: 'Clicking the "Open this dashboard" button in the notification will open the corresponding dashboard.'
 
 notification-center-inbox:
     0:

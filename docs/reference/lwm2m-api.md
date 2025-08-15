@@ -79,11 +79,8 @@ no-security-credentials:
         image: https://img.thingsboard.io/lwm2m/device-credentials-lwm2m-5-ce.png
         title: 'The device has been added.'
 
-wakaama-terminal:
+transport-log:
     0:
-        image: https://img.thingsboard.io/lwm2m/wakaama-terminal.png
-        title: 'Terminal window with Wakaama client.'
-    1:
         image: https://img.thingsboard.io/lwm2m/connect-the-device-1-ce.png
         title: 'You can view logs of communication under the "transportLog" event of the "Latest telemetry" tab.'
 

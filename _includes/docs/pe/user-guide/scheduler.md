@@ -137,7 +137,7 @@ Allows to schedule command ([RPC call](/docs/{{docsPrefix}}user-guide/rpc/#serve
 - **Method** - RPC call method.
 - **Params** - RPC call params in JSON representation.
 
-## Scheduler Widget
+## Scheduler widget
 
 ThingsBoard provides ability to manage scheduler events via **Scheduler events** or **Reports schedule** Widgets which is part of **Scheduling** Widgets Bundle.
 
@@ -155,7 +155,7 @@ This can be achieved by configuring list of **Custom event types** in **Advanced
 - **Display message type select** - whether to allow select message type in scheduler event configuration form.
 - **Display message metadata table** - whether to display metadata table in scheduler event configuration form.
 - **Configuration HTML template** - HTML code used to generate custom event configuration form used to edit event configuration object.
-      
+
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

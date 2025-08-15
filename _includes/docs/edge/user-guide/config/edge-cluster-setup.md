@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-{% assign sinceVersion = "4.0" %}
+{% assign sinceVersion = "4.0.1" %}
 {% include templates/edge/since-edge.md %}
 
 ### Overview
@@ -147,12 +147,13 @@ JAVA_OPTS="-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch"
 {% else %}
 * **CLOUD_RPC_HOST:** Use _demo.thingsboard.io_ if you connect **Edge** to the [ThingsBoard Demo](https://demo.thingsboard.io/login){: target="_blank"}, or an **IP address** of the machine with the **ThingsBoard Platform**.
 {% endif %}
-* **MONITORING_ENABLED:** To start cluster monitoring with [Grafana](https://grafana.com/){: target="_blank"} and/or [Prometheus](https://prometheus.io/){: target="_blank"} services, set the variable to _true_.
+* **MONITORING_ENABLED:** To start cluster monitoring with [Grafana](https://grafana.com/){: target="_blank"} and/or [Prometheus](https://prometheus.io/){: target="_blank"} services, set the variable to _true_. 
+
+  Learn how to **enable downlink messages monitoring** in this [article](/docs/{{docsPrefix}}user-guide/troubleshooting/#downlink-messages-from-cloud-to-edge){: target="_blank"}.
 
 {% capture monitoring %}
-Once deployed, you can reach **Prometheus** at [http://localhost:9090](http://localhost:9090){: target="_blank"} and **Grafana** at [http://localhost:3000](http://localhost:3000){: target="_blank"}
-
-By default:
+Once deployed, you can reach **Prometheus** at [http://localhost:9090](http://localhost:9090){: target="_blank"} and **Grafana** at [http://localhost:3000](http://localhost:3000){: target="_blank"}.
+<br>The default credentials for local installation are:
 * **Login:** admin 
 * **Password:** foobar
 {% endcapture %}

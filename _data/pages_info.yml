@@ -425,6 +425,9 @@
 "/docs/edge/reference/lwm2m-api/":
   url: "/docs/edge/reference/lwm2m-api/"
   redirect_from: []
+"/docs/edge/reference/mcp-server/":
+  url: "/docs/edge/reference/mcp-server/"
+  redirect_from: []
 "/docs/edge/reference/mqtt-api/":
   url: "/docs/edge/reference/mqtt-api/"
   redirect_from:
@@ -676,6 +679,9 @@
 "/docs/mobile/alarm-dashboard/":
   url: "/docs/mobile/alarm-dashboard/"
   redirect_from: []
+"/docs/mobile/app-icon-splash-screen/":
+  url: "/docs/mobile/app-icon-splash-screen/"
+  redirect_from: []
 "/docs/mobile/customization/":
   url: "/docs/mobile/customization/"
   redirect_from: []
@@ -694,14 +700,23 @@
 "/docs/mobile/":
   url: "/docs/mobile/"
   redirect_from: []
+"/docs/mobile/localization/":
+  url: "/docs/mobile/localization/"
+  redirect_from: []
 "/docs/mobile/mobile-actions/":
   url: "/docs/mobile/mobile-actions/"
   redirect_from: []
 "/docs/mobile/oauth2/":
   url: "/docs/mobile/oauth2/"
   redirect_from: []
+"/docs/mobile/qr-code-settings-before-v1.7/":
+  url: "/docs/mobile/qr-code-settings-before-v1.7/"
+  redirect_from: []
 "/docs/mobile/qr-code-settings/":
   url: "/docs/mobile/qr-code-settings/"
+  redirect_from: []
+"/docs/mobile/release-before-v1.7/":
+  url: "/docs/mobile/release-before-v1.7/"
   redirect_from: []
 "/docs/mobile/release/":
   url: "/docs/mobile/release/"
@@ -1628,6 +1643,9 @@
 "/docs/paas/eu/reference/lwm2m-api/":
   url: "/docs/paas/eu/reference/lwm2m-api/"
   redirect_from: []
+"/docs/paas/eu/reference/mcp-server/":
+  url: "/docs/paas/eu/reference/mcp-server/"
+  redirect_from: []
 "/docs/paas/eu/reference/mqtt-api/":
   url: "/docs/paas/eu/reference/mqtt-api/"
   redirect_from:
@@ -1654,6 +1672,9 @@
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/eu/reference/snmp-api"
+"/docs/paas/eu/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/paas/eu/samples/analytics/ai-predictive-maintenance/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/kafka-streams/":
   url: "/docs/paas/eu/samples/analytics/kafka-streams/"
   redirect_from: []
@@ -1936,10 +1957,21 @@
 "/docs/paas/eu/user-guide/rbac/":
   url: "/docs/paas/eu/user-guide/rbac/"
   redirect_from: []
-"/docs/paas/eu/user-guide/reporting/":
-  url: "/docs/paas/eu/user-guide/reporting/"
-  redirect_from:
-  - "/docs/user-guide/reporting/"
+"/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/paas/eu/user-guide/reporting/reporting-getting-started/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/paas/eu/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/scheduling-reports/":
+  url: "/docs/paas/eu/user-guide/reporting/scheduling-reports/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/subreport/":
+  url: "/docs/paas/eu/user-guide/reporting/subreport/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/resources/web-socket/":
   url: "/docs/paas/eu/user-guide/resources/web-socket/"
   redirect_from: []
@@ -2155,6 +2187,9 @@
 "/docs/paas/reference/lwm2m-api/":
   url: "/docs/paas/reference/lwm2m-api/"
   redirect_from: []
+"/docs/paas/reference/mcp-server/":
+  url: "/docs/paas/reference/mcp-server/"
+  redirect_from: []
 "/docs/paas/reference/mqtt-api/":
   url: "/docs/paas/reference/mqtt-api/"
   redirect_from:
@@ -2181,6 +2216,9 @@
   url: "/docs/paas/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/reference/snmp-api"
+"/docs/paas/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/paas/samples/analytics/ai-predictive-maintenance/"
+  redirect_from: []
 "/docs/paas/samples/analytics/kafka-streams/":
   url: "/docs/paas/samples/analytics/kafka-streams/"
   redirect_from: []
@@ -2464,10 +2502,21 @@
 "/docs/paas/user-guide/rbac/":
   url: "/docs/paas/user-guide/rbac/"
   redirect_from: []
-"/docs/paas/user-guide/reporting/":
-  url: "/docs/paas/user-guide/reporting/"
-  redirect_from:
-  - "/docs/user-guide/reporting/"
+"/docs/paas/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/paas/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/paas/user-guide/reporting/reporting-getting-started/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/paas/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/scheduling-reports/":
+  url: "/docs/paas/user-guide/reporting/scheduling-reports/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/subreport/":
+  url: "/docs/paas/user-guide/reporting/subreport/"
+  redirect_from: []
 "/docs/paas/user-guide/resources/web-socket/":
   url: "/docs/paas/user-guide/resources/web-socket/"
   redirect_from: []
@@ -3044,6 +3093,9 @@
 "/docs/pe/edge/reference/lwm2m-api/":
   url: "/docs/pe/edge/reference/lwm2m-api/"
   redirect_from: []
+"/docs/pe/edge/reference/mcp-server/":
+  url: "/docs/pe/edge/reference/mcp-server/"
+  redirect_from: []
 "/docs/pe/edge/reference/mqtt-api/":
   url: "/docs/pe/edge/reference/mqtt-api/"
   redirect_from:
@@ -3163,6 +3215,9 @@
 "/docs/pe/mobile/alarm-dashboard/":
   url: "/docs/pe/mobile/alarm-dashboard/"
   redirect_from: []
+"/docs/pe/mobile/app-icon-splash-screen/":
+  url: "/docs/pe/mobile/app-icon-splash-screen/"
+  redirect_from: []
 "/docs/pe/mobile/customization/":
   url: "/docs/pe/mobile/customization/"
   redirect_from: []
@@ -3181,14 +3236,23 @@
 "/docs/pe/mobile/":
   url: "/docs/pe/mobile/"
   redirect_from: []
+"/docs/pe/mobile/localization/":
+  url: "/docs/pe/mobile/localization/"
+  redirect_from: []
 "/docs/pe/mobile/mobile-actions/":
   url: "/docs/pe/mobile/mobile-actions/"
   redirect_from: []
 "/docs/pe/mobile/oauth2/":
   url: "/docs/pe/mobile/oauth2/"
   redirect_from: []
+"/docs/pe/mobile/qr-code-settings-before-v1.7/":
+  url: "/docs/pe/mobile/qr-code-settings-before-v1.7/"
+  redirect_from: []
 "/docs/pe/mobile/qr-code-settings/":
   url: "/docs/pe/mobile/qr-code-settings/"
+  redirect_from: []
+"/docs/pe/mobile/release-before-v1.7/":
+  url: "/docs/pe/mobile/release-before-v1.7/"
   redirect_from: []
 "/docs/pe/mobile/release/":
   url: "/docs/pe/mobile/release/"
@@ -3227,6 +3291,9 @@
   redirect_from: []
 "/docs/pe/reference/lwm2m-api/":
   url: "/docs/pe/reference/lwm2m-api/"
+  redirect_from: []
+"/docs/pe/reference/mcp-server/":
+  url: "/docs/pe/reference/mcp-server/"
   redirect_from: []
 "/docs/pe/reference/monolithic/":
   url: "/docs/pe/reference/monolithic/"
@@ -3273,6 +3340,9 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/pe/samples/analytics/ai-predictive-maintenance/"
+  redirect_from: []
 "/docs/pe/samples/analytics/kafka-streams/":
   url: "/docs/pe/samples/analytics/kafka-streams/"
   redirect_from: []
@@ -3477,10 +3547,21 @@
   url: "/docs/pe/user-guide/rbac/"
   redirect_from:
   - "/docs/user-guide/rbac/"
-"/docs/pe/user-guide/reporting/":
-  url: "/docs/pe/user-guide/reporting/"
-  redirect_from:
-  - "/docs/user-guide/reporting/"
+"/docs/pe/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/pe/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/scheduling-reports/":
+  url: "/docs/pe/user-guide/reporting/scheduling-reports/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/subreport/":
+  url: "/docs/pe/user-guide/reporting/subreport/"
+  redirect_from: []
 "/docs/pe/user-guide/resources/web-socket/":
   url: "/docs/pe/user-guide/resources/web-socket/"
   redirect_from: []
@@ -3751,6 +3832,9 @@
 "/docs/reference/lwm2m-api/":
   url: "/docs/reference/lwm2m-api/"
   redirect_from: []
+"/docs/reference/mcp-server/":
+  url: "/docs/reference/mcp-server/"
+  redirect_from: []
 "/docs/reference/monolithic/":
   url: "/docs/reference/monolithic/"
   redirect_from: []
@@ -3855,6 +3939,9 @@
   redirect_from: []
 "/docs/samples/alarms/mail/":
   url: "/docs/samples/alarms/mail/"
+  redirect_from: []
+"/docs/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/samples/analytics/ai-predictive-maintenance/"
   redirect_from: []
 "/docs/samples/analytics/kafka-streams/":
   url: "/docs/samples/analytics/kafka-streams/"
@@ -4651,6 +4738,9 @@
   redirect_from: []
 "/docs/user-guide/install/pe/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/old-upgrade-instructions/"
+  redirect_from: []
+"/docs/user-guide/install/pe/report-service-config/":
+  url: "/docs/user-guide/install/pe/report-service-config/"
   redirect_from: []
 "/docs/user-guide/install/pe/rhel/":
   url: "/docs/user-guide/install/pe/rhel/"

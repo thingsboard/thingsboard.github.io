@@ -51,5 +51,7 @@ toc:
     path: /docs/user-guide/install/pe/vc-executor-config/
   - title: Integration executor parameters
     path: /docs/user-guide/install/pe/ie-executor-config/
+  - title: Report service parameters
+    path: /docs/user-guide/install/pe/report-service-config/
 - title: Upgrade instructions
   path: /docs/user-guide/install/pe/upgrade-instructions/

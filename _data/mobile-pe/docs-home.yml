@@ -21,9 +21,17 @@ toc:
         path: /docs/pe/mobile/oauth2/
       - title: White-labeling
         path: /docs/pe/mobile/white-labeling/
+      - title: App icon and splash screen
+        path: /docs/pe/mobile/app-icon-splash-screen/
       - title: Self-registration
         path: /docs/pe/mobile/self-registration/
-      - title: QR code settings
+      - title: QR code settings (Mobile app v1.7.x)
         path: /docs/pe/mobile/qr-code-settings/
-  - title: Publish your app
+      - title: QR code settings (Mobile app v1.6.x)
+        path: /docs/pe/mobile/qr-code-settings-before-v1.7/
+  - title: Add your own localization
+    path: /docs/pe/mobile/localization/
+  - title: Publish your app (Mobile app v1.6.x)
+    path: /docs/pe/mobile/release-before-v1.7/
+  - title: Publish your app (Mobile app v1.7.x)
     path: /docs/pe/mobile/release/
