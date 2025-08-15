@@ -6,6 +6,10 @@
 * TOC
 {:toc}
 
+{% capture pre_1_7_0_link %}
+Important Notice: Please use [this guide](/docs/{{peDocsPrefix}}mobile/release-before-v1.7/) for pre 1.7.x app publish instructions
+{% endcapture %} {% include templates/info-banner.md content=pre_1_7_0_link %}
+
 ## Configure the App
 
 Your app package name and app name will come preconfigured from your Mobile Center in the configuration file that you downloaded after app bundle creation in the Mobile Center.
