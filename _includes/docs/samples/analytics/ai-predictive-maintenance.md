@@ -154,6 +154,7 @@ curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetr
 
 **No alarm** case:
 
+{% if docsPrefix == null %}
 ```bash
 curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
@@ -202,6 +203,7 @@ curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetr
 
 **Bearing wear** detection:
 
+{% if docsPrefix == null %}
 ```bash
 curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
@@ -255,6 +257,8 @@ Sample AI output:
 ```
 
 **Misalignment** detection:
+
+{% if docsPrefix == null %}
 
 ```bash
 curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
