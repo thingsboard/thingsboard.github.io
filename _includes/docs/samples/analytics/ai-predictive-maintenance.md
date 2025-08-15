@@ -30,16 +30,19 @@ This document describes a ThingsBoard solution that turns raw device telemetry i
 - `anomaly` — short label (e.g., `"Bearing Wear"`)
 - `summary` — concise human-readable recommendation (e.g., `"Vibration has reached 7.4 mm/s and temperature is at 86°C accompanied by irregular acoustic patterns, indicating bearing wear. Recommend immediate bearing inspection and replacement to avoid catastrophic failure."`)
 
-### Calculated Field configuration
+### Calculated field configuration
 
 **Purpose:** Maintain a rolling window of the last N readings (default 100, configurable) efficiently and forward them directly to the AI node.
 
 **Steps:**
 
-1. [Download](/docs/samples/analytics/resources/equipment_sensor.json) and import the **EquipmentSensor** device profile;
-2. [Download](/docs/samples/analytics/resources/rolling-window-records.json) and import the calculated field into the **EquipmentSensor** profile.
+<b>1. [Download](/docs/samples/analytics/resources/equipment_sensor.json){:target="_blank" download="equipment_sensor.json"}</b> and import the **EquipmentSensor** device profile into your ThingsBoard instance.
 
-TODO: image carousel;
+{% include images-gallery.html imageCollection="import-equipment-sensor-device-profile" %}
+
+<b>2. [Download](/docs/samples/analytics/resources/rolling-window-records.json){:target="_blank" download="rolling-window-records.json"}</b> and import the calculated field into the **EquipmentSensor** device profile.
+
+{% include images-gallery.html imageCollection="import-calculated-field-into-profile" %}
 
 **Key notes:**
 
@@ -62,13 +65,13 @@ return {
 
 **Steps:**
 
-1. [Download](/docs/samples/analytics/resources/equipment_health_analysis.json) and import the ** Equipment Health Analysis** rule chain.
-2. Edit the **AI request** node and create a new AI model.
-3. Enter your API key (this example uses `o4-mini` from OpenAI). Test connectivity before saving.
-4. Save both the AI node configuration and the rule chain.
-5. Update the **EquipmentSensor** profile to reference the new rule chain.
+- [Download](/docs/samples/analytics/resources/equipment_health_analysis.json){:target="_blank" download="equipment_health_analysis.json"} the <b>json file</b> with the "<b>Equipment Health Analysis</b>" rule chain configuration.
 
-TODO: image carousel;
+{% include images-gallery.html imageCollection="import-equipment-health-analysis-rule-chain" showListImageTitles="true" %}
+
+<b>5.</b> Update the <b>EquipmentSensor</b> profile to reference the "<b>Equipment Health Analysis</b>" rule chain.
+
+{% include images-gallery.html imageCollection="update-equipment-sensor-profile" %}
 
 Important details:
 
@@ -82,30 +85,165 @@ Important details:
 
 ### Testing
 
-1. Create a test device **Equipment Sensor 1** with the **EquipmentSensor** profile.
-2. Copy the “check connectivity” command from the device details. Example:
+<b>Step 1.</b> Create a test device **Equipment Sensor 1** with the **EquipmentSensor** profile.
+
+{% include images-gallery.html imageCollection="create-test-device-1" %}
+
+<b>Step 2.</b> Copy the "Check connectivity" command from the device details. 
+
+{% include images-gallery.html imageCollection="create-test-device-2" %}
+
+Your command will look something like this.:
+
+{% if docsPrefix == null %}
+
 ```bash
-curl -v -X POST http://localhost:8080/api/v1/hkDw8n5JnpuWqy5fcHCH/telemetry \
+curl -v -X POST http://demo.thingsboard.io/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
 --header Content-Type:application/json \
---data '{temperature:25}'
+--data "{temperature:25}"
 ```
-3. Modify and send test data.
+
+<b>* Where<b> `$THINGSBOARD_HOST_NAME` refers to `demo.thingsboard.io`, and `$YOUR_DEVICE_ACCESS_TOKEN` is `6sDE1ALqyJg0P6ezIODH`.
+
+{% include images-gallery.html imageCollection="check-connectivity-command-from-device" %}
+
+For your case, use the command with your own credentials. Replace `$THINGSBOARD_HOST_NAME` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
+
+```bash
+curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
+--header Content-Type:application/json \
+--data "{temperature:25}"
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "pe/" %}
+
+Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
+
+```bash
+curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
+--header Content-Type:application/json \
+--data "{temperature:25}"
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/" %}
+
+```bash
+curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data "{temperature:25}"
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+
+```bash
+curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data "{temperature:25}"
+```
+{:.copy-code}
+
+{% endif %}
+
+<b>Step 3.</b> Modify and send test data.
 
 **No alarm** case:
 
 ```bash
-curl -v -X POST http://localhost:8080/api/v1/hkDw8n5JnpuWqy5fcHCH/telemetry \
+curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
 --data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
 ```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "pe/" %}
+
+Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
+
+```bash
+curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/" %}
+
+```bash
+curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+
+```bash
+curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+
+{% include images-gallery.html imageCollection="send-test-data-no-alarm-case" %}
+
+
+
 
 **Bearing wear** detection:
 
 ```bash
-curl -v -X POST http://localhost:8080/api/v1/hkDw8n5JnpuWqy5fcHCH/telemetry \
+curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
 --data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
 ```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "pe/" %}
+
+Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
+
+```bash
+curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/" %}
+
+```bash
+curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+
+```bash
+curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+
+{% include images-gallery.html imageCollection="send-test-data-bearing-wear-detection" %}
 
 Sample AI output:
 
@@ -119,10 +257,47 @@ Sample AI output:
 **Misalignment** detection:
 
 ```bash
-curl -v -X POST http://localhost:8080/api/v1/hkDw8n5JnpuWqy5fcHCH/telemetry \
+curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
 --data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
 ```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "pe/" %}
+
+Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
+
+```bash
+curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/" %}
+
+```bash
+curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+
+```bash
+curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+--header Content-Type:application/json \
+--data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
+```
+{:.copy-code}
+
+{% endif %}
+
+{% include images-gallery.html imageCollection="send-test-data-misalignment-detection" %}
 
 Sample AI output:
 
