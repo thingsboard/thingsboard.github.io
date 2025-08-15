@@ -73,11 +73,9 @@
         document.querySelectorAll('.big-filter-section').forEach(section => {
             const searchInput = section.querySelector('#searchFilterInput');
             const toggleBtn = section.querySelector('.toggle-extra-btn');
-            const extraItems = section.querySelectorAll('.extra-filter');
             const filterItems = section.querySelectorAll('.big-filter-section-filter');
 
             let isExpanded = false;
-
             const originalExtraItems = Array.from(filterItems).filter((_, index) => index >= 10);
 
             if (toggleBtn) {
@@ -101,32 +99,22 @@
                     if (query.length > 0) {
                         if (toggleBtn) toggleBtn.style.display = 'none';
 
-                        filterItems.forEach(item => {
-                            item.classList.remove('extra-filter');
-                        });
+                        filterItems.forEach(item => item.classList.remove('extra-filter'));
 
                         filterItems.forEach(item => {
                             const label = item.querySelector('label');
                             const text = label ? label.textContent.toLowerCase() : '';
-                            if (text.includes(query)) {
-                                item.classList.remove('hidden');
-                            } else {
-                                item.classList.add('hidden');
-                            }
+                            item.classList.toggle('hidden', !text.includes(query));
                         });
                     } else {
                         if (toggleBtn) toggleBtn.style.display = 'inline-block';
 
                         filterItems.forEach((item, index) => {
                             item.classList.remove('hidden', 'shown');
-
                             if (index >= 10) {
                                 item.classList.add('extra-filter');
-                                if (!isExpanded) {
-                                    item.classList.add('hidden');
-                                } else {
-                                    item.classList.add('shown');
-                                }
+                                item.classList.toggle('hidden', !isExpanded);
+                                item.classList.toggle('shown', isExpanded);
                             }
                         });
                     }
@@ -178,26 +166,73 @@
             applySearch();
             applyFilter();
 
-            const selectedFilters = Array.from(checkboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value);
+            const selectedFilters = selectedOrder.filter(v =>
+                Array.from(checkboxes).some(cb => cb.checked && cb.value === v)
+            )
 
             crispsContainers.forEach(container => {
                 updateCrisps(selectedFilters, container);
             });
         }
+        const MAX_VISIBLE_CRISPS = 3;
 
-        function updateCrisps(selectedFilters, container) {
-            const clearAllBtn = container.querySelector('.search-crisps-clear-btn');
+        function setExpanded(container, expanded) {
+            container.setAttribute('data-expanded', expanded ? 'true' : 'false');
+        }
+        function isExpanded(container) {
+            return container.getAttribute('data-expanded') === 'true';
+        }
+
+        crispsContainers.forEach(c => setExpanded(c, false));
+
+        function clampCrisps(container, state) {
             const toggleBtn = container.querySelector('.search-crisps-toggle-btn');
             const toggleLabel = toggleBtn?.querySelector('.toggle-label');
             const toggleIcon = toggleBtn?.querySelector('i');
+            const crisps = Array.from(container.querySelectorAll('.crisp'));
+
+            if (crisps.length <= MAX_VISIBLE_CRISPS) {
+                if (toggleBtn) toggleBtn.style.display = 'none';
+                crisps.forEach(c => c.classList.remove('hidden'));
+                setExpanded(container, false);
+                return;
+            }
+
+            if (toggleBtn) toggleBtn.style.display = 'inline-block';
+
+            const apply = (collapse) => {
+                if (collapse) {
+                    crisps.forEach((c, idx) => c.classList.toggle('hidden', idx >= MAX_VISIBLE_CRISPS));
+                    if (toggleLabel) toggleLabel.textContent = 'Show more';
+                    if (toggleIcon) toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
+                    setExpanded(container, false);
+                    toggleBtn?.setAttribute('data-collapsed', 'true');
+                } else {
+                    crisps.forEach(c => c.classList.remove('hidden'));
+                    if (toggleLabel) toggleLabel.textContent = 'Hide';
+                    if (toggleIcon) toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
+                    setExpanded(container, true);
+                    toggleBtn?.setAttribute('data-collapsed', 'false');
+                }
+            };
+
+            apply(state !== 'expand');
+
+            if (toggleBtn) {
+                toggleBtn.onclick = () => {
+                    const willExpand = !isExpanded(container);
+                    apply(!willExpand ? true : false);
+                };
+            }
+        }
+
+        function updateCrisps(selectedFilters, container) {
+            const clearAllBtn = container.querySelector('.search-crisps-clear-btn') || null;
+            const toggleBtn = container.querySelector('.search-crisps-toggle-btn') || null;
+
+            const wasExpanded = isExpanded(container);
 
             container.querySelectorAll('.crisp').forEach(el => el.remove());
-
-            if (clearAllBtn) {
-                clearAllBtn.style.display = selectedFilters.length > 0 ? 'inline-block' : 'none';
-            }
 
             selectedFilters.forEach(filter => {
                 const crisp = document.createElement('span');
@@ -214,103 +249,58 @@
                     if (checkbox) {
                         checkbox.checked = false;
                         updateVisibility();
-                        if (typeof window.render === 'function') {
-                            window.render();
-                        }
+                        if (typeof window.render === 'function') window.render();
                     }
                 });
 
-                container.insertBefore(crisp, clearAllBtn);
+                container.appendChild(crisp);
             });
 
-            setTimeout(() => checkIfMultiline(container), 0);
-
             if (clearAllBtn) {
-                clearAllBtn.addEventListener('click', () => {
+                clearAllBtn.style.display = selectedFilters.length > 0 ? 'inline-block' : 'none';
+                clearAllBtn.onclick = () => {
                     checkboxes.forEach(cb => cb.checked = false);
+                    setExpanded(container, false);
                     updateVisibility();
-                });
+                };
+                container.appendChild(clearAllBtn);
             }
 
             if (toggleBtn) {
-                let isCollapsed = false;
-                toggleBtn.addEventListener('click', () => {
-                    if (isCollapsed) {
-                        expandCrisps(container, toggleLabel, toggleIcon);
-                    } else {
-                        collapseCrisps(container, toggleLabel, toggleIcon);
-                    }
-                    isCollapsed = !isCollapsed;
-                });
+                container.appendChild(toggleBtn);
             }
+
+            clampCrisps(container, wasExpanded ? 'expand' : 'collapse');
 
             const filterHeader = document.querySelector('.big-filter-header-title');
             let counter = document.querySelector('.big-filter-header-counter');
             const currentLength = selectedFilters.length;
 
-            if(currentLength > 0) {
-                if(!counter) {
+            if (currentLength > 0) {
+                if (!counter) {
                     counter = document.createElement('span');
                     counter.className = 'big-filter-header-counter';
                     filterHeader.appendChild(counter);
                 }
-
                 counter.textContent = `${currentLength}`;
-            } else {
-                if(counter) {
-                    counter.remove();
-                }
+            } else if (counter) {
+                counter.remove();
             }
         }
 
-        function checkIfMultiline(container) {
-            const crisps = container.querySelectorAll('.crisp');
-            const toggleBtn = container.querySelector('.search-crisps-toggle-btn');
-            const toggleLabel = toggleBtn?.querySelector('.toggle-label');
-            const toggleIcon = toggleBtn?.querySelector('i');
-
-            if (crisps.length <= 3) {
-                toggleBtn.style.display = 'none';
-                return;
-            }
-
-            const firstTop = crisps[0]?.offsetTop;
-            let multiline = false;
-            for (let i = 1; i < crisps.length; i++) {
-                if (crisps[i].offsetTop > firstTop) {
-                    multiline = true;
-                    break;
-                }
-            }
-
-            if (multiline) {
-                toggleBtn.style.display = 'inline-block';
-                toggleLabel.textContent = 'Hide';
-                toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
-            } else {
-                toggleBtn.style.display = 'none';
-            }
-        }
-
-        function collapseCrisps(container, toggleLabel, toggleIcon) {
-            const crisps = container.querySelectorAll('.crisp');
-            crisps.forEach((crisp, index) => {
-                crisp.classList.toggle('hidden', index >= 3);
-            });
-            toggleLabel.textContent = 'Show more';
-            toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
-        }
-
-        function expandCrisps(container, toggleLabel, toggleIcon) {
-            container.querySelectorAll('.crisp').forEach(crisp => {
-                crisp.classList.remove('hidden');
-            });
-            toggleLabel.textContent = 'Hide';
-            toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
-        }
+        let selectedOrder = [];
 
         checkboxes.forEach(cb => {
-            cb.addEventListener('change', updateVisibility);
+            cb.addEventListener('change', () => {
+                if (cb.checked) {
+                    if (!selectedOrder.includes(cb.value)) {
+                        selectedOrder.push(cb.value);
+                    }
+                } else {
+                    selectedOrder = selectedOrder.filter(v => v !== cb.value);
+                }
+                updateVisibility();
+            });
         });
 
         searchInput.addEventListener('input', updateVisibility);
