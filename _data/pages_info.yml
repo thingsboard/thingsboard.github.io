@@ -1672,6 +1672,9 @@
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/eu/reference/snmp-api"
+"/docs/paas/eu/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/paas/eu/samples/analytics/ai-predictive-maintenance/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/kafka-streams/":
   url: "/docs/paas/eu/samples/analytics/kafka-streams/"
   redirect_from: []
@@ -1954,10 +1957,21 @@
 "/docs/paas/eu/user-guide/rbac/":
   url: "/docs/paas/eu/user-guide/rbac/"
   redirect_from: []
-"/docs/paas/eu/user-guide/reporting/":
-  url: "/docs/paas/eu/user-guide/reporting/"
-  redirect_from:
-  - "/docs/user-guide/reporting/"
+"/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/paas/eu/user-guide/reporting/reporting-getting-started/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/paas/eu/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/scheduling-reports/":
+  url: "/docs/paas/eu/user-guide/reporting/scheduling-reports/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/subreport/":
+  url: "/docs/paas/eu/user-guide/reporting/subreport/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/resources/web-socket/":
   url: "/docs/paas/eu/user-guide/resources/web-socket/"
   redirect_from: []
@@ -2202,6 +2216,9 @@
   url: "/docs/paas/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/reference/snmp-api"
+"/docs/paas/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/paas/samples/analytics/ai-predictive-maintenance/"
+  redirect_from: []
 "/docs/paas/samples/analytics/kafka-streams/":
   url: "/docs/paas/samples/analytics/kafka-streams/"
   redirect_from: []
@@ -2485,10 +2502,21 @@
 "/docs/paas/user-guide/rbac/":
   url: "/docs/paas/user-guide/rbac/"
   redirect_from: []
-"/docs/paas/user-guide/reporting/":
-  url: "/docs/paas/user-guide/reporting/"
-  redirect_from:
-  - "/docs/user-guide/reporting/"
+"/docs/paas/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/paas/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/paas/user-guide/reporting/reporting-getting-started/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/paas/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/scheduling-reports/":
+  url: "/docs/paas/user-guide/reporting/scheduling-reports/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/subreport/":
+  url: "/docs/paas/user-guide/reporting/subreport/"
+  redirect_from: []
 "/docs/paas/user-guide/resources/web-socket/":
   url: "/docs/paas/user-guide/resources/web-socket/"
   redirect_from: []
@@ -3312,6 +3340,9 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/pe/samples/analytics/ai-predictive-maintenance/"
+  redirect_from: []
 "/docs/pe/samples/analytics/kafka-streams/":
   url: "/docs/pe/samples/analytics/kafka-streams/"
   redirect_from: []
@@ -3516,10 +3547,21 @@
   url: "/docs/pe/user-guide/rbac/"
   redirect_from:
   - "/docs/user-guide/rbac/"
-"/docs/pe/user-guide/reporting/":
-  url: "/docs/pe/user-guide/reporting/"
-  redirect_from:
-  - "/docs/user-guide/reporting/"
+"/docs/pe/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/pe/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/scheduling-reports/":
+  url: "/docs/pe/user-guide/reporting/scheduling-reports/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/subreport/":
+  url: "/docs/pe/user-guide/reporting/subreport/"
+  redirect_from: []
 "/docs/pe/user-guide/resources/web-socket/":
   url: "/docs/pe/user-guide/resources/web-socket/"
   redirect_from: []
@@ -3897,6 +3939,9 @@
   redirect_from: []
 "/docs/samples/alarms/mail/":
   url: "/docs/samples/alarms/mail/"
+  redirect_from: []
+"/docs/samples/analytics/ai-predictive-maintenance/":
+  url: "/docs/samples/analytics/ai-predictive-maintenance/"
   redirect_from: []
 "/docs/samples/analytics/kafka-streams/":
   url: "/docs/samples/analytics/kafka-streams/"
@@ -4693,6 +4738,9 @@
   redirect_from: []
 "/docs/user-guide/install/pe/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/old-upgrade-instructions/"
+  redirect_from: []
+"/docs/user-guide/install/pe/report-service-config/":
+  url: "/docs/user-guide/install/pe/report-service-config/"
   redirect_from: []
 "/docs/user-guide/install/pe/rhel/":
   url: "/docs/user-guide/install/pe/rhel/"

@@ -142,7 +142,6 @@ toc:
       path: /docs/user-guide/contribution/rule-node-development/
     - title: Templatization
       path: /docs/user-guide/templatization/
-      new: true
 - title: White labeling
   pe: true
   section:
@@ -224,11 +223,28 @@ toc:
   - title: Notifications and Alarms on your smartphone using Telegram Bot
     path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
 - title: Analytics
+  new: true
   section:
+  - title: IoT Anomaly Detection with AI
+    path: /docs/samples/analytics/ai-predictive-maintenance/
+    new: true
   - title: Trendz Analytics
     path: /docs/trendz/
   - title: Kafka Streams
     path: /docs/samples/analytics/kafka-streams/
+- title: Reporting
+  pe: true
+  section:
+    - title: Key concepts
+      path: /docs/pe/user-guide/reporting/reporting-key-concepts/
+    - title: Getting started with Reporting
+      path: /docs/pe/user-guide/reporting/reporting-getting-started/
+    - title: Subreport
+      path: /docs/pe/user-guide/reporting/subreport/
+    - title: Scheduling reports
+      path: /docs/pe/user-guide/reporting/scheduling-reports/
+    - title: Attaching report to notification
+      path: /docs/pe/user-guide/reporting/attaching-report-to-notification/
 - title: Mobile center
   section:
     - title: Overview
@@ -267,9 +283,6 @@ toc:
       pe: true
     - title: Scheduler
       path: /docs/pe/user-guide/scheduler/
-      pe: true
-    - title: Reporting
-      path: /docs/pe/user-guide/reporting/
       pe: true
     - title: CSV/XLS data export
       path: /docs/pe/user-guide/csv-xls-data-export/

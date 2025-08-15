@@ -367,13 +367,13 @@
 		<tr>
 			<td>redis.pool_config.testOnBorrow</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_BORROW</td>
-			<td>true</td>
+			<td>false</td>
 			<td> Enable/Disable PING command send when a connection is borrowed</td>
 		</tr>
 		<tr>
 			<td>redis.pool_config.testOnReturn</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_RETURN</td>
-			<td>true</td>
+			<td>false</td>
 			<td> The property is used to specify whether to test the connection before returning it to the connection pool.</td>
 		</tr>
 		<tr>
@@ -692,6 +692,15 @@
 			<td> Protocol used to communicate with brokers. Valid values are: PLAINTEXT, SSL, SASL_PLAINTEXT, SASL_SSL</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic-inline</td>
+			<td>TB_QUEUE_KAFKA_CONSUMER_PROPERTIES_PER_TOPIC_INLINE</td>
+			<td></td>
+			<td> If you override any default Kafka topic name using environment variables, you must also specify the related consumer properties
+ for the new topic in `consumer-properties-per-topic-inline`. Otherwise, the topic will not inherit its expected configuration (e.g., max.poll.records, timeouts, etc).
+ Format: "topic1:key1=value1,key2=value2;topic2:key=value"
+ Example: "tb_core_modified.notifications:max.poll.records=10;tb_edge_modified:max.poll.records=10,enable.auto.commit=true"</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.other-inline</td>
 			<td>TB_QUEUE_KAFKA_OTHER_PROPERTIES</td>
 			<td></td>
@@ -1003,8 +1012,8 @@
 	<tbody>
 		<tr>
 			<td>management.endpoints.web.exposure.include</td>
-			<td></td>
-			<td>'${METRICS_ENDPOINTS_EXPOSE:info}'</td>
+			<td>METRICS_ENDPOINTS_EXPOSE</td>
+			<td>info</td>
 			<td> Expose metrics endpoint (use value 'prometheus' to enable prometheus metrics).</td>
 		</tr>
 	</tbody>
