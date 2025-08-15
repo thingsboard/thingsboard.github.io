@@ -2,99 +2,154 @@
 layout: docwithnav-pe
 assignees:
 - stitenko
-title: Reporting overview
-description: Reporting overview guide
+title: Getting started with Reporting
+description: Getting started with Reporting
 
-create-new-report-template:
+reporting-getting-started-create-template:
     0:
-        image: /images/user-guide/reporting/create-new-report-template-1-pe.png
-        title: 'Go to the "<b>Reporting</b>" page from the left-hand menu — you&#39;ll land on the "<b>Templates</b>" tab by default. Click the "<b>+ Add report template</b>" button in the top-right corner and select “Create new report template”.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-create-template-1-pe.png
+        title: 'Go to the "<b>Reporting</b>" page from the left-hand menu — you&#39;ll land on the "<b>Templates</b>" tab by default. Click the "<b>+ Add report template</b>" button in the top-right corner and select "<b>Create new report template</b>".'
     1:
-        image: /images/user-guide/reporting/create-new-report-template-2-pe.png
-        title: 'Fill out the following fields: Enter a descriptive name for your template; Choose the desired output format: <b>PDF</b> or <b>CSV</b>; Select the type: <b>Report</b> or <b>Subreport</b>; Then, click "<b>Add</b>" to proceed. Once added, the Report Builder interface will open automatically.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-create-template-2-pe.png
+        title: 'In the popup, fill out the following:<br>- <b>Name</b> it "<b>Daily Device Alarm Report</b>".<br>- Choose <b>PDF</b> report <b>format</b>.<br>- Choose <b>Report</b> as the <b>template type</b>.<br>- Click "<b>Add</b>" to create the report template and open the <b>Report Builder</b> interface.'
 
-report-builder:
+reporting-getting-started-report-builder:
     0:
-        image: /images/user-guide/reporting/report-builder-1-pe.png
-        title: 'Here&#39;s how the report builder looks.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-report-builder-1-pe.png
+        title: 'The <b>Report Builder</b> allows you to add and configure components that define the structure and visual layout of your report. Components are added by dragging them from the components library into the content area.'
 
-report-example:
+reporting-getting-started-heading:
     0:
-        image: /images/user-guide/reporting/report-1-pe.png
-        title: 'Report template.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-1-pe.png
+        title: 'First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report component library</b> and drag it into the <b>header content area</b> of your report.'
     1:
-        image: /images/user-guide/reporting/report-2-pe.png
-        title: 'Generated report.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-2-pe.png
+        title: 'In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template: "<b>Daily Devices Alarm Report</b>". If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out. Once done, click "<b>Apply</b>" to save the component.'
 
-variables-and-dynamic-content-1:
+reporting-getting-started-rich-text:
     0:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-1-pe.png
-        title: 'In the Report Builder, add a component (for example, Rich text). In the editor, go to the "Data" tab and click "Add datasource".'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-rich-text-1-pe.png
+        title: 'Locate the <b>Rich text</b> component in the <b>component library</b> and drag it into the <b>content area</b>.'
     1:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-2-pe.png
-        title: 'Specify the target entity and the data keys you want to use in the report.'
-    2:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-3-pe.png
-        title: 'Next, in the component&#39;s text field, type the <b>$</b> symbol where you want to insert a variable&#39;s value. This will open a list of all available variables in the current context. <b>Select a variable</b> (for example, ${reportCreatedTime}), and its value will be inserted into the report during generation.'
-    3:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-4-pe.png
-        title: 'Continue entering text and adding variables as needed.'
-    4:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-5-pe.png
-        title: 'After entering your text, click the "Save" button in the top-right corner to apply the changes.'
-
-variables-and-dynamic-content-2:
-    0:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-6-pe.png
-        title: 'To verify the result, generate a test report sample by clicking the corresponding button in the top-right corner.'
-    1:
-        image: /images/user-guide/reporting/overview/variables-and-dynamic-content-7-pe.png
-        title: 'The test report.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-rich-text-2-pe.png
+        title: 'Enter the following text (or your preferred description) into the component, for example: "This report provides an overview of all customer devices, their latest telemetry, status, and a list of alarms triggered today.".<br> Once you&#39;ve added the text, click "<b>Apply</b>" to apply the changes.'
     
-reporting-new-entity-aliases-1:
+reporting-getting-started-entity-table:
     0:
-        image: /images/user-guide/reporting/reporting-new-entity-aliases-1-pe.png
-        title: '- <b>Originator entity</b> — the entity that either originated the message sent to the "Generate Report" rule node or triggered the creation of a notification.<br>- <b>Owner of originator entity</b> — the owner of the entity that originated the message sent to the "Generate Report" rule node, or the owner of the entity that triggered the creation of a notification.'
-
-reporting-new-entity-aliases-2:
-    0:
-        image: /images/user-guide/reporting/reporting-new-entity-aliases-2-pe.png
-        title: '- <b>Entity from master report</b> - the entity retrieved from the data source configured for the subreport component. If multiple entities are present, a separate subreport component will be generated for each entity.<br> - <b>Owner of entity from master report</b> - the owner of entity retrieved from the data source configured for the <b>subreport</b> component. If multiple entities are present, a separate <b>subreport</b> component will be generated for each entity.'
-
-create-subreport-template:
-    0:
-        image: /images/user-guide/reporting/create-subreport-template-1-pe.png
-        title: 'Fill out the following fields: Enter a descriptive name for your template; Choose the desired output format: <b>PDF</b> or <b>CSV</b>; Select the type - <b>Subreport</b>; Then, click "<b>Add</b>" to proceed. Once added, the subreport builder interface will open automatically.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-1-pe.png
+        title: 'Drag & Drop the "<b>Entity table</b>" component from the <b>component library</b> into the <b>content area</b>.'
     1:
-        image: /images/user-guide/reporting/create-subreport-template-2-pe.png
-        title: 'Just like regular reports, subreports can contain components such as tables, text blocks, images, dashboards, etc., and they fully support dynamic entity aliases and data filtering. However, subreports <b>are not scheduled or generated independently</b> — they are <b>included as part of a main report</b>.'
-
-import-report-template:
-    0:
-        image: /images/user-guide/reporting/import-report-template-1-pe.png
-        title: 'Replace the logo with your company&#39;s logo and provide an up-to-date address or any other relevant information. Apply all necessary filters and don&#39;t forget to save your changes.'
-    1:
-        image: /images/user-guide/reporting/import-report-template-2-pe.png
-        title: 'When you&#39;re done, don&#39;t forget to click Save to apply your changes.<br>Optionally, try generating a test report to make sure everything looks just right.'
-  
-create-schedule-report:
-    0:
-        image: /images/user-guide/reporting/schedule-report-1-pe.png
-        title: 'Go to the "Scheduling" page and click the "+ Scheduled report" button in the top-right corner.'
-    1:
-        image: /images/user-guide/reporting/schedule-report-2-pe.png
-        title: 'In the scheduling dialog: Specify the schedule name;<br> General configuration: Select a predefined template to use; Select the user whose credentials will be used for report generation; Choose the time zone for schedule execution; Specify the report recipients.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-2-pe.png
+        title: 'In the "<b>Datasource</b>" section, click "<b>Create new</b>" entity alias button.'
     2:
-        image: /images/user-guide/reporting/schedule-report-3-pe.png
-        title: 'Set up the schedule for generating and sending the report.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-3-pe.png
+        title: 'Create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.'
     3:
-        image: /images/user-guide/reporting/schedule-report-4-pe.png
-        title: 'The report generation schedule has been added.'
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-4-pe.png
+        title: '<b>Enable the table heading</b> and update the heading text. In the "<b>Columns</b> section click "<b>Add column</b>".'
+    4:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-5-pe.png
+        title: 'Specify the telemetry key "<b>temperature</b>" as the key for the new table column.'
+    5:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-6-pe.png
+        title: 'Similarly, add columns for the telemetry key "<b>humidity</b>" and the attribute "<b>active</b>", which will display the device status. Click "<b>Save</b>" component to apply your changes.'
 
-reports:
+reporting-getting-started-alarm-table:
     0:
-        image: /images/user-guide/reporting/reports-1-pe.png
-        title: ''
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-1-pe.png
+        title: 'Drag the "<b>Alarm table</b>" component into the content area of your report.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-2-pe.png
+        title: 'Set the entity alias "<b>All devices</b>" as the <b>alarm source</b>.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-3-pe.png
+        title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
+
+reporting-getting-started-save-report:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-save-report-1-pe.png
+        title: 'After you&#39;ve added and configured all the necessary components, update the report file name to the one you need. Click "<b>Save</b>" in the top-right corner to store your template configuration.'
+
+reporting-getting-started-generate-test-report:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-generate-test-report-1-pe.png
+        title: 'To make sure your template is set up correctly and data displays as expected, click "<b>Generate test report</b>" (located next to the "Save" button).'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-generate-test-report-2-pe.png
+        title: 'The system will generate a test report showing all your devices along with their alarms.'
+
+scheduler-event-customer-a-1:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-1-pe.png
+        title: 'Go to the "<b>Scheduling</b>" page and click the "<b>+ Scheduled report</b>" button in the top-right corner.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-2-pe.png
+        title: 'In the scheduling dialog: give your schedule a clear title, e.g., <b>Daily Devices Alarm Report for Customer A</b><br>. – Select the previously created <b>Daily Devices Alarm Report</b> template.<br> – Specify the user account on whose behalf the report will be generated: <b>janesmith@thingsboard.io</b> (Jane Smith — Customer A administrator).'
+
+scheduler-event-customer-a-2:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-3-pe.png
+        title: 'In the "<b>Recipients</b>" field, click <b>Create new</b> to create a new recipient group.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-4-pe.png
+        title: '- Enter a <b>name</b> for the notification recipient group.<br>- Select <b>Customer users</b> filter. <br>- Set <b>Customer</b> to <b>Customer A</b>.<br>- Click "<b>Add</b>".'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-5-pe.png
+        title: 'Select an existing notification template (defines how the report will be delivered) and edit it.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-6-pe.png
+        title: 'Add <b>Email</b> as a <b>delivery method</b> alongside <b>Web</b>. Click "<b>Next</b>".'
+    4:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-7-pe.png
+        title: 'Add the <b>subject and body text</b> for the <b>email notification</b> to which the <b>PDF report</b> will be attached. Click "<b>Save</b>".'
+
+scheduler-event-customer-a-3:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-8-pe.png
+        title: 'Set up the <b>schedule</b>: go to the "<b>Schedule</b>" tab, set the start date and time for the first run, enable the "<b>Repeat</b>" option, select Daily as the interval, and put the schedule&#39;s end date. Finally, click "<b>Create</b>" to save the scheduler event.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-9-pe.png
+        title: 'Now, every day at the scheduled time, all Customer A users will automatically receive a report with the latest information about their device alarms.'
+
+scheduler-event-customer-b:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-1-pe.png
+        title: 'Click "<b>+ Scheduled report</b>" in the top right corner of the "<b>Template</b>" page to create a new scheduler event.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-2-pe.png
+        title: '- Give your schedule a descriptive name, for example: <b>Daily Device Alarm Report for Customer B</b>.<br>- Select the same template used for Customer A — <b>Daily Device Alarm Report</b>.<br>- Set the user account to <b>emmajohnson@thingsboard.io</b> (Emma Johnson – Customer B Administrator). The report will be generated on behalf of this user, containing only the data accessible to Customer B.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-3-pe.png
+        title: 'In the "<b>Recipients</b>" field, click <b>Create new</b> to create a new recipient group.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-4-pe.png
+        title: '- Enter a <b>name</b> for the notification recipient group.<br>- Select <b>Customer users</b> filter. <br>- Set <b>Customer</b> to <b>Customer B</b>.<br>- Click "<b>Add</b>".'
+    4:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-5-pe.png
+        title: 'Use the existing <b>notification template</b> that is already configured to send messages via <b>Email</b> and <b>Web</b>.'
+    5:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-6-pe.png
+        title: 'Set the delivery schedule the same way as for Customer A:<br> - Specify the date and time of the first run.<br>- Enable the "<b>Repeat</b>" option, select <br>Daily</b> as the interval, and put the schedule&#39;s end date.<br> - Finally, click "<b>Create</b>" to save the scheduler event.'
+    6:
+        image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-b-7-pe.png
+        title: 'Now all Customer B users will also automatically receive a daily report at the scheduled time with the most up-to-date information on their device alarms.'
+
+sent-web-notification:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/sent-web-notification-1-pe.png
+        title: 'A notification about the generated report will appear in the ThingsBoard Web UI.'
+
+sent-email:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/sent-email-1-pe.png
+        title: 'An email will be sent to the user with the subject and message you configured in the notification template.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/sent-email-2-pe.png
+        title: 'The report will be attached to the email as a <b>PDF</b> file.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/sent-email-3-pe.png
+        title: 'The user can open and view the report in their browser or download it.'
+
 
 ---
 

@@ -8,7 +8,7 @@ description: Scheduling reports guide
 create-new-report-template:
     0:
         image: /images/user-guide/reporting/create-new-report-template-1-pe.png
-        title: 'Go to the "<b>Reporting</b>" page from the left-hand menu — you&#39;ll land on the "<b>Templates</b>" tab by default. Click the "<b>+ Add report template</b>" button in the top-right corner and select “Create new report template”.'
+        title: 'Go to the "<b>Reporting</b>" page from the left-hand menu — you&#39;ll land on the "<b>Templates</b>" tab by default. Click the "<b>+ Add report template</b>" button in the top-right corner and select "<b>Create new report template<b/>".'
     1:
         image: /images/user-guide/reporting/create-new-report-template-2-pe.png
         title: 'Fill out the following fields: Enter a descriptive name for your template; Choose the desired output format: <b>PDF</b> or <b>CSV</b>; Select the type: <b>Report</b> or <b>Subreport</b>; Then, click "<b>Add</b>" to proceed. Once added, the Report Builder interface will open automatically.'

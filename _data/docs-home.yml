@@ -231,16 +231,18 @@ toc:
   - title: Kafka Streams
     path: /docs/samples/analytics/kafka-streams/
 - title: Reporting
-  new: true
+  pe: true
   section:
-    - title: Getting started with reporting
+    - title: Key concepts
+      path: /docs/pe/user-guide/reporting/reporting-key-concepts/
+    - title: Getting started with Reporting
       path: /docs/pe/user-guide/reporting/reporting-getting-started/
     - title: Subreport
       path: /docs/pe/user-guide/reporting/subreport/
     - title: Scheduling reports
       path: /docs/pe/user-guide/reporting/scheduling-reports/
-    - title: Attaching reports to notifications
-      path: /docs/pe/user-guide/reporting/
+    - title: Attaching report to notification
+      path: /docs/pe/user-guide/reporting/attaching-report-to-notification/
 - title: Mobile center
   section:
     - title: Overview

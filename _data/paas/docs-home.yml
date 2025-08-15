@@ -252,14 +252,16 @@ toc:
 - title: Reporting
   new: true
   section:
-    - title: Getting started with reporting
+    - title: Key concepts
+      path: /docs/paas/user-guide/reporting/reporting-key-concepts/
+    - title: Getting started with Reporting
       path: /docs/paas/user-guide/reporting/reporting-getting-started/
     - title: Subreport
       path: /docs/paas/user-guide/reporting/subreport/
     - title: Scheduling reports
       path: /docs/paas/user-guide/reporting/scheduling-reports/
-    - title: Attaching reports to notifications
-      path: /docs/paas/user-guide/reporting/
+    - title: Attaching report to notification
+      path: /docs/paas/user-guide/reporting/attaching-report-to-notification/
 - title: Mobile center
   section:
     - title: Overview
