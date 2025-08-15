@@ -1,0 +1,166 @@
+.pagination-wrapper
+  padding: 0 32px
+  .pagination-container
+    padding-top: 20px
+    padding-bottom: 60px
+    text-align: center
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 20px
+
+    &.hidden
+      display: none
+
+    button#showMoreBtn
+      display: inline-block
+      padding: 8px 24px
+      background-color: #fff
+      color: #2A7DEC
+      width: 200px
+      border: solid 1px #2A7DEC
+      outline: none
+      margin-bottom: 56px
+      border-radius: 4px
+      font-size: 16px
+      line-height: 24px
+      font-weight: 500
+      transition-duration: .4s
+      transition-timing-function: cubic-bezier(.25, .8, .25, 1)
+      transition-property: background-color, filter
+      &.hidden
+        display: none
+      &:hover
+        filter: unset
+        z-index: 2
+        color: #0a58ca
+        background-color: #e9ecef
+      &:focus
+        filter: unset
+
+    .pagination-nav
+      display: flex
+      justify-content: center
+      align-items: center
+
+    .pagination-status
+      display: none
+      font-size: 16px
+      color: #6c757d
+
+    .pagination
+      display: flex
+      justify-content: center
+      padding-left: 0
+      list-style: none
+      gap: 8px
+
+    .page-item
+      &:first-child
+        position: relative
+        .page-link
+          padding: 18px
+          &:after
+            font-family: "Font Awesome 5 Free"
+            font-weight: 900
+            color: #000
+            content: "\f078"
+            position: absolute
+            right: 13px
+            top: 12px
+            transform: rotate(90deg)
+            font-size: 13px
+      &:last-child
+        position: relative
+        .page-link
+          padding: 18px
+          &:after
+            font-family: "Font Awesome 5 Free"
+            font-weight: 900
+            color: #000
+            content: "\f078"
+            position: absolute
+            right: 11px
+            top: 12px
+            transform: rotate(270deg)
+            font-size: 13px
+      &.active .page-link
+        z-index: 3
+        color: #fff
+        background-color: #2A7DEC
+        border-color: #2A7DEC
+
+      &.disabled .page-link
+        color: #E0E0E0
+        pointer-events: none
+        background-color: #fff
+        border-color: #dee2e6
+        &:after
+          color: #E0E0E0
+
+    .page-link
+      position: relative
+      display: inline-block
+      width: 40px
+      height: 40px
+      align-content: center
+      font-size: 16px
+      color: #000
+      text-decoration: none
+      background-color: #fff
+      border: 1px solid #dee2e6
+      transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out
+      border-radius: 6px
+      cursor: pointer
+
+      &:hover
+        z-index: 2
+        color: #0a58ca
+        background-color: #e9ecef
+        border-color: #dee2e6
+
+@media screen and (max-width: 959px)
+  .pagination-wrapper
+    .pagination-container
+      padding-bottom: 80px
+      position: relative
+
+      .pagination-nav
+        .pagination-status
+          display: block
+
+      .page-item
+        &:not(:first-child):not(:last-child)
+          display: none
+
+        &:first-child, &:last-child
+          position: absolute
+          bottom: 67px
+          z-index: 1000
+
+          .page-link
+            width: 40px
+            height: 40px
+
+            // Center the Font Awesome icon
+            display: flex
+            align-items: center
+            justify-content: center
+            padding: 0
+
+            &:after
+              position: static
+              transform: none
+              font-size: 16px
+              top: auto
+              right: auto
+
+        &:first-child
+          left: 0
+          .page-link:after
+            content: "\f053"
+
+        &:last-child
+          right: 0
+          .page-link:after
+            content: "\f054"
