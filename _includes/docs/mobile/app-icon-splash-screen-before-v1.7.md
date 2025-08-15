@@ -48,7 +48,7 @@ If you have configured push notifications (see [push notifications setup guide](
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="/images/mobile/asset_studio.png" title="Android asset studio flow" alt="Android asset studio flow">
+        <img width="" src="https://img.thingsboard.io/mobile/asset_studio.png" title="Android asset studio flow" alt="Android asset studio flow">
     </div>
 </div>
 
