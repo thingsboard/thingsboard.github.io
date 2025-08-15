@@ -517,7 +517,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.0</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.2</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 		<tr>
@@ -858,7 +858,7 @@
 			<td>cassandra.query.set_null_values_enabled</td>
 			<td>CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED</td>
 			<td>true</td>
-			<td> set all data type values except target to null for the same ts on save</td>
+			<td> When saving a value, set other data types to null (to avoid having multiple telemetry values with the same timestamp).</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.print_queries_freq</td>
@@ -944,6 +944,12 @@
 			<td>SQL_TS_VALUE_NO_XSS_VALIDATION</td>
 			<td>false</td>
 			<td> If true telemetry values will be checked for XSS vulnerability</td>
+		</tr>
+		<tr>
+			<td>sql.ts.callback_thread_pool_size</td>
+			<td>SQL_TS_CALLBACK_THREAD_POOL_SIZE</td>
+			<td>12</td>
+			<td> Thread pool size for telemetry callback executor</td>
 		</tr>
 		<tr>
 			<td>sql.ts_latest.batch_size</td>
@@ -1050,6 +1056,12 @@
 		<tr>
 			<td>sql.blob_entities.partition_size</td>
 			<td>SQL_BLOB_ENTITIES_PARTITION_SIZE_HOURS</td>
+			<td>168</td>
+			<td> Default value - 1 week</td>
+		</tr>
+		<tr>
+			<td>sql.reports.partition_size</td>
+			<td>SQL_REPORTS_PARTITION_SIZE_HOURS</td>
 			<td>168</td>
 			<td> Default value - 1 week</td>
 		</tr>
@@ -1235,6 +1247,24 @@
 			<td> Default value - 1 day</td>
 		</tr>
 		<tr>
+			<td>sql.ttl.reports.enabled</td>
+			<td>SQL_TTL_REPORTS_ENABLED</td>
+			<td>false</td>
+			<td> The parameter to specify whether to use TTL (Time To Live) for reports</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.reports.ttl</td>
+			<td>SQL_TTL_REPORTS_SECS</td>
+			<td>0</td>
+			<td> Disabled by default.</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.reports.checking_interval_ms</td>
+			<td>SQL_TTL_REPORTS_CHECKING_INTERVAL_MS</td>
+			<td>86400000</td>
+			<td> Default value - 1 day</td>
+		</tr>
+		<tr>
 			<td>sql.ttl.notifications.enabled</td>
 			<td>SQL_TTL_NOTIFICATIONS_ENABLED</td>
 			<td>true</td>
@@ -1402,6 +1432,24 @@
 			<td>ACTORS_RULE_EXTERNAL_CALL_THREAD_POOL_SIZE</td>
 			<td>50</td>
 			<td> Specify thread pool size for external call service</td>
+		</tr>
+		<tr>
+			<td>actors.rule.ai-requests-thread-pool.pool-name</td>
+			<td>ACTORS_RULE_AI_REQUESTS_THREAD_POOL_NAME</td>
+			<td>ai-requests</td>
+			<td> The base name for threads</td>
+		</tr>
+		<tr>
+			<td>actors.rule.ai-requests-thread-pool.pool-size</td>
+			<td>ACTORS_RULE_AI_REQUESTS_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> The maximum number of concurrent HTTP requests</td>
+		</tr>
+		<tr>
+			<td>actors.rule.ai-requests-thread-pool.termination-timeout-seconds</td>
+			<td>ACTORS_RULE_AI_REQUESTS_THREAD_POOL_TERMINATION_TIMEOUT_SECONDS</td>
+			<td>60</td>
+			<td> The maximum time in seconds to wait for active tasks to complete during graceful shutdown</td>
 		</tr>
 		<tr>
 			<td>actors.rule.chain.error_persist_frequency</td>
@@ -1667,16 +1715,28 @@
 	</thead>
 	<tbody>
 		<tr>
-			<td>reports.server.endpointUrl</td>
+			<td>reports.web_report.base_url</td>
 			<td>REPORTS_SERVER_ENDPOINT_URL</td>
 			<td>http://localhost:8383</td>
 			<td> Report server endpoint</td>
 		</tr>
 		<tr>
-			<td>reports.server.maxResponseSize</td>
+			<td>reports.web_report.max_response_size</td>
 			<td>MAX_RESPONSE_SIZE</td>
 			<td>52428800</td>
 			<td> 50MB</td>
+		</tr>
+		<tr>
+			<td>reports.generation_timeout_ms</td>
+			<td>REPORT_GENERATION_TIMEOUT_MS</td>
+			<td>120000</td>
+			<td> Timeout in milliseconds for generating report, 2 minutes by default</td>
+		</tr>
+		<tr>
+			<td>reports.test_report_pool_size</td>
+			<td>TEST_REPORT_GENERATION_POOL_SIZE</td>
+			<td>12</td>
+			<td> Thread pool size to execute test report generation</td>
 		</tr>
 		<tr>
 			<td>reports.rate_limits.enabled</td>
@@ -2167,6 +2227,42 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.trendzSettings.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_TRENDZ_SETTINGS_TTL</td>
+			<td>1440</td>
+			<td> Trendz settings cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.trendzSettings.maxSize</td>
+			<td>CACHE_SPECS_TRENDZ_SETTINGS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.aiModel.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_AI_MODEL_TTL</td>
+			<td>1440</td>
+			<td> AI model cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.aiModel.maxSize</td>
+			<td>CACHE_SPECS_AI_MODEL_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.mailOauth2State.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_MAIL_OAUTH2_STATE_TTL</td>
+			<td>2</td>
+			<td> mail oauth2 state parameter TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.mailOauth2State.maxSize</td>
+			<td>CACHE_SPECS_MAIL_OAUTH2_STATE_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.specs.downlink.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_DOWNLINK_TTL</td>
 			<td>1440</td>
@@ -2283,6 +2379,18 @@
 		<tr>
 			<td>cache.specs.entityGroups.maxSize</td>
 			<td>CACHE_SPECS_ENTITY_GROUPS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.specs.secrets.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_SECRETS_SETTINGS_TTL</td>
+			<td>1440</td>
+			<td> Secrets cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.secrets.maxSize</td>
+			<td>CACHE_SPECS_SECRETS_SETTINGS_MAX_SIZE</td>
 			<td>10000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
@@ -2549,13 +2657,13 @@
 		<tr>
 			<td>redis.pool_config.testOnBorrow</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_BORROW</td>
-			<td>true</td>
+			<td>false</td>
 			<td> Enable/Disable PING command sent when a connection is borrowed</td>
 		</tr>
 		<tr>
 			<td>redis.pool_config.testOnReturn</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_RETURN</td>
-			<td>true</td>
+			<td>false</td>
 			<td> The property is used to specify whether to test the connection before returning it to the connection pool.</td>
 		</tr>
 		<tr>
@@ -2893,139 +3001,151 @@
 			<td>audit-log.logging-level.mask."device"</td>
 			<td>AUDIT_LOG_MASK_DEVICE</td>
 			<td>W</td>
-			<td> Device logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Device logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."asset"</td>
 			<td>AUDIT_LOG_MASK_ASSET</td>
 			<td>W</td>
-			<td> Asset logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Asset logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."dashboard"</td>
 			<td>AUDIT_LOG_MASK_DASHBOARD</td>
 			<td>W</td>
-			<td> Dashboard logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Dashboard logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."widget_type"</td>
 			<td>AUDIT_LOG_MASK_WIDGET_TYPE</td>
 			<td>W</td>
-			<td> Widget type logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Widget type logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."widgets_bundle"</td>
 			<td>AUDIT_LOG_MASK_WIDGETS_BUNDLE</td>
 			<td>W</td>
-			<td> Widget bundles logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Widget bundles logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."customer"</td>
 			<td>AUDIT_LOG_MASK_CUSTOMER</td>
 			<td>W</td>
-			<td> Customer logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Customer logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."user"</td>
 			<td>AUDIT_LOG_MASK_USER</td>
 			<td>W</td>
-			<td> User logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> User logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."rule_chain"</td>
 			<td>AUDIT_LOG_MASK_RULE_CHAIN</td>
 			<td>W</td>
-			<td> Rule chain logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Rule chain logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."alarm"</td>
 			<td>AUDIT_LOG_MASK_ALARM</td>
 			<td>W</td>
-			<td> Alarm logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Alarm logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."integration"</td>
 			<td>AUDIT_LOG_MASK_INTEGRATION</td>
 			<td>W</td>
-			<td> Integration logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Integration logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."converter"</td>
 			<td>AUDIT_LOG_MASK_CONVERTER</td>
 			<td>W</td>
-			<td> Converter logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Converter logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."entity_group"</td>
 			<td>AUDIT_LOG_MASK_ENTITY_GROUP</td>
 			<td>W</td>
-			<td> Entity Group logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Entity Group logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."scheduler_event"</td>
 			<td>AUDIT_LOG_MASK_SCHEDULER_EVENT</td>
 			<td>W</td>
-			<td> Scheduler Event logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Scheduler Event logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."blob_entity"</td>
 			<td>AUDIT_LOG_MASK_BLOB_ENTITY</td>
 			<td>W</td>
-			<td> Blob entity logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Blob entity logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."entity_view"</td>
 			<td>AUDIT_LOG_MASK_ENTITY_VIEW</td>
 			<td>W</td>
-			<td> Entity view logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Entity view logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."device_profile"</td>
 			<td>AUDIT_LOG_MASK_DEVICE_PROFILE</td>
 			<td>W</td>
-			<td> Device profile logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Device profile logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."asset_profile"</td>
 			<td>AUDIT_LOG_MASK_ASSET_PROFILE</td>
 			<td>W</td>
-			<td> Asset profile logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Asset profile logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."edge"</td>
 			<td>AUDIT_LOG_MASK_EDGE</td>
 			<td>W</td>
-			<td> Edge logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Edge logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."tb_resource"</td>
 			<td>AUDIT_LOG_MASK_RESOURCE</td>
 			<td>W</td>
-			<td> TB resource logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> TB resource logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."ota_package"</td>
 			<td>AUDIT_LOG_MASK_OTA_PACKAGE</td>
 			<td>W</td>
-			<td> Ota package logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Ota package logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."calculated_field"</td>
 			<td>AUDIT_LOG_MASK_CALCULATED_FIELD</td>
 			<td>W</td>
-			<td> Calculated field logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
+			<td> Calculated field logging levels.</td>
+		</tr>
+		<tr>
+			<td>audit-log.logging-level.mask."ai_model"</td>
+			<td>AUDIT_LOG_MASK_AI_MODEL</td>
+			<td>W</td>
+			<td> AI model logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."role"</td>
 			<td>AUDIT_LOG_MASK_ROLE</td>
 			<td>W</td>
-			<td> Roles logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Roles logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.logging-level.mask."group_permission"</td>
 			<td>AUDIT_LOG_MASK_GROUP_PERMISSION</td>
 			<td>W</td>
-			<td> Group permission logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
+			<td> Group permission logging levels.</td>
+		</tr>
+		<tr>
+			<td>audit-log.logging-level.mask."report_template"</td>
+			<td>AUDIT_LOG_MASK_REPORT_TEMPLATE</td>
+			<td>W</td>
+			<td> Report template logging levels.</td>
 		</tr>
 		<tr>
 			<td>audit-log.sink.type</td>
@@ -3125,6 +3245,12 @@
 			<td> Millisecond value defining time-to-live for device state telemetry data (e.g. 'active', 'lastActivityTime').
  Used only when state.persistToTelemetry is set to 'true' and Cassandra is used for timeseries data.
  0 means time-to-live mechanism is disabled.</td>
+		</tr>
+		<tr>
+			<td>state.initFetchPackSize</td>
+			<td>TB_DEVICE_STATE_INIT_FETCH_PACK_SIZE</td>
+			<td>50000</td>
+			<td> Number of device records to fetch per batch when initializing device activity states</td>
 		</tr>
 		<tr>
 			<td>state.rule.node.deviceState.rateLimit</td>
@@ -4503,6 +4629,24 @@
 			<td>false</td>
 			<td> Persist state of edge (active, last connect, last disconnect) into timeseries or attributes tables. 'false' means to store edge state into attributes table</td>
 		</tr>
+		<tr>
+			<td>edges.stats.enabled</td>
+			<td>EDGES_STATS_ENABLED</td>
+			<td>true</td>
+			<td> Enable or disable reporting of edge communication stats (true or false)</td>
+		</tr>
+		<tr>
+			<td>edges.stats.ttl</td>
+			<td>EDGES_STATS_TTL</td>
+			<td>30</td>
+			<td> Time-to-live in days for stored edge communication stats in timeseries</td>
+		</tr>
+		<tr>
+			<td>edges.stats.report-interval-millis</td>
+			<td>EDGES_STATS_REPORT_INTERVAL_MS</td>
+			<td>600000</td>
+			<td> How often to report edge communication stats in milliseconds</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -4930,6 +5074,28 @@
 			<td> Max poll records for edqs.state topic</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tasks.key</td>
+			<td></td>
+			<td>max.poll.records</td>
+			<td> Key-value properties for Kafka consumer for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic.tasks.key.value</td>
+			<td>TB_QUEUE_KAFKA_TASKS_MAX_POLL_RECORDS</td>
+			<td>1</td>
+			<td> Max poll records for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.consumer-properties-per-topic-inline</td>
+			<td>TB_QUEUE_KAFKA_CONSUMER_PROPERTIES_PER_TOPIC_INLINE</td>
+			<td></td>
+			<td> If you override any default Kafka topic name using environment variables, you must also specify the related consumer properties
+ for the new topic in `consumer-properties-per-topic-inline`. Otherwise, the topic will not inherit its expected configuration (e.g., max.poll.records, timeouts, etc).
+ Each entry sets a single property for a specific topic. To define multiple properties for a topic, repeat the topic key.
+ Format: "topic1:key=value;topic1:key=value;topic2:key=value"
+ Example: tb_core_updated:max.poll.records=10;tb_core_updated:bootstrap.servers=kafka1:9092,kafka2:9092;tb_edge_updated:auto.offset.reset=latest</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.other-inline</td>
 			<td>TB_QUEUE_KAFKA_OTHER_PROPERTIES</td>
 			<td></td>
@@ -4962,7 +5128,7 @@
 		<tr>
 			<td>queue.kafka.topic-properties.js-executor</td>
 			<td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
+			<td>retention.ms:86400000;segment.bytes:52428800;retention.bytes:104857600;partitions:30;min.insync.replicas:1</td>
 			<td> Kafka properties for JS Executor topics</td>
 		</tr>
 		<tr>
@@ -5036,6 +5202,12 @@
 			<td>TB_QUEUE_KAFKA_EDQS_STATE_TOPIC_PROPERTIES</td>
 			<td>retention.ms:-1;segment.bytes:52428800;retention.bytes:-1;partitions:1;min.insync.replicas:1;cleanup.policy:compact</td>
 			<td> Kafka properties for EDQS state topic (infinite retention, compaction)</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topic-properties.tasks</td>
+			<td>TB_QUEUE_KAFKA_TASKS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:104857600;partitions:1;min.insync.replicas:1</td>
+			<td> Kafka properties for tasks topics</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -5274,6 +5446,12 @@
 			<td> Whether to auto-enable EDQS API (if queue.edqs.api.supported is true) when sync of data to Kafka is finished</td>
 		</tr>
 		<tr>
+			<td>queue.edqs.readiness_check_interval</td>
+			<td>TB_EDQS_READINESS_CHECK_INTERVAL_MS</td>
+			<td>60000</td>
+			<td> Interval in milliseconds to check for ready EDQS servers</td>
+		</tr>
+		<tr>
 			<td>queue.edqs.mode</td>
 			<td>TB_EDQS_MODE</td>
 			<td>local</td>
@@ -5338,6 +5516,18 @@
 			<td>TB_EDQS_MAX_REQUEST_TIMEOUT</td>
 			<td>20000</td>
 			<td> Maximum timeout for requests to EDQS</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.request_executor_size</td>
+			<td>TB_EDQS_REQUEST_EXECUTOR_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for EDQS requests executor</td>
+		</tr>
+		<tr>
+			<td>queue.edqs.versions_cache_ttl</td>
+			<td>TB_EDQS_VERSIONS_CACHE_TTL_MINUTES</td>
+			<td>60</td>
+			<td> Time to live for EDQS versions cache in minutes. Must be bigger than the time taken for the sync process.</td>
 		</tr>
 		<tr>
 			<td>queue.edqs.string_compression_length_threshold</td>
@@ -5544,6 +5734,18 @@
 			<td> The fetch size specifies how many rows will be fetched from the database per request for per-tenant fetching</td>
 		</tr>
 		<tr>
+			<td>queue.calculated_fields.telemetry_fetch_pack_size</td>
+			<td>TB_QUEUE_CF_TELEMETRY_FETCH_PACK_SIZE</td>
+			<td>2000</td>
+			<td> The fetch size specifies how many rows will be fetched from the database per request for telemetry fetching</td>
+		</tr>
+		<tr>
+			<td>queue.calculated_fields.reprocessing_timeout</td>
+			<td>TB_QUEUE_CF_REPROCESSING_TIMEOUT_MS</td>
+			<td>300000</td>
+			<td> Timeout for CF reprocessing in milliseconds, default is 5 minutes</td>
+		</tr>
+		<tr>
 			<td>queue.transport.notifications_topic</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_transport.notifications</td>
@@ -5701,6 +5903,67 @@
 			<td>TB_QUEUE_INTEGRATION_EXECUTOR_RESPONSE_POLL_INTERVAL_MS</td>
 			<td>25</td>
 			<td> Interval in milliseconds to poll api response from integration executor microservices</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.poll_interval</td>
+			<td>TB_QUEUE_TASKS_POLL_INTERVAL_MS</td>
+			<td>500</td>
+			<td> Poll interval in milliseconds for tasks topics</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitions</td>
+			<td>TB_QUEUE_TASKS_PARTITIONS</td>
+			<td>12</td>
+			<td> Partitions count for tasks queues</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitions_per_type</td>
+			<td>TB_QUEUE_TASKS_PARTITIONS_PER_TYPE</td>
+			<td></td>
+			<td> Custom partitions count for tasks queues per type. Format: 'TYPE1:24;TYPE2:36', e.g. 'CF_REPROCESSING:24;TENANT_EXPORT:6'</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.partitioning_strategy</td>
+			<td>TB_QUEUE_TASKS_PARTITIONING_STRATEGY</td>
+			<td>tenant</td>
+			<td> Tasks partitioning strategy: 'tenant' or 'entity'. By default, using 'tenant' - tasks of a specific tenant are processed in the same partition.
+ In a single-tenant environment, use 'entity' strategy to distribute the tasks among multiple partitions.</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.stats.topic</td>
+			<td>TB_QUEUE_TASKS_STATS_TOPIC</td>
+			<td>jobs.stats</td>
+			<td> Name for the tasks stats topic</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.stats.poll_interval</td>
+			<td>TB_QUEUE_TASKS_STATS_POLL_INTERVAL_MS</td>
+			<td>500</td>
+			<td> Poll interval in milliseconds for tasks stats topic</td>
+		</tr>
+		<tr>
+			<td>queue.tasks.stats.processing_interval</td>
+			<td>TB_QUEUE_TASKS_STATS_PROCESSING_INTERVAL_MS</td>
+			<td>1000</td>
+			<td> Interval in milliseconds to process job stats</td>
+		</tr>
+		<tr>
+			<td>queue.report.mode</td>
+			<td>TB_REPORT_SERVICE_MODE</td>
+			<td>local</td>
+			<td> Report service mode: 'local' or 'remote' (with tb-report microservice)</td>
+		</tr>
+		<tr>
+			<td>queue.report.notifications_topic</td>
+			<td>TB_QUEUE_REPORT_NOTIFICATIONS_TOPIC</td>
+			<td>tb_report.notifications</td>
+			<td> TB Report notifications topic name</td>
+		</tr>
+		<tr>
+			<td>queue.report.poll_interval</td>
+			<td>TB_QUEUE_REPORT_POLL_INTERVAL_MS</td>
+			<td>125</td>
+			<td> Poll interval in milliseconds for TB Report queues</td>
 		</tr>
 	</tbody>
 </table>
@@ -5937,6 +6200,29 @@
 			<td>TB_MOBILE_APP_APP_STORE_LINK</td>
 			<td>https://apps.apple.com/ua/app/thingsboard-cloud/id6499209395</td>
 			<td> Link to App Store for Thingsboard Live mobile application</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.max_attempts</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_MAX_ATTEMPTS</td>
+			<td>3</td>
+			<td> Maximum number of retransmission attempts allowed.
+ If the attempt count exceeds this value, retransmissions will stop and the pending message will be dropped.</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.initial_delay_millis</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_INITIAL_DELAY_MILLIS</td>
+			<td>5000</td>
+			<td> Base delay (in milliseconds) before the first retransmission attempt, measured from the moment the message is sent.
+ Subsequent delays are calculated using exponential backoff.
+ This base delay is also used as the reference value for applying jitter.</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.jitter_factor</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_JITTER_FACTOR</td>
+			<td>0.15</td>
+			<td> Jitter factor applied to the calculated retransmission delay.
+ The actual delay is randomized within a range defined by multiplying the base delay by a factor between (1 - jitter_factor) and (1 + jitter_factor).
+ For example, a jitter_factor of 0.15 means the actual delay may vary by up to ±15% of the base delay.</td>
 		</tr>
 	</tbody>
 </table>
