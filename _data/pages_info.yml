@@ -679,6 +679,9 @@
 "/docs/mobile/alarm-dashboard/":
   url: "/docs/mobile/alarm-dashboard/"
   redirect_from: []
+"/docs/mobile/app-icon-splash-screen-before-v1.7/":
+  url: "/docs/mobile/app-icon-splash-screen-before-v1.7/"
+  redirect_from: []
 "/docs/mobile/app-icon-splash-screen/":
   url: "/docs/mobile/app-icon-splash-screen/"
   redirect_from: []
@@ -3214,6 +3217,9 @@
   redirect_from: []
 "/docs/pe/mobile/alarm-dashboard/":
   url: "/docs/pe/mobile/alarm-dashboard/"
+  redirect_from: []
+"/docs/pe/mobile/app-icon-splash-screen-before-v1.7/":
+  url: "/docs/pe/mobile/app-icon-splash-screen-before-v1.7/"
   redirect_from: []
 "/docs/pe/mobile/app-icon-splash-screen/":
   url: "/docs/pe/mobile/app-icon-splash-screen/"
