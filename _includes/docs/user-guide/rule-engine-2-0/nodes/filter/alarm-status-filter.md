@@ -1,56 +1,54 @@
 # alarm status filter {#check-alarm-status}
 
-## Summary
-
 Parses the incoming payload as a ThingsBoard alarm, fetches the latest alarm by ID, and compares its current status to a configured set of statuses. 
 If the fetched status matches, the message is routed via `True`; otherwise via `False`. Parsing errors, missing alarm ID, or a non-existent alarm result in `Failure`.
 
-## Incoming message format
+## Preconditions
 
 Generally, the incoming message data should be a JSON alarm object:
 ```json
 {
-    "id": {
-        "entityType": "ALARM",
-        "id": "bfb13620-7737-400b-9c89-d569a0835de6"
-    },
-    "createdTime": 1755173119647,
-    "tenantId": {
-        "entityType": "TENANT",
-        "id": "888e6780-78f5-11f0-8e01-57f51829cedc"
-    },
-    "customerId": null,
-    "type": "Overheating",
-    "originator": {
-        "entityType": "DEVICE",
-        "id": "b3e86d40-78f5-11f0-8e01-57f51829cedc"
-    },
-    "severity": "CRITICAL",
-    "acknowledged": false,
-    "cleared": false,
-    "assigneeId": null,
-    "startTs": 1755173119647,
-    "endTs": 1755173119647,
-    "ackTs": 0,
-    "clearTs": 0,
-    "assignTs": 0,
-    "propagate": false,
-    "propagateToOwner": false,
-    "propagateToOwnerHierarchy": false,
-    "propagateToTenant": false,
-    "propagateRelationTypes": [],
-    "originatorName": "device",
-    "originatorLabel": "device",
-    "assignee": null,
-    "name": "Overheating",
-    "status": "ACTIVE_UNACK",
-    "details": {
-        "summary": "The temperature has persistently exceeded 85 °C for at least 10 minutes, while vibration (3.8–4.1 mm/s) and acoustic deviation (9–10.5%) remain normal. Immediate attention is required to prevent possible thermal damage."
-    }
+  "id": {
+    "entityType": "ALARM",
+    "id": "bfb13620-7737-400b-9c89-d569a0835de6"
+  },
+  "createdTime": 1755173119647,
+  "tenantId": {
+    "entityType": "TENANT",
+    "id": "888e6780-78f5-11f0-8e01-57f51829cedc"
+  },
+  "customerId": null,
+  "type": "Overheating",
+  "originator": {
+    "entityType": "DEVICE",
+    "id": "b3e86d40-78f5-11f0-8e01-57f51829cedc"
+  },
+  "severity": "CRITICAL",
+  "acknowledged": false,
+  "cleared": false,
+  "assigneeId": null,
+  "startTs": 1755173119647,
+  "endTs": 1755173119647,
+  "ackTs": 0,
+  "clearTs": 0,
+  "assignTs": 0,
+  "propagate": false,
+  "propagateToOwner": false,
+  "propagateToOwnerHierarchy": false,
+  "propagateToTenant": false,
+  "propagateRelationTypes": [],
+  "originatorName": "device",
+  "originatorLabel": "device",
+  "assignee": null,
+  "name": "Overheating",
+  "status": "ACTIVE_UNACK",
+  "details": {
+    "summary": "The temperature has persistently exceeded 85 °C for at least 10 minutes, while vibration (3.8–4.1 mm/s) and acoustic deviation (9–10.5%) remain normal. Immediate attention is required to prevent possible thermal damage."
+  }
 }
 ```
 
-However, the following object is sufficient, because only the id field is used:
+However, the following object is sufficient, because only the `id` field is used:
 ```json
 {
     "id": {
@@ -60,11 +58,9 @@ However, the following object is sufficient, because only the id field is used:
 }
 ```
 
-There are no restrictions on any other incoming message fields.
-
 ## Configuration
 
-### Field description
+### Field descriptions
 
 * **Alarm status** - required. A set of statuses: if the fetched alarm’s status matches any of them, the node routes the message via the `True` connection; otherwise, via the `False` connection. Default values: *Active Acknowledged* and *Active Unacknowledged*.
 
@@ -78,34 +74,34 @@ Available statuses:
 
 ```json
 {
-    "$schema": "https://json-schema.org/2020-12/schema",
-    "title": "TbCheckAlarmStatusNodeConfig",
-    "type": "object",
-    "additionalProperties": false,
-    "required": [
-        "alarmStatusList"
-    ],
-    "properties": {
-        "alarmStatusList": {
-            "type": "array",
-            "description": "Non-empty set of unique alarm statuses to check.",
-            "minItems": 1,
-            "uniqueItems": true,
-            "items": {
-                "type": "string",
-                "enum": [
-                    "ACTIVE_UNACK",
-                    "ACTIVE_ACK",
-                    "CLEARED_UNACK",
-                    "CLEARED_ACK"
-                ]
-            },
-            "default": [
-                "ACTIVE_ACK",
-                "ACTIVE_UNACK"
-            ]
-        }
+  "$schema": "https://json-schema.org/2020-12/schema",
+  "title": "TbCheckAlarmStatusNodeConfig",
+  "type": "object",
+  "required": [
+    "alarmStatusList"
+  ],
+  "properties": {
+    "alarmStatusList": {
+      "type": "array",
+      "description": "Non-empty set of unique alarm statuses to check.",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "ACTIVE_UNACK",
+          "ACTIVE_ACK",
+          "CLEARED_UNACK",
+          "CLEARED_ACK"
+        ]
+      },
+      "default": [
+        "ACTIVE_ACK",
+        "ACTIVE_UNACK"
+      ]
     }
+  },
+  "additionalProperties": false
 }
 ```
 
@@ -134,7 +130,7 @@ Available statuses:
 
 ## Examples
 
-Only the **incoming message data** is shown below (other message fields have no effect on this node).
+The examples below show only the **relevant** fields of the incoming message. Unless explicitly stated otherwise, other message fields may have any values.
 
 ---
 
@@ -245,7 +241,7 @@ No alarm with this ID exists.
 
 **Explanation**
 
-Lookup by ID returned no alarm; the node fails (`No such alarm found.`).
+Lookup by ID returned no alarm; the node fails.
 
 ---
 
