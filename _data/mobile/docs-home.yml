@@ -19,7 +19,15 @@ toc:
         path: /docs/mobile/mobile-actions/
       - title: OAuth 2.0
         path: /docs/mobile/oauth2/
-      - title: QR code settings
+      - title: QR code settings (Mobile app v1.7.x)
         path: /docs/mobile/qr-code-settings/
-  - title: Publish your app
+      - title: QR code settings (Mobile app v1.6.x)
+        path: /docs/mobile/qr-code-settings-before-v1.7/
+      - title: App icon and splash screen
+        path: /docs/mobile/app-icon-splash-screen/
+  - title: Add your own localization
+    path: /docs/mobile/localization/
+  - title: Publish your app (Mobile app v1.6.x)
+    path: /docs/mobile/release-before-v1.7/
+  - title: Publish your app (Mobile app v1.7.x)
     path: /docs/mobile/release/
