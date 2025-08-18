@@ -1,0 +1,42 @@
+---
+layout: docwithnav
+title: AI-driven insights with ThingsBoard MCP server
+description: Exploring how the ThingsBoard MCP server empowers AI-driven insights for smarter IoT data management
+
+claude-thingsboard-tools:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/claude-thingsboard-tools.png
+    title: 'ThingsBoard MCP tools visible in Claude Desktop.'
+
+claude-get-devices-query:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/claude-get-devices-query.png
+    title: 'Claude Desktop query to get devices of type "Air Quality Sensor".'
+    
+thingsboard-devices-list:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/thingsboard-devices-list.png
+    title: 'ThingsBoard device list showing Air Quality Sensor devices.'
+    
+claude-generate-data-query:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/claude-generate-data-query.png
+    title: 'Claude Desktop query to generate AQI sensor sample data.'
+    
+thingsboard-generated-data:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/thingsboard-generated-data.png
+    title: 'ThingsBoard timeseries chart showing generated AQI sensor data.'
+    
+claude-analyze-anomaly:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/claude-analyze-anomaly.png
+    title: 'Claude Desktop query to analyze AQI sensor data for anomalies.'
+
+claude-analyze-result:
+  0:
+    image: /images/samples/analytics/mcp-server-ai-insights/claude-analyze-result.png
+    title: 'Claude Desktop table showing anomaly detection results.'
+---
+
+{% include /docs/samples/analytics/mcp-server-ai-insights.md %}
