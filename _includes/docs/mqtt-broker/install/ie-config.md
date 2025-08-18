@@ -1,6 +1,6 @@
 
 
-###  HTTP server parameters
+##  HTTP server parameters
 
 <table>
 	<thead>
@@ -25,7 +25,7 @@
 </table>
 
 
-###  Kafka parameters
+##  Kafka parameters
 
 <table>
 	<thead>
@@ -91,7 +91,7 @@
 		<tr>
 			<td>queue.kafka.default.consumer.session-timeout-ms</td>
 			<td>TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS</td>
-			<td>300000</td>
+			<td>10000</td>
 			<td> The timeout in milliseconds used to detect client failures when using Kafka's group management facility</td>
 		</tr>
 		<tr>
@@ -117,6 +117,15 @@
 			<td>TB_KAFKA_DEFAULT_CONSUMER_FETCH_MAX_BYTES</td>
 			<td>134217728</td>
 			<td> The maximum amount of data in bytes the server should return for a fetch request</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.default.consumer.heartbeat-interval-ms</td>
+			<td>TB_KAFKA_DEFAULT_CONSUMER_HEARTBEAT_INTERVAL_MS</td>
+			<td>3000</td>
+			<td> The expected time between heartbeats to the consumer coordinator when using Kafka’s group management facilities.
+ Heartbeats are used to ensure that the consumer’s session stays active and to facilitate rebalancing when new consumers join or leave the group.
+ The value must be set lower than TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS, but typically should be set no higher than 1/3 of that value.
+ It can be adjusted even lower to control the expected time for normal rebalances. Value in milliseconds. Default is 3 sec</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.default.producer.acks</td>
@@ -326,7 +335,7 @@
 </table>
 
 
-###  Service parameters
+##  Service parameters
 
 <table>
 	<thead>
@@ -365,7 +374,7 @@
 </table>
 
 
-###  Integration common parameters
+##  Integration common parameters
 
 <table>
 	<thead>
@@ -470,7 +479,7 @@
 </table>
 
 
-###  Management parameters
+##  Management parameters
 
 <table>
 	<thead>
@@ -507,7 +516,7 @@
 </table>
 
 
-###  Statistics parameters
+##  Statistics parameters
 
 <table>
 	<thead>
@@ -544,7 +553,7 @@
 </table>
 
 
-###  Event configuration parameters
+##  Event configuration parameters
 
 <table>
 	<thead>

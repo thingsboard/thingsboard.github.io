@@ -1,6 +1,6 @@
 
 
-###  HTTP server parameters
+##  HTTP server parameters
 
 <table>
 	<thead>
@@ -109,7 +109,7 @@
 </table>
 
 
-###  MQTT listeners parameters
+##  MQTT listeners parameters
 
 <table>
 	<thead>
@@ -517,7 +517,7 @@
 </table>
 
 
-###  Kafka parameters
+##  Kafka parameters
 
 <table>
 	<thead>
@@ -811,6 +811,24 @@
 			<td> Interval in milliseconds to poll messages from 'tbmq.ie.uplink.notifications' topics</td>
 		</tr>
 		<tr>
+			<td>queue.internode-notifications.poll-interval</td>
+			<td>TB_NODE_NOTIFICATION_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.sys.internode.notifications' topics</td>
+		</tr>
+		<tr>
+			<td>queue.blocked-client.poll-interval</td>
+			<td>TB_BLOCKED_CLIENT_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.client.blocked' topic</td>
+		</tr>
+		<tr>
+			<td>queue.blocked-client.acknowledge-wait-timeout-ms</td>
+			<td>TB_BLOCKED_CLIENT_ACK_WAIT_TIMEOUT_MS</td>
+			<td>500</td>
+			<td> Interval in milliseconds to wait for system messages to be delivered to 'tbmq.client.blocked' topic</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
@@ -831,7 +849,7 @@
 		<tr>
 			<td>queue.kafka.default.consumer.session-timeout-ms</td>
 			<td>TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS</td>
-			<td>300000</td>
+			<td>10000</td>
 			<td> The timeout in milliseconds used to detect client failures when using Kafka's group management facility</td>
 		</tr>
 		<tr>
@@ -857,6 +875,15 @@
 			<td>TB_KAFKA_DEFAULT_CONSUMER_FETCH_MAX_BYTES</td>
 			<td>134217728</td>
 			<td> The maximum amount of data in bytes the server should return for a fetch request</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.default.consumer.heartbeat-interval-ms</td>
+			<td>TB_KAFKA_DEFAULT_CONSUMER_HEARTBEAT_INTERVAL_MS</td>
+			<td>3000</td>
+			<td> The expected time between heartbeats to the consumer coordinator when using Kafka’s group management facilities.
+ Heartbeats are used to ensure that the consumer’s session stays active and to facilitate rebalancing when new consumers join or leave the group.
+ The value must be set lower than TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS, but typically should be set no higher than 1/3 of that value.
+ It can be adjusted even lower to control the expected time for normal rebalances. Value in milliseconds. Default is 3 sec</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.default.producer.acks</td>
@@ -975,7 +1002,7 @@
 		<tr>
 			<td>queue.kafka.application-persisted-msg.additional-consumer-config</td>
 			<td>TB_KAFKA_APP_PERSISTED_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
-			<td>max.poll.records:500</td>
+			<td>max.poll.records:200</td>
 			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.msg.app` topics</td>
 		</tr>
 		<tr>
@@ -1393,6 +1420,54 @@
 			<td> Additional Kafka producer configs separated by semicolon for `tbmq.msg.ie` topics</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.internode-notifications.topic-prefix</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_TOPIC_PREFIX</td>
+			<td>tbmq.sys.internode.notifications</td>
+			<td> Prefix for topics for sending system notifications to Broker nodes</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.internode-notifications.topic-properties</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.sys.internode.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.internode-notifications.additional-consumer-config</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.sys.internode.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.internode-notifications.additional-producer-config</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.sys.internode.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.topic</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_TOPIC</td>
+			<td>tbmq.client.blocked</td>
+			<td> Topic for blocked clients</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.topic-properties</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_TOPIC_PROPERTIES</td>
+			<td>segment.bytes:26214400;partitions:1;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.client.blocked` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.additional-consumer-config</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.client.blocked` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.additional-producer-config</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.client.blocked` topic</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.kafka-prefix</td>
 			<td>TB_KAFKA_PREFIX</td>
 			<td></td>
@@ -1402,7 +1477,7 @@
 </table>
 
 
-###  General service parameters
+##  General service parameters
 
 <table>
 	<thead>
@@ -1439,7 +1514,7 @@
 </table>
 
 
-###  Actor system parameters
+##  Actor system parameters
 
 <table>
 	<thead>
@@ -1524,7 +1599,7 @@
 </table>
 
 
-###  Platform integrations parameters
+##  Platform integrations parameters
 
 <table>
 	<thead>
@@ -1557,7 +1632,7 @@
 </table>
 
 
-###  Database time series parameters
+##  Database time series parameters
 
 <table>
 	<thead>
@@ -1576,7 +1651,7 @@
 </table>
 
 
-###  SQL configuration parameters
+##  SQL configuration parameters
 
 <table>
 	<thead>
@@ -1763,7 +1838,7 @@
 </table>
 
 
-###  Redis lettuce configuration parameters
+##  Redis lettuce configuration parameters
 
 <table>
 	<thead>
@@ -1828,7 +1903,7 @@
 </table>
 
 
-###  Redis jedis configuration parameters
+##  Redis jedis configuration parameters
 
 <table>
 	<thead>
@@ -1855,7 +1930,7 @@
 </table>
 
 
-###  SQL DAO configuration parameters
+##  SQL DAO configuration parameters
 
 <table>
 	<thead>
@@ -1932,7 +2007,7 @@
 </table>
 
 
-###  General Spring parameters
+##  General Spring parameters
 
 <table>
 	<thead>
@@ -1987,7 +2062,7 @@
 </table>
 
 
-###  Security parameters
+##  Security parameters
 
 <table>
 	<thead>
@@ -2000,7 +2075,7 @@
 			<td>security.mqtt.auth_strategy</td>
 			<td>SECURITY_MQTT_AUTH_STRATEGY</td>
 			<td>BOTH</td>
-			<td> BOTH or SINGLE - the former means the first attempt of client authentication will be by 'basic' provider
+			<td> DEPRECATED: BOTH or SINGLE - the former means the first attempt of client authentication will be by 'basic' provider
  and then by 'ssl' provider if 'basic' is not successful;
  the latter means only one attempt is done according to the listener communication chosen (see listener.tcp/listener.ssl)</td>
 		</tr>
@@ -2008,19 +2083,19 @@
 			<td>security.mqtt.basic.enabled</td>
 			<td>SECURITY_MQTT_BASIC_ENABLED</td>
 			<td>false</td>
-			<td> If enabled the server will try to authenticate client with clientId and/or username and/or password</td>
+			<td> DEPRECATED: If enabled the server will try to authenticate client with clientId and/or username and/or password</td>
 		</tr>
 		<tr>
 			<td>security.mqtt.ssl.enabled</td>
 			<td>SECURITY_MQTT_SSL_ENABLED</td>
 			<td>false</td>
-			<td> If enabled the server will try to authenticate client with client certificate chain</td>
+			<td> DEPRECATED: If enabled the server will try to authenticate client with client certificate chain</td>
 		</tr>
 		<tr>
 			<td>security.mqtt.ssl.skip_validity_check_for_client_cert</td>
 			<td>SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
 			<td>false</td>
-			<td> Skip certificate validity check for client certificates</td>
+			<td> DEPRECATED: Skip certificate validity check for client certificates</td>
 		</tr>
 		<tr>
 			<td>security.jwt.tokenExpirationTime</td>
@@ -2053,6 +2128,12 @@
 			<td> Enable/Disable basic security options</td>
 		</tr>
 		<tr>
+			<td>security.user_token_access_enabled</td>
+			<td>SECURITY_USER_TOKEN_ACCESS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable access to other Administrators JWT token by System Administrator</td>
+		</tr>
+		<tr>
 			<td>security.user_login_case_sensitive</td>
 			<td>SECURITY_USER_LOGIN_CASE_SENSITIVE</td>
 			<td>true</td>
@@ -2062,7 +2143,7 @@
 </table>
 
 
-###  MQTT parameters
+##  MQTT parameters
 
 <table>
 	<thead>
@@ -2445,7 +2526,7 @@
 			<td>mqtt.application-clients-limit</td>
 			<td>MQTT_APPLICATION_CLIENTS_LIMIT</td>
 			<td>0</td>
-			<td> Limit the total number of Application persistent clients. A setting of 0 means the limitation is disabled</td>
+			<td> Limit the total number of Application persistent clients and external system integrations. A setting of 0 means the limitation is disabled</td>
 		</tr>
 		<tr>
 			<td>mqtt.handler.all_msg_callback_threads</td>
@@ -2479,11 +2560,23 @@
  If not set the broker will not reply with response info to mqtt 5 clients that connect with "request response info" = 1.
  Set it to topic to be used for request-response feature, e.g. "example/"</td>
 		</tr>
+		<tr>
+			<td>mqtt.blocked-client.cleanup.period</td>
+			<td>BLOCKED_CLIENT_CLEANUP_PERIOD_MINUTES</td>
+			<td>5</td>
+			<td> The parameter to specify the period of execution cleanup task for expired blocked clients. Value set in minutes. Default value corresponds to five minutes</td>
+		</tr>
+		<tr>
+			<td>mqtt.blocked-client.cleanup.ttl</td>
+			<td>BLOCKED_CLIENT_CLEANUP_TTL_MINUTES</td>
+			<td>10080</td>
+			<td> Time to Live for expired blocked clients. After this time, the expired blocked client is removed completely. Value set in minutes. Default value corresponds to one week</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  Cache parameters
+##  Cache parameters
 
 <table>
 	<thead>
@@ -2544,7 +2637,7 @@
 </table>
 
 
-###  Redis configuration parameters
+##  Redis configuration parameters
 
 <table>
 	<thead>
@@ -2725,7 +2818,7 @@
 </table>
 
 
-###  Statistics parameters
+##  Statistics parameters
 
 <table>
 	<thead>
@@ -2768,7 +2861,7 @@
 </table>
 
 
-###  Historical data statistics parameters
+##  Historical data statistics parameters
 
 <table>
 	<thead>
@@ -2799,7 +2892,7 @@
 </table>
 
 
-###  Metrics management parameters
+##  Metrics management parameters
 
 <table>
 	<thead>
@@ -2836,7 +2929,7 @@
 </table>
 
 
-###  Spring CORS configuration
+##  Spring CORS configuration
 
 <table>
 	<thead>
@@ -2879,7 +2972,7 @@
 </table>
 
 
-###  Spring doc common parameters
+##  Spring doc common parameters
 
 <table>
 	<thead>
@@ -2904,7 +2997,7 @@
 </table>
 
 
-###  Swagger common parameters
+##  Swagger common parameters
 
 <table>
 	<thead>
@@ -2979,11 +3072,17 @@
 			<td></td>
 			<td> The version of the API doc to display. Default to the package version</td>
 		</tr>
+		<tr>
+			<td>swagger.group_name</td>
+			<td>SWAGGER_GROUP_NAME</td>
+			<td>TBMQ</td>
+			<td> The group name (definition) on the API doc UI page</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  Application info parameters
+##  Application info parameters
 
 <table>
 	<thead>
@@ -3002,7 +3101,7 @@
 </table>
 
 
-###  Analysis parameters
+##  Analysis parameters
 
 <table>
 	<thead>
