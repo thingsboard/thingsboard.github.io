@@ -36,7 +36,6 @@ Key configuration points for TBMQ in docker-compose file:
 - `tbmq-data:/data` - maps the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed;
 - `tbmq` - friendly local name of this machine;
 - `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure;
-- `SECURITY_MQTT_BASIC_ENABLED: "true"` - enables MQTT basic security. **Note**: by default security is disabled.
 
 **Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
 
