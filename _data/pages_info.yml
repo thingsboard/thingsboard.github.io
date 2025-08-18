@@ -475,9 +475,6 @@
 "/docs/edge/user-guide/edge-attributes/":
   url: "/docs/edge/user-guide/edge-attributes/"
   redirect_from: []
-"/docs/edge/user-guide/edge-cloud-telemetry-sync/":
-  url: "/docs/edge/user-guide/edge-cloud-telemetry-sync/"
-  redirect_from: []
 "/docs/edge/user-guide/entities-and-relations/":
   url: "/docs/edge/user-guide/entities-and-relations/"
   redirect_from: []
@@ -492,6 +489,9 @@
   redirect_from: []
 "/docs/edge/user-guide/ota-updates/":
   url: "/docs/edge/user-guide/ota-updates/"
+  redirect_from: []
+"/docs/edge/user-guide/telemetry-sync/":
+  url: "/docs/edge/user-guide/telemetry-sync/"
   redirect_from: []
 "/docs/edge/user-guide/troubleshooting/":
   url: "/docs/edge/user-guide/troubleshooting/"
@@ -3155,9 +3155,6 @@
 "/docs/pe/edge/user-guide/edge-attributes/":
   url: "/docs/pe/edge/user-guide/edge-attributes/"
   redirect_from: []
-"/docs/pe/edge/user-guide/edge-cloud-telemetry-sync/":
-  url: "/docs/pe/edge/user-guide/edge-cloud-telemetry-sync/"
-  redirect_from: []
 "/docs/pe/edge/user-guide/entities-and-relations/":
   url: "/docs/pe/edge/user-guide/entities-and-relations/"
   redirect_from: []
@@ -3205,6 +3202,9 @@
   redirect_from: []
 "/docs/pe/edge/user-guide/scheduler/":
   url: "/docs/pe/edge/user-guide/scheduler/"
+  redirect_from: []
+"/docs/pe/edge/user-guide/telemetry-sync/":
+  url: "/docs/pe/edge/user-guide/telemetry-sync/"
   redirect_from: []
 "/docs/pe/edge/user-guide/troubleshooting/":
   url: "/docs/pe/edge/user-guide/troubleshooting/"
