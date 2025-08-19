@@ -3,7 +3,7 @@ External nodes used are used to interact with external systems.
 * TOC
 {:toc}
 
-## AI request Node
+## AI request node
 
 <table style="width:250px;">
    <thead>
@@ -13,15 +13,20 @@ External nodes used are used to interact with external systems.
    </thead>
 </table> 
 
+![Node example image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-ai-request.png)
+
 Sends a request to a large language model (LLM) using configured system and user prompts, which can be dynamically populated with data from the incoming message. 
 Returns AI-generated content as a payload of the outgoing message.
 
-**AI model**
+**Selecting AI model**
 
 Select the specific Large Language Model (LLM) that will be used to process your request.
-The dropdown menu lists all AI models that have been pre-configured in your system. These models are managed centrally on the AI models page. 
-When you select a model from the list, all of its settings defined on that page will be applied when this node executes the request.
-For convenience, you can also add a new model directly from this interface by clicking the "Create new" button, which will open the model configuration form.
+
+The <b>Model</b> dropdown lists all AI models that have been previously configured on the [AI models](/docs/{{docsPrefix}}samples/analytics/ai-models/){:target="_blank"} page.
+When you select a model from this list, the node automatically applies all settings defined for that model, including provider credentials, model ID, and optional parameters.
+
+For convenience, you can also add a new AI model directly from this interface by clicking the Create new button.
+This action opens the AI model configuration form.
 
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-ai-request-ai-model-ce.png)

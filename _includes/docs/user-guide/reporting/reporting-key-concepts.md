@@ -67,16 +67,18 @@ Here&#39;s what the Report Builder looks like:
 Templates are made up of customizable components, each serving as a visual or functional block. These components determine what will appear in your final report and how it will be presented.
 
 <b><font size="3">Main component types:</font></b><br>
-- **Text blocks**. Add headings, paragraphs, or section descriptions to your report.
+- **Text blocks** - headings, paragraphs, or section descriptions to your report.
     - Supports plain or rich text.
     - Can include [dynamic placeholders](#variables--dynamic-content) for timestamps, entity names, user details, and more.
-- **Tables**. Display structured data from your ThingsBoard entities. Supported types include:
+- **Tables** - display structured data from your ThingsBoard entities. Supported types include:
     - **Entity table** – shows static attributes or the latest telemetry values for a list of entities.
     - **Time series table** – displays telemetry data over time, with options for time intervals, aggregation, and filtering.
     - **Alarm table** – lists the history of alarms triggered by entities, including severity, timestamp, and status. Useful for monitoring system activity, faults, or security events.
 
   Each table&#39;s style can be customized via the layout configuration tab — adjust column widths, font sizes, borders, and pagination.
-- **Logos & Images**. Add branding elements or visual illustrations, such as company logos, product images, or diagrams. You can control size, positioning, and alignment.
+- **Logos & Images** - branding elements or visual illustrations, such as company logos, product images, or diagrams. You can control size, positioning, and alignment.
+- [**Subreports**](/docs/{{docsPrefix}}user-guide/reporting/subreport/){:target="_blank"} - a modular component that can be embedded inside another report.
+- [**Dashboards**](/docs/{{docsPrefix}}user-guide/reporting/embedding-dashboards-widgets/){:target="_blank"} - screenshot of the specified dashboard into report as image. 
 
 <b><font size="3">Component configuration</font></b><br>
 

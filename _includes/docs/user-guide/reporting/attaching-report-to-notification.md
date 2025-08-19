@@ -4,7 +4,7 @@
 {% assign sinceVersion = "4.2" %}
 {% include templates/since.md %}
 
-{% assign feature = "Attaching report to notification" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "Reporting" %}{% include templates/pe-feature-banner.md %}
 
 In ThingsBoard, you can attach ready-made reports to system [notifications](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"} sent to users through available channels (only Web, Email or [Slack](/docs/{{docsPrefix}}user-guide/notifications/#slack){:target="_blank"}).
 This lets you pair an event notification with a full report that recipients can open and view or download instantly.

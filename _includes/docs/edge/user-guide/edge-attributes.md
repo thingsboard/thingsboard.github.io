@@ -120,6 +120,10 @@ Follow these steps to configure the alarm notifications:
 
 {% include images-gallery.html imageCollection="attributesInRuleChain" %}
 {% capture local-deployment %}
-Be sure to **Acknowledge** and **Clear** the notification when you receive it. You can do this either in the Cloud or on the Edge. If the unacknowledged alert exists, it will be updated rather than created.
+Be sure to **Acknowledge** and **Clear** the notification when you receive it. You can do this either in the Cloud or on the Edge. If the unacknowledged alarm exists, it will be updated rather than created.
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
+
+## Next Steps
+
+{% include templates/edge/guides-banner-edge.md %}
