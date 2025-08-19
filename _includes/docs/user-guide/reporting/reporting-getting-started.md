@@ -53,11 +53,16 @@ Components are added by dragging them from the components library into the conte
 
 {% include images-gallery.html imageCollection="reporting-getting-started-report-builder" %}
 
-### Step 2.1 “Heading” component
+### Step 2.1 "Heading" component
 
 First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report component library</b> and drag it into the <b>header content area</b> of your report.
 
-In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template: "<b>Daily Devices Alarm Report</b>".
+In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template:
+
+```
+Daily Devices Alarm Report
+```
+{:.copy-code}
 
 If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out.
 Once done, click "<b>Apply</b>" to save the component.
@@ -69,9 +74,12 @@ Once done, click "<b>Apply</b>" to save the component.
 Next, let&#39;s add the "<b>Rich text</b>" component, which will contain a brief explanation of the report&#39;s purpose.
 
 - Locate the <b>Rich text</b> component in the <b>component library</b> and drag it into the <b>content area</b>.
-- Enter the following text (or your preferred description) into the component:
-  *For example:*
-  > This report provides an overview of all customer devices, their latest telemetry, status, and a list of alarms triggered today.
+- Enter the following text (or your preferred description) into the component:   
+  For example:
+  ```
+  This report lists all devices currently deployed in your project, along with their alarms for the current day.
+  ```
+  {:.copy-code}  
 
 - Once you&#39;ve added the text, click "<b>Apply</b>" to apply the changes.
 
@@ -100,9 +108,14 @@ The final component we&#39;ll add is the Alarm Table, which will display a list 
 
 - Drag the "<b>Alarm table</b>" component into the content area of your report.
 - Set the entity alias "<b>All devices</b>" as the <b>alarm source</b>.
-- Scroll down and <b>enable the table heading</b>. Enter your heading text. *For example:*
-  > The following table lists all alarms for your devices from the last day. 
- - Adjust the <b>horizontal alignment</b> and reduce the <b>font size</b> if desired.
+- Scroll down and <b>enable the table heading</b>. Enter your heading text.   
+  For example:
+  ```
+  The following table lists all alarms for your devices from the last day.
+  ```
+  {:.copy-code}
+
+  - Adjust the <b>horizontal alignment</b> and reduce the <b>font size</b> if desired.
 - Keep the table columns as they are (no changes needed).
 - <b>Save</b> the component.
 
@@ -112,6 +125,8 @@ The final component we&#39;ll add is the Alarm Table, which will display a list 
 
 After you&#39;ve added and configured all the necessary components, update the report file name to the one you need.
 
+After you&#39;ve added and configured all the necessary components inside your report template, the last step is to update the report file name so that the generated file is easily identifiable.
+
 Click "<b>Save</b>" in the top-right corner to store your template configuration.
 
 {% include images-gallery.html imageCollection="reporting-getting-started-save-report" %}
@@ -120,6 +135,9 @@ To make sure your template is set up correctly and data displays as expected, cl
 The system will generate a test report showing all your devices along with their alarms.
 
 {% include images-gallery.html imageCollection="reporting-getting-started-generate-test-report" %}
+
+If needed, you can also [download a ready-made "Daily Device Alarm Report" template as a JSON file](/docs/user-guide/resources/reporting/daily_device_alarm_report.json){:target="_blank" download="daily_device_alarm_report.json"}.   
+To import a template from a JSON file into your instance, see the instructions [in this guide](/docs/{{docsPrefix}}user-guide/reporting/reporting-key-concepts/#importing-report-template){:target="_blank"}.
 
 ## Step 3: Scheduling the report for customers
 
@@ -135,7 +153,7 @@ To ensure the report is generated correctly and contains accurate data, you must
 
 In ThingsBoard, reports are generated according to the access rights of the user account that triggers them.
 
-*Example:*
+Example:
 - If the report should include only devices owned by <b>Customer A</b>, you must set the <b>User</b> field to the email address of a user belonging to Customer A when scheduling the report.
 - Likewise, to schedule a report for <b>Customer B</b> recipients, use the email address of a Customer B user in the <b>User</b> field.
 
@@ -148,7 +166,12 @@ The report will be generated on behalf of <b>Jane Smith</b>, the administrator f
 
 - Go to the "<b>Scheduling</b>" tab on the "<b>Reporting</b>" page and click the "<b>+ Scheduled Report</b>" in the top-right corner to create a new scheduler event.
 In the scheduling dialog:
-- Name – give your schedule a clear title, e.g., Daily Devices Alarm Report for Customer A.
+- Give your schedule a clear title, for example:
+  ```
+  Daily Devices Alarm Report for Customer A
+  ```
+  {:.copy-code}
+
 - <b>Event type</b> – always set to <b>Create report</b>.
 - <b>Report template</b> – select the previously created Daily Devices Alarm Report template.
 - <b>User</b> – specify the user account on whose behalf the report will be generated: <b>janesmith@thingsboard.io</b> (Jane Smith — Customer A administrator).
@@ -189,7 +212,12 @@ Now let&#39;s create another schedule event to send the report to Customer B&#39
 This report will be generated on behalf of <b>Emma Johnson</b> — the administrator of this customer.
 
 - Click "<b>+ Scheduled report</b>" in the top right corner of the "<b>Template</b>" page to create a new scheduler event.
-- Give your schedule a descriptive name, for example: <b>Daily Device Alarm Report for Customer B</b>.
+- Give your schedule a descriptive name, for example: 
+  ```
+  Daily Device Alarm Report for Customer B
+  ```
+  {:.copy-code}
+
 - Select the same template used for Customer A — <b>Daily Device Alarm Reportv.
 - Set the user account to <b>emmajohnson@thingsboard.io</b> (Emma Johnson – Customer B Administrator). 
   > The report will be generated on behalf of this user, containing only the data accessible to Customer B.

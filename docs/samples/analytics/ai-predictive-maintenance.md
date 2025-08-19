@@ -83,14 +83,17 @@ check-connectivity-command-from-device:
 send-test-data-no-alarm-case:
     0:
         image: https://img.thingsboard.io/samples/analytics/ai-predictive-maintenance/send-test-data-no-alarm-case-1-ce.png
+        title: 'Send the following test data to ThingsBoard. Be sure to replace $THINGSBOARD_HOST_NAME with the host of your ThingsBoard instance, and $YOUR_DEVICE_ACCESS_TOKEN with your device&#39;s access token.'
 
 send-test-data-bearing-wear-detection:
     0:
         image: https://img.thingsboard.io/samples/analytics/ai-predictive-maintenance/alarm-created-1-ce.png
+        title: 'Simulate a bearing wear event by sending the following test data to ThingsBoard. Be sure to replace $THINGSBOARD_HOST_NAME with the host of your ThingsBoard instance, and $YOUR_DEVICE_ACCESS_TOKEN with your device&#39;s access token.'
 
 send-test-data-misalignment-detection:
     0:
         image: https://img.thingsboard.io/samples/analytics/ai-predictive-maintenance/alarm-created-2-ce.png
+        title: 'Simulate a misalignment event by sending the following test data to ThingsBoard. Be sure to replace $THINGSBOARD_HOST_NAME with the host of your ThingsBoard instance, and $YOUR_DEVICE_ACCESS_TOKEN with your device&#39;s access token.'
 
 ---
 
