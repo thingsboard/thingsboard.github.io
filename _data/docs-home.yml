@@ -239,10 +239,12 @@ toc:
       path: /docs/pe/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/pe/user-guide/reporting/reporting-getting-started/
-    - title: Subreport
-      path: /docs/pe/user-guide/reporting/subreport/
     - title: Scheduling reports
       path: /docs/pe/user-guide/reporting/scheduling-reports/
+    - title: Embedding subreports
+      path: /docs/pe/user-guide/reporting/subreport/
+    - title: Embedding dashboards
+      path: /docs/pe/user-guide/reporting/embedding-dashboards-widgets/
     - title: Attaching report to notification
       path: /docs/pe/user-guide/reporting/attaching-report-to-notification/
 - title: Mobile center
