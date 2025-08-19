@@ -1963,6 +1963,9 @@
 "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/"
   redirect_from: []
+"/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/reporting/reporting-getting-started/":
   url: "/docs/paas/eu/user-guide/reporting/reporting-getting-started/"
   redirect_from: []
@@ -2507,6 +2510,9 @@
   redirect_from: []
 "/docs/paas/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/paas/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from: []
 "/docs/paas/user-guide/reporting/reporting-getting-started/":
   url: "/docs/paas/user-guide/reporting/reporting-getting-started/"
@@ -3555,6 +3561,9 @@
   - "/docs/user-guide/rbac/"
 "/docs/pe/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from: []
 "/docs/pe/user-guide/reporting/reporting-getting-started/":
   url: "/docs/pe/user-guide/reporting/reporting-getting-started/"

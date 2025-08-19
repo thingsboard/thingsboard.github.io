@@ -4,9 +4,10 @@
 {% assign sinceVersion = "4.2" %}
 {% include templates/since.md %}
 
-{% assign feature = "Subreport" %}{% include templates/pe-feature-banner.md %}
+{% assign feature = "Reporting" %}{% include templates/pe-feature-banner.md %}
 
-A **Subreport** in ThingsBoard is a special type of report template that is **designed to be embedded inside another (main) report**. It behaves like a **reusable**, **modular block** that receives context from the parent report and generates its content accordingly.
+A **Subreport** in ThingsBoard is a special type of report template that is **designed to be embedded inside another (main) report**. 
+It behaves like a **reusable**, **modular block** that receives context from the parent report and generates its content accordingly.
 
 Just like regular reports, subreports can contain components such as tables, text blocks, images, etc., and they fully support dynamic entity aliases and data filtering.
 
