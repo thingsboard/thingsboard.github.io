@@ -134,8 +134,10 @@
   page: /partners/hardware/seeed
   site:
     href: https://www.seeedstudio.com/
-  showcase:
-    href: https://seeed-projects.github.io/Tutorial-of-AI-Kit-with-Raspberry-Pi-From-Zero-to-Hero/docs/Chapter_6-RaspberryPi_and_AIoT/Car_Park_Solution_Management_with_Thingsboard/
+  showcases:
+    0:
+      label: Hailo-Powered Car Park Management
+      href: https://seeed-projects.github.io/Tutorial-of-AI-Kit-with-Raspberry-Pi-From-Zero-to-Hero/docs/Chapter_6-RaspberryPi_and_AIoT/Car_Park_Solution_Management_with_Thingsboard/
   links:
     0:
       label: Integration guide

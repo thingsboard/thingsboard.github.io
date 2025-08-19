@@ -36,7 +36,10 @@
                         {% if filters.size > 10 %}
                             <div class="search-item">
                                 <input id="searchFilterInput" type="text" placeholder="Search..." />
-                                <span class="searchButton"></span>
+                                <span class="searchButton">
+                                    <img class="searchButtonIcon" src="/images/search.svg">
+                                    <img class="searchButtonCloseIcon" src="/images/s-close-icon.svg">
+                                </span>
                             </div>
                         {% endif %}
                         {% for filter in item[1].filters %}

@@ -31,11 +31,13 @@
                 <td>{{ partner.hardware-types | join: ', ' }}</td>
             </tr>
         </table>
-        {% if partner.showcase.href %}
+        {% if partner.showcases and partner.showcases.size > 0 %}
             <div class="showcases">
                 <span class="section-label">Showcases:</span>
                 <ul>
-                    <li><a href="{{ partner.showcase.href }}" class="hardware-crisp">Showcase</a></li>
+                    {% for link in partner.showcases %}
+                        <li><a href="{{ link[1].href }}" class="hardware-crisp">{{ link[1].label }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         {% endif %}
@@ -72,9 +74,7 @@
             })();
             const label = btn.querySelector('.label');
 
-            items.forEach(li => {
-                li.classList.remove('collapsed')
-            });
+            items.forEach(li => li.classList.remove('collapsed'));
             btn.classList.remove('is-open');
             label.textContent = 'Show more';
 
@@ -85,10 +85,10 @@
             for (const li of items) {
                 const top = li.offsetTop;
                 if (!rowTops.includes(top)) rowTops.push(top);
-                if (rowTops.length > 2) extraItems.push(li);
+                if (rowTops.length > 4) extraItems.push(li);
             }
 
-            if (rowTops.length <= 3) { btn.hidden = true; return; }
+            if (rowTops.length <= 4) { btn.hidden = true; return; }
 
             extraItems.forEach(li => li.classList.add('collapsed'));
 

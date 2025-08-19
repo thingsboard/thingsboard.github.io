@@ -8,22 +8,31 @@ body.filter-opened
   #page-with-filter-content
     .filter-block
       display: block
+.searchButton
+  position: absolute
+  padding: 0
+  top: 50%
+  transform: translateY(-50%)
+  right: 10px
+  background-size: contain
+  opacity: 0.54
+  width: 24px
+  height: 24px
+  cursor: pointer
+.searchButtonCloseIcon
+  width: 29px
+input:placeholder-shown + .searchButton
+  .searchButtonCloseIcon
+    display: none
+input:not(:placeholder-shown) + .searchButton
+  top: 46%
+  .searchButtonIcon
+    display: none
 #page-with-filter-content
   padding: 0
   .search-item
     height: 38px
     position: relative
-    .searchButton
-      position: absolute
-      padding: 0
-      top: 50%
-      transform: translateY(-50%)
-      right: 10px
-      background-size: contain
-      background: url(/images/search.svg) no-repeat
-      opacity: 0.54
-      width: 24px
-      height: 24px
   input[type="text"]
     height: 38px
     width: 100%
@@ -113,6 +122,11 @@ body.filter-opened
         top: 50%
         transform: translateY(-50%)
         right: 10px
+      .toggle-label
+        font-size: 14px
+        line-height: 24px
+        font-weight: 500
+        color: #2A7DEC
     .search-crisps-clear-btn
       font-size: 14px
       font-weight: 500
@@ -163,7 +177,7 @@ body.filter-opened
       display: none
       @media (min-width: 960px)
         min-width: 325px
-        padding-bottom: 20px
+        padding-bottom: 70px
         display: block
       .big-filter
         display: flex

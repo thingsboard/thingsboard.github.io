@@ -32,7 +32,10 @@
             </div>
             <div class="search-item">
                 <input type="text" id="searchCompanyInput" placeholder="Find..." />
-                <span class="searchButton"></span>
+                <span class="searchButton">
+                    <img class="searchButtonIcon" src="/images/search.svg">
+                    <img class="searchButtonCloseIcon" src="/images/s-close-icon.svg">
+                </span>
             </div>
         </div>
     </div>
@@ -69,9 +72,10 @@
         const filterBtn = document.querySelector('.filter-button');
         const closeFilterBtn = document.querySelector('.close-filter-button');
         const searchInput = document.getElementById('searchCompanyInput');
+        const searchButton = document.querySelectorAll(".searchButton");
 
         document.querySelectorAll('.big-filter-section').forEach(section => {
-            const searchInput = section.querySelector('#searchFilterInput');
+            const searchFilterInput = section.querySelector('#searchFilterInput');
             const toggleBtn = section.querySelector('.toggle-extra-btn');
             const filterItems = section.querySelectorAll('.big-filter-section-filter');
 
@@ -92,9 +96,9 @@
                 });
             }
 
-            if (searchInput) {
-                searchInput.addEventListener('input', () => {
-                    const query = searchInput.value.trim().toLowerCase();
+            if (searchFilterInput) {
+                searchFilterInput.addEventListener('input', () => {
+                    const query = searchFilterInput.value.trim().toLowerCase();
 
                     if (query.length > 0) {
                         if (toggleBtn) toggleBtn.style.display = 'none';
@@ -129,6 +133,22 @@
         closeFilterBtn.addEventListener('click', () => {
             document.body.classList.remove('filter-opened')
         });
+
+        function inputCloseEvent() {
+            searchButton.forEach((item) => {
+                item.addEventListener("click", () => {
+                    const input = item.parentElement.querySelector('input');
+                    if(input.value) {
+                        input.value = "";
+                        input.dispatchEvent(new Event("input"));
+                    } else {
+                        input.focus();
+                    }
+                })
+            })
+        }
+
+        inputCloseEvent();
 
         function applySearch() {
             const query = searchInput.value.trim().toLowerCase();
