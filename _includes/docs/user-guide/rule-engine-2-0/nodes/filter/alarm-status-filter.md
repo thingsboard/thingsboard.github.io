@@ -80,10 +80,11 @@ Available statuses:
   "required": [
     "alarmStatusList"
   ],
+  "additionalProperties": false,
   "properties": {
     "alarmStatusList": {
       "type": "array",
-      "description": "Non-empty set of unique alarm statuses to check.",
+      "description": "Non-empty set of unique alarm statuses to check against.",
       "minItems": 1,
       "uniqueItems": true,
       "items": {
@@ -100,8 +101,7 @@ Available statuses:
         "ACTIVE_UNACK"
       ]
     }
-  },
-  "additionalProperties": false
+  }
 }
 ```
 
