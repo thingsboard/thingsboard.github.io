@@ -1,3 +1,16 @@
+{% if docsPrefix == nil %}
+{% assign HOST = "demo.thingsboard.io" %}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+{% assign HOST = "localhost:8080" %}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+{% assign HOST = "thingsboard.cloud" %}
+{% endif %}
+{% if docsPrefix == "paas/eu/" %}
+{% assign HOST = "eu.thingsboard.cloud" %}
+{% endif %}
+
 * TOC
 {:toc}
 
@@ -90,121 +103,67 @@ Important details:
 
 {% include images-gallery.html imageCollection="create-test-device-1" %}
 
-<b>Step 2.</b> Copy the "Check connectivity" command from the device details. 
+<b>Step 2.</b> Copy the "<b>Check connectivity</b>" command from the device details. 
 
 {% include images-gallery.html imageCollection="create-test-device-2" %}
 
-Your command will look something like this.:
-
-{% if docsPrefix == null %}
+Your command will look something like this: 
 
 ```bash
-curl -v -X POST http://demo.thingsboard.io/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+curl -v -X POST http://{{ HOST }}/api/v1/6sED1ALqyJg0P6ezIODH/telemetry \
 --header Content-Type:application/json \
 --data "{temperature:25}"
 ```
 
-<b>* Where<b> `$THINGSBOARD_HOST_NAME` refers to `demo.thingsboard.io`, and `$YOUR_DEVICE_ACCESS_TOKEN` is `6sDE1ALqyJg0P6ezIODH`.
+<b>&#8195; *</b> Where `{{ HOST }}` is the <b>host of your ThingsBoard instance</b>, and `6sED1ALqyJg0P6ezIODH` is the <b>device access token</b>.
 
 {% include images-gallery.html imageCollection="check-connectivity-command-from-device" %}
 
-For your case, use the command with your own credentials. Replace `$THINGSBOARD_HOST_NAME` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
+<br><b>Step 3.</b> Modify and send test data.
+
+<b>Step 3.1 No alarm case:</b>
+
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+
+Send the following test data to ThingsBoard. Be sure to replace:
+- `$THINGSBOARD_HOST_NAME` with the host of your ThingsBoard instance,
+- `$YOUR_DEVICE_ACCESS_TOKEN` with your device&#39;s access token.
 
 ```bash
 curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
---data "{temperature:25}"
+--data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
 ```
 {:.copy-code}
 
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 
-Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
-
-```bash
-curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
---header Content-Type:application/json \
---data "{temperature:25}"
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/" %}
+Send the following test data to ThingsBoard.
+Make sure to replace `$YOUR_DEVICE_ACCESS_TOKEN` with your device&#39;s access token.
 
 ```bash
-curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
---header Content-Type:application/json \
---data "{temperature:25}"
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/eu/" %}
-
-```bash
-curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
---header Content-Type:application/json \
---data "{temperature:25}"
-```
-{:.copy-code}
-
-{% endif %}
-
-<b>Step 3.</b> Modify and send test data.
-
-**No alarm** case:
-
-{% if docsPrefix == null %}
-```bash
-curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
+curl -v -X POST http://{{ HOST }}/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
 --data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
 ```
 {:.copy-code}
 
 {% endif %}
-{% if docsPrefix == "pe/" %}
 
-Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
-
-```bash
-curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
---header Content-Type:application/json \
---data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/" %}
-
-```bash
-curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
---header Content-Type:application/json \
---data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/eu/" %}
-
-```bash
-curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
---header Content-Type:application/json \
---data '{"vibration":4.2,"temperature":70,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
+There won&#39;t be an alarm created.
 
 {% include images-gallery.html imageCollection="send-test-data-no-alarm-case" %}
 
+<br>
+<b>Step 3.2 Bearing wear detection:</b>
 
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
 
+Simulate a bearing wear event by sending the following test data to ThingsBoard. Be sure to replace:
+- `$THINGSBOARD_HOST_NAME` with the host of your ThingsBoard instance,
+- `$YOUR_DEVICE_ACCESS_TOKEN` with your device&#39;s access token.
 
-**Bearing wear** detection:
-
-{% if docsPrefix == null %}
 ```bash
 curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
@@ -213,32 +172,13 @@ curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/t
 {:.copy-code}
 
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 
-Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
-
-```bash
-curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
---header Content-Type:application/json \
---data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/" %}
+Simulate a bearing wear event by sending the following test data to ThingsBoard.
+Make sure to replace `$YOUR_DEVICE_ACCESS_TOKEN` with your device&#39;s access token.
 
 ```bash
-curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
---header Content-Type:application/json \
---data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/eu/" %}
-
-```bash
-curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+curl -v -X POST http://{{ HOST }}/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
 --data '{"vibration":8.2,"temperature":88,"acousticDev":5}'
 ```
@@ -248,7 +188,7 @@ curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetr
 
 {% include images-gallery.html imageCollection="send-test-data-bearing-wear-detection" %}
 
-Sample AI output:
+<br>An alarm will be created. Below is an example of the AI output:
 
 ```json
 {
@@ -257,9 +197,14 @@ Sample AI output:
 }
 ```
 
-**Misalignment** detection:
+<br>
+<b>Step 3.3 Misalignment</b> detection:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == nil or docsPrefix == "pe/" %}
+
+Simulate a misalignment event by sending the following test data to ThingsBoard. Be sure to replace:
+- `$THINGSBOARD_HOST_NAME` with the host of your ThingsBoard instance,
+- `$YOUR_DEVICE_ACCESS_TOKEN` with your device&#39;s access token.
 
 ```bash
 curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
@@ -269,32 +214,13 @@ curl -v -X POST http://$THINGSBOARD_HOST_NAME/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/t
 {:.copy-code}
 
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 
-Replace `$THINGSBOARD_HOST_NAME:PORT` and `$YOUR_DEVICE_ACCESS_TOKEN` with corresponding values.
-
-```bash
-curl -v -X POST http://$THINGSBOARD_HOST_NAME:PORT/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
---header Content-Type:application/json \
---data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/" %}
+Simulate misalignment event by sending the following test data to ThingsBoard. 
+Make sure to replace `$YOUR_DEVICE_ACCESS_TOKEN` with your device&#39;s access token.
 
 ```bash
-curl -v -X POST http://thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
---header Content-Type:application/json \
---data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
-```
-{:.copy-code}
-
-{% endif %}
-{% if docsPrefix == "paas/eu/" %}
-
-```bash
-curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetry \
+curl -v -X POST http://{{ HOST }}/api/v1/$YOUR_DEVICE_ACCESS_TOKEN/telemetry \
 --header Content-Type:application/json \
 --data '{"vibration":32.2,"temperature":38,"acousticDev":5}'
 ```
@@ -304,7 +230,7 @@ curl -v -X POST http://eu.thingsboard.cloud/api/v1/6sDE1ALqyJg0P6ezIODH/telemetr
 
 {% include images-gallery.html imageCollection="send-test-data-misalignment-detection" %}
 
-Sample AI output:
+<br>An alarm will be created. Below is an example of the AI output:
 
 ```json
 {
