@@ -1,4 +1,4 @@
-# alarm status filter {#check-alarm-status}
+# alarm status filter
 
 Parses the incoming payload as a ThingsBoard alarm, fetches the latest alarm by ID, and compares its current status to a configured set of statuses. 
 If the fetched status matches, the message is routed via `True`; otherwise via `False`. Parsing errors, missing alarm ID, or a non-existent alarm result in `Failure`.

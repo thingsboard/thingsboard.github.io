@@ -1,6 +1,6 @@
-# entity type filter {#originator-type-filter-node}
+# entity type filter
 
-Checks the incoming message’s originator entity type against the configured set of entity types. If the type is in the set, the message is routed via `True`; otherwise, via `False`.
+Checks the incoming message’s originator entity type against the configured set of entity types. If the type is in the set, the message is routed via `True`; otherwise, via`False`.
 
 ## Preconditions
 
@@ -28,7 +28,7 @@ There are no preconditions.
       "description": "Non-empty set of originator entity types to check against.",
       "type": "array",
       "items": {
-        "$ref": "https://schemas.thingsboard.io/4.3.0/entity-type.schema.json"
+        "$ref": "https://schemas.thingsboard.io/pe/4.3.0/entity-type.schema.json"
       },
       "uniqueItems": true,
       "minItems": 1
@@ -69,7 +69,12 @@ Originator entity type is an `ASSET`.
 **Node configuration**
 
 ```json
-{ "originatorTypes": ["ASSET", "DEVICE"] }
+{
+  "originatorTypes": [
+    "ASSET",
+    "DEVICE"
+  ]
+}
 ```
 
 **State of the system**
@@ -84,7 +89,6 @@ Routed via **`True`**.
 
 Incoming message originator entity type is in the configured set, so the message is routed via `True`.
 
-
 ### Example 2 — Entity type does not match → `False`
 
 **Incoming message**
@@ -94,7 +98,12 @@ Originator entity type is a `TENANT`.
 **Node configuration**
 
 ```json
-{ "originatorTypes": ["ASSET", "DEVICE"] }
+{
+  "originatorTypes": [
+    "ASSET",
+    "DEVICE"
+  ]
+}
 ```
 
 **State of the system**
@@ -111,4 +120,11 @@ Incoming message originator entity type is not in the configured set, so the mes
 
 ## Use cases
 
-Any scenario that requires processing only messages from originators of specific types.
+TODO add link to entity type switch node here
+
+Use **entity type filter** when processing requires a binary decision (include/exclude) based on the originator type. The node routes messages to `True` if the originator entity
+type is in the configured set, and to `False` otherwise. This is ideal for guarding a pipeline, whitelisting allowed types, or pruning messages before a single downstream path.
+
+When to prefer **entity type switch** instead:
+
+- You need to branch to different sub-chains per originator type (fan-out), for example sending `DEVICE` to one path, `ASSET` to another, and `ENTITY_VIEW `to a third.
