@@ -87,14 +87,17 @@
       a
         font-weight: 600
         font-size: 32px
-    h2, h3.item-heading
+    h2
+      font-weight: 600
+      line-height: 54px
+      font-size: 42px
+    h3.item-heading
       font-weight: 500
       line-height: 54px
       font-size: 36px
     h3:not(.item-heading)
-      font-size: 32px
-      font-weight: 600
-      text-align: center
+      font-size: 24px
+      font-weight: 500
     h4
       font-size: 24px
       font-weight: 500
@@ -107,7 +110,6 @@
     a
       color: #1F8B4D
       font-weight: 500
-      font-size: 18px
 
     .arrow-top-right
       color: #fff
@@ -127,6 +129,8 @@
         filter: brightness(0) saturate(100%) invert(97%) sepia(63%) saturate(13%) hue-rotate(226deg) brightness(102%) contrast(100%)
 
     #top-features
+      h2
+        text-align: center
       #cards
         display: flex
         flex-direction: column
@@ -171,7 +175,7 @@
         .scenarios-title
           flex: 1
           width: 100%
-          h3
+          h2
             font-size: 42px
             color: #fff
         .scenarios-details
@@ -209,6 +213,11 @@
     #middle-features
       margin-bottom: 24px
       main
+        .middle-features-title
+          font-weight: 600
+          line-height: 54px
+          font-size: 42px
+          text-align: center
         padding-top: 100px
         display: flex
         flex-direction: column
@@ -226,10 +235,11 @@
             flex: 1
             order: 2
             .block
-              h4
+              h4, h3
                 font-size: 42px
                 padding-bottom: 20px
                 line-height: 60px
+                font-weight: 500
               p
                 font-size: 18px
                 text-align: justify
@@ -239,6 +249,9 @@
     #installation-options
       margin-bottom: 24px
       main
+        h2
+          padding-top: 100px
+          text-align: center
         .row
           display: flex
           align-items: center
@@ -261,9 +274,11 @@
               display: flex
               flex-direction: column
               gap: 24px
-              h4
+              h3
                 line-height: 60px
                 font-size: 42px
+                text-align: left
+                font-weight: 500
               p
                 margin-top: 10px
                 font-size: 18px
@@ -284,7 +299,7 @@
 
     #bottom-features
       margin-bottom: 24px
-      h3
+      h2
         font-size: 42px
         padding-top: 120px
         margin-bottom: 40px
@@ -364,6 +379,7 @@
         h3
           font-size: 42px
           padding-bottom: 40px
+          text-align: center
         #cards
           display: flex
           justify-content: flex-start
@@ -582,7 +598,7 @@
         main
           padding-top: 100px
       #bottom-features
-        h3
+        h2
           padding-top: 120px
         #cards
           flex-direction: row
@@ -649,18 +665,18 @@
           .row
             flex-direction: row
             flex-wrap: nowrap
-            &:nth-child(2n)
+            &:nth-child(odd)
               .image-container
                 order: 1 !important
       #bottom-features
-        h3
+        h2
           padding-top: 130px
       #installation-options
         main
           .row
             flex-direction: row
             gap: 160px
-            padding-top: 140px
+            padding-top: 40px
       #news
         main
           #cards
@@ -691,10 +707,11 @@
     #tbmqContent
       #middle-features
         main
-          padding-top: 150px
+          padding-top: 100px
       #bottom-features
-        h3
+        h2
           padding-top: 150px
+          text-align: center
       #background
         div
           &.main3
