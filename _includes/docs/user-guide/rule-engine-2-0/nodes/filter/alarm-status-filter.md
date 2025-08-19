@@ -1,11 +1,12 @@
 # alarm status filter
 
-Parses the incoming payload as a ThingsBoard alarm, fetches the latest alarm by ID, and compares its current status to a configured set of statuses. 
+Parses the incoming payload as a ThingsBoard alarm, fetches the latest alarm by ID, and compares its current status to a configured set of statuses.
 If the fetched status matches, the message is routed via `True`; otherwise via `False`. Parsing errors, missing alarm ID, or a non-existent alarm result in `Failure`.
 
 ## Preconditions
 
 Generally, the incoming message data should be a JSON alarm object:
+
 ```json
 {
   "id": {
@@ -49,12 +50,13 @@ Generally, the incoming message data should be a JSON alarm object:
 ```
 
 However, the following object is sufficient, because only the `id` field is used:
+
 ```json
 {
-    "id": {
-        "entityType": "ALARM",
-        "id": "bfb13620-7737-400b-9c89-d569a0835de6"
-    }
+  "id": {
+    "entityType": "ALARM",
+    "id": "bfb13620-7737-400b-9c89-d569a0835de6"
+  }
 }
 ```
 
@@ -62,9 +64,11 @@ However, the following object is sufficient, because only the `id` field is used
 
 ### Field descriptions
 
-* **Alarm status** - required. A set of statuses: if the fetched alarm’s status matches any of them, the node routes the message via the `True` connection; otherwise, via the `False` connection. Default values: *Active Acknowledged* and *Active Unacknowledged*.
+* **Alarm status** - required. A set of statuses: if the fetched alarm’s status matches any of them, the node routes the message via the `True` connection; otherwise, via the
+  `False` connection.
 
 Available statuses:
+
 - *Active Acknowledged* (`ACTIVE_ACK`)
 - *Active Unacknowledged* (`ACTIVE_UNACK`)
 - *Cleared Acknowledged* (`CLEARED_ACK`)
@@ -109,24 +113,24 @@ Available statuses:
 
 1. Parses the incoming message data as a ThingsBoard alarm object (the alarm must include an ID, so it must be an existing alarm).
 2. Fetches the alarm from the database to get the latest information.
-   1. If no such alarm is found, processing ends with a `Failure`. The usual failure-connection mechanics apply.
+    1. If no such alarm is found, processing ends with a `Failure`. The usual failure-connection mechanics apply.
 3. Checks whether the status of the fetched alarm matches the configured alarm statuses.
-   1. If the status matches, the incoming message is routed to downstream nodes using the `True` connection.
-   2. If the status does not match, the incoming message is routed to downstream nodes using the `False` connection.
+    1. If the status matches, the incoming message is routed to downstream nodes using the `True` connection.
+    2. If the status does not match, the incoming message is routed to downstream nodes using the `False` connection.
 
 > Note: The incoming message is not modified, and the `status` property is ignored for routing.
 
 ## Output connections
 
-* `True`: 
-   * If the incoming message data is successfully parsed into an alarm, the alarm is found, and its fetched status matches one of the statuses set in the node configuration.
-* `False`: 
-   * If the incoming message data is successfully parsed into an alarm and the alarm is found, but its fetched status does not match any status set in the node configuration.
+* `True`:
+    * If the incoming message data is successfully parsed into an alarm, the alarm is found, and its fetched status matches one of the statuses set in the node configuration.
+* `False`:
+    * If the incoming message data is successfully parsed into an alarm and the alarm is found, but its fetched status does not match any status set in the node configuration.
 * `Failure`:
-   * If the incoming message data failed to be parsed into an alarm.
-   * If the parsed alarm has no ID.
-   * If an alarm with such an ID was not found.
-   * If another unexpected error occurred during message processing.
+    * If the incoming message data failed to be parsed into an alarm.
+    * If the parsed alarm has no ID.
+    * If an alarm with such an ID was not found.
+    * If another unexpected error occurred during message processing.
 
 ## Examples
 
@@ -139,13 +143,22 @@ The examples below show only the **relevant** fields of the incoming message. Un
 **Incoming message data**
 
 ```json
-{ "id": { "entityType": "ALARM", "id": "c0d5c904-792b-11f0-8de9-0242ac120002" } }
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "c0d5c904-792b-11f0-8de9-0242ac120002"
+  }
+}
 ```
 
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["ACTIVE_UNACK"] }
+{
+  "alarmStatusList": [
+    "ACTIVE_UNACK"
+  ]
+}
 ```
 
 **State of the system**
@@ -160,19 +173,27 @@ Routed via **`True`**.
 
 The node fetches the alarm by ID and compares its **fetched** status to the configured set; the status matches, so the message is routed via `True`.
 
-
 ### Example 2 — Status does not match → `False`
 
 **Incoming message data**
 
 ```json
-{ "id": { "entityType": "ALARM", "id": "c0d5c904-792b-11f0-8de9-0242ac120002" } }
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "c0d5c904-792b-11f0-8de9-0242ac120002"
+  }
+}
 ```
 
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["ACTIVE_ACK"] }
+{
+  "alarmStatusList": [
+    "ACTIVE_ACK"
+  ]
+}
 ```
 
 **State of the system**
@@ -194,13 +215,22 @@ Fetched status (`ACTIVE_UNACK`) is not in the configured set.
 **Incoming message data**
 
 ```json
-{ "id": { "entityType": "ALARM", "id": "c0d5c904-792b-11f0-8de9-0242ac120002" } }
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "c0d5c904-792b-11f0-8de9-0242ac120002"
+  }
+}
 ```
 
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["CLEARED_ACK"] }
+{
+  "alarmStatusList": [
+    "CLEARED_ACK"
+  ]
+}
 ```
 
 **State of the system**
@@ -222,13 +252,23 @@ Fetched status matches the configuration.
 **Incoming message data**
 
 ```json
-{ "id": { "entityType": "ALARM", "id": "c0d5c904-792b-11f0-8de9-0242ac120002" } }
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "c0d5c904-792b-11f0-8de9-0242ac120002"
+  }
+}
 ```
 
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["ACTIVE_ACK", "ACTIVE_UNACK"] }
+{
+  "alarmStatusList": [
+    "ACTIVE_ACK",
+    "ACTIVE_UNACK"
+  ]
+}
 ```
 
 **State of the system**
@@ -250,13 +290,20 @@ Lookup by ID returned no alarm; the node fails.
 **Incoming message data**
 
 ```json
-{ "type": "Overheating" }
+{
+  "type": "Overheating"
+}
 ```
 
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["ACTIVE_ACK", "ACTIVE_UNACK"] }
+{
+  "alarmStatusList": [
+    "ACTIVE_ACK",
+    "ACTIVE_UNACK"
+  ]
+}
 ```
 
 **State of the system**
@@ -278,13 +325,19 @@ Alarm cannot be fetched without an ID; parsing/validation error leads to failure
 **Incoming message data**
 
 ```json
-{ "notAnAlarm": true }
+{
+  "notAnAlarm": true
+}
 ```
 
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["ACTIVE_ACK"] }
+{
+  "alarmStatusList": [
+    "ACTIVE_ACK"
+  ]
+}
 ```
 
 **State of the system**
@@ -307,7 +360,10 @@ Incoming message data cannot be parsed into an alarm object.
 
 ```json
 {
-  "id": { "entityType": "ALARM", "id": "c0d5c904-792b-11f0-8de9-0242ac120002" },
+  "id": {
+    "entityType": "ALARM",
+    "id": "c0d5c904-792b-11f0-8de9-0242ac120002"
+  },
   "status": "ACTIVE_ACK"
 }
 ```
@@ -315,7 +371,11 @@ Incoming message data cannot be parsed into an alarm object.
 **Node configuration**
 
 ```json
-{ "alarmStatusList": ["ACTIVE_ACK"] }
+{
+  "alarmStatusList": [
+    "ACTIVE_ACK"
+  ]
+}
 ```
 
 **State of the system**

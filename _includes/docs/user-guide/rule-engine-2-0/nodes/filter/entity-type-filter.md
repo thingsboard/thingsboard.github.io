@@ -10,7 +10,7 @@ There are no preconditions.
 
 ### Field descriptions
 
-* **Select entity types** - required. A set of entity types to check against; at least one must be specified. Default value: *Device*.
+* **Select entity types** - required. A set of entity types to check against; at least one must be specified.
 
 ### JSON Schema
 
