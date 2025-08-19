@@ -13,7 +13,7 @@ External nodes used are used to interact with external systems.
    </thead>
 </table> 
 
-![Node example image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-ai-request.png)
+![Node example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-ai-request.png)
 
 Sends a request to a large language model (LLM) using configured system and user prompts, which can be dynamically populated with data from the incoming message. 
 Returns AI-generated content as a payload of the outgoing message.
