@@ -16,7 +16,7 @@ Incoming message data must be a JSON object.
 
 > Requirement: Although each set is optional, at least one of them must be provided with at least one field (i.e., at least one set must be non-empty).
 
-* **Check that all specified fields are present** — boolean.
+* **Check that all specified fields are present** — toggle.
     * **Enabled:** route `True` only if **all** listed message/metadata fields are present.
     * **Disabled:** route `True` if **at least one** listed message/metadata field is present.
 
