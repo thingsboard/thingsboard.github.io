@@ -255,6 +255,9 @@ toc:
     - title: IoT Anomaly Detection with AI
       path: /docs/paas/samples/analytics/ai-predictive-maintenance/
       new: true
+    - title: MCP Server
+      path: /docs/paas/samples/analytics/mcp-server-ai-insights/
+      new: true
     - title: AI models
       path: /docs/paas/samples/analytics/ai-models/
       new: true

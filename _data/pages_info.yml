@@ -1687,6 +1687,9 @@
 "/docs/paas/eu/samples/analytics/kafka-streams/":
   url: "/docs/paas/eu/samples/analytics/kafka-streams/"
   redirect_from: []
+"/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
 "/docs/paas/eu/samples/sia-connect/":
   url: "/docs/paas/eu/samples/sia-connect/"
   redirect_from: []
@@ -2236,6 +2239,9 @@
   redirect_from: []
 "/docs/paas/samples/analytics/kafka-streams/":
   url: "/docs/paas/samples/analytics/kafka-streams/"
+  redirect_from: []
+"/docs/paas/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
 "/docs/paas/samples/sia-connect/":
   url: "/docs/paas/samples/sia-connect/"
@@ -3373,6 +3379,9 @@
 "/docs/pe/samples/analytics/kafka-streams/":
   url: "/docs/pe/samples/analytics/kafka-streams/"
   redirect_from: []
+"/docs/pe/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
 "/docs/pe/search/":
   url: "/docs/pe/search/"
   redirect_from: []
@@ -3980,6 +3989,9 @@
   url: "/docs/samples/analytics/kafka-streams/"
   redirect_from:
   - "/docs/samples/analytics/spark-integration-with-thingsboard/"
+"/docs/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
 "/docs/samples/arduino/":
   url: "/docs/samples/arduino/"
   redirect_from: []
