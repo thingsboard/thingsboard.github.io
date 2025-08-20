@@ -4,7 +4,7 @@
 This document describes how to use the [ThingsBoard MCP Server](https://github.com/thingsboard/thingsboard-mcp){: target="_blank"}  to query platform data, generate sample telemetry, and detect anomalies in your ThingsBoard time-series data.  
 We will use <b>natural language queries</b> to interact with ThingsBoard using MCP (via Claude or another LLM provider).
 
-With ThingsBoard MCP, you can:
+With the help of ThingsBoard MCP, you can:
 - <b>Find devices</b>  matching specific criteria in your ThingsBoard platform.
 - <b>Simulate or ingest telemetry</b> (e.g., AQI sensor data) directly into ThingsBoard for a specific device.
 - <b>Analyze device data</b> for anomalies. This can easily be adapted to search for spikes, data gaps, or other patterns.
