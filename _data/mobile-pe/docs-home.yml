@@ -25,13 +25,9 @@ toc:
         path: /docs/pe/mobile/app-icon-splash-screen/
       - title: Self-registration
         path: /docs/pe/mobile/self-registration/
-      - title: QR code settings (Mobile app v1.7.x)
+      - title: QR code settings
         path: /docs/pe/mobile/qr-code-settings/
-      - title: QR code settings (Mobile app v1.6.x)
-        path: /docs/pe/mobile/qr-code-settings-before-v1.7/
   - title: Add your own localization
     path: /docs/pe/mobile/localization/
-  - title: Publish your app (Mobile app v1.6.x)
-    path: /docs/pe/mobile/release-before-v1.7/
-  - title: Publish your app (Mobile app v1.7.x)
+  - title: Publish your app
     path: /docs/pe/mobile/release/

@@ -9,6 +9,8 @@ toc:
   section:
     - title: Edge
       path: /docs/edge/config/management/
+    - title: Telemetry synchronization
+      path: /docs/edge/user-guide/telemetry-sync/
     - title: Entities and Relations
       path: /docs/edge/user-guide/entities-and-relations/
     - title: Alarms

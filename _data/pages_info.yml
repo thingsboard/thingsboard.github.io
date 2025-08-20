@@ -490,6 +490,9 @@
 "/docs/edge/user-guide/ota-updates/":
   url: "/docs/edge/user-guide/ota-updates/"
   redirect_from: []
+"/docs/edge/user-guide/telemetry-sync/":
+  url: "/docs/edge/user-guide/telemetry-sync/"
+  redirect_from: []
 "/docs/edge/user-guide/troubleshooting/":
   url: "/docs/edge/user-guide/troubleshooting/"
   redirect_from: []
@@ -678,6 +681,9 @@
   redirect_from: []
 "/docs/mobile/alarm-dashboard/":
   url: "/docs/mobile/alarm-dashboard/"
+  redirect_from: []
+"/docs/mobile/app-icon-splash-screen-before-v1.7/":
+  url: "/docs/mobile/app-icon-splash-screen-before-v1.7/"
   redirect_from: []
 "/docs/mobile/app-icon-splash-screen/":
   url: "/docs/mobile/app-icon-splash-screen/"
@@ -1672,6 +1678,9 @@
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/eu/reference/snmp-api"
+"/docs/paas/eu/samples/analytics/ai-models/":
+  url: "/docs/paas/eu/samples/analytics/ai-models/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/ai-predictive-maintenance/":
   url: "/docs/paas/eu/samples/analytics/ai-predictive-maintenance/"
   redirect_from: []
@@ -1963,6 +1972,9 @@
 "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/"
   redirect_from: []
+"/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/reporting/reporting-getting-started/":
   url: "/docs/paas/eu/user-guide/reporting/reporting-getting-started/"
   redirect_from: []
@@ -2219,6 +2231,9 @@
   url: "/docs/paas/reference/snmp-api/"
   redirect_from:
   - "/docs/paas/reference/snmp-api"
+"/docs/paas/samples/analytics/ai-models/":
+  url: "/docs/paas/samples/analytics/ai-models/"
+  redirect_from: []
 "/docs/paas/samples/analytics/ai-predictive-maintenance/":
   url: "/docs/paas/samples/analytics/ai-predictive-maintenance/"
   redirect_from: []
@@ -2510,6 +2525,9 @@
   redirect_from: []
 "/docs/paas/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/paas/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from: []
 "/docs/paas/user-guide/reporting/reporting-getting-started/":
   url: "/docs/paas/user-guide/reporting/reporting-getting-started/"
@@ -3197,6 +3215,9 @@
 "/docs/pe/edge/user-guide/scheduler/":
   url: "/docs/pe/edge/user-guide/scheduler/"
   redirect_from: []
+"/docs/pe/edge/user-guide/telemetry-sync/":
+  url: "/docs/pe/edge/user-guide/telemetry-sync/"
+  redirect_from: []
 "/docs/pe/edge/user-guide/troubleshooting/":
   url: "/docs/pe/edge/user-guide/troubleshooting/"
   redirect_from: []
@@ -3220,6 +3241,9 @@
   redirect_from: []
 "/docs/pe/mobile/alarm-dashboard/":
   url: "/docs/pe/mobile/alarm-dashboard/"
+  redirect_from: []
+"/docs/pe/mobile/app-icon-splash-screen-before-v1.7/":
+  url: "/docs/pe/mobile/app-icon-splash-screen-before-v1.7/"
   redirect_from: []
 "/docs/pe/mobile/app-icon-splash-screen/":
   url: "/docs/pe/mobile/app-icon-splash-screen/"
@@ -3346,6 +3370,9 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/samples/analytics/ai-models/":
+  url: "/docs/pe/samples/analytics/ai-models/"
+  redirect_from: []
 "/docs/pe/samples/analytics/ai-predictive-maintenance/":
   url: "/docs/pe/samples/analytics/ai-predictive-maintenance/"
   redirect_from: []
@@ -3558,6 +3585,9 @@
   - "/docs/user-guide/rbac/"
 "/docs/pe/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from: []
 "/docs/pe/user-guide/reporting/reporting-getting-started/":
   url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
@@ -3948,6 +3978,9 @@
   redirect_from: []
 "/docs/samples/alarms/mail/":
   url: "/docs/samples/alarms/mail/"
+  redirect_from: []
+"/docs/samples/analytics/ai-models/":
+  url: "/docs/samples/analytics/ai-models/"
   redirect_from: []
 "/docs/samples/analytics/ai-predictive-maintenance/":
   url: "/docs/samples/analytics/ai-predictive-maintenance/"
