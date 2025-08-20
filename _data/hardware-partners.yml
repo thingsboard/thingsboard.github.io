@@ -27,7 +27,7 @@
     href: https://getefento.com/
   links:
     0:
-      label: Integration guide
+      label: Efento NB-IoT sensors
       href: https://getefento.com/library/efento-nb-iot-sensors-and-things-board/
   description: Efento offers a wide portfolio of battery powered NB-IoT wireless sensors.
     Company has been founded in 2014 and since day one focuses on low power consumption
@@ -64,7 +64,7 @@
     href: https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard
   links:
     0:
-      label: Integration guide
+      label: Teltonika-Networks devices
       href: https://wiki.teltonika-networks.com/view/Monitoring_with_ThingsBoard_IoT_Platform
   description: Teltonika Networks is a rapidly growing technology company, manufacturing
     professional network connectivity equipment for international markets. It has
@@ -104,7 +104,7 @@
     href: https://www.espressif.com/
   links:
     0:
-      label: Integration guide
+      label: ESP32 Pico Kit GPIO control and DHT22 sensor monitor
       href: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
   description: Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE
     chipsets and modules.
@@ -140,13 +140,13 @@
       href: https://seeed-projects.github.io/Tutorial-of-AI-Kit-with-Raspberry-Pi-From-Zero-to-Hero/docs/Chapter_6-RaspberryPi_and_AIoT/Car_Park_Solution_Management_with_Thingsboard/
   links:
     0:
-      label: Integration guide
+      label: Raspberry Pi with Grove Base Hat
       href: /docs/samples/raspberry/grove/
     1:
-      label: Integration guide
+      label: reComputer R1000
       href: /docs/edge/devices-library/recomputer-r1000/
     2:
-      label: Integration guide
+      label: reComputer R1100
       href: /docs/edge/devices-library/recomputer-r1100/
     3:
       label: Seeed Wiki integration
@@ -307,7 +307,7 @@
     href: https://www.digitalcomtech.com/
   links:
     0:
-      label: Integration guide
+      label: Syrus 4 IoT Telematics Gateway
       href: /docs/samples/syrus/syrus/
   description: Since 2000, DCT has been developing IoT devices and accessories for
     Fleet Telematics Applications and Industrial Solutions that are trusted by integrators
@@ -344,7 +344,7 @@
     href: https://nettra.tech/
   links:
     0:
-      label: Integration guide
+      label: Nettra RTU
       href: /docs/samples/nettrartu+/rtu_temp_sensor/
   description: We provide comprehensive hardware and software IoT solutions.
 - name: Solandtec
@@ -377,7 +377,7 @@
     href: https://solandtec.com/
   links:
     0:
-      label: Integration guide
+      label: ADAM-6717
       href: /docs/samples/solandtec/thingsboard-guide-solandtec/
   description: With 5+ years' experience, SOLANDTEC excels in tailored automation,
     enhancing production and cutting costs. We adeptly apply tech to meet unique needs,
@@ -419,7 +419,7 @@
     href: https://www.actility.com/
   links:
     0:
-      label: Integration guide
+      label: Abeeway Micro Tracker and Abeeway Industrial Tracker
       href: /docs/samples/abeeway/tracker/
   description: Actility has a strong background in large-scale project delivery and
     a heritage in carrier-grade systems, with leading customer deployments worldwide,
@@ -455,7 +455,7 @@
     href: https://sodaq.com/
   links:
     0:
-      label: Integration guide
+      label: SODAQ Universal Tracker
       href: /docs/samples/sodaq/sodaq/
   description: What drives us is the passion to create scalable electronics solutions
     that work anywhere. We have implemented projects throughout developing countries,
@@ -531,7 +531,7 @@
     href: https://www.decode.rs/
   links:
     0:
-      label: Integration guide
+      label: Decode DL28
       href: /docs/user-guide/integrations/decode/
   description: Decode is a Serbian company with extensive experience in design, engineering
     and production of devices for industrial communication and telemetry.
@@ -685,7 +685,7 @@
     href: https://www.kernelgroup.it/
   links:
     0:
-      label: Integration guide
+      label: PLC KERNEL
       href: /docs/samples/kernel/kernel/
     1:
       label: Integration guide
@@ -744,7 +744,7 @@
     href: https://www.iot-solution.com/
   links:
     0:
-      label: Integration guide
+      label: 4G LTE Industrial Router
       href: /docs/samples/kingpigeon/kingpigeon/
   description: Beilai Technology focus on the research and development and manufacturing
     of ARM industrial computers, edge computing gateways, industrial Internet of Things,
@@ -786,7 +786,7 @@
     href: https://www.senquip.com
   links:
     0:
-      label: Integration guide
+      label: Senquip telemetry device
       href: /docs/samples/senquip/senquip/
     1:
       label: Integration guide
@@ -832,7 +832,7 @@
     href: https://www.dusuniot.com/
   links:
     0:
-      label: Integration guide
+      label: DSGW-210 Smart Gateway Hub
       href: /docs/pe/devices-library/dsgw-210-iot-gateway-hub/
   description: Dusun provides various kinds of gateways, hardware products and IOT
     service
@@ -869,7 +869,7 @@
     href: https://monoz.io/
   links:
     0:
-      label: Integration guide
+      label: LPWA GPS Tracker
       href: /docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ/
   description: MonoZ aim to assist System Integrators and Enterprises in connecting
     their assets (things) to the internet at the lowest possible cost and time. MonoZ
@@ -903,7 +903,7 @@
     href: https://exxn.es/en/
   links:
     0:
-      label: Integration guide
+      label: EXXN IoT Gateway
       href: /docs/samples/exxn/exxn/
   description: At EXXN, we specialize in integrating technology into your business
     to enhance efficiency and productivity. Our multipurpose gateways, equipped with
@@ -942,7 +942,7 @@
     href: https://fusiondaq.com/
   links:
     0:
-      label: Integration guide
+      label: FDQ-99900 MI-8
       href: /docs/samples/fusion-daq/fusion-daq/
   description: Fusion DAQ develops and maintains a core product line of data acquisition
     components and accessories. This includes electronic design, electromechanical
@@ -973,7 +973,7 @@
     href: https://yobiiq.com/
   links:
     0:
-      label: Integration guide
+      label: SD-1001
       href: https://docs.yobiiq.com/thingsboard/sd-1001-integration-guide
   description: The best way to predict the future is by creating it. As an IoT Solutions
     Company, we develop smart solutions daily, tailored to your business and objectives.
@@ -1007,7 +1007,7 @@
     href: https://www.yudash.com/
   links:
     0:
-      label: Integration guide
+      label: YuDash IoT Gateway
       href: https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard
   description: YuDash is an Industrial IoT gateway manufacturer, offering flexible,
     user-friendly, and cost-effective products. Cloud connectivity through 4G/LTE,
@@ -1059,7 +1059,7 @@
     href: https://www.mokosmart.com/
   links:
     0:
-      label: Integration guide
+      label: mokosmart LoRaWAN device
       href: /docs/samples/moko-smart/moko-smart-guide/
   description: MOKO Technology Ltd. is a leading manufacturer and provider of ODM,
     OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand,
@@ -1095,7 +1095,7 @@
     href: http://www.netvox.com.tw/
   links:
     0:
-      label: Integration guide
+      label: Netvox LoRaWAN Devices
       href: /docs/samples/netvox/netvox-guide/
   description: Netvox LoRaWAN products follow the standard LoRaWAN V1.0.2 specification
     and they will be compatible as long as the network server and gateway device also
@@ -1144,7 +1144,7 @@
     href: https://ncd.io/
   links:
     0:
-      label: Integration guide
+      label: NCD Vibration Temperature Sensor
       href: /docs/pe/devices-library/ncd-vibration-temperature-sensor/
   description: NCD.io is an IoT Hardware Design and Development Company specializing
     in Wireless IoT sensors. It offers a wide range of plug-and-play devices for monitoring
@@ -1270,7 +1270,7 @@
     href: https://www.digicom.it/
   links:
     0:
-      label: Integration guide
+      label: Energy Meter monitoring
       href: /docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-pla%C6%9Eorm/
   description: Digicom is a brand with over 45 years of history and experience in
     the development and management of Internet-connected products. In 2017, Digicom
@@ -1472,7 +1472,7 @@
     href: https://www.elastel.com/
   links:
     0:
-      label: Integration guide
+      label: Industrial Raspberry Pi EG500
       href: /docs/devices-library/raspberry-pi-cm4/
   description: Elastel is a technology-driven company providing IIoT products and
     services globally. With 10+ years of industry experience, Elastel has developed
@@ -1521,7 +1521,7 @@
     href: http://www.dragino.com/
   links:
     0:
-      label: Integration guide
+      label: Dragino -NB and -CB series devices
       href: https://wiki.dragino.com/xwiki/bin/view/Main/ThingsBoard
   description: Shenzhen Dragino Technology Development Co., Ltd. specializes in IoT
     solutions, with a focus on LoRaWAN and NB-IoT technologies. We offer end-to-end
@@ -1616,7 +1616,7 @@
     href: https://sixfab.com/alpon
   links:
     0:
-      label: Integration guide
+      label: ALPON X4 Edge Computer
       href: /docs/devices-library/alpon-x4/
   description: Sixfab builds modular, always online, industrial-grade edge computers
     based on Raspberry Pi, designed for real-world deployments. Our ALPON™ devices

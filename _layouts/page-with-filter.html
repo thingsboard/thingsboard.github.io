@@ -100,7 +100,12 @@
                 searchFilterInput.addEventListener('input', () => {
                     const query = searchFilterInput.value.trim().toLowerCase();
 
+                    const filterContainer = filterItems[0].parentElement;
+
+                    const notFound = filterContainer.querySelector(".not-found-indicator");
+
                     if (query.length > 0) {
+
                         if (toggleBtn) toggleBtn.style.display = 'none';
 
                         filterItems.forEach(item => item.classList.remove('extra-filter'));
@@ -110,7 +115,26 @@
                             const text = label ? label.textContent.toLowerCase() : '';
                             item.classList.toggle('hidden', !text.includes(query));
                         });
+
+                        const hiddenFilters = filterContainer.querySelectorAll(".hidden");
+
+                        if(filterItems.length === hiddenFilters.length) {
+                            if(!notFound) {
+                                const li = document.createElement("li");
+                                li.textContent = "Not found";
+                                li.classList.add("not-found-indicator");
+                                filterContainer.appendChild(li);
+                            }
+                        } else {
+                            if(notFound) {
+                                notFound.remove();
+                            }
+                        }
                     } else {
+                        if(notFound) {
+                            notFound.remove();
+                        }
+
                         if (toggleBtn) toggleBtn.style.display = 'inline-block';
 
                         filterItems.forEach((item, index) => {
@@ -194,6 +218,7 @@
                 updateCrisps(selectedFilters, container);
             });
         }
+
         const MAX_VISIBLE_CRISPS = 3;
 
         function setExpanded(container, expanded) {

@@ -43,7 +43,7 @@
                             </div>
                         {% endif %}
                         {% for filter in item[1].filters %}
-                            <li class="big-filter-section-filter {% if forloop.index0 >= 10 %} extra-filter{% endif %}">
+                            <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
                                 <input class="pagination-render-trigger" type="checkbox" id="{{ filter[1] }}" value="{{ filter[1] }}">
                                 <label class="pagination-render-trigger" for="{{ filter[1] }}">{{ filter[1] }}</label>
                             </li>

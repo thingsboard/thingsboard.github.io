@@ -278,8 +278,15 @@ input:not(:placeholder-shown) + .searchButton
                 line-height: 24px
                 color: #2A7DEC
               li
+                font-size: 14px
+                font-weight: 400
+                line-height: 24px
                 display: flex
                 align-items: center
+                &.not-found-indicator
+                  display: block
+                  width: 100%
+                  text-align: center
                 &.hidden
                   display: none
                 &.extra-filter
@@ -316,9 +323,6 @@ input:not(:placeholder-shown) + .searchButton
                       opacity: 1
                 label
                   cursor: pointer
-                  font-size: 14px
-                  font-weight: 400
-                  line-height: 24px
                   padding-left: 8px
                   margin-bottom: 0
           &.opened
@@ -331,7 +335,7 @@ input:not(:placeholder-shown) + .searchButton
               transform: rotate(180deg)
     .cards-block
       position: relative
-      min-height: 509px
+      min-height: 514px
       width: 100%
       height: 100%
       padding: 32px 0
@@ -361,20 +365,21 @@ input:not(:placeholder-shown) + .searchButton
           height: 100%
           box-shadow: unset
           &:hover
-            box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10), 0 0 40px 0 rgba(0, 0, 0, 0.10)
-            text-decoration: none
-            height: 115%
-            z-index: 1
-            .card-link-wrapper
-              opacity: 1
-              .card-link
-                transition-duration: 0.3s
-                .first
-                  transform: translate(10px)
-                .second
-                  transform: translate(20px)
-                .third
-                  transform: translate(30px)
+            @media (min-width: 601px)
+              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10), 0 0 40px 0 rgba(0, 0, 0, 0.10)
+              text-decoration: none
+              height: 115%
+              z-index: 1
+              .card-link-wrapper
+                opacity: 1
+                .card-link
+                  transition-duration: 0.3s
+                  .first
+                    transform: translate(10px)
+                  .second
+                    transform: translate(20px)
+                  .third
+                    transform: translate(30px)
           &.filter-hidden
             display: none
           &.search-hidden
@@ -398,23 +403,24 @@ input:not(:placeholder-shown) + .searchButton
             flex-wrap: wrap
             gap: 6px
             &:after
-              content: attr(data-tooltip)
-              position: absolute
-              top: 0
-              right: -10%
-              border-radius: 4px
-              background: rgba(0, 0, 0, 0.70)
-              backdrop-filter: blur(2px)
-              color: #fff
-              padding: 10px 16px
-              font-size: 14px
-              line-height: 24px
-              font-weight: 400
-              white-space: pre
-              opacity: 0
-              pointer-events: none
-              transition: opacity 0.3s
-              z-index: 1
+              @media (min-width: 600px)
+                content: attr(data-tooltip)
+                position: absolute
+                top: 0
+                right: -10%
+                border-radius: 4px
+                background: rgba(0, 0, 0, 0.70)
+                backdrop-filter: blur(2px)
+                color: #fff
+                padding: 10px 16px
+                font-size: 14px
+                line-height: 24px
+                font-weight: 400
+                white-space: pre
+                opacity: 0
+                pointer-events: none
+                transition: opacity 0.3s
+                z-index: 1
             &:hover:after
               opacity: 1
             .crisp
@@ -444,10 +450,13 @@ input:not(:placeholder-shown) + .searchButton
             @media (max-width: 400px)
               word-break: break-word
           .card-link-wrapper
+            display: block
+            margin-top: 10px
             transition: ease-in-out 0.3s
-            position: absolute
-            opacity: 0
-            bottom: 20px
+            @media (min-width: 601px)
+              position: absolute
+              opacity: 0
+              bottom: 20px
             .card-link
               position: relative
               color: #2A7DEC
@@ -468,14 +477,24 @@ input:not(:placeholder-shown) + .searchButton
                   opacity: 0.5
                 @media (max-width: 1200px)
                   display: none
+                @media (max-width: 600px)
+                  display: block
+                  right: -8px
+                  &.first
+                    transform: translate(10px)
+                  &.second
+                    transform: translate(20px)
+                  &.third
+                    transform: translate(30px)
               &:hover
-                transition-duration: 0.3s
-                .first
-                  transform: translate(10px)
-                .second
-                  transform: translate(20px)
-                .third
-                  transform: translate(30px)
+                @media (min-width: 1200px)
+                  transition-duration: 0.3s
+                  .first
+                    transform: translate(10px)
+                  .second
+                    transform: translate(20px)
+                  .third
+                    transform: translate(30px)
     .not-found
       position: absolute
       top: 50%
