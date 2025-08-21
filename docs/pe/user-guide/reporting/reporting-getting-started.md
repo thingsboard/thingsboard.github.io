@@ -32,7 +32,7 @@ reporting-getting-started-rich-text:
         title: 'Locate the <b>Rich text</b> component in the <b>component library</b> and drag it into the <b>content area</b>.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-rich-text-2-pe.png
-        title: 'Enter the following text (or your preferred description) into the component, for example: "This report provides an overview of all customer devices, their latest telemetry, status, and a list of alarms triggered today.".<br> Once you&#39;ve added the text, click "<b>Apply</b>" to apply the changes.'
+        title: 'Enter the desired text into the component&#39;s text field.<br>Then, click "<b>Apply</b>" to save the component.'
     
 reporting-getting-started-entity-table:
     0:
@@ -52,7 +52,7 @@ reporting-getting-started-entity-table:
         title: 'Specify the telemetry key "<b>temperature</b>" as the key for the new table column.'
     5:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-6-pe.png
-        title: 'Similarly, add columns for the telemetry key "<b>humidity</b>" and the attribute "<b>active</b>", which will display the device status. Click "<b>Save</b>" component to apply your changes.'
+        title: 'Similarly, add columns for the telemetry key "<b>humidity</b>" and the attribute "<b>active</b>", which will display the device status. Click "<b>Apply</b>" to save component.'
 
 reporting-getting-started-alarm-table:
     0:

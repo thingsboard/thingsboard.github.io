@@ -55,7 +55,7 @@ Components are added by dragging them from the components library into the conte
 
 ### Step 2.1 "Heading" component
 
-First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report component library</b> and drag it into the <b>header content area</b> of your report.
+First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report components library</b> and drag it into the <b>header area</b> of your report.
 
 In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template:
 
@@ -73,8 +73,8 @@ Once done, click "<b>Apply</b>" to save the component.
 
 Next, let&#39;s add the "<b>Rich text</b>" component, which will contain a brief explanation of the report&#39;s purpose.
 
-- Locate the <b>Rich text</b> component in the <b>component library</b> and drag it into the <b>content area</b>.
-- Enter the following text (or your preferred description) into the component.   
+- Locate the <b>Rich text</b> component in the <b>components library</b> and drag it into the <b>content area</b>.
+- Enter the following text (or your preferred description) component&#39;s text field.   
   For example:
   ```
   This report lists all devices currently deployed in your project, along with their alarms for the current day.
@@ -91,7 +91,7 @@ The next component we&#39;ll add is the "<b>Entity table</b>" — a table-style 
 
 Next, we&#39;ll add the "<b>Entity table</b>" component. This table will display a list of all your devices, along with their latest telemetry values and status.
 
-- Drag & Drop the "<b>Entity table</b>" component from the <b>component library</b> into the <b>content area</b>.
+- Drag & Drop the "<b>Entity table</b>" component from the <b>components library</b> into the <b>content area</b>.
 - In the "<b>Datasource</b>" section, create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.
 - <b>Enable the table heading</b> and update the heading text.
 - In the <b>Columns</b> section:

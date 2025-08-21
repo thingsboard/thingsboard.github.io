@@ -22,9 +22,6 @@
 {% if currentGuide != "AdvancedFeatures" %}
 - [Advanced features](/docs/pe/guides/#AnchorIDAdvancedFeatures) - Learn about advanced ThingsBoard features.
 {% endif %}
-  
-<br>
-
 
 
 
