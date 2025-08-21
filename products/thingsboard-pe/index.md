@@ -193,7 +193,7 @@ description:
             <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
-            <th>NB-IoT, SigFox, LoRaWAN support</th>
+            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN support<span class="faq-icon"></span></a></th>
             <td>Basic</td>
             <td>Advanced</td>
             <td>Advanced</td>
