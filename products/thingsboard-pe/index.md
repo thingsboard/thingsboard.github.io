@@ -164,33 +164,33 @@ description:
         <tbody>
           <tr>
             <th>Asset management & Data collection</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>End-user real-time dashboards</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>Customizable rule chains, widgets</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>MQTT, HTTP, CoAP, OPC-UA transport</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>Integrations with BigData systems</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>NB-IoT, SigFox, LoRaWAN support</th>
@@ -206,51 +206,51 @@ description:
           </tr>
           <tr>
             <th><a href="/docs/user-guide/groups/">Entity groups<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/scheduler/">Scheduler<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/pe/user-guide/reporting/">Reporting<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/white-labeling/">White-labeling<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/integrations/">Platform Integrations<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
         </tbody>
       </table> 
