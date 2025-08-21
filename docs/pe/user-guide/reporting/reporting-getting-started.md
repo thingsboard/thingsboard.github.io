@@ -46,7 +46,7 @@ reporting-getting-started-entity-table:
         title: 'Create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.'
     3:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-4-pe.png
-        title: '<b>Enable the table heading</b> and update the heading text. In the "<b>Columns</b> section click "<b>Add column</b>".'
+        title: '<b>Enable the table heading</b> and update the heading text. In the "<b>Columns</b>" section click "<b>Add column</b>".'
     4:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-5-pe.png
         title: 'Specify the telemetry key "<b>temperature</b>" as the key for the new table column.'
@@ -60,7 +60,7 @@ reporting-getting-started-alarm-table:
         title: 'Drag the "<b>Alarm table</b>" component into the content area of your report.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-2-pe.png
-        title: 'Set the entity alias "<b>All devices</b>" as the <b>alarm source</b>.'
+        title: 'Set the "<b>All devices</b>" entity alias as the <b>alarm source</b>.'
     2:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-3-pe.png
         title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
@@ -81,10 +81,10 @@ reporting-getting-started-generate-test-report:
 scheduler-event-customer-a-1:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-1-pe.png
-        title: 'Go to the "<b>Scheduling</b>" page and click the "<b>+ Scheduled report</b>" button in the top-right corner.'
+        title: 'Go to the "<b>Scheduling</b>" tab on the "<b>Reporting</b>" page and click the "<b>+ Scheduled report</b>" button in the top-right corner.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/scheduler-event-customer-a-2-pe.png
-        title: 'In the scheduling dialog: give your schedule a clear title, e.g., <b>Daily Devices Alarm Report for Customer A</b><br>. – Select the previously created <b>Daily Devices Alarm Report</b> template.<br> – Specify the user account on whose behalf the report will be generated: <b>janesmith@thingsboard.io</b> (Jane Smith — Customer A administrator).'
+        title: 'In the scheduling dialog: give your schedule event a clear title, e.g., <b>Daily Devices Alarm Report for Customer A</b><br>. – Select the previously created <b>Daily Devices Alarm Report</b> template.<br> – Specify the user account on whose behalf the report will be generated: <b>janesmith@thingsboard.io</b> (Jane Smith — Customer A administrator).'
 
 scheduler-event-customer-a-2:
     0:
