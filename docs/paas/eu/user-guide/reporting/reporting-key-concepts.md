@@ -2,8 +2,8 @@
 layout: docwithnav-paas-eu
 assignees:
 - stitenko
-title: Key concepts
-description: Key concepts
+title: Key concepts of Reporting
+description: Key concepts of Reporting
 
 create-new-report-template:
     0:
