@@ -46,7 +46,7 @@ The system will generate a test report showing the chart.
 
 ## Embedding time-series chart
 
-We&#39;ve prepared a JSON file with all the required settings for embedding a time-series chart into your report. You can easily [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} this template into your ThingsBoard instance and adjust it to fit your specific needs.
+We&#39;ve prepared a JSON file with all the required settings for embedding a <b>time-series chart</b> into your report. You can [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} this template into your ThingsBoard instance and adjust it to fit your specific needs.
 
 [Click here to download "time_series_chart_template.json"](/docs/pe/user-guide/reporting/resources/time_series_chart_template.json){:target="_blank" download="time_series_chart_template.json"}
 
@@ -73,7 +73,7 @@ The applied changes include:
 - <b>Position</b>: `Left`
 - <b>Units</b>: `°C`
 - <b>Decimals</b>: `0`
-- Settings (gear icon)**:
+- <b>Settings (gear icon)</b>:
   - <b>Label</b>:
     - Size: `32px`
     - Weight: `400`
@@ -116,7 +116,7 @@ The applied changes include:
     - Disable: <b>Animation</b>
   - <b>Widget card</b>: 
     - Disable: <b>Drop shadow</b>
-    - Add the following to **Advanced widget style (Widget CSS)**:
+    - Add the following to the <b>widget&#39;s advanced style (widget CSS)</b>:
 
 ```css
 .tb-time-series-chart-legend-item-label-circle {
@@ -136,9 +136,7 @@ The applied changes include:
 
 ## Embedding pie chart
 
-We&#39;ve prepared a JSON file with all the required settings for embedding a pie chart into your report — you can import it and adjust as needed.
-
-We&#39;ve prepared a JSON file with all the necessary settings for embedding a <b>pie chart</b> into your report. You can simply [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance and adjust it to your needs.
+We&#39;ve prepared a JSON file with all the necessary settings for embedding a <b>pie chart</b> into your report. You can [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance and adjust it to your needs.
 
 [Click here to download "pie_chart_template.json"](/docs/pe/user-guide/reporting/resources/pie_chart_template.json){:target="_blank" download="pie_chart_template.json"}
 
