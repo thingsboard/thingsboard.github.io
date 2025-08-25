@@ -57,13 +57,13 @@ manage-owner-and-groups:
         image: /images/user-guide/ui/assets/manage-owner-and-groups-3-pe.png
         title: 'In the <b>"Customer name" column</b>, you can see the current owner of the asset.'
 
-include-customer-entities:
+include-customer-assets:
     0:
         image: /images/user-guide/ui/assets/include-customer-entities-1-pe.png
-        title: 'The "<b>Include customer entities</b>" option allows you to show or hide customer-owned entities in the list view.'
+        title: 'When the switch is <b>enabled</b> (default state) – the table shows all available assets, including those owned by customers.'
     1:
         image: /images/user-guide/ui/assets/include-customer-entities-2-pe.png
-        title: ''
+        title: 'When the switch is <b>disabled</b> – the table shows only your own assets, excluding customer-owned assets.'
 
 make-asset-group-public:
     0:
