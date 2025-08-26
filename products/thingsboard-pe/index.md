@@ -223,7 +223,7 @@ description:
             <td><i class="fa fa-check"></i></td>
           </tr>
           <tr>
-            <th><a href="/docs/pe/user-guide/reporting/">Reporting<span class="faq-icon"></span></a></th>
+            <th><a href="/docs/pe/user-guide/reporting/reporting-key-concepts/">Reporting<span class="faq-icon"></span></a></th>
             <td><i class="fa fa-times disabled"></i></td>
             <td><i class="fa fa-check"></i></td>
             <td><i class="fa fa-check"></i></td>
