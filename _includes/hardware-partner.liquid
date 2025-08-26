@@ -14,32 +14,37 @@
     </div>
     <div class="hardware-info">
         <table class="hardware-info-table">
-            <tr>
-                <th scope="row">Connectivity</th>
-                <td>{{ partner.type | join: ', ' }}</td>
-            </tr>
-            <tr>
-                <th scope="row">Industry</th>
-                <td>{{ partner.industry | join: ', ' }}</td>
-            </tr>
-            <tr>
-                <th scope="row">Use cases</th>
-                <td>{{ partner.use-case | join: ', ' }}</td>
-            </tr>
-            <tr>
-                <th scope="row">Hardware types</th>
-                <td>{{ partner.hardware-types | join: ', ' }}</td>
-            </tr>
-            {% for item in partner.links %}
+            <caption class="visually-hidden">
+                {{ partner.name }} integration with ThingsBoard — Connectivity, Industry, Use cases, Hardware types and guides
+            </caption>
+            <tbody>
                 <tr>
-                    <th scope="row">{{ item[0] | replace: "-", " " | capitalize }}</th>
-                    <td>
-                        {% for link in item[1] %}
-                            <a href="{{ link[1].href }}">{{ link[1].label }}</a>{% unless forloop.last %}, {% endunless %}
-                        {% endfor %}
-                    </td>
+                    <th scope="row">Connectivity</th>
+                    <td>{{ partner.type | join: ', ' }}</td>
                 </tr>
-            {% endfor %}
+                <tr>
+                    <th scope="row">Industry</th>
+                    <td>{{ partner.industry | join: ', ' }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Use cases</th>
+                    <td>{{ partner.use-case | join: ', ' }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Hardware types</th>
+                    <td>{{ partner.hardware-types | join: ', ' }}</td>
+                </tr>
+                {% for item in partner.links %}
+                    <tr>
+                        <th scope="row">{{ item[0] | replace: "-", " " | capitalize }}</th>
+                        <td>
+                            {% for link in item[1] %}
+                                <a href="{{ link[1].href }}">{{ link[1].label }}</a>{% unless forloop.last %}, {% endunless %}
+                            {% endfor %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
         </table>
         {% if partner.showcases and partner.showcases.size > 0 %}
             <div class="showcases">
