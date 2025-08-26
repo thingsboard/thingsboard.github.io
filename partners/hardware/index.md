@@ -106,7 +106,7 @@ filterCollection:
         <div class="hardware-hero-banner">
             <p>Want to become ThingsBoard Hardware Partner?</p>
             <a href="/partners/hardware/program/">Apply for program</a>
-            <img src="/images/hardware-partners-icon.svg" width="210" height="210">
+            <img src="/images/hardware-partners-icon.svg" width="210" height="210" alt="Hardware partner icon">
         </div>
     </div>
 </div>

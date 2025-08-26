@@ -34,13 +34,15 @@
                 <div class="big-filter-section-filters">
                     <ul class="big-filter-section-list">
                         {% if filters.size > 10 %}
-                            <div class="search-item">
-                                <input id="searchFilterInput" type="text" placeholder="Search..." />
-                                <span class="searchButton">
-                                    <img class="searchButtonIcon" src="/images/search.svg">
+                            <li class="big-filter-section-search">
+                                <div class="search-item">
+                                    <input id="searchFilterInput" type="text" placeholder="Search..." />
+                                    <span class="searchButton">
+                                    <img class="searchButtonIcon" src="/images/search.svg" alt="Search icon">
                                     <img class="searchButtonCloseIcon" src="/images/s-close-icon.svg">
                                 </span>
-                            </div>
+                                </div>
+                            </li>
                         {% endif %}
                         {% for filter in item[1].filters %}
                             <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
@@ -49,7 +51,9 @@
                             </li>
                         {% endfor %}
                         {% if filters.size > 10 %}
-                            <button type="button" class="toggle-extra-btn">More</button>
+                            <li>
+                                <button type="button" class="toggle-extra-btn">More</button>
+                            </li>
                         {% endif %}
                     </ul>
                 </div>
