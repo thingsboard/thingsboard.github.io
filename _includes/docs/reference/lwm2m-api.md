@@ -89,7 +89,7 @@ Each **resource** has the following main properties:
 
 ## Getting started
 
-This section covers how to provision your first LwM2M device in ThingsBoard. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example){:target="_blank"} test client to simulate LwM2M device.
+This section covers how to provision your first LwM2M device in ThingsBoard. We will use [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client){:target="_blank"} test client to simulate LwM2M device.
 
 ### Step 1. Upload LwM2M models
 
@@ -254,7 +254,7 @@ Refer to the [DTLS configuration](#dtls-configuration) guide for more informatio
 
 At this point, you should have:
 - Provisioned the LwM2M device and its credentials (as described in the previous step).
-- Built the Eclipse Wakaama [test client](https://github.com/eclipse/wakaama#test-client-example){:target="_blank"}.
+- Built the [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client){:target="_blank"}.
 
 Now you are ready to start the client and observe incoming telemetry in ThingsBoard.
 
@@ -263,13 +263,26 @@ Now you are ready to start the client and observe incoming telemetry in ThingsBo
 Run the following command from your terminal:
 
 ```bash
-./lwm2mclient -h {{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME -p 5685 -c
+java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
+```
+{: .copy-code}
+
+or
+
+```bash
+java -jar thingsboard-lwm2m-demo-client-4.1.0.jar -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
+```
+{: .copy-code}
+
+or
+
+```bash
+docker run --rm -it thingsboard/tb-lwm2m-demo-client:latest -u coap://{{lwm2mHostName}} -n $UNIQUE_ENDPOINT_NAME
 ```
 {: .copy-code}
 
 **where:**
-* **{{lwm2mHostName}}** - the **hostname** of your LwM2M server
-* **5685** - the **port** of LwM2M server;
+* **{{lwm2mHostName}}** - the **hostname** of your LwM2M server with the **port** = **5685** of LwM2M server;
 * **$UNIQUE_ENDPOINT_NAME** - is the unique name of your endpoint.(e.g., IMEI or any other unique ID)
 
 > ⚠️ Be sure to replace **$UNIQUE_ENDPOINT_NAME** with your actual device identifier.
@@ -283,7 +296,7 @@ Once the client connects:
 The LwM2M transport implementation also stores the logs of communication with the device into telemetry.
 You can view these logs under the "**transportLog**" event of the "**Latest telemetry**" tab.
 
-{% include images-gallery.html imageCollection="wakaama-terminal" %}
+{% include images-gallery.html imageCollection="transport-log" %}
 
 ## ThingsBoard LwM2M support
 
@@ -1600,7 +1613,7 @@ mvn clean install
 3. Run the client with custom parameters:
 
 ```
-java -jar thingsboard-lw-demo-client-{version}.jar -u coap://demo.thingsboard.io -n MyClientNoSec -tota
+java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coap://demo.thingsboard.io -n MyClientNoSec -tota
 ```
 {: .copy-code}
 
@@ -1682,7 +1695,7 @@ the Raw Public Key(RPK) and using the X.509 certificate.
 
 To use DTLS, the end-user device has to connect to the ThingsBoard server using secured port 5686.
 
-For the demonstration purpose we will use Leshan Demo Client, please refer to the link for downloading and configuration: [here](https://github.com/eclipse/leshan){:target="_blank"}.
+For the demonstration purpose we will use **ThingsBoard LwM2M Demo Client**, please refer to the link for downloading and configuration: [here](https://github.com/thingsboard/thingsboard.lwm2m.demo.client){:target="_blank"}.
 
 #### 1. Pre-shared Key mode (PSK).
 
@@ -1699,25 +1712,39 @@ You need only three strings to configure the connection in the Device profile:
 * Client identity (PSK identity) key: any text string.
 * PSK key (security key): should be a random sequence in HexDec format and 32, 64 or 128 characters long.
 
-Example of using  Leshan Demo Client:
+Example of using **ThingsBoard LwM2M Demo Client**:
 
-    Endpoint client name= "ClientPsk";
-    Client identity (PSK identity) = "ClientPskIdentity";
-    Client key (PSK key or PSK security key) = "0123456789ABCDEF0123456789ABCDEF";
+    Endpoint client name= "MyClientPsk";
+    Client identity (PSK identity) = "myIdentity";
+    Client key (PSK key or PSK security key) = "01020304050607080A0B0C0D0F010203";
 
-Example command for start "Leshan client demo" in mode PSK:
+Example command for start [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client) in mode PSK:
 
 ```ruby
-java -jar leshan-client-demo.jar -u localhost:5686 -lh 0.0.0.0 -lp 10004 -n ClientPsk -i ClientPskIdentity 
--p 0123456789ABCDEF0123456789ABCDEF
-    
-Leshan Client Demo Interactive Console :
-...
+java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coaps://demo.thingsboard.io -n MyClientPsk --psk-identity myIdentity --psk-key 01020304050607080A0B0C0D0F010203 
+```
+
+  or
+
+```ruby
+java -jar thingsboard-lwm2m-demo-client-4.1.0.jar -u coaps://demo.thingsboard.io -n MyClientPsk --psk-identity myIdentity --psk-key 01020304050607080A0B0C0D0F010203
+```
+{: .copy-code}
+
+  or
+
+```ruby
+docker run --rm -it thingsboard/tb-lwm2m-demo-client:latest -u coaps://demo.thingsboard.io -n 	MyClientPsk -i myIdentity -p 01020304050607080A0B0C0D0F010203
+```
+{: .copy-code}
+
+Thingsboard-demo-client Interactive Console :
+
+```
 DefaultRegistrationEngine 2021-09-30 19:09:52,789 [INFO] Trying to register to coaps://192.168.1.81:5686 ...
-LeshanClientDemo 2021-09-30 19:09:52,830 [INFO] DTLS Full Handshake initiated by client : STARTED ...
-LeshanClientDemo 2021-09-30 19:09:52,949 [INFO] DTLS Full Handshake initiated by client : SUCCEED
+thingsboard-demo-client 2021-09-30 19:09:52,830 [INFO] DTLS Full Handshake initiated by client : STARTED ...
+thingsboard-demo-client 2021-09-30 19:09:52,949 [INFO] DTLS Full Handshake initiated by client : SUCCEED
 DefaultRegistrationEngine 2021-09-30 19:09:52,990 [INFO] Registered with location '/rd/vXMGfVFgQi'.
-...
 ```
 {: .copy-code}
 
@@ -1854,14 +1881,15 @@ MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEdvBZZ2vQRK9wgDhctj6B1c7bxR3Z0wYg1+YdoYFnVUKW
 ```
 
 {:start="6"}
-6. Example command to launch  "Leshan demo client" in RPK mode:
+6. Example command to launch   [ThingsBoard LwM2M Demo Client](https://github.com/thingsboard/thingsboard.lwm2m.demo.client) in RPK mode:
+
 
 ```ruby
 #command:
-$ java -jar leshan-client-demo.jar -u localhost:5686 -lh 0.0.0.0 -lp 10004 -n ClientRpk -cpubk cpubk.der -cprik cprik.der -spubk spubk.der
+$ java -jar thingsboard-lwm2m-demo-client-{version}.jar -u coaps://demo.thingsboard.io -n MyClientRpk -cpubk ./clietPubK.der -cprik ./clientKey.der -spubk ./serverPubK.der
 
 #Output:
-Leshan Client Demo Interactive Console :
+ThingsBoard LwM2M Demo Client Interactive Console :
  
 Commands:
   help	Displays help information about the specified command
@@ -1872,14 +1900,14 @@ Commands:
   move	Simulate client mouvement.
  
 Press Ctl-C to exit.
- 
-              	LeshanClient 2021-10-27 10:37:21,196 [INFO] Starting Leshan client ...
-   CaliforniumEndpointsManager 2021-10-27 10:37:21,470 [INFO] New endpoint created for server coaps://18.184.200.162:5686 at coaps://[0:0:0:0:0:0:0:0]:10004
-              	LeshanClient 2021-10-27 10:37:21,472 [INFO] Leshan client[endpoint:leshan-rpkz] started.
- 	DefaultRegistrationEngine 2021-10-27 10:37:21,474 [INFO] Trying to register to coaps://18.184.200.162:5686 ...
-          	LeshanClientDemo 2021-10-27 10:37:21,549 [INFO] DTLS Full Handshake initiated by client : STARTED ...
-          	LeshanClientDemo 2021-10-27 10:37:21,729 [INFO] DTLS Full Handshake initiated by client : SUCCEED
- 	DefaultRegistrationEngine 2021-10-27 10:37:21,771 [INFO] Registered with location '/rd/yyIIQFyg6H'.
- 	DefaultRegistrationEngine 2021-10-27 10:37:21,773 [INFO] Next registration update to coaps://18.184.200.162:5686 in 53s...
+
+ThingsBoard Demo Client 2021-10-27 10:37:21,196 [INFO] Starting Leshan client ...
+CaliforniumEndpointsManager 2021-10-27 10:37:21,470 [INFO] New endpoint created for server coaps://18.184.200.162:5686 at coaps://[0:0:0:0:0:0:0:0]:10004
+ThingsBoard Demo Client 2021-10-27 10:37:21,472 [INFO] Leshan client[endpoint:leshan-rpkz] started.
+DefaultRegistrationEngine 2021-10-27 10:37:21,474 [INFO] Trying to register to coaps://18.184.200.162:5686 ...
+ThingsBoard Demo Client 2021-10-27 10:37:21,549 [INFO] DTLS Full Handshake initiated by client : STARTED ...
+ThingsBoard Demo Client 2021-10-27 10:37:21,729 [INFO] DTLS Full Handshake initiated by client : SUCCEED
+DefaultRegistrationEngine 2021-10-27 10:37:21,771 [INFO] Registered with location '/rd/yyIIQFyg6H'.
+DefaultRegistrationEngine 2021-10-27 10:37:21,773 [INFO] Next registration update to coaps://18.184.200.162:5686 in 53s...
 ```
 

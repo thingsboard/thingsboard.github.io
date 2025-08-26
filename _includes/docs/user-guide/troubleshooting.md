@@ -213,17 +213,20 @@ Stats descriptions:
     
 ## Grafana Dashboards
 
-You can import preconfigured Grafana dashboards from [here](https://github.com/thingsboard/thingsboard/tree/master/docker/monitoring/grafana/provisioning/dashboards). 
-**Note:** Depending on the cluster configuration you may need to make changes to the dashboards.
+{% if docsPrefix == "pe/" %}
+You can import preconfigured Grafana dashboards from [here](https://github.com/thingsboard/thingsboard-pe-docker-compose/tree/master/basic/monitoring/grafana/provisioning/dashboards){: target="_blank"}.
+{% else %}
+You can import preconfigured Grafana dashboards from [here](https://github.com/thingsboard/thingsboard/tree/master/docker/monitoring/grafana/provisioning/dashboards){: target="_blank"}.
+{% endif %}
 
-Also, you can view Grafana dashboards after deploying ThingsBoards docker-compose cluster configuration (for more information please follow [this guide](/docs/user-guide/install/{{docsPrefix}}cluster/docker-compose-setup/)).
-Make sure that `MONITORING_ENABLED` environment variable is set to `true`. 
-After deployment, you will be able to reach Prometheus at `http://localhost:9090` and Grafana at `http://localhost:3000` (default login is `admin` and password `foobar`).
+> **Note:** Depending on the cluster configuration, you may need to make changes to the dashboards.
 
-Here's screenshots of default preconfigured Grafana dashboards:
+You can also view Grafana dashboards after deploying the ThingsBoards docker-compose cluster configuration (for more information, please follow [this guide](/docs/user-guide/install/{{docsPrefix}}cluster/docker-compose-setup/){: target="_blank"}).
+Make sure that `MONITORING_ENABLED` environment variable is set to `true`. Once deployed, you can access Prometheus at [http://localhost:9090](http://localhost:9090){: target="_blank"} and Grafana at [http://localhost:3000](http://localhost:3000){: target="_blank"} (by default, the username is `admin` and the password is `foobar`).
+
+Here are the screenshots of the default preconfigured Grafana dashboards:
 
 {% include images-gallery.html imageCollection="metrics-dashboards" %}
-
 
 ## OAuth2
 
