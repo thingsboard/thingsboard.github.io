@@ -4,6 +4,7 @@ assignees:
 - stitenko
 title: Getting started with Reporting
 description: Getting started with Reporting
+redirect_from: "/docs/user-guide/reporting/reporting-getting-started/"
 
 reporting-getting-started-create-template:
     0:

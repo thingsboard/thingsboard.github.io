@@ -4,6 +4,7 @@ assignees:
 - stitenko
 title: Key concepts
 description: Key concepts
+redirect_from: "/docs/user-guide/reporting/reporting-key-concepts/"
 
 create-new-report-template:
     0:
