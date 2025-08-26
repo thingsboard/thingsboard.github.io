@@ -15,37 +15,37 @@
     <div class="hardware-info">
         <table class="hardware-info-table">
             <tr>
-                <th>Connectivity</th>
+                <th scope="row">Connectivity</th>
                 <td>{{ partner.type | join: ', ' }}</td>
             </tr>
             <tr>
-                <th>Industry</th>
+                <th scope="row">Industry</th>
                 <td>{{ partner.industry | join: ', ' }}</td>
             </tr>
             <tr>
-                <th>Use cases</th>
+                <th scope="row">Use cases</th>
                 <td>{{ partner.use-case | join: ', ' }}</td>
             </tr>
             <tr>
-                <th>Hardware types</th>
+                <th scope="row">Hardware types</th>
                 <td>{{ partner.hardware-types | join: ', ' }}</td>
             </tr>
+            {% for item in partner.links %}
+                <tr>
+                    <th scope="row">{{ item[0] | replace: "-", " " | capitalize }}</th>
+                    <td>
+                        {% for link in item[1] %}
+                            <a href="{{ link[1].href }}">{{ link[1].label }}</a>{% unless forloop.last %}, {% endunless %}
+                        {% endfor %}
+                    </td>
+                </tr>
+            {% endfor %}
         </table>
         {% if partner.showcases and partner.showcases.size > 0 %}
             <div class="showcases">
                 <span class="section-label">Showcases:</span>
-                <ul>
+                <ul class="showcase-list">
                     {% for link in partner.showcases %}
-                        <li><a href="{{ link[1].href }}" class="hardware-crisp">{{ link[1].label }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-        {% endif %}
-        {% if partner.links and partner.links.size > 0 %}
-            <div class="guides">
-                <span class="section-label">Guides:</span>
-                <ul class="guide-list">
-                    {% for link in partner.links %}
                         <li><a href="{{ link[1].href }}" class="hardware-crisp">{{ link[1].label }}</a></li>
                     {% endfor %}
                 </ul>
@@ -56,10 +56,8 @@
 
 <script>
     (function () {
-        const containers = document.querySelectorAll('.guides');
-
         function applyRowClamp(container) {
-            const list = container.querySelector('.guide-list');
+            const list = container.querySelector('.showcase-list');
             const items = Array.from(list?.children || []);
             const btn = container.querySelector('.toggle-guides-btn') || (() => {
                 const b = document.createElement('button');
@@ -102,7 +100,7 @@
             }
         }
 
-        const run = () => document.querySelectorAll('.guides').forEach(applyRowClamp);
+        const run = () => document.querySelectorAll('.showcases').forEach(applyRowClamp);
         run();
 
         let t;
