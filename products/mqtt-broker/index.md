@@ -1,6 +1,6 @@
 ---
 layout: mqtt-broker
-title: TBMQ | Open Source MQTT Broker | Scalable IoT Messaging
+title: TBMQ - Open Source MQTT Broker - Scalable IoT Messaging
 description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-source MQTT broker with clustering and message durability.
 ---
 
@@ -82,7 +82,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div class="block">
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Fan-in</a></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Fan-in (Many-to-one messaging using MQTT wildcards)</a></h3>
                 </div>
                 <div>
                     <span>Many-to-one communication pattern. Many devices generate a large volume of messages consumed by specific applications. They must be persistent clients with QoS levels set to 1 or 2, capable of retaining all the data even when they're temporarily offline due to restarts or upgrades.</span>
@@ -98,7 +98,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
             </div>            
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/">Fan-out</a></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/">Fan-out (Broadcast MQTT topics)</a></h3>
                 </div>
                 <div>
                     <span>This scenario facilitates one-to-many messaging. It involves numerous devices subscribing to specific updates or notifications that must be delivered. This leads to a few incoming requests that cause a high volume of outgoing data.</span>
@@ -108,7 +108,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div class="block">
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/">Point-to-point</a></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/">Point-to-point (Targeted MQTT topic communication)</a></h3>
                 </div>
                 <div>
                     <span>A targeted messaging pattern, primarily used for one-to-one communication. Achieved through uniquely defined topics, p2p is ideal for use cases such as private messaging or command-based interactions. Persistent clients with QoS levels set to 1 or 2 are often utilized to ensure reliable message delivery, even during temporary disconnections or client downtime.</span>
@@ -126,7 +126,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div id="background">
             <div class="main2"></div>
         </div>
-        <h2>TBMQ management & connectivity</h2>
+        <h2>TBMQ management & MQTT protocol</h2>
         <div class="row">
             <div class="col-lg-6">
                 <div class="block">
@@ -150,7 +150,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
 
 <section id="middle-features">
     <main>
-        <h3 class="middle-features-title">MQTT client management & more features</h3>
+        <h3 class="middle-features-title">MQTT client management & connectivity</h3>
         <div class="row">
             <div class="col-lg-6">
                 <div class="block">
@@ -237,7 +237,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div id="background">
             <div class="main3"></div>
         </div>
-        <h2>TBMQ features for MQTT protocol</h2>
+        <h2>TBMQ features</h2>
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
@@ -259,8 +259,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
             <div class="col-lg-6">
                 <div class="block"><img style="margin: 0" src="/images/mqtt-broker/product/security.svg" alt="Security">
                     <div>
-                        <h3 class="title"><a target="_blank" href="/docs/mqtt-broker/security/">MQTT security for data protection</a></h3>
-                        <p>Ensure secure communication with transport encryption for both MQTT and MQTT over WebSocket. Supports basic and X.509 Certificate Chain authentications.</p>
+                        <h3 class="title"><a target="_blank" href="/docs/mqtt-broker/security/overview/">MQTT security for data protection</a></h3>
+                        <p>Ensure secure communication with transport encryption for both MQTT and MQTT over WebSocket. Supports Basic, JWT, SCRAM, and X.509 Certificate Chain authentications.</p>
                     </div>
                 </div>
             </div>
@@ -276,7 +276,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <img src="/images/mqtt-broker/product/unauthorized-clients.svg" alt="Unauthorized clients">
                     <div>
-                        <h3 class="title"><a target="_blank" href="/docs/mqtt-broker/user-guide/ui/unauthorized-clients/">Securing unauthorized MQTT clients</a></h3>
+                        <h3 class="title"><a target="_blank" href="/docs/mqtt-broker/user-guide/ui/unauthorized-clients/">Unauthorized MQTT clients</a></h3>
                         <p>Secure your IoT network with real-time monitoring of unauthorized access attempts. Gain critical details into potential security threats, enabling you to take proactive measures and strengthen overall system protection.</p>
                     </div>
                 </div>
@@ -318,7 +318,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
             <div class="col-lg-6">
                 <div class="block">
                     <div class="image-container">
-                        <a target="_blank" href="/blog/introducing-tbmq-2-1-a-new-chapter-in-extensible-iot-messaging/">
+                        <a target="_blank" href="/blog/tbmq-2-1-new-chapter-in-mqtt-messaging-with-embedded-integrations/">
                             <img src="/images/mqtt-broker/product/news-4.webp" alt="TBMQ 2.1: New chapter in MQTT messaging with embedded Integrations" loading="lazy">
                         </a>
                     </div>
@@ -326,7 +326,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                         <div class="tags">
                             <a target="_blank" href="/blog/category/updates/">Updates</a>
                         </div>
-                        <a target="_blank" class="title" href="/blog/introducing-tbmq-2-1-a-new-chapter-in-extensible-iot-messaging/">TBMQ 2.1: New chapter in MQTT messaging with embedded Integrations</a>
+                        <a target="_blank" class="title" href="/blog/tbmq-2-1-new-chapter-in-mqtt-messaging-with-embedded-integrations/">TBMQ 2.1: New chapter in MQTT messaging with embedded Integrations</a>
                         <p>We're excited to announce the release of TBMQ 2.1.0! This version marks a major milestone by introducing the Integration Executor microservice, responsible for managing integrations. It powers scalable and multi-protocol message delivery to external systems, starting with support for HTTP, Kafka, and MQTT outbound integrations. We've also released the official Helm Chart for TBMQ, simplifying deployment and management of the infrastructure in K8s environments.</p>
                     </div>
                 </div>
