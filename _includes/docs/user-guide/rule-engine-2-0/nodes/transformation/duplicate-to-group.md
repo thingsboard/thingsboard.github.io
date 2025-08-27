@@ -15,16 +15,16 @@ The node can be configured in two modes.
 
 This is the default mode, where you manually select the target entity group.
 
-- **Entity group is message originator**: Disabled (toggle is off).
-- **Owner**: The owner of the entity group (e.g., a specific Customer or Tenant).
-- **Type**: The entity type of the entities within the group (e.g., *Device*, *Asset*).
-- **Select entity group**: The specific entity group to which the message will be duplicated.
+- **Entity group is message originator** - disabled (toggle is off).
+- **Owner** - the owner of the entity group (e.g., a specific Customer or Tenant).
+- **Type** - the entity type of the entities within the group (e.g., *Device*, *Asset*).
+- **Select entity group** - the specific entity group to which the message will be duplicated.
 
 ### Mode 2: Originator is the entity group
 
 In this mode, the target entity group is dynamically determined from the incoming message originator.
 
-- **Entity group is message originator**: Enabled (toggle is on).
+- **Entity group is message originator** - enabled (toggle is on).
 
 ### JSON Schema
 
@@ -74,9 +74,9 @@ In this mode, the target entity group is dynamically determined from the incomin
 
 ## Output connections
 
-- **`Success`**:
+- `Success`:
     - New messages (one for each entity in the group) are sent through this chain.
-- **`Failure`**:
+- `Failure`:
     - If the target entity group is empty.
     - If the **Entity group is message originator** option is enabled, but the actual message originator is not an entity group.
     - If any other unexpected error occurs.
