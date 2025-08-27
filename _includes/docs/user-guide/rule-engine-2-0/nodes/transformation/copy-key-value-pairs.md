@@ -13,7 +13,7 @@ If you're copying from the message **data**, it must be a valid JSON object. If 
 * **Copy key-values from** — specifies the direction of the copy operation. Can be either:
     * *Message to metadata* — copies key-value pairs from the message **data** to the **metadata**.
     * *Metadata to message* — copies key-value pairs from the **metadata** to the message **data**.
-* **Keys** — A list of keys to copy from the source. **Java regular expressions are supported.** If a configured key pattern does not match any key in the source, it is ignored.
+* **Keys** — a set of keys to copy from the source. **Java regular expressions are supported.** If a configured key pattern does not match any key in the source, it is ignored.
 
 ### JSON Schema
 
@@ -33,7 +33,7 @@ If you're copying from the message **data**, it must be a valid JSON object. If 
     },
     "keys": {
       "type": "array",
-      "description": "A set of keys to copy from the source. Regular expressions are supported.",
+      "description": "A set of keys to copy from the source. Java regular expressions are supported.",
       "items": {
         "type": "string"
       }
@@ -49,7 +49,7 @@ If you're copying from the message **data**, it must be a valid JSON object. If 
 
 ## Message processing algorithm
 
-1. The node checks the configured copy direction (**Message to metadata** or **Metadata to message**).
+1. The node checks the configured copy direction (*Message to metadata* or *Metadata to message*).
 2. It iterates through all key-value pairs in the source (either message data or metadata).
 3. For each key in the source, it checks if the key matches any of the patterns listed in the **Keys** configuration.
 4. If a key matches, the key-value pair is copied to the destination.
@@ -73,7 +73,7 @@ processing.
 
 -----
 
-### Example 1 — Copy from Message Data to Metadata
+### Example 1 — Copy from message data to metadata
 
 **Incoming message**
 
@@ -123,9 +123,9 @@ Metadata:
 
 ```json
 {
-  "ts": "1756280400000",
   "temperature": "25.4",
-  "humidity": "62"
+  "humidity": "62",
+  "ts": "1756280400000"
 }
 ```
 
@@ -136,7 +136,7 @@ metadata.
 
 -----
 
-### Example 2 — Copy from Metadata to Message Data
+### Example 2 — Copy from metadata to message data
 
 **Incoming message**
 
@@ -196,7 +196,7 @@ Metadata:
 
 -----
 
-### Example 3 — Using Regular Expressions
+### Example 3 — Using Java regular expressions
 
 **Incoming message**
 
@@ -241,7 +241,7 @@ Metadata:
 
 -----
 
-### Example 4 — Key Overwriting
+### Example 4 — Key overwriting
 
 **Incoming message**
 
@@ -290,7 +290,7 @@ Metadata:
 
 -----
 
-### Example 5 — Copying a JSON Object to Metadata
+### Example 5 — Copying a JSON object to metadata
 
 **Incoming message**
 
