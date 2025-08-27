@@ -91,22 +91,22 @@
       font-weight: 600
       line-height: 54px
       font-size: 42px
+      text-align: center
     h3.item-heading
       font-weight: 500
       line-height: 54px
       font-size: 36px
     h3:not(.item-heading)
-      font-size: 24px
+      font-size: 28px
       font-weight: 500
     h4
       font-size: 24px
       font-weight: 500
     p
       color: #757C76
-      font-size: 18px
+      font-size: 16px
       font-weight: normal
-      line-height: 27px
-      margin: 4px 0 18px
+      line-height: 28px
     a
       color: #1F8B4D
       font-weight: 500
@@ -131,6 +131,10 @@
     #top-features
       h2
         text-align: center
+        font-size: 36px
+        font-weight: 500
+        padding-bottom: 40px
+        padding-top: 20px
       #cards
         display: flex
         flex-direction: column
@@ -139,28 +143,30 @@
         &>div
           margin-bottom: 36px
           &.col-lg-6
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08)
-            border-radius: 12px
+            box-shadow: 0 7px 32px 0 rgba(0, 0, 0, 0.08)
+            border-radius: 24px
           .block
-            padding: 12px
-            text-align: center
+            padding: 46px
+            text-align: left
             float: left
             width: 100%
             height: 100%
             background: #fff
-            border-radius: 12px
+            border-radius: 24px
             display: unset
             div
               width: 100%
               .title
                 margin-bottom: 6px
+                margin-top: 6px
                 line-height: 33px
               p
                 margin-top: 10px
                 text-align: justify
             img
-              height: fit-content
-              margin: 0 0 18px
+              border: 1px solid #1F8B4D
+              border-radius: 24px
+              padding: 16px
 
     #scenarios
       margin-bottom: 50px
@@ -181,6 +187,7 @@
         .scenarios-details
           width: 100%
           flex: 1
+          padding-bottom: 24px
           p
             font-size: 18px
             color: rgba(255, 255, 255, 0.8)
@@ -214,9 +221,9 @@
       margin-bottom: 24px
       main
         .middle-features-title
-          font-weight: 600
-          line-height: 54px
-          font-size: 42px
+          font-weight: 500
+          line-height: 44px
+          font-size: 28px
           text-align: center
         padding-top: 100px
         display: flex
@@ -236,9 +243,9 @@
             order: 2
             .block
               h4, h3
-                font-size: 42px
+                font-size: 28px
                 padding-bottom: 20px
-                line-height: 60px
+                line-height: 44px
                 font-weight: 500
               p
                 font-size: 18px
@@ -252,6 +259,9 @@
         h2
           padding-top: 100px
           text-align: center
+          font-size: 36px
+          font-weight: 500
+          padding-bottom: 40px
         .row
           display: flex
           align-items: center
@@ -276,11 +286,10 @@
               gap: 24px
               h3
                 line-height: 60px
-                font-size: 42px
+                font-size: 28px
                 text-align: left
                 font-weight: 500
               p
-                margin-top: 10px
                 font-size: 18px
                 text-align: justify
               a
@@ -300,7 +309,8 @@
     #bottom-features
       margin-bottom: 24px
       h2
-        font-size: 42px
+        font-size: 36px
+        font-weight: 500
         padding-top: 120px
         margin-bottom: 40px
       #cards
@@ -317,7 +327,7 @@
             width: 100%
             height: 100%
             background: #fff
-            border-radius: 12px
+            border-radius: 24px
             box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
             display: unset
             div
@@ -382,7 +392,7 @@
           text-align: center
         #cards
           display: flex
-          justify-content: flex-start
+          justify-content: center
           gap: 36px
           flex-wrap: wrap
           align-items: center
@@ -392,8 +402,8 @@
               width: 100%
               height: 100%
               background: #fff
-              border-radius: 12px
-              box-shadow: 0 4px 16px 0 rgba(0,0,0,0.12)
+              border-radius: 24px
+              box-shadow: 0 0 18px 0 #CECECE
               display: flex
               flex-direction: column
               gap: 24px
@@ -423,7 +433,8 @@
                   &:hover
                     color: #1F8B4D
                 p
-                  margin-top: 10px
+                  margin-top: 8px
+                  margin-bottom: 16px
                   display: -webkit-box
                   -webkit-line-clamp: 2
                   -webkit-box-orient: vertical
@@ -437,6 +448,8 @@
                   height: fit-content
                   width: 100%
                   max-height: 260px
+                  border-top-left-radius: 24px
+                  border-top-right-radius: 24px
                   &:hover
                     background: rgba(0, 0, 0, 0.38)
             &.col-lg-6
@@ -448,14 +461,12 @@
       left: 50%
       div
         position: absolute
-        -ms-transform: skewY(-6deg) skewX(6deg)
-        transform: skewY(-6deg) skewX(6deg)
         width: 436px
         height: 90px
         &.main1
           top: 10px
           width: 2560px
-          height: 3000px
+          height: 2625px
           left: -1280px
           background-color: #00240F
         &.main2
@@ -463,13 +474,11 @@
           width: 3000px
           height: 855px
           left: -1300px
-          background-color: #f2f8f5
         &.main3
           top: 60px
           width: 2760px
           height: 5100px
           left: -1380px
-          background-color: #1F8B4D0F
         &.main4
           top: 0
           width: 2560px
@@ -568,12 +577,12 @@
               margin: 18px
               max-width: 40% !important
             .block
-              padding: 24px
+              padding: 46px
               float: left
               width: 100%
               height: 100%
               background: #fff
-              border-radius: 12px
+              border-radius: 24px
               display: unset
               div
                 width: 100%
@@ -671,6 +680,7 @@
       #bottom-features
         h2
           padding-top: 130px
+          text-align: center
       #installation-options
         main
           .row
@@ -684,7 +694,7 @@
       #background
         div
           &.main1
-            height: 2200px
+            height: 1930px
           &.main2
             height: 479px
             top: 0
@@ -714,6 +724,8 @@
           text-align: center
       #background
         div
+          &.main1
+            height: 2200px
           &.main3
             height: 1400px
   @media screen and (min-width: 2480px)

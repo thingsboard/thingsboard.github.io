@@ -150,7 +150,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
 
 <section id="middle-features">
     <main>
-        <h3 class="middle-features-title">MQTT client management</h3>
+        <h3 class="middle-features-title">MQTT client management & more features</h3>
         <div class="row">
             <div class="col-lg-6">
                 <div class="block">
