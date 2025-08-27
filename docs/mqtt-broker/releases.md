@@ -47,6 +47,18 @@ Minor release with the following features, improvements, and bug fixes.
   * [#229](https://github.com/thingsboard/tbmq/issues/229) Fix handling of QoS 0 publish messages for integration subscriptions by @dmytro-landiak;
   * [#246](https://github.com/thingsboard/tbmq/pull/246) Monitoring metrics race condition fix by @dmytro-landiak.
 
+**Removal Notice: Obsolete Environment Variables**
+
+As of **TBMQ v2.2.0**, the following environment variables are **deprecated and no longer required**:
+
+* `SECURITY_MQTT_AUTH_STRATEGY`
+* `SECURITY_MQTT_BASIC_ENABLED`
+* `SECURITY_MQTT_SSL_ENABLED`
+* `SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT`
+
+These variables were replaced by the new configuration options introduced in [#232](https://github.com/thingsboard/tbmq/pull/232).
+You may safely remove them from your environment after upgrading.
+
 ## v2.1.0 (April 29, 2025)
 
 Minor release with the following features, improvements, and bug fixes.
