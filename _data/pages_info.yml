@@ -3585,22 +3585,28 @@
   - "/docs/user-guide/rbac/"
 "/docs/pe/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/attaching-report-to-notification/"
 "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/embedding-dashboards-widgets/"
 "/docs/pe/user-guide/reporting/reporting-getting-started/":
   url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/reporting-getting-started/"
 "/docs/pe/user-guide/reporting/reporting-key-concepts/":
   url: "/docs/pe/user-guide/reporting/reporting-key-concepts/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/reporting-key-concepts/"
 "/docs/pe/user-guide/reporting/scheduling-reports/":
   url: "/docs/pe/user-guide/reporting/scheduling-reports/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/scheduling-reports/"
 "/docs/pe/user-guide/reporting/subreport/":
   url: "/docs/pe/user-guide/reporting/subreport/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/subreport/"
 "/docs/pe/user-guide/resources/web-socket/":
   url: "/docs/pe/user-guide/resources/web-socket/"
   redirect_from: []

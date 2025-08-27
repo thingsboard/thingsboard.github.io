@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - stitenko
-title: Key concepts
-description: Key concepts
+title: Reporting overview
+description: Reporting overview
 redirect_from: "/docs/user-guide/reporting/reporting-key-concepts/"
 
 create-new-report-template:
