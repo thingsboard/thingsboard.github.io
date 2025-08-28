@@ -21,40 +21,6 @@
       keywords: device management attributes
       video: false
       pe: false
-- title: Advanced guides for working with the main features of ThingsBoard
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
-  id: AdvancedGettingStartedGuides
-  section:
-    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
-      title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets
-      subtitle: "Explore this guide to learn how to: create assets and devices and define their relationships; add server attributes; develop a new dashboard; visualize data using the ”Entities table” and ”OpenStreet Map” widgets."
-      keywords: asset device server attribute visualization dashboard Entities table OpenStreet Map widget helloworld
-      video: false
-      pe: true
-    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-2/
-      title: Lesson 2. Dashboard states, widget actions, and Image Map widget
-      subtitle: "Explore this guide to learn how to: add and configure new dashboard states, create different aliases, visualize devices data on the ”Image Map” widget, and set up actions in various widgets to navigate between states."
-      keywords: Line chart aliases attribute Image Map Auto fill layout height actions telemetry analog gauges digital gauge data helloworld
-      video: false
-      pe: true
-    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-3/
-      title: Lesson 3. Charts and card widgets
-      subtitle: "Explore this guide to learn how to: add separate states for each device, simulate telemetry data for the devices using the Rule Engine, and display them using card and chart widgets."
-      keywords: Line chart aliases attribute Image Map actions telemetry analog gauges digital gauge data helloworld
-      video: false
-      pe: true
-    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-4/
-      title: Lesson 4. Alarm management
-      subtitle: "Explore this guide to learn how to: create alarm rules, and handle alarms using the Alarms widget."
-      keywords: alarm alarms widget helloworld
-      video: false
-      pe: true
-    - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/
-      title: Lesson 5. Adding customers & sharing or changing ownership of assets.
-      subtitle: "Explore this guide to learn how to: grant access to the dashboard by assigning ownership or shared access to specific entities (such as devices, assets, etc.) to different clients; create customer and customer users."
-      keywords: customer user share change owner helloworld
-      video: false
-      pe: true
 - title: Connect your device
   subtitle: Learn how to connect devices based on your connectivity technology or solution.
   id: ConnectYourDevice
@@ -210,42 +176,54 @@
       pe: true
       video: false
 - title: Data visualization
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
   id: DataVisualization
   section:
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
-      title: Visualizing assets data using Maps and Tables
-      subtitle: "Learn how to: create assets and devices and define their relationships; add the server attributes and create a new dashboard; visualize data from the asset attributes using “Entities Table” and “Map” widgets."
+    - path: https://youtu.be/BNY-kd320sE?si=I4plTfqnvWOWWUnR
+      title: Key concepts for working with the main functions of ThingsBoard
+      subtitle: "In this intro video, we kick off a tutorial series on ThingsBoard. Together, we'll explore key features and build a step-by-step smart dashboard to collect, visualize, and monitor data from office-integrated IoT devices."
       keywords:
       pe: false
       video: true
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
-      title: Dashboard states, aliases and widget actions
-      subtitle: "Learn how to: add and configure new dashboard states; create various aliases; visualize the attributes data using the Image Map widget; create actions in different widgets in order to navigate between states; visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget."
+    - path: https://youtu.be/65SoFceFDBE?si=LuIoiZJ-VHjU8ZEE
+      title: Practical Lesson 1. Adding an entity and visualizing it on the Dashboard
+      subtitle: "We will create your first dashboard in ThingsBoard. Add Office A as an asset, define its contact information as attributes, and visualize it using an Information card widget."
       keywords:
       pe: false
       video: true
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-3-of-3-remote-device-control-and-alarm-management
-      title: Remote device control and alarm management
-      subtitle: "Learn how to: add and use the Knob Control widget; create alarm rules; handle alarms using the Alarms widget; make a dashboard public."
+    - path: https://youtu.be/fijOV0Gxu0k?si=ZKpiTeAMMVMxLyW3
+      title: Practical Lesson 2. Adding devices and visualizing their telemetry on the Dashboard
+      subtitle: "Time to connect our devices! In this video, we'll add three devices, link them to Office A, simulate telemetry data using the Rule Engine, and display it on the dashboard."
       keywords:
       pe: false
       video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-1-of-3-basic-settings
-      title: Basic widget settings
-      subtitle: "Learn how to: change widget title, background, colors, fonts, shadows, etc."
+    - path: https://youtu.be/X26jgF5nX5g?si=XiDhsA6limKvteFi
+      title: Practical Lesson 3. Time window in ThingsBoard
+      subtitle: "Learn what a Time window feature is in ThingsBoard and how to set time intervals for working with telemetry data."
       keywords:
       pe: false
       video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-2-of-3-latest-values-map-widget
-      title: Latest Values Map widget
-      subtitle: "Learn how to create Map widget, based on latitude and longitude, and customize the Map widget layout and properties."
+    - path: https://youtu.be/FzjpjvoPRok?si=mHwglNGlK8Ct53Jj
+      title: Practical Lesson 4. Visualizing device locations with Image Map widget
+      subtitle: "Learn how to create an Image Map widget to display device locations directly on the office floor plan."
       keywords:
       pe: false
       video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-3-of-3-time-series-map-widget
-      title: Time Series Map widget
-      subtitle: "Learn how to display your devices with the latest telemetry data on the Time Series Map widget and modify the widget properties."
+    - path: https://youtu.be/MuOB13aH--U?si=6qwYjX4hoIRNIwZI
+      title: Practical Lesson 5. Part 1. States & Multi-Level Dashboard Hierarchy
+      subtitle: "Mastering states in ThingsBoard! In this tutorial, we will create separate states for each sensor, configure actions to navigate between them, and set up the air sensor state to monitor temperature, humidity, and CO₂ levels in the office."
+      keywords:
+      pe: false
+      video: true
+    - path: https://youtu.be/QZ4z_aaub6I?si=YGUGOkEkJNnV28uc
+      title: Practical Lesson 5. Part 2. Configuring States for Energy & Water Monitoring
+      subtitle: "Expanding our dashboard with more states! In this tutorial, we will configure states for monitoring power and water consumption."
+      keywords:
+      pe: false
+      video: true
+    - path: https://youtu.be/2k5DUCOpdfk?si=VFW4GzM3tTz8b9_3
+      title: Practical Lesson 6. Sharing Your Dashboard with Customer
+      subtitle: "Time to share dashboard data with your customers. In this guide, we’ll add customers, configure their permissions for dashboard data."
       keywords:
       pe: false
       video: true
