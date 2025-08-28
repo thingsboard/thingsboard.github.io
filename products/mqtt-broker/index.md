@@ -82,7 +82,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div class="block">
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Fan-in</a><p>Many-to-one messaging using MQTT topic wildcards.</p></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Fan-in</a><p>Many-to-one messaging using MQTT wildcards.</p></h3>
                 </div>
                 <div>
                     <span>Many-to-one communication pattern. Many devices generate a large volume of messages consumed by specific applications. They must be persistent clients with QoS levels set to 1 or 2, capable of retaining all the data even when they're temporarily offline due to restarts or upgrades.</span>
