@@ -16,7 +16,7 @@ Add the following lines to the docker-compose-kafka.yml file:
 services:
   kafka:
     restart: always
-    image: bitnami/kafka:3.8.1
+    image: bitnamilegacy/kafka:3.8.1
     ports:
       - 9092:9092 #to localhost:9092 from host machine
       - 9093 #for Kraft
