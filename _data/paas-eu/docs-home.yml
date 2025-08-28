@@ -110,10 +110,10 @@ toc:
           path: /docs/paas/eu/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
-    - title: Getting Started
-      path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/paas/eu/user-guide/rule-engine-2-0/overview/
+    - title: Getting started with Rule Engine
+      path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
     - title: Nodes
       section:
         - title: Filter nodes
@@ -255,6 +255,9 @@ toc:
     - title: IoT Anomaly Detection with AI
       path: /docs/paas/eu/samples/analytics/ai-predictive-maintenance/
       new: true
+    - title: MCP Server
+      path: /docs/paas/eu/samples/analytics/mcp-server-ai-insights/
+      new: true
     - title: AI models
       path: /docs/paas/eu/samples/analytics/ai-models/
       new: true
@@ -265,7 +268,7 @@ toc:
 - title: Reporting
   new: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/paas/eu/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/paas/eu/user-guide/reporting/reporting-getting-started/
@@ -366,10 +369,6 @@ toc:
       path: /docs/paas/eu/user-guide/ui/assets/
     - title: Devices
       path: /docs/paas/eu/user-guide/ui/devices/
-    - title: Rule chains
-      path: /docs/paas/eu/user-guide/ui/rule-chains/
-    - title: Dashboards
-      path: /docs/paas/eu/user-guide/ui/dashboards/
     - title: Entity groups
       path: /docs/paas/eu/user-guide/groups/
     - title: Slack settings

@@ -1687,6 +1687,9 @@
 "/docs/paas/eu/samples/analytics/kafka-streams/":
   url: "/docs/paas/eu/samples/analytics/kafka-streams/"
   redirect_from: []
+"/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
 "/docs/paas/eu/samples/sia-connect/":
   url: "/docs/paas/eu/samples/sia-connect/"
   redirect_from: []
@@ -2236,6 +2239,9 @@
   redirect_from: []
 "/docs/paas/samples/analytics/kafka-streams/":
   url: "/docs/paas/samples/analytics/kafka-streams/"
+  redirect_from: []
+"/docs/paas/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
 "/docs/paas/samples/sia-connect/":
   url: "/docs/paas/samples/sia-connect/"
@@ -3373,6 +3379,9 @@
 "/docs/pe/samples/analytics/kafka-streams/":
   url: "/docs/pe/samples/analytics/kafka-streams/"
   redirect_from: []
+"/docs/pe/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
 "/docs/pe/search/":
   url: "/docs/pe/search/"
   redirect_from: []
@@ -3576,22 +3585,28 @@
   - "/docs/user-guide/rbac/"
 "/docs/pe/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/attaching-report-to-notification/"
 "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/embedding-dashboards-widgets/"
 "/docs/pe/user-guide/reporting/reporting-getting-started/":
   url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/reporting-getting-started/"
 "/docs/pe/user-guide/reporting/reporting-key-concepts/":
   url: "/docs/pe/user-guide/reporting/reporting-key-concepts/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/reporting-key-concepts/"
 "/docs/pe/user-guide/reporting/scheduling-reports/":
   url: "/docs/pe/user-guide/reporting/scheduling-reports/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/scheduling-reports/"
 "/docs/pe/user-guide/reporting/subreport/":
   url: "/docs/pe/user-guide/reporting/subreport/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/subreport/"
 "/docs/pe/user-guide/resources/web-socket/":
   url: "/docs/pe/user-guide/resources/web-socket/"
   redirect_from: []
@@ -3980,6 +3995,9 @@
   url: "/docs/samples/analytics/kafka-streams/"
   redirect_from:
   - "/docs/samples/analytics/spark-integration-with-thingsboard/"
+"/docs/samples/analytics/mcp-server-ai-insights/":
+  url: "/docs/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
 "/docs/samples/arduino/":
   url: "/docs/samples/arduino/"
   redirect_from: []

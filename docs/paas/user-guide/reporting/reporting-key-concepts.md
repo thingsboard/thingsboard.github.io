@@ -2,8 +2,8 @@
 layout: docwithnav-paas
 assignees:
 - stitenko
-title: Key concepts
-description: Key concepts
+title: Reporting overview
+description: Reporting overview
 
 create-new-report-template:
     0:

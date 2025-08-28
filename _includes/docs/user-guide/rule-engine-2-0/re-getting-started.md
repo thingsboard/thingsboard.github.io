@@ -1,37 +1,16 @@
 * TOC
 {:toc}
 
-## What is ThingsBoard Rule Engine?
-Rule Engine is an easy to use framework for building event-based workflows. There are 3 main components:
+## Hello-World example
 
-- **Message** - any incoming event. It can be an incoming data from devices, device life-cycle event, REST API event, RPC request, etc.
-- **Rule Node** - a function that is executed on an incoming message. There are many different Node types that can filter, transform or execute some action on incoming Message. 
-- **Rule Chain** - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
-
-
-## Typical Use Cases 
-ThingsBoard Rule Engine is a highly customizable framework for complex event processing. Here are some common use cases that one can configure via ThingsBoard Rule Chains:
-
-- Data validation and modification for incoming telemetry or attributes before saving to the database.
-- Copy telemetry or attributes from devices to related assets so you can aggregate telemetry. For example data from multiple devices can be aggregated
-in related Asset.
-- Create/Update/Clear alarms based on defined conditions.
-- Trigger actions based on device life-cycle events. For example, create alerts if Device is Online/Offline.
-- Load additional data required for processing. For example, load temperature threshold value for a device that is defined in Device's Customer or Tenant attribute.
-- Trigger REST API calls to external systems.
-- Send emails when complex event occurs and use attributes of other entities inside Email Template.
-- Take into account User preferences during event processing.
-- Make RPC calls based on defined condition.
-- Integrate with external pipelines like Kafka, Spark, AWS services, etc.
-
-## Hello-World Example
-Let’s assume your device is using DHT22 sensor to collect and push temperature to the ThingsBoard.
+Let&#39;s assume your device is using DHT22 sensor to collect and push temperature to the ThingsBoard.
 DHT22 sensor can measure temperature from -40°C to +80°C.
 
 In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and log all other readings to the system log.
 
 ### Adding temperature validation node
-In Thingsboard UI go to **Rule Chains** section and open **Root Rule Chain**.
+
+In Thingsboard UI go to **Rule Chains** page and open **Root Rule Chain**.
 
 {% if docsPrefix == null %}
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-ce.png)
@@ -195,7 +174,6 @@ We will see that telemetry was saved successfully.
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-pe.png)
 {% endif %}
 
-
 ## See Also
 
 You can use the next links for learning more about Thingsboard Rule Engine:
@@ -212,9 +190,6 @@ You can use the next links for learning more about Thingsboard Rule Engine:
 - [RPC Request to Related Device](/docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/)
 - [Add & remove devices to group dynamically](/docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/)
 - [Aggregate incoming data stream](/docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/)
-
-<br>
-<br>
 
 ## Next steps
 

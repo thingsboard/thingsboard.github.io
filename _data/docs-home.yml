@@ -69,10 +69,10 @@ toc:
         path: /docs/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
-    - title: Getting Started
-      path: /docs/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/user-guide/rule-engine-2-0/overview/
+    - title: Getting started with Rule Engine
+      path: /docs/user-guide/rule-engine-2-0/re-getting-started/
     - title: Queues
       path: /docs/user-guide/rule-engine-2-5/queues/
     - title: Nodes
@@ -228,6 +228,9 @@ toc:
   - title: IoT Anomaly Detection with AI
     path: /docs/samples/analytics/ai-predictive-maintenance/
     new: true
+  - title: MCP Server
+    path: /docs/samples/analytics/mcp-server-ai-insights/
+    new: true
   - title: AI models
     path: /docs/samples/analytics/ai-models/
     new: true
@@ -238,7 +241,7 @@ toc:
 - title: Reporting
   pe: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/pe/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/pe/user-guide/reporting/reporting-getting-started/
@@ -360,10 +363,6 @@ toc:
     path: /docs/user-guide/ui/assets/
   - title: Devices
     path: /docs/user-guide/ui/devices/
-  - title: Rule chains
-    path: /docs/user-guide/ui/rule-chains/
-  - title: Dashboards
-    path: /docs/user-guide/ui/dashboards/
   - title: Entity groups
     path: /docs/pe/user-guide/groups/
     pe: true

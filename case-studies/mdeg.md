@@ -166,13 +166,13 @@ description: Discover how mdeg GmbH used ThingsBoard to build a secure, scalable
         </div>
         <div class="block">
             <div class="text">
-                <h3>Powerful rule engine for smart automation</h3>
-                <p>ThingsBoard's Rule Engine enables real-time decision-making and system automation without writing complex backend code.</p>
+                <h3>Multi-tenancy & white-labeling for IoT-as-a-Service</h3>
+                <p>If you’re building an IoT platform for clients, partners, or internal teams, ThingsBoard provides a multi-tenant architecture that separates data and access by organization or user role.</p>
                 <p>How It Works:</p>
                 <ul>
-                    <li><p>Define logic to process incoming telemetry, trigger alerts, store data, or control devices.</p></li>
-                    <li><p>Chain multiple actions (send email → log alert → execute RPC).</p></li>
-                    <li><p>Integrate with external systems via REST API, MQTT, or cloud connectors.</p></li>
+                    <li><p>Each tenant has its own isolated dashboards, devices, and users.</p></li>
+                    <li><p>Service providers can white-label the platform with logos, colors, and custom domains.</p></li>
+                    <li><p>Secure data access via role-based permissions and audit logging.</p></li>
                 </ul>
             </div>
             <div class="image-container">

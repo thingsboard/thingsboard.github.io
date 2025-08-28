@@ -128,17 +128,17 @@ To make the device private again, follow these steps:
 
 You can assign the device to a specific [customer](/docs/user-guide/ui/customers/){:target="_blank"}. This ensures that only users associated with that customer will have access to the device and its data.
 
-> This step is crucial for ensuring data access control. Each customer user will only see their own devices and will not have access to devices or data assigned to other customers.
+> This step is crucial for ensuring data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see their own devices and will not have access to devices or data assigned to other customers.
 
 {% include images-gallery.html imageCollection="assign-device-to-customer" showListImageTitles="true" %}
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
-## Manage owner and groups
+## Manage device owner and groups
 
 You can change the **owner** of the device. This ensures that only users associated with the selected customer will have access to the device and its data.
 
-> This step is essential for maintaining strict data access control. Each customer user will only see their own assigned devices and will not have visibility into devices or data belonging to other customers.
+> This step is essential for maintaining strict data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see the devices and their data that they have been granted access to. They will not have access to devices or data belonging to other customers.
 
 To change asset ownership:
 - Click asset to open its **details** view.
@@ -147,9 +147,17 @@ To change asset ownership:
 - If needed, add the device to an existing group or create a new one.
 - Confirm the change to update the device&#39;s ownership.
 
+In the <b>"Customer name" column</b>, you can see the current owner of the device.
+
+> <b>Note</b>: A Tenant Administrator always has the right to reassign or revoke device ownership.
+
 {% include images-gallery.html imageCollection="manage-owner-and-groups-pe" %}
 
-> You can reassign or revoke the ownership change of device if needed.
+### Include customer entities
+
+On the "<b>Devices</b>" page there is an option "<b>Include customer entities</b>", which defines whether the list will display devices that belong to your customers.
+
+{% include images-gallery.html imageCollection="include-customer-entities" showListImageTitles="true" %}
 
 {% endif %}
 

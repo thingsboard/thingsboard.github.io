@@ -167,6 +167,24 @@
 "/docs/user-guide/rbac/":
   url: "/docs/pe/user-guide/rbac/"
   redirect_from: "/docs/user-guide/rbac/"
+"/docs/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: "/docs/user-guide/reporting/attaching-report-to-notification/"
+"/docs/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
+  redirect_from: "/docs/user-guide/reporting/embedding-dashboards-widgets/"
+"/docs/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
+  redirect_from: "/docs/user-guide/reporting/reporting-getting-started/"
+"/docs/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/pe/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: "/docs/user-guide/reporting/reporting-key-concepts/"
+"/docs/user-guide/reporting/scheduling-reports/":
+  url: "/docs/pe/user-guide/reporting/scheduling-reports/"
+  redirect_from: "/docs/user-guide/reporting/scheduling-reports/"
+"/docs/user-guide/reporting/subreport/":
+  url: "/docs/pe/user-guide/reporting/subreport/"
+  redirect_from: "/docs/user-guide/reporting/subreport/"
 "/docs/user-guide/rule-engine-2-0/pe/action-nodes":
   url: "/docs/pe/user-guide/rule-engine-2-0/action-nodes/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/pe/action-nodes"

@@ -14,9 +14,9 @@
         "config": {
           "datasources": [
             {
-              "type": "device",
+              "type": "entity",
               "name": "",
-              "deviceId": "72070520-777f-11f0-999b-519063d1f154",
+              "entityAliasId": "163b8a28-c8fd-177c-9020-0e51a6aa798b",
               "dataKeys": [
                 {
                   "name": "temperature",
@@ -241,7 +241,18 @@
         }
       }
     },
-    "entityAliases": {},
+    "entityAliases": {
+      "163b8a28-c8fd-177c-9020-0e51a6aa798b": {
+        "id": "163b8a28-c8fd-177c-9020-0e51a6aa798b",
+        "alias": "Entity from dashboard state",
+        "filter": {
+          "type": "stateEntity",
+          "resolveMultiple": false,
+          "stateEntityParamName": null,
+          "defaultStateEntity": null
+        }
+      }
+    },
     "filters": {},
     "timewindow": {
       "displayValue": "",
@@ -288,5 +299,5 @@
     }
   },
   "name": "Pie chart template",
-  "resources": null
+  "resources": []
 }

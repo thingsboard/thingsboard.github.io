@@ -22,10 +22,3 @@
 {% if currentGuide != "Contribution" %}
 - [Contribution and Development](/docs/guides/#AnchorIDContribution) - Learn about contribution and development in ThingsBoard.
 {% endif %}
-  
-<br>
-
-
-
-
-

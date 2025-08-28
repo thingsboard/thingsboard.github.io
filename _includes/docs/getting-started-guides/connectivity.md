@@ -10,13 +10,13 @@ In case you have not found out how to connect your device using the diagram or s
 {% endif %}
 
 {% if docsPrefix == 'pe/' %}
-  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity-pe.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="/images/connectivity-pe.svg">Decision tree showing how to connect devices to ThingsBoard. If the device is IP enabled with custom firmware, use MQTT, HTTP, CoAP, Sparkplug, or the MQTT Gateway native ThingsBoard API depending on protocol. If already connected to a backend like Azure, AWS, IBM Watson, or OPC-UA, use relevant integrations. Non-IP devices such as LoRaWAN, SigFox, NB-IoT, SMS, or industrial protocols like OPC-UA, Modbus, BLE, CAN, REST, or SNMP can be connected via IoT Gateway. For other protocols - use "Contact Us" form.</object>
 {% elsif docsPrefix == 'paas/' %}
-  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity-paas.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="/images/connectivity-paas.svg">Decision tree showing how to connect devices to ThingsBoard. If the device is IP enabled with custom firmware, use MQTT, HTTP, CoAP, Sparkplug, or the MQTT Gateway native ThingsBoard API depending on protocol. If already connected to a backend like Azure, AWS, IBM Watson, or OPC-UA, use relevant integrations. Non-IP devices such as LoRaWAN, SigFox, NB-IoT, SMS, or industrial protocols like OPC-UA, Modbus, BLE, CAN, REST, or SNMP can be connected via IoT Gateway. For other protocols - use "Contact Us" form.</object>
 {% elsif docsPrefix == 'paas/eu/' %}
-  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity-paas-eu.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="/images/connectivity-paas-eu.svg">Decision tree showing how to connect devices to ThingsBoard. If the device is IP enabled with custom firmware, use MQTT, HTTP, CoAP, Sparkplug, or the MQTT Gateway native ThingsBoard API depending on protocol. If already connected to a backend like Azure, AWS, IBM Watson, or OPC-UA, use relevant integrations. Non-IP devices such as LoRaWAN, SigFox, NB-IoT, SMS, or industrial protocols like OPC-UA, Modbus, BLE, CAN, REST, or SNMP can be connected via IoT Gateway. For other protocols - use "Contact Us" form.</object>
 {% else %}
-  <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity.svg"></object>
+  <object width="100%" style="max-width: max-content;" data="/images/connectivity.svg">Decision tree showing how to connect devices to ThingsBoard. If the device is IP enabled with custom firmware, use MQTT, HTTP, CoAP, Sparkplug, or the MQTT Gateway native ThingsBoard API depending on protocol. If already connected to a backend like Azure, AWS, IBM Watson, or OPC-UA, use relevant integrations. Non-IP devices such as LoRaWAN, SigFox, NB-IoT, SMS, or industrial protocols like OPC-UA, Modbus, BLE, CAN, REST, or SNMP can be connected via IoT Gateway. For other protocols - use "Contact Us" form.</object>
 {% endif %}
 
 

@@ -92,6 +92,14 @@ check-connectivity:
         image: https://img.thingsboard.io/user-guide/ui/devices/pe/check-connectivity-3-pe.png
         title: 'Run copied command in a <b>Terminal</b>. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
 
+include-customer-entities:
+    0:
+        image: /images/user-guide/ui/devices/pe/include-customer-entities-1-pe.png
+        title: 'When the switch is <b>enabled</b> (default state) — the table shows <b>all available devices</b>, including those owned by customers.'
+    1:
+        image: /images/user-guide/ui/devices/pe/include-customer-entities-2-pe.png
+        title: 'When the switch is <b>disabled</b> — the table shows <b>only your own devices</b>.'
+
 copy-device-id:
     0:
         image: https://img.thingsboard.io/user-guide/ui/devices/pe/copy-device-id-1-pe.png

@@ -100,10 +100,10 @@ toc:
         path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
-  - title: Getting Started
-    path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
   - title: Overview
     path: /docs/pe/user-guide/rule-engine-2-0/overview/
+  - title: Getting Started with Rule Engine
+    path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
   - title: Queues
     path: /docs/pe/user-guide/rule-engine-2-5/queues/
   - title: Nodes
@@ -249,6 +249,9 @@ toc:
   - title: IoT Anomaly Detection with AI
     path: /docs/pe/samples/analytics/ai-predictive-maintenance/
     new: true
+  - title: MCP Server
+    path: /docs/pe/samples/analytics/mcp-server-ai-insights/
+    new: true
   - title: AI models
     path: /docs/pe/samples/analytics/ai-models/
     new: true
@@ -259,7 +262,7 @@ toc:
 - title: Reporting
   new: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/pe/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/pe/user-guide/reporting/reporting-getting-started/
@@ -374,10 +377,6 @@ toc:
     path: /docs/pe/user-guide/ui/assets/
   - title: Devices
     path: /docs/pe/user-guide/ui/devices/
-  - title: Rule chains
-    path: /docs/pe/user-guide/ui/rule-chains/
-  - title: Dashboards
-    path: /docs/pe/user-guide/ui/dashboards/
   - title: Entity groups
     path: /docs/pe/user-guide/groups/
   - title: SMS provider settings
