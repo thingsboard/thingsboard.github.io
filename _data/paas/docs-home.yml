@@ -268,7 +268,7 @@ toc:
 - title: Reporting
   new: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/paas/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/paas/user-guide/reporting/reporting-getting-started/

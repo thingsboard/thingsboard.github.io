@@ -241,7 +241,7 @@ toc:
 - title: Reporting
   pe: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/pe/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/pe/user-guide/reporting/reporting-getting-started/
