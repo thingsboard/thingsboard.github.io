@@ -444,10 +444,36 @@ To import a dashboard, follow these steps:
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+### Manage dashboard owner and groups
+
+You can change the <b>dashboard owner</b> to ensure that only users associated with the selected customer have access to the dashboard.
+
+> <b>Note</b>: This step is essential for maintaining strict [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only have access to the data explicitly granted to them.   
+<b>Keep in mind</b> that granting access to a dashboard gives the customer access only to the dashboard itself, <b>not</b> to the data displayed on it. For the widgets to display data, the customer must also be granted access to the corresponding devices or other entities.
+
+<b>Changing the dashboard owner:</b>
+
+- Open the dashboard details by clicking the "<b>pencil</b>" icon in the dashboard list.
+- Click the "<b>Manage owner and groups</b>" button.
+- Select a new dashboard owner from the list. If needed, add the dashboard to an existing group or create a new one. 
+- Confirm the changes to update the owner information.
+
+In the <b>"Customer name" column</b>, you can see the current owner of the dashboard.
+
+> <b>Note</b>: A Tenant Administrator always has the right to reassign or revoke dashboard ownership.
+
+{% include images-gallery.html imageCollection="dashboard-manage-owner-and-groups" %}
+
+#### Include customer entities
+
+The "<b>Include customer entities</b>" option on the "<b>Dashboards</b>" page determines whether dashboards owned by customers are shown or hidden in the list.
+
+{% include images-gallery.html imageCollection="include-customer-dashboards" showListImageTitles="true" %}
+
 ### Share dashboard group
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role.
-Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
+Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}.
 
 To share a dashboard group, follow these steps:
 
