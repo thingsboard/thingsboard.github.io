@@ -162,9 +162,7 @@ You must define parameters and rules according to which the alarm will be trigge
 
 The easiest way to create an alarm is to use the **alarm rules** in the **Device profile**. By following [this guide](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules), you can easily configure the rules for creating alarms for most of your tasks.
 
-If you need more complex logic for creating alarms, use the alternative option - use [Create Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) and [Clear Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) rule nodes in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
-You can find a corresponding example [here](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
-This is a more advanced option as it requires certain programming skills.
+Device Profile alarm rules are not limited to basic conditions. They are flexible enough to handle more complex logic, enabling you to combine multiple parameters, thresholds, or states into a single alarm definition. This makes them suitable for both simple monitoring scenarios (such as temperature exceeding a limit) and advanced workflows (such as combining device attributes and telemetry, and time conditions).
 
 ## Notification about created or cleared an alarm
 
