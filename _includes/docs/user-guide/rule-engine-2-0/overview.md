@@ -1,17 +1,40 @@
 * TOC
 {:toc}
 
-ThingsBoard Rule Engine is a highly customizable and configurable system for complex event processing. 
-With rule engine you are able to filter, enrich and transform incoming messages originated by IoT devices and related assets. 
-You are also able to trigger various actions, for example, notifications or communication with external systems.
-  
-## Key Concepts
+<b>Rule Engine</b> in ThingsBoard is the core data processing mechanism responsible for receiving, transforming, routing, and reacting to events and telemetry coming from devices and related assets.
 
-### Rule Engine Message 
+Rule Engine built around three main components:
+
+- [Message](#rule-engine-message) - any incoming event. It can be an incoming data from devices, device life-cycle event, REST API event, RPC request, etc.
+- [Rule node](#rule-node) - a function that is executed on an incoming message. There are many different Node types that can filter, transform or execute some action on incoming Message.
+- [Rule chain](#rule-chain) - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
+
+## Key characteristics
+
+- <b>Stream processing</b>. Incoming data (telemetry, attributes, RPC, events) is immediately processed by the Rule Engine, where it can be filtered, enriched, or transformed.
+- <b>Rule chain as a workflow</b>. Data processing is organized into <b>Rule chains</b> — workflows composed of individual <b>Rule nodes</b>. Each node performs a specific action such as filtering, saving data to a database, sending a notification, or calling an external API.
+- <b>Flexibility and Extensibility</b>. The Rule Engine supports both built-in nodes and custom logic via scripts (JavaScript or TBEL). It also allows integrations with external systems (HTTP, Kafka, MQTT).
+- <b>Integrations and Reactivity</b>. The Rule Engine can trigger business logic in response to events — for example, sending an email or SMS when a temperature threshold is exceeded, or integrating with external services and platforms.
+
+## Typical use cases
+
+Here are some common scenarios that can be configured using <b>ThingsBoard Rule Chains</b>:
+- <b>Data validation and transformation</b> – Validate and modify incoming telemetry or attributes before persisting them in the database.
+- <b>Telemetry aggregation</b> – Copy telemetry or attributes from devices to related assets to enable aggregation. For example, data from multiple devices can be combined into a related Asset for summary analytics.
+- <b>Alarm management</b> – Create, update, or clear alarms based on defined conditions.
+- <b>Device life-cycle monitoring</b> – Trigger actions when device state changes. For example, generate alerts when a device goes online or offline.
+- <b>Data enrichment</b> – Load additional context required for processing. For example, load temperature threshold value for a device that is defined in device&#39;s Customer or Tenant attribute.
+- <b>External system integration</b> – Trigger REST API calls to external applications and services.
+- <b>Notifications – Send email alerts when complex events occur, with the ability to include attributes from related entities in the email template.
+- <b>User personalization</b> – Take into account user preferences during event processing.
+- <b>Remote control</b> – Execute RPC calls to devices based on defined conditions.
+- <b>Big data / cloud integration</b> – Connect to external pipelines and platforms such as Kafka, Spark, or AWS services.
+
+## Rule Engine message 
 
 Rule Engine Message is a serializable, immutable data structure that represent various messages in the system. For example:
 
-  * Incoming [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/), [attribute update](/docs/{{docsPrefix}}user-guide/attributes/) or [RPC call](/docs/{{docsPrefix}}user-guide/rpc/) from device;
+  * Incoming [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}, [attribute update](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [RPC call](/docs/{{docsPrefix}}user-guide/rpc/){:target="_blank"} from device;
   * Entity life-cycle event: created, updated, deleted, assigned, unassigned, attributes updated;
   * Device status event: connected, disconnected, active, inactive, etc;
   * Other system events.
@@ -19,17 +42,17 @@ Rule Engine Message is a serializable, immutable data structure that represent v
 Rule Engine Message contains the following information:
 
   * Message ID: time based, universally unique identifier;
-  * Originator of the message: Device, Asset or other [Entity](/docs/{{docsPrefix}}user-guide/entities-and-relations/) identifier;
+  * Originator of the message: Device, Asset or other [Entity](/docs/{{docsPrefix}}user-guide/entities-and-relations/){:target="_blank"} identifier;
   * Type of the message: "Post telemetry" or "Inactivity Event", etc;
   * Payload of the message: JSON body with actual message payload;
   * Metadata: List of key-value pairs with additional data about the message. 
 
-### Rule Node
+## Rule node
 
 Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
 Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
 
-### Rule Node Connection
+## Rule node connection
 
 Rule Nodes may be connected to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
 When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
@@ -43,10 +66,9 @@ Some rule nodes support custom connection names. Just type your custom connectio
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/custom-connection.png)
 
-
 All connection names are **case-sensitive**.
 
-### Rule Chain
+## Rule chain
 
 Rule Chain is a logical group of rule nodes and their relations. For example, the rule chain below will:
 
@@ -69,7 +91,7 @@ For example, the rule chain below will:
  
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-chain-references.png)
 
-### Message Processing Result
+## Message processing result
 
 There are three possible results of message processing: Success, Failure and Timeout.
 The message processing attempt is marked as "Success" when the last rule node in the processing chain successfully process the message.
@@ -90,23 +112,23 @@ Similar, if "Save to DB" call will succeed, the message will be successfully pro
 However, if the external system will not reply within 20 seconds, the message processing attempt will be marked as "timed-out".
 Similar, if "Save to DB" call will fail, the message will be marked as failed.
 
-### Rule Engine Queue
+### Rule Engine queue
 
-See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/){:target="_blank"}
 
 #### Queue submit strategy
 
-See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy)
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy){:target="_blank"}
 
 #### Queue processing strategy
 
-See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy){:target="_blank"}
 
 #### Default queues
 
-See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues)
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues){:target="_blank"}
 
-## Predefined Message Types
+## Predefined message types
 
 List of the predefined Message Types is presented in the following table:
 
@@ -349,15 +371,15 @@ List of the predefined Message Types is presented in the following table:
    </tbody>
 </table>
  
-## Rule Node Types
+## Rule node types
 
 All available rule nodes are grouped in correspondence with their nature:
 
-  * [**Filter Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) are used for message filtering and routing;
-  * [**Enrichment Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) are used to update meta-data of the incoming Message;
-  * [**Transformation Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) are used for changing incoming Message fields like Originator, Type, Payload, Metadata;
-  * [**Action Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/) execute various actions based on incoming Message;
-  * [**External Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) are used to interact with external systems.
+  * [**Filter Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/){:target="_blank"} are used for message filtering and routing;
+  * [**Enrichment Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/){:target="_blank"} are used to update meta-data of the incoming Message;
+  * [**Transformation Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/){:target="_blank"} are used for changing incoming Message fields like Originator, Type, Payload, Metadata;
+  * [**Action Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/){:target="_blank"} execute various actions based on incoming Message;
+  * [**External Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/){:target="_blank"} are used to interact with external systems.
 
 ## Configuration
 
@@ -385,7 +407,7 @@ You can define:
 
 After pressing **Test** output will be returned in right **Output** section.
 
-## Rule Engine Statistics
+## Rule Engine statistics
 
 ThingsBoard Team have prepared the "default" dashboard for Rule Engine statistics. 
 This dashboard is automatically loaded for each tenant. 
@@ -403,66 +425,123 @@ You may notice insights about errors in processing and what causes them on the d
 
 ThingsBoard provides ability to review incoming and outgoing messages for each Rule Node.
 To enable debug, user need to ensure that "Debug mode" checkbox is selected in the main configuration window 
-(see first image in the [Configuration](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#configuration) section). 
+(see first image in the [Configuration](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#configuration){:target="_blank"} section). 
 
 Once debug is enabled, user is able to see incoming and outgoing messages info as long as corresponding relation types.
 See image below for a sample debug messages view:
   
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-node-debug.png)  
 
-## Import/Export
+## Managing rule chains
 
-You are able to export your rule chain to JSON format and import it to the same or another ThingsBoard instance.
+Rule chains page displays a table of configured tenant rule chains. From here, you can create, export/import, delete, and mark the rule chain as root.
 
-In order to export rule chain, you should navigate to the **Rule Chains** page and click on the export button located on the particular rule chain card.
+### Create rule chain
+
+To add a new rule chain, you should:
+
+{% include images-gallery.html imageCollection="create-rule-chain" showListImageTitles="true" %}
+
+### Import/Export
+
+You are able to [export](#export-rule-chain) your rule chain to а JSON file and [import](#import-rule-chain) it to the same or another ThingsBoard instance.
+
+#### Export rule chain
+
+In order to export rule chain, you should:
+
+- Go to the "<b>Rule chains</b>" page.
+- Click the "<b>Export rule chain</b>" icon in the row of the desired rule chain. 
  
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-chain-export.png)
+A JSON file containing the configuration of that rule chain will be saved to your computer.
 
-Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
+{% include images-gallery.html imageCollection="export-rule-chain" %}
+
+#### Import rule chain
+
+To import rule chain from а JSON file, you should:
+
+{% include images-gallery.html imageCollection="import-rule-chain" showListImageTitles="true" %}
+
+{% capture difference %}
+**Note 1:**
+<br>
+All imported rule chain are **not root** rule chain.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% capture difference %}
+**Note 2:**
+<br>
+If imported rule chain contains references to other rule chains (via **Rule Chain** node), then you will need to update those references before saving rule chain.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+### Make rule chain root
+
+To make rule chain root, you should:
+
+{% include images-gallery.html imageCollection="make-rule-chain-as-root" showListImageTitles="true" %}
+
+### Delete rule chain
+
+You can delete a rule chain using one of the following ways:
+
+First way:
+
+{% include images-gallery.html imageCollection="delete-rule-chain-1" showListImageTitles="true" %}
+
+Second way:
+
+{% include images-gallery.html imageCollection="delete-rule-chain-2" showListImageTitles="true" %}
+
+You can also delete multiple rule chains at once.
+
+{% include images-gallery.html imageCollection="delete-rule-chain-3" showListImageTitles="true" %}
 
 {% unless docsPrefix contains "paas/" %}
 ## Architecture
 
-To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
+To learn more about internals of the Rule Engine, see [architecture](/docs/{{docsPrefix}}reference/){:target="_blank"} page.
 
 {% endunless %}
 ## Custom REST API calls to Rule Engine
 
 {% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}
 
-ThingsBoard provides API to send custom REST API calls to the rule engine, process the payload of the request and return result of the processing in response body. 
+ThingsBoard provides API to send custom REST API calls to the Rule Engine, process the payload of the request and return result of the processing in response body. 
 This is useful for a number of use cases. For example:
  
  - extend existing REST API of the platform with custom API calls;
  - enrich REST API call with the attributes of device/asset/customer and forward to external system for complex processing;
  - provide custom API for your custom widgets.
  
-To execute the REST API call, you may use rule-engine-controller [REST APIs](/docs/{{docsPrefix}}reference/rest-api/): 
+To execute the REST API call, you may use rule-engine-controller [REST APIs](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}: 
  
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rest-api.png) 
 
-Note: the entity id you have specified in the call will be the originator of Rule Engine message. If you do not specify the entity id parameters, your user entity will become an originator of the message.
+> <b>Note</b>: the entity id you have specified in the call will be the originator of Rule Engine message. If you do not specify the entity id parameters, your user entity will become an originator of the message.
 
 ## Tutorials
 
 ThingsBoard authors have prepared several tutorials to help you get started with designing rule chains by example:
 
-  * [**Transform incoming messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/) 
-  * [**Transform incoming messages using previous messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) 
-  * [**Create and clear alarms on incoming device messages**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
-  * [**Send emails to customer on device alarm**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) 
-  * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/)
+  * [**Transform incoming messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/){:target="_blank"} 
+  * [**Transform incoming messages using previous messages from device**](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/) {:target="_blank"}
+  * [**Create and clear alarms on incoming device messages**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/){:target="_blank"}
+  * [**Send emails to customer on device alarm**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) {:target="_blank"}
+  * [**Send messages between related devices**](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/){:target="_blank"}
   
-See more tutorials [here](/docs/{{docsPrefix}}guides/).
+See more tutorials [here](/docs/{{docsPrefix}}guides/){:target="_blank"}.
 
 {% unless docsPrefix contains "paas/" %}
 
 ## Troubleshooting
 
 If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
-To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings))
+To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings){:target="_blank"})
 
-Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/user-guide/troubleshooting/#logs)) about offset lag for consumer groups (there are consumer-group logs for tb-core, tb-rule-engine and all transport services).
+Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/user-guide/troubleshooting/#logs){:target="_blank"}) about offset lag for consumer groups (there are consumer-group logs for tb-core, tb-rule-engine and all transport services).
 
 Here's an example of the log message:
 

@@ -78,13 +78,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Industry 4.0">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/iona.webp');">
-                <a class="content" href="/case-studies/iona">
-                    <img class="logo" src="https://img.thingsboard.io/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">
-                    <p>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</p>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/awake.webp');">
+                <a class="content" href="/case-studies/awake">
+                    <img style="height: 35px" class="logo" src="https://img.thingsboard.io/case-studies/awake.svg" title="Awake" alt="Awake">
+                    <p>Awake: unifying global rental operations with custom IoT solutions  <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about IONA Tech’s IoT transformation with ThingsBoard</span>
+                    <span class="visually-hidden">about unifying global rental operations with custom IoT solutions</span>
                 </a>
             </div>
         </div>
@@ -275,6 +275,16 @@ modalDescription: "Get your brand featured across our global channels — websit
                     <p>From sensors to dashboards: <br> TEKTELIC's rapid IoT deployment with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about TEKTELIC's rapid IoT deployment with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Industry 4.0">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/iona.webp');">
+                <a class="content" href="/case-studies/iona">
+                    <img class="logo" src="https://img.thingsboard.io/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">
+                    <p>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about IONA Tech’s IoT transformation with ThingsBoard</span>
                 </a>
             </div>
         </div>

@@ -4,6 +4,7 @@ assignees:
 - stitenko
 title: Scheduling reports
 description: Scheduling reports guide
+redirect_from: "/docs/user-guide/reporting/scheduling-reports/"
 
 create-new-report-template:
     0:

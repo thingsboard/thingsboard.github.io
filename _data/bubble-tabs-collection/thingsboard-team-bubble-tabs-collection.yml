@@ -186,56 +186,51 @@ Solutions:
       title: "Serhii Skoryi"
       description: "Java Engineer"
     1:
-      src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/roman-bondarenko.webp"
-      alt: "Roman Bondarenko"
-      title: "Roman Bondarenko"
-      description: "Java Engineer"
-    2:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/andrii-ivanov.webp"
       alt: "Andrii Ivanov"
       title: "Andrii Ivanov"
       description: "Java Engineer"
-    3:
+    2:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/olexandr-mykolaichuk.webp"
       alt: "Olexandr Mykolaichuk"
       title: "Olexandr Mykolaichuk"
       description: "Java Engineer"
-    4:
+    3:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/kasharix.webp"
       alt: "Ivan Bondarenko"
       title: "Ivan Bondarenko"
       description: "Java Engineer"
-    5:
+    4:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/andrii-tkachenko.webp"
       alt: "Andrii Tkachenko"
       title: "Andrii Tkachenko"
       description: "Java Engineer"
-    6:
+    5:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/artemii-molyboha.webp"
       alt: "Artemii Molyboha"
       title: "Artemii Molyboha"
       description: "Java Engineer"
-    7:
+    6:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/vlad-myrhorodskyi.webp"
       alt: "Vlad Myrhorodskyi"
       title: "Vlad Myrhorodskyi"
       description: "Java Engineer"
-    8:
+    7:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/nikita-mazurenko.webp"
       alt: "Nikita Mazurenko"
       title: "Nikita Mazurenko"
       description: "Java Engineer"
-    9:
+    8:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/vitalii-kukoba.webp"
       alt: "Vitalii Kukoba"
       title: "Vitalii Kukoba"
       description: "Java Engineer"
-    10:
+    9:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/andrii-tikholoz.webp"
       alt: "Andrii Tikholoz"
       title: "Andrii Tikholoz"
       description: "Java Engineer"
-    11:
+    10:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/andrii-perun.webp"
       alt: "Andrii Perun"
       title: "Andrii Perun"
@@ -267,11 +262,6 @@ Solutions:
       title: "Oleh Kolesnyk"
       description: "Frontend Engineer"
     5:
-      src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/tetiana-yankiv.webp"
-      alt: "Tetiana Yankiv"
-      title: "Tetiana Yankiv"
-      description: "Frontend Engineer"
-    6:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/solutions-team/vlad-symonenko.webp"
       alt: "Vlad Symonenko"
       title: "Vlad Symonenko"
@@ -341,15 +331,10 @@ Support:
       description: "Technical Support Engineer"
     2:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/kasharix.webp"
-      alt: "Yaroslav Chynkyn"
-      title: "Yaroslav Chynkyn"
-      description: "Technical Support Engineer"
-    3:
-      src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/kasharix.webp"
       alt: "Dmytro Shyshka"
       title: "Dmytro Shyshka"
       description: "Technical Support Engineer"
-    4:
+    3:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/support-team/illia-tsybulenko-sihov.webp"
       alt: "Illia Tsybulenko-Sihov"
       title: "Illia Tsybulenko-Sihov"
@@ -467,41 +452,31 @@ Operations:
       title: "Oksana Kovalska"
       description: "HR Director"
     1:
-      src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/operation-team/mariia-kalitka.webp"
-      alt: "Mariia Kalitka"
-      title: "Mariia Kalitka"
-      description: "Recruiter"
-    2:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/operation-team/valeriia-kalchenko.webp"
       alt: "Valeriia Kalchenko"
       title: "Valeriia Kalchenko"
       description: "Sourcer/HR Manager"
-    3:
+    2:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/operation-team/nataliia-avramenko.webp"
       alt: "Nataliia Avramenko"
       title: "Nataliia Avramenko"
       description: "Sr Accountant"
-    4:
+    3:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/operation-team/albina-kukharchuk.webp"
       alt: "Albina Kukharchuk"
       title: "Albina Kukharchuk"
       description: "Accountant"
-    5:
-      src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/operation-team/nadiia-tsymbaliuk.webp"
-      alt: "Nadiia Tsymbaliuk"
-      title: "Nadiia Tsymbaliuk"
-      description: "Accounting Assistant"
-    6:
+    4:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/kasharix.webp"
       alt: "Katia Goldin"
       title: "Katia Goldin"
       description: "CFO"
-    7:
+    5:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/operation-team/anastasiia-orlata.webp"
       alt: "Anastasiia Orlata"
       title: "Anastasiia Orlata"
       description: "Office manager"
-    8:
+    6:
       src: "https://img.thingsboard.io/company-images/thingsboard-team-photos/kasharix.webp"
       alt: "Andrii Doan"
       title: "Andrii Doan"

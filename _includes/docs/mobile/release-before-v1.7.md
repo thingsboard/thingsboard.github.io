@@ -30,8 +30,11 @@ rename setAppName --targets android,ios --value "Your desired app name"
 If you want to have different names for every platform, simply run:
 
 ```bash
-rename setAppName --targets android --value "Your Android app name"
 rename setAppName --targets ios --value "Your iOS app name"
+```
+{: .copy-code}
+```bash
+rename setAppName --targets android --value "Your Android app name"
 ```
 {: .copy-code}
 
@@ -46,6 +49,9 @@ rename setAppName --targets ios --value "Your iOS app name"
 
 ```bash
 rename setBundleId --targets android --value "org.yourCompany.app"
+```
+{: .copy-code}
+```bash
 rename setBundleId --targets ios --value "org.yourCompany.app.ios"
 ```
 {: .copy-code}

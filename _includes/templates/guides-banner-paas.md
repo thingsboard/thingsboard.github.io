@@ -19,5 +19,3 @@
 {% if currentGuide != "AdvancedFeatures" %}
 - [Advanced features](/docs/{{docsPrefix}}guides/#AnchorIDAdvancedFeatures) - Learn about advanced ThingsBoard features.
 {% endif %}
-
-<br>
