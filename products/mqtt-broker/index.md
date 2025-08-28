@@ -82,7 +82,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div class="block">
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Fan-in (Many-to-one messaging using MQTT wildcards)</a></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/100m-connections-performance-test/">Fan-in</a><p>Many-to-one messaging using MQTT wildcards.</p></h3>
                 </div>
                 <div>
                     <span>Many-to-one communication pattern. Many devices generate a large volume of messages consumed by specific applications. They must be persistent clients with QoS levels set to 1 or 2, capable of retaining all the data even when they're temporarily offline due to restarts or upgrades.</span>
@@ -98,7 +98,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
             </div>            
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/">Fan-out (Broadcast MQTT topics)</a></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/">Fan-out</a><p>Broadcast MQTT topics.</p></h3>
                 </div>
                 <div>
                     <span>This scenario facilitates one-to-many messaging. It involves numerous devices subscribing to specific updates or notifications that must be delivered. This leads to a few incoming requests that cause a high volume of outgoing data.</span>
@@ -108,7 +108,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div class="block">
             <div class="description">
                 <div class="scenario-title">
-                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/">Point-to-point (Targeted MQTT topic communication)</a></h3>
+                    <h3 class="item-heading"><a target="_blank" href="/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/">Point-to-point</a><p>Targeted MQTT topic communication.</p></h3>
                 </div>
                 <div>
                     <span>A targeted messaging pattern, primarily used for one-to-one communication. Achieved through uniquely defined topics, p2p is ideal for use cases such as private messaging or command-based interactions. Persistent clients with QoS levels set to 1 or 2 are often utilized to ensure reliable message delivery, even during temporary disconnections or client downtime.</span>
