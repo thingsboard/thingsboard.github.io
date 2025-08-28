@@ -176,7 +176,7 @@
       pe: true
       video: false
 - title: Data visualization
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards.
   id: DataVisualization
   section:
     - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
