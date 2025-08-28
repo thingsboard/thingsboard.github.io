@@ -91,9 +91,11 @@ toc:
         path: /docs/pe/user-guide/ui/widget-library/
       - title: Chart widgets
         path: /docs/pe/user-guide/ui/chart-widget/
+      - title: Markdown/HTML Card widget
+        path: /docs/pe/user-guide/widgets/cards/markdown-html-card/
+        new: true
       - title: Map widgets
         path: /docs/pe/user-guide/widgets/map-widgets/
-        new: true
       - title: Entities table widget
         path: /docs/pe/user-guide/ui/entity-table-widget/
       - title: Advanced data key configuration
