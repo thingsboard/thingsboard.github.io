@@ -1,0 +1,44 @@
+{
+  "type": "SCRIPT",
+  "name": "RollingWindowRecords",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1755093951275
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SCRIPT",
+    "arguments": {
+      "acousticDevRecords": {
+        "refEntityKey": {
+          "key": "acousticDev",
+          "type": "TS_ROLLING"
+        },
+        "limit": 100,
+        "timeWindow": 86400000
+      },
+      "temperatureRecords": {
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_ROLLING"
+        },
+        "limit": 100,
+        "timeWindow": 86400000
+      },
+      "vibrationRecords": {
+        "refEntityKey": {
+          "key": "vibration",
+          "type": "TS_ROLLING"
+        },
+        "limit": 100,
+        "timeWindow": 86400000
+      }
+    },
+    "expression": "// Sample script to output raw values of the rolling arguments;\nreturn {\n    \"acousticDevRecords\": acousticDevRecords,\n    \"temperatureRecords\": temperatureRecords,\n    \"vibrationRecords\": vibrationRecords\n};",
+    "output": {
+      "name": "",
+      "type": "TIME_SERIES"
+    }
+  }
+}

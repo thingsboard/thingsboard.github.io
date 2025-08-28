@@ -3,16 +3,16 @@
 
 ## Troubleshooting instruments and tips
 
-### Message Pack Processing Log
+### MessagePack Processing Log
 
-You can enable logging of the slowest and most frequently called rule-nodes.
-To do this you need to [update your logging configuration](#enable-certain-logs) with the following <i>logger</i>:
+To enable logging for the slowest and most frequently called rule-nodes, 
+[update your logging configuration](#enable-certain-logs) with the following **logger**:
 
 ```bash
 <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
 ```
 
-After this you can find the following messages in your [logs](#logs):
+After this, you can find the following messages in your [logs](#logs):
 
 ```bash
 2021-03-24 17:01:21,023 [tb-rule-engine-consumer-24-thread-3] DEBUG o.t.s.s.q.TbMsgPackProcessingContext - Top Rule Nodes by max execution time:
@@ -30,7 +30,7 @@ After this you can find the following messages in your [logs](#logs):
 
 ### Read logs
 
-Regardless of the deployment type, ThingsBoard Edge logs stored in the following directory:
+Regardless of the deployment type, ThingsBoard Edge logs are stored in the following directory:
 
 ```bash
 /var/log/tb-edge
@@ -45,17 +45,17 @@ Docker-Compose Deployment%,%docker-compose%,%templates/edge/troubleshooting/logs
 {% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
 
-### Enable certain logs
+### Enable specific logs
 
-ThingsBoard provides the ability to enable/disable logging for certain parts of the system depending on what information do you need for troubleshooting.
+ThingsBoard provides the ability to enable/disable logging for specific parts of the system, depending on the information you need for troubleshooting.
 
-You can do this by modifying <b>logback.xml</b> file. As logs itself, it is stored in the following directory:
+You can do this by modifying the `logback.xml` file. Like the logs themselves, the file is stored in the following directory:
 
 ```bash
 /usr/share/tb-edge/conf
 ```
 
-Here's an example of the <b>logback.xml</b> configuration:
+Here's an example of the `logback.xml` configuration:
 
 ```bash
 <!DOCTYPE configuration>
@@ -86,12 +86,16 @@ Here's an example of the <b>logback.xml</b> configuration:
 </configuration>
 ```
 
-The most useful for the troubleshooting parts of the config files are <i>loggers</i>.
-They allow you to enable/disable logging for the certain class or group of classes.
-In the example above the default logging level is <b>INFO</b> (it means that logs will contain only general information, warnings and errors), but for the package <code>org.thingsboard.js.api</code> we enabled the most detailed level of logging.
-There's also a possibility to completely disable logs for some part of the system, in the example above we did it to <code>com.microsoft.azure.servicebus.primitives.CoreMessageReceiver</code> class using <b>OFF</b> log-level.
+The most useful for the troubleshooting parts of the config files are **loggers**.
+They allow you to enable/disable logging for a specific class or group of classes.
 
-To enable/disable logging for some part of the system you need to add proper <code></logger></code> configuration and wait up to 10 seconds.
+In the example above, the default logging level is set to **INFO** (meaning that logs will contain only general information, warnings and errors). 
+However, for the `org.thingsboard.js.api` package we enabled the most detailed level of logging by setting it to **TRACE**.
+
+It’s also possible to completely disable logging for certain parts of the system. 
+In the example above, we did this to the `com.microsoft.azure.servicebus.primitives.CoreMessageReceiver` class by setting the log-level to **OFF**.
+
+To enable/disable logging for a specific part of the system, you need to add the appropriate `</logger>` configuration, and wait up to 10 seconds.
 
 Different deployment tools provide different ways to update logs:
 
@@ -103,56 +107,158 @@ Docker-Compose Deployment%,%docker-compose%,%templates/edge/troubleshooting/logs
 
 ## Metrics
 
-You may enable prometheus metrics by setting environment variables `METRICS_ENABLED` to value `true` and `METRICS_ENDPOINTS_EXPOSE` to value `prometheus` in the configuration file.
+You can enable Prometheus metrics by setting the following environment variables in the configuration file:
+* set `METRICS_ENABLED` to `true`
+* set `METRICS_ENDPOINTS_EXPOSE` to `prometheus` 
 
-These metrics exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (No authentication required).
+These metrics are exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (no authentication is required).
 
 ## Prometheus metrics
 
-Some internal state metrics can be exposed by the Spring Actuator using Prometheus.
+Some internal state metrics can be exposed by the **Spring Boot Actuator** using **Prometheus**.
 
-Here's the list of metrics ThingsBoard pushes to Prometheus.
+Here is the list of stats that **ThingsBoard** pushes to **Prometheus**:
 
-### <b>tb-edge</b> metrics:
-- <i>attributes_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>attributes</b> to the database.
-  Note that there are several queues (threads) for persisting attributes in order to reach maximum performance.
-- <i>ruleEngine_${name_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout</i>):
-  stats about processing of the messages inside of the Rule Engine. They are persisted for each queue (e.g. Main, HighPriority, SequentialByOriginator etc).
-  Some stats descriptions:
-    - <i>tmpFailed</i>: number of messages that failed and got reprocessed later
-    - <i>tmpTimeout</i>: number of messages that timed out and got reprocessed later
-    - <i>timeoutMsgs</i>: number of messages that timed out and were discarded afterwards
-    - <i>failedIterations</i>: iterations of processing messages pack where at least one message wasn't processed successfully
-- <i>ruleEngine_${name_of_queue}_seconds</i> (for each present <i>tenantId</i>): stats about the time message processing took for different queues.
-- <i>core</i> (statsNames - <i>totalMsgs, toDevRpc, coreNfs, sessionEvents, subInfo, subToAttr, subToRpc, deviceState, getAttr, claimDevice, subMsgs</i>):
-  stats about processing of the internal system messages.
-  Some stats descriptions:
-    - <i>toDevRpc</i>: number of processed RPC responses from Transport services
-    - <i>sessionEvents</i>: number of session events from Transport services
-    - <i>subInfo</i>: number of subscription infos from Transport services
-    - <i>subToAttr</i>: number of subscribes to attribute updates from Transport services
-    - <i>subToRpc</i>: number of subscribes to RPC from Transport services
-    - <i>getAttr</i>: number of 'get attributes' requests from Transport services
-    - <i>claimDevice</i>: number of Device claims from Transport services
-    - <i>deviceState</i>: number of processed changes to Device State
-    - <i>subMsgs</i>: number of processed subscriptions
-    - <i>coreNfs</i>: number of processed specific 'system' messages
-- <i>jsInvoke</i> (statsNames - <i>requests, responses, failures</i>): stats about total, successful and failed requests to the JS executors
-- <i>attributes_cache</i> (results - <i>hit, miss</i>): stats about how much attribute requests went to the cache
+### tb-edge metrics:
+
+- **attributes_queue_${index_of_queue}** (statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent **attribute writes** to the database.  
+  _Note that several queues (threads) are used to persist attributes for maximum performance._
+- **ruleEngine_${name_of_queue}** (statsNames - **totalMsgs, failedMsgs, successfulMsgs, tmpFailed, failedIterations, successfulIterations, timeoutMsgs, tmpTimeout**):
+  The stats that represent message processing in the Rule Engine. They are persisted for each queue (e.g. Main, HighPriority, SequentialByOriginator etc).
+  Descriptions of some metrics:
+    - **tmpFailed**: The number of messages that failed and got reprocessed later.
+    - **tmpTimeout**: The number of messages that timed out and got reprocessed later.
+    - **timeoutMsgs**: The number of messages that timed out and were discarded.
+    - **failedIterations**: The iterations of processing message packs where at least one message wasn't processed successfully.
+- **ruleEngine_${name_of_queue}_seconds** (for each present **tenantId**): The stats that represent the time it took to process messages in different queues.
+- **core** (statsNames - **totalMsgs, toDevRpc, coreNfs, sessionEvents, subInfo, subToAttr, subToRpc, deviceState, getAttr, claimDevice, subMsgs**):
+  The stats that represent the processing of internal system messages.
+  Descriptions of some metrics:
+    - **toDevRpc**: The number of processed RPC responses from Transport services.
+    - **sessionEvents**: The number of session events from Transport services.
+    - **subInfo**: The number of subscription infos from Transport services.
+    - **subToAttr**: The number of subscribes to attribute updates from Transport services.
+    - **subToRpc**: The number of subscribes to RPC from Transport services.
+    - **getAttr**: The number of 'get attributes' requests from Transport services.
+    - **claimDevice**: The number of device claims from Transport services.
+    - **deviceState**: The number of processed changes to Device State.
+    - **subMsgs**: The number of processed subscriptions.
+    - **coreNfs**: The number of processed specific 'system' messages.
+- **jsInvoke** (statsNames - **requests, responses, failures**): The stats that represent the number of total, successful and failed requests to the JS executors.
+- **attributes_cache** (results - **hit, miss**): The stats that represent the number of attribute requests that went to the cache.
 
 
-### <b>transport</b> metrics:
-- <i>transport</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests received by Transport from Core
-- <i>ruleEngine_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the Rule Engine.
-- <i>core_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about pushing messages from Transport to the TB node Device actor.
-- <i>transport_producer</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about requests from Transport to the Core.
+### transport metrics:
+- **transport** (statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the number of requests received by Transport from Core.
+- **ruleEngine_producer** (statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the number of messages pushed from Transport to the Rule Engine.
+- **core_producer<** (statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the number of messages pushed from Transport to the ThingsBoard node device actor.
+- **transport_producer** (statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the number of requests from Transport to the Core.
 
 
 ### PostgreSQL-specific metrics:
-- <i>ts_latest_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>latest telemetry</b> to the database.
-  Note that there are several queues (threads) in order to reach maximum performance.
-- <i>ts_queue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about writing <b>telemetry</b> to the database.
-  Note that there are several queues (threads) in order to reach maximum performance.
+- **ts_latest_queue_${index_of_queue}** (statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the **latest telemetry** writes to the database.  
+  Note that multiple queues (threads) are used to ensure maximum performance.
+- **ts_queue_${index_of_queue}**(statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the **telemetry** writes to the database.  
+  Note that multiple queues (threads) are used to ensure maximum performance.
+
+## Edge randomly disconnects from Cloud
+
+If an Edge instance repeatedly disconnects without an obvious reason but reconnects to the cloud within a few seconds, the most likely cause is **unstable network connectivity between the Edge and the Cloud.** 
+This may happen due to very low bandwidth or intermittent packet loss on the network.
+
+One option is to **diagnose your network** using external tools and resolve any identified issues. 
+
+If that is not possible, you can **adjust the gRPC connection parameters between Edge and Cloud** by increasing certain timeouts. 
+This helps reduce unexpected disconnects during temporary network disruptions.
+
+**On the ThingsBoard Server (Cloud):**
+
+* **EDGES_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC:** A minimum allowed interval between client keepalive pings. This prevents clients from sending pings too frequently, which can be a nuisance to the server. Potentially, this could be a denial-of-service attack vector if abused. If a client sends pings more frequently than this interval, the server can terminate the connection. **1 second by default**.
+
+* **EDGES_RPC_KEEP_ALIVE_TIME_SEC:** The time of inactivity (no read operations on the connection) after which the server sends a keepalive ping to the client. This is used to ensure that the connection is still alive and to prevent network intermediaries from dropping connections due to inactivity. It's a way for the server to proactively check if the client is still responsive. **10 seconds by default.**
+
+* **EDGES_RPC_KEEP_ALIVE_TIMEOUT_SEC:** The maximum amount of time that the server waits for a response to its keepalive ping. If the ping is not acknowledged within this time frame, the server considers the connection dead and may close it. This timeout helps detect unresponsive clients.<br> **5 seconds by default.**
+
+Read more about **Edge parameters for Cloud** [here](/docs/{{peDocsPrefix}}user-guide/install/config/#edges-parameters){:target="_blank"}
+
+**On the ThingsBoard Edge (gRPC client):**
+
+* **CLOUD_RPC_KEEP_ALIVE_TIME_SEC:** The amount of time in seconds that the client waits in an idle state (with no read operations on the connection) before sending a keepalive ping to the server. This setting is crucial for ensuring that the connection remains alive during periods of inactivity and helps prevent the server from closing the connection due to a timeout. It's used to probe the server periodically to check if it is still responsive and maintain the connection through potential network devices that might drop inactive connections (like NATs and load balancers). **10 seconds by default.**
+
+* **CLOUD_RPC_KEEP_ALIVE_TIMEOUT_SEC:** Specifies how long the client will wait for a response to its keepalive ping. If the ping isn't acknowledged within this timeframe, the client assumes that the connection is dead or unreachable. This timeout is essential for detecting when the server side might have issues or when there might be network failures preventing communication. If the server does not respond to a keepalive ping within this period, the client will consider the connection as lost and may attempt to reconnect or take other recovery actions. **5 seconds by default.**
+
+Read more about **Cloud configuration for Edge** [here](/docs/{{docsPrefix}}user-guide/install/config/#cloud-configuration){:target="_blank"}
+
+{% capture infoWired %}
+**WARNING:**{: style="color:red"}  
+[gRPC](https://grpc.io/docs/guides/keepalive/){:target="_blank"} advises against enabling keepalive without calls and recommends that clients avoid configuring their keepalive much below **one minute**.
+
+**Scale‑safe starting points:**
+* **Do not reduce timeouts on unreliable networks:** If you see ping‑ack timeouts in the logs, increase the `*_KEEP_ALIVE_TIMEOUT_SEC`
+* **Keep the client interval ≥ server’s minimum:** Raise this server guardrail if you want to intentionally block overly chatty clients, and then coordinate the necessary client changes.
+* **Keep the interval < the shortest NAT/LB idle timeout** on the path so the flow never goes idle (e.g., if the middlebox drops after 60 s, use 25–55 s intervals)
+{% endcapture %}
+{% include templates/warn-banner.md content=infoWired %}
+
+### How to apply
+
+{% capture how-to-apply %}
+Docker%,%dockerKeepalive%,%templates/edge/troubleshooting/docker-keepalive.md%br%
+Ubuntu%,%ubuntuKeepalive%,%templates/edge/troubleshooting/ubuntu-keepalive.md%br%{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="how-to-apply" toggle-spec=how-to-apply %}
+
+## Monitoring message statistics
+
+{% assign sinceVersion = "4.2" %}
+{% include templates/edge/since-edge.md %}
+
+To diagnose and resolve issues with message delivery between the Cloud and Edge, you can monitor the state of **uplink** (Edge → Cloud) 
+and **downlink** (Cloud → Edge) message flows.
+
+* [Download](/docs/edge/user-guide/download-dashboard/edges.zip) the preconfigured Edge dashboard. 
+* Import the dashboard to your **Cloud**:
+  * Go to the **Dashboards** section.
+  * Click the **"+"** button, select the **"Import dashboard"** option and browse for the `.json` file on your computer. Click the **"Import"** button to proceed.
+
+{% include images-gallery.html imageCollection="how-to-import-dashboard" %}
+
+### Dashboard overview
+
+#### Main widgets
+* **Entities table (Edges):** The widget displays the list of connected Edge instances and includes interactive controls, and links to deeper views. 
+* **Edge quick overview:** The widget displays a hierarchical snapshot of key components synced from Cloud to each Edge (_Assets, Devices, Entity Views, Dashboards, and Rule Chains_)
+* **Map:** Visualizes the geographical location of Edge nodes.
+* **Message flow widgets (Uplink and Downlink):** The time-series widgets detect message buildup or delivery issues from Cloud to Edge, as well as whether there are communication delays or data loss at the Edge.
+
+{% include images-gallery.html imageCollection="internal-monitoring-main" %}
+
+#### Edge Details view
+When you click on a specific Edge instance, the dashboard opens a detailed view that includes:
+* **HTML card:** You can fill in the card with any information related to the Edge (_e.g., contact details, software version, or current alarm status_)
+* **Local alarms:** The widget tracks recent alarms (_e.g., critical events or device failures_) originating from this Edge.
+* **Uplinks/Downlinks time-series graphs:** The message flow widget filtered specifically for the selected Edge.
+* **Entities table (Devices):** The widget lists all devices connected to this Edge instance.
+
+{% include images-gallery.html imageCollection="internal-monitoring-details" %}
+
+### The telemetry keys for statistics monitoring
+
+ThingsBoard Edge exposes a set of telemetry keys that allow you to monitor message statistics between Edge and Cloud.
+
+#### Uplink
+* **uplinkMsgsAdded:** The number of messages added to the queue.
+* **uplinkMsgsPushed:** The number of messages successfully sent to the Cloud.
+* **uplinkMsgsPermanentlyFailed:** The number of permanently failed messages.
+* **uplinkMsgsTmpFailed:** The number of temporarily failed messages (e.g., due to network issues).
+* **uplinkMsgsLag:** The number of messages remaining in the queue (lag).
+
+#### Downlink
+* **downlinkMsgsAdded:** The number of messages added to the queue.
+* **downlinkMsgsPushed:** The number of messages successfully sent to the Cloud.
+* **downlinkMsgsPermanentlyFailed:** The number of permanently failed messages.
+* **downlinkMsgsTmpFailed:** The number of temporarily failed messages (e.g., due to network issues).
+* **downlinkMsgsLag:** The number of messages remaining in the queue (lag).
+
 
 ## Getting help
 

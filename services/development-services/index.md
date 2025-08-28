@@ -1372,6 +1372,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <input type="hidden" name="utm_term" id="utm_term">
                             <input type="hidden" name="utm_content" id="utm_content">
                             <input type="hidden" name="client_id" id="client_id">
+                            <div class="hp-container">
+                                {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
+                                <label for="{{ random_hp }}">Leave this field empty</label>
+                                <input type="text" id="{{ random_hp }}" name="{{ random_hp }}" autocomplete="off">
+                            </div>
+
+                            <input type="hidden" class="form-rendered-at" value="{{ site.time | date: '%s' }}">
                             <div class="submit-button-container">
                                 <input class="cdu-button" value="Submit request" type="submit"/>
                             </div>
@@ -1471,6 +1478,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <input type="hidden" name="utm_term-popup" id="utm_term-popup">
                 <input type="hidden" name="utm_content-popup" id="utm_content-popup">
                 <input type="hidden" name="client_id-popup" id="client_id-popup">
+                <div class="hp-container">
+                    {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
+                    <label for="{{ random_hp }}">Leave this field empty</label>
+                    <input type="text" id="{{ random_hp }}" name="{{ random_hp }}" autocomplete="off">
+                </div>
+
+                <input type="hidden" class="form-rendered-at" value="{{ site.time | date: '%s' }}">
             </div>
             <div class="submit-button-container">
                 <input class="cdu-button" value="Submit request" type="submit"/>
@@ -1988,6 +2002,36 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             jQuery('.developmentServicesContactUsForm').attr('id', formId);
         }
     }
+
+    (function(){
+        function protectForm(formSelector) {
+            const form = document.querySelector(formSelector);
+            if (!form) return;
+
+            const hpInput = form.querySelector('.hp-container input');
+            const timeInput = form.querySelector('.form-rendered-at');
+
+            const newName = 'hp_' + Math.random().toString(36).substring(2, 10);
+            hpInput.name = newName;
+            hpInput.id = newName;
+            form.querySelector('.hp-container label').htmlFor = newName;
+
+            form.addEventListener('submit', function(e) {
+                const now = Math.floor(Date.now() / 1000);
+                const filled = hpInput.value.trim() !== '';
+                const tooFast = (now - parseInt(timeInput.value, 10)) < 3;
+
+                if (filled || tooFast) {
+                    e.preventDefault();
+                    form.innerHTML = '<p>Thank you! Your message has been received.</p>';
+                    setTimeout(() => {}, Math.floor(Math.random() * 4000) + 3000);
+                }
+            });
+        }
+
+        protectForm('#myModal form');
+        protectForm('.contact-us-form form');
+    })();
 
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val() || $('input[name=first-name-popup]', form).val();

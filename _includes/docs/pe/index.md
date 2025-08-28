@@ -113,10 +113,10 @@
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
-        <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/reporting/">
+        <a class="feature-card" href="/docs/{{peDocsPrefix}}user-guide/reporting/reporting-getting-started/">
             <div class="feature-title">Reporting</div>
             <div class="feature-text">
-                Generate reports using existing dashboards and distribute them to end-users via email.
+                Generate reports and distribute them to end-users.
             </div>
         </a>
     </div>
