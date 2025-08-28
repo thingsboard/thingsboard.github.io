@@ -13,6 +13,7 @@
 - **[Configure mobile actions](/docs/{{docsPrefix}}mobile/mobile-actions)**
 - **[Configure OAuth 2.0](/docs/{{docsPrefix}}mobile/oauth2)**
 - **[Configure mobile app QR code settings](/docs/{{docsPrefix}}mobile/qr-code-settings/)**
+- **[App icon and splash screen](/docs/{{docsPrefix}}/mobile/app-icon-splash-screen)**
 {% if docsPrefix == 'pe/' %}
 - **[Configure white-labeling](/docs/pe/mobile/white-labeling)**
 - **[Configure self-registration](/docs/pe/mobile/self-registration)**
