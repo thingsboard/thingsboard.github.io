@@ -24,7 +24,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
   kafka:
     restart: always
-    image: bitnami/kafka:4.0
+    image: bitnamilegacy/kafka:4.0
     ports:
       - 9092:9092 #to localhost:9092 from host machine
       - 9093 #for Kraft
