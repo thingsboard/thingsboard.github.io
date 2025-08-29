@@ -88,6 +88,44 @@ docker compose start
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade. 
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/msa/tbmq/configs/README.md).
 
+### Upgrade to 2.2.0
+
+In this release, the MQTT authentication mechanism was migrated from YAML/env configuration into the database.
+During upgrade, TBMQ needs to know which authentication providers are enabled in your deployment.
+This is done using environment variables passed to the **upgrade container**.
+
+The upgrade script therefore requires a file named **`.tbmq-upgrade.env`** in the same directory as `docker-compose.yml`.
+This file is **used only during upgrade** to create the default auth providers.
+Make sure the values match what you already run in your `tbmq` service (`docker-compose.yml → environment:`).
+
+**Create the env file (Windows PowerShell)**
+
+From the directory containing `docker-compose.yml`:
+
+```bash
+@'
+SECURITY_MQTT_BASIC_ENABLED=true
+SECURITY_MQTT_SSL_ENABLED=true
+SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
+'@ | Set-Content -Path .tbmq-upgrade.env -Encoding UTF8
+```
+{: .copy-code}
+
+> **Tips**
+> If you use only Basic authentication, set `SECURITY_MQTT_SSL_ENABLED=false`.
+> If you use only X.509 authentication, set `SECURITY_MQTT_BASIC_ENABLED=false` and `SECURITY_MQTT_SSL_ENABLED=true`.
+
+**Notes**
+
+* **Required**: If `.tbmq-upgrade.env` is missing, the upgrade script will fail.
+* Supported variables:
+
+  * `SECURITY_MQTT_BASIC_ENABLED` (`true|false`)
+  * `SECURITY_MQTT_SSL_ENABLED` (`true|false`)
+  * `SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT` (`true|false`) — usually `false`.
+
+Once the file is created, continue with the [upgrade process](#run-upgrade).
+
 ### Upgrade to 2.1.0
 
 {% include templates/mqtt-broker/upgrade/update-to-2.1.0-release.md %}
