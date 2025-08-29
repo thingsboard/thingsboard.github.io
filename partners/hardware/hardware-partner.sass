@@ -122,6 +122,28 @@
               word-break: break-word
             a
               text-decoration: underline
+              &.links-to-hide.hidden
+                display: none
+              &:hover
+                text-decoration: none
+          td.grid-content
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            row-gap: 4px
+            column-gap: 12px
+            @media (max-width: 600px)
+              grid-template-columns: repeat(1, 1fr)
+            .expand-links-button
+              font-size: 14px
+              line-height: 24px
+              font-weight: 400
+              color: rgba(0, 0, 0, 0.76)
+              @media (max-width: 600px)
+                grid-column: span 1
+              grid-column: span 2
+              justify-self: start
+              padding: 0
+              text-decoration: underline
               &:hover
                 text-decoration: none
         .section-label

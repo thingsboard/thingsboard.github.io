@@ -1,6 +1,6 @@
 {% assign partner = include.partner %}
 
-<div class="hardware-partner">
+<div class="hardware-partner ">
     <div class="hardware-partner-card">
         <div class="hardware-partner-card-wrapper">
             <img src="{{ partner.logo }}" alt="{{ partner.name }} logo">
@@ -37,10 +37,11 @@
                 {% for item in partner.links %}
                     <tr>
                         <th scope="row">{{ item[0] | replace: "-", " " | capitalize }}</th>
-                        <td>
+                        <td class="grid-content">
                             {% for link in item[1] %}
-                                <a href="{{ link[1].href }}">{{ link[1].label }}</a>{% unless forloop.last %}, {% endunless %}
+                                <a href="{{ link[1].href }}" class="{% if forloop.index0 > 3 %}links-to-hide hidden{% endif %}" data-id="{{ item[0] }}">{{ link[1].label }}</a>
                             {% endfor %}
+                            {% if item[1].size > 4 %}<button class="expand-links-button" id="{{ item[0] }}">Show more..</button>{% endif %}
                         </td>
                     </tr>
                 {% endfor %}
@@ -60,6 +61,18 @@
 </div>
 
 <script>
+    const expandGuidesLinksButton = document.querySelectorAll('.expand-links-button');
+    expandGuidesLinksButton.forEach((item) => {
+        item.addEventListener('click', () => {
+            const currentId = item.id;
+            const toggleLinks = document.querySelectorAll(`.links-to-hide[data-id="${currentId}"]`);
+            toggleLinks.forEach(link => link.classList.toggle('hidden'));
+
+            const hasHidden = document.querySelectorAll(`.links-to-hide.hidden[data-id="${currentId}"]`).length > 0;
+            item.textContent = hasHidden ? 'Show more..' : 'Hide';
+        });
+    });
+
     (function () {
         function applyRowClamp(container) {
             const list = container.querySelector('.showcase-list');

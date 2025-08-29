@@ -1256,7 +1256,7 @@
   links:
     gateway-guides:
       0:
-        label: Connect Atomsenses Indoor LoRaWAN® Gateway to ThingsBoard
+        label: Connect Atomsenses Indoor LoRaWAN® Gateway
         href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
   description: Atomsenses is a specialist IoT solution provider focusing on Lorawan
     sensors for indoor air quality monitoring, our vision is to transform how we manage
@@ -1727,11 +1727,11 @@
     sensor-guides:
       0:
         label: ioButton Panic button
-        href: https://thingsboard.io/docs/pe/devices-library/iobutton-panic-button/
+        href: /docs/pe/devices-library/iobutton-panic-button/
     trackers-guides:
       0:
         label: ioTracker Multi-sensor tracker
-        href: https://thingsboard.io/docs/pe/devices-library/iotracker-multi-sensor-tracker/
+        href: /docs/pe/devices-library/iotracker-multi-sensor-tracker/
   description: ioThings, the company behind the ioTracker and ioButton, is a Dutch
     company and was established in 2016 by three technology enthusiasts with a professional
     background in electronics, security, IT and telecom. We mainly operate in the
@@ -1768,8 +1768,8 @@
   links:
     gateway-guides:
       0:
-        label: Connect ACE MQTT 4G GPS Gateway to ThingsBoard
-        href: https://thingsboard.io/docs/devices-library/ace-iot-gateway-and-siemens-logo/
+        label: Connect ACE MQTT 4G GPS Gateway
+        href: /docs/devices-library/ace-iot-gateway-and-siemens-logo/
   description: ACE Automation Europe designs compact PLCs, touchscreen HMIs, and LTE/4G
     MQTT gateways. The “Nano ACE” series stands out for its ultra-low power consumption,
     compact form factor, and PCB-mount version. Our HMIs are powerful, affordable,
@@ -1858,7 +1858,7 @@
   links:
     gateway-guides:
       0:
-        label: Connect EG8200 Gateway to ThingsBoard
+        label: Connect EG8200 Gateway
         href: /docs/pe/devices-library/eg8200-gateway/
   description: Established in 2015, Chengdu IOTRouter is a high-tech enterprise specializing
     in the research, development, production, and sales of industrial IoT Edge Gateway,
@@ -1911,7 +1911,7 @@
   links:
     gateway-guides:
       0:
-        label: Connect KNX IP Multi IO 580 to ThingsBoard
+        label: Connect KNX IP Multi IO 580
         href: /docs/devices-library/knx-ip-multi-io-580/
   description: We from Weinzierl develop, produce, and market complex software and
     hardware components for building system technology. Our focus lies in building
