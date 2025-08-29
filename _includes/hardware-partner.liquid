@@ -73,60 +73,58 @@
         });
     });
 
-    (function () {
-        function applyRowClamp(container) {
-            const list = container.querySelector('.showcase-list');
-            const items = Array.from(list?.children || []);
-            const btn = container.querySelector('.toggle-guides-btn') || (() => {
-                const b = document.createElement('button');
-                b.type = 'button';
-                b.className = 'toggle-guides-btn';
-                b.hidden = true;
-                b.innerHTML =
-                    '<span class="label">Show more</span>' +
-                    '<i class="fas fa-chevron-down fa-sm" aria-hidden="true" style="color: rgba(0,0,0,.76)"></i>';
-                container.appendChild(b);
-                return b;
-            })();
-            const label = btn.querySelector('.label');
+    function applyRowClamp(container) {
+        const list = container.querySelector('.showcase-list');
+        const items = Array.from(list?.children || []);
+        const btn = container.querySelector('.toggle-guides-btn') || (() => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'toggle-guides-btn';
+            b.hidden = true;
+            b.innerHTML =
+                '<span class="label">Show more</span>' +
+                '<i class="fas fa-chevron-down fa-sm" aria-hidden="true" style="color: rgba(0,0,0,.76)"></i>';
+            container.appendChild(b);
+            return b;
+        })();
+        const label = btn.querySelector('.label');
 
-            items.forEach(li => li.classList.remove('collapsed'));
-            btn.classList.remove('is-open');
-            label.textContent = 'Show more';
+        items.forEach(li => li.classList.remove('collapsed'));
+        btn.classList.remove('is-open');
+        label.textContent = 'Show more';
 
-            if (!items.length) { btn.hidden = true; return; }
+        if (!items.length) { btn.hidden = true; return; }
 
-            const rowTops = [];
-            const extraItems = [];
-            for (const li of items) {
-                const top = li.offsetTop;
-                if (!rowTops.includes(top)) rowTops.push(top);
-                if (rowTops.length > 4) extraItems.push(li);
-            }
-
-            if (rowTops.length <= 4) { btn.hidden = true; return; }
-
-            extraItems.forEach(li => li.classList.add('collapsed'));
-
-            btn.hidden = extraItems.length === 0;
-            if (!btn.hidden) {
-                btn.onclick = () => {
-                    const open = btn.classList.toggle('is-open');
-                    extraItems.forEach(li => li.classList.toggle('collapsed', !open));
-                    label.textContent = open ? 'Hide' : 'Show more';
-                };
-            }
+        const rowTops = [];
+        const extraItems = [];
+        for (const li of items) {
+            const top = li.offsetTop;
+            if (!rowTops.includes(top)) rowTops.push(top);
+            if (rowTops.length > 4) extraItems.push(li);
         }
 
-        const run = () => document.querySelectorAll('.showcases').forEach(applyRowClamp);
-        run();
+        if (rowTops.length <= 4) { btn.hidden = true; return; }
 
-        let t;
-        window.addEventListener('resize', () => {
-            clearTimeout(t);
-            t = setTimeout(run, 250);
-        });
-    })();
+        extraItems.forEach(li => li.classList.add('collapsed'));
+
+        btn.hidden = extraItems.length === 0;
+        if (!btn.hidden) {
+            btn.onclick = () => {
+                const open = btn.classList.toggle('is-open');
+                extraItems.forEach(li => li.classList.toggle('collapsed', !open));
+                label.textContent = open ? 'Hide' : 'Show more';
+            };
+        }
+    }
+
+    const run = () => document.querySelectorAll('.showcases').forEach(applyRowClamp);
+    run();
+
+    let t;
+    window.addEventListener('resize', () => {
+        clearTimeout(t);
+        t = setTimeout(run, 250);
+    });
 </script>
 
 
