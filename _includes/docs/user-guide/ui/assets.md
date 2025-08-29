@@ -139,12 +139,12 @@ Clicking on an asset opens a window where you can access and manage various aspe
 - Track user actions and changes related to the asset in the [Audit log](/docs/{{docsPrefix}}user-guide/audit-log/){:target="_blank"}.
 - Use the ThingsBoard [Version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} system to export and restore the asset as part of Git-based object management.
 
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
-## Manage owner and groups
+{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+## Manage asset owner and groups
 
 You can change the **owner** of an asset. This ensures that only users associated with the selected customer will have access to the asset and its data.
 
-> This step is essential for maintaining strict data access control. Each customer user will only see their own assigned assets and will not have visibility into assets or data belonging to other customers.
+> This step is essential for maintaining strict data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see their own assigned assets and will not have visibility into assets or data belonging to other customers.
 
 To change asset ownership:
 - Click asset to open its **details** view.
@@ -153,15 +153,17 @@ To change asset ownership:
 - If needed, add the asset to an existing group or create a new one.
 - Confirm the change to update the asset&#39;s ownership.
 
+In the <b>"Customer name" column</b>, you can see the current owner of the asset.
+
+> <b>Note</b>: A Tenant Administrator always has the right to reassign or revoke asset ownership.
+
 {% include images-gallery.html imageCollection="manage-owner-and-groups" %}
 
-> You can reassign or revoke the ownership change of asset if needed.
+### Include customer entities
 
-<br><b><font size="4">Include customer entities</font></b>
+The "<b>Include customer entities</b>" option on the "<b>Assets</b>" page determines whether assets owned by customers are shown or hidden in the list.
 
-The "**Include customer entities**" option allows you to **show or hide customer-owned entities** in the list view.
-
-{% include images-gallery.html imageCollection="include-customer-entities" %}
+{% include images-gallery.html imageCollection="include-customer-assets" showListImageTitles="true" %}
 
 ## Make asset group public
 

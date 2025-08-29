@@ -4,6 +4,7 @@ assignees:
 - stitenko
 title: Subreport
 description: Subreport overview
+redirect_from: "/docs/user-guide/reporting/subreport/"
 
 subreport-builder:
     0:
