@@ -7,6 +7,11 @@ description: Discover how companies in retail, energy, logistics, and more drive
 formSubject: "General Feedback"
 modalTitle: "Tell us about your success"
 modalDescription: "Get your brand featured across our global channels — website, social media, and community."
+pagination: "true"
+containerId: "case-studies-clients"
+filterSelector: ".filter[data-container-id='case-studies-clients']"
+itemsSelector: ".client-card"
+itemsPerPage: "9"
 
 ---
 
@@ -296,11 +301,4 @@ modalDescription: "Get your brand featured across our global channels — websit
         </div>
         <button id="caseStudiesContactUs" class="button gtm_button" onclick="openContactUsModal()">Contact Us</button>
     </div>
-<div class="pagination-container">
-    <button id="showMoreBtn" class="button">Show more</button>
-    <nav class="pagination-nav" aria-label="Case study pages">
-        <ul id="pagination-controls" class="pagination"></ul>
-        <div id="paginationStatus" class="pagination-status"></div>
-    </nav>
-</div>
 </div>

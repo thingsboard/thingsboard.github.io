@@ -1,0 +1,130 @@
+{% assign partner = include.partner %}
+
+<div class="hardware-partner ">
+    <div class="hardware-partner-card">
+        <div class="hardware-partner-card-wrapper">
+            <img src="{{ partner.logo }}" alt="{{ partner.name }} logo">
+            <h1>{{ partner.name }}</h1>
+            <p>{{ partner.description }}</p>
+            <a href="{{ partner.site.href }}">
+                <span>Website</span>
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </div>
+    <div class="hardware-info">
+        <table class="hardware-info-table">
+            <caption class="visually-hidden">
+                {{ partner.name }} integration with ThingsBoard — Connectivity, Industry, Use cases, Hardware types and guides
+            </caption>
+            <tbody>
+                <tr>
+                    <th scope="row">Connectivity</th>
+                    <td>{{ partner.type | join: ', ' }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Industry</th>
+                    <td>{{ partner.industry | join: ', ' }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Use cases</th>
+                    <td>{{ partner.use-case | join: ', ' }}</td>
+                </tr>
+                <tr>
+                    <th scope="row">Hardware types</th>
+                    <td>{{ partner.hardware-types | join: ', ' }}</td>
+                </tr>
+                {% for item in partner.links %}
+                    <tr>
+                        <th scope="row">{{ item[0] | replace: "-", " " | capitalize }}</th>
+                        <td class="grid-content">
+                            {% for link in item[1] %}
+                                <a href="{{ link[1].href }}" class="{% if forloop.index0 > 3 %}links-to-hide hidden{% endif %}" data-id="{{ item[0] }}">{{ link[1].label }}</a>
+                            {% endfor %}
+                            {% if item[1].size > 4 %}<button class="expand-links-button" id="{{ item[0] }}">Show more..</button>{% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% if partner.showcases and partner.showcases.size > 0 %}
+            <div class="showcases">
+                <span class="section-label">Showcases:</span>
+                <ul class="showcase-list">
+                    {% for link in partner.showcases %}
+                        <li><a href="{{ link[1].href }}" class="hardware-crisp">{{ link[1].label }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    const expandGuidesLinksButton = document.querySelectorAll('.expand-links-button');
+    expandGuidesLinksButton.forEach((item) => {
+        item.addEventListener('click', () => {
+            const currentId = item.id;
+            const toggleLinks = document.querySelectorAll(`.links-to-hide[data-id="${currentId}"]`);
+            toggleLinks.forEach(link => link.classList.toggle('hidden'));
+
+            const hasHidden = document.querySelectorAll(`.links-to-hide.hidden[data-id="${currentId}"]`).length > 0;
+            item.textContent = hasHidden ? 'Show more..' : 'Hide';
+        });
+    });
+
+    function applyRowClamp(container) {
+        const list = container.querySelector('.showcase-list');
+        const items = Array.from(list?.children || []);
+        const btn = container.querySelector('.toggle-guides-btn') || (() => {
+            const b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'toggle-guides-btn';
+            b.hidden = true;
+            b.innerHTML =
+                '<span class="label">Show more</span>' +
+                '<i class="fas fa-chevron-down fa-sm" aria-hidden="true" style="color: rgba(0,0,0,.76)"></i>';
+            container.appendChild(b);
+            return b;
+        })();
+        const label = btn.querySelector('.label');
+
+        items.forEach(li => li.classList.remove('collapsed'));
+        btn.classList.remove('is-open');
+        label.textContent = 'Show more';
+
+        if (!items.length) { btn.hidden = true; return; }
+
+        const rowTops = [];
+        const extraItems = [];
+        for (const li of items) {
+            const top = li.offsetTop;
+            if (!rowTops.includes(top)) rowTops.push(top);
+            if (rowTops.length > 4) extraItems.push(li);
+        }
+
+        if (rowTops.length <= 4) { btn.hidden = true; return; }
+
+        extraItems.forEach(li => li.classList.add('collapsed'));
+
+        btn.hidden = extraItems.length === 0;
+        if (!btn.hidden) {
+            btn.onclick = () => {
+                const open = btn.classList.toggle('is-open');
+                extraItems.forEach(li => li.classList.toggle('collapsed', !open));
+                label.textContent = open ? 'Hide' : 'Show more';
+            };
+        }
+    }
+
+    const run = () => document.querySelectorAll('.showcases').forEach(applyRowClamp);
+    run();
+
+    let t;
+    window.addEventListener('resize', () => {
+        clearTimeout(t);
+        t = setTimeout(run, 250);
+    });
+</script>
+
+
