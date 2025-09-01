@@ -38,6 +38,8 @@ toc:
   section:
     - title: MQTT protocol
       path: /docs/mqtt-broker/user-guide/mqtt-protocol/
+    - title: MQTT broker
+      path: /docs/mqtt-broker/user-guide/mqtt-broker/
     - title: Topics & Wildcards
       path: /docs/mqtt-broker/user-guide/topics/
     - title: Quality of Service (QoS)
