@@ -12,7 +12,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [TempHu Temperature and Humidity Sensor]({{deviceVendorLink}}){: target="_blank"} TempHu is advanced technology indoor sensor applied for the full sensing of
 the temperature and humidity. TempHu is enclosed in a room sensor box and is
 designed to be wall mounted. TempHu is completely wireless and powered by 3.6V AA
@@ -62,7 +62,7 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/devices-library/lorawan-temphu-data.png)
+![LoRaWAN device data](https://img.thingsboard.io/devices-library/lorawan-temphu-data.png)
 
 
 ## Conclusion
