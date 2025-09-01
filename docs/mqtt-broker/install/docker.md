@@ -142,7 +142,7 @@ services:
       - tbmq-postgres-data:/var/lib/postgresql/data
   kafka:
     restart: always
-    image: "bitnami/kafka:3.5.1"
+    image: "bitnamilegacy/kafka:3.5.1"
     ports:
       - "9092"
     environment:
@@ -158,7 +158,7 @@ services:
       - tbmq-kafka-data:/bitnami/kafka
   redis:
     restart: always
-    image: "bitnami/redis:7.0"
+    image: "bitnamilegacy/redis:7.0"
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       ALLOW_EMPTY_PASSWORD: "yes"
