@@ -25,7 +25,7 @@ This ensures that unauthorized or potentially malicious connection attempts are 
 
 ## Supported Block Types
 
-![image](/images/mqtt-broker/other/blocked-clients.png)
+![image](https://img.thingsboard.io/mqtt-broker/other/blocked-clients.png)
 
 You can block a client using any of the following identifiers:
 
