@@ -33,7 +33,7 @@ To do this, login to your TBMQ user interface and follow the next steps.
 {% capture difference %}
 **Please note**:
 <br>
-The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true" in the TBMQ configuration.
+The Basic authenticaion must be [enabled](/docs/mqtt-broker/security/authentication/basic/).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
