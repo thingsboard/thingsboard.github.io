@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: Device profile switch
+description: Device profile switch node
+hidetoc: "true"
+
+---
+
+{% include get-hosts-name.html %}
+{% include docs/user-guide/rule-engine-2-0/nodes/filter-nodes/device-profile-switch.md %}
