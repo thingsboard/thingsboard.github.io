@@ -1,4 +1,3 @@
-<!-- Auto-generated index for enrichment-nodes. Do not edit by hand. -->
 
 - [Calculate delta](/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta) — Calculates delta based on the previous time series reading and current reading and adds it to the message.
 - [Customer attributes](/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes) — Identifies the message originator's customer and enriches the outgoing message with the customer's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/).
