@@ -39,15 +39,8 @@ Demo tenant customers:
  - Test Device B1 - belong to Customer B. Access token: B1_TEST_TOKEN.
  - Test Device C1 - belong to Customer C. Access token: C1_TEST_TOKEN.
  
- - DHT11 Demo Device - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/). 
-   Access token: DHT11_DEMO_TOKEN
- - Raspberry Pi Demo Device - created for GPIO control [sample application](/docs/samples/raspberry/gpio/).
-   Access token: RASPBERRY_PI_DEMO_TOKEN
- 
-## Dashboards
-
- - Temperature & Humidity Demo Dashboard - created for temperature and humidity upload [sample applications](/docs/samples/nodemcu/temperature/).
- - Raspberry PI GPIO Demo Dashboard - created for Raspberry Pi GPIO control [sample application](/docs/samples/raspberry/gpio/).
+ - DHT11 Demo Device - Access token: DHT11_DEMO_TOKEN
+ - Raspberry Pi Demo Device - Access token: RASPBERRY_PI_DEMO_TOKEN
  
 ## Rule Chains
 There is predefined Rule Chain for storing all incoming telemetry and attribute updates. All other incoming requests just logged.

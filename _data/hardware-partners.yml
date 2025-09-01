@@ -74,7 +74,7 @@
   links:
     0:
       label: Integration guide
-      href: "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+      href: "/docs/devices-library/esp32-dev-kit-v1/"
   description: Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules.
 - type:
     - LTE-M

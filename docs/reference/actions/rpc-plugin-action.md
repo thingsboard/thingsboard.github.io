@@ -1,19 +1,10 @@
 ---
 layout: docwithnav
-assignees:
-- ashvayka
-title: RPC Plugin Action
+title: Redirecting...
+description: Outdated guide
+hidetoc: "true"
+redirect_to: "/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-reply-node"
 
 ---
 
-## Overview
-
-This component allows forwarding incoming rpc requests to various plugins. 
-
-## Configuration
-
-There is no specific configuration for this component.
-
-## Example
-
-As a tenant administrator, you are able to review action example inside **Rules->Demo Time RPC Rule->Actions->RPC Plugin Action**.
+{% include templates/outdated-doc-redirect.md %}
