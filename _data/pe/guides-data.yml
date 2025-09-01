@@ -21,9 +21,9 @@
       keywords: device management attributes
       video: false
       pe: false
-- title: Advanced guides for working with the main features of ThingsBoard
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
-  id: AdvancedGettingStartedGuides
+- title: Data visualization
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards.
+  id: DataVisualization
   section:
     - path: /docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
       title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets
@@ -209,46 +209,6 @@
       keywords:
       pe: true
       video: false
-- title: Data visualization
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
-  id: DataVisualization
-  section:
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
-      title: Visualizing assets data using Maps and Tables
-      subtitle: "Learn how to: create assets and devices and define their relationships; add the server attributes and create a new dashboard; visualize data from the asset attributes using “Entities Table” and “Map” widgets."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
-      title: Dashboard states, aliases and widget actions
-      subtitle: "Learn how to: add and configure new dashboard states; create various aliases; visualize the attributes data using the Image Map widget; create actions in different widgets in order to navigate between states; visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-3-of-3-remote-device-control-and-alarm-management
-      title: Remote device control and alarm management
-      subtitle: "Learn how to: add and use the Knob Control widget; create alarm rules; handle alarms using the Alarms widget; make a dashboard public."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-1-of-3-basic-settings
-      title: Basic widget settings
-      subtitle: "Learn how to: change widget title, background, colors, fonts, shadows, etc."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-2-of-3-latest-values-map-widget
-      title: Latest Values Map widget
-      subtitle: "Learn how to create Map widget, based on latitude and longitude, and customize the Map widget layout and properties."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-3-of-3-time-series-map-widget
-      title: Time Series Map widget
-      subtitle: "Learn how to display your devices with the latest telemetry data on the Time Series Map widget and modify the widget properties."
-      keywords:
-      pe: false
-      video: true
 - title: Data processing & actions
   subtitle: Learn how to process data in ThingsBoard.
   id: DataProcessing

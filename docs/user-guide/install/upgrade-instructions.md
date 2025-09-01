@@ -1675,7 +1675,7 @@ sudo service thingsboard stop
 ```
 {: .copy-code}
 
-{% capture tabspec %}thingsboard-installation-3-5
+{% capture tabspec %}thingsboard-installation-3-6
 thingsboard-installation-3-6-ubuntu,Ubuntu,shell,resources/3.6/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.6/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-6-centos,CentOS,shell,resources/3.6/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.6/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}

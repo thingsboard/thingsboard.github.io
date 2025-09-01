@@ -4,6 +4,7 @@ assignees:
 - stitenko
 title: Attaching report to notification
 description: How to attach report to a notification
+redirect_from: "/docs/user-guide/reporting/attaching-report-to-notification/"
 
 reporting-getting-started-save-report-1:
     0:

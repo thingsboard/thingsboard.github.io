@@ -165,39 +165,21 @@ After adding the bundle, a dialog window will appear with step-by-step instructi
 Follow these steps carefully to successfully configure and deploy your custom {{appPrefix}} mobile application.
 
 {% capture 1_7_config_tip %}
-**Note: Available from mobile app version 1.7.0**
+**Note: Available from ThingsBoard 4.2 and mobile app version 1.7**
 
-Starting with version 1.7.0, we've significantly improved the app configuration mechanism. Now you can download a configuration file directly from the platform, place it in the root directory of your custom application's code, and you're ready to go.
+Starting with version 1.7 app version and 4.2 platform version, we've significantly improved the app configuration mechanism. Now you can download a configuration file directly from the platform, place it in the root directory of your custom application's code, and you're ready to go. 
+
+When using 1.7 app version with pre 4.2 platform version, config file must be created manually, please follow [this github ticket](https://github.com/thingsboard/flutter_thingsboard_pe_app/issues/263#issuecomment-3103099009) for the instructions. 
 
 **Important:** When building or running your application, add the `--dart-define-from-file configs.json` flag to your Flutter commands. 
 
 You can maintain multiple configuration files by using different names and passing the appropriate file name to the `--dart-define-from-file` flag.
 {% endcapture %}
 {% include templates/info-banner.md content=1_7_config_tip %}
-{% assign configurationDialogCE = '
-    ===
-        image: /images/mobile/getting-started/add-new-bundle-8-ce.png,
-        title: After adding the bundle, a dialog window with step-by-step instructions will appear. Follow these steps to deploy and configure your ThingsBoard mobile application.
-    ===
-        image: /images/mobile/getting-started/add-new-bundle-9-ce.png,
-        title: After completing all the steps, close the configuration dialog.
-'
-%}
-
-{% assign configurationDialogPE = '
-    ===
-        image: /images/mobile/getting-started/add-new-bundle-9-pe.png,
-        title: After adding the bundle, a dialog window with step-by-step instructions will appear. Follow these steps to deploy and configure your ThingsBoard PE mobile application.
-    ===
-        image: /images/mobile/getting-started/add-new-bundle-10-pe.png,
-        title: After completing all the steps, close the configuration dialog.
-'
-%}
-
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-{% include images-gallery.liquid imageCollection=configurationDialogPE %}
+![image](/images/mobile/getting-started/add-new-bundle-11-pe.png)
 {% else %}  
-{% include images-gallery.liquid imageCollection=configurationDialogCE %}
+![image](/images/mobile/getting-started/add-new-bundle-11-ce.png)
 {% endif %}
 
 <br>

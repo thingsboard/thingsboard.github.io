@@ -161,6 +161,52 @@ Here is the list of stats that **ThingsBoard** pushes to **Prometheus**:
 - **ts_queue_${index_of_queue}**(statsNames - **totalMsgs, failedMsgs, successfulMsgs**): The stats that represent the **telemetry** writes to the database.  
   Note that multiple queues (threads) are used to ensure maximum performance.
 
+## Edge randomly disconnects from Cloud
+
+If an Edge instance repeatedly disconnects without an obvious reason but reconnects to the cloud within a few seconds, the most likely cause is **unstable network connectivity between the Edge and the Cloud.** 
+This may happen due to very low bandwidth or intermittent packet loss on the network.
+
+One option is to **diagnose your network** using external tools and resolve any identified issues. 
+
+If that is not possible, you can **adjust the gRPC connection parameters between Edge and Cloud** by increasing certain timeouts. 
+This helps reduce unexpected disconnects during temporary network disruptions.
+
+**On the ThingsBoard Server (Cloud):**
+
+* **EDGES_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC:** A minimum allowed interval between client keepalive pings. This prevents clients from sending pings too frequently, which can be a nuisance to the server. Potentially, this could be a denial-of-service attack vector if abused. If a client sends pings more frequently than this interval, the server can terminate the connection. **1 second by default**.
+
+* **EDGES_RPC_KEEP_ALIVE_TIME_SEC:** The time of inactivity (no read operations on the connection) after which the server sends a keepalive ping to the client. This is used to ensure that the connection is still alive and to prevent network intermediaries from dropping connections due to inactivity. It's a way for the server to proactively check if the client is still responsive. **10 seconds by default.**
+
+* **EDGES_RPC_KEEP_ALIVE_TIMEOUT_SEC:** The maximum amount of time that the server waits for a response to its keepalive ping. If the ping is not acknowledged within this time frame, the server considers the connection dead and may close it. This timeout helps detect unresponsive clients.<br> **5 seconds by default.**
+
+Read more about **Edge parameters for Cloud** [here](/docs/{{peDocsPrefix}}user-guide/install/config/#edges-parameters){:target="_blank"}
+
+**On the ThingsBoard Edge (gRPC client):**
+
+* **CLOUD_RPC_KEEP_ALIVE_TIME_SEC:** The amount of time in seconds that the client waits in an idle state (with no read operations on the connection) before sending a keepalive ping to the server. This setting is crucial for ensuring that the connection remains alive during periods of inactivity and helps prevent the server from closing the connection due to a timeout. It's used to probe the server periodically to check if it is still responsive and maintain the connection through potential network devices that might drop inactive connections (like NATs and load balancers). **10 seconds by default.**
+
+* **CLOUD_RPC_KEEP_ALIVE_TIMEOUT_SEC:** Specifies how long the client will wait for a response to its keepalive ping. If the ping isn't acknowledged within this timeframe, the client assumes that the connection is dead or unreachable. This timeout is essential for detecting when the server side might have issues or when there might be network failures preventing communication. If the server does not respond to a keepalive ping within this period, the client will consider the connection as lost and may attempt to reconnect or take other recovery actions. **5 seconds by default.**
+
+Read more about **Cloud configuration for Edge** [here](/docs/{{docsPrefix}}user-guide/install/config/#cloud-configuration){:target="_blank"}
+
+{% capture infoWired %}
+**WARNING:**{: style="color:red"}  
+[gRPC](https://grpc.io/docs/guides/keepalive/){:target="_blank"} advises against enabling keepalive without calls and recommends that clients avoid configuring their keepalive much below **one minute**.
+
+**Scale‑safe starting points:**
+* **Do not reduce timeouts on unreliable networks:** If you see ping‑ack timeouts in the logs, increase the `*_KEEP_ALIVE_TIMEOUT_SEC`
+* **Keep the client interval ≥ server’s minimum:** Raise this server guardrail if you want to intentionally block overly chatty clients, and then coordinate the necessary client changes.
+* **Keep the interval < the shortest NAT/LB idle timeout** on the path so the flow never goes idle (e.g., if the middlebox drops after 60 s, use 25–55 s intervals)
+{% endcapture %}
+{% include templates/warn-banner.md content=infoWired %}
+
+### How to apply
+
+{% capture how-to-apply %}
+Docker%,%dockerKeepalive%,%templates/edge/troubleshooting/docker-keepalive.md%br%
+Ubuntu%,%ubuntuKeepalive%,%templates/edge/troubleshooting/ubuntu-keepalive.md%br%{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="how-to-apply" toggle-spec=how-to-apply %}
+
 ## Monitoring message statistics
 
 {% assign sinceVersion = "4.2" %}
@@ -212,6 +258,7 @@ ThingsBoard Edge exposes a set of telemetry keys that allow you to monitor messa
 * **downlinkMsgsPermanentlyFailed:** The number of permanently failed messages.
 * **downlinkMsgsTmpFailed:** The number of temporarily failed messages (e.g., due to network issues).
 * **downlinkMsgsLag:** The number of messages remaining in the queue (lag).
+
 
 ## Getting help
 
