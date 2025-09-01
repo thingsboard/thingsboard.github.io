@@ -1,4 +1,3 @@
-<!-- Auto-generated index for filter-nodes. Do not edit by hand. -->
 
 - [Alarm status filter](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter) — Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/alarms/) statuses.
 - [Asset profile switch](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/asset-profile-switch) — Routes incoming messages based on the name of the asset profile. The asset profile name is case-sensitive.

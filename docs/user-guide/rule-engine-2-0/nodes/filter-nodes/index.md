@@ -6,7 +6,7 @@ hidetoc: "true"
 redirect_from:
   - "/docs/user-guide/rule-engine-2-0/filter-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/filter-nodes/"
-  - "/docs/pe/user-guide/rule-engine-2-0/filter-nodes/"
+  - "/docs/paas/user-guide/rule-engine-2-0/filter-nodes/"
   - "/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/"
 
 ---

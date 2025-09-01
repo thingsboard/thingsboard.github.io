@@ -185,9 +185,6 @@
 "/docs/user-guide/reporting/subreport/":
   url: "/docs/pe/user-guide/reporting/subreport/"
   redirect_from: "/docs/user-guide/reporting/subreport/"
-"/docs/user-guide/rule-engine-2-0/pe/action-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/action-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/action-nodes"
 "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes":
   url: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes"
@@ -281,6 +278,30 @@
 "/docs/pe/user-guide/install/installation-options/":
   url: "/docs/user-guide/install/pe/installation-options/"
   redirect_from: "/docs/pe/user-guide/install/installation-options/"
+"/docs/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/"
 "/docs/user-guide/queue":
   url: "/docs/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/user-guide/queue"
