@@ -294,7 +294,6 @@ redirect_to: "/pricing/"
             <p>
                 Available community resources are listed below:<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub issues page</a> - Our GitHub issues page contains a lot of Q&A and discussions about ThingsBoard.<br>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">Q&A forum</a> - Our user forum is a great place to go for community support.<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - The ThingsBoard team will also monitor posts tagged thingsboard. 
             </p>    
         </div>    
