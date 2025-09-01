@@ -8,7 +8,7 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v2.2.0 (August ?, 2025)
+## v2.2.0 (September 1, 2025)
 
 Minor release with the following features, improvements, and bug fixes.
 
@@ -37,7 +37,9 @@ Minor release with the following features, improvements, and bug fixes.
   * [#219](https://github.com/thingsboard/tbmq/pull/219) Updated form fields style by @deaflynx;
   * [#220](https://github.com/thingsboard/tbmq/pull/220) Topics autocomplete by @deaflynx;
   * [#241](https://github.com/thingsboard/tbmq/pull/241) Update locales by @deaflynx;
-  * [#244](https://github.com/thingsboard/tbmq/pull/244) Grouping of topic filters for Integrations by @deaflynx.
+  * [#244](https://github.com/thingsboard/tbmq/pull/244) Grouping of topic filters for Integrations by @deaflynx;
+  * [7709ef0](https://github.com/thingsboard/tbmq/commit/7709ef0c5b7a4fee1930c895dfaf7f21f3fdaa87) Users table: added login button;
+  * [a9d3fc3](https://github.com/thingsboard/tbmq/commit/a9d3fc313412d4ea897063ac9e9356fbd5269eb1) MQTT client credentials: added Description field.
 
 **Bug fixes:**
 
@@ -46,6 +48,11 @@ Minor release with the following features, improvements, and bug fixes.
   * [#239](https://github.com/thingsboard/tbmq/pull/239) Verify client certificate chain during TLS handshake by requesting or requiring client authentication by @dmytro-landiak;
   * [#229](https://github.com/thingsboard/tbmq/issues/229) Fix handling of QoS 0 publish messages for integration subscriptions by @dmytro-landiak;
   * [#246](https://github.com/thingsboard/tbmq/pull/246) Monitoring metrics race condition fix by @dmytro-landiak.
+
+* UI:
+
+  * [cc35837](https://github.com/thingsboard/tbmq/commit/cc358379bff2470c6d863a0ae507d3cb54488c22) Fixed animation bug in the Apply changes button in entity form (Firefox);
+  * [eaaebc7](https://github.com/thingsboard/tbmq/commit/eaaebc71560748c092cb5b53cc4bb7525296fbae) Fixed retrieving correct topics when switching between integrations.
 
 **Removal Notice: Obsolete Environment Variables**
 

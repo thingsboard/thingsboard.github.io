@@ -45,6 +45,7 @@ Our implementation ensures reliable performance and compatibility across diverse
 * All MQTT v5.0 features
 * Multi-node cluster support
 * X.509 certificate chain authentication support
+* JWT authentication
 * Access control (ACL) based on client ID, username, or X.509 certificate chain
 * REST query support for clients’ sessions and subscriptions
 * Rate limits of message processing
@@ -54,6 +55,8 @@ Our implementation ensures reliable performance and compatibility across diverse
 * Integrations with external systems (HTTP, MQTT, Kafka)
 * Kafka topics and consumer groups monitoring
 * Proxy protocol
+* Blocked clients
+* MQTT channel backpressure support
 
 ## Architecture
 

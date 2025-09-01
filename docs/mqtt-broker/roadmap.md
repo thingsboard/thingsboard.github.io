@@ -12,7 +12,7 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## Upcoming releases
 
-* More integrations with external third-party services;
+* Webhook authentication for MQTT clients;
 * Tracking dropped messages;
-* Banned clients;
-* JWT authentication.
+* Tracking MQTT client disconnections;
+* More integrations with external third-party services.
