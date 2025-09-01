@@ -1,6 +1,6 @@
 
 
-###  HTTP server parameters
+##  HTTP server parameters
 
 <table>
 	<thead>
@@ -25,7 +25,7 @@
 </table>
 
 
-###  Kafka parameters
+##  Kafka parameters
 
 <table>
 	<thead>
@@ -91,7 +91,7 @@
 		<tr>
 			<td>queue.kafka.default.consumer.session-timeout-ms</td>
 			<td>TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS</td>
-			<td>300000</td>
+			<td>10000</td>
 			<td> The timeout in milliseconds used to detect client failures when using Kafka's group management facility</td>
 		</tr>
 		<tr>
@@ -117,6 +117,15 @@
 			<td>TB_KAFKA_DEFAULT_CONSUMER_FETCH_MAX_BYTES</td>
 			<td>134217728</td>
 			<td> The maximum amount of data in bytes the server should return for a fetch request</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.default.consumer.heartbeat-interval-ms</td>
+			<td>TB_KAFKA_DEFAULT_CONSUMER_HEARTBEAT_INTERVAL_MS</td>
+			<td>3000</td>
+			<td> The expected time between heartbeats to the consumer coordinator when using Kafka’s group management facilities.
+ Heartbeats are used to ensure that the consumer’s session stays active and to facilitate rebalancing when new consumers join or leave the group.
+ The value must be set lower than TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS, but typically should be set no higher than 1/3 of that value.
+ It can be adjusted even lower to control the expected time for normal rebalances. Value in milliseconds. Default is 3 sec</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.default.producer.acks</td>
@@ -159,6 +168,12 @@
 			<td>TB_KAFKA_ADMIN_CONFIG</td>
 			<td>retries:1</td>
 			<td> List of configs separated by semicolon used for admin kafka client creation</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.admin.command-timeout</td>
+			<td>TB_KAFKA_ADMIN_COMMAND_TIMEOUT_SEC</td>
+			<td>30</td>
+			<td> Kafka Admin client command timeout (in seconds). Applies to operations like describeCluster, listTopics, etc</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -320,7 +335,7 @@
 </table>
 
 
-###  Service parameters
+##  Service parameters
 
 <table>
 	<thead>
@@ -359,7 +374,7 @@
 </table>
 
 
-###  Integration common parameters
+##  Integration common parameters
 
 <table>
 	<thead>
@@ -464,7 +479,7 @@
 </table>
 
 
-###  Management parameters
+##  Management parameters
 
 <table>
 	<thead>
@@ -474,16 +489,34 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>management.health.diskspace.enabled</td>
+			<td>HEALTH_DISKSPACE_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable disk space health check</td>
+		</tr>
+		<tr>
+			<td>management.endpoint.health.show-details</td>
+			<td>HEALTH_SHOW_DETAILS</td>
+			<td>never</td>
+			<td> Controls whether health endpoint shows full component details (e.g., Redis, DB, TBMQ).
+ Options:
+ - 'never': always hide details (default if security is enabled).
+ - 'when-authorized': show details only to authenticated users.
+ - 'always': always include full health details in the response</td>
+		</tr>
+		<tr>
 			<td>management.endpoints.web.exposure.include</td>
 			<td>METRICS_ENDPOINTS_EXPOSE</td>
-			<td>prometheus</td>
-			<td> Expose metrics endpoint (use value 'info' to disable prometheus metrics)</td>
+			<td>health,info,prometheus</td>
+			<td> Specify which Actuator endpoints should be exposed via HTTP.
+ Use 'health,info' to expose only basic health and information endpoints.
+ For exposing Prometheus metrics, update this to include 'prometheus' in the list (e.g., 'health,info,prometheus')</td>
 		</tr>
 	</tbody>
 </table>
 
 
-###  Statistics parameters
+##  Statistics parameters
 
 <table>
 	<thead>
@@ -510,11 +543,17 @@
 			<td>0.5</td>
 			<td> Metrics percentiles returned by actuator for timer metrics. List of comma-separated (,) double values</td>
 		</tr>
+		<tr>
+			<td>stats.system-info.persist-frequency</td>
+			<td>STATS_SYSTEM_INFO_PERSIST_FREQUENCY_SEC</td>
+			<td>60</td>
+			<td> Persist frequency of system info (CPU, memory usage, etc.) in seconds</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  Event configuration parameters
+##  Event configuration parameters
 
 <table>
 	<thead>

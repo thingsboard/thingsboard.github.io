@@ -7,7 +7,7 @@ Use the instructions below to generate your own certificate files. Useful for te
 You need to either create a self-signed certificate for the server or follow the advanced steps to create a CA-signed server certificate. 
 Both methods achieve the same goal: securing your server with a valid certificate.
 
-#### Self-signed certificate PEM file.
+#### Self-signed certificate PEM file
 
 This is a simpler method where the server generates its own certificate and signs it. 
 Useful for basic testing or small setups where you don't need a Certificate Authority (CA).
