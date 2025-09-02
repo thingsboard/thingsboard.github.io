@@ -185,9 +185,6 @@
 "/docs/user-guide/reporting/subreport/":
   url: "/docs/pe/user-guide/reporting/subreport/"
   redirect_from: "/docs/user-guide/reporting/subreport/"
-"/docs/user-guide/rule-engine-2-0/pe/analytics-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes"
 "/docs/pe/user-guide/queue":
   url: "/docs/pe/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/pe/user-guide/queue"
@@ -284,6 +281,15 @@
 "/docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
   redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
 "/docs/user-guide/rule-engine-2-0/enrichment-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/enrichment-nodes/"

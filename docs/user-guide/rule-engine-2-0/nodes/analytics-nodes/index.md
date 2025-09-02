@@ -1,0 +1,14 @@
+---
+layout: docwithnav
+title: Analytics Nodes
+description: Rule Engine 2.0 Analytics Nodes
+hidetoc: "true"
+redirect_from:
+  - "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
+  - "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
+  - "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
+
+---
+
+{% include get-hosts-name.html %}
+{% include docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/index.md %}

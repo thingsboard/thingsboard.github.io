@@ -2029,9 +2029,6 @@
 "/docs/paas/eu/user-guide/rpc/":
   url: "/docs/paas/eu/user-guide/rpc/"
   redirect_from: []
-"/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/":
-  url: "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
-  redirect_from: []
 "/docs/paas/eu/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-0/nodes/"
   redirect_from: []
@@ -2567,9 +2564,6 @@
   redirect_from: []
 "/docs/paas/user-guide/rpc/":
   url: "/docs/paas/user-guide/rpc/"
-  redirect_from: []
-"/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/":
-  url: "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/paas/user-guide/rule-engine-2-0/nodes/"
@@ -3637,10 +3631,6 @@
 "/docs/pe/user-guide/rpc/":
   url: "/docs/pe/user-guide/rpc/"
   redirect_from: []
-"/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/":
-  url: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
-  redirect_from:
-  - "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes"
 "/docs/pe/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/pe/user-guide/rule-engine-2-0/nodes/"
   redirect_from: []
@@ -5067,6 +5057,24 @@
 "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/unassign-from-customer-node/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/unassign-from-customer-node/"
   redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-latest-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-latest-node/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-stream-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-stream-node/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node-deprecated/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node-deprecated/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from:
+  - "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
+  - "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
+  - "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
 "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta/"
   redirect_from: []
