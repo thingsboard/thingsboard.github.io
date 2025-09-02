@@ -9,7 +9,7 @@ The node is configured using a **Relations query** to find the target entities.
 - **Direction** - specifies the direction of the relation to search, either *From originator* or *To originator*.
 - **Max relation level** - sets the maximum depth for traversing nested relations (e.g., a value of 2 would find entities related to the originator, and entities related to those
   entities).
-- **Fetch last level relation only** - if enabled, only entities found at the maximum specified level are used. This is only applicable if **Max relation level** is greater than 1.
+- **Fetch last level relation only** - TODO double check and test this to be correct! if enabled, only entities found at the maximum specified level are used. This is only applicable if **Max relation level** is greater than 1.
 - **Relation filters** - a list of criteria to filter the relations. Each filter specifies:
     - **Relation type** - the type of the relation to look for (e.g., *Contains*, *Manages*).
     - **Entity type** - a list of acceptable entity types for the related entities (e.g., *Device*, *Asset*).
