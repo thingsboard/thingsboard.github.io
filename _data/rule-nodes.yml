@@ -1,0 +1,29 @@
+- title: Filter nodes
+  description: Filter incoming messages with configured conditions
+  img: /images/nodes/node-filter.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/filter-nodes/
+- title: Enrichment nodes
+  description: Add additional information into Message Metadata
+  img: /images/nodes/node-enrichment.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/
+- title: Transformation nodes
+  description: Change Message payload and Metadata
+  img: /images/nodes/node-transform.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/
+- title: Action nodes
+  description: Execute various actions based on incoming Message
+  img: /images/nodes/node-action.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/action-nodes/
+- title: External nodes
+  description: Filter incoming messages with configured conditions
+  img: /images/nodes/node-external.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/external-nodes/
+- title: Flow nodes
+  description: Add additional information into Message Metadata
+  img: /images/nodes/node-flow.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/flow-nodes/
+- title: Analytics nodes
+  description: Change Message payload and Metadata
+  img: /images/nodes/node-analytics.svg
+  link: /docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/
+

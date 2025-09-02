@@ -1,8 +1,2 @@
 
-- [Filter nodes](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/)
-- [Action nodes](/docs/user-guide/rule-engine-2-0/nodes/action-nodes/)
-- [Enrichment nodes](/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/)
-- [Transformation nodes](/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/)
-- [External nodes](/docs/user-guide/rule-engine-2-0/nodes/external-nodes/)
-- [Flow nodes](/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/)
-- [Analytics nodes](/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/)
+Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
