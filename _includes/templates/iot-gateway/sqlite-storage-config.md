@@ -2,7 +2,7 @@
 | **Parameter**               | **Default value**                            | **Description** |
 |:-|:-|-
 | type                        | **sqlite**                                   | Storage type (Saving data to .db files).|
-| data_file_path              | **./data/**                                  | Path to folder with files that will contain data. Filename is optional and not required.|
+| data_file_path              | **./data/**                                  | Path to the directory that will contain data files (no filename). A trailing path separator is required.|
 | max_read_records_count      | **1000**                                     | Maximum number of messages to get from storage and send to ThingsBoard.|
 | size_limit *                | **1024**                                     | Maximum size of each SQLite file in megabytes. When exceeded, triggers rotation to a new DB file.|
 | max_db_amount *             | **10**                                       | Maximum number of rotated DB files to keep on disk. When reached, further writes are dropped until cleanup.|    
@@ -13,7 +13,8 @@
 |---
 
 
-\* –- If the number of DB files reaches *max_db_amount* and last database exceeds *size_limit*, new data will be lost until previous data be read from databases and delivered to the platform.<br>
+\* –- If the number of DB files reaches *max_db_amount* and last database exceeds *size_limit*, new data will be lost until previous data be read from databases and delivered to the platform.
+Please note: the default database filename is **data.db**.<br>
 
 
 Storage section of configuration file will look like:
@@ -22,7 +23,7 @@ Storage section of configuration file will look like:
 ...
 "storage": {
   "type": "sqlite",
-  "data_file_path": "./data/data.db", 
+  "data_file_path": "./data/", 
   "max_read_records_count": 1000,
   "size_limit": 1024,
   "max_db_amount": 10,
