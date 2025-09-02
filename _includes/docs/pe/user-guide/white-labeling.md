@@ -65,7 +65,7 @@ In the "General" tab you can set or change the following options:
  - Logo height - you can resize the logo;
  - White labeling allows you to customize the color theme by adjusting the primary and accent palettes to match your desired UI design.
 
-    - Primary palette - you can customize the background col or and font color by choosing one of the suggested UI design options or customizing an existing one;
+    - Primary palette - you can customize the background color and font color by choosing one of the suggested UI design options or customizing an existing one;
 
     ![image](/images/user-guide/white-labeling/primary-palette.png)
 
