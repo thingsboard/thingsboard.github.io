@@ -919,6 +919,9 @@
 "/docs/mqtt-broker/user-guide/last-will/":
   url: "/docs/mqtt-broker/user-guide/last-will/"
   redirect_from: []
+"/docs/mqtt-broker/user-guide/mqtt-broker/":
+  url: "/docs/mqtt-broker/user-guide/mqtt-broker/"
+  redirect_from: []
 "/docs/mqtt-broker/user-guide/mqtt-client-type/":
   url: "/docs/mqtt-broker/user-guide/mqtt-client-type/"
   redirect_from: []
