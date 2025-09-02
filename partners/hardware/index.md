@@ -9,91 +9,86 @@ itemsSelector: ".card"
 itemsPerPage: "15"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
-firstCompaniesInList: "Milesight%Seeed Studio%Lansitec%Shenzhen Beilai Technology Co., Ltd.%MikroTik%MOKO SMART" 
+firstCompaniesInList: "Milesight%Seeed Studio%Lansitec%Shenzhen Beilai Technology Co., Ltd.%MikroTik%MOKO SMART"
 
 filterCollection:
-  0:
-    label: Hardware types
+  - label: Hardware types
     filters:
-      0: Microcontrollers
-      1: Single-board computers
-      2: Sensors
-      3: Gateways
-      4: Trackers
-      5: Other devices
-  1:
-    label: Connectivity
+      - Microcontrollers
+      - Single-board computers
+      - Sensors
+      - Gateways
+      - Trackers
+      - Other devices
+  - label: Connectivity
     filters:
-      0: HTTP
-      1: MQTT
-      2: Ethernet
-      3: Wi-Fi
-      4: LoRaWAN
-      5: Bluetooth
-      6: Sigfox
-      7: 4G
-      8: Bluetooth LE
-      9: NB-IoT
-      10: LTE-M
-      11: GNSS/GPS
-      12: BACnet
-      13: RS485
-      14: LTE
-      15: CAN Bus
-      16: CAT-1
-      17: CAT-M/NB
-      18: Cellular 4G Cat 4 and 4G Cat1
-      19: DI and DO
-      20: GPIO(UART/SPI/I2C)
-      21: GSM/GPRS
-      22: IEC 104
-      23: LTEeSIM (eUICC)
-      24: Modbus
-      25: OPC UA
-      26: PLC
-      27: RS232
-      28: SMS
-      29: Satellite (Iridium/Orbcom)
-      30: TCP
-      31: USB
-      32: Wi-Fi/BLE
-      33: Wirepas
-      34: 4G/LTE
-      35: 5G/4G LTE
-      36: KNX
-      37: M-Bus
-      38: Modbus TCP
-  2:
-    label: Industry
+      - HTTP
+      - MQTT
+      - Ethernet
+      - Wi-Fi
+      - LoRaWAN
+      - Bluetooth
+      - Sigfox
+      - 4G
+      - Bluetooth LE
+      - NB-IoT
+      - LTE-M
+      - GNSS/GPS
+      - BACnet
+      - RS485
+      - LTE
+      - CAN Bus
+      - CAT-1
+      - CAT-M/NB
+      - Cellular 4G Cat 4 and 4G Cat1
+      - DI and DO
+      - GPIO(UART/SPI/I2C)
+      - GSM/GPRS
+      - IEC 104
+      - LTEeSIM (eUICC)
+      - Modbus
+      - OPC UA
+      - PLC
+      - RS232
+      - SMS
+      - Satellite (Iridium/Orbcom)
+      - TCP
+      - USB
+      - Wi-Fi/BLE
+      - Wirepas
+      - 4G/LTE
+      - 5G/4G LTE
+      - KNX
+      - M-Bus
+      - Modbus TCP
+  - label: Industry
     filters:
-      0: Smart Cities
-      1: Retail
-      2: Agriculture
-      3: Transportation & Logistics
-      4: Healthcare
-      5: Industrial Manufacturing
-      6: Smart Buildings
-      7: Energy Management
-      8: Security
-      9: Environmental Monitoring
-      10: Mining
-      11: Environment Monitoring
-  3:
-    label: Use cases
+      - Smart Cities
+      - Retail
+      - Agriculture
+      - Transportation & Logistics
+      - Healthcare
+      - Industrial Manufacturing
+      - Smart Buildings
+      - Energy Management
+      - Security
+      - Mining
+      - Environment Monitoring
+  - label: Use cases
     filters:
-      0: Smart Energy
-      1: Environment Monitoring
-      2: Fleet Tracking
-      3: Waste Management
-      4: Smart Office
-      5: Health Care
-      6: Tank Level Monitoring
-      7: Water Metering
-      8: Smart Metering
-      9: Smart Retail
-      10: Air Quality Monitoring
-      11: Smart Farming
-      12: Smart Irrigation
+      - Smart Energy
+      - Environment Monitoring
+      - Fleet Tracking
+      - Waste Management
+      - Smart Office
+      - Health Care
+      - Tank Level Monitoring
+      - Water Metering
+      - Smart Metering
+      - Smart Retail
+      - Air Quality Monitoring
+      - Smart Farming
+      - Smart Irrigation
 ---
 
 

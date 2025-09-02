@@ -41,9 +41,17 @@
             const paginationControls = wrapper.querySelector('#pagination-controls');
             const paginationStatus = wrapper.querySelector('#paginationStatus');
 
+            function debounce(fn, delay = 150) {
+                let timer;
+                return (...args) => {
+                    clearTimeout(timer);
+                    timer = setTimeout(() => fn.apply(null, args), delay);
+                };
+            }
+
             let activePages = [1];
 
-            window.render = function () {
+            const doRender = function () {
                 const allItems = Array.from(container.querySelectorAll(itemsSelector));
                 const filteredCards = allItems.filter(card =>
                     !card.classList.contains('success-story-promo') &&
@@ -69,11 +77,8 @@
                             const insertionPoint = filteredCards[itemsPerPage - 1];
                             if (insertionPoint) insertionPoint.after(promoBlock);
                         } else {
-                            const currentlyVisibleCards = filteredCards.filter(card => !card.classList.contains('pagination-hidden'));
-                            if (currentlyVisibleCards.length > 0) {
-                                const lastVisibleCard = currentlyVisibleCards[currentlyVisibleCards.length - 1];
-                                lastVisibleCard.after(promoBlock);
-                            }
+                            const visible = filteredCards.filter(card => !card.classList.contains('pagination-hidden'));
+                            if (visible.length > 0) visible[visible.length - 1].after(promoBlock);
                         }
                     } else {
                         promoBlock.style.display = 'none';
@@ -82,15 +87,15 @@
 
                 const pageCount = Math.ceil(filteredCards.length / itemsPerPage);
                 if (filteredCards.length === 0) {
-                    paginationContainer.classList.add('hidden');
+                    if (paginationContainer) paginationContainer.classList.add('hidden');
                     return;
                 }
-                paginationContainer.classList.remove('hidden');
+                if (paginationContainer) paginationContainer.classList.remove('hidden');
 
                 const minPage = Math.min(...activePages);
                 const maxPage = Math.max(...activePages);
 
-                showMoreBtn.classList.toggle('hidden', maxPage >= pageCount);
+                if (showMoreBtn) showMoreBtn.classList.toggle('hidden', maxPage >= pageCount);
 
                 if (paginationStatus) {
                     paginationStatus.textContent = activePages.length > 1
@@ -111,7 +116,7 @@
                     a.addEventListener('click', (e) => {
                         e.preventDefault();
                         activePages = [i];
-                        render();
+                        doRender();
                     });
                     li.appendChild(a);
                     paginationControls.appendChild(li);
@@ -127,7 +132,7 @@
                     e.preventDefault();
                     if (isPrevDisabled) return;
                     activePages = [minPage - 1];
-                    render();
+                    doRender();
                 });
                 prevLi.appendChild(prevLink);
                 paginationControls.insertBefore(prevLi, paginationControls.firstChild);
@@ -142,38 +147,50 @@
                     e.preventDefault();
                     if (isNextDisabled) return;
                     activePages = [maxPage + 1];
-                    render();
+                    doRender();
                 });
                 nextLi.appendChild(nextLink);
                 paginationControls.appendChild(nextLi);
-            }
+            };
 
-            showMoreBtn.addEventListener('click', function () {
-                const pageCount = Math.ceil(
-                    container.querySelectorAll(`${itemsSelector}:not(.filter-hidden):not(.success-story-promo)`).length / itemsPerPage
-                );
-                const maxPage = Math.max(...activePages);
-                if (maxPage < pageCount) {
-                    activePages.push(maxPage + 1);
-                    render();
-                }
-            });
+            window.render = doRender;
+
+            const debounceTimer = 100;
+
+            const debouncedRenderFilter = debounce(doRender, debounceTimer);
+            const debouncedRenderSearch = debounce(doRender, debounceTimer);
+            const debouncedInitialRender = debounce(doRender, debounceTimer);
+
+            if (showMoreBtn) {
+                showMoreBtn.addEventListener('click', function () {
+                    const pageCount = Math.ceil(
+                        container.querySelectorAll(
+                            `${itemsSelector}:not(.filter-hidden):not(.success-story-promo):not(.search-hidden)`
+                        ).length / itemsPerPage
+                    );
+                    const maxPage = Math.max(...activePages);
+                    if (maxPage < pageCount) {
+                        activePages.push(maxPage + 1);
+                        doRender();
+                    }
+                });
+            }
 
             filterControl.forEach((item) => {
                 item.addEventListener('click', function () {
                     activePages = [1];
-                    setTimeout(render, 0);
+                    debouncedRenderFilter();
                 });
-            })
+            });
 
-            if(searchControl) {
+            if (searchControl) {
                 searchControl.addEventListener('input', function () {
                     activePages = [1];
-                    setTimeout(render, 1);
+                    debouncedRenderSearch();
                 });
             }
 
-            setTimeout(render, 150);
+            debouncedInitialRender();
         });
     });
 </script>

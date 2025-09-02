@@ -23,10 +23,10 @@
     </div>
     <div class="filters">
         {% for item in filterCollection %}
-            {% assign filters = item[1].filters %}
+            {% assign filters = item.filters %}
             <div class="big-filter-section{% if forloop.index0 == 0 %} opened{% endif %}">
                 <div class="big-filter-section-label">
-                    <span class="big-filter-section-label-title">{{ item[1].label }}</span>
+                    <span class="big-filter-section-label-title">{{ item.label }}</span>
                     <span class="big-filter-section-label-chevron">
                     <i class="fas fa-chevron-down fa-sm" style="color: #2A7DEC"></i>
                 </span>
@@ -44,10 +44,10 @@
                                 </div>
                             </li>
                         {% endif %}
-                        {% for filter in item[1].filters %}
+                        {% for filter in item.filters %}
                             <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
-                                <input class="pagination-render-trigger" type="checkbox" id="{{ filter[1] }}" value="{{ filter[1] }}">
-                                <label class="pagination-render-trigger" for="{{ filter[1] }}">{{ filter[1] }}</label>
+                                <input class="pagination-render-trigger" type="checkbox" id="{{ filter }}" value="{{ filter }}">
+                                <label class="pagination-render-trigger" for="{{ filter }}">{{ filter }}</label>
                             </li>
                         {% endfor %}
                         {% if filters.size > 10 %}
