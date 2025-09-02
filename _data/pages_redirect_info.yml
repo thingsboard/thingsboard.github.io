@@ -191,9 +191,6 @@
 "/docs/user-guide/rule-engine-2-0/pe/flow-nodes":
   url: "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/pe/flow-nodes"
-"/docs/user-guide/rule-engine-2-0/pe/transformation-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/transformation-nodes"
 "/docs/pe/user-guide/queue":
   url: "/docs/pe/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/pe/user-guide/queue"
@@ -302,6 +299,18 @@
 "/docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
   redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/"
+"/docs/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/"
 "/docs/user-guide/rule-engine-2-0/filter-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/filter-nodes/"
@@ -314,6 +323,18 @@
 "/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
   redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/"
 "/docs/user-guide/queue":
   url: "/docs/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/user-guide/queue"
