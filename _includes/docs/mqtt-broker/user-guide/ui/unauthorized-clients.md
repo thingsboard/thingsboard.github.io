@@ -10,14 +10,13 @@
 Regularly reviewing and analyzing unauthorized client attempts can help identify potential security threats and misconfigured clients.
 
 {% capture unauthorizedClientEnableAuth %}
-The Unauthorized Clients feature functions only if the corresponding authentication method is enabled in your [configuration file](/docs/mqtt-broker/install/config/).
-For Basic authentication, `SECURITY_MQTT_BASIC_ENABLED` should be set to `true`, and for SSL, `SECURITY_MQTT_SSL_ENABLED` should be set to `true`.
+The Unauthorized Clients feature functions only if the corresponding authentication method is [enabled](/docs/mqtt-broker/security/authentication/basic/).
 {% endcapture %}
 {% include templates/info-banner.md title="Check configuration" content=unauthorizedClientEnableAuth %}
 
 ## Unauthorized Clients table
 
-On the Unauthorized Clients page, you can view and filter a list of all unauthorized client connection attempts to the broker.
+On the Unauthorized Clients tab of the Authorization page, you can view and filter a list of all unauthorized client connection attempts to the broker.
 The table contains the following information about each unauthorized client:
 * **Last update time**. The timestamp of the last connection attempt.
 * **Client ID**. The unique identifier for the client attempting to connect.
@@ -86,7 +85,7 @@ Below are the reasons related to SSL/TLS for why a client could not be authorize
 ## Manage Unauthorized Clients
 
 To delete client that had failed to pass the authentication from the Unauthorized Clients table please follow these steps:
-1. Find the client in the _Unauthorized Clients_ table and click on the delete icon.
+1. Find the client in the _Authentication_ - _Unauthorized Clients_ table and click on the delete icon.
 2. Confirm the action by selecting _Yes_.
 
 To delete all unauthorized clients:

@@ -14,7 +14,7 @@ broker-sessions:
 broker-mqtt-creds-creation:
     0:
         image: https://img.thingsboard.io/mqtt-broker/getting-started/add-mqtt-creds-1.png
-        title: 'Navigate to "Credentials" tab, click "+" in the top right corner of the table'
+        title: 'Navigate to Authentication > Credentials page, click "+" in the top right corner of the table'
     1:
         image: https://img.thingsboard.io/mqtt-broker/getting-started/add-mqtt-creds-2.png
         title: 'Input credentials name. For example, "Getting Started Credentials"'
@@ -28,7 +28,7 @@ broker-mqtt-creds-creation:
 check-connectivity:
   0:
     image: https://img.thingsboard.io/mqtt-broker/getting-started/gs-check-connectivity-1.png
-    title: 'Go to Client Credentials page. Find "Getting Started Credentials" credentials and click on the row.'
+    title: 'Go to Authentication > Credentials page. Find "Getting Started Credentials" credentials and click on the row.'
   1:
     image: https://img.thingsboard.io/mqtt-broker/getting-started/gs-check-connectivity-2.png
     title: 'Click on the "Check connectivity" button.'

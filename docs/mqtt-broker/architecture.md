@@ -197,6 +197,8 @@ Below is a comprehensive list of Kafka topics used within TBMQ, along with their
 * **tbmq.msg.downlink.persisted. + ${service_id}** - topic used to send messages from one broker node to another to which the DEVICE persistent subscriber is currently connected.
 * **tbmq.sys.app.removed** - topic for events to process removal of APPLICATION client topic. Used when the client changes its type from APPLICATION to DEVICE.
 * **tbmq.sys.historical.data** - topic for historical data statistics (e.g., number of incoming messages, outgoing messages, etc.) published from each broker node in the cluster to calculate the total values per cluster.
+* **tbmq.client.blocked** - topic used to distribute and store the list of blocked clients, preventing them from establishing connections to the broker.
+* **tbmq.sys.internode.notifications + ${service_id}** - topic for system-level notifications sent between broker nodes to synchronize authentication provider settings, authentication admin settings, and to trigger local client session cache cleanup.
 
 ### Redis
 

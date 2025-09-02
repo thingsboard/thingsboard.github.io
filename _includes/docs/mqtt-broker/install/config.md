@@ -1,6 +1,6 @@
 
 
-###  HTTP server parameters
+##  HTTP server parameters
 
 <table>
 	<thead>
@@ -26,6 +26,18 @@
 			<td>HTTP_BIND_PORT</td>
 			<td>8083</td>
 			<td> HTTP Server bind port (has no effect if web-environment is disabled)</td>
+		</tr>
+		<tr>
+			<td>server.forward_headers_strategy</td>
+			<td>HTTP_FORWARD_HEADERS_STRATEGY</td>
+			<td>framework</td>
+			<td> Server headers forwarding strategy. Required for SWAGGER UI when reverse proxy is used</td>
+		</tr>
+		<tr>
+			<td>server.http2.enabled</td>
+			<td>HTTP2_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable HTTP/2 support</td>
 		</tr>
 		<tr>
 			<td>server.log_controller_error_stack_trace</td>
@@ -97,7 +109,7 @@
 </table>
 
 
-###  MQTT listeners parameters
+##  MQTT listeners parameters
 
 <table>
 	<thead>
@@ -118,6 +130,26 @@
 			<td>NETTY_LEAK_DETECTOR_LVL</td>
 			<td>DISABLED</td>
 			<td> Netty leak detector level: DISABLED, SIMPLE, ADVANCED, PARANOID. It is set globally for all listeners</td>
+		</tr>
+		<tr>
+			<td>listener.write_buffer_high_water_mark</td>
+			<td>NETTY_WRITE_BUFFER_HIGH_WATER_MARK</td>
+			<td>64</td>
+			<td> The threshold (in KB) where Netty considers the channel non-writable. When the limit reached, TBMQ stops delivering data to subscriber until the channel is writable again.
+ Non-persistent clients lose data in this case</td>
+		</tr>
+		<tr>
+			<td>listener.write_buffer_low_water_mark</td>
+			<td>NETTY_WRITE_BUFFER_LOW_WATER_MARK</td>
+			<td>32</td>
+			<td> The threshold (in KB) where Netty considers the channel writable again. When the limit reached, TBMQ starts delivering data to subscriber</td>
+		</tr>
+		<tr>
+			<td>listener.so_receive_buffer</td>
+			<td>NETTY_SO_RECEIVE_BUFFER</td>
+			<td>0</td>
+			<td> Socket receive buffer size for Netty in KB. If the buffer limit is reached, TCP will trigger backpressure and notify the sender to slow down.
+ If set to 0 (default), the system's default buffer size will be used</td>
 		</tr>
 		<tr>
 			<td>listener.tcp.enabled</td>
@@ -485,7 +517,7 @@
 </table>
 
 
-###  Kafka parameters
+##  Kafka parameters
 
 <table>
 	<thead>
@@ -779,6 +811,24 @@
 			<td> Interval in milliseconds to poll messages from 'tbmq.ie.uplink.notifications' topics</td>
 		</tr>
 		<tr>
+			<td>queue.internode-notifications.poll-interval</td>
+			<td>TB_NODE_NOTIFICATION_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.sys.internode.notifications' topics</td>
+		</tr>
+		<tr>
+			<td>queue.blocked-client.poll-interval</td>
+			<td>TB_BLOCKED_CLIENT_POLL_INTERVAL</td>
+			<td>100</td>
+			<td> Interval in milliseconds to poll messages from 'tbmq.client.blocked' topic</td>
+		</tr>
+		<tr>
+			<td>queue.blocked-client.acknowledge-wait-timeout-ms</td>
+			<td>TB_BLOCKED_CLIENT_ACK_WAIT_TIMEOUT_MS</td>
+			<td>500</td>
+			<td> Interval in milliseconds to wait for system messages to be delivered to 'tbmq.client.blocked' topic</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
@@ -799,7 +849,7 @@
 		<tr>
 			<td>queue.kafka.default.consumer.session-timeout-ms</td>
 			<td>TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS</td>
-			<td>300000</td>
+			<td>10000</td>
 			<td> The timeout in milliseconds used to detect client failures when using Kafka's group management facility</td>
 		</tr>
 		<tr>
@@ -825,6 +875,15 @@
 			<td>TB_KAFKA_DEFAULT_CONSUMER_FETCH_MAX_BYTES</td>
 			<td>134217728</td>
 			<td> The maximum amount of data in bytes the server should return for a fetch request</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.default.consumer.heartbeat-interval-ms</td>
+			<td>TB_KAFKA_DEFAULT_CONSUMER_HEARTBEAT_INTERVAL_MS</td>
+			<td>3000</td>
+			<td> The expected time between heartbeats to the consumer coordinator when using Kafka’s group management facilities.
+ Heartbeats are used to ensure that the consumer’s session stays active and to facilitate rebalancing when new consumers join or leave the group.
+ The value must be set lower than TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS, but typically should be set no higher than 1/3 of that value.
+ It can be adjusted even lower to control the expected time for normal rebalances. Value in milliseconds. Default is 3 sec</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.default.producer.acks</td>
@@ -867,6 +926,12 @@
 			<td>TB_KAFKA_ADMIN_CONFIG</td>
 			<td>retries:1</td>
 			<td> List of configs separated by semicolon used for admin kafka client creation</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.admin.command-timeout</td>
+			<td>TB_KAFKA_ADMIN_COMMAND_TIMEOUT_SEC</td>
+			<td>30</td>
+			<td> Kafka Admin client command timeout (in seconds). Applies to operations like describeCluster, listTopics, etc</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
@@ -937,7 +1002,7 @@
 		<tr>
 			<td>queue.kafka.application-persisted-msg.additional-consumer-config</td>
 			<td>TB_KAFKA_APP_PERSISTED_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
-			<td>max.poll.records:500</td>
+			<td>max.poll.records:200</td>
 			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.msg.app` topics</td>
 		</tr>
 		<tr>
@@ -1355,6 +1420,54 @@
 			<td> Additional Kafka producer configs separated by semicolon for `tbmq.msg.ie` topics</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.internode-notifications.topic-prefix</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_TOPIC_PREFIX</td>
+			<td>tbmq.sys.internode.notifications</td>
+			<td> Prefix for topics for sending system notifications to Broker nodes</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.internode-notifications.topic-properties</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_TOPIC_PROPERTIES</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.sys.internode.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.internode-notifications.additional-consumer-config</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.sys.internode.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.internode-notifications.additional-producer-config</td>
+			<td>TB_KAFKA_INTERNODE_NOTIFICATIONS_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.sys.internode.notifications` topics</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.topic</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_TOPIC</td>
+			<td>tbmq.client.blocked</td>
+			<td> Topic for blocked clients</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.topic-properties</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_TOPIC_PROPERTIES</td>
+			<td>segment.bytes:26214400;partitions:1;replication.factor:1</td>
+			<td> Kafka topic properties separated by semicolon for `tbmq.client.blocked` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.additional-consumer-config</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_ADDITIONAL_CONSUMER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.client.blocked` topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.blocked-client.additional-producer-config</td>
+			<td>TB_KAFKA_BLOCKED_CLIENT_ADDITIONAL_PRODUCER_CONFIG</td>
+			<td></td>
+			<td> Additional Kafka producer configs separated by semicolon for `tbmq.client.blocked` topic</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.kafka-prefix</td>
 			<td>TB_KAFKA_PREFIX</td>
 			<td></td>
@@ -1364,7 +1477,7 @@
 </table>
 
 
-###  General service parameters
+##  General service parameters
 
 <table>
 	<thead>
@@ -1401,7 +1514,7 @@
 </table>
 
 
-###  Actor system parameters
+##  Actor system parameters
 
 <table>
 	<thead>
@@ -1486,7 +1599,7 @@
 </table>
 
 
-###  Platform integrations parameters
+##  Platform integrations parameters
 
 <table>
 	<thead>
@@ -1519,7 +1632,7 @@
 </table>
 
 
-###  Database time series parameters
+##  Database time series parameters
 
 <table>
 	<thead>
@@ -1538,7 +1651,7 @@
 </table>
 
 
-###  SQL configuration parameters
+##  SQL configuration parameters
 
 <table>
 	<thead>
@@ -1725,7 +1838,7 @@
 </table>
 
 
-###  Redis lettuce configuration parameters
+##  Redis lettuce configuration parameters
 
 <table>
 	<thead>
@@ -1751,6 +1864,14 @@
 			<td>REDIS_LETTUCE_FLUSH_INTERVAL_MS</td>
 			<td>5</td>
 			<td> Maximum time in milliseconds to buffer commands before flushing, regardless of cmd count</td>
+		</tr>
+		<tr>
+			<td>lettuce.config.command-timeout</td>
+			<td>REDIS_LETTUCE_COMMAND_TIMEOUT_SEC</td>
+			<td>30</td>
+			<td> Maximum time (in seconds) to wait for a lettuce command to complete.
+ This affects health checks and any command execution (e.g. GET, SET, PING).
+ Reduce this to fail fast if Redis is unresponsive</td>
 		</tr>
 		<tr>
 			<td>lettuce.config.shutdown-quiet-period</td>
@@ -1782,7 +1903,7 @@
 </table>
 
 
-###  Redis jedis configuration parameters
+##  Redis jedis configuration parameters
 
 <table>
 	<thead>
@@ -1809,7 +1930,7 @@
 </table>
 
 
-###  SQL DAO configuration parameters
+##  SQL DAO configuration parameters
 
 <table>
 	<thead>
@@ -1875,11 +1996,18 @@
 			<td>600000</td>
 			<td> This property controls the max lifetime in milliseconds of a connection. Only when it is closed will it then be removed. Default is 10 minutes</td>
 		</tr>
+		<tr>
+			<td>spring.datasource.hikari.connectionTimeout</td>
+			<td>SPRING_DATASOURCE_CONNECTION_TIMEOUT_MS</td>
+			<td>30000</td>
+			<td> Maximum time (in milliseconds) HikariCP will wait to acquire a connection from the pool.
+ If exceeded, an exception is thrown. Default is 30 seconds</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  General Spring parameters
+##  General Spring parameters
 
 <table>
 	<thead>
@@ -1934,7 +2062,7 @@
 </table>
 
 
-###  Security parameters
+##  Security parameters
 
 <table>
 	<thead>
@@ -1947,7 +2075,7 @@
 			<td>security.mqtt.auth_strategy</td>
 			<td>SECURITY_MQTT_AUTH_STRATEGY</td>
 			<td>BOTH</td>
-			<td> BOTH or SINGLE - the former means the first attempt of client authentication will be by 'basic' provider
+			<td> DEPRECATED: BOTH or SINGLE - the former means the first attempt of client authentication will be by 'basic' provider
  and then by 'ssl' provider if 'basic' is not successful;
  the latter means only one attempt is done according to the listener communication chosen (see listener.tcp/listener.ssl)</td>
 		</tr>
@@ -1955,19 +2083,19 @@
 			<td>security.mqtt.basic.enabled</td>
 			<td>SECURITY_MQTT_BASIC_ENABLED</td>
 			<td>false</td>
-			<td> If enabled the server will try to authenticate client with clientId and/or username and/or password</td>
+			<td> DEPRECATED: If enabled the server will try to authenticate client with clientId and/or username and/or password</td>
 		</tr>
 		<tr>
 			<td>security.mqtt.ssl.enabled</td>
 			<td>SECURITY_MQTT_SSL_ENABLED</td>
 			<td>false</td>
-			<td> If enabled the server will try to authenticate client with client certificate chain</td>
+			<td> DEPRECATED: If enabled the server will try to authenticate client with client certificate chain</td>
 		</tr>
 		<tr>
 			<td>security.mqtt.ssl.skip_validity_check_for_client_cert</td>
 			<td>SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
 			<td>false</td>
-			<td> Skip certificate validity check for client certificates</td>
+			<td> DEPRECATED: Skip certificate validity check for client certificates</td>
 		</tr>
 		<tr>
 			<td>security.jwt.tokenExpirationTime</td>
@@ -2000,6 +2128,12 @@
 			<td> Enable/Disable basic security options</td>
 		</tr>
 		<tr>
+			<td>security.user_token_access_enabled</td>
+			<td>SECURITY_USER_TOKEN_ACCESS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable access to other Administrators JWT token by System Administrator</td>
+		</tr>
+		<tr>
 			<td>security.user_login_case_sensitive</td>
 			<td>SECURITY_USER_LOGIN_CASE_SENSITIVE</td>
 			<td>true</td>
@@ -2009,7 +2143,7 @@
 </table>
 
 
-###  MQTT parameters
+##  MQTT parameters
 
 <table>
 	<thead>
@@ -2100,18 +2234,6 @@
 			<td>MQTT_RETRANSMISSION_PERIOD</td>
 			<td>5</td>
 			<td> Increment period for the subsequent retransmissions of the msg in seconds (retransmission interval is increased by period for each run)</td>
-		</tr>
-		<tr>
-			<td>mqtt.write-and-flush</td>
-			<td>MQTT_MSG_WRITE_AND_FLUSH</td>
-			<td>true</td>
-			<td> If enabled, each message is published to non-persistent subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
-		</tr>
-		<tr>
-			<td>mqtt.buffered-msg-count</td>
-			<td>MQTT_BUFFERED_MSG_COUNT</td>
-			<td>5</td>
-			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_MSG_WRITE_AND_FLUSH` = false</td>
 		</tr>
 		<tr>
 			<td>mqtt.keep-alive.monitoring-delay-ms</td>
@@ -2227,6 +2349,54 @@
 			<td> Max ClientId length for 3.1 version of protocol</td>
 		</tr>
 		<tr>
+			<td>mqtt.write-and-flush</td>
+			<td>MQTT_MSG_WRITE_AND_FLUSH</td>
+			<td>true</td>
+			<td> If enabled, each message is published to non-persistent subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-msg-count</td>
+			<td>MQTT_BUFFERED_MSG_COUNT</td>
+			<td>5</td>
+			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_MSG_WRITE_AND_FLUSH` = false</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.session-cache-max-size</td>
+			<td>MQTT_BUFFERED_CACHE_MAX_SIZE</td>
+			<td>10000</td>
+			<td> When either `MQTT_MSG_WRITE_AND_FLUSH` or `MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH` is set to false,
+ the broker buffers outgoing messages in the outbound channel to improve throughput.
+ The respective buffer sizes are controlled by `MQTT_BUFFERED_MSG_COUNT` (for non-persistent clients)
+ and `MQTT_PERSISTENT_BUFFERED_MSG_COUNT` (for persistent clients).
+ Defines the maximum number of session entries that can be stored in the flush state cache.
+ When the cache exceeds this size, the least recently used sessions are evicted
+ and their pending message buffers are flushed automatically</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.session-cache-expiration-ms</td>
+			<td>MQTT_BUFFERED_CACHE_EXPIRY_MS</td>
+			<td>300000</td>
+			<td> Time in milliseconds after which an inactive session entry in the flush cache expires.
+ A session is considered inactive if it receives no new messages during this period.
+ Upon expiration, the session is evicted from the cache and its buffer is flushed.
+ Default is 5 minutes</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.scheduler-execution-interval-ms</td>
+			<td>MQTT_BUFFERED_SCHEDULER_INTERVAL_MS</td>
+			<td>100</td>
+			<td> Interval in milliseconds at which the scheduler checks all sessions in the cache
+ for potential flushing. A smaller value results in more frequent flush checks</td>
+		</tr>
+		<tr>
+			<td>mqtt.buffered-delivery.idle-session-flush-timeout-ms</td>
+			<td>MQTT_BUFFERED_IDLE_FLUSH_MS</td>
+			<td>200</td>
+			<td> Maximum duration in milliseconds that a session can remain idle (i.e., without being flushed)
+ before its message buffer is automatically flushed to the client.
+ In essence, a flush occurs either when the buffer limit is reached or when this timeout elapses</td>
+		</tr>
+		<tr>
 			<td>mqtt.persistent-session.device.persisted-messages.limit</td>
 			<td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT</td>
 			<td>10000</td>
@@ -2249,6 +2419,18 @@
 			<td>MQTT_PERSISTENT_BUFFERED_MSG_COUNT</td>
 			<td>5</td>
 			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH` = false</td>
+		</tr>
+		<tr>
+			<td>mqtt.persistent-session.app.persisted-messages.write-and-flush</td>
+			<td>MQTT_APP_MSG_WRITE_AND_FLUSH</td>
+			<td>false</td>
+			<td> If enabled, each message is published to persistent APPLICATION client subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while</td>
+		</tr>
+		<tr>
+			<td>mqtt.persistent-session.app.persisted-messages.buffered-msg-count</td>
+			<td>MQTT_APP_BUFFERED_MSG_COUNT</td>
+			<td>10</td>
+			<td> Number of messages buffered in the channel before the flush is made. Used when `MQTT_APP_MSG_WRITE_AND_FLUSH` = false</td>
 		</tr>
 		<tr>
 			<td>mqtt.rate-limits.threads-count</td>
@@ -2344,7 +2526,7 @@
 			<td>mqtt.application-clients-limit</td>
 			<td>MQTT_APPLICATION_CLIENTS_LIMIT</td>
 			<td>0</td>
-			<td> Limit the total number of Application persistent clients. A setting of 0 means the limitation is disabled</td>
+			<td> Limit the total number of Application persistent clients and external system integrations. A setting of 0 means the limitation is disabled</td>
 		</tr>
 		<tr>
 			<td>mqtt.handler.all_msg_callback_threads</td>
@@ -2378,11 +2560,23 @@
  If not set the broker will not reply with response info to mqtt 5 clients that connect with "request response info" = 1.
  Set it to topic to be used for request-response feature, e.g. "example/"</td>
 		</tr>
+		<tr>
+			<td>mqtt.blocked-client.cleanup.period</td>
+			<td>BLOCKED_CLIENT_CLEANUP_PERIOD_MINUTES</td>
+			<td>5</td>
+			<td> The parameter to specify the period of execution cleanup task for expired blocked clients. Value set in minutes. Default value corresponds to five minutes</td>
+		</tr>
+		<tr>
+			<td>mqtt.blocked-client.cleanup.ttl</td>
+			<td>BLOCKED_CLIENT_CLEANUP_TTL_MINUTES</td>
+			<td>10080</td>
+			<td> Time to Live for expired blocked clients. After this time, the expired blocked client is removed completely. Value set in minutes. Default value corresponds to one week</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  Cache parameters
+##  Cache parameters
 
 <table>
 	<thead>
@@ -2443,7 +2637,7 @@
 </table>
 
 
-###  Redis configuration parameters
+##  Redis configuration parameters
 
 <table>
 	<thead>
@@ -2624,7 +2818,7 @@
 </table>
 
 
-###  Statistics parameters
+##  Statistics parameters
 
 <table>
 	<thead>
@@ -2657,11 +2851,17 @@
 			<td>true</td>
 			<td> Enable/disable specific Application clients stats</td>
 		</tr>
+		<tr>
+			<td>stats.system-info.persist-frequency</td>
+			<td>STATS_SYSTEM_INFO_PERSIST_FREQUENCY_SEC</td>
+			<td>60</td>
+			<td> Persist frequency of system info (CPU, memory usage, etc.) in seconds</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  Historical data statistics parameters
+##  Historical data statistics parameters
 
 <table>
 	<thead>
@@ -2692,7 +2892,7 @@
 </table>
 
 
-###  Metrics management parameters
+##  Metrics management parameters
 
 <table>
 	<thead>
@@ -2702,16 +2902,34 @@
 	</thead>
 	<tbody>
 		<tr>
+			<td>management.health.diskspace.enabled</td>
+			<td>HEALTH_DISKSPACE_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable disk space health check</td>
+		</tr>
+		<tr>
+			<td>management.endpoint.health.show-details</td>
+			<td>HEALTH_SHOW_DETAILS</td>
+			<td>never</td>
+			<td> Controls whether health endpoint shows full component details (e.g., Redis, DB, TBMQ).
+ Options:
+ - 'never': always hide details (default if security is enabled).
+ - 'when-authorized': show details only to authenticated users.
+ - 'always': always include full health details in the response</td>
+		</tr>
+		<tr>
 			<td>management.endpoints.web.exposure.include</td>
 			<td>METRICS_ENDPOINTS_EXPOSE</td>
-			<td>prometheus</td>
-			<td> Expose metrics endpoint (use value 'info' to disable prometheus metrics)</td>
+			<td>health,info,prometheus</td>
+			<td> Specify which Actuator endpoints should be exposed via HTTP.
+ Use 'health,info' to expose only basic health and information endpoints.
+ For exposing Prometheus metrics, update this to include 'prometheus' in the list (e.g., 'health,info,prometheus')</td>
 		</tr>
 	</tbody>
 </table>
 
 
-###  Spring CORS configuration
+##  Spring CORS configuration
 
 <table>
 	<thead>
@@ -2754,7 +2972,7 @@
 </table>
 
 
-###  Spring doc common parameters
+##  Spring doc common parameters
 
 <table>
 	<thead>
@@ -2779,7 +2997,7 @@
 </table>
 
 
-###  Swagger common parameters
+##  Swagger common parameters
 
 <table>
 	<thead>
@@ -2854,11 +3072,17 @@
 			<td></td>
 			<td> The version of the API doc to display. Default to the package version</td>
 		</tr>
+		<tr>
+			<td>swagger.group_name</td>
+			<td>SWAGGER_GROUP_NAME</td>
+			<td>TBMQ</td>
+			<td> The group name (definition) on the API doc UI page</td>
+		</tr>
 	</tbody>
 </table>
 
 
-###  Application info parameters
+##  Application info parameters
 
 <table>
 	<thead>
@@ -2877,7 +3101,7 @@
 </table>
 
 
-###  Analysis parameters
+##  Analysis parameters
 
 <table>
 	<thead>
