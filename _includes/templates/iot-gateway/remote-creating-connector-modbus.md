@@ -56,7 +56,7 @@ This section offers slave adding and detailed connection configuration options t
 | Unit ID           | 1                    |
 | Device name       | Demo Device          |
 | Device profile    | default              |
-| ---               
+| ---               |                      |
 
 {% assign addNewSlave = '
     ===
@@ -76,12 +76,15 @@ Let&#39;s configure attribute section using the following steps:
 
 - Click on "**pencil**" icon in the "**Attributes**" section;
 - In the opened window, click on "**Add attribute**" button;
-- Fill in the fields: 
+- Fill in the fields:
   - Fill the "**Key**" field with "**frequency**";
-  - Select the "**Type**" field to "**8int**";
-  - Select the "**Function code**" to "**04 - Read Input Registers**";
+  - Select the "**Type**" field to "**16int**";
+  - Select the "**Function code**" to "**03 - Read Multiple Holding Registers**";
   - Set "**Objects count**" to "**1**";
-  - Set "**Address**" field to "**4**".
+  - Set "**Address**" field to "**3**".
+  - Enable the "**Modifier**" toggle;
+  - In the "**Modifier**" section, set the "**Type**" field to "**divider**";
+  - In the "**Modifier**" section, set the "**Value**" field to "**10**".
 
 {% assign attributeConfiguration1 = '
     ===
@@ -100,21 +103,23 @@ Let&#39;s configure attribute section using the following steps:
 
 Let&#39;s add another attribute. Collapse the recently added "frequency" attribute, click the "**Add attribute**" button, and fill in the fields with the following values, using the same process as before:
 
-| **Field name** | **Value**   |
-|:---------------|:------------|
-| Key            | power       |
-| Type           | 16float     |
-| Function code  | 4           |
-| Objects count  | 1           |
-| Address        | 8           |
-| ---            
+| **Field name** | **Value** |
+|:---------------|:----------|
+| Key            | power     |
+| Type           | 16int     |
+| Function code  | 3         |
+| Objects count  | 1         |
+| Address        | 2         |
+| Modifier       | Divider   |
+| Modifier Value | 10        |
+| ---            |           |
 
 Click the "**Apply**" button after you&#39;ve completed the "**Attributes**" section configuration.
 
 {% assign attributeConfiguration2 = '
     ===
         image: /images/gateway/dashboard/slave-configuration-4-ce.png,
-        title: Collapse the recently added "frequency" attribute, and click "**Add attribute**" button to add another attribute;
+        title: Collapse the recently added "**frequency**" attribute, and click "**Add attribute**" button to add another attribute;
     ===
         image: /images/gateway/dashboard/slave-configuration-5-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
@@ -131,10 +136,13 @@ Let&#39;s configure time series section using the following steps:
 - In the opened window, click on "**Add time series**" button;
 - Fill in the fields:
   - Fill the "**Key**" field with "**humidity**";
-  - Select the "**Type**" field to "**8uint**"; 
-  - Select the "**Function code**" to "**04 - Read Input Registers**";
+  - Select the "**Type**" field to "**16int**"; 
+  - Select the "**Function code**" to "**03 - Read Multiple Holding Registers**";
   - Set "**Objects count**" to "**1**"; 
-  - Set "**Address**" field to "**4**".
+  - Set "**Address**" field to "**1**".
+  - Enable the "**Modifier**" toggle;
+  - In the "**Modifier**" section, set the "**Type**" field to "**divider**";
+  - In the "**Modifier**" section, set the "**Value**" field to "**10**".
 
 {% assign timeSeriesConfiguration1 = '
     ===
@@ -156,11 +164,13 @@ Let&#39;s add another time series. Collapse the recently added "**humidity**" ti
 | **Field name** | **Value**   |
 |:---------------|:------------|
 | Key            | temperature |
-| Type           | 16uint      |
-| Function code  | 4           |
+| Type           | 16int       |
+| Function code  | 3           |
 | Objects count  | 1           |
-| Address        | 8           |
-| ---            
+| Address        | 0           |
+| Modifier       | Divider     |
+| Modifier Value | 10          |
+| ---            |             |
 
 {% assign timeSeriesConfiguration2 = '
     ===
@@ -210,6 +220,9 @@ You can view the synchronization status of the connector configuration in the "*
 
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-14-ce.png,
+        title: In the "**General**" connector tab enable remove logging by turning on the "**Enable remote logging**" toggle. Choose "**DEBUG**" in the "**Log level**" drop-down menu. Click on the "**Save**" button to apply changes;
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-12-ce.png,
         title: Click on "**logs**" icon to open connector logs page;
