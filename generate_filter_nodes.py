@@ -30,7 +30,7 @@ from typing import List, Tuple
 # =========================
 # 🔧 CONFIG — ENV OVERRIDES
 # =========================
-FAMILY_NAME = os.environ.get("NODES_FAMILY", "external-nodes")
+FAMILY_NAME = os.environ.get("NODES_FAMILY", "flow-nodes")
 SOURCE_MD = Path(os.environ.get("SOURCE_MD", "_includes/docs/user-guide/rule-engine-2-0")) / (FAMILY_NAME + ".md")
 INCLUDES_BASE = Path(os.environ.get("INCLUDES_BASE", "_includes/docs/user-guide/rule-engine-2-0/nodes"))
 DOCS_BASE = Path(os.environ.get("DOCS_BASE", "docs/user-guide/rule-engine-2-0/nodes"))

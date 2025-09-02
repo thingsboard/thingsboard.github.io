@@ -2032,9 +2032,6 @@
 "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
   redirect_from: []
-"/docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/":
-  url: "/docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/"
-  redirect_from: []
 "/docs/paas/eu/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/paas/eu/user-guide/rule-engine-2-0/nodes/"
   redirect_from: []
@@ -2573,9 +2570,6 @@
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/":
   url: "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
-  redirect_from: []
-"/docs/paas/user-guide/rule-engine-2-0/flow-nodes/":
-  url: "/docs/paas/user-guide/rule-engine-2-0/flow-nodes/"
   redirect_from: []
 "/docs/paas/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/paas/user-guide/rule-engine-2-0/nodes/"
@@ -3647,10 +3641,6 @@
   url: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes"
-"/docs/pe/user-guide/rule-engine-2-0/flow-nodes/":
-  url: "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"
-  redirect_from:
-  - "/docs/user-guide/rule-engine-2-0/pe/flow-nodes"
 "/docs/pe/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/pe/user-guide/rule-engine-2-0/nodes/"
   redirect_from: []
@@ -4986,9 +4976,6 @@
 "/docs/user-guide/rpc/":
   url: "/docs/user-guide/rpc/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/flow-nodes/":
-  url: "/docs/user-guide/rule-engine-2-0/flow-nodes/"
-  redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/add-to-group-node/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/add-to-group-node/"
   redirect_from: []
@@ -5217,6 +5204,25 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/switch/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/switch/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/acknowledge-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/acknowledge-node/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/checkpoint-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/checkpoint-node/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/"
+  redirect_from:
+  - "/docs/user-guide/rule-engine-2-0/flow-nodes/"
+  - "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"
+  - "/docs/paas/user-guide/rule-engine-2-0/flow-nodes/"
+  - "/docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/"
+"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/output-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/output-node/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/rule-chain-node/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/rule-chain-node/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/"
