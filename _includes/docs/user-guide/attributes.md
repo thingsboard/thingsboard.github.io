@@ -34,7 +34,8 @@ This make it easy to write custom JS functions for data processing and visualiza
 
 ## Attribute types
 
-There are three types of attributes. Let's review them with examples:
+ThingsBoard supports three types of attributes: **server-side**, **shared**, and **client-side**.
+Each type has a specific purpose, access rules, and use cases, which we explain below.
 
 ### Server-side attributes
 
@@ -108,10 +109,20 @@ As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest
 
 ### Shared attributes
 
-This type of attributes is available only for Devices. It is similar to the Server-side attributes but has one important difference. 
-The device firmware/application may request the value of the shared attribute(s) or subscribe to the updates of the attribute(s).
-The devices which communicate over MQTT or other bi-directional communication protocols may subscribe to attribute updates and receive notifications in real-time.
-The devices which communicate over HTTP or other request-response communication protocols may periodically request the value of shared attribute.
+Shared attributes are available only for entities of type Device. It is not available for any other entity types, such as Assets or Customers. They are designed to send configuration or operational parameters such as *thresholds* from the server to the device.
+
+#### How Devices Interact with Shared Attributes
+
+A device cannot publish or change the value of a shared attribute. From the device's perspective, these attributes are read-only. A device's firmware or application can interact with shared attributes in the following ways:
+* Request Current Values: The device can send a request to the server to retrieve the current value(s) of one or more shared attributes.
+* Subscribe to Updates: The device can subscribe to receive notifications whenever a shared attribute's value is changed on the server.
+* Receive Updates via Downlinks: For certain network integrations, shared attribute updates can be pushed to the device as a [downlink message](/docs/user-guide/integrations/#example).
+
+#### Communication Protocol Examples
+
+The method for receiving updates typically depends on the communication protocol used by the device:
+* Real-time Subscriptions (e.g., MQTT): Devices that use bi-directional protocols like [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/#attributes-api) can subscribe to attribute updates and receive notifications in real-time as soon as a value changes.
+* Periodic Polling (e.g., HTTP): Devices that use request-response protocols like [HTTP](/docs/{{docsPrefix}}reference/http-api/#attributes-api) can periodically poll the server to fetch the latest values of their shared attributes.
 
 {:refdef: style="text-align: center;"}
 ![image](https://img.thingsboard.io/user-guide/shared-attributes.svg)
@@ -121,7 +132,7 @@ The most common use case of shared attributes is to store device settings.
 Let's assume the same building monitoring solution and review few examples:
 
 1. The *targetFirmwareVersion* attribute may be used to store the firmware version for particular Device.
-2. The *maxTemperature* attribute may be used to automatically enable HVAC if it is too hot in the room. 
+2. Devices can monitor the *maxTemperatureThreshold* attribute and activate cooling if the temperature exceeds the set limit.
 
 The user may change the attribute via UI. The script or other server-side application may change the attribute value via REST API.
 
@@ -202,7 +213,7 @@ Let's assume the same building monitoring solution and review few examples:
 2. The *currentConfiguration* attribute may be used to report current firmware/application configuration to the platform.
 3. The *currentState* may be used to persist and restore current firmware/application state via network, if device does not have the persistent storage.
 
-The user and server-side applications may browser the client-side attributes via UI/REST API but they are not able to change them. 
+The user and server-side applications may browse the client-side attributes via UI/REST API but they are not able to change them. 
 Basically, the value of the client-side attribute is read-only for the UI/REST API.
 
 #### Fetch client-side attributes via REST API

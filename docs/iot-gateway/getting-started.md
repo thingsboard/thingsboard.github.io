@@ -12,7 +12,7 @@ The ThingsBoard IoT Gateway is an open-source solution, designed to serve as a b
 legacy and third-party systems with ThingsBoard.
 
 This guide covers initial IoT Gateway installation and configuration, we will do the following things:
-- Create a new gateway device using [ThingsBoard IoT Gateways dashboard](#prerequisites);
+- Create a new gateway device;
 - Launch the gateway using Docker command;
 - Configure different connector types ([MQTT](/docs/iot-gateway/config/mqtt/), [OPC-UA](/docs/iot-gateway/config/opc-ua/), [Modbus](/docs/iot-gateway/config/modbus/)) in order to connect to a local demo servers and read data from them;
 - Check received device data on ThingsBoard.
@@ -20,20 +20,19 @@ This guide covers initial IoT Gateway installation and configuration, we will do
 ## Prerequisites
 
 - Before initiating the Gateway setup, ensure that the ThingsBoard server is up and running. The simplest approach is to utilize the [Live Demo](https://demo.thingsboard.io) or [ThingsBoard Cloud](https://thingsboard.cloud). Alternatively, you can install ThingsBoard manually by following the steps outlined in the [Installation Guide](/docs/user-guide/install/installation-options/).
-- Before moving forward, ensure Docker is installed and properly configured on your machine. If you haven't installed Docker yet, you can download it from the [official Docker website](https://docs.docker.com/engine/install/) and follow their installation guide for your specific operating system. 
-- If you don't have a dashboard installed, you can download Gateway widget bundle [JSON file here](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} and ThingsBoard IoT Gateways dashboard [JSON file here](/docs/iot-gateway/resources/thingsboard-iot-gateways.json){:target="_blank" download="thingsboard-iot-gateways.json"}. Use this [guide](#optional-import-gateway-widgets-bundle-and-dashboard) to import gateway widgets bundle and dashboard.
+- Before moving forward, ensure Docker is installed and properly configured on your machine. If you haven't installed Docker yet, you can download it from the [official Docker website](https://docs.docker.com/engine/install/) and follow their installation guide for your specific operating system.
 
-## Step 1. Create new gateway device on ThingsBoard
+## Step 1. Create a new gateway device on ThingsBoard
 
 First, add a gateway device to your ThingsBoard instance by following these steps:
 
 {% assign createNewGatewayDevice = '
     ===
         image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-1-ce.png,
-        title: Go to "**Dashboards**" tab and open "**ThingsBoard IoT Gateways**" dashboard.
+        title: Go to "**Entities**" > "**Gateways**" tab.
     ===
         image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-2-ce.png,
-        title: Click the "**+**" button, enter the gateway device name (e.g., "My Gateway"), and select the device profile.
+        title: Click the "**+**" button, enter the gateway device name (e.g., "My Gateway"), and select the device profile. Click on "**Create**" button.
 '
 %}
 
@@ -54,10 +53,10 @@ To launch the gateway, use the following steps:
 {% assign remoteCreateGatewayDocker = '
     ===
         image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-3-ce.png,
-        title: On the gateway dashboard, click on **"Launch command"** button in the top right corner.
+        title: Select and click on newly created gateway, click on **"Launch command"** button in the top right corner.
     ===
         image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-4-ce.png,
-        title: Click to download docker-compose.yml file to your PC, copy command and execute it in your terminal.
+        title: Click to download `docker-compose.yml` file to your PC, copy command and execute it in your terminal.
 '
 %}
 
@@ -69,16 +68,16 @@ After running gateway docker image, you can see the following logs in your termi
 
 ## Step 2. Enable remote logging
 
-To view gateway and connector logs on the dashboard, you need to enable remote logging. For this purpose, 
+To view gateway and connector logs on the platform side, you need to enable remote logging. For this purpose, 
 use the following steps:
 
 {% assign enableRemoteLogging = '
     ===
         image: https://img.thingsboard.io/gateway/dashboard/general-configuration-1-ce.png,
-        title: On the gateway dashboard, click on **"General configuration"** button on the right panel.
+        title: On selected gateway page, click on **"General configuration"** button on the right panel.
     ===
         image: https://img.thingsboard.io/gateway/dashboard/general-configuration-2-ce.png,
-        title: Navigate to the "**Logs**" tab. Enable the "**Remote logs**" toggle. Select "**DEBUG**" in the "**Log level**" drop-down menu.
+        title: Navigate to the "**Logs**" tab. Enable the "**Remote logging**" toggle. Select "**DEBUG**" in the "**Log level**" drop-down menu. Click on the "**Save**" button to apply changes.
 '
 %}
 
@@ -105,7 +104,7 @@ To review the data uploaded from your gateway, use the following steps:
 {% assign checkDeviceData = '
     ===
         image: https://img.thingsboard.io/gateway/dashboard/review-gateway-statistics-1-ce.png,
-        title: Navigate to the **Devices** page and click on the created device. This will open the device details page. From there, switch to the **"Attributes"** tab to view the attributes that were configured in the connector.
+        title: Navigate to the **Entities** > **Devices** page and click on the created device. This will open the device details page. From there, switch to the **"Attributes"** tab to view the attributes that were configured in the connector.
     ===
         image: https://img.thingsboard.io/gateway/dashboard/review-gateway-statistics-2-ce.png,
         title: To view real-time telemetry data from the device, navigate to the "**Latest Telemetry**" tab. Here, you will find the telemetry data being sent by the device, including metrics like "**humidity**" and "**temperature**". This tab provides real-time device telemetry updates.
@@ -135,42 +134,6 @@ connect to different devices. You can find more information about connectors in 
  - [**Custom** connector](/docs/iot-gateway/custom/)
 
 More about *ThingsBoard IoT Gateways* Dashboard, you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
-
-## (Optional) Import gateway widgets bundle and dashboard
-
-First, we have to import gateway widgets bundle, for this purpose, use the following steps:
-
-{% assign importWidgetsBundle = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/wl-import-bundle-gateway-1-ce.png,
-        title: Go to the "**Widgets Library**" page, and click the "**+**" button in the upper right corner of the "**Widgets Bundles**" page. Select "**Import widgets bundle**" from the drop-down menu.
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/wl-import-bundle-gateway-2-ce.png,
-        title: You will be prompted to upload the downloaded gateway widgets bundle JSON file in the pop-up. Drag and drop a file from your computer, then click "**Import**" to add a widget bundle to the library.
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/wl-import-bundle-gateway-3-ce.png,
-        title: The widgets bundle is imported.
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=importWidgetsBundle %} 
-
-To import ThingsBoard IoT Gateways dashboard, follow these steps:
-
-{% assign importGatewayDashboard = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/import-dashboard-gateway-1-ce.png,
-        title: Go to the "**Dashboards**" page and click on the "**+**" button in the upper right corner of the page and select "**Import dashboard**" from the drop-down menu;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/import-dashboard-gateway-2-ce.png,
-        title: In the import dashboard window, upload the downloaded gateway dashboard JSON file and click "**Import**".
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/import-dashboard-gateway-3-ce.png,
-        title: Dashboard imported. Click on the row with the dashboard name to open it.
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=importGatewayDashboard %} 
 
 ## Next steps
 

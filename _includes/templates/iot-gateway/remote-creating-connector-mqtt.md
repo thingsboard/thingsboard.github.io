@@ -53,12 +53,12 @@ Fill in the following fields with values:
 | MQTT version   | 5                    |
 | Client ID      | randomly generated   |
 | Security       | Anonymous            |
-| ---            
+| ---            |                      |
 
 {% assign connectionToBroker = '
     ===
         image: https://img.thingsboard.io/gateway/dashboard/connection-to-broker-section-1-ce.png,
-        title: First, we need to configure the connection to the demo broker. Let’s start from the "**Connection to broker**" section. This section offers detailed connection configuration options and contains several important fields, including host, port, MQTT version, client ID, and security settings. The **host** field specifies the address of the broker, while the **port** field indicates the communication port. The **MQTT version** field ensures compatibility with the protocol version being used. The **client ID** uniquely identifies the client, and the **security** settings provides configuration for client authorization at MQTT Broker. Then, click "Save".
+        title: First, we need to configure the connection to the demo broker. Let’s start from the "**Connection to broker**" section. This section offers detailed connection configuration options and contains several important fields, including host, port, MQTT version, client ID, and security settings. The **host** field specifies the address of the broker, while the **port** field indicates the communication port. The **MQTT version** field ensures compatibility with the protocol version being used. The **client ID** uniquely identifies the client, and the **security** settings provides configuration for client authorization at MQTT Broker.
 '
 %}
 
@@ -144,116 +144,20 @@ Let's configure data map using the following steps:
         title: Click "**Add**" button;
     ===
         image: https://img.thingsboard.io/gateway/dashboard/data-mapping-12-ce.png,
-        title: Data mapping added.
+        title: Data mapping added. Click on "**Save**" button.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=dataMapping4 %}
-
-<br>
-"**Requests mapping**" section of the configuration outlines an array that includes all the supported requests for both the gateway and ThingsBoard:
-- connect requests;
-- disconnect requests;
-- attribute requests;
-- attribute updates;
-- RPC commands.
-
-But for now, we need only connect and disconnect requests. Let's configure requests map using the following steps:
-- Click on "**Add mapping**" button;
-- In the opened window, select "**Connect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/connect**" value. For "**Device**" subsection use the following options/values:
-  - In the "**Name**" row, select "**Extract from message**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**${SerialNumber}**" value.
-  - In the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value.
-- Click on "**Add**" button.
-
-{% assign requestsMapping = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-1-ce.png,
-        title: Click on "**Add mapping**" button;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-2-ce.png,
-        title: In the opened window, select "**Connect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/connect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from message**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**${SerialNumber}**" value; in the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value. Click on "**Add**" button;
-  ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-3-ce.png,
-        title: Mapping added.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=requestsMapping %}
-
-Now, let's add another connect request using the following steps:
-
-- Click on "**+**" button;
-- In the opened window, select "**Connect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/+/connect**" value. For "**Device**" subsection use the following options/values:
-  - In the "**Name**" row, select "**Extract from topic**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**(?<=sensor\/)(.*?)(?=\/connect)**" value.
-  - In the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value.
-- Click on "**Add**" button.
-
-{% assign requestsMapping2 = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-4-ce.png,
-        title: Click on "**+**" button;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-5-ce.png,
-        title: select "**Connect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/+/connect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from topic**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**(?<=sensor\/)(.*?)(?=\/connect)**" value; in the "**Profile name**" row, select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value. Click on "**Add**" button.;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-6-ce.png,
-        title: Mapping added.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=requestsMapping2 %}
-
-And finally, let's add disconnect requests. For this purpose, follow the steps below:
-
-- Click on "**+**" button;
-- In the opened window, select "**Disconnect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/disconnect**" value. For "**Device**" subsection use the following options/values:
-    - In the "**Name**" row, select "**Extract from message**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**${SerialNumber}**" value.
-- Click on "**Add**" button.
-
-{% assign requestsMapping3 = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-7-ce.png,
-        title: Click on "**+**" button;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-8-ce.png,
-        title: In the opened window, select "**Disconnect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/disconnect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from message**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**${SerialNumber}**" value. Click on "**Add**" button;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-9-ce.png,
-        title: Mapping added.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=requestsMapping3 %}
-
-Now, let's add another disconnect request using the following steps:
-
-- Click on "**+**" button;
-- In the opened window, select "**Disconnect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/+/disconnect**" value. For "**Device**" subsection use the following options/values:
-    - In the "**Name**" row, select "**Extract from topic**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**(?<=sensor\/)(.*?)(?=\/disconnect)**" value.
-- Click on "**Add**" button.
-
-{% assign requestsMapping4 = '
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-10-ce.png,
-        title: Click on "**+**" button;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-11-ce.png,
-        title: In the opened window, select "**Disconnect request**" in the "**Request type**" dropdown field, fill in "**Topic filter**" with "**sensor/+/disconnect**" value. For "**Device**" subsection use the following options/values: in the "**Name**" row, select "**Extract from topic**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**(?<=sensor\/)(.*?)(?=\/disconnect)**" value. Click on "**Add**" button;
-    ===
-        image: https://img.thingsboard.io/gateway/dashboard/requests-mapping-12-ce.png,
-        title: Mapping added. Click "**Save**" button.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=requestsMapping4 %}
-
-- Click on "**Save**" button.
 
 Following the steps outlined, your gateway will receive and apply the new configuration. 
 It will then synchronize its state with the remote server. You can view the synchronization status of the connector configuration in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with the remote settings.
 
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
+    ===
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-logs-14-ce.png,
+        title: In the "**General**" connector tab enable remove logging by turning on the "**Enable remote logging**" toggle. Choose "**DEBUG**" in the "**Log level**" drop-down menu. Click on the "**Save**" button to apply changes;
     ===
         image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
         title: Click on logs icon to open connector logs page;
