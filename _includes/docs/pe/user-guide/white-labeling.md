@@ -38,43 +38,45 @@ In the "General" tab you can set or change the following options:
  - Application title - you can specify custom the page's title, which is displayed in the browser tab;
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/white-labeling/application-title.png)
+![image](/images/user-guide/white-labeling/application-title.png)
 {% endif %}
 {% if docsPrefix contains "paas/" %}
-![image](https://img.thingsboard.io/user-guide/white-labeling/application-title-paas.png)
+![image](/images/user-guide/white-labeling/application-title-paas.png)
 {% endif %}
 
  - Favicon (website icon) - you can change the default website icon to your own;
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/white-labeling/website-icon.png)
+![image](/images/user-guide/white-labeling/website-icon.png)
 {% endif %}
 {% if docsPrefix contains "paas/" %}
-![image](https://img.thingsboard.io/user-guide/white-labeling/website-icon-paas.png)
+![image](/images/user-guide/white-labeling/website-icon-paas.png)
 {% endif %}
 
  - Logo - you can change the standard logo in the upper left corner to your company logo;
 
 {% if docsPrefix == "pe/" %}
-![image](https://img.thingsboard.io/user-guide/white-labeling/logo.png)
+![image](/images/user-guide/white-labeling/logo.png)
 {% endif %}
 {% if docsPrefix contains "paas/" %}
-![image](https://img.thingsboard.io/user-guide/white-labeling/logo-paas.png)
+![image](/images/user-guide/white-labeling/logo-paas.png)
 {% endif %}
 
  - Logo height - you can resize the logo;
- - Primary palette - you can customize the background color and font color by choosing one of the suggested UI design options or customizing an existing one;
+ - White labeling allows you to customize the color theme by adjusting the primary and accent palettes to match your desired UI design.
 
-![image](https://img.thingsboard.io/user-guide/white-labeling/primary-palette.png)
+    - Primary palette - you can customize the background color and font color by choosing one of the suggested UI design options or customizing an existing one;
 
- - Accent palette - you can customize the color for some elements, for example for a toggle;
+    ![image](/images/user-guide/white-labeling/primary-palette.png)
 
-![image](https://img.thingsboard.io/user-guide/white-labeling/accent-palette.png)
+    - Accent palette - you can customize the color for some elements, for example for a toggle;
+
+    ![image](/images/user-guide/white-labeling/accent-palette.png)
 
  - Advanced CSS - you can stylize any elements of the ThingsBoard user interface as you wish. We will talk more about this functionality [below](#advanced-css);
  - Show/hide platform name and version - by checking this option, the name of the platform and its current version will be displayed in the lower left corner.
 
-![image](https://img.thingsboard.io/user-guide/white-labeling/show-platform-name-and-version.png)
+![image](/images/user-guide/white-labeling/show-platform-name-and-version.png)
 
 The final look of the customized user interface:
 

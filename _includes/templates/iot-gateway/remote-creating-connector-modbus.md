@@ -12,7 +12,7 @@ docker run -it -p 5021:5021 thingsboard/tb-gw-modbus-server:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](https://img.thingsboard.io/gateway/dashboard/run-demo-modbus-server.png)
+![](/images/gateway/dashboard/run-demo-modbus-server.png)
 
 ### Setup connector
 
@@ -25,16 +25,16 @@ To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-9-ce.png,
         title: Choose "**MODBUS**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", turn off the "**Fill configuration with default values**" option and click on "**Add**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-10-ce.png,
         title: Connector created.
 '
 %}
@@ -56,14 +56,14 @@ This section offers slave adding and detailed connection configuration options t
 | Unit ID           | 1                    |
 | Device name       | Demo Device          |
 | Device profile    | default              |
-| ---               
+| ---               |                      |
 
 {% assign addNewSlave = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/add-new-slave-1-ce.png,
+        image: /images/gateway/dashboard/add-new-slave-1-ce.png,
         title: Go to the "**Master Connections**" tab, and click "**Add Slave**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/add-new-slave-2-ce.png,
+        image: /images/gateway/dashboard/add-new-slave-2-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -76,22 +76,25 @@ Let&#39;s configure attribute section using the following steps:
 
 - Click on "**pencil**" icon in the "**Attributes**" section;
 - In the opened window, click on "**Add attribute**" button;
-- Fill in the fields: 
+- Fill in the fields:
   - Fill the "**Key**" field with "**frequency**";
-  - Select the "**Type**" field to "**8int**";
-  - Select the "**Function code**" to "**04 - Read Input Registers**";
+  - Select the "**Type**" field to "**16int**";
+  - Select the "**Function code**" to "**03 - Read Multiple Holding Registers**";
   - Set "**Objects count**" to "**1**";
-  - Set "**Address**" field to "**4**".
+  - Set "**Address**" field to "**3**".
+  - Enable the "**Modifier**" toggle;
+  - In the "**Modifier**" section, set the "**Type**" field to "**divider**";
+  - In the "**Modifier**" section, set the "**Value**" field to "**10**".
 
 {% assign attributeConfiguration1 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-1-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-1-ce.png,
         title: Click on "**pencil**" icon in the "**Attributes**" section;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-2-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-2-ce.png,
         title: In the opened window, click on "**Add attribute**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-3-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-3-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -100,23 +103,25 @@ Let&#39;s configure attribute section using the following steps:
 
 Let&#39;s add another attribute. Collapse the recently added "frequency" attribute, click the "**Add attribute**" button, and fill in the fields with the following values, using the same process as before:
 
-| **Field name** | **Value**   |
-|:---------------|:------------|
-| Key            | power       |
-| Type           | 16float     |
-| Function code  | 4           |
-| Objects count  | 1           |
-| Address        | 8           |
-| ---            
+| **Field name** | **Value** |
+|:---------------|:----------|
+| Key            | power     |
+| Type           | 16int     |
+| Function code  | 3         |
+| Objects count  | 1         |
+| Address        | 2         |
+| Modifier       | Divider   |
+| Modifier Value | 10        |
+| ---            |           |
 
 Click the "**Apply**" button after you&#39;ve completed the "**Attributes**" section configuration.
 
 {% assign attributeConfiguration2 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-4-ce.png,
-        title: Collapse the recently added "frequency" attribute, and click "**Add attribute**" button to add another attribute;
+        image: /images/gateway/dashboard/slave-configuration-4-ce.png,
+        title: Collapse the recently added "**frequency**" attribute, and click "**Add attribute**" button to add another attribute;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-5-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-5-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -131,20 +136,23 @@ Let&#39;s configure time series section using the following steps:
 - In the opened window, click on "**Add time series**" button;
 - Fill in the fields:
   - Fill the "**Key**" field with "**humidity**";
-  - Select the "**Type**" field to "**8uint**"; 
-  - Select the "**Function code**" to "**04 - Read Input Registers**";
+  - Select the "**Type**" field to "**16int**"; 
+  - Select the "**Function code**" to "**03 - Read Multiple Holding Registers**";
   - Set "**Objects count**" to "**1**"; 
-  - Set "**Address**" field to "**4**".
+  - Set "**Address**" field to "**1**".
+  - Enable the "**Modifier**" toggle;
+  - In the "**Modifier**" section, set the "**Type**" field to "**divider**";
+  - In the "**Modifier**" section, set the "**Value**" field to "**10**".
 
 {% assign timeSeriesConfiguration1 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-6-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-6-ce.png,
         title: Click on the "**pencil**" icon in "**Time series**" section;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-7-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-7-ce.png,
         title: In the opened window, click on "**Add time series**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-8-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-8-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -156,18 +164,20 @@ Let&#39;s add another time series. Collapse the recently added "**humidity**" ti
 | **Field name** | **Value**   |
 |:---------------|:------------|
 | Key            | temperature |
-| Type           | 16uint      |
-| Function code  | 4           |
+| Type           | 16int       |
+| Function code  | 3           |
 | Objects count  | 1           |
-| Address        | 8           |
-| ---            
+| Address        | 0           |
+| Modifier       | Divider     |
+| Modifier Value | 10          |
+| ---            |             |
 
 {% assign timeSeriesConfiguration2 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-9-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-9-ce.png,
         title: Collapse the recently added "**humidity**" time series, and click "**Add time series**" button to add another time series;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/slave-configuration-10-ce.png,
+        image: /images/gateway/dashboard/slave-configuration-10-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -178,7 +188,7 @@ The final view of your configured connector will look like on the following imag
 
 {% assign finalSlaveConfiguration = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/final-configured-slave-1-ce.png,
+        image: /images/gateway/dashboard/final-configured-slave-1-ce.png,
         title: The final view of your configured connector. Click the "**Add**" button after you&#39;ve completed the configuration.
 '
 %}
@@ -189,7 +199,7 @@ Finally, save the Modbus configuration by clicking the "**Save**" button.
 
 {% assign finalSlaveConfiguration2 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/final-configured-slave-2-ce.png,
+        image: /images/gateway/dashboard/final-configured-slave-2-ce.png,
         title: Finally, the save Modbus configuration by clicking the "**Save**" button.
 '
 %}
@@ -201,7 +211,7 @@ You can view the synchronization status of the connector configuration in the "*
 
 {% assign finalSlaveConfiguration3 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/final-configured-slave-3-ce.png,
+        image: /images/gateway/dashboard/final-configured-slave-3-ce.png,
         title: You can view the synchronization status of the connector configuration in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with the remote settings.
 '
 %}
@@ -211,10 +221,13 @@ You can view the synchronization status of the connector configuration in the "*
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-12-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-14-ce.png,
+        title: In the "**General**" connector tab enable remove logging by turning on the "**Enable remote logging**" toggle. Choose "**DEBUG**" in the "**Log level**" drop-down menu. Click on the "**Save**" button to apply changes;
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-12-ce.png,
         title: Click on "**logs**" icon to open connector logs page;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-modbus-logs-13-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}

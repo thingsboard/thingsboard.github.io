@@ -12,14 +12,14 @@ docker run -it -p 4840:4840 thingsboard/tb-gw-opcua-server:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](https://img.thingsboard.io/gateway/dashboard/run-demo-opcua-server.png)
+![](/images/gateway/dashboard/run-demo-opcua-server.png)
 
 ### Setup connector
 
 This OPC-UA connector configuration establishes a connection to a server named **"OPC-UA Demo Server"** at **"opc.tcp://host.docker.internal:4840/freeopcua/server/"**. 
 The configuration specifies various settings, including timeouts, scan periods, and security mechanisms such as **"Basic128Rsa15"** with anonymous identity.
 
-The mapping section defines how OPC-UA nodes are mapped to devices and their attributes and time series. In this case, a device with the name **"Demo Device"** and type **"default"** is mapped to nodes under **"Root.Objects.MyObject"**. 
+The mapping section defines how OPC-UA nodes are mapped to devices and their attributes and time series. In this case, a device with the name **"Demo Device"** and type **"default"** is mapped to nodes under **"`Root\.Objects\.MyObject`"**. 
 Attributes such as **frequency** and **power**, as well as time series like **temperature** and **humidity**, are mapped to specific paths in the OPC-UA server. 
 Additionally, the configuration supports RPC methods and attribute updates.
 
@@ -27,16 +27,16 @@ To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
         title: Choose "**OPCUA**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", turn off the "**Fill configuration with default values**" option and click on "**Add**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
         title: Connector created.
 '
 %}
@@ -48,18 +48,18 @@ This section offers detailed connection configuration options and contains sever
 
 - Go to the "**Server**" tab, and fill in the fields with following values:
 
-| **Field name**       | **Value**                                             |
-|:---------------------|:------------------------------------------------------|
-| Server endpoint url  | opc.tcp://host.docker.internal:4840/freeopcua/server/ |
-| Enable subscription  | false                                                 |
-| Security             | Anonymous                                             |
-| Poll period          | 5000                                                  |
-| Security policy      | Basic128RSA15                                         |
-| ---                  
+| **Field name**      | **Value**                                             |
+|:--------------------|:------------------------------------------------------|
+| Server endpoint url | opc.tcp://host.docker.internal:4840/freeopcua/server/ |
+| Enable subscription | false                                                 |
+| Security            | Anonymous                                             |
+| Poll period         | 5000                                                  |
+| Security policy     | Basic128RSA15                                         |
+| ---                 |                                                       |
 
 {% assign serverConfiguration = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/server-configuration-1-ce.png,
+        image: /images/gateway/dashboard/server-configuration-1-ce.png,
         title: Go to the "**Server**" tab, and fill in the fields with the value taken from the documentation.
 '
 %}
@@ -71,17 +71,17 @@ Now, we are ready to move to the "**Data mapping**" section. This configuration 
 Let&#39;s add new node using the following steps:
 
 - Go to the "**Data mapping**" tab, and click on "**Add mapping**" button.
-- In the opened window, fill in the "**Device node**" with "**Path**" type and "**Root\.Objects\.MyObject**" value;
+- In the opened window, fill in the "**Device node**" with "**Path**" type and "`Root\.Objects\.MyObject`" value;
 - For "**Device**" subsection use the following options/values:
     - The "**Name**" row: select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**Device Demo**" value;
     - The "**Profile name**" row: select "**Constant**" in the "**Source**" dropdown field, fill in the "**Value / Expression**" field with the "**default**" value.
 
 {% assign dataMappingConfiguration1 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-1-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-1-ce.png,
         title: Go to the "**Data mapping**" tab, and click "**Add mapping**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-2-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-2-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -103,13 +103,13 @@ Let&#39;s configure attribute section using the following steps:
 
 {% assign dataMappingConfiguration2 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-3-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-3-ce.png,
         title: Click on the "**pencil**" icon in the "**Attributes**" section;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-4-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-4-ce.png,
         title: In the opened window, click on the "**Add attribute**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-5-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-5-ce.png,
         title: Fill in the "**Key**" field with the "**frequency**", select the "**Type**" field to the "**Path**", and fill in the "**Value**" with the "**${Frequency}**".
 '
 %}
@@ -123,16 +123,16 @@ Let&#39;s add another attribute. Collapse the recently added "frequency" attribu
 | Key            | power     |
 | Type           | Path      |
 | Value          | ${Power}  |
-| ---            
+| ---            |           |
 
 Click the "**Apply**" button after you&#39;ve completed the configuration.
 
 {% assign dataMappingConfiguration3 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-6-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-6-ce.png,
         title: Collapse the recently added "frequency" attribute, and click "**Add attribute**" button to add another attribute;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-7-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-7-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -152,13 +152,13 @@ Let&#39;s configure time series section using the following steps:
 
 {% assign dataMappingConfiguration4 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-8-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-8-ce.png,
         title: Click on the "**pencil**" icon in "**Time series**" section;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-9-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-9-ce.png,
         title: In the opened window, click on "**Add time series**" button;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-10-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-10-ce.png,
         title: Fill in the fields with values taken from the documentation.
 '
 %}
@@ -172,14 +172,14 @@ Let&#39;s add another attribute. Collapse the recently added "**temperature**" t
 | Key            | humidity    |
 | Type           | Path        |
 | Value          | ${Humidity} |
-| ---            
+| ---            |             |
 
 {% assign dataMappingConfiguration5 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-11-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-11-ce.png,
         title: Collapse the recently added "**temperature**" time series, and click "**Add time series**" button to add another time series;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/data-mapping-configuration-12-ce.png,
+        image: /images/gateway/dashboard/data-mapping-configuration-12-ce.png,
         title: Fill in the fields with values taken from the documentation. Then, click "**Apply**".
 '
 %}
@@ -190,7 +190,7 @@ The final view of your configured connector will look like on the following imag
 
 {% assign finalDataMappingConfiguration1 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/final-configured-data-mapping-1-ce.png,
+        image: /images/gateway/dashboard/final-configured-data-mapping-1-ce.png,
         title: The final view of your configured connector. Click the "**Add**" button after you&#39;ve completed the configuration.
 '
 %}
@@ -201,7 +201,7 @@ Finally, save the OPC-UA configuration by clicking the "**Save**" button.
 
 {% assign finalDataMappingConfiguration2 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/final-configured-data-mapping-2-ce.png,
+        image: /images/gateway/dashboard/final-configured-data-mapping-2-ce.png,
         title: Finally, the save OPC-UA configuration by clicking the "**Save**" button.
 '
 %}
@@ -213,7 +213,7 @@ You can view the synchronization status of the connector configuration in the "*
 
 {% assign finalDataMappingConfiguration3 = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/final-configured-data-mapping-3-ce.png,
+        image: /images/gateway/dashboard/final-configured-data-mapping-3-ce.png,
         title: You can view the synchronization status of the connector configuration in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with the remote settings.
 '
 %}
@@ -223,10 +223,13 @@ You can view the synchronization status of the connector configuration in the "*
 Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-12-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-14-ce.png,
+        title: In the "**General**" connector tab enable remove logging by turning on the "**Enable remote logging**" toggle. Choose "**DEBUG**" in the "**Log level**" drop-down menu. Click on the "**Save**" button to apply changes;
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-12-ce.png,
         title: Click on logs icon to open connector logs page;
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-logs-13-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-logs-13-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}
