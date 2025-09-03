@@ -235,3 +235,28 @@ The outgoing message is identical to the incoming one. Routed via the `Failure` 
 
 The processing fails because the node looks for a group named "Customer Group" under the tenant's ownership (since the device belongs to the tenant), but the group "Customer Group"
 exists under a customer.
+
+### Example 6 — Unsupported entity type
+
+**Incoming message**
+
+Originator: `TENANT` entity.
+
+**Node configuration**
+
+```json
+{
+  "groupNamePattern": "My Group",
+  "createGroupIfNotExists": false,
+  "removeFromCurrentGroups": false,
+  "groupCacheExpiration": 300
+}
+```
+
+**Outgoing message**
+
+The outgoing message is identical to the incoming one. Routed via the `Failure` connection.
+
+**Result**
+
+The processing fails because the originator entity type `TENANT` does not support entity groups. 
