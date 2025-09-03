@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Acknowledge node
 description: Acknowledge node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

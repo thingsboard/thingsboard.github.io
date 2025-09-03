@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Delay node (deprecated)
-description: Delay node (deprecated) node
+description: Delay node (deprecated) 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

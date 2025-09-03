@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Device profile switch
 description: Device profile switch node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Related device attributes
 description: Related device attributes node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

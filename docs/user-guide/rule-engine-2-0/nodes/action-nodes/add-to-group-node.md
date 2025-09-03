@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Add to group node
-description: Add to group node node
+description: Add to group node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

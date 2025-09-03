@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Unassign from Customer node
-description: Unassign from Customer node node
+description: Unassign from Customer node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

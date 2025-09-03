@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Entity type switch
 description: Entity type switch node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

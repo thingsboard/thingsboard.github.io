@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Rename keys
 description: Rename keys node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

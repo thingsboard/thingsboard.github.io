@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Device profile node
-description: Device profile node node
+description: Device profile node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

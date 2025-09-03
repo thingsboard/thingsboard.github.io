@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Asset profile switch
 description: Asset profile switch node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

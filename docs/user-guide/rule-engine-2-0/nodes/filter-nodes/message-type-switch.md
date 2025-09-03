@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Message type switch
 description: Message type switch node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

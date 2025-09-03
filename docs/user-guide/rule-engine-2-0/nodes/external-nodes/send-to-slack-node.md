@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Send to Slack node
 description: Send to Slack node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

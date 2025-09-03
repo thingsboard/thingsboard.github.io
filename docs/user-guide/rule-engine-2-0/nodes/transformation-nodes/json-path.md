@@ -2,6 +2,8 @@
 layout: docwithnav
 title: JSON path
 description: JSON path node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

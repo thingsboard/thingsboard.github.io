@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Assign to Customer node
-description: Assign to Customer node node
+description: Assign to Customer node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

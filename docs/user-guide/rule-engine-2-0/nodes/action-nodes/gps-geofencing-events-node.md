@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: GPS geofencing events node
-description: GPS geofencing events node node
+description: GPS geofencing events node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

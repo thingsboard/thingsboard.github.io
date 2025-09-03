@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Calculated fields node
-description: Calculated fields node node
+description: Calculated fields node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Originator attributes
 description: Originator attributes node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Device state node
-description: Device state node node
+description: Device state node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

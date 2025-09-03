@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Aggregate stream node
 description: Aggregate stream node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

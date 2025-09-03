@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Kafka node
 description: Kafka node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

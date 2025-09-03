@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: REST call reply node
-description: REST call reply node node
+description: REST call reply node 
 hidetoc: "true"
 ---
 

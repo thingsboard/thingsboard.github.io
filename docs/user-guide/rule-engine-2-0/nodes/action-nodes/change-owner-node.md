@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Change owner node
-description: Change owner node node
+description: Change owner node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

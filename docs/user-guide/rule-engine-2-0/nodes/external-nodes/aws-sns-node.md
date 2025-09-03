@@ -2,6 +2,8 @@
 layout: docwithnav
 title: AWS SNS node
 description: AWS SNS node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

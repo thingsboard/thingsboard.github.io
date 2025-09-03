@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Aggregate latest node
 description: Aggregate latest node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

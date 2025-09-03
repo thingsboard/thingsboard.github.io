@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Alarms count node (deprecated)
 description: Alarms count node (deprecated) node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

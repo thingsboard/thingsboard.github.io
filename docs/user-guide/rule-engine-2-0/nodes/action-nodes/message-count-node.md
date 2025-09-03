@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Message count node
-description: Message count node node
+description: Message count node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

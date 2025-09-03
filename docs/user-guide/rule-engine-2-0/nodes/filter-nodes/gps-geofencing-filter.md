@@ -2,6 +2,8 @@
 layout: docwithnav
 title: GPS geofencing filter
 description: GPS geofencing filter node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

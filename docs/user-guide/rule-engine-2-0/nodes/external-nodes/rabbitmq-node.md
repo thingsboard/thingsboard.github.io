@@ -2,6 +2,8 @@
 layout: docwithnav
 title: RabbitMQ node
 description: RabbitMQ node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

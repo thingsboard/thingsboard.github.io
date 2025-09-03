@@ -3,6 +3,8 @@ layout: docwithnav
 title: External Nodes
 description: Rule Engine 2.0 External Nodes
 hidetoc: "true"
+breadcrumbs: "true"
+breadcrumbs-steps: "1"
 redirect_from:
   - "/docs/user-guide/rule-engine-2-0/external-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/external-nodes/"

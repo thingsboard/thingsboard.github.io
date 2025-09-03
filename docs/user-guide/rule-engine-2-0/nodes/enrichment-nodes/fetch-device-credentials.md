@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Fetch device credentials
 description: Fetch device credentials node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

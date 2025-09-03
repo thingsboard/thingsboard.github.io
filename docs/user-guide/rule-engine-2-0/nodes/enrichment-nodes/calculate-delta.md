@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Calculate delta
 description: Calculate delta node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

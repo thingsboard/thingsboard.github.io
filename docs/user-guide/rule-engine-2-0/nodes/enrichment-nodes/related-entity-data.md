@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Related entity data
 description: Related entity data node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

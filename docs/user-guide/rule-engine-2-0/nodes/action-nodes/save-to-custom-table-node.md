@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Save to custom table node
-description: Save to custom table node node
+description: Save to custom table node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

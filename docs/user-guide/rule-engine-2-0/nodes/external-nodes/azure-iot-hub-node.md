@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Azure IoT Hub node
 description: Azure IoT Hub node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

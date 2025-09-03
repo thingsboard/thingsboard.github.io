@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Generate report node
-description: Generate report node node
+description: Generate report node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

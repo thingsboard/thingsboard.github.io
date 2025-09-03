@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Send SMS node
 description: Send SMS node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

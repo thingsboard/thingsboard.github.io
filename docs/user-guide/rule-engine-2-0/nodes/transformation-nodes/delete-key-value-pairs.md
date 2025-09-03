@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Delete key-value pairs
 description: Delete key-value pairs node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

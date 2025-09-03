@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Message type filter
 description: Message type filter node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

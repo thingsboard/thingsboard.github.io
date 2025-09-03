@@ -1,5 +1,8 @@
 #docsContent
+  .rule-node-description
+    max-width: 1300px
   .nodes
+    max-width: 1300px
     display: flex
     flex-wrap: wrap
     justify-content: center
@@ -7,6 +10,7 @@
     margin: 40px 0
     padding-left: 0
     .node
+      position: relative
       width: 258px
       list-style: none
       background: #FFF
@@ -20,6 +24,19 @@
           .node-img
             img
               scale: 1.2
+      .pe-only-banner
+        position: absolute
+        top: 10px
+        right: 10px
+        padding: 4px 8px
+        font-size: 12px
+        font-weight: 500
+        line-height: 20px
+        border-radius: 6px
+        color: #FFF
+        width: 61px
+        height: 28px
+        background: #00695C
       .node-link
         display: flex
         flex-direction: column

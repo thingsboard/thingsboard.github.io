@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Create relation node
-description: Create relation node node
+description: Create relation node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

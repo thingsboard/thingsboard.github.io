@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: RPC call request node
-description: RPC call request node node
+description: RPC call request node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

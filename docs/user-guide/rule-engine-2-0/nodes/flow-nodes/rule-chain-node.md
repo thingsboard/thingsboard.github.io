@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Rule Chain node
 description: Rule Chain node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

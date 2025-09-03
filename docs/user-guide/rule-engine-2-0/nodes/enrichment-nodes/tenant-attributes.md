@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Tenant attributes
 description: Tenant attributes node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

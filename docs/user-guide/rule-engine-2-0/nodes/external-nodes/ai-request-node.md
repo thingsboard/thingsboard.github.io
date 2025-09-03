@@ -2,6 +2,8 @@
 layout: docwithnav
 title: AI request node
 description: AI request node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

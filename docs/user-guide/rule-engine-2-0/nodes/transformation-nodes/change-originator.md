@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Change originator
 description: Change originator node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

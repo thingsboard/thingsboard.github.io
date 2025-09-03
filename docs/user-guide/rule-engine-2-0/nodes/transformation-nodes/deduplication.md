@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Deduplication
 description: Deduplication node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

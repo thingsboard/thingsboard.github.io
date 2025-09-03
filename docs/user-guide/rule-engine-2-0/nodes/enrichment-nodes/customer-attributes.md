@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Customer attributes
 description: Customer attributes node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

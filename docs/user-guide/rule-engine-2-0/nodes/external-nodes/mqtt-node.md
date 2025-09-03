@@ -2,6 +2,8 @@
 layout: docwithnav
 title: MQTT node
 description: MQTT node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Generator node
-description: Generator node node
+description: Generator node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

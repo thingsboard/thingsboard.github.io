@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Clear alarm node
-description: Clear alarm node node
+description: Clear alarm node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

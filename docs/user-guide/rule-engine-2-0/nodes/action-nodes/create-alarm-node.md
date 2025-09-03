@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Create alarm node
-description: Create alarm node node
+description: Create alarm node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

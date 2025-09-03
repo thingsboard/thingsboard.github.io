@@ -2,6 +2,8 @@
 layout: docwithnav
 title: REST API call node
 description: REST API call node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

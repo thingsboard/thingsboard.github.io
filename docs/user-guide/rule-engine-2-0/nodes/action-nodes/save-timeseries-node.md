@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Save timeseries node
-description: Save timeseries node node
+description: Save timeseries node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

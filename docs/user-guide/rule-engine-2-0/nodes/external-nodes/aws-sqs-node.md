@@ -2,6 +2,8 @@
 layout: docwithnav
 title: AWS SQS node
 description: AWS SQS node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

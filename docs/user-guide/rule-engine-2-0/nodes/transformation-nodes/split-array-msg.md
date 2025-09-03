@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Split array msg
 description: Split array msg node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Copy to view node
-description: Copy to view node node
+description: Copy to view node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Integration downlink node
-description: Integration downlink node node
+description: Integration downlink node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

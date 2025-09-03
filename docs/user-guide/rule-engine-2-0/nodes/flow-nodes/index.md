@@ -3,6 +3,8 @@ layout: docwithnav
 title: Flow Nodes
 description: Rule Engine 2.0 Flow Nodes
 hidetoc: "true"
+breadcrumbs: "true"
+breadcrumbs-steps: "1"
 redirect_from:
   - "/docs/user-guide/rule-engine-2-0/flow-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"

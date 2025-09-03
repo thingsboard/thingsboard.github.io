@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Duplicate to related
 description: Duplicate to related node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

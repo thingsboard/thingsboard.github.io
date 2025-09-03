@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Copy key-value pairs
 description: Copy key-value pairs node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

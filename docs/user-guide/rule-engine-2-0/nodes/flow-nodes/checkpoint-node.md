@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Checkpoint node
 description: Checkpoint node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

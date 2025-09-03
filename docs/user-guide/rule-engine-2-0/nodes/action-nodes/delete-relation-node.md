@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Delete relation node
-description: Delete relation node node
+description: Delete relation node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

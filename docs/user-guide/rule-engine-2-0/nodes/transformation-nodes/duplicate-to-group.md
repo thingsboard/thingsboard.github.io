@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Duplicate to group
 description: Duplicate to group node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

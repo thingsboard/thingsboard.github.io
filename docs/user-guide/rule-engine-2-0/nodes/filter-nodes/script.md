@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Script
 description: Script node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---

@@ -12,6 +12,9 @@
                     <p>{{ node.description }}</p>
                 </div>
             </a>
+            {% if node.pe-only == true %}
+                <span class="pe-only-banner">PE Only</span>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>

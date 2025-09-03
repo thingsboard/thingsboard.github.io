@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Send notification node
 description: Send notification node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

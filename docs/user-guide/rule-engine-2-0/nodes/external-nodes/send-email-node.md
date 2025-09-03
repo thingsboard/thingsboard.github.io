@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Send email Node
 description: Send email Node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

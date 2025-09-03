@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Log node
-description: Log node node
+description: Log node 
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

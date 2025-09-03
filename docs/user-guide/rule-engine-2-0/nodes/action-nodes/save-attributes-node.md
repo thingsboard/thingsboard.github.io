@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Save attributes node
-description: Save attributes node node
+description: Save attributes node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

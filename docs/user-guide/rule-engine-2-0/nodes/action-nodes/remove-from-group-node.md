@@ -1,7 +1,9 @@
 ---
 layout: docwithnav
 title: Remove from group node
-description: Remove from group node node
+description: Remove from group  
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 

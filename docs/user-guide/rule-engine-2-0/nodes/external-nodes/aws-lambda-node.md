@@ -2,6 +2,8 @@
 layout: docwithnav
 title: AWS lambda node
 description: AWS lambda node node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 ---
 
