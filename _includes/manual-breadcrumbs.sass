@@ -1,0 +1,23 @@
+#docs
+    .breadcrumbs
+        margin: 0 0 20px
+        padding-left: 0
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        .breadcrumbs-item
+            display: flex
+            align-items: center
+            gap: 10px
+            margin-right: 10px
+        .breadcrumbs-item, .breadcrumbs-item a
+            list-style: none
+            font-size: 16px
+            font-weight: 400
+            line-height: 28px
+            color: rgba(0, 0, 0, 0.54)
+            &:hover
+                text-decoration: none
+                color: rgba(0, 0, 0, 0.76)
+            &.current-page
+                color: rgba(0, 0, 0, 0.76)

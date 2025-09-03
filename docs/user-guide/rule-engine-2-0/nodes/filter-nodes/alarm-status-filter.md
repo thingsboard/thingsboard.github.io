@@ -2,6 +2,8 @@
 layout: docwithnav
 title: Alarm status filter
 description: Alarm status filter node
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
 hidetoc: "true"
 
 ---
