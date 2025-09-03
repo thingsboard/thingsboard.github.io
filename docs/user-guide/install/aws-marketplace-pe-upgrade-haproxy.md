@@ -3,6 +3,7 @@ layout: docwithnav
 title: Upgrading HAProxy Load Balancer for ThingsBoard PE from AWS Marketplace
 description: Upgrading HAProxy Load Balancer for ThingsBoard PE from AWS Marketplace
 hidetoc: "true"
+redirect_to: /docs/user-guide/install/pe/add-haproxy-ubuntu/
 ---
 
 This guide describes how to remove dockerized version of HAProxy Load Balancer and install HAProxy with Let's Encrypt
