@@ -82,7 +82,7 @@ It is free for both personal and commercial usage and you can deploy it anywhere
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
 Yes, this feature is part of the [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface) functionality.
 {% else %}  
-As ThingsBoard Community edition is distributed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0), one is prohibited from removing ThingsBoard TM elements (logo, registered trademark, imprint) as well as hiding authorship.
+As ThingsBoard Community Edition is distributed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0), one is prohibited from removing ThingsBoard TM elements (logo, registered trademark, imprint) as well as hiding authorship. If you need to customize the logo, this feature is available in the Professional Edition as part of the [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface) functionality.
 {% endif %}
 
 ## How to get support?
