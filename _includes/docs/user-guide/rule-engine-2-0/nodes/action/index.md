@@ -1,0 +1,30 @@
+- [assign to customer](/docs/user-guide/rule-engine-2-0/nodes/action/assign-to-customer) — Assign Message Originator Entity to Customer.
+- [add to group](/docs/user-guide/rule-engine-2-0/nodes/action/add-to-group) — Adds Message Originator Entity to Entity Group.
+- [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields) — This node is used to trigger calculated field processing without storing the incoming telemetry in the database. By default, the processing of calculated fields are triggered by the save attributes and save time series nodes.
+- [change owner](/docs/user-guide/rule-engine-2-0/nodes/action/change-owner) — Changes Owner of the Originator entity to the selected Owner by type.
+- [clear alarm](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm) — This Node loads the latest Alarm with configured Alarm Type for Message Originator and Clear the Alarm if it exist.
+- [copy to view](/docs/user-guide/rule-engine-2-0/nodes/action/copy-to-view) — Copy attributes from asset/device to related entity view according to entity view configuration. 
+- [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — Copy attributes from asset/device to related entity view according to entity view configuration.
+- [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — Create the relation from the selected entity to originator of the message by type and direction.
+- [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — Delays incoming messages for configurable period.
+- [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — Delete attributes for Message Originator.
+- [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — Delete the relation from the selected entity to originator of the message by type and direction.
+- [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile.
+- [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — Triggers device connectivity events.
+- [generate report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-report) — Generates report files by capturing target dashboard with specific configuration.
+- [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — Generates Messages with configurable period. JavaScript function is used for message generation.
+- [gps geofencing events](/docs/user-guide/rule-engine-2-0/nodes/action/gps-geofencing-events) — Produces incoming messages by GPS based parameters.
+- [integration downlink](/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink) — Forwards Message to selected Integration as downlink message.
+- [log](/docs/user-guide/rule-engine-2-0/nodes/action/log) — Transform incoming Message with configured JavaScript function to String and log final value into the Thingsboard log file.
+- [math function](/docs/user-guide/rule-engine-2-0/nodes/action/math-function) — The rule node applies math function and saves the result into the message and/or database.
+- [message count](/docs/user-guide/rule-engine-2-0/nodes/action/message-count) — Counts incoming messages for specified interval and produces POST_TELEMETRY_REQUEST msg with messages count.
+- [push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud) — Sends messages from the edge instance to the cloud platform.
+- [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — Sends messages from the cloud platform to an edge instance.
+- [remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group) — Removes Message Originator Entity from Entity Group.
+- [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — Sends reply to REST API call that was originally sent to rule engine.
+- [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply) — Sends response to the RPC Call originator.
+- [rpc call request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request) — Sends RPC requests to the Device and routing response to the next Rule nodes.
+- [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — Stores the incoming message payload as attribute data of the message originator.
+- [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries) — Stores the incoming message payload as time series data of the message originator.
+- [save to custom table](/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table) — Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have cs_tb_ prefix, to avoid the data insertion to the common TB tables.
+- [unassign from customer](/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer) — Unassign Message Originator Entity from Customer.

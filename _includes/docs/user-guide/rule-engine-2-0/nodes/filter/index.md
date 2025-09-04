@@ -1,0 +1,12 @@
+- [alarm status filter](/docs/user-guide/rule-engine-2-0/nodes/filter/alarm-status-filter) — Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/alarms/) statuses.
+- [asset profile switch](/docs/user-guide/rule-engine-2-0/nodes/filter/asset-profile-switch) — Routes incoming messages based on the name of the asset profile. The asset profile name is case-sensitive.
+- [check fields presence](/docs/user-guide/rule-engine-2-0/nodes/filter/check-fields-presence) — Checks the presence of the specified fields in the message and/or metadata.
+- [check relation presence](/docs/user-guide/rule-engine-2-0/nodes/filter/check-relation-presence) — Checks the presence of the [relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the message originator and other entities.
+- [device profile switch](/docs/user-guide/rule-engine-2-0/nodes/filter/device-profile-switch) — Routes incoming messages based on the name of the device profile. The device profile name is case-sensitive.
+- [entity type filter](/docs/user-guide/rule-engine-2-0/nodes/filter/entity-type-filter) — Filters incoming messages by type of message originator entity.
+- [entity type switch](/docs/user-guide/rule-engine-2-0/nodes/filter/entity-type-switch) — Routes incoming messages based on the entity type of the message originator.
+- [gps geofencing filter](/docs/user-guide/rule-engine-2-0/nodes/filter/gps-geofencing-filter) — Filters incoming messages by GPS-based geofencing.
+- [message type filter](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-filter) — Filters incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types.
+- [message type switch](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-switch) — Routes incoming messages by the message type value.
+- [script](/docs/user-guide/rule-engine-2-0/nodes/filter/script) — Evaluates boolean function using incoming message. The function may be written using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or plain JavaScript.
+- [switch](/docs/user-guide/rule-engine-2-0/nodes/filter/switch) — Routes incoming message to one or multiple output connections.

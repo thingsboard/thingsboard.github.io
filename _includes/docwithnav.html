@@ -133,6 +133,9 @@
           {% endif %}
       </div>
       <div id="top-spacer"></div>
+      {% if page.breadcrumbs %}
+      {% include manual-breadcrumbs.liquid %}
+      {% endif %}
       {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
       <div id="content">
           {{ content }}

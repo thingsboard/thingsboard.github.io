@@ -13,11 +13,11 @@ how-to-import-dashboard:
 
 internal-monitoring-main:
   0:
-    image: /
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/internal-monitoring-main-pe.webp
 
 internal-monitoring-details:
   0:
-    image: /
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/internal-monitoring-details-pe.webp
 
 ---
 
