@@ -66,7 +66,7 @@ authentication modes.
 ### Server
 
 This subsection specifies the target OPC-UA server and how the gateway interacts with it. It includes the server’s 
-URL, name, timeout settings, scan intervals, and the option to use either subscriptions or polling to monitor 
+URL, timeout settings, scan intervals, and the option to use either subscriptions or polling to monitor 
 data nodes.
 
 {% include /templates/iot-gateway/opcua-connector/opcua-basic-section.md %}
@@ -92,7 +92,7 @@ report strategy:
   - **Type** - type of the report strategy:
     - **On report period** - sends data to ThingsBoard after the report period;
     - **On value change** - sends data to ThingsBoard when the value changes;
-    - **On value change and report period** - sends data to ThingsBoard when the value changes or after the report
+    - **On value change or report period** - sends data to ThingsBoard when the value changes or after the report
       period;
     - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 

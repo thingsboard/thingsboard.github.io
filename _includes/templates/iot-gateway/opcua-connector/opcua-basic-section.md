@@ -1,6 +1,6 @@
 This configuration section contains settings of the OPC-UA server connection, such as:
 - **Server endpoint url** - hostname or ip address of OPC-UA server;
-- **Timeout in milliseconds** - timeout in seconds for connecting to OPC-UA server;
+- **Timeout in milliseconds** - timeout in milliseconds for connecting to OPC-UA server;
 - **Security policy** - security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**);
 - **Scan period in milliseconds** - period in milliseconds to rescan the server;
 - **Poll period** - period in milliseconds to poll the server;
