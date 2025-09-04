@@ -123,6 +123,27 @@ Execute the following command to delete all resources (including database):
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/k8s/minikube/backup-restore/README.md).
 
+### Upgrade to 2.2.0
+
+In this release, the MQTT authentication mechanism was migrated from YAML/env configuration into the database.
+During upgrade, TBMQ needs to know which authentication providers are enabled in your deployment.
+This information is provided through environment variables passed to the **upgrade pod**.
+
+The upgrade script requires a file named **`database-setup.yml`** that explicitly defines these variables.
+Environment variables from your `tb-broker.yml` file are not applied during the upgrade — only the values in `database-setup.yml` will be used.
+
+> **Tips**
+> If you use only Basic authentication, set `SECURITY_MQTT_SSL_ENABLED=false`.
+> If you use only X.509 authentication, set `SECURITY_MQTT_BASIC_ENABLED=false` and `SECURITY_MQTT_SSL_ENABLED=true`.
+
+**Supported variables**
+
+* `SECURITY_MQTT_BASIC_ENABLED` (`true|false`)
+* `SECURITY_MQTT_SSL_ENABLED` (`true|false`)
+* `SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT` (`true|false`) — usually `false`.
+
+Once the file is prepared and the values verified, proceed with the [upgrade process](#run-upgrade).
+
 ### Upgrade to 2.1.0
 
 {% include templates/mqtt-broker/upgrade/update-to-2.1.0-release-cluster.md %}

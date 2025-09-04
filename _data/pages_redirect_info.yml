@@ -245,9 +245,15 @@
 "/docs/user-guide/install/kubernetes/":
   url: "/docs/user-guide/install/cluster/aws-eks-setup/"
   redirect_from: "/docs/user-guide/install/kubernetes/"
+"/docs/user-guide/install/aws-marketplace-pe-upgrade-haproxy/":
+  url: "/docs/user-guide/install/pe/add-haproxy-ubuntu/"
+  redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade-haproxy/"
 "/docs/user-guide/install/aws-marketplace-pe/":
   url: "/docs/user-guide/install/pe/aws-marketplace/"
   redirect_from: "/docs/user-guide/install/aws-marketplace-pe/"
+"/products/thingsboard-pe/aws":
+  url: "/docs/user-guide/install/pe/aws-marketplace/"
+  redirect_from: "/products/thingsboard-pe/aws"
 "/docs/user-guide/install/pe/docker-cassandra/":
   url: "/docs/user-guide/install/pe/cluster/docker-compose-setup/"
   redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"
@@ -350,6 +356,9 @@
 "/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
   redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/user-guide/install/aws-marketplace-pe-upgrade/":
+  url: "/docs/user-guide/install/pe/upgrade-instructions/"
+  redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/queue":
   url: "/docs/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/user-guide/queue"

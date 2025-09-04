@@ -3,6 +3,8 @@ layout: docwithnav
 title: Install HAProxy Load Balancer for ThingsBoard on Ubuntu
 description: Install HAProxy Load Balancer for ThingsBoard on Ubuntu
 hidetoc: "true"
+redirect_from:
+  - "/docs/user-guide/install/aws-marketplace-pe-upgrade-haproxy/"
 ---
 
 This guide describes how to install HAProxy with Let's Encrypt

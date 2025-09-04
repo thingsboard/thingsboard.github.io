@@ -8,6 +8,64 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v2.2.0 (September 1, 2025)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#232](https://github.com/thingsboard/tbmq/pull/232) **Core & UI**: MQTT authentication providers and JWT authentication by @ShvaykaD and @deaflynx;
+* [#226](https://github.com/thingsboard/tbmq/pull/226) **Core & UI**: Blocked clients by @dmytro-landiak and @deaflynx;
+* [#208](https://github.com/thingsboard/tbmq/pull/208), [#212](https://github.com/thingsboard/tbmq/pull/212) **Core**: MQTT channel backpressure handling by @dmytro-landiak;
+* [#209](https://github.com/thingsboard/tbmq/pull/209) **Core & UI**: Service info monitoring by @dmytro-landiak and @deaflynx.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#214](https://github.com/thingsboard/tbmq/pull/214), [#221](https://github.com/thingsboard/tbmq/pull/221) Strategies of message delivery for MQTT clients by @dmytro-landiak;
+  * [#223](https://github.com/thingsboard/tbmq/pull/223) Health endpoint by @dmytro-landiak;
+  * [#234](https://github.com/thingsboard/tbmq/pull/234) Controllers refactoring by @dmytro-landiak;
+  * [#236](https://github.com/thingsboard/tbmq/pull/236) Filter sensitive data in API response by @dmytro-landiak;
+  * [#243](https://github.com/thingsboard/tbmq/pull/243) Vulnerability fixes by @dmytro-landiak;
+  * [#246](https://github.com/thingsboard/tbmq/pull/246) Monitoring metrics improvements by @dmytro-landiak;
+  * [#247](https://github.com/thingsboard/tbmq/pull/247) Change third-party repositories to bitnamilegacy by @dmytro-landiak.
+
+* UI:
+
+  * [#210](https://github.com/thingsboard/tbmq/pull/210) Monitoring charts updates by @deaflynx;
+  * [#219](https://github.com/thingsboard/tbmq/pull/219) Updated form fields style by @deaflynx;
+  * [#220](https://github.com/thingsboard/tbmq/pull/220) Topics autocomplete by @deaflynx;
+  * [#241](https://github.com/thingsboard/tbmq/pull/241) Update locales by @deaflynx;
+  * [#244](https://github.com/thingsboard/tbmq/pull/244) Grouping of topic filters for Integrations by @deaflynx;
+  * [7709ef0](https://github.com/thingsboard/tbmq/commit/7709ef0c5b7a4fee1930c895dfaf7f21f3fdaa87) Users table: added login button;
+  * [a9d3fc3](https://github.com/thingsboard/tbmq/commit/a9d3fc313412d4ea897063ac9e9356fbd5269eb1) MQTT client credentials: added Description field.
+
+**Bug fixes:**
+
+* Core:
+
+  * [#239](https://github.com/thingsboard/tbmq/pull/239) Verify client certificate chain during TLS handshake by requesting or requiring client authentication by @dmytro-landiak;
+  * [#229](https://github.com/thingsboard/tbmq/issues/229) Fix handling of QoS 0 publish messages for integration subscriptions by @dmytro-landiak;
+  * [#246](https://github.com/thingsboard/tbmq/pull/246) Monitoring metrics race condition fix by @dmytro-landiak.
+
+* UI:
+
+  * [cc35837](https://github.com/thingsboard/tbmq/commit/cc358379bff2470c6d863a0ae507d3cb54488c22) Fixed animation bug in the Apply changes button in entity form (Firefox);
+  * [eaaebc7](https://github.com/thingsboard/tbmq/commit/eaaebc71560748c092cb5b53cc4bb7525296fbae) Fixed retrieving correct topics when switching between integrations.
+
+**Removal Notice: Obsolete Environment Variables**
+
+As of **TBMQ v2.2.0**, the following environment variables are **deprecated and no longer required**:
+
+* `SECURITY_MQTT_AUTH_STRATEGY`
+* `SECURITY_MQTT_BASIC_ENABLED`
+* `SECURITY_MQTT_SSL_ENABLED`
+* `SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT`
+
+These variables were replaced by the new configuration options introduced in [#232](https://github.com/thingsboard/tbmq/pull/232).
+You may safely remove them from your environment after upgrading.
+
 ## v2.1.0 (April 29, 2025)
 
 Minor release with the following features, improvements, and bug fixes.

@@ -862,6 +862,15 @@
 "/docs/mqtt-broker/mqtt-client-credentials-management/":
   url: "/docs/mqtt-broker/mqtt-client-credentials-management/"
   redirect_from: []
+"/docs/mqtt-broker/other/blocked-client/":
+  url: "/docs/mqtt-broker/other/blocked-client/"
+  redirect_from: []
+"/docs/mqtt-broker/other/health/":
+  url: "/docs/mqtt-broker/other/health/"
+  redirect_from: []
+"/docs/mqtt-broker/other/msg-delivery-strategy/":
+  url: "/docs/mqtt-broker/other/msg-delivery-strategy/"
+  redirect_from: []
 "/docs/mqtt-broker/other/proxy-protocol/":
   url: "/docs/mqtt-broker/other/proxy-protocol/"
   redirect_from: []
@@ -886,14 +895,38 @@
 "/docs/mqtt-broker/search/":
   url: "/docs/mqtt-broker/search/"
   redirect_from: []
-"/docs/mqtt-broker/security/":
-  url: "/docs/mqtt-broker/security/"
+"/docs/mqtt-broker/security/authentication/basic/":
+  url: "/docs/mqtt-broker/security/authentication/basic/"
+  redirect_from: []
+"/docs/mqtt-broker/security/authentication/jwt/":
+  url: "/docs/mqtt-broker/security/authentication/jwt/"
+  redirect_from: []
+"/docs/mqtt-broker/security/authentication/scram/":
+  url: "/docs/mqtt-broker/security/authentication/scram/"
+  redirect_from: []
+"/docs/mqtt-broker/security/authentication/x509/":
+  url: "/docs/mqtt-broker/security/authentication/x509/"
+  redirect_from: []
+"/docs/mqtt-broker/security/https/":
+  url: "/docs/mqtt-broker/security/https/"
+  redirect_from: []
+"/docs/mqtt-broker/security/listeners/":
+  url: "/docs/mqtt-broker/security/listeners/"
+  redirect_from: []
+"/docs/mqtt-broker/security/mqtts/":
+  url: "/docs/mqtt-broker/security/mqtts/"
+  redirect_from: []
+"/docs/mqtt-broker/security/overview/":
+  url: "/docs/mqtt-broker/security/overview/"
   redirect_from: []
 "/docs/mqtt-broker/subscription/":
   url: "/docs/mqtt-broker/subscription/"
   redirect_from: []
 "/docs/mqtt-broker/troubleshooting/":
   url: "/docs/mqtt-broker/troubleshooting/"
+  redirect_from: []
+"/docs/mqtt-broker/user-guide/backpressure/":
+  url: "/docs/mqtt-broker/user-guide/backpressure/"
   redirect_from: []
 "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
   url: "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
@@ -4506,12 +4539,6 @@
 "/docs/user-guide/install/alibaba-cloud/":
   url: "/docs/user-guide/install/alibaba-cloud/"
   redirect_from: []
-"/docs/user-guide/install/aws-marketplace-pe-upgrade-haproxy/":
-  url: "/docs/user-guide/install/aws-marketplace-pe-upgrade-haproxy/"
-  redirect_from: []
-"/docs/user-guide/install/aws-marketplace-pe-upgrade/":
-  url: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
-  redirect_from: []
 "/docs/user-guide/install/aws/":
   url: "/docs/user-guide/install/aws/"
   redirect_from: []
@@ -4642,7 +4669,8 @@
   redirect_from: []
 "/docs/user-guide/install/pe/add-haproxy-ubuntu/":
   url: "/docs/user-guide/install/pe/add-haproxy-ubuntu/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/install/aws-marketplace-pe-upgrade-haproxy/"
 "/docs/user-guide/install/pe/alibaba-cloud/":
   url: "/docs/user-guide/install/pe/alibaba-cloud/"
   redirect_from: []
@@ -4650,6 +4678,7 @@
   url: "/docs/user-guide/install/pe/aws-marketplace/"
   redirect_from:
   - "/docs/user-guide/install/aws-marketplace-pe/"
+  - "/products/thingsboard-pe/aws"
 "/docs/user-guide/install/pe/aws/":
   url: "/docs/user-guide/install/pe/aws/"
   redirect_from: []
@@ -4800,7 +4829,8 @@
   redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/install/pe/vc-executor-config/":
   url: "/docs/user-guide/install/pe/vc-executor-config/"
   redirect_from: []
