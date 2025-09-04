@@ -76,28 +76,7 @@ toc:
     - title: Queues
       path: /docs/user-guide/rule-engine-2-5/queues/
     - title: Nodes
-      section:
-        - title: Filter nodes
-          path: /docs/user-guide/rule-engine-2-0/filter-nodes/
-        - title: Enrichment nodes
-          path: /docs/user-guide/rule-engine-2-0/enrichment-nodes/
-        - title: Transformation nodes
-          path: /docs/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action nodes
-          path: /docs/user-guide/rule-engine-2-0/action-nodes/
-        - title: External nodes
-          path: /docs/user-guide/rule-engine-2-0/external-nodes/
-        - title: Flow nodes
-          path: /docs/user-guide/rule-engine-2-0/flow-nodes/
-    - title: PE Nodes
-      pe: true
-      section:
-        - title: Transformation nodes
-          path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action nodes
-          path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
-        - title: Analytics nodes
-          path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
+      path: /docs/user-guide/rule-engine-2-0/nodes/
     - title: Data processing & actions
       section:
         - title: Validate incoming telemetry
