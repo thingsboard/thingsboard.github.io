@@ -1299,8 +1299,8 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             class="gtm_form developmentServicesContactUsForm">
                             <div class="form-section">
                                 <div class="form-element">
-                                    <label for="first-name">
-                                        <input id="first-name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                                    <label for="name">
+                                        <input id="name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
                                         <p>Name*</p>
                                     </label>
                                 </div>
@@ -1405,14 +1405,14 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div class="sub-content">
                 <div class="form-section">
                     <div class="form-element">
-                        <label for="first-name">
-                            <input id="first-name-popup" class="form-control cdu-form-control" value="" placeholder="Your Name" name="first-name-popup" type="text" size="40" maxlength="50">
+                        <label for="name">
+                            <input id="name" class="form-control cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
                             <p>Name*</p>
                         </label>
                     </div>
                     <div class="form-element">
                         <label for="email">
-                            <input id="email-popup" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email-popup" type="email" size="40" maxlength="80">
+                            <input id="email" class="form-control cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
                             <p>Email Address*</p>
                         </label>
                     </div>
@@ -2034,8 +2034,8 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     })();
 
     function validateContactForm(form) {
-        var name = $('input[name=first-name]', form).val() || $('input[name=first-name-popup]', form).val();
-        var email = $('input[name=email]', form).val() || $('input[name=email-popup]', form).val();
+        var name = $('input[name=name]', form).val();
+        var email = $('input[name=email]', form).val();
 
         if (!validateValue('Name', name)) {
             return false;
