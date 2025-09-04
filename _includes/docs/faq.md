@@ -77,6 +77,14 @@ The data is stored in [Cassandra](https://cassandra.apache.org/) database. Cassa
 ThingsBoard is licensed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0).
 It is free for both personal and commercial usage and you can deploy it anywhere.
 
+## Can I change the logo in ThingsBoard?
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+Yes, this feature is part of the [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface) functionality.
+{% else %}  
+As ThingsBoard Community edition is distributed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0), one is prohibited from removing ThingsBoard TM elements (logo, registered trademark, imprint) as well as hiding authorship.
+{% endif %}
+
 ## How to get support?
 
 You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/services/) we provide.
