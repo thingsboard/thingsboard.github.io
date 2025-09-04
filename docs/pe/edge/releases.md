@@ -8,6 +8,13 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v4.2.0 (Sep 4, 2025) {#v42}
+
+**Major** release with everything from [TB Edge v4.2.0](/docs/edge/releases/#v42){: target="_blank"}, and [TB PE v4.2.0](/docs/pe/reference/releases/#v42){: target="_blank"}.
+
+**Improvements**
+* Added support for syncing Secret and EncryptionKey to Edge.
+
 ## v4.1.0 (July 28, 2025) {#v41}
 
 **Major** release with everything from [TB Edge v4.1.0](/docs/edge/releases/#v41){: target="_blank"}, and [TB PE v4.1.0](/docs/pe/reference/releases/#v41){: target="_blank"}.
