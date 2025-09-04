@@ -60,15 +60,14 @@ To view only your dashboards, disable the "Include customer entities" option.
 
 Before starting working with a dashboard, get familiar with its interface to understand which features are responsible for what actions.
 
-The dashboard toolbar allows you to manage
-[states](/docs/{{docsPrefix}}user-guide/dashboards/#states),
+The dashboard toolbar allows you to 
+[add new widgets](#add-new-widget),
+manage [states](/docs/{{docsPrefix}}user-guide/dashboards/#states),
 [layouts](/docs/{{docsPrefix}}user-guide/dashboards/#layouts),
 [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings),
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases),
 [filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters),
-[version control](/docs/{{docsPrefix}}user-guide/version-control/),
-configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window),
-[enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
+[version control](/docs/{{docsPrefix}}user-guide/version-control/), {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}[generate report from dashboard, ](/docs/pe/user-guide/dashboards/#generate-report-from-dashboard){% endif %}and configure [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) using the corresponding icons in the toolbar.
 
 Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" modes.
 You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings).
@@ -368,6 +367,29 @@ For the state to be named after the entity, use **${entityName}** as the name of
 
 {% include images-gallery.html imageCollection="states-entity-name" %}
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+### Generate report from dashboard
+
+A Tenant Administrator or Customer User can **generate a report** from the currently opened dashboard in **PDF**, **PNG**, or **JPEG** format.
+- Click the "**Export Dashboard**" button, located on the right side of the dashboard toolbar.
+
+<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-1-pe.png"></object>
+
+- In the expanded drop-down menu, select the desired export format. 
+
+<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-2-pe.png"></object>
+
+- The report generation process will start automatically.
+
+<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-3-pe.png"></object>
+
+And finally, the report file will be automatically downloaded and saved to your PC.
+
+**Generate dashboard report by schedule**
+
+Report generation can also be automated on a schedule using the [event scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report){:target="_blank"} with the "**Generate Dashboard Report**" event type.
+{% endif %}
+
 ## Managing dashboard
 
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
@@ -422,10 +444,36 @@ To import a dashboard, follow these steps:
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+### Manage dashboard owner and groups
+
+You can change the <b>dashboard owner</b> to ensure that only users associated with the selected customer have access to the dashboard.
+
+> <b>Note</b>: This step is essential for maintaining strict [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only have access to the data explicitly granted to them.   
+<b>Keep in mind</b> that granting access to a dashboard gives the customer access only to the dashboard itself, <b>not</b> to the data displayed on it. For the widgets to display data, the customer must also be granted access to the corresponding devices or other entities.
+
+<b>Changing the dashboard owner:</b>
+
+- Open the dashboard details by clicking the "<b>pencil</b>" icon in the dashboard list.
+- Click the "<b>Manage owner and groups</b>" button.
+- Select a new dashboard owner from the list. If needed, add the dashboard to an existing group or create a new one. 
+- Confirm the changes to update the owner information.
+
+In the <b>"Customer name" column</b>, you can see the current owner of the dashboard.
+
+> <b>Note</b>: A Tenant Administrator always has the right to reassign or revoke dashboard ownership.
+
+{% include images-gallery.html imageCollection="dashboard-manage-owner-and-groups" %}
+
+#### Include customer entities
+
+The "<b>Include customer entities</b>" option on the "<b>Dashboards</b>" page determines whether dashboards owned by customers are shown or hidden in the list.
+
+{% include images-gallery.html imageCollection="include-customer-dashboards" showListImageTitles="true" %}
+
 ### Share dashboard group
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role.
-Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
+Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}.
 
 To share a dashboard group, follow these steps:
 

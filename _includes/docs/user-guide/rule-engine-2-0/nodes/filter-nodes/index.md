@@ -1,0 +1,13 @@
+
+- [Alarm status filter](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/alarm-status-filter) — Filters messages based on the specified [alarm](/docs/{{docsPrefix}}user-guide/alarms/) statuses.
+- [Asset profile switch](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/asset-profile-switch) — Routes incoming messages based on the name of the asset profile. The asset profile name is case-sensitive.
+- [Check fields presence](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/check-fields-presence) — Checks the presence of the specified fields in the message and/or metadata.
+- [Check relation presence](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/check-relation-presence) — Checks the presence of the [relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the message originator and other entities.
+- [Device profile switch](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/device-profile-switch) — Routes incoming messages based on the name of the device profile. The device profile name is case-sensitive.
+- [Entity type filter](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-filter) — Filters incoming messages by type of message originator entity.
+- [Entity type switch](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/entity-type-switch) — Routes incoming messages based on the entity type of the message originator.
+- [GPS geofencing filter](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/gps-geofencing-filter) — Filters incoming messages by GPS-based geofencing.
+- [Message type filter](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-filter) — Filters incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types.
+- [Message type switch](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/message-type-switch) — Routes incoming messages by the message type value.
+- [Script](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/script) — Evaluates boolean function using incoming message. The function may be written using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or plain JavaScript.
+- [Switch](/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/switch) — Routes incoming message to one or multiple output connections.

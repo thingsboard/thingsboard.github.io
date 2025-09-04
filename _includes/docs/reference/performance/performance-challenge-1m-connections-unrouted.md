@@ -139,7 +139,7 @@ Here the docker-compose config
 version: '3.0'
 services:
   cassandra:
-    image: bitnami/cassandra:4.0
+    image: bitnamilegacy/cassandra:4.0
     network_mode: "host"
     restart: "always"
     volumes:
@@ -150,7 +150,7 @@ services:
       MAX_HEAP_SIZE: "12288M"
       JVM_EXTRA_OPTS: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=7199 -Dcom.sun.management.jmxremote.rmi.port=7199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   zookeeper:
-    image: docker.io/bitnami/zookeeper:3.7
+    image: bitnamilegacy/zookeeper:3.7
     network_mode: "host"
     restart: "always"
     volumes:
@@ -160,7 +160,7 @@ services:
       ZOO_ENABLE_ADMIN_SERVER: "no"
       JVMFLAGS: "-Xmx128m -Xms128m -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9199 -Dcom.sun.management.jmxremote.rmi.port=9199  -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
   kafka:
-    image: docker.io/bitnami/kafka:3
+    image: bitnamilegacy/kafka:3
     network_mode: "host"
     restart: "always"
     volumes:

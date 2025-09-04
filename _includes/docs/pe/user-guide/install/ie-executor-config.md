@@ -371,6 +371,18 @@
 			<td> Example of specific consumer properties value per topic</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.consumer-properties-per-topic-inline</td>
+			<td>TB_QUEUE_KAFKA_CONSUMER_PROPERTIES_PER_TOPIC_INLINE</td>
+			<td></td>
+			<td>      tb_rule_engine.sq:
+        - key: max.poll.records
+          value: "${TB_QUEUE_KAFKA_SQ_MAX_POLL_RECORDS:1024}"
+ If you override any default Kafka topic name using environment variables, you must also specify the related consumer properties
+ for the new topic in `consumer-properties-per-topic-inline`. Otherwise, the topic will not inherit its expected configuration (e.g., max.poll.records, timeouts, etc).
+ Format: "topic1:key1=value1,key2=value2;topic2:key=value"
+ Example: "tb_core_modified.notifications:max.poll.records=10;tb_edge_modified:max.poll.records=10,enable.auto.commit=true"</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.other-inline</td>
 			<td>TB_QUEUE_KAFKA_OTHER_PROPERTIES</td>
 			<td></td>
@@ -977,6 +989,31 @@
 </table>
 
 
+##  JSON converter parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>transport.json.type_cast_enabled</td>
+			<td>JSON_TYPE_CAST_ENABLED</td>
+			<td>true</td>
+			<td> Cast String data types to Numeric if possible when processing Telemetry/Attributes JSON</td>
+		</tr>
+		<tr>
+			<td>transport.json.max_string_value_length</td>
+			<td>JSON_MAX_STRING_VALUE_LENGTH</td>
+			<td>0</td>
+			<td> Maximum allowed string value length when processing Telemetry/Attributes JSON (0 value disables string value length check)</td>
+		</tr>
+	</tbody>
+</table>
+
+
 ##  Cache parameters
 
 <table>
@@ -1206,13 +1243,13 @@
 		<tr>
 			<td>redis.pool_config.testOnBorrow</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_BORROW</td>
-			<td>true</td>
+			<td>false</td>
 			<td> Enable/Disable PING command sent when a connection is borrowed</td>
 		</tr>
 		<tr>
 			<td>redis.pool_config.testOnReturn</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_RETURN</td>
-			<td>true</td>
+			<td>false</td>
 			<td> The property is used to specify whether to test the connection before returning it to the connection pool.</td>
 		</tr>
 		<tr>
@@ -1548,8 +1585,8 @@
 	<tbody>
 		<tr>
 			<td>management.endpoints.web.exposure.include</td>
-			<td></td>
-			<td>'${METRICS_ENDPOINTS_EXPOSE:info}'</td>
+			<td>METRICS_ENDPOINTS_EXPOSE</td>
+			<td>info</td>
 			<td> Expose metrics endpoint (use value 'prometheus' to enable prometheus metrics).</td>
 		</tr>
 	</tbody>
@@ -1570,6 +1607,29 @@
 			<td>TB_NOTIFICATION_RULES_DEDUPLICATION_DURATIONS</td>
 			<td>RATE_LIMITS:14400000;</td>
 			<td> Semicolon-separated deduplication durations (in millis) for trigger types. Format: 'NotificationRuleTriggerType1:123;NotificationRuleTriggerType2:456'</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.max_attempts</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_MAX_ATTEMPTS</td>
+			<td>3</td>
+			<td> Maximum number of retransmission attempts allowed.
+ If the attempt count exceeds this value, retransmissions will stop and the pending message will be dropped.</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.initial_delay_millis</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_INITIAL_DELAY_MILLIS</td>
+			<td>5000</td>
+			<td> Base delay (in milliseconds) before the first retransmission attempt, measured from the moment the message is sent.
+ Subsequent delays are calculated using exponential backoff.
+ This base delay is also used as the reference value for applying jitter.</td>
+		</tr>
+		<tr>
+			<td>mqtt.client.retransmission.jitter_factor</td>
+			<td>TB_MQTT_CLIENT_RETRANSMISSION_JITTER_FACTOR</td>
+			<td>0.15</td>
+			<td> Jitter factor applied to the calculated retransmission delay.
+ The actual delay is randomized within a range defined by multiplying the base delay by a factor between (1 - jitter_factor) and (1 + jitter_factor).
+ For example, a jitter_factor of 0.15 means the actual delay may vary by up to ±15% of the base delay.</td>
 		</tr>
 	</tbody>
 </table>

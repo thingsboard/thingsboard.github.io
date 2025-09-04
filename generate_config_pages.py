@@ -160,6 +160,8 @@ if __name__ == '__main__':
                     "_includes/docs/pe/user-guide/install/vc-executor-config.md")
         update_page(tb_repo_abs_path + "/integration/executor/src/main/resources/tb-integration-executor.yml",
                     "_includes/docs/pe/user-guide/install/ie-executor-config.md")
+        update_page(tb_repo_abs_path + "/report/src/main/resources/tb-report.yml",
+                    "_includes/docs/pe/user-guide/install/report-service-config.md")
     elif tb_repo_type.lower() == "ce":
         update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard.yml",
                     "_includes/docs/user-guide/install/core-rule-engine-config.md")

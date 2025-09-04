@@ -68,9 +68,6 @@
 "/docs/pe/user-guide/ui/entity-views":
   url: "/docs/pe/user-guide/entity-views/"
   redirect_from: "/docs/pe/user-guide/ui/entity-views"
-"/docs/user-guide/reporting/":
-  url: "/docs/pe/user-guide/reporting/"
-  redirect_from: "/docs/user-guide/reporting/"
 "/docs/paas/eu/user-guide/ui/templatization":
   url: "/docs/paas/eu/user-guide/templatization/"
   redirect_from: "/docs/paas/eu/user-guide/ui/templatization"
@@ -170,18 +167,24 @@
 "/docs/user-guide/rbac/":
   url: "/docs/pe/user-guide/rbac/"
   redirect_from: "/docs/user-guide/rbac/"
-"/docs/user-guide/rule-engine-2-0/pe/action-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/action-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/action-nodes"
-"/docs/user-guide/rule-engine-2-0/pe/analytics-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/analytics-nodes"
-"/docs/user-guide/rule-engine-2-0/pe/flow-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/flow-nodes"
-"/docs/user-guide/rule-engine-2-0/pe/transformation-nodes":
-  url: "/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/"
-  redirect_from: "/docs/user-guide/rule-engine-2-0/pe/transformation-nodes"
+"/docs/user-guide/reporting/attaching-report-to-notification/":
+  url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: "/docs/user-guide/reporting/attaching-report-to-notification/"
+"/docs/user-guide/reporting/embedding-dashboards-widgets/":
+  url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
+  redirect_from: "/docs/user-guide/reporting/embedding-dashboards-widgets/"
+"/docs/user-guide/reporting/reporting-getting-started/":
+  url: "/docs/pe/user-guide/reporting/reporting-getting-started/"
+  redirect_from: "/docs/user-guide/reporting/reporting-getting-started/"
+"/docs/user-guide/reporting/reporting-key-concepts/":
+  url: "/docs/pe/user-guide/reporting/reporting-key-concepts/"
+  redirect_from: "/docs/user-guide/reporting/reporting-key-concepts/"
+"/docs/user-guide/reporting/scheduling-reports/":
+  url: "/docs/pe/user-guide/reporting/scheduling-reports/"
+  redirect_from: "/docs/user-guide/reporting/scheduling-reports/"
+"/docs/user-guide/reporting/subreport/":
+  url: "/docs/pe/user-guide/reporting/subreport/"
+  redirect_from: "/docs/user-guide/reporting/subreport/"
 "/docs/pe/user-guide/queue":
   url: "/docs/pe/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/pe/user-guide/queue"
@@ -266,6 +269,87 @@
 "/docs/pe/user-guide/install/installation-options/":
   url: "/docs/user-guide/install/pe/installation-options/"
   redirect_from: "/docs/pe/user-guide/install/installation-options/"
+"/docs/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
+"/docs/user-guide/rule-engine-2-0/enrichment-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/enrichment-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/enrichment-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/enrichment-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/"
+"/docs/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/"
+"/docs/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/filter-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/"
+"/docs/user-guide/rule-engine-2-0/flow-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/flow-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/flow-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/flow-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/flow-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/"
+"/docs/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/paas/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/paas/user-guide/rule-engine-2-0/transformation-nodes/"
+"/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+  redirect_from: "/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/"
 "/docs/user-guide/queue":
   url: "/docs/user-guide/rule-engine-2-5/queues/"
   redirect_from: "/docs/user-guide/queue"

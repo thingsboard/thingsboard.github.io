@@ -5,6 +5,9 @@ toc:
   path: /docs/edge/api/
 - title: Device Connectivity Protocols
   path: /docs/edge/reference/protocols/
+- title: MCP Server
+  new: true
+  path: /docs/edge/reference/mcp-server/
 - title: Device Connectivity APIs
   section:
   - title: MQTT Device API

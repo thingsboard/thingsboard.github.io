@@ -5,6 +5,9 @@ toc:
     path: /docs/paas/api/
   - title: Device Connectivity Protocols
     path: /docs/paas/reference/protocols/
+  - title: MCP Server
+    new: true
+    path: /docs/paas/reference/mcp-server/
   - title: Device Connectivity APIs
     section:
       - title: MQTT Device API
