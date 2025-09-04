@@ -23,7 +23,7 @@ Checks the incoming message’s originator entity type against the configured se
       "description": "Non-empty set of originator entity types to check against.",
       "type": "array",
       "items": {
-        "$ref": "https://schemas.thingsboard.io/pe/4.3.0/entity-type.schema.json"
+        "type": "string"
       },
       "uniqueItems": true,
       "minItems": 1

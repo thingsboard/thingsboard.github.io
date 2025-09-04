@@ -41,7 +41,8 @@ type.
       "description": "When enabled, the relation must match a specific target entity."
     },
     "entityType": {
-      "$ref": "https://schemas.thingsboard.io/pe/4.3.0/entity-type.schema.json"
+      "type": "string",
+      "description": "Type of the entity."
     },
     "entityId": {
       "type": "string",
