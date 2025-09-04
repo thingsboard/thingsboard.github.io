@@ -6,11 +6,11 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node.png)
 
 Produces incoming messages by GPS based parameters. Extracts latitude and longitude from incoming message data or metadata and returns different events based on configuration parameters (geo fence).
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
 
 The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
 
@@ -44,11 +44,11 @@ There are two options of area definition based on the perimeter type:
 
 - Polygon
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)
 
 - Circle
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)
 
 ### Event types
 
@@ -61,7 +61,7 @@ There are 4 types of events managed by geofencing rule node:
 Administrator can configure duration time threshold for reporting inside or outside event. For example, whenever minimal inside time is set to 1 minute the message originator is considered as being inside the perimeter 60 seconds after entering the area.
 Minimal outside time defines whenever message originator is considered as out of the perimeter as well.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-gps-geofencing-event-node-duration-config.png)
 
 **Failure** chain will to be used when:
 

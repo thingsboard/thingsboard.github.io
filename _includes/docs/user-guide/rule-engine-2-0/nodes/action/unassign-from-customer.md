@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node.png)
 
 Unassign Message Originator Entity from [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
 
@@ -16,7 +16,7 @@ Finds target Customer by customer name pattern and then unassign Originator Enti
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-unassign-from-customer-node-configuration.png)
 
 - **Customer name pattern** - can be set direct customer name or pattern can be used, that will be resolved to the real customer name using Message metadata.
 - **Customers cache expiration time** - specifies maximum time interval is seconds allowed to store found customers records. 0 value means that records will never expire.

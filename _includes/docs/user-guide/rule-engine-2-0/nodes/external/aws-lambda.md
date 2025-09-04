@@ -6,17 +6,17 @@
    </thead>
 </table> 
 
-![Node example image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda.png)
+![Node example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda.png)
 
 Node publishes messages to AWS Lambda, a service that lets you run code without provisioning or managing servers. 
 It sends messages using a RequestResponse invocation type. The node uses a pre-configured client and specified function to run.
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node-2-pe.png"></object>
 {% endif %}
 
 Function configuration
@@ -60,7 +60,7 @@ Solution with AWS Lambda node:
 
 By utilizing the AWS Lambda Node in this manner, we can efficiently process and respond to real-time water meter data, leveraging AWS Lambda's capabilities for data processing and anomaly detection.
 
-![Rule chain example image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda-chain.png)
+![Rule chain example image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-lambda-chain.png)
 
 **Published payload** - node will publish message payload to the AWS Lambda. If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload to the AWS Lambda.
 

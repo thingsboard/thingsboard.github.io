@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
 
 Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream. 
 Groups incoming data stream based on originator id of the message (i.e. particular device, asset, customer), 
@@ -25,14 +25,14 @@ Generates 'POST_TELEMETRY_REQUEST' messages with the results of the aggregation 
 Configuration below will calculate average hourly temperature and will persist it within one minute once the hourly interval is ended. 
 In case some delayed telemetry will arrive for the particular interval, the rule node will lookup it from internal cache or from telemetry values.
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config.png)
     
 The results of aggregation will be persisted to the database once per minute. Alternatively you can persist the interval on each new message to avoid any data loss in case of server outage.
 In case devices for some building are not reporting any temperature readings, we can generate default value (zero) for such building on each interval by selecting "Create Intervals automatically" and 
 specifying "Buildings" entity group.    
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)

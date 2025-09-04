@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
 
 Forwards Message to selected [Integration](/docs/{{peDocsPrefix}}user-guide/integrations/) as downlink message.
 
@@ -14,7 +14,7 @@ Message will be pushed to the selected integration downlink queue.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink-config.png)
 
 - **Integration** - target Integration for downlink message processing.
 

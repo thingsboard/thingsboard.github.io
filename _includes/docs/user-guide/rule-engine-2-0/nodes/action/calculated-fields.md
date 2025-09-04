@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-calculated-fields.png)
 
 This node is used to trigger calculated field processing **without storing the incoming telemetry in the database**.
 By default, the processing of calculated fields are triggered by the [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"} and [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} nodes.
@@ -41,5 +41,5 @@ When telemetry message, for example, from the flow meter, enters the rule chain,
 As a result of calculation a new message is generated with the **HVAC controller** as the originator, containing the calculated value.
 This message enters rule chain where the [device profile switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"} node routes it to the **save time series** node to persist the result.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
 

@@ -6,13 +6,13 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt.png)
 
 Publish incoming message payload to the topic of the configured MQTT broker with QoS **AT_LEAST_ONCE**. 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-mqtt-config.png)
 
 - **Topic pattern** - can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>.
 - **Host** - MQTT broker host.

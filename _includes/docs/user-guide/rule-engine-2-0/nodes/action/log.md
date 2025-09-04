@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-log.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-log.png)
 
 Transform incoming Message with configured JavaScript function to String and log final value into the Thingsboard log file.
 
@@ -20,7 +20,7 @@ JavaScript function receive 3 input parameters
 
 Script should return String value.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-log-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-log-config.png)
 
 JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 

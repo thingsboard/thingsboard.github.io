@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node.png)
 
 Assign Message Originator Entity to [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
 
@@ -18,7 +18,7 @@ Will create new Customer if it doesn't exists and **Create new Customer if not e
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-assign-to-customer-node-configuration.png)
 
 - **Customer name pattern** - can be set direct customer name or pattern can be used, that will be resolved to the real customer name using Message metadata.
 - **Create new customer if not exists** - if checked will create new customer if it doesn't exist.

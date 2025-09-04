@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
 
 Removes Message Originator Entity from [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -16,7 +16,7 @@ Finds target Entity Group by group name pattern and then removes Originator Enti
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group-config.png)
 
 - **Group name pattern** - can be set direct group name or pattern can be used, that will be resolved to the real group name using Message metadata.
 - **Groups cache expiration time** - specifies maximum time interval is seconds allowed to store found entity group records. 0 value means that records will never expire.

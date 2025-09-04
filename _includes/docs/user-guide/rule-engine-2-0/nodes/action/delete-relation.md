@@ -7,7 +7,7 @@
 </table> 
 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation.png)
 
 Delete the relation from the selected entity to originator of the message by type and direction.
 
@@ -17,7 +17,7 @@ Finds target Entity by entity name pattern and then delete a relation between Or
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -33,4 +33,4 @@ In other cases Message will be routed via **Success** chain.
 
 > **Note:** Since TB Version 2.3 the rule node has the ability to deletes relation from the originator of the incoming message to the specified entity or to the list of entities based on direction and type by disabling the following checkbox in the rule node configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)

@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-generator.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-generator.png)
 
 Generates Messages with configurable period. JavaScript function is used for message generation.
 
@@ -31,7 +31,7 @@ msgType: new msgType
 }
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-generator-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-generator-config.png)
 
 All fields in resulting object are optional and will be taken from previously generated Message if not specified.
 

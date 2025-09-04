@@ -11,7 +11,7 @@ We recommend enabling debug mode for the rule node.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-sms.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-sms.png)
 
 - **Use system SMS provider settings** - if enabled default SMS Provider Server configured on System level will be used.
 {% unless docsPrefix contains "paas/" %}

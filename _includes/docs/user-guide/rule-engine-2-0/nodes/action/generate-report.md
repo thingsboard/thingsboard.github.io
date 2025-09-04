@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
 
 Generates report files by capturing target dashboard with specific configuration.
 
@@ -24,7 +24,7 @@ used by [**Send Email Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/ext
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-generate-report-config.png)
 
 - **Use system reports server** - if set, [Reports Server](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server) endpoint URL will be taken from system configuration (**thingsboard.yml**).
 - **Reports server endpoint URL** - endpoint URL of [Reports Server](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server).

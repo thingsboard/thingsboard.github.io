@@ -6,17 +6,17 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node.png)
 
 Changes Owner of the Originator entity to the selected Owner by type:
 
 - Tenant
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-tenent-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-tenent-config.png)
 
 - Customer
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-customer-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-customer-config.png)
 
 Rule node finds target Owner by owner name pattern and then change the owner of the originator entity.
 

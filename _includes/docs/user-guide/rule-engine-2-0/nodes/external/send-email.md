@@ -6,14 +6,14 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email.png)
 
 Node sends incoming message using configured Mail Server. This Node works only with messages that where created using 
 [**To Email**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) transformation Node, please connect this Node with **To Email** Node using **Success** chain.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-email-config.png)
 
 - **Use system SMTP settings** - if enabled default Mail Server configured on System level will be used
 - **Protocol** - Mail Server transport protocol: *SMTP* or *SMTPS*

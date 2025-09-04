@@ -6,13 +6,13 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq.png)
 
 Publish incoming message payload to the RabbitMQ.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-rabbitmq-config.png)
 
 - **Exchange name pattern** - the exchange to publish the message to. Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code> .
 - **Routing key pattern** - the routing key. Can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code> .

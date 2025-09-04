@@ -1,4 +1,4 @@
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/gcp-pubsub-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/gcp-pubsub-node.png)
 
 **Publish message to the Google Cloud PubSub.**
 

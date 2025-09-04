@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack.png)
 
 The node create a message based on the incoming data and metadata, and send it via [Slack](https://slack.com/) to a public channel, private channel or direct message.
 If chosen to use system Slack settings, the node will take the Slack API token from system settings. Otherwise, you need to specify the token in the node configuration.
@@ -14,7 +14,7 @@ Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{d
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-send-to-slack-config.png)
 
 - **Message template** - the template for a Slack message; you may optionally reference fields from incoming message data and metadata;
 - **Use system slack settings** - if enabled, the node will take the Slack API token from system settings;

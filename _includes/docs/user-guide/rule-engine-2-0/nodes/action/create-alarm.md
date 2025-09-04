@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
 This Node tries to load the latest Alarm with configured **Alarm Type** for Message Originator.
 If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
@@ -24,20 +24,20 @@ Node Configuration:
 
 -  get alarm type using pattern with fields from message metadata:
 
-   ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
 
 > Note: Since TB Version 2.4.3 the rule node has the ability to:
 
 - filter propagation to parent entities by relation types:
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
 
 **Alarm Details Builder** script used for generating Alarm Details JsonNode. It is useful for storing additional parameters
 inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
 
 **Alarm Details Builder** script should return **details** object.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
 
 - Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br>
 - Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br>

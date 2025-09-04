@@ -16,4 +16,4 @@ Let's assume you have messages with different types processed in one rule chain.
 You may want to split the message flow based on message type.
 See below:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)

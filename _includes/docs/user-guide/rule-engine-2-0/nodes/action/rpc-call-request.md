@@ -6,14 +6,14 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-request.png)
 
 Sends RPC requests to the Device and routing response to the next Rule nodes.
 Message Originator must be a **Device** entity as RPC request can be initiated only to device.
 
 Node configuration has **Timeout** field used to specify timeout waiting for response from device.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-request-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-request-config.png)
 
 Message payload must have correct format for RPC request. It must contains **method** and **params** fields.
 Example:

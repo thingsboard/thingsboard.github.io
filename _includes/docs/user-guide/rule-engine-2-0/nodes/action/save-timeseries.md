@@ -67,9 +67,9 @@ For each of these actions, you can choose from the following **processing strate
 Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
 {% endif %}
 
 - **Basic processing settings** - provide predefined strategies for all actions:
@@ -79,17 +79,17 @@ Processing strategies can be set using either **Basic** or **Advanced processing
       Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
 {% endif %}
 
 - **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-processing-settings-pe.png)
 {% endif %}
 
 When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
@@ -101,9 +101,9 @@ Due to the scenarios described above, the ability to configure each persistence 
 **Configuration: Advanced settings**
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-timeseries-advanced-settings-pe.png)
 {% endif %}
 
 * **Use server timestamp** - if enabled, rule node will use current server time when time series data does not have an explicit timestamp associated with it (**payload format 1** is used). Available since TB Version 3.3.3

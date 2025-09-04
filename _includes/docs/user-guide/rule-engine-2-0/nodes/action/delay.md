@@ -10,7 +10,7 @@ Delays incoming messages for configurable period.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
 
 - **Period in seconds** - specifies the value of the period during which incoming message should be suspended
 - **Maximum pending messages** - specifies the amount of maximum allowed pending messages (queue of suspended messages)

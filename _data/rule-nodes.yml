@@ -1,29 +1,29 @@
 - title: Filter nodes
   description: Filter and route messages based on different conditions
-  img: /images/nodes/node-filter.svg
+  img: https://img.thingsboard.io/nodes/node-filter.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/filter/
 - title: Enrichment nodes
   description: Enrich messages with information stored in DB
-  img: /images/nodes/node-enrichment.svg
+  img: https://img.thingsboard.io/nodes/node-enrichment.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/enrichment/
 - title: Transformation nodes
   description: Modify existing messages or create new ones
-  img: /images/nodes/node-transform.svg
+  img: https://img.thingsboard.io/nodes/node-transform.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/transformation/
 - title: Action nodes
   description: Perform various actions based on configuration and message
-  img: /images/nodes/node-action.svg
+  img: https://img.thingsboard.io/nodes/node-action.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/action/
 - title: External nodes
   description: Interact with external systems
-  img: /images/nodes/node-external.svg
+  img: https://img.thingsboard.io/nodes/node-external.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/external/
 - title: Flow nodes
   description: Control message flow
-  img: /images/nodes/node-flow.svg
+  img: https://img.thingsboard.io/nodes/node-flow.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/flow/
 - title: Analytics nodes
   description: Aggregate data
-  img: /images/nodes/node-analytics.svg
+  img: https://img.thingsboard.io/nodes/node-analytics.svg
   link: /docs/user-guide/rule-engine-2-0/nodes/analytics/
   pe-only: true

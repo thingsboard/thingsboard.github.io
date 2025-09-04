@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply.png)
 
 Sends response to the RPC Call originator. All incoming RPC requests are passed through Rule Chain as Messages.
 Also all RPC requests have request ID field. It is used for mapping requests and responses.
@@ -14,7 +14,7 @@ Message Originator must be a **Device** entity because RPC response is initiated
 
 Node configuration has special request ID field mapping. If the mapping is not specified, **requestId** metadata field is used by default.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-rpc-call-reply-config.png)
 
 RPC request can be received via different transports:
 

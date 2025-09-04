@@ -1,4 +1,4 @@
-![image](/images/user-guide/rule-engine-2-0/nodes/device-state-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-state-1.png)
 
 Triggers device connectivity events.
 If the incoming message originator is a device, this node registers the configured event for that device in the Device State Service, which then sends the appropriate message to the Rule Engine. If the metadata **ts** property is present, it will be used as the event timestamp; otherwise, the message timestamp will be used.
@@ -17,9 +17,9 @@ This node is particularly useful when the device does not use transport protocol
 Configuration:
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-state-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-state-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/device-state-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-state-2-pe.png"></object>
 {% endif %}
 

@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation.png)
 
 Create the relation from the selected entity to originator of the message by type and direction.
 
@@ -26,7 +26,7 @@ Otherwise, only name pattern should be set.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-configuration.png)
 
 - **Direction** - following types are allowed: **From**, **To**.
 - **Relation type** - type of directed connections to message originator entity. Default types **Contains** and **Manages** can be selected from the drop-down list.
@@ -44,8 +44,8 @@ In other cases Message will be routed via **Success** chain.
 
 - remove current relations from the originator of the incoming message based on direction and type:
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-remove-relations.png)
 
 - change the originator of the incoming message to the selected entity and process outboud messages as messages from another entity:
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)

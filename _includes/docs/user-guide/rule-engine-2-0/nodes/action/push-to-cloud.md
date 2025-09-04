@@ -8,7 +8,7 @@
    </thead>
 </table> 
 
-![image](/images/edge/nodes/push-to-cloud.png)
+![image](https://img.thingsboard.io/edge/nodes/push-to-cloud.png)
 
 Push messages from edge to cloud. This node used only on edge to push messages from edge to cloud. Once message arrived into this node it’s going to be converted into cloud event and saved to the local database. Node doesn't push messages directly to cloud, but stores event(s) in the cloud queue.
 Supports next originator types:
@@ -29,7 +29,7 @@ As well node supports next message types:
 
 In case successful storage edge event to database message will be routed via **Success** route.
 
-<object width="70%" data="/images/edge/nodes/push-to-cloud-node-2-edge.png"></object>
+<object width="70%" data="https://img.thingsboard.io/edge/nodes/push-to-cloud-node-2-edge.png"></object>
 
 Message will be routed via **Failure** chain in the following cases:
 - Node was not able to save edge event to database

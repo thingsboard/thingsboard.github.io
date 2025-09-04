@@ -6,17 +6,17 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka.png)
 
 Kafka Node sends messages to Kafka brokers. Expects messages with any message type. Will send record via Kafka producer to Kafka server.
 
 Configuration:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-kafka-config-pe.png)
 {% endif %}
 
 - **Topic pattern** - can be a static string, or pattern that is resolved using Message Metadata properties. For example <code>${deviceType}</code>

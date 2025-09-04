@@ -6,13 +6,13 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs.png)
 
 Node publish messages to the AWS SQS (Amazon Simple Queue Service).
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-aws-sqs-config.png)
 
 - **Queue Type** - SQS queue type. Can be *Standard* or *FIFO*.
 - **Queue URL Pattern** - Pattern for building Queue URL. For example <code>${deviceType}</code>.

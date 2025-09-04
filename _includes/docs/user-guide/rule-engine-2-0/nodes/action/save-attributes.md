@@ -33,9 +33,9 @@ For each of these actions, you can choose from the following **processing strate
 Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-processing-settings-modes-switcher-pe.png)
 {% endif %}
 
 - **Basic processing settings** - provide predefined strategies for all actions:
@@ -45,17 +45,17 @@ Processing strategies can be set using either **Basic** or **Advanced processing
       Effectively, nothing is stored in a database; data is available only in real-time via WebSocket subscriptions.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-basic-processing-settings-options-pe.png)
 {% endif %}
 
 - **Advanced processing settings** - allow you to configure each action’s processing strategy independently.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-processing-settings-pe.png)
 {% endif %}
 
 When configuring the processing strategies in advanced mode, certain combinations can lead to unexpected behavior. Consider the following scenarios:
@@ -67,9 +67,9 @@ Due to the scenarios described above, the ability to configure each persistence 
 **Configuration: Scope**
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-ce.png)
 {% else %}
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-scope-pe.png)
 {% endif %}
 
 The node determines the attribute scope for each incoming message by evaluating the `scope` property in its metadata.
@@ -85,7 +85,7 @@ The supported scope types are **Client attributes**, **Shared attributes**, and 
 
 **Configuration: Advanced settings**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-save-attributes-advanced-settings.png)
 
 * **Save attributes only if the value changes** – if enabled, the node first retrieves the current values for the specified attribute keys and then compares them with the incoming values.
   If an attribute is missing, its value has changed, or its data type differs from what’s stored, it is marked for saving. If no changes are detected, the node skips the save operation.

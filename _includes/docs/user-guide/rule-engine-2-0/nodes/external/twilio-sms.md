@@ -8,13 +8,13 @@
 
 {% assign rulenode = "Twilio SMS" %}{% include templates/pe-rule-node-banner.md %}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms.png)
 
 Sends incoming message payload as SMS message via Twilio service.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/external-nodes/external-twilio-sms-config.png)
 
 - **Phone Number From** - can be set direct phone number as Number From of SMS
                           or pattern can be used, that will be resolved to the real Number From using Message metadata.

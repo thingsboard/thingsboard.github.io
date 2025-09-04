@@ -1,4 +1,4 @@
-![image](/images/user-guide/rule-engine-2-0/nodes/flow-nodes/checkpoint-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/flow-nodes/checkpoint-node.png)
 
 Publish a copy of the message to the selected [rule engine queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/){:target="_blank"}.
 The original message is marked as successfully processed once the target queue acknowledge publish of the copied message. 

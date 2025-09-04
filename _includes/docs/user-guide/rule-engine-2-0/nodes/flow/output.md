@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/flow-nodes/output-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/flow-nodes/output-node.png)
 
 Used in combination with the [rule chain node](#rule-chain-node). Allows to publish result of the message processing to the caller rule chain. 
 The output rule node name corresponds to the [relation](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection){:target="_blank"} type of the output message,

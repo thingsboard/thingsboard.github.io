@@ -1,4 +1,4 @@
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-attributes.png)
 
 **Delete attributes for Message Originator.**
 
@@ -16,8 +16,8 @@ This rule node attempts to delete attributes for the message originator entity (
 Configuration:
 
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/action-delete-attributes-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-attributes-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/action-delete-attributes-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/action-delete-attributes-2-pe.png"></object>
 {% endif %}
