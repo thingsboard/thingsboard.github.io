@@ -13,11 +13,11 @@ how-to-import-dashboard:
 
 internal-monitoring-main:
   0:
-    image: /images/edge/user-guide/troubleshooting/internal-monitoring-main.webp
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/internal-monitoring-main.webp
 
 internal-monitoring-details:
   0:
-    image: /images/edge/user-guide/troubleshooting/internal-monitoring-details.webp
+    image: https://img.thingsboard.io/edge/user-guide/troubleshooting/internal-monitoring-details.webp
 ---
 
 {% assign docsPrefix = "edge/" %}
