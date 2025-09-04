@@ -1,0 +1,4 @@
+- [acknowledge](/docs/user-guide/rule-engine-2-0/nodes/flow/acknowledge) — The node will mark the message as successfully processed (acknowledged). See [message processing result](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#message-processing-result){:target="_blank"} for more details.
+- [checkpoint](/docs/user-guide/rule-engine-2-0/nodes/flow/checkpoint) — Publish a copy of the message to the selected [rule engine queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/){:target="_blank"}.
+- [rule chain](/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain) — Forwards the message to the selected rule chain.
+- [output](/docs/user-guide/rule-engine-2-0/nodes/flow/output) — Used in combination with the rule chain node. Allows to publish result of the message processing to the caller rule chain.
