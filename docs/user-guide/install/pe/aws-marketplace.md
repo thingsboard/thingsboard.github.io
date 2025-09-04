@@ -4,7 +4,7 @@ title: Installing ThingsBoard PE from AWS Marketplace
 description: Installing ThingsBoard PE from AWS Marketplace
 redirect_from: 
     - "/docs/user-guide/install/aws-marketplace-pe/"
-    - "/products/thingsboard-pe/install/"
+    - "/products/thingsboard-pe/aws"
 ---
 
 This guide describes how to install ThingsBoard Professional Edition from AWS Marketplace. 
