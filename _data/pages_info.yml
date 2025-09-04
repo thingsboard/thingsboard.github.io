@@ -5093,118 +5093,118 @@
 "/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-latest-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-latest-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-latest/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-latest/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-stream-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/aggregate-stream-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-stream/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-stream/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node-deprecated/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node-deprecated/"
+"/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count-deprecated/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count-deprecated/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/alarms-count-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics-nodes/"
+"/docs/user-guide/rule-engine-2-0/nodes/analytics/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/analytics/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/"
   - "/docs/paas/user-guide/rule-engine-2-0/analytics-nodes/"
   - "/docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/"
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/calculate-delta/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/calculate-delta/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/calculate-delta/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-attributes/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-attributes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-attributes/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-details/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/customer-details/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-details/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-details/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/fetch-device-credentials/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/fetch-device-credentials/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/fetch-device-credentials/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/fetch-device-credentials/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/enrichment-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/"
   - "/docs/paas/user-guide/rule-engine-2-0/enrichment-nodes/"
   - "/docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/"
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-attributes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-attributes/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-attributes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-attributes/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-fields/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-fields/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-fields/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-fields/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-telemetry/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/originator-telemetry/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-telemetry/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-telemetry/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-device-attributes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-device-attributes/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/related-device-attributes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/related-device-attributes/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-entity-data/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/related-entity-data/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/related-entity-data/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/related-entity-data/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-attributes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-attributes/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/tenant-attributes/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/tenant-attributes/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-details/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment-nodes/tenant-details/"
+"/docs/user-guide/rule-engine-2-0/nodes/enrichment/tenant-details/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/enrichment/tenant-details/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/ai-request-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/ai-request-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/ai-request/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/ai-request/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/aws-lambda-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/aws-lambda/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-lambda/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sns-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sns-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sqs-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/aws-sqs-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/azure-iot-hub-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/azure-iot-hub-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/gcp-pubsub-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/gcp-pubsub-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/external-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/external-nodes/"
   - "/docs/paas/user-guide/rule-engine-2-0/external-nodes/"
   - "/docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/"
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/kafka-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/kafka-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/kafka/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/kafka/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/mqtt-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/mqtt-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/mqtt/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/mqtt/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/rabbitmq-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/rabbitmq-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/rest-api-call-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/rest-api-call-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-email-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-email-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/send-email/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/send-email/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-notification-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-notification-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/send-notification/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/send-notification/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-sms-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-sms-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/send-sms/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/send-sms/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-to-slack-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/send-to-slack-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/twilio-sms-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/twilio-sms-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/external-nodes/twilio-voice-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/external-nodes/twilio-voice-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/external/twilio-voice/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/external/twilio-voice/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/filter/alarm-status-filter/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/filter/alarm-status-filter/"
@@ -5249,70 +5249,70 @@
 "/docs/user-guide/rule-engine-2-0/nodes/filter/switch/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/filter/switch/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/acknowledge-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/acknowledge-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/flow/acknowledge/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow/acknowledge/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/checkpoint-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/checkpoint-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/flow/checkpoint/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow/checkpoint/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/"
+"/docs/user-guide/rule-engine-2-0/nodes/flow/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/flow-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/flow-nodes/"
   - "/docs/paas/user-guide/rule-engine-2-0/flow-nodes/"
   - "/docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/"
-"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/output-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/output-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/flow/output/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow/output/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/rule-chain-node/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/flow-nodes/rule-chain-node/"
+"/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/change-originator/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/change-originator/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/copy-key-value-pairs/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/copy-key-value-pairs/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/copy-key-value-pairs/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/delete-key-value-pairs/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group-by-name/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group-by-name/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group-by-name/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group-by-name/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-group/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-related/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/duplicate-to-related/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-related/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-related/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/transformation-nodes/"
   - "/docs/pe/user-guide/rule-engine-2-0/transformation-nodes/"
   - "/docs/paas/user-guide/rule-engine-2-0/transformation-nodes/"
   - "/docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/"
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/json-path/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/json-path/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/json-path/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/rename-keys/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/rename-keys/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/rename-keys/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/script/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/script/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/script/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/script/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/split-array-msg/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/split-array-msg/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/split-array-msg/"
   redirect_from: []
-"/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/to-email/":
-  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation-nodes/to-email/"
+"/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/overview/":
   url: "/docs/user-guide/rule-engine-2-0/overview/"
