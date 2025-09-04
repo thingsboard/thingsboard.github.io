@@ -1,5 +1,3 @@
-# add to group
-
 Adds the message originator entity to an entity group based on a configurable group name pattern.
 
 ## Configuration
