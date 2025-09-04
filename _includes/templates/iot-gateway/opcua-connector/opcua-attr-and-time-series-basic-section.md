@@ -2,22 +2,22 @@ To add new time series or attribute key, follow these steps:
 
 {% assign attrAndTimeseries = '
     ===
-        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-3-ce.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-3-ce.png,
         title: Click the “**pencil**” icon in the “**Attributes**” section to add new attribute key;
     ===
-        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-4-ce.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-4-ce.png,
         title: Click on "**Add attribute**" in the opened window;
     ===
-        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-5-ce.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-5-ce.png,
         title: Enter the "**Key**" field, select the "**Type**" (can be [path](#path-types), [identifier](#identifier-types) or constant), enter "**Value**" and click "**Apply**" button;
     ===
-        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-6-ce.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-6-ce.png,
         title: Now click on the “**pencil**” icon in the “**Time series**” section to add new time series key;
     ===
-        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-7-ce.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-7-ce.png,
         title: Click on "**Add time series**" in the opened window;
     ===
-        image: /images/gateway/opc-ua-connector/opc-ua-gateway-configuring-8-ce.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-8-ce.png,
         title: Enter the "**Key**" field, select the "**Type**" (can be [path](#path-types), [identifier](#identifier-types) or constant), enter "**Value**" and click "**Apply**" button.
     '
 %}
@@ -37,4 +37,4 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-gateway-configuring-10-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-10-ce.png)

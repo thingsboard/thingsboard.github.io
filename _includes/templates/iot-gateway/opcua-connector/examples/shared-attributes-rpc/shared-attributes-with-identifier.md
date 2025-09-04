@@ -4,7 +4,7 @@ You can add new attribute updates in the "**Attribute updates**" section of the 
 As an example, we will use Prosys OPC-UA Simulation Server, which is available at `opc.tcp://0.0.0.0:53530/OPCUA/SimulationServer`.
 The server has the following structure:
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-4.png)
 
 ### Example: Text Message Editing (Identifier)
 
@@ -29,22 +29,22 @@ Let's add an attribute update to our configuration. For this purpose, follow the
 
 {% assign attributeUpdatesIdentifier = '
     ===
-        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
         title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
     ===
-        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-relative-path-1.png,
         title: Select the created OPC-UA connector, click on the "**Data mapping**" tab. Make sure you have configured and connected device (if you do not know how to do it, see [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Connection settings](/docs/iot-gateway/config/opc-ua/#connection-settings) and [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) sections of this guide). Click on the "**Pencil**" icon on a device you want to configure attribute updates for.
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-identifier-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-identifier-1.png,
         title: Scroll down to the "**Attribute updates**" section and click on the "**Pencil**" icon to edit the attribute updates.
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-identifier-2.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-identifier-2.png,
         title: Click on the "**Add attribute update**" button. In our case, we will add `text_message` attribute update, so the "**Key**" field, enter `text_message`, select the "**Type**" as **Identifier**, and in the "**Value**" field enter `${ns=2;i=1005}`. This is an identifier of the OPC-UA server node we want to update.
     ===
-        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-relative-path-9.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-relative-path-9.png,
         title: Remember to save your changes by clicking the "**Apply**" button.
 '
 %}
@@ -57,9 +57,9 @@ it to "**Hello from Gateway!**".
 
 {% assign attributeUpdatesIdentifier2 = '
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-identifier-3.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-identifier-3.png,
 '
 %}
 
@@ -68,7 +68,7 @@ it to "**Hello from Gateway!**".
 Now, let's check the value of the text message node. In the selected device, go to the "**Last telemetry**" tab and check the 
 value of the `text_message` telemetry. It should be `Hello from Gateway!` since we set the shared attribute to `Hello from Gateway!`.
 
-![image](/images/gateway/opc-ua-connector/examples/result-device-overview-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/result-device-overview-4.png)
 
 Try to change the value of the `text_message` shared attribute to `Hello from <your_name>!`. After a few seconds, 
 you should see that the `text_message` telemetry value has changed to `Hello from <your_name>!`, which means that the 

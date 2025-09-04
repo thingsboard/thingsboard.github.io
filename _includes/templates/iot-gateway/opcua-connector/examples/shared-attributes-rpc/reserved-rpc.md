@@ -4,7 +4,7 @@ them manually.
 As an example, we will use Prosys OPC-UA Simulation Server, which is 
 available at `opc.tcp://0.0.0.0:53530/OPCUA/SimulationServer`. The server has the following structure:
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-3.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-3.png)
 
 We are interested in node "**Relay**" that have `ns=3;i=1012` identifier, we added this node as a telemetry parameter 
 with the key `relay` and as a path we used the node identifier `${ns=3;i=1012}`, so the configuration for this 
@@ -32,7 +32,7 @@ Response:
 {"result":  {"value":  false}}
 ```
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-result-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-result-1.png)
 
 So, the `get` method returns the current value of the relay node, and we can see that the relay is off.
 
@@ -55,7 +55,7 @@ Response:
 
 And as you can see, from the screenshot below, the relay telemetry value has changed to `true`:
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-set-result-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-set-result-1.png)
 
 Also, let's check the value of the relay telemetry again:
 
@@ -69,7 +69,7 @@ Response:
 {"result":  {"value":  true}}
 ```
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-result-2.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-result-2.png)
 
 Full configuration for OPC-UA connector for the examples above will look like this:
 

@@ -21,13 +21,13 @@ it off. To call this method, use the following steps:
 
 {% assign rpcToConnector = '
     ===
-        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
         title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
     ===
-        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/opc-ua-connector/examples/rpc-to-connector-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/rpc-to-connector-1.png,
         title: Select the created OPC-UA connector, click on the "**RPC**" icon. Make sure you have configured and connected device (if you do not know how to do it, see [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Connection settings](/docs/iot-gateway/config/opc-ua/#connection-settings) and [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) sections of this guide).
 '
 %}
@@ -37,21 +37,21 @@ it off. To call this method, use the following steps:
 Let's first turn on the relay. To do this, fill in the "**Method**" field with `set_relay` and in the "**Arguments**" field
 enter `true`, then click on the "**Send**" button.
 
-![image](/images/gateway/opc-ua-connector/examples/rpc-to-connector-2.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/rpc-to-connector-2.png)
 
 As you can see, the response contains `true`, which means that the method was executed successfully and the relay is 
 now on:
 
-![image](/images/gateway/opc-ua-connector/examples/rpc-to-connector-3.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/rpc-to-connector-3.png)
 
 And finally, let's turn off the relay. To do this, fill in the "**Method**" field with `set_relay` and in the
 "**Arguments**" field enter `false`, then click on the "**Send**" button:
 
-![image](/images/gateway/opc-ua-connector/examples/rpc-to-connector-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/rpc-to-connector-4.png)
 
 Result:
 
-![image](/images/gateway/opc-ua-connector/examples/rpc-to-connector-5.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/rpc-to-connector-5.png)
 
 Full configuration for OPC-UA connector for the example above will look like this:
 

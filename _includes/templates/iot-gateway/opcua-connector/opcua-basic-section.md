@@ -14,4 +14,4 @@ All configuration parameters list, and their detailed description can be found i
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-application-basic-certificates-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-application-basic-certificates-1-ce.png)
