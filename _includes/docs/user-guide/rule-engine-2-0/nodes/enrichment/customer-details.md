@@ -1,5 +1,3 @@
-# customer details
-
 Adds details from the message originator's **customer** (e.g., name, email, country) to either the message data or the message metadata.
 
 ## Configuration

@@ -1,5 +1,3 @@
-# device profile switch
-
 Routes incoming messages based on the name of the profile of the originator device.
 
 ## Preconditions

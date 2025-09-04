@@ -1,10 +1,4 @@
-# message type filter
-
 Checks the incoming message type against the configured set of message types. If the type is in the set, the message is routed via `True`; otherwise, via `False`.
-
-## Preconditions
-
-There are no preconditions.
 
 ## Configuration
 

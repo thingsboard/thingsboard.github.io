@@ -1,6 +1,4 @@
-# calculate delta
-
-Calculates the delta and the amount of time passed between the previous timeseries key reading and the current value for this key from the incoming message.
+Calculates the delta and the amount of time passed between the previous time series key reading and the current value for this key from the incoming message.
 
 ## Configuration
 

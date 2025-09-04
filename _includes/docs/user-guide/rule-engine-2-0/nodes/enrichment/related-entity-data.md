@@ -1,5 +1,3 @@
-# related entity data
-
 Finds an entity related to the message originator, fetches its data (attributes, latest telemetry, or entity fields), and adds the results to the message data or metadata.
 
 ## Configuration

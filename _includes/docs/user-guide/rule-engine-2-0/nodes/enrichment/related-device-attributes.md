@@ -1,5 +1,3 @@
-# related device attributes
-
 Finds a device related to the message originator, fetches its attributes and/or latest telemetry, and adds the results to the message data or metadata.
 
 ## Configuration

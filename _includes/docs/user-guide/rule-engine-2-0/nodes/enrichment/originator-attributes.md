@@ -1,5 +1,3 @@
-# originator attributes
-
 Retrieves attributes and/or the latest time series data from the message originator and adds the results to either the message data or the message metadata.
 
 ## Configuration

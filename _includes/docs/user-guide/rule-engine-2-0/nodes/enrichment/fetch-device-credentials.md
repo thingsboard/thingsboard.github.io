@@ -1,6 +1,4 @@
-# fetch device credentials
-
-Fetches the credentials of the originating device and adds them to the message data or metadata. This node only works for messages originated by a `DEVICE`.
+Fetches the credentials of the originator device and adds them to the message data or metadata.
 
 ## Configuration
 

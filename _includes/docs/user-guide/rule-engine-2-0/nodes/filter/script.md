@@ -1,13 +1,7 @@
-# script
-
 Executes a user-defined function that returns a boolean value.
 The message is routed via the `True` connection if the function returns `true`, and via the `False` connection if it returns `false`.
 If script execution fails, the message is routed via the `Failure` connection.
 Supports **TBEL** and **JavaScript**.
-
-## Preconditions
-
-There are no requirements for the incoming message structure.
 
 ## Configuration
 

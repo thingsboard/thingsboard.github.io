@@ -1,5 +1,3 @@
-# asset profile switch
-
 Routes incoming messages based on the name of the profile of the originator asset.
 
 ## Preconditions
@@ -124,8 +122,6 @@ No asset with this ID exists (e.g., it was deleted while message was in queue).
 **Explanation**
 
 The node cannot fetch the asset’s profile.
-
----
 
 ## Use cases
 

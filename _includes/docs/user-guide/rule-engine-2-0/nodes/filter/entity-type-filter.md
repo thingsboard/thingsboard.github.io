@@ -1,16 +1,11 @@
-# entity type filter
-
-Checks the incoming message’s originator entity type against the configured set of entity types. If the type is in the set, the message is routed via `True`; otherwise, via`False`.
-
-## Preconditions
-
-There are no preconditions.
+Checks the incoming message’s originator entity type against the configured set of entity types. If the type is in the set, the message is routed via `True`; otherwise, via
+`False`.
 
 ## Configuration
 
 ### Field descriptions
 
-* **Select entity types** - required. A set of entity types to check against; at least one must be specified.
+* **Select entity types** - a set of entity types to check against; at least one must be specified.
 
 ### JSON Schema
 
@@ -119,8 +114,6 @@ Routed via **`False`**.
 Incoming message originator entity type is not in the configured set, so the message is routed via `False`.
 
 ## Use cases
-
-TODO add link to entity type switch node here
 
 Use **entity type filter** when processing requires a binary decision (include/exclude) based on the originator type. The node routes messages to `True` if the originator entity
 type is in the configured set, and to `False` otherwise. This is ideal for guarding a pipeline, whitelisting allowed types, or pruning messages before a single downstream path.

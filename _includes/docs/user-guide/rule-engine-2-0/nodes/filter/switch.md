@@ -1,14 +1,8 @@
-# switch
-
 Executes a user-defined function that returns a connection label or a list of connection labels.
 The message is routed via the specified connection(s).
 If the script returns a single string, it is treated as a one-element list.
 If the script execution fails, the message is routed via the `Failure` connection.
 Supports **TBEL** and **JavaScript**.
-
-## Preconditions
-
-There are no requirements for the incoming message structure.
 
 ## Configuration
 

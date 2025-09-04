@@ -1,5 +1,3 @@
-# check fields presence
-
 Checks whether the specified fields are present in the incoming message **data** and/or **metadata**.
 By default, the node requires **all** specified fields to be present; you can switch to “at least one” mode.
 
@@ -295,7 +293,3 @@ Not relevant.
 **Explanation**
 
 Message data is not a JSON object, so the node cannot check data keys.
-
-## Use cases
-
-TODO

@@ -1,11 +1,5 @@
-# check relation presence
-
 Checks whether a relation exists between the incoming message originator and another entity - either any entity or a specific one - based on the configured direction and relation
 type.
-
-## Preconditions
-
-There are no preconditions.
 
 ## Configuration
 
@@ -247,7 +241,3 @@ Routed via **`False`**.
 
 The node checks only **direct** relations. Indirect or multi-level relations (e.g., customer → asset → device) are **not** followed. Since there is no direct relation from the
 originator to the target device, the result is `False`.
-
-## Use cases
-
-TODO

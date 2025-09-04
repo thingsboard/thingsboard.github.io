@@ -1,5 +1,3 @@
-# gps geofencing filter
-
 Extracts latitude and longitude from the incoming message and checks whether the point lies **inside** a configured geofence (polygon or circle).
 If it matches, the message is routed via `True`; otherwise via `False`.
 

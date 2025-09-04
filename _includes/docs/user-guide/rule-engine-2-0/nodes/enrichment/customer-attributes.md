@@ -1,5 +1,3 @@
-# customer attributes
-
 Retrieves server-side attributes or the latest time series from the message originator's **Customer** and adds them to the message data or metadata.
 
 ## Configuration

@@ -1,5 +1,3 @@
-# originator telemetry
-
 Retrieves time series data for the message originator within a specified time range and adds the result to the message metadata.
 
 ## Configuration

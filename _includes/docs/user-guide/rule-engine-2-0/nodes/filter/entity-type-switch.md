@@ -1,11 +1,4 @@
-# entity type switch
-
 Routes incoming messages based on the originator entity type. The message is forwarded through the output connection whose label exactly matches the entity type’s **normal name**.
-TODO link to normal names
-
-## Preconditions
-
-There are no preconditions.
 
 ## Configuration
 
@@ -122,8 +115,6 @@ Routed via **`AI model`**.
 For `AI_MODEL`, the normal name is `AI model`. The node routes the message via the connection with that exact label.
 
 ## Use cases
-
-TODO add link to entity type filter node here
 
 Use **entity type switch** when processing must branch by originator type, sending each message to a different sub-chain via a connection labeled with that type’s
 normal name (e.g., Device, Asset, Entity View, AI model). This node is for **fan-out routing**, not yes/no decisions.

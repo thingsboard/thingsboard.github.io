@@ -1,5 +1,3 @@
-# originator fields
-
 Adds fields from the message originator's entity (e.g., name, type, label) to either the message data or the message metadata.
 
 ## Configuration
