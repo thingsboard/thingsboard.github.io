@@ -29,12 +29,12 @@ data is sent to the ThingsBoard server. The following strategies are available:
 
 - **On report period** - sends data to ThingsBoard after the report period;
 - **On value change** - sends data to ThingsBoard when the value changes;
-- **On value change and report period** - sends data to ThingsBoard when the value changes or after the report period;
+- **On value change or report period** - sends data to ThingsBoard when the value changes or after the report period;
 - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
-
-![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-10-ce.png)
 
 {% capture difference %}
 Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-gateway-configuring-10-ce.png)

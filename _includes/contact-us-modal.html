@@ -31,14 +31,14 @@
             <fieldset>
                 <div class="form-section">
                     <div class="form-element">
-                        <label for="first-name">
-                            <input class="form-control" value="" placeholder="John" name="first-name" id="first-name" type="text" size="40" maxlength="50" aria-invalid="false">
+                        <label for="firstName">
+                            <input class="form-control" value="" placeholder="John" name="firstName" id="firstName" type="text" size="40" maxlength="50" aria-invalid="false">
                             <p>First Name</p>
                         </label>
                     </div>
                     <div class="form-element">
-                        <label for="last-name">
-                            <input class="form-control" value="" placeholder="Doe" name="last-name" id="last-name" type="text" size="40" maxlength="50" aria-invalid="false">
+                        <label for="lastName">
+                            <input class="form-control" value="" placeholder="Doe" name="lastName" id="lastName" type="text" size="40" maxlength="50" aria-invalid="false">
                             <p>Last Name</p>
                         </label>
                     </div>
@@ -106,7 +106,7 @@
         const form = document.getElementById('ContactUs');
 
         const fieldsToWatchForInput = [
-            'first-name', 'last-name', 'email', 'company', 'message'
+            'firstName', 'lastName', 'email', 'company', 'message'
         ];
 
         fieldsToWatchForInput.forEach(fieldName => {
@@ -209,8 +209,8 @@
     function validateContactForm(form) {
         let isValid = true;
         const fieldsToValidate = [
-            { name: 'first-name', prettyName: 'First Name', type: 'text', id: 'first-name' },
-            { name: 'last-name', prettyName: 'Last Name', type: 'text', id: 'last-name' },
+            { name: 'firstName', prettyName: 'First Name', type: 'text', id: 'firstName' },
+            { name: 'lastName', prettyName: 'Last Name', type: 'text', id: 'lastName' },
             { name: 'email', prettyName: 'Email Address', type: 'email', id: 'email' },
             { name: 'company', prettyName: 'Company', type: 'text', id: 'company' },
             { name: 'message', prettyName: 'Message', type: 'textarea', id: 'message' }

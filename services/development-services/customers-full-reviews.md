@@ -128,8 +128,8 @@ redirect_from: "docs/services/customers-full-reviews/"
         <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
             <div class="form-section">
                 <div class="form-element">
-                    <label for="first-name">
-                        <input id="first-name" class="cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                    <label for="name">
+                        <input id="name" class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
                         <p>Name*</p>
                     </label>
                 </div>
@@ -196,7 +196,7 @@ redirect_from: "docs/services/customers-full-reviews/"
     }
 
     function validateContactForm(form) {
-        var name = $('input[name=first-name]', form).val();
+        var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
 
         if (!validateValue('Name', name)) {
