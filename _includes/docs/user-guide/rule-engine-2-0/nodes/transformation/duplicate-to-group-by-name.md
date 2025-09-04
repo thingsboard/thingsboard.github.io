@@ -1,5 +1,3 @@
-# duplicate to group by name
-
 Duplicates an incoming message to every entity belonging to an entity group that is dynamically resolved by its name and type.
 
 ## Configuration

@@ -1,5 +1,3 @@
-# json path
-
 Extracts a part of the incoming message **data** using a JSONPath expression and sets it as the new message data.
 
 ## Preconditions

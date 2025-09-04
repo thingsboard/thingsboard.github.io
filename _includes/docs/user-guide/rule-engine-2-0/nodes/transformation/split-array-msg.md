@@ -1,5 +1,3 @@
-# split array msg
-
 Splits a message whose data is a JSON array into multiple separate messages, one for each element in the array.
 
 ## Configuration

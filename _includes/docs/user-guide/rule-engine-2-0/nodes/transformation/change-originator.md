@@ -1,5 +1,3 @@
-# change originator
-
 Changes the originator of the incoming message to another entity, as defined in the configuration. The originator can be changed to:
 
 * **Customer** — the customer of the current originator.
@@ -7,10 +5,6 @@ Changes the originator of the incoming message to another entity, as defined in 
 * **Related entity** — an entity related to the current originator.
 * **Alarm originator** — the originator of the alarm, if the current originator is an alarm.
 * **Entity by name pattern** — an entity found in the database by a configured name pattern.
-
-## Preconditions
-
-There are no preconditions.
 
 ## Configuration
 

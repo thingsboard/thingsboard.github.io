@@ -1,5 +1,3 @@
-# delete key-value pairs
-
 Deletes specified key-value pairs from the incoming message data or its metadata.
 
 ## Preconditions

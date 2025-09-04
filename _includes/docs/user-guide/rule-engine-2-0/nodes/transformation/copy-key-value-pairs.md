@@ -1,5 +1,3 @@
-# copy key-value pairs
-
 Copies specified key-value pairs from the incoming message data to its metadata, or from the metadata to the data.
 
 ## Preconditions

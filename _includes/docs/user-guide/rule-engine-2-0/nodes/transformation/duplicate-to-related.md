@@ -1,5 +1,3 @@
-# duplicate to related
-
 Duplicates an incoming message to all entities that are related to the message originator, based on a specified relations query.
 
 ## Configuration

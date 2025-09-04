@@ -1,5 +1,3 @@
-# to email
-
 Prepares an incoming message for email dispatch. Based on the configuration and the incoming message, this node modifies the incoming message to correctly describe an email. The
 prepared message is then sent via the `Success` connection and is intended to be routed to a **send email** node, which handles the actual email dispatch.
 

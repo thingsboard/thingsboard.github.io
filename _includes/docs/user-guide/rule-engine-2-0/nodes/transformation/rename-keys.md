@@ -1,5 +1,3 @@
-# rename keys
-
 Renames keys in the incoming message or its metadata based on a configured mapping.
 
 ## Preconditions
