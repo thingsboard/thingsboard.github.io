@@ -21,7 +21,7 @@
 
 <div class="card-collection" id="card-collection">
     {% for card in finalCollection %}
-        <a class="card" href="{{ card.page }}" id="{{ card.type | join: '|' }}|{{ card.industry | join: '|' }}|{{ card.use-case | join: '|' }}|{{ card.hardware-types | join: '|' }}">
+        <a class="card" href="{{ card.page }}" id="{{ card.type | join: '|' }}|{{ card.industry | join: '|' }}|{{ card.use-case | join: '|' }}|{{ card.hardware-types | join: '|' }}" target="_blank">
             <div class="card-wrapper">
                 <div class="card-image">
                     <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">

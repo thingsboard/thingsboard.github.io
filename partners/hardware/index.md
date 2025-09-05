@@ -76,7 +76,6 @@ filterCollection:
   - label: Use cases
     filters:
       - Smart Energy
-      - Environment Monitoring
       - Fleet Tracking
       - Waste Management
       - Smart Office
