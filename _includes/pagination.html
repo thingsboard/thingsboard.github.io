@@ -41,6 +41,16 @@
             const paginationControls = wrapper.querySelector('#pagination-controls');
             const paginationStatus = wrapper.querySelector('#paginationStatus');
 
+            function scrollToBLock() {
+                const yOffset = -200;
+                const y = container.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+                window.scrollTo({
+                    top: y,
+                    behavior: 'smooth'
+                });
+            }
+
             function debounce(fn, delay = 150) {
                 let timer;
                 return (...args) => {
@@ -117,6 +127,7 @@
                         e.preventDefault();
                         activePages = [i];
                         doRender();
+                        scrollToBLock();
                     });
                     li.appendChild(a);
                     paginationControls.appendChild(li);
@@ -133,6 +144,7 @@
                     if (isPrevDisabled) return;
                     activePages = [minPage - 1];
                     doRender();
+                    scrollToBLock();
                 });
                 prevLi.appendChild(prevLink);
                 paginationControls.insertBefore(prevLi, paginationControls.firstChild);
@@ -148,6 +160,7 @@
                     if (isNextDisabled) return;
                     activePages = [maxPage + 1];
                     doRender();
+                    scrollToBLock();
                 });
                 nextLi.appendChild(nextLink);
                 paginationControls.appendChild(nextLi);
