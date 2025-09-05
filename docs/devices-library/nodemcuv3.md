@@ -6,7 +6,7 @@ chip: ESP8266
 connectivity: HTTP, MQTT, WIFI
 vendor: NodeMCU
 deviceImageFileName: nodemcuv3.png
-redirect-from:
+redirect_from:
     - "/docs/samples/esp8266/"
     - "/docs/samples/esp8266/temperature/"
     - "/docs/samples/esp8266/gpio/"

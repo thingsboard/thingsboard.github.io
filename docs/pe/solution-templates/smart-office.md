@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 title: Smart office template
 description: Smart office template overview
-redirect-from: "/docs/samples/monitoring/facilities-monitoring-poc/"
+redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
 solution-highlights:
     0:
         image: /images/solutions/smart_office/smart-office-1.png

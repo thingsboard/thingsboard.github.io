@@ -3,7 +3,7 @@ layout: devicelibrary
 title: Devices Library
 description: Device library and connecting guides
 notitle: "true"
-redirect-from:
+redirect_from:
     - "/docs/samples/linkit-one/"
     - "/docs/samples/linkit-one/gps/"
 ---

@@ -5,7 +5,7 @@ description: Deduplicates messages within the same originator for a configurable
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
-redirect-from: "/docs/reference/processors/alarm-deduplication-processor/"
+redirect_from: "/docs/reference/processors/alarm-deduplication-processor/"
 ---
 
 {% include get-hosts-name.html %}

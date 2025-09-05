@@ -5,7 +5,7 @@ description: Publishes messages to the AWS SQS (Amazon Simple Queue Service).
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
-redirect-from: "/reference/plugins/sqs/"
+redirect_from: "/reference/plugins/sqs/"
 ---
 
 {% include get-hosts-name.html %}

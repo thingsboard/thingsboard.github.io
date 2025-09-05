@@ -6,7 +6,7 @@ chip: Broadcom BCM2711
 connectivity: HTTP, MQTT, WIFI, BLE
 vendor: Raspberry
 deviceImageFileName: raspberrypi4.jpg
-redirect-from:
+redirect_from:
     - "/docs/samples/raspberry/"
     - "/docs/samples/raspberry/gpio/"
     - "/docs/samples/raspberry/gpio-android-things/"
