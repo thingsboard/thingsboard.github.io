@@ -52,7 +52,6 @@ filterCollection:
       - RS232
       - SMS
       - Satellite (Iridium/Orbcom)
-      - TCP
       - USB
       - Wi-Fi/BLE
       - Wirepas
