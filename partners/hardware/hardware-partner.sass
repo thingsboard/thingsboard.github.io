@@ -1,0 +1,246 @@
+#hardware-partner
+  footer
+    position: static
+#hardware-partner-content
+  max-width: 1400px
+  padding: 0 40px
+  margin: 22px auto 80px
+  @media (max-width: 600px)
+    padding: 0 16px
+  .breadcrumbs
+    margin-bottom: 62px
+    a, i
+      margin-right: 8px
+    a
+      color: rgba(0, 0, 0, 0.54)
+      &:hover
+        text-decoration: none
+        color: rgba(0, 0, 0, 0.76)
+    span
+      color: rgba(0, 0, 0, 0.76)
+    a, span
+      font-size: 16px
+      font-weight: 400
+      line-height: 28px
+  .hardware-partner-main
+    margin-bottom: 80px
+    .hardware-partner
+      display: flex
+      align-items: flex-start
+      gap: 65px
+      @media (max-width: 960px)
+        gap: 40px
+      @media (max-width: 600px)
+        flex-direction: column
+        align-items: center
+      .hardware-partner-card
+        padding: 40px
+        border-radius: 24px
+        background: #FFF
+        box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0 0 8px 0 rgba(0, 0, 0, 0.08)
+        min-width: 300px
+        @media (max-width: 600px)
+          padding: 20px
+        @media (min-width: 960px)
+          min-width: 445px
+        .hardware-partner-card-wrapper
+          max-width: 365px
+          img
+            max-width: 50%
+            margin-bottom: 36px
+          h1
+            font-size: 36px
+            font-weight: 500
+            line-height: 48px
+            margin-bottom: 12px
+            word-break: break-word
+            @media (max-width: 600px)
+              font-size: 28px
+              line-height: 44px
+          p
+            font-size: 14px
+            line-height: 24px
+            font-weight: 400
+            margin-bottom: 32px
+          a
+            display: flex
+            align-items: center
+            gap: 8px
+            padding: 10px 24px
+            border-radius: 6px
+            border: 1px solid #2A7DEC
+            background: #FFF
+            transition: ease-in-out 0.3s
+            width: fit-content
+            @media (max-width: 600px)
+              width: 100%
+              justify-content: center
+            span
+              font-size: 16px
+              line-height: 28px
+              font-weight: 500
+              color: #2A7DEC
+              transition: ease-in-out 0.3s
+            i
+              transition: ease-in-out 0.3s
+              rotate: 45deg
+              color: #2A7DEC
+            &:hover
+              text-decoration: none
+              background: #2A7DEC
+              span
+                color: #FFF
+              i
+                color: #FFF
+      .hardware-info
+        display: flex
+        flex-direction: column
+        gap: 24px
+        .hardware-info-table
+          width: 100%
+          border-collapse: collapse
+          font-size: 16px
+          tr
+            border-bottom: 1px solid #EBEBEB
+          th
+            padding: 12px 0
+            font-size: 14px
+            line-height: 24px
+            font-weight: 500
+            color: rgba(0, 0, 0, 0.87)
+            width: 160px
+            @media (max-width: 960px)
+              width: 120px
+              padding-right: 20px
+          td
+            padding: 12px 0
+            color: rgba(0, 0, 0, 0.76)
+            font-size: 14px
+            font-weight: 400
+            line-height: 24px
+            @media (max-width: 960px)
+              word-break: break-word
+            a
+              text-decoration: underline
+              &.links-to-hide.hidden
+                display: none
+              &:hover
+                text-decoration: none
+          td.grid-content
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            row-gap: 4px
+            column-gap: 12px
+            @media (max-width: 600px)
+              grid-template-columns: repeat(1, 1fr)
+            .expand-links-button
+              font-size: 14px
+              line-height: 24px
+              font-weight: 400
+              color: rgba(0, 0, 0, 0.76)
+              @media (max-width: 600px)
+                grid-column: span 1
+              grid-column: span 2
+              justify-self: start
+              padding: 0
+              text-decoration: underline
+              &:hover
+                text-decoration: none
+        .section-label
+          display: inline-block
+          margin-bottom: 12px
+          color: rgba(0, 0, 0, 0.54)
+          font-size: 14px
+          font-weight: 500
+          line-height: 24px
+        .showcase-list
+          display: flex
+          flex-wrap: wrap
+          max-width: 700px
+          @media (max-width: 600px)
+            flex-direction: column
+          li
+            height: 100%
+            margin-bottom: 8px
+            margin-right: 8px
+            @media (max-width: 600px)
+              margin-right: 0
+          li.collapsed
+            height: 0
+            margin: 0
+            overflow: hidden
+            pointer-events: none
+        .toggle-guides-btn
+          font-size: 16px
+          font-weight: 500
+          line-height: 28px
+          display: flex
+          align-items: center
+          gap: 8px
+          cursor: pointer
+          padding: 5px 12px
+          border-radius: 6px
+          color: rgba(0, 0, 0, 0.76)
+          @media (max-width: 600px)
+            margin: 0 auto
+            width: 100%
+            justify-content: center
+          &[hidden]
+            display: none
+          &:hover
+            background: #EEF5FD
+          i
+            transition: transform .2s ease
+          &.is-open
+            i
+              transform: rotate(180deg)
+        .hardware-crisp
+          display: inline-block
+          border-radius: 6px
+          padding: 5px 12px
+          background: #EEF5FD
+          color: #2A7DEC
+          font-size: 16px
+          font-weight: 500
+          line-height: 28px
+          @media (max-width: 600px)
+            width: 100%
+            text-align: center
+  .hardware-banner
+    display: flex
+    justify-content: space-between
+    gap: 30px
+    align-items: center
+    padding: 48px
+    border-radius: 24px
+    background: #F4F8FE
+    @media (max-width: 600px)
+      padding: 20px
+      flex-direction: column
+    h2
+      font-size: 36px
+      font-weight: 500
+      line-height: 48px
+      margin-bottom: 12px
+      @media (max-width: 600px)
+        text-align: center
+        font-size: 28px
+        line-height: 44px
+    a
+      font-size: 16px
+      font-weight: 400
+      line-height: 28px
+      color: #2A7DEC
+      padding: 10px 24px
+      border-radius: 6px
+      border: 1px solid #2A7DEC
+      background: transparent
+      transition: ease-in-out 0.3s
+      white-space: nowrap
+      @media (max-width: 600px)
+        width: 100%
+        text-align: center
+      &:hover
+        text-decoration: none
+        color: #FFF
+        background: #2A7DEC
