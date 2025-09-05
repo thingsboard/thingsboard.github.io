@@ -3846,12 +3846,6 @@
 "/docs/private-cloud/subscription/":
   url: "/docs/private-cloud/subscription/"
   redirect_from: []
-"/docs/reference/1m-devices-test/":
-  url: "/docs/reference/1m-devices-test/"
-  redirect_from: []
-"/docs/reference/20k-devices-test/":
-  url: "/docs/reference/20k-devices-test/"
-  redirect_from: []
 "/docs/reference/actions/kafka-plugin-action/":
   url: "/docs/reference/actions/kafka-plugin-action/"
   redirect_from: []
