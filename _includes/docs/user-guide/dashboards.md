@@ -503,7 +503,7 @@ To make a dashboard private again, follow these steps:
 {% capture difference %}
 **Please note:**
 <br>
-that you shouldn't forget to make related devices, assets and entity views public in order to access their data.
+To display data on a public dashboard, the associated entities must also be made public. This can be done by making the device or asset group public for Professional Edition or by making individual devices or assets for Community Edition.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 

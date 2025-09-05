@@ -115,21 +115,7 @@ toc:
     - title: Getting started with Rule Engine
       path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
     - title: Nodes
-      section:
-        - title: Filter nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/
-        - title: Enrichment nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/
-        - title: Transformation nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/
-        - title: Analytics nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/
-        - title: External nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/
-        - title: Flow nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/
+      path: /docs/paas/eu/user-guide/rule-engine-2-0/nodes/
     - title: Data processing & actions
       section:
         - title: Validate incoming telemetry

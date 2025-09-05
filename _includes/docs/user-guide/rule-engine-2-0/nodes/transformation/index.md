@@ -1,0 +1,12 @@
+- [change originator](/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator) — All incoming Messages in the Thingsboard have originator field that identifies an entity that submits Message. It could be a Device, Asset, Customer, Tenant, etc..
+- [copy key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/copy-key-value-pairs) — Copies key-value pairs from message to message metadata or vice-versa.
+- [deduplication](/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication) — Deduplicate messages within the same Originator entity for a configurable period based on a specified deduplication strategy.
+- [delete key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs) — Deletes key-value pairs from message or message metadata.
+- [duplicate to group](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group) — Duplicates message to all entities belonging to specific Entity Group.
+- [duplicate to group by name](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group-by-name) — Duplicates message to all entities belonging to resolved Entity group.
+- [duplicate to related](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-related) — Duplicates message to related entities fetched by relation query.
+- [JSON path](/docs/user-guide/rule-engine-2-0/nodes/transformation/json-path) — Transforms incoming message body using JSONPath expression.
+- [rename keys](/docs/user-guide/rule-engine-2-0/nodes/transformation/rename-keys) — Renames message or message metadata keys.
+- [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script) — Changes Message payload, Metadata or Message type using configured JavaScript function.
+- [split array msg](/docs/user-guide/rule-engine-2-0/nodes/transformation/split-array-msg) — Split array message into several messages.
+- [to email](/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email) — Transforms message to Email Message by populating email fields using values derived from Message metadata.
