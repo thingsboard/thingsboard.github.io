@@ -2,6 +2,7 @@
 layout: docwithnav
 title: Guides
 notitle: "true"
+redirect_from: "/docs/iot-video-tutorials/"
 ---
 
 {% include get-hosts-name.html %}

@@ -6,6 +6,12 @@ chip: ESP32
 connectivity: HTTP, MQTT, WIFI, Bluetooth
 vendor: Espressif
 deviceImageFileName: esp32-dev-kit-v1.jpg
+redirect_from:
+    - "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
+    - "/docs/samples/esp32/"
+    - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+    - "/docs/samples/esp32/ota/"
+
 ---
 
 * TOC

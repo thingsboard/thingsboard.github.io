@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Working with alarms
 description: IoT device alarm management using ThingsBoard alarms feature
+redirect_from: "/docs/samples/alarms/basic-rules/"
 
 alarm-type:
     0:

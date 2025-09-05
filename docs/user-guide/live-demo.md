@@ -18,4 +18,4 @@ You can access the demo server using the following URL [**demo.thingsboard.io**]
 
 You will need to populate the sign-up form and as a result, you will receive tenant administrator account for your dedicated tenant.
 
-Once you have logged in you will receive access to all dashboards and devices that are used in ThingsBoard [**samples**](/docs/samples/).
+Once you have logged in you will receive access to all features required to [**get you started**](/docs/getting-started-guides/helloworld/).
