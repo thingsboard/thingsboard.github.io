@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Enrichment nodes
+title: Rule Engine Enrichment nodes
 description: Rule Engine Enrichment Nodes
 hidetoc: "true"
 breadcrumbs: "true"

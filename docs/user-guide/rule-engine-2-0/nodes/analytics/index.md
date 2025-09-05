@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Analytics nodes
+title: Rule Engine Analytics nodes
 description: Rule Engine Analytics Nodes
 hidetoc: "true"
 breadcrumbs: "true"

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: External nodes
+title: Rule Engine External nodes
 description: Rule Engine External Nodes
 hidetoc: "true"
 breadcrumbs: "true"
