@@ -1952,6 +1952,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 value = decodeURIComponent(value);
                 utmData[key] = value;
                 $form.find('input[name="' + key + '"]').val(value);
+                $form.find('input[name="' + key + '-popup"]').val(value);
             }
         });
 
@@ -1962,6 +1963,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 const clientId = parts[2] + '.' + parts[3];
                 utmData['client_id'] = clientId;
                 $form.find('input[name="client_id"]').val(clientId);
+                $form.find('input[name="client_id-popup"]').val(clientId);
             }
         }
         window.dataLayer = window.dataLayer || [];
