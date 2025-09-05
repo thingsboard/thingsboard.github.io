@@ -5,6 +5,9 @@ description: Publishes message to the RabbitMQ.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
+redirect-from:
+    - "/docs/reference/plugins/rabbitmq/"
+    - "/docs/reference/actions/rabbitmq-plugin-action/"
 ---
 
 {% include get-hosts-name.html %}

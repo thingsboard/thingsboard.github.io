@@ -5,6 +5,9 @@ description: Sends emails using configured mail server.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
+redirect-from:
+    - "/docs/reference/plugins/mail/"
+    - "/docs/reference/actions/send-mail-action/"
 ---
 
 {% include get-hosts-name.html %}

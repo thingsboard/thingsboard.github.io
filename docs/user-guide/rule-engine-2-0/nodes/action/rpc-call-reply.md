@@ -5,6 +5,9 @@ description: Sends a reply to an RPC call from the device.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
+redirect-from:
+    - "/docs/reference/plugins/rpc/"
+    - "/docs/reference/actions/rpc-plugin-action/"
 ---
 
 {% include get-hosts-name.html %}

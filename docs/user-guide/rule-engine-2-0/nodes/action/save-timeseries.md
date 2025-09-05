@@ -5,6 +5,9 @@ description: Saves time series.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
+redirect-from:
+    - "/docs/reference/plugins/telemetry/"
+    - "/docs/reference/actions/telemetry-plugin-action/"
 ---
 
 {% include get-hosts-name.html %}
