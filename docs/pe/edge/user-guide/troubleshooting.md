@@ -11,14 +11,6 @@ how-to-import-dashboard:
   2:
     image: /images/edge/user-guide/troubleshooting/import-pe-1.webp
 
-internal-monitoring-main:
-  0:
-    image: /images/edge/user-guide/troubleshooting/internal-monitoring-main-pe.webp
-
-internal-monitoring-details:
-  0:
-    image: /images/edge/user-guide/troubleshooting/internal-monitoring-details-pe.webp
-
 ---
 
 {% assign docsPrefix = "pe/edge/" %}
