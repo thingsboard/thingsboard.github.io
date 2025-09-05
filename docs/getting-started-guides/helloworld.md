@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Getting Started with ThingsBoard
 description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
+redirect-from: "/docs/samples/"
 
 step1:
     0:

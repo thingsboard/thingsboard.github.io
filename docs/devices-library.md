@@ -3,6 +3,9 @@ layout: devicelibrary
 title: Devices Library
 description: Device library and connecting guides
 notitle: "true"
+redirect-from:
+    - "/docs/samples/linkit-one/"
+    - "/docs/samples/linkit-one/gps/"
 ---
 
 {% include get-hosts-name.html %}
