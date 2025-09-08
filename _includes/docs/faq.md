@@ -77,6 +77,18 @@ The data is stored in [Cassandra](https://cassandra.apache.org/) database. Cassa
 ThingsBoard is licensed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0).
 It is free for both personal and commercial usage and you can deploy it anywhere.
 
+## Can I replace the default ThingsBoard logo in the menu?
+
+{% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+Yes, the ThingsBoard Cloud includes a robust [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface) feature for supported subscription plans. This allows you to easily customize the platform's logo, color scheme, and other branding elements.
+{% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+Yes, the Professional Edition includes a robust [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/#customize-thingsboard-web-interface) feature. This allows you to easily customize the platform's logo, color scheme, and other branding elements. Different branding can be applied to various tenants based on multiple domains.
+{% else %}
+While the Community Edition does not offer built-in support for changing the logo, it's possible to do so by modifying the source code and rebuilding the platform.
+
+For a streamlined solution, consider the Professional Edition, which includes an out-of-the-box [White-Labeling](/docs/pe/user-guide/white-labeling/#customize-thingsboard-web-interface) feature. This allows you to customize the platform's logo and branding across multiple domains without any code changes.
+{% endif %}
+
 ## How to get support?
 
 You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/services/) we provide.
