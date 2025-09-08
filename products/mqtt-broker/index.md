@@ -285,7 +285,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <img src="https://img.thingsboard.io/mqtt-broker/product/client-session-metrics.svg" alt="Client session metrics">
                     <div>
-                        <h4 class="title"><a target="_blank" href="/docs/mqtt-broker/user-guide/ui/sessions/#metrics">MQTT client session metrics</a></h4>
+                        <h3 class="title"><a target="_blank" href="/docs/mqtt-broker/user-guide/ui/sessions/#metrics">MQTT client session metrics</a></h3>
                         <p>Gain valuable insights into client behavior and performance with detailed session metrics, allowing you to identify messaging anomalies and proactively troubleshoot issues.</p>
                     </div>
                 </div>
@@ -302,7 +302,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
         <div class="row">
             <div class="container">
                 <div class="block">
-                    <h4>Get started with TBMQ</h4>
+                    <h2>Get started with TBMQ</h2>
                     <p>Get started with TBMQ today and unlock the full potential of your IoT solutions! With support for millions of concurrent connections, robust message handling, and reliable data persistence, TBMQ empowers you to build, scale, and secure your IoT applications like never before.</p>
                     <a target="_blank" href="/docs/mqtt-broker/getting-started/" class="button arrow-top-right">Get started</a>
                 </div>
@@ -313,7 +313,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
 
 <section id="news">
     <main>
-        <h3>TBMQ news</h3>
+        <h2>TBMQ news</h2>
         <div id="cards">
             <div class="col-lg-6">
                 <div class="block">
