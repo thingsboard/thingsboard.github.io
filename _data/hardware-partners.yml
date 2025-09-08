@@ -107,8 +107,8 @@
   links:
     sensor-guides:
       0:
-        label: ESP32 Pico Kit GPIO control and DHT22 sensor monitor
-        href: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
+        label: ESP32 Dev Kit V1
+        href: /docs/devices-library/esp32-dev-kit-v1/
   description: Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE
     chipsets and modules.
 - name: Seeed Studio
