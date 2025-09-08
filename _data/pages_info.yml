@@ -3864,12 +3864,6 @@
 "/docs/private-cloud/subscription/":
   url: "/docs/private-cloud/subscription/"
   redirect_from: []
-"/docs/reference/1m-devices-test/":
-  url: "/docs/reference/1m-devices-test/"
-  redirect_from: []
-"/docs/reference/20k-devices-test/":
-  url: "/docs/reference/20k-devices-test/"
-  redirect_from: []
 "/docs/reference/architecture/":
   url: "/docs/reference/architecture/"
   redirect_from:
@@ -3933,7 +3927,9 @@
   redirect_from: []
 "/docs/reference/performance-aws-instances/":
   url: "/docs/reference/performance-aws-instances/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/1m-devices-test/"
+  - "/docs/reference/20k-devices-test/"
 "/docs/reference/performance-tests/":
   url: "/docs/reference/performance-tests/"
   redirect_from: []

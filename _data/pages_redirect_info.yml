@@ -284,6 +284,12 @@
 "/docs/reference/mqtt-api":
   url: "/docs/reference/mqtt-api/"
   redirect_from: "/docs/reference/mqtt-api"
+"/docs/reference/1m-devices-test/":
+  url: "/docs/reference/performance-aws-instances/"
+  redirect_from: "/docs/reference/1m-devices-test/"
+"/docs/reference/20k-devices-test/":
+  url: "/docs/reference/performance-aws-instances/"
+  redirect_from: "/docs/reference/20k-devices-test/"
 "/docs/reference/snmp-api":
   url: "/docs/reference/snmp-api/"
   redirect_from: "/docs/reference/snmp-api"
