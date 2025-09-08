@@ -52,7 +52,6 @@ filterCollection:
       - RS232
       - SMS
       - Satellite (Iridium/Orbcom)
-      - TCP
       - USB
       - Wi-Fi/BLE
       - Wirepas
@@ -77,7 +76,6 @@ filterCollection:
   - label: Use cases
     filters:
       - Smart Energy
-      - Environment Monitoring
       - Fleet Tracking
       - Waste Management
       - Smart Office
