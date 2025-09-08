@@ -28,7 +28,10 @@
   redirect_from: []
 "/docs/devices-library/arduino-nano-rp2040-connect/":
   url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/arduino/"
+  - "/docs/samples/arduino/temperature/"
+  - "/docs/samples/arduino/sim808-htu21d/"
 "/docs/devices-library/asset-management-tracker/":
   url: "/docs/devices-library/asset-management-tracker/"
   redirect_from: []
@@ -97,7 +100,11 @@
   redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v1/":
   url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
+  - "/docs/samples/esp32/"
+  - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
+  - "/docs/samples/esp32/ota/"
 "/docs/devices-library/esp32-dev-kit-v4/":
   url: "/docs/devices-library/esp32-dev-kit-v4/"
   redirect_from: []
@@ -172,7 +179,12 @@
   redirect_from: []
 "/docs/devices-library/nodemcuv3/":
   url: "/docs/devices-library/nodemcuv3/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/esp8266/"
+  - "/docs/samples/esp8266/temperature/"
+  - "/docs/samples/esp8266/gpio/"
+  - "/docs/samples/nodemcu/"
+  - "/docs/samples/nodemcu/temperature/"
 "/docs/devices-library/nvidia-jetson-nano-developer-kit/":
   url: "/docs/devices-library/nvidia-jetson-nano-developer-kit/"
   redirect_from: []
@@ -214,7 +226,11 @@
   redirect_from: []
 "/docs/devices-library/raspberry-pi-4/":
   url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/raspberry/"
+  - "/docs/samples/raspberry/gpio/"
+  - "/docs/samples/raspberry/gpio-android-things/"
+  - "/docs/samples/raspberry/temperature/"
 "/docs/devices-library/raspberry-pi-cm4/":
   url: "/docs/devices-library/raspberry-pi-cm4/"
   redirect_from: []
@@ -346,7 +362,9 @@
   redirect_from: []
 "/docs/devices-library/":
   url: "/docs/devices-library/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/linkit-one/"
+  - "/docs/samples/linkit-one/gps/"
 "/docs/domains/":
   url: "/docs/domains/"
   redirect_from: []
@@ -526,7 +544,8 @@
   - "/docs/pe/getting-started-guides/helloworld/"
 "/docs/getting-started-guides/helloworld/":
   url: "/docs/getting-started-guides/helloworld/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/"
 "/docs/getting-started-guides/what-is-thingsboard/":
   url: "/docs/getting-started-guides/what-is-thingsboard/"
   redirect_from:
@@ -536,7 +555,8 @@
   redirect_from: []
 "/docs/guides/":
   url: "/docs/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/iot-video-tutorials/"
 "/docs/gw/search/":
   url: "/docs/gw/search/"
   redirect_from: []
@@ -690,9 +710,6 @@
   redirect_from: []
 "/docs/iot-gateway/what-is-iot-gateway/":
   url: "/docs/iot-gateway/what-is-iot-gateway/"
-  redirect_from: []
-"/docs/iot-video-tutorials/":
-  url: "/docs/iot-video-tutorials/"
   redirect_from: []
 "/docs/license/search/":
   url: "/docs/license/search/"
@@ -3459,7 +3476,8 @@
   redirect_from: []
 "/docs/pe/solution-templates/smart-office/":
   url: "/docs/pe/solution-templates/smart-office/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/pe/solution-templates/smart-retail/":
   url: "/docs/pe/solution-templates/smart-retail/"
   redirect_from: []
@@ -3846,30 +3864,6 @@
 "/docs/private-cloud/subscription/":
   url: "/docs/private-cloud/subscription/"
   redirect_from: []
-"/docs/reference/1m-devices-test/":
-  url: "/docs/reference/1m-devices-test/"
-  redirect_from: []
-"/docs/reference/20k-devices-test/":
-  url: "/docs/reference/20k-devices-test/"
-  redirect_from: []
-"/docs/reference/actions/kafka-plugin-action/":
-  url: "/docs/reference/actions/kafka-plugin-action/"
-  redirect_from: []
-"/docs/reference/actions/rabbitmq-plugin-action/":
-  url: "/docs/reference/actions/rabbitmq-plugin-action/"
-  redirect_from: []
-"/docs/reference/actions/rest-api-call-plugin-action/":
-  url: "/docs/reference/actions/rest-api-call-plugin-action/"
-  redirect_from: []
-"/docs/reference/actions/rpc-plugin-action/":
-  url: "/docs/reference/actions/rpc-plugin-action/"
-  redirect_from: []
-"/docs/reference/actions/send-mail-action/":
-  url: "/docs/reference/actions/send-mail-action/"
-  redirect_from: []
-"/docs/reference/actions/telemetry-plugin-action/":
-  url: "/docs/reference/actions/telemetry-plugin-action/"
-  redirect_from: []
 "/docs/reference/architecture/":
   url: "/docs/reference/architecture/"
   redirect_from:
@@ -3933,7 +3927,9 @@
   redirect_from: []
 "/docs/reference/performance-aws-instances/":
   url: "/docs/reference/performance-aws-instances/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/1m-devices-test/"
+  - "/docs/reference/20k-devices-test/"
 "/docs/reference/performance-tests/":
   url: "/docs/reference/performance-tests/"
   redirect_from: []
@@ -3942,39 +3938,6 @@
   redirect_from: []
 "/docs/reference/performance/":
   url: "/docs/reference/performance/"
-  redirect_from: []
-"/docs/reference/plugins/kafka/":
-  url: "/docs/reference/plugins/kafka/"
-  redirect_from: []
-"/docs/reference/plugins/mail/":
-  url: "/docs/reference/plugins/mail/"
-  redirect_from: []
-"/docs/reference/plugins/messaging/":
-  url: "/docs/reference/plugins/messaging/"
-  redirect_from: []
-"/docs/reference/plugins/rabbitmq/":
-  url: "/docs/reference/plugins/rabbitmq/"
-  redirect_from: []
-"/docs/reference/plugins/rest/":
-  url: "/docs/reference/plugins/rest/"
-  redirect_from: []
-"/docs/reference/plugins/rpc/":
-  url: "/docs/reference/plugins/rpc/"
-  redirect_from: []
-"/docs/reference/plugins/sns/":
-  url: "/docs/reference/plugins/sns/"
-  redirect_from: []
-"/docs/reference/plugins/sqs/":
-  url: "/docs/reference/plugins/sqs/"
-  redirect_from: []
-"/docs/reference/plugins/telemetry/":
-  url: "/docs/reference/plugins/telemetry/"
-  redirect_from: []
-"/docs/reference/plugins/time/":
-  url: "/docs/reference/plugins/time/"
-  redirect_from: []
-"/docs/reference/processors/alarm-deduplication-processor/":
-  url: "/docs/reference/processors/alarm-deduplication-processor/"
   redirect_from: []
 "/docs/reference/protocols/":
   url: "/docs/reference/protocols/"
@@ -4008,12 +3971,6 @@
 "/docs/samples/abeeway/tracker/":
   url: "/docs/samples/abeeway/tracker/"
   redirect_from: []
-"/docs/samples/alarms/basic-rules/":
-  url: "/docs/samples/alarms/basic-rules/"
-  redirect_from: []
-"/docs/samples/alarms/mail/":
-  url: "/docs/samples/alarms/mail/"
-  redirect_from: []
 "/docs/samples/analytics/ai-models/":
   url: "/docs/samples/analytics/ai-models/"
   redirect_from: []
@@ -4027,18 +3984,6 @@
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
-"/docs/samples/arduino/":
-  url: "/docs/samples/arduino/"
-  redirect_from: []
-"/docs/samples/arduino/sim808-htu21d/":
-  url: "/docs/samples/arduino/sim808-htu21d/"
-  redirect_from: []
-"/docs/samples/arduino/temperature/":
-  url: "/docs/samples/arduino/temperature/"
-  redirect_from: []
-"/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/":
-  url: "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-  redirect_from: []
 "/docs/samples/cricket-wifi/cricket-wifi/":
   url: "/docs/samples/cricket-wifi/cricket-wifi/"
   redirect_from: []
@@ -4047,24 +3992,6 @@
   redirect_from: []
 "/docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-plaƞorm/":
   url: "/docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-plaƞorm/"
-  redirect_from: []
-"/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/":
-  url: "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-  redirect_from: []
-"/docs/samples/esp32/":
-  url: "/docs/samples/esp32/"
-  redirect_from: []
-"/docs/samples/esp32/ota/":
-  url: "/docs/samples/esp32/ota/"
-  redirect_from: []
-"/docs/samples/esp8266/gpio/":
-  url: "/docs/samples/esp8266/gpio/"
-  redirect_from: []
-"/docs/samples/esp8266/":
-  url: "/docs/samples/esp8266/"
-  redirect_from: []
-"/docs/samples/esp8266/temperature/":
-  url: "/docs/samples/esp8266/temperature/"
   redirect_from: []
 "/docs/samples/exxn/exxn/":
   url: "/docs/samples/exxn/exxn/"
@@ -4081,17 +4008,8 @@
 "/docs/samples/lansitec/solar-bluetooth-gateway/":
   url: "/docs/samples/lansitec/solar-bluetooth-gateway/"
   redirect_from: []
-"/docs/samples/linkit-one/gps/":
-  url: "/docs/samples/linkit-one/gps/"
-  redirect_from: []
-"/docs/samples/linkit-one/":
-  url: "/docs/samples/linkit-one/"
-  redirect_from: []
 "/docs/samples/moko-smart/moko-smart-guide/":
   url: "/docs/samples/moko-smart/moko-smart-guide/"
-  redirect_from: []
-"/docs/samples/monitoring/facilities-monitoring-poc/":
-  url: "/docs/samples/monitoring/facilities-monitoring-poc/"
   redirect_from: []
 "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ/":
   url: "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ/"
@@ -4108,26 +4026,8 @@
 "/docs/samples/netvox/netvox-guide/":
   url: "/docs/samples/netvox/netvox-guide/"
   redirect_from: []
-"/docs/samples/nodemcu/":
-  url: "/docs/samples/nodemcu/"
-  redirect_from: []
-"/docs/samples/nodemcu/temperature/":
-  url: "/docs/samples/nodemcu/temperature/"
-  redirect_from: []
-"/docs/samples/raspberry/gpio-android-things/":
-  url: "/docs/samples/raspberry/gpio-android-things/"
-  redirect_from: []
-"/docs/samples/raspberry/gpio/":
-  url: "/docs/samples/raspberry/gpio/"
-  redirect_from: []
 "/docs/samples/raspberry/grove/":
   url: "/docs/samples/raspberry/grove/"
-  redirect_from: []
-"/docs/samples/raspberry/":
-  url: "/docs/samples/raspberry/"
-  redirect_from: []
-"/docs/samples/raspberry/temperature/":
-  url: "/docs/samples/raspberry/temperature/"
   redirect_from: []
 "/docs/samples/roltek/roltek/":
   url: "/docs/samples/roltek/roltek/"
@@ -4179,9 +4079,6 @@
   redirect_from: []
 "/docs/samples/tektelic/":
   url: "/docs/samples/tektelic/"
-  redirect_from: []
-"/docs/samples/":
-  url: "/docs/samples/"
   redirect_from: []
 "/docs/search/":
   url: "/docs/search/"
@@ -4446,7 +4343,8 @@
   redirect_from: []
 "/docs/user-guide/alarms/":
   url: "/docs/user-guide/alarms/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/alarms/basic-rules/"
 "/docs/user-guide/api-limits/":
   url: "/docs/user-guide/api-limits/"
   redirect_from: []
@@ -4679,6 +4577,7 @@
   redirect_from:
   - "/docs/user-guide/install/aws-marketplace-pe/"
   - "/products/thingsboard-pe/aws"
+  - "/products/thingsboard-pe/install/aws/"
 "/docs/user-guide/install/pe/aws/":
   url: "/docs/user-guide/install/pe/aws/"
   redirect_from: []
@@ -5077,7 +4976,9 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/rpc/"
+  - "/docs/reference/actions/rpc-plugin-action/"
 "/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request/"
   redirect_from: []
@@ -5086,7 +4987,9 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/telemetry/"
+  - "/docs/reference/actions/telemetry-plugin-action/"
 "/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table/"
   redirect_from: []
@@ -5159,10 +5062,12 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/sns/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/"
-  redirect_from: []
+  redirect_from:
+  - "/reference/plugins/sqs/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/"
   redirect_from: []
@@ -5178,19 +5083,27 @@
   - "/docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/kafka/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/kafka/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/kafka/"
+  - "/docs/reference/actions/kafka-plugin-action/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/mqtt/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/mqtt/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/rabbitmq/"
+  - "/docs/reference/actions/rabbitmq-plugin-action/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/rest/"
+  - "/docs/reference/actions/rest-api-call-plugin-action/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/send-email/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/send-email/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/mail/"
+  - "/docs/reference/actions/send-mail-action/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/send-notification/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/send-notification/"
   redirect_from: []
@@ -5270,7 +5183,9 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/plugins/messaging/"
+  - "/docs/reference/plugins/time/"
 "/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator/"
   redirect_from: []
@@ -5279,7 +5194,8 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/reference/processors/alarm-deduplication-processor/"
 "/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs/"
   redirect_from: []
@@ -5463,7 +5379,8 @@
   redirect_from: []
 "/docs/user-guide/ui/mail-settings/":
   url: "/docs/user-guide/ui/mail-settings/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/alarms/mail/"
 "/docs/user-guide/ui/microsoft-teams-settings/":
   url: "/docs/user-guide/ui/microsoft-teams-settings/"
   redirect_from: []

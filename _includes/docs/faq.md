@@ -22,7 +22,7 @@ and follow the [getting started guide](/docs/{{docsPrefix}}getting-started-guide
 ## What can I do with ThingsBoard?
 
 ThingsBoard provides out-of-the-box IoT solution that will enable server-side infrastructure for your IoT applications.
-You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [hardware samples](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples)
+You can find more information by browsing [guides](/docs/{{docsPrefix}}user-guide/) and [device library](/docs/{{docsPrefix}}/devices-library/).
 
 {% unless docsPrefix contains 'paas/' %}
 ## Where can I host ThingsBoard?

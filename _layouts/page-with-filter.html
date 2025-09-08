@@ -15,7 +15,7 @@
     <div class="search-block">
         <div class="search-block-wrapper">
             <div class="filter-button">
-                <img src="https://img.thingsboard.io/filter-icon.svg" alt="Filter icon">
+                <img src="/images/filter-icon.svg" alt="Filter icon">
                 <span>
                     Filters
                 </span>
@@ -23,7 +23,7 @@
             <div class="search-crisps desktop">
                 <div class="search-crisps-clear-btn pagination-render-trigger">
                     Clear all
-                    <img src="https://img.thingsboard.io/s-close-icon.svg" class="search-crisps-clear-btn-close" alt="Close icon">
+                    <img src="/images/s-close-icon.svg" class="search-crisps-clear-btn-close" alt="Close icon">
                 </div>
                 <div class="search-crisps-toggle-btn" style="display: none;">
                     <span class="toggle-label">Hide</span>
@@ -33,8 +33,8 @@
             <div class="search-item">
                 <input type="text" id="searchCompanyInput" placeholder="Find..." />
                 <span class="searchButton">
-                    <img class="searchButtonIcon" src="https://img.thingsboard.io/search.svg" alt="Search icon">
-                    <img class="searchButtonCloseIcon" src="https://img.thingsboard.io/s-close-icon.svg" alt="Search close icon">
+                    <img class="searchButtonIcon" src="/images/search.svg" alt="Search icon">
+                    <img class="searchButtonCloseIcon" src="/images/s-close-icon.svg" alt="Search close icon">
                 </span>
             </div>
         </div>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="not-found">
-                    <img src="https://img.thingsboard.io/not-found.svg" alt="Not found image" width="200px" height="200px">
+                    <img src="/images/not-found.svg" alt="Not found image" width="200px" height="200px">
                     <p>No partners have been found...</p>
                 </div>
             </div>
@@ -64,300 +64,306 @@
 
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const checkboxes = document.querySelectorAll('.big-filter-section-filter input[type="checkbox"]');
-        const cards = document.querySelectorAll('.card');
-        const filterSectionLabels = document.querySelectorAll('.big-filter-section-label');
-        const crispsContainers = document.querySelectorAll('.search-crisps');
-        const filterBtn = document.querySelector('.filter-button');
-        const closeFilterBtn = document.querySelector('.close-filter-button');
-        const searchInput = document.getElementById('searchCompanyInput');
-        const searchButton = document.querySelectorAll(".searchButton");
+    const checkboxes = document.querySelectorAll('.big-filter-section-filter input[type="checkbox"]');
+    const cards = document.querySelectorAll('.card');
+    const filterSectionLabels = document.querySelectorAll('.big-filter-section-label');
+    const crispsContainers = document.querySelectorAll('.search-crisps');
+    const filterBtn = document.querySelector('.filter-button');
+    const closeFilterBtn = document.querySelector('.close-filter-button');
+    const searchInput = document.getElementById('searchCompanyInput');
+    const searchButton = document.querySelectorAll(".searchButton");
 
-        document.querySelectorAll('.big-filter-section').forEach(section => {
-            const searchFilterInput = section.querySelector('#searchFilterInput');
-            const toggleBtn = section.querySelector('.toggle-extra-btn');
-            const filterItems = section.querySelectorAll('.big-filter-section-filter');
+    document.querySelectorAll('.big-filter-section').forEach(section => {
+        const searchFilterInput = section.querySelector('#searchFilterInput');
+        const toggleBtn = section.querySelector('.toggle-extra-btn');
+        const filterItems = section.querySelectorAll('.big-filter-section-filter');
 
-            let isExpanded = false;
-            const originalExtraItems = Array.from(filterItems).filter((_, index) => index >= 10);
+        let isExpanded = false;
+        const originalExtraItems = Array.from(filterItems).filter((_, index) => index >= 10);
 
-            if (toggleBtn) {
-                toggleBtn.addEventListener('click', () => {
-                    isExpanded = !isExpanded;
-                    toggleBtn.classList.toggle('opened', isExpanded);
+        if (toggleBtn) {
+            toggleBtn.addEventListener('click', () => {
+                isExpanded = !isExpanded;
+                toggleBtn.classList.toggle('opened', isExpanded);
 
-                    originalExtraItems.forEach(el => {
-                        el.classList.toggle('shown', isExpanded);
-                        el.classList.toggle('hidden', !isExpanded);
+                originalExtraItems.forEach(el => {
+                    el.classList.toggle('shown', isExpanded);
+                    el.classList.toggle('hidden', !isExpanded);
+                });
+
+                toggleBtn.textContent = isExpanded ? 'Hide' : 'More';
+            });
+        }
+
+        if (searchFilterInput) {
+            searchFilterInput.addEventListener('input', () => {
+                const query = searchFilterInput.value.trim().toLowerCase();
+
+                const filterContainer = filterItems[0].parentElement;
+
+                const notFound = filterContainer.querySelector(".not-found-indicator");
+
+                if (query.length > 0) {
+
+                    if (toggleBtn) toggleBtn.style.display = 'none';
+
+                    filterItems.forEach(item => item.classList.remove('extra-filter'));
+
+                    filterItems.forEach(item => {
+                        const label = item.querySelector('label');
+                        const text = label ? label.textContent.toLowerCase() : '';
+                        item.classList.toggle('hidden', !text.includes(query));
                     });
 
-                    toggleBtn.textContent = isExpanded ? 'Hide' : 'More';
-                });
-            }
+                    const hiddenFilters = filterContainer.querySelectorAll(".hidden");
 
-            if (searchFilterInput) {
-                searchFilterInput.addEventListener('input', () => {
-                    const query = searchFilterInput.value.trim().toLowerCase();
-
-                    const filterContainer = filterItems[0].parentElement;
-
-                    const notFound = filterContainer.querySelector(".not-found-indicator");
-
-                    if (query.length > 0) {
-
-                        if (toggleBtn) toggleBtn.style.display = 'none';
-
-                        filterItems.forEach(item => item.classList.remove('extra-filter'));
-
-                        filterItems.forEach(item => {
-                            const label = item.querySelector('label');
-                            const text = label ? label.textContent.toLowerCase() : '';
-                            item.classList.toggle('hidden', !text.includes(query));
-                        });
-
-                        const hiddenFilters = filterContainer.querySelectorAll(".hidden");
-
-                        if(filterItems.length === hiddenFilters.length) {
-                            if(!notFound) {
-                                const li = document.createElement("li");
-                                li.textContent = "Not found";
-                                li.classList.add("not-found-indicator");
-                                filterContainer.appendChild(li);
-                            }
-                        } else {
-                            if(notFound) {
-                                notFound.remove();
-                            }
+                    if(filterItems.length === hiddenFilters.length) {
+                        if(!notFound) {
+                            const li = document.createElement("li");
+                            li.textContent = "Not found";
+                            li.classList.add("not-found-indicator");
+                            filterContainer.appendChild(li);
                         }
                     } else {
                         if(notFound) {
                             notFound.remove();
                         }
-
-                        if (toggleBtn) toggleBtn.style.display = 'inline-block';
-
-                        filterItems.forEach((item, index) => {
-                            item.classList.remove('hidden', 'shown');
-                            if (index >= 10) {
-                                item.classList.add('extra-filter');
-                                item.classList.toggle('hidden', !isExpanded);
-                                item.classList.toggle('shown', isExpanded);
-                            }
-                        });
                     }
-                });
-            }
-        });
-
-        filterBtn.addEventListener('click', () => {
-            document.body.classList.add('filter-opened')
-        });
-
-        closeFilterBtn.addEventListener('click', () => {
-            document.body.classList.remove('filter-opened')
-        });
-
-        function inputCloseEvent() {
-            searchButton.forEach((item) => {
-                item.addEventListener("click", () => {
-                    const input = item.parentElement.querySelector('input');
-                    if(input.value) {
-                        input.value = "";
-                        input.dispatchEvent(new Event("input"));
-                    } else {
-                        input.focus();
+                } else {
+                    if(notFound) {
+                        notFound.remove();
                     }
-                })
-            })
-        }
 
-        inputCloseEvent();
+                    if (toggleBtn) toggleBtn.style.display = 'inline-block';
 
-        function applySearch() {
-            const query = searchInput.value.trim().toLowerCase();
-
-            cards.forEach(card => {
-                const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
-                const match = title.includes(query);
-                card.classList.toggle('search-hidden', !match);
-            });
-        }
-
-        function applyFilter() {
-            const selectedFilters = Array.from(checkboxes)
-                .filter(cb => cb.checked)
-                .map(cb => cb.value.trim().toLowerCase());
-
-            cards.forEach(card => {
-                const isHiddenBySearch = card.classList.contains('search-hidden');
-                if (isHiddenBySearch) {
-                    card.classList.add('filter-hidden');
-                    return;
+                    filterItems.forEach((item, index) => {
+                        item.classList.remove('hidden', 'shown');
+                        if (index >= 10) {
+                            item.classList.add('extra-filter');
+                            item.classList.toggle('hidden', !isExpanded);
+                            item.classList.toggle('shown', isExpanded);
+                        }
+                    });
                 }
-
-                const cardTypes = card.id.split('|').map(s => s.trim().toLowerCase());
-
-                const match =
-                    selectedFilters.length === 0 ||
-                    selectedFilters.every(f => cardTypes.includes(f));
-
-                card.classList.toggle('filter-hidden', !match);
             });
         }
+    });
 
-        function updateVisibility() {
-            applySearch();
-            applyFilter();
+    filterBtn.addEventListener('click', () => {
+        document.body.classList.add('filter-opened')
+    });
 
-            const selectedFilters = selectedOrder.filter(v =>
-                Array.from(checkboxes).some(cb => cb.checked && cb.value === v)
-            )
+    closeFilterBtn.addEventListener('click', () => {
+        document.body.classList.remove('filter-opened')
+    });
 
-            crispsContainers.forEach(container => {
-                updateCrisps(selectedFilters, container);
-            });
-        }
+    function inputCloseEvent() {
+        searchButton.forEach((item) => {
+            item.addEventListener("click", () => {
+                const input = item.parentElement.querySelector('input');
+                if(input.value) {
+                    input.value = "";
+                    input.dispatchEvent(new Event("input"));
+                } else {
+                    input.focus();
+                }
+            })
+        })
+    }
 
-        const MAX_VISIBLE_CRISPS = 3;
+    inputCloseEvent();
 
-        function setExpanded(container, expanded) {
-            container.setAttribute('data-expanded', expanded ? 'true' : 'false');
-        }
-        function isExpanded(container) {
-            return container.getAttribute('data-expanded') === 'true';
-        }
+    function applySearch() {
+        const query = searchInput.value.trim().toLowerCase();
 
-        crispsContainers.forEach(c => setExpanded(c, false));
+        cards.forEach(card => {
+            const title = card.querySelector('.card-title')?.textContent.toLowerCase() || '';
+            const match = title.includes(query);
+            card.classList.toggle('search-hidden', !match);
+        });
+    }
 
-        function clampCrisps(container, state) {
-            const toggleBtn = container.querySelector('.search-crisps-toggle-btn');
-            const toggleLabel = toggleBtn?.querySelector('.toggle-label');
-            const toggleIcon = toggleBtn?.querySelector('i');
-            const crisps = Array.from(container.querySelectorAll('.crisp'));
+    function applyFilter() {
+        const selectedFilters = Array.from(checkboxes)
+            .filter(cb => cb.checked)
+            .map(cb => cb.value.trim().toLowerCase());
 
-            if (crisps.length <= MAX_VISIBLE_CRISPS) {
-                if (toggleBtn) toggleBtn.style.display = 'none';
-                crisps.forEach(c => c.classList.remove('hidden'));
-                setExpanded(container, false);
+        cards.forEach(card => {
+            const isHiddenBySearch = card.classList.contains('search-hidden');
+            if (isHiddenBySearch) {
+                card.classList.add('filter-hidden');
                 return;
             }
 
-            if (toggleBtn) toggleBtn.style.display = 'inline-block';
+            const cardTypes = card.id.split('|').map(s => s.trim().toLowerCase());
 
-            const apply = (collapse) => {
-                if (collapse) {
-                    crisps.forEach((c, idx) => c.classList.toggle('hidden', idx >= MAX_VISIBLE_CRISPS));
-                    if (toggleLabel) toggleLabel.textContent = 'Show more';
-                    if (toggleIcon) toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
-                    setExpanded(container, false);
-                    toggleBtn?.setAttribute('data-collapsed', 'true');
-                } else {
-                    crisps.forEach(c => c.classList.remove('hidden'));
-                    if (toggleLabel) toggleLabel.textContent = 'Hide';
-                    if (toggleIcon) toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
-                    setExpanded(container, true);
-                    toggleBtn?.setAttribute('data-collapsed', 'false');
-                }
+            const match =
+                selectedFilters.length === 0 ||
+                selectedFilters.every(f => cardTypes.includes(f));
+
+            card.classList.toggle('filter-hidden', !match);
+        });
+    }
+
+    function updateVisibility() {
+        applySearch();
+        applyFilter();
+
+        const selectedFilters = selectedOrder.filter(v =>
+            Array.from(checkboxes).some(cb => cb.checked && cb.value === v)
+        )
+
+        crispsContainers.forEach(container => {
+            updateCrisps(selectedFilters, container);
+        });
+    }
+
+    const MAX_VISIBLE_CRISPS = 3;
+
+    function setExpanded(container, expanded) {
+        container.setAttribute('data-expanded', expanded ? 'true' : 'false');
+    }
+    function isExpanded(container) {
+        return container.getAttribute('data-expanded') === 'true';
+    }
+
+    crispsContainers.forEach(c => setExpanded(c, false));
+
+    function clampCrisps(container, state) {
+        const toggleBtn = container.querySelector('.search-crisps-toggle-btn');
+        const toggleLabel = toggleBtn?.querySelector('.toggle-label');
+        const toggleIcon = toggleBtn?.querySelector('i');
+        const crisps = Array.from(container.querySelectorAll('.crisp'));
+
+        if (crisps.length <= MAX_VISIBLE_CRISPS) {
+            if (toggleBtn) toggleBtn.style.display = 'none';
+            crisps.forEach(c => c.classList.remove('hidden'));
+            setExpanded(container, false);
+            return;
+        }
+
+        if (toggleBtn) toggleBtn.style.display = 'inline-block';
+
+        const apply = (collapse) => {
+            if (collapse) {
+                crisps.forEach((c, idx) => c.classList.toggle('hidden', idx >= MAX_VISIBLE_CRISPS));
+                if (toggleLabel) toggleLabel.textContent = 'Show more';
+                if (toggleIcon) toggleIcon.style.transform = 'rotate(180deg) translateY(50%)';
+                setExpanded(container, false);
+                toggleBtn?.setAttribute('data-collapsed', 'true');
+            } else {
+                crisps.forEach(c => c.classList.remove('hidden'));
+                if (toggleLabel) toggleLabel.textContent = 'Hide';
+                if (toggleIcon) toggleIcon.style.transform = 'rotate(0deg) translateY(-50%)';
+                setExpanded(container, true);
+                toggleBtn?.setAttribute('data-collapsed', 'false');
+            }
+        };
+
+        apply(state !== 'expand');
+
+        if (toggleBtn) {
+            toggleBtn.onclick = () => {
+                const willExpand = !isExpanded(container);
+                apply(!willExpand ? true : false);
             };
-
-            apply(state !== 'expand');
-
-            if (toggleBtn) {
-                toggleBtn.onclick = () => {
-                    const willExpand = !isExpanded(container);
-                    apply(!willExpand ? true : false);
-                };
-            }
         }
+    }
 
-        function updateCrisps(selectedFilters, container) {
-            const clearAllBtn = container.querySelector('.search-crisps-clear-btn') || null;
-            const toggleBtn = container.querySelector('.search-crisps-toggle-btn') || null;
+    function updateCrisps(selectedFilters, container) {
+        const clearAllBtn = container.querySelector('.search-crisps-clear-btn') || null;
+        const toggleBtn = container.querySelector('.search-crisps-toggle-btn') || null;
 
-            const wasExpanded = isExpanded(container);
+        const wasExpanded = isExpanded(container);
 
-            container.querySelectorAll('.crisp').forEach(el => el.remove());
+        container.querySelectorAll('.crisp').forEach(el => el.remove());
 
-            selectedFilters.forEach(filter => {
-                const crisp = document.createElement('span');
-                crisp.className = 'crisp';
-                crisp.textContent = filter;
+        selectedFilters.forEach(filter => {
+            const crisp = document.createElement('span');
+            crisp.className = 'crisp';
+            crisp.textContent = filter;
 
-                const close = document.createElement('img');
-                close.src = 'https://img.thingsboard.io/s-close-icon.svg';
-                close.className = 'crisp-close';
-                crisp.appendChild(close);
+            const close = document.createElement('img');
+            close.src = '/images/s-close-icon.svg';
+            close.className = 'crisp-close';
+            crisp.appendChild(close);
 
-                close.addEventListener('click', () => {
-                    const checkbox = Array.from(checkboxes).find(cb => cb.value === filter);
-                    if (checkbox) {
-                        checkbox.checked = false;
-                        updateVisibility();
-                        if (typeof window.render === 'function') window.render();
-                    }
-                });
-
-                container.appendChild(crisp);
-            });
-
-            if (clearAllBtn) {
-                clearAllBtn.style.display = selectedFilters.length > 0 ? 'inline-block' : 'none';
-                clearAllBtn.onclick = () => {
-                    checkboxes.forEach(cb => cb.checked = false);
-                    setExpanded(container, false);
+            close.addEventListener('click', () => {
+                const checkbox = Array.from(checkboxes).find(cb => cb.value === filter);
+                if (checkbox) {
+                    checkbox.checked = false;
                     updateVisibility();
-                };
-                container.appendChild(clearAllBtn);
-            }
-
-            if (toggleBtn) {
-                container.appendChild(toggleBtn);
-            }
-
-            clampCrisps(container, wasExpanded ? 'expand' : 'collapse');
-
-            const filterHeader = document.querySelector('.big-filter-header-title');
-            let counter = document.querySelector('.big-filter-header-counter');
-            const currentLength = selectedFilters.length;
-
-            if (currentLength > 0) {
-                if (!counter) {
-                    counter = document.createElement('span');
-                    counter.className = 'big-filter-header-counter';
-                    filterHeader.appendChild(counter);
+                    if (typeof window.render === 'function') window.render();
                 }
-                counter.textContent = `${currentLength}`;
-            } else if (counter) {
-                counter.remove();
-            }
+            });
+
+            container.appendChild(crisp);
+        });
+
+        if (clearAllBtn) {
+            clearAllBtn.style.display = selectedFilters.length > 0 ? 'inline-block' : 'none';
+            clearAllBtn.onclick = () => {
+                checkboxes.forEach(cb => cb.checked = false);
+                setExpanded(container, false);
+                updateVisibility();
+            };
+            container.appendChild(clearAllBtn);
         }
 
-        let selectedOrder = [];
+        if (toggleBtn) {
+            container.appendChild(toggleBtn);
+        }
 
-        checkboxes.forEach(cb => {
-            cb.addEventListener('change', () => {
-                if (cb.checked) {
-                    if (!selectedOrder.includes(cb.value)) {
-                        selectedOrder.push(cb.value);
-                    }
-                } else {
-                    selectedOrder = selectedOrder.filter(v => v !== cb.value);
+        clampCrisps(container, wasExpanded ? 'expand' : 'collapse');
+
+        const filterHeader = document.querySelector('.big-filter-header-title');
+        let counter = document.querySelector('.big-filter-header-counter');
+        const currentLength = selectedFilters.length;
+
+        if (currentLength > 0) {
+            if (!counter) {
+                counter = document.createElement('span');
+                counter.className = 'big-filter-header-counter';
+                filterHeader.appendChild(counter);
+            }
+            counter.textContent = `${currentLength}`;
+        } else if (counter) {
+            counter.remove();
+        }
+    }
+
+    let selectedOrder = [];
+
+    checkboxes.forEach(cb => {
+        cb.addEventListener('change', () => {
+            if (cb.checked) {
+                if (!selectedOrder.includes(cb.value)) {
+                    selectedOrder.push(cb.value);
                 }
-                updateVisibility();
-            });
+            } else {
+                selectedOrder = selectedOrder.filter(v => v !== cb.value);
+            }
+            updateVisibility();
         });
+    });
 
-        searchInput.addEventListener('input', updateVisibility);
+    searchInput.addEventListener('input', updateVisibility);
 
-        filterSectionLabels.forEach(label => {
-            label.addEventListener('click', function () {
-                const section = label.closest('.big-filter-section');
-                section.classList.toggle('opened');
-            });
+    filterSectionLabels.forEach(label => {
+        label.addEventListener('click', function () {
+            const section = label.closest('.big-filter-section');
+            section.classList.toggle('opened');
         });
+    });
 
-        updateVisibility();
+    updateVisibility();
+
+    window.addEventListener('pageshow', (e) => {
+        const nav = performance.getEntriesByType?.('navigation')?.[0];
+        const isBackForward = nav && nav.type === 'back_forward';
+        if (e.persisted || isBackForward) {
+            updateVisibility();
+        }
     });
 </script>
 
