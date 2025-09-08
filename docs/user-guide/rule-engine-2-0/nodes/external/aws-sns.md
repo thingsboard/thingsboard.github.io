@@ -5,6 +5,7 @@ description: Node publish messages to AWS SNS (Amazon Simple Notification Servic
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
+redirect_from: "/docs/reference/plugins/sns/"
 ---
 
 {% include get-hosts-name.html %}

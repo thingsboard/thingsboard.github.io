@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Mail server configuration
 description: ThingsBoard IoT platform mail settings
+redirect_from: "/docs/samples/alarms/mail/"
 
 mail-server-configuration-1:
     0:

@@ -6,6 +6,11 @@ chip: RP2040
 connectivity: HTTP, MQTT, WIFI, Bluetooth
 vendor: Arduino
 deviceImageFileName: arduino-nano-rp2040-connect.jpg
+redirect_from:
+    - "/docs/samples/arduino/"
+    - "/docs/samples/arduino/temperature/"
+    - "/docs/samples/arduino/sim808-htu21d/"
+
 ---
 
 * TOC

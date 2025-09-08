@@ -1,0 +1,66 @@
+{% assign filterCollection = page.filterCollection %}
+
+<div class="big-filter">
+    <div class="big-filter-header-crisps">
+        <div class="big-filter-header">
+            <div class="big-filter-header-title">
+                <span class="big-filter-header-label">Filters</span>
+            </div>
+            <div class="close-filter-button">
+                <img src="https://img.thingsboard.io/s-close-icon.svg" alt="Close icon">
+            </div>
+        </div>
+        <div class="search-crisps mobile">
+            <div class="search-crisps-clear-btn pagination-render-trigger">
+                Clear All
+                <img class="search-crisps-clear-btn-close" src="https://img.thingsboard.io/s-close-icon.svg" alt="Close icon">
+            </div>
+            <div class="search-crisps-toggle-btn" style="display: none;">
+                <span class="toggle-label">Hide</span>
+                <i class="fas fa-chevron-up blue-chevron"></i>
+            </div>
+        </div>
+    </div>
+    <div class="filters">
+        {% for item in filterCollection %}
+            {% assign filters = item.filters %}
+            <div class="big-filter-section{% if forloop.index0 == 0 %} opened{% endif %}">
+                <div class="big-filter-section-label">
+                    <span class="big-filter-section-label-title">{{ item.label }}</span>
+                    <span class="big-filter-section-label-chevron">
+                    <i class="fas fa-chevron-down fa-sm blue-chevron"></i>
+                </span>
+                </div>
+                <div class="big-filter-section-filters">
+                    <ul class="big-filter-section-list">
+                        {% if filters.size > 10 %}
+                            <li class="big-filter-section-search">
+                                <div class="search-item">
+                                    <input id="searchFilterInput" type="text" placeholder="Search..." />
+                                    <span class="searchButton">
+                                    <img class="searchButtonIcon" src="https://img.thingsboard.io/search.svg" alt="Search icon">
+                                    <img class="searchButtonCloseIcon" src="https://img.thingsboard.io/s-close-icon.svg">
+                                </span>
+                                </div>
+                            </li>
+                        {% endif %}
+                        {% for filter in item.filters %}
+                            <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
+                                <input class="pagination-render-trigger" type="checkbox" id="{{ filter }}" value="{{ filter }}">
+                                <label class="pagination-render-trigger" for="{{ filter }}">{{ filter }}</label>
+                            </li>
+                        {% endfor %}
+                        {% if filters.size > 10 %}
+                            <li>
+                                <button type="button" class="toggle-extra-btn">More</button>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
