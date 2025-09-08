@@ -106,7 +106,7 @@ toc:
     path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
   - title: Queues
     path: /docs/pe/user-guide/rule-engine-2-5/queues/
-  - title: Nodes
+  - title: Rule Nodes
     path: /docs/pe/user-guide/rule-engine-2-0/nodes/
   - title: Data processing & actions
     section:
