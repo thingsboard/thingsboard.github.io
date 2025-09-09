@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: create alarm
-description: Creates alarms based on message originator and node configuration.
+description: Creates new alarms or updates existing active alarms.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

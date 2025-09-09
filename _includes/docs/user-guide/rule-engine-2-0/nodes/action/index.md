@@ -4,7 +4,7 @@
 - [change owner](/docs/user-guide/rule-engine-2-0/nodes/action/change-owner) — Changes Owner of the Originator entity to the selected Owner by type.
 - [clear alarm](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm) — This Node loads the latest Alarm with configured Alarm Type for Message Originator and Clear the Alarm if it exist.
 - [copy to view](/docs/user-guide/rule-engine-2-0/nodes/action/copy-to-view) — Copy attributes from asset/device to related entity view according to entity view configuration. 
-- [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — Copy attributes from asset/device to related entity view according to entity view configuration.
+- [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — creates new alarms or updates existing active alarms.
 - [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — Create the relation from the selected entity to originator of the message by type and direction.
 - [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — Delays incoming messages for configurable period.
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — Delete attributes for Message Originator.
