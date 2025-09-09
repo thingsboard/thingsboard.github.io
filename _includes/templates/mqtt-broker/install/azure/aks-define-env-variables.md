@@ -8,7 +8,6 @@ export AKS_LOCATION=eastus
 export AKS_GATEWAY=tbmq-gateway
 export TB_CLUSTER_NAME=tbmq-cluster
 export TB_DATABASE_NAME=tbmq-db
-export TB_REDIS_NAME=tbmq-redis
 echo "You variables ready to create resource group $AKS_RESOURCE_GROUP in location $AKS_LOCATION 
 and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
 ```
