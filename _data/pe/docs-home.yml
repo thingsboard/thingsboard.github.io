@@ -391,8 +391,6 @@ toc:
           path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/pe/user-guide/contribution/ui/advanced-development/
-    - title: Widgets development (ThingsBoard v2.x)
-      path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
 - title: Release notes
