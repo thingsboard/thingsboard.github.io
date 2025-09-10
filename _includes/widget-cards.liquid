@@ -1,0 +1,17 @@
+{% assign widgetsLibrary = site.data.widgets-library %}
+
+<ul class="widget-list">
+    {% for bundle in widgetsLibrary %}
+        <li class="widget-item">
+            <a class="widget-link" href="{{ bundle[0] }}">
+                <div class="image-section">
+                    <img src="{{ bundle[1].image }}" alt="{{ bundle[1].title }} bundle image">
+                </div>
+                <div class="text-section">
+                    <span>{{ bundle[1].title }}</span>
+                    <p>{{ bundle[1].description }}</p>
+                </div>
+            </a>
+        </li>
+    {% endfor %}
+</ul>

@@ -1,0 +1,49 @@
+#docs
+  .widget-list
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    margin-top: 40px
+    padding-left: 0
+    .widget-item
+      list-style: none
+      max-width: 258px
+      border-radius: 16px
+      border: 1px solid rgba(0, 0, 0, 0.08)
+      background: #FFF
+      margin-bottom: 0
+      transition: ease-in-out 0.3s
+      &:hover
+        background: #F4F8FE
+        box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0 0 8px 0 rgba(0, 0, 0, 0.08)
+        .widget-link
+          .image-section
+            img
+              scale: 1.05
+      .widget-link
+        display: flex
+        flex-direction: column
+        gap: 20px
+        padding: 24px
+        text-decoration: none
+        .image-section
+          padding: 5px
+          img
+            scale: 1
+            transition: ease-in-out 0.3s
+            width: 200px
+            height: 160px
+        .text-section
+          display: flex
+          flex-direction: column
+          gap: 8px
+          span
+            font-size: 16px
+            font-weight: 500
+            line-height: 28px
+            color: rgba(0, 0, 0, 0.87)
+          p
+            font-size: 14px
+            font-weight: 400
+            line-height: 24px
+            color: rgba(0, 0, 0, 0.76)
