@@ -19,87 +19,95 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 
 - Active [Amazon AWS](https://aws.amazon.com/){:target="_blank"} account
 
-## Step 1. Subscribe to ThingsBoard PE BYOL
+## Step 1. Subscribe to ThingsBoard PE BYOL and Review Terms
 
-Open [ThingsBoard Professional Edition BYOL](https://aws.amazon.com/marketplace/pp/B07V8S6JLG) product page on [AWS Marketplace](https://aws.amazon.com/marketplace).
+Navigate to the [ThingsBoard Professional Edition BYOL](https://aws.amazon.com/marketplace/pp/B07V8S6JLG) product page on [AWS Marketplace](https://aws.amazon.com/marketplace) and click the **View purchase options** button to begin the subscription process.
 
-- Click the **Continue to Subscribe** button
+Before completing your subscription, please carefully review all the information provided on the subscription page, including:
 
-## Step 2. General configuration
+- **Product details** – Bring Your Own License (BYOL) model means that a valid ThingsBoard license must be purchased separately to activate and use the software.
 
-- Review and Accept all Terms and Conditions. Click the "Accept Terms" button.
+- **Pricing details** – The software subscription cost is $0.00. However, AWS infrastructure usage charges will apply. Depending on your geographic region, applicable taxes and other charges may apply.
 
-- Leave Fulfillment Option and Software Version as-is.
+- **Terms and conditions** – By completing your subscription, you are confirming that you have read, understood, and agree to **End User License Agreement (EULA)** and the **AWS Customer Agreement**.
 
-- Select the region from the list of available AWS regions. 
+After carefully reviewing this information, click the **Subscribe** button to proceed with your subscription.
 
-- Click the **Continue to Launch** button
+## Step 2. Launch ThingsBoard PE instance 
 
-## Step 3. Launch your ThingsBoard PE instance 
+After completing the subscription, a confirmation message will appear at the top of the page stating: *You have successfully purchased ThingsBoard Professional Edition BYOL*.
 
-### Step 3.1. Choose your Region
+Click the **Launch your software** button to proceed. This action will redirect you to the software configuration and deployment options for ThingsBoard Professional Edition on AWS.
 
-Make sure you review the usage instructions. It is always a good idea to copy them to a safe place. 
+### Step 2.1. Setup configuration
 
-### Step 3.2. Choose your EC2 Instance Type
+On the configuration page, you will see a list of options, including **Service, Launch method, and Region**:
+
+- **Service** - Choose a service based on how you want your product installed and configured in AWS. Each service offers different advantages and disadvantages and may have different configuration options. For this instruction we will use **Amazon EC2** that provides on-demand scalability and complete control over your computing resources, allowing you to quickly adjust capacity based on demand and maintain full access to the underlying operating system.
+
+- **Launch method** - Choose how to package and deploy your application. Each method offers different deployment capabilities and management options. Your selected service type determines which delivery methods are available. In this instruction we will proceed with the **Launch from EC2 Console**.
+
+- **Region** - Specify the AWS region where you want to deploy ThingsBoard Professional Edition.
+
+When all options are set, click **Launch from EC2** to continue.
+
+<!-- Remove this after 31 December 2025 -->
+{% capture service-catalog-warning %}
+On December 31, 2025, AWS Marketplace will stop supporting the ability to copy AMIs and CloudFormation templates to Service Catalog. You can continue to deploy AMIs and CloudFormation templates through the AWS Marketplace website or EC2 console. For more information, refer to [AMI-based products in AWS Marketplace](https://docs.aws.amazon.com/marketplace/latest/buyerguide/buyer-server-products.html).
+{% endcapture %}
+{% include templates/info-banner.md content=service-catalog-warning %}
+<!-- Remove this after 31 December 2025 -->
+
+### Step 2.2. Name and AMI Information 
+
+On the **Launch instance** page, you will see the **Name and tags** section, where you can assign a name to your instance. The **ThingsBoard Professional Edition (BYOL) AMI** details are also available here, including its name, description, and publishing information. Verify that the correct AMI is selected, and then proceed to the next step to configure your instance.
+
+### Step 2.3. Instance Type and Key Pair configuration
 
 You can optionally change your EC2 Instance Type, VPC and Subnet. This step is usually for advanced AWS EC2 users.  
 
 {% capture vm-min-req %}
-ThingsBoard requires EC2 instance with at least **4GB of RAM**; consider [adjusting the memory parameters](/docs/user-guide/install/pe/ubuntu/#step-6-optional-memory-update-for-slow-machines-4gb-of-ram) to ensure stability.
+ThingsBoard requires EC2 instance with at least **4GB of RAM**. Consider [adjusting the memory parameters](/docs/user-guide/install/pe/ubuntu/#step-6-optional-memory-update-for-slow-machines-4gb-of-ram) to ensure stability.
 For optimal performance, we recommend an instance with at least **8GB of RAM** and **2 vCPUs**.
 {% endcapture %}
 {% include templates/info-banner.md content=vm-min-req %}
 
-### Step 3.3. Configure Security Group Settings
+You can select existing **Key Pair** or create new one for your instance. Make sure you have access to the key file before you proceed. We will use the key file later in this guide. 
 
-Make sure you create new Security Group based on seller settings. 
+### Step 2.4. Configure Security Group Settings
 
-- Click the **Create New Based on Seller Settings** button
+We recommend to use **Create security group** option to create predefined list of firewall rules that controls the traffic to and from your instance. If you choose **Select existing security group** during the instance setup, ensure that the chosen security group has inbound rules that allow traffic on the following ports required by ThingsBoard:
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-security.png)
+- **8080 (TCP)** – HTTP access to the ThingsBoard web interface.
+- **1883 (TCP)** – MQTT protocol.
+- **8883 (TCP)** – MQTT over SSL.
+- **7070 (TCP)** – Edge RPC service.
+- **9090 (TCP)** – Remote Integration service.
+- **5683–5688 (UDP)** – CoAP and LwM2M protocols.
 
-Populate necessary Security Group name and details and save new group
+### Step 2.5. Storage Configuration
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-new-security-group.png)
+Specify the storage options for the instance. For this instruction we will use the default configuration with 20 GIB of gp2 storage.
 
-Click the "Save" button.
+### Step 2.6. Launch instance
 
-### Step 3.4. Configure Key Pair Settings
+Once all configurations are completed, open the **Summary** window to review your settings. After verifying that everything is correct, click the **Launch instance** button to start the **ThingsBoard PE** instance.
 
-You can optionally select different or create new Key Pair for your instance. 
-Make sure you have access to the key file before you proceed. 
-We will use the key file later in this guide. 
+### Step 2.7. Obtain your Public IP and EC2 Instance ID
 
-### Step 3.5. Launch your ThingsBoard PE Instance
+When the instance state change to the **Running** and all **Status checks** will be finished, you can go to the **EC2 Instances** page and click on **Instance ID** to see **Instance Summary**.
 
-Finally, click the "Launch" button.
+Please save your **Instance ID** and **Public DNS** name to a safe place. We will use them later in this guide.
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-launch.png)
+On the image above example instance has this **Public DNS** name:
 
-### Step 3.6. Open EC2 console
+- **ec2-54-163-50-21.compute-1.amazonaws.com**
 
-Once Launch is complete, you can navigate to EC2 console to find out the Public IP address of the newly created instance.
+**Instance ID**:
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-complete.png)
+- **i-0e614977a8e0f4f3b**
 
-### Step 3.7. Obtain your Public IP and EC2 Instance ID
-
-In AWS EC2 console you need to wait until the instance state changes to **running** and all Status checks will be finished.
-
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-ec2-console.png)
-
-On the image above example instance has this Public DNS name 
-
-- **ec2-18-197-23-51.eu-central-1.compute-1.amazonaws.com**
-
-Instance ID 
-
-- **i-032b8bbf297987458**
-
-Please save your Instance ID and Public DNS name to a safe place. We will use them later in this guide.  
-
-## Step 4. Obtain your license secret
+## Step 3. Obtain your license secret
 
 In order to activate your ThingsBoard instance you will need to get the license secret. 
 ThingsBoard Licenses are managed by [ThingsBoard License Portal](https://license.thingsboard.io/signup).   
@@ -109,20 +117,20 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
  
 Please save your license secret to a safe place. We will use it later in this guide.
  
-## Step 5. Configure your license secret
+## Step 4. Configure your license secret
 
 Once you get the license secret, you should put it to the thingsboard configuration file. 
 
-### Step 5.1. Connect to your ThingsBoard Instance over SSH
+### Step 4.1. Connect to your ThingsBoard Instance over SSH
 
 Please use the official guides: 
 
-  * [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html) - for Windows users;
-  * [Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html) - For Linux/Mac users.
+  * [Connecting to Your Linux Instance from Windows Using PuTTY](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-from-windows.html) - for Windows users.
+  * [Connecting to Your Linux Instance Using SSH](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/connect-linux-inst-ssh.html) - For Linux/Mac users.
   
-Note: You will need to use instance Public DNS name (see [Step 3.7](/docs/user-guide/install/pe/aws-marketplace/#step-37-obtain-your-public-ip-and-ec2-instance-id)) and the key file (see [Step 3.4](/docs/user-guide/install/pe/aws-marketplace/#step-34-configure-key-pair-settings))
+Note: You will need to use instance **Public DNS** name (see [Step 2.7](/docs/user-guide/install/pe/aws-marketplace/#step-27-obtain-your-public-ip-and-ec2-instance-id)) and the key file (see [Step 2.3](/docs/user-guide/install/pe/aws-marketplace/#step-23-instance-type-and-key-pair-configuration))
 
-### Step 5.2. Put your license secret to ThingsBoard configuration file
+### Step 4.2. Put your license secret to ThingsBoard configuration file
 
 Open the file for editing using the following command:
 
@@ -147,7 +155,7 @@ and put your license secret. Please don't forget to uncomment the export stateme
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
 ``` 
 
-## Step 6. Launch ThingsBoard service  
+## Step 5. Launch ThingsBoard service  
 
 Execute the following command to start ThingsBoard:
 
@@ -156,11 +164,11 @@ sudo service thingsboard start
 ```
 {: .copy-code}
 
-{% capture 90-sec-ui %}
+{% capture 120-sec-ui %}
 Please allow up to 120 seconds for the Web UI to start. This is applicable only for slow machines with 1-2 CPUs or 1-2 GB RAM.{% endcapture %}
-{% include templates/info-banner.md content=90-sec-ui %}
+{% include templates/info-banner.md content=120-sec-ui %}
 
-## Step 7. Connect to ThingsBoard UI
+## Step 6. Connect to ThingsBoard UI
 
 Now you can open this link in your browser:
 
@@ -168,15 +176,15 @@ Now you can open this link in your browser:
 
 In this example:
 
-- http://ec2-18-197-23-51.eu-central-1.compute-1.amazonaws.com/login
+- http://ec2-54-163-50-21.compute-1.amazonaws.com/login
 
-Use this login to connect as system Administrator 
+Use this login to connect as system Administrator:
 
 - **sysadmin@thingsboard.org**
 
-Default password for System Administrator is Instance ID (see [Step 3.7](/docs/user-guide/install/pe/aws-marketplace/#step-37-obtain-your-public-ip-and-ec2-instance-id)). In this example: 
+Default password for System Administrator is Instance ID (see [Step 2.7](/docs/user-guide/install/pe/aws-marketplace/#step-27-obtain-your-public-ip-and-ec2-instance-id)). In this example: 
 
--  **i-032b8bbf297987458**
+-  **i-0e614977a8e0f4f3b**
 
 Now you can proceed to the next steps.
 
@@ -184,22 +192,25 @@ Now you can proceed to the next steps.
 
 {% capture elastic-ip-note %}
 By default, AWS Marketplace instances **do not assign a static public IP**. This means that the **public IP may change upon instance restart**.  
-To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 instance. You can follow the steps in the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-eips.html).  
+To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 instance. You can follow the steps in the [AWS documentation](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/working-with-eips.html).
 {% endcapture %}
 
 {% include templates/info-banner.md content=elastic-ip-note %}
 
 **Configure HAProxy to enable HTTPS**
 
- * Step 1. Assign valid domain name system (DNS) record to your instance external IP address.
- * Step 2. Connect to your instance using SSH or PuTTY (see [Step 5.1](/docs/user-guide/install/pe/aws-marketplace/#step-51-connect-to-your-thingsboard-instance-over-ssh)).
- * Step 3. Execute the following commands:
+ * Assign valid domain name system (DNS) record to your instance external IP address.
+ * Connect to your instance using SSH or PuTTY (see [Step 4.1](/docs/user-guide/install/pe/aws-marketplace/#step-41-connect-to-your-thingsboard-instance-over-ssh)).
+ * Execute the following commands:
+
  ```bash
  sudo certbot-certonly --domain smth.yourcompany.com --email support@yourcompany.com
  sudo haproxy-refresh
  ```
-    where **smth.yourcompany.com** is your DNS name from the second step
-    and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).   
+ {: .copy-code}
+
+where **smth.yourcompany.com** is your DNS name from [Step 2.7](/docs/user-guide/install/pe/aws-marketplace/#step-27-obtain-your-public-ip-and-ec2-instance-id)
+and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).
  
 ## FAQ
 
