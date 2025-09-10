@@ -15,11 +15,9 @@ Assets help logically and efficiently structure your IoT project, making it easi
 
 > ThingsBoard supports asset management functions via both the web UI and the [REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}.
 
-<b><font size="4">Practical video course 🎥</font></b>
+<br><b><font size="4">Practical video course 🎥</font></b>
 
-Watch the practical video course, which includes a detailed explanation of how to create and use assets in ThingsBoard.
-
-> The course includes hands-on examples to help you better understand how to manage dashboards, assets, and devices — including their configuration and real-world usage.
+Watch this practical video course to learn how to configure and manage ThingsBoard dashboards, resources, and devices, and how to use them in real-world scenarios.
 
 &nbsp;
 <div id="video">  
