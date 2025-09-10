@@ -201,75 +201,58 @@ To ensure a persistent public IP, you must **assign an Elastic IP** to your EC2 
     where **smth.yourcompany.com** is your DNS name from the second step
     and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).   
  
-## Frequently Asked Questions
-
+## FAQ
 
 **How can I enable free trial?**
 
-Customers may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> for that. 
+Customers may still use [ThingsBoard Cloud](https://thingsboard.cloud) for that. 
 30 days of seamless experience and the newest features, except white-labeling, from the latest source code!
-<br><br>
 
 **What is the Total Cost of Ownership (TCO) for my TB PE instance?**
 
-<p>The typical total cost of ownership consists of:</p>
-<ul>
-    <li>TB License fee - see <a href="/pricing">pricing</a></li>
-    <li>AWS EC2 instance price - we believe <a href="https://www.ec2instances.info/">ec2instances.info</a> is a convenient resource to compare prices.</li>
-    <li>Additional EC2 costs for network traffic, disk space and other optional services (Cloud Watch or similar)</li>
-</ul>
-<p>Example A: The price for ThingsBoard PE instance with Maker subscription plan based on t3.medium with 20 GB disk will cost approximately $42.4 per month:</p>
-<ul>
-    <li>$10.00 for monthly ThingsBoard PE Maker subscription fee</li>
-    <li>$30.368 for 1 month of t3.medium usage</li>
-    <li>$2.0 for 20 GB of EBS volume per month</li>
-</ul>
-<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on m5.large with 100 GB disk will cost approximately $179 per month:</p>
-<ul>
-    <li>$99.00  for monthly ThingsBoard PE Prototype subscription fee</li>
-    <li>$70.08 for 1 month of m5.large usage</li>
-    <li>$10.0 for 100 GB of EBS volume per month</li>
-</ul>
-<p>All prices are in USD.</p>
+| Cost Component | Description |
+|----------------|-------------|
+| **TB License fee**           | See [pricing](/pricing) |
+| **AWS EC2 instance price**   | Compare instance prices at [ec2instances.info](https://www.ec2instances.info/) |
+| **Additional EC2 costs**     | Network traffic, disk space, and optional services (e.g., CloudWatch) |
 
-<br>
+**Example A: Maker Subscription (t3.medium, 20 GB disk)**
 
+| Component | Monthly Cost (USD) |
+|-----------|--------------------|
+| ThingsBoard PE Maker subscription fee | **$10.00**   |
+| EC2 t3.medium (1 month)               | **$30.368**  |
+| 20 GB EBS volume                      | **$2.00**    |
+| **Total**                             | **≈ $42.40** |
 
-**How to connect to my new ThingsBoard PE instance using SSH?**
+**Example B: Prototype Subscription (m5.large, 100 GB disk)**
 
-See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">official documentation page</a> for more details.
-<br><br>
+| Component | Monthly Cost (USD) |
+|-----------|---------------------|
+| ThingsBoard PE Prototype subscription fee | **$99.00** |
+| EC2 m5.large (1 month)                    | **$70.08** |
+| 100 GB EBS volume                         | **$10.00** |
+| **Total**                                 | **≈$179.00** |
 
-**How to connect to my new ThingsBoard PE instance using PuTTY?**
+#### How to enable HTTPS?
 
-See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">official documentation page</a> for more details.
-<br><br>
+See [Post-installation steps](/docs/user-guide/install/pe/aws-marketplace/#post-installation-steps).
 
-**How to enable HTTPS?**
+#### How do I configure my TB PE instance?
 
-See <a href="/docs/user-guide/install/pe/aws-marketplace/#post-installation-steps">Post-installation steps</a>
-<br><br>
+See [official documentation page](/docs/user-guide/install/pe/config/) for more details.
 
-**How do I configure my TB PE instance?**
-
-See <a href="/docs/user-guide/install/config/">official documentation page</a> for more details.
-
-<br>
-
-**How do I get software updates for my TB PE instance?**
+#### How do I get software updates for my TB PE instance?
 
 You will receive an email notification about new software versions once it becomes available. 
-This email notification will contain a link to <a href="/docs/user-guide/install/pe/upgrade-instructions/">official documentation page</a> with the upgrade instructions.
-<br><br>
+This email notification will contain a link to official [documentation page](/docs/user-guide/install/pe/upgrade-instructions/) with the upgrade instructions.
 
-**How do I backup my database?**
+#### How do I backup my database?
 
-You can follow <a href="/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu">backup instructions</a> available with upgrade instructions.
-For additional guidance, you can also refer to the official <a href="https://www.postgresql.org/docs/16/backup.html">PostgreSQL backup documentation</a>.
+You can follow [backup instructions](/docs/user-guide/install/pe/upgrade-instructions/#prepare-for-upgrading-thingsboard-centos-ubuntu) available with upgrade instructions.
+For additional guidance, you can also refer to the official [PostgreSQL backup documentation](https://www.postgresql.org/docs/16/backup.html).
 
-<br><br>
-
-**How do I upgrade my instance type?**
+#### How do I upgrade my instance type?
 
 To upgrade your EC2 instance type, follow these steps:
 
@@ -277,10 +260,10 @@ To upgrade your EC2 instance type, follow these steps:
 
     Before changing the instance type, stop the ThingsBoard service to ensure a clean shutdown:
 
-    ```bash
-    sudo service thingsboard stop
-    ```
-    {: .copy-code}
+```bash
+sudo service thingsboard stop
+```
+{: .copy-code}
 
 2. Stop the EC2 Instance
 
@@ -300,19 +283,19 @@ To upgrade your EC2 instance type, follow these steps:
 
 4. Start the Instance
 
-<br><br>
+#### Where is my ThingsBoard instance logs?
 
-**Where is my ThingsBoard instance logs?**
+ThingsBoard logs are stored by this path:
+```bash
+/var/log/thingsboard
+```
+{: .copy-code}
 
-ThingsBoard logs are stored in the <i>/var/log/thingsboard</i> folder. 
-For more details on managing logs and configuring log levels, refer to the <a href="/docs/pe/user-guide/troubleshooting/#logs">Troubleshooting Guide</a>
-<br><br>
+For more details on managing logs and configuring log levels, refer to the [Troubleshooting Guide](/docs/pe/user-guide/troubleshooting/#logs)
 
-**How do I get professional support?**
+#### How do I get professional support?
 
-Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>.
-<br><br>
-
+Please review ThingsBoard professional [support plans](/services/support/) and [contact us](/docs/contact-us/).
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
