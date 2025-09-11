@@ -1,9 +1,9 @@
 
 **TBMQ** represents an open-source <a target="_blank" href="/products/mqtt-broker/">MQTT message broker</a>. It has the capacity to handle more than **4M** concurrent client connections, 
-supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single-node deployment 
+supporting a minimum of [3M messages per second throughput](/docs/{{docsPrefix}}mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single-node deployment 
 with low latency delivery. 
 In the cluster mode, its capabilities are further enhanced, 
-enabling it to support more than [100M concurrently connected clients](/docs/mqtt-broker/reference/100m-connections-performance-test/).
+enabling it to support more than [100M concurrently connected clients](/docs/{{docsPrefix}}mqtt-broker/reference/100m-connections-performance-test/).
 
 At ThingsBoard, we’ve gained a lot of experience in building scalable IoT applications, which has helped us identify three main scenarios for MQTT-based solutions.
 
@@ -67,8 +67,8 @@ TBMQ is designed to be:
 * **robust and efficient**: can manage millions of clients and process millions of messages per second;
 * **durable**: the broker ensures data durability, preventing data loss.
 
-See [**TBMQ Architecture**](/docs/mqtt-broker/architecture) for more details.
+See [**TBMQ Architecture**](/docs/{{docsPrefix}}mqtt-broker/architecture) for more details.
 
 ## Ready to get started?
 
-<p><a href="/docs/mqtt-broker/getting-started/" class="button">Hello World Application</a></p>
+<p><a href="/docs/{{docsPrefix}}mqtt-broker/getting-started/" class="button">Hello World Application</a></p>
