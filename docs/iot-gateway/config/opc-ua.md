@@ -594,6 +594,7 @@ byte string (`b`), and GUID (`g`). Below is an explanation of each identifier ty
 ## Next steps
 
 Explore guides related to main ThingsBoard features:
+ - [How to connect OPC-UA device to ThingsBoard CE using ThingsBoard IoT Gateway](/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/)
  - [ThingsBoard IoT Gateway Features](/docs/iot-gateway/features/)
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
  - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
