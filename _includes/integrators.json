@@ -24,6 +24,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Spain"],
+    "name": "ACORDE",
+    "contact": {
+      "href": "thingsboard@acorde.com"
+    },
+    "site": {
+      "href": "acorde.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["North America", "Middle East", "Asia"],
     "country": ["India"],
     "name": "Advancethings",
