@@ -1,4 +1,4 @@
-- [assign to customer](/docs/user-guide/rule-engine-2-0/nodes/action/assign-to-customer) — Assign Message Originator Entity to Customer.
+- [assign to customer](/docs/user-guide/rule-engine-2-0/nodes/action/assign-to-customer) — assigns the message originator to a specified customer.
 - [add to group](/docs/user-guide/rule-engine-2-0/nodes/action/add-to-group) — Adds Message Originator Entity to Entity Group.
 - [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields) — This node is used to trigger calculated field processing without storing the incoming telemetry in the database. By default, the processing of calculated fields are triggered by the save attributes and save time series nodes.
 - [change owner](/docs/user-guide/rule-engine-2-0/nodes/action/change-owner) — Changes Owner of the Originator entity to the selected Owner by type.
@@ -27,4 +27,4 @@
 - [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — Stores the incoming message payload as attribute data of the message originator.
 - [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries) — Stores the incoming message payload as time series data of the message originator.
 - [save to custom table](/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table) — Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have cs_tb_ prefix, to avoid the data insertion to the common TB tables.
-- [unassign from customer](/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer) — Unassign Message Originator Entity from Customer.
+- [unassign from customer](/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer) — unassigns the message originator from a customer.
