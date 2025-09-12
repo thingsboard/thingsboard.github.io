@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: unassign from customer
-description: Unassigns message originator from a customer.
+description: Unassigns the message originator from a customer.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

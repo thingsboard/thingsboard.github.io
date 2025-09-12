@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: assign to customer
-description: Assigns message originator to a customer based on a configurable customer title.
+description: Assigns the message originator to a specified customer.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

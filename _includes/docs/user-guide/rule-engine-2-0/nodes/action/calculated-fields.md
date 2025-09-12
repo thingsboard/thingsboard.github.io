@@ -1,45 +1,175 @@
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 4.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Triggers calculated field processing for incoming time series or attributes without persisting the data to the database.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields.png)
+## Preconditions
 
-This node is used to trigger calculated field processing **without storing the incoming telemetry in the database**.
-By default, the processing of calculated fields are triggered by the [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"} and [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} nodes.
-The **calculated fields** node accepts the same type of messages as these nodes, but allows you to decouple processing from data persistence — ideal when you want to use telemetry for calculated fields processing only.
-> **Note**: This node does **not store any telemetry or attribute data** in the database — it simply triggers calculated field execution based on the incoming telemetry.
+The message type and data structure must correspond to your incoming data type:
 
-To **avoid persisting unnecessary data to the database**, route messages to this node instead of **save time series** or **save attributes** nodes.
-> **Important**: when a calculated field is evaluated, new message with the originator which calculated field state was updated is generated and pushed into the root rule chain of originator.
-To store the calculated result, you still need to use a **save time series** or **save attributes** node in the rule chain.
+- **Time series data**: Use `POST_TELEMETRY_REQUEST` with [formats defined here](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries)
+- **Attributes data**: Use `POST_ATTRIBUTES_REQUEST` with [formats defined here](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes)
 
-**Output connections**
+## Configuration
 
-* **Success:**
-    * If the message payload contains valid telemetry or attribute data to process, or it is empty.
-* **Failure:**
-    * If an incoming message type is not `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`.
-    * If unexpected error occurs during message processing.
+This node has no configuration options.
 
-**Usage example**:
+### JSON Schema
 
-Consider a **smart building energy management system**, where the building operator wants to monitor the **Energy Efficiency Ratio (EER)** of air conditioning systems to analyze performance trends.
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EmptyNodeConfiguration",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
+```
 
-There are two types of devices involved:
-* **Sensor** (e.g., flow meters, power meters): these devices send high-frequency telemetry such as cooling output and power usage that can be used for calculated fields processing.
-  Since the data changes rapidly and is not useful on its own, it **is not worth to persist**.
-* **HVAC unit** (e.g., HVAC controllers, logical aggregators for zone-based HVAC systems): these devices send critical telemetry such as compressor temperature and vibration level required for diagnostics and analytics.
-  This data, along with the calculated EER, is persisted for long-term analysis.
+## Message processing algorithm
 
-The **calculated field** is defined on the **HVAC controller** and uses telemetry from **Sensor** devices.
-When telemetry message, for example, from the flow meter, enters the rule chain, **device profile switch** node routes this message to **calculated fields** node.
-**Calculated fields** node triggers processing of the calculated field based on incoming telemetry from the message.
-As a result of calculation a new message is generated with the **HVAC controller** as the originator, containing the calculated value.
-This message enters rule chain where the [device profile switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"} node routes it to the **save time series** node to persist the result.
+1. The node examines the **type** of the incoming message.
+2. For `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST` messages:
+    - Parses the time series or attribute data from the message data (including attribute scope from metadata when applicable)
+    - Triggers the evaluation of any calculated fields that use this data
+    - The incoming time series or attribute data itself is **not** persisted to the database
+3. When calculated fields are evaluated:
+    - A new message is generated with the originator whose calculated field state was updated
+    - This new message is pushed into the root rule chain of the originator
+4. After triggering calculated field processing, the original message is forwarded to the `Success` connection
+5. If an unsupported message type is received or an error occurs, the message is routed to the `Failure` connection
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-calculated-fields-example-rule-chain.png)
+> Note: The calculated results are included in the newly generated message (step 3). To persist these results to the database, you still need to use a "save time series" or "save
+> attributes" node in the rule chain.
 
+## Output connections
+
+- `Success`
+    - The message data contains valid time series or attribute data and calculated field processing was triggered
+    - The message data is empty (no processing required)
+- `Failure`
+    - The incoming message type is not `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`
+    - The incoming message data could not be parsed into time series data or attributes data
+    - An unexpected error occurred during message processing
+
+## Examples
+
+### Example 1 — Processing time series for calculated fields
+
+**Incoming message**
+
+Type: `POST_TELEMETRY_REQUEST`
+
+Data:
+
+```json
+{
+  "temperature": 25.5,
+  "humidity": 60
+}
+```
+
+Originator: `DEVICE`.
+
+**Node configuration**
+
+```json
+{}
+```
+
+**State of the system**
+
+The device has a calculated field "heatIndex" defined that uses the formula: `temperature + 0.5 * humidity`
+
+**Outgoing message**
+
+The outgoing message is identical to the incoming one. Routed via the `Success` connection.
+
+**Result**
+
+The calculated field "heatIndex" is evaluated using the incoming temperature and humidity values (25.5 + 0.5 * 60 = 55.5). A new message containing the calculated value is
+generated with the device as the originator and pushed to the root rule chain. The original time series data (temperature and humidity) is **not** stored in the database.
+
+### Example 2 — Processing attributes for calculated fields
+
+**Incoming message**
+
+Type: `POST_ATTRIBUTES_REQUEST`
+
+Data:
+
+```json
+{
+  "maxSpeed": 100,
+  "currentSpeed": 75
+}
+```
+
+Metadata:
+
+```json
+{
+  "scope": "SERVER_SCOPE"
+}
+```
+
+Originator: `DEVICE`.
+
+**Node configuration**
+
+```json
+{}
+```
+
+**State of the system**
+
+The device has a calculated field "speedPercentage" defined that calculates: `(currentSpeed / maxSpeed) * 100`
+
+**Outgoing message**
+
+The outgoing message is identical to the incoming one. Routed via the `Success` connection.
+
+**Result**
+
+The calculated field "speedPercentage" is evaluated (75 / 100 * 100 = 75%). A new message with the calculated value is generated and pushed to the root rule chain. The original
+attributes are **not** persisted to the database.
+
+### Example 3 — Empty payload handling
+
+**Incoming message**
+
+Type: `POST_TELEMETRY_REQUEST`
+
+Data: `{}`
+
+**Node configuration**
+
+```json
+{}
+```
+
+**Outgoing message**
+
+The outgoing message is identical to the incoming one. Routed via the `Success` connection.
+
+**Result**
+
+No calculated fields are triggered since the data is empty. The message passes through successfully without any processing.
+
+### Example 4 — Unsupported message type
+
+**Incoming message**
+
+Type: `ENTITY_CREATED`
+
+**Node configuration**
+
+```json
+{}
+```
+
+**Outgoing message**
+
+The outgoing message is identical to the incoming one. Routed via the `Failure` connection.
+
+**Result**
+
+The processing fails because the node only supports `POST_TELEMETRY_REQUEST` and `POST_ATTRIBUTES_REQUEST` message types. `ENTITY_CREATED` lifecycle events cannot trigger
+calculated field processing.

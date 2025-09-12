@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: delay (deprecated)
-description: Delays processing of a message for a configurable period.
+description: Delays incoming messages for a configurable period before forwarding them to the next rule node.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

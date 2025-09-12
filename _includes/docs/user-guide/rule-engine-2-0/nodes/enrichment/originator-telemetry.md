@@ -4,7 +4,7 @@ Retrieves time series data for the message originator within a specified time ra
 
 The node's configuration is divided into three main sections: selecting the data, defining the time window, and specifying the fetching strategy.
 
-- **Time series keys** - A list of time series keys to fetch from the message originator. You can use substitution patterns to use keys from the message data (`${messageKey}`) or
+- **Time series keys** - A list of time series keys to fetch from the message originator. You can use substitution patterns to use keys from the message data (`$[dataKey]`) or
   metadata (`$[metadataKey]`).
 - **Fetch interval** - Defines the time window for the time series query.
     - **Relative time window** (default): Fetches data from a time range relative to the current moment. For example, setting **Interval start** to *2 Minutes* and **Interval end**

@@ -1,134 +1,416 @@
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Creates new alarms or updates existing active alarms.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
+## Configuration
 
-This Node tries to load the latest Alarm with configured **Alarm Type** for Message Originator.
-If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
+### Basic settings
 
-Node Configuration:
+- **Use message alarm data**: When enabled, the message data is parsed as a ThingsBoard Alarm object, and alarm configuration is extracted from the parsed message instead of using
+  node configuration. If the message cannot be parsed as a valid Alarm object, the message is routed via `Failure` connection.
+- **Overwrite alarm details**: When enabled with **Use message alarm data**, the details script will be executed to generate a value for alarm's `details` field.
 
-- **Alarm Details Builder** script
-- **Alarm Type** - any string that represents Alarm Type
-- **Alarm Severity** - {CRITICAL \| MAJOR \| MINOR \| WARNING \| INDETERMINATE}
-- is **Propagate** - whether Alarm should be propagated to all parent related entities.
+### Alarm configuration
 
-> Note: Since TB Version 2.3.0 the rule node has the ability to:
+- **Alarm type**: Type of the alarm (e.g., "General Alarm", "High Temperature"). Supports templatization.
+- **Use alarm severity pattern**: Enables dynamic severity based on message data rather than a fixed value.
+    - When **enabled**:
+        - **Alarm severity pattern**: A pattern that must resolve to one of the valid severity levels: `CRITICAL`, `MAJOR`, `MINOR`, `WARNING`, or `INDETERMINATE`
+    - When **disabled**:
+        - **Alarm severity**: Fixed severity level. One of: *Critical*, *Major*, *Minor*, *Warning*, or *Indeterminate*
 
--  read alarm config from message:
+### Alarm details script
 
--  get alarm type using pattern with fields from message metadata:
+A script (TBEL or JavaScript) that generates the content for the alarm's `details` field. The script must return a valid JSON value, which can be:
 
-   ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config-from-msg.png)
+- Primitive values (numbers, booleans, strings)
+- JSON arrays
+- JSON objects
 
-> Note: Since TB Version 2.4.3 the rule node has the ability to:
+The script has access to the following variables:
 
-- filter propagation to parent entities by relation types:
+- `msg`: The message data
+- `metadata`: The message metadata
+- `msgType`: The message type
+- `metadata.prevAlarmDetails`: The previous alarm details when updating an existing alarm (provided as a JSON string)
 
-  ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-propagate-list.png)
+### Propagation settings
 
-**Alarm Details Builder** script used for generating Alarm Details JsonNode. It is useful for storing additional parameters
-inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
+- **Propagate alarm to related entities**: Propagates alarms to parent entities through configured relations
+    - When enabled, a **Relation types to propagate** field appears
+    - Select specific relation types to limit propagation paths, or leave empty to propagate through all relations
+- **Propagate alarm to entity owner (Customer or Tenant)**: Propagates alarms to the entity's direct owner
+- **Propagate alarm to entity owners hierarchy**: Propagates alarms up through all levels of the ownership chain
+- **Propagate alarm to Tenant**: Propagates alarms directly to the tenant level, regardless of intermediate ownership
 
-**Alarm Details Builder** script should return **details** object.
+### JSON Schema
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
-
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br>
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br>
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
-
-**Optional:** previous Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>.
-If previous Alarm does not exist, this field will not be present in Metadata. **Note** that  <code>metadata.prevAlarmDetails</code>
-is a raw String field and it needs to be converted into object using this construction:
-{% highlight javascript %}
-var details = {};
-if (metadata.prevAlarmDetails) {
-details = JSON.parse(metadata.prevAlarmDetails);
-}
-{% endhighlight %}
-
-
-**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
-
-**Example of Details Builder Function**
-
-This function takes <code>count</code> property from previous Alarm and increment it. Also put <code>temperature</code>
-attribute from inbound Message payload into Alarm details.
-
-{% highlight javascript %}
-var details = {temperature: msg.temperature, count: 1};
-
-if (metadata.prevAlarmDetails) {
-var prevDetails = JSON.parse(metadata.prevAlarmDetails);
-if(prevDetails.count) {
-details.count = prevDetails.count + 1;
-}
-}
-
-return details;
-{% endhighlight %}
-
-
-**Alarm created/updated with those properties:**
-
-- Alarm details - object returned from **Alarm Details Builder** script
-- Alarm status - if **new alarm** -> *ACTIVE_UNACK*. If **existing Alarm** -> does not changed
-- Severity - value from Node Configuration
-- Propagation - value from Node Configuration
-- Alarm type - value from Node Configuration
-- Alarm start time - if **new alarm** -> *current system time*. If **existing Alarm** -> does not changed
-- Alarm end time - *current system time*
-
-**Outbound message will have the following structure:**
-
-- **Message Type** - *ALARM*
-- **Originator** - the same originator from inbound Message
-- **Payload** - JSON representation of new Alarm that was created/updated
-- **Metadata** - all fields from original Message Metadata
-
-After new Alarm **_created_**, Outbound message will contain additional property inside Metadata - **isNewAlarm** with **true** value.
-Message will be passed via **Created** chain.
-
-After existing Alarm **_updated_**, Outbound message will contain additional property inside Metadata - **isExistingAlarm** with **true** value.
-Message will be passed via **Updated** chain.
-
-Here is an example of Outbound Message **payload**
-{% highlight json %}
+```json
 {
-"tenantId": {
-"entityType": "TENANT",
-"id": "22cd8888-5dac-11e8-bbab-ad47060c9bbb"
-},
-"type": "High Temperature Alarm",
-"originator": {
-"entityType": "DEVICE",
-"id": "11cd8777-5dac-11e8-bbab-ad55560c9ccc"
-},
-"severity": "CRITICAL",
-"status": "ACTIVE_UNACK",
-"startTs": 1526985698000,
-"endTs": 1526985698000,
-"ackTs": 0,
-"clearTs": 0,
-"details": {
-"temperature": 70,
-"ts": 1526985696000
-},
-"propagate": true,
-"id": "33cd8999-5dac-11e8-bbab-ad47060c9431",
-"createdTime": 1526985698000,
-"name": "High Temperature Alarm"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TbCreateAlarmNodeConfiguration",
+  "type": "object",
+  "properties": {
+    "alarmType": {
+      "type": "string",
+      "description": "Alarm type"
+    },
+    "scriptLang": {
+      "type": "string",
+      "enum": [
+        "TBEL",
+        "JS"
+      ],
+      "description": "Script language for details builder"
+    },
+    "alarmDetailsBuildJs": {
+      "type": "string",
+      "description": "JavaScript details builder function"
+    },
+    "alarmDetailsBuildTbel": {
+      "type": "string",
+      "description": "TBEL details builder function"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "CRITICAL",
+        "MAJOR",
+        "MINOR",
+        "WARNING",
+        "INDETERMINATE"
+      ]
+    },
+    "propagate": {
+      "type": "boolean",
+      "description": "Whether to propagate to related entities"
+    },
+    "propagateToOwner": {
+      "type": "boolean",
+      "description": "Whether to propagate to entity owner"
+    },
+    "propagateToOwnerHierarchy": {
+      "type": "boolean",
+      "description": "Whether to propagate to owner hierarchy"
+    },
+    "propagateToTenant": {
+      "type": "boolean",
+      "description": "Whether to propagate to tenant"
+    },
+    "useMessageAlarmData": {
+      "type": "boolean",
+      "description": "Read alarm config from message"
+    },
+    "overwriteAlarmDetails": {
+      "type": "boolean",
+      "description": "Whether to execute details builder when using message data"
+    },
+    "dynamicSeverity": {
+      "type": "boolean",
+      "description": "Whether to use severity pattern"
+    },
+    "relationTypes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Relation types for propagation"
+    }
+  }
 }
-{% endhighlight %}
+```
 
-More details about Alarms in the Thingsboard can be found in [this tutorial](/docs/{{docsPrefix}}user-guide/alarms/)
+## Message processing algorithm
 
-You can see the real life example, where this node is used, in the next tutorial:
+The node's behavior depends on the **Use message alarm data** setting:
 
-- [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+### When using node configuration (Use message alarm data = disabled)
+
+1. **Determine alarm type**: Processes the configured alarm type pattern, substituting any placeholders with values from message.
+
+2. **Search for existing alarm**: Queries for an active (uncleared) alarm with:
+    - Same originator as the incoming message
+    - Alarm type from step 1
+
+3. **Create or update alarm**:
+    - **If no active alarm exists** (new alarm):
+        - Creates alarm with status `ACTIVE_UNACK`
+        - Sets severity from node configuration (or pattern if **Use alarm severity pattern** enabled)
+        - Applies propagation settings from node configuration
+        - Executes details builder script to generate `details` field
+        - Sets both alarm start time and end time to the value of the `ts` property from the metadata. If the `ts` property is not present, they are set to the message's creation
+          timestamp.
+        - Routes to `Created` connection with `isNewAlarm: true` in metadata
+        - Sends `ENTITY_CREATED` lifecycle event with complete alarm object to the originator's root rule chain 
+
+    - **If active alarm exists** (update):
+        - Keeps existing alarm status unchanged
+        - Sets severity from node configuration (or pattern if **Use alarm severity pattern** enabled)
+        - Updates existing propagation settings from values from node configuration
+        - Executes details builder script to generate a value for `details` field
+        - Updates alarm end time to the current server time
+        - Routes to `Updated` connection with `isExistingAlarm: true` in metadata
+        - Sends `ENTITY_UPDATED` lifecycle event with complete alarm object to the originator's root rule chain
+
+### When using message alarm data (Use message alarm data = enabled)
+
+1. **Parse message as alarm**: Attempts to deserialize message data as a ThingsBoard Alarm object
+    - If parsing fails, routes to `Failure` connection
+    - Overwrites `tenantId` in parsed alarm with current tenant ID
+    - If `originator` is null in parsed alarm, defaults to message originator
+
+2. **Extract alarm type**: Uses the `type` field from the parsed alarm
+
+3. **Search for existing alarm**: Same as above, using the parsed alarm type
+
+4. **Create or update alarm**:
+    - **If no active alarm exists** (new alarm):
+        - Uses all fields from parsed alarm (severity, propagation settings, etc.)
+        - Details handling depends on **Overwrite alarm details**:
+            - If enabled: Executes details builder script, replacing parsed details
+            - If disabled: Uses `details` field from parsed alarm directly
+        - Routes to `Created` connection
+        - Sends `ENTITY_CREATED` lifecycle event with complete alarm object to the originator's root rule chain
+
+    - **If active alarm exists** (update):
+        - Updates existing alarm with values from parsed message:
+            - `severity`
+            - `propagate`
+            - `propagateToOwner`
+            - `propagateToOwnerHierarchy`
+            - `propagateToTenant`
+            - `propagateRelationTypes`
+        - Details handling depends on **Overwrite alarm details**:
+            - If enabled: Executes details builder script with `prevAlarmDetails`
+            - If disabled: Replaces with `details` from parsed alarm
+        - Updates alarm end time to current server time
+        - Routes to `Updated` connection
+        - Sends `ENTITY_UPDATED` lifecycle event with complete alarm object to the originator's root rule chain
+
+## Output connections
+
+- `Created`
+    - New alarm was successfully created
+    - Message data is replaced with the created alarm object
+    - Metadata includes `isNewAlarm: true`
+    - Message type changed to `ALARM`
+- `Updated`
+    - Existing alarm was successfully updated
+    - Message data is replaced with the updated alarm object
+    - Metadata includes `isExistingAlarm: true`
+    - Message type changed to `ALARM`
+- `Failure`
+    - Alarm severity pattern resolves to invalid value
+    - Script execution error
+    - Message parsing error (when using message alarm data)
+
+## Examples
+
+### Example 1 — Creating a new alarm
+
+**Incoming message**
+
+Type: `POST_TELEMETRY_REQUEST`
+
+Data:
+
+```json
+{
+  "temperature": 45.5
+}
+```
+
+Metadata:
+
+```json
+{}
+```
+
+Originator: `DEVICE`
+
+**Node configuration**
+
+```json
+{
+  "scriptLang": "TBEL",
+  "alarmDetailsBuildTbel": "return {\n    temperature: msg.temperature\n};",
+  "alarmType": "High Temperature",
+  "severity": "CRITICAL"
+}
+```
+
+**State of the system**
+
+No active "High Temperature" alarm exists for originator device.
+
+**Outgoing message**
+
+Data:
+
+```json
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "f66e9b38-6f0e-4dc7-ad57-1cb4e014b6fc"
+  },
+  "createdTime": 1757429087089,
+  "tenantId": {
+    "entityType": "TENANT",
+    "id": "9c4bad70-10ac-11f0-ad7c-897c5310f06b"
+  },
+  "customerId": null,
+  "type": "High Temperature",
+  "originator": {
+    "entityType": "DEVICE",
+    "id": "3bc2eb60-8d77-11f0-8a6c-59050cd4204f"
+  },
+  "severity": "CRITICAL",
+  "acknowledged": false,
+  "cleared": false,
+  "assigneeId": null,
+  "startTs": 1757429087063,
+  "endTs": 1757429087063,
+  "ackTs": 0,
+  "clearTs": 0,
+  "assignTs": 0,
+  "propagate": false,
+  "propagateToOwner": false,
+  "propagateToTenant": false,
+  "propagateRelationTypes": [],
+  "originatorName": "device",
+  "originatorLabel": "device",
+  "assignee": null,
+  "name": "High Temperature",
+  "status": "ACTIVE_UNACK",
+  "details": {
+    "temperature": 45.5
+  }
+}
+```
+
+Metadata:
+
+```json
+{
+  "isNewAlarm": "true"
+}
+```
+
+Routed via `Created` connection.
+
+**Result**
+
+The following actions occur:
+
+- New alarm created: A "High Temperature" alarm with CRITICAL severity is created in the database for the device.
+- Details generated: The details builder script executes and stores `{"temperature": 45.5}` in the alarm's `details` field.
+- Message transformed: The original telemetry message is replaced with an `ALARM` message containing the complete alarm object. The message is routed through the `Created`
+  connection with the `isNewAlarm: true` metadata flag.
+- Lifecycle event triggered: An `ENTITY_CREATED` lifecycle event for the new alarm is automatically sent to the device's root rule chain.
+
+### Example 2 — Updating existing alarm
+
+**Incoming message**
+
+Type: `POST_TELEMETRY_REQUEST`
+
+Data:
+
+```json
+{
+  "temperature": 47.2
+}
+```
+
+Metadata:
+
+```json
+{}
+```
+
+Originator: `DEVICE`
+
+**Node configuration**
+
+```json
+{
+  "scriptLang": "TBEL",
+  "alarmDetailsBuildTbel": "return {\n    temperature: msg.temperature\n};",
+  "alarmType": "High Temperature",
+  "severity": "CRITICAL"
+}
+```
+
+**State of the system**
+
+An active "High Temperature" alarm exists for the originator device with:
+
+- Status: `ACTIVE_UNACK`
+- Details: `{"temperature": 45.5}`
+- Start time: 1757429087063
+- End time: 1757429087063
+
+**Outgoing message**
+
+Data:
+
+```json
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "f66e9b38-6f0e-4dc7-ad57-1cb4e014b6fc"
+  },
+  "createdTime": 1757429087089,
+  "tenantId": {
+    "entityType": "TENANT",
+    "id": "9c4bad70-10ac-11f0-ad7c-897c5310f06b"
+  },
+  "customerId": null,
+  "type": "High Temperature",
+  "originator": {
+    "entityType": "DEVICE",
+    "id": "3bc2eb60-8d77-11f0-8a6c-59050cd4204f"
+  },
+  "severity": "CRITICAL",
+  "acknowledged": false,
+  "cleared": false,
+  "assigneeId": null,
+  "startTs": 1757429087063,
+  "endTs": 1757429195123,
+  "ackTs": 0,
+  "clearTs": 0,
+  "assignTs": 0,
+  "propagate": false,
+  "propagateToOwner": false,
+  "propagateToTenant": false,
+  "propagateRelationTypes": [],
+  "originatorName": "device",
+  "originatorLabel": "device",
+  "assignee": null,
+  "name": "High Temperature",
+  "status": "ACTIVE_UNACK",
+  "details": {
+    "temperature": 47.2
+  }
+}
+```
+
+Metadata:
+
+```json
+{
+  "isExistingAlarm": "true"
+}
+```
+
+Routed via `Updated` connection.
+
+**Result**
+
+The following actions occur:
+
+- **Existing alarm updated**: The active "High Temperature" alarm is updated in the database. The alarm status remains `ACTIVE_UNACK` (unchanged).
+- **Details regenerated**: The details builder script executes with access to previous details through `metadata.prevAlarmDetails`. It updates the temperature reading, resulting in
+  `{"temperature": 47.2}`.
+- **End time updated**: The alarm's `endTs` is updated to the current system time (1757429195123), while `startTs` remains at the original creation time.
+- **Message transformed**: The original telemetry message is replaced with an `ALARM` message containing the updated alarm object. The message is routed through the `Updated`
+  connection with the `isExistingAlarm: true` metadata flag.
+- **Lifecycle event triggered**: An `ENTITY_UPDATED` lifecycle event for the updated alarm is automatically sent to the device's root rule chain.

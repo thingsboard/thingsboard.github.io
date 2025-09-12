@@ -52,7 +52,7 @@ The configuration allows you to specify how entities are added to groups and how
 
 1. The node identifies the **owner** of the message originator entity (tenant or customer).
 2. It resolves any templates in the **Group name pattern** using values from the message data and metadata.
-3. The node searches for an existing entity group matching the resolved group name and entity type.
+3. The node searches for an existing entity group matching the resolved group name, entity type and owner of the originator.
 4. If **Remove from current groups** is enabled:
     - The node retrieves all entity groups that currently contain the originator entity
     - It removes the entity from all groups except the target group and the special "All" group

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: clear alarm
-description: Clears alarms based on message originator and node configuration.
+description: Clears existing active alarms for the message originator.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

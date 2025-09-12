@@ -7,7 +7,7 @@ The node's configuration allows you to define a mapping from the originator's en
 - **Originator fields mapping** - This section defines the core logic of the node. Each entry maps a source field from the originator to a target key in the output.
     - **Source field**: A dropdown list of available fields from the originator entity (e.g., *Name*, *Profile name*, *Label*, *Created time*).
     - **Target key**: The new key that will be added to the message data or metadata. This field supports templatization, allowing you to dynamically create keys using values from
-      the message data (`${messageKey}`) or metadata (`$${metadataKey}`).
+      the message data (`$[dataKey]`) or metadata (`${metadataKey}`).
 - **Add mapped originator fields to** - Determines where the new key-value pairs will be placed.
     - **Message**: Adds the fetched fields to the message data payload. The message data must be a JSON object.
     - **Metadata**: Adds the fetched fields to the message metadata.

@@ -1,12 +1,12 @@
-- [assign to customer](/docs/user-guide/rule-engine-2-0/nodes/action/assign-to-customer) — Assign Message Originator Entity to Customer.
+- [assign to customer](/docs/user-guide/rule-engine-2-0/nodes/action/assign-to-customer) — assigns the message originator to a specified customer.
 - [add to group](/docs/user-guide/rule-engine-2-0/nodes/action/add-to-group) — Adds Message Originator Entity to Entity Group.
 - [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields) — This node is used to trigger calculated field processing without storing the incoming telemetry in the database. By default, the processing of calculated fields are triggered by the save attributes and save time series nodes.
 - [change owner](/docs/user-guide/rule-engine-2-0/nodes/action/change-owner) — Changes Owner of the Originator entity to the selected Owner by type.
-- [clear alarm](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm) — This Node loads the latest Alarm with configured Alarm Type for Message Originator and Clear the Alarm if it exist.
+- [clear alarm](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm) — clears existing active alarms for the message originator.
 - [copy to view](/docs/user-guide/rule-engine-2-0/nodes/action/copy-to-view) — Copy attributes from asset/device to related entity view according to entity view configuration. 
-- [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — Copy attributes from asset/device to related entity view according to entity view configuration.
+- [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — creates new alarms or updates existing active alarms for the message originator.
 - [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — Create the relation from the selected entity to originator of the message by type and direction.
-- [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — Delays incoming messages for configurable period.
+- [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — delays incoming messages for a configurable period before forwarding them to the next rule node.
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — Delete attributes for Message Originator.
 - [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — Delete the relation from the selected entity to originator of the message by type and direction.
 - [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile.
@@ -27,4 +27,4 @@
 - [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — Stores the incoming message payload as attribute data of the message originator.
 - [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries) — Stores the incoming message payload as time series data of the message originator.
 - [save to custom table](/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table) — Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have cs_tb_ prefix, to avoid the data insertion to the common TB tables.
-- [unassign from customer](/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer) — Unassign Message Originator Entity from Customer.
+- [unassign from customer](/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer) — unassigns the message originator from a customer.
