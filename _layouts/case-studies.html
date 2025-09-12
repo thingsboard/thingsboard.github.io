@@ -25,7 +25,7 @@
         const params = new URLSearchParams(window.location.search);
         if (params.has('category') && params.get('category')) {
             setTimeout(() => {
-                document.getElementById(params.get('category').replaceAll('-', ' ')).click()
+                document.getElementById(params.get('category').replaceAll('-', ' ')).click();
             }, 600);
         }
 

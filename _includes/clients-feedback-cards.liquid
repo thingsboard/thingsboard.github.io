@@ -1,7 +1,9 @@
 {% assign targetKey = include.targetKey %}
+{% assign contactBlock = include.contactBlock %}
+{% assign noBackground = include.noBackground %}
 {% assign targetKeyCustomers = site.data.clients-feedback[targetKey] %}
 
-<div class="clients-cards">
+<div class="clients-cards {% if noBackground == "true" %}no-background{% endif %}">
     {% for info in targetKeyCustomers.feedback %}
         <div class="clients-card" id="{{ info.id }}">
             <div class="clients-card-header">
@@ -52,15 +54,17 @@
             </div>
         </div>
     {% endfor %}
-    <div class="contact-us-card">
-        <h2>Got a success story to tell?</h2>
-        <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
-        <div class="contact-us-buttons">
-            <button onclick="openContactUsModal()">Contact Us</button>
-            <a href="/case-studies/">Case studies</a>
-            <a href="/iot-use-cases/">Use cases</a>
+    {% if  contactBlock != "false" %}
+        <div class="contact-us-card">
+            <h2>Got a success story to tell?</h2>
+            <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
+            <div class="contact-us-buttons">
+                <button onclick="openContactUsModal()">Contact Us</button>
+                <a href="/case-studies/">Case studies</a>
+                <a href="/iot-use-cases/">Use cases</a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {

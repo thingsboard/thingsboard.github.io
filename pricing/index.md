@@ -418,7 +418,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Launch">
+                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20Private%20Cloud">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Launch plan of ThingsBoard Private Cloud</span>
                             </a>

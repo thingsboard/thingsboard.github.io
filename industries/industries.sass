@@ -1,5 +1,5 @@
-#docsContent
-	#content
+#docsContent, #development-services
+	#content, .noToc
 		.clients-title
 			display: flex
 			align-items: center
@@ -62,6 +62,11 @@
 			gap: 32px
 			max-width: 1400px
 			margin: 0 auto 50px
+			&.no-background
+				&:before
+					display: none
+				&:after
+					display: none
 			&:before
 				content: ''
 				position: absolute
