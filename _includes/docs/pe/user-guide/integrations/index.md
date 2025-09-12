@@ -215,6 +215,11 @@ Example of converter output data:
 
 The main function of **downlink data converter** is to transform the incoming rule engine message and its metadata to the format that is used by corresponding Integration.
 
+{% capture difference %}
+**NOTE**: A Downlink Converter is generally optional. It is required only if your integration needs ThingsBoard to send outgoing messages, such as RPCs, attribute updates, or other commands. If your integration only involves receiving data without initiating outbound communication, you can skip creating a Downlink Converter.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 To create the Downlink data converter, follow these steps:
 - Navigate to the "**Data converters**" section in the "**Integration center**", click the "**plus**" icon button, and In the dropdown menu, select "**Create new converter**".
 - In the new window:
