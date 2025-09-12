@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: "Dashboards"
+description: "Display and manage the 'last viewed' or 'starred' dashboard lists."
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/home-page-widgets/dashboards.md %}

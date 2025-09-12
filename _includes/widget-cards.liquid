@@ -1,11 +1,18 @@
+{% assign currentName = include.bundleName %}
 {% assign widgetsLibrary = site.data.widgets-library %}
+
+{% if currentName %}
+{% assign widgetsLibrary = site.data.widgets-library[currentName].section %}
+{% endif %}
 
 <ul class="widget-list">
     {% for bundle in widgetsLibrary %}
         <li class="widget-item">
-            <a class="widget-link" href="{{ bundle[0] }}">
+            {% assign currentBundle = bundle[0] | replace: "_", "-" %}
+            {% assign link = page.url | replace: "/pe", "" | replace: "/paas", "" | replace: "/paas/eu", "" | append: currentBundle %}
+            <a class="widget-link" href="{{ link }}">
                 <div class="image-section">
-                    <img src="{{ bundle[1].image }}" alt="{{ bundle[1].title }} bundle image">
+                    <img src="{{ bundle[1].image }}" alt="{{ bundle[1].title }} bundle image" loading="lazy">
                 </div>
                 <div class="text-section">
                     <span>{{ bundle[1].title }}</span>

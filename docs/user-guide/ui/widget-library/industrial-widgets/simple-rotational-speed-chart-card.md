@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: "Simple rotational speed chart card"
+description: "Displays historical rotational speed values as a simplified chart. Optionally may display the corresponding latest rotational speed value."
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/industrial-widgets/simple-rotational-speed-chart-card.md %}

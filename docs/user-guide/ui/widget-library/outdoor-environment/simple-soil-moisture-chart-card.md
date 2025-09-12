@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: "Simple soil moisture chart card"
+description: "Displays historical soil moisture values as a simplified chart. Optionally may display the corresponding latest soil moisture value."
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/outdoor-environment/simple-soil-moisture-chart-card.md %}

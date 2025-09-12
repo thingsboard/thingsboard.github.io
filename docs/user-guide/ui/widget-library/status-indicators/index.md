@@ -1,0 +1,11 @@
+---
+layout: docwithnav
+title: "Status indicators"
+description: "Contains widgets displaying battery level and signal strength."
+breadcrumbs: "true"
+breadcrumbs-steps: "1"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/status-indicators/index.md %}
+{% include widget-cards.liquid bundleName="status_indicators" %}

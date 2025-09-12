@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: "Simple nitrogen dioxide (NO2) chart card"
+description: "A gas produced from vehicle emissions and the burning of fossil fuels. Results displayed by combining the latest and aggregated values and optional simplified chart."
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/air-quality/simple-nitrogen-dioxide-no2-chart-card.md %}

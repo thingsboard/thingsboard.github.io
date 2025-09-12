@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: "Carbon monoxide (CO) chart card"
+description: "A colorless and odorless gas resulting from incomplete combustion, particularly in motor vehicles. Results displayed by combining the latest and aggregated values and optional simplified chart."
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-chart-card.md %}

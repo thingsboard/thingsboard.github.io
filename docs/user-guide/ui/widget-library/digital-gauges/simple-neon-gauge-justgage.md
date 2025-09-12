@@ -1,0 +1,10 @@
+---
+layout: docwithnav
+title: "Simple neon gauge"
+description: "Preconfigured gauge to display any value reading as a doughnut. Allows to configure value range, gradient colors, and other settings."
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+
+---
+{% include get-hosts-name.html %}
+{% include docs/user-guide/ui/widget-library/digital-gauges/simple-neon-gauge-justgage.md %}
