@@ -6,7 +6,7 @@
 - [copy to view](/docs/user-guide/rule-engine-2-0/nodes/action/copy-to-view) — Copy attributes from asset/device to related entity view according to entity view configuration. 
 - [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — creates new alarms or updates existing active alarms for the message originator.
 - [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — Create the relation from the selected entity to originator of the message by type and direction.
-- [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — Delays incoming messages for configurable period.
+- [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — delays incoming messages for a configurable period before forwarding them to the next rule node.
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — Delete attributes for Message Originator.
 - [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — Delete the relation from the selected entity to originator of the message by type and direction.
 - [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile.
