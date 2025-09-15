@@ -1,3 +1,11 @@
+Enrichment nodes are used to include additional information about the message originator, entities related to originator, and other contextual data into the outgoing message 
+for further processing steps within the rule chain. 
+
+These nodes can enrich messages with attributes, latest time series values, historical time series data, and entity details fetched from various sources including 
+the message originator, related entities, current tenant, or customer.
+
+This enrichment allows subsequent rule nodes to make context-aware decisions and apply processing logic based on configuration settings and contextual data.
+
 - [calculate delta](/docs/user-guide/rule-engine-2-0/nodes/enrichment/calculate-delta) — Calculates delta based on the previous time series reading and current reading and adds it to the message.
 - [customer attributes](/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-attributes) — Identifies the message originator's customer and enriches the outgoing message with the customer's [attributes](/docs/user-guide/attributes/) or [latest telemetry](/docs/user-guide/telemetry/).
 - [customer details](/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-details) — Enriches the outgoing message with the customer's details.
