@@ -1,3 +1,12 @@
+Transformation nodes are the data processing and manipulation components of ThingsBoard's rule engine that modify the content, structure, or format of incoming messages.
+
+These nodes can transform messages through various operations including field mapping, mathematical calculations,
+string manipulations, custom scripting, and JSON structure modifications. They can extract or combine data fields, apply business logic transformations,
+and create new messages derived from the existing ones.
+
+This transformation capability enables rule chains to adapt messages for specific downstream requirements and implement complex processing workflows that prepare 
+data for storage, analysis, or integration with external systems.
+
 - [change originator](/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator) — All incoming Messages in the Thingsboard have originator field that identifies an entity that submits Message. It could be a Device, Asset, Customer, Tenant, etc..
 - [copy key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/copy-key-value-pairs) — Copies key-value pairs from message to message metadata or vice-versa.
 - [deduplication](/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication) — Deduplicate messages within the same Originator entity for a configurable period based on a specified deduplication strategy.
