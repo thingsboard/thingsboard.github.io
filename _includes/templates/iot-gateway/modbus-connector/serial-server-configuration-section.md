@@ -1,15 +1,20 @@
-The table below describes the parameters required to configure serial connection for slave:
+The following parameters are used to configure serial connection for Gateway as a Slave:
 
-| **Parameter**         | **Default value** | **Description**                                                                                                  |
-|:----------------------|:------------------|------------------------------------------------------------------------------------------------------------------
-| Port                  |                   | Port of Modbus server for connection                                                                             |
-| Method                | **Socket**        | Type of application data unit - **RTU** or **ASCII**                                                             |
-| Baudrate              | **4800**          | Baudrate for The baud rate to use for the serial device                                                          |
-| Strict                | **true**          | Use Inter char timeout for baudrates <= 19200                                                                    |
-| Unit ID               | **1**             | ID of current slave on Modbus                                                                                    |
-| Device name           | **Temp Sensor**   | Name of the current slave **Don't use "Gateway" as the value of "Device name" parameter!**                       |
-| Device profile        | **default**       | Device profile of the current slave                                                                              |
-| Send data to platform | **false**         | If set to **TRUE**, the Gateway will perform autoconfiguration and send values to ThingsBoard every poll period. |
-| ---                   
+- **Port** - port of the Modbus server for connection.
+- **Method** - type of application data unit, either **ASCII** or **RTU**.
+- **Baudrate** - baud rate to use for the serial device.
+- **Strict** - use inter-character timeout for baud rates <= 19200.
+- **Unit ID** - ID of the current slave on Modbus.
+- **Device name** - name of the current slave. **Don't use "Gateway" as the value of "Device name" parameter!**.
+- **Device profile** - device profile of the current slave.
+- **Poll period (ms)** - period in milliseconds for checking the attributes and telemetry.
+
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/modbus/#device-rpc-methods) section.
+
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/modbus/#usage-examples-2) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ![image](/images/gateway/modbus-connector/serial-server-configuration-section-1-ce.png)
