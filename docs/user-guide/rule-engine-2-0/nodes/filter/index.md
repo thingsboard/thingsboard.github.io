@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Rule Engine Filter nodes
-description: Rule Engine Filter nodes
+title: Filter nodes
+description: Rule engine filter nodes
 hidetoc: "true"
 breadcrumbs: "true"
 breadcrumbs_steps: "1"
