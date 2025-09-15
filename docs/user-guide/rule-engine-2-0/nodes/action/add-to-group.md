@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: add to group
-description: Adds the message originator entity to an entity group based on a configurable group name pattern.
+description: Adds the message originator to the entity group found by group name pattern.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

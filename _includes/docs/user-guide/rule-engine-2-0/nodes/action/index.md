@@ -1,11 +1,17 @@
+Action nodes are the execution components of ThingsBoard's rule engine that perform concrete operations and side effects based on the messages flowing through the rule chain.
+
+These nodes can automate various system operations like persisting time series and attributes to the database, managing alarms, controlling device commands and modifying system state. 
+
+Action nodes allow you to automate your workflows by executing operations based on your data without requiring manual interaction.
+
 - [assign to customer](/docs/user-guide/rule-engine-2-0/nodes/action/assign-to-customer) — assigns the message originator to a specified customer.
-- [add to group](/docs/user-guide/rule-engine-2-0/nodes/action/add-to-group) — Adds Message Originator Entity to Entity Group.
-- [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields) — This node is used to trigger calculated field processing without storing the incoming telemetry in the database. By default, the processing of calculated fields are triggered by the save attributes and save time series nodes.
-- [change owner](/docs/user-guide/rule-engine-2-0/nodes/action/change-owner) — Changes Owner of the Originator entity to the selected Owner by type.
+- [add to group](/docs/user-guide/rule-engine-2-0/nodes/action/add-to-group) — adds the message originator to the entity group found by group name pattern.
+- [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields) — triggers calculated field processing for time series or attribute data without persisting the original data to the database.
+- [change owner](/docs/user-guide/rule-engine-2-0/nodes/action/change-owner) — changes the ownership of the message originator to a specified tenant or customer.
 - [clear alarm](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm) — clears existing active alarms for the message originator.
-- [copy to view](/docs/user-guide/rule-engine-2-0/nodes/action/copy-to-view) — Copy attributes from asset/device to related entity view according to entity view configuration. 
+- [copy to view](/docs/user-guide/rule-engine-2-0/nodes/action/copy-to-view) — replicates attribute changes from assets/devices to their associated entity views.
 - [create alarm](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm) — creates new alarms or updates existing active alarms for the message originator.
-- [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — Create the relation from the selected entity to originator of the message by type and direction.
+- [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — creates relation between the message originator and a specified target entity with configurable direction and type.
 - [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — delays incoming messages for a configurable period before forwarding them to the next rule node.
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — Delete attributes for Message Originator.
 - [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — Delete the relation from the selected entity to originator of the message by type and direction.
@@ -20,7 +26,7 @@
 - [message count](/docs/user-guide/rule-engine-2-0/nodes/action/message-count) — Counts incoming messages for specified interval and produces POST_TELEMETRY_REQUEST msg with messages count.
 - [push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud) — Sends messages from the edge instance to the cloud platform.
 - [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — Sends messages from the cloud platform to an edge instance.
-- [remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group) — Removes Message Originator Entity from Entity Group.
+- [remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group) — removes the message originator entity from an entity group found by group name pattern.
 - [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — Sends reply to REST API call that was originally sent to rule engine.
 - [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply) — Sends response to the RPC Call originator.
 - [rpc call request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request) — Sends RPC requests to the Device and routing response to the next Rule nodes.

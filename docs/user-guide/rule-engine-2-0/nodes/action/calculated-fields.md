@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: calculated fields
-description: Triggers calculated field processing for incoming time series or attributes without persisting the data to the database.
+description: Triggers calculated field processing for time series or attribute data without persisting the original data to the database.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
