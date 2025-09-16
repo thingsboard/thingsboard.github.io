@@ -1223,6 +1223,38 @@
     and device firmware are open source, making us one of the most open building automation
     systems on the market. We make collaboration simple and straightforward with easy
     purchases on the web and open, long-term support on the forum.
+- name: Arwin Technology Limited
+  type:
+    - LoRaWAN
+    - NB-IoT
+  industry:
+    - Smart Cities
+    - Retail
+    - Smart Buildings
+    - Environment Monitoring
+  use-case:
+    - Smart Energy
+    - Environment Monitoring
+    - Smart Office
+    - Water Metering
+    - Smart Metering
+    - Air Quality Monitoring
+    - Tank Level Monitoring
+  hardware-types:
+    - Sensors
+  logo: https://img.thingsboard.io/partners/senso-8-logo.png
+  page: /partners/hardware/arwin-technology-limited
+  site:
+    href: https://www.senso8.com/
+  links:
+    gateway-guides:
+      0:
+        label: Connect LRS10701 LoRaWAN IAQ Sensor to ThingsBoard
+        href: "/docs/devices-library/lrs10701/"
+      1:
+        label: Connect LRS20100 LoRaWAN Temperature and Humidity Sensor to ThingsBoard
+        href: "/docs/devices-library/lrs20100/"
+  description: SENSO8 is the registered product trademark of Arwin Technology Limited. We were founded in 2015 at the Hong Kong Science Park. Our team, with over 20 years of Fortune 500 expertise, delivers end-to-end solutions from embedded design to cloud systems. We specialize in advanced wireless technologies (NB-IoT, LoRa, BLE, Wi-Fi) as well as a wide range of sensor applications. SENSO8 offers best-in-class IoT-sensor solutions - Indoor Air Quality(IAQ) Sensors, Water Leak Sensors, Temperature Sensors, Smart Power Meters, Dry Contact Sensors, etc. Most of the sensor models are battery-powered with years of battery life, which makes installation easier.
 - name: Atomsenses
   type:
     - LoRaWAN

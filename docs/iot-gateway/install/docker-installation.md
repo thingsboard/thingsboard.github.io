@@ -7,26 +7,26 @@ title: Install ThingsBoard IoT Gateway using Docker Compose
 * TOC
 {:toc}
 
-This guide will help you to install and start ThingsBoard Gateway using Docker Compose on Linux or Mac OS.
+This guide will help you to install and start ThingsBoard Gateway using Docker Compose on Linux or macOS.
 
 ## Prerequisites
 
 - [Install Docker Compose](https://docs.docker.com/compose/){:target="_blank"};
-- You will need to have access to ThingsBoard. The easiest way is to use the [ThingsBoard Demo](https://demo.thingsboard.io/){:target="_blank"} server.
+- You will need to have access to ThingsBoard. The easiest way is to use the [ThingsBoard Demo](https://demo.thingsboard.io/){:target="_blank"} or [ThingsBoard Cloud](https://thingsboard.cloud){:target="_blank"}.
 The alternative option is to install the ThingsBoard locally using the [installation guide](https://thingsboard.io/docs/user-guide/install/installation-options/){:target="_blank"}.
 
-## Download docker-compose file
+## Download a docker-compose file
 
 {% assign downloadConfigurationFile = '
    ===
       image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-1-ce.png,
-      title: Go to the "**Dashboards**" page and open the "**ThingsBoard IoT Gateways**" dashboard;
+      title: Go to the "**Entities**" > "**Gateways**" page and click the "**plus**" icon in the upper right corner to add a new gateway.
    ===
       image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-2-ce.png,
-      title: Click the "**plus**" icon in the upper right corner to add a new gateway. Input the gateway name, specify the "default" device profile, and click "**Create**";
+      title: In the opened modal window input the gateway name, specify the "**default**" device profile, and click "**Create**".
    ===
       image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-3-ce.png,
-      title: The "**Docker commands**" window will open. Click the "**Download**" button to download docker-compose file for your gateway.
+      title: The "**Launch command**" window will open. Click the "**Download**" button to download a docker-compose file for your gateway.
 '
 %}
 
@@ -77,3 +77,14 @@ docker pull thingsboard/tb-gateway
 docker compose up
 ```
 {: .copy-code}
+
+## Next steps
+
+Explore guides related to main ThingsBoard features:
+
+ - [Getting Started](/docs/iot-gateway/getting-started/) with ThingsBoard IoT Gateway.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.

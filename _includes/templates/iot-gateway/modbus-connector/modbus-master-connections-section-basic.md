@@ -1,8 +1,11 @@
-To add new configuration for connection to server, navigate to the "Master Connections" tab and click the "plus" icon:
+Due to the nature of preferred way of communication between Modbus master there are 3 options how to configure this 
+part: if using TCP, UDP or via Serial port.
 
-![image](https://img.thingsboard.io/gateway/modbus-connector/add-new-server-connection-1-ce.png)
-
-Due to the nature of preferred way of communication between Modbus master there are 2 options how to configure this part: if using TCP, UDP or via Serial port.
+{% capture difference %} 
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/modbus/#device-mapping) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% capture modbusMasterConnectionsUDPTCPSerial %}
 TCP<small></small>%,%tcp%,%templates/iot-gateway/modbus-connector/tcp-master-connections-section.md%br%

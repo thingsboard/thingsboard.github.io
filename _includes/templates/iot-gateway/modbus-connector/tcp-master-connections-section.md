@@ -1,13 +1,7 @@
-The table below describes the parameters required to configure TCP connection for slave:
+The following parameters are used to configure TCP connection for the slave:
 
-| **Parameter**   | **Default value** | **Description**                                   |
-|:----------------|:------------------|---------------------------------------------------
-| Host            | **127.0.0.1**     | Hostname or ip address of Modbus server           |
-| Port            | **5021**          | Port of Modbus server for connection              |
-| Method          | **Socket**        | Type of a framer **Socket** or **RTU**, if needed |
-| Unit ID         | **1**             | ID of current slave on Modbus                     |
-| Device name     | **Temp Sensor**   | Name of the current slave                         |
-| Device profile  | **default**       | Device profile of the current slave               |
-| ---             
+- **Host** - hostname or IP address of the Modbus server.
+- **Port** - port of the Modbus server for connection.
+- **Method** - type of a framer, either **Socket** or **RTU**.
 
 ![image](https://img.thingsboard.io/gateway/modbus-connector/tcp-server-connection-section.png)

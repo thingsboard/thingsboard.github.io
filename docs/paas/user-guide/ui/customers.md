@@ -8,13 +8,13 @@ description: ThingsBoard Customers management
 customer-add-new-pe:
     0:
         image: https://img.thingsboard.io/user-guide/ui/customers/pe/create-customer-1-pe.png
-        title: 'Navigate to the "Customers" page. By default, you navigate to the customer group "All". Then click the plus sign in the upper right corner of the screen;'
+        title: 'Navigate to the "Customers" page. By default, you navigate to the customer group "All". Then click the plus sign in the upper right corner of the screen.'
     1:
         image: https://img.thingsboard.io/user-guide/ui/customers/pe/create-customer-2-pe.png
-        title: 'In the opened dialog box, enter the name of the new customer. Additionally, you can input personal details for the customer and assign a home dashboard. Then click "Add";'
+        title: 'In the opened dialog box, enter the name of the new customer. Additionally, you can input personal details for the customer and assign a home dashboard. Then click "Add".'
     2:
         image: https://img.thingsboard.io/user-guide/ui/customers/pe/create-customer-3-pe.png
-        title: 'New customer is created. You can add as many customers as you want in the same way.'
+        title: 'New customer is created. You can view and manage both users and entities (devices, assets, dashboards, etc.) for any customer directly from their row in the Customers table.'
 
 customer-add-new-2-pe:
     0:

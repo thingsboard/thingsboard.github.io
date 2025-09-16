@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: check fields presence
-description: Checks whether the specified fields are present in the incoming message data and/or metadata.
+description: Routes messages based on whether specified fields are present in the message data or metadata.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

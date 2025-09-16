@@ -14,7 +14,7 @@ add-new-customer:
         title: 'In the opened dialog box, fill in the title of the customer. Also, you can optionally indicate country name, city, address, and phone number. Then click "Add";'
     2:
         image: https://img.thingsboard.io/user-guide/ui/customers/ce/create-customer-3-ce.png
-        title: 'New customer is created. You can add as many customers as you want in the same way.'
+        title: 'New customer is created. You can view and manage both users and entities (devices, assets, dashboards, etc.) for any customer directly from their row in the Customers table.'
 
 add-customer-user:
     0:

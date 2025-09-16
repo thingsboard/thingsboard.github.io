@@ -51,7 +51,7 @@ Once the user receives an <b>activation link</b> (via email or any other method)
 - <b>Click the activation link</b>, or copy and paste it into your browser’s address bar and press <b>Enter</b>.
 - You will be prompted to <b>create a password</b>.
   - Enter the desired password <b>twice</b> to confirm.
-  - Click "</b>Create Password</b>".
+  - Click "<b>Create Password</b>".
 
 After completing this step, the user will log in to their instance and gain access to resources according to the permissions assigned to them.
 
@@ -59,19 +59,23 @@ After completing this step, the user will log in to their instance and gain acce
 
 ## Manage owner and groups
 
-You can change a user's <b>owner</b> or assign them to one or more [user groups](#user-group). To do this:
-- Click on the user to open their <b>detailed profile</b>.
-- Click the "<b>Manage owner and groups</b>" button.
-- Perform the required actions:
-  - Select a <b>new owner</b> or the user from the dropdown list.
-  - Add the user to one or more <b>existing user groups</b>, or [create a new group](#create-new-user-group) if needed.
-- Click "<b>Update</b>" to confirm and apply the changes.
+You can change a user’s owner (which can be either a Tenant or a Customer, see [glossary](/docs/{{docsPrefix}}user-guide/rbac/#glossary){:target="_blank"}) and assign them to one or more [user groups](#user-group). Changing the owner moves the user to the selected level and updates access based on groups.
 
-> **Note**: Changes to <b>group membership</b> and <b>ownership</b> take effect immediately and impact the user’s access permissions based on the roles associated with the new configuration.
+To do this:
+- Click on the user to open their **User details**.
+- Click “**Manage owner and groups**” button.
+- In **Owner** field, select [Tenant](https://thingsboard.io/docs/{{docsPrefix}}user-guide/ui/tenants/) or a specific [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}.
+- Add the user to the relevant **user groups** or [create a new group](#create-new-user-group) if needed.
+- Click “**Update**” to confirm and apply the changes.
+
+{% capture difference %}
+**Note:** Changes to group membership and ownership take effect immediately and update the user’s access permissions according to the [roles](/docs/{{docsPrefix}}user-guide/rbac/#roles){:target="_blank"} of the assigned groups.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% include images-gallery.html imageCollection="user-manage-owner-and-groups" %}
 
-> You can reassign or revoke the ownership change of user if needed.
+You can reassign or revoke the ownership change of user if needed.
 
 ## Deleting user
 

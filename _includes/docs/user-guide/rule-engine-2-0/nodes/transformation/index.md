@@ -1,12 +1,21 @@
-- [change originator](/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator) — All incoming Messages in the Thingsboard have originator field that identifies an entity that submits Message. It could be a Device, Asset, Customer, Tenant, etc..
-- [copy key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/copy-key-value-pairs) — Copies key-value pairs from message to message metadata or vice-versa.
-- [deduplication](/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication) — Deduplicate messages within the same Originator entity for a configurable period based on a specified deduplication strategy.
-- [delete key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs) — Deletes key-value pairs from message or message metadata.
-- [duplicate to group](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group) — Duplicates message to all entities belonging to specific Entity Group.
-- [duplicate to group by name](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group-by-name) — Duplicates message to all entities belonging to resolved Entity group.
-- [duplicate to related](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-related) — Duplicates message to related entities fetched by relation query.
-- [JSON path](/docs/user-guide/rule-engine-2-0/nodes/transformation/json-path) — Transforms incoming message body using JSONPath expression.
-- [rename keys](/docs/user-guide/rule-engine-2-0/nodes/transformation/rename-keys) — Renames message or message metadata keys.
-- [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script) — Changes Message payload, Metadata or Message type using configured JavaScript function.
-- [split array msg](/docs/user-guide/rule-engine-2-0/nodes/transformation/split-array-msg) — Split array message into several messages.
-- [to email](/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email) — Transforms message to Email Message by populating email fields using values derived from Message metadata.
+Transformation nodes are the data processing and manipulation components of ThingsBoard's rule engine that modify the content, structure, or format of incoming messages.
+
+These nodes can transform messages through various operations including field mapping, mathematical calculations,
+string manipulations, custom scripting, and JSON structure modifications. They can extract or combine data fields, apply business logic transformations,
+and create new messages derived from the existing ones.
+
+This transformation capability enables rule chains to adapt messages for specific downstream requirements and implement complex processing workflows that prepare 
+data for storage, analysis, or integration with external systems.
+
+- [change originator](/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator) — changes the originator of a message to a different entity such as its customer, tenant, related entity, alarm originator, or an entity found by name pattern.
+- [copy key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/copy-key-value-pairs) — copies specified key-value pairs between the message data and metadata in either direction.
+- [deduplication](/docs/user-guide/rule-engine-2-0/nodes/transformation/deduplication) — deduplicates messages from the same originator within a configurable time interval using strategies to return either the first, last, or all messages as a combined result.
+- [delete key-value pairs](/docs/user-guide/rule-engine-2-0/nodes/transformation/delete-key-value-pairs) — deletes specified key-value pairs from either the message data or metadata.
+- [duplicate to group](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group) — duplicates an incoming message to every entity within a specified entity group.
+- [duplicate to group by name](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-group-by-name) — duplicates an incoming message to every entity within an entity group that is dynamically found by name.
+- [duplicate to related](/docs/user-guide/rule-engine-2-0/nodes/transformation/duplicate-to-related) — duplicates an incoming message to all entities related to the message originator (found via a configurable relations query).
+- [JSON path](/docs/user-guide/rule-engine-2-0/nodes/transformation/json-path) — extracts a portion of the message data using a JSONPath expression and replaces the entire message data with the extracted result.
+- [rename keys](/docs/user-guide/rule-engine-2-0/nodes/transformation/rename-keys) — renames keys in either the message data or metadata based on a configured mapping that specifies which existing keys should be changed to new key names.
+- [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script) — executes user-defined TBEL or JavaScript function to transform messages by modifying their data, metadata, and type to produce single or multiple transformed output messages.
+- [split array msg](/docs/user-guide/rule-engine-2-0/nodes/transformation/split-array-msg) — splits an incoming message with JSON array data into multiple separate messages, creating one new message for each array element.
+- [to email](/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email) — prepares a message for email dispatch by transforming it with configured sender, recipients, subject, and body content using template-based field substitution.

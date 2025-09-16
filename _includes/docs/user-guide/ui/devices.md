@@ -135,23 +135,23 @@ You can assign the device to a specific [customer](/docs/user-guide/ui/customers
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Manage device owner and groups
+You can change a device’s owner (which can be either a Tenant or a Customer, see [glossary](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rbac/#glossary){:target="_blank"}) to control who can access the device and its data. Changing the owner moves the device to the selected level and updates access based on groups.
 
-You can change the **owner** of the device. This ensures that only users associated with the selected customer will have access to the device and its data.
+To do this:
+- Click the device to open its **Device details**.
+- Click the “**Manage owner and groups**” button.
+- In the **Owner** field, select [Tenant](https://thingsboard.io/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} or a specific [Customer](https://thingsboard.io/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}.
+- Add the device to the relevant **device groups** or [create a new group](#creating-device-group) if needed.
+- Click “**Update**” to confirm and apply the changes.
 
-> This step is essential for maintaining strict data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see the devices and their data that they have been granted access to. They will not have access to devices or data belonging to other customers.
-
-To change asset ownership:
-- Click asset to open its **details** view.
-- Click the "**Manage owner and groups**" button.
-- Select the new owner of the device from the list.
-- If needed, add the device to an existing group or create a new one.
-- Confirm the change to update the device&#39;s ownership.
-
-In the <b>"Customer name" column</b>, you can see the current owner of the device.
-
-> <b>Note</b>: A Tenant Administrator always has the right to reassign or revoke device ownership.
+{% capture difference %}
+**Note:** Changes to group membership and ownership take effect immediately and update user access according to the [roles](/docs/{{docsPrefix}}user-guide/rbac/#roles){:target="_blank"} of the assigned groups.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% include images-gallery.html imageCollection="manage-owner-and-groups-pe" %}
+
+A Tenant Administrator always has the right to reassign or revoke device ownership.
 
 ### Include customer entities
 

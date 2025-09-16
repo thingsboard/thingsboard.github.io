@@ -3,20 +3,13 @@
 * TOC
 {:toc}
 
-ThingsBoard web interface allows you to configure your company or product logo and color scheme in a few clicks with zero coding efforts and no service restart required.
+White labeling lets you tailor your ThingsBoard instance to match your brand and preferences—especially useful for companies delivering IoT solutions to their customers.
 
-{% if docsPrefix == "pe/" %}
-Sysadmin, Tenant and Customer Administrators can configure color scheme, icon, favicon and custom translation of system components and end-user dashboard elements.
-But only System and Tenant Administrators are able to set up customer email templates to interact with the users.
+Set your company or product name, upload your logo, choose color palettes, use a custom menu or translations—all without writing code or restarting the service.
 
-By default, the Tenant inherits the Sysadmin UI configuration, and the Customer inherits the Tenant UI configuration. But Tenant and Customer Administrators are able to set up their own White Labeling configuration.
-{% endif %}
-{% if docsPrefix contains "paas/" %}
-Tenant and Customer Administrators can configure color scheme, icon, favicon and custom translation of system components and end-user dashboard elements.
-But only Tenant Administrator are able to set up customer email templates to interact with the users.
+<br><b><font size="4">Practical video course 🎥</font></b>
 
-By default, the Customer inherits the Tenant UI configuration. But the Customer Administrator are able to set up their own White Labeling configuration.
-{% endif %}
+Watch this practical video course for a step-by-step guide to personalizing the look and feel of your IoT platform.
 
 &nbsp;
 <div id="video">  
@@ -25,13 +18,25 @@ By default, the Customer inherits the Tenant UI configuration. But the Customer 
     </div>
 </div>
 
-## White labeling settings
+## Basics & Inheritance
 
-To configure your company or product logo and color scheme, go to the "White labeling" page.
+White labeling is configured based on the level you&#39;re signed in under:
+{% unless docsPrefix contains "paas/" %}- **System Administrator level** — sets the platform&#39;s default branding for all tenants and their customers.{% endunless %}
+- **Tenant level** — inherits the system branding and can override it for the specific tenant and its customers.
+- **Customer level** — inherits the tenant&#39;s branding and can customize the UI for that customer and its users.
+
+**Inheritance flow:** System → Tenant → Customer. Lower levels can override settings within their scope.
+
+## Customize ThingsBoard web interface
+
+{% capture difference %}
+**Please note:** To configure **White labeling**, you need the appropriate [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+To configure your company or product **logo** and **color scheme**, go to the "White labeling" page.
 
 {% include images-gallery.html imageCollection="white-labeling-default" %}
-
-### Customize ThingsBoard web interface
 
 In the "General" tab you can set or change the following options:
 
@@ -82,7 +87,7 @@ The final look of the customized user interface:
 
 {% include images-gallery.html imageCollection="white-labeling-custom" %}
 
-#### Advanced CSS
+### Advanced CSS
 
 Using CSS, you can stylize any elements of the ThingsBoard user interface as you wish. Such elements can be background, icons, fonts, etc.
 
@@ -138,9 +143,9 @@ An example of CSS code to customize the appearance of the sidebar menu:
 
 Using the functionality described in this documentation, you can customize the appearance of the ThingsBoard UI according to your preferences.
 
-### Customize the login page
+## Customize the login page
 
-On the "Login" tab, you can configure the login page for your clients.
+On the "Login" tab, you can configure the **login page** for your clients.
 
 - Enter the registered domain name, or refer to [this documentation](/docs/{{docsPrefix}}domains/#domain-registration){:target="_blank"} to learn how to register a new domain;
 - It is recommended to prevent usage of hostnames from headers of the request;
