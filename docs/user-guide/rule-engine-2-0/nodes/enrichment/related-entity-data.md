@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: related entity data
-description: Finds an entity related to the message originator, fetches its data (attributes, latest telemetry, or entity fields), and adds the results to the message data or metadata.
+description: Enriches messages by adding attributes, latest time series values, or entity fields from a related entity found through configurable relation queries (direction, type and entity filters).
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

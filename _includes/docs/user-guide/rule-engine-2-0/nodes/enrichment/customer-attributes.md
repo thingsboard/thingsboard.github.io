@@ -10,7 +10,7 @@ The configuration allows you to specify which data to fetch from the customer an
 - **Attributes/Latest telemetry mapping** - A list of key-value pairs to define how data is fetched and added to the message.
     - **Source attribute/telemetry key**: The name of the attribute or telemetry key on the Customer entity.
     - **Target key**: The key that will be used to store the fetched value in the message data or metadata.
-    - Both **Source attribute/telemetry key** and **Target key** support templatization using `${metadataKey}` or `${messageKey}` to substitute values from the message metadata or
+    - Both **Source attribute/telemetry key** and **Target key** support templatization using `${metadataKey}` or `$[dataKey]` to substitute values from the message metadata or
       data.
 - **Add mapped attributes/latest telemetry to** - Determines the destination for the fetched data.
     - *Message*: Adds the fetched key-value pairs to the message data. If the original message data is not a valid JSON object, the processing will fail.

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: entity type switch
-description: Routes messages based on the originator entity type. The message is forwarded through the output connection whose label exactly matches the entity type’s normal name.
+description: Routes messages to different connections based on the originator entity type.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

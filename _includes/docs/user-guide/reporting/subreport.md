@@ -6,7 +6,7 @@
 
 {% assign feature = "Reporting" %}{% include templates/pe-feature-banner.md %}
 
-A **Subreport** in ThingsBoard is a special type of report template that is **designed to be embedded inside another (main) report**. 
+A **Subreport** in ThingsBoard is a special type of report template that is **designed to be embedded inside another (master) report**. 
 It behaves like a **reusable**, **modular block** that receives context from the parent report and generates its content accordingly.
 
 Just like regular reports, subreports can contain components such as tables, text blocks, images, etc., and they fully support dynamic entity aliases and data filtering.
@@ -77,7 +77,7 @@ This can be achieved by using subreport:
 
 First, create a **Subreport** template that will contain the alarm table for a single device.
 For its **datasource**, use a **new entity alias** with the filter type "**Entity from master report**".
-This will allow the master report to pass data about a specific device into the subreport.
+This allows the master report to pass data about a specific device into the subreport.
 
 - Open the "**Reporting**" page from the left-hand sidebar. You will automatically land on the "**Templates**" tab.
 - Click the "**+ Add report template**" button in the top-right corner and select "**Create new report template**" from the dropdown menu.
@@ -137,7 +137,7 @@ We&#39;ll configure it to pass the data of **each of your devices** to the **sub
 {% include images-gallery.html imageCollection="example-create-report-2" %}
 
 - **Add an "Subreport" component** by dragging it from the **components library** into the **content area**. 
-  - In the "**Datasource**" section, create a new entity alias that retrieves all your entities of type Device. 
+  - In the "**Datasource**" section, create a new entity alias that retrieves all your entities with Device type. 
   - In the "**Subreport**" section, select the previously created subreport **Daily Device Alarms (Subreport)**.
   - Save the component.
 - Finally, save the master report template.
@@ -148,6 +148,6 @@ We&#39;ll configure it to pass the data of **each of your devices** to the **sub
 
 To make sure the subreport is generated correctly, click the "**Generate test report**" button in the top-right corner of the window.
 
-As you can see, the generated report contains all three of our devices, with a separate table for each showing their alarms for the current day.
+As you can see, the generated report contains all three of our devices, each with its separate table showing the alarms for the current day.
 
 {% include images-gallery.html imageCollection="example-generate-test-report" %}

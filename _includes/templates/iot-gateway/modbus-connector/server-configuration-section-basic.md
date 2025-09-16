@@ -1,4 +1,5 @@
-Due to the nature of preferred way of communication between Modbus master there are 2 options how to configure this part: if using TCP/UDP or via Serial port.
+Due to the nature of preferred way of communication between Modbus master there are 3 options how to configure this 
+part: TCP, UDP or via Serial port.
 
 ![image](https://img.thingsboard.io/gateway/modbus-connector/server-slave-configuration-basic.png)
 

@@ -14,7 +14,7 @@ Similarly, you can restrict access to sensitive information, increasing business
 
 ### ThingsBoard Community Edition
 
-![image](https://img.thingsboard.io/user-guide/security/rbac/TB_CE.png)
+![image](/images/user-guide/security/rbac/TB_CE.png)
 
 ThingsBoard Community Edition supports a straight-forward security model with three main roles: *System administrator*, *Tenant administrator*, and *Customer user*. 
 A system administrator is able to manage tenants, while a tenant administrator manages devices, dashboards, customers, and other entities that belong to a particular tenant.
@@ -23,7 +23,7 @@ ThingsBoard Community Edition functionality is sufficient for a lot of simple us
 
 ### ThingsBoard Professional Edition
 
-![image](https://img.thingsboard.io/user-guide/security/rbac/TB_PE.png)
+![image](/images/user-guide/security/rbac/TB_PE.png)
 
 ThingsBoard Professional Edition brings much more flexibility in terms of user, customer, and role management. 
 It is designed to cover use cases for businesses and enterprises with multiple user groups that have different permissions but may interact with the same devices and assets. 
@@ -110,71 +110,111 @@ Group Permissions Entity is basically a mapping between User Group, Role, and op
 
 ## Roles
 
-Roles represent a set of rights and permissions that determine what actions a user or group of users can perform within the system.
-Generally, roles help to simplify permission management by allowing administrators to assign and modify permissions for a group of users and for each user individually.
+<b>Roles</b> are sets of rights and permissions that determine what actions a user—or a user group—can perform in the system. They simplify permission management by letting administrators assign and adjust permissions for entire groups or for individual users.
 
-Role maps resource type to a list of allowed operations. A list of all available resources is [here](#permissions)
+A role maps each <b>resource type</b> to a list of <b>allowed operations</b>. You can find the [full list of resource types](#permissions) in the <b>Resources</b> reference.
 
-Let's examine the diagram below to better understand how roles work.
+Let&#39;s use the diagram below to see how roles work.
 
-![image](https://img.thingsboard.io/user-guide/security/rbac/roles.png)
+![image](/images/user-guide/security/rbac/roles.png)
 
-- User Group 1 with the role assigned to them as "Read device only" has access only to devices (can view, but cannot delete, edit or add new devices). 
-This user group has access only to devices and does not have access to any other entities.
+- <b>User group 1</b> with the <b>Read device only</b> role has access <b>only to devices</b>. They can <b>view</b> devices but <b>cannot delete, edit, or add</b> devices. They do not have access to any other object types.
+- <b>User group 2</b> has two roles: <b>Read device only</b> and <b>Dashboards & widgets administrator</b>.
+  The <b>Dashboards & widgets administrator</b> role allows users to <b>create, delete, and edit</b> widgets and dashboards.
+  Combined with <b>Read device only</b>, users can <b>view data</b> from the devices they&#39;re allowed to access and <b>visualize that data</b> on their dashboards.
+- <b>User group 3</b> with the <b>Access to all resources</b> role can <b>create, edit, and delete</b> all object types, such as devices, dashboards, assets, and customers.
 
-- User Group 2 has been assigned two roles: "Device Read Only" and "Dashboards and Widgets Administrator".
-The "Dashboards and Widgets Administrator" role allows users to create, delete, and edit widgets and dashboards.
-Additionally, the users have access to data from the devices available to them due to the "Device Read Only" role, and can visualize this data in their dashboards.
-
-- User Group 3 has been assigned the role of "Access to all resources". This role grants permissions for creating, editing, and deleting all entities such as devices, dashboards, assets, and customers.
-
-In ThingsBoard Professional Edition, there are two types of roles: [Generic](/docs/{{docsPrefix}}user-guide/rbac/#generic-roles) and [Group](/docs/{{docsPrefix}}user-guide/rbac/#group-roles). Each role type has its own permissions.
+In ThingsBoard Professional Edition, there are two role types: [Generic](/docs/{{docsPrefix}}user-guide/rbac/#generic-role) and [Group](/docs/{{docsPrefix}}user-guide/rbac/#group-role). Each type comes with its own permission model.
 
 ### Creating a new role
 
-To create a new Role, navigate to the **Security** section -> **Roles** page then click the "**plus**" button in the top right corner.
+Open the **Roles** page of the **Security** section.
+- Click the "**plus**" button in the top right corner.
+- Enter the **name** 
+- Choose the **role type**:
+  - **Generic** - a reusable permission set that applies **recursively** within the scope where you assign it (Tenant / Customer / Sub-customer).
+  - **Group** — a permission set that you link to a **specific entity group** for a **specific user group**.
+- Select the **permissions** (resource + allowed operations), then click "**Save**".
 
-Please specify the name and choose type of the role: Generic or Group, as well as the necessary permissions. The Generic Role automatically grants User Group access to all resources with all permissions.
+![image](/images/user-guide/security/rbac/add-generic-role.png)
 
-![image](https://img.thingsboard.io/user-guide/security/rbac/add-generic-role.png)
+Now let&#39;s look at each type of role separately.
 
-Now let's look at each type of role separately.
+### Generic role
 
-### Generic roles
+<b><font size="3">What is a Generic roles?</font></b>
 
-The Generic Role consists of the set of permissions that are applied to all entities of the Tenant or Customer or Sub-customer recursively.
+A <b>Generic role</b> is a set of permissions that applies <b>recursively</b> to all entities within a chosen scope — <b>Tenant</b>, <b>Customer</b>, or <b>Sub-customer</b> (including all descendants).
 
-ThingsBoard use special “connection” called Group Permission Entity (GPE) which grants permissions of Generic Role for User Group.
+ThingsBoard uses a linking object called a <b>Group Permission Entity (GPE)</b> to assign a Generic role to a <b>user group</b>. The GPE binds who (the user group) to what (the scope) with which rights (the role&#39;s permissions).
 
 #### Example
 
-Let's consider an example to better understand how a generic role works.
+Let&#39;s look at an example to see how the generic role works depending on where it&#39;s assigned.
 
-![image](https://img.thingsboard.io/user-guide/security/rbac/generic_roles.png)
+<br>
 
-The "Device Admins" user group of Tenant A, which includes the user Bob, is assigned the Generic Role (Resource: All, Operation: All).
-User Bob can perform any operations over any entity that belongs to his Tenant A or Customer B and all its sub-customers.
+![image](/images/user-guide/security/rbac/generic-role.svg)
+
+<br><b><font size="3">We have:</font></b>
+
+- **Devices:**
+  - **Device A1** — at Tenant A level
+  - **Device B1** — at Customer B level
+
+- **Users:**
+  - **Bob** in Device Administrators group at Tenant A
+  - **Alice** in Device Administrators group at Customer B
+
+<br><b><font size="3">Goal of the example:</font></b>
+
+- Grant **Bob** (Tenant A scope) permission to perform any operation on any entity under Customer A, including entities under Customer B and its sub-customers.
+- Grant **Alice** (Customer B scope) permission to perform any operation on entities only within Customer B and its sub-customers.
+
+<br><b><font size="4">Step 1 — Create the Generic role</font></b>
+
+- Create a **Generic** role with **Resource: All** and **Operation: All**.
 
 {% include images-gallery.html imageCollection="generic-roles-example-1" %}
 
-The user Alice from the “Device Admins” user group of Customer B, is assigned the Generic Role (Resource: All, Operation: All). 
-User Alice can perform any operations on any entity that belongs only to her Customer B and all of its sub-customers.
+<b><font size="4">Step 2 — Assign Generic role to the Tenant user group (Bob)</font></b>
+
+- Go to the "**Users**" page and navigate to the "**Groups**" tab.
+- Open **Entity group details** for the "**Device Admins**" group of **Tenant A**.
+- Navigate to the "**Roles**" tab and click "**+**".
+- Choose **Role type**: **Generic**, select the role you created, and click "**Add**".
+
+Bob (a member of this tenant-level group) can perform any operation on any entity that belongs to **Tenant A**, including entities under **Customer A**, **Customer B**, and their sub-customers.
 
 {% include images-gallery.html imageCollection="generic-roles-example-2" %}
 
-So, Alice and Bob have access to Device B1, but only Bob has access to Device A1.
+<b><font size="4">Step 3 — Assign Generic role to the Customer user group (Alice)</font></b>
 
-Let's check this. Login as user Bob.
+- Go to "**Customers**" page and click **Manage customer users** next to **Customer B**.
+- Open the "**Groups**" tab and then **Entity group details** for **Device Admins** group.
+- Navigate to the "**Roles**" tab and click "**+**".
+- Choose **Role type**: **Generic**, select the same role, and click "**Add**".
+
+Alice (a member of this **Customer B** group) can perform any operation on entities that belong **only to Customer B** and its sub-customers.
 
 {% include images-gallery.html imageCollection="generic-roles-example-3" %}
 
-User Bob has access to two devices: "Device A1" and "Device B1".
+<br><b><font size="4">Verify access</font></b>
 
-Now login as user Alice.
+**Sign in as Bob:**
 
-{% include images-gallery.html imageCollection="generic-roles-example-4" %}
+{% include images-gallery.html imageCollection="generic-roles-example-4" showListImageTitles="true" %}
 
-User Alice has access to only one device "Device B1".
+**Now login as user Alice:**
+
+{% include images-gallery.html imageCollection="generic-roles-example-5" showListImageTitles="true" %}
+
+<br><b><font size="4">Outcome</font></b>
+
+- **Both Alice and Bob** have access to **Device B1**.
+- **Only Bob** has access to **Device A1** (because his role is assigned at the tenant level).
+
+<hr>
 
 #### Permissions
 
@@ -220,57 +260,94 @@ Please check out resource types and corresponding operations listed below.
 | White Labeling                | “All”, “Read”, “Write”                                                                                                                                                                                                                                                                             | Permissions to white labeling allows to configure your company or product logo and color scheme in a short period of time. Learn more about White Labeling [here](/docs/{{docsPrefix}}user-guide/white-labeling/).                                                                                                                                                                                                                                                                                                                                          |
 | Widget Type and Widget Bundle | “All”, “Create”, “Delete”, “Read”, “Write”                                                                                                                                                                                                                                                         | There are five widget types in ThingsBoard, each widget definition represents a specific type of widget. Widgets are grouped into widget bundles according to their purposes. To learn more about Widgets please read [here](/docs/{{docsPrefix}}user-guide/ui/widget-library/).                                                                                                                                                                                                                                                                            |
 
-### Group roles
+### Group role
 
-The Group Role defines a set of permissions for a specific group of users in relation to a specific group of entities.
+<b><font size="3">What is a Group role?</font></b>
 
-We use special "connection" called Group Permission Entity (GPE) to make a connection between User Group, Entity Group and Group Role.  
+A group role defines a set of permissions for a <b>specific user group</b> over a <b>specific entity group</b>.
+
+The link "who → to what → with which rights" is created via <b>GPE (Group Permission Entry)</b> — a join object between the <b>user group</b>, the <b>entity group</b>, and the <b>group role</b>.
 
 #### Example
 
-Let's consider an example to better understand how a group role works.
+Let&#39;s consider an example to better understand how a group role works.
 
-![image](https://img.thingsboard.io/user-guide/security/rbac/group_roles.png)
+<br>
 
-Let's assume you have two user groups: "Building A Admins" and "Building B Admins", and each user group is responsible for monitoring the status of different devices in Building A and Building B respectively.
+![image](/images/user-guide/security/rbac/group-role.svg)
+
+<br><b><font size="3">We have:</font></b>
+
+- <b>User groups:</b>
+  - "<b>Building A Admins</b>" (includes <b>Alice<b>)
+  - "<b>Building B Admins</b>" (includes <b>Bob</b>)
 
 {% include images-gallery.html imageCollection="group-roles-example-1" %}
 
-You want User Bob (user group "Building B Admins") to have reading/writing access to all devices in the device group "Building B", but not be able to view or alter the state of devices in device group "Building A".
-Similarly, User Alice (user group "Building A Admins") should have reading/writing access to all devices in the device group "Building A", but not be able to view or alter the state of devices in device group "Building B".
-
-You can achieve this by creating Group role with reading/writing operations.
+- <b>Device groups</b>:
+  - "<b>Building A</b>" (with <b>Device A1</b>)
+  - "<b>Building B</b>" (with <b>Device B1</b>)
 
 {% include images-gallery.html imageCollection="group-roles-example-2" %}
 
-Now, assign this role to the device group "Building A".
+<br><b><font size="3">Objective of this example:</font></b>
+- Grant <b>Bob</b> (Building B Admins) <b>read/write</b> permissions for devices in the "<b>Building B</b>" group, with <b>no access</b> to devices in the "<b>Building A</b>" group.
+- Grant <b>Alice</b> (Building A Admins) <b>read/write</b> permissions for devices in the "<b>Building A</b>" group, with <b>no access</b> to devices in the "<b>Building B</b>" group.
+
+<br><b><font size="4">Step 1 — Create the Group role</font></b>
+
+- Create a <b>Group role</b> with <b>Read/Write</b> operations (for devices/device groups).
 
 {% include images-gallery.html imageCollection="group-roles-example-3" %}
 
-Assign the same group role to the device group "Building B".
+<br><b><font size="4">Step 2 — Assign the Group role to the "Building A" device group</font></b>
+
+- Go to the "<b>Devices</b>" → "<b>Groups</b>" tab.
+- Open Entity group details for "<b>Building A</b>".
+- In the "<b>Permissions</b>" tab, click "<b>+</b>".
+- Select the <b>created role</b>, set the <b>Owner</b>, choose <b>user group "Building A Admins"</b>, and click "<b>Add</b>".
+
+Permission assigned.
 
 {% include images-gallery.html imageCollection="group-roles-example-4" %}
 
-So, user Alice and all users in the group "Building A Admins" only have access to Device A1. Login as user Alice to verify this.
+<br><b><font size="4">Step 3 — Assign the Group role to the "Building B" device group</font></b>
+
+Repeat at the same for "<b>Building B</b>" device group:
+
+- In "<b>Building B</b>" device group details → "<b>Permissions</b>" tab → click "<b>+</b>".
+- Select the same <b>role</b>, set <b>Owner</b>, choose <b>user group "Building B Admins"</b>, and click "<b>Add</b>".
+
+Permission assigned.
 
 {% include images-gallery.html imageCollection="group-roles-example-5" %}
 
-Same thing with user Bob. User Bob and all users in the group "Building B Admins" only have access to Device B1.
+<br><b><font size="4">Verify access</font></b>
+
+So, user Alice and all users in the group "Building A Admins" only have access to <b>Device A1</b>. Login as user Alice to verify this.
+- Go to the "<b>Users</b>" page of <b>Tenant A</b>.
+- Click "<b>Login as Tenant Admin</b>" icon next to <b>Alice</b> account.
+- Open "<b>Devices</b>" page - you see only "<b>Building A</b>" group with <b>Device A1</b> inside.
 
 {% include images-gallery.html imageCollection="group-roles-example-6" %}
+
+Same thing with user Bob. User Bob and all users in the group "Building B Admins" only have access to <b>Device B1</b>.
+- Go to the "<b>Users</b>" page of <b>Tenant A</b>.
+- Click "<b>Login as Tenant Admin</b>" icon next to <b>Bob</b> account.
+- Open "<b>Devices</b>" page - you see only "<b>Building B</b>" group with <b>Device B1</b> inside.
+
+{% include images-gallery.html imageCollection="group-roles-example-7" %}
 
 In this way, group roles allow you to flexibly manage access to resources at the group level, rather than at the level of individual users or individual devices.
 
 {% capture difference %}
-**Note:**
-<br>
-Since Entity Group has only one Owner, you can assign Group Role to any User Group that belongs to the same Owner or any parents of the Owner.
+**Note:** Since an entity group has a single Owner, you can assign a group role only to user groups that belong to the same Owner or any of its parents.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 ## Solution example for smart buildings: separate user groups per facility
 
-Let's assume your solution manages commercial buildings. 
+Let&#39;s assume your solution manages commercial buildings. 
 Your main customer is a Building Manager that wants to monitor HVAC systems, electricity consumption, and other smart devices in the building.  
 The Building Manager may want to design and share some dashboards with the end-users - office workers.
 Besides, your engineers responsible for the maintenance are interested in supervising the device's state, for example, receive alerts when the battery level forgoes below certain thresholds.
@@ -287,14 +364,14 @@ Let's configure ThingsBoard to support this use case. The instructions below ass
 We will create a separate *user group* named "Supervisors", a separate *dashboard group* "Supervisor Dashboards" and one *dashboard*.
 Our goal is to allow supervisors to manage dashboards in the "Supervisor Dashboards" group, but for all other entities in the system, they should have read-only access.
 
-Let's start by creating a "Supervisor Dashboards" group:
+Let&#39;s start by creating a "Supervisor Dashboards" group:
 1. Navigate to the "Groups" tab in the "Dashboards" page and click "plus" button to create new entity group;
 2. Input the name of your dashboard group. In our case, it's "Supervisor Dashboards". Click on the "Add" button;
 3. New dashboard group "Supervisor Dashboards" has been created.
 
 {% include images-gallery.html imageCollection="supervisors-add-dashboard-group" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-dashboards-group.gif">)
+[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-dashboards-group.gif">)
 
 Next we should create two roles to implement this use case:
 
@@ -308,7 +385,7 @@ Next we should create two roles to implement this use case:
 
 {% include images-gallery.html imageCollection="supervisors-create-generic-role" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role1.gif"> )
+[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-role1.gif"> )
 
  * "Entity Group Administrator" - the **group role** that allows all operations for the group.
 1. Again, click the "plus" icon in the upper right corner of the "Roles" page screen;
@@ -319,7 +396,7 @@ Next we should create two roles to implement this use case:
 
 {% include images-gallery.html imageCollection="supervisors-create-group-role" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role2.gif">)
+[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-role2.gif">)
 
 Now let's assign those roles to the "Supervisors" group.
 1. Navigate to the "Users" page -> "Groups" tab and click on the "+" sign (Add entity group) at the top right of the screen;
@@ -331,7 +408,7 @@ Now let's assign those roles to the "Supervisors" group.
 
 {% include images-gallery.html imageCollection="supervisors-assign-roles-to-supervisors-group" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-user-group.gif">)
+[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-user-group.gif">)
 
 **Facility Managers**
 
@@ -347,7 +424,7 @@ Now, as Facility Manager, we can log in, design dashboards, provision devices, a
 
 {% include images-gallery.html imageCollection="supervisors-add-new-user" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-building-a.gif">  )
+[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-building-a.gif">  )
 
 **End Users**
 
@@ -362,7 +439,7 @@ Let's log in as customer user Jane Smith (created in a previous guide), Building
 
 {% include images-gallery.html imageCollection="supervisors-end-users" %}
 
-[//]: # (![image]&#40;https://img.thingsboard.io/user-guide/security/smart-buildings-building-a-dashboards.png&#41;)
+[//]: # (![image]&#40;/images/user-guide/security/smart-buildings-building-a-dashboards.png&#41;)
 
 Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in.
 So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.
@@ -378,7 +455,7 @@ Bob is not allowed to perform any server-side API calls, only browsing the data.
 
 {% include images-gallery.html imageCollection="supervisors-create-read-only-user" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-read-only-user.gif">)
+[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-read-only-user.gif">)
 
 ## Video tutorial
 

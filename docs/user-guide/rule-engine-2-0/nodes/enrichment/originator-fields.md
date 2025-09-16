@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: originator fields
-description: Adds fields from the message originator's entity (e.g., name, type, label) to either the message data or the message metadata.
+description: Enriches messages by adding details (such as name, label, profile name, etc.) from the message originator.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

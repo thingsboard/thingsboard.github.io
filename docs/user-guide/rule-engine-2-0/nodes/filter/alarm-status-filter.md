@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: alarm status filter
-description: Checks if the alarm status matches one of the configured statuses.
+description: Routes messages based on whether the alarm status matches configured statuses.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: create relation
-description: Creates a relation between message originator and target entity found using node configuration.
+description: Creates relation between the message originator and a specified target entity with configurable direction and type.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: asset profile switch
-description: Routes messages based on the name of the profile of the originator asset.
+description: Routes messages based on the profile name of the originator asset.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

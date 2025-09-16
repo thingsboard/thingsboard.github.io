@@ -1,15 +1,19 @@
-The table below describes the parameters required to configure TCP connection for slave:
+The following parameters are used to configure TCP connection for Gateway as a Slave:
 
-| **Parameter**            | **Default value** | **Description**                                                                                                 |
-|:-------------------------|:------------------|-----------------------------------------------------------------------------------------------------------------
-| Host                     | **127.0.0.1**     | Hostname or ip address of Modbus server                                                                         |
-| Port                     | **5021**          | Port of Modbus server for connection                                                                            |
-| Method                   | **Socket**        | Type of a framer **Socket** or **RTU**, if needed                                                               |
-| Unit ID                  | **1**             | ID of current slave on Modbus                                                                                   |
-| Device name              | **Temp Sensor**   | Name of the current slave                                                                                       |
-| Device profile           | **default**       | Device profile of the current slave                                                                             |
-| Send data to ThingsBoard | **false**         | If set to **TRUE**, the Gateway will perform autoconfiguration and send values to ThingsBoard every poll period |
-| Poll period (ms)         | **5000**          | Period in milliseconds for checking the attributes and the telemetry                                            |
-| ---                      
+- **Host** - hostname or IP address of the Modbus server.
+- **Port** - port of the Modbus server for connection.
+- **Method** - type of a framer, either **Socket** or **RTU**.
+- **Unit ID** - ID of the current slave on Modbus.
+- **Device name** - name of the current slave. **Don't use "Gateway" as the value of "Device name" parameter!**
+- **Device profile** - device profile of the current slave.
+- **Poll period (ms)** - period in milliseconds for checking the attributes and telemetry.
 
-![image](https://img.thingsboard.io/gateway/modbus-connector/tcp-server-configuration-section-1-ce.png)
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/modbus/#device-rpc-methods) section.
+
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/modbus/#usage-examples-2) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/gateway/modbus-connector/tcp-server-configuration-section-1-ce.png)
