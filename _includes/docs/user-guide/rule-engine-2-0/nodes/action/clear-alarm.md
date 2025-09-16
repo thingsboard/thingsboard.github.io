@@ -1,115 +1,246 @@
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Clears existing active alarms for the message originator.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm.png)
+## Configuration
 
-This Node loads the latest Alarm with configured **Alarm Type** for Message Originator and Clear the Alarm if it exist.
+- **Alarm type**: Type of the alarm to clear (e.g., "General Alarm", "High Temperature"). Supports templatization.
+- **Alarm details script**: A script (TBEL or JavaScript) that generates the content for the alarm's `details` field when clearing. The script must return a valid JSON value, which
+  can be:
+    - Primitive values (numbers, booleans, strings)
+    - JSON arrays
+    - JSON objects
 
-Node Configuration:
+  The script has access to the following variables:
+    - `msg`: The message data
+    - `metadata`: The message metadata
+    - `msgType`: The message type
+    - `metadata.prevAlarmDetails`: The previous alarm details from the existing alarm (provided as a JSON string)
 
-- **Alarm Details Builder** script
-- **Alarm Type** - any string that represents Alarm Type
+### JSON Schema
 
-> Note: Since TB Version 2.3.0 the rule node has the ability to get alarm type using pattern with fields from message metadata:
-
-![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-fetch-alarm-type-from-metadata.png)
-
-**Alarm Details Builder** script used for updating Alarm Details JsonNode. It is useful for storing additional parameters
-inside Alarm. For example you can save attribute name/value pair from Original Message payload or Metadata.
-
-**Alarm Details Builder** script should return **details** object.
-
-![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
-
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br>
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br>
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
-- Current Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>.
-
-**Note** that  <code>metadata.prevAlarmDetails</code> is a raw String field and it needs to be converted into object using this construction:
-
-{% highlight javascript %}
-var details = {};
-if (metadata.prevAlarmDetails) {
-details = JSON.parse(metadata.prevAlarmDetails);
-}
-{% endhighlight %}
-
-**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
-
-**Example of Details Builder Function**
-
-This function takes <code>count</code> property from previous Alarm and increment it. Also put <code>temperature</code>
-attribute from inbound Message payload into Alarm details.
-{% highlight javascript %}
-var details = {temperature: msg.temperature, count: 1};
-
-if (metadata.prevAlarmDetails) {
-var prevDetails = JSON.parse(metadata.prevAlarmDetails);
-if(prevDetails.count) {
-details.count = prevDetails.count + 1;
-}
-}
-
-return details;
-{% endhighlight %}
-
-
-This Node updates Current Alarm:
-
-- change alarm **status** to **CLEARED_ACK** if it was already acknowledged, otherwise to **CLEARED_UNACK**
-- set **clear time** to current system time
-- update Alarm details with new object returned from **Alarm Details Builder** script
-
-
-In case when Alarm does not exist or it is already **Cleared** Alarm, original Message will be passed to the next nodes via **False** chain.
-
-Otherwise new Message will be passed via **Cleared** chain.
-
-**Outbound message will have the following structure:**
-
-- **Message Type** - *ALARM*
-- **Originator** - the same originator from inbound Message
-- **Payload** - JSON representation of Alarm that was cleared
-- **Metadata** - all fields from original Message Metadata. Also additional property inside Metadata will be added -> **isClearedAlarm** with **true** value.
-
-Here is an example of Outbound Message **payload**
-{% highlight json %}
+```json
 {
-"tenantId": {
-"entityType": "TENANT",
-"id": "22cd8888-5dac-11e8-bbab-ad47060c9bbb"
-},
-"type": "High Temperature Alarm",
-"originator": {
-"entityType": "DEVICE",
-"id": "11cd8777-5dac-11e8-bbab-ad55560c9ccc"
-},
-"severity": "CRITICAL",
-"status": "CLEARED_UNACK",
-"startTs": 1526985698000,
-"endTs": 1526985698000,
-"ackTs": 0,
-"clearTs": 1526985712000,
-"details": {
-"temperature": 70,
-"ts": 1526985696000
-},
-"propagate": true,
-"id": "33cd8999-5dac-11e8-bbab-ad47060c9431",
-"createdTime": 1526985698000,
-"name": "High Temperature Alarm"
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TbClearAlarmNodeConfiguration",
+  "type": "object",
+  "properties": {
+    "alarmType": {
+      "type": "string",
+      "description": "Alarm type"
+    },
+    "scriptLang": {
+      "type": "string",
+      "enum": [
+        "TBEL",
+        "JS"
+      ],
+      "description": "Script language for details builder"
+    },
+    "alarmDetailsBuildJs": {
+      "type": "string",
+      "description": "JavaScript details builder function"
+    },
+    "alarmDetailsBuildTbel": {
+      "type": "string",
+      "description": "TBEL details builder function"
+    }
+  }
 }
-{% endhighlight %}
+```
 
+## Message processing algorithm
 
-More details about Alarms in the Thingsboard can be found in [this tutorial](/docs/{{docsPrefix}}user-guide/alarms/)
+1. **Determine alarm type**: Processes the configured alarm type pattern, substituting any placeholders with values from the message.
 
-You can see the real life example, where this node is used, in the next tutorial:
+2. **Search for alarm to clear**:
+    - **If message originator is an `ALARM`**: Fetches the that alarm by its ID
+    - **Otherwise**: Queries for the latest active alarm with:
+        - Same originator as the incoming message
+        - Alarm type from step 1
 
-- [Create and Clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
+3. **Clear alarm**:
+    - **If alarm exists and is not cleared**:
+        - Changes alarm status to cleared
+        - Sets clear time to current system time
+        - Executes details builder script with access to previous alarm details via `metadata.prevAlarmDetails`
+        - Updates the `details` field with the script result
+        - Routes to `Cleared` connection with `isClearedAlarm: true` in metadata
+        - Message data is replaced with the cleared alarm object
+        - Message type changed to `ALARM`
+        - Sends `ALARM_CLEAR` lifecycle event with complete alarm object to the originator's root rule chain
+
+    - **If no active alarm exists or alarm is already cleared**:
+        - Routes original message to `False` connection unchanged
+        - No alarm modifications occur
+
+## Output connections
+
+- `Cleared`
+    - Alarm was successfully cleared
+    - Message data is replaced with the cleared alarm object
+    - Metadata includes `isClearedAlarm: true`
+    - Message type changed to `ALARM`
+- `False`
+    - No active alarm found for the specified type and originator
+    - Alarm was already in cleared state
+
+## Examples
+
+### Example 1 — Clearing an active alarm
+
+**Incoming message**
+
+Data:
+
+```json
+{
+  "temperature": 25.0
+}
+```
+
+Originator: `DEVICE`
+
+**Node configuration**
+
+```json
+{
+  "scriptLang": "TBEL",
+  "alarmDetailsBuildTbel": "return {\n    clearedAt: msg.temperature\n};",
+  "alarmType": "High Temperature"
+}
+```
+
+**State of the system**
+
+An active "High Temperature" alarm exists for the originator device with:
+
+- Status: `ACTIVE_UNACK`
+- Details: `{"temperature": 47.2}`
+- Start time: 1757429087063
+- End time: 1757429195123
+
+**Outgoing message**
+
+Data:
+
+```json
+{
+  "id": {
+    "entityType": "ALARM",
+    "id": "f66e9b38-6f0e-4dc7-ad57-1cb4e014b6fc"
+  },
+  "createdTime": 1757429087089,
+  "tenantId": {
+    "entityType": "TENANT",
+    "id": "9c4bad70-10ac-11f0-ad7c-897c5310f06b"
+  },
+  "customerId": null,
+  "type": "High Temperature",
+  "originator": {
+    "entityType": "DEVICE",
+    "id": "3bc2eb60-8d77-11f0-8a6c-59050cd4204f"
+  },
+  "severity": "CRITICAL",
+  "acknowledged": false,
+  "cleared": true,
+  "assigneeId": null,
+  "startTs": 1757429087063,
+  "endTs": 1757429195123,
+  "ackTs": 0,
+  "clearTs": 1757429287456,
+  "assignTs": 0,
+  "propagate": false,
+  "propagateToOwner": false,
+  "propagateToTenant": false,
+  "propagateRelationTypes": [],
+  "originatorName": "device",
+  "originatorLabel": "device",
+  "assignee": null,
+  "name": "High Temperature",
+  "status": "CLEARED_UNACK",
+  "details": {
+    "clearedAt": 25.0
+  }
+}
+```
+
+Metadata:
+
+```json
+{
+  "isClearedAlarm": "true"
+}
+```
+
+Routed via `Cleared` connection.
+
+**Result**
+
+The following actions occur:
+
+- **Alarm cleared**: The active "High Temperature" alarm status changes from `ACTIVE_UNACK` to `CLEARED_UNACK`.
+- **Clear timestamp set**: The alarm's `clearTs` is set to the current system time (1757429287456).
+- **Details updated**: The details builder script executes with access to previous details through `metadata.prevAlarmDetails`. It adds a `clearedAt` field, resulting in
+  `{"clearedAt": 25.0}`.
+- **Message transformed**: The original telemetry message is replaced with an `ALARM` message containing the cleared alarm object. The message is routed through the `Cleared`
+  connection with the `isClearedAlarm: true` metadata flag.
+- **Lifecycle event triggered**: An `ALARM_CLEAR` lifecycle event for the cleared alarm is automatically sent to the device's root rule chain.
+
+### Example 2 — No active alarm to clear
+
+**Incoming message**
+
+Originator: `DEVICE`
+
+**Node configuration**
+
+```json
+{
+  "scriptLang": "TBEL",
+  "alarmDetailsBuildTbel": "return {};",
+  "alarmType": "High Temperature"
+}
+```
+
+**State of the system**
+
+No active "High Temperature" alarm exists for the originator device (either no alarm was ever created or any existing alarms are already cleared).
+
+**Outgoing message**
+
+The outgoing message is identical to the incoming one. Routed via the `False` connection.
+
+**Result**
+ 
+The following actions occur:
+
+- **No alarm modification**: Since no active alarm exists, no database changes occur.
+- **Original message preserved**: The incoming telemetry message passes through unchanged via the `False` connection.
+- **No lifecycle events**: No alarm lifecycle events are triggered.
+
+### Example 3 — Clearing alarm by alarm ID
+
+**Incoming message**
+
+Originator: `ALARM` with ID `f66e9b38-6f0e-4dc7-ad57-1cb4e014b6fc`
+
+**Node configuration**
+
+```json
+{
+  "scriptLang": "TBEL",
+  "alarmDetailsBuildJs": "return {};",
+  "alarmType": "High Temperature"
+}
+```
+
+**State of the system**
+
+The alarm with ID `f66e9b38-6f0e-4dc7-ad57-1cb4e014b6fc` exists and has status `ACTIVE_ACK`.
+
+**Outgoing message**
+
+The alarm object is fetched by ID and cleared, with the message routed via `Cleared` connection containing the updated alarm with `status: "CLEARED_ACK"`.
+
+**Result**
+
+When the message originator is an alarm entity, the node directly fetches and clears that specific alarm by ID, regardless of the configured alarm type.

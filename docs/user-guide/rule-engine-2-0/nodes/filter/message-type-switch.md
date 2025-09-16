@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: message type switch
-description: Routes messages based on the message type.
+description: Routes messages to different connections based on the message type.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

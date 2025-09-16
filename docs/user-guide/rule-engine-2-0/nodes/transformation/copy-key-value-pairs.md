@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: copy key-value pairs
-description: Copies specified key-value pairs from the incoming message data to its metadata, or from the metadata to the data.
+description: Copies specified key-value pairs between the message data and metadata in either direction.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

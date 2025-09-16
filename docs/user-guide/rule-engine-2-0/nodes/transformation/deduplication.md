@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: Deduplication
-description: Deduplicates messages within the same originator for a configurable period using specified deduplication strategy.
+description: Deduplicates messages from the same originator within a configurable time interval using strategies to return either the first, last, or all messages as a combined result.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

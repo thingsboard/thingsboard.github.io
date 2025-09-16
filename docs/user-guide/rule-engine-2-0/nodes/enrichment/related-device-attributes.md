@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: related device attributes
-description: Finds a device related to the message originator, fetches its attributes and/or latest telemetry, and adds the results to the message data or metadata.
+description: Enriches messages by adding attributes and/or latest time series values from a related device found through configurable relation queries (direction, type, device profiles).
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

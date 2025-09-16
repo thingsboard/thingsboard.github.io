@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: customer details
-description: Adds details from the message originator's customer (e.g., name, email, country) to either the message data or the message metadata.
+description: Enriches messages by adding details (such as name, email, country, address, etc.) from the message originator's customer.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
