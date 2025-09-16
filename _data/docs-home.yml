@@ -363,7 +363,7 @@ toc:
       path: /docs/user-guide/contribution/how-to-contribute-your-device-integration-guide/
     - title: Rule Node development
       path: /docs/user-guide/contribution/rule-node-development/
-    - title: Widgets development (ThingsBoard v3.x)
+    - title: Widgets development
       section:
         - title: Overview
           path: /docs/user-guide/contribution/widgets-development/
@@ -373,8 +373,6 @@ toc:
           path: /docs/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/user-guide/contribution/ui/advanced-development/
-    - title: Widgets development (ThingsBoard v2.x)
-      path: /docs/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Release notes

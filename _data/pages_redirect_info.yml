@@ -206,6 +206,9 @@
 "/docs/pe/user-guide/ui/asset-profiles":
   url: "/docs/pe/user-guide/asset-profiles/"
   redirect_from: "/docs/pe/user-guide/ui/asset-profiles"
+docs/pe/user-guide/contribution/widgets-development-before-3.0/:
+  url: "/docs/pe/user-guide/contribution/widgets-development/"
+  redirect_from: docs/pe/user-guide/contribution/widgets-development-before-3.0/
 "/docs/user-guide/csv-xls-data-export/":
   url: "/docs/pe/user-guide/csv-xls-data-export/"
   redirect_from: "/docs/user-guide/csv-xls-data-export/"
@@ -302,6 +305,9 @@
 "/docs/user-guide/ui/asset-profiles":
   url: "/docs/user-guide/asset-profiles/"
   redirect_from: "/docs/user-guide/ui/asset-profiles"
+docs/user-guide/contribution/widgets-development-before-3.0/:
+  url: "/docs/user-guide/contribution/widgets-development/"
+  redirect_from: docs/user-guide/contribution/widgets-development-before-3.0/
 "/docs/user-guide/ui/dashboards/":
   url: "/docs/user-guide/dashboards/"
   redirect_from: "/docs/user-guide/ui/dashboards/"

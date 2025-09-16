@@ -3593,12 +3593,10 @@
 "/docs/pe/user-guide/contribution/ui/custom-subscriptions/":
   url: "/docs/pe/user-guide/contribution/ui/custom-subscriptions/"
   redirect_from: []
-"/docs/pe/user-guide/contribution/widgets-development-before-3.0/":
-  url: "/docs/pe/user-guide/contribution/widgets-development-before-3.0/"
-  redirect_from: []
 "/docs/pe/user-guide/contribution/widgets-development/":
   url: "/docs/pe/user-guide/contribution/widgets-development/"
-  redirect_from: []
+  redirect_from:
+  - docs/pe/user-guide/contribution/widgets-development-before-3.0/
 "/docs/pe/user-guide/csv-xls-data-export/":
   url: "/docs/pe/user-guide/csv-xls-data-export/"
   redirect_from:
@@ -4418,12 +4416,10 @@
 "/docs/user-guide/contribution/ui/custom-subscriptions/":
   url: "/docs/user-guide/contribution/ui/custom-subscriptions/"
   redirect_from: []
-"/docs/user-guide/contribution/widgets-development-before-3.0/":
-  url: "/docs/user-guide/contribution/widgets-development-before-3.0/"
-  redirect_from: []
 "/docs/user-guide/contribution/widgets-development/":
   url: "/docs/user-guide/contribution/widgets-development/"
-  redirect_from: []
+  redirect_from:
+  - docs/user-guide/contribution/widgets-development-before-3.0/
 "/docs/user-guide/customization/":
   url: "/docs/user-guide/customization/"
   redirect_from: []
