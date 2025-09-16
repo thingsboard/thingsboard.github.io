@@ -5091,7 +5091,7 @@
 "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/"
   redirect_from:
-  - "/reference/plugins/sqs/"
+  - "/docs/reference/plugins/sqs/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/"
   redirect_from: []
