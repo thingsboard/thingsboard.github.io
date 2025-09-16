@@ -19,6 +19,9 @@
                     <p>{{ bundle[1].description }}</p>
                 </div>
             </a>
+            {% if bundle[1].pe-only %}
+                <span class="widget-item-pe">PE only</span>
+            {% endif %}
         </li>
     {% endfor %}
 </ul>

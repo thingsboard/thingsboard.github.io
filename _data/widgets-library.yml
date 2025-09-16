@@ -86,7 +86,7 @@ charts:
 cards:
   title: "Cards"
   description: "Includes cards that display dynamic content based on data from one or more entities. It also includes static HTML cards."
-  image: "/images/widgets-library/bundles/cards.png"
+  image: "/images/widgets-library/bundles/cards.svg"
   section:
     value-card:
       title: "Value card"
@@ -158,7 +158,7 @@ cards:
 alarm_widgets:
   title: "Alarm widgets"
   description: "Visualization of alarms for devices, assets, and other entities."
-  image: "/images/widgets-library/bundles/alarm_widgets.png"
+  image: "/images/widgets-library/bundles/alarm-widgets.svg"
   section:
     alarms-table:
       title: "Alarms table"
@@ -171,7 +171,7 @@ alarm_widgets:
 tables:
   title: "Tables"
   description: "Contains tables to display alarms, entities, and their telemetry."
-  image: "/images/widgets-library/bundles/tables.png"
+  image: "/images/widgets-library/bundles/tables.svg"
   section:
     entities-table:
       title: "Entities table"
@@ -192,7 +192,7 @@ tables:
 count_widgets:
   title: "Count widgets"
   description: "Cards to display the number of alarms or entities based on the selected filter."
-  image: "/images/widgets-library/bundles/count_widgets.png"
+  image: "/images/widgets-library/bundles/count-widgets.svg"
   section:
     alarm-count:
       title: "Alarm count"
@@ -205,7 +205,7 @@ count_widgets:
 maps_v2:
   title: "Maps"
   description: "Visualize the latest location or trip of devices and entities on indoor and outdoor maps using markers, polygons, and circles for enhanced spatial representation."
-  image: "/images/widgets-library/bundles/maps_v2.png"
+  image: "/images/widgets-library/bundles/maps.svg"
   section:
     map:
       title: "Map"
@@ -401,7 +401,7 @@ control_widgets:
 status_indicators:
   title: "Status indicators"
   description: "Contains widgets displaying battery level and signal strength."
-  image: "/images/widgets-library/bundles/status_indicators.png"
+  image: "/images/widgets-library/bundles/status-indicators.svg"
   section:
     battery-level:
       title: "Battery level"
@@ -422,7 +422,7 @@ status_indicators:
 scada_symbols:
   title: "SCADA symbols"
   description: "Bundle with SCADA symbols"
-  image: "/images/widgets-library/bundles/scada_symbols.svg"
+  image: "/images/widgets-library/bundles/scada-symbols.svg"
   section:
     scada-symbol:
       title: "SCADA symbol"
@@ -1120,7 +1120,7 @@ high_performance_scada_fluid_system:
 industrial_widgets:
   title: "Industrial widgets"
   description: "Contains widgets displaying industrial telemetry."
-  image: "/images/widgets-library/bundles/industrial_widgets.svg"
+  image: "/images/widgets-library/bundles/industrial-widgets.svg"
   section:
     flow-rate-card:
       title: "Flow rate card"
@@ -1409,7 +1409,7 @@ industrial_widgets:
 indoor_environment:
   title: "Indoor Environment"
   description: "Contains widgets displaying indoor environment telemetry."
-  image: "/images/widgets-library/bundles/indoor_environment.png"
+  image: "/images/widgets-library/bundles/indoor-environment.svg"
   section:
     indoor-temperature-card:
       title: "Indoor temperature card"
@@ -1738,7 +1738,7 @@ indoor_environment:
 outdoor_environment:
   title: "Outdoor Environment"
   description: "Contains widgets displaying outdoor environment telemetry."
-  image: "/images/widgets-library/bundles/outdoor_environment.png"
+  image: "/images/widgets-library/bundles/outdoor-environment.svg"
   section:
     temperature-card:
       title: "Temperature card"
@@ -2451,7 +2451,7 @@ outdoor_environment:
 liquid_level_tanks:
   title: "Liquid level"
   description: "Visualize the level of liquid inside the tank. Supports various tank shapes."
-  image: "/images/widgets-library/bundles/liquid_level_tanks.png"
+  image: "/images/widgets-library/bundles/liquid-level.svg"
   section:
     vertical-cylinder-tank:
       title: "Vertical cylinder tank"
@@ -2553,7 +2553,7 @@ digital_gauges:
 air_quality:
   title: "Air quality"
   description: "Contains widgets displaying air quality telemetry."
-  image: "/images/widgets-library/bundles/air_quality.svg"
+  image: "/images/widgets-library/bundles/air-quality.svg"
   section:
     air-quality-index-card:
       title: "Air quality index card"
@@ -2950,7 +2950,7 @@ air_quality:
 entity_admin_widgets:
   title: "Entity admin widgets"
   description: "Templates of complex widgets that allow to list and create/update/delete devices and assets."
-  image: "/images/widgets-library/bundles/entity_admin_widgets.png"
+  image: "/images/widgets-library/bundles/entity-admin-widgets.svg"
   section:
     device-admin-table:
       title: "Device admin table"
@@ -2963,7 +2963,7 @@ entity_admin_widgets:
 input_widgets:
   title: "Input widgets"
   description: "Various input forms to set the location, image, and other configuration parameters of the device, asset, or other entity."
-  image: "/images/widgets-library/bundles/input_widgets.png"
+  image: "/images/widgets-library/bundles/inputs.svg"
   section:
     update-multiple-attributes:
       title: "Update Multiple Attributes"
@@ -3072,7 +3072,7 @@ input_widgets:
 gateway_widgets:
   title: "Gateway widgets"
   description: "Widgets to manage ThingsBoard IoT Gateway instances."
-  image: "/images/widgets-library/bundles/gateway-widgets.png"
+  image: "/images/widgets-library/bundles/gateway-widgets.svg"
   section:
     gateway-configuration:
       title: "Gateway Configuration"
@@ -3121,7 +3121,7 @@ gateway_widgets:
 edge_widgets:
   title: "Edge widgets"
   description: "Widgets to manage ThingsBoard Edge instances and navigate through their entities."
-  image: "/images/widgets-library/bundles/edge_widgets.png"
+  image: "/images/widgets-library/bundles/edge-widgets.svg"
   section:
     edges-overview:
       title: "Edge Quick Overview"
@@ -3130,7 +3130,7 @@ edge_widgets:
 entity_widgets:
   title: "Entity widgets"
   description: "Visualize entity properties and hierarchy using table and tree widgets."
-  image: "/images/widgets-library/bundles/entity_widgets.png"
+  image: "/images/widgets-library/bundles/entity-widgets.svg"
   section:
     entities-table:
       title: "Entities table"
@@ -3147,7 +3147,7 @@ entity_widgets:
 home_page_widgets:
   title: "Home page widgets"
   description: "Contains useful widgets to design the user's home page."
-  image: "/images/widgets-library/bundles/home_page_widgets.png"
+  image: "/images/widgets-library/bundles/home-widgets.svg"
   section:
     getting-started:
       title: "Getting started"
@@ -3179,7 +3179,7 @@ home_page_widgets:
 navigation_widgets:
   title: "Navigation widgets"
   description: "Contains widgets that enable navigation to other dashboards and menu items. Useful to define the home page or dashboard."
-  image: "/images/widgets-library/bundles/navigation_widgets.png"
+  image: "/images/widgets-library/bundles/nav-widgets.svg"
   section:
     navigation-cards:
       title: "Navigation cards"
@@ -3204,7 +3204,7 @@ navigation_widgets:
 gpio_widgets:
   title: "GPIO widgets"
   description: "Visualization and control of the state of the GPIO devices."
-  image: "/images/widgets-library/bundles/gpio_widgets.png"
+  image: "/images/widgets-library/bundles/gpio-widgets.svg"
   section:
     basic-gpio-control:
       title: "Basic GPIO Control"
@@ -3225,7 +3225,7 @@ gpio_widgets:
 html_widgets:
   title: "HTML widgets"
   description: "Visualize HTML based on a configurable template or function and device attributes or time series values."
-  image: "/images/widgets-library/bundles/html_widgets.png"
+  image: "/images/widgets-library/bundles/html-widgets.svg"
   section:
     html-card:
       title: "HTML Card"
@@ -3242,7 +3242,7 @@ html_widgets:
 date:
   title: "Date"
   description: "Contains widgets to change the data range for other widgets on the dashboard."
-  image: "/images/widgets-library/bundles/date.png"
+  image: "/images/widgets-library/bundles/date-widgets.svg"
   section:
     date-range-navigator:
       title: "Date-range-navigator"
@@ -3251,7 +3251,8 @@ date:
 files:
   title: "Files"
   description: "Display files and report lists to manage them."
-  image: "/images/widgets-library/bundles/files.png"
+  image: "/images/widgets-library/bundles/files.svg"
+  pe-only: "true"
   section:
     files:
       title: "Files"
@@ -3264,7 +3265,8 @@ files:
 scheduling:
   title: "Scheduling"
   description: "Display scheduled events and reports with the ability to manage them."
-  image: "/images/widgets-library/bundles/scheduling.png"
+  image: "/images/widgets-library/bundles/scheduling.svg"
+  pe-only: "true"
   section:
     scheduler-events:
       title: "Scheduler events"
