@@ -19,10 +19,10 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             </div>
         </div>
         <div class="hero-images">
-            <img class="main" loading="lazy" src="/images/development-services/hero-1.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
-            <img class="top" loading="lazy" src="/images/development-services/hero-2.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
-            <img class="right" loading="lazy" src="/images/development-services/hero-3.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
-            <img class="bottom" loading="lazy" src="/images/development-services/hero-4.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
+            <img class="main" loading="lazy" src="https://img.thingsboard.io/development-services/hero-1.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
+            <img class="top" loading="lazy" src="https://img.thingsboard.io/development-services/hero-2.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
+            <img class="right" loading="lazy" src="https://img.thingsboard.io/development-services/hero-3.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
+            <img class="bottom" loading="lazy" src="https://img.thingsboard.io/development-services/hero-4.webp" title="ThingsBoard Trendz widgets" alt="ThingsBoard Trendz widgets image">
         </div>
     </div>
     <div class="statistics">
@@ -174,52 +174,52 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div style="width: 90vw; overflow: hidden">
                 <div class="customer-logos">
                     <div class="logo">
-                        <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
+                        <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
+                        <img src="https://img.thingsboard.io/development-services/suessco-logo.svg" alt="logo suessco"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
+                        <img src="https://img.thingsboard.io/development-services/oxi-logo.svg" alt="logo oxi"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/magenta-logo.svg" alt="logo magenta"/>
+                        <img src="https://img.thingsboard.io/development-services/magenta-logo.svg" alt="logo magenta"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-kalitec.svg" alt="logo kalitec"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/suessco-logo.svg" alt="logo suessco"/>
+                        <img src="https://img.thingsboard.io/development-services/suessco-logo.svg" alt="logo suessco"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/oxi-logo.svg" alt="logo oxi"/>
+                        <img src="https://img.thingsboard.io/development-services/oxi-logo.svg" alt="logo oxi"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
                     </div>
                     <div class="logo">
-                        <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
+                        <img src="https://img.thingsboard.io/development-services/logo-asl.svg" alt="logo asl"/>
                     </div>
                 </div>
             </div>
@@ -229,7 +229,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="vision-info">
                     <div class="vision-header">
                         <div class="vision-title">
-                            <img class="vision-img" src="/images/development-services/artur-ishkhanishvili.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
+                            <img class="vision-img" src="https://img.thingsboard.io/development-services/artur-ishkhanishvili.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
                             <div class="vision-text">
                                 <div class="name">Artur Ishkhanishvili</div>
                                 <div class="title">VP Business Development</div>
@@ -261,11 +261,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <h2>From concept to success: IoT development case studies</h2>
             <div class="wrap">
                 <div class="client-card">
-                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/schwarz.webp');">
+                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/schwarz.webp');">
                         <a class="content" target="_blank" href="/case-studies/schwarz">
                             <div class="header">
                                 <span class="glass-tag">Retail & consumer service</span>
-                                <img class="logo" src="/images/case-studies/schwarz.svg" title="Schwarz" alt="Schwarz logo">
+                                <img class="logo" src="https://img.thingsboard.io/case-studies/schwarz.svg" title="Schwarz" alt="Schwarz logo">
                             </div>
                             <div class="footer">
                                 <p>IoT in retail: how Schwarz Group accelerated digitalization with ThingsBoard</p>
@@ -289,11 +289,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                 </div>
                 <div class="client-card">
-                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/super-bock-group.webp');">
+                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/super-bock-group.webp');">
                         <a class="content" target="_blank" href="/case-studies/super-bock">
                             <div class="header">
                                 <span class="glass-tag">Manufacturing </span>
-                                <img class="logo" src="/images/case-studies/super-bock-group.svg" title="Super Bock Group" alt="Super Bock Group logo">
+                                <img class="logo" src="https://img.thingsboard.io/case-studies/super-bock-group.svg" title="Super Bock Group" alt="Super Bock Group logo">
                             </div>
                             <div class="footer">
                                 <p>Revolutionizing beer distribution: how ThingsBoard empowered Super Bock Group</p>
@@ -319,11 +319,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                 </div>
                 <div class="client-card">
-                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/dacor.webp');">
+                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/dacor.webp');">
                         <a class="content" target="_blank" href="/case-studies/dacor">
                             <div class="header">
                                 <span class="glass-tag">Industry 4.0</span>
-                                <img class="logo" src="/images/case-studies/dacor.svg" title="Dacor" alt="Dacor logo">
+                                <img class="logo" src="https://img.thingsboard.io/case-studies/dacor.svg" title="Dacor" alt="Dacor logo">
                             </div>
                             <div class="footer">
                                 <p>Real-time production monitoring for automotive supplier by süc//dacor GmbH</p>
@@ -349,11 +349,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                 </div>
                 <div class="client-card">
-                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/oxi.webp');">
+                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('https://img.thingsboard.io/case-studies/oxi.webp');">
                         <a class="content" target="_blank" href="/case-studies/oxi">
                             <div class="header">
                                 <span class="glass-tag">Energy and utilities</span>
-                                <img class="logo" src="/images/case-studies/oxi.svg" title="OXI Trade" alt="OXI Trade logo">
+                                <img class="logo" src="https://img.thingsboard.io/case-studies/oxi.svg" title="OXI Trade" alt="OXI Trade logo">
                             </div>
                             <div class="footer">
                                 <p>Empowering alternative energy: how OXI TRADE streamlined IoT infrastructure with TB</p>
@@ -379,11 +379,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                 </div>
                 <div class="client-card">
-                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/awake.webp');">
+                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('https://img.thingsboard.io/case-studies/awake.webp');">
                         <a class="content" target="_blank" href="/case-studies/awake">
                             <div class="header">
                                 <span class="glass-tag">Equipment tracking</span>
-                                <img style="height: 20px" class="logo" src="/images/case-studies/awake.svg" title="Awake" alt="Awake logo">
+                                <img style="height: 20px" class="logo" src="https://img.thingsboard.io/case-studies/awake.svg" title="Awake" alt="Awake logo">
                             </div>
                             <div class="footer">
                                 <p>Awake: unifying global rental operations with custom IoT solutions</p>
@@ -409,11 +409,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                 </div>
                 <div class="client-card">
-                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/senseing.webp');">
+                    <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('https://img.thingsboard.io/case-studies/senseing.webp');">
                         <a class="content" target="_blank" href="/case-studies/senseing">
                             <div class="header">
                                 <span class="glass-tag">Logistic & supply-chain</span>
-                                <img class="logo" style="height: 24px" src="/images/case-studies/senseing.svg" title="SenseING GmbH" alt="SenseING GmbH logo">
+                                <img class="logo" style="height: 24px" src="https://img.thingsboard.io/case-studies/senseing.svg" title="SenseING GmbH" alt="SenseING GmbH logo">
                             </div>
                             <div class="footer">
                                 <p>Transforming food logistics with IoT-powered temperature monitoring</p>
@@ -447,7 +447,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="cards">
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/consulting&solution.svg" alt="IoT Consulting & Solution Architecture icon" loading="lazy"/><h3>IoT Consulting & Solution Architecture</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/consulting&solution.svg" alt="IoT Consulting & Solution Architecture icon" loading="lazy"/><h3>IoT Consulting & Solution Architecture</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -459,7 +459,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/prototyping.svg" alt="Prototyping (PoC, MVP) icon" loading="lazy"/><h3>Prototyping (PoC, MVP)</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/prototyping.svg" alt="Prototyping (PoC, MVP) icon" loading="lazy"/><h3>Prototyping (PoC, MVP)</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -471,7 +471,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/integration-services.svg" alt="IoT Integration services icon" loading="lazy"/><h3>IoT integration services</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/integration-services.svg" alt="IoT Integration services icon" loading="lazy"/><h3>IoT integration services</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -483,7 +483,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/edge-computing-solutions.svg" alt="Edge Computing Solutions icon" loading="lazy"/><h3>Edge Computing Solutions</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/edge-computing-solutions.svg" alt="Edge Computing Solutions icon" loading="lazy"/><h3>Edge Computing Solutions</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -495,7 +495,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/application-development.svg" alt="IoT Application Development icon" loading="lazy"/><h3>IoT Application Development</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/application-development.svg" alt="IoT Application Development icon" loading="lazy"/><h3>IoT Application Development</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -507,7 +507,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/mobile-app.svg" alt="IoT Mobile App icon" loading="lazy"/><h3>IoT Mobile App</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/mobile-app.svg" alt="IoT Mobile App icon" loading="lazy"/><h3>IoT Mobile App</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -519,7 +519,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/data-visualization.svg" alt="IoT Data Visualization icon" loading="lazy"/><h3>IoT Data Visualization</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/data-visualization.svg" alt="IoT Data Visualization icon" loading="lazy"/><h3>IoT Data Visualization</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -531,7 +531,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/iot-analytics.svg" alt="IoT analytics icon" loading="lazy"/><h3>IoT analytics</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/iot-analytics.svg" alt="IoT analytics icon" loading="lazy"/><h3>IoT analytics</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -543,7 +543,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/remote-monitoring-cotrol-apps.svg" alt="Remote Monitoring & Control Apps icon" loading="lazy"/><h3>Remote Monitoring & Control Apps</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/remote-monitoring-cotrol-apps.svg" alt="Remote Monitoring & Control Apps icon" loading="lazy"/><h3>Remote Monitoring & Control Apps</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -555,7 +555,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/device-integration.svg" alt="Device Integration icon" loading="lazy"/><h3>Device integration</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/device-integration.svg" alt="Device Integration icon" loading="lazy"/><h3>Device integration</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -567,7 +567,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/predictive-maintenance.svg" alt="Predictive Maintenance icon" loading="lazy"/><h3>Predictive Maintenance</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/predictive-maintenance.svg" alt="Predictive Maintenance icon" loading="lazy"/><h3>Predictive Maintenance</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -579,7 +579,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/digital-twin.svg" alt="Digital Twin icon" loading="lazy"/><h3>Digital Twin</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/digital-twin.svg" alt="Digital Twin icon" loading="lazy"/><h3>Digital Twin</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -591,7 +591,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/compliance-management.svg" alt="IoT Compliance management icon" loading="lazy"/><h3>IoT Compliance management</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/compliance-management.svg" alt="IoT Compliance management icon" loading="lazy"/><h3>IoT Compliance management</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -603,7 +603,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/migration-services.svg" alt="Migration Services icon" loading="lazy"/><h3>Migration Services</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/migration-services.svg" alt="Migration Services icon" loading="lazy"/><h3>Migration Services</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -615,7 +615,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/device-management.svg" alt="Device management icon" loading="lazy"/><h3>Device management</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/device-management.svg" alt="Device management icon" loading="lazy"/><h3>Device management</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -627,7 +627,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/ai-agents-copilots.svg" alt="AI Agents & Copilots icon" loading="lazy"/><h3>AI Agents & Copilots</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/ai-agents-copilots.svg" alt="AI Agents & Copilots icon" loading="lazy"/><h3>AI Agents & Copilots</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -639,7 +639,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/security.svg" alt="Security icon" loading="lazy"/><h3>Security</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/security.svg" alt="Security icon" loading="lazy"/><h3>Security</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -651,7 +651,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="expansion-card">
                         <div class="expansion-header">
-                            <div class="expansion-title"><img class="header-icon" src="/images/development-services/devops-services.svg" alt="IoT DevOps services icon" loading="lazy"/><h3>IoT DevOps services</h3></div>
+                            <div class="expansion-title"><img class="header-icon" src="https://img.thingsboard.io/development-services/devops-services.svg" alt="IoT DevOps services icon" loading="lazy"/><h3>IoT DevOps services</h3></div>
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
@@ -752,7 +752,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 </div>
                 <div class="trusted-partner-footer">
                     <div class="trusted-partner-avatar">
-                        <img class="avatar" src="/images/development-services/vitaliy-paromskiy.webp" alt="Photo of Vitaliy Paromskiy, Chief Solutions Officer ThingsBoard">
+                        <img class="avatar" src="https://img.thingsboard.io/development-services/vitaliy-paromskiy.webp" alt="Photo of Vitaliy Paromskiy, Chief Solutions Officer ThingsBoard">
                         <div class="trusted-partner-text">
                             <div class="name">Vitaliy Paromskiy</div>
                             <div class="title">Chief solutions officer</div>
@@ -811,7 +811,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             </div>
         </section>
         <section class="quote-with-mark">
-            <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
+            <img src="https://img.thingsboard.io/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
             <div class="quote-text">
                 <p>“We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and co... <a class="read-more-link" href="/industries/smart-energy/" target="_blank" rel="noopener noreferrer">read more</a></p>
                 <h2>Mark Hunt, CTO at Oneserve</h2>
@@ -848,7 +848,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         Get in Touch
                     </button>
                 </div>
-                <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
+                <img src="https://img.thingsboard.io/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
             </div>
         </section>
         <section class="project-timeline">
@@ -1041,7 +1041,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="engagement-model-descr">We offer two primary engagement models designed to provide the right level of support, whether you need a complete turnkey solution or specialized expertise to augment your existing team.</div>
                 <div class="container">
                     <div class="card">
-                        <img width="96" height="96" src="/images/development-services/end-to-end.svg" alt="Recycling icon sybilizing End to end">
+                        <img width="96" height="96" src="https://img.thingsboard.io/development-services/end-to-end.svg" alt="Recycling icon sybilizing End to end">
                         <h3>End-to-end development</h3>
                         <p class="subtitle">We manage the entire development lifecycle, from initial architecture to final deployment, delivering a production-ready solution on a fixed timeline and budget.</p>
                         <button
@@ -1052,19 +1052,19 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </button>
                         <h4>Choose this when you want to</h4>
                         <ul>
-                            <li><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Analyze business processes to define effective IoT strategy</p></li>
-                            <li><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Design system architecture and identify areas for improvement</p></li>
-                            <li><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Develop detailed roadmap for successful IoT solution implementation</p></li>
+                            <li><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Analyze business processes to define effective IoT strategy</p></li>
+                            <li><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Design system architecture and identify areas for improvement</p></li>
+                            <li><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Develop detailed roadmap for successful IoT solution implementation</p></li>
                         </ul>
                         <h4>What you get</h4>
                         <ul>
-                            <li><img src="/images/development-services/dedicated-team.svg" alt="Team icon"><p>Dedicated cross-functional team</p></li>
-                            <li><img src="/images/development-services/expert.svg" alt="Human icon"><p>A single, expert point of contact managing the entire project</p></li>
-                            <li><img src="/images/development-services/development-speed.svg" alt="Speedometer icon"><p>Maximum development speed by leveraging our pre-built components</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/dedicated-team.svg" alt="Team icon"><p>Dedicated cross-functional team</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/expert.svg" alt="Human icon"><p>A single, expert point of contact managing the entire project</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/development-speed.svg" alt="Speedometer icon"><p>Maximum development speed by leveraging our pre-built components</p></li>
                         </ul>
                     </div>
                     <div class="card">
-                        <img width="96" height="96" src="/images/development-services/co-development.svg" alt="Team augmentation & co-development">
+                        <img width="96" height="96" src="https://img.thingsboard.io/development-services/co-development.svg" alt="Team augmentation & co-development">
                         <h3>Team augmentation & co-development</h3>
                         <p class="subtitle">We integrate our ThingsBoard experts directly into your team, providing specialized skills to accelerate your project and overcome specific technical challenges.</p>
                         <button
@@ -1075,16 +1075,16 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </button>
                         <h4>Choose this when you want to</h4>
                         <ul>
-                            <li><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Fill a specific skill gap (e.g., in architecture, edge, or data science) in your in-house team</p></li>
-                            <li><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Accelerate a project that is already in progress and needs a boost</p></li>
-                            <li><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Upskill your team by having them work alongside leading IoT experts</p></li>
+                            <li><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Fill a specific skill gap (e.g., in architecture, edge, or data science) in your in-house team</p></li>
+                            <li><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Accelerate a project that is already in progress and needs a boost</p></li>
+                            <li><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"><p>Upskill your team by having them work alongside leading IoT experts</p></li>
                         </ul>
                         <h4>What you get</h4>
                         <ul>
-                            <li><img src="/images/development-services/target.svg" alt="Target icon"><p>Targeted expertise to solve your most complex challenges</p></li>
-                            <li><img src="/images/development-services/elite-engineer.svg" alt="Human icon"><p>Flexible access to elite engineering talent</p></li>
-                            <li><img src="/images/development-services/integraion.svg" alt="Diagram icon"><p>Seamless integration with your existing Agile/Scrum workflows</p></li>
-                            <li><img src="/images/development-services/knowledge.svg" alt="Book icon"><p>Valuable knowledge transfer that strengthens your internal team for future projects</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/target.svg" alt="Target icon"><p>Targeted expertise to solve your most complex challenges</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/elite-engineer.svg" alt="Human icon"><p>Flexible access to elite engineering talent</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/integraion.svg" alt="Diagram icon"><p>Seamless integration with your existing Agile/Scrum workflows</p></li>
+                            <li><img src="https://img.thingsboard.io/development-services/knowledge.svg" alt="Book icon"><p>Valuable knowledge transfer that strengthens your internal team for future projects</p></li>
                         </ul>
                     </div>
                 </div>
@@ -1099,7 +1099,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         <button onclick="onContactUsClick(0)">Get in Touch</button>
                     </div>
                 </div>
-                <img src="/images/usecases/email-icon.svg" width="380" height="267" alt="Letter icon">
+                <img src="https://img.thingsboard.io/usecases/email-icon.svg" width="380" height="267" alt="Letter icon">
             </div>
         </section>
         <section class="reviews">
@@ -1194,13 +1194,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div class="contact-us-section-content">
                 <div class="contact-us-container">
                     <div class="contact-us-descr">
-                        <img src="/images/development-services/grid.svg" alt="pattern">
+                        <img src="https://img.thingsboard.io/development-services/grid.svg" alt="pattern">
                         <div class="contact-us-descr-container">
                             <h2>Let’s talk about your project</h2>
                             <span>Fill out the form — we’ll get back to you shortly to clarify the details and prepare a tailored estimate.</span>
                         </div>
                         <div class="client-avatar-container">
-                            <div class="client-avatar-img"><img src="/images/development-services/artur-2.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard"></div>
+                            <div class="client-avatar-img"><img src="https://img.thingsboard.io/development-services/artur-2.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard"></div>
                             <div class="client-descr">
                                 <div class="client-name">Artur Ishkhanishvili</div>
                                 <div class="client-title">VP Business Development</div>
@@ -1304,7 +1304,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <div class="title-container">
             <h2>Let’s talk about your project</h2>
             <div class="close-button">
-                <img class="close" src="/images/close-icon.svg" alt="Close"/>
+                <img class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
             </div>
         </div>
         <form method="post"
@@ -1634,7 +1634,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-1.svg" alt="IoT Energy Management icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-1.svg" alt="IoT Energy Management icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr" >From discrete plants to heavy process lines, we digitise machines, tools and workers so engineers catch faults early, raise OEE, trace quality and drive continuous improvement without disrupting shop-floor uptime.</div>
@@ -1647,7 +1647,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-2.svg" alt="IoT Manufacturing icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-2.svg" alt="IoT Manufacturing icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr" >Unify HVAC, lighting, meters and security across portfolios into one system that allows to cut energy waste, boost tenant comfort and comply with ESG goals - all by turning building data into clear dashboards and automated responses.</div>
@@ -1660,7 +1660,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-3.svg" alt="Smart Building IoT icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-3.svg" alt="Smart Building IoT icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr" >Track vehicles, drivers and batteries in real time, push OTA updates, and turn raw telematics into safer trips, lower fuel bills and better rider experience across fleets, trucks, scooters and connected cars.</div>
@@ -1673,7 +1673,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-4.svg" alt="Connected Mobility IoT icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-4.svg" alt="Connected Mobility IoT icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr" >Bring full visibility to warehouses, ports and last-mile deliveries - monitor location, temperature and shocks for every pallet or container, predict delays and automate workflows that keep goods moving on schedule.</div>
@@ -1687,7 +1687,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-5.svg" alt="IoT Supply Chain icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-5.svg" alt="IoT Supply Chain icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr">Give stores, restaurants and vending fleets sensor-level insight - track cold rooms, shelves and footfall, trigger restocks instantly and guarantee product quality while lowering energy, shrink and maintenance costs.</div>
@@ -1700,7 +1700,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-6.svg" alt="Smart Retail IoT icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-6.svg" alt="Smart Retail IoT icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr">Connect wearables, beds, pumps and labs to one secured application. Surface real-time patient alerts, asset locations and cold-chain status so clinicians spend less time hunting data and more time delivering care.</div>
@@ -1713,7 +1713,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-7.svg" alt="IoT Healthcare icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-7.svg" alt="IoT Healthcare icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr">Measure soil, weather, livestock and machine telemetry from field to cloud. Automate irrigation, feeding and equipment service to raise yields, cut inputs and build resilience against volatile climate swings.</div>
@@ -1727,7 +1727,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-8.svg" alt="Precision Agriculture IoT icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-8.svg" alt="Precision Agriculture IoT icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr">Wire up cranes, loaders and power tools on every site. Watch loads, operation time and locations in real time, predict failures and enforce safety zones so projects finish on time, on budget and incident-free.</div>
@@ -1741,7 +1741,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-9.svg" alt="Connected Construction IoT icon">`,
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-9.svg" alt="Connected Construction IoT icon">`,
                     `<div class="card-container">
                         <div class="card-text-container">
                             <div class="card-descr">Operate lighting, traffic, waste, water and environmental networks on a single pane of glass. Deliver greener, safer and more responsive services while maximising scarce municipal budgets and strengthening citizen trust.</div>
@@ -1755,7 +1755,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </ul>
                         </div>
                     </div>
-                    <img class="card-img" src="/images/development-services/industries-10.svg" alt="Smart City IoT icon">`
+                    <img class="card-img" src="https://img.thingsboard.io/development-services/industries-10.svg" alt="Smart City IoT icon">`
         ];
 
         if (isMobile) {

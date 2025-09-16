@@ -56,7 +56,7 @@ you can use the "Advanced" configuration mode.
 
 You can switch between these modes using the toggle button at the top of the configuration page:
 
-![image](/images/gateway/modbus-connector/modbus-modes-toggle.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/modbus-modes-toggle.png)
 
 ## General settings
 
@@ -74,7 +74,7 @@ The general tab is the same for both the basic and advanced configurations.
 A Modbus Master is used to query data from Modbus servers (slaves). In order to configure servers for data retrieving,
 you need to specify list of slaves.
 
-![image](/images/gateway/modbus-connector/gateway-as-a-master.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/gateway-as-a-master.png)
 
 ### Servers (Slaves) settings
 
@@ -107,7 +107,7 @@ All configuration parameters list, and their detailed description can be found i
 To add a new configuration for connection to server, navigate to the "**Master Connections**" tab and click the 
 "**plus**" icon:
 
-![image](/images/gateway/modbus-connector/add-new-server-connection-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/add-new-server-connection-1-ce.png)
 
 ### Connection settings
 
@@ -179,7 +179,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/modbus-connector/attribute-updates-overview.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/attribute-updates-overview.png)
 
 {% include /templates/iot-gateway/modbus-connector/attribute-updates-subsection-basic-1.md %}
 
@@ -207,7 +207,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/modbus-connector/rpc-requests-overview.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/rpc-requests-overview.png)
 
 {% include /templates/iot-gateway/modbus-connector/modbus-rpc-requests-subsection-basic-1.md %}
 
@@ -466,12 +466,12 @@ To enable the Gateway as a Modbus slave, you need to toggle "**Enable**" button 
 section. Please note that this option will only create a modbus slave, but it will not send any data to the platform 
 automatically:
 
-![image](/images/gateway/modbus-connector/enable-gateway-as-a-slave.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/enable-gateway-as-a-slave.png)
 
 To send data to the platform, you need to enable "**Send data to the platform**" toggle in the 
 "**Server configuration**", which will enable sending data to the platform when changes occur or at fixed intervals:
 
-![image](/images/gateway/modbus-connector/send-data-gateway-as-a-slave.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/send-data-gateway-as-a-slave.png)
 
 ### Connection settings
 

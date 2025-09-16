@@ -22,22 +22,22 @@ To do this, follow these steps:
 
 {% assign readingAttributeAndTimeseries = '
     ===
-        image: /images/gateway/modbus-connector/examples/select-created-gateway.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-created-gateway.png,
         title: Go to "**Entities**" → "**Gateways**" in the left sidebar and select your gateway.
     ===
-        image: /images/gateway/modbus-connector/examples/select-connector-configuration.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-connector-configuration.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/modbus-connector/examples/select-device-configuration.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-device-configuration.png,
         title: Select the created Modbus connector and click on the "**Master Connections**" tab. Make sure you have configured and connected device (if you don’t know how to do it, see [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=modbus){:target="_blank"} guide or [Connection settings](/docs/iot-gateway/config/modbus/#connection-settings) and [Data mapping](/docs/iot-gateway/config/modbus/#data-mapping) sections of this guide). Click on the “**Pencil**” icon on a device you want to configure attribute updates for.
     ===
-        image: /images/gateway/modbus-connector/examples/reading-attributes-and-time-series-1.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/reading-attributes-and-time-series-1.png,
         title: Scroll down to the "**Attributes** or **Time series**" section and click on the "**Pencil**" icon to edit the attributes and telemetry.
     ===
-        image: /images/gateway/modbus-connector/examples/reading-attributes-and-time-series-2.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/reading-attributes-and-time-series-2.png,
         title: Click on the "**Add attribute**" or "**Add telemetry**" button. In our case, we will add `relay` time series, so fill in the "**Key**" field with `relay`, select the "**Type**" as **bits**, select "**Function code**" field as "**01 - Read Coils**", select "**Bit target type**" as "**Boolean**", and in the "**Address**" field enter `1`. This is the address of the Modbus register we want to read.
     ===
-        image: /images/gateway/modbus-connector/examples/reading-attributes-and-time-series-3.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/reading-attributes-and-time-series-3.png,
         title: Remember to save your changes by clicking the "**Apply**" button.
 '
 %}
@@ -48,7 +48,7 @@ Now we can check if the attribute/telemetry works. Go to "**Entities**" → "**D
 device → "**Last telemetry**" tab and check the value of the `relay` telemetry. It should be `false` since the 
 default value of the relay is off.
 
-![image](/images/gateway/modbus-connector/examples/reading-attributes-and-time-series-4.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/reading-attributes-and-time-series-4.png)
 
 Full configuration for Modbus connector for the example above will look like this:
 

@@ -4,4 +4,4 @@ The following parameters are used to configure TCP connection for the slave:
 - **Port** - port of the Modbus server for connection.
 - **Method** - type of a framer, either **Socket** or **RTU**.
 
-![image](/images/gateway/modbus-connector/tcp-server-connection-section.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/tcp-server-connection-section.png)

@@ -4,10 +4,10 @@
 Users log into ThingsBoard using a username and password. To improve account security, you can adjust your security settings. To configure these settings, sign in to **ThingsBoard** with a **System Administrator** account.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/security-settings/security-settings-general-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/security-settings/security-settings-general-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/ui/security-settings/security-settings-general-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/security-settings/security-settings-general-pe.png)
 {% endif %}
 
 ## General policy
@@ -69,10 +69,10 @@ In this section, you can configure the **JSON Web Token** (JWT) parameters used 
 - **Refresh token expiration time** – set the lifetime of refresh tokens in seconds. Refresh tokens allow users to obtain new JWT tokens without re-authenticating.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/security-settings/security-settings-JWT-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/security-settings/security-settings-JWT-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/ui/security-settings/security-settings-JWT-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/security-settings/security-settings-JWT-pe.png)
 {% endif %}
 
 

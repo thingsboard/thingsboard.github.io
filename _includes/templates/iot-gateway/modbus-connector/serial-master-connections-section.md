@@ -7,4 +7,4 @@ The following parameters are used to configure serial connection for the slave:
 - **Stopbits** - The number of bits sent after each character in a message to indicate the end of the byte.
 - **Parity** - The type of checksum to use to verify data integrity. This can be one of the following: (**E**)ven, (**O**)dd, (**N**)one.
 
-![image](/images/gateway/modbus-connector/serial-server-connection-section.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/serial-server-connection-section.png)

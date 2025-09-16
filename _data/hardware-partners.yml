@@ -1242,7 +1242,7 @@
     - Tank Level Monitoring
   hardware-types:
     - Sensors
-  logo: /images/partners/senso-8-logo.png
+  logo: https://img.thingsboard.io/partners/senso-8-logo.png
   page: /partners/hardware/arwin-technology-limited
   site:
     href: https://www.senso8.com/
