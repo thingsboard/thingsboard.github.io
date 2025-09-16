@@ -643,8 +643,8 @@
 "/docs/iot-gateway/guides/how-to-connect-modbus-device/":
   url: "/docs/iot-gateway/guides/how-to-connect-modbus-device/"
   redirect_from: []
-"/docs/iot-gateway/guides/how-to-connect-opcua-server/":
-  url: "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
+"/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/":
+  url: "/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/"
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-enable-remote-configuration/":
   url: "/docs/iot-gateway/guides/how-to-enable-remote-configuration/"
@@ -666,9 +666,6 @@
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
-  redirect_from: []
-"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
-  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
@@ -5070,7 +5067,7 @@
 "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/"
   redirect_from:
-  - "/reference/plugins/sqs/"
+  - "/docs/reference/plugins/sqs/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/"
   redirect_from: []
