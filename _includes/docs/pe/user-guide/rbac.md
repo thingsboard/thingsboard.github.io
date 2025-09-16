@@ -152,7 +152,9 @@ ThingsBoard uses a linking object called a <b>Group Permission Entity (GPE)</b> 
 
 Let&#39;s look at an example to see how the generic role works depending on where it&#39;s assigned.
 
-![image](/images/user-guide/security/rbac/generic_roles.png)
+<br>
+
+![image](/images/user-guide/security/rbac/generic-role.svg)
 
 <br><b><font size="3">We have:</font></b>
 
@@ -270,7 +272,9 @@ The link "who → to what → with which rights" is created via <b>GPE (Group Pe
 
 Let&#39;s consider an example to better understand how a group role works.
 
-![image](/images/user-guide/security/rbac/group_roles.png)
+<br>
+
+![image](/images/user-guide/security/rbac/group-role.svg)
 
 <br><b><font size="3">We have:</font></b>
 
