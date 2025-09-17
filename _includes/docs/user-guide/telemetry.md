@@ -91,11 +91,11 @@ The on-prem installation of ThingsBoard support storage of time-series data in S
 
 {% else %}
 
-System administrator is able to configure ThingsBoard to store time-series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases.
+In ThingsBoard, timeseries data can be stored using either a SQL database (PostgreSQL) or a hybrid configuration in which PostgreSQL is paired with Cassandra or TimescaleDB.
 Using SQL storage is recommended for small environments with less than 5000 [data points](#data-points) per second.
 Storing data in Cassandra makes sense when you have either high throughput or high availability requirements for your solution.
 
-See [SQL vs NoSQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach) for more information.
+See [SQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach) for more information.
 
 {% endif %}
 
@@ -111,15 +111,53 @@ For example, you may store "raw" data for 3 month and aggregated data for 3 year
 
 {% else %}
 
-Data retention policy and configuration depends on the chosen [storage](#data-storage).
+The data retention policy and mechanism in ThingsBoard depends on the selected [data storage](#data-storage). Retention can be configured in several ways:
 
-Cassandra supports time-to-live(TTL) parameter for each inserted row.
-That is why, you may [configure](/docs/user-guide/install/{{docsPrefix}}config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
-You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
-This allows you to optimize storage consumption.
+#### System-wide configuration
+Defined in the ThingsBoard configuration file and applied across the platform.
 
-PostgreSQL and Timescale does not support time-to-live(TTL) parameter for each inserted row.
-That is why, you may only [configure](/docs/user-guide/install/{{docsPrefix}}config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
+- **Cassandra**  
+  You can [configure](/docs/user-guide/install/{{docsPrefix}}config/) the default TTL using the `TS_KV_TTL` environment variable.  
+
+- **PostgreSQL / TimescaleDB**  
+  These databases do not provide built-in mechanism for TTL.  
+  Instead, you can [configure](/docs/user-guide/install/{{docsPrefix}}config/) a periodic data cleanup routine using the `SQL_TTL_*` environment variables.
+  
+
+#### Tenant profile configuration
+Tenant profiles include a **TTL settings** section.  
+Here, a System Administrator can configure retention periods for multiple data types, such as:
+
+- Default Storage TTL Days. **(Works only when Cassandra is used as the timeseries database)**
+- Alarm TTL days.
+- Queue stats TTL days.
+- Rule Engine exceptions TTL days.
+- RPC requests TTL days.
+
+See [Tenant profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/) for details.
+
+
+#### Tenant attribute
+You can set a `TTL` attribute (in seconds) for the Tenant entity.
+This value applies to every entity within Tenant as a time-to-live for their timeseries data.
+**Works only with PSQL or TimescaleDB.** 
+
+
+#### Rule node configuration
+The **Save Timeseries** rule node allows you to define a TTL for telemetry values saved by that rule node. 
+You can also define data retention by including a `TTL` property in the message metadata.
+**These work only with Cassandra since it support per-row time-to-live TTL.** 
+
+See [Save Timeseries rule node](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/) for more information.
+
+{% capture internal_data_format %}
+**Note:** Retention settings follow a priority order (highest to lowest):  
+1. Message metadata `TTL` property   
+2. Rule node configuration   
+3. Tenant Profile configuration or Tenant Attribute
+4. System-wide configuration
+{% endcapture %}
+{% include templates/info-banner.md content=internal_data_format %}
 {% endif %}
 
 ## Data durability
