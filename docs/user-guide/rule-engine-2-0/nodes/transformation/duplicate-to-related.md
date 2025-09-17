@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: duplicate to related
-description: Duplicates an incoming message to all entities that are related to the message originator, based on a specified relations query.
+description: Duplicates an incoming message to all entities related to the message originator (found via a configurable relations query).
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -18,10 +18,10 @@ With the Scheduler, you can:
 
 - Open the "**Reporting**" page from the left-hand sidebar and go to the "**Scheduling**" tab.
 - Click the "**+ Scheduled report**" button in the top-right corner.
-- In the scheduling dialog:
+- In the scheduling dialog, configure the following:
     - Specify the **schedule name**.
     - **General configuration**:
-        - **Event type** – always "Generate Report".
+        - **Event type** – is always set to "Generate Report".
         - **Report template** – select a [predefined report](#report-templates) template to use.
         - **User** – select the user whose credentials will be used for report generation.
         - **Time zone** – choose the time zone  for report generation.
@@ -42,7 +42,7 @@ You&#39;ll find all generated reports under the "[Reports](#reports)" tab.
 The "**Reports**" tab stores all your generated reports. Here you can:
 - Download reports.
 - Filter reports by report template or by the user whose credentials were used to generate the report.
-- Delete unnecessary reports.
+- Delete reports you no longer need.
 
 > The number of generated reports can be limited per tenant via [tenant profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/){:target="_blank"} configuration.
 

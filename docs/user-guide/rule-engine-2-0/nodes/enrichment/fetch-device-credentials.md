@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: fetch device credentials
-description: Fetches the credentials of the originator device and adds them to the message data or metadata.
+description: Enriches messages by adding credentials (type and value) of the originator device.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -128,7 +128,48 @@ If Alarm do exist - it is cleared and passed to other nodes via relation **Clear
 
 Chain configuration is finished and we need to **save it**.
 
-<br>
+## Alarm entity JSON (reference)
+
+The example below shows the JSON structure of a typical (default) created alarm.
+```shell
+{
+  "type": "High Temperature Alarm",
+  "originator": {
+    "id": "784f394c-42b6-435a-983c-b7beff2784f9",
+    "entityType": "DEVICE"
+  },
+  "originatorName": "SCADA device A1",
+  "status": "ACTIVE_UNACK",
+  "severity": "CRITICAL",
+  "acknowledged": false,
+  "cleared": false,
+  "assigneeId": {
+    "id": "784f394c-42b6-435a-983c-b7beff2784f9",
+    "entityType": "USER"
+  },
+  "createdTime": 1634058704565,
+  "startTs": 1634058704565,
+  "endTs": 1634111163522,
+  "ackTs": 1634115221948,
+  "clearTs": 1634114528465,
+  "assignTs": 1634115928465,
+  "details": {},
+  "propagate": true,
+  "propagateToOwner": true,
+  "propagateToOwnerHierarchy": true,
+  "propagateToTenant": true,
+  "propagateRelationTypes": [
+    "string"
+  ],
+  "id": {
+    "id": "784f394c-42b6-435a-983c-b7beff2784f9",
+    "entityType": "ALARM"
+  }
+}
+```
+{:.copy-code}
+
+The Alarm Status Filter node filters by status only (Active, Cleared, Acknowledged, etc.). To filter by type or another attribute, use a filter node such as [Script](/docs/user-guide/rule-engine-2-0/nodes/filter/script/) or [Switch](/docs/user-guide/rule-engine-2-0/nodes/filter/switch/) in your rule chain.
 
 ## Configure Dashboard 
 
