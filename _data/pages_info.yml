@@ -589,7 +589,8 @@
   redirect_from: []
 "/docs/iot-gateway/config/modbus/":
   url: "/docs/iot-gateway/config/modbus/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
 "/docs/iot-gateway/config/mqtt/":
   url: "/docs/iot-gateway/config/mqtt/"
   redirect_from:
@@ -651,6 +652,10 @@
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/":
   url: "/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/"
+  redirect_from:
+  - "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
+"/docs/iot-gateway/guides/how-to-connect-opcua-server/":
+  url: "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-enable-remote-configuration/":
   url: "/docs/iot-gateway/guides/how-to-enable-remote-configuration/"
@@ -672,6 +677,9 @@
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
+  redirect_from: []
+"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
+  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
