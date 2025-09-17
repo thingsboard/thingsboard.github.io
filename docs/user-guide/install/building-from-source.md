@@ -10,8 +10,8 @@ description: Building ThingsBoard IoT platform from sources
 * TOC
 {:toc}
 
-This guide will help you to download and build ThingsBoard from sources. Instructions listed below are tested on Ubuntu 20.04 LTS
-and CentOS 7/8
+This guide will help you to download and build ThingsBoard from sources. Instructions listed below are tested on Ubuntu 24.04 LTS
+and CentOS 8/9
 
 ## Required tools
 

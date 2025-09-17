@@ -8,8 +8,8 @@ description: Building ThingsBoard Edge from sources
 * TOC
 {:toc}
 
-This guide will help you to download and build ThingsBoard Edge from sources. Instructions listed below are tested on Ubuntu 20.04 LTS
-and CentOS 7/8
+This guide will help you to download and build ThingsBoard Edge from sources. Instructions listed below are tested on Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS
+and CentOS 8/9
 
 ## Required tools
 
