@@ -4,6 +4,7 @@ title: "Horizontal noise level card"
 description: "Displays the latest noise level telemetry in a scalable horizontal layout."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

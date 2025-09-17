@@ -4,6 +4,7 @@ title: "Mobile app QR code"
 description: "Enables users to open the ThingsBoard mobile app by scanning the QR code from dashboard."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

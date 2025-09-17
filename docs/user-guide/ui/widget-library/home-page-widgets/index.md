@@ -4,6 +4,7 @@ title: "Home page widgets"
 description: "Contains useful widgets to design the user's home page."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

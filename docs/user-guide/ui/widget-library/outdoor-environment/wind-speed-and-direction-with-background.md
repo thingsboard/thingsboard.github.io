@@ -4,6 +4,7 @@ title: "Wind speed and direction with background"
 description: "Displays the latest values of the wind speed and direction with background."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "SCADA symbols"
 description: "Bundle with SCADA symbols"
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

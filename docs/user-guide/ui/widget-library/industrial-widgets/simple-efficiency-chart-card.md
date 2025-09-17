@@ -4,6 +4,7 @@ title: "Simple efficiency chart card"
 description: "Displays historical efficiency values as a simplified chart. Optionally may display the corresponding efficiency value."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

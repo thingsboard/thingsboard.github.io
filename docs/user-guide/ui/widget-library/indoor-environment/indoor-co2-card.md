@@ -4,6 +4,7 @@ title: "Indoor CO2 card"
 description: "Displays the latest indoor CO2 level telemetry in a scalable rectangle card."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

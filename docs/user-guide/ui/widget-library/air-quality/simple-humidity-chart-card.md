@@ -4,6 +4,7 @@ title: "Simple humidity chart card"
 description: "Displays historical humidity values as a simplified chart. Optionally may display the corresponding latest humidity value."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

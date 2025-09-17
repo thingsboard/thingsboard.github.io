@@ -4,6 +4,7 @@ title: "HP Gas wellhead"
 description: "Gas wellhead with various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

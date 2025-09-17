@@ -4,6 +4,7 @@ title: "General high-performance SCADA symbols"
 description: "Bundle with high-performance SCADA symbols"
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

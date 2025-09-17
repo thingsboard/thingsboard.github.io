@@ -4,6 +4,7 @@ title: "Air quality"
 description: "Contains widgets displaying air quality telemetry."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

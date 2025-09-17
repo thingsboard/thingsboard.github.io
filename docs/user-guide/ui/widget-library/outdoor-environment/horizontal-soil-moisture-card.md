@@ -4,6 +4,7 @@ title: "Horizontal soil moisture card"
 description: "Displays the latest soil moisture telemetry in a scalable horizontal layout."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

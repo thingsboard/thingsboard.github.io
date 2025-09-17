@@ -4,6 +4,7 @@ title: "Label widget"
 description: "Displays attributes or the latest telemetry values as an overlay on the configured image. The position of the values is configurable using appearance settings."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Scheduling"
 description: "Display scheduled events and reports with the ability to manage them."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

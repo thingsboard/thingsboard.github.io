@@ -4,6 +4,7 @@ title: "Indoor Environment"
 description: "Contains widgets displaying indoor environment telemetry."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Gateway connectors"
 description: "Allows to create and manage gateway connectors."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "HP Small vertical separator with connector"
 description: "Small vertical separator with connector with various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

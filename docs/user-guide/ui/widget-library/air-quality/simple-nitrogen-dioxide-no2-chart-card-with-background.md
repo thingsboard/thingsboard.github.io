@@ -4,6 +4,7 @@ title: "Simple nitrogen dioxide (NO2) chart card with background"
 description: "A gas produced from vehicle emissions and the burning of fossil fuels. Results displayed by combining the latest and aggregated values and optional simplified chart."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

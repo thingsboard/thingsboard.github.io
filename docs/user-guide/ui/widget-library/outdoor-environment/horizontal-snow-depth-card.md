@@ -4,6 +4,7 @@ title: "Horizontal snow depth card"
 description: "Displays the latest snow depth telemetry in a scalable horizontal layout."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

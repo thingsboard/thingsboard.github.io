@@ -4,6 +4,7 @@ title: "Device claiming widget"
 description: "Allows to claim the device using name and optional secret key."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

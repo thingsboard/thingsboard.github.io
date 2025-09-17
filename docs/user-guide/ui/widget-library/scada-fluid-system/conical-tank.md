@@ -4,6 +4,7 @@ title: "Conical tank"
 description: "Conical tank with current volume value and level visualizations."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

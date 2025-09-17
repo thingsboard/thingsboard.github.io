@@ -4,6 +4,7 @@ title: "HP Left tee connector"
 description: "Left tee connector"
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

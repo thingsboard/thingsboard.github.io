@@ -4,6 +4,7 @@ title: "Horizontal humidity card"
 description: "Displays the latest humidity telemetry in a scalable horizontal layout."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

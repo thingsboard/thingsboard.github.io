@@ -4,6 +4,7 @@ title: "Input widgets"
 description: "Various input forms to set the location, image, and other configuration parameters of the device, asset, or other entity."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

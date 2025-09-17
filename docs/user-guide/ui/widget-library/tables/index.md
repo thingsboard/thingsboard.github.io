@@ -4,6 +4,7 @@ title: "Tables"
 description: "Contains tables to display alarms, entities, and their telemetry."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

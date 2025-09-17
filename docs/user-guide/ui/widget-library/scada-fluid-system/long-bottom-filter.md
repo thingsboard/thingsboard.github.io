@@ -4,6 +4,7 @@ title: "Long bottom filter"
 description: "Long bottom filter with configurable click actions for custom operations, dashboard manipulation, etc."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

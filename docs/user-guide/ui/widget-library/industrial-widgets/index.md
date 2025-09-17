@@ -4,6 +4,7 @@ title: "Industrial widgets"
 description: "Contains widgets displaying industrial telemetry."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

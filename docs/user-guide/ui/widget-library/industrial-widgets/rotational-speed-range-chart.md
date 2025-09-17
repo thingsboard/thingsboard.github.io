@@ -4,6 +4,7 @@ title: "Rotational speed range chart"
 description: "Displays changes to rotational speed data over time visualized with color ranges."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

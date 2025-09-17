@@ -4,6 +4,7 @@ title: "Files"
 description: "Display files and report lists to manage them."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

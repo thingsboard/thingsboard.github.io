@@ -4,6 +4,7 @@ title: "Small right motor pump"
 description: "Small right motor pump with configurable states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

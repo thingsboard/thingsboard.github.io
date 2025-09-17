@@ -4,6 +4,7 @@ title: "Gateway widgets"
 description: "Widgets to manage ThingsBoard IoT Gateway instances."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

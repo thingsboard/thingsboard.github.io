@@ -4,6 +4,7 @@ title: "Extra long horizontal pipe"
 description: "Extra long horizontal pipe with fluid and leak visualizations."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

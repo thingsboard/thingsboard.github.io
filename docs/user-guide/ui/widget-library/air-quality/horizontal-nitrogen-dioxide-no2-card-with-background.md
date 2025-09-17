@@ -4,6 +4,7 @@ title: "Horizontal nitrogen dioxide (NO2) card with background"
 description: "A gas produced from vehicle emissions and the burning of fossil fuels."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

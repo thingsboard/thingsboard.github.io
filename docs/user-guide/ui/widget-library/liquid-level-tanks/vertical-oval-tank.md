@@ -4,6 +4,7 @@ title: "Vertical oval tank"
 description: "Widget indicates the level of liquid in Vertical oval tank."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

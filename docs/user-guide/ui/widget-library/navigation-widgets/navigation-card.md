@@ -4,6 +4,7 @@ title: "Navigation card"
 description: "Displays the link to the platform page as a button. The link is configured as the relative path in the appearance settings of the widget."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

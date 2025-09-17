@@ -4,6 +4,7 @@ title: "Alarm widgets"
 description: "Visualization of alarms for devices, assets, and other entities."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "HP Vertical connector"
 description: "Vertical connector with an optional directional arrow to visually indicate flow."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

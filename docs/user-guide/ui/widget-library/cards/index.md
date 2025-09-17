@@ -4,6 +4,7 @@ title: "Cards"
 description: "Includes cards that display dynamic content based on data from one or more entities. It also includes static HTML cards."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

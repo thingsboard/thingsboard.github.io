@@ -4,6 +4,7 @@ title: "Update server image attribute"
 description: "Simple form to input new image for pre-defined server-side attribute key."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

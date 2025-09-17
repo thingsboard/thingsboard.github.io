@@ -4,6 +4,7 @@ title: "GPIO widgets"
 description: "Visualization and control of the state of the GPIO devices."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

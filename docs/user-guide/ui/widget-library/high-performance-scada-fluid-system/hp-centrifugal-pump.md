@@ -4,6 +4,7 @@ title: "HP Centrifugal pump"
 description: "Centrifugal pump with configurable connectors and various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Leaf wetness card"
 description: "Displays the latest leaf wetness telemetry in a scalable rectangle card."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

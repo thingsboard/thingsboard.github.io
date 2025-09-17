@@ -4,6 +4,7 @@ title: "Gateway Configuration"
 description: "Allows to define configuration for a single gateway."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

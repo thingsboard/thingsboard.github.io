@@ -4,6 +4,7 @@ title: "Count widgets"
 description: "Cards to display the number of alarms or entities based on the selected filter."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

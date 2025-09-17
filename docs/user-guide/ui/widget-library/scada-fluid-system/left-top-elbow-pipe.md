@@ -4,6 +4,7 @@ title: "Left top elbow pipe"
 description: "Left top elbow pipe with fluid and leak visualizations."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

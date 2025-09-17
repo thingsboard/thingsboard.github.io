@@ -4,6 +4,7 @@ title: "Flow rate gauge"
 description: "Flow rate gauge."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

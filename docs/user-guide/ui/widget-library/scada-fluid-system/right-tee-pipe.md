@@ -4,6 +4,7 @@ title: "Right tee pipe"
 description: "Right tee pipe with configurable right/top/bottom fluid and leak visualizations."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

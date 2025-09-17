@@ -4,6 +4,7 @@ title: "Indoor simple CO2 chart card with background"
 description: "Displays historical indoor CO2 level values as a simplified chart with background. Optionally may display the corresponding latest indoor CO2 level value."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Spherical tank"
 description: "Spherical tank with current volume value and level visualizations."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

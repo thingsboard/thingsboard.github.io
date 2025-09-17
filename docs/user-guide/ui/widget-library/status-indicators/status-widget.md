@@ -4,6 +4,7 @@ title: "Status widget"
 description: "Displays current status."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

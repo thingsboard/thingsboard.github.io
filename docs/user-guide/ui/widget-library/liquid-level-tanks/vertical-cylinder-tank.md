@@ -4,6 +4,7 @@ title: "Vertical cylinder tank"
 description: "Widget indicates the level of liquid in Vertical cylinder tank."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Simple soil moisture chart card"
 description: "Displays historical soil moisture values as a simplified chart. Optionally may display the corresponding latest soil moisture value."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

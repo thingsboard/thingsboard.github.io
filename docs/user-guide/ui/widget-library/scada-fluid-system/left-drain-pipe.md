@@ -4,6 +4,7 @@ title: "Left drain pipe"
 description: "Left drain pipe with configurable fluid and leak visualizations."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Signal strength"
 description: "Presents the current signal strength as WiFi or Cellular Bar."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

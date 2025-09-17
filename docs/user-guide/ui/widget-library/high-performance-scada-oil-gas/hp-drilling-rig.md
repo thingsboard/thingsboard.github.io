@@ -4,6 +4,7 @@ title: "HP Drilling rig"
 description: "Drilling rig with various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

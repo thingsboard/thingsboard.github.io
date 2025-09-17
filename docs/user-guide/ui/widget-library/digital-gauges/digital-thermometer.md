@@ -4,6 +4,7 @@ title: "Digital thermometer"
 description: "Preconfigured gauge to display temperature. Allows to configure temperature range, gradient colors, and other settings."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Maps"
 description: "Visualize the latest location or trip of devices and entities on indoor and outdoor maps using markers, polygons, and circles for enhanced spatial representation."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

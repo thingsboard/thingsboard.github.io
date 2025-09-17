@@ -4,6 +4,7 @@ title: "Flow rate range chart with background"
 description: "Displays changes to flow rate data over time visualized with color ranges and background."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

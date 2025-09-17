@@ -4,6 +4,7 @@ title: "Horizontal carbon monoxide (CO) card"
 description: "A colorless and odorless gas resulting from incomplete combustion, particularly in motor vehicles."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

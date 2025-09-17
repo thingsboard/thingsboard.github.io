@@ -4,6 +4,7 @@ title: "Ozone (O3) card with background"
 description: "A beneficial layer in the upper atmosphere, but harmful when present near ground level. Results mainly from vehicle exhaust and industrial emissions."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

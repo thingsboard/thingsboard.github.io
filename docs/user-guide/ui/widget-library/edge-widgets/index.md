@@ -4,6 +4,7 @@ title: "Edge widgets"
 description: "Widgets to manage ThingsBoard Edge instances and navigate through their entities."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

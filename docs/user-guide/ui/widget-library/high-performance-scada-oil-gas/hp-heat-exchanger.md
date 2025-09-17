@@ -4,6 +4,7 @@ title: "HP Heat exchanger"
 description: "Heat exchanger with various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

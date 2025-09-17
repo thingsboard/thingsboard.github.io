@@ -4,6 +4,7 @@ title: "Control widgets"
 description: "Various interactive widgets to control the behavior and state of the IoT devices."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "HTML widgets"
 description: "Visualize HTML based on a configurable template or function and device attributes or time series values."
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

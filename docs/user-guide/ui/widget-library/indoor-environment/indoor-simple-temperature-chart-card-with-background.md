@@ -4,6 +4,7 @@ title: "Indoor simple temperature chart card with background"
 description: "Displays historical indoor temperature values as a simplified chart with background. Optionally may display the corresponding latest indoor temperature value."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

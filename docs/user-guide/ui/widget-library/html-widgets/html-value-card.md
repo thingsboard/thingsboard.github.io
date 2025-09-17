@@ -4,6 +4,7 @@ title: "HTML Value Card"
 description: "Displays configurable HTML with the ability to inject values from the selected data source. For example, display single or multiple attribute values."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

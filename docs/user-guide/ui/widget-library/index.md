@@ -3,6 +3,7 @@ layout: docwithnav
 title: Widgets Library
 description: ThingsBoard Dashboard Widgets Library
 
+hidetoc: "true"
 ---
 
 {% include get-hosts-name.html %}

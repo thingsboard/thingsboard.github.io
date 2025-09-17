@@ -4,6 +4,7 @@ title: "HP Left top elbow connector"
 description: "Left top elbow connector"
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

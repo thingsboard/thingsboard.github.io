@@ -4,6 +4,7 @@ title: "HP Rotor"
 description: "Rotor with various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

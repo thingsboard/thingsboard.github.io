@@ -4,6 +4,7 @@ title: "HP Dynamic vertical scale"
 description: "Dynamic vertical scale with current volume value and dynamically configurable warning and critical scale."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

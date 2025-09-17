@@ -4,6 +4,7 @@ title: "Traditional SCADA fluid system"
 description: "Bundle with SCADA symbols for fluid system"
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

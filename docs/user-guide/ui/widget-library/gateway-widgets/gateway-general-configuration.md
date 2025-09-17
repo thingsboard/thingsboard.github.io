@@ -4,6 +4,7 @@ title: "Gateway general configuration"
 description: "Allows to create or edit general gateway configuration."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

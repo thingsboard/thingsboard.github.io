@@ -4,6 +4,7 @@ title: "HP Simple vertical scale"
 description: "Simple vertical scale with current volume value and configurable warning and critical scale."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

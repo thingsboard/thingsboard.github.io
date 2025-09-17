@@ -4,6 +4,7 @@ title: "HP Two-rate energy meter"
 description: "Two-rate energy meter with various states."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

@@ -4,6 +4,7 @@ title: "Individual allergy index (IAI) card with background"
 description: "Indicates the concentration of airborne allergens, including pollen and mold spores, which can trigger allergic reactions in sensitive individuals."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

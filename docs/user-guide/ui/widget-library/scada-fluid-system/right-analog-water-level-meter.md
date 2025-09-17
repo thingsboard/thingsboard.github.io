@@ -4,6 +4,7 @@ title: "Right analog water level meter"
 description: "Right analog water level meter with real-time display of fluid levels."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}

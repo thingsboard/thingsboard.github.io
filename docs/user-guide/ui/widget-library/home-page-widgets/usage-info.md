@@ -4,6 +4,7 @@ title: "Usage info"
 description: "Display statistics about the number of entities and API usage."
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
+hidetoc: "true"
 
 ---
 {% include get-hosts-name.html %}
