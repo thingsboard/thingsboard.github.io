@@ -27,8 +27,38 @@ We will create a dashboard and add the most popular widgets. See the instruction
     '
 %}
 
+{% assign creatingNewDashboardEdgePE = '
+    ===
+        image: /,
+        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
+    ===
+        image: /,
+        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
+    ===
+        image: /,
+        title: Your dashboard should be listed first since the table sorts dashboards using the time of the creation by default. Click on the "Open dashboard" icon.
+'
+%}
+
+{% assign creatingNewDashboardEdgeCE = '
+    ===
+        image: /,
+        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
+    ===
+        image: /,
+        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
+    ===
+        image: /,
+        title: Your dashboard should be listed first since the table sorts dashboards using the creation time of the creation by default. Click on the "Open dashboard" icon.
+'
+%}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingNewDashboardPE %}
+{% elsif page.docsPrefix == "pe/edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingNewDashboardEdgePE %}
+{% elsif page.docsPrefix == "edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingNewDashboardEdgeCE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingNewDashboardCE %}
 {% endif %}
@@ -83,8 +113,56 @@ type or related to a certain asset. You may learn more about different aliases h
     '
 %}
 
+{% assign creatingEntityAliasEdgeCE = '
+    ===
+        image: /,
+        title: Enter edit mode. Click on the pencil button in the bottom right corner;
+    ===
+        image: /,
+        title: Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;
+    ===
+        image: /,
+        title: Click "Add alias";
+    ===
+        image: /,
+        title: Enter an alias name (for example, "My Device"). Choose "Single entity" as the Filter type, select "Device" for Type, and begin typing "My New" to trigger autocomplete suggestions;
+    ===
+        image: /,
+        title: Click "Add" and then "Save";
+    ===
+        image: /,
+        title: Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.
+'
+%}
+
+{% assign creatingEntityAliasEdgePE = '
+    ===
+        image: /,
+        title: Enter edit mode. Click on the pencil button in the bottom right corner;
+    ===
+        image: /,
+        title: Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;
+    ===
+        image: /,
+        title: Click "Add alias";
+    ===
+        image: /,
+        title: Enter an alias name (for example, "My Device"). Choose "Single entity" as the Filter type, select "Device" for Type, and begin typing "My New" to trigger autocomplete suggestions;
+    ===
+        image: /,
+        title: Click "Add" and then "Save";
+    ===
+        image: /,
+        title: Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.
+'
+%}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasPE %}
+{% elsif page.docsPrefix == "pe/edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasEdgePE %}
+{% elsif page.docsPrefix == "edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasEdgeCE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasCE %}
 {% endif %}
@@ -93,8 +171,8 @@ To add the new widget, we need to select it from the widget library. The widgets
 Each widget has a data source. It is how the widget “knows” what data to display. We should configure the data source 
 to see the latest value of our “cpu_usage” data that we sent during step 2.
 
-- Enter edit mode. Click on the "Add new widget" button;
-- Select the "Charts" widget bundle. Click on the header of the Entities widget. The "Add Widget" window will appear;
-- Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one;
-- Select the "{{deviceName}}" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select the "cpu_usage" data point and click "Add";
+- Enter the edit mode. Click the **"Add new widget"** button;
+- Select the **"Charts"** widget bundle. Click on the header of the Entities widget. The **"Add Widget"** window will appear;
+- Click **"Add"** to add the data source. A widget may have multiple data sources, but we will use only one;
+- Select the **"{{deviceName}}"** entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select the **"cpu_usage"** data point and click **"Add"**;
 - To enlarge the widget by dragging its bottom right corner. Feel free to explore advanced settings for additional widget modifications.

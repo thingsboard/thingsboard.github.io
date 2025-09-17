@@ -24,8 +24,32 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
     '
 %}
 
+{% assign importingDashboardEdgeCE = '
+    ===
+        image: /,
+    ===
+        image: /,
+    ===
+        image: /,
+'
+%}
+
+{% assign importingDashboardEdgePE = '
+    ===
+        image: /,
+    ===
+        image: /,
+    ===
+        image: /,
+'
+%}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardPE %}
+{% elsif page.docsPrefix == "pe/edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardEdgePE %}
+{% elsif page.docsPrefix == "edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardEdgeCE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}
 {% endif %}
@@ -39,4 +63,4 @@ To do this - we need to press the pen icon and select entity aliases, select ali
 Then, choose a device with name My device from dropdown list and save entity alias. Now, you should be able to see the data from the device. 
 
 If you did everything right, you have to see the following dashboard:
-![](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)
+![dashboard](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)

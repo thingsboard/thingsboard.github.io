@@ -16,7 +16,16 @@ productivity and database hosting.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+{% assign userName = "pi" %}
+{% include /templates/edge/devices-library/install-edge-gw.md %}
+{% endif %}
+
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+## Create device on ThingsBoard Edge
+{% else %}
 ## Create device on ThingsBoard
+{% endif %}
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
@@ -24,7 +33,11 @@ productivity and database hosting.
 
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+## Connect device to ThingsBoard Edge
+{% else %}
 ## Connect device to ThingsBoard
+{% endif %}
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
@@ -34,7 +47,11 @@ productivity and database hosting.
 
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+## Check data on ThingsBoard Edge
+{% else %}
 ## Check data on ThingsBoard
+{% endif %}
 
 {% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 

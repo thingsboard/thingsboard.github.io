@@ -20,8 +20,32 @@ Once you have successfully published the attributes and telemetry data, you shou
     '
 %}
 
+{% assign deviceTelemetryEdgeCE = '
+    ===
+        image: /,
+        title: Click on the device row in the table to open device details.
+    ===
+        image: /,
+        title: Navigate to the telemetry tab.
+'
+%}
+
+{% assign deviceTelemetryEdgePE = '
+    ===
+        image: /,
+        title: Click on the device row in the table to open device details.
+    ===
+        image: /,
+        title: Navigate to the telemetry tab.
+'
+%}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryPE %}
+{% elsif page.docsPrefix == "pe/edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryEdgePE %}
+{% elsif page.docsPrefix == "edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryEdgeCE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryCE %}
 {% endif %} 

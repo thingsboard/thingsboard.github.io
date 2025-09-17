@@ -19,8 +19,32 @@ To connect your device, you'll first need to get its credentials. While ThingsBo
     '
 %}
 
+{% assign provisionDeviceEdgePE = '
+    ===
+        image: /,
+        title: Click on the device row in the table to open device details.
+    ===
+        image: /,
+        title: Click "**Copy access token**". The token will be copied to your clipboard. Please save it in a safe place.
+'
+%}
+
+{% assign provisionDevicePE = '
+    ===
+        image: /,
+        title: Click on the device row in the table to open device details.
+    ===
+        image: /,
+        title: Click "**Copy access token**". The token will be copied to your clipboard. Please save it in a safe place.
+'
+%}
+
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
-{% else %}  
+{% elsif page.docsPrefix == "pe/edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceEdgePE %}
+{% elsif page.docsPrefix == "edge/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceEdgeCE %}
+{% else %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
 {% endif %} 
