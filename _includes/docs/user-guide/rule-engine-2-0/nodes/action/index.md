@@ -14,8 +14,8 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [create relation](/docs/user-guide/rule-engine-2-0/nodes/action/create-relation) — creates relation between the message originator and a specified target entity with configurable direction and type.
 - [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — delays incoming messages for a configurable period before forwarding them to the next rule node.
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — deletes specified attributes from message originator.
-- [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — Delete the relation from the selected entity to originator of the message by type and direction.
-- [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile.
+- [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — delete the relation from the selected entity to originator of the message by type and direction.
+- [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — evaluates incoming messages against [alarm rules](/docs/{{docsPrefix}}/user-guide/device-profiles/#alarm-rules) defined in the device profile of the message originator and creates, updates, or clears alarms based on the evaluation results.
 - [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — sends device connectivity events for the message originator.
 - [generate report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-report) — Generates report files by capturing target dashboard with specific configuration.
 - [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — Generates Messages with configurable period. JavaScript function is used for message generation.
