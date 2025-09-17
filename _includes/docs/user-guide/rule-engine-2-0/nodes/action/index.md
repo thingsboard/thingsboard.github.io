@@ -23,7 +23,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [integration downlink](/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink) — Forwards Message to selected Integration as downlink message.
 - [log](/docs/user-guide/rule-engine-2-0/nodes/action/log) — executes a user-defined script to transform message data, metadata, and type into a custom formatted string and logs that string to the ThingsBoard log file.
 - [math function](/docs/user-guide/rule-engine-2-0/nodes/action/math-function) — The rule node applies math function and saves the result into the message and/or database.
-- [message count](/docs/user-guide/rule-engine-2-0/nodes/action/message-count) — Counts incoming messages for specified interval and produces POST_TELEMETRY_REQUEST msg with messages count.
+- [message count](/docs/user-guide/rule-engine-2-0/nodes/action/message-count) — counts incoming messages over a specified time interval and outputs a message containing the count for each interval.
 - [push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud) — Sends messages from the edge instance to the cloud platform.
 - [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — Sends messages from the cloud platform to an edge instance.
 - [remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group) — removes the message originator entity from an entity group found by group name pattern.
