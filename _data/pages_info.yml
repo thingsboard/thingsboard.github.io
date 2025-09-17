@@ -5808,9 +5808,6 @@
 "/docs/user-guide/ui/widget-library/cards/qr-code/":
   url: "/docs/user-guide/ui/widget-library/cards/qr-code/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/cards/simple-card/":
-  url: "/docs/user-guide/ui/widget-library/cards/simple-card/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/cards/simple-value-and-chart-card/":
   url: "/docs/user-guide/ui/widget-library/cards/simple-value-and-chart-card/"
   redirect_from: []
@@ -5832,12 +5829,6 @@
 "/docs/user-guide/ui/widget-library/charts/bars/":
   url: "/docs/user-guide/ui/widget-library/charts/bars/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/charts/basic-timeseries/":
-  url: "/docs/user-guide/ui/widget-library/charts/basic-timeseries/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/charts/doughnut-chart-js/":
-  url: "/docs/user-guide/ui/widget-library/charts/doughnut-chart-js/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/charts/doughnut/":
   url: "/docs/user-guide/ui/widget-library/charts/doughnut/"
   redirect_from: []
@@ -5850,23 +5841,14 @@
 "/docs/user-guide/ui/widget-library/charts/line-chart/":
   url: "/docs/user-guide/ui/widget-library/charts/line-chart/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/charts/pie-chart-js/":
-  url: "/docs/user-guide/ui/widget-library/charts/pie-chart-js/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/charts/pie/":
   url: "/docs/user-guide/ui/widget-library/charts/pie/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/charts/point-chart/":
   url: "/docs/user-guide/ui/widget-library/charts/point-chart/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/charts/polar-area-chart-js/":
-  url: "/docs/user-guide/ui/widget-library/charts/polar-area-chart-js/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/charts/polar-area/":
   url: "/docs/user-guide/ui/widget-library/charts/polar-area/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/charts/radar-chart-js/":
-  url: "/docs/user-guide/ui/widget-library/charts/radar-chart-js/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/charts/radar/":
   url: "/docs/user-guide/ui/widget-library/charts/radar/"
@@ -5879,9 +5861,6 @@
   redirect_from: []
 "/docs/user-guide/ui/widget-library/charts/time-series-chart/":
   url: "/docs/user-guide/ui/widget-library/charts/time-series-chart/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/charts/timeseries-bars-flot/":
-  url: "/docs/user-guide/ui/widget-library/charts/timeseries-bars-flot/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/control-widgets/basic-gpio-control/":
   url: "/docs/user-guide/ui/widget-library/control-widgets/basic-gpio-control/"
@@ -5921,9 +5900,6 @@
   redirect_from: []
 "/docs/user-guide/ui/widget-library/control-widgets/single-switch/":
   url: "/docs/user-guide/ui/widget-library/control-widgets/single-switch/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/control-widgets/slide-toggle-control/":
-  url: "/docs/user-guide/ui/widget-library/control-widgets/slide-toggle-control/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/control-widgets/slider/":
   url: "/docs/user-guide/ui/widget-library/control-widgets/slider/"
@@ -6882,77 +6858,23 @@
 "/docs/user-guide/ui/widget-library/input-widgets/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/markers-placement-google-maps/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/markers-placement-google-maps/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/markers-placement-image-map/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/markers-placement-image-map/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/markers-placement-openstreetmap/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/markers-placement-openstreetmap/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-boolean-timeseries/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-boolean-timeseries/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-double-timeseries/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-double-timeseries/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-integer-timeseries/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-integer-timeseries/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-json-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-json-attribute/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/update-location-timeseries/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/update-location-timeseries/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/update-multiple-attributes/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/update-multiple-attributes/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-server-boolean-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-boolean-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-server-date-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-date-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-server-double-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-double-attribute/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/update-server-image-attribute/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-image-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-server-integer-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-integer-attribute/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/update-server-location-attribute/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-location-attribute/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-server-string-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-server-string-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-shared-boolean-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-boolean-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-shared-date-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-date-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-shared-double-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-double-attribute/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/update-shared-image-attribute/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-image-attribute/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-shared-integer-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-integer-attribute/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/update-shared-location-attribute/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-location-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-shared-string-attribute/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-shared-string-attribute/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/input-widgets/update-string-timeseries/":
-  url: "/docs/user-guide/ui/widget-library/input-widgets/update-string-timeseries/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/web-camera-input/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/web-camera-input/"
@@ -6990,12 +6912,6 @@
 "/docs/user-guide/ui/widget-library/liquid-level-tanks/vertical-oval-tank/":
   url: "/docs/user-guide/ui/widget-library/liquid-level-tanks/vertical-oval-tank/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/google-maps/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/google-maps/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/here-map/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/here-map/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/maps-v2/image-map/":
   url: "/docs/user-guide/ui/widget-library/maps-v2/image-map/"
   redirect_from: []
@@ -7005,32 +6921,8 @@
 "/docs/user-guide/ui/widget-library/maps-v2/map/":
   url: "/docs/user-guide/ui/widget-library/maps-v2/map/"
   redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/markers-placement-google-maps/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/markers-placement-google-maps/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/markers-placement-image-map/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/markers-placement-image-map/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/markers-placement-openstreetmap/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/markers-placement-openstreetmap/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/openstreetmap/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/openstreetmap/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/route-map-openstreetmap/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/route-map-openstreetmap/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/route-map-tencent-maps/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/route-map-tencent-maps/"
-  redirect_from: []
 "/docs/user-guide/ui/widget-library/maps-v2/route-map/":
   url: "/docs/user-guide/ui/widget-library/maps-v2/route-map/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/tencent-maps/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/tencent-maps/"
-  redirect_from: []
-"/docs/user-guide/ui/widget-library/maps-v2/test/":
-  url: "/docs/user-guide/ui/widget-library/maps-v2/test/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/maps-v2/trip-map/":
   url: "/docs/user-guide/ui/widget-library/maps-v2/trip-map/"

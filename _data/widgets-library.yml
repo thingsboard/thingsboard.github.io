@@ -59,30 +59,6 @@ charts:
       title: "Radar"
       description: "Displays the latest values of the attributes or time series data in a radar chart. Supports numeric values only."
       image: "/images/widgets-library/widgets/charts/radar.svg"
-    basic-timeseries:
-      title: "Timeseries Line Chart"
-      description: "Displays changes to time series data over time—for example, temperature or humidity readings."
-      image: "/images/widgets-library/widgets/charts/basic-timeseries.png"
-    timeseries-bars-flot:
-      title: "Timeseries Bar Chart"
-      description: "Displays changes to time series data over time—for example, daily water consumption for the last month."
-      image: "/images/widgets-library/widgets/charts/timeseries-bars-flot.png"
-    pie-chart-js:
-      title: "Pie - Chart.js"
-      description: "Displays the latest values of the attributes or time series data for multiple entities in a pie chart. Supports numeric values only."
-      image: "/images/widgets-library/widgets/charts/pie-chart-js.png"
-    doughnut-chart-js:
-      title: "Doughnut"
-      description: "Displays the latest values of the attributes or time series data for multiple entities in a doughnut chart. Supports numeric values only."
-      image: "/images/widgets-library/widgets/charts/doughnut-chart-js.png"
-    polar-area-chart-js:
-      title: "Polar Area"
-      description: "Displays the latest values of the attributes or time series data for multiple entities in a polar area chart. Supports numeric values only."
-      image: "/images/widgets-library/widgets/charts/polar-area-chart-js.png"
-    radar-chart-js:
-      title: "Radar"
-      description: "Displays the latest values of the attributes or time series data for multiple entities in a radar chart. Supports numeric values only."
-      image: "/images/widgets-library/widgets/charts/radar-chart-js.png"
 cards:
   title: "Cards"
   description: "Includes cards that display dynamic content based on data from one or more entities. It also includes static HTML cards."
@@ -148,10 +124,6 @@ cards:
       title: "Markdown/HTML Card"
       description: "Renders markdown/HTML using the configurable pattern or function with applied attributes or time series values."
       image: "/images/widgets-library/widgets/cards/markdown-card.png"
-    simple-card:
-      title: "Simple card"
-      description: "Designed to display single value of the selected attribute or timeseries data. Widget styles are customizable. Widget is deprecated. Use \"Value card\" widget."
-      image: "/images/widgets-library/widgets/cards/simple-card.png"
     unread-notifications:
       title: "Unread notifications"
       image: "/images/widgets-library/widgets/cards/unread-notifications.png"
@@ -223,46 +195,6 @@ maps_v2:
       title: "Route Map - Google"
       description: "Visualize the entity trip on Google Maps. Allows to visualize location history. Use the Trip Animation widget for advanced features."
       image: "/images/widgets-library/widgets/maps_v2/route-map.png"
-    openstreetmap:
-      title: "OpenStreet Map"
-      description: "Displays the location of the entities on OpenStreetMap. Allows to choose among existing tile providers or configure own server. Some providers require additional licenses. Highly customizable via custom markers, marker tooltips, and widget actions."
-      image: "/images/widgets-library/widgets/maps_v2/openstreetmap.png"
-    google-maps:
-      title: "Google Map"
-      description: "Displays the location of the entities on Google Maps. Requires the Google map key to work properly. Highly customizable via custom markers, marker tooltips, and widget actions."
-      image: "/images/widgets-library/widgets/maps_v2/google-maps.png"
-    here-map:
-      title: "HERE Map"
-      description: "Displays the location of the entities on HERE Maps. Requires the HERE map key to work properly. Highly customizable via custom markers, marker tooltips, and widget actions."
-      image: "/images/widgets-library/widgets/maps_v2/here-map.svg"
-    tencent-maps:
-      title: "Tencent Map"
-      description: "Displays the location of the entities on Tencent maps. Requires the Tencent map key to work properly. Highly customizable via custom markers, marker tooltips, and widget actions."
-      image: "/images/widgets-library/widgets/maps_v2/tencent-maps.png"
-    test:
-      title: "Trip Animation"
-      description: "Displays the trip of the entity on the OpenStreetMap or other map providers. Allows to scroll and animate the movement of the entity. Highly customizable via custom markers, marker tooltips, and widget actions."
-      image: "/images/widgets-library/widgets/maps_v2/test.png"
-    route-map-openstreetmap:
-      title: "Route Map - OpenStreet"
-      description: "Visualize the entity trip on OpenStreetMap. Allows to visualize location history. Use the Trip Animation widget for advanced features."
-      image: "/images/widgets-library/widgets/maps_v2/route-map-openstreetmap.png"
-    route-map-tencent-maps:
-      title: "Route Map - Tencent"
-      description: "Visualize the entity trip on Tencent Maps. Allows to visualize location history. Use the Trip Animation widget for advanced features."
-      image: "/images/widgets-library/widgets/maps_v2/route-map-tencent-maps.png"
-    markers-placement-openstreetmap:
-      title: "Markers Placement - OpenStreetMap"
-      description: "Allows configuring the location of the selected entities on OpenStreetMap. By default, store the location using 'latitude' and 'longitude' server-side attributes."
-      image: "/images/widgets-library/widgets/maps_v2/markers-placement-openstreetmap.png"
-    markers-placement-google-maps:
-      title: "Markers Placement - Google Maps"
-      description: "Allows configuring the location of the selected entities on Google Maps. By default, store the location using 'latitude' and 'longitude' server-side attributes."
-      image: "/images/widgets-library/widgets/maps_v2/markers-placement-google-maps.png"
-    markers-placement-image-map:
-      title: "Markers Placement - Image Map"
-      description: "Allows configuring the location of the selected entities on the Image map. By default, store the location using 'xPos' and 'yPos' server-side attributes with values of 0.0 to 1.0."
-      image: "/images/widgets-library/widgets/maps_v2/markers-placement-image-map.png"
 analogue_gauges:
   title: "Analogue gauges"
   description: "Display temperature, humidity, speed, pressure, direction, and other values on analog-style gauges."
@@ -354,10 +286,6 @@ control_widgets:
       title: "Switch Control"
       description: "Sends the RPC call to the device when the user toggles the switch. Appearance widget settings will enable you to configure how to fetch the initial value of the switch."
       image: "/images/widgets-library/widgets/control_widgets/switch-control.png"
-    slide-toggle-control:
-      title: "Slide Toggle Control"
-      description: "Sends the RPC call to the device when the user toggles the slider. Appearance widget settings will enable you to configure how to fetch the initial value of the slider."
-      image: "/images/widgets-library/widgets/control_widgets/slide-toggle-control.png"
     round-switch:
       title: "Round switch"
       description: "Sends the RPC call to the device when the user toggles the switch. Appearance settings will enable you to configure how to fetch the initial value of the switch."
@@ -2969,18 +2897,6 @@ input_widgets:
       title: "Update Multiple Attributes"
       description: "Allows to create an input form and set multiple values of the entity. Each input value may be stored as an attribute or time series data. Each input field is highly customizable via input types, value conversion functions, etc."
       image: "/images/widgets-library/widgets/input_widgets/update-multiple-attributes.png"
-    markers-placement-openstreetmap:
-      title: "Markers Placement - OpenStreetMap"
-      description: "Allows configuring the location of the selected entities on OpenStreetMap. By default, store the location using 'latitude' and 'longitude' server-side attributes."
-      image: "/images/widgets-library/widgets/input_widgets/markers-placement-openstreetmap.png"
-    markers-placement-image-map:
-      title: "Markers Placement - Image Map"
-      description: "Allows configuring the location of the selected entities on the Image map. By default, store the location using 'xPos' and 'yPos' server-side attributes with values of 0.0 to 1.0."
-      image: "/images/widgets-library/widgets/input_widgets/markers-placement-image-map.png"
-    markers-placement-google-maps:
-      title: "Markers Placement - Google Maps"
-      description: "Allows configuring the location of the selected entities on Google Maps. By default, store the location using 'latitude' and 'longitude' server-side attributes."
-      image: "/images/widgets-library/widgets/input_widgets/markers-placement-google-maps.png"
     device-claiming-widget:
       title: "Device claiming widget"
       description: "Allows to claim the device using name and optional secret key."
@@ -3009,66 +2925,6 @@ input_widgets:
       title: "Update location timeseries"
       description: "Simple form to input new location for pre-defined timeseries keys."
       image: "/images/widgets-library/widgets/input_widgets/update-location-timeseries.png"
-    update-integer-timeseries:
-      title: "Update integer timeseries"
-      description: "Simple form to input new integer value for pre-defined timeseries key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Timeseries key type and integer value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-integer-timeseries.png"
-    update-double-timeseries:
-      title: "Update double timeseries"
-      description: "Simple form to input new double value for pre-defined timeseries key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Timeseries key type and double value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-double-timeseries.png"
-    update-boolean-timeseries:
-      title: "Update boolean timeseries"
-      description: "Simple form to input new boolean value for pre-defined timeseries key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Timeseries key type and boolean value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-boolean-timeseries.png"
-    update-string-timeseries:
-      title: "Update string timeseries"
-      description: "Simple form to input new string value for pre-defined timeseries key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Timeseries key type and string value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-string-timeseries.png"
-    update-server-date-attribute:
-      title: "Update server date attribute"
-      description: "Simple form to input new date value for pre-defined server-side attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and date value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-server-date-attribute.png"
-    update-server-boolean-attribute:
-      title: "Update server boolean attribute"
-      description: "Simple form to input new boolean value for pre-defined server-side attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and boolean value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-server-boolean-attribute.png"
-    update-server-double-attribute:
-      title: "Update server double attribute"
-      description: "Simple form to input new double value for pre-defined server-side attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and double value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-server-double-attribute.png"
-    update-shared-date-attribute:
-      title: "Update shared date attribute"
-      description: "Simple form to input new date for pre-defined shared attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and date value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-shared-date-attribute.png"
-    update-shared-boolean-attribute:
-      title: "Update shared boolean attribute"
-      description: "Simple form to input new boolean value for pre-defined shared attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and boolean value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-shared-boolean-attribute.png"
-    update-server-integer-attribute:
-      title: "Update server integer attribute"
-      description: "Simple form to input new integer value for pre-defined server attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and integer value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-server-integer-attribute.png"
-    update-server-string-attribute:
-      title: "Update server string attribute"
-      description: "Simple form to input new string value for pre-defined server-side attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and string value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-server-string-attribute.png"
-    update-shared-double-attribute:
-      title: "Update shared double attribute"
-      description: "Simple form to input new double value for pre-defined shared attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and double value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-shared-double-attribute.png"
-    update-shared-integer-attribute:
-      title: "Update shared integer attribute"
-      description: "Simple form to input new integer value for pre-defined shared attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and integer value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-shared-integer-attribute.png"
-    update-shared-string-attribute:
-      title: "Update shared string attribute"
-      description: "Simple form to input new string value for pre-defined shared attribute key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. Attribute type and string value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-shared-string-attribute.png"
-    update-json-attribute:
-      title: "Update JSON attribute"
-      description: "Simple form to input new JSON value for pre-defined attribute/time series key. The widget is deprecated. Use \"Update Multiple Attributes\" widget. JSON value type can be selected in widgets data key configuration."
-      image: "/images/widgets-library/widgets/input_widgets/update-json-attribute.png"
 gateway_widgets:
   title: "Gateway widgets"
   description: "Widgets to manage ThingsBoard IoT Gateway instances."
