@@ -10,7 +10,7 @@
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — Delete attributes for Message Originator.
 - [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — Delete the relation from the selected entity to originator of the message by type and direction.
 - [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — The Device profile rule node creates and clears alarms based on the alarm rules defined in the device profile.
-- [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — Triggers device connectivity events.
+- [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — sends device connectivity events for the message originator.
 - [generate report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-report) — Generates report files by capturing target dashboard with specific configuration.
 - [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — Generates Messages with configurable period. JavaScript function is used for message generation.
 - [gps geofencing events](/docs/user-guide/rule-engine-2-0/nodes/action/gps-geofencing-events) — Produces incoming messages by GPS based parameters.
