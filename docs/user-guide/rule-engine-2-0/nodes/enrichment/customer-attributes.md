@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: customer attributes
-description: Retrieves server-side attributes or the latest time series from the message originator's customer and adds them to the message data or metadata.
+description: Enriches messages by adding server-side attributes or latest time series values from the message originator's customer.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

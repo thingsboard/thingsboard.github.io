@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Rule Engine Action nodes
-description: Rule Engine Action Nodes
+title: Action nodes
+description: Rule engine action nodes
 hidetoc: "true"
 breadcrumbs: "true"
 breadcrumbs-steps: "1"

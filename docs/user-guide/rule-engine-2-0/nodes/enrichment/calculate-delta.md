@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: calculate delta
-description: Calculates the delta and the amount of time passed between the previous time series key reading and the current value for this key from the incoming message.
+description: Calculates the delta (difference) between the current value in an incoming message and the previous value from the same originator, optionally including the time elapsed between messages.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

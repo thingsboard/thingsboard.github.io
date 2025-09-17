@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: entity type filter
-description: Checks whether the message originator entity type matches the configured set of entity types.
+description: Routes messages based on whether the originator entity type matches configured types.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

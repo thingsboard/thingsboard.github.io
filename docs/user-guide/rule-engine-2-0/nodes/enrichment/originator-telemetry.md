@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: originator telemetry
-description: Retrieves time series data for the message originator within a specified time range and adds the result to the message metadata.
+description: Enriches messages by adding historical time series data from the message originator within a specified time interval using configurable fetch strategies and optional aggregation functions.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

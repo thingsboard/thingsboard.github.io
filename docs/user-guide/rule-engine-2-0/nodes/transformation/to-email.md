@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: to email
-description: Prepares an incoming message for email dispatch. Based on the configuration and the incoming message, this node modifies the incoming message to correctly describe an email.
+description: Prepares a message for email dispatch by transforming it with configured sender, recipients, subject, and body content using template-based field substitution.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

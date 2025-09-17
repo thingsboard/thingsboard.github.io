@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: copy to view
-description: Copies attributes from device or asset to an entity view.
+description: Replicates attribute changes from assets/devices to their associated entity views.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
