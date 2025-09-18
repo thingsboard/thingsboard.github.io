@@ -154,7 +154,7 @@ See [Save Timeseries rule node](/docs/user-guide/rule-engine-2-0/nodes/action/sa
 **Note:** Retention settings follow a priority order (highest to lowest):  
 1. Message metadata `TTL` property   
 2. Rule node configuration   
-3. Tenant Profile configuration or Tenant Attribute
+3. Tenant Profile configuration (Cassandra) or Tenant Attribute (PostgreSQL/TimescaleDB)
 4. System-wide configuration
 {% endcapture %}
 {% include templates/info-banner.md content=internal_data_format %}
