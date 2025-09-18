@@ -3818,9 +3818,6 @@
 "/docs/pe/user-guide/ui/entity-table-widget/":
   url: "/docs/pe/user-guide/ui/entity-table-widget/"
   redirect_from: []
-"/docs/pe/user-guide/ui/jwt-security-settings/":
-  url: "/docs/pe/user-guide/ui/jwt-security-settings/"
-  redirect_from: []
 "/docs/pe/user-guide/ui/layouts/":
   url: "/docs/pe/user-guide/ui/layouts/"
   redirect_from: []
@@ -5390,9 +5387,6 @@
   redirect_from: []
 "/docs/user-guide/ui/entity-table-widget/":
   url: "/docs/user-guide/ui/entity-table-widget/"
-  redirect_from: []
-"/docs/user-guide/ui/jwt-security-settings/":
-  url: "/docs/user-guide/ui/jwt-security-settings/"
   redirect_from: []
 "/docs/user-guide/ui/layouts/":
   url: "/docs/user-guide/ui/layouts/"

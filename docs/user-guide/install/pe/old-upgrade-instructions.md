@@ -3104,7 +3104,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 {% capture default-jwt %}
-Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/pe/user-guide/ui/jwt-security-settings/) for details.
+Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/pe/user-guide/ui/security-settings/#jwt-security-settings) for details.
 {% endcapture %}
 {% include templates/info-banner.md content=default-jwt %}
 
@@ -3157,7 +3157,7 @@ net start thingsboard
 {: .copy-code}
 
 {% capture default-jwt %}
-Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/pe/user-guide/ui/jwt-security-settings/) for details.
+Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/pe/user-guide/ui/security-settings/#jwt-security-settings) for details.
 {% endcapture %}
 {% include templates/info-banner.md content=default-jwt %}
 
