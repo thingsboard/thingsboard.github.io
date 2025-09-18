@@ -18,7 +18,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — evaluates incoming messages against [alarm rules](/docs/{{docsPrefix}}/user-guide/device-profiles/#alarm-rules) defined in the device profile of the message originator and creates, updates, or clears alarms based on the evaluation results.
 - [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — sends device connectivity events for the message originator.
 - [generate report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-report) — Generates report files by capturing target dashboard with specific configuration.
-- [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — Generates Messages with configurable period. JavaScript function is used for message generation.
+- [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — generates messages at configurable time intervals using a custom script function.
 - [gps geofencing events](/docs/user-guide/rule-engine-2-0/nodes/action/gps-geofencing-events) — Produces incoming messages by GPS based parameters.
 - [integration downlink](/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink) — Forwards Message to selected Integration as downlink message.
 - [log](/docs/user-guide/rule-engine-2-0/nodes/action/log) — executes a user-defined script to transform message data, metadata, and type into a custom formatted string and logs that string to the ThingsBoard log file.
