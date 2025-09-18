@@ -13,7 +13,7 @@ description: Installing ThingsBoard Trendz Analytics on Windows
 ## Prerequisites
 
 This guide describes how to install Trendz Analytics on a Windows machine.
-Instructions below are provided for Windows 11/10. 
+Instructions below are provided for Windows 11/10 32-bit/64-bit. 
 
 **Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
 To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.

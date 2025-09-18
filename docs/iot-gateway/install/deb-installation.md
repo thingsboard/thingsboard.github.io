@@ -5,7 +5,7 @@ redirect_from:
  - "/docs/iot-gateway/install/rpi/"
 ---
 
-This guide will help you to install ThingsBoard IoT Gateway on Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS.
+This guide will help you to install ThingsBoard IoT Gateway on Ubuntu 22.04 LTS / 24.04 LTS.
 
 ## Prerequisites
 

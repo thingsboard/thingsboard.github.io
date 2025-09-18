@@ -13,7 +13,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 
 {% include templates/edge/install/compatibility-warning-general.md %}
 
-This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS**.
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **Ubuntu 22.04 LTS / 24.04 LTS**.
 
 {% include templates/edge/install/prerequisites.md %}
 
