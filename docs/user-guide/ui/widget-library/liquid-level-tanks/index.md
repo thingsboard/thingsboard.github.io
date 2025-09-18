@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/liquid-level-tanks/index.md %}
-{% include widget-cards.liquid bundleName="liquid_level_tanks" %}
+{% include widget-cards.liquid bundleName="liquid-level-tanks" %}

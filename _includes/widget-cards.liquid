@@ -8,8 +8,8 @@
 <ul class="widget-list">
     {% for bundle in widgetsLibrary %}
         <li class="widget-item">
-            {% assign currentBundle = bundle[0] | replace: "_", "-" %}
-            {% assign link = page.url | replace: "/pe", "" | replace: "/paas", "" | replace: "/paas/eu", "" | append: currentBundle %}
+            {% assign currentBundle = bundle[0] %}
+            {% assign link = page.url | remove: "/paas/eu" | remove: "/paas" | remove: "/pe" | append: currentBundle %}
             <a class="widget-link" href="{{ link }}">
                 <div class="image-section">
                     <img src="{{ bundle[1].image }}" alt="{{ bundle[1].title }} bundle image" loading="lazy">

@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/analogue-gauges/index.md %}
-{% include widget-cards.liquid bundleName="analogue_gauges" %}
+{% include widget-cards.liquid bundleName="analogue-gauges" %}

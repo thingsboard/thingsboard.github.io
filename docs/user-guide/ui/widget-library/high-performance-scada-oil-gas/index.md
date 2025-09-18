@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/high-performance-scada-oil-gas/index.md %}
-{% include widget-cards.liquid bundleName="high_performance_scada_oil_gas" %}
+{% include widget-cards.liquid bundleName="high-performance-scada-oil-gas" %}

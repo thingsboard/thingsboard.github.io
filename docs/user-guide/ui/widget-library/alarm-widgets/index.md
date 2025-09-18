@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/alarm-widgets/index.md %}
-{% include widget-cards.liquid bundleName="alarm_widgets" %}
+{% include widget-cards.liquid bundleName="alarm-widgets" %}

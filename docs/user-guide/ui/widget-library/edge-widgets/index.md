@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/edge-widgets/index.md %}
-{% include widget-cards.liquid bundleName="edge_widgets" %}
+{% include widget-cards.liquid bundleName="edge-widgets" %}

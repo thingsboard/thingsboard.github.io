@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/high-performance-scada-energy-system/index.md %}
-{% include widget-cards.liquid bundleName="high_performance_scada_energy_system" %}
+{% include widget-cards.liquid bundleName="high-performance-scada-energy-system" %}

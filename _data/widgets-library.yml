@@ -127,7 +127,7 @@ cards:
     unread-notifications:
       title: "Unread notifications"
       image: "/images/widgets-library/widgets/cards/unread-notifications.png"
-alarm_widgets:
+alarm-widgets:
   title: "Alarm widgets"
   description: "Visualization of alarms for devices, assets, and other entities."
   image: "/images/widgets-library/bundles/alarm-widgets.svg"
@@ -161,7 +161,7 @@ tables:
       title: "Persistent RPC table"
       description: "Displays Persistent RPC requests based on entity alias and optional filter with the ability of pagination. It also allows to resend or delete selected RPC requests."
       image: "/images/widgets-library/widgets/tables/persistent-table.png"
-count_widgets:
+count-widgets:
   title: "Count widgets"
   description: "Cards to display the number of alarms or entities based on the selected filter."
   image: "/images/widgets-library/bundles/count-widgets.svg"
@@ -195,7 +195,7 @@ maps:
       title: "Route Map - Google"
       description: "Visualize the entity trip on Google Maps. Allows to visualize location history. Use the Trip Animation widget for advanced features."
       image: "/images/widgets-library/widgets/maps/route-map.png"
-analogue_gauges:
+analogue-gauges:
   title: "Analogue gauges"
   description: "Display temperature, humidity, speed, pressure, direction, and other values on analog-style gauges."
   image: "/images/widgets-library/bundles/analogue_gauges.png"
@@ -249,7 +249,7 @@ buttons:
       title: "Power button"
       description: "Sends the command to the device or updates attribute/time series when the user pushes the button. Widget settings will enable you to configure behavior how to fetch the initial state and what to trigger when power on/off states."
       image: "/images/widgets-library/widgets/buttons/power-button.svg"
-control_widgets:
+control-widgets:
   title: "Control widgets"
   description: "Various interactive widgets to control the behavior and state of the IoT devices."
   image: "/images/widgets-library/bundles/control_widgets.png"
@@ -326,7 +326,7 @@ control_widgets:
       title: "Raspberry Pi GPIO Control"
       description: "Allows to display the state of the GPIO for the target Raspberry Pi device using the latest attribute values. You should set the label of the selected data key to the GPIO PIN (e.g., '1') and use boolean values for the widget to display the data."
       image: "/images/widgets-library/widgets/control_widgets/raspberry-pi-gpio-control.png"
-status_indicators:
+status-indicators:
   title: "Status indicators"
   description: "Contains widgets displaying battery level and signal strength."
   image: "/images/widgets-library/bundles/status-indicators.svg"
@@ -347,7 +347,7 @@ status_indicators:
       title: "Status widget"
       description: "Displays current status."
       image: "/images/widgets-library/widgets/status_indicators/status-widget.svg"
-scada_symbols:
+scada-symbols:
   title: "SCADA symbols"
   description: "Bundle with SCADA symbols"
   image: "/images/widgets-library/bundles/scada-symbols.svg"
@@ -356,7 +356,7 @@ scada_symbols:
       title: "SCADA symbol"
       description: "Use for uploading SVG symbols to your SCADA dashboard"
       image: "/images/widgets-library/widgets/scada_symbols/scada-symbol.svg"
-scada_fluid_system:
+scada-fluid-system:
   title: "Traditional SCADA fluid system"
   description: "Bundle with SCADA symbols for fluid system"
   image: "/images/widgets-library/bundles/scada-fluid-system.png"
@@ -657,7 +657,7 @@ scada_fluid_system:
       title: "Pool"
       description: "Pool with current volume value and level visualizations."
       image: "/images/widgets-library/widgets/scada-fluid-system/pool.svg"
-general_high_performance_scada_symbol:
+general-high-performance-scada-symbol:
   title: "General high-performance SCADA symbols"
   description: "Bundle with high-performance SCADA symbols"
   image: "/images/widgets-library/bundles/general-high-performance-scada-symbol.png"
@@ -766,7 +766,7 @@ general_high_performance_scada_symbol:
       title: "HP Electrical engine"
       description: "Electrical engine with various states."
       image: "/images/widgets-library/widgets/general-high-performance-scada-symbol/hp-electrical-engine.svg"
-high_performance_scada_oil_gas:
+high-performance-scada-oil-gas:
   title: "High-performance SCADA oil & gas"
   description: "Bundle with high-performance SCADA symbols for oil and gas system"
   image: "/images/widgets-library/bundles/high-performance-scada-oil-gas.png"
@@ -855,7 +855,7 @@ high_performance_scada_oil_gas:
       title: "HP Small horizontal separator with connector"
       description: "Small horizontal separator with connector with various states."
       image: "/images/widgets-library/widgets/high-performance-scada-oil-gas/hp-small-horizontal-separator-with-connector.svg"
-high_performance_scada_energy_system:
+high-performance-scada-energy-system:
   title: "High-performance SCADA energy system"
   description: "Bundle with high-performance SCADA symbols for energy system"
   image: "/images/widgets-library/bundles/high-performance-scada-energy-system.png"
@@ -1000,7 +1000,7 @@ high_performance_scada_energy_system:
       title: "HP Manufacture"
       description: "Manufacture with various states."
       image: "/images/widgets-library/widgets/high-performance-scada-energy-system/hp-manufacture.svg"
-high_performance_scada_fluid_system:
+high-performance-scada-fluid-system:
   title: "High-performance SCADA fluid system"
   description: "Bundle with high-performance SCADA symbols for fluid system"
   image: "/images/widgets-library/bundles/high-performance-scada-fluid-system.png"
@@ -1045,7 +1045,7 @@ high_performance_scada_fluid_system:
       title: "HP Pool"
       description: "Pool with level visualizations."
       image: "/images/widgets-library/widgets/high-performance-scada-fluid-system/hp-pool.svg"
-liquid_level_tanks:
+liquid-level-tanks:
   title: "Liquid level"
   description: "Visualize the level of liquid inside the tank. Supports various tank shapes."
   image: "/images/widgets-library/bundles/liquid-level.svg"
@@ -1090,7 +1090,7 @@ liquid_level_tanks:
       title: "Horizontal dish ends tank"
       description: "Widget indicates the level of liquid in Horizontal dish ends tank."
       image: "/images/widgets-library/widgets/liquid_level_tanks/horizontal-dish-ends-tank.png"
-digital_gauges:
+digital-gauges:
   title: "Digital gauges"
   description: "Display temperature, humidity, speed, pressure, and other values on digital-style gauges."
   image: "/images/widgets-library/bundles/digital_gauges.png"
@@ -1147,7 +1147,7 @@ digital_gauges:
       title: "LCD bar gauge"
       description: "Preconfigured gauge to display any value reading as a bar. Allows to configure value range, gradient colors, and other settings."
       image: "/images/widgets-library/widgets/digital_gauges/lcd-bar-gauge.png"
-entity_admin_widgets:
+entity-admin-widgets:
   title: "Entity admin widgets"
   description: "Templates of complex widgets that allow to list and create/update/delete devices and assets."
   image: "/images/widgets-library/bundles/entity-admin-widgets.svg"
@@ -1160,7 +1160,7 @@ entity_admin_widgets:
       title: "Asset admin table"
       description: "Customized entity table widget with preconfigured actions to create, update and delete assets."
       image: "/images/widgets-library/widgets/entity_admin_widgets/asset-admin-table.png"
-input_widgets:
+input-widgets:
   title: "Input widgets"
   description: "Various input forms to set the location, image, and other configuration parameters of the device, asset, or other entity."
   image: "/images/widgets-library/bundles/inputs.svg"
@@ -1197,7 +1197,7 @@ input_widgets:
       title: "Update location timeseries"
       description: "Simple form to input new location for pre-defined timeseries keys."
       image: "/images/widgets-library/widgets/input_widgets/update-location-timeseries.png"
-gateway_widgets:
+gateway-widgets:
   title: "Gateway widgets"
   description: "Widgets to manage ThingsBoard IoT Gateway instances."
   image: "/images/widgets-library/bundles/gateway-widgets.svg"
@@ -1246,7 +1246,7 @@ gateway_widgets:
       title: "Gateway Markdown/HTML Card"
       description: "Renders markdown/HTML using the configurable pattern or function with applied attributes or time series values."
       image: "/images/widgets-library/widgets/gateway_widgets/gateway-markdown-html-card.png"
-edge_widgets:
+edge-widgets:
   title: "Edge widgets"
   description: "Widgets to manage ThingsBoard Edge instances and navigate through their entities."
   image: "/images/widgets-library/bundles/edge-widgets.svg"
@@ -1255,7 +1255,7 @@ edge_widgets:
       title: "Edge Quick Overview"
       description: "Overview of entities related to the specified ThingsBoard Edge instance."
       image: "/images/widgets-library/widgets/edge_widgets/edges-overview.png"
-entity_widgets:
+entity-widgets:
   title: "Entity widgets"
   description: "Visualize entity properties and hierarchy using table and tree widgets."
   image: "/images/widgets-library/bundles/entity-widgets.svg"
@@ -1272,7 +1272,7 @@ entity_widgets:
       title: "Entities hierarchy"
       description: "Displays the hierarchy of entities based on their relations. The root of the hierarchy is defined using entity alias. By default, displays entities related using \"Contains\" relation. You may change the behavior using advanced settings."
       image: "/images/widgets-library/widgets/entity_widgets/entities-hierarchy.png"
-home_page_widgets:
+home-page-widgets:
   title: "Home page widgets"
   description: "Contains useful widgets to design the user's home page."
   image: "/images/widgets-library/bundles/home-widgets.svg"
@@ -1304,7 +1304,7 @@ home_page_widgets:
     api-usage:
       title: "API Usage"
       image: "/images/widgets-library/widgets/home_page_widgets/api-usage.png"
-navigation_widgets:
+navigation-widgets:
   title: "Navigation widgets"
   description: "Contains widgets that enable navigation to other dashboards and menu items. Useful to define the home page or dashboard."
   image: "/images/widgets-library/bundles/nav-widgets.svg"
@@ -1329,7 +1329,7 @@ navigation_widgets:
       title: "Dashboards"
       description: "Display and manage the 'last viewed' or 'starred' dashboard lists."
       image: "/images/widgets-library/widgets/navigation_widgets/dashboards.png"
-gpio_widgets:
+gpio-widgets:
   title: "GPIO widgets"
   description: "Visualization and control of the state of the GPIO devices."
   image: "/images/widgets-library/bundles/gpio-widgets.svg"
@@ -1350,7 +1350,7 @@ gpio_widgets:
       title: "Raspberry Pi GPIO Control"
       description: "Allows to display the state of the GPIO for the target Raspberry Pi device using the latest attribute values. You should set the label of the selected data key to the GPIO PIN (e.g., '1') and use boolean values for the widget to display the data."
       image: "/images/widgets-library/widgets/gpio_widgets/raspberry-pi-gpio-control.png"
-html_widgets:
+html-widgets:
   title: "HTML widgets"
   description: "Visualize HTML based on a configurable template or function and device attributes or time series values."
   image: "/images/widgets-library/bundles/html-widgets.svg"

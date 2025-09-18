@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/scada-symbols/index.md %}
-{% include widget-cards.liquid bundleName="scada_symbols" %}
+{% include widget-cards.liquid bundleName="scada-symbols" %}

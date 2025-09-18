@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/digital-gauges/index.md %}
-{% include widget-cards.liquid bundleName="digital_gauges" %}
+{% include widget-cards.liquid bundleName="digital-gauges" %}

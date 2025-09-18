@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/general-high-performance-scada-symbol/index.md %}
-{% include widget-cards.liquid bundleName="general_high_performance_scada_symbol" %}
+{% include widget-cards.liquid bundleName="general-high-performance-scada-symbol" %}

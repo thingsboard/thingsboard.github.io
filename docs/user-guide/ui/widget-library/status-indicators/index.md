@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/status-indicators/index.md %}
-{% include widget-cards.liquid bundleName="status_indicators" %}
+{% include widget-cards.liquid bundleName="status-indicators" %}

@@ -9,4 +9,4 @@ hidetoc: "true"
 ---
 {% include get-hosts-name.html %}
 {% include docs/user-guide/ui/widget-library/scada-fluid-system/index.md %}
-{% include widget-cards.liquid bundleName="scada_fluid_system" %}
+{% include widget-cards.liquid bundleName="scada-fluid-system" %}
