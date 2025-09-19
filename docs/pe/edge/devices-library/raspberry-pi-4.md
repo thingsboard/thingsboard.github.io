@@ -1,7 +1,7 @@
 ---
 docsTag: "edge-pe"
 layout: devices-library-article
-title: How to connect Raspberry Pi 4 to ThingsBoard?
+title: How to install ThingsBoard Edge on Raspberry Pi 4?
 category: Single-board computers
 chip: Broadcom BCM2711
 connectivity: HTTP, MQTT, WIFI, BLE
