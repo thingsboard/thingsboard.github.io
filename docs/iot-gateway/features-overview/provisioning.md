@@ -7,13 +7,11 @@ description: Learn how to use ThingsBoard IoT Gateway's device provisioning feat
 * TOC
 {:toc}
 
-## Introduction
-
-The **ThingsBoard IoT Gateway** supports the [device provisioning](https://thingsboard.io/docs/user-guide/device-provisioning/) feature, allowing it to **automatically register itself** on the ThingsBoard platform and obtain its credentials without manual configuration.  
+The **ThingsBoard IoT Gateway** supports the [device provisioning](https://thingsboard.io/docs/user-guide/device-provisioning/){:target="_blank"} feature, allowing it to **automatically register itself** on the ThingsBoard platform and obtain credentials without manual setup.
 
 This is especially useful for:  
-- **Device manufacturers** — enabling mass production deployment with minimal configuration.  
-- **System integrators** — simplifying field installation and avoiding manual setup per device.  
+- **Device manufacturers** — enabling mass deployment with minimal configuration.
+- **System integrators** — simplifying field installation and avoiding per‑device manual setup.
 
 Once provisioned, the gateway uses the received credentials to connect to the platform and operate as a standard ThingsBoard device.  
 
@@ -73,7 +71,7 @@ For example:
 
 If you want the gateway to re-provision itself (for example, to change authentication type or rotate credentials), you can remove the stored credentials via a service RPC:
 
-**RPC Method:** [`remove_provisioned_credentials`](/docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/#remove_provisioned_credentials-rpc-method)
+**RPC Method:** [remove_provisioned_credentials](/docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/#remove_provisioned_credentials-rpc-method){:target="_blank"}
 
 When executed:
 - The gateway deletes the stored credentials from its config folder.
@@ -88,10 +86,10 @@ To use the provisioning feature you need to follow next steps:
 **1. Create a Device profile**
 
 - Go to the "**Devices profile**" page, click the "**plus**" button and select "**Create new device profile**" from drop-down menu.
-- Enter device profile name and go to the **Device provisioning** tab.
+- Enter a device profile name and open the **Device provisioning** tab.
 - Enable provisioning by selecting "**Allow to create new devices**" option.
-- Save the values of **provisioning device key** and **provisioning device secret**.
-- Click "**Add**" to create device profile.
+- Copy/save the **Provisioning device key** and **Provisioning device secret**.
+- Click "**Add**" to create the device profile.
 
 {% assign gatewayDeviceProvisioning1 = '
       ===
@@ -99,10 +97,10 @@ To use the provisioning feature you need to follow next steps:
             title: Go to the "**Devices profile**" page, click the "**plus**" button and select "**Create new device profile**" from drop-down menu.
       ===
             image: /images/gateway/device-provisioning/gateway-device-provisioning-2-ce.png,
-            title: Enter device profile name and go to the **Device provisioning** tab.
+            title: Enter a device profile name and open the **Device provisioning** tab.
       ===
             image: /images/gateway/device-provisioning/gateway-device-provisioning-3-ce.png,
-            title: Enable provisioning by selecting "**Allow to create new devices**" option. Save the values of **provisioning device key** and **provisioning device secret**. Click "**Add**" to create device profile.
+            title: Enable provisioning by selecting "**Allow to create new devices**" option.<br> Copy/save the **Provisioning device key** and **Provisioning device secret**. <br>Click "**Add**" to create the device profile.
       ===
             image: /images/gateway/device-provisioning/gateway-device-provisioning-4-ce.png,
             title: Device profile created.
@@ -111,18 +109,19 @@ To use the provisioning feature you need to follow next steps:
 
 {% include images-gallery.liquid imageCollection=gatewayDeviceProvisioning1 %}
 
-**2. Create a Gateway**
+**2. Download the Gateway configuration file**
 
-- Go to the "**Gateways**" page, and click the "**plus**" button in the top-right corner.
-- Enter the gateway name and select the **device profile** you created above.
+- [Click to download docker-compose.yml for the Gateway.](/docs/iot-gateway/resources/docker-compose.yml){:target="_blank" download="docker-compose.yml"}
 
-**3. Edit `docker-compose.yml` for the gateway**
+**3. Edit the configuration file**
 
-Add the provisioning variables under environment:
+- Open the downloaded `docker-compose.yml` and set the provisioning variables:
 
 ```yaml
 ...
   environment:
+    - host=THINGSBOARD_HOST
+    - port=THINGSBOARD_PORT
     - TB_GW_PROVISIONING_DEVICE_KEY=YOUR_PROVISION_KEY
     - TB_GW_PROVISIONING_DEVICE_SECRET=YOUR_PROVISION_SECRET
     - TB_GW_PROVISIONING_DEVICE_NAME=Factory-Gateway-01
@@ -130,32 +129,24 @@ Add the provisioning variables under environment:
 ```
 {: .copy-code}
 
-&#42; Replace `YOUR_PROVISION_KEY` and `YOUR_PROVISION_SECRET` with the actual values from the Device profile in ThingsBoard.
-
-{% capture difference %}
-**Note**: If you&#39;re using provisioning, **remove** these legacy auth variables (if present):
-`TB_GW_ACCESS_TOKEN`, `TB_GW_USERNAME`, `TB_GW_PASSWORD`, `TB_GW_CLIENT_ID`.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+&#42; Replace `THINGSBOARD_HOST` and `THINGSBOARD_PORT` with the **host** and **port** of your ThingsBoard instance.<br>
+&#42; Replace `YOUR_PROVISION_KEY` and `YOUR_PROVISION_SECRET` with the ** values from the device profile**.
 
 {% assign gatewayDeviceProvisioning2 = '
     ===
         image: /images/gateway/device-provisioning/gateway-device-provisioning-5-ce.png,
-        title: Go to the "**Devices profile**" page, click "**+**" and select "**Create new device profile**" from drop-down menu.
+        title: Open the downloaded `docker-compose.yml` and set the provisioning variables.
     ===
         image: /images/gateway/device-provisioning/gateway-device-provisioning-6-ce.png,
-        title: Enter device profile name and go to the **Device provisioning** tab.
-    ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-7-ce.png,
-        title: Enable provisioning by selecting "**Allow to create new devices**" option. Save the values of **provisioning device key** and **provisioning device secret**. Click "**Add**" to create device profile.
+        title: Replace `THINGSBOARD_HOST` and `THINGSBOARD_PORT` with the host and port of your ThingsBoard instance.<br>Replace `YOUR_PROVISION_KEY` and `YOUR_PROVISION_SECRET` with the values from the device profile.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=gatewayDeviceProvisioning2 %}
 
-**4. Start the Gateway**
+**4. Start the Gateway** 
 
-Execute the following command to run the Gateway:
+- Execute the following command to run the Gateway:
 
 ```
 docker compose up
@@ -164,7 +155,7 @@ docker compose up
 
 {% assign gatewayDeviceProvisioning3 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-8-ce.png,
+        image: /images/gateway/device-provisioning/gateway-device-provisioning-7-ce.png,
         title: Execute `docker compose up` command to run the Gateway.
 '
 %}
@@ -173,23 +164,23 @@ docker compose up
 
 **5. Verify the connection**
 
-The gateway will **auto-register** and obtain credentials from ThingsBoard. It will then connect using those credentials.
+The Gateway **auto‑registers**, obtains credentials, and connects using them.
 
 {% assign gatewayDeviceProvisioning4 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-9-ce.png,
-        title: The gateway will **auto-register** and obtain credentials from ThingsBoard. It will then connect using those credentials.
+        image: /images/gateway/device-provisioning/gateway-device-provisioning-8-ce.png,
+        title: The Gateway auto‑registers, obtains credentials, and connects using them.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=gatewayDeviceProvisioning4 %}
 
-You can check the status in the ThingsBoard UI ("**Gateways**" page / device details).
+In the ThingsBoard UI, check status on the "**Gateways**" page or in the device details.
 
 {% assign gatewayDeviceProvisioning5 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-10-ce.png,
-        title: You can check the status in the ThingsBoard UI (Gateways page / device details).
+        image: /images/gateway/device-provisioning/gateway-device-provisioning-9-ce.png,
+        title: In the ThingsBoard UI, check status on the "**Gateways**" page or in the device details.
 '
 %}
 
