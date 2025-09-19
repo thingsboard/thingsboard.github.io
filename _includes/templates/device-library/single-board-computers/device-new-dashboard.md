@@ -1,55 +1,55 @@
-### Create new dashboard
+### Create a New Dashboard
 We will create a dashboard and add the most popular widgets. See the instructions below.
 
 {% assign creatingNewDashboardPE = '
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png,
-        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
+        title: Open the **Dashboards** page. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png,
-        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
+        title: Input dashboard name. For example, "My New Dashboard". Click **"Add"** to add the dashboard;
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png,
-        title: Your dashboard should be listed first since the table sorts dashboards using the time of the creation by default. Click on the "Open dashboard" icon.
+        title: Your dashboard should be listed first since the table sorts dashboards using the time of the creation by default. Click on the **"Open dashboard"** icon.
     '
 %}
 
 {% assign creatingNewDashboardCE = '
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png,
-        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
+        title: Open the Dashboards page. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png,
-        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
+        title: Input dashboard name. For example, "My New Dashboard". Click **"Add"** to add the dashboard;
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-3-ce.png,
-        title: Your dashboard should be listed first since the table sorts dashboards using the creation time of the creation by default. Click on the "Open dashboard" icon.
+        title: Your dashboard should be listed first since the table sorts dashboards using the creation time of the creation by default. Click on the **"Open dashboard"** icon.
     '
 %}
 
 {% assign creatingNewDashboardEdgePE = '
     ===
-        image: /,
-        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
+        image: /images/edge/config/general/create-new-dashboard-pe.webp,
+        title: Open the Dashboards page. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
-        image: /,
-        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
+        image: /images/edge/config/general/new-dashboard-dialog-pe.webp,
+        title: In the pop-up window, enter a dashboard title. Other fields are optional. Click the **"Add"** button to proceed;
     ===
-        image: /,
-        title: Your dashboard should be listed first since the table sorts dashboards using the time of the creation by default. Click on the "Open dashboard" icon.
+        image: /images/edge/config/general/dashboard-edit-mode-pe.webp,
+        title: After creating the dashboard, you will automatically transition to edit mode. 
 '
 %}
 
 {% assign creatingNewDashboardEdgeCE = '
     ===
-        image: /,
-        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
+        image: /images/edge/config/general/create-new-dashboard.webp,
+        title: Go to the **Dashboards** section. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
-        image: /,
-        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
+        image: /images/edge/config/general/new-dashboard-dialog.webp,
+        title: In the pop-up window, enter a dashboard title. Other fields are optional. Click the **"Add"** button to proceed;
     ===
-        image: /,
-        title: Your dashboard should be listed first since the table sorts dashboards using the creation time of the creation by default. Click on the "Open dashboard" icon.
+        image: /images/edge/config/general/dashboard-edit-mode.webp,
+        title: After creating the dashboard, you will automatically transition to edit mode.
 '
 %}
 
@@ -115,45 +115,39 @@ type or related to a certain asset. You may learn more about different aliases h
 
 {% assign creatingEntityAliasEdgeCE = '
     ===
-        image: /,
-        title: Enter edit mode. Click on the pencil button in the bottom right corner;
+        image: /images/edge/config/general/create-alias-1-ce.webp,
+        title: In the dashboard edit mode, click the **"Entity aliases"** icon in the top right corner.
     ===
-        image: /,
-        title: Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;
+        image: /images/edge/config/general/create-alias-2-ce.webp,
+        title: Click **“Add alias”**.
     ===
-        image: /,
-        title: Click "Add alias";
+        image: /images/edge/config/general/create-alias-3-ce.webp,
+        title: Enter the alias name (for example, “My Device”). Select **"Single entity"** as the filter type and **"Device"** as the type. Then, select the device from the drop-down menu. Click the **"Add"** button.
     ===
-        image: /,
-        title: Enter an alias name (for example, "My Device"). Choose "Single entity" as the Filter type, select "Device" for Type, and begin typing "My New" to trigger autocomplete suggestions;
+        image: /images/edge/config/general/create-alias-4-ce.webp,
+        title: Click **"Save"** to save the entity alias.
     ===
-        image: /,
-        title: Click "Add" and then "Save";
-    ===
-        image: /,
-        title: Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.
+        image: /images/edge/config/general/create-alias-5-ce.webp,
+        title: Finally, click **"Save"** on the dashboard editor page to save the changes. Then, re-enter edit mode.
 '
 %}
 
 {% assign creatingEntityAliasEdgePE = '
     ===
-        image: /,
-        title: Enter edit mode. Click on the pencil button in the bottom right corner;
+        image: /images/edge/config/general/create-alias-1-pe.webp,
+        title: In the dashboard edit mode, click the **"Entity aliases"** icon in the top right corner.
     ===
-        image: /,
-        title: Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;
+        image: /images/edge/config/general/create-alias-2-pe.webp,
+        title: Click **“Add alias”**.
     ===
-        image: /,
-        title: Click "Add alias";
+        image: /images/edge/config/general/create-alias-3-pe.webp,
+        title: Enter the alias name (for example, “My Device”). Select **"Single entity"** as the filter type and **"Device"** as the type. Then, select the device from the drop-down menu. Click the **"Add"** button.
     ===
-        image: /,
-        title: Enter an alias name (for example, "My Device"). Choose "Single entity" as the Filter type, select "Device" for Type, and begin typing "My New" to trigger autocomplete suggestions;
+        image: /images/edge/config/general/create-alias-4-pe.webp,
+        title: Click **"Save"** to save the entity alias.
     ===
-        image: /,
-        title: Click "Add" and then "Save";
-    ===
-        image: /,
-        title: Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.
+        image: /images/edge/config/general/create-alias-5-pe.webp,
+        title: Finally, click **"Save"** on the dashboard editor page to save the changes. Then, re-enter edit mode.
 '
 %}
 

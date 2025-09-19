@@ -2,12 +2,13 @@
 
 {% include /templates/edge/user-guide/starting-edge-on-device.md %}
 
-To proceed with the installation of the **Edge instance** on the {{deviceName}}, you need to initiate an **SSH (Secure Shell)** connection.
+To proceed with the **Edge installation** on the {{deviceName}}, you need to initiate an **SSH (Secure Shell)** connection.
 
 {% if page.url contains "raspberry-pi" %}
 
-For security reasons, **SSH** is disabled by default on all Raspberry Pi devices. To proceed, you need to enable it first.
-If you have a monitor/keyboard connected, you can enable **SSH** during storage device setup, via GUI, or in the Terminal.
+For security reasons, **SSH** is disabled by default on all Raspberry Pi devices.
+You need to enable it to continue.
+If you have a monitor and keyboard connected, you can enable **SSH** during storage device setup, via the GUI, or in the Terminal.
 
 To enable **SSH** in the Terminal, run: 
 
@@ -30,7 +31,7 @@ On the **Raspberry Pi Software Configuration Tool (raspi-config)** page:
         title: Select **Yes** to confirm that the SSH server is to be enabled
     ===
         image: /images/devices-library/edge/paspberry-pi/4-raspi-config-ssh-server-enabled-ok.webp,
-        title: A confirmation message should appear indicating that the SSH server is enabled.
+        title: A confirmation message should appear indicating that the **SSH server is enabled**.
     ===
         image: /images/devices-library/edge/paspberry-pi/5-raspi-config-finish.webp,
         title: Select **Finish** and close the program.
@@ -41,7 +42,7 @@ On the **Raspberry Pi Software Configuration Tool (raspi-config)** page:
 
 {% endif %}
 
-To initiate an **SSH (Secure Shell)** connection to the {{deviceName}}, open the terminal and run the following command:
+To initiate an **SSH (Secure Shell)** connection to the {{deviceName}}, open the Terminal and run the following command:
 
 ```bash
 ssh {{userName}}@ip_address #Enter the actual IP address
@@ -49,7 +50,7 @@ ssh {{userName}}@ip_address #Enter the actual IP address
 {: .copy-code}
 
 **ip_address:** Replace "_ip_address_" with the actual IP address of the {{deviceName}}.<br>
-**Password:** The terminal will request the password. {% if page.url contains "raspberry-pi" %}_The default password is `raspberry`._{% endif %}
+**Password:** The Terminal will request the password. {% if page.url contains "raspberry-pi" %}_The default password is `raspberry`._{% endif %}
 
 Once connected, follow the installation instructions below. Start by creating a new directory:
 
@@ -125,7 +126,7 @@ To add the **ThingsBoard Gateway**:
 
 ## Installing the ThingsBoard IoT Gateway Software on the {{deviceName}}(optional)
 
-Once the **docker-compose.yml** file has been downloaded, open the terminal and initiate the **SSH** connection to the {{deviceName}}:
+Once the **docker-compose.yml** file has been downloaded, open the Terminal and initiate the **SSH** connection to the {{deviceName}}:
 
 ```bash
 ssh {{userName}}@ip_address
@@ -133,7 +134,7 @@ ssh {{userName}}@ip_address
 {: .copy-code}
 
 **ip_address:** Replace "_ip_address_" with the actual IP address of the {{deviceName}}.<br>
-**Password:** The terminal will request the password. {% if page.url contains "raspberry-pi" %}_The default password is `raspberry`._{% endif %}
+**Password:** The Terminal will request the password. {% if page.url contains "raspberry-pi" %}_The default password is `raspberry`._{% endif %}
 
 To install **ThingsBoard IoT Gateway**, create a new directory:
 
@@ -161,4 +162,5 @@ docker compose logs -f
 {: .copy-code}
 
 Once the **ThingsBoard Edge** and **ThingsBoard IoT Gateway** are running on the {{deviceName}}, you can connect IoT devices and sensors to transfer data. 
-If your devices don’t speak native ThingsBoard protocols and/or you want to connect many devices via a single Gateway, consider adding a connector.
+
+> If your devices don’t speak native ThingsBoard protocols and/or you want to connect many devices via a single Gateway, consider adding a connector.

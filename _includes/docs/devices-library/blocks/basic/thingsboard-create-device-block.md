@@ -64,6 +64,6 @@ For simplicity, we will provide the device manually using the UI.
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceEdgePE %}
 {% elsif page.docsPrefix == "edge/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceEdgeCE %}
-{% else %}  
+{% else %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
 {% endif %} 

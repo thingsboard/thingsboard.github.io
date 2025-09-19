@@ -1,4 +1,4 @@
-Once you have successfully published the attributes and telemetry data, you should immediately see them in the Device Telemetry Tab:
+Once you have successfully published the attributes and telemetry data, you should immediately see them in the **"Latest telemetry"** tab:
 
 {% assign deviceTelemetryCE = '
     ===
@@ -22,30 +22,24 @@ Once you have successfully published the attributes and telemetry data, you shou
 
 {% assign deviceTelemetryEdgeCE = '
     ===
-        image: /,
-        title: Click on the device row in the table to open device details.
-    ===
-        image: /,
-        title: Navigate to the telemetry tab.
+        image: /images/edge/config/general/connect-device-3-ce.webp,
+        title: Click on the device to open device details. Select the **"Latest telemetry"** tab.
 '
 %}
 
 {% assign deviceTelemetryEdgePE = '
     ===
-        image: /,
-        title: Click on the device row in the table to open device details.
-    ===
-        image: /,
-        title: Navigate to the telemetry tab.
+        image: /images/edge/config/general/connect-device-3-pe.webp,
+        title: Click on the device to open device details. Select the **"Latest telemetry"** tab.
 '
 %}
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryPE %}
 {% elsif page.docsPrefix == "pe/edge/" %}
-    {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryEdgePE %}
+    {% include images-gallery.liquid imageCollection=deviceTelemetryEdgePE %}
 {% elsif page.docsPrefix == "edge/" %}
-    {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryEdgeCE %}
+    {% include images-gallery.liquid imageCollection=deviceTelemetryEdgeCE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryCE %}
 {% endif %} 

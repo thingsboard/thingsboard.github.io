@@ -1,8 +1,8 @@
 ### Import dashboard
 
 You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
- on the “+” button in the upper right corner of the page and choose “Import dashboard”. The dashboard import window 
-should pop up, and you will be prompted to upload the JSON file and click “Import”.
+ the **“+”** button in the upper right corner of the page and choose **“Import dashboard”**. The dashboard import window 
+should pop up, and you will be prompted to upload the **JSON** file and click **“Import”**.
 
 {% assign importingDashboardCE = '
     ===
@@ -26,21 +26,21 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
 
 {% assign importingDashboardEdgeCE = '
     ===
-        image: /,
+        image: /images/edge/config/general/import-dashboard-1-ce.webp,
     ===
-        image: /,
+        image: /images/edge/config/general/import-dashboard-2-ce.webp,
     ===
-        image: /,
+        image: /images/edge/config/general/import-dashboard-3-ce.webp,
 '
 %}
 
 {% assign importingDashboardEdgePE = '
     ===
-        image: /,
+        image: /images/edge/config/general/import-dashboard-1-pe.webp,
     ===
-        image: /,
+        image: /images/edge/config/general/import-dashboard-2-pe.webp,
     ===
-        image: /,
+        image: /images/edge/config/general/import-dashboard-3-pe.webp,
 '
 %}
 
