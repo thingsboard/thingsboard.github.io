@@ -1,17 +1,25 @@
 * TOC
 {:toc}
 
-The **Markdown/HTML card** widget is a versatile way to display static or semi‑dynamic content in Markdown or free‑form HTML on a ThingsBoard dashboard. It can work **with or without data sources** (via entity aliases and data keys).
+The **Markdown/HTML Card** is a versatile widget for static or semi‑dynamic content on a ThingsBoard dashboard. 
+It accepts **Markdown** or free‑form **HTML**. You can use it **with data sources** via **entity aliases** and **data keys** — or use it **without any data sources** at all.
 
-**Markdown** is a simple syntax for formatted text. Its advantages are **speed and simplicity** — you don&#39;t need to know HTML to produce clean formatting.   
-If you need more precise control over layout, styles, or interactive elements, switch to **HTML**.
+<br><b><font size="3">Markdown vs HTML</font></b>
+
+- **Markdown** is a simple syntax for formatting text. Its advantages are **speed and simplicity** — you don&#39;t need to know HTML to produce clean formatting.   
+- **HTML** — choose this when you need precise control over layout, styling, or interactive elements (tables, icons, embedded media, complex grids).
+
+<hr>
 
 ## Key capabilities
 
-- **Dynamic content.** Build text/markup from the latest telemetry and/or attributes fetched via an entity alias and data keys.
-- **Actions & navigation.** Handle clicks on HTML elements to navigate to a dashboard state, open a dialog, or trigger another action.
-- **Styling.** Add styles in the Markdown/HTML CSS section or use inline styles directly in your markup.
+- **Dynamic content.** Author in Markdown or HTML; mix text, lists, tables, links, images, icons.
+- **Optional data.** Pull telemetry/attributes via **entity alias** and **data keys** to inject values in a template or process them in a value function.
+- **Actions & navigation.** Handle clicks on HTML elements (by *id*) to navigate to a dashboard state, open a dialog, or trigger another action.
+- **Styling.** Use the dedicated **Markdown/HTML CSS** section; inline styles in your markup are also supported.
 - **Fast integration.** Works well alongside other widgets (time series, tables, maps) and is ideal for notes, contextual explanations, and compact info cards.
+
+<hr>
 
 ## How it works
 
@@ -19,83 +27,110 @@ If you need more precise control over layout, styles, or interactive elements, s
 
 Choose the "**Markdown/HTML Card**" widget from the "**Cards**" widget bundle and place it on your dashboard.
 
-<b><font size="4">Step 2 - Configure data sources</font></b>
+{% include images-gallery.html imageCollection="step-1" %}
+
+<b><font size="4">Step 2 — Configure data sources (optional)</font></b>
 
 On the "**Data**" tab:
-- Add an [Entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"} and required data keys (attributes/telemetry).
-- These values become available to the widget&#39;s content logic (pattern or value function).
+- Create an [Entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"} for the target entity (e.g., *Asset* → *Office A*).
+- Add **data keys** (attributes/telemetry) you plan to use (e.g., *address*, *email*, *phone*).
 
-<b><font size="4">Step 3 - Choose how to generate content</font></b>
+These values become available to the widget&#39;s content logic (pattern or value function).
+
+{% include images-gallery.html imageCollection="step-2" %}
+
+<b><font size="4">Step 3 - Choose content generation</font></b>
 
 You have two options on the "**Appearance**" tab:
 
 - **1. Markdown/HTML pattern**   
-A simple template that uses placeholders like **${key}** (and optional formatting, e.g., ${address:0}) which ThingsBoard replaces with values from the selected data source.
-  - Best for **static layouts** with **a few dynamic inserts**.
+  A simple template using placeholders like **${key}** (optional formatting like ${address:0}) that ThingsBoard replaces with values from the selected data source.   
+  **Best for:** static layouts with a few dynamic inserts.   
+  **Use a pattern** if:
+    - You just need to "output the value as is".
+    - Simple substitutions **${key}** and basic formatting (e.g., ${floor:0}) are sufficient.
 
-- **2. Markdown/HTML value function**
-A JavaScript function (enable "**Use markdown/HTML value function**") that receives the data array and widget context, then **returns a string** with Markdown or HTML.
-  - Best for when you need **logic**: conditions, loops, calculations, fallbacks, or building complex markup.
+  {% include images-gallery.html imageCollection="step-3-1" %}
 
-<b><font size="3">When to use which</font></b>
+- **2. Markdown/HTML value function**   
+  A JavaScript function that receives data and the widget context, then returns a string with Markdown or HTML.   
+  **Best for:** conditions/loops/calculations, combining multiple keys, switching layouts based on data.   
+  **Use a value function** if:
+    - You need logic (if/else, loops, switching layout based on data).
+    - You want to combine multiple keys into complex markup or insert values only under certain conditions.
 
-**When to use which**
+  {% include images-gallery.html imageCollection="step-3-2" %}
 
-- **Use a pattern** if:
-  - You just need to "output the value as is".
-  - Simple substitutions **${key}** and basic formatting (e.g., ${floor:0}) are sufficient.
+<b><font size="4">Step 4 — Content styling (CSS)</font></b>
 
-- **Use a value function** if:
-  - You need logic (if/else, loops, switching layout based on data).
-  - You want to combine multiple keys into complex markup or insert values only under certain conditions.
+Use the **Markdown/HTML CSS** section ("**Appearance**" tab) to style your card (recommended for maintainability). Inline styles inside your markup are also supported.
 
-<b><font size="4">Step 4 — Styling (CSS)</font></b>
+{% include images-gallery.html imageCollection="step-4" %}
 
-On the "**Appearance**" tab, use the **Markdown/HTML CSS** section to style your card (preferred for maintainability). Inline styles inside your HTML are also supported.
+<b><font size="4">Step 5 — Card styling</font></b>
 
-<b><font size="4">Step 5 — Card options</font></b>
+In the "**Widget card**" tab:
 
-Optionally disable "**Enable fullscreen**" and "**Enable data export**" if the card is informational only.
-Set and style the **card title** on the "**Card**" tab to keep your dashboard consistent.
+- **Card title**. Set the **Title/Icon** and their style to keep your dashboard consistent.
+- **Card styles**. Configure **Text color**, **Background color**, and **other Card style** options (padding, margin, border radius, shadow).
+- **Card buttons**. Optionally disable "**Enable fullscreen**" and "**Enable data export**" for purely informational cards.
+
+{% include images-gallery.html imageCollection="step-5" %}
 
 <b><font size="4">Step 6 - Actions & navigation</font></b>
 
 The Markdown/HTML Card supports [Widget header button](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#widget-header-button){:target="_blank"} and [On HTML element click](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#on-html-element-click){:target="_blank"} actions.
+
+**On HTML element click** lets you bind an action to any HTML element with an id (e.g., navigate to a state, open a dialog).
 
 Use "**On HTML element click**" action.
 - Add an element identifier in your HTML (e.g., id="floor"). 
 - Bind an action to that element (navigate to a state, open a popover/dialog, etc.). 
 - This lets you build interactive cards or banners without writing a full custom widget.
 
-**Tip**: Ensure the element id you bind in the action exactly matches the id in your HTML.
+**Tip**: make sure the **id** in your HTML **exactly** matches the identifier you configure in the **action**.
+
+{% include images-gallery.html imageCollection="step-6" %}
+
+<hr>
 
 ## Example: Office information card
 
-Add an office contact card on the dashboard.
+Create a compact office info card.
 
-**Step 1. First, prepare the entity**. Create an [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} named "**Office A**" with the following attributes:
-- **address** — 645 5th Ave, New York 
-- **officeManager** — Emma Johnson
-- **phone** — +1 121 333 4455 
-- **email** — office.a@mail.com
+{% include images-gallery.html imageCollection="example-markdown-html-card-7" %}
 
-If needed, you can [import the asset](/docs/{{docsPrefix}}user-guide/bulk-provisioning/#import-entities){:target="_blank"} with all attributes prefilled by using [this CSV file](/docs/pe/user-guide/widgets/cards/resources/office-a-asset.csv){:target="_blank" download="office-a-asset.csv"} for convenience.
+<br><b><font size="4">Step 1. Prepare the entity</font></b>
+
+Create the [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} named "**Office A**" with the following attributes:
+- **address**: 645 5th Ave, New York 
+- **officeManager**: Emma Johnson
+- **phone**: +1 121 333 4455 
+- **email**: office.a@mail.com
+
+(You can also [import](/docs/{{docsPrefix}}user-guide/bulk-provisioning/#import-entities){:target="_blank"} a prefilled Asset from [CSV](/docs/pe/user-guide/widgets/cards/resources/office_a_asset.csv){:target="_blank" download="office-a-asset.csv"}).
 
 {% include images-gallery.html imageCollection="example-markdown-html-card-1" %}
 
 <br>
 
-**Step 2.1 Add the widget**
-- Open or [create](/docs/{{docsPrefix}}user-guide/dashboards/#create-new-dashboard){:target="_blank"} a dashboard and click "**Add new widget**" button at the top of the screen.
-- From the "**Cards**" widget bundle, select the "**Markdown/HTML Card**" widget.
+<b><font size="4">Step 2.1 Add the widget</font></b>
 
-**Step 2.2 Configure data ("Data" tab)**
+- Open or [create](/docs/{{docsPrefix}}user-guide/dashboards/#create-new-dashboard){:target="_blank"} a dashboard, then add the **Markdown/HTML Card** widget from the **Cards** widget bundle.
+
+{% include images-gallery.html imageCollection="example-markdown-html-card-2" %}
+
+<b><font size="4">Step 2.2 Configure data ("Data" tab)</font></b>
+
 - **Define the entities from which the data will be retrieved**. To do this, add an entity alias:
   - In the **Entity alias** field, enter the name "**Office A**" and click **Create new**.
   - Specify the filter type as **Single entity**, select the type **Asset**, choose the asset "**Office A**", and click "**Add**".
 - In the **Data keys** section, add the following: **address**, **officeManager**, **email**, and **phone**.
 
-**Step 2.3 Enable dynamic content ("**Appearance**" tab)**
+{% include images-gallery.html imageCollection="example-markdown-html-card-3" %}
+
+<b><font size="4">Step 2.3 Enable dynamic content ("Appearance" tab)</font></b>
+
 - Enable the "**Use markdown/HTML value function**" option.
 - Insert the **Markdown/HTML value function** below. 
 
@@ -264,30 +299,29 @@ if (data.length) {
 ```
 {:.copy-code.expandable-5}
 
-**Step 2.4 Card settings ("**Widget card**" tab)**
+{% include images-gallery.html imageCollection="example-markdown-html-card-4" %}
+
+<b><font size="4">Step 2.4 Card settings ("Widget card" tab)</font></b>
+
 - Optionally disable "**Enable fullscreen**" and "**Enable data export**" if the card is informational only.
+- Click "**Add**".
 
-**Step 2.5 Save**
-- Click "**Add**" and resize the widget on the dashboard as needed.
+{% include images-gallery.html imageCollection="example-markdown-html-card-5" %}
 
-**Expected result**
+<b><font size="4">Step 2.5 Save</font></b>
+
+- Resize the card freely within your dashboard layout. Then, save the dashboard.
+
+{% include images-gallery.html imageCollection="example-markdown-html-card-6" %}
+
+<b><font size="4">Expected result</font></b>
 
 You&#39;ll see a compact, clean office contact card on the dashboard. Missing attributes display as "Not found". Resize the card freely within your dashboard layout.
 
-{% include images-gallery.html imageCollection="example-markdown-html-card-2" %}
+{% include images-gallery.html imageCollection="example-markdown-html-card-7" %}
 
+<b><font size="4">Download configured Office A Card widget</font></b>
 
-<b>Ключові характеристики карток Markdown/HTML:</b>
+You can download the configured [Office A card widget](/docs/pe/user-guide/widgets/cards/resources/office_a_card_widget.json){:target="_blank" download="office_a_card_widget.json"} and reuse it in your dashboards.
 
-- Гнучкість у контенті:
-Користувачі можуть використовувати простоту Markdown для базового форматування тексту (заголовки, списки, жирний/курсивний текст) або використовувати всю потужність HTML для складніших макетів, стилів та інтерактивних елементів (таблиці, вбудовані медіафайли, користувацький CSS).
-
-- Динамічний контент:
-У багатьох реалізаціях ці картки можуть відображати динамічні дані або інформацію, отриману з різних джерел, такі як показники датчиків, оновлення стану системи або зовнішні API. Це часто передбачає використання шаблонів або сценаріїв у вмісті картки.
-
-- Інтеграція:
-Вони зазвичай інтегровані в платформи, які потребують налаштовуваних інтерфейсів користувача, що дозволяє користувачам створювати індивідуальні панелі інструментів або інформаційні дисплеї без необхідності написання складного коду програми.
-
-- Випадки використання:
-Приклади включають відображення даних датчиків на панелі керування домашньою автоматизацією, представлення форматованого текстового контенту в базі знань або створення власних віджетів із вбудованим веб-контентом.
-
+**Important**: After importing, check the **entity alias** and **data keys** — you may need to re-bind them.
