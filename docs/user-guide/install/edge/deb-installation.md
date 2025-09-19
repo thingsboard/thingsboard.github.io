@@ -12,7 +12,7 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 
 {% assign docsPrefix = "edge/" %}
 
-This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **Ubuntu 18.04 LTS and 20.04 LTS**.
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **Ubuntu 22.04 LTS and 24.04 LTS**.
 
 {% include templates/edge/install/prerequisites.md %}
 
