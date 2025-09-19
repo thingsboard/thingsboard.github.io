@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: generator
-description: Periodically generates messages using configured originator and script.
+description: Generates messages at configurable time intervals using a custom script function.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

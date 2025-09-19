@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: device state
-description: Sends device activity events for the message originator.
+description: Sends device connectivity events for the message originator.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
