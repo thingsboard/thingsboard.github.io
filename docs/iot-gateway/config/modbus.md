@@ -2,6 +2,7 @@
 layout: docwithnav-gw
 title: Modbus Connector Configuration
 description: Modbus protocol support for ThingsBoard IoT Gateway
+redirect_from: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
 
 ---
 
