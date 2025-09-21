@@ -30,7 +30,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — Sends reply to REST API call that was originally sent to rule engine.
 - [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply) — Sends response to the RPC Call originator.
 - [rpc call request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request) — Sends RPC requests to the Device and routing response to the next Rule nodes.
-- [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — Stores the incoming message payload as attribute data of the message originator.
+- [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — stores the incoming message data as attribute data of the message originator.
 - [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries) — stores the incoming message data as time series data of the message originator.
 - [save to custom table](/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table) — Node stores data from incoming Message payload to the Cassandra database into the predefined custom table that should have cs_tb_ prefix, to avoid the data insertion to the common TB tables.
 - [unassign from customer](/docs/user-guide/rule-engine-2-0/nodes/action/unassign-from-customer) — unassigns the message originator from a customer.

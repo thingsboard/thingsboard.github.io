@@ -294,7 +294,6 @@ performance optimization rather than a strict processing guarantee.
   }
 }
 ```
-
 {: .copy-code.expandable-3 }
 
 ## Message processing algorithm
@@ -323,7 +322,7 @@ performance optimization rather than a strict processing guarantee.
 
 ## Examples
 
-### Example 1 — Basic telemetry with On Every Message strategy
+### Example 1 — On every message strategy
 
 **Incoming message**
 
