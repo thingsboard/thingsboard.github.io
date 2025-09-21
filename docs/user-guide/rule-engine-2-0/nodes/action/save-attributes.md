@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: save attributes
-description: Saves attributes.
+description: Stores the incoming message data as attribute data of the message originator.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

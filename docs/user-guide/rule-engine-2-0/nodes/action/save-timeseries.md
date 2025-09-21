@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: save time series
-description: Saves time series.
+description: Stores the incoming message data as time series data of the message originator.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
