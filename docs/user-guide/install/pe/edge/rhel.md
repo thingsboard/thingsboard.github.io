@@ -13,7 +13,7 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 
 {% include templates/edge/install/compatibility-warning-general.md %}
 
-This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **RHEL/CentOS 7 and 8**.
+This guide provides step-by-step instructions for installing **ThingsBoard Edge** on **RHEL/CentOS 8/9**.
 
 {% include templates/edge/install/prerequisites.md %}
 

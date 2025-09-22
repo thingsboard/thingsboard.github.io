@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: switch
-description: Executes a user-defined function that returns a connection label or a list of connection labels. The message is routed via the specified connection(s).
+description: Routes messages to one or more connections returned by a script.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

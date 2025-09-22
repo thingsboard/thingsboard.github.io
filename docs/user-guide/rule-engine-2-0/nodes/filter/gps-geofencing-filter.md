@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: gps geofencing filter
-description: Extracts latitude and longitude from the incoming message and checks whether the point lies inside a configured geofence (polygon or circle).
+description: Routes messages based on whether GPS coordinates fall within a configured geofence boundary.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

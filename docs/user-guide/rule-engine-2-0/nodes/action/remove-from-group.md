@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: remove from group
-description: Removes message originator from a selected entity group.  
+description: Removes the message originator entity from an entity group found by group name pattern.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

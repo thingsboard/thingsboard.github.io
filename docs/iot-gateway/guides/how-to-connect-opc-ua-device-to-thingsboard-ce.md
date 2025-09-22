@@ -2,6 +2,7 @@
 layout: docwithnav-gw
 title: How to connect OPC-UA device to ThingsBoard CE?
 description: Understand how to connect OPC-UA device to ThingsBoard CE using ThingsBoard IoT Gateway
+redirect_from: "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
 
 ---
 
