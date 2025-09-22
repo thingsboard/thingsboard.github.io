@@ -41,7 +41,7 @@ cd tbmq/k8s/gcp
 ## Step 5. Provision Google Cloud SQL (PostgreSQL) Instance
 
 {% assign tbDbName = "thingsboard_mqtt_broker" %}
-{% include templates/install/gcp/provision-postgresql.md %}
+{% include templates/mqtt-broker/install/gcp/provision-postgresql.md %}
 
 #### 5.5 Edit database settings
 
