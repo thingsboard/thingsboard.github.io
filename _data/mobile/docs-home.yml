@@ -25,5 +25,5 @@ toc:
         path: /docs/mobile/app-icon-splash-screen/
   - title: Add your own localization
     path: /docs/mobile/localization/
-  - title: Publish your app 
+  - title: Build and release ThingsBoard Mobile Application
     path: /docs/mobile/release/

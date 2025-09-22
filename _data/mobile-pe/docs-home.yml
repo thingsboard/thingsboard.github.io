@@ -29,5 +29,5 @@ toc:
         path: /docs/pe/mobile/qr-code-settings/
   - title: Add your own localization
     path: /docs/pe/mobile/localization/
-  - title: Publish your app
+  - title: Build and release ThingsBoard PE Mobile Application
     path: /docs/pe/mobile/release/
