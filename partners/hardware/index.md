@@ -20,6 +20,8 @@ filterCollection:
       - Gateways
       - Trackers
       - Other devices
+      - Gateway
+      - Single Board Computer
   - label: Connectivity
     filters:
       - HTTP
@@ -60,6 +62,10 @@ filterCollection:
       - KNX
       - M-Bus
       - Modbus TCP
+      - BLE
+      - LAN
+      - RS-232
+      - RS-485
   - label: Industry
     filters:
       - Smart Cities
@@ -72,7 +78,7 @@ filterCollection:
       - Energy Management
       - Security
       - Mining
-      - Environment Monitoring
+      - Environmental Monitoring
   - label: Use cases
     filters:
       - Smart Energy
@@ -87,6 +93,10 @@ filterCollection:
       - Air Quality Monitoring
       - Smart Farming
       - Smart Irrigation
+      - Environment Monitoring
+      - Health Care: Smart Assisted Living Solution
+      - Smart energy
+
 ---
 
 
