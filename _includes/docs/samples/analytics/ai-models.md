@@ -134,6 +134,23 @@ such as locally-hosted models. Note that most cloud-based model providers will s
 
 <hr>
 
+#### Ollama
+
+[Ollama](https://ollama.com/){:target="_blank"} allows you to easily run open large language models, such as Llama 3 and Mistral, on your own machine.
+
+Connecting to your Ollama server requires its <b>base URL</b> (e.g., `http://localhost:11434`) and the appropriate authentication method. Three options are available:
+
+- <b>None</b>: This is the default method for a standard Ollama installation, which does not require authentication out of the box. No credentials are sent with your requests.
+- <b>Basic</b>: Use this method when Ollama is secured behind a reverse proxy that requires HTTP Basic authentication. 
+  The provided <b>username</b> and <b>password</b> are combined into a `username:password` string, Base64-encoded, and sent in an `Authorization: Basic <encoded_credentials>` header.
+- <b>Token</b>: Use this method when Ollama is secured behind a reverse proxy that requires Bearer Token authentication. 
+  The provided <b>token</b> is sent directly in an `Authorization: Bearer <token>` header.
+
+> <b>Security Recommendation</b>: When using <b>Basic</b> or <b>Token</b> authentication, we strongly recommend connecting to your server using an <b>`https`</b> URL. 
+> Standard `http` connections will send your credentials in plain text, which is insecure.
+
+<hr>
+
 ## Model configuration
 
 After you&#39;ve selected and authenticated your AI provider, you need to specify which particular AI model to use (or deployment name in the case of [Azure OpenAI](#azure-openai)).
@@ -149,11 +166,11 @@ For <b>production usage</b>, we recommend using model snapshots to ensure predic
 Some models support advanced configuration parameters (depending on the provider), such as:
 - <b>Temperature</b> – Adjusts the level of randomness in the model's output. Higher values increase randomness, while lower values decrease it.
 - <b>Top P</b> – Creates a pool of the most probable tokens for the model to choose from. Higher values create a larger and more diverse pool, while lower values create a smaller one.
-- <b>Top K</b> - Restricts the model's choices to a fixed set of the "K" most likely.
-  tokens.
+- <b>Top K</b> - Restricts the model's choices to a fixed set of the "K" most likely tokens.
 - <b>Presence penalty</b> - Applies a fixed penalty to the likelihood of a token if it has already appeared in the text.
 - <b>Frequency penalty</b> - Applies a penalty to a token's likelihood that increases based on its frequency in the text.
-- <b>Maximum output tokens</b> – limit response length. Sets the maximum number of tokens that the model can generate in a single response.
+- <b>Maximum output tokens</b> – Sets the maximum number of tokens that the model can generate in a single response.
+- <b>Context length</b> – Defines the size of the context window in tokens. This value sets the total memory limit for the model, including both the user's input and the generated response.
 
 > If advanced settings cause errors, try removing their values. In this case, defaults will be applied. This often resolves incompatibility issues for certain models.
 
