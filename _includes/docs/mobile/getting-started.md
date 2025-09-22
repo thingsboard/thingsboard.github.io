@@ -19,7 +19,7 @@
 
 Welcome! This guide walks you through creating and configuring your own {{appPrefix}} mobile application from scratch for your {{appPrefix}} instance.
 
-**Before you begin**, choose the mobile app version that matches your ThingsBoard platform using the [compatibility matrix](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table). Using incompatible versions is the most common cause of sign‑in issues or unexpected behavior.
+**Before you begin**, choose the mobile app version that matches your ThingsBoard platform using the [compatibility matrix](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table){:target="_blank"}. Using incompatible versions is the most common cause of sign‑in issues or unexpected behavior.
 
 ## Prerequisites
 
@@ -33,6 +33,8 @@ Welcome! This guide walks you through creating and configuring your own {{appPre
 
 The [Mobile center](/docs/{{docsPrefix}}mobile-center/mobile-center/){:target="_blank"} is your control hub to create, configure, and manage mobile apps. 
 It lets you quickly launch a mobile app tailored to your {{appPrefix}} platform.
+
+<br>
 
 <b><font size="4">Create a new bundle</font></b>
 
@@ -58,7 +60,7 @@ title: Go to the "**Mobile center**" page → "**Bundle**" tab, then click "**+ 
 '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% if docsPrefix == "pe/" %}
 {% include images-gallery.liquid imageCollection=addNewBundlePE %}
 {% else %}  
 {% include images-gallery.liquid imageCollection=addNewBundleCE %}
@@ -75,9 +77,11 @@ title: Go to the "**Mobile center**" page → "**Bundle**" tab, then click "**+ 
   - (Optional) Specify **minimum** and **latest** app versions + release notes.
   - Add **store information**:
       - for **Android**: 
-        - **Google Play Store link** and **SHA256 certificate fingerprints**.
+        - **Google Play Store link**.
+        - **SHA256 certificate fingerprints**.
       - for **iOS**: 
-        - **App Store link** and **App ID**.
+        - **App Store link**.
+        - **App ID**.
   - Click "**Add**" to save and continue.
 
 - Then click "**Next**".
@@ -174,7 +178,7 @@ Follow it carefully to complete {{appPrefix}} mobile application configuration.
 Starting with {{appPrefix}} 4.2 and mobile app 1.7, the app configuration flow has been significantly improved.
 You can now download a configuration file directly from the platform and place it in the root of app&#39;s codebase — no manual edits required.
 
-When using 1.7 app version with pre 4.2 platform version, config file must be created manually, please follow [this github ticket](https://github.com/thingsboard/flutter_thingsboard_pe_app/issues/263#issuecomment-3103099009) for the instructions.
+When using 1.7 app version with pre 4.2 platform version, config file must be created manually, please follow [this github ticket](https://github.com/thingsboard/flutter_thingsboard_pe_app/issues/263#issuecomment-3103099009){:target="_blank"} for the instructions.
 {% endcapture %}
 {% include templates/info-banner.md content=1_7_config_tip %}
 
@@ -188,10 +192,22 @@ flutter run --dart-define-from-file configs.json
 
 You can maintain multiple configuration files by using different names. Pass the appropriate filename to `--dart-define-from-file` flag.
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/mobile/getting-started/add-new-bundle-11-pe.png)
-{% else %}  
-![image](/images/mobile/getting-started/add-new-bundle-11-ce.png)
+{% assign configurationDialogCE = '
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-11-ce.png,
+'
+%}
+
+{% assign configurationDialogPE = '
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-11-pe.png,
+'
+%}
+
+{% if docsPrefix == "pe/" %}
+{% include images-gallery.liquid imageCollection=configurationDialogPE %}
+{% else %}
+{% include images-gallery.liquid imageCollection=configurationDialogCE %}
 {% endif %}
 
 <br>
