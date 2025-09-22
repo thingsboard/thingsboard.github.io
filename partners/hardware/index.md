@@ -77,7 +77,6 @@ filterCollection:
       - Smart Buildings
       - Energy Management
       - Security
-      - Mining
       - Environmental Monitoring
   - label: Use cases
     filters:
@@ -94,7 +93,6 @@ filterCollection:
       - Smart Farming
       - Smart Irrigation
       - Environment Monitoring
-      - Health Care: Smart Assisted Living Solution
       - Smart energy
 
 ---
