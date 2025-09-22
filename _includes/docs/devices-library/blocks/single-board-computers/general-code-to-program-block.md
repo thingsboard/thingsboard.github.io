@@ -6,7 +6,7 @@ Let’s set up our project:
 1. Create project folder:
 
     ```bash
-   mkdir thingsboard_example && cd thingsboard_example
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}   mkdir thingsboard_edge_example && cd thingsboard_edge_example{% else %}   mkdir thingsboard_example && cd thingsboard_example{% endif %}
    ```
    {:.copy-code}
 
@@ -101,8 +101,9 @@ Let’s set up our project:
             period = result.get('shared', {'blinkingPeriod': 1.0})['blinkingPeriod']
 
    def main():
-        global client
-        client = TBDeviceMqttClient(THINGSBOARD_SERVER, username=ACCESS_TOKEN)
+        global client {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+        client = TBDeviceMqttClient(THINGSBOARD_EDGE_SERVER, username=ACCESS_TOKEN){% else %}
+        client = TBDeviceMqttClient(THINGSBOARD_SERVER, username=ACCESS_TOKEN){% endif %}
         client.connect()
         client.request_attributes(shared_keys=['blinkingPeriod'], callback=sync_state)
         

@@ -1,4 +1,5 @@
-To connect your device, you'll first need to get its credentials. While ThingsBoard supports a variety of device credentials, for this guide, 
+To connect your device, you'll first need to get its credentials. 
+While {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}**ThingsBoard Edge**{% else %}**ThingsBoard**{% endif %} supports a variety of device credentials, for this guide, 
 we will use the default auto-generated credentials, which is an access token.  
 
 {% assign provisionDeviceCE = '

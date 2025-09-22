@@ -1,5 +1,5 @@
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
-{% assign deviceName = page.title | remove: "How to connect device to ThingsBoard Edge on " | remove: "?" %}
+{% assign deviceName = page.title | remove: "How to install ThingsBoard Edge on " | remove: "?" %}
 {% assign prerequisites = "
 - [" | append: deviceName | append: "](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/){:target='_blank' rel='noopener'}
 - [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/){:target='_blank' rel='noopener'}
@@ -27,6 +27,7 @@ productivity and database hosting.
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+## Starting Edge on the {{deviceName}} {#starting-edge-on-the-raspberry-pi-4}
 {% assign userName = "pi" %}
 {% include /templates/edge/devices-library/install-edge-gw.md %}
 {% endif %}
