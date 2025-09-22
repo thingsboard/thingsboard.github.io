@@ -8,11 +8,11 @@ Of course, we will control our device using provided functionality like [shared 
 
 ### Prerequisites
 
-To continue with this guide we will need the following:  
+To continue with this guide, we will need the following:  
 {{ prerequisites }} {% if page.docsPrefix == "pe/edge/" %}
-- [ThingsBoard Cloud (Europe)](https://eu.thingsboard.cloud/signup){: target="_blank"} or [ThingsBoard Cloud (America)](https://thingsboard.cloud/signup){: target="_blank"}
+- A ThingsBoard Cloud account ([Europe](https://eu.thingsboard.cloud/signup){: target="_blank"} or [America](https://thingsboard.cloud/signup){: target="_blank"}), or a [local server](/docs/user-guide/install/pe/installation-options/){: target="_blank"} installed on-premises
 {% else %}
-- [ThingsBoard account](https://demo.thingsboard.io/signup){: target="_blank"}
+- A [ThingsBoard account](https://demo.thingsboard.io/signup){: target="_blank"} or a [local server](/docs/user-guide/install/installation-options/){: target="_blank"} installed on-premises
 {% endif %}
 
 {% else %}
@@ -26,7 +26,7 @@ Of course, we will control our device using provided functionality like [shared 
 
 ### Prerequisites
 
-To continue with this guide we will need the following:  
+To continue with this guide, we will need the following:  
 {{ prerequisites }} {% if page.docsPrefix == "pe/" %}
 - [ThingsBoard Cloud (Europe)](https://eu.thingsboard.cloud/signup){: target="_blank"} or [ThingsBoard Cloud (America)](https://thingsboard.cloud/signup){: target="_blank"}
 {% else %}

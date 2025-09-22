@@ -2,21 +2,15 @@ Once you have successfully published the attributes and telemetry data, you shou
 
 {% assign deviceTelemetryCE = '
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png,
-        title: Click on the device row in the table to open device details.
-    ===
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png,
-        title: Navigate to the telemetry tab.
+        image: /images/helloworld/getting-started-ce/check-telemetry-ce.webp,
+        title: Click on the device to open device details. Select the **"Latest telemetry"** tab.
     '
 %}
 
 {% assign deviceTelemetryPE = '
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-1-pe.png,
-        title: Click on the device row in the table to open device details.
-    ===
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-2-pe.png,
-        title: Navigate to the telemetry tab.
+        image: /images/helloworld/getting-started-pe/check-telemetry-pe.webp,
+        title: Click on the device to open device details. Select the **"Latest telemetry"** tab.
     '
 %}
 

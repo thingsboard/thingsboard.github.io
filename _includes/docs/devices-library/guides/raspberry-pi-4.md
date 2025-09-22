@@ -1,15 +1,15 @@
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
-{% assign deviceName = page.title | remove: "How to install ThingsBoard Edge on " | remove: "?" %}
+{% assign deviceName = page.title | remove: "How to connect device to ThingsBoard Edge on " | remove: "?" %}
 {% assign prerequisites = "
-- " | append: deviceName | append: "
+- [" | append: deviceName | append: "](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/){:target='_blank' rel='noopener'}
 - [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/){:target='_blank' rel='noopener'}
 - [python ≥ 3.7](https://www.python.org/){:target='_blank' rel='noopener'}
 - [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/){:target='_blank' rel='noopener'} "
-  %}
+ %}
 {% else %}  
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign prerequisites = "
-- " | append: deviceName | append: "
+- [" | append: deviceName | append: "](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/){:target='_blank' rel='noopener'}
 - [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/){:target='_blank' rel='noopener'}
 - [python ≥ 3.7](https://www.python.org/){:target='_blank' rel='noopener'}
 - [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/){:target='_blank' rel='noopener'} "
@@ -44,6 +44,7 @@ productivity and database hosting.
 {% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+{% assign hostName = "RPi_4_IP_ADDRESS" %}
 ## Connect device to ThingsBoard Edge {#connect-device-to-thingsboard-edge}
 {% else %}
 ## Connect device to ThingsBoard {#connect-device-to-thingsboard}

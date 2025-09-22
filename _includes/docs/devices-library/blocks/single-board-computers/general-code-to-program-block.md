@@ -1,6 +1,7 @@
 Now you are ready to publish telemetry data on behalf of your device. We will use, as mentioned before, the 
-“thingsboard-python-client-sdk” library.
-Let’s setup our project:
+`thingsboard-python-client-sdk` library.
+
+Let’s set up our project:
 
 1. Create project folder:
 
@@ -32,8 +33,9 @@ Let’s setup our project:
    
    from tb_gateway_mqtt import TBDeviceMqttClient
    
-   ACCESS_TOKEN = "TEST_TOKEN"
-   THINGSBOARD_SERVER = '{{hostName}}'
+   ACCESS_TOKEN = "TEST_TOKEN" {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+   THINGSBOARD_EDGE_SERVER = '{{hostName}}' {% else %}
+   THINGSBOARD_SERVER = '{{hostName}}'{% endif %}
 
    logging.basicConfig(level=logging.DEBUG)
    
@@ -125,14 +127,30 @@ Let’s setup our project:
    ```
    {:.copy-code.expandable-15}
 
-   In the code above change values for the following variables - THINGSBOARD_SERVER, ACCESS_TOKEN to your credentials.
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+
+In the code above, change values for the following variables - THINGSBOARD_EDGE_SERVER, ACCESS_TOKEN to your credentials.
+
+Necessary variables for connection:  
+
+   | Variable name | Default value | Description |
+   |-|-|
+   | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
+   | THINGSBOARD_EDGE_SERVER | **{{hostName}}** | The IP address of your Raspberry Pi running Edge | 
    
-   Necessary variables for connection:  
-   
+If you are running the script on the same Raspberry Pi where Edge is installed, you can also use `localhost`.
+
+{% else %}
+
+In the code above, change values for the following variables - THINGSBOARD_SERVER, ACCESS_TOKEN to your credentials.
+
+Necessary variables for connection:  
+
    | Variable name | Default value | Description | 
    |-|-|
    | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
    | THINGSBOARD_SERVER | **{{hostName}}** | Your ThingsBoard host or ip address. |
+{% endif %}
 
 5. Click **Ctrl+O** and **Ctrl+X** keys to save the file.
 6. And finally, let’s start our script:
