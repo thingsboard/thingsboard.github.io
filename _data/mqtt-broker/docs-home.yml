@@ -100,6 +100,13 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: Settings
       path: /docs/mqtt-broker/user-guide/ui/settings/
+- title: White Labeling
+  pe: true
+  section:
+    - title: Overview
+      path: /docs/pe/mqtt-broker/white-labeling/
+    - title: Image gallery
+      path: /docs/pe/mqtt-broker/image-gallery/
 - title: Subscriptions
   path: /docs/mqtt-broker/subscription/
 - title: Need Help?

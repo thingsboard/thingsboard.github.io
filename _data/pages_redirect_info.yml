@@ -191,6 +191,12 @@
 "/docs/pe/edge/reference/snmp-api":
   url: "/docs/pe/edge/reference/snmp-api/"
   redirect_from: "/docs/pe/edge/reference/snmp-api"
+"/docs/mqtt-broker/image-gallery/":
+  url: "/docs/pe/mqtt-broker/image-gallery/"
+  redirect_from: "/docs/mqtt-broker/image-gallery/"
+"/docs/mqtt-broker/white-labeling/":
+  url: "/docs/pe/mqtt-broker/white-labeling/"
+  redirect_from: "/docs/mqtt-broker/white-labeling/"
 "/docs/pe/reference/coap-api":
   url: "/docs/pe/reference/coap-api/"
   redirect_from: "/docs/pe/reference/coap-api"
