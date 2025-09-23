@@ -3559,6 +3559,9 @@
 "/docs/pe/mqtt-broker/security/authentication/x509/":
   url: "/docs/pe/mqtt-broker/security/authentication/x509/"
   redirect_from: []
+"/docs/pe/mqtt-broker/security/domains/":
+  url: "/docs/pe/mqtt-broker/security/domains/"
+  redirect_from: []
 "/docs/pe/mqtt-broker/security/https/":
   url: "/docs/pe/mqtt-broker/security/https/"
   redirect_from: []
@@ -3568,8 +3571,14 @@
 "/docs/pe/mqtt-broker/security/mqtts/":
   url: "/docs/pe/mqtt-broker/security/mqtts/"
   redirect_from: []
+"/docs/pe/mqtt-broker/security/oauth-2-support/":
+  url: "/docs/pe/mqtt-broker/security/oauth-2-support/"
+  redirect_from: []
 "/docs/pe/mqtt-broker/security/overview/":
   url: "/docs/pe/mqtt-broker/security/overview/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/security/rbac/":
+  url: "/docs/pe/mqtt-broker/security/rbac/"
   redirect_from: []
 "/docs/pe/mqtt-broker/subscription/":
   url: "/docs/pe/mqtt-broker/subscription/"

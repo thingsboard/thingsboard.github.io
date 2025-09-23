@@ -32,6 +32,12 @@ toc:
         path: /docs/pe/mqtt-broker/security/authentication/scram/
     - title: Enable HTTPS
       path: /docs/pe/mqtt-broker/security/https/
+    - title: OAuth 2.0
+      path: /docs/pe/mqtt-broker/security/oauth-2-support/
+    - title: Domains
+      path: /docs/pe/mqtt-broker/security/domains/
+    - title: RBAC
+      path: /docs/pe/mqtt-broker/security/rbac/
 - title: Integration with ThingsBoard
   path: /docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
 - title: MQTT Features
@@ -101,7 +107,6 @@ toc:
     - title: Settings
       path: /docs/pe/mqtt-broker/user-guide/ui/settings/
 - title: White Labeling
-  pe: true
   section:
     - title: Overview
       path: /docs/pe/mqtt-broker/white-labeling/
