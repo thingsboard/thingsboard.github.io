@@ -14,4 +14,5 @@ docsPrefix: pe/edge/
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
+{% assign peDocsPrefix = "pe/" %}
 {% include /docs/devices-library/guides/raspberry-pi-4.md %}
