@@ -1,15 +1,15 @@
-bigheader: "MQTT Broker Documentation"
-abstract: "TBMQ."
+bigheader: "TBMQ Professional Edition Documentation"
+abstract: "TBMQ PE"
 toc:
-- title: PE TBMQ
+- title: TBMQ Professional Edition
   path: /docs/pe/mqtt-broker/
-- title: What is TBMQ?
+- title: What is TBMQ Professional Edition?
   path: /docs/pe/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
 - title: Configuration
   section:
-    - title: PE TBMQ
+    - title: TBMQ PE
       path: /docs/pe/mqtt-broker/install/config/
-    - title: PE TBMQ Integration Executor
+    - title: TBMQ PE Integration Executor
       path: /docs/pe/mqtt-broker/install/ie-config/
 - title: Security
   section:

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: What is TBMQ?
+title: What is TBMQ Professional Edition?
 description: TBMQ key features, architecture, etc.
 ---
 

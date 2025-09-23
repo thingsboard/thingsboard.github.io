@@ -1,3 +1,5 @@
+{% include templates/mqtt-broker/pe-tbmq-explore-banner.md %}
+
 **TBMQ** is a highly scalable and fault-tolerant <a target="_blank" href="/products/mqtt-broker/">MQTT broker</a> designed for efficient message routing between connected devices using the MQTT protocol.
 
 With the ability to manage over **4M** concurrent client connections, TBMQ delivers a minimum [throughput of 3M messages per second](/docs/{{docsPrefix}}mqtt-broker/reference/3m-throughput-single-node-performance-test/) 
