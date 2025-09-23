@@ -40,7 +40,7 @@ You’ll need to set up PostgreSQL on Azure. You may follow [this](https://learn
 but take into account the following requirements:
 
 * Keep your postgresql password in a safe place. We will refer to it later in this guide using YOUR_AZURE_POSTGRES_PASSWORD;
-* Make sure your Azure Database for PostgreSQL version is 16.x;
+* Make sure your Azure Database for PostgreSQL version is 17.x;
 * Make sure your Azure Database for PostgreSQL instance is accessible from the TBMQ cluster;
 * Make sure you use "thingsboard_mqtt_broker" as the initial database name.
 
@@ -52,7 +52,7 @@ Another way by which you can create Azure Database for PostgreSQL is using az to
 az postgres flexible-server create --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP \
   --name $TB_DATABASE_NAME --admin-user POSTGRESS_USER --admin-password POSTGRESS_PASS \
   --public-access 0.0.0.0 --storage-size 32 \
-  --version 16 -d thingsboard_mqtt_broker
+  --version 17 -d thingsboard_mqtt_broker
 ```
 {: .copy-code}
 
@@ -85,7 +85,7 @@ Example of response:
   "resourceGroup": "TBMQResources",
   "skuname": "Standard_D2s_v3",
   "username": "postgres",
-  "version": "16"
+  "version": "17"
 }
 ```
 

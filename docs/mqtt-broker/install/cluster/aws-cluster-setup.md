@@ -123,7 +123,7 @@ One recommended way is to follow the [official AWS RDS setup guide](https://docs
 
 **Recommendations:**
 
-* **PostgreSQL version**: Use version **16.x**.
+* **PostgreSQL version**: Use version **17.x**.
 * **Template**: Use **Production** for real workloads. It enables important settings by default to improve resilience and reliability; reserve **Dev/Test** only for non-critical testing.
 * **Availability**: Enable **Multi-AZ deployment** to ensure automatic failover and minimize downtime.
 * **Credentials**: Change the default `username` and set (or auto-generate) a secure `password`. Be sure to store the password safely for future use.
