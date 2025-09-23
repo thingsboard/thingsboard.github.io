@@ -80,12 +80,18 @@
 "/docs/iot-video-tutorials/":
   url: "/docs/guides/"
   redirect_from: "/docs/iot-video-tutorials/"
+"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
+  url: "/docs/iot-gateway/config/modbus/"
+  redirect_from: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
 "/docs/iot-gateway/mqtt/":
   url: "/docs/iot-gateway/config/mqtt/"
   redirect_from: "/docs/iot-gateway/mqtt/"
 "/docs/iot-gateway/resources/mqtt-gui-extension-configuration.json":
   url: "/docs/iot-gateway/config/mqtt/"
   redirect_from: "/docs/iot-gateway/resources/mqtt-gui-extension-configuration.json"
+"/docs/iot-gateway/guides/how-to-connect-opcua-server/":
+  url: "/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/"
+  redirect_from: "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
 "/docs/iot-gateway/install/rpi/":
   url: "/docs/iot-gateway/install/deb-installation/"
   redirect_from: "/docs/iot-gateway/install/rpi/"
@@ -206,6 +212,9 @@
 "/docs/pe/user-guide/ui/asset-profiles":
   url: "/docs/pe/user-guide/asset-profiles/"
   redirect_from: "/docs/pe/user-guide/ui/asset-profiles"
+docs/pe/user-guide/contribution/widgets-development-before-3.0/:
+  url: "/docs/pe/user-guide/contribution/widgets-development/"
+  redirect_from: docs/pe/user-guide/contribution/widgets-development-before-3.0/
 "/docs/user-guide/csv-xls-data-export/":
   url: "/docs/pe/user-guide/csv-xls-data-export/"
   redirect_from: "/docs/user-guide/csv-xls-data-export/"
@@ -302,6 +311,9 @@
 "/docs/user-guide/ui/asset-profiles":
   url: "/docs/user-guide/asset-profiles/"
   redirect_from: "/docs/user-guide/ui/asset-profiles"
+docs/user-guide/contribution/widgets-development-before-3.0/:
+  url: "/docs/user-guide/contribution/widgets-development/"
+  redirect_from: docs/user-guide/contribution/widgets-development-before-3.0/
 "/docs/user-guide/ui/dashboards/":
   url: "/docs/user-guide/dashboards/"
   redirect_from: "/docs/user-guide/ui/dashboards/"
@@ -401,9 +413,9 @@
 "/docs/reference/plugins/sns/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns/"
   redirect_from: "/docs/reference/plugins/sns/"
-"/reference/plugins/sqs/":
+"/docs/reference/plugins/sqs/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/"
-  redirect_from: "/reference/plugins/sqs/"
+  redirect_from: "/docs/reference/plugins/sqs/"
 "/docs/user-guide/rule-engine-2-0/external-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/external-nodes/"

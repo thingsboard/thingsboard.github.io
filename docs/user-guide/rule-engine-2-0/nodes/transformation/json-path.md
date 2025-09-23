@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: json path
-description: Extracts a part of the incoming message data using a JSONPath expression and sets it as the new message data.
+description: Extracts a portion of the message data using a JSONPath expression and replaces the entire message data with the extracted result.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

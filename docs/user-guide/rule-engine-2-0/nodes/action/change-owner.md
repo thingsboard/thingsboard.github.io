@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: change owner
-description: Changes owner of the message originator to a configured tenant or customer.
+description: Changes the ownership of the message originator to a specified tenant or customer.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

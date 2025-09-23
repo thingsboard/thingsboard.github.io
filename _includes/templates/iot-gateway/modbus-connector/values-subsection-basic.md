@@ -1,5 +1,13 @@
 ![image](/images/gateway/modbus-connector/values-subsection-1-ce.png)
 
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/modbus/#device-rpc-methods) section.
+
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/modbus/#usage-examples-2) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 To add new value to the gateway slave, use the following steps:
 
 {% assign maxTemperatureAttribute = '

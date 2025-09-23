@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: script
-description: Executes a user-defined function that returns a boolean value. The message is routed via the "True" connection if the function returns true, and via the "False" connection if it returns false.
+description: Routes messages based on the result of a boolean script.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

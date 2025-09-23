@@ -147,6 +147,12 @@
 "/docs/devices-library/lenovo-leez-sbc-p710/":
   url: "/docs/devices-library/lenovo-leez-sbc-p710/"
   redirect_from: []
+"/docs/devices-library/lrs10701/":
+  url: "/docs/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/devices-library/lrs20100/":
+  url: "/docs/devices-library/lrs20100/"
+  redirect_from: []
 "/docs/devices-library/luanode32/":
   url: "/docs/devices-library/luanode32/"
   redirect_from: []
@@ -583,7 +589,8 @@
   redirect_from: []
 "/docs/iot-gateway/config/modbus/":
   url: "/docs/iot-gateway/config/modbus/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
 "/docs/iot-gateway/config/mqtt/":
   url: "/docs/iot-gateway/config/mqtt/"
   redirect_from:
@@ -643,6 +650,10 @@
 "/docs/iot-gateway/guides/how-to-connect-modbus-device/":
   url: "/docs/iot-gateway/guides/how-to-connect-modbus-device/"
   redirect_from: []
+"/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/":
+  url: "/docs/iot-gateway/guides/how-to-connect-opc-ua-device-to-thingsboard-ce/"
+  redirect_from:
+  - "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
 "/docs/iot-gateway/guides/how-to-connect-opcua-server/":
   url: "/docs/iot-gateway/guides/how-to-connect-opcua-server/"
   redirect_from: []
@@ -1153,6 +1164,12 @@
 "/docs/paas/devices-library/lenovo-leez-sbc-p710/":
   url: "/docs/paas/devices-library/lenovo-leez-sbc-p710/"
   redirect_from: []
+"/docs/paas/devices-library/lrs10701/":
+  url: "/docs/paas/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/paas/devices-library/lrs20100/":
+  url: "/docs/paas/devices-library/lrs20100/"
+  redirect_from: []
 "/docs/paas/devices-library/luanode32/":
   url: "/docs/paas/devices-library/luanode32/"
   redirect_from: []
@@ -1495,6 +1512,12 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/lenovo-leez-sbc-p710/":
   url: "/docs/paas/eu/devices-library/lenovo-leez-sbc-p710/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lrs10701/":
+  url: "/docs/paas/eu/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lrs20100/":
+  url: "/docs/paas/eu/devices-library/lrs20100/"
   redirect_from: []
 "/docs/paas/eu/devices-library/luanode32/":
   url: "/docs/paas/eu/devices-library/luanode32/"
@@ -2899,6 +2922,12 @@
 "/docs/pe/devices-library/lenovo-leez-sbc-p710/":
   url: "/docs/pe/devices-library/lenovo-leez-sbc-p710/"
   redirect_from: []
+"/docs/pe/devices-library/lrs10701/":
+  url: "/docs/pe/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/pe/devices-library/lrs20100/":
+  url: "/docs/pe/devices-library/lrs20100/"
+  redirect_from: []
 "/docs/pe/devices-library/luanode32/":
   url: "/docs/pe/devices-library/luanode32/"
   redirect_from: []
@@ -3572,12 +3601,10 @@
 "/docs/pe/user-guide/contribution/ui/custom-subscriptions/":
   url: "/docs/pe/user-guide/contribution/ui/custom-subscriptions/"
   redirect_from: []
-"/docs/pe/user-guide/contribution/widgets-development-before-3.0/":
-  url: "/docs/pe/user-guide/contribution/widgets-development-before-3.0/"
-  redirect_from: []
 "/docs/pe/user-guide/contribution/widgets-development/":
   url: "/docs/pe/user-guide/contribution/widgets-development/"
-  redirect_from: []
+  redirect_from:
+  - docs/pe/user-guide/contribution/widgets-development-before-3.0/
 "/docs/pe/user-guide/csv-xls-data-export/":
   url: "/docs/pe/user-guide/csv-xls-data-export/"
   redirect_from:
@@ -4397,12 +4424,10 @@
 "/docs/user-guide/contribution/ui/custom-subscriptions/":
   url: "/docs/user-guide/contribution/ui/custom-subscriptions/"
   redirect_from: []
-"/docs/user-guide/contribution/widgets-development-before-3.0/":
-  url: "/docs/user-guide/contribution/widgets-development-before-3.0/"
-  redirect_from: []
 "/docs/user-guide/contribution/widgets-development/":
   url: "/docs/user-guide/contribution/widgets-development/"
-  redirect_from: []
+  redirect_from:
+  - docs/user-guide/contribution/widgets-development-before-3.0/
 "/docs/user-guide/customization/":
   url: "/docs/user-guide/customization/"
   redirect_from: []
@@ -5070,7 +5095,7 @@
 "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs/"
   redirect_from:
-  - "/reference/plugins/sqs/"
+  - "/docs/reference/plugins/sqs/"
 "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub/"
   redirect_from: []

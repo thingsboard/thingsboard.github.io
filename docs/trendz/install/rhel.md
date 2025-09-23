@@ -12,7 +12,7 @@ description: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL
 
 ## Prerequisites
 
-This guide describes how to install Trendz Analytics on RHEL/CentOS 7/8. 
+This guide describes how to install Trendz Analytics on RHEL/CentOS 8/9. 
 
 **Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
 To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
