@@ -12,5 +12,5 @@
 - [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — The node can send notification to recipients group using the template.
 - [send sms](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms) — Node is able to construct SMS message based on the metadata fields from the incoming message and send it using AWS SNS or Twilio SMS providers.
 - [send to slack](/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack) — The node create a message based on the incoming data and metadata, and send it via Slack to a public channel, private channel or direct message. 
-- [twilio sms](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms) — Sends incoming message payload as SMS message via Twilio service.
-- [twilio voice](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-voice) — Sends voice message via Twilio.
+- <span class="item-pe product-label-padding">[twilio sms](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms)</span> — Sends incoming message payload as SMS message via Twilio service.
+- <span class="item-pe product-label-padding">[twilio voice](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-voice)</span> — Sends voice message via Twilio.
