@@ -15,7 +15,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <h2 class="cdu-sub-title">Fast delivery of scalable IoT solutions with fixed cost and timeline</h2>
             </div>
             <div class="request-consultation-container">
-                <button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button request-consultation">Request a consultation</button>
+                <button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button request-consultation button">Request a consultation</button>
             </div>
         </div>
         <div class="hero-images">
@@ -230,6 +230,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <div class="vision-header">
                         <div class="vision-title">
                             <img class="vision-img" src="/images/development-services/artur-ishkhanishvili.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
+                            <img class="vision-img-mobile" src="/images/development-services/artur-mobile.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard">
                             <div class="vision-text">
                                 <div class="name">Artur Ishkhanishvili</div>
                                 <div class="title">VP Business Development</div>
@@ -243,10 +244,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                     </div>
                     <div class="vision-footer">
-                        <div class="text-wrap">
-                            <div class="vision-footer-text">Let’s build something that works and wins</div>
-                            <div class="vision-footer-sub-text">Custom solutions, built by the team behind ThingsBoard — no third parties.</div>
-                        </div>
+                        <div class="vision-footer-text">Let’s build something that works and wins</div>
                         <button
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
@@ -443,7 +441,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="services">
             <div class="services-container">
                 <h2 class="services-title">Custom IoT development services</h2>
-                <div class="services-sub-title">These are custom development services delivered directly by the in-house ThingsBoard team. No third parties — just our engineers and proven processes.</div>
+                <div class="services-sub-title">These are custom development services delivered directly by the in-house ThingsBoard team. No third parties — just our engineers and proven processes</div>
                 <div class="cards">
                     <div class="expansion-card">
                         <div class="expansion-header">
@@ -451,9 +449,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
-                                <li>Analyze business processes to define effective IoT strategy.</li>
-                                <li>Design system architecture and identify areas for improvement.</li>
-                                <li>Develop detailed roadmap for successful IoT solution implementation.</li>
+                                <li>Analyze business processes to define effective IoT strategy</li>
+                                <li>Design system architecture and identify areas for improvement</li>
+                                <li>Develop detailed roadmap for successful IoT solution implementation</li>
                             </ul>
                         </div>
                     </div>
@@ -463,9 +461,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                         <div class="expansion-content">
                             <ul class="expansion-content-list">
-                                <li>Quickly validate ideas through Proof of Concept (PoC) creation.</li>
-                                <li>Development of Minimum Viable Product (MVPs) for accelerated market entry.</li>
-                                <li>Test use cases directly on real devices in real-world conditions.</li>
+                                <li>Quickly validate ideas through Proof of Concept (PoC) creation</li>
+                                <li>Development of Minimum Viable Product (MVPs) for accelerated market entry</li>
+                                <li>Test use cases directly on real devices in real-world conditions</li>
                             </ul>
                         </div>
                     </div>
@@ -665,10 +663,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             </div>
             <section class="get-in-touch-section">
                 <div class="get-in-touch-container">
-                    <div class="title-wrap">
-                        <h2 class="get-in-touch-title">Discuss your IoT project with us</h2>
-                        <p class="sub-title">Let’s turn your IoT vision into reality with our in-house experts.</p>
-                    </div>
+                    <h2 class="get-in-touch-title">Discuss your IoT project with us</h2>
                     <button
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
@@ -681,7 +676,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="industries">
             <div class="industries-container">
                 <h2 class="industries-title">Industries we empower with IoT development</h2>
-                <div class="industries-subtitle">Our experience covers more than 10 industries — from smart meters and fleet telematics to predictive maintenance on factory floors. Our deep domain expertise means faster development, fewer risks, and software that performs exactly as you expect.</div>
+                <div class="industries-subtitle">Our experience covers more than 10 industries — from smart meters and fleet telematics to predictive maintenance on factory floors. Our deep domain expertise means faster development, fewer risks, and software that performs exactly as you expect</div>
                 <div class="content-container">
                     <div class="menu">
                         <div class="menu-item">
@@ -753,6 +748,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="trusted-partner-footer">
                     <div class="trusted-partner-avatar">
                         <img class="avatar" src="/images/development-services/vitaliy-paromskiy.webp" alt="Photo of Vitaliy Paromskiy, Chief Solutions Officer ThingsBoard">
+                        <img class="avatar-mobile" src="/images/development-services/vitaliy-mobile.webp" alt="Photo of Vitaliy Paromskiy, Chief Solutions Officer ThingsBoard">
                         <div class="trusted-partner-text">
                             <div class="name">Vitaliy Paromskiy</div>
                             <div class="title">Chief solutions officer</div>
@@ -809,6 +805,37 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </tbody>
                 </table>
             </div>
+            <div class="mobile-container">
+                <div class="row">
+                    <p class="content">Why it matters</p>
+                    <p class="content">What it gives</p>
+                </div>
+                <h3>ThingsBoard at the Core</h3>
+                <div class="row">
+                    <p class="content">We build on ThingsBoard’s micro-service stack and re-using components instead of wiring them from scratch</p>
+                    <p class="content">8x faster process: regular 8-month MVP delivered in just 1 month</p>
+                </div>
+                <h3>Low-code accelerators</h3>
+                <div class="row">
+                    <p class="content">Dashboards, workflows, and rules are configured, not coded</p>
+                    <p class="content">About 70 % of UI built via drag-and-drop</p>
+                </div>
+                <h3>Vertical starter kits</h3>
+                <div class="row">
+                    <p class="content">Reusable blueprints for 10+ industries cut uncertainty and tighten estimates.</p>
+                    <p class="content">40 – 50 % of configuration is reused across engagements</p>
+                </div>
+                <h3>Architecture-as-a-Service </h3>
+                <div class="row">
+                    <p class="content">Scaling, HA, observability, and DevOps patterns come pre-hardened and cloud-agnostic</p>
+                    <p class="content">Scalable production-ready setup for 50k msg/s deployed in 5–8 days</p>
+                </div>
+                <h3>Fixed-price transparency</h3>
+                <div class="row">
+                    <p class="content">Budget is locked on day one; no surprises down the line</p>
+                    <p class="content">Projects delivered on agreed cost and timeline</p>
+                </div>
+            </div>
         </section>
         <section class="quote-with-mark">
             <img src="/images/case-studies/quote.svg" title="Quote mark" alt="Quote mark" width="96" height="90">
@@ -822,25 +849,24 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div class="cards">
                 <div class="card">
                     <h4 class="card-title">Pre-built stack, custom focus</h4>
-                    <div class="card-descr">70% of the stack comes from ThingsBoard + low-code, so engineers focus only on the remaining 30% of business logic.</div>
+                    <div class="card-descr">70% of the stack comes from ThingsBoard + low-code, so engineers focus only on the remaining 30% of business logic</div>
                 </div>
                 <div class="card">
                     <h4 class="card-title">Scalable by design</h4>
-                    <div class="card-descr">Microservices, DevOps templates, and the migration tool-chain are productized, so going from 100 devices to 1M is a repeatable playbook.</div>
+                    <div class="card-descr">Microservices, DevOps templates, and the migration tool-chain are productized, so going from 100 devices to 1M is a repeatable playbook</div>
                 </div>
                 <div class="card">
                     <h4 class="card-title">Ownership of custom solution</h4>
-                    <div class="card-descr">IP transfer - you own the solution, including data models, all configurations, and rules.</div>
+                    <div class="card-descr">IP transfer - you own the solution, including data models, all configurations, and rules</div>
                 </div>
                 <div class="card">
                     <h4 class="card-title">Enterprise support 24/7</h4>
-                    <div class="card-descr">Our support services are available to clients who choose them, providing assistance after development.</div>
+                    <div class="card-descr">Our support services are available to clients who choose them, providing assistance after development</div>
                 </div>
             </div>
             <div class="services-banner">
                 <div class="services-content">
                     <h3>Book a free session with a ThingsBoard architect</h3>
-                    <p>Find your development partner for scalable solutions delivered fast and on a fixed timeline.</p>
                     <button
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
@@ -853,7 +879,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </section>
         <section class="project-timeline">
             <h2>Project implementation timeline</h2>
-            <p class="subtitle">This timeline shows the key milestones in our development process, from the initial technical discussion to production deployment and maintenance. It is a structured framework that we adapt to the specific needs of client project.</p>
+            <p class="subtitle">This timeline shows the key milestones in our development process, from the initial technical discussion to production deployment and maintenance. It is a structured framework that we adapt to the specific needs of client project</p>
             <div class="table-container">
                 <table class="timeline-table">
                     <thead>
@@ -1038,10 +1064,10 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="engagement-models">
             <div class="engagement-model-container">
                 <h2 class="engagement-model-title">Engagement models</h2>
-                <div class="engagement-model-descr">We offer two primary engagement models designed to provide the right level of support, whether you need a complete turnkey solution or specialized expertise to augment your existing team.</div>
+                <div class="engagement-model-descr">We offer two primary engagement models designed to provide the right level of support, whether you need a complete turnkey solution or specialized expertise to augment your existing team</div>
                 <div class="container">
                     <div class="card">
-                        <img width="96" height="96" src="/images/development-services/end-to-end.svg" alt="Recycling icon sybilizing End to end">
+                        <img width="96" height="96" src="/images/development-services/end-to-end.svg" alt="Recycling icon symbolizing End to end">
                         <h3>End-to-end development</h3>
                         <p class="subtitle">We manage the entire development lifecycle, from initial architecture to final deployment, delivering a production-ready solution on a fixed timeline and budget.</p>
                         <button
@@ -1094,7 +1120,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             <div class="contact-us-banner">
                 <div class="contact-us-banner-content">
                     <h2>Let’s build your solution together</h2>
-                    <p>Get the results you need with a proven team that delivers real-world IoT solutions—built to scale, built to last.</p>
                     <div class="contact-us-banner-buttons">
                         <button onclick="onContactUsClick(0)">Get in Touch</button>
                     </div>
@@ -1197,7 +1222,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         <img src="/images/development-services/grid.svg" alt="pattern">
                         <div class="contact-us-descr-container">
                             <h2>Let’s talk about your project</h2>
-                            <span>Fill out the form — we’ll get back to you shortly to clarify the details and prepare a tailored estimate.</span>
+                            <span>Fill out the form — we’ll get back to you shortly to clarify the details and prepare a tailored estimate</span>
                         </div>
                         <div class="client-avatar-container">
                             <div class="client-avatar-img"><img src="/images/development-services/artur-2.webp" alt="Photo of Artur Ishkhanishvili, VP Business Development ThingsBoard"></div>
@@ -1251,7 +1276,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             </div>
                             <div class="questionnaire-section">
                                 <fieldset>
-                                    <legend class="accordion-button active">3. Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
+                                    <legend class="accordion-button active">Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                                     <div class="label-container accordion-content" style="max-height: 134px">
                                         <label><input type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
                                         <label><input type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
@@ -1259,7 +1284,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                                     </div>
                                 </fieldset>
                                 <fieldset>
-                                    <legend class="accordion-button">1. Engagement model (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
+                                    <legend class="accordion-button">Engagement model (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                                     <div class="label-container accordion-content">
                                         <label><input type="radio" name="engagement" value="I don’t know yet"/> I don’t know yet</label>
                                         <label><input type="radio" name="engagement" value="Full-cycle development"/> Full-cycle development</label>
@@ -1268,7 +1293,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                                     </div>
                                 </fieldset>
                                 <fieldset>
-                                    <legend class="accordion-button">2. Project stage (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
+                                    <legend class="accordion-button">Project stage (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                                     <div class="label-container accordion-content last">
                                         <label><input type="radio" name="project" value="Idea"/> Idea</label>
                                         <label><input type="radio" name="project" value="Requirements defined"/> Requirements defined</label>
@@ -1344,14 +1369,14 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="form-element next">
                         <label for="msg-popup">
-                            <textarea id="msg" class="form-control text-area cdu-form-control cdu-text-area" value="" placeholder="Type your message here" name="msg-popup" type="text" size="40" maxlength="800"></textarea>
+                            <textarea id="msg-popup" class="form-control text-area cdu-form-control cdu-text-area" value="" placeholder="Type your message here" name="message-popup" type="text" size="40" maxlength="800"></textarea>
                             <p class="text-area-label">Message</p>
                         </label>
                     </div>
                 </div>
                 <div class="questionnaire-section">
                     <fieldset>
-                        <legend class="accordion-button active">3. Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
+                        <legend class="accordion-button active">Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                         <div class="label-container accordion-content" style="max-height: 134px">
                             <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard-popup" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
                             <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard-popup" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
@@ -1359,7 +1384,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend class="accordion-button">1. Engagement model (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
+                        <legend class="accordion-button">Engagement model (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                         <div class="label-container accordion-content">
                             <label><input id="engagement-model-dont-know-popup" type="radio" name="engagement-popup" value="I don’t know yet" /> I don’t know yet</label>
                             <label><input id="engagement-model-full-cycle-popup" type="radio" name="engagement-popup" value="Full-cycle development" /> Full-cycle development</label>
@@ -1368,7 +1393,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                     </fieldset>
                     <fieldset>
-                        <legend class="accordion-button">2. Project stage (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
+                        <legend class="accordion-button">Project stage (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                         <div class="label-container accordion-content last">
                             <label><input id="project-stage-idea-popup" type="radio" name="project-popup" value="Idea"/> Idea</label>
                             <label><input id="project-stage-requirements-popup" type="radio" name="project-popup" value="Requirements defined"/> Requirements defined</label>
@@ -1917,7 +1942,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             { name: 'name', prettyName: 'Name', type: 'text', id: 'name' },
             { name: 'email', prettyName: 'Email Address', type: 'email', id: 'email' },
             { name: 'message', prettyName: 'Message', type: 'textarea', id: 'message' },
-            { name: 'msg-popup', prettyName: 'Message', type: 'textarea', id: 'msg-popup' }
+            { name: 'message-popup', prettyName: 'Message', type: 'textarea', id: 'msg-popup' }
         ];
 
         fieldsToValidate.forEach(fieldSpec => {

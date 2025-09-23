@@ -331,8 +331,7 @@ telecom:
       link: https://www.vodafone.co.ck/
       authorImage: /images/customers/tamati-iro.webp
       companyImage: /images/customers/vodafone.svg
-      companyImageWidth: 120
-      companyImageHeight: 48
+      companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
       text:
@@ -426,8 +425,7 @@ industry40:
       link: https://www.vodafone.co.ck/
       authorImage: /images/customers/tamati-iro.webp
       companyImage: /images/customers/vodafone.svg
-      companyImageWidth: 120
-      companyImageHeight: 48
+      companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
       text:
@@ -562,8 +560,7 @@ development-service-feedback:
       id: vodafone
       authorImage: /images/customers/tamati-iro.webp
       companyImage: /images/customers/vodafone.svg
-      companyImageWidth: 120
-      companyImageHeight: 48
+      companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
       text:
