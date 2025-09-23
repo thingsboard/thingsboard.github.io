@@ -62,7 +62,7 @@ kubectl config set-context $(kubectl config current-context) --namespace=thingsb
 ```
 {: .copy-code}
 
-## Step 7. Provision Redis cluster
+## Step 7. Provision Valkey cluster
 
 {% include templates/mqtt-broker/install/cluster-common/provision-redis-cluster.md %}
 
@@ -158,7 +158,7 @@ Once the file is prepared and the values verified, proceed with the [upgrade pro
 
 ### Upgrade to 2.0.0
 
-For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 7](#step-7-provision-redis-cluster) to complete the installation.
+For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 7](#step-7-provision-valkey-cluster) to complete the installation.
 Only then you can proceed with the [upgrade](#run-upgrade).
 
 ### Run upgrade
