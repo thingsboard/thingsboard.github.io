@@ -67,8 +67,8 @@ Enabling PROXY Protocol ensures TBMQ receives the actual client IP and port at c
 ## How to enable the protocol?
 
 To enable PROXY Protocol support in TBMQ, you need to update the configuration settings for MQTT listeners. 
-The PROXY Protocol setting applies **globally** to all MQTT listeners in TBMQ and **cannot** be configured per listener.
-However, future releases may introduce the ability to configure PROXY Protocol on a per-listener basis.
+
+- **Before TBMQ v2.3**: The PROXY Protocol setting applies **globally** to all MQTT listeners in TBMQ and **cannot** be configured per listener.
 
 ```yaml
 # MQTT listeners parameters
@@ -80,12 +80,54 @@ listener:
 
 Set the environment variable `MQTT_PROXY_PROTOCOL_ENABLED` to "**true**".
 
+- **Since TBMQ v2.3**: In addition to the global setting, you can also configure PROXY Protocol **per MQTT listener**.
+  Per-listener settings are unset by default and inherit the global value.
+  If explicitly set, the per-listener value overrides the global one.
+
+```yaml
+# MQTT listeners parameters
+listener:
+  # Enable proxy protocol support as a global setting for all listeners. Disabled by default. If enabled, supports both v1 and v2.
+  # Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature
+  proxy_enabled: "${MQTT_PROXY_PROTOCOL_ENABLED:false}"
+
+# Per-listener overrides (inherit global if unset)
+  tcp:
+    # Enable proxy protocol support for the MQTT TCP listener. Unset by default – in this case it inherits the global MQTT_PROXY_PROTOCOL_ENABLED value.
+    # If explicitly set, supports both v1 and v2 and takes precedence over the global setting.
+    # Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature
+    proxy_enabled: "${MQTT_TCP_PROXY_PROTOCOL_ENABLED:}"
+  ssl:
+    # Enable proxy protocol support for the MQTT TLS listener. Unset by default – in this case it inherits the global MQTT_PROXY_PROTOCOL_ENABLED value.
+    # If explicitly set, supports both v1 and v2 and takes precedence over the global setting.
+    # Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature
+    proxy_enabled: "${MQTT_SSL_PROXY_PROTOCOL_ENABLED:}"
+  ws:
+    # Enable proxy protocol support for the MQTT WS listener. Unset by default – in this case it inherits the global MQTT_PROXY_PROTOCOL_ENABLED value.
+    # If explicitly set, supports both v1 and v2 and takes precedence over the global setting.
+    # Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature
+    proxy_enabled: "${MQTT_WS_PROXY_PROTOCOL_ENABLED:}"
+  wss:
+    # Enable proxy protocol support for the MQTT WSS listener. Unset by default – in this case it inherits the global MQTT_PROXY_PROTOCOL_ENABLED value.
+    # If explicitly set, supports both v1 and v2 and takes precedence over the global setting.
+    # Useful to get the real IP address of the client in the logs, for session details info and unauthorized clients feature
+    proxy_enabled: "${MQTT_WSS_PROXY_PROTOCOL_ENABLED:}"
+```
+
+**Example**
+
+```yaml
+MQTT_PROXY_PROTOCOL_ENABLED=true        # PROXY protocol is globally enabled
+MQTT_TCP_PROXY_PROTOCOL_ENABLED=false   # MQTT TCP listener explicitly disable PROXY protocol -> disabled
+MQTT_SSL_PROXY_PROTOCOL_ENABLED=        # TLS listener has PROXY protocol setting unset thus it inherits global setting -> enabled
+```
+
 **Important Notes:**
 
 - When `proxy_enabled` is set to `true`, TBMQ automatically supports both **PROXY Protocol v1 and v2**.
 - This setting ensures that TBMQ correctly interprets the PROXY Protocol headers sent at the start of each TCP connection, **before** any MQTT or TLS-specific data.
 
-### HAPROXY
+### HAProxy
 
 To forward the real client IP to TBMQ using PROXY Protocol, configure **HAProxy** as follows:
 
@@ -132,6 +174,18 @@ service.beta.kubernetes.io/aws-load-balancer-proxy-protocol: "*"
 - The `*` enables **PROXY Protocol v2** for all source IPs.
 
 See official [AWS documentation](https://kubernetes-sigs.github.io/aws-load-balancer-controller/latest/guide/service/nlb/#protocols) for more details.
+
+### Other Load Balancers
+
+You are not limited to HAProxy or AWS NLB — any load balancer that supports the PROXY Protocol can be used with TBMQ. 
+Examples include **Google Cloud Load Balancer**, **Azure Load Balancer**, **NGINX**, or other reverse proxies.
+
+The setup steps are straightforward:  
+
+1. Enable PROXY Protocol on your chosen load balancer according to its **official documentation**. 
+2. Enable PROXY Protocol on the TBMQ side (globally or per-listener, depending on your version). 
+
+Once both sides are properly configured, TBMQ will correctly interpret the PROXY Protocol headers and capture the real client IP and port, regardless of which load balancer you use.
 
 ## Considerations
 
