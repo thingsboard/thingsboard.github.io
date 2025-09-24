@@ -125,7 +125,7 @@ data-source-type-random:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-random-7-ce.png
         title: 'Created the value card widget which displays random value.'
 
-data-source-type-entities-сount:
+data-source-type-entities-count:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
         title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
@@ -154,7 +154,7 @@ data-source-type-entities-сount:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-9-ce.png
         title: 'Now we have a widget that displays the number of existing devices.'
 
-data-source-type-alarms-сount:
+data-source-type-alarms-count:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
         title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'

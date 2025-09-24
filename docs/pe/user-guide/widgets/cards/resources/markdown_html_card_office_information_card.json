@@ -93,7 +93,7 @@
         "applyDefaultMarkdownStyle": true,
         "markdownCss": ".card, .no-data-card {\n    padding: 0px;\n    height: 100%;\n}\n\n.card-title {\n    position: sticky;\n    top: 0;\n    z-index: 2;\n    font-size: 16px;\n    letter-spacing: 0.25px;\n    padding: 16px;\n}\n.attribute_container {\n    display: flex;\n    align-items: center;\n    gap: 20px;\n    padding: 16px;\n    border-bottom: 1px solid #0000000d;\n}\n\n.icon {\n    z-index: 1;\n}\n\n.icon_wrapper {\n    display: flex;\n    position: relative;\n    align-items: center;\n    padding: 8px;\n    border: 1px solid var(--tb-primary-100, #305680);\n    border-radius: 4px;\n}\n\n.icon_wrapper:before {\n    content: '';\n    z-index: 0;\n    position: absolute;\n    opacity: 0.1;\n    background-color: var(--tb-primary-200, #305680);\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n}\n\n.attribute, .attribute_label {\n    font-size: 14px;\n    line-height: 20px;\n}\n\n.attribute_label {\n    color: #00000061;\n}\n\n.no-data-card {\n    display: flex;\n    flex-direction: column;\n}\n\n.no-data-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 100%;\n    max-width: 345px;\n    padding: 0 15px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n.no-data-content {\n    transform: translateY(-30%);\n}\n\n.no-data-block p {\n    font-weight: 500;\n}\n\n.no-data-title {\n    color: rgba(0, 0, 0, 0.54);\n}\n\n.no-data-subtitle {\n    font-size: 13px;\n    color: rgba(0, 0, 0, 0.38);\n}"
       },
-      "title": "Markdown/HTML Card",
+      "title": "Office information card",
       "showTitleIcon": false,
       "iconColor": "rgba(0, 0, 0, 0.87)",
       "iconSize": "24px",

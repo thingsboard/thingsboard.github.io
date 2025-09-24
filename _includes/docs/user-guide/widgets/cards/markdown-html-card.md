@@ -1,8 +1,10 @@
+{% assign widgetName = "Markdown/HTML Card" %}
+{% assign widgetBundle = "Cards" %}
 * TOC
 {:toc}
 
-The **Markdown/HTML Card** is a versatile widget for static or semi‑dynamic content on a ThingsBoard dashboard. 
-It accepts **Markdown** or free‑form **HTML**. You can use it **with data sources** via **entity aliases** and **data keys** — or use it **without any data sources** at all.
+A versatile widget for static or semi‑dynamic content on a ThingsBoard dashboard. It renders **Markdown** or **free‑form HTML**, and it can work **with or without data sources**. 
+Use it for notes, contextual hints, KPIs, banners, or compact info cards alongside charts, tables, and maps.
 
 <br><b><font size="3">Markdown vs HTML</font></b>
 
@@ -13,84 +15,151 @@ It accepts **Markdown** or free‑form **HTML**. You can use it **with data sour
 
 ## Key capabilities
 
-- **Dynamic content.** Author in Markdown or HTML; mix text, lists, tables, links, images, icons.
+- **Dynamic or static content.** Author in Markdown or HTML; mix text, lists, tables, links, images, icons.
 - **Optional data.** Pull telemetry/attributes via **entity alias** and **data keys** to inject values in a template or process them in a value function.
-- **Actions & navigation.** Handle clicks on HTML elements (by *id*) to navigate to a dashboard state, open a dialog, or trigger another action.
-- **Styling.** Use the dedicated **Markdown/HTML CSS** section; inline styles in your markup are also supported.
+- **Actions & navigation.** Handle clicks on HTML elements (by *id*) to navigate to dashboard states, open dialogs/popovers, or trigger other actions.
+- **Styling.** Add styles in the dedicated **Markdown/HTML CSS** section (recommended) or place inline styles in your markup.
 - **Fast integration.** Works well alongside other widgets (time series, tables, maps) and is ideal for notes, contextual explanations, and compact info cards.
 
 <hr>
 
-## How it works
+## Add the widget
 
-<b><font size="4">Step 1 — Add the widget</font></b>
+{% include templates/adding-widget.md %}
 
-Choose the "**Markdown/HTML Card**" widget from the "**Cards**" widget bundle and place it on your dashboard.
+<hr>
 
-{% include images-gallery.html imageCollection="step-1" %}
+## Data sources (optional)
 
-<b><font size="4">Step 2 — Configure data sources (optional)</font></b>
+The {{widgetName}} can work with **no data sources** (purely static content) or with **one or more [data sources](/docs/{{docsPrefix}}user-guide/widgets/#data-source-types){:target="_blank"}**.
 
-On the "**Data**" tab:
-- Create an [Entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"} for the target entity (e.g., *Asset* → *Office A*).
-- Add **data keys** (attributes/telemetry) you plan to use (e.g., *address*, *email*, *phone*).
+In the **Data** tab:
 
-These values become available to the widget&#39;s content logic (pattern or value function).
+1. Choose the data source type: **Entity**, **Device**, **Entity count**, **Alarm count** or **Function**. 
+2. Configure [filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters){:target="_blank"} and **data keys** ([attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} / [latest telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}).   
+  The added keys become available to the widget&#39;s content logic.
 
-{% include images-gallery.html imageCollection="step-2" %}
+<hr>
 
-<b><font size="4">Step 3 - Choose content generation</font></b>
+## Configuration
 
-You have two options on the "**Appearance**" tab:
+Go to the widget&#39;s **Appearance** tab to manage its content and styles.
+- **Static Markdown/HTML template:** best for static layouts with a few dynamic placeholders.  
+- **Dynamic Markdown/HTML content:** best for conditions/loops/calculations, combining multiple keys, or switching layouts based on data.  
+- **Markdown/HTML CSS** — central place to add CSS for maintainable styling; inline styles remain supported for quick tweaks.
 
-- **1. Markdown/HTML pattern**   
-  A simple template using placeholders like **${key}** (optional formatting like ${address:0}) that ThingsBoard replaces with values from the selected data source.   
-  **Best for:** static layouts with a few dynamic inserts.   
-  **Use a pattern** if:
-    - You just need to "output the value as is".
-    - Simple substitutions **${key}** and basic formatting (e.g., ${floor:0}) are sufficient.
+<hr>
 
-  {% include images-gallery.html imageCollection="step-3-1" %}
+### Static Markdown/HTML template
 
-- **2. Markdown/HTML value function**   
-  A JavaScript function that receives data and the widget context, then returns a string with Markdown or HTML.   
-  **Best for:** conditions/loops/calculations, combining multiple keys, switching layouts based on data.   
-  **Use a value function** if:
-    - You need logic (if/else, loops, switching layout based on data).
-    - You want to combine multiple keys into complex markup or insert values only under certain conditions.
+- Use placeholders like `${key}`. 
+- Basic numeric formatting is supported via `${key:n}`, where `n` is the number of decimal places. For example:
+  - `${key}` — display key value **as is** (no formatting).
+  - `${key:0}` — display key value with **no decimal places**.
+  - `${key:2}` — display key value with **two decimal places**.
 
-  {% include images-gallery.html imageCollection="step-3-2" %}
+**Example:** 
 
-<b><font size="4">Step 4 — Content styling (CSS)</font></b>
+The Smart Device sends a temperature value to ThingsBoard. Display the temperature value in a card.
+
+**Datasource:**
+- **Type**: Device
+- **Device**: Smart Device
+- **Data key**: temperature
+
+Use the following **Markdown/HTML pattern**:
+
+```markdown
+### Temperature value card
+- **Current entity**: ${entityName}
+- **Current temperature**: ${temperature:1} °C
+```
+{:.copy-code}
+
+**Notes**
+- `${entityName}` – the **system name** of the entity from the data source.
+- `${temperature:1}` - value of the temperature telemetry with **one digit after the decimal point**.
+
+**Result:**
+
+![image](/images/user-guide/widgets/cards/markdown-html-card/markdown-html-pattern.png)
+
+[Download this widget](/docs/pe/user-guide/widgets/cards/resources/markdown_html_card_temperature_value_card.json){:target="_blank" download="markdown_html_card_temperature_value_card.json"} and [import](/docs/{{docsPrefix}}user-guide/widgets/#import-widget){:target="_blank"} it into your dashboard.
+
+<hr>
+
+### Dynamic Markdown/HTML content
+
+Best for conditions, calculations, combining multiple keys, or switching layouts.
+
+**To use:**
+1. Turn on **Markdown/HTML value function** option. 
+2. Implement a JavaScript function that receives data and the widget context `ctx`, then returns a **string** with Markdown or HTML.
+
+**Example:** 
+
+The Smart Device sends a temperature value to ThingsBoard. Display the temperature in a card with color rules:
+- If the temperature is below 20 °C, the value is shown <span style="color:blue">blue</span>.
+- If it&#39;s between 20 °C and 25 °C, the value is <span style="color:green">green</span>.
+- If it&#39;s above 25 °C, the value is <span style="color:red">red</span>.
+
+**Datasource:**
+- **Type**: Device
+- **Device**: Smart Device
+- **Data key**: temperature
+
+**Use the following value function**:
+
+```js
+const entity = data[0];
+const color = entity.temperature > 25 ? "red" : entity.temperature > 20 ? 'green' : 'blue'
+const entityName = `### Temperature value card\n - Current entity: <span >${entity.entityName}</span>\n `
+const temp = `- Current temperature: <span style="color:${color};">${entity.temperature.toFixed(1)} °C</span>\n `
+return entityName + temp;
+```
+{:.copy-code}
+
+**What it does**
+
+1. Use the first **datasource**: entity is `data[0]`.
+2. Choose a value **color** based on temperature:
+- **> 25 →** <span style="color:red">"red"</span>
+- **> 20 (and ≤ 25) →** <span style="color:green">"green"</span>.
+- **≤ 20 →** <span style="color:blue">"blue"</span>.
+3. **Build strings with Markdown + HTML:**
+- `entityName` - the **entity&#39;s name**.
+- `temp` a string with the temperature value, colored** according to the selected rule.
+- `toFixed(1)` - rounds the temperature to **one decimal place**.
+
+**Result:**
+
+![image](/images/user-guide/widgets/cards/markdown-html-card/markdown-html-value-function.png)
+
+[Download this widget](/docs/pe/user-guide/widgets/cards/resources/markdown_html_card_temperature_value_card_2.json){:target="_blank" download="markdown_html_card_temperature_value_card.json"} and [import](/docs/{{docsPrefix}}user-guide/widgets/#import-widget){:target="_blank"} it into your dashboard.
+
+<hr>
+
+### Content styling (CSS)
 
 Use the **Markdown/HTML CSS** section ("**Appearance**" tab) to style your card (recommended for maintainability). Inline styles inside your markup are also supported.
 
-{% include images-gallery.html imageCollection="step-4" %}
+<hr>
 
-<b><font size="4">Step 5 — Card styling</font></b>
+## Card styling
 
-In the "**Widget card**" tab:
+In the **Widget card** tab:
 
-- **Card title**. Set the **Title/Icon** and their style to keep your dashboard consistent.
-- **Card styles**. Configure **Text color**, **Background color**, and **other Card style** options (padding, margin, border radius, shadow).
-- **Card buttons**. Optionally disable "**Enable fullscreen**" and "**Enable data export**" for purely informational cards.
+- **Title & Icon** — set a descriptive title/icon consistent with your dashboard.
+- **Card styles** — configure text color, background, padding, margin, border radius, and shadow.
+- **Card buttons** — optionally disable **Enable fullscreen** and **Enable data export** for purely informational cards.
 
-{% include images-gallery.html imageCollection="step-5" %}
+<hr>
 
-<b><font size="4">Step 6 - Actions & navigation</font></b>
+## Actions & navigation
 
-The Markdown/HTML Card supports [Widget header button](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#widget-header-button){:target="_blank"} and [On HTML element click](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#on-html-element-click){:target="_blank"} actions.
-
-**On HTML element click** lets you bind an action to any HTML element with an id (e.g., navigate to a state, open a dialog).
-
-Use "**On HTML element click**" action.
-- Add an element identifier in your HTML (e.g., id="floor"). 
-- Bind an action to that element (navigate to a state, open a popover/dialog, etc.). 
-- This lets you build interactive cards or banners without writing a full custom widget.
-
-**Tip**: make sure the **id** in your HTML **exactly** matches the identifier you configure in the **action**.
-
-{% include images-gallery.html imageCollection="step-6" %}
+The {{widgetName}} widget supports the following actions:
+- [Widget header button](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#widget-header-button){:target="_blank"} — adds an action button to the widget header; clicking it triggers the configured action.
+- [On HTML element click](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#on-html-element-click){:target="_blank"} — clicking a specific HTML element inside the widget (by its **id**) triggers the configured action.
 
 <hr>
 
@@ -98,7 +167,7 @@ Use "**On HTML element click**" action.
 
 Create a compact office info card.
 
-{% include images-gallery.html imageCollection="example-markdown-html-card-7" %}
+![image](/images/user-guide/widgets/cards/markdown-html-card/office-information-card.png)
 
 <br><b><font size="4">Step 1. Prepare the entity</font></b>
 
@@ -125,14 +194,14 @@ Create the [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} 
 - **Define the entities from which the data will be retrieved**. To do this, add an entity alias:
   - In the **Entity alias** field, enter the name "**Office A**" and click **Create new**.
   - Specify the filter type as **Single entity**, select the type **Asset**, choose the asset "**Office A**", and click "**Add**".
-- In the **Data keys** section, add the following: **address**, **officeManager**, **email**, and **phone**.
+- In the **Data keys** section, add the following keys: **address**, **officeManager**, **email**, and **phone**.
 
 {% include images-gallery.html imageCollection="example-markdown-html-card-3" %}
 
 <b><font size="4">Step 2.3 Enable dynamic content ("Appearance" tab)</font></b>
 
-- Enable the "**Use markdown/HTML value function**" option.
-- Insert the **Markdown/HTML value function** below. 
+- Turn on the "**Use markdown/HTML value function**" option.
+- Paste the **Markdown/HTML value function** provided below:
 
 ```js
 if (data.length) {
@@ -206,7 +275,7 @@ if (data.length) {
 ```
 {:.copy-code.expandable-5}
 
-- Scroll to **Markdown/HTML CSS** and insert the CSS from the documentation.
+- Scroll to **Markdown/HTML CSS** and insert the CSS from the documentation:
 
 ```css
 .card, .no-data-card {
@@ -320,8 +389,8 @@ You&#39;ll see a compact, clean office contact card on the dashboard. Missing at
 
 {% include images-gallery.html imageCollection="example-markdown-html-card-7" %}
 
-<b><font size="4">Download configured Office A Card widget</font></b>
+<br><b><font size="4">Download the configured widget</font></b>
 
-You can download the configured [Office A card widget](/docs/pe/user-guide/widgets/cards/resources/office_a_card_widget.json){:target="_blank" download="office_a_card_widget.json"} and reuse it in your dashboards.
+You can download the configured [Office information card](/docs/pe/user-guide/widgets/cards/resources/markdown_html_card_office_information_card.json){:target="_blank" download="markdown_html_card_office_information_card.json"} and reuse it on your dashboards.
 
-**Important**: After importing, check the **entity alias** and **data keys** — you may need to re-bind them.
+**Important:** After importing, update the **target entity** and **data keys** in the **entity alias**.

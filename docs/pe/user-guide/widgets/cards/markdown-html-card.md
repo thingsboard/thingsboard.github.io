@@ -13,11 +13,6 @@ step-1:
         image: /images/user-guide/widgets/cards/markdown-html-card/markdown-html-card-step-1-2-pe.png
         title: ''
 
-step-2:
-    0:
-        image: /images/user-guide/widgets/cards/markdown-html-card/markdown-html-card-step-2-1-pe.png
-        title: ''
-
 step-3-1:
     0:
         image: /images/user-guide/widgets/cards/markdown-html-card/markdown-html-card-step-3-1-pe.png
