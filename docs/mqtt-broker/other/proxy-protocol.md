@@ -22,7 +22,7 @@ By using PROXY Protocol, TBMQ can log, filter, and apply policies based on the r
 ## How does the PROXY protocol work?
 
 The PROXY Protocol appends **meta-information** about the original client connection at the very start of the TCP stream. 
-This metadata is sent by the proxy or load balancer **before** any protocol-specific data, such as the MQTT CONNECT packet.
+This metadata is sent by the proxy or load balancer **before** any protocol-specific data, such as the MQTT CONNECT packet or the TLS handshake.
 
 ![image](/images/mqtt-broker/other/proxy-protocol.png)
 
@@ -33,7 +33,9 @@ When a client connects to TBMQ through a proxy that supports PROXY Protocol, the
     - The client's **source IP** and **port**.
     - The proxy's **destination IP** and **port**.
     - The **protocol type** (TCP over IPv4 or IPv6).
-3. TBMQ, with PROXY Protocol enabled, reads this header first, extracts the real client information, and then continues processing the MQTT data (starting with the CONNECT message).
+3. TBMQ, with PROXY Protocol enabled, reads this header first, extracts the real client information, and then continues processing the application data:
+    - For plain MQTT/WS connections: TBMQ processes the MQTT CONNECT packet next.
+    - For TLS-secured MQTT/WS connections: TBMQ proceeds with the **TLS handshake** after parsing the header.
 
 - In **PROXY Protocol v1**, this header is sent in **ASCII** format, e.g.:
   ```
@@ -81,7 +83,7 @@ Set the environment variable `MQTT_PROXY_PROTOCOL_ENABLED` to "**true**".
 **Important Notes:**
 
 - When `proxy_enabled` is set to `true`, TBMQ automatically supports both **PROXY Protocol v1 and v2**.
-- This setting ensures that TBMQ correctly interprets the PROXY Protocol headers sent at the start of each TCP connection, **before** any MQTT-specific data.
+- This setting ensures that TBMQ correctly interprets the PROXY Protocol headers sent at the start of each TCP connection, **before** any MQTT or TLS-specific data.
 
 ### HAPROXY
 
@@ -134,7 +136,7 @@ See official [AWS documentation](https://kubernetes-sigs.github.io/aws-load-bala
 ## Considerations
 
 * If PROXY Protocol is enabled in TBMQ but not used by your proxy/load balancer, TBMQ will fail to interpret the initial bytes, potentially rejecting the connection.
-* If PROXY Protocol is disabled in TBMQ but enabled on your proxy/load balancer, TBMQ will misinterpret the PROXY Protocol header as part of the MQTT data, leading to connection errors or protocol parsing failures.
+* If PROXY Protocol is disabled in TBMQ but enabled on your proxy/load balancer, TBMQ will misinterpret the PROXY Protocol header as part of the MQTT or TLS data, leading to connection errors or protocol parsing failures.
 * Ensure all connections to TBMQ are routed through a properly configured proxy when PROXY Protocol support is enabled.
 * PROXY Protocol should only be enabled if TBMQ is deployed behind a trusted proxy, as it allows the proxy to define client IPs.
 
