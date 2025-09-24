@@ -1,7 +1,8 @@
 {% assign targetKey = include.targetKey %}
+{% assign feedbackList = include.feedbackList %}
 {% assign contactBlock = include.contactBlock %}
 {% assign noBackground = include.noBackground %}
-{% assign targetKeyCustomers = site.data.clients-feedback[targetKey] %}
+{% assign targetKeyCustomers = site.data[feedbackList][targetKey] %}
 
 <div class="clients-cards {% if noBackground == "true" %}no-background{% endif %}">
     {% for info in targetKeyCustomers.feedback %}

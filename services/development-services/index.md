@@ -1129,7 +1129,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         </section>
         <section class="reviews">
             <h2 class="title">Clients reviews</h2>
-            {% include clients-feedback-cards.liquid targetKey="development-service-feedback" contactBlock="false"  noBackground="true"  %}
+            {% include clients-feedback-cards.liquid feedbackList="clients-feedback-dev-services" targetKey="development-service-feedback" contactBlock="false"  noBackground="true"  %}
         </section>
         <section class="faq-iot-development" id="faq-iot-development">
             <h2 class="faq-section-title">Frequently asked questions about IoT Development</h2>
