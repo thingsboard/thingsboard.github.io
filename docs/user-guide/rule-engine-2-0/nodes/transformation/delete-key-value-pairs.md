@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: delete key-value pairs
-description: Deletes specified key-value pairs from the incoming message data or its metadata.
+description: Deletes specified key-value pairs from either the message data or metadata.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

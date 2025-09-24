@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: message count
-description: Counts messages for a specific period and produces messages with the result.
+description: Counts incoming messages over a specified time interval and outputs a message containing the count for each interval.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

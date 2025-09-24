@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: originator attributes
-description: Retrieves attributes and/or the latest time series data from the message originator and adds the results to either the message data or the message metadata.
+description: Enriches messages by adding attributes (client, shared, server) and/or latest time series values from the message originator.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

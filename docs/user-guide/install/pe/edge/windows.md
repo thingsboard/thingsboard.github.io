@@ -18,7 +18,7 @@ This guide provides instructions for installing **ThingsBoard Edge** on **Window
 
 The steps below apply to:
 * 32-bit or 64-bit systems
-* Windows versions 10, 8.1, 8, and 7
+* Windows versions 11/10
 
 {% include templates/edge/install/prerequisites.md %}
 
