@@ -150,7 +150,7 @@ You should see a screen similar to this:
 **Recommendations:**
 
 * **Cluster type**: Select **Provisioned** for full control over broker capacity and configuration.
-* **Kafka version**: Use **Apache Kafka 3.9.x** — this version has been fully validated with TBMQ.
+* **Kafka version**: Use **Apache Kafka 4.0.x** — this version has been fully validated with TBMQ.
 * **Metadata mode**: Choose **KRaft** (controller quorum) for simplified operations and improved resiliency compared to ZooKeeper.
 * **Instance type**: Start with **m7g.large** brokers (or equivalent) for a good balance of performance and cost; scale up later if required.
 * **Cluster configuration**: Create a **custom configuration** to simplify future parameter changes without needing to recreate the cluster.
