@@ -3,7 +3,7 @@ abstract: "Guides for installing and configuring ThingsBoard PE Edge."
 toc:
   - title: Installation options
     path: /docs/user-guide/install/pe/edge/installation-options/
-  - title: On premise
+  - title: On premises
     section:
     - title: Ubuntu Server
       path: /docs/user-guide/install/pe/edge/deb-installation/
