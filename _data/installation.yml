@@ -3,7 +3,7 @@ abstract: "Documentation for installation and configuration of ThingsBoard IoT P
 toc:
 - title: Installation options
   path: /docs/user-guide/install/installation-options/
-- title: On premises
+- title: On-premises
   section:
   - title: Ubuntu Server
     path: /docs/user-guide/install/ubuntu/

@@ -1397,7 +1397,7 @@ var tb = (function () {
 	});
 })();
 
-//script for tabs (on premises, live demo, cloud) in installation option
+//script for tabs (on-premises, live demo, cloud) in installation option
 (function () {
 	$(document).ready(function () {
 
