@@ -768,6 +768,42 @@
     industrial Internet of Things gateways and IO systems, industrial automation gateways
     and IO systems, building HVAC Internet of Things gateways and IO systems, power
     energy Internet of Things gateways and IO systems, etc.
+- name: MachineAstro Pvt Ltd
+  type:
+    - Wi-Fi
+    - Bluetooth 5.0
+    - RS485
+  industry:
+    - Smart Cities
+    - Retail
+    - Transportation & Logistics
+    - Healthcare
+    - Industrial Manufacturing
+    - Smart Buildings
+    - Energy Management
+    - Environmental Monitoring
+  use-case:
+    - Smart Asset Monitoring
+    - Condition Monitoring
+    - Smart Retail
+    - Smart Farming
+    - Smart Irrigation
+  hardware-types:
+    - Sensors
+    - Gateways
+  logo: /images/partners/machineastro-logo.png
+  page: /partners/hardware/machineastro
+  site:
+    href: https://machineastro.com/
+  links:
+    gateway-guides:
+      0:
+        label: VIBit integration guide
+        href: /docs/devices-library/vibit/
+      1:
+        label: VIBit-BP integration guide
+        href: /docs/devices-library/vibit-bp/
+  description: MachineAstro provides AI-powered predictive maintenance and energy analytics solutions. Our VIBit wireless vibration & temperature sensors enable real-time machine condition monitoring. The iEdge360 platform delivers 400+ fault diagnostics, anomaly detection, and energy insights. Our AI video analytics ensures workplace safety with fire, smoke, and PPE compliance monitoring.
 - name: Senquip
   type:
     - Wi-Fi
