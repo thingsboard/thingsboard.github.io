@@ -5421,6 +5421,303 @@
 "/docs/user-guide/ui/widget-actions/":
   url: "/docs/user-guide/ui/widget-actions/"
   redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/air-quality-index-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/air-quality-index-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/air-quality-index-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/air-quality-index-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/air-quality-index-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/air-quality-index-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/air-quality-index-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/air-quality-index-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/carbon-monoxide-co-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/co2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/co2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/co2-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/co2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/co2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/co2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/co2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/co2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-air-quality-index-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-air-quality-index-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-air-quality-index-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-air-quality-index-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-carbon-monoxide-co-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-carbon-monoxide-co-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-carbon-monoxide-co-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-carbon-monoxide-co-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-co2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-co2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-co2-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-co2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-humidity-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-humidity-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-humidity-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-humidity-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-individual-allergy-index-iai-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-individual-allergy-index-iai-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-individual-allergy-index-iai-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-individual-allergy-index-iai-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-nitrogen-dioxide-no2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-nitrogen-dioxide-no2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-nitrogen-dioxide-no2-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-nitrogen-dioxide-no2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-ozone-o3-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-ozone-o3-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-ozone-o3-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-ozone-o3-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-pm10-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-pm10-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-pm10-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-pm10-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-pm2-5-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-pm2-5-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-pm2-5-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-pm2-5-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-radon-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-radon-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-radon-level-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-radon-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-sulfur-dioxide-so2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-sulfur-dioxide-so2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-sulfur-dioxide-so2-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-sulfur-dioxide-so2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-volatile-organic-compounds-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-volatile-organic-compounds-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/horizontal-volatile-organic-compounds-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/horizontal-volatile-organic-compounds-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/humidity-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/humidity-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/humidity-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/humidity-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/humidity-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/humidity-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/humidity-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/humidity-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/humidity-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/humidity-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/humidity-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/humidity-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/individual-allergy-index-iai-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/nitrogen-dioxide-no2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/ozone-o3-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/ozone-o3-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/ozone-o3-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/ozone-o3-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/ozone-o3-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/ozone-o3-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/ozone-o3-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/ozone-o3-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm10-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm10-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm10-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm10-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm10-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm10-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm10-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm10-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm2-5-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm2-5-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm2-5-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm2-5-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm2-5-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm2-5-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/pm2-5-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/pm2-5-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/radon-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/radon-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/radon-level-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/radon-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/radon-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/radon-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/radon-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/radon-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-air-quality-index-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-air-quality-index-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-air-quality-index-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-air-quality-index-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-carbon-monoxide-co-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-carbon-monoxide-co-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-carbon-monoxide-co-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-carbon-monoxide-co-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-co2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-co2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-co2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-co2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-humidity-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-humidity-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-humidity-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-humidity-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-individual-allergy-index-iai-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-individual-allergy-index-iai-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-individual-allergy-index-iai-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-individual-allergy-index-iai-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-nitrogen-dioxide-no2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-nitrogen-dioxide-no2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-nitrogen-dioxide-no2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-nitrogen-dioxide-no2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-ozone-o3-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-ozone-o3-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-ozone-o3-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-ozone-o3-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-pm10-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-pm10-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-pm10-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-pm10-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-pm2-5-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-pm2-5-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-pm2-5-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-pm2-5-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-radon-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-radon-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-radon-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-radon-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-sulfur-dioxide-so2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-sulfur-dioxide-so2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-sulfur-dioxide-so2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-sulfur-dioxide-so2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-volatile-organic-compounds-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-volatile-organic-compounds-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/simple-volatile-organic-compounds-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/simple-volatile-organic-compounds-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/sulfur-dioxide-so2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/air-quality/volatile-organic-compounds-chart-card/"
+  redirect_from: []
 "/docs/user-guide/ui/widget-library/alarm-widgets/alarm-count/":
   url: "/docs/user-guide/ui/widget-library/alarm-widgets/alarm-count/"
   redirect_from: []
@@ -6093,6 +6390,468 @@
 "/docs/user-guide/ui/widget-library/":
   url: "/docs/user-guide/ui/widget-library/"
   redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/horizontal-noise-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/horizontal-noise-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/horizontal-noise-level-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/horizontal-noise-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/horizontal-radon-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/horizontal-radon-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/horizontal-radon-level-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/horizontal-radon-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/horizontal-volatile-organic-compounds-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/horizontal-volatile-organic-compounds-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/horizontal-volatile-organic-compounds-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/horizontal-volatile-organic-compounds-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-co2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-co2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-co2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-co2-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-co2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-humidity-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-humidity-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-humidity-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-humidity-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-illuminance-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-illuminance-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-illuminance-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-illuminance-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm10-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm10-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm10-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm10-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm2-5-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm2-5-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm2-5-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-pm2-5-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-temperature-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-temperature-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-temperature-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-horizontal-temperature-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-humidity-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-illuminance-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm10-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-pm2-5-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-co2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-co2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-co2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-co2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-humidity-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-humidity-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-humidity-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-humidity-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-illuminance-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-illuminance-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-illuminance-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-illuminance-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm10-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm10-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm10-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm10-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm2-5-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm2-5-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm2-5-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-pm2-5-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-temperature-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-temperature-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-temperature-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-simple-temperature-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-gauge/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-gauge/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/indoor-temperature-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/noise-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/noise-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/noise-level-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/noise-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/noise-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/noise-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/noise-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/noise-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/radon-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/radon-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/radon-level-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/radon-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/radon-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/radon-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/radon-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/radon-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/simple-noise-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/simple-noise-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/simple-noise-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/simple-noise-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/simple-radon-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/simple-radon-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/simple-radon-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/simple-radon-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/simple-volatile-organic-compounds-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/simple-volatile-organic-compounds-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/simple-volatile-organic-compounds-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/simple-volatile-organic-compounds-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/indoor-environment/volatile-organic-compounds-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/efficiency-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-gauge/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-gauge/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/flow-rate-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-gauge/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-gauge/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/fluid-pressure-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-efficiency-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-efficiency-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-efficiency-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-efficiency-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-flow-rate-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-flow-rate-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-flow-rate-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-flow-rate-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-fluid-pressure-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-fluid-pressure-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-fluid-pressure-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-fluid-pressure-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-power-consumption-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-power-consumption-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-power-consumption-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-power-consumption-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-pump-vibration-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-pump-vibration-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-pump-vibration-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-pump-vibration-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-rotational-speed-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-rotational-speed-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-rotational-speed-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/horizontal-rotational-speed-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/power-consumption-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/pump-vibration-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-gauge/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-gauge/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/rotational-speed-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-efficiency-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-efficiency-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-efficiency-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-efficiency-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-flow-rate-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-flow-rate-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-flow-rate-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-flow-rate-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-fluid-pressure-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-fluid-pressure-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-fluid-pressure-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-fluid-pressure-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-power-consumption-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-power-consumption-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-power-consumption-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-power-consumption-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-pump-vibration-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-pump-vibration-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-pump-vibration-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-pump-vibration-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-rotational-speed-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-rotational-speed-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/industrial-widgets/simple-rotational-speed-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/industrial-widgets/simple-rotational-speed-chart-card/"
+  redirect_from: []
 "/docs/user-guide/ui/widget-library/input-widgets/device-claiming-widget/":
   url: "/docs/user-guide/ui/widget-library/input-widgets/device-claiming-widget/"
   redirect_from: []
@@ -6185,6 +6944,540 @@
   redirect_from: []
 "/docs/user-guide/ui/widget-library/navigation-widgets/quick-links/":
   url: "/docs/user-guide/ui/widget-library/navigation-widgets/quick-links/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/air-quality-index-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/co2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/co2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/co2-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/co2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/co2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/co2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/co2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/co2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/flooding-level-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/ground-temperature-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-air-quality-index-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-air-quality-index-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-air-quality-index-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-air-quality-index-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-co2-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-co2-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-co2-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-co2-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-flooding-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-flooding-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-flooding-level-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-flooding-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-ground-temperature-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-ground-temperature-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-ground-temperature-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-ground-temperature-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-humidity-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-humidity-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-humidity-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-humidity-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-illuminance-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-illuminance-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-illuminance-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-illuminance-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-leaf-wetness-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-leaf-wetness-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-leaf-wetness-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-leaf-wetness-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-noise-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-noise-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-noise-level-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-noise-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm10-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm10-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm10-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm10-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm2-5-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm2-5-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm2-5-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pm2-5-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pressure-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pressure-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pressure-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-pressure-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-rainfall-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-rainfall-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-rainfall-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-rainfall-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-snow-depth-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-snow-depth-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-snow-depth-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-snow-depth-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-soil-moisture-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-soil-moisture-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-soil-moisture-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-soil-moisture-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-solar-radiation-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-solar-radiation-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-solar-radiation-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-solar-radiation-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-temperature-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-temperature-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-temperature-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-temperature-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-uv-index-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-uv-index-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-uv-index-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-uv-index-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-vibration-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-vibration-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-vibration-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-vibration-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-visibility-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-visibility-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-visibility-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-visibility-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-wind-speed-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-wind-speed-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-wind-speed-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/horizontal-wind-speed-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/humidity-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/humidity-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/humidity-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/humidity-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/humidity-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/humidity-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/humidity-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/humidity-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/humidity-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/humidity-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/humidity-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/humidity-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/illuminance-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/leaf-wetness-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/noise-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm10-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm10-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm10-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm10-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm10-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm10-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm10-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm10-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pm2-5-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pressure-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pressure-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pressure-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pressure-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pressure-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pressure-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pressure-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pressure-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pressure-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pressure-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/pressure-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/pressure-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/rainfall-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-air-quality-index-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-air-quality-index-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-air-quality-index-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-air-quality-index-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-co2-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-co2-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-co2-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-co2-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-flooding-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-flooding-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-flooding-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-flooding-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-ground-temperature-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-ground-temperature-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-ground-temperature-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-ground-temperature-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-humidity-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-humidity-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-humidity-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-humidity-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-illuminance-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-illuminance-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-illuminance-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-illuminance-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-leaf-wetness-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-leaf-wetness-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-leaf-wetness-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-leaf-wetness-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-noise-level-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-noise-level-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-noise-level-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-noise-level-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm10-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm10-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm10-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm10-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm2-5-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm2-5-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm2-5-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-pm2-5-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-pressure-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-pressure-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-pressure-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-pressure-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-rainfall-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-rainfall-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-rainfall-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-rainfall-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-snow-depth-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-snow-depth-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-snow-depth-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-snow-depth-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-soil-moisture-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-soil-moisture-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-soil-moisture-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-soil-moisture-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-solar-radiation-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-solar-radiation-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-solar-radiation-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-solar-radiation-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-temperature-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-temperature-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-temperature-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-temperature-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-uv-index-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-uv-index-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-uv-index-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-uv-index-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-vibration-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-vibration-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-vibration-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-vibration-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-visibility-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-visibility-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-visibility-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-visibility-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-wind-speed-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-wind-speed-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/simple-wind-speed-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/simple-wind-speed-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/snow-depth-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-progress-bar-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-progress-bar-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-progress-bar/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/soil-moisture-progress-bar/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/solar-radiation-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-gauge/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-gauge/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-range-chart-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-range-chart-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/temperature-range-chart/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/temperature-range-chart/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/uv-index-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/vibration-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/vibration-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/vibration-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/vibration-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/vibration-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/vibration-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/vibration-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/vibration-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/visibility-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/visibility-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/visibility-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/visibility-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/visibility-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/visibility-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/visibility-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/visibility-chart-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-and-direction-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-and-direction-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-and-direction/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-and-direction/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-card/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-chart-card-with-background/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-chart-card-with-background/"
+  redirect_from: []
+"/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-chart-card/":
+  url: "/docs/user-guide/ui/widget-library/outdoor-environment/wind-speed-chart-card/"
   redirect_from: []
 "/docs/user-guide/ui/widget-library/scada-fluid-system/bottom-flow-meter/":
   url: "/docs/user-guide/ui/widget-library/scada-fluid-system/bottom-flow-meter/"
