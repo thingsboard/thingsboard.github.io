@@ -373,8 +373,6 @@ toc:
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: JWT security settings
-    path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution guide
   section:
     - title: How to contribute your device integration guide
