@@ -8,7 +8,7 @@ description: ThingsBoard Aliases
 create-alias:
     0:
         image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
-        title: 'Open your dashboard and enter edit mode;'
+        title: 'Open your dashboard and switch to Edit mode;'
     1:
         image: /images/user-guide/ui/alias/create-alias-2-pe.png
         title: 'Click the "Entity aliases" icon in the upper right corner of the window;'

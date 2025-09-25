@@ -1,9 +1,10 @@
 * TOC 
 {:toc}
 
-## Prerequisites
-
-Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
+{% capture difference %}
+Before proceeding with this guide, it&#39;s recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} guide to become familiar with ThingsBoard devices and widgets. This will enhance your learning experience and understanding of the concepts presented here.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Introduction
 

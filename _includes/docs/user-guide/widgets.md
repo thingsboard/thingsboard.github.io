@@ -1,33 +1,40 @@
 * TOC
 {:toc}
 
-## Prerequisites
+{% capture difference %}
+Before proceeding with this guide, it&#39;s recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} guide to become familiar with ThingsBoard dashboards and widgets. This will enhance your learning experience and understanding of the concepts presented here.
-
-## Introduction
-
-All IoT dashboards are constructed using ThingsBoard widgets.
-
-A widget is an element that displays a specific type of information or functionality on a dashboard. 
-Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
+A **widget** is a dashboard element that displays a specific type of data or provides functionality.   
+Widgets are used to:
+- Visualize device data (telemetry and attributes)
+- Remotely control devices (RPC)
+- Work with alarms (create/view/acknowledge)
+- Show static custom HTML content
 
 ### Widget types
 
-There are five types of widgets:
+ThingsBoard provides five main widget types:
 
-* **Timeseries** widgets display data for a specific time window. It can be either Realtime - the dynamically changed time frame for a certain latest interval, or History - a fixed historical time frame.  
-  Examples of timeseries widgets are chart widgets. Obviously, timeseries widgets are designed to display time series and not attributes;
-* **Latest values** widgets display the latest values of particular [attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} keys. For example, device model or latest temperature reading;
-* **Control** widgets allow you to send [RPC commands](/docs/{{docsPrefix}}user-guide/rpc/){:target="_blank"} to your devices. For example, control desired temperature on the thermostat device;
-* **Alarm** widgets allow you to display [alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"};
-* **Static** widgets are designed to display static data. For example, floor plan or static company information.
+- **Time series widgets**. Show data over a selected time window. The window can be:
+  - **Real time** — a rolling interval such as the last 5 minutes or last 24 hours.
+  - **Historical** — a fixed, past interval.   
 
-More about widget types you can learn [here](/docs/{{docsPrefix}}user-guide/ui/widget-library/){:target="_blank"}.
+  *Example:* line, bar, or area chart widgets.   
 
-Each widget typically has specific settings and parameters that allow users to customize its behavior and appearance according to their needs.
+  **Note**: Time series widgets are designed for telemetry (time series) rather than attributes.
 
-This guide covers main concepts and various widget settings.
+- **Latest values widgets**. Display the most recent values of selected [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} keys.   
+*Examples:* device model attribute, latest temperature reading.
+
+- **Control widgets**. Send [RPC commands](/docs/{{docsPrefix}}user-guide/rpc/){:target="_blank"} to your devices.   
+  *Example:* set a target temperature on a thermostat.
+
+- **Alarm widgets**. Display and manage [alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} and notifications.
+- **Static widgets**. Present static content such as a floor plan or company information (including custom HTML).
+
+Learn more about widget types [here](/docs/{{docsPrefix}}user-guide/ui/widget-library/){:target="_blank"}.
 
 ## Adding a widget to the dashboard
 
@@ -37,30 +44,25 @@ To add a new widget to a dashboard, you should:
 
 ## Widget settings
 
-Widget settings consist of one or multiple data sources, appearance settings, widget card settings, actions, and mobile appearance that you can customize and perform on the widget’s content.
+Widget configuration includes setting up one or more [data sources](#data-source-types) (some widgets may have none), as well as configuring **appearance**, **widget card parameters**, **actions**, and **layout**.
 
-{% capture difference %}
-**Please note**
-<br>
-that only the data source configuration is strictly required. You can leave all other configuration tabs with the default values in most of the cases.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+When creating a widget, you can switch between **Basic** and **Advanced** modes using the toggle in the top‑right corner of the widget dialog.
 
-During widget creation, you can choose between **basic** and **advanced** functionality.
-Switching between modes is done in the top right corner of the widget creation window.
+<br><b><font size="4">Basic mode</font></b>
 
-**Basic functionality**
+Use **Basic** mode for a quick start with a single data source and no extra filters. You’ll configure:
 
-Basic functionality is suitable for a quick start when you are using a single data source type without additional conditions or filters.
-It includes settings for the time window, datasource selection (entity alias or device), and a basic set of settings for the appearance of widgets, which depends on the widget's purpose.
+- the [time window](#widget-time-window) (or inherit it from the dashboard),
+- the data source ([entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"} or specific [device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"}),
+- a minimal set of appearance options that depend on the widget type.
 
 {% include images-gallery.html imageCollection="add-widget-basic-mode" %}
 
-**Advanced functionality**
+<br><b><font size="4">Advanced mode</font></b>
 
-In the advanced functionality, you can use multiple datasources (if supported by the widget), and apply filters, and it includes five tabs for more detailed widget configuration: [Data](#data-settings), [Appearance](#appearance), [Widget card](#widget-card), [Actions](#widget-actions), and [Mobile](#mobile-mode-settings).
+**Advanced** mode supports multiple data sources (when supported by the widget), [filtering](/docs/{{docsPrefix}}user-guide/dashboards/#filters){:target="_blank"}, and five configuration tabs for fine‑grained control: [Data](#data-settings), [Appearance](#appearance), [Widget card](#widget-card), [Actions](#widget-actions), and [Layout](#layout-settings).
 
-Additionally, in the advanced functionality, there are additional [datasource](#data-source-types) types available: Function, Entities count and Alarms count (these data types are not supported by all widgets).
+Additional data source types are available in Advanced mode (widget‑dependent): [Function](#function-as-datasource), [Entities count](#entities-count), and [Alarms count](#alarms-count).
 
 {% include images-gallery.html imageCollection="add-widget-advanced-mode" %}
 
@@ -68,14 +70,15 @@ Additionally, in the advanced functionality, there are additional [datasource](#
 
 #### Widget time window
 
-A widget time window defines a time interval and aggregation function that should be used to fetch the time series or alarm data.
-By default, every widget uses the main [time window](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"} determined in the dashboard's [toolbar](/docs/{{docsPrefix}}user-guide/dashboards/#dashboard-toolbar){:target="_blank"}.
-You can overwrite the default time window by toggling the option to "Use widget time window" parameter.
-You can also hide the time window selection for a specific widget from the user using the "Display time window" checkbox.
+The widget&#39;s **time window** defines the time interval and aggregation function used to fetch telemetry or alarm data. 
+
+By default, each widget uses its **own** time window. You can instead use the **dashboard time window** by enabling the corresponding option.
+
+To hide the time-window selector from end users for this widget, clear the **Display time window** checkbox.
+
+Learn more in the [time window guide](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="timewindow" %}
-
-Learn more about time window configuration [here](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}.
 
 #### Data source types
 
@@ -521,6 +524,8 @@ All those settings are enabled by default.
 
 {% include images-gallery.html imageCollection="enable-fullscreen" %}
 
+<hr>
+
 ### Widget actions
 
 Actions allow quickly and easily configuring the transition to the created state, transferring to other dashboards, or even updating the dashboard you are in. Depending on the widget, the action sources differ.
@@ -530,18 +535,29 @@ To fully understand how to use Actions, you have to [add a State to your widget]
 
 Read more about [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/){:target="_blank"} in the documentation dedicated to it.
 
-### Mobile mode settings
+### Layout settings
 
-With mobile mode settings, you can optimize the widget for easy viewing on mobile devices.
+Use the **Layout** tab to control how the widget behaves inside the dashboard grid across desktop and mobile layouts.
 
-Additionally, you can hide/show the widget in mobile mode or desktop mode.
+<b><font size="3">Resize options</font></b>
 
-Mobile Mode settings consist of two options:
-- **Order** - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
-  If you need to arrange widgets in this column in a custom order, you can configure different order values for each widget.
-- **Height** - takes an integer value from 1 to 10. It sets the height of the widget in Mobile Mode in the range from 70px (1) to 700px (10), ignoring its original height.
-  For example, with a value of 5, the widget height will be 350px. (70 * 5)
-  If no value is specified, its original height will be used.
+- **Resizable**. Allows the widget to be resized by the user in Edit mode. When disabled, the widget keeps its current size and resize handles are hidden.
+- **Preserve aspect ratio**. Keeps the widget&#39;s width‑to‑height ratio when it is resized. This helps charts and media avoid distortion across different screen sizes and grid breakpoints. If disabled, width and height can change independently.
+
+**Tip**: Enable **Preserve aspect ratio** for charts, images, and video; disable it for tables and lists where extra vertical space is useful.
+
+<b><font size="3">Mobile</font></b>
+
+These options control visibility and sizing in **mobile mode** (responsive layout):
+
+- **Hide widget in mobile mode**. Do not render this widget when the dashboard is viewed on a mobile layout. Useful for large visualizations that don’t fit small screens.
+- **Hide widget in desktop mode**. Render this widget only on mobile; hide it on desktop. Handy when you design a compact, mobile‑only alternative to a complex desktop widget.
+- **Order**. Sets the widget&#39;s position relative to other widgets in the mobile layout. Lower numbers appear earlier (top‑left). Use integers (e.g., 1, 2, 3…).
+- **Height**. Defines the widget’s height in the mobile grid (in grid rows). Increase the value to give lists and cards more space on phones; reduce it for small KPIs.
+
+**Best practices:**
+- Keep mobile **Order** consistent across related widgets to maintain reading flow.
+- Test with real devices or the dashboard’s mobile preview to validate **Height** and scrolling behavior.
 
 {% include images-gallery.html imageCollection="mobile-settings" %}
 
