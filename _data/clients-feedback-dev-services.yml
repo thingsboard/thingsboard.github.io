@@ -4,8 +4,8 @@ development-service-feedback:
       position: VAS Manager
       companyName: Vodafone
       id: vodafone
-      authorImage: /images/customers/tamati-iro.webp
-      companyImage: /images/customers/vodafone.svg
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
       companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
@@ -21,8 +21,8 @@ development-service-feedback:
       position: Cloud & App Development Manager
       companyName: Circutor
       id: circutor
-      authorImage: /images/customers/circutor-person.webp
-      companyImage: /images/customers/circutor.svg
+      authorImage: https://img.thingsboard.io/customers/circutor-person.webp
+      companyImage: https://img.thingsboard.io/customers/circutor.svg
       companyImageWidth: 138
       companyImageHeight: 32
       text:
@@ -33,8 +33,8 @@ development-service-feedback:
       position: R&D Director
       companyName: Poliglot
       id: poliglot
-      authorImage: /images/customers/poliglot-photo.webp
-      companyImage: /images/customers/poligiot.svg
+      authorImage: https://img.thingsboard.io/customers/poliglot-photo.webp
+      companyImage: https://img.thingsboard.io/customers/poligiot.svg
       companyImageHeight: 40
       noHeading: "true"
       text:
@@ -46,8 +46,8 @@ development-service-feedback:
       position: Head of Software Engineering
       companyName: Awake
       id: awake
-      authorImage: /images/customers/kemen-pevec.webp
-      companyImage: /images/customers/awake.webp
+      authorImage: https://img.thingsboard.io/customers/kemen-pevec.webp
+      companyImage: https://img.thingsboard.io/customers/awake.webp
       companyImageWidth: 172
       companyImageHeight: 32
       text:
