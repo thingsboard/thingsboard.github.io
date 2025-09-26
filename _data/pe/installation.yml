@@ -3,7 +3,7 @@ abstract: "Documentation for installation and configuration of ThingsBoard Profe
 toc:
 - title: Installation options
   path: /docs/user-guide/install/pe/installation-options/
-- title: On premise
+- title: On-premises
   section:  
   - title: Ubuntu Server
     path: /docs/user-guide/install/pe/ubuntu/
