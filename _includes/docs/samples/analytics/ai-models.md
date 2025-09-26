@@ -116,6 +116,9 @@ ThingsBoard currently supports integration with the following AI providers:
 
 #### Ollama
 
+{% assign sinceVersion = "4.2.1" %}
+{% include templates/since.md %}
+
 [Ollama](https://ollama.com/){:target="_blank"} allows you to easily run open large language models, such as Llama 3 and Mistral, on your own machine.
 
 Connecting to your Ollama server requires its <b>base URL</b> (e.g., `http://localhost:11434`) and the appropriate authentication method. Three options are available:
