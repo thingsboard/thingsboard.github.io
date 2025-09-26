@@ -5,7 +5,7 @@ toc:
   path: /docs/trendz/install/installation-options/
 - title: Trendz Cloud
   path: /docs/trendz/install/cloud/
-- title: On premise
+- title: On-premises
   section:
   - title: Ubuntu Server
     path: /docs/trendz/install/ubuntu/

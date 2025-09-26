@@ -17,54 +17,50 @@
 * TOC
 {:toc}
 
-Welcome! This guide will walk you through building and setting up a custom {{appPrefix}} mobile application from scratch for your own instance of the {{appPrefix}} platform.
+Welcome! This guide walks you through creating and configuring your own {{appPrefix}} mobile application from scratch for your {{appPrefix}} instance.
 
-**Before you begin:** Choose an appropriate mobile app version for your {{appPrefix}} platform version using the [compatibility table](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table). Using incompatible versions may cause sign-in issues or unexpected behavior.
+**Before you begin**, choose the mobile app version that matches your ThingsBoard platform using the [compatibility matrix](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table){:target="_blank"}. Using incompatible versions is the most common cause of sign‑in issues or unexpected behavior.
 
 ## Prerequisites
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-- You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
-The alternative option is to install ThingsBoard PE using [installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
-{% else %}  
-- You will need to have access to ThingsBoard. The easiest way is to use [Live Demo](https://demo.thingsboard.io/signup){:target="_blank"}. 
-The alternative option is to install ThingsBoard using [installation guide](/docs/user-guide/install/installation-options/){:target="_blank"}.
-{% endif %}
-
-- Prepare the environment for building your {{appPrefix}} mobile application. Install the appropriate Flutter SDK version for your app version from the [compatibility table](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table) by following [these instructions](https://flutter.dev/docs/get-started/install){:target="_blank"}.
-- For the best development experience and performance, we also recommend configuring your IDE (such as Visual Studio Code) using [these guidelines](https://flutter.dev/docs/get-started/editor){:target="_blank"}.
-- You can also check out the documentation on how to [write your first Flutter app](https://flutter.dev/docs/get-started/test-drive){:target="_blank"}.
+- Access to a {{appPrefix}} instance. The easiest way is to use {{cloudApp}}{:target="_blank"} server. Alternatively, install {{appPrefix}} using the official [installation guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
+- Prepare the environment for building the {{appPrefix}} mobile application:
+  - [Install the Flutter SDK](https://flutter.dev/docs/get-started/install){:target="_blank"} version that corresponds to your app version (see the [compatibility matrix](/docs/{% if docsPrefix == 'pe/' %}pe/{% endif %}mobile/#compatibility-table){:target="_blank"}).
+  - (Recommended) [Configure your IDE (e.g., Visual Studio Code)](https://flutter.dev/docs/get-started/editor){:target="_blank"} for Flutter development.
+  - If you&#39;re new to Flutter, [review the "Write your first Flutter app" tutorial](https://flutter.dev/docs/get-started/test-drive){:target="_blank"}.
 
 ## Step 1: Create a bundle in the Mobile center
 
-The [Mobile center](/docs/{{docsPrefix}}mobile-center/mobile-center/){:target="_blank"} is your control hub for creating, configuring, and managing mobile applications for your {{appPrefix}} instance. 
-It allows you to quickly launch a custom {{appPrefix}} mobile application tailored to your platform.
+The [Mobile center](/docs/{{docsPrefix}}mobile-center/mobile-center/){:target="_blank"} is your control hub to create, configure, and manage mobile apps. 
+It lets you quickly launch a mobile app tailored to your {{appPrefix}} platform.
+
+<br>
 
 <b><font size="4">Create a new bundle</font></b>
 
 A [bundle](/docs/{{docsPrefix}}mobile-center/mobile-center/#bundle){:target="_blank"} contains both your Android and/or iOS app configurations — including [OAuth 2.0](/docs/{{docsPrefix}}user-guide/oauth-2-support/){:target="_blank"} settings {% if docsPrefix == null %}and [layout](/docs/mobile-center/mobile-center/#layout){:target="_blank"} preferences{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}, [layout](/docs/pe/mobile-center/mobile-center/#layout){:target="_blank"} preferences, and [self registration](/docs/pe/mobile-center/mobile-center/#self-registration){:target="_blank"} options{% endif %} — all in one place for easier setup.
 
 Add a new bundle: 
-- Navigate to the "**Mobile center**" page.
-- On the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window. 
+- Go to the "**Mobile center**" page.
+- On the "**Bundle**" tab, click the "**+ Add bundle**" button in the top-right corner.
 
-The bundle creation window will open.
+The create bundle dialog opens.
 
 {% assign addNewBundleCE = '
     ===
-        image: https://img.thingsboard.io/mobile-center/add-new-bundle-1-ce.png,
-        title: To add a new bundle, navigate to the "**Mobile center**" page and, on the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window.
+        image: /images/mobile-center/add-new-bundle-1-ce.png,
+        title: Go to the "**Mobile center**" page → "**Bundle**" tab, then click "**+ Add bundle**" in the upper-right corner.
 '
 %}
 
 {% assign addNewBundlePE = '
     ===
-        image: https://img.thingsboard.io/mobile-center/add-new-bundle-1-pe.png,
-        title: To add a new bundle, navigate to the "**Mobile center**" page and, on the "**Bundle**" tab, click the "**+ Add bundle**" button in the upper-right corner of the window.
+        image: /images/mobile-center/add-new-bundle-1-pe.png,
+title: Go to the "**Mobile center**" page → "**Bundle**" tab, then click "**+ Add bundle**" in the upper-right corner.
 '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% if docsPrefix == "pe/" %}
 {% include images-gallery.liquid imageCollection=addNewBundlePE %}
 {% else %}  
 {% include images-gallery.liquid imageCollection=addNewBundleCE %}
@@ -72,48 +68,53 @@ The bundle creation window will open.
 
 <br><b><font size="4">Basic settings</font></b>
 
-Enter the **bundle name** and choose the **mobile app platform(s)** — **Android** or **iOS** — then click "**Create new**" in the corresponding section and proceed with the next steps:
+- Enter a **bundle title**.
+- Click "**Create new**" next to your target mobile platform (**Android** or **iOS**).   
+  This opens the **Add application** dialog:
+  - Enter the **application package** name.
+  - An **Application Secret** will be generated automatically (you can also set your own).
+  - Set the **Published** application status – application is ready for release.
+  - (Optional) Specify **minimum** and **latest** app versions + release notes.
+  - Add **store information**:
+      - for **Android**: 
+        - **Google Play Store link**.
+        - **SHA256 certificate fingerprints**.
+      - for **iOS**: 
+        - **App Store link**.
+        - **App ID**.
+  - Click "**Add**" to save and continue.
 
-- Enter the **application package** name.
-- An **Application Secret** will be generated automatically (you can also set your own).
-- Set the **Published** application status – application is ready for release.
-- (Optional) Specify minimum and latest app versions + release notes.
-- Add **store information**:
-    - **Android**: **Google Play Store link** and **SHA256 certificate fingerprints**.
-    - **iOS**: **App Store link** and **App ID**.
-- Click "**Add**" to save and continue.
-
-Then click "**Next**".
+- Then click "**Next**".
 
 {% assign addNewBundleCE2 = '
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-2-ce.png,
-        title: **Android Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and **SHA256 certificate fingerprints**. Click "**Add**".
-    ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-3-ce.png,
-        title: **iOS Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the App Store, and **App ID**. Click "**Add**".
-    ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-4-ce.png,
+        image: /images/mobile/getting-started/add-new-bundle-2-ce.png,
         title: Click "**Create new**" in the appropriate section (Android Application or iOS Application).
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-5-ce.png,
+        image: /images/mobile/getting-started/add-new-bundle-3-ce.png,
         title: **Android Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and **SHA256 certificate fingerprints**. Click "**Add**".
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-4-ce.png,
+        title: **iOS Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the App Store, and **App ID**. Click "**Add**".
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-5-ce.png,
+        title: Click "**Next**".
 '
 %}
 
 {% assign addNewBundlePE2 = '
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-2-pe.png,
-        title: **Android Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and **SHA256 certificate fingerprints**. Click "**Add**".
-    ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-3-pe.png,
-        title: **iOS Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the App Store, and **App ID**. Click "**Add**".
-    ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-4-pe.png,
+        image: /images/mobile/getting-started/add-new-bundle-2-pe.png,
         title: Click "**Create new**" in the appropriate section (Android Application or iOS Application).
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-5-pe.png,
-        title: **Android Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and **SHA256 certificate fingerprints**. Click "**Add**".
+        image: /images/mobile/getting-started/add-new-bundle-3-pe.png,
+        title: **Android Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the Google Play Store, and **SHA256 certificate fingerprints**. Click "**Add**". 
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-4-pe.png,
+        title: **iOS Application**. Enter the **application package** name. Remember autogenerated "**Application Secret**" or input your own. Specify application statuses. Optionally, specify the minimum and latest application versions along with release notes for each. Specify store information: link to the ThingsBoard PE Mobile Application in the App Store, and **App ID**. Click "**Add**".
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-5-pe.png,
+        title: Click "**Next**".
 '
 %}
 
@@ -123,29 +124,37 @@ Then click "**Next**".
 {% include images-gallery.liquid imageCollection=addNewBundleCE2 %}
 {% endif %}
 
-<br><b><font size="4">[Optional]</font></b>
+<br><b><font size="4">Optional: Authentication & Layout</font></b>
+
+- **OAuth 2.0 providers** — Configure external [OAuth](/docs/{{docsPrefix}}user-guide/oauth-2-support/){:target="_blank"} for the {{appPrefix}} mobile app if required. Click "**Next**" when done.
+
+- **Configure layout** — Customize the navigation menu for quick access to features and dashboards. Add menu items, set icons/labels, and reorder entries. Click "**Add**" to finish creating the package.
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+- **Self registration** - Customize the [self registration](/docs/{{docsPrefix}}mobile-center/mobile-center/#self-registration){:target="_blank"} page for your new customers.
+{% endif %}
 
 Configure authentication in the {{appPrefix}} mobile app using external [OAuth 2.0](/docs/{{docsPrefix}}user-guide/oauth-2-support/){:target="_blank"} providers, {% if docsPrefix == null %} and configure the [layout](/docs/{{docsPrefix}}mobile-center/mobile-center/#layout){:target="_blank"} for quick access to the features and dashboards you use most frequently{% endif %}{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}, configure the [layout](/docs/{{docsPrefix}}mobile-center/mobile-center/#layout){:target="_blank"} for quick access to the features and dashboards you use most frequently and customize the [self registration](/docs/{{docsPrefix}}mobile-center/mobile-center/#self-registration){:target="_blank"} page{% endif %} for your new customers.
 
 {% assign addNewBundleCE3 = '
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-6-ce.png,
+        image: /images/mobile/getting-started/add-new-bundle-6-ce.png,
         title: Configure authentication in the {{appPrefix}} mobile app using external **OAuth 2.0** providers. Then click "**Next**" to continue.
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-7-ce.png,
+        image: /images/mobile/getting-started/add-new-bundle-7-ce.png,
         title: Configure the **layout** for quick access to the features and dashboards you use most often. Add new menu items, customize icons and labels, and reorganize the navigation menu of the ThingsBoard PE mobile app to fit your needs. Click "**Add**" to finalize adding the bundle.
 '
 %}
 
 {% assign addNewBundlePE3 = '
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-6-pe.png,
+        image: /images/mobile/getting-started/add-new-bundle-6-pe.png,
         title: Configure authentication in the {{appPrefix}} mobile app using external **OAuth 2.0** providers. Then click "**Next**" to continue.
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-7-pe.png,
+        image: /images/mobile/getting-started/add-new-bundle-7-pe.png,
         title: Configure the **layout** for quick access to the features and dashboards you use most often. Add new menu items, customize icons and labels, and reorganize the navigation menu of the ThingsBoard PE mobile app to fit your needs. Click "**Next**" to continue.
     ===
-        image: https://img.thingsboard.io/mobile/getting-started/add-new-bundle-8-pe.png,
+        image: /images/mobile/getting-started/add-new-bundle-8-pe.png,
         title: Customize the **self registration** page for your new customers. Click "**Add**" to finalize adding the bundle.
 '
 %}
@@ -160,26 +169,45 @@ Click "**Add**" to finalize adding the bundle.
 
 <br><b><font size="4">Configuration dialog</font></b>
 
-After adding the bundle, a dialog window will appear with step-by-step instructions to guide you through the next phase of setup and deployment.
-
-Follow these steps carefully to successfully configure and deploy your custom {{appPrefix}} mobile application.
+After adding the bundle, a step-by-step dialog appears to guide you through the remaining setup and deployment steps. 
+Follow it carefully to complete {{appPrefix}} mobile application configuration.
 
 {% capture 1_7_config_tip %}
-**Note: Available from ThingsBoard 4.2 and mobile app version 1.7**
+**Available since {{appPrefix}} 4.2 and mobile app 1.7**
 
-Starting with version 1.7 app version and 4.2 platform version, we've significantly improved the app configuration mechanism. Now you can download a configuration file directly from the platform, place it in the root directory of your custom application's code, and you're ready to go. 
+Starting with {{appPrefix}} 4.2 and mobile app 1.7, the app configuration flow has been significantly improved.
+You can now download a configuration file directly from the platform and place it in the root of app&#39;s codebase — no manual edits required.
 
-When using 1.7 app version with pre 4.2 platform version, config file must be created manually, please follow [this github ticket](https://github.com/thingsboard/flutter_thingsboard_pe_app/issues/263#issuecomment-3103099009) for the instructions. 
-
-**Important:** When building or running your application, add the `--dart-define-from-file configs.json` flag to your Flutter commands. 
-
-You can maintain multiple configuration files by using different names and passing the appropriate file name to the `--dart-define-from-file` flag.
+When using 1.7 app version with pre 4.2 platform version, config file must be created manually, please follow [this github ticket](https://github.com/thingsboard/flutter_thingsboard_pe_app/issues/263#issuecomment-3103099009){:target="_blank"} for the instructions.
 {% endcapture %}
 {% include templates/info-banner.md content=1_7_config_tip %}
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](https://img.thingsboard.io/mobile/getting-started/add-new-bundle-11-pe.png)
-{% else %}  
-![image](https://img.thingsboard.io/mobile/getting-started/add-new-bundle-11-ce.png)
+
+**Important:**   
+When building or running the app, include the Dart define flag:
+
+```
+flutter run --dart-define-from-file configs.json
+```
+{:.copy-code}
+
+You can maintain multiple configuration files by using different names. Pass the appropriate filename to `--dart-define-from-file` flag.
+
+{% assign configurationDialogCE = '
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-11-ce.png,
+'
+%}
+
+{% assign configurationDialogPE = '
+    ===
+        image: /images/mobile/getting-started/add-new-bundle-11-pe.png,
+'
+%}
+
+{% if docsPrefix == "pe/" %}
+{% include images-gallery.liquid imageCollection=configurationDialogPE %}
+{% else %}
+{% include images-gallery.liquid imageCollection=configurationDialogCE %}
 {% endif %}
 
 <br>
@@ -189,21 +217,19 @@ Finnally, depending on your mobile platform (Android or iOS), you should see a r
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="https://img.thingsboard.io/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen example">
+        <img width="" src="/images/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen example">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Android</span>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="https://img.thingsboard.io/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen example">
+        <img width="" src="/images/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen example">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">iOS</span>
     </div>
 </div>
 
 {% capture run_tip %}
-**Tip:** The first time you run on a physical device, it can take a while to load.
-Afterward, you can use hot reload for quick updates.
+**Tip:** On first launch on a physical device, startup can take a while. After that, use hot reload for quick updates.
 
-**Save** also performs a hot reload if the app is running.
-When running an app directly from the console using `flutter run`, enter `r` to perform hot reload.
+If launching from the console with `flutter run`, press `r` to hot reload.
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
 
@@ -226,68 +252,68 @@ So let&#39;s get started:
 
 {% assign firebaseProjectCE = '
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-1-pe.png,
+        image: /images/mobile/pe/firebase-new-project-1-pe.png,
         title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-2-pe.png,
+        image: /images/mobile/pe/firebase-new-project-2-pe.png,
         title: Enter your desired project name in the field provided, then click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-3-pe.png,
+        image: /images/mobile/pe/firebase-new-project-3-pe.png,
         title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-4-pe.png,
+        image: /images/mobile/pe/firebase-new-project-4-pe.png,
         title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-5-pe.png,
+        image: /images/mobile/pe/firebase-new-project-5-pe.png,
         title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-6-pe.png,
+        image: /images/mobile/pe/firebase-new-project-6-pe.png,
         title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-7-pe.png,
+        image: /images/mobile/pe/firebase-new-project-7-pe.png,
         title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-8-pe.png,
+        image: /images/mobile/pe/firebase-new-project-8-pe.png,
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-9-pe.png,
+        image: /images/mobile/pe/firebase-new-project-9-pe.png,
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-10-ce.png,
+        image: /images/mobile/pe/firebase-new-project-10-ce.png,
         title: Sign in to ThingsBoard as a system administrator, open the "Settings" page and navigate to the "Notifications" tab. In the "Mobile settings" section, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
 {% assign firebaseProjectPE = '
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-1-pe.png,
+        image: /images/mobile/pe/firebase-new-project-1-pe.png,
         title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-2-pe.png,
+        image: /images/mobile/pe/firebase-new-project-2-pe.png,
         title: Enter your desired project name in the field provided, then click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-3-pe.png,
+        image: /images/mobile/pe/firebase-new-project-3-pe.png,
         title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-4-pe.png,
+        image: /images/mobile/pe/firebase-new-project-4-pe.png,
         title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-5-pe.png,
+        image: /images/mobile/pe/firebase-new-project-5-pe.png,
         title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-6-pe.png,
+        image: /images/mobile/pe/firebase-new-project-6-pe.png,
         title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-7-pe.png,
+        image: /images/mobile/pe/firebase-new-project-7-pe.png,
         title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-8-pe.png,
+        image: /images/mobile/pe/firebase-new-project-8-pe.png,
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-9-pe.png,
+        image: /images/mobile/pe/firebase-new-project-9-pe.png,
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-10-pe.png,
+        image: /images/mobile/pe/firebase-new-project-10-pe.png,
         title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and uncheck the "Use system mobile settings" box (if you log in as a tenant) in the "Mobile settings" section. Here, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
@@ -314,16 +340,16 @@ Upload **APNs authentication key** to Firebase.
 
 {% assign APNsAuthenticationKey = '
     ===
-        image: https://img.thingsboard.io/mobile/apple-app-configuration-1.png,
+        image: /images/mobile/apple-app-configuration-1.png,
         title: Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
     ===
-        image: https://img.thingsboard.io/mobile/apple-app-configuration-2.png,
+        image: /images/mobile/apple-app-configuration-2.png,
         title: In "APNs authentication key" section, click the "Upload" button;
     ===
-        image: https://img.thingsboard.io/mobile/apple-app-configuration-3.png,
+        image: /images/mobile/apple-app-configuration-3.png,
         title: Create "APNs authentication key" in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"} using [Apple&#39;s official documentation](https://developer.apple.com/help/account/manage-keys/create-a-private-key/){:target="_blank"}. Now add this key and enter "Key ID" and "Team ID" in the corresponding fields. Then click "Upload" button;
     ===
-        image: https://img.thingsboard.io/mobile/apple-app-configuration-4.png,
+        image: /images/mobile/apple-app-configuration-4.png,
         title: APNs authentication key is uploaded.
 '
 %}
@@ -362,7 +388,7 @@ flutter run
 
 If everything is configured correctly, the notifications menu in your mobile application should be active, as shown in the screenshot below.
 
-<br><object width="30%" data="https://img.thingsboard.io/mobile/{{docsPrefix}}mobile-notifications.png"></object>
+<br><object width="30%" data="/images/mobile/{{docsPrefix}}mobile-notifications.png"></object>
 
 Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
 
@@ -382,13 +408,13 @@ To be familiar with common app features try out our **ThingsBoard Live mobile ap
        href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" 
        target="_blank"
        class="gtm_button">
-        <img src="https://img.thingsboard.io/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
+        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
     </a>
     <a id="Products_MobApp_GetStart_AppStore" 
        href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" 
        target="_blank"
        class="gtm_button">
-        <img src="https://img.thingsboard.io/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
+        <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
     </a>
 </div>
 
@@ -415,7 +441,7 @@ If you're running into issues while building or running your mobile application,
 
 Example:
 
-<object width="70%" data="https://img.thingsboard.io/mobile/getting-started/check-flutter-version.png"></object>
+<object width="70%" data="/images/mobile/getting-started/check-flutter-version.png"></object>
 
 <br>
 
@@ -539,4 +565,4 @@ We&#39;ll do our best to help!
 ## Next steps
 
 - [Customize your app](/docs/{{docsPrefix}}mobile/customization){:target="_blank"} - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
-- [Publish your app](/docs/{{docsPrefix}}mobile/release){:target="_blank"} - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.
+- [Build and release {{appPrefix}} Mobile Application](/docs/{{docsPrefix}}mobile/release){:target="_blank"} - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.

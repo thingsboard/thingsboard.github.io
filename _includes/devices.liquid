@@ -16,7 +16,7 @@
                             <img src="https://img.thingsboard.io/devices-library/{{ devicePage.deviceImageFileName }}"  alt="device Image File Name">
                             <div class="device-guide-text">
                                 <p class="device-guide-title">
-                                    {{ devicePage.title | remove : "How to connect " | remove: " to ThingsBoard?"}}
+                                    {{ devicePage.title | remove : "How to connect " | remove: " to ThingsBoard?" | remove: "How to install ThingsBoard Edge on "| remove: "?" }}
                                 </p>
                                 <p class="device-guide-subtitle">
                                     {{ devicePage.description }}

@@ -16,7 +16,7 @@ redirect_from: "docs/services/consulting/"
 
   <div class="card">
     <h3 class="title">DevOps services</h3>
-    <p class="description">Our experienced DevOps team take over the administration of your ThingsBoard cluster that is deployed in the cloud or on premises. It includes installation and upgrades to latest versions, platform maintenance and optimization.</p>
+    <p class="description">Our experienced DevOps team take over the administration of your ThingsBoard cluster that is deployed in the cloud or on-premises. It includes installation and upgrades to latest versions, platform maintenance and optimization.</p>
   </div>
 
   <div class="card">
@@ -31,7 +31,7 @@ redirect_from: "docs/services/consulting/"
 
   <div class="card">
     <h3 class="title">Managed Services</h3>
-    <p class="description">We are able to completely take over the administration of your ThingsBoard cluster that is deployed in the cloud or on premises. Our engineers will be responsible for monitoring, elastic scalability and optimization of your ThingsBoard cluster.</p>
+    <p class="description">We are able to completely take over the administration of your ThingsBoard cluster that is deployed in the cloud or on-premises. Our engineers will be responsible for monitoring, elastic scalability and optimization of your ThingsBoard cluster.</p>
   </div>
 </div>
 

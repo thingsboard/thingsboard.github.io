@@ -25,19 +25,19 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                     <ul id="menu-install-navigation-1" class="menu">
                         <li id="menu-item-liveDemo" class="menu-item tb-live-demo" data-tab="liveDemo">
                             <p>
-                                <img src="https://img.thingsboard.io/pricing/saas-icon.svg" title="Try ThingsBoard in live demo mode" alt="Live demo icon" width="28" height="28">
+                                <img src="/images/pricing/saas-icon.svg" title="Try ThingsBoard in live demo mode" alt="Live demo icon" width="28" height="28">
                                 <span>SaaS</span>
                             </p>
                         </li>
                         <li id="menu-item-onPremise" class="menu-item tb-on-premise" data-tab="onPremise">
                             <p>
-                                <img src="https://img.thingsboard.io/pricing/self-icon.svg" title="Install ThingsBoard on your own server" alt="On-premise installation icon" width="28" height="28">
-                                <span>On premise</span>
+                                <img src="/images/pricing/self-icon.svg" title="Install ThingsBoard on your own server" alt="On-premise installation icon" width="28" height="28">
+                                <span>On-premises</span>
                             </p>
                         </li>
                         <li id="menu-item-cloud" class="menu-item tb-cloud" data-tab="cloud">
                             <p>
-                                <img src="https://img.thingsboard.io/pricing/cloud-icon.svg" title="Use ThingsBoard in the cloud" alt="Cloud deployment icon" width="28" height="28">
+                                <img src="/images/pricing/cloud-icon.svg" title="Use ThingsBoard in the cloud" alt="Cloud deployment icon" width="28" height="28">
                                 <span>Cloud</span>
                             </p>
                         </li>

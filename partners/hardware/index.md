@@ -32,13 +32,13 @@ filterCollection:
       - Bluetooth
       - Sigfox
       - 4G
-      - Bluetooth LE
+      - LTE
       - NB-IoT
       - LTE-M
       - GNSS/GPS
       - BACnet
-      - RS485
-      - LTE
+      - Bluetooth 5.0
+      - Bluetooth LE
       - CAN Bus
       - CAT-1
       - CAT-M/NB
@@ -51,7 +51,6 @@ filterCollection:
       - Modbus
       - OPC UA
       - PLC
-      - RS232
       - SMS
       - Satellite (Iridium/Orbcom)
       - USB
