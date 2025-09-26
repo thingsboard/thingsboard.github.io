@@ -3,52 +3,52 @@ We will create a dashboard and add the most popular widgets. See the instruction
 
 {% assign creatingNewDashboardPE = '
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png,
         title: Open the **Dashboards** page. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png,
         title: Input dashboard name. For example, "My New Dashboard". Click **"Add"** to add the dashboard;
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png,
         title: Your dashboard should be listed first since the table sorts dashboards using the time of the creation by default. Click on the **"Open dashboard"** icon.
     '
 %}
 
 {% assign creatingNewDashboardCE = '
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png,
         title: Open the Dashboards page. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png,
         title: Input dashboard name. For example, "My New Dashboard". Click **"Add"** to add the dashboard;
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-3-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-3-ce.png,
         title: Your dashboard should be listed first since the table sorts dashboards using the creation time of the creation by default. Click on the **"Open dashboard"** icon.
     '
 %}
 
 {% assign creatingNewDashboardEdgePE = '
     ===
-        image: /images/edge/config/general/create-new-dashboard-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-new-dashboard-pe.webp,
         title: Open the Dashboards page. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
-        image: /images/edge/config/general/new-dashboard-dialog-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/new-dashboard-dialog-pe.webp,
         title: In the pop-up window, enter a dashboard title. Other fields are optional. Click the **"Add"** button to proceed;
     ===
-        image: /images/edge/config/general/dashboard-edit-mode-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/dashboard-edit-mode-pe.webp,
         title: After creating the dashboard, you will automatically transition to edit mode. 
 '
 %}
 
 {% assign creatingNewDashboardEdgeCE = '
     ===
-        image: /images/edge/config/general/create-new-dashboard.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-new-dashboard.webp,
         title: Go to the **Dashboards** section. Click on the **"+"** icon in the top right corner. Select **"Create new dashboard"**;
     ===
-        image: /images/edge/config/general/new-dashboard-dialog.webp,
+        image: https://img.thingsboard.io/edge/config/general/new-dashboard-dialog.webp,
         title: In the pop-up window, enter a dashboard title. Other fields are optional. Click the **"Add"** button to proceed;
     ===
-        image: /images/edge/config/general/dashboard-edit-mode.webp,
+        image: https://img.thingsboard.io/edge/config/general/dashboard-edit-mode.webp,
         title: After creating the dashboard, you will automatically transition to edit mode.
 '
 %}
@@ -71,82 +71,82 @@ type or related to a certain asset. You may learn more about different aliases h
 
 {% assign creatingEntityAliasCE = '
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-1-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-1-ce.png,
         title: Enter edit mode. Click on the pencil button in the bottom right corner;
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-2-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-2-ce.png,
         title: Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-3-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-3-ce.png,
         title: Click "Add alias";
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-4-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-4-ce.png,
         title: Enter an alias name (for example, "My Device"). Choose "Single entity" as the Filter type, select "Device" for Type, and begin typing "My New" to trigger autocomplete suggestions;
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-5-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-5-ce.png,
         title: Click "Add" and then "Save";
     ===
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-6-ce.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-6-ce.png,
         title: Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.
     '
 %}
 
 {% assign creatingEntityAliasPE = '
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-1-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-1-pe.png,
         title: Enter edit mode. Click on the pencil button in the bottom right corner;
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-2-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-2-pe.png,
         title: Click the "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-3-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-3-pe.png,
         title: Click "Add alias";
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-4-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-4-pe.png,
         title: Enter an alias name (for example, "My Device"). Choose "Single entity" as the Filter type, select "Device" for Type, and begin typing "My New" to trigger autocomplete suggestions;
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-5-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-5-pe.png,
         title: Click "Add" and then "Save";
     ===
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-6-pe.png,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-6-pe.png,
         title: Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.
     '
 %}
 
 {% assign creatingEntityAliasEdgeCE = '
     ===
-        image: /images/edge/config/general/create-alias-1-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-1-ce.webp,
         title: In the dashboard edit mode, click the **"Entity aliases"** icon in the top right corner.
     ===
-        image: /images/edge/config/general/create-alias-2-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-2-ce.webp,
         title: Click **“Add alias”**.
     ===
-        image: /images/edge/config/general/create-alias-3-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-3-ce.webp,
         title: Enter the alias name (for example, “My Device”). Select **"Single entity"** as the filter type and **"Device"** as the type. Then, select the device from the drop-down menu. Click the **"Add"** button.
     ===
-        image: /images/edge/config/general/create-alias-4-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-4-ce.webp,
         title: Click **"Save"** to save the entity alias.
     ===
-        image: /images/edge/config/general/create-alias-5-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-5-ce.webp,
         title: Finally, click **"Save"** on the dashboard editor page to save the changes. Then, re-enter edit mode.
 '
 %}
 
 {% assign creatingEntityAliasEdgePE = '
     ===
-        image: /images/edge/config/general/create-alias-1-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-1-pe.webp,
         title: In the dashboard edit mode, click the **"Entity aliases"** icon in the top right corner.
     ===
-        image: /images/edge/config/general/create-alias-2-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-2-pe.webp,
         title: Click **“Add alias”**.
     ===
-        image: /images/edge/config/general/create-alias-3-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-3-pe.webp,
         title: Enter the alias name (for example, “My Device”). Select **"Single entity"** as the filter type and **"Device"** as the type. Then, select the device from the drop-down menu. Click the **"Add"** button.
     ===
-        image: /images/edge/config/general/create-alias-4-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-4-pe.webp,
         title: Click **"Save"** to save the entity alias.
     ===
-        image: /images/edge/config/general/create-alias-5-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/create-alias-5-pe.webp,
         title: Finally, click **"Save"** on the dashboard editor page to save the changes. Then, re-enter edit mode.
 '
 %}

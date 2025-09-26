@@ -2,28 +2,28 @@ After successfully publishing the attributes and telemetry, the data should appe
 
 {% assign deviceTelemetryCE = '
     ===
-        image: /images/helloworld/getting-started-ce/check-telemetry-ce.webp,
+        image: https://img.thingsboard.io/helloworld/getting-started-ce/check-telemetry-ce.webp,
         title: Click on the device to open the **Device details** page and select the **"Latest telemetry"** tab.
     '
 %}
 
 {% assign deviceTelemetryPE = '
     ===
-        image: /images/helloworld/getting-started-pe/check-telemetry-pe.webp,
+        image: https://img.thingsboard.io/helloworld/getting-started-pe/check-telemetry-pe.webp,
         title: Click on the device to open the **Device details** page and select the **"Latest telemetry"** tab.
     '
 %}
 
 {% assign deviceTelemetryEdgeCE = '
     ===
-        image: /images/edge/config/general/connect-device-3-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/connect-device-3-ce.webp,
         title: Click on the device to open the **Device details** page and select the **"Latest telemetry"** tab.
 '
 %}
 
 {% assign deviceTelemetryEdgePE = '
     ===
-        image: /images/edge/config/general/connect-device-3-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/connect-device-3-pe.webp,
         title: Click on the device to open the **Device details** page and select the **"Latest telemetry"** tab.
 '
 %}

@@ -24,20 +24,20 @@ we will use the default auto-generated credentials, which is an access token.
 
 {% assign provisionDeviceEdgeCE = '
     ===
-        image: /images/edge/config/general/connect-device-1-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/connect-device-1-ce.webp,
         title: Click on the device to open device details.
     ===
-        image: /images/edge/config/general/connect-device-2-ce.webp,
+        image: https://img.thingsboard.io/edge/config/general/connect-device-2-ce.webp,
         title: Click **"Copy access token"**. The token will be copied to your clipboard. Please save it in a safe place.
 '
 %}
 
 {% assign provisionDeviceEdgePE = '
     ===
-        image: /images/edge/config/general/connect-device-1-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/connect-device-1-pe.webp,
         title: Click on the device to open device details.
     ===
-        image: /images/edge/config/general/connect-device-2-pe.webp,
+        image: https://img.thingsboard.io/edge/config/general/connect-device-2-pe.webp,
         title: Click **"Copy access token"** button. The token will be copied to your clipboard. Please save it in a safe place.
 '
 %}

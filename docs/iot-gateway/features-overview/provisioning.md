@@ -93,16 +93,16 @@ To use the provisioning feature you need to follow next steps:
 
 {% assign gatewayDeviceProvisioning1 = '
       ===
-            image: /images/gateway/device-provisioning/gateway-device-provisioning-1-ce.png,
+            image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-1-ce.png,
             title: Go to the "**Devices profile**" page, click the "**plus**" button and select "**Create new device profile**" from drop-down menu.
       ===
-            image: /images/gateway/device-provisioning/gateway-device-provisioning-2-ce.png,
+            image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-2-ce.png,
             title: Enter a device profile name and open the **Device provisioning** tab.
       ===
-            image: /images/gateway/device-provisioning/gateway-device-provisioning-3-ce.png,
+            image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-3-ce.png,
             title: Enable provisioning by selecting "**Allow to create new devices**" option.<br> Copy/save the **Provisioning device key** and **Provisioning device secret**. <br>Click "**Add**" to create the device profile.
       ===
-            image: /images/gateway/device-provisioning/gateway-device-provisioning-4-ce.png,
+            image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-4-ce.png,
             title: Device profile created.
 '
 %}
@@ -134,10 +134,10 @@ To use the provisioning feature you need to follow next steps:
 
 {% assign gatewayDeviceProvisioning2 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-5-ce.png,
+        image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-5-ce.png,
         title: Open the downloaded `docker-compose.yml` and set the provisioning variables.
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-6-ce.png,
+        image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-6-ce.png,
         title: Replace `THINGSBOARD_HOST` and `THINGSBOARD_PORT` with the host and port of your ThingsBoard instance.<br>Replace `YOUR_PROVISION_KEY` and `YOUR_PROVISION_SECRET` with the values from the device profile.
 '
 %}
@@ -155,7 +155,7 @@ docker compose up
 
 {% assign gatewayDeviceProvisioning3 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-7-ce.png,
+        image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-7-ce.png,
         title: Execute `docker compose up` command to run the Gateway.
 '
 %}
@@ -168,7 +168,7 @@ The Gateway **auto‑registers**, obtains credentials, and connects using them.
 
 {% assign gatewayDeviceProvisioning4 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-8-ce.png,
+        image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-8-ce.png,
         title: The Gateway auto‑registers, obtains credentials, and connects using them.
 '
 %}
@@ -179,7 +179,7 @@ In the ThingsBoard UI, check status on the "**Gateways**" page or in the device 
 
 {% assign gatewayDeviceProvisioning5 = '
     ===
-        image: /images/gateway/device-provisioning/gateway-device-provisioning-9-ce.png,
+        image: https://img.thingsboard.io/gateway/device-provisioning/gateway-device-provisioning-9-ce.png,
         title: In the ThingsBoard UI, check status on the "**Gateways**" page or in the device details.
 '
 %}
