@@ -9,7 +9,7 @@
     - Healthcare
     - Smart Buildings
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -21,7 +21,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: https://img.thingsboard.io/partners/efento.webp
+  logo: /images/partners/efento.webp
   page: /partners/hardware/efento
   site:
     href: https://getefento.com/
@@ -30,7 +30,7 @@
       0:
         label: Efento NB-IoT sensors
         href: https://getefento.com/library/efento-nb-iot-sensors-and-things-board/
-  description: Efento offers a wide portfolio of battery powered NB-IoT wireless sensors.
+  description: Offers a wide portfolio of battery powered NB-IoT wireless sensors.
     Company has been founded in 2014 and since day one focuses on low power consumption
     wireless IoT devices. You can select a sensor form over 20 types of devices from
     our portfolio, or talk to us if you need a custom solution to meet your needs.
@@ -59,16 +59,16 @@
     - Gateways
     - Sensors
     - Other devices
-  logo: https://img.thingsboard.io/partners/teltonika-networks.webp
+  logo: /images/partners/teltonika-networks.webp
   page: /partners/hardware/teltonika
   site:
     href: https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard
   links:
-    gateway-guides:
+    general-guides:
       0:
         label: Teltonika-Networks devices
         href: https://wiki.teltonika-networks.com/view/Monitoring_with_ThingsBoard_IoT_Platform
-  description: Teltonika Networks is a rapidly growing technology company, manufacturing
+  description: Rapidly growing technology company, manufacturing
     professional network connectivity equipment for international markets. It has
     developed a wide portfolio of products for the most complex areas of Industry
     4.0, Smart City, and Green Energy.
@@ -87,7 +87,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -100,24 +100,30 @@
   hardware-types:
     - Microcontrollers
     - Single-board computers
-  logo: https://img.thingsboard.io/partners/espressif.webp
+  logo: /images/partners/espressif.webp
   page: /partners/hardware/espressif
   site:
     href: https://www.espressif.com/
   links:
-    sensor-guides:
+    microcontrollers-guides:
       0:
         label: ESP32 Dev Kit V1
-        href: /docs/devices-library/esp32-dev-kit-v1/
-  description: Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE
+        href: /docs/pe/devices-library/esp32-dev-kit-v1/
+      1:
+        label: ESP32 Dev Kit C V4
+        href: /docs/pe/devices-library/esp32-dev-kit-v4/
+      2:
+        label: ESP32 PICO KIT
+        href: /docs/pe/devices-library/esp32-pico-kit/
+  description: Designs a range of high-performance Wi-Fi+Bluetooth/BLE
     chipsets and modules.
 - name: Seeed Studio
   type:
     - Wi-Fi
     - Ethernet
     - LoRaWAN
-    - RS485
-    - RS232
+    - RS-485
+    - RS-232
     - USB
     - DI and DO
     - 4G
@@ -132,8 +138,8 @@
     - Smart Retail
     - Smart Energy
   hardware-types:
-    - Single-board computers
-  logo: https://img.thingsboard.io/partners/seeed.webp
+    - Single Board Computer
+  logo: /images/partners/seeed.webp
   page: /partners/hardware/seeed
   site:
     href: https://www.seeedstudio.com/
@@ -142,66 +148,68 @@
       label: Hailo-Powered Car Park Management
       href: https://seeed-projects.github.io/Tutorial-of-AI-Kit-with-Raspberry-Pi-From-Zero-to-Hero/docs/Chapter_6-RaspberryPi_and_AIoT/Car_Park_Solution_Management_with_Thingsboard/
   links:
-    gateway-guides:
+    general-guides:
       0:
         label: Raspberry Pi with Grove Base Hat
         href: /docs/samples/raspberry/grove/
+      1:
+        label: Seeed Wiki integration
+        href: https://wiki.seeedstudio.com/thingsboard_integrated/
+    single-board-computers-guides:
+      0:
+        label: ODYSSEY STM32MP157C
+        href: https://thingsboard.io/docs/pe/devices-library/odyssey-stm32mp157c/
+    gateway-guides:
       1:
         label: reComputer R1000
         href: /docs/edge/devices-library/recomputer-r1000/
       2:
         label: reComputer R1100
         href: /docs/edge/devices-library/recomputer-r1100/
-      3:
-        label: Seeed Wiki integration
-        href: https://wiki.seeedstudio.com/thingsboard_integrated/
   description: Whether you are a developer, technical supplier, or industry player,
     we provide products and services for your IoT needs.
 - name: Milesight
   type:
-    - Wi-Fi
-    - Ethernet
     - LoRaWAN
     - NB-IoT
-    - LTE-M
-    - CAT-M/NB
-    - BACnet
+    - Wi-Fi
+    - Ethernet
   industry:
     - Smart Cities
     - Retail
     - Agriculture
     - Transportation & Logistics
     - Healthcare
-    - Industrial Manufacturing
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
     - Smart Office
+    - Water Metering
     - Smart Retail
     - Smart Farming
-    - Fleet Tracking
+    - Smart Metering
     - Health Care
     - Air Quality Monitoring
     - Smart Irrigation
     - Waste Management
+    - Tank Level Monitoring
   hardware-types:
     - Sensors
     - Gateways
     - Trackers
-    - Other devices
-  logo: https://img.thingsboard.io/partners/milesight-logo.webp
+  logo: /images/partners/milesight-logo.webp
   page: /partners/hardware/milesight
   site:
     href: https://www.milesight.com/
   links:
     sensor-guides:
       0:
-        label: WS101 LoRaWAN® Smart Button
-        href: /docs/pe/devices-library/ws101-smart-button/
+        label: AM308 Lorawan 9-IN-1 IAQ Sensor
+        href: /docs/pe/devices-library/am308-sensor/
       1:
         label: WS202 PIR & Light LoRaWAN® Sensor
         href: /docs/pe/devices-library/ws202-pir-and-light-sensor/
@@ -215,10 +223,14 @@
       2:
         label: UG67 LoRaWAN® Gateway
         href: /docs/pe/devices-library/ug67-lorawan-gateway/
-      3:
-        label: LoRaWAN Gateways&Devices Integration
-        href: https://support.milesight-iot.com/support/solutions/articles/73000646805-thingsboard-milesight-lorawan-gateways-devices-integration
-  description: Milesight, a leading innovator in IoT technologies such as sensing,
+    other-devices-guides:
+      0:
+        label: WS101 LoRaWAN® Smart Button
+        href: /docs/pe/devices-library/ws101-smart-button/
+      1:
+        label: VS121 AI workplace sensor
+        href: /docs/pe/devices-library/vs-121/
+  description: Leading innovator in IoT technologies such as sensing,
     LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array
     of advanced products, like dependable gateways, indoor air quality sensors, occupancy
     trackers, water leak detectors, and more.
@@ -244,7 +256,7 @@
     - Sensors
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/smartico.webp
+  logo: /images/partners/smartico.webp
   page: /partners/hardware/smartico
   site:
     href: https://www.smartico.biz/en/
@@ -268,14 +280,15 @@
       5:
         label: Water meter wM-Bus Reader
         href: /docs/samples/smartico/wm-bus-lorawan/wMBus_Reader_LoRaWAN/
-  description: Smartico is a research and production complex with its own design bureau,
+  description: Research and production complex with its own design bureau,
     production base, and specialized software development department
 - name: Digital Communications Technologies
   type:
     - Wi-Fi
-    - Bluetooth LE
+    - BLE
     - Cellular 4G Cat 4 and 4G Cat1
-    - Satellite (Iridium/Orbcom)
+    - Satellite (Iridium
+    - Orbcom)
     - Sigfox
     - MQTT
     - HTTP
@@ -289,8 +302,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
-    - Mining
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -308,7 +320,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/DCT-Logo-Standard-Color-01.webp
+  logo: /images/partners/DCT-Logo-Standard-Color-01.webp
   page: /partners/hardware/digitalcomtech
   site:
     href: https://www.digitalcomtech.com/
@@ -346,12 +358,12 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/nettra.webp
+  logo: /images/partners/nettra.webp
   page: /partners/hardware/nettra
   site:
     href: https://nettra.tech/
   links:
-    gateway-guides:
+    general-guides:
       0:
         label: Nettra RTU
         href: /docs/samples/nettrartu+/rtu_temp_sensor/
@@ -380,16 +392,16 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/solandtec.webp
+  logo: /images/partners/solandtec.webp
   page: /partners/hardware/solandtec
   site:
     href: https://solandtec.com/
   links:
-    sensor-guides:
+    other-guides:
       0:
         label: ADAM-6717
         href: /docs/samples/solandtec/thingsboard-guide-solandtec/
-  description: With 5+ years' experience, SOLANDTEC excels in tailored automation,
+  description: With 5+ years' experience, excels in tailored automation,
     enhancing production and cutting costs. We adeptly apply tech to meet unique needs,
     reflecting commitment to excellence. Embracing Industry 4.0, we seamlessly integrate
     IoT, enabling data-driven decisions and proactive steps. We pride in enhancing
@@ -407,7 +419,7 @@
     - Transportation & Logistics
     - Industrial Manufacturing
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -423,7 +435,7 @@
   hardware-types:
     - Trackers
     - Gateways
-  logo: https://img.thingsboard.io/partners/actility.webp
+  logo: /images/partners/actility.webp
   page: /partners/hardware/actility
   site:
     href: https://www.actility.com/
@@ -432,7 +444,7 @@
       0:
         label: Abeeway Micro Tracker and Abeeway Industrial Tracker
         href: /docs/samples/abeeway/tracker/
-  description: Actility has a strong background in large-scale project delivery and
+  description: Strong background in large-scale project delivery and
     a heritage in carrier-grade systems, with leading customer deployments worldwide,
     making it the global leader in IoT connectivity solutions deployment.
 - name: SODAQ
@@ -445,7 +457,7 @@
     - Smart Cities
     - Agriculture
     - Transportation & Logistics
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Fleet Tracking
     - Smart Farming
@@ -460,12 +472,12 @@
     - Sensors
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/sodaq.webp
+  logo: /images/partners/sodaq.webp
   page: /partners/hardware/sodaq
   site:
     href: https://sodaq.com/
   links:
-    trackers-guides:
+    general-guides:
       0:
         label: SODAQ Universal Tracker
         href: /docs/samples/sodaq/sodaq/
@@ -481,7 +493,7 @@
     - Smart Cities
     - Industrial Manufacturing
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -493,19 +505,19 @@
   hardware-types:
     - Single-board computers
     - Sensors
-  logo: https://img.thingsboard.io/partners/sensiedge_logo.webp
+  logo: /images/partners/sensiedge_logo.webp
   page: /partners/hardware/sensiedge
   site:
     href: https://www.sensiedge.com/
   links:
-    sensor-guides:
+    single-board-computers-guides:
       0:
         label: SensiLoRa 2.0 V1.2
         href: /docs/samples/sensiedge/getting_started_sensiLoRa.pdf
       1:
         label: SensiBLE 1.0 & 2.1
         href: /docs/samples/sensiedge/connect_sensi_ble.pdf
-  description: SensiEDGE IoT SoM is a fully customisable solution for developers who
+  description: Fully customisable solution for developers who
     want to focus on their own applications and core competencies rather than the
     underlying hardware platform or production logistics when creating products for
     the IoT.
@@ -538,16 +550,16 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/decode.webp
+  logo: /images/partners/decode.webp
   page: /partners/hardware/decode
   site:
     href: https://www.decode.rs/
   links:
-    gateway-guides:
+    other-devices-guides:
       0:
         label: Decode DL28
         href: /docs/user-guide/integrations/decode/
-  description: Decode is a Serbian company with extensive experience in design, engineering
+  description: Serbian company with extensive experience in design, engineering
     and production of devices for industrial communication and telemetry.
 - name: TEKTELIC Communications Inc.
   type:
@@ -579,12 +591,12 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: https://img.thingsboard.io/partners/tektelic.webp
+  logo: /images/partners/tektelic.webp
   page: /partners/hardware/tektelic
   site:
     href: https://tektelic.com/
   links: {}
-  description: TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class
+  description: Leading supplier of LoRaWAN IoT equipment including best-in-class
     gateways and end devices.
 - name: AKKR8
   type:
@@ -600,7 +612,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Environment Monitoring
     - Smart Office
@@ -614,18 +626,18 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: https://img.thingsboard.io/partners/logo-akkr8.webp
+  logo: /images/partners/logo-akkr8.webp
   page: /partners/hardware/akkr8
   site:
     href: https://www.akkr8.io/
   links: {}
-  description: Developed and manufactured in Sweden, AKKR8 is a flexible sensor-to-platform
+  description: Developed and manufactured in Sweden, flexible sensor-to-platform
     solution designed for scalable, low-maintenance IoT deployments. It is well-suited
     for smart buildings, facility management, utilities, and industrial environments
-    requiring robust connectivity and modular sensor integration.<br> AKKR8 supports
+    requiring robust connectivity and modular sensor integration.<br> Supports
     multiple power options—battery, solar, or mains—making it adaptable to both remote
     and on-site installations. It connects over LTE-M for reliable, low-power communication
-    in constrained network conditions.<br> As a BLE gateway, AKKR8 integrates seamlessly
+    in constrained network conditions.<br> As a BLE gateway, Integrates seamlessly
     with sensors from industry leaders such as Aguardio, ELA Innovation, and Smart
     Sensor Devices, enabling applications like leak detection, environmental monitoring,
     occupancy sensing, and air quality measurement. The device is sold pre-configured
@@ -653,21 +665,22 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/roltek_logo_dark.webp
+  logo: /images/partners/roltek_logo_dark.webp
   page: /partners/hardware/roltek
   site:
     href: https://www.roltek.com.tr/
   links:
-    gateway-guides:
+    general-guides:
+      0:
+        label: Fast IoT Platform
+        href: https://www.roltek.com.tr/en/docs/getting-started-with-fast-iot-platform/
+    other-devices-guides:
       0:
         label: Integration guide
         href: /docs/samples/roltek/roltek/
-      1:
-        label: Fast IoT Platform
-        href: https://www.roltek.com.tr/en/docs/getting-started-with-fast-iot-platform/
-  description: Roltek provides end-to-end IoT solutions that enable rapid development,
+  description: Provides end-to-end IoT solutions that enable rapid development,
     management, and scalability of IoT projects, either through cloud-based or on-premise
-    deployments. Roltek hardware IoT Gateway products come with different communication
+    deployments. Our hardware IoT Gateway products come with different communication
     options such as ISM and NarrowBand RF, 4G/LTE, WiFi, NB-IoT, and LoRaWan, making
     them suitable for harsh field conditions.
 - name: Kernel Sistemi
@@ -694,19 +707,19 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/kernel_logo.webp
+  logo: /images/partners/kernel_logo.webp
   page: /partners/hardware/kernelgroup
   site:
     href: https://www.kernelgroup.it/
   links:
-    gateway-guides:
+    general-guides:
       0:
         label: PLC KERNEL
         href: /docs/samples/kernel/kernel/
       1:
         label: Integration guide
         href: https://www.kernelgroup.it/files/Thingsboard%20PE.pdf
-  description: KERNEL Sistemi s.r.l. designs and produces electronic solutions for
+  description: Designs and produces electronic solutions for
     automation, industrial process control, photovoltaics, energy management and home
     automation.
 - name: Shenzhen Beilai Technology Co., Ltd.
@@ -735,7 +748,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -754,16 +767,16 @@
     - Single-board computers
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/bliiot-logo.webp
+  logo: /images/partners/bliiot-logo.webp
   page: /partners/hardware/beilai
   site:
     href: https://www.iot-solution.com/
   links:
-    gateway-guides:
+    other-devices-guides:
       0:
         label: 4G LTE Industrial Router
         href: /docs/samples/kingpigeon/kingpigeon/
-  description: Beilai Technology focus on the research and development and manufacturing
+  description: Focus on the research and development and manufacturing
     of ARM industrial computers, edge computing gateways, industrial Internet of Things,
     industrial Internet of Things gateways and IO systems, industrial automation gateways
     and IO systems, building HVAC Internet of Things gateways and IO systems, power
@@ -797,12 +810,12 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: https://img.thingsboard.io/partners/senquip.webp
+  logo: /images/partners/senquip.webp
   page: /partners/hardware/senquip
   site:
     href: https://www.senquip.com
   links:
-    gateway-guides:
+    general-guides:
       0:
         label: Senquip telemetry device
         href: /docs/samples/senquip/senquip/
@@ -824,7 +837,7 @@
     - Agriculture
     - Transportation & Logistics
     - Industrial Manufacturing
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -844,7 +857,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/dusun.webp
+  logo: /images/partners/dusun.webp
   page: /partners/hardware/dusun
   site:
     href: https://www.dusuniot.com/
@@ -853,7 +866,7 @@
       0:
         label: DSGW-210 Smart Gateway Hub
         href: /docs/pe/devices-library/dsgw-210-iot-gateway-hub/
-  description: Dusun provides various kinds of gateways, hardware products and IOT
+  description: Provides various kinds of gateways, hardware products and IOT
     service
 - name: monoZ
   type:
@@ -882,7 +895,7 @@
   hardware-types:
     - Single-board computers
     - Other devices
-  logo: https://img.thingsboard.io/partners/monoZ.webp
+  logo: /images/partners/monoZ.webp
   page: /partners/hardware/monoz
   site:
     href: https://monoz.io/
@@ -891,9 +904,9 @@
       0:
         label: LPWA GPS Tracker
         href: /docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ/
-  description: MonoZ aim to assist System Integrators and Enterprises in connecting
-    their assets (things) to the internet at the lowest possible cost and time. MonoZ
-    belong to the first few E2C IoT enablers in the world to offer all the components
+  description: Aim to assist System Integrators and Enterprises in connecting
+    their assets (things) to the internet at the lowest possible cost and time. 
+    Belong to the first few E2C IoT enablers in the world to offer all the components
     required for businesses to make their ideas a reality.
 - name: EXXN
   type:
@@ -917,7 +930,7 @@
     - Gateways
     - Sensors
     - Other devices
-  logo: https://img.thingsboard.io/partners/exxn.webp
+  logo: /images/partners/exxn.webp
   page: /partners/hardware/exxn
   site:
     href: https://exxn.es/en/
@@ -926,7 +939,7 @@
       0:
         label: EXXN IoT Gateway
         href: /docs/samples/exxn/exxn/
-  description: At EXXN, we specialize in integrating technology into your business
+  description: We specialize in integrating technology into your business
     to enhance efficiency and productivity. Our multipurpose gateways, equipped with
     an ARM processor, are customizable to meet the specific needs of each customer
     and use case.
@@ -943,7 +956,7 @@
     - Smart Cities
     - Industrial Manufacturing
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Environment Monitoring
     - Smart Energy
@@ -957,16 +970,16 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/FusionDAQ-Nav-Logo.webp
+  logo: /images/partners/FusionDAQ-Nav-Logo.webp
   page: /partners/hardware/fusiondaq
   site:
     href: https://fusiondaq.com/
   links:
-    sensor-guides:
+    other-devices-guides:
       0:
         label: FDQ-99900 MI-8
         href: /docs/samples/fusion-daq/fusion-daq/
-  description: Fusion DAQ develops and maintains a core product line of data acquisition
+  description: Develops and maintains a core product line of data acquisition
     components and accessories. This includes electronic design, electromechanical
     integration, PCB and component assembly, as well as software, both embedded and
     PC.
@@ -989,7 +1002,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: https://img.thingsboard.io/partners/Yobiiq_Logo_Primary.webp
+  logo: /images/partners/Yobiiq_Logo_Primary.webp
   page: /partners/hardware/yobiiq
   site:
     href: https://yobiiq.com/
@@ -1002,18 +1015,18 @@
     Company, we develop smart solutions daily, tailored to your business and objectives.
     We pride ourselves on being a bit different, boosted by a healty dose of honest,
     straightforward communication without exaggeration. Manufacturing and creating
-    devices that work, period is what we do at YOBIIQ.
+    devices that work, period is what we do.
 - name: YuDash
   type:
     - 4G/LTE
-    - Ethernet
+    - LAN
     - Wi-Fi
   industry:
     - Smart Cities
     - Industrial Manufacturing
     - Smart Buildings
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1024,7 +1037,7 @@
   hardware-types:
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/yudash_logo.webp
+  logo: /images/partners/yudash_logo.webp
   page: /partners/hardware/yudash
   site:
     href: https://www.yudash.com/
@@ -1033,11 +1046,11 @@
       0:
         label: YuDash IoT Gateway
         href: https://docs.yudash.com/integration-guides/iot-platform-integration/thingsboard
-  description: YuDash is an Industrial IoT gateway manufacturer, offering flexible,
+  description: Industrial IoT gateway manufacturer, offering flexible,
     user-friendly, and cost-effective products. Cloud connectivity through 4G/LTE,
     Ethernet and WiFi is available. Industrial protocols like Modbus-RS485, Modbus-TCP/IP,
     Analog and I2C are supported to IoT enable Industrial PLCs, Instruments and Sensors.
-    YuDash products are used in Environment, Weather, Energy, Remote Asset Management
+    Our products are used in Environment, Weather, Energy, Remote Asset Management
     and Industry 4.0 applications.
 - name: MOKO SMART
   type:
@@ -1062,7 +1075,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1077,20 +1090,20 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/moko-smart-logo.webp
+  logo: /images/partners/moko-smart-logo.webp
   page: /partners/hardware/mokosmart
   site:
     href: https://www.mokosmart.com/
   links:
-    sensor-guides:
+    general-guides:
       0:
         label: mokosmart LoRaWAN device
         href: /docs/samples/moko-smart/moko-smart-guide/
-  description: MOKO Technology Ltd. is a leading manufacturer and provider of ODM,
-    OEM, and IoT devices in China. Established in 2013, MOKO created its own IoT brand,
-    MOKO SMART, which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS,
+  description: Leading manufacturer and provider of ODM,
+    OEM, and IoT devices in China. Established in 2013, created its own IoT brand,
+    which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS,
     LTE, UWB, and other wireless technologies. This commitment to innovation and diverse
-    wireless products drives MOKO’s vision of a connected future.
+    wireless products drives our vision of a connected future.
 - name: Netvox Technology Co., Ltd.
   type:
     - LoRaWAN
@@ -1102,7 +1115,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1114,16 +1127,16 @@
     - Tank Level Monitoring
   hardware-types:
     - Sensors
-  logo: https://img.thingsboard.io/partners/netvox-logo.webp
+  logo: /images/partners/netvox-logo.webp
   page: /partners/hardware/netvox
   site:
     href: http://www.netvox.com.tw/
   links:
-    sensor-guides:
+    general-guides:
       0:
         label: Netvox LoRaWAN Devices
         href: /docs/samples/netvox/netvox-guide/
-  description: Netvox LoRaWAN products follow the standard LoRaWAN V1.0.2 specification
+  description: Our products follow the standard LoRaWAN V1.0.2 specification
     and they will be compatible as long as the network server and gateway device also
     follow the protocol. We have developed over 400 LoRaWAN end devices to work with
     existing systems. There are more than 200 items in our LoRaWAN magnetic-mounted
@@ -1146,7 +1159,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1164,7 +1177,7 @@
     - Single-board computers
     - Sensors
     - Gateways
-  logo: https://img.thingsboard.io/partners/ncd-logo.webp
+  logo: /images/partners/ncd-logo.webp
   page: /partners/hardware/ncd
   site:
     href: https://ncd.io/
@@ -1173,11 +1186,11 @@
       0:
         label: NCD Vibration Temperature Sensor
         href: /docs/pe/devices-library/ncd-vibration-temperature-sensor/
-  description: NCD.io is an IoT Hardware Design and Development Company specializing
+  description: IoT Hardware Design and Development Company specializing
     in Wireless IoT sensors. It offers a wide range of plug-and-play devices for monitoring
     temperature, humidity, pressure, energy, acceleration, gas, and industrial I/O.
-    NCD devices allow control over pumps, valves, motors, relays, and more. All NCD
-    products are manufactured in the USA. Since 1995, NCD.io has been providing custom
+    Our devices allow control over pumps, valves, motors, relays, and more. All products 
+    are manufactured in the USA. Since 1995, NCD.io has been providing custom
     IoT hardware and firmware solutions.
 - name: Temco Controls
   type:
@@ -1205,19 +1218,19 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/temco-controls-logo.webp
+  logo: /images/partners/temco-controls-logo.webp
   page: /partners/hardware/temcocontrols
   site:
     href: https://temcocontrols.com/
   links:
-    sensor-guides:
+    other-devices-guides:
       0:
         label: Temco T3E-6CT
         href: /docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/
       1:
         label: Temco Tstat10
         href: /docs/devices-library/temco-controls-tstat-10/
-  description: Temco Controls Ltd. specializes in manufacturing low-cost sensors and
+  description: Specializes in manufacturing low-cost sensors and
     controllers for the HVAC industry. We proudly provide solutions with no license
     or recurring fees to our customers from all over the world. Both our software
     and device firmware are open source, making us one of the most open building automation
@@ -1225,13 +1238,13 @@
     purchases on the web and open, long-term support on the forum.
 - name: Arwin Technology Limited
   type:
-    - LoRaWAN
     - NB-IoT
+    - LoRaWAN
   industry:
     - Smart Cities
     - Retail
     - Smart Buildings
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1242,19 +1255,26 @@
     - Tank Level Monitoring
   hardware-types:
     - Sensors
-  logo: https://img.thingsboard.io/partners/senso-8-logo.png
+  logo: /images/partners/senso-8-logo.png
   page: /partners/hardware/arwin-technology-limited
   site:
     href: https://www.senso8.com/
   links:
-    gateway-guides:
+    sensor-guides:
       0:
-        label: Connect LRS10701 LoRaWAN IAQ Sensor to ThingsBoard
-        href: "/docs/devices-library/lrs10701/"
+        label: LRS10701 LoRaWAN IAQ Sensor
+        href: /docs/devices-library/lrs10701/
       1:
-        label: Connect LRS20100 LoRaWAN Temperature and Humidity Sensor to ThingsBoard
-        href: "/docs/devices-library/lrs20100/"
-  description: SENSO8 is the registered product trademark of Arwin Technology Limited. We were founded in 2015 at the Hong Kong Science Park. Our team, with over 20 years of Fortune 500 expertise, delivers end-to-end solutions from embedded design to cloud systems. We specialize in advanced wireless technologies (NB-IoT, LoRa, BLE, Wi-Fi) as well as a wide range of sensor applications. SENSO8 offers best-in-class IoT-sensor solutions - Indoor Air Quality(IAQ) Sensors, Water Leak Sensors, Temperature Sensors, Smart Power Meters, Dry Contact Sensors, etc. Most of the sensor models are battery-powered with years of battery life, which makes installation easier.
+        label: LRS20100 LoRaWAN Temperature and Humidity Sensor
+        href: /docs/devices-library/lrs20100/
+  description: SENSO8 is the registered product trademark of Arwin Technology Limited.
+    We were founded in 2015 at the Hong Kong Science Park. Our team, with over 20
+    years of Fortune 500 expertise, delivers end-to-end solutions from embedded design
+    to cloud systems. We specialize in advanced wireless technologies (NB-IoT, LoRa,
+    BLE, Wi-Fi) as well as a wide range of sensor applications. SENSO8 offers best-in-class
+    IoT-sensor solutions - Indoor Air Quality(IAQ) Sensors, Water Leak Sensors, Temperature
+    Sensors, Smart Power Meters, Dry Contact Sensors, etc. Most of the sensor models
+    are battery-powered with years of battery life, which makes installation easier.
 - name: Atomsenses
   type:
     - LoRaWAN
@@ -1267,7 +1287,7 @@
     - Healthcare
     - Smart Buildings
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1281,7 +1301,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: https://img.thingsboard.io/partners/atomsenses-logo.webp
+  logo: /images/partners/atomsenses-logo.webp
   page: /partners/hardware/atomsenses
   site:
     href: https://www.atomsenses.com/
@@ -1290,7 +1310,7 @@
       0:
         label: Connect Atomsenses Indoor LoRaWAN® Gateway
         href: https://www.atomsenses.com/how-to-connect-indoor-lorawan-gateway-to-thingsboard-in-collaboration-with-atomsenses/
-  description: Atomsenses is a specialist IoT solution provider focusing on Lorawan
+  description: Specialist IoT solution provider focusing on Lorawan
     sensors for indoor air quality monitoring, our vision is to transform how we manage
     and maintain healthy indoor environments.
 - name: Digicom B810 Spa
@@ -1325,16 +1345,16 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/digicom-logo.webp
+  logo: /images/partners/digicom-logo.webp
   page: /partners/hardware/digicom
   site:
     href: https://www.digicom.it/
   links:
-    sensor-guides:
+    general-guides:
       0:
         label: Energy Meter monitoring
-        href: /docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-pla%C6%9Eorm/
-  description: Digicom is a brand with over 45 years of history and experience in
+        href: /docs/samples/digicom/energy-meter-monitoring-with-thingsboard-iot-plaƞorm/
+  description: Brand with over 45 years of history and experience in
     the development and management of Internet-connected products. In 2017, Digicom
     Spa joined the B810 Group, becoming a leading company in the IoT sector enriching
     its skills and expanding its offer to advanced solutions in various industrial
@@ -1361,7 +1381,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1381,15 +1401,15 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: https://img.thingsboard.io/partners/mikrotik-logo.webp
+  logo: /images/partners/mikrotik-logo.webp
   page: /partners/hardware/mikrotik
   site:
     href: https://mikrotik.com/
   links:
-    sensor-guides:
+    general-guides:
       0:
-        label: TG-BT5-OUT tag
-        href: https://help.mikrotik.com/docs/spaces/UM/pages/143327239/Sending+temperature+readings+from+the+TG-BT5-OUT+tag+to+ThingsBoard
+        label: MQTT and ThingsBoard configuration
+        href: https://help.mikrotik.com/docs/spaces/ROS/pages/105742352/MQTT+and+ThingsBoard+configuration
     trackers-guides:
       0:
         label: Bluetooth tag-tracking using MQTT and ThingsBoard
@@ -1397,14 +1417,14 @@
       1:
         label: GPS-tracking using MQTT and ThingsBoard
         href: https://help.mikrotik.com/docs/spaces/ROS/pages/166920428/GPS-tracking+using+MQTT+and+ThingsBoard
-    gateway-guides:
-      0:
-        label: MQTT and ThingsBoard configuration
-        href: https://help.mikrotik.com/docs/spaces/ROS/pages/105742352/MQTT+and+ThingsBoard+configuration
+      2:
+        label: TG-BT5-OUT tag
+        href: https://help.mikrotik.com/docs/spaces/UM/pages/143327239/Sending+temperature+readings+from+the+TG-BT5-OUT+tag+to+ThingsBoard
+    other-devices-guides:
       1:
         label: Container - ThingsBoard MQTT/HTTP server
         href: https://help.mikrotik.com/docs/spaces/ROS/pages/166920348/Container+-+ThingsBoard+MQTT+HTTP+server
-  description: MikroTik is an EU-based leader in networking hardware and software,
+  description: EU-based leader in networking hardware and software,
     providing high-performance routers, switches, 5G and wireless solutions. Our technology
     powers ISPs, enterprises, and IoT networks—enabling everything from asset tracking
     to smart city integration and adding wireless connectivity to legacy sensors.
@@ -1435,7 +1455,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: https://img.thingsboard.io/partners/lansitec-logo.webp
+  logo: /images/partners/lansitec-logo.webp
   page: /partners/hardware/lansitec
   site:
     href: https://www.lansitec.com/
@@ -1527,7 +1547,7 @@
       11:
         label: Solar Bluetooth Gateway
         href: /docs/devices-library/solar-bluetooth-gateway/
-  description: Lansitec is at the forefront of technological innovation, specializing
+  description: Forefront of technological innovation, specializing
     in the provision of affordable, compact, and highly efficient hardware designed
     to accurately locate people, resources, and assets. Our unique approach combines
     cutting-edge trackers, gateways, tags, and sensors with advanced software and
@@ -1555,7 +1575,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1568,9 +1588,9 @@
     - Waste Management
     - Tank Level Monitoring
   hardware-types:
-    - Gateways
+    - Gateway
     - Single-board computers
-  logo: https://img.thingsboard.io/partners/elastel-logo.webp
+  logo: /images/partners/elastel-logo.webp
   page: /partners/hardware/elastel
   site:
     href: https://www.elastel.com/
@@ -1579,8 +1599,8 @@
       0:
         label: Industrial Raspberry Pi EG500
         href: /docs/devices-library/raspberry-pi-cm4/
-  description: Elastel is a technology-driven company providing IIoT products and
-    services globally. With 10+ years of industry experience, Elastel has developed
+  description: Technology-driven company providing IIoT products and
+    services globally. With 10+ years of industry experience, developed
     series Open, High-performance, Reliable, and Easy-to-use IIoT devices like Industrial
     Raspberry Pi, Arm-based IIoT Gateway, Industrial Cellular Router, etc. These edge
     hardware allows customers flexibly develop their specific applications for IoT
@@ -1601,7 +1621,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1620,16 +1640,16 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: https://img.thingsboard.io/partners/dragino-logo.webp
+  logo: /images/partners/dragino-logo.webp
   page: /partners/hardware/dragino
   site:
     href: http://www.dragino.com/
   links:
-    sensor-guides:
+    general-guides:
       0:
         label: Dragino -NB and -CB series devices
         href: https://wiki.dragino.com/xwiki/bin/view/Main/ThingsBoard
-  description: Shenzhen Dragino Technology Development Co., Ltd. specializes in IoT
+  description: Specializes in IoT
     solutions, with a focus on LoRaWAN and NB-IoT technologies. We offer end-to-end
     IoT services, including hardware, software, and network solutions, enabling customers
     to deploy and manage IoT networks efficiently. Our globally trusted products and
@@ -1650,7 +1670,7 @@
     - Healthcare
     - Industrial Manufacturing
     - Energy Management
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Office
     - Air Quality Monitoring
@@ -1663,16 +1683,16 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/haltian-logo.webp
+  logo: /images/partners/haltian-logo.webp
   page: /partners/hardware/haltian
   site:
     href: https://haltian.com/
   links:
-    gateway-guides:
+    general-guides:
       0:
         label: Integration guide
-        href: https://lnkd.in/dZydMAc4
-  description: Haltian's Thingsee IoT solution is a secure IoT sensor solution for
+        href: https://support.haltian.com/knowledgebase/thingsboard/
+  description: Secure IoT sensor solution for
     enterprises. Includes mesh-connected sensors, gateways, cellular connectivity
     and device management cloud. Implemented in commercial real estate, hospitals
     and warehouses supporting occupancy and utilization analytics, data-driven cleaning,
@@ -1698,7 +1718,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1717,7 +1737,7 @@
     - Single-board computers
     - Gateways
     - Trackers
-  logo: https://img.thingsboard.io/partners/sixfab-logo.webp
+  logo: /images/partners/sixfab-logo.webp
   page: /partners/hardware/sixfab
   site:
     href: https://sixfab.com/alpon
@@ -1726,13 +1746,13 @@
       0:
         label: ALPON X4 Edge Computer
         href: /docs/devices-library/alpon-x4/
-  description: Sixfab builds modular, always online, industrial-grade edge computers
+  description: Builds modular, always online, industrial-grade edge computers
     based on Raspberry Pi, designed for real-world deployments. Our ALPON™ devices
     integrate seamlessly with ThingsBoard and support remote fleet provisioning, resilient
     multi-network connectivity, and local data processing. Engineered for reliability
-    in harsh conditions, Sixfab products focus on practical deployment, automation,
+    in harsh conditions, products focus on practical deployment, automation,
     and maintainability at scale.
-- name: ioTracker
+- name: ioThings
   type:
     - Wi-Fi
     - Bluetooth LE
@@ -1751,20 +1771,20 @@
   hardware-types:
     - Trackers
     - Sensors
-  logo: https://img.thingsboard.io/partners/iothings-logo.png
-  page: /partners/hardware/iotracker
+  logo: /images/partners/iothings-logo.png
+  page: /partners/hardware/iothings
   site:
     href: https://iotracker.eu/
   links:
-    sensor-guides:
-      0:
-        label: ioButton Panic button
-        href: /docs/pe/devices-library/iobutton-panic-button/
     trackers-guides:
       0:
         label: ioTracker Multi-sensor tracker
         href: /docs/pe/devices-library/iotracker-multi-sensor-tracker/
-  description: ioThings, the company behind the ioTracker and ioButton, is a Dutch
+    other-devices-guides:
+      0:
+        label: ioButton Panic button
+        href: /docs/pe/devices-library/iobutton-panic-button/
+  description: The company behind the ioTracker and ioButton, is a Dutch
     company and was established in 2016 by three technology enthusiasts with a professional
     background in electronics, security, IT and telecom. We mainly operate in the
     domain of emergency response, together with indoor and outdoor localisation. Our
@@ -1793,7 +1813,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/ace-automation-logo.webp
+  logo: /images/partners/ace-automation-logo.webp
   page: /partners/hardware/ace-plc
   site:
     href: https://aceautomation.eu/
@@ -1802,7 +1822,7 @@
       0:
         label: Connect ACE MQTT 4G GPS Gateway
         href: /docs/devices-library/ace-iot-gateway-and-siemens-logo/
-  description: ACE Automation Europe designs compact PLCs, touchscreen HMIs, and LTE/4G
+  description: Designs compact PLCs, touchscreen HMIs, and LTE/4G
     MQTT gateways. The “Nano ACE” series stands out for its ultra-low power consumption,
     compact form factor, and PCB-mount version. Our HMIs are powerful, affordable,
     and easy to use. The LTE/4G multi-operator gateway is ideal for remote IoT monitoring
@@ -1815,7 +1835,7 @@
     - Agriculture
     - Industrial Manufacturing
     - Smart Buildings
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1826,7 +1846,7 @@
     - Smart Irrigation
   hardware-types:
     - Sensors
-  logo: https://img.thingsboard.io/partners/makerfabs-logo.png
+  logo: /images/partners/makerfabs-logo.png
   page: /partners/hardware/agrosense-makerfabs
   site:
     href: https://www.makerfabs.com/agrosense
@@ -1841,7 +1861,7 @@
       2:
         label: AgroSense Soil Moisture Sensor
         href: /docs/pe/devices-library/soil-moisture-sensor/
-  description: Makerfabs is a professional open-source hardware provider based in
+  description: Professional open-source hardware provider based in
     Shenzhen, China, offering end-to-end support from concept design, prototyping,
     small-batch manufacturing, to full-scale production. We are especially experienced
     in LoRa and LoRaWAN technologies and have helped many clients realize custom IoT
@@ -1851,7 +1871,7 @@
 - name: Chengdu IOTRouter Tech. Co., Ltd.
   type:
     - 5G/4G LTE
-    - Ethernet
+    - LAN
     - Wi-Fi
     - RS485
   industry:
@@ -1864,7 +1884,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1883,7 +1903,7 @@
     - Microcontrollers
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/iotrouter-logo.png
+  logo: /images/partners/iotrouter-logo.png
   page: /partners/hardware/iotrouter
   site:
     href: http://www.iotrouter.com/
@@ -1892,10 +1912,10 @@
       0:
         label: Connect EG8200 Gateway
         href: /docs/pe/devices-library/eg8200-gateway/
-  description: Established in 2015, Chengdu IOTRouter is a high-tech enterprise specializing
+  description: Established in 2015, high-tech enterprise specializing
     in the research, development, production, and sales of industrial IoT Edge Gateway,
     HMI, Remote IO, AI Edge Box, and other digital integration products and solutions.
-    lOTRouter combines traditional industry with new technologies such as IoT, edge
+    Combines traditional industry with new technologies such as IoT, edge
     computing, and AI to help users easily integrate OT (Operational Technology) and
     IT (information technology), thereby building a bridge between traditional industry
     infrastructure and digital applications. We serve more than 3,000 customers in
@@ -1916,7 +1936,7 @@
     - Smart Buildings
     - Energy Management
     - Security
-    - Environment Monitoring
+    - Environmental Monitoring
   use-case:
     - Smart Energy
     - Environment Monitoring
@@ -1936,16 +1956,16 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: https://img.thingsboard.io/partners/weinzierl-logo.svg
+  logo: /images/partners/weinzierl-logo.svg
   page: /partners/hardware/weinzierl
   site:
     href: https://weinzierl.de/en/
   links:
-    gateway-guides:
+    other-devices-guides:
       0:
         label: Connect KNX IP Multi IO 580
         href: /docs/devices-library/knx-ip-multi-io-580/
-  description: We from Weinzierl develop, produce, and market complex software and
+  description: We develop, produce, and market complex software and
     hardware components for building system technology. Our focus lies in building
     networks based on the KNX standard. Because of this focus, we cover the KNX system
     with our products and solutions comprehensively. In addition, we offer gateways
