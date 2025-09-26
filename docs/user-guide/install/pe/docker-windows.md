@@ -120,7 +120,7 @@ docker compose up -d
 
 ## Upgrading
 {% capture upgrade_version_by_version%}
-**Note, that you have to upgrade versions one by one (for example 4.0.2 -> 4.1.0 -> 4.2.0 etc).**
+**Note, that you have to upgrade versions one by one (for example 4.0.2 -> 4.1.0 -> 4.2.0 ,etc).**
 {% endcapture %}
 {% include templates/info-banner.md content=upgrade_version_by_version %}
 
