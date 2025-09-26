@@ -111,8 +111,8 @@ Once the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
 The cluster provisioning scripts will create several load balancers:
 
-* tb-broker-http-loadbalancer - AWS ALB that is responsible for the web UI and REST API;
-* tb-broker-mqtt-loadbalancer - AWS NLB that is responsible for the MQTT communication.
+* tbmq-http-loadbalancer - AWS ALB that is responsible for the web UI and REST API;
+* tbmq-mqtt-loadbalancer - AWS NLB that is responsible for the MQTT communication.
 
 Provisioning of the AWS load-balancer controller is a **very important step** that is required for those load balancers to work properly.
 
@@ -197,7 +197,7 @@ To set up Valkey, open the **AWS Console** → **ElastiCache** → **Valkey cach
 ### Amazon RDS (PostgreSQL)
 
 When the RDS PostgreSQL instance switches to the **Available** state, open the AWS Console and copy its **Endpoint**.
-Update the `SPRING_DATASOURCE_URL` field in `tb-broker-db-configmap.yml` by replacing the placeholder `RDS_URL_HERE` with the copied endpoint.
+Update the `SPRING_DATASOURCE_URL` field in `tbmq-db-configmap.yml` by replacing the placeholder `RDS_URL_HERE` with the copied endpoint.
 
 {% include images-gallery.html imageCollection="tbmq-rds-link-configure" %}
 
@@ -219,7 +219,7 @@ Here, **$CLUSTER_ARN** is the Amazon Resource Name of your MSK cluster.
 
 {% include images-gallery.html imageCollection="tbmq-msk-link-configure" %}
 
-Copy the value from **BootstrapBrokerString** and set it as the `TB_KAFKA_SERVERS` environment variable in `tb-broker.yml`.
+Copy the value from **BootstrapBrokerString** and set it as the `TB_KAFKA_SERVERS` environment variable in `tbmq.yml` and `tbmq-ie.yml`.
 
 Alternatively, click **View client information** in the MSK Console and copy the **plaintext bootstrap servers** from the UI.
 
@@ -232,7 +232,7 @@ When the Valkey cluster reaches the **Available** state, open **Cluster details*
 
 {% include images-gallery.html imageCollection="tbmq-redis-link-configure" %}
 
-Next, edit `tb-broker-cache-configmap.yml`:
+Next, edit `tbmq-cache-configmap.yml`:
 
 * If running **standalone**:
 
@@ -269,7 +269,7 @@ INFO  o.t.m.b.i.ThingsboardMqttBrokerInstallService - Installation finished succ
 
 {% capture aws-rds %}
 
-Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-broker-db-configmap.yml` correctly.
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tbmq-db-configmap.yml` correctly.
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
@@ -308,8 +308,8 @@ kubectl get ingress
 Once provisioned, you should see similar output:
 
 ```text
-NAME                          CLASS    HOSTS   ADDRESS                                                                  PORTS   AGE
-tb-broker-http-loadbalancer   <none>   *       k8s-thingsbo-tbbroker-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
+NAME                     CLASS    HOSTS   ADDRESS                                                              PORTS   AGE
+tbmq-http-loadbalancer   <none>   *       k8s-thingsbo-tbmq-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
 ```
 
 #### HTTPS Load Balancer
@@ -391,12 +391,12 @@ kubectl create configmap tbmq-mqtts-config \
 * where **YOUR_PEM_FILENAME** is the name of your **server certificate file**.
 * where **YOUR_PEM_KEY_FILENAME** is the name of your **server certificate private key file**.
 
-Then, uncomment all sections in the ‘tb-broker.yml’ file that are marked with “Uncomment the following lines to enable two-way MQTTS”.
+Then, uncomment all sections in the ‘tbmq.yml’ file that are marked with “Uncomment the following lines to enable two-way MQTTS”.
 
 Execute command to apply changes:
 
 ```bash
-kubectl apply -f tb-broker.yml
+kubectl apply -f tbmq.yml
 ```
 {: .copy-code}
 
@@ -421,11 +421,11 @@ kubectl get ingress
 You should see the similar picture:
 
 ```text
-NAME                          CLASS    HOSTS   ADDRESS                                                                  PORTS   AGE
-tb-broker-http-loadbalancer   <none>   *       k8s-thingsbo-tbbroker-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
+NAME                     CLASS    HOSTS   ADDRESS                                                              PORTS   AGE
+tbmq-http-loadbalancer   <none>   *       k8s-thingsbo-tbmq-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
 ```
 
-Use `ADDRESS` field of the `tb-broker-http-loadbalancer` to connect to the cluster.
+Use `ADDRESS` field of the `tbmq-http-loadbalancer` to connect to the cluster.
 
 {% include templates/mqtt-broker/login.md %}
 
@@ -441,8 +441,8 @@ kubectl get services
 You should see the similar picture:
 
 ```text
-NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)                         AGE
-tb-broker-mqtt-loadbalancer   LoadBalancer   10.100.119.170   k8s-thingsbo-tbbroker-b9f99d1ab6-1049a98ba4e28403.elb.eu-west-1.amazonaws.com   1883:30308/TCP,8883:31609/TCP   6m58s
+NAME                     TYPE           CLUSTER-IP       EXTERNAL-IP                                                                 PORT(S)                         AGE
+tbmq-mqtt-loadbalancer   LoadBalancer   10.100.119.170   k8s-thingsbo-tbmq-b9f99d1ab6-1049a98ba4e28403.elb.eu-west-1.amazonaws.com   1883:30308/TCP,8883:31609/TCP   6m58s
 ```
 
 Use `EXTERNAL-IP` field of the load-balancer to connect to the cluster via MQTT protocol.
@@ -452,7 +452,7 @@ Use `EXTERNAL-IP` field of the load-balancer to connect to the cluster via MQTT 
 In case of any issues you can examine service logs for errors. For example to see TBMQ logs execute the following command:
 
 ```bash
-kubectl logs -f tb-broker-0
+kubectl logs -f tbmq-0
 ```
 {: .copy-code}
 
