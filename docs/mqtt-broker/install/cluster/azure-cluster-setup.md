@@ -94,7 +94,7 @@ Note the value of host from the command output (**tbmq-db.postgres.database.azur
 Edit the database settings file and replace YOUR_AZURE_POSTGRES_ENDPOINT_URL with the host value, YOUR_AZURE_POSTGRES_USER and YOUR_AZURE_POSTGRES_PASSWORD with the correct values:
 
 ```bash
-nano tb-broker-db-configmap.yml
+nano tbmq-db-configmap.yml
 ```
 {: .copy-code}
 
@@ -117,7 +117,7 @@ You can choose one of the following paths depending on your environment:
 - [Deploy a Valkey cluster on AKS (Recommended)](https://learn.microsoft.com/en-us/azure/aks/valkey-overview)
 - [Quickstart: Create a Redis Enterprise cache](https://learn.microsoft.com/en-us/azure/redis/quickstart-create-managed-redis)
 
-Once your Valkey cluster is ready, update the cache configuration in `tb-broker-cache-configmap.yml` with the correct endpoint values:
+Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
 
 * **For standalone Valkey**:
   Uncomment and set the following values. Make sure the `REDIS_HOST` value does **not** include the port (`:6379`).
@@ -158,7 +158,7 @@ INFO  o.t.m.b.i.ThingsboardMqttBrokerInstallService - Installation finished succ
 
 {% capture aws-rds %}
 
-Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-broker-db-configmap.yml` correctly.
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tbmq-db-configmap.yml` correctly.
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}

@@ -18,7 +18,7 @@ kubectl apply -f kafka/tb-kafka.yml
 ```
 {: .copy-code}
 
-Update TBMQ configuration files (`tb-broker.yml` and `tbmq-ie.yml`) and uncomment the section marked:
+Update TBMQ configuration files (`tbmq.yml` and `tbmq-ie.yml`) and uncomment the section marked:
 
 ```yaml
 # Uncomment the following lines to connect to Apache Kafka
@@ -46,7 +46,7 @@ kubectl apply -f kafka/operator/kafka-cluster.yaml
 ```
 {: .copy-code}
 
-Update TBMQ configuration files (`tb-broker.yml` and `tbmq-ie.yml`) and uncomment the section marked:
+Update TBMQ configuration files (`tbmq.yml` and `tbmq-ie.yml`) and uncomment the section marked:
 
 ```yaml
 # Uncomment the following lines to connect to Strimzi
