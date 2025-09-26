@@ -48,7 +48,7 @@ cd tbmq/k8s/gcp
 Replace **YOUR_DB_IP_ADDRESS**, **YOUR_DB_PASSWORD** and **YOUR_DB_NAME** with the correct values:
 
 ```bash
-nano tb-broker-db-configmap.yml
+nano tbmq-db-configmap.yml
 ```
 {: .copy-code}
 
@@ -57,7 +57,7 @@ nano tb-broker-db-configmap.yml
 Let's create a dedicated namespace for our TBMQ cluster deployment to ensure better resource isolation and management.
 
 ```bash
-kubectl apply -f tb-broker-namespace.yml
+kubectl apply -f tbmq-namespace.yml
 kubectl config set-context $(kubectl config current-context) --namespace=thingsboard-mqtt-broker
 ```
 {: .copy-code}
@@ -72,7 +72,7 @@ kubectl config set-context $(kubectl config current-context) --namespace=thingsb
 
 {% capture aws-rds %}
 
-Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-broker-db-configmap.yml` correctly.
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tbmq-db-configmap.yml` correctly.
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}

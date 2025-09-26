@@ -32,7 +32,7 @@ To set up Valkey in Google Cloud, refer to the Google Memorystore for Valkey doc
   Advice on memory management, eviction policies, when to scale, and how to handle growing workloads effectively.
   ([Google Cloud][7])
 
-Once your Valkey cluster is ready, update the cache configuration in `tb-broker-cache-configmap.yml` with the correct endpoint values:
+Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
 
 * **For standalone Valkey**:
   Uncomment and set the following values. Make sure the `REDIS_HOST` value does **not** include the port (`:6379`).
