@@ -7,7 +7,6 @@ description: ThingsBoard IoT platform security settings
 
 redirect_from: 
     - "/docs/pe/user-guide/ui/jwt-security-settings/"
-    - "/docs/user-guide/ui/jwt-security-settings/"
 
 ---
 
