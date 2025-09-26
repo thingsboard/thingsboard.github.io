@@ -425,6 +425,9 @@
 "/docs/edge/devices-library/guidelines/":
   url: "/docs/edge/devices-library/guidelines/"
   redirect_from: []
+"/docs/edge/devices-library/raspberry-pi-4/":
+  url: "/docs/edge/devices-library/raspberry-pi-4/"
+  redirect_from: []
 "/docs/edge/devices-library/recomputer-r1000/":
   url: "/docs/edge/devices-library/recomputer-r1000/"
   redirect_from: []
@@ -683,9 +686,6 @@
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
-  redirect_from: []
-"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
-  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
@@ -3209,6 +3209,9 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/guidelines/":
   url: "/docs/pe/edge/devices-library/guidelines/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/raspberry-pi-4/":
+  url: "/docs/pe/edge/devices-library/raspberry-pi-4/"
   redirect_from: []
 "/docs/pe/edge/devices-library/recomputer-r1000/":
   url: "/docs/pe/edge/devices-library/recomputer-r1000/"
