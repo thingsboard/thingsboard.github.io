@@ -128,6 +128,11 @@ docker compose up -d
 
 When a new PE release is available, follow these steps to update your installation without losing data:
 
+{% capture old_manifests_info %}
+**If you upgrade using previous version of manifests make sure to follow these steps first** [instructions](/docs/user-guide/install/pe/old-docker-migrate/)
+{% endcapture %}
+{% include templates/warn-banner.md content=old_manifests_info %}
+
 1. Change the version of the `thingsboard/tb-pe-node` and `thingsboard/tb-web-report` in the `docker-compose.yml` file to the subsequent version of thingsboard regarding your current one (e.g. {{ site.release.pe_full_ver }}) 
 
 2. Execute the following commands:
@@ -139,11 +144,6 @@ docker compose run --rm -e UPGRADE_TB=true thingsboard-pe
 docker compose up -d
 ```
 {: .copy-code}
-
-{% capture old_manifests_info %}
-**If you upgrade using previous version of manifests make sure to follow these steps first** [instructions](/docs/user-guide/install/pe/old-docker-migrate/)
-{% endcapture %}
-{% include templates/warn-banner.md content=old_manifests_info %}
 
 ## Troubleshooting
 
