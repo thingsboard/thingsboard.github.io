@@ -3,7 +3,11 @@
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Also, we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) update functionality.
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+Also, we can change the period of the blinking using [shared attribute](/docs/{{peDocsPrefix}}user-guide/attributes/#shared-attributes){: target="_blank"} update functionality.
+{% else %}
+Also, we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes){: target="_blank"} update functionality.
+{% endif %}
 
 This type of attribute is available only for Devices. It is similar to the Server-side attributes but has one important 
 difference. The device firmware/application may request the value of the shared attribute(s) or subscribe to the updates 
@@ -12,7 +16,7 @@ of the attribute(s). The most common use case of shared attributes is to store d
 In order to run the code of this part of the guide, we recommend using Python 3.9 or above.  
 
 
-If you haven’t installed Python, please, follow next steps:  
+If you haven’t installed Python, please, follow the next steps:  
 
 ```bash
 sudo apt update
@@ -79,4 +83,4 @@ def main():
 Also, if you are using the imported dashboard, you can change the blinking period using the following widget, which you 
 can see in the bottom right corner of the dashboard:
 
-![](https://img.thingsboard.io/devices-library/basic/single-board-computers/attribute-update-widget.png)
+![attribute-update-widget](https://img.thingsboard.io/devices-library/basic/single-board-computers/attribute-update-widget.png)

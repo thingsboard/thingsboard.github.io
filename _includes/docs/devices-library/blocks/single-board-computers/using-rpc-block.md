@@ -1,19 +1,21 @@
-ThingsBoard allows you to send [Remote Procedure Calls (RPC)](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc) from server-side applications to devices and vice versa. 
-Basically, this feature will enable you to send commands to/from devices and receive the results of command execution.
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
+**ThingsBoard Edge** allows you to send [Remote Procedure Calls (RPCs)](/docs/{{peDocsPrefix}}user-guide/rpc/#server-side-rpc){: target="_blank"}
+{% else %} 
+**ThingsBoard** allows you to send [Remote Procedure Calls (RPCs)](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc){: target="_blank"}
+{% endif %} from server-side applications to devices and vice versa. 
+This feature enables you to send commands to/from devices and receive the results of command execution.
 
-In this guide, we will configure the RPC command to get OrangePI telemetry data immediately. If you are 
-using the imported dashboard, you don't need to configure anything as in your dashboard you can see the following widget:
+In this guide, we will configure an RPC command to get telemetry data from OrangePI immediately. If you are 
+using the imported dashboard, there's no need for additional configuration, as the dashboard already includes the following widget:
 
-![](https://img.thingsboard.io/devices-library/basic/single-board-computers/one-way-rpc-widget.png)
+![one-way-rpc-widget](https://img.thingsboard.io/devices-library/basic/single-board-computers/one-way-rpc-widget.png)
 
-<aside>
-💡 If you create a new dashboard, you can use the “RPC Button” widget for one-way RPC  which is located in the “Control widgets” bundle.
 
-</aside>
+💡 If you're creating a new dashboard, you can use the **“RPC Button”** widget for one-way RPC communication, which is located in the **“Control widgets”** bundle.
 
-For now, we are ready to write our code. Firstly we need to create an `rpc_callback` function which will call when we 
-will get RPC from the server. And as in the example with shared attributes, we need to bind our rpc callback function 
-with the subscriber in the `main` function.
+Now, we are ready to write the code. First, create an `rpc_callback` function that will be 
+triggered when the device receives an RPC request from the server. As in the example with shared attributes, we also need to bind our RPC callback function 
+to the subscriber within the `main` function.
 
 ```python
 client = None
@@ -43,9 +45,13 @@ def main():
     ...
 ```
 
-Finally, let’s try to push our button and force getting OrangePI data:
-![](https://img.thingsboard.io/devices-library/basic/single-board-computers/timeseries-rpc-widget.png)
+When you click the **RPC button**, the device will immediately send telemetry (CPU %, Processes number, etc.). 
+You can see this reflected in your dashboard, as shown in the chart below.
+
+![timeseries-rpc-widget](https://img.thingsboard.io/devices-library/basic/single-board-computers/timeseries-rpc-widget.png)
 
 Also, if you did everything right, you should see the following console output:
 
-`{'method': 'getTelemetry', 'params': {}}`
+```python
+{'method': 'getTelemetry', 'params': {}}
+```

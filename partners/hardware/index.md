@@ -20,6 +20,8 @@ filterCollection:
       - Gateways
       - Trackers
       - Other devices
+      - Gateway
+      - Single Board Computer
   - label: Connectivity
     filters:
       - HTTP
@@ -30,13 +32,13 @@ filterCollection:
       - Bluetooth
       - Sigfox
       - 4G
-      - Bluetooth LE
+      - LTE
       - NB-IoT
       - LTE-M
       - GNSS/GPS
       - BACnet
-      - RS485
-      - LTE
+      - Bluetooth 5.0
+      - Bluetooth LE
       - CAN Bus
       - CAT-1
       - CAT-M/NB
@@ -49,7 +51,6 @@ filterCollection:
       - Modbus
       - OPC UA
       - PLC
-      - RS232
       - SMS
       - Satellite (Iridium/Orbcom)
       - USB
@@ -60,6 +61,10 @@ filterCollection:
       - KNX
       - M-Bus
       - Modbus TCP
+      - BLE
+      - LAN
+      - RS-232
+      - RS-485
   - label: Industry
     filters:
       - Smart Cities
@@ -71,8 +76,7 @@ filterCollection:
       - Smart Buildings
       - Energy Management
       - Security
-      - Mining
-      - Environment Monitoring
+      - Environmental Monitoring
   - label: Use cases
     filters:
       - Smart Energy
@@ -87,6 +91,9 @@ filterCollection:
       - Air Quality Monitoring
       - Smart Farming
       - Smart Irrigation
+      - Environment Monitoring
+      - Smart energy
+
 ---
 
 

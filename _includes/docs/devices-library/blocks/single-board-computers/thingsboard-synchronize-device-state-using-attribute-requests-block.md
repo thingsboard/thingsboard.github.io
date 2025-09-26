@@ -1,10 +1,10 @@
 {% capture difference %}
-**Don't forget to create shared attribute `blinkingPeriod` on your device.** 
+**Make sure to create the shared attribute `blinkingPeriod` on your device.** 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-In order to get the state of the device from ThingsBoard during booting we have functionality to do this in the code.
-Responsible parts of the example code:
+The example code includes functionality to retrieve the device state from {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}**ThingsBoard Edge**{% else %}**ThingsBoard**{% endif %}
+during boot. The relevant code sections are shown below.
 
 Attribute callback:
 ```python
@@ -27,6 +27,8 @@ def main():
 ```
 {:.copy-code}
 
-In order to give ability to our callbacks to receive the data we have to send a request to ThingsBoard. This 
-functionality allows us to keep the actual state after rebooting.
+In order for the callback to receive the shared attribute data from 
+{% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}**ThingsBoard Edge**{% else %}**ThingsBoard**{% endif %}, 
+the device must explicitly request it after connecting. 
+This functionality allows the device to restore the correct attribute values after a reboot, preserving the actual state.
 

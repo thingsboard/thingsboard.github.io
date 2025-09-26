@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: device profile
-description: Creates or clears alarms for the message originator based on configured alarm rules.
+description: Evaluates incoming messages against alarm rules defined in the device profile of the message originator and creates, updates, or clears alarms based on the evaluation results.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

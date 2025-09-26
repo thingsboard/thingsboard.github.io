@@ -157,6 +157,24 @@ The response is:
 
 ![Gateway RPC reboot method](https://img.thingsboard.io/gateway/gateway-rpc-reboot.png)
 
+### remove_provisioned_credentials RPC method
+
+The **gateway_remove_provisioned_credentials RPC method** removes the device credentials from the config folder. 
+If [device provisioning](/docs/iot-gateway/features-overview/provisioning/) is enabled for the gateway instance, the gateway will automatically re-provision itself on the next startup.  
+
+Command:  
+
+```bash
+gateway_remove_provisioned_credentials
+```
+{: .copy-code}
+
+The response is:  
+
+```json
+{"code": 200, "resp": "Provisioned credentials file removed successfully."}
+```
+
 ## Next steps
 
 Explore guides related to main ThingsBoard features:
