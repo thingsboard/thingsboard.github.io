@@ -79,7 +79,7 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 
 ## Step 9. Provision Kafka
 
-{% include templates/mqtt-broker/install/cluster-common/provision-kafka.md %}
+{% include templates/mqtt-broker/install/cluster-common/provision-kafka-new.md %}
 
 ## Step 10. Starting
 
