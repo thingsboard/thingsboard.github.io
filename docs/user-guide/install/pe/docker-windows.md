@@ -127,7 +127,7 @@ docker compose up -d
 When a new PE release is available, follow these steps to update your installation without losing data:
 
 {% capture old_manifests_info %}
-**If you upgrade using previous version of manifests make sure to follow these steps first** [instructions](/docs/user-guide/install/pe/old-docker-migrate/)
+**If you are upgrading using previous version of deployment files, make sure to follow steps described in this [instruction](/docs/user-guide/install/pe/old-docker-migrate/) first.**
 {% endcapture %}
 {% include templates/warn-banner.md content=old_manifests_info %}
 
