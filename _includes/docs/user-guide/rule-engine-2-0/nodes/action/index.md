@@ -15,7 +15,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [delay (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/action/delay) — delays incoming messages for a configurable period before forwarding them to the next rule node.
 - [delete attributes](/docs/user-guide/rule-engine-2-0/nodes/action/delete-attributes) — deletes specified attributes from message originator.
 - [delete relation](/docs/user-guide/rule-engine-2-0/nodes/action/delete-relation) — delete the relation from the selected entity to originator of the message by type and direction.
-- [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — evaluates incoming messages against [alarm rules](/docs/{{docsPrefix}}/user-guide/device-profiles/#alarm-rules) defined in the device profile of the message originator and creates, updates, or clears alarms based on the evaluation results.
+- [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — evaluates incoming messages against [alarm rules](/docs/{{docsPrefix}}/user-guide/device-profiles/#alarm-rules){:target="_blank"} defined in the device profile of the message originator and creates, updates, or clears alarms based on the evaluation results.
 - [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — sends device connectivity events for the message originator.
 - [generate report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-report) — Generates report files by capturing target dashboard with specific configuration.
 - [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — generates messages at configurable time intervals using a custom script function.
@@ -29,7 +29,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group) — removes the message originator entity from an entity group found by group name pattern.
 - [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — Sends reply to REST API call that was originally sent to rule engine.
 - [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply) — Sends response to the RPC Call originator.
-- [rpc call request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request) — Sends RPC requests to the Device and routing response to the next Rule nodes.
+- [rpc call request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request) — sends a [Remote Procedure Call (RPC)]((/docs/{{docsPrefix}}user-guide/rpc)){:target="_blank"} to a device, returning the device's response as outgoing message data.
 - [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — stores the incoming message data as attribute data of the message originator.
 - [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries) — stores the incoming message data as time series data of the message originator.
 - [save to custom table](/docs/user-guide/rule-engine-2-0/nodes/action/save-to-custom-table) — stores the incoming message data in a custom Cassandra table.
