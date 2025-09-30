@@ -4,7 +4,7 @@ title: Install ThingsBoard IoT Gateway as package.
 
 ---
 
-This guide will help you to install ThingsBoard IoT Gateway on CentOS or RHEL.
+This guide will help you to install ThingsBoard IoT Gateway on AlmaLinux or RHEL.
 
 ## Prerequisites
 
