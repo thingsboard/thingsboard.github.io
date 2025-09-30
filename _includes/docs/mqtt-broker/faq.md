@@ -7,14 +7,14 @@
 TBMQ represents an open-source software product developed by ThingsBoard, designed to facilitate communication between MQTT clients. 
 This particular product is freely available for both personal and commercial purposes, with the added flexibility of being deployable in any desired location. 
 For individuals new to utilizing the broker, we suggest consulting the comprehensive resources, namely the
-[what-is-tbmq](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) and the
-[getting started guide](/docs/mqtt-broker/getting-started/), in order to gain a thorough understanding of its functionality. 
+[what-is-tbmq](/docs/{{docsPrefix}}mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) and the
+[getting started guide](/docs/{{docsPrefix}}mqtt-broker/getting-started/), in order to gain a thorough understanding of its functionality. 
 Further details can be found on the dedicated page, providing a wealth of additional information.
 
 ## How do I get started?
 
-We recommend [installing](/docs/mqtt-broker/install/installation-options/) TBMQ locally on your laptop or PC using Docker
-and follow the [getting started guide](/docs/mqtt-broker/getting-started/).
+We recommend [installing](/docs/{{docsPrefix}}mqtt-broker/install/installation-options/) TBMQ locally on your laptop or PC using Docker
+and follow the [getting started guide](/docs/{{docsPrefix}}mqtt-broker/getting-started/).
 
 ## What can I do with TBMQ?
 
@@ -26,8 +26,8 @@ TBMQ enhances both functionality and scalability, making it suitable for IoT dep
 
 The hosting options for TBMQ are highly flexible, allowing you to choose from cloud-based environments, on-premises setups, 
 or even running it locally on your personal laptop or PC.
-For initiating the setup process, we advise opting for the [Docker installation](/docs/mqtt-broker/install/docker/), which offers a streamlined and efficient approach. 
-If you're interested in configuring a cluster setup, a comprehensive [guide](/docs/mqtt-broker/install/cluster/docker-compose-setup/) is available, specifically designed for Docker Compose setups.
+For initiating the setup process, we advise opting for the [Docker installation](/docs/{{docsPrefix}}mqtt-broker/install/docker/), which offers a streamlined and efficient approach. 
+If you're interested in configuring a cluster setup, a comprehensive [guide](/docs/{{docsPrefix}}mqtt-broker/install/cluster/docker-compose-setup/) is available, specifically designed for Docker Compose setups.
 
 ## What about security?
 
@@ -43,7 +43,7 @@ Each broker, or node, within the cluster possesses identical capabilities and ha
 It's worth noting that the actual performance of the system is contingent upon the specific usage scenario, 
 with factors such as payload size and message rate playing crucial roles in determining the overall efficiency and throughput of the system.
 For a comprehensive understanding of the performance capabilities of TBMQ, we recommend referring to the dedicated 
-[performance test page](/docs/mqtt-broker/reference/100m-connections-performance-test/).
+[performance test page](/docs/{{docsPrefix}}mqtt-broker/reference/100m-connections-performance-test/).
 
 ## Where does TBMQ store data?
 
@@ -58,4 +58,4 @@ TBMQ is licensed under Apache 2.0 License. It is free for both personal and comm
  
 ## How to get support?
 
-You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/services/) we provide.
+You can use troubleshooting instructions and community resources or [contact us](/docs/{{docsPrefix}}contact-us) and learn more about [services](/services/) we provide.

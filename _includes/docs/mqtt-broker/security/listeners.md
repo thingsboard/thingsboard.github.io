@@ -20,7 +20,7 @@ To enable the SSL/TLS listener, set the `LISTENER_SSL_ENABLED` environment varia
 To change the host and/or port that the broker is listening to, update the `LISTENER_SSL_BIND_ADDRESS` and `LISTENER_SSL_BIND_PORT` variables, respectively.
 
 Choose the type of credentials you want to use by setting the `LISTENER_SSL_CREDENTIALS_TYPE` parameter. Currently, the supported options are `PEM` and `KEYSTORE`.
-Note that you can find a list of all available properties in the [configuration documentation](/docs/mqtt-broker/install/config/).
+Note that you can find a list of all available properties in the [configuration documentation](/docs/{{docsPrefix}}mqtt-broker/install/config/).
 
 If you choose KeyStore as the credentials type, you need to configure the following:
 - Set `LISTENER_SSL_KEY_STORE` variable to the path to your `.jks` file with the server certificate chain.
@@ -33,7 +33,7 @@ If you choose Pem as the credentials type, you need to configure the following:
 - Set `LISTENER_SSL_PEM_KEY_PASSWORD` variable to the password of your server certificate private key.
 
 If you require two-way TLS, you also need to configure the TrustStore by adding the trusted certificates/chains to the configured KeyStore/PEM files.
-For more information about configuration possibilities and certificate generation, please review the following security [pages](/docs/mqtt-broker/security/mqtts/).
+For more information about configuration possibilities and certificate generation, please review the following security [pages](/docs/{{docsPrefix}}mqtt-broker/security/mqtts/).
 
 ### WS Listener
 
@@ -69,5 +69,5 @@ WSS listener is set to the same negotiation subprotocols as [WS](#ws-listener) l
 
 ### Next steps
 
-- [**Connectivity settings**](/docs/mqtt-broker/user-guide/ui/settings/#connectivity) - Learn how to configure hosts and ports in the TBMQ UI for use in different protocol-based features.
+- [**Connectivity settings**](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/settings/#connectivity) - Learn how to configure hosts and ports in the TBMQ UI for use in different protocol-based features.
 {% assign currentGuide = "SecurityGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

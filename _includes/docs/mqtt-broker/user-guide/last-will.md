@@ -11,7 +11,7 @@ Similarly, in **agriculture**, devices monitor field conditions to optimize irri
 
 ## How the Last Will works
 
-1. The Last Will message and its [parameters](/docs/mqtt-broker/user-guide/last-will/#parameters-of-the-last-will) are set when a client connects to the broker, in the `CONNECT` packet. The broker stores a Last Will message data in the session state.
+1. The Last Will message and its [parameters](/docs/{{docsPrefix}}mqtt-broker/user-guide/last-will/#parameters-of-the-last-will) are set when a client connects to the broker, in the `CONNECT` packet. The broker stores a Last Will message data in the session state.
 2. In case happens unexpected (ungraceful) disconnection, the Last Will message is sent to the clients that are subscribed to the Will Topic.
 
 ## Ungraceful disconnection - publish
@@ -39,7 +39,7 @@ The Last Will message will be removed from the session state when:
 The feature “Last Will and Testament” was introduced in [MQTT 3.1](https://public.dhe.ibm.com/software/dw/webservices/ws-mqtt/mqtt-v3r1.html#connect) with the following parameters:
 * **Will Topic**. The MQTT topic where the Last Will message will be published.
 * **Will Message**. The content of the Last Will. This can be an empty message.
-* **Will QoS**. The Quality of Service level for the Last Will message ([which QoS to use?](/docs/mqtt-broker/user-guide/qos)).
+* **Will QoS**. The Quality of Service level for the Last Will message ([which QoS to use?](/docs/{{docsPrefix}}mqtt-broker/user-guide/qos)).
 * **Will Retain**. Use the Retain flag if the Will Message should be available to any new clients subscribing to the topic after the message is published. This is useful for status messages that need to stay available until updated.
 
 In [MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901040), the feature gained additional properties:
@@ -54,7 +54,7 @@ In [MQTT 5.0](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_T
 * **User Properties**. Custom metadata in the form of key-value pairs that the client can include in the Will Message.
 
 {% capture difference %}
-Unsure how to set up a session with the Last Will? Check out the WebSocket Client [documentation](/docs/mqtt-broker/user-guide/ui/websocket-client/#last-will) for detailed step-by-step instructions.
+Unsure how to set up a session with the Last Will? Check out the WebSocket Client [documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/#last-will) for detailed step-by-step instructions.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
