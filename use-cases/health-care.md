@@ -56,7 +56,7 @@ contactUsModal: "true"
     <p>The smart assisted living solution offers a range of benefits for care providers, residents, and facility administrators, supporting safe and efficient management of assisted living facilities:</p>
     <div class="health-solution-structure-cards">
         <div class="health-solution-structure-card">
-            <h3>Efficient monitoring and sesponse</h3>
+            <h3>Efficient monitoring and response</h3>
             <p>Enables real-time tracking of residents’ health and environmental conditions, allowing caregivers to respond promptly to emergencies.</p>
         </div>
         <div class="health-solution-structure-card">
