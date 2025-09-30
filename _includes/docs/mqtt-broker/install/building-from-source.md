@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-This guide will help you to download and build TBMQ from sources. Instructions listed below are tested on Ubuntu 20.04 LTS.
+This guide will help you to download and build TBMQ from sources. Instructions listed below are tested on Ubuntu 20.04 LTS / 22.04 LTS / 24.04 LTS.
 
 ## Required tools
 

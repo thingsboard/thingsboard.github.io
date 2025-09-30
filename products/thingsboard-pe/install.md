@@ -220,7 +220,7 @@ hidetoc: "true"
                 </p>
                 <div class="marketplace">
                     <div id="pay-yearly-premise" class="pricing-image-wrapper">
-                        <span>On premises</span>
+                        <span>On-premises</span>
                     </div>
                     <div id="aws-pay-yearly-market" class="pricing-image-wrapper clickable">
                         <img src="/images/pe/aws_logo.svg" alt="aws logo">
@@ -245,7 +245,7 @@ hidetoc: "true"
                                         <img src="/images/pe/cloud-providers.svg" alt="cloud providers">
                                     </div>
                                     <div class="cloud-provider-desc">
-                                        <p>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage.
+                                        <p>Install ThingsBoard PE on any cloud or on-premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage.
                                          Save up to 40% comparing to per hour rate on the license fee.</p>
                                         <p><span class="cloud-price">$2,999.00/server</span><span class="cloud-price-desc"> for the 1st year</span><br>
                                         <span class="cloud-price-onwards">$1,199.00/server</span><span class="cloud-price-onwards-desc"> for optional software updates starting 2nd year</span></p>

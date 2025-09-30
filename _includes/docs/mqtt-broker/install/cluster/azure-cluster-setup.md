@@ -33,7 +33,7 @@ You’ll need to set up PostgreSQL on Azure. You may follow [this](https://learn
 but take into account the following requirements:
 
 * Keep your postgresql password in a safe place. We will refer to it later in this guide using YOUR_AZURE_POSTGRES_PASSWORD;
-* Make sure your Azure Database for PostgreSQL version is 16.x;
+* Make sure your Azure Database for PostgreSQL version is 17.x;
 * Make sure your Azure Database for PostgreSQL instance is accessible from the TBMQ cluster;
 * Make sure you use "thingsboard_mqtt_broker" as the initial database name.
 
@@ -45,7 +45,7 @@ Another way by which you can create Azure Database for PostgreSQL is using az to
 az postgres flexible-server create --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP \
   --name $TB_DATABASE_NAME --admin-user POSTGRESS_USER --admin-password POSTGRESS_PASS \
   --public-access 0.0.0.0 --storage-size 32 \
-  --version 16 -d thingsboard_mqtt_broker
+  --version 17 -d thingsboard_mqtt_broker
 ```
 {: .copy-code}
 
@@ -78,7 +78,7 @@ Example of response:
   "resourceGroup": "TBMQResources",
   "skuname": "Standard_D2s_v3",
   "username": "postgres",
-  "version": "16"
+  "version": "17"
 }
 ```
 
@@ -87,113 +87,51 @@ Note the value of host from the command output (**tbmq-db.postgres.database.azur
 Edit the database settings file and replace YOUR_AZURE_POSTGRES_ENDPOINT_URL with the host value, YOUR_AZURE_POSTGRES_USER and YOUR_AZURE_POSTGRES_PASSWORD with the correct values:
 
 ```bash
-nano tb-broker-db-configmap.yml
+nano tbmq-db-configmap.yml
 ```
 {: .copy-code}
 
-## Step 6. Azure Cache for Redis
+## Step 6. Azure Cache for Valkey
 
-You need to set up Azure Cache for Redis. TBMQ uses cache to store messages for [DEVICE persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client),
-to improve performance and avoid frequent DB reads (see below for more details).
+TBMQ relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client).
+The cache also improves performance by reducing the number of direct database reads, especially when authentication is enabled and multiple clients connect at once.
+Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause unnecessary load under high connection rates.
 
-It is useful when clients connect to TBMQ with the authentication enabled.
-For every connection, the request is made to find MQTT client credentials that can authenticate the client.
-Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once.
-
-{% capture redis-azure-version %}
-**Note:** Starting from **TBMQ v2.1.0**, Redis 7.2.5 is the officially supported version for third-party Redis deployments.
-Please be aware that, as of now, only the **Enterprise** and **Enterprise Flash** SKUs of Azure Cache for Redis support Redis 7.2.x.
-The Basic, Standard, and Premium SKUs continue to support only up to **Redis 6.x**. To ensure full compatibility, we recommend using an
-Enterprise-tier SKU to ensure proper alignment with the Redis 7.2.5 features and behavior expected by TBMQ.
+{% capture valkey-azure-version %}
+**Note:** Starting from **TBMQ v2.3.0**, [Valkey](https://valkey.io/) **8.0** is officially supported.
+Azure currently does **not** provide a managed Valkey service. However, Valkey is fully compatible with **Redis 7.2.x**, which is supported on Azure **Cache for Redis Enterprise** and **Enterprise Flash** SKUs.
+The Basic, Standard, and Premium SKUs only support up to **Redis 6.x**, and are therefore **not recommended** for TBMQ deployments.
+To ensure compatibility with TBMQ v2.3.0 and later, deploy your own Valkey cluster or use an Enterprise-tier SKU.
 {% endcapture %}
-{% include templates/info-banner.md content=redis-azure-version %}
+{% include templates/info-banner.md content=valkey-azure-version %}
 
-In order to set up the Redis, follow one of the following guides:
+You can choose one of the following paths depending on your environment:
 
-- [Quickstart: Create a Redis Enterprise cache (Recommended)](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis-enterprise)
-- [Quickstart: Create an open-source Redis cache](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis)
+- [Deploy a Valkey cluster on AKS (Recommended)](https://learn.microsoft.com/en-us/azure/aks/valkey-overview)
+- [Quickstart: Create a Redis Enterprise cache](https://learn.microsoft.com/en-us/azure/redis/quickstart-create-managed-redis)
 
-For the open-source (legacy) Redis cache, we provide alternative instructions using the `az` tools, extracted from the official Azure documentation:
+Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
 
-```bash
-az redis create --name $TB_REDIS_NAME --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP --sku basic --vm-size C0 --enable-non-ssl-port
-```
-{: .copy-code}
+* **For standalone Valkey**:
+  Uncomment and set the following values. Make sure the `REDIS_HOST` value does **not** include the port (`:6379`).
 
-`az redis create` has a lot of options and a few of them are required:
+  ```yaml
+  REDIS_CONNECTION_TYPE: "standalone"
+  REDIS_HOST: "YOUR_VALKEY_ENDPOINT_URL_WITHOUT_PORT"
+  #REDIS_PASSWORD: "YOUR_REDIS_PASSWORD"
+  ```
 
-* **name** (or -n) - name of the Redis cache;
-* **resource-group** (or -g) - name of resource group;
-* **sku** - type of Redis cache (accepted values: Basic, Premium, Standard);
-* **vm-size** - size of Redis cache to deploy. Basic and Standard Cache sizes start with C. Premium Cache sizes start with P (accepted values: c0, c1, c2, c3, c4, c5, c6, p1, p2, p3, p4, p5);
-* **location** (or -l) - location. Values from: `az account list-locations`.
+* **For Valkey cluster**:
+  Provide a comma-separated list of "host:port" node endpoints to bootstrap from.
 
-To see the full list of parameters go to the following [page](https://learn.microsoft.com/en-us/cli/azure/redis?view=azure-cli-latest).
-
-Example of response:
-
-```text
-{
-  "accessKeys": null,
-  "enableNonSslPort": true,
-  "hostName": "tbmq-redis.redis.cache.windows.net",
-  "id": "/subscriptions/daff3288-1d5d-47c7-abf0-bfb7b738a18c/resourceGroups/myResourceGroup/providers/Microsoft.Cache/Redis/tbmq-redis",
-  "instances": [
-    {
-      "isMaster": false,
-      "isPrimary": false,
-      "nonSslPort": 13000,
-      "shardId": null,
-      "sslPort": 15000,
-      "zone": null
-    }
-  ],
-  "linkedServers": [],
-  "location": "East US",
-  "minimumTlsVersion": null,
-  "name": "tbmq-redis",
-  "port": 6379,
-  "privateEndpointConnections": null,
-  "provisioningState": "Creating",
-  "publicNetworkAccess": "Enabled",
-  "redisConfiguration": {
-    "maxclients": "256",
-    "maxfragmentationmemory-reserved": "12",
-    "maxmemory-delta": "2",
-    "maxmemory-reserved": "2"
-  },
-  "redisVersion": "6.0.20",
-  "replicasPerMaster": null,
-  "replicasPerPrimary": null,
-  "resourceGroup": "myResourceGroup",
-  "shardCount": null,
-  "sku": {
-    "capacity": 0,
-    "family": "C",
-    "name": "Basic"
-  },
-  "sslPort": 6380,
-  "staticIp": null,
-  "subnetId": null,
-  "tags": {},
-  "tenantSettings": {},
-  "type": "Microsoft.Cache/Redis",
-  "zones": null
-}
-```
-
-We need to take `hostName` parameter and replace `YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT` in the file _tb-broker-cache-configmap.yml_.
-
-After this we need to get redis keys for connection, for this we need to execute:
-
-```bash
-az redis list-keys --name $TB_REDIS_NAME --resource-group $AKS_RESOURCE_GROUP
-```
-{: .copy-code}
-
-Take "primary" and paste into _tb-broker-cache-configmap.yml_ file replacing `YOUR_REDIS_PASSWORD`.
-
-For more information, see the following [script](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/scripts/create-manage-cache#run-the-script).
+  ```yaml
+  REDIS_CONNECTION_TYPE: "cluster"
+  REDIS_NODES: "COMMA_SEPARATED_LIST_OF_NODES"
+  #REDIS_PASSWORD: "YOUR_REDIS_PASSWORD"
+  # Recommended in Kubernetes for handling dynamic IPs and failover:
+  #REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
+  #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
+  ```
 
 ## Step 7. Installation
 
@@ -213,14 +151,14 @@ INFO  o.t.m.b.i.ThingsboardMqttBrokerInstallService - Installation finished succ
 
 {% capture aws-rds %}
 
-Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-broker-db-configmap.yml` correctly.
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tbmq-db-configmap.yml` correctly.
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
 
 ## Step 8. Provision Kafka
 
-{% include templates/mqtt-broker/install/cluster-common/provision-kafka.md %}
+{% include templates/mqtt-broker/install/cluster-common/provision-kafka-new.md %}
 
 ## Step 9. Starting
 
@@ -314,7 +252,7 @@ Once the file is prepared and the values verified, proceed with the [upgrade pro
 
 ### Upgrade to 2.0.0
 
-For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-azure-cache-for-redis) to complete the installation.
+For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 6](#step-6-azure-cache-for-valkey) to complete the installation.
 Only then you can proceed with the [upgrade](#run-upgrade).
 
 ### Run upgrade

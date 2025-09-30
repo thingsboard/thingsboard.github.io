@@ -10,10 +10,10 @@ kubectl get ingress
 You should see the similar picture:
 
 ```text
-NAME                          CLASS    HOSTS   ADDRESS         PORTS   AGE
-tb-broker-http-loadbalancer   <none>   *       34.111.24.134   80      3d1h
+NAME                     CLASS    HOSTS   ADDRESS         PORTS   AGE
+tbmq-http-loadbalancer   <none>   *       34.111.24.134   80      3d1h
 ```
 
-Use `ADDRESS` field of the tb-broker-http-loadbalancer to connect to the cluster.
+Use `ADDRESS` field of the tbmq-http-loadbalancer to connect to the cluster.
 
 {% include templates/mqtt-broker/login.md %}

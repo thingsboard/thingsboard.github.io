@@ -232,7 +232,7 @@ Replace `PATH_TO_CERTS` with the path to the folder containing your certificate 
 
 **Configure Environment Variables**
 
-Edit the `tb-mqtt-broker.env` file and **uncomment/configure** the following lines to enable SSL:
+Edit the `tbmq.env` file and **uncomment/configure** the following lines to enable SSL:
 
 ```yaml
 LISTENER_SSL_ENABLED=true

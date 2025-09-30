@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mobile-pe
-title: Add your own localization to ThingsBoard PE Mobile Application
+title: Add a custom localization to ThingsBoard PE Mobile App
 
 ---
 {% assign docsPrefix = "pe/" %}

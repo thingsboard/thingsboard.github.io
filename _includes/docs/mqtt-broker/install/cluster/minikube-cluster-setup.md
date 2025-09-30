@@ -7,7 +7,6 @@ This guide will help you to set up TBMQ in cluster mode using Minikube.
 
 You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
-Additionally, you will need [helm](https://helm.sh/docs/intro/install/) to be installed.
 
 ## Step 1. Clone TBMQ repository
 
@@ -49,23 +48,23 @@ minikube ip
 In case of any issues, you can examine service logs for errors.
 For example to see TBMQ node logs execute the following commands:
 
-1) Get the list of the running tb-broker pods:
+1) Get the list of the running tbmq pods:
 
 ```bash
-kubectl get pods -l app=tb-broker
+kubectl get pods -l app=tbmq
 ```
 {: .copy-code}
 
-2) Fetch logs of the tb-broker pod:
+2) Fetch logs of the tbmq pod:
 
 ```bash
-kubectl logs -f TB_BROKER_POD_NAME
+kubectl logs -f TBMQ_POD_NAME
 ```
 {: .copy-code}
 
 Where:
 
-- `TB_BROKER_POD_NAME` - tb-broker pod name obtained from the list of the running tb-broker pods.
+- `TBMQ_POD_NAME` - tbmq pod name obtained from the list of the running tbmq pods.
 
 Or use the next command to see the state of all the pods.
 ```bash

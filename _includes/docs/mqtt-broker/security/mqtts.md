@@ -77,6 +77,26 @@ You may configure following additional environment variables via [configuration]
 
 {% include docs/user-guide/ssl/self-signed-ecc.md %}
 
+> It is recommended to include the **ca.pem** file in TBMQ’s Truststore.
+> This is especially important if you plan to issue client certificates signed by the same CA that signed the server certificate.
+> By doing so, TBMQ will be able to validate these client certificates during the TLS handshake, allowing secure MQTT client connections.
+
+To achieve this, you need to create a certificate chain by concatenating the server certificate and the CA certificate:
+
+```bash
+cat server.pem ca.pem > serverChain.pem
+```
+{: .copy-code}
+
+The resulting `serverChain.pem` file should then be configured in TBMQ by setting the following environment variable:
+
+```bash
+LISTENER_SSL_PEM_CERT=serverChain.pem
+```
+{: .copy-code}
+
+This ensures that both the server certificate and the CA certificate are properly recognized, enabling secure mutual authentication when client certificates are used.
+
 {% include templates/mqtt-broker/ssl/pem-to-keystore.md %}
 
 ## Adding certificate into Java Truststore

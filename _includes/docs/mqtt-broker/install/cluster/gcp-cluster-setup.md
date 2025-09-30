@@ -32,14 +32,14 @@ cd tbmq/k8s/gcp
 ## Step 5. Provision Google Cloud SQL (PostgreSQL) Instance
 
 {% assign tbDbName = "thingsboard_mqtt_broker" %}
-{% include templates/install/gcp/provision-postgresql.md %}
+{% include templates/mqtt-broker/install/gcp/provision-postgresql.md %}
 
 #### 5.5 Edit database settings
 
 Replace **YOUR_DB_IP_ADDRESS**, **YOUR_DB_PASSWORD** and **YOUR_DB_NAME** with the correct values:
 
 ```bash
-nano tb-broker-db-configmap.yml
+nano tbmq-db-configmap.yml
 ```
 {: .copy-code}
 
@@ -48,12 +48,12 @@ nano tb-broker-db-configmap.yml
 Let's create a dedicated namespace for our TBMQ cluster deployment to ensure better resource isolation and management.
 
 ```bash
-kubectl apply -f tb-broker-namespace.yml
+kubectl apply -f tbmq-namespace.yml
 kubectl config set-context $(kubectl config current-context) --namespace=thingsboard-mqtt-broker
 ```
 {: .copy-code}
 
-## Step 7. Provision Redis cluster
+## Step 7. Provision Valkey cluster
 
 {% include templates/mqtt-broker/install/cluster-common/provision-redis-cluster.md %}
 
@@ -63,14 +63,14 @@ kubectl config set-context $(kubectl config current-context) --namespace=thingsb
 
 {% capture aws-rds %}
 
-Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-broker-db-configmap.yml` correctly.
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tbmq-db-configmap.yml` correctly.
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
 
 ## Step 9. Provision Kafka
 
-{% include templates/mqtt-broker/install/cluster-common/provision-kafka.md %}
+{% include templates/mqtt-broker/install/cluster-common/provision-kafka-new.md %}
 
 ## Step 10. Starting
 
@@ -149,7 +149,7 @@ Once the file is prepared and the values verified, proceed with the [upgrade pro
 
 ### Upgrade to 2.0.0
 
-For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 7](#step-7-provision-redis-cluster) to complete the installation.
+For the TBMQ v2.0.0 upgrade, if you haven't installed Redis yet, please follow [step 7](#step-7-provision-valkey-cluster) to complete the installation.
 Only then you can proceed with the [upgrade](#run-upgrade).
 
 ### Run upgrade
