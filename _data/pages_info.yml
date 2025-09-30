@@ -339,6 +339,12 @@
 "/docs/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
   url: "/docs/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
   redirect_from: []
+"/docs/devices-library/vibit-bp/":
+  url: "/docs/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/devices-library/vibit/":
+  url: "/docs/devices-library/vibit/"
+  redirect_from: []
 "/docs/devices-library/vicki-smart-radiator-thermostat/":
   url: "/docs/devices-library/vicki-smart-radiator-thermostat/"
   redirect_from: []
@@ -418,6 +424,9 @@
   redirect_from: []
 "/docs/edge/devices-library/guidelines/":
   url: "/docs/edge/devices-library/guidelines/"
+  redirect_from: []
+"/docs/edge/devices-library/raspberry-pi-4/":
+  url: "/docs/edge/devices-library/raspberry-pi-4/"
   redirect_from: []
 "/docs/edge/devices-library/recomputer-r1000/":
   url: "/docs/edge/devices-library/recomputer-r1000/"
@@ -632,6 +641,9 @@
 "/docs/iot-gateway/custom/serial-connector/":
   url: "/docs/iot-gateway/custom/serial-connector/"
   redirect_from: []
+"/docs/iot-gateway/features-overview/provisioning/":
+  url: "/docs/iot-gateway/features-overview/provisioning/"
+  redirect_from: []
 "/docs/iot-gateway/features-overview/report-strategy/":
   url: "/docs/iot-gateway/features-overview/report-strategy/"
   redirect_from: []
@@ -677,9 +689,6 @@
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
-  redirect_from: []
-"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
-  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
@@ -1347,6 +1356,12 @@
 "/docs/paas/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
   url: "/docs/paas/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
   redirect_from: []
+"/docs/paas/devices-library/vibit-bp/":
+  url: "/docs/paas/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/paas/devices-library/vibit/":
+  url: "/docs/paas/devices-library/vibit/"
+  redirect_from: []
 "/docs/paas/devices-library/vicki-smart-radiator-thermostat/":
   url: "/docs/paas/devices-library/vicki-smart-radiator-thermostat/"
   redirect_from: []
@@ -1402,6 +1417,9 @@
 "/docs/paas/eu/devices-library/am308-sensor/":
   url: "/docs/paas/eu/devices-library/am308-sensor/"
   redirect_from: []
+"/docs/paas/eu/devices-library/ampsense-smart-current-sensor/":
+  url: "/docs/paas/eu/devices-library/ampsense-smart-current-sensor/"
+  redirect_from: []
 "/docs/paas/eu/devices-library/arduino-nano-rp2040-connect/":
   url: "/docs/paas/eu/devices-library/arduino-nano-rp2040-connect/"
   redirect_from: []
@@ -1425,6 +1443,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/beaglebone-green-wireless/":
   url: "/docs/paas/eu/devices-library/beaglebone-green-wireless/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/carbonless-co2-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/carbonless-co2-temperature-and-humidity-sensor/"
   redirect_from: []
 "/docs/paas/eu/devices-library/cat1-badge-tracker/":
   url: "/docs/paas/eu/devices-library/cat1-badge-tracker/"
@@ -1645,6 +1666,9 @@
 "/docs/paas/eu/devices-library/temperature-humidity-sensor/":
   url: "/docs/paas/eu/devices-library/temperature-humidity-sensor/"
   redirect_from: []
+"/docs/paas/eu/devices-library/temphu-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/temphu-temperature-and-humidity-sensor/"
+  redirect_from: []
 "/docs/paas/eu/devices-library/the-parallella-board/":
   url: "/docs/paas/eu/devices-library/the-parallella-board/"
   redirect_from: []
@@ -1687,8 +1711,23 @@
 "/docs/paas/eu/devices-library/valve-positioning-sensor/":
   url: "/docs/paas/eu/devices-library/valve-positioning-sensor/"
   redirect_from: []
+"/docs/paas/eu/devices-library/vapeless-gas-detection-indoor-sensor/":
+  url: "/docs/paas/eu/devices-library/vapeless-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
+  url: "/docs/paas/eu/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vibit-bp/":
+  url: "/docs/paas/eu/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vibit/":
+  url: "/docs/paas/eu/devices-library/vibit/"
+  redirect_from: []
 "/docs/paas/eu/devices-library/vicki-smart-radiator-thermostat/":
   url: "/docs/paas/eu/devices-library/vicki-smart-radiator-thermostat/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vocless-voc-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/vocless-voc-temperature-and-humidity-sensor/"
   redirect_from: []
 "/docs/paas/eu/devices-library/vs-121/":
   url: "/docs/paas/eu/devices-library/vs-121/"
@@ -3105,6 +3144,12 @@
 "/docs/pe/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
   url: "/docs/pe/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
   redirect_from: []
+"/docs/pe/devices-library/vibit-bp/":
+  url: "/docs/pe/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/pe/devices-library/vibit/":
+  url: "/docs/pe/devices-library/vibit/"
+  redirect_from: []
 "/docs/pe/devices-library/vicki-smart-radiator-thermostat/":
   url: "/docs/pe/devices-library/vicki-smart-radiator-thermostat/"
   redirect_from: []
@@ -3167,6 +3212,9 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/guidelines/":
   url: "/docs/pe/edge/devices-library/guidelines/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/raspberry-pi-4/":
+  url: "/docs/pe/edge/devices-library/raspberry-pi-4/"
   redirect_from: []
 "/docs/pe/edge/devices-library/recomputer-r1000/":
   url: "/docs/pe/edge/devices-library/recomputer-r1000/"
@@ -3825,9 +3873,6 @@
   redirect_from: []
 "/docs/pe/user-guide/ui/entity-table-widget/":
   url: "/docs/pe/user-guide/ui/entity-table-widget/"
-  redirect_from: []
-"/docs/pe/user-guide/ui/jwt-security-settings/":
-  url: "/docs/pe/user-guide/ui/jwt-security-settings/"
   redirect_from: []
 "/docs/pe/user-guide/ui/layouts/":
   url: "/docs/pe/user-guide/ui/layouts/"
@@ -5399,9 +5444,6 @@
 "/docs/user-guide/ui/entity-table-widget/":
   url: "/docs/user-guide/ui/entity-table-widget/"
   redirect_from: []
-"/docs/user-guide/ui/jwt-security-settings/":
-  url: "/docs/user-guide/ui/jwt-security-settings/"
-  redirect_from: []
 "/docs/user-guide/ui/layouts/":
   url: "/docs/user-guide/ui/layouts/"
   redirect_from: []
@@ -5423,7 +5465,9 @@
   redirect_from: []
 "/docs/user-guide/ui/security-settings/":
   url: "/docs/user-guide/ui/security-settings/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/pe/user-guide/ui/jwt-security-settings/"
+  - "/docs/user-guide/ui/jwt-security-settings/"
 "/docs/user-guide/ui/slack-settings/":
   url: "/docs/user-guide/ui/slack-settings/"
   redirect_from: []

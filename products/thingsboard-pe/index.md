@@ -261,7 +261,7 @@ description:
       <div class="item">
         <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options" loading="lazy" width="284" height="151">
         <h3 class="item-heading">Flexible deployment options</h3>
-        <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
+        <p>Deploy ThingsBoard platform in the cloud or on-premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
       </div>
       <div class="divider"></div>
       <div class="item">
