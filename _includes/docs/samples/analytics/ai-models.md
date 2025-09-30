@@ -52,6 +52,26 @@ ThingsBoard currently supports integration with the following AI providers:
 - Authentication: <b>API key</b>.
 - You can obtain your API key from the [OpenAI dashboard](https://platform.openai.com/api-keys){:target="_blank"}.
 
+##### Using OpenAI-compatible models
+
+{% assign sinceVersion = "4.2.1" %}
+{% include templates/since.md %}
+
+By default, the official OpenAI API base URL is configured for convenience. However, you can specify a custom base URL to use any OpenAI-compatible model provider.
+
+When using a custom base URL (different from the official OpenAI endpoint), the API key becomes optional. This allows you to work with models that don't require authentication, 
+such as locally-hosted models. Note that most cloud-based model providers will still require a valid API key.
+
+<b>Example base URLs:</b>
+
+| Provider                 | Base URL                                                 |
+|--------------------------|----------------------------------------------------------|
+| DeepSeek                 | `https://api.deepseek.com`                               |
+| Alibaba Qwen (Singapore) | `https://dashscope-intl.aliyuncs.com/compatible-mode/v1` |
+| Ollama (local)           | `http://localhost:11434/v1`                              |
+
+> <b>Note:</b> Ollama is also available as a separate integration with additional configuration options.
+
 <hr>
 
 #### Azure OpenAI
