@@ -183,25 +183,41 @@
         });
     }
 
+    function getSelectedByCategory() {
+        const byCat = {};
+        checkboxes.forEach(cb => {
+            if (!cb.checked) return;
+            const cat = (cb.dataset.cat || '').trim().toLowerCase();
+            const val = (cb.value || '').trim().toLowerCase();
+            if (!cat || !val) return;
+            (byCat[cat] ||= new Set()).add(val);
+        });
+        return byCat;
+    }
+
     function applyFilter() {
-        const selectedFilters = Array.from(checkboxes)
-            .filter(cb => cb.checked)
-            .map(cb => cb.value.trim().toLowerCase());
+        const selectedByCat = getSelectedByCategory();
 
         cards.forEach(card => {
-            const isHiddenBySearch = card.classList.contains('search-hidden');
-            if (isHiddenBySearch) {
+            if (card.classList.contains('search-hidden')) {
                 card.classList.add('filter-hidden');
                 return;
             }
 
-            const cardTypes = card.id.split('|').map(s => s.trim().toLowerCase());
+            let matchesAllCats = true;
+            for (const [cat, set] of Object.entries(selectedByCat)) {
+                if (set.size === 0) continue;
+                const cardVals = (card.getAttribute(`data-${cat}`) || '')
+                    .toLowerCase()
+                    .split('|')
+                    .map(s => s.trim())
+                    .filter(Boolean);
 
-            const match =
-                selectedFilters.length === 0 ||
-                selectedFilters.every(f => cardTypes.includes(f));
+                const hasAnyInCat = cardVals.some(v => set.has(v));
+                if (!hasAnyInCat) { matchesAllCats = false; break; }
+            }
 
-            card.classList.toggle('filter-hidden', !match);
+            card.classList.toggle('filter-hidden', !matchesAllCats);
         });
     }
 

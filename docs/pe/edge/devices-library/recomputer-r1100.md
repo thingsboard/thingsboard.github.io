@@ -1,7 +1,7 @@
 ---
 docsTag: "edge-pe"
 layout: devices-library-article
-title: How to connect reComputer R1100 to ThingsBoard?
+title: How to install ThingsBoard Edge on reComputer R1100?
 category: Other devices
 connectivity: Ethernet, WIFI, Bluetooth, 4G, LoRaWAN, Zigbee
 chip: R1100
