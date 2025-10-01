@@ -418,7 +418,7 @@ selfManagedPlan:
                             <span>/month</span>
                         </h4>
                         <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=Plan%3A%20Launch">
+                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20Private%20Cloud">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Launch plan of ThingsBoard Private Cloud</span>
                             </a>
@@ -5226,7 +5226,7 @@ selfManagedPlan:
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-data-gdpr" data-title="How can I get my data in line with GDPR requirements?">
                         <div class="container">
-                            <p>A: You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all system-level tables and transfer it to you over a secure channel (SFTP or your own cloud bucket). Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all system data within 30 days of your erase request.</p>
+                            <p>You can request a complete encrypted database dump at any time. We generate a full PostgreSQL dump of all system-level tables and transfer it to you over a secure channel (SFTP or your own cloud bucket). Because the export is a raw DB dump, you retain 100 % data fidelity and can immediately restore it in another PostgreSQL instance or transform it into any machine-readable format you need. We normally fulfill export requests within 5 business days, and—in line with GDPR—can also execute verified deletion of all system data within 30 days of your erase request.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-pc-gdpr-compliant" data-title="Is your Private Cloud service GDPR-compliant?">
@@ -5332,7 +5332,7 @@ selfManagedPlan:
                     <div class="item" data-tag="h4" data-item-id="tbmq-total-msg-sec-definition" data-title="How is “total msg/sec” defined and metered?">
                         <div class="container">
                             <p>Total messages per second refers to the combined number of MQTT PUBLISH packets processed by the TBMQ each second. This includes both incoming messages from publishers and outgoing messages delivered to subscribers.<br><br></p>
-                            <p>For example, if 100 devices each publish 10 messages per second, that results in 1,000 incoming messages per second. If each message is delivered to 2 subscribers, the outgoing volume is 2,000 messages per second. In this case, the total messages per second would be 3,000.<br><br></p>
+                            <p>For example, if 100 devices each publish 10 messages per second, that results in 1,000 incoming messages per second. If each message is delivered to 2 subscribers, the outgoing volume is 2,000 messages per second. In this case, the total messages per second will be 3,000.<br><br></p>
                             <p>Only MQTT PUBLISH packets are counted—control packets like CONNECT, SUBSCRIBE, PINGREQ, etc., are excluded. This metric reflects the actual messaging throughput of your deployment and is used to ensure performance and SLA compliance.</p>
                         </div>
                     </div>

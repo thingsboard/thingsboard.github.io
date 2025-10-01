@@ -25,6 +25,38 @@ notitle: "true"
     </div>
 </div>
 
+### Upgrading to 2.2.0
+
+{% capture difference %}
+**NOTE**:
+<br>
+These steps are applicable for 2.1.0 TBMQ version. In order to upgrade to 2.2.0 you need to [upgrade to 2.1.0 first](#upgrading-to-210).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### Notice About Bitnami Images in TBMQ Deployments
+
+In our TBMQ deployments, we use **Bitnami images** for third-party components such as PostgreSQL, Redis, and Kafka. 
+The Bitnami team [**has announced important upcoming changes**](https://github.com/bitnami/charts/issues/35164) to their catalog that affect these images.
+
+**What’s happening:**
+
+* Starting **August 28, 2025**, the public `docker.io/bitnami` registry will only provide a small set of “latest” hardened images for development use.
+* All versioned images will be moved to a temporary legacy registry: `docker.io/bitnamilegacy`. These images will remain available but will not receive updates or security patches.
+* The long-term, supported solution is Bitnami’s new Secure Images (subscription-based).
+
+**Temporary solution:**
+To avoid disruption in your TBMQ deployments, please update your image references from `docker.io/bitnami/...` to `docker.io/bitnamilegacy/...`.
+This ensures that your clusters continue to work after August 28, 2025.
+
+**Next steps:**
+We are currently evaluating a **long-term strategy** for TBMQ third-party images. We’ll share the details once the new approach is finalized.
+
+---
+
+Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the cards](/docs/mqtt-broker/install/upgrade-instructions/)
+on top of the page.
+
 ### Upgrading to 2.1.0
 
 {% capture difference %}

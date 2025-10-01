@@ -1,0 +1,20 @@
+{% assign ruleNodes = site.data.rule-nodes %}
+
+<ul class="nodes">
+    {% for node in ruleNodes %}
+        <li class="node">
+            <a class="node-link" href="{{ node.link }}">
+                <div class="node-img">
+                    <img src="{{ node.img }}" alt="{{ node.title }} image">
+                </div>
+                <div class="node-text">
+                    <span>{{ node.title }}</span>
+                    <p>{{ node.description }}</p>
+                </div>
+            </a>
+            {% if node.pe-only == true %}
+                <span class="pe-only-banner">PE Only</span>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>

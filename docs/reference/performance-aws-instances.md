@@ -2,6 +2,9 @@
 layout: docwithnav
 title: ThingsBoard Performance on different AWS instances
 description: ThingsBoard Performance on different AWS instances results
+redirect_from:
+  - "/docs/reference/1m-devices-test/"
+  - "/docs/reference/20k-devices-test/"
 
 postgres-only-1000:
     0:

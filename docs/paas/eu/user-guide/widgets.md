@@ -289,8 +289,6 @@ aggregation-custom-interval:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
 
-
-
 data-key-configuration-settings-post-processing:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-key-configuration-settings-post-processing-1-pe.png
@@ -333,18 +331,38 @@ appearance-stacking-mode-2:
 appearance-legend-settings-1:
     0:
         image: /images/user-guide/widgets/overview/appearance/appearance-legend-settings-1-pe.png
-        title: 'The legend is used to display the min/max/average/total/latest values;'
+        title: 'In the legend settings, you can:<br>- Configure <b>font settings</b> and <b>colors</b> for labels, values, and column headers.<br>- Choose the <b>legend position</b>.<br>- Select which statistical values to display (<b>minimum, maximum, average, total, latest</b>).<br>- Enable <b>sorting of data keys</b> or keep them unsorted.'
     1:
         image: /images/user-guide/widgets/overview/appearance/appearance-legend-settings-2-pe.png
-        title: ''
+        title: 'The <b>legend</b> displays statistical values including <b>minimum, maximum, average, total</b>, and <b>latest</b> values.'
 
-appearance-legend-settings-2:
+entity-name-legend:
     0:
-        image: /images/user-guide/widgets/overview/appearance/appearance-legend-settings-3-pe.png
-        title: 'Use "${entity Name}" to take the entity name from the device.'
+        image: /images/user-guide/widgets/overview/appearance/entity-name-legend-1-pe.png
+        title: 'When a widget contains data from multiple devices, or when several devices use the same data key name, it may be difficult to determine which key value corresponds to which device in the legend or tooltip.'
     1:
-        image: /images/user-guide/widgets/overview/appearance/appearance-legend-settings-4-pe.png
-        title: ''
+        image: /images/user-guide/widgets/overview/appearance/entity-name-legend-2-pe.png
+        title: 'Open the data key configuration.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance/entity-name-legend-3-pe.png
+        title: 'Use the <b>${entityName}</b> variable in the key label, which automatically inserts the system name of the entity. This helps clearly identify the object, especially when its technical name or unique identifier is important.'
+    3:
+        image: /images/user-guide/widgets/overview/appearance/entity-name-legend-4-pe.png
+        title: 'Use this variable for other data keys as well.'
+    4:
+        image: /images/user-guide/widgets/overview/appearance/entity-name-legend-5-pe.png
+        title: 'Now, each key includes the name of the device it belongs to.'
+
+entity-label-legend:
+    0:
+        image: /images/user-guide/widgets/overview/appearance/entity-label-legend-1-pe.png
+        title: 'Use the <b>${entityLabel}</b> variable in the key label, that inserts the entity&#39;s label in the legend or tooltip.This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.'
+    1:
+        image: /images/user-guide/widgets/overview/appearance/entity-label-legend-2-pe.png
+        title: 'Use this variable for other data keys as well.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance/entity-label-legend-3-pe.png
+        title: 'Now, each key includes a human-readable label of the device it belongs to.'
 
 appearance-vertical-axis:
     0:

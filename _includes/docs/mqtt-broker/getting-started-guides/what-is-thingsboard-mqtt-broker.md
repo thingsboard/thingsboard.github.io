@@ -1,5 +1,5 @@
 
-**TBMQ** represents an open-source MQTT message broker. It has the capacity to handle more than **4M** concurrent client connections, 
+**TBMQ** represents an open-source <a target="_blank" href="/products/mqtt-broker/">MQTT message broker</a>. It has the capacity to handle more than **4M** concurrent client connections, 
 supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single-node deployment 
 with low latency delivery. 
 In the cluster mode, its capabilities are further enhanced, 
@@ -45,6 +45,7 @@ Our implementation ensures reliable performance and compatibility across diverse
 * All MQTT v5.0 features
 * Multi-node cluster support
 * X.509 certificate chain authentication support
+* JWT authentication
 * Access control (ACL) based on client ID, username, or X.509 certificate chain
 * REST query support for clients’ sessions and subscriptions
 * Rate limits of message processing
@@ -54,6 +55,8 @@ Our implementation ensures reliable performance and compatibility across diverse
 * Integrations with external systems (HTTP, MQTT, Kafka)
 * Kafka topics and consumer groups monitoring
 * Proxy protocol
+* Blocked clients
+* MQTT channel backpressure support
 
 ## Architecture
 

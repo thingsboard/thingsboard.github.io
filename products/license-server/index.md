@@ -16,7 +16,7 @@ You may already know that TB PE supports pay-as-you-go subscriptions and perpetu
 The License Server was introduced in mid-2019, based on our experience of billing first 500 TB PE clients, to bring improvements in the following areas:
 
  - **Deploy anywhere.** Before License Server, the pay-as-you-go subscription was available only on few marketplaces like AWS and Azure. 
-  It was not technically possible to deploy a pay-as-you-go subscription on premises or any other clouds, like Digital Ocean or Alibaba Cloud, although it was highly demanded from our customers.
+  It was not technically possible to deploy a pay-as-you-go subscription on-premises or any other clouds, like Digital Ocean or Alibaba Cloud, although it was highly demanded from our customers.
   Now, you can launch your TB PE instance anywhere you like.
     
  - **Simple upgrades.** Migration between subscription plans was possible, but not as easy and straightforward as it should be. 

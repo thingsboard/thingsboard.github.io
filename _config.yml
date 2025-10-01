@@ -90,16 +90,16 @@ release:
   pe_full_ver: 4.2.0PE
   wd_examples_commit: v4.2
   # >>> EDGE
-  edge_ver: 4.1
-  edge_tag: v4.1
-  edge_full_ver: 4.1.0EDGE
-  pe_edge_ver: 4.1pe
-  pe_edge_full_ver: 4.1.0EDGEPE
+  edge_ver: 4.2
+  edge_tag: v4.2
+  edge_full_ver: 4.2.0EDGE
+  pe_edge_ver: 4.2pe
+  pe_edge_full_ver: 4.2.0EDGEPE
   # <<< EDGE
   ce_flutter_app_ver: 1.6.0
   pe_flutter_app_ver: 1.6.0
   ce_dart_client_ver: 4.0.0
   pe_dart_client_ver: 4.0.0
-  broker_full_ver: 2.1.0
-  broker_branch: release-2.1.0
+  broker_full_ver: 2.2.0
+  broker_branch: release-2.2.0
   trendz_ver: 1.13.2

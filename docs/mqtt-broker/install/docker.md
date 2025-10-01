@@ -42,7 +42,6 @@ Key configuration points for TBMQ in docker-compose file:
 - `tbmq-data:/data` - maps the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed;
 - `tbmq` - friendly local name of this machine;
 - `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure;
-- `SECURITY_MQTT_BASIC_ENABLED: "true"` - enables MQTT basic security. **Note**: by default security is disabled.
 
 **Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
 
@@ -95,6 +94,44 @@ docker compose start
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade. 
 For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/msa/tbmq/configs/README.md).
 
+### Upgrade to 2.2.0
+
+In this release, the MQTT authentication mechanism was migrated from YAML/env configuration into the database.
+During upgrade, TBMQ needs to know which authentication providers are enabled in your deployment. 
+This is done using environment variables passed to the **upgrade container**.
+
+The upgrade script therefore requires a file named **`.tbmq-upgrade.env`** in the same directory as `docker-compose.yml`.
+This file is **used only during upgrade** to create the default auth providers. 
+Make sure the values match what you already run in your `tbmq` service (`docker-compose.yml → environment:`).
+
+**Create the env file**
+
+From the directory containing `docker-compose.yml`:
+
+```bash
+cat > .tbmq-upgrade.env <<'EOF'
+SECURITY_MQTT_BASIC_ENABLED=true
+SECURITY_MQTT_SSL_ENABLED=true
+SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
+EOF
+```
+{: .copy-code}
+
+> **Tips**
+> If you use only Basic authentication, set `SECURITY_MQTT_SSL_ENABLED=false`. 
+> If you use only X.509 authentication, set `SECURITY_MQTT_BASIC_ENABLED=false` and `SECURITY_MQTT_SSL_ENABLED=true`.
+
+**Notes**
+
+* **Required**: If `.tbmq-upgrade.env` is missing, the upgrade script will fail.
+* Supported variables:
+
+  * `SECURITY_MQTT_BASIC_ENABLED` (`true|false`)
+  * `SECURITY_MQTT_SSL_ENABLED` (`true|false`)
+  * `SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT` (`true|false`) — usually `false`.
+
+Once the file is created, continue with the [upgrade process](#run-upgrade).
+
 ### Upgrade to 2.1.0
 
 {% include templates/mqtt-broker/upgrade/update-to-2.1.0-release.md %}
@@ -142,7 +179,7 @@ services:
       - tbmq-postgres-data:/var/lib/postgresql/data
   kafka:
     restart: always
-    image: "bitnami/kafka:3.5.1"
+    image: "bitnamilegacy/kafka:3.5.1"
     ports:
       - "9092"
     environment:
@@ -158,7 +195,7 @@ services:
       - tbmq-kafka-data:/bitnami/kafka
   redis:
     restart: always
-    image: "bitnami/redis:7.0"
+    image: "bitnamilegacy/redis:7.0"
     environment:
       # ALLOW_EMPTY_PASSWORD is recommended only for development.
       ALLOW_EMPTY_PASSWORD: "yes"
@@ -244,6 +281,8 @@ sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
 **NOTE**: replace `redis_url`, `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
 
 {% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
+
+{% include templates/mqtt-broker/install/ssl/mqtts.md %}
 
 ## Next steps
 

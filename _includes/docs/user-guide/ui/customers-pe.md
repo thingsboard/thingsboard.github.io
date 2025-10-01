@@ -1,17 +1,20 @@
 * TOC
 {:toc}
 
-## Introduction
+A **Customer** in ThingsBoard represents a distinct business entity — an individual or an organization — that purchases or uses a tenant&#39;s devices and/or assets. A customer may also represent a department or subdivision within the tenant&#39;s organization.
 
-A **Customer** in ThingsBoard can represent a distinct business entity — either an **individual or an organization** — that **purchases or uses the tenant’s devices and/or assets**. 
-A customer can also act as a **department or subdivision** within the tenant&#39;s organization.
-Customers can scale from small units to large ecosystems with **many users, sub-customers**, and **a large number of devices and assets**.
+Customers can scale from small units to large ecosystems with many users, sub‑customers, and large numbers of devices and assets.
 
-[Tenant Administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) have the ability to create customer groups as well as individual customers.
+**Who can manage customers?**
 
-Customers, once created, can manage their own environment, including:
-- Creating and managing customer users
-- Adding and editing devices, assets, dashboards and other entities.
+[Tenant Administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} can create and manage customer groups and individual customers.
+
+**What can customers do?**
+
+Once created, customers can manage their own environment, including:
+
+- Creating and managing **customer users**;
+- Adding and editing **devices, assets, dashboards**, and other entities.
 
 ## Create new customer
 
@@ -19,20 +22,23 @@ The tenant administrator can add a new customer using the following steps.
 
 {% include images-gallery.html imageCollection="customer-add-new-pe" showListImageTitles="true" %}
 
-In this case, the new customer will be located in the "All" customer's group.
-You can specify a separate group during the process of creating a customer.
+{% capture difference %}
+**Note:** By default, new customers are placed in the "All" customer group. You can choose or create a different group during the creation flow. Read more information about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-Let's create another client and a separate customer group for it.
+<br><b>Let&#39;s create another customer and a separate customer group for it.</b>
 
 {% include images-gallery.html imageCollection="customer-add-new-2-pe" showListImageTitles="true" %}
 
-Read more information about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/).
-
 ## Create customer user
 
-The tenant administrator can add a customer user to his account with limited permissions. Permissions for the new customer user can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
-
 {% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
+
+{% capture difference %}
+Customer users created in the "**All**" group start with **limited permissions**. You can configure their permissions later by assigning **roles**. [Learn how in this article](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Edit customer or customer user
 
