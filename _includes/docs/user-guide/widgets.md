@@ -60,7 +60,7 @@ Use **Basic** mode for a quick start with a single data source and no extra filt
 
 <br><b><font size="4">Advanced mode</font></b>
 
-**Advanced** mode supports multiple data sources (when supported by the widget), [filtering](/docs/{{docsPrefix}}user-guide/dashboards/#filters){:target="_blank"}, and five configuration tabs for fine‑grained control: [Data](#data-settings), [Appearance](#appearance), [Widget card](#widget-card), [Actions](#widget-actions), and [Layout](#layout-settings).
+**Advanced** mode supports multiple data sources (when supported by the widget), [filtering](#filters){:target="_blank"}, and five configuration tabs for fine‑grained control: [Data](#data-settings), [Appearance](#appearance), [Widget card](#widget-card), [Actions](#widget-actions), and [Layout](#layout-settings).
 
 Additional data source types are available in Advanced mode (widget‑dependent): [Function](#function-as-datasource), [Entities count](#entities-count), and [Alarms count](#alarms-count).
 
@@ -74,7 +74,7 @@ The widget&#39;s **time window** defines the time interval and aggregation funct
 
 By default, each widget uses its **own** time window. You can instead use the **dashboard time window** by enabling the corresponding option.
 
-To hide the time-window selector from end users for this widget, clear the **Display time window** checkbox.
+To hide the time-window selector from end users for this widget, turn off the **Display time window** option.
 
 Learn more in the [time window guide](/docs/{{docsPrefix}}user-guide/dashboards/#time-window){:target="_blank"}.
 
@@ -84,7 +84,7 @@ Learn more in the [time window guide](/docs/{{docsPrefix}}user-guide/dashboards/
 
 Widget data settings let you add one or multiple data sources.
 
-The data source combines a data source type, [an optional filter](/docs/{{docsPrefix}}user-guide/dashboards/#filters){:target="_blank"}, and a list of data keys ([attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} / [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}).
+The data source combines a data source type, [an optional filter](#filters){:target="_blank"}, and a list of data keys ([attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} / [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}).
 It defines which specific entity (or entities) the widget will pull data from to display.
 
 **Available types:**
@@ -148,64 +148,57 @@ Shows the number of alarms that match the selected alias/filter (e.g., all devic
 
 #### Data keys
 
-Data key defines time series, attribute or entity field that you would like to use in the widget.
-Data key definition consists of type (time series, attribute of entity field) and the actual key.
+A data key identifies the telemetry, attribute, or entity field a widget should use.
 
-The list of available attribute keys is basically a list of all client, server and shared [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} of your device or other entity.
-
-The list of available time series keys depends on what time series data your devices [report](/docs/{{docsPrefix}}user-guide/telemetry/#device-telemetry-upload-api){:target="_blank"} to ThingsBoard
-or what time series data you have saved via rule engine or [REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}.
-
-The list of entity fields depends on the entity type and may extend in the future:
-
-* **Devices, assets and entity views** have the following fields: create time, entity type, name, type, label, additional info.
-* **User** has the following fields: created time, first name, last name, email and additional info.
-* **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
+<b><font size="3">Sources of keys</font></b>
+- **Attributes** — the combined set of Client, Server, and Shared [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} of the selected entity. If a needed attribute doesn&#39;t exist yet, you can still add the key; the widget will show data once the device reports it.
+- **Time series** — telemetry keys reported by devices or written by the Rule Engine / [REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}.
+- **Entity fields** — metadata fields that depend on entity type and may evolve over time (e.g. created time, entity type, name, type, label).
 
 The data keys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/widgets/#widget-types){:target="_blank"}:
+- **Timeseries widgets** allow choosing time series data keys. Additionally, you can configure [time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window){:target="_blank"};
+- **Latest values widgets** allow choosing time series, attributes and entity fields;
+- **Static and Control widgets** do not require a data key;
+- **Alarm widgets** allow choosing all data keys: time series, attributes, entity and alarm fields.
+  Additionally, you can configure [time window](#widget-time-window) and [alarm filter](#alarm-filter).
 
-* **Timeseries widgets** allow choosing time series data keys. Additionally, you can configure [time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window){:target="_blank"};
-* **Latest values widgets** allow choosing time series, attributes and entity fields;
-* **Static and Control widgets** do not require a data key;
-* **Alarm widgets** allow choosing all data keys: time series, attributes, entity and alarm fields.
-  Additionally, you can configure [time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window){:target="_blank"} and [alarm filter](/docs/{{docsPrefix}}user-guide/widgets/#alarm-filter){:target="_blank"}.
+<b><font size="3">Adding keys</font></b>
 
-To add a time series or attribute key to the data source, click on the data keys row and select the desired key from the dropdown menu.
+Click the **Data keys** row and select a key from the dropdown. If a key is not yet present in the database, type its name and select the type (**Attribute**, **Entity field**, or **Time series**). The widget will display values once they become available.
 
 {% include images-gallery.html imageCollection="add-data-key" %}
 
-Let's assume you don't have the required time series or attribute key in the database yet.
-In such a case, you can still add a key to the data source, and the widget will start displaying the data as soon as the device will send it to ThingsBoard.
-To do this, click on the data key row, then enter the name and select the type of the future key: Attributes, Entity field, or Timeseries.
+<b><font size="3">Configuring data keys</font></b>
 
-{% include images-gallery.html imageCollection="add-key-in-the-future" %}
+Data keys can be configured in two modes:
 
-Within the Advanced widget settings, the data key can be configured in two distinct modes: General and Advanced. 
-Both modes offer unique configuration options.
+- **General** — common options shown in **Basic mode** and during widget creation.
+- **Advanced** — full per‑key controls; open by clicking the **pencil** icon next to a key in **Advanced** widget settings.
 
-**General data key configuration**
+<b><font size="3">Basic options (vary by widget)</font></b>
 
-The data key configuration varies based on the widget type and its accepted data type. 
-In general settings, some widgets allow you to modify the key's name and color, adjust the label name, add a specific character next to the value (exclusive to the Timeseries key), define decimal precision, and toggle the "Use post-processing function" on or off.
-
-If you use the basic functionality for adding a new widget, these settings are available right in the widget creation window.
+In **Basic** mode, these settings appear in the **Add widget** dialog.
+- **Key** — specify the key to show its data).
+- **Label** — the human‑readable name shown in the widget (e.g., table column header or legend item).
+- **Units** — a symbol or unit shown next to values.   
+  **Note:** Starting with ThingsBoard 4.1, widgets support automatic data conversion and [unit switching](/docs/{{docsPrefix}}user-guide/ui/unit-conversion/){:target="_blank"} based on the selected unit system.
+- **Decimals** — number of digits after the decimal point.
+- **Color** — used by many chart widgets for series styling.
 
 {% include images-gallery.html imageCollection="edit-basic-key-configuration" %}
 
-If you use the advanced functionality for adding a new widget, click the “pencil” icon of a key in the data keys row to open the full data key settings.
+<b><font size="3">Advanced options</font></b>
+
+In **Advanced** mode, open settings via the key&#39;s **pencil** icon.
 
 {% include images-gallery.html imageCollection="edit-key-configuration" %}
 
-**Basic data key configuration**
-
-Let's look at the basic data key settings an example of the "Entities table" widget from the "Tables" bundle:
+Let&#39;s look at the basic data key settings an example of the "Entities table" widget from the "Tables" bundle:
 
 - **Key.** You can change the name of the key. In this case, will be displayed data of the key, which key name you specify in the "Key" line. Change the name of the key and click “Save”.
 
 {% capture difference %}
-**Please note:** 
-<br>
-There are four types of keys: Attributes, Time Series, Entity Field and Alarm Field (only for Alarm widget). To correctly display data, change the key name to the existing key name of the same type. If you don’t have the required time series or attribute key in the database yet, you can still add a key to the data source. The widget will start displaying the data as soon as the device will send it to ThingsBoard.
+**Please note:** There are four types of keys: Attributes, Time Series, Entity Field and Alarm Field (only for Alarm widget). To correctly display data, change the key name to the existing key name of the same type. If you don’t have the required time series or attribute key in the database yet, you can still add a key to the data source. The widget will start displaying the data as soon as the device will send it to ThingsBoard.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -229,13 +222,15 @@ There are four types of keys: Attributes, Time Series, Entity Field and Alarm Fi
 
 {% include images-gallery.html imageCollection="data-key-configuration-color" %}
 
+- **Use data post‑processing function** — enable a custom function to transform raw values before display.
+
 **Aggregation of key** 
 
 By default, the Latest values widgets do not have the time window. If you enable aggregation for any data
-key in the '**Latest values**' widgets, the time window control will appear. You can set up aggregation for each telemetry
+key in the **Latest values** widgets, the time window control will appear. You can set up aggregation for each telemetry
 key individually, which you want to display and at the same time do not need to store it in the database. The time window
-configuration is limited to the real-time intervals (**Current Hour/Day/Month**) and '**History**' time intervals. The real-time
-intervals like 'last 30 minutes' or 'last 24 hours' are not supported for performance reasons. If you need to store the
+configuration is limited to the real-time intervals (**Current Hour/Day/Month**) and **History** time intervals. The real-time
+intervals like **last 30 minutes** or **last 24 hours** are not supported for performance reasons. If you need to store the
 aggregation as telemetry, follow for more details at [the link](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="data-key-configuration-aggregation" %}
@@ -322,7 +317,33 @@ Charts widget bundle has its own unique advanced data key configuration. All oth
 
 Learn more about advanced data key settings [here](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/){:target="_blank"}.
 
-#### Alarm filter
+#### Filters
+
+**Filters** let you narrow which data a widget retrieves from its data sources. Filters are built by adding keys and defining conditions on those keys. You can combine multiple keys and conditions.
+
+**Key types:**
+
+When adding a filter, choose one of the following key types:
+
+- **Entity field**. A built‑in field on the entity (e.g., **device name**, **type**, **label**, **createdTime**, etc.). Useful for targeting entities by metadata rather than telemetry.
+- **Attribute**. A generic attribute key when you don’t need to distinguish where the attribute is stored.
+- **Client attribute**. Attributes set or reported by the device/edge client (typically via MQTT/HTTP/CoAP). Example: firmware **build** reported by the device at runtime.
+- **Server attribute**. Attributes stored on the platform and usually configured by users or services. Example: **targetTemperature**, **threshold**.
+- **Shared attribute**. Often used to deliver configuration from the server to devices (e.g., **displayUnits**).
+- **Time series**. Telemetry keys that represent values over time (e.g., **temperature**, **humidity**, **voltage**). Best for conditions based on recent or historical readings.
+
+**Operations**
+
+Use operations to define how the key is compared to a value: **equal**, **not equal**, **greater than**, **less than**, **greater or equal**, **less or equal**.
+
+For the comparison value, you can use a **fixed literal** or a **Dynamic source type**. Dynamic sources let the filter pull the value from context at runtime. This makes filters adaptable—for instance, "temperature **greater or equal** than **targetTemperature** (server attribute)" or "voltage **less than** the value the user selects in a **control widget**".
+
+{% capture difference %}
+**Tip:** Prefer **Dynamic source** for thresholds that may change, so you don’t have to edit filters whenever the value updates.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+##### Alarm filter
 
 Alarm widgets allow you to filter [alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} based on [status](/docs/{{docsPrefix}}user-guide/alarms/#lifecycle){:target="_blank"}, [severity](/docs/{{docsPrefix}}user-guide/alarms/#severity){:target="_blank"}, and [type](/docs/{{docsPrefix}}user-guide/alarms/#type){:target="_blank"}.
 You can choose a combination of alarm statuses and severity. You may also define specific alarm types as well as enable search of [propagated](/docs/{{docsPrefix}}user-guide/alarms/#propagation){:target="_blank"} alarms.
@@ -331,23 +352,28 @@ You can choose a combination of alarm statuses and severity. You may also define
 
 ### Appearance
 
-Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/widgets/#data-settings){:target="_blank"} only.
+Let&#39;s assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/widgets/#data-settings){:target="_blank"} only.
 You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
 
 ![image](/images/user-guide/widgets/overview/widget-example.png)
 
-Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
+Let&#39;s use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
 
 #### Data settings
 
 You can choose which symbol to display next to the value and the number of digits after the floating-point number.
 These settings are useful if you want to apply the same settings for all axes.
-For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol.
+
+- **Units by default**. If you are showing temperature readings for multiple devices, you can add symbol (e.g., °C or °F).
 However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings.
 
-You can also specify an alternative message that will be displayed if widget doesn't have incoming data. When data arrives, the message will disappear and the incoming data will be displayed.
+- **Decimals by default**. Controls how many decimal places are displayed when a data key doesn&#39;t have its own formatting.
 
-You can find these settings in the "**Advanced**" functionality, "**Appearance**" tab of the widgets settings.
+- **"No data to display" message**. An alternative message shown when the widget has no data in the selected time window or cannot render values (e.g., missing keys). Use it to provide helpful next steps.<br>
+**Examples:**<br>
+• "No data to display"<br>
+• "No data for the selected time range"<br>
+• "No telemetry received yet — check the device connection or time range".
 
 {% include images-gallery.html imageCollection="default-data-settings" %}
 
@@ -373,7 +399,7 @@ By default, the "Display legend" option is enabled for chart widgets. This legen
 In contrast, other widgets do not have this option enabled.
 
 While the legend is enabled, you have the flexibility to:
- - Choose the legend's direction and position;
+ - Choose the legend&#39;s direction and position;
  - Select which data values to include (min, max, average, total);
  - Select to sort the data keys or keep them unsorted.
 
@@ -422,7 +448,7 @@ You can change the appearance of the chart grid: customize the color of the back
 
 #### Tooltip settings
 
-- **Hover individual points**. When the box "Hover individual points" is checked, you won't see value points on the lines.
+- **Hover individual points**. When the box "Hover individual points" is checked, you won&#39;t see value points on the lines.
 
 - **Show cumulative values in stacking mode**. While stacking mode is on, you can check the box "Cumulative values" to enable your chart to display sum of all entity values.
 
@@ -435,7 +461,7 @@ it is applied only to the specific time series data, and the basic tooltip funct
 
 In State Chart, you can configure entity states to be shown on a tooltip depending on entity values.
 
-Let's use the function to convert values from Celsius to Fahrenheit and display these values side by side:
+Let&#39;s use the function to convert values from Celsius to Fahrenheit and display these values side by side:
 
 ```ruby
 let celsiusValue = parseFloat(value).toFixed(2);
@@ -454,7 +480,7 @@ You can show historical data with which to compare.
 
 #### Custom legend settings
 
-Use Custom Legend Settings when you need to showcase data that isn't suitable for chart representation, such as specific attributes, or when you want to display only certain time series in the Chart legend. 
+Use Custom Legend Settings when you need to showcase data that isn&#39;t suitable for chart representation, such as specific attributes, or when you want to display only certain time series in the Chart legend. 
 For instance, consider active/inactive attributes that can be displayed in a Table widget but not on a Chart.
 
 {% include images-gallery.html imageCollection="appearance-custom-legend-settings" showListImageTitles="true" %}
@@ -544,7 +570,9 @@ Use the **Layout** tab to control how the widget behaves inside the dashboard gr
 - **Resizable**. Allows the widget to be resized by the user in Edit mode. When disabled, the widget keeps its current size and resize handles are hidden.
 - **Preserve aspect ratio**. Keeps the widget&#39;s width‑to‑height ratio when it is resized. This helps charts and media avoid distortion across different screen sizes and grid breakpoints. If disabled, width and height can change independently.
 
-**Tip**: Enable **Preserve aspect ratio** for charts, images, and video; disable it for tables and lists where extra vertical space is useful.
+{% capture difference %}
+**Tip**: Enable **Preserve aspect ratio** for charts, images, and video; disable it for tables and lists where extra vertical space is useful.{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 <b><font size="3">Mobile</font></b>
 
@@ -565,20 +593,29 @@ These options control visibility and sizing in **mobile mode** (responsive layou
 
 ### Import widget
 
-You can import a widget from a JSON file.
-
-To import a widget, you should:
+You can import a widget from a **JSON** file.
 
 {% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
 
+{% capture difference %}
+**Tip:** If the imported widget uses entity aliases or keys that don&#39;t exist in your environment, map them during Edit widget.{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ### Export widget
 
-To export a widget, you should go to a dashboard, where a widget is located.  
-Then go to the "Edit mode".
-Now in the upper right corner of the needed widget, click the button "Export widget".
-This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
+Export saves a widget&#39;s configuration (as **JSON**) so you can reuse it elsewhere.
+
+**Steps:**
+- Open the dashboard containing the widget and switch to **Edit mode**.
+- On the widget&#39;s top‑right toolbar, click **Export widget**.
+- A **JSON** file with the widget configuration is downloaded to your computer.
 
 {% include images-gallery.html imageCollection="export-widget" %}
+
+{% capture difference %}
+**Note:** Exports include widget settings but not data.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Next steps
 

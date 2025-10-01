@@ -24,26 +24,6 @@ add-widget:
         image: /images/user-guide/widgets/overview/add-new-dashboard-6-ce.png
         title: 'The widget is now created.'
 
-import-widget:
-    0:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog window;'
-    1:
-        image: /images/user-guide/widgets/overview/import-widget-2-ce.png
-        title: 'Click the "Import widget" button in the upper right corner of the screen;'
-    2:
-        image: /images/user-guide/widgets/overview/import-widget-3-ce.png
-        title: 'In the widget import window, upload the JSON file and click "Import";'
-    3:
-        image: /images/user-guide/widgets/overview/import-widget-4-ce.png
-        title: 'The widget has been imported. However, the widget does not yet display data because the data source is not specified. Enter Edit widget mode to specify the data source;'
-    4:
-        image: /images/user-guide/widgets/overview/import-widget-5-ce.png
-        title: 'Specify data source, add the data key(s), and apply changes;'
-    5:
-        image: /images/user-guide/widgets/overview/import-widget-6-ce.png
-        title: 'You should now see the data in the widget. In our case, this is a temperature graph. After all the settings, save the dashboard.'
-
 add-widget-basic-mode:
     0:
         image: /images/user-guide/widgets/overview/add-widget-basic-mode-1-ce.png
@@ -181,10 +161,9 @@ add-data-key:
     0:
         image: /images/user-guide/widgets/overview/data-settings/add-data-key-1-ce.png
         title: 'To add a key to the data source, click on the data keys row and select the desired key from the dropdown menu.'
-
-add-key-in-the-future:
-    0:
+    1:
         image: /images/user-guide/widgets/overview/data-settings/add-key-in-the-future-1-ce.png
+        title: 'If a key is not yet present in the database, type its name and select the type (Attribute, Entity field, or Time series). The widget will display values once they become available.'
 
 edit-basic-key-configuration:
     0:
@@ -478,10 +457,30 @@ mobile-settings:
         image: /images/user-guide/widgets/overview/widget-settings-mobile-3-ce.png
         title: ''
 
+import-widget:
+    0:
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
+        title: 'Open your dashboard and switch to <b>Edit mode</b>. Click <b>+ Add widget</b>. The <b>Select widgets bundle</b> dialog opens.'
+    1:
+        image: /images/user-guide/widgets/overview/import-widget-2-ce.png
+        title: 'Click <b>Import widget</b> in the top‑right corner.'
+    2:
+        image: /images/user-guide/widgets/overview/import-widget-3-ce.png
+        title: 'In the import dialog, upload the <b>JSON</b> file and click <b>Import</b>.'
+    3:
+        image: /images/user-guide/widgets/overview/import-widget-4-ce.png
+        title: 'The widget has been added to the dashboard. It may not show data yet because the data source needs to be updated.'
+    4:
+        image: /images/user-guide/widgets/overview/import-widget-5-ce.png
+        title: 'Enter widget <b>edit mode</b>, specify the <b>data source</b>, add the required <b>data key(s)</b>, and <b>apply</b> changes.'
+    5:
+        image: /images/user-guide/widgets/overview/import-widget-6-ce.png
+        title: 'Verify that the widget displays data (e.g., a temperature chart) and <b>Save</b> the dashboard.'
+
 export-widget:
     0:
         image: /images/user-guide/widgets/overview/export-widget-1-ce.png
-        title: 'To export a widget, enter “Edit mode”. Now in the upper right corner of the needed widget, click the button “Export widget”. This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.'
+        title: 'Open the dashboard containing the widget and switch to <b>Edit mode</b>. On the widget&#39;s top‑right toolbar, click <b>Export widget</b>. A <b>JSON</b> file with the widget configuration is downloaded to your computer.'
 
 ---
 

@@ -93,7 +93,6 @@ toc:
       path: /docs/pe/user-guide/ui/chart-widget/
     - title: Markdown/HTML Card widget
       path: /docs/pe/user-guide/widgets/cards/markdown-html-card/
-      new: true
     - title: Map widgets
       path: /docs/pe/user-guide/widgets/map-widgets/
     - title: Entities table widget

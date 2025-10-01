@@ -3,7 +3,7 @@ layout: docwithnav-paas-eu
 assignees:
 - ashvayka
 title: Widget actions
-description: ThingsBoard Dashboard Widget Actions
+description: ThingsBoard dashboard widget actions
 
 add-new-action-1:
     0:
@@ -442,7 +442,7 @@ on-row-double-click-2:
 
 on-node-selected-1:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-1-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-node-selected-1-pe.png
         title: 'Enter dashboard edit mode. Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-node-selected-2-pe.png
@@ -474,70 +474,19 @@ on-node-selected-2:
 on-html-element-click-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-1-pe.png
-        title: 'Enter dashboard edit mode. Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
-    1:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-2-pe.png
-        title: 'Find the "HTML widgets" widget bundle and click on it;'
-    2:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-3-pe.png
-        title: 'Select the "HTML Card" widget;'
-    3:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-4-pe.png
-        title: 'Navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
-    4:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-5-pe.png
-        title: 'Select "On HTML element click" as the action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
-    5:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-6-pe.png
-        title: 'Now in the "Actions" window, you can see the configured action. Now navigate to the "Appearance" tab;'
-    6:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-7-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. Afterwards, click the "Add" button;'
-    7:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-8-pe.png
-        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
+        title: 'Enter <b>widget edit mode</b> → go to the <b>Actions</b> tab → click <b>+</b> (<b>Add action</b>).<br> <b>Add the action</b>: Choose <b>Action source</b>: <b>On HTML element click</b>; Enter <b>details</b> as the action name; In <b>Action</b>, select <b>Navigate to new dashboard state</b>; In <b>Target dashboard state</b>, select the state you created earlier; Click <b>Add</b> to save the action.'
 
 on-html-element-click-2:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-9-pe.png
-        title: 'To execute an action click anywhere in the widget.'
-    1:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-10-pe.png
-        title: 'You will navigate to a state where details of all devices are displayed.'
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-2-pe.png
+        title: '<b>Add id to the HTML</b>: Go to the <b>Appearance</b> tab → <b>HTML</b> section; Add an element with the id <b>details</b> to the HTML. Apply changes (<b>Apply</b>) and <b>save the dashboard</b>.'
 
 on-html-element-click-3:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-11-pe.png
-        title: 'Enter dashboard edit mode. Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-3-pe.png
+        title: 'Clicking the blue block with the current temperature will execute the configured action (navigate to your target state).'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-12-pe.png
-        title: 'Find the "HTML widgets" widget bundle and click on it;'
-    2:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-13-pe.png
-        title: 'Select the "HTML Card" widget;'
-    3:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-14-pe.png
-        title: 'Specify the data source for the widget and navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
-    4:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-15-pe.png
-        title: 'Select "On HTML element click" as the action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
-    5:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-16-pe.png
-        title: 'Now in the "Actions" window, you can see the configured action. Now navigate to the "Appearance" tab;'
-    6:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-17-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML section enter an ID of the action which is its name. Afterwards, click the "Add" button;'
-    7:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-18-pe.png
-        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'  
-
-on-html-element-click-4:
-    0:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-19-pe.png
-        title: 'We have configured the action to occur when clicking on the widget title. Click the widget title;'
-    1:
-        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-20-pe.png
-        title: 'You will navigate to a state where details of all devices are displayed.'
+        image: /images/user-guide/ui/widgets/actions/guide/sources/on-html-element-click-4-pe.png
 
 on-circle-click-1:
     0:
