@@ -395,21 +395,35 @@ If you need to exclude a specific key from stacking, go to the [advanced data ke
 
 #### Legend settings
 
-By default, the "Display legend" option is enabled for chart widgets. This legend displays statistical values, including min, max, average, and total. 
-In contrast, other widgets do not have this option enabled.
+The <b>legend</b> displays statistical values including <b>minimum, maximum, average, total</b>, and <b>latest</b> values.
 
-While the legend is enabled, you have the flexibility to:
- - Choose the legend&#39;s direction and position;
- - Select which data values to include (min, max, average, total);
- - Select to sort the data keys or keep them unsorted.
+By default, the <b>show legend</b> option is enabled only for chart widgets. For other widgets, this option is disabled, but you can enable it by switching the <b>Legend</b> toggle in the widget settings.
+
+In the legend settings, you can:
+- Configure <b>font settings</b> and <b>colors</b> for labels, values, and column headers.
+- Choose the <b>legend position</b>.
+- Select which statistical values to display (<b>minimum, maximum, average, total, latest</b>).
+- Enable <b>sorting of data keys</b> or keep them unsorted.
 
 {% include images-gallery.html imageCollection="appearance-legend-settings-1" %}
 
-You may notice that the legend displays the [data key](/docs/{{docsPrefix}}user-guide/widgets/#data-keys){:target="_blank"} label for each configured data key.
-When you have data from multiple devices in the same widget, it is hard to find which device corresponds to which record in the legend or in the tooltip.
-In order to make the legend and tooltip clear, you should use **${entityName}** or **${entityLabel}** in the data key configuration.
+The legend displays a label for each [data key](/docs/{{docsPrefix}}user-guide/widgets/#data-keys). When a widget contains data from multiple devices, or when several devices use the same data key name (for example, temperature), it may be difficult to determine which key value corresponds to which device in the legend or tooltip.
 
-{% include images-gallery.html imageCollection="appearance-legend-settings-2" %}
+To make the legend or tooltip clearer, you should use <b>${entityName}</b> or <b>${entityLabel}</b> in the data key configuration.
+
+- <b>${entityName}</b> – a variable that automatically inserts the system name of the entity in the legend or tooltip. This helps clearly identify the object, especially when its technical name or unique identifier is important.   
+  Example: If a device has the name <b>sensor-101</b>, then in the field where <b>${entityName}</b> is used, you will see <b>sensor-101</b>.
+
+{% include images-gallery.html imageCollection="entity-name-legend" %}
+
+- <b>${entityLabel}</b> – a variable that inserts the entity&#39;s label in the legend or tooltip.. This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.   
+  Example: A device has:
+  - <b>Name</b> = <b>sensor-101</b>
+  - <b>Label</b> = <b>Temperature Sensor, Warehouse #1</b>
+
+    In the field where <b>${entityLabel}</b> is used, the operator will see the more understandable text: <b>Temperature Sensor, Warehouse #1</b>.
+
+{% include images-gallery.html imageCollection="entity-label-legend" %}
 
 #### Axis settings
 
