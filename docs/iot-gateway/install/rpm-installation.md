@@ -19,12 +19,12 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 ```
 {: .copy-code}
 
-## Step 2. Install the gateway using yum
+## Step 2. Install the gateway using dnf
 
 Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
 
 ```bash
-sudo yum install -y ./python3-thingsboard-gateway.rpm
+sudo dnf install -y ./python3-thingsboard-gateway.rpm
 ```
 {: .copy-code}  
 
@@ -78,9 +78,9 @@ for installing the correct Python version.
 For installing a right Python version, you can use the following commands:
 
 ```bash
-sudo yum install -y epel-release
-sudo yum install -y https://repo.ius.io/ius-release-el$(rpm -E %{rhel}).rpm
-sudo yum install -y python3.11 python3.11-venv
+sudo dnf install -y epel-release
+sudo dnf install -y https://repo.ius.io/ius-release-el$(rpm -E %{rhel}).rpm
+sudo dnf install -y python3.11 python3.11-venv
 ```
 {: .copy-code}
 
@@ -95,12 +95,12 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 ```
 {: .copy-code}
 
-#### Step 2. Install the gateway using yum
+#### Step 2. Install the gateway using dnf
 
 Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
 
 ```bash
-sudo yum install -y ./python3.11-thingsboard-gateway-offline.rpm
+sudo dnf install -y ./python3.11-thingsboard-gateway-offline.rpm
 ```
 {: .copy-code}  
 
