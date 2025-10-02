@@ -2166,7 +2166,7 @@ scada-symbols:
 scada-fluid-system:
   title: "Traditional SCADA fluid system"
   description: "Bundle with SCADA symbols for fluid system"
-  image: "/images/widgets-library/bundles/scada-fluid-system.png"
+  image: "/images/widgets-library/bundles/scada-fluid-system.svg"
   section:
     horizontal-pipe:
       title: "Horizontal pipe"
@@ -2494,7 +2494,7 @@ scada-fluid-system:
 general-high-performance-scada-symbol:
   title: "General high-performance SCADA symbols"
   description: "Bundle with high-performance SCADA symbols"
-  image: "/images/widgets-library/bundles/general-high-performance-scada-symbol.png"
+  image: "/images/widgets-library/bundles/general-high-performance-scada-symbol.svg"
   section:
     hp-control-panel:
       title: "HP Control panel"
@@ -2614,7 +2614,7 @@ general-high-performance-scada-symbol:
 high-performance-scada-oil-gas:
   title: "High-performance SCADA oil & gas"
   description: "Bundle with high-performance SCADA symbols for oil and gas system"
-  image: "/images/widgets-library/bundles/high-performance-scada-oil-gas.png"
+  image: "/images/widgets-library/bundles/high-performance-scada-oil-gas.svg"
   section:
     hp-drilling-rig:
       title: "HP Drilling rig"
@@ -2703,7 +2703,7 @@ high-performance-scada-oil-gas:
 high-performance-scada-energy-system:
   title: "High-performance SCADA energy system"
   description: "Bundle with high-performance SCADA symbols for energy system"
-  image: "/images/widgets-library/bundles/high-performance-scada-energy-system.png"
+  image: "/images/widgets-library/bundles/high-performance-scada-energy-system.svg"
   section:
     hp-solar-panel:
       title: "HP Solar panel"
@@ -2848,7 +2848,7 @@ high-performance-scada-energy-system:
 high-performance-scada-fluid-system:
   title: "High-performance SCADA fluid system"
   description: "Bundle with high-performance SCADA symbols for fluid system"
-  image: "/images/widgets-library/bundles/high-performance-scada-fluid-system.png"
+  image: "/images/widgets-library/bundles/high-performance-scada-fluid-system.svg"
   section:
     hp-centrifugal-pump:
       title: "HP Centrifugal pump"
@@ -3474,7 +3474,7 @@ digital-gauges:
   title: "Digital gauges"
   description: "Display temperature, humidity, speed, pressure, and other values on
     digital-style gauges."
-  image: "/images/widgets-library/bundles/digital_gauges.png"
+  image: "/images/widgets-library/bundles/digital_gauges.svg"
   section:
     simple-gauge-justgage:
       title: "Simple gauge"
