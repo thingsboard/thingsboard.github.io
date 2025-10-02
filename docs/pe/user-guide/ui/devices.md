@@ -100,6 +100,30 @@ include-customer-entities:
         image: /images/user-guide/ui/devices/pe/include-customer-entities-2-pe.png
         title: 'When the switch is <b>disabled</b> — the table shows <b>only your own devices</b>.'
 
+make-device-group-public:
+    0:
+        image: /images/user-guide/ui/devices/pe/make-device-group-public-1-pe.png
+        title: 'Locate the desired device group in the list, and click the "<b>Make public</b>" icon next to it.'
+    1:
+        image: /images/user-guide/ui/devices/pe/make-device-group-public-2-pe.png
+        title: 'Confirm your action in the popup dialog.'
+
+make-device-group-private:
+    0:
+        image: /images/user-guide/ui/devices/pe/make-device-group-private-1-pe.png
+        title: 'To make the group private again, follow the same steps using the "<b>Make private</b>" icon.'
+    1:
+        image: /images/user-guide/ui/devices/pe/make-device-group-private-2-pe.png
+        title: 'Confirm your action in the popup dialog.'
+
+share-device-group:
+    0:
+        image: /images/user-guide/ui/devices/pe/share-device-group-1-pe.png
+        title: 'Locate the desired device group in the list, and click the "<b>Share</b>" icon next to it.'
+    1:
+        image: /images/user-guide/ui/devices/pe/share-device-group-2-pe.png
+        title: 'Select the <b>target customer</b> from the dropdown list. (Optional) Specify the <b>user group</b> within that customer to share the device group with. Confirm the action by clicking "<b>Share</b>".'
+
 copy-device-id:
     0:
         image: /images/user-guide/ui/devices/pe/copy-device-id-1-pe.png
