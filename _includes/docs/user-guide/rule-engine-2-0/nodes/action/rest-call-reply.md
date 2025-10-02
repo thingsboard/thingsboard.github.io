@@ -3,6 +3,22 @@ message is routed to either the `Success` connection (if successful) or the `Fai
 
 ## Usage
 
+### Making REST API calls to the rule engine
+
+To submit a message to the rule engine via REST API, use one of the following POST endpoints:
+
+- `POST /api/rule-engine/` — Push a message to the rule engine.
+- `POST /api/rule-engine/{entityType}/{entityId}` — Push a message associated with a specific entity (e.g., device, asset).
+- `POST /api/rule-engine/{entityType}/{entityId}/{timeout}` — Push an entity message with a custom timeout value (in milliseconds).
+- `POST /api/rule-engine/{entityType}/{entityId}/{queueName}/{timeout}` — Push an entity message to a specific queue with a custom timeout value.
+
+The request body should contain the message payload in JSON format. 
+When no entity is specified in the endpoint, the message originator will be the user making the request. 
+When an entity is specified, the message originator will be that entity. 
+The platform will automatically add the service ID and request ID to the message metadata, which are required for routing the reply back to the calling client.
+
+### Workflow
+
 The typical workflow for handling REST API calls to the rule engine and sending replies follows these steps:
 
 1. When an external system or user sends a REST API call to submit a message to the ThingsBoard rule engine, a rule engine message of type `REST_API_REQUEST` is automatically created. 

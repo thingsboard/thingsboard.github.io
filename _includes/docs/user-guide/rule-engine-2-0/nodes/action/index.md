@@ -27,7 +27,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud) — Sends messages from the edge instance to the cloud platform.
 - [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — Sends messages from the cloud platform to an edge instance.
 - <span class="item-pe product-label-padding">[remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group)</span> — removes the message originator entity from an entity group found by group name pattern.
-- [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — Sends reply to REST API call that was originally sent to rule engine.
+- [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — sends the incoming message data as an HTTP response to a REST API call made to the rule engine.
 - [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply) — sends the incoming message data as a [reply]((/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial)) to a [Remote Procedure Call (RPC)](/docs/{{docsPrefix}}user-guide/rpc){:target="_blank"} from a device.
 - [rpc call request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request) — sends an RPC to a device, returning the device's response as outgoing message data.
 - [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes) — stores the incoming message data as attribute data of the message originator.
