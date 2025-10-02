@@ -27,7 +27,7 @@ The typical workflow for handling REST API calls to the rule engine and sending 
 2. In your rule chain, process this message to prepare the response. This may involve enriching the message with additional data, transforming the payload, calling external
    systems, or any other business logic required to generate the appropriate reply.
 
-3. Once the response is ready in the message data, route the message to the "rest api call reply" node. The node will use the metadata to send the reply back to the originating
+3. Once the response is ready in the message data, route the message to the "rest call reply" node. The node will use the metadata to send the reply back to the originating
    service, which will return it as the HTTP response to the initial REST API call.
 
 4. **Important**: Ensure that the `serviceId` and `requestId` metadata attributes are preserved throughout your message processing. If these values are lost or overwritten, the reply
@@ -35,7 +35,7 @@ The typical workflow for handling REST API calls to the rule engine and sending 
 
 {% capture timeout_warning %}
 **Timeout handling:** If the REST API call times out before receiving a reply, the platform will respond with `408 REQUEST TIMEOUT`. 
-This can occur even when the rest API call reply node is present in your rule chain if a failure happens in an earlier node and prevents the message from reaching the reply node. 
+This can occur even when the "rest call reply" node is present in your rule chain if a failure happens in an earlier node and prevents the message from reaching the reply node. 
 When such timeout requests are made from a browser, the browser may silently retry the call, causing multiple rule engine executions for the same request. 
 To avoid this issue, ensure that your rule chain handles errors appropriately and that the reply is returned before the timeout occurs. 
 Set a sufficient timeout value on the original REST API call to allow for complete processing.
@@ -145,4 +145,4 @@ The outgoing message is the same as the incoming message. Routed via the `Succes
 
 User made a REST API call to the rule engine to trigger downloading a data file from an external FTP server. 
 The rule chain processed this request by connecting to the FTP server, downloading the file, processing the records, and preparing a response with the operation results. 
-The "rest api call reply" node sends this data back as the HTTP response body to the original REST API call made to service `monolith` with request ID `a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6`.
+The "rest api reply" node sends this data back as the HTTP response body to the original REST API call made to service `monolith` with request ID `a1b2c3d4-e5f6-47a8-b9c0-d1e2f3a4b5c6`.
