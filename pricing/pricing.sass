@@ -45,20 +45,18 @@ html#pricing
 
     #thingsboard-edge
       .pricing-content-header
-        @media (max-width: 686px)
+        @media (max-width: 600px)
           .col.d-flex.justify-content-end
             justify-content: center !important
             .solution-selector
               width: 100%
               .solution
-                &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
-                  padding-left: 14px
-                  padding-right: 14px
-                  h3
-                    width: 100%
-                    text-align: center
-                    font-size: 14px
-                    line-height: 18px
+                h3
+                  width: 100%
+                  text-align: center
+                  font-size: 14px
+                  line-height: 18px
+                  white-space: wrap
     #trendz-self-managed
       .pricing-content-header
         @media (max-width: 415px)
@@ -421,6 +419,8 @@ html#pricing
       .solution
         padding-left: 14px
         padding-right: 24px
+        @media (max-width: 599px)
+          padding: 21px
         &:nth-of-type(1)
           margin-right: 12px
         h3
@@ -489,6 +489,7 @@ html#pricing
         align-items: center
         h3
           font-weight: 400
+          white-space: nowrap
           &:before
             display: inline-block
             vertical-align: middle
@@ -568,17 +569,15 @@ html#pricing
       background-color: #F4F8FE
       .pricing-content-header
         padding-top: 20px
-        flex-direction: column-reverse
-        @media (min-width: 992px)
-          flex-direction: row
+        margin-bottom: 16px
+        display: flex
+        justify-content: space-between
+        align-items: center
         @media (min-height: 1260px)
           margin-bottom: 32px
           padding-top: 32px
-        &.not-reverse-column
-          @media (min-width: 992px)
-            flex-direction: row
-          flex-direction: column
-
+        @media (max-width: 600px)
+          flex-direction: column-reverse
         h2
           font-size: 24px
           line-height: 36px
@@ -603,13 +602,13 @@ html#pricing
           line-height: 28px
           color: #3A3B3D
           font-weight: 400
-          white-space: nowrap
           @media (max-width: 1000px)
             white-space: wrap
 
         .toggle-container
           margin-left: auto
           padding-right:  15px
+          margin-bottom: 16px
 
           .billing-toggle
             display: flex
@@ -679,6 +678,9 @@ html#pricing
         .pricing-section
           display: none
           margin-bottom: 1.5rem
+          .row > div
+            @media (max-width: 1400px)
+              margin-bottom: 16px
           @media (min-height: 1260px)
             margin-bottom: 64px
             &.pricing-pay-as-you-go
@@ -687,21 +689,34 @@ html#pricing
               margin-bottom: 30vh
           .cards-row
             display: flex
-            flex-wrap: wrap
-            align-items: center
             justify-content: space-between
+            align-items: center
+            gap: 1vw
+            @media (max-width: 1919px)
+              align-items: unset
+            @media (max-width: 1279px)
+              gap: 16px
+              flex-wrap: wrap
             &.stretch
               align-items: stretch
+            &.flex-square
+              .pricing-square
+                flex: 1
+                @media (max-width: 1280px)
+                  flex-basis: calc(50% - 8px)
             .pricing-square
-              height: 439px
+              height: 460px
               box-shadow: unset
               &.unset-height
                 height: unset
               @media (min-height: 1260px)
-                height: 515px
-              @media (max-width: 1400px)
-                height: unset
-                width: 100%
+                height: 540px
+              @media (max-width: 1919px)
+                height: auto
+              @media (max-width: 1279px)
+                flex-basis: calc(50% - 8px)
+              @media (max-width: 599px)
+                flex-basis: 100%
               .button.secondary
                 background-color: #fff
                 color: #2A7DEC
@@ -713,6 +728,9 @@ html#pricing
                   background-color: #fff
                   color: #2A7DEC
                   filter: brightness(1.2)
+              .button, .button.secondary
+                @media (max-width: 1919px)
+                  width: 100%
               &.popular
                 position: relative
                 width: 290px
@@ -720,10 +738,11 @@ html#pricing
                 border: 1px solid #2A7DEC
                 box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
                 @media (min-height: 1260px)
-                  height: 555px
-                @media (max-width: 1400px)
-                  height: unset
+                  height: 580px
+                  align-content: center
+                @media (max-width: 1919px)
                   width: unset
+                  height: unset
                 @media (max-width: 600px)
                   width: 100%
                 .popular-badge
@@ -737,9 +756,18 @@ html#pricing
                   font-size: 12px
                   line-height: 21px
                   font-weight: 400
-          @media (max-width: 1400px)
-            div
-              margin-bottom: 16px
+              &.additional
+                display: none
+                align-content: center
+                h2
+                  margin-bottom: 16px
+                  text-align: center
+                @media (max-width: 1279px)
+                  display: block
+                @media (max-width: 959px)
+                  font-size: 20px
+                  font-weight: 400
+                  line-height: 32px
           &.active
             display: block
         .indicator
@@ -748,6 +776,8 @@ html#pricing
           font-weight: 500
           letter-spacing: .5px
           text-transform: uppercase
+        div:has(> .btn-pricing)
+          text-align: center
         .btn-pricing
           margin-bottom: 16px
           min-width: 200px
@@ -786,7 +816,9 @@ html#pricing
           border-radius: 12px
           border: 1px solid rgba(42, 125, 236, 0.16)
           box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
-
+          &.md-hide
+            @media (max-width: 1279px)
+              display: none
           @media (max-width: 959px)
             flex-direction: column
             .text
@@ -968,7 +1000,7 @@ html#pricing
       align-items: center
 
       .pricing-hero-content
-        padding-top: 20px
+        padding-top: 40px
         @media (min-width: 992px)
           padding-top: 35px
         @media (min-height: 1260px)

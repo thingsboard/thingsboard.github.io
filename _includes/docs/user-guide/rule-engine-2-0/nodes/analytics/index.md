@@ -1,4 +1,4 @@
-- [aggregate latest](/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-latest) — Periodically does aggregation of child entities attributes or latest timeseries for specified set of parent entities.
-- [aggregate stream](/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-stream) — Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream.
-- [alarms count](/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count) — Count alarms when receives input message about new alarm.
-- [alarms count (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count-deprecated) — Periodically does count of alarms for selected set of entities.
+- <span class="item-pe product-label-padding">[aggregate latest](/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-latest)</span> — Periodically does aggregation of child entities attributes or latest timeseries for specified set of parent entities.
+- <span class="item-pe product-label-padding">[aggregate stream](/docs/user-guide/rule-engine-2-0/nodes/analytics/aggregate-stream)</span> — Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream.
+- <span class="item-pe product-label-padding">[alarms count](/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count)</span> — Count alarms when receives input message about new alarm.
+- <span class="item-pe product-label-padding">[alarms count (deprecated)](/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count-deprecated)</span> — Periodically does count of alarms for selected set of entities.

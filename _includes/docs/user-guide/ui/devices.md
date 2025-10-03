@@ -161,6 +161,45 @@ On the "<b>Devices</b>" page there is an option "<b>Include customer entities</b
 
 {% endif %}
 
+{% unless docsPrefix == null %}
+
+## Make device group public
+
+You can make a device group public to ensure that all data within it is accessible to everyone. This is ideal for:
+- Creating public demo dashboards that require access to device data.
+- Supporting open data use cases.
+
+> You cannot share an individual device directly — only the device group that contains it.
+
+To make a device group public:
+- Locate the desired device group in the list.
+- Click the "**Make public**" icon next to it.
+- Confirm your action in the popup dialog.
+
+{% include images-gallery.html imageCollection="make-device-group-public" %}
+
+> Once public, any dashboards or external systems referencing devices in this group will have access without requiring authentication.
+
+To make the group private again, follow the same steps using the "**Make private**" icon.
+
+{% include images-gallery.html imageCollection="make-device-group-private" %}
+
+## Share device group
+
+You can share an device group with one or more customers. This is useful, for example, when multiple customers need access to the same device.
+
+> You cannot share an individual device — only the device group that contains it.
+
+To share an device group:
+- Locate the desired device group in the list.
+- Click the "**Share**" icon next to it.
+- **Select the target customer** from the dropdown list.
+- (Optional) Specify the **user group** within that customer to share the device group with.
+- Confirm the action by clicking "**Share**".
+
+{% include images-gallery.html imageCollection="share-device-group" %}
+{% endunless %}
+
 ## Device details
 
 Clicking on the device opens a window where you can access and manage various aspects of that device.

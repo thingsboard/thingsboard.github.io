@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: save to custom table
-description: Saves message data to a custom Cassandra table.
+description: Stores the incoming message data in a custom Cassandra table.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
