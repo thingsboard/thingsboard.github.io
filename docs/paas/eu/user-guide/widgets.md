@@ -289,8 +289,6 @@ aggregation-custom-interval:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
 
-
-
 data-key-configuration-settings-post-processing:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-key-configuration-settings-post-processing-1-pe.png

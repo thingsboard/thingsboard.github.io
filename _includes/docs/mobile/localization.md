@@ -1,37 +1,47 @@
+{% if docsPrefix == 'pe/' %}
+{% assign appPrefix = "ThingsBoard PE" %}
+{% else %}
+{% assign appPrefix = "ThingsBoard" %}
+{% endif %}
 * TOC
 {:toc}
 
-## Overview
+Make the {{appPrefix}} mobile app more accessible for your users—add their language to the build or improve the existing translations.
 
-The ThingsBoard PE Mobile Application supports multiple languages out of the box. You can add your own locale or improve existing translations to make the app accessible to users in your preferred language.
+## Supported languages
 
-## Supported Languages
-
-Currently, the ThingsBoard app supports the following languages:
+Out of the box, the {{appPrefix}} mobile app supports the following languages:
 
 - **English**
 - **Arabic**
 - **Chinese (Taiwan)**
 - **Chinese (Simplified)**
 
-## Adding Your Own Localization
+## Add or Improve localization
 
-Follow these steps to add a new language or improve existing translations:
+**How localization works (Flutter + ARB)**
 
-### Step 1: Navigate to Localization Files
+The app reads localized strings from `.arb` files in `lib/l10n`. Each `.arb` file represents one locale (e.g., `intl_en.arb` for English). Keys stay the same across all languages; values change per locale.
 
-Navigate to the `lib/l10n` directory in your project. You will see files like:
-- `intl_ar.arb`
-- `intl_en.arb`
-- And other language files
+For detailed information about Flutter&#39;s internationalization system, we recommend reading the official [Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization){:target="_blank"} guide.
+
+### Step 1: Open the localization folder
+
+Go to your project&#39;s `lib/l10n` directory. You&#39;ll see files like:
+
+```bash
+intl_ar.arb
+intl_en.arb
+...
+```
 
 ![image](/images/mobile/localization-l10n-folder.png)
 
-### Step 2: Create Your Language File
+### Step 2: Create a language file
 
-Add a new `.arb` file with your translation using the format:
+Add a new `.arb` file with translation using the format:
 ```
-intl_(languageCode).arb
+intl_<languageCode>.arb
 ```
 
 For example:
@@ -39,11 +49,12 @@ For example:
 - `intl_fr.arb` for French
 - `intl_de.arb` for German
 
-### Step 3: Add Translations
+**Tip:** If you need a region-specific variant, use BCP-47 style (e.g., `intl_pt_BR.arb`).
 
-1. Copy the contents of the `intl_en.arb` file into your newly created file
-2. Start translating the English text to your target language
-3. Keep the keys unchanged, only translate the values
+### Step 3: Add translations
+
+1. **Copy** the contents of the `intl_en.arb` into a new file.
+2. **Translate only the values** (the text on the right of each key) into your target language. **Do not change the keys.**
 
 Example structure:
 ```json
@@ -54,60 +65,60 @@ Example structure:
 }
 ```
 
-### Step 4: Learn More About Flutter Internationalization
+### Step 4: Generate localization file
 
-For detailed information about Flutter's internationalization system, we recommend reading the official [Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-internationalization/internationalization) guide.
+#### If app version is before 1.7.0
 
-## Testing Your Localization
-
-The process for testing your new localization depends on your app version:
-
-### App Version Pre-1.7.0
-
-Run the following command to integrate your changes and generate new localization files:
+Execute the command:
 
 ```bash
 flutter gen-l10n
 ```
 {: .copy-code}
 
-This command will generate the necessary localization files for your added language or update existing localizations.
+This command will generate the necessary localization files for added language or update existing localizations.
 
-### App Version 1.7.0+
+#### If app version is 1.7.0 or later
 
 We recommend installing the **Flutter Intl extension**, which automatically tracks localization changes and regenerates localization files.
 
 **Available Extensions:**
-- [VS Code Extension](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl)
-- [IntelliJ / Android Studio Plugin](https://plugins.jetbrains.com/plugin/13666-flutter-intl)
+- [VS Code](https://marketplace.visualstudio.com/items?itemName=localizely.flutter-intl){:target="_blank"}: Flutter Intl extension
+- [IntelliJ / Android Studio](https://plugins.jetbrains.com/plugin/13666-flutter-intl){:target="_blank"}: Flutter Intl plugin
 
-#### Alternative Method (Without Extension)
+#### Alternative method (without extension)
 
 If you prefer not to install the extension, you can use the manual approach:
 
-1. **Add intl_utils to your project's dev dependencies:**
+1. **Add intl_utils to your project&#39;s dev dependencies:**
    ```bash
    flutter pub add -d intl_utils
    ```
-{: .copy-code}
+   {: .copy-code}
 
 2. **Generate localization files after each change:**
    ```bash
    dart run intl_utils:generate
    ```
-{: .copy-code}
+   {: .copy-code}
 
-Run this command after each change in your localization files to integrate those changes into your app.
+Run this command after each change in your localization files to integrate those changes into mobile app.
 
-## Contributing Back to the Community
+## Testing custom localization
 
-We greatly appreciate community contributions to improve the ThingsBoard Mobile Application's localization support.
+- **Change device/simulator language** to your target locale and relaunch the app.
+- If your language is **right-to-left** (e.g., Arabic), verify layout mirroring and text direction.
+- Confirm **pluralization**, **placeholders**, and **date/number formatting** look correct.
 
-**How to contribute:**
-- Make a pull request to our repository with your `.arb` files
-- Fill an improvement ticket with attached `.arb` files
+## Contributing back to the community
 
-Your contributions help make the app accessible to users worldwide, and we'll add new localizations to the app globally for everyone to benefit from.
+We welcome community contributions to improve {{appPrefix}} mobile localization.
+
+How to contribute:
+- Open a **pull request** to the repository with your updated or new `.arb` files.
+- Or submit an improvement request with the `.arb` files attached.
+
+Your contributions help make the app accessible to users worldwide, and we&#39;ll add new localizations to the app globally for everyone to benefit from.
 
 {% capture contribution_note %}
 **Note:** When contributing translations, please ensure they are accurate and culturally appropriate for the target language and region.

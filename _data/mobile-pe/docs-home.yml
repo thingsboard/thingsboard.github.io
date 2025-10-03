@@ -3,7 +3,7 @@ abstract: "ThingsBoard PE Mobile Application - starting point for your IoT mobil
 toc:
   - title: PE Mobile Application
     path: /docs/pe/mobile/
-  - title: Customize your app
+  - title: Customize mobile app
     section:
       - title: Overview
         path: /docs/pe/mobile/customization/
@@ -27,7 +27,7 @@ toc:
         path: /docs/pe/mobile/self-registration/
       - title: QR code settings
         path: /docs/pe/mobile/qr-code-settings/
-  - title: Add your own localization
+  - title: Add custom localization
     path: /docs/pe/mobile/localization/
-  - title: Publish your app
+  - title: Build and release mobile app
     path: /docs/pe/mobile/release/

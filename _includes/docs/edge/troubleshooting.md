@@ -215,31 +215,12 @@ Ubuntu%,%ubuntuKeepalive%,%templates/edge/troubleshooting/ubuntu-keepalive.md%br
 To diagnose and resolve issues with message delivery between the Cloud and Edge, you can monitor the state of **uplink** (Edge → Cloud) 
 and **downlink** (Cloud → Edge) message flows.
 
-* [Download](/docs/edge/user-guide/download-dashboard/edges.zip) the preconfigured Edge dashboard. 
+* [Download](https://github.com/thingsboard/thingsboard-edge/releases/download/v4.2/uplink_downlink_edge_stats.json) the preconfigured Edge dashboard. 
 * Import the dashboard to your **Cloud**:
   * Go to the **Dashboards** section.
   * Click the **"+"** button, select the **"Import dashboard"** option and browse for the `.json` file on your computer. Click the **"Import"** button to proceed.
 
 {% include images-gallery.html imageCollection="how-to-import-dashboard" %}
-
-### Dashboard overview
-
-#### Main widgets
-* **Entities table (Edges):** The widget displays the list of connected Edge instances and includes interactive controls, and links to deeper views. 
-* **Edge quick overview:** The widget displays a hierarchical snapshot of key components synced from Cloud to each Edge (_Assets, Devices, Entity Views, Dashboards, and Rule Chains_)
-* **Map:** Visualizes the geographical location of Edge nodes.
-* **Message flow widgets (Uplink and Downlink):** The time-series widgets detect message buildup or delivery issues from Cloud to Edge, as well as whether there are communication delays or data loss at the Edge.
-
-{% include images-gallery.html imageCollection="internal-monitoring-main" %}
-
-#### Edge Details view
-When you click on a specific Edge instance, the dashboard opens a detailed view that includes:
-* **HTML card:** You can fill in the card with any information related to the Edge (_e.g., contact details, software version, or current alarm status_)
-* **Local alarms:** The widget tracks recent alarms (_e.g., critical events or device failures_) originating from this Edge.
-* **Uplinks/Downlinks time-series graphs:** The message flow widget filtered specifically for the selected Edge.
-* **Entities table (Devices):** The widget lists all devices connected to this Edge instance.
-
-{% include images-gallery.html imageCollection="internal-monitoring-details" %}
 
 ### The telemetry keys for statistics monitoring
 
@@ -267,10 +248,6 @@ ThingsBoard Edge exposes a set of telemetry keys that allow you to monitor messa
         <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
             <span class="phrase-heading">Community chat</span>
             <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
-        </a>
-        <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <span class="phrase-heading">Q&A forum</span>
-            <p>Our user forum is a great place to go for community support.</p>
         </a>
         <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>

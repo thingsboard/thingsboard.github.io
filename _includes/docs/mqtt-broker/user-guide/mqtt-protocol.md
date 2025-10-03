@@ -4,6 +4,9 @@
 
 ## Introduction to MQTT
 
+When discussing IoT and real-time communication, one of the first questions is:
+<a href="/products/mqtt-broker/" target="_blank" style="color: inherit; text-decoration: none;">What is MQTT?</a>
+
 MQTT is a lightweight messaging protocol designed for constrained devices and low-bandwidth, high-latency, or unreliable networks. 
 It follows the publish/subscribe messaging model, allowing devices to communicate efficiently in environments with limited resources, 
 such as IoT (Internet of Things) systems, mobile applications, and embedded systems. 

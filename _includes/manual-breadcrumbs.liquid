@@ -1,0 +1,29 @@
+<ul class="breadcrumbs">
+    {%- assign parts = page.url | split:'/' | reject:'' -%}
+
+    {%- assign steps = page.breadcrumbs-steps | default: 1 | plus: 0 -%}
+    {%- assign max_steps = parts.size | minus: 1 -%}
+    {%- if steps > max_steps -%}{% assign steps = max_steps %}{%- endif -%}
+
+    {%- assign order = (1..steps) | reverse -%}
+    {%- for i in order -%}
+        {%- assign take = parts.size | minus: i -%}
+        {%- capture parent_url_raw -%}{% for seg in parts limit: take %}{{ seg }}/{% endfor %}{%- endcapture -%}
+        {%- assign parent_url = parent_url_raw -%}
+
+        {%- assign parent_title = '' -%}
+        {%- for p in site.pages -%}
+            {%- if p.url == parent_url -%}
+                {%- assign parent_title = p.title | default: '' -%}
+                {%- break -%}
+            {%- endif -%}
+        {%- endfor -%}
+
+        <li class="breadcrumbs-item">
+        <a href="{{ parent_url }}">{{ parent_title | default: parent_url }}</a>
+        <i class="fas fa-chevron-right fa-sm" style="{% if forloop.last %}color: rgba(0, 0, 0, 0.76){% else %}color: rgba(0, 0, 0, 0.54){% endif %}"></i>
+        </li>
+    {%- endfor -%}
+        <li class="breadcrumbs-item current-page">{{ page.title }}</li>
+</ul>
+

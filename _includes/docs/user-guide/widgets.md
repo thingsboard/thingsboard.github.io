@@ -417,9 +417,9 @@ To make the legend or tooltip clearer, you should use <b>${entityName}</b> or <b
 {% include images-gallery.html imageCollection="entity-name-legend" %}
 
 - <b>${entityLabel}</b> – a variable that inserts the entity&#39;s label in the legend or tooltip.. This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.   
-  Example: A device has:
-  - <b>Name</b> = <b>sensor-101</b>
-  - <b>Label</b> = <b>Temperature Sensor, Warehouse #1</b>
+   Example: A device has:
+    - <b>Name</b> = <b>sensor-101</b>
+    - <b>Label</b> = <b>Temperature Sensor, Warehouse #1</b>
 
     In the field where <b>${entityLabel}</b> is used, the operator will see the more understandable text: <b>Temperature Sensor, Warehouse #1</b>.
 
@@ -443,7 +443,7 @@ You can also set the ticks color, the number of decimal places, and step size be
 
 **Ticks formatter function, f(value)**
 
-Let’s say we have telemetry which takes values of very large numbers, especially when there is a special symbol near values. 
+Let&#39;s say we have telemetry which takes values of very large numbers, especially when there is a special symbol near values. 
 However, we need to build a small graph (since we don’t have a lot of free space on the dashboard). 
 Therefore, using the ticks-formatter function, we can convert the ticks values to a more compact form.
 
@@ -558,7 +558,7 @@ You can export the data in csv, xls or xlsx format.
 
 **Enable fullscreen**
 
-You may disable fullscreen using the “Enable fullscreen” checkbox. This setting is enabled by default.
+You may disable fullscreen using the "Enable fullscreen" checkbox. This setting is enabled by default.
 
 All those settings are enabled by default.
 

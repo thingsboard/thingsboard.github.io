@@ -1,7 +1,10 @@
 {% assign targetKey = include.targetKey %}
-{% assign targetKeyCustomers = site.data.clients-feedback[targetKey] %}
+{% assign feedbackList = include.feedbackList %}
+{% assign contactBlock = include.contactBlock %}
+{% assign noBackground = include.noBackground %}
+{% assign targetKeyCustomers = site.data[feedbackList][targetKey] %}
 
-<div class="clients-cards">
+<div class="clients-cards {% if noBackground == "true" %}no-background{% endif %}">
     {% for info in targetKeyCustomers.feedback %}
         <div class="clients-card" id="{{ info.id }}">
             <div class="clients-card-header">
@@ -52,18 +55,21 @@
             </div>
         </div>
     {% endfor %}
-    <div class="contact-us-card">
-        <h2>Got a success story to tell?</h2>
-        <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
-        <div class="contact-us-buttons">
-            <button onclick="openContactUsModal()">Contact Us</button>
-            <a href="/case-studies/">Case studies</a>
-            <a href="/iot-use-cases/">Use cases</a>
+    {% if  contactBlock != "false" %}
+        <div class="contact-us-card">
+            <h2>Got a success story to tell?</h2>
+            <p>Real feedback, real impact — share your experience with ThingsBoard!</p>
+            <div class="contact-us-buttons">
+                <button onclick="openContactUsModal()">Contact Us</button>
+                <a href="/case-studies/">Case studies</a>
+                <a href="/iot-use-cases/">Use cases</a>
+            </div>
         </div>
-    </div>
+    {% endif %}
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        initMobileCollapse();
         initReadMore();
 
         const params = new URLSearchParams(window.location.search);
@@ -74,33 +80,65 @@
             });
         }
 
+        function initMobileCollapse() {
+            if (!window.matchMedia('(max-width: 600px)').matches) {
+                return;
+            }
+            const cardTextContainers = document.querySelectorAll('.clients-card-text');
+
+            cardTextContainers.forEach(container => {
+                if (container.classList.contains('collapsed')) {
+                    container.querySelector('.read-more').remove();
+                    container.querySelector('.clients-card-default-text.collapse-text.collapsed')
+                        .classList.remove('collapse-text', 'collapsed');
+                }
+
+                const paragraphs = container.querySelectorAll('.clients-card-default-text');
+
+                if (paragraphs.length > 1) {
+                    const firstParagraph = paragraphs[1];
+
+                    container.classList.add('collapsed');
+                    firstParagraph.classList.add('collapse-text', 'collapsed');
+
+                    const readMoreBtn = document.createElement('p');
+                    readMoreBtn.className = 'read-more';
+                    readMoreBtn.innerText = 'Read more';
+                    firstParagraph.after(readMoreBtn);
+                }
+            });
+        }
+
         function initReadMore() {
             const collapsedContainers = document.querySelectorAll('.clients-card-text.collapsed');
-            if (collapsedContainers) {
-                collapsedContainers.forEach(container => {
-                    const readMore = container.querySelector('.read-more');
-                    const textToHide =  container.querySelectorAll('.read-more ~ *');
-                    const collapseText = container.querySelector('.collapse-text');
-                    textToHide.forEach(element => {
-                        element.classList.add('hidden');
-                    });
 
-                    readMore.addEventListener('click', function() {
-                        const expand = readMore.innerText === 'Read more';
-                        expand ? readMore.innerText = 'Read less' : readMore.innerText = 'Read more';
-                        if (expand) {
-                            container.appendChild(readMore);
-                            collapseText.classList.remove('collapsed');
-                        } else {
-                            container.children[Number(readMore.dataset.index) - 1].after(readMore);
-                            collapseText.classList.add('collapsed');
-                        }
-                        textToHide.forEach(element => {
-                            element.classList.toggle('hidden');
-                        });
+            collapsedContainers.forEach(container => {
+                const readMore = container.querySelector('.read-more');
+                const textToHide = container.querySelectorAll('.read-more ~ *');
+                const collapseText = container.querySelector('.collapse-text');
+
+                textToHide.forEach(element => {
+                    element.classList.add('hidden');
+                });
+
+                readMore.addEventListener('click', function() {
+                    const isExpanding = readMore.innerText === 'Read more';
+
+                    readMore.innerText = isExpanding ? 'Read less' : 'Read more';
+
+                    if (isExpanding) {
+                        container.appendChild(readMore);
+                        collapseText.classList.remove('collapsed');
+                    } else {
+                        collapseText.after(readMore);
+                        collapseText.classList.add('collapsed');
+                    }
+
+                    textToHide.forEach(element => {
+                        element.classList.toggle('hidden');
                     });
-                })
-            }
+                });
+            });
         }
     });
 </script>

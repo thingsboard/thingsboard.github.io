@@ -13,11 +13,6 @@
 {% if currentGuide != "DataAnalytics" %}
 - [IoT Data analytics](/docs/{{docsPrefix}}guides/#AnchorIDDataAnalytics) - Learn how to use rule engine to perform basic analytics tasks.
 {% endif %}
-{% if currentGuide != "HardwareSamples" %}
-- [Hardware samples](/docs/{{docsPrefix}}guides/#AnchorIDHardwareSamples) - Learn how to connect various hardware platforms to ThingsBoard.
-{% endif %}
 {% if currentGuide != "AdvancedFeatures" %}
 - [Advanced features](/docs/{{docsPrefix}}guides/#AnchorIDAdvancedFeatures) - Learn about advanced ThingsBoard features.
 {% endif %}
-
-<br>

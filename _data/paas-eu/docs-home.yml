@@ -111,26 +111,12 @@ toc:
       path: /docs/paas/eu/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
-    - title: Getting Started
-      path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/paas/eu/user-guide/rule-engine-2-0/overview/
-    - title: Nodes
-      section:
-        - title: Filter nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/filter-nodes/
-        - title: Enrichment nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/enrichment-nodes/
-        - title: Transformation nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/transformation-nodes/
-        - title: Action nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/action-nodes/
-        - title: Analytics nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/analytics-nodes/
-        - title: External nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/external-nodes/
-        - title: Flow nodes
-          path: /docs/paas/eu/user-guide/rule-engine-2-0/flow-nodes/
+    - title: Getting started with Rule Engine
+      path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
+    - title: Rule Nodes
+      path: /docs/paas/eu/user-guide/rule-engine-2-0/nodes/
     - title: Data processing & actions
       section:
         - title: Validate incoming telemetry
@@ -269,7 +255,7 @@ toc:
 - title: Reporting
   new: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/paas/eu/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/paas/eu/user-guide/reporting/reporting-getting-started/
@@ -370,10 +356,6 @@ toc:
       path: /docs/paas/eu/user-guide/ui/assets/
     - title: Devices
       path: /docs/paas/eu/user-guide/ui/devices/
-    - title: Rule chains
-      path: /docs/paas/eu/user-guide/ui/rule-chains/
-    - title: Dashboards
-      path: /docs/paas/eu/user-guide/ui/dashboards/
     - title: Entity groups
       path: /docs/paas/eu/user-guide/groups/
     - title: Slack settings

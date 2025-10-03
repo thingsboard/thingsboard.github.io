@@ -101,28 +101,14 @@ toc:
       path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
-  - title: Getting Started
-    path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
   - title: Overview
     path: /docs/pe/user-guide/rule-engine-2-0/overview/
+  - title: Getting Started with Rule Engine
+    path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
   - title: Queues
     path: /docs/pe/user-guide/rule-engine-2-5/queues/
-  - title: Nodes
-    section:
-    - title: Filter nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/filter-nodes/
-    - title: Enrichment nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/
-    - title: Transformation nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/transformation-nodes/
-    - title: Action nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/action-nodes/
-    - title: Analytics nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/analytics-nodes/
-    - title: External nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/external-nodes/
-    - title: Flow nodes
-      path: /docs/pe/user-guide/rule-engine-2-0/flow-nodes/
+  - title: Rule Nodes
+    path: /docs/pe/user-guide/rule-engine-2-0/nodes/
   - title: Data processing & actions
     section:
       - title: Validate incoming telemetry
@@ -263,7 +249,7 @@ toc:
 - title: Reporting
   new: true
   section:
-    - title: Key concepts
+    - title: Overview
       path: /docs/pe/user-guide/reporting/reporting-key-concepts/
     - title: Getting started with Reporting
       path: /docs/pe/user-guide/reporting/reporting-getting-started/
@@ -378,10 +364,6 @@ toc:
     path: /docs/pe/user-guide/ui/assets/
   - title: Devices
     path: /docs/pe/user-guide/ui/devices/
-  - title: Rule chains
-    path: /docs/pe/user-guide/ui/rule-chains/
-  - title: Dashboards
-    path: /docs/pe/user-guide/ui/dashboards/
   - title: Entity groups
     path: /docs/pe/user-guide/groups/
   - title: SMS provider settings
@@ -392,15 +374,13 @@ toc:
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: JWT security settings
-    path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution guide
   section:
     - title: How to contribute your device integration guide
       path: /docs/pe/user-guide/contribution/how-to-contribute-your-device-integration-guide/
     - title: Rule Node development
       path: /docs/pe/user-guide/contribution/rule-node-development/
-    - title: Widgets development (ThingsBoard v3.x)
+    - title: Widgets development
       section:
         - title: Overview
           path: /docs/pe/user-guide/contribution/widgets-development/
@@ -410,8 +390,6 @@ toc:
           path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/pe/user-guide/contribution/ui/advanced-development/
-    - title: Widgets development (ThingsBoard v2.x)
-      path: /docs/pe/user-guide/contribution/widgets-development-before-3.0/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
 - title: Release notes

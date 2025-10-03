@@ -164,36 +164,36 @@ description:
         <tbody>
           <tr>
             <th>Asset management & Data collection</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>End-user real-time dashboards</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>Customizable rule chains, widgets</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>MQTT, HTTP, CoAP, OPC-UA transport</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th>Integrations with BigData systems</th>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
-            <th>NB-IoT, SigFox, LoRaWAN support</th>
+            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN support<span class="faq-icon"></span></a></th>
             <td>Basic</td>
             <td>Advanced</td>
             <td>Advanced</td>
@@ -206,51 +206,51 @@ description:
           </tr>
           <tr>
             <th><a href="/docs/user-guide/groups/">Entity groups<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/scheduler/">Scheduler<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
-            <th><a href="/docs/pe/user-guide/reporting/">Reporting<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <th><a href="/docs/pe/user-guide/reporting/reporting-key-concepts/">Reporting<span class="faq-icon"></span></a></th>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/white-labeling/">White-labeling<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/user-guide/integrations/">Platform Integrations<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
           <tr>
             <th><a href="/docs/paas/domains/">Domain management<span class="faq-icon"></span></a></th>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-times disabled"></i></td>
-            <td><i class="fa fa-check"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-times disabled" aria-label="unavailable"></i></td>
+            <td><i class="fa fa-check" aria-label="available"></i></td>
           </tr>
         </tbody>
       </table> 
@@ -261,7 +261,7 @@ description:
       <div class="item">
         <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options" loading="lazy" width="284" height="151">
         <h3 class="item-heading">Flexible deployment options</h3>
-        <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
+        <p>Deploy ThingsBoard platform in the cloud or on-premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
       </div>
       <div class="divider"></div>
       <div class="item">

@@ -21,9 +21,9 @@
       keywords: device management attributes
       video: false
       pe: false
-- title: Advanced guides for working with the main features of ThingsBoard
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboard.
-  id: AdvancedGettingStartedGuides
+- title: Data visualization
+  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards.
+  id: DataVisualization
   section:
     - path: /docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-1/
       title: Lesson 1. Visualizing assets data using OpenStreet Map and Entities table widgets
@@ -209,46 +209,6 @@
       keywords:
       pe: true
       video: false
-- title: Data visualization
-  subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
-  id: DataVisualization
-  section:
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-1-of-3-visualizing-assets-data-using-maps-and-tables
-      title: Visualizing assets data using Maps and Tables
-      subtitle: "Learn how to: create assets and devices and define their relationships; add the server attributes and create a new dashboard; visualize data from the asset attributes using “Entities Table” and “Map” widgets."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-2-of-3-dashboard-states-aliases-and-widget-actions
-      title: Dashboard states, aliases and widget actions
-      subtitle: "Learn how to: add and configure new dashboard states; create various aliases; visualize the attributes data using the Image Map widget; create actions in different widgets in order to navigate between states; visualize the telemetry data using Analogue and Digital gauges and the Timeseries widget."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#dashboard-development-guide-part-3-of-3-remote-device-control-and-alarm-management
-      title: Remote device control and alarm management
-      subtitle: "Learn how to: add and use the Knob Control widget; create alarm rules; handle alarms using the Alarms widget; make a dashboard public."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-1-of-3-basic-settings
-      title: Basic widget settings
-      subtitle: "Learn how to: change widget title, background, colors, fonts, shadows, etc."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-2-of-3-latest-values-map-widget
-      title: Latest Values Map widget
-      subtitle: "Learn how to create Map widget, based on latitude and longitude, and customize the Map widget layout and properties."
-      keywords:
-      pe: false
-      video: true
-    - path: /docs/iot-video-tutorials/#widget-configuration-guide-part-3-of-3-time-series-map-widget
-      title: Time Series Map widget
-      subtitle: "Learn how to display your devices with the latest telemetry data on the Time Series Map widget and modify the widget properties."
-      keywords:
-      pe: false
-      video: true
 - title: Data processing & actions
   subtitle: Learn how to process data in ThingsBoard.
   id: DataProcessing
@@ -357,85 +317,6 @@
 #      subtitle: lorem ipsum dolor
 #      keywords: key1 key2 key3
 #      pe: false
-- title: Hardware samples
-  subtitle: Learn how to connect various hardware platforms to ThingsBoard.
-  id: HardwareSamples
-  section:
-    - path: /docs/samples/esp32/ota/
-      title: ESP32 OTA using ThingsBoard
-      subtitle: Learn how to make ESP32 OTA update using ThingsBoard custom widget, rule chain and dashboard
-      pe: false
-      video: true
-    - path: /docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/
-      title: ESP32 Pico Kit GPIO control and DHT22 sensor monitor using ThingsBoard Arduino SDK
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
-      pe: false
-      video: false
-    - path: /docs/samples/arduino/temperature/
-      title: Temperature upload over MQTT using Arduino UNO, ESP8266 and DHT22 sensor
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
-      pe: false
-    - title: Humidity and temperature upload over HTTP using Arduino UNO, SIM808 Shield and HTU21D sensor
-      path: /docs/samples/arduino/sim808-htu21d/
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
-      pe: false
-    - path: /docs/samples/esp8266/temperature/
-      title: Temperature upload over MQTT using ESP8266 and DHT22 sensor
-      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
-      pe: false
-      video: true
-    - path: /docs/samples/esp8266/gpio/
-      title: ESP8266 GPIO control over MQTT using ThingsBoard
-      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
-      pe: false
-      video: true
-    - path: /docs/samples/nodemcu/temperature/
-      title: Temperature upload over MQTT using NodeMCU and DHT11 sensor
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
-      pe: false
-      video: false
-    - path: /docs/samples/raspberry/gpio/
-      title: Raspberry Pi GPIO control over MQTT using ThingsBoard
-      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
-      pe: false
-      video: true
-    - path: /docs/samples/raspberry/gpio-android-things/
-      title: Raspberry Pi GPIO control using Android Things and ThingsBoard
-      subtitle: Contains wiring diagram, source code, dashboard setup guide and demonstration video.
-      pe: false
-      video: true
-    - path: /docs/samples/raspberry/temperature/
-      title: Temperature upload over MQTT using Raspberry Pi and DHT22 sensor
-      subtitle: Contains wiring diagram, sketch, dashboard setup guide and demonstration video.
-      pe: false
-      video: true
-    - path: /docs/samples/linkit-one/gps/
-      title: GPS data upload and visualization using LinkIt ONE and ThingsBoard
-      subtitle: Contains wiring diagram, sketch and dashboard setup guide.
-      pe: false
-      video: false
-    - path: /docs/user-guide/integrations/sodaq/
-      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
-      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via T-Mobile – IoT CDP Integration.
-      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
-      pe: true
-      video: false
-    - path: /docs/user-guide/integrations/sodaq-udp
-      title: Learn how to connect your SODAQ Universal Tracker to ThingsBoard
-      subtitle: Learn how to connect your SODAQ Universal Tracker to ThingsBoard via UDP Integration.
-      keywords: NB IoT, NB-IoT, T-Mobile, SODAQ, 5G
-      pe: true
-      video: false
-    - path: /docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d
-      title: ThingsBoard BLE Demo with Raspberry PI, ESP32, Xiaomi MI and HTU21D sensors
-      subtitle: Contains wiring diagram and dashboard setup guide.
-      pe: false
-      video: false
-    - path: /docs/samples/nettrartu+/rtu_temp_sensor/
-      title: Temperature upload over MQTT using Nettra RTU
-      subtitle: Contains wiring diagram and dashboard setup guide.
-      pe: false
-      video: false
 - title: Advanced features
   subtitle: Learn about advanced ThingsBoard features
   id: AdvancedFeatures

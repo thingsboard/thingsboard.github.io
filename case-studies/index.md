@@ -7,6 +7,11 @@ description: Discover how companies in retail, energy, logistics, and more drive
 formSubject: "General Feedback"
 modalTitle: "Tell us about your success"
 modalDescription: "Get your brand featured across our global channels — website, social media, and community."
+pagination: "true"
+containerId: "case-studies-clients"
+filterSelector: ".filter[data-container-id='case-studies-clients']"
+itemsSelector: ".client-card"
+itemsPerPage: "9"
 
 ---
 
@@ -78,13 +83,13 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Industry 4.0">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iona.webp');">
-                <a class="content" href="/case-studies/iona">
-                    <img class="logo" src="/images/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">
-                    <p>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</p>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/awake.webp');">
+                <a class="content" href="/case-studies/awake">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/awake.svg" title="Awake" alt="Awake">
+                    <p>Awake: unifying global rental operations with custom IoT solutions  <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about IONA Tech’s IoT transformation with ThingsBoard</span>
+                    <span class="visually-hidden">about unifying global rental operations with custom IoT solutions</span>
                 </a>
             </div>
         </div>
@@ -278,6 +283,16 @@ modalDescription: "Get your brand featured across our global channels — websit
                 </a>
             </div>
         </div>
+        <div class="client-card" id="Industry 4.0">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iona.webp');">
+                <a class="content" href="/case-studies/iona">
+                    <img class="logo" src="/images/case-studies/iona.svg" title="IONA Tech" alt="IONA Tech logo">
+                    <p>Protecting electronics and workers: IONA Tech’s IoT transformation with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about IONA Tech’s IoT transformation with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
     </section>
     <div id="successStoryBlock" class="success-story-promo" style="display: none;">
         <div class="content">
@@ -286,11 +301,4 @@ modalDescription: "Get your brand featured across our global channels — websit
         </div>
         <button id="caseStudiesContactUs" class="button gtm_button" onclick="openContactUsModal()">Contact Us</button>
     </div>
-<div class="pagination-container">
-    <button id="showMoreBtn" class="button">Show more</button>
-    <nav class="pagination-nav" aria-label="Case study pages">
-        <ul id="pagination-controls" class="pagination"></ul>
-        <div id="paginationStatus" class="pagination-status"></div>
-    </nav>
-</div>
 </div>

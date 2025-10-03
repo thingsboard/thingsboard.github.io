@@ -31,7 +31,7 @@ notitle: "true"
                         <li id="menu-item-onPremise" class="menu-item tb-on-premise" data-tab="onPremise">
                             <p>
                                 <img src="/images/pricing/self-icon.svg" title="Install ThingsBoard on your own server" alt="On-premise installation icon" width="28" height="28">
-                                <span>On premise</span>
+                                <span>On-premises</span>
                             </p>
                         </li>
                         <li id="menu-item-cloud" class="menu-item tb-cloud" data-tab="cloud">

@@ -1,0 +1,517 @@
+#page-with-filter
+  .blue-chevron
+    color: #2a7dec
+  footer
+    position: static
+body.filter-opened
+  overflow: hidden
+  header
+    box-shadow: unset
+  #page-with-filter-content
+    .filter-block
+      display: block
+.searchButton
+  position: absolute
+  padding: 0
+  top: 50%
+  transform: translateY(-50%)
+  right: 10px
+  background-size: contain
+  opacity: 0.54
+  width: 24px
+  height: 24px
+  cursor: pointer
+.searchButtonCloseIcon
+  width: 29px
+input:placeholder-shown + .searchButton
+  .searchButtonCloseIcon
+    display: none
+input:not(:placeholder-shown) + .searchButton
+  top: 46%
+  .searchButtonIcon
+    display: none
+#page-with-filter-content
+  padding: 0
+  .search-item
+    height: 38px
+    position: relative
+  input[type="text"]
+    height: 38px
+    width: 100%
+    max-width: 240px
+    padding: 7px 35px 7px 16px
+    border-radius: 6px
+    border: 1px solid rgba(0, 0, 0, 0.12)
+    color: rgba(0, 0, 0, 0.76)
+  .pagination-block
+    margin-top: 40px
+  .hero-content
+    padding: 100px 0 50px
+    background: #F4F8FE
+    @media (max-width: 960px)
+      padding: 50px 0 50px
+    .hero-content-wrapper
+      max-width: 1480px
+      padding: 0 40px
+      margin: 0 auto
+      @media (max-width: 600px)
+        padding: 0 16px
+  .main-content
+    max-width: 1480px
+    padding: 0 40px
+    margin: 0 auto
+    @media (max-width: 600px)
+      padding: 0 16px
+  .search-block
+    position: sticky
+    top: 78px
+    background: #FFF
+    z-index: 4
+    padding: 24px 0
+    border-bottom: 1px solid #EBEBEB
+    @media (max-width: 960px)
+      z-index: 3
+    .search-block-wrapper
+      display: flex
+      justify-content: space-between
+      gap: 30px
+      max-width: 1480px
+      padding: 0 40px
+      margin: 0 auto
+      .filter-button
+        display: flex
+        align-items: center
+        gap: 4px
+        padding: 7px 26.5px 7px 22.5px
+        border-radius: 6px
+        background: #2A7DEC
+        cursor: pointer
+        @media (min-width: 960px)
+          display: none
+        &:hover
+          opacity: 0.9
+        span
+          font-size: 14px
+          font-weight: 500
+          line-height: 24px
+          color: #FFF
+    input
+      height: 38px
+      width: 100%
+      max-width: 240px
+      border-radius: 6px
+      border: 1px solid rgba(0, 0, 0, 0.12)
+      color: rgba(0, 0, 0, 0.76)
+  .search-crisps
+    display: flex
+    flex-wrap: wrap
+    gap: 8px
+    &.desktop
+      @media (max-width: 959px)
+        display: none
+    &.mobile
+      &:has(.crisp)
+        padding: 12px 16px 12px
+        border-bottom: 1px solid #EBEBEB
+    .search-crisps-toggle-btn
+      position: relative
+      cursor: pointer
+      border-radius: 6px
+      padding: 7px 36px 7px 10px
+      border: 1px solid #2A7DEC
+      i
+        position: absolute
+        top: 50%
+        transform: translateY(-50%)
+        right: 10px
+      .toggle-label
+        font-size: 14px
+        line-height: 24px
+        font-weight: 500
+        color: #2A7DEC
+    .search-crisps-clear-btn
+      font-size: 14px
+      font-weight: 500
+      line-height: 24px
+      padding: 7px 36px 7px 10px
+      border-radius: 6px
+      position: relative
+      display: none
+      cursor: pointer
+      .search-crisps-clear-btn-close
+        position: absolute
+        top: 50%
+        transform: translateY(-52%)
+        width: 25px
+        height: 25px
+        right: 8px
+    .crisp
+      display: inline-block
+      position: relative
+      font-size: 14px
+      font-weight: 500
+      line-height: 24px
+      background: #2A7DEC
+      color: #FFF
+      border-radius: 6px
+      padding: 7px 36px 7px 12px
+      &.hidden
+        display: none
+      .crisp-close
+        cursor: pointer
+        filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7489%) hue-rotate(126deg) brightness(121%) contrast(101%)
+        position: absolute
+        top: 50%
+        transform: translateY(-52%)
+        width: 25px
+        height: 25px
+        right: 8px
+    .crisp:has(.crisp-close:hover), .search-crisps-clear-btn:hover, .search-crisps-toggle-btn:hover
+      opacity: 0.8
+  .content-block
+    position: relative
+    display: flex
+    @media (max-width: 600px)
+      justify-content: center
+    .filter-block
+      position: relative
+      border-right: 1px solid #EBEBEB
+      display: none
+      @media (min-width: 960px)
+        min-width: 325px
+        padding-bottom: 70px
+        display: block
+      .big-filter
+        display: flex
+        flex-direction: column
+        position: fixed
+        top: 78px
+        left: 0
+        width: 100%
+        height: 100%
+        background: #FFF
+        z-index: 3
+        max-height: calc(100vh - 78px)
+        @media (min-width: 960px)
+          position: sticky
+          top: 165px
+          max-height: calc(100vh - 165px)
+        .filters
+          overflow-y: auto
+          &::-webkit-scrollbar
+            width: 8px
+            background: #F5F5F5
+          &::-webkit-scrollbar-thumb
+            background: rgba(0, 0, 0, 0.12)
+            border-radius: 10px
+        .big-filter-header-crisps
+          position: sticky
+          top: 0
+          background: #FFF
+          z-index: 1
+          @media (min-width: 960px)
+            display: none
+        .big-filter-header
+          display: flex
+          justify-content: space-between
+          align-items: center
+          padding: 22px 16px
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+          .close-filter-button
+            cursor: pointer
+          .big-filter-header-title
+            display: flex
+            align-items: center
+            gap: 8px
+            .big-filter-header-label
+              font-size: 24px
+              font-weight: 500
+              line-height: 36px
+            .big-filter-header-counter
+              width: 28px
+              height: 28px
+              text-align: center
+              font-size: 16px
+              font-weight: 500
+              line-height: 28px
+              color: #FFF
+              border-radius: 100px
+              background: #2A7DEC
+          @media (min-width: 960px)
+            display: none
+        .big-filter-section
+          border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+          .big-filter-section-label
+            padding: 12px 16px 12px
+            cursor: pointer
+            display: flex
+            align-items: center
+            justify-content: space-between
+            gap: 8px
+            .big-filter-section-label-title
+              font-size: 16px
+              font-weight: 500
+              line-height: 28px
+            .big-filter-section-label-chevron
+              transition: ease-in-out 0.3s
+          .big-filter-section-filters
+            display: grid
+            grid-template-rows: 0fr
+            transition: grid-template-rows 0.3s ease
+            overflow: hidden
+            .big-filter-section-list
+              padding: 0
+              opacity: 0
+              transition: ease-in-out 0.4s
+              overflow: hidden
+              display: flex
+              gap: 8px
+              flex-direction: column
+              align-items: flex-start
+              .search-item
+                width: 100%
+                margin-bottom: 4px
+              input[type="text"]
+                max-width: 100%
+              button
+                padding: 0
+                font-size: 14px
+                font-weight: 500
+                line-height: 24px
+                color: #2A7DEC
+              li.big-filter-section-search
+                width: 100%
+              li.big-filter-section-filter
+                font-size: 14px
+                font-weight: 400
+                line-height: 24px
+                display: flex
+                align-items: center
+                &.not-found-indicator
+                  display: block
+                  width: 100%
+                  text-align: center
+                &.hidden
+                  display: none
+                &.extra-filter
+                  display: none
+                &.extra-filter.shown
+                  display: flex
+                input
+                  cursor: pointer
+                  appearance: none
+                  background-color: #fff
+                  margin: 0
+                  width: 18px
+                  height: 18px
+                  border: 1px solid #ccc
+                  border-radius: 0.15em
+                  display: inline-block
+                  position: relative
+                  &::after
+                    content: ""
+                    position: absolute
+                    left: 5px
+                    top: 2px
+                    width: 5px
+                    height: 10px
+                    border: solid white
+                    border-width: 0 2px 2px 0
+                    transform: rotate(45deg)
+                    opacity: 0
+                    transition: opacity 0.2s
+                  &:checked
+                    background-color: #2a7dec
+                    border-color: #2a7dec
+                    &::after
+                      opacity: 1
+                label
+                  cursor: pointer
+                  padding-left: 8px
+                  margin-bottom: 0
+          &.opened
+            .big-filter-section-filters
+              grid-template-rows: 1fr
+              .big-filter-section-list
+                opacity: 1
+                padding: 0 16px 16px
+            .big-filter-section-label-chevron
+              transform: rotate(180deg)
+    .cards-block
+      position: relative
+      min-height: 514px
+      width: 100%
+      height: 100%
+      padding: 32px 0
+      @media (min-width: 960px)
+        padding: 32px 0 32px 32px
+      .cards-block-content
+        background: #FFF
+      .card-collection
+        display: grid
+        grid-template-columns: repeat(3, minmax(0, 1fr))
+        gap: 16px
+        @media (max-width: 600px)
+          max-width: 336px
+          margin: 0 auto
+          grid-template-columns: repeat(1, 1fr)
+        .card
+          position: relative
+          display: flex
+          flex-direction: column
+          align-items: flex-start
+          padding: 20px
+          border-radius: 12px
+          border: 1px solid #EBEBEB
+          background: #FFF
+          transition: height 0.3s ease, box-shadow 0.3s ease
+          max-width: 336px
+          height: 100%
+          box-shadow: unset
+          &:hover
+            @media (min-width: 601px)
+              box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.10), 0 0 40px 0 rgba(0, 0, 0, 0.10)
+              text-decoration: none
+              height: 115%
+              z-index: 1
+              .card-link-wrapper
+                opacity: 1
+                .card-link
+                  transition-duration: 0.3s
+                  .first
+                    transform: translate(10px)
+                  .second
+                    transform: translate(20px)
+                  .third
+                    transform: translate(30px)
+          &.filter-hidden
+            display: none
+          &.search-hidden
+            display: none
+          &.pagination-hidden
+            display: none
+          .card-image
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 80px
+            margin-bottom: 16px
+            width: 100%
+            img
+              max-height: 80px
+              max-width: 100%
+          .crisp-container
+            margin-bottom: 12px
+            width: fit-content
+            display: flex
+            flex-wrap: wrap
+            gap: 6px
+            &:after
+              @media (min-width: 600px)
+                content: attr(data-tooltip)
+                position: absolute
+                top: 0
+                right: -10%
+                border-radius: 4px
+                background: rgba(0, 0, 0, 0.70)
+                backdrop-filter: blur(2px)
+                color: #fff
+                padding: 10px 16px
+                font-size: 14px
+                line-height: 24px
+                font-weight: 400
+                white-space: pre
+                opacity: 0
+                pointer-events: none
+                transition: opacity 0.3s
+                z-index: 1
+            &:hover:after
+              opacity: 1
+            .crisp
+              display: inline-block
+              font-size: 14px
+              font-weight: 400
+              line-height: 24px
+              border-radius: 6px
+              background: #EEF5FD
+              color: #000000
+              padding: 4px 8px
+          .card-title
+            font-size: 18px
+            font-weight: 500
+            line-height: 30px
+            color: #000000
+            word-break: break-word
+          .card-description
+            display: -webkit-box
+            -webkit-line-clamp: 3
+            -webkit-box-orient: vertical
+            overflow: hidden
+            font-size: 14px
+            font-weight: 400
+            line-height: 24px
+            color: rgba(0, 0, 0, 0.76)
+            @media (max-width: 400px)
+              word-break: break-word
+          .card-link-wrapper
+            display: block
+            margin-top: 10px
+            transition: ease-in-out 0.3s
+            @media (min-width: 601px)
+              position: absolute
+              opacity: 0
+              bottom: 20px
+            .card-link
+              position: relative
+              color: #2A7DEC
+              font-size: 14px
+              font-weight: 500
+              .arrow
+                font-size: 13px
+                transform: translate(0px)
+                transition-duration: 0.3s
+                box-shadow: none
+                width: 12px
+                margin-left: 0
+                position: absolute
+                top: 4px
+                &.first
+                  opacity: 0.2
+                &.second
+                  opacity: 0.5
+                @media (max-width: 1200px)
+                  display: none
+                @media (max-width: 600px)
+                  display: block
+                  right: -8px
+                  &.first
+                    transform: translate(10px)
+                  &.second
+                    transform: translate(20px)
+                  &.third
+                    transform: translate(30px)
+              &:hover
+                @media (min-width: 1200px)
+                  transition-duration: 0.3s
+                  .first
+                    transform: translate(10px)
+                  .second
+                    transform: translate(20px)
+                  .third
+                    transform: translate(30px)
+    .not-found
+      position: absolute
+      top: 50%
+      right: 50%
+      transform: translate(50%, -50%)
+      display: flex
+      flex-direction: column
+      align-items: center
+      gap: 16px
+      z-index: -1
+      p
+        text-align: center
+        font-size: 16px
+        line-height: 28px
+        font-weight: 500
+        color: rgba(0, 0, 0, 0.76)

@@ -58,6 +58,28 @@ export-dashboard:
         image: /images/user-guide/dashboards/managing-dashboard/export-dashboard-1-pe.png
         title: 'To export a dashboard, go to the "Dashboards" page. Opposite the name of the dashboard in the list, click on the “Export dashboard” button. The configuration file in JSON format with all settings on the control panel will be saved on your PC.'
 
+dashboard-manage-owner-and-groups:
+    0:
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-manage-owner-and-groups-1-pe.png
+        title: 'Open the dashboard details by clicking the "<b>pencil</b>" icon in the dashboard list.'
+    1:
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-manage-owner-and-groups-2-pe.png
+        title: 'Click the "<b>Manage owner and groups</b>" button.'
+    2:
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-manage-owner-and-groups-3-pe.png
+        title: 'Select a new dashboard owner from the list. If needed, add the dashboard to an existing group or create a new one. Confirm the changes to update the owner information.'
+    3:
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-manage-owner-and-groups-4-pe.png
+        title: 'In the <b>"Customer name" column</b>, you can see the current owner of the dashboard.'
+
+include-customer-dashboards:
+    0:
+        image: /images/user-guide/dashboards/managing-dashboard/include-customer-dashboards-1-pe.png
+        title: 'When the switch is <b>enabled</b> (default state) — the table shows <b>all available dashboards</b>, including those owned by customers.'
+    1:
+        image: /images/user-guide/dashboards/managing-dashboard/include-customer-dashboards-2-pe.png
+        title: 'When the switch is <b>disabled</b> — the table shows <b>only your own dashboards</b>.'
+
 share-dashboard-group:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/share-dashboard-group-1-pe.png
