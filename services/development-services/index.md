@@ -2,7 +2,8 @@
 layout: development-services
 title: "Custom IoT Development of Scalable IoT Solutions"
 notitle: "true"
-description: "Fast delivery of scalable IoT solutions with fixed cost and timeline. ThingsBoard offers custom IoT development services, delivering high-quality Internet of Things solutions tailored to your needs."
+description: "Fast delivery of scalable IoT solutions with fixed cost and timeline. ThingsBoard offers custom IoT
+development services, delivering high-quality Internet of Things solutions tailored to your needs."
 ---
 
 <section class="hero light-text">
@@ -1339,13 +1340,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="form-section">
                     <div class="form-element">
                         <label for="name">
-                            <input class="form-control cdu-form-control" value="" placeholder="John Doe" name="name" id="name" type="text" size="40" maxlength="50" aria-invalid="false">
+                            <input class="form-control cdu-form-control" value="" placeholder="John Doe" name="name-popup" id="name-popup" type="text" size="40" maxlength="50" aria-invalid="false">
                             <p>Name</p>
                         </label>
                     </div>
                     <div class="form-element">
                         <label for="email">
-                            <input class="form-control cdu-form-control" value="" placeholder="john@example.com" name="email" id="email" type="email" size="40" maxlength="80" aria-invalid="false">
+                            <input class="form-control cdu-form-control" value="" placeholder="john@example.com" name="email-popup" id="email-popup" type="email" size="40" maxlength="80" aria-invalid="false">
                             <p>Email Address</p>
                         </label>
                     </div>
@@ -1896,6 +1897,10 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
     function onContactUsClick(index) {
         handleGTMFormID(index);
+        const timeInput = modal.querySelector('.form-rendered-at');
+        if(timeInput){
+            $(timeInput).val(parseInt(Math.floor(Date.now() / 1000), 10));
+        }
         modal.style.display = "flex";
     }
 
@@ -1907,7 +1912,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     }
 
     (function(){
-        function protectForm(formSelector) {
+        function protectForm(formSelector) {    
             const form = document.querySelector(formSelector);
             if (!form) return;
 
@@ -2050,7 +2055,8 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
     jqueryDefer(
         function () {
             var $contactForm =  jQuery('.developmentServicesContactUsForm');
-            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+            // $contactForm.attr('action', 'http://localhost:8080');
+            // $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
                 populateUTMandClientIdFields();
                  $contactForm.find('.form-element .form-control').addClass("input--empty");

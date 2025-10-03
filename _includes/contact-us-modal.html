@@ -22,7 +22,8 @@
 
     <div id="contact-us-modal" class="modal-overlay">
     <div class="modal-content">
-        <form id="ContactUs" method="post" class="contact-form gtm_form" onsubmit="return validateContactForm(this)" novalidate>
+        <form id="ContactUs" method="post" class="contact-form gtm_form"
+              onsubmit="return validateContactForm(this)" novalidate>
             <div id="closeBtn" class="close-button">
                 <img src="/images/pricing/close-icon.svg" alt="Close icon">
             </div>
@@ -81,6 +82,18 @@
                         </label>
                     </div>
                     <input type="hidden" name="_next" value="/docs/contact-us-thanks/">
+                    <input type="hidden" name="utm_source-popup" id="utm_source-popup">
+                    <input type="hidden" name="utm_medium-popup" id="utm_medium-popup">
+                    <input type="hidden" name="utm_campaign-popup" id="utm_campaign-popup">
+                    <input type="hidden" name="utm_term-popup" id="utm_term-popup">
+                    <input type="hidden" name="utm_content-popup" id="utm_content-popup">
+                    <input type="hidden" name="client_id-popup" id="client_id-popup">
+                    <div class="hp-container">
+                        {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
+                        <label for="{{ random_hp }}">Leave this field empty</label>
+                        <input type="text" id="{{ random_hp }}" name="{{ random_hp }}" autocomplete="off">
+                    </div>
+                    <input type="hidden" class="form-rendered-at" value="{{ site.time | date: '%s' }}">
                     <input type="text" name="_gotcha" style="display:none">
                 </div>
                 <div class="submit-button-container">
@@ -124,10 +137,12 @@
             function () {
                 $( document ).ready(function() {
                     var $contactForm =  $('#ContactUs');
-                    $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+                    $contactForm.attr('action', 'http://localhost:8080');
+                    // $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
                     /*  $('html, body').animate({
                                  scrollTop: $('#contact-form').offset().top - 200
                                }, 0);*/
+                    populateUTMandClientIdFields();
                     $contactForm.find('.form-element .form-control').addClass("input--empty");
                     $contactForm.find('.form-element .form-control').on('input', function() {
                         if( !$(this).val() ) {
@@ -204,6 +219,51 @@
         if (parentLabel) {
             parentLabel.insertAdjacentElement('afterend', errorMessageElement);
         }
+    }
+
+    function populateUTMandClientIdFields() {
+        var $form = $('.contact-form');
+        if (!$form.length) return;
+
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        const utmData = {};
+
+        utmKeys.forEach(function(key) {
+            let value = getURLParam(key);
+            if (value) {
+                localStorage.setItem(key, value);
+            } else {
+                value = localStorage.getItem(key);
+            }
+
+            if (value) {
+                value = decodeURIComponent(value);
+                utmData[key] = value;
+                // $form.find('input[name="' + key + '"]').val(value);
+                $form.find('input[name="' + key + '-popup"]').val(value);
+            }
+        });
+
+        const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
+        if (gaCookie) {
+            const parts = gaCookie.split('.');
+            if (parts.length >= 4) {
+                const clientId = parts[2] + '.' + parts[3];
+                utmData['client_id'] = clientId;
+                // $form.find('input[name="client_id"]').val(clientId);
+                $form.find('input[name="client_id-popup"]').val(clientId);
+            }
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'case_studies',
+            ...utmData
+        });
+    }
+
+    function getURLParam(name) {
+        const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
     }
 
     function validateContactForm(form) {
