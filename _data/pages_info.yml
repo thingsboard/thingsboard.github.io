@@ -5479,7 +5479,7 @@
 "/docs/user-guide/ui/security-settings/":
   url: "/docs/user-guide/ui/security-settings/"
   redirect_from:
-  - "/docs/pe/user-guide/ui/jwt-security-settings/"
+  - "/docs/user-guide/ui/jwt-security-settings/"
 "/docs/user-guide/ui/slack-settings/":
   url: "/docs/user-guide/ui/slack-settings/"
   redirect_from: []
