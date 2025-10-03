@@ -2,10 +2,22 @@
 {:toc}
 
 
-## What is ThingsBoard?
+{% if docsPrefix contains 'pe/' or docsPrefix contains 'paas/' %}
+## What is ThingsBoard Professional Edition?
+{% else %}
+## What is ThingsBoard Community Edition?
+{% endif %}
 
-ThingsBoard is an open-source server-side platform that allows you to monitor and control your IoT devices.
-It is free for both personal and commercial usage and you can deploy it anywhere. 
+ThingsBoard is a comprehensive open-source IoT platform designed for device connectivity, data collection, processing, visualization, and remote device management. It supports IoT protocols like MQTT, CoAP, HTTP, LWM2M and provides a flexible, scalable foundation for building both prototype and production-level IoT solutions.
+
+The platform is available in two main editions: Community Edition (CE) and Professional Edition (PE).<br>
+
+{% if docsPrefix contains 'pe/' or docsPrefix contains 'paas/' %}
+The **Professional Edition** is the enterprise-grade version tailored for commercial IoT deployments. It includes all the features of the Community Edition and adds advanced capabilities that help accelerate time-to-market, enhance security, improve scalability, and deliver a polished, production-ready solution. This edition is designed for businesses that require high performance, operational reliability, and premium features.<br>
+{% else %}
+The **Community Edition** is a free, open-source version. It is a powerful and scalable multi-tenant solution, ideal for teams looking to experiment, test hypotheses, build proof-of-concepts, or launch MVPs without upfront costs. It offers the flexibility and agility needed in development.<br>
+{% endif %}
+
 If this is your first experience with the platform we recommend to review [what-is-thingsboard](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/) 
 and [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
 You can find more information on the dedicated page.
