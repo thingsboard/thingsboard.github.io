@@ -66,6 +66,37 @@ reporting-getting-started-alarm-table:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-3-pe.png
         title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
 
+reporting-getting-started-charts-1:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-1-pe.png
+        title: 'Drag the "<b>Alarm table</b>" component into the content area of your report.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-2-pe.png
+        title: 'Set the "<b>All devices</b>" entity alias as the <b>alarm source</b>.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-3-pe.png
+        title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-4-pe.png
+        title: 'Drag the "<b>Alarm table</b>" component into the content area of your report.'
+    4:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-5-pe.png
+        title: 'Set the "<b>All devices</b>" entity alias as the <b>alarm source</b>.'
+
+reporting-getting-started-charts-2:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-6-pe.png
+        title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-7-pe.png
+        title: 'Drag the "<b>Alarm table</b>" component into the content area of your report.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-8-pe.png
+        title: 'Set the "<b>All devices</b>" entity alias as the <b>alarm source</b>.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-9-pe.png
+        title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
+
 reporting-getting-started-save-report:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-save-report-1-pe.png

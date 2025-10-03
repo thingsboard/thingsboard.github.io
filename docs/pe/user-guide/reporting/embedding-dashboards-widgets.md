@@ -2,8 +2,8 @@
 layout: docwithnav-pe
 assignees:
 - stitenko
-title: Embedding dashboards or widgets into Report Template
-description: How to embed existing dashboards or widgets into Report Template
+title: Embedding dashboards in a report
+description: How to embed existing dashboards in a report
 redirect_from: "/docs/user-guide/reporting/embedding-dashboards-widgets/"
 
 time-series-chart-template:

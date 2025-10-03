@@ -690,6 +690,9 @@
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
   redirect_from: []
+"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
+  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
+  redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
   redirect_from: []
@@ -2123,6 +2126,9 @@
 "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/"
   redirect_from: []
+"/docs/paas/eu/user-guide/reporting/embedding-charts/":
+  url: "/docs/paas/eu/user-guide/reporting/embedding-charts/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from: []
@@ -2658,6 +2664,9 @@
   redirect_from: []
 "/docs/paas/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/embedding-charts/":
+  url: "/docs/paas/user-guide/reporting/embedding-charts/"
   redirect_from: []
 "/docs/paas/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/paas/user-guide/reporting/embedding-dashboards-widgets/"
@@ -3734,6 +3743,9 @@
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
   redirect_from:
   - "/docs/user-guide/reporting/attaching-report-to-notification/"
+"/docs/pe/user-guide/reporting/embedding-charts/":
+  url: "/docs/pe/user-guide/reporting/embedding-charts/"
+  redirect_from: []
 "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from:
@@ -3894,7 +3906,8 @@
   redirect_from: []
 "/docs/pe/user-guide/ui/security-settings/":
   url: "/docs/pe/user-guide/ui/security-settings/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/pe/user-guide/ui/jwt-security-settings/"
 "/docs/pe/user-guide/ui/slack-settings/":
   url: "/docs/pe/user-guide/ui/slack-settings/"
   redirect_from: []
@@ -5467,7 +5480,6 @@
   url: "/docs/user-guide/ui/security-settings/"
   redirect_from:
   - "/docs/pe/user-guide/ui/jwt-security-settings/"
-  - "/docs/user-guide/ui/jwt-security-settings/"
 "/docs/user-guide/ui/slack-settings/":
   url: "/docs/user-guide/ui/slack-settings/"
   redirect_from: []
