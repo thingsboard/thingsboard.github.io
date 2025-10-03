@@ -1,0 +1,27 @@
+{% assign currentName = include.bundleName %}
+{% assign widgetsLibrary = site.data.widgets-library %}
+
+{% if currentName %}
+{% assign widgetsLibrary = site.data.widgets-library[currentName].section %}
+{% endif %}
+
+<ul class="widget-list">
+    {% for bundle in widgetsLibrary %}
+        <li class="widget-item">
+            {% assign currentBundle = bundle[0] %}
+            {% assign link = page.url | remove: "/paas/eu" | remove: "/paas" | remove: "/pe" | append: currentBundle %}
+            <a class="widget-link" href="{{ link }}">
+                <div class="image-section">
+                    <img src="{{ bundle[1].image }}" alt="{{ bundle[1].title }} bundle image" loading="lazy">
+                </div>
+                <div class="text-section">
+                    <span>{{ bundle[1].title }}</span>
+                    <p>{{ bundle[1].description }}</p>
+                </div>
+            </a>
+            {% if bundle[1].pe-only %}
+                <span class="widget-item-pe">PE only</span>
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
