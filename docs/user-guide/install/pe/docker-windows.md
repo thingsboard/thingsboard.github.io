@@ -119,13 +119,17 @@ docker compose up -d
 {: .copy-code}
 
 ## Upgrading
+{% capture upgrade_version_by_version%}
+**Note, that you have to upgrade versions one by one (for example 4.0.2 -> 4.1.0 -> 4.2.0 ,etc).**
+{% endcapture %}
+{% include templates/info-banner.md content=upgrade_version_by_version %}
 
 When a new PE release is available, follow these steps to update your installation without losing data:
 
 {% capture old_manifests_info %}
-**If you upgrade using previous version of manifests make sure to follow these steps first** [instructions](/docs/user-guide/install/pe/old-docker-migrate-windows/)
+**If you are upgrading using previous version of deployment files, make sure to follow steps described in this [instruction](/docs/user-guide/install/pe/old-docker-migrate/) first.**
 {% endcapture %}
-{% include templates/info-banner.md content=old_manifests_info %}
+{% include templates/warn-banner.md content=old_manifests_info %}
 
 1. Change the version of the `thingsboard/tb-pe-node` and `thingsboard/tb-web-report` in the `docker-compose.yml` file to the new version (e.g. {{ site.release.pe_full_ver }}) 
 
