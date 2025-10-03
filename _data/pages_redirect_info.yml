@@ -275,6 +275,9 @@ docs/pe/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/pe/user-guide/ui/tenant-profiles":
   url: "/docs/pe/user-guide/tenant-profiles/"
   redirect_from: "/docs/pe/user-guide/ui/tenant-profiles"
+"/docs/pe/user-guide/ui/jwt-security-settings/":
+  url: "/docs/pe/user-guide/ui/security-settings/"
+  redirect_from: "/docs/pe/user-guide/ui/jwt-security-settings/"
 "/docs/pe/user-guide/ui/widgets/trip-animation-widget/":
   url: "/docs/pe/user-guide/ui/trip-animation-widget/"
   redirect_from: "/docs/pe/user-guide/ui/widgets/trip-animation-widget/"
@@ -509,9 +512,6 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/samples/alarms/mail/":
   url: "/docs/user-guide/ui/mail-settings/"
   redirect_from: "/docs/samples/alarms/mail/"
-"/docs/pe/user-guide/ui/jwt-security-settings/":
-  url: "/docs/user-guide/ui/security-settings/"
-  redirect_from: "/docs/pe/user-guide/ui/jwt-security-settings/"
 "/docs/user-guide/ui/jwt-security-settings/":
   url: "/docs/user-guide/ui/security-settings/"
   redirect_from: "/docs/user-guide/ui/jwt-security-settings/"

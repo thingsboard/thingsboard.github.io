@@ -112,7 +112,7 @@ selfManagedPlan:
 
 <div id="thingsboard-cloud" class="pricing-content" style="display: none;">
     <div class="container no-padding">
-      <div class="pricing-content-header row not-reverse-column">
+      <div class="pricing-content-header">
           <div id="northAmericaHeader" class="pricing-content-description col-lg-6">
               <h2>Subscription plans</h2>
               <div class="pricing-content-details">
@@ -150,7 +150,7 @@ selfManagedPlan:
                             $10
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Start Free
                             </a>
@@ -172,7 +172,7 @@ selfManagedPlan:
                             $149
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                             </a>
@@ -194,7 +194,7 @@ selfManagedPlan:
                             $399
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                             </a>
@@ -216,7 +216,7 @@ selfManagedPlan:
                             $749
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                             </a>
@@ -238,7 +238,7 @@ selfManagedPlan:
                             $1099
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                             </a>
@@ -250,6 +250,10 @@ selfManagedPlan:
                             Email support
                         </div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
+                    </div>
+                    <div class="pricing-square additional">
+                        <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
+                        <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
                     </div>
                </div>
             </div>
@@ -264,7 +268,7 @@ selfManagedPlan:
                                 €9
                                 <span>/month</span>
                             </h4>
-                            <div class="row justify-content-center">
+                            <div>
                                 <a id="Pricing_PE_Cloud_Maker" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Start Free
                                 </a>
@@ -286,7 +290,7 @@ selfManagedPlan:
                                 €145
                                 <span>/month</span>
                             </h4>
-                            <div class="row justify-content-center">
+                            <div>
                                 <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
@@ -308,7 +312,7 @@ selfManagedPlan:
                                 €385
                                 <span>/month</span>
                             </h4>
-                            <div class="row justify-content-center">
+                            <div>
                                 <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
@@ -330,7 +334,7 @@ selfManagedPlan:
                                 €725
                                 <span>/month</span>
                             </h4>
-                            <div class="row justify-content-center">
+                            <div>
                                 <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
                                     Get Started
                                 </a>
@@ -352,7 +356,7 @@ selfManagedPlan:
                             €1065
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
                                 Get Started
                             </a>
@@ -365,13 +369,17 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White-labeling</b></div>
                     </div>
+                    <div class="pricing-square additional">
+                        <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
+                        <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
+                    </div>
                </div>
             </div>
         </div>
         <div class="additional-content">
-            <div class="plan-calculator-block">
+            <div class="plan-calculator-block md-hide">
                 <div class="text">
-                    <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
+                    <h2 class="no-margin">Ready to scale past 2&nbsp;000 devices?</h2>
                 </div>
                 <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
@@ -381,7 +389,7 @@ selfManagedPlan:
 
 <div id="thingsboard-private-cloud" class="pricing-content" style="display: none;">
     <div class="container">
-        <div class="pricing-content-header row not-reverse-column">
+        <div class="pricing-content-header">
             <div class="pricing-content-description always-display active col-lg-6">
               <h2>Choose your plan</h2>
               <div class="pricing-content-details">
@@ -402,35 +410,32 @@ selfManagedPlan:
         </div>
         <div class="pricing-div">
             <div class="pricing-section always-display active" id="monthly">
-               <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-6 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Launch</h2>
-                        <div class="pricing-square-description">
-                            <p>Suitable for pilots and early stage deployments.</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $1499
-                            <span>/month</span>
-                        </h4>
-                        <h4 class="pricing-square-price hidden">
-                            $1349
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20Private%20Cloud">
-                                Get Started
-                                <span class="visually-hidden"> to discuss Launch plan of ThingsBoard Private Cloud</span>
-                            </a>
-                        </div>
-                        <div class="pricing-square-item highlight">5 000 devices included</div>
-                        <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">50 000 msg/minute</div>
-                        <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">500 GB of storage included</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl">
+               <div class="cards-row flex-square">
+                 <div class="pricing-square">
+                     <h2>Launch</h2>
+                     <div class="pricing-square-description">
+                         <p>Suitable for pilots and early stage deployments.</p>
+                     </div>
+                     <h4 class="pricing-square-price">
+                         $1499
+                         <span>/month</span>
+                     </h4>
+                     <h4 class="pricing-square-price hidden">
+                         $1349
+                         <span>/month</span>
+                     </h4>
+                     <div>
+                         <a id="Pricing_PE_PrivateCloud_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20Private%20Cloud">
+                             Get Started
+                             <span class="visually-hidden"> to discuss Launch plan of ThingsBoard Private Cloud</span>
+                         </a>
+                     </div>
+                     <div class="pricing-square-item highlight">5 000 devices included</div>
+                     <div class="pricing-square-item">99.9% uptime guarantee</div>
+                     <div class="pricing-square-item" data-faq-id="tb-private-cloud-how-are-datapoints-defined-and-metered">50 000 msg/minute</div>
+                     <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">500 GB of storage included</div>
+                     <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.10 per extra device</div>
+                 </div>
                     <div class="pricing-square">
                         <h2>Growth</h2>
                         <div class="pricing-square-description">
@@ -444,7 +449,7 @@ selfManagedPlan:
                             $1979
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_PrivateCloud_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Growth%20plan%20for%20Private%20Cloud">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Growth plan of ThingsBoard Private Cloud</span>
@@ -456,8 +461,6 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">1 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.09 per extra device</div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Scale</h2>
                         <div class="pricing-square-description">
@@ -471,7 +474,7 @@ selfManagedPlan:
                             $3599
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_PrivateCloud_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&pcorder&message=I%20am%20interested%20in%20Scale%20plan%20for%20Private%20Cloud">
                                 Get Started
                                 <span class="visually-hidden"> to discuss Scale plan of ThingsBoard Private Cloud</span>
@@ -483,8 +486,6 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="tb-private-cloud-what-telemetry-storage-is-included-and-what-data-consumes-it">2 TB of storage included</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.08 per extra device</div>
                     </div>
-                </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl">
                     <div class="pricing-square">
                         <h2>Enterprise</h2>
                         <div class="pricing-square-description">
@@ -493,7 +494,7 @@ selfManagedPlan:
                         <h4 class="pricing-square-price always-display">
                             Custom <span data-faq-id="tb-private-cloud-what-features-are-unique-to-the-enterprise-plan" data-faq-link-size="70%"></span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_PrivateCloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=Private%20Cloud&message=I%20am%20interested%20in%20Enterprise%20plan%20for%20Private%20Cloud">
                                 Contact Us
                                 <span class="visually-hidden"> to discuss Enterprise plan of ThingsBoard Private Cloud</span>
@@ -505,7 +506,6 @@ selfManagedPlan:
                         <div class="pricing-square-item">Unlimited storage</div>
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit"><$0.05 per extra device</div>
                     </div>
-                </div>
                </div>
             </div>
         </div>
@@ -650,7 +650,7 @@ selfManagedPlan:
                             <h4 class="pricing-square-price no-sign">
                                 YES, IT'S FREE
                             </h4>
-                            <div class="row justify-content-center">
+                            <div>
                                 <a id="Pricing_CE_Install" class="button btn-pricing gtm_button" href="/docs/user-guide/install/installation-options/">
                                     Install
                                 </a>
@@ -704,117 +704,109 @@ selfManagedPlan:
     </div>
     <div class="pricing-div">
         <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-           <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Maker</h2>
-                        <div class="pricing-square-description">
-                            <p>To become familiar with ThingsBoard PE features</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $10
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Maker" class="button btn-pricing gtm_button" 
-                                onClick="getLicense(event,
-                                false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '7ef31a80-a18e-11e9-8e16-03828ff5271c',
-                                'Maker', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">Up to 10 Devices</div>
-                        <div class="pricing-square-item">Up to 10 Assets</div> 
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Community support
-                        </div>
+            <div class="cards-row flex-square stretch">
+                <div class="pricing-square unset-height">
+                    <h2>Maker</h2>
+                    <div class="pricing-square-description">
+                        <p>To become familiar with ThingsBoard PE features</p>
+                    </div>
+                    <h4 class="pricing-square-price">
+                        $10
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_PE_SM_Maker" class="button btn-pricing gtm_button" 
+                            onClick="getLicense(event,
+                            false,
+                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                            '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                            'Maker', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item">Up to 10 Devices</div>
+                    <div class="pricing-square-item">Up to 10 Assets</div> 
+                    <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
+                        Community support
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Prototype</h2>
-                        <div class="pricing-square-description">
-                            <p>The subscription is designed for PoCs and prototyping</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $99
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Prototype" class="button btn-pricing gtm_button" 
-                                onClick="getLicense(event,
-                                false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '0e236dc0-a196-11e9-8e16-03828ff5271c',
-                                'Prototype', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">Up to 100 Devices</div>
-                        <div class="pricing-square-item">Up to 100 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Community support
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                <div class="pricing-square unset-height">
+                    <h2>Prototype</h2>
+                    <div class="pricing-square-description">
+                        <p>The subscription is designed for PoCs and prototyping</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $99
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_PE_SM_Prototype" class="button btn-pricing gtm_button" 
+                            onClick="getLicense(event,
+                            false,
+                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                            '0e236dc0-a196-11e9-8e16-03828ff5271c',
+                            'Prototype', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item">Up to 100 Devices</div>
+                    <div class="pricing-square-item">Up to 100 Assets</div>
+                    <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
+                        Community support
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Startup</h2>
-                        <div class="pricing-square-description">
-                            <p>For upcoming IoT Unicorns</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $199
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Startup" class="button btn-pricing gtm_button" 
-                                onClick="getLicense(event,
-                                false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '8ac6d190-a197-11e9-8e16-03828ff5271c',
-                                'Startup', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">Up to 500 Devices</div>
-                        <div class="pricing-square-item">Up to 500 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Support within <b>36 hours</b>
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                <div class="pricing-square unset-height">
+                    <h2>Startup</h2>
+                    <div class="pricing-square-description">
+                        <p>For upcoming IoT Unicorns</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $199
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_PE_SM_Startup" class="button btn-pricing gtm_button" 
+                            onClick="getLicense(event,
+                            false,
+                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                            '8ac6d190-a197-11e9-8e16-03828ff5271c',
+                            'Startup', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item">Up to 500 Devices</div>
+                    <div class="pricing-square-item">Up to 500 Assets</div>
+                    <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
+                        Support within <b>36 hours</b>
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Enterprise</h2>
-                        <div class="pricing-square-description">
-                            <p>Consider yourself a Fortune 500 company in the field?</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $500
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_PE_SM_Enterprise" class="button btn-pricing gtm_button" 
-                                onClick="getLicense(event,
-                                false,
-                                '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                                '34530df0-a198-11e9-8e16-03828ff5271c',
-                                'Enterprise', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">Unlimited number of Devices</div> 
-                        <div class="pricing-square-item">Unlimited number of Assets</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Support within <b>12 hours</b>
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                <div class="pricing-square unset-height">
+                    <h2>Enterprise</h2>
+                    <div class="pricing-square-description">
+                        <p>Consider yourself a Fortune 500 company in the field?</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $500
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_PE_SM_Enterprise" class="button btn-pricing gtm_button" 
+                            onClick="getLicense(event,
+                            false,
+                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                            '34530df0-a198-11e9-8e16-03828ff5271c',
+                            'Enterprise', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item">Unlimited number of Devices</div> 
+                    <div class="pricing-square-item">Unlimited number of Assets</div>
+                    <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
+                        Support within <b>12 hours</b>
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
                 </div>
            </div>
         </div>
@@ -829,7 +821,7 @@ selfManagedPlan:
                         <h4 class="pricing-square-price">
                             $4,999
                         </h4>                  
-                        <div class="row justify-content-center">
+                        <div>
                             <button id="Pricing_PE_SM_Perpetual_Perpetual" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 true,
@@ -857,7 +849,7 @@ selfManagedPlan:
                         <h4 class="pricing-square-price">
                             $5,999
                         </h4>                  
-                        <div class="row justify-content-center">
+                        <div>
                             <button id="Pricing_PE_SM_Perpetual_Kit" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 true,
@@ -886,7 +878,7 @@ selfManagedPlan:
                         <h4 class="pricing-square-price">
                             $14,999
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_PE_SM_Enterprise_Bundle" class="button btn-pricing gtm_button" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
                         <div class="pricing-square-item"><b>2 ThingsBoard Perpetual Kits</b></div>
@@ -959,113 +951,105 @@ selfManagedPlan:
         </div>
         <div class="pricing-div">
             <div class="pricing-section pricing-pay-as-you-go active" id="trendzPayAsYouGo">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Maker</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 10 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $10
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Maker" class="button btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'maker')">
-                                    Try 30 days for free
-                                </button>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
-                                Community support
-                            </div>
+                <div class="cards-row flex-square stretch">
+                    <div class="pricing-square unset-height">
+                        <h2>Maker</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Up to 10 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $10
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <button id="Pricing_TA_SM_Maker" class="button btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'maker')">
+                                Try 30 days for free
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div> 
+                        <div class="pricing-square-item">Predictive Analytics</div>
+                        <div class="pricing-square-item">Calculated Fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced Visualizations</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Prototype</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 200 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $175
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Prototype" class="button btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'prototype')">
-                                    Try 30 days for free
-                                </button>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
-                                Community support
-                            </div>
+                    <div class="pricing-square unset-height">
+                        <h2>Prototype</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Up to 200 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $175
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <button id="Pricing_TA_SM_Prototype" class="button btn-pricing gtm_button" onClick="openTrendzWizard(event, 'self-managed-content', 'prototype')">
+                                Try 30 days for free
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div> 
+                        <div class="pricing-square-item">Predictive Analytics</div>
+                        <div class="pricing-square-item">Calculated Fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced Visualizations</div>
+                        <div class="pricing-square-item">White-labeling</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
+                            Community support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Startup</h2>                            
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 500 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $200
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Startup"
-                                        class="button btn-pricing gtm_button" 
-                                        onClick="openTrendzWizard(event, 'self-managed-content', 'startup')">
-                                    Try 30 days for free
-                                </button>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
-                                Support
-                            </div>
+                    <div class="pricing-square unset-height">
+                        <h2>Startup</h2>                            
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Up to 500 Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $200
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <button id="Pricing_TA_SM_Startup"
+                                    class="button btn-pricing gtm_button" 
+                                    onClick="openTrendzWizard(event, 'self-managed-content', 'startup')">
+                                Try 30 days for free
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div> 
+                        <div class="pricing-square-item">Predictive Analytics</div>
+                        <div class="pricing-square-item">Calculated Fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced Visualizations</div>
+                        <div class="pricing-square-item">White-labeling</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
+                            Support
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-6 col-gt-xl">
-                        <div class="pricing-square">
-                            <h2>Business</h2>
-                            <div class="pricing-square-description" style="min-height: 50px;">
-                                <p>Up to 1000 Devices and Assets</p>
-                            </div>
-                            <h4 class="pricing-square-price">
-                                $350
-                                <span>/month</span>
-                            </h4>
-                            <div class="row justify-content-center">
-                                <button id="Pricing_TA_SM_Business" class="button btn-pricing gtm_button" 
-                                    onClick="openTrendzWizard(event, 'self-managed-content', 'business')">
-                                    Try 30 days for free
-                                </button>
-                            </div>
-                            <div class="pricing-square-item">Anomalies detection</div> 
-                            <div class="pricing-square-item">Predictive Analytics</div>
-                            <div class="pricing-square-item">Calculated Fields</div>
-                            <div class="pricing-square-item">AI Assistant</div>
-                            <div class="pricing-square-item">Advanced Visualizations</div>
-                            <div class="pricing-square-item">White-labeling</div>
-                            <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
-                                Support
-                            </div>
+                    <div class="pricing-square unset-height">
+                        <h2>Business</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Up to 1000 Devices and Assets</p>
                         </div>
-                    </div>                    
+                        <h4 class="pricing-square-price">
+                            $350
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <button id="Pricing_TA_SM_Business" class="button btn-pricing gtm_button" 
+                                onClick="openTrendzWizard(event, 'self-managed-content', 'business')">
+                                Try 30 days for free
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">Anomalies detection</div>
+                        <div class="pricing-square-item">Predictive Analytics</div>
+                        <div class="pricing-square-item">Calculated Fields</div>
+                        <div class="pricing-square-item">AI Assistant</div>
+                        <div class="pricing-square-item">Advanced Visualizations</div>
+                        <div class="pricing-square-item">White-labeling</div>
+                        <div class="pricing-square-item" data-faq-id="trendz-pay-as-you-go-support-included">
+                            Support
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="pricing-section pricing-perpetual" id="trendzPerpetual">
@@ -1079,7 +1063,7 @@ selfManagedPlan:
                             <h4 class="pricing-square-price">
                                 $8000
                             </h4>                  
-                            <div class="row justify-content-center">
+                            <div>
                                 <button id="Pricing_TA_SM_Perpetual_License" class="button btn-pricing gtm_button" 
                                     onClick="getLicense(event,
                                     true,
@@ -1112,7 +1096,7 @@ selfManagedPlan:
 
 <div id="trendz-cloud" class="pricing-content" style="display: none;">
     <div class="container">
-        <div class="pricing-content-header row not-reverse-column">
+        <div class="pricing-content-header">
             <div id="trendzNorthAmericaHeader" class="pricing-content-description col-lg-6">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
@@ -1140,17 +1124,17 @@ selfManagedPlan:
         </div>
         <div class="pricing-div">
             <div class="pricing-section trendz-pricing-cloud active" id="trendzNorthAmerica">
-                <div class="cards-row stretch">
+                <div class="cards-row flex-square stretch">
                     <div class="pricing-square small-padding unset-height">
                         <h2>Maker</h2>
                         <div class="pricing-square-description">
-                            <p class="no-min-height">Up to 30 Devices and Assets</p>
+                            <p>Up to 30 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $10
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
                                 Get Started
                             </a>
@@ -1167,13 +1151,13 @@ selfManagedPlan:
                     <div class="pricing-square small-padding unset-height">
                         <h2>Prototype</h2>
                         <div class="pricing-square-description">
-                            <p class="no-min-height">Up to 100 Devices and Assets</p>
+                            <p>Up to 100 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $100
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
                                 Get Started
                             </a>
@@ -1191,13 +1175,13 @@ selfManagedPlan:
                     <div class="pricing-square small-padding unset-height">
                         <h2>Startup</h2>
                         <div class="pricing-square-description">
-                            <p class="no-min-height">Up to 500 Devices and Assets</p>
+                            <p>Up to 500 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $250
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
                                 Get Started
                             </a>
@@ -1221,7 +1205,7 @@ selfManagedPlan:
                             $450
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
                                 Get Started
                             </a>
@@ -1245,7 +1229,7 @@ selfManagedPlan:
                             $800
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_BusinessPlus" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business+')">
                                 Get Started
                             </a>
@@ -1260,20 +1244,26 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                     </div>
+                    <div class="pricing-square additional">
+                        <h2 class="no-margin">Enterprise-grade needs?</h2>
+                        <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
             <div class="pricing-section trendz-pricing-cloud" id="trendzEurope">
-                <div class="cards-row stretch">
+                <div class="cards-row flex-square stretch">
                     <div class="pricing-square small-padding unset-height">
                         <h2>Maker</h2>
                         <div class="pricing-square-description">
-                            <p class="no-min-height">Up to 30 Devices and Assets</p>
+                            <p>Up to 30 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price">
                             €9
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Maker" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'maker')">
                                 Get Started
                             </a>
@@ -1290,13 +1280,13 @@ selfManagedPlan:
                     <div class="pricing-square small-padding unset-height">
                         <h2>Prototype</h2>
                         <div class="pricing-square-description">
-                            <p class="no-min-height">Up to 100 Devices and Assets</p>
+                            <p>Up to 100 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price">
                             €100
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Prototype" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'prototype')">
                                 Get Started
                             </a>
@@ -1314,13 +1304,13 @@ selfManagedPlan:
                     <div class="pricing-square small-padding unset-height">
                         <h2>Startup</h2>
                         <div class="pricing-square-description">
-                            <p class="no-min-height">Up to 500 Devices and Assets</p>
+                            <p>Up to 500 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price">
                             €250
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Startup" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'startup')">
                                 Get Started
                             </a>
@@ -1344,7 +1334,7 @@ selfManagedPlan:
                             €450
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_Business" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business')">
                                 Get Started
                             </a>
@@ -1368,7 +1358,7 @@ selfManagedPlan:
                             €800
                             <span>/month</span>
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_TA_Cloud_BusinessPlus" class="button btn-pricing gtm_button north-america" href="#" onClick="openTrendzWizard(event, 'cloud-content', 'business+')">
                                 Get Started
                             </a>
@@ -1383,11 +1373,17 @@ selfManagedPlan:
                         </div>
                         <div class="pricing-square-item" data-faq-id="trendz-cloud-white-labeling">White-labeling</div>
                     </div>
+                    <div class="pricing-square additional">
+                        <h2 class="no-margin">Enterprise-grade needs?</h2>
+                        <a id="Pricing_TA_Cloud_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/">
+                            Contact Us
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
         <div class="additional-content">
-            <div class="plan-calculator-block">
+            <div class="plan-calculator-block md-hide">
                 <div class="text">
                     <h2 class="no-margin">Enterprise-grade needs?</h2>
                     <p>Get a fully custom plan with dedicated hosting, unlimited devices and data, white-labeling, and a SLA tailored to your business.</p>
@@ -1455,7 +1451,7 @@ selfManagedPlan:
                         <h4 class="pricing-square-price no-sign">
                             YES, IT'S FREE
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <a id="Pricing_Edge_CE_Install" class="button btn-pricing gtm_button" href="/docs/user-guide/install/edge/installation-options/">
                                 Install
                             </a>
@@ -1472,136 +1468,128 @@ selfManagedPlan:
            </div>
         </div>
         <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-           <div class="row justify-content-center">                
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Nano</h2>
-                        <div class="pricing-square-description">
-                            <p>Up to 50 Devices and Assets</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $19
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Nano" class="button btn-pricing gtm_button" 
-                                onClick="getLicense(event,
-                                false,
-                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
-                                '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
-                        <div class="pricing-square-item">Up to 50 Devices</div>
-                        <div class="pricing-square-item">Up to 50 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
-                            Tiered discounts
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+           <div class="cards-row flex-square stretch">                
+                <div class="pricing-square unset-height">
+                    <h2>Nano</h2>
+                    <div class="pricing-square-description">
+                        <p>Up to 50 Devices and Assets</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $19
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_Edge_PayAsYouGo_Nano" class="button btn-pricing gtm_button" 
+                            onClick="getLicense(event,
+                            false,
+                            'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                            '302e3420-fe4e-11ea-951e-b77b877a367b',
+                            'Edge Nano', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
+                    <div class="pricing-square-item">Up to 50 Devices</div>
+                    <div class="pricing-square-item">Up to 50 Assets</div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
+                        Optional support
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
+                        Tiered discounts
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Micro</h2>
-                        <div class="pricing-square-description">
-                            <p>Up to 100 Devices and Assets</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $29
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Micro" class="button btn-pricing gtm_button"
-                                onClick="getLicense(event,
-                                false,
-                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
-                                '6e6c58c0-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Micro', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
-                        <div class="pricing-square-item">Up to 100 Devices</div>
-                        <div class="pricing-square-item">Up to 100 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
-                            Tiered discounts
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                <div class="pricing-square unset-height">
+                    <h2>Micro</h2>
+                    <div class="pricing-square-description">
+                        <p>Up to 100 Devices and Assets</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $29
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_Edge_PayAsYouGo_Micro" class="button btn-pricing gtm_button"
+                            onClick="getLicense(event,
+                            false,
+                            'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                            '6e6c58c0-fe4e-11ea-951e-b77b877a367b',
+                            'Edge Micro', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
+                    <div class="pricing-square-item">Up to 100 Devices</div>
+                    <div class="pricing-square-item">Up to 100 Assets</div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
+                        Optional support
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
+                        Tiered discounts
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Macro</h2>
-                        <div class="pricing-square-description">
-                            <p>Up to 200 Devices and Assets</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $39
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Macro" class="button btn-pricing gtm_button"
-                                onClick="getLicense(event,
-                                false,
-                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
-                                'a0e02610-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Macro', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
-                        <div class="pricing-square-item">Up to 200 Devices</div>
-                        <div class="pricing-square-item">Up to 200 Assets</div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
-                            Tiered discounts
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                <div class="pricing-square unset-height">
+                    <h2>Macro</h2>
+                    <div class="pricing-square-description">
+                        <p>Up to 200 Devices and Assets</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $39
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_Edge_PayAsYouGo_Macro" class="button btn-pricing gtm_button"
+                            onClick="getLicense(event,
+                            false,
+                            'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                            'a0e02610-fe4e-11ea-951e-b77b877a367b',
+                            'Edge Macro', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
+                    <div class="pricing-square-item">Up to 200 Devices</div>
+                    <div class="pricing-square-item">Up to 200 Assets</div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
+                        Optional support
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
+                        Tiered discounts
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl">
-                    <div class="pricing-square">
-                        <h2>Mega</h2>
-                        <div class="pricing-square-description">
-                            <p>Unlimited Devices and Assets</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $59
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <button id="Pricing_Edge_PayAsYouGo_Mega" class="button btn-pricing gtm_button"
-                                onClick="getLicense(event,
-                                false,
-                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
-                                '639fc7f0-da99-11ec-b9ac-0736fadd7ddd',
-                                'Edge Mega', null, false)">
-                                Get your license
-                            </button>
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-limits">
-                            Unlimited Devices and Assets
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
-                            Optional support
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
-                            Tiered discounts
-                        </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                <div class="pricing-square unset-height">
+                    <h2>Mega</h2>
+                    <div class="pricing-square-description">
+                        <p>Unlimited Devices and Assets</p>
                     </div>
-                </div> 
+                    <h4 class="pricing-square-price">
+                        $59
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <button id="Pricing_Edge_PayAsYouGo_Mega" class="button btn-pricing gtm_button"
+                            onClick="getLicense(event,
+                            false,
+                            'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                            '639fc7f0-da99-11ec-b9ac-0736fadd7ddd',
+                            'Edge Mega', null, false)">
+                            Get your license
+                        </button>
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-compatibility"><b>Compatible with TB PE Server</b></div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-limits">
+                        Unlimited Devices and Assets
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-optional-support">
+                        Optional support
+                    </div>
+                    <div class="pricing-square-item" data-faq-id="edge-pay-as-you-go-bulk-discount">
+                        Tiered discounts
+                    </div>
+                    <div class="pricing-square-item"><b>White-labeling</b></div>
+                </div>
            </div>
         </div>
         <div class="pricing-section pricing-perpetual" id="perpetual">
@@ -1615,7 +1603,7 @@ selfManagedPlan:
                         <h4 class="pricing-square-price">
                             $499
                         </h4>
-                        <div class="row justify-content-center">
+                        <div>
                             <button id="Pricing_Edge_Perpetual_EdgePerpetualFallbackLicense" class="button btn-pricing gtm_button" 
                                 onClick="getLicense(event,
                                 true,
@@ -1644,9 +1632,9 @@ selfManagedPlan:
     </div>
  </div>  
 </div>
-<div id="tbmq" class="pricing-content" style="display: none; margin-bottom: 12vh">
+<div id="tbmq" class="pricing-content" style="display: none;">
     <div class="container">
-        <div class="pricing-content-header row not-reverse-column">
+        <div class="pricing-content-header">
             <div class="pricing-content-description always-display active col-lg-6">
               <h2>Your private MQTT broker instance</h2>
               <div class="pricing-content-details">
@@ -1667,113 +1655,105 @@ selfManagedPlan:
         </div>
         <div class="pricing-div">
             <div class="pricing-section tbmq always-display active">
-               <div class="row justify-content-center">
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
-                    <div class="pricing-square">
-                        <h2>Launch</h2>
-                        <div class="pricing-square-description">
-                            <p>Suitable for pilots and early stage deployments.</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $199
-                            <span>/month</span>
-                        </h4>
-                        <h4 class="pricing-square-price hidden">
-                            $179
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20TBMQ">
-                                Get Started
-                                <span class="visually-hidden">to help you with your TBMQ Launch plan.</span>
-                            </a>
-                        </div>
-                        <div class="pricing-square-item highlight">2 000 sessions</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">1 000 total msg/sec</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">5 integrations</div>
-                        <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item">100GB of free monthly traffic</div>
-                        <div class="pricing-square-item plus-icon highlight">$0.15/GB for exceeding traffic</div>
+               <div class="cards-row flex-square stretch">
+                <div class="pricing-square unset-height">
+                    <h2>Launch</h2>
+                    <div class="pricing-square-description">
+                        <p>Suitable for pilots and early stage deployments.</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $199
+                        <span>/month</span>
+                    </h4>
+                    <h4 class="pricing-square-price hidden">
+                        $179
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <a id="Pricing_TBMQ_Launch" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Launch%20plan%20for%20TBMQ">
+                            Get Started
+                            <span class="visually-hidden">to help you with your TBMQ Launch plan.</span>
+                        </a>
+                    </div>
+                    <div class="pricing-square-item highlight">2 000 sessions</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">1 000 total msg/sec</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">5 integrations</div>
+                    <div class="pricing-square-item">99.9% uptime guarantee</div>
+                    <div class="pricing-square-item">100GB of free monthly traffic</div>
+                    <div class="pricing-square-item plus-icon highlight">$0.15/GB for exceeding traffic</div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
-                    <div class="pricing-square">
-                        <h2>Growth</h2>
-                        <div class="pricing-square-description">
-                            <p>Perfect for fast-growing deployments — adds capacity as you expand.</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $349
-                            <span>/month</span>
-                        </h4>
-                        <h4 class="pricing-square-price hidden">
-                            $314
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Growth%20plan%20for%20TBMQ">
-                                Get Started
-                                <span class="visually-hidden">to help you with your TBMQ Growth plan.</span>
-                            </a>
-                        </div>
-                        <div class="pricing-square-item highlight">4 000 sessions</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">2 000 total msg/sec</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">10 integrations</div> 
-                        <div class="pricing-square-item">99.9% uptime guarantee</div>
-                        <div class="pricing-square-item">200GB of free monthly traffic</div>
-                        <div class="pricing-square-item plus-icon highlight" >$0.15/GB for exceeding traffic</div>
+                <div class="pricing-square unset-height">
+                    <h2>Growth</h2>
+                    <div class="pricing-square-description">
+                        <p>Perfect for fast-growing deployments — adds capacity as you expand.</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $349
+                        <span>/month</span>
+                    </h4>
+                    <h4 class="pricing-square-price hidden">
+                        $314
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <a id="Pricing_TBMQ_Growth" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Growth%20plan%20for%20TBMQ">
+                            Get Started
+                            <span class="visually-hidden">to help you with your TBMQ Growth plan.</span>
+                        </a>
+                    </div>
+                    <div class="pricing-square-item highlight">4 000 sessions</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">2 000 total msg/sec</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">10 integrations</div> 
+                    <div class="pricing-square-item">99.9% uptime guarantee</div>
+                    <div class="pricing-square-item">200GB of free monthly traffic</div>
+                    <div class="pricing-square-item plus-icon highlight" >$0.15/GB for exceeding traffic</div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
-                    <div class="pricing-square">
-                        <h2>Scale</h2>
-                        <div class="pricing-square-description">
-                            <p>Designed for mission-critical, high-scale workloads.</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $999
-                            <span>/month</span>
-                        </h4>
-                        <h4 class="pricing-square-price hidden">
-                            $899
-                            <span>/month</span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Scale%20plan%20for%20TBMQ">
-                                Get Started
-                                <span class="visually-hidden">to help you with your TBMQ Scale plan.</span>
-                            </a>
-                        </div>
-                        <div class="pricing-square-item highlight">20 000 sessions</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">10 000 total msg/sec</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">50 integrations</div>
-                        <div class="pricing-square-item">99.95% uptime guarantee</div>
-                        <div class="pricing-square-item">1TB of free monthly traffic</div>
-                        <div class="pricing-square-item plus-icon highlight">$0.15/GB for exceeding traffic</div>
+                <div class="pricing-square unset-height">
+                    <h2>Scale</h2>
+                    <div class="pricing-square-description">
+                        <p>Designed for mission-critical, high-scale workloads.</p>
                     </div>
+                    <h4 class="pricing-square-price">
+                        $999
+                        <span>/month</span>
+                    </h4>
+                    <h4 class="pricing-square-price hidden">
+                        $899
+                        <span>/month</span>
+                    </h4>
+                    <div>
+                        <a id="Pricing_TBMQ_Scale" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&tbmqorder&message=I%20am%20interested%20in%20Scale%20plan%20for%20TBMQ">
+                            Get Started
+                            <span class="visually-hidden">to help you with your TBMQ Scale plan.</span>
+                        </a>
+                    </div>
+                    <div class="pricing-square-item highlight">20 000 sessions</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">10 000 total msg/sec</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">50 integrations</div>
+                    <div class="pricing-square-item">99.95% uptime guarantee</div>
+                    <div class="pricing-square-item">1TB of free monthly traffic</div>
+                    <div class="pricing-square-item plus-icon highlight">$0.15/GB for exceeding traffic</div>
                 </div>
-                <div class="col-md-6 col-lg-6 col-gt-xl mb-4">
-                    <div class="pricing-square">
-                        <h2>Enterprise</h2>
-                        <div class="pricing-square-description">
-                            <p>Tailored architecture, pricing, and SLAs to fit your business.</p>
-                        </div>
-                        <h4 class="pricing-square-price always-display">
-                            Custom <span data-faq-id="tbmq-enterprise-unique-features" data-faq-link-size="70%"></span>
-                        </h4>
-                        <div class="row justify-content-center">
-                            <a id="Pricing_TBMQ_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&message=I%20am%20interested%20in%20Enterprise%20plan%20for%20TBMQ">
-                                Contact Us
-                                <span class="visually-hidden">to help you with your TBMQ Enterprise plan.</span>
-                            </a>
-                        </div>
-                        <div class="pricing-square-item highlight">Unlimited sessions</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">Unlimited total msg/sec</div>
-                        <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">Unlimited integrations</div>
-                        <div class="pricing-square-item">Custom SLA</div>
-                        <div class="pricing-square-item">Unlimited monthly traffic</div>
-                        <div class="pricing-square-item plus-icon highlight">Everything you need to scale</div>
+                <div class="pricing-square unset-height">
+                    <h2>Enterprise</h2>
+                    <div class="pricing-square-description">
+                        <p>Tailored architecture, pricing, and SLAs to fit your business.</p>
                     </div>
+                    <h4 class="pricing-square-price always-display">
+                        Custom <span data-faq-id="tbmq-enterprise-unique-features" data-faq-link-size="70%"></span>
+                    </h4>
+                    <div>
+                        <a id="Pricing_TBMQ_Enterprise" class="button btn-pricing gtm_button" href="/docs/contact-us/?subject=TBMQ&message=I%20am%20interested%20in%20Enterprise%20plan%20for%20TBMQ">
+                            Contact Us
+                            <span class="visually-hidden">to help you with your TBMQ Enterprise plan.</span>
+                        </a>
+                    </div>
+                    <div class="pricing-square-item highlight">Unlimited sessions</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">Unlimited total msg/sec</div>
+                    <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">Unlimited integrations</div>
+                    <div class="pricing-square-item">Custom SLA</div>
+                    <div class="pricing-square-item">Unlimited monthly traffic</div>
+                    <div class="pricing-square-item plus-icon highlight">Everything you need to scale</div>
                 </div>
                </div>
             </div>

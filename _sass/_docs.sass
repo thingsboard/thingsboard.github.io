@@ -566,7 +566,7 @@
         input[type="checkbox"]:checked::before
           transform: scale(1)
 
-td.item.item-pe, p.item.item-pe, span.item-pe, span.item-ce
+td.item.item-pe, p.item.item-pe, span.item-pe, span.item-ce, span.item-edge
   &::after
     content: "PE"
     font-size: 12px
@@ -584,7 +584,12 @@ span.item-pe
   &::after
     color: #1F8B4D
 
-.item-ce.product-label-padding, .item-pe.product-label-padding
+span.item-edge
+  &::after
+    color: #009688
+    content: "EDGE"
+
+.item-ce.product-label-padding, .item-pe.product-label-padding, .item-edge.product-label-padding
   padding-right: 6px
 
 // DOCS FEATURES CARDS

@@ -690,6 +690,9 @@
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
   redirect_from: []
+"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
+  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
+  redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
   redirect_from: []
@@ -2284,6 +2287,9 @@
 "/docs/paas/eu/user-guide/white-labeling/":
   url: "/docs/paas/eu/user-guide/white-labeling/"
   redirect_from: []
+"/docs/paas/eu/user-guide/widgets/cards/markdown-html-card/":
+  url: "/docs/paas/eu/user-guide/widgets/cards/markdown-html-card/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/widgets/map-widgets/":
   url: "/docs/paas/eu/user-guide/widgets/map-widgets/"
   redirect_from: []
@@ -2819,6 +2825,9 @@
   redirect_from: []
 "/docs/paas/user-guide/white-labeling/":
   url: "/docs/paas/user-guide/white-labeling/"
+  redirect_from: []
+"/docs/paas/user-guide/widgets/cards/markdown-html-card/":
+  url: "/docs/paas/user-guide/widgets/cards/markdown-html-card/"
   redirect_from: []
 "/docs/paas/user-guide/widgets/map-widgets/":
   url: "/docs/paas/user-guide/widgets/map-widgets/"
@@ -3894,7 +3903,8 @@
   redirect_from: []
 "/docs/pe/user-guide/ui/security-settings/":
   url: "/docs/pe/user-guide/ui/security-settings/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/pe/user-guide/ui/jwt-security-settings/"
 "/docs/pe/user-guide/ui/slack-settings/":
   url: "/docs/pe/user-guide/ui/slack-settings/"
   redirect_from: []
@@ -3930,6 +3940,9 @@
   url: "/docs/pe/user-guide/white-labeling/"
   redirect_from:
   - "/docs/user-guide/white-labeling/"
+"/docs/pe/user-guide/widgets/cards/markdown-html-card/":
+  url: "/docs/pe/user-guide/widgets/cards/markdown-html-card/"
+  redirect_from: []
 "/docs/pe/user-guide/widgets/map-widgets/":
   url: "/docs/pe/user-guide/widgets/map-widgets/"
   redirect_from: []
@@ -5466,7 +5479,6 @@
 "/docs/user-guide/ui/security-settings/":
   url: "/docs/user-guide/ui/security-settings/"
   redirect_from:
-  - "/docs/pe/user-guide/ui/jwt-security-settings/"
   - "/docs/user-guide/ui/jwt-security-settings/"
 "/docs/user-guide/ui/slack-settings/":
   url: "/docs/user-guide/ui/slack-settings/"
@@ -5498,6 +5510,9 @@
   redirect_from: []
 "/docs/user-guide/visualization/":
   url: "/docs/user-guide/visualization/"
+  redirect_from: []
+"/docs/user-guide/widgets/cards/markdown-html-card/":
+  url: "/docs/user-guide/widgets/cards/markdown-html-card/"
   redirect_from: []
 "/docs/user-guide/widgets/map-widgets/":
   url: "/docs/user-guide/widgets/map-widgets/"
