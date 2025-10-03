@@ -151,22 +151,22 @@ edit-mode:
 add-new-widget:
     0:
         image: /images/user-guide/widgets/overview/add-new-dashboard-1-ce.png
-        title: 'Open your dashboard and enter edit mode;'
+        title: 'Open your dashboard and switch to <b>Edit mode</b>;'
     1:
         image: /images/user-guide/widgets/overview/add-new-dashboard-2-ce.png
-        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog box;'
+        title: 'Click the <b>+ Add widget</b> at the top of the screen. If this is your first widget on the dashboard, you can also click <b>Add new widget</b> in the center of the screen to open the Widget bundle dialog;'
     2:
         image: /images/user-guide/widgets/overview/add-new-dashboard-3-ce.png
-        title: 'Select a widget bundle, such as "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
+        title: 'Choose a <b>widget bundle</b> (for example, <b>Charts</b>). To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
-        title: 'Choose a widget, for instance, "Timeseries Line Chart," and click on it to open the "Add Widget" dialog window;'
+        title: 'Select a widget (for example, <b>Time series chart</b>) to open the <b>Add widget</b> dialog;'
     4:
         image: /images/user-guide/widgets/overview/add-new-dashboard-5-ce.png
-        title: 'Specify the data source, add the data key, and click the "Add" button. Finally, apply your changes;'
+        title: 'Specify the <b>data source</b>, add at least one <b>data key</b>, and click <b>Add</b>. Then <b>Apply changes</b>.'
     5:
         image: /images/user-guide/widgets/overview/add-new-dashboard-6-ce.png
-        title: 'Your first widget has been created.'
+        title: 'The widget is now created.'
 
 dashboard-toolbar-export:
     0:
