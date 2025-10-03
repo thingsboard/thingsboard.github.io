@@ -5,7 +5,7 @@ the cloud event is successfully pushed to persistent storage) or the `Failure` c
 
 This node is used exclusively on edge instances to synchronize data from edge to cloud. Most configuration changes made on edge instances (such as updating device names or
 relations) are automatically synchronized with the cloud. However, certain types of data synchronization would be resource-intensive if done automatically - for
-example, streaming all local telemetry data to the cloud. This node enables manual, selective synchronization of such data, allowing you to explicitly control
+example, streaming all local telemetry data to the cloud. This node enables selective synchronization of such data, allowing you to explicitly control
 which messages are pushed to the cloud.
 
 When a message arrives at this node, it's converted into a cloud event and saved to the local edge database in a cloud queue. The actual delivery to the cloud happens
@@ -66,18 +66,11 @@ The configuration specifies the default attribute scope for attribute-related me
 The node supports the following message types:
 
 - `POST_TELEMETRY_REQUEST` - Time series data posted to the device
+- `TIMESERIES_UPDATED` - Time series data has been updated
+- `TIMESERIES_UPDATED` - Time series data has been deleted
 - `POST_ATTRIBUTES_REQUEST` - Attribute data posted to the device
 - `ATTRIBUTES_UPDATED` - Device attributes have been updated
 - `ATTRIBUTES_DELETED` - Device attributes have been deleted
-- `TIMESERIES_UPDATED` - Time series data has been updated
-- `ALARM` - Alarm created, updated, or cleared
-- `ALARM_ACK` - Alarm acknowledged
-- `ALARM_CLEAR` - Alarm cleared
-- `CONNECT_EVENT` - Device connected
-- `DISCONNECT_EVENT` - Device disconnected
-- `ACTIVITY_EVENT` - Device activity detected
-- `INACTIVITY_EVENT` - Device inactivity detected
-- `TO_SERVER_RPC_REQUEST` - RPC request from device to server
 
 ## Message processing algorithm
 

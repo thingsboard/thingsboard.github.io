@@ -3,7 +3,7 @@ the edge event is successfully pushed to persistent storage) or the `Failure` co
 
 ## Usage
 
-This node enables manual, selective synchronization of data from cloud to edge instances. It is designed for scenarios where automatic synchronization of all data would be
+This node enables selective synchronization of data from cloud to edge instances. It is designed for scenarios where automatic synchronization of all data would be
 resource-intensive or unnecessary. For example, edge instances typically don't need the full historical telemetry from all devices - they only need specific data relevant to their
 local operations. Using this node, you can explicitly control which messages are synchronized to which edges, avoiding the overhead of transferring large volumes of data that won't
 be used.
