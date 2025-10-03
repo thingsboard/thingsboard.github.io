@@ -12,7 +12,7 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 Run the following command in the terminal to install the updated package:
 
 ```bash
-sudo yum install -y ./python3-thingsboard-gateway.rpm
+sudo dnf install -y ./python3-thingsboard-gateway.rpm
 ```
 {: .copy-code}
 

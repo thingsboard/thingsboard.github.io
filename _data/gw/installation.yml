@@ -5,7 +5,7 @@ toc:
   path: /docs/iot-gateway/installation/
 - title: IoT Gateway installation on Ubuntu (DEB)
   path: /docs/iot-gateway/install/deb-installation/
-- title: IoT Gateway installation on CentOS/RHEL (RPM)
+- title: IoT Gateway installation on AlmaLinux/RHEL (RPM)
   path: /docs/iot-gateway/install/rpm-installation/
 - title: IoT Gateway installation using Docker (Linux and Mac OS)
   path: /docs/iot-gateway/install/docker-installation/

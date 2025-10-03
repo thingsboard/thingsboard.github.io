@@ -27,12 +27,12 @@ iotGateway:
     imageWidth: 36
     imageHeight: 36
   3:
-    title: CentOS/RHEL Server
-    description: This guide will help you to install ThingsBoard IoT Gateway on CentOS or RHEL.
+    title: AlmaLinux/RHEL Server
+    description: This guide will help you to install ThingsBoard IoT Gateway on AlmaLinux or RHEL.
     link: /docs/iot-gateway/install/rpm-installation/
-    icon: /images/install/platform/centos-redhat.svg
-    alt: CentOS and Red Hat logos
-    imageTitleAttribute: Install ThingsBoard Gateway on CentOS, RHEL.
+    icon: /images/install/platform/alma-linux-redhat.svg
+    alt:  AlmaLinux and Red Hat logos
+    imageTitleAttribute: Install ThingsBoard Gateway on AlmaLinux, RHEL.
     imageWidth: 94
     imageHeight: 36
   4:
