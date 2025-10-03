@@ -24,8 +24,8 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [log](/docs/user-guide/rule-engine-2-0/nodes/action/log) — executes a user-defined script to transform message data, metadata, and type into a custom formatted string and logs that string to the ThingsBoard log file.
 - [math function](/docs/user-guide/rule-engine-2-0/nodes/action/math-function) — The rule node applies math function and saves the result into the message and/or database.
 - [message count](/docs/user-guide/rule-engine-2-0/nodes/action/message-count) — counts incoming messages over a specified time interval and outputs a message containing the count for each interval.
-- [push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud) — Sends messages from the edge instance to the cloud platform.
-- [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — Sends messages from the cloud platform to an edge instance.
+- <span class="item-edge product-label-padding">[push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud)</span> — Sends messages from the edge instance to the cloud platform.
+- [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — sends the incoming message from cloud ThingsBoard instance to ThinsBoard Edge instance for further processing on Edge.
 - <span class="item-pe product-label-padding">[remove from group](/docs/user-guide/rule-engine-2-0/nodes/action/remove-from-group)</span> — removes the message originator entity from an entity group found by group name pattern.
 - [rest call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rest-call-reply) — sends the incoming message data as an HTTP response to a REST API call made to the rule engine.
 - [rpc call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply) — sends the incoming message data as a [reply]((/docs/{{docsPrefix}}user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial)) to a [Remote Procedure Call (RPC)](/docs/{{docsPrefix}}user-guide/rpc){:target="_blank"} from a device.
