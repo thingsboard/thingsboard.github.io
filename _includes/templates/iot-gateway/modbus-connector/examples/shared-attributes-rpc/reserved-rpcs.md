@@ -20,7 +20,7 @@ The server available at `0.0.0.0:5021`. The server has the following structure:
 | -------------- | --------------- | ---------- | ---------- |
 
 We are interested in register `1`, which is a coil register. We will use this register to set the value of the
-telemetry parameter. The register is of type `bit`, so we will use `bit` type for the telemetry parameter. The 
+telemetry parameter. The register is of type `bits`, so we will use `bits` type for the telemetry parameter. The 
 configuration for this telemetry will look like this:
 
 ```json
@@ -44,7 +44,7 @@ get type=bits;functionCode=1;objectsCount=1;address=1;
 Response:
 
 ```json
-{"result": false}
+{"result":{"value":false}}
 ```
 
 ![image](/images/gateway/modbus-connector/examples/reserved-rpc-result-1.png)
@@ -59,29 +59,31 @@ The RPC Debug Terminal is used only for example purpose, so you can use any othe
 To set the value of the relay register and turn it on, run the query:
 
 ```bash
-set type=bit;functionCode=5;objectsCount=1;address=1;value=1;
+set type=bits;functionCode=5;objectsCount=1;address=1;value=1;
 ```
 
 Response:
 
 ```json
-{"result":  {"success":true}}
+{"result":{"value":"1"}}
 ```
 
-And as you can see, from the screenshot below, the relay telemetry value has changed to `true`:
+And as you can see, from the screenshot below, the relay telemetry value has changed to `1`:
 
 ![image](/images/gateway/modbus-connector/examples/reserved-rpc-result-2.png)
 
-Also, let’s check the value of the relay telemetry again:
+Also, let’s check the value of the relay telemetry again: it is `true` 
+now because, in the Modbus connector, booleans come from integers — `0` = `false`, `1` = `true` 
+(any non-zero is `true`) — so a register value of `1` is reported as `true`.
 
 ```bash
-get type=bit;functionCode=3;objectsCount=1;address=1;
+get type=bits;functionCode=3;objectsCount=1;address=1;
 ```
 
 Response:
 
 ```json
-{"result":  true}
+{"result":{"value":true}}
 ```
 
 ![image](/images/gateway/modbus-connector/examples/reserved-rpc-result-3.png)
