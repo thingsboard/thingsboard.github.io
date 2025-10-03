@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: push to edge
-description: Sends messages from the cloud platform to an edge instance.
+description: Sends the incoming message from cloud ThingsBoard instance to ThinsBoard Edge instance for further processing on Edge.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

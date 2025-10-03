@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: rpc call request
-description: Sends an RPC to a device.
+description: Sends a Remote Procedure Call (RPC) to a device, returning the device's response as outgoing message data.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
