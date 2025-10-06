@@ -1,14 +1,24 @@
 * TOC
 {:toc}
 
-**TBMQ Professional Edition** includes support for Role-Based Access Control (RBAC).
+**Role-Based Access Control (RBAC)** in TBMQ PE provides a structured and secure way to manage access to broker features 
+and operations through predefined user roles. 
+This system enables administrators to grant appropriate permissions to users based on their role within the organization.
 
-With RBAC, you grant permissions to users according to their role in the organization. This streamlines authorization, strengthens security by limiting access.
+### Available Roles
 
-At the moment, you can assign one of two predefined roles when creating a user (choose it from the **Role** dropdown):
+TBMQ PE introduces two predefined user roles:
 
-* **Administrator**
-Administrators have unrestricted access to all TBMQ features and resources.
+* **Admin**: Full access to all broker features.
+* **Viewer**: Read-only access to all broker data — without the ability to perform changes or administrative actions.
 
-* **Viewer**
-Viewers have read-only access to all TBMQ data and configuration.
+### Benefits
+
+* **Enhanced security**: Limit access to sensitive broker features based on user responsibilities.
+* **Simplified administration**: Easily assign predefined roles to users without managing granular permissions.
+* **Compliance and auditing**: Support best practices in access control by separating duties between administrative and observability roles.
+
+### Use Cases
+
+* Assign the **Admin** role to team members responsible for configuring or maintaining the broker environment.
+* Grant the **Viewer** role to operations or monitoring personnel who need visibility into system health and client behavior without risking configuration changes.
