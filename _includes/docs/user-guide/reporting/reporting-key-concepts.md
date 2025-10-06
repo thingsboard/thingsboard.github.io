@@ -72,7 +72,7 @@ Templates are made up of customizable components, each serving as a visual or fu
 - **Tables** - to display **structured data (such as alarms, entities, and their telemetry) in table format**. Each table&#39;s style can be customized via the layout configuration tab — adjust column widths, font sizes, borders, and pagination.
 - [**Subreports**](/docs/{{docsPrefix}}user-guide/reporting/subreport/){:target="_blank"} - a report template as a modular section that can be embedded inside the current report.
 - [**Dashboards**](/docs/{{docsPrefix}}user-guide/reporting/embedding-dashboards-widgets/){:target="_blank"} - embeds a screenshot of the specified dashboard into the report as an image.
-- [**Charts**](/docs/{{docsPrefix}}user-guide/reporting/charts-in-reporting/){:target="_blank"} - to visualize time series data with configurable **line and bar charts**, or to present the latest values using different types of **pie and doughnut charts**.
+- [**Charts**](/docs/{{docsPrefix}}user-guide/reporting/embedding-charts/){:target="_blank"} - to visualize time series data with configurable **line and bar charts**, or to present the latest values using different types of **pie and doughnut charts**.
 - **Branding** - for adding **logos**, **headers**, and **footers** to customize the look and feel of reports.
 - **Reporting Info & Layout** - supporting components (**page number**, **created time**, **divider**, **page break**) to structure the report and display system metadata.
 

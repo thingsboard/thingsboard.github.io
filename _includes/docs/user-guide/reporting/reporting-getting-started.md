@@ -129,7 +129,12 @@ In fact, we&#39;ll create two separate charts—one for temperature, one for hum
 - Drag the <b>Line chart</b> component into the content area of your report.
 - By default, the time window shows the last day of data, aggregated by 1 hour.
 - Set the <b>All devices</b> entity alias as the <b>Datasource</b>.
-- Keep the telemetry key <b>temperature</b>, but change the <b>label</b> to **${entityName} temperature**.
+- Keep the telemetry key <b>temperature</b>, but change the <b>label</b> to 
+  ```
+  ${entityName} temperature
+  ```
+  {:.copy-code}
+
 - Configure the Y axes:
   - Label: **Temperature** 
   - Min: **15**
@@ -147,7 +152,12 @@ In fact, we&#39;ll create two separate charts—one for temperature, one for hum
 
 - Add another <b>Line chart</b> component.
 - Use the same data source: <b>All devices</b>.
-- Change the telemetry key to <b>humidity</b>, units <b>%</b>.
+- Change the telemetry key to <b>humidity</b>, units <b>%</b> , and change the <b>label</b> to
+  ```
+  ${entityName} humidity
+  ```
+  {:.copy-code}
+
 - Configure the Y axes:
   - Label: **Humidity**
   - Units: **%**

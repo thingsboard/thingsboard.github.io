@@ -26,6 +26,13 @@ reporting-getting-started-heading:
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-2-pe.png
         title: 'In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template: "<b>Daily Devices Alarm Report</b>". If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out. Once done, click "<b>Apply</b>" to save the component.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-3-pe.png
+        title: 'First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report component library</b> and drag it into the <b>header content area</b> of your report.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-4-pe.png
+        title: 'In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template: "<b>Daily Devices Alarm Report</b>". If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out. Once done, click "<b>Apply</b>" to save the component.'
+
 
 reporting-getting-started-rich-text:
     0:
@@ -96,6 +103,9 @@ reporting-getting-started-charts-2:
     3:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-9-pe.png
         title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
+    4:
+      image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-10-pe.png
+      title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
 
 reporting-getting-started-save-report:
     0:
@@ -109,6 +119,8 @@ reporting-getting-started-generate-test-report:
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-generate-test-report-2-pe.png
         title: 'The system will generate a test report showing all your devices along with their alarms.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-generate-test-report-3-pe.png
 
 scheduler-event-customer-a-1:
     0:
