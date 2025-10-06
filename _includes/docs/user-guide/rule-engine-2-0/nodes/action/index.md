@@ -22,7 +22,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [gps geofencing events](/docs/user-guide/rule-engine-2-0/nodes/action/gps-geofencing-events) — Produces incoming messages by GPS based parameters.
 - <span class="item-pe product-label-padding">[integration downlink](/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink)</span> — pushes the incoming message as a downlink message to a selected integration.
 - [log](/docs/user-guide/rule-engine-2-0/nodes/action/log) — executes a user-defined script to transform message data, metadata, and type into a custom formatted string and logs that string to the ThingsBoard log file.
-- [math function](/docs/user-guide/rule-engine-2-0/nodes/action/math-function) — The rule node applies math function and saves the result into the message and/or database.
+- [math function](/docs/user-guide/rule-engine-2-0/nodes/action/math-function) — performs mathematical operations on numeric data retrieved from multiple sources (constants, message, metadata, attributes, or time series) and saves results to the message or database.
 - [message count](/docs/user-guide/rule-engine-2-0/nodes/action/message-count) — counts incoming messages over a specified time interval and outputs a message containing the count for each interval.
 - <span class="item-edge product-label-padding">[push to cloud](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud)</span> — sends the incoming message from ThingsBoard Edge instance to cloud ThinsBoard instance for further processing.
 - [push to edge](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge) — sends the incoming message from cloud ThingsBoard instance to ThinsBoard Edge instance for further processing on Edge.
