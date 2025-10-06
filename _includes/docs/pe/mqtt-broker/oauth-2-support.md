@@ -3,8 +3,8 @@
 
 ## Overview
 
-TBMQ Professional Edition allows you to provide Single Sign-On functionality for your customers and automatically create tenants, customers, or sub customers using external user management platforms, that supports the OAuth 2.0 protocol.  
-A list of platforms that supports the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Keycloak](#login-with-keycloak), [Okta](/docs/user-guide/oauth/okta/){:target="_blank"}, [Azure](/docs/user-guide/oauth/azure/){:target="_blank"}, etc.   
+TBMQ Professional Edition allows you to provide Single Sign-On functionality for your users and automatically create administrators or viewers using external user management platforms that support the OAuth 2.0 protocol.  
+A list of platforms that support the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Keycloak](#login-with-keycloak), [Okta](/docs/user-guide/oauth/okta/){:target="_blank"}, [Azure](/docs/user-guide/oauth/azure/){:target="_blank"}, etc.   
 
 ## OAuth 2.0 authentication flow
 
