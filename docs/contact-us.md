@@ -142,8 +142,7 @@ notitle: "true"
         });
     });
 </script>
-<form id="ContactUs" method="post" 
-    class="contact-form gtm_form" onsubmit="return validateContactForm(this)" novalidate>
+<form id="ContactUs" method="post" class="contact-form gtm_form" onsubmit="return validateContactForm(this)" novalidate>
     <h1 class="contact-us-title">Contact Us</h1>
     <fieldset>
         <div class="form-section">

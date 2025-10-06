@@ -2,8 +2,7 @@
 layout: development-services
 title: "Custom IoT Development of Scalable IoT Solutions"
 notitle: "true"
-description: "Fast delivery of scalable IoT solutions with fixed cost and timeline. ThingsBoard offers custom IoT
-development services, delivering high-quality Internet of Things solutions tailored to your needs."
+description: "Fast delivery of scalable IoT solutions with fixed cost and timeline. ThingsBoard offers custom IoT development services, delivering high-quality Internet of Things solutions tailored to your needs."
 ---
 
 <section class="hero light-text">
@@ -1912,7 +1911,7 @@ development services, delivering high-quality Internet of Things solutions tailo
     }
 
     (function(){
-        function protectForm(formSelector) {    
+        function protectForm(formSelector) {
             const form = document.querySelector(formSelector);
             if (!form) return;
 
