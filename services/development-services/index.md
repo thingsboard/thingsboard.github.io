@@ -1899,7 +1899,7 @@ development services, delivering high-quality Internet of Things solutions tailo
         handleGTMFormID(index);
         const timeInput = modal.querySelector('.form-rendered-at');
         if(timeInput){
-            $(timeInput).val(parseInt(Math.floor(Date.now() / 1000), 10));
+            $(timeInput).val(Math.floor(Date.now() / 1000));
         }
         modal.style.display = "flex";
     }
@@ -2055,8 +2055,7 @@ development services, delivering high-quality Internet of Things solutions tailo
     jqueryDefer(
         function () {
             var $contactForm =  jQuery('.developmentServicesContactUsForm');
-            // $contactForm.attr('action', 'http://localhost:8080');
-            // $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
             $( document ).ready(function() {
                 populateUTMandClientIdFields();
                  $contactForm.find('.form-element .form-control').addClass("input--empty");
