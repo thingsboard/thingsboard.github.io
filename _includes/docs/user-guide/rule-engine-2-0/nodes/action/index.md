@@ -18,6 +18,7 @@ Action nodes allow you to automate your workflows by executing operations based 
 - [device profile](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile) — evaluates incoming messages against [alarm rules](/docs/{{docsPrefix}}/user-guide/device-profiles/#alarm-rules){:target="_blank"} defined in the device profile of the message originator and creates, updates, or clears alarms based on the evaluation results.
 - [device state](/docs/user-guide/rule-engine-2-0/nodes/action/device-state) — sends device connectivity events for the message originator.
 - <span class="item-pe product-label-padding">[generate dashboard report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-dashboard-report)</span> — generates a screenshot of a dashboard with specific configuration applied.
+- <span class="item-pe product-label-padding">[generate report](/docs/user-guide/rule-engine-2-0/nodes/action/generate-report)</span> — generates a report based on a report template and sends notifications to configured targets.
 - [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator) — generates messages at configurable time intervals using a custom script function.
 - [gps geofencing events](/docs/user-guide/rule-engine-2-0/nodes/action/gps-geofencing-events) — Produces incoming messages by GPS based parameters.
 - <span class="item-pe product-label-padding">[integration downlink](/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink)</span> — pushes the incoming message as a downlink message to a selected integration.
