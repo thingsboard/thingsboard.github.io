@@ -3,285 +3,289 @@
 
 ## Overview
 
-TBMQ Professional Edition allows you to provide Single Sign-On functionality for your users and automatically create Administrators or Viewers using external user management platforms that support the OAuth 2.0 protocol.  
-A list of platforms that support the OAuth 2.0 protocol: [Google](#login-with-google), [Auth0](#login-with-auth0), [Keycloak](#login-with-keycloak), [Okta](https://www.okta.com/){:target="_blank"}, [Azure](https://portal.azure.com/){:target="_blank"}, etc.   
+TBMQ Professional Edition allows you to provide Single Sign-On (SSO) functionality for your users and automatically create Administrators or Viewers using external user management platforms that support the OAuth 2.0 protocol.
+Examples of platforms that support OAuth 2.0 include: [Google](#login-with-google), [Auth0](#login-with-auth0), [Keycloak](#login-with-keycloak), [Okta](https://www.okta.com/){:target="_blank"}, [Azure](https://portal.azure.com/){:target="_blank"}, etc.
 
 ## OAuth 2.0 authentication flow
 
-TBMQ supports the Authorization Code grant type to exchange an authorization code for an access token. 
-Once the user returns to the TBMQ client via redirect URL, the platform will get the authorization code from the URL and will use it to request an access token from the external user management platform.
-Using the [basic mapper](#basic-mapper) or [custom mapper](#custom-mapper), external user info object will be converted from external platform into TBMQ internal OAuth 2.0 user. 
-After this, the regular TBMQ authorization flow will happen.
+TBMQ supports the Authorization Code grant type to exchange an authorization code for an access token.
+Once the user is redirected back to the TBMQ client, the platform retrieves the authorization code from the URL and uses it to request an access token from the external user management platform.
+Using the [basic mapper](#basic-mapper) or [custom mapper](#custom-mapper), the external user info object is converted from the external platform into a TBMQ internal OAuth 2.0 user.
+After this, the regular TBMQ authorization flow takes place.
 
 ## Setting up authentication via an external provider
 
-OAuth 2.0 clients are configured separately from the domain allowing to reuse of the configured client and making the settings clearer.
-To use authentication through an external provider, first configure OAuth 2.0 client with all necessary credentials. 
-After that, add a new domain or use an existing one and update OAuth 2.0 client list with new oauth 2.0 client.
+OAuth 2.0 clients are configured separately from domains, allowing reuse of the configured client and making the settings clearer.
+To use authentication through an external provider, first configure an OAuth 2.0 client with the necessary credentials.
+Then, either add a new domain or use an existing one, and update the OAuth 2.0 client list with the new client.
 
 ### Operations with domain
 
-**Adding domain**
+**Adding a domain**
 
 Follow these steps to add a new domain:
-- On the "Domains" tab of the "OAuth 2.0" page, click the "plus" icon to add new domain;
-- Provide your domain name and OAuth 2.0 client;
-- Click "Add" to finalize adding the domain.
+
+* On the "Domains" tab of the "OAuth 2.0" page, click the "plus" icon to add a new domain;
+* Provide your domain name and OAuth 2.0 client;
+* Click "Add" to finalize.
 
 {% include images-gallery.html imageCollection="adding-domain-1" %}
 
-**Editing domain**
+**Editing a domain**
 
 To update the settings for an existing domain, follow these steps:
 
-- Click on the domain to view its details;
-- Switch to editing mode by clicking the large orange button;
-- Make the required modifications;
-- Confirm and save your changes by clicking the "Apply changes" button.
+* Click on the domain to view its details;
+* Switch to editing mode by clicking the large orange button;
+* Make the required modifications;
+* Save your changes by clicking the "Apply changes" button.
 
 {% include images-gallery.html imageCollection="editing-domain-1" %}
 
-**Deleting domain**
+**Deleting a domain**
 
-To remove domain, following the steps:
+To remove a domain, follow these steps:
 
-- Click the "trash" icon in the domain's row you wish to remove;
-- Confirm the deletion by clicking "Yes".
+* Click the "trash" icon in the row of the domain you wish to remove;
+* Confirm the deletion by clicking "Yes".
 
 {% include images-gallery.html imageCollection="deleting-domain-1" %}
 
 ### Operations with OAuth 2.0 client
 
-**Adding OAuth 2.0 client**
+**Adding an OAuth 2.0 client**
 
 Follow these steps to add a new OAuth 2.0 client to TBMQ:
 
-- Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page, and click the "plus" icon to add a new OAuth 2.0 client;
-- Enter a descriptive title for the client;
-- Select the authentication provider from the dropdown menu;
-- Provide the Client ID and Client Secret obtained from your authentication provider;
-- Configure advanced settings as necessary;
-- Click "Add" to finalize the addition of the new OAuth 2.0 client.
+* Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page, and click the "plus" icon;
+* Enter a descriptive title for the client;
+* Select the authentication provider from the dropdown menu;
+* Provide the Client ID and Client Secret obtained from your authentication provider;
+* Configure advanced settings as necessary;
+* Click "Add" to finalize.
 
 {% include images-gallery.html imageCollection="adding-oauth2-client-1" %}
 
-**Editing OAuth 2.0 client**
+**Editing an OAuth 2.0 client**
 
-To update the settings for an existing OAuth 2.0 client, follow these steps:
+To update an existing OAuth 2.0 client:
 
-- Click on the OAuth 2.0 client to view its details;
-- Switch to editing mode by clicking the large orange button;
-- Make the required modifications;
-- Confirm and save your changes by clicking the "Apply changes" button.
+* Click on the client to view its details;
+* Switch to editing mode by clicking the large orange button;
+* Make the required modifications;
+* Save your changes by clicking the "Apply changes" button.
 
 {% include images-gallery.html imageCollection="editing-oauth2-client-1" %}
 
-**Deleting OAuth 2.0 client**
+**Deleting an OAuth 2.0 client**
 
-Remove clients that are no longer needed or are obsolete:
+To remove obsolete or unused clients:
 
-- Click the "trash" icon in the client's row you wish to remove;
-- Confirm the deletion by clicking "Yes".
+* Click the "trash" icon in the row of the client you wish to remove;
+* Confirm the deletion by clicking "Yes".
 
 {% include images-gallery.html imageCollection="deleting-oauth2-client-1" %}
 
 ## Login with Google
 
-In this sample, we will be using authentication via [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"}.
+In this example, we will use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"} for authentication.
 
-To map this external user information from Google and the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
-
-If [basic mapper](#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](#custom-mapper), so that you are able to add an implementation that fits your specific needs.
+To map external user information from Google to the OAuth platform, use the built-in [basic mapper](#basic-mapper).
+If the [basic mapper](#basic-mapper) does not fit your business needs, you can configure a [custom mapper](#custom-mapper) for more flexibility.
 
 ### Preparations
 
-To use Google OAuth 2.0 authentication platform for Login, you need to set up a project in the [Google API Console](https://console.developers.google.com/){:target="_blank"} to obtain OAuth 2.0 credentials.
+To use Google OAuth 2.0 authentication, you must set up a project in the [Google API Console](https://console.developers.google.com/){:target="_blank"} to obtain OAuth 2.0 credentials.
 
-Please, follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"} page or follow the steps below to configure the OAuth 2.0 Client.
-After completing the instructions above, you should have a new OAuth client with credentials consisting of a Client ID and a Client Secret.
+Follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect){:target="_blank"} page or the steps below to configure the OAuth 2.0 client.
+After completing this setup, you will have a Client ID and a Client Secret.
 
-- Go to the "Credentials" page in the left menu and select "OAuth client ID" from the "Create credentials" dropdown menu;
-- Enter a OAuth client name, and add the TBMQ redirect URI, to the "Authorized Redirect URIs" section using the format:
+* Go to the "Credentials" page in the left menu and select "OAuth client ID" from the "Create credentials" dropdown;
+* Enter an OAuth client name and add the TBMQ redirect URI in the "Authorized Redirect URIs" section using the format:
 
 ```
 http(s)://domain:port/login/oauth2/code/
 ```
 {: .copy-code}
 
-* where under the domain, please, specify the current domain of yours and for the port specify the port to have an HTTP access to the TBMQ instance of yours.
-For the example reasons, my domain is *my.thingsboard.instance*.
+* Replace `domain` with your TBMQ domain and specify the port used for HTTP access.
+  For example, if your domain is *my.thingsboard.instance*:
 
 ```
 https://my.thingsboard.instance/login/oauth2/code/
 ```
 
-- Click "Create". 
- 
-OAuth client created. You now have credentials consisting of a *Client ID* and a *Client secret*.
+* Click "Create".
+
+The OAuth client is now created. You have credentials consisting of a *Client ID* and a *Client Secret*.
 
 {% include images-gallery.html imageCollection="google-credentials-for-oauth-1" %}
 
 ### Configuring Google as an OAuth 2.0 authentication provider in TBMQ
 
-To configure OAuth 2.0 authentication in TBMQ via Google, follow the steps below:
+To configure OAuth 2.0 authentication in TBMQ via Google, follow these steps:
 
-- Login to your TBMQ instance;
-- Go to the "OAuth 2.0" page of the "Security" section;
-- While on the "Domains" tab, click the "plus" icon;
-- Enter your domain name or IP address of your TBMQ instance;
-- Click "Create new" in the "OAuth 2.0 clients" section to add a new one.
+* Log in to your TBMQ instance;
+* Go to the "OAuth 2.0" page in the "Security" section;
+* On the "Domains" tab, click the "plus" icon;
+* Enter your domain name or IP address of your TBMQ instance;
+* Click "Create new" in the "OAuth 2.0 clients" section to add one.
 
 {% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-1" %}
 
 Adding a new OAuth 2.0 client:
 
-- Enter "Google" as the title; 
-- The provider should be set to "Google";
-- Enter the "Client ID" and "Client secret" from the [Google API Console](https://console.developers.google.com/){:target="_blank"}.
+* Enter "Google" as the title;
+* Set the provider to "Google";
+* Enter the Client ID and Client Secret from the [Google API Console](https://console.developers.google.com/){:target="_blank"}.
 
-Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block: 
-- Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery){:target="_blank"} to see the list of up-to-date URLs like "Access Token URI", "Authorization URI", etc.;
-- Select "POST" as the client authentication method;
-- Turn on the "Allow user creation" option;
-- Add to the scope field: "email", "openid", and "profile".
+Then expand the "Advanced settings" section and configure the "General" block:
+
+* Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery){:target="_blank"} to see the latest URLs such as "Access Token URI" and "Authorization URI";
+* Select "POST" as the client authentication method;
+* Enable the "Allow user creation" option;
+* Add the following to the scope field: `email`, `openid`, `profile`.
 
 {% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-2" %}
 
 Go to the "Mapper" block:
-- Leave the mapper type "BASIC";
-- Specify role to be used;
-- Click "Add";
+
+* Keep the mapper type as "BASIC";
+* Specify the role to be assigned;
+* Click "Add".
 
 {% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-3" %}
 
-- The OAuth client is added successfully. Click "Add" again to confirm the addition of the domain.
+* The OAuth client has been added successfully. Click "Add" again to confirm the addition of the domain.
 
-A new domain has been added.
+A new domain has now been added.
 
 {% include images-gallery.html imageCollection="google-configuration-of-thingsboard-google-4" %}
 
 ### Sign in
 
-Now, navigate to the TBMQ login screen. We will see an additional "Login with Google" option. 
-Select one of your Google accounts. You are now logged into TBMQ using your Google email.
+Now, go to the TBMQ login screen. You will see a new "Login with Google" option.
+Select one of your Google accounts, and you will be logged into TBMQ using your Google email.
 
 {% include images-gallery.html imageCollection="login-with-google-1" %}
 
-Go to the "Users" page. There you will find the new user created.
+Go to the "Users" page to find the newly created user.
 
 {% include images-gallery.html imageCollection="login-with-google-2" %}
 
 ## Login with Auth0
 
-In this sample, we will configure **OAuth** using an external provider for authentication - [Auth0](https://auth0.com/){:target="_blank"}.
+In this sample, we will configure **OAuth** authentication using an external provider – [Auth0](https://auth0.com/){:target="_blank"}.
 
-To map this external user information from Auth0 and the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
+To map external user information from Auth0 to the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
 
-If [basic mapper](#basic-mapper) functionality will not fit your business needs, you can configure the [custom mapper](#custom-mapper), so that you are able to add an implementation that fits your specific needs.
+If the [basic mapper](#basic-mapper) does not fit your business needs, you can configure the [custom mapper](#custom-mapper) to implement mapping that suits your requirements.
 
 ### Preparations
 
-Now let's add one more provider to our list - [Auth0](https://auth0.com/){:target="_blank"}.
+Now let's add another provider to our list – [Auth0](https://auth0.com/){:target="_blank"}.
 
-To apply the configurations properly, we first need to obtain OAuth 2.0 credentials: 
+To apply the configuration properly, we first need to obtain OAuth 2.0 credentials:
 
-- First, we go to the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"}. Open the "Applications" page, and click "+ Create Application" button;
-- Name your application "ThingBoard", and choose the application type - "Regular Web Applications";
-- After, you need to choose the technology being used. Please, choose the "Java Spring Boot" technology;
-- Once your application is created, you are redirected to the application details page. Navigate to the "Settings" tab to find the *Client ID* and *Client Secret*;
-- In the allowed Callback URLs field, update the redirect URI using the format:
+* Go to the [Auth0 management console](https://manage.auth0.com/){:target="_blank"}. Open the "Applications" page, and click the "+ Create Application" button;
+* Name your application "ThingsBoard" and choose the application type **Regular Web Applications**;
+* Next, choose the technology being used. Please select **Java Spring Boot**;
+* Once your application is created, you are redirected to the application details page. Navigate to the **Settings** tab to find the *Client ID* and *Client Secret*;
+* In the **Allowed Callback URLs** field, update the redirect URI using the format:
 
 ```
 http(s)://domain:port/login/oauth2/code/
 ```
 {: .copy-code}
 
-* where under the domain, please, specify the current domain of yours and for the port specify the port to have an HTTP access to the TBMQ instance of yours.
-For the example reasons, my domain is *my.thingsboard.instance*.
+* Replace `domain` with your TBMQ domain and specify the port used for HTTP access.
+  For example, if your domain is *my.thingsboard.instance*:
 
 ```
 https://my.thingsboard.instance/login/oauth2/code/
 ```
 
 {% capture difference %}
-Please note that it is not necessary to update the Application login URI.
+Please note that it is not necessary to update the Application Login URI.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-- In the "Advanced Settings" section, you can find all necessary URLs (endpoints) required for configuring OAuth 2.0;
-- Click "Save Changes" button.
+* In the **Advanced Settings** section, you will find all the necessary URLs (endpoints) required for configuring OAuth 2.0;
+* Click the **Save Changes** button.
 
 {% include images-gallery.html imageCollection="auth0-credentials-1" %}
 
-### Configuring OAuth0 as an OAuth 2.0 authentication provider in TBMQ
+### Configuring Auth0 as an OAuth 2.0 authentication provider in TBMQ
 
-To configure OAuth 2.0 authentication in TBMQ via Auth0, follow the steps below:
+To configure OAuth 2.0 authentication in TBMQ via Auth0, follow these steps:
 
-- Login to your TBMQ instance;
-- Go to the "OAuth 2.0" page of the "Security" section;
-- While on the "Domains" tab, click the "plus" icon;
-- Enter your domain name or IP address of your TBMQ instance;
-- Click "Create new" in the "OAuth 2.0 clients" section to add a new one.
+* Log in to your TBMQ instance;
+* Go to the "OAuth 2.0" page in the "Security" section;
+* On the "Domains" tab, click the "plus" icon;
+* Enter your domain name or IP address of your TBMQ instance;
+* Click "Create new" in the "OAuth 2.0 clients" section to add a new one.
 
 {% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-1" %}
 
 Adding a new OAuth 2.0 client:
 
-- In the opened window, enter "OAuth0" as the title for the client;
-- Select "Custom" as the provider from the dropdown;
-- Enter the "Client ID" and "Client secret" obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"}.
+* In the opened window, enter **Auth0** as the title for the client;
+* Select **Custom** as the provider from the dropdown;
+* Enter the *Client ID* and *Client Secret* obtained from the [Auth0 management console](https://manage.auth0.com/){:target="_blank"}.
 
-In the "General" block of the "Advanced settings" section:
-- Fill in all the necessary URLs using the values obtained from the [OAuth0 management console](https://manage.auth0.com/){:target="_blank"};
-- Select "POST" as the client authentication method;
-- Enter "OAuth0" as the provider label;
-- Add the following scopes in the scope field: "openid", "email", "profile".
+In the **General** block of the "Advanced settings" section:
+
+* Fill in all the required URLs using the values obtained from the [Auth0 management console](https://manage.auth0.com/){:target="_blank"};
+* Select **POST** as the client authentication method;
+* Enter **Auth0** as the provider label;
+* Add the following scopes to the scope field: `openid`, `email`, `profile`.
 
 {% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-2" %}
 
 <br>
 Proceed to the "Mapper" block:
-- Leave the mapper type "BASIC";
-- Specify role to be used;
-- Click "Add" to complete the addition of the new OAuth 2.0 client.
+- Leave the mapper type as **BASIC**;
+- Specify the role to be used;
+- Click **Add** to complete the addition of the new OAuth 2.0 client.
 
 {% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-3" %}
 
-- The OAuth0 client has been successfully added. Click "Add" again to confirm the addition of the domain.
+* The Auth0 client has been successfully added. Click **Add** again to confirm the addition of the domain.
 
 {% include images-gallery.html imageCollection="oauth0-configuration-of-thingsboard-4" %}
 
 ### Sign in
 
-Navigate to the login screen. You will find two available login methods: Google and Auth0. Click on the "Login with Auth0" button.
+Navigate to the login screen. You will now find two available login methods: Google and Auth0.
+Click the "Login with Auth0" button.
 
 {% include images-gallery.html imageCollection="login-with-oauth0-1" %}
 
-Go to the "Users" page. There you will find the new user is created.
+Go to the "Users" page. There you will find that a new user has been created.
 
 {% include images-gallery.html imageCollection="login-with-oauth0-2" %}
 
 ## Login with Keycloak
 
-In this sample, we will be using authentication via [Keycloak](https://www.keycloak.org/){:target="_blank"}.
+In this sample, we will use [Keycloak](https://www.keycloak.org/){:target="_blank"} for authentication.
 
-To map this external user information from Keycloak and the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
+To map external user information from Keycloak to the OAuth platform, we use the built-in [basic mapper](#basic-mapper).
 
-If [basic mapper](#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](#custom-mapper), so that you are able to add an implementation that fits your specific needs.
+If the [basic mapper](#basic-mapper) does not fit your business needs, you can configure the [custom mapper](#custom-mapper) to implement a mapping that fits your requirements.
 
 ### Preparations
 
-To use Keycloak authentication platform for login, you need to set up a project in the [Keycloak](https://www.keycloak.org/){:target="_blank"} to obtain OAuth 2.0 credentials.
-For this, follow the [official instructions](https://www.keycloak.org/guides){:target="_blank"} or follow the steps below.
+To use Keycloak for authentication, you need to set up a project in [Keycloak](https://www.keycloak.org/){:target="_blank"} to obtain OAuth 2.0 credentials.
+Follow the [official instructions](https://www.keycloak.org/guides){:target="_blank"} or the steps below.
 By the end, you should have a new Keycloak client with credentials consisting of a Client ID and a Client Secret.
 
 **Start Keycloak**
 
 Get started with Keycloak using your [preferred method](https://www.keycloak.org/guides){:target="_blank"}.
-In this example, we will run a test authentication and access management server Keycloak on Docker.
+In this example, we will run a test Keycloak server on Docker.
 
-- Make sure you have [Docker](https://docs.docker.com/compose/install/){:target="_blank"} installed;
-- Run the command below to start Keycloak on local the port 8081 and create an initial admin user with the username **admin** and password **admin**:
+* Make sure you have [Docker](https://docs.docker.com/compose/install/){:target="_blank"} installed;
+* Run the command below to start Keycloak locally on port 8081 and create an initial admin user with the username **admin** and password **admin**:
 
 ```bash
 docker run -p 8081:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADMIN_PASSWORD=admin quay.io/keycloak/keycloak:26.0.5 start-dev
@@ -292,71 +296,73 @@ docker run -p 8081:8080 -e KC_BOOTSTRAP_ADMIN_USERNAME=admin -e KC_BOOTSTRAP_ADM
 
 **Log in to the admin console**
 
-- Log in to the [Keycloak Admin Console](http://localhost:8081/admin){:target="_blank"} using "admin" as username and password;
+* Log in to the [Keycloak Admin Console](http://localhost:8081/admin){:target="_blank"} using **admin** as username and password.
 
 {% include images-gallery.html imageCollection="log-in-to-admin-console" %}
 
 **Create a realm**
 
-- Click "Keycloak" next to the master realm, then click "Create realm" button;
-- Enter "ThingsBoard" in the realm name field, and click "Create" button.
+* Click "Keycloak" next to the master realm, then click the "Create realm" button;
+* Enter **ThingsBoard** in the realm name field, and click "Create".
 
 The new realm has been created.
 
 {% include images-gallery.html imageCollection="create-new-realm" %}
 
-**Create new client**
+**Create a new client**
 
-A client can be considered as an application or service that requests user authentication.
+A client represents an application or service that requests user authentication.
 
-- Go to the "Clients" page in the left-hand menu, and click the "Create client" button;
-- Enter "thingsboard" as the client ID. Leave the client type as "OpenID Connect". Click "Next";
-- Turn on "Client authentication" option. Confirm that "Standard flow" is enabled. Click "Next";
-- In the "Login settings" section, add the TBMQ redirect URI to the "Authorized Redirect URIs" section using the format:
+* Go to the "Clients" page in the left-hand menu, and click the "Create client" button;
+* Enter **thingsboard** as the client ID. Leave the client type as **OpenID Connect**. Click "Next";
+* Enable the **Client authentication** option. Confirm that **Standard flow** is enabled. Click "Next";
+* In the "Login settings" section, add the TBMQ redirect URI in the **Authorized Redirect URIs** section using the format:
 
 ```
 http(s)://domain:port/login/oauth2/code/
 ```
 {: .copy-code}
 
-* where under the domain, please, specify the current domain of yours and for the port specify the port to have an HTTP access to the TBMQ instance of yours.
-For the example reasons, my domain is *my.thingsboard.instance*.
+* Replace `domain` with your TBMQ domain and specify the port used for HTTP access.
+  For example, if your domain is *my.thingsboard.instance*:
 
 ```
 https://my.thingsboard.instance/login/oauth2/code/
 ```
 
-- Click "Save".
+* Click "Save".
 
 Client created successfully.
 
 {% include images-gallery.html imageCollection="create-client" %}
 
 <br>
-You now have credentials consisting of a Client ID and a Client secret. You can find the Client ID on the "Settings" tab. The Client Secret is located on the "Credentials" tab.
+You now have credentials consisting of a Client ID and a Client Secret.  
+The Client ID is available on the "Settings" tab. The Client Secret is located on the "Credentials" tab.
 
 {% include images-gallery.html imageCollection="client-id-and-secret" %}
 
 #### Endpoints
 
-As a fully-compliant OpenID Connect Provider implementation, Keycloak exposes a set of endpoints that applications and services can use to authenticate and authorize their users.
+As a fully compliant OpenID Connect Provider, Keycloak exposes a set of endpoints that applications and services can use for authentication and authorization.
 
-Go to the "Realm settings" page. Scroll down and locate the link to "OpenID Endpoint Configuration", then click on it.
-A new window with OpenID Endpoint Configuration will be opened. Check the "Pretty-print" option to make the data view more user-friendly.
-Here you can find "Access token URI," "Authorization URI," "JSON Web Key URI," and "User info URI," which are necessary for configuring the OAuth 2.0 client in TBMQ.
-You can find a description of the available endpoints [here](https://www.keycloak.org/securing-apps/oidc-layers){:target="_blank"}.
+* Go to the "Realm settings" page;
+* Scroll down and locate the "OpenID Endpoint Configuration" link, then click it;
+* A new window will open with the configuration. Check the "Pretty-print" option for easier reading.
+
+Here you can find values such as **Access Token URI**, **Authorization URI**, **JSON Web Key URI**, and **User Info URI**, which are required for configuring the OAuth 2.0 client in TBMQ.
+A description of the available endpoints is provided [here](https://www.keycloak.org/securing-apps/oidc-layers){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="endpoint-configuration" %}
 
 ### Create a user
 
-Now add the user. Only the added users will be able to authenticate via Keycloak.
-Use these steps to create a user:
+Now add a user. Only added users will be able to authenticate via Keycloak.
 
-- Go to the "Users" page in the left-hand menu;
-- Click "Create new user";
-- Enter the username and email address in the form. First name and last name are optional;
-- Click "Create".
+* Go to the "Users" page in the left-hand menu;
+* Click "Create new user";
+* Enter the username and email address. First name and last name are optional;
+* Click "Create".
 
 The user has been created.
 
@@ -364,11 +370,11 @@ The user has been created.
 
 Set a password for this user:
 
-- Navigate to the "Credentials" tab. Click "Set password". 
-- Fill in the "Set password" form with a password. Toggle "Temporary" to "Off" so that the user does not need to update this password at the first login. 
-- Click "Save password" to confirm the set password.
+* Navigate to the "Credentials" tab and click **Set password**;
+* Fill in the password form. Toggle **Temporary** to **Off** so that the user is not forced to change the password on first login;
+* Click **Save password**.
 
-The password has been successfully.
+The password has been set successfully.
 
 {% include images-gallery.html imageCollection="create-password" %}
 
@@ -376,37 +382,39 @@ The password has been successfully.
 
 To configure OAuth 2.0 authentication in TBMQ via Keycloak, follow the steps below:
 
-- Login to your TBMQ instance;
-- Go to the "OAuth 2.0" page of the "Security" section;
-- Navigate to the "OAuth 2.0 clients" tab, and click "plus";
-- Enter "Keycloak" as the title. 
-- Select the "Custom" from the dropdown menu as the authentication provider;
-- Enter the "Client ID" and "Client secret", using the values retrieved from the [Keycloak console](http://localhost:8081/admin){:target="_blank"}.
+* Log in to your TBMQ instance;
+* Go to the "OAuth 2.0" page of the "Security" section;
+* Navigate to the "OAuth 2.0 clients" tab, and click the "plus" icon;
+* Enter **Keycloak** as the title;
+* Select **Custom** as the provider from the dropdown menu;
+* Enter the *Client ID* and *Client Secret* retrieved from the [Keycloak console](http://localhost:8081/admin){:target="_blank"}.
 
-Then, expand the "Advanced settings" menu. Let's make the settings for the "General" block:
-- Use [endpoint configuration file](#endpoints) to find the current values for "Access Token URI," "Authorization URI", "JSON Web Key URI", and "User info URI". Fill the corresponding fields with these values;
-- The client authentication method should be set to "POST"; 
-- Enter "Keycloak" as the provider label;
-- Add to the scope field: "email", "openid", and "profile";
+Then expand the "Advanced settings" menu and configure the "General" block:
+
+* Use the [endpoint configuration file](#endpoints) to find the current values for **Access Token URI**, **Authorization URI**, **JSON Web Key URI**, and **User Info URI**. Fill in the corresponding fields;
+* Set the client authentication method to **POST**;
+* Enter **Keycloak** as the provider label;
+* Add the following scopes: `email`, `openid`, `profile`.
 
 {% include images-gallery.html imageCollection="keycloak-add-thingsboard-oauth-client-1" %}
 
 Go to the "Mapper" block:
-- Leave the mapper type "BASIC";
-- Specify role to be used;
-- Click "Add" to confirm adding the OAuth 2 client.
+
+* Leave the mapper type as **BASIC**;
+* Specify the role to be used;
+* Click **Add** to confirm.
 
 A new OAuth 2.0 client has been added.
 
 {% include images-gallery.html imageCollection="keycloak-add-thingsboard-oauth-client-2" %}
 
 <br>
-Now, add a new domain by following these steps:
+Now, add a new domain:
 
-- Go to the "Domains" tab of the "OAuth 2.0" page, and click the "plus" icon;
-- Enter your domain name or IP address of your TBMQ instance;
-- Specify "Keycloak" as the OAuth 2.0 client;
-- Click "Add" again to confirm the addition of the domain.
+* Go to the "Domains" tab of the "OAuth 2.0" page, and click the "plus" icon;
+* Enter your domain name or IP address of your TBMQ instance;
+* Specify **Keycloak** as the OAuth 2.0 client;
+* Click **Add** again to confirm.
 
 A new domain has been added.
 
@@ -414,61 +422,63 @@ A new domain has been added.
 
 ### Sign in
 
-Go to the TBMQ login screen. You will see an additional option, "Login with Keycloak". Click this button. A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In". You are now logged into TBMQ using Keycloak authorization credentials.
+Go to the TBMQ login screen. You will now see the option **Login with Keycloak**.
+Click this button. A window will open prompting you to sign in to your Keycloak account.
+Enter your Keycloak credentials and click **Sign In**. You are now logged into TBMQ using Keycloak.
 
 {% include images-gallery.html imageCollection="login-with-keycloak-1" %}
 
-Go to the "Users" page. There you will find the new user is created.
+Go to the "Users" page. There you will find that a new user has been created.
 
 {% include images-gallery.html imageCollection="login-with-keycloak-2" %}
 
-## Mapping of the external user into TBMQ internal user structure
+## Mapping of the external user into the TBMQ internal user structure
 
-Mapping of the external user info object into TBMQ user can be achieved using the [Basic](#basic-mapper), [Custom](#custom-mapper), GitHub, and Apple mappers. 
+Mapping an external user info object into a TBMQ user can be achieved using the [Basic](#basic-mapper), [Custom](#custom-mapper), GitHub, and Apple mappers.
 
 ### Basic mapper
 
-A basic mapper is able to merge an external OAuth 2.0 user info object into the TBMQ OAuth 2.0 user with a predefined set of rules.
+The basic mapper merges an external OAuth 2.0 user info object into the TBMQ OAuth 2.0 user with a predefined set of rules.
 
-To use a basic mapper, set mapper type "Basic".
+To use the basic mapper, set the mapper type to **Basic**.
 
 {% include images-gallery.html imageCollection="mapper-basic-1" %}
 
-Here are the details of other properties:
+Details of the available properties:
 
-- **Allow user creation** - If this option is **enabled**, then in case, the user account does not exist in the TBMQ yet, it will be created.
-If this option is **disabled**, the user will get access denied error, in case, he tries to log in with an external OAuth 2.0 provider, but there is no user on TBMQ with those credentials.
- 
-- **Email attribute key** - This is the key to the attributes from the external OAuth 2.0 user info that is going to be used as TBMQ user email property.
-  
-- **First name attribute key** - This is the key to the attributes from the external OAuth 2.0 user info that is going to be used as TBMQ user first name property.
-    
-- **Last name attribute key** - This is the key to the attributes from the external OAuth 2.0 user info that is going to be used as TBMQ user last name property.
+* **Allow user creation** – If enabled, and the user account does not yet exist in TBMQ, it will be created automatically.
+  If disabled, the user will receive an *access denied* error when trying to log in with an external OAuth 2.0 provider, if no corresponding TBMQ user exists.
 
-- **Role** - The option to choose from the predefined roles to be assigned for the user.
+* **Email attribute key** – The attribute key from the external OAuth 2.0 user info that will be used for the TBMQ user email property.
+
+* **First name attribute key** – The attribute key from the external OAuth 2.0 user info that will be used for the TBMQ user first name property.
+
+* **Last name attribute key** – The attribute key from the external OAuth 2.0 user info that will be used for the TBMQ user last name property.
+
+* **Role** – Choose from the predefined roles to be assigned to the user.
 
 ### Custom mapper
 
-If the basic mapper functionality doesn't cover your business needs, with the help of the custom mapper you are able to add an implementation that fits your specific goals.
+If the basic mapper functionality does not meet your business needs, you can configure a custom mapper to implement logic that fits your specific goals.
 
-A custom mapper designed as a separate microservice that is running nearby the TBMQ microservice.
-TBMQ forwards all mapping requests to this microservice and expects as a response TBMQ OAuth 2.0 user object.
+A custom mapper is designed as a separate microservice running alongside the TBMQ microservice.
+TBMQ forwards all mapping requests to this microservice and expects a TBMQ OAuth 2.0 user object in response.
 
-Please refer to this [base implementation](https://github.com/thingsboard/tbmq-custom-oauth2-mapper){:target="_blank"} as a starting point for your custom mapper.
+Refer to this [base implementation](https://github.com/thingsboard/tbmq-custom-oauth2-mapper){:target="_blank"} as a starting point for your custom mapper.
 
-To use the custom mapper, set mapper type "Custom".
+To use the custom mapper, set the mapper type to **Custom**.
 
 {% include images-gallery.html imageCollection="mapper-custom-1" %}
 
-Here are the details of other properties:
+Details of the available properties:
 
-- **URL**. URL of the custom mapper endpoint;
-- **username**. If the custom mapper endpoint configured with basic authorization, specify the *username* in this property;
-- **password**. If the custom mapper endpoint configured with basic authorization, specify the *password* in this property.
+* **URL** – The URL of the custom mapper endpoint;
+* **username** – If the custom mapper endpoint is configured with basic authentication, specify the *username* here;
+* **password** – If the custom mapper endpoint is configured with basic authentication, specify the *password* here.
 
-## HaProxy configuration
+## HAProxy configuration
 
-If TBMQ is running behind a load balancer like HAProxy please configure properly balance algorithm to make sure that the correct session is available on the TBMQ instance:
+If TBMQ is running behind a load balancer such as HAProxy, configure the balancing algorithm properly to ensure that the correct session is maintained on the TBMQ instance:
 
 ```bash
 backend tbmq-api-backend
@@ -477,8 +487,8 @@ backend tbmq-api-backend
   ...
 ```
 
+Also, configure ACL mapping for HTTP and HTTPS requests:
 
-As well please configure properly ACL mapping for HTTP and HTTPs requests:
 ```bash
 frontend http-in
   ...
