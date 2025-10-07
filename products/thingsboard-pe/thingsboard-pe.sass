@@ -67,7 +67,7 @@
                 .pe-arrow
                     display: none
 
-    #intro, #matrix, #features, #integration, #scheduler-section, #export, #labeling
+    #intro, #features, #integration, #scheduler-section, #export, #labeling
         color: #212924
         text-align: left
         h1, main .item h2, main .item h3.item-heading, div.main-div .item h2, div.main-div .item h3.item-heading
@@ -119,9 +119,7 @@
                 transition-duration: 0s
 
     #features
-        background-color: #FAFAFA
-        margin: -50px -100% 0
-        padding: 72px 100%
+        padding-top: 100px
         @media(min-width: 992px)
             display: block
         main, div.main-div
@@ -143,123 +141,139 @@
                 display: block
                 margin: 20px
 
-
-    #matrix
-        margin: 60px -100% 0
-        padding: 72px 100% 168px
+    .comparison-table
+        padding: 100px 0
+        &:before
+            content: ""
+            position: absolute
+            width: 100vw
+            height: 103%
+            background-color: #F4F4F4
+            z-index: -10
+            left: 49.4%
+            transform: translateX(-50%) skewY(-6deg)
+            top: -67px
         h3
-            color: #212529
-            font-weight: 600
-            text-align: left
-            font-size: 22px
-            line-height: 40px
-        #backg-matrix
-            position: relative
-            margin-left: -20px
-            margin-right: -20px
-            width: calc(100% + 40px)
-            .cloud, .prof, .community
-                padding: 0 2px
-                width: 20%
-                position: absolute
-                z-index: -1
-                top: 127px
-            .coln
-                height: 1156px
-                border-radius: 6px
-            .cloud
-                right: 0%
-                .coln
-                    border: 2px solid #AACBF7
-                    .head
-                        height: 106px
-                        box-shadow: 0 2px 0 0 rgba(170,203,247,1)
-            .prof
-                right: 20%
-                .coln
-                    border: 2px solid #27AE60
-                    box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
-                    .head
-                        height: 106px
-                        background-color: #27AE60
-            .community
-                right: 40%
-                .coln
-                    border: 2px solid #ACBBCC
-                    .head
-                        height: 106px
-                        box-shadow: 0 2px 0 0 rgba(172,187,204,1)
-        table
-            width: calc(100% + 40px)
-            margin: 160px -20px 16px
-            i
-                font-size: 25px
-                &.disabled
-                    opacity: 0.2
-            td, th
-                margin: 0 2px
-                &:nth-child(4n-2)
-                    color: #305680
-                    img
-                        filter: invert(27%) sepia(56%) saturate(585%) hue-rotate(171deg) brightness(96%) contrast(86%)
-                &:nth-child(4n-1)
-                    color: #27AE60
-                    img
-                        filter: invert(52%) sepia(84%) saturate(381%) hue-rotate(93deg) brightness(89%) contrast(93%)
-                &:nth-child(4n)
-                    color: #2A7DEC
-                    img
-                        filter: invert(36%) sepia(77%) saturate(728%) hue-rotate(181deg) brightness(104%) contrast(106%)
-            border: none
-            margin-top: 64px
-            top: 40px
-            thead
-                color: #212529
-                font-size: 12px
-                line-height: 30px
-                background-color: unset
-                tr
-                    height: 152px
-                    th
-                        width: 20%
-                        text-align: center
-                        vertical-align: center
-                        font-weight: 600
-                        font-size: 11px
-                        padding: 40px 0 40px
-                        &:nth-child(3n)
-                            color: white
-                    td
-                        width: 40%
-            tbody
-                tr
-                    background-color: unset
-                    height: 64px
-                    th, a
-                        font-weight: 600
-                        font-size: 12px
-                        padding-right: 12px
-                        color: #212529
-                        img
-                            vertical-align: top
-                    td
-                        text-align: center
-                        font-weight: 600
-                        font-size: 11px
-                        img
-                            width: 32px
-                    .faq-icon
-                        cursor: pointer
-                        font-family: 'Font Awesome 5 Free'
-                        font-weight: bold
-                        vertical-align: super
-                        font-size: smaller
+            font-size: 36px
+            font-weight: 500
+            line-height: 48px
+            color: #202020
+            margin-bottom: 32px
+            @media (max-width: 900px)
+                font-size: 28px
+                line-height: 44px
+        .header
+            display: flex
+            justify-content: space-between
+            align-items: center
+            background-color: white
+            border-radius: 4px
+            height: 84px
+            margin-bottom: 4px
+            p
+                flex: 1
+                font-size: 24px
+                font-weight: 500
+                line-height: 36px
+                text-align: center
+                &:nth-child(2)
+                    color: #0D417B
+                &:nth-child(3)
+                    color: #038F7E
+                span:last-child
+                    display: none
+                @media (max-width: 900px)
+                    &:nth-child(1)
+                        margin-left: 20px
+                        text-align: left
+                    &:nth-child(2)
+                        flex: 0.3
+                    &:nth-child(3)
+                        flex: 0.3
+                    span:first-child
+                        display: none
+                    span:last-child
                         display: inline-block
-                        &:after
-                            content: "\f059"
-                            font-size: 12px
+                @media (max-width: 500px)
+                    &:nth-child(2)
+                        flex: 0.2
+                    &:nth-child(3)
+                        flex: 0.2
+        .block
+            padding: 4px
+            background-color: white
+            border-radius: 4px
+            margin-bottom: 4px
+            .comparison-row
+                @media (max-width: 900px)
+                    padding-right: 0
+                display: flex
+                justify-content: space-between
+                align-items: center
+                padding: 12px 20px
+                max-height: 50px
+                border-bottom: 2px solid #E0E0E0
+                text-decoration-color: #212121
+                position: relative
+                &:not(:first-child)
+                    &:hover
+                        &:before
+                            content: ""
+                            height: 44px
+                            display: block
+                            border: 1px solid #00695C
                             position: absolute
-                            transform: translate(15%, -100%)
+                            left: 0
+                        background-color: #F9F9F9
+                        p
+                            font-size: 15px
+                            line-height: 28px
+                        div
+                            &.hidden-space
+                                visibility: hidden
+                            img
+                                width: 24px
+                &:first-child
+                    background-color: #F5F9F8
+                    border-bottom: none
+                    p
+                        flex: 1
+                        font-size: 18px
+                        font-weight: 500
+                        line-height: 30px
+                        color: #3B3C3C
+                &:last-child
+                    border-bottom: none
+                    max-height: 48px
+                    p:nth-child(2)
+                        text-align: center
+                        a
+                            color: #0D417B
+                    p:nth-child(3)
+                        text-align: center
+                        a
+                            color: #038F7E
+                p
+                    flex: 1
+                    font-size: 14px
+                    font-weight: 400
+                    line-height: 24px
+                    color: #212121
+                    transition: font-size .3s
+                    @media (max-width: 500px)
+                        font-size: 12px
+                div
+                    text-align: center
+                    flex: 1
+                    @media (max-width: 900px)
+                        flex: 0.3
+                    @media (max-width: 500px)
+                        flex: 0.17
+            &:last-child
+                .comparison-row:last-child
+                    @media (max-width: 500px)
+                        p
+                            font-size: 11px
 
     #intro
         padding-top: 28px
@@ -508,29 +522,6 @@
                 main, div.main-div
                     .item
                         padding: 0 10%
-            #matrix
-                h3
-                    font-size: 42px
-                    line-height: 63px
-                table
-                    thead
-                        font-size: 20px
-                        tr
-                            th
-                                width: 20%
-                                padding: 0 0 40px
-                                font-size: 20px
-                            td
-                                width: 40%
-                    tbody
-                        tr
-                            th, a
-                                padding-right: 48px
-                                font-size: 18px
-                            td
-                                font-size: 20px
-                                img
-                                    width: unset
             #labeling, #integration, #scheduler-section, #export
                 #features-top, #features-top-2, #features-top-3, #features-top-4
                     .block
@@ -569,12 +560,6 @@
                     .divider
                         margin: unset
             max-width: 100%
-            #matrix
-                .cloud, .prof, .community
-                    padding: 0 14px
-                table
-                    td, th
-                        margin: 0 14px
             #labeling, #integration, #scheduler-section, #export
                 #features-top, #features-top-2, #features-top-3, #features-top-4
                     .block
