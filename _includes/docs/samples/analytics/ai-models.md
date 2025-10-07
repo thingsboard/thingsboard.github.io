@@ -19,26 +19,27 @@ ThingsBoard allows you to configure and connect to different AI providers, manag
 
 To add an AI model in ThingsBoard, follow these steps:
 
-- Open the "<b>Settings</b>" page in your ThingsBoard instance.
-- Go to the "<b>AI models</b>" tab.
+- Go to the "<b>AI models</b>" tab of the "<b>Settings</b>" page.
 - Click the "<b>Add model</b>" button (located in the top-right corner).
 - This will open a form where you can configure AI model:
   - <b>Name</b> - provide a meaningful name for the AI model.
-  - [Provider](#provider-configuration) – select the AI provider and specify its authentication credentials.
-  - [Model ID](#model-configuration) – choose which model to use (or deployment name, in the case of Azure OpenAI).
+  - [Provider](#provider-configuration) — select the **AI provider**, specify the **base URL** (required only for [OpenAI](#openai) and [Ollama](#ollama)), and enter the provider&#39;s **authentication credentials**.
+  - [Model ID](#model-configuration) – choose which model to use (or deployment name, in the case of **Azure OpenAI**).
   - [Advanced settings](#advanced-model-settings) – configure optional parameters (such as temperature, top P, max tokens) if supported by the provider.
 - Click "<b>Save</b>" to complete adding the new AI model.
 
-Once saved, the model becomes available for use in the [AI request node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#ai-request-node){:target="_blank"} of the Rule Engine.
+Once saved, the model becomes available for use in the [AI request node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/nodes/external/ai-request/){:target="_blank"} of the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="adding-ai-model" %}
 
 ## Provider configuration
 
-In the "<b>Provider</b>" section you need to select the <b>AI provider</b> you want to use, as well as the authentication method for that provider (e.g., API key, key file, etc.).
+In the <b>Provider</b> section, select the <b>AI provider</b>, specify the <b>base URL</b> (required only for [OpenAI](#openai) and [Ollama](#ollama)), and enter the <b>authentication credentials</b> (e.g., API key, key file, etc.).
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-> We recommend using [Secrets storage](/docs/{{docsPrefix}}user-guide/secrets-storage/){:target="_blank"} to securely store your credentials.
+{% capture difference %}
+We recommend using [Secrets storage](/docs/{{docsPrefix}}user-guide/secrets-storage/){:target="_blank"} to securely store your credentials.{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 {% endif %}
 
 <br><b><font size="4">Supported AI providers</font></b>
@@ -49,7 +50,8 @@ ThingsBoard currently supports integration with the following AI providers:
 
 #### OpenAI
 
-- Authentication: <b>API key</b>.
+- <b>Base URL</b>: Specify the address for accessing the OpenAI API.
+- <b>Authentication</b>: API key.
 - You can obtain your API key from the [OpenAI dashboard](https://platform.openai.com/api-keys){:target="_blank"}.
 
 ##### Using OpenAI-compatible models
@@ -57,10 +59,30 @@ ThingsBoard currently supports integration with the following AI providers:
 {% assign sinceVersion = "4.2.1" %}
 {% include templates/since.md %}
 
-By default, the official OpenAI API base URL is configured for convenience. However, you can specify a custom base URL to use any OpenAI-compatible model provider.
+When working with models compatible with the OpenAI API, an important parameter is the **base URL**, which defines the address used to send requests to the API.
 
-When using a custom base URL (different from the official OpenAI endpoint), the API key becomes optional. This allows you to work with models that don't require authentication, 
-such as locally-hosted models. Note that most cloud-based model providers will still require a valid API key.
+<b><font size="3">Official Base URL</font></b>
+   
+This is the standard address provided by OpenAI to access its services. For convenience, the official OpenAI API base URL is preconfigured in ThingsBoard.
+
+Use it when:
+- You are working directly with OpenAI models.
+- You require maximum compatibility, the latest features, and full support from OpenAI.
+
+<b><font size="3">Custom Base URL</font></b>
+
+This is used when you want to connect to a third-party provider or a self-hosted deployment that implements an OpenAI-compatible protocol.
+
+Use it when:
+- You need to integrate locally deployed or custom models.
+- You must meet data residency requirements (e.g., run in a specific region).
+- You work with alternative providers that support the OpenAI API.
+
+{% capture difference %}
+When using a custom base URL, the **API key becomes optional**. This enables working with models that do not require authentication, such as locally hosted models.   
+However, most cloud model providers will still require a valid API key.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 <b>Example base URLs:</b>
 
@@ -70,7 +92,7 @@ such as locally-hosted models. Note that most cloud-based model providers will s
 | Alibaba Qwen (Singapore) | `https://dashscope-intl.aliyuncs.com/compatible-mode/v1` |
 | Ollama (local)           | `http://localhost:11434/v1`                              |
 
-> <b>Note:</b> Ollama is also available as a separate integration with additional configuration options.
+> <b>Note:</b> [Ollama](#ollama) is also available as a separate integration with additional configuration options.
 
 <hr>
 
@@ -139,18 +161,35 @@ such as locally-hosted models. Note that most cloud-based model providers will s
 {% assign sinceVersion = "4.2.1" %}
 {% include templates/since.md %}
 
-[Ollama](https://ollama.com/){:target="_blank"} allows you to easily run open large language models, such as Llama 3 and Mistral, on your own machine.
+[Ollama](https://ollama.com/){:target="_blank"} allows you to easily run open large language models, such as **Llama 3** and **Mistral**, directly on your own machine. This enables local experimentation, offline usage, and greater control over your data.
 
-Connecting to your Ollama server requires its <b>base URL</b> (e.g., `http://localhost:11434`) and the appropriate authentication method. Three options are available:
+To connect to your Ollama server, you need its **base URL** (e.g., *http://localhost:11434*) and an **authentication method**.   
+The following options are supported:
 
-- <b>None</b>: This is the default method for a standard Ollama installation, which does not require authentication out of the box. No credentials are sent with your requests.
-- <b>Basic</b>: Use this method when Ollama is secured behind a reverse proxy that requires HTTP Basic authentication. 
-  The provided <b>username</b> and <b>password</b> are combined into a `username:password` string, Base64-encoded, and sent in an `Authorization: Basic <encoded_credentials>` header.
-- <b>Token</b>: Use this method when Ollama is secured behind a reverse proxy that requires Bearer Token authentication. 
-  The provided <b>token</b> is sent directly in an `Authorization: Bearer <token>` header.
+![image](/images/samples/analytics/ai-models/ollama-authentication-method.png)
 
-> <b>Security Recommendation</b>: When using <b>Basic</b> or <b>Token</b> authentication, we strongly recommend connecting to your server using an <b>`https`</b> URL. 
-> Standard `http` connections will send your credentials in plain text, which is insecure.
+- <b>None</b>
+  - Default method for a standard Ollama installation. 
+  - No authentication is required, and no credentials are sent with requests.
+
+- <b>Basic</b>
+  - Use when Ollama is secured behind a reverse proxy requiring **HTTP Basic Authentication**. 
+  - The provided username and password are combined into a `username:password` string, Base64-encoded, and sent in the header:
+  ```text
+  Authorization: Basic <encoded_credentials>
+  ```
+- <b>Token</b>
+  - Use when Ollama is secured behind a reverse proxy requiring **Bearer Token Authentication**. 
+  - The provided token is sent in the header:
+  ```text
+  Authorization: Bearer <token>
+  ```
+
+{% capture difference %}
+**Security Recommendation:**   
+When using **Basic** or **Token** authentication, always connect via an `HTTPS` URL. Using plain `HTTP` will transmit credentials in clear text, which is insecure.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 <hr>
 
