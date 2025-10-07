@@ -5,7 +5,7 @@ communication services (email, SMS, Slack), AI services, and REST APIs.
 
 This allows rule chains to integrate with external infrastructure and services as part of automated workflows.
 
-- [AI request](/docs/user-guide/rule-engine-2-0/nodes/external/ai-request) — Sends a request to a large language model (LLM).
+- [AI request](/docs/user-guide/rule-engine-2-0/nodes/external/ai-request) — sends a request to a large language model with customizable prompts and optional file attachments, returning the AI-generated response as the outgoing message data.
 - [aws lambda](/docs/user-guide/rule-engine-2-0/nodes/external/aws-lambda) — Node publishes messages to AWS Lambda, a service that lets you run code without provisioning or managing servers.
 - [aws sns](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns) — Node publish messages to AWS SNS (Amazon Simple Notification Service).
 - [aws sqs](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs) — Node publish messages to the AWS SQS (Amazon Simple Queue Service).
