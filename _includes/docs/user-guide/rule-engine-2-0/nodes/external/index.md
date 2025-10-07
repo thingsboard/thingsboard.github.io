@@ -1,3 +1,10 @@
+External nodes are the integration components of ThingsBoard's rule engine that send messages to third-party services and external systems.
+
+These nodes publish or transmit data to destinations outside ThingsBoard, including cloud platforms (AWS, Azure, GCP), messaging systems (MQTT, Kafka, RabbitMQ), 
+communication services (email, SMS, Slack), AI services, and REST APIs.
+
+This allows rule chains to integrate with external infrastructure and services as part of automated workflows.
+
 - [AI request](/docs/user-guide/rule-engine-2-0/nodes/external/ai-request) — Sends a request to a large language model (LLM).
 - [aws lambda](/docs/user-guide/rule-engine-2-0/nodes/external/aws-lambda) — Node publishes messages to AWS Lambda, a service that lets you run code without provisioning or managing servers.
 - [aws sns](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns) — Node publish messages to AWS SNS (Amazon Simple Notification Service).
@@ -11,6 +18,6 @@
 - [send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email) — Node sends incoming message using configured Mail Server.
 - [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — The node can send notification to recipients group using the template.
 - [send sms](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms) — Node is able to construct SMS message based on the metadata fields from the incoming message and send it using AWS SNS or Twilio SMS providers.
-- [send to slack](/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack) — The node create a message based on the incoming data and metadata, and send it via Slack to a public channel, private channel or direct message. 
+- [send to slack](/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack) — The node create a message based on the incoming data and metadata, and send it via Slack to a public channel, private channel or direct message.
 - <span class="item-pe product-label-padding">[twilio sms](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms)</span> — Sends incoming message payload as SMS message via Twilio service.
 - <span class="item-pe product-label-padding">[twilio voice](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-voice)</span> — Sends voice message via Twilio.
