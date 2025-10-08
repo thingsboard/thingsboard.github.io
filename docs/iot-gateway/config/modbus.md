@@ -22,7 +22,7 @@ Also, if you are new to ThingsBoard IoT Gateway, we recommend you to read the
 guide to understand the basic concepts of ThingsBoard IoT Gateway and how it works with Modbus protocol.
 
 The connector can be configured via the user interface form, which helps you set up a connection to the Modbus server,
-collect data and write data to nodes. Let’s look at all the available settings and explain each one clearly. This will
+collect data and write data to slaves (devices). Let’s look at all the available settings and explain each one clearly. This will
 help you understand how everything works.
 
 &nbsp;
