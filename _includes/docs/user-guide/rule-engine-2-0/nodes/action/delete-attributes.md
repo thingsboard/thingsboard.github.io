@@ -17,31 +17,30 @@ Type: `ATTRIBUTES_DELETED`
 
 Originator: same as original message originator
 
-Data: 
+Data contains a set of deleted attribute keys: 
+
 ```json
 {
-  // set of deleted attribute keys 
   "attributes": ["deletedKey1", "deletedKey2"]
 }
 ```
 
-Metadata:
+Metadata contains the rule node ID that performed the deletion and the scope of the deleted attributes:
 
 ```json
 {
-  // ID of the rule node which performed the deletion
   "ruleNodeId": "3567a4c0-924c-11f0-b7fc-93ceb833d90b",
-  // scope of the deleted attributes
   "scope": "SERVER_SCOPE"
 }
 ```
 
 - **Force notification to the device**: When enabled, forces notification to be sent to the device. Only available for *Shared attributes* scope. Alternatively, device notification
-  can be triggered by setting the `notifyDevice` metadata key to `"true"` in the incoming message. Example of such notification:
+  can be triggered by setting the `notifyDevice` metadata key to `"true"` in the incoming message.
 
+Notification contains a set of deleted attribute keys:
 ```json
 {
-  "deleted": ["key1", "key2"] // set of deleted attribute keys 
+  "deleted": ["key1", "key2"]
 }
 ```
 
@@ -92,6 +91,7 @@ If provided, value must exactly match one of these constants (case-sensitive).
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

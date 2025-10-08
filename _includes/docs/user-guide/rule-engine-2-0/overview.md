@@ -375,11 +375,13 @@ List of the predefined Message Types is presented in the following table:
 
 All available rule nodes are grouped in correspondence with their nature:
 
-  * [**Filter Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/){:target="_blank"} are used for message filtering and routing;
-  * [**Enrichment Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/){:target="_blank"} are used to update meta-data of the incoming Message;
-  * [**Transformation Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/){:target="_blank"} are used for changing incoming Message fields like Originator, Type, Payload, Metadata;
-  * [**Action Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/){:target="_blank"} execute various actions based on incoming Message;
-  * [**External Nodes**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/){:target="_blank"} are used to interact with external systems.
+  * [**Filter nodes**](/docs/user-guide/rule-engine-2-0/nodes/filter/){:target="_blank"} are used for message filtering and routing
+  * [**Enrichment nodes**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/){:target="_blank"} are used to enrich message with information stored in the database
+  * [**Transformation nodes**](/docs/user-guide/rule-engine-2-0/nodes/transformation/){:target="_blank"} are used for changing message fields such as originator, type, data, and metadata
+  * [**Action nodes**](/docs/user-guide/rule-engine-2-0/nodes/action/){:target="_blank"} are used to execute various actions based on the message
+  * [**External nodes**](/docs/user-guide/rule-engine-2-0/nodes/external/){:target="_blank"} are used to interact with external systems
+  * [**Flow nodes**](/docs/user-guide/rule-engine-2-0/nodes/flow/){:target="_blank"} are used to control message flow between rule chains and interact with queues
+  * [**Analytics nodes**](/docs/user-guide/rule-engine-2-0/nodes/analytics/){:target="_blank"} are used to aggregate data
 
 ## Configuration
 
