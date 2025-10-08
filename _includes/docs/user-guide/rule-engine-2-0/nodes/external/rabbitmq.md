@@ -28,7 +28,7 @@ Available options:
 **Warning**: Messages published with **BASIC**, **TEXT_PLAIN**, **MINIMAL_BASIC** properties, or without message properties set, are non-persistent. 
 These messages will be lost if the RabbitMQ broker restarts or fails. Use **MINIMAL_PERSISTENT_BASIC**, **PERSISTENT_BASIC**, or **PERSISTENT_TEXT_PLAIN** for message persistence.
 {% endcapture %}
-{% include templates/info-banner.md content=persistence_note %}
+{% include templates/warn-banner.md content=persistence_note %}
 
 Leave empty for no predefined properties.
 
