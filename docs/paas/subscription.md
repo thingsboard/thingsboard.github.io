@@ -23,23 +23,24 @@ cancel-my-subscription:
 * TOC
 {:toc}
 
-ThingsBoars Cloud provides subscription plans based on the **pay-as-you-go** model. 
-Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [white labeling](#white-labeling) and the level of support you get.   
+ThingsBoars Cloud provides subscription plans based on the **pay-as-you-go** model.
 
-## Entity Limits
+Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [calculated fields limits](#calculated-fields-limits), [white labeling](#white-labeling) and the level of support you get.
+
+## Entity limits
 
 Please see table below to compare the entity limits of the subscription plans.
 
 <table>
   <thead>
       <tr>
-          <td style="width: 15%"><b>Parameter name</b></td>
-          <td style="width: 8%"><b>Maker</b></td>
-          <td style="width: 8%"><b>Prototype</b></td>
-          <td style="width: 8%"><b>Startup</b></td>
-          <td style="width: 8%"><b>Business</b></td>
-          <td style="width: 8%"><b>Business+</b></td>
-          <td style="width: 45%"><b>Description</b></td>
+          <td style="width: 20%"><b>Parameter name</b></td>
+          <td style="width: 10%"><b>Maker</b></td>
+          <td style="width: 10%"><b>Prototype</b></td>
+          <td style="width: 10%"><b>Startup</b></td>
+          <td style="width: 10%"><b>Business</b></td>
+          <td style="width: 10%"><b>Business+</b></td>
+          <td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -127,21 +128,20 @@ Please see table below to compare the entity limits of the subscription plans.
   </tbody>
 </table>
 
-
-## API Limits
+## API limits
 
 Please see table below to compare the API limits of the subscription plans. The values are monthly API limits, unless stated otherwise.
 
 <table>
   <thead>
       <tr>
-          <td style="width: 15%"><b>Parameter name</b></td>
-          <td style="width: 8%"><b>Maker</b></td>
-          <td style="width: 8%"><b>Prototype</b></td>
-          <td style="width: 8%"><b>Startup</b></td>
-          <td style="width: 8%"><b>Business</b></td>
-          <td style="width: 8%"><b>Business+</b></td>
-          <td style="width: 45%"><b>Description</b></td>
+          <td style="width: 20%"><b>Parameter name</b></td>
+          <td style="width: 10%"><b>Maker</b></td>
+          <td style="width: 10%"><b>Prototype</b></td>
+          <td style="width: 10%"><b>Startup</b></td>
+          <td style="width: 10%"><b>Business</b></td>
+          <td style="width: 10%"><b>Business+</b></td>
+          <td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -255,7 +255,74 @@ Please see table below to compare the API limits of the subscription plans. The 
 
 where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion.
 
-## Rate Limits
+## Calculated fields limits
+
+Please see the table below to compare the calculated fields limits across subscription plans.
+
+<table>
+  <thead>
+    <tr>
+      <td style="width: 20%"><b>Parameter name</b></td>
+      <td style="width: 10%"><b>Maker</b></td>
+      <td style="width: 10%"><b>Prototype</b></td>
+      <td style="width: 10%"><b>Startup</b></td>
+      <td style="width: 10%"><b>Business</b></td>
+      <td style="width: 10%"><b>Business+</b></td>
+      <td style="width: 30%"><b>Description</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Calculated fields per entity maximum number</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>5</td>
+      <td>The maximum number of calculated fields allowed on an entity.</td>
+    </tr>
+    <tr>
+      <td>Max data points number in rolling arguments</td>
+      <td>1000</td>
+      <td>1000</td>
+      <td>1000</td>
+      <td>1000</td>
+      <td>1000</td>
+      <td>The maximum number of data points supported in rolling arguments.</td>
+    </tr>
+    <tr>
+      <td>Arguments per calculated field max number</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>10</td>
+      <td>The maximum number of input arguments a single calculated field can use.</td>
+    </tr>
+    <tr>
+      <td>State maximum size in KB</td>
+      <td>32</td>
+      <td>32</td>
+      <td>32</td>
+      <td>32</td>
+      <td>32</td>
+      <td>The maximum allowed size of stored state data, measured in kilobytes.</td>
+    </tr>
+    <tr>
+      <td>Single value argument maximum size in KB</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>2</td>
+      <td>The maximum size of a single argument value, in kilobytes.</td>
+    </tr>
+  </tbody>
+</table> 
+
+## Rate limits
+
+The table below shows the rate limits for each subscription plan.
 
 <table>
   <thead>

@@ -817,6 +817,35 @@
         label: VIBit-BP integration guide
         href: /docs/devices-library/vibit-bp/
   description: MachineAstro provides AI-powered predictive maintenance and energy analytics solutions. Our VIBit wireless vibration & temperature sensors enable real-time machine condition monitoring. The iEdge360 platform delivers 400+ fault diagnostics, anomaly detection, and energy insights. Our AI video analytics ensures workplace safety with fire, smoke, and PPE compliance monitoring.
+- name: MClimate
+  type:
+    - LoRaWAN
+  industry:
+    - Smart Buildings
+    - Energy Management
+  use-case:
+    - Air Quality Monitoring
+    - Smart Energy
+    - Smart Office
+    - Assisted Living
+  hardware-types:
+    - Sensors
+  logo: /images/partners/mclimate-logo.png
+  page: /partners/hardware/mclimate
+  site:
+    href: https://mclimate.eu/
+  links:
+    gateway-guides:
+      0:
+        label: Connect the MClimate 16A Switch & Power Meter compact 16A relay and electricity meter to ThingsBoard
+        href: /docs/pe/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/
+      1:
+        label: Connect the MClimate CO2 Display lite to ThingsBoard
+        href: /docs/pe/devices-library/co2-display-lite-temperature-and-humidity-sensor/
+      2:
+        label: Connect the MClimate Vicki Smart Radiator Thermostat to ThingsBoard
+        href: /docs/pe/devices-library/vicki-smart-radiator-thermostat/
+  description: Europe-based company specializing in the development of IoT hardware devices and software solutions that prioritize energy efficiency, air quality, and water loss prevention to make any building smart. Our goal is through partnerships with global entities, technology providers, end-users, and institutions, to retrofit buildings into sustainable places that enhance the well-being and health of their occupants. Moreover, we aid companies in measuring buildings'  data and achieving their ESG goals along the way. We bring best-in-class complete smart solutions in combination with operational excellence, fast response time, and reliable logistics to our partners. Our core philosophy revolves around fostering strong, transparent relationships with our partners and distributors based on our commitment to maintain the highest standards.
 - name: Senquip
   type:
     - Wi-Fi

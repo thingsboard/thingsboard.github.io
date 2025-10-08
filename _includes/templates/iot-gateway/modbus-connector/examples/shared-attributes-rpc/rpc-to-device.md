@@ -86,7 +86,7 @@ Full configuration for Modbus connector for the example above will look like thi
         "timeseries": [
           {
             "tag": "some_key",
-            "type": "int16",
+            "type": "16int",
             "address": 1,
             "objectsCount": 1,
             "functionCode": 3

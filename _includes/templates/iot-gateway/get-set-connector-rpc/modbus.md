@@ -22,7 +22,7 @@ get type=16int;functionCode=3;objectsCount=1;address=1;
 **Response:**
 
 ```json
-{"result":  13}
+{"result":{"value":13}}
 ```
 
 {:refdef: style="text-align: left;"}
@@ -48,13 +48,13 @@ For example, in our case, we know that we can write 16-bit integer values to the
 that contains room light level. To write the value of the register with the address 2, run the following query:
 
 ```bash
-set type=16int;functionCode=3;objectsCount=1;address=2;value=80;
+set type=16int;functionCode=6;objectsCount=1;address=2;value=80;
 ```
 
 **Response:**
 
 ```json
-{"result":  {"success":true}}
+{"result":{"value":"80"}}
 ```
 
 {:refdef: style="text-align: left;"}
@@ -70,7 +70,7 @@ get type=16int;functionCode=3;objectsCount=1;address=2;
 **Response:**
 
 ```json
-{"result":  80}
+{"result":{"value":80}}
 ```
 
 {:refdef: style="text-align: left;"}

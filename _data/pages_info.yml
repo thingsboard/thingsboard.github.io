@@ -572,6 +572,7 @@
   url: "/docs/guides/"
   redirect_from:
   - "/docs/iot-video-tutorials/"
+  - "/docs/user-guide/"
 "/docs/gw/search/":
   url: "/docs/gw/search/"
   redirect_from: []
@@ -1776,7 +1777,8 @@
   redirect_from: []
 "/docs/paas/eu/guides/":
   url: "/docs/paas/eu/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/paas/eu/user-guide/"
 "/docs/paas/eu/":
   url: "/docs/paas/eu/"
   redirect_from: []
@@ -2008,9 +2010,6 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/image-gallery/":
   url: "/docs/paas/eu/user-guide/image-gallery/"
-  redirect_from: []
-"/docs/paas/eu/user-guide/":
-  url: "/docs/paas/eu/user-guide/"
   redirect_from: []
 "/docs/paas/eu/user-guide/integrations/apache-pulsar/":
   url: "/docs/paas/eu/user-guide/integrations/apache-pulsar/"
@@ -2314,7 +2313,8 @@
   redirect_from: []
 "/docs/paas/guides/":
   url: "/docs/paas/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/paas/user-guide/"
 "/docs/paas/":
   url: "/docs/paas/"
   redirect_from: []
@@ -2547,9 +2547,6 @@
   redirect_from: []
 "/docs/paas/user-guide/image-gallery/":
   url: "/docs/paas/user-guide/image-gallery/"
-  redirect_from: []
-"/docs/paas/user-guide/":
-  url: "/docs/paas/user-guide/"
   redirect_from: []
 "/docs/paas/user-guide/integrations/apache-pulsar/":
   url: "/docs/paas/user-guide/integrations/apache-pulsar/"
@@ -3392,7 +3389,8 @@
   redirect_from: []
 "/docs/pe/guides/":
   url: "/docs/pe/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/pe/user-guide/"
 "/docs/pe/":
   url: "/docs/pe/"
   redirect_from: []
@@ -3712,9 +3710,6 @@
   - "/docs/user-guide/groups/"
 "/docs/pe/user-guide/image-gallery/":
   url: "/docs/pe/user-guide/image-gallery/"
-  redirect_from: []
-"/docs/pe/user-guide/":
-  url: "/docs/pe/user-guide/"
   redirect_from: []
 "/docs/pe/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
@@ -4516,9 +4511,6 @@
   - "/docs/user-guide/ui/entity-views"
 "/docs/user-guide/image-gallery/":
   url: "/docs/user-guide/image-gallery/"
-  redirect_from: []
-"/docs/user-guide/":
-  url: "/docs/user-guide/"
   redirect_from: []
 "/docs/user-guide/install/alibaba-cloud/":
   url: "/docs/user-guide/install/alibaba-cloud/"

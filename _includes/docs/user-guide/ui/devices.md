@@ -131,11 +131,14 @@ You can assign the device to a specific [customer](/docs/user-guide/ui/customers
 > This step is crucial for ensuring data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see their own devices and will not have access to devices or data assigned to other customers.
 
 {% include images-gallery.html imageCollection="assign-device-to-customer" showListImageTitles="true" %}
+In the ThingsBoard Professional Edition (PE), you can assign devices using the [“Manage owner and groups”](https://thingsboard.io/docs/pe/user-guide/ui/devices/#manage-device-owner-and-groups){:target="_blank"} button in the device details. This allows you to not only assign ownership but also manage group memberships at the same time.
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Manage device owner and groups
 You can change a device’s owner (which can be either a Tenant or a Customer, see [glossary](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rbac/#glossary){:target="_blank"}) to control who can access the device and its data. Changing the owner moves the device to the selected level and updates access based on groups.
+
+Unlike the Community Edition (CE), where you can only assign a device to a specific customer, in the Professional Edition (PE) you can also manage ownership and group memberships using the “Manage owner and groups” button.
 
 To do this:
 - Click the device to open its **Device details**.

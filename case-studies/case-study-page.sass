@@ -16,6 +16,8 @@
     font-size: 16px
 
 #case-studies
+  img
+    max-width: 100%
   #case-studies-content
     overflow: hidden
 
@@ -339,13 +341,11 @@
             left: -100%
             top: 0
 
-          &:nth-child(odd)
+          &:nth-of-type(even)
             flex-direction: row-reverse
 
           &:last-child
             border-bottom: none
-
-
           img
             width: 450px
             border-radius: 24px
@@ -700,7 +700,7 @@
           .block
             flex-direction: column
 
-            &:nth-child(odd)
+            &:nth-of-type(even)
               flex-direction: column
 
             img

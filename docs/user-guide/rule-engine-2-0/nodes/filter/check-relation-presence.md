@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Check relation presence
+title: check relation presence
 description: Routes messages based on whether a specified relation exists between the message originator and a target entity.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
