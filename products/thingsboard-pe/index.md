@@ -157,28 +157,28 @@ description:
       </div>
       <a href="/docs/pe/reference/msa/" target="_blank" class="comparison-row">
         <p>Scalability (Clustering)</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/rule-engine-2-0/overview/" target="_blank" class="comparison-row">
         <p>Rule Engine & Data Processing</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/samples/analytics/ai-models/" target="_blank" class="comparison-row">
         <p>AI Models and AI Rule nodes</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/iot-data-visualization/" target="_blank" class="comparison-row">
         <p>Dashboards and Visualization</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/mobile/" target="_blank" class="comparison-row">
         <p>Mobile Application</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
     </div>
     <div class="block">
@@ -187,23 +187,23 @@ description:
       </div>
       <a href="/docs/pe/user-guide/ui/devices/" target="_blank" class="comparison-row">
         <p>Device & Asset Modeling</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/claiming-devices/" target="_blank" class="comparison-row">
         <p>Device Claiming & Provisioning API</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/bulk-provisioning/" target="_blank" class="comparison-row">
         <p>Bulk Device and Asset Provisioning via CSV</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/ota-updates/" target="_blank" class="comparison-row">
         <p>OTA Updates</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
     </div>
     <div class="block">
@@ -212,23 +212,23 @@ description:
       </div>
       <a href="/docs/pe/getting-started-guides/connectivity/" target="_blank" class="comparison-row">
         <p>Standard IoT Protocols (MQTT/CoAP/HTTP/SNMP/LWM2M)</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank" class="comparison-row">
         <p>Industrial IoT Gateway (Modbus, OPC-UA, BACnet, etc.)</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/user-guide/integrations/" target="_blank" class="comparison-row">
         <p>LPWAN Integrations (LoRaWAN, Sigfox)</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/user-guide/integrations/" target="_blank" class="comparison-row">
         <p>System Integrations (AWS IoT, Azure IoT, PubSub, Kafka)</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
     </div>
     <div class="block">
@@ -237,28 +237,28 @@ description:
       </div>
       <a href="/docs/pe/user-guide/ui/users/" target="_blank" class="comparison-row">
         <p>User Management</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/audit-log/" target="_blank" class="comparison-row">
         <p>Audit Logging</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/rbac/" target="_blank" class="comparison-row">
         <p>Advanced Role-Based Access Control (RBAC)</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/oauth-2-support/" target="_blank" class="comparison-row">
         <p>Single Sign-On (SSO) / OAuth2</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/secrets-storage/" target="_blank" class="comparison-row">
         <p>Secrets Storage</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
     </div>
     <div class="block">
@@ -268,32 +268,32 @@ description:
       <a href="/docs/pe/user-guide/white-labeling/" target="_blank" class="comparison-row">
         <p>White-Labeling</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/custom-menu/" target="_blank" class="comparison-row">
         <p>Custom menu</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/custom-translation/" target="_blank" class="comparison-row">
         <p>Custom translation</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/user-guide/reporting/reporting-key-concepts/" target="_blank" class="comparison-row">
         <p>Reporting & Scheduling</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/solution-templates/overview/" target="_blank" class="comparison-row">
         <p>Solution Templates</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="https://github.com/thingsboard/data-converters" target="_blank" class="comparison-row">
         <p>Device Payload Codec Library (400+)</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
     </div>
     <div class="block">
@@ -302,18 +302,18 @@ description:
       </div>
       <a href="pricing/?product=thingsboard-pe" target="_blank" class="comparison-row">
         <p>Self-Managed (On-premise/Cloud)</p>
-        <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/blue-mark.svg" alt="Blue checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="pricing/?product=thingsboard-cloud" target="_blank" class="comparison-row">
         <p>Managed Public Cloud</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
       <a href="/docs/pe/samples/analytics/ai-models/" target="_blank" class="comparison-row">
         <p>Managed Private Cloud</p>
         <div class="hidden-space">&nbsp;</div>
-        <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+        <div><img src="https://img.thingsboard.io/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
     </div>
     <div class="block">

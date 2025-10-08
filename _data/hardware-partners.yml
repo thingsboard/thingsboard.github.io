@@ -830,7 +830,7 @@
     - Assisted Living
   hardware-types:
     - Sensors
-  logo: /images/partners/mclimate-logo.png
+  logo: https://img.thingsboard.io/partners/mclimate-logo.png
   page: /partners/hardware/mclimate
   site:
     href: https://mclimate.eu/

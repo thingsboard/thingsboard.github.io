@@ -12,15 +12,15 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
             <div class="text">
                 <p class="category">DISASTER AND CIVIL PROTECTION</p>
                 <h1>Securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/tjk-solutions.webp')">
-                    <img src="/images/case-studies/tjk-solutions.svg" title="TJK-solutions" alt="TJK-solutions logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/tjk-solutions.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/tjk-solutions.svg" title="TJK-solutions" alt="TJK-solutions logo" width="126" height="56">
                 </div>
                 <p>TJK-Solutions is a German IoT and environmental technology company specializing in smart monitoring solutions for water management, weather observation, and critical infrastructure. Beyond these areas, the company is also deeply involved in projects related to IoT, LoRaWAN, and Smart Village / Smart City development, helping municipalities and organizations implement scalable, connected systems for digital transformation.</p>
                 <p>Driven by the need for resilient and self-sufficient communication systems, TJK-Solutions develops and operates self-managed IoT platforms that remain fully functional even when public infrastructure fails.</p>
                 <p>As part of a large-scale disaster management exercise conducted in the municipality of Am Mellensee (Brandenburg, Germany), TJK-Solutions deployed a Meshtastic-based emergency communication network to test how decentralized systems can ensure reliable information flow under crisis conditions. To maintain full visibility of this critical infrastructure, the company implemented ThingsBoard Professional Edition (PE) on local servers — enabling continuous real-time monitoring of nodes, routers, and connections essential for emergency coordination and disaster response.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/tjk-solutions.webp')">
-                <img src="/images/case-studies/tjk-solutions.svg" title="TJK-solutions" alt="TJK-solutions logo" width="126" height="56">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/tjk-solutions.webp')">
+                <img src="https://img.thingsboard.io/case-studies/tjk-solutions.svg" title="TJK-solutions" alt="TJK-solutions logo" width="126" height="56">
             </div>
         </div>
     </section>
@@ -45,7 +45,7 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/tom-jonas-krüger.webp" title="Founder & CEO of TJK-Solutions" alt="Tom Jonas Krüger" width="658" height="424">
+        <img src="https://img.thingsboard.io/case-studies/tom-jonas-krüger.webp" title="Founder & CEO of TJK-Solutions" alt="Tom Jonas Krüger" width="658" height="424">
         <div class="text">
             <h2>TJK-Solutions</h2>
             <p class="quote">“Thanks to ThingsBoard, we can continuously monitor our entire Meshtastic emergency network — even when the public internet or power grid fails. It gives us the transparency and confidence we need in crisis situations.”</p>
@@ -119,28 +119,28 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
                 <h3>MQTT integration</h3>
                 <p>The Meshtastic telemetry data (voltage, signal strength, hops, uptime, etc.) is transmitted to ThingsBoard via a dedicated MQTT broker.</p>
             </div>
-            <img src="/images/case-studies/tjk-solutions-1.webp" title="Seamless integration with industrial equipment" alt="Seamless integration with industrial equipment" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tjk-solutions-1.webp" title="Seamless integration with industrial equipment" alt="Seamless integration with industrial equipment" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Data converter & uplink automation</h3>
                 <p>ThingsBoard’s integration engine automatically creates and configures new devices as soon as they transmit data. Attributes such as device type, label, and location are assigned dynamically.</p>
             </div>
-            <img src="/images/case-studies/tjk-solutions-2.webp" title="Wireless data transmission enabled by ThingsBoard and LoRaWAN" alt="Wireless data transmission enabled by ThingsBoard and LoRaWAN" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tjk-solutions-2.webp" title="Wireless data transmission enabled by ThingsBoard and LoRaWAN" alt="Wireless data transmission enabled by ThingsBoard and LoRaWAN" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Dashboard visualization</h3>
                 <p>A custom dashboard provides a real-time overview, including total, online, and offline nodes; an interactive map showing live status; and a data table for telemetry such as battery voltage, RSSI, and hop distance.</p>
             </div>
-            <img src="/images/case-studies/tjk-solutions-3.webp" title="Advanced data aggregation and digital twin vsualization" alt="Advanced data aggregation and digital twin vsualization" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tjk-solutions-3.webp" title="Advanced data aggregation and digital twin vsualization" alt="Advanced data aggregation and digital twin vsualization" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Offline-resilient architecture</h3>
                 <p>By running ThingsBoard PE on local servers, TJK-Solutions ensures full operation even during blackouts. This guarantees data security, autonomy, and consistent monitoring for critical infrastructure.</p>
             </div>
-            <img src="/images/case-studies/tjk-solutions-4.webp" title="Real-time performance monitoring" alt="Real-time performance monitoring" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/tjk-solutions-4.webp" title="Real-time performance monitoring" alt="Real-time performance monitoring" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -157,8 +157,8 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
-                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -172,8 +172,8 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/battery-level.webp" title="Thingsboard battery level widget" alt="Thingsboard battery level widget" width="388" height="388">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/battery-level.webp" title="Thingsboard battery level widget" alt="Thingsboard battery level widget" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -187,8 +187,8 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/alarms-table.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
-                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/alarms-table.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -202,8 +202,8 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/network-status.webp" title="Thingsboard network status widget" alt="Thingsboard network status widget" width="388" height="388">
-                <img src="/images/case-studies/signal-strength-hop-count.webp" title="Thingsboard signal strength widget" alt="Thingsboard signal strength widget" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/network-status.webp" title="Thingsboard network status widget" alt="Thingsboard network status widget" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/signal-strength-hop-count.webp" title="Thingsboard signal strength widget" alt="Thingsboard signal strength widget" width="388" height="388">
             </div>
         </div>
         {% include default-carousel.liquid collectionMap = 'case-studies' collectionKey = 'tjk-solutions' %}
@@ -212,11 +212,11 @@ description: Discover how TJK-Solutions uses ThingsBoard to monitor its Meshtast
         {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="/images/case-studies/tjk-solutions.svg" title="TJK-solutions" alt="TJK-solutions logo" width="126" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/tjk-solutions.svg" title="TJK-solutions" alt="TJK-solutions logo" width="126" height="56">
                 </div>
             </div>
         </div>
