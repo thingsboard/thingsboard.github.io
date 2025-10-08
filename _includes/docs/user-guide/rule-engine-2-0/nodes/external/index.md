@@ -8,7 +8,7 @@ This allows rule chains to integrate with external infrastructure and services a
 - [AI request](/docs/user-guide/rule-engine-2-0/nodes/external/ai-request) — sends a request to a large language model with customizable prompts and optional file attachments, returning the AI-generated response as the outgoing message data.
 - [aws lambda](/docs/user-guide/rule-engine-2-0/nodes/external/aws-lambda) — invokes AWS Lambda function with incoming message data as the payload and returns the function's response as outgoing message data.
 - [aws sns](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns) — publishes incoming message data to AWS SNS topic and returns response metadata in the outgoing message.
-- [aws sqs](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs) — Node publish messages to the AWS SQS (Amazon Simple Queue Service).
+- [aws sqs](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs) — publishes incoming message data to AWS Simple Queue Service (SQS) queue and returns response metadata in the outgoing message.
 - [azure iot hub](/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub) — Node will send full Message payload to the Azure IoT Hub device.
 - [gpc pubsub](/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub) — Publish message to the Google Cloud PubSub.
 - [kafka](/docs/user-guide/rule-engine-2-0/nodes/external/kafka) — Kafka Node sends messages to Kafka brokers. Expects messages with any message type. Will send record via Kafka producer to Kafka server
