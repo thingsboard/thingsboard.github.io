@@ -148,6 +148,15 @@ After a failure (e.g., topic not found), metadata becomes:
 
 The message data remains unchanged.
 
+## Message acknowledgement behavior
+
+The node's message acknowledgement behavior is controlled by the `ACTORS_RULE_EXTERNAL_NODE_FORCE_ACK` environment variable:
+
+- **When set to `true`** – The incoming message is acknowledged and marked as successfully processed immediately upon receipt.
+  A new message is created with the updated metadata and is enqueued for processing by the next node.
+- **When set to `false`** (default) – The incoming message remains in an in-processing state throughout the entire SNS publish operation.
+  The message is transformed in place, its metadata is updated with the SNS response fields, and the modified message is passed to the next node after the publish completes.
+
 ## Message processing algorithm
 
 1. The node constructs an SNS publish request:
