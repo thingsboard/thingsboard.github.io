@@ -13,7 +13,7 @@ This allows rule chains to integrate with external infrastructure and services a
 - [gcp pubsub](/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub) — publishes incoming message data to [Google Cloud Pub/Sub](https://cloud.google.com/pubsub){:target="_blank"} topic and return response metadata in the outgoing message.
 - [kafka](/docs/user-guide/rule-engine-2-0/nodes/external/kafka) — Kafka Node sends messages to Kafka brokers. Expects messages with any message type. Will send record via Kafka producer to Kafka server
 - [mqtt](/docs/user-guide/rule-engine-2-0/nodes/external/mqtt) — Publish incoming message payload to the topic of the configured MQTT broker with QoS AT_LEAST_ONCE.
-- [rabbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — Publish incoming message payload to the RabbitMQ.
+- [rabbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — publishes messages to [RabbitMQ](https://www.rabbitmq.com/){:target="_blank"} exchanges, sending the incoming message data as the message body.
 - [rest api call](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call) — Invoke REST API calls to the external REST server.
 - [send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email) — Node sends incoming message using configured Mail Server.
 - [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — The node can send notification to recipients group using the template.
