@@ -196,6 +196,12 @@ notitle: "true"
                     <p class="text-area-label">Message</p>
                 </label>
             </div>
+            <input type="hidden" name="utm_source" id="utm_source">
+            <input type="hidden" name="utm_medium" id="utm_medium">
+            <input type="hidden" name="utm_campaign" id="utm_campaign">
+            <input type="hidden" name="utm_term" id="utm_term">
+            <input type="hidden" name="utm_content" id="utm_content-popup">
+            <input type="hidden" name="client_id" id="client_id">
             <input type="hidden" name="_next" value="/docs/contact-us-thanks/">
             <input type="text" name="_gotcha" style="display:none">
         </div>
@@ -221,11 +227,56 @@ notitle: "true"
             document.querySelector('.select-label').parentElement.style.display = 'none';
         }
     });
+
+    function getURLParam(name) {
+        const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
+    }
+
+    function populateUTMandClientIdFields() {
+        var $form = $('.contact-form');
+        if (!$form.length) return;
+
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'];
+        const utmData = {};
+
+        utmKeys.forEach(function(key) {
+            let value = getURLParam(key);
+            if (value) {
+                localStorage.setItem(key, value);
+            } else {
+                value = localStorage.getItem(key);
+            }
+
+            if (value) {
+                value = decodeURIComponent(value);
+                utmData[key] = value;
+                $form.find('input[name="' + key + '"]').val(value);
+            }
+        });
+
+        const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
+        if (gaCookie) {
+            const parts = gaCookie.split('.');
+            if (parts.length >= 4) {
+                const clientId = parts[2] + '.' + parts[3];
+                utmData['client_id'] = clientId;
+                $form.find('input[name="client_id"]').val(clientId);
+            }
+        }
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+            event: 'contact-us',
+            ...utmData
+        });
+    }
+
     jqueryDefer(
         function () {
             $( document ).ready(function() {
                 var $contactForm =  $('#ContactUs');
                 $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+                populateUTMandClientIdFields();
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200
                           }, 0);*/
