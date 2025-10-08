@@ -41,7 +41,7 @@ The access key ID for your AWS account. This credential is used to sign requests
 The secret access key corresponding to your access key ID. This field is required and cannot be blank.
 
 {% capture credentials_note %}
-**Note**: If you use Professional Edition, we highly recommend using [Secrets storage](/docs/{{docsPrefix}}user-guide/secrets-storage/){:target="_blank"} to securely store your secret key.
+**Note**: If you use Professional Edition, we highly recommend using [Secrets storage](/docs/pe/user-guide/secrets-storage/){:target="_blank"} to securely store your secret key.
 {% endcapture %}
 {% include templates/info-banner.md content=credentials_note %}
 
