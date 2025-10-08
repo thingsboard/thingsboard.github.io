@@ -10,10 +10,10 @@ This allows rule chains to integrate with external infrastructure and services a
 - [aws sns](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sns) — publishes incoming message data to AWS SNS topic and returns response metadata in the outgoing message.
 - [aws sqs](/docs/user-guide/rule-engine-2-0/nodes/external/aws-sqs) — publishes incoming message data to AWS Simple Queue Service (SQS) queue and returns response metadata in the outgoing message.
 - [azure iot hub](/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub) — Node will send full Message payload to the Azure IoT Hub device.
-- [gpc pubsub](/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub) — Publish message to the Google Cloud PubSub.
+- [gcp pubsub](/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub) — publishes incoming message data to [Google Cloud Pub/Sub](https://cloud.google.com/pubsub){:target="_blank"} topic and return response metadata in the outgoing message.
 - [kafka](/docs/user-guide/rule-engine-2-0/nodes/external/kafka) — Kafka Node sends messages to Kafka brokers. Expects messages with any message type. Will send record via Kafka producer to Kafka server
 - [mqtt](/docs/user-guide/rule-engine-2-0/nodes/external/mqtt) — Publish incoming message payload to the topic of the configured MQTT broker with QoS AT_LEAST_ONCE.
-- [rabbbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — Publish incoming message payload to the RabbitMQ.
+- [rabbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — Publish incoming message payload to the RabbitMQ.
 - [rest api call](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call) — Invoke REST API calls to the external REST server.
 - [send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email) — Node sends incoming message using configured Mail Server.
 - [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — The node can send notification to recipients group using the template.
