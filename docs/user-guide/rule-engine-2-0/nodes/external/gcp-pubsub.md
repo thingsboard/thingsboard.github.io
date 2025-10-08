@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: gcp pubsub
-description: Publishes messages to the Google Cloud PubSub.
+description: Publishes incoming message data to Google Cloud Pub/Sub topic and return response metadata in the outgoing message.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -119,7 +119,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker-wind
 
 ### Ubuntu Server
 
- - Install Java 11 (OpenJDK) 
+ - Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}
 
