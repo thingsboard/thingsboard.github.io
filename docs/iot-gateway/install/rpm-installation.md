@@ -72,7 +72,7 @@ OPC-UA and MQTT sources inside the network but cannot access the internet due to
 ### Prerequisites
 
 The Offline Build requires the same prerequisites as the standard package installation, and also it's important to have 
-installed **Python 3.11**, This is only supported on **AlmaLinux 9.x** (we recommend **9.6**) or earlier. 
+installed **Python 3.11**, this is only supported on **AlmaLinux 9.x** (we recommend **9.6**) or earlier. 
 Newer versions such as **AlmaLinux 10** do not provide **Python 3.11** in the official repositories, 
 and we cannot guarantee that alternative installation methods will work properly. If the detected Python version is incompatible, 
 the installer will exit gracefully with an error indicating that **Python 3.11** is missing.
