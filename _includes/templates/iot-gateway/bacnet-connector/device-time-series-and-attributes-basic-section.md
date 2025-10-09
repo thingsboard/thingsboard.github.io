@@ -27,6 +27,14 @@ To add new time series or attribute key, follow these steps:
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingAttrAndTimeseries %}
 
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the
+[Advanced configuration](/docs/iot-gateway/config/bacnet/#device-attributes-and-time-series) section.
+
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/bacnet/#usage-examples) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 For each time series or attribute, you can enable specific report strategy. This strategy defines how often the 
 data will be sent to the ThingsBoard server. The following strategies are available:
 

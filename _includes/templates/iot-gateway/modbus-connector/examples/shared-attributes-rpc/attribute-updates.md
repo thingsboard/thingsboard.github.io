@@ -54,13 +54,15 @@ Now we can check if the attribute update works. Go to "**Entities**" → "**Devi
 device → "**Attributes**" tab → select "**Shared attributes**" → click on the "**+**" icon and add `relay` attribute 
 with type "**Boolean**" set it to "**True**".
 
-{% assign attributeUpdatesAbsolutePath2 = '
+{% assign attributeUpdates2 = '
     ===
-        image: /images/gateway/modbus-connector/examples/connector-configuration-attribute-updates-3.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
     ===
-        image: /images/gateway/opc-ua-connector/examples/connector-configuration-attribute-updates-4.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-5.png,
 '
 %}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=attributeUpdates2 %}
 
 Now, let’s check the value of the relay register. In the selected device, go to the "**Last telemetry**" tab and 
 check the value of the `relay` telemetry. It should be `true` since we set the shared attribute to `true`.
