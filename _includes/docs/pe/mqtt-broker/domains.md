@@ -1,51 +1,121 @@
 * TOC
 {:toc}
 
+After installing **TBMQ PE**, as described in the [Installation Options guide](/docs/pe/mqtt-broker/install/installation-options/), 
+your instance is accessible by default via its public **IP address** or the **DNS record of the cloud Load Balancer**.
+However, configuring a **custom domain name** provides several important advantages:
 
-## Domain registration
+* **Simplified access** - users can log in using an easy-to-remember hostname instead of an IP or Load Balancer DNS name.
+* **Secure SSL connections** - domains enable the use of trusted SSL/TLS certificates.
+* **White labeling** - TBMQ uses the domain to apply custom branding to the login page (logos, titles, and colors). The domain simplifies configuration management, as each TBMQ deployment supports only one login page branding configuration.
+* **OAuth 2.0 / SSO integration** - multiple domains allow separate login configurations for each authentication provider.
+
+## Domain Registration
 
 {% capture domain_owner_note %}
-**Note**: You must be owner of the domain you are registering.
+**Note:** You must be the owner of the domain you are registering.
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}
 
-In order to use your own host name instead of **IP address** you must register it first. To do this, follow these steps:
+To use your own hostname with TBMQ, you must first configure DNS and then register the domain inside TBMQ.
 
-First, on your DNS provider's website, you must add an A record for your domain to map it with IP address, and add **SSL certificate**. 
-See [How to Create a CNAME Record For Your Domain](#how-to-create-a-cname-record) for details.
+### Step 1. Configure DNS
 
-Once done, you can start the procedure of adding a domain.
+On your DNS provider’s website:
 
-* Log in to your TBMQ PE account;
+* Add an **A record** (or **CNAME record**) to map your domain to the IP or hostname where TBMQ is hosted.
+
+    * See [How to Create an A Record](#how-to-create-an-a-record-for-your-domain)
+    * Or [How to Create a CNAME Record](#how-to-create-a-cname-record-for-your-domain)
+
+* Add a valid **SSL certificate** for the chosen domain.
+
+### Step 2. Register Domain in TBMQ
+
+* Log in to your **TBMQ PE** account.
 
 {% include images-gallery.html imageCollection="register-domain" showListImageTitles="true" %}
 
-## Log in with your chosen domain name
+## Logging in with Your Domain
 
-Now you can use your domain name to access TBMQ web interface and services. Try to log in by entering the chosen domain name in the browser address line.
+After successful registration, you can access your TBMQ instance using the configured domain name.
+Open a web browser and enter the domain in the address bar - you should see the TBMQ login page.
 
 {% include images-gallery.html imageCollection="login-with-domain" %}
 
-## Domain details
+## Viewing Domain Details
 
 To view details about a registered domain, simply click on it to open the domain details dialog.
 
 {% include images-gallery.html imageCollection="domain-details" %}
 
-## Delete domain
+## Deleting a Domain
 
 To delete the domain click "trash" icon in the domain's row you want to delete. In the confirmation dialog, click "Yes" if you are sure you want to delete the domain.
 
 {% include images-gallery.html imageCollection="delete-domain" %}
 
-Once confirmed, the domain information and associated SSL certificate will be deleted, and you will not be able to access TBMQ web interface and services using that domain.
-You can always re-register the same or a different domain using [Domain registration](#domain-registration) procedure.
+## How to Create an A Record for Your Domain {#how-to-create-an-a-record-for-your-domain}
 
-## How to Create a CNAME Record For Your Domain {#how-to-create-a-cname-record}
+### What Is an A Record?
 
-The procedure of adding CNAME record to DNS database depending on your DNS service Provider. Below is the list of instructions for some popular DNS providers:
+An **A record (Address Record)** links a domain name directly to an **IPv4 address**.
+It tells DNS resolvers where to find your server.
 
-* [Amazon Route 53](https://aws.amazon.com/premiumsupport/knowledge-center/route-53-create-alias-records/){:target="_blank"}
+**Example:**
+
+```
+mqtt.mycompany.com → 203.0.113.45
+```
+
+### When to Use an A Record
+
+Use an **A record** when your TBMQ instance has a **fixed public IP address** - for example, a VM, Kubernetes service, or on-premise server.
+
+### How to Create an A Record
+
+The exact procedure depends on your DNS provider.
+Refer to their documentation for detailed instructions:
+
+* [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-values.html){:target="_blank"}
+* [GoDaddy](https://www.godaddy.com/help/add-an-a-record-19238){:target="_blank"}
+* [Cloudflare](https://developers.cloudflare.com/dns/manage-dns-records/how-to/create-dns-records/){:target="_blank"}
+* [ClouDNS](https://www.cloudns.net/wiki/article/10/){:target="_blank"}
+* [Google Cloud DNS](https://cloud.google.com/dns/docs/records){:target="_blank"}
+* [Name.com](https://www.name.com/support/articles/115004893508-adding-an-a-record){:target="_blank"}
+* [DNSimple](https://support.dnsimple.com/articles/manage-a-record/){:target="_blank"}
+* [Infoblox NIOS](https://docs.infoblox.com/space/BloxOneDDI/186811892/Creating+A+Record){:target="_blank"}
+* [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/434/2237/how-do-i-set-up-host-records-for-a-domain/){:target="_blank"}
+
+If your provider is not listed, check their documentation or contact their support team for assistance.
+
+## How to Create a CNAME Record for Your Domain {#how-to-create-a-cname-record-for-your-domain}
+
+### What Is a CNAME Record?
+
+A **CNAME (Canonical Name Record)** maps one domain name to another domain name.
+It acts as an **alias**, allowing several domains or subdomains to point to the same hostname.
+
+**Example:**
+
+```
+mqtt.mycompany.com → broker.mycompany.net
+```
+
+### When to Use a CNAME Record
+
+Use a **CNAME record** when:
+
+* You want multiple domains (e.g., `mqtt.mycompany.com`, `iot.mycompany.com`) to resolve to the same host.
+* Your server’s IP may change, but the target domain remains constant.
+* You want to simplify DNS management by maintaining only one A record (on the primary domain).
+
+### How to Create a CNAME Record
+
+Each DNS provider has its own interface for adding CNAME records.
+Below are direct links to their setup guides:
+
+* [Amazon Route 53](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/resource-record-sets-values.html){:target="_blank"}
 * [GoDaddy](https://www.godaddy.com/help/add-a-cname-record-19236){:target="_blank"}
 * [Cloudflare](https://community.cloudflare.com/t/how-do-i-add-a-cname-record/59){:target="_blank"}
 * [ClouDNS](https://www.cloudns.net/wiki/article/13/){:target="_blank"}
@@ -58,62 +128,53 @@ The procedure of adding CNAME record to DNS database depending on your DNS servi
 * [Infoblox NIOS](https://docs.infoblox.com/display/BloxOneDDI/Creating+a+CNAME+Record){:target="_blank"}
 * [Namecheap](https://www.namecheap.com/support/knowledgebase/article.aspx/9646/2237/how-to-create-a-cname-record-for-your-domain){:target="_blank"}
 
-If none of the DNS providers listed above is the one you are using, try to find this information on the provider&#39;s website or by reaching out to their support team.
+If your provider is not listed, check their documentation or contact their support team for assistance.
 
 ## Troubleshooting
 
-Firs of all you need to check if you have added CNAME to your domain correctly:
+If your domain does not resolve or TBMQ is not accessible, verify the DNS configuration.
 
-Use [Google Admin Toolbox](https://toolbox.googleapps.com/apps/dig/){:target="_blank"} or "dig" command if your OS system is Linux:
+### Check DNS Record
+
+Use the [Google Admin Toolbox DIG](https://toolbox.googleapps.com/apps/dig/){:target="_blank"}
+or run the following command on Linux:
 
 ```bash
-dig $YOUR_DOMAIN_NAME any
+dig your-domain.com any
 ```
 {: .copy-code}
 
-Replace $YOUR_DOMAIN_NAME with your domain value.
-
-For example, $YOUR_DOMAIN_NAME is `mycompany.thingsboard.space`:
+Replace `your-domain.com` with your actual domain name.
+Example:
 
 ```bash
-dig mycompany.thingsboard.space any
+dig mqtt.mycompany.com any
 ```
 
-The "dig" command in Linux is used to gather DNS information. It stands for Domain Information Groper, and it collects data about Domain Name Servers. The "dig" command is helpful for diagnosing DNS problems, but is also used to display DNS information.
+### Review the Output
 
-The output of "dig" command could vary duy to your domain setup.
-For example:
+If no `ANSWER SECTION` appears, the record was not added correctly.
+For example, this output shows **no record found**:
+
 ```bash
-$ dig mycompany.thingsboard.space any
-
-; <<>> DiG 9.16.1-Ubuntu <<>> mycompany.thingsboard.space any
-;; global options: +cmd
-;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 27275
-;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 1
-
-;; OPT PSEUDOSECTION:
-; EDNS: version: 0, flags:; udp: 65494
-;; QUESTION SECTION:
-;mydomain.thingsboard.online.	IN	ANY
-
 ;; ANSWER SECTION:
-mycompany.thingsboard.space. 3600 IN	HINFO	"RFC8482" ""
-
-;; Query time: 36 msec
-;; SERVER: 127.0.0.53#53(127.0.0.53)
-;; WHEN: чт чер 29 15:36:44 EEST 2023
-;; MSG SIZE  rcvd: 77
+mqtt.mycompany.com. 3600 IN HINFO "RFC8482" ""
 ```
 
-This output shows that there are NO CNAME added to the mycompany.thingsboard.space domain ("ANSWER SECTION" block).
+A correct record should look like this:
 
-Correct output should look like that:
 ```bash
-...
 ;; ANSWER SECTION:
-mycompany.thingsboard.space. 3600 IN	CNAME	eu.thingsboard.cloud
-...
+mqtt.mycompany.com. 3600 IN CNAME broker.mycompany.net.
 ```
 
-If all the things are correct, but some issue still persists - please [contact us](https://thingsboard.io/docs/pe/mqtt-broker/help/){:target="_blank"} for further support.
+or, if using an A record:
+
+```bash
+;; ANSWER SECTION:
+mqtt.mycompany.com. 3600 IN A 203.0.113.45
+```
+
+### Contact Support
+
+If the configuration appears correct but the issue persists, please [contact us](https://thingsboard.io/docs/pe/mqtt-broker/help/){:target="_blank"} for further assistance.
