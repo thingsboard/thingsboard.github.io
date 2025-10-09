@@ -9,41 +9,36 @@
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}
 
-In order to use your own host name instead of **{{THINGSBOARD_HOST}}** you must register it first. To do this, follow these steps:
+In order to use your own host name instead of **IP address** you must register it first. To do this, follow these steps:
 
-First, on your DNS provider&#39;s website, you must add a canonical record for your domain to map it with eu.thingsboard.cloud{% if docsPrefix == "pe/" %}, and add **SSL certificate**{% endif %}. See [How to Create a CNAME Record For Your Domain](#how-to-create-a-cname-record) for details.
+First, on your DNS provider's website, you must add an A record for your domain to map it with IP address, and add **SSL certificate**. 
+See [How to Create a CNAME Record For Your Domain](#how-to-create-a-cname-record) for details.
 
 Once done, you can start the procedure of adding a domain.
 
-- Log in to your {{THINGSBOARD_WITH_URL}}{:target="_blank"} account;
+* Log in to your TBMQ PE account;
 
 {% include images-gallery.html imageCollection="register-domain" showListImageTitles="true" %}
 
 ## Log in with your chosen domain name
 
-Now you can use your domain name to access {{THINGSBOARD_URL}} web interface and services. Try to login by entering the chosen domain name in the browser address line.
+Now you can use your domain name to access TBMQ web interface and services. Try to log in by entering the chosen domain name in the browser address line.
 
 {% include images-gallery.html imageCollection="login-with-domain" %}
 
 ## Domain details
 
 To view details about a registered domain, simply click on it to open the domain details dialog.
-{% unless docsPrefix == 'pe/' %} This dialog provides information about registered domain CNAME record and issued "SSL certificate" details including current validity period (*Not before* and *Not after*).{% endunless %}
-
-{% unless docsPrefix == 'pe/' %}
-The SSL certificate is valid for 90 days, but no need to worry — {{THINGSBOARD_URL}} will automatically renew it at least 30 days before it expires.
-No action is required on your part unless you change or delete the domain&#39;s CNAME record.
-{% endunless %}
 
 {% include images-gallery.html imageCollection="domain-details" %}
 
 ## Delete domain
 
-To delete the {% unless docsPrefix == 'pe/' %}registered{% endunless %} domain click "trash" icon in the domain's row you want to delete. In the confirmation dialog, click "Yes" if you are sure you want to delete the domain.
+To delete the domain click "trash" icon in the domain's row you want to delete. In the confirmation dialog, click "Yes" if you are sure you want to delete the domain.
 
 {% include images-gallery.html imageCollection="delete-domain" %}
 
-Once confirmed, the domain information and associated SSL certificate will be deleted, and you will not be able to access {{THINGSBOARD_URL}} web interface and services using that domain.
+Once confirmed, the domain information and associated SSL certificate will be deleted, and you will not be able to access TBMQ web interface and services using that domain.
 You can always re-register the same or a different domain using [Domain registration](#domain-registration) procedure.
 
 ## How to Create a CNAME Record For Your Domain {#how-to-create-a-cname-record}
@@ -70,6 +65,7 @@ If none of the DNS providers listed above is the one you are using, try to find 
 Firs of all you need to check if you have added CNAME to your domain correctly:
 
 Use [Google Admin Toolbox](https://toolbox.googleapps.com/apps/dig/){:target="_blank"} or "dig" command if your OS system is Linux:
+
 ```bash
 dig $YOUR_DOMAIN_NAME any
 ```
@@ -78,6 +74,7 @@ dig $YOUR_DOMAIN_NAME any
 Replace $YOUR_DOMAIN_NAME with your domain value.
 
 For example, $YOUR_DOMAIN_NAME is `mycompany.thingsboard.space`:
+
 ```bash
 dig mycompany.thingsboard.space any
 ```
@@ -119,4 +116,4 @@ mycompany.thingsboard.space. 3600 IN	CNAME	eu.thingsboard.cloud
 ...
 ```
 
-If all the things are correct, but some issue still persists - please [contact us](https://thingsboard.io/docs/contact-us/){:target="_blank"} for further support.
+If all the things are correct, but some issue still persists - please [contact us](https://thingsboard.io/docs/pe/mqtt-broker/help/){:target="_blank"} for further support.
