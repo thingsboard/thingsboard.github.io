@@ -300,17 +300,17 @@ description:
       <div class="comparison-row">
         <p>Deployment Options</p>
       </div>
-      <a href="pricing/?product=thingsboard-pe" target="_blank" class="comparison-row">
+      <a href="/pricing/?product=thingsboard-pe" target="_blank" class="comparison-row">
         <p>Self-Managed (On-premise/Cloud)</p>
         <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
         <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
-      <a href="pricing/?product=thingsboard-cloud" target="_blank" class="comparison-row">
+      <a href="/pricing/?product=thingsboard-cloud" target="_blank" class="comparison-row">
         <p>Managed Public Cloud</p>
         <div class="hidden-space">&nbsp;</div>
         <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
       </a>
-      <a href="/docs/pe/samples/analytics/ai-models/" target="_blank" class="comparison-row">
+      <a href="/pricing/?product=thingsboard-private-cloud" target="_blank" class="comparison-row">
         <p>Managed Private Cloud</p>
         <div class="hidden-space">&nbsp;</div>
         <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
@@ -322,8 +322,8 @@ description:
       </div>
       <div class="comparison-row">
         <p>Support Model</p>
-        <p><a href="services/support/?section=thingsboard-ce/">Community</a></p>
-        <p><a href="https://thingsboard.io/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&faqSection=supportAndAssistance#pe-pay-as-you-go-support-included/">Advanced + SLA</a></p>
+        <p><a href="/services/support/?section=thingsboard-ce" target="_blank">Community</a></p>
+        <p><a href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&faqSection=supportAndAssistance#pe-pay-as-you-go-support-included" target="_blank">Advanced + SLA</a></p>
       </div>
     </div>
   </section>
