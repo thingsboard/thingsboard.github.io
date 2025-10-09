@@ -1,7 +1,7 @@
 {% if (docsPrefix == "pe/") %}
-    {% assign installationOptionsValue = "installation-options-pe-mqtt-broker-helm-cluster-upgrading-options" %}
+    {% assign installationOptionsValue = "installation-options-pe-mqtt-broker-helm" %}
 {% else %}
-    {% assign installationOptionsValue = "installation-options-mqtt-broker-helm-cluster-upgrading-options" %}
+    {% assign installationOptionsValue = "installation-options-mqtt-broker-helm" %}
 {% endif %}
 
 <div class="installation-options">
