@@ -7,24 +7,24 @@ description: IoT device management using ThingsBoard attributes feature
 server-side-attrs-ui:
     0:
         image: /images/user-guide/attributes/add-server-side-pe-src.png
-        title: 'Select Device Group. Click on the particular device row to open device details. Select "Attributes" tab. Choose "Server attributes" scope. Click "+" Icon.'
+        title: 'Go to Entities → Devices and open the device you want to edit by clicking its row. In the device details, open the "Attributes" tab, select the "Server attributes" scope, and click the "+" icon to add a new attribute.'
     1:
         image: /images/user-guide/attributes/add-server-side-pe2-src.png
-        title: 'Input new attribute name. Select attribute value type and input attribute value.'
+        title: 'In the dialog, enter the attribute key, select the value type (for example, String), and provide a value.'
     2:
         image: /images/user-guide/attributes/add-server-side-pe3-src.png
-        title: 'Sort using "Last update time" to quickly locate the newly created attribute.'
+        title: 'After saving, the new attribute appears in the list with its key, value, and last update time. Sort using "Last update time" to quickly locate the newly created attribute.'
 
 shared-attrs-ui:
     0:
         image: /images/user-guide/attributes/add-shared-pe-src.png
-        title: 'Select Device Group. Click on the particular device row to open device details. Select "Attributes" tab. Choose "Shared attributes" scope. Click "+" Icon.'
+        title: 'Go to Entities → Devices and open the device you want to edit by clicking its row. In the device details, open the "Attributes" tab, select the "Shared attributes" scope, and click the "+" icon to add a new attribute.'
     1:
         image: /images/user-guide/attributes/add-shared-pe2-src.png
-        title: 'Input new attribute name. Select attribute value type and input attribute value.'
+        title: 'In the dialog, enter the attribute key, select the value type (for example, Double), and provide a value.'
     2:
         image: /images/user-guide/attributes/add-shared-pe3-src.png
-        title: 'Observe the new attribute.'
+        title: 'After saving, the new attribute appears in the list with its key, value, and last update time.'
 
 ---
 

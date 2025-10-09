@@ -138,7 +138,7 @@ The user may change the attribute via UI. The script or other server-side applic
 
 #### Administration UI
 
-{% include images-gallery.html imageCollection="shared-attrs-ui" %}
+{% include images-gallery.html imageCollection="shared-attrs-ui" showListImageTitles="true" %}
 
 {% include templates/info-banner.md content=bulk_provisioning %}
 
