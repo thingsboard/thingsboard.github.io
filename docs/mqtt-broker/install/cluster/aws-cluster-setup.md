@@ -33,10 +33,10 @@ tbmq-msk-configuration:
 tbmq-redis-set-up:
   0:
     image: /images/mqtt-broker/install/aws-redis-create.png
-    title: 'AWS ElastiCache - create Valkey cluster'
+    title: 'AWS ElastiCache - create Redis cluster'
   1:
     image: /images/mqtt-broker/install/aws-redis-cluster-settings.png
-    title: 'AWS ElastiCache - choose 8.x engine version and appropriate Node type'
+    title: 'AWS ElastiCache - choose 7.x engine version and appropriate Node type'
   2:
     image: /images/mqtt-broker/install/aws-redis-connectivity.png
     title: 'AWS ElastiCache - choose TBMQ VPC and private subnets'  
@@ -61,4 +61,4 @@ tbmq-redis-link-configure:
 
 ---
 
-{% include docs/mqtt-broker/install/cluster/aws-cluster-setup.md %}
+{% include docs/mqtt-broker/install/cluster/aws-cluster-setup-old.md %}
