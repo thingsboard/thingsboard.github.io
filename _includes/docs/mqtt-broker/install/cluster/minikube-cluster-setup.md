@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-This guide will help you to set up TBMQ in cluster mode using Minikube.
+This guide will help you set up TBMQ in cluster mode using Minikube.
 
 ## Prerequisites
 
