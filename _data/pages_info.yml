@@ -3745,7 +3745,8 @@
   - "/docs/user-guide/reporting/attaching-report-to-notification/"
 "/docs/pe/user-guide/reporting/embedding-charts/":
   url: "/docs/pe/user-guide/reporting/embedding-charts/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/user-guide/reporting/embedding-charts/"
 "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from:

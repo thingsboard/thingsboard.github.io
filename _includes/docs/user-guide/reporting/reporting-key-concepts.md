@@ -19,7 +19,7 @@ Reporting in ThingsBoard is built on **two key components**:
 - **Rich content support** – include text blocks, tables, charts, images, and more.
 - **Notification integration** – attach a generated report to system notifications (Email, Slack).
 
-<b><font size="3">Where it&#39;s useful:</font></b><br>
+<b><font size="3">Where it&#39;s useful:</font></b><br> 
 - Regular monitoring of your device&#39;s metrics.
 - Sharing summary data with partners or management.
 - Archiving data in an easy-to-read format.
@@ -70,11 +70,11 @@ Templates are made up of customizable components, each serving as a visual or fu
 
 - **Text & Images.** - to add **text blocks**, **headings**, and **images** to your report. Text blocks supports plain or rich text and can include [dynamic placeholders](#variables--dynamic-content) for timestamps, entity names, user details, and more.
 - **Tables** - to display **structured data (such as alarms, entities, and their telemetry) in table format**. Each table&#39;s style can be customized via the layout configuration tab — adjust column widths, font sizes, borders, and pagination.
-- [**Subreports**](/docs/{{docsPrefix}}user-guide/reporting/subreport/){:target="_blank"} - a report template as a modular section that can be embedded inside the current report.
-- [**Dashboards**](/docs/{{docsPrefix}}user-guide/reporting/embedding-dashboards-widgets/){:target="_blank"} - embeds a screenshot of the specified dashboard into the report as an image.
+- [**Subreport**](/docs/{{docsPrefix}}user-guide/reporting/subreport/){:target="_blank"} is a modular report template that is embedded into a main report, inherits its context, and generates its own content accordingly.
+- [**Dashboard**](/docs/{{docsPrefix}}user-guide/reporting/embedding-dashboards-widgets/){:target="_blank"} - embeds a screenshot of the specified dashboard into the report as an image.
 - [**Charts**](/docs/{{docsPrefix}}user-guide/reporting/embedding-charts/){:target="_blank"} - to visualize time series data with configurable **line and bar charts**, or to present the latest values using different types of **pie and doughnut charts**.
 - **Branding** - for adding **logos**, **headers**, and **footers** to customize the look and feel of reports.
-- **Reporting Info & Layout** - supporting components (**page number**, **created time**, **divider**, **page break**) to structure the report and display system metadata.
+- **Reporting Info & Layout** - supporting components (**split view**, **page number**, **created time**, **divider**, **page break**) to structure the report and display system metadata.
 
 <b><font size="4">Component configuration</font></b><br>
 
