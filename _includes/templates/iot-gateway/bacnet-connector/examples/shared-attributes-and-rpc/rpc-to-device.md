@@ -23,7 +23,7 @@ we need to configure the BACnet connector to support RPC calls. For this purpose
         title: Click on the "**Add method**" button. Fill in the "**Method**" field with `getTemperature`, select the "**Request Type**" as "**Read Property**", "**Object ID**" as "**Analog Value**" and "**1**", and "**Property ID**" as "**Present Value**".
     ===
         image: /images/gateway/bacnet-connector/examples/rpc-to-device-3.png,
-        title: Remember to save your changes by clicking the "**Apply**" button.
+        title: Remember to save your changes by clicking the "**Apply**" button and click save connector configuration button.
 '
 %}
 

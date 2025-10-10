@@ -27,7 +27,7 @@ Let’s add an attribute update to our configuration. For this purpose, follow t
         title: Click on the “**Add attribute update**” button. In our case, we will add `relay` attribute update, so the “**Key**” field, enter `relay`, select the “**Object ID**” as **Analog Input** and "**1**", "**Property ID**" as "**Present Value**".
     ===
         image: /images/gateway/bacnet-connector/examples/connector-configuration-attribute-updates-3.png,
-        title: Remember to save your changes by clicking the “**Apply**” button.
+        title: Remember to save your changes by clicking the “**Apply**” button and click save connector configuration button.
 '
 %}
 
