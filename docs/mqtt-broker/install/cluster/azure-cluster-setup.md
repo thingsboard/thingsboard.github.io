@@ -5,4 +5,4 @@ description: TBMQ microservices setup with Kubernetes in AKS
 
 ---
 
-{% include docs/mqtt-broker/install/cluster/azure-cluster-setup.md %}
+{% include docs/mqtt-broker/install/cluster/azure-cluster-setup-old.md %}
