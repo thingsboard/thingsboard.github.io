@@ -79,20 +79,20 @@ filterCollection:
       - Environmental Monitoring
   - label: Use cases
     filters:
-      - Smart Energy
+      - Air Quality Monitoring
+      - Assisted Living
+      - Environment Monitoring
       - Fleet Tracking
-      - Waste Management
-      - Smart Office
       - Health Care
-      - Tank Level Monitoring
-      - Water Metering
+      - Smart Energy
       - Smart Metering
       - Smart Retail
-      - Air Quality Monitoring
+      - Smart Office
       - Smart Farming
       - Smart Irrigation
-      - Environment Monitoring
-      - Smart energy
+      - Tank Level Monitoring
+      - Waste Management
+      - Water Metering
 
 ---
 

@@ -12,6 +12,17 @@ This guide demonstrates basic usage of popular ThingsBoard features. You will le
 
 For simplicity, we&#39;ll visualize data from a temperature sensor.
 
+## Video tutorial
+
+Prefer visual learning? Check out our step-by-step getting started video tutorial:
+
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/iIuyG1KL-bw" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 {% include templates/prerequisites-pe.md %}
 
 ## Step 1. Provision device

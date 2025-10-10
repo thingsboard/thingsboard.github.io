@@ -7,42 +7,22 @@ title: Working with widgets
 add-widget:
     0:
         image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
-        title: 'Open your dashboard and enter edit mode;'
+        title: 'Open your dashboard and switch to <b>Edit mode</b>;'
     1:
         image: /images/user-guide/widgets/overview/add-new-dashboard-2-pe.png
-        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog window;'
+        title: 'Click the <b>+ Add widget</b> at the top of the screen. If this is your first widget on the dashboard, you can also click <b>Add new widget</b> in the center of the screen to open the Widget bundle dialog;'
     2:
         image: /images/user-guide/widgets/overview/add-new-dashboard-3-pe.png
-        title: 'Select a widget bundle, such as "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
+        title: 'Choose a <b>widget bundle</b> (for example, <b>Charts</b>). To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-pe.png
-        title: 'Choose a widget, for instance, "Timeseries Line Chart" and click on it to open the "Add Widget" dialog window;'
+        title: 'Select a widget (for example, <b>Time series chart</b>) to open the <b>Add widget</b> dialog;'
     4:
         image: /images/user-guide/widgets/overview/add-new-dashboard-5-pe.png
-        title: 'Specify the data source, add the data key, and click the "Add" button. Finally, apply your changes;'
+        title: 'Specify the <b>data source</b>, add at least one <b>data key</b>, and click <b>Add</b>. Then <b>Apply changes</b>.'
     5:
         image: /images/user-guide/widgets/overview/add-new-dashboard-6-pe.png
-        title: 'Your first widget has been created.'
-
-import-widget:
-    0:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-pe.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog window;'
-    1:
-        image: /images/user-guide/widgets/overview/import-widget-2-pe.png
-        title: 'Click the "Import widget" button in the upper right corner of the screen;'
-    2:
-        image: /images/user-guide/widgets/overview/import-widget-3-pe.png
-        title: 'In the widget import window, upload the JSON file and click "Import";'
-    3:
-        image: /images/user-guide/widgets/overview/import-widget-4-pe.png
-        title: 'The widget has been imported. However, the widget does not yet display data because the data source is not specified. Enter Edit widget mode to specify the data source;'
-    4:
-        image: /images/user-guide/widgets/overview/import-widget-5-pe.png
-        title: 'Specify data source, add the data key(s), and apply changes;'
-    5:
-        image: /images/user-guide/widgets/overview/import-widget-6-pe.png
-        title: 'You should now see the data in the widget. In our case, this is a temperature graph. After all the settings, save the dashboard.'
+        title: 'The widget is now created.'
 
 add-widget-basic-mode:
     0:
@@ -125,7 +105,7 @@ data-source-type-random:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-random-7-pe.png
         title: 'Created the value card widget which displays random value.'
 
-data-source-type-entities-сount:
+data-source-type-entities-count:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-pe.png
         title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
@@ -154,7 +134,7 @@ data-source-type-entities-сount:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-9-pe.png
         title: 'Now we have a widget that displays the number of existing devices.'
 
-data-source-type-alarms-сount:
+data-source-type-alarms-count:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-pe.png
         title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
@@ -181,11 +161,10 @@ add-data-key:
     0:
         image: /images/user-guide/widgets/overview/data-settings/add-data-key-1-pe.png
         title: 'To add a key to the data source, click on the data keys row and select the desired key from the dropdown menu.'
-
-add-key-in-the-future:
-    0:
+    1:
         image: /images/user-guide/widgets/overview/data-settings/add-key-in-the-future-1-pe.png
-
+        title: 'If a key is not yet present in the database, type its name and select the type (Attribute, Entity field, or Time series). The widget will display values once they become available.'
+        
 edit-basic-key-configuration:
     0:
         image: /images/user-guide/widgets/overview/data-settings/edit-basic-key-configuration-key-1-pe.png
@@ -513,10 +492,30 @@ mobile-settings:
         image: /images/user-guide/widgets/overview/widget-settings-mobile-3-pe.png
         title: ''
 
+import-widget:
+    0:
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-pe.png
+        title: 'Open your dashboard and switch to <b>Edit mode</b>. Click <b>+ Add widget</b>. The <b>Select widgets bundle</b> dialog opens.'
+    1:
+        image: /images/user-guide/widgets/overview/import-widget-2-pe.png
+        title: 'Click <b>Import widget</b> in the top‑right corner.'
+    2:
+        image: /images/user-guide/widgets/overview/import-widget-3-pe.png
+        title: 'In the import dialog, upload the <b>JSON</b> file and click <b>Import</b>.'
+    3:
+        image: /images/user-guide/widgets/overview/import-widget-4-pe.png
+        title: 'The widget has been added to the dashboard. It may not show data yet because the data source needs to be updated.'
+    4:
+        image: /images/user-guide/widgets/overview/import-widget-5-pe.png
+        title: 'Enter widget <b>edit mode</b>, specify the <b>data source</b>, add the required <b>data key(s)</b>, and <b>apply</b> changes.'
+    5:
+        image: /images/user-guide/widgets/overview/import-widget-6-pe.png
+        title: 'Verify that the widget displays data (e.g., a temperature chart) and <b>Save</b> the dashboard.'
+
 export-widget:
     0:
         image: /images/user-guide/widgets/overview/export-widget-1-pe.png
-        title: 'To export a widget, enter “Edit mode”. Now in the upper right corner of the needed widget, click the button “Export widget”. This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.'
+        title: 'Open the dashboard containing the widget and switch to <b>Edit mode</b>. On the widget&#39;s top‑right toolbar, click <b>Export widget</b>. A <b>JSON</b> file with the widget configuration is downloaded to your computer.'
 
 ---
 

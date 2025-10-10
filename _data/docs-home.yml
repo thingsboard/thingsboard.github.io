@@ -50,23 +50,24 @@ toc:
         path: /docs/user-guide/scada/
       - title: SCADA symbols development guide
         path: /docs/user-guide/scada/scada-symbols-dev-guide/
-  - title: Widgets
-    section:
-      - title: Overview
-        path: /docs/user-guide/widgets/
-      - title: Widget actions
-        path: /docs/user-guide/ui/widget-actions/
-      - title: Widgets library
-        path: /docs/user-guide/ui/widget-library/
-      - title: Chart widgets
-        path: /docs/user-guide/ui/chart-widget/
-      - title: Map widgets
-        path: /docs/user-guide/widgets/map-widgets/
-        new: true
-      - title: Entities table widget
-        path: /docs/user-guide/ui/entity-table-widget/
-      - title: Advanced data key configuration
-        path: /docs/user-guide/ui/advanced-data-key-configuration/
+- title: Widgets
+  section:
+    - title: Overview
+      path: /docs/user-guide/widgets/
+    - title: Widget actions
+      path: /docs/user-guide/ui/widget-actions/
+    - title: Widgets library
+      path: /docs/user-guide/ui/widget-library/
+    - title: Chart widgets
+      path: /docs/user-guide/ui/chart-widget/
+    - title: Markdown/HTML Card widget
+      path: /docs/user-guide/widgets/cards/markdown-html-card/
+    - title: Map widgets
+      path: /docs/user-guide/widgets/map-widgets/
+    - title: Entities table widget
+      path: /docs/user-guide/ui/entity-table-widget/
+    - title: Advanced data key configuration
+      path: /docs/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
     - title: Overview
