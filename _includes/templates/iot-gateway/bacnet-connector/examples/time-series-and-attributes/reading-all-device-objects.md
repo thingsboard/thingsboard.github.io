@@ -39,7 +39,7 @@ In our case, we will store all objects in time series, so the device configurati
       "attributeUpdates": [],
       "serverSideRpc": []
     }
-  ],
+  ]
 }
 ```
 

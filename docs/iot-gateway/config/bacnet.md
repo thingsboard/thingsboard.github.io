@@ -30,7 +30,7 @@ backward compatibility.
 
 ## Configuration modes
 
-The Modbus connector can be configured in two modes: **Basic** and **Advanced**.
+The BACnet connector can be configured in two modes: **Basic** and **Advanced**.
 
 - **Basic** mode is designed for users who are new to ThingsBoard IoT Gateway and want to quickly set up the connector
   with minimal configuration. It provides a simplified interface with essential settings.
@@ -74,8 +74,8 @@ You can configure additional application settings like: APDU length, segmentatio
 |:-----------------------------|:------------------|------------------------------------------------------------------------------------------------------------------|
 | APDU Length (in bytes)       | **1476**          | Maximal length of the APDU.                                                                                      |
 | Segmentation                 | **Both**          | Segmentation type for transmitting large BACnet messages. Can be: **Both**, **Transmit**, **Receive**, **None**. |
-| Network number               |                   | Identifier of the network segment.                                                                               |
-| Discovering timeout (in sec) | **3**             | Period of time when the connector will try to discover BACnet devices.                                           |
+| Network number               | **3**             | Identifier of the network segment.                                                                               |
+| Discovering timeout (in sec) | **5**             | Period of time when the connector will try to discover BACnet devices.                                           |
 | ---                          |                   |                                                                                                                  |
 
 {% capture difference %}
@@ -390,7 +390,8 @@ Example of the device attribute updates configuration:
       "key": "setpoint",
       "objectType": "analogValue",
       "objectId": 3,
-      "propertyId": "presentValue"
+      "propertyId": "presentValue",
+      "timeout": 5000
     }
   ]
 }
@@ -420,7 +421,8 @@ Example of the device RPC methods configuration:
       "requestType": "writeProperty",
       "objectType": "analogValue",
       "objectId": 3,
-      "propertyId": "presentValue"
+      "propertyId": "presentValue",
+      "timeout": 5000
     }
   ]
 }
@@ -472,6 +474,26 @@ Property identifiers depend on type of the BACnet object, provided in camelCase,
 **objectName**
 **objectDescription**
 etc.
+
+## Troubleshooting
+
+### Device discovery issues on Linux with Docker Compose
+
+If you are running Gateway via docker compose on Linux, and you have issues with device discovery, make sure that you 
+have set the correct network mode in the docker compose file. So you should add the following line to `tb-gateway` 
+service in your docker compose file:
+
+```yaml
+network_mode: "host"
+extra_hosts:
+    - "host.docker.internal:host-gateway"
+```
+{: .copy-code}
+
+### Device discovery issues on Windows with Docker Compose
+
+BACnet connector doesn't support device discovery on Windows OS due to the limitations of the Docker networking stack 
+on Windows. Please use installation from source or other installation methods to run Gateway on Windows OS.
 
 ## Next steps
 
