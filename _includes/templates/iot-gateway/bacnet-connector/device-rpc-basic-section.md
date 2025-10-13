@@ -1,4 +1,4 @@
-In order to add new RPC method, follow these steps:
+In order to add a new RPC method, follow these steps:
 
 {% assign creatingRPC = '
     ===
