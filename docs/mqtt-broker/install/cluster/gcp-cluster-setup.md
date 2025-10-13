@@ -7,4 +7,4 @@ description: TBMQ microservices setup with Kubernetes in GCP GKE
 
 ---
 
-{% include docs/mqtt-broker/install/cluster/gcp-cluster-setup.md %}
+{% include docs/mqtt-broker/install/cluster/gcp-cluster-setup-old.md %}

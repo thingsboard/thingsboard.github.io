@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-This guide will help you to setup TBMQ in microservices mode in GKE. 
+This guide will help you set up TBMQ in GKE. 
 
 ## Prerequisites
 

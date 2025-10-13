@@ -3,7 +3,7 @@
 {:toc}
 
 
-This guide will help you to set up TBMQ in cluster mode using Docker Compose.
+This guide will help you set up TBMQ in cluster mode using Docker Compose.
 
 ## Prerequisites
 

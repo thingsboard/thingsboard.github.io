@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: integration downlink
-description: Sends downlink messages to the selected integration.
+description: Pushes the incoming message as a downlink message to a selected integration.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

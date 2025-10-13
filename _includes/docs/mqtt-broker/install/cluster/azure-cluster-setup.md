@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-This guide will help you to set up TBMQ in Azure AKS.
+This guide will help you set up TBMQ in AKS.
 
 ## Prerequisites
 

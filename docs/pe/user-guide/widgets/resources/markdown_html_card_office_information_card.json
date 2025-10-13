@@ -1,0 +1,144 @@
+{
+  "widget": {
+    "typeFullFqn": "system.cards.markdown_card",
+    "type": "latest",
+    "sizeX": 5,
+    "sizeY": 3.5,
+    "config": {
+      "datasources": [
+        {
+          "type": "entity",
+          "name": "",
+          "entityAliasId": "e988a20d-7b31-6be3-deba-a0b8e5fd5a24",
+          "dataKeys": [
+            {
+              "name": "address",
+              "type": "attribute",
+              "label": "address",
+              "color": "#2196f3",
+              "settings": {},
+              "_hash": 0.4968084402485552
+            },
+            {
+              "name": "officeManager",
+              "type": "attribute",
+              "label": "officeManager",
+              "color": "#4caf50",
+              "settings": {},
+              "_hash": 0.35079031558778695
+            },
+            {
+              "name": "phone",
+              "type": "attribute",
+              "label": "phone",
+              "color": "#f44336",
+              "settings": {},
+              "_hash": 0.024608031233748662
+            },
+            {
+              "name": "email",
+              "type": "attribute",
+              "label": "email",
+              "color": "#ffc107",
+              "settings": {},
+              "_hash": 0.5334336567009841
+            }
+          ],
+          "alarmFilterConfig": {
+            "statusList": [
+              "ACTIVE"
+            ]
+          }
+        }
+      ],
+      "timewindow": {
+        "displayValue": "",
+        "selectedTab": 0,
+        "realtime": {
+          "realtimeType": 1,
+          "interval": 1000,
+          "timewindowMs": 60000,
+          "quickInterval": "CURRENT_DAY",
+          "hideInterval": false,
+          "hideLastInterval": false,
+          "hideQuickInterval": false
+        },
+        "history": {
+          "historyType": 0,
+          "interval": 1000,
+          "timewindowMs": 60000,
+          "fixedTimewindow": {
+            "startTimeMs": 1756210701014,
+            "endTimeMs": 1756297101014
+          },
+          "quickInterval": "CURRENT_DAY",
+          "hideInterval": false,
+          "hideLastInterval": false,
+          "hideFixedInterval": false,
+          "hideQuickInterval": false
+        },
+        "aggregation": {
+          "type": "AVG",
+          "limit": 25000
+        }
+      },
+      "showTitle": false,
+      "backgroundColor": "#fff",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "padding": "0px",
+      "settings": {
+        "useMarkdownTextFunction": true,
+        "markdownTextPattern": "if (data.length) {\n    const buildingAttributes = ['address', 'officeManager', 'phone', 'email'];\n\n    let information = {\n        entityName: data[0].entityName ? data[0].entityName : 'Not found',\n        buildingAttributesField: {}\n    };\n\n    for (let key of buildingAttributes) {\n        information.buildingAttributesField[key] = data[0][key] ? data[0][key] : 'Not found';\n    }\n\n    const attributesNotFound = Object.values(information.buildingAttributesField).every(value => value === 'Not found');\n\n    if (attributesNotFound) {\n        return '<div class=\"no-data-card\">' +\n            `<h1 class=\"card-title\">Information on ${information.entityName}</h1>` +\n            '<div class=\"no-data-block\">' +\n                '<div class=\"no-data-content\">' +\n                    '<div><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"81\" height=\"80\" viewBox=\"0 0 81 80\" fill=\"none\"><path d=\"M14.8203 46.1166C16.6985 46.0291 18.2877 45.3003 19.588 43.9301C20.8883 42.56 21.5529 40.9274 21.5529 39.0325C21.5529 40.9274 22.1886 42.56 23.4889 43.9301C24.7892 45.3003 26.3784 46.0291 28.2566 46.1166C26.3784 46.204 24.7892 46.9328 23.4889 48.303C22.8602 48.9489 22.3653 49.7146 22.0329 50.5555C21.7005 51.3963 21.5374 52.2955 21.5529 53.2006C21.5529 51.3057 20.9172 49.6732 19.588 48.303C18.2877 46.9328 16.6985 46.204 14.8203 46.1166ZM21.5529 25.1267C25.1937 24.9518 28.2855 23.5234 30.8283 20.8413C33.371 18.1593 34.6424 14.9817 34.6424 11.2793C34.6424 14.9817 35.9138 18.1593 38.4566 20.8413C40.9994 23.5234 44.0912 24.9227 47.7609 25.1267C45.3626 25.2434 43.1665 25.9139 41.1439 27.1966C39.1501 28.4501 37.5608 30.141 36.3761 32.24C35.2203 34.3389 34.6424 36.5837 34.6424 39.0325C34.6424 35.3301 33.371 32.1234 30.8283 29.4413C28.2855 26.7301 25.1937 25.3017 21.5529 25.1267ZM31.1461 56.524C33.8912 56.4074 36.2317 55.3288 38.1387 53.3172C40.0458 51.3057 40.9994 48.9152 40.9994 46.1166C40.9994 48.9152 41.9529 51.3057 43.86 53.3172C45.7671 55.3288 48.0787 56.4074 50.8237 56.524C48.0787 56.6406 45.7671 57.7193 43.86 59.7308C41.9529 61.7423 40.9994 64.1328 40.9994 66.9315C40.9994 64.1328 40.0458 61.7423 38.1387 59.7308C36.316 57.7765 33.8041 56.6245 31.1461 56.524ZM50.8237 42.7057C53.5688 42.5891 55.8804 41.5105 57.7875 39.4989C59.6946 37.4874 60.6192 35.0969 60.6192 32.2691C60.6192 35.0678 61.5728 37.4583 63.4799 39.4698C65.3869 41.4813 67.7274 42.56 70.4725 42.6766C67.7274 42.7932 65.3869 43.8718 63.4799 45.8834C61.5728 47.8949 60.6192 50.2854 60.6192 53.084C60.6192 50.2854 59.6657 47.8949 57.7875 45.8834C55.8804 43.901 53.5688 42.8223 50.8237 42.7057Z\" fill=\"#00695C\" fill-opacity=\"0.4\"/></svg></div>' +\n                    '<p class=\"no-data-title\">There is no information about the building</p>' +\n                '</div>' +\n            '</div>' +\n        '</div>';\n    } else {\n        return '<div class=\"card\">' +\n            `<h1 class=\"card-title\">Information on ${information.entityName}</h1>` +\n            '<div class=\"attributes\">' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>place</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.address}</p>` +\n                        '<span class=\"attribute_label\">Address</span>' +\n                    '</div>' +\n                '</div>' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>person</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.officeManager}</p>` +\n                        '<span class=\"attribute_label\">Contact person</span>' +\n                    '</div>' +\n                '</div>' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>call</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.phone}</p>` +\n                        '<span class=\"attribute_label\">Phone</span>' +\n                    '</div>' +\n                '</div>' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>mail_outline</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.email}</p>` +\n                        '<span class=\"attribute_label\">Email</span>' +\n                    '</div>' +\n                '</div>' +\n            '</div>' +\n        '</div>';\n    }\n}",
+        "markdownTextFunction": "if (data.length) {\n    const buildingAttributes = ['address', 'officeManager', 'phone', 'email'];\n\n    let information = {\n        entityName: data[0].entityName ? data[0].entityName : 'Not found',\n        buildingAttributesField: {}\n    };\n\n    for (let key of buildingAttributes) {\n        information.buildingAttributesField[key] = data[0][key] ? data[0][key] : 'Not found';\n    }\n\n    const attributesNotFound = Object.values(information.buildingAttributesField).every(value => value === 'Not found');\n\n    if (attributesNotFound) {\n        return '<div class=\"no-data-card\">' +\n            `<h1 class=\"card-title\">Information on ${information.entityName}</h1>` +\n            '<div class=\"no-data-block\">' +\n                '<div class=\"no-data-content\">' +\n                    '<div><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"81\" height=\"80\" viewBox=\"0 0 81 80\" fill=\"none\"><path d=\"M14.8203 46.1166C16.6985 46.0291 18.2877 45.3003 19.588 43.9301C20.8883 42.56 21.5529 40.9274 21.5529 39.0325C21.5529 40.9274 22.1886 42.56 23.4889 43.9301C24.7892 45.3003 26.3784 46.0291 28.2566 46.1166C26.3784 46.204 24.7892 46.9328 23.4889 48.303C22.8602 48.9489 22.3653 49.7146 22.0329 50.5555C21.7005 51.3963 21.5374 52.2955 21.5529 53.2006C21.5529 51.3057 20.9172 49.6732 19.588 48.303C18.2877 46.9328 16.6985 46.204 14.8203 46.1166ZM21.5529 25.1267C25.1937 24.9518 28.2855 23.5234 30.8283 20.8413C33.371 18.1593 34.6424 14.9817 34.6424 11.2793C34.6424 14.9817 35.9138 18.1593 38.4566 20.8413C40.9994 23.5234 44.0912 24.9227 47.7609 25.1267C45.3626 25.2434 43.1665 25.9139 41.1439 27.1966C39.1501 28.4501 37.5608 30.141 36.3761 32.24C35.2203 34.3389 34.6424 36.5837 34.6424 39.0325C34.6424 35.3301 33.371 32.1234 30.8283 29.4413C28.2855 26.7301 25.1937 25.3017 21.5529 25.1267ZM31.1461 56.524C33.8912 56.4074 36.2317 55.3288 38.1387 53.3172C40.0458 51.3057 40.9994 48.9152 40.9994 46.1166C40.9994 48.9152 41.9529 51.3057 43.86 53.3172C45.7671 55.3288 48.0787 56.4074 50.8237 56.524C48.0787 56.6406 45.7671 57.7193 43.86 59.7308C41.9529 61.7423 40.9994 64.1328 40.9994 66.9315C40.9994 64.1328 40.0458 61.7423 38.1387 59.7308C36.316 57.7765 33.8041 56.6245 31.1461 56.524ZM50.8237 42.7057C53.5688 42.5891 55.8804 41.5105 57.7875 39.4989C59.6946 37.4874 60.6192 35.0969 60.6192 32.2691C60.6192 35.0678 61.5728 37.4583 63.4799 39.4698C65.3869 41.4813 67.7274 42.56 70.4725 42.6766C67.7274 42.7932 65.3869 43.8718 63.4799 45.8834C61.5728 47.8949 60.6192 50.2854 60.6192 53.084C60.6192 50.2854 59.6657 47.8949 57.7875 45.8834C55.8804 43.901 53.5688 42.8223 50.8237 42.7057Z\" fill=\"#00695C\" fill-opacity=\"0.4\"/></svg></div>' +\n                    '<p class=\"no-data-title\">There is no information about the building</p>' +\n                '</div>' +\n            '</div>' +\n        '</div>';\n    } else {\n        return '<div class=\"card\">' +\n            `<h1 class=\"card-title\">Information on ${information.entityName}</h1>` +\n            '<div class=\"attributes\">' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>place</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.address}</p>` +\n                        '<span class=\"attribute_label\">Address</span>' +\n                    '</div>' +\n                '</div>' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>person</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.officeManager}</p>` +\n                        '<span class=\"attribute_label\">Contact person</span>' +\n                    '</div>' +\n                '</div>' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>call</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.phone}</p>` +\n                        '<span class=\"attribute_label\">Phone</span>' +\n                    '</div>' +\n                '</div>' +\n                '<div class=\"attribute_container\">' +\n                    '<div class=\"icon_wrapper\">' +\n                        '<tb-icon class=\"icon\" color=\"primary\" matButtonIcon>mail_outline</tb-icon>' +\n                    '</div>' +\n                    '<div class=\"attribute_content\">' +\n                        `<p class=\"attribute\">${information.buildingAttributesField.email}</p>` +\n                        '<span class=\"attribute_label\">Email</span>' +\n                    '</div>' +\n                '</div>' +\n            '</div>' +\n        '</div>';\n    }\n}",
+        "applyDefaultMarkdownStyle": true,
+        "markdownCss": ".card, .no-data-card {\n    padding: 0px;\n    height: 100%;\n}\n\n.card-title {\n    position: sticky;\n    top: 0;\n    z-index: 2;\n    font-size: 16px;\n    letter-spacing: 0.25px;\n    padding: 16px;\n}\n.attribute_container {\n    display: flex;\n    align-items: center;\n    gap: 20px;\n    padding: 16px;\n    border-bottom: 1px solid #0000000d;\n}\n\n.icon {\n    z-index: 1;\n}\n\n.icon_wrapper {\n    display: flex;\n    position: relative;\n    align-items: center;\n    padding: 8px;\n    border: 1px solid var(--tb-primary-100, #305680);\n    border-radius: 4px;\n}\n\n.icon_wrapper:before {\n    content: '';\n    z-index: 0;\n    position: absolute;\n    opacity: 0.1;\n    background-color: var(--tb-primary-200, #305680);\n    width: 100%;\n    height: 100%;\n    left: 0;\n    top: 0;\n}\n\n.attribute, .attribute_label {\n    font-size: 14px;\n    line-height: 20px;\n}\n\n.attribute_label {\n    color: #00000061;\n}\n\n.no-data-card {\n    display: flex;\n    flex-direction: column;\n}\n\n.no-data-block {\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    height: 100%;\n    max-width: 345px;\n    padding: 0 15px;\n    margin: 0 auto;\n    text-align: center;\n}\n\n.no-data-content {\n    transform: translateY(-30%);\n}\n\n.no-data-block p {\n    font-weight: 500;\n}\n\n.no-data-title {\n    color: rgba(0, 0, 0, 0.54);\n}\n\n.no-data-subtitle {\n    font-size: 13px;\n    color: rgba(0, 0, 0, 0.38);\n}"
+      },
+      "title": "Office information card",
+      "showTitleIcon": false,
+      "iconColor": "rgba(0, 0, 0, 0.87)",
+      "iconSize": "24px",
+      "titleTooltip": "",
+      "dropShadow": true,
+      "enableFullscreen": false,
+      "widgetStyle": {},
+      "titleStyle": {
+        "fontSize": "16px",
+        "fontWeight": 400
+      },
+      "showLegend": false,
+      "useDashboardTimewindow": true,
+      "displayTimewindow": true,
+      "enableDataExport": false,
+      "widgetCss": "",
+      "pageSize": 1024,
+      "noDataDisplayMessage": ""
+    },
+    "row": 0,
+    "col": 0,
+    "id": "7220c17f-198a-6741-9d13-a9f28da958d8"
+  },
+  "aliasesInfo": {
+    "datasourceAliases": {
+      "0": {
+        "alias": "Office A",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "ASSET",
+            "id": "ac1b59d0-833e-11f0-acfd-cb50e27d53ce"
+          }
+        }
+      }
+    },
+    "targetDeviceAlias": null
+  },
+  "filtersInfo": {
+    "datasourceFilters": {}
+  },
+  "originalSize": {
+    "sizeX": 5,
+    "sizeY": 7
+  },
+  "originalColumns": 24
+}

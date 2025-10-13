@@ -1,0 +1,143 @@
+{
+  "widget": {
+    "typeFullFqn": "system.cards.markdown_card",
+    "type": "latest",
+    "sizeX": 5,
+    "sizeY": 3.5,
+    "config": {
+      "datasources": [
+        {
+          "type": "device",
+          "name": "",
+          "deviceId": "6b595cd0-7dd5-11f0-acfd-cb50e27d53ce",
+          "dataKeys": [
+            {
+              "name": "temperature",
+              "type": "timeseries",
+              "label": "temperature",
+              "color": "#2196f3",
+              "settings": {},
+              "_hash": 0.8692272471823347,
+              "aggregationType": "NONE",
+              "units": null,
+              "decimals": null,
+              "funcBody": null,
+              "usePostProcessing": null,
+              "postFuncBody": null
+            },
+            {
+              "name": "humidity",
+              "type": "timeseries",
+              "label": "humidity",
+              "color": "#4caf50",
+              "settings": {},
+              "_hash": 0.14043408056634743
+            }
+          ],
+          "alarmFilterConfig": {
+            "statusList": [
+              "ACTIVE"
+            ]
+          }
+        }
+      ],
+      "timewindow": {
+        "displayValue": "",
+        "selectedTab": 0,
+        "realtime": {
+          "realtimeType": 1,
+          "interval": 1000,
+          "timewindowMs": 60000,
+          "quickInterval": "CURRENT_DAY",
+          "hideInterval": false,
+          "hideLastInterval": false,
+          "hideQuickInterval": false
+        },
+        "history": {
+          "historyType": 0,
+          "interval": 1000,
+          "timewindowMs": 60000,
+          "fixedTimewindow": {
+            "startTimeMs": 1758615153106,
+            "endTimeMs": 1758701553106
+          },
+          "quickInterval": "CURRENT_DAY",
+          "hideInterval": false,
+          "hideLastInterval": false,
+          "hideFixedInterval": false,
+          "hideQuickInterval": false
+        },
+        "aggregation": {
+          "type": "AVG",
+          "limit": 25000
+        }
+      },
+      "showTitle": false,
+      "backgroundColor": "#fff",
+      "color": "rgba(0, 0, 0, 0.87)",
+      "padding": "0px",
+      "settings": {
+        "useMarkdownTextFunction": false,
+        "markdownTextPattern": "<div class=\"office-card\">\n  <h3>${entityName}</h3>\n\n  <p class=\"blue-box\">\n    <strong>Current temperature:</strong>\n    <span class=\"temp-value\">${temperature:1}</span> °C\n  </p>\n\n  <p class=\"green-box\">\n    <strong>Current humidity:</strong>\n    <span class=\"hum-value\">${humidity:0}</span> %\n  </p>\n</div>",
+        "markdownTextFunction": "const entity = data[0];\nconst color = entity.temperature > 25 ? \"red\" : entity.temperature > 20 ? 'green' : 'blue'\nconst entityName = `### Temperature value card\\n - Current entity: <span >${entity.entityName}</span>\\n `\nconst temp = `- Current temperature: <span style=\"color:${color};\">${entity.temperature.toFixed(1)} °C</span>\\n `\nreturn entityName + temp;",
+        "applyDefaultMarkdownStyle": true,
+        "markdownCss": "/* Базова картка */\n.office-card {\n  box-sizing: border-box;\n  padding: 16px;\n  margin: 6px 0;\n  text-align: center;\n  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, \"Noto Sans\";\n}\n\n.office-card h3 {\n  margin: 0 0 12px;\n  font-size: 24px;\n}\n\n/* Температура — синя рамка на сірому фоні з легким блакитним відтінком */\n.blue-box {\n  background: #2196F31A;           /* прозорий блакитний */\n  border: 2px solid #2196F3;       /* синя обводка */\n  border-radius: 10px;\n  padding: 10px;                   /* фіксовані відступи 16px з усіх боків */\n  margin: 8px 0;\n  font-weight: 700;\n}\n\n/* Вологість — зелена рамка на сірому фоні з легким зеленим відтінком */\n.green-box {\n  background: #4CAF501A;           /* прозорий зелений */\n  border: 2px solid #4CAF50;       /* зелена обводка */\n  border-radius: 10px;\n  padding: 10px;                   /* фіксовані відступи 16px */\n  margin: 6px 0;\n  font-weight: 700;\n}\n\n/* Значення — жирні й з табличними цифрами для рівного вирівнювання */\n.temp-value,\n.hum-value {\n  font-weight: 700;\n  font-variant-numeric: tabular-nums;\n}\n"
+      },
+      "title": "Temperature value card",
+      "showTitleIcon": false,
+      "iconColor": "rgba(0, 0, 0, 0.87)",
+      "iconSize": "24px",
+      "titleTooltip": "",
+      "dropShadow": true,
+      "enableFullscreen": false,
+      "widgetStyle": {},
+      "titleStyle": {
+        "fontSize": "16px",
+        "fontWeight": 400
+      },
+      "showLegend": false,
+      "useDashboardTimewindow": true,
+      "displayTimewindow": true,
+      "enableDataExport": false,
+      "widgetCss": "",
+      "pageSize": 1024,
+      "noDataDisplayMessage": "",
+      "actions": {
+        "elementClick": [
+          {
+            "name": "temperature",
+            "icon": "more_horiz",
+            "useShowWidgetActionFunction": null,
+            "showWidgetActionFunction": "return true;",
+            "type": "openDashboardState",
+            "targetDashboardStateId": "temperature",
+            "setEntityId": true,
+            "stateEntityParamName": null,
+            "openRightLayout": false,
+            "openInSeparateDialog": false,
+            "openInPopover": false,
+            "id": "e5b0b8ed-0dbd-69d6-8284-894d8ee1689f"
+          }
+        ]
+      },
+      "units": null,
+      "decimals": 0
+    },
+    "row": 0,
+    "col": 0,
+    "id": "b2a4ee21-a60a-0fd1-6477-32239383884e"
+  },
+  "aliasesInfo": {
+    "datasourceAliases": {},
+    "targetDeviceAlias": null
+  },
+  "filtersInfo": {
+    "datasourceFilters": {}
+  },
+  "originalSize": {
+    "sizeX": 6,
+    "sizeY": 4,
+    "resizable": true
+  },
+  "originalColumns": 24
+}

@@ -2,6 +2,7 @@
 layout: docwithnav-pe
 title: Guides
 notitle: "true"
+redirect_from: "/docs/pe/user-guide/"
 ---
 
 {% assign guides = site.data.pe.guides-data %}

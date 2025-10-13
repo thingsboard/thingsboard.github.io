@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-This guide will help you to install and start standalone TBMQ using Docker on Windows.
+This guide will help you install and start standalone TBMQ using Docker on Windows.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/{{docsPrefix}}mqtt-broker/install/cluster/docker-compose-setup/).
 
 ## Prerequisites

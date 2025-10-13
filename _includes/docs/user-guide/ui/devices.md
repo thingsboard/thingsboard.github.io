@@ -131,11 +131,14 @@ You can assign the device to a specific [customer](/docs/user-guide/ui/customers
 > This step is crucial for ensuring data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see their own devices and will not have access to devices or data assigned to other customers.
 
 {% include images-gallery.html imageCollection="assign-device-to-customer" showListImageTitles="true" %}
+In the ThingsBoard Professional Edition (PE), you can assign devices using the [“Manage owner and groups”](https://thingsboard.io/docs/pe/user-guide/ui/devices/#manage-device-owner-and-groups){:target="_blank"} button in the device details. This allows you to not only assign ownership but also manage group memberships at the same time.
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Manage device owner and groups
 You can change a device’s owner (which can be either a Tenant or a Customer, see [glossary](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rbac/#glossary){:target="_blank"}) to control who can access the device and its data. Changing the owner moves the device to the selected level and updates access based on groups.
+
+Unlike the Community Edition (CE), where you can only assign a device to a specific customer, in the Professional Edition (PE) you can also manage ownership and group memberships using the “Manage owner and groups” button.
 
 To do this:
 - Click the device to open its **Device details**.
@@ -160,6 +163,45 @@ On the "<b>Devices</b>" page there is an option "<b>Include customer entities</b
 {% include images-gallery.html imageCollection="include-customer-entities" showListImageTitles="true" %}
 
 {% endif %}
+
+{% unless docsPrefix == null %}
+
+## Make device group public
+
+You can make a device group public to ensure that all data within it is accessible to everyone. This is ideal for:
+- Creating public demo dashboards that require access to device data.
+- Supporting open data use cases.
+
+> You cannot share an individual device directly — only the device group that contains it.
+
+To make a device group public:
+- Locate the desired device group in the list.
+- Click the "**Make public**" icon next to it.
+- Confirm your action in the popup dialog.
+
+{% include images-gallery.html imageCollection="make-device-group-public" %}
+
+> Once public, any dashboards or external systems referencing devices in this group will have access without requiring authentication.
+
+To make the group private again, follow the same steps using the "**Make private**" icon.
+
+{% include images-gallery.html imageCollection="make-device-group-private" %}
+
+## Share device group
+
+You can share an device group with one or more customers. This is useful, for example, when multiple customers need access to the same device.
+
+> You cannot share an individual device — only the device group that contains it.
+
+To share an device group:
+- Locate the desired device group in the list.
+- Click the "**Share**" icon next to it.
+- **Select the target customer** from the dropdown list.
+- (Optional) Specify the **user group** within that customer to share the device group with.
+- Confirm the action by clicking "**Share**".
+
+{% include images-gallery.html imageCollection="share-device-group" %}
+{% endunless %}
 
 ## Device details
 
