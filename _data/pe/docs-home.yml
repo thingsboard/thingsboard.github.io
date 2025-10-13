@@ -259,6 +259,8 @@ toc:
       path: /docs/pe/user-guide/reporting/scheduling-reports/
     - title: Embedding subreports
       path: /docs/pe/user-guide/reporting/subreport/
+    - title: Embedding charts
+      path: /docs/pe/user-guide/reporting/embedding-charts/
     - title: Embedding dashboards
       path: /docs/pe/user-guide/reporting/embedding-dashboards-widgets/
     - title: Attaching report to notification

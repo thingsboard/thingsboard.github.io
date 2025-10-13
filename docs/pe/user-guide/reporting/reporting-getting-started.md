@@ -22,54 +22,100 @@ reporting-getting-started-report-builder:
 reporting-getting-started-heading:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-1-pe.png
-        title: 'First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report component library</b> and drag it into the <b>header content area</b> of your report.'
+        title: '- Locate it in the <b>report component library</b> and drag it into the <b>header content area</b> of your report.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-2-pe.png
-        title: 'In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template: "<b>Daily Devices Alarm Report</b>". If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out. Once done, click "<b>Apply</b>" to save the component.'
+        title: '- In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-3-pe.png
+        title: '- If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-heading-4-pe.png
+        title: '- Click <b>Apply</b> to save the component.'
+
 
 reporting-getting-started-rich-text:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-rich-text-1-pe.png
-        title: 'Locate the <b>Rich text</b> component in the <b>component library</b> and drag it into the <b>content area</b>.'
+        title: '- Locate the <b>Rich text</b> component in the <b>component library</b> and drag it into the <b>content area</b>.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-rich-text-2-pe.png
-        title: 'Enter the desired text into the component&#39;s text field.<br>Then, click "<b>Apply</b>" to save the component.'
+        title: '- Enter the desired text into the component&#39;s text field.<br>- Click <b>Apply</b> to save the component.'
     
 reporting-getting-started-entity-table:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-1-pe.png
-        title: 'Drag & Drop the "<b>Entity table</b>" component from the <b>component library</b> into the <b>content area</b>.'
+        title: '- Drag & Drop the <b>Entity table</b> component from the <b>component library</b> into the <b>content area</b>.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-2-pe.png
-        title: 'In the "<b>Datasource</b>" section, click "<b>Create new</b>" entity alias button.'
+        title: '- In the <b>Datasource</b> section, click "<b>Create new</b>" entity alias button.'
     2:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-3-pe.png
-        title: 'Create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.'
+        title: '- Create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.'
     3:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-4-pe.png
-        title: '<b>Enable the table heading</b> and update the heading text. In the "<b>Columns</b>" section click "<b>Add column</b>".'
+        title: '- Turn on the <b>Table heading</b> and update the heading text.<br>- In the "<b>Columns</b>" section click "<b>Add column</b>".'
     4:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-5-pe.png
-        title: 'Specify the telemetry key "<b>temperature</b>" as the key for the new table column.'
+        title: '- Specify the telemetry key "<b>temperature</b>" when configuring a new table column.'
     5:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-entity-table-6-pe.png
-        title: 'Similarly, add columns for the telemetry key "<b>humidity</b>" and the attribute "<b>active</b>", which will display the device status. Click "<b>Apply</b>" to save component.'
+        title: '- Similarly, add columns for the telemetry key "<b>humidity</b>" and the attribute "<b>active</b>", which will display the device status.<br>- In the <b>column settings</b>, set <b>center alignment</b> for the cells of each key.<br>- Click <b>Apply</b> to save component.'
 
 reporting-getting-started-alarm-table:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-1-pe.png
-        title: 'Drag the "<b>Alarm table</b>" component into the content area of your report.'
+        title: '- Drag the <b>Alarm table</b> component into the content area of your report.'
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-2-pe.png
-        title: 'Set the "<b>All devices</b>" entity alias as the <b>alarm source</b>.'
+        title: '- By default, the Alarm table is preconfigured to display alarms from the <b>last 24 hours</b>.<br>- Set the entity alias <b>All devices</b> as the <b>alarm source</b>.<br>- In the <b>Filters</b> section, check the box to display only currently active alarms.'
     2:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-alarm-table-3-pe.png
-        title: 'Scroll down to <b>enable the table heading</b> and enter your heading text. <b>Save</b> the component.'
+        title: '- Scroll down slightly, find the switch labeled <b>Table heading</b>, and toggle it on. Type your desired heading.<br>Adjust the <b>horizontal alignment</b> and reduce the <b>font size</b> if desired.<br>- <b>Save</b> the component.'
 
-reporting-getting-started-save-report:
+reporting-getting-started-charts-1:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-1-pe.png
+        title: '- Drag the <b>Line chart</b> component into the content area of your report.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-2-pe.png
+        title: 'By default, the time window shows the <b>last day</b> of data, aggregated by <b>1 hour</b>.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-3-pe.png
+        title: '- Set the entity alias <b>All devices</b> as the <b>datasource</b>.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-4-pe.png
+        title: '- Keep the telemetry key "temperature", but change the label to <b>${entityName} temperature</b>.<br>- Configure the Y axes.'
+    4:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-5-pe.png
+        title: '- Set thresholds.'
+    5:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-6-pe.png
+        title: '- Set the <b>legend position</b> to <b>Bottom</b>.<br>- <b>Save</b> the component.'
+
+reporting-getting-started-charts-2:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-7-pe.png
+        title: '- Drag another <b>Line chart</b> component just below the first one.'
+    1:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-8-pe.png
+        title: '- Define the <b>time intervals</b> for working with telemetry data.<br>- Specify the entity alias <b>All devices</b> as the <b>datasource</b>.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-9-pe.png
+        title: '- Set the telemetry key to <b>humidity</b>, units <b>%</b>, and change the <b>label</b> to <b>${entityName} humidity</b><br>- Configure the Y axes.'
+    3:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-charts-10-pe.png
+        title: '- Set the <b>legend position</b> to <b>Bottom</b>.<br>- <b>Save</b> the component.'
+
+reporting-getting-started-save-report-1:
     0:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-save-report-1-pe.png
-        title: 'After you&#39;ve added and configured all the necessary components, update the report file name to the one you need. Click "<b>Save</b>" in the top-right corner to store your template configuration.'
+        title: 'Before saving the template, update the report file name so that exported files are easy to identify.'
+
+reporting-getting-started-save-report-2:
+    0:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-save-report-2-pe.png
+        title: 'Click the <b>Save</b> button in the <b>top-right corner</b> of the report builder interface to save your template configuration.'
 
 reporting-getting-started-generate-test-report:
     0:
@@ -78,6 +124,8 @@ reporting-getting-started-generate-test-report:
     1:
         image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-generate-test-report-2-pe.png
         title: 'The system will generate a test report showing all your devices along with their alarms.'
+    2:
+        image: /images/user-guide/reporting/reporting-getting-started/reporting-getting-started-generate-test-report-3-pe.png
 
 scheduler-event-customer-a-1:
     0:
@@ -150,7 +198,6 @@ sent-email:
     2:
         image: /images/user-guide/reporting/reporting-getting-started/sent-email-3-pe.png
         title: 'The user can open and view the report in their browser or download it.'
-
 
 ---
 
