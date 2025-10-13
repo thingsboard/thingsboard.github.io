@@ -362,6 +362,34 @@ entity-label-legend:
         image: /images/user-guide/widgets/overview/appearance/entity-label-legend-3-ce.png
         title: 'Now, each key includes a human-readable label of the device it belongs to.'
 
+entity-name-tooltip:
+    0:
+        image: /images/user-guide/widgets/overview/appearance/tooltipName-before-configuration-CE.png
+        title: 'When a widget contains data from multiple devices, or when several devices use the same data key name, it may be difficult to determine which key value corresponds to which device in the tooltip.'
+    1:
+        image: /images/user-guide/widgets/overview/appearance/tooltipName-configuration-1-CE.png
+        title: 'Open the data key configuration.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance/tooltipName-configuration-2-CE.png
+        title: 'Use the <b>${entityName}</b> variable in the key label, which automatically inserts the system name of the entity. This helps clearly identify the object, especially when its technical name or unique identifier is important.'
+    3:
+        image: /images/user-guide/widgets/overview/appearance/tooltipName-configuration-3-CE.png
+        title: 'Use this variable for other data keys as well.'
+    4:
+        image: /images/user-guide/widgets/overview/appearance/tooltipName-after-configuration-CE.png
+        title: 'Now, each key includes the name of the device it belongs to.'
+
+entity-label-tooltip:
+    0:
+        image: /images/user-guide/widgets/overview/appearance/tooltipLabel-configuration-1-CE.png
+        title: 'Use the <b>${entityLabel}</b> variable in the key label, that inserts the entity&#39;s label in the tooltip. This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.'
+    1:
+        image: /images/user-guide/widgets/overview/appearance/tooltipLabel-configuration-2-CE.png
+        title: 'Use this variable for other data keys as well.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance/tooltipLabel-after-configuration-CE.png
+        title: 'Now, each key includes a human-readable label of the device it belongs to.'
+
 appearance-vertical-axis:
     0:
         image: /images/user-guide/widgets/overview/appearance/appearance-vertical-axis-1-ce.png
