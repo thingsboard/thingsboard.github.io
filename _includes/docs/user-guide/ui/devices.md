@@ -36,12 +36,17 @@ Tenant administrators and users with appropriate permissions can create, edit, o
 ### Adding new device
 
 To add a new device:
-- Navigate to **Entities** &#10230; **Devices**. {% unless docsPrefix == null %}By default, you will see the "**All**" asset group.{% endunless %}
+- Navigate to **Entities** &#10230; **Devices**. {% unless docsPrefix == null %}By default, you will see the "**All**" device group.{% endunless %}
 - Click the "**+**" icon in the upper-right corner and select "**Add new device**" from drop-down menu.
 - In the device creation form, fill in the required fields:
     - **Name** – a unique name for the device.
     - **[Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}** – by default, the profile is set to "**default**", but you can choose a different profile if needed.
-- Optional fields such as label or description can be filled in if needed.
+    {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+    - **Owner and groups:** Helps with organization and access control.
+      - **Owner**: Select the owner from the dropdown list. The device will be created at that owner’s level. By default, the field is pre-filled with the Customer or Tenant name based on where you add the device. You can change it before confirming adding.
+      - **Groups**: Optional field. Add the device to existing device groups or create a new one at the selected owner level. Note: every device is automatically added to the "**All**" group of that owner.      
+    {% endif %}
+- Optional fields such as **Label** or **Description** can be filled in if needed.
 - Click "**Add**".
 
 Device successfully created and is now available in the list.
@@ -162,6 +167,11 @@ On the "<b>Devices</b>" page there is an option "<b>Include customer entities</b
 
 {% include images-gallery.html imageCollection="include-customer-entities" showListImageTitles="true" %}
 
+## Share device
+You can share devices by adding them to a device group and then sharing the group with a customer.
+
+For detailed instructions, please see the section on how to [Share device group](#share-device-group).
+
 {% endif %}
 
 {% unless docsPrefix == null %}
@@ -189,7 +199,7 @@ To make the group private again, follow the same steps using the "**Make private
 
 ## Share device group
 
-You can share an device group with one or more customers. This is useful, for example, when multiple customers need access to the same device.
+You can share a device group with one or more customers. This is useful, for example, when multiple customers need access to the same device.
 
 > You cannot share an individual device — only the device group that contains it.
 
@@ -201,6 +211,23 @@ To share an device group:
 - Confirm the action by clicking "**Share**".
 
 {% include images-gallery.html imageCollection="share-device-group" %}
+
+**Managing and Verifying Permissions**
+
+After a device group has been shared, you can view, edit, or revoke permissions at any time.
+
+1. From the "Device groups" list, click on the pencil button of the desired group to open the "Entity group details".
+
+2. Navigate to the Permissions tab.
+
+3. On this tab, you will see a complete list of all permissions granted for this group. Here you can:
+
+- **Add** a new permission: Click the "+" icon in the top right corner of the panel. A dialog window will appear where you can select a role and a user group to grant access to.
+
+- **Edit** an existing permission: Click the pencil icon next to the permission you want to modify.
+
+- **Delete** a permission: Click the trash can icon to remove access for that user group.
+
 {% endunless %}
 
 ## Device details
