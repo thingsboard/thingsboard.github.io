@@ -28,22 +28,22 @@ Let’s add an attribute update to our configuration. For this purpose, follow t
 
 {% assign attributeUpdates = '
     ===
-        image: /images/gateway/modbus-connector/examples/select-created-gateway.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-created-gateway.png,
         title: Go to "**Entities**" → "**Gateways**" in the left sidebar and select your gateway.
     ===
-        image: /images/gateway/modbus-connector/examples/select-connector-configuration.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-connector-configuration.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/modbus-connector/examples/select-device-configuration.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-device-configuration.png,
         title: Select the created Modbus connector and click on the "**Master Connections**" tab. Make sure you have configured and connected device (if you don’t know how to do it, see [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=modbus){:target="_blank"} guide or [Connection settings](/docs/iot-gateway/config/modbus/#connection-settings) and [Data mapping](/docs/iot-gateway/config/modbus/#data-mapping) sections of this guide). Click on the “**Pencil**” icon on a device you want to configure attribute updates for.
     ===
-        image: /images/gateway/modbus-connector/examples/connector-configuration-attribute-updates-1.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/connector-configuration-attribute-updates-1.png,
         title: Scroll down to the “**Attribute updates**” section and click on the “**Pencil**” icon to edit the attribute updates.
     ===
-        image: /images/gateway/modbus-connector/examples/connector-configuration-attribute-updates-2.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/connector-configuration-attribute-updates-2.png,
         title: Click on the “**Add attribute update**” button. In our case, we will add `relay` attribute update, so the “**Key**” field, enter `relay`, select the “**Type**” as **bits**, "**Function code**" as "**05 - Write Single Coil**", fill in the "**Objects count**" field with `1`, select "**Bit target type**" as "**Boolean**" and in the "**Address**" field enter "**1**".
     ===
-        image: /images/gateway/modbus-connector/examples/connector-configuration-3.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/connector-configuration-3.png,
         title: Remember to save your changes by clicking the “**Apply**” button.
 '
 %}
@@ -56,9 +56,9 @@ with type "**Boolean**" set it to "**True**".
 
 {% assign attributeUpdates2 = '
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
     ===
-        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-5.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-relative-path-5.png,
 '
 %}
 
@@ -67,7 +67,7 @@ with type "**Boolean**" set it to "**True**".
 Now, let’s check the value of the relay register. In the selected device, go to the "**Last telemetry**" tab and 
 check the value of the `relay` telemetry. It should be `true` since we set the shared attribute to `true`.
 
-![image](/images/gateway/modbus-connector/examples/result-device-overview-1.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/result-device-overview-1.png)
 
 Try to change the value of the `relay` shared attribute to `false`. After a few seconds, you should see that the
 `relay` telemetry value has changed to `false`, which means that the attribute update worked correctly.

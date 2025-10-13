@@ -7,22 +7,22 @@ we need to configure the BACnet connector to support RPC calls. For this purpose
 
 {% assign rpcToDevice = '
     ===
-        image: /images/gateway/bacnet-connector/examples/select-created-gateway.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/examples/select-created-gateway.png,
         title: Go to "**Entities**" → "**Gateways**" in the left sidebar and select your gateway.
     ===
-        image: /images/gateway/bacnet-connector/examples/select-connector-configuration.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/examples/select-connector-configuration.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/bacnet-connector/examples/select-device-configuration.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/examples/select-device-configuration.png,
         title: Select the created BACnet connector and click on the "**Devices**" tab. Make sure you have configured and connected device (if you don’t know how to do it, see [Application settings](/docs/iot-gateway/config/bacnet/#application) and [Data mapping](/docs/iot-gateway/config/bacnet/#data-mapping) sections of this guide). Click on the “**Pencil**” icon on a device you want to configure attribute updates for.
     ===
-        image: /images/gateway/bacnet-connector/examples/rpc-to-device-1.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/examples/rpc-to-device-1.png,
         title: Scroll down to the "**RPC methods**" section and click on the "**Pencil**" icon to edit the RPC methods.
     ===
-        image: /images/gateway/bacnet-connector/examples/rpc-to-device-2.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/examples/rpc-to-device-2.png,
         title: Click on the "**Add method**" button. Fill in the "**Method**" field with `getTemperature`, select the "**Request Type**" as "**Read Property**", "**Object ID**" as "**Analog Value**" and "**1**", and "**Property ID**" as "**Present Value**".
     ===
-        image: /images/gateway/bacnet-connector/examples/rpc-to-device-3.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/examples/rpc-to-device-3.png,
         title: Remember to save your changes by clicking the "**Apply**" button and click save connector configuration button.
 '
 %}
@@ -38,7 +38,7 @@ getTemperature
 
 Response:
 
-![image](/images/gateway/bacnet-connector/examples/rpc-to-device-4.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/rpc-to-device-4.png)
 
 {% capture difference %}
 The RPC Debug Terminal is used only for example purpose, so you can use any other widget that supports RPC calls.

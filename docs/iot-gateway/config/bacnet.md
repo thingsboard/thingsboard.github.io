@@ -46,7 +46,7 @@ you can use the "**Advanced**" configuration mode.
 
 You can switch between these modes using the toggle button at the top of the configuration page:
 
-![image](/images/gateway/bacnet-connector/bacnet-modes-toggle.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-modes-toggle.png)
 
 ## General settings
 
@@ -84,7 +84,7 @@ All configuration parameters list, and their detailed description can be found i
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/bacnet-advanced-application-settings.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-advanced-application-settings.png)
 
 ## Data mapping
 
@@ -148,7 +148,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/attribute-updates-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/attribute-updates-overview.png)
 
 {% include /templates/iot-gateway/bacnet-connector/device-attribute-updates-basic-section.md %}
 
@@ -171,7 +171,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/rpc-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/rpc-overview.png)
 
 {% include /templates/iot-gateway/bacnet-connector/device-rpc-basic-section.md %}
 
@@ -204,7 +204,7 @@ Let’s look at the example of the EDE file parsing configuration.
 We will use an EDE file exported from YABE (Yet Another BACnet Explorer) application. The file contains the
 description of a BACnet device with several objects. The file looks like this:
 
-![image](/images/gateway/bacnet-connector/ede-file-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/ede-file-overview.png)
 
 Now let’s configure the BACnet connector to use this EDE file. In the advanced configuration mode, paste the following
 connector configuration (**make sure to use the correct path to your EDE file**):
@@ -239,7 +239,7 @@ update device attributes, and send RPC commands to the device. As you can see on
 has automatically created the device with the name and profile from the EDE file, as well as all the attributes and time
 series from the file:
 
-![image](/images/gateway/bacnet-connector/ede-device-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/ede-device-overview.png)
 
 ## Advanced configuration
 

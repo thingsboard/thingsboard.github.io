@@ -50,4 +50,4 @@ be read.
 After saving the changes and starting the connector, you can see that the corresponding device has been added to the 
 platform, and its telemetry has started to fill with all the device objects:
 
-![image](/images/gateway/bacnet-connector/examples/device-objects-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/device-objects-overview.png)
