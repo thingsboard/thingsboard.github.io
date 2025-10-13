@@ -17,8 +17,9 @@ We will demonstrate two common authentication methods:
 - **HTTP Basic Authentication** (username and password)
 - **Bearer Token Authentication** (a secret API key)
 
-Both services, Ollama and Nginx, will be deployed together as containers using Docker Compose. 
-The goal is not to provide a production-grade solution, but rather to illustrate the concept and provide a simple, working starting point for further experimentation and implementation.
+Both services, Ollama and Nginx, will be deployed together as containers using Docker Compose.
+The goal is not to provide a production-grade solution, but rather to illustrate the concept and provide a simple, working starting point for further experimentation and implementation. 
+This guide uses the standard Ollama Docker image without GPU acceleration to keep the setup straightforward - you can add GPU support later to significantly improve inference performance.
 
 {% capture https_warning %}
 After completing this guide, we **strongly recommend** securing your [Nginx proxy with HTTPS](https://nginx.org/en/docs/http/configuring_https_servers.html){:target="_blank"}
@@ -183,7 +184,7 @@ Manually adding plain-text passwords to the file will not work.
 
 **To add a new user:**
 
-Run the `htpasswd` command again. The `-Append` flag in the PowerShell command is equivalent to `>>`. This example adds `anotheruser` with password `anotherpassword`.
+Run the `htpasswd` command again. This example adds `anotheruser` with password `anotherpassword`.
 
 {% capture tabspec %}http-basic-add-user
 http-basic-add-user-linux-macos,Linux/macOS,shell,/docs/samples/analytics/resources/http-basic-add-user-linux-macos.sh
@@ -374,6 +375,12 @@ making sure to specify the appropriate file for the authentication approach you 
 
 ## Next steps
 
-Now that you have a secure, local Ollama endpoint, here are some recommended next steps:
-- **Predictive Maintenance with AI**: Explore our guide on [AI-Based Anomaly Detection with ThingsBoard](/docs/{{docsPrefix}}samples/analytics/ai-predictive-maintenance/){:target="_blank"}. 
-   You can adapt that guide to use the local Ollama model you've just configured, allowing you to run the entire solution without relying on external AI services.
+Now that you have Ollama endpoint, here are some recommended next steps:
+
+- **Enable HTTPS**: Secure your Nginx proxy with HTTPS by following the [official Nginx HTTPS configuration guide](https://nginx.org/en/docs/http/configuring_https_servers.html){:target="_blank"}.
+
+- **Add GPU Support**: Enable GPU acceleration for Ollama to significantly improve inference speed. 
+  Use the [Ollama Docker GPU setup instructions](https://github.com/ollama/ollama/blob/main/docs/docker.md){:target="_blank"} as a starting point.
+
+- **Predictive Maintenance with AI**: Explore our guide on [AI-Based Anomaly Detection with ThingsBoard](/docs/{{docsPrefix}}samples/analytics/ai-predictive-maintenance/){:target="_blank"}.
+  You can adapt that guide to use the local Ollama model you've just configured, allowing you to run the entire solution without relying on external AI services.
