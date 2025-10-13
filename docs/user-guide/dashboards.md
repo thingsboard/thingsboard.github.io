@@ -301,6 +301,11 @@ hide-time-zone:
         image: /images/user-guide/dashboards/overview/hide-time-zone-2-ce.png
         title: ''
 
+max-values:
+    0:
+        image: /images/user-guide/dashboards/overview/max-values-ce.png
+        title: ''
+
 time-window-time-zone:
     0:
         image: /images/user-guide/dashboards/overview/timewindow-timezone-1-ce.png
