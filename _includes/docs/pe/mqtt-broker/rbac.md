@@ -2,7 +2,7 @@
 {:toc}
 
 **Role-Based Access Control (RBAC)** in TBMQ PE provides a structured and secure way to manage access to broker features 
-and operations through predefined user roles. 
+and operations through predefined [user roles](/docs/pe/mqtt-broker/user-guide/ui/users/). 
 This system enables administrators to grant appropriate permissions to users based on their role within the organization.
 
 ### Available Roles
