@@ -62,25 +62,16 @@ ThingsBoard currently supports integration with the following AI providers:
 When working with models compatible with the OpenAI API, an important parameter is the **base URL**, which defines the address used to send requests to the API.
 
 <b><font size="3">Official Base URL</font></b>
-   
-This is the standard address provided by OpenAI to access its services. For convenience, the official OpenAI API base URL is preconfigured in ThingsBoard.
 
-Use it when:
-- You are working directly with OpenAI models.
-- You require maximum compatibility, the latest features, and full support from OpenAI.
+The standard OpenAI API endpoint, preconfigured in ThingsBoard. Use this to access models hosted by OpenAI.
 
 <b><font size="3">Custom Base URL</font></b>
 
-This is used when you want to connect to a third-party provider or a self-hosted deployment that implements an OpenAI-compatible protocol.
-
-Use it when:
-- You need to integrate locally deployed or custom models.
-- You must meet data residency requirements (e.g., run in a specific region).
-- You work with alternative providers that support the OpenAI API.
+An alternative endpoint for providers that implement the OpenAI-compatible API protocol. 
+Use this when there is no dedicated integration for your provider and they offer an OpenAI-compatible API (e.g., DeepSeek, Qwen, self-hosted Ollama).
 
 {% capture difference %}
-When using a custom base URL, the **API key becomes optional**. This enables working with models that do not require authentication, such as locally hosted models.   
-However, most cloud model providers will still require a valid API key.
+When using a custom base URL, the **API key becomes optional**. This enables working with models that do not require authentication, such as locally hosted models. However, most cloud model providers will still require a valid API key.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -92,7 +83,10 @@ However, most cloud model providers will still require a valid API key.
 | Alibaba Qwen (Singapore) | `https://dashscope-intl.aliyuncs.com/compatible-mode/v1` |
 | Ollama (local)           | `http://localhost:11434/v1`                              |
 
-> <b>Note:</b> [Ollama](#ollama) is also available as a separate integration with additional configuration options.
+{% capture ollama_note %}
+[Ollama](#ollama) is also available as a separate integration with additional configuration options.
+{% endcapture %}
+{% include templates/info-banner.md content=ollama_note %}
 
 <hr>
 
@@ -144,7 +138,10 @@ However, most cloud model providers will still require a valid API key.
   - Secret access key. 
   - AWS region (where inference will run).
 
-> <b>Note</b>: Authentication with Bedrock API keys is not supported.
+{% capture bedrock_note %}
+Authentication with Bedrock API keys is not supported.
+{% endcapture %}
+{% include templates/info-banner.md content=bedrock_note %}
 
 <hr>
 
@@ -163,8 +160,7 @@ However, most cloud model providers will still require a valid API key.
 
 [Ollama](https://ollama.com/){:target="_blank"} allows you to easily run open large language models, such as **Llama 3** and **Mistral**, directly on your own machine. This enables local experimentation, offline usage, and greater control over your data.
 
-To connect to your Ollama server, you need its **base URL** (e.g., *http://localhost:11434*) and an **authentication method**.   
-The following options are supported:
+To connect to your Ollama server, you need its **base URL** (e.g., *http://localhost:11434*) and an **authentication method**. The following options are supported:
 
 ![image](/images/samples/analytics/ai-models/ollama-authentication-method.png)
 
@@ -186,8 +182,7 @@ The following options are supported:
   ```
 
 {% capture difference %}
-**Security Recommendation:**   
-When using **Basic** or **Token** authentication, always connect via an `HTTPS` URL. Using plain `HTTP` will transmit credentials in clear text, which is insecure.
+**Security Recommendation:** When using **Basic** or **Token** authentication, always connect via an `HTTPS` URL. Using plain `HTTP` will transmit credentials in clear text, which is insecure.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -214,7 +209,10 @@ Some models support advanced configuration parameters (depending on the provider
 - <b>Maximum output tokens</b> – Sets the maximum number of tokens that the model can generate in a single response.
 - <b>Context length</b> – Defines the size of the context window in tokens. This value sets the total memory limit for the model, including both the user's input and the generated response.
 
-> If advanced settings cause errors, try removing their values. In this case, defaults will be applied. This often resolves incompatibility issues for certain models.
+{% capture advanced_settings_tip %}
+If advanced settings cause errors, try removing their values. In this case, defaults will be applied. This often resolves incompatibility issues for certain models.
+{% endcapture %}
+{% include templates/info-banner.md content=advanced_settings_tip %}
 
 {% include images-gallery.html imageCollection="advanced-model-settings" %}
 
@@ -227,7 +225,10 @@ If the response is successful, you will see a ✅ <b>green checkmark</b>.
 
 {% include images-gallery.html imageCollection="check-connectivity-1" %}
 
-> <b>Best practice</b>: Always use the connectivity check after configuring a provider to ensure smooth runtime execution.
+{% capture best_practice %}
+Always use the connectivity check after configuring a provider to ensure smooth runtime execution.
+{% endcapture %}
+{% include templates/info-banner.md content=best_practice %}
 
 If an error occurs (e.g., invalid API key, non-existing model), an error message with details will be displayed ❌.
 
@@ -235,7 +236,10 @@ If an error occurs (e.g., invalid API key, non-existing model), an error message
 
 This feature ensures your configuration is valid and prevents runtime errors when models are used in production.
 
-> <b>Note</b>: Even though the test request is trivial (e.g., “What is the capital of X country?”), providers usually charge for it. However, the cost is minimal.
+{% capture test_cost_note %}
+Even though the test request is trivial (e.g., "What is the capital of X country?"), providers usually charge for it. However, the cost is minimal.
+{% endcapture %}
+{% include templates/info-banner.md content=test_cost_note %}
 
 ## Next steps
 
