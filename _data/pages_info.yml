@@ -4031,6 +4031,9 @@
 "/docs/reference/python-rest-client/":
   url: "/docs/reference/python-rest-client/"
   redirect_from: []
+"/docs/reference/release-policy/":
+  url: "/docs/reference/release-policy/"
+  redirect_from: []
 "/docs/reference/releases/":
   url: "/docs/reference/releases/"
   redirect_from: []
@@ -5011,6 +5014,9 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action/device-state/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/device-state/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/action/generate-dashboard-report/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action/generate-dashboard-report/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action/generate-report/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/generate-report/"
