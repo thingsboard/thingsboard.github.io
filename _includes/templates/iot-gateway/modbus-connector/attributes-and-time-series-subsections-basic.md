@@ -32,6 +32,8 @@ For adding a new attribute or time series, use the following steps:
 %}
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=attributes %}
 
+##### Report strategy
+
 You can enable a specific report strategy for each time series or attribute. This strategy defines how often
 data is sent to the ThingsBoard server. The following strategies are available:
 
@@ -45,6 +47,8 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+##### Modifier
+
 Also, **modifier** for attribute/time series value can be applied using the following settings:
 
 | **Parameter** | **Description**                                                                                                                                                                  |
@@ -53,4 +57,47 @@ Also, **modifier** for attribute/time series value can be applied using the foll
 | Value         | The value that will be used to modify the read value                                                                                                                             | 
 | ---           |                                                                                                                                                                                  |
 
+{% capture difference %}
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/modbus/#usage-examples) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ![image](/images/gateway/modbus-connector/modifier.png)
+
+##### Batch reading (Advanced configuration mode only)
+
+To optimize the reading process, you can group multiple registers into a single batch read request. This approach 
+reduces the number of requests sent to the Modbus server, which can enhance performance and decrease network traffic.
+Take attention that the registers in a batch read request must be of the same type and function code.
+
+Two parameters are important for group reading configuration: `address` and `tag`. Let's look at them in more detail:
+
+- **address** - is the address of the starting register and the address of the ending register, separated by a `-`
+  character. For example, `0-10` means that the group read starts with the register at address `0` and ends at the
+  register at address `10`, inclusive.
+- **tag** - is a unique identifier for each register within a group read. It is used to identify a specific register within
+  a given address range. The tag name can be formed using an expression using the following variables:
+    - `${address}` - register address within group read.
+    - `${unitId}` - slave ID.
+    - `${functionCode}` - function code.
+    - `${type}` - data type of register.
+    - `${objectsCount}` - number of objects.
+
+Also, `divider` and `multiplier` parameters work as expected.
+
+Example of group reading configuration:
+
+```json
+{
+  "tag": "${unitId} - ${type} - ${address}",
+  "type": "16int",
+  "functionCode": 3,
+  "objectsCount": 1,
+  "address": "0-10"
+}
+```
+
+{% capture difference %}
+More usage examples can be found in the [Example usage](/docs/iot-gateway/config/modbus/#usage-examples) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
