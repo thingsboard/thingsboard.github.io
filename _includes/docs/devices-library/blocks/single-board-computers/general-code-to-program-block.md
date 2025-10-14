@@ -137,9 +137,9 @@ Necessary variables for connection:
    | Variable name | Default value | Description |
    |-|-|
    | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
-   | THINGSBOARD_EDGE_SERVER | **{{hostName}}** | The IP address of your Raspberry Pi running Edge | 
+   | THINGSBOARD_EDGE_SERVER | **{{hostName}}** | The IP address of your {{deviceName}} running Edge | 
    
-If you are running the script on the same Raspberry Pi where Edge is installed, you can also use `localhost`.
+If you are running the script on the same **{{deviceName}}** where Edge is installed, you can also use `localhost`.
 
 {% else %}
 

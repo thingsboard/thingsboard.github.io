@@ -425,6 +425,9 @@
 "/docs/edge/devices-library/guidelines/":
   url: "/docs/edge/devices-library/guidelines/"
   redirect_from: []
+"/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
 "/docs/edge/devices-library/raspberry-pi-4/":
   url: "/docs/edge/devices-library/raspberry-pi-4/"
   redirect_from: []
@@ -689,6 +692,9 @@
   redirect_from: []
 "/docs/iot-gateway/guides/how-to-use-remote-converter-update/":
   url: "/docs/iot-gateway/guides/how-to-use-remote-converter-update/"
+  redirect_from: []
+"/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/":
+  url: "/docs/iot-gateway/guides/how-to-use-rpc-modbus-connector/"
   redirect_from: []
 "/docs/iot-gateway/how-device-removing-renaming-works/":
   url: "/docs/iot-gateway/how-device-removing-renaming-works/"
@@ -3213,6 +3219,9 @@
 "/docs/pe/edge/devices-library/guidelines/":
   url: "/docs/pe/edge/devices-library/guidelines/"
   redirect_from: []
+"/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
 "/docs/pe/edge/devices-library/raspberry-pi-4/":
   url: "/docs/pe/edge/devices-library/raspberry-pi-4/"
   redirect_from: []
@@ -3894,7 +3903,8 @@
   redirect_from: []
 "/docs/pe/user-guide/ui/security-settings/":
   url: "/docs/pe/user-guide/ui/security-settings/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/pe/user-guide/ui/jwt-security-settings/"
 "/docs/pe/user-guide/ui/slack-settings/":
   url: "/docs/pe/user-guide/ui/slack-settings/"
   redirect_from: []
@@ -5467,7 +5477,6 @@
   url: "/docs/user-guide/ui/security-settings/"
   redirect_from:
   - "/docs/pe/user-guide/ui/jwt-security-settings/"
-  - "/docs/user-guide/ui/jwt-security-settings/"
 "/docs/user-guide/ui/slack-settings/":
   url: "/docs/user-guide/ui/slack-settings/"
   redirect_from: []
