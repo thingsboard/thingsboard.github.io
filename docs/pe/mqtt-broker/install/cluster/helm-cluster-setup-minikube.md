@@ -6,4 +6,4 @@ description: TBMQ microservices setup using Helm Chart with Minikube
 ---
 
 {% assign docsPrefix = "pe/" %}
-{% include docs/mqtt-broker/install/cluster/helm-cluster-setup-minikube.md %}
+![image](/images/coming-soon.jpg)

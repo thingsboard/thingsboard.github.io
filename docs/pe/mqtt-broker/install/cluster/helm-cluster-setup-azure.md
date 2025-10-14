@@ -6,4 +6,4 @@ description: TBMQ microservices setup with Helm on AKS
 ---
 
 {% assign docsPrefix = "pe/" %}
-{% include docs/mqtt-broker/install/cluster/helm-cluster-setup-azure.md %}
+![image](/images/coming-soon.jpg)
