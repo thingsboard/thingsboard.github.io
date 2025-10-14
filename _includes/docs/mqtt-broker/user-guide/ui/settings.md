@@ -2,8 +2,10 @@
 * TOC
 {:toc}
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.0" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 TBMQ provides a dedicated Settings page that allows administrators to manage key system configurations directly from the user interface.
 The Settings page is divided into three tabs, each focused on a specific category of system configuration.

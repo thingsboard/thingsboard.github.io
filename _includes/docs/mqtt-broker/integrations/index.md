@@ -2,8 +2,10 @@
 * TOC
 {:toc}
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.1.0" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 ## Overview
 

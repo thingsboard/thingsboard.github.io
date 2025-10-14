@@ -2,8 +2,10 @@
 * TOC
 {:toc}
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.0" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 In MQTT, a subscription is a mechanism that allows clients to receive messages directed to specific topics. 
 When a client subscribes to a topic, it expresses its interest in receiving all messages published to that topic.
