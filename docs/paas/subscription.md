@@ -322,7 +322,15 @@ Please see the table below to compare the calculated fields limits across subscr
 
 ## Rate limits
 
-The table below shows the rate limits for each subscription plan.
+The platform’s rate-limiting policy preserves predictable service quality and reinforces operational resilience under peak
+load. Controls are enforced at both the tenant level (aggregate activity across all devices and users) and the individual
+device level, using consolidated time windows—per second, per minute, and per hour—to balance burst tolerance with
+sustained throughput ceilings. Thresholds are plan-dependent (Maker, Prototype, Startup, Business, Business+) and scale
+in line with expected traffic profiles to ensure fair multitenant consumption and SLA adherence.
+
+If the workload exceeds the allocated limits, the corresponding requests will be rejected by the platform for the time
+being until the rate limits return to within the policy. Additionally, the platform also notifies tenant administrators
+when a limit breach occurs.
 
 <table>
   <thead>
