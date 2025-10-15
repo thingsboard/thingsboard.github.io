@@ -379,7 +379,11 @@ toc:
           path: /docs/user-guide/contribution/ui/advanced-development/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
-- title: Release notes
-  path: /docs/reference/releases/
-- title: Roadmap
-  path: /docs/reference/roadmap/
+- title: Releases
+  section:
+    - title: Versioning and Release Policy
+      path: /docs/reference/release-policy/
+    - title: Release notes
+      path: /docs/reference/releases/
+    - title: Roadmap
+      path: /docs/reference/roadmap/
