@@ -22,7 +22,7 @@ The version number is incremented based on the level of change included in the r
     <tr>
       <td style="width: 20%"><b>Level</b></td>
       <td style="width: 60%"><b>Changes</b></td>
-      <td style="width: 20%"><b>Migration required</b></td>
+      <td style="width: 20%"><b>Upgrade scripts required</b></td>
     </tr>
   </thead>
   <tbody>
@@ -33,12 +33,12 @@ The version number is incremented based on the level of change included in the r
     </tr>
     <tr>
       <td>MINOR</td>
-      <td>New features with backward compatibility, starts an <b>LTS</b> line when designated (e.g., 4.2)</td>
+      <td>New features with backward compatibility</td>
       <td>Yes</td>
     </tr>
     <tr>
       <td>MAINTENANCE</td>
-      <td>Bug fixes that require upgrade scripts</td>
+      <td>Bug fixes/security vulnerabilities/framework upgrades that may require upgrade scripts</td>
       <td>Yes</td>
     </tr>
     <tr>
