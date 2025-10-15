@@ -38,12 +38,12 @@ The version number is incremented based on the level of change included in the r
     </tr>
     <tr>
       <td>MAINTENANCE</td>
-      <td>Planned releases that may require downtime (DB schema/config changes, upgrade scripts, etc.).</td>
+      <td>Bug fixes that require upgrade scripts</td>
       <td>Yes</td>
     </tr>
     <tr>
       <td>PATCH</td>
-      <td>Hotfix releases that are zero-downtime (critical bugs/security fixes; no env/DB changes).</td>
+      <td>Hotfix releases that do not require upgrade scripts (critical bugs/security fixes; no env/DB changes).</td>
       <td>No</td>
     </tr>
   </tbody>
@@ -53,29 +53,30 @@ The version number is incremented based on the level of change included in the r
 
 <span class="code-light">4.2.0.0</span> — Initial 4.2 LTS release
 
-<span class="code-light">4.2.0.2</span> — Two hotfixes later, still no downtime required to move within <span class="code-light">4.2.0.x</span>
+<span class="code-light">4.2.0.2</span> — Two hotfixes later, no upgrade scripts required to move within <span class="code-light">4.2.0.x</span>
 
-<span class="code-light">4.2.1.0</span> — First maintenance release; expect downtime and upgrade scripts
+<span class="code-light">4.2.1.0</span> — First maintenance release; expect upgrade scripts
 
 <span class="code-light">4.2.1.3</span> — Hotfixes on top of <span class="code-light">4.2.1.0</span>; zero‑downtime within <span class="code-light">4.2.1.x</span>
 
 
 ## Lifecycle & Support (How long versions are supported)
 
-ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. Each LTS line is defined by the **MAJOR.MINOR** pair (e.g., 4.2).
-Customers using LTS releases can be confident that their critical systems will be protected and operate reliably.
+ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. Customers using LTS releases can be confident that their critical systems will be protected and operate reliably.
 
-* **LTS declaration:** We announce a new LTS line each year; each LTS line is supported for **18 months** from initial LTS GA (e.g., from <span class="code-light">4.2.0.0</span> release date)
+* **LTS declaration:** We announce a new **LTS** line each year; each LTS line is supported for **18 months** from initial LTS GA (e.g., from <span class="code-light">4.2.0.0</span> release date)
   
   Active support includes:
     - Bug fixes, security patches
     - New MAINTENANCE (…x.0) and PATCH (…x.y) releases as needed
 
-* **Major releases:** Approximately every 12–18 months.
+* **Major releases:** When breaking changes are introduced.
 
-* **Minor releases:** Typically 3–4 minor releases per major.
+* **Minor releases:** Typically every **three** months.
 
-* **Patch releases:** Built and published as needed in response to critical bugs or security vulnerabilities.
+* **Maintenance releases:** When bug fixes need an upgrade script.
+
+* **Patch releases:** When bug fixes don`t need an upgrade script.
 
 ## Choosing the Right Version
 
@@ -83,17 +84,10 @@ Customers using LTS releases can be confident that their critical systems will b
 
 1. **Prefer the latest LTS line** in Active Support.
 
-2. To stay up to date **without downtime**, track the line’s PATCH updates only (same MAINTENANCE number).
+2. To stay up to date with hotfixes, track the line’s PATCH updates only (same MAINTENANCE number, e.g., <span class="code-light">4.2.1.0</span> → <span class="code-light">4.2.1.3</span>).
 
-3. **Schedule maintenance windows** to adopt new **MAINTENANCE** releases when needed (new features requiring migrations, or important operational fixes).
+3. **Schedule maintenance windows** to adopt new **MAINTENANCE** releases when needed (e.g., <span class="code-light">4.2.0.x</span> → <span class="code-light">4.2.1.0</span>).
 
-**If you need only critical fixes, no downtime:**
-
- - Stay on the same MAINTENANCE number and apply PATCH updates (e.g., <span class="code-light">4.2.1.0</span> → <span class="code-light">4.2.1.3</span>).
-
-**If you can schedule downtime for improvements or required migrations:**
-
- - Move to the next MAINTENANCE number (e.g., <span class="code-light">4.2.0.x</span> → <span class="code-light">4.2.1.0</span>).
 
 ## Docker Hub Tagging Strategy
 
@@ -112,6 +106,12 @@ Customers using LTS releases can be confident that their critical systems will b
       <td>4.2.1.0</td>
       <td>Production</td>
       <td>Immutable</td>
+    </tr>
+    <tr>
+      <td>M.m.P</td>
+      <td>4.2.1-latest</td>
+      <td>Automatic safe patches</td>
+      <td> Floating (within 4.2.1.x)</td>
     </tr>
     <tr>
       <td>latest</td>
