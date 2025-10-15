@@ -81,12 +81,15 @@
                         </label>
                     </div>
                     <input type="hidden" name="_next" value="/docs/contact-us-thanks/">
-                    <input type="hidden" name="utm_source-popup" id="utm_source-popup">
-                    <input type="hidden" name="utm_medium-popup" id="utm_medium-popup">
-                    <input type="hidden" name="utm_campaign-popup" id="utm_campaign-popup">
-                    <input type="hidden" name="utm_term-popup" id="utm_term-popup">
-                    <input type="hidden" name="utm_content-popup" id="utm_content-popup">
-                    <input type="hidden" name="client_id-popup" id="client_id-popup">
+                    <input type="hidden" name="utm_source" id="utm_source">
+                    <input type="hidden" name="utm_medium" id="utm_medium">
+                    <input type="hidden" name="utm_campaign" id="utm_campaign">
+                    <input type="hidden" name="utm_term" id="utm_term">
+                    <input type="hidden" name="utm_content" id="utm_content">
+                    <input type="hidden" name="client_id" id="client_id">
+                    <input type="hidden" name="tags" id="tags" value="product">
+                    <input type="hidden" name="form_id" id="form_id" value="contact_us_modal">
+                    <input type="hidden" name="path" id="path" value="">
                     <input type="text" name="_gotcha" style="display:none">
                 </div>
                 <div class="submit-button-container">
@@ -144,9 +147,12 @@
                 if (value) {
                     value = decodeURIComponent(value);
                     utmData[key] = value;
-                    $form.find('input[name="' + key + '-popup"]').val(value);
+                    $form.find('input[name="' + key + ']').val(value);
                 }
             });
+
+            const path = getPath();
+            $form.find('input[name="path"]').val(path);
 
             const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
             if (gaCookie) {
@@ -154,7 +160,7 @@
                 if (parts.length >= 4) {
                     const clientId = parts[2] + '.' + parts[3];
                     utmData['client_id'] = clientId;
-                    $form.find('input[name="client_id-popup"]').val(clientId);
+                    $form.find('input[name="client_id"]').val(clientId);
                 }
             }
             window.dataLayer = window.dataLayer || [];
@@ -249,6 +255,11 @@
         if (parentLabel) {
             parentLabel.insertAdjacentElement('afterend', errorMessageElement);
         }
+    }
+
+    function getPath() {
+        const url = new URL(window.location.href);
+        return url.pathname;
     }
 
     function getURLParam(name) {
