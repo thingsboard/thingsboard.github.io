@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: kafka
-description: Sends messages to Kafka.
+description: Publishes messages to Apache Kafka topic, sending the incoming message data as the record value.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

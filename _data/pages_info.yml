@@ -572,6 +572,7 @@
   url: "/docs/guides/"
   redirect_from:
   - "/docs/iot-video-tutorials/"
+  - "/docs/user-guide/"
 "/docs/gw/search/":
   url: "/docs/gw/search/"
   redirect_from: []
@@ -1776,7 +1777,8 @@
   redirect_from: []
 "/docs/paas/eu/guides/":
   url: "/docs/paas/eu/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/paas/eu/user-guide/"
 "/docs/paas/eu/":
   url: "/docs/paas/eu/"
   redirect_from: []
@@ -1843,6 +1845,9 @@
   redirect_from: []
 "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/paas/eu/samples/analytics/ollama/":
+  url: "/docs/paas/eu/samples/analytics/ollama/"
   redirect_from: []
 "/docs/paas/eu/samples/sia-connect/":
   url: "/docs/paas/eu/samples/sia-connect/"
@@ -2009,9 +2014,6 @@
 "/docs/paas/eu/user-guide/image-gallery/":
   url: "/docs/paas/eu/user-guide/image-gallery/"
   redirect_from: []
-"/docs/paas/eu/user-guide/":
-  url: "/docs/paas/eu/user-guide/"
-  redirect_from: []
 "/docs/paas/eu/user-guide/integrations/apache-pulsar/":
   url: "/docs/paas/eu/user-guide/integrations/apache-pulsar/"
   redirect_from: []
@@ -2125,6 +2127,9 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/eu/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/reporting/embedding-charts/":
+  url: "/docs/paas/eu/user-guide/reporting/embedding-charts/"
   redirect_from: []
 "/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/"
@@ -2314,7 +2319,8 @@
   redirect_from: []
 "/docs/paas/guides/":
   url: "/docs/paas/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/paas/user-guide/"
 "/docs/paas/":
   url: "/docs/paas/"
   redirect_from: []
@@ -2381,6 +2387,9 @@
   redirect_from: []
 "/docs/paas/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/paas/samples/analytics/ollama/":
+  url: "/docs/paas/samples/analytics/ollama/"
   redirect_from: []
 "/docs/paas/samples/sia-connect/":
   url: "/docs/paas/samples/sia-connect/"
@@ -2548,9 +2557,6 @@
 "/docs/paas/user-guide/image-gallery/":
   url: "/docs/paas/user-guide/image-gallery/"
   redirect_from: []
-"/docs/paas/user-guide/":
-  url: "/docs/paas/user-guide/"
-  redirect_from: []
 "/docs/paas/user-guide/integrations/apache-pulsar/":
   url: "/docs/paas/user-guide/integrations/apache-pulsar/"
   redirect_from: []
@@ -2664,6 +2670,9 @@
   redirect_from: []
 "/docs/paas/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/paas/user-guide/reporting/attaching-report-to-notification/"
+  redirect_from: []
+"/docs/paas/user-guide/reporting/embedding-charts/":
+  url: "/docs/paas/user-guide/reporting/embedding-charts/"
   redirect_from: []
 "/docs/paas/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/paas/user-guide/reporting/embedding-dashboards-widgets/"
@@ -3392,7 +3401,8 @@
   redirect_from: []
 "/docs/pe/guides/":
   url: "/docs/pe/guides/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/pe/user-guide/"
 "/docs/pe/":
   url: "/docs/pe/"
   redirect_from: []
@@ -3538,6 +3548,9 @@
   redirect_from: []
 "/docs/pe/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/pe/samples/analytics/ollama/":
+  url: "/docs/pe/samples/analytics/ollama/"
   redirect_from: []
 "/docs/pe/search/":
   url: "/docs/pe/search/"
@@ -3713,9 +3726,6 @@
 "/docs/pe/user-guide/image-gallery/":
   url: "/docs/pe/user-guide/image-gallery/"
   redirect_from: []
-"/docs/pe/user-guide/":
-  url: "/docs/pe/user-guide/"
-  redirect_from: []
 "/docs/pe/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
   redirect_from:
@@ -3743,6 +3753,10 @@
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
   redirect_from:
   - "/docs/user-guide/reporting/attaching-report-to-notification/"
+"/docs/pe/user-guide/reporting/embedding-charts/":
+  url: "/docs/pe/user-guide/reporting/embedding-charts/"
+  redirect_from:
+  - "/docs/user-guide/reporting/embedding-charts/"
 "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from:
@@ -4071,6 +4085,9 @@
   - "/docs/samples/analytics/spark-integration-with-thingsboard/"
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/samples/analytics/ollama/":
+  url: "/docs/samples/analytics/ollama/"
   redirect_from: []
 "/docs/samples/cricket-wifi/cricket-wifi/":
   url: "/docs/samples/cricket-wifi/cricket-wifi/"
@@ -4516,9 +4533,6 @@
   - "/docs/user-guide/ui/entity-views"
 "/docs/user-guide/image-gallery/":
   url: "/docs/user-guide/image-gallery/"
-  redirect_from: []
-"/docs/user-guide/":
-  url: "/docs/user-guide/"
   redirect_from: []
 "/docs/user-guide/install/alibaba-cloud/":
   url: "/docs/user-guide/install/alibaba-cloud/"
@@ -5019,6 +5033,9 @@
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action/device-state/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/device-state/"
+  redirect_from: []
+"/docs/user-guide/rule-engine-2-0/nodes/action/generate-dashboard-report/":
+  url: "/docs/user-guide/rule-engine-2-0/nodes/action/generate-dashboard-report/"
   redirect_from: []
 "/docs/user-guide/rule-engine-2-0/nodes/action/generate-report/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/generate-report/"

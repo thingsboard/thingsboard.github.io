@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: math function
-description: Executes a math function and adds the result to the message data or metadata.
+description: Performs mathematical operations on numeric data retrieved from multiple sources (constants, message, metadata, attributes, or time series) and saves results to the message or database.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

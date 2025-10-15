@@ -73,6 +73,16 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tjk-solutions.webp');">
+                <a class="content" href="/case-studies/tjk-solutions">
+                    <img class="logo" src="/images/case-studies/tjk-solutions.svg" title="TJK-Solutions" alt="TJK-Solutions logo">
+                    <p>Securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" id="Cold chain monitoring">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/senseing.webp');">
                 <a class="content" href="/case-studies/senseing">

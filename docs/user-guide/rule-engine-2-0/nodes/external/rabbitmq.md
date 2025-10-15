@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: rabbitmq
-description: Publishes message to the RabbitMQ.
+description: Publishes messages to RabbitMQ exchanges, sending the incoming message data as the message body.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
