@@ -43,7 +43,7 @@ curl --location --request POST 'http://localhost:8083/api/mqtt/client/credential
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "testSSLCreds",
-    "credentialsType":"SSL",
+    "credentialsType":"X_509",
     "credentialsValue":"{ \"certCnPattern\": \"Root Common Name\", \"certCnIsRegex\": false, \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
 }'
 ```
@@ -55,7 +55,7 @@ curl --location --request POST 'http://localhost:8083/api/mqtt/client/credential
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "testSSLCredsWithPattern",
-    "credentialsType":"SSL",
+    "credentialsType":"X_509",
     "credentialsValue":"{ \"certCnPattern\": \".* Pattern Common Name .*\", \"certCnIsRegex\": true, \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
 }'
 ```

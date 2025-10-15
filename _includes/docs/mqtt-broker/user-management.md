@@ -23,6 +23,8 @@ This id serves as a reference point and can be utilized to perform operations su
 
 ## Create/update user
 
+{% if docsPrefix == null %}
+
 ```bash
 curl --location --request POST 'http://localhost:8083/api/admin' \
 --header "X-Authorization: Bearer $ACCESS_TOKEN" \
@@ -36,6 +38,25 @@ curl --location --request POST 'http://localhost:8083/api/admin' \
 }'
 ```
 {: .copy-code}
+
+{% else %}
+
+```bash
+curl --location --request POST 'http://localhost:8083/api/admin' \
+--header "X-Authorization: Bearer $ACCESS_TOKEN" \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "id":$USER_ID,
+    "email":"test@gmail.com",
+    "password":"test",
+    "firstName":"test",
+    "lastName":"test",
+    "roleName": "ADMIN"
+}'
+```
+{: .copy-code}
+
+{% endif %}
 
 If _$USER_ID_ is _null_ or _id_ field is absent in the request body, the new admin user will be created, otherwise the user with _$USER_ID_ identifier will be updated.
 
