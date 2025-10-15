@@ -80,7 +80,7 @@ collections:
     output: true
 
 release:
-  branch: release-4.2.1
+  branch: release-4.2
   branch_major_next: master
   ver: 4.2.1
   ce_ver: 4.2.1
