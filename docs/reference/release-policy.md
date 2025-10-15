@@ -17,7 +17,7 @@ Thingsboard version numbers have four parts: <span class="code-light">MAJOR.MINO
 
 The version number is incremented based on the level of change included in the release.
 
-<table>
+<table style="width:70%">
   <thead>
     <tr>
       <td style="width: 20%"><b>Level</b></td>
@@ -97,7 +97,7 @@ Customers using LTS releases can be confident that their critical systems will b
 
 ## Docker Hub Tagging Strategy
 
-<table>
+<table style="width:70%">
   <thead>
     <tr>
       <td style="width: 20%"><b>Tag</b></td>
