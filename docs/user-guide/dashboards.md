@@ -303,7 +303,7 @@ hide-time-zone:
 
 max-values:
     0:
-        image: /images/user-guide/dashboards/overview/max-values-ce.png
+        image: https://img.thingsboard.io/user-guide/dashboards/overview/max-values-ce.png
         title: ''
 
 time-window-time-zone:

@@ -28,14 +28,14 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Time series chart.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/time-series-table.png" alt="Time series chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/time-series-table.png" alt="Time series chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p>A universal chart for visualizing values over time. Ideal for monitoring trends and detecting anomalies. Can combine line and bar views.<br><b>Example:</b> displaying sensor temperature throughout the day together with the number of messages in each interval.</p>
   </div><br>
   <div>
     <p style="font-size: 16px;">
       <b>&#8226; Line chart.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/line-chart.png" alt="Line chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/line-chart.png" alt="Line chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     A classic line graph for comparing multiple metrics over time. Great for showing progression or correlation.<br>
     <b>Example:</b> comparing average room temperatures across different areas.
@@ -45,7 +45,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Bar chart.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/bar-chart.png" alt="Bar chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/bar-chart.png" alt="Bar chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Vertical bars for comparing categories or groups. Perfect for ranking and showing aggregated values.<br>
     <b>Example:</b> monthly energy consumption of devices for the month.
@@ -55,7 +55,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Point chart.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/point-chart.png" alt="Point chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/point-chart.png" alt="Point chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Shows individual values as dots. Useful for scatter plots or event distribution over time.<br>
     <b>Example:</b> displaying motion sensor trigger events.
@@ -65,7 +65,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; State chart.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/state-chart.png" alt="State chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/state-chart.png" alt="State chart" class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Illustrates changes in system or device states over time (e.g., ONLINE/OFFLINE).<br>
     <b>Example:</b> pump activity (ON/OFF) during a week.
@@ -75,7 +75,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Bar chart with labels.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/bar-chart-with-labels.png" alt="Bar chart with labels." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/bar-chart-with-labels.png" alt="Bar chart with labels." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Bar chart with numeric labels inside or above bars. Highlights exact values.<br>
     <b>Example:</b> daily water usage per apartment, with liters displayed directly on bars.
@@ -85,7 +85,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Range chart.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/range-chart.png" alt="Range chart." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/range-chart.png" alt="Range chart." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Displays minimum and maximum values over time as shaded ranges.<br>
     <b>Example:</b> hourly min/max temperature.
@@ -95,7 +95,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Bars.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/bars.png" alt="Bars." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/bars.png" alt="Bars." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Compact representation of metrics as progress bars. Useful for completion levels.<br>
     <b>Example:</b> battery charge or memory usage.
@@ -105,7 +105,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Pie.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/pie.png" alt="Pie." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/pie.png" alt="Pie." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Circular chart for showing parts of a whole.<br>
     <b>Example:</b> share of electricity consumption by department.
@@ -115,7 +115,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Doughnut.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/doughnut.png" alt="Doughnut." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/doughnut.png" alt="Doughnut." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     Similar to a pie chart, but with a hollow center where a key metric (e.g., average, sum, KPI) can be displayed.<br>
     <b>Example:</b> % of used capacity plus absolute value in the center.
@@ -125,7 +125,7 @@ Below is a list of available charts with explanations and practical examples.
     <p style="font-size: 16px;">
       <b>&#8226; Horizontal doughnut.</b>
     </p>
-    <img src="/images/user-guide/reporting/embedding-charts/horizontal-doughnut.png" alt="Horizontal doughnut." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
+    <img src="https://img.thingsboard.io/user-guide/reporting/embedding-charts/horizontal-doughnut.png" alt="Horizontal doughnut." class="image-float" style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px">
     <p class="text-content">
     A horizontal variation of the doughnut chart, displayed as side-by-side rings. Useful for compact metric comparison.<br>
     <b>Example:</b> percentage of completed vs. pending tasks in a project.

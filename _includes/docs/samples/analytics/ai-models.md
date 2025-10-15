@@ -162,7 +162,7 @@ Authentication with Bedrock API keys is not supported.
 
 To connect to your Ollama server, you need its **base URL** (e.g., *http://localhost:11434*) and an **authentication method**. The following options are supported:
 
-![image](/images/samples/analytics/ai-models/ollama-authentication-method.png)
+![image](https://img.thingsboard.io/samples/analytics/ai-models/ollama-authentication-method.png)
 
 - <b>None</b>
   - Default method for a standard Ollama installation. 
