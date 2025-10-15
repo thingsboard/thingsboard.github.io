@@ -9,7 +9,7 @@
 In ThingsBoard, **Reporting** is a powerful and flexible tool for collecting, organizing, and automatically delivering data in the form of reports.
 
 The reporting system is built around two key components:
-- **Report Template** – defines the structure, content, and format of a report. A template can be in **PDF** or **CSV** format and include any supported components
+- **Report Template** – defines the structure, content, and format of a report. A template can be in **PDF** or **CSV** format and include any [supported components](/docs/{{docsPrefix}}user-guide/reporting/reporting-key-concepts/#components--interaction){:target="_blank"}.
 - **Scheduler Event** – automatically triggers report generation at a specified time and delivers it to selected recipients through available channels, such as email, Slack, or other integrations.
 
 **In short**: the template defines **what** will be in the report, while the scheduler determines **when** and **to whom** it will be delivered.
@@ -26,8 +26,10 @@ You&#39;ll need to do the same — otherwise, the device and alarm tables in you
 ## Step 1. Create the report template
 
 As an example, let&#39;s create a report template that includes:
-- A **table of all customer devices**, displaying each device&#39;s latest telemetry values and current status.
-- A **table listing all alarms** triggered on those devices during the current day.
+- **A table with all customer devices**, displaying their latest telemetry values and current status.
+- **A table of alarms** triggered on these devices over the past 24 hours.
+- **Two separate line charts** for device temperature and humidity values over the past 24 hours.
+
 
 This setup provides both an up-to-date overview of device conditions and a quick reference for any issues detected today — all in one consolidated report.
 
@@ -55,23 +57,23 @@ Components are added by dragging them from the components library into the conte
 
 ### Step 2.1 "Heading" component
 
-First, let&#39;s add the "<b>Heading</b>" component. Locate it in the <b>report components library</b> and drag it into the <b>header area</b> of your report.
+First, let&#39;s add the <b>Heading</b> component. 
 
-In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template:
+- Locate it in the <b>report components library</b> and drag it into the <b>header area</b> of your report.
+- In the <b>editor</b>, under the <b>Text</b> field, type the title you want for the heading. In this example, we&#39;ll name it the same as the report template:
+  ```
+  Daily Devices Alarm Report
+  ```
+  {:.copy-code}
 
-```
-Daily Devices Alarm Report
-```
-{:.copy-code}
-
-If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out.
-Once done, click "<b>Apply</b>" to save the component.
+- If desired, you can adjust <b>font settings</b> such as size, style, or alignment to make your title stand out.
+- Once done, click <b>Apply</b> to save the component.
 
 {% include images-gallery.html imageCollection="reporting-getting-started-heading" %}
 
 ### Step 2.2 "Rich text" component
 
-Next, let&#39;s add the "<b>Rich text</b>" component, which will contain a brief explanation of the report&#39;s purpose.
+Next, let&#39;s add the <b>Rich text</b> component, which will contain a brief explanation of the report&#39;s purpose.
 
 - Locate the <b>Rich text</b> component in the <b>components library</b> and drag it into the <b>content area</b>.
 - Enter the following text (or your preferred description) component&#39;s text field.   
@@ -81,35 +83,36 @@ Next, let&#39;s add the "<b>Rich text</b>" component, which will contain a brief
   ```
   {:.copy-code}  
 
-- Once you&#39;ve added the text, click "<b>Apply</b>" to apply the changes.
+- Once you&#39;ve added the text, click <b>Apply</b>.
 
 {% include images-gallery.html imageCollection="reporting-getting-started-rich-text" %}
 
 ### Step 2.3 "Entity table" component
 
-The next component we&#39;ll add is the "<b>Entity table</b>" — a table-style component that will display a list of all your devices along with their latest telemetry values and status.
+The next component we&#39;ll add is the <b>Entity table</b> — a table-style component that will display a list of all your devices along with their latest telemetry values and status.
 
-Next, we&#39;ll add the "<b>Entity table</b>" component. This table will display a list of all your devices, along with their latest telemetry values and status.
-
-- Drag & Drop the "<b>Entity table</b>" component from the <b>components library</b> into the <b>content area</b>.
-- In the "<b>Datasource</b>" section, create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.
-- <b>Enable the table heading</b> and update the heading text.
+- Drag & Drop the <b>Entity table</b> component from the <b>components library</b> into the <b>content area</b>.
+- In the <b>Datasource</b> section, create a new <b>entity alias</b> that retrieves all your entities of type <b>Device</b>.
+- Turn on the <b>table heading</b> and update the heading text.
 - In the <b>Columns</b> section:
-  - Add a new column and set the key to "<b>temperature</b>".
-  - Add another column with the telemetry key "<b>humidity</b>". 
-  - Add one more column for the attribute "<b>active</b>", which will display the device&#39;s status.
-- Click "<b>Save</b>" component to apply your changes.
+  - Add a new table column and set the key to "<b>temperature</b>".
+  - Add another table column with the telemetry key "<b>humidity</b>". 
+  - Add one more table column for the attribute "<b>active</b>", which will display the device&#39;s status.
+- In the <b>column settings</b>, set <b>center alignment</b> for the cells of each key.
+- Click <b>Save</b> component to apply your changes.
 
 {% include images-gallery.html imageCollection="reporting-getting-started-entity-table" %}
 
 ### Step 2.4 "Alarm table" component
 
-The final component we&#39;ll add is the Alarm Table, which displays a list of alarms for the selected period.
+The next component we&#39;ll add is the **Alarm table** component, which displays a list of alarms for the selected period.
 
-- Drag the "<b>Alarm table</b>" component into the content area of your report.
-- Set the "<b>All devices</b>" entity alias as the <b>alarm source</b>.
-- Scroll down and <b>enable the table heading</b>. Enter your heading text.   
-  For example:
+- From the components panel, drag the <b>Alarm table</b> component into the main content area of your report layout.
+- By default, the Alarm table is preconfigured to display alarms from the <b>last 24 hours</b>.
+- Set the <b>All devices</b> entity alias as the <b>alarm source</b>.
+- In the <b>Filters</b> section, check the box to display only currently active alarms.
+- Scroll down slightly, find the switch labeled <b>Table heading</b>, and toggle it on. 
+- Type your desired heading, for example:
   ```
   The following table lists all alarms for your devices from the last day.
   ```
@@ -121,23 +124,82 @@ The final component we&#39;ll add is the Alarm Table, which displays a list of a
 
 {% include images-gallery.html imageCollection="reporting-getting-started-alarm-table" %}
 
-### Step 2.5 Save the report template and preview
+### Step 2.5 "Line chart" component
 
-After you&#39;ve added and configured all the necessary components, update the report file name to the one you need.
+The final components we&#39;ll add to the report are two separate <b>line charts</b> to visualize <b>historical telemetry trends</b> for <b>temperature</b> and <b>humidity</b>. Each chart will represent data collected over the <b>last 24 hours</b> from your devices.
 
-After you&#39;ve added and configured all the necessary components inside your report template, the last step is to update the report file name so that the generated file is easily identifiable.
+<b><font size="3">1. Add the first chart – Temperature</font></b>
 
-Click "<b>Save</b>" in the top-right corner to store your template configuration.
+- Drag the <b>Line chart</b> component into the content area of the report.
+- By default, the time window shows the last day of data, aggregated by 1 hour.
+- Set the entity alias <b>All devices</b> as the <b>datasource</b>.
+- Keep the telemetry key <b>temperature</b>, but change the <b>label</b> to 
+  ```
+  ${entityName} temperature
+  ```
+  {:.copy-code}
 
-{% include images-gallery.html imageCollection="reporting-getting-started-save-report" %}
+- Configure the Y axes:
+  - Label: **Temperature** 
+  - Min: **15**
+  - Max: **35**
+  - Units: **°C**
+- Set thresholds:
+  - First: **30 °C** , color <span style="color:red">red</span>
+  - Second: **18 °C** , color <span style="color:blue">blue</span>
+- Set the <b>legend position</b> to <b>Bottom</b>.
+- <b>Save</b> the component.
 
-To make sure your template is set up correctly and data displays as expected, click "<b>Generate test report</b>" (located next to the "Save" button).
-The system will generate a test report showing all your devices along with their alarms.
+{% include images-gallery.html imageCollection="reporting-getting-started-charts-1" %}
+
+<br><b><font size="3">2. Add the second chart – Humidity</font></b>
+
+- Drag another <b>Line chart</b> component just below the first one.
+- Specify the entity alias <b>All devices</b> as the <b>datasource</b>.
+- Set the telemetry key to <b>humidity</b>, units <b>%</b>, and change the <b>label</b> to
+  ```
+  ${entityName} humidity
+  ```
+  {:.copy-code}
+
+- Configure the Y axes:
+  - Label: **Humidity**
+  - Units: **%**
+- Set the <b>legend position</b> to <b>Bottom</b>.
+- <b>Save</b> the component.
+
+{% include images-gallery.html imageCollection="reporting-getting-started-charts-2" %}
+
+### Step 2.6 Save the report template and preview
+
+After adding and configuring all required components in your report template, the final step is to <b>save your work</b> and optionally <b>generate a test report</b> to verify that everything displays correctly.
+
+<br><b><font size="3">Update the report file name</font></b>
+
+Before saving the template, update the report file name so that exported files are easy to identify:
+- In the <b>File name pattern</b> field enter a clear, descriptive name such as:
+  ```text
+  daily-device-alarm-report-%d{yyyy-MM-dd_HH:mm:ss}
+  ```
+  {:.copy-code}
+
+{% include images-gallery.html imageCollection="reporting-getting-started-save-report-1" %}
+
+<br><b><font size="3">Save your template</font></b>
+
+To save the current configuration:
+- Click the <b>Save</b> button in the <b>top-right corner</b> of the report builder interface.
+
+This stores your layout, components, and settings under the current template for future use in manual or [scheduled report](/docs/{{docsPrefix}}user-guide/reporting/scheduling-reports/){:target="_blank"} generation.
+
+{% include images-gallery.html imageCollection="reporting-getting-started-save-report-2" %}
+
+### Step 2.7 Generate a test report (Optional)
+
+To make sure your template is set up correctly and data displays as expected, click "<b>Generate test report</b>" (located next to the <b>Save</b> button).   
+The system will create a sample report using available test data from your selected entity alias.
 
 {% include images-gallery.html imageCollection="reporting-getting-started-generate-test-report" %}
-
-If needed, you can also [download a ready-made "Daily Device Alarm Report" template as a JSON file](/docs/user-guide/resources/reporting/daily_device_alarm_report.json){:target="_blank" download="daily_device_alarm_report.json"}.   
-To import a template from a JSON file into your instance, see the instructions [in this guide](/docs/{{docsPrefix}}user-guide/reporting/reporting-key-concepts/#importing-report-template){:target="_blank"}.
 
 ## Step 3: Scheduling the report for customers
 
@@ -270,6 +332,11 @@ If your recipients are customer users, make sure at least one of these delivery 
 - The email will have the report attached as a PDF file, which can be opened and viewed in the browser or downloaded.
 
 {% include images-gallery.html imageCollection="sent-email" %}
+
+## Importing a template from JSON
+
+If needed, you can also [download a ready-made "Daily Device Alarm Report" template as a JSON file](/docs/pe/user-guide/reporting/resources/daily_device_alarm_report.json){:target="_blank" download="daily_device_alarm_report.json"}.   
+To import a template from a JSON file into your instance, see the instructions [in this guide](/docs/{{docsPrefix}}user-guide/reporting/reporting-key-concepts/#importing-report-template){:target="_blank"}.
 
 ## Next steps
 

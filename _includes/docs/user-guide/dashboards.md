@@ -228,6 +228,12 @@ You can edit the list of available aggregation functions. List the available agg
 
 {% include images-gallery.html imageCollection="hide-time-zone" %}
 
+*Available only when Aggregation is None*:
+
+- **Max values**: Limits the number of data points rendered in time-series widgets within the selected time window.
+
+{% include images-gallery.html imageCollection="max-values" %}
+
 ### Filters
 
 Entity filters allow you to specify a filter for the list of entities resolved by the entity alias.

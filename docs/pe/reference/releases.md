@@ -8,6 +8,33 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v4.2.1 (Oct 15, 2025) {#v421}
+
+Everything from [TB CE v4.2.1](https://github.com/thingsboard/thingsboard/releases/tag/v4.2.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Reporting: new Chart components;
+* Reporting: new Split View container component;
+* Reporting: Multilanguage support for report rendering and dashboard export;
+* Added AES GCM encryption method support for Tuya Integration;
+
+**Bug Fixes**
+
+* Reporting: Fixed report time quick intervals: Week (Sun-Sat);
+* Reporting: Fixed component rendering with timeseries data;
+* Reporting: Fixed dashboard component encoding;
+* Reporting: Fixed link to the docs in the report template;
+* Reporting: Fixed heading not show content in angle brackets;
+* Reporting: Fixed post-processing function for null values in time-series table component;
+* Reporting: Fixed csv table rendering with aggregation and originator;
+* Reporting: Fixed column with name "values" is not supported;
+* Bump Azure SDK BOM version from 1.2.22 to 1.2.33 to fix integration with GitHub Models;
+* Fixed StateEntityFilter/StateEntityOwnerFilter filter resolving;
+* Fixed handling of DB Connectivity Issues in Scheduler by Retrying Event Rescheduling;
+* Fixed AI model config file name validation for secret input for Google Vertex AI Gemini provider;
+* Fixed show menu section when hidden all menu tabs;
+
 ## v4.2.0 (Aug 15, 2025) {#v42}
 
 Everything from [TB CE v4.2](https://github.com/thingsboard/thingsboard/releases/tag/v4.2) with the following improvements and bug fixes.
