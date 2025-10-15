@@ -1308,6 +1308,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <input type="hidden" name="utm_term" id="utm_term">
                             <input type="hidden" name="utm_content" id="utm_content">
                             <input type="hidden" name="client_id" id="client_id">
+                            <input type="hidden" name="tags" id="tags" value="custom dev">
+                            <input type="hidden" name="form_id" id="form_id" value="dev_unit">
+                            <input type="hidden" name="path" id="path" value="">
                             <div class="hp-container">
                                 {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
                                 <label for="{{ random_hp }}">Leave this field empty</label>
@@ -1339,19 +1342,19 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="form-section">
                     <div class="form-element">
                         <label for="name">
-                            <input class="form-control cdu-form-control" value="" placeholder="John Doe" name="name-popup" id="name-popup" type="text" size="40" maxlength="50" aria-invalid="false">
+                            <input class="form-control cdu-form-control" value="" placeholder="John Doe" name="name" id="name-popup" type="text" size="40" maxlength="50" aria-invalid="false">
                             <p>Name</p>
                         </label>
                     </div>
                     <div class="form-element">
                         <label for="email">
-                            <input class="form-control cdu-form-control" value="" placeholder="john@example.com" name="email-popup" id="email-popup" type="email" size="40" maxlength="80" aria-invalid="false">
+                            <input class="form-control cdu-form-control" value="" placeholder="john@example.com" name="email" id="email-popup" type="email" size="40" maxlength="80" aria-invalid="false">
                             <p>Email Address</p>
                         </label>
                     </div>
                     <div style="display: none" class="form-element next">
-                        <label for="subject-popup" class="select-label">
-                            <select class="form-control select cdu-form-control" name="subject-popup">
+                        <label for="subject" class="select-label">
+                            <select class="form-control select cdu-form-control" name="subject">
                                 <option value="" disabled>Select Subject</option>
                                 <option value="Custom Development" selected>Custom Development</option>
                                 <option value="Technical Support">Technical Support</option>
@@ -1369,7 +1372,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="form-element next">
                         <label for="msg-popup">
-                            <textarea id="msg-popup" class="form-control text-area cdu-form-control cdu-text-area" value="" placeholder="Type your message here" name="message-popup" type="text" size="40" maxlength="800"></textarea>
+                            <textarea id="msg-popup" class="form-control text-area cdu-form-control cdu-text-area" value="" placeholder="Type your message here" name="message" type="text" size="40" maxlength="800"></textarea>
                             <p class="text-area-label">Message</p>
                         </label>
                     </div>
@@ -1378,9 +1381,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <fieldset>
                         <legend class="accordion-button active">Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                         <div class="label-container accordion-content" style="max-height: 134px">
-                            <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard-popup" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
-                            <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard-popup" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
-                            <label><input id="familiarity-not-familiar-popup" type="radio" name="thingsboard-popup" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
+                            <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
+                            <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
+                            <label><input id="familiarity-not-familiar-popup" type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
                         </div>
                     </fieldset>
                     <fieldset>
@@ -1402,12 +1405,15 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                     </fieldset>
                 </div>
-                <input type="hidden" name="utm_source-popup" id="utm_source-popup">
-                <input type="hidden" name="utm_medium-popup" id="utm_medium-popup">
-                <input type="hidden" name="utm_campaign-popup" id="utm_campaign-popup">
-                <input type="hidden" name="utm_term-popup" id="utm_term-popup">
-                <input type="hidden" name="utm_content-popup" id="utm_content-popup">
-                <input type="hidden" name="client_id-popup" id="client_id-popup">
+                <input type="hidden" name="utm_source" id="utm_source">
+                <input type="hidden" name="utm_medium" id="utm_medium">
+                <input type="hidden" name="utm_campaign" id="utm_campaign">
+                <input type="hidden" name="utm_term" id="utm_term">
+                <input type="hidden" name="utm_content" id="utm_content">
+                <input type="hidden" name="client_id" id="client_id">
+                <input type="hidden" name="tags" id="tags" value="custom dev">
+                <input type="hidden" name="form_id" id="form_id" value="dev_unit_modal">
+                <input type="hidden" name="path" id="path" value="">
                 <div class="hp-container">
                     {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
                     <label for="{{ random_hp }}">Leave this field empty</label>
@@ -1816,7 +1822,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         });
     });
 
-
     document.addEventListener('DOMContentLoaded', () => {
         const timelineBlocks = document.querySelectorAll('.mobile-timeline .right > div');
 
@@ -1844,6 +1849,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
         utmKeys.forEach(function(key) {
             let value = getURLParam(key);
+
             if (value) {
                 localStorage.setItem(key, value);
             } else {
@@ -1854,9 +1860,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 value = decodeURIComponent(value);
                 utmData[key] = value;
                 $form.find('input[name="' + key + '"]').val(value);
-                $form.find('input[name="' + key + '-popup"]').val(value);
             }
         });
+
+        const path = getPath();
+        $form.find('input[name="path"]').val(path);
 
         const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
         if (gaCookie) {
@@ -1865,7 +1873,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 const clientId = parts[2] + '.' + parts[3];
                 utmData['client_id'] = clientId;
                 $form.find('input[name="client_id"]').val(clientId);
-                $form.find('input[name="client_id-popup"]').val(clientId);
             }
         }
         window.dataLayer = window.dataLayer || [];
@@ -1875,7 +1882,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         });
     }
 
+    function getPath() {
+        const url = new URL(window.location.href);
+        return url.pathname;
+    }
+
     function getURLParam(name) {
+        
         const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
     }
@@ -1998,7 +2011,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
         const parentLabel = inputElement.closest('label');
         let potentialErrorHint;
-
 
         if (parentLabel && parentLabel.nextElementSibling && parentLabel.nextElementSibling.classList.contains('error-message-hint')) {
             potentialErrorHint = parentLabel.nextElementSibling;
