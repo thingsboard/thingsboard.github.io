@@ -5,7 +5,7 @@
 
 ## Overview
 
-White labeling lets you tailor your TBMQ instance to match your brand and preferences—especially useful for companies delivering IoT solutions to their customers.
+White labeling lets you tailor your TBMQ instance to match your brand and preferences - especially useful for companies delivering IoT solutions to their customers.
 
 Set your company or product name, upload your logo, choose color palettes.
 
@@ -84,7 +84,7 @@ Using the functionality described in this documentation, you can customize the a
 
 On the "Login" tab, you can configure the TBMQ **login page**.
 
-- Enter the registered domain name, or refer to [this documentation](/docs/pe/domains/#domain-registration){:target="_blank"} to learn how to register a new domain;
+- Enter the registered domain name, or refer to [this documentation](/docs/pe/mqtt-broker/security/domains/#domain-registration){:target="_blank"} to learn how to register a new domain;
 - It is recommended to prevent usage of hostnames from headers of the request;
 - Enter a custom application title;
 - Replace the default website icon and logo with your own;
