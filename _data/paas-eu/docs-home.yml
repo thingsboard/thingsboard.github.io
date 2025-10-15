@@ -248,6 +248,9 @@ toc:
     - title: AI models
       path: /docs/paas/eu/samples/analytics/ai-models/
       new: true
+    - title: Local AI with Ollama
+      path: /docs/paas/eu/samples/analytics/ollama/
+      new: true
     - title: Trendz Analytics
       path: /docs/trendz/
     - title: Kafka Streams
@@ -263,6 +266,8 @@ toc:
       path: /docs/paas/eu/user-guide/reporting/scheduling-reports/
     - title: Embedding subreports
       path: /docs/paas/eu/user-guide/reporting/subreport/
+    - title: Embedding charts
+      path: /docs/paas/eu/user-guide/reporting/embedding-charts/
     - title: Embedding dashboards
       path: /docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/
     - title: Attaching report to notification
