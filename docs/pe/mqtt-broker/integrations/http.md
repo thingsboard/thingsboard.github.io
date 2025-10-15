@@ -10,27 +10,27 @@ tb-endpoint-url:
     
 add-http-integration:
   0:
-    image: /images/mqtt-broker/user-guide/ui/add-http-integration-1.png
+    image: /images/pe/mqtt-broker/user-guide/ui/add-http-integration-1.png
     title: 'Navigate to the "Integrations" page, and click "plus" icon to add a new integration.'
   1:
-    image: /images/mqtt-broker/user-guide/ui/add-http-integration-2.png
+    image: /images/pe/mqtt-broker/user-guide/ui/add-http-integration-2.png
     title: 'Select "HTTP" as the integration type and click "Next".'
   2:
-    image: /images/mqtt-broker/user-guide/ui/add-http-integration-3.png
+    image: /images/pe/mqtt-broker/user-guide/ui/add-http-integration-3.png
     title: 'Click "Next" to subscribe to the default topic "tbmq/#".'
   3:
-    image: /images/mqtt-broker/user-guide/ui/add-http-integration-4.png
+    image: /images/pe/mqtt-broker/user-guide/ui/add-http-integration-4.png
     title: 'In the field "Endpoint URL" paste the URL from the HTTP integration of your ThingsBoard Cloud.'
   4:
-    image: /images/mqtt-broker/user-guide/ui/add-http-integration-5.png
+    image: /images/pe/mqtt-broker/user-guide/ui/add-http-integration-5.png
     title: 'Open "Advanced settings", set "Payload content type" as JSON, and click "Add".'
 
 send-uplink-message:
   0:
-    image: /images/mqtt-broker/user-guide/ui/send-uplink-message-1.png
+    image: /images/pe/mqtt-broker/user-guide/ui/send-uplink-message-1.png
     title: 'Navigate to the "WebSocket Client" page, select working connection, then click "Connect".'
   1:
-    image: /images/mqtt-broker/user-guide/ui/send-uplink-message-2.png
+    image: /images/pe/mqtt-broker/user-guide/ui/send-uplink-message-2.png
     title: 'Set topic name as "tbmq/http-integration", and click "Send" to publish message.'
     
 http-integration-result:

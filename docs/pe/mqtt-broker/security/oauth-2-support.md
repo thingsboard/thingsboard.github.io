@@ -5,169 +5,160 @@ description: OAuth 2.0
 
 adding-domain-1:
     0:
-        image: /images/user-guide/oauth-2-support/adding-domain-1-pe.png
-        title: 'On the "Domains" tab of the "OAuth 2.0 client" page, click the "plus" icon to add a new domain. Provide your domain name and OAuth 2.0 client. Then, click "Add".'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/adding-domain-1.png
+        title: 'On the "Domains" tab of the "OAuth 2.0" page, click the "plus" icon to add a new domain. Provide your domain name and OAuth 2.0 client. Then, click "Add".'
     1:
-        image: /images/user-guide/oauth-2-support/adding-domain-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/adding-domain-2.png
         title: 'Domain added.'
     
 editing-domain-1:
     0:
-        image: /images/user-guide/oauth-2-support/managing-domain-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/managing-domain-1.png
         title: 'Click on the domain to view its details. Switch to editing mode by clicking the large orange button;'
     1:
-        image: /images/user-guide/oauth-2-support/managing-domain-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/managing-domain-2.png
         title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply changes" button.'
     
 deleting-domain-1:
     0:
-        image: /images/user-guide/oauth-2-support/deleting-domain-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/deleting-domain-1.png
         title: 'Click the "trash" icon in the domain&#39;s row you wish to remove;'
     1:
-        image: /images/user-guide/oauth-2-support/deleting-domain-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/deleting-domain-2.png
         title: 'Confirm the deletion by clicking "Yes".'
 
 adding-oauth2-client-1:
     0:
-        image: /images/user-guide/oauth-2-support/adding-oauth2-client-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/adding-oauth2-client-1.png
         title: 'Navigate to the "OAuth 2.0 clients" tab on the "OAuth 2.0" page. Click the "plus" icon to add a new OAuth 2.0 client;'
     1:
-        image: /images/user-guide/oauth-2-support/adding-oauth2-client-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/adding-oauth2-client-2.png
         title: 'Enter a descriptive title for the client, and select the "Google" from the dropdown menu as the authentication provider. Provide the Client ID and Client Secret obtained from your authentication provider. Configure advanced settings as necessary. Then, click "Add".'
     2:
-        image: /images/user-guide/oauth-2-support/adding-oauth2-client-3-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/adding-oauth2-client-3.png
         title: 'New OAuth 2.0 client added.'
 
 editing-oauth2-client-1:
     0:
-        image: /images/user-guide/oauth-2-support/managing-oauth2-client-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/managing-oauth2-client-1.png
         title: 'Click on the OAuth 2.0 client to view its details. Switch to editing mode by clicking the large orange button;'
     1:
-        image: /images/user-guide/oauth-2-support/managing-oauth2-client-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/managing-oauth2-client-2.png
         title: 'Make the required modifications. Then confirm and save the changes by clicking the "Apply changes" button.'
 
 deleting-oauth2-client-1:
     0:
-        image: /images/user-guide/oauth-2-support/deleting-oauth2-client-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/deleting-oauth2-client-1.png
         title: 'Click the "trash" icon in the client&#39;s row you wish to remove;'
     1:
-        image: /images/user-guide/oauth-2-support/deleting-oauth2-client-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/deleting-oauth2-client-2.png
         title: 'Confirm the deletion by clicking "Yes".'
 
 google-credentials-for-oauth-1:
     0:
-        image: /images/user-guide/oauth-2-support/google/google-credentials-for-oauth/google-credentials-for-oauth-1.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-credentials-for-oauth-1.png
         title: 'Go to the "Credentials" page in the left menu and select "OAuth client ID" from the "Create credentials" dropdown menu;'
     1:
-        image: /images/user-guide/oauth-2-support/google/google-credentials-for-oauth/google-credentials-for-oauth-2.png
-        title: 'Enter a OAuth client name, and add the ThingsBoard redirect URI, to the "Authorized Redirect URIs" section. Then, click "Create";'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-credentials-for-oauth-2.png
+        title: 'Enter a OAuth client name, and add the TBMQ redirect URI, to the "Authorized Redirect URIs" section. Then, click "Create";'
     2:
-        image: /images/user-guide/oauth-2-support/google/google-credentials-for-oauth/google-credentials-for-oauth-3.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-credentials-for-oauth-3.png
         title: 'OAuth client created. You now have credentials consisting of a Client ID and a Client secret;'
 
 google-configuration-of-thingsboard-google-1:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-1-pe.png
-        title: 'Login to your ThingsBoard instance as System Administrator. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-1.png
+        title: 'Login to your TBMQ instance. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
     1:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-2-pe.png
-        title: 'Enter your domain name or IP address of your ThingsBoard instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-2.png
+        title: 'Enter your domain name or IP address of your TBMQ instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
 
 google-configuration-of-thingsboard-google-2:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-3-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-3.png
         title: 'Enter "Google" as the title. The provider should be set to "Google". If necessary, specify the allowed platforms, or leave all. Enter the "Client ID" and "Client secret" from the Google API Console. Then, expand the "Advanced settings" menu;'
     1:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-4-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-4.png
         title: 'Let&#39;s make the settings for the "General" block. Select "POST" as the client authentication method. Turn on the "Allow user creation" option. Add to the scope field: "email", "openid", and "profile";'
 
 google-configuration-of-thingsboard-google-3:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-5-pe.png
-        title: 'Go to the "Mapper" block. Leave the mapper type "BASIC". Select "CUSTOM" as the tenant name strategy. Specify %{email} as "Tenant name pattern". Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation. Click "Add";'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-5.png
+        title: 'Go to the "Mapper" block. Leave the mapper type "BASIC". If necessary, change the user role or leave as it is. Click "Add";'
 
 google-configuration-of-thingsboard-google-4:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-6-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-6.png
         title: 'The OAuth client is added successfully. Click "Add" again to confirm the addition of the domain;'
     1:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-7-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-7.png
         title: 'A new domain has been added.'
 
 login-with-google-1:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/login-with-google-1-pe.png
-        title: 'Navigate to the ThingsBoard login screen. We will see an additional "Login with Google" option. Click this button;'
-    1:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/login-with-google-2.png
-        title: 'Select one of your Google accounts;'
-    2:
-        image: /images/user-guide/oauth-2-support/login-with-oauth-tenant-1-pe.png
-        title: 'You are logged into ThingsBoard using your Google email as a Tenant Administrator.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/login-with-google-1.png
+        title: 'Navigate to the TBMQ login screen. We will see an additional "Login with Google" option. Click this button and login using your Google account;'
 
 login-with-google-2:
     0:
-        image: /images/user-guide/oauth-2-support/login-with-oauth-tenant-2-pe.png
-        title: 'Go to the "Users" page. There you will find the new user is associated with the Tenant Administrators group; the tenant name corresponds to their email address.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/login-oauth-user.png
+        title: 'Go to the "Users" page. There you should find a new user that you have just logged in.'
 
 auth0-credentials-1:
     0:
-        image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-1.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-credentials-1.png
         title: 'To apply the configurations properly, we first need to obtain OAuth 2.0 credentials. Therefore, we first go to the OAuth0 Management Console. Open the "Applications" page, and click "+ Create Application" button;'
     1:
-        image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-2.png
-        title: 'Name your application "ThingBoard", and choose the application type - "Regular Web Applications";'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-credentials-2.png
+        title: 'Name your application "TBMQ", and choose the application type - "Regular Web Applications";'
     2:
-        image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-3.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-credentials-3.png
         title: 'Afters, you need to choose the technology being used. Please, choose the "Java Spring Boot" technology;'
     3:
-        image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-4.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-credentials-4.png
         title: 'Once your application is created, you are redirected to the application details page. Navigate to the "Settings" tab to find the Client ID and Client Secret;'
     4:
-        image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-5.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-credentials-5.png
         title: 'As well, please update your allowed Callback URLs;'
     5:
-        image: /images/user-guide/oauth-2-support/oauth0/oauth0-credentials/oauth0-credentials-6.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-credentials-6.png
         title: 'In the "Advanced Settings" section you will be able to find all the required URLs (endpoints) for OAuth 2.0 configuration. Click "Save Changes" button.'
 
 oauth0-configuration-of-thingsboard-1:
     0:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-1-pe.png
-        title: 'Login to your ThingsBoard instance. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-1.png
+        title: 'Login to your TBMQ instance. Go to the "OAuth 2.0" page of the "Security" section. While on the "Domains" tab, click the "plus" icon;'
     1:
-        image: /images/user-guide/oauth-2-support/google/configuration-of-thingsboard/google-configuration-of-thingsboard-2-pe.png
-        title: 'Enter your domain name of your ThingsBoard instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/google-configuration-of-thingsboard-2.png
+        title: 'Enter your domain name of your TBMQ instance. Click "Create new" in the "OAuth 2.0 clients" section to add a new one.'
 
 oauth0-configuration-of-thingsboard-2:
     0:
-        image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-3-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-configuration-of-thingsboard-3.png
         title: 'Enter "OAuth0" as the title for the client. Select "Custom" as the provider. Now enter the "Client ID" and "Client secret" obtained from the OAuth0 Management Console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs. The client authentication method should be set to "POST". Enter "OAuth0" as the provider label. Add the following scopes in the scope field: "openid", "email", "profile";'
 
 oauth0-configuration-of-thingsboard-3:
     0:
-        image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-4-pe.png
-        title: 'Proceed to the "Mapper" block. Leave the mapper type "BASIC". The tenant name strategy should be "DOMAIN". Specify %{email} as the customer name pattern. Specify "Customer Users" as the user group name pattern to automatically add a new user to the designated customer group upon creation. Click "Add" to confirm adding the OAuth 2 client. Click "Add" to complete the addition of the new OAuth 2.0 client.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-configuration-of-thingsboard-4.png
+        title: 'Proceed to the "Mapper" block. Leave the mapper type "BASIC". If necessary, change the user role or leave as it is. Click "Add" to confirm adding the OAuth 2 client.'
 
 oauth0-configuration-of-thingsboard-4:
     0:
-        image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-5-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-configuration-of-thingsboard-5.png
         title: 'The OAuth0 client has been successfully added. Click "Add" again to confirm the addition of the domain.'
     1:
-        image: /images/user-guide/oauth-2-support/oauth0/configuration-of-thingsboard/oauth0-configuration-of-thingsboard-6-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/oauth0-configuration-of-thingsboard-6.png
         title: 'A new domain has been added.'
 
 login-with-oauth0-1:
     0:
-        image: /images/user-guide/oauth-2-support/oauth0/login-with-oauth0-1-pe.png
-        title: 'Navigate to the login screen. You will find two available login methods: Google and Auth0. Click on the "Login with Auth0" button. Use your Auth0 credentials to log in as a Customer User. This method allows you to quickly and securely log into the system using your Auth0 credentials;'
-    1:
-        image: /images/user-guide/oauth-2-support/oauth0/login-with-oauth0-2-pe.png
-        title: 'You have logged into ThingsBoard as a Customer User.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/login-with-oauth0-1.png
+        title: 'Navigate to the login screen. You will find Auth0 login method. Click on the "Login with Auth0" button and use your Auth0 credentials to log in.'
 
 login-with-oauth0-2:
     0:
-        image: /images/user-guide/oauth-2-support/login-with-oauth-customer-1-pe.png
-        title: 'Go to the "Users" page. There you will find the new user is associated with the Customer Users group; the customer name corresponds to their email address.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/login-oauth-user.png
+        title: 'Go to the "Users" page. There you should find a new user that you have just logged in.'
 
 terminal-start-keycloak:
     0:
@@ -256,52 +247,46 @@ create-password:
 
 keycloak-add-thingsboard-oauth-client-1:
     0:
-        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-1-pe.png
-        title: 'Login to your ThingsBoard instance as System Administrator. Navigate to the "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/adding-oauth2-client-1.png
+        title: 'Login to your TBMQ instance. Navigate to the "OAuth 2.0" in the "Security" menu section, open "OAuth 2.0 clients" tab, and click "plus" icon to add a new client;'
     1:
-        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/keycloak-configuration-of-thingsboard-2.png
         title: 'Enter "Keycloak" as the title. Select the "Custom" from the dropdown menu as the authentication provider. Now enter the "Client ID" and "Client secret" using the values retrieved from the Keycloak console. In the "General" block of the "Advanced settings" section, fill in all the necessary URLs. The client authentication method should be set to "POST". Enter "Keycloak" as the provider label. Add the following scopes in the scope field: "openid", "email", "profile";'
 
 keycloak-add-thingsboard-oauth-client-2:
     0:
-        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-3-pe.png
-        title: 'Go to the "Mapper" block. Leave the mapper type "BASIC". Select "CUSTOM" as the tenant name strategy. Specify %{email} as tenant name pattern. Specify "Tenant Administrators" as the user group name pattern to automatically add a new user to the designated tenant group upon creation. Click "Add" to confirm adding the OAuth 2 client;'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/keycloak-configuration-of-thingsboard-3.png
+        title: 'Go to the "Mapper" block. Leave the mapper type "BASIC". If necessary, change the user role or leave as it is. Click "Add" to confirm adding the OAuth 2 client;'
     1:
-        image: /images/user-guide/oauth-2-support/keycloak/keycloak-configuration-of-thingsboard-4-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/keycloak-configuration-of-thingsboard-4.png
         title: 'A new OAuth 2.0 client has been added.'
 
 keycloak-add-domain:
     0:
-        image: /images/user-guide/oauth-2-support/keycloak/keycloak-adding-domain-1-pe.png
-        title: 'Navigate to the "Domains" tab, and click "plus" icon. Enter your domain name or IP address of your ThingsBoard instance. Specify "Keycloak" as the OAuth 2.0 client. Click "Add" again to confirm the addition of the domain;'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/keycloak-adding-domain-1.png
+        title: 'Navigate to the "Domains" tab, and click "plus" icon. Enter your domain name or IP address of your TBMQ instance. Specify "Keycloak" as the OAuth 2.0 client. Click "Add" again to confirm the addition of the domain;'
     1:
-        image: /images/user-guide/oauth-2-support/keycloak/keycloak-adding-domain-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/keycloak-adding-domain-2.png
         title: 'A new domain has been added.'
 
 login-with-keycloak-1:
     0:
-        image: /images/user-guide/oauth-2-support/keycloak/login-with-keycloak-1-pe.png
-        title: 'Go to the ThingsBoard login screen. You will see an additional option, "Login with Keycloak". Click this button;'
-    1:
-        image: /images/user-guide/oauth-2-support/keycloak/login-with-keycloak-2.png
-        title: 'A window will open prompting you to sign in to your Keycloak account. Enter your Keycloak credentials, and click "Sign In";'
-    2:
-        image: /images/user-guide/oauth-2-support/login-with-oauth-tenant-1-pe.png
-        title: 'You are logged into ThingsBoard using Keycloak authorization credentials.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/login-with-keycloak-1.png
+        title: 'Go to the TBMQ login screen. You will see an additional option, "Login with Keycloak". Click this button and login using your Keycloak credentials;'
 
 login-with-keycloak-2:
     0:
-        image: /images/user-guide/oauth-2-support/login-with-oauth-tenant-2-pe.png
-        title: 'Go to the "Users" page. There you will find the new user is associated with the Tenant Administrators group; the tenant name corresponds to their email address.'
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/login-oauth-user.png
+        title: 'Go to the "Users" page. There you should find a new user that you have just logged in.'
   
 mapper-basic-1:
     0:
-        image: /images/user-guide/oauth-2-support/mapper-basic-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/mapper-basic-1.png
         title: 'To use a basic mapper, set mapper type "Basic".'
 
 mapper-custom-1:
     0:
-        image: /images/user-guide/oauth-2-support/mapper-custom-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/oauth-2-support/mapper-custom-1.png
         title: 'To use the custom mapper, set mapper type "Custom".'
 
 ---

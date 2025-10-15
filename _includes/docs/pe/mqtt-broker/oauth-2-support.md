@@ -109,10 +109,10 @@ http(s)://domain:port/login/oauth2/code/
 {: .copy-code}
 
 * Replace `domain` with your TBMQ domain and specify the port used for HTTP access.
-  For example, if your domain is *my.thingsboard.instance*:
+  For example, if your domain is *my.tbmq.org*:
 
 ```
-https://my.thingsboard.instance/login/oauth2/code/
+https://my.tbmq.org/login/oauth2/code/
 ```
 
 * Click "Create".
@@ -188,7 +188,7 @@ Now let's add another provider to our list – [Auth0](https://auth0.com/){:targ
 To apply the configuration properly, we first need to obtain OAuth 2.0 credentials:
 
 * Go to the [Auth0 management console](https://manage.auth0.com/){:target="_blank"}. Open the "Applications" page, and click the "+ Create Application" button;
-* Name your application "ThingsBoard" and choose the application type **Regular Web Applications**;
+* Name your application "TBMQ" and choose the application type **Regular Web Applications**;
 * Next, choose the technology being used. Please select **Java Spring Boot**;
 * Once your application is created, you are redirected to the application details page. Navigate to the **Settings** tab to find the *Client ID* and *Client Secret*;
 * In the **Allowed Callback URLs** field, update the redirect URI using the format:
@@ -199,10 +199,10 @@ http(s)://domain:port/login/oauth2/code/
 {: .copy-code}
 
 * Replace `domain` with your TBMQ domain and specify the port used for HTTP access.
-  For example, if your domain is *my.thingsboard.instance*:
+  For example, if your domain is *my.tbmq.org*:
 
 ```
-https://my.thingsboard.instance/login/oauth2/code/
+https://my.tbmq.org/login/oauth2/code/
 ```
 
 {% capture difference %}
@@ -256,7 +256,7 @@ Proceed to the "Mapper" block:
 
 ### Sign in
 
-Navigate to the login screen. You will now find two available login methods: Google and Auth0.
+Navigate to the login screen. You will now find the login method Auth0.
 Click the "Login with Auth0" button.
 
 {% include images-gallery.html imageCollection="login-with-oauth0-1" %}

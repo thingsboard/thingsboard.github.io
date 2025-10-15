@@ -3,32 +3,10 @@
 * TOC
 {:toc}
 
-The Image gallery serves as a centralized repository for storing and managing images. 
-This is an important resource for improving the visual appeal and functionality of widgets, dashboards, devices, and asset profiles in a mobile application. 
-Users can easily upload, organize, and select images to customize their interface and user experience, ensuring an integrity and branded look across the platform.
+The Image Gallery serves as a centralized repository for managing images in the TBMQ application.
+It provides the source for logo and favicon images used in the **White labeling** feature on the [application](/docs/pe/mqtt-broker/white-labeling/#customize-tbmq-web-interface) and [login](/docs/pe/mqtt-broker/white-labeling/#customize-the-login-page) pages.
 
-![image](/images/user-guide/image-gallery/image-gallery-pe.png)
-
-## Cache configuration
-
-Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.
-By default, we do not apply Cache-Control headers, relying on the efficiency of ETags.
-However, you can customize caching behavior through environment variables: 
-
-- *CACHE_SPECS_IMAGE_ETAGS_TTL* - image ETags cache TTL. The default value is 44640 minutes, after which the cache will be deleted;
-
-- *CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE* - maximum cache size, in bytes. 0 means the cache is disabled;
-
-- *CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL* - browser cache TTL for system images, in minutes. Default value is 0 minutes - the cache is disabled;
-
-- *CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL* - browser cache TTL for tenant images, in minutes. Default value is 0 minutes - the cache is disabled.
-
-These configurations control the Time To Live (TTL) for your system and tenant images in a user's browser cache.
-Setting a longer TTL improves load time for repeated visits and reduces server load, while a shorter TTL ensures users receive more frequent content updates.
-Adjust these settings based on the update frequency of your images. How to do it, read [here](/docs/user-guide/install/{{docsPrefix}}how-to-change-config/).
-
-Additionally, the system administrator can set restrictions on the maximum size of a single image and the total size of images by configuring [tenant profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/#files-limits).
-Values are specified in bytes.
+![image](/images/pe/mqtt-broker/user-guide/white-labeling/image-gallery.png)
 
 ## Add image
 
@@ -83,13 +61,11 @@ The image in JSON format will be saved to your PC.
 ### Edit image
 
 To open editing an image window, click the "Edit image" icon next to the image name that you want to edit (if you're using the grid view, hover your mouse pointer over the image you want to edit and click the "Edit image" icon).
-An editing window will open. In this window you can change the name, download, export it to JSON, embed, and also [update the image](#update-image).
-
-{% include images-gallery.html imageCollection="edit-image-1" %}
+An editing window will open. In this window you can change the name, download, export it to JSON, and also [update the image](#update-image).
 
 To change the name of the image, enter a new name and click the "Save" icon in the "Edit image" window.
 
-{% include images-gallery.html imageCollection="edit-image-2" %}
+{% include images-gallery.html imageCollection="edit-image-1" %}
 
 #### Update image
 

@@ -54,9 +54,8 @@ MQTT Basic authentication is based on different combinations of the client ID, u
 Broker administrators can modify the password for MQTT Basic client credentials. To do this, follow these instructions:
 1. Go to _Authentication_ - _Client Credentials_ page.
 2. Click on the corresponding row of the Credentials.
-3. Click the _Edit_ button.
-4. Click the _Change password_ button. Input your current password and set a new one.
-5. Confirm changes.
+3. Click the _Change password_ button.
+4. Input your current password, set a new one and confirm changes.
 
 {% include images-gallery.html imageCollection="change-password-basic-credentials" %}
 
@@ -90,7 +89,11 @@ Please consider the following examples:
 * If Subscribe authorization rule patterns is set to default value `.*` - client will be able to subscribe to any topic.
 * If Publish/Subscribe authorization rules has no rules (field is empty) - client will be forbidden to publish/subscribe to any topics.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-authorization.png)
+{% endif %}
 
 ### SCRAM
 

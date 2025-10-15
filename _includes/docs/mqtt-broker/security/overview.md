@@ -23,8 +23,10 @@ Supported authentication methods include: Basic (username/password), X.509 Certi
 
 ### Providers management
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.2" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 Authentication methods are implemented as pluggable authentication providers:
 
@@ -44,8 +46,10 @@ Adding or deleting authentication providers is not allowed. Users can only edit 
 
 ### Providers execution order
 
+{% if docsPrefix != "pe/" %}
 {% assign sinceVersion = "2.2" %}
 {% include templates/mqtt-broker/since.md %}
+{% endif %}
 
 TBMQ processes authentication providers in a configurable execution order.
 This can be configured from the [MQTT Authentication Settings](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/settings/#mqtt-authentication) page designed to configure key MQTT authentication-related parameters.

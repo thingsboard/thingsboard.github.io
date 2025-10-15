@@ -7,16 +7,16 @@ description: Integration guide of TBMQ with ThingsBoard
 
 create-client-credentials:
     0:
-        image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-1-pe.png
         title: 'Navigate to "Credentials" tab, click on the "plus" icon in the top right corner of the table;'
     1:
-        image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-2-pe.png
+        image: /images/pe/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-2-pe.png
         title: 'Input client credentials name, select client type. Enable "Basic" authentication type.'
     2:
-        image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-3-pe.png
+        image: /images/pe/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-3-pe.png
         title: 'Input "Username" and "Password" with chosen values. For example, use `tb-pe` value for Username and `secret` for Password fields. Click "Add" to save credentials.'
     3:
-        image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-4-pe.png
+        image: /images/pe/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-4-pe.png
         title: 'New client credential is created.'
 
 create-uplink-converter:
@@ -45,12 +45,12 @@ create-integration:
 
 successful-connection-tbmq-to-thingsboard:
     0:
-        image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-sessions-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-sessions-1-pe.png
         title: 'Go to the "Sessions" page in the TBMQ UI. Upon successful establishment of the connection ThingsBoard to TBMQ, we will see a new session and its status - "Connected".'
 
 tbmq-home-page:
     0:
-        image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-home-page-1-pe.png
+        image: /images/pe/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-home-page-1-pe.png
         title: 'On the "Topics" page you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.'
 
 tbmq-create-device:
