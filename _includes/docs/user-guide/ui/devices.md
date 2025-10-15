@@ -70,6 +70,49 @@ To create a new device group:
 
 {% include images-gallery.html imageCollection="add-device-group-pe" showListImageTitles="true" %}
 
+### Managing device groups. How to add, move, remove.
+
+From the Devices page, you can add devices to groups, move them between groups, or remove them from a group. 
+
+The "All" device group always contains all devices at the selected owner level (Tenant or Customer).
+
+**Add a single device to groups:**
+- Open the [device details](#device-details) ➜ click **Manage owner and groups**.
+- In the dialog, adjust Owner if necessary and select groups to add or remove the device from.
+- Click **Save**.
+
+**Add multiple devices to one group:**
+- On the **Groups** tab, open any device group (e.g., "**All**").
+- Select devices using the checkboxes (on the left of their names).
+- Click the "**Add to group**" (plus-in-circle icon) in the top-right.
+- In **Add to group** window, choose **Select existing entity group** or **Create new entity group**.
+- Select an existing or create a new device group.
+- Click **Add** to confirm adding the devices to the group.
+
+{% capture multiple %}
+**Note:** This adds devices to the chosen group without removing them from other groups.
+{% endcapture %}
+{% include templates/info-banner.md content=multiple %}
+
+**Move devices to another group:**
+- Open a specific (non-**All**) group.
+- Select devices and click **Move to group** (two-arrow icon).
+- In "Move to group" window, choose **Select existing entity group** or **Create new entity group**.
+- Select an existing or create a new device group.
+- Click **Move** to confirm.
+
+This action removes devices from the current group and adds them to the selected group.
+
+**Remove devices from a group:**
+- Open a specific (non-**All**) group.
+- Select devices and click **Remove from group** (minus-in-circle icon) in the top-right.
+- Confirm removal.
+
+{% capture difference %}
+**Note:** Devices are not deleted; they remain in the owner’s "**All**" device group.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 {% endunless %}
 
 ### Editing device
