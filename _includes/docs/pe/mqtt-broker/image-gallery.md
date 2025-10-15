@@ -69,8 +69,8 @@ To change the name of the image, enter a new name and click the "Save" icon in t
 
 #### Update image
 
-Updating the image can be useful, for example, when one picture serves as the background for multiple dashboards. 
-This allows you to make changes just once, and all dashboards using that image will automatically receive the updated version, saving you the effort of editing each dashboard individually.
+Updating the image can be useful, for example, when one picture serves as the background for multiple places. 
+This allows you to make changes just once, and all places using that image will automatically receive the updated version, saving you the effort of editing each place individually.
 
 To update the image, click the "Update image" button in the editing window. Select a new image or simply drag it to the "Update image" window and click "Update". 
 
