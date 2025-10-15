@@ -19,7 +19,7 @@ Reporting in ThingsBoard is built on **two key components**:
 - **Rich content support** – include text blocks, tables, charts, images, and more.
 - **Notification integration** – attach a generated report to system notifications (Email, Slack).
 
-<b><font size="3">Where it&#39;s useful:</font></b><br>
+<b><font size="3">Where it&#39;s useful:</font></b><br> 
 - Regular monitoring of your device&#39;s metrics.
 - Sharing summary data with partners or management.
 - Archiving data in an easy-to-read format.
@@ -66,21 +66,17 @@ Here&#39;s what the Report Builder looks like:
 
 Templates are made up of customizable components, each serving as a visual or functional block. These components determine what will appear in your final report and how it will be presented.
 
-<b><font size="3">Main component types:</font></b><br>
-- **Text blocks** - headings, paragraphs, or section descriptions to your report.
-    - Supports plain or rich text.
-    - Can include [dynamic placeholders](#variables--dynamic-content) for timestamps, entity names, user details, and more.
-- **Tables** - display structured data from your ThingsBoard entities. Supported types include:
-    - **Entity table** – shows static attributes or the latest telemetry values for a list of entities.
-    - **Time series table** – displays telemetry data over time, with options for time intervals, aggregation, and filtering.
-    - **Alarm table** – lists the history of alarms triggered by entities, including severity, timestamp, and status. Useful for monitoring system activity, faults, or security events.
+<b><font size="4">Main component types:</font></b><br>
 
-  Each table&#39;s style can be customized via the layout configuration tab — adjust column widths, font sizes, borders, and pagination.
-- **Logos & Images** - branding elements or visual illustrations, such as company logos, product images, or diagrams. You can control size, positioning, and alignment.
-- [**Subreports**](/docs/{{docsPrefix}}user-guide/reporting/subreport/){:target="_blank"} - a modular component that can be embedded inside another report.
-- [**Dashboards**](/docs/{{docsPrefix}}user-guide/reporting/embedding-dashboards-widgets/){:target="_blank"} - screenshot of the specified dashboard into report as image. 
+- **Text & Images.** - to add **text blocks**, **headings**, and **images** to your report. Text blocks supports plain or rich text and can include [dynamic placeholders](#variables--dynamic-content) for timestamps, entity names, user details, and more.
+- **Tables** - to display **structured data (such as alarms, entities, and their telemetry) in table format**. Each table&#39;s style can be customized via the layout configuration tab — adjust column widths, font sizes, borders, and pagination.
+- [**Subreport**](/docs/{{docsPrefix}}user-guide/reporting/subreport/){:target="_blank"} is a modular report template that is embedded into a main report, inherits its context, and generates its own content accordingly.
+- [**Dashboard**](/docs/{{docsPrefix}}user-guide/reporting/embedding-dashboards-widgets/){:target="_blank"} - embeds a screenshot of the specified dashboard into the report as an image.
+- [**Charts**](/docs/{{docsPrefix}}user-guide/reporting/embedding-charts/){:target="_blank"} - to visualize time series data with configurable **line and bar charts**, or to present the latest values using different types of **pie and doughnut charts**.
+- **Branding** - for adding **logos**, **headers**, and **footers** to customize the look and feel of reports.
+- **Reporting Info & Layout** - supporting components (**split view**, **page number**, **created time**, **divider**, **page break**) to structure the report and display system metadata.
 
-<b><font size="3">Component configuration</font></b><br>
+<b><font size="4">Component configuration</font></b><br>
 
 Each component has two main configuration sections:
 - **Data configuration** — defines which data the component will display and how it will be filtered. Supports [entity aliases](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"} and filters for dynamic data binding.

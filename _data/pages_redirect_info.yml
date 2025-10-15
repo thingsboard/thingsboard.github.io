@@ -254,6 +254,9 @@ docs/pe/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/reporting/attaching-report-to-notification/":
   url: "/docs/pe/user-guide/reporting/attaching-report-to-notification/"
   redirect_from: "/docs/user-guide/reporting/attaching-report-to-notification/"
+"/docs/user-guide/reporting/embedding-charts/":
+  url: "/docs/pe/user-guide/reporting/embedding-charts/"
+  redirect_from: "/docs/user-guide/reporting/embedding-charts/"
 "/docs/user-guide/reporting/embedding-dashboards-widgets/":
   url: "/docs/pe/user-guide/reporting/embedding-dashboards-widgets/"
   redirect_from: "/docs/user-guide/reporting/embedding-dashboards-widgets/"
