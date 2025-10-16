@@ -9,6 +9,41 @@ description: ThingsBoard architecture
 {:toc}
 
 
+## v4.2.1 (Oct 15, 2025) {#v421}
+
+Minor release with the following bug fixes and improvements:
+
+**What's Changed**
+
+* Core & Rule Engine
+
+  * [#14068](https://github.com/thingsboard/thingsboard/pull/14068) AI Request Node: ability to attach files by @dashevchenko
+  * [#14014](https://github.com/thingsboard/thingsboard/pull/14014) AI models: support for local AI models via Ollama by @dskarzh
+  * [#14076](https://github.com/thingsboard/thingsboard/pull/14076) AI models: ability to change base URL to OpenAI by @dskarzh
+  * [#14131](https://github.com/thingsboard/thingsboard/pull/14131) Fixed vulnerabilities by @ViacheslavKlimov
+
+* UI
+
+  * [#14072](https://github.com/thingsboard/thingsboard/pull/14072) Added 'General' resource type and entity list for AI rule node by @ArtemDzhereleiko
+  * [#14066](https://github.com/thingsboard/thingsboard/pull/14066) Added support for UTF-8 symbols in export file name by @vvlladd28
+  * [#13373](https://github.com/thingsboard/thingsboard/pull/13373) Added tooltip settings option to also show total value in stacked timeseries charts by @pgrisu
+  * [#13350](https://github.com/thingsboard/thingsboard/pull/13350) Latest chart widgets: added setting to show total value in legend by @pgrisu
+  * [#14083](https://github.com/thingsboard/thingsboard/pull/14083) Markdown widget: hide unused data settings block in configuration by @vvlladd28
+
+* Bug Fixes
+
+  * [#14037](https://github.com/thingsboard/thingsboard/pull/14037) Fixed API usage cycle reset by @dashevchenko
+  * [#13941](https://github.com/thingsboard/thingsboard/pull/13941) Fixed occasional duplicated CF evaluations after TB restart by @irynamatveieva
+  * [#14046](https://github.com/thingsboard/thingsboard/pull/14046) Fixed missing entity values in exported alarm data widget by @dashevchenko
+  * [#14081](https://github.com/thingsboard/thingsboard/pull/14081) Fixed hidden options displaying when switching between Realtime and History in Timewindow by @ChantsovaEkaterina
+  * [#13952](https://github.com/thingsboard/thingsboard/pull/13952) Fixed AI models help link by @ArtemDzhereleiko
+  * [#13898](https://github.com/thingsboard/thingsboard/pull/13898) Fixed response format issue for AI rule node by @ArtemDzhereleiko
+  * [#14027](https://github.com/thingsboard/thingsboard/pull/14027) Fixed XSS vulnerabilities in the Rule node by @mtsymbarov-del
+  * [#13948](https://github.com/thingsboard/thingsboard/pull/13948) Fixed user name field retrieval in EDQS by @dashevchenko
+  * [#14070](https://github.com/thingsboard/thingsboard/pull/14070) Fixed PUBACK not sent if publishing failed or duplicated if message contains multiple devices by @dashevchenko
+
+**Full Changelog**: [https://github.com/thingsboard/thingsboard/compare/v4.2...v4.2.1](https://github.com/thingsboard/thingsboard/compare/v4.2...v4.2.1)
+
 ## v4.2.0 (Aug 15, 2025) {#v42}
 
 **Major Improvements**
@@ -93,7 +128,7 @@ description: ThingsBoard architecture
 
   * [#13722](https://github.com/thingsboard/thingsboard/pull/13722) @Yatharth0045 made their first contribution
 
-**Full Changelog**: https://github.com/thingsboard/thingsboard/compare/v4.1...v4.2
+**Full Changelog**: [https://github.com/thingsboard/thingsboard/compare/v4.1...v4.2](https://github.com/thingsboard/thingsboard/compare/v4.1...v4.2)
 
 
 ## v4.1.0 (Jul 3, 2025) {#v41}
@@ -192,7 +227,7 @@ description: ThingsBoard architecture
   * [#13367](https://github.com/thingsboard/thingsboard/pull/13367) @idealissst made their first contribution
   * [#13427](https://github.com/thingsboard/thingsboard/pull/13427) @Deesthortered made their first contribution
 
-Full Changelog: https://github.com/thingsboard/thingsboard/compare/v4.0.2...v4.1
+Full Changelog: [https://github.com/thingsboard/thingsboard/compare/v4.0.2...v4.1](https://github.com/thingsboard/thingsboard/compare/v4.0.2...v4.1)
 
 
 ## v4.0.2 (Jul 3, 2025) {#v402}
@@ -223,7 +258,7 @@ Minor release with the following bug fixes and improvements:
 * Transport
   * [#12981](https://github.com/thingsboard/thingsboard/pull/12981) MQTT client exponential reconnect strategy by @smatvienko-tb
 
-**Full Changelog**: https://github.com/thingsboard/thingsboard/compare/v4.0.1...v4.0.2
+**Full Changelog**: [https://github.com/thingsboard/thingsboard/compare/v4.0.1...v4.0.2](https://github.com/thingsboard/thingsboard/compare/v4.0.1...v4.0.2)
 
 ## v4.0.1 (Apr 22, 2025) {#v401}
 
@@ -238,7 +273,7 @@ Minor release with the following bug fixes and improvements:
   * [#13229](https://github.com/thingsboard/thingsboard/pull/13229) Fixed SCADA HP bottom right elbow connector pipe by @ArtemDzhereleiko
   * [#13217](https://github.com/thingsboard/thingsboard/pull/13217) Updated links for the rule nodes by @irynamatveieva
 
-**Full Changelog**: https://github.com/thingsboard/thingsboard/compare/v4.0...v4.0.1
+**Full Changelog**: [https://github.com/thingsboard/thingsboard/compare/v4.0...v4.0.1](https://github.com/thingsboard/thingsboard/compare/v4.0...v4.0.1)
 
 ## v4.0.0 (Apr 15, 2025) {#v40}
 
@@ -364,7 +399,7 @@ Major release with the following features and bug fixes:
 
 * @str4ng3-r made their first contribution in [#12568](https://github.com/thingsboard/thingsboard/pull/12568)
 
-**Full Changelog**: https://github.com/thingsboard/thingsboard/compare/v3.9.1...v4.0
+**Full Changelog**: [https://github.com/thingsboard/thingsboard/compare/v3.9.1...v4.0](https://github.com/thingsboard/thingsboard/compare/v3.9.1...v4.0)
 
 ## v3.9.1 (Feb 19, 2025) {#v391}
 

@@ -409,19 +409,19 @@ In the legend settings, you can:
 
 The legend displays a label for each [data key](/docs/{{docsPrefix}}user-guide/widgets/#data-keys). When a widget contains data from multiple devices, or when several devices use the same data key name (for example, temperature), it may be difficult to determine which key value corresponds to which device in the legend or tooltip.
 
-To make the legend or tooltip clearer, you should use <b>${entityName}</b> or <b>${entityLabel}</b> in the data key configuration.
+To make the legend clearer, you should use **${entityName}** or **${entityLabel}** in the **Label** field of the data key configuration.
 
-- <b>${entityName}</b> – a variable that automatically inserts the system name of the entity in the legend or tooltip. This helps clearly identify the object, especially when its technical name or unique identifier is important.   
-  Example: If a device has the name <b>sensor-101</b>, then in the field where <b>${entityName}</b> is used, you will see <b>sensor-101</b>.
+- **${entityName}** – a variable that automatically inserts the system name of the entity in the legend. This helps clearly identify the object, especially when its technical name or unique identifier is important.   
+  Example: If a device has the name **sensor-101**, then in the field where **${entityName}** is used, you will see **sensor-101**.
 
 {% include images-gallery.html imageCollection="entity-name-legend" %}
 
-- <b>${entityLabel}</b> – a variable that inserts the entity&#39;s label in the legend or tooltip.. This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.   
+- **${entityLabel}** – a variable that inserts the entity's label in the legend. This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.   
    Example: A device has:
-    - <b>Name</b> = <b>sensor-101</b>
-    - <b>Label</b> = <b>Temperature Sensor, Warehouse #1</b>
+    - **Name** = **sensor-101**
+    - **Label** = **Temperature Sensor, Warehouse #1**
 
-    In the field where <b>${entityLabel}</b> is used, the operator will see the more understandable text: <b>Temperature Sensor, Warehouse #1</b>.
+    In the field where **${entityLabel}** is used, the operator will see the more understandable text: **Temperature Sensor, Warehouse #1**.
 
 {% include images-gallery.html imageCollection="entity-label-legend" %}
 
@@ -466,7 +466,23 @@ You can change the appearance of the chart grid: customize the color of the back
 
 - **Show cumulative values in stacking mode**. While stacking mode is on, you can check the box "Cumulative values" to enable your chart to display sum of all entity values.
 
-**Tooltip value format function, f(value, latestData)** is used when you want to manually customize the tooltip.
+Tooltip value format function, **f(value, latestData)** is used when you want to manually customize the tooltip.
+
+To make the tooltip clearer, you should use **${entityName}** or **${entityLabel}** in the **Label** field of the data key configuration.
+
+- **${entityName}** – a variable that automatically inserts the system name of the entity in the tooltip. This helps clearly identify the object, especially when its technical name or unique identifier is important.   
+  Example: If a device has the name **Sensor 1**, then in the field where **${entityName}** is used, you will see **Sensor 1**.
+
+{% include images-gallery.html imageCollection="entity-name-tooltip" %}
+
+- **${entityLabel}** – a variable that inserts the entity's label in the tooltip. This is often used as a human-readable label and allows you to display a more descriptive name of the device or entity.   
+   Example: A device has:
+    - **Name** = **Sensor 1**
+    - **Label** = **Sensor 1 Label**
+
+    In the field where **${entityLabel}** is used, the operator will see the more understandable text: **Sensor 1 Label**.
+
+{% include images-gallery.html imageCollection="entity-label-tooltip" %}
 
 You can customize the values that will be displayed in the tooltip via tooltip settings or
 [Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#tooltip-settings){:target="_blank"}.
