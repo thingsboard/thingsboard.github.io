@@ -11,58 +11,75 @@ redirect_from:
 * TOC
 {:toc}
 
-This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
-Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector. 
-The purpose of this Connector is to connect to an external MQTT broker and subscribe to data feed from devices. 
-The connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 
+## Overview
 
-This connector is useful when you have local MQTT broker in your facility or corporate network, and you would like to push data from this broker to ThingsBoard.
+This documentation will help you set up the MQTT connector for the ThingsBoard IoT Gateway. We'll explain the configuration 
+parameters in simple terms to make it easy for you to understand and follow. The MQTT(Message Queuing Telemetry Transport)
+is a lightweight publish-subscribe, machine-to-machine network protocol that is widely used for connections with remote 
+locations with devices that have resource constraints or network transfer rate.
+Use [general configuration](/docs/iot-gateway/configuration/){:target="_blank"} to enable this connector. 
 
-We will describe connector configuration file below.
+Also, if you are new to ThingsBoard IoT Gateway, we recommend you to read the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+guide to understand the basic concepts of ThingsBoard IoT Gateway and how it works with MQTT protocol.
+
+The connector can be configured via the user interface form, which helps you set up a connection to an MQTT broker and
+read/write data by subscribing/publishing to MQTT topics, that can be defined statically or generated on the fly. 
+Let's look at all the available settings and explain each one clearly. 
+This will help you understand how everything works.
 
 {% capture difference %}
 **Please note:**
-If you are new to IoT Gateway, use the "Basic" configuration mode. If you are familiar with configuring IoT Gateway, you can use the "Advanced" configuration mode.
+To access the actual UI for the gateway - you need to a have connected gateway before adding a connector. Otherwise, you will see the old UI.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Connector configuration
+## Configuration modes 
 
-Connector configuration is a UI form that contains information about how to connect to external MQTT broker, what topics to use when subscribing to data feed and how to process the data. 
-Let's take a comprehensive look at all the possible settings. We will go through each option in detail to ensure that we thoroughly understand their functions and implications. 
-By doing so, we can make well-informed decisions about which settings will best suit our needs and preferences.
+The MQTT connector can be configured in two modes: **Basic** and **Advanced**.
+- **Basic** mode is designed for users who are new to ThingsBoard IoT Gateway and want to quickly set up the connector with minimal configuration. It provides a simplified interface with essential settings.
+- **Advanced** mode is intended for experienced users who need more control over the configuration. It offers additional options and flexibility for advanced use cases.
 
-## Section "General"
+{% capture difference %}
+**Please note:**
+If you are new to IoT Gateway, use the "Basic" configuration mode. If you are familiar with configuring IoT Gateway, 
+you can use the "Advanced" configuration mode.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-This configuration section contains general connector settings, such as:
+You can switch between these modes using the toggle button at the top of the configuration page:
 
-- Name - connector name for logs and saving to persistent devices;
-- Logs configuration:
-  - Enable remote logging - enabling remote logging for connector;
-  - Logging level - logging level for local and remote logs: INFO, DEBUG, WARNING, ERROR, CRITICAL, NONE;
-- Send data only on change - sending only if data changed from last check, if not – data will be sent after every check.
+![image.png](/images/gateway/mqtt-connector/mqtt-modes-toggle.png)
+
+## General settings
+
+{% include /templates/iot-gateway/connector-commons/general-settings.md %}
 
 ![image](/images/gateway/mqtt-connector/general-basic-section-1-ce.png)
 
 {% capture difference %}
-The settings are the same for both the basic and advanced configurations.
+The General tab in settings is the same for both the basic and advanced configurations.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Section "Connection to broker"
+## Connection settings
 
-Section "Connection to broker" offers detailed connection configuration options and contains several important fields, including host, port, MQTT version, client ID, and security settings.
-The host field specifies the address of the broker, while the port field indicates the communication port.
-The MQTT version field ensures compatibility with the protocol version being used.
-The client ID uniquely identifies the client, and the security settings provides configuration for client authorization at MQTT Broker.
+Connection settings how the MQTT connector establishes and maintains communication with the MQTT broker.
+These settings cover the basic connection parameters, mqtt version protocol that will be used security configuration, and 
+authentication modes.
+
+### Connection to broker
+
+This subsection specifies the target MQTT broker and how the gateway interacts with it. It includes the broker's host,
+port, mqtt version protocol, client id.
+
+{% include /templates/iot-gateway/mqtt-connector/mqtt-basic-section.md %}
+
 
 {% capture mqttconnectiontobrokersection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/connection-to-broker-basic-section.md%br%
+Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/mqtt-basic-section.md%br%
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/connection-to-broker-advanced-section.md{% endcapture %}
 
-{% include content-toggle.liquid content-toggle-id="mqttconnectiontobrokersection" toggle-spec=mqttconnectiontobrokersection %}
-
-### Subsection "Security"
+### Security
 
 Subsection "Security" provides configuration for client authorization at MQTT Broker.
 
@@ -354,6 +371,62 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/server
 
 {% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
 
+## Advanced configuration
+
+The advanced configuration section provides a detailed overview of all available parameters for the MQTT connector.
+
+### Connection to broker
+
+The broker section defines the target MQTT broker and how the gateway interacts with it.
+
+
+| **Parameter**                               | **Default value**       | **Description**                                                                                                                                                                                                                                                                                                                                                         |
+|:--------------------------------------------|:------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| broker                                      |                         | The broker object specifies the target mqtt broker and how the gateway interacts with it.                                                                                                                                                                                                                                                                               |
+| broker.host                                 |                         | Hostname or ip address that will be used for establishing connection to MQTT broker.                                                                                                                                                                                                                                                                                    |
+| broker.port                                 | **1883**                | Listening MQTT port on the broker that will accept connection from a client.                                                                                                                                                                                                                                                                                            |
+| broker.version                              | **5**                   | MQTT protocol version (there are three versions currently supported by gateway - **3.1**, **3.11**, **5**).                                                                                                                                                                                                                                                             |
+| broker.clientId **                          | **ThingsBoard_gateway** | Unique identifier for each client’s session on the broker.                                                                                                                                                                                                                                                                                                              |
+| broker.maxMessageNumberPerWorker *          | **10**                  | Maximum number of MQTT messages a single worker (a background helper that processes queued messages)<br/> handles in one pass before letting other workers run. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                                |
+| broker.maxNumberOfWorkers *                 | **100**                 | Maximum number of workers (background helpers that process queued messages)<br/> the gateway can run in parallel to handle MQTT traffic. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                                                       |
+| broker.keepAlive * (in seconds)             | **60**                  | Seconds between pings; e.g., default is 60s, the broker expects traffic within the given interval * 1.5 or it closes the connection.                                                                                                                                                                                                                                    |
+| broker.cleanSession *                       | **true**                | Tells the broker whether to start fresh or keep your previous session, Use `false`, if you want offline message queueing; use `true` if you always reconnect cleanly and don’t need persistence(Only for 3.1, 3.11 see details here - [MQTT 3.1, 3.11 vs 5.0: Parameter Differences](/docs/iot-gateway/config/mqtt/#mqtt-version-parameters-compatibility)).                                                       |
+| broker.cleanStart *                         | **true**                | Simular to **broker.cleanSession**, but unlike it, only decides what happens **at the start** of a connection; use `true`, if you want discard an old session; use `false` if you want to try to resume it (For MQTT 5.0 only see details here - [MQTT 3.1, 3.11 vs 5.0: Parameter Differences](/docs/iot-gateway/config/mqtt/#mqtt-version-parameters-compatibility)). |
+| broker.sessionExpiryInterval * (in seconds) | **0**                   | How long the broker should keep your session after you disconnect (For MQTT 5.0 only see details here - [MQTT 3.1, 3.11 vs 5.0: Parameter Differences](/docs/iot-gateway/config/mqtt/#mqtt-version-parameters-compatibility).                                                                                                                                           |
+| broker.security                             | **anonymous**           | Configuration for client authorization at MQTT Broker, available modes: <br/> `anonymous` (no credentials required — not recommended for production), `basic` (username/password), and `certificates` (CA certificates). You may read more about this in the [Security](/docs/iot-gateway/config/mqtt/#security) subsection.                                            |
+| ---                                         |                         |                                                                                                                                                                                                                                                                                                                                                                         |
+
+{% capture difference %}
+**Please note:**
+\** -- The broker (or broker cluster) does not allow two simultaneous sessions with the same **broker.clientId**. If a second connection uses that ID, 
+the broker closes the existing session and accepts the new one (session takeover). The Client ID can be any valid UTF-8 string; 
+if you don’t have a descriptive one, you can generate it in the MQTT connector configuration UI—see the last screenshot under [Connection to broker](/docs/iot-gateway/config/mqtt/#connection-to-broker) subsection.
+\* -- Parameters marked with an asterisk (*) are optional and intended for fine-tuning; we don’t recommend changing them unless you have a specific need. 
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Example of the server configuration:
+
+```json
+"broker": {
+    "host": "127.0.0.1",
+    "port": 1883,
+    "version": 5,
+    "clientId": "ThingsBoard_gateway",
+    "maxMessageNumberPerWorker": 10,
+    "maxNumberOfWorkers": 100, 
+    "keepAlive": 60,
+    "cleanSession": true,
+    "cleanStart": true,
+    "sessionExpiryInterval": 0,    
+    "security": {
+      "type": "anonymous"
+    }
+    
+},
+```
+{: .copy-code}
+
 ## Workers settings
 
 This configuration settings provides fields for configuring connector performance and message reading/formatting speed:
@@ -366,230 +439,15 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/worker
 
 {% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
 
-## Configuration file
+## Additional information
 
-Example of MQTT Connector configuration file:
+## Troubleshooting
 
-```json
-{
-  "broker": {
-    "host": "127.0.0.1",
-    "port": 1883,
-    "clientId": "ThingsBoard_gateway",
-    "version": 5,
-    "maxMessageNumberPerWorker": 10,
-    "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
-    "security": {
-      "type": "anonymous"
-    }
-  },
-  "mapping": [
-    {
-      "topicFilter": "sensor/data",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "json",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "message",
-          "deviceNameExpression": "${serialNumber}",
-          "deviceProfileExpressionSource": "message",
-          "deviceProfileExpression": "${sensorType}"
-        },
-        "sendDataOnlyOnChange": false,
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          },
-          {
-            "type": "string",
-            "key": "${sensorModel}",
-            "value": "on"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "string",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "double",
-            "key": "humidity",
-            "value": "${hum}"
-          },
-          {
-            "type": "string",
-            "key": "combine",
-            "value": "${hum}:${temp}"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "sensor/+/data",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "json",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "topic",
-          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/data)",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "Thermometer"
-        },
-        "sendDataOnlyOnChange": false,
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "double",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "string",
-            "key": "humidity",
-            "value": "${hum}"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "sensor/raw_data",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "bytes",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "message",
-          "deviceNameExpression": "[0:4]",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "default"
-        },
-        "sendDataOnlyOnChange": false,
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "raw",
-            "key": "rawData",
-            "value": "[:]"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "raw",
-            "key": "temp",
-            "value": "[4:]"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "custom/sensors/+",
-      "subscriptionQos": 1,
-      "converter": {
-        "type": "custom",
-        "extension": "CustomMqttUplinkConverter",
-        "cached": true,
-        "extensionConfig": {
-          "temperature": 2,
-          "humidity": 2,
-          "batteryLevel": 1
-        }
-      }
-    }
-  ],
-  "requestsMapping": {
-    "connectRequests": [
-      {
-        "topicFilter": "sensor/connect",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "message",
-          "deviceNameExpression": "${serialNumber}",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "Thermometer"
-        }
-      },
-      {
-        "topicFilter": "sensor/+/connect",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "topic",
-          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "Thermometer"
-        }
-      }
-    ],
-    "disconnectRequests": [
-      {
-        "topicFilter": "sensor/disconnect",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "message",
-          "deviceNameExpression": "${serialNumber}"
-        }
-      },
-      {
-        "topicFilter": "sensor/+/disconnect",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "topic",
-          "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
-        }
-      }
-    ],
-    "attributeRequests": [
-      {
-        "retain": false,
-        "topicFilter": "v1/devices/me/attributes/request",
-        "deviceInfo": {
-          "deviceNameExpressionSource": "message",
-          "deviceNameExpression": "${serialNumber}"
-        },
-        "attributeNameExpressionSource": "message",
-        "attributeNameExpression": "${versionAttribute}, ${pduAttribute}",
-        "topicExpression": "devices/${deviceName}/attrs",
-        "valueExpression": "${attributeKey}: ${attributeValue}"
-      }
-    ],
-    "attributeUpdates": [
-      {
-        "retain": true,
-        "deviceNameFilter": ".*",
-        "attributeFilter": "firmwareVersion",
-        "topicExpression": "sensor/${deviceName}/${attributeKey}",
-        "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
-      }
-    ],
-    "serverSideRpc": [
-      {
-        "type": "twoWay",
-        "deviceNameFilter": ".*",
-        "methodFilter": "echo",
-        "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-        "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
-        "responseTopicQoS": 1,
-        "responseTimeout": 10000,
-        "valueExpression": "${params}"
-      },
-      {
-        "type": "oneWay",
-        "deviceNameFilter": ".*",
-        "methodFilter": "no-reply",
-        "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-        "valueExpression": "${params}"
-      }
-    ]
-  }
-}
-```
-{:.copy-code.expandable-15}
+### MQTT 3.1, 3.11 vs 5.0: Parameter Differences
+
+1. **broker.cleanSession** - *MQTT 3.1, 3.11 only*; in *MQTT 5.0* it’s replaced by **broker.cleanStart** (on connect behavior) plus **broker.sessionExpiryInterval** (how long the session is kept after disconnect).
+2. **broker.sessionExpiryInterval** — *MQTT 5.0 only*; if it is `0` drop session on disconnect, if it is bigger than `0`keep it for that many seconds.
+3. **broker.cleanStart** — *MQTT 5.0 only*; controls what happens at connect: `true` discards any previous session, `false` tries to resume it.
 
 ## Next steps
 
