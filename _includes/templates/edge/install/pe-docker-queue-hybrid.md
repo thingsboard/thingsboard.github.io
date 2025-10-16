@@ -48,7 +48,7 @@ services:
       - tb-edge-postgres-data:/var/lib/postgresql/data
   kafka:
     restart: always
-    image: bitnamilegacy/kafka:3.8.1
+    image: bitnamilegacy/kafka:4.0
     ports:
       - 9092
       - 9093 #for Kraft
