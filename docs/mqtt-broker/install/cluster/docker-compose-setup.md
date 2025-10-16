@@ -5,4 +5,4 @@ description: Cluster setup using Docker Compose
 
 ---
 
-{% include docs/mqtt-broker/install/cluster/docker-compose-setup.md %}
+{% include docs/mqtt-broker/install/cluster/docker-compose-setup-old.md %}

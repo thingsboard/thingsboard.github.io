@@ -5,4 +5,4 @@ description: TBMQ cluster setup with Kubernetes and Minikube guide
 
 ---
 
-{% include docs/mqtt-broker/install/cluster/minikube-cluster-setup.md %}
+{% include docs/mqtt-broker/install/cluster/minikube-cluster-setup-old.md %}

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Installing TBMQ using Docker (Windows)
-description: Installing TBMQ using Docker (Windows)
+title: Installing TBMQ PE using Docker (Windows)
+description: Installing TBMQ PE using Docker (Windows)
 
 ---
 

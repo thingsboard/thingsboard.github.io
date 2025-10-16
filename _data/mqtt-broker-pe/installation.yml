@@ -3,9 +3,9 @@ abstract: "Documentation for installation and configuration of TBMQ."
 toc:
   - title: Installation options
     path: /docs/pe/mqtt-broker/install/installation-options/
-  - title: Installing TBMQ using Docker (Linux or Mac OS)
+  - title: Installing TBMQ PE using Docker (Linux or Mac OS)
     path: /docs/pe/mqtt-broker/install/docker/
-  - title: Installing TBMQ using Docker (Windows)
+  - title: Installing TBMQ PE using Docker (Windows)
     path: /docs/pe/mqtt-broker/install/docker-windows/
   - title: Cluster setup with Docker Compose
     path: /docs/pe/mqtt-broker/install/cluster/docker-compose-setup/

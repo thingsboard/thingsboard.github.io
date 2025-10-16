@@ -1,7 +1,7 @@
-bigheader: "TBMQ API reference"
-abstract: "Clients connectivity and server-side APIs."
+bigheader: "TBMQ PE API reference"
+abstract: "TBMQ PE Clients connectivity and server-side APIs."
 toc:
-- title: PE TBMQ API reference
+- title: TBMQ PE API reference
   path: /docs/pe/mqtt-broker/api/
 - title: REST APIs
   section:
