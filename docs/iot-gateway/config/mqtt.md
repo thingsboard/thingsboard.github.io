@@ -426,13 +426,7 @@ Example of the server configuration:
 
 This configuration settings provides fields for configuring connector performance and message reading/formatting speed:
 
-Select basic or advanced MQTT configuration:
-
-{% capture mqttattributerequestsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/workers-settings-section-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/workers-settings-section-advanced.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
+{% include /templates/iot-gateway/mqtt-connector/workers-settings-section-basic.md %}
 
 ## Additional information
 
@@ -440,9 +434,14 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/worker
 
 ### MQTT Parameter Version Differences
 
-1. **broker.cleanSession** - *MQTT 3.1, 3.11 only*; in *MQTT 5.0* it’s replaced by **broker.cleanStart** (on connect behavior) plus **broker.sessionExpiryInterval** (how long the session is kept after disconnect).
-2. **broker.sessionExpiryInterval** — *MQTT 5.0 only*; if it is `0` drop session on disconnect, if it is bigger than `0`keep it for that many seconds.
-3. **broker.cleanStart** — *MQTT 5.0 only*; controls what happens at connect: `true` discards any previous session, `false` tries to resume it.
+1. **broker.cleanSession** 
+*MQTT 3.1, 3.11 only*; in *MQTT 5.0* it’s replaced by **broker.cleanStart** (on connect behavior) plus **broker.sessionExpiryInterval** (how long the session is kept after disconnect).
+
+2. **broker.sessionExpiryInterval**
+*MQTT 5.0 only*; if it is `0` drop session on disconnect, if it is bigger than `0`keep it for that many seconds.
+
+3. **broker.cleanStart**
+*MQTT 5.0 only*; controls what happens at connect: `true` discards any previous session, `false` tries to resume it.
 
 ## Next steps
 
