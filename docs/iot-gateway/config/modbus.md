@@ -820,6 +820,7 @@ A list and description of the supported data types for reading/writing data.
 
 Explore guides related to main ThingsBoard features:
 
+- [How to connect Modbus device to ThingsBoard CE using ThingsBoard IoT Gateway](/docs/iot-gateway/guides/how-to-connect-modbus-device/)
 - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
 - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
