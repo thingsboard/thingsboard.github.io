@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: rule chain
-description: Forwards the message to the selected rule chain.
+description: Forwards incoming messages to a specified rule chain.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

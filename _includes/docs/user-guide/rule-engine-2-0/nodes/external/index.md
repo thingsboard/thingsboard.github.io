@@ -12,7 +12,7 @@ This allows rule chains to integrate with external infrastructure and services a
 - [azure iot hub](/docs/user-guide/rule-engine-2-0/nodes/external/azure-iot-hub) — Node will send full Message payload to the Azure IoT Hub device.
 - [gcp pubsub](/docs/user-guide/rule-engine-2-0/nodes/external/gcp-pubsub) — publishes incoming message data to [Google Cloud Pub/Sub](https://cloud.google.com/pubsub){:target="_blank"} topic and return response metadata in the outgoing message.
 - [kafka](/docs/user-guide/rule-engine-2-0/nodes/external/kafka) — publishes messages to [Apache Kafka](https://kafka.apache.org/){:target="_blank"} topic, sending the incoming message data as the record value.
-- [mqtt](/docs/user-guide/rule-engine-2-0/nodes/external/mqtt) — Publish incoming message payload to the topic of the configured MQTT broker with QoS AT_LEAST_ONCE.
+- [mqtt](/docs/user-guide/rule-engine-2-0/nodes/external/mqtt) — publishes incoming message data to an external MQTT broker using QoS 1 (at least once), with support for dynamic topic patterns, multiple authentication methods, and TLS/SSL encryption.
 - [rabbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — publishes messages to [RabbitMQ](https://www.rabbitmq.com/){:target="_blank"} exchanges, sending the incoming message data as the message body.
 - [rest api call](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call) — Invoke REST API calls to the external REST server.
 - [send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email) — Node sends incoming message using configured Mail Server.

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Rule Nodes
-description: Rule Engine 2.0 Nodes
+title: Rule nodes
+description: Rule Engine nodes
 
 ---
 
