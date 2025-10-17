@@ -10,7 +10,7 @@ cat > docker-compose-kafka.yml <<EOF && docker compose -f docker-compose-kafka.y
 services:
   kafka:
     restart: always
-    image: bitnamilegacy/kafka:3.8.1
+    image: bitnamilegacy/kafka:4.0
     ports:
       - 9092:9092 #to localhost:9092 from host machine
       - 9093 #for Kraft
