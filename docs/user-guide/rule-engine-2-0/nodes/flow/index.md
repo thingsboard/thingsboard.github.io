@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Rule Engine Flow nodes
-description: Rule Engine Flow Nodes
+title: Flow nodes
+description: Rule engine flow nodes
 hidetoc: "true"
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
