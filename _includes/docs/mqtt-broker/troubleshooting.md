@@ -11,7 +11,7 @@ you can analyze the overall state of the broker.
 
 TBMQ provides the ability to monitor whether the rate of producing messages to Kafka is faster than the rate of consuming and processing them. 
 In such cases, you will experience a growing latency for message processing. 
-To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/mqtt-broker/install/config/)).
+To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/{{docsPrefix}}mqtt-broker/install/config/)).
 
 Once Kafka consumer-stats are enabled, logs (see [Troubleshooting](#logs)) about offset lag for consumer groups will be generated.
 

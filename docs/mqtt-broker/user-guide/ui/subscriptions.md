@@ -8,18 +8,15 @@ subscription-session:
     image: /images/mqtt-broker/user-guide/ui/subscription-session-1.png
     title: 'Open Subscriptions page and click on the icon button "Session details".'
   1:
-    image: /images/mqtt-broker/user-guide/ui/subscription-session-2.png
-    title: 'Click on the tab "Subscriptions".'
-  2:
     image: /images/mqtt-broker/user-guide/ui/subscription-session-3.png
     title: 'Add, edit or remove subscriptions.'
-  3:
+  2:
     image: /images/mqtt-broker/user-guide/ui/subscription-session-4.png
     title: 'For this subscription, for example, we changed "Retain as Published" to true and "Subscription Identifier" to 1.'
-  4:
+  3:
     image: /images/mqtt-broker/user-guide/ui/subscription-session-5.png
     title: 'Click "Update" button to apply changes.'
-  5:
+  4:
     image: /images/mqtt-broker/user-guide/ui/subscription-session-6.png
     title: 'The subscription parameters "Retained as Published" and "Subscription ID" have been successfully updated.'
 

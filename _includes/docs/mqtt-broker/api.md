@@ -8,10 +8,10 @@ MQTT client API can be reviewed with the following pages:
 
 Server-side API is available as REST API:
 
-* [**Administration REST API**](/docs/mqtt-broker/rest-api) - The server-side core APIs.
-* [**Admin User Management**](/docs/mqtt-broker/user-management/) - The server-side APIs for User management.
-* [**MQTT Client Credentials Management**](/docs/mqtt-broker/mqtt-client-credentials-management/) - The server-side APIs for MQTT client credentials management.
-* [**Application Shared Subscriptions Management**](/docs/mqtt-broker/application-shared-subscription/) - The server-side APIs for Application Shared Subscriptions management.
+* [**Administration REST API**](/docs/{{docsPrefix}}mqtt-broker/rest-api) - The server-side core APIs.
+* [**Admin User Management**](/docs/{{docsPrefix}}mqtt-broker/user-management/) - The server-side APIs for User management.
+* [**MQTT Client Credentials Management**](/docs/{{docsPrefix}}mqtt-broker/mqtt-client-credentials-management/) - The server-side APIs for MQTT client credentials management.
+* [**Application Shared Subscriptions Management**](/docs/{{docsPrefix}}mqtt-broker/application-shared-subscription/) - The server-side APIs for Application Shared Subscriptions management.
 
 These APIs offer a comprehensive set of tools and functionalities to manage and interact with TBMQ, 
 empowering users to administer, control, and customize their MQTT-based applications effectively.

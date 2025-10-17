@@ -44,7 +44,7 @@ ws-connection-edit:
     title: 'Go to the WebSocket Client page and click on the arrow icon to expand the list of connections.'
   1:
     image: /images/mqtt-broker/user-guide/ui/ws-connection-edit-2.png
-    title: 'Click on the edit icon of the connection you wish to edit.'
+    title: 'Make changes and click Connect to save changes.'
 
 ws-connection-delete:
   0:

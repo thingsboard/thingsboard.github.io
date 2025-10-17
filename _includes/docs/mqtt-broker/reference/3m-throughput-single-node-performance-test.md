@@ -90,7 +90,7 @@ This finding indicates that TBMQ demonstrates substantial processing capacity, s
 
 ## How to repeat the test
 
-We recommend referring to our [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
+We recommend referring to our [installation guide](/docs/{{docsPrefix}}mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/3M-single-node-perf-test/k8s/aws#readme) containing the scripts and parameters used for running TBMQ during this performance test,
 enabling you to gain deeper insights into our configuration.
 For the practical execution of performance tests, we offer a dedicated [performance testing tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/3M-single-node-perf-test) 

@@ -20,8 +20,20 @@ Set-ExecutionPolicy Unrestricted
 
 * **Install TBMQ**
 
+{% if docsPrefix == null %}
+
 ```bash
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/windows/tbmq-install-and-run.ps1" `
 -OutFile ".\tbmq-install-and-run.ps1"; .\tbmq-install-and-run.ps1
 ```
 {: .copy-code}
+
+{% else %}
+
+```bash
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq-pe-docker-compose/{{ site.release.broker_branch }}/basic/windows/tbmq-install-and-run.ps1" `
+-OutFile ".\tbmq-install-and-run.ps1"; .\tbmq-install-and-run.ps1
+```
+{: .copy-code}
+
+{% endif %}

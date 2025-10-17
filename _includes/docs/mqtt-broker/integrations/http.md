@@ -19,9 +19,9 @@ TBMQ HTTP Integration enables forwarding MQTT messages to an external HTTP servi
 
 Before setting up the integration, ensure the following:
 
-- A running **[TBMQ](/docs/mqtt-broker/install/installation-options/)** instance.  
+- A running **[TBMQ](/docs/{{docsPrefix}}mqtt-broker/install/installation-options/)** instance.  
 - An external service ready to receive HTTP requests (e.g., **[ThingsBoard Cloud](/docs/paas/getting-started-guides/what-is-thingsboard-cloud/)**).  
-- A client capable of publishing MQTT messages (e.g., **[TBMQ WebSocket Client](/docs/mqtt-broker/user-guide/ui/websocket-client/)**).  
+- A client capable of publishing MQTT messages (e.g., **[TBMQ WebSocket Client](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/)**).  
 
 ## Create ThingsBoard Integration
 

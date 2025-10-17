@@ -2,7 +2,7 @@ TBMQ v2.1.0 introduces enhancements, including a new Integration Executor micros
 
 #### Add Integration Executor microservice
 
-This release adds support for external integrations via the new [Integration Executor](/docs/mqtt-broker/integrations/) microservice.
+This release adds support for external integrations via the new [Integration Executor](/docs/{{docsPrefix}}mqtt-broker/integrations/) microservice.
 
 <br>
 <details markdown="1">

@@ -26,11 +26,11 @@ kubectl create configmap tbmq-mqtts-config \
 * where **YOUR_PEM_FILENAME** is the name of your **server certificate file**.
 * where **YOUR_PEM_KEY_FILENAME** is the name of your **server certificate private key file**.
 
-Then, uncomment all sections in the ‘tb-broker.yml’ file that are marked with “Uncomment the following lines to enable two-way MQTTS”.
+Then, uncomment all sections in the ‘tbmq.yml’ file that are marked with “Uncomment the following lines to enable two-way MQTTS”.
 
 Execute command to apply changes:
 
 ```bash
-kubectl apply -f tb-broker.yml
+kubectl apply -f tbmq.yml
 ```
 {: .copy-code}

@@ -14,7 +14,7 @@ while effectively managing a throughput of **6M MQTT publish messages per second
 We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
 We have deployed the TBMQ cluster of 25 nodes in the [EKS](https://aws.amazon.com/eks/) 
 cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the connection to [RDS](https://aws.amazon.com/rds/) and [Kafka](https://kafka.apache.org/).
-For a comprehensive understanding of TBMQ architecture, please refer to the subsequent [page](/docs/mqtt-broker/architecture/).
+For a comprehensive understanding of TBMQ architecture, please refer to the subsequent [page](/docs/{{docsPrefix}}mqtt-broker/architecture/).
 RDS has been deployed as a single instance while the Kafka setup consists of 9 brokers distributed across 3 distinct Availability Zones (AZs).
 
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
@@ -53,7 +53,7 @@ This is because only the persistent clients categorized as `APPLICATION` are inc
 
 **Tip**: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) 
 and [period retention policy](https://www.baeldung.com/kafka-message-retention). 
-For detailed information regarding the configurations associated with each topic, please refer to the [configuration](/docs/mqtt-broker/install/config/) document.
+For detailed information regarding the configurations associated with each topic, please refer to the [configuration](/docs/{{docsPrefix}}mqtt-broker/install/config/) document.
 
 Every individual MQTT client establishes a distinct connection to the broker. 
 This approach ensures that each client operates independently and maintains its own dedicated connection for seamless communication with the broker.
@@ -229,7 +229,7 @@ where
 * _subscribers_ - number of subscriber clients in the group;
 * _topicFilter_ - respectively topic filter to subscribe to;
 * _expectedPublisherGroups_ - list of ids of publisher groups whose messages current subscribers will receive (parameter is used for debugging and statistics purposes);
-* _persistentSessionInfo_ - persistent info object containing [client type](/docs/mqtt-broker/user-guide/mqtt-client-type/);
+* _persistentSessionInfo_ - persistent info object containing [client type](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/);
 * _clientIdPrefix_ - client id prefix of subscribers.
 
 **Test run**
@@ -279,7 +279,7 @@ Here is the JMX monitoring for TBMQ. The broker nodes are operating steadily and
 
 ## How to repeat the tests
 
-Please refer to the subsequent [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy TBMQ on AWS.
+Please refer to the subsequent [installation guide](/docs/{{docsPrefix}}mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/100M/k8s/aws#readme) 
 containing the scripts and parameters employed for running TBMQ during this performance test.
 Lastly, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/100M) available for conducting performance tests, 

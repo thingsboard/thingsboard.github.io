@@ -27,4 +27,4 @@ By default, this variable is enabled, meaning that the validation process is act
 However, if you choose to disable this validation by setting the variable to _false_,
 the system will no longer create Kafka topics for shared subscriptions having topic filters with special characters, 
 resulting in a failure to create the corresponding topics.
-It's important to consider this when configuring your environment and handling client IDs with special characters.
+It's important to consider this when configuring your environment and handling topic filters with special characters.

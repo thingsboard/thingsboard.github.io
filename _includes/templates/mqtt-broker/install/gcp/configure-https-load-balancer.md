@@ -30,8 +30,8 @@ kubectl get ingress
 Once provisioned, you should see similar output:
 
 ```text
-NAME                           CLASS    HOSTS   ADDRESS         PORTS   AGE
-tb-broker-https-loadbalancer   gce      *       34.111.24.134   80      7m25s
+NAME                      CLASS    HOSTS   ADDRESS         PORTS   AGE
+tbmq-https-loadbalancer   gce      *       34.111.24.134   80      7m25s
 ```
 
 Now, **assign the domain name** you have used to the load balancer IP address (the one you see instead of 34.111.24.134 in the command output).
