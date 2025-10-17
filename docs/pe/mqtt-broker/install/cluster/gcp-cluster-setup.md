@@ -1,9 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-assignees:
-- dshvaika
-title: Cluster setup using GCP infrastructure
-description: TBMQ microservices setup with Kubernetes in GCP GKE
+title: Deploy TBMQ PE Cluster on GCP with Kubernetes
+description: Deploy TBMQ PE Cluster on GCP with Kubernetes
 
 ---
 

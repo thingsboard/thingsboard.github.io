@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Cluster setup using Helm Chart on EKS
+title: Deploy TBMQ Cluster on EKS with Helm
 description: TBMQ microservices setup with Helm on EKS
 
 ---

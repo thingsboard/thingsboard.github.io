@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Cluster setup using Docker Compose
-description: Cluster setup using Docker Compose
+title: Deploy TBMQ PE Cluster using Docker Compose
+description: Deploy TBMQ PE Cluster using Docker Compose
 
 ---
 

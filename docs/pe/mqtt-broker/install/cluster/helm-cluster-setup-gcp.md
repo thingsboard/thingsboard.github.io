@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Cluster setup using Helm Chart on GKE
-description: TBMQ microservices setup with Helm on GKE
+title: Deploy TBMQ PE Cluster on GKE with Helm
+description: Deploy TBMQ PE Cluster on GKE with Helm
 
 ---
 

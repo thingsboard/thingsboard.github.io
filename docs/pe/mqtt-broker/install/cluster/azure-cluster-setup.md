@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Cluster setup using Microsoft Azure infrastructure
-description: TBMQ microservices setup with Kubernetes in AKS
+title: Deploy TBMQ PE Cluster on Azure with Kubernetes
+description: Deploy TBMQ PE Cluster on Azure with Kubernetes
 
 ---
 

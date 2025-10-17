@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Cluster setup using Helm Chart on AKS
-description: TBMQ microservices setup with Helm on AKS
+title: Deploy TBMQ PE Cluster on AKS with Helm
+description: Deploy TBMQ PE Cluster on AKS with Helm
 
 ---
 

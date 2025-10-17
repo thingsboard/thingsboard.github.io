@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Cluster setup using AWS infrastructure
-description: TBMQ microservices setup with Kubernetes in AWS EKS
+title: Deploy TBMQ PE Cluster on AWS with Kubernetes
+description: Deploy TBMQ PE Cluster on AWS with Kubernetes
 
 tbmq-rds-set-up:
   0:

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-mqtt-broker
-title: Cluster setup using Minikube
-description: TBMQ cluster setup with Kubernetes and Minikube guide
+title: Deploy TBMQ PE Cluster on Minikube with Kubernetes
+description: Deploy TBMQ PE Cluster on Minikube with Kubernetes
 
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Installing TBMQ using Docker (Linux or Mac OS)
-description: Installing TBMQ using Docker (Linux or Mac OS)
+title: Install TBMQ with Docker (Linux or Mac OS)
+description: Install TBMQ with Docker (Linux or Mac OS)
 
 ---
 

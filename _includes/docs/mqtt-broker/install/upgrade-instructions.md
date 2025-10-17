@@ -3,27 +3,44 @@
 {:toc}
 
 {% if (docsPrefix == "pe/") %}
-    {% assign installationOptionsValue = "installation-options-pe-mqtt-broker-upgrade-instructions" %}
-{% else %}
-    {% assign installationOptionsValue = "installation-options-mqtt-broker-upgrade-instructions" %}
-{% endif %}
 
-<div class="installation-options">
-    <div class="install-options-header">
-       <div class="install-options-hero">
-          <div class="container">
-            <div class="install-options-hero-content">
-                <h1>TBMQ upgrade options</h1>
+  <div class="installation-options">
+      <div class="install-options-header">
+         <div class="install-options-hero">
+            <div class="container">
+              <div class="install-options-hero-content">
+                  <h1>TBMQ Professional Edition upgrade options</h1>
+              </div>
+              <div class="deployment-container one-line-deployment-container">
+                  <div class="deployment-div">
+                      {% include installation-options-cards.liquid installationOptions="installation-options-pe-mqtt-broker-upgrade-instructions" active=true %}
+                  </div>
+              </div>
             </div>
-            <div class="deployment-container one-line-deployment-container">
-                <div class="deployment-div">
-                    {% include installation-options-cards.liquid installationOptions=installationOptionsValue active=true %}
-                </div>
+         </div>
+      </div>
+  </div>
+
+{% else %}
+
+  <div class="installation-options">
+      <div class="install-options-header">
+         <div class="install-options-hero">
+            <div class="container">
+              <div class="install-options-hero-content">
+                  <h1>TBMQ upgrade options</h1>
+              </div>
+              <div class="deployment-container one-line-deployment-container">
+                  <div class="deployment-div">
+                      {% include installation-options-cards.liquid installationOptions="installation-options-mqtt-broker-upgrade-instructions" active=true %}
+                  </div>
+              </div>
             </div>
-          </div>
-       </div>
-    </div>
-</div>
+         </div>
+      </div>
+  </div>
+
+{% endif %}
 
 ### Upgrading to 2.2.0
 

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Installing TBMQ using Docker (Windows)
-description: Installing TBMQ using Docker (Windows)
+title: Install TBMQ with Docker (Windows)
+description: Install TBMQ with Docker (Windows)
 
 ---
 
