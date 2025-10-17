@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: Rule Nodes
+title: Rule nodes
 description: Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages.
 redirect_from:
     - "/docs/reference/plugins/messaging/"
