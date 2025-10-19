@@ -14,7 +14,7 @@ This allows rule chains to integrate with external infrastructure and services a
 - [kafka](/docs/user-guide/rule-engine-2-0/nodes/external/kafka) — publishes messages to [Apache Kafka](https://kafka.apache.org/){:target="_blank"} topic, sending the incoming message data as the record value.
 - [mqtt](/docs/user-guide/rule-engine-2-0/nodes/external/mqtt) — publishes incoming message data to an external MQTT broker using QoS 1 (at least once), with support for dynamic topic patterns, multiple authentication methods, and TLS/SSL encryption.
 - [rabbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — publishes messages to [RabbitMQ](https://www.rabbitmq.com/){:target="_blank"} exchanges, sending the incoming message data as the message body.
-- [rest api call](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call) — Invoke REST API calls to the external REST server.
+- [rest api call](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call) — sends HTTP requests to external endpoints using configurable methods, authentication, and proxy settings, returning the response as outgoing message data.
 - [send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email) — Node sends incoming message using configured Mail Server.
 - [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — The node can send notification to recipients group using the template.
 - [send sms](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms) — Node is able to construct SMS message based on the metadata fields from the incoming message and send it using AWS SNS or Twilio SMS providers.
