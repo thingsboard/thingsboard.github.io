@@ -85,23 +85,36 @@ export CASSANDRA_CLOUD_CLIENT_SECRET=6Rht+1oh8H_v4f3dbFiZ.KHBim6Rht+1oh8H_v4f3db
 Here an example how to set the `docker-compose.yml`
 
 ```yaml
-version: '3'
 services:
-  tb:
-    image: "thingsboard/tb-postgres:3.4.2"
-    network_mode: "host"
-    restart: "always"
+  thingsboard-ce:
+    restart: always
+    image: "thingsboard/tb-node:4.2.1"
+    ports:
+      - "8080:8080"
+      - "7070:7070"
+      - "1883:1883"
+      - "8883:8883"
+      - "5683-5688:5683-5688/udp"
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "100m"
+        max-file: "10"
     # replace /home/your_user/Downloads/ with your local path
     volumes:
       - /home/your_user/Downloads/secure-connect-thingsboard.zip:/etc/thingsboard/astra/secure-connect-thingsboard.zip
     environment:
+      TB_QUEUE_TYPE: kafka
+      TB_KAFKA_SERVERS: kafka:9092
       HTTP_BIND_PORT: "8080"
       DATABASE_TS_TYPE: "cassandra"
       # Cassandra on cloud
       CASSANDRA_CLOUD_SECURE_BUNDLE_PATH: "/etc/thingsboard/astra/secure-connect-thingsboard.zip"
       # dbadmin
-      CASSANDRA_CLOUD_CLIENT_ID: "KNpxZasfKNpxZasfKNpxZasf"
-      CASSANDRA_CLOUD_CLIENT_SECRET: "6Rht+1oh8H_v4f3dbFiZ.KHBim6Rht+1oh8H_v4f3dbFiZ.KHBim6Rht+1oh8H_v4f3dbFiZ.KHBim"
+      CASSANDRA_CLOUD_CLIENT_ID: "wmwIzkOcWAxvMTjYZBsMuLcA"
+      CASSANDRA_CLOUD_CLIENT_SECRET: "MC5Fxmk898Tt4auhnc64IADmnzZxoSDONI-q0X3ZZJdPH,Lj,..OLD+LUvkeCTPuk2v8cWgsP.SywMotL1uLNudG.NEZCwBI33c6KwET+A3p-Cv5-tHS18pgyjjMOrkH"
+      TB_SERVICE_ID: tb-ce-node
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
 ```
 {: .copy-code}
 
