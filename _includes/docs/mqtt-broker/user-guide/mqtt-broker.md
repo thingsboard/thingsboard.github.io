@@ -201,7 +201,7 @@ Selecting the right MQTT broker depends on your project’s scale, requirements,
 
 By weighing these factors, you can select a broker that not only meets your current needs but also scales with your system as it evolves.
 
-> <a href="/pricing/?section=tbmq" target="_blank" style="color: inherit; text-decoration: none;">TBMQ</a> is built to meet all these criteria — 
+> <a href="/pricing/?section=tbmq-options" target="_blank" style="color: inherit; text-decoration: none;">TBMQ</a> is built to meet all these criteria — 
 > it offers enterprise-level scalability, clustering, persistence, strong security, and deep integration options while remaining easy to operate and cost-efficient. 
 > This makes it a strong choice for both open-source adopters and enterprises looking for a production-ready MQTT platform.
 

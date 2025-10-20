@@ -19,8 +19,5 @@ toc:
     path: /docs/pe/mqtt-broker/install/cluster/gcp-cluster-setup/
   - title: Cluster using Helm
     path: /docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-options/
-    comingSoon: true
-  - title: Building from sources
-    path: /docs/pe/mqtt-broker/install/building-from-source/
   - title: Upgrade instructions
     path: /docs/pe/mqtt-broker/install/upgrade-instructions/

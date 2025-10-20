@@ -6,4 +6,5 @@ description: Install TBMQ PE with Docker (Linux or Mac OS)
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% assign tbmqSuffix = "PE" %}
 {% include docs/mqtt-broker/install/docker.md %}

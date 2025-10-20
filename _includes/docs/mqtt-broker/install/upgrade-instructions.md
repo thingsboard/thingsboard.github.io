@@ -42,6 +42,50 @@
 
 {% endif %}
 
+{% if docsPrefix == "pe/" %}
+
+### Upgrade from TBMQ CE to TBMQ PE (v2.2.0)
+
+{% capture difference %}
+**NOTE**:
+<br>
+These steps are applicable for 2.2.0 TBMQ CE version. In order to upgrade to TBMQ PE 2.2.0 you need to [upgrade to 2.2.0 TBMQ CE first](/docs/mqtt-broker/install/upgrade-instructions/#upgrading-to-220).
+**Notice the Bitnami Images information.**
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### Notice: Third-Party Component Updates in TBMQ PE v2.2.0
+
+We’d like to inform you about several **third-party component updates** introduced in **TBMQ Professional Edition (PE) v2.2.0** compared to the Community Edition (CE).
+These changes improve performance, stability, and align TBMQ with officially supported open-source technologies.
+
+These updates follow the modernization plan outlined here:
+[Bitnami Image Migration](https://github.com/thingsboard/thingsboard-ce-k8s/blob/master/BITNAMI-IMAGE-MIGRATION.md#3-long-term-production-solution).
+
+#### What’s Changed
+
+| Component          | TBMQ CE v2.2.0              | TBMQ PE v2.2.0       | What Changed & Why                                                                                                                                                                                                                                                      |
+| ------------------ | --------------------------- | -------------------- |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **PostgreSQL**     | `postgres:16`               | `postgres:17`        | Upgraded to a newer major version with improved performance, reliability, and better resource efficiency. Existing data volumes remain fully compatible.                                                                                                                |
+| **Kafka**          | `bitnamilegacy/kafka:3.7.0` | `apache/kafka:4.0.0` | Updated according to the plan to migrate from Bitnami to official open-source images. New volumes were introduced and all of them are mapped to new paths required by the Apache Kafka image.                                                                           |
+| **Redis → Valkey** | `bitnamilegacy/redis:7.2.5` | `valkey/valkey:8.0`  | Updated according to the plan to migrate from Bitnami to open-source images. Redis was replaced by Valkey (a community-driven fork of Redis 7). A new volume (`tbmq-valkey-data`) was introduced and mapped to the appropriate data directory used by the Valkey image. |
+
+#### Important Notes
+
+Proper migration steps are required to move data from the old **Kafka** and **Redis** volumes to the new ones used by **Apache Kafka** and **Valkey**.
+These steps are **not covered** by the standard upgrade script.
+
+As an easier alternative, you can start **from scratch** for Kafka and Valkey (using new volumes) while preserving only your existing **PostgreSQL data**.
+Then, run the upgrade script to update the database schema from **CE** to **PE**.
+
+This approach ensures a clean, compatible environment with minimal manual intervention.
+
+---
+
+Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the cards](/docs/{{docsPrefix}}mqtt-broker/install/upgrade-instructions/)
+on top of the page.
+
+{% else %}
 ### Upgrading to 2.2.0
 
 {% capture difference %}
@@ -281,6 +325,8 @@ The _fromVersion_ can be set to either **1.0.0** or **1.0.1** values.
 
 Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the cards](/docs/{{docsPrefix}}mqtt-broker/install/upgrade-instructions/)
 on top of the page.
+
+{% endif %}
 
 ### Next steps
 
