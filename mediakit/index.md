@@ -16,23 +16,23 @@ description: ThingsBoard Media Kit
     <p>Do not modify the logo colors and use only the logos provided you by ThingsBoard.</p>
     <p class="mb">Official ThingsBoard logos are trademarks of ThingsBoard, inc.</p>
     <div class="logos-images">
-        <div><img src="/images/thingsboard_logo_white.svg" alt="White Thingsboard logo"></div>
-        <div><img src="/images/thingsboard_logo_blue_media.svg" alt="Blue Thingsboard logo"></div>
-        <div><img src="/images/thingsboard_logo_black.svg" alt="Black Thingsboard logo"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_white.svg" alt="White Thingsboard logo"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_blue_media.svg" alt="Blue Thingsboard logo"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_black.svg" alt="Black Thingsboard logo"></div>
     </div>
     <div class="logos-images">
-        <div><img src="/images/thingsboard_logo_white_l.svg" alt="White Thingsboard logo"></div>
-        <div><img src="/images/thingsboard_logo_blue_l.svg" alt="Blue Thingsboard logo"></div>
-        <div><img src="/images/thingsboard_logo_black_l.svg" alt="Black Thingsboard logo"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_white_l.svg" alt="White Thingsboard logo"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_blue_l.svg" alt="Blue Thingsboard logo"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_black_l.svg" alt="Black Thingsboard logo"></div>
     </div>
     <h4>How to use our logo</h4>
     <p>Always provide a protected area of isolation around the logo, as illustrated in the diagram. </p>
     <p class="mb">This ensures the logo remains prominent and legible without interference from other design elements.</p>
     <div class="logos-examples">
-        <div><img src="/images/thingsboard_logo_example.svg" alt="Thingsboard logo padding example"></div>
-        <div><img src="/images/thingsboard_logo_example_sm.svg" alt="Small Thingsboard logo padding example"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_example.svg" alt="Thingsboard logo padding example"></div>
+        <div><img src="https://img.thingsboard.io/thingsboard_logo_example_sm.svg" alt="Small Thingsboard logo padding example"></div>
     </div>
-    <a class="download" href="ThingsBoard_Logos.zip">Download logo kit <img src="/images/download-icon.svg" alt=""></a>
+    <a class="download" href="ThingsBoard_Logos.zip">Download logo kit <img src="https://img.thingsboard.io/download-icon.svg" alt=""></a>
 </div>
 <div class="thingsboard-colors">
     <h3>Brand colors</h3>
@@ -43,17 +43,17 @@ description: ThingsBoard Media Kit
         <div class="color-block">
             <div class="color">CE</div>
             <div class="color-values">
-                <p><span>HEX</span>#305680 <img src="/images/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
-                <p><span>RGB</span>48, 86, 128 <img src="/images/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
-                <p><span>CMYK</span>62.5, 32.81, 0, 49.8 <img src="/images/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
+                <p><span>HEX</span>#305680 <img src="https://img.thingsboard.io/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
+                <p><span>RGB</span>48, 86, 128 <img src="https://img.thingsboard.io/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
+                <p><span>CMYK</span>62.5, 32.81, 0, 49.8 <img src="https://img.thingsboard.io/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
             </div>
         </div>
         <div class="color-block">
             <div class="color pe">PE</div>
             <div class="color-values">
-                <p><span>HEX</span>#00695C <img src="/images/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
-                <p><span>RGB</span>0, 105, 92 <img src="/images/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
-                <p><span>CMYK</span>100, 0, 12.38, 58.82 <img src="/images/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
+                <p><span>HEX</span>#00695C <img src="https://img.thingsboard.io/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
+                <p><span>RGB</span>0, 105, 92 <img src="https://img.thingsboard.io/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
+                <p><span>CMYK</span>100, 0, 12.38, 58.82 <img src="https://img.thingsboard.io/copy-icon.svg" alt="Copy icon"><span>Copy value</span></p>
             </div>
         </div>
     </div>
@@ -65,14 +65,14 @@ description: ThingsBoard Media Kit
             <h4>To identify ThingsBoard platform and link to website</h4>
             <p>You needn't ask us for permission to use the ThingsBoard logo on your own website solely as a hyperlink to <a target="_blank" href="https://thingsboard.io">thingsboard.io</a>  or to an appropriate ThingsBoard project, or in other materials, such as presentations and slides, solely as a means to refer to the ThingsBoard itself. All other uses of the ThingsBoard logo must be <a href="https://www.apache.org/foundation/marks/contact#other">approved in writing</a> by the ThingsBoard, inc.</p>
         </div>
-        <img src="/images/tb-trademarks-1.webp" title="To identify ThingsBoard platform and link to website" alt="To identify ThingsBoard platform and link to website" width="450" height="241">
+        <img src="https://img.thingsboard.io/tb-trademarks-1.webp" title="To identify ThingsBoard platform and link to website" alt="To identify ThingsBoard platform and link to website" width="450" height="241">
     </div>
     <div class="block">
         <div class="text">
             <h4>In software product branding</h4>
             <p>In general, you may not use ThingsBoard trademarks in any software product branding for software products except "Powered By ThingsBoard" in the dashboard footer. For example, it is not permitted to name a product either "MyCompany distribution of ThingsBoard", "ThingsBoard MyCompany Edition", or any similar kind of name. You may contact us to get a written permission to use ThingsBoard trademarks in your software product branding.</p>
         </div>
-        <img src="/images/tb-trademarks-2.webp" title="In software product branding" alt="In software product branding" width="450" height="241">
+        <img src="https://img.thingsboard.io/tb-trademarks-2.webp" title="In software product branding" alt="In software product branding" width="450" height="241">
     </div>
     <div class="block">
         <div class="text">
@@ -83,7 +83,7 @@ description: ThingsBoard Media Kit
                 <li><p>Company names that may be associated in customer's minds with ThingsBoard or its trademarked project software.</p></li>
             </ul>
         </div>
-        <img src="/images/tb-trademarks-3.webp" title="Uses of ThingsBoard trademarks" alt="Uses of ThingsBoard trademarks" width="450" height="241">
+        <img src="https://img.thingsboard.io/tb-trademarks-3.webp" title="Uses of ThingsBoard trademarks" alt="Uses of ThingsBoard trademarks" width="450" height="241">
     </div>
 </div>
 <div class="contact-us-banner">
@@ -96,7 +96,7 @@ description: ThingsBoard Media Kit
             <a class="gtm_button" href="/case-studies/">Case studies</a>
         </div>
     </div>
-    <img src="/images/logo-fade.svg" width="380" height="267" alt="Thingsboard icon">
+    <img src="https://img.thingsboard.io/logo-fade.svg" width="380" height="267" alt="Thingsboard icon">
 </div>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
