@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: send to slack
-description: Creates a message based on the incoming data and metadata, and sends it to Slack public channel, private channel or direct message.
+description: Sends messages to Slack public channels, private channels, or direct messages via Slack API.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
