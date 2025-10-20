@@ -16,7 +16,7 @@ This allows rule chains to integrate with external infrastructure and services a
 - [rabbitmq](/docs/user-guide/rule-engine-2-0/nodes/external/rabbitmq) — publishes messages to [RabbitMQ](https://www.rabbitmq.com/){:target="_blank"} exchanges, sending the incoming message data as the message body.
 - [rest api call](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call) — sends HTTP requests to external endpoints using configurable methods, authentication, and proxy settings, returning the response as outgoing message data.
 - [send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email) — sends email messages via SMTP server with support for TLS encryption and proxy configuration.
-- [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — The node can send notification to recipients group using the template.
+- [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — sends notifications to specified recipients using notification templates through the [notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
 - [send sms](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms) — Node is able to construct SMS message based on the metadata fields from the incoming message and send it using AWS SNS or Twilio SMS providers.
 - [send to slack](/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack) — The node create a message based on the incoming data and metadata, and send it via Slack to a public channel, private channel or direct message.
 - <span class="item-pe product-label-padding">[twilio sms](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms)</span> — Sends incoming message payload as SMS message via Twilio service.
