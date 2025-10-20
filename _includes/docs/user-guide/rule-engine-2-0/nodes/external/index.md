@@ -19,5 +19,5 @@ This allows rule chains to integrate with external infrastructure and services a
 - [send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification) — sends notifications to specified recipients using notification templates through the [notification center](/docs/{{docsPrefix}}user-guide/notifications/){:target="_blank"}.
 - [send sms](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms) — sends SMS messages to specified phone numbers via AWS SNS, Twilio, or SMPP providers with templatization support.
 - [send to slack](/docs/user-guide/rule-engine-2-0/nodes/external/send-to-slack) — sends messages to [Slack](https://slack.com/){:target="_blank"} public channels, private channels, or direct messages via Slack API.
-- <span class="item-pe product-label-padding">[twilio sms](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms)</span> — Sends incoming message payload as SMS message via Twilio service.
+- <span class="item-pe product-label-padding">[twilio sms](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-sms)</span> — sends incoming message data as SMS to specified phone numbers via [Twilio](https://www.twilio.com/messaging/channels/sms){:target="_blank"}.
 - <span class="item-pe product-label-padding">[twilio voice](/docs/user-guide/rule-engine-2-0/nodes/external/twilio-voice)</span> — Sends voice message via Twilio.
