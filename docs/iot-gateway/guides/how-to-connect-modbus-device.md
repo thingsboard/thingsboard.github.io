@@ -78,7 +78,6 @@ To up and run the Modbus Demo Device, you can use Docker and the following comma
 ```bash
 docker run -it -p 5021:5021 thingsboard/tb-gw-modbus-server:latest
 ```
-
 {:.copy-code}
 
 The server will be available at `0.0.0.0:5021`.
@@ -164,13 +163,6 @@ created gateway. To create a connector, follow these steps:
         "type": "tcp",
         "method": "socket",
         "timeout": 35,
-        "baudrate": 19200,
-        "stopbits": 1,
-        "bytesize": 8,
-        "parity": "N",
-        "strict": true,
-        "repack": false,
-        "delay_between_requests_ms": 0,
         "byteOrder": "BIG",
         "wordOrder": "LITTLE",
         "retries": true,
@@ -179,6 +171,7 @@ created gateway. To create a connector, follow these steps:
         "pollPeriod": 1000,
         "unitId": 1,
         "deviceName": "Modbus PLC",
+        "deviceType": "default",
         "connectAttemptTimeMs": 5000,
         "connectAttemptCount": 5,
         "waitAfterFailedAttemptsMs": 300000,
