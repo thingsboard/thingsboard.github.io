@@ -64,8 +64,7 @@ Attach files to provide additional context to the AI model. Resources are sent a
 
 #### Adding resources
 
-Click the **AI resources** field and select one or more files from your resource library, or click **Create new** to upload new files. Resources must be of type **General** and are
-validated when the node is initialized.
+Click the **AI resources** field and select one or more files from your resource library, or click **Create new** to upload new files. Resources must be of type **General**.
 
 #### Supported resource types
 
@@ -81,6 +80,12 @@ To include attached resources in the AI request, the node must convert them to o
 **Note**: If a resource has a media type not listed in the table above, the node will attempt to decode its content as UTF-8 text.
 {% endcapture %}
 {% include templates/info-banner.md content=resource_fallback_note %}
+
+{% capture resource_support_note %}
+**Note**: The actual resource types supported (files, images, PDFs, etc.) depend on the specific AI model integration being used. 
+While the node can convert resources to the content types listed above, not all model providers support all content types.
+{% endcapture %}
+{% include templates/info-banner.md content=resource_support_note %}
 
 ### Response format
 
@@ -268,7 +273,7 @@ Consider the typical response time of your chosen model when configuring this va
       format.
 3. The chat request is sent to the configured AI model with the specified timeout.
 4. When the AI responds:
-    - The response text is validated to ensure it is a valid JSON object (if not, it is wrapped in a JSON object with a "response" key).
+    - The response text is validated to ensure it is a valid JSON object (if not, it is wrapped in a JSON object with a `response` key).
     - The response replaces the incoming message data (or is sent as a new message if force acknowledgement is enabled).
     - The originator, message type, and metadata from the incoming message remain unchanged.
 5. The resulting message is forwarded via the `Success` connection.

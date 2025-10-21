@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: mqtt
-description: Publishes messages to MQTT broker with QoS 1 (at least once).
+description: Publishes incoming message data to an external MQTT broker using QoS 1 (at least once), with support for dynamic topic patterns, multiple authentication methods, and TLS/SSL encryption.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
