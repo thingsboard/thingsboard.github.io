@@ -12,7 +12,7 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 ## Prerequisites
 
-To run TBMQ {{tbmqSuffix}} on a single machine you will need at least 2Gb of RAM.
+To run TBMQ {{tbmqSuffix}} on a single machine, you will need at least 2Gb of RAM.
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
 

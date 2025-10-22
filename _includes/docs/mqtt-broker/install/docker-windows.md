@@ -1,34 +1,79 @@
+{% if docsPrefix == null %}
+{% assign cacheUrl = "redis_url" %}
+{% else %}
+{% assign cacheUrl = "valkey_url" %}
+{% endif %}
+
 * TOC
 {:toc}
 
-This guide will help you install and start standalone TBMQ using Docker on Windows.
+This guide will help you install and start standalone TBMQ {{tbmqSuffix}} using Docker on Windows.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/{{docsPrefix}}mqtt-broker/install/cluster/docker-compose-setup/).
 
 ## Prerequisites
 
-To run TBMQ on a single machine you will need at least 2Gb of RAM.
+To run TBMQ {{tbmqSuffix}} on a single machine, you will need at least 2Gb of RAM.
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
 
+{% if docsPrefix == "pe/" %}
+## Get the license key
+
+Before proceeding, make sure you’ve selected your subscription plan or chosen to purchase a perpetual license.
+If you haven’t done this yet, please visit the [Pricing page](/pricing/?section=tbmq-options){: target="_blank"} to compare available options 
+and obtain your license key.
+
+> **Note:** Throughout this guide, we’ll refer to your license key as **YOUR_LICENSE_KEY_HERE**.
+
+{% endif %}
+
 ## Installation
 
-Execute the following commands to download the script that will install and start TBMQ:
+Execute the following commands to download the script that will install and start TBMQ {{tbmqSuffix}}:
 
 {% include templates/mqtt-broker/install/windows/windows-install.md %}
 
 The script downloads the _docker-compose.yml_ file, creates necessary docker volumes, installs the database for TBMQ, and starts TBMQ.
-Key configuration points for TBMQ in docker-compose file:
+Key configuration points for TBMQ in the docker-compose file:
 
+{% if docsPrefix == "pe/" %}
+- `TBMQ_LICENSE_SECRET: YOUR_LICENSE_KEY_HERE` - placeholder for your license secret obtained earlier;
+{% endif %}
 - `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083;
 - `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883;
 - `8084:8084` - connect local port 8084 to exposed internal MQTT over WebSockets port 8084;
+{% if docsPrefix == null %}
 - `tbmq-redis-data:/bitnami/redis/data` - maps the `tbmq-redis-data` volume to TBMQ Redis database data directory;
+{% else %}
+- `tbmq-valkey-data:/data` - maps the `tbmq-valkey-data` volume to TBMQ Valkey database data directory;
+{% endif %}
 - `tbmq-postgres-data:/var/lib/postgresql/data` - maps the `tbmq-postgres-data` volume to TBMQ Postgres database data directory;
+{% if docsPrefix == null %}
 - `tbmq-kafka-data:/bitnami/kafka` - maps the `tbmq-kafka-data` volume to Kafka data directory;
+{% else %}
+- `tbmq-kafka-data:/var/lib/kafka/data` - maps the `tbmq-kafka-data` volume to Kafka data directory;
+{% endif %}
 - `tbmq-logs:/var/log/thingsboard-mqtt-broker` - maps the `tbmq-logs` volume to TBMQ logs directory;
 - `tbmq-data:/data` - maps the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed;
 - `tbmq` - friendly local name of this machine;
-- `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure;
+- `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure.
+
+{% if docsPrefix == "pe/" %}
+
+{% capture replace_tbmq_license_secret %}
+Update your `docker-compose.yml` file with the license secret you obtained earlier.
+Open the file, find the **TBMQ_LICENSE_SECRET** environment variable, 
+and replace **YOUR_LICENSE_KEY_HERE** with your actual license secret.
+After updating the file, restart TBMQ by running the following command.
+{% endcapture %}
+{% include templates/warn-banner.md content=replace_tbmq_license_secret %}
+
+```shell
+.\tbmq-install-and-run.ps1
+```
+{: .copy-code}
+
+{% endif %}
 
 **Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
 
@@ -79,16 +124,19 @@ docker compose start
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade. 
-For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/msa/tbmq/configs/README.md).
+{% if docsPrefix == null %} For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/msa/tbmq/configs/README.md).
+{% else %} For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq-pe-docker-compose/blob/master/basic/README.md).
+{% endif %}
 
+{% if docsPrefix == null %}
 ### Upgrade to 2.2.0
 
 In this release, the MQTT authentication mechanism was migrated from YAML/env configuration into the database.
-During upgrade, TBMQ needs to know which authentication providers are enabled in your deployment.
+During upgrade, TBMQ needs to know which authentication providers are enabled in your deployment. 
 This is done using environment variables passed to the **upgrade container**.
 
 The upgrade script therefore requires a file named **`.tbmq-upgrade.env`** in the same directory as `docker-compose.yml`.
-This file is **used only during upgrade** to create the default auth providers.
+This file is **used only during upgrade** to create the default auth providers. 
 Make sure the values match what you already run in your `tbmq` service (`docker-compose.yml → environment:`).
 
 **Create the env file (Windows PowerShell)**
@@ -105,7 +153,7 @@ SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT=false
 {: .copy-code}
 
 > **Tips**
-> If you use only Basic authentication, set `SECURITY_MQTT_SSL_ENABLED=false`.
+> If you use only Basic authentication, set `SECURITY_MQTT_SSL_ENABLED=false`. 
 > If you use only X.509 authentication, set `SECURITY_MQTT_BASIC_ENABLED=false` and `SECURITY_MQTT_SSL_ENABLED=true`.
 
 **Notes**
@@ -255,17 +303,52 @@ Once this is done, run the script to apply the changes:
 This will restart TBMQ with Redis enabled. Afterward, you can proceed with the [upgrade process](#run-upgrade).
 Please [contact us](https://github.com/thingsboard/tbmq/issues), so we can answer any questions and provide our help if needed.
 
+{% else %}
+
+### Upgrade from TBMQ CE to TBMQ PE (v2.2.0)
+
+To upgrade your existing **TBMQ Community Edition (CE)** to **TBMQ Professional Edition (PE)**, ensure you are running the latest **TBMQ CE {{site.release.broker_full_ver}}** version before starting the process.
+
+The upgrade procedure requires a file named **`.tbmq-upgrade.env`** located in the same directory as your `docker-compose.yml`.
+This file is **only used during the upgrade**.
+
+**Create the `.tbmq-upgrade.env` file (Windows PowerShell)**
+
+From the directory containing `docker-compose.yml`, run:
+
+```bash
+@'
+JAVA_TOOL_OPTIONS=-Dinstall.upgrade.from_version=ce
+'@ | Set-Content -Path .tbmq-upgrade.env -Encoding UTF8
+```
+{: .copy-code}
+
+**Important Notes**
+
+* **Required:** The upgrade script will fail if `.tbmq-upgrade.env` is missing.
+* After creating the file, proceed with the [upgrade process](#run-upgrade).
+
+{% endif %}
+
 ### Run upgrade
 
 In order to update to the latest version, execute the following commands:
 
+{% if docsPrefix == null %}
 ```shell
 Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/windows/tbmq-upgrade.ps1" `
 -OutFile ".\tbmq-upgrade.ps1"; .\tbmq-upgrade.ps1
 ```
 {: .copy-code}
+{% else %}
+```shell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq-pe-docker-compose/{{ site.release.broker_branch }}/basic/windows/tbmq-upgrade.ps1" `
+-OutFile ".\tbmq-upgrade.ps1"; .\tbmq-upgrade.ps1
+```
+{: .copy-code}
+{% endif %}
 
-**NOTE**: replace `redis_url`, `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
+**NOTE**: replace `{{cacheUrl}}`, `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
 
 {% include templates/mqtt-broker/upgrade/upgrade-to-custom-release.md %}
 
