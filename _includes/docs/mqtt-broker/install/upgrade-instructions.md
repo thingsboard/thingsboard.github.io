@@ -97,6 +97,14 @@ Navigate to the appropriate documentation to proceed with the next upgrade steps
 on top of the page.
 
 {% else %}
+
+{% if docsPrefix != 'pe/' %}
+{% capture difference %}
+Interested in the **TBMQ Professional Edition**? Upgrade your TBMQ CE to [TBMQ PE](/docs/pe/mqtt-broker/install/upgrade-instructions/){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+{% endif %}
+
 ### Upgrading to 2.2.0
 
 {% capture difference %}
