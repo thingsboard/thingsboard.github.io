@@ -3,7 +3,7 @@
 {:toc}
 
 
-This guide will help you set up TBMQ in cluster mode using Docker Compose.
+This guide will help you set up TBMQ {{tbmqSuffix}} in cluster mode using Docker Compose.
 
 ## Prerequisites
 
@@ -11,40 +11,84 @@ This guide will help you set up TBMQ in cluster mode using Docker Compose.
 
 {% include templates/install/docker-install-note.md %}
 
-## Step 1. Pull TBMQ Image
+## Pull TBMQ {{tbmqSuffix}} Image
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+Make sure you have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using the command line.
 
+{% if docsPrefix == null %}
 ```bash
 docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
+docker pull thingsboard/tbmq-integration-executor:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
+{% else %}
+```bash
+docker pull thingsboard/tbmq-pe-node:{{ site.release.pe_broker_full_ver }}
+docker pull thingsboard/tbmq-pe-integration-executor:{{ site.release.pe_broker_full_ver }}
+```
+{: .copy-code}
+{% endif %}
 
-## Step 2. Clone TBMQ repository
+{% if docsPrefix == null %}
+## Clone TBMQ repository
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
 cd tbmq/docker
 ```
 {: .copy-code}
+{% else %}
+## Clone TBMQ PE Docker Compose repository
 
-## Step 3. Installation
+```bash
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq-pe-docker-compose.git
+cd tbmq-pe-docker-compose/cluster
+```
+{: .copy-code}
+{% endif %}
 
-Execute the following command to create necessary volumes for all the services and to update the haproxy config in the created volume.
+{% if docsPrefix == "pe/" %}
+## Get the license key
+
+Before proceeding, make sure you’ve selected your subscription plan or chosen to purchase a perpetual license.
+If you haven’t done this yet, please visit the [Pricing page](/pricing/?section=tbmq-options){: target="_blank"} to compare available options
+and obtain your license key.
+
+> **Note:** Throughout this guide, we’ll refer to your license key as **YOUR_LICENSE_KEY_HERE**.
+
+## Configure the license key
+
+```bash
+nano tbmq.env
+```
+{: .copy-code}
+
+and put the license secret parameter instead of "YOUR_LICENSE_KEY_HERE":
+
+```text
+# License info
+TBMQ_LICENSE_SECRET=YOUR_LICENSE_KEY_HERE
+```
+
+{% endif %}
+
+## Installation
+
+Execute the following command to create the necessary volumes for all the services and to update the haproxy config in the created volume.
 
 ```bash
 ./scripts/docker-create-volumes.sh
 ```
 {: .copy-code}
 
-Execute the following command to run installation:
+Execute the following command to run the installation:
 
 ```bash
 ./scripts/docker-install-tbmq.sh
 ```
 {: .copy-code}
 
-## Step 4. Running
+## Running
 
 Execute the following command to start services:
 
@@ -58,10 +102,10 @@ in you browser (e.g. **http://localhost**) and connect clients using MQTT protoc
 
 {% include templates/mqtt-broker/login.md %}
 
-## Step 5. Logs, stop and start commands
+## Logs, stop and start commands
 
-In case of any issues you can examine service logs for errors.
-For example to see TBMQ logs execute the following command:
+In case of any issues, you can examine service logs for errors.
+For example, to see TBMQ logs, execute the following command:
 
 ```bash
 docker compose logs -f tbmq1
@@ -73,11 +117,14 @@ Or use the following command to see the state of all the containers.
 docker compose ps
 ```
 {: .copy-code}
-Use next command to inspect the logs of all running services.
+
+Use the next command to inspect the logs of all running services.
+
 ```bash
 docker compose logs -f
 ```
 {: .copy-code}
+
 See [docker compose logs](https://docs.docker.com/compose/reference/logs/) command reference for more details.
 
 Execute the following command to stop services:
@@ -103,7 +150,7 @@ In case you want to remove docker volumes for all the containers, execute the fo
 {: .copy-code}
 
 It could be useful to update logs (enable DEBUG/TRACE logs) in runtime or change TBMQ or Haproxy configs. In order to do
-this you need to make changes, for example, to the
+this, you need to make changes, for example, to the
 _haproxy.cfg_ or _logback.xml_ file.
 Afterward, execute the next command to apply the changes for the container:
 
@@ -112,7 +159,7 @@ Afterward, execute the next command to apply the changes for the container:
 ```
 {: .copy-code}
 
-To reload HAProxy's configuration without restarting the Docker container you can send the HUP signal to this process (PID 1):
+To reload HAProxy's configuration without restarting the Docker container, you can send the HUP signal to this process (PID 1):
 
 ```
 docker exec -it haproxy-certbot sh -c "kill -HUP 1"
@@ -126,7 +173,11 @@ docker exec -it haproxy-certbot sh -c "kill -HUP 1"
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
-For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/docker/backup-restore/README.md).
+{% if docsPrefix == null %} For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/docker/backup-restore/README.md).
+{% else %} For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq-pe-docker-compose/blob/master/cluster/backup-restore/README.md).
+{% endif %}
+
+{% if docsPrefix == null %}
 
 ### Upgrade to 2.2.0
 
@@ -153,6 +204,27 @@ Once the file is prepared and the values verified, proceed with the [upgrade pro
 
 {% include templates/mqtt-broker/upgrade/update-to-2.1.0-release-docker-cluster.md %}
 
+{% else %}
+
+### Upgrade from TBMQ CE to TBMQ PE (v2.2.0)
+
+To upgrade your existing **TBMQ Community Edition (CE)** to **TBMQ Professional Edition (PE)**, ensure you are running the latest **TBMQ CE {{site.release.broker_full_ver}}** version before starting the process.
+Merge your current configuration with the latest [TBMQ PE Docker Compose scripts](https://github.com/thingsboard/tbmq-pe-docker-compose/tree/{{ site.release.broker_branch }}).
+Do not forget to [configure the license key](#configure-the-license-key).
+
+Run the following commands, including the upgrade script to migrate PostgreSQL database data from CE to PE:
+
+```bash
+./scripts/docker-stop-services.sh
+./scripts/docker-upgrade-tbmq.sh --fromVersion=ce
+./scripts/docker-start-services.sh
+```
+{: .copy-code}
+
+{% endif %}
+
+{% if docsPrefix == null %}
+
 ### Run upgrade
 
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
@@ -176,9 +248,11 @@ tbmq-upgrade-without-from-version,Since v2.1.0,shell,resources/upgrade-options/d
 tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version.md,/docs/{{docsPrefix}}mqtt-broker/install/cluster/resources/upgrade-options/docker-compose-upgrade-tbmq-with-from-version.md{% endcapture %}
 {% include tabs.html %}
 
+{% endif %}
+
 ## Generate certificate for HTTPS
 
-We are using HAproxy for proxying traffic to containers and for web UI by default we are using 80 and 443 ports. 
+We are using HAproxy for proxying traffic to containers and for web UI. By default, we are using 80 and 443 ports. 
 For using HTTPS with a valid certificate, execute these commands:
 
 ```bash

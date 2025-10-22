@@ -6,4 +6,5 @@ description: Deploy TBMQ PE Cluster using Docker Compose
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% assign tbmqSuffix = "PE" %}
 {% include docs/mqtt-broker/install/cluster/docker-compose-setup.md %}

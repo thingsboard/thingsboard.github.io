@@ -308,6 +308,7 @@ Please [contact us](https://github.com/thingsboard/tbmq/issues), so we can answe
 ### Upgrade from TBMQ CE to TBMQ PE (v2.2.0)
 
 To upgrade your existing **TBMQ Community Edition (CE)** to **TBMQ Professional Edition (PE)**, ensure you are running the latest **TBMQ CE {{site.release.broker_full_ver}}** version before starting the process.
+Do not forget to [configure the license key](#get-the-license-key).
 
 The upgrade procedure requires a file named **`.tbmq-upgrade.env`** located in the same directory as your `docker-compose.yml`.
 This file is **only used during the upgrade**.
