@@ -76,15 +76,26 @@ port, mqtt version protocol, client id.
 
 ### Security
 
-Subsection "Security" provides configuration for client authorization at MQTT Broker.
+MQTT broker connections offer three distinct security types: [Anonymous](/docs/iot-gateway/config/mqtt/#anonymous), 
+[Basic](/docs/iot-gateway/config/mqtt/#basic), [Certificates](/docs/iot-gateway/config/mqtt/#certificates).
 
-Firstly, select basic or advanced MQTT configuration:
+#### Anonymous
 
-{% capture mqttsecuritysubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/security-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/security-subsection-advanced.md{% endcapture %}
+{% include /templates/iot-gateway/mqtt-connector/security-subsection-anonymous.md %}
 
-{% include content-toggle.liquid content-toggle-id="mqttsecuritysubsection" toggle-spec=mqttsecuritysubsection %}
+#### Basic
+
+{% include /templates/iot-gateway/mqtt-connector/security-subsection-basic.md %}
+
+#### Certificates
+
+{% include /templates/iot-gateway/mqtt-connector/security-subsection-certificates.md%}
+
+{% capture difference %}
+All configuration parameters list for each authentication mode, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#advanced-configuration) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Section "Data mapping"
 
@@ -421,6 +432,86 @@ Example of the server configuration:
 },
 ```
 {: .copy-code}
+
+### Security
+
+MQTT broker connections offer three distinct security types: [Anonymous](/docs/iot-gateway/config/mqtt/#anonymous-1), 
+[Basic](/docs/iot-gateway/config/mqtt/#basic-1), [Certificates](/docs/iot-gateway/config/mqtt/#certificates-1).
+
+#### Anonymous
+
+**Anonymous** is the simplest option: no credentials are required to publish/subscribe on the MQTT broker.
+*not recommended for production*, because it allows unattended access.
+
+
+| **Parameter**   | **Default value**       | **Description**                                                                                      |
+|:----------------|:------------------------|------------------------------------------------------------------------------------------------------|
+| broker.security |                         | The broker security object specifies authentication type for establishing connection to MQTT broker. |
+| broker.type     | **anonymous**           | Type of authentication.                                                                              |
+| ---             |                         |                                                                                                      |
+
+
+Example of the security configuration for **anonymous** authentication option.
+
+```json
+ "security": {
+      "type": "anonymous"
+    }
+```
+{: .copy-code}
+
+#### Basic
+
+**Basic** authentication option uses a **username** and **password** configured on the MQTT broker. 
+It’s a good default for most setups—just use strong, unique credentials.
+
+
+| **Parameter**   | **Default value** | **Description**                                                                                   |
+|:----------------|:------------------|---------------------------------------------------------------------------------------------------|
+| broker.security |                   | The broker security object specifies authentication type for establishing connection to MQTT broker.|
+| broker.type     | **basic**         | Type of authentication.                                                                           |
+| broker.username | **username**      | Username that will be used for establishing connection with MQTT broker.                          |
+| broker.password | **password**      | Password that will be used for establishing connection with MQTT broker.                          |
+| ---             |                   |                                                                                                   |
+
+
+Example of the security configuration for **basic** authentication option: 
+
+```json
+ "security": {
+      "type": "basic",
+      "username": "username",
+      "password": "password"
+    }
+```
+{: .copy-code}
+
+#### Certificates
+
+**Certificate-based authentication** uses TLS certificates so the gateway and broker verify each other.
+The safest authentication mode, setting up use the broker’s TLS port (typically 8883) for encrypted, production-grade security.
+
+
+
+| **Parameter**                                               | **Default value**                            | **Description**                                                                                                                                                                                          |
+|:------------------------------------------------------------|:---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| broker.security                                             |                                              | The broker security object specifies authentication type for establishing connection to MQTT broker.                                                                                                     |
+| broker.type                                                 | **certificates**                             | Type of authentication.                                                                                                                                                                                  |
+| broker.pathToCACert                                         | **/etc/thingsboard-gateway/ca.pem**          | Path to the **pathToCACert** your CA certificate your MQTT client uses it to check the broker’s certificate during TLS, ensuring you’re connecting to a trusted server.                                  |
+| broker.pathToPrivateKey                                     | **/etc/thingsboard-gateway/privateKey.pem**  | Path to the **pathToPrivateKey** the key that proves the client’s identity and enables secure TLS handshakes.                                                                                            |
+| broker.pathToClientCert                                     | **/etc/thingsboard-gateway/certificate.pem** | Path to the **pathToClientCert** your certificate that identifies the gateway to the MQTT broker during TLS handshake. It’s paired with the gateway’s private key and is usually signed by a trusted CA. |
+
+
+Example of the security configuration for **certificates** authentication option: 
+
+```json
+"security":{
+    "type": "certificates",
+    "pathToCACert": "/etc/thingsboard-gateway/ca.pem",
+    "pathToPrivateKey": "/etc/thingsboard-gateway/privateKey.pem",
+    "pathToClientCert": "/etc/thingsboard-gateway/certificate.pem"
+}
+```
 
 ## Workers settings
 
