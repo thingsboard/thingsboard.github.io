@@ -72,13 +72,24 @@ These updates follow the modernization plan outlined here:
 
 #### Important Notes
 
-Proper migration steps are required to move data from the old **Kafka** and **Redis** volumes to the new ones used by **Apache Kafka** and **Valkey**.
-These steps are **not covered** by the standard upgrade script.
+Upgrading from TBMQ CE 2.2.0 to TBMQ PE 2.2.0 introduces several component changes that require attention before and during the migration process.
 
-As an easier alternative, you can start **from scratch** for Kafka and Valkey (using new volumes) while preserving only your existing **PostgreSQL data**.
-Then, run the upgrade script to update the database schema from **CE** to **PE**.
+Before starting the upgrade, it is **strongly recommended to create full backups** of your existing environment.
+This includes the **PostgreSQL database** (for example, using `pg_dump`), as well as your **Kafka** and **Redis** data volumes if you plan to migrate them.
+Backups ensure that your environment can be safely restored in case of configuration or compatibility issues during the upgrade.
 
-This approach ensures a clean, compatible environment with minimal manual intervention.
+The PostgreSQL version is upgraded from **16 to 17**, providing improved performance, reliability, and resource efficiency.
+Although existing data volumes remain compatible, you still need to perform a proper database version upgrade (for example, using `pg_upgrade`)
+to ensure data integrity and full compatibility with the new version.
+
+Both Kafka and Redis have been migrated from Bitnami images to official open-source ones — **Apache Kafka** and **Valkey**, respectively.
+This migration is part of the long-term modernization plan to move away from Bitnami images.
+Along with this change, **Kafka was upgraded from version 3.7.0 to 4.0.0**, introducing improvements in performance, scalability, and message handling efficiency.
+The new images use **different internal data directories and volume mappings**, so existing Bitnami volumes cannot be reused directly.
+You must either **migrate your Kafka and Redis data manually** or **start from new, empty volumes**.
+> **⚠️ Be cautious:** starting from new volumes will remove all data currently stored in Kafka and Redis, including client session states, undelivered and retained messages, and any other persisted broker data.
+
+The standard upgrade script focuses only on updating the PostgreSQL database schema and does not include data migration logic for Kafka or Valkey.
 
 ---
 
