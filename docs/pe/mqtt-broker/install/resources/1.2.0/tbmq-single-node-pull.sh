@@ -1,1 +1,0 @@
-docker pull thingsboard/tbmq:1.2.0

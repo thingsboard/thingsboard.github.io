@@ -5,4 +5,5 @@ description: Deploy TBMQ Cluster on Minikube with Kubernetes
 
 ---
 
+{% assign tbmqSuffix = "CE" %}
 {% include docs/mqtt-broker/install/cluster/minikube-cluster-setup-old.md %}

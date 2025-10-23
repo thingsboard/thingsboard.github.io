@@ -62,4 +62,5 @@ tbmq-redis-link-configure:
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% assign tbmqSuffix = "PE" %}
 {% include docs/mqtt-broker/install/cluster/aws-cluster-setup.md %}

@@ -6,4 +6,5 @@ notitle: "true"
 ---
 
 {% assign docsPrefix = "pe/" %}
+{% assign tbmqSuffix = "PE" %}
 {% include docs/mqtt-broker/install/cluster/helm-cluster-setup-options.md %}
