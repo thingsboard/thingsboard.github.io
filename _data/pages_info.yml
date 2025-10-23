@@ -4086,6 +4086,9 @@
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/samples/analytics/ollama/nginx/":
+  url: "/docs/samples/analytics/ollama/nginx/"
+  redirect_from: []
 "/docs/samples/analytics/ollama/":
   url: "/docs/samples/analytics/ollama/"
   redirect_from: []
