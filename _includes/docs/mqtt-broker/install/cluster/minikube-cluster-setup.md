@@ -1,14 +1,15 @@
 * TOC
 {:toc}
 
-This guide will help you set up TBMQ in cluster mode using Minikube.
+This guide will help you set up TBMQ {{tbmqSuffix}} in cluster mode using Minikube.
 
 ## Prerequisites
 
 You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 
-## Step 1. Clone TBMQ repository
+{% if docsPrefix == null %}
+## Clone TBMQ repository
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -16,18 +17,54 @@ cd tbmq/k8s/minikube
 ```
 {: .copy-code}
 
-## Step 2. Installation
+{% else %}
+## Clone TBMQ PE K8S repository
 
-To install TBMQ execute the following command:
+```bash
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq-pe-k8s.git
+cd tbmq-pe-k8s/minikube
+```
+{: .copy-code}
+{% endif %}
+
+{% if docsPrefix == "pe/" %}
+## Get the license key
+
+Before proceeding, make sure you’ve selected your subscription plan or chosen to purchase a perpetual license.
+If you haven’t done this yet, please visit the [Pricing page](/pricing/?section=tbmq-options){: target="_blank"} to compare available options
+and obtain your license key.
+
+> **Note:** Throughout this guide, we’ll refer to your license key as **YOUR_LICENSE_KEY_HERE**.
+
+## Configure the license key
+
+Create a k8s secret with your license key:
+
+```bash
+export TBMQ_LICENSE_KEY=YOUR_LICENSE_KEY_HERE 
+kubectl create -n thingsboard-mqtt-broker secret generic tbmq-license --from-literal=license-key=$TBMQ_LICENSE_KEY
+```
+{: .copy-code}
+
+{% capture replace_license_key %}
+Don’t forget to replace **YOUR_LICENSE_KEY_HERE** with the value of your license key.
+{% endcapture %}
+{% include templates/info-banner.md content=replace_license_key %}
+
+{% endif %}
+
+## Installation
+
+To install TBMQ {{tbmqSuffix}}, execute the following command:
 
 ```bash
 ./k8s-install-tbmq.sh
 ```
 {: .copy-code}
 
-## Step 3. Running
+## Running
 
-Execute the following command to deploy TBMQ:
+Execute the following command to deploy TBMQ {{tbmqSuffix}}:
 
 ```bash
 ./k8s-deploy-tbmq.sh
@@ -35,7 +72,8 @@ Execute the following command to deploy TBMQ:
 {: .copy-code}
 
 After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. **http://192.168.49.2:30001**).
-You can check your cluster IP using command:
+You can check your cluster IP using the following command:
+
 ```bash
 minikube ip
 ```
@@ -43,10 +81,10 @@ minikube ip
 
 {% include templates/mqtt-broker/login.md %}
 
-## Step 4. Logs, delete statefulsets and services
+## Logs, delete statefulsets and services
 
 In case of any issues, you can examine service logs for errors.
-For example to see TBMQ node logs execute the following commands:
+For example, to see TBMQ node logs execute the following commands:
 
 1) Get the list of the running tbmq pods:
 
@@ -67,24 +105,28 @@ Where:
 - `TBMQ_POD_NAME` - tbmq pod name obtained from the list of the running tbmq pods.
 
 Or use the next command to see the state of all the pods.
+
 ```bash
 kubectl get pods
 ```
 {: .copy-code}
 
 Use the next command to see the state of all the services.
+
 ```bash
 kubectl get services
 ```
 {: .copy-code}
 
 Use the next command to see the state of all the deployments.
+
 ```bash
 kubectl get deployments
 ```
 {: .copy-code}
 
 Use the next command to see the state of all the statefulsets.
+
 ```bash
 kubectl get statefulsets
 ```
@@ -99,7 +141,7 @@ Execute the following command to delete TBMQ nodes:
 ```
 {: .copy-code}
 
-Execute the following command to delete all resources (including database):
+Execute the following command to delete all resources (including the databases):
 
 ```bash
 ./k8s-delete-all.sh
@@ -113,7 +155,11 @@ Execute the following command to delete all resources (including database):
 ### Backup and restore (Optional)
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
-For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/k8s/minikube/backup-restore/README.md).
+{% if docsPrefix == null %} For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq/blob/main/k8s/minikube/backup-restore/README.md).
+{% else %} For further guidance, follow the [next instructions](https://github.com/thingsboard/tbmq-pe-k8s/blob/master/minikube/backup-restore/README.md).
+{% endif %}
+
+{% if docsPrefix == null %}
 
 ### Upgrade to 2.2.0
 
@@ -163,6 +209,25 @@ tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/
 {% include tabs.html %}
 
 {% include templates/mqtt-broker/upgrade/stop-tbmq-pods-before-upgrade.md %}
+
+{% else %}
+
+### Upgrade from TBMQ CE to TBMQ PE (v2.2.0)
+
+To upgrade your existing **TBMQ Community Edition (CE)** to **TBMQ Professional Edition (PE)**, ensure you are running the latest **TBMQ CE {{site.release.broker_full_ver}}** version before starting the process.
+Merge your current configuration with the latest [TBMQ PE K8S scripts](https://github.com/thingsboard/tbmq-pe-k8s/tree/{{ site.release.broker_branch }}).
+Do not forget to [configure the license key](#configure-the-license-key).
+
+Run the following commands, including the upgrade script to migrate PostgreSQL database data from CE to PE:
+
+```bash
+./k8s-delete-tbmq.sh
+./k8s-upgrade-tbmq.sh --fromVersion=ce
+./k8s-deploy-tbmq.sh
+```
+{: .copy-code}
+
+{% endif %}
 
 ## Next steps
 
