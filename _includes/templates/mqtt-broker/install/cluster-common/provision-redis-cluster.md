@@ -1,6 +1,6 @@
 TBMQ relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/mqtt-broker/architecture/#persistent-device-client).
 The cache also improves performance by reducing the number of direct database reads, especially when authentication is enabled and multiple clients connect at once.
-Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause unnecessary load under high connection rates.
+Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause the unnecessary load under high connection rates.
 
 To set up Valkey in Google Cloud, refer to the Google Memorystore for Valkey documentation:
 

@@ -6,7 +6,7 @@ gcloud compute addresses create {{staticIP}} --global
 ```
 {: .copy-code}
 
-Replace the *PUT_YOUR_DOMAIN_HERE* with valid domain name in the *https-load-balancer.yml* file:
+Replace the *PUT_YOUR_DOMAIN_HERE* with a valid domain name in the *https-load-balancer.yml* file:
 
 ```bash
 nano receipts/https-load-balancer.yml
@@ -27,7 +27,7 @@ kubectl get ingress
 ```
 {: .copy-code}
 
-Once provisioned, you should see similar output:
+Once provisioned, you should see a similar output:
 
 ```text
 NAME                      CLASS    HOSTS   ADDRESS         PORTS   AGE

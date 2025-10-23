@@ -1,13 +1,14 @@
 * TOC
 {:toc}
 
-This guide will help you set up TBMQ in GKE. 
+This guide will help you set up TBMQ {{tbmqSuffix}} in GKE. 
 
 ## Prerequisites
 
-{% include templates/install/gcp/gke-prerequisites.md %}
+{% include templates/mqtt-broker/install/gcp/gke-prerequisites.md %}
 
-## Step 1. Clone TBMQ K8S scripts repository
+{% if docsPrefix == null %}
+## Clone TBMQ repository
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -15,26 +16,36 @@ cd tbmq/k8s/gcp
 ```
 {: .copy-code}
 
-## Step 2. Define environment variables
+{% else %}
+## Clone TBMQ PE K8S repository
+
+```bash
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq-pe-k8s.git
+cd tbmq-pe-k8s/gcp
+```
+{: .copy-code}
+{% endif %}
+
+## Define environment variables
 
 {% assign tbClusterName = "tbmq-cluster" %}
 {% assign tbDbClusterName = "tbmq-db" %}
 {% include templates/mqtt-broker/install/gcp/env-variables.md %}
 
-## Step 3. Configure and create GKE cluster
+## Configure and create GKE cluster
 
-{% include templates/install/gcp/regional-gke-cluster.md %}
+{% include templates/mqtt-broker/install/gcp/regional-gke-cluster.md %}
 
-## Step 4. Update the context of kubectl
+## Update the context of kubectl
 
-{% include templates/install/gcp/update-kubectl-region.md %}
+{% include templates/mqtt-broker/install/gcp/update-kubectl-region.md %}
 
-## Step 5. Provision Google Cloud SQL (PostgreSQL) Instance
+## Provision Google Cloud SQL (PostgreSQL) Instance
 
 {% assign tbDbName = "thingsboard_mqtt_broker" %}
 {% include templates/mqtt-broker/install/gcp/provision-postgresql.md %}
 
-#### 5.5 Edit database settings
+#### Edit database settings
 
 Replace **YOUR_DB_IP_ADDRESS**, **YOUR_DB_PASSWORD** and **YOUR_DB_NAME** with the correct values:
 
@@ -43,7 +54,7 @@ nano tbmq-db-configmap.yml
 ```
 {: .copy-code}
 
-## Step 6. Create Namespace
+## Create Namespace
 
 Let's create a dedicated namespace for our TBMQ cluster deployment to ensure better resource isolation and management.
 
@@ -53,37 +64,39 @@ kubectl config set-context $(kubectl config current-context) --namespace=thingsb
 ```
 {: .copy-code}
 
-## Step 7. Provision Valkey cluster
+## Provision Valkey cluster
 
 {% include templates/mqtt-broker/install/cluster-common/provision-redis-cluster.md %}
 
-## Step 8. Installation
+{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
+
+## Installation
 
 {% include templates/mqtt-broker/install/gcp/install.md %}
 
-{% capture aws-rds %}
+{% capture gcp-psql %}
 
 Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tbmq-db-configmap.yml` correctly.
 
 {% endcapture %}
-{% include templates/info-banner.md content=aws-rds %}
+{% include templates/info-banner.md content=gcp-psql %}
 
-## Step 9. Provision Kafka
+## Provision Kafka
 
 {% include templates/mqtt-broker/install/cluster-common/provision-kafka-new.md %}
 
-## Step 10. Starting
+## Starting
 
 {% include templates/mqtt-broker/install/cluster-common/starting.md %}
 
-## Step 11. Configure Load Balancers
+## Configure Load Balancers
 
-### 11.1 Configure HTTP(S) Load Balancer
+### Configure HTTP(S) Load Balancer
 
-Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. Basically, you have 2 possible configuration options:
+Configure HTTP(S) Load Balancer to access the web interface of your TBMQ instance. Basically, you have 2 possible configuration options:
 
-* http - Load Balancer without HTTPS support. Recommended for **development**. The only advantage is simple configuration and minimum costs. May be good option for development server but definitely not suitable for production.
-* https - Load Balancer with HTTPS support. Recommended for **production**. Acts as an SSL termination point. You may easily configure it to issue and maintain a valid SSL certificate. Automatically redirects all non-secure (HTTP) traffic to secure (HTTPS) port.
+* http — Load Balancer without HTTPS support. Recommended for **development**. The only advantage is simple configuration and minimum costs. May be a good option for development server but definitely not suitable for production.
+* https — Load Balancer with HTTPS support. Recommended for **production**. Acts as an SSL termination point. You may easily configure it to issue and maintain a valid SSL certificate. Automatically redirects all non-secure (HTTP) traffic to secure (HTTPS) port.
 
 See links/instructions below on how to configure each of the suggested options.
 
@@ -97,11 +110,11 @@ See links/instructions below on how to configure each of the suggested options.
 {% include templates/mqtt-broker/install/gcp/configure-https-load-balancer.md %}
 Once provisioned, you may use your domain name to access Web UI (over https).
 
-### 11.2 Configure MQTT Load Balancer
+### Configure MQTT Load Balancer
 
 {% include templates/mqtt-broker/install/cluster-common/configure-mqtt-load-balancer.md %}
 
-## Step 12. Validate the setup
+## Validate the setup
 
 {% include templates/mqtt-broker/install/cluster-common/validate-the-setup.md %}
 
@@ -121,6 +134,8 @@ Once provisioned, you may use your domain name to access Web UI (over https).
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-backup-restore).
+
+{% if docsPrefix == null %}
 
 ### Upgrade to 2.2.0
 
@@ -175,6 +190,12 @@ tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/
 {% include tabs.html %}
 
 {% include templates/mqtt-broker/upgrade/stop-tbmq-pods-before-upgrade.md %}
+
+{% else %}
+
+{% include templates/mqtt-broker/install/cluster-common/k8s-type-upgrade-ce-to-pe.md %}
+
+{% endif %}
 
 ## Cluster deletion
 
