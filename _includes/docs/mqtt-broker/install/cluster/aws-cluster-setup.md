@@ -53,7 +53,7 @@ eksctl create cluster -f cluster.yml
 ```
 {: .copy-code}
 
-## Create AWS load-balancer controller
+## Create an AWS load-balancer controller
 
 Once the cluster is ready, you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.

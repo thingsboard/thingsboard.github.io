@@ -7,7 +7,7 @@ az group create --name $AKS_RESOURCE_GROUP --location $AKS_LOCATION
 
 To see more info about `az group` please follow the next [link](https://learn.microsoft.com/en-us/cli/azure/group?view=azure-cli-latest).
 
-After the Resource group is created, we can create AKS cluster by using the next command:
+After the Resource group is created, we can create the AKS cluster by using the next command:
 
 ```bash
 az aks create --resource-group $AKS_RESOURCE_GROUP \

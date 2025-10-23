@@ -9,12 +9,16 @@ Choose the option that best fits your environment and operational needs.
 
 * Runs as a **StatefulSet** with 3 pods in **KRaft dual-role mode** (each node acts as both controller and broker).
 * Suitable if you want a lightweight, self-managed Kafka setup.
-* [See the full deployment guide here](./kafka/apache/README.md) !!!🔧 FIX LINK when final path is confirmed!!!
+{% if docsPrefix == null %}
+* [See the full deployment guide here](https://github.com/thingsboard/tbmq/blob/{{site.release.broker_branch}}/k8s/{{deployment}}/kafka/README.md).
+{% else %}
+* [See the full deployment guide here](https://github.com/thingsboard/tbmq-pe-k8s/blob/{{site.release.broker_branch}}/{{deployment}}/kafka/README.md).
+{% endif %}
 
 **Quick steps:**
 
 ```bash
-kubectl apply -f kafka/tb-kafka.yml
+kubectl apply -f kafka/tbmq-kafka.yml
 ```
 {: .copy-code}
 
@@ -28,7 +32,11 @@ Update TBMQ configuration files (`tbmq.yml` and `tbmq-ie.yml`) and uncomment the
 
 * Uses the **Strimzi Cluster Operator** for Kubernetes to manage Kafka.
 * Provides easier upgrades, scaling, and operational management.
-* [See the full deployment guide here](./kafka/strimzi/README.md) !!!🔧 FIX LINK when final path is confirmed!!!
+{% if docsPrefix == null %}
+* [See the full deployment guide here](https://github.com/thingsboard/tbmq/blob/{{site.release.broker_branch}}/k8s/{{deployment}}/kafka/operator/README.md).
+{% else %}
+* [See the full deployment guide here](https://github.com/thingsboard/tbmq-pe-k8s/blob/{{site.release.broker_branch}}/{{deployment}}/kafka/operator/README.md).
+{% endif %}
 
 **Quick steps:**
 

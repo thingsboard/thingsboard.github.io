@@ -12,7 +12,7 @@ kubectl get ingress
 ```
 {: .copy-code}
 
-Once provisioned, you should see similar output:
+Once provisioned, you should see the similar output:
 
 ```text
 NAME                     CLASS    HOSTS   ADDRESS         PORTS   AGE

@@ -1,4 +1,4 @@
-To connect to the cluster via MQTT you will need to get corresponding service IP. You can do this with the command:
+To connect to the cluster via MQTT, you will need to get the corresponding service IP. You can do this with the command:
 
 ```bash
 kubectl get services

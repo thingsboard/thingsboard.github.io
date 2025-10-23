@@ -1,13 +1,20 @@
+{% if docsPrefix == null %}
+{% assign valkey_from_version = "v2.3.0" %}
+{% else %}
+{% assign valkey_from_version = "v2.2.0" %}
+{% endif %}
+
 * TOC
 {:toc}
 
-This guide will help you set up TBMQ in AKS.
+This guide will help you set up TBMQ {{tbmqSuffix}} in AKS.
 
 ## Prerequisites
 
 {% include templates/mqtt-broker/install/azure/aks-prerequisites.md %}
 
-## Step 1. Open TBMQ K8S scripts repository
+{% if docsPrefix == null %}
+## Clone TBMQ repository
 
 ```bash
 git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
@@ -15,24 +22,34 @@ cd tbmq/k8s/azure
 ```
 {: .copy-code}
 
-## Step 2. Define environment variables
+{% else %}
+## Clone TBMQ PE K8S repository
+
+```bash
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq-pe-k8s.git
+cd tbmq-pe-k8s/azure
+```
+{: .copy-code}
+{% endif %}
+
+## Define environment variables
 
 {% include templates/mqtt-broker/install/azure/aks-define-env-variables.md %}
 
-## Step 3. Configure and create AKS cluster
+## Configure and create AKS cluster
 
 {% include templates/mqtt-broker/install/azure/aks-configure-and-create-cluster.md %}
 
-## Step 4. Update the context of kubectl
+## Update the context of kubectl
 
 {% include templates/mqtt-broker/install/azure/aks-update-kubectl-ctx.md %}
 
-## Step 5. Provision PostgreSQL DB
+## Provision PostgreSQL DB
 
 You’ll need to set up PostgreSQL on Azure. You may follow [this](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal) guide,
 but take into account the following requirements:
 
-* Keep your postgresql password in a safe place. We will refer to it later in this guide using YOUR_AZURE_POSTGRES_PASSWORD;
+* Keep your postgresql password in a safe place. We will refer to it later in this guide using **YOUR_AZURE_POSTGRES_PASSWORD**;
 * Make sure your Azure Database for PostgreSQL version is 17.x;
 * Make sure your Azure Database for PostgreSQL instance is accessible from the TBMQ cluster;
 * Make sure you use "thingsboard_mqtt_broker" as the initial database name.
@@ -51,18 +68,18 @@ az postgres flexible-server create --location $AKS_LOCATION --resource-group $AK
 
 `az postgres flexible-server create` has a lot of parameters, a few of them are:
 
-* **location** - Location. Values from: `az account list-locations`;
-* **resource-group (or -g)** - Name of resource group;
-* **name** - Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters;
-* **admin-user** - Administrator username for the server. Once set, it cannot be changed;
-* **admin-password** - The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters;
-* **public-access** - Determines the public access. Enter single or range of IP addresses to be included in the allowed list of IPs. IP address ranges must be dash-separated and not contain any spaces. Specifying 0.0.0.0 allows public access from any resources deployed within Azure to access your server. Setting it to “None” sets the server in public access mode but does not create a firewall rule;
-* **storage-size** - The storage capacity of the server. Minimum is 32 GiB and maximum is 16 TiB;
-* **version** - Server major version;
-* **high-availability** - enable or disable high availability feature. High availability can only be set during flexible server creation (accepted values: Disabled, Enabled. Default value: Disabled);
-* **database-name (or -d)** - The name of the database to be created when provisioning the database server.
+* **location** — Location. Values from: `az account list-locations`;
+* **resource-group (or -g)** — Name of the resource group;
+* **name** — Name of the server. The name can contain only lowercase letters, numbers, and the hyphen (-) character. Minimum 3 characters and maximum 63 characters;
+* **admin-user** — Administrator username for the server. Once set, it cannot be changed;
+* **admin-password** — The password of the administrator. Minimum 8 characters and maximum 128 characters. Password must contain characters from three of the following categories: English uppercase letters, English lowercase letters, numbers, and non-alphanumeric characters;
+* **public-access** — Determines the public access. Enter single or range of IP addresses to be included in the allowed list of IPs. IP address ranges must be dash-separated and not contain any spaces. Specifying 0.0.0.0 allows public access from any resources deployed within Azure to access your server. Setting it to “None” sets the server in public access mode but does not create a firewall rule;
+* **storage-size** — The storage capacity of the server. Minimum is 32 GiB and maximum is 16 TiB;
+* **version** — Server major version;
+* **high-availability** — enable or disable high-availability feature. High availability can only be set during flexible server creation (accepted values: Disabled, Enabled. Default value: Disabled);
+* **database-name (or -d)** — The name of the database to be created when provisioning the database server.
 
-You can see full parameters list [here](https://learn.microsoft.com/en-us/cli/azure/postgres/flexible-server?view=azure-cli-latest#az_postgres_flexible_server_create).
+You can see the full parameters list [here](https://learn.microsoft.com/en-us/cli/azure/postgres/flexible-server?view=azure-cli-latest#az_postgres_flexible_server_create).
 
 Example of response:
 
@@ -82,7 +99,7 @@ Example of response:
 }
 ```
 
-Note the value of host from the command output (**tbmq-db.postgres.database.azure.com** in our case). Also note username and password (**postgres**) from the command.
+Note the value of the host from the command output (**tbmq-db.postgres.database.azure.com** in our case). Also, note username and password (**postgres**) from the command.
 
 Edit the database settings file and replace YOUR_AZURE_POSTGRES_ENDPOINT_URL with the host value, YOUR_AZURE_POSTGRES_USER and YOUR_AZURE_POSTGRES_PASSWORD with the correct values:
 
@@ -91,17 +108,17 @@ nano tbmq-db-configmap.yml
 ```
 {: .copy-code}
 
-## Step 6. Azure Cache for Valkey
+## Azure Cache for Valkey
 
-TBMQ relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client).
+TBMQ {{tbmqSuffix}} relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client).
 The cache also improves performance by reducing the number of direct database reads, especially when authentication is enabled and multiple clients connect at once.
-Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause unnecessary load under high connection rates.
+Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause the unnecessary load under high connection rates.
 
 {% capture valkey-azure-version %}
-**Note:** Starting from **TBMQ v2.3.0**, [Valkey](https://valkey.io/) **8.0** is officially supported.
+**Note:** Starting from **TBMQ {{tbmqSuffix}} {{valkey_from_version}}**, [Valkey](https://valkey.io/) **8.0** is officially supported.
 Azure currently does **not** provide a managed Valkey service. However, Valkey is fully compatible with **Redis 7.2.x**, which is supported on Azure **Cache for Redis Enterprise** and **Enterprise Flash** SKUs.
 The Basic, Standard, and Premium SKUs only support up to **Redis 6.x**, and are therefore **not recommended** for TBMQ deployments.
-To ensure compatibility with TBMQ v2.3.0 and later, deploy your own Valkey cluster or use an Enterprise-tier SKU.
+To ensure compatibility with TBMQ {{tbmqSuffix}} {{valkey_from_version}} and later, deploy your own Valkey cluster or use an Enterprise-tier SKU.
 {% endcapture %}
 {% include templates/info-banner.md content=valkey-azure-version %}
 
@@ -110,9 +127,9 @@ You can choose one of the following paths depending on your environment:
 - [Deploy a Valkey cluster on AKS (Recommended)](https://learn.microsoft.com/en-us/azure/aks/valkey-overview)
 - [Quickstart: Create a Redis Enterprise cache](https://learn.microsoft.com/en-us/azure/redis/quickstart-create-managed-redis)
 
-Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
+Once your Azure Cache is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
 
-* **For standalone Valkey**:
+* **For standalone Redis**:
   Uncomment and set the following values. Make sure the `REDIS_HOST` value does **not** include the port (`:6379`).
 
   ```yaml
@@ -133,17 +150,19 @@ Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache
   #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
   ```
 
-## Step 7. Installation
+{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
+
+## Installation
 
 Execute the following command to run the initial setup of the database.
-This command will launch short-living TBMQ pod to provision necessary DB tables, indexes, etc.
+This command will launch a short-living TBMQ pod to provision necessary DB tables, indexes, etc.
 
 ```bash
 ./k8s-install-tbmq.sh
 ```
 {: .copy-code}
 
-After this command finish you should see the next line in the console:
+After this command is finished, you should see the next line in the console:
 
 ```text
 INFO  o.t.m.b.i.ThingsboardMqttBrokerInstallService - Installation finished successfully!
@@ -156,22 +175,22 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
 
-## Step 8. Provision Kafka
+## Provision Kafka
 
 {% include templates/mqtt-broker/install/cluster-common/provision-kafka-new.md %}
 
-## Step 9. Starting
+## Starting
 
 {% include templates/mqtt-broker/install/cluster-common/starting.md %}
 
-## Step 10. Configure Load Balancers
+## Configure Load Balancers
 
-### 10.1 Configure HTTP(S) Load Balancer
+### Configure HTTP(S) Load Balancer
 
-Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. Basically you have 2 possible options of configuration:
+Configure HTTP(S) Load Balancer to access the web interface of your TBMQ {{tbmqSuffix}} instance. Basically, you have 2 possible options of configuration:
 
-* http - Load Balancer without HTTPS support. Recommended for **development**. The only advantage is simple configuration and minimum costs. May be good option for development server but definitely not suitable for production.
-* https - Load Balancer with HTTPS support. Recommended for **production**. Acts as an SSL termination point. You may easily configure it to issue and maintain a valid SSL certificate. Automatically redirects all non-secure (HTTP) traffic to secure (HTTPS) port.
+* http — Load Balancer without HTTPS support. Recommended for **development**. The only advantage is simple configuration and minimum costs. May be a good option for development server but definitely not suitable for production.
+* https — Load Balancer with HTTPS support. Recommended for **production**. Acts as an SSL termination point. You may easily configure it to issue and maintain a valid SSL certificate. Automatically redirects all non-secure (HTTP) traffic to secure (HTTPS) port.
 
 See links/instructions below on how to configure each of the suggested options.
 
@@ -181,7 +200,7 @@ See links/instructions below on how to configure each of the suggested options.
 
 #### HTTPS Load Balancer
 
-For using ssl certificates we can add our certificate directly in Azure ApplicationGateway using command:
+For using ssl certificates, we can add our certificate directly in Azure ApplicationGateway using the following command:
 
 ```bash
 az network application-gateway ssl-cert create \
@@ -200,11 +219,11 @@ kubectl apply -f receipts/https-load-balancer.yml
 ```
 {: .copy-code}
 
-### 10.2 Configure MQTT Load Balancer
+### Configure MQTT Load Balancer
 
 {% include templates/mqtt-broker/install/cluster-common/configure-mqtt-load-balancer.md %}
 
-## Step 11. Validate the setup
+## Validate the setup
 
 {% include templates/mqtt-broker/install/cluster-common/validate-the-setup.md %}
 
@@ -224,6 +243,8 @@ kubectl apply -f receipts/https-load-balancer.yml
 
 While backing up your PostgreSQL database is highly recommended, it is optional before proceeding with the upgrade.
 For further guidance, follow the [next instructions](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/concepts-backup-restore).
+
+{% if docsPrefix == null %}
 
 ### Upgrade to 2.2.0
 
@@ -278,6 +299,12 @@ tbmq-upgrade-with-from-version,Before v2.1.0,markdown,resources/upgrade-options/
 {% include tabs.html %}
 
 {% include templates/mqtt-broker/upgrade/stop-tbmq-pods-before-upgrade.md %}
+
+{% else %}
+
+{% include templates/mqtt-broker/install/cluster-common/k8s-type-upgrade-ce-to-pe.md %}
+
+{% endif %}
 
 ## Cluster deletion
 

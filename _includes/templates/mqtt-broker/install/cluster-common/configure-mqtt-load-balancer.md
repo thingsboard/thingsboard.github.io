@@ -1,6 +1,6 @@
 Configure MQTT load balancer to be able to use MQTT protocol to connect devices.
 
-Create TCP load balancer using following command:
+Create TCP load balancer using the following command:
 
 ```bash
 kubectl apply -f receipts/mqtt-load-balancer.yml

@@ -1,6 +1,6 @@
-Now you can open TBMQ web interface in your browser using DNS name of the load balancer.
+Now you can open the TBMQ web interface in your browser using the DNS name of the load balancer.
 
-You can get DNS name of the load-balancers using the next command:
+You can get the DNS name of the load-balancers using the next command:
 
 ```bash
 kubectl get ingress
