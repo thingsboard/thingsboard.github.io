@@ -5,4 +5,5 @@ description: Install TBMQ with Docker (Linux or Mac OS)
 
 ---
 
+{% assign tbmqSuffix = "CE" %}
 {% include docs/mqtt-broker/install/docker.md %}

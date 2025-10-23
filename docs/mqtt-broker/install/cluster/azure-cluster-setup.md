@@ -5,4 +5,5 @@ description: TBMQ microservices setup with Kubernetes in AKS
 
 ---
 
+{% assign tbmqSuffix = "CE" %}
 {% include docs/mqtt-broker/install/cluster/azure-cluster-setup-old.md %}

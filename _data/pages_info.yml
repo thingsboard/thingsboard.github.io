@@ -3503,9 +3503,6 @@
 "/docs/pe/mqtt-broker/":
   url: "/docs/pe/mqtt-broker/"
   redirect_from: []
-"/docs/pe/mqtt-broker/install/building-from-source/":
-  url: "/docs/pe/mqtt-broker/install/building-from-source/"
-  redirect_from: []
 "/docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/":
   url: "/docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/"
   redirect_from: []

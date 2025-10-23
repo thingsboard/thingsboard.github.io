@@ -61,4 +61,5 @@ tbmq-redis-link-configure:
 
 ---
 
+{% assign tbmqSuffix = "CE" %}
 {% include docs/mqtt-broker/install/cluster/aws-cluster-setup-old.md %}

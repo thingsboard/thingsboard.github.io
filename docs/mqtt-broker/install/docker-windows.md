@@ -5,4 +5,5 @@ description: Install TBMQ with Docker (Windows)
 
 ---
 
+{% assign tbmqSuffix = "CE" %}
 {% include docs/mqtt-broker/install/docker-windows.md %}
