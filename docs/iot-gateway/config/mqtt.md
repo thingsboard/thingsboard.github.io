@@ -64,7 +64,7 @@ The General tab in settings is the same for both the basic and advanced configur
 ## Connection settings
 
 Connection settings how the MQTT connector establishes and maintains communication with the MQTT broker.
-These settings cover the basic connection parameters, mqtt version protocol that will be used security configuration, and 
+These settings cover the basic connection parameters, mqtt version protocol that will be used for security configuration, and 
 authentication modes.
 
 ### Connection to broker
@@ -509,6 +509,7 @@ Example of the security configuration for **certificates** authentication option
   "pathToClientCert": "/etc/thingsboard-gateway/certificate.pem"
 }
 ```
+{: .copy-code}
 
 ## Workers settings
 
@@ -526,7 +527,7 @@ This configuration settings provides fields for configuring connector performanc
 *MQTT 3.1, 3.11 only*; in *MQTT 5.0* it’s replaced by **broker.cleanStart** (on connect behavior) plus **broker.sessionExpiryInterval** (how long the session is kept after disconnect).
 
 2. **broker.sessionExpiryInterval**
-*MQTT 5.0 only*; if it is `0` drop session on disconnect, if it is bigger than `0`keep it for that many seconds.
+*MQTT 5.0 only*; if it is `0` drop session on disconnect, if it is bigger than `0` keep it for that many seconds.
 
 3. **broker.cleanStart**
 *MQTT 5.0 only*; controls what happens at connect: `true` discards any previous session, `false` tries to resume it.
