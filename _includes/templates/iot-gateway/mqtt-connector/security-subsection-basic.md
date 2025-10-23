@@ -5,7 +5,6 @@ consider certificate-based authentication; [Certificates](/docs/iot-gateway/conf
 {% assign securityBasic = '
     ===
         image: /images/gateway/mqtt-connector/security-basic-basic-subsection-1-ce.png,
-        title: **Basic** - recommended mode for authentication;
     '
 %}
 

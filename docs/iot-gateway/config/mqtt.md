@@ -386,28 +386,26 @@ The advanced configuration section provides a detailed overview of all available
 The broker section defines the target MQTT broker and how the gateway interacts with it.
 
 
-| **Parameter**                               | **Default value**       | **Description**                                                                                                                                                                                                                                                                                                                                           |
-|:--------------------------------------------|:------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| broker                                      |                         | The broker object specifies the target mqtt broker and how the gateway interacts with it.                                                                                                                                                                                                                                                                 |
-| broker.host                                 |                         | Hostname or ip address that will be used for establishing connection to MQTT broker.                                                                                                                                                                                                                                                                      |
-| broker.port                                 | **1883**                | Listening MQTT port on the broker that will accept connection from a client.                                                                                                                                                                                                                                                                              |
-| broker.version                              | **5**                   | MQTT protocol version (there are three versions currently supported by gateway - **3.1**, **3.11**, **5**).                                                                                                                                                                                                                                               |
-| broker.clientId **                          | **ThingsBoard_gateway** | Unique identifier for each client’s session on the broker.                                                                                                                                                                                                                                                                                                |
-| broker.maxMessageNumberPerWorker *          | **10**                  | Maximum number of MQTT messages a single worker (a background helper that processes queued messages)<br/> handles in one pass before letting other workers run. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                  |
-| broker.maxNumberOfWorkers *                 | **100**                 | Maximum number of workers (background helpers that process queued messages)<br/> the gateway can run in parallel to handle MQTT traffic. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                                         |
-| broker.keepAlive * (in seconds)             | **60**                  | Seconds between pings; e.g., default is 60s, the broker expects traffic within the given interval * 1.5 or it closes the connection.                                                                                                                                                                                                                      |
-| broker.cleanSession *                       | **true**                | Tells the broker whether to start fresh or keep your previous session, Use `false`, if you want offline message queueing; use `true` if you always reconnect cleanly and don’t need persistence(Only for 3.1, 3.11 see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences).            |
-| broker.cleanStart *                         | **true**                | Simular to **broker.cleanSession**, but unlike it, only decides what happens **at the start** of a connection; use `true`, if you want discard an old session; use `false` if you want to try to resume it (For MQTT 5.0 only see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences). |
-| broker.sessionExpiryInterval * (in seconds) | **0**                   | How long the broker should keep your session after you disconnect (For MQTT 5.0 only see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences).                                                                                                                                          |
-| broker.security                             | **anonymous**           | Configuration for client authorization at MQTT Broker, available modes: <br/> `anonymous` (no credentials required — not recommended for production), `basic` (username/password), and `certificates` (CA certificates). You may read more about this in the [Security](/docs/iot-gateway/config/mqtt/#security) subsection.                              |
-| ---                                         |                         |                                                                                                                                                                                                                                                                                                                                                           |
+| **Parameter**                             | **Default value**       | **Description**                                                                                                                                                                                                                                                                                                                                                      |
+|:------------------------------------------|:------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| broker                                    |                         | The broker object specifies the target mqtt broker and how the gateway interacts with it.                                                                                                                                                                                                                                                                            |
+| broker.host                               |                         | Hostname or ip address that will be used for establishing connection to MQTT broker.                                                                                                                                                                                                                                                                                 |
+| broker.port                               | **1883**                | Listening MQTT port on the broker that will accept connection from a client.                                                                                                                                                                                                                                                                                         |
+| broker.version                            | **5**                   | MQTT protocol version (there are three versions currently supported by gateway - **3.1**, **3.11**, **5**).                                                                                                                                                                                                                                                          |
+| broker.clientId **                        | **ThingsBoard_gateway** | Unique identifier for each client’s session on the broker.                                                                                                                                                                                                                                                                                                           |
+| broker.maxMessageNumberPerWorker          | **10**                  | (Optional) Maximum number of MQTT messages a single worker (a background helper that processes queued messages)<br/> handles in one pass before letting other workers run. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                  |
+| broker.maxNumberOfWorkers                 | **100**                 | (Optional) Maximum number of workers (background helpers that process queued messages)<br/> the gateway can run in parallel to handle MQTT traffic. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                                         |
+| broker.keepAlive (in seconds)             | **60**                  | (Optional) Seconds between pings; e.g., default is 60s, the broker expects traffic within the given interval * 1.5 or it closes the connection.                                                                                                                                                                                                                      |
+| broker.cleanSession                       | **true**                | (Optional) Tells the broker whether to start fresh or keep your previous session, Use `false`, if you want offline message queueing; use `true` if you always reconnect cleanly and don’t need persistence(Only for 3.1, 3.11 see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences).            |
+| broker.cleanStart                         | **true**                | (Optional) Simular to **broker.cleanSession**, but unlike it, only decides what happens **at the start** of a connection; use `true`, if you want discard an old session; use `false` if you want to try to resume it (For MQTT 5.0 only see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences). |
+| broker.sessionExpiryInterval (in seconds) | **0**                   | (Optional) How long the broker should keep your session after you disconnect (For MQTT 5.0 only see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences).                                                                                                                                          |
+| ---                                       |                         |                                                                                                                                                                                                                                                                                                                                                                      |
 
 {% capture difference %}
 **Please note:**
 \** -- The broker (or broker cluster) does not allow two simultaneous sessions with the same **broker.clientId**. If a second connection uses that ID, 
 the broker closes the existing session and accepts the new one (session takeover). The Client ID can be any valid UTF-8 string; 
 if you don’t have a descriptive one, you can generate it in the MQTT connector configuration UI—see the last screenshots under [Connection to broker](/docs/iot-gateway/config/mqtt/#connection-to-broker) subsection.
-\* -- Parameters marked with an asterisk (*) are optional and intended for fine-tuning; we don’t recommend changing them unless you have a specific need. 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -415,21 +413,20 @@ Example of the server configuration:
 
 ```json
 "broker": {
-    "host": "127.0.0.1",
-    "port": 1883,
-    "version": 5,
-    "clientId": "ThingsBoard_gateway",
-    "maxMessageNumberPerWorker": 10,
-    "maxNumberOfWorkers": 100, 
-    "keepAlive": 60,
-    "cleanSession": true,
-    "cleanStart": true,
-    "sessionExpiryInterval": 0,    
-    "security": {
-      "type": "anonymous"
-    }
-    
-},
+  "host": "127.0.0.1",
+  "port": 1883,
+  "version": 5,
+  "clientId": "ThingsBoard_gateway",
+  "maxMessageNumberPerWorker": 10,
+  "maxNumberOfWorkers": 100, 
+  "keepAlive": 60,
+  "cleanSession": true,
+  "cleanStart": true,
+  "sessionExpiryInterval": 0,    
+  "security": {
+    "type": "anonymous"
+  }
+}
 ```
 {: .copy-code}
 
@@ -444,19 +441,19 @@ MQTT broker connections offer three distinct security types: [Anonymous](/docs/i
 *not recommended for production*, because it allows unattended access.
 
 
-| **Parameter**   | **Default value**       | **Description**                                                                                      |
-|:----------------|:------------------------|------------------------------------------------------------------------------------------------------|
-| broker.security |                         | The broker security object specifies authentication type for establishing connection to MQTT broker. |
-| broker.type     | **anonymous**           | Type of authentication.                                                                              |
-| ---             |                         |                                                                                                      |
+| **Parameter**        | **Default value**       | **Description**                                                                                      |
+|:---------------------|:------------------------|------------------------------------------------------------------------------------------------------|
+| broker.security      |                         | The broker security object specifies authentication type for establishing connection to MQTT broker. |
+| broker.security.type | **anonymous**           | Type of authentication.                                                                              |
+| ---                  |                         |                                                                                                      |
 
 
 Example of the security configuration for **anonymous** authentication option.
 
 ```json
- "security": {
-      "type": "anonymous"
-    }
+"security": {
+  "type": "anonymous"
+}
 ```
 {: .copy-code}
 
@@ -466,23 +463,23 @@ Example of the security configuration for **anonymous** authentication option.
 It’s a good default for most setups—just use strong, unique credentials.
 
 
-| **Parameter**   | **Default value** | **Description**                                                                                   |
-|:----------------|:------------------|---------------------------------------------------------------------------------------------------|
-| broker.security |                   | The broker security object specifies authentication type for establishing connection to MQTT broker.|
-| broker.type     | **basic**         | Type of authentication.                                                                           |
-| broker.username | **username**      | Username that will be used for establishing connection with MQTT broker.                          |
-| broker.password | **password**      | Password that will be used for establishing connection with MQTT broker.                          |
-| ---             |                   |                                                                                                   |
+| **Parameter**                   | **Default value** | **Description**                                                                                   |
+|:--------------------------------|:------------------|---------------------------------------------------------------------------------------------------|
+| broker.security                 |                   | The broker security object specifies authentication type for establishing connection to MQTT broker.|
+| broker.security.type            | **basic**         | Type of authentication.                                                                           |
+| broker.security.username        | **username**      | Username that will be used for establishing connection with MQTT broker.                          |
+| broker.security.password        | **password**      | Password that will be used for establishing connection with MQTT broker.                          |
+| ---                             |                   |                                                                                                   |
 
 
 Example of the security configuration for **basic** authentication option: 
 
 ```json
- "security": {
-      "type": "basic",
-      "username": "username",
-      "password": "password"
-    }
+"security": {
+  "type": "basic",
+  "username": "username", 
+  "password": "password"
+}
 ```
 {: .copy-code}
 
@@ -493,23 +490,23 @@ The safest authentication mode, setting up use the broker’s TLS port (typicall
 
 
 
-| **Parameter**                                               | **Default value**                            | **Description**                                                                                                                                                                                          |
-|:------------------------------------------------------------|:---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| broker.security                                             |                                              | The broker security object specifies authentication type for establishing connection to MQTT broker.                                                                                                     |
-| broker.type                                                 | **certificates**                             | Type of authentication.                                                                                                                                                                                  |
-| broker.pathToCACert                                         | **/etc/thingsboard-gateway/ca.pem**          | Path to the **pathToCACert** your CA certificate your MQTT client uses it to check the broker’s certificate during TLS, ensuring you’re connecting to a trusted server.                                  |
-| broker.pathToPrivateKey                                     | **/etc/thingsboard-gateway/privateKey.pem**  | Path to the **pathToPrivateKey** the key that proves the client’s identity and enables secure TLS handshakes.                                                                                            |
-| broker.pathToClientCert                                     | **/etc/thingsboard-gateway/certificate.pem** | Path to the **pathToClientCert** your certificate that identifies the gateway to the MQTT broker during TLS handshake. It’s paired with the gateway’s private key and is usually signed by a trusted CA. |
+| **Parameter**                    | **Default value**                            | **Description**                                                                                                                                                                                          |
+|:---------------------------------|:---------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| broker.security                  |                                              | The broker security object specifies authentication type for establishing connection to MQTT broker.                                                                                                     |
+| broker.security.type             | **certificates**                             | Type of authentication.                                                                                                                                                                                  |
+| broker.security.pathToCACert     | **/etc/thingsboard-gateway/ca.pem**          | Path to the **pathToCACert** your CA certificate your MQTT client uses it to check the broker’s certificate during TLS, ensuring you’re connecting to a trusted server.                                  |
+| broker.security.pathToPrivateKey | **/etc/thingsboard-gateway/privateKey.pem**  | Path to the **pathToPrivateKey** the key that proves the client’s identity and enables secure TLS handshakes.                                                                                            |
+| broker.security.pathToClientCert | **/etc/thingsboard-gateway/certificate.pem** | Path to the **pathToClientCert** your certificate that identifies the gateway to the MQTT broker during TLS handshake. It’s paired with the gateway’s private key and is usually signed by a trusted CA. |
 
 
 Example of the security configuration for **certificates** authentication option: 
 
 ```json
-"security":{
-    "type": "certificates",
-    "pathToCACert": "/etc/thingsboard-gateway/ca.pem",
-    "pathToPrivateKey": "/etc/thingsboard-gateway/privateKey.pem",
-    "pathToClientCert": "/etc/thingsboard-gateway/certificate.pem"
+"security": {
+  "type": "certificates",
+  "pathToCACert": "/etc/thingsboard-gateway/ca.pem",
+  "pathToPrivateKey": "/etc/thingsboard-gateway/privateKey.pem",
+  "pathToClientCert": "/etc/thingsboard-gateway/certificate.pem"
 }
 ```
 
