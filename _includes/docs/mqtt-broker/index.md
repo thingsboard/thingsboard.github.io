@@ -1,12 +1,13 @@
 {% include templates/mqtt-broker/pe-tbmq-explore-banner.md %}
 
-**TBMQ** is a highly scalable and fault-tolerant <a target="_blank" href="/products/mqtt-broker/">MQTT broker</a> designed for efficient message routing between connected devices using the MQTT protocol.
+**TBMQ** is a highly scalable and fault-tolerant [MQTT broker](/products/mqtt-broker/){:target="_blank"} designed for efficient and reliable message routing between connected devices and applications using the 
+<a href="/products/mqtt-broker/" target="_blank" style="color: inherit; text-decoration: none;">MQTT protocol</a>.
 
-With the ability to manage over **4M** concurrent client connections, TBMQ delivers a minimum [throughput of 3M messages per second](/docs/{{docsPrefix}}mqtt-broker/reference/3m-throughput-single-node-performance-test/) 
-in single-node deployment with low latency.
-Its capabilities are further enhanced in the cluster mode, enabling it to support more than [100M concurrently connected clients](/docs/{{docsPrefix}}mqtt-broker/reference/100m-connections-performance-test/).
+Engineered for high performance, TBMQ can handle **millions** of concurrent connections and process [millions of messages per second](/docs/{{docsPrefix}}mqtt-broker/reference/3m-throughput-single-node-performance-test/) 
+while maintaining exceptionally low latency. 
+Its distributed **cluster architecture** takes scalability even further, supporting [massive IoT deployments](/docs/{{docsPrefix}}mqtt-broker/reference/100m-connections-performance-test/) and ensuring **high availability** across all nodes.
 
-You can refer to the TBMQ documentation to set up the broker and understand its primary features, including the MQTT protocol.
+For installation instructions and detailed insights into its architecture and MQTT features, refer to the official TBMQ documentation.
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
