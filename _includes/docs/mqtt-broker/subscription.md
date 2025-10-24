@@ -19,7 +19,7 @@ Please see table below to compare the limits of the Private Cloud plans. The val
       <tr>
           <td>Sessions</td>
           <td>2K</td>
-          <td>4K</td>
+          <td>5K</td>
           <td>20K</td>
           <td>Unlimited</td>
           <td>Maximum number of client sessions managed by the broker, including both active connections and persistent sessions that are temporarily disconnected but still maintained by the broker for quick reconnection. 

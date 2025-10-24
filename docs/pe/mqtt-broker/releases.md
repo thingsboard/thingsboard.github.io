@@ -8,4 +8,4 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v2.3.0
+## v2.2.0 (November ?, 2025)
