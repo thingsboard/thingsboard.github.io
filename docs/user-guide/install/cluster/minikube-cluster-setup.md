@@ -159,12 +159,12 @@ Execute the following command to delete all resources (including database):
 ## Upgrading
 
 In case you would like to upgrade, please pull the *latest* changes from `master` branch:
-```
+```bash
 git pull origin master
 ```
 {: .copy-code}
 
- Then, execute the following commands:
+Then, execute the following commands:
 
 ```bash
 ./k8s-delete-resources.sh
