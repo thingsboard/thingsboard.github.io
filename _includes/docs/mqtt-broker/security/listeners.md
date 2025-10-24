@@ -1,14 +1,14 @@
 * TOC
 {:toc}
 
-TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols as well as for MQTT over WebSockets.
+TBMQ provides flexible configuration options for its listeners, supporting TCP, SSL/TLS, and MQTT over WebSockets protocols.
 
 ### TCP Listener
 
 By default, TBMQ has the TCP listener enabled on port `1883`.
 However, if you wish to disable the TCP listener, you can set the `LISTENER_TCP_ENABLED` environment variable to `false`.
 
-Furthermore, if you need to change the host address that the broker is binding to or the port it is listening on, 
+Furthermore, if you need to change the host address that the broker is binding to or the port it is listening to, 
 you can modify the `LISTENER_TCP_BIND_ADDRESS` and `LISTENER_TCP_BIND_PORT` variables, respectively. 
 This gives you the flexibility to configure the broker to listen on a specific network interface and port of your choice.
 
@@ -40,7 +40,7 @@ For more information about configuration possibilities and certificate generatio
 By default, TBMQ has the WebSocket listener enabled on port `8084`.
 However, in case you want to disable the WS listener, you can set the `LISTENER_WS_ENABLED` environment variable to `false`.
 
-Additionally, if you need to change the host address that the broker is binding to or the port it is listening on,
+Additionally, if you need to change the host address that the broker is binding to or the port it is listening to,
 you can modify the `LISTENER_WS_BIND_ADDRESS` and `LISTENER_WS_BIND_PORT` variables, respectively.
 
 WS listener is configured to negotiate via all MQTT versions by default, i.e. `WS_NETTY_SUB_PROTOCOLS` is set to `mqttv3.1,mqtt`.

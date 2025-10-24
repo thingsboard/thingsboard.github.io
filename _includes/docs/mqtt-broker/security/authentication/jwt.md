@@ -13,7 +13,7 @@ Instead, clients present a signed token that contains all the necessary authenti
 
 ## JWT authentication overview
 
-When a client connects using a JWT token, TBMQ performs a multi-step validation process to verify the token, check its claims, and determine the client’s permissions.
+When a client connects using a JWT token, TBMQ performs a multistep validation process to verify the token, check its claims, and determine the client’s permissions.
 The client includes a signed JWT token in the `password` field of the `MQTT CONNECT` packet. 
 TBMQ uses the configured verifier (HMAC-based, PEM, or JWKS) to validate the token's signature. If the signature is valid, the broker proceeds to check the token’s claims. It validates:
 

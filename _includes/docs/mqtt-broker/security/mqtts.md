@@ -4,14 +4,14 @@
 TBMQ provides the ability to run MQTT server and MQTT over WebSocket over SSL. Both one-way and two-way SSL are supported.
 
 Most of the TBMQ environments use the load balancer as a termination point for the SSL connection between the devices and the broker.
-In other words, MQTT traffic is encrypted between the device and the load balancer, but is decrypted between the load balancer and broker services.
+In other words, MQTT traffic is encrypted between the device and the load balancer but is decrypted between the load balancer and broker services.
 The advantage of such an option is the simplicity of configuration.
-Most of the cloud load balancers (AWS, Google cloud, etc.) have built-in certificate generation tools and rich documentation how to configure SSL over TCP.
-The disadvantage of such an option is that two-way SSL is not possible. The information about client certificate is not passed from the load balancer to the broker services.
+Most of the cloud load balancers (AWS, Google Cloud, etc.) have built-in certificate generation tools and rich documentation on how to configure SSL over TCP.
+The disadvantage of such an option is that two-way SSL is not possible. The information about the client certificate is not passed from the load balancer to the broker services.
 
 Nevertheless, it is possible to configure TBMQ to two-way SSL for MQTT and avoid SSL termination on the Load Balancer.
-We recommend to use valid SSL certificates generated using trusted CA authorities and avoid spending time on resolving issues with [self-signed certificates](#self-signed-certificates-generation).
-See instructions below on how to configure SSL for certificates stored in PEM file format or Java Keystore.
+We recommend using valid SSL certificates generated using trusted CA authorities and avoid spending time on resolving issues with [self-signed certificates](#self-signed-certificates-generation).
+See the instructions below on how to configure SSL for certificates stored in PEM file format or Java Keystore.
 
 ## SSL configuration using PEM certificates file
 
@@ -29,11 +29,11 @@ export LISTENER_SSL_PEM_KEY_PASSWORD=secret
 
 where:
 
-* LISTENER_SSL_ENABLED - Enable/disable SSL support;
-* LISTENER_SSL_CREDENTIALS_TYPE -  Server credentials type. PEM - pem certificate file; KEYSTORE - java keystore;
-* LISTENER_SSL_PEM_CERT - Path to the server certificate file. Holds server certificate or certificate chain, may also include server private key;
-* LISTENER_SSL_PEM_KEY - Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;
-* LISTENER_SSL_PEM_KEY_PASSWORD - Optional server certificate private key password.
+* LISTENER_SSL_ENABLED — Enable/disable SSL support;
+* LISTENER_SSL_CREDENTIALS_TYPE — Server credentials type. PEM — pem certificate file; KEYSTORE — java keystore;
+* LISTENER_SSL_PEM_CERT — Path to the server certificate file. Holds server certificate or certificate chain, may also include the server private key;
+* LISTENER_SSL_PEM_KEY — Path to the server certificate private key file. Optional by default. Required if the private key is not present in the server certificate file;
+* LISTENER_SSL_PEM_KEY_PASSWORD — Optional server certificate private key password.
 
 After completing the setup, start or restart the TBMQ server.
 
@@ -56,12 +56,12 @@ export LISTENER_SSL_KEY_PASSWORD=tbmq
 
 where:
 
-* LISTENER_SSL_ENABLED - Enable/disable SSL support;
-* LISTENER_SSL_CREDENTIALS_TYPE -  Server credentials type. PEM - pem certificate file; KEYSTORE - java keystore;
-* LISTENER_SSL_KEY_STORE_TYPE - Type of the key store (JKS or PKCS12);
-* LISTENER_SSL_KEY_STORE - Path to the key store that holds the SSL certificate or certificate chain, also include server private key;
-* LISTENER_SSL_KEY_STORE_PASSWORD - Password used to access the key store;
-* LISTENER_SSL_KEY_PASSWORD - Password used to access the server private key.
+* LISTENER_SSL_ENABLED — Enable/disable SSL support;
+* LISTENER_SSL_CREDENTIALS_TYPE — Server credentials type. PEM - pem certificate file; KEYSTORE — java keystore;
+* LISTENER_SSL_KEY_STORE_TYPE — Type of the key store (JKS or PKCS12);
+* LISTENER_SSL_KEY_STORE — Path to the key store that holds the SSL certificate or certificate chain, also include the server private key;
+* LISTENER_SSL_KEY_STORE_PASSWORD — Password used to access the key store;
+* LISTENER_SSL_KEY_PASSWORD — Password used to access the server private key.
 
 After completing the setup, start or restart the TBMQ server.
 
@@ -71,9 +71,9 @@ After completing the setup, start or restart the TBMQ server.
 
 You may configure following additional environment variables via [configuration](/docs/{{docsPrefix}}mqtt-broker/install/config/#mqtt-listeners-parameters) file, docker-compose or kubernetes scripts.
 
-* LISTENER_SSL_BIND_ADDRESS - the bind address for the MQTT server. Default value *0.0.0.0* indicates all interfaces;
-* LISTENER_SSL_BIND_PORT - the bind port for the MQTT server. Default value is *8883*;
-* LISTENER_SSL_PROTOCOL - ssl protocol name. Default value is *TLSv1.2*. See [java doc](https://docs.oracle.com/en/java/javase/17/docs/specs/security/standard-names.html#sslcontext-algorithms) for more details.
+* LISTENER_SSL_BIND_ADDRESS — the bind address for the MQTT server. Default value *0.0.0.0* indicates all interfaces;
+* LISTENER_SSL_BIND_PORT — the bind port for the MQTT server. The default value is *8883*;
+* LISTENER_SSL_PROTOCOL — ssl protocol name. The default value is *TLSv1.2*. See [java doc](https://docs.oracle.com/en/java/javase/17/docs/specs/security/standard-names.html#sslcontext-algorithms) for more details.
 
 {% include docs/user-guide/ssl/self-signed-ecc.md %}
 
