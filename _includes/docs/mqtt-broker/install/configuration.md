@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-This guide will help you become familiar with TBMQ configuration files and parameters. 
+This guide will help you become familiar with TBMQ {{tbmqSuffix}} configuration files and parameters. 
 We **strongly recommend** configuring TBMQ using environment variables. 
 This way, you won't need to merge the configuration files when a new platform release arrives. 
 
@@ -31,7 +31,7 @@ server:
 
 In this case, *'HTTP_BIND_ADDRESS'* is the environment variable name and *'0.0.0.0'* is the default value.
 
-You can use the simple example below to add a new environment variable 'HTTP_BIND_PORT' with value '8084'.
+You can use the simple example below to add a new environment variable 'HTTP_BIND_PORT' with the value '8084'.
 
 ```bash
 ...
@@ -41,4 +41,8 @@ export HTTP_BIND_PORT=8084
 The parameters are grouped by system components. The list contains the name (address in **thingsboard-mqtt-broker.yml** file), 
 environment variable, default value, and description.
 
+{% if docsPrefix == "pe/" %}
+{% include docs/pe/mqtt-broker/install/config.md %}
+{% else %}
 {% include docs/mqtt-broker/install/config.md %}
+{% endif %}

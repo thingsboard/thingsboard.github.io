@@ -80,7 +80,12 @@
 			<td>queue.kafka.enable-topic-deletion</td>
 			<td>TB_KAFKA_ENABLE_TOPIC_DELETION</td>
 			<td>true</td>
-			<td> Enable/disable deletion of topics for Application MQTT Clients</td>
+			<td> Controls whether TBMQ is allowed to delete Kafka topics that were created for
+ Integrations.
+ When set to 'true', TBMQ may automatically remove topics during cleanup
+ (for example, when the Integration is deleted).
+ When set to 'false', TBMQ will skip topic deletions and simply stop using them.
+ This helps prevent accidental data loss in production environments</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.default.consumer.partition-assignment-strategy</td>
