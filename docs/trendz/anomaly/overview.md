@@ -5,41 +5,41 @@ description: Introduction to anomaly detection in Trendz
 
 page-anomaly-models:
   0:
-    image: /images/trendz/anomaly/with-preview/page-anomaly-models.png
+    image: /images/trendz/anomaly/page-anomaly-models.png
     title: 'Anomaly Models Tab'
 
 page-cluster-info-tab:
   0:
-    image: /images/trendz/anomaly/with-preview/page-cluster-info-all.png
+    image: /images/trendz/anomaly/page-cluster-info-all.png
     title: 'Cluster Info Tab'
   1:
-    image: /images/trendz/anomaly/with-preview/page-cluster-info-specific.png
+    image: /images/trendz/anomaly/page-cluster-info-specific.png
     title: 'Cluster Info Tab (Specific Cluster)'
 
 page-input-tab:
   0:
-    image: /images/trendz/anomaly/with-preview/page-input-tab.png
+    image: /images/trendz/anomaly/page-input-tab.png
     title: 'Input Tab'
 
 page-review-tab:
   0:
-    image: /images/trendz/anomaly/with-preview/page-review-tab.png
+    image: /images/trendz/anomaly/page-review-tab.png
     title: 'Review Tab'
 
 page-summary-tab:
   0:
-    image: /images/trendz/anomaly/with-preview/page-summary-calendar.png
+    image: /images/trendz/anomaly/page-summary-calendar.png
     title: 'Summary Tab: Calendar Mode'
   1:
-    image: /images/trendz/anomaly/with-preview/page-summary-dynamic.png
+    image: /images/trendz/anomaly/page-summary-dynamic.png
     title: 'Summary Tab: Dynamic Mode'
   2:
-    image: /images/trendz/anomaly/with-preview/page-summary-review.png
+    image: /images/trendz/anomaly/page-summary-review.png
     title: 'Summary Tab: Review Mode'
 
 page-task-tab:
   0:
-    image: /images/trendz/anomaly/with-preview/page-task-tab.png
+    image: /images/trendz/anomaly/page-task-tab.png
     title: 'Task Tab'
 
 ---
@@ -85,7 +85,7 @@ In Trendz, anomaly detection is based on two core metrics:
 
 Let’s explore a real-world example showing pump vibrations right after startup:
 
-![image](/images/trendz/anomaly/score_vs_index.png)
+![image](/images/trendz/anomaly/without-preview/score_vs_index.png)
 
 - **Anomaly A**
   - Characterized by a **sharp vibration spike** lasting ~5 seconds.

@@ -307,7 +307,7 @@ Firstly, we will create a calculated field, it could be used across multiple vie
 * Enable *calculation result saving* and click the **Save** button
   (you can leave the other properties as default)
 
-Your calculated field is now ready to use. Learn more about calculated fields [here](/docs/trendz/calculated-fields).
+Your calculated field is now ready to use. Learn more about calculated fields [here](/docs/trendz/calculations/overview).
 
 {% include images-gallery.html imageCollection="create-calculation" %}
 

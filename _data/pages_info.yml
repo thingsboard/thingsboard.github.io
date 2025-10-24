@@ -4224,8 +4224,8 @@
 "/docs/trendz/background-jobs/":
   url: "/docs/trendz/background-jobs/"
   redirect_from: []
-"/docs/trendz/batch-calculated-fields/":
-  url: "/docs/trendz/batch-calculated-fields/"
+"/docs/trendz/calculations/batch/":
+  url: "/docs/trendz/calculations/batch/"
   redirect_from: []
 "/docs/trendz/business-entities/":
   url: "/docs/trendz/business-entities/"
@@ -4233,11 +4233,11 @@
 "/docs/trendz/cache-settings/":
   url: "/docs/trendz/cache-settings/"
   redirect_from: []
-"/docs/trendz/calculate-time-to-value/":
-  url: "/docs/trendz/calculate-time-to-value/"
+"/docs/trendz/calculations/time-to-value/":
+  url: "/docs/trendz/calculations/time-to-value/"
   redirect_from: []
-"/docs/trendz/calculated-fields/":
-  url: "/docs/trendz/calculated-fields/"
+"/docs/trendz/calculations/overview/":
+  url: "/docs/trendz/calculations/overview/"
   redirect_from: []
 "/docs/trendz/configuration-properties/":
   url: "/docs/trendz/configuration-properties/"
@@ -4344,8 +4344,8 @@
 "/docs/trendz/rest-api/":
   url: "/docs/trendz/rest-api/"
   redirect_from: []
-"/docs/trendz/save-calculated-to-thingsboard/":
-  url: "/docs/trendz/save-calculated-to-thingsboard/"
+"/docs/trendz/calculations/save-to-thingsboard/":
+  url: "/docs/trendz/calculations/save-to-thingsboard/"
   redirect_from: []
 "/docs/trendz/search/":
   url: "/docs/trendz/search/"
