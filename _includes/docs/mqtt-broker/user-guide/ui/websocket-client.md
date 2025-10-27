@@ -2,7 +2,7 @@
 {:toc}
 
 The TBMQ WebSocket Client is a browser-accessible tool aimed at simplifying the debugging process and testing of MQTT clients across various scenarios. 
-Leveraging the [MQTT over WebSocket](/docs/mqtt-broker/user-guide/mqtt-over-ws/) feature, it's designed with principles of simplicity and ease of use in mind.
+Leveraging the [MQTT over WebSocket](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-over-ws/) feature, it's designed with principles of simplicity and ease of use in mind.
 It offers seamless management of MQTT clients, subscription to topics, and message reception or publication.
 
 TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) library for communication between client and broker.
@@ -62,7 +62,7 @@ WebSocket connections allow users to establish and configure various parameters,
 * **Authentication**. TBMQ allows to create websocket connection with different types of handling credentials details like clientID (required), username, password:
   * **Auto-generated credentials**. Credentials with random Client ID, random Username and empty Password. Please note that corresponding Credentials will be created.
   * **Custom authentication**. Credentials with custom Client ID, Username, Password.
-  * **Use existing credentials**. User selects existing credentials of the [Basic](/docs/mqtt-broker/security/#basic-authentication) type and, if required, input Password.
+  * **Use existing credentials**. User selects existing credentials of the [Basic](/docs/{{docsPrefix}}mqtt-broker/security/#basic-authentication) type and, if required, input Password.
 
 Password input field appears when the selected credentials require password to establish the connection.
 

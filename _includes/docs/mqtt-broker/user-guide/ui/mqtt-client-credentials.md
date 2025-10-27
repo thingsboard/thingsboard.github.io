@@ -1,13 +1,13 @@
 * TOC
 {:toc}
 
-TBMQ offers various options for managing MQTT client credentials via both its Web UI and [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/). 
+TBMQ offers various options for managing MQTT client credentials via both its Web UI and [REST API](/docs/{{docsPrefix}}mqtt-broker/mqtt-client-credentials-management/). 
 
 TBMQ supports the following types of client credentials to authenticate client connections:
-- [Basic](/docs/mqtt-broker/security/#basic-authentication) - basic security measures based on combinations of client ID, username and password.
+- [Basic](/docs/{{docsPrefix}}mqtt-broker/security/#basic-authentication) - basic security measures based on combinations of client ID, username and password.
   - **Advantages:** Simple and easy to implement. Widely supported by applications and services. Low network overhead.
   - **Disadvantages:** Limited security.
-- [X.509 Certificate Chain](/docs/mqtt-broker/security/#tls-authentication) - advanced security measures based on X509 certificate chain that helps in verifying the identity of clients.
+- [X.509 Certificate Chain](/docs/{{docsPrefix}}mqtt-broker/security/#tls-authentication) - advanced security measures based on X509 certificate chain that helps in verifying the identity of clients.
   - **Advantages:** Enhanced security compared to the basic client credentials type. With SSL client credentials, both the client and TBMQ can authenticate each other. 
   The SSL client credentials type provides more flexibility in terms of access control, as it allows for more granular access control policies based on the certificate subject name and other attributes.
   - **Disadvantages:** Complexity and increased cost. Setting up and managing SSL client credentials can be more complex and requires more expertise. SSL encryption and decryption require more computing resources.
@@ -15,9 +15,9 @@ TBMQ supports the following types of client credentials to authenticate client c
   - **Advantages:** Higher security level compared to basic authentication. It uses a challenge-response process to exchange hashed credentials, ensuring the password is never sent in plain text.
   - **Disadvantages:** Requires additional computational resources to generate and validate the salted password hashes.
 
-Before using any of the client credential types mentioned above, please ensure that the appropriate _Authentication_ is [enabled](/docs/mqtt-broker/security/authentication/basic/).
+Before using any of the client credential types mentioned above, please ensure that the appropriate _Authentication_ is [enabled](/docs/{{docsPrefix}}mqtt-broker/security/authentication/basic/).
 
-For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/overview/).
+For more information on security issues, please consult this [guide](/docs/{{docsPrefix}}mqtt-broker/security/overview/).
 
 ## Adding MQTT client credentials
 
@@ -29,7 +29,7 @@ To add new client credentials, please follow these steps:
    - **Device**. Use for clients that usually publish a lot of messages, but subscribe to a few topics with low message rate, i.e. IoT devices.
    - **Applications**. Use for clients that subscribe to topics with high message rates and require message persistence when the client is offline, such as applications like **ThingsBoard, AWS IoT Core** etc.
    
-   For more information on client types, please refer to the [docs](/docs/mqtt-broker/user-guide/mqtt-client-type/).
+   For more information on client types, please refer to the [docs](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/).
 
 4. Select the desired _Credentials Type_ and configure the authentication parameters and authorization rules.
 
@@ -108,7 +108,7 @@ Please consider the following examples:
 
 ## Delete client credentials
 
-Broker administrators can remove client credentials from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
+Broker administrators can remove client credentials from TBMQ system using the Web UI or [REST API](/docs/{{docsPrefix}}mqtt-broker/mqtt-client-credentials-management/).
 
 There are a few ways of deleting client credentials:
 1. **Delete single**.
@@ -124,7 +124,7 @@ There are a few ways of deleting client credentials:
 “Check Connectivity” is a useful tool that automatically generates commands to **subscribe to a topic** and **publish a message**.
 This feature utilizes the user's host, port, and client credentials to generate the necessary commands. 
 
-It is available only for [Basic](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/#mqtt-basic-credentials) credentials.
+It is available only for [Basic](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/mqtt-client-credentials/#mqtt-basic-credentials) credentials.
 
 To open a window with commands, please follow the next steps:
 1. Click “Check connectivity” button to open the corresponding window.

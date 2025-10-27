@@ -12,7 +12,7 @@
 Regularly reviewing and analyzing unauthorized client attempts can help identify potential security threats and misconfigured clients.
 
 {% capture unauthorizedClientEnableAuth %}
-The Unauthorized Clients feature functions only if the corresponding authentication method is [enabled](/docs/mqtt-broker/security/authentication/basic/).
+The Unauthorized Clients feature functions only if the corresponding authentication method is [enabled](/docs/{{docsPrefix}}mqtt-broker/security/authentication/basic/).
 {% endcapture %}
 {% include templates/info-banner.md title="Check configuration" content=unauthorizedClientEnableAuth %}
 

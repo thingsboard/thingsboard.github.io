@@ -23,14 +23,14 @@ The table contains the following information about each subscription:
 
 You can easily add, remove or edit subscriptions from the 'Session details' window.
 1. Open the 'Subscriptions' page in the left-hand menu.
-2. Click on the table row to open [session subscription](/docs/mqtt-broker/user-guide/ui/sessions/#subscriptions) details.
+2. Click on the table row to open [session subscription](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/sessions/#subscriptions) details.
 3. Add, edit or delete client subscriptions.
 4. Click 'Update' to save changes.
 
 {% include images-gallery.html imageCollection="subscription-session" %}
 
 {% capture monitoringSubscriptions %}
-You can track the number of current subscriptions and other broker activity on the [Monitoring](/docs/mqtt-broker/user-guide/ui/monitoring/) and Home pages.
+You can track the number of current subscriptions and other broker activity on the [Monitoring](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/monitoring/) and Home pages.
 {% endcapture %}
 {% include templates/info-banner.md title="Subscriptions chart" content=monitoringSubscriptions %}
 
