@@ -1,4 +1,4 @@
-TBMQ relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/mqtt-broker/architecture/#persistent-device-client).
+TBMQ relies on **Valkey** to store messages for [DEVICE persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client).
 The cache also improves performance by reducing the number of direct database reads, especially when authentication is enabled and multiple clients connect at once.
 Without caching, every new connection triggers a database query to validate MQTT client credentials, which can cause the unnecessary load under high connection rates.
 
