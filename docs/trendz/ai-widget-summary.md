@@ -218,7 +218,7 @@ getAnalytics(widgetContext, false, 'ef348780-a034-4ea9-9225-8b6ad112c451');
 
 > **Recommendation:** Use the **Prompt ID** from Trendz for easier management and updates.
 
-Learn more about managing prompts in [Trendz AI Prompts Overview](/docs/trendz/ai-prompts-overview).
+Learn more about managing prompts in [Trendz AI Prompts Overview](/docs/trendz/ai-assistance-prompts).
 
 ## Trendz Widgets
 

@@ -41,6 +41,9 @@ toc:
           path: /docs/trendz/visualizations-card/
         - title: Cards with line chart
           path: /docs/trendz/visualizations-card-with-line/
+        - title: AI Cards
+          new: true
+          path: /docs/trendz/visualizations-ai-card/
     - title: View settings
       path: /docs/trendz/view-settings/
     - title: View collections
