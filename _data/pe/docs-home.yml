@@ -395,6 +395,10 @@ toc:
           path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/pe/user-guide/contribution/ui/advanced-development/
+- title: Releases
+  section:
+    - title: Releases table
+      path: /docs/pe/releases/releases-table/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
 - title: Release notes
