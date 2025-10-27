@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Running AI on Your Own Hardware - Securing Ollama with an Nginx Reverse Proxy
-description: Secure your local Ollama LLM deployment with Nginx and Docker Compose. This step-by-step guide provides copy-paste commands to easily set up username/password or API key authentication, including how to connect securely from ThingsBoard.
+title: Local AI with Ollama - Integrating Ollama with ThingsBoard
+description: Learn how to integrate Ollama self-hosted AI models with ThingsBoard to reduce costs, maintain data privacy, and run AI entirely on your infrastructure.
 ---
 
 {% assign docsPrefix = "pe/" %}
