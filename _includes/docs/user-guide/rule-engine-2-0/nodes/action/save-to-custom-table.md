@@ -9,8 +9,10 @@ Stores the incoming message data in a custom Cassandra table.
 - **Default TTL** - Time-To-Live in seconds for the inserted records. Set to 0 to disable TTL. When set to a positive value, records will automatically expire after the specified
   duration.
 
-> Note: When **$entityId** is used as a message field key, the node will write the message originator ID to the corresponding table column instead of looking for this field in the
-> message data.
+{% capture entity_id_field_key_note %}
+**Note**: When **$entityId** is used as a message field key, the node will write the message originator ID to the corresponding table column instead of looking for this field in the message data.
+{% endcapture %}
+{% include templates/info-banner.md content=entity_id_field_key_note %}
 
 ### JSON Schema
 

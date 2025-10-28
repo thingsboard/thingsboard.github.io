@@ -75,6 +75,7 @@ The node's configuration allows you to specify which keys to fetch from differen
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

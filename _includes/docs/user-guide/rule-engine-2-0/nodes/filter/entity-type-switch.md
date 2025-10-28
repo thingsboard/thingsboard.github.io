@@ -17,13 +17,12 @@ There are no available configuration fields.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
 1. Determines the incoming message’s originator entity type and looks up its normal name.
 2. Routes the message to downstream nodes using the connection with a label that **exactly matches** the normal name.
-
-> Note: The incoming message is not modified.
 
 ## Output connections
 
@@ -113,13 +112,3 @@ Routed via **`AI model`**.
 **Explanation**
 
 For `AI_MODEL`, the normal name is `AI model`. The node routes the message via the connection with that exact label.
-
-## Use cases
-
-Use **entity type switch** when processing must branch by originator type, sending each message to a different sub-chain via a connection labeled with that type’s
-normal name (e.g., Device, Asset, Entity View, AI model). This node is for **fan-out routing**, not yes/no decisions.
-
-When to prefer **entity type filter** instead:
-
-- You need a binary decision (include/exclude) - for example, “continue only if the originator type is `DEVICE` or `ASSET`; otherwise go `False`.” For
-  branching into multiple destinations, use **entity type switch**.

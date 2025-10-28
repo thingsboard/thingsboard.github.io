@@ -77,6 +77,7 @@ The node is configured using a **Relations query** to find the target entities.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

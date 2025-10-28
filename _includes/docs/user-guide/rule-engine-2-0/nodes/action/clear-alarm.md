@@ -46,6 +46,7 @@ Clears existing active alarms for the message originator.
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

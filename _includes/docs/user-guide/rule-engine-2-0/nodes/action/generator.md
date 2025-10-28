@@ -123,6 +123,7 @@ The function must **return** an object containing the following keys:
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

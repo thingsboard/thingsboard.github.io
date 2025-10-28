@@ -57,7 +57,10 @@ The save time series node can perform four distinct actions, each governed by co
 For each of these actions, you can choose from the following **processing strategies**:
 {% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
 
-> **Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
+{% capture processing_strategies_availability_note %}
+**Note**: Processing strategies are available since TB version 4.0. "Skip latest persistence" toggle from earlier TB versions corresponds to "Skip" strategy for Latest values.
+{% endcapture %}
+{% include templates/info-banner.md content=processing_strategies_availability_note %}
 
 Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
@@ -111,7 +114,10 @@ performance optimization rather than a strict processing guarantee.
 
 * **Default TTL** - determines how long the stored data remains in the database.
 
-> **Note**: TTL value of 0 means that the data never expires.
+{% capture zero_ttl_note %}
+**Note**: TTL value of 0 means that the data never expires.
+{% endcapture %}
+{% include templates/info-banner.md content=zero_ttl_note %}
 
 ### JSON Schema
 

@@ -55,6 +55,7 @@ The function must **return** an object (for a single output message) or an array
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
