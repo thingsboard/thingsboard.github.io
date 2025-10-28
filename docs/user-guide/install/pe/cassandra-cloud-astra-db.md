@@ -109,8 +109,8 @@ services:
       # Cassandra on cloud
       CASSANDRA_CLOUD_SECURE_BUNDLE_PATH: "/etc/thingsboard/astra/secure-connect-thingsboard.zip"
       # dbadmin
-      YOUR_CASSANDRA_CLOUD_CLIENT_ID: "wmwIzkOcWAxvMTjYZBsMuLcA"
-      YOUR_CASSANDRA_CLOUD_CLIENT_SECRET: "MC5Fxmk898Tt4auhnc64IADmnzZxoSDONI-q0X3ZZJdPH,Lj,..OLD+LUvkeCTPuk2v8cWgsP.SywMotL1uLNudG.NEZCwBI33c6KwET+A3p-Cv5-tHS18pgyjjMOrkH"
+      CASSANDRA_CLOUD_CLIENT_ID: "YOUR_CASSANDRA_CLOUD_CLIENT_ID"
+      ASSANDRA_CLOUD_CLIENT_SECRET: "YOUR_CASSANDRA_CLOUD_CLIENT_SECRET"
       TB_SERVICE_ID: tb-ce-node
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
 ```
