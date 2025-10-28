@@ -8,30 +8,32 @@ title: AI Card
 * TOC
 {:toc}
 
-The AI Card provides a comprehensive view of cumulative telemetry data over a selected time range, enriched with forecasting and an AI-generated summary. This view is designed to help users quickly understand overall performance and expected future behavior without needing to manually analyze raw data..
+The AI Card provides a comprehensive view of cumulative telemetry data over a selected time range, enriched with forecasting and an AI-generated summary. This visualization is ideal for monitoring energy consumption, sales metrics, equipment performance, or any cumulative measurements where understanding both historical trends and future projections is critical.
 
 Key Features:
-* **Cumulative Telemetry:** The chart displays cumulative values, where each data point is the sum of the current and all previous readings within the selected period.
-* **Forecasting:** The card includes a predicted trend for the upcoming period.
-* **AI Summary:** An automatically generated interpretation of the data provides quick insights.
+* **Cumulative Telemetry:** The chart displays cumulative values, where each data point represents the sum of the current and all previous readings within the selected period.
+* **Forecasting:** The card includes a predicted trend for the upcoming period, helping you anticipate future values based on historical patterns.
+* **AI Summary:** An automatically generated interpretation of the data provides quick insights without manual analysis.
 
 ## Base AI Card
 
-To build the Base AI Card, follow these steps:
-1. Choose the specific telemetry field you wish to analyze.
-2. Drag and drop the selected telemetry into the Value column.
-3. Choose the desired time range for analysis. Based on the selected time range, the system calculates prediction. The chart displays real data up to the current timestamp and 
-the system generates a prediction for all dates in the selected time range that occur after the current time. 
-Example: If today is October 27th and you select the *This Month* time range, the chart will show real data for the first 27 days and a prediction for the remaining 4 days (October 28th, 29th, 30th, and 31st).
-4. Once your telemetry and time range are selected, click the *Build Report* button to see the card.
+Follow these steps to create a Base AI Card:
 
-Here is a breakdown of the key elements displayed on the view:
-1. Current Cumulative Value: The total cumulative value for the selected time range, including the predicted data.
-2. Difference from Previous Period: The absolute and percentage change of the Current Cumulative Value compared to the value from the previous equivalent period.
-3. Historical Data: The solid line representing the actual cumulative telemetry data recorded up to the current day.
-4. Predicted Data: The dashed line extending past the current date represents the forecast.
-5. Previous period trend area: his area represents the cumulative trend for the previous equivalent period, providing a visual baseline for comparison against the current data and prediction.
-6. AI Summary: Interpretation of the data, created with the selected AI prompt and based on its analysis of the previous, current, and predicted data.
+**Step 1: Select Your Telemetry Field.** Choose the specific telemetry field you wish to analyze (e.g., energy consumption, temperature, sales volume).
+
+**Step 2: Configure the Value Column.** Drag and drop your selected telemetry field into the Value column.
+
+**Step 3: Choose Your Time Range.** Select the desired time range for analysis. The system uses this range to determine what data to display and what period to predict. *Example:* If today is October 27th and you select the *This Month* time range, the chart will show real data for the first 27 days and a prediction for the remaining 4 days (October 28th, 29th, 30th, and 31st).
+
+**Step 4: Build the Report.** Once your telemetry and time range are configured, click the Build Report button to generate the card.
+
+The AI Card presents the next key elements (numbered in the screenshot):
+1. **Current Cumulative Value:** The total cumulative value for the selected time range, including the predicted data. This value is color-coded based on performance thresholds
+2. **Difference from Previous Period:** Shows both the absolute change and percentage difference of the Current Cumulative Value compared to the equivalent previous period.
+3. **Historical Data (Solid Line):** Represents actual cumulative telemetry data recorded up to the current day.
+4. **Predicted Data (Dashed Line):** Extends past the current date to show the forecasted trend for the remainder of your selected period.
+5. **Previous Period Trend Area (Shaded Region):** Displays the cumulative trend from the previous equivalent period, providing a visual baseline for comparison against current data
+6. **AI Summary:** An automatically generated interpretation based on analysis of the previous period, current data, and predictions. The summary is created using your selected AI prompt.
 ![image](/images/trendz/base-ai-card.png)
 
 ## AI Card Configuration
@@ -40,43 +42,64 @@ Here is a breakdown of the key elements displayed on the view:
 
 **Prediction Method**
 
-As a default prediction method AI Card uses FOURIER TRANSFORMATION method, but you can easily switch to an alternative method.
-To select a different prediction model, click on the telemetry field displayed in the Value column to open the settings. Navigate to the Prediction section and select your desired alternative method from the available options.
+The AI Card uses **Fourier Transformation** as the default prediction method, but you can easily switch to alternative approaches based on your data characteristics.
 
-**Prediction time range**
-
-The primary goal of the AI Card is to provide a complete analysis (historical plus predicted data) for a specific period. 
-We recommend selecting predefined ranges such as "This month" or "This year" to ensure the combined real and predicted data covers a meaningful and easy-to-interpret period.
-But you can select any custom time range. The system will build the prediction specifically for all dates within that range that are set in the future relative to the current timestamp.
-
+To change the prediction method:
+1. Click on the telemetry field in the Value column to open settings
+2. Navigate to the Prediction section
+3. Select your desired method from the available options
+   
 ![image](/images/trendz/ai-card-prediction.png)
+
+**Prediction Time Range**
+
+The AI Card's primary goal is to provide complete analysis (historical plus predicted data) for a specific period.
+
+We recommend using predefined ranges such as *This Month* or *This Year* to ensure the combined real and predicted data covers a meaningful, easy-to-interpret period. But you can select any custom time range. 
+The system generates predictions specifically for all dates within that range that fall after the current timestamp.
+
+Example Scenarios:
+* **This Month range:** Combines actual data from the start of the month through today with predictions for the remaining days
+* **Custom range (Oct 1 - Nov 15):** If today is October 27th, shows actual data for Oct 1-27 and predictions for Oct 28 - Nov 15
 
 ### AI Summary Configuration
 
-The AI Summary feature provides an automatically generated interpretation of the cumulative telemetry data and trend. You have control over both the feature's visibility and the analysis logic.
+The AI Summary feature provides automatically generated interpretation of your cumulative telemetry data and trends. You control both the feature's visibility and the analysis approach.
 
-If you do not want to use AI features on the card, you can turn off this feature in the Chart settings/AI Assistant menu.
-Also, in the Chart settings/AI Assistant menu, you can choose the prompt that will be used to analyze data from your telemetry. The selected prompt guides the focus and content of the generated summary.
-How to create your custom prompt you can read in [Trendz AI Prompts Overview](/docs/trendz/ai-assistance-prompts)
+If you prefer not to use AI features on the card:
+
+1. Navigate to **Chart settings → AI Assistant menu**
+2. Uncheck **Show AI summary**
+
+The AI prompt determines the focus and content of your generated summary, so you can select the prompt that in the best way interprets your data:
+1. Go to **Chart settings → AI Assistant menu**
+2. Select your desired prompt from the **Prompt** dropdown
+
+You can create custom prompts tailored to your specific use cases. Learn more in the [Trendz AI Prompts Overview](/docs/trendz/ai-assistance-prompts)
 
 ![image](/images/trendz/ai-card-summary.png)
 
 ### Value Color Threshold Logic
 
-The card uses color-coding to provide immediate visual feedback on the current cumulative value's performance relative to the previous period.
+The AI Card uses color-coding to provide immediate visual feedback on the current cumulative value's performance relative to the previous period.
 
-The current cumulative value displayed at the top of the card is color-coded based on the magnitude of the change:
+The current cumulative value displayed at the top of the card changes color based on the magnitude of change compared to the previous period:
 
-* Blue Color: The value is shown in blue if the difference (absolute percentage change) compared to the previous period is within the range of the default threshold (10%). 
+* **Blue (Normal Performance):** The value appears in blue when the absolute percentage change is within the threshold range (10% by default). This indicates stable, expected performance.
+
 ![image](/images/trendz/ai-card-threshold-normal.png)
-* Red Color: The value is shown in red if the difference (absolute percentage change) is greater than 10%, signaling a significant deviation or performance shift.
+
+* **Red (Significant Deviation):** The value appears in red when the absolute percentage change exceeds the threshold (more than 10% by default). This signals a significant deviation or performance shift requiring attention.
+
 ![image](/images/trendz/ai-card-threshold-deviation.png)
 
-**Configuration**
+**Customizing the Threshold**
 
-You can customize this sensitivity threshold by changing Value color logic field:
-* Default: The system using default 10% to calculate color.
-* Custom: The threshold percentage should be set manually.
-* Unset: Current cumulative value will not be highlighted with any color, regardless of the difference
+You can adjust the sensitivity of the color-coding system through the **Value Color Logic** setting:
+* Default: Uses the standard 10% threshold for all color calculations.
+* Custom: Allows you to set a specific threshold percentage that matches your performance monitoring needs.
+  * Example: Set to 5% for more sensitive deviation alerts
+  * Example: Set to 20% for less frequent alerts on larger changes only
+* Unset: Disables color-coding entirely. The current cumulative value displays without color highlighting, regardless of the percentage difference.
 
 ![image](/images/trendz/ai-card-threshold-config.png)

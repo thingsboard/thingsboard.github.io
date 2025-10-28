@@ -96,8 +96,7 @@ use-alarms:
 * TOC
 {:toc}
 
-All metrics created with Metric Explorer can be integrated into ThingsBoard. T
-hey can be used wherever telemetry is supported:
+All metrics created with Metric Explorer can be integrated into ThingsBoard. They can be used wherever telemetry is supported:
 
 * Visualizations
 * Rule Engine
