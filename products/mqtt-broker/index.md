@@ -159,8 +159,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <h4>Administer client sessions</h4>
                     <p>Gain full visibility over your IoT ecosystem with the user-friendly session management dashboard, enabling you to monitor vital session attributes. Seamlessly administer your device subscriptions for efficient data communication.</p>
-                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/sessions/">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/sessions/">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/sessions/" target="_blank">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/sessions/" target="_blank">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -174,8 +174,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <h4>Administer client subscriptions</h4>
                     <p>Efficiently manage subscriptions with a powerful and intuitive interface, ensuring optimal client communication and data flow across your IoT network.</p>
-                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/subscriptions/">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/subscriptions/">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/subscriptions/" target="_blank">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/subscriptions/" target="_blank">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -189,8 +189,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <h4>MQTT client credentials management</h4>
                     <p>Strengthen your IoT security using the MQTT client credentials management system, crafted to handle both Basic and X.509 Certificate Chain authentication options effortlessly.</p>
-                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/" target="_blank">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/mqtt-client-credentials/" target="_blank">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -204,8 +204,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <h3>MQTT websocket connectivity</h3>
                     <p>Interact with your IoT devices in real-time through the WebSocket client, offering a streamlined and responsive interface for device messaging and monitoring.</p>
-                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/websocket-client/">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/websocket-client/">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/websocket-client/" target="_blank">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/websocket-client/" target="_blank">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -219,8 +219,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <h3>Real-time MQTT monitoring</h3>
                     <p>Keep a pulse on your IoT environment by tracking key metrics in real-time, ensuring your network's health and performance are always at their peak.</p>
-                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/monitoring/">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/monitoring/">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/mqtt-broker/user-guide/ui/monitoring/" target="_blank">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/user-guide/ui/monitoring/" target="_blank">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -234,8 +234,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                 <div class="block">
                     <h3>External system integrations</h3>
                     <p>Enable smooth data transmission between IoT devices, the broker, and external platforms with a reliable and scalable solution — all without impacting core broker performance.</p>
-                    <a class="read-more-button" href="/docs/mqtt-broker/integrations/">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
-                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/integrations/">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/mqtt-broker/integrations/" target="_blank">TBMQ CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/mqtt-broker/integrations/" target="_blank">TBMQ PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -250,7 +250,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                     <h3>White labeling</h3>
                     <span class="pe-only-banner">PE only</span>
                     <p>Rebrand the TBMQ broker web interface with your company or product logo and color scheme in 2 minutes. No coding or service restart required.</p>
-                    <a class="read-more-button" href="/docs/pe/mqtt-broker/white-labeling/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/pe/mqtt-broker/white-labeling/" target="_blank">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -265,7 +265,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                     <h3>RBAC</h3>
                     <span class="pe-only-banner">PE only</span>
                     <p>Advanced user access control with role-based permissions. Manage broker operations with two predefined roles: Admin for full control, and Viewer for read-only access.</p>
-                    <a class="read-more-button" href="/docs/pe/mqtt-broker/security/rbac/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/pe/mqtt-broker/security/rbac/" target="_blank">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -280,7 +280,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
                     <h3>Single sign-on</h3>
                     <span class="pe-only-banner">PE only</span>
                     <p> Single Sign-On (SSO) integration for simplified and secure access. Seamlessly authenticate users through your organization’s identity provider, reducing password management and strengthening security.</p>
-                    <a class="read-more-button" href="/docs/pe/mqtt-broker/security/oauth-2-support/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
+                    <a class="read-more-button" href="/docs/pe/mqtt-broker/security/oauth-2-support/" target="_blank">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
             </div>
             <div class="col-lg-6 image-container">
@@ -298,7 +298,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
             <div class="main5"></div>
         </div>
         <section class="comparison-table">
-            <h3>Feature comparison</h3>
+            <h2>TBMQ feature comparison</h2>
             <div class="header">
               <p>Features</p>
               <p><span>Community Edition</span><span>CE</span></p>
@@ -310,32 +310,32 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               </div>
               <a href="/docs/mqtt-broker/user-guide/mqtt-protocol/#differences-between-mqtt-311-and-mqtt-50" target="_blank" class="comparison-row">
                 <p>MQTT 3.1 / 3.1.1 support</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/user-guide/mqtt-protocol/#new-features-in-mqtt-50" target="_blank" class="comparison-row">
                 <p>MQTT 5.0 support</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/architecture/" target="_blank" class="comparison-row">
                 <p>Scalability (Clustering)</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/user-guide/mqtt-over-ws/" target="_blank" class="comparison-row">
                 <p>MQTT over WebSocket</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/user-guide/ui/websocket-client/" target="_blank" class="comparison-row">
                 <p>WebSocket client</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/user-guide/backpressure/" target="_blank" class="comparison-row">
                 <p>Backpressure support</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
             </div>
@@ -345,22 +345,22 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               </div>
               <a href="/docs/mqtt-broker/security/authentication/basic/" target="_blank" class="comparison-row">
                 <p>Basic authentication</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/security/authentication/x509/" target="_blank" class="comparison-row">
                 <p>X.509 certificate chain authentication</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/security/authentication/jwt/" target="_blank" class="comparison-row">
                 <p>JWT authentication</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/security/overview/#authorization" target="_blank" class="comparison-row">
                 <p>Access control list (ACL)</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/pe/mqtt-broker/security/oauth-2-support/" target="_blank" class="comparison-row">
@@ -385,22 +385,22 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               </div>
               <a href="/docs/mqtt-broker/user-guide/ui/monitoring/" target="_blank" class="comparison-row">
                 <p>MQTT sessions and subscriptions management</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/user-guide/ui/monitoring/" target="_blank" class="comparison-row">
                 <p>Metrics monitoring</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/user-guide/ui/unauthorized-clients/" target="_blank" class="comparison-row">
                 <p>Unauthorized MQTT clients</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/docs/mqtt-broker/other/blocked-client/" target="_blank" class="comparison-row">
                 <p>Blocked MQTT clients</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
             </div>
@@ -410,12 +410,12 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               </div>
               <div class="comparison-row">
                 <p>System integrations</p>
-                <p style="text-align: center"><a href="/docs/mqtt-broker/integrations/" target="_blank">Basic</a></p>
+                <p style="text-align: center"><a href="/docs/mqtt-broker/integrations/" target="_blank" style="color: #0D417B">Basic</a></p>
                 <p style="text-align: center"><a href="/docs/pe/mqtt-broker/integrations/" target="_blank">Advanced (coming soon)</a></p>
               </div>
               <a href="/docs/pe/mqtt-broker/white-labeling/" target="_blank" class="comparison-row">
                 <p>White labeling</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div class="hidden-space">&nbsp;</div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
             </div>
@@ -425,7 +425,7 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               </div>
               <a href="/pricing/?section=tbmq" target="_blank" class="comparison-row">
                 <p>Self-Managed (On-premise/Cloud)</p>
-                <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
+                <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
               <a href="/pricing/?section=tbmq" target="_blank" class="comparison-row">
