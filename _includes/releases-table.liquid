@@ -1,61 +1,57 @@
-{%- assign path = include.releaseInfo | split: "/" -%}
-{%- assign data = site.data -%}
-{%- for segment in path -%}
-    {%- assign data = data[segment] -%}
-{%- endfor -%}
+{%- assign families = site.data["releases-table"] -%}
 
-{%- assign families = data -%}
+<div class="releases-table">
+    <div class="releases-table-content">
+        <div class="releases-table-header">
+            <div class="releases-table-header-item">Version</div>
+            <div class="releases-table-header-item">Release Date</div>
+            <div class="releases-table-header-item">Latest Tag</div>
+            <div class="releases-table-header-item">Last Updated</div>
+            <div class="releases-table-header-item">Support Until</div>
+            <div class="releases-table-header-item">Status</div>
+            <div class="releases-table-header-item">Release Notes</div>
+            <div class="releases-table-header-item">Upgrade Instructions</div>
+        </div>
 
-<table class="tb-releases-table">
-    <thead>
-    <tr>
-        <th>Version</th>
-        <th>Release Date</th>
-        <th>Latest Tag</th>
-        <th>Last Updated</th>
-        <th>Support Until</th>
-        <th>Status</th>
-        <th>Release Notes</th>
-        <th>Upgrade Instructions</th>
-    </tr>
-    </thead>
-    <tbody>
-    {%- for family in families -%}
-        {%- assign releases = family.releases -%}
-        {%- assign latest = releases | first -%}
-        {%- assign first = releases | last -%}
+        <div class="releases-table-row">
+            {%- for family in families -%}
+                {%- assign releases = family.releases -%}
+                {%- assign latest = releases | first -%}
+                {%- assign first = releases | last -%}
 
-        {%- assign x_url = "/docs/pe/releases/releases-table/" | append: family.version | append: ".x/" -%}
-        {%- assign page_exists = false -%}
-        {%- for p in site.pages -%}
-            {%- if p.url == x_url -%}
-                {%- assign page_exists = true -%}
-            {%- endif -%}
-        {%- endfor -%}
+                {%- assign x_url = page.url | append: family.version | append: ".x/" -%}
+                {%- assign page_exists = false -%}
+                {%- for p in site.pages -%}
+                    {%- if p.url == x_url -%}
+                        {%- assign page_exists = true -%}
+                    {%- endif -%}
+                {%- endfor -%}
 
-        {%- if page_exists -%}
-            {%- assign family_label = family.version | append: ".x" -%}
-            {%- assign notes_url = x_url -%}
-        {%- else -%}
-            {%- assign family_label = latest.version -%}
-            {%- assign notes_url = "/docs/pe/releases/releases-table/" | append: latest.version | append: "/" -%}
-        {%- endif -%}
+                {%- assign family_label = family.version | append: ".x" -%}
 
-        <tr>
-            <td>{{ family_label }}</td>
-            <td>{{ first["release-date"] | default: "—" }}</td>
-            <td>{{ latest.version | default: "—" }}</td>
-            <td>{{ latest["release-date"] | default: "—" }}</td>
-            <td>—</td>
-            <td>—</td>
-            <td><a href="{{ notes_url }}">{{ family_label }}</a></td>
-            <td><a href="/docs/pe/upgrade-instructions/">Upgrade</a></td>
-        </tr>
-    {%- endfor -%}
-    </tbody>
-</table>
+                {%- if page_exists -%}
+                    {%- assign notes_url = x_url -%}
+                {%- else -%}
+                    {%- assign notes_url = page.url | append: latest.version | append: "/" -%}
+                {%- endif -%}
 
-<style>
-    .tb-releases-table{width:100%;border-collapse:collapse}
-    .tb-releases-table th,.tb-releases-table td{padding:.5rem;border-bottom:1px solid #e5e7eb;text-align:left}
-</style>
+                <div class="releases-table-content-wrapper">
+                    <div class="releases-table-content">
+                        <div class="releases-table-content-item">{{ family_label }}</div>
+                        <div class="releases-table-content-item">{{ first["release-date"] | default: "—" }}</div>
+                        <div class="releases-table-content-item">{{ latest.version | default: "—" }}</div>
+                        <div class="releases-table-content-item">{{ latest["release-date"] | default: "—" }}</div>
+                        <div class="releases-table-content-item">—</div>
+                        <div class="releases-table-content-item">—</div>
+                        <div class="releases-table-content-item">
+                            <a href="{{ notes_url }}">{{ family_label }}</a>
+                        </div>
+                        <div class="releases-table-content-item">
+                            <a href="/docs/pe/upgrade-instructions/">Upgrade</a>
+                        </div>
+                    </div>
+                </div>
+            {%- endfor -%}
+        </div>
+    </div>
+</div>

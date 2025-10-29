@@ -2,6 +2,7 @@
 layout: docwithnav-pe
 title: ThingsBoard PE Releases table
 description: ThingsBoard architecture
+table-of-contents: "false"
 
 ---
 
