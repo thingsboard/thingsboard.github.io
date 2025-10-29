@@ -139,7 +139,7 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integr
 
 ## Advanced Usage: Kafka Producer (Downlink)
 
-To get functionality such as Kafka Producer, you need to use the [Kafka Rule Node](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#kafka-node) in which you can specify Bootstrap servers, Topic and other parameters to connect to the Kafka broker, you can find more details in the corresponding [guide](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#kafka-node) .
+To get functionality such as Kafka Producer, you need to use the [Kafka Rule Node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/nodes/external/kafka/) in which you can specify Bootstrap servers, Topic and other parameters to connect to the Kafka broker, you can find more details in the corresponding [guide](https://thingsboard.io/docs/user-guide/rule-engine-2-0/nodes/external/kafka/) .
 
 If it is not possible to send commands directly to devices to manage from ThingsBoard, but only through a broker, then in this case you can use the Kafka Downlink Rule Node. Let's consider a small example with its Node, suppose the data came from the broker and passed the converter and, according to the config of Device Profile, were directed to the custom Rule Chain ("Monitoring-sensor") and at the end of all processing, we will send a response about success or failure back to the broker ( you can change the response to commands to control your device, etc.)
 

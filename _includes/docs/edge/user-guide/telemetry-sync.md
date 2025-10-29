@@ -2,8 +2,8 @@
 {:toc}
 
 > **ThingsBoard Edge** does not automatically sync telemetry data. 
-Instead, it's **a rule-based process**. The ["push to cloud"](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/action-nodes/#push-to-cloud){:target="_blank"}
-and ["push to edge"](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/action-nodes/#push-to-edge){:target="_blank"} rule nodes are responsible for 
+Instead, it's **a rule-based process**. The ["push to cloud"](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud/){:target="_blank"}
+and ["push to edge"](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge/){:target="_blank"} rule nodes are responsible for 
 the synchronization process.
 
 ### Edge → Cloud sync
@@ -36,7 +36,7 @@ The database tables updated in Cloud depend entirely on your Cloud‑side rule c
 
 ### Cloud → Edge sync
 
-Similarly, Cloud synchronizes data using the ["push to edge"](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/action-nodes/#push-to-edge){:target="_blank"} rule node within a Cloud rule chain.
+Similarly, Cloud synchronizes data using the ["push to edge"](/docs/user-guide/rule-engine-2-0/nodes/action/push-to-edge/){:target="_blank"} rule node within a Cloud rule chain.
 
 The node converts the message into an **Edge Event** and stores it in the **Edge queue** on the Cloud (_either a local database or Kafka, depending on the queue type_). 
 The event is then **asynchronously** pushed to the target Edge.

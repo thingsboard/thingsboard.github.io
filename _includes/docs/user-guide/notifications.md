@@ -398,7 +398,7 @@ The notification in ThingsBoard may look like this:
 
 ### Rule node
 
-The rule node template is used to send notifications from the '[send notification](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-notification-node)' rule node.
+The rule node template is used to send notifications from the '[send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification/)' rule node.
 You may use data or metadata from the incoming message to build the notification subject and body.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 

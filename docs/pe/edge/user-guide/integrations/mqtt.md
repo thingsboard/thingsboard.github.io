@@ -189,7 +189,7 @@ Starting with **Edge version 4.0**, you can create and edit a **Rule Chain** on 
 {% endcapture %}
 {% include templates/info-banner.md content=edge-4 %}
 
-We'll need to add two rule nodes: ['originator fields'](/docs/pe/user-guide/rule-engine-2-0/enrichment-nodes/#originator-fields){: target="_blank"} and ['integration downlink'](/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node){: target="_blank"} nodes.
+We'll need to add two rule nodes: ['originator fields'](/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-fields/){: target="_blank"} and ['integration downlink'](/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink/){: target="_blank"} nodes.
 
 {% include images-gallery.html imageCollection="downlink-rule" showListImageTitles="true" %}
 
