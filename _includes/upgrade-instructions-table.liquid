@@ -21,7 +21,8 @@
             {%- for p in pages_sorted -%}
                 {%- unless p.name == 'index.md' or p.name contains '.x.md' -%}
                     {%- assign version = p.name | replace: ".md", "" -%}
-                    <div class="releases-table-content-wrapper">
+                    {%- assign family = version | split: "." | slice: 0, 2 | join: "." -%}
+                    <div class="releases-table-content-wrapper" data-version="{{ version }}" data-family="{{ family }}">
                         <div class="releases-table-content">
                             <div class="releases-table-content-item">{{ version }}</div>
                             <div class="releases-table-content-item">{{ p["release-date"] | date: "%B %e, %Y" }}</div>
@@ -52,3 +53,22 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const params = new URLSearchParams(window.location.search);
+        const versionParam = params.get("version");
+        if (!versionParam) return;
+
+        const targetFamily = versionParam.replace(/\.x$/i, "").trim();
+
+        document
+            .querySelectorAll(".upgrade-instructions-table .releases-table-content-wrapper")
+            .forEach(function (row) {
+                const rowFamily = row.getAttribute("data-family");
+                if (rowFamily !== targetFamily) {
+                    row.style.display = "none";
+                }
+            });
+    });
+</script>
