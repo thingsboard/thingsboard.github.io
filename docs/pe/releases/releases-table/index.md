@@ -8,4 +8,4 @@ table-of-contents: "false"
 
 {% assign docsPrefix = "pe/" %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
-{% include releases-table.liquid releaseInfo="pe/releases-table" %}
+{% include releases-table.liquid %}
