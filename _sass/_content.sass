@@ -231,9 +231,70 @@ $header-clearance: 210px
           transition: ease-in-out 0.3s
           font-size: 14px
           min-width: 170px
+          &.version-link
+            display: flex
+            align-items: center
+            gap: 6px
+            a
+              color: #FF
           &:nth-child(8)
             text-align: center
             min-width: 256px
+
+.releases-table.upgrade-instructions-table
+  .releases-table-content
+    .releases-table-header
+      .releases-table-header-item
+        min-width: 240px
+        &:nth-child(6)
+          text-align: center
+          min-width: 256px
+    .releases-table-content-wrapper
+      .releases-table-content
+        &:hover
+          .releases-table-content-item
+            &.upgrade-instructions
+              a
+                img
+                  scale: 1.2
+        .releases-table-content-item
+          min-width: 240px
+          &:nth-child(6)
+            text-align: center
+            min-width: 256px
+        .releases-table-content-item
+          &.upgrade-instructions
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 32px
+            a
+              position: relative
+              &:hover
+                filter: unset
+                img:before
+                  content: attr(alt)
+                  position: absolute
+                  bottom: 125%
+                  left: 50%
+                  transform: translateX(-50%)
+                  background-color: rgba(0,0,0,0.7)
+                  backdrop-filter: blur(2px)
+                  color: #fff
+                  font-size: 13px
+                  padding: 6px 8px
+                  border-radius: 6px
+                  white-space: nowrap
+                  opacity: 0
+                  pointer-events: none
+                  transition: opacity 0.2s ease
+                img
+                  filter: unset
+              img
+                scale: 1
+                filter: brightness(0) saturate(100%) invert(57%) sepia(2%) saturate(45%) hue-rotate(44deg) brightness(88%) contrast(90%)
+                transition: ease-in-out 0.3s
+
 
   #editPageButton
     position: absolute
