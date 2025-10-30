@@ -95,13 +95,13 @@ It is free for both personal and commercial usage and you can deploy it anywhere
 ThingsBoard Cloud is a fully managed platform that is regularly updated to the latest version by the ThingsBoard team, so you don't need to worry about maintenance or upgrades.
 {% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
 There are several ways to check the platform version in ThingsBoard Professional Edition.  
-The easiest way is to log in as **SysAdmin**. On the home page, you will find a widget in the bottom-left corner of the screen displaying the current platform version and indicating whether an upgrade is available.
+The easiest way is to log in as SysAdmin. On the home page, you will find a widget in the bottom-left corner of the screen displaying the current platform version and indicating whether an upgrade is available.
 
 Alternatively, if you don’t have access to the SysAdmin account, open [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/) tab from the side menu.  
 Enable the **Show platform name and version** option to see the current version of the platform.
 {% else %}
 There are several ways to check the platform version in ThingsBoard Community Edition.  
-The easiest way is to log in as **SysAdmin**. On the home page, you will find a widget in the bottom-left corner of the screen showing the current platform version and whether an upgrade is available.
+The easiest way is to log in as SysAdmin. On the home page, you will find a widget in the bottom-left corner of the screen showing the current platform version and whether an upgrade is available.
 {% endif %}
 
 
