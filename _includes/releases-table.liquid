@@ -47,7 +47,8 @@
                             <a href="{{ notes_url }}">{{ family_label }}</a>
                         </div>
                         <div class="releases-table-content-item">
-                            <a href="/docs/pe/upgrade-instructions/">Upgrade</a>
+                            {%- assign version_param = family.version | append: ".x" -%}
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ version_param }}">Upgrade</a>
                         </div>
                     </div>
                 </div>
