@@ -235,11 +235,21 @@ $header-clearance: 210px
             display: flex
             align-items: center
             gap: 6px
-            a
-              color: #FF
+            span
+              font-weight: 400
+              color: rgba(0, 0, 0, 0.87)
           &:nth-child(8)
             text-align: center
             min-width: 256px
+
+.releases-table.pe-table
+  .releases-table-content-wrapper
+    .releases-table-content
+      &:hover
+        border-left: 3px solid #00695C
+    .releases-table-content-item.upgrade-link
+      a
+        color: #00695C
 
 .releases-table.upgrade-instructions-table
   .releases-table-content

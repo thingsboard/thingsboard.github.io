@@ -1,4 +1,4 @@
-{%- assign dir = "/docs/pe/releases/releases-table/" -%}
+{%- assign dir = "/docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
 
 {%- assign pages_in_dir = site.pages
         | where_exp: "p", "p.url contains dir"
@@ -6,7 +6,7 @@
 
 {%- assign pages_sorted = pages_in_dir | sort: "release-date" | reverse -%}
 
-<div class="releases-table upgrade-instructions-table">
+<div class="releases-table upgrade-instructions-table{% if docsPrefix == "pe/" %} pe-table{% endif %}">
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
@@ -28,21 +28,21 @@
                             <div class="releases-table-content-item">{{ p["release-date"] | date: "%B %e, %Y" }}</div>
                             <div class="releases-table-content-item">{{ p["upgradable-from"] | default: "—" }}</div>
                             <div class="releases-table-content-item">-</div>
-                            <div class="releases-table-content-item version-link">
-                                <a href="/docs/pe/releases/releases-table/{{ version }}">{{ version }}</a>
-                                <i class="fas fa-external-link-alt" style="opacity: 0.54"></i>
-                            </div>
+                            <a href="/docs/{{ docsPrefix }}releases/releases-table/{{ version }}" class="releases-table-content-item version-link">
+                                <span>{{ version }}</span>
+                                <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                            </a>
                             <div class="releases-table-content-item upgrade-instructions">
-                                <a href="/docs/user-guide/install/pe/upgrade-instructions/ubuntu/{{ version }}">
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ version }}">
                                     <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
                                 </a>
-                                <a href="/docs/user-guide/install/pe/upgrade-instructions/centos/{{ version }}">
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/centos/{{ version }}">
                                     <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
                                 </a>
-                                <a href="/docs/user-guide/install/pe/upgrade-instructions/windows/{{ version }}">
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/windows/{{ version }}">
                                     <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
                                 </a>
-                                <a href="/docs/user-guide/install/pe/docker-windows/">
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}docker-windows/">
                                     <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
                                 </a>
                             </div>

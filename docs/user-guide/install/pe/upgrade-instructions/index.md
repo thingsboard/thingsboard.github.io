@@ -10,4 +10,6 @@ redirect_from:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
 {% include upgrade-instructions-table.liquid %}

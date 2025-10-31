@@ -1,5 +1,4 @@
-{%- assign base = page.url -%}
-{%- if base == nil or base == "" -%}{%- assign base = "/docs/pe/releases/releases-table/" -%}{%- endif -%}
+{%- assign base = "/docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
 
 {%- assign release_pages = "" | split: "" -%}
 {%- for p in site.pages -%}
@@ -36,7 +35,7 @@
 
 {%- assign sortable = sortable | sort_natural | reverse -%}
 
-<div class="releases-table">
+<div class="releases-table{% if docsPrefix == "pe/" %} pe-table{% endif %}">
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
@@ -89,35 +88,63 @@
                     {%- endif -%}
                 {%- endfor -%}
 
-                {%- assign family_label = family_key | append: ".x" -%}
-
                 {%- if has_x -%}
                     {%- assign notes_url = x_url -%}
                 {%- else -%}
                     {%- assign notes_url = base | append: latest_version_slug | append: "/" -%}
                 {%- endif -%}
 
+                {%- assign status_label = "non-LTS" -%}
+                {%- if has_x -%}
+                    {%- for p in site.pages -%}
+                        {%- if p.url == x_url -%}
+                            {%- if p.lts == true or p.lts == "true" -%}
+                                {%- assign status_label = "LTS" -%}
+                            {%- endif -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- else -%}
+                    {%- assign latest_url = base | append: latest_version_slug | append: "/" -%}
+                    {%- for p in site.pages -%}
+                        {%- if p.url == latest_url -%}
+                            {%- if p.lts == true or p.lts == "true" -%}
+                                {%- assign status_label = "LTS" -%}
+                            {%- endif -%}
+                            {%- break -%}
+                        {%- endif -%}
+                    {%- endfor -%}
+                {%- endif -%}
+
                 <div class="releases-table-content-wrapper">
                     <div class="releases-table-content">
-                        <div class="releases-table-content-item">{{ family_label }}</div>
+                        <div class="releases-table-content-item">{{ family_key }}.xPE</div>
                         <div class="releases-table-content-item">
                             {%- if earliest_date_display -%}
-                                <time datetime="{{ earliest_date_display | date: '%Y-%m-%d' }}">{{ earliest_date_display }}</time>
+                                <time datetime="{{ earliest_date_display | date: '%Y-%m-%d' }}">{{ earliest_date_display | date: "%B %-d, %Y" }}</time>
                             {%- else -%}—{%- endif -%}
                         </div>
                         <div class="releases-table-content-item">{{ latest_version_slug | default: "—" }}</div>
                         <div class="releases-table-content-item">
                             {%- if latest_date_display -%}
-                                <time datetime="{{ latest_date_display | date: '%Y-%m-%d' }}">{{ latest_date_display }}</time>
+                                <time datetime="{{ latest_date_display | date: '%Y-%m-%d' }}">{{ latest_date_display | date: "%B %-d, %Y" }}</time>
                             {%- else -%}—{%- endif -%}
                         </div>
                         <div class="releases-table-content-item">—</div>
-                        <div class="releases-table-content-item">—</div>
-                        <div class="releases-table-content-item">
-                            <a href="{{ notes_url }}">{{ family_label }}</a>
-                        </div>
-                        <div class="releases-table-content-item">
-                            <a href="/docs/user-guide/install/pe/upgrade-instructions/?version={{ family_label }}">Upgrade</a>
+                        {% if status_label == "LTS" %}
+                            <a href="#" class="releases-table-content-item version-link">
+                                <span>{{ status_label }}</span>
+                                <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                            </a>
+                        {% else %}
+                            <div class="releases-table-content-item">{{ status_label }}</div>
+                        {% endif %}
+                        <a href="{{ notes_url }}" class="releases-table-content-item version-link">
+                            <span>{{ family_key }}</span>
+                            <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                        </a>
+                        <div class="releases-table-content-item upgrade-link">
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family_key }}.x">Upgrade</a>
                         </div>
                     </div>
                 </div>
