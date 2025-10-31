@@ -209,7 +209,7 @@ $header-clearance: 210px
       border-radius: 4px
       background: #FFF
     .releases-table-content-wrapper
-      padding: 4px 0
+      padding: 4px 0 3px
       border-bottom: 1px solid rgba(0, 0, 0, 0.12)
       &:last-child
         border-bottom: none
@@ -273,6 +273,15 @@ $header-clearance: 210px
             text-align: center
             min-width: 256px
         .releases-table-content-item
+          &.lts-item
+            span
+              color: rgba(0, 0, 0, 0.54)
+              border-radius: 16px
+              background: rgba(0, 0, 0, 0.06)
+              padding: 4px 10px
+            span.lts-item-true
+              color: #198038
+              background: rgba(25, 128, 56, 0.06)
           &.upgrade-instructions
             display: flex
             align-items: center

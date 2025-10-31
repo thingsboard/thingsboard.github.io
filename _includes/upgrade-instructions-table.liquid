@@ -1,8 +1,9 @@
 {%- assign dir = "/docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+{%- assign base_install = "/docs/user-guide/install/" | append: docsPrefix | append: "upgrade-instructions/" -%}
+{%- assign os_list = "ubuntu,centos,windows" | split: "," -%}
 
-{%- assign pages_in_dir = site.pages
-        | where_exp: "p", "p.url contains dir"
--%}
+{%- assign pages_in_dir = site.pages | where_exp: "p", "p.url contains dir" -%}
+{%- assign pages_sorted = pages_in_dir | sort: "release-date" | reverse -%}
 
 {%- assign pages_sorted = pages_in_dir | sort: "release-date" | reverse -%}
 
@@ -24,27 +25,45 @@
                     {%- assign family = version | split: "." | slice: 0, 2 | join: "." -%}
                     <div class="releases-table-content-wrapper" data-version="{{ version }}" data-family="{{ family }}">
                         <div class="releases-table-content">
-                            <div class="releases-table-content-item">{{ version }}</div>
+                            <div class="releases-table-content-item">{{ version }}PE</div>
                             <div class="releases-table-content-item">{{ p["release-date"] | date: "%B %e, %Y" }}</div>
                             <div class="releases-table-content-item">{{ p["upgradable-from"] | default: "—" }}</div>
-                            <div class="releases-table-content-item">-</div>
+
+                            <div class="releases-table-content-item lts-item">
+                                {%- if p.lts -%}
+                                    <span class="lts-item-true">Available</span>
+                                {%- else -%}
+                                    <span>Not-available</span>
+                                {%- endif -%}
+                            </div>
+
                             <a href="/docs/{{ docsPrefix }}releases/releases-table/{{ version }}" class="releases-table-content-item version-link">
                                 <span>{{ version }}</span>
                                 <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                             </a>
+
                             <div class="releases-table-content-item upgrade-instructions">
-                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ version }}">
-                                    <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
-                                </a>
-                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/centos/{{ version }}">
-                                    <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
-                                </a>
-                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/windows/{{ version }}">
-                                    <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
-                                </a>
-                                <a href="/docs/user-guide/install/{{ docsPrefix }}docker-windows/">
-                                    <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
-                                </a>
+                                {%- for os in os_list -%}
+                                    {%- assign target = base_install | append: os | append: "/" | append: version -%}
+                                    {%- assign target_slash = target | append: "/" -%}
+
+                                    {%- assign page_noslash = site.pages | where: "url", target | first -%}
+                                    {%- assign page_slash   = site.pages | where: "url", target_slash | first -%}
+
+                                    {%- if page_noslash or page_slash -%}
+                                        <a href="{{ target }}">
+                                            <img src="/images/{{ os }}.svg" alt="Upgrade {{ os | capitalize }} Instructions">
+                                        </a>
+                                    {%- endif -%}
+                                {%- endfor -%}
+
+                                {%- assign docker_url = "/docs/user-guide/install/" | append: docsPrefix | append: "docker-windows/" -%}
+                                {%- assign docker_page = site.pages | where: "url", docker_url | first -%}
+                                {%- if docker_page -%}
+                                    <a href="{{ docker_url }}">
+                                        <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
+                                    </a>
+                                {%- endif -%}
                             </div>
                         </div>
                     </div>
@@ -59,16 +78,11 @@
         const params = new URLSearchParams(window.location.search);
         const versionParam = params.get("version");
         if (!versionParam) return;
-
         const targetFamily = versionParam.replace(/\.x$/i, "").trim();
-
-        document
-            .querySelectorAll(".upgrade-instructions-table .releases-table-content-wrapper")
+        document.querySelectorAll(".upgrade-instructions-table .releases-table-content-wrapper")
             .forEach(function (row) {
                 const rowFamily = row.getAttribute("data-family");
-                if (rowFamily !== targetFamily) {
-                    row.style.display = "none";
-                }
+                if (rowFamily !== targetFamily) row.style.display = "none";
             });
     });
 </script>
