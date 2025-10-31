@@ -51,7 +51,7 @@
                                     {%- assign page_slash   = site.pages | where: "url", target_slash | first -%}
 
                                     {%- if page_noslash or page_slash -%}
-                                        <a href="{{ target }}">
+                                        <a href="{{ target }}" data-tooltip="Upgrade {{ os | capitalize }} Instructions">
                                             <img src="/images/{{ os }}.svg" alt="Upgrade {{ os | capitalize }} Instructions">
                                         </a>
                                     {%- endif -%}
@@ -60,7 +60,7 @@
                                 {%- assign docker_url = "/docs/user-guide/install/" | append: docsPrefix | append: "docker-windows/" -%}
                                 {%- assign docker_page = site.pages | where: "url", docker_url | first -%}
                                 {%- if docker_page -%}
-                                    <a href="{{ docker_url }}">
+                                    <a class="right-link" href="{{ docker_url }}" data-tooltip="Upgrade Docker Instructions">
                                         <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
                                     </a>
                                 {%- endif -%}

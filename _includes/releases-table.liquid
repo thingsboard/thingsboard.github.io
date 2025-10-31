@@ -127,10 +127,19 @@
                         <div class="releases-table-content-item">{{ latest_version_slug | default: "—" }}</div>
                         <div class="releases-table-content-item">
                             {%- if latest_date_display -%}
-                                <time datetime="{{ latest_date_display | date: '%Y-%m-%d' }}">{{ latest_date_display | date: "%B %-d, %Y" }}</time>
+                                <time datetime="{{ latest_date_display | date: '%Y-%m-%d' }}">
+                                    {{ latest_date_display | date: "%B %-d, %Y" }}
+                                </time>
                             {%- else -%}—{%- endif -%}
                         </div>
-                        <div class="releases-table-content-item">—</div>
+                        <div class="releases-table-content-item">
+                            {%- if latest_date_display -%}
+                                {%- assign plus_six_months = latest_date_display | date: "%s" | plus: 15778800 | date: "%Y-%m-%d" -%}
+                                <time datetime="{{ plus_six_months }}">
+                                    {{ plus_six_months | date: "%B %-d, %Y" }}
+                                </time>
+                            {%- else -%}—{%- endif -%}
+                        </div>
                         {% if status_label == "LTS" %}
                             <a href="#" class="releases-table-content-item version-link">
                                 <span>{{ status_label }}</span>

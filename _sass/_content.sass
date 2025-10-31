@@ -186,7 +186,7 @@ $header-clearance: 210px
   background: rgba(42, 125, 236, 0.08)
   overflow: auto
   .releases-table-content
-    min-width: 1500px
+    min-width: 1250px
     width: 100%
     .releases-table-header
       padding: 12px 24px
@@ -196,14 +196,14 @@ $header-clearance: 210px
       justify-content: space-between
       margin-bottom: 4px
       .releases-table-header-item
-        min-width: 170px
+        min-width: 130px
         font-size: 20px
         font-weight: 400
         line-height: 32px
         color: rgba(0, 0, 0, 0.87)
         &:nth-child(8)
           text-align: center
-          min-width: 256px
+          min-width: 200px
     .releases-table-row
       padding: 0 4px
       border-radius: 4px
@@ -228,9 +228,10 @@ $header-clearance: 210px
           .releases-table-content-item
             font-size: 15px
         .releases-table-content-item
+          text-decoration-color: #000
           transition: ease-in-out 0.3s
           font-size: 14px
-          min-width: 170px
+          min-width: 130px
           &.version-link
             display: flex
             align-items: center
@@ -240,7 +241,7 @@ $header-clearance: 210px
               color: rgba(0, 0, 0, 0.87)
           &:nth-child(8)
             text-align: center
-            min-width: 256px
+            min-width: 200px
 
 .releases-table.pe-table
   .releases-table-content-wrapper
@@ -255,10 +256,10 @@ $header-clearance: 210px
   .releases-table-content
     .releases-table-header
       .releases-table-header-item
-        min-width: 240px
+        min-width: 130px
         &:nth-child(6)
           text-align: center
-          min-width: 256px
+          min-width: 208px
     .releases-table-content-wrapper
       .releases-table-content
         &:hover
@@ -268,10 +269,10 @@ $header-clearance: 210px
                 img
                   scale: 1.2
         .releases-table-content-item
-          min-width: 240px
+          min-width: 130px
           &:nth-child(6)
             text-align: center
-            min-width: 256px
+            min-width: 208px
         .releases-table-content-item
           &.lts-item
             span
@@ -286,27 +287,33 @@ $header-clearance: 210px
             display: flex
             align-items: center
             justify-content: center
-            gap: 32px
+            gap: 25px
             a
               position: relative
+              &.right-link
+                &:before
+                  left: -100%
+              &:before
+                content: attr(data-tooltip)
+                position: absolute
+                bottom: 125%
+                left: 50%
+                transform: translateX(-50%)
+                background-color: rgba(0,0,0,0.7)
+                backdrop-filter: blur(2px)
+                color: #fff
+                font-size: 13px
+                padding: 6px 8px
+                border-radius: 6px
+                white-space: nowrap
+                opacity: 0
+                pointer-events: none
+                transition: opacity 0.2s ease
               &:hover
+                &:before
+                  opacity: 1
+                  content: attr(data-tooltip)
                 filter: unset
-                img:before
-                  content: attr(alt)
-                  position: absolute
-                  bottom: 125%
-                  left: 50%
-                  transform: translateX(-50%)
-                  background-color: rgba(0,0,0,0.7)
-                  backdrop-filter: blur(2px)
-                  color: #fff
-                  font-size: 13px
-                  padding: 6px 8px
-                  border-radius: 6px
-                  white-space: nowrap
-                  opacity: 0
-                  pointer-events: none
-                  transition: opacity 0.2s ease
                 img
                   filter: unset
               img
