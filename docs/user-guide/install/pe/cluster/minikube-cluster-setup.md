@@ -204,25 +204,26 @@ git pull origin master
 ```
 {: .copy-code}
 
-and then execute the following commands:
+Then, execute the following commands:
 
-```
+```bash
 ./k8s-delete-resources.sh
-```
-{: .copy-code}
-```
-./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-```
-{: .copy-code}
-```
+./k8s-upgrade-tb.sh
 ./k8s-deploy-resources.sh
 ```
 {: .copy-code}
 
-Where:
+Note, that you have to upgrade versions one by one (for example 4.0.0 -> 4.0.1 -> 4.1.0 etc).
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/pe/upgrade-instructions) for valid `fromVersion` values. Note, that you have to upgrade versions one by one (for example 3.6.1 -> 3.6.2 -> 3.6.3 etc). 
+{% capture from-version-note %}
+<code style="color:black">"--fromVersion"</code> flag is required for earlier upgrade versions (prior to 3.9.1), for example:
 
+`# upgrading to v3.9.0...`<br>
+`./k8s-upgrade-tb.sh --fromVersion=3.8.1`
+
+See [Upgrade Instructions](/docs/user-guide/install/{{docsPrefix}}upgrade-instructions) for valid <code style="color:black">"fromVersion"</code> values.
+{% endcapture %}
+{% include templates/info-banner.md content=from-version-note %}
 
 ## Next steps
 
