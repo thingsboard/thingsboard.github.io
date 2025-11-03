@@ -38,7 +38,12 @@ To create a new asset:
 - In the asset creation form, fill in the required fields:
   - **Name** – a unique name for the asset.
   - **[Asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}** – by default, the profile is set to "**default**", but you can choose a different profile if needed.
-- Optional fields such as label or description can be filled in if needed.
+    {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+  - **Owner and groups:** Helps with organization and access control.
+    - **Owner**: Select the owner from the dropdown list. The asset will be created at that owner’s level. By default, the field is pre-filled with the Customer or Tenant name based on where you add the asset. You can change it before confirming adding.
+    - **Groups**: Optional field. Add the asset to existing asset groups or create a new one at the selected owner level. Note: every asset is automatically added to the "**All**" group of that owner.      
+  {% endif %}
+- Optional fields such as **Label** or **Description** can be filled in if needed.
 - Click "**Add**".
 
 The asset has been successfully created and is now available in the list.
@@ -48,7 +53,7 @@ The asset has been successfully created and is now available in the list.
 {% unless docsPrefix == null %}
 ### Creating asset group
 
-Assets can be logically organized into groups for easier management.
+Assets can belong to one or multiple [groups](/docs/{{docsPrefix}}user-guide/groups/){:target="_blank"}, which helps organize and manage them effectively.
 
 To create a new asset group:
 - From the **Assets** screen, go to the **"Group" tab**.
@@ -58,6 +63,49 @@ To create a new asset group:
 - Click "**Add**" to create the group.
 
 {% include images-gallery.html imageCollection="creating-asset-group" %}
+
+### Managing asset groups. How to add, move, remove
+
+From the Assets page, you can add assets to groups, move them between groups, or remove them from a group.
+
+The "**All**" asset group always contains all assets at the selected owner level (Tenant or Customer).
+
+**Add a single asset to groups:**
+- Open the [asset details](#asset-details) ➜ click Manage owner and groups.
+- In the dialog, adjust Owner if necessary and select groups to add or remove the asset from.
+- Click **Save**.
+
+**Add multiple assets to one group:**
+- On the **Groups** tab, open any asset group (e.g., "**All**").
+- Select assets using the checkboxes (on the left of their names).
+- Click the "**Add to group**" (plus-in-circle icon) in the top-right.
+- In **Add to group** window, choose **Select existing entity group** or **Create new entity group**.
+- Select an existing or create a new asset group.
+- Click **Add** to confirm adding the assets to the group.
+
+{% capture multiple %}
+**Note:** This adds assets to the chosen group without removing them from other groups.
+{% endcapture %}
+{% include templates/info-banner.md content=multiple %}
+
+**Move assets to another group:**
+- Open a specific (non-**All**) group.
+- Select assets and click **Move to group** (two-arrow icon).
+- In "Move to group" window, choose **Select existing entity group** or **Create new entity group**.
+- Select an existing or create a new asset group.
+- Click **Move** to confirm.
+
+This action removes assets from the current group and adds them to the selected group.
+
+**Remove assets from a group:**
+- Open a specific (non-**All**) group.
+- Select assets and click **Remove from group** (minus-in-circle icon) in the top-right.
+- Confirm removal.
+
+{% capture difference %}
+**Note:** Assets are not deleted; they remain in the owner’s "**All**" assets group.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% endunless %}
 
@@ -86,11 +134,11 @@ To delete an asset{% unless docsPrefix == null %} or asset group{% endunless %}:
 {% if docsPrefix == null %}
 ## Make asset public
 
-You can make a asset public so that all its data is accessible to everyone. 
+You can make an asset public so that all its data is accessible to everyone. 
 This is ideal for creating public demo dashboards that require access to asset data or for open data use cases.    
 
-- Click the "**Make asset public**" icon next to the asset you want to share.'
-- Confirm your action in the popup dialog.'
+- Click the "**Make asset public**" icon next to the asset you want to share.
+- Confirm your action in the popup dialog.
 
 The asset is now public.
 
@@ -128,40 +176,50 @@ You can later unassign the asset or reassign it to another customer if needed.
 ## Asset details
 
 Clicking on an asset opens a window where you can access and manage various aspects of that asset:
-- Copy the asset Id to the clipboard using the "Copy asset Id" button.
-- Manage server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes){:target="_blank"} of the asset.
+- Copy the **asset Id** to the clipboard using the "**Copy asset Id**" button.
+- Manage server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} of the asset.
 - Perform additional computations on telemetry and attributes using the [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} feature.
 - View current and historical [alarms](/docs/{{docsPrefix}}user-guide/alarms){:target="_blank"} of the asset.
 - Browse asset-related **events**, such as errors, warnings, and other key lifecycle moments.
-- Manage [relationships](/docs/{{docsPrefix}}user-guide/entities-and-relations){:target="_blank"} between this asset and other entities, such as devices, dashboards, etc.
+- Manage [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations){:target="_blank"} between this asset and other entities, such as devices, dashboards, etc.
 - Track user actions and changes related to the asset in the [Audit log](/docs/{{docsPrefix}}user-guide/audit-log/){:target="_blank"}.
 - Use the ThingsBoard [Version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} system to export and restore the asset as part of Git-based object management.
 
-{% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Manage asset owner and groups
 
 You can change the **owner** of an asset. This ensures that only users associated with the selected customer will have access to the asset and its data.
 
 > This step is essential for maintaining strict data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see their own assigned assets and will not have visibility into assets or data belonging to other customers.
 
-To change asset ownership:
-- Click asset to open its **details** view.
+To change asset owner:
+- Click the asset to open its **Asset details**.
 - Click the "**Manage owner and groups**" button.
-- Select the new owner of the asset from the list.
-- If needed, add the asset to an existing group or create a new one.
-- Confirm the change to update the asset&#39;s ownership.
+- In the **Owner** field, select [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} or a specific [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}.
+- Add the asset to the relevant **asset groups** or [create a new group](#creating-asset-group) if needed.
+- Click “**Update**” to confirm and apply the changes.
 
 In the <b>"Customer name" column</b>, you can see the current owner of the asset.
 
-> <b>Note</b>: A Tenant Administrator always has the right to reassign or revoke asset ownership.
+{% capture difference %}
+**Note:** Changes to group membership and ownership take effect immediately and update user access according to the [roles](/docs/{{docsPrefix}}user-guide/rbac/#roles){:target="_blank"} of the assigned groups.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+A Tenant Administrator always has the right to reassign or revoke asset ownership.
 
 {% include images-gallery.html imageCollection="manage-owner-and-groups" %}
 
 ### Include customer entities
 
-The "<b>Include customer entities</b>" option on the "<b>Assets</b>" page determines whether assets owned by customers are shown or hidden in the list.
+The "**Include customer entities**" option on the "**Assets**" page determines whether assets owned by customers are shown or hidden in the list.
 
 {% include images-gallery.html imageCollection="include-customer-assets" showListImageTitles="true" %}
+
+## Share asset
+You can share assets by adding them to an asset group and then sharing the group with a customer.
+
+For detailed instructions, please see the section on how to [Share asset group](#share-asset-group).
 
 ## Make asset group public
 
@@ -199,4 +257,54 @@ To share an asset group:
 - Confirm the action by clicking "**Share**".
 
 {% include images-gallery.html imageCollection="share-asset-group" %}
+
+**Managing and Verifying Permissions**
+
+After an asset group has been shared, you can view, edit, or revoke permissions at any time.
+
+1. From the "**Asset groups**" list, click on the "**pencil**" button of the desired group to open the "**Entity group details**".
+
+2. Navigate to the **Permissions** tab.
+
+3. On this tab, you will see a complete list of all permissions granted for this group. Here you can:
+
+- **Add** a new permission: Click the "**+**" icon in the top right corner of the panel. A dialog window will appear where you can select a role and a user group to grant access to.
+
+- **Edit** an existing permission: Click the "**pencil**" icon next to the permission you want to modify.
+
+- **Delete** a permission: Click the "**trash can**" icon to remove access for that user group.
+
 {% endif %}
+
+## Managing asset relations. How to add, view, edit, delete
+
+From the Assets page, you can create, view, edit, and delete relations between an asset and other entities (assets, devices, customers, etc.). See details about [Entities and relations](/docs/{{docsPrefix}}user-guide/entities-and-relations/){:target="_blank"}.
+
+**To manage relations between an asset and other entities for a specific asset:** 
+- Open the [asset details](#asset-details) ➜ go to the **Relations** tab.
+
+**Add a new relation:**
+- In the Direction selector, choose **From** (outbound) or **To** (inbound).
+- Click "**+**" icon (Add).
+- In **Add relation** window, set **Relation type** (e.g., _Contains_, _Manages_) and choose the **To entity** (Entity type and target entities).
+- Click **Add** to confirm.
+
+{% capture rel_dir %}
+**Note:** Relations are directional. Use "**From**" to define relations originating from the current asset, or "**To**" to show relations to this asset.
+{% endcapture %}
+{% include templates/info-banner.md content=rel_dir %}
+
+**View & filter relations:**
+- Switch **Direction** between "**From**" and "**To**" to see outbound/inbound relations.
+- Use the **search** icon to filter by relation type or entity.
+
+**Edit a relation:**
+- In the list, click the "**pencil**" icon to change the relation type or target entity, then **Save**.
+
+**Delete a relation:**
+- Click the "**trash can**" icon next to a relation and confirm deleting.
+
+{% capture rel_remove %}
+**Note:** Deleting a relation does **not** delete the related entities; it only deletes the relation.
+{% endcapture %}
+{% include templates/info-banner.md content=rel_remove %}
