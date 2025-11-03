@@ -59,7 +59,7 @@ Same logic work if you want to filter asset/devices by customer that they belong
 ## Filter by date
 
 This feature allows the filtering of telemetry data based on specific date periods, providing greater control over how data is displayed. You can filter your telemetry data by:
-* **Hour:** Filters data by the hour of the day (0-59).
+* **Hour:** Filters data by the hour of the day (0-23).
 * **Day:** Filters data by the day of the week (Mon-Sun).
 * **Date:** Filters data by the day of the month (1-31).
 * **Month:** Filters data by the month of the year (Jan-Dec).

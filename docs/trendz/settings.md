@@ -148,12 +148,18 @@ Check the status under the **Trendz Settings** section:
     - If not installed - uploads the settings.
     - If outdated - updates them.
 
-### AI Assistant
+### AI Settings
 
-Here it's possible to configure the LLM for the [AI Assistant](/docs/trendz/ai-assistance-overview) and the [AI Widget Summary](/docs/trendz/ai-widget-summary).  
-You can learn how to configure a own AI model in the [LLM Configuration guide](/docs/trendz/custom-ai-model-configuration/).
+Here it's possible to configure the AI Model for the next features:
+
+* [Metric Explorer](/docs/trendz/metric/overview)
+* [View AI Assistant](/docs/trendz/ai-assistance-overview)
+* [AI Widget Summary](/docs/trendz/ai-widget-summary)
+
+You can learn how to configure AI Setting [here](/docs/trendz/custom-ai-model-configuration/).
 
 ## System
+
 ### Import / Export
 
 To migrate data from one Trendz instance to another, use the built-in **Import/Export** mechanism.

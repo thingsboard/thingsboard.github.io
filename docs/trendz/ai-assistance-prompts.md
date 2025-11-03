@@ -22,15 +22,12 @@ trendz-prompts-create-new-prompt:
     title: 1. Write the prompt content.
   2:
     image: /images/trendz/ai/prompts/create-new-prompt-3.png
-    title: 2. Confirm everything looks as expected.
+    title: 2. Enter a prompt name.
   3:
     image: /images/trendz/ai/prompts/create-new-prompt-4.png
-    title: 3. Enter a prompt name.
+    title: 3. Save the prompt.
   4:
     image: /images/trendz/ai/prompts/create-new-prompt-5.png
-    title: 4. Save the prompt.
-  5:
-    image: /images/trendz/ai/prompts/create-new-prompt-6.png
     title: A new prompt has been created.
     
 trendz-prompts-check-selected-prompt:
@@ -53,10 +50,7 @@ trendz-prompts-edit-selected-prompt:
     title: 2. Update the prompt content;
   3:
     image: /images/trendz/ai/prompts/edit-selected-prompt-4.png
-    title: 3. Confirm everything looks as expected;
-  4:
-    image: /images/trendz/ai/prompts/edit-selected-prompt-5.png
-    title: 4. Save the prompt.
+    title: 3. Save the prompt.
     
 trendz-prompts-delete-selected-prompt:
   0:
@@ -88,14 +82,6 @@ trendz-prompts-markdown-preview:
     image: /images/trendz/ai/prompts/markdown-preview-2.png
     title: To exit preview mode, you can click the "Hide Preview" button.
 
-trendz-prompts-markdown-fullscreen:
-  0:
-    image: /images/trendz/ai/prompts/markdown-fullscreen-1.png
-    title: You can enter fullscreen mode in the Markdown tab by clicking the "Fullscreen" button in the upper right corner of the tab.
-  1:
-    image: /images/trendz/ai/prompts/markdown-fullscreen-2.png
-    title: To exit fullscreen mode, you can click the same button again.
-
 trendz-prompts-markdown-blocks:
   0:
     image: /images/trendz/ai/prompts/markdown-blocks.png
@@ -112,15 +98,24 @@ trendz-prompts-markdown-rename:
     image: /images/trendz/ai/prompts/markdown-rename-3.png
     text: Click any free space to confirm the changes.
 
-trendz-prompts-markdown-confirm:
-  0:
-    image: /images/trendz/ai/prompts/markdown-confirm.png
-    text: During the creation or editing process, you can confirm or decline the prompt changes.
-
 trendz-prompts-markdown-save:
   0:
     image: /images/trendz/ai/prompts/markdown-save.png
     text: After editing the prompt, you can either save or cancel the changes.
+
+trendz-prompts-test:
+  0:
+    image: /images/trendz/ai/prompts/test-selected-prompt-1.png
+    text: Click the *Run test* button in the upper-right corner of the prompt editor.
+  1:
+    image: /images/trendz/ai/prompts/test-selected-prompt-2.png
+    text: A test panel will open on the right side with a Select View dropdown. Choose one of your saved views from the dropdown menu.
+  2:
+    image: /images/trendz/ai/prompts/test-selected-prompt-3.png
+    text: Click the *Test prompt* button to generate the summary.
+  3:
+    image: /images/trendz/ai/prompts/test-selected-prompt-4.png
+    text: See the result.
 ---
 
 * TOC
@@ -160,11 +155,22 @@ To access the Prompts tab, you can follow these steps:
   Then, you can follow these steps:
 
   1. Write the prompt content;
-  2. Confirm everything looks as expected;
-  3. Enter a prompt name;
-  4. Save the prompt.
+  2. Enter a prompt name;
+  3. Save the prompt.
 
   {% include images-gallery.html imageCollection="trendz-prompts-create-new-prompt" %}
+
+  * **Test prompt**
+
+  The Test feature allows you to preview how your prompt will analyze and summarize actual data from your saved views. This is especially useful when creating or refining custom prompts, 
+  as it lets you see the AI-generated output in real-time before applying the prompt to production dashboards.
+
+  To test your prompt, follow the next steps:
+  1. Click the *Run test* button in the upper-right corner of the prompt editor;
+  2. A test panel will open on the right side with a Select View dropdown. Choose one of your saved views from the dropdown menu.
+  3. Click the *Test prompt* button to generate the summary.
+
+  {% include images-gallery.html imageCollection="trendz-prompts-test" %}
 
 * **Check selected prompt and Copy prompt ID**
 
@@ -184,8 +190,7 @@ To access the Prompts tab, you can follow these steps:
 
   1. Press the *Edit* button;
   2. Update the prompt content;
-  3. Confirm everything looks as expected;
-  4. Save the prompt.
+  3. Save the prompt.
 
   {% include images-gallery.html imageCollection="trendz-prompts-edit-selected-prompt" %}
 
@@ -221,14 +226,6 @@ To access the Prompts tab, you can follow these steps:
 
   {% include images-gallery.html imageCollection="trendz-prompts-markdown-preview" %}
 
-* **Fullscreen Button**
-
-  You can enter fullscreen mode in the Markdown tab by clicking the *Fullscreen* button in the upper right corner of the tab.
-
-  To exit fullscreen mode, you can click the same button again.
-
-  {% include images-gallery.html imageCollection="trendz-prompts-markdown-fullscreen" %}
-
 * **Markdown Blocks**
 
   The Markdown tab supports various markdown blocks. In the upper left corner of the screen, you can find shortcuts for the following blocks:
@@ -254,17 +251,6 @@ To access the Prompts tab, you can follow these steps:
   **Note:** The prompt will not be renamed until you click the "Save" button.
   
   {% include images-gallery.html imageCollection="trendz-prompts-markdown-rename" %}
-
-* **Confirm/Decline**
-
-  During the creation or editing process, you can confirm or decline the prompt changes.
-
-  - If you confirm, all prompt changes will be applied.
-  - If you decline, all prompt changes will be discarded.
-
-  **Note:** The prompt changes will not be applied until you click the "Save" button.
-
-  {% include images-gallery.html imageCollection="trendz-prompts-markdown-confirm" %}
 
 * **Save/Cancel**
 

@@ -47,31 +47,17 @@ and explore step-by-step how-to guides for constructing end-to-end IoT solutions
             </div>
         </a>
     </div>
-    <div class="w-100"></div>
+</div>
+
+<h2 id="features">Features</h2>
+
+<div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/docs/trendz/prediction/">
-            <img class="feature-logo" src="/images/trendz/icons/prediction.svg" alt="prediction">
-            <div class="feature-title">Predict time series</div>
+        <a class="feature-card" href="/docs/trendz/metric/overview/">
+            <img class="feature-logo" src="/images/trendz/icons/metric-explorer.svg" alt="metric-explorer">
+            <div class="feature-title">Explore Metrics</div>
             <div class="feature-text">
-                Overview how to use Trendz Analytics to predict time series data and build forecasts.
-            </div>
-        </a>
-    </div>
-    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/docs/trendz/anomaly/overview/">
-            <img class="feature-logo" src="/images/trendz/icons/anomaly.svg" alt="anomaly">
-            <div class="feature-title">Anomaly detection</div>
-            <div class="feature-text">
-                Learn how to identify anomalies in the data.
-            </div>
-        </a>
-    </div>
-    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/docs/trendz/calculated-fields/">
-            <img class="feature-logo" src="/images/trendz/icons/calculation.svg" alt="calculated-fields">
-            <div class="feature-title">Calculation Fields</div>
-            <div class="feature-text">
-                Learn how to create and configure calculated fields to suit your analysis needs.
+                Learn how to explore existing metrics or create new ones.
             </div>
         </a>
     </div>
@@ -80,9 +66,45 @@ and explore step-by-step how-to guides for constructing end-to-end IoT solutions
             <img class="feature-logo" src="/images/trendz/icons/ai-assistant.svg" alt="ai-assistant">
             <div class="feature-title">AI Assistant</div>
             <div class="feature-text">
-                Learn how to use AI Assistant to generate visualizations effortlessly.
+                Learn how to use AI Assistant to generate visualizations and then analyze them.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/trendz/prediction/">
+            <img class="feature-logo" src="/images/trendz/icons/prediction.svg" alt="prediction">
+            <div class="feature-title">Predict Time Series</div>
+            <div class="feature-text">
+                Overview how to use Trendz Analytics to predict time series data and build forecasts.
+            </div>
+        </a>
+    </div>
+    <div class="w-100"></div>
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/trendz/anomaly/overview/">
+            <img class="feature-logo" src="/images/trendz/icons/anomaly.svg" alt="anomaly">
+            <div class="feature-title">Anomaly Detection</div>
+            <div class="feature-text">
+                Learn how to identify anomalies in the data.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/trendz/calculations/overview/">
+            <img class="feature-logo" src="/images/trendz/icons/calculation.svg" alt="calculated-fields">
+            <div class="feature-title">Calculation Fields</div>
+            <div class="feature-text">
+                Learn how to create and configure calculated fields to suit your analysis needs.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/trendz/visualizations-overview/">
+            <img class="feature-logo" src="/images/trendz/icons/views.svg" alt="views">
+            <div class="feature-title">Build Analytics Views</div>
+            <div class="feature-text">
+                Learn how to create and configure analytics views to build different visualizations.
             </div>
         </a>
     </div>
 </div>
-
