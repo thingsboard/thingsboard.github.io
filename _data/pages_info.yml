@@ -252,6 +252,9 @@
 "/docs/devices-library/recomputer-r1100/":
   url: "/docs/devices-library/recomputer-r1100/"
   redirect_from: []
+"/docs/devices-library/rn172wcd/":
+  url: "/docs/devices-library/rn172wcd/"
+  redirect_from: []
 "/docs/devices-library/rock-pi-4-model-b/":
   url: "/docs/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -1273,6 +1276,9 @@
 "/docs/paas/devices-library/recomputer-r1100/":
   url: "/docs/paas/devices-library/recomputer-r1100/"
   redirect_from: []
+"/docs/paas/devices-library/rn172wcd/":
+  url: "/docs/paas/devices-library/rn172wcd/"
+  redirect_from: []
 "/docs/paas/devices-library/rock-pi-4-model-b/":
   url: "/docs/paas/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -1633,6 +1639,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/recomputer-r1100/":
   url: "/docs/paas/eu/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rn172wcd/":
+  url: "/docs/paas/eu/devices-library/rn172wcd/"
   redirect_from: []
 "/docs/paas/eu/devices-library/rock-pi-4-model-b/":
   url: "/docs/paas/eu/devices-library/rock-pi-4-model-b/"
@@ -3074,6 +3083,9 @@
   redirect_from: []
 "/docs/pe/devices-library/recomputer-r1100/":
   url: "/docs/pe/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/pe/devices-library/rn172wcd/":
+  url: "/docs/pe/devices-library/rn172wcd/"
   redirect_from: []
 "/docs/pe/devices-library/rock-pi-4-model-b/":
   url: "/docs/pe/devices-library/rock-pi-4-model-b/"
