@@ -27,7 +27,7 @@ productivity and database hosting.
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
-## Starting Edge on the {{deviceName}} {#starting-edge-on-the-raspberry-pi-4}
+## Starting Edge on the {{deviceName}} {#starting-edge-on-device}
 {% assign userName = "pi" %}
 {% include /templates/edge/devices-library/install-edge-gw.md %}
 {% endif %}

@@ -425,6 +425,9 @@
 "/docs/edge/devices-library/guidelines/":
   url: "/docs/edge/devices-library/guidelines/"
   redirect_from: []
+"/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
 "/docs/edge/devices-library/raspberry-pi-4/":
   url: "/docs/edge/devices-library/raspberry-pi-4/"
   redirect_from: []
@@ -3230,6 +3233,9 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/guidelines/":
   url: "/docs/pe/edge/devices-library/guidelines/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
   redirect_from: []
 "/docs/pe/edge/devices-library/raspberry-pi-4/":
   url: "/docs/pe/edge/devices-library/raspberry-pi-4/"
