@@ -99,59 +99,66 @@ All configuration parameters list for each authentication mode, and their detail
 
 ## Section "Data mapping"
 
-This configuration section contains an array of topics that the gateway will subscribe to after connecting to the broker, along with settings about processing incoming messages (converter).
+**Data Mapping** lets you configure the topic/topics the gateway subscribes to for device creation and incoming data handling.
+You can generate topic/topics and device names on the fly, and choose what data is sent 
+as device attributes or telemetry. This section provides the essential settings for flexible device and data management.
 
-Select basic or advanced MQTT configuration:
+The following parameters configure the topic(s) the gateway subscribes to for data feed, device creation (name and profile), 
+and the reporting strategy:
+- **Topic filter** - The topic/topics the gateway will subscribe to that is used for data feed .The **Topic filter**  supports special symbols: ‘#’ and ‘+’
+*wildcards* (more information how you may use them for matching topic patterns [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section). 
+- Also MQTT connector supports shared subscriptions to create one you need to add “$share/” as a prefix for **Topic filter** and shared subscription group name (more information how you may use it [Additional information](/docs/iot-gateway/config/mqtt/#shared-subscriptions) section) and problems 
+that may appear while using them [Troubleshooting](/docs/iot-gateway/config/mqtt/#troubleshooting/shared-subsriptions) section.
+- **QoS** - *MQTT Quality of Service*  is an agreement between the message sender and receiver that defines the level of delivery guarantee for a specific message. (0-At most once, 1-At least once, 2-Exactly once)
+- **Report strategy** - strategy for sending data to ThingsBoard:
+  - **Report period** - period for sending data to ThingsBoard in milliseconds;
+  - **Type** - type of the report strategy:
+    - **On report period** - sends data to ThingsBoard after the report period;
+    - **On value change** - sends data to ThingsBoard when the value changes;
+    - **On value change or report period** - sends data to ThingsBoard when the value changes or after the report period;
+    - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
-{% capture mqttdatamappingsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/data-mapping-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/data-mapping-subsection-advanced.md{% endcapture %}
+### Subsection "Data conversion"
 
-{% include content-toggle.liquid content-toggle-id="mqttdatamappingsubsection" toggle-spec=mqttdatamappingsubsection %}
+- **Payload type** - The incoming data type that will be processed from topic can be `JSON`, `Bytes`, `Custom` (more information about supported Payload types see in the [Additional information](/docs/iot-gateway/config/mqtt/#additinal-information) *Convertor types section* ).
+- **Name** - The name of the device in ThingsBoard. It can be parsed from `Message`, `Topic`, `Constant`, (more information about sources with examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) section).
+- **Profile name** - The device profile in ThingsBoard. It can be parsed from `Message`, `Topic`, `Constant` (more information about sources can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) section).
 
-Let's assume we would like to subscribe and process the following data from Thermometer device:
+![image](/images/gateway/mqtt-connector/mqtt-mapping-overview.png)
 
-<table>
-  <thead>
-    <tr>
-      <td style="width: 25%"><b>Example Name</b></td><td style="width: 25%"><b>Topic</b></td><td style="width: 25%"><b>Topic Filter</b></td><td style="width: 30%"><b>Payload</b></td><td style="width: 20%"><b>Comments</b></td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Example 1</td>
-      <td>sensor/data</td>
-      <td>sensor/data</td>
-      <td>{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58}</td>
-      <td>Device Name is part of the payload</td>
-    </tr>
-    <tr>
-      <td>Example 2</td>
-      <td>sensor/SN-001/data</td>
-      <td>sensor/+/data</td>
-      <td>{"sensorType": "Thermometer", "sensorModel": "T1000", "temp":  42, "hum": 58}</td>
-      <td>Device Name is part of the topic</td>
-    </tr>
-  </tbody>
-</table>
+![image](/images/gateway/mqtt-connector/mqtt-data-conversion-overview.png)
 
-In this case the following messages are valid:
+To add a new device, use the following steps:
 
-Example 1:
+{% assign addingDevice = '
+    ===
+        image: /images/gateway/mqtt-connector/adding-device-1.png,
+        title: Click the **+ Add mapping** button.
+    ===
+        image: /images/gateway/mqtt-connector/adding-device-2.png,
+        title: Provide the following fields for the Data mapping section in the opened model window: Topic filter, QoS, Payload type(can be `JSON`, `Bytes` or `Custom`).
+    ===
+        image: /images/gateway/mqtt-connector/adding-device-3.png,
+        title: Provide the following fields for the Data conversion subsection in the opened model window: Name, Profile name(can be both from `Message`, `Topic` or `Constant`) .
+'
+%}
 
-```bash
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
-```
-{: .copy-code}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=addingDevice %}
 
-Example 2:
+{% capture difference %}
+Additional information about the report strategy can be found [here](/docs/iot-gateway/features-overview/report-strategy){:target="_blank"}.
 
-```bash
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/SN-001/data" -m '{"sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
-```
-{: .copy-code}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/opc-ua/#device-mapping) section.
 
-Now let's review how we can configure JSON converter to parse this data.
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/opc-ua/#usage-examples) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+### Subsection "Attributes" and "Time series"
+
+
+### Usage examples
 
 ### Subsection "Data conversion"
 
@@ -511,6 +518,27 @@ Example of the security configuration for **certificates** authentication option
 ```
 {: .copy-code}
 
+### Data mapping
+
+
+| **Parameter**                             | **Default value**       | **Description**                                                                                                                                                                                                                                                                                                                                                      |
+|:------------------------------------------|:------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| broker                                    |                         | The broker object specifies the target mqtt broker and how the gateway interacts with it.                                                                                                                                                                                                                                                                            |
+| broker.host                               |                         | Hostname or ip address that will be used for establishing connection to MQTT broker.                                                                                                                                                                                                                                                                                 |
+| broker.port                               | **1883**                | Listening MQTT port on the broker that will accept connection from a client.                                                                                                                                                                                                                                                                                         |
+| broker.version                            | **5**                   | MQTT protocol version (there are three versions currently supported by gateway - **3.1**, **3.11**, **5**).                                                                                                                                                                                                                                                          |
+| broker.clientId **                        | **ThingsBoard_gateway** | Unique identifier for each client’s session on the broker.                                                                                                                                                                                                                                                                                                           |
+| broker.maxMessageNumberPerWorker          | **10**                  | (Optional) Maximum number of MQTT messages a single worker (a background helper that processes queued messages)<br/> handles in one pass before letting other workers run. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                  |
+| broker.maxNumberOfWorkers                 | **100**                 | (Optional) Maximum number of workers (background helpers that process queued messages)<br/> the gateway can run in parallel to handle MQTT traffic. You may read more about this in the [Workers settings](/docs/iot-gateway/config/mqtt/#workers-settings).                                                                                                         |
+| broker.keepAlive (in seconds)             | **60**                  | (Optional) Seconds between pings; e.g., default is 60s, the broker expects traffic within the given interval * 1.5 or it closes the connection.                                                                                                                                                                                                                      |
+| broker.cleanSession                       | **true**                | (Optional) Tells the broker whether to start fresh or keep your previous session, Use `false`, if you want offline message queueing; use `true` if you always reconnect cleanly and don’t need persistence(Only for 3.1, 3.11 see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences).            |
+| broker.cleanStart                         | **true**                | (Optional) Simular to **broker.cleanSession**, but unlike it, only decides what happens **at the start** of a connection; use `true`, if you want discard an old session; use `false` if you want to try to resume it (For MQTT 5.0 only see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences). |
+| broker.sessionExpiryInterval (in seconds) | **0**                   | (Optional) How long the broker should keep your session after you disconnect (For MQTT 5.0 only see details here - [MQTT Parameter Version Differences](/docs/iot-gateway/config/mqtt/#mqtt-parameter-version-differences).                                                                                                                                          |
+| ---                                       |                         |                                                                                                                                                                                                                                                                                                                                                                      |
+
+
+#### Data conversion
+
 ## Workers settings
 
 This configuration settings provides fields for configuring connector performance and message reading/formatting speed:
@@ -518,6 +546,141 @@ This configuration settings provides fields for configuring connector performanc
 {% include /templates/iot-gateway/mqtt-connector/workers-settings-section-basic.md %}
 
 ## Additional information
+
+### Wildcard usage
+
+**Wildcards** let the gateway subscribe to many topics with one pattern, or to topics whose exact names you don’t know,
+but whose structure you do.
+
+- **(`#`) - wildcard**
+
+  A **(`#`) - wildcard** matches *this level and all following levels*. Put it only at the *end*.
+
+  _Expression:_
+
+  `sensor/data/#`
+
+  _Matching examples:_
+
+  `sensor/data/room1`
+
+  `sensor/data/room1/temp`
+
+  `sensor/data/`
+
+
+- **(`+`) - wildcard**
+
+  A **(`+`) - wildcard** *uses exactly one level* may be used *anywhere* at the topic level.
+
+  _Expression:_
+
+  `sensor/+/data`
+
+  _Matching examples:_
+
+  `sensor/A/data`
+
+  `sensor/B/data`
+
+  _Non-Matching examples:_
+
+  `sensor/A/lab/data`
+
+### Shared subscriptions
+
+**Shared subscription** is a special type of subscription that let multiple MQTT clients “share” a single subscription
+so the broker load-balances messages among them.
+Instead of every subscriber getting every message (fan-out), only one member of the group receives each matching
+publish.
+For example to subscribe to the `sensor/+/data` in group `workers` you can set the topic filter to.
+
+**Example:**
+
+`$share/workers/sensor/+/data`
+
+### Convertor types
+
+This part of documentation refers to the convertor types available for parsing various data formats from topics.
+
+#### JSON
+
+Use this type of conversion if incoming data is `json`.
+
+**Example:**
+
+`{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}`
+
+#### BYTES
+
+Use this type of conversion if incoming data are sequence of `bytes`.
+
+**Example:**
+  
+`b'AM-120'`
+
+#### CUSTOM
+
+Use the `CUSTOM` converter when incoming data is neither `BYTES` nor `JSON`. Implement your custom converter and configure it in the MQTT connector (see 
+[Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) for examples with screenshots). 
+
+### Expression types
+
+#### Json path
+
+**JSON path** (message source)
+Use **json path** when the **Name** and/or **Profile Name** must be extracted from the **Message** source and the
+**Payload type**  is **JSON**.
+In other words, these values are read directly from fields in the incoming JSON payload.
+
+_Expressions:_
+
+`${serialNumber}`
+`${sensorType}`
+
+_Payload example:_
+`{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}`
+
+_Converted data:_
+`SN-001`
+`Thermometer`
+
+#### Regular expressions
+
+**Regular expression** (topic source)
+Use **regular expression** when the **Name** and/or **Profile Name** must be extracted from the **Topic**.
+In other words, these values will be extracted from your topic depending on the regular expression you write.
+
+_Expression:_
+
+`(?<=sensor/)(.*?)(?=/data)`
+
+_Matching example:_
+`sensor/Thermo-A/data`
+
+_Converted data:_
+`Thermo-A`
+
+#### Slices
+
+**Slices** (bytes source)
+
+Use **Slices** when the **Name** and/or **Profile Name** must be extracted from the bytes sequence and the 
+*Payload type* is **BYTES**.Slices use Python-style indexing over the raw byte sequence. Example rule: device name = first 4 bytes; 
+temperature = the rest.
+
+_Expressions:_
+
+`[0:4]"`
+`[4:]`
+
+_Payload example:_
+`b'AM-120'`
+
+_Converted data:_
+`AM-1`
+`20`
+
 
 ## Troubleshooting
 
@@ -531,6 +694,12 @@ This configuration settings provides fields for configuring connector performanc
 
 3. **broker.cleanStart**
 *MQTT 5.0 only*; controls what happens at connect: `true` discards any previous session, `false` tries to resume it.
+
+### Shared subscriptions
+
+1. Don’t subscribe to both `sensor/+/data` and `$share/workers/sensor/+/data` in the same connector you will risk double handling.
+
+2. Make sure your broker supports shared subscriptions, because some **don't**. 
 
 ## Next steps
 
