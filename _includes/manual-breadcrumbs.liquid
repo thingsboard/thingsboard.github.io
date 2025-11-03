@@ -1,54 +1,46 @@
 <ul class="breadcrumbs">
-        {%- assign parts = page.url | split:'/' | reject:'' -%}
+    {%- assign parts = page.url | split:'/' | reject:'' -%}
 
-        {%- assign steps = page.breadcrumbs-steps | default: 1 | plus: 0 -%}
-        {%- assign max_steps = parts.size | minus: 1 -%}
-        {%- if steps > max_steps -%}{% assign steps = max_steps %}{%- endif -%}
+    {%- assign steps = page.breadcrumbs-steps | default: 1 | plus: 0 -%}
+    {%- assign max_steps = parts.size | minus: 1 -%}
+    {%- if steps > max_steps -%}{% assign steps = max_steps %}{%- endif -%}
 
-        {%- assign order = (1..steps) | reverse -%}
+    {%- assign order = (1..steps) | reverse -%}
 
-        {%- comment %}
-            Опционально: какие шаги показывать (номера относительно текущей страницы):
-            1 — родитель, 2 — дед, и т.д.
-            Примеры в фронтматтере:
-              breadcrumbs-steps: 2
-              breadcrumbs-show: "2"        # показать ТОЛЬКО 2-й шаг
-              breadcrumbs-show: "1,3"      # показать 1-й и 3-й (если steps >= 3)
-        {%- endcomment -%}
-        {%- assign show_raw = page.breadcrumbs-show | default: '' -%}
-        {%- assign show_list = '' | split: '' -%}
-        {%- if show_raw != '' -%}
-                {%- assign show_list = show_raw | replace: ' ', '' | split: ',' -%}
-        {%- endif -%}
+    {%- assign show_raw = page.breadcrumbs-show | default: '' -%}
+    {%- assign show_list = '' | split: '' -%}
+    {%- if show_raw != '' -%}
+            {%- assign show_list = show_raw | replace: ' ', '' | split: ',' -%}
+    {%- endif -%}
 
-        {%- assign visible = '' | split: '' -%}
-        {%- for i in order -%}
-                {%- assign i_str = i | append: '' -%}
-                {%- if show_list == empty or show_list contains i_str -%}
-                        {%- assign visible = visible | push: i -%}
-                {%- endif -%}
-        {%- endfor -%}
+    {%- assign visible = '' | split: '' -%}
+    {%- for i in order -%}
+            {%- assign i_str = i | append: '' -%}
+            {%- if show_list == empty or show_list contains i_str -%}
+                    {%- assign visible = visible | push: i -%}
+            {%- endif -%}
+    {%- endfor -%}
 
-        {%- for i in visible -%}
-                {%- assign take = parts.size | minus: i -%}
-                {%- capture parent_url_raw -%}{% for seg in parts limit: take %}{{ seg }}/{% endfor %}{%- endcapture -%}
-                {%- assign parent_url = parent_url_raw -%}
+    {%- for i in visible -%}
+            {%- assign take = parts.size | minus: i -%}
+            {%- capture parent_url_raw -%}{% for seg in parts limit: take %}{{ seg }}/{% endfor %}{%- endcapture -%}
+            {%- assign parent_url = parent_url_raw -%}
 
-                {%- assign parent_title = '' -%}
-                {%- for p in site.pages -%}
-                        {%- if p.url == parent_url -%}
-                                {%- assign parent_title = p.title | default: '' -%}
-                                {%- break -%}
-                        {%- endif -%}
-                {%- endfor -%}
+            {%- assign parent_title = '' -%}
+            {%- for p in site.pages -%}
+                    {%- if p.url == parent_url -%}
+                            {%- assign parent_title = p.title | default: '' -%}
+                            {%- break -%}
+                    {%- endif -%}
+            {%- endfor -%}
 
-                <li class="breadcrumbs-item">
-                        <a href="{{ parent_url }}">{{ parent_title | default: parent_url }}</a>
-                        <i class="fas fa-chevron-right fa-sm"
-                           style="{% if forloop.last %}color: rgba(0, 0, 0, 0.76){% else %}color: rgba(0, 0, 0, 0.54){% endif %}">
-                        </i>
-                </li>
-        {%- endfor -%}
+            <li class="breadcrumbs-item">
+                    <a href="{{ parent_url }}">{{ parent_title | default: parent_url }}</a>
+                    <i class="fas fa-chevron-right fa-sm"
+                       style="{% if forloop.last %}color: rgba(0, 0, 0, 0.76){% else %}color: rgba(0, 0, 0, 0.54){% endif %}">
+                    </i>
+            </li>
+    {%- endfor -%}
 
-        <li class="breadcrumbs-item current-page">{{ page.title }}</li>
+    <li class="breadcrumbs-item current-page">{{ page.title }}</li>
 </ul>
