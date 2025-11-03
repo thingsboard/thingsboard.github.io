@@ -31,6 +31,7 @@ Removes the message originator entity from an entity group based on a configurab
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

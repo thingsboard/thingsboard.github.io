@@ -87,7 +87,7 @@ Full configuration for Modbus connector for the example above will look like thi
           {
             "tag": "some_key",
             "type": "16int",
-            "address": 1,
+            "address": 0,
             "objectsCount": 1,
             "functionCode": 3
           }

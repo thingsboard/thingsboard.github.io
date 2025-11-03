@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: rest api call
-description: Sends HTTP requests.
+description: Sends HTTP requests to external endpoints using configurable methods, authentication, and proxy settings, returning the response as outgoing message data.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -51,6 +51,7 @@ The function must **return** a string that will be written to the ThingsBoard lo
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

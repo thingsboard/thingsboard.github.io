@@ -64,6 +64,7 @@ The node's configuration allows you to select which tenant details you want to f
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

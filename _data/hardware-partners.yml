@@ -683,6 +683,50 @@
     deployments. Our hardware IoT Gateway products come with different communication
     options such as ISM and NarrowBand RF, 4G/LTE, WiFi, NB-IoT, and LoRaWan, making
     them suitable for harsh field conditions.
+- name: Radionode
+  type:
+    - LAN
+    - Wi-Fi
+    - LoRAWAN
+    - LTE
+    - RS485
+  industry:
+    - Smart Cities
+    - Transportation & Logistics
+    - Healthcare
+    - Industrial Manufacturing
+    - Smart Buildings
+    - Energy Management
+    - Environmental Monitoring
+    - Lifescience
+    - Warehouses
+    - Food storage
+    - Construction
+    - Mining
+    - Smart Farms
+    - Pharmaceutical
+  use-case:
+    - Smart Energy
+    - Environment Monitoring
+    - Smart Office
+    - Smart Farming
+    - Fleet Tracking
+    - Health Care
+    - Air Quality Monitoring
+  hardware-types:
+    - Sensors
+    - Gateways
+    - Other devices
+  logo: /images/partners/radionode-logo.png
+  page: /partners/hardware/radionode
+  site:
+    href: https://en.radionode365.com/kr/
+  links:
+    general-guides:
+      0:
+        label: Connect the RN172plus series to the Thingboard
+        href: /docs/devices-library/rn172wcd/
+  description: Radionode is a global leader in environmental monitoring solutions, offering advanced sensors and IoT platforms for industries like life sciences, cold chain logistics, agriculture, construction, and smart buildings. Its LoRaWAN RN320 series features long battery life, ePaper display, alarms, and microSD backup, while the UA-Series USB sensors support  36+ gases and parameters with calibration-ready, plug-and-play design. With the Radionode365 cloud, users gain real-time monitoring, alerts, and predictive insights.
 - name: Kernel Sistemi
   type:
     - GSM/GPRS

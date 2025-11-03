@@ -30,13 +30,13 @@ Add Device entity in ThingsBoard. Its name is **Thermostat Home** and its type i
 
 In this section, we explain the purpose of each node in this tutorial:
 
-- Node A: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node) node.
+- Node A: [**Filter Script**](/docs/user-guide/rule-engine-2-0/nodes/filter/script/) node.
   - This node with temperature threshold check script will verify: "if the temperature is in the expected interval, the script will return False, otherwise True will be returned".
-- Node B: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
+- Node B: [**Create alarm**](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm/) node.
   - Creates or Updates an  alarm if the published temperature is not at expected time range (filter script node returns True).
-- Node C: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
+- Node C: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm/) node.
   - Clears alarm if it exists in case if the published temperature is in expected time range (script node returns False).
-- Node D: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
+- Node D: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/) node.
   - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms**.
 
 <br>

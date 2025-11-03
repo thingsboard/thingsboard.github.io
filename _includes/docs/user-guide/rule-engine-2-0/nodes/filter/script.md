@@ -48,6 +48,7 @@ Supports **TBEL** and **JavaScript**.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -71,10 +72,6 @@ Supports **TBEL** and **JavaScript**.
     * If the script throws an error or cannot be evaluated.
 
 ## Examples
-
-The examples below show only the **relevant** parts of the configuration and message.
-
----
 
 ### Example 1 — JavaScript script with dynamic threshold check → `True`
 

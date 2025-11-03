@@ -29,6 +29,7 @@ Assigns the message originator to a specified customer.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

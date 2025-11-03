@@ -1,8 +1,7 @@
 ---
 layout: docwithnav-pe
 title: ThingsBoard PE Release Notes
-description: ThingsBoard architecture
-
+description: ThingsBoard Professional Edition release notes
 ---
 
 * TOC
@@ -782,7 +781,7 @@ Main features:
 
 * Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
 * Azure Event Hub Integration is updated to use new SDK;
-* Added new version of ["Alarms Count Node"](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/#alarms-count-node).
+* Added new version of ["Alarms Count Node"](/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count/).
 * Added "Duplicate to group entities;
 * Added ability to aggregate data on each message in the "Aggregate stream node".
 * Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".

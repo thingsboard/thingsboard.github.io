@@ -124,7 +124,7 @@ In the data mapping, you can specify how the Modbus master will interact with th
 the slaves. You can also use this section to configure which data will be sent as device attributes or telemetry. 
 Data mapping contains all the necessary settings for flexible data management.
 
-#### Subsection "Attributes" and "Time series"
+#### Attributes and time series
 
 {% include /templates/iot-gateway/modbus-connector/attributes-and-time-series-subsections-basic.md %}
 
@@ -133,7 +133,8 @@ Data mapping contains all the necessary settings for flexible data management.
 {% capture modbus-attributes-timeseries-examples %}
 Reading attributes/time series<small></small>%,%readingattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/reading-attributes-and-time-series.md%br%
 Multiplier<small>in attributes/time series</small>%,%multiplierinattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/multiplier-in-attributes-and-time-series.md%br%
-Divider<small>in attributes/time series</small>%,%dividerinattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/divider-in-attributes-and-time-series.md{% endcapture %}
+Divider<small>in attributes/time series</small>%,%dividerinattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/divider-in-attributes-and-time-series.md%br%
+Batch reading<small>(advanced configuration mode only)</small>%,%batchreading%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/batch-reading.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="modbus-attributes-timeseries-examples" toggle-spec=modbus-attributes-timeseries-examples %}
 
 ### Requests mapping
@@ -354,29 +355,29 @@ Example of the serial slave configuration:
 
 ##### Device attributes and time series
 
-| **Parameter**                              | **Description**                                                                                                                    |
-|:-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------|
-| server.slaves[].attributes[]               | List of attributes that will be sent to the ThingsBoard platform instance.                                                         |
-| server.slaves[].attributes[].tag           | Key name of the attribute in ThingsBoard. It can be specified as a static value.                                                   |
-| server.slaves[].attributes[].type          | [Data type](/docs/iot-gateway/config/modbus/#data-types) of value.                                                                 |
-| server.slaves[].attributes[].functionCode  | [Function code](/docs/iot-gateway/config/modbus/#modbus-functions) to use for reading the attribute value from the Modbus slave.   |
-| server.slaves[].attributes[].objectsCount  | Number of objects to read from the Modbus slave.                                                                                   |
-| server.slaves[].attributes[].address       | Address of the object in the Modbus slave.                                                                                         |
-| server.slaves[].attributes[].divider       | (Optional) Divider for the value. If not specified, the value will be sent as is.                                                  |
-| server.slaves[].attributes[].multiplier    | (Optional) Multiplier for the value. If not specified, the value will be sent as is.                                               |
-| server.slaves[].attributes[].bitTargetType | The response type can be either an integer (0/1) or a boolean (True/False). **Used only with type `bits`**.                        |
-| mapping[].attributes[].reportStrategy      | (Optional) Report strategy for the attributes data. If not specified, the device report strategy will be used.                     |
-| server.slaves[].timeseries[]               | List of time series that will be sent to the ThingsBoard platform instance.                                                        |
-| server.slaves[].timeseries[].tag           | Key name of the time series in ThingsBoard. It can be specified as a static value.                                                 |
-| server.slaves[].timeseries[].type          | [Data type](/docs/iot-gateway/config/modbus/#data-types) of value.                                                                 |
-| server.slaves[].timeseries[].functionCode  | [Function code](/docs/iot-gateway/config/modbus/#modbus-functions) to use for reading the time series value from the Modbus slave. |
-| server.slaves[].timeseries[].objectsCount  | Number of objects to read from the Modbus slave.                                                                                   |
-| server.slaves[].timeseries[].address       | Address of the object in the Modbus slave.                                                                                         |
-| server.slaves[].timeseries[].divider       | (Optional) Divider for the value. If not specified, the value will be sent as is.                                                  |
-| server.slaves[].timeseries[].multiplier    | (Optional) Multiplier for the value. If not specified, the value will be sent as is.                                               |
-| server.slaves[].timeseries[].bitTargetType | The response type can be either an integer (0/1) or a boolean (True/False). **Used only with type `bits`**.                        |
-| mapping[].attributes[].reportStrategy      | (Optional) Report strategy for the time series data. If not specified, the device report strategy will be used.                    |
-| ---                                        |                                                                                                                                    |
+| **Parameter**                              | **Description**                                                                                                                                                    |
+|:-------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| server.slaves[].attributes[]               | List of attributes that will be sent to the ThingsBoard platform instance.                                                                                         |
+| server.slaves[].attributes[].tag           | Key name of the attribute in ThingsBoard. It can be specified as a static value.                                                                                   |
+| server.slaves[].attributes[].type          | [Data type](/docs/iot-gateway/config/modbus/#data-types) of value.                                                                                                 |
+| server.slaves[].attributes[].functionCode  | [Function code](/docs/iot-gateway/config/modbus/#modbus-functions) to use for reading the attribute value from the Modbus slave.                                   |
+| server.slaves[].attributes[].objectsCount  | Number of objects to read from the Modbus slave.                                                                                                                   |
+| server.slaves[].attributes[].address       | Address of the object in the Modbus slave. Can be configured for [batch reading](/docs/iot-gateway/config/modbus/#batch-reading-advanced-configuration-mode-only). |
+| server.slaves[].attributes[].divider       | (Optional) Divider for the value. If not specified, the value will be sent as is.                                                                                  |
+| server.slaves[].attributes[].multiplier    | (Optional) Multiplier for the value. If not specified, the value will be sent as is.                                                                               |
+| server.slaves[].attributes[].bitTargetType | The response type can be either an integer (0/1) or a boolean (True/False). **Used only with type `bits`**.                                                        |
+| mapping[].attributes[].reportStrategy      | (Optional) Report strategy for the attributes data. If not specified, the device report strategy will be used.                                                     |
+| server.slaves[].timeseries[]               | List of time series that will be sent to the ThingsBoard platform instance.                                                                                        |
+| server.slaves[].timeseries[].tag           | Key name of the time series in ThingsBoard. It can be specified as a static value.                                                                                 |
+| server.slaves[].timeseries[].type          | [Data type](/docs/iot-gateway/config/modbus/#data-types) of value.                                                                                                 |
+| server.slaves[].timeseries[].functionCode  | [Function code](/docs/iot-gateway/config/modbus/#modbus-functions) to use for reading the time series value from the Modbus slave.                                 |
+| server.slaves[].timeseries[].objectsCount  | Number of objects to read from the Modbus slave.                                                                                                                   |
+| server.slaves[].timeseries[].address       | Address of the object in the Modbus slave. Can be configured for [batch reading](/docs/iot-gateway/config/modbus/#batch-reading-advanced-configuration-mode-only). |
+| server.slaves[].timeseries[].divider       | (Optional) Divider for the value. If not specified, the value will be sent as is.                                                                                  |
+| server.slaves[].timeseries[].multiplier    | (Optional) Multiplier for the value. If not specified, the value will be sent as is.                                                                               |
+| server.slaves[].timeseries[].bitTargetType | The response type can be either an integer (0/1) or a boolean (True/False). **Used only with type `bits`**.                                                        |
+| mapping[].attributes[].reportStrategy      | (Optional) Report strategy for the time series data. If not specified, the device report strategy will be used.                                                    |
+| ---                                        |                                                                                                                                                                    |
 
 Example of the attributes and telemetry configuration:
 
@@ -820,6 +821,7 @@ A list and description of the supported data types for reading/writing data.
 
 Explore guides related to main ThingsBoard features:
 
+- [How to connect Modbus device to ThingsBoard CE using ThingsBoard IoT Gateway](/docs/iot-gateway/guides/how-to-connect-modbus-device/)
 - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
 - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
 - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.

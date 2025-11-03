@@ -252,6 +252,9 @@
 "/docs/devices-library/recomputer-r1100/":
   url: "/docs/devices-library/recomputer-r1100/"
   redirect_from: []
+"/docs/devices-library/rn172wcd/":
+  url: "/docs/devices-library/rn172wcd/"
+  redirect_from: []
 "/docs/devices-library/rock-pi-4-model-b/":
   url: "/docs/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -424,6 +427,9 @@
   redirect_from: []
 "/docs/edge/devices-library/guidelines/":
   url: "/docs/edge/devices-library/guidelines/"
+  redirect_from: []
+"/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
   redirect_from: []
 "/docs/edge/devices-library/raspberry-pi-4/":
   url: "/docs/edge/devices-library/raspberry-pi-4/"
@@ -1273,6 +1279,9 @@
 "/docs/paas/devices-library/recomputer-r1100/":
   url: "/docs/paas/devices-library/recomputer-r1100/"
   redirect_from: []
+"/docs/paas/devices-library/rn172wcd/":
+  url: "/docs/paas/devices-library/rn172wcd/"
+  redirect_from: []
 "/docs/paas/devices-library/rock-pi-4-model-b/":
   url: "/docs/paas/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -1633,6 +1642,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/recomputer-r1100/":
   url: "/docs/paas/eu/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rn172wcd/":
+  url: "/docs/paas/eu/devices-library/rn172wcd/"
   redirect_from: []
 "/docs/paas/eu/devices-library/rock-pi-4-model-b/":
   url: "/docs/paas/eu/devices-library/rock-pi-4-model-b/"
@@ -3075,6 +3087,9 @@
 "/docs/pe/devices-library/recomputer-r1100/":
   url: "/docs/pe/devices-library/recomputer-r1100/"
   redirect_from: []
+"/docs/pe/devices-library/rn172wcd/":
+  url: "/docs/pe/devices-library/rn172wcd/"
+  redirect_from: []
 "/docs/pe/devices-library/rock-pi-4-model-b/":
   url: "/docs/pe/devices-library/rock-pi-4-model-b/"
   redirect_from: []
@@ -3230,6 +3245,9 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/guidelines/":
   url: "/docs/pe/edge/devices-library/guidelines/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
   redirect_from: []
 "/docs/pe/edge/devices-library/raspberry-pi-4/":
   url: "/docs/pe/edge/devices-library/raspberry-pi-4/"
@@ -4086,6 +4104,9 @@
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/samples/analytics/ollama/nginx/":
+  url: "/docs/samples/analytics/ollama/nginx/"
+  redirect_from: []
 "/docs/samples/analytics/ollama/":
   url: "/docs/samples/analytics/ollama/"
   redirect_from: []
@@ -4224,20 +4245,26 @@
 "/docs/trendz/background-jobs/":
   url: "/docs/trendz/background-jobs/"
   redirect_from: []
-"/docs/trendz/batch-calculated-fields/":
-  url: "/docs/trendz/batch-calculated-fields/"
-  redirect_from: []
 "/docs/trendz/business-entities/":
   url: "/docs/trendz/business-entities/"
   redirect_from: []
 "/docs/trendz/cache-settings/":
   url: "/docs/trendz/cache-settings/"
   redirect_from: []
-"/docs/trendz/calculate-time-to-value/":
-  url: "/docs/trendz/calculate-time-to-value/"
+"/docs/trendz/calculations/batch/":
+  url: "/docs/trendz/calculations/batch/"
   redirect_from: []
-"/docs/trendz/calculated-fields/":
-  url: "/docs/trendz/calculated-fields/"
+"/docs/trendz/calculations/native/":
+  url: "/docs/trendz/calculations/native/"
+  redirect_from: []
+"/docs/trendz/calculations/overview/":
+  url: "/docs/trendz/calculations/overview/"
+  redirect_from: []
+"/docs/trendz/calculations/save-to-thingsboard/":
+  url: "/docs/trendz/calculations/save-to-thingsboard/"
+  redirect_from: []
+"/docs/trendz/calculations/time-to-value/":
+  url: "/docs/trendz/calculations/time-to-value/"
   redirect_from: []
 "/docs/trendz/configuration-properties/":
   url: "/docs/trendz/configuration-properties/"
@@ -4320,6 +4347,15 @@
 "/docs/trendz/install/windows/":
   url: "/docs/trendz/install/windows/"
   redirect_from: []
+"/docs/trendz/metric/generate-new-metric/":
+  url: "/docs/trendz/metric/generate-new-metric/"
+  redirect_from: []
+"/docs/trendz/metric/overview/":
+  url: "/docs/trendz/metric/overview/"
+  redirect_from: []
+"/docs/trendz/metric/use-in-thingsboard/":
+  url: "/docs/trendz/metric/use-in-thingsboard/"
+  redirect_from: []
 "/docs/trendz/mix-sql-datasource/":
   url: "/docs/trendz/mix-sql-datasource/"
   redirect_from: []
@@ -4343,9 +4379,6 @@
   redirect_from: []
 "/docs/trendz/rest-api/":
   url: "/docs/trendz/rest-api/"
-  redirect_from: []
-"/docs/trendz/save-calculated-to-thingsboard/":
-  url: "/docs/trendz/save-calculated-to-thingsboard/"
   redirect_from: []
 "/docs/trendz/search/":
   url: "/docs/trendz/search/"
@@ -4373,6 +4406,9 @@
   redirect_from: []
 "/docs/trendz/view-settings/":
   url: "/docs/trendz/view-settings/"
+  redirect_from: []
+"/docs/trendz/visualizations-ai-card/":
+  url: "/docs/trendz/visualizations-ai-card/"
   redirect_from: []
 "/docs/trendz/visualizations-bar/":
   url: "/docs/trendz/visualizations-bar/"

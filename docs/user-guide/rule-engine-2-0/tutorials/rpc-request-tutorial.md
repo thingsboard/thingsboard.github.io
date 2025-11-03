@@ -62,21 +62,21 @@ The Wind Turbine has two devices installed: Wind Direction Sensor and Rotating S
 ## Message flow
 In this section, we explain the purpose of each node in this tutorial:
 
-- Node A: [**Message Type Switch**](/docs/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) node.
+- Node A: [**message type switch**](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-switch/) node.
   - Routes incoming messages based on the message type.
-- Node B: [**Save Timeseries**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) node.
+- Node B: [**save time series**](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/) node.
   - Stores messages telemetry from **Wind Direction Sensor** and **Rotating System** into the database. 
-- Node C: [**Related attributes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#related-attributes).
+- Node C: [**related device attributes**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/related-device-attributes/).
   - Loads the source telemetry **windDirection** of the related **Wind Direction Sensor** and save it into the Message metadata with the name **windDirection**.
-- Node D: [**Change originator**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#change-originator) node.
+- Node D: [**change originator**](/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator/) node.
   - Change the originator from Devices **Wind Direction Sensor** and **Rotating System** to the related Asset **Wind Turbine** and the submitted message will be processed as a message from Asset.
-- Node E: [**Save Timeseries**](/docs/user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) node.
+- Node E: [**save time series**](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/) node.
   - Stores messages telemetry from Asset **Wind Turbine** into the database. 
-- Node F: [**Transformation Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
+- Node F: [**transformation script**](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/).
   - Transform an original message into RPC request message. 
-- Node G: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
+- Node G: [**filter script**](/docs/user-guide/rule-engine-2-0/nodes/filter/script/) node.
   - Checks if msgType of incoming message is **RPC message**.
-- Node H: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node.
+- Node H: [**rpc call request**](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request/) node.
   - Takes the message payload and sends it as a response to the **Rotating System**.
 
 <br>

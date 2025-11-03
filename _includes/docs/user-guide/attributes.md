@@ -1,8 +1,7 @@
-
 * TOC
 {:toc}
-## Assigning custom attributes to entities and attributes managing
 
+## Assigning custom attributes to entities and attributes managing
 
 ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes.
 Those attributes are stored in the database and may be used for data visualization and data processing.
@@ -13,14 +12,14 @@ For example:
 
 ```json
 {
- "firmwareVersion":"v2.3.1", 
- "booleanParameter":true, 
- "doubleParameter":42.0, 
- "longParameter":73, 
+ "firmwareVersion": "v2.3.1", 
+ "booleanParameter": true, 
+ "doubleParameter": 42.0, 
+ "longParameter": 73, 
  "configuration": {
     "someNumber": 42,
-    "someArray": [1,2,3],
-    "someNestedObject": {"key": "value"}
+    "someArray": [1, 2, 3],
+    "someNestedObject": { "key": "value" }
  }
 }
 ```
@@ -290,21 +289,21 @@ You may find most popular scenarios of using attributes within rule engine below
 **Generate alarms based on the logical expressions against attribute values**
 
 Use [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to configure most common alarm conditions via UI 
-or use [filter nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) to configure more specific use cases via custom JS functions.
+or use [filter nodes](/docs/user-guide/rule-engine-2-0/nodes/filter/) to configure more specific use cases via custom JS functions.
 
 **Modify incoming client-side attributes before they are stored in the database**
 
-Use [message type switch](/docs/{{docsPrefix}}/user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Post attributes" request. 
-Then, use [transformation rule nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) to modify a particular message. 
+Use [message type switch](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-switch/) rule node to filter messages that contain "Post attributes" request. 
+Then, use [transformation rule nodes](/docs/user-guide/rule-engine-2-0/nodes/transformation/) to modify a particular message. 
 
 **React on the change of server-side attribute**
 
-Use [message type switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Attributes Updated" notification.
-Then, use [action](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/) or [external](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) to react on the incoming event.
+Use [message type switch](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-switch/) rule node to filter messages that contain "Attributes Updated" notification.
+Then, use [action](/docs/user-guide/rule-engine-2-0/nodes/action/) or [external](/docs/user-guide/rule-engine-2-0/nodes/external/) to react on the incoming event.
 
 **Fetch attribute values to analyze incoming telemetry from device**
 
-Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
+Use [enrichment](/docs/user-guide/rule-engine-2-0/nodes/enrichment/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
 This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes. 
 
 {% unless docsPrefix contains "paas/" %}

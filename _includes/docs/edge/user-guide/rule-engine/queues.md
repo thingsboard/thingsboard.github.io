@@ -8,8 +8,8 @@ In **ThingsBoard**, **queues** guarantee the message processing, handle occasion
 For a better understanding, read the [Platform Queues documentation](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-5/queues/){: target="_blank"}.
 
 **Tenant administrators** can use any **queue** in the **Edge Rule Chain**, the same as the **Platform Rule Chain**.
-**Queues** can be used in [checkpoint node](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#checkpoint-node){: target="_blank"} 
-or any [analytics nodes](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/){: target="_blank"} (for a Professional Edition).
+**Queues** can be used in [checkpoint node](/docs/user-guide/rule-engine-2-0/nodes/flow/checkpoint/){: target="_blank"} 
+or any [analytics nodes](/docs/user-guide/rule-engine-2-0/nodes/analytics/){: target="_blank"} (for a Professional Edition).
 
 Starting with **Edge 3.9**, Edge supports **Kafka** and **in-memory** types of message queues:
 * **In-Memory:** The built-in and default queue implementation. It is useful for development or proof-of-concept (PoC) environments, but is not recommended for production or any type of clustered deployments due to limited scalability.

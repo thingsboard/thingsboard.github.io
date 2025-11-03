@@ -44,6 +44,7 @@ If you're deleting from the message **data**, it must be a valid JSON object. If
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -63,11 +64,6 @@ If you're deleting from the message **data**, it must be a valid JSON object. If
     * if an unexpected error occurs during processing.
 
 ## Examples
-
-The examples below show only the **relevant** parts of the incoming message, rule node configuration, and system state. Any information not explicitly shown has no effect on the
-processing.
-
------
 
 ### Example 1 — Delete from data
 

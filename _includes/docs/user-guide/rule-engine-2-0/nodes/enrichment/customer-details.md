@@ -64,6 +64,7 @@ The node's configuration allows you to select which customer details you want to
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

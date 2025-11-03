@@ -40,14 +40,14 @@ This Tutorial is to show you how to send an email message with HTML page or imag
 
 * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
 * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-* [Send email](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) node.
+* [Send email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email/) node.
 
 
 ## Message flow
-- Like a start point we will use [Generator](/docs/user-guide/rule-engine-2-0/action-nodes/#generator-node) that will imitate regular rule chain messages flow: prepared message and metadata
+- Like a start point we will use [Generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator/) that will imitate regular rule chain messages flow: prepared message and metadata
   where we can contain some dynamic field for **to email** node.
-- The [To email node](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) prepares data, destination email, and other for email message.
-- The [Send email node](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) sends a message.
+- The [To email node](/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email/) prepares data, destination email, and other for email message.
+- The [Send email node](/docs/user-guide/rule-engine-2-0/nodes/external/send-email/) sends a message.
 
 ## Configuring Rule Nodes
 

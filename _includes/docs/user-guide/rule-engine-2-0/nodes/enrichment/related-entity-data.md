@@ -70,6 +70,7 @@ The configuration window allows you to define how to find the related entity and
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
