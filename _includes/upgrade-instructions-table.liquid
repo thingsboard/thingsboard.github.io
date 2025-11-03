@@ -75,14 +75,67 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        const params = new URLSearchParams(window.location.search);
-        const versionParam = params.get("version");
-        if (!versionParam) return;
-        const targetFamily = versionParam.replace(/\.x$/i, "").trim();
-        document.querySelectorAll(".upgrade-instructions-table .releases-table-content-wrapper")
-            .forEach(function (row) {
-                const rowFamily = row.getAttribute("data-family");
-                if (rowFamily !== targetFamily) row.style.display = "none";
-            });
+        const header = document.querySelector(".upgrade-instructions-table .releases-table-header");
+        const tableRoot = document.querySelector(".upgrade-instructions-table");
+        if (!header || !tableRoot) return;
+
+        const placeholder = document.createElement("div");
+        placeholder.className = "releases-table-header-placeholder";
+        header.parentNode.insertBefore(placeholder, header.nextSibling);
+
+        function getHeaderHeight() {
+            return header.offsetHeight || 56;
+        }
+
+        function getFixThreshold() {
+            const rect = header.getBoundingClientRect();
+            return rect.top + window.scrollY - 140;
+        }
+
+        function syncGeometryToContainer() {
+            const rect = tableRoot.getBoundingClientRect();
+            header.style.left  = (rect.left + window.scrollX) + "px";
+            header.style.width = rect.width + "px";
+        }
+
+        let headerHeight = getHeaderHeight();
+        placeholder.style.setProperty("--header-height", headerHeight + "px");
+        let threshold = getFixThreshold();
+
+        function onScroll() {
+            if (window.scrollY > threshold) {
+                if (!header.classList.contains("fixed")) {
+                    header.classList.add("fixed");
+                    syncGeometryToContainer();
+                    placeholder.style.height = headerHeight + "px";
+                } else {
+                    syncGeometryToContainer();
+                }
+            } else {
+                if (header.classList.contains("fixed")) {
+                    header.classList.remove("fixed");
+                    header.style.left = "";
+                    header.style.width = "";
+                    placeholder.style.height = "0";
+                }
+            }
+        }
+
+        function onResize() {
+            headerHeight = getHeaderHeight();
+            placeholder.style.setProperty("--header-height", headerHeight + "px");
+            threshold = getFixThreshold();
+            if (header.classList.contains("fixed")) {
+                syncGeometryToContainer();
+                placeholder.style.height = headerHeight + "px";
+            }
+            onScroll();
+        }
+
+        window.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", onResize);
+
+        onResize();
+        onScroll();
     });
 </script>
