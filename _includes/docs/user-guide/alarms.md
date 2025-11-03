@@ -173,7 +173,7 @@ Learn more about notifications and how to configure them [here](/docs/{{docsPref
 
 {% include images-gallery.html imageCollection="notification-about-alarm" %}
 
-Alternatively, you can configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/), using the [Send Email](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-email-node) and [Send SMS](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule nodes or others from the [External Nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) to configure.
+Alternatively, you can configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/), using the [Send Email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email/) and [Send SMS](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms/) rule nodes or others from the [External Nodes](/docs/user-guide/rule-engine-2-0/nodes/external/) to configure.
 You can find an example of how to send an email to a user using the rules engine [here](/docs/user-guide/rule-engine-2-0/tutorials/send-email/).
 
 ## View and manage alarms

@@ -18,7 +18,7 @@ This feature is particularly useful for optimizing data processing, improving an
 <br><b><font size="4">Key benefits</font></b>
 
 - **No additional logic in rule chains**: simplifies telemetry calculations without the need for complex rule chain configurations. 
-- **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}, [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}, or [calculated fields](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#calculated-fields-node){:target="_blank"} rule nodes, ensuring up-to-date insights.
+- **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/){:target="_blank"}, [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes/){:target="_blank"}, or [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields/){:target="_blank"} rule nodes, ensuring up-to-date insights.
 - **Optimized performance**: reduces database queries by performing computations as data is received, improving system efficiency. 
 - **Cross-entity data merging**: calculate new values by combining data from multiple sources (devices, assets, etc.).
 - **Flexible output**: store the results as either [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [time series data](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}, depending on the use case.
@@ -217,7 +217,7 @@ Let&#39;s check the debug events by clicking the "Events" icon button. The debug
 
 > **IMPORTANT**: When a calculated field produces an output, a new internal message — either `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`, depending on the output type — is created and pushed to the **Default Rule Chain** assigned to the target entity.  
 This means the output **does not bypass the rule engine**: it behaves like any other telemetry or attribute update.
-To ensure that the result is actually stored in the database, your rule chain **must include** a [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node) or [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node) nodes.
+To ensure that the result is actually stored in the database, your rule chain **must include** a [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/) or [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes/) nodes.
 If these nodes are missing, the result **will not be saved** and will not appear in dashboards, widgets, or API responses.
 
 ## Data reprocessing

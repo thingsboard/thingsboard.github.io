@@ -118,6 +118,7 @@ The node's configuration is divided into three main sections: selecting the data
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -270,7 +271,10 @@ Metadata:
 }
 ```
 
-> Note: The timestamp (`ts`) in the result corresponds to the start of the aggregation interval.
+{% capture aggregation_timestamp_note %}
+**Note**: The timestamp (`ts`) in the result corresponds to the start of the aggregation interval.
+{% endcapture %}
+{% include templates/info-banner.md content=aggregation_timestamp_note %}
 
 ### Example 4 — Using a dynamic interval from message data
 

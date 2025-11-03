@@ -75,7 +75,7 @@ step3:
         title: 'Within your <b>Edge</b> instance, go to the <b>Rule Chains</b> section and open the <b>"Edge Root Rule Chain"</b>.'
     1:
         image: /images/pe/edge/getting-started/step-3-item-2-pe.webp
-        title: 'The <a href="/docs/pe/user-guide/rule-engine-2-0/action-nodes/#push-to-cloud" target="_blank">Push to Cloud</a> rule node is used to transmit messages from edge to cloud after they have been stored in the local database.'
+        title: 'The <a href="/docs/user-guide/rule-engine-2-0/nodes/action/push-to-cloud/" target="_blank">Push to Cloud</a> rule node is used to transmit messages from edge to cloud after they have been stored in the local database.'
     
 step4:
   0:

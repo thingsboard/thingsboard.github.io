@@ -584,7 +584,7 @@ plugins:
 
 ## Step 6. Troubleshoot your rule node
 
-The easiest way to validate your custom rule node is to create a [generator](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) rule node 
+The easiest way to validate your custom rule node is to create a [generator](/docs/user-guide/rule-engine-2-0/nodes/action/generator/) rule node 
 and connect it to your custom rule node. This will generate configurable stream of incoming messages. 
 Once this is done, you should enable [debug](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#debugging) for your custom rule node to validate node output and check them for errors. 
 

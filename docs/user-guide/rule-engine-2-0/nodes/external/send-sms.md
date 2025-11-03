@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: send sms
-description: Constructs SMS message based on the metadata fields from the incoming message and sends it using AWS SNS or Twilio SMS services.
+description: Sends SMS messages to specified phone numbers via AWS SNS, Twilio, or SMPP providers with templatization support.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

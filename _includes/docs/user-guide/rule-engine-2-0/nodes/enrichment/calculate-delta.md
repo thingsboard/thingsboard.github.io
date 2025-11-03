@@ -67,6 +67,7 @@ The node configuration allows you to define which key to use for the calculation
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

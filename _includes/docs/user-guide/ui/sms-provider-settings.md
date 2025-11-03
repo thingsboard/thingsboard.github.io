@@ -8,7 +8,7 @@ For example, you can set up sending an SMS alert to the user when the sensor det
 At the tenant administrator level, you can use the SMS provider settings of the system administrator or enter your settings.
 {% endunless %}
 
-Tenant administrator is able to setup [**sms rule node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-sms-node) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).  
+Tenant administrator is able to setup [**sms rule node**](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms/) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).  
 
 To configure SMS provider settings in Thingsboard, follow these steps:
 
