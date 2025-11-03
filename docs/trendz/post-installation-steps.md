@@ -21,15 +21,15 @@ Follow these steps to configure the signing key:
 
 1. **Log in to ThingsBoard as a System Administrator**  
 
-    ![Login](/images/trendz/signing-key-4.png)
+    ![Login](https://img.thingsboard.io/trendz/signing-key-4.png)
 
 2. Go to **Security → General**  
 
-   ![Security General Page](/images/trendz/signing-key-5.png)
+   ![Security General Page](https://img.thingsboard.io/trendz/signing-key-5.png)
 
 3. Scroll to the **JWT Security Settings** section  
 
-   ![JWT Security](/images/trendz/signing-key-6.png)
+   ![JWT Security](https://img.thingsboard.io/trendz/signing-key-6.png)
 
 4. Copy the value from the **Signing key** field.
 
@@ -52,7 +52,7 @@ Follow these steps to configure the signing key:
    export JWT_TOKEN_SIGNING_KEY=<signing-key>
    ```
    {: .copy-code}
-   ![Ubuntu Signing Key](/images/trendz/signing-key-7.png)
+   ![Ubuntu Signing Key](https://img.thingsboard.io/trendz/signing-key-7.png)
 
 4. Save the file and restart the Trendz service.
 
@@ -67,7 +67,7 @@ Follow these steps to configure the signing key:
      - JWT_TOKEN_SIGNING_KEY=<signing-key>
    ```
    {: .copy-code}
-   ![Docker Signing Key](/images/trendz/signing-key-8.png)
+   ![Docker Signing Key](https://img.thingsboard.io/trendz/signing-key-8.png)
 
 3. Save the file and restart the Trendz container.
 
@@ -78,11 +78,11 @@ To validate that the signing key was installed correctly, you need to:
 1. Log in as a **Tenant Administrator**.
 2. Go to the **Settings**.
 
-   ![Settings Navigation](/images/trendz/signing-key-1.png)
+   ![Settings Navigation](https://img.thingsboard.io/trendz/signing-key-1.png)
 
 3. If everything was done correctly, you will see **Active** status in the **Signing Key** field.  
 
-   ![Signing Key Valid](/images/trendz/signing-key-3.png)
+   ![Signing Key Valid](https://img.thingsboard.io/trendz/signing-key-3.png)
 
    
 ## Required Actions in Trendz Settings
@@ -112,15 +112,15 @@ To simplify the process of adding Trendz views to ThingsBoard dashboards, we hav
 Configure the link to your ThingsBoard instance in Settings to use this feature. Follow these steps:
 * Log in to Trendz and navigate to the Settings page.
 
-  ![image](/images/trendz/signing-key-1.png)
+  ![image](https://img.thingsboard.io/trendz/signing-key-1.png)
 
 * Enter the URL of your ThingsBoard instance (e.g., *https://your-link-to-platform*) in the designated field.
 
-  ![image](/images/trendz/link-to-tb.png)
+  ![image](https://img.thingsboard.io/trendz/link-to-tb.png)
 
 After this, you can open your modified or newly created dashboard in a new tab by enabling the Open dashboard in a separate window field.
 
-![image](/images/trendz/open-dashboard-in-separate-tab.png)
+![image](https://img.thingsboard.io/trendz/open-dashboard-in-separate-tab.png)
 
 ## AI Assistant
 
@@ -129,4 +129,4 @@ There, you can enable the **Use own model** option, select an AI provider (OpenA
 
 For more details on configuring AI Assistant, you can read more [here](/docs/trendz/custom-ai-model-configuration.md).
 
-![image](/images/trendz/ai/settings/use-own-model-1.png)
+![image](https://img.thingsboard.io/trendz/ai/settings/use-own-model-1.png)

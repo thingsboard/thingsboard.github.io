@@ -5,44 +5,44 @@ description: How to train anomaly models using historical data. Covers segmentat
 
 general-settings:
   0:
-    image: /images/trendz/anomaly/general-settings.png
+    image: https://img.thingsboard.io/trendz/anomaly/general-settings.png
     title: 'General Settings'
 
 clustering-settings:
   0:
-    image: /images/trendz/anomaly/clustering-settings-k-means.png
+    image: https://img.thingsboard.io/trendz/anomaly/clustering-settings-k-means.png
     title: 'Clustering Settings For <b>K-Means</b>'
   1:
-    image: /images/trendz/anomaly/clustering-settings-dbscan.png
+    image: https://img.thingsboard.io/trendz/anomaly/clustering-settings-dbscan.png
     title: 'Clustering Settings For <b>DBSCAN</b>'
   2:
-    image: /images/trendz/anomaly/clustering-settings-gmm.png
+    image: https://img.thingsboard.io/trendz/anomaly/clustering-settings-gmm.png
     title: 'Clustering Settings For <b>GMM (Gaussian Mixture Model)</b>'
 
 segmentation-settings:
   0:
-    image: /images/trendz/anomaly/segmentation-settings.png
+    image: https://img.thingsboard.io/trendz/anomaly/segmentation-settings.png
     title: 'Segmentation Settings'
 
 anomaly-detection-settings:
   0:
-    image: /images/trendz/anomaly/anomaly-detection-settings-feature-based.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomaly-detection-settings-feature-based.png
     title: 'Anomaly Detection Settings (Feature based)'
   1:
-    image: /images/trendz/anomaly/anomaly-detection-settings-behaviour-based.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomaly-detection-settings-behaviour-based.png
     title: 'Anomaly Detection Settings (Behaviour based)'
 
 limits-settings:
   0:
-    image: /images/trendz/anomaly/limits-settings.png
+    image: https://img.thingsboard.io/trendz/anomaly/limits-settings.png
     title: 'Limits Settings'
     
 alarm-configuration:
   0:
-    image: /images/trendz/anomaly/alarm-configuration-before-build.png
+    image: https://img.thingsboard.io/trendz/anomaly/alarm-configuration-before-build.png
     title: 'Alarm Configuration (before build)'
   1:
-    image: /images/trendz/anomaly/alarm-configuration-after-build.png
+    image: https://img.thingsboard.io/trendz/anomaly/alarm-configuration-after-build.png
     title: 'Alarm Configuration (after build)'
 
 ---

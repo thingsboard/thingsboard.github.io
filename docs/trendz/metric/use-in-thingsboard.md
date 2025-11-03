@@ -5,90 +5,90 @@ description: Step-by-step guide to use new Metrics in ThingsBoard
 
 calculation-create:
   0:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-create-1.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-create-1.png
     title: "Click <b>Save Calculation</b>."
   1:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-create-2.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-create-2.png
     title: "Specify the following parameters: <b>Calculation Name</b> and <b>Calculation Key</b>"
   2:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-create-3.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-create-3.png
     title: "Click <b>Save</b>"
   3:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-create-4.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-create-4.png
     title: "The calculation field appears in the <b>Calculation</b> folder."
   4:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-create-5.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-create-5.png
     title: "The calculation field appears in the <b>Calculation</b> folder."
 
 calculation-parameters:
   0:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-parameters-1.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-parameters-1.png
     title: "Before saving telemetry to ThingsBoard, verify <b>Grouping Interval</b>, <b>Aggregation</b> and <b>Time</b>."
   1:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-parameters-2.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-parameters-2.png
     title: "Click <b>Save Field</b> to apply changes."
   2:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-parameters-3.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-parameters-3.png
     title: "Click <b>save</b>."
   3:
-    image: /images/trendz/metric/use-in-thingsboard/calculation-parameters-4.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/calculation-parameters-4.png
     title: "You will be prompted to enable the calculation field (run refresh task). You can do it right away or later. The process of running the refresh task is described in another article."
 
 calculation-reprocess:
   0:
-    image: /images/trendz/metric/use-in-thingsboard/reprocess-task-1.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/reprocess-task-1.png
     title: "Open the <b>Tasks</b> tab and click <b>Run Reprocess Task</b> button."
   1:
-    image: /images/trendz/metric/use-in-thingsboard/reprocess-task-2.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/reprocess-task-2.png
     title: "Select a time range for reprocessing."
   2:
-    image: /images/trendz/metric/use-in-thingsboard/reprocess-task-3.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/reprocess-task-3.png
     title: "Choose items to run the job on (you can apply the same calculation to all entities with the same entity profile)."
   3:
-    image: /images/trendz/metric/use-in-thingsboard/reprocess-task-4.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/reprocess-task-4.png
     title: "Click <b>Run</b> button."
 
 calculation-refresh:
   0:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-1.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-1.png
     title: "Click the <b>Jobs</b> button."
   1:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-2.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-2.png
     title: "Enable <b>calculation result saving</b>."
   2:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-3.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-3.png
     title: "Set the <b>start date</b> (from which data will be saved)."
   3:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-4.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-4.png
     title: "Define the <b>frequency</b> (how often the job runs)."
   4:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-5.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-5.png
     title: "Choose the target items (entities with the same entity profile) for automatic updates."
   5:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-6.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-6.png
     title: "Click <b>Save</b> button."
   6:
-    image: /images/trendz/metric/use-in-thingsboard/refresh-task-7.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/refresh-task-7.png
     title: "Once the refresh job is set up, you will see the <b>Enabled</b> status next to the calculation name.  "
 
 use-alarms:
   0:
-    image: /images/trendz/metric/use-in-thingsboard/use-alarms-1.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/use-alarms-1.png
     title: "Open the entity profile where the calculation is created."
   1:
-    image: /images/trendz/metric/use-in-thingsboard/use-alarms-2.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/use-alarms-2.png
     title: "Navigate to <b>Alarm Rules</b> and toggle <b>Edit mode</b>."
   2:
-    image: /images/trendz/metric/use-in-thingsboard/use-alarms-3.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/use-alarms-3.png
     title: "Click <b>Add alarm rule</b> and set up create and clear alarm rules."
   3:
-    image: /images/trendz/metric/use-in-thingsboard/use-alarms-4.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/use-alarms-4.png
     title: "Click <b>Apply changes</b>."
   4:
-    image: /images/trendz/metric/use-in-thingsboard/use-alarms-5.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/use-alarms-5.png
     title: "Alarm rules are set up."
   5:
-    image: /images/trendz/metric/use-in-thingsboard/use-alarms-6.png
+    image: https://img.thingsboard.io/trendz/metric/use-in-thingsboard/use-alarms-6.png
     title: "Alarm was created by alarm rule."
 
 ---

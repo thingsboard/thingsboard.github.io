@@ -14,19 +14,19 @@ All configuration parameters list, and their detailed description can be found i
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/modbus-connector/attributes-and-timeseries-overview.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/attributes-and-timeseries-overview.png)
 
 For adding a new attribute or time series, use the following steps:
 
 {% assign attributes = '
     ===
-        image: /images/gateway/modbus-connector/attributes-1-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attributes-1-ce.png,
         title: Click on "**pencil**" icon in the "Attributes" or "**Time series**" section (depends on the selected section);
     ===
-        image: /images/gateway/modbus-connector/attributes-2-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attributes-2-ce.png,
         title: In the opened window click "**Add attribute**" or "**Add time series**" (depends on selected section);
     ===
-        image: /images/gateway/modbus-connector/attributes-3-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/attributes-3-ce.png,
         title: Fill in key, type, function code, objects count and address fields. Click "Apply".
 '
 %}
@@ -62,7 +62,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/modbus-connector/modifier.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/modifier.png)
 
 ##### Batch reading (Advanced configuration mode only)
 

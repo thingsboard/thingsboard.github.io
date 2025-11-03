@@ -717,7 +717,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/radionode-logo.png
+  logo: https://img.thingsboard.io/partners/radionode-logo.png
   page: /partners/hardware/radionode
   site:
     href: https://en.radionode365.com/kr/
