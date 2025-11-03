@@ -1,9 +1,10 @@
 * TOC 
 {:toc}
 
-## Prerequisites
-
-Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
+{% capture difference %}
+Before proceeding with this guide, it&#39;s recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} guide to become familiar with ThingsBoard devices and widgets. This will enhance your learning experience and understanding of the concepts presented here.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Introduction
 
@@ -226,6 +227,12 @@ You can edit the list of available aggregation functions. List the available agg
 - **Hide the time zone from end-users**: Restrict users from changing the timezone.
 
 {% include images-gallery.html imageCollection="hide-time-zone" %}
+
+*Available only when Aggregation is None*:
+
+- **Max values**: Limits the number of data points rendered in time-series widgets within the selected time window.
+
+{% include images-gallery.html imageCollection="max-values" %}
 
 ### Filters
 

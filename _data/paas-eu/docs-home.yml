@@ -81,40 +81,41 @@ toc:
           path: /docs/paas/eu/user-guide/scada/
         - title: SCADA symbols development guide
           path: /docs/paas/eu/user-guide/scada/scada-symbols-dev-guide/
-    - title: Widgets
+- title: Widgets
+  section:
+    - title: Overview
+      path: /docs/paas/eu/user-guide/widgets/
+    - title: Widget actions
+      path: /docs/paas/eu/user-guide/ui/widget-actions/
+    - title: Widgets library
+      path: /docs/paas/eu/user-guide/ui/widget-library/
+    - title: Widgets development
       section:
-        - title: Overview
-          path: /docs/paas/eu/user-guide/widgets/
-        - title: Widget actions
-          path: /docs/paas/eu/user-guide/ui/widget-actions/
-        - title: Widgets library
-          path: /docs/paas/eu/user-guide/ui/widget-library/
-        - title: Widgets development
-          section:
-            - title: Overview
-              path: /docs/paas/eu/user-guide/contribution/widgets-development/
-            - title: Basic widget API
-              path: /docs/paas/eu/user-guide/contribution/ui/basic-widget-api/
-            - title: Custom subscriptions
-              path: /docs/paas/eu/user-guide/contribution/ui/custom-subscriptions/
-            - title: Advanced widget development
-              path: /docs/paas/eu/user-guide/contribution/ui/advanced-development/
-        - title: Chart widgets
-          path: /docs/paas/eu/user-guide/ui/chart-widget/
-        - title: Map widgets
-          path: /docs/paas/eu/user-guide/widgets/map-widgets/
-          new: true
-        - title: Entities table widget
-          path: /docs/paas/eu/user-guide/ui/entity-table-widget/
-        - title: Advanced data key configuration
-          path: /docs/paas/eu/user-guide/ui/advanced-data-key-configuration/
+      - title: Overview
+        path: /docs/paas/eu/user-guide/contribution/widgets-development/
+      - title: Basic widget API
+        path: /docs/paas/eu/user-guide/contribution/ui/basic-widget-api/
+      - title: Custom subscriptions
+        path: /docs/paas/eu/user-guide/contribution/ui/custom-subscriptions/
+      - title: Advanced widget development
+        path: /docs/paas/eu/user-guide/contribution/ui/advanced-development/
+    - title: Chart widgets
+      path: /docs/paas/eu/user-guide/ui/chart-widget/
+    - title: Markdown/HTML Card widget
+      path: /docs/paas/eu/user-guide/widgets/cards/markdown-html-card/
+    - title: Map widgets
+      path: /docs/paas/eu/user-guide/widgets/map-widgets/
+    - title: Entities table widget
+      path: /docs/paas/eu/user-guide/ui/entity-table-widget/
+    - title: Advanced data key configuration
+      path: /docs/paas/eu/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
     - title: Overview
       path: /docs/paas/eu/user-guide/rule-engine-2-0/overview/
     - title: Getting started with Rule Engine
       path: /docs/paas/eu/user-guide/rule-engine-2-0/re-getting-started/
-    - title: Rule Nodes
+    - title: Rule nodes
       path: /docs/paas/eu/user-guide/rule-engine-2-0/nodes/
     - title: Data processing & actions
       section:
@@ -247,6 +248,9 @@ toc:
     - title: AI models
       path: /docs/paas/eu/samples/analytics/ai-models/
       new: true
+    - title: Local AI with Ollama
+      path: /docs/paas/eu/samples/analytics/ollama/
+      new: true
     - title: Trendz Analytics
       path: /docs/trendz/
     - title: Kafka Streams
@@ -262,6 +266,8 @@ toc:
       path: /docs/paas/eu/user-guide/reporting/scheduling-reports/
     - title: Embedding subreports
       path: /docs/paas/eu/user-guide/reporting/subreport/
+    - title: Embedding charts
+      path: /docs/paas/eu/user-guide/reporting/embedding-charts/
     - title: Embedding dashboards
       path: /docs/paas/eu/user-guide/reporting/embedding-dashboards-widgets/
     - title: Attaching report to notification

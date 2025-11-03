@@ -79,7 +79,7 @@ However, to keep the environment safe, we introduce certain Entity, [API](/docs/
         </tr>
         <tr>
             <td>Database</td>
-            <td>SQL</td>
+            <td>SQL + NoSQL</td>
             <td>SQL + NoSQL</td>
             <td>SQL + NoSQL</td>
             <td>SQL + NoSQL</td>

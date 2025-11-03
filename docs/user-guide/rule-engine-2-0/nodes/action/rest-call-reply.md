@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: rest call reply
-description: Sends a reply to a REST API call to the rule engine.
+description: Sends the incoming message data as an HTTP response to a REST API call made to the rule engine.
 hidetoc: "true"
 ---
 

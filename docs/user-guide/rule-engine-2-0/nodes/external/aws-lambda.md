@@ -1,8 +1,7 @@
 ---
 layout: docwithnav
 title: aws lambda
-description: Node publishes messages to AWS Lambda, a service that lets you run code without provisioning or managing servers.
-  It sends messages using a RequestResponse invocation type. The node uses a pre-configured client and specified function to run.
+description: Invokes AWS Lambda function with incoming message data as the payload and returns the function's response as outgoing message data.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

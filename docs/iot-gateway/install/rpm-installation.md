@@ -4,7 +4,7 @@ title: Install ThingsBoard IoT Gateway as package.
 
 ---
 
-This guide will help you to install ThingsBoard IoT Gateway on CentOS or RHEL.
+This guide will help you to install ThingsBoard IoT Gateway on AlmaLinux or RHEL.
 
 ## Prerequisites
 
@@ -19,12 +19,12 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 ```
 {: .copy-code}
 
-## Step 2. Install the gateway using yum
+## Step 2. Install the gateway using dnf
 
 Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
 
 ```bash
-sudo yum install -y ./python3-thingsboard-gateway.rpm
+sudo dnf install -y ./python3-thingsboard-gateway.rpm
 ```
 {: .copy-code}  
 
@@ -72,15 +72,16 @@ OPC-UA and MQTT sources inside the network but cannot access the internet due to
 ### Prerequisites
 
 The Offline Build requires the same prerequisites as the standard package installation, and also it's important to have 
-installed **Python 3.11**. If a Python version is incompatible, the installation gracefully exits with instructions 
-for installing the correct Python version.
+installed **Python 3.11**, this is only supported on **AlmaLinux 9.x** (we recommend **9.6**) or earlier. 
+Newer versions such as **AlmaLinux 10** do not provide **Python 3.11** in the official repositories, 
+and we cannot guarantee that alternative installation methods will work properly. If the detected Python version is incompatible, 
+the installer will exit gracefully with an error indicating that **Python 3.11** is missing.
 
 For installing a right Python version, you can use the following commands:
 
 ```bash
-sudo yum install -y epel-release
-sudo yum install -y https://repo.ius.io/ius-release-el$(rpm -E %{rhel}).rpm
-sudo yum install -y python3.11 python3.11-venv
+sudo dnf install -y epel-release
+sudo dnf install -y python3.11
 ```
 {: .copy-code}
 
@@ -95,12 +96,12 @@ wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download
 ```
 {: .copy-code}
 
-#### Step 2. Install the gateway using yum
+#### Step 2. Install the gateway using dnf
 
 Install ThingsBoard IoT Gateway as package and run it as daemon uses the following command:<br><br>
 
 ```bash
-sudo yum install -y ./python3.11-thingsboard-gateway-offline.rpm
+sudo dnf install -y ./python3.11-thingsboard-gateway-offline.rpm
 ```
 {: .copy-code}  
 
@@ -121,7 +122,7 @@ systemctl status thingsboard-gateway
   When the required Python version is installed, remove the previously installed Gateway package using:
 
   ```bash
-  sudo rpm -e --noscripts python3-thingsboard-gateway
+  sudo rpm -e --noscripts thingsboard-gateway
   ```
   {: .copy-code}
 

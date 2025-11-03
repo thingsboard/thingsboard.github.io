@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: AI request
-description: Sends a request to a large language model (LLM) using configured system and user prompts, which can be dynamically populated with data from the incoming message. Returns AI-generated content as a payload of the outgoing message.
+description: Sends a request to a large language model with customizable prompts and optional file attachments, returning the AI-generated response as the outgoing message data.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

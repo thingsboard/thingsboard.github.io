@@ -1,5 +1,3 @@
-# message type switch
-
 Routes incoming messages based on their message type. The message is forwarded through the output connection whose label exactly matches the message type **rule node connection
 label**.
 

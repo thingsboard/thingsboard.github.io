@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: aws sns
-description: Node publish messages to AWS SNS (Amazon Simple Notification Service).
+description: Publishes incoming message data to AWS SNS topic and returns response metadata in the outgoing message.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"
