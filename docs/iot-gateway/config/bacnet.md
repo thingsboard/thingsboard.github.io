@@ -430,50 +430,40 @@ Example of the device RPC methods configuration:
 
 ## Additional information
 
-### Object identifiers
+### Supported Object Types
 
-The BACnet connector Object identifiers consist of two parts separated by a colon (“:”) symbol:  
-the name of object and the number of this object on the device.  
-
-Tested and supported objects:  
+The BACnet connector support the following BACnet object types:
 
 | **BACnet object id** | **ThingsBoard object id** |
 |----------------------|---------------------------|
 | **Binary input**     | **binaryInput**           |
-| **Binary output**    | **binaryOutput**          |
-| **Binary value**     | **binaryValue**           |
+| **Binary Output**    | **binaryOutput**          |
+| **Binary Value**     | **binaryValue**           |
 | **Analog Input**     | **analogInput**           |
-| **Analog output**    | **analogOutput**          |
-| **Analog value**     | **analogValue**           |
+| **Analog Output**    | **analogOutput**          |
+| **Analog Value**     | **analogValue**           |
+| **Schedule Object**  | **schedule**              |
 | ---                  | ---                       |
 
-Objects in testing:  
+### Supported Property Identifiers
 
-* accumulatorObject
-* averagingObject
-* calendarObject
-* commandObject
-* fileObject
-* lifeSafetyPointObject
-* lifeSafetyZoneObject
-* loopObject
-* multiStateInputObject
-* multiStateOutputObject
-* multiStateValueObject
-* notificationClassObject
-* programObject
-* pulseConverterObject
-* scheduleObject
-* structuredViewObject
-* trendLogObject
-
-### Property identifiers
-
-Property identifiers depend on type of the BACnet object, provided in camelCase, e.g.
-**presentValue**
-**objectName**
-**objectDescription**
-etc.
+Property identifiers depend on type of the BACnet object, provided in camelCase, e.g:
+- presentValue
+- objectName
+- objectDescription
+- units
+- eventState
+- outOfService
+- priorityArray
+- relinquishDefault
+- currentCommandPriority
+- eventMessageTexts
+- eventMessageTextsConfig
+- eventAlgorithmInhibitReference
+- timeDelayNormal
+- weeklySchedule
+- listOfObjectPropertyReferences
+- location
 
 ## Troubleshooting
 
