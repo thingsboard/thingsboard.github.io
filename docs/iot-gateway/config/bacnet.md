@@ -107,7 +107,8 @@ data, while time series are used for storing dynamic or frequently changing data
 Dynamic device name/profile<small></small>%,%dynamicdevicenameandprofile%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/dynamic-device-name-and-profile.md%br%
 Alternative responses addresses<small></small>%,%alternativeresponsesaddresses%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/alternative-responses-addresses.md%br%
 Discovering all device<small>(advanced configuration mode only)</small>%,%discoveringalldevice%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/discovering-all-device.md%br%
-Reading all device objects<small>(advanced configuration mode only)</small>%,%readingalldeviceobjects%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/reading-all-device-objects.md{% endcapture %}
+Reading all device objects<small>(advanced configuration mode only)</small>%,%readingalldeviceobjects%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/reading-all-device-objects.md%br%
+Filtering objects and properties<small>(advanced configuration mode only)</small>%,%filteringobjectsandproperties%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/filtering-objects-and-properties.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="bacnet-attributes-timeseries-examples" toggle-spec=bacnet-attributes-timeseries-examples %}
 
 ## Requests mapping
