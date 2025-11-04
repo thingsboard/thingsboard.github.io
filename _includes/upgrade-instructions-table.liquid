@@ -29,7 +29,7 @@
                          data-version="{{ version }}"
                          data-family="{{ family }}">
                         <div class="releases-table-content">
-                            <div class="releases-table-content-item">{{ version }}PE</div>
+                            <div class="releases-table-content-item">{{ version }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
                             <div class="releases-table-content-item">{{ p["release-date"] | date: "%B %e, %Y" }}</div>
                             <div class="releases-table-content-item">{{ p["upgradable-from"] | default: "—" }}</div>
 
