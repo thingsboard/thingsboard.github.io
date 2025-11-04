@@ -208,7 +208,7 @@ See video tutorial below for step-by-step instruction how to setup OPC-UA Integr
 <br>
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/KK0gXGXFQ0E" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/KK0gXGXFQ0E" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
 
