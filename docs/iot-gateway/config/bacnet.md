@@ -284,6 +284,17 @@ Example of the application configuration:
 }
 ```
 
+### Foreign device (v.3.7.6+)
+
+The foreign device configuration parameters are used to configure the gateway as a foreign device in the BACnet network.
+It is useful when the gateway is behind a NAT and needs to register with a BACnet Broadcast Management Device (BBMD).
+
+| **Parameter**              | **Default value** | **Description**                                   |
+|:---------------------------|-------------------|---------------------------------------------------|
+| foreignDevice.ttl (in sec) | **900**           | Time to live for the foreign device registration. |
+| foreignDevice.address      | **0.0.0.0**       | The address of the BBMD to register with.         |
+| ---                        |                   |                                                   |
+
 ### Devices
 
 The device list contains an array of BACnet devices that can be connected to the connector and interact with them. 
@@ -328,6 +339,20 @@ Example of the device mapping configuration:
   ]
 }
 ```
+
+#### Available variables for device name/profile expressions
+
+You can use the following parameters for forming device name and profile:
+- `${objectName}` - the device object name of the BACnet device.
+- `${objectId}` - the device object identifier of the BACnet device.
+- `${vendorId}` - the device vendor identifier of the BACnet device.
+- `${address}` - the device host address.
+- `${routerId}` - the device router identifier.
+- `${routerName}` - the device router name.
+- `${routerAddress}` - the device router address.
+- `${routerVendorId}` - the device router vendor identifier.
+
+You can find detail examples [here](/docs/iot-gateway/config/bacnet/#usage-examples).
 
 #### Device attributes and time series
 
