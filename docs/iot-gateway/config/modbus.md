@@ -28,7 +28,7 @@ help you understand how everything works.
 &nbsp;
 <div id="video">
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/kBMcsg7YEcQ" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/kBMcsg7YEcQ" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

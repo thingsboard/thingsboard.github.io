@@ -18,7 +18,7 @@ Card widget allows visualizing the single important metrics and monitors its dyn
 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/ZXORc5nipgg" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ZXORc5nipgg" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

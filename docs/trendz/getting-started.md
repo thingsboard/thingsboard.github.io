@@ -205,7 +205,7 @@ The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics.
 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

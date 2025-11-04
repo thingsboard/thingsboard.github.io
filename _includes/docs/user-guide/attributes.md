@@ -322,6 +322,6 @@ Having attributes cache enabled ThingsBoard will load the specific attribute fro
 
 <div id="video">
   <div id="video_wrapper">
-    <iframe src="https://www.youtube.com/embed/JCW_hShAp7I" frameborder="0" allowfullscreen=""></iframe>
+    <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/JCW_hShAp7I" frameborder="0" allowfullscreen=""></iframe>
   </div>
 </div>

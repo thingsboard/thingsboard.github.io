@@ -22,7 +22,7 @@ Watch this practical video course to learn how to configure and manage ThingsBoa
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/65SoFceFDBE" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/65SoFceFDBE" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
