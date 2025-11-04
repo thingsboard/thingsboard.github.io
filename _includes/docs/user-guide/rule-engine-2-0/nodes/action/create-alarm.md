@@ -117,6 +117,7 @@ The script has access to the following variables:
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

@@ -1,7 +1,10 @@
 Delays incoming messages for a configurable period before forwarding them to the next rule node.
 
-**⚠️ This node is deprecated** due to potential data loss. It acknowledges incoming messages (removing them from the persistent queue) but stores them only in memory, which is lost
+{% capture deprecation_note %}
+**This node is deprecated** due to potential data loss. It acknowledges incoming messages (removing them from the persistent queue) but stores them only in memory, which is lost
 if the server restarts or crashes.
+{% endcapture %}
+{% include templates/warn-banner.md content=deprecation_note %}
 
 ## Configuration
 
@@ -39,6 +42,7 @@ if the server restarts or crashes.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

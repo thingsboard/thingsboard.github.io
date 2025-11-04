@@ -140,24 +140,24 @@ Each message passes through The **Swimming Pool Device Rule Chain**. Here, telem
 **Message processing flow:**
 
 * **Alarm generation**:
-  Every message first passes through the [device profile node](/docs/{{docsPrefix}}user-guide/device-profiles/#device-profile-rule-node){:target="_blank"}. This step allows the system to generate alarms based on the conditions defined in the device profiles (such as for the heat pump, water pump, and sand filter). If the telemetry exceeds the set thresholds, alarms are triggered and displayed on the dashboard.{% include images-gallery.html imageCollection="rule-chain-1" %}
+  Every message first passes through the [device profile node](/docs/user-guide/rule-engine-2-0/nodes/action/device-profile/){:target="_blank"}. This step allows the system to generate alarms based on the conditions defined in the device profiles (such as for the heat pump, water pump, and sand filter). If the telemetry exceeds the set thresholds, alarms are triggered and displayed on the dashboard.{% include images-gallery.html imageCollection="rule-chain-1" %}
 
 * **Message type switch**:
-  After the initial profile processing, the message moves to the [message type switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node){:target="_blank"}. This node routes messages based on their type, such as telemetry data, attribute updates, or RPC requests. It sends each message down the appropriate path for further processing.
+  After the initial profile processing, the message moves to the [message type switch node](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-switch/){:target="_blank"}. This node routes messages based on their type, such as telemetry data, attribute updates, or RPC requests. It sends each message down the appropriate path for further processing.
 
 {% include images-gallery.html imageCollection="rule-chain-2" %}
 
 * **General logic – save attributes, time series, and RPC requests**:
   Independent of the message type, these actions are performed for all devices.
 
-  * [save attributes node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}: The telemetry data from devices is saved as attributes.
-  * [save time series node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}: Time series data is saved for historical analysis and monitoring.
-  * [rpc call request node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node){:target="_blank"}: The system can generate and send RPC requests to devices. These RPC commands may turn devices on/off, change operational modes, or control valve positions. For example, valves can be opened/closed, and pumps can be activated/deactivated based on predefined conditions or manual requests.
+  * [save attributes node](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes/){:target="_blank"}: The telemetry data from devices is saved as attributes.
+  * [save time series node](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/){:target="_blank"}: Time series data is saved for historical analysis and monitoring.
+  * [rpc call request node](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request/){:target="_blank"}: The system can generate and send RPC requests to devices. These RPC commands may turn devices on/off, change operational modes, or control valve positions. For example, valves can be opened/closed, and pumps can be activated/deactivated based on predefined conditions or manual requests.
 
 {% include images-gallery.html imageCollection="rule-chain-3" %}
 
 * **Device profile filtering**:
-  Once the telemetry data is saved, the message is routed through the [device profile switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#device-profile-switch){:target="_blank"}. This node filters the devices based on their profile, allowing for device-specific actions. When telemetry from the **heat pump** is detected, the system checks specific conditions—like target temperature, outdoor temperature, and pool temperature—through a [switch node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#switch-node){:target="_blank"}. If the telemetry conditions meet the thresholds for turning the heat pump on or off, an RPC request is sent to control the heat pump’s state.
+  Once the telemetry data is saved, the message is routed through the [device profile switch node](/docs/user-guide/rule-engine-2-0/nodes/filter/device-profile-switch/){:target="_blank"}. This node filters the devices based on their profile, allowing for device-specific actions. When telemetry from the **heat pump** is detected, the system checks specific conditions—like target temperature, outdoor temperature, and pool temperature—through a [switch node](/docs/user-guide/rule-engine-2-0/nodes/filter/switch/){:target="_blank"}. If the telemetry conditions meet the thresholds for turning the heat pump on or off, an RPC request is sent to control the heat pump’s state.
 
 {% include images-gallery.html imageCollection="rule-chain-4" %}
 

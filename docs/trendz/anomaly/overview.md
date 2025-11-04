@@ -5,41 +5,41 @@ description: Introduction to anomaly detection in Trendz
 
 page-anomaly-models:
   0:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-anomaly-models.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-anomaly-models.png
     title: 'Anomaly Models Tab'
 
 page-cluster-info-tab:
   0:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-cluster-info-all.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-cluster-info-all.png
     title: 'Cluster Info Tab'
   1:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-cluster-info-specific.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-cluster-info-specific.png
     title: 'Cluster Info Tab (Specific Cluster)'
 
 page-input-tab:
   0:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-input-tab.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-input-tab.png
     title: 'Input Tab'
 
 page-review-tab:
   0:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-review-tab.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-review-tab.png
     title: 'Review Tab'
 
 page-summary-tab:
   0:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-summary-calendar.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-summary-calendar.png
     title: 'Summary Tab: Calendar Mode'
   1:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-summary-dynamic.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-summary-dynamic.png
     title: 'Summary Tab: Dynamic Mode'
   2:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-summary-review.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-summary-review.png
     title: 'Summary Tab: Review Mode'
 
 page-task-tab:
   0:
-    image: https://img.thingsboard.io/trendz/anomaly/with-preview/page-task-tab.png
+    image: https://img.thingsboard.io/trendz/anomaly/page-task-tab.png
     title: 'Task Tab'
 
 ---
@@ -67,7 +67,7 @@ You can find details how to use Trendz Analytics to create anomaly detection mod
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/pbjXGDJ-SI0" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/pbjXGDJ-SI0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -85,7 +85,7 @@ In Trendz, anomaly detection is based on two core metrics:
 
 Let’s explore a real-world example showing pump vibrations right after startup:
 
-![image](https://img.thingsboard.io/trendz/anomaly/score_vs_index.png)
+![image](https://img.thingsboard.io/trendz/anomaly/without-preview/score_vs_index.png)
 
 - **Anomaly A**
   - Characterized by a **sharp vibration spike** lasting ~5 seconds.

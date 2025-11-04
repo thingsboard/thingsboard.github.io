@@ -15,7 +15,7 @@ description: Trendz Scatter Plot
   
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/wX4ro6FfyaE" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wX4ro6FfyaE" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

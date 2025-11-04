@@ -1,9 +1,5 @@
 Renames keys in the incoming message or its metadata based on a configured mapping.
 
-## Preconditions
-
-There are no requirements for the incoming message structure.
-
 ## Configuration
 
 ### Field descriptions
@@ -48,6 +44,7 @@ If the current key does not exist, the mapping is skipped.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -70,11 +67,6 @@ If the current key does not exist, the mapping is skipped.
     * if an unexpected error occurs during processing.
 
 ## Examples
-
-The examples below show only the **relevant** parts of the incoming message, rule node configuration, and system state.
-Any information not explicitly shown has no effect on the processing.
-
----
 
 ### Example 1 — Rename a key in message data
 

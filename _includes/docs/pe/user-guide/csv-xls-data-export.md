@@ -9,6 +9,6 @@ See video tutorial below for step-by-step instruction how to use this feature.
 <br> 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/TzQ21MP8tNs" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/TzQ21MP8tNs" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 

@@ -5,7 +5,7 @@
 
 ### MessagePack Processing Log
 
-To enable logging for the slowest and most frequently called rule-nodes, 
+To enable logging for the slowest and most frequently called rule nodes, 
 [update your logging configuration](#enable-certain-logs) with the following **logger**:
 
 ```bash

@@ -19,7 +19,7 @@ Prefer visual learning? Check out our step-by-step getting started video tutoria
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/iIuyG1KL-bw" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/iIuyG1KL-bw" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

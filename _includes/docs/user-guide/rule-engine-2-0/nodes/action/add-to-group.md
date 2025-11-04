@@ -47,6 +47,7 @@ The configuration allows you to specify how entities are added to groups and how
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

@@ -53,6 +53,7 @@ The node finds a target entity group by its name. The search logic depends on th
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

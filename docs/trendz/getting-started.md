@@ -205,7 +205,7 @@ The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics.
 
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -307,7 +307,7 @@ Firstly, we will create a calculated field, it could be used across multiple vie
 * Enable *calculation result saving* and click the **Save** button
   (you can leave the other properties as default)
 
-Your calculated field is now ready to use. Learn more about calculated fields [here](/docs/trendz/calculated-fields).
+Your calculated field is now ready to use. Learn more about calculated fields [here](/docs/trendz/calculations/overview).
 
 {% include images-gallery.html imageCollection="create-calculation" %}
 

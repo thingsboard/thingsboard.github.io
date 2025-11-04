@@ -194,7 +194,7 @@ See video tutorial below for step-by-step instruction how to setup SigFox Integr
 <br>
 <div id="video"> 
  <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/embed/T769XqaqeFU" frameborder="0" allowfullscreen></iframe>
+     <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/T769XqaqeFU" frameborder="0" allowfullscreen></iframe>
  </div>
 </div>
 

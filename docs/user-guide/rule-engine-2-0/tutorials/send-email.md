@@ -35,11 +35,11 @@ We assume you have completed the following guides and reviewed the articles list
 
 In this section, we explain the purpose of each node in this tutorial:
 
-- Node A: [**Transform Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
+- Node A: [**Transform Script**](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/) node.
   - This node will use for saving current temperature in the Message Metadata.
-- Node B: [**To Email**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) node.
+- Node B: [**To Email**](/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email/) node.
   - this node builds actual email from the configured template.
-- Node C: [**Send Email**](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) node.
+- Node C: [**Send Email**](/docs/user-guide/rule-engine-2-0/nodes/external/send-email/) node.
   - this node will actually send email from the inbound message using system SMTP settings.
 
 <br>

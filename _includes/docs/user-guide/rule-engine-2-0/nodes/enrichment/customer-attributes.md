@@ -64,6 +64,7 @@ The configuration allows you to specify which data to fetch from the customer an
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -87,7 +88,6 @@ The configuration allows you to specify which data to fetch from the customer an
 ## Examples
 
 ### Example 1 — Enriching metadata
-
 
 **Incoming message**:
 

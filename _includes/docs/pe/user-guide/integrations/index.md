@@ -471,7 +471,7 @@ See the video tutorial below for step-by-step instructions on how to set up an U
 <br>
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

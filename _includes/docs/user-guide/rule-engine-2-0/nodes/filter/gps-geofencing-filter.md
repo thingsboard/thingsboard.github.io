@@ -33,8 +33,6 @@ Fields below are required when the **Perimeter type** is set to *Circle* and **F
 
 ### Perimeter definition formats
 
-This subsection provides examples of how to define polygon and circle perimeters, depending on the configuration method (static config or metadata).
-
 #### Polygon definition formats
 
 Polygon definitions must be strings containing a valid JSON array of coordinates. Each coordinate is a two-element array: `[latitude, longitude]`.
@@ -77,7 +75,10 @@ If a polygon is completely contained inside another, it is treated as a **hole**
 ]
 ```
 
-> When defining polygons in metadata, the value must be a **string**, even if the content is a JSON array.
+{% capture defining_polygons_in_metadata_note %}
+When defining polygons in metadata, the value must be a **string**, even if the content is a JSON array.
+{% endcapture %}
+{% include templates/info-banner.md content=defining_polygons_in_metadata_note %}
 
 ---
 
@@ -104,18 +105,13 @@ Circle definitions are JSON objects with the following fields:
     * `"MILE"`
     * `"NAUTICAL_MILE"`
 
-> When storing circle definitions in metadata, the entire object must be serialized as a **string**.
-> Example metadata value:
-> ```json
-> {
->   "geo": "{\"latitude\":48.1986,\"longitude\":24.6532,\"radius\":100.0,\"radiusUnit\":\"METER\"}"
-> }
-> ```
+{% capture defining_circles_in_metadata_note %}
+When storing circle definitions in metadata, the entire object must be serialized as a **string**.
+Example metadata value: `"{\"latitude\":48.1986,\"longitude\":24.6532,\"radius\":100.0,\"radiusUnit\":\"METER\"}"`
+{% endcapture %}
+{% include templates/info-banner.md content=defining_circles_in_metadata_note %}
 
 ---
-
-This subsection can help users correctly prepare and troubleshoot polygon and circle definitions whether defined statically or through metadata.
-
 
 ### JSON Schema
 
@@ -186,6 +182,7 @@ This subsection can help users correctly prepare and troubleshoot polygon and ci
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -213,8 +210,10 @@ This subsection can help users correctly prepare and troubleshoot polygon and ci
     * If the point is **outside** → routed via the `False` connection.
     * If any error occurs during parsing, coordinate extraction, or geofence resolution → routed via the `Failure` connection.
 
-> * Longitudes are normalized internally, allowing support for polygons that cross the ±180° meridian.
-> * A two-point polygon is interpreted as a rectangle defined by opposite corners.
+{% capture normalization_note %}
+Longitudes are normalized internally, allowing support for polygons that cross the ±180° meridian.
+{% endcapture %}
+{% include templates/info-banner.md content=normalization_note %}
 
 ## Output connections
 
@@ -231,18 +230,6 @@ This subsection can help users correctly prepare and troubleshoot polygon and ci
 ## Examples
 
 The examples below show only the **relevant** fields. Unless stated otherwise, other message fields may have any values.
-
----
-
-Here is the fully redone **Examples** section, rewritten for clarity, consistency, and to match the updated behavior and configuration structure (excluding legacy paths):
-
----
-
-## Examples
-
-The examples below show only the **relevant** parts of the incoming message and node configuration. Unless otherwise noted, other fields can have any values.
-
----
 
 ### Example 1 — Point inside static circle → `True`
 
@@ -601,10 +588,3 @@ Routed via **`Failure`**
 **Explanation**
 
 The value in the metadata key is not a valid JSON string, so the perimeter cannot be parsed.
-
-## Use cases
-
-* **Fleet & logistics**: Process messages only when a vehicle enters a depot or leaves a delivery zone.
-* **Asset security**: Trigger alerts if an asset exits a permitted area or enters a restricted one (use polygon with holes for internal safe zones).
-* **Facilities**: Route data differently depending on whether a device is within a site boundary vs. off-premises.
-* **Utilities & field service**: Start/stop telemetry processing when crews are within authorized work polygons.

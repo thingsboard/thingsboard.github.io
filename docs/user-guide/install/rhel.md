@@ -39,6 +39,13 @@ sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.
 ```
 {: .copy-code}
 
+To ensure proper installation process, execute the following command to install the necessary system fonts:
+
+```bash
+sudo dnf install -y fontconfig dejavu-sans-fonts
+```
+{: .copy-code}
+
 ## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/rhel-java-install.md %} 

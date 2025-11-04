@@ -129,4 +129,4 @@ There, you can enable the **Use own model** option, select an AI provider (OpenA
 
 For more details on configuring AI Assistant, you can read more [here](/docs/trendz/custom-ai-model-configuration.md).
 
-![image](https://img.thingsboard.io/trendz/ai/ai-model-configuration/use-own-model-1.png)
+![image](https://img.thingsboard.io/trendz/ai/settings/use-own-model-1.png)

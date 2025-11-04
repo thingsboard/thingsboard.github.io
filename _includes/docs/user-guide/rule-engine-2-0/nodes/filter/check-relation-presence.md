@@ -58,6 +58,7 @@ type.
 }
 
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

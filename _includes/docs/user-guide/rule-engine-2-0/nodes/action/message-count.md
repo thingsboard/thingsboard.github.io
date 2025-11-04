@@ -28,6 +28,7 @@ Counts incoming messages over a specified time interval and outputs a message co
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

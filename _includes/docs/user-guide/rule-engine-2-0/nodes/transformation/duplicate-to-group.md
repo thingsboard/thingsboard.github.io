@@ -58,6 +58,7 @@ In this mode, the target entity group is dynamically determined from the incomin
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -89,7 +90,10 @@ Data: `{"targetTemperature": 100"}`
 
 **Node configuration**
 
-> Note: The `entityGroupId` is a placeholder UUID for the `Thermostats Floor 1` group.
+{% capture status_property_note %}
+**Note:** The `entityGroupId` is a placeholder UUID for the `Thermostats Floor 1` group.
+{% endcapture %}
+{% include templates/info-banner.md content=status_property_note %}
 
 ```json
 {
