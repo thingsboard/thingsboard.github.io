@@ -184,14 +184,7 @@ $header-clearance: 210px
   padding: 0 12px 12px
   border-radius: 8px
   background: rgba(42, 125, 236, 0.08)
-  max-height: 800px
   overflow: auto
-  &::-webkit-scrollbar
-    width: 8px
-    background: rgba(42, 125, 236, 0.06)
-  &::-webkit-scrollbar-thumb
-    background: rgba(42, 125, 236, 0.2)
-    border-radius: 10px
   .releases-table-content
     min-width: 1250px
     width: 100%
@@ -199,7 +192,6 @@ $header-clearance: 210px
       border-top: 12px solid rgba(42, 125, 236, 0.08)
       position: sticky
       top: 0
-      z-index: 1
       padding: 12px 24px
       background: #FFF
       border-radius: 4px
@@ -223,10 +215,8 @@ $header-clearance: 210px
         &:nth-child(5)
           min-width: 135px
         &:nth-child(6)
-          min-width: 70px
-        &:nth-child(7)
           min-width: 141px
-        &:nth-child(8)
+        &:nth-child(7)
           text-align: center
           min-width: 209px
 
@@ -235,6 +225,7 @@ $header-clearance: 210px
       border-radius: 4px
       background: #FFF
     .releases-table-content-wrapper
+      display: block
       padding: 4px 0 3px
       border-bottom: 1px solid rgba(0, 0, 0, 0.12)
       &:last-child
@@ -242,21 +233,23 @@ $header-clearance: 210px
       .releases-table-content
         border-left: 3px solid transparent
         background: transparent
-        transition: ease-in-out 0.3s
-        padding: 6px 20px
+        transition: ease-in-out 0.25s
+        padding: 10px 20px
         display: flex
         justify-content: space-between
         align-items: center
-        max-height: 30px
+        max-height: 38px
         &:hover
           border-left: 3px solid #2A7DEC
           background: linear-gradient(0deg, rgba(109, 109, 109, 0.04) 0%, rgba(109, 109, 109, 0.04) 100%), #FFF
           .releases-table-content-item
             font-size: 15px
+            line-height: 28px
         .releases-table-content-item
           text-decoration-color: #000
-          transition: ease-in-out 0.3s
+          transition: font-size 0.25s
           font-size: 14px
+          line-height: 24px
           min-width: 130px
           &.version-link
             display: flex
@@ -276,21 +269,13 @@ $header-clearance: 210px
           &:nth-child(5)
             min-width: 135px
           &:nth-child(6)
-            min-width: 70px
-          &:nth-child(7)
             min-width: 141px
-          &:nth-child(8)
+          &:nth-child(7)
             text-align: center
             min-width: 209px
 
 .releases-table.pe-table
   background: rgba(0, 105, 92, 0.06)
-  &::-webkit-scrollbar
-    width: 8px
-    background: rgba(0, 105, 92, 0.06)
-  &::-webkit-scrollbar-thumb
-    background: rgba(0, 105, 92, 0.2)
-    border-radius: 10px
   .releases-table-header
     border-top: 12px solid rgba(0, 105, 92, 0.06)
   .releases-table-content-wrapper

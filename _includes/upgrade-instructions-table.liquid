@@ -23,7 +23,11 @@
                 {%- unless p.name == 'index.md' or p.name contains '.x.md' -%}
                     {%- assign version = p.name | replace: ".md", "" -%}
                     {%- assign family = version | split: "." | slice: 0, 2 | join: "." -%}
-                    <div class="releases-table-content-wrapper" data-version="{{ version }}" data-family="{{ family }}">
+                    <div class="releases-table-content-wrapper"
+                         onclick="window.location='/docs/{{ docsPrefix }}releases/releases-table/{{ version }}'"
+                         style="cursor:pointer;"
+                         data-version="{{ version }}"
+                         data-family="{{ family }}">
                         <div class="releases-table-content">
                             <div class="releases-table-content-item">{{ version }}PE</div>
                             <div class="releases-table-content-item">{{ p["release-date"] | date: "%B %e, %Y" }}</div>

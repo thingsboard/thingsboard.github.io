@@ -3540,57 +3540,6 @@
 "/docs/pe/releases/releases-table/":
   url: "/docs/pe/releases/releases-table/"
   redirect_from: []
-"/docs/pe/releases/releases-table/v2.2/":
-  url: "/docs/pe/releases/releases-table/v2.2/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.3.1/":
-  url: "/docs/pe/releases/releases-table/v2.3.1/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.3/":
-  url: "/docs/pe/releases/releases-table/v2.3/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.3.x/":
-  url: "/docs/pe/releases/releases-table/v2.3.x/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.4.1/":
-  url: "/docs/pe/releases/releases-table/v2.4.1/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.4.2/":
-  url: "/docs/pe/releases/releases-table/v2.4.2/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.4.3/":
-  url: "/docs/pe/releases/releases-table/v2.4.3/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.4/":
-  url: "/docs/pe/releases/releases-table/v2.4/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.4.x/":
-  url: "/docs/pe/releases/releases-table/v2.4.x/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.1/":
-  url: "/docs/pe/releases/releases-table/v2.5.1/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.2/":
-  url: "/docs/pe/releases/releases-table/v2.5.2/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.3/":
-  url: "/docs/pe/releases/releases-table/v2.5.3/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.4/":
-  url: "/docs/pe/releases/releases-table/v2.5.4/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.5/":
-  url: "/docs/pe/releases/releases-table/v2.5.5/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.6/":
-  url: "/docs/pe/releases/releases-table/v2.5.6/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5/":
-  url: "/docs/pe/releases/releases-table/v2.5/"
-  redirect_from: []
-"/docs/pe/releases/releases-table/v2.5.x/":
-  url: "/docs/pe/releases/releases-table/v2.5.x/"
-  redirect_from: []
 "/docs/pe/releases/releases-table/v3.0.1/":
   url: "/docs/pe/releases/releases-table/v3.0.1/"
   redirect_from: []
@@ -5021,36 +4970,6 @@
 "/docs/user-guide/install/pe/ubuntu/":
   url: "/docs/user-guide/install/pe/ubuntu/"
   redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.4.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.4.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.4.2.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.4.2.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.4.3/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.4.3/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.2/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.2/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.3/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.3/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.4/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.4/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.5/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.5/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.6/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5.6/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v2.5/"
-  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/centos/v3.0.1/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v3.0.1/"
   redirect_from: []
@@ -5163,36 +5082,6 @@
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
   redirect_from:
   - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.4.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.4.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.4.2.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.4.2.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.4.3/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.4.3/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.2/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.2/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.3/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.3/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.4/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.4/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.5/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.5/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.6/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5.6/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v2.5/"
-  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v3.0.1/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v3.0.1/"
   redirect_from: []
@@ -5300,36 +5189,6 @@
   redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v4.2.1/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v4.2.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.4.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.4.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.4.2.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.4.2.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.4.3/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.4.3/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.1/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.1/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.2/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.2/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.3/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.3/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.4/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.4/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.5/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.5/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.6/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5.6/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v2.5/"
   redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/windows/v3.0.1/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v3.0.1/"
