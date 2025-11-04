@@ -96,3 +96,4 @@ this (**make sure to use the right device host and port**):
   ]
 }
 ```
+{:.copy-code}

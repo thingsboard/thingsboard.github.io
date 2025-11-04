@@ -17,3 +17,6 @@ You can use the following variables to extract specific device information:
 - "**Device ID: ${objectId} at ${address}**" If the objectId variable exists and contains **"vendorId": 999** and 
   address variable exists and contains **"address": "192.168.1.1"**, the device on platform will have the following 
   name: **Device ID: 999 at 192.168.1.1**.
+
+You can find full list of available variables in
+the [Advanced configuration](/docs/iot-gateway/config/bacnet/#available-variables-for-device-nameprofile-expressions) section.

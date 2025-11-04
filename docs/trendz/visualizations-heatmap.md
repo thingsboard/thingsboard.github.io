@@ -20,7 +20,7 @@ Heatmap is one of the easiest way to describe repeatable patterns and find outli
   
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/XJjC3xdTJq4" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/XJjC3xdTJq4" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

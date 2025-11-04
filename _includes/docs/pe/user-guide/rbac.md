@@ -464,7 +464,7 @@ You can watch the video tutorial for step-by-step instructions on role-based acc
 <br>
 <div id="video">
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/xpnYzSiDiJo" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/xpnYzSiDiJo" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
