@@ -110,3 +110,4 @@ Full configuration for BACnet connector for the examples above will look like th
   ]
 }
 ```
+{:.copy-code}
