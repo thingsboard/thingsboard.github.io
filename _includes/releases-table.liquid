@@ -120,7 +120,7 @@
                     onclick="window.location='{{ notes_url }}'"
                     style="cursor:pointer;">
                     <div class="releases-table-content">
-                        <div class="releases-table-content-item">{{ family_key }}.xPE</div>
+                        <div class="releases-table-content-item">{{ family_key }}.x{% if docsPrefix == "pe/" %}PE{% endif %}</div>
                         <div class="releases-table-content-item">
                             {%- if earliest_date_display -%}
                                 <time datetime="{{ earliest_date_display | date: '%Y-%m-%d' }}">{{ earliest_date_display | date: "%B %-d, %Y" }}</time>
@@ -136,7 +136,7 @@
                         </div>
                         {% if status_label != "non-LTS" %}
                             <a href="#" class="releases-table-content-item version-link">
-                                <span>{{ status_label }} LTS</span>
+                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}">{{ status_label }} LTS</span>
                                 <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                             </a>
                         {% else %}

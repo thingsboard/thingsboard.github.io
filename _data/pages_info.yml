@@ -4214,6 +4214,150 @@
   url: "/docs/reference/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/architecture/"
+"/docs/releases/releases-table/":
+  url: "/docs/releases/releases-table/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.0.1/":
+  url: "/docs/releases/releases-table/v3.0.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.0/":
+  url: "/docs/releases/releases-table/v3.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.0.x/":
+  url: "/docs/releases/releases-table/v3.0.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.1.1/":
+  url: "/docs/releases/releases-table/v3.1.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.1/":
+  url: "/docs/releases/releases-table/v3.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.1.x/":
+  url: "/docs/releases/releases-table/v3.1.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.2.1/":
+  url: "/docs/releases/releases-table/v3.2.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.2.2/":
+  url: "/docs/releases/releases-table/v3.2.2/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.2/":
+  url: "/docs/releases/releases-table/v3.2/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.2.x/":
+  url: "/docs/releases/releases-table/v3.2.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3.1/":
+  url: "/docs/releases/releases-table/v3.3.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3.2/":
+  url: "/docs/releases/releases-table/v3.3.2/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3.3/":
+  url: "/docs/releases/releases-table/v3.3.3/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3.4.1/":
+  url: "/docs/releases/releases-table/v3.3.4.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3.4/":
+  url: "/docs/releases/releases-table/v3.3.4/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3/":
+  url: "/docs/releases/releases-table/v3.3/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.3.x/":
+  url: "/docs/releases/releases-table/v3.3.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.4.1/":
+  url: "/docs/releases/releases-table/v3.4.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.4.2/":
+  url: "/docs/releases/releases-table/v3.4.2/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.4.3/":
+  url: "/docs/releases/releases-table/v3.4.3/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.4.4/":
+  url: "/docs/releases/releases-table/v3.4.4/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.4/":
+  url: "/docs/releases/releases-table/v3.4/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.4.x/":
+  url: "/docs/releases/releases-table/v3.4.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.5.0/":
+  url: "/docs/releases/releases-table/v3.5.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.5.1/":
+  url: "/docs/releases/releases-table/v3.5.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.5.x/":
+  url: "/docs/releases/releases-table/v3.5.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.6.0/":
+  url: "/docs/releases/releases-table/v3.6.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.6.1/":
+  url: "/docs/releases/releases-table/v3.6.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.6.2/":
+  url: "/docs/releases/releases-table/v3.6.2/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.6.3/":
+  url: "/docs/releases/releases-table/v3.6.3/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.6.4/":
+  url: "/docs/releases/releases-table/v3.6.4/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.6.x/":
+  url: "/docs/releases/releases-table/v3.6.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.7.0/":
+  url: "/docs/releases/releases-table/v3.7.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.8.0/":
+  url: "/docs/releases/releases-table/v3.8.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.8.1/":
+  url: "/docs/releases/releases-table/v3.8.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.8.x/":
+  url: "/docs/releases/releases-table/v3.8.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.9.0/":
+  url: "/docs/releases/releases-table/v3.9.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.9.1/":
+  url: "/docs/releases/releases-table/v3.9.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v3.9.x/":
+  url: "/docs/releases/releases-table/v3.9.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.0.0/":
+  url: "/docs/releases/releases-table/v4.0.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.0.1/":
+  url: "/docs/releases/releases-table/v4.0.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.0.2/":
+  url: "/docs/releases/releases-table/v4.0.2/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.0.x/":
+  url: "/docs/releases/releases-table/v4.0.x/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.1.0/":
+  url: "/docs/releases/releases-table/v4.1.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.2.0/":
+  url: "/docs/releases/releases-table/v4.2.0/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.2.1/":
+  url: "/docs/releases/releases-table/v4.2.1/"
+  redirect_from: []
+"/docs/releases/releases-table/v4.2.x/":
+  url: "/docs/releases/releases-table/v4.2.x/"
+  redirect_from: []
 "/docs/samples/abeeway/tracker/":
   url: "/docs/samples/abeeway/tracker/"
   redirect_from: []

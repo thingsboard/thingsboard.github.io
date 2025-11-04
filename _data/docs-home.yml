@@ -377,6 +377,10 @@ toc:
           path: /docs/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/user-guide/contribution/ui/advanced-development/
+- title: Releases
+  section:
+    - title: Releases table
+      path: /docs/releases/releases-table/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
 - title: Release notes
