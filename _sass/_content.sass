@@ -181,14 +181,25 @@ $header-clearance: 210px
             border-bottom: 1px solid rgba(42,125,236,0.2)
 
 .releases-table
-  padding: 12px
+  padding: 0 12px 12px
   border-radius: 8px
   background: rgba(42, 125, 236, 0.08)
+  max-height: 800px
   overflow: auto
+  &::-webkit-scrollbar
+    width: 8px
+    background: rgba(42, 125, 236, 0.06)
+  &::-webkit-scrollbar-thumb
+    background: rgba(42, 125, 236, 0.2)
+    border-radius: 10px
   .releases-table-content
     min-width: 1250px
     width: 100%
     .releases-table-header
+      border-top: 12px solid rgba(42, 125, 236, 0.08)
+      position: sticky
+      top: 0
+      z-index: 1
       padding: 12px 24px
       background: #FFF
       border-radius: 4px
@@ -218,15 +229,6 @@ $header-clearance: 210px
         &:nth-child(8)
           text-align: center
           min-width: 209px
-    .releases-table-header.fixed
-      height: var(--header-height, 56px)
-      position: fixed
-      top: 140px
-      left: 0
-      right: 0
-      z-index: 100
-      background: #fff
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1)
 
     .releases-table-row
       padding: 0 4px
@@ -283,6 +285,14 @@ $header-clearance: 210px
 
 .releases-table.pe-table
   background: rgba(0, 105, 92, 0.06)
+  &::-webkit-scrollbar
+    width: 8px
+    background: rgba(0, 105, 92, 0.06)
+  &::-webkit-scrollbar-thumb
+    background: rgba(0, 105, 92, 0.2)
+    border-radius: 10px
+  .releases-table-header
+    border-top: 12px solid rgba(0, 105, 92, 0.06)
   .releases-table-content-wrapper
     .releases-table-content
       &:hover
