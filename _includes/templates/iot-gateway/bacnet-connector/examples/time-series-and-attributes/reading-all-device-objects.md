@@ -42,6 +42,7 @@ In our case, we will store all objects in time series, so the device configurati
   ]
 }
 ```
+{:.copy-code}
 
 As you can see from the configuration above, we have put `*` in the `timeseries` section, which means that all device 
 objects will be saved in the telemetry. In the `attributes` section, we have not put `*`, so the attributes will not 
