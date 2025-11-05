@@ -381,9 +381,7 @@ toc:
   section:
     - title: Releases table
       path: /docs/releases/releases-table/
+    - title: Roadmap
+      path: /docs/releases/roadmap/
 - title: Troubleshooting
   path: /docs/user-guide/troubleshooting/
-- title: Release notes
-  path: /docs/reference/releases/
-- title: Roadmap
-  path: /docs/reference/roadmap/

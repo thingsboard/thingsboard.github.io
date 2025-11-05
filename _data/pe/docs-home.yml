@@ -399,9 +399,7 @@ toc:
   section:
     - title: Releases table
       path: /docs/pe/releases/releases-table/
+    - title: Roadmap
+      path: /docs/pe/releases/roadmap/
 - title: Troubleshooting
   path: /docs/pe/user-guide/troubleshooting/
-- title: Release notes
-  path: /docs/pe/reference/releases/
-- title: Roadmap
-  path: /docs/pe/reference/roadmap/

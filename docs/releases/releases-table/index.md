@@ -2,6 +2,7 @@
 layout: docwithnav
 title: ThingsBoard Releases table
 description: ThingsBoard architecture
+redirect_from: "/docs/reference/releases/"
 
 ---
 
