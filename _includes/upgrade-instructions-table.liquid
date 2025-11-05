@@ -61,7 +61,7 @@
                                     {%- endif -%}
                                 {%- endfor -%}
 
-                                {%- assign docker_url = "/docs/user-guide/install/" | append: docsPrefix | append: "docker-windows/" -%}
+                                {%- assign docker_url = "/docs/user-guide/install/" | append: docsPrefix | append: "docker/" -%}
                                 {%- assign docker_page = site.pages | where: "url", docker_url | first -%}
                                 {%- if docker_page -%}
                                     <a class="right-link" href="{{ docker_url }}" data-tooltip="Upgrade Docker Instructions">
