@@ -1,0 +1,1 @@
+wget https://dist.thingsboard.io/trendz-1.14.0.rpm

@@ -102,4 +102,4 @@ release:
   pe_dart_client_ver: 4.0.0
   broker_full_ver: 2.2.0
   broker_branch: release-2.2.0
-  trendz_ver: 1.13.2
+  trendz_ver: 1.14.0
