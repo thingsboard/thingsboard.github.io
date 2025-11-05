@@ -1,14 +1,58 @@
-Let's review more examples of alternative responses addresses.
+Alternative response addresses field allows you to specify an alternative IP address for device responses.
+It is especially useful when the gateway and the BACnet device are located in different networks.
 
-This field allows you to specify an alternative address for responses from the device.
-It is useful when the gateway and BACnet device are located in different networks.
+For example, consider the following network setup:
 
-For example, if gateway running via the docker container and the BACnet device is located in the local network under 
-192.168.1.200:45606, you can specify the IP address of the BACnet device in the alternative responses addresses field.
+![image](/images/gateway/bacnet-connector/examples/alternative-responses-addresses-network-setup.png)
+
+In this setup, the gateway runs inside a Docker container and the BACnet device is located on a local network with IP 
+address `192.168.1.200:45606` and is not directly accessible from the Docker container. BACPypes sends APDUs to the 
+gateway without including the port number, making it impossible for the connector to determine whether a response came 
+from an allowed device. When you configure an alternative response address, the connector uses this IP to correctly 
+recognize and validate the device.
+
+To configure the alternative response address, you need to add the `altResponsesAddresses` field to the device 
+configuration. Here is an example configuration snippet:
+
 ```json
-"altResponsesAddresses": ["192.168.1.200"]
+{
+  "application": {
+    "objectName": "TB_gateway",
+    "host": "0.0.0.0",
+    "port": 47808,
+    "mask": 24,
+    "objectIdentifier": 599,
+    "maxApduLengthAccepted": 1476,
+    "segmentationSupported": "segmentedBoth",
+    "vendorIdentifier": 15,
+    "deviceDiscoveryTimeoutInSec": 5,
+    "devicesDiscoverPeriodSeconds": 30
+  },
+  "devices": [
+    {
+      "deviceInfo": {
+        "deviceNameExpressionSource": "expression",
+        "deviceNameExpression": "BACnet Device ${objectName}",
+        "deviceProfileExpressionSource": "constant",
+        "deviceProfileExpression": "default"
+      },
+      "host": "192.168.1.200",
+      "port": 45606,
+      "altResponsesAddresses": ["192.168.1.200"],
+      "pollPeriod": 10000,
+      "attributes": [],
+      "timeseries": "*",
+      "attributeUpdates": [],
+      "serverSideRpc": []
+    }
+  ]
+}
 ```
+{:.copy-code}
 
-This is important because bacpypes provide APDU to the gateway without port number, so the connector can't determine if  
-it is an allowed device. In this case, the connector will use the alternative address to determine that it is an allowed 
-device.
+After applying this configuration, the connector will use the specified alternative response address 
+`192.168.1.200:45606` to recognize and validate responses from the BACnet device. This ensures that the connector can
+communicate effectively with the device even when they are located in different networks. As a result, you should see 
+created device in ThingsBoard:
+
+![image](/images/gateway/bacnet-connector/examples/alternative-responses-addresses-overview.png)
