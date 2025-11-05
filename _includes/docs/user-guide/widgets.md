@@ -311,7 +311,7 @@ in widgets. This feature allows you to apply custom JavaScript logic to each dat
 filter out anomalies, or calculate derived metrics without touching upstream sources.
 
   **How to use:**
- - In the widget → go to **Series** section → click the **Pencil** icon next to the data key.
+ - In the widget → go to section with **Data keys** → click the **Pencil** icon of the target data key.
  - Enable toggle **Use data post-processing function**.
  - Enter your code in the function body. The platform automatically injects the function header:
 <br>     **function** (time, value, prevValue, timePrev, prevOrigValue) {
