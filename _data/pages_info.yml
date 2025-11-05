@@ -4213,6 +4213,9 @@
   url: "/docs/reference/"
   redirect_from:
   - "/docs/user-guide/rule-engine-2-0/architecture/"
+"/docs/releases/release-policy/":
+  url: "/docs/releases/release-policy/"
+  redirect_from: []
 "/docs/releases/releases-table/":
   url: "/docs/releases/releases-table/"
   redirect_from:
