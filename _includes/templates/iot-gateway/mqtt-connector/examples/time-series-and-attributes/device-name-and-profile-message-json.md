@@ -75,22 +75,28 @@ use the following configuration:
   },
   "mapping": [
     {
-      "topicFilter": "sensor/data",
+      "topicFilter": "sensor/raw_data",
       "subscriptionQos": 1,
       "converter": {
-        "type": "json",
+        "type": "bytes",
         "deviceInfo": {
-          "deviceNameExpression": "${serialNumber}",
+          "deviceNameExpression": "[0:4]",
           "deviceNameExpressionSource": "message",
-          "deviceProfileExpressionSource": "message",
-          "deviceProfileExpression": "${sensorType}"
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
         },
-        "attributes": [],
+        "attributes": [
+           {
+            "key": "rawData",
+            "type": "raw",
+            "value": "[:]"
+          }
+        ],
         "timeseries": [
           {
-            "key": "temperature",
-            "type": "double",
-            "value": "${temp}"
+            "key": "temp",
+            "type": "raw",
+            "value": "[4:]"
           }
         ]
       }
