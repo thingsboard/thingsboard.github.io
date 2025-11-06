@@ -31,6 +31,7 @@ The node has a single configuration option to determine where the fetched creden
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

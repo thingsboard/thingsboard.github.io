@@ -56,6 +56,7 @@ The configuration allows you to specify which data to fetch from the tenant and 
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

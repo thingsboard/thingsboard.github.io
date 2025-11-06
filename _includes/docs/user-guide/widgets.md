@@ -231,7 +231,7 @@ key in the **Latest values** widgets, the time window control will appear. You c
 key individually, which you want to display and at the same time do not need to store it in the database. The time window
 configuration is limited to the real-time intervals (**Current Hour/Day/Month**) and **History** time intervals. The real-time
 intervals like **last 30 minutes** or **last 24 hours** are not supported for performance reasons. If you need to store the
-aggregation as telemetry, follow for more details at [the link](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/){:target="_blank"}.
+aggregation as telemetry, follow for more details at [the link](https://thingsboard.io/docs/user-guide/rule-engine-2-0/nodes/analytics/){:target="_blank"}.
 
 {% include images-gallery.html imageCollection="data-key-configuration-aggregation" %}
 

@@ -24,7 +24,10 @@ prepared message is then sent via the `Success` connection and is intended to be
           data or metadata.
 - **Body** - the main content of the email.
 
-> Note: All input fields support templatization.
+{% capture templatization_support_note %}
+**Note:** All input fields support templatization.
+{% endcapture %}
+{% include templates/info-banner.md content=templatization_support_note %}
 
 ### JSON Schema
 
@@ -82,6 +85,7 @@ prepared message is then sent via the `Success` connection and is intended to be
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

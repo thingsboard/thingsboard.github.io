@@ -17,7 +17,6 @@ This guide will help you to setup ThingsBoard in cluster mode using Minikube too
 ThingsBoard Microservices run on the Kubernetes cluster. You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster. 
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 
-
 ### Enable ingress addon
 
 By default ingress addon is disabled in the Minikube, and available only in cluster providers.
@@ -160,21 +159,57 @@ Execute the following command to delete all resources (including database):
 ## Upgrading
 
 In case you would like to upgrade, please pull the *latest* changes from `master` branch:
-```
+```bash
 git pull origin master
 ```
 {: .copy-code}
 
-and then execute the following commands:
+Then, execute the following commands:
 
-```
+```bash
 ./k8s-delete-resources.sh
-./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+./k8s-upgrade-tb.sh
 ./k8s-deploy-resources.sh
 ```
-Where:
+{: .copy-code}
 
-- `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values. Note, that you have to upgrade versions one by one (for example 3.6.1 -> 3.6.2 -> 3.6.3 etc). 
+Note, that you have to upgrade versions one by one (for example 4.0.0 -> 4.0.1 -> 4.1.0 etc).
+
+{% capture from-version-note %}
+<code style="color:black">"--fromVersion"</code> flag is required for earlier upgrade versions (prior to 3.9.1), for example:
+
+`# upgrading to v3.9.0...`<br>
+`./k8s-upgrade-tb.sh --fromVersion=3.8.1`
+
+See [Upgrade Instructions](/docs/user-guide/install/{{docsPrefix}}upgrade-instructions) for valid <code style="color:black">"fromVersion"</code> values.
+{% endcapture %}
+{% include templates/info-banner.md content=from-version-note %}
+
+### Migration to Professional Edition
+
+You can also migrate from Community Edition (CE) to Professional Edition (PE) using `./k8s-upgrade-tb.sh` script:
+
+1. Upgrade to the latest CE version.
+
+2. Stop the ThingsBoard resources executing the following command:
+    ```bash
+    ./k8s-delete-resources.sh
+    ```
+    {: .copy-code}
+
+3. Merge your configuration with [the latest PE Minikube scripts](https://github.com/thingsboard/thingsboard-pe-k8s/tree/release-{{ site.release.ce_ver }}/minikube). Do not forget to [configure the license key](/docs/user-guide/install/pe/cluster/minikube-cluster-setup/#step-3-obtain-your-license-key).
+
+4. Run the following upgrade script to migrate database data from CE to PE:
+    ```bash
+    ./k8s-upgrade-tb.sh --fromVersion=CE
+    ```
+    {: .copy-code}
+
+5. Execute the following command to deploy ThingsBoard resources:
+    ```bash
+    ./k8s-deploy-resources.sh
+    ```
+    {: .copy-code}
 
 ## Next steps
 

@@ -49,6 +49,7 @@ Supports **TBEL** and **JavaScript**.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -70,11 +71,6 @@ Supports **TBEL** and **JavaScript**.
     * If the script throws an error.
 
 ## Examples
-
-The examples below show only the **relevant** parts of the incoming message, rule node configuration, and system state.
-Any information not explicitly shown has no effect on the processing.
-
----
 
 ### Example 1 — Return a single string → `A`
 

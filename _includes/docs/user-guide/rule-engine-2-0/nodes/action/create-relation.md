@@ -90,6 +90,7 @@ Creates relations between the message originator and a specified target entity b
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

@@ -7,8 +7,11 @@ Creates, updates and clears alarms based on the [alarm rules](/docs/{{docsPrefix
     - **Enabled**: Alarm rule states are preloaded during node startup.
     - **Disabled**: Alarm rule states are loaded on-demand when the first message from device is received.
 
-> **Note**: If you decide to you these options, we recommend having both enabled at the same time, but when you have a large number of devices, it can be
-> beneficial to disable the fetch option to improve startup time.
+{% capture alarm_rules_both_options_note %}
+**Note**: If you decide to you these options, we recommend having both enabled at the same time, but when you have a large number of devices, it can be
+beneficial to disable the fetch option to improve startup time.
+{% endcapture %}
+{% include templates/info-banner.md content=alarm_rules_both_options_note %}
 
 ### Persist state of alarm rules configuration
 
@@ -25,7 +28,10 @@ zero.
 To solve this, **Persist state of alarm rules** configuration option allows persisting alarm rule states to the database instead of keeping them only in memory, ensuring evaluation
 continuity across restarts.
 
-> **Note**: This comes at the cost of additional database writes for each message matching alarm conditions, which can be significant under high message volumes.
+{% capture alarm_rules_persistence_cost_note %}
+**Note**: This comes at the cost of additional database writes for each message matching alarm conditions, which can be significant under high message volumes.
+{% endcapture %}
+{% include templates/info-banner.md content=alarm_rules_persistence_cost_note %}
 
 ### JSON Schema
 
@@ -48,6 +54,7 @@ continuity across restarts.
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

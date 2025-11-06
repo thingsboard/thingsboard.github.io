@@ -31,14 +31,13 @@ Checks the incoming message’s originator entity type against the configured se
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
 1. Determine whether the incoming message’s originator entity type matches one of the configured entity types.
     1. If it matches, route the message to downstream nodes via `True`.
     2. If it does not match, route the message to downstream nodes via `False`.
-
-> Note: The incoming message is not modified.
 
 ## Output connections
 
@@ -112,12 +111,3 @@ Routed via **`False`**.
 **Explanation**
 
 Incoming message originator entity type is not in the configured set, so the message is routed via `False`.
-
-## Use cases
-
-Use **entity type filter** when processing requires a binary decision (include/exclude) based on the originator type. The node routes messages to `True` if the originator entity
-type is in the configured set, and to `False` otherwise. This is ideal for guarding a pipeline, whitelisting allowed types, or pruning messages before a single downstream path.
-
-When to prefer **entity type switch** instead:
-
-- You need to branch to different sub-chains per originator type (fan-out), for example sending `DEVICE` to one path, `ASSET` to another, and `ENTITY_VIEW `to a third.

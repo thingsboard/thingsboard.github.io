@@ -31,6 +31,7 @@ The incoming message **data** must be a valid JSON object or array. If the data 
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

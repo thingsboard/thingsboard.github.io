@@ -14,7 +14,7 @@ Watch this practical video course for a step-by-step guide to personalizing the 
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/jSXuHj3lbG0" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/jSXuHj3lbG0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

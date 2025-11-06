@@ -2,10 +2,7 @@
 layout: docwithnav
 title: Weather reading using REST API calls
 description: REST API weather guide
-
 ---
-
-
 
 This tutorial will show how to get weather data using REST API.
 
@@ -26,7 +23,7 @@ We assume you have completed the following guides and reviewed the articles list
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-  * [External rule nodes](/docs/user-guide/rule-engine-2-0/external-nodes/).
+  * [External rule nodes](/docs/user-guide/rule-engine-2-0/nodes/external/).
 
 ## Adding the asset
 

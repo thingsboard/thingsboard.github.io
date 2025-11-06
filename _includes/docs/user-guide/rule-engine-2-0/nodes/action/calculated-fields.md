@@ -22,6 +22,7 @@ This node has no configuration options.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -36,8 +37,10 @@ This node has no configuration options.
 4. After triggering calculated field processing, the original message is forwarded to the `Success` connection
 5. If an unsupported message type is received or an error occurs, the message is routed to the `Failure` connection
 
-> Note: The calculated results are included in the newly generated message (step 3). To persist these results to the database, you still need to use a "save time series" or "save
-> attributes" node in the rule chain.
+{% capture persistence_note %}
+**Note**: The calculated results are included in the newly generated message (step 3). To persist these results to the database, you still need to use a "save time series" or "save attributes" node in the rule chain.
+{% endcapture %}
+{% include templates/info-banner.md content=persistence_note %}
 
 ## Output connections
 

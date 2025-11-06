@@ -1,5 +1,5 @@
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
-In this guide, you will learn how to [install ThingsBoard Edge on a {{deviceName}}](#starting-edge-on-the-raspberry-pi-4), [create a device](#create-device-on-thingsboard-edge), 
+In this guide, you will learn how to [install ThingsBoard Edge on a {{deviceName}}](#starting-edge-on-device), [create a device](#create-device-on-thingsboard-edge), 
 [install the required libraries and tools](#install-required-libraries-and-tools).  
 After this, we will [modify our code and upload it to the device](#connect-device-to-thingsboard-edge), 
 and [check the results of our coding and check data on ThingsBoard Edge using imported dashboard](#check-data-on-thingsboard-edge).

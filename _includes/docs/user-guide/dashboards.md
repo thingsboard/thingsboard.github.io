@@ -111,7 +111,7 @@ In the case of a time series widget, ThingsBoard fetches telemetry with a timest
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/3xRWm1W1IM4" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/3xRWm1W1IM4" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -230,7 +230,13 @@ You can edit the list of available aggregation functions. List the available agg
 
 *Available only when Aggregation is None*:
 
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+- **Max values**: Limits the number of data points rendered in time-series widgets within the selected time window. For self-hosted installations, this limit is configurable via the DASHBOARD_MAX_DATAPOINTS_LIMIT [parameter](/docs/user-guide/install/{{docsPrefix}}config/#ui-settings-parameters){:target="_blank"}.
+{% endif %}
+
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 - **Max values**: Limits the number of data points rendered in time-series widgets within the selected time window.
+{% endif %}
 
 {% include images-gallery.html imageCollection="max-values" %}
 
@@ -262,7 +268,7 @@ See more examples of how to use filters in this video:
 <br>
 <div id="video">
   <div id="video_wrapper">
-    <iframe src="https://www.youtube.com/embed/yTAhUpZiFkM?start=177" frameborder="0" allowfullscreen=""></iframe>
+    <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/yTAhUpZiFkM?start=177" frameborder="0" allowfullscreen=""></iframe>
   </div>
 </div>
 

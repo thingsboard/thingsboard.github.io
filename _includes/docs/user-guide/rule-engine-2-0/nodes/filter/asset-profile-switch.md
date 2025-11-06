@@ -21,6 +21,7 @@ There are no available configuration fields.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -29,8 +30,6 @@ There are no available configuration fields.
 2. Fetches the profile of that asset from the database to get profile name.
     1. If profile was not found (possible if originator no longer exist at the time of message processing), processing ends with a `Failure`.
 3. Routes the incoming message to downstream nodes using connection with a label that matches exactly with fetched profile name.
-
-> Note: The incoming message is not modified.
 
 ## Output connections
 
@@ -122,13 +121,3 @@ No asset with this ID exists (e.g., it was deleted while message was in queue).
 **Explanation**
 
 The node cannot fetch the asset’s profile.
-
-## Use cases
-
-Experienced platform users utilize asset profiles and configure specific rule chains per asset profile.
-This is useful to automatically route messages the platform generates: Entity Created, Entity Deleted, Attributes Updated, etc.
-But most of the messages are derived from the sensor data.
-Let's assume we have temperature sensors in the room assets with profiles: "Freezer Room" and "Boiler Room".
-We also take it that there is a relation between the room asset and the temperature device of type "Contains".
-You can configure a rule chain that will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler
-Room" rule chains.

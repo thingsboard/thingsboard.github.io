@@ -106,6 +106,7 @@ Available statuses:
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -116,7 +117,10 @@ Available statuses:
     1. If the status matches, the incoming message is routed to downstream nodes using the `True` connection.
     2. If the status does not match, the incoming message is routed to downstream nodes using the `False` connection.
 
-> Note: The incoming message is not modified, and the `status` property is ignored for routing.
+{% capture status_property_note %}
+**Note:** `status` property is ignored for routing.
+{% endcapture %}
+{% include templates/info-banner.md content=status_property_note %}
 
 ## Output connections
 
@@ -387,9 +391,3 @@ Routed via **`False`**.
 **Explanation**
 
 Routing uses the **fetched** status (`CLEARED_UNACK`), not the incoming field.
-
-## Use cases
-
-Consider a scenario where you want to process alarms that are currently active.
-You can configure the rule node to filter for *Active Unacknowledged* and *Active Acknowledged* statuses
-This setup ensures that only alarms which are currently active, whether they have been acknowledged or not, are processed further.

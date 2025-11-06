@@ -11,7 +11,7 @@ ThingsBoard provides a rich set of features related to time-series data:
  - **Visualize** time series data using configurable and highly customizable widgets and [dashboards](/docs/{{docsPrefix}}user-guide/dashboards/);
  - **Filter and analyze** data using flexible [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/);
  - **Generate [alarms](/docs/{{docsPrefix}}user-guide/alarms/)** based on collected data;
- - **Forward** data to external systems using [External Rule Nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) (e.g. Kafka or RabbitMQ Rule Nodes).
+ - **Forward** data to external systems using [External Rule Nodes](/docs/user-guide/rule-engine-2-0/nodes/external/) (e.g. Kafka or RabbitMQ Rule Nodes).
 
 This guide provides an overview of the features listed above, and some useful links to get more details.
 
@@ -178,33 +178,29 @@ You may find most popular scenarios of using attributes within rule engine below
 **Generate alarms based on the logical expressions against time-series values**
 
 Use [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) to configure most common alarm conditions via UI
-or use [filter nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/) to configure more specific use cases via custom JS functions.
+or use [filter nodes](/docs/user-guide/rule-engine-2-0/nodes/filter/) to configure more specific use cases via custom JS functions.
 
 **Modify incoming time-series data before they are stored in the database**
 
-Use [message type switch](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#message-type-switch-node) rule node to filter messages that contain "Post telemetry" request.
-Then, use [transformation rule nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/) to modify a particular message.
+Use [message type switch](/docs/user-guide/rule-engine-2-0/nodes/filter/message-type-switch/) rule node to filter messages that contain "Post telemetry" request.
+Then, use [transformation rule nodes](/docs/user-guide/rule-engine-2-0/nodes/transformation/) to modify a particular message.
 
 **Calculate delta between previous and current time-series value**
 
-Use [calculate delta](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#calculate-delta) rule node to calculate power, water and other consumption based on smart-meter readings.
+Use [calculate delta](/docs/user-guide/rule-engine-2-0/nodes/enrichment/calculate-delta/) rule node to calculate power, water and other consumption based on smart-meter readings.
 
 **Fetch previous time-series values to analyze incoming telemetry from device**
 
-Use [originator telemetry](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#originator-telemetry) rule node to enrich incoming time-series data message with previous time-series data of the device.
+Use [originator telemetry](/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-telemetry/) rule node to enrich incoming time-series data message with previous time-series data of the device.
 
 **Fetch attribute values to analyze incoming telemetry from device**
 
-Use [enrichment](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
+Use [enrichment](/docs/user-guide/rule-engine-2-0/nodes/enrichment/) rule nodes to enrich incoming telemetry message with attributes of the device, related asset, customer or tenant.
 This is extremely powerful technique that allows to modify processing logic and parameters based on settings stored in the attributes.
 
 **Use analytics rule nodes to aggregate data for related assets**
 
-{% if docsPrefix contains "paas/" or docsPrefix == "pe/" %}
-Use [analytics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
-{% else %}
-Use [analytics](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) rule nodes to aggregate data from multiple devices or assets.
-{% endif %}
+Use [analytics](/docs/user-guide/rule-engine-2-0/nodes/analytics/) rule nodes to aggregate data from multiple devices or assets.
 
 Useful to calculate total water consumption for the building/district based on data from multiple water meters.     
 

@@ -21,6 +21,7 @@ There are no available configuration fields.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -29,8 +30,6 @@ There are no available configuration fields.
 2. Fetches the profile of that device from the database to get profile name.
     1. If profile was not found (possible if originator no longer exist at the time of message processing), processing ends with a `Failure`.
 3. Routes the incoming message to downstream nodes using connection with a label that matches exactly with fetched profile name.
-
-> Note: The incoming message is not modified.
 
 ## Output connections
 
@@ -122,18 +121,3 @@ No device with this ID exists (e.g., it was deleted while message was in queue).
 **Explanation**
 
 The node cannot fetch the device’s profile.
-
----
-
-## Use cases
-
-Experienced platform users utilize device profiles and configure specific rule chains per device profile.
-This is useful in most of the cases, except when the device data is derived from some other message.
-For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payload typically contains MAC of the beacon and beacon data:
-
-```json
-{"mac": "7085C2F13DCD", "rssi": -25, "payload": "AABBCC"}
-```
-
-Let's assume you have different beacon profiles - indoor air quality "IAQ sensor" device profile and leak sensors "Leak sensor" device profile.
-You can create a rule chain that will change the originator of the message from gateway to device and forward the message to the corresponding rule chain.

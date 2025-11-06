@@ -136,8 +136,8 @@
                         </div>
                         {% if status_label != "non-LTS" %}
                             <a href="/docs/releases/release-policy/" class="releases-table-content-item version-link">
-                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}">{{ status_label }} LTS</span>
-                                <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}">LTS ({{ status_label }})</span>
+                                <i class="fas fa-external-link-alt" style="color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}"></i>
                             </a>
                         {% else %}
                             <div class="releases-table-content-item">{{ status_label }}</div>

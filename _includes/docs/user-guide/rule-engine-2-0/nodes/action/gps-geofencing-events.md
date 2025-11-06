@@ -346,10 +346,6 @@ Longitudes are normalized internally, allowing support for polygons that cross t
 
 ## Examples
 
-The examples below show only the **relevant** parts of the incoming message and node configuration. Unless otherwise noted, other fields can have any values.
-
----
-
 ### Example 1 — "On each message" strategy
 
 **State of the system**

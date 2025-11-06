@@ -37,14 +37,26 @@ toc:
           path: /docs/trendz/visualizations-heatmap/
         - title: Calendar
           path: /docs/trendz/visualizations-calendar/
-        - title: Cards with line chart
-          path: /docs/trendz/visualizations-card-with-line/
         - title: Cards
           path: /docs/trendz/visualizations-card/
+        - title: Cards with line chart
+          path: /docs/trendz/visualizations-card-with-line/
+        - title: AI Cards
+          new: true
+          path: /docs/trendz/visualizations-ai-card/
     - title: View settings
       path: /docs/trendz/view-settings/
     - title: View collections
       path: /docs/trendz/view-collections/
+- title: Metric exploration
+  new: true
+  section:
+    - title: Overview
+      path: /docs/trendz/metric/overview/
+    - title: Generate New Metrics
+      path: /docs/trendz/metric/generate-new-metric/
+    - title: Use New Metrics in ThingsBoard
+      path: /docs/trendz/metric/use-in-thingsboard/
 - title: Anomaly detection
   section:
     - title: Overview
@@ -60,15 +72,19 @@ toc:
     - title: Anomaly-Driven Alarm Creation
       path: /docs/trendz/anomaly/alarms/
 - title: Calculated Fields
+  new: true
   section:
     - title: Overview
-      path: /docs/trendz/calculated-fields/
+      path: /docs/trendz/calculations/overview/
     - title: Batch calculations
-      path: /docs/trendz/batch-calculated-fields/
+      path: /docs/trendz/calculations/batch/
+    - title: Native calculations
+      new: true
+      path: /docs/trendz/calculations/native/
     - title: Save metric to ThingsBoard
-      path: /docs/trendz/save-calculated-to-thingsboard/
+      path: /docs/trendz/calculations/save-to-thingsboard/
     - title: Calculate time to value
-      path: /docs/trendz/calculate-time-to-value/
+      path: /docs/trendz/calculations/time-to-value/
 - title: Prediction
   section:
     - title: Overview
@@ -89,7 +105,7 @@ toc:
       path: /docs/trendz/ai-widget-summary/
     - title: Trendz Prompts
       path: /docs/trendz/ai-assistance-prompts/
-    - title: Large Language Model (LLM) Configuration
+    - title: Enable AI Features
       path: /docs/trendz/custom-ai-model-configuration/
 - title: Share views
   section:
