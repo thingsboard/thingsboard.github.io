@@ -154,68 +154,36 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 ### Subsection "Attributes" and "Time series"
 
+The configuration in this subsection provides settings for processing data from MQTT topic/topics. These settings will be 
+interpreted in ThingsBoard platform instance as attributes/time series of the device.
+
+The following parameters are used to configure device attributes and time series:
+- **Key** - the key of the attribute/time series in ThingsBoard. It can be specified as a static value.
+- **Type** - the type of attribute/time series field (It could be one of the following `string`, `boolean`, `integer`, `double` or `Raw` if the **Payload type** `Bytes`.):
+- **Value** - the value of the attribute/time series that will be sent to the platform device. It should be specified depending on the selected **Payload type** (`Bytes`, `JSON`, `CUSTOM`).
+
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-attributes-and-timeseries) section.
+
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/gateway/mqtt-connector/mqtt-attributes-timeseries-overview.png)
+
+{% include /templates/iot-gateway/mqtt-connector/mqtt-attr-and-time-series-basic-section.md %}
 
 ### Usage examples
 
-{% capture opcua-attributes-timeseries-examples %}
+{% capture mqtt-attributes-timeseries-examples %}
 Device name/profile from Message and JSON payload <small></small>%,%devicenameandprofilemessageandjson%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-message-json.md%br%
 Device name/profile from Topic/Constant and JSON payload <small></small>%,%devicenameandprofiletopiconstantandjson%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-topic-and-constant-json.md%br%
 Device name/profile from Message/Constant and BYTES payload <small></small>%,%devicenameandprofilemessageconstantantbytes%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-message-and-constant-bytes.md%br%
-Attributes/Time series with Relative Path<small></small>%,%attributestimeseriesrelativepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-relative-path.md%br%
-Attributes/Time series with Absolute Path<small></small>%,%attributestimeseriesabsolutepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-absolute-path.md%br%
-Attributes/Time series with Identifier<small></small>%,%attributestimeseriesidentifier%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-identifier.md{% endcapture %}
-{% include content-toggle.liquid content-toggle-id="opcua-attributes-timeseries-examples" toggle-spec=opcua-attributes-timeseries-examples %}
+Attributes/Time series with Json Path<small></small>%,%attributestimeseriesjsonpath%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/attributes-time-series-json-path.md%br%
+Attributes/Time series with Slices<small></small>%,%attributestimeseriesslices%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/attributes-time-series-bytes.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="mqtt-attributes-timeseries-examples" toggle-spec=mqtt-attributes-timeseries-examples %}
 
-### Subsection "Data conversion"
-
-This subsection contains configurations for processing incoming messages.
-
-The types of MQTT converters are as follows:
-
-- JSON – Default converter;
-- Bytes – Raw default converter;
-- Custom – Custom converter (You can write it yourself, and it will be used to convert incoming data from the broker).
-
-Select the MQTT configuration you are using:
-
-{% capture mqttdataconversionsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/data-conversion-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/data-conversion-subsection-advanced.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="mqttdataconversionsubsection" toggle-spec=mqttdataconversionsubsection %}
-
-**Now let's review an example of sending data from "SN-001" thermometer device.**
-
-Let’s assume MQTT broker is installed locally on your server.
-
-Use terminal to simulate sending message from the device to the MQTT broker:
-```bash
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58}'
-```
-{: .copy-code}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-1.png)
-{: refdef}
-
-To use a configurable format for a timeseries entry, include a datetime string in the field defined by the *tsField* parameter. For example:  
-```bash
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/data" -m '{"serialNumber": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 42, "hum": 58, "timestampField":"10.11.24 10:10:10.252"}'
-```
-{: .copy-code}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-with-timestampField.png)
-{: refdef}
-
-The device will be created and displayed in ThingsBoard based on the passed parameters.
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-created-device-1.png)
-{: refdef}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-created-device-2.png)
-{: refdef}
 
 ## Requests mapping
 
@@ -540,7 +508,8 @@ as device attributes or telemetry. This section provides the essential settings 
 | mapping[].deviceInfo.convertor.deviceNameExpression       | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types).    |
 | mapping[].deviceInfo.convertor.deviceProfileSource        | Source of the device name (can be `message`, `topic` or `constant`).                                                                                                                                   |
 | mapping[].deviceInfo.convertor.deviceProfileExpression    | Expression used to extract the device profile from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
-| mapping[].reportStrategy                                  | Report strategy object using for configuring report strategy for device.                                                                                                                               |
+| mapping[].reportStrategy                                  | (Optional) Report strategy object using for configuring report strategy for device.                                                                                                                    |
+| mapping[].timeout                                         | (Optional) Timeout for triggering “Device Disconnected” event by default - `60000`(in milliseconds).                                                                                                    |
 | ---                                                       |                                                                                                                                                                                                        |
 
 Example of the device mapping configuration:
@@ -565,6 +534,64 @@ Example of the device mapping configuration:
 ]
 ```
 {: .copy-code}
+
+
+
+#### Device attributes and timeseries
+
+| **Parameter**                         | **Description**                                                                                                                                                                                                                   |
+|:--------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| mapping[].attributes[]                | List of attributes that will be sent to the ThingsBoard platform instance.                                                                                                                                                        |
+| mapping[].attributes[].key            | Key name of the attribute in ThingsBoard. It can be specified as a static value.                                                                                                                                                  |
+| mapping[].attributes[].type           | The type of attribute field (It could be one of the following `string`, `boolean`, `integer`, `double` or `Raw` if the **Payload type** `Bytes`):                                                                                 |
+| mapping[].attributes[].value          | The value of the attribute that will be sent to the platform device. It should be specified depending on the selected **Payload type** (`Bytes`, `JSON`, `CUSTOM`)                                                                |
+| mapping[].attributes[].reportStrategy | (Optional) Report strategy for the attributes data. If not specified, the device report strategy will be used.                                                                                                                    |
+| mapping[].timeseries[]                | List of telemetry data that will be sent to the ThingsBoard platform instance.                                                                                                                                                    |
+| mapping[].timeseries[].key            | Key name of the telemetry data in ThingsBoard. It can be specified as a static value.                                                                                                                                             |
+| mapping[].timeseries[].type           | The type of telemetry field (It could be one of the following `string`, `boolean`, `integer`, `double` or `Raw` if the **Payload type** `Bytes`):                                                                                 |
+| mapping[].timeseries[].value          | Value of the telemetry data that will be sent to the platform. It should be specified depending on the selected type (`path`, `identifier` or `constant`).                                                                        |
+| mapping[].timeseries[].tsField        | (Optional) [json-path](/docs/iot-gateway/config/mqtt/#json-path) expression for field that carries a datetime string. If not present, the `ts` or `timestamp` properties from incoming message will be used as timestamp for data entry. |
+| mapping[].timeseries[].dayfirst       | (Optional)  Points out that the first number is the day (`DD.MM.YY HH:mm:ss.SSS`).• `false` → `10.11.24 10:10:10.252` → 11 Oct 2024 10:10:10.252• `true` → `10.11.24 10:10:10.252` → 10 Nov 2024 10:10:10.252 |
+| mapping[].timeseries[].yearfirst      | (Optional) Points out that the first number is the year `(DD.MM.YY HH:mm:ss.SSS)`. • `false` → follows dayfirst rule• `true` → `10.11.24 10:10:10.252` → 24 Nov 2010 10:10:10.252|
+| mapping[].timeseries[].reportStrategy | (Optional) Report strategy for the time series data. If not specified, the device report strategy will be used.                                                                                                                   |
+| ---                                   |                                                                                                                                                                                                                                   |
+
+Example of the attributes and telemetry configuration:
+
+```json
+"attributes": [
+  {
+    "type": "string",
+    "key": "model",
+    "value": "${sensorModel}"
+  },
+  {
+    "type": "string",
+    "key": "${sensorModel}",
+    "value": "on"
+  }
+],
+"timeseries": [
+  {
+    "type": "double",
+    "key": "temperature",
+    "value": "${temp}"
+  },
+  {
+    "type": "double",
+    "key": "humidity",
+    "value": "${hum}",
+    "tsField": "${timestampField}",
+    "dayfirst": true    
+  },
+  {
+    "type": "string",
+    "key": "combine",
+    "value": "${hum}:${temp}"
+  }
+],
+```
+
     
 ## Workers settings
 
