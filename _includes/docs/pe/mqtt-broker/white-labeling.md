@@ -54,8 +54,7 @@ CSS code example for customize icons color, scroll color and active button:
 ```css
 /*icon color*/
 
-.mat-icon.notranslate.ng-star-inserted {
-    fill: #a60062;
+a.mat-mdc-button.mat-mdc-button-base .mat-icon {
     color: #a60062;
 }
 
@@ -73,7 +72,7 @@ ng-component::-webkit-scrollbar-thumb {
 /*active button color*/
 
 .mat-mdc-button.mat-mdc-button-base.tb-active{
-    color: #ffffff;
+    color: #a60062;
 }
 ```
 {: .copy-code}
