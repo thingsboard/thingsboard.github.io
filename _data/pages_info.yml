@@ -4546,6 +4546,10 @@
 "/docs/user-guide/install/building-from-source/":
   url: "/docs/user-guide/install/building-from-source/"
   redirect_from: []
+"/docs/user-guide/install/cassandra-cloud-astra-db/":
+  url: "/docs/user-guide/install/cassandra-cloud-astra-db/"
+  redirect_from:
+  - /docs/user-guide/install/pe/cassandra-cloud-astra-db/
 "/docs/user-guide/install/cluster/aws-eks-setup/":
   url: "/docs/user-guide/install/cluster/aws-eks-setup/"
   redirect_from:
