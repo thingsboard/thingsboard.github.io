@@ -1260,6 +1260,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Spain", "Portugal"],
+    "name": "Wavecom",
+    "contact": {
+      "href": "wavecom@wavecom.pt"
+    },
+    "site": {
+      "href": "wavecom.pt",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["Thailand"],
     "name": "Wireless Solution Asia Co.,Ltd.",
