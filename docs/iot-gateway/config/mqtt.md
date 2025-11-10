@@ -187,58 +187,90 @@ Attributes/Time series with Slices<small></small>%,%attributestimeseriesslices%,
 
 ## Requests mapping
 
-This section of the configuration outlines an array that includes all the supported requests for both the gateway and ThingsBoard:
+The Requests mapping section allows you to configure how the ThingsBoard platform instance will interact with the 
+devices. That is, how the platform will request data from the devices, how it will update/request device attributes, and how 
+it will send RPC commands to the devices.
 
-- connect requests;
-- disconnect requests;
-- attribute requests;
-- attribute updates;
-- RPC commands.
+MQTT connector supports the following requests mapping:
+- **Connect requests** - Connect requests — tell the ThingsBoard platform that a device is online on the MQTT broker by publishing a “connect” message the Gateway listens for. Use this when a device doesn’t send regular telemetry (so TB can still push RPC/attribute updates to it).
+- **Disconnect requests** - Inform ThingsBoard (via the Gateway) that a device is offline by publishing a disconnect message to the configured topic.
+- **Attribute updates** - Push shared attributes from ThingsBoard to the device by publishing an update message to the configured topic via the Gateway.
+- **Attribute requests** - The device asks ThingsBoard for attributes by publishing a request to a specific topic; the Gateway replies on the response topic with the values.
+- **RPC methods** - Allows sending RPC commands to devices.
+  MQTT connector supports different types of RPC methods, such as:
+  - **Reserved GET/SET methods** - these methods are automatically created for each attribute and time series parameter. 
+    You can use them to get or set values of the device. For every configured attribute or timeseries key, the connector exposes built-in RPCs:
 
-Firstly, select basic or advanced MQTT configuration:
+    `get` - reads the current value (as the connector can provide/resolve it)
+    `set` - sets/updates the value (the connector applies or forwards it)
+    These do not require extra mapping, because they are managed by the connector and the result is returned to ThingsBoard.
 
-{% capture mqttrequestsmappingsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/requests-mapping-section-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/requests-mapping-section-advanced.md{% endcapture %}
+  - The command will be processed by the connector, and the result will be sent back to the ThingsBoard platform instance.
+  - **Configurable RPC methods to device** - These methods allow you to configure custom RPC commands in connector configuration that can be sent to the devices.
+  - **oneWay and twoWay RPC methods** - All RPC's can be two types:
 
-{% include content-toggle.liquid content-toggle-id="mqttrequestsmappingsection" toggle-spec=mqttrequestsmappingsection %}
-
-Below we go through all the supported requests for both Gateway and ThingsBoard.
+    `oneWay` - if you do not want to get a response back from a device
+    `twoWay` - if you do want to get a response back from a device
 
 ### Subsection "Connect request"
 
-ThingsBoard allows sending RPC commands and notifications about device attribute updates to the device. 
-But in order to send them, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment. If your device is constantly sending telemetry data - ThingsBoard already knows how to push notifications. 
-If your device just connects to MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform that device is connected to the broker.
+This subsection contains configuration for connect request from ThingsBoard platform instance.
 
-Also, it is possible to configure where to get the device name: from the topic or from the message body.
+ThingsBoard allows sending RPC/attribute updates to device. 
+Suppose we have a scenario where the device connects to the MQTT broker but doesn't send any telemetry data. By default, after 10 minutes of inactivity, the device becomes offline for the ThingsBoard platform instance. 
+However, we may want to be able to send RPC/attribute updates to this device even if it does not send any telemetry data.
+In this case, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment. 
+If your device is constantly sending telemetry data, you may skip this section - ThingsBoard already knows how to push notifications.
 
-Select basic or advanced MQTT configuration:
+The following parameters are used to configure connect requests:
+- **Request type** - the type of the request sent to ThingsBoard. It can be (`Connect request`, 
+`Disconnect request`, `Attribute request`, `Attribute update`, `RPC command`).
+- **Topic filter** - The topic/topics the gateway will subscribe to and wait for device to publish the connect request.The **Topic filter** supports special symbols: ‘#’ and ‘+’
+*wildcards* (more information how you may use them for matching topic patterns [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section).
+- **Name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant`, (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Profile name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
 
-{% capture mqttconnectrequestsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/connect-request-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/connect-request-subsection-advanced.md{% endcapture %}
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-connect-requests) section.
 
-{% include content-toggle.liquid content-toggle-id="mqttconnectrequestsubsection" toggle-spec=mqttconnectrequestsubsection %}
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-**Now let's review an example.**
+![image](/images/gateway/mqtt-connector/mqtt-attribute-updates-overview.png)
 
-Use a terminal to simulate sending a message from the device to the MQTT broker:
+{% include /templates/iot-gateway/mqtt-connector/device-connect-request-basic-section.md%}
 
-```bash
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/connect" -m '{"serialNumber": "SN-001"}'
-```
-{: .copy-code}
+### Subsection "Disconnect request"
 
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-connect.png)
-{: refdef}
+This subsection contains configuration for connect request from ThingsBoard platform instance.
 
-Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information under the "Server attributes" scope in the "Attributes" tab.
+ThingsBoard allows sending RPC/attribute updates to device. 
+Suppose we have a scenario where the device connects to the MQTT broker but doesn't send any telemetry data. By default, after 10 minutes of inactivity, the device becomes offline for the ThingsBoard platform instance. 
+However, we may want to be able to send RPC/attribute updates to this device even if it does not send any telemetry data.
+In this case, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment. 
+If your device is constantly sending telemetry data, you may skip this section - ThingsBoard already knows how to push notifications.
 
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-connect-device.png)
-{: refdef}
+The following parameters are used to configure connect requests:
+- **Request type** - the type of the request sent to ThingsBoard. It can be (`Connect request`, 
+`Disconnect request`, `Attribute request`, `Attribute update`, `RPC command`).
+- **Topic filter** - The topic/topics the gateway will subscribe to and wait for device to publish the connect request.The **Topic filter** supports special symbols: ‘#’ and ‘+’
+*wildcards* (more information how you may use them for matching topic patterns [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section).
+- **Name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant`, (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Profile name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-connect-requests) section.
+
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/gateway/mqtt-connector/mqtt-attribute-updates-overview.png)
+
+{% include /templates/iot-gateway/mqtt-connector/device-connect-request-basic-section.md%}
 
 ### Subsection "Disconnect request"
 
@@ -357,6 +389,17 @@ Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/server-side-
 Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/server-side-rpc-commands-subsection-advanced.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
+
+### Usage examples
+
+{% capture mqtt-request-mapping-examples %}
+Connect request <small></small>%,%connectrequest%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/connect-request.md%br%
+Disconnect request <small></small>%,%sharedabsolute%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/disconnect-request.md%br%
+Attribute request <small></small>%,%sharedidentifier%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/attribute-request.md%br%
+Attribute update <small></small>%,%rpctodevice%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/attribute-update.md%br%
+Reserved RPCs<small></small>%,%reservedrpc%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/reserved-rpc.md%br%
+Configurable RPC methods to device <small></small>%,%rpctoconnector%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/configurable-rpc.md{% endcapture %}
+{% include content-toggle.liquid content-toggle-id="mqtt-request-mapping-examples" toggle-spec=mqtt-request-mapping-examples %}
 
 ## Advanced configuration
 
@@ -506,10 +549,10 @@ as device attributes or telemetry. This section provides the essential settings 
 | mapping[].convertor.type                                  | Explains how the connector parses MQTT payloads and extracts device information can be [json](#json), [bytes](#bytes), [custom](#custom).                                                              |
 | mapping[].deviceInfo.convertor.deviceNameExpressionSource | Source of the device name (can be `message`, `topic` or `constant`).                                                                                                                                   |
 | mapping[].deviceInfo.convertor.deviceNameExpression       | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types).    |
-| mapping[].deviceInfo.convertor.deviceProfileSource        | Source of the device name (can be `message`, `topic` or `constant`).                                                                                                                                   |
+| mapping[].deviceInfo.convertor.deviceProfileSource        | Source of the device profile (can be `message`, `topic` or `constant`).                                                                                                                                |
 | mapping[].deviceInfo.convertor.deviceProfileExpression    | Expression used to extract the device profile from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
 | mapping[].reportStrategy                                  | (Optional) Report strategy object using for configuring report strategy for device.                                                                                                                    |
-| mapping[].timeout                                         | (Optional) Timeout for triggering “Device Disconnected” event by default - `60000`(in milliseconds).                                                                                                    |
+| mapping[].timeout                                         | (Optional) Timeout for triggering “Device Disconnected” event by default - `60000`(in milliseconds).                                                                                                   |
 | ---                                                       |                                                                                                                                                                                                        |
 
 Example of the device mapping configuration:
@@ -592,7 +635,46 @@ Example of the attributes and telemetry configuration:
 ],
 ```
 
-    
+## Request mapping
+
+### Device connect requests
+
+
+| **Parameter**                                                                                                                                    | **Description**                                                                                                                                                                                     |
+|:-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.connectRequests[].topicFilter                                                                                                    | The topic/topics the gateway will subscribe to and wait for device to publish the connect request.[Wildcards](#wildcard-usage) can be used for topic creation.                                      |
+| requestsMapping.connectRequests[].deviceInfo.deviceNameExpressionSource                                                                          | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
+| requestsMapping.connectRequests[].deviceInfo.deviceNameExpression                                                                                | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| requestsMapping.connectRequests[].deviceInfo.deviceProfileExpressionSource                                                                       | Source of the device profile to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                         |
+| requestsMapping.connectRequests[].deviceInfo.deviceProfileExpression                                                                             | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| ---                                                                                                                                              |                                                                                                                                                                                                     |
+
+Example of the attributes updates configuration:
+
+```json
+"connectRequests": [
+  {
+    "topicFilter": "sensor/connect",
+    "deviceInfo": {
+      "deviceNameExpressionSource": "message",
+      "deviceNameExpression": "${serialNumber}",
+      "deviceProfileExpressionSource": "constant",
+      "deviceProfileExpression": "Thermometer"
+    }
+  }
+]
+```
+### Device disconnect requests
+
+### Device attribute requests
+
+### Device attribute updates
+
+### Device RPC methods
+
+
+
+
 ## Workers settings
 
 This configuration settings provides fields for configuring connector performance and message reading/formatting speed:
@@ -672,7 +754,7 @@ Use this type of conversion if incoming data is `json`.
 Use this type of conversion if incoming data are sequence of `bytes`.
 
 **Example:**
-  
+
 `b'AM-120'`
 
 #### CUSTOM
@@ -729,7 +811,7 @@ temperature = the rest.
 
 _Expressions:_
 
-`[0:4]"`
+`[0:4]`
 `[4:]`
 
 _Payload example:_
