@@ -223,8 +223,7 @@ In this case, the platform needs to know if the target device is connected and w
 If your device is constantly sending telemetry data, you may skip this section - ThingsBoard already knows how to push notifications.
 
 The following parameters are used to configure connect requests:
-- **Request type** - the type of the request sent to ThingsBoard. It can be (`Connect request`, 
-`Disconnect request`, `Attribute request`, `Attribute update`, `RPC command`).
+- **Request type** - the type of the request sent to ThingsBoard (set to "Connect request")..
 - **Topic filter** - The topic/topics the gateway will subscribe to and wait for device to publish the connect request.The **Topic filter** supports special symbols: ‘#’ and ‘+’
 *wildcards* (more information how you may use them for matching topic patterns [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section).
 - **Name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant`, (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
@@ -238,72 +237,34 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-attribute-updates-overview.png)
+![image](/images/gateway/mqtt-connector/mqtt-connect-request-overview.png)
 
 {% include /templates/iot-gateway/mqtt-connector/device-connect-request-basic-section.md%}
 
 ### Subsection "Disconnect request"
 
-This subsection contains configuration for connect request from ThingsBoard platform instance.
+This subsection contains configuration for disconnect request from ThingsBoard platform instance.
+When a device disconnects from the MQTT broker, ThingsBoard needs to be notified to update the device's status and last disconnect time. 
+The disconnect request allows the gateway to inform ThingsBoard when a device disconnects from the MQTT broker. This information is stored as server attributes and can be used for monitoring device connectivity patterns, troubleshooting connection issues, or triggering workflows based on disconnect events.
+If your device uses a clean disconnect process (rather than just timing out), configuring disconnect requests provides more immediate and accurate status updates in ThingsBoard.
 
-ThingsBoard allows sending RPC/attribute updates to device. 
-Suppose we have a scenario where the device connects to the MQTT broker but doesn't send any telemetry data. By default, after 10 minutes of inactivity, the device becomes offline for the ThingsBoard platform instance. 
-However, we may want to be able to send RPC/attribute updates to this device even if it does not send any telemetry data.
-In this case, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment. 
-If your device is constantly sending telemetry data, you may skip this section - ThingsBoard already knows how to push notifications.
-
-The following parameters are used to configure connect requests:
-- **Request type** - the type of the request sent to ThingsBoard. It can be (`Connect request`, 
-`Disconnect request`, `Attribute request`, `Attribute update`, `RPC command`).
-- **Topic filter** - The topic/topics the gateway will subscribe to and wait for device to publish the connect request.The **Topic filter** supports special symbols: ‘#’ and ‘+’
-*wildcards* (more information how you may use them for matching topic patterns [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section).
-- **Name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant`, (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
-- **Profile name** - The name of the device in ThingsBoard to which the request will be sent to. It can be parsed from `Message`, `Topic`, `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+The following parameters are used to configure disconnect requests:
+- **Request type** - The type of the request sent to ThingsBoard (set to "Disconnect request").
+- **Topic filter** - The topic/topics the gateway will subscribe to and wait for device to publish the disconnect notification. The **Topic filter** supports special symbols: '#' and '+'
+*wildcards* (more information how you may use them for matching topic patterns in the [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section).
+- **Name** - The name of the device in ThingsBoard to which the disconnect status will be applied. It can be parsed from `Message`, `Topic`, or `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
 
 {% capture difference %}
 All configuration parameters list, and their detailed description can be found in the 
-[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-connect-requests) section.
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-disconnect-requests) section.
 
 More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-attribute-updates-overview.png)
+![image](/images/gateway/mqtt-connector/mqtt-message-disconnect.png)
 
-{% include /templates/iot-gateway/mqtt-connector/device-connect-request-basic-section.md%}
-
-### Subsection "Disconnect request"
-
-This configuration section is optional.
-Configuration, provided in this section will be used to get information from the broker about disconnecting device.
-If your device just disconnects from MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform it that device is disconnected from the broker.
-
-Select basic or advanced MQTT configuration:
-
-{% capture mqttdisconnectrequestsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/disconnect-request-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/disconnect-request-subsection-advanced.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="mqttdisconnectrequestsubsection" toggle-spec=mqttdisconnectrequestsubsection %}
-
-**Now let's review an example.**
-
-Use a terminal to simulate sending a message from the device to MQTT broker:
-
-```bash
-mosquitto_pub -h 127.0.0.1 -p 1883 -t "sensor/disconnect" -m '{"serialNumber": "SN-001"}'
-```
-{: .copy-code}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-disconnect.png)
-{: refdef}
-
-Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information under the "Server attributes" scope in the "Attributes" tab.
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-disconnect-device.png)
-{: refdef}
+{% include /templates/iot-gateway/mqtt-connector/disconnect-request-subsection-basic.md%}
 
 ### Subsection "Attribute requests"
 
@@ -635,9 +596,9 @@ Example of the attributes and telemetry configuration:
 ],
 ```
 
-## Request mapping
+### Request mapping
 
-### Device connect requests
+#### Device connect requests
 
 
 | **Parameter**                                                                                                                                    | **Description**                                                                                                                                                                                     |
@@ -664,13 +625,35 @@ Example of the attributes updates configuration:
   }
 ]
 ```
-### Device disconnect requests
+#### Device disconnect requests
 
-### Device attribute requests
 
-### Device attribute updates
+| **Parameter**                                                                                                                                     | **Description**                                                                                                                                                                                     |
+|:--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.disconnectRequests[].topicFilter                                                                                                  | The topic/topics the gateway will subscribe to and wait for device to publish the disconnect request.[Wildcards](#wildcard-usage) can be used for topic creation.                                   |
+| requestsMapping.disconnectRequests[].deviceInfo.deviceNameExpressionSource                                                                        | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
+| requestsMapping.disconnectRequests[].deviceInfo.deviceNameExpression                                                                              | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| ---                                                                                                                                               |                                                                                                                                                                                                     |
 
-### Device RPC methods
+Example of the attributes updates configuration:
+
+```json
+"disconnectRequests": [
+  {
+    "topicFilter": "sensor/disconnect",
+    "deviceInfo": {
+      "deviceNameExpression": "${serialNumber}",
+      "deviceNameExpressionSource": "message"
+    }
+  }
+]
+```
+
+#### Device attribute requests
+
+#### Device attribute updates
+
+#### Device RPC methods
 
 
 

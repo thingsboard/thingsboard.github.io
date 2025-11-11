@@ -13,7 +13,7 @@ This section in configuration file looks like:
     "topicFilter": "sensor/+/disconnect",
     "deviceInfo": {
       "deviceNameExpressionSource": "topic",
-      "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+      "deviceNameExpression": "(?<=sensor/)(.*?)(?=/disconnect)"
       }
   }
 ]
@@ -25,10 +25,9 @@ This section in configuration file looks like:
 **Name in a message from broker:**
 
 | **Parameter**                 | **Default value**                    | **Description**                                                                                   |
-|:-|:-------------------------------------|-
+|:----------------------------|:--------------------------------------|:------------------------------------------------------------------------------------------------|
 | topicFilter                   | **sensor/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
 | deviceNameExpression      | **${serialNumber}**                  | JSON-path expression, for looking the new device name.                                            |
-|---
 
 In this case the following messages are valid:
 
@@ -40,10 +39,9 @@ mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/disco
 **Name in topic address:**
 
 | **Parameter**                 | **Default value**                    | **Description**                                                                                   |
-|:-|:-------------------------------------|-
+|:----------------------------|:--------------------------------------|:------------------------------------------------------------------------------------------------|
 | topicFilter                   | **sensor/+/disconnect**              | Topic address on the broker, where the broker sends information about disconnected devices.       |
-| deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)** | Regular expression for looking the device name in topic path.                                     |
-|---
+| deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/disconnect)** | Regular expression for looking the device name in topic path.                                     |
 
 In this case the following messages are valid:
 
