@@ -48,7 +48,7 @@
 
                             <div class="releases-table-content-item upgrade-instructions">
                                 {%- for os in os_list -%}
-                                    {%- assign target = base_install | append: os | append: "/" | append: version -%}
+                                    {%- assign target = base_install | append: version | append: "-" | append: os -%}
                                     {%- assign target_slash = target | append: "/" -%}
 
                                     {%- assign page_noslash = site.pages | where: "url", target | first -%}

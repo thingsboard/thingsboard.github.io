@@ -12,4 +12,4 @@ redirect_from:
 {% include upgrade-instructions-table.liquid %}
 
 <br>
-Upgrade instructions for the [older versions](/docs/user-guide/install/pe/old-upgrade-instructions/).
+Upgrade instructions for the [older versions](/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/).

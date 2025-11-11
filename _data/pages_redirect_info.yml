@@ -395,6 +395,9 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/install/aws-marketplace-pe-upgrade/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
   redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
+"/docs/user-guide/install/pe/old-upgrade-instructions/":
+  url: "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/"
+  redirect_from: "/docs/user-guide/install/pe/old-upgrade-instructions/"
 "/docs/user-guide/rule-engine-2-0/action-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/action-nodes/"
