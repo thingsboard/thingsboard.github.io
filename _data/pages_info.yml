@@ -5159,6 +5159,12 @@
   url: "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/"
   redirect_from:
   - "/docs/user-guide/install/pe/old-upgrade-instructions/"
+"/docs/user-guide/install/pe/upgrade-instructions/prepare/":
+  url: "/docs/user-guide/install/pe/upgrade-instructions/prepare/"
+  redirect_from: []
+"/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce/":
+  url: "/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce/"
+  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/v3.0-centos/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/v3.0-centos/"
   redirect_from: []
