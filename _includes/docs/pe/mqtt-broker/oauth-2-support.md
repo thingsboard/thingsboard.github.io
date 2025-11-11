@@ -457,6 +457,8 @@ Details of the available properties:
 
 * **Role** – Choose from the predefined roles to be assigned to the user.
 
+> {% include templates/mqtt-broker/security/user-password.md %}
+
 ### Custom mapper
 
 If the basic mapper functionality does not meet your business needs, you can configure a custom mapper to implement logic that fits your specific goals.
