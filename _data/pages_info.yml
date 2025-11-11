@@ -4990,9 +4990,6 @@
 "/docs/user-guide/install/mqtt-transport-config/":
   url: "/docs/user-guide/install/mqtt-transport-config/"
   redirect_from: []
-"/docs/user-guide/install/old-upgrade-instructions/":
-  url: "/docs/user-guide/install/old-upgrade-instructions/"
-  redirect_from: []
 "/docs/user-guide/install/pe/add-haproxy-rhel/":
   url: "/docs/user-guide/install/pe/add-haproxy-rhel/"
   redirect_from: []
@@ -5615,6 +5612,10 @@
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/":
+  url: "/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/"
+  redirect_from:
+  - "/docs/user-guide/install/old-upgrade-instructions/"
 "/docs/user-guide/install/upgrade-instructions/ubuntu/v3.0.1/":
   url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3.0.1/"
   redirect_from: []
@@ -5723,6 +5724,330 @@
 "/docs/user-guide/install/upgrade-instructions/ubuntu/v4.2.1/":
   url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4.2.1/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.0.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.0.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.0.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.0.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.0.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.0.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.1.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.1.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.1.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.1.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.1.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.1.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2.2-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2.2-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2.2-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2.2-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.2.2-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.2.2-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.2-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.2-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.2-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.2-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.2-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.2-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.3-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.3-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.3-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.3-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.3-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.3-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.4-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.4-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.4-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.4-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.4-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.4-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.4.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.4.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.4.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.4.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.3.4.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.3.4.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.2-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.2-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.2-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.2-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.2-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.2-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.3-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.3-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.3-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.3-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.3-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.3-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.4-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.4-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.4-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.4-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.4.4-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.4.4-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.5.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.5.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.5.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.5.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.5.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.5.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.5.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.5.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.5.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.5.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.5.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.5.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.2-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.2-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.2-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.2-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.2-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.2-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.3-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.3-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.3-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.3-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.3-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.3-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.4-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.4-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.4-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.4-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.6.4-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.6.4-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.7.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.7.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.7.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.7.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.7.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.7.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.8.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.8.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.8.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.8.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.8.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.8.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.8.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.8.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.8.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.8.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.8.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.8.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.9.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.9.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.9.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.9.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.9.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.9.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.9.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.9.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.9.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.9.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v3.9.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v3.9.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.1-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.2-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.2-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.2-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.2-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.0.2-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.0.2-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.1.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.1.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.1.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.1.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.1.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.1.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.2.0-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.2.0-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.2.0-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.2.0-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.2.0-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.2.0-windows/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.2.1-centos/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.2.1-centos/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.2.1-ubuntu/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.2.1-ubuntu/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/v4.2.1-windows/":
+  url: "/docs/user-guide/install/upgrade-instructions/v4.2.1-windows/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v3.0.1/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v3.0.1/"
   redirect_from: []
@@ -5830,9 +6155,6 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v4.2.1/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v4.2.1/"
-  redirect_from: []
-"/docs/user-guide/install/upgrade-instructions1/":
-  url: "/docs/user-guide/install/upgrade-instructions1/"
   redirect_from: []
 "/docs/user-guide/install/vc-executor-config/":
   url: "/docs/user-guide/install/vc-executor-config/"
