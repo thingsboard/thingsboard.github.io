@@ -97,11 +97,71 @@ For example, let's create an action to quickly go to the dashboard with full inf
 
 {% include images-gallery.html imageCollection="action-configuration" showListImageTitles="true" %}
 
-### Batch operations
+### Group permissions
+Use the Permissions tab to define who can access the entities inside this group and what actions they can perform.
+A permission links a Group role to a User group and applies only to the entities inside this group.
+Permissions supplement tenant-wide RBAC and do not override global restrictions. See [Group roles in RBAC](/docs/{{docsPrefix}}user-guide/rbac/#group-role){:target="_blank"}.
+
+**How to add group permissions:**
+- Open **Entity group details** → **Permissions** tab.
+- Click "**+**" (Plus icon) to add a group permission. 
+- Select **Role** (Group role) from dropdown list.
+- Select **User group owner** [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants){:target="_blank"} or a specific [Customer](/docs/{{docsPrefix}}user-guide/ui/customers){:target="_blank"}, and **User group** 
+- Click "**Add**" to save. The group permission appears in the table.
+
+You can **Edit** or **Delete** existing group permissions at any time from **Permissions** tab:
+- **Edit**: click "**Edit**" (pencil icon) of the target permission → update fields → "**Save**".
+- **Delete**: click "**Delete**" (trash icon) of the target permission → "**Confirm**".
+
+Changes take effect immediately for all members who can access the group.
+
+To review assigned permissions from the [user side](/docs/{{docsPrefix}}user-guide/ui/users/#assigning-permissions-to-user-group): Open **Users group** details → **Roles** tab.
+
+## Batch operations
 
 Over each entity of the group, you can perform operations such as: change the owner of the entity, move it to another group, add or remove an entity from the group.
 
 {% include images-gallery.html imageCollection="batch-operations" showListImageTitles="true" %}
+
+## Share entity group
+
+Sharing a group provides access to all entities inside the group at once and creates a permission entry that links this entity group to the selected user group.
+
+**How to share an entity group:**
+- In **Groups** tab, click "**Share**" icon in the row of the target group.
+- Choose [**Customer**](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"} from dropdown list.
+- (Optional) Enable **All users** checkbox to provide access to every user of that customer.
+- Choose the Permissions access: Read, Write, or Other (Roles).
+- Click "**Share**" to apply. The access is propagated to all entities within the group.
+
+To update or revoke access, open the group [permissions](#group-permissions) tab and edit/delete the corresponding permission.
+
+## Make group public or private
+
+Public groups provide read-only access to anyone (no sign-in). Use it for non-sensitive data only. When you set a group as Public, 
+the platform adds permissions to that entity group for the Public customer’s "Public users" group.
+
+**Make public:**
+
+- In the **Groups** tab, click "**Make public**" icon of the target group.
+
+- Confirm in the dialog.
+
+The Public checkbox becomes enabled for this group.
+
+{% capture public %}
+**Note:** Public dashboards that use device data, require the dashboard and the related device group must be public.
+{% endcapture %}
+{% include templates/info-banner.md content=public %}
+
+**Make private (revoke public access):**
+
+- In the Groups tab, click "**Make private**" icon of the target group.
+
+- Confirm in the dialog. Public access is removed.
+
+If you need controlled access for specific customers or users, use [Share entity group](#share-entity-group) 
+or configure entries on the [Permissions](#group-permissions) tab.
 
 ## Delete entity group
 
