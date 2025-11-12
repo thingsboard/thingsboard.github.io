@@ -1,22 +1,63 @@
-Let’s review more examples of device name expression and device profile expression fields.
+BACnet connector allows you to set dynamic device names and profiles using expressions. This is especially useful when 
+you have multiple devices with similar configurations and want to differentiate them based on their properties.
+In this example, we will configure a BACnet device to have a dynamic device name based on its `objectName` and `address` 
+properties and a dynamic device profile based on its `vendorId` property.
 
-These fields allow for the dynamic construction of a formatted device name/profile using values extracted from a JSON object. 
-You can specify variables to access the relevant fields in the JSON.
+Here is an example configuration snippet for a BACnet device with dynamic device name and profile:
 
-You can use the following variables to extract specific device information:
-- **objectName** - extracts the device's object name (e.g., "Main Controller");
-- **vendorId** - extracts the device's vendor ID, typically a numeric identifier representing the manufacturer (e.g., "1234");
-- **objectId** - extracts the device's unique object identifier (e.g., "999");
-- **address** - extracts the device's network address (e.g., "192.168.1.1").
+```json
+{
+  "application": {
+    "objectName": "TB_gateway",
+    "host": "YOUR_HOST",
+    "port": 47808,
+    "mask": 24,
+    "objectIdentifier": 599,
+    "maxApduLengthAccepted": 1476,
+    "segmentationSupported": "segmentedBoth",
+    "vendorIdentifier": 15,
+    "deviceDiscoveryTimeoutInSec": 5,
+    "devicesDiscoverPeriodSeconds": 30
+  },
+  "devices": [
+    {
+      "host": "*",
+      "port": "*",
+      "pollPeriod": 10000,
+      "deviceInfo": {
+        "deviceNameExpressionSource": "expression",
+        "deviceNameExpression": "${objectName} at ${address}",
+        "deviceProfileExpressionSource": "expression",
+        "deviceProfileExpression": "${vendorId}_profile"
+      },
+      "attributes": [],
+      "timeseries": "*",
+      "attributeUpdates": [],
+      "serverSideRpc": []
+    }
+  ]
+}
+```
+{:.copy-code}
 
-**Examples:**
-- "**Device ${objectName}**" If the objectName variable exists and contains "**objectName": "Main Controller**", 
-  the device on platform will have the following name: **Device Main Controller**;
-- "**Vendor: ${vendorId}**" If the vendorId variable exists and contains **"vendorId": 1234**, the device on platform 
-  will have the following name: **Vendor: 1234**;
-- "**Device ID: ${objectId} at ${address}**" If the objectId variable exists and contains **"vendorId": 999** and 
-  address variable exists and contains **"address": "192.168.1.1"**, the device on platform will have the following 
-  name: **Device ID: 999 at 192.168.1.1**.
+In this configuration:
+- The `deviceNameExpression` is set to `${objectName} at ${address}`, which will create a device name that includes the 
+  device's object name and address.
+- The `deviceProfileExpression` is set to `${vendorId}_profile`, which will create a device profile name based on the vendor ID of the device.
 
+After applying this configuration, the device will be created with a name and profile that reflect its specific 
+properties. The screenshot below shows how the device appears in ThingsBoard with the dynamic name and profile:
+
+![image](/images/gateway/bacnet-connector/examples/dynamic-device-name-and-profile-overview.png)
+
+As you can see, the device name is generated based on the `objectName` and `address`, and the device profile is based 
+on the `vendorId`.
+
+Device name/profile dynamic expressions provide flexibility in managing multiple BACnet devices with varying 
+configurations and can help in organizing devices effectively within ThingsBoard.
+
+{% capture dynamicDeviceNameProfileExample %}
 You can find full list of available variables in
 the [Advanced configuration](/docs/iot-gateway/config/bacnet/#available-variables-for-device-nameprofile-expressions) section.
+{% endcapture %}
+{% include templates/info-banner.md content=dynamicDeviceNameProfileExample %}

@@ -152,7 +152,7 @@ A data key identifies the telemetry, attribute, or entity field a widget should 
 
 <b><font size="3">Sources of keys</font></b>
 - **Attributes** — the combined set of Client, Server, and Shared [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} of the selected entity. If a needed attribute doesn&#39;t exist yet, you can still add the key; the widget will show data once the device reports it.
-- **Time series** — telemetry keys reported by devices or written by the Rule Engine / [REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}.
+- **Time series** — telemetry keys reported by devices or written by the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"} / [REST API](/docs/{{docsPrefix}}reference/rest-api/){:target="_blank"}.
 - **Entity fields** — metadata fields that depend on entity type and may evolve over time (e.g. created time, entity type, name, type, label).
 
 The data keys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/widgets/#widget-types){:target="_blank"}:
@@ -222,9 +222,9 @@ Let&#39;s look at the basic data key settings an example of the "Entities table"
 
 {% include images-gallery.html imageCollection="data-key-configuration-color" %}
 
-- **Use data post‑processing function** — enable a custom function to transform raw values before display.
+- [**Use data post-processing function**](#data-post-processing-function) — enable a custom function to transform raw values before display.
 
-**Aggregation of key** 
+##### Aggregation of key
 
 By default, the Latest values widgets do not have the time window. If you enable aggregation for any data
 key in the **Latest values** widgets, the time window control will appear. You can set up aggregation for each telemetry
@@ -305,7 +305,30 @@ This option allows you to specify how the result should be displayed:
 
 - **Delta (percent)** - Displays the result as a percentage relative to the previous interval <br>formula: **(IntervalValue - prevIntervalValue)/prevIntervalValue*100**
 
-**Use data post-processing function.** The data post-processing function allows changing the output data depending on your wishes. To use data post-processing function, you must check the "Use data post-processing function" checkbox and enter the function in the field below. Then click the "Save" button in the lower-right corner.
+##### Data post-processing function
+The data post-processing function enables real-time transformation of incoming telemetry values before they are displayed 
+in widgets. This feature allows you to apply custom JavaScript logic to each data point — for example, convert units, 
+filter out anomalies, or calculate derived metrics without touching upstream sources.
+
+  **How to use:**
+ - In the widget → go to section with **Data keys** → click the **Pencil** icon of the target data key.
+ - Enable toggle **Use data post-processing function**.
+ - Enter your code in the function body. The platform automatically injects the function header:
+<br>     **function** (time, value, prevValue, timePrev, prevOrigValue) {
+<br>        **`YOUR_JS_CODE`**
+<br>     }
+ - Click **Save** button.
+
+**Once enabled, the function has access to the following parameters:**
+
+- **time** – timestamp of the current value,
+- **value** – the current value,
+- **prevValue** – value returned by the previous function call,
+- **timePrev** – timestamp of the previous value,
+- **prevOrigValue** – original previous value.
+
+The function must **return** a value (**number**|**string**|**boolean**|**null**).
+Returning **null** excludes the data point from visualization.
 
 {% include images-gallery.html imageCollection="data-key-configuration-settings-post-processing" %}
 
