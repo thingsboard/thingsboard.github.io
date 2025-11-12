@@ -297,76 +297,75 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 {% include /templates/iot-gateway/mqtt-connector/attribute-request-subsection-basic.md%}
 
-
 ### Subsection "Attribute updates"
 
-This configuration section is optional.  
-ThingsBoard allows to provision device attributes and fetch some of them from the device application.
-You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
-See [user guide](/docs/user-guide/attributes/) for more details.
+This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
 
-The "**attributeUpdates**" configuration allows configuring the format of the corresponding attribute request and response messages.
+ThingsBoard allows the provisioning of device attributes and fetches some of them from
+the device application. You can treat this as a remote configuration for devices, enabling them to request 
+shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/){:target="_blank"} for more details.
 
-Select basic or advanced MQTT configuration:
+The following parameters are used to configure attribute requests:
+- **Request type** - The type of the request sent to ThingsBoard (set to "Attribute request"). 
+- **Device name filter** - Regular expression device name filter, used to determine which devices should receive attribute updates see [regex](#regular-expressions) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
+- **Attribute filter** -  Regular expression attribute name filter, used to determine which attributes should be updated see [regex](#regular-expressions) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Response value expression** - The format of the attribute value in the response message. It can be parsed from [json-path](#json-path) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Response topic expression** - The topic/topics the gateway will publish the attribute response message to. It can be parsed from [json-path](#json-path) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Retain** - Whether the attribute response message should be retained by the MQTT broker.
 
-{% capture mqttattributerequestsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/attribute-updates-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/attribute-updates-subsection-advanced.md{% endcapture %}
+{% capture difference %}
 
-{% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-attributes-updates) section.
 
-**Let's look at an example.**
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-Run the command below to start the *mosquitto_sub* client, subscribing to the topic "sensor/SN-001/firmwareVersion" of the local broker. Start waiting for new messages from ThingsBoard server to broker.
+![image](/images/gateway/mqtt-connector/mqtt-message-attributes-update.png)
 
-```bash
-mosquitto_sub -h 127.0.0.1 -p 1883 -t sensor/SN-001/firmwareVersion
-```
-{: .copy-code}
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-mosquitto-sub-wait-1.png)
-{: refdef}
-
-Update device attribute value on the ThingsBoard server following these steps:
-- Open the "Devices" page;
-- Click on your device and navigate to the "Attributes" tab;
-- Choose "Shared attributes" scope and click on the "pencil" icon next to *"firmwareVersion"* attribute.
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-update-attribute-1.png)
-{: refdef}
-
-- Change firmware version value from "1.1" to "1.2". Then click "Update" button.
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-update-attribute-2.png)
-{: refdef}
-
-The firmware version has been updated to "1.2".
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-update-attribute-3.png)
-{: refdef}
-
-Broker received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
-
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
-{: refdef}
+{% include /templates/iot-gateway/mqtt-connector/attribute-updates-subsection-basic.md %}
 
 ### Server side RPC commands
 
-ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
-Configuration, provided in this section is used for sending RPC requests from ThingsBoard to device.
+ThingsBoard allows sending [RPC commands](https://thingsboard.io/docs/user-guide/rpc/) to devices connected directly to ThingsBoard or via Gateway.
+The following parameters are used to configure RPC methods:
+- **Request type** - Set to RPC command. Can be with response (`twoWay`) or without response (`oneWay`).
+- **Device name filter** - Regular expression device name filter, used to determine which devices should receive RPC commands.
+- **Method filter** - Regular expression method name filter, used to determine which RPC methods should be processed.
+- **Request topic expression** - JSON-path expression used for creating topic address to send RPC request.
+- **Value expression** - JSON-path expression used for creating data for sending to broker.
+- **Response topic expression** (only for `twoWay`) - JSON-path expression used for creating topic address to subscribe for response message.
+- **Response topic QoS** (only for `twoWay`) - Quality of Service level for the response topic subscription.
+- **Response timeout** (only for `twoWay`) - Timeout in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic.
 
-Select basic or advanced MQTT configuration:
+{% capture difference %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-rpc-methods) section.
 
-{% capture mqttattributerequestsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/server-side-rpc-commands-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/server-side-rpc-commands-subsection-advanced.md{% endcapture %}
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-{% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
+One way and Two way RPC overview:
+
+Two way RPC expects response from a topic.
+
+![image](/images/gateway/mqtt-connector/mqtt-rpc-overview-1.png)
+
+![image](/images/gateway/mqtt-connector/mqtt-rpc-overview-2.png)
+
+One way RPC does not expect response from a topic.
+![image](/images/gateway/mqtt-connector/mqtt-rpc-overview-3.png)
+
+{% include /templates/iot-gateway/mqtt-connector/device-rpc-basic-section.md %}
+
+{% capture methodFilterOptions %}
+Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
+it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
+
 
 ### Usage examples
 
@@ -556,8 +555,6 @@ Example of the device mapping configuration:
 ```
 {: .copy-code}
 
-
-
 #### Device attributes and timeseries
 
 | **Parameter**                         | **Description**                                                                                                                                                                                                                   |
@@ -706,7 +703,39 @@ Example of the attribute requests configuration:
 
 #### Device attribute updates
 
+
+| **Parameter**                                              | **Description**                                                                                                                                                            |
+|:-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.attributeUpdates[].retain                  | Whether the attribute response message should be retained by the MQTT broker.                                                                                              |
+| requestsMapping.attributeUpdates[].deviceNameFilter        | Regular expression device name filter, used to determine which devices should receive attribute updates see [expression](#expression-types)                                |
+| requestsMapping.attributeUpdates[].attributeFilter         | Regular expression attribute name filter, used to determine which attributes should be updated see [expression](#expression-types)                                         |
+| requestsMapping.attributeUpdates[].topicExpression         | JSON-path expression used for creating topic address to send a message. Supports variables like `${deviceName}` and `${attributeKey}` see [expression](#expression-types). |
+| requestsMapping.attributeUpdates[].valueExpression         | JSON-path expression used for creating the message data that will be sent to the topic. Supports variables like `${attributeKey}` and `${attributeValue}` see [expression](#expression-types) .                    |
+| ---                                                        |                                                                                                                                                                            |
+
+
+Example of the attribute requests configuration:
+
+```json
+"attributeUpdates": [
+  {
+    "retain": true,
+    "deviceNameFilter": ".*",
+    "attributeFilter": "firmwareVersion",
+    "topicExpression": "sensor/${deviceName}/${attributeKey}",
+    "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
+  }
+],
+```
+{: .copy-code}
+
 #### Device RPC methods
+
+The Device RPC methods section configures how ThingsBoard platform sends RPC commands to devices via the MQTT connector. This includes both one-way (fire-and-forget) and two-way (request-response) RPC methods.
+
+| **Parameter**                                | **Description**
+
+
 
 
 
