@@ -1,9 +1,12 @@
 ---
 layout: docwithnav
-title: Connect ThingsBoard to Datastax Astra DB 
+title: Connect ThingsBoard to Datastax Astra DB
 description: Connect ThingsBoard to Datastax Astra DB
 hidetoc: "true"
+redirect_from: "/docs/user-guide/install/pe/cassandra-cloud-astra-db/"
 ---
+
+{% include get-hosts-name.html %}
 
 This guide describes how to setup Datastax Astra DB cloud for your ThingsBoard. This is an alternative having your own Cassandra cluster.
 

@@ -341,6 +341,9 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/ui/entity-views":
   url: "/docs/user-guide/entity-views/"
   redirect_from: "/docs/user-guide/ui/entity-views"
+docs/user-guide/install/pe/cassandra-cloud-astra-db/:
+  url: "/docs/user-guide/install/cassandra-cloud-astra-db/"
+  redirect_from: docs/user-guide/install/pe/cassandra-cloud-astra-db/
 "/docs/user-guide/install/cluster/aws-cluster-setup":
   url: "/docs/user-guide/install/cluster/aws-eks-setup/"
   redirect_from: "/docs/user-guide/install/cluster/aws-cluster-setup"
