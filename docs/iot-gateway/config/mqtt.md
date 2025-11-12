@@ -268,18 +268,35 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 ### Subsection "Attribute requests"
 
-This configuration section is optional.
+This subsection contains configuration for attribute requests from ThingsBoard platform instance.
+When a device needs to retrieve attribute values from ThingsBoard, it can send an attribute request. This allows devices to request shared or client attributes stored on the ThingsBoard platform.
+When a device publishes a request to a specific topic, the gateway fetches the requested shared/client attributes from ThingsBoard and publishes a response to a response topic.
 
-In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending
-attribute requests.
+The following parameters are used to configure attribute requests:
+- **Request type** - The type of the request sent to ThingsBoard (set to "Attribute request").
+- **Topic filter** - The topic/topics that the gateway subscribes to for incoming requests. The **Topic filter** supports special symbols: `#` and `+`
+*wildcards* (more information how you may use them for matching topic patterns in the [Additional information](/docs/iot-gateway/config/mqtt/#wildcard-usage) section).
+- **Device name expression** - The name of the device in ThingsBoard from which to request the attributes. It can be parsed from `Message`, `Topic`, or `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Attribute name expression** - The name of the attribute in ThingsBoard to be requested. It can be parsed from `Message`, `Topic`, or `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Response value expression** - The format of the attribute value in the response message. It can be parsed from `Message`, `Topic`, or `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Response topic expression** - The topic/topics the gateway will publish the attribute response message to. It can be parsed from `Message`, `Topic`, or `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
+- **Retain** - Whether the attribute response message should be retained by the MQTT broker.
 
-Select basic or advanced MQTT configuration:
+{% capture difference %}
 
-{% capture mqttattributerequestsubsection %}
-Basic<small></small>%,%basic%,%templates/iot-gateway/mqtt-connector/attribute-request-subsection-basic.md%br%
-Advanced<small></small>%,%advanced%,%templates/iot-gateway/mqtt-connector/attribute-request-subsection-advanced.md{% endcapture %}
+All configuration parameters list, and their detailed description can be found in the 
+[Advanced configuration](/docs/iot-gateway/config/mqtt/#device-attribute-requests) section.
 
-{% include content-toggle.liquid content-toggle-id="mqttattributerequestsubsection" toggle-spec=mqttattributerequestsubsection %}
+More usage examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/gateway/mqtt-connector/mqtt-message-attribute-requests-1.png)
+
+![image](/images/gateway/mqtt-connector/mqtt-message-attribute-requests-2.png)
+
+{% include /templates/iot-gateway/mqtt-connector/attribute-request-subsection-basic.md%}
+
 
 ### Subsection "Attribute updates"
 
@@ -650,6 +667,42 @@ Example of the attributes updates configuration:
 ```
 
 #### Device attribute requests
+
+
+| **Parameter**                                                             | **Description**                                                                                                                                                                                        |
+|:--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.attributeRequests[].scope                                 | (Optional) Determines the scope from where the attributes are taken use `client` if want to request client attributes                                                                                  |
+| requestsMapping.attributeRequests[].retain                                | Whether the attribute response message should be retained by the MQTT broker.                                                                                                                          |
+| requestsMapping.attributeRequests[].topicFilter                           | The topic/topics that the gateway subscribes to for incoming requests. The **Topic filter** supports special symbols: `#` and `+`                                                                      |
+| requestsMapping.attributeRequests[].deviceInfo.deviceNameExpressionSource | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                              |
+| requestsMapping.attributeRequests[].deviceInfo.deviceNameExpression       | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types).    |
+| requestsMapping.attributeRequests[].attributeNameExpressionSource         | Source of the attribute name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
+| requestsMapping.attributeRequests[].attributeNameExpression               | Expression used to extract the attribute name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| requestsMapping.attributeRequests[].topicExpression                       | Expression used to format the response topic. It can be parsed from `message`, `topic`, or `constant`.                                                                                                 |
+| requestsMapping.attributeRequests[].valueExpression                       | Expression used to format the response value. It can be parsed from `message`, `topic`, or `constant`.                                                                                                 |
+| ---                                                                       |                                                                                                                                                                                                        |
+
+
+Example of the attribute requests configuration:
+
+```json
+"attributeRequests": [
+  {
+    "retain": false, 
+    "topicFilter": "v1/devices/me/attributes/request", 
+    "deviceInfo": {
+      "deviceNameExpressionSource": "message",
+      "deviceNameExpression": "${serialNumber}"
+    },
+    "attributeNameExpressionSource": "message",
+    "attributeNameExpression": "${versionAttribute}",
+    "topicExpression": "devices/${deviceName}/attrs",
+    "valueExpression": "${attributeKey}: ${attributeValue}"
+  }
+]
+```
+{: .copy-code}
+
 
 #### Device attribute updates
 
