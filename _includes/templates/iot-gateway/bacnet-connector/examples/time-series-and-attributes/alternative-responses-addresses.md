@@ -3,7 +3,7 @@ It is especially useful when the gateway and the BACnet device are located in di
 
 For example, consider the following network setup:
 
-![image](/images/gateway/bacnet-connector/examples/alternative-responses-addresses-network-setup.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/alternative-responses-addresses-network-setup.png)
 
 In this setup, the gateway runs inside a Docker container and the BACnet device is located on a local network with IP 
 address `192.168.1.200:45606` and is not directly accessible from the Docker container. BACPypes sends APDUs to the 
@@ -55,4 +55,4 @@ After applying this configuration, the connector will use the specified alternat
 communicate effectively with the device even when they are located in different networks. As a result, you should see 
 created device in ThingsBoard:
 
-![image](/images/gateway/bacnet-connector/examples/alternative-responses-addresses-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/alternative-responses-addresses-overview.png)
