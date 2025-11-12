@@ -423,12 +423,12 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               <div class="comparison-row">
                 <p>Deployment Options</p>
               </div>
-              <a href="/pricing/?section=tbmq" target="_blank" class="comparison-row">
+              <a href="/pricing/?section=tbmq-options&product=tbmq-pe" target="_blank" class="comparison-row">
                 <p>Self-Managed (On-premise/Cloud)</p>
                 <div><img src="/images/pe/blue-mark.svg" alt="Blue checkmark"></div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
               </a>
-              <a href="/pricing/?section=tbmq" target="_blank" class="comparison-row">
+              <a href="/pricing/?section=tbmq-options&product=tbmq-private-cloud" target="_blank" class="comparison-row">
                 <p>Managed Private Cloud</p>
                 <div class="hidden-space">&nbsp;</div>
                 <div><img src="/images/pe/green-mark.svg" alt="Green checkmark"></div>
@@ -440,8 +440,8 @@ description: Deliver 3M+ MQTT messages/sec with TBMQ — a fault-tolerant open-s
               </div>
               <div class="comparison-row">
                 <p>Support Model</p>
-                <p><a href="/pricing/?section=tbmq" target="_blank">Community</a></p>
-                <p><a href="/pricing/?section=tbmq" target="_blank">Advanced + SLA</a></p>
+                <p><a href="/pricing/?section=tbmq-options&product=tbmq-ce" target="_blank">Community</a></p>
+                <p><a href="/pricing/?section=tbmq-options&product=tbmq-pe" target="_blank">Advanced + SLA</a></p>
               </div>
             </div>
         </section>
