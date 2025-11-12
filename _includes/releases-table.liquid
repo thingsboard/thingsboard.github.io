@@ -1,18 +1,18 @@
-{%- assign base = "/docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+{%- assign dir = "/docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
 
-{%- assign release_pages = "" | split: "" -%}
+{%- assign pages_in_dir = "" | split: "" -%}
 {%- for p in site.pages -%}
-    {%- if p.url != base and p.url contains base -%}
-        {%- assign slug = p.url | remove_first: base | split: "/" | first -%}
+    {%- if p.url != dir and p.url contains dir -%}
+        {%- assign slug = p.url | remove_first: dir | split: "/" | first -%}
         {%- if slug and slug != "" -%}
-            {%- assign release_pages = release_pages | push: p -%}
+            {%- assign pages_in_dir = pages_in_dir | push: p -%}
         {%- endif -%}
     {%- endif -%}
 {%- endfor -%}
 
 {%- assign families = "" | split: "" -%}
-{%- for p in release_pages -%}
-    {%- assign slug = p.url | remove_first: base | split: "/" | first -%}
+{%- for p in pages_in_dir -%}
+    {%- assign slug = p.url | remove_first: dir | split: "/" | first -%}
     {%- assign parts = slug | remove: "v" | split: "." -%}
     {%- assign major = parts[0] -%}
     {%- assign minor = parts[1] -%}
@@ -49,27 +49,27 @@
 
         <div class="releases-table-row">
             {%- for entry in sortable -%}
-                {%- assign family_key = entry | split: "|" | last -%}
+                {%- assign family = entry | split: "|" | last -%}
 
-                {%- assign x_url = base | append: family_key | append: ".x/" -%}
+                {%- assign x_url = dir | append: family | append: ".x/" -%}
                 {%- assign has_x = false -%}
                 {%- for q in site.pages -%}
                     {%- if q.url == x_url -%}{%- assign has_x = true -%}{%- break -%}{%- endif -%}
                 {%- endfor -%}
 
                 {%- assign earliest_ts = "" -%}
-                {%- assign earliest_date_display = "" -%}
+                {%- assign earliest_date = "" -%}
                 {%- assign latest_ts = "" -%}
-                {%- assign latest_version_slug = "" -%}
-                {%- assign latest_date_display = "" -%}
+                {%- assign latest_version = "" -%}
+                {%- assign latest_date = "" -%}
 
-                {%- for q in release_pages -%}
-                    {%- assign qslug = q.url | remove_first: base | split: "/" | first -%}
+                {%- for q in pages_in_dir -%}
+                    {%- assign qslug = q.url | remove_first: dir | split: "/" | first -%}
                     {%- assign qparts = qslug | remove: "v" | split: "." -%}
                     {%- assign qmajor = qparts[0] -%}
                     {%- assign qminor = qparts[1] -%}
                     {%- assign qfamily = "v" | append: qmajor | append: "." | append: qminor -%}
-                    {%- if qfamily != family_key -%}{%- continue -%}{%- endif -%}
+                    {%- if qfamily != family -%}{%- continue -%}{%- endif -%}
                     {%- assign suffix = qslug | slice: -2, 2 -%}
                     {%- if suffix == ".x" -%}{%- continue -%}{%- endif -%}
 
@@ -78,37 +78,37 @@
 
                     {%- if earliest_ts == "" or qts < earliest_ts -%}
                         {%- assign earliest_ts = qts -%}
-                        {%- assign earliest_date_display = qdate -%}
+                        {%- assign earliest_date = qdate -%}
                     {%- endif -%}
                     {%- if latest_ts == "" or qts > latest_ts -%}
                         {%- assign latest_ts = qts -%}
-                        {%- assign latest_version_slug = qslug -%}
-                        {%- assign latest_date_display = qdate -%}
+                        {%- assign latest_version = qslug -%}
+                        {%- assign latest_date = qdate -%}
                     {%- endif -%}
                 {%- endfor -%}
 
                 {%- if has_x -%}
                     {%- assign notes_url = x_url -%}
                 {%- else -%}
-                    {%- assign notes_url = base | append: latest_version_slug | append: "/" -%}
+                    {%- assign notes_url = dir | append: latest_version | append: "/" -%}
                 {%- endif -%}
 
-                {%- assign status_label = "non-LTS" -%}
+                {%- assign lts_label = "non-LTS" -%}
                 {%- if has_x -%}
                     {%- for p in site.pages -%}
                         {%- if p.url == x_url -%}
                             {%- if p.lts -%}
-                                {%- assign status_label = p.lts -%}
+                                {%- assign lts_label = p.lts -%}
                             {%- endif -%}
                             {%- break -%}
                         {%- endif -%}
                     {%- endfor -%}
                 {%- else -%}
-                    {%- assign latest_url = base | append: latest_version_slug | append: "/" -%}
+                    {%- assign latest_url = dir | append: latest_version | append: "/" -%}
                     {%- for p in site.pages -%}
                         {%- if p.url == latest_url -%}
                             {%- if p.lts -%}
-                                {%- assign status_label = p.lts -%}
+                                {%- assign lts_label = p.lts -%}
                             {%- endif -%}
                             {%- break -%}
                         {%- endif -%}
@@ -116,38 +116,38 @@
                 {%- endif -%}
 
                 <div
-                    class="releases-table-content-wrapper"
-                    onclick="window.location='{{ notes_url }}'"
-                    style="cursor:pointer;">
+                        class="releases-table-content-wrapper"
+                        onclick="window.location='{{ notes_url }}'"
+                        style="cursor:pointer;">
                     <div class="releases-table-content">
-                        <div class="releases-table-content-item">{{ family_key }}.x{% if docsPrefix == "pe/" %}PE{% endif %}</div>
+                        <div class="releases-table-content-item">{{ family }}.x{% if docsPrefix == "pe/" %}PE{% endif %}</div>
                         <div class="releases-table-content-item">
-                            {%- if earliest_date_display -%}
-                                <time datetime="{{ earliest_date_display | date: '%Y-%m-%d' }}">{{ earliest_date_display | date: "%B %-d, %Y" }}</time>
+                            {%- if earliest_date -%}
+                                <time datetime="{{ earliest_date | date: '%Y-%m-%d' }}">{{ earliest_date | date: "%B %-d, %Y" }}</time>
                             {%- else -%}—{%- endif -%}
                         </div>
-                        <div class="releases-table-content-item">{{ latest_version_slug | default: "—" }}</div>
+                        <div class="releases-table-content-item">{{ latest_version | default: "—" }}</div>
                         <div class="releases-table-content-item">
-                            {%- if latest_date_display -%}
-                                <time datetime="{{ latest_date_display | date: '%Y-%m-%d' }}">
-                                    {{ latest_date_display | date: "%B %-d, %Y" }}
+                            {%- if latest_date -%}
+                                <time datetime="{{ latest_date | date: '%Y-%m-%d' }}">
+                                    {{ latest_date | date: "%B %-d, %Y" }}
                                 </time>
                             {%- else -%}—{%- endif -%}
                         </div>
-                        {% if status_label != "non-LTS" %}
+                        {% if lts_label != "non-LTS" %}
                             <a href="/docs/releases/release-policy/" class="releases-table-content-item version-link">
-                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}">LTS ({{ status_label }})</span>
+                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}">LTS ({{ lts_label }})</span>
                                 <i class="fas fa-external-link-alt" style="color: {% if docsPrefix == "pe/" %}#00695C{% else %}#2a7dec{% endif %}"></i>
                             </a>
                         {% else %}
-                            <div class="releases-table-content-item">{{ status_label }}</div>
+                            <div class="releases-table-content-item">{{ lts_label }}</div>
                         {% endif %}
                         <a href="{{ notes_url }}" class="releases-table-content-item version-link">
-                            <span>{{ family_key }}</span>
+                            <span>{{ family }}</span>
                             <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                         </a>
                         <div class="releases-table-content-item upgrade-link">
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family_key }}.x">Upgrade</a>
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family }}.x">Upgrade</a>
                         </div>
                     </div>
                 </div>
