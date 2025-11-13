@@ -731,13 +731,53 @@ Example of the attribute requests configuration:
 
 #### Device RPC methods
 
-The Device RPC methods section configures how ThingsBoard platform sends RPC commands to devices via the MQTT connector. This includes both one-way (fire-and-forget) and two-way (request-response) RPC methods.
+Device RPC (Remote Procedure Call) methods allow you to send commands from ThingsBoard to your devices through the MQTT connector. The gateway acts as an intermediary, translating ThingsBoard RPC calls into MQTT messages that your devices can understand.
 
-| **Parameter**                                | **Description**
+There are two types of RPC requests supported by the MQTT connector:
+
+1. **Two-way (with response)** - The gateway sends a request to the device and waits for a response. This is useful when you need to get data back from the device.
+2. **One-way (without response)** - The gateway sends a request to the device without expecting a response. This is useful for simple commands that don't require confirmation.
 
 
+| **Parameter**                                                                         | **Description**                                                                                                                                                                                 |
+|:--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.serverSideRpc[].deviceNameFilter                                      | Regular expression device name filter, is used to determine which devices this RPC configuration applies to.See [expression](#expression-types)                                                 |
+| requestsMapping.serverSideRpc[].methodFilter                                          | Regular expression method name filter, is used to determine which RPC methods this configuration applies to. See [expression](#expression-types)                                                |
+| requestsMapping.serverSideRpc[].requestTopicExpression                                | JSON-path expression, is used for creating topic address to send RPC request. Supports variables like `${deviceName}` and `${attributeKey}` see [expression](#expression-types).                |
+| requestsMapping.serverSideRpc[].responseTopicExpression                               | JSON-path expression, is used for creating topic address to subscribe for response message.  Supports variables like `${deviceName}` and `${attributeKey}` see [expression](#expression-types). |
+| requestsMapping.serverSideRpc[].responseTopicQoS                                      | Quality of Service level for the response topic subscription.                                                                                                                                   | 
+| requestsMapping.serverSideRpc[].responseTimeout                                       | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic.                                                  |
+| requestsMapping.serverSideRpc[].valueExpression                                       | JSON-path expression, is used for creating data for sending to broker. Supports variables like `${deviceName}` and `${attributeKey}` see [expression](#expression-types).                       |
+| ---                                                                                   |                                                                                                                                                                                                 |
 
+The configuration for Device RPC methods is defined in the "serverSideRpc" section of the MQTT connector configuration:
 
+```json
+"serverSideRpc": [
+   {
+      "type": "twoWay",
+      "deviceNameFilter": ".*",
+      "methodFilter": "echo",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
+      "responseTopicQoS": 1,
+      "responseTimeout": 10000,
+      "valueExpression": "${params}"
+   },
+   {
+      "type": "oneWay",
+      "deviceNameFilter": ".*",
+      "methodFilter": "no-reply",
+      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
+      "valueExpression": "${params}"
+   }
+]
+```
+{: .copy-code}
+
+Additionally, every telemetry and attribute parameter has built-in GET and SET RPC methods available out of the box, so you don't need to configure them manually.
+
+For more information on using the built-in GET and SET RPC methods, see [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
 
 ## Workers settings
