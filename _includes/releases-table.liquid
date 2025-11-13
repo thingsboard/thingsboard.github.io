@@ -13,7 +13,8 @@
 {%- assign families = "" | split: "" -%}
 {%- for p in pages_in_dir -%}
     {%- assign slug = p.url | remove_first: dir | split: "/" | first -%}
-    {%- assign parts = slug | remove: "v" | split: "." -%}
+    {%- assign normalized_slug = slug | remove: "v" | replace: "-", "." -%}
+    {%- assign parts = normalized_slug | split: "." -%}
     {%- assign major = parts[0] -%}
     {%- assign minor = parts[1] -%}
     {%- if major and minor -%}
@@ -51,10 +52,14 @@
             {%- for entry in sortable -%}
                 {%- assign family = entry | split: "|" | last -%}
 
-                {%- assign x_url = dir | append: family | append: ".x/" -%}
+                {%- assign x_slug = family | replace: ".", "-" | append: "-x" -%}
+                {%- assign x_url = dir | append: x_slug | append: "/" -%}
                 {%- assign has_x = false -%}
                 {%- for q in site.pages -%}
-                    {%- if q.url == x_url -%}{%- assign has_x = true -%}{%- break -%}{%- endif -%}
+                    {%- if q.url == x_url -%}
+                        {%- assign has_x = true -%}
+                        {%- break -%}
+                    {%- endif -%}
                 {%- endfor -%}
 
                 {%- assign earliest_ts = "" -%}
@@ -65,13 +70,14 @@
 
                 {%- for q in pages_in_dir -%}
                     {%- assign qslug = q.url | remove_first: dir | split: "/" | first -%}
-                    {%- assign qparts = qslug | remove: "v" | split: "." -%}
+                    {%- assign qnormalized = qslug | remove: "v" | replace: "-", "." -%}
+                    {%- assign qparts = qnormalized | split: "." -%}
                     {%- assign qmajor = qparts[0] -%}
                     {%- assign qminor = qparts[1] -%}
                     {%- assign qfamily = "v" | append: qmajor | append: "." | append: qminor -%}
                     {%- if qfamily != family -%}{%- continue -%}{%- endif -%}
                     {%- assign suffix = qslug | slice: -2, 2 -%}
-                    {%- if suffix == ".x" -%}{%- continue -%}{%- endif -%}
+                    {%- if suffix == "-x" -%}{%- continue -%}{%- endif -%}
 
                     {%- assign qdate = q["release-date"] -%}
                     {%- assign qts = qdate | date: "%s" -%}
@@ -147,7 +153,7 @@
                             <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                         </a>
                         <div class="releases-table-content-item upgrade-link">
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family }}.x">Upgrade</a>
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family | replace: ".", "-" }}-x">Upgrade</a>
                         </div>
                     </div>
                 </div>
