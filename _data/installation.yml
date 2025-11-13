@@ -50,10 +50,4 @@ toc:
   - title: Version control executor parameters
     path: /docs/user-guide/install/vc-executor-config/
 - title: Upgrade instructions
-  section:
-    - title: Prepare
-      path: /docs/user-guide/install/pe/upgrade-instructions/prepare/
-    - title: Upgrade
-      path: /docs/user-guide/install/upgrade-instructions/
-    - title: Upgrading from CE
-      path: /docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce/
+  path: /docs/user-guide/install/upgrade-instructions/
