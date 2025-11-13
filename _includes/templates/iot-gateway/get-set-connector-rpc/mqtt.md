@@ -22,7 +22,7 @@ get requestTopicExpression=data/get_light_level;responseTopicExpression=data/res
 **Response:**
 
 ```json
-{"result":  {"success":true}}
+{"light_level": 30}
 ```
 
 {:refdef: style="text-align: left;"}
@@ -57,7 +57,7 @@ set requestTopicExpression=data/set_light_level;value=80;
 **Response:**
 
 ```json
-{"result":  {"success":true}}
+{"success":true}
 ```
 
 {:refdef: style="text-align: left;"}
