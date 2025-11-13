@@ -4,6 +4,8 @@ title: Upgrade instructions
 description: ThingsBoard PE IoT platform upgrade instructions
 redirect_from:
   - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
+table-of-contents: "false"
+
 ---
 
 {% assign docsPrefix = "pe/" %}
