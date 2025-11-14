@@ -18,10 +18,7 @@ These upgrade steps are applicable for ThingsBoard version 3.8.1. In order to up
 
 #### ThingsBoard package download
 
-```bash
-{% include_relative resources/3.9/thingsboard-ubuntu-download.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.9" kind="ubuntu-download" %}
 
 #### ThingsBoard service upgrade
 
@@ -32,10 +29,7 @@ sudo service thingsboard stop
 ```
 {: .copy-code}
 
-```bash
-{% include_relative resources/3.9/thingsboard-ubuntu-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.9" kind="ubuntu-installation" %}
 
 {% capture difference %}
 **NOTE:**

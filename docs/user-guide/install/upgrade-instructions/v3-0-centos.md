@@ -24,10 +24,7 @@ breadcrumbs-steps: "1"
 
 #### ThingsBoard package download
 
-```bash
-{% include_relative resources/3.0.0/thingsboard-centos-download.sh %}
-```
-{: .copy-code}  
+{% include resources.liquid version="3.0.0" kind="centos-download" %}  
 
 #### ThingsBoard service upgrade
 
@@ -37,10 +34,7 @@ breadcrumbs-steps: "1"
 $ sudo service thingsboard stop
 ```
 
-```bash
-{% include_relative resources/3.0.0/thingsboard-centos-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.0.0" kind="centos-installation" %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:

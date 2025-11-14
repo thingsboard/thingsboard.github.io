@@ -1,0 +1,18 @@
+{%- assign pe = include.pe -%}
+
+{%- if pe == "true" -%}
+    {%- assign data = site.data.pe.resources -%}
+{%- else -%}
+    {%- assign data = site.data.resources -%}
+{%- endif -%}
+
+{%- assign version = include.version -%}
+{%- assign kind = include.kind -%}
+{%- assign versionEntry = data[version] -%}
+
+{%- if versionEntry and versionEntry[kind] -%}
+```bash
+{{ versionEntry[kind] }}
+```
+{: .copy-code}
+{%- endif -%}

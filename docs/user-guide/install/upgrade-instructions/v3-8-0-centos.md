@@ -25,10 +25,7 @@ These upgrade steps are applicable for ThingsBoard version 3.7. In order to upgr
 
 #### ThingsBoard package download
 
-```bash
-{% include_relative resources/3.8/thingsboard-centos-download.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.8" kind="centos-download" %}
 
 #### ThingsBoard service upgrade
 
@@ -39,10 +36,7 @@ sudo service thingsboard stop
 ```
 {: .copy-code}
 
-```bash
-{% include_relative resources/3.8/thingsboard-centos-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.8" kind="centos-installation" %}
 
 {% capture difference %}
 **NOTE:**

@@ -15,10 +15,7 @@ breadcrumbs-steps: "1"
 
 #### ThingsBoard package download
 
-```bash
-{% include_relative resources/3.3.3/thingsboard-ubuntu-download.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.3.3" kind="ubuntu-download" %}
 
 #### ThingsBoard service upgrade
 
@@ -28,10 +25,7 @@ breadcrumbs-steps: "1"
 $ sudo service thingsboard stop
 ```
 
-```bash
-{% include_relative resources/3.3.3/thingsboard-ubuntu-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.3.3" kind="ubuntu-installation" %}
 
 **NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 

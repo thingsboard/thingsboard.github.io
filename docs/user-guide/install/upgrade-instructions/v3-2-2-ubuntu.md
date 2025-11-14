@@ -38,10 +38,7 @@ to avoid issues with beta version of Cassandra.
 
 #### ThingsBoard package download
 
-```bash
-{% include_relative resources/3.2.2/thingsboard-ubuntu-download.sh %}
-```
-{: .copy-code}  
+{% include resources.liquid version="3.2.2" kind="ubuntu-download" %}  
 
 #### ThingsBoard service upgrade
 
@@ -51,10 +48,7 @@ to avoid issues with beta version of Cassandra.
 $ sudo service thingsboard stop
 ```
 
-```bash
-{% include_relative resources/3.2.2/thingsboard-ubuntu-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.2.2" kind="ubuntu-installation" %}
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:

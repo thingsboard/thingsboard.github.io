@@ -13,10 +13,7 @@ breadcrumbs-steps: "1"
 
 #### ThingsBoard PE package download
 
-```bash
-{% include_relative resources/3.3.2pe/thingsboard-ubuntu-download.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.3.2" kind="ubuntu-download" pe="true" %}
 
 #### ThingsBoard PE service upgrade
 
@@ -29,10 +26,7 @@ $ sudo service thingsboard stop
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
 
-```bash
-{% include_relative resources/3.3.2pe/thingsboard-ubuntu-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.3.2" kind="ubuntu-installation" pe="true" %}
 
 **NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:

@@ -18,10 +18,7 @@ These upgrade steps are applicable for ThingsBoard version 3.5PE. In order to up
 
 #### ThingsBoard PE package download
 
-```bash
-{% include_relative resources/3.5.1pe/thingsboard-ubuntu-download.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.5.1" kind="ubuntu-download" pe="true" %}
 
 #### ThingsBoard PE service upgrade
 
@@ -34,10 +31,7 @@ sudo service thingsboard stop
 
 * Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
 
-```bash
-{% include_relative resources/3.5.1pe/thingsboard-ubuntu-installation.sh %}
-```
-{: .copy-code}
+{% include resources.liquid version="3.5.1" kind="ubuntu-installation" pe="true" %}
 
 {% capture difference %}
 **NOTE:**
