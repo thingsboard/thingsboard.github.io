@@ -64,7 +64,7 @@ Let's add this attribute to the device `SN-001` in ThingsBoard first:
 
 2. Then click on the "**+**" icon and add `firmwareVersion` attribute with type "**String**" and set it to "`1.2.3` click the "**Add**" button.
 
-[!image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-1.png)
+![image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-1.png)
 
 This message contains the device name in the JSON payload, which is extracted using the `${serialNumber}` JSON path, and the attribute name using the `${attributeNames}` JSON path. After processing this message, ThingsBoard will retrieve the "firmwareVersion" attribute for device "SN-001" and publish it to the response topic.
 

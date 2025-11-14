@@ -32,7 +32,7 @@ get requestTopicExpression=data/get_light_level;responseTopicExpression=data/res
 Also, let's take a look at the data received from the MQTT topic **"data/response"**:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-3.jpeg)
+![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-2.png)
 {: refdef}
 
 ### SET method
@@ -61,11 +61,11 @@ set requestTopicExpression=data/set_light_level;value=80;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-2.png)
+![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-3.png)
 {: refdef}
 
 Also, let's take a look at the result in the **"data/light_level"** MQTT topic:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-4.jpeg)
+![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-4.png)
 {: refdef}
