@@ -357,7 +357,16 @@ var tb = (function () {
 		var currentLinks = [];
 
 		$('.pi-accordion a').each(function () {
-			if (pathname === this.href) currentLinks.push(this);
+			var href = this.href.split('#')[0].split('?')[0];
+
+			var isReleaseLink = href.includes('/releases/releases-table/');
+			var isCurrentReleaseLink = pathname.includes('/releases/releases-table/');
+
+			if (isReleaseLink && isCurrentReleaseLink) {
+				currentLinks.push(this);
+			} else if (pathname === href) {
+				currentLinks.push(this);
+			}
 		});
 
 		currentLinks.forEach(function (yahLink) {

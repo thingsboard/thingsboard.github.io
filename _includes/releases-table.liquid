@@ -88,7 +88,7 @@
                     {%- endif -%}
                     {%- if latest_ts == "" or qts > latest_ts -%}
                         {%- assign latest_ts = qts -%}
-                        {%- assign latest_version = qslug -%}
+                        {%- assign latest_version = qslug | replace: "-", "." -%}
                         {%- assign latest_date = qdate -%}
                     {%- endif -%}
                 {%- endfor -%}
