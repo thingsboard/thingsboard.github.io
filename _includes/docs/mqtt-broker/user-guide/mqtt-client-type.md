@@ -20,13 +20,13 @@ requirements and performance expectations of each use case.
 This segregation of clients simplifies the implementation of different IoT scenarios, thereby optimizing overall system performance.
 
 The determination of client type occurs during the processing of the _CONNECT_ packet, with client authentication playing 
-a pivotal role in identifying the client type. Further details regarding client authentication can be found in the [security](/docs/mqtt-broker/security/overview/) guide, 
+a pivotal role in identifying the client type. Further details regarding client authentication can be found in the [security](/docs/{{docsPrefix}}mqtt-broker/security/overview/) guide, 
 which provides comprehensive information on securing client connections.
 
 If both Basic and TLS authentications are disabled, the connecting client will always be assigned the DEVICE type. 
 However, when Basic or TLS authentication is enabled, the client type is determined by the MQTT credentials used during the authentication process. 
 Each MQTT client credential incorporates a `clientType` field that explicitly defines the client type. 
-For step-by-step instructions on creating MQTT credentials, please refer to the designated [guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/).
+For step-by-step instructions on creating MQTT credentials, please refer to the designated [guide](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/mqtt-client-credentials/).
 
 ## Client persistence
 
@@ -45,9 +45,9 @@ These properties, defined in the respective MQTT specifications, provide insight
 TBMQ employs Kafka consumer(s) that actively polls messages from the `tbmq.msg.all` topic, subsequently forwarding these messages to their intended recipients. 
 However, the processing logic differs between persistent and non-persistent clients.
 
-* For [non-persistent clients](/docs/mqtt-broker/architecture/#non-persistent-client), messages are directly published to the subscribed clients.
+* For [non-persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#non-persistent-client), messages are directly published to the subscribed clients.
 
-* [Persistent clients](/docs/mqtt-broker/architecture/#persistent-client) maintain a session state that persists beyond individual connections, allowing them to receive messages even when they were offline. 
+* [Persistent clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-client) maintain a session state that persists beyond individual connections, allowing them to receive messages even when they were offline. 
 This persistence enables TBMQ to ensure message delivery to the client once it reconnects. Consequently, a distinct approach is employed for message processing intended for such clients.
 However, **please note**, that if the subscribing client is both persistent and subscribed with a Quality of Service (QoS) level of _0_ (_AT_MOST_ONCE_), 
 all the messages associated with that subscription will be delivered to the client without any supplementary steps. 

@@ -1,0 +1,23 @@
+bigheader: "Installation"
+abstract: "Documentation for installation and configuration of TBMQ PE."
+toc:
+  - title: Installation options
+    path: /docs/pe/mqtt-broker/install/installation-options/
+  - title: Docker (Linux or Mac OS)
+    path: /docs/pe/mqtt-broker/install/docker/
+  - title: Docker (Windows)
+    path: /docs/pe/mqtt-broker/install/docker-windows/
+  - title: Cluster using Docker Compose
+    path: /docs/pe/mqtt-broker/install/cluster/docker-compose-setup/
+  - title: Cluster on Minikube (Kubernetes)
+    path: /docs/pe/mqtt-broker/install/cluster/minikube-cluster-setup/
+  - title: Cluster on AWS (Kubernetes)
+    path: /docs/pe/mqtt-broker/install/cluster/aws-cluster-setup/
+  - title: Cluster on Azure (Kubernetes)
+    path: /docs/pe/mqtt-broker/install/cluster/azure-cluster-setup/
+  - title: Cluster on GCP (Kubernetes)
+    path: /docs/pe/mqtt-broker/install/cluster/gcp-cluster-setup/
+  - title: Cluster using Helm
+    path: /docs/pe/mqtt-broker/install/cluster/helm-cluster-setup-options/
+  - title: Upgrade instructions
+    path: /docs/pe/mqtt-broker/install/upgrade-instructions/

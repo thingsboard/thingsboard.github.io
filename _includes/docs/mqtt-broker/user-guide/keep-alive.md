@@ -27,7 +27,7 @@ The Keep Alive interval is set when a client connects to the broker, in the `CON
 
 If the Keep Alive interval **is set to 60 seconds**, the client must  send any MQTT control packet (e.g., a `PINGREQ`, `PUBLISH`, `SUBSCRIBE`, etc.) within **90 seconds** (60 * 1.5) to inform the broker that it’s still connected. 
 
-If the client fails to do so, the broker assumes the client is disconnected, and it will **terminate the connection** and trigger a **[Last Will message](/docs/mqtt-broker/user-guide/last-will)** (if set) to inform about unexpected disconnection.
+If the client fails to do so, the broker assumes the client is disconnected, and it will **terminate the connection** and trigger a **[Last Will message](/docs/{{docsPrefix}}mqtt-broker/user-guide/last-will)** (if set) to inform about unexpected disconnection.
 
 Normally, when the client sends a `PINGREQ` to maintain the connection, the broker responds with a `PINGRESP`, confirming that the connection is still alive and the client is functioning properly. 
 This exchange ensures the connection remains healthy even when no data is being transmitted.

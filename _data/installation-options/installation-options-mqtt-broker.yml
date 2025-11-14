@@ -1,7 +1,7 @@
 mqttBroker:
   0:
     title: Docker (Linux or Mac OS)
-    description: This guide will help you to install and start standalone TBMQ using Docker on Linux or macOS.
+    description: This guide will help you install and start standalone TBMQ using Docker on Linux or macOS.
     link: /docs/mqtt-broker/install/docker/
     icon: /images/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
@@ -10,7 +10,7 @@ mqttBroker:
     imageHeight: 36
   1:
     title: Docker (Windows)
-    description: This guide will help you to install and start standalone TBMQ using Docker on Windows.
+    description: This guide will help you install and start standalone TBMQ using Docker on Windows.
     link: /docs/mqtt-broker/install/docker-windows/
     icon: /images/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
@@ -19,7 +19,7 @@ mqttBroker:
     imageHeight: 36
   2:
     title: Building from sources
-    description: This guide will help you to download and build TBMQ from sources.
+    description: This guide will help you download and build TBMQ from sources.
     link: /docs/mqtt-broker/install/building-from-source/
     icon: /images/install/platform/sources.svg
     alt: Maven logo
@@ -28,7 +28,7 @@ mqttBroker:
     imageHeight: 36
   3:
     title: Docker Cluster setup
-    description: This guide will help you to set up TBMQ in cluster mode using Docker Compose.
+    description: This guide will help you set up TBMQ in cluster mode using Docker Compose.
     link: /docs/mqtt-broker/install/cluster/docker-compose-setup/
     icon: /images/install/cluster/docker-compose.svg
     alt: Docker Compose logo
@@ -37,7 +37,7 @@ mqttBroker:
     imageHeight: 36
   4:
     title: Minikube
-    description: This guide will help you to set up TBMQ in cluster mode using Minikube.
+    description: This guide will help you set up TBMQ in cluster mode using Minikube.
     link: /docs/mqtt-broker/install/cluster/minikube-cluster-setup/
     icon: /images/install/cluster/minikube.svg
     alt: Minikube logo
@@ -46,7 +46,7 @@ mqttBroker:
     imageHeight: 36
   5:
     title: Amazon EKS
-    description: This guide will help you to set up TBMQ in AWS EKS.
+    description: This guide will help you set up TBMQ in AWS EKS.
     link: /docs/mqtt-broker/install/cluster/aws-cluster-setup/
     icon: /images/install/cloud/eks.svg
     alt: Amazon EKS logo
@@ -55,7 +55,7 @@ mqttBroker:
     imageHeight: 36
   6:
     title: Azure
-    description: This guide will help you to set up TBMQ in Azure AKS.
+    description: This guide will help you set up TBMQ in AKS.
     link: /docs/mqtt-broker/install/cluster/azure-cluster-setup/
     icon: /images/install/cloud/azure.svg
     alt: Microsoft Azure logo
@@ -64,7 +64,7 @@ mqttBroker:
     imageHeight: 36
   7:
     title: Google Cloud Platform
-    description: This guide will help you to setup TBMQ in microservices mode in GKE.
+    description: This guide will help you set up TBMQ in GKE.
     link: /docs/mqtt-broker/install/cluster/gcp-cluster-setup/
     icon: /images/install/cloud/gcp.svg
     alt: Google Cloud Platform logo
@@ -73,7 +73,7 @@ mqttBroker:
     imageHeight: 36
   8:
     title: Helm
-    description: Kubernetes environment options for TBMQ cluster setup using Helm
+    description: Kubernetes environment options for TBMQ cluster setup using Helm.
     link: /docs/mqtt-broker/install/cluster/helm-cluster-setup-options/
     icon: /images/install/cluster/helm.svg
     alt: Helm logo

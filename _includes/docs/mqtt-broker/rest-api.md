@@ -43,14 +43,14 @@ This ensures the secure transmission of credentials and allows the API client to
 maintaining the integrity and confidentiality of the exchanged information.
 
 The main token is short-lived token you should use to perform the API calls. The refresh token is used to get new main token once it is expired.
-The expiration time of main and refresh tokens is [configurable](/docs/mqtt-broker/install/config/) in system settings
+The expiration time of main and refresh tokens is [configurable](/docs/{{docsPrefix}}mqtt-broker/install/config/) in system settings
 via `JWT_TOKEN_EXPIRATION_TIME` and `JWT_REFRESH_TOKEN_EXPIRATION_TIME` parameters. Default expiration time values are 2.5 hours and 1 week respectively.
 
 See sample command below to get the token for user "sysadmin@thingsboard.org", password "sysadmin" and server "THINGSBOARD_MQTT_BROKER_URL":
 
 {% capture tabspec %}token
-A,get-token.sh,shell,reference/resources/get-token.sh,/docs/mqtt-broker/reference/resources/get-token.sh
-B,response.json,json,reference/resources/get-token-response.json,/docs/mqtt-broker/reference/resources/get-token-response.json{% endcapture %}
+A,get-token.sh,shell,reference/resources/get-token.sh,/docs/{{docsPrefix}}mqtt-broker/reference/resources/get-token.sh
+B,response.json,json,reference/resources/get-token-response.json,/docs/{{docsPrefix}}mqtt-broker/reference/resources/get-token-response.json{% endcapture %}
 {% include tabs.html %}
 
 - Now, you should set ‘X-Authorization’ header to “Bearer $YOUR_JWT_TOKEN”. **Make sure** you use main JWT token and not the refresh token.

@@ -4,8 +4,8 @@
 
 Point-to-point (P2P) communication is one of the core MQTT patterns, enabling devices to exchange messages directly in a one-to-one manner.
 This pattern is especially relevant for IoT scenarios requiring reliable, targeted messaging, like private messaging, command delivery, and other direct interaction use cases.
-We aimed to evaluate how well the broker performs with [persistent DEVICE clients](/docs/mqtt-broker/architecture/#persistent-device-client) in a P2P communication scenario.
-Persistent DEVICE clients are well-suited for P2P messaging because they use a shared Kafka topic, reducing the load on [Kafka](/docs/mqtt-broker/architecture/#kafka-topics), while leveraging [Redis](/docs/mqtt-broker/architecture/#redis)
+We aimed to evaluate how well the broker performs with [persistent DEVICE clients](/docs/{{docsPrefix}}mqtt-broker/architecture/#persistent-device-client) in a P2P communication scenario.
+Persistent DEVICE clients are well-suited for P2P messaging because they use a shared Kafka topic, reducing the load on [Kafka](/docs/{{docsPrefix}}mqtt-broker/architecture/#kafka-topics), while leveraging [Redis](/docs/{{docsPrefix}}mqtt-broker/architecture/#redis)
 to ensure reliable message delivery even if the client is temporarily offline. The tests involved scaling the infrastructure while progressively increasing
 the load from 200,000 to **1,000,000 messages per second**, demonstrating TBMQ’s scalability and consistent performance.
 
@@ -28,7 +28,7 @@ Here, `$number` used as the unique identifier for each pair of publisher and sub
 
 ### Test agent setup
 
-The [test agent](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/#how-to-repeat-the-1m-msgsec-throughput-test) 
+The [test agent](/docs/{{docsPrefix}}mqtt-broker/reference/1m-throughput-p2p-performance-test/#how-to-repeat-the-1m-msgsec-throughput-test) 
 was designed to simulate publishers and subscribers, ensuring a realistic evaluation of TBMQ's performance under growing message traffic. 
 It consisted of a cluster of performance test pods (runners) and an orchestrator pod to supervise their operation. 
 We have two types of runner pods: publishers and subscribers. In our tests, the number of publisher pods always matches the number of subscriber pods, 
@@ -112,11 +112,11 @@ Where,
 
 These results demonstrate TBMQ's ability to provide reliable and scalable point-to-point messaging with excellent performance.
 Our focus remains on further optimization to enhance performance without compromising reliability. 
-For more details on potential improvements, see the [Future optimizations](/docs/mqtt-broker/reference/1m-throughput-p2p-performance-test/#future-optimizations) section.
+For more details on potential improvements, see the [Future optimizations](/docs/{{docsPrefix}}mqtt-broker/reference/1m-throughput-p2p-performance-test/#future-optimizations) section.
 
 ## How to repeat the 1M Msg/sec throughput test
 
-We recommend referring to our [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
+We recommend referring to our [installation guide](/docs/{{docsPrefix}}mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/p2p-perf-test/k8s/aws#readme) containing the scripts and parameters used for running TBMQ during this performance test,
 enabling you to gain deeper insights into our configuration. For the practical execution of performance tests, we offer a dedicated [performance testing tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/p2p-perf-test)
 capable of generating MQTT clients and simulating the desired message load. Especially for the P2P scenario testing, we improved our testing tool to have the ability to autogenerate the configuration for publishers and subscribers instead of loading it from a JSON configuration file.

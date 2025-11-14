@@ -2,12 +2,16 @@
 {:toc}
 
 The TBMQ WebSocket Client is a browser-accessible tool aimed at simplifying the debugging process and testing of MQTT clients across various scenarios. 
-Leveraging the [MQTT over WebSocket](/docs/mqtt-broker/user-guide/mqtt-over-ws/) feature, it's designed with principles of simplicity and ease of use in mind.
+Leveraging the [MQTT over WebSocket](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-over-ws/) feature, it's designed with principles of simplicity and ease of use in mind.
 It offers seamless management of MQTT clients, subscription to topics, and message reception or publication.
 
 TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) library for communication between client and broker.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/ws-overview.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/ws-overview.png)
+{% endif %}
 
 ## Connections
 
@@ -58,7 +62,7 @@ WebSocket connections allow users to establish and configure various parameters,
 * **Authentication**. TBMQ allows to create websocket connection with different types of handling credentials details like clientID (required), username, password:
   * **Auto-generated credentials**. Credentials with random Client ID, random Username and empty Password. Please note that corresponding Credentials will be created.
   * **Custom authentication**. Credentials with custom Client ID, Username, Password.
-  * **Use existing credentials**. User selects existing credentials of the [Basic](/docs/mqtt-broker/security/#basic-authentication) type and, if required, input Password.
+  * **Use existing credentials**. User selects existing credentials of the [Basic](/docs/{{docsPrefix}}mqtt-broker/security/#basic-authentication) type and, if required, input Password.
 
 Password input field appears when the selected credentials require password to establish the connection.
 
@@ -112,7 +116,11 @@ The status of the WebSocket Client may be one of the following:
 3. **Reconnecting** This status is displayed when the client is in the process of re-establishing a connection with the broker. The reconnecting can be cancelled clicking on the button Cancel in the top right corner.
 4. **Connection failed**. Indicates that the client was unable to establish a connection with the broker. This status may also include additional information such as the cause of the failure - for instance, authentication issues, session taken over, among others.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/ws-logs.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/ws-logs.png)
+{% endif %}
 
 ## Subscriptions
 
@@ -183,7 +191,11 @@ The table messages can be filtered by:
 * **Type 'All/Received/Published'** - click on the type label in the header of the Messages table.
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/ws-table-filter.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
+{% endif %}
 
 ### Publish a message
 
@@ -208,7 +220,11 @@ Here is a list of basic options for publishing a message, along with brief expla
 After filling out the necessary information and settings, locate and **click on the Send icon** to publish your message.
 The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+{% endif %}
 
 For MQTT clients utilizing **MQTT Version 5**, there are also additional parameters available to further customize your message publishing experience. 
 The combination of these features provides a comprehensive and flexible environment for MQTT message handling.
@@ -223,4 +239,8 @@ Below is a brief explanation of each setting:
 * **Response Topic**. String which is used as the Topic Name for a response message.
 * **User Properties**. Allows user-defined metadata in form of key-value pairs.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/pe/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
+{% else %}
 ![image](/images/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)
+{% endif %}

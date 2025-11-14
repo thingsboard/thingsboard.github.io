@@ -182,6 +182,11 @@ if __name__ == '__main__':
                     "_includes/docs/mqtt-broker/install/config.md")
         update_page(tb_repo_abs_path + "/integration/executor/src/main/resources/tbmq-integration-executor.yml",
                     "_includes/docs/mqtt-broker/install/ie-config.md")
+    elif tb_repo_type.lower() == "tbmq-pe":
+        update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard-mqtt-broker.yml",
+                    "_includes/docs/pe/mqtt-broker/install/config.md")
+        update_page(tb_repo_abs_path + "/integration/executor/src/main/resources/tbmq-integration-executor.yml",
+                    "_includes/docs/pe/mqtt-broker/install/ie-config.md")
     elif tb_repo_type.lower() == "edge":
         update_page(tb_repo_abs_path + "/application/src/main/resources/tb-edge.yml",
                     "_includes/docs/edge/user-guide/install/config.md")
@@ -189,4 +194,4 @@ if __name__ == '__main__':
         update_page(tb_repo_abs_path + "/application/src/main/resources/tb-edge.yml",
                     "_includes/docs/pe/edge/user-guide/install/config.md")
     else:
-        print("Invalid 'tb_repo_type'. Please provide 'ce' or `pe` or `tbmq` or 'edge' or 'edge-pe' as the first argument.")
+        print("Invalid 'tb_repo_type'. Please provide 'ce' or `pe` or `tbmq` or 'tbmq-pe' or 'edge' or 'edge-pe' as the first argument.")

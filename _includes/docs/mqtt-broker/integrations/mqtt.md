@@ -22,7 +22,7 @@ MQTT Integration processes messages and forwards them to an external MQTT broker
 
 Before setting up the integration, ensure the following:
 
-- A running **[TBMQ](/docs/mqtt-broker/install/installation-options/) instance**.
+- A running **[TBMQ](/docs/{{docsPrefix}}mqtt-broker/install/installation-options/) instance**.
 - A client capable of publishing MQTT messages (e.g., **TBMQ WebSocket Client**).
 - A client capable of receiving MQTT messages (e.g., **TBMQ WebSocket Client**).
 

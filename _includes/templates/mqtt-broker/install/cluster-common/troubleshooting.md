@@ -1,11 +1,12 @@
-In case of any issues you can examine service logs for errors. For example to see TBMQ logs execute the following command:
+In case of any issues, you can examine service logs for errors. For example, to see TBMQ logs, execute the following command:
 
 ```bash
-kubectl logs -f tb-broker-0
+kubectl logs -f tbmq-0
 ```
 {: .copy-code}
 
 Use the next command to see the state of all statefulsets.
+
 ```bash
 kubectl get statefulsets
 ```

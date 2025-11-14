@@ -31,8 +31,8 @@ The **Details** tab contains the next information:
    * **Session end** - for persistent disconnected clients, when the session info and messages will be removed.
    * **Client ID** - the identifier of the client.
    * **Client IP** - the IP address of the client.
-   * [**Client type**](/docs/mqtt-broker/user-guide/mqtt-client-type) (Device/Application).
-   * [**Client Credentials**](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) that authenticated current session.
+   * [**Client type**](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type) (Device/Application).
+   * [**Client Credentials**](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/mqtt-client-credentials/) that authenticated current session.
    * **MQTT version** - determines which version of MQTT protocol to be used - MQTT 3.1 (3), MQTT 3.1.1 (4), or MQTT 5.0 (5).
 
 ## Subscriptions

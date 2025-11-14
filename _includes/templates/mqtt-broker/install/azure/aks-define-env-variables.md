@@ -8,7 +8,6 @@ export AKS_LOCATION=eastus
 export AKS_GATEWAY=tbmq-gateway
 export TB_CLUSTER_NAME=tbmq-cluster
 export TB_DATABASE_NAME=tbmq-db
-export TB_REDIS_NAME=tbmq-redis
 echo "You variables ready to create resource group $AKS_RESOURCE_GROUP in location $AKS_LOCATION 
 and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
 ```
@@ -16,8 +15,8 @@ and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
 
 where:
 
-* TBMQResources - a logical group in which Azure resources are deployed and managed. We will refer to it later in this guide using **AKS_RESOURCE_GROUP**;
-* eastus - is the location where you want to create resource group. We will refer to it later in this guide using **AKS_LOCATION**. You can see all locations list by executing `az account list-locations`;
-* tbmq-gateway - the name of Azure application gateway;
-* tbmq-cluster - cluster name. We will refer to it later in this guide using **TB_CLUSTER_NAME**;
-* tbmq-db is the name of your database server. You may input a different name. We will refer to it later in this guide using **TB_DATABASE_NAME**.
+* TBMQResources — a logical group in which Azure resources are deployed and managed. We will refer to it later in this guide using **AKS_RESOURCE_GROUP**;
+* eastus — is the location where you want to create the resource group. We will refer to it later in this guide using **AKS_LOCATION**. You can see all locations list by executing `az account list-locations`;
+* tbmq-gateway — the name of Azure application gateway;
+* tbmq-cluster — cluster name. We will refer to it later in this guide using **TB_CLUSTER_NAME**;
+* tbmq-db — is the name of your database server. You may input a different name. We will refer to it later in this guide using **TB_DATABASE_NAME**.

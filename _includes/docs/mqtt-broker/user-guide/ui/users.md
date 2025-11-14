@@ -1,6 +1,12 @@
-TBMQ presently offers a single tier of user roles, namely 'Administrator'. Administrators are authorized to create, modify, and remove user accounts.
+{% if docsPrefix == null %}
+TBMQ provides a single user role: **Administrator**. Administrators have full permissions to create, update, and delete user accounts.
+{% endif %}
 
-User management can be performed through TBMQ's Web UI or [REST API](/docs/mqtt-broker/user-management/), which enables users to modify user details.
+{% if docsPrefix == "pe/" %}
+TBMQ PE includes two predefined user roles: **Administrator** and **Viewer**. For a detailed explanation of role-based access control, see [RBAC](/docs/pe/mqtt-broker/security/rbac/).
+{% endif %}
+
+User management can be performed through TBMQ's Web UI or [REST API](/docs/{{docsPrefix}}mqtt-broker/user-management/).
 
 * TOC
 {:toc}
@@ -14,7 +20,7 @@ To add a new User, please follow these steps:
 
 {% include images-gallery.html imageCollection="add-user-broker" %}
 
-Note that all new users are initially created with the default password `sysadmin`. Upon first logging in, users will be required to change default password.
+Note that all new users are initially created with the default password `sysadmin`. Upon logging in, users will be prompted to change the default password.
 
 ## Edit user
 
@@ -28,18 +34,25 @@ To edit the details of an existing administrator, please follow these steps:
 
 ## Delete user
 
-Logged-in user can delete other users, but not itself. To delete user follow these steps:
+Logged-in user can delete other users, but not itself. To delete the user, follow these steps:
 
 1. Find the user in the _Users_ table and click on the corresponding row.
 2. Click the _Delete user_ button and confirm the action by selecting _Yes_.
 
 {% include images-gallery.html imageCollection="delete-user-broker" %}
 
-## Login as admin user
+## Login as another user
 
-TBMQ allows administrators to securely log in as other users automatically, without requiring their credentials or manual authentication.
+TBMQ allows Admin users to securely log in as other users automatically, without requiring their credentials or manual authentication.
 
 1. Find the user in the _Users_ table (you can only log in as other users).
 2. Click the _Login_ button in the corresponding row.
 
 {% include images-gallery.html imageCollection="login-as-user" %}
+
+{% if docsPrefix == "pe/" %}
+## User created via OAuth 2.0
+
+{% include templates/mqtt-broker/security/user-password.md %}
+
+{% endif %}

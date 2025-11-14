@@ -2,18 +2,18 @@
 * TOC
 {:toc}
 
-The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
+The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/{{docsPrefix}}mqtt-broker/user-guide/shared-subscriptions/) 
 feature for **APPLICATION** clients. This feature enables multiple clients to subscribe and receive messages from a shared subscription.
 
 ## Usage Notes
 
 In TBMQ Application shared subscriptions are entities that used for management of shared subscriptions.
 
-* Add Application shared subscriptions if you plan to use shared subscriptions feature with [Application clients](/docs/mqtt-broker/user-guide/mqtt-client-type/#application-client).
+* Add Application shared subscriptions if you plan to use shared subscriptions feature with [Application clients](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/#application-client).
 * After creation of the entity **Topic filter** and **Partitions** fields **can not be changed**.
 * Application Shared Subscription feature **works with MQTT v5 and earlier versions**.
 
-Broker administrators are able to manage shared subscriptions via Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
+Broker administrators are able to manage shared subscriptions via Web UI or [REST API](/docs/{{docsPrefix}}mqtt-broker/application-shared-subscription/).
 
 ## Adding Shared Subscription
 
@@ -45,7 +45,7 @@ To edit entity please do the following steps:
 
 ## Deleting Shared Subscriptions
 
-Shared Subscriptions entities can be removed from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
+Shared Subscriptions entities can be removed from TBMQ system using the Web UI or [REST API](/docs/{{docsPrefix}}mqtt-broker/application-shared-subscription/).
 
 There are a few ways of deleting:
 

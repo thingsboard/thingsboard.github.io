@@ -1,0 +1,6 @@
+bigheader: "Getting Started"
+abstract: "Getting Started with PE TBMQ."
+hidetoc: "true"
+toc:
+  - title: Getting Started
+    path: /docs/pe/mqtt-broker/getting-started/

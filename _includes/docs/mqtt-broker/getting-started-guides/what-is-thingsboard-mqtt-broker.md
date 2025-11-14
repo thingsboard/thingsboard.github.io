@@ -1,28 +1,27 @@
+{% include templates/mqtt-broker/pe-tbmq-explore-banner.md %}
 
-**TBMQ** represents an open-source <a target="_blank" href="/products/mqtt-broker/">MQTT message broker</a>. It has the capacity to handle more than **4M** concurrent client connections, 
-supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single-node deployment 
-with low latency delivery. 
-In the cluster mode, its capabilities are further enhanced, 
-enabling it to support more than [100M concurrently connected clients](/docs/mqtt-broker/reference/100m-connections-performance-test/).
+**TBMQ {{tbmqSuffix}}** is an {{tbmqDefinition}} <a target="_blank" href="/products/mqtt-broker/">MQTT message broker</a> designed for massive scalability and high-performance message routing.
+It efficiently handles **millions** of concurrent client connections and delivers [millions of messages per second](/docs/{{docsPrefix}}mqtt-broker/reference/3m-throughput-single-node-performance-test/)
+with low latency in a single-node setup.
+In cluster mode, TBMQ’s capabilities scale even further, enabling it to support [large-scale IoT deployments](/docs/{{docsPrefix}}mqtt-broker/reference/100m-connections-performance-test/) 
+with exceptional reliability and throughput.
 
-At ThingsBoard, we’ve gained a lot of experience in building scalable IoT applications, which has helped us identify three main scenarios for MQTT-based solutions.
+At ThingsBoard, we’ve accumulated extensive experience in building scalable IoT applications, which has allowed us to identify **three key patterns** commonly found in MQTT-based solutions.
 
-* In the first scenario, numerous devices generate a large volume of messages that are consumed by specific applications, resulting in a **fan-in** pattern. 
-Normally, a few applications are set up to handle these lots of incoming data. It must be ensured that they do not miss any single message.
+* **Fan-in pattern:**
+  In this scenario, a large number of devices generate high message volumes that are consumed by a smaller set of applications. 
+  These applications must process all incoming data streams reliably and without message loss.
 
-* The second scenario involves numerous devices subscribing to specific updates or notifications that must be delivered. 
-This leads to a few incoming requests that cause a high volume of outgoing data. This case is known as a **fan-out (broadcast)** pattern.
+* **Fan-out (broadcast) pattern:**
+  Here, numerous devices subscribe to specific updates or notifications that must be delivered efficiently. 
+  A small number of incoming messages can result in a large number of outgoing updates, creating a high-output distribution flow.
 
-* The third scenario, **point-to-point (P2P)** communication, is a targeted messaging pattern, primarily used for one-to-one communication. 
-Ideal for use cases such as private messaging or command-based interactions where messages are routed between a single publisher and a specific subscriber through uniquely defined topics.
+* **Point-to-point (P2P) pattern:**
+  This is a targeted one-to-one communication model, ideal for use cases like private messaging or command-response interactions. 
+  Messages are exchanged directly between a single publisher and a specific subscriber through uniquely defined topics.
 
-Acknowledging these scenarios, we intentionally designed TBMQ to be exceptionally well-suited for all three.
-
-Implemented in Java, this cutting-edge solution is developed utilizing prominent open-source technologies such as Kafka, 
-which ensures low-latency message delivery, data durability, and horizontal scalability of the platform.
-
-Commencing in 2018, an active and continuous development process was initiated, leading to the integration of the broker into commercial applications as of 2021. 
-Following its successful deployment in production environments, it was determined in early 2023 that a public version of the broker should be made available.
+Recognizing these common patterns, we designed TBMQ to be exceptionally well-suited for all three.
+Developed in **Java**, TBMQ leverages leading open-source technologies, including **Kafka**, to provide low-latency message delivery, data durability, and horizontal scalability across the platform.
 
 ## Full MQTT Specification Support
 
@@ -57,6 +56,11 @@ Our implementation ensures reliable performance and compatibility across diverse
 * Proxy protocol
 * Blocked clients
 * MQTT channel backpressure support
+{% if docsPrefix == "pe/" %}
+* Single Sign-On (SSO)
+* Role-Based Access Control (RBAC)
+* White labeling
+{% endif %}
 
 ## Architecture
 
@@ -67,8 +71,8 @@ TBMQ is designed to be:
 * **robust and efficient**: can manage millions of clients and process millions of messages per second;
 * **durable**: the broker ensures data durability, preventing data loss.
 
-See [**TBMQ Architecture**](/docs/mqtt-broker/architecture) for more details.
+See [**TBMQ Architecture**](/docs/{{docsPrefix}}mqtt-broker/architecture) for more details.
 
 ## Ready to get started?
 
-<p><a href="/docs/mqtt-broker/getting-started/" class="button">Hello World Application</a></p>
+<p><a href="/docs/{{docsPrefix}}mqtt-broker/getting-started/" class="button">Hello World Application</a></p>

@@ -2,7 +2,7 @@
 
 To enable **MQTT over SSL/TLS (MQTTS)** in TBMQ, you need to provide valid SSL certificates and configure TBMQ to use them.
 
-For details on supported formats and configuration options, see the [MQTT over SSL](/docs/mqtt-broker/security/mqtts/) guide.
+For details on supported formats and configuration options, see the [MQTT over SSL](/docs/{{docsPrefix}}mqtt-broker/security/mqtts/) guide.
 
 **Prepare SSL Certificates**
 
