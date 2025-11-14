@@ -1,5 +1,9 @@
 ![image](/images/gateway/mqtt-connector/workers-settings-1-ce.png)
 
-**Max number of workers** is a maximal number of workers thread for converters (amount of workers changes dynamically, depending on load). Recommended amount 50-100.
+1. **Max messages queue per worker**<br/>
+How many MQTT messages one worker handles in a single turn before letting others run. 
+Bigger number = higher throughput; smaller = lower latency. Example: ~100 for heavy telemetry, ~10–20 for fast RPC.
 
-**Max messages queue per worker** is a maximal messages count that will be in queue for each converter worker.
+2. **Max number of workers**<br/>
+How many workers run at the same time. More workers use more CPU cores but can cause contention if too high. 
+Start near your CPU core count and tweak based on backlog and CPU.

@@ -1,24 +1,15 @@
-To adding new requests mapping, navigate to the "Requests mapping" tab and click the "plus" icon.
-In the open modal window, select the "Disconnect request" type, set a topic filter, and fill in the "Name" field of the "Device" section. Then, click "Add".
+In order to add new disconnect request mapping, follow these steps:
 
-**Name in a message from broker:** 
+{% assign DisconnectRequest = '
+    ===
+        image: /images/gateway/mqtt-connector/mqtt-gateway-configuring-11-ce.png,
+        title: Click the "**Add mapping**" under "**Requests mapping**" section to add new disconnect request mapping.
+    ===
+        image: /images/gateway/mqtt-connector/mqtt-gateway-disconnect-configuring-12-ce.png,
+        title: Select "**Disconnect request**" in the **Request type** field, enter the "**Topic filter**", and select source 
+        type for **Name** field (`Message`, `Topic`, or `Constant`). Enter the corresponding 
+        value which can be [json path](/docs/iot-gateway/config/mqtt/#json-path), [regex](/docs/iot-gateway/config/mqtt/#regular-expressions), or constant value based on the selected source type.
+    '
+%}
 
-![image](/images/gateway/mqtt-connector/disconnect-request-1-ce.png)
-
-In this case the following messages are valid:
-
-```bash
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/disconnect" -m '{"serialNumber":"SN-001"}'
-```
-{: .copy-code}
-
-**Name in topic address:**
-
-![image](/images/gateway/mqtt-connector/disconnect-request-2-ce.png)
-
-In this case the following messages are valid:
-
-```bash
-mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "sensor/SN-001/disconnect" -m ''
-```
-{: .copy-code}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=DisconnectRequest %}
