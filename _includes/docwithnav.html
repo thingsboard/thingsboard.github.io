@@ -118,6 +118,10 @@
     {% assign hasTocContent = "true" %}
 {% endif %}
 
+{% if page.table-of-contents == "false" %}
+{% assign docContentClassList = docContentClassList | append: ' noTableOfContents' %}
+{% endif %}
+
 <section id="encyclopedia">
   {% if siteData[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
   <div id="docsToc">
