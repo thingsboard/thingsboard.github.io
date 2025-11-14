@@ -48,6 +48,7 @@ The node's configuration allows you to define a mapping from the originator's en
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

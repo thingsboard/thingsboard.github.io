@@ -4,7 +4,7 @@ title: Check Relation between Entities
 description: Check relationship
 
 ---
-The purpose of this tutorial is to show how the [**Check Relation**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node) node can be used to check the relation between Entities.
+The purpose of this tutorial is to show how the [**check relation presence**](/docs/user-guide/rule-engine-2-0/nodes/filter/check-relation-presence/) node can be used to check the relation between Entities.
 
 * TOC
 {:toc}
@@ -52,21 +52,21 @@ You need to read the following guides before you start this tutorial:
 
 In this section, we explain the purpose of each node in this tutorial:
 
-- Node A: [**Check Relation**](/docs/user-guide/rule-engine-2-0/filter-nodes/#check-relation-filter-node) node.
+- Node A: [**check relation presence**](/docs/user-guide/rule-engine-2-0/nodes/filter/check-relation-presence/) node.
   - Checks the relation from the Device, **Fire Alarm System**, to the originator of the message **Smoke Detector** using the type and direction of relation. 
-- Node B: [**Change originator**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#change-originator) node.
+- Node B: [**change originator**](/docs/user-guide/rule-engine-2-0/nodes/transformation/change-originator/) node.
   - Change the originator from Devices **Smoke Detector** to the related Device **Fire Alarm System** and the submitted message will be processed as a message from Device **Fire Alarm System**.
-- Node C: [**Transformation Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node).
+- Node C: [**transformation script**](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/).
   - Transform an original message into RPC request message. 
-- Node D: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node.
+- Node D: [**RPC call request**](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request/) node.
   - Takes the message payload and sends it as a response to the **Fire Alarm System**.
-- Node E: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
+- Node E: [**filter script**](/docs/user-guide/rule-engine-2-0/nodes/filter/script/) node.
   - Checks if data of incoming message is **smoke**.
-- Node F: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
+- Node F: [**clear alarm**](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm/) node.
   - Loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.  
-- Node G: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
+- Node G: [**create alarm**](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm/) node.
   - Tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.  
-- Node H: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
+- Node H: [**rule chain**](/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/) node.
   - Forwards incoming Message to specified Rule Chain **Related Fire Alarm System**. 
 
 <br>
@@ -330,7 +330,7 @@ Please refer to the third and fourth links under the **See Also** section to see
 
 ## See Also
 
-- [Switch Node](/docs/user-guide/rule-engine-2-0/filter-nodes/#switch-node) guide - for more information about how to use Switch Node in Thignsboard.
+- [Switch Node](/docs/user-guide/rule-engine-2-0/nodes/filter/switch/) guide - for more information about how to use Switch Node in Thignsboard.
 
 - [Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/#step-1-adding-temperature-validation-node) tutorial - for more information about how to validate an incoming telemetry using the Script Filter node.
 

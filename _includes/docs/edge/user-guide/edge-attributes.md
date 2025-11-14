@@ -85,7 +85,7 @@ To use **Edge** attributes as placeholders in the **Rule Chain template**:
 * Then, find the **"rest api call"** node using the **Node search** bar. Drag and drop the node onto the **Rule Chain sheet**. In the pop-up window, enter the **node name** and click the **"Add"** button.
   * **Name:** Enter the node name.
   * **Headers:** Enter the request header and value. The header or value can be a static string, or pattern that is resolved using Message Metadata properties.
-  * Click the **"Add"** button. Read more about the **REST API Call node configuration** [here](/docs/{{peDocsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node){: target="_blank"}.
+  * Click the **"Add"** button. Read more about the **REST API Call node configuration** [here](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call/){:target="_blank"}.
 * Connect the **"message type switch"** and **"related entity data"** nodes with the **“Post telemetry”** link label. Then, connect the **"related entity data"** and **"rest api call"** nodes with the **"Success"** link label. Click the **“Apply changes”** button on the **Rule Chain sheet**.
 
 {% include images-gallery.html imageCollection="edgeAttributesAsPlaceholders" %}

@@ -47,6 +47,7 @@ The configuration allows you to specify the target owner type and how the system
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

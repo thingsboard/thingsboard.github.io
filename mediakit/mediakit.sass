@@ -1,133 +1,355 @@
 #docsContent
     #content
-        h1.logos-title, h1.download-logos, h2.download-logos
-            z-index: 1
+        & > div
+            margin: 0 auto
+            max-width: 1400px
+        .media-kit-title
+            color: #212529
             text-align: center
-            position: relative
-            padding: 0
-            &:before
-                content: none
-        h1.logos-title
+            font-size: 56px
+            font-weight: 600
+            line-height: 72px
+            letter-spacing: 0.14px
+            margin-bottom: 16px
+            padding-right: 0
+            animation: appear 0.6s ease-out forwards
+        .media-kit-subtitle
+            color: #3D3D3D
+            text-align: center
+            font-size: 28px
+            font-weight: 400
+            line-height: 44px
+            letter-spacing: 0.249px
+            margin-bottom: 100px
+            animation: appear 0.6s ease-out forwards
+        .media-kit-assets-title
+            color: #212121
+            text-align: center
             font-size: 36px
-            line-height: 54px
-            margin: 0 0 88px
-        h1.download-logos, h2.download-logos
-            font-size: 20px
-            line-height: 30px
-            margin: 0 0 48px
-            color: #899AAB
-            font-weight: normal
-    #media-kit-background
-        z-index: 0
-        position: absolute
-        top: 524px
-        left: 50%
-        img
-            position: absolute
-            top: -650px
-            left: 134px
-            box-shadow: none !important
-        div
-            position: absolute
-            -ms-transform: skewY(-6deg)
-            transform: skewY(-6deg)
-            width: 436px
-            height: 90px
-            &.main1
-                top: -936px
-                width: 2560px
-                height: 700px
-                left: -1280px
-                background-color: #F7F9FC
-
-    .mediakit-logos
-        display: flex
-        flex-direction: column
-        justify-content: center
-        align-items: center
-        width: 100%
-        .mediakit-logo
-            position: relative
-            width: 318px
-            height: 104px
-            background: #FFFFFF
-            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
-            border-radius: 6px
-            &.logo-white
-                background: #2A7DEC
-            &:not(:last-child)
-                margin-bottom: 32px
-            .logo-container
-                width: 100%
-                height: 100%
-                display: flex
-                text-align: center
-                margin: 0
-                img
-                    max-height: 50px
-                    max-width: 100%
-                    height: 50px
-                    margin: auto
-                    display: block
-                    vertical-align: middle
-                    border: 0
-
-    a.download-logos
-        margin-top: 48px
-        position: relative
-        display: inline-block
-        font-size: 18px
-        font-weight: 500
-        &:after
-            content: ""
-            background-image: url(/images/download-icon.svg)
-            background-size: contain
-            display: block
-            position: absolute
-            top: 6px
-            right: -22px
-            width: 12px
-            height: 12px
-            border: none
-            filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
-
-    .trademark-notice
-        margin-top: 24px
-        margin-bottom: 136px
-        text-align: center
-        color: #75767C
-        line-height: 27px
-        font-size: 18px
-        font-weight: normal
-
-    #content
-        .trademark-info
-            margin-bottom: 86px
-            h1, h2
-                font-weight: 600
-                font-size: 20px
-                line-height: 36px
-                padding: 0 0 8px
-                margin: 0
-                pointer-events: all
+            font-weight: 500
+            line-height: 48px
+            letter-spacing: 0.09px
+            margin-bottom: 56px
+            animation: appear 0.6s ease-out forwards
+        .thingsboard-logos, .thingsboard-colors
+            padding: 46px
+            border-radius: 24px
+            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0 0 8px 0 rgba(0, 0, 0, 0.08)
+            margin-bottom: 56px
+            h3
                 &:before
-                    content: none
-            p, ul, li
-                font-weight: normal
-                font-size: 18px
-                line-height: 27px
+                    display: none
+                color: #212529
+                font-size: 28px
+                line-height: 44px
+                letter-spacing: 0.249px
+                margin-bottom: 8px
             p
-                margin-bottom: 48px
-            ul
-                margin: 0 0 48px
-                li
-                    margin-bottom: 0
+                margin-top: 0
+                color: #3D3D3D
+                font-size: 16px
+                font-weight: 400
+                line-height: 28px
+                &.mb
+                    margin-bottom: 32px
+            .logos-images
+                display: flex
+                &:first-of-type
+                    margin-bottom: 24px
+                &:last-of-type
+                    margin-bottom: 40px
+                img
+                    max-width: 436px
+                    width: 100%
+            .logos-examples
+                display: flex
+                justify-content: space-around
+                max-width: 1300px
+                margin-bottom: 40px
+            .download
+                color: #2a7dec
+                border-radius: 6px
+                border: 1px solid #2A7DEC
+                padding: 10px
+                font-size: 16px
+                font-weight: 500
+                line-height: 28px
+                cursor: pointer
+                text-decoration: none
+                display: block
+                margin: 0 auto
+                width: fit-content
+                align-content: center
+                &:hover
+                    filter: brightness(1.3) contrast(0.9)
+                img
+                    width: 15px
+                    margin-left: 5px
+        .thingsboard-logos
+            animation: slide-in 0.8s ease-out forwards
+            position: relative
+            z-index: 1
+            &:before
+                content: ""
+                position: absolute
+                background: url("/images/customers/clients-feedback-bg.svg")
+                top: -520px
+                left: -1550px
+                width: 2187px
+                height: 1004px
+                z-index: -1
+            &:after
+                content: ""
+                position: absolute
+                background: url("/images/customers/clients-feedback-bg.svg")
+                top: -521px
+                right: -1500px
+                width: 2187px
+                height: 1004px
+                z-index: -1
+        .thingsboard-colors
+            & > div
+                display: flex
+                gap: 32px
+            .color-block
+                flex: 1
+                border: 1px solid #E0E0E0
+                border-radius: 24px
+                padding: 8px
+                display: flex
+                gap: 12px
+                .color
+                    color: white
+                    background-color: #305680
+                    font-size: 28px
+                    line-height: 24px
+                    padding: 20px 32px
+                    border-radius: 18px
+                    width: 280px
+                    text-align: center
+                    align-content: center
+                    &.pe
+                        background-color: #00695C
+                .color-values
+                    padding: 0 12px
+                    font-size: 14px
+                    line-height: 24px
+                    font-weight: 400
+                    p
+                        &:last-of-type
+                            span:last-of-type
+                                left: 156px
+                        position: relative
+                        span
+                            display: inline-block
+                            width: 46px
+                            margin-right: 20px
+                            &:last-of-type
+                                position: absolute
+                                top: -32px
+                                left: 111px
+                                width: max-content
+                                padding: 0 7px
+                                visibility: hidden
+                                background-color: #0000008F
+                                color: #fff
+                                text-align: center
+                                border-radius: 6px
+                        img
+                            cursor: pointer
+                            &:hover + span
+                                visibility: visible
+        .trademarks
+            padding: 100px 0
+            position: relative
+            z-index: 1
+            background-color: transparent
+            margin-bottom: 100px
+            &:before
+                content: ""
+                position: absolute
+                width: 300%
+                height: 100%
+                background-color: #F4F8FE
+                z-index: -1
+                left: -100%
+                top: 0
+            h3
+                &:before
+                    display: none
+                color: #212529
+                font-size: 36px
+                line-height: 48px
+                letter-spacing: 0.249px
+                margin-bottom: 8px
+                font-weight: 500
+            .block
+                display: flex
+                align-items: center
+                gap: 32px
+                padding: 40px 0
+                border-bottom: 1px solid #DDECFD
+                background-color: transparent
 
-@media screen and (min-width: 1025px)
-    #docsContent
-        .mediakit-logos
-            flex-direction: row
-            .mediakit-logo
-                &:not(:last-child)
-                    margin-bottom: 0
-                    margin-right: 32px
+                &:last-child
+                    padding-bottom: 0
+
+                .text
+                    h4
+                        font-size: 28px
+                        line-height: 44px
+                        color: #202021
+                        margin-bottom: 40px
+                    & > p
+                        margin-bottom: 16px
+                    p a
+                        position: relative
+                        text-decoration: underline
+                        font-size: 16px
+                        line-height: 28px
+                        font-weight: 400
+                    p
+                        font-size: 16px
+                        line-height: 28px
+                        font-weight: 400
+                        color: #3B3C3D
+                    ul
+                        margin-left: 34px
+                        list-style: disc
+
+                        li
+                            margin-bottom: 16px
+                            list-style: disc
+                &:nth-of-type(even)
+                    flex-direction: row-reverse
+
+                &:last-child
+                    border-bottom: none
+                img
+                    width: 450px
+                    border-radius: 24px
+                    height: 250px
+        .contact-us-banner
+            position: relative
+            z-index: 1
+            padding: 46px
+            background: #fff
+            border-radius: 24px
+            box-shadow: -4px 15px 50px -20px rgba(0, 0, 0, 0.15), 0px 0px 8px 0px rgba(0, 0, 0, 0.08)
+            max-width: 1408px
+            width: 100%
+            margin-bottom: 92px
+            overflow: hidden
+            img
+                position: absolute
+                right: 46px
+                top: 93px
+                @media (max-width: 1150px)
+                    display: none
+            .contact-us-banner-content
+                max-width: 600px
+                h2
+                    font-size: 36px
+                    font-weight: 500
+                    line-height: 48px
+                    margin-bottom: 16px
+                    padding: 0
+                    @media (max-width: 599px)
+                        font-size: 28px
+                p
+                    font-size: 18px
+                    font-weight: 400
+                    line-height: 30px
+                    color: rgba(0, 0, 0, 0.76)
+                    margin-bottom: 32px
+                    margin-top: 0
+                    @media (max-width: 599px)
+                        font-size: 14px
+                .contact-us-banner-buttons
+                    display: flex
+                    gap: 16px
+                    flex-wrap: wrap
+                    button
+                        background: #2A7DEC
+                        color: #fff
+                    a
+                        color: #2A7DEC
+                        border: 1px solid #2A7DEC
+                    button, a
+                        text-align: center
+                        font-size: 16px
+                        font-weight: 500
+                        line-height: 28px
+                        width: 154px
+                        border-radius: 6px
+                        padding: 10px 0
+                        @media (max-width: 600px)
+                            width: 100%
+                        &:hover
+                            text-decoration: none
+                            filter: brightness(1.3) contrast(0.9)
+
+        @media (max-width: 1780px)
+            .thingsboard-colors
+                padding: 32px
+                & > div
+                    align-items: center
+                    justify-content: center
+                    .color-block
+                        flex: unset
+                        flex-direction: column
+        @media (max-width: 900px)
+            .trademarks
+                padding: 50px 0
+                h3
+                    text-align: center
+                    font-size: 28px
+                    line-height: 44px
+                .block
+                    flex-direction: column
+                    text-align: left
+                    &:nth-of-type(even)
+                        flex-direction: column
+                    .text
+                        h4
+                            font-size: 24px
+                            line-height: 36px
+
+                        img
+                            height: auto
+                            width: 100%
+        @media (max-width: 720px)
+            .thingsboard-colors
+                & > div
+                    flex-direction: column
+        @media (max-width: 599px)
+            .media-kit-title
+                font-size: 36px
+                line-height: 48px
+                text-align: center
+            .media-kit-subtitle
+                font-size: 20px
+                line-height: 32px
+                text-align: center
+                margin-bottom: 50px
+            .thingsboard-logos
+                padding: 32px
+                .logos-images, .logos-examples
+                    flex-direction: column
+                    align-items: center
+
+
+@keyframes slide-in
+    from
+        opacity: 0
+        transform: translateY(100px)
+    to
+        opacity: 1
+        transform: translateY(0)
+@keyframes appear
+    from
+        opacity: 0
+        scale: 0.8
+    to
+        opacity: 1
+        scale: 1

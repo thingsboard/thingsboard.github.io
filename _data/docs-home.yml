@@ -76,7 +76,7 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/re-getting-started/
     - title: Queues
       path: /docs/user-guide/rule-engine-2-5/queues/
-    - title: Rule Nodes
+    - title: Rule nodes
       path: /docs/user-guide/rule-engine-2-0/nodes/
     - title: Data processing & actions
       section:
@@ -118,7 +118,7 @@ toc:
           path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
         - title: Using queues for message reprocessing
           path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
-    - title: Custom Rule Nodes
+    - title: Custom rule nodes
       path: /docs/user-guide/contribution/rule-node-development/
     - title: Templatization
       path: /docs/user-guide/templatization/

@@ -30,6 +30,7 @@ Checks the incoming message type against the configured set of message types. If
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -37,8 +38,6 @@ Checks the incoming message type against the configured set of message types. If
 2. Check whether the type is in the configured set.
     1. If it is, route the message to downstream nodes via `True`.
     2. If it is not, route the message to downstream nodes via `False`.
-
-> Note: The incoming message is not modified.
 
 ## Output connections
 
@@ -50,10 +49,6 @@ Checks the incoming message type against the configured set of message types. If
     * If an unexpected error occurred during message processing.
 
 ## Examples
-
-The examples below show only the **relevant** fields of the incoming message. Unless explicitly stated otherwise, other message fields may have any values.
-
----
 
 ### Example 1 — Message type matches → `True`
 
@@ -114,7 +109,3 @@ Routed via **`False`**.
 **Explanation**
 
 The message type is not in the configured set.
-
-## Use cases
-
-Use **message type filter** when processing requires a binary decision (include/exclude) based on the message type.

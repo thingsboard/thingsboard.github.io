@@ -107,7 +107,8 @@ data, while time series are used for storing dynamic or frequently changing data
 Dynamic device name/profile<small></small>%,%dynamicdevicenameandprofile%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/dynamic-device-name-and-profile.md%br%
 Alternative responses addresses<small></small>%,%alternativeresponsesaddresses%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/alternative-responses-addresses.md%br%
 Discovering all device<small>(advanced configuration mode only)</small>%,%discoveringalldevice%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/discovering-all-device.md%br%
-Reading all device objects<small>(advanced configuration mode only)</small>%,%readingalldeviceobjects%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/reading-all-device-objects.md{% endcapture %}
+Reading all device objects<small>(advanced configuration mode only)</small>%,%readingalldeviceobjects%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/reading-all-device-objects.md%br%
+Filtering objects and properties<small>(advanced configuration mode only)</small>%,%filteringobjectsandproperties%,%templates/iot-gateway/bacnet-connector/examples/time-series-and-attributes/filtering-objects-and-properties.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="bacnet-attributes-timeseries-examples" toggle-spec=bacnet-attributes-timeseries-examples %}
 
 ## Requests mapping
@@ -283,6 +284,17 @@ Example of the application configuration:
 }
 ```
 
+### Foreign device (v.3.7.6+)
+
+The foreign device configuration parameters are used to configure the gateway as a foreign device in the BACnet network.
+It is useful when the gateway is behind a NAT and needs to register with a BACnet Broadcast Management Device (BBMD).
+
+| **Parameter**              | **Default value** | **Description**                                   |
+|:---------------------------|-------------------|---------------------------------------------------|
+| foreignDevice.ttl (in sec) | **900**           | Time to live for the foreign device registration. |
+| foreignDevice.address      | **0.0.0.0**       | The address of the BBMD to register with.         |
+| ---                        |                   |                                                   |
+
 ### Devices
 
 The device list contains an array of BACnet devices that can be connected to the connector and interact with them. 
@@ -327,6 +339,20 @@ Example of the device mapping configuration:
   ]
 }
 ```
+
+#### Available variables for device name/profile expressions
+
+You can use the following parameters for forming device name and profile:
+- `${objectName}` - the device object name of the BACnet device.
+- `${objectId}` - the device object identifier of the BACnet device.
+- `${vendorId}` - the device vendor identifier of the BACnet device.
+- `${address}` - the device host address.
+- `${routerId}` - the device router identifier.
+- `${routerName}` - the device router name.
+- `${routerAddress}` - the device router address.
+- `${routerVendorId}` - the device router vendor identifier.
+
+You can find detail examples [here](/docs/iot-gateway/config/bacnet/#usage-examples).
 
 #### Device attributes and time series
 
@@ -430,50 +456,40 @@ Example of the device RPC methods configuration:
 
 ## Additional information
 
-### Object identifiers
+### Supported Object Types
 
-The BACnet connector Object identifiers consist of two parts separated by a colon (“:”) symbol:  
-the name of object and the number of this object on the device.  
-
-Tested and supported objects:  
+The BACnet connector support the following BACnet object types:
 
 | **BACnet object id** | **ThingsBoard object id** |
 |----------------------|---------------------------|
 | **Binary input**     | **binaryInput**           |
-| **Binary output**    | **binaryOutput**          |
-| **Binary value**     | **binaryValue**           |
+| **Binary Output**    | **binaryOutput**          |
+| **Binary Value**     | **binaryValue**           |
 | **Analog Input**     | **analogInput**           |
-| **Analog output**    | **analogOutput**          |
-| **Analog value**     | **analogValue**           |
+| **Analog Output**    | **analogOutput**          |
+| **Analog Value**     | **analogValue**           |
+| **Schedule Object**  | **schedule**              |
 | ---                  | ---                       |
 
-Objects in testing:  
+### Supported Property Identifiers
 
-* accumulatorObject
-* averagingObject
-* calendarObject
-* commandObject
-* fileObject
-* lifeSafetyPointObject
-* lifeSafetyZoneObject
-* loopObject
-* multiStateInputObject
-* multiStateOutputObject
-* multiStateValueObject
-* notificationClassObject
-* programObject
-* pulseConverterObject
-* scheduleObject
-* structuredViewObject
-* trendLogObject
-
-### Property identifiers
-
-Property identifiers depend on type of the BACnet object, provided in camelCase, e.g.
-**presentValue**
-**objectName**
-**objectDescription**
-etc.
+Property identifiers depend on type of the BACnet object, provided in camelCase, e.g:
+- presentValue
+- objectName
+- objectDescription
+- units
+- eventState
+- outOfService
+- priorityArray
+- relinquishDefault
+- currentCommandPriority
+- eventMessageTexts
+- eventMessageTextsConfig
+- eventAlgorithmInhibitReference
+- timeDelayNormal
+- weeklySchedule
+- listOfObjectPropertyReferences
+- location
 
 ## Troubleshooting
 

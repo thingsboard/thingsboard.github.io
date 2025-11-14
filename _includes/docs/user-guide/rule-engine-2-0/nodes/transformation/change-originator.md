@@ -69,6 +69,7 @@ If *Entity by name pattern* is configured for *New originator*, you need to spec
   ]
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -85,11 +86,6 @@ If *Entity by name pattern* is configured for *New originator*, you need to spec
     * If unexpected error occurred during message processing.
 
 ## Examples
-
-The examples below show only the **relevant** parts of the incoming message, rule node configuration, and system state.
-Any information not explicitly shown has no effect on the processing.
-
----
 
 ### Example 1 — Changing originator to a customer
 

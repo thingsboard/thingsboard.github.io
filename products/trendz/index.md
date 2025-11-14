@@ -73,7 +73,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Define KPI using calculated fields</h3>
                 <p class="text">Calculated fields are one of the most powerful features for KPI monitoring and prediction. Based on the input data, calculated fields allow you to run statistical functions and create new data items by applying calculations.</p>
-                <a id="Products_TA_LearnMore1" href="/docs/trendz/calculated-fields/" class="button try-pe gtm_button">Learn More</a>
+                <a id="Products_TA_LearnMore1" href="/docs/trendz/calculations/overview/" class="button try-pe gtm_button">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper chart-wrapper pie-chart">

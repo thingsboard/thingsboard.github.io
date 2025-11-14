@@ -1,8 +1,8 @@
 ---
 layout: development-services
-title: "Custom IoT Development of Scalable IoT Solutions"
+title: "Custom IoT Development  |  3X Faster Delivery & Fixed Cost"
 notitle: "true"
-description: "Fast delivery of scalable IoT solutions with fixed cost and timeline. ThingsBoard offers custom IoT development services, delivering high-quality Internet of Things solutions tailored to your needs."
+description: "Get your IoT development services 3X faster and 2X lower TCO. We guarantee high-quality, scalable solutions with deep IoT expertise. Ensure project predictability."
 ---
 
 <section class="hero light-text">
@@ -12,10 +12,10 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <div class="text">
             <div id="hero-content">
                 <h1 class="cdu-title">IoT Development Services</h1>
-                <h2 class="cdu-sub-title">Fast delivery of scalable IoT solutions with fixed cost and timeline</h2>
+                <h2 class="cdu-sub-title">3X faster delivery, 2X lower cost of ownership: accelerate your IoT solution development</h2>
             </div>
             <div class="request-consultation-container">
-                <button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button request-consultation button">Request a consultation</button>
+                <button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button request-consultation button">Accelerate my solution delivery</button>
             </div>
         </div>
         <div class="hero-images">
@@ -249,7 +249,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
                             class="cdu-button anchor-button gtm_button button">
-                            Get in Touch
+                            Request a short call
                         </button>
                     </div>
                 </div>
@@ -667,8 +667,8 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <button
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
-                            class="cdu-button anchor-button gtm_button button">
-                        Get in Touch
+                            class="cdu-button anchor-button gtm_button button create-perfect-solution">
+                         Create your perfect IoT solution
                     </button>
                 </div>
             </section>
@@ -866,12 +866,12 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
             </div>
             <div class="services-banner">
                 <div class="services-content">
-                    <h3>Book a free session with a ThingsBoard architect</h3>
+                    <h3>Stop paying for technical debt: secure your IoT architecture</h3>
                     <button
                             id="Serv_DevServ_GetInTouch"
                             onclick="onContactUsClick(0)"
-                            class="cdu-button anchor-button gtm_button button">
-                        Get in Touch
+                            class="cdu-button anchor-button gtm_button button book-free-session">
+                        Book a free session with a ThingsBoard architect
                     </button>
                 </div>
                 <img src="/images/usecases/services-icon.svg" width="380" height="267" alt="Letter icon">
@@ -1119,9 +1119,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         <section class="contact">
             <div class="contact-us-banner">
                 <div class="contact-us-banner-content">
-                    <h2>Let’s build your solution together</h2>
+                    <h2>Ready to start your IoT project?</h2>
                     <div class="contact-us-banner-buttons">
-                        <button onclick="onContactUsClick(0)">Get in Touch</button>
+                        <button onclick="onContactUsClick(0)" class="lets-build-solution-together">Let’s build your solution together</button>
                     </div>
                 </div>
                 <img src="/images/usecases/email-icon.svg" width="380" height="267" alt="Letter icon">
@@ -1307,7 +1307,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                             <input type="hidden" name="utm_campaign" id="utm_campaign">
                             <input type="hidden" name="utm_term" id="utm_term">
                             <input type="hidden" name="utm_content" id="utm_content">
+                            <input type="hidden" name="user_ip" id="user_ip">
                             <input type="hidden" name="client_id" id="client_id">
+                            <input type="hidden" name="tags" id="tags" value="custom dev">
+                            <input type="hidden" name="form_id" id="form_id" value="dev_unit">
+                            <input type="hidden" name="path" id="path" value="">
                             <div class="hp-container">
                                 {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
                                 <label for="{{ random_hp }}">Leave this field empty</label>
@@ -1339,19 +1343,19 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 <div class="form-section">
                     <div class="form-element">
                         <label for="name">
-                            <input class="form-control cdu-form-control" value="" placeholder="John Doe" name="name-popup" id="name-popup" type="text" size="40" maxlength="50" aria-invalid="false">
+                            <input class="form-control cdu-form-control" value="" placeholder="John Doe" name="name" id="name-popup" type="text" size="40" maxlength="50" aria-invalid="false">
                             <p>Name</p>
                         </label>
                     </div>
                     <div class="form-element">
                         <label for="email">
-                            <input class="form-control cdu-form-control" value="" placeholder="john@example.com" name="email-popup" id="email-popup" type="email" size="40" maxlength="80" aria-invalid="false">
+                            <input class="form-control cdu-form-control" value="" placeholder="john@example.com" name="email" id="email-popup" type="email" size="40" maxlength="80" aria-invalid="false">
                             <p>Email Address</p>
                         </label>
                     </div>
                     <div style="display: none" class="form-element next">
-                        <label for="subject-popup" class="select-label">
-                            <select class="form-control select cdu-form-control" name="subject-popup">
+                        <label for="subject" class="select-label">
+                            <select class="form-control select cdu-form-control" name="subject">
                                 <option value="" disabled>Select Subject</option>
                                 <option value="Custom Development" selected>Custom Development</option>
                                 <option value="Technical Support">Technical Support</option>
@@ -1369,7 +1373,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     </div>
                     <div class="form-element next">
                         <label for="msg-popup">
-                            <textarea id="msg-popup" class="form-control text-area cdu-form-control cdu-text-area" value="" placeholder="Type your message here" name="message-popup" type="text" size="40" maxlength="800"></textarea>
+                            <textarea id="msg-popup" class="form-control text-area cdu-form-control cdu-text-area" value="" placeholder="Type your message here" name="message" type="text" size="40" maxlength="800"></textarea>
                             <p class="text-area-label">Message</p>
                         </label>
                     </div>
@@ -1378,9 +1382,9 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                     <fieldset>
                         <legend class="accordion-button active">Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
                         <div class="label-container accordion-content" style="max-height: 134px">
-                            <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard-popup" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
-                            <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard-popup" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
-                            <label><input id="familiarity-not-familiar-popup" type="radio" name="thingsboard-popup" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
+                            <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
+                            <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
+                            <label><input id="familiarity-not-familiar-popup" type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
                         </div>
                     </fieldset>
                     <fieldset>
@@ -1402,12 +1406,16 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                         </div>
                     </fieldset>
                 </div>
-                <input type="hidden" name="utm_source-popup" id="utm_source-popup">
-                <input type="hidden" name="utm_medium-popup" id="utm_medium-popup">
-                <input type="hidden" name="utm_campaign-popup" id="utm_campaign-popup">
-                <input type="hidden" name="utm_term-popup" id="utm_term-popup">
-                <input type="hidden" name="utm_content-popup" id="utm_content-popup">
-                <input type="hidden" name="client_id-popup" id="client_id-popup">
+                <input type="hidden" name="utm_source" id="utm_source">
+                <input type="hidden" name="utm_medium" id="utm_medium">
+                <input type="hidden" name="utm_campaign" id="utm_campaign">
+                <input type="hidden" name="utm_term" id="utm_term">
+                <input type="hidden" name="utm_content" id="utm_content">
+                <input type="hidden" name="user_ip" id="user_ip">
+                <input type="hidden" name="client_id" id="client_id">
+                <input type="hidden" name="tags" id="tags" value="custom dev">
+                <input type="hidden" name="form_id" id="form_id" value="dev_unit_modal">
+                <input type="hidden" name="path" id="path" value="">
                 <div class="hp-container">
                     {% assign random_hp = 'hp_' | append: site.time | append: site.time | replace: ' ', '' | slice: 0, 10 %}
                     <label for="{{ random_hp }}">Leave this field empty</label>
@@ -1503,13 +1511,13 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
         function updateImages(index) {
             const darkMapImages = [
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/fleet-tracking-1.webp" alt="A map with markers and vehicle monitoring data, demonstrating real-time fleet tracking, including speed, fuel level, and status (e.g., en route, breakdown, refueling)."></div></div><div class="buttons-block"><a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Eric-Bourbeau.webp" alt="Eric Bourbeau, Founder and CEO X-TELIA"></div><div class="client-feedback">“We were looking for a robust and scalable IoT platform to help us deploy leading edge LoRaWAN™-based IoT projects.We landed a contract to deploy a city-wide network of solar/wireless variable message “No Parking” signs to manage on-street parking for snow removal operations. The dead... <a class="read-more-link" href="/industries/smart-city/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Eric Bourbeau, Founder and CEO at X-TELIA</div></div></div>',
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/smart-energy-1.webp" alt="A monitoring dashboard showing real-time electricity consumption data (voltage, current, frequency) from multiple smart meters, with graphs and alarm threshold indicators."></div></div><div class="buttons-block"><a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-feedback">“Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but... <a class="read-more-link" href="/industries/smart-energy/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div class="no-margin">Nairn Harrison, Director at Environmental Energy Controls</div></div></div>',
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/waste-1.webp" alt="An interactive map or diagram with asset locations and their status (e.g., equipment condition, temperature, humidity), displaying movement history and alerts."></div></div><div class="buttons-block"><a target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Jeppe-Walther.webp" alt="Jeppe Walther, CTO Supertech Agroline"></div><div class="client-feedback">“ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added to the platform for our needs, among these the Asset system... <a class="read-more-link" href="/industries/agriculture/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Jeppe Walther, CTO at Supertech Agroline</div></div></div>',
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/hp-swiming-pool-system-state.webp" alt="A SCADA control panel with mimic diagrams visualizing industrial processes (e.g., oil and gas drilling system, pumping station, water treatment), with equipment status indicators, sensor readings, and control elements."></div></div><div class="buttons-block"><a target="_blank" href="https://thingsboard.cloud/dashboard/231a5800-ce96-11ef-852e-bd51c2b30fde?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Mamadou-Ly.webp" alt="Mamadou Ly, Project Manager at Farinia Group"></div><div class="client-feedback">“With ThingsBoard we found the platform to modernize our factories and especially improve our performance processes. Following a benchmarking of solutions on the market, we came across Thingsboard. It was a surprising discovery, but above all a turning point for Farinia group. Now we have a real-ti... <a class="read-more-link" href="/industries/industry40/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Mamadou Ly, Project Manager at Farinia Group</div></div></div>',
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/smart-metering-1.webp" alt="A dashboard displaying smart water, gas, or electricity metering data, broken down by areas, buildings, or apartments, with historical consumption graphs and anomaly alerts."></div></div><div class="buttons-block"><a target="_blank" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/peter-backes.webp" alt="Peter Backes, CEO co.met GmbH"></div><div class="client-feedback">“We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Addition... <a class="read-more-link" href="/industries/smart-energy/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Peter Backes, CEO at co.met GmbH</div></div></div>',
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/tank-level-monitoring-1.webp" alt="A dashboard monitoring liquid levels in tanks, showing current fuel level, temperature, and battery status, with fill level visualization and consumption history."></div></div><div class="buttons-block"><a target="_blank" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Patricia-Crispim.webp" alt="Patricia Crispim, Super Bock Group"></div><div class="client-feedback">“ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency... <a class="read-more-link" href="/case-studies/super-bock/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Patricia Crispim, Super Bock Group</div></div></div>',
-                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/smart-retail-3.webp" alt="A monitoring panel for the condition of cold storage rooms or vehicles in a cold chain, displaying temperature and humidity data, with trend graphs, threshold values, and alerts for storage condition violations."></div></div><div class="buttons-block"><a target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="cdu-button button contact-us gtm_button">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Steven-Kruse.webp" alt="Steven Kruse, CEO SenseING GmbH"></div><div class="client-feedback">“With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform\'s greatest strengths is its low-code approach, which allows us to implement complex solutions with minima... <a class="read-more-link" href="/industries/warehouse-monitoring/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Steven Kruse, CEO at SenseING GmbH</div></div></div>'
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/fleet-tracking-1.webp" alt="A map with markers and vehicle monitoring data, demonstrating real-time fleet tracking, including speed, fuel level, and status (e.g., en route, breakdown, refueling)."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="cdu-button button gtm_button view-live-demo">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Eric-Bourbeau.webp" alt="Eric Bourbeau, Founder and CEO X-TELIA"></div><div class="client-feedback">“We were looking for a robust and scalable IoT platform to help us deploy leading edge LoRaWAN™-based IoT projects.We landed a contract to deploy a city-wide network of solar/wireless variable message “No Parking” signs to manage on-street parking for snow removal operations. The dead... <a class="read-more-link" href="/industries/smart-city/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Eric Bourbeau, Founder and CEO at X-TELIA</div></div></div>',
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/smart-energy-1.webp" alt="A monitoring dashboard showing real-time electricity consumption data (voltage, current, frequency) from multiple smart meters, with graphs and alarm threshold indicators."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://demo.thingsboard.io/dashboard/e8e409c0-f2b5-11e6-a6ee-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="cdu-button button gtm_button view-live-demo">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-feedback">“Our company operates with the Smart Building Technology sector and were looking for a solution that was adaptable, programmable and easy to use for providing complete solutions to our existing customers with good clear visualisations of their data. We had researched and tried other solutions but... <a class="read-more-link" href="/industries/smart-energy/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div class="no-margin">Nairn Harrison, Director at Environmental Energy Controls</div></div></div>',
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/waste-1.webp" alt="An interactive map or diagram with asset locations and their status (e.g., equipment condition, temperature, humidity), displaying movement history and alerts."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://thingsboard.cloud/dashboard/7814f8a0-8fa9-11ef-baa8-4521077809fd?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="cdu-button button gtm_button view-live-demo">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Jeppe-Walther.webp" alt="Jeppe Walther, CTO Supertech Agroline"></div><div class="client-feedback">“ThingsBoard (TB) turned out to be a great match to build our Agricultural IoT platform. First and foremost because of the extremely skilled and service minded architects behind it. Together with the TB developers several new features were added to the platform for our needs, among these the Asset system... <a class="read-more-link" href="/industries/agriculture/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Jeppe Walther, CTO at Supertech Agroline</div></div></div>',
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/hp-swiming-pool-system-state.webp" alt="A SCADA control panel with mimic diagrams visualizing industrial processes (e.g., oil and gas drilling system, pumping station, water treatment), with equipment status indicators, sensor readings, and control elements."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://thingsboard.cloud/dashboard/231a5800-ce96-11ef-852e-bd51c2b30fde?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="cdu-button button gtm_button view-live-demo">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Mamadou-Ly.webp" alt="Mamadou Ly, Project Manager at Farinia Group"></div><div class="client-feedback">“With ThingsBoard we found the platform to modernize our factories and especially improve our performance processes. Following a benchmarking of solutions on the market, we came across Thingsboard. It was a surprising discovery, but above all a turning point for Farinia group. Now we have a real-ti... <a class="read-more-link" href="/industries/industry40/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Mamadou Ly, Project Manager at Farinia Group</div></div></div>',
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/smart-metering-1.webp" alt="A dashboard displaying smart water, gas, or electricity metering data, broken down by areas, buildings, or apartments, with historical consumption graphs and anomaly alerts."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://demo.thingsboard.io/dashboard/3a1026e0-83f6-11e7-b56d-c7f326cba909?publicId=322a2330-7c36-11e7-835d-c7f326cba909" class="cdu-button button gtm_button view-live-demo">View live demo</a></a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/peter-backes.webp" alt="Peter Backes, CEO co.met GmbH"></div><div class="client-feedback">“We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Addition... <a class="read-more-link" href="/industries/smart-energy/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Peter Backes, CEO at co.met GmbH</div></div></div>',
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/tank-level-monitoring-1.webp" alt="A dashboard monitoring liquid levels in tanks, showing current fuel level, temperature, and battery status, with fill level visualization and consumption history."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://thingsboard.cloud/dashboard/e1ff5690-5e0c-11ee-aeee-d16039673934?publicId=7aa99e80-8acd-11ef-a59e-a9c993dbec14" class="cdu-button button gtm_button view-live-demo">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Patricia-Crispim.webp" alt="Patricia Crispim, Super Bock Group"></div><div class="client-feedback">“ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency... <a class="read-more-link" href="/case-studies/super-bock/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Patricia Crispim, Super Bock Group</div></div></div>',
+                '<div class="client-feedback-cards"><div class="project-screen-container"><div class="project-screen"><div class="bg-1"></div><div class="bg-2"></div><div class="bg-3"></div><img src="/images/development-services/smart-retail-3.webp" alt="A monitoring panel for the condition of cold storage rooms or vehicles in a cold chain, displaying temperature and humidity data, with trend graphs, threshold values, and alerts for storage condition violations."></div></div><div class="buttons-block"><button id="Serv_DevServ_GetInTouch" onclick="onContactUsClick(0)" class="cdu-button anchor-button gtm_button button">Contact us</button><a target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="cdu-button button gtm_button view-live-demo">View live demo</a></div><p class="feedback-heading">What our customers say about ThingsBoard</p><div class="client-info"><div class="client-avatar-container"><div class="client-avatar-img"><img src="/images/development-services/Steven-Kruse.webp" alt="Steven Kruse, CEO SenseING GmbH"></div><div class="client-feedback">“With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform\'s greatest strengths is its low-code approach, which allows us to implement complex solutions with minima... <a class="read-more-link" href="/industries/warehouse-monitoring/" target="_blank" rel="noopener noreferrer">read more</a></div></div><div>Steven Kruse, CEO at SenseING GmbH</div></div></div>'
             ];
 
             const imageHtml = darkMapImages[index];
@@ -1816,7 +1824,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
         });
     });
 
-
     document.addEventListener('DOMContentLoaded', () => {
         const timelineBlocks = document.querySelectorAll('.mobile-timeline .right > div');
 
@@ -1844,6 +1851,7 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
         utmKeys.forEach(function(key) {
             let value = getURLParam(key);
+
             if (value) {
                 localStorage.setItem(key, value);
             } else {
@@ -1854,9 +1862,11 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 value = decodeURIComponent(value);
                 utmData[key] = value;
                 $form.find('input[name="' + key + '"]').val(value);
-                $form.find('input[name="' + key + '-popup"]').val(value);
             }
         });
+
+        const path = getPath();
+        $form.find('input[name="path"]').val(path);
 
         const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
         if (gaCookie) {
@@ -1865,17 +1875,31 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
                 const clientId = parts[2] + '.' + parts[3];
                 utmData['client_id'] = clientId;
                 $form.find('input[name="client_id"]').val(clientId);
-                $form.find('input[name="client_id-popup"]').val(clientId);
             }
         }
-        window.dataLayer = window.dataLayer || [];
-        window.dataLayer.push({
-            event: 'development_services',
-            ...utmData
-        });
+
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => {
+                const userIP = data.ip;
+                $form.find('input[name="user_ip"]').val(userIP);
+                utmData['user_ip'] = userIP;
+    
+                window.dataLayer = window.dataLayer || [];
+                window.dataLayer.push({
+                    event: 'development_services',
+                    ...utmData
+                });
+            });
+    }
+
+    function getPath() {
+        const url = new URL(window.location.href);
+        return url.pathname;
     }
 
     function getURLParam(name) {
+        
         const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
         return results ? decodeURIComponent(results[1].replace(/\+/g, ' ')) : null;
     }
@@ -1998,7 +2022,6 @@ description: "Fast delivery of scalable IoT solutions with fixed cost and timeli
 
         const parentLabel = inputElement.closest('label');
         let potentialErrorHint;
-
 
         if (parentLabel && parentLabel.nextElementSibling && parentLabel.nextElementSibling.classList.contains('error-message-hint')) {
             potentialErrorHint = parentLabel.nextElementSibling;

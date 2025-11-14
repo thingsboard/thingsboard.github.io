@@ -74,6 +74,7 @@ To configure automatic device discovery, use the following BACnet connector conf
   ]
 }
 ```
+{:.copy-code}
 
 Below are the main parameters that you can use to properly configure automatic device detection. Let's take a closer 
 look at them:

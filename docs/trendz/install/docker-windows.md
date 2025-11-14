@@ -56,7 +56,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
-      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8080
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8181
       SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
       - mytrendz-data:/data
@@ -73,6 +73,8 @@ services:
       THROTTLING_QUEUE_CAPACITY: 10
       THROTTLING_THREAD_POOL_SIZE: 6
       NETWORK_BUFFER_SIZE: 10485760
+    volumes:
+      - mytrendz-data/python-executor:/python-executor
   postgres:
     restart: always
     image: "postgres:15"
@@ -87,6 +89,8 @@ volumes:
   mytrendz-data:
     external: true
   mytrendz-logs:
+    external: true
+  mytrendz-data-python-executor:
     external: true
   mytrendz-data-db:
     external: true
@@ -106,7 +110,8 @@ Where:
 - `thingsboard/trendz:{{ site.release.trendz_ver }}`          - Trendz docker image
 - `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}`          - Trendz python script executor docker image
 - `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
-    
+- `mytrendz-data/python-executor:/python-executor`           - mounts the volume `mytrendz-data/python-executor` to Trendz Python Executor additional data directory
+
 ### Setup Docker volumes    
     
 Windows users should use docker managed volume for Trendz DataBase. Create docker volume (for ex. `mytrendz-data`) before 
@@ -115,11 +120,12 @@ executing docker run command: Open “Docker Quickstart Terminal”. Execute the
 ```yml
 docker volume create mytrendz-data
 docker volume create mytrendz-data-db
+docker volume create mytrendz-data-python-executor
 docker volume create mytrendz-logs
 ```
 {: .copy-code}
 
-**NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
+**NOTE**: replace directory mytrendz-data and mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
 ### Running service
 

@@ -202,6 +202,9 @@ notitle: "true"
             <input type="hidden" name="utm_term" id="utm_term">
             <input type="hidden" name="utm_content" id="utm_content-popup">
             <input type="hidden" name="client_id" id="client_id">
+            <input type="hidden" name="tags" id="tags" value="product">
+            <input type="hidden" name="form_id" id="form_id" value="contact_us">
+            <input type="hidden" name="path" id="path" value="">
             <input type="hidden" name="_next" value="/docs/contact-us-thanks/">
             <input type="text" name="_gotcha" style="display:none">
         </div>
@@ -227,6 +230,11 @@ notitle: "true"
             document.querySelector('.select-label').parentElement.style.display = 'none';
         }
     });
+
+    function getPath() {
+        const url = new URL(window.location.href);
+        return url.pathname;
+    }
 
     function getURLParam(name) {
         const results = new RegExp('[?&]' + name + '=([^&#]*)').exec(window.location.href);
@@ -254,6 +262,9 @@ notitle: "true"
                 $form.find('input[name="' + key + '"]').val(value);
             }
         });
+
+        const path = getPath();
+        $form.find('input[name="path"]').val(path);
 
         const gaCookie = document.cookie.split('; ').find(row => row.startsWith('_ga='));
         if (gaCookie) {

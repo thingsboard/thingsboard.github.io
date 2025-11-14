@@ -80,7 +80,7 @@ collections:
     output: true
 
 release:
-  branch: release-4.2.1
+  branch: release-4.2
   branch_major_next: master
   ver: 4.2.1
   ce_ver: 4.2.1
@@ -105,4 +105,4 @@ release:
   broker_branch: release-2.2.0
   pe_broker_full_ver: 2.2.0PE
   # <<< TBMQ
-  trendz_ver: 1.13.2
+  trendz_ver: 1.14.0

@@ -2449,7 +2449,7 @@ Minor release with the following improvements and bug fixes:
 
 * Migration to JDK 11;
 * Rule Engine:
-    * Added ["calculate delta"](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#calculate-delta) rule node;
+    * Added ["calculate delta"](/docs/user-guide/rule-engine-2-0/nodes/enrichment/calculate-delta/) rule node;
     * Added "current customer" and "current tenant" dynamic source types to DeviceProfile key filter. See examples [6](/docs/user-guide/device-profiles/#example-6-advanced-thresholds) and [7](/docs/user-guide/device-profiles/#example-7-dynamic-thresholds-based-on-the-tenant-or-customer-attributes);
     * Added kafka consumer-groups statistics. See rule engine [troubleshooting](/docs/user-guide/rule-engine-2-0/overview/#troubleshooting) for more info;
     * Attributes cache. See [Performance enhancement](/docs/user-guide/attributes/#performance-enhancement);
@@ -2555,7 +2555,7 @@ Main features:
 
 * Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
 * Azure Event Hub Integration is updated to use new SDK;
-* Added new version of ["Alarms Count Node"](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/#alarms-count-node).
+* Added new version of ["Alarms Count Node"](/docs/user-guide/rule-engine-2-0/nodes/analytics/alarms-count/).
 * Added "Duplicate to group entities by group name" rule node;
 * Added ability to aggregate data on each message in the "Aggregate stream node".
 * Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".
@@ -2696,7 +2696,7 @@ We have also added features to track tenant API usage.
  * Added support of custom [MQTT Topics](/docs/user-guide/device-profiles/#mqtt-device-topic-filters) and basic [MQTT credentials](/docs/user-guide/basic-mqtt/) as alternative to access token;
  * Added support of custom device payload schema using [protocol buffers](/docs/user-guide/device-profiles/#mqtt-device-payload) for MQTT transport;
  * [Device provisioning](/docs/user-guide/device-provisioning/) is now available via device profiles;
- * [SMS Provider](/docs/user-guide/ui/sms-provider-settings) and [Send SMS](/docs/user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule node;
+ * [SMS Provider](/docs/user-guide/ui/sms-provider-settings) and [Send SMS](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms/) rule node;
  * UI for [OAuth2](/docs/user-guide/oauth-2-support/) settings.
  
 **Minor Improvements**
@@ -3412,7 +3412,7 @@ Main features:
 
 Additional features:
 
-- added feature for resetting debug-mode in all rule-nodes;
+- added feature for resetting debug-mode in all rule nodes;
 - UI: Updated Italian locale;
 - UI: Added Ukrainian locale;
 - UI: Added full Canadian postal code validation;
@@ -3583,7 +3583,7 @@ Websockets:
 
 New Rule nodes:
 
- - [**Originator Telemetry**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#originator-telemetry) 
+ - [**Originator Telemetry**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-telemetry/) 
  rule node to allow using [multiple previous telemetry records](/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/) in the rule engine;
  - Create relation node;
  - Assign to customer node; 

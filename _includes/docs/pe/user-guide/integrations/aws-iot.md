@@ -229,7 +229,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-do
 {% include content-toggle.liquid content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
 Next, configure the conditions under which a message will be sent through the AWS IoT Downlink integration.
-To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
+To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/nodes/action/integration-downlink/), for link condition set the Attributes Updated.
 
 {% include images-gallery.html imageCollection="downlink_2-3" %}
 
@@ -253,7 +253,7 @@ See video tutorial below for step-by-step instruction how to setup AWS IoT Integ
 <br>
 <div id="video">  
  <div id="video_wrapper">
-     <iframe src="https://www.youtube.com/embed/udkuOUrNzWk" frameborder="0" allowfullscreen></iframe>
+     <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/udkuOUrNzWk" frameborder="0" allowfullscreen></iframe>
  </div>
 </div>
 

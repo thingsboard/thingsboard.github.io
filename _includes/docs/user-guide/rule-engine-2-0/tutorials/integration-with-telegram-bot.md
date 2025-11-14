@@ -33,9 +33,9 @@ We assume you have completed the following guides and reviewed the articles list
 
 In this section, we explain the purpose of each node in this tutorial:
 
-- Node A: [**Transform Script**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
+- Node A: [**Transform Script**](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/) node.
   - This node will be used to creating a body of the Telegram message notification.  
-- Node B: [**REST API Call**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.
+- Node B: [**REST API Call**](/docs/user-guide/rule-engine-2-0/nodes/external/rest-api-call/) node.
   - This node will send Telegram message payload to the configured REST endpoint. In our case, it is Telegram REST API.
 
 ## Creation of the Telegram Bot

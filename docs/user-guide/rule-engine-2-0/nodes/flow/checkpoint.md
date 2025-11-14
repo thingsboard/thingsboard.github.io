@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: checkpoint
-description: Publishes a copy of the message to the selected rule engine queue.
+description: Transfers messages to a specified queue.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

@@ -72,13 +72,13 @@ Go to **Devices** -> **Thermostat Home** -> **Attributes** -> **Server attribute
 
 In this section, we explain the purpose of each node that was added or modified to initial rule chains in this tutorial:
 
-- Node A: [**Customer attributes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#customer-attributes) node.
+- Node A: [**Customer attributes**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/customer-attributes/) node.
   - This node will be used for taking email attribute of the customer and save it in Message Metadata property customerEmail
-- Node B: [**Originator attributes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#originator-attributes) node.
+- Node B: [**Originator attributes**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-attributes/) node.
   - This node will be used for taking address server scope attribute of the originator (device is an originator of the incoming message) and save it in the Message Metadata.
-- Node C: [**To Email**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) node.
+- Node C: [**To Email**](/docs/user-guide/rule-engine-2-0/nodes/transformation/to-email/) node.
   - This node builds actual email from the configured template.
-- Node D: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
+- Node D: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/) node.
   - Forwards incoming Message to specified Rule Chain **Create/Clear Alarm & Send Email to Customer**.
 
 <br>

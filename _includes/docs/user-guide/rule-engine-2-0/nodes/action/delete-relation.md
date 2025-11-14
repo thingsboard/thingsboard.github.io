@@ -68,6 +68,7 @@ Supported target entity types:
   }
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

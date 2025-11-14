@@ -25,7 +25,10 @@ The save attributes node can perform three distinct actions, each governed by co
 For each of these actions, you can choose from the following **processing strategies**:
 {% include docs/user-guide/rule-engine-2-0/processing-strategies-explanation.md %}
 
-> **Note**: Processing strategies are available since TB version 4.0.
+{% capture processing_strategies_availability_note %}
+**Note**: Processing strategies are available since TB version 4.0.
+{% endcapture %}
+{% include templates/info-banner.md content=processing_strategies_availability_note %}
 
 Processing strategies can be set using either **Basic** or **Advanced processing settings**.
 
@@ -88,9 +91,15 @@ If the message metadata contains an invalid `scope` (e.g. `INVALID_SCOPE`) value
 * **Save attributes only if the value changes** – if enabled, the node compares incoming attributes with their current stored values and only saves attributes that are new, have
   changed values, or have different data types.
 
-  > **Note**: Avoid concurrent writes of the same attributes because change-detection is not transactional and may produce unexpected results in such cases.
+{% capture concurrent_writes_note %}
+**Note**: Avoid concurrent writes of the same attributes because change-detection is not transactional and may produce unexpected results in such cases.
+{% endcapture %}
+{% include templates/info-banner.md content=concurrent_writes_note %}
 
-  > **Note**: If the attribute save is skipped because the value has not changed, the attribute’s last updated timestamp will not be updated.
+{% capture last_updated_ts_note %}
+**Note**: If the attribute save is skipped because the value has not changed, the attribute’s last updated timestamp will not be updated.
+{% endcapture %}
+{% include templates/info-banner.md content=last_updated_ts_note %}
 
 * **Send attributes updated notification** – if enabled, the node sends an [Attributes Updated](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types)
   event to the originator's default rule chain for `SHARED_SCOPE` and `SERVER_SCOPE` attributes.

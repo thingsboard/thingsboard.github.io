@@ -10,10 +10,18 @@ description: Installing ThingsBoard Trendz Analytics on Windows
 * TOC
 {:toc}
 
-## Prerequisites
+This guide explains how to install **Trendz Analytics** on **Windows 10 or 11** (32-bit/64-bit).
 
-This guide describes how to install Trendz Analytics on a Windows machine.
-Instructions below are provided for Windows 11/10 32-bit/64-bit. 
+**Important note before proceeding with Windows installation**
+
+Certain Trendz Analytics features like **predictions, metric explorations, and Python calculation fields** require a Python executor.
+
+The python executor runs **only via Docker**. Even on Windows, Docker is essential to fully utilize all Trendz features.  
+We recommend following the [Docker (Windows) installation guide](/docs/trendz/install/docker-windows) and using the Docker installation instead of Windows.
+
+Proceed here **only** if you have a compelling reason to use a combined Windows + Docker setup.
+
+## Prerequisites
 
 **Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
 To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
@@ -117,185 +125,7 @@ datasource:
 ``` 
 {: .copy-code}
 
-## Step 6. Install Trendz Python executor
-
-There are two options for installing Python to execute the necessary scripts in Trendz.
-
-**WARNING!**
-Before proceeding, make sure that Python is **not installed** on your system in any form — standalone, via the Microsoft Store, or Chocolatey. Failing to do so may lead to unexpected results during the installation process. See the Troubleshooting section for details.
-
-**WARNING!**
-It is important to use a specific Python version — **3.11.0**. Newer versions do not have prebuilt dependencies and require building them from source, which can lead to errors during dependency installation.
-
-### 1. Local environment
-
-In this option, Python will be installed on your Windows user account, and the required modules will be installed in the user scope (not system-wide).
-
-Follow the next steps:
-
-* **Download and install Python**
-
-Download and install Python 3.11.0 from the [official Python website](https://www.python.org/downloads/release/python-3110/).
-
-Download the Windows installer (64-bit) file and run it. When you see this window, select all proposed checkboxes.
-The administrator rights will be requested.
-
-![image](/images/trendz/install/windows/windows-python-1.png)
-
-Check the Python is installed by launching the command:
-
-```shell
-python --version
-```
-{: .copy-code}
-
-You will output like this:
-
-```text
-Python 3.11.0
-```
-
-* **Install required python packages**
-
-Create the requirements.txt file with the following content:
-
-```text
-numpy == 1.26.4
-scikit-learn == 1.4.2
-statsmodels == 0.14.2
-tensorflow == 2.16.1
-pandas == 2.1.4
-matplotlib == 3.8.4
-prophet == 1.1.5
-xgboost == 2.0.3
-```
-{: .copy-code}
-
-Run the command to install dependencies
-
-```shell
-pip install --user --no-cache-dir -r requirements.txt
-```
-{: .copy-code}
-
-* **Configure venv connection for Trendz**
-
-Open in Notepad with Administrator rights the file “C:\Program Files (x86)\trendz\conf\trendz.yml” and locate the **“script-engine”** section.
-
-Find the **“use-custom-venv”** field and replace **“false”** with **“true”**.
-Find the **“custom-venv-path”** field and replace the **“/usr/bin/python3”** value with **“python”**.
-
-### 2. Virtual environment (venv)
-
-In this option, Python will still be installed on your user account, but we will also create a virtual environment to manage dependencies in isolation from other projects and the base Python installation.
-
-Follow the next steps:
-
-* **Download and install Python**
-
-Download and install Python 3.11.0 from the [official Python website](https://www.python.org/downloads/release/python-3110/).
-
-Check the Python is installed by launching the command:
-
-```shell
-python --version
-```
-{: .copy-code}
-
-You will output like this:
-
-```text
-Python 3.11.0
-```
-
-* **Create python virtual environment (venv)**
-
-Create a folder where the virtual environment will be stored. You can choose any path — for example, we place it in the same directory as Trendz: **C:\Program Files (x86)\trendz**
-
-Open the command line **in the mentioned folder** and run:
-
-```shell
-py -3.11 -m venv venv
-```
-{: .copy-code}
-
-* **Install required python packages**
-
-Create the requirements.txt file with the following content:
-
-```text
-numpy == 1.26.4
-scikit-learn == 1.4.2
-statsmodels == 0.14.2
-tensorflow == 2.16.1
-pandas == 2.1.4
-matplotlib == 3.8.4
-prophet == 1.1.5
-xgboost == 2.0.3
-```
-{: .copy-code}
-
-Run the command to install dependencies:
-
-```shell
-.\venv\Scripts\pip.exe install --no-cache-dir -r requirements.txt
-```
-{: .copy-code}
-
-Open in Notepad with Administrator rights the file “C:\Program Files (x86)\trendz\conf\trendz.yml” and locate the **“script-engine”** section.
-
-Find the **“use-custom-venv”** field and replace **“false”** with **“true”**.
-Find the **“custom-venv-path”** field and replace the **“/usr/bin/python3”** value with **“C:\Program Files (x86)\trendz\venv\Scripts\python.exe”**.
-
-### Troubleshooting
-
-If you want to make a clean installation, you need to remove all previous versions of Python:
-
-* **1. Remove Python via “Programs and Features”**
-
-Click on **Start**, then go to **Control Panel** → **Programs** → **Programs and Features**, find Python and Python Launcher, and remove them.
-
-![image](/images/trendz/install/windows/windows-python-2.png)
-
-You will see the uninstallation window like this:
-
-![image](/images/trendz/install/windows/windows-python-3.png)
-
-* **2. Uninstall Python from Chocolatey**
-
-Open **PowerShell as Administrator** and run:
-
-```shell
-choco uninstall python
-```
-
-If you want to be sure no remnants are left, you can also check for:
-**`C:\ProgramData\chocolatey\lib\python*`**
-and delete it manually if needed.
-
-![image](/images/trendz/install/windows/windows-python-4.png)
-
-* **3. Remove aliases**
-
-Also, you need to switch off the Python aliases that can cause issues with working with Python in the command line.
-For this purpose, you need to go to **Settings** → **Apps** → **Advanced app settings** → **App execution aliases** and find all items related to Python and switch them off.
-
-![image](/images/trendz/install/windows/windows-python-5.png)
-
-* **4. Remove remaining folders**
-
-Make sure to delete the following folders along with all of their contents:
-
-* C:\Users\<your_username>\AppData\Local\Programs\Python
-* C:\Users\<your_username>\AppData\Roaming\Python
-
-* **5. Last check**
-
-Now, if you type “python” in the command line, you will get an error output like this one.
-
-![image](/images/trendz/install/windows/windows-python-6.png)
-
-## Step 7. Run installation script
+## Step 6. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
@@ -314,7 +144,7 @@ Installing Trendz Analytics...
 Trendz Analytics installed successfully!
 ```
 
-## Step 8. Start Trendz service
+## Step 7. Start Trendz service
 
 Now let's start the Trendz service!
 Open the command prompt as an Administrator and execute the following command:
@@ -353,6 +183,13 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
+
+## Step 8. Install Trendz Python Executor
+
+To utilize all Trendz capabilities, such as Trendz Python Calculation Fields or Prediction Models, it is essential to
+install an additional service: the Trendz Python Executor, which can securely run Python code.
+
+You can learn more about how to install it [here](/docs/trendz/install/python-executor-configuration-windows).
 
 ## Post-installation steps
 It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
