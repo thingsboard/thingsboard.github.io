@@ -3341,7 +3341,7 @@
 			<td>LWM2M_DTLS_CONNECTION_ID_LENGTH</td>
 			<td></td>
 			<td> CoAP DTLS connection ID length for LWM2M. RFC 9146, Connection Identifier for DTLS 1.2
- Default: off
+ Default: 8
  Control usage of DTLS connection ID length (CID).
  - 'off' to deactivate it.
  - 'on' to activate Connection ID support (same as CID 0 or more 0).
@@ -3455,7 +3455,7 @@
 		<tr>
 			<td>transport.lwm2m.bootstrap.id</td>
 			<td>LWM2M_SERVER_ID_BS</td>
-			<td>111</td>
+			<td>null</td>
 			<td> Default value in LwM2M client after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)</td>
 		</tr>
 		<tr>
@@ -3788,7 +3788,7 @@
 			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
 			<td></td>
 			<td> CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2
- Default: off
+ Default: 8
  Control usage of DTLS connection ID length (CID).
  - 'off' to deactivate it.
  - 'on' to activate Connection ID support (same as CID 0 or more 0).
