@@ -1662,11 +1662,11 @@ selfManagedPlan:
                         <p>Suitable for pilots and early stage deployments.</p>
                     </div>
                     <h4 class="pricing-square-price">
-                        $199
+                        $599
                         <span>/month</span>
                     </h4>
                     <h4 class="pricing-square-price hidden">
-                        $179
+                        $539
                         <span>/month</span>
                     </h4>
                     <div>
@@ -1688,11 +1688,11 @@ selfManagedPlan:
                         <p>Perfect for fast-growing deployments — adds capacity as you expand.</p>
                     </div>
                     <h4 class="pricing-square-price">
-                        $349
+                        $999
                         <span>/month</span>
                     </h4>
                     <h4 class="pricing-square-price hidden">
-                        $314
+                        $899
                         <span>/month</span>
                     </h4>
                     <div>
@@ -1701,7 +1701,7 @@ selfManagedPlan:
                             <span class="visually-hidden">to help you with your TBMQ Growth plan.</span>
                         </a>
                     </div>
-                    <div class="pricing-square-item highlight">4 000 sessions</div>
+                    <div class="pricing-square-item highlight">5 000 sessions</div>
                     <div class="pricing-square-item" data-faq-id="tbmq-total-msg-sec-definition">2 000 total msg/sec</div>
                     <div class="pricing-square-item" data-faq-id="tbmq-integration-definition">10 integrations</div> 
                     <div class="pricing-square-item">99.9% uptime guarantee</div>
@@ -1714,11 +1714,11 @@ selfManagedPlan:
                         <p>Designed for mission-critical, high-scale workloads.</p>
                     </div>
                     <h4 class="pricing-square-price">
-                        $999
+                        $2999
                         <span>/month</span>
                     </h4>
                     <h4 class="pricing-square-price hidden">
-                        $899
+                        $2699
                         <span>/month</span>
                     </h4>
                     <div>
@@ -5235,9 +5235,9 @@ selfManagedPlan:
                         <div class="container">
                             <p>The pricing for TBMQ Private Cloud is based on the selected service tier. Each plan includes specific limits on MQTT client sessions, message throughput, integrations, and traffic to ensure proper resource allocation and SLA compliance. The available plans are:</p>
                             <ul>
-                                <li>Launch: $199/month — includes up to 2,000 sessions, 1,000 total messages per second, and 5 integrations. Includes 100 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
-                                <li>Growth: $349/month — includes up to 4,000 sessions, 2,000 total messages per second, and 10 integrations. Includes 200 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
-                                <li>Scale: $999/month — includes up to 20,000 sessions, 10,000 total messages per second, and 50 integrations. Includes 1 TB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
+                                <li>Launch: $599/month — includes up to 2,000 sessions, 1,000 total messages per second, and 5 integrations. Includes 100 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
+                                <li>Growth: $999/month — includes up to 5,000 sessions, 2,000 total messages per second, and 10 integrations. Includes 200 GB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
+                                <li>Scale: $2,999/month — includes up to 20,000 sessions, 10,000 total messages per second, and 50 integrations. Includes 1 TB of monthly traffic; additional traffic is billed at $0.15/GB.</li>
                                 <li>Enterprise: Custom pricing — includes 100,000 sessions by default and no message rate limits. Extendable as needed based on specific deployment requirements.</li>
                             </ul>
                             <p>Short-term bursts up to 20% over the msg/sec ceiling for ≤ 15 min are tolerated. Sustained overages require a plan upgrade.</p>
@@ -5374,7 +5374,7 @@ selfManagedPlan:
                             <p>Each plan includes a different default session capacity:</p>
                             <ul>
                                 <li>Launch: 2,000 sessions</li>
-                                <li>Growth: 4,000 sessions</li>
+                                <li>Growth: 5,000 sessions</li>
                                 <li>Scale: 20,000 sessions</li>
                                 <li>Enterprise: unlimited sessions</li>
                             </ul>

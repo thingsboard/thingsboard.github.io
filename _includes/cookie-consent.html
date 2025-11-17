@@ -13,22 +13,38 @@
         color: rgba(255, 255, 255, 1);
     }
 
+    .buttons-block {
+        display: flex;
+        gap: 16px;
+    }
+
+    .buttons-block button {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        border-radius: 4px;
+        height: 40px;
+        width: 140px;
+        color: #FFF;
+    }
+
+    .buttons-block button:hover {
+        opacity: 0.8;
+    }
+
+    .buttons-block button#cookie-notice-accept {
+        background: #2A7DEC;
+    }
+
+    .buttons-block button#cookie-notice-close {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
     #cookie-notice-text {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 65%;
-    }
-
-    #cookie-notice-close {
-        position: absolute;
-        top: 1.5rem;
-        right: 1.5rem;
-        color: #fff;
-    }
-
-    #cookie-notice-close i {
-        font-size: 20px;
     }
 
     #cookie-notice-text span {
@@ -39,17 +55,6 @@
         font-size: 20px;
     }
 
-    #cookie-notice #cookie-notice-accept {
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        cursor: pointer;
-        margin-left: 3.5rem;
-        height: 40px;
-        font-size: 18px;
-        width: 140px;
-    }
-
     @media (max-width: 767px) {
         #cookie-notice {
             flex-direction: column;
@@ -58,12 +63,7 @@
 
         #cookie-notice-text {
             width: 100%;
-        }
-
-        #cookie-notice #cookie-notice-accept {
-            margin-top: 1.3rem;
-            margin-left: 0;
-            width: 100%;
+            margin-bottom: 40px;
         }
     }
 </style>
@@ -74,10 +74,10 @@
                 href="/cookie-policy/" target="_blank">cookie policy.</a><span class=""></span>
         </span>
     </div>
-    <button id="cookie-notice-accept" class="btn btn-primary btn-sm">Accept</button>
-    <button id="cookie-notice-close" aria-label="Close the cookie notice button">
-        <i class="fa fa-times"></i>
-    </button>
+    <div class="buttons-block">
+        <button id="cookie-notice-accept">Accept</button>
+        <button id="cookie-notice-close" aria-label="Close the cookie notice button">Deny</button>
+    </div>
 </div>
 <script>
     function readCookieValue(value) {
