@@ -58,15 +58,15 @@
         &:hover
           border-left: 3px solid #2A7DEC
           background: linear-gradient(0deg, rgba(109, 109, 109, 0.04) 0%, rgba(109, 109, 109, 0.04) 100%), #FFF
-          .releases-table-content-item
-            font-size: 15px
-            line-height: 28px
+          .releases-table-content-item:not(.upgrade-link, .upgrade-instructions)
+            scale: 1.1
         .releases-table-content-item
           text-decoration-color: #000
-          transition: font-size 0.25s
+          transition: ease-in-out 0.25s
           font-size: 14px
           line-height: 24px
           min-width: 130px
+          scale: 1
           &.version-link
             display: flex
             align-items: center
@@ -89,6 +89,13 @@
           &:nth-child(7)
             text-align: center
             min-width: 209px
+          &.upgrade-link
+            color: #fff
+            background: #2A7DEC
+            border-radius: 4px
+            &:hover
+              text-decoration: none
+              opacity: 0.7
 
 .releases-table.pe-table
   background: rgba(0, 105, 92, 0.06)
@@ -97,9 +104,6 @@
     .releases-table-content
       &:hover
         border-left: 3px solid #00695C
-    .releases-table-content-item.upgrade-link
-      a
-        color: #00695C
 
 .releases-table.upgrade-instructions-table
   margin: 30px 0
@@ -118,12 +122,6 @@
           min-width: 209px
     .releases-table-content-wrapper
       .releases-table-content
-        &:hover
-          .releases-table-content-item
-            &.upgrade-instructions
-              a
-                img
-                  scale: 1.2
         .releases-table-content-item
           min-width: 130px
           &:nth-child(2)
@@ -160,7 +158,7 @@
                 content: attr(data-tooltip)
                 position: absolute
                 bottom: 125%
-                left: 50%
+                left: 37%
                 transform: translateX(-50%)
                 background-color: rgba(0,0,0,0.7)
                 backdrop-filter: blur(2px)
@@ -178,6 +176,7 @@
                   content: attr(data-tooltip)
                 filter: unset
                 img
+                  scale: 1.2
                   filter: unset
               img
                 scale: 1

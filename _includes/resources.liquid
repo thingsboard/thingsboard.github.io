@@ -1,4 +1,5 @@
 {%- assign pe = include.pe -%}
+{%- assign last = include.last -%}
 
 {%- if pe == "true" -%}
     {%- assign data = site.data.pe.resources -%}
@@ -6,9 +7,15 @@
     {%- assign data = site.data.resources -%}
 {%- endif -%}
 
-{%- assign version = include.version -%}
+{%- if last == "true" -%}
+    {%- assign pair = data | first -%}
+    {%- assign versionEntry = pair[1] -%}
+{%- else -%}
+    {%- assign version = include.version -%}
+    {%- assign versionEntry = data[version] -%}
+{%- endif -%}
+
 {%- assign kind = include.kind -%}
-{%- assign versionEntry = data[version] -%}
 
 {%- if versionEntry and versionEntry[kind] -%}
 ```bash

@@ -5268,6 +5268,7 @@
 "/docs/user-guide/install/pe/upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
   redirect_from:
+  - "/docs/pe/user-guide/install/upgrade-instructions/"
   - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/"

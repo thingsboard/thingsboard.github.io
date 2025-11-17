@@ -123,7 +123,7 @@
 
                 <div
                         class="releases-table-content-wrapper"
-                        onclick="window.location='{{ notes_url }}'"
+                        onclick="window.location='{{ notes_url | replace: ".", "-" }}'"
                         style="cursor:pointer;">
                     <div class="releases-table-content">
                         <div class="releases-table-content-item">{{ family }}.x{% if docsPrefix == "pe/" %}PE{% endif %}</div>
@@ -132,7 +132,7 @@
                                 <time datetime="{{ earliest_date | date: '%Y-%m-%d' }}">{{ earliest_date | date: "%B %-d, %Y" }}</time>
                             {%- else -%}—{%- endif -%}
                         </div>
-                        <div class="releases-table-content-item">{{ latest_version | default: "—" }}</div>
+                        <div class="releases-table-content-item">{{ latest_version | default: "—" }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
                         <div class="releases-table-content-item">
                             {%- if latest_date -%}
                                 <time datetime="{{ latest_date | date: '%Y-%m-%d' }}">
@@ -148,13 +148,13 @@
                         {% else %}
                             <div class="releases-table-content-item">{{ lts_label }}</div>
                         {% endif %}
-                        <a href="{{ notes_url }}" class="releases-table-content-item version-link">
+                        <a href="{{ notes_url | replace: ".", "-" }}" class="releases-table-content-item version-link">
                             <span>{{ family }}</span>
                             <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                         </a>
-                        <div class="releases-table-content-item upgrade-link">
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family | replace: ".", "-" }}-x">Upgrade</a>
-                        </div>
+                        <a class="releases-table-content-item upgrade-link" href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family | replace: ".", "-" }}-x">
+                            Upgrade
+                        </a>
                     </div>
                 </div>
             {%- endfor -%}

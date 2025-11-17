@@ -20,7 +20,7 @@ table-of-contents: "false"
 </div>
 
 
-Upgrade instructions for the [older versions](/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/).
+Upgrade instructions for the [older versions](/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/).
 
 <script>
   (function () {

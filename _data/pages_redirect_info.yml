@@ -392,6 +392,9 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/pe/user-guide/install/installation-options/":
   url: "/docs/user-guide/install/pe/installation-options/"
   redirect_from: "/docs/pe/user-guide/install/installation-options/"
+"/docs/pe/user-guide/install/upgrade-instructions/":
+  url: "/docs/user-guide/install/pe/upgrade-instructions/"
+  redirect_from: "/docs/pe/user-guide/install/upgrade-instructions/"
 "/docs/user-guide/install/aws-marketplace-pe-upgrade/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
   redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"

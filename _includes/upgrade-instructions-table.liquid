@@ -20,9 +20,9 @@
 
         <div class="releases-table-row">
             {%- for p in pages_sorted -%}
-                {%- unless p.name == 'index.md' or p.name contains '.x.md' -%}
+                {%- unless p.name == 'index.md' or p.name contains '-x.md' -%}
                     {%- assign version = p.name | replace: ".md", "" -%}
-                    {%- assign family = version | split: "." | slice: 0, 2 | join: "." -%}
+                    {%- assign family = version | split: "-" | slice: 0, 2 | join: "-" | append: "-x" -%}
                     <div class="releases-table-content-wrapper"
                          onclick="window.location='/docs/{{ docsPrefix }}releases/releases-table/{{ version }}'"
                          style="cursor:pointer;"
