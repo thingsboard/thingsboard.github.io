@@ -4,7 +4,6 @@ assignees:
 - ashvayka
 title: Old Upgrade instructions
 description: ThingsBoard IoT platform upgrade instructions
-redirect_from: "/docs/user-guide/install/old-upgrade-instructions/"
 
 ---
 

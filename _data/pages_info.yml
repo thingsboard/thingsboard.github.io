@@ -3544,6 +3544,9 @@
 "/docs/pe/reference/rest-client/":
   url: "/docs/pe/reference/rest-client/"
   redirect_from: []
+"/docs/pe/reference/roadmap/":
+  url: "/docs/pe/reference/roadmap/"
+  redirect_from: []
 "/docs/pe/reference/snmp-api/":
   url: "/docs/pe/reference/snmp-api/"
   redirect_from:
@@ -3554,8 +3557,7 @@
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
 "/docs/pe/releases/releases-table/":
   url: "/docs/pe/releases/releases-table/"
-  redirect_from:
-  - "/docs/pe/reference/releases/"
+  redirect_from: []
 "/docs/pe/releases/releases-table/v3-0-1/":
   url: "/docs/pe/releases/releases-table/v3-0-1/"
   redirect_from: []
@@ -3699,8 +3701,7 @@
   redirect_from: []
 "/docs/pe/releases/roadmap/":
   url: "/docs/pe/releases/roadmap/"
-  redirect_from:
-  - "/docs/pe/reference/roadmap/"
+  redirect_from: []
 "/docs/pe/samples/analytics/ai-models/":
   url: "/docs/pe/samples/analytics/ai-models/"
   redirect_from: []
@@ -4223,6 +4224,9 @@
 "/docs/reference/rest-client/":
   url: "/docs/reference/rest-client/"
   redirect_from: []
+"/docs/reference/roadmap/":
+  url: "/docs/reference/roadmap/"
+  redirect_from: []
 "/docs/reference/snmp-api/":
   url: "/docs/reference/snmp-api/"
   redirect_from:
@@ -4236,8 +4240,7 @@
   redirect_from: []
 "/docs/releases/releases-table/":
   url: "/docs/releases/releases-table/"
-  redirect_from:
-  - "/docs/reference/releases/"
+  redirect_from: []
 "/docs/releases/releases-table/v3-0-1/":
   url: "/docs/releases/releases-table/v3-0-1/"
   redirect_from: []
@@ -4381,8 +4384,7 @@
   redirect_from: []
 "/docs/releases/roadmap/":
   url: "/docs/releases/roadmap/"
-  redirect_from:
-  - "/docs/reference/roadmap/"
+  redirect_from: []
 "/docs/samples/abeeway/tracker/":
   url: "/docs/samples/abeeway/tracker/"
   redirect_from: []
@@ -4996,6 +4998,9 @@
 "/docs/user-guide/install/mqtt-transport-config/":
   url: "/docs/user-guide/install/mqtt-transport-config/"
   redirect_from: []
+"/docs/user-guide/install/old-upgrade-instructions/":
+  url: "/docs/user-guide/install/old-upgrade-instructions/"
+  redirect_from: []
 "/docs/user-guide/install/pe/add-haproxy-rhel/":
   url: "/docs/user-guide/install/pe/add-haproxy-rhel/"
   redirect_from: []
@@ -5145,6 +5150,9 @@
 "/docs/user-guide/install/pe/old-docker-migrate/":
   url: "/docs/user-guide/install/pe/old-docker-migrate/"
   redirect_from: []
+"/docs/user-guide/install/pe/old-upgrade-instructions/":
+  url: "/docs/user-guide/install/pe/old-upgrade-instructions/"
+  redirect_from: []
 "/docs/user-guide/install/pe/report-service-config/":
   url: "/docs/user-guide/install/pe/report-service-config/"
   redirect_from: []
@@ -5272,8 +5280,7 @@
   - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/"
-  redirect_from:
-  - "/docs/user-guide/install/pe/old-upgrade-instructions/"
+  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/prepare/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/prepare/"
   redirect_from: []
@@ -5627,8 +5634,7 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/"
-  redirect_from:
-  - "/docs/user-guide/install/old-upgrade-instructions/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-0-1/":
   url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v3-0-1/"
   redirect_from: []

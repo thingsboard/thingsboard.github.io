@@ -2,7 +2,6 @@
 layout: docwithnav-pe
 title: ThingsBoard PE Roadmap
 description: ThingsBoard architecture
-redirect_from: "/docs/pe/reference/roadmap/"
 
 ---
 
