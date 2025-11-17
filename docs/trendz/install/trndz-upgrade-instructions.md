@@ -262,7 +262,7 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 ## Upgrading to 1.14.0
 
-These steps are applicable for 1.13.3 Trendz Analytics version.
+These steps are applicable for 1.13.2 Trendz Analytics version.
 **Note:** after upgrading to the latest version it is required to update Trendz widget bundle in ThingsBoard.
 You can find detailed instructions how to do that via Trendz UI in [Trendz Widget Bundle upgrade](/docs/trendz/post-installation-steps/#trendz-widget-bundle) article.
 
@@ -310,7 +310,7 @@ trendz-installation-1-8-0-centos,CentOS,shell,resources/1.14.0/trendz-centos-ins
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.13.3
+sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.13.2
 ```   
 
 #### Start the service
@@ -359,7 +359,7 @@ net stop trendz
 **NOTE** Scripts listed above should be executed using Administrator Role.
 
 ```text
-C:\trendz>upgrade.bat --fromVersion=1.13.3
+C:\trendz>upgrade.bat --fromVersion=1.13.2
 ```
 
 #### Start the service
