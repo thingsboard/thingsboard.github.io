@@ -10,9 +10,18 @@ description: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL
 * TOC
 {:toc}
 
-## Prerequisites
+This guide explains how to install **Trendz Analytics** on **RHEL/CentOS 8 or 9**.
 
-This guide describes how to install Trendz Analytics on RHEL/CentOS 8/9. 
+**Important note before proceeding with RHEL/CentOS installation**
+
+Certain Trendz Analytics features like **predictions, metric explorations, and Python calculation fields** require a Python executor.
+
+The python executor runs **only via Docker**. Even on RHEL/CentOS, Docker is essential to fully utilize all Trendz features.  
+We recommend following the [Docker (Linux or Mac OS) installation guide](/docs/trendz/install/docker) and using the Docker installation instead of RHEL/CentOS.
+
+Proceed here **only** if you have a compelling reason to use a combined RHEL/CentOS + Docker setup.
+
+## Prerequisites
 
 **Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
 To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
@@ -24,7 +33,7 @@ Before continue to installation execute the following commands in order to insta
 **For CentOS 7:**
 
 ```bash
-# Install wget
+# Install wget and nano
 sudo yum install -y nano wget
 # Add latest EPEL release for CentOS 7
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
@@ -35,7 +44,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.
 **For CentOS 8:**
 
 ```bash
-# Install wget
+# Install wget and nano
 sudo yum install -y nano wget
 # Add latest EPEL release for CentOS 8
 sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
@@ -183,7 +192,7 @@ Once Trendz service is installed and DB configuration is updated, you can execut
 
 ```bash
 sudo /usr/share/trendz/bin/install/install.sh
-``` 
+```
 
 ## Step 7. Start Trendz service
 
@@ -210,33 +219,12 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-## Step 8. Install Trendz Python executor
-For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed.
-Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
-But in this section we will write how to install Python libraries directly on the server with Trendz.
+## Step 8. Install Trendz Python Executor
 
-* Install Python3
-```bash
-sudo apt update
-sudo apt install python3
-sudo apt install python3-pip
-```
-{: .copy-code}
+To utilize all Trendz capabilities, such as Trendz Python Calculation Fields or Prediction Models, it is essential to
+install an additional service: the Trendz Python Executor, which can securely run Python code.
 
-* Install required python packages
-```bash
-echo "flask == 2.3.2" > requirements.txt
-echo "numpy == 1.24.1" >> requirements.txt
-echo "statsmodels == 0.13.5" >> requirements.txt
-echo "pandas == 1.5.3" >> requirements.txt
-echo "scikit-learn == 1.2.2" >> requirements.txt
-echo "prophet == 1.1.3" >> requirements.txt
-echo "seaborn == 0.12.2" >> requirements.txt
-echo "pmdarima == 2.0.3" >> requirements.txt
-sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
-```
-{: .copy-code}
-
+You can learn more about how to install it [here](/docs/trendz/install/python-executor-configuration-linux).
 
 ## Step 9. HTTPS configuration
 

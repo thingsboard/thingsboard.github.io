@@ -9,11 +9,9 @@ description: Socket API support for ThingsBoard IoT Gateway
 {:toc}
 
 This guide will help you get familiar with Socket Connector configuration for ThingsBoard IoT Gateway. 
-Use the [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. It's purpose  
-is to connect to your server using TCP or UDP connection type.
-
-This Connector is useful when you have a local server in your facility or corporate network and want to push
-data from the server to ThingsBoard.
+Use the [general configuration guide](/docs/iot-gateway/configuration/) to enable this connector. 
+A Socket connector runs a server on the local machine to which other devices can connect. This connector is useful 
+when you have devices that can send data over TCP or UDP protocols. 
 
 We will describe the connector configuration file below.
 
@@ -45,7 +43,7 @@ This configuration section contains general connector settings, such as:
   - **Type** - type of the report strategy:
     - **On report period** - sends data to ThingsBoard after the report period;
     - **On value change** - sends data to ThingsBoard when the value changes;
-    - **On value change and report period** - sends data to ThingsBoard when the value changes or report period;
+    - **On value change or report period** - sends data to ThingsBoard when the value changes or report period;
     - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
 {% capture difference %}
@@ -62,7 +60,7 @@ The settings are the same for both the basic and advanced configurations.
 
 ## Section "Socket"
 
-The “Socket” section is used for configuring socket connection settings.
+The “Socket” section is used for configuring local socket settings.
 
 {% capture socketsection %}
 Basic<small></small>%,%basic%,%templates/iot-gateway/socket-connector/socket-basic-section.md%br%
@@ -72,8 +70,8 @@ Advanced<small></small>%,%advanced%,%templates/iot-gateway/socket-connector/sock
 
 ## Section "Devices"
 
-This configuration section contains an array of objects that contains clients that can be connected to the connector and
-send the data. Any connection not included in this array will be rejected by the connector.
+This configuration section contains an array of objects that contains clients that can be connected to the connector\'s 
+socket and send the data to it. Any connection not included in this array will be rejected by the connector.
 
 ### Subsection "Device"
 

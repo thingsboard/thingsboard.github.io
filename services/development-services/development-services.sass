@@ -412,20 +412,27 @@ $dark-text-color: #212529
                                                 border: none
                                                 z-index: -3
                                 .buttons-block
-                                    text-align: center
+                                    display: flex
+                                    flex-direction: row
+                                    justify-content: center
+                                    gap: 32px
                                     margin-bottom: 72px
-                                    a
-                                        background-color: #fff
+
+                                    @media screen and (max-width: 599px)
+                                        flex-direction: column
+                                        width: 100%
+
+                                        a.button
+                                            width: 100%
+
+                                    .button
+                                        width: 208px
+                                        text-align: center
+
+                                    .button.view-live-demo
+                                        background-color: unset
                                         color: #2A7DEC
-                                        width: 300px
-                                        align-self: flex-end
-                                        border: solid 1px #2A7DEC
-                                        outline: none
-                                        font-size: 20px
-                                        &:hover
-                                          background-color: #fff
-                                          color: #2A7DEC
-                                          filter: brightness(1.2)
+                                        border: 1px solid #2A7DEC
 
                                 p.feedback-heading
                                     color: #000
@@ -789,6 +796,8 @@ $dark-text-color: #212529
                             width: 300px
                             font-size: 20px
                             height: 56px
+                        button.create-perfect-solution
+                            width: 360px
                         .get-in-touch-title
                             color: #212121
                             font-size: 36px
@@ -1153,6 +1162,8 @@ $dark-text-color: #212529
                             &:hover
                                 text-decoration: none
                                 filter: brightness(1.3) contrast(0.9)
+                        button.book-free-session
+                            width: 520px
 
             .project-timeline
                 padding: 100px 0
@@ -1445,6 +1456,8 @@ $dark-text-color: #212529
                       button
                         background: #2A7DEC
                         color: #fff
+                      button.lets-build-solution-together
+                          width: 360px
                       a
                         color: #2A7DEC
                         border: 1px solid #2A7DEC
