@@ -152,9 +152,11 @@
                             <span>{{ family }}</span>
                             <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                         </a>
-                        <a class="releases-table-content-item upgrade-link" href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family | replace: ".", "-" }}-x">
-                            Upgrade
-                        </a>
+                        <div class="releases-table-content-item upgrade-link">
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ family | replace: ".", "-" }}-x">
+                                Upgrade
+                            </a>
+                        </div>
                     </div>
                 </div>
             {%- endfor -%}
