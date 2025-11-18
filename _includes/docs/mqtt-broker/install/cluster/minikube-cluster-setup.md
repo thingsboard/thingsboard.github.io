@@ -27,8 +27,6 @@ cd tbmq-pe-k8s/minikube
 {: .copy-code}
 {% endif %}
 
-{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
-
 ## Installation
 
 To install TBMQ {{tbmqSuffix}}, execute the following command:
@@ -37,6 +35,8 @@ To install TBMQ {{tbmqSuffix}}, execute the following command:
 ./k8s-install-tbmq.sh
 ```
 {: .copy-code}
+
+{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
 
 ## Running
 
