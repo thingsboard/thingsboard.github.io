@@ -85,18 +85,6 @@
   },
   {
     "type": ["Asia"],
-    "country": ["China"],
-    "name": "Arapo Ltd.",
-    "contact": {
-      "href": "tamati.iro@gmail.com"
-    },
-    "site": {
-      "href": "",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
     "country": ["Taiwan"],
     "name": "ArtistanTech Computer Engineering Co.Ltd.",
     "contact": {
@@ -656,6 +644,18 @@
     },
     "site": {
       "href": "data.it-novum.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Sweden"],
+    "name": "JHA IT AB",
+    "contact": {
+      "href": "info@jha-it.se"
+    },
+    "site": {
+      "href": "www.jha-it.se",
       "target": "_blank"
     }
   },
