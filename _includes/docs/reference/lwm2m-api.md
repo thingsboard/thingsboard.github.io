@@ -284,17 +284,27 @@ info: Endpoint [MyClientNoSec] Client registered with registration id: [fR5In7YZ
 ```
 {: .copy-code}
 
-
 To do this, follow these steps:
-- For each selected object:
+
+**1. For each selected object:**
   - Check the "**Attributes**" box for any data you want to retrieve when the device connects and store it as ThingsBoard **attributes**.
   - Check the "**Telemetry**" and/or "**Observe**" boxes if you want the Server to monitor those values, fetch updates, and store them as ThingsBoard **telemetry**.
-- By default, the **observe strategy** - **Single**. You can choose **observe strategy** - **Composite all** or **Composite by object** to reduce traffic or group resources differently.
-- By default, the **observe strategy** is set to **Single**. You can switch to **Composite all** or **Composite by object** to reduce traffic or to group resources more efficiently.
-- By default, the **Initialize attributes and telemetry using Observe strategy** option is **disabled**. When **disabled**, attributes and telemetry are initialized by reading their values **one by one**. When **enabled**, initialization is performed by subscribing to their values **using the selected Observe strategy**.
-- Click "Save" to apply the changes.
 
-{% include images-gallery.html imageCollection="configure-mapping" %}
+{% include images-gallery.html imageCollection="configure-mapping-1" %}
+
+**2. Initialize attributes and telemetry using Observe strategy**
+
+By default, the **Initialize attributes and telemetry using Observe strategy** option is **disabled**, which means attributes and telemetry are initialized by reading their values **one by one**; when **enabled**, they are initialized by subscribing to their values **using the selected Observe strategy**.
+
+{% include images-gallery.html imageCollection="configure-mapping-2" %}
+
+**3. Observe strategy**
+
+By default, the **Observe strategy** is set to **Single**, but you can switch to **Composite all** or **Composite by object** to reduce traffic or group resources more efficiently.
+
+Click "**Save**" to apply the changes.
+
+{% include images-gallery.html imageCollection="configure-mapping-3" %}
 
 > ⚠️ **Note**: If you uncheck all items (Attributes, Telemetry, Observe) for an object, it **will not appear** in the device profile configuration.
 

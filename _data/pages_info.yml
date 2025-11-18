@@ -4332,6 +4332,12 @@
 "/docs/trendz/install/kubernetes/":
   url: "/docs/trendz/install/kubernetes/"
   redirect_from: []
+"/docs/trendz/install/python-executor-configuration-linux/":
+  url: "/docs/trendz/install/python-executor-configuration-linux/"
+  redirect_from: []
+"/docs/trendz/install/python-executor-configuration-windows/":
+  url: "/docs/trendz/install/python-executor-configuration-windows/"
+  redirect_from: []
 "/docs/trendz/install/rhel/":
   url: "/docs/trendz/install/rhel/"
   redirect_from: []
