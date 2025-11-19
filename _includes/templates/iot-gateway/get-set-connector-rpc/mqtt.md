@@ -64,7 +64,11 @@ set requestTopicExpression=data/set_light_level;value=80;
 ![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-3.png)
 {: refdef}
 
-Also, let's take a look at the result in the **"data/light_level"** MQTT topic:
+Also, let's take a look at the result after SET method in the **"data/light_level"** MQTT topic by sending Two way GET RPC request, listed above:
+
+```bash
+get requestTopicExpression=data/get_light_level;responseTopicExpression=data/response;value=${params};
+```
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-4.png)

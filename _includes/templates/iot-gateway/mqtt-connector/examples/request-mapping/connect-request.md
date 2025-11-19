@@ -1,14 +1,13 @@
 For a Connect request, the gateway must know which device name to target. You can extract it either from the `Message` payload using [json-path](/docs/iot-gateway/config/mqtt/#json-path)
 or from the topic using a [regex](/docs/iot-gateway/config/mqtt/#regular-expressions). Choose [json-path](/docs/iot-gateway/config/mqtt/#json-path) when the device name is inside the JSON message; choose [regex](/docs/iot-gateway/config/mqtt/#regular-expressions) when it's encoded in the topic.
 
-Scenario. Device `SN-001` hasn't sent telemetry for 10 minutes and is marked inactive, but you still need to send an RPC (and you're not planning to resume telemetry).
+Device `SN-001` hasn't sent telemetry for 10 minutes and is marked inactive, but you still need to send an RPC (and you're not planning to resume telemetry).
 Let's configure a Connect request in the MQTT connector to (re)announce the device so RPC can be delivered.
 
-What we'll show. Two variants for extracting the device name in this Connect request:
+**What we'll show:** Two variants for extracting the device name in this Connect request:
 
-From message (`JSON` payload).
-
-From topic (e.g., `sensor/SN-001/connect`).
+- From message (`JSON` payload).
+- From topic (e.g., `sensor/SN-001/connect`).
 
 Follow these steps:
 
@@ -123,3 +122,4 @@ use the following configuration:
   }
 }
 ```
+{: .copy-code}

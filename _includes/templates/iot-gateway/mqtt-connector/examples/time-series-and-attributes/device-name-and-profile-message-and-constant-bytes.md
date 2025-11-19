@@ -1,9 +1,14 @@
 The device name and profile can be extracted from the message source and bytes payload. In this example, we will use  
 [slices](/docs/iot-gateway/config/mqtt/#slices) to specify the device name and constant for profile.
 
-As an example, we will use our custom MQTT publisher from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
-and available at 127.0.0.1:1884.
-Suppose we know that our MQTT device is publishing data to the following topic `sensor/raw_data` with the following BYTES payload:
+As an example, we will use ThingsBoard MQTT Demo Broker, which can be run using Docker and the following command:
+
+```bash
+docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
+```
+{:.copy-code}
+
+The broker available at `0.0.0.0:1884` and publishes data to the topic `sensor/raw_data` with the following BYTES payload:
 
 :`b"AM-120"` — Python bytes literal (ASCII)
 
@@ -34,10 +39,10 @@ Follow these steps:
         title: Then under "**Profile name**" subsection choose "**Constant**" for the "**Name**" field, enter `default`, this is **Constant** value that will be used to form device profile name.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-and-constant-bytes-7.png,
-        title: Also, we need to add at least one attribute/time series because the connector will not add a device without any data to read as we remember The first four bytes represent the device name, and the remaining bytes represent the temperature value . Click on the "**pencil**" icon next to the "**Time series**" section.
+        title: Also, we need to add at least one attribute/time series because the connector will not add a device without any data to read as we remember. The first four bytes represent the device name, and the remaining bytes represent the temperature value. Click on the "**pencil**" icon next to the "**Time series**" section.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-and-constant-bytes-8.png,
-        title: In the opened window, click on the "**Add time series**" button and fill the fields as on the corresponding image.
+        title: In the opened window, click on the "**Add time series**" button and fill the fields as on the corresponding image. Don't forget to save changes.
 '
 %}
 
@@ -95,9 +100,4 @@ use the following configuration:
   "requestsMapping": {}
 }
 ```
-
-
-
-
-
-
+{: .copy-code}

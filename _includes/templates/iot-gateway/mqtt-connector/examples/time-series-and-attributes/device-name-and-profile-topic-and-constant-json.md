@@ -1,9 +1,14 @@
 The device name and profile can be extracted from the topic. In this example, we will use  
 [regex](/docs/iot-gateway/config/mqtt/#regular-expressions) to specify the device name and constant for profile.
 
-As an example, we will use our custom MQTT publisher from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
-and available at 127.0.0.1:1884.
-Suppose we know that our MQTT device is publishing data to the following topic `sensor/Thermo-A/data` where `Thermo-A` is the device name:
+As an example, we will use ThingsBoard MQTT Demo Broker, which can be run using Docker and the following command:
+
+```bash
+docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
+```
+{:.copy-code}
+
+The broker available at `0.0.0.0:1884` and publishes data to the topic `sensor/Thermo-A/data` where `Thermo-A` is the device name: with the following JSON payload.
 
 ```json
 {
@@ -100,9 +105,4 @@ use the following configuration:
   "requestsMapping": {}
 }
 ```
-
-
-
-
-
-
+{: .copy-code}

@@ -1,9 +1,14 @@
 The device name and profile can be extracted from the incoming message. In this example, we will use  
 [json path](/docs/iot-gateway/config/mqtt/#json-path) to specify the device name and profile.
 
-As an example, we will use our custom MQTT publisher from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
-and available at 127.0.0.1:1884.
-Suppose we know that our MQTT device is publishing data to **"sensor/data"** with the following JSON payload:
+As an example, we will use ThingsBoard MQTT Demo Broker, which can be run using Docker and the following command:
+
+```bash
+docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
+```
+{:.copy-code}
+
+The broker available at `0.0.0.0:1884` and publishes data to the topic `sensor/data` with the following JSON payload:
 
 ```json
 {
@@ -41,7 +46,7 @@ Let's configure the device name and profile in the MQTT connector. For this purp
         title: Also, we need to add at least one attribute/time series because the connector will not add a device without any data to read. Click on the "**pencil**" icon next to the "**Time series**" section.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-8.png,
-        title: In the opened window, click on the "**Add time series**" button and fill the fields as on the corresponding image.
+        title: In the opened window, click on the "**Add time series**" button and fill the fields as on the corresponding image. Don't forget to save changes.
 '
 %}
 
@@ -75,28 +80,28 @@ use the following configuration:
   },
   "mapping": [
     {
-      "topicFilter": "sensor/raw_data",
+      "topicFilter": "sensor/data",
       "subscriptionQos": 1,
       "converter": {
-        "type": "bytes",
+        "type": "json",
         "deviceInfo": {
-          "deviceNameExpression": "[0:4]",
+          "deviceNameExpression": "${serialNumber}",
           "deviceNameExpressionSource": "message",
-          "deviceProfileExpressionSource": "constant",
-          "deviceProfileExpression": "default"
+          "deviceProfileExpressionSource": "message",
+          "deviceProfileExpression": "${sensorType}"
         },
         "attributes": [
-           {
-            "key": "rawData",
-            "type": "raw",
-            "value": "[:]"
+          {
+            "key": "model",
+            "type": "string",
+            "value": "${sensorModel}"
           }
         ],
         "timeseries": [
           {
-            "key": "temp",
-            "type": "raw",
-            "value": "[4:]"
+            "key": "temperature",
+            "type": "double",
+            "value": "${temp}"
           }
         ]
       }
@@ -105,10 +110,4 @@ use the following configuration:
   "requestsMapping": {}
 }
 ```
-
-
-
-
-
-
-
+{: .copy-code}

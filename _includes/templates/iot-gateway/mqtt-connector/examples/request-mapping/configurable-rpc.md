@@ -1,10 +1,16 @@
 RPC to Device allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
 
-Scenario: Suppose we have a device `SN-001` that tracks the light level of the room and is connected to ThingsBoard via an MQTT Gateway. 
+**Scenario:** Suppose we have a device `SN-001` that tracks the light level of the room and is connected to ThingsBoard via an MQTT Gateway. 
 We want to send an RPC command to know the current state of the light level with two options: in the first case we want to get a response back, and in the second case we don't need a response.
 
-As an example, we will use our custom MQTT publisher from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
-and available at 127.0.0.1:1884:
+As an example, we will use ThingsBoard MQTT Demo Broker, which can be run using Docker and the following command:
+
+```bash
+docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
+```
+{:.copy-code}
+
+The demo broker runs at `0.0.0.0:1884` and simulates a device for our RPC examples. For configurable RPC, the device listens on topic `sensor/${deviceName}/request/${methodName}/${requestId}` for incoming commands and responds on topic `sensor/${deviceName}/response/${methodName}/${requestId}` when a response is expected.
 
 {% capture difference %}
 **Please note:**
@@ -50,7 +56,7 @@ Follow these steps:
 
 Let's demonstrate how to use this RPC configuration:
 
-### Example 1: Two-way RPC (with response)
+### Example 1: Two Way RPC (with response)
 
 In the RPC Debug Terminal widget, run the following command to send a two-way RPC request:
 
@@ -68,7 +74,7 @@ The gateway will:
 
 ![image](/images/gateway/mqtt-connector/examples/result-device-overview-rpc-1.png)
 
-### Example 2: One-way RPC (without response)
+### Example 2: One Way RPC (without response)
 
 In the RPC Debug Terminal widget, run the following command to send a one-way RPC request:
 

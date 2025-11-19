@@ -1,7 +1,7 @@
 For an Attribute request, the gateway must know which device name to target and which attribute to request. You can extract the device name either from the `Message` payload using [json-path](/docs/iot-gateway/config/mqtt/#json-path)
 or from the topic using a [regex](/docs/iot-gateway/config/mqtt/#regular-expressions). Choose [json-path](/docs/iot-gateway/config/mqtt/#json-path) when the device name is inside the JSON message; choose [regex](/docs/iot-gateway/config/mqtt/#regular-expressions) when it's encoded in the topic.
 
-Scenario. You want to retrieve the current firmware version for device `SN-001` from ThingsBoard to make decisions based on the firmware version.
+**Scenario:** You want to retrieve the current firmware version for device `SN-001` from ThingsBoard to make decisions based on the firmware version.
 
 {% capture difference %}
 **Please note:**
@@ -16,11 +16,10 @@ The gateway acts as a bridge, receiving the attribute request from the device, f
 
 Let's configure an Attribute request in the MQTT connector to allow devices to request attribute values from ThingsBoard.
 
-What we'll show. Two variants for extracting the device name in this Attribute request:
+**What we'll show:** Two variants for extracting the device name in this Attribute request:
 
-From message (`JSON` payload).
-
-From topic (e.g., `sensor/SN-001/attributes/request`).
+- From message (`JSON` payload).
+- From topic (e.g., `sensor/SN-001/attributes/request`).
 
 Follow these steps:
 
@@ -62,7 +61,7 @@ Let's add this attribute to the device `SN-001` in ThingsBoard first:
 
 1. Go to "**Devices**" → select device `SN-001` - "**Attributes**" tab - select "**Shared attributes**".
 
-2. Then click on the "**+**" icon and add `firmwareVersion` attribute with type "**String**" and set it to "`1.2.3` click the "**Add**" button.
+2. Then click on the "**+**" icon and add `firmwareVersion` attribute with type "**String**" and set it to `1.2.3` click the "**Add**" button.
 
 ![image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-1.png)
 
@@ -139,3 +138,4 @@ use the following configuration:
   }
 }
 ```
+{: .copy-code}
