@@ -1,6 +1,6 @@
 For Attribute updates, the gateway needs to know which devices should receive updates for which attributes. You configure this using regular expressions for both device names and attribute names. When an attribute is updated in ThingsBoard, the gateway publishes the new value to a configured MQTT topic.
 
-You want ThingsBoard to automatically push firmware version updates to your devices. When you update the `firmwareVersion` shared attribute in ThingsBoard, the gateway should publish this update to a topic that your devices are subscribed to.
+Suppose you want ThingsBoard to automatically push firmware version updates to your devices. When you update the `firmwareVersion` shared attribute in ThingsBoard, the gateway should publish this update to a topic that your devices are subscribed to.
 
 {% capture difference %}
 **Please note:**

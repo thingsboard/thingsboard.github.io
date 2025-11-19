@@ -47,7 +47,7 @@ Follow these steps:
         title: Also, we need to add at least one attribute/time series because the connector will not add a device without any data to read. Click on the "**pencil**" icon next to the "**Time series**" section.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-8.png,
-        title: In the opened window, click on the "**Add time series**" button and fill the fields as on the corresponding image.
+        title: In the opened window, click on the "**Add time series**" button and fill the fields as on the corresponding image. Do not forget to save changes.
 '
 %}
 

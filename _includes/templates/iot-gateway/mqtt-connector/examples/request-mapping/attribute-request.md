@@ -1,7 +1,7 @@
 For an Attribute request, the gateway must know which device name to target and which attribute to request. You can extract the device name either from the `Message` payload using [json-path](/docs/iot-gateway/config/mqtt/#json-path)
 or from the topic using a [regex](/docs/iot-gateway/config/mqtt/#regular-expressions). Choose [json-path](/docs/iot-gateway/config/mqtt/#json-path) when the device name is inside the JSON message; choose [regex](/docs/iot-gateway/config/mqtt/#regular-expressions) when it's encoded in the topic.
 
-**Scenario:** You want to retrieve the current firmware version for device `SN-001` from ThingsBoard to make decisions based on the firmware version.
+Suppose you want to retrieve the current firmware version for device `SN-001` from ThingsBoard to make decisions based on the firmware version.
 
 {% capture difference %}
 **Please note:**
@@ -15,8 +15,7 @@ The gateway acts as a bridge, receiving the attribute request from the device, f
 {% include templates/info-banner.md content=difference %}
 
 Let's configure an Attribute request in the MQTT connector to allow devices to request attribute values from ThingsBoard.
-
-**What we'll show:** Two variants for extracting the device name in this Attribute request:
+We'll demonstrate two ways to extract the device name:
 
 - From message (`JSON` payload).
 - From topic (e.g., `sensor/SN-001/attributes/request`).

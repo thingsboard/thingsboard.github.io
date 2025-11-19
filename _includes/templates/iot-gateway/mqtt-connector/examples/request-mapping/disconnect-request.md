@@ -1,12 +1,12 @@
 For a Disconnect request, the gateway must know which device name to target. You can extract it either from the `Message` payload using [json-path](/docs/iot-gateway/config/mqtt/#json-path)
 or from the topic using a [regex](/docs/iot-gateway/config/mqtt/#regular-expressions). Choose [json-path](/docs/iot-gateway/config/mqtt/#json-path) when the device name is inside the JSON message; choose [regex](/docs/iot-gateway/config/mqtt/#regular-expressions) when it's encoded in the topic.
 
-You want to disconnect device `SN-001` from the platform immediately, without waiting for the 10-minute inactivity timeout—useful for dashboards, alarms, 
+Suppose you want to disconnect device `SN-001` from the platform immediately, without waiting for the 10-minute inactivity timeout-useful for dashboards, alarms, 
 and rule chains that react to status changes.
 
 {% capture difference %}
 **Please note:**
-A **Disconnect request** tells the platform the device is offline **right now** and stops routing **RPCs** and **attribute updates** to it.
+A **Disconnect request** tells the platform the device is offline **immediately** and stops routing **RPCs** and **attribute updates** to it.
 It does not block MQTT traffic: if the device (or gateway) continues publishing, 
 new messages will arrive and the device may be marked active again based on the inactivity timeout which is 10 minutes.
 The UI “Active” flag follows last-activity timing; it may remain active until the timeout elapses unless no further messages arrive.
@@ -15,8 +15,7 @@ The UI “Active” flag follows last-activity timing; it may remain active unti
 {% include templates/info-banner.md content=difference %}
 
 Let's configure a Disconnect request in the MQTT connector to notify the platform when a device disconnects.
-
-**What we'll show:** Two variants for extracting the device name in this Disconnect request:
+We'll demonstrate two ways to extract the device name:
 
 - From message (`JSON` payload).
 - From topic (e.g., `sensor/SN-001/disconnect`).

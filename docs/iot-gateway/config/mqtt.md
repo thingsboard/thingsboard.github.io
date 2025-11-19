@@ -89,7 +89,7 @@ All configuration parameters list for each authentication mode, and their detail
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Section "Data mapping"
+## Data mapping
 
 **Data Mapping** lets you configure the topic/topics the gateway subscribes to for device creation and incoming data handling.
 You can generate topic/topics and device names on the fly, and choose what data is sent 
@@ -110,7 +110,7 @@ that may appear while using them [Shared subscriptions limitations](/docs/iot-ga
     - **On value change or report period** - sends data to ThingsBoard when the value changes or after the report period;
     - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
-### Subsection "Data conversion"
+### Data conversion
 
 - **Payload type** - The incoming data type that will be processed as  `JSON`, `Bytes`, `Custom` (more information about supported Payload types see in the [Additional information](/docs/iot-gateway/config/mqtt/#convertor-types) *Convertor types section* ).
 - **Device Name** - The name of the device in ThingsBoard. It can be parsed from `Message`, `Topic`, `Constant` (more information about sources with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) section).
@@ -144,7 +144,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% include templates/info-banner.md content=difference %}
 
 
-### Subsection "Attributes" and "Time series"
+### Attributes and Time series
 
 The configuration in this subsection provides settings for processing data from MQTT topic/topics. These settings will be 
 interpreted in ThingsBoard platform instance as attributes/time series of the device.
@@ -207,7 +207,7 @@ MQTT connector supports the following requests mapping:
     - `One Way` - if you do not want to get a response back from a device
     - `Two Way` - if you do want to get a response back from a device
 
-### Subsection "Connect request"
+### Connect request
 
 Connect request is used for sending a message to the Gateway indicating that a device has connected, so the device can be marked as online on the platform.
 
@@ -235,7 +235,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 {% include /templates/iot-gateway/mqtt-connector/device-connect-request-basic-section.md %}
 
-### Subsection "Disconnect request"
+### Disconnect request
 
 Disconnect request is used for sending a message to the Gateway indicating that a device has disconnected, so the device can be marked as offline on the platform.
 
@@ -261,7 +261,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 {% include /templates/iot-gateway/mqtt-connector/disconnect-request-subsection-basic.md %}
 
-### Subsection "Attribute requests"
+### Attribute requests
 
 Attribute requests are used for requesting the values of its client-side or shared attributes from ThingsBoard via the Gateway.
 
@@ -293,7 +293,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 {% include /templates/iot-gateway/mqtt-connector/attribute-request-subsection-basic.md %}
 
-### Subsection "Attribute updates"
+### Attribute updates
 
 Attribute updates are used for provisioning or updating its client-side or shared attributes on ThingsBoard through the Gateway.
 

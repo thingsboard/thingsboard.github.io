@@ -1,6 +1,6 @@
 RPC to Device allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
 
-**Scenario:** Suppose we have a device `SN-001` that tracks the light level of the room and is connected to ThingsBoard via an MQTT Gateway. 
+Suppose we have a device `SN-001` that tracks the light level of the room and is connected to ThingsBoard via an MQTT Gateway. 
 We want to send an RPC command to know the current state of the light level with two options: in the first case we want to get a response back, and in the second case we don't need a response.
 
 As an example, we will use ThingsBoard MQTT Demo Broker, which can be run using Docker and the following command:
