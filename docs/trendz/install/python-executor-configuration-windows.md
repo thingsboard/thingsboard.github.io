@@ -99,7 +99,7 @@ script-engine:
 
 Replace `PYTHON_EXECUTOR_HOST` and `PYTHON_EXECUTOR_PORT` with your Python Executor service values and ensure Trendz can reach this network destination.
 
-## How to Migrate Trendz Python Executor 1.13.3 to Trendz Python Executor 1.14.0
+## How to Migrate Trendz Python Executor 1.13.2 to Trendz Python Executor 1.14.0
 
 If you already have a Python Executor with a version earlier than 1.14.0 connected to Trendz, you should migrate it before updating Trendz to 1.14.0.
 
