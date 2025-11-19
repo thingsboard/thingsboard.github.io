@@ -1274,34 +1274,6 @@ description: "Get your IoT development services 3X faster and 2X lower TCO. We g
                                     </label>
                                 </div>
                             </div>
-                            <div class="questionnaire-section">
-                                <fieldset>
-                                    <legend class="accordion-button active">Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
-                                    <div class="label-container accordion-content" style="max-height: 134px">
-                                        <label><input type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
-                                        <label><input type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
-                                        <label><input type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <legend class="accordion-button">Engagement model (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
-                                    <div class="label-container accordion-content">
-                                        <label><input type="radio" name="engagement" value="I don’t know yet"/> I don’t know yet</label>
-                                        <label><input type="radio" name="engagement" value="Full-cycle development"/> Full-cycle development</label>
-                                        <label><input type="radio" name="engagement" value="Dedicated team"/> Dedicated team</label>
-                                        <label><input type="radio" name="engagement" value="Consulting or audit only"/> Consulting or audit only</label>
-                                    </div>
-                                </fieldset>
-                                <fieldset>
-                                    <legend class="accordion-button">Project stage (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
-                                    <div class="label-container accordion-content last">
-                                        <label><input type="radio" name="project" value="Idea"/> Idea</label>
-                                        <label><input type="radio" name="project" value="Requirements defined"/> Requirements defined</label>
-                                        <label><input type="radio" name="project" value="MVP in progress"/> MVP in progress</label>
-                                        <label><input type="radio" name="project" value="Scaling an existing solution"/> Scaling an existing solution</label>
-                                    </div>
-                                </fieldset>
-                            </div>
                             <input type="hidden" name="utm_source" id="utm_source">
                             <input type="hidden" name="utm_medium" id="utm_medium">
                             <input type="hidden" name="utm_campaign" id="utm_campaign">
@@ -1377,34 +1349,6 @@ description: "Get your IoT development services 3X faster and 2X lower TCO. We g
                             <p class="text-area-label">Message</p>
                         </label>
                     </div>
-                </div>
-                <div class="questionnaire-section">
-                    <fieldset>
-                        <legend class="accordion-button active">Are you familiar with ThingsBoard? (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
-                        <div class="label-container accordion-content" style="max-height: 134px">
-                            <label><input id="familiarity-work-with-platform-popup" type="radio" name="thingsboard" value="Yes, I work with the platform"/> Yes, I work with the platform</label>
-                            <label><input id="familiarity-familiar-popup" type="radio" name="thingsboard" value="Yes, I am familiar with it, but haven’t worked with it"/> Yes, I am familiar with it, but haven’t worked with it</label>
-                            <label><input id="familiarity-not-familiar-popup" type="radio" name="thingsboard" value="No, I am not familiar with it"/> No, I am not familiar with it</label>
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend class="accordion-button">Engagement model (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
-                        <div class="label-container accordion-content">
-                            <label><input id="engagement-model-dont-know-popup" type="radio" name="engagement-popup" value="I don’t know yet" /> I don’t know yet</label>
-                            <label><input id="engagement-model-full-cycle-popup" type="radio" name="engagement-popup" value="Full-cycle development" /> Full-cycle development</label>
-                            <label><input id="engagement-model-dedicated-team-popup" type="radio" name="engagement-popup" value="Dedicated team"/> Dedicated team</label>
-                            <label><input id="engagement-model-consulting-or-auidit-popup" type="radio" name="engagement-popup" value="Consulting or audit only"/> Consulting or audit only</label>
-                        </div>
-                    </fieldset>
-                    <fieldset>
-                        <legend class="accordion-button">Project stage (optional)<svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></legend>
-                        <div class="label-container accordion-content last">
-                            <label><input id="project-stage-idea-popup" type="radio" name="project-popup" value="Idea"/> Idea</label>
-                            <label><input id="project-stage-requirements-popup" type="radio" name="project-popup" value="Requirements defined"/> Requirements defined</label>
-                            <label><input id="project-stage-mvp-popup" type="radio" name="project-popup" value="MVP in progress"/> MVP in progress</label>
-                            <label><input id="project-stage-scaling-popup" type="radio" name="project-popup" value="Scaling an existing solution"/> Scaling an existing solution</label>
-                        </div>
-                    </fieldset>
                 </div>
                 <input type="hidden" name="utm_source" id="utm_source">
                 <input type="hidden" name="utm_medium" id="utm_medium">
