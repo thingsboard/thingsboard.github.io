@@ -33,15 +33,15 @@ In order to remotely manage gateways, you need to go to the "**Entities**" > "**
 the ThingsBoard.
 
 Gateway list page displays all your gateways and all the necessary details about them, namely:
-- Date and time of creation;
-- Name of the gateway;
-- Status (Active/Inactive);
-- Number of enabled connectors;
+- Date and time of creation.
+- Name of the gateway.
+- Status (Active/Inactive).
+- Number of enabled connectors.
 - Gateway version.
 
 And also navigation elements:
-- **Launch command** - when clicked, a modal window opens with a command to launch the gateway;
-- **Gateway configuration** - when clicked, a modal window with general gateway settings opens;
+- **Launch command** - when clicked, a modal window opens with a command to launch the gateway.
+- **Gateway configuration** - when clicked, a modal window with general gateway settings opens.
 - **Connectors** - when clicked, a page for managing and configuring connectors opens.
 - **Delete gateway** - when clicked, a gateway deletion confirmation modal window opens.
 
@@ -49,7 +49,7 @@ On this page, you can create a new gateway, as well as sort them according to th
 
 ![](/images/gateway/dashboard/gateway-dashboard-list.png)
 
-### Gateway Detailed Page
+### Gateway Info Page
 
 If you select a gateway and click on it, you will be transferred to the page of the selected gateway.
 
@@ -57,51 +57,52 @@ If you select a gateway and click on it, you will be transferred to the page of 
 
 The dashboard consists of 4 main widgets:
 - **General gateway information**, which consists of the following cards:
-   - Status (Active/Inactive);
-   - Name of the gateway;
-   - Type of the gateway;
-   - Devices (Active/Inactive);
-   - Connectors (Enabled/Disabled) with link to Connectors page;
+   - Status (Active/Inactive).
+   - Name of the gateway.
+   - Type of the gateway.
+   - Devices (Active/Inactive).
+   - Connectors (Enabled/Disabled) with link to Connectors page.
    - Errors count with link to Logs page.
 
 ![](/images/gateway/dashboard/gateway-dashboard-cards.png)
 
 - **Devices** is a table that contains basic information about connected devices through the gateway:
-   - Device Name;
-   - Device Type;
-   - Status (Active/Inactive);
-   - Connector Name;
-   - Connector Type;
+   - Device Name.
+   - Device Type.
+   - Status (Active/Inactive).
+   - Connector Name.
+   - Connector Type.
+   - Device info button that opens a modal window with detailed information about the device.
    - As well as elements of filtering and searching for the necessary devices.
 
 ![](/images/gateway/dashboard/gateway-dashboard-devices.png)
 
-- **Alarms** is a standard alarm widget where you will receive all alarms related to selected gateway;
+- **Alarms** is a standard alarm widget where you will receive all alarms related to selected gateway.
 
 ![](/images/gateway/dashboard/gateway-dashboard-alarms.png)
 
 - **Navigation Panel** is a navigation panel on which all other pages for configuring, managing and monitoring the gateway are located, namely:
-   - Launch command - a modal window with an auto-generated command for launching the gateway;
+   - Launch command - a modal window with an auto-generated command for launching the gateway.
   
    ![](/images/gateway/dashboard/gateway-dashboard-launch-command.png)
 
-   - [General configuration](#general-configuration) - page with general gateway settings;
+   - [General configuration](#general-configuration) - page with general gateway settings.
   
    [![](/images/gateway/dashboard/gateway-dashboard-gen-conf-button.png)](#general-configuration)
 
-   - [Connectors configuration](#connector-configuration) - page with management and configuration of connectors;
+   - [Connectors configuration](#connector-configuration) - page with management and configuration of connectors.
   
    [![](/images/gateway/dashboard/gateway-dashboard-connectors-conf-button.png)](#connector-configuration)
 
-   - [Logs](#logs) - a page with various types of logs (it should be noted that the button is active only when **Remote Logging** is enabled on the gateway);
+   - [Logs](#logs) - a page with various types of logs (it should be noted that the button is active only when **Remote Logging** is enabled on the gateway).
   
    [![](/images/gateway/dashboard/gateway-dashboard-logs-button.png)](#logs)
 
-   - [Statistics](#statistics) - a page with general and custom statistics of the gateway;
+   - [Statistics](#statistics) - a page with general and custom statistics of the gateway.
 
    [![](/images/gateway/dashboard/gateway-dashboard-statistics-button.png)](#statistics)
 
-   - [Remote Shell](#remote-shell) - page with Remote Shell (it should be noted that the button is active only when **Remote Shell** is enabled on the gateway);
+   - [Remote Shell](#remote-shell) - page with Remote Shell (it should be noted that the button is active only when **Remote Shell** is enabled on the gateway).
 
    [![](/images/gateway/dashboard/gateway-dashboard-remote-shell-button.png)](#remote-shell)
 
@@ -143,7 +144,7 @@ settings that are not available in Basic mode.
 
 ![](/images/gateway/dashboard/gateway-dashboard-general-configuration-advanced-mode.png)
 
-### Connector Configuration
+### Connectors Configuration
 
 If you click on the **Connectors configuration** button on the gateway page in the **Navigation Panel**, you will be 
 transferred to the **Connectors configuration page**.
@@ -152,16 +153,18 @@ transferred to the **Connectors configuration page**.
 
 The page consists of two main sections:
 - Connectors list - basic information and control elements of all created connectors are displayed here:
-   - Enabled - enable or disable the connector;
-   - Name of connector;
-   - Type of connector;
-   - Configuration status - displays whether the remote configuration is synchronized with the local configuration;
-   - Status of the connector - if it is "green" - there are no errors, and the connector is working correctly. If it is "red" - the connector is not working correctly;
+   - Enabled - enable or disable the connector.
+   - Name of connector.
+   - Type of connector.
+   - Configuration status - displays whether the remote configuration is synchronized with the local configuration.
+   - Status of the connector - if it is "green" - there are no errors, and the connector is working correctly. If it is "red" - the connector is not working correctly.
    - Actions:
-     - RPC - dashboard for sending [RPC through gateway to connector](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/);
-     - Logs - dashboard with connector logs;
-     - Delete connectors.
+     - RPC - dashboard for sending RPC through gateway to connector.
+     - Logs - dashboard with connector logs.
+     - Delete connector.
 - Connector configuration - fields for configuring the connector.
+
+Also, you can create a new connector by clicking on the **+** button in the top right corner of the page.
 
 ### Logs
 
@@ -176,8 +179,8 @@ to the Logs page.
 ![](/images/gateway/dashboard/gateway-dashboard-logs.png)
 
 The dashboard displays the main gateway log information in real time (General, Service, Connection, Storage, Extension):
-- Created time;
-- Level;
+- Created time.
+- Level.
 - Message.
 
 ### Statistics
@@ -185,7 +188,8 @@ The dashboard displays the main gateway log information in real time (General, S
 If you click on the **Statistics** button on the gateway page in the **Navigation Panel**, you will be transferred
 to the Statistics page. 
 
-In the right sidebar you can switch between **Storage** and **Machine** statistics.
+In the right sidebar you can switch between **Storage**, **Machine** and **Custom** statistics.
+Also, you can check gateway status in the real time in the bottom right corner of the page.
 
 #### Storage Statistics
 
@@ -208,6 +212,15 @@ Machine statistics display information about the gateway machine performance. Th
 - Disk usage - displays the current Disk usage percentage of the gateway machine.
 
 ![](/images/gateway/dashboard/gateway-dashboard-machine-statistics.png)
+
+#### Custom Statistics
+
+Custom statistics display user-defined statistics of the gateway. You can add custom statistics in the 
+**Statistics** tab on **General configuration** page or by clicking on **Create new** button in 
+the "**Time series name**" field. Depends on the added custom statistics, the page will consist of different widgets:
+char widgets for numerical statistics and table widgets for string statistics.
+
+![](/images/gateway/dashboard/gateway-dashboard-custom-statistics.png)
 
 ### Remote Shell
 
@@ -232,10 +245,10 @@ to the Gateway RPC sending page.
 
 The page consists of 3 widgets:
 - Service RPC - for sending RPC and viewing the result of command execution:
-   - Command - [service gateway RPC](/docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/) (Ping, Stats, Devices, Update, Version, Restart, Reboot);
-   - Timeout - command execution time;
+   - Command - [service gateway RPC](/docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/) (Ping, Stats, Devices, Update, Version, Restart, Reboot).
+   - Timeout - command execution time.
    - Response - the result of executing the sent command.
-- RPS Logs - displays gateway logs when processing the sent RPC;
+- RPS Logs - displays gateway logs when processing the sent RPC.
 - RPC debug terminal - widget for debugging gateway RPCs.
 
 ## Next steps
