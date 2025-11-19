@@ -11,4 +11,4 @@ Logs - a tab for setting local and remote logs, which consists of 3 main section
   - Log saving period.
   - Backup count - if **Backup count** is > 0, when a rollover is done, no more than **Backup count** files are kept - the oldest ones are deleted.
 
-![](/images/gateway/dashboard/gateway-dashboard-logs-conf.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-logs-conf.png)
