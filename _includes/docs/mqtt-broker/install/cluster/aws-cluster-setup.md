@@ -225,6 +225,17 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 
 {% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
 
+## Configure gp3 as the Default Storage Class in Your EKS Cluster
+
+To ensure that all newly created PersistentVolumeClaims (PVCs) in your EKS cluster use gp3-backed Amazon EBS volumes, you must create the `gp3` StorageClass and set it as the default. 
+This section walks you through applying the gp3 StorageClass manifest, disabling or removing the existing `gp2` class if present, and verifying that gp3 is now the cluster’s default.
+
+Before proceeding, follow the official [AWS EBS CSI Driver instructions](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html)
+to install the driver on your EKS cluster.
+Once the add-on is successfully installed, you can configure gp3 as the default StorageClass.
+
+{% include templates/mqtt-broker/install/aws/gp3-sc.md %}
+
 ## Starting
 
 {% include templates/mqtt-broker/install/cluster-common/starting.md %}
