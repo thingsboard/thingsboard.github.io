@@ -201,8 +201,6 @@ Next, edit `tbmq-cache-configmap.yml`:
   #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
   ```
 
-{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
-
 ## Installation
 
 Execute the following command to run the installation:
@@ -224,6 +222,8 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
+
+{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
 
 ## Starting
 

@@ -68,8 +68,6 @@ kubectl config set-context $(kubectl config current-context) --namespace=thingsb
 
 {% include templates/mqtt-broker/install/cluster-common/provision-redis-cluster.md %}
 
-{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
-
 ## Installation
 
 {% include templates/mqtt-broker/install/gcp/install.md %}
@@ -80,6 +78,8 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 
 {% endcapture %}
 {% include templates/info-banner.md content=gcp-psql %}
+
+{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
 
 ## Provision Kafka
 

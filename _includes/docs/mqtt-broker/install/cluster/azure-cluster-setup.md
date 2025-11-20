@@ -150,8 +150,6 @@ Once your Azure Cache is ready, update the cache configuration in `tbmq-cache-co
   #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
   ```
 
-{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
-
 ## Installation
 
 Execute the following command to run the initial setup of the database.
@@ -174,6 +172,8 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
+
+{% include templates/mqtt-broker/install/cluster-common/configure-license-key.md %}
 
 ## Provision Kafka
 
