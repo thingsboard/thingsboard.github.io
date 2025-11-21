@@ -27,25 +27,25 @@ Follow these steps:
 {% assign CustomRPC = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" - "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" - "**Gateways**" in the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
-        title: Click the "**Add mapping**" under "**Requests mapping**" section to add new RPC mapping.
+        title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new RPC mapping.
     ===
         image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-1.png,
-        title: Select "**RPC command**" in the **Request type** field. For two-way RPC (with response), configure the **Device name filter** as ".*" to apply to all devices, set the **Method filter** to "echo", the **Request topic expression** to "sensor/${deviceName}/request/${methodName}/${requestId}", the **Value expression** to "${params}", the **Response topic expression** to "sensor/${deviceName}/response/${methodName}/${requestId}", and set an appropriate **Response timeout** (e.g., 10000 ms).
+        title: Select "**RPC command**" in the **Request type** field. For two-way RPC (with response).
     ===
         image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-2.png,
-        title: Configure the **Device name filter** as ".*" to apply to all devices, set the **Method filter** to "echo", the **Request topic expression** to "sensor/${deviceName}/request/${methodName}/${requestId}", the **Value expression** to "${params}", the **Response topic expression** to "sensor/${deviceName}/response/${methodName}/${requestId}", and set an appropriate **Response timeout** (e.g., 10000 ms).
+        title: Configure the **Device name filter** as `.*` to apply to all devices, set the **Method filter** to `echo`, the **Request topic expression** to `sensor/${deviceName}/request/${methodName}/${requestId}`, the **Value expression** to `${params}`, the **Response topic expression** to `sensor/${deviceName}/response/${methodName}/${requestId}`, and set an appropriate **Response timeout** (e.g., 10000 ms).
     ===
         image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-3.png,
         title: Remember to save your changes by clicking the designated button.
     ===
         image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-4.png,
-        title: For one-way RPC (without response), click on the **Without response** tab. Configure the **Device name filter** as ".*" to apply to all devices, set the **Method filter** to "no-reply", the **Request topic expression** to "sensor/${deviceName}/request/${methodName}/${requestId}", and the **Value expression** to "${params}".
+        title: For one-way RPC (without response), click on the **Without response** tab. Configure the **Device name filter** as `.*` to apply to all devices, set the **Method filter** to `no-reply`, the **Request topic expression** to `sensor/${deviceName}/request/${methodName}/${requestId}`, and the **Value expression** to `${params}`.
     ===
         image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-5.png,
         title: Remember to save your changes by clicking the designated button.
@@ -102,7 +102,6 @@ If you are using advanced configuration mode, you can use the following configur
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -111,7 +110,33 @@ If you are using advanced configuration mode, you can use the following configur
       "type": "anonymous"
     }
   },
-  "mapping": [],
+  "mapping": [
+    {
+      "topicFilter": "sensor/data",
+      "subscriptionQos": 1,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "message",
+          "deviceProfileExpression": "${sensorType}"
+        },
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+    
+        ],
+        "timeseries": [
+          {
+            "type": "string",
+            "key": "temperature",
+            "value": "${temp}"
+          }
+        ]
+      }
+    }
+  ],
   "requestsMapping": {
     "serverSideRpc": [
       {
@@ -135,4 +160,10 @@ If you are using advanced configuration mode, you can use the following configur
   }
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

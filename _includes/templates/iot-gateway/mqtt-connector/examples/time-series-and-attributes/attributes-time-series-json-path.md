@@ -58,12 +58,12 @@ Follow these steps:
 Now we can check if the attribute data is set correctly. Go to "**Entities**" > "**Devices**", select a created device and as you
 can see, the humidity data is available in the "**Attributes**" section:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-1.png)
+![image](/images/gateway/mqtt-connector/examples/result-device-overview-2.png)
 
 Now we can check if the temperature data is sending correctly. Go to "**Entities**" > "**Devices**", select a created device and as you
 can see, the humidity data is available in the "**Latest telemetry**" section:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-2.png)
+![image](/images/gateway/mqtt-connector/examples/result-device-overview-1.png)
 
 If you are using advanced configuration mode and want to set the `temperature` and `model` data using [json-path](/docs/iot-gateway/config/mqtt/#json-path), you can
 use the following configuration:
@@ -77,7 +77,6 @@ use the following configuration:
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -118,3 +117,10 @@ use the following configuration:
   "requestsMapping": {}
 }
 ```
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

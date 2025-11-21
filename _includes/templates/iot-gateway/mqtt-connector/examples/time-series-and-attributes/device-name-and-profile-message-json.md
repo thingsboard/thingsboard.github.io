@@ -37,7 +37,7 @@ Let's configure the device name and profile in the MQTT connector. For this purp
         title: In the opened window, fill in "**Topic filter**" field with `sensor/data`, also fill "**QoS**" with one of these values(`0`,`1`,`2`) and for "**Payload type**" select `JSON`.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-5.png,
-        title: Then under "**Device**" subsection choose "**Message**" for the "**Name**" field, enter `${serialNumber}`, this is the [json path](/docs/iot-gateway/config/mqtt/#json-path)  to the field that contains the device name.
+        title: Then under "**Device**" subsection choose "**Message**" for the "**Name**" field, enter `${serialNumber}`, this is the [json path](/docs/iot-gateway/config/mqtt/#json-path) to the field that contains the device name.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-6.png,
         title: Then under "**Profile name**" subsection choose "**Message**" for the "**Name**" field, enter `${sensorType}`, this is the [json path](/docs/iot-gateway/config/mqtt/#json-path) to the field that contains the device name.
@@ -69,7 +69,6 @@ use the following configuration:
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -110,4 +109,10 @@ use the following configuration:
   "requestsMapping": {}
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

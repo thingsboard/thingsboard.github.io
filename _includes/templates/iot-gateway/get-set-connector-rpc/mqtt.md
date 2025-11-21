@@ -33,7 +33,7 @@ Also, let's take a look at the data received from the MQTT topic **"data/respons
 With the SET method you can publish a message to MQTT topic.
 
 ```bash
-set requestTopicExpression=data/get_light_level;value=${params};
+set requestTopicExpression=data/set_light_level;value=${params};
 ```
 {: .copy-code}
 
@@ -42,7 +42,7 @@ Where:
 - `<value>` - the value to send.
 
 For example, in our case, we know that we can set the value of the room light level to the MQTT topic
-**"data/light_level"**. To set the value of the room light level, run the following query:
+**"sata/light_level"**. To set the value of the room light level, run the following query:
 
 ```bash
 set requestTopicExpression=data/set_light_level;value=80;

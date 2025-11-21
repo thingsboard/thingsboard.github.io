@@ -9,7 +9,7 @@ In order to add new attribute request mapping, follow these steps:
         title: Select "**Attribute request**" in the **Request type** field, enter the "**Topic filter**"
     ===
         image: /images/gateway/mqtt-connector/mqtt-attribute-requests-2.png,
-        title: Configure the **Device name expression**, **Response topic expression**, and **Response value expression** fields. 
+        title: Configure the **Device name expression**, **Response topic expression**, and **Attribute name expression** fields. 
         Select the source type for each field (`Message`, `Topic`, or `Constant`) and enter the corresponding values. 
         You can also set the **Retain** option to determine whether the attribute response message should be retained by the MQTT broker.
     '

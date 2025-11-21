@@ -10,7 +10,7 @@ docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
 
 The broker available at `0.0.0.0:1884` and publishes data to the topic `sensor/raw_data` with the following BYTES payload:
 
-:`b"AM-120"` — Python bytes literal (ASCII)
+`b"AM-120"` — Python bytes literal (ASCII)
 
 The first four bytes represent the device name, and the remaining bytes represent the temperature value.
 Configure the MQTT connector to store the entire raw payload in the `rawData` attribute, and to parse bytes 5–6 as the `temperature` and publish it as the temp timeseries. 
@@ -27,13 +27,13 @@ Follow these steps:
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-3.png,
-        title: Select the OPC-UA connector, click on the "**Data mapping**" tab. Select data mapping with device to which you want to add time series data (if you do not know how to add a new device, see the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) section of this guide with respective examples).
+        title: Select the MQTT connector, click on the "**Data mapping**" tab. Select data mapping with device to which you want to add time series data (if you do not know how to add a new device, see the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) section of this guide with respective examples).
     ===
         image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-2.png,
         title: In the opened data mapping windows, click on the "**pencil**" icon next to the "**Attributes**" section.
     ===
         image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-3.png,
-        title: Click on the "**Add attribute**" button. Fill in the "**Key**" field with `rawData`, also select `String` in "**Type**" field, and fill in the "**Value**" field with `${sensorModel}`. This is a [json-path](/docs/iot-gateway/config/mqtt/#json-path).
+        title: Click on the "**Add attribute**" button. Fill in the "**Key**" field with `rawData`, also select `Raw` in "**Type**" field, and fill in the "**Value**" field with `[:]`. Those are [slices](/docs/iot-gateway/config/mqtt/#slices).
     ===
         image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-4.png,
         title: Remember to save your changes by clicking the designated button on the screenshot.
@@ -42,7 +42,7 @@ Follow these steps:
         title: In the opened data mapping windows, click on the "**pencil**" icon next to the "**Time series**" section.
     ===
         image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-6.png,
-        title: Click on the "**Add time series**" button. Fill in the "**Key**" field with `temperature`, also select `Double` in "**Type**" field, and fill in the "**Value**" field with [json-path](/docs/iot-gateway/config/mqtt/#json-path) - `${temp}`. This is a [json-path](/docs/iot-gateway/config/mqtt/#json-path).
+        title: Click on the "**Add time series**" button. Fill in the "**Key**" field with `temp`, also select `Raw` in "**Type**" field, and fill in the "**Value**" field with `[4:]`. Those are [slices](/docs/iot-gateway/config/mqtt/#slices).
      ===
         image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-7.png,
         title: Remember to save your changes by clicking the designated button on the screenshot.
@@ -73,7 +73,6 @@ use the following configuration:
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -114,4 +113,10 @@ use the following configuration:
   "requestsMapping": {}
 }
 ````
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

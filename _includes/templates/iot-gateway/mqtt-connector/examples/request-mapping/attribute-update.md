@@ -21,13 +21,13 @@ Follow these steps:
 {% assign AttributesUpdate = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" - "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" - "**Gateways**" in the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
-        title: Click the "**Add mapping**" under "**Requests mapping**" section to add new attribute update mapping.
+        title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new attribute update mapping.
     ===
         image: /images/gateway/mqtt-connector/examples/attribute-updates-1.png,
         title: Select "**Attribute update**" in the **Request type** field, enter the "**Device name filter**" as `.*` to match all devices, or use a specific pattern to match only certain devices).
@@ -85,7 +85,6 @@ If you are using advanced configuration mode, you can use the following configur
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -94,7 +93,33 @@ If you are using advanced configuration mode, you can use the following configur
       "type": "anonymous"
     }
   },
-  "mapping": [],
+  "mapping": [
+    {
+      "topicFilter": "sensor/data",
+      "subscriptionQos": 1,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "message",
+          "deviceProfileExpression": "${sensorType}"
+        },
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+    
+        ],
+        "timeseries": [
+          {
+            "type": "string",
+            "key": "temperature",
+            "value": "${temp}"
+          }
+        ]
+      }
+    }
+  ],
   "requestsMapping": {
     "attributeUpdates": [
       {
@@ -108,4 +133,10 @@ If you are using advanced configuration mode, you can use the following configur
   }
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

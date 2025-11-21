@@ -64,14 +64,14 @@ The gateway will:
 In the RPC Debug Terminal widget, run the following command to set a new light level value:
 
 ```bash
-set requestTopicExpression=data/get_light_level;value=90;
+set requestTopicExpression=data/set_light_level;value=90;
 ```
 {: .copy-code}
 
 The gateway will:
 1. Receive this RPC request
 2. Process the built-in "set" method
-3. Send a message to the topic `data/get_light_level` with the value "90"
+3. Send a message to the topic `data/set_light_level` with the value "90"
 4. Not wait for any response since no response topic was specified
 
 ![image](/images/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-3.png)
@@ -100,7 +100,6 @@ If you are using advanced configuration mode, you can use the following configur
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -109,10 +108,42 @@ If you are using advanced configuration mode, you can use the following configur
       "type": "anonymous"
     }
   },
-  "mapping": [],
+  "mapping": [
+    {
+      "topicFilter": "sensor/data",
+      "subscriptionQos": 1,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "message",
+          "deviceProfileExpression": "${sensorType}"
+        },
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+    
+        ],
+        "timeseries": [
+          {
+            "type": "string",
+            "key": "temperature",
+            "value": "${temp}"
+          }
+        ]
+      }
+    }
+  ],
   "requestsMapping": {
     "serverSideRpc": []
   }
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

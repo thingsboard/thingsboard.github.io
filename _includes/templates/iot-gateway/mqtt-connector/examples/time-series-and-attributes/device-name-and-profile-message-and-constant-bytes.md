@@ -10,7 +10,7 @@ docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
 
 The broker available at `0.0.0.0:1884` and publishes data to the topic `sensor/raw_data` with the following BYTES payload:
 
-:`b"AM-120"` — Python bytes literal (ASCII)
+`b"AM-120"` — Python bytes literal (ASCII)
 
 Suppose we want to create a device from this payload. The first four bytes represent the device name, and the remaining bytes represent the temperature value.
 
@@ -27,7 +27,7 @@ Follow these steps:
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-3.png,
-        title: Select the created MQTT connector, select "**Basic**" click on the "**Data mapping**" tab. Firstly, we need to configure parent (or device) node. Click on the "**+ Add mapping**" button.
+        title: Select the created MQTT connector, select "**Basic**" click on the "**Data mapping**" Click on the "**+ Add mapping**" button.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-and-constant-bytes-4.png,
         title: In the opened window, fill in "**Topic filter**" field with `sensor/raw_data`, also fill "**QoS**" with one of these values(`0`,`1`,`2`) and for "**Payload type**" select `Bytes`.
@@ -65,7 +65,6 @@ use the following configuration:
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -100,4 +99,10 @@ use the following configuration:
   "requestsMapping": {}
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

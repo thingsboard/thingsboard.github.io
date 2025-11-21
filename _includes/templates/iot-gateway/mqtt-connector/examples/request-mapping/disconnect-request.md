@@ -25,13 +25,13 @@ Follow these steps:
 {% assign deviceNameDisconnectJson = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" - "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" - "**Gateways**" in the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
-        title: Click the "**Add mapping**" under "**Requests mapping**" section to add new disconnect request mapping.
+        title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new disconnect request mapping.
     ===
         image: /images/gateway/mqtt-connector/examples/disconnect-request-1.png,
         title: Select "**Disconnect request**" in the **Request type** field, enter the "**Topic filter**" as `sensor/disconnect`.
@@ -95,7 +95,6 @@ use the following configuration:
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -125,4 +124,10 @@ use the following configuration:
   }
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

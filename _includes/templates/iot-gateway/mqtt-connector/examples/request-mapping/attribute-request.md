@@ -25,13 +25,13 @@ Follow these steps:
 {% assign deviceNameAttributeJson = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" - "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" - "**Gateways**" in the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
-        title: Click the "**Add mapping**" under "**Requests mapping**" section to add new attribute request mapping.
+        title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new attribute request mapping.
     ===
         image: /images/gateway/mqtt-connector/examples/attribute-request-1.png,
         title: Select "**Attribute request**" in the **Request type** field, enter the "**Topic filter**" as `v1/devices/me/attributes/request`.
@@ -40,7 +40,7 @@ Follow these steps:
         title: Configure the device name and attribute settings. For device name expression, select source type as `Message` and enter `${serialNumber}` as the value. For attribute name expression, select source type as `Message` and enter `${versionAttribute}, ${pduAttribute}` as the value.
     ===
         image: /images/gateway/mqtt-connector/examples/attribute-request-3.png,
-        title: Configure the response topic as `devices/${deviceName}/attrs` and the response value format as `${attributeKey}: ${attributeValue}`. 
+        title: Configure the response topic as `devices/${deviceName}/attrs` and the response value expression as `${attributeKey}: ${attributeValue}`. 
     ===
         image: /images/gateway/mqtt-connector/examples/attribute-request-4.png,
         title: Remember to save your changes by clicking the designated button.
@@ -93,9 +93,6 @@ firmwareVersion: "1.2.3"
 ![image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-3.png)
 
 
-You can also request client attributes by adding the `scope` field in the request message with the value `client`.
-More details read in the [Advanced configuration](/docs/iot-gateway/config/mqtt/#device-attribute-requests) section.
-
 
 If you are using advanced configuration mode, you can
 use the following configuration:
@@ -109,7 +106,6 @@ use the following configuration:
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -118,7 +114,33 @@ use the following configuration:
       "type": "anonymous"
     }
   },
-  "mapping": [],
+  "mapping": [
+    {
+      "topicFilter": "sensor/data",
+      "subscriptionQos": 1,
+      "converter": {
+        "type": "json",
+        "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}",
+          "deviceProfileExpressionSource": "message",
+          "deviceProfileExpression": "${sensorType}"
+        },
+        "sendDataOnlyOnChange": false,
+        "timeout": 60000,
+        "attributes": [
+    
+        ],
+        "timeseries": [
+          {
+            "type": "string",
+            "key": "temperature",
+            "value": "${temp}"
+          }
+        ]
+      }
+    }
+  ],
   "requestsMapping": {
     "attributeRequests": [
       {
@@ -137,4 +159,10 @@ use the following configuration:
   }
 }
 ```
-{: .copy-code}
+{:.copy-code.expandable-15}
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+,you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}

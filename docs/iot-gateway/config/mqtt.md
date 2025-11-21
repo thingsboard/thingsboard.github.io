@@ -300,8 +300,8 @@ Attribute updates are used for provisioning or updating its client-side or share
 You can treat this as a remote configuration for devices, enabling them to request 
 shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/){:target="_blank"} for more details.
 
-The following parameters are used to configure attribute requests:
-- **Request type** - the type of the request sent to ThingsBoard (set to "Attribute request"). 
+The following parameters are used to configure attribute updates:
+- **Request type** - the type of the request sent to ThingsBoard (set to "Attribute updates"). 
 - **Device name filter** - regular expression device name filter, used to determine which devices should receive attribute updates see [regex](#regular-expressions) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section.
 - **Attribute filter** - regular expression attribute name filter, used to determine which attributes should be updated see [regex](#regular-expressions) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
 - **Response value expression** - the format of the attribute value in the response message. It can be parsed from [json-path](#json-path) (more information with screenshot examples can be found in the [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples-1) section).
@@ -323,7 +323,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 ### Server side RPC commands
 
-Server side RPC commands are used for delivering remote procedure call (RPC) commands from ThingsBoard to a device connected directly or via the Gateway.
+Server side RPC commands are used for delivering remote procedure call (RPC) commands from ThingsBoard to a device connected via the Gateway.
 
 ThingsBoard allows sending [RPC commands](https://thingsboard.io/docs/user-guide/rpc/) to devices connected directly to ThingsBoard or via Gateway.
 The following parameters are used to configure RPC methods:
@@ -352,7 +352,7 @@ One way and Two way RPC overview:
         title: Two way RPC expects response from a topic.
     ===
         image: /images/gateway/mqtt-connector/mqtt-rpc-overview-2.png,
-        title: Two way RPC expects response from a topic.
+        title: Since Two way RPC expects response from a topic, we also need to specify **Response topic expression**, **Response topic Qos**, **Response timeout**.
     ===
         image: /images/gateway/mqtt-connector/mqtt-rpc-overview-3.png,
         title: One way RPC does not expect response from a topic.
@@ -464,7 +464,7 @@ Example of the security configuration for **anonymous** authentication option.
 #### Basic
 
 **Basic** authentication option uses a **username** and **password** configured on the MQTT broker. 
-It’s a good default for most setups—just use strong, unique credentials.
+It’s a good default for most setups - just use strong, unique credentials.
 
 
 | **Parameter**                   | **Default value** | **Description**                                                                                   |
@@ -570,7 +570,7 @@ Example of the device mapping configuration:
 | mapping[].timeseries[]                | List of telemetry data that will be sent to the ThingsBoard platform instance.                                                                                                                                                           |
 | mapping[].timeseries[].key            | Key name of the telemetry data in ThingsBoard. It can be specified as a static value.                                                                                                                                                    |
 | mapping[].timeseries[].type           | The type of telemetry field (It could be one of the following `string`, `boolean`, `integer`, `double` or `Raw` if the **Payload type** `Bytes`).                                                                                        |
-| mapping[].timeseries[].value          | Value of the telemetry data that will be sent to the platform. It should be specified depending on the selected type (`path`, `identifier` or `constant`).                                                                               |
+| mapping[].timeseries[].value          | Value of the telemetry data that will be sent to the platform. It should be specified depending on the selected type (`json path`, `regular expressions` or `slices`).                                                                   |
 | mapping[].timeseries[].tsField        | (Optional) [json-path](/docs/iot-gateway/config/mqtt/#json-path) expression for field that carries a datetime string. If not present, the `ts` or `timestamp` properties from incoming message will be used as timestamp for data entry. |
 | mapping[].timeseries[].dayfirst       | (Optional)  Points out that the first number is the day (`DD.MM.YY HH:mm:ss.SSS`).• `false` → `10.11.24 10:10:10.252` → 11 Oct 2024 10:10:10.252• `true` → `10.11.24 10:10:10.252` → 10 Nov 2024 10:10:10.252.                           |
 | mapping[].timeseries[].yearfirst      | (Optional) Points out that the first number is the year `(DD.MM.YY HH:mm:ss.SSS)`. • `false` → follows dayfirst rule• `true` → `10.11.24 10:10:10.252` → 24 Nov 2010 10:10:10.252.                                                       |
@@ -681,7 +681,7 @@ Example of the disconnect request configuration:
 | **Parameter**                                                             | **Description**                                                                                                                                                                                        |
 |:--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | requestsMapping.attributeRequests[].scope                                 | (Optional) Determines the scope from where the attributes are taken use `client` if want to request client attributes                                                                                  |
-| requestsMapping.attributeRequests[].retain                                | Whether the attribute response message should be retained by the MQTT broker.                                                                                                                          |
+| requestsMapping.attributeRequests[].retain                                | Whether the attribute response message should be retained by the MQTT broker can be `true` or `false`.                                                                                                 |
 | requestsMapping.attributeRequests[].topicFilter                           | The topic/topics that the gateway subscribes to for incoming requests. The **Topic filter** supports special symbols: `#` and `+`                                                                      |
 | requestsMapping.attributeRequests[].deviceInfo.deviceNameExpressionSource | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                              |
 | requestsMapping.attributeRequests[].deviceInfo.deviceNameExpression       | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types).    |

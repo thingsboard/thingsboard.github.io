@@ -26,7 +26,7 @@ The gateway will create a unique identifier.
 
 ![image](/images/gateway/mqtt-connector/generate-clientID-from-UI.png)
 
-UI form with generated **Client ID** identifier e.g., *tb_gw_5ryl3* — this is just an example; your value will be different.
+UI form with generated **Client ID** identifier e.g., *tb_gw_rfpev* — this is just an example; your value will be different.
 
 ![image](/images/gateway/mqtt-connector/generated-clientID-from-UI.png)
 

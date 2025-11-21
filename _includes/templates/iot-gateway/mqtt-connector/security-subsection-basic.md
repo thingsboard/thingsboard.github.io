@@ -1,5 +1,5 @@
 **Basic** authentication option uses a **username** and **password** configured on the MQTT broker. 
-It’s a good default for most setups—just use strong, unique credentials. For stronger identity and mutual verification, 
+It’s a good default for most setups - just use strong, unique credentials. For stronger identity and mutual verification, 
 consider certificate-based authentication.
 
 {% assign securityBasic = '
