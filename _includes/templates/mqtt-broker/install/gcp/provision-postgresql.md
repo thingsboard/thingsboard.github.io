@@ -38,7 +38,7 @@ gcloud beta sql instances create $TB_DATABASE_NAME \
 --database-version=POSTGRES_17 \
 --region=$GCP_REGION --availability-type=regional \
 --no-assign-ip --network=projects/$GCP_PROJECT/global/networks/$GCP_NETWORK \
---cpu=2 --memory=7680MB
+--cpu=2 --memory=7680MB --edition=ENTERPRISE
 ```
 {: .copy-code}
 
