@@ -22,8 +22,25 @@
                 {% assign versionFamily = major | append: "-" | append: minor | append: "-x" %}
 
                 {% assign hashBase = version | replace: ".", "" %}
+
+                {% assign hashLinkReleaseBase = "thingsboard" %}
+
+                {% if docsPrefix == "pe/" %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-pe-" %}
+                {% else %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-ce-" %}
+                {% endif %}
+
+                {% assign date = item[1].release-date | replace: " ", "-" | downcase %}
+
+                {% if docsPrefix == "pe/" %}
+                    {% assign date = item[1].release-date-pe | replace: " ", "-" | downcase %}
+                {% endif %}
+
+                {% assign hashLinkRelease = "#" | append: hashLinkReleaseBase | append: "v" | append: hashBase | append: "-" | append: date %}
+
                 <div class="releases-table-content-wrapper"
-                     onclick="window.location='/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}'"
+                     onclick="window.location='/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}/{{ hashLinkRelease }}'"
                      style="cursor:pointer;"
                      data-family="{{ versionFamily }}">
                     <div class="releases-table-content">
@@ -39,19 +56,19 @@
                             {%- endif -%}
                         </div>
 
-                        <a href="/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}" class="releases-table-content-item version-link">
+                        <a href="/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}/{{ hashLinkRelease }}" class="releases-table-content-item version-link">
                             <span>{{ version | replace: "-", "." }}</span>
                             <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                         </a>
 
-                        {% assign platform = "upgrading-thingsboard" %}
+                        {% assign hashLinkUpgradeBase = "upgrading-thingsboard" %}
                         {% if docsPrefix == "pe/" %}
-                            {% assign platform = platform | append: "-pe-to-" %}
+                            {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-pe-to-" %}
                         {% else %}
-                            {% assign platform = platform | append: "-ce-to-" %}
+                            {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-ce-to-" %}
                         {% endif %}
 
-                        {% assign hashLinkUpgrade = "#" | append: platform | append: hashBase %}
+                        {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
 
                         <div class="releases-table-content-item upgrade-instructions">
                             <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Ubuntu Instructions">
