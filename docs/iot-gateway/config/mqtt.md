@@ -168,6 +168,12 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 
 ### Usage examples
 
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+, you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 {% capture mqtt-attributes-timeseries-examples %}
 Device name/profile from message and JSON payload<small></small>%,%devicenameandprofilemessageandjson%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-message-json.md%br%
 Device name/profile from topic and JSON payload<small></small>%,%devicenameandprofiletopiconstantandjson%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-topic-and-constant-json.md%br%
@@ -371,6 +377,12 @@ it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-met
 
 
 ### Usage examples
+
+{% capture difference %}
+Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
+, you must use `host.docker.internal` as the host.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% capture mqtt-request-mapping-examples %}
 Connect request <small></small>%,%connectrequest%,%templates/iot-gateway/mqtt-connector/examples/request-mapping/connect-request.md%br%

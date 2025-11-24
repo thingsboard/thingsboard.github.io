@@ -161,9 +161,3 @@ If you are using advanced configuration mode, you can use the following configur
 }
 ```
 {:.copy-code.expandable-15}
-
-{% capture difference %}
-Note: If you are running the gateway in Docker and using our MQTT Demo broker from [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=mqtt){:target="_blank"} 
-,you must use `host.docker.internal` as the host.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
