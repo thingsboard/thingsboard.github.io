@@ -11,7 +11,7 @@ breadcrumbs-steps: 1
 * TOC
 {:toc}
 
-### Upgrading to 4.2.1
+### Upgrading ThingsBoard CE to 4.2.1
 
 {% capture difference %}
 **NOTE:**
@@ -57,7 +57,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 4.2.0
+### Upgrading ThingsBoard CE to 4.2.0
 
 {% capture difference %}
 **NOTE:**
@@ -103,7 +103,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 4.1.0
+### Upgrading ThingsBoard CE to 4.1.0
 
 {% capture difference %}
 **NOTE:**
@@ -149,7 +149,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 4.0.2
+### Upgrading ThingsBoard CE to 4.0.2
 
 {% capture difference %}
 **NOTE:**
@@ -195,7 +195,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 4.0.1
+### Upgrading ThingsBoard CE to 4.0.1
 
 {% capture difference %}
 **NOTE:**
@@ -241,7 +241,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 4.0.0
+### Upgrading ThingsBoard CE to 4.0.0
 
 {% capture difference %}
 **NOTE:**
@@ -287,7 +287,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.9.1
+### Upgrading ThingsBoard CE to 3.9.1
 
 {% capture difference %}
 **NOTE:**
@@ -333,7 +333,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.9.0
+### Upgrading ThingsBoard CE to 3.9.0
 
 {% capture difference %}
 **NOTE:**
@@ -379,7 +379,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.8.1
+### Upgrading ThingsBoard CE to 3.8.1
 
 {% capture difference %}
 **NOTE:**
@@ -418,7 +418,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.8.0
+### Upgrading ThingsBoard CE to 3.8.0
 
 {% capture difference %}
 **NOTE:**
@@ -471,7 +471,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.7.0
+### Upgrading ThingsBoard CE to 3.7.0
 
 {% capture difference %}
 **NOTE:**
@@ -526,7 +526,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.6.4
+### Upgrading ThingsBoard CE to 3.6.4
 
 {% capture difference %}
 **NOTE:**
@@ -572,7 +572,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.6.3
+### Upgrading ThingsBoard CE to 3.6.3
 
 {% capture difference %}
 **NOTE:**
@@ -618,7 +618,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.6.2
+### Upgrading ThingsBoard CE to 3.6.2
 
 {% capture difference %}
 **NOTE:**
@@ -664,7 +664,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.6.1
+### Upgrading ThingsBoard CE to 3.6.1
 
 {% capture difference %}
 **NOTE:**
@@ -710,7 +710,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.6.0
+### Upgrading ThingsBoard CE to 3.6.0
 
 {% capture difference %}
 **NOTE:**
@@ -756,7 +756,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.5.1
+### Upgrading ThingsBoard CE to 3.5.1
 
 {% capture difference %}
 **NOTE**:
@@ -802,7 +802,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.5.0
+### Upgrading ThingsBoard CE to 3.5.0
 
 {% capture difference %}
 **NOTE:**
@@ -850,7 +850,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.4.4
+### Upgrading ThingsBoard CE to 3.4.4
 
 {% capture difference %}
 **NOTE:**
@@ -889,7 +889,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.4.3
+### Upgrading ThingsBoard CE to 3.4.3
 
 {% capture difference %}
 **NOTE:**
@@ -928,7 +928,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.4.2
+### Upgrading ThingsBoard CE to 3.4.2
 
 {% capture difference %}
 **NOTE:**
@@ -979,7 +979,7 @@ Update the JWT signing key if you use the default one "thingsboardDefaultSigning
 {% include templates/info-banner.md content=default-jwt %}
 
 
-### Upgrading to 3.4.1
+### Upgrading ThingsBoard CE to 3.4.1
 
 {% capture difference %}
 **NOTE:**
@@ -1025,7 +1025,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.4
+### Upgrading ThingsBoard CE to 3.4
 
 {% capture difference %}
 **NOTE:**
@@ -1071,7 +1071,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.3.4.1
+### Upgrading ThingsBoard CE to 3.3.4.1
 
 {% capture difference %}
 **NOTE:**
@@ -1110,7 +1110,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.3.4
+### Upgrading ThingsBoard CE to 3.3.4
 
 {% capture difference %}
 **NOTE:**
@@ -1156,7 +1156,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.3.3
+### Upgrading ThingsBoard CE to 3.3.3
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.2. In order to upgrade to 3.3.3 you need to [**upgrade to 3.3.2 first**](#upgrading-to-332).
 
@@ -1192,7 +1192,7 @@ $ sudo service thingsboard start
 ```
 
 
-### Upgrading to 3.3.2
+### Upgrading ThingsBoard CE to 3.3.2
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.1. In order to upgrade to 3.3.2 you need to [**upgrade to 3.3.1 first**](#upgrading-to-331).
 
@@ -1236,7 +1236,7 @@ $ sudo service thingsboard start
 ```
 
 
-### Upgrading to 3.3.1
+### Upgrading ThingsBoard CE to 3.3.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.0. In order to upgrade to 3.3.1 you need to [**upgrade to 3.3.0 first**](#upgrading-to-33).
 
@@ -1283,7 +1283,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.3
+### Upgrading ThingsBoard CE to 3.3
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3 you need to [**upgrade to 3.2.2 first**](#upgrading-to-322).
 
@@ -1369,7 +1369,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.2.2
+### Upgrading ThingsBoard CE to 3.2.2
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.1. In order to upgrade to 3.2.2 you need to [**upgrade to 3.2.1 first**](#upgrading-to-321).
 
@@ -1441,7 +1441,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.2.1
+### Upgrading ThingsBoard CE to 3.2.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2. In order to upgrade to 3.2.1 you need to [**upgrade to 3.2 first**](#upgrading-to-32).
 
@@ -1488,7 +1488,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.2
+### Upgrading ThingsBoard CE to 3.2
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.1.1. In order to upgrade to 3.2 you need to [**upgrade to 3.1.1 first**](#upgrading-to-311).
 
@@ -1535,7 +1535,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.1.1
+### Upgrading ThingsBoard CE to 3.1.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.1. In order to upgrade to 3.1.1 you need to [**upgrade to 3.1 first**](#upgrading-to-31).
 
@@ -1582,7 +1582,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.1
+### Upgrading ThingsBoard CE to 3.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0.1. In order to upgrade to 3.1 you need to [**upgrade to 3.0.1 first**](#upgrading-to-301).
 
@@ -1646,7 +1646,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.0.1
+### Upgrading ThingsBoard CE to 3.0.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0. In order to upgrade to 3.0.1 you need to [**upgrade to 3.0 first**](#upgrading-to-30).
 
@@ -1714,7 +1714,7 @@ sudo service thingsboard start
 {: .copy-code}
 
 
-### Upgrading to 3.0
+### Upgrading ThingsBoard CE to 3.0
 
 {% include templates/install/tb-30-update.md %}
 

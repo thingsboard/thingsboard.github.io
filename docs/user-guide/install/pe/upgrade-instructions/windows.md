@@ -11,7 +11,7 @@ breadcrumbs-steps: 1
 * TOC
 {:toc}
 
-### Upgrading to 4.2.1
+### Upgrading ThingsBoard PE to 4.2.1
 
 {% capture difference %}
 **NOTE:**
@@ -60,7 +60,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 4.2.0
+### Upgrading ThingsBoard PE to 4.2.0
 
 {% capture difference %}
 **NOTE:**
@@ -109,7 +109,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 4.1.0
+### Upgrading ThingsBoard PE to 4.1.0
 
 {% capture difference %}
 **NOTE:**
@@ -158,7 +158,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 4.0.2
+### Upgrading ThingsBoard PE to 4.0.2
 
 {% capture difference %}
 **NOTE:**
@@ -207,7 +207,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 4.0.1
+### Upgrading ThingsBoard PE to 4.0.1
 
 {% capture difference %}
 **NOTE:**
@@ -256,7 +256,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 4.0.0
+### Upgrading ThingsBoard PE to 4.0.0
 
 {% capture difference %}
 **NOTE:**
@@ -305,7 +305,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.9.1
+### Upgrading ThingsBoard PE to 3.9.1
 
 {% capture difference %}
 **NOTE:**
@@ -354,7 +354,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.9.0
+### Upgrading ThingsBoard PE to 3.9.0
 
 {% capture difference %}
 **NOTE:**
@@ -403,7 +403,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.8.1
+### Upgrading ThingsBoard PE to 3.8.1
 
 {% capture difference %}
 **NOTE:**
@@ -445,7 +445,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.8.0
+### Upgrading ThingsBoard PE to 3.8.0
 
 {% capture difference %}
 **NOTE:**
@@ -494,7 +494,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.7.0
+### Upgrading ThingsBoard PE to 3.7.0
 
 {% capture difference %}
 **NOTE:**
@@ -545,7 +545,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.6.4
+### Upgrading ThingsBoard PE to 3.6.4
 
 {% capture difference %}
 **NOTE:**
@@ -594,7 +594,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.6.3
+### Upgrading ThingsBoard PE to 3.6.3
 
 {% capture difference %}
 **NOTE:**
@@ -643,7 +643,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.6.2
+### Upgrading ThingsBoard PE to 3.6.2
 
 {% capture difference %}
 **NOTE:**
@@ -692,7 +692,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.6.1
+### Upgrading ThingsBoard PE to 3.6.1
 
 {% capture difference %}
 **NOTE:**
@@ -741,7 +741,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.6.0
+### Upgrading ThingsBoard PE to 3.6.0
 
 {% capture difference %}
 **NOTE:**
@@ -790,7 +790,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.5.1
+### Upgrading ThingsBoard PE to 3.5.1
 
 {% capture difference %}
 **NOTE:**
@@ -839,7 +839,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.5.0
+### Upgrading ThingsBoard PE to 3.5.0
 
 {% capture difference %}
 **NOTE:**
@@ -890,7 +890,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.4.4
+### Upgrading ThingsBoard PE to 3.4.4
 
 {% capture difference %}
 **NOTE:**
@@ -924,7 +924,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.4.3
+### Upgrading ThingsBoard PE to 3.4.3
 
 {% capture difference %}
 **NOTE:**
@@ -958,7 +958,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.4.2
+### Upgrading ThingsBoard PE to 3.4.2
 
 {% capture difference %}
 **NOTE:**
@@ -1012,7 +1012,7 @@ Update the JWT signing key if you use the default one "thingsboardDefaultSigning
 {% include templates/info-banner.md content=default-jwt %}
 
 
-### Upgrading to 3.4.1
+### Upgrading ThingsBoard PE to 3.4.1
 
 {% capture difference %}
 **NOTE:**
@@ -1061,7 +1061,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.4
+### Upgrading ThingsBoard PE to 3.4
 
 {% capture difference %}
 **NOTE:**
@@ -1110,7 +1110,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.3.4.1
+### Upgrading ThingsBoard PE to 3.3.4.1
 
 {% capture difference %}
 **NOTE:**
@@ -1144,7 +1144,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.3.4
+### Upgrading ThingsBoard PE to 3.3.4
 
 {% capture difference %}
 **NOTE:**
@@ -1193,7 +1193,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.3.3
+### Upgrading ThingsBoard PE to 3.3.3
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.2PE. In order to upgrade to 3.3.3PE you need to [**upgrade to 3.3.2PE first**](#upgrading-to-332).
 
@@ -1233,7 +1233,7 @@ net start thingsboard
 ```
 
 
-### Upgrading to 3.3.2
+### Upgrading ThingsBoard PE to 3.3.2
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.1PE. In order to upgrade to 3.3.2PE you need to [**upgrade to 3.3.1PE first**](#upgrading-to-331).
 
@@ -1280,7 +1280,7 @@ net start thingsboard
 ```
 
 
-### Upgrading to 3.3.1
+### Upgrading ThingsBoard PE to 3.3.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.0PE. In order to upgrade to 3.3.1PE you need to [**upgrade to 3.3.0PE first**](#upgrading-to-33).
 
@@ -1330,7 +1330,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.3
+### Upgrading ThingsBoard PE to 3.3
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2PE. In order to upgrade to 3.3PE you need to [**upgrade to 3.2.2PE first**](#upgrading-to-322).
 
@@ -1405,7 +1405,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.2.2
+### Upgrading ThingsBoard PE to 3.2.2
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.1PE. In order to upgrade to 3.2.2PE you need to [**upgrade to 3.2.1PE first**](#upgrading-to-321).
 
@@ -1465,7 +1465,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.2.1
+### Upgrading ThingsBoard PE to 3.2.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2PE. In order to upgrade to 3.2.1PE you need to [**upgrade to 3.2PE first**](#upgrading-to-32).
 
@@ -1515,7 +1515,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.2
+### Upgrading ThingsBoard PE to 3.2
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.1.1PE. In order to upgrade to 3.2PE you need to [**upgrade to 3.1.1PE first**](#upgrading-to-311).
 
@@ -1565,7 +1565,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.1.1
+### Upgrading ThingsBoard PE to 3.1.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.1PE. In order to upgrade to 3.1.1PE you need to [**upgrade to 3.1PE first**](#upgrading-to-31).
 
@@ -1615,7 +1615,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.1
+### Upgrading ThingsBoard PE to 3.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0.1PE. In order to upgrade to 3.1PE you need to [**upgrade to 3.0.1PE first**](#upgrading-to-301).
 
@@ -1672,7 +1672,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.0.1
+### Upgrading ThingsBoard PE to 3.0.1
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.0PE. In order to upgrade to 3.0.1PE you need to [**upgrade to 3.0PE first**](#upgrading-to-30).
 
@@ -1741,7 +1741,7 @@ net start thingsboard
 {: .copy-code}
 
 
-### Upgrading to 3.0
+### Upgrading ThingsBoard PE to 3.0
 
 {% capture tb_3_0_postgreSQL_windows %}
 **Since ThingsBoard 3.0PE only PostgreSQL database is supported for entities data**  
