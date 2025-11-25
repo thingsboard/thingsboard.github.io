@@ -5000,9 +5000,6 @@
 "/docs/user-guide/install/pe/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/centos/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/centos/"
-  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
   redirect_from:
@@ -5050,9 +5047,6 @@
 "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v4-2-x/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/v4-2-x/"
   redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/ubuntu/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/"
-  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce/"
   redirect_from: []
@@ -5094,9 +5088,6 @@
   redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/windows/v4-2-x/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/windows/v4-2-x/"
-  redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/windows/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/windows/"
   redirect_from: []
 "/docs/user-guide/install/pe/vc-executor-config/":
   url: "/docs/user-guide/install/pe/vc-executor-config/"
@@ -5155,9 +5146,6 @@
 "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
-"/docs/user-guide/install/upgrade-instructions/centos/":
-  url: "/docs/user-guide/install/upgrade-instructions/centos/"
-  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
   redirect_from: []
@@ -5203,9 +5191,6 @@
 "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
   redirect_from: []
-"/docs/user-guide/install/upgrade-instructions/ubuntu/":
-  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/"
-  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/"
   redirect_from: []
@@ -5244,9 +5229,6 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/"
-  redirect_from: []
-"/docs/user-guide/install/upgrade-instructions/windows/":
-  url: "/docs/user-guide/install/upgrade-instructions/windows/"
   redirect_from: []
 "/docs/user-guide/install/vc-executor-config/":
   url: "/docs/user-guide/install/vc-executor-config/"
