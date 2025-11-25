@@ -1,11 +1,4 @@
----
-layout: docwithnav-pe
-title: Preparations for upgrading ThingsBoard
-description: ThingsBoard PE IoT platform preparations upgrade instructions
-
----
-
-## Prepare for upgrading ThingsBoard (CentOS, Ubuntu)
+### Prepare for upgrading ThingsBoard 
 
 **Stop ThingsBoard**
 Check if ThingsBoard and database services are running
@@ -20,9 +13,9 @@ sudo systemctl status thingsboard
 ```
 {: .copy-code}
 
-## Backup Database
+#### Backup Database
 Make a backup of the database before upgrading.
-#### PostgreSQL
+##### PostgreSQL
 Check PostgreSQL status. It is unnecessary to stop PostgreSQL for the backup.
 ```bash
 sudo systemctl status postgresql
@@ -50,7 +43,7 @@ sudo -Hiu postgres pg_dump thingsboard > thingsboard.sql.bak
 
 Check backup file being created.
 
-#### Cassandra
+##### Cassandra
 Check Cassandra status. It is necessary to stop Cassandra for the backup.
 
 ```bash
@@ -100,7 +93,7 @@ sudo tar -cvf backup/cassandra.tar /var/lib/cassandra
 
 ***Check archive being created***
 
-### Start Database
+#### Start Database
 **Cassandra**
 ```bash
 sudo systemctl start cassandra

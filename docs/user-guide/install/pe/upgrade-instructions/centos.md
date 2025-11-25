@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 title: ThingsBoard PE upgrade instructions for CentOS
 description: ThingsBoard PE upgrade guide for CentOS
-hidetoc: true
+hidetoc: "true"
 breadcrumbs: true
 breadcrumbs-steps: 1
 
@@ -10,6 +10,8 @@ breadcrumbs-steps: 1
 
 * TOC
 {:toc}
+
+{% include docs/pe/user-guide/install/prepare.md %}
 
 ### Upgrading ThingsBoard PE to 4.2.1
 

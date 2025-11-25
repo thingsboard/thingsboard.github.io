@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 title: ThingsBoard PE upgrade instructions for Windows
 description: ThingsBoard PE upgrade guide for Windows
-hidetoc: true
+hidetoc: "true"
 breadcrumbs: true
 breadcrumbs-steps: 1
 

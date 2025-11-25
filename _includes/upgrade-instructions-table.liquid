@@ -33,7 +33,7 @@
 
                 {% assign date = item[1].release-date | replace: " ", "-" | downcase %}
 
-                {% if docsPrefix == "pe/" %}
+                {% if docsPrefix == "pe/" and item[1].release-date-pe %}
                     {% assign date = item[1].release-date-pe | replace: " ", "-" | downcase %}
                 {% endif %}
 

@@ -4972,9 +4972,6 @@
 "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/"
   redirect_from: []
-"/docs/user-guide/install/pe/upgrade-instructions/prepare/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/prepare/"
-  redirect_from: []
 "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/ubuntu/"
   redirect_from: []

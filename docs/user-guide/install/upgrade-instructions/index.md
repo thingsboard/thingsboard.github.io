@@ -15,7 +15,6 @@ table-of-contents: "false"
 </div>
 
 <div id="upgrade-links" class="upgrade-links">
-  <p style="margin-bottom: 10px"><a href="/docs/user-guide/install/pe/upgrade-instructions/prepare">Prepare</a> for upgrading ThingsBoard.</p>
   <p style="margin-bottom: 10px"><a href="/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce">ThingsBoard instructions</a> for upgrading from Community Edition.</p>
 </div>
 

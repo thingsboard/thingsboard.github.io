@@ -55,8 +55,6 @@ toc:
     path: /docs/user-guide/install/pe/report-service-config/
 - title: Upgrade instructions
   section:
-  - title: Prepare
-    path: /docs/user-guide/install/pe/upgrade-instructions/prepare/
   - title: Upgrade
     path: /docs/user-guide/install/pe/upgrade-instructions/
   - title: Upgrading from CE
