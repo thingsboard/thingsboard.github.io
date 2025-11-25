@@ -25,7 +25,7 @@ Let's configure the device name and profile in the MQTT connector. For this purp
 {% assign deviceNameAndProfileTopicAndConstantJson = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" → "**Gateways**" on the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.

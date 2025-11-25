@@ -25,13 +25,13 @@ Follow these steps:
 {% assign deviceNameAndProfileTopicAndConstantJson = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" → "**Gateways**" on the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-3.png,
-        title: Select the OPC-UA connector, click on the "**Data mapping**" tab. Select data mapping with device to which you want to add time series data (if you do not know how to add a new device, see the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) section of this guide with respective examples).
+        title: Select the MQTT connector, click on the "**Data mapping**" tab. Select data mapping with device to which you want to add time series data (if you do not know how to add a new device, see the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) section of this guide with respective examples).
     ===
         image: /images/gateway/mqtt-connector/examples/attributes-time-series-json-path-2.png,
         title: In the opened data mapping windows, click on the "**pencil**" icon next to the "**Attributes**" section.

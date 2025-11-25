@@ -105,7 +105,6 @@ If you are using advanced configuration mode, you can use the following configur
           "deviceProfileExpressionSource": "message",
           "deviceProfileExpression": "${sensorType}"
         },
-        "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
     

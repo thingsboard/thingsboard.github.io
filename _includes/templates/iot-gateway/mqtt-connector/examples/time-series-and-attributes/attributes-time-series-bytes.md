@@ -21,7 +21,7 @@ Follow these steps:
 {% assign deviceNameAndProfileIdentifierPath = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" → "**Gateways**" on the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
@@ -54,12 +54,12 @@ Follow these steps:
 Now we can check if the attribute data is set correctly. Go to "**Entities**" > "**Devices**", select a created device and as you
 can see, the humidity data is available in the "**Attributes**" section:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-3.png)
+![image](/images/gateway/mqtt-connector/examples/result-device-overview-4.png)
 
 Now we can check if the temperature data is sending correctly. Go to "**Entities**" > "**Devices**", select a created device and as you
 can see, the humidity data is available in the "**Latest telemetry**" section:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-4.png)
+![image](/images/gateway/mqtt-connector/examples/result-device-overview-3.png)
 
 If you are using advanced configuration mode and want to set the `temperature` and `model` data using [json-path](/docs/iot-gateway/config/mqtt/#json-path), you can
 use the following configuration:

@@ -25,7 +25,7 @@ Follow these steps:
 {% assign deviceNameAttributeJson = '
     ===
         image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
-        title: Go to "**Entities**" - "**Gateways**" in the left sidebar and select your gateway.
+        title: Go to "**Entities**" - "**Gateways**" on the left sidebar and select your gateway.
     ===
         image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
@@ -126,7 +126,6 @@ use the following configuration:
           "deviceProfileExpressionSource": "message",
           "deviceProfileExpression": "${sensorType}"
         },
-        "sendDataOnlyOnChange": false,
         "timeout": 60000,
         "attributes": [
     
