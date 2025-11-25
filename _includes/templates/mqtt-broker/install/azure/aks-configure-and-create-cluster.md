@@ -15,8 +15,8 @@ az aks create --resource-group $AKS_RESOURCE_GROUP \
     --generate-ssh-keys \
     --enable-addons ingress-appgw \
     --appgw-name $AKS_GATEWAY \
-    --appgw-subnet-cidr "10.2.0.0/16" \
-    --node-vm-size Standard_DS3_v2 \
+    --appgw-subnet-cidr "10.225.0.0/24" \
+    --node-vm-size Standard_D4s_v6 \
     --node-count 3
 ```
 {: .copy-code}

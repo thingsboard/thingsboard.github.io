@@ -101,10 +101,20 @@ Example of response:
 
 Note the value of the host from the command output (**tbmq-db.postgres.database.azure.com** in our case). Also, note username and password (**postgres**) from the command.
 
-Edit the database settings file and replace YOUR_AZURE_POSTGRES_ENDPOINT_URL with the host value, YOUR_AZURE_POSTGRES_USER and YOUR_AZURE_POSTGRES_PASSWORD with the correct values:
+Edit the database settings file and replace **YOUR_AZURE_POSTGRES_ENDPOINT_URL** with the host value, **YOUR_AZURE_POSTGRES_USER** and **YOUR_AZURE_POSTGRES_PASSWORD** with the correct values:
 
 ```bash
 nano tbmq-db-configmap.yml
+```
+{: .copy-code}
+
+## Create Namespace
+
+Let’s create a dedicated namespace for our TBMQ cluster deployment to ensure better resource isolation and management.
+
+```bash
+kubectl apply -f tbmq-namespace.yml
+kubectl config set-context $(kubectl config current-context) --namespace=thingsboard-mqtt-broker
 ```
 {: .copy-code}
 
@@ -124,7 +134,7 @@ To ensure compatibility with TBMQ {{tbmqSuffix}} {{valkey_from_version}} and lat
 
 You can choose one of the following paths depending on your environment:
 
-- [Deploy a Valkey cluster on AKS (Recommended)](https://learn.microsoft.com/en-us/azure/aks/valkey-overview)
+- [Deploy a Valkey cluster on AKS](https://learn.microsoft.com/en-us/azure/aks/valkey-overview)**(Recommended)**
 - [Quickstart: Create a Redis Enterprise cache](https://learn.microsoft.com/en-us/azure/redis/quickstart-create-managed-redis)
 
 Once your Azure Cache is ready, update the cache configuration in `tbmq-cache-configmap.yml` with the correct endpoint values:
@@ -149,6 +159,173 @@ Once your Azure Cache is ready, update the cache configuration in `tbmq-cache-co
   #REDIS_LETTUCE_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
   #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
   ```
+
+**Hints for Valkey Cluster Creation**
+
+The official Azure documentation for creating a Valkey cluster assumes a completely new environment. Since you have already set up your resources earlier in this guide, you should adapt the instructions as follows:
+
+* **Skip Infrastructure Creation:** You have already created the Resource Group and AKS cluster. You may skip the steps regarding `az group create` and `az aks create`.
+* **Optional Services:** You can choose to skip creating an **Azure Key Vault (AKV)** instance and **Azure Container Registry (ACR)** to simplify the setup.
+* **Node Pools:** Creating a dedicated node pool for Valkey is optional. While dedicated pools offer better resource isolation, you can use your existing node pool for this deployment.
+* **Namespace:** We recommend deploying the Valkey cluster into the same namespace as TBMQ (e.g., `thingsboard-mqtt-broker`) rather than creating a separate `valkey` namespace. This keeps all components unified.
+
+#### Creating the Secret
+
+If you choose not to use Azure Key Vault, you must create a generic Kubernetes secret manually. This secret must be formatted exactly as the Valkey container expects (with specific keys and line breaks).
+
+<details markdown="1">
+<summary>
+Example: Manual Secret Creation
+</summary>
+
+```bash
+# 1. Generate a random password (or set your own)
+VALKEY_PASSWORD=$(openssl rand -base64 32)
+echo "Generated Password: $VALKEY_PASSWORD"
+
+# 2. Create the secret directly in Kubernetes
+# We format it exactly how the container expects: 'requirepass' on line 1, 'primaryauth' on line 2
+kubectl create secret generic valkey-password \
+  --namespace thingsboard-mqtt-broker \
+  --from-literal=valkey-password-file.conf=$'requirepass '"$VALKEY_PASSWORD"$'\nprimaryauth '"$VALKEY_PASSWORD"
+```
+{: .copy-code}
+</details>
+
+#### Deploying StatefulSets (Primaries and Replicas)
+
+Proceed with creating the ConfigMap, Primary cluster pods, and Replica cluster pods. You will need to modify the Azure documentation examples to fit your environment:
+
+* **Namespace:** Ensure all resources point to your defined namespace (e.g., `thingsboard-mqtt-broker`).
+* **Affinity:** Update the `affinity` section. If you are using a shared node pool, remove the specific `nodeSelector` or `nodeAffinity` requirements. Instead, use `podAntiAffinity` to spread pods across nodes where possible.
+* **Image:** If skipping ACR, use the public Docker image: `image: "valkey/valkey:8.0"`. **Note:** Avoid using the `:latest` tag for production stability; stick to a specific version.
+* **Secret Volume:** Update the volume configuration to use the standard Kubernetes secret created in the previous step, replacing the CSI/Key Vault driver configuration.
+
+<details markdown="1">
+<summary>
+Example: Modified StatefulSet for Primary pods
+</summary>
+
+```yaml
+kubectl apply -f - <<EOF
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: valkey-masters
+  namespace: thingsboard-mqtt-broker
+spec:
+  serviceName: "valkey-masters"
+  replicas: 3
+  selector:
+    matchLabels:
+      app: valkey
+  template:
+    metadata:
+      labels:
+        app: valkey
+        appCluster: valkey-masters
+    spec:
+      terminationGracePeriodSeconds: 20
+      affinity:
+        # Removed nodeAffinity (dedicated pool requirement)
+        # Soft Anti-Affinity to prefer spreading pods but allow scheduling on available nodes
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - valkey
+              topologyKey: kubernetes.io/hostname
+      containers:
+      - name: role-master-checker
+        image: "valkey/valkey:8.0"
+        command:
+          - "/bin/bash"
+          - "-c"
+        args:
+          [
+            "while true; do role=\$(valkey-cli --pass \$(cat /etc/valkey-password/valkey-password-file.conf | awk '{print \$2; exit}') role | awk '{print \$1; exit}');     if [ \"\$role\" = \"slave\" ]; then valkey-cli --pass \$(cat /etc/valkey-password/valkey-password-file.conf | awk '{print \$2; exit}') cluster failover; fi; sleep 30; done"
+          ]
+        volumeMounts:
+        - name: valkey-password
+          mountPath: /etc/valkey-password
+          readOnly: true
+      - name: valkey
+        image: "valkey/valkey:8.0"
+        env:
+        - name: VALKEY_PASSWORD_FILE
+          value: "/etc/valkey-password/valkey-password-file.conf"
+        - name: MY_POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        command:
+          - "valkey-server"
+        args:
+          - "/conf/valkey.conf"
+          - "--cluster-announce-ip"
+          - "\$(MY_POD_IP)"
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "100Mi"
+        ports:
+            - name: valkey
+              containerPort: 6379
+              protocol: "TCP"
+            - name: cluster
+              containerPort: 16379
+              protocol: "TCP"
+        volumeMounts:
+        - name: conf
+          mountPath: /conf
+          readOnly: false
+        - name: data
+          mountPath: /data
+          readOnly: false
+        - name: valkey-password
+          mountPath: /etc/valkey-password
+          readOnly: true
+      volumes:
+      - name: valkey-password
+        # Replaced CSI/KeyVault with standard Kubernetes Secret
+        secret:
+          secretName: valkey-password
+      - name: conf
+        configMap:
+          name: valkey-cluster
+          defaultMode: 0755
+  volumeClaimTemplates:
+  - metadata:
+      name: data
+    spec:
+      accessModes: [ "ReadWriteOnce" ]
+      storageClassName: managed-csi
+      resources:
+        requests:
+          storage: 20Gi
+EOF
+```
+{: .copy-code}
+</details>
+
+#### Finalizing the Setup
+
+1.  **Services & PDB:** Create the headless services and the Pod Disruption Budget (PDB) as outlined in the documentation.
+2.  **Initialization:** Run the Valkey cluster creation commands to join the nodes.
+3.  **Verification:** Verify the roles of the pods and the replication status to ensure the cluster is healthy.
+
+#### TBMQ Configuration
+
+Once the cluster is verified, update your TBMQ configuration values:
+
+* **REDIS_NODES:** Set this to the headless service DNS, e.g., `valkey-cluster:6379`.
+* **REDIS_PASSWORD:** Use the password you generated during secret creation (or the value of `$VALKEY_PASSWORD`).
 
 ## Installation
 
