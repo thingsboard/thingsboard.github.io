@@ -91,6 +91,11 @@ You must either **migrate your Kafka and Redis data manually** or **start from n
 
 The standard upgrade script focuses only on updating the PostgreSQL database schema and does not include data migration logic for Kafka or Valkey.
 
+{% capture difference %}
+**NOTE:** You may [contact us](/docs/pe/mqtt-broker/help/) if you require additional guidance for the migration. While we do not provide direct or fully managed migration assistance, we can offer general recommendations and insights to help facilitate a smoother upgrade experience.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ---
 
 Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the cards](/docs/{{docsPrefix}}mqtt-broker/install/upgrade-instructions/)
