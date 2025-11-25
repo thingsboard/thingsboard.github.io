@@ -71,13 +71,13 @@
                         {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
 
                         <div class="releases-table-content-item upgrade-instructions">
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Ubuntu Instructions">
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Ubuntu Instructions">
                                 <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
                             </a>
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/centos/{{ hashLinkUpgrade }}" data-tooltip="Upgrade CentOS Instructions">
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade CentOS Instructions">
                                 <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
                             </a>
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/windows/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Windows Instructions">
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Windows Instructions">
                                 <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
                             </a>
                             <a class="right-link" href="/docs/user-guide/install/{{ docsPrefix }}docker/" data-tooltip="Upgrade Docker Instructions">
