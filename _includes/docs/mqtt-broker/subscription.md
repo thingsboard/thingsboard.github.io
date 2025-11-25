@@ -1,8 +1,8 @@
-TBMQ provides dedicated Private Cloud plans based on the **pay-as-you-go** model.
+TBMQ Professional Edition provides dedicated Private Cloud plans based on the **pay-as-you-go** model.
 
 ### Limits
 
-Please see table below to compare the limits of the Private Cloud plans. The values are monthly limits, unless stated otherwise.
+Please see the table below to compare the limits of the Private Cloud plans. The values are monthly limits, unless stated otherwise.
 
 <table>
   <thead>
