@@ -24,7 +24,7 @@ get requestTopicExpression=data/get_light_level;responseTopicExpression=data/res
 Also, let's take a look at the data received from the MQTT topic **"data/response"**:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/mqtt-get-set-rpc-1.png)
 {: refdef}
 
 
@@ -52,7 +52,7 @@ set requestTopicExpression=data/set_light_level;value=80;
 On the screenshot below, you can see that we have successfully sent the SET request to the MQTT topic **"data/set_light_level"**:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/mqtt-get-set-rpc-2.png)
 {: refdef}
 
 Also, let's take a look at the result after SET method in the **"data/light_level"** MQTT topic by sending Two way GET RPC request.
@@ -66,5 +66,5 @@ get requestTopicExpression=data/get_light_level;responseTopicExpression=data/res
 On the screenshot below, you can see that the room light level value is updated to 80 after the SET request:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/mqtt-get-set-rpc-3.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/mqtt-get-set-rpc-3.png)
 {: refdef}

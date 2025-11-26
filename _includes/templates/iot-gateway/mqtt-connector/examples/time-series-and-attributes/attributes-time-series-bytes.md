@@ -20,31 +20,31 @@ Follow these steps:
 
 {% assign deviceNameAndProfileIdentifierPath = '
     ===
-        image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
         title: Go to "**Entities**" → "**Gateways**" on the left sidebar and select your gateway.
     ===
-        image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/device-name-and-profile-message-json-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/device-name-and-profile-message-json-3.png,
         title: Select the MQTT connector, click on the "**Data mapping**" tab. Select data mapping with device to which you want to add time series data (if you do not know how to add a new device, see the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) section of this guide with respective examples).
     ===
-        image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attributes-time-series-bytes-2.png,
         title: In the opened data mapping windows, click on the "**pencil**" icon next to the "**Attributes**" section.
     ===
-        image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attributes-time-series-bytes-3.png,
         title: Click on the "**Add attribute**" button. Fill in the "**Key**" field with `rawData`, also select `Raw` in "**Type**" field, and fill in the "**Value**" field with `[:]`. Those are [slices](/docs/iot-gateway/config/mqtt/#slices).
     ===
-        image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-4.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attributes-time-series-bytes-4.png,
         title: Remember to save your changes by clicking the designated button on the screenshot.
     ===
-        image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-5.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attributes-time-series-bytes-5.png,
         title: In the opened data mapping windows, click on the "**pencil**" icon next to the "**Time series**" section.
     ===
-        image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-6.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attributes-time-series-bytes-6.png,
         title: Click on the "**Add time series**" button. Fill in the "**Key**" field with `temp`, also select `Raw` in "**Type**" field, and fill in the "**Value**" field with `[4:]`. Those are [slices](/docs/iot-gateway/config/mqtt/#slices).
      ===
-        image: /images/gateway/mqtt-connector/examples/attributes-time-series-bytes-7.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attributes-time-series-bytes-7.png,
         title: Remember to save your changes by clicking the designated button on the screenshot.
 '
 %}
@@ -54,12 +54,12 @@ Follow these steps:
 Now we can check if the attribute data is set correctly. Go to "**Entities**" > "**Devices**", select a created device and as you
 can see, the humidity data is available in the "**Attributes**" section:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-4.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-4.png)
 
 Now we can check if the temperature data is sending correctly. Go to "**Entities**" > "**Devices**", select a created device and as you
 can see, the humidity data is available in the "**Latest telemetry**" section:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-3.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-3.png)
 
 If you are using advanced configuration mode and want to set the `temperature` and `model` data using [json-path](/docs/iot-gateway/config/mqtt/#json-path), you can
 use the following configuration:

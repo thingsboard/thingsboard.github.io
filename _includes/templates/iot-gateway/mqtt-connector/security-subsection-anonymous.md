@@ -4,7 +4,7 @@ but not recommended for production because it allows unattended access..
 
 {% assign securityBasic = '
     ===
-        image: /images/gateway/mqtt-connector/security-basic-anonymous-subsection-1-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/security-basic-anonymous-subsection-1-ce.png,
     '
 %}
 

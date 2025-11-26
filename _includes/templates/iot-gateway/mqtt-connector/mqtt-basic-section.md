@@ -19,16 +19,16 @@ All configuration parameters list, and their detailed description can be found i
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/connection-to-broker-basic-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/connection-to-broker-basic-section-1-ce.png)
 
 If you want the UI to generate a **Client ID**, leave the **Client ID** field blank and click *Generate Client ID* (see the screenshot below). 
 The gateway will create a unique identifier.
 
-![image](/images/gateway/mqtt-connector/generate-clientID-from-UI.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/generate-clientID-from-UI.png)
 
 UI form with generated **Client ID** identifier e.g., *tb_gw_rfpev* — this is just an example; your value will be different.
 
-![image](/images/gateway/mqtt-connector/generated-clientID-from-UI.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/generated-clientID-from-UI.png)
 
 
 

@@ -48,13 +48,13 @@ you can use the "Advanced" configuration mode.
 
 You can switch between these modes using the toggle button at the top of the configuration page:
 
-![image.png](/images/gateway/mqtt-connector/mqtt-modes-toggle.png)
+![image.png](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-modes-toggle.png)
 
 ## General settings
 
 {% include /templates/iot-gateway/connector-commons/general-settings.md %}
 
-![image](/images/gateway/mqtt-connector/general-basic-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/general-basic-section-1-ce.png)
 
 {% capture difference %}
 The General tab in settings is the same for both the basic and advanced configurations.
@@ -120,13 +120,13 @@ To add a new device, use the following steps:
 
 {% assign dataMapping = '
     ===
-        image: /images/gateway/mqtt-connector/data-mapping-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-mapping-1.png,
         title: Click the **+ Add mapping** button.
     ===
-        image: /images/gateway/mqtt-connector/data-mapping-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-mapping-2.png,
         title: Provide the following fields for the Data mapping section in the opened modal window: Topic filter, QoS, Payload type (can be `JSON`, `Bytes` or `Custom`).
     ===
-        image: /images/gateway/mqtt-connector/data-mapping-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/data-mapping-3.png,
         title: Provide the following fields in the Data conversion subsection of the opened modal window: Name and Profile name (can be sourced from `Message`, `Topic` or `Constant`).
     '
 %}
@@ -162,7 +162,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-attributes-timeseries-overview.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-attributes-timeseries-overview.png)
 
 {% include /templates/iot-gateway/mqtt-connector/mqtt-attr-and-time-series-basic-section.md %}
 
@@ -237,7 +237,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-connect-request-overview.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-connect-request-overview.png)
 
 {% include /templates/iot-gateway/mqtt-connector/device-connect-request-basic-section.md %}
 
@@ -263,7 +263,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-message-disconnect.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-message-disconnect.png)
 
 {% include /templates/iot-gateway/mqtt-connector/disconnect-request-subsection-basic.md %}
 
@@ -293,9 +293,9 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-message-attribute-requests-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-message-attribute-requests-1.png)
 
-![image](/images/gateway/mqtt-connector/mqtt-message-attribute-requests-2.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-message-attribute-requests-2.png)
 
 {% include /templates/iot-gateway/mqtt-connector/attribute-request-subsection-basic.md %}
 
@@ -323,7 +323,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/mqtt-connector/mqtt-message-attributes-update.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/mqtt-message-attributes-update.png)
 
 {% include /templates/iot-gateway/mqtt-connector/attribute-updates-subsection-basic.md %}
 
@@ -354,13 +354,13 @@ One way and Two way RPC overview:
 
 {% assign OneWayTwoWayRPC = '
     ===
-        image: /images/gateway/mqtt-connector/mqtt-rpc-overview-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/mqtt-rpc-overview-1.png,
         title: Two way RPC expects response from a topic.
     ===
-        image: /images/gateway/mqtt-connector/mqtt-rpc-overview-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/mqtt-rpc-overview-2.png,
         title: Since Two way RPC expects response from a topic, we also need to specify **Response topic expression**, **Response topic Qos**, **Response timeout**.
     ===
-        image: /images/gateway/mqtt-connector/mqtt-rpc-overview-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/mqtt-rpc-overview-3.png,
         title: One way RPC does not expect response from a topic.
 '
 %}

@@ -26,28 +26,28 @@ Follow these steps:
 
 {% assign CustomRPC = '
     ===
-        image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
         title: Go to "**Entities**" - "**Gateways**" on the left sidebar and select your gateway.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
         title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new RPC mapping.
     ===
-        image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/server-side-rpc-commands-1.png,
         title: Select "**RPC command**" in the **Request type** field. For two-way RPC (with response).
     ===
-        image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/server-side-rpc-commands-2.png,
         title: Configure the **Device name filter** as `.*` to apply to all devices, set the **Method filter** to `echo`, the **Request topic expression** to `sensor/${deviceName}/request/${methodName}/${requestId}`, the **Value expression** to `${params}`, the **Response topic expression** to `sensor/${deviceName}/response/${methodName}/${requestId}`, and set an appropriate **Response timeout** (e.g., 10000 ms).
     ===
-        image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/server-side-rpc-commands-3.png,
         title: Remember to save your changes by clicking the designated button.
     ===
-        image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-4.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/server-side-rpc-commands-4.png,
         title: For one-way RPC (without response), click on the **Without response** tab. Configure the **Device name filter** as `.*` to apply to all devices, set the **Method filter** to `no-reply`, the **Request topic expression** to `sensor/${deviceName}/request/${methodName}/${requestId}`, and the **Value expression** to `${params}`.
     ===
-        image: /images/gateway/mqtt-connector/examples/server-side-rpc-commands-5.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/server-side-rpc-commands-5.png,
         title: Remember to save your changes by clicking the designated button.
     '
 %}
@@ -72,7 +72,7 @@ The gateway will:
 4. Subscribe to the topic `sensor/SN-001/response/echo/12345` to wait for a response
 5. Return the response to ThingsBoard when received
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-rpc-1.png)
 
 ### Example 2: One Way RPC (without response)
 
@@ -89,7 +89,7 @@ The gateway will:
 3. Send a message to the topic `sensor/SN-001/request/no-reply/12345` (where 12345 is a unique request ID)
 4. Not wait for any response
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-rpc-2.png)
 
 If you are using advanced configuration mode, you can use the following configuration:
 

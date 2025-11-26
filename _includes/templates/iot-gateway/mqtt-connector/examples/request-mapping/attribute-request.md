@@ -24,25 +24,25 @@ Follow these steps:
 
 {% assign deviceNameAttributeJson = '
     ===
-        image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
         title: Go to "**Entities**" - "**Gateways**" on the left sidebar and select your gateway.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
         title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new attribute request mapping.
     ===
-        image: /images/gateway/mqtt-connector/examples/attribute-request-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attribute-request-1.png,
         title: Select "**Attribute request**" in the **Request type** field, enter the "**Topic filter**" as `v1/devices/me/attributes/request`.
     ===
-        image: /images/gateway/mqtt-connector/examples/attribute-request-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attribute-request-2.png,
         title: Configure the device name and attribute settings. For device name expression, select source type as `Message` and enter `${serialNumber}` as the value. For attribute name expression, select source type as `Message` and enter `${versionAttribute}, ${pduAttribute}` as the value.
     ===
-        image: /images/gateway/mqtt-connector/examples/attribute-request-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attribute-request-3.png,
         title: Configure the response topic as `devices/${deviceName}/attrs` and the response value expression as `${attributeKey}: ${attributeValue}`. 
     ===
-        image: /images/gateway/mqtt-connector/examples/attribute-request-4.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/attribute-request-4.png,
         title: Remember to save your changes by clicking the designated button.
     '
 %}
@@ -62,7 +62,7 @@ Let's add this attribute to the device `SN-001` in ThingsBoard first:
 
 2. Then click on the "**+**" icon and add `firmwareVersion` attribute with type "**String**" and set it to `1.2.3` click the "**Add**" button.
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-1.png)
 
 This message contains the device name in the JSON payload, which is extracted using the `${serialNumber}` JSON path, and the attribute name using the `${attributeNames}` JSON path. After processing this message, ThingsBoard will retrieve the "firmwareVersion" attribute for device "SN-001" and publish it to the response topic.
 
@@ -84,13 +84,13 @@ mosquitto_pub -h 127.0.0.1 -p 1884 -t v1/devices/me/attributes/request -m '{"ser
 This message contains the device name in the JSON payload, which is extracted using the `${serialNumber}` JSON path, 
 and the attribute name using the `${attributeNames}` JSON path. After processing this message, ThingsBoard will retrieve the `firmwareVersion` attribute for device `SN-001` and publish it to the response topic.)
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-2.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-2.png)
 
 ```bash
 firmwareVersion: "1.2.3"
 ```
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-3.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-attribute-requests-3.png)
 
 
 

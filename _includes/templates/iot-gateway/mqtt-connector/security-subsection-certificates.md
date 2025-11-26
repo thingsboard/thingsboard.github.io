@@ -5,7 +5,7 @@ Use the broker’s TLS port (typically 8883) for encrypted, production-grade sec
 
 {% assign securityBasic = '
     ===
-        image: /images/gateway/mqtt-connector/security-basic-certificates-subsection-1-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/security-basic-certificates-subsection-1-ce.png,
     '
 %}
 
