@@ -126,10 +126,10 @@ step34:
 step4:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-2-pe.png
-        title: 'Go to the "Device profiles" page of the "Profiles" section. Then click on the default device profile row to open its details;'
+        title: 'Go to the "Devices" page in the "Entities" section, open the "Thermometer" device, navigate to the "Alarm rules" tab, click the "+" button, and select "Create new alarm rule".'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-3-pe.png
-        title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
+        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-4-pe.png
         title: 'Click "Add alarm rule" button;'
@@ -155,13 +155,13 @@ step4:
 step5:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-5-create-alarm-1-pe.png
-        title: 'Notice that the new temperature telemetry causes a new active alarm;'
+        title: 'As soon as a new <b>temperature</b> value goes above the threshold, a new active alarm will appear on the dashboard.'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-5-create-alarm-2-pe.png
-        title: 'You may acknowledge and clear alarms using the "Alarms table" widget;'
+        title: 'You can <b>acknowledge</b> and <b>clear</b> alarms using the <b>Alarm table</b> widget.'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-5-create-alarm-3-pe.png
-        title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'
+        title: 'After the alarm is created, you will also receive a notification in the <b>Notification center</b>. Click the bell icon in the top-right corner to view the latest notifications.'
 
 notification-center:
     0:

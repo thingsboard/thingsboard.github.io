@@ -1877,6 +1877,9 @@
 "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/paas/eu/user-guide/alarm-rules/":
+  url: "/docs/paas/eu/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/alarms/":
   url: "/docs/paas/eu/user-guide/alarms/"
   redirect_from: []
@@ -2412,6 +2415,9 @@
   redirect_from: []
 "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/paas/user-guide/alarm-rules/":
+  url: "/docs/paas/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/paas/user-guide/alarms/":
   url: "/docs/paas/user-guide/alarms/"
@@ -3552,6 +3558,9 @@
 "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/pe/user-guide/alarm-rules/":
+  url: "/docs/pe/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/pe/user-guide/alarms/":
   url: "/docs/pe/user-guide/alarms/"
   redirect_from: []
@@ -4370,6 +4379,9 @@
   redirect_from: []
 "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/user-guide/alarm-rules/":
+  url: "/docs/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/user-guide/alarms/":
   url: "/docs/user-guide/alarms/"
