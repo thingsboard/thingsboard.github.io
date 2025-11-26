@@ -966,9 +966,6 @@
 "/docs/mqtt-broker/security/overview/":
   url: "/docs/mqtt-broker/security/overview/"
   redirect_from: []
-"/docs/mqtt-broker/subscription/":
-  url: "/docs/mqtt-broker/subscription/"
-  redirect_from: []
 "/docs/mqtt-broker/troubleshooting/":
   url: "/docs/mqtt-broker/troubleshooting/"
   redirect_from: []
@@ -3664,7 +3661,8 @@
   redirect_from: []
 "/docs/pe/mqtt-broker/subscription/":
   url: "/docs/pe/mqtt-broker/subscription/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/mqtt-broker/subscription/"
 "/docs/pe/mqtt-broker/troubleshooting/":
   url: "/docs/pe/mqtt-broker/troubleshooting/"
   redirect_from: []

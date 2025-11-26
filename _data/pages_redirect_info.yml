@@ -206,6 +206,9 @@
 "/docs/mqtt-broker/image-gallery/":
   url: "/docs/pe/mqtt-broker/image-gallery/"
   redirect_from: "/docs/mqtt-broker/image-gallery/"
+"/docs/mqtt-broker/subscription/":
+  url: "/docs/pe/mqtt-broker/subscription/"
+  redirect_from: "/docs/mqtt-broker/subscription/"
 "/docs/mqtt-broker/white-labeling/":
   url: "/docs/pe/mqtt-broker/white-labeling/"
   redirect_from: "/docs/mqtt-broker/white-labeling/"
