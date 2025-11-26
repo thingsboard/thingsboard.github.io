@@ -12,6 +12,8 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## Upcoming Releases
 
+All features and capabilities available in the [Community Edition](/docs/mqtt-broker/roadmap/) are included.
+
 * **Advanced Dropped Message Tracking**
     * **Focus:** Data Integrity & Debugging
     * **Value:** Introduces detailed tracking and logging for all messages dropped by the broker (e.g., due to queue size limits, session expiry, rate limiting, or malformed packets). This provides **critical visibility** into data loss scenarios, essential for maintaining data integrity and troubleshooting high-volume deployments.
