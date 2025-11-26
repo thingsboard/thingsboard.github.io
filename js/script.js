@@ -353,7 +353,7 @@ var tb = (function () {
 
 	function setYAH() {
 		var pathname = location.href.split('#')[0]; // on page load, make sure the page is YAH even if there's a hash
-		pathname = pathname.split('?')[0];
+        pathname = pathname.split('?')[0];
 		var currentLinks = [];
 
 		$('.pi-accordion a').each(function () {
@@ -369,13 +369,7 @@ var tb = (function () {
 			}
 		});
 
-		var marker = '/releases/releases-table/';
-		var idx = pathname.indexOf(marker);
-		var isReleasesTablePageWithExtra = false;
-		if (idx !== -1) {
-			var after = pathname.substring(idx + marker.length);
-			isReleasesTablePageWithExtra = after.length > 0 && after !== '/';
-		}
+		const accordionHasActiveMenuItemClick = $('.pi-accordion').hasClass('active-menu-item-click');
 
 		currentLinks.forEach(function (yahLink) {
 			$(yahLink).parents('.item').each(function(){
@@ -385,14 +379,16 @@ var tb = (function () {
 			});
 
 			$(yahLink).addClass('yah');
-			var levelIndex = Number($(yahLink).attr('data-level-index'));
-			var left = -(levelIndex + 1) * 20 + 'px';
-			var yahIndicator = $('<div class="yah-indicator"></div>');
-			yahIndicator.css('left', left);
-			$(yahLink).prepend(yahIndicator);
+            var levelIndex = Number($(yahLink).attr('data-level-index'));
+            var left = -(levelIndex + 1) * 20 + 'px';
+            var yahIndicator = $('<div class="yah-indicator"></div>');
+            yahIndicator.css('left', left);
+            $(yahLink).prepend(yahIndicator);
 
-			if (!isReleasesTablePageWithExtra) {
+			if (!accordionHasActiveMenuItemClick) {
 				yahLink.onclick = function(e){ e.preventDefault(); };
+			} else {
+				yahLink.onclick = null;
 			}
 		});
 	}

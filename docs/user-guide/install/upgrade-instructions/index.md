@@ -5,6 +5,7 @@ assignees:
 title: Upgrade instructions
 description: ThingsBoard IoT platform upgrade instructions
 table-of-contents: "false"
+active-menu-item-click: "true"
 
 ---
 
