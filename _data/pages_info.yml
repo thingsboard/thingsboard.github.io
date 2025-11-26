@@ -3789,6 +3789,133 @@
 "/docs/pe/user-guide/image-gallery/":
   url: "/docs/pe/user-guide/image-gallery/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/"
+  redirect_from:
+  - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
+"/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/"
+  redirect_from: []
 "/docs/pe/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
   redirect_from:
@@ -5003,7 +5130,6 @@
 "/docs/user-guide/install/pe/upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/"
   redirect_from:
-  - "/docs/pe/user-guide/install/upgrade-instructions/"
   - "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/":
   url: "/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/"
