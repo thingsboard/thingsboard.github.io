@@ -246,7 +246,7 @@ docs/pe/user-guide/contribution/widgets-development-before-3.0/:
   url: "/docs/pe/user-guide/groups/"
   redirect_from: "/docs/user-guide/groups/"
 "/docs/user-guide/install/aws-marketplace-pe-upgrade/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/"
+  url: "/docs/pe/user-guide/install/upgrade-instructions/"
   redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
