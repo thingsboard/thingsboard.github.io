@@ -1,8 +1,11 @@
-Now select the security type:
+**Basic** authentication option uses a **username** and **password** configured on the MQTT broker. 
+It’s a good default for most setups - just use strong, unique credentials. For stronger identity and mutual verification, 
+consider certificate-based authentication.
 
-{% capture mqttsecuritybasicsubsection %}
-Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/mqtt-connector/security-basic-anonymous-subsection.md%br%
-Basic<small>Recommended</small>%,%basic%,%templates/iot-gateway/mqtt-connector/security-basic-basic-subsection.md%br%
-Certificates<small>For advanced security</small>%,%certificates%,%templates/iot-gateway/mqtt-connector/security-basic-certificates-subsection.md{% endcapture %}
+{% assign securityBasic = '
+    ===
+        image: /images/gateway/mqtt-connector/security-basic-basic-subsection-1-ce.png,
+    '
+%}
 
-{% include content-toggle.liquid content-toggle-id="mqttsecuritybasicsubsection" toggle-spec=mqttsecuritybasicsubsection %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=securityBasic %}

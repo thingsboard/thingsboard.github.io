@@ -206,6 +206,16 @@
   site:
     href: https://www.milesight.com/
   links:
+    general-guides:
+      0:
+        label: ThingsBoard Platform-Milesight Integration via TTI
+        href: https://support.milesight-iot.com/support/solutions/articles/73000658954-thingsboard-platform-milesight-integration-via-tti
+      1:
+        label: ThingsBoard Platform-Milesight Integration via HTTP
+        href: https://support.milesight-iot.com/support/solutions/articles/73000658955-thingsboard-platform-milesight-integration-via-http
+      2:
+        label: ThingsBoard Platform-Milesight Integration via MQTT
+        href: https://support.milesight-iot.com/support/solutions/articles/73000658957-thingsboard-platform-milesight-integration-via-mqtt
     sensor-guides:
       0:
         label: AM308 Lorawan 9-IN-1 IAQ Sensor

@@ -4,7 +4,7 @@ You can add new attribute updates in the "**Attribute updates**" section of the 
 As an example, we will use Prosys OPC-UA Simulation Server, which is available at `opc.tcp://0.0.0.0:53530/OPCUA/SimulationServer`.
 The server has the following structure:
 
-![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-4.png)
+![image](/images/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-4.png)
 
 #### Example: Fan Speed (Absolute Path)
 
@@ -17,22 +17,22 @@ Let's add an attribute update to our configuration. For this purpose, follow the
 
 {% assign attributeUpdatesAbsolutePath = '
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
-        title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
+        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
+        title: Go to "**Entities**" → "**Gateways**" in the left sidebar and select your gateway.
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
+        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-relative-path-1.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-1.png,
         title: Select the created OPC-UA connector, click on the "**Data mapping**" tab. Make sure you have configured and connected device (if you do not know how to do it, see [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide or [Connection settings](/docs/iot-gateway/config/opc-ua/#connection-settings) and [Data mapping](/docs/iot-gateway/config/opc-ua/#data-mapping) sections of this guide). Click on the "**Pencil**" icon on a device you want to configure attribute updates for.
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-absolute-path-1.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-absolute-path-1.png,
         title: Scroll down to the "**Attribute updates**" section and click on the "**Pencil**" icon to edit the attribute updates.
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-absolute-path-2.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-absolute-path-2.png,
         title: Click on the "**Add attribute update**" button. In our case, we will add `fan_speed` attribute update, so the "**Key**" field, enter `fan_speed`, select the "**Type**" as **Path**, and in the "**Value**" field enter `${Root\.Objects\.DemoDeviceInfo\.FanSpeed}`. This is an absolute path to the OPC-UA server node we want to update.
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/device-name-and-profile-relative-path-9.png,
+        image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-relative-path-9.png,
         title: Remember to save your changes by clicking the "**Apply**" button.
 '
 %}
@@ -45,9 +45,9 @@ to "**90**".
 
 {% assign attributeUpdatesAbsolutePath2 = '
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-relative-path-4.png,
     ===
-        image: https://img.thingsboard.io/gateway/opc-ua-connector/examples/attribute-updates-absolute-path-3.png,
+        image: /images/gateway/opc-ua-connector/examples/attribute-updates-absolute-path-3.png,
 '
 %}
 
@@ -56,7 +56,7 @@ to "**90**".
 Now, let's check the value of the fan speed node. In the selected device, go to the "**Last telemetry**" tab and check the 
 value of the `fan_speed` telemetry. It should be `90` since we set the shared attribute to `90`.
 
-![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/result-device-overview-3.png)
+![image](/images/gateway/opc-ua-connector/examples/result-device-overview-3.png)
 
 Try to change the value of the `fan_speed` shared attribute to `30`. After a few seconds, you should see that the
 `fan_speed` telemetry value has changed to `30`, which means that the attribute update worked correctly.
