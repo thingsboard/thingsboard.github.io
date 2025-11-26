@@ -116,7 +116,7 @@ toc:
       path: /docs/pe/mqtt-broker/white-labeling/
     - title: Image gallery
       path: /docs/pe/mqtt-broker/image-gallery/
-- title: Subscriptions
+- title: Private Cloud Subscription
   pe: true
   path: /docs/pe/mqtt-broker/subscription/
 - title: Need Help?
