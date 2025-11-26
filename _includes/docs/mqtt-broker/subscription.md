@@ -1,8 +1,7 @@
-TBMQ Professional Edition provides dedicated Private Cloud plans based on the **pay-as-you-go** model.
-
-### Limits
-
-Please see the table below to compare the limits of the Private Cloud plans. The values are monthly limits, unless stated otherwise.
+TBMQ Professional Edition provides dedicated [Private Cloud](/pricing/?section=tbmq-options&product=tbmq-private-cloud) instances based on a **flexible, pay-as-you-go model**. 
+Our interactive calculator allows you to define your exact capacity, ensuring you only pay for the performance and scale you need. 
+Once your core capacity is set, your private broker instance operates under the following **default and configurable limits**. 
+The values are monthly limits, unless stated otherwise.
 
 <table>
   <thead>
