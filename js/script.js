@@ -356,22 +356,14 @@ var tb = (function () {
         pathname = pathname.split('?')[0];
 		var currentLinks = [];
 
-		$('.pi-accordion a').each(function () {
-			var href = this.href.split('#')[0].split('?')[0];
-
-			var isReleaseLink = href.includes('/releases/releases-table/');
-			var isCurrentReleaseLink = pathname.includes('/releases/releases-table/');
-
-			if (isReleaseLink && isCurrentReleaseLink) {
-				currentLinks.push(this);
-			} else if (pathname === href) {
-				currentLinks.push(this);
-			}
-		});
-
 		const accordionHasActiveMenuItemClick = $('.pi-accordion').hasClass('active-menu-item-click');
 
+		$('.pi-accordion a').each(function () {
+			if (pathname === this.href || (accordionHasActiveMenuItemClick && pathname.includes(this.href))) currentLinks.push(this);
+		});
+
 		currentLinks.forEach(function (yahLink) {
+
 			$(yahLink).parents('.item').each(function(){
 				$(this).addClass('on');
 				$(this).find('.wrapper').eq(0).css({height: 'auto', overflow: 'visible'});
