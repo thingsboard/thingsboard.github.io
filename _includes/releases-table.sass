@@ -74,6 +74,9 @@
             span
               font-weight: 400
               color: rgba(0, 0, 0, 0.87)
+          &.version-link.version-link-lts
+            &:hover
+              text-decoration-color: #2A7DEC
           &:nth-child(1)
             min-width: 80px
           &:nth-child(2)
@@ -117,6 +120,9 @@
       &:hover
         border-left: 3px solid #00695C
       .releases-table-content-item
+        &.version-link.version-link-lts
+          &:hover
+            text-decoration-color: #00695C
         &.upgrade-link
           a
             color: #00695C
