@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Old Upgrade instructions
 description: ThingsBoard IoT platform upgrade instructions
+hidetoc: "true"
 
 ---
 

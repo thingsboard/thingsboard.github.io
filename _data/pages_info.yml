@@ -5088,6 +5088,9 @@
 "/docs/user-guide/install/pe/ubuntu/":
   url: "/docs/user-guide/install/pe/ubuntu/"
   redirect_from: []
+"/docs/user-guide/install/pe/upgrade-instructions/":
+  url: "/docs/user-guide/install/pe/upgrade-instructions/"
+  redirect_from: []
 "/docs/user-guide/install/pe/vc-executor-config/":
   url: "/docs/user-guide/install/pe/vc-executor-config/"
   redirect_from: []

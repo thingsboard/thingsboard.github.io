@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Upgrade instructions
 description: ThingsBoard PE IoT platform upgrade instructions
+hidetoc: "true"
 
 ---
 

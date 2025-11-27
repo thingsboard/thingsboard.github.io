@@ -21,7 +21,7 @@ active-menu-item-click: "true"
 </div>
 
 
-Upgrade instructions for the [older versions](/docs/user-guide/install/pe/upgrade-instructions/old-upgrade-instructions/).
+Upgrade instructions for the [older versions](/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/).
 
 <script>
   (function () {
