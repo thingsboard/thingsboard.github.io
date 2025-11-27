@@ -6,6 +6,7 @@ connectivity: LoRaWAN®
 vendor: MOKO SMART
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: lw001-bg-pro.png
+docsPrefix: pe/
 ---
 
 * TOC

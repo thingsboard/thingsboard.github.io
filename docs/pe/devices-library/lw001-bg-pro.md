@@ -12,5 +12,5 @@ docsPrefix: pe/
 * TOC
 {:toc}
 
-{% include get-hosts-name.html %}
+{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% include /docs/devices-library/guides/lw001-bg-pro.md %}
