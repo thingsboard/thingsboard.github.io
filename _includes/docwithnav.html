@@ -118,10 +118,15 @@
     {% assign hasTocContent = "true" %}
 {% endif %}
 
+{% if page.table-of-contents == "false" %}
+{% assign docContentClassList = docContentClassList | append: ' noTableOfContents' %}
+{% endif %}
+
 <section id="encyclopedia">
   {% if siteData[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
   <div id="docsToc">
-        <div class="pi-accordion">
+        {% assign activeMenuItemClick = page.active-menu-item-click %}
+        <div class="pi-accordion{% if activeMenuItemClick == 'true' %} active-menu-item-click{% endif %}">
         {% assign tree = siteData[foundTOC].toc %}{% include tree.html %}
         </div> <!-- /pi-accordion -->
   </div> <!-- /docsToc -->

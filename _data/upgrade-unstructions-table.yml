@@ -1,0 +1,111 @@
+4.2.1:
+  upgradable-from: "4.2.0"
+  release-date: Oct 15 2025
+  lts: "true"
+4.2.0:
+  upgradable-from: "4.1.0"
+  release-date: Aug 15 2025
+  lts: "true"
+4.1.0:
+  upgradable-from: "4.0.2"
+  release-date: Jul 3 2025
+4.0.2:
+  upgradable-from: "3.9.1"
+  release-date: Jul 3 2025
+4.0.1:
+  upgradable-from: "3.9.1"
+  release-date: Apr 22 2025
+4.0.0:
+  upgradable-from: "3.9.1"
+  release-date: Apr 15 2025
+3.9.1:
+  upgradable-from: "3.9"
+  release-date: Feb 19 2025
+3.9.0:
+  upgradable-from: "3.8.1"
+  release-date: Dec 31 2024
+3.8.1:
+  upgradable-from: "3.8"
+  release-date: Oct 15 2024
+3.8.0:
+  upgradable-from: "3.7"
+  release-date: Oct 3 2024
+3.7.0:
+  upgradable-from: "3.6.4"
+  release-date: Jun 17 2024
+3.6.4:
+  upgradable-from: "3.6.3"
+  release-date: Apr 11 2024
+3.6.3:
+  upgradable-from: "3.6.2"
+  release-date: Mar 18 2024
+3.6.2:
+  upgradable-from: "3.6.1"
+  release-date: Dec 28 2023
+3.6.1:
+  upgradable-from: "3.6"
+  release-date: Nov 13 2023
+3.6.0:
+  upgradable-from: "3.5.1"
+  release-date: Sep 21 2023
+3.5.1:
+  upgradable-from: "3.5"
+  release-date: May 31 2023
+3.5.0:
+  upgradable-from: "3.4.4"
+  release-date: May 9 2023
+3.4.4:
+  upgradable-from: "3.4.3"
+  release-date: February 7 2023
+3.4.3:
+  upgradable-from: "3.4.2"
+  release-date: December 21 2022
+3.4.2:
+  upgradable-from: "3.4.1"
+  release-date: December 1 2022
+3.4.1:
+  upgradable-from: "3.4"
+  release-date: August 18 2022
+3.4:
+  upgradable-from: "3.3.4.1"
+  release-date: July 19 2022
+3.3.4.1:
+  upgradable-from: "3.3.4"
+  release-date: March 22 2022
+  release-date-pe: March 18 2022
+3.3.4:
+  upgradable-from: "3.3.3"
+  release-date: March 11 2022
+3.3.3:
+  upgradable-from: "3.3.2"
+  release-date: January 27 2022
+3.3.2:
+  upgradable-from: "3.3.1"
+  release-date: November 11 2021
+3.3.1:
+  upgradable-from: "3.3"
+  release-date: September 3 2021
+3.3:
+  upgradable-from: "3.2.2"
+  release-date: August 13 2021
+3.2.2:
+  upgradable-from: "3.2.1"
+  release-date: March 24 2021
+3.2.1:
+  upgradable-from: "3.2"
+  release-date: January 26 2021
+3.2:
+  upgradable-from: "3.1.1"
+  release-date: December 1 2020
+3.1.1:
+  upgradable-from: "3.1"
+  release-date: August 28 2020
+3.1:
+  upgradable-from: "3.0.1"
+  release-date: August 12 2020
+3.0.1:
+  upgradable-from: "3.0"
+  release-date: June 9 2020
+3.0:
+  upgradable-from: "2.5.6"
+  release-date: June 1 2020

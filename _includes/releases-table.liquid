@@ -1,0 +1,75 @@
+{%- assign prefix = "docs/" | append: docsPrefix | append: "releases/releases-table/" -%}
+
+{%- assign releases = site.pages | where_exp: "p", "p.path contains prefix" -%}
+{%- assign releases = releases | sort: "path" | reverse -%}
+
+<div class="releases-table{% if docsPrefix == "pe/" %} pe-table{% endif %}">
+    <div class="releases-table-content">
+        <div class="releases-table-header">
+            <div class="releases-table-header-item">Version</div>
+            <div class="releases-table-header-item">Release Date</div>
+            <div class="releases-table-header-item">Latest Tag</div>
+            <div class="releases-table-header-item">Last Updated</div>
+            <div class="releases-table-header-item">Status</div>
+            <div class="releases-table-header-item">Release Notes</div>
+            <div class="releases-table-header-item">Upgrade Instructions</div>
+        </div>
+
+        <div class="releases-table-row">
+            {% for page in releases %}
+                {% if page.name != "index.md" %}
+                    {% assign version = page.name | split: "." | first %}
+                    <div class="releases-table-content-wrapper"
+                         onclick="window.location='{{ page.url }}'"
+                         style="cursor:pointer;">
+                        <div class="releases-table-content">
+                            <div class="releases-table-content-item">
+                                {{ version | replace: "-", "." }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                            </div>
+
+                            <div class="releases-table-content-item">
+                                <time datetime="{{ page.release-date | date: '%Y-%m-%d' }}">
+                                    {{ page.release-date | date: "%B %-d, %Y" }}
+                                </time>
+                            </div>
+
+                            <div class="releases-table-content-item">
+                                {{ page.latest-tag }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                            </div>
+
+                            <div class="releases-table-content-item">
+                                <time datetime="{{ page.last-updated | date: '%Y-%m-%d' }}">
+                                    {{ page.last-updated | date: "%B %-d, %Y" }}
+                                </time>
+                            </div>
+
+                            {% if page.lts %}
+                                <a href="/docs/releases/release-policy/" class="releases-table-content-item version-link version-link-lts">
+                                <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
+                                    LTS ({{ page.lts }})
+                                </span>
+                                    <i class="fas fa-external-link-alt"
+                                       style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}"></i>
+                                </a>
+                            {% else %}
+                                <div class="releases-table-content-item">non-LTS</div>
+                            {% endif %}
+
+                            <a href="{{ page.url }}" class="releases-table-content-item version-link">
+                                <span>{{ version | replace: "-", "." }}</span>
+                                <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                            </a>
+
+                            <div class="releases-table-content-item upgrade-link">
+                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/?version={{ version }}">
+                                    Upgrade
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
