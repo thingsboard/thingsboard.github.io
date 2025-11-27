@@ -1,0 +1,209 @@
+.releases-table
+  max-width: 2000px
+  border-radius: 8px
+  border: 12px solid rgba(42,125,236,0.001)
+  background: rgba(42, 125, 236, 0.08)
+  overflow: auto
+  .releases-table-content
+    min-width: 1250px
+    width: 100%
+    .releases-table-header
+      padding: 12px 24px
+      background: #FFF
+      border-radius: 4px
+      display: flex
+      justify-content: space-between
+      margin-bottom: 4px
+      .releases-table-header-item
+        min-width: 130px
+        font-size: 20px
+        font-weight: 400
+        line-height: 32px
+        color: rgba(0, 0, 0, 0.87)
+        &:nth-child(1)
+          min-width: 80px
+        &:nth-child(2)
+          min-width: 135px
+        &:nth-child(3)
+          min-width: 110px
+        &:nth-child(4)
+          min-width: 135px
+        &:nth-child(5)
+          min-width: 180px
+        &:nth-child(6)
+          min-width: 141px
+        &:nth-child(7)
+          text-align: center
+          min-width: 209px
+
+    .releases-table-row
+      padding: 0 4px
+      border-radius: 4px
+      background: #FFF
+    .releases-table-content-wrapper
+      display: block
+      padding: 4px 0 3px
+      border-bottom: 1px solid rgba(0, 0, 0, 0.12)
+      &:last-child
+        border-bottom: none
+      .releases-table-content
+        border-left: 3px solid transparent
+        background: transparent
+        transition: ease-in-out 0.25s
+        padding: 12px 20px
+        display: flex
+        justify-content: space-between
+        align-items: center
+        max-height: 48px
+        &:hover
+          border-left: 3px solid #2A7DEC
+          background: linear-gradient(0deg, rgba(109, 109, 109, 0.04) 0%, rgba(109, 109, 109, 0.04) 100%), #FFF
+          .releases-table-content-item:not(.upgrade-link, .upgrade-instructions)
+            scale: 1.1
+        .releases-table-content-item
+          text-decoration-color: #000
+          transition: ease-in-out 0.25s
+          font-size: 14px
+          line-height: 24px
+          min-width: 130px
+          scale: 1
+          &.version-link
+            display: flex
+            align-items: center
+            gap: 6px
+            span
+              font-weight: 400
+              color: rgba(0, 0, 0, 0.87)
+          &.version-link.version-link-lts
+            &:hover
+              text-decoration-color: #2A7DEC
+          &:nth-child(1)
+            min-width: 80px
+          &:nth-child(2)
+            min-width: 135px
+          &:nth-child(3)
+            min-width: 110px
+          &:nth-child(4)
+            min-width: 135px
+          &:nth-child(5)
+            min-width: 180px
+          &:nth-child(6)
+            min-width: 141px
+          &:nth-child(7)
+            text-align: center
+            min-width: 209px
+          &.upgrade-link
+            display: flex
+            justify-content: center
+            a
+              display: block
+              padding: 4px 14px
+              font-size: 16px
+              line-height: 28px
+              color: rgba(0, 0, 0, 0.76)
+              width: fit-content
+              background: transparent
+              font-weight: 500
+              border-radius: 4px
+              border: 1px solid rgba(0, 0, 0, 0.12)
+              &:hover
+                text-decoration: none
+                color: #2A7DEC
+                border: 1px solid #2A7DEC
+                background: rgba(42, 125, 236, 0.08)
+
+.releases-table.pe-table
+  background: rgba(0, 105, 92, 0.06)
+  border: 12px solid rgba(0, 105, 92, 0.001)
+  .releases-table-content-wrapper
+    .releases-table-content
+      &:hover
+        border-left: 3px solid #00695C
+      .releases-table-content-item
+        &.version-link.version-link-lts
+          &:hover
+            text-decoration-color: #00695C
+        &.upgrade-link
+          a
+            &:hover
+              color: #00695C
+              border: 1px solid #00695C
+              background: rgba(0, 105, 92, 0.08)
+
+.releases-table.upgrade-instructions-table
+  margin: 30px 0
+  .releases-table-content
+    .releases-table-header
+      .releases-table-header-item
+        min-width: 130px
+        &:nth-child(2)
+          min-width: 131px
+        &:nth-child(3)
+          min-width: 175px
+        &:nth-child(5)
+          min-width: 141px
+        &:nth-child(6)
+          text-align: center
+          min-width: 209px
+    .releases-table-content-wrapper
+      .releases-table-content
+        .releases-table-content-item
+          min-width: 130px
+          &:nth-child(2)
+            min-width: 131px
+          &:nth-child(3)
+            min-width: 175px
+          &:nth-child(5)
+            min-width: 141px
+          &:nth-child(6)
+            text-align: center
+            min-width: 209px
+        .releases-table-content-item
+          &.lts-item
+            span
+              color: rgba(0, 0, 0, 0.54)
+              border-radius: 16px
+              background: rgba(0, 0, 0, 0.06)
+              padding: 4px 10px
+            span.lts-item-true
+              color: #198038
+              background: rgba(25, 128, 56, 0.06)
+          &.upgrade-instructions
+            display: flex
+            align-items: center
+            justify-content: center
+            gap: 5px
+            a
+              position: relative
+              padding: 10px
+              &.right-link
+                &:before
+                  left: -100%
+              &:before
+                content: attr(data-tooltip)
+                position: absolute
+                bottom: 125%
+                left: 37%
+                transform: translateX(-50%)
+                background-color: rgba(0,0,0,0.7)
+                backdrop-filter: blur(2px)
+                color: #fff
+                font-size: 13px
+                padding: 6px 8px
+                border-radius: 6px
+                white-space: nowrap
+                opacity: 0
+                pointer-events: none
+                transition: opacity 0.2s ease
+              &:hover
+                &:before
+                  opacity: 1
+                  content: attr(data-tooltip)
+                filter: unset
+                img
+                  scale: 1.2
+                  filter: unset
+              img
+                scale: 1
+                filter: brightness(0) saturate(100%) invert(57%) sepia(2%) saturate(45%) hue-rotate(44deg) brightness(88%) contrast(90%)
+                transition: ease-in-out 0.3s

@@ -1,0 +1,110 @@
+{% assign versionsCollection = site.data.upgrade-unstructions-table %}
+
+<div class="releases-table upgrade-instructions-table{% if docsPrefix == "pe/" %} pe-table{% endif %}">
+    <div class="releases-table-content">
+        <div class="releases-table-header">
+            <div class="releases-table-header-item">Version</div>
+            <div class="releases-table-header-item">Release Date</div>
+            <div class="releases-table-header-item">Upgradable From</div>
+            <div class="releases-table-header-item">LTS</div>
+            <div class="releases-table-header-item">Release Notes</div>
+            <div class="releases-table-header-item">Upgrade Instructions</div>
+        </div>
+
+        <div class="releases-table-row">
+            {% for item in versionsCollection %}
+                {% assign version = item[0] %}
+
+                {% assign parts = version | split: "." %}
+                {% assign major = "v" | append: parts[0] %}
+                {% assign minor = parts[1] %}
+
+                {% assign versionFamily = major | append: "-" | append: minor | append: "-x" %}
+
+                {% assign hashBase = version | replace: ".", "" %}
+
+                {% assign hashLinkReleaseBase = "thingsboard" %}
+
+                {% if docsPrefix == "pe/" %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-pe-" %}
+                {% else %}
+                    {% assign hashLinkReleaseBase = hashLinkReleaseBase | append: "-ce-" %}
+                {% endif %}
+
+                {% assign date = item[1].release-date | replace: " ", "-" | downcase %}
+
+                {% if docsPrefix == "pe/" and item[1].release-date-pe %}
+                    {% assign date = item[1].release-date-pe | replace: " ", "-" | downcase %}
+                {% endif %}
+
+                {% assign hashLinkRelease = "#" | append: hashLinkReleaseBase | append: "v" | append: hashBase | append: "-" | append: date %}
+
+                <div class="releases-table-content-wrapper"
+                     onclick="window.location='/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}/{{ hashLinkRelease }}'"
+                     style="cursor:pointer;"
+                     data-family="{{ versionFamily }}">
+                    <div class="releases-table-content">
+                        <div class="releases-table-content-item">v{{ version }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
+                        <div class="releases-table-content-item">{% if docsPrefix == "pe/" and item[1].release-date-pe %}{{ item[1].release-date-pe }}{% else %}{{ item[1].release-date }}{% endif %}</div>
+                        <div class="releases-table-content-item">v{{ item[1].upgradable-from }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
+
+                        <div class="releases-table-content-item lts-item">
+                            {%- if item[1].lts -%}
+                                <span class="lts-item-true">Available</span>
+                            {%- else -%}
+                                <span>Not-available</span>
+                            {%- endif -%}
+                        </div>
+
+                        <a href="/docs/{{ docsPrefix }}releases/releases-table/{{ versionFamily }}/{{ hashLinkRelease }}" class="releases-table-content-item version-link">
+                            <span>{{ version | replace: "-", "." }}</span>
+                            <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
+                        </a>
+
+                        {% assign hashLinkUpgradeBase = "upgrading-thingsboard" %}
+                        {% if docsPrefix == "pe/" %}
+                            {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-pe-to-" %}
+                        {% else %}
+                            {% assign hashLinkUpgradeBase = hashLinkUpgradeBase | append: "-ce-to-" %}
+                        {% endif %}
+
+                        {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
+
+                        <div class="releases-table-content-item upgrade-instructions">
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Ubuntu Instructions">
+                                <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
+                            </a>
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade CentOS Instructions">
+                                <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
+                            </a>
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Windows Instructions">
+                                <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
+                            </a>
+                            <a class="right-link" href="/docs/user-guide/install/docker/" data-tooltip="Upgrade Docker Instructions">
+                                <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        (function applyFamilyFilter() {
+            const params = new URLSearchParams(window.location.search);
+            const versionParam = params.get("version");
+            if (!versionParam) return;
+
+            const targetFamily = versionParam.replace(/\.x$/i, "").trim();
+            document
+                .querySelectorAll(".upgrade-instructions-table .releases-table-content-wrapper")
+                .forEach(function (row) {
+                    const rowFamily = row.getAttribute("data-family");
+                    if (rowFamily !== targetFamily) row.style.display = "none";
+                });
+        })();
+
+    });
+</script>

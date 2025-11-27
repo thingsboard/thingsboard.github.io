@@ -54,4 +54,8 @@ toc:
   - title: Report service parameters
     path: /docs/user-guide/install/pe/report-service-config/
 - title: Upgrade instructions
-  path: /docs/user-guide/install/pe/upgrade-instructions/
+  section:
+  - title: Upgrade
+    path: /docs/pe/user-guide/install/upgrade-instructions/
+  - title: Upgrading from CE
+    path: /docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/

@@ -356,11 +356,14 @@ var tb = (function () {
         pathname = pathname.split('?')[0];
 		var currentLinks = [];
 
+		const accordionHasActiveMenuItemClick = $('.pi-accordion').hasClass('active-menu-item-click');
+
 		$('.pi-accordion a').each(function () {
-			if (pathname === this.href) currentLinks.push(this);
+			if (pathname === this.href || (accordionHasActiveMenuItemClick && pathname.includes(this.href))) currentLinks.push(this);
 		});
 
 		currentLinks.forEach(function (yahLink) {
+
 			$(yahLink).parents('.item').each(function(){
 				$(this).addClass('on');
 				$(this).find('.wrapper').eq(0).css({height: 'auto', overflow: 'visible'});
@@ -373,7 +376,12 @@ var tb = (function () {
             var yahIndicator = $('<div class="yah-indicator"></div>');
             yahIndicator.css('left', left);
             $(yahLink).prepend(yahIndicator);
-			yahLink.onclick = function(e){e.preventDefault();};
+
+			if (!accordionHasActiveMenuItemClick) {
+				yahLink.onclick = function(e){ e.preventDefault(); };
+			} else {
+				yahLink.onclick = null;
+			}
 		});
 	}
 })();
