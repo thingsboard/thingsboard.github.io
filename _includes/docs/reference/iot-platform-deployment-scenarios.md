@@ -2,70 +2,61 @@
 * TOC
 {:toc}
 
-This article describes most popular deployment architectures supported by ThingsBoard. 
+This article describes the most common deployment architectures supported by ThingsBoard. 
 All deployment scenarios contain certain pros and cons. 
 Choosing the right architecture for your deployment depends on the TCO, performance and high-availability requirements.
-We will start from the most simple scenarios and see how the minimalistic deployment can be upgraded to most complex ones.
+We will start from the most simple scenarios and see how the minimalistic deployment can be upgraded to the most complex ones.
 
-Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard deployed using AWS.  
+In the following sections, you can find total cost of ownership (TCO) calculations for ThingsBoard deployed using AWS.  
 Important notice: all calculation and pricing below are approximate and are listed as an example.
 Please consult your cloud provider in order to get your accurate pricing.
 
-## Performance requirements
-
-We have prepared a list of items to quickly estimate typical IoT solution performance requirements:
-
-1. Total number of connected devices, assets, customers, customer users and tenants in production or per year;
-2. Maximum and average amount of messages per day per device;
-3. Maximum and average size of device payload;
-4. Average amount of data points in each message; 
-5. Communication protocol or Integration type used for device connectivity;
-6. Entities data lifetime (in years).
-
-Once we have rough vision over above mentioned parameters we (as well as you) will be able to estimate required infrastucture.  
-ThingsBoard performance heavily depends on both the amount of messages produced by devices and the structure of those messages.
-
-**Example 1: 20,000 trackers**
- 
-20,000 devices send messages to the cloud once per minute. Each message contains parameters as follows:
-
-```json
-{"latitude": 42.222222, "longitude": 73.333333, "speed": 55.5, "fuel": 92, "batteryLevel": 81}
-```
-In this case ThingsBoard constantly maintains 20,000 connections and processes 333 messages per second. 
-Each message delivers 5 data points that may need to be graphed/analyzed/fetched separately. 
-This causes 1,667 write requests to the database per second and produces 143M requests per day.
-Based on the chosen database type, this results into approximately 1-2GB (Cassandra) or 7-10GB (PostgreSQL) daily.
-
-**Example 2: 100,000 smart meters** 
-
-100,000 LoRaWAN devices send messages to the cloud once per hour. Each message structure is the following:
-
-```json
-{"pulseCounter": 1234567, "leakage": false, "batteryLevel": 81}
-```
-ThingsBoard receives uplink messages from one of the available Network Servers over HTTP or MQTT. 
-Typical message rate is 100,000 / 3600 = 28 messages per second, which is quite low. 
-Each message contains 3 data points, that may need to be graphed/analyzed/fetched separately. 
-However, we decide not to store "leakage" property since it is redundant ("false" most of the time). 
-We will only use it to generate the alarm.
-This causes 55.5 write requests to the database per second and produces 4.78M requests per day.
-Based on the chosen database type, this results into approximately 100MB (Cassandra) or 238MB (PostgreSQL) daily.
-
 ## Key infrastructure characteristics
 
-Based on the [performance requirements](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#performance-requirements), 
-you can identify key ThingsBoard server/cluster characteristics:
+The best way to set up your ThingsBoard system depends on several factors, including your business needs, compliance rules, and expected growth. Our goal is to make sure the technical details are clear, making your architecture decision easier. 
 
-- the number of **incoming messages per second** (mostly impacts RAM and CPU consumption);
-- the number of concurrent **active device sessions** (mostly impacts RAM consumption);
-- the number of **messages processed by Rule Engine** (mostly impacts CPU consumption);
-- the number of **persisted data points** (directly impacts IOPS and corresponding database). 
+### Deployment Options and Scaling
+Your choice of deployment affects how easily you can install, manage, and grow your system.
+<table>
+    <thead>
+        <tr>
+            <th>Deployment Option</th>
+            <th>Best For</th>
+            <th>Key Benefits</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Standalone server (Scenario A)</strong></td>
+            <td>Proof-of-concept, development, or small-scale use-cases.</td>
+            <td>Easiest to install.</td>
+        </tr>
+        <tr>
+            <td><strong>Single-AZ Microservices (Scenario B)</strong></td>
+            <td>Expected growth in devices and users, starting small.</td>
+            <td>Provides a good balance of initial startup cost and future scalability.</td>
+        </tr>
+        <tr>
+            <td><strong>Multi-AZ Microservices (Scenario C)</strong></td>
+            <td>Strict requirements for uptime (high-availability) and reliability (fault-tolerance).</td>
+            <td>Ensures the system remains available even if one data center (Availability Zone) fails.</td>
+        </tr>
+    </tbody>
+</table>
 
-ThingsBoard cluster can scale horizontally, so you quite easily deal with RAM/CPU influencers. 
-However, you need to carefully plan amount of persisted data points (the last item in the list above).
-In case you intent to use PostgreSQL, we recommend to have less then 20,000 data points records per second.
-In case you plan to use Hybrid database approach (PostgreSQL and Cassandra) you can scale telemetry (Cassandra) writes to 1M data points/second, although the attribute updates are pushed to PostgreSQL, so 20,000 limit remains valid.  
+**Scaling**:
+
+* Standalone deployment scales vertically (adding more CPU/RAM to a single machine).
+
+* Microservice deployment scales horizontally (adding more servers).
+
+**Database and Performance Limits**:
+
+It's important to plan for how much data you will save (persisted data points). The number of data points you can record per second is heavily influenced by your database choice.
+
+* Using Only PostgreSQL: If you plan to use PostgreSQL for all data, the recommended limit is 20,000 data points recorded per second.
+
+* Using a Hybrid Database (PostgreSQL and Cassandra): This approach uses Cassandra for telemetry (high-volume time-series data) and PostgreSQL for other critical data (like device attributes and latest time-series). With this setup, you can scale telemetry write operations up to 1 million data points per second. Important Note: The 20,000 per second limit still applies to attribute updates, as these are written to PostgreSQL.
 
 ## Deployment Scenarios
 
