@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
 assignees:
-- ashvayka
+  - ashvayka
 title: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac OS)
 description: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac OS)
 
@@ -11,72 +11,65 @@ description: Installing ThingsBoard Trendz Analytics using Docker (Linux or Mac 
 {:toc}
 
 
-This guide will help you to install and start Trendz Analytics using Docker on Linux or Mac OS. 
+This guide will help you to install and start Trendz Analytics using Docker on Linux or Mac OS.
 
 ## Prerequisites
 
-- [Install Docker CE](https://docs.docker.com/engine/installation/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+{% include templates/trendz/install/docker-requirements-linux.md %}
 
-## Step 1. Obtain the license key 
+## Installation Steps
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
+### Step 1. Activate Trendz Add-on on ThingsBoard
 
-Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
+{% include templates/trendz/install/activate-trendz-license.md %}
 
-## Step 2. Running Trendz service
+### Step 2. Docker Compose setup
 
-### Docker Compose setup
-
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
-
-Create docker compose file for Trendz Analytics service:
+Create a docker compose file for Trendz Analytics service:
 
 ```text
 sudo nano docker-compose.yml
 ```
 {: .copy-code}
 
-Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICENSE_SECRET_HERE” with your **license secret obtained on the first step**
+Add the following configuration to the YAML file. 
 
 ```yml
-
-version: '3.0'
 services:
-  mytrendz:
+  trendz:
+    depends_on:
+      - postgres
     restart: always
     image: "thingsboard/trendz:{{ site.release.trendz_ver }}"
     ports:
       - "8888:8888"
     environment:
-      TB_API_URL: http://10.0.0.101:8080
-      TRENDZ_LICENSE_SECRET: PUT_YOUR_LICENSE_SECRET_HERE
       TRENDZ_LICENSE_INSTANCE_DATA_FILE: /data/license.data
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trendz
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
-      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8181
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: trendz-python-executor:8181
       SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
+      - ~/.mytrendz-conf:/trendz-config-files
       - ~/.mytrendz-data:/data
       - ~/.mytrendz-logs:/var/log/trendz
-  mypyexecutor:
+  trendz-python-executor:
     restart: always
     image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
       - "8181:8181"
     environment:
-      MAX_HEAP_SIZE: 750M
-      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
       EXECUTOR_MANAGER: 1
       EXECUTOR_SCRIPT_ENGINE: 6
       THROTTLING_QUEUE_CAPACITY: 10
       THROTTLING_THREAD_POOL_SIZE: 6
       NETWORK_BUFFER_SIZE: 5242880
     volumes:
-      - ~/.mytrendz-data/python-executor:/python-executor
+      - ~/.mytrendz-python-conf:/python-executor-config-files
+      - ~/.mytrendz-python-data:/data
+      - ~/.mytrendz-python-logs:/var/log/python-executor
   postgres:
     restart: always
     image: "postgres:15"
@@ -90,53 +83,218 @@ services:
 ```
 {: .copy-code}
 
-Where: 
-    
-- `TB_API_URL` - url for connecting to ThingsBoard Rest API (for example http://10.5.0.11:8080). Note that ThingsBoard IP address should be resolvable from Trendz docker container
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the first step
-- `8888:8888`            - connect local port 8888 to exposed internal HTTP port 8888
-- `~/.mytrendz-data:/data`   - mounts the volume `~/.mytrendz-data` to Trendz data directory
-- `~/.mytrendz-data/db:/var/lib/postgresql/datad`   - mounts the volume `~/.mytrendz-data/db` to Postgres data directory
-- `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
-- `mytrendz`             - friendly local name of this machine
-- `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:{{ site.release.trendz_ver }}`          - Trendz docker image
-- `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}`          - Trendz python script executor docker image
-- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
-- `~/.mytrendz-data/python-executor:/python-executor`           - mounts the volume `~/.mytrendz-data/python-executor` to Trendz Python Executor additional data directory
+Where:
 
+- `8888:8888` - connect local port 8888 to exposed internal HTTP port 8888
+- `~/.mytrendz-conf:/trendz-config-files` - mounts the volume `~/.mytrendz-conf` to Trendz directory with the configuration files
+- `~/.mytrendz-data:/data` - mounts the volume `~/.mytrendz-data` to Trendz data directory
+- `~/.mytrendz-data/db:/var/lib/postgresql/data` - mounts the volume `~/.mytrendz-data/db` to Postgres data directory
+- `~/.mytrendz-logs:/var/log/trendz` - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
+- `mytrendz` - name of the Trendz Docker service
+- `--restart always` - automatically start Trendz in case of system reboot and restart in case of failure.
+- `thingsboard/trendz:{{ site.release.trendz_ver }}` - Trendz docker image
+- `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}` - Trendz python script executor docker image
+- `SCRIPT_ENGINE_TIMEOUT` - Python script execution timeout
 
-Run following commands, before starting docker container(s), to create folders for storing data and logs.
-These commands additionally will change owner of newly created folders to docker container user.
-To do this (to change user) **chown** command is used, and this command requires *sudo* permissions (command will request password for a *sudo* access):
+### Step 3. Configuration files setup
 
+Before starting the services, you need to create the configuration directories and files.
+Execute the following commands to create the necessary folders and write the configuration files:
+
+1. **Create directories**
 ```bash
-mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
-mkdir -p ~/.mytrendz-data/python-executor && sudo chown -R 799:799 ~/.mytrendz-data/python-executor
-mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
+mkdir -p ~/.mytrendz-conf 
+mkdir -p ~/.mytrendz-data 
+mkdir -p ~/.mytrendz-logs 
+mkdir -p ~/.mytrendz-python-conf 
+mkdir -p ~/.mytrendz-python-data 
+mkdir -p ~/.mytrendz-python-logs 
+mkdir -p ~/.mytrendz-logs/python-executor-logs
 ```
 {: .copy-code}
 
-**NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
+2. **Create Trendz configuration files**:
 
-### Running service
+* `~/.mytrendz-conf/trendz.conf`
+```bash
+cat <<'EOF' > ~/.mytrendz-conf/trendz.conf
+export LOG_FILENAME=trendz.out
+export LOADER_PATH=/usr/share/trendz/conf
+
+export JAVA_OPTS="$JAVA_OPTS -Dplatform=deb -Dinstall.data_dir=/usr/share/trendz/data"
+export JAVA_OPTS="$JAVA_OPTS -Xlog:gc=debug:file=/var/log/trendz/gc.log -XX:+IgnoreUnrecognizedVMOptions  -XX:+PrintGCDateStamps"
+export JAVA_OPTS="$JAVA_OPTS -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10"
+export JAVA_OPTS="$JAVA_OPTS -XX:GCLogFileSize=10M -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark"
+export JAVA_OPTS="$JAVA_OPTS -XX:CMSWaitDuration=10000 -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:+CMSParallelInitialMarkEnabled"
+export JAVA_OPTS="$JAVA_OPTS -XX:+CMSEdenChunksRecordAlways -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly"
+
+export JAVA_OPTS="$JAVA_OPTS -Xms2000m -Xmx2000m"
+export JAVA_OPTS="$JAVA_OPTS -Xss1m"
+export JAVA_OPTS="$JAVA_OPTS -XX:MaxMetaspaceSize=256m"
+export JAVA_OPTS="$JAVA_OPTS -XX:MaxDirectMemorySize=256m"
+export JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
+export JAVA_OPTS="$JAVA_OPTS -XX:+ExitOnOutOfMemoryError"
+export JAVA_OPTS="$JAVA_OPTS -XX:+AlwaysPreTouch"
+EOF
+```
+{: .copy-code}
+* `~/.mytrendz-conf/logback.xml`
+```bash
+cat <<'EOF' > ~/.mytrendz-conf/logback.xml
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <appender name="fileLogAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/log/trendz/trendz.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/trendz/trendz.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>
+                %green(%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS}) | %highlight(%-5level) [%cyan(%-35thread)] %-60yellow(%C{1}): %msg %n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %green(%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS}) | %highlight(%-5level) [%cyan(%-40thread)] %-60yellow(%C{1}): %msg %n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="fileLogAppender"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="org.thingsboard.trendz" level="INFO" />
+
+</configuration>
+EOF
+```
+{: .copy-code}
+
+3. **Create Python Executor configuration files**:
+* `~/.mytrendz-python-conf/python-executor.conf`
+```bash
+cat <<'EOF' > ~/.mytrendz-python-conf/python-executor.conf
+export LOG_FILENAME=python-executor.out
+export LOADER_PATH=/usr/share/python-executor/conf
+
+export JAVA_OPTS="$JAVA_OPTS -Dplatform=deb"
+export JAVA_OPTS="$JAVA_OPTS -Xlog:gc=debug:file=/var/log/python-executor/gc.log -XX:+IgnoreUnrecognizedVMOptions -XX:+PrintGCDateStamps"
+export JAVA_OPTS="$JAVA_OPTS -XX:+PrintHeapAtGC -XX:+PrintTenuringDistribution -XX:+PrintGCApplicationStoppedTime -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=10"
+export JAVA_OPTS="$JAVA_OPTS -XX:GCLogFileSize=10M -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark"
+export JAVA_OPTS="$JAVA_OPTS -XX:CMSWaitDuration=10000 -XX:+UseParNewGC -XX:+CMSParallelRemarkEnabled -XX:+CMSParallelInitialMarkEnabled"
+export JAVA_OPTS="$JAVA_OPTS -XX:+CMSEdenChunksRecordAlways -XX:CMSInitiatingOccupancyFraction=75 -XX:+UseCMSInitiatingOccupancyOnly"
+
+export JAVA_OPTS="$JAVA_OPTS -Xms512m -Xmx512m"
+export JAVA_OPTS="$JAVA_OPTS -XX:MaxMetaspaceSize=128m"
+export JAVA_OPTS="$JAVA_OPTS -XX:MaxDirectMemorySize=128m"
+export JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
+export JAVA_OPTS="$JAVA_OPTS -XX:+ExitOnOutOfMemoryError"
+export JAVA_OPTS="$JAVA_OPTS -XX:+AlwaysPreTouch"
+EOF
+```
+{: .copy-code}
+* `~/.mytrendz-python-conf/logback.xml`
+```bash
+cat <<'EOF' > ~/.mytrendz-python-conf/logback.xml
+<!DOCTYPE configuration>
+<configuration scan="true" scanPeriod="10 seconds">
+
+    <appender name="fileLogAppender"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>/var/log/python-executor/python-executor.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/python-executor/python-executor.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <maxFileSize>100MB</maxFileSize>
+            <maxHistory>30</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <Pattern>
+                %green(%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS}) | %highlight(%-5level) [%cyan(%-35thread)] %-60yellow(%C{1}): %msg %n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <Pattern>
+                %green(%d{yyyy-MM-dd} | %d{HH:mm:ss.SSS}) | %highlight(%-5level) [%cyan(%-40thread)] %-60yellow(%C{1}): %msg %n%throwable
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="fileLogAppender"/>
+        <appender-ref ref="STDOUT"/>
+    </root>
+
+    <logger name="org.springframework.web.socket" level="INFO" />
+    <logger name="org.thingsboard.trendz.pythonexecutor" level="DEBUG" />
+    <logger name="org.thingsboard.trendz.pythonexecutor.service.engine.PythonScriptEngine" level="INFO" />
+
+</configuration>
+EOF
+```
+{: .copy-code}
+* `~/.mytrendz-python-conf/requirements.txt`
+```bash
+cat <<'EOF' > ~/.mytrendz-python-conf/requirements.txt
+# Mounted
+pandas==2.0.3
+numpy==1.24.3
+scikit-learn==1.3.0
+matplotlib==3.7.2
+seaborn==0.12.2
+requests==2.31.0
+pytz==2023.3
+plotly==5.15.0
+statsmodels==0.14.0
+scipy==1.11.1
+joblib==1.3.2
+EOF
+```
+{: .copy-code}
+
+4. **Set permissions:**
+   Once the files are created, execute the following commands to change the owner of the newly created folders to the docker container user (`799`).
+   Note: This command requires sudo permissions:
+```bash
+sudo chown -R 799:799 ~/.mytrendz-conf
+sudo chown -R 799:799 ~/.mytrendz-data
+sudo chown -R 799:799 ~/.mytrendz-logs
+sudo chown -R 799:799 ~/.mytrendz-python-conf
+sudo chown -R 799:799 ~/.mytrendz-python-data
+sudo chown -R 799:799 ~/.mytrendz-python-logs
+```
+{: .copy-code}
+
+### Step 4. Running service
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
-    
-After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). 
+
+After executing this command you can open `http://{your-host-ip}:8888` in your browser (for ex. `http://localhost:8888`).
 You should see Trendz login page.
 
-### Authentication
+### Step 5. Sync ThingsBoard With Trendz
 
-For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
+{% include templates/trendz/install/sync-with-tb.md %}
 
-Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
-to validate credentials.
+## Authentication
 
-## Post-installation steps
-
-It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
+{% include templates/trendz/install/authentication.md %}
 
 ## Detaching, stop and start commands
 
@@ -146,7 +304,7 @@ It is essential to follow these [instructions](/docs/trendz/post-installation-st
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.13.2 to {{ site.release.trendz_ver }}
+Below is an example of how to upgrade from 1.14.0 to {{ site.release.trendz_ver }}
 
 * Create a dump of your database:
 
@@ -164,17 +322,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.13.2' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.14.0' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.13.2' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.14.0' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 2](#docker-compose-setup) but with {{ site.release.trendz_ver }} instead of 1.13.2:
+* After this you need to update docker-compose.yml as in [Step 2](#docker-compose-setup) but with {{ site.release.trendz_ver }} instead of 1.14.0:
 
 * Restart Trendz container
 
@@ -191,13 +349,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-To upgrade Trendz to the latest version those steps should be done **for each intermediate version**.
+To upgrade Trendz to the latest version those steps can be done immediately from old version to the latest without doing it **for each intermediate version** (as opposed to ThingsBoard, where this is required).
 
 ## Troubleshooting
 
 ### DNS issues
 
 {% include templates/troubleshooting/dns-issues.md %}
+
+## Post-installation steps
+
+{% include templates/trendz/install/post-installation-steps.md %}
 
 ## Next steps
 

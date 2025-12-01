@@ -23,16 +23,25 @@ Proceed here **only** if you have a compelling reason to use a combined Windows 
 
 ## Prerequisites
 
-**Hardware requirements** depend on amount of analyzed data and amount of devices connected to the system. 
-To run Trendz Analytics on a single machine you will need at least 1Gb of free RAM.
+### Hardware Requirements
 
-In small and medium installations Trendz can be installed **on the same** server with ThingsBoard.
+{% include templates/trendz/install/hardware-requirements.md %}
 
-## Step 1. Install Java 17 (OpenJDK) 
+### Software Requirements
+
+{% include templates/trendz/install/docker-requirements-linux.md %}
+
+## Installation Steps
+
+### Step 1. Activate Trendz add-on on ThingsBoard
+
+{% include templates/trendz/install/activate-trendz-license.md %}
+
+### Step 2. Install Java 17 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 
-## Step 2. Trendz Analytics service installation
+### Step 3. Trendz Analytics service installation
 
 Download and extract the package.
 
@@ -41,67 +50,26 @@ https://dist.thingsboard.io/trendz-windows-{{ site.release.trendz_ver }}.zip
 ```
 {: .copy-code}
 
-**Note:** We assume you have extracted Trendz package to default location: *C:\Program Files (x86)\trendz*  
+**Note:** We assume you have extracted Trendz package to default location: *C:\Program Files (x86)\trendz*
 
-## Step 3. Obtain and configure license key 
+### Step 4. Configure Trendz database
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
-See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
-
-Once you get the license secret, you should put it to the trendz configuration file. 
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
-
-```text 
-C:\Program Files (x86)\trendz\conf\trendz.yml
-``` 
-{: .copy-code}
-
-Scroll to the bottom of the file and locate the following configuration block:
-
-```yml
-license:
-    secret: "${TRENDZ_LICENSE_SECRET:YOUR_LICENSE_SECRET_HERE}" # license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
-```
-
-## Step 4. Configure connection with ThingsBoard Platform
-
-You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
-
-Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
-Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
-
-```text
-C:\Program Files (x86)\trendz\conf\trendz.yml
-``` 
-{: .copy-code}
-
-Add ThingsBoard REST API URL that would be used for communicating with ThingsBoard Platform. In most cases, when Trendz installed
-in the same server with ThingsBoard, API_URL would be **http://localhost:8080**. Otherwise you should use ThingsBoard domain name.
-
-```bash
-tb.api.url: "${TB_API_URL:http://localhost:8080}"
-```
-{: .copy-code}
-
-## Step 5. Configure Trendz database
 Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
 service from your cloud vendor.
 
-### PostgreSQL Installation
+* **PostgreSQL Installation**
 
 Download the installation file (PostgreSQL 12.17 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
 
 During PostgreSQL installation, you will be prompted for superuser (postgres) password.
 Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
 
-### Create Database for Trendz
+* **Create Database for Trendz**
 
 Once installed, launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create database "trendz" with owner "postgres".
 
-
-### Configure database connection for Trendz
+* **Configure database connection for Trendz**
 
 Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
@@ -125,7 +93,7 @@ datasource:
 ``` 
 {: .copy-code}
 
-## Step 6. Run installation script
+### Step 5. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
@@ -144,7 +112,7 @@ Installing Trendz Analytics...
 Trendz Analytics installed successfully!
 ```
 
-## Step 7. Start Trendz service
+### Step 6. Start Trendz service
 
 Now let's start the Trendz service!
 Open the command prompt as an Administrator and execute the following command:
@@ -177,22 +145,20 @@ http://localhost:8888/trendz
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
 the server or with a domain name. Also, check that port 8888 opened for public access.
 
-### Authentication
+### Step 7. Sync ThingsBoard With Trendz
 
-For first authentication you need to use **Tenant Administrator** credentials from your **ThingsBoard**
+{% include templates/trendz/install/sync-with-tb.md %}
 
-Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
-to validate credentials.
-
-## Step 8. Install Trendz Python Executor
+### Step 8. Install Trendz Python Executor
 
 To utilize all Trendz capabilities, such as Trendz Python Calculation Fields or Prediction Models, it is essential to
 install an additional service: the Trendz Python Executor, which can securely run Python code.
 
 You can learn more about how to install it [here](/docs/trendz/install/python-executor-configuration-windows).
 
-## Post-installation steps
-It is essential to follow these [instructions](/docs/trendz/post-installation-steps) to fully use all features, such as saving telemetry to ThingsBoard and adding Trendz views to dashboards.
+## Authentication
+
+{% include templates/trendz/install/authentication.md %}
 
 ## Troubleshooting
 
@@ -242,6 +208,10 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 - Finally, give the name to this rule (for ex. "Trendz Service Networking") and click "Finish".
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
+
+## Post Installation Steps
+
+{% include templates/trendz/install/post-installation-steps.md %}
 
 ## Next steps
 

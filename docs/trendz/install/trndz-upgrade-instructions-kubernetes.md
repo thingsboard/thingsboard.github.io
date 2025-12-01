@@ -97,5 +97,3 @@ Use this command to set the pod count:
 ```text
 kubectl scale deployment trendz-app-deployment --replicas=<pod-count>
 ``` 
-
-

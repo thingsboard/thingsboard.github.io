@@ -1,0 +1,1 @@
+* ThingsBoard version 4.3.0 or newer. In case you have ThingsBoard version 4.2.1, you could follow next guide.
