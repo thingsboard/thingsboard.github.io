@@ -131,23 +131,6 @@ Check the status under the **Trendz JS Summary Module** section:
     - If not installed - uploads the module.
     - If outdated - updates it.
 
-### Trendz Settings
-
-Needed for Trendz solution templates and AI Summary rule nodes.
-
-Check the status under the **Trendz Settings** section:
-
-- **Not installed** – Settings are missing.
-- **Update required** – A newer version is available.
-- **Settings are actual** – All up to date.
-
-**Action Steps:**
-
-- If status is **Settings are actual** – no changes needed.
-- Otherwise, click the **Upload Settings** button:
-    - If not installed - uploads the settings.
-    - If outdated - updates them.
-
 ### AI Settings
 
 Here it's possible to configure the AI Model for the next features:

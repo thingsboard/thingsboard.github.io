@@ -275,7 +275,7 @@ From version 1.14.0, python calculation fields and prediction models could be ut
 service which can be used only inside the docker.
 
 If you are already using Trendz Python Executor via Docker, it's necessary to update it to version 1.14.0 before Trendz update.
-You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-linux/#how-to-migrate-trendz-python-executor-1133-to-trendz-python-executor-1140).
+You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-linux/#how-to-migrate-trendz-python-executor-1132-to-trendz-python-executor-1140).
 
 If you were not using Python Executor before, you need to install it via Docker. 
 You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-linux/#python-executor-standalone-installation).
@@ -329,7 +329,7 @@ From version 1.14.0, python calculation fields and prediction models could be ut
 service which can be used only inside the docker.
 
 If you are already using Trendz Python Executor via Docker, it's necessary to update it to version 1.14.0 before Trendz update.
-You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-windows/#how-to-migrate-trendz-python-executor-1133-to-trendz-python-executor-1140).
+You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-windows/#how-to-migrate-trendz-python-executor-1132-to-trendz-python-executor-1140).
 
 If you were not using Python Executor before, you need to install it via Docker.
 You can find detailed instructions on how to do that [here](/docs/trendz/install/python-executor-configuration-windows/#python-executor-standalone-installation).
