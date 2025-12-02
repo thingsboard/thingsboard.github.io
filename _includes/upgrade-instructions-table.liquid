@@ -6,7 +6,7 @@
             <div class="releases-table-header-item">Version</div>
             <div class="releases-table-header-item">Release Date</div>
             <div class="releases-table-header-item">Upgradable From</div>
-            <div class="releases-table-header-item">LTS</div>
+            <div class="releases-table-header-item"><a href="/docs/{{ docsPrefix }}releases/release-policy/">LTS</a></div>
             <div class="releases-table-header-item">Release Notes</div>
             <div class="releases-table-header-item">Upgrade Instructions</div>
         </div>
@@ -45,7 +45,15 @@
                      data-family="{{ versionFamily }}">
                     <div class="releases-table-content">
                         <div class="releases-table-content-item">v{{ version }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
-                        <div class="releases-table-content-item">{% if docsPrefix == "pe/" and item[1].release-date-pe %}{{ item[1].release-date-pe }}{% else %}{{ item[1].release-date }}{% endif %}</div>
+                        <div class="releases-table-content-item">
+                            {% assign releaseDate = item[1].release-date %}
+                            {% if item[1].release-date-pe %}
+                                {% assign releaseDate = item[1].release-date-pe %}
+                            {% endif %}
+                            <time datetime="{{ releaseDate | date: '%Y-%m-%d' }}">
+                                {{ releaseDate | date: "%B %-d, %Y" }}
+                            </time>
+                        </div>
                         <div class="releases-table-content-item">v{{ item[1].upgradable-from }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
 
                         <div class="releases-table-content-item lts-item">
@@ -71,18 +79,22 @@
                         {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
 
                         <div class="releases-table-content-item upgrade-instructions">
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Ubuntu Instructions">
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
                                 <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
                             </a>
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade CentOS Instructions">
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
                                 <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
                             </a>
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Upgrade Windows Instructions">
+                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
                                 <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
                             </a>
-                            <a class="right-link" href="/docs/user-guide/install/{{ docsPrefix }}docker/#upgrading" data-tooltip="Upgrade Docker Instructions">
+                            <a href="/docs/user-guide/install/{{ docsPrefix }}docker/#upgrading" data-tooltip="Docker Instructions">
                                 <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
                             </a>
+                            <a class="right-link" href="/docs/user-guide/install/{{ docsPrefix }}cluster/docker-compose-setup/#upgrading" data-tooltip="Docker Compose Instructions">
+                                <img width="24" height="24" src="/images/install/cluster/docker-compose.svg" alt="Docker Compose Instructions">
+                            </a>
+
                         </div>
                     </div>
                 </div>
