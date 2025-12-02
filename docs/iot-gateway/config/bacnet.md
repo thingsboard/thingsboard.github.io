@@ -264,7 +264,15 @@ The application configuration parameters are used to configure the gateway in th
 | application.deviceDiscoveryTimeoutInSec (in sec)       | **5**                   | Timeout for discovering devices.                                                                                      |
 | application.devicesDiscoverPeriodSeconds (in sec)      | **30**                  | Period of time when the connector will try to discover BACnet devices.                                                |
 | application.devicesRescanObjectsPeriodSeconds (in sec) | **60**                  | The period of time when the connector will try to reread device objects that it failed to read last time.             |
+| application.loadProprietaryDevices *                   | **false**               | Allow dynamically loading proprietary devices from extensions.                                                        |
 | ---                                                    |                         |                                                                                                                       |
+
+{% capture difference %}
+\* -- Feature available from Gateway v.3.8.0 and only in advanced configuration mode. You need to upload your 
+proprietary device extension to the `/extensions/bacnet/proprietary` folder of the IoT Gateway installation directory. 
+You can also find an example of such a proprietary device [here](https://github.com/thingsboard/thingsboard-gateway/blob/master/thingsboard_gateway/extensions/bacnet/proprietary/desigo_cc.py){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Example of the application configuration:
 

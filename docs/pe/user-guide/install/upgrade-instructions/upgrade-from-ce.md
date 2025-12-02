@@ -18,9 +18,7 @@ description: Upgrading from Community Edition
   </li>
 </ul>
 
-## Upgrading from Community Edition
-
-### Ubuntu {#ubuntu}
+## Ubuntu {#ubuntu}
 
 {% capture difference %}
 **NOTE:**
@@ -69,7 +67,7 @@ sudo service thingsboard start
 ```
 {: .copy-code}
 
-### CentOS {#centos}
+## CentOS {#centos}
 
 {% capture difference %}
 **NOTE:**
@@ -118,7 +116,7 @@ sudo service thingsboard start
 ```
 {: .copy-code}
 
-### Windows {#windows}
+## Windows {#windows}
 
 {% capture difference %}
 **NOTE:**

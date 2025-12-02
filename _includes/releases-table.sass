@@ -3,9 +3,9 @@
   border-radius: 8px
   border: 12px solid rgba(42,125,236,0.001)
   background: rgba(42, 125, 236, 0.08)
-  overflow: auto
+  overflow-x: auto
   .releases-table-content
-    min-width: 1250px
+    min-width: 1100px
     width: 100%
     .releases-table-header
       padding: 12px 24px
@@ -136,28 +136,39 @@
     .releases-table-header
       .releases-table-header-item
         min-width: 130px
+        &:nth-child(1)
+          min-width: 80px
         &:nth-child(2)
           min-width: 131px
         &:nth-child(3)
-          min-width: 175px
+          min-width: 176px
         &:nth-child(5)
           min-width: 141px
         &:nth-child(6)
           text-align: center
-          min-width: 209px
+          min-width: 240px
+        a
+          font-weight: 400 !important
+          color: rgba(0, 0, 0, 0.87)
+          text-decoration: underline
+          &:hover
+            text-decoration: none
+            color: #2A7DEC
     .releases-table-content-wrapper
       .releases-table-content
         .releases-table-content-item
           min-width: 130px
+          &:nth-child(1)
+            min-width: 80px
           &:nth-child(2)
             min-width: 131px
           &:nth-child(3)
-            min-width: 175px
+            min-width: 176px
           &:nth-child(5)
             min-width: 141px
           &:nth-child(6)
             text-align: center
-            min-width: 209px
+            min-width: 240px
         .releases-table-content-item
           &.lts-item
             span
@@ -207,3 +218,13 @@
                 scale: 1
                 filter: brightness(0) saturate(100%) invert(57%) sepia(2%) saturate(45%) hue-rotate(44deg) brightness(88%) contrast(90%)
                 transition: ease-in-out 0.3s
+.fixed-upgrade-scrollbar
+  position: fixed
+  bottom: 0
+  width: 100%
+  background: #eeeeee
+  overflow-x: auto
+  display: none
+  z-index: 99999999
+  .scrollbar-inner
+    height: 1px

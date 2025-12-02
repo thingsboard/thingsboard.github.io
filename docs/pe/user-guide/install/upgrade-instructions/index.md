@@ -17,11 +17,10 @@ active-menu-item-click: "true"
 </div>
 
 <div id="upgrade-links" class="upgrade-links">
-  <p style="margin-bottom: 10px"><a href="/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce">ThingsBoard instructions</a> for upgrading from Community Edition.</p>
+  <p style="margin-bottom: 10px">Summary table of supported upgrade instructions for ThingsBoard Professional Edition. To upgrade from Community Edition to Professional Edition, use the <a href="/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce">following instructions</a>.</p>
 </div>
 
-
-Upgrade instructions for the [older versions](/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/).
+Upgrade instructions for [versions older than 3.0](/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/).
 
 <script>
   (function () {
