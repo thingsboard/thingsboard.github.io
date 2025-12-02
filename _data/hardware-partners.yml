@@ -1216,8 +1216,11 @@
   links:
     general-guides:
       0:
-        label: mokosmart LoRaWAN device
+        label: MOKO SMART LoRaWAN device
         href: /docs/samples/moko-smart/moko-smart-guide/
+      1:
+        label: How to connect LW001-BG PRO LoRaWAN Tracker to ThingsBoard?
+        href: /docs/devices-library/lw001-bg-pro/
   description: Leading manufacturer and provider of ODM,
     OEM, and IoT devices in China. Established in 2013, created its own IoT brand,
     which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS,
