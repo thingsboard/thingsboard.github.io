@@ -156,6 +156,9 @@
 "/docs/devices-library/luanode32/":
   url: "/docs/devices-library/luanode32/"
   redirect_from: []
+"/docs/devices-library/lw001-bg-pro/":
+  url: "/docs/devices-library/lw001-bg-pro/"
+  redirect_from: []
 "/docs/devices-library/m5stack-timer-camera-f/":
   url: "/docs/devices-library/m5stack-timer-camera-f/"
   redirect_from: []
@@ -1192,6 +1195,9 @@
 "/docs/paas/devices-library/luanode32/":
   url: "/docs/paas/devices-library/luanode32/"
   redirect_from: []
+"/docs/paas/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/devices-library/lw001-bg-pro/"
+  redirect_from: []
 "/docs/paas/devices-library/m5stack-timer-camera-f/":
   url: "/docs/paas/devices-library/m5stack-timer-camera-f/"
   redirect_from: []
@@ -1555,6 +1561,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/luanode32/":
   url: "/docs/paas/eu/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/eu/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/paas/eu/devices-library/m5stack-timer-camera-f/":
   url: "/docs/paas/eu/devices-library/m5stack-timer-camera-f/"
@@ -3000,6 +3009,9 @@
 "/docs/pe/devices-library/luanode32/":
   url: "/docs/pe/devices-library/luanode32/"
   redirect_from: []
+"/docs/pe/devices-library/lw001-bg-pro/":
+  url: "/docs/pe/devices-library/lw001-bg-pro/"
+  redirect_from: []
 "/docs/pe/devices-library/m5stack-timer-camera-f/":
   url: "/docs/pe/devices-library/m5stack-timer-camera-f/"
   redirect_from: []
@@ -3555,6 +3567,9 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/releases/release-policy/":
+  url: "/docs/pe/releases/release-policy/"
+  redirect_from: []
 "/docs/pe/releases/releases-table/":
   url: "/docs/pe/releases/releases-table/"
   redirect_from: []
