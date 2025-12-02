@@ -109,47 +109,125 @@ Before you go to production, we recommend to setup the data backup scripts and p
   
 If you would like to minimize resources spent for the database maintenance, we recommend to use cloud managed database. See Scenario B for more details. 
 
-### Single-server deployment with external database (Scenario B)
+### Single-AZ microservices deployment (Scenario B)
 
-This deployment scenario rather similar to scenario A, but requires fully-managed database deployed on a separate server(s). 
-ThingsBoard customers successfully utilize [AWS RDS](https://aws.amazon.com/rds/postgresql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) and
-[Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) to minimize efforts on database setup, backups and support.
-See diagram below.
+This reference architecture targets horizontally scalable deployments for applications anticipating future growth beyond current operational loads. The architecture leverages AWS managed services - including Amazon Elastic Kubernetes Service (EKS), Elastic Load Balancing (ELB), and Amazon Relational Database Service (RDS) - to minimize operational overhead associated with infrastructure provisioning, patch management, and backup orchestration.
 
-<object width="80%" data="/images/reference/deployment/standalone.svg"></object>
+The deployment model encompasses two distinct configurations optimized for varying data ingestion throughput requirements.
 
-**Pros**:
+#### Configuration 1: Low Telemetry Ingestion Profile
 
-* Very simple setup (approximately 1 hour to deploy using our installation guides).
-* Easy to maintain and update the software instance.
-* The data is stored separately with managed backups and failover.
+For workloads with moderate data ingestion rates, the architecture utilizes a PostgreSQL-backed persistence layer provisioned through Amazon RDS. This configuration consolidates both entity metadata and time-series telemetry data within a single relational datastore. Public access to the Thingsboard application inside the cluster provided by ELB.
 
-**Cons**:
+##### Compute Resources:
 
-* Upgrades cause downtime. The downtime is approximately 5 minute per upgrade.
-* Minimum high-availability. In case of hardware or application failure administrator is obliged to perform manual actions to up and run  the system. 
-* Performance of the system is limited by performance of the single server.
+- EKS cluster provisioned with a single worker node
+- Instance type: `m7g.xlarge` (4 vCPUs, 16 GiB memory, ARM64 architecture)
 
-**Performance**:
+**Application Workloads:**
 
-Overall performance of the solution depends on the instance hardware and heavily rely on the performance of the database.
-We suggest to use PostgreSQL for both entities and telemetry data in this scenario.
-An average virtual environment can handle ~ 5,000 telemetry data points per second.
-See [key infrastructure characteristics](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)
-and [performance tests](/docs/{{docsPrefix}}reference/performance-aws-instances/) on different AWS instances.
+The following containerized services are deployed to the compute node:
+<table>
+    <thead>
+    <tr>
+        <th>Service</th>
+        <th>Replica count</th>
+        <th>Descripton</th>
+    </tr>
+    </thead>
+{% if docsPrefix == null %}
+    <tr>
+        <td>tb-node</td>
+        <td>1</td>
+        <td>Core ThingsBoard application server</td>
+    </tr>
+    <tr>
+        <td>tb-js-executor</td>
+        <td>3</td>
+        <td>Distributed JavaScript execution runtime</td>
+    </tr>
+    <tr>
+        <td>tb-web-ui</td>
+        <td>1</td>
+        <td>Static asset delivery service</td>
+    </tr>
+    <tr>
+        <td>Kafka</td>
+        <td>1</td>
+        <td>Message broker and event streaming platform</td>
+    </tr>
+</table>
+{% endif %}
+{% if docsPrefix == "pe/" %}
+    <tr>
+        <td>tb-pe-node</td>
+        <td>1</td>
+        <td>Core ThingsBoard PE application server</td>
+    </tr>
+    <tr>
+        <td>tb-pe-js-executor</td>
+        <td>3</td>
+        <td>Distributed JavaScript execution runtime</td>
+    </tr>
+    <tr>
+        <td>tb-pe-web-ui</td>
+        <td>1</td>
+        <td>Static asset delivery service</td>
+    </tr>
+    <tr>
+        <td>Kafka</td>
+        <td>1</td>
+        <td>Message broker and event streaming platform</td>
+    </tr>
+</table>
+{% endif %}
 
-**Total cost of ownership example for Scenario B**:
+##### Database Specification:
 
-Assuming 10,000 LoRaWAN smart meter devices that send messages to the cloud once per hour.
+- Instance type: `db.t4g.medium` (2 vCPUs, 4 GiB memory, ARM64 architecture)
+- Performance class: Burstable
 
-Single AWS EC2 "m5.large" instance cost per month is ~41.66 USD (~500 USD annually in case of yearly upfront payment).
-Amazon RDS PostgreSQL instance cost is ~200 USD per month in case of db.t2.medium and Multi-AZ deployment.
-Approximate infrastructure cost: ~250 USD/month.
+A burstable instance is used because high CPU utilization is not expected for a SQL database. However, enabling **unlimited mode** is strongly recommended to prevent performance throttling during CPU credit depletion scenarios for burstable RDS instances. This configuration ensures consistent query performance during transient load spikes without exhausting the burst credit balance.
 
-Single ThingsBoard PE perpetual license costs 2,999 USD (including optional updates and basic support within initial year of usage). 1,199 USD  is the respective pricing for the subsequent years of software updates + basic support.
+#### Configuration 2: High-Throughput Telemetry Ingestion Profile
 
-TCO: ~500 USD per month or 0.05 USD per month per device for up to 10k devices use case. 
-Adding [Premium support](/services/support/) package results in ~1000 USD per month or 0.1 USD per month per device.  
+When anticipating elevated telemetry write/read request volumes, the architecture transitions to a **hybrid database topology**. This pattern decouples entity metadata (PostgreSQL) from time-series telemetry data (Cassandra), enabling independent scaling of read-heavy and write-heavy workloads.
+
+##### Architectural Modifications:
+
+- Entity data: PostgreSQL (RDS) - unchanged from Configuration 1
+- Telemetry data: Apache Cassandra cluster - newly provisioned
+
+##### Additional Compute Resources:
+
+Three additional EKS worker nodes are provisioned to host the distributed Cassandra cluster:
+
+- Instance type: `m7g.large` (2 vCPUs, 8 GiB memory, ARM64 architecture)
+- Node count: 3
+- Deployment pattern: 1 Cassandra instance per node (ensuring fault tolerance and data replication)
+
+**Retained Infrastructure:**
+
+{% if docsPrefix == null %}
+All application workloads (`tb-node`, `tb-js-executor`, `tb-web-ui`, `kafka`) and the original `m7g.xlarge` compute node remain unchanged from Configuration 1.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+All application workloads (`tb-pe-node`, `tb-pe-js-executor`, `tb-pe-web-ui`, `kafka`) and the original `m7g.xlarge` compute node remain unchanged from Configuration 1.
+{% endif %}
+
+
+**Pros:** 
+
+- Easy to backup and maintain PostgreSQL database
+- Production-ready deployment
+- Ready to scale horizontally
+- Self-healing cluster
+
+**Cons:**
+
+- Additional costs for managed Kubernetes and Database services
+- Single point of failure (single availability zone)
+- The Cassandra database needs to be maintained and backed up
 
 ### Cluster deployment with the Microservices architecture (Scenario C)
 
