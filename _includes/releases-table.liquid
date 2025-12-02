@@ -44,7 +44,7 @@
                             </div>
 
                             {% if page.lts %}
-                                <a href="/docs/releases/release-policy/" class="releases-table-content-item version-link version-link-lts">
+                                <a href="/docs/{{ docsPrefix }}releases/release-policy/" class="releases-table-content-item version-link version-link-lts">
                                 <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
                                     LTS ({{ page.lts }})
                                 </span>
@@ -73,3 +73,84 @@
         </div>
     </div>
 </div>
+<div class="fixed-upgrade-scrollbar" id="fixedScrollbar">
+    <div class="scrollbar-inner"></div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+        const table = document.querySelector('.releases-table');
+        if (!table) return;
+
+        const content = table.querySelector('.releases-table-content');
+        const bar = document.getElementById('fixedScrollbar');
+        if (!content || !bar) return;
+
+        const inner = bar.querySelector('.scrollbar-inner');
+
+        function updateScrollBar() {
+            const rect = table.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+
+            const scrollWidth = content.scrollWidth;
+            const visibleWidth = table.clientWidth;
+
+            if (scrollWidth <= visibleWidth + 1) {
+                bar.style.display = 'none';
+                return;
+            }
+
+
+            const distanceBelowViewport = rect.bottom - viewportHeight;
+
+            const completelyAboveViewport = rect.bottom <= 0;
+            const completelyBelowViewport = rect.top >= viewportHeight;
+
+            if (completelyAboveViewport || completelyBelowViewport || distanceBelowViewport <= 30) {
+                bar.style.display = 'none';
+                return;
+            }
+
+            bar.style.display = 'block';
+
+            bar.style.width = rect.width + 'px';
+            bar.style.left = rect.left + 'px';
+
+            inner.style.width = scrollWidth + 'px';
+        }
+
+        updateScrollBar();
+
+        if ('ResizeObserver' in window) {
+            new ResizeObserver(updateScrollBar).observe(content);
+            new ResizeObserver(updateScrollBar).observe(table);
+        } else {
+            window.addEventListener('resize', updateScrollBar);
+        }
+
+        window.addEventListener('scroll', updateScrollBar);
+        window.addEventListener('resize', updateScrollBar);
+
+        let syncFromTable = false;
+        let syncFromBar = false;
+
+        table.addEventListener('scroll', () => {
+            if (syncFromBar) {
+                syncFromBar = false;
+                return;
+            }
+            syncFromTable = true;
+            bar.scrollLeft = table.scrollLeft;
+        });
+
+        bar.addEventListener('scroll', () => {
+            if (syncFromTable) {
+                syncFromTable = false;
+                return;
+            }
+            syncFromBar = true;
+            table.scrollLeft = bar.scrollLeft;
+        });
+    });
+</script>

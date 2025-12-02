@@ -10,7 +10,7 @@ hidetoc: "true"
 
 <h3>In order to update to new ThingsBoard releases, please follow
 these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-instructions/">CE</a> and 
-<a style="pointer-events: all;" href="/docs/user-guide/install/pe/upgrade-instructions/">PE</a> instructions</h3>
+<a style="pointer-events: all;" href="/docs/pe/user-guide/install/upgrade-instructions/">PE</a> instructions</h3>
 
 <ul id="markdown-toc">
   <li>

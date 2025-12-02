@@ -400,7 +400,7 @@ toc:
     - title: Releases table
       path: /docs/pe/releases/releases-table/
     - title: Versioning and Release Policy
-      path: /docs/releases/release-policy/
+      path: /docs/pe/releases/release-policy/
     - title: Roadmap
       path: /docs/pe/releases/roadmap/
 - title: Troubleshooting

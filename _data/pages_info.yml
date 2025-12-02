@@ -3567,6 +3567,9 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/releases/release-policy/":
+  url: "/docs/pe/releases/release-policy/"
+  redirect_from: []
 "/docs/pe/releases/releases-table/":
   url: "/docs/pe/releases/releases-table/"
   redirect_from: []
