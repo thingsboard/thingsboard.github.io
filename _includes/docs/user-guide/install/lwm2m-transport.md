@@ -112,7 +112,7 @@
     <tr>
         <td>transport.lwm2m.bootstrap.id</td>
         <td>LWM2M_SERVER_ID_BS</td>
-        <td>111</td>
+        <td>null</td>
         <td>This is:<br>
             * Default value in Lwm2mClient after start in mode Bootstrap for the object : name "LWM2M Security" field:
             "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)
