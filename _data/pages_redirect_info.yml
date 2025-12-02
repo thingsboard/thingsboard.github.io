@@ -245,6 +245,9 @@ docs/pe/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/user-guide/groups/":
   url: "/docs/pe/user-guide/groups/"
   redirect_from: "/docs/user-guide/groups/"
+"/docs/user-guide/install/aws-marketplace-pe-upgrade/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/"
+  redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
   redirect_from: "/docs/user-guide/mail-templates/"
@@ -380,9 +383,6 @@ docs/user-guide/contribution/widgets-development-before-3.0/:
 "/docs/pe/user-guide/install/installation-options/":
   url: "/docs/user-guide/install/pe/installation-options/"
   redirect_from: "/docs/pe/user-guide/install/installation-options/"
-"/docs/user-guide/install/aws-marketplace-pe-upgrade/":
-  url: "/docs/user-guide/install/pe/upgrade-instructions/"
-  redirect_from: "/docs/user-guide/install/aws-marketplace-pe-upgrade/"
 "/docs/user-guide/rule-engine-2-0/action-nodes/":
   url: "/docs/user-guide/rule-engine-2-0/nodes/action/"
   redirect_from: "/docs/user-guide/rule-engine-2-0/action-nodes/"
