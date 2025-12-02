@@ -4,19 +4,19 @@ To add a device, you can follow next steps:
 
 {% assign addDeviceOnThingsStack = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/15.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/15.png,
         title: Login to the cloud and open your console.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/16.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/16.png,
         title: Go to the **Applications** page. Then select your **application** and click on its name.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/17.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/17.png,
         title: Click on the **+ Register end device** button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/18.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/18.png,
         title: Choose "**Enter end device specifics manually**". Then, put the **APP EUI** value to the **JoinEUI** field. Press the **Confirm** button.  
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/19.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/19.png,
         title: Fill the rest parameters and press **Register end device** button.
 '
 %}
@@ -29,7 +29,7 @@ To add a device, you can follow next steps:
 
 {% assign ConfigurePayloadFormatter = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/20.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/20.png,
         title: Go to the **Payload formatters** page and select **Custom Javascript formatter** for Formatter type. Paste the decode function and click **Save changes** button.  
 '
 %}
@@ -62,16 +62,16 @@ Now, navigate to the **Integrations** page under the **Integrations center** sec
 
 {% assign createIntegrationInThingsBoard = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/21.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/21.png,
         title: Click "**plus**" icon in the upper right corner to add new integration. Select "**The Things Stack Community**" integration type. Then, click "**Next**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/22.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/22.png,
         title: Paste the previously copied script to the **Decoder function** section. Click "**Next**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/23.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/23.png,
         title: Leave the "Downlink data converter" field empty. Click on "**Skip**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/24.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/24.png,
         title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}
@@ -84,7 +84,7 @@ So, the device was added and if it sends any data - it should appear in the [dev
 
 {% assign checkDataOnThingsBoard = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/25.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/25.png,
         title: So, the device was added and if it sends any data - it should appear in the devices. To check it you may open **Devices** page in **Entities** section. The device should be in devices list. You can check the data by click on it and open tab **Attributes** or **Latest telemetry**.  
 '
 %}

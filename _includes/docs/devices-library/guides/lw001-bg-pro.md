@@ -11,7 +11,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The [LW001-BG PRO]({{deviceVendorLink}}){: target="_blank"} is a wireless, smart, ultra–low-power indoor and outdoor LoRaWAN tracker.   
 It integrates **GPS**, **Bluetooth**, and **WiFi** positioning, supports multiple operating modes, and is suitable for a wide range of tracking applications.<br>
 
@@ -28,7 +28,7 @@ To continue with this guide we will need the following:
 
 ## Configuration
 
-![{{deviceName}}](/images/devices-library/ready-to-go-devices/lw001-bg-pro/mklora-app-qr-code.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/mklora-app-qr-code.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 0px"}
 To connect the device and start sending data, both the device and the network server must be configured. Users can configure the device using the MKLora application.   
 To download the MKLora app, scan the QR code on the left or follow the [provided link](https://play.google.com/store/apps/details?id=com.moko.mklora&pcampaignid=web_share){:target="_blank"}.
 
@@ -79,19 +79,19 @@ To add the dashboard to ThingsBoard, follow the next steps:
 
 {% assign CreateDashboardOnThingsBoard  = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/46.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/46.png,
         title: Navigate to the **Dashboards** page. By default, you navigate to the dashboard group **All**. Click on the "plus" icon in the top right corner. Select **Create new dashboard**.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/47.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/47.png,
         title: Fill the **dashboard title** and click **Add** button. 
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/48.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/48.png,
         title: The dashboard will opened. Click **Add widget** button to add new widget.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/49.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/49.png,
         title: For example, for the location info, the **Maps** widget is suitable.
     ===
-        image: /images/devices-library/ready-to-go-devices/lw001-bg-pro/50.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lw001-bg-pro/50.png,
         title: And then select the data source as the device that just created, and choose the variable that you want to display.
 '
 %}
