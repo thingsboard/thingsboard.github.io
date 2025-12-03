@@ -124,16 +124,7 @@ see `tb-node-0` pod in the `READY` state.
 
 ### Step 9.3. Create a Trendz database in the existing RDS instance
 
-Edit “trendz/trendz-secret.yml” and replace YOUR_RDS_ENDPOINT_URL and YOUR_RDS_PASSWORD and apply Kubernetes Job:
-```text
-kubectl apply -f ./trendz/trendz-create-db.yml
-```
-{: .copy-code}
-
-You can see logs if you run the next command:
-```text
-kubectl logs job/trendz-create-db -n thingsboard
-```
+{% include templates/trendz/k8s-trendz-db-creating.md %}
 
 ### Step 9.4. Trendz starting
 

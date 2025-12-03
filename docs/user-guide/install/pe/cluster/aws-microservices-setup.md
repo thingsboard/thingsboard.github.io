@@ -145,6 +145,8 @@ Recommended CPU/memory resources allocation:
 - TB Web UI: 0.3 CPU / 0.5Gi memory
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
+- Trendz: 0.3 CPU / 1Gi memory
+- Trendz Python Executor: 2.0 CPU / 4Gi memory
 
 ## Step 10. Installation
 
@@ -189,11 +191,31 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 13. Validate the setup
+## Step 13. Configure Trendz (Optional)
+
+### Step 13.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### Step 13.2. Obtain and configure license key
+
+{% include templates/trendz/k8s-license-secret-trendz.md %}
+
+### Step 13.3. Create a Trendz database in the existing RDS instance
+
+{% include templates/trendz/k8s-trendz-db-creating.md %}
+
+### Step 13.4. Trendz starting
+
+{% include templates/trendz/k8s-trendz-starting.md %}
+
+## Step 14. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
 {% include templates/install/aws/eks-upgrading.md %}
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 {% include templates/install/aws/eks-deletion.md %}
 
