@@ -4,12 +4,11 @@
 
 This article describes the most common deployment architectures supported by ThingsBoard. 
 All deployment scenarios contain certain pros and cons. 
-Choosing the right architecture for your deployment depends on the TCO, performance and high-availability requirements.
+Choosing the right architecture for your deployment depends on the infrastructure cost, performance and high-availability requirements.
 We will start from the most simple scenarios and see how the minimalistic deployment can be upgraded to the most complex ones.
 
-In the following sections, you can find total cost of ownership (TCO) calculations for ThingsBoard deployed using AWS.  
-Important notice: all calculation and pricing below are approximate and are listed as an example.
-Please consult your cloud provider in order to get your accurate pricing.
+In the following sections, you can find total infrastructure cost calculations for ThingsBoard deployed using AWS.  
+<b>Important notice:</b> All pricing below is approximate and provided as an example, based only on core infrastructure components costs (EKS, EC2, EBS, ALB). A production-grade environment typically requires other essential operational services - such as backup tools, monitoring and secrets management - all of which will further increase the total cost. Please consult your cloud provider to get accurate pricing per your use case.
 
 ## Key infrastructure characteristics
 
