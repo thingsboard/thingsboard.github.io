@@ -1,5 +1,5 @@
 Execute the following command to run the initial setup of the database. This command will launch short-living ThingsBoard pod to provision necessary DB tables, indexes, etc
-```
+```text
  ./k8s-deploy-trendz.sh
 ```
 {: .copy-code}

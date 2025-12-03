@@ -146,6 +146,8 @@ kubectl logs job/trendz-create-db -n thingsboard
 
 {% include templates/install/aws/eks-upgrading.md %}
 
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
+
 {% include templates/install/aws/eks-deletion.md %}
 
 ## Next steps
