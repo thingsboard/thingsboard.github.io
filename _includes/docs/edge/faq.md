@@ -1,11 +1,10 @@
 <style>
-.edge-faq-wrapper { padding: 60px 15px 80px; max-width: 1200px; margin: 0 auto; }
-.edge-faq-wrapper h1 { text-align: center; font-size: 36px; font-weight: 500; line-height: 48px; margin-bottom: 48px; color: #212529; }
+.edge-faq-wrapper { padding: 20px 15px 80px; max-width: 1200px; margin: 0 auto; }
 .edge-faq-sections { display: flex; gap: 40px; }
 @media (max-width: 1200px) { .edge-faq-sections { flex-direction: column; } }
 .edge-faq-tabs { display: flex; flex-direction: column; align-items: flex-start; padding: 8px; width: fit-content; margin-bottom: 24px; }
 @media (max-width: 690px) { .edge-faq-tabs { width: 100%; } }
-.edge-faq-tab { width: 100%; font-size: 24px; font-weight: 500; line-height: 36px; padding: 24px 32px; border: 1.5px solid transparent; border-radius: 24px; cursor: pointer; color: #757575; }
+.edge-faq-tab { width: 100%; font-size: 24px; font-weight: 500; line-height: 36px; padding: 24px 32px; border: 1.5px solid transparent; border-radius: 24px; cursor: pointer; color: #757575; margin: 0; }
 .edge-faq-tab:hover { color: #757575; }
 .edge-faq-tab.active { color: #000000DE; border-bottom: 1.5px solid #E6F0FC; background: #F4F8FE; }
 .edge-faq-answers { flex: 1.5; }
@@ -57,22 +56,18 @@ function toggleEdgeFaq(element) {
 }
 
 function switchEdgeFaqTab(tabId) {
-    // Remove active from all tabs
     var tabs = document.querySelectorAll('.edge-faq-tab');
     tabs.forEach(function(tab) {
         tab.classList.remove('active');
     });
     
-    // Remove active from all categories
     var categories = document.querySelectorAll('.edge-faq-category');
     categories.forEach(function(cat) {
         cat.classList.remove('active');
     });
     
-    // Add active to clicked tab
     event.target.classList.add('active');
     
-    // Add active to corresponding category
     var category = document.getElementById('edge-faq-cat-' + tabId);
     if (category) category.classList.add('active');
 }
