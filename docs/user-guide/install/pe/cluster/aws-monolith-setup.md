@@ -112,7 +112,35 @@ see `tb-node-0` pod in the `READY` state.
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 9. Validate the setup
+## Step 9. Configure Trendz (Optional)
+
+### Step 9.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### Step 9.2. Obtain and configure license key
+
+{% include templates/trendz/k8s-license-secret-trendz.md %}
+
+### Step 9.3. Create a Trendz database in the existing RDS instance
+
+Edit “trendz/trendz-secret.yml” and replace YOUR_RDS_ENDPOINT_URL and YOUR_RDS_PASSWORD and apply Kubernetes Job:
+```text
+kubectl apply -f ./trendz/trendz-create-db.yml
+```
+{: .copy-code}
+
+You can see logs if you run the next command:
+```text
+kubectl logs job/trendz-create-db -n thingsboard
+```
+
+### Step 9.4. Trendz starting
+
+{% include templates/trendz/k8s-trendz-starting.md %}
+
+
+## Step 10. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
