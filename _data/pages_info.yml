@@ -3882,6 +3882,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/"
   redirect_from:
