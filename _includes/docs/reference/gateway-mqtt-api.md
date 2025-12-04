@@ -26,14 +26,14 @@ For device-level MQTT details (authentication, QoS, payload format, etc.), refer
 
 Use this API to inform ThingsBoard that a device behind the Gateway is now connected and ready to exchange data.
 
-**Topic**
+**Topic:**
 
 ```shell
 v1/gateway/connect
 ```
 {: .copy-code}
 
-**Payload**
+**Payload:**
 
 ```shell
 {"device": "Device A", "type": "Sensor A"}
@@ -42,7 +42,7 @@ v1/gateway/connect
 - **device** - required. The device name in ThingsBoard.
 - **type** – optional. Name of the device profile. If omitted, the `default` device profile is used.
 
-**Behavior**
+**Behavior:**
 
 - If a device with the given name does not exist, ThingsBoard creates it automatically.
 - If the device profile name is provided and the profile does not exist, ThingsBoard creates it automatically.
@@ -99,21 +99,21 @@ mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/connect" -u "$ACCESS_TOKEN
 
 Use this API to inform ThingsBoard that a device behind the Gateway is no longer active.
 
-**Topic**
+**Topic:**
 
 ```shell
 v1/gateway/disconnect
 ```
 {: .copy-code}
 
-**Payload**
+**Payload:**
 
 ```shell
 {"device": "Device A"}
 ```
 {: .copy-code}
 
-**Behavior**
+**Behavior:**
 
 - If the device with the given name does not exist, ThingsBoard ignores the message.
 - After processing this message, ThingsBoard stops sending attribute and RPC updates for that device to the Gateway.
@@ -151,14 +151,14 @@ ThingsBoard attributes API allows devices to:
 Use this topic to publish client-side device attributes to the ThingsBoard platform. All attributes in the payload 
 are stored as client-side attributes for the corresponding devices.
 
-**Topic**
+**Topic:**
 
 ```shell
 v1/gateway/attributes
 ```
 {: .copy-code}
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -174,7 +174,7 @@ v1/gateway/attributes
 ```
 {: .copy-code}
 
-**Behavior**
+**Behavior:**
 
 - If the device with the given name does not exist, ThingsBoard creates it automatically with `default` profile name.
 - If the attribute does not exist, it is created.
@@ -205,21 +205,21 @@ mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/attributes" -u "$ACCESS_TO
 Use this API to request client-side or shared device attributes from ThingsBoard platform. Make attention that you 
 need to subscribe to the response topic first in order to receive the response.
 
-**Subscribe topic**
+**Subscribe topic:**
 
 ```shell
 v1/gateway/attributes/response
 ```
 {: .copy-code}
 
-**Publish topic**
+**Publish topic:**
 
 ```shell
 v1/gateway/attributes/request
 ```
 {: .copy-code}
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -242,14 +242,14 @@ Fields:
 Use this topic to subscribe to shared device attribute changes. Take attention that you need to subscribe to the topic 
 first in order to receive updates.
 
-**Subscribe topic**
+**Subscribe topic:**
 
 ```shell
 v1/gateway/attributes
 ```
 {: .copy-code}
 
-**Response message format**
+**Response message format:**
 
 ```json
 {
@@ -270,14 +270,14 @@ Fields:
 
 Use this API to publish telemetry for one or more devices in a single MQTT message.
 
-**Topic**
+**Topic:**
 
 ```shell
 v1/gateway/telemetry
 ```
 {: .copy-code}
 
-**Payload**
+**Payload:**
 
 ```json
 {
@@ -315,7 +315,7 @@ Fields:
 - **ts** – Unix timestamp in milliseconds.
 - **values** – required. Key-value map of telemetry fields (e.g., temperature, humidity).
 
-**Behavior**
+**Behavior:**
 
 - If the device with the given name does not exist, ThingsBoard creates it automatically with `default` profile name.
 - If the telemetry keys do not exist, they are created.
@@ -351,28 +351,28 @@ mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/telemetry" -u "$ACCESS_TOK
 
 Use this API to receive and respond to RPC commands from ThingsBoard for devices behind the Gateway.
 
-**Subscribe topic**
+**Subscribe topic:**
 
 ```shell
 v1/gateway/rpc
 ```
 {: .copy-code}
 
-**Request message format**
+**Request message format:**
 
 ```shell
 {"device": "Device A", "data": {"id": $request_id, "method": "toggle_gpio", "params": {"pin": 1}}}
 ```
 {: .copy-code}
 
-**Response topic**
+**Response topic:**
 
 ```shell
 v1/gateway/rpc
 ```
 {: .copy-code}
 
-**Response message format**
+**Response message format:**
 
 ```shell
 {"device": "Device A", "id": $request_id, "data": {"success": true}}
@@ -399,14 +399,14 @@ Make attention that the **id** in the response message should match the **id** f
 ThingsBoard supports a claiming mechanism that allows end users to take ownership of pre-provisioned devices. For 
 conceptual details, see [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) guide.
 
-**Topic**
+**Topic:**
 
 ```shell
 v1/gateway/claim
 ```
 {: .copy-code}
 
-**Payload**
+**Payload:**
 
 ```json
 {
