@@ -59,7 +59,7 @@ It's important to plan for how much data you will save (persisted data points). 
 
 ## Deployment Scenarios
 
-### Standalone server deployment (Scenario A)
+### (Scenario A)
 
 The most simple deployment scenario is suitable for up to 300 000 devices with 10,000 messages and 10,000 data points per second based on real production use cases.  
 This scenario requires both ThingsBoard platform and PostgreSQL database deployment within the same server (on-premise or in the cloud). 
