@@ -145,8 +145,8 @@ Recommended CPU/memory resources allocation:
 - TB Web UI: 0.3 CPU / 0.5Gi memory
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
-- Trendz: 0.3 CPU / 1Gi memory
-- Trendz Python Executor: 2.0 CPU / 4Gi memory
+- Trendz: 2 CPU / 4Gi memory
+- Trendz Python Executor: 1 CPU / 4Gi memory
 
 ## Step 10. Installation
 
