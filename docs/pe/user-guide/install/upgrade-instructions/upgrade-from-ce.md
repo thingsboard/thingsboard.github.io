@@ -16,6 +16,12 @@ description: Upgrading from Community Edition
   <li>
     <a href="#windows" id="markdown-toc-ubuntu-ce">Windows</a>
   </li>
+  <li>
+    <a href="#docker" id="markdown-toc-docker-ce">Docker</a>
+  </li>
+  <li>
+    <a href="#docker-compose" id="markdown-toc-docker-compose-ce">Docker Compose</a>
+  </li>
 </ul>
 
 ## Ubuntu {#ubuntu}
@@ -162,5 +168,78 @@ C:\thingsboard>upgrade.bat --fromVersion=CE
 
 ```text
 net start thingsboard
+```
+{: .copy-code}
+
+## Docker {#docker}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for the latest ThingsBoard Community Edition version. In order to upgrade to Professional Edition you need to [**upgrade to the latest Community Edition version first**](/docs/user-guide/install/upgrade-instructions/).
+{% endcapture %}
+{% include templates/warn-banner.md content=difference %}
+
+#### ThingsBoard PE image download
+
+```bash
+docker pull thingsboard/tb-pe-node:{{ site.release.pe_ver }}
+docker pull thingsboard/tb-pe-web-report:{{ site.release.pe_ver }}
+```
+{: .copy-code}
+
+#### ThingsBoard PE service upgrade
+
+* Stop and remove the ThingsBoard CE service:
+
+```bash
+docker compose stop thingsboard-ce
+docker compose rm -f thingsboard-ce
+```
+{: .copy-code}
+
+* Update your `docker-compose.yml` according to the [default Docker PE manifest](/docs/user-guide/install/pe/docker/#step-2-choose-thingsboard-queue-service). Do not forget to change the image to the PE version, define the required license variables and volumes, and add the Web Report service.
+
+* Run the upgrade and start the services:
+
+```bash
+docker compose run --rm -e UPGRADE_TB=true -e FROM_VERSION="CE" thingsboard-pe
+docker compose up -d
+```
+{: .copy-code}
+
+## Docker Compose {#docker-compose}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for the latest ThingsBoard Community Edition version. In order to upgrade to Professional Edition you need to [**upgrade to the latest Community Edition version first**](/docs/user-guide/install/upgrade-instructions/).
+{% endcapture %}
+{% include templates/warn-banner.md content=difference %}
+
+#### ThingsBoard PE image download
+
+```bash
+docker pull thingsboard/tb-pe-node:{{ site.release.pe_ver }}
+docker pull thingsboard/tb-pe-web-report:{{ site.release.pe_ver }}
+```
+{: .copy-code}
+
+* Stop the CE services
+
+```bash
+./docker-stop-services.sh
+```
+{: .copy-code}
+
+* Manually merge your current ThingsBoard CE cluster configuration with the [default Docker Compose cluster deployment files](https://github.com/thingsboard/thingsboard-pe-docker-compose). Ensure that you transfer all custom environment variables, volume mappings, and external service configurations to the new files.
+
+* Configure the license key environment variables as described in the [PE Docker Compose Cluster Setup Guide](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-4-configure-your-license-key).
+
+* Run the upgrade and start the services:
+
+```bash
+./docker-upgrade-tb.sh --fromVersion=CE
+./docker-start-services.sh
 ```
 {: .copy-code}
