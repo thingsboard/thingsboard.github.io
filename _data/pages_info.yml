@@ -5202,6 +5202,18 @@
 "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
   redirect_from: []
