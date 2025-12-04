@@ -59,34 +59,105 @@ It's important to plan for how much data you will save (persisted data points). 
 
 ## Deployment Scenarios
 
-### (Scenario A)
+###  Monolith Deployment (Scenario A)
 
-The most simple deployment scenario is suitable for up to 300 000 devices with 10,000 messages and 10,000 data points per second based on real production use cases.  
-This scenario requires both ThingsBoard platform and PostgreSQL database deployment within the same server (on-premise or in the cloud). 
-The HAProxy load balancer is also installed on the same server and acts as a reverse proxy and optionally TLS termination proxy.
-See diagram below.
+This deployment scenario is designed for straightforward, cost-efficient deployments supporting applications with low to moderate workloads and limited horizontal scaling needs. It adopts a monolithic server approach, consolidating core services onto a single compute instance to reduce infrastructure complexity and operational effort.
 
-<object width="80%" data="/images/reference/deployment/single.svg"></object>
+The deployment pattern includes two configuration options, each tailored to different database management preferences.
+
+#### Configuration 1: Simple Standalone Server
+
+For the simplest, most cost-efficient setup, all components, including the database and proxy, are hosted on a single server. This configuration is ideal for prototyping, development environments, or small-scale production workloads where ease of management and cost are the primary concerns.
+
+##### Compute Resources:
+
+- AWS EC2 Instance: `m7g.xlarge` (4 vCPUs, 16 GiB memory, ARM64 architecture)
+
+**Application Workloads:**
+
+The following services run directly on the host:
+<table>
+    <thead>
+    <tr>
+        <th>Service</th>
+        <th>Descripton</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>tb service</td>
+        <td>Core ThingsBoard application</td>
+    </tr>
+    <tr>
+        <td>HAProxy</td>
+        <td>Lightweight proxy/load balancer for managing external traffic.</td>
+    </tr>
+    <tr>
+        <td>PostgreSQL</td>
+        <td>Relational database for all entity metadata and time-series telemetry data.</td>
+    </tr>
+</table>
+
+#### Configuration 2: Standalone Server with External Database (AWS RDS)
+
+This configuration separates the application stack from the database, leveraging PostgreSQL (RDS) for managed persistence. This offers improved resilience, automated backups, and patching for the database layer, while keeping the application compute architecture simple.
+
+##### Architectural Modifications:
+
+- Entity and telemetry data: PostgreSQL (RDS)
+
+##### Additional Compute Resources:
+
+- AWS RDS Instance: `db.t4g.medium` (2 vCPUs, 4 GiB memory, ARM64 architecture)
+
+**Application Workloads:**
+
+<table>
+    <thead>
+    <tr>
+        <th>Service</th>
+        <th>Instance</th>
+        <th>Descripton</th>
+    </tr>
+    </thead>
+    <tr>
+        <td>tb service</td>
+        <td>EC2</td>
+        <td>Core ThingsBoard application</td>
+    </tr>
+    <tr>
+        <td>HAProxy</td>
+        <td>EC2</td>
+        <td>Lightweight proxy/load balancer for managing external traffic.</td>
+    </tr>
+    <tr>
+        <td>PostgreSQL</td>
+        <td>RDS</td>
+        <td>Relational database for all entity metadata and time-series telemetry data.</td>
+    </tr>
+</table>
+
+#### Kafka Integration (Optional)
+
+Neither Scenario A configuration includes Kafka by default.
+However, Kafka can be added as a supplemental component to handle bursts of telemetry data without overloading the main application, ensuring more reliable and fault-tolerant message handling.
+
+Kafka may run:
+- Locally on the same instance.
+- In container.
 
 **Pros**:
 
-* Very simple setup, literally: 10 minutes to deploy using [our installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/).
-* Easy to maintain and update the software instance.
+- Lowest cost deployment option.
+- Very simple to install, manage, and upgrade.
+- Easy backup/restore management (Configuration 2).
+- Minimal operational expertise required.
 
 **Cons**:
 
-* Upgrades cause downtime, which is approximately 5-10 minute per upgrade.  
-* Minimum high-availability. In case of hardware or application failure all devices and users are affected. 
-* No data durability. Everything is stored on one server.
-* Performance of the system is limited by performance of the single server.
-
-**Performance**:
-
-Overall performance of the solution depends on the instance hardware and heavily rely on the performance of the database.
-We suggest to use PostgreSQL for both entities and telemetry data in Standalone server deployment scenario.
-An average virtual environment can handle ~ 5,000 telemetry data points per second.
-See [key infrastructure characteristics](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics)
-and [performance tests](/docs/{{docsPrefix}}reference/performance-aws-instances/) on different AWS instances. This information is useful for making right decision regarding the infrastructure for your solution. 
+- No horizontal scaling.
+- Single point of failure on the EC2 instance.
+- Local PostgreSQL requires manual maintenance and backups (Configuration 1).
+- Not suitable for high-availability or high-throughput scenarios.
 
 **Total cost of ownership (TCO) example**:
 
@@ -101,12 +172,11 @@ Single ThingsBoard PE perpetual license (below v3.0) cost is 2,999 USD (includin
 TCO: ~350 USD per month. This price correlates with 0.035 USD per month per device, while the amount of devices is 10k. 
 Adding [Premium support](/services/support/) package results in ~850 USD per month or 0.085 USD per month per device.  
 
-**Comments and Recommendations**:
+**Comments and Considerations**:
 
-This deployment scenario is quite simple and suites well for development environments, prototyping and early stage startup companies. 
-Before you go to production, we recommend to setup the data backup scripts and periodically upload database snapshots to durable storage (AWS S3, etc.). It is also useful to have regular snapshots of your server instance implemented in order to minimize the recovery time in case of possible outage.
-  
-If you would like to minimize resources spent for the database maintenance, we recommend to use cloud managed database. See Scenario B for more details. 
+Scenario A provides the simplest and most cost-efficient deployment path but is best suited for environments with predictable, moderate workloads. While the monolithic design reduces operational overhead, it also introduces clear limitations in scalability and fault tolerance. Configuration 2 offers improved database reliability through RDS but still retains a single-node application footprint.
+
+This scenario is ideal for early-stage deployments but may require re-architecture as system demands increase.
 
 ### Single-AZ microservices deployment (Scenario B)
 
@@ -213,7 +283,6 @@ All application workloads (`tb-node`, `tb-js-executor`, `tb-web-ui`, `kafka`) an
 {% if docsPrefix == "pe/" %}
 All application workloads (`tb-pe-node`, `tb-pe-js-executor`, `tb-pe-web-ui`, `kafka`) and the original `m7g.xlarge` compute node remain unchanged from Configuration 1.
 {% endif %}
-
 
 **Pros:** 
 
