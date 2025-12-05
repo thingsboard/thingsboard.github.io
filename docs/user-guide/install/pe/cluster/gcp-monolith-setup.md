@@ -111,15 +111,15 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 ### 10.2. Obtain and configure license key
 
-{% include templates/trendz/k8s-license-secret-trendz.md %}
+{% include templates/install/trendz/k8s-license-secret-trendz.md %}
 
 ### 10.3. Create a Trendz database in the existing Google Cloud SQL (PostgreSQL) Instance
 
-{% include templates/trendz/gcp/k8s-trendz-db-creating.md %}
+{% include templates/install/trendz/gcp/k8s-trendz-db-creating.md %}
 
 ### 10.4. Trendz starting
 
-{% include templates/trendz/k8s-trendz-starting.md %}
+{% include templates/install/trendz/k8s-trendz-starting.md %}
 
 ## Step 11. Using
 

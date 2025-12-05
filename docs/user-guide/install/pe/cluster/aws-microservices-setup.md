@@ -199,15 +199,15 @@ Every pod should be in the `READY` state.
 
 ### 13.2. Obtain and configure license key
 
-{% include templates/trendz/k8s-license-secret-trendz.md %}
+{% include templates/install/trendz/k8s-license-secret-trendz.md %}
 
 ### 13.3. Create a Trendz database in the existing RDS instance
 
-{% include templates/trendz/eks/k8s-trendz-db-creating.md %}
+{% include templates/install/trendz/eks/k8s-trendz-db-creating.md %}
 
 ### 13.4. Trendz starting
 
-{% include templates/trendz/k8s-trendz-starting.md %}
+{% include templates/install/trendz/k8s-trendz-starting.md %}
 
 ## Step 14. Validate the setup
 

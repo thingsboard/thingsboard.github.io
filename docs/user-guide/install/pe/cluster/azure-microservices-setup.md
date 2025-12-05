@@ -108,15 +108,15 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 ### 11.2. Obtain and configure license key
 
-{% include templates/trendz/k8s-license-secret-trendz.md %}
+{% include templates/install/trendz/k8s-license-secret-trendz.md %}
 
 ### 11.3. Create a Trendz database in the existing Azure Database
 
-{% include templates/trendz/azure/k8s-trendz-db-creating.md %}
+{% include templates/install/trendz/azure/k8s-trendz-db-creating.md %}
 
 ### 11.4. Trendz starting
 
-{% include templates/trendz/k8s-trendz-starting.md %}
+{% include templates/install/trendz/k8s-trendz-starting.md %}
 
 ## Step 12. Using
 
