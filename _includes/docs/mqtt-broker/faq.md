@@ -169,7 +169,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-configuration" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">How do I configure TBMQ for production use?</div>
@@ -230,7 +229,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-connectivity" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Which MQTT protocol versions are supported?</div>
@@ -261,7 +259,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-usage" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">What can I do with TBMQ?</div>
@@ -296,7 +293,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-security" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">What about security?</div>
@@ -348,7 +344,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-subscriptions" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">How does TBMQ manage subscriptions?</div>
@@ -389,7 +384,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-performance" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">How many clients and messages per second can TBMQ support?</div>
@@ -417,7 +411,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-storage" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Where does TBMQ store data?</div>
@@ -432,7 +425,6 @@ function switchTbmqFaqTab(tabId) {
                     </div>
                 </div>
             </div>
-
             <div id="tbmq-faq-cat-licensing" class="tbmq-faq-category">
                 <div class="tbmq-faq-question">
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">What license type does TBMQ use?</div>

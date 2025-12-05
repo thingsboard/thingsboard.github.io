@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mqtt-broker
-title: FAQ
+title: MQTT Broker FAQs
 description: TBMQ FAQ
 
 ---
