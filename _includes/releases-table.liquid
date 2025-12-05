@@ -7,11 +7,11 @@
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
-            <div class="releases-table-header-item">Release Date</div>
-            <div class="releases-table-header-item">Latest Tag</div>
-            <div class="releases-table-header-item">Last Updated</div>
-            <div class="releases-table-header-item">Status</div>
-            <div class="releases-table-header-item">Release Notes</div>
+            <div class="releases-table-header-item">First Released</div>
+            <div class="releases-table-header-item">Current Patch</div>
+            <div class="releases-table-header-item">Support</div>
+            <div class="releases-table-header-item">End of Life</div>
+            <div class="releases-table-header-item">Release Notes & Highlights</div>
             <div class="releases-table-header-item">Upgrade Instructions</div>
         </div>
 
@@ -24,7 +24,7 @@
                          style="cursor:pointer;">
                         <div class="releases-table-content">
                             <div class="releases-table-content-item">
-                                {{ version | replace: "-", "." }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                                {{ version | replace: "-", "." }}
                             </div>
 
                             <div class="releases-table-content-item">
@@ -34,19 +34,14 @@
                             </div>
 
                             <div class="releases-table-content-item">
-                                {{ page.latest-tag }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                                {{ page.latest-patch }}
                             </div>
 
-                            <div class="releases-table-content-item">
-                                <time datetime="{{ page.last-updated | date: '%Y-%m-%d' }}">
-                                    {{ page.last-updated | date: "%B %-d, %Y" }}
-                                </time>
-                            </div>
 
                             {% if page.lts %}
                                 <a href="/docs/{{ docsPrefix }}releases/release-policy/" class="releases-table-content-item version-link version-link-lts">
                                 <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
-                                    LTS ({{ page.lts }})
+                                    Active LTS
                                 </span>
                                     <i class="fas fa-external-link-alt"
                                        style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}"></i>
@@ -55,8 +50,16 @@
                                 <div class="releases-table-content-item">non-LTS</div>
                             {% endif %}
 
+                            <div class="releases-table-content-item">
+                                {% if page.lts %}
+                                    {{ page.release-date | date: "%s" | plus: 46656000 | date: "%B %Y" }}
+                                {% else %}
+                                    {{ page.release-date | date: "%s" | plus: 15552000 | date: "%B %-d, %Y" }}
+                                {% endif %}
+                            </div>
+
                             <a href="{{ page.url }}" class="releases-table-content-item version-link">
-                                <span>{{ version | replace: "-", "." }}</span>
+                                <span>{{ page.release-note-label }}</span>
                                 <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                             </a>
 
