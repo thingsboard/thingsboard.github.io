@@ -1,5 +1,5 @@
 <style>
-.tbmq-faq-wrapper { padding: 60px 15px 80px; max-width: 1200px; margin: 0 auto; }
+.tbmq-faq-wrapper { padding: 20px 15px 80px; max-width: 1200px; margin: 0 auto; }
 .tbmq-faq-wrapper h1 { text-align: center; font-size: 36px; font-weight: 500; line-height: 48px; margin-bottom: 48px; color: #212529; }
 .tbmq-faq-sections { display: flex; gap: 40px; }
 @media (max-width: 1200px) { .tbmq-faq-sections { flex-direction: column; } }
@@ -77,6 +77,8 @@ function switchTbmqFaqTab(tabId) {
     if (category) category.classList.add('active');
 }
 </script>
+
+<h2>MQTT Broker</h2>
 
 <div class="tbmq-faq-wrapper">
     <div class="tbmq-faq-sections">

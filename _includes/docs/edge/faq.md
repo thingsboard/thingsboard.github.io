@@ -73,11 +73,13 @@ function switchEdgeFaqTab(tabId) {
 }
 </script>
 
+<h2>Edge Computing - {{edgeName}}</h2>
+
 <div class="edge-faq-wrapper">
     <div class="edge-faq-sections">
         <div class="edge-faq-tabs">
             <div class="edge-faq-tab active" onclick="switchEdgeFaqTab('general')">General Questions</div>
-            <div class="edge-faq-tab" onclick="switchEdgeFaqTab('comparison')">Community vs. Professional Edition</div>
+            <div class="edge-faq-tab" onclick="switchEdgeFaqTab('comparison')">Edition Comparison & Upgrade</div>
             <div class="edge-faq-tab" onclick="switchEdgeFaqTab('features')">Features & Capabilities</div>
             <div class="edge-faq-tab" onclick="switchEdgeFaqTab('installation')">Installation & Setup</div>
             <div class="edge-faq-tab" onclick="switchEdgeFaqTab('support')">Support</div>
@@ -114,6 +116,12 @@ function switchEdgeFaqTab(tabId) {
                         <p>Edge {{edgeName}} is <b>open-source</b> and <b>free to download</b>. Install from our <a href="/docs/user-guide/install/{{docsPrefix}}installation-options/" target="_blank">documentation</a> or access source code on <a href="https://github.com/thingsboard/thingsboard-edge" target="_blank">GitHub</a></p>
                         <p>You'll need a ThingsBoard Server instance to connect Edge to. See our <a href="/docs/{{docsPrefix}}getting-started/" target="_blank">Getting Started</a> guide for complete setup instructions.</p> 
                         {% endif %}
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I run ThingsBoard Edge on Raspberry Pi or other edge devices?</div>
+                    <div class="edge-faq-answer">
+                        <p>Yes, <b>ThingsBoard Edge</b> is specifically designed to run on a variety of Edge hardware platforms, including single-board computers like <b>Raspberry Pi</b> and other devices with sufficient processing power and memory.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
@@ -156,7 +164,7 @@ function switchEdgeFaqTab(tabId) {
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What's the difference between Edge Community Edition and Professional Edition?</div>
                     <div class="edge-faq-answer">
-                        <p>Both editions provide device management, rule engine, dashboards, and standard protocols (MQTT, CoAP, HTTP, etc.).</p>
+                        <p><b>Both editions</b> provide device management, rule engine, dashboards, and standard protocols (MQTT, CoAP, HTTP, etc.).</p>
                         <p><b>Community Edition</b> is free and open-source.</p>
                         <p><b>Professional Edition</b> is commercial and adds:</p>
                         <ul>
@@ -197,54 +205,55 @@ function switchEdgeFaqTab(tabId) {
                     <div class="edge-faq-answer">
                         <ul>
                         <li><b>Edge CE:</b> The number of Edge instances is unlimited.</li>
-                        <li><b>Edge PE:</b> The number of included Edge instances depends on your ThingsBoard PE plan. You can add additional Edge instances with extra cost per month. Check your plan details or contact your administrator to see how many Edge instances are included.</li>
+                        <li><b>Edge PE:</b> The number of included Edge instances depends on your ThingsBoard PE plan. You can add extra Edge instances for an additional monthly cost. Check your plan details or contact your administrator to see how many Edge instances are included.</li>
                         </ul>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I migrate from Edge CE to Edge PE?</div>
+                    <div class="edge-faq-answer">
+                        <p>Yes, but it requires upgrading your entire system:</p>
+                        <ul>
+                        <li><b>Upgrade your ThingsBoard Server</b> from CE to PE.</li>
+                        <li><b>Purchase the Edge Computing add-on</b> for your PE license</li>
+                        <li><b>Reinstall Edge</b> using PE packages</li>
+                        </ul>
+                        <p><b>Before upgrading:</b> Back up any custom dashboards, rule chains, or configurations. <a href="/docs/contact-us/" target="_blank">Consult</a> our support team for assistance or see our <a href="/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/" target="_blank">migration guide</a> for step-by-step instructions.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How do I start a free trial?</div>
                     <div class="edge-faq-answer">
                         <p>Community Edition is free and open-source - no trial needed. <a href="/docs/user-guide/install/{{docsPrefix}}installation-options/" target="_blank">Download</a> and use it indefinitely at no cost.</p>
-                        <p>For Professional Edition, start a 30-day trial of the Maker plan with Edge Computing add-on enabled. You'll have full access to Edge PE features.</p>
+                        <p>For Professional Edition, start a 30-day trial of the <b>Maker</b> plan with Edge Computing add-on enabled. You'll have full access to Edge PE features.</p>
                     </div>
                 </div>
             </div>
-
             <div id="edge-faq-cat-features" class="edge-faq-category">
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What core features are available in the {{edgeName}}?</div>
                     <div class="edge-faq-answer">
                         {% if docsPrefix == "pe/edge/" %}
-                        <p>The <b>{{edgeName}}</b> includes all the features of the <b>Community Edition</b> plus additional functionality:</p><ul>
-                        <li>White Labeling</li>
-                        <li>Scheduler</li>
-                        <li>Integrations</li>
-                        <li>Custom menu</li>
-                        <li>and more</li></ul>
-                        {% else %}
-                        <p>The <b>{{edgeName}}</b> includes features for:</p>
+                        <p>Edge <b>{{edgeName}}</b> includes all <b>Community Edition</b> features plus:</p>
                         <ul>
-                        <li>Device management and telemetry</li>
-                        <li>Rule engine for data processing</li>
-                        <li>Dashboard creation</li>
-                        <li>Support for MQTT, CoAP and HTTP protocols</li>
-                        <li>Open-source extensibility through plugins</li>
+                        <li><b>UI customization</b>: <a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/">custom menu</a> configuration</li>
+                        <li><b>Solution templates</b>: <a href="/docs/{{peDocsPrefix}}solution-templates/overview/">Pre-built IoT solutions</a> ready to install</li>
+                        <li><b>Platform Integrations</b>: <a href="/docs/{{docsPrefix}}user-guide/integrations/">Connect</a> to OPC-UA servers, and other systems with <a href="/docs/user-guide/integrations/#converters-library">ready-to-use decoders</a> for 100+ devices</li>
+                        <li><b>Scheduler</b>: <a href="/docs/{{docsPrefix}}user-guide/scheduler/">Automate</a> reports, commands, and updates</li>
+                        <li><b>Customer hierarchy</b>: Organize multiple end-customers with isolated access</li>
+                        </ul>
+                        {% else %}
+                        <p>Edge <b>{{edgeName}}</b> provides complete edge computing functionality:</p>
+                        <ul>
+                        <li><b>Device connectivity</b>: MQTT, CoAP, HTTP, SNMP, and LwM2M protocols</li>
+                        <li><b>Local data processing</b>: Rule engine for real-time analytics and automation</li>
+                        <li><b>Visualization</b>: Dashboard creation and customization</li>
+                        <li><b>Data management</b>: Device telemetry collection and attribute management</li>
+                        <li><b>Open-source</b>: Fully open-source with active community support</li>
                         </ul>
                         {% endif %}
                     </div>
                 </div>
-
-            <div id="edge-faq-cat-installation" class="edge-faq-category">
-               {% if docsPrefix == "edge/" %}
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How do I get ThingsBoard Edge {{edgeName}}?</div>
-                    <div class="edge-faq-answer">                        
-                        <p>In order to use Edge Professional Edition, you'll need to <b>upgrade to ThingsBoard Professional Edition</b> first. Then, add the Edge Computing add-on to your subscription. Your plan includes a base number of Edge instances, and you can purchase additional instances as needed.</p>
-                        <p>See the <a href="/pricing/" target="_blank">Pricing Page</a> for details on what's included with each plan or contact your System Administrator.</p>
-                    </div>
-                </div>
-                {% endif %}
-
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does the ThingsBoard Edge support multi-tenancy?</div>
                     <div class="edge-faq-answer">
@@ -261,85 +270,122 @@ function switchEdgeFaqTab(tabId) {
                         {% endif %}
                     </div>
                 </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How many devices can ThingsBoard Edge support?</div>
-                    <div class="edge-faq-answer">
-                        {% if docsPrefix == 'pe/edge/' %}
-                        <p>The number of connected devices depends on your <a href="https://thingsboard.io/pricing/?section=thingsboard-edge" target="_blank">subscription plan</a>.</p>
-                        <p>Some plans offer 'Unlimited Devices and Assets, thus there are no soft limits on creating devices and assets on the edge side.</p>
-                        {% else %}
-                        <p><b>ThingsBoard Edge</b> doesn’t impose a fixed limit on the number of devices you can connect.</p>
-                        <p>In practice, the number of devices you can support depends largely on your hardware resources, system configuration, and the specific use case. 
-                        Since <b>ThingsBoard Edge</b> is designed with remote locations with potentially low bandwidth connectivity in mind, we do not recommend connecting more than <b>1000</b> devices to a single edge.</p>
-                        {% endif %}
-                    </div>
-                </div>
-
                 {% if docsPrefix == "edge/" %}
                 <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does the Community Edition support white-labeling?</div>
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support UI customization options, such as white-labeling or custom menu?</div>
                     <div class="edge-faq-answer">
-                        <p>No, white-labeling is available only in the <b>Professional Edition</b>.</p>
+                        <p><a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/">custom menu</a> configuration are <b>Professional Edition</b> features that provide UI customization without code changes.</p>
+                        <p><b>{{edgeName}}</b> is open-source, allowing developers to customize the interface by modifying the source code.</p>
                     </div>
                 </div>
                 {% endif %}
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I integrate third-party systems with ThingsBoard Edge?</div>
-                    <div class="edge-faq-answer">
-                        <p>Yes, you can integrate the <b>ThingsBoard Edge {{edgeName}}</b> with third-party systems through REST APIs.</p>
-                        {% if docsPrefix == "pe/edge/" %}
-                        <p>Also, the <a href="/docs/pe/edge/user-guide/integrations/" target="_blank">platform integrations</a> are available for the <b>{{edgeName}}</b>.</p>
-                        {% else %}
-                        <p>However, the <a href="/docs/pe/edge/user-guide/integrations/" target="_blank">platform integrations</a>, which are available only in the <b>Professional Edition</b>, are not included in the <b>Community Edition</b>.</p>
-                        {% endif %}
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What databases does the ThingsBoard Edge support?</div>
-                    <div class="edge-faq-answer">
-                        <p>The ThingsBoard Edge supports pure SQL or a hybrid SQL + NoSQL (for telemetry storage) approach. For more details on database options, you can check <a href="/docs/{{peDocsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach" target="_blank">here</a>.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I automate device management and telemetry processing?</div>
-                    <div class="edge-faq-answer">
-                        <p>Yes, you can. The <b>Rules Engine</b> allows for event-based processing and alerts.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support OTA (Over-the-Air) firmware updates?</div>
-                    <div class="edge-faq-answer">
-                        <p>Yes, the {{edgeName}} supports <a href="/docs/{{docsPrefix}}user-guide/ota-updates/" target="_blank">OTA (Over-the-Air)</a> firmware updates.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is there a mobile app for ThingsBoard Edge {{edgeName}}?</div>
-                    <div class="edge-faq-answer">
-                        <p>No, there is no dedicated mobile app for <b>ThingsBoard Edge {{edgeName}}</b>.</p>
-                        <p>However, you can access and manage ThingsBoard Edge through a web browser on any device, including mobile devices, by visiting the ThingsBoard Edge dashboard (typically hosted on port 8080).</p>
-                    </div>
-                </div>
-
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does ThingsBoard Edge {{edgeName}} support AI or machine learning integrations?</div>
                     <div class="edge-faq-answer">
-                        <p>Not natively, but you can incorporate AI or ML into your <b>ThingsBoard Edge</b> deployment using custom development or third-party integrations.</p>
+                        <p>Yes. Edge includes an <a href="/docs/user-guide/rule-engine-2-0/nodes/external/ai-request/" target="_blank">AI Request node</a> in the Rule Engine that allows integration with AI services like OpenAI, Azure OpenAI, and custom AI endpoints. You can use this for predictive maintenance, anomaly detection, natural language processing, and other AI-powered analytics.</p>
+                        <p>See <a href="/docs/samples/analytics/ai-predictive-maintenance/" target="_blank">AI predictive maintenance example</a> for implementation details.</p>
                     </div>
                 </div>
-
                 <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How do I upgrade to the latest version of ThingsBoard Edge?</div>
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I integrate third-party systems with ThingsBoard Edge?</div>
                     <div class="edge-faq-answer">
-                        <p>In order to upgrade to the latest version of <b>ThingsBoard Edge</b>, please follow <a href="/docs/user-guide/install/{{docsPrefix}}upgrade-instructions/" target="_blank">these instructions</a>.</p>
+                        <p>Yes, Edge {{edgeName}} supports integration through:</p>
+                        {% if docsPrefix == "pe/edge/" %}
+                        <ul>
+                        <li><b>REST APIs</b>: For request/response interactions.</li>
+                        <li><b>Platform Integrations</b>: For built-in connectors to OPC-UA servers, and other platforms.</li>
+                        </ul>
+                        {% else %}
+                        <ul>
+                        <li><b>REST APIs</b>: For request/response interactions.</li>
+                        </ul>
+                        <p>For built-in platform connectors (OPC-UA, CoAP etc.), see <a href="/docs/{{docsPrefix}}user-guide/integrations/">Professional Edition Integrations</a>.</p>
+                        {% endif %}
                     </div>
                 </div>
-
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does ThingsBoard Edge support clustering?</div>
+                    <div class="edge-faq-answer">
+                        <p>Starting with <b>version 4.0</b>, yes. You can cluster multiple Edge nodes for high availability. If one node fails, others continue handling workloads.</p>
+                        <p>Earlier versions run as single instances.</p>
+                        <p>Refer to <a href="/docs/{{docsPrefix}}config/edge-cluster-setup/" target="_blank">Edge Cluster Setup documentation</a> for more details.</p>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What databases and message queue implementations does ThingsBoard Edge support?</div>
+                    <div class="edge-faq-answer">
+                        <p>Edge {{edgeName}} supports <b>pure SQL and a hybrid SQL + NoSQL</b> (for telemetry storage) approaches, which are:</p>
+                        <ul>
+                        <li><b>PostgreSQL</b>: Default, suitable for most deployments.</li>
+                        <li><b>PostgreSQL + Cassandra</b>: Hybrid approach for high-volume telemetry - 1M+ devices or >5,000 msg/sec.</li>
+                        </ul>
+                        <p>Edge also supports different <b>message queue implementations</b>:</p>
+                        <ul>
+                        <li><b>PostgreSQL</b>: Built-in default, <b>suitable for PoC and testing environments</b> - not for production or any sort of cluster deployments.</li>
+                        <li><b>Kafka</b>: Recommended for production deployments.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I automate device management and telemetry processing?</div>
+                    <div class="edge-faq-answer">
+                        <p>Yes. you can. The <a href="/docs/edge/rule-engine/rule-chain-templates/" target="_blank">Rule Engine</a> allows you to automate device workflows, data processing, and alerts based on incoming telemetry.</p>
+                        <p>For example, you can automatically provision devices, transform data, trigger actions based on thresholds, or forward telemetry to external systems.</p>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I run rule chains on Edge?</div>
+                    <div class="edge-faq-answer">
+                        <p>Yes. Edge runs rule chains locally for real-time processing. Starting with <b>version 4.0</b>, you can <b>create</b> and <b>edit rule chains directly on Edge</b>. In <b>earlier versions</b>, rule chains are <b>configured as templates on the Server and pushed</b> to Edge.</p>
+                        <p>See <a href="/docs/{{docsPrefix}}rule-engine/rule-chain-templates/" target="_blank">Edge Rule Chain Templates</a> for more information.</p>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support OTA (Over-the-Air) firmware updates?</div>
+                    <div class="edge-faq-answer">
+                        <p>Yes. You can manage firmware versions, schedule updates, and track deployment status across your devices. See <a href="/docs/{{docsPrefix}}user-guide/ota-updates/" target="_blank">OTA updates documentation</a> for setup instructions.</p>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is there a mobile app for ThingsBoard Edge {{edgeName}}?</div>
+                    <div class="edge-faq-answer">
+                        <p>No, there is no dedicated mobile app for ThingsBoard Edge.</p>
+                        <p>However, you can access and manage Edge instance through a web browser on any device, including mobile devices. Typically, instance is <b>hosted on port 8080</b>.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="edge-faq-cat-installation" class="edge-faq-category">
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is Edge version tied to Server version?</div>
+                    <div class="edge-faq-answer">
+                        <p>Partially. Edge version X.Y.Z works with:</p>
+                        <ul>
+                        <li>Server version X.Y.Z (<b>same version</b>)</li>
+                        <li>Server versions X.Y+1 and X.Y+2 (<b>up to two minor versions ahead)</b></li>
+                        </ul>
+                        <p><b>Edge does not work with older Server versions.</b></p>
+                        <p>Example: Edge 3.8.0 works with Server 3.8.0, 3.8.1, and 3.9.0 — but not with Server 3.7.x or earlier. If your Edge is newer than your Server, upgrade the Server first.</p>
+                        <p>See also <a href="/docs/{{docsPrefix}}releases/" target="_blank">Edge Release Notes</a></p>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How much hardware do I need to run Edge?</div>
+                    <div class="edge-faq-answer">
+                        <p>Less than you might think. Edge runs on:</p>
+                        <ul>
+                        <li>Raspberry Pi or similar single-board computers</li>
+                        <li>Industrial gateways</li>
+                        <li>Mini PCs or embedded systems</li>
+                        <li><b>Any machine with 1GB+ RAM for light workloads, 4GB+ for heavy use</b></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How to upgrade to the latest version?</div>
+                    <div class="edge-faq-answer">
+                        <p>To upgrade to the latest version, follow <a href="/docs/user-guide/install/{{docsPrefix}}upgrade-instructions/" target="_blank">upgrade instructions</a>.</p>
+                    </div>
+                </div>
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How can I connect my device?</div>
                     <div class="edge-faq-answer">
@@ -350,56 +396,39 @@ function switchEdgeFaqTab(tabId) {
                         {% endif %}
                     </div>
                 </div>
-
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How do I install Edge?</div>
+                    <div class="edge-faq-answer">
+                        <p>Edge runs on <b>Docker, Ubuntu, CentOS, Windows, and Raspberry Pi</b>. See the Installation Guide for step-by-step instructions.</p>
+                        <p>See the <a href="/docs/user-guide/install/{{docsPrefix}}installation-options/" target="_blank">Installation Options</a> for step-by-step instructions.</p>
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is there an official Docker image for ThingsBoard Edge?</div>
+                    <div class="edge-faq-answer">
+                        {% if docsPrefix == 'pe/edge/' %}
+                        <p>Yes, the official <a href="https://hub.docker.com/r/thingsboard/tb-edge-pe" target="_blank">Docker image</a> is available on <b>Docker Hub</b>.</p>
+                        {% else %}
+                        <p>Yes, the official <a href="https://hub.docker.com/r/thingsboard/tb-edge" target="_blank">Docker image</a> is available on <b>Docker Hub</b>.</p>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="edge-faq-question">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Where does ThingsBoard Edge store time-series data?</div>
+                    <div class="edge-faq-answer">
+                        <p>By default, Edge stores time-series data in <b>PostgreSQL</b>, which handles <b>both device metadata and telemetry</b> efficiently for typical deployments.</p>
+                        <p>For high-volume scenarios (1M+ devices or >5,000 msg/sec), you can configure a <b>hybrid setup</b> where <b>time-series data is stored in Cassandra while PostgreSQL handles device metadata and attributes</b>.</p>
+                    </div>
+                </div>
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Do I need to use a software development kit (SDK)?</div>
                     <div class="edge-faq-answer">
                         <p>No, many IoT devices are not designed to embed third-party SDKs.</p>
-                        <p><b>ThingsBoard Edge</b> provides a simple API over common IoT protocols, so you can choose any client-side library you like, or even use your own. 
+                        <p>ThingsBoard Edge provides a <b>simple API over common IoT protocols</b>, so you can choose any client-side library you like, or even use your own. 
                         Some useful references include <a href="https://github.com/mqtt/mqtt.github.io/wiki/libraries" target="_blank">MQTT client-side libraries list</a> and <a href="https://libcoap.net/" target="_blank">C-implementation for CoAP</a>.</p>
                     </div>
                 </div>
             </div>
-
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does ThingsBoard Edge support clustering?</div>
-                    <div class="edge-faq-answer">
-                        <p>The <b>earlier versions</b> of ThingsBoard Edge do not support clustering. It is designed to operate, process and analyze data locally before synchronizing with the central Server.</p>
-                        <p>Starting with <b>release 4.0</b>, Edge supports clustering. Multiple <b>Edge nodes</b> can be clustered to provide high availability. If one node fails, the others can seamlessly continue to handle workloads.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is there an official Docker image for ThingsBoard Edge?</div>
-                    <div class="edge-faq-answer">
-                        <p>Yes, official <b>Docker images</b> are available on <b>Docker Hub</b>.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I run ThingsBoard Edge on Raspberry Pi or other edge devices?</div>
-                    <div class="edge-faq-answer">
-                        <p>Yes, <b>ThingsBoard Edge</b> is specifically designed to run on a variety of Edge hardware platforms, including single-board computers like <b>Raspberry Pi</b> and other devices with sufficient processing power and memory.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Where does ThingsBoard Edge store time-series data?</div>
-                    <div class="edge-faq-answer">
-                        <p>Depending on your database approach, there are two options. If you've chosen a <b>hybrid approach</b>, the time-series data will be stored in <b>Cassandra</b>. Otherwise, the data is stored in the <b>PostgreSQL</b> database, which is well suited for storing and querying entities and local time-series data.</p>
-                    </div>
-                </div>
-
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What should I do if I have legacy devices to connect?</div>
-                    <div class="edge-faq-answer">
-                        <p>If you have legacy devices that don't natively speak one of the protocols supported by <b>ThingsBoard Edge</b> (such as MQTT, CoAP, or HTTP), you can still connect them by installing <a href="/docs/iot-gateway/" target="_blank">ThingsBoard IoT Gateway</a>. It will act as a bridge between your legacy devices and <b>ThingsBoard Edge</b>.</p>
-                        <p><b>ThingsBoard IoT Gateway</b> is available out-of-the-box and requires no additional fees.</p>
-                    </div>
-                </div>
-            </div>
-
             <div id="edge-faq-cat-support" class="edge-faq-category">
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What support options are available for the {{edgeName}}?</div>
@@ -417,7 +446,6 @@ function switchEdgeFaqTab(tabId) {
                         </ul>
                     </div>
                 </div>
-
                 {% if docsPrefix == "pe/edge/" %}
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Do you offer 24/7 customer support?</div>
@@ -432,14 +460,12 @@ function switchEdgeFaqTab(tabId) {
                         <p>You can report it on <a href="https://github.com/thingsboard/thingsboard-edge/issues" target="_blank">GitHub Issues</a>, and the open-source community may help fix it.</p>
                     </div>
                 </div>
-
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I contribute to the development of ThingsBoard Edge Community Edition?</div>
                     <div class="edge-faq-answer">
                         <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/thingsboard-edge" target="_blank">GitHub</a>. By the way, please consider starring our repository.</p>
                     </div>
                 </div>
-
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is official support available for the Community Edition?</div>
                     <div class="edge-faq-answer">
@@ -448,7 +474,6 @@ function switchEdgeFaqTab(tabId) {
                 </div>
                 {% endif %}
             </div>
-
         </div>
     </div>
 </div>

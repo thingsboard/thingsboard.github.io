@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-edge
-title: ThingsBoard Edge Community Edition FAQs
+title: Frequently Asked Questions
 description: ThingsBoard Edge FAQs
 
 ---

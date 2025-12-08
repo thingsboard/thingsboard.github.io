@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge Professional Edition FAQs
+title: Frequently Asked Questions
 description: ThingsBoard Edge FAQs
 
 ---
