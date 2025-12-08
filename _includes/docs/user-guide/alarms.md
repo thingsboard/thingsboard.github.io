@@ -107,21 +107,13 @@ You can acknowledge or clear alarms from:
 
 Click **Acknowledge** to mark the alarm as reviewed. Acknowledgment does not affect alarm logic but helps operational workflows.
 
-<b><font size="3">Clear</font></b>
-
-Click **Clear** to close the alarm. Clearing can be performed manually or automatically if a rule defines a clear condition.
-
-<br><br>
-
-Alarms have four statuses: acknowledged/unacknowledged/active/clear.
-
-To acknowledge the alarm, click on the "Acknowledge" icon in the Alarms table widget or click on the "Acknowledge" button in the alarm details window on the "Alarms" page, or on the "Alarms" tab of the entity details window.
-
 {% include images-gallery.html imageCollection="acknowledge-alarm" %}
 
-To clear the alarm, click on the "Clear" icon in the Alarms table widget or click on the "Clear" button in the alarm details window.
+<b><font size="3">Clear</font></b>
 
 {% include images-gallery.html imageCollection="clear-alarm" %}
+
+Click **Clear** to close the alarm. Clearing can be performed manually or automatically if a rule defines a clear condition.
 
 <hr>
 
@@ -280,3 +272,16 @@ If propagation is enabled and Device A1 triggers an alarm:
 - May propagate further to **Tenant**
 
 This ensures centralized visibility across multi-level infrastructures.
+
+<hr>
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

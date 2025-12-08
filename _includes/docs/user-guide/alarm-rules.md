@@ -11,19 +11,24 @@ Unified mechanisms for alarm uniqueness, severity levels, timestamps, and alarm 
 
 ## Create alarm rule
 
-> **Note:** The process is identical for a **Devices**, **Assets**, **Device profiles**, **Asset profiles**, or **Customers**.
+> **Note:** The process of creating an alarm rule is the same for **Devices**, **Assets**, **Device profiles**, **Asset profiles**, or **Customers**.
 
-<b><font size="3">Choose where to create the alarm rule</font></b>
+<b><font size="3">Where should you create an alarm rule?</font></b>
 
-You have two options:
+You can create an alarm rule in two ways:
 
-**Option 1 — From the global Alarms page**
-- Open **Alarms** page from the **side menu**
-- Go to the **Alarm rules** tab
+**1. On the global Alarm Rules page**   
+   This page allows you to centrally manage all alarm rules in the system — both for individual entities and for profiles.
 
-**Option 2 — Inside a specific Device / Asset / Profile / Customer**
-- Select the **entity** or **profile** to which the alarm rule should be added.
-- In the entity details window, navigate to the **Alarm rules** tab.
+**2. Inside a specific entity or profile**   
+   You can also create a rule directly in the settings of a particular:
+   - Device 
+   - Asset 
+   - Device profile 
+   - Asset profile 
+   - Customer
+
+   Alarm rules are configured on the **Alarm rules** tab within the details of the selected entity or profile.
 
 {% capture difference %}
 **Recommendation:** Create alarm rules in **Device profiles** or **Asset profiles** to avoid duplicating configurations across multiple entities.
@@ -34,121 +39,221 @@ You have two options:
 
 ### Step 1. Add new alarm rule
 
-- Click the "**plus**" icon button
-- Select **Create new alarm rule** from the dropdown menu
-- Click the "**plus**" icon button
+**Option 1 — From the global Alarm Rules page**
+- Open the **Alarms** page from the left-hand menu.
+- Go to the **Alarm rules** tab.
+- Click the "**+**" button in the top-right corner.
+- Select **Create new alarm rule** from the dropdown menu.
+
+{% include images-gallery.html imageCollection="step-1-add-alarm-rule-1" %}
+
+**Option 2 — Inside a Device / Asset / Profile / Customer**
+- Click the **entity** or **profile** to open its details.
+- Navigate to the **Alarm rules** tab.
+- Click the "**+**" button in the top-right corner.
+- Select **Create new alarm rule** from the dropdown menu.
+
+{% include images-gallery.html imageCollection="step-1-add-alarm-rule-2" %}
 
 <hr>
 
 ### Step 2. General section
 
+<b><font size="3">2.1 Alarm type</font></b>
+
 In the **General** section, specify the **alarm type** — the name and unique identifier of the alarm (for example, "High temperature").   
 The alarm type defines which event the alarm represents and allows ThingsBoard to determine whether a new alarm should be created or an existing active one should be updated.
 
-If you are creating the rule from the global **Alarms** page, additionally:
-- Select the **target entity type** 
-- Specify the **entity or profile** to which the rule will apply
+<b><font size="3">2.2 Target entity type (<i>only on the global Alarm rules page</i>)</font></b>
+
+If you create an alarm rule from the **global Alarm rules** page, you must additionally:
+- Select the **Target entity type** 
+- Specify the **specific entity or profile** that the rule should apply to
+
+{% include images-gallery.html imageCollection="step-2-general-section-1" %}
+
+{% assign feature = "alarm rule" %}
+{% include templates/debug-mode.md %}
 
 <hr>
 
-### Step 3. Add arguments
+### Step 3. Arguments
 
-Before defining conditions, you must add at least one argument.
+Before defining alarm conditions, you must add at least one **argument** — a data source that the rule will use during evaluation.
 
-Click **Add argument** and configure:
-- **Argument name**. Set a reference name for the variable that will be used in the alarm condition.
-- **Entity type**. Specifies the source from which the argument value is taken:
-    - **Current entity** — is the entity whose details page you are configuring the rule from. If the rule is created at the Asset Profile or Device Profile level, it will run for every entity using that profile.
-    - **Another Device or Asset** — references telemetry or attributes from a different device or asset.
-    - **Customer** — retrieves data from the associated customer entity.
-    - **Current tenant** — uses data from the tenant entity.
-    - **Current owner** — data from the owner of the current entity
-- **Argument type**. Defines what kind of data the argument represents:
-    - **Attribute**. Uses static or semi-static key–value pairs associated with an entity (e.g., model, max temperature).
-        - Choose the **Attribute scope**: **Server** attributes, **Client** attributes, or **Shared** attributes
-        - Specify the **Attribute key**
-        - Optionally, set a **Default value** for the attribute
-    - **Latest telemetry**. Most recent time series value (e.g., temperature, speed, voltage).
-        - Specify the **Time series key**
-        - Optionally, set a **Default value** for time series
-- Click **Add** to save the argument.
+Click **Add argument** and configure the following parameters:
+
+{% include images-gallery.html imageCollection="step-3-arguments-1" %}
+
+<b><font size="3">Entity type</font></b>
+
+Defines where the argument value comes from:
+- **Current entity** — the entity you are configuring (device, asset, customer, or profile).   
+  If the rule is created at the **Device profile** or **Asset profile** level, it will apply to all entities that use this profile.
+- Another **Device or Asset** — references telemetry or attributes from a different device or asset.
+- **Customer** — retrieves data from the associated customer entity.
+- **Current tenant** — uses data from the tenant entity.
+- **Current owner** — data from the owner of the current entity
+
+{% include images-gallery.html imageCollection="step-3-arguments-2" %}
+
+<b><font size="3">Argument type</font></b>
+
+Defines what kind of data the argument will represent:
+- **Attribute**. Uses a key–value attribute stored on the entity. (e.g., model, max temperature).   
+  You must specify:
+  - **Attribute scope**: **Server** attributes, **Client** attributes, or **Shared** attributes
+  - **Attribute key**
+  - Optional: **Default value** (used when attribute value is missing)
+- **Latest telemetry**. Uses the latest time series value from the entity. (e.g., temperature, speed, voltage).
+  You must specify:
+  - **Time series key**
+  - Optional: **Default value**
+
+{% include images-gallery.html imageCollection="step-3-arguments-3" %}
+
+<b><font size="3">Argument name</font></b>
+
+Enter a reference name — the identifier you will use in formulas and conditions (e.g., temperature, maxThreshold, deviceEnabled).
+
+After configuring the fields, click **Add** to save the argument.
+
+{% include images-gallery.html imageCollection="step-3-arguments-4" %}
 
 <hr>
 
-### Step 4. Add alarm creating condition
+### Step 4. Creation conditions
 
-This section defines the alarm trigger logic:   
-the **conditions** under which the alarm should be created, the **severity level** it will receive, and the time periods during which the rule is active according to the **schedule**.
+This step defines the core logic of the alarm rule:
+- **when** the alarm should be created,
+- **which severity** it receives, and
+- **when** the rule is active based on the schedule.
+
+Click **Add creation condition** and configure the following parameters:
+
+{% include images-gallery.html imageCollection="step-4-creation-conditions-1" %}
+
+<hr>
 
 #### Step 4.1 Severity
 
-**Severity** defines the criticality of an alarm at the moment it is created.   
-The severity level helps prioritize incidents, affects how they are visually represented in the UI, and is used in automation workflows (Rule Engine, notifications, etc.).
+**Severity** defines the criticality of the alarm at the moment it is created.   
+It affects incident prioritization, UI representation, and automation workflows (Rule Engine, notification rules, etc.).
 
-Available severity levels: **Critical**, **Major**, **Minor**, **Warning**, **Indeterminate**.
+Available severity levels:   
+**Critical**, **Major**, **Minor**, **Warning**, **Indeterminate**.
 
-<b><font size="3">How severity is applied</font></b>
+<b><font size="3">How severity works</font></b>
 
-The selected Severity level affects:
-- **New alarms** created by this rule
-- **Updates to an active alarm**, if the create condition triggers again and meets new criteria   
-  (for example, if an alarm was previously *Warning* but the condition now qualifies as *Major*, the severity level will be increased)
+The severity level applies to:
+- **New alarms** created by the rule
+- **Updates to an existing active alarm**, when the create condition triggers again with different criteria 
+  For example, if a *Warning* alarm remains active but the new condition qualifies as *Major*, the severity will be increased.
+
+{% include images-gallery.html imageCollection="step-4-creation-conditions-severity-1" %}
 
 <hr>
 
 #### Step 4.2 Condition
 
-The **Condition** defines the logic the system uses to determine whether an alarm should be created or updated. This is the core part of the rule — it specifies exactly when the rule is considered fulfilled.
+The **Condition** defines the logic that determines whether an alarm should be created or updated.   
+This is the primary expression used to evaluate whether the rule is fulfilled.
 
-**Examples of typical conditions:**
-- <span class="code-light">temperature > 50</span>
+Examples use cases:
+- <span class="code-light">temperature > 30</span>
 - <span class="code-light">device is offline</span>
 - complex expressions using multiple arguments, telemetry fields, or attributes   
   (e.g., <span class="code-light">temperature > threshold AND doorState == open</span>)
 
-ThingsBoard supports **three types of conditions**, each suited for different monitoring scenarios.
+<hr>
+
+<b><font size="3">Add create condition</font></b>
+
+Click **Add condition**
+
+Configure the alarm trigger logic by defining one or more filters.
+
+> You can create filters manually or use [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} script functions for more advanced expressions.
+
+Click **Add argument filter** and configure:
+
+**1. General configuration**   
+- **Argument** — the variable you want to compare (e.g., temperature)
+- **Value type** — the data type of the value being evaluated (Numeric, Boolean, String, etc.)
+
+**2. Configure filters**   
+Under **Filters**, click **Add** and specify:
+- **Operation** — the comparison operator, such as: *equal, not equal, missing for, greater than, less than, greater or equal, less or equal, starts with, ends with, contains, not contains, in, not in*ю
+- **Value source** — select one of the following:
+  - **Static** — use a fixed predefined value 
+  - **Dynamic** — use a value retrieved from another argument 
+- **Value** — specify the value to compare against
+
+**Combine multiple conditions**   
+If you add more than one filter, choose a logical operator:
+- **AND** — all conditions must be true
+- **OR** — at least one condition must be true
+
+After adding all required filters, click **Add** to save the condition.
+
+{% include images-gallery.html imageCollection="step-4-creation-condition-add-filter-1" %}
 
 <b><font size="3">Condition types</font></b>
 
-- **Simple.** The alarm triggers immediately when the expression becomes true.
-  This is used when any threshold violation should raise an alarm instantly.   
+ThingsBoard supports **three types** of conditions:
+
+- **Simple.**   
+  Triggers immediately when the expression becomes true.   
+  Used for instant threshold violations.   
   *Example:* <span class="code-light">temperature > 10</span>
-- **Duration.** The condition must remain true continuously for a defined period. 
-  This helps avoid false alarms caused by short-lived telemetry spikes.   
+- **Duration.**   
+  The condition must stay true continuously for a defined time period.   
+  Helps reduce false positives caused by short data spikes.   
   *Example:* <span class="code-light">temperature > 10</span> for 60 seconds 
-- **Repeating.** The alarm is created only after the condition becomes true a specified number of times. 
-  This is used when repeated issues matter more than a single occurrence.   
+- **Repeating.**   
+  Triggers only after the condition occurs a specified number of times.   
+  Useful when repeated errors matter more than a single event.   
   *Example:* <span class="code-light">signalLost == true</span> three times in a row
+
+{% include images-gallery.html imageCollection="step-4-creation-condition-types-1" %}
 
 <hr>
 
 #### Step 4.3 Schedule
 
-The **Schedule** defines the time periods during which the alarm creation rule is active.
+The **Schedule** defines the time periods during which the alarm creation rule is active.   
 The system evaluates create conditions only when the current time falls within an allowed interval.
 
-If the create condition becomes true outside the defined schedule, the alarm **will not** be created — even if the logical expression evaluates to true.
+> If the create condition becomes true **outside the defined schedule**, the alarm **will not be created** — even if the logical expression evaluates to true.
 
-<b><font size="3">Schedule options</font></b>
+{% include images-gallery.html imageCollection="step-4-schedule-1" %}
 
-ThingsBoard supports three main types of rule activation schedules:
+<b><font size="3">Schedule types</font></b>
 
-- **Active all time.** The rule operates continuously, **24/7**.
-- **Active at a specific time range.** The rule is active only during a fixed time window, for example: **Mon–Fri, 09:00–18:00**
-- **Custom schedule.** You can define separate time intervals for each day of the week, allowing full flexibility.
+**Static mode**
 
-<b><font size="3">Dynamic schedule mode</font></b>
+ThingsBoard supports three schedule modes:
+- **Active all time** — always active
+- **Active at a specific time range**
+  *Example:* Mon–Fri, 09:00–18:00 
+- **Custom schedule** - define different intervals for each day of the week
 
-In addition to the standard schedule options, ThingsBoard allows you to define the schedule **dynamically** by providing a JSON object through an attribute or telemetry.
+{% include images-gallery.html imageCollection="step-4-schedule-types-1" %}
+
+**Dynamic mode**
+
+Instead of configuring the schedule manually, you can provide a JSON object through an attribute or telemetry.
 This is useful when the schedule needs to vary from one device to another or from one customer to another.
 
 **How to enable dynamic mode**
-- In the **Schedule** section, select **Dynamic mode**.
-- Specify the argument (attribute or telemetry) that contains the JSON with the desired schedule configuration.
+- In the **Schedule** section, choose **Dynamic mode**.
+- Select the argument (attribute or telemetry) that contains the JSON with the desired schedule configuration.
 
-<b><font size="3">Examples of schedule JSON configurations</font></b>
+{% include images-gallery.html imageCollection="step-4-schedule-dynamic-mode-1" %}
 
-**1. Active all time** schedule
+<b><font size="3">Examples of schedule JSON</font></b>
+
+**1. Active all time**
 
 The JSON object may include:
 
@@ -167,12 +272,12 @@ or
 {:.copy-code}
 
 <br>
-**2. "Specific time"** schedule
+**2. Specific time schedule**
 
 This format allows you to define an exact time range for selected days of the week.
 
 **Example:**   
-Active on **Tuesday** and **Thursday** for the entire day:
+Active all day on **Tuesday** and **Thursday**:
 
 ```json
 {
@@ -194,7 +299,7 @@ Active on **Tuesday** and **Thursday** for the entire day:
 When both **startsOn** and **endsOn** are set to **0**, it means the rule is active for the entire day.
 
 <br>
-**3. "Custom schedule"** format
+**3. Custom schedule**
 
 Defines a separate time interval for each individual day.
 
@@ -238,95 +343,136 @@ When both **startsOn** and **endsOn** are set to **0**, it means the rule is act
 The **Additional info** field allows you to enrich an alarm with extra contextual data that may be useful for incident analysis or troubleshooting.
 This information is stored together with the alarm and displayed in the alarm details view, helping operators, technicians, and analysts work more efficiently.
 
-**What you can include:**
-- **Operator notes** — short explanations or comments
-- **Troubleshooting instructions** — steps for quick diagnosis
-- **Documentation links** — help pages, internal guides, or SOPs
-- **Contextual data** — any additional fields that help clarify the incident, such as:
-  - camera/zone identifier 
-  - critical threshold information 
-  - contact person 
-  - automation scenario name
+**Examples of useful additions:**
+- operator notes
+- troubleshooting steps
+- links to documentation
+- contextual fields such as:
+  - zone ID 
+  - critical threshold description 
+  - responsible person
 
 <hr>
 
 #### Step 4.5 Mobile dashboard
 
-This option defines which **mobile dashboard** will be opened in the ThingsBoard mobile application when a user views a specific alarm.
+This option defines which **mobile dashboard** will open in the ThingsBoard mobile app when a user views the alarm.
 
-By selecting a dedicated dashboard, operators, technicians, and field engineers gain immediate access to the relevant context—without extra navigation or searching for the right data.
+<b><font size="3">How it works</font></b>
 
-**How it works**
+After selecting a mobile dashboard:
+- the mobile app automatically opens it when navigating to the alarm 
+- the user immediately sees relevant widgets and indicators 
+- troubleshooting becomes much faster
 
-Once you choose a dashboard in the **Mobile dashboard** field:
-- the mobile app automatically opens the specified dashboard when navigating to the alarm
-- the user sees relevant widgets, metrics, and indicators
-- this significantly speeds up problem diagnosis and decision-making
+<b><font size="3">Example use cases</font></b>
 
-**Examples of use**
+- Diagnostic dashboard for **High temperature** alarms
+- Technician-focused dashboard with control buttons
+- Geolocation dashboard for mobile assets
 
-- Open a **diagnostic dashboard** for alarms such as High temperature
-- Display a **technician&#39;s dashboard** with equipment control buttons
-- Show a **geolocation dashboard** for alarms related to mobile assets
-
-**When this is especially useful**
-
-- When field engineers need to respond to alarms on-site
-- In scenarios requiring fast diagnostics
-- For monitoring distributed devices (refrigerators, sensors, meters, vehicles)
+<b><font size="3">Especially useful when:</font></b>
+- field engineers respond to alarms on-site
+- quick diagnostics is required
+- monitoring distributed devices (refrigerators, sensors, vehicles)
 
 <hr>
 
-### Step 5. Add alarm clearing condition (optional)
+### Step 5. Clearing condition
 
 The **Clear condition** defines the logic by which ThingsBoard automatically transitions an alarm into the **Cleared** state.
 
-If a clear condition is not configured, the alarm will **never** be cleared automatically, even if all values return to normal.   
-In this case, the alarm can be cleared only manually — through the UI or via the API.
+If no clear condition is configured, the alarm will **never** clear automatically, even if the monitored values return to normal.   
+In such cases, the alarm can only be cleared manually — via the UI or API.
 
-#### Step 5.1 Clear condition
+Click **Add clearing condition** and configure the following parameters:
 
-The clear condition specifies the circumstances under which the alarm is considered resolved and becomes **Cleared**.
+{% include images-gallery.html imageCollection="step-5-clear-conditions-1" %}
+
+<br><b><font size="4">Step 5.1 Clear condition</font></b>
+
+The Clear condition specifies **when an alarm is considered resolved** and can safely transition into the *Cleared* state.
 
 **Examples of clear conditions:**
- 
-- <span class="code-light">temperature ≤ 50</span>
-- values returned to the normal range
-- device connection restored
-- complex expressions combining multiple arguments
+ - <span class="code-light">temperature ≤ 30</span>
+- values return to normal ranges 
+- device connection restored 
+- complex expressions involving multiple arguments
+
+<hr>
+
+<b><font size="3">Add clear condition</font></b>
+
+Click **Add clearing condition** to define the logic for clearing the alarm.
+
+Configure the clear condition by adding one or more filters.   
+Filters can be created manually or using TBEL script functions for more advanced scenarios.
+
+**1. General configuration**   
+Click **Add argument filter** and specify:
+- **Argument** — the variable to evaluate (e.g., temperature)
+- **Value type** — the expected input type (Numeric, Boolean, String, etc.)
+
+**2. Configure filters**   
+In the **Filters** section, click **Add** and set:
+- **Operation** — the comparison operator, for example: *equal, not equal, missing for, greater than, less than, greater or equal, less or equal, starts with, ends with, contains, not contains, in, not in*.
+- **Value source:**
+  - **Static** — use a fixed value 
+  - **Dynamic** — use a value retrieved from another argument
+- **Value** — the value to compare against
+
+**Combine multiple conditions**   
+If you add more than one filter, choose a logical operator:
+- **AND** — all conditions must be true 
+- **OR** — at least one condition must be true
+
+After adding all required filters, click **Add** to save the clear condition.
+
+{% include images-gallery.html imageCollection="step-5-clearing-condition-add-filter-1" %}
 
 **Condition types**
 
 ThingsBoard supports the same condition types as for alarm creation:
-- **Simple** — triggers immediately when the condition becomes true
-- **Duration** — the condition must remain true for a defined period
-- **Repeating** — the condition must be met a certain number of times before clearing
+- **Simple** — clears immediately when the condition becomes true
+- **Duration** — must remain true for a specified period before clearing
+- **Repeating** — the condition must be satisfied a certain number of times before clearing
+
+{% include images-gallery.html imageCollection="step-5-clearing-condition-types-1" %}
+
+After completing all required configurations, click **Save** to store the clear condition.
 
 <hr>
 
-#### Step 5.2 Schedule
+<b><font size="4">Step 5.2 Schedule</font></b>
 
-The clear schedule controls when the clear condition is allowed to trigger.
+The **Clear Schedule** defines *when* a clear condition is allowed to trigger.
 
 **Example use cases:**
-- clearing alarms only during working hours
-- allowing alarm clearance during night shifts
-- blocking clearance during specific time windows
+- callow automatic clearing only during working hours 
+- allow clearing only at night 
+- restrict clearing during specific time intervals
 
-If the clear condition becomes true outside the allowed schedule, the alarm will not be cleared until the current time enters the permitted interval.
+> If the clear condition becomes true outside the allowed schedule, the alarm will not be cleared 
 
-<hr>
-
-#### Step 5.3 Additional info
-
-In this block, you can add data that will appear in the Alarm Details section at the moment the alarm is cleared.   
-This is useful for: maintaining an event log, adding operator notes, automatically saving diagnostic information, providing contextual hints
-
-Supports dynamic substitution of telemetry or attribute values using ${attributeName} syntax.
+{% include images-gallery.html imageCollection="step-5-schedule-1" %}
 
 <hr>
 
-#### Step 5.4 Mobile dashboard
+<b><font size="4">Step 5.3 Additional info</font></b>
+
+This block allows you to attach extra data that will be stored in **Alarm Details** at the moment the alarm is cleared.
+
+Useful for:
+- keeping a structured event log
+- adding operator notes 
+- saving additional diagnostic context 
+- providing hints for follow-up actions
+
+Supports dynamic placeholders using *${attributeName}*.
+
+<hr>
+
+<b><font size="4">Step 5.4 Mobile dashboard</font></b>
 
 Defines which mobile dashboard is opened in the ThingsBoard mobile app when viewing a cleared alarm.
 
@@ -339,24 +485,27 @@ This is useful when:
 
 ### Step 6. Configure the Advanced settings
 
-In this step, you can define how the alarm is **propagated** across different entities in the platform.   
-Propagation determines **who can see the alarm** and **at which hierarchy level** it becomes visible.   
-This is especially important in multi-level organizational structures, asset hierarchies, or tenant–customer environments.
+In this step, you can define **alarm propagation** — how the alarm is distributed across other entities in the system.      
+Propagation determines **who can see the alarm** and at **which level of the entity hierarchy** it becomes visible.
 
-**Available propagation options:
+This is especially important for multi-level asset structures, customer hierarchies, enterprise environments, and MSP deployments.
 
 <hr>
 
+<b><font size="3">Available propagation options</font></b>
+
 <b><font size="3">Propagate alarm to related entities</font></b>
 
-When enabled, the alarm becomes visible to all entities that are related to the originator, regardless of the relation type.
+When enabled, the alarm becomes visible to **all entities related** to the originator, regardless of the relation type.
 
-**Useful when:**
+Useful when:
 - a **Device** is assigned to an **Asset**
 - an **Asset** is linked to a **Customer**
-- you want alarms to be accessible from all interconnected entities
+- you want alarms to be visible across interconnected entities
 
-This ensures that all relevant entities within the relation graph can view and process the alarm.
+This ensures that all entities within the relation graph—such as *Device → Office → Building* — can view and process the alarm.
+
+{% include images-gallery.html imageCollection="step-6-propagate-alarm-1" %}
 
 <hr>
 
@@ -364,10 +513,13 @@ This ensures that all relevant entities within the relation graph can view and p
 
 Makes the alarm visible to the **direct owner** of the originator — either a **Customer** or the **Tenant**.
 
-It allows owners to see alarms from all devices or assets they manage, without manually configuring additional relations.
+This allows owners to see alarms from all their managed devices/assets **without needing to set up additional relations**.
+
+{% include images-gallery.html imageCollection="step-6-propagate-alarm-2" %}
 
 <hr>
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 <b><font size="3">Propagate alarm to entity owners hierarchy</font></b>
 
 Propagates the alarm **up the entire ownership chain**, ensuring visibility at every parent level:   
@@ -380,72 +532,129 @@ Propagates the alarm **up the entire ownership chain**, ensuring visibility at e
 
 All higher-level owners will be able to see the alarm, even if they do not have a direct relation to the originator.
 
+{% include images-gallery.html imageCollection="step-6-propagate-alarm-3" %}
+
 <hr>
+{% endif %} 
 
 <b><font size="3">Propagate alarm to Tenant</font></b>
 
-Makes the alarm visible at the Tenant level, regardless of the ownership structure or entity relation graph.
+Makes the alarm visible **at the Tenant level**, regardless of ownership or relations.
 
 **Use this when:**
 - the Tenant Administrator needs visibility into **all critical events**
 - a **centralized overview** of the entire infrastructure is required
 
+This is the most global visibility option.
+
+{% include images-gallery.html imageCollection="step-6-propagate-alarm-4" %}
+
 <hr>
 
 ### Step 7. Save the rule
 
-- Click **Add** to save the rule configuration.
+Click **Add** to save the rule configuration.
 
-After saving, ThingsBoard will automatically start creating, updating, and processing alarms according to the conditions, schedules, and propagation settings you have configured.
+After saving, ThingsBoard will automatically begin creating, updating, and processing alarms according to the conditions, schedule, and propagation settings you defined.
+
+{% include images-gallery.html imageCollection="step-7-save-rule-1" %}
+
+<hr>
+
+## Managing Alarm Rules in the Alarm rules list
+
+After you create an alarm rule, it appears in the table on the **Alarms → Alarm rules** page.    
+Here, you can quickly view the key parameters of each rule — alarm type, target entity, severity levels, and whether a clear condition is configured — and manage the rule using a set of available actions.
+
+Each rule row includes an action panel that lets you copy, export, debug, edit, or delete the configuration.
+
+Below is an overview of the available buttons.
+
+1. **Copy alarm rule configuration**. Copies the rule configuration, allowing you to quickly create a new rule based on the existing one.
+2. **Export**. Exports the rule as a JSON file for backup or migration to another ThingsBoard instance.
+3. **Events**. Opens the event log associated with the rule, including triggers, clears, state changes, and errors.
+4. **Debug configuration**. Enables debug mode and provides access to detailed execution information for troubleshooting.
+5. **Edit**. Opens the rule editor where you can modify any configuration parameters.
+6. **Delete**. Removes the alarm rule from the system.
+
+{% include images-gallery.html imageCollection="alarm-rules-parameters" %}
+
+<hr>
+
+## Import alarm rule
+
+ThingsBoard allows you to import previously exported alarm rules in JSON format. This simplifies configuration migration between instances, rapid deployment of standard alarm templates, and restoration from backups.
+
+<b><font size="3">How to import an Alarm rule</font></b>
+
+- Navigate to **Alarms → Alarm rules**,   
+or open the details page of the required device, asset, or profile, and navigate to the **Alarm rules** tab.
+
+- Click the "**+**" button in the upper-right corner. 
+- Select **Import alarm rule** from the drop-down menu. 
+- In the import dialog, drag and drop the JSON file or choose it manually. 
+- Click **Import** to upload the configuration.
+
+<b><font size="3">After importing</font></b>
+
+- If the imported rule was created for a different entity, you may need to update the **Target entity type** and select the correct profile or entity.
+- Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment.
+
+<b><font size="3">Complete the import</font></b>
+
+Click **Add** to save the rule.   
+After saving, the rule becomes active immediately and ThingsBoard starts applying it according to its configured logic.
+
+{% include images-gallery.html imageCollection="import-alarm-rule-1" %}
 
 <hr>
 
 ## Examples of alarm rule configurations
 
-To better understand the capabilities and behavior of alarm rules, let’s examine several practical examples. Each example demonstrates a specific scenario, condition type, or ThingsBoard feature that can be used in real projects.
+To better understand how alarm rules work, let&#39;s review several practical examples. Each example demonstrates a specific scenario, condition type, or alarm rule feature that can be used in real-world projects.
 
-In the scenarios below, we will create alarm rules directly on an individual device.
+In the scenarios below, we will create alarm rules **directly on a device**.
 
 {% capture difference %}
-**Recommendation:** If the same rule needs to be applied to multiple devices, create it at the **Device profile** level.   
-This ensures centralized management of alarm logic, simplifies maintenance, and eliminates configuration duplication.
+**Recommendation:** If the same rule should apply to multiple devices, create it at the **Device Profile** level.   
+This ensures centralized alarm logic, reduces duplication, and simplifies ongoing maintenance.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**Preparation:** 
+<b><font size="3">Preparation</font></b>
 
-To follow the examples, you need a device named "**Thermometer**" that sends <span class="code-light">temperature</span> telemetry.
-You can create this device in **Entities** → **Devices** and assign it to any Device Profile.
+For the following examples, you need a device named **Thermometer** that sends **temperature** telemetry.
 
-{% include images-gallery.html imageCollection="example-prepare-device" %}
+You can create this device on the **Devices** page under the **Entities** section and assign it to any Device Profile.
+
+{% include images-gallery.html imageCollection="alarm-rules-example-prepare-device-1" %}
 
 <hr>
 
 ### Example 1. Simple alarm condition: temperature monitoring
 
 **Scenario:**   
-A refrigeration chamber is used to store perishable goods. The temperature inside must be continuously monitored to prevent product loss and maintain proper storage conditions.
+A refrigeration chamber is used to store perishable goods.   
+The temperature inside must be continuously monitored to prevent product loss and maintain proper storage conditions.
 
 **Goal:**   
 Create a **critical alarm** when the temperature exceeds **10°C**.
 
 <hr>
 
-<b><font size="3">Step 1. Open the device&#39;s alarm rule settings</font></b>
+<b><font size="3">Step 1. Create the alarm rule</font></b>
 
-- Go to the **Devices** page under **Entities**.
-- Select the **Thermometer** device.
-- In the **device details**, go to the **Alarm rules** tab.
-- Click the "**+**" button and choose **Create new alarm rule**.
-
-<hr>
+- Open the **Alarms** page from the left-hand menu.
+- Go to the **Alarm rules** tab.
+- Click the "**+**" button in the top-right corner.
+- Select **Create new alarm rule** from the dropdown menu.
 
 <b><font size="3">Step 2. General section</font></b>
 
 In the **General** section, specify:
 - **Alarm type:** *High temperature*
-
-<hr>
+- Select the **Target entity type** - Device 
+- Specify the specific **entity** that the rule should apply to - Thermometer
 
 <b><font size="3">Step 3. Add an argument</font></b>
 
@@ -457,8 +666,6 @@ In the **General** section, specify:
 - Click **Add** when finished.
 
 This creates a <span class="code-light">temperature</span> variable that you will use in the rule&#39;s logical condition.
-
-<hr>
 
 <b><font size="3">Step 4. Configure the create condition</font></b>
 
@@ -475,7 +682,7 @@ In the filter configuration window, click **Add filter** and specify:
 - **Argument:** <span class="code-light">temperature</span>
 - **Value type:** *Numeric*
 - **Operation:** *greater than* 
-- **Value:** <span class="code-light">10</span>
+- **Value:** 10
 - Click **Add**
 
 **Condition settings**
@@ -483,8 +690,6 @@ In the filter configuration window, click **Add filter** and specify:
 - Click **Save**
 
 As a result, the alarm will be created immediately once the temperature exceeds **10°C**.
-
-<hr>
 
 <b><font size="3">Step 5. Save the rule</font></b>
 
@@ -496,7 +701,7 @@ Click **Add** to save the rule.
 
 After saving, ThingsBoard will automatically create a critical alarm whenever the <span class="code-light">temperature</span> value exceeds **10°C**.
 
-{% include images-gallery.html imageCollection="example-simple-alarm-condition-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="alarm-rules-example-simple-1" %}
 
 <hr>
 
@@ -514,16 +719,14 @@ Update the existing **High temperature** rule by adding a clear condition that s
 
 <b><font size="3">Step 1. Open the High temperature rule</font></b>
 
-- In the side menu, go to **Rules** → **Alarm rules**.
+- In the side menu, go to **Alarm** → **Alarm rules**.
 - Find the **High temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<hr>
-
 <b><font size="3">Step 2. Configure the clear condition</font></b>
 
-Scroll down to the **Clear condition** section:
-- Click **Add clear condition**.
+Scroll down to the **Clearing condition** section:
+- Click **Add clearing condition**.
 - Click "**Add alarm creating condition**" to open the configuration window.
 
 <b><font size="3">Step 2.1 Add a filter</font></b>
@@ -532,7 +735,7 @@ In the configuration window, click **Add filter** and specify:
 - **Argument:** <span class="code-light">temperature</span>
 - **Value type:** *Numeric*
 - **Operation:** *less or equal*
-- **Value:** <span class="code-light">4</span>
+- **Value:** 4
 - Click **Add**
 
 This condition defines the moment when the temperature returns to a safe level.
@@ -543,13 +746,9 @@ This condition defines the moment when the temperature returns to a safe level.
 
 After this, the alarm will be cleared as soon as the temperature drops to **4°C or below**.
 
-<hr>
-
 <b><font size="3">Step 3. Save the rule</font></b>
 
 Click **Apply** to save the updated rule.
-
-{% include images-gallery.html imageCollection="alarm-example-clear-alarm-condition-1" showListImageTitles="true" %}
 
 <hr>
 
@@ -560,6 +759,8 @@ After saving, ThingsBoard will:
 - automatically clear the alarm when the temperature is **≤ 4°C**
 
 This configuration forms a complete alarm lifecycle, keeps the system state accurate, and eliminates the need for manual intervention.
+
+{% include images-gallery.html imageCollection="alarm-rule-example-clear-condition-1" %}
 
 <hr>
 
@@ -575,23 +776,19 @@ This mechanism helps avoid false alarms caused by short-term temperature spikes.
 
 <b><font size="3">Step 1. Open the High temperature rule</font></b>
 
-- In the side menu, go to **Rules** → **Alarm rules**.
+- In the side menu, go to **Alarm** → **Alarm rules**.
 - Find the **High temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<hr>
-
 <b><font size="3">Step 2. Configure the create condition</font></b>
 
-Scroll down to the **Create condition** section and edit the existing condition:
+Scroll down to the **Creating condition** section and edit the existing condition:
 - **Condition type:** change *Simple* → **Duration**
-- **Duration value:** <span class="code-light">1</span>
+- **Duration value:** 1
 - **Time unit:** *minutes*
 - Click **Save** to apply the updated alarm condition settings.
 
 The alarm will now be triggered only if the temperature exceeds the threshold **continuously for 60 seconds**.
-
-<hr>
 
 <b><font size="3">Step 3. Save the updated rule</font></b>
 
@@ -606,7 +803,7 @@ After saving, ThingsBoard will:
 - ignore short, random temperature spikes
 - provide a more stable alarm system with fewer false alerts
 
-{% include images-gallery.html imageCollection="alarm-example-clear-with-duration-1" %}
+{% include images-gallery.html imageCollection="alarm-rules-example-condition-duration-1" %}
 
 <hr>
 
@@ -626,12 +823,12 @@ Update the High temperature rule so that:
 <hr>
 
 **Preparation**   
-Add a server attribute to the **Thermometer** device:
-- **Key:** <span class="code-light">highTemperature</span>
+Add a **server attribute** to the **Thermometer** device:
+- **Key:** <span class="code-light">highTemperatureDurationThreshold</span>
 - **Value type** *Integer*
-- **Value:** <span class="code-light">2</span> (for example, 2 minutes)
+- **Value:** 2
 
-{% include images-gallery.html imageCollection="alarm-example-clear-with-dynamic-duration-1" %}
+{% include images-gallery.html imageCollection="alarm-rules-example-condition-with-dynamic-duration-1" %}
 
 This value will be used by the alarm rule as the duration requirement.
 
@@ -639,11 +836,9 @@ This value will be used by the alarm rule as the duration requirement.
 
 <b><font size="3">Step 1. Open the High temperature rule</font></b>
 
-- In the side menu, go to **Rules** → **Alarm rules**.
+- In the side menu, go to **Alarm** → **Alarm rules**.
 - Find the **High temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
-
-<hr>
 
 <b><font size="3">Step 2. Add an argument</font></b>
 
@@ -659,8 +854,6 @@ In the **Arguments** section:
 
 You now have a dynamic variable that can be used in the **Duration** condition.
 
-<hr>
-
 <b><font size="3">Step 3. Configure the create condition</font></b>
 
 Scroll to the **Create condition** section and edit the existing condition:
@@ -672,13 +865,9 @@ Scroll to the **Create condition** section and edit the existing condition:
 
 From now on, the duration required to trigger the alarm is determined by the device attribute rather than a fixed number.
 
-<hr>
-
 <b><font size="3">Step 4. Save the rule</font></b>
 
 Click **Apply** to save the updated configuration.
-
-{% include images-gallery.html imageCollection="alarm-example-clear-with-dynamic-duration-2" %}
 
 <hr>
 
@@ -690,6 +879,8 @@ After saving, ThingsBoard will:
   - remains above it for the period defined in the <span class="code-light">highTemperatureDurationThreshold</span> attribute (e.g., 2 minutes)
 
 This ensures the alarm responds only to **sustained deviations**, not to short-term sensor spikes.
+
+{% include images-gallery.html imageCollection="alarm-rules-example-condition-with-dynamic-duration-2" %}
 
 <hr>
 
@@ -705,31 +896,22 @@ This helps filter out random sensor spikes and react only to repeated or consist
 
 <b><font size="3">Step 1. Open the High temperature rule</font></b>
 
-- In the side menu, go to **Rules** → **Alarm rules**.
+- In the side menu, go to **Alarm** → **Alarm rules**.
 - Find the **High temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<hr>
-
 <b><font size="3">Step 2. Edit the Create condition</font></b>
 
-Configure a fixed repeat count.
-
-Scroll to the **Create condition** section and update the existing condition.   
-Modify the parameters as follows:
-- **Condition type:** *Repeating*
-- **Repeats count:** <span class="code-light">3</span>
-- Click **Save** to apply the changes.
+Update the existing alarm creation condition by changing the following parameters:
+- **Condition type:** set to *Repeating*
+- **Repeats count:** 3   
+Click **Save** to apply the changes.
 
 With this configuration, ThingsBoard will check whether the threshold condition occurs **three times in a row** before creating the alarm.
-
-<hr>
 
 <b><font size="3">Step 3. Save the rule</font></b>
 
 Click **Apply** to save the updated configuration.
-
-{% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" %}
 
 <hr>
 
@@ -738,6 +920,8 @@ Click **Apply** to save the updated configuration.
 After saving, ThingsBoard behaves as follows:
 - create the **High temperature** alarm only when the condition is met **3 times in a row**
 - Single or random temperature spikes will not trigger an alarm
+
+{% include images-gallery.html imageCollection="alarm-rules-example-condition-repeating-1" %}
 
 <hr>
 
@@ -753,11 +937,9 @@ This is useful when monitoring is required only at certain times—for example, 
 
 <b><font size="3">Step 1. Open the High temperature rule</font></b>
 
-- In the side menu, go to **Rules** → **Alarm rules**.
+- In the side menu, go to **Alarm** → **Alarm rules**.
 - Find the **High temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
-
-<hr>
 
 <b><font size="3">Step 2. Configure the alarm rule schedule</font></b>
 
@@ -774,13 +956,9 @@ Scroll to the **Create condition** section and open the **Schedule** settings.
 With this setup, the rule is active **only on weekdays from 10:00 to 19:00**.
 Outside this interval, the system will **not** create a High temperature alarm, even if <span class="code-light">temperature > 10°C</span> is true.
 
-<hr>
-
 <b><font size="3">Step 3. Save the rule</font></b>
 
 Click **Apply** to save the updated configuration.
-
-{% include images-gallery.html imageCollection="alarmСonditionsSchedule" showListImageTitles="true" %}
 
 <hr>
 
@@ -790,11 +968,15 @@ After saving, ThingsBoard will:
 - activate the **High temperature** rule only on weekdays **from 10:00 to 19:00**
 - ignore temperature threshold violations that occur outside this time window
 
+{% include images-gallery.html imageCollection="alarm-rules-example-schedule-1" showListImageTitles="true" %}
+
 <hr>
 
 ### Example 7. Advanced thresholds
 
-**Goal**   
+*Continuation of the example "[Simple alarm condition: temperature monitoring](#example-1-simple-alarm-condition-temperature-monitoring)".*
+
+**Goal:**   
 Update the **High temperature** rule by adding the ability to enable or disable the alarm using a server attribute at the device level.
 
 In this example, the alarm should trigger **only when both conditions are true**:
@@ -805,26 +987,25 @@ This allows you to flexibly control whether the alarm should be active for a spe
 
 <hr>
 
-Preparation
-
-Add a server attribute to the **Thermometer** device:
-- **Key:** temperatureAlarmFlag 
+**Preparation**   
+Add a **server attribute** to the **Thermometer** device:
+- **Key:** <span class="code-light">temperatureAlarmFlag</span>
 - **Type:** Boolean 
-- **Value:** true
+- **Value:** `true`
 
 This attribute determines whether the alarm rule is active for the device.
 
+{% include images-gallery.html imageCollection="alarm-rules-example-advanced-thresholds-1" %}
+
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature rule</font></b>
+<b><font size="3">Step 1. Open the High temperature alarm rule</font></b>
 
-- In the side menu, go to **Rules** → **Alarm rules**.
+- In the side menu, go to **Alarm** → **Alarm rules**.
 - Find the **High temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<hr>
-
-<b><font size="3">Step 2. Add an argument</font></b>
+- <b><font size="3">Step 2. Add an argument</font></b>
 
 In the **Arguments** section:
 - Click **Add argument**
@@ -837,8 +1018,6 @@ In the **Arguments** section:
 - Click **Add**
 
 You now have a boolean variable that can be used in the alarm conditions.
-
-<hr>
 
 <b><font size="3">Step 3. Configure the create condition</font></b>
 
@@ -853,11 +1032,9 @@ Scroll to the Create condition section and edit the existing condition.
 
 This filter determines whether the alarm is allowed to trigger for the specific device.
 
-<b><font size="3">Step 3. Save the rule</font></b>
+<b><font size="3">Step 4. Save the rule</font></b>
 
 Click **Apply** to save the updated configuration.
-
-{% include images-gallery.html imageCollection="alarmСonditionsAdvanced1" %}
 
 <hr>
 
@@ -869,7 +1046,7 @@ After saving, ThingsBoard will:
   - the <span class="code-light">temperature</span> exceeds **10°C**
 - ignore the rule entirely for this device if temperatureAlarmFlag == false, even when the threshold is exceeded
 
-{% include images-gallery.html imageCollection="alarmСonditionsAdvanced2" %}
+{% include images-gallery.html imageCollection="alarm-rules-example-advanced-thresholds-2" %}
 
 <hr>
 
@@ -882,3 +1059,13 @@ After saving, ThingsBoard will:
 
 <hr>
 
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

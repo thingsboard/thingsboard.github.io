@@ -94,6 +94,11 @@ snmp-transport-type:
         image: /images/user-guide/device-profile/snmp-transport-type-1-ce.png
         title: 'SNMP is a widely used protocol for managing network devices such as routers, switches, and servers. It enables the collection and analysis of device status and performance data.'
 
+device-profile-details-page:
+    0:
+        image: /images/user-guide/device-profile/device-profile-details-page-1-ce.png
+        title: 'Clicking a device profile opens a <b>details window</b> where you can access and manage all aspects of that profile.'
+
 ---
 
 {% include get-hosts-name.html %}

@@ -1,4 +1,3 @@
-
 * TOC
 {:toc}
 
@@ -14,7 +13,7 @@ Typical device profile settings include:
 - Defining **firmware** and **software** versions to be distributed automatically to devices.
 - Configuring [transport protocols](#transport-configuration) used for device communication.
 - Defining and managing [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"}.
-- Setting the [provision strategy](#device-provisioning).
+- Setting the [provision strategy](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"}.
 
 ## Create device profile
 
@@ -222,7 +221,67 @@ Learn more about configuring the SNMP transport at [this link](/docs/{{docsPrefi
 
 {% include images-gallery.html imageCollection="snmp-transport-type" %}
 
-## Device provisioning
+## Device profile details
 
-Device provisioning allows a device to automatically register in ThingsBoard either during or after manufacturing. 
+Clicking a device profile opens a details window where you can access and manage all aspects of that profile.
+
+{% include images-gallery.html imageCollection="device-profile-details-page" %}
+
+<b><font size="3">Details</font></b>   
+This tab contains the core configuration of the device profile — general settings that define how devices of this type behave. Here you can configure the profile name, default dashboard, default rule chain, firmware/OS information, and other high-level parameters. These settings apply to all devices assigned to this profile.
+
+<b><font size="3">Transport Configuration</font></b>   
+Defines how devices communicate with the platform. This tab includes transport-specific settings for MQTT, HTTP, CoAP, LwM2M, or SNMP, depending on the selected transport type.
+
+Here you can configure:
+- authentication strategy
+- payload formats (JSON, Protobuf, custom)
+- topic/endpoint settings
+- request/response parameters
+- device-side and server-side transport behavior
+
+Transport configuration ensures consistent connectivity rules for all devices under this profile.
+
+<b><font size="3">Calculated fields</font></b>   
+Displays fields whose values are automatically computed using formulas based on device attributes or telemetry. These fields allow generating derived metrics without modifying device firmware. Calculated fields defined at the profile level apply to all devices using this profile. Learn more about Calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
+
+<b><font size="3">Alarm rules</font></b>   
+Contains alarm rules associated with the device profile. These rules define when and how alarms should be generated across all devices in this profile, including:
+- trigger conditions 
+- severity levels 
+- alarm propagation and clearing logic 
+- optional actions (notifications, integrations, workflows)
+
+Centralized alarm rules simplify management and ensure consistent monitoring across device groups. 
+
+Learn more about configuring alarm rules [here](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"}.
+
+<b><font size="3">Device provisioning</font></b>    
+Defines how devices assigned to this profile are created and authenticated. This section may include:
+- provisioning strategies (HTTP, MQTT, CoAP)
+- secret keys and token generation rules
+- provisioning templates
+- auto-registration behavior
+
+These settings streamline automated onboarding of new devices.
+
 See separate documentation [page](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"} for more details.
+
+<b><font size="3">Audit Log</font></b>   
+Displays records of all user actions performed on this device profile — changes to configuration, rules, provisioning settings, and more. Useful for troubleshooting, compliance, and tracking modifications over time.
+
+<b><font size="3">Version control</font></b>   
+Enables exporting, committing, and restoring the device profile configuration via the Git-based [version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} service. Supports backup, collaboration, and rollback to previous profile versions.
+
+<hr>
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

@@ -101,6 +101,11 @@ delete-customer-user-1:
         image: /images/user-guide/ui/customers/pe/delete-customer-user-2-pe.png
         title: 'Click a trash icon can opposite the name of the customer user you want to delete. Confirm deleting the customer user in the dialog box.'
 
+customer-details-page:
+    0:
+        image: /images/user-guide/ui/customers/pe/customer-details-page-1-pe.png
+        title: 'Clicking on a customer opens a details window where you can view and manage all aspects related to that customer.'
+
 ---
 
 {% assign docsPrefix = "paas/eu/" %}
