@@ -267,6 +267,9 @@
 "/docs/devices-library/rock960/":
   url: "/docs/devices-library/rock960/"
   redirect_from: []
+"/docs/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
 "/docs/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -1297,6 +1300,9 @@
 "/docs/paas/devices-library/rock960/":
   url: "/docs/paas/devices-library/rock960/"
   redirect_from: []
+"/docs/paas/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
 "/docs/paas/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -1663,6 +1669,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/rock960/":
   url: "/docs/paas/eu/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/"
   redirect_from: []
 "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/"
@@ -3110,6 +3119,9 @@
   redirect_from: []
 "/docs/pe/devices-library/rock960/":
   url: "/docs/pe/devices-library/rock960/"
+  redirect_from: []
+"/docs/pe/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/"
   redirect_from: []
 "/docs/pe/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/pe/devices-library/socketsync-bluetooth-gateway/"
