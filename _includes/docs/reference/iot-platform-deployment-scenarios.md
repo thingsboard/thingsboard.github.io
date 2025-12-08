@@ -2,17 +2,17 @@
 * TOC
 {:toc}
 
-This article describes the most common deployment architectures supported by ThingsBoard. 
-All deployment scenarios contain certain pros and cons. 
+This article describes the most common deployment architectures supported by ThingsBoard.
+All deployment scenarios contain certain pros and cons.
 Choosing the right architecture for your deployment depends on the infrastructure cost, performance and high-availability requirements.
 We will start from the most simple scenarios and see how the minimalistic deployment can be upgraded to the most complex ones.
 
-In the following sections, you can find total infrastructure cost calculations for ThingsBoard deployed using AWS.  
+In the following sections, you can find total infrastructure cost calculations for ThingsBoard deployed using AWS.
 <b>Important notice:</b> All pricing below is approximate and provided as an example, based only on core infrastructure components costs (EKS, EC2, EBS, ALB). A production-grade environment typically requires other essential operational services - such as backup tools, monitoring and secrets management - all of which will further increase the total cost. Please consult your cloud provider to get accurate pricing per your use case.
 
 ## Key infrastructure characteristics
 
-The best way to set up your ThingsBoard system depends on several factors, including your business needs, compliance rules, and expected growth. Our goal is to make sure the technical details are clear, making your architecture decision easier. 
+The best way to set up your ThingsBoard system depends on several factors, including your business needs, compliance rules, and expected growth. Our goal is to make sure the technical details are clear, making your architecture decision easier.
 
 ### Deployment Options and Scaling
 Your choice of deployment affects how easily you can install, manage, and grow your system.
@@ -26,7 +26,7 @@ Your choice of deployment affects how easily you can install, manage, and grow y
     </thead>
     <tbody>
         <tr>
-            <td><strong>Standalone server (Scenario A)</strong></td>
+            <td><strong>Standalone Monolith (Scenario A)</strong></td>
             <td>Proof-of-concept, development, or small-scale use-cases.</td>
             <td>Easiest to install.</td>
         </tr>
@@ -59,7 +59,7 @@ It's important to plan for how much data you will save (persisted data points). 
 
 ## Deployment Scenarios
 
-###  Monolith Deployment (Scenario A)
+###  Standalone Monolith deployment (Scenario A)
 
 This deployment scenario is designed for straightforward, cost-efficient deployments supporting applications with low to moderate workloads and limited horizontal scaling needs. It adopts a monolithic server approach, consolidating core services onto a single compute instance to reduce infrastructure complexity and operational effort.
 
@@ -178,7 +178,7 @@ Scenario A provides the simplest and most cost-efficient deployment path but is 
 
 This scenario is ideal for early-stage deployments but may require re-architecture as system demands increase.
 
-### Single-AZ microservices deployment (Scenario B)
+### Single-AZ Microservices deployment (Scenario B)
 
 This reference architecture targets horizontally scalable deployments for applications anticipating future growth beyond current operational loads. The architecture leverages AWS managed services - including Amazon Elastic Kubernetes Service (EKS), Elastic Load Balancing (ELB), and Amazon Relational Database Service (RDS) - to minimize operational overhead associated with infrastructure provisioning, patch management, and backup orchestration.
 
@@ -272,6 +272,7 @@ When anticipating elevated telemetry write/read request volumes, the architectur
 Three additional EKS worker nodes are provisioned to host the distributed Cassandra cluster:
 
 - Instance type: `m7g.large` (2 vCPUs, 8 GiB memory, ARM64 architecture)
+  - for maximum performance on read-intensive loads, its recommended to use Intel- or AMD-based instance types (`m7i` or `m7a`)
 - Node count: 3
 - Deployment pattern: 1 Cassandra instance per node (ensuring fault tolerance and data replication)
 
@@ -297,90 +298,149 @@ All application workloads (`tb-pe-node`, `tb-pe-js-executor`, `tb-pe-web-ui`, `k
 - Single point of failure (single availability zone)
 - The Cassandra database needs to be maintained and backed up
 
-### Cluster deployment with the Microservices architecture (Scenario C)
+### Multi-AZ Microservices deployment (Scenario C)
 
-ThingsBoard supports Microservices architecture (MSA) to perform scalable deployments for millions of devices. See [platform architecture](/docs/{{docsPrefix}}reference/msa/) for more details, please. With MSA deployments, system administrator can flexibly tune number of transport, rule-engine, web-ui and JavaScript executor microservices to optimize the cluster according to the current load.
+This deployment option is designed for production instances requiring High-Availability and fault tolerance. Additionally, as a result of scaled amount of ThingsBoard and Third-Party services, it can handle higher operational loads and data ingestion rates with increased server capacity and inner microservices load balancing.
 
-ThingsBoard uses [Kafka](https://kafka.apache.org/) as a main message queue and streaming solution, [Redis](https://redis.io/) as a distributed cache and [Cassandra](https://cassandra.apache.org/) as a highly available, scalable and fast NoSQL database. 
-Note that Cassandra usage is optional and is recommended in case of high telemetry data rate (more then 20,000 data points per second)
-In other cases PostgreSQL based deployment is sufficient.
+This scenario is a direct upgrade to "Single-AZ Microservices" option, featuring multiple replicas spanned across different Availability Zones in horizontal scaling manner. Like it's preciding scenario - the architecture leverages AWS managed services that provide similar perks of minimalized operational overhead of infrastructure provisioning, patch management, and backup orchestration. Similarly to "Single-AZ Microservices" option, there are two distinct configurations optimized for varying data ingestion requirements.
 
-**Pros**:
+#### Configuration 1: Low Telemetry Ingestion Profile
 
-* Simple Kubernetes deployment.
-* No SPOF.
-* Highly available and system.
-* No downtimes during minor version upgrades.
+For workloads with moderate data ingestion rates, the architecture utilizes a PostgreSQL-backed persistence layer provisioned through Amazon RDS. This configuration consolidates both entity metadata and time-series telemetry data within a single relational datastore. Public access to the Thingsboard application inside the cluster provided by ELB.
 
-**Cons**:
+##### Compute Resources:
 
-* High TCO on small number of devices (<100 000 devices per ThingsBoard cluster).  
+- EKS cluster provisioned within 3 Availability Zones
+  - each of 3 worker nodes are deployed within corresponding Availability Zone
+- Instance type: `m7g.xlarge` (4 vCPUs, 16 GiB memory, ARM64 architecture)
 
-**Performance**:
+**Application Workloads:**
 
-Overall performance of the solution depends on the cluster hardware and heavily rely on the performance of the database used.
-A cluster of virtual machines with 5 ThingsBoard servers and 5 Cassandra nodes can handle 1 million of devices;
-See [key infrastructure characteristics](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#key-infrastructure-characteristics) for more details.
-  
-**Total cost of ownership examples for Cluster deployment scenario**:
+The following containerized services are deployed accross all compute nodes. Each service should utilize anti-affinity rules to ensure proper spreading accross Availability Zones:
+<table>
+    <thead>
+    <tr>
+        <th>Service</th>
+        <th>Replica count</th>
+        <th>Descripton</th>
+    </tr>
+    </thead>
+{% if docsPrefix == null %}
+    <tr>
+        <td>tb-node</td>
+        <td>3</td>
+        <td>Core ThingsBoard application server</td>
+    </tr>
+    <tr>
+        <td>tb-js-executor</td>
+        <td>9</td>
+        <td>Distributed JavaScript execution runtime</td>
+    </tr>
+    <tr>
+        <td>tb-web-ui</td>
+        <td>3</td>
+        <td>Static asset delivery service</td>
+    </tr>
+    <tr>
+        <td>Kafka</td>
+        <td>3</td>
+        <td>Message broker and event streaming platform</td>
+    </tr>
+    <tr>
+        <td>Redis</td>
+        <td>6</td>
+        <td>Low-latency in-memory database used as a distributed cache</td>
+    </tr>
+    <tr>
+        <td>Redis</td>
+        <td>6</td>
+        <td>Low-latency in-memory database used as a distributed cache</td>
+    </tr>
+    <tr>
+        <td>Zookeeper</td>
+        <td>3</td>
+        <td>Synchronization application for distributed coordination of ThingsBoard microservices</td>
+    </tr>
+</table>
+{% endif %}
+{% if docsPrefix == "pe/" %}
+    <tr>
+        <td>tb-pe-node</td>
+        <td>3</td>
+        <td>Core ThingsBoard PE application server</td>
+    </tr>
+    <tr>
+        <td>tb-pe-js-executor</td>
+        <td>9</td>
+        <td>Distributed JavaScript execution runtime</td>
+    </tr>
+    <tr>
+        <td>tb-pe-web-ui</td>
+        <td>3</td>
+        <td>Static asset delivery service</td>
+    </tr>
+    <tr>
+        <td>Kafka</td>
+        <td>3</td>
+        <td>Message broker and event streaming platform</td>
+    </tr>
+    <tr>
+        <td>Redis</td>
+        <td>6</td>
+        <td>Low-latency in-memory database used as a distributed cache</td>
+    </tr>
+    <tr>
+        <td>Zookeeper</td>
+        <td>3</td>
+        <td>Synchronization application for distributed coordination of ThingsBoard microservices</td>
+    </tr>
+</table>
+{% endif %}
 
-#### 1 Million Smart Meters TCO
+##### Database Specification:
 
-**Example 1:** Assuming **1,000,000** LoRaWAN/NB-IoT **smart meter** devices sending messages to the cloud **once per hour**. 
-Each message contains 3 data points that may need to be graphed/analyzed/fetched separately.
-We consider the messages are being sent to ThingsBoard via HTTP or UDP Integration, which is typical for such case.
+- Instance type: `db.t4g.medium` (2 vCPUs, 4 GiB memory, ARM64 architecture)
+- Performance class: Burstable
+- "Multi-AZ" replica enabled (for a total of 2 database servers)
 
-1,000,000 devices represent 280 messages per second load (1,000,000 devices/3600 sec), which causes 280 x 3 = 840 write requests to the database (data points) every second, or 72.6M requests per day.
-Based on the chosen database type, above case results into approximately 1.2GB (Cassandra) or 4GB (PostgreSQL) of consumed disk space daily.
+A burstable instance is used because high CPU utilization is not expected for a SQL database. However, enabling **unlimited mode** is strongly recommended to prevent performance throttling during CPU credit depletion scenarios for burstable RDS instances. This configuration ensures consistent query performance during transient load spikes without exhausting the burst credit balance.
 
-The following Kubernetes cluster is sufficient to support this use case:
+#### Configuration 2: High-Throughput Telemetry Ingestion Profile
 
-- 2 x "r5.xlarge" instances (4vCPUs and 32 GB of RAM) to host 2 ThingsBoard Node containers. Approx. price is ~380 USD/month.
-- 3 x "c5.large" instances (2vCPUs and 4 GB of RAM) to host 3 Zookeeper and ~9 JS Executors. Approx. price is ~120 USD/month.
-- Amazon ElastiCache for Redis based on 2 x "cache.m5.large". Approx. price is ~200 USD/month. 
-- Amazon Managed Streaming for Kafka based on 3 x "kafka.m5.large" and 1TB data storage. Estimate: 620 USD/month.
-- Amazon RDS for PostgreSQL based on "db.m5.large" Multi-AZ deployment. Estimate: 220 USD/month.
-- 1TB Multi-AZ deployment storage. The price is 230 USD/month. 
+Similarly to "Single-AZ Microservices" scenario, the second configuration option transitions to a **hybrid database topology**. This enables independent scaling of read-heavy and write-heavy workloads.
 
-<object width="100%" data="/images/reference/deployment/smart-meter-cluster.svg"></object>
+##### Architectural Modifications:
 
-Hence, approximate infrastructure cost is ~1,770 USD/month or 0.00177 USD/month per device.
+- Entity data: PostgreSQL (RDS) - unchanged from Configuration 1
+- Telemetry data: Apache Cassandra cluster - newly provisioned
 
-Two ThingsBoard PE perpetual licenses cost 5,998 USD (including optional updates and basic support within initial year of usage). 2,398 USD is the respective pricing for the subsequent years of software updates + basic support.
-With more than 10k devices use cases we provide **Managed services** to support the production environment (not the basic Support subscriptions). The rate is 0.01 USD per device per month. 
- 
-TCO: ~12,270 USD per month or 0.01227 USD per month per device.
+##### Additional Compute Resources:
 
-**If you would like to reproduce this case on your cluster setup, please follow this guide:**
-[Smart Meters use case performance test](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-meters)
+Three additional EKS worker nodes are provisioned to host the distributed Cassandra cluster:
 
-#### 1 Million Smart Trackers TCO
+- Instance type: `m7g.large` (2 vCPUs, 8 GiB memory, ARM64 architecture)
+  - for maximum performance on read-intensive loads, its recommended to use Intel- or AMD-based instance types (`m7i` or `m7a`)
+- Node count: 3
+- Deployment pattern: 1 Cassandra instance per node (ensuring fault tolerance and data replication)
 
-**Example 2:** Assuming 1,000,000 **smart tracker** devices sending readings to the cloud **once per minute**.
-Each message contains 5 data points that may need to be graphed/analyzed/fetched separately. 
+**Retained Infrastructure:**
 
-Typical message rate is 1,000,000 / 60 sec. = 16,667 messages per second.
-This causes 16667 x 5 = 83,335 write requests to the database (data points) every second, or 7.2B requests per day.
-This load can be reliably handled with Cassandra and results to 144GB daily. Since the data need to be replicated 3 times within Cassandra it results to 432GB of disk space daily.
+{% if docsPrefix == null %}
+All application workloads (`tb-node`, `tb-js-executor`, `tb-web-ui`, `kafka`, `redis`, `zookeeper`) and the original `m7g.xlarge` compute nodes remain unchanged from Configuration 1.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+All application workloads (`tb-pe-node`, `tb-pe-js-executor`, `tb-pe-web-ui`, `kafka`, `redis`, `zookeeper`) and the original `m7g.xlarge` compute nodes remain unchanged from Configuration 1.
+{% endif %}
 
-The following Kubernetes cluster is sufficient to support this use case:
+**Pros:**
 
-- 8 x "c5.large" instances (2vCPUs and 4 GB of RAM) to host 8 ThingsBoard MQTT Transport containers. Approx. price is ~320 USD/month.
-- 15 x "c5.xlarge" instances (4vCPUs and 8 GB of RAM) to host 15 ThingsBoard Node containers. Approx. price is ~1095 USD/month.
-- 15 x "c5.xlarge" instances (4vCPUs and 8 GB of RAM) to host 15 Cassandra containers. Approx. price is ~1095 USD/month.
-- 3 x "c5.xlarge" instances (2vCPUs and 4 GB of RAM) to host 3 Zookeeper and ~30 JS Executors. Approx. price is ~240 USD/month.
-- Amazon ElastiCache for Redis based on 2 x "cache.m5.large". Approx. price is ~200 USD/month. 
-- Amazon Managed Streaming for Kafka based on 3 x "kafka.m5.large" and 1TB data storage. Estimate: 620 USD/month.
-- Amazon RDS for PostgreSQL based on "db.m5.large" Multi-AZ deployment. Estimate: 220 USD/month. 
-- 100TB of deployment storage. The price: 10,000 USD/month. 
+- Easy to backup and maintain PostgreSQL database
+- Self-healing cluster
+- Multi-replica deployment that satisfy strict availability requirements
+- Scaled services naturally provide maximum performance
 
-<object width="100%" data="/images/reference/deployment/smart-tracker-cluster.svg"></object>
+**Cons:**
 
-Thus approximate infrastructure cost is ~13,790 USD/month or 0.0138 USD/month per device.
-15 ThingsBoard PE perpetual licenses (below v3.0) cost 44,985 USD (including optional updates and basic support within initial year of usage). 17,985 USD is the respective pricing for the subsequent years of software updates + basic support.
-ThingsBoard **Managed services** to support the production environment: 0.01 USD per device per month. 
-
-TCO: ~27,508 USD per month or 0.0275 USD per month per device.
-
-**If you would like to reproduce this case on your cluster setup, please follow this guide:**
-[Smart Trackers use case performance test](https://github.com/ashvayka/tb-pe-k8s-perf-tests/tree/scenario/1-million-smart-trackers)
+- Extra costs for managing multiplied Kubernetes and Database services
+  - additional costs for associated EKS networking and storage services
+- The Cassandra database needs to be maintained and backed up
