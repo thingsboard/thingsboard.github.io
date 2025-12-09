@@ -23,13 +23,25 @@
                          onclick="window.open('{{ page.url }}', '_blank')"
                          style="cursor:pointer;">
                         <div class="releases-table-content">
+
+                            {%- assign month_map =  "January:Jan,February:Feb,March:Mar,April:Apr,May:May,June:Jun,July:Jul,August:Aug,September:Sep,October:Oct,November:Nov,December:Dec" | split: "," -%}
+
+                            {%- assign release_month_full = page.release-date | date: "%B" -%}
+
+                            {%- for pair in month_map -%}
+                                {%- assign parts = pair | split: ":" -%}
+                                {%- if parts[0] == release_month_full -%}
+                                    {%- assign release_month_short = parts[1] -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
                             <div class="releases-table-content-item">
                                 {{ version | replace: "-", "." | replace: ".x", "" }}{% if docsPrefix == "pe/" %}PE{% endif %}
                             </div>
 
                             <div class="releases-table-content-item">
                                 <time datetime="{{ page.release-date | date: '%Y-%m-%d' }}">
-                                    {{ page.release-date | date: "%-d %B %Y" }}
+                                    {{ page.release-date | date: "%-d" }} {{ release_month_short }} {{ page.release-date | date: "%Y" }}
                                 </time>
                             </div>
 
@@ -61,11 +73,20 @@
 
                             {% assign now_ts = "now" | date: "%s" | plus: 0 %}
 
+                            {%- assign target_month_full = target_ts | date: "%B" -%}
+
+                            {%- for pair in month_map -%}
+                                {%- assign parts = pair | split: ":" -%}
+                                {%- if parts[0] == target_month_full -%}
+                                    {%- assign target_month_short = parts[1] -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
                             <div class="releases-table-content-item{% if target_ts < now_ts %} old-date{% endif %}">
                                 {% if page.lts %}
-                                    {{ target_ts | date: "%B %Y" }}
+                                    {{ target_month_short }} {{ target_ts | date: "%Y" }}
                                 {% else %}
-                                    {{ target_ts | date: "%B %-d, %Y" }}
+                                    {{ target_ts | date: "%-d" }} {{ target_month_short }} {{ target_ts | date: "%Y" }}
                                 {% endif %}
                             </div>
 
@@ -87,7 +108,7 @@
         </div>
     </div>
 </div>
-<ul class="legend">
+<ul class="legend{% if docsPrefix == "pe/" %} pe{% endif %}">
     <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
     <li>Standard - releases supported for 6 months from initial release date</li>
 </ul>

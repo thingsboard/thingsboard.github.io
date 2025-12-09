@@ -50,8 +50,20 @@
                             {% if item[1].release-date-pe %}
                                 {% assign releaseDate = item[1].release-date-pe %}
                             {% endif %}
+
+                            {%- assign month_map =  "January:Jan,February:Feb,March:Mar,April:Apr,May:May,June:Jun,July:Jul,August:Aug,September:Sep,October:Oct,November:Nov,December:Dec" | split: "," -%}
+
+                            {%- assign release_month_full = releaseDate | date: "%B" -%}
+
+                            {%- for pair in month_map -%}
+                                {%- assign parts = pair | split: ":" -%}
+                                {%- if parts[0] == release_month_full -%}
+                                    {%- assign release_month_short = parts[1] -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
                             <time datetime="{{ releaseDate | date: '%Y-%m-%d' }}">
-                                {{ releaseDate | date: "%B %-d, %Y" }}
+                                {{ releaseDate | date: "%-d" }} {{ release_month_short }} {{ releaseDate | date: "%Y" }}
                             </time>
                         </div>
                         <div class="releases-table-content-item">v{{ item[1].upgradable-from }}{% if docsPrefix == "pe/" %}PE{% endif %}</div>
