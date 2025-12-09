@@ -60,18 +60,6 @@
     }
   },
   {
-    "type": ["North America"],
-    "country": ["United States of America"],
-    "name": "Apollo-Setpoint Engineering",
-    "contact": {
-      "href": "arielmendoza@apollosetpoint.com"
-    },
-    "site": {
-      "href": "apollosetpoint.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Africa"],
     "country": ["South Africa"],
     "name": "AppBuilder (Pty.) Ltd.",
@@ -80,18 +68,6 @@
     },
     "site": {
       "href": "appbuilder.africa",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Taiwan"],
-    "name": "ArtistanTech Computer Engineering Co.Ltd.",
-    "contact": {
-      "href": "vincent_lin@artt.com.tw"
-    },
-    "site": {
-      "href": "artt.com.tw",
       "target": "_blank"
     }
   },
@@ -157,30 +133,6 @@
   },
   {
     "type": ["Asia"],
-    "country": ["Thailand"],
-    "name": "Bizforte Co., Ltd.",
-    "contact": {
-      "href": "info@bizforte.co.th"
-    },
-    "site": {
-      "href": "bizforte.co.th",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Europe"],
-    "country": ["Spain"],
-    "name": "BCNSoluciona (Querly S.L.)",
-    "contact": {
-      "href": "info@bcnsoluciona.com"
-    },
-    "site": {
-      "href": "bcnsoluciona.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
     "country": ["India"],
     "name": "Bhavamish Solution",
     "contact": {
@@ -188,18 +140,6 @@
     },
     "site": {
       "href": "bhavamish.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Bluetronics",
-    "contact": {
-      "href": "Info@bluetronics.co.in"
-    },
-    "site": {
-      "href": "bluetronics.co.in ",
       "target": "_blank"
     }
   },
@@ -276,18 +216,6 @@
     }
   },
   {
-    "type": ["Europe"],
-    "country": ["Norway"],
-    "name": "Cypod Solutions AS",
-    "contact": {
-      "href": "rb@cypodsolutions.com"
-    },
-    "site": {
-      "href": "cypodsolutions.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Asia"],
     "country": ["South Korea"],
     "name": "Dareesoft",
@@ -320,30 +248,6 @@
     },
     "site": {
       "href": "deps.ua",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["China"],
-    "name": "DEW Technology",
-    "contact": {
-      "href": "support@microraindrop.com"
-    },
-    "site": {
-      "href": "microraindrop.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Africa"],
-    "country": ["India"],
-    "name": "Digital Reach Pvt. Ltd.",
-    "contact": {
-      "href": "snehal@digireach.com"
-    },
-    "site": {
-      "href": "digireach.com",
       "target": "_blank"
     }
   },
@@ -456,18 +360,6 @@
     }
   },
   {
-    "type": ["Europe"],
-    "country": ["Ukraine"],
-    "name": "Euristiq",
-    "contact": {
-      "href": "hello@euristiq.com"
-    },
-    "site": {
-      "href": "euristiq.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Australia and Oceania"],
     "country": ["Australia"],
     "name": "FEEL Digital Asset Strategy",
@@ -500,18 +392,6 @@
     },
     "site": {
       "href": "https://www.jems-group.com/",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["China"],
-    "name": "PUXUAN LPWAN",
-    "contact": {
-      "href": "huxiaofeng@px-tech.com"
-    },
-    "site": {
-      "href": "",
       "target": "_blank"
     }
   },
@@ -600,18 +480,6 @@
     }
   },
   {
-    "type": ["Asia", "Australia and Oceania"],
-    "country": ["Australia", "New Zeland", "Mongolia"],
-    "name": "InSig Technologies Pty. Ltd.",
-    "contact": {
-      "href": "info@insigtech.com.au"
-    },
-    "site": {
-      "href": "insigtech.com.au",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Norway"],
     "name": "IoT solutions AS",
@@ -668,18 +536,6 @@
     },
     "site": {
       "href": "linksoft.com.tw",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia", "Middle East"],
-    "country": ["United Arab Emirates"],
-    "name": "Link971",
-    "contact": {
-      "href": "info@link971.ae"
-    },
-    "site": {
-      "href": "link971.ae",
       "target": "_blank"
     }
   },
@@ -816,18 +672,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["Japan"],
-    "name": "NTT DATA Romania SA",
-    "contact": {
-      "href": "teo.pavel@nttdata.ro"
-    },
-    "site": {
-      "href": "ro.nttdata.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Italy"],
     "name": "Omnicon Srl",
@@ -860,18 +704,6 @@
     },
     "site": {
       "href": "produmize.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia", "Australia and Oceania"],
-    "country": ["India", "Australia"],
-    "name": "ProtoConvert",
-    "contact": {
-      "href": "sales@protoconvert.com"
-    },
-    "site": {
-      "href": "protoconvert.com",
       "target": "_blank"
     }
   },
@@ -980,18 +812,6 @@
     },
     "site": {
       "href": "sancloud.co.uk",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "SAR",
-    "contact": {
-      "href": "Contact@sar-bptc.com"
-    },
-    "site": {
-      "href": "sar-btpc.com",
       "target": "_blank"
     }
   },
@@ -1117,18 +937,6 @@
   },
   {
     "type": ["Asia"],
-    "country": ["India"],
-    "name": "Spia Tech Pvt. Ltd.",
-    "contact": {
-      "href": "jasir@spiatech.com"
-    },
-    "site": {
-      "href": "spiatech.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
     "country": ["Taiwan"],
     "name": "StarLinking Networks Co., Ltd.",
     "contact": {
@@ -1224,18 +1032,6 @@
     }
   },
   {
-    "type": ["Africa", "Asia", "Middle East"],
-    "country": ["Turkey", "Eritrea", "Sudan", "Egypt", "Libya", "Tunisia", "Algeria", "Morocco", "Western Sahara"],
-    "name": "Volsoft Ltd.",
-    "contact": {
-      "href": "hello@volsoft.com.tr"
-    },
-    "site": {
-      "href": "volsoft.com.tr",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["North America", "South America"],
     "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Voxney PLSC, Inc.",
@@ -1244,18 +1040,6 @@
     },
     "site": {
       "href": "voxney.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["North America", "South America"],
-    "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
-    "name": "Vypin LLC",
-    "contact": {
-      "href": "sales@vypin.com"
-    },
-    "site": {
-      "href": "vypin.com",
       "target": "_blank"
     }
   },
@@ -1356,30 +1140,6 @@
     }
   },
   {
-    "type": ["Europe"],
-    "country": ["Ukraine"],
-    "name": "CodeExit, Inc.",
-    "contact": {
-      "href": "benjamin@codeexit.com"
-    },
-    "site": {
-      "href": "",
-      "target": "_blank"
-    }
-   },  
-   {
-    "type": ["Europe"],
-    "country": ["Ukraine"],
-    "name": "SVIT LLC",
-    "contact": {
-      "href": "svitexcom@gmail.com"
-    },
-    "site": {
-      "href": "",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Asia"],
     "country": ["Malaysia"],
     "name": "RODA TECHNOLOGIES SDN BHD",
@@ -1400,18 +1160,6 @@
     },
     "site": {
       "href": "ariprus.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["South America"],
-    "country": ["Chile"],
-    "name": "MindLabs, SpA",
-    "contact": {
-      "href": "ricardo.valdes@mindlabs.cl"
-    },
-    "site": {
-      "href": "mindlabs.cl",
       "target": "_blank"
     }
   },
