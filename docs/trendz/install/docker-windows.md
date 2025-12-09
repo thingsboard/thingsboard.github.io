@@ -148,7 +148,7 @@ docker compose exec trendz-postgres sh -c "pg_dump -U postgres trendz > /var/lib
 When a new Trendz release is available, follow these steps to update your installation without losing data:
 
 {% capture old_manifests_info %}
-**If you are upgrading using previous version of deployment files, make sure to follow steps described in this [instruction](/docs/trendz/install/old-docker-migrate-windows/) first.**
+**If you are upgrading using previous version of deployment files, make sure to follow steps described in this [instruction](/docs/trendz/install/old-docker-migrate/) first.**
 {% endcapture %}
 {% include templates/warn-banner.md content=old_manifests_info %}
 
