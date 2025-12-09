@@ -32,12 +32,12 @@ Your choice of deployment affects how easily you can install, manage, and grow y
             <td>Easiest to install.</td>
         </tr>
         <tr>
-            <td><strong>Single-AZ Microservices (Scenario B)</strong></td>
+            <td><strong>Single-AZ Scalable Microservices (Scenario B)</strong></td>
             <td>Expected growth in devices and users, starting small.</td>
             <td>Provides a good balance of initial startup cost and future scalability.</td>
         </tr>
         <tr>
-            <td><strong>Multi-AZ Microservices (Scenario C)</strong></td>
+            <td><strong>Multi-AZ High Availability Microservices (Scenario C)</strong></td>
             <td>Strict requirements for uptime (high-availability) and reliability (fault-tolerance).</td>
             <td>Ensures the system remains available even if one data center (Availability Zone) fails.</td>
         </tr>
@@ -69,6 +69,8 @@ The deployment pattern includes two configuration options, each tailored to diff
 #### Setup 1. Simple standalone server
 
 For the simplest, most cost-efficient setup, all components, including the database and proxy, are hosted on a single server. This configuration is ideal for prototyping, development environments, or small-scale production workloads where ease of management and cost are the primary concerns.
+
+<object width="80%" data="/images/reference/deployment/scenario-a-basic.png"></object>
 
 You can further improve this architecture by applying optional addons, described below.
 
@@ -130,6 +132,8 @@ However, Kafka can be added as a supplemental component to handle bursts of tele
 
 This configuration separates the application stack from the data storage, leveraging AWS RDS service for database management. This offers improved resilience, automated backups, and patching for the database layer, while keeping the application deployment simple.
 
+<object width="80%" data="/images/reference/deployment/scenario-a-optional.png"></object>
+
 **Architectural Modifications:**
 
 - Entity and telemetry data: migrate from self-managed PostgreSQL to AWS-managed RDS instance.
@@ -151,9 +155,11 @@ This reference targets horizontally scalable deployment. It is ideal for product
 
 The deployment pattern includes two configuration options, each optimized for varying data ingestion throughput requirements.
 
-#### Setup 1: Low-frequency telemetry rate
+#### Setup 1: General-Purpose Monolith in EKS
 
 For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS as entity and telemetry data storage. Public access to the Thingsboard application inside the cluster provided by ELB.
+
+<object width="80%" data="/images/reference/deployment/scenario-b-sql.png"></object>
 
 **Compute Resources:**
 
@@ -174,7 +180,7 @@ The following containerized services are deployed to the compute node:
     <tr>
         <td>tb-node</td>
         <td>1</td>
-        <td>Core ThingsBoard application service</td>
+        <td>Monolith ThingsBoard application</td>
     </tr>
     <tr>
         <td>tb-js-executor</td>
@@ -228,9 +234,11 @@ The following containerized services are deployed to the compute node:
 
 *Estimated Total:* ~$282/month
 
-#### Setup 2: High-frequency telemetry rate
+#### Setup 2: High-Capability Monolith in EKS
 
 With increased telemetry write/read request rates, the architecture may be transitioned to a **hybrid database topology**. This approach separates entity data (PostgreSQL) from time-series data (Cassandra), enabling independent scaling of read- and write-heavy workloads.
+
+<object width="80%" data="/images/reference/deployment/scenario-b-hybrid.png"></object>
 
 **Architectural Modifications:**
 
@@ -290,9 +298,11 @@ This deployment option is designed for production instances requiring high avail
 
 This scenario is a direct upgrade to [Scenario B](#scenario-b-scalable-deployment), featuring multiple replicas spanned across different Availability Zones in horizontal scaling manner. Like it's preceding scenario, the architecture leverages AWS managed services that provide similar perks of minimalized operational overhead of infrastructure provisioning, patch management, and backup orchestration. Similarly to [Scenario B](#scenario-b-scalable-deployment), there are two distinct configurations optimized for varying data ingestion requirements.
 
-#### Setup 1: Low-frequency telemetry rate
+#### Setup 1: General-Purpose Cluster
 
 For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS as entity and telemetry data storage. Public access to the Thingsboard application inside the cluster provided by ELB.
+
+<object width="80%" data="/images/reference/deployment/scenario-c-sql.png"></object>
 
 **Compute Resources:**
 
@@ -312,9 +322,19 @@ The following containerized services are deployed accross all compute nodes. Eac
     </tr>
     </thead>
     <tr>
-        <td>tb-node</td>
+        <td>tb-core</td>
         <td>3</td>
         <td>Core ThingsBoard application server</td>
+    </tr>
+    <tr>
+        <td>tb-rule-engine</td>
+        <td>3</td>
+        <td>Rule Engine server</td>
+    </tr>
+    <tr>
+        <td>tb-mqtt-transport</td>
+        <td>3</td>
+        <td>MQTT transport API server</td>
     </tr>
     <tr>
         <td>tb-js-executor</td>
@@ -378,13 +398,15 @@ Elastic IP: 3 × $3.60/month - $11/month
   - 3 × 20 GB system node volumes - $6/month
   - 2 × 50 GB RDS storage allocations - $12/month
 - EKS Control Plane: $75/month
-- ELB: $22/month
+- ELB: 3 × $22/month - $66/month
 
-*Estimated Total:* ~$585/month
+*Estimated Total:* ~$630/month
 
-#### Setup 2: High-frequency telemetry rate
+#### Setup 2: High-Capability Cluster
 
 Similarly to [Scenario B](#scenario-b-scalable-deployment), the second configuration option transitions to a **hybrid database topology**. This enables independent scaling of read-heavy and write-heavy workloads.
+
+<object width="80%" data="/images/reference/deployment/scenario-c-hybrid.png"></object>
 
 **Architectural Modifications:**
 
@@ -428,9 +450,9 @@ Three additional EKS worker nodes are provisioned to host the distributed Cassan
   - 2 × 100 GB RDS storage allocations - $24/month
   - 3 × 100 GB Cassandra storage volumes - $24/month
 - EKS Control Plane: $75/month
-- ELB: $22/month
+- ELB: 3 × $22/month - $66/month
 
-*Estimated Total:* ~$1,055/month
+*Estimated Total:* ~$1,100/month
 
 #### Summary
 
