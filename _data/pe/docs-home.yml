@@ -395,11 +395,11 @@ toc:
           path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/pe/user-guide/contribution/ui/advanced-development/
-- title: Releases
+- title: Versions & Support
   section:
-    - title: Releases table
+    - title: Releases
       path: /docs/pe/releases/releases-table/
-    - title: Versioning and Release Policy
+    - title: Release & Support Policy
       path: /docs/pe/releases/release-policy/
     - title: Roadmap
       path: /docs/pe/releases/roadmap/

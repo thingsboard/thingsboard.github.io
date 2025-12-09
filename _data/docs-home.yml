@@ -377,11 +377,11 @@ toc:
           path: /docs/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/user-guide/contribution/ui/advanced-development/
-- title: Releases
+- title: Versions & Support
   section:
-    - title: Releases table
+    - title: Releases
       path: /docs/releases/releases-table/
-    - title: Versioning and Release Policy
+    - title: Release & Support Policy
       path: /docs/releases/release-policy/
     - title: Roadmap
       path: /docs/releases/roadmap/
