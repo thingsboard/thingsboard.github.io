@@ -5,8 +5,27 @@
   background: rgba(42, 125, 236, 0.08)
   overflow-x: auto
   .releases-table-content
-    min-width: 1100px
+    min-width: 1300px
     width: 100%
+    .releases-table-header-item.cur-patch
+      @media (max-width: 1280px)
+        display: none
+    .releases-table-header-item, .releases-table-content-item
+      &:nth-child(1)
+        min-width: 80px
+      &:nth-child(2)
+        min-width: 135px
+      &:nth-child(3)
+        min-width: 175px
+      &:nth-child(4)
+        min-width: 135px
+      &:nth-child(5)
+        min-width: 180px
+      &:nth-child(6)
+        min-width: 400px
+      &:nth-child(7)
+        text-align: center
+        min-width: 130px
     .releases-table-header
       padding: 12px 24px
       background: #FFF
@@ -15,27 +34,10 @@
       justify-content: space-between
       margin-bottom: 4px
       .releases-table-header-item
-        min-width: 130px
-        font-size: 20px
-        font-weight: 400
+        font-size: 16px
+        font-weight: 500
         line-height: 32px
         color: rgba(0, 0, 0, 0.87)
-        &:nth-child(1)
-          min-width: 80px
-        &:nth-child(2)
-          min-width: 135px
-        &:nth-child(3)
-          min-width: 110px
-        &:nth-child(4)
-          min-width: 135px
-        &:nth-child(5)
-          min-width: 180px
-        &:nth-child(6)
-          min-width: 141px
-        &:nth-child(7)
-          text-align: center
-          min-width: 209px
-
     .releases-table-row
       padding: 0 4px
       border-radius: 4px
@@ -60,13 +62,17 @@
           background: linear-gradient(0deg, rgba(109, 109, 109, 0.04) 0%, rgba(109, 109, 109, 0.04) 100%), #FFF
           .releases-table-content-item:not(.upgrade-link, .upgrade-instructions)
             scale: 1.1
+        .releases-table-content-item.cur-patch
+          @media (max-width: 1280px)
+            display: none
         .releases-table-content-item
           text-decoration-color: #000
           transition: ease-in-out 0.25s
-          font-size: 14px
+          font-size: 15px
           line-height: 24px
-          min-width: 130px
           scale: 1
+          &.old-date
+            color: rgba(0, 0, 0, 0.38)
           &.version-link
             display: flex
             align-items: center
@@ -77,21 +83,6 @@
           &.version-link.version-link-lts
             &:hover
               text-decoration-color: #2A7DEC
-          &:nth-child(1)
-            min-width: 80px
-          &:nth-child(2)
-            min-width: 135px
-          &:nth-child(3)
-            min-width: 110px
-          &:nth-child(4)
-            min-width: 135px
-          &:nth-child(5)
-            min-width: 180px
-          &:nth-child(6)
-            min-width: 141px
-          &:nth-child(7)
-            text-align: center
-            min-width: 209px
           &.upgrade-link
             display: flex
             justify-content: center
@@ -133,22 +124,24 @@
 .releases-table.upgrade-instructions-table
   margin: 30px 0
   .releases-table-content
+    min-width: 1100px
+    .releases-table-header-item, .releases-table-content-item
+      min-width: 130px
+      &:nth-child(1)
+        min-width: 80px
+      &:nth-child(2)
+        min-width: 131px
+      &:nth-child(3)
+        min-width: 176px
+      &:nth-child(5)
+        min-width: 141px
+      &:nth-child(6)
+        text-align: center
+        min-width: 240px
     .releases-table-header
       .releases-table-header-item
-        min-width: 130px
-        &:nth-child(1)
-          min-width: 80px
-        &:nth-child(2)
-          min-width: 131px
-        &:nth-child(3)
-          min-width: 176px
-        &:nth-child(5)
-          min-width: 141px
-        &:nth-child(6)
-          text-align: center
-          min-width: 240px
         a
-          font-weight: 400 !important
+          font-weight: 500 !important
           color: rgba(0, 0, 0, 0.87)
           text-decoration: underline
           &:hover
@@ -156,19 +149,14 @@
             color: #2A7DEC
     .releases-table-content-wrapper
       .releases-table-content
-        .releases-table-content-item
-          min-width: 130px
-          &:nth-child(1)
-            min-width: 80px
-          &:nth-child(2)
-            min-width: 131px
-          &:nth-child(3)
-            min-width: 176px
-          &:nth-child(5)
-            min-width: 141px
-          &:nth-child(6)
-            text-align: center
-            min-width: 240px
+        &:hover
+          .releases-table-content-item.upgrade-instructions
+            a
+              img
+                filter: unset
+            a:not(:hover)
+              img
+                scale: 1
         .releases-table-content-item
           &.lts-item
             span
@@ -179,17 +167,21 @@
             span.lts-item-true
               color: #198038
               background: rgba(25, 128, 56, 0.06)
+
           &.upgrade-instructions
             display: flex
             align-items: center
             justify-content: center
             gap: 5px
+
             a
               position: relative
               padding: 10px
+
               &.right-link
                 &:before
                   left: -100%
+
               &:before
                 content: attr(data-tooltip)
                 position: absolute
@@ -206,18 +198,29 @@
                 opacity: 0
                 pointer-events: none
                 transition: opacity 0.2s ease
+
               &:hover
                 &:before
                   opacity: 1
                   content: attr(data-tooltip)
-                filter: unset
                 img
                   scale: 1.2
-                  filter: unset
+
               img
                 scale: 1
                 filter: brightness(0) saturate(100%) invert(57%) sepia(2%) saturate(45%) hue-rotate(44deg) brightness(88%) contrast(90%)
                 transition: ease-in-out 0.3s
+
+.legend
+  li.list-link
+    &::marker, a
+      color: #2A7DEC
+
+.legend.pe
+  li.list-link
+    &::marker, a
+      color: var(--tb-main-color)
+
 .fixed-upgrade-scrollbar
   position: fixed
   bottom: 0

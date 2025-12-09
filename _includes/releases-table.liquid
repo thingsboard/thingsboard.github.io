@@ -7,12 +7,12 @@
     <div class="releases-table-content">
         <div class="releases-table-header">
             <div class="releases-table-header-item">Version</div>
-            <div class="releases-table-header-item">Release Date</div>
-            <div class="releases-table-header-item">Latest Tag</div>
-            <div class="releases-table-header-item">Last Updated</div>
-            <div class="releases-table-header-item">Status</div>
-            <div class="releases-table-header-item">Release Notes</div>
-            <div class="releases-table-header-item">Upgrade Instructions</div>
+            <div class="releases-table-header-item">First Released</div>
+            <div class="releases-table-header-item cur-patch">Current Patch</div>
+            <div class="releases-table-header-item">Support</div>
+            <div class="releases-table-header-item">End of Life</div>
+            <div class="releases-table-header-item">Release Notes & Highlights</div>
+            <div class="releases-table-header-item">Instructions</div>
         </div>
 
         <div class="releases-table-row">
@@ -20,43 +20,78 @@
                 {% if page.name != "index.md" %}
                     {% assign version = page.name | split: "." | first %}
                     <div class="releases-table-content-wrapper"
-                         onclick="window.location='{{ page.url }}'"
+                         onclick="window.open('{{ page.url }}', '_blank')"
                          style="cursor:pointer;">
                         <div class="releases-table-content">
+
+                            {%- assign month_map =  "January:Jan,February:Feb,March:Mar,April:Apr,May:May,June:Jun,July:Jul,August:Aug,September:Sep,October:Oct,November:Nov,December:Dec" | split: "," -%}
+
+                            {%- assign release_month_full = page.release-date | date: "%B" -%}
+
+                            {%- for pair in month_map -%}
+                                {%- assign parts = pair | split: ":" -%}
+                                {%- if parts[0] == release_month_full -%}
+                                    {%- assign release_month_short = parts[1] -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
                             <div class="releases-table-content-item">
-                                {{ version | replace: "-", "." }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                                {{ version | replace: "-", "." | replace: ".x", "" }}{% if docsPrefix == "pe/" %}PE{% endif %}
                             </div>
 
                             <div class="releases-table-content-item">
                                 <time datetime="{{ page.release-date | date: '%Y-%m-%d' }}">
-                                    {{ page.release-date | date: "%B %-d, %Y" }}
+                                    {{ page.release-date | date: "%-d" }} {{ release_month_short }} {{ page.release-date | date: "%Y" }}
                                 </time>
                             </div>
 
-                            <div class="releases-table-content-item">
-                                {{ page.latest-tag }}{% if docsPrefix == "pe/" %}PE{% endif %}
+                            <div class="releases-table-content-item cur-patch">
+                                {{ page.latest-patch }}
                             </div>
 
-                            <div class="releases-table-content-item">
-                                <time datetime="{{ page.last-updated | date: '%Y-%m-%d' }}">
-                                    {{ page.last-updated | date: "%B %-d, %Y" }}
-                                </time>
-                            </div>
 
                             {% if page.lts %}
-                                <a href="/docs/{{ docsPrefix }}releases/release-policy/" class="releases-table-content-item version-link version-link-lts">
+                                <a href="/docs/{{ docsPrefix }}releases/release-policy/"
+                                   class="releases-table-content-item version-link version-link-lts">
                                 <span style="font-weight: 500; color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}">
-                                    LTS ({{ page.lts }})
+                                    Active LTS
                                 </span>
                                     <i class="fas fa-external-link-alt"
                                        style="color: {% if docsPrefix == "pe/" %}#1F8B4D{% else %}#2a7dec{% endif %}"></i>
                                 </a>
                             {% else %}
-                                <div class="releases-table-content-item">non-LTS</div>
+                                <div class="releases-table-content-item">Standard</div>
                             {% endif %}
 
-                            <a href="{{ page.url }}" class="releases-table-content-item version-link">
-                                <span>{{ version | replace: "-", "." }}</span>
+                            {% assign release_ts = page.release-date | date: "%s" %}
+
+                            {% if page.lts %}
+                                {% assign target_ts = release_ts | plus: 46656000 %}
+                            {% else %}
+                                {% assign target_ts = release_ts | plus: 15552000 %}
+                            {% endif %}
+
+                            {% assign now_ts = "now" | date: "%s" | plus: 0 %}
+
+                            {%- assign target_month_full = target_ts | date: "%B" -%}
+
+                            {%- for pair in month_map -%}
+                                {%- assign parts = pair | split: ":" -%}
+                                {%- if parts[0] == target_month_full -%}
+                                    {%- assign target_month_short = parts[1] -%}
+                                {%- endif -%}
+                            {%- endfor -%}
+
+                            <div class="releases-table-content-item{% if target_ts < now_ts %} old-date{% endif %}">
+                                {% if page.lts %}
+                                    {{ target_month_short }} {{ target_ts | date: "%Y" }}
+                                {% else %}
+                                    {{ target_ts | date: "%-d" }} {{ target_month_short }} {{ target_ts | date: "%Y" }}
+                                {% endif %}
+                            </div>
+
+                            <a href="{{ page.url }}" class="releases-table-content-item version-link" target="_blank">
+                                <span>{{ page.release-note-label }}</span>
                                 <i class="fas fa-external-link-alt" style="opacity: 0.54; color: #000"></i>
                             </a>
 
@@ -68,11 +103,15 @@
 
                         </div>
                     </div>
-                {% endif %}
+            {% endif %}
             {% endfor %}
         </div>
     </div>
 </div>
+<ul class="legend{% if docsPrefix == "pe/" %} pe{% endif %}">
+    <li class="list-link"><a href="/docs/{{ docsPrefix }}releases/release-policy/">Active LTS</a> - releases supported for 18 months from initial release date</li>
+    <li>Standard - releases supported for 6 months from initial release date</li>
+</ul>
 <div class="fixed-upgrade-scrollbar" id="fixedScrollbar">
     <div class="scrollbar-inner"></div>
 </div>
@@ -151,6 +190,13 @@
             }
             syncFromBar = true;
             table.scrollLeft = bar.scrollLeft;
+        });
+
+        const rowLinks = document.querySelectorAll('.releases-table-content-wrapper a');
+        rowLinks.forEach(link => {
+            link.addEventListener('click', function (event) {
+                event.stopPropagation();
+            });
         });
     });
 </script>
