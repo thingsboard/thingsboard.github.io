@@ -112,11 +112,36 @@ see `tb-node-0` pod in the `READY` state.
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 9. Validate the setup
+## Step 9. Configure Trendz (Optional)
+
+### 9.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### 9.2. Obtain and configure license key
+
+{% include templates/install/trendz/k8s-license-secret-trendz.md %}
+
+### 9.3. Create a Trendz database in the existing RDS instance
+
+{% include templates/install/trendz/eks/k8s-trendz-db-creating.md %}
+
+### 9.4. Trendz starting
+
+{% include templates/install/trendz/k8s-trendz-starting.md %}
+
+
+## Step 10. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
+## Upgrading to new ThingsBoard version
+
 {% include templates/install/aws/eks-upgrading.md %}
+
+### Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 {% include templates/install/aws/eks-deletion.md %}
 
