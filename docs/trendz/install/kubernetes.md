@@ -13,6 +13,8 @@ This guide describes how to setup Trendz Analytics cluster with Kubernetes and M
 
 ## Prerequisites
 
+{% include templates/trendz/install/thingsboard-requirements.md %}
+
 You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 
@@ -21,7 +23,7 @@ Ensure that the node meets specific CPU and RAM requirements, with the typical u
 
 ## Installation Steps
 
-### Step 1. Activate Trendz Add-on on ThingsBoard
+### Step 1. Activate Trendz Analytics
 
 {% include templates/trendz/install/activate-trendz-license.md %}
 

@@ -30,6 +30,7 @@ Proceed here **only** if you have a compelling reason to use a combined RHEL/Cen
 ### Software Requirements
 
 {% include templates/trendz/install/docker-requirements-linux.md %}
+{% include templates/trendz/install/thingsboard-requirements.md %}
 
 **For CentOS 7:**
 
@@ -55,7 +56,7 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 
 ## Installation Steps
 
-### Step 1. Activate Trendz Add-on on ThingsBoard
+### Step 1. Activate Trendz Analytics
 
 {% include templates/trendz/install/activate-trendz-license.md %}
 
@@ -190,7 +191,7 @@ the server or with a domain name. Also, check that port 8888 opened for public a
 To utilize all Trendz capabilities, such as Trendz Python Calculation Fields or Prediction Models, it is essential to
 install an additional service: the Trendz Python Executor, which can securely run Python code.
 
-You can learn more about how to install it [here](/docs/trendz/install/python-executor-configuration-linux).
+You can learn more about how to install it [here](/docs/trendz/install/python-executor-configuration).
 
 ## Authentication
 

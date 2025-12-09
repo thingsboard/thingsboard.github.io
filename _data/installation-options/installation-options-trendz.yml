@@ -45,7 +45,7 @@ trendz:
     imageWidth: 35
     imageHeight: 36
   5:
-    title: ThingsBoard Cloud
+    title: Cloud
     description: Activate Trendz Analytics with your ThingsBoard Cloud account.
     link: /docs/trendz/install/cloud/
     icon: /images/install/platform/trendz-cloud.svg
