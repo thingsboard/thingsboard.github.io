@@ -101,7 +101,25 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `postgres.yml`, `cassandra.yml` for details).
 
-## Step 8. Running
+## Step 8. Configure Trendz (Optional)
+
+### 8.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### 8.2. Obtain and configure license key
+
+{% include templates/install/trendz/k8s-license-secret-trendz.md %}
+
+### 8.3. Create a Trendz database in the existing RDS instance
+
+{% include templates/install/trendz/eks/k8s-trendz-db-creating.md %}
+
+### 8.4. Trendz starting
+
+{% include templates/install/trendz/k8s-trendz-starting.md %}
+
+## Step 9. Running
 
 Execute the following command to run installation:
 
@@ -196,7 +214,7 @@ Execute the following command to delete all resources (including database):
 ```
 {: .copy-code}
 
-## Upgrading
+## Upgrading to new ThingsBoard version
 
 In case you would like to upgrade, please pull the *latest* changes from `master` branch:
 ```
@@ -223,6 +241,10 @@ Where:
 
 - `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/pe/upgrade-instructions) for valid `fromVersion` values. Note, that you have to upgrade versions one by one (for example 3.6.1 -> 3.6.2 -> 3.6.3 etc). 
 
+
+### Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 ## Next steps
 
