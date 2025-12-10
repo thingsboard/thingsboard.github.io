@@ -134,7 +134,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: /images/partners/ezurio-logo.png
+  logo: https://img.thingsboard.io/partners/ezurio-logo.png
   page: /partners/hardware/ezurio
   site:
     href: https://www.ezurio.com/
