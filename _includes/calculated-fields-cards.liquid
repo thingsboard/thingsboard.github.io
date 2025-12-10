@@ -1,0 +1,14 @@
+{% assign calculatedFields = site.data.calculated-fields %}
+
+<ul class="calculated-fields">
+    {% for field in calculatedFields %}
+        <li class="field">
+            <a class="field-link" href="/docs/{{ docsPrefix }}user-guide/calculated-fields/{{ field[0] }}">
+                <div class="field-text">
+                    <span>{{ field[1].title }}</span>
+                    <p>{{ field[1].description }}</p>
+                </div>
+            </a>
+        </li>
+    {% endfor %}
+</ul>
