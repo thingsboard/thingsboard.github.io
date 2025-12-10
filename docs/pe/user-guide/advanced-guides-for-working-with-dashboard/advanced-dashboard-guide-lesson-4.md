@@ -14,84 +14,76 @@ dashboard-lesson-4:
     3:
         src: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/dashboard-final-lesson-4-4-pe.png
 
-major-high-temperature-alarm-rule:
+high-temperature-alarm-rule-1:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-1-pe.png
-        title: 'Open the "Device profiles" page, click on the "air-sensor" device profile to open its details. Enter editing mode by clicking the big orange pencil button;'
-    1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-2-pe.png
-        title: 'Click the "Add alarm rule" button;'
-    2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-3-pe.png
-        title: 'Input the "High temperature alarm" as alarm type. Check the "Propagate alarm to related entities" option in the advanced settings to propagate the alarm to all related entities;'
-    3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-4-pe.png
-        title: 'Select "Major" severity, and click on the red "+" sign;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-1-pe.png
+        title: 'Go to the <b>Device profiles</b> page in the <b>Profiles</b> section.<br>Click <b>air-sensor</b> to open its details, and navigate to the <b>Alarm rules</b> tab.<br>Click the "<b>+</b>" button, and select <b>Create new alarm rule</b>.'
 
-major-high-temperature-alarm-rule-2:
+high-temperature-alarm-rule-2:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-5-pe.png
-        title: 'Click the "Add key filter" button;'
-    1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-6-pe.png
-        title: 'Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;'
-    2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-7-pe.png
-        title: 'Select the "greater than" operation from drop-down menu, and input <b>24</b> as the threshold value. Click "Add" again to add another rule;'
-    3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-8-pe.png
-        title: 'Select the "less or equal" operation from drop-down menu, and input <b>26</b> as the threshold value. Click "Add" to confirm adding key filter;'
-    4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-9-pe.png
-        title: 'Click "Save";'
-    5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/major-high-temperature-alarm-rule-10-pe.png
-        title: 'Added the alarm rule condition of "Major" type.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-2-pe.png
+        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.<br>Add the argument — the data source that the rule will use when evaluating the conditions.'
 
-critical-high-temperature-alarm-rule:
+high-temperature-alarm-rule-3:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/critical-high-temperature-alarm-rule-1-pe.png
-        title: 'Click the "Add create condition" button;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-3-pe.png
+        title: 'Now add the <b>alarm creation condition</b>. Specify the <b>severity</b> level as <b>Critical</b>, and click <b>Add condition</b>.'
     1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/critical-high-temperature-alarm-rule-2-pe.png
-        title: 'Select "Critical" severity, and click on the red "+" sign;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-4-pe.png
+        title: 'Click the <b>Add argument filter</b>.'
     2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/critical-high-temperature-alarm-rule-3-pe.png
-        title: 'Click the "Add key filter" button;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-5-pe.png
+        title: '<b>General:</b> <b>Argument:</b> temperature (the argument added earlier); <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b> new filter: <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 26.<br>Click <b>Add</b>.'
     3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/critical-high-temperature-alarm-rule-4-pe.png
-        title: 'Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-6-pe.png
+        title: '<b>Condition type:</b> Simple.<br><b>Save</b> condition.'
+
+high-temperature-alarm-rule-4:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-7-pe.png
+        title: 'Click the <b>Add creation condition</b>.'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-8-pe.png
+        title: 'Now, specify the <b>severity</b> level as <b>Major</b>, and click <b>Add condition</b>.'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-9-pe.png
+        title: 'Click the <b>Add argument filter</b>.'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-10-pe.png
+        title: '<b>General:</b> <b>Argument:</b> temperature; <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b> filter: <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 24.'
     4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/critical-high-temperature-alarm-rule-5-pe.png
-        title: 'Select the "greater than" operation from drop-down menu, and input <b>27</b> as the threshold value. Click "Add" to confirm adding key filter;'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-11-pe.png
+        title: 'Add another filter: <b>Operation:</b> less or equal; <b>Value source:</b> Static; <b>Value:</b> 26.'
     5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/critical-high-temperature-alarm-rule-6-pe.png
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-12-pe.png
+        title: '<b>Condition type:</b> Simple.<br><b>Save</b> condition.'
+
+high-temperature-alarm-rule-5:
+    0:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-13-pe.png
+        title: 'Now, add the condition to clear the alarm. Click the <b>Add clearing condition</b>.'
+    1:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-14-pe.png
+        title: 'Click <b>Add clearing condition</b>.'
+    2:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-15-pe.png
+        title: 'Click the <b>Add argument filter</b>.'
+    3:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-16-pe.png
+        title: '<b>General:</b> <b>Argument:</b> temperature; <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b> new filter: <b>Operation:</b> less or equal; <b>Value source:</b> Static; <b>Value:</b> 24.'
+    4:
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-17-pe.png
         title: 'Click the "Save" button to apply the alarm condition.'
 
-high-temperature-clear-alarm-rule:
+high-temperature-alarm-rule-6:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-clear-alarm-rule-1-pe.png
-        title: 'Click the "Add clear condition" button;'
-    1:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-clear-alarm-rule-2-pe.png
-        title: 'Click on the red "+" sign;'
-    2:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-clear-alarm-rule-3-pe.png
-        title: 'Click the "Add key filter" button;'
-    3:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-clear-alarm-rule-4-pe.png
-        title: 'Select the "Time series" as key type, and the "temperature" as the key name. Change "Value type" to "Numeric". Click the "Add" button in the "Filters" section. Select the "less or equal" operation from drop-down menu, and input "<b>24</b>" as the threshold value. Click "Add" to confirm adding key filter;'
-    4:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-clear-alarm-rule-5-pe.png
-        title: 'Click the "Save" button to apply the alarm condition;'
-    5:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-clear-alarm-rule-6-pe.png
-        title: 'Finally, apply changes.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-18-pe.png
+        title: 'Enable the <b>Propagate alarm to related entities</b> option, and specify the <b>Relation type</b> used in the device–asset relation: <b>Contains</b>. Finally, click the <b>Add</b>.'
 
-final-high-temperature-alarm-rules:
+final-high-temperature-alarm-rule:
     0:
-        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/final-high-temperature-alarm-rules-1-pe.png
-        title: 'Finally, the configured rule for creating a high-temperature alarm and the condition for clearing it will look like this.'
+        image: /images/user-guide/advanced-guides-for-working-with-dashboard/lesson-4/high-temperature-alarm-rule-19-pe.png
+        title: 'The alarm rule will be created and activated.'
 
 final-low-temperature-alarm-rules:
     0:

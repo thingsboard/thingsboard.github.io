@@ -27,7 +27,7 @@ add-device-notification:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png
         title: 'You&#39;ll also receive a notification (bell icon) indicating the device was added.'
 
-device-details:
+editing-device:
     0:
         image: /images/user-guide/ui/devices/ce/device-details-1-ce.png
         title: 'In the devices list, locate and click on the desired asset, then click the "<b>pencil</b>" (✏️ <b>Edit</b>) icon on the right to open the edit form.'
@@ -97,66 +97,10 @@ check-connectivity:
         image: /images/user-guide/ui/devices/ce/check-connectivity-3-ce.png
         title: 'Run copied command in a <b>Terminal</b>. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
 
-copy-device-id:
+device-details-page:
     0:
-        image: /images/user-guide/ui/devices/ce/copy-device-id-1-ce.png
-        title: 'Open the device&#39;s detail page by clicking on the device name in the list. Click the "<b>Copy device Id</b>" button.'
-
-copy-access-token:
-    0:
-        image: /images/user-guide/ui/devices/ce/copy-access-token-1-ce.png
-        title: 'To copy the device credentials, click on the “Copy Access Token” or “Copy MQTT Credentials” button (depending on your choice of device credentials type).'
-
-attributes:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-attributes-1-ce.png
-        title: 'This tab displays the client, server, and shared attributes of the device. For example, serial number, model, and firmware version.'
-
-telemetry:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-telemetry-1-ce.png
-        title: 'This tab shows the telemetry data that the device sends in real-time, such as sensor readings, status, and other measurable variables.'
-
-telemetry-add-manually:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-telemetry-add-manually-1-ce.png
-        title: 'Click the "plus" icon in the top right corner of the window. In the new window, enter the key name, select the value type, and enter the value. Click "Add" button.'
-    1:
-        image: /images/user-guide/ui/devices/ce/device-telemetry-add-manually-2-ce.png
-        title: 'Telemetry has been added.'
-
-telemetry-delete:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-telemetry-delete-1-ce.png
-        title: 'To delete telemetry, click the "trash can" icon next to the name of the telemetry key you want to delete;'
-    1:
-        image: /images/user-guide/ui/devices/ce/device-telemetry-delete-2-ce.png
-        title: 'Choose what you want to delete specifically: delete all data, delete all data except latest value, delete latest value, delete all data for time period. Confirm the deletion by clicking the "Apply" button.'
-
-alarms:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-alarms-1-ce.png
-        title: 'This tab shows events (alarms) that identify issues with your devices.'
-
-events:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-events-1-ce.png
-        title: 'Here, events related to the device are displayed, including system logs, errors, warnings, and other important moments in the device&#39;s lifecycle.'
-
-relations:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-relations-1-ce.png
-        title: 'This tab displays the relationships of this device with other devices, dashboards, assets, and other entities in the ThingsBoard system.'
-
-audit-logs:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-audit-logs-1-ce.png
-        title: 'ThingsBoard provides the ability to track user actions in order to keep an audit log. It is possible to log user actions related to main entities: assets, devices, dashboard, rules, etc.'
-
-version-control:
-    0:
-        image: /images/user-guide/ui/devices/ce/device-version-control-1-ce.png
-        title: 'ThingsBoard version control service provides the ability to export and restore ThingsBoard Entities using Git.'
+        image: /images/user-guide/ui/devices/ce/device-details-page-1-ce.png
+        title: 'Click on the target device to open its <b>details window</b>.'
 
 ---
 
