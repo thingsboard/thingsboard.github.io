@@ -293,7 +293,9 @@ toc:
       pe: true
     - title: Secrets storage
       path: /docs/pe/user-guide/secrets-storage/
-      pe: true
+    - title: API keys
+      path: /docs/user-guide/security/api-keys/
+      new: true
     - title: Two-factor authentication
       path: /docs/user-guide/two-factor-authentication/
     - title: OAuth 2.0

@@ -2147,6 +2147,9 @@
 "/docs/paas/eu/user-guide/secrets-storage/":
   url: "/docs/paas/eu/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/paas/eu/user-guide/security/api-keys/":
+  url: "/docs/paas/eu/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/self-registration/":
   url: "/docs/paas/eu/user-guide/self-registration/"
   redirect_from: []
@@ -2682,6 +2685,9 @@
   redirect_from: []
 "/docs/paas/user-guide/secrets-storage/":
   url: "/docs/paas/user-guide/secrets-storage/"
+  redirect_from: []
+"/docs/paas/user-guide/security/api-keys/":
+  url: "/docs/paas/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/paas/user-guide/self-registration/":
   url: "/docs/paas/user-guide/self-registration/"
@@ -3759,6 +3765,9 @@
   - "/docs/user-guide/scheduler/"
 "/docs/pe/user-guide/secrets-storage/":
   url: "/docs/pe/user-guide/secrets-storage/"
+  redirect_from: []
+"/docs/pe/user-guide/security/api-keys/":
+  url: "/docs/pe/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/pe/user-guide/self-registration/":
   url: "/docs/pe/user-guide/self-registration/"
@@ -5339,6 +5348,9 @@
   redirect_from: []
 "/docs/user-guide/scada/":
   url: "/docs/user-guide/scada/"
+  redirect_from: []
+"/docs/user-guide/security/api-keys/":
+  url: "/docs/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/user-guide/ssl/coap-access-token/":
   url: "/docs/user-guide/ssl/coap-access-token/"

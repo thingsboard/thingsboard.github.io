@@ -314,6 +314,8 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Secrets storage
     path: /docs/pe/user-guide/secrets-storage/
+  - title: API keys
+    path: /docs/pe/user-guide/security/api-keys/
     new: true
   - title: Two-factor authentication
     path: /docs/pe/user-guide/two-factor-authentication/
