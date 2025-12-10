@@ -47,6 +47,36 @@
 .edge-faq-answer a:hover { text-decoration: underline; }
 .edge-faq-answer ul { margin: 20px 0; padding-left: 30px; list-style: disc; }
 .edge-faq-answer li { margin-bottom: .75em; }
+.edge-faq-hidden { display: none !important; }
+.edge-faq-load-more { 
+    border-bottom: 1.5px solid rgba(62,154,248,0.12);
+    overflow: visible;
+    margin-bottom: 7px;
+    position: relative;
+}
+.edge-faq-load-more .title { 
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #2A7DEC;
+    padding: 22px 37px 22px 7px;
+    margin: 0;
+    cursor: pointer;
+    transition: none;
+}
+.edge-faq-load-more .title:hover { 
+    color: #1e5fb8;
+}
+.edge-faq-load-more .title:after {
+    color: #2A7DEC;
+    content: "+";
+    position: absolute;
+    right: 8px;
+    top: 22px;
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 1;
+}
 </style>
 
 <script>
@@ -70,6 +100,34 @@ function switchEdgeFaqTab(tabId) {
     
     var category = document.getElementById('edge-faq-cat-' + tabId);
     if (category) category.classList.add('active');
+    
+    // Reset load more button for the new category
+    resetEdgeLoadMore(tabId);
+}
+
+function loadMoreEdgeFaq(loadMoreDiv) {
+    var category = loadMoreDiv.closest('.edge-faq-category');
+    var hiddenQuestions = category.querySelectorAll('.edge-faq-question.edge-faq-hidden');
+    
+    // Show all hidden questions
+    hiddenQuestions.forEach(function(question) {
+        question.classList.remove('edge-faq-hidden');
+    });
+    
+    // Hide the load more div
+    loadMoreDiv.style.display = 'none';
+}
+
+function resetEdgeLoadMore(categoryId) {
+    var category = document.getElementById('edge-faq-cat-' + categoryId);
+    var loadMoreDiv = category.querySelector('.edge-faq-load-more');
+    
+    if (loadMoreDiv) {
+        var hiddenQuestions = category.querySelectorAll('.edge-faq-question.edge-faq-hidden');
+        if (hiddenQuestions.length > 0) {
+            loadMoreDiv.style.display = 'block';
+        }
+    }
 }
 </script>
 
@@ -102,7 +160,7 @@ function switchEdgeFaqTab(tabId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">I can deploy Server on-site. Why should I deploy Edge instead?</div>
                     <div class="edge-faq-answer">
                         <p>If you only have <b>one site</b>, deploying ThingsBoard Server on-premises may be enough.</p>
-                        <p>Use ThingsBoard Edge when you <b>have multiple or remote locations</b> that need local processing, dashboards, and automation, but you don’t want a full Server at each site.</p>
+                        <p>Use ThingsBoard Edge when you <b>have multiple or remote locations</b> that need local processing, dashboards, and automation, but you don't want a full Server at each site.</p>
                         <p><b>Server</b> stays your <b>central hub</b>, while <b>Edge</b> runs on lightweight hardware at each site and <b>keeps working offline</b>, then syncs data and configuration back to Server.</p>
                     </div>
                 </div>
@@ -137,10 +195,10 @@ function switchEdgeFaqTab(tabId) {
                         <p>If you need more capacity, you can deploy multiple Edge instances. Alternatively, if you are using <b>version 4.0 or later</b>, you can <a href="/docs/{{docsPrefix}}config/edge-cluster-setup/" target="_blank">cluster Edge nodes</a> for high availability.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">I have devices that use proprietary protocols. Can Edge connect to them?</div>
                     <div class="edge-faq-answer">
-                        <p>Yes. Edge natively supports <a href="/docs/{{docsPrefix}}reference/mqtt-api/">MQTT</a>, <a href="/docs/{{docsPrefix}}reference/coap-api/">CoAP</a>, <a href="/docs/{{docsPrefix}}reference/http-api/">HTTP</a>, <a href="/docs/{{docsPrefix}}reference/snmp-api/">SNMP</a>, and <a href="/docs/{{docsPrefix}}reference/lwm2m-api/">LwM2M</a>. For other protocols, use: </p>
+                        <p>Yes. Edge natively supports <a href="/docs/{{docsPrefix}}reference/mqtt-api/" target="_blank">MQTT</a>, <a href="/docs/{{docsPrefix}}reference/coap-api/" target="_blank">CoAP</a>, <a href="/docs/{{docsPrefix}}reference/http-api/" target="_blank">HTTP</a>, <a href="/docs/{{docsPrefix}}reference/snmp-api/" target="_blank">SNMP</a>, and <a href="/docs/{{docsPrefix}}reference/lwm2m-api/" target="_blank">LwM2M</a>. For other protocols, use: </p>
                         <ul>
                         <li>The <a href="/docs/iot-gateway/what-is-iot-gateway/" target="_blank">ThingsBoard IoT Gateway</a> to bridge legacy devices. Gateway supports <a href="/docs/iot-gateway/config/modbus/" target="_blank">Modbus</a>, <a href="/docs/iot-gateway/config/bacnet/" target="_blank">BACnet</a>, <a href="/docs/iot-gateway/config/opc-ua/" target="_blank">OPC-UA</a>, and more, and is available at no extra cost.</li>
                         {% if docsPrefix == "pe/edge/" %}
@@ -149,7 +207,7 @@ function switchEdgeFaqTab(tabId) {
                         </ul>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I customize and modify the Edge {{edgeName}}?</div>
                     <div class="edge-faq-answer">
                         {% if docsPrefix == "pe/edge/" %}
@@ -158,6 +216,9 @@ function switchEdgeFaqTab(tabId) {
                         <p>Yes, the source code is available on GitHub, and you can fork and modify it to suit your needs. By the way, please consider starring <a href="https://github.com/thingsboard/thingsboard-edge" target="_blank">our repository</a>.</p> 
                         {% endif %}
                     </div>
+                </div>
+                <div class="edge-faq-load-more" onclick="loadMoreEdgeFaq(this)">
+                    <div class="title">Load more FAQ</div>
                 </div>
             </div>
             <div id="edge-faq-cat-comparison" class="edge-faq-category">
@@ -236,10 +297,10 @@ function switchEdgeFaqTab(tabId) {
                         {% if docsPrefix == "pe/edge/" %}
                         <p>Edge <b>{{edgeName}}</b> includes all <b>Community Edition</b> features plus:</p>
                         <ul>
-                        <li><b>UI customization</b>: <a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/">custom menu</a> configuration</li>
-                        <li><b>Solution templates</b>: <a href="/docs/{{peDocsPrefix}}solution-templates/overview/">Pre-built IoT solutions</a> ready to install</li>
-                        <li><b>Platform Integrations</b>: <a href="/docs/{{docsPrefix}}user-guide/integrations/">Connect</a> to OPC-UA servers, and other systems with <a href="/docs/user-guide/integrations/#converters-library">ready-to-use decoders</a> for 100+ devices</li>
-                        <li><b>Scheduler</b>: <a href="/docs/{{docsPrefix}}user-guide/scheduler/">Automate</a> reports, commands, and updates</li>
+                        <li><b>UI customization</b>: <a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/" target="_blank">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/" target="_blank">custom menu</a> configuration</li>
+                        <li><b>Solution templates</b>: <a href="/docs/{{peDocsPrefix}}solution-templates/overview/" target="_blank">Pre-built IoT solutions</a> ready to install</li>
+                        <li><b>Platform Integrations</b>: <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Connect</a> to OPC-UA servers, and other systems with <a href="/docs/user-guide/integrations/#converters-library" target="_blank">ready-to-use decoders</a> for 100+ devices</li>
+                        <li><b>Scheduler</b>: <a href="/docs/{{docsPrefix}}user-guide/scheduler/" target="_blank">Automate</a> reports, commands, and updates</li>
                         <li><b>Customer hierarchy</b>: Organize multiple end-customers with isolated access</li>
                         </ul>
                         {% else %}
@@ -274,7 +335,7 @@ function switchEdgeFaqTab(tabId) {
                 <div class="edge-faq-question">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support UI customization options, such as white-labeling or custom menu?</div>
                     <div class="edge-faq-answer">
-                        <p><a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/">custom menu</a> configuration are <b>Professional Edition</b> features that provide UI customization without code changes.</p>
+                        <p><a href="/docs/{{peDocsPrefix}}user-guide/white-labeling/" target="_blank">White-labeling</a> and <a href="/docs/{{peDocsPrefix}}user-guide/custom-menu/" target="_blank">custom menu</a> configuration are <b>Professional Edition</b> features that provide UI customization without code changes.</p>
                         <p><b>{{edgeName}}</b> is open-source, allowing developers to customize the interface by modifying the source code.</p>
                     </div>
                 </div>
@@ -287,20 +348,10 @@ function switchEdgeFaqTab(tabId) {
                     </div>
                 </div>
                 <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I integrate third-party systems with ThingsBoard Edge?</div>
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I integrate devices that are connected via third-party systems such as LoRAWAN?</div>
                     <div class="edge-faq-answer">
-                        <p>Yes, Edge {{edgeName}} supports integration through:</p>
-                        {% if docsPrefix == "pe/edge/" %}
-                        <ul>
-                        <li><b>REST APIs</b>: For request/response interactions.</li>
-                        <li><b>Platform Integrations</b>: For built-in connectors to OPC-UA servers, and other platforms.</li>
-                        </ul>
-                        {% else %}
-                        <ul>
-                        <li><b>REST APIs</b>: For request/response interactions.</li>
-                        </ul>
-                        <p>For built-in platform connectors (OPC-UA, CoAP etc.), see <a href="/docs/{{docsPrefix}}user-guide/integrations/">Professional Edition Integrations</a>.</p>
-                        {% endif %}
+                        <p>Not out-of-the-box. To connect with third-party platforms like LoRaWAN networks, you would need to develop custom integration code.</p>
+                        <p>Professional Edition provides <b>ready-to-use Platform Integrations</b> for LoRaWAN networks (ChirpStack, TTN, Loriot), OPC-UA servers, and 30+ other platforms. See <a href="/docs/{{docsPrefix}}user-guide/integrations/" target="_blank">Edge Integrations documentation</a> for more details.</p>
                     </div>
                 </div>
                 <div class="edge-faq-question">
@@ -311,47 +362,50 @@ function switchEdgeFaqTab(tabId) {
                         <p>Refer to <a href="/docs/{{docsPrefix}}config/edge-cluster-setup/" target="_blank">Edge Cluster Setup documentation</a> for more details.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What databases and message queue implementations does ThingsBoard Edge support?</div>
+                <div class="edge-faq-question edge-faq-hidden">
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What databases and uplink message storages does ThingsBoard Edge support?</div>
                     <div class="edge-faq-answer">
                         <p>Edge {{edgeName}} supports <b>pure SQL and a hybrid SQL + NoSQL</b> (for telemetry storage) approaches, which are:</p>
                         <ul>
                         <li><b>PostgreSQL</b>: Default, suitable for most deployments.</li>
                         <li><b>PostgreSQL + Cassandra</b>: Hybrid approach for high-volume telemetry - 1M+ devices or >5,000 msg/sec.</li>
                         </ul>
-                        <p>Edge also supports different <b>message queue implementations</b>:</p>
+                        <p>Edge also supports different <b>uplink message storages</b>:</p>
                         <ul>
                         <li><b>PostgreSQL</b>: Built-in default, <b>suitable for PoC and testing environments</b> - not for production or any sort of cluster deployments.</li>
                         <li><b>Kafka</b>: Recommended for production deployments.</li>
                         </ul>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I automate device management and telemetry processing?</div>
                     <div class="edge-faq-answer">
                         <p>Yes. you can. The <a href="/docs/edge/rule-engine/rule-chain-templates/" target="_blank">Rule Engine</a> allows you to automate device workflows, data processing, and alerts based on incoming telemetry.</p>
                         <p>For example, you can automatically provision devices, transform data, trigger actions based on thresholds, or forward telemetry to external systems.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Can I run rule chains on Edge?</div>
                     <div class="edge-faq-answer">
                         <p>Yes. Edge runs rule chains locally for real-time processing. Starting with <b>version 4.0</b>, you can <b>create</b> and <b>edit rule chains directly on Edge</b>. In <b>earlier versions</b>, rule chains are <b>configured as templates on the Server and pushed</b> to Edge.</p>
                         <p>See <a href="/docs/{{docsPrefix}}rule-engine/rule-chain-templates/" target="_blank">Edge Rule Chain Templates</a> for more information.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Does Edge {{edgeName}} support OTA (Over-the-Air) firmware updates?</div>
                     <div class="edge-faq-answer">
                         <p>Yes. You can manage firmware versions, schedule updates, and track deployment status across your devices. See <a href="/docs/{{docsPrefix}}user-guide/ota-updates/" target="_blank">OTA updates documentation</a> for setup instructions.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Is there a mobile app for ThingsBoard Edge {{edgeName}}?</div>
                     <div class="edge-faq-answer">
                         <p>No, there is no dedicated mobile app for ThingsBoard Edge.</p>
                         <p>However, you can access and manage Edge instance through a web browser on any device, including mobile devices. Typically, instance is <b>hosted on port 8080</b>.</p>
                     </div>
+                </div>
+                <div class="edge-faq-load-more" onclick="loadMoreEdgeFaq(this)">
+                    <div class="title">Load more FAQ</div>
                 </div>
             </div>
             <div id="edge-faq-cat-installation" class="edge-faq-category">
@@ -361,7 +415,7 @@ function switchEdgeFaqTab(tabId) {
                         <p>Partially. Edge version X.Y.Z works with:</p>
                         <ul>
                         <li>Server version X.Y.Z (<b>same version</b>)</li>
-                        <li>Server versions X.Y+1 and X.Y+2 (<b>up to two minor versions ahead)</b></li>
+                        <li>Server versions X.Y+1 and X.Y+2 (<b>up to two minor versions ahead)</b>)</li>
                         </ul>
                         <p><b>Edge does not work with older Server versions.</b></p>
                         <p>Example: Edge 3.8.0 works with Server 3.8.0, 3.8.1, and 3.9.0 — but not with Server 3.7.x or earlier. If your Edge is newer than your Server, upgrade the Server first.</p>
@@ -413,20 +467,23 @@ function switchEdgeFaqTab(tabId) {
                         {% endif %}
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Where does ThingsBoard Edge store time-series data?</div>
                     <div class="edge-faq-answer">
                         <p>By default, Edge stores time-series data in <b>PostgreSQL</b>, which handles <b>both device metadata and telemetry</b> efficiently for typical deployments.</p>
                         <p>For high-volume scenarios (1M+ devices or >5,000 msg/sec), you can configure a <b>hybrid setup</b> where <b>time-series data is stored in Cassandra while PostgreSQL handles device metadata and attributes</b>.</p>
                     </div>
                 </div>
-                <div class="edge-faq-question">
+                <div class="edge-faq-question edge-faq-hidden">
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Do I need to use a software development kit (SDK)?</div>
                     <div class="edge-faq-answer">
                         <p>No, many IoT devices are not designed to embed third-party SDKs.</p>
                         <p>ThingsBoard Edge provides a <b>simple API over common IoT protocols</b>, so you can choose any client-side library you like, or even use your own. 
                         Some useful references include <a href="https://github.com/mqtt/mqtt.github.io/wiki/libraries" target="_blank">MQTT client-side libraries list</a> and <a href="https://libcoap.net/" target="_blank">C-implementation for CoAP</a>.</p>
                     </div>
+                </div>
+                <div class="edge-faq-load-more" onclick="loadMoreEdgeFaq(this)">
+                    <div class="title">Load more FAQ</div>
                 </div>
             </div>
             <div id="edge-faq-cat-support" class="edge-faq-category">
