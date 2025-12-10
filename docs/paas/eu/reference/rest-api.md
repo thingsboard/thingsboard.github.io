@@ -7,11 +7,11 @@ description: Supported REST API Reference for server-side integration of your Io
 
 swagger-ui:
     0:
-        image: /images/reference/swagger-ui-1-paas-eu.png
-        title: 'You can manually authenticate or authorize as a different user using the "Authorize" button in the top-right corner of the Swagger page.'
+        image: /images/user-guide/security/api-keys/authentication-in-swagger-ui-1.png
+        title: 'You can manually authenticate or authorize as another user by clicking the <b>Authorize</b> button on the right side of the Swagger page.'
     1:
-        image: /images/reference/swagger-ui-2-paas-eu.png
-        title: 'Enter the username and password. Then, click "Authorize".'
+        image: /images/user-guide/security/api-keys/authentication-in-swagger-ui-2.png
+        title: 'Enter your username and password, or paste your API key In the API key form (apiKey) section.<br>Then, click <b>Authorize</b>.'
 
 ---
 

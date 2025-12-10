@@ -8,14 +8,14 @@ description: Supported REST API Reference for server-side integration of your ja
 ---
  * TOC
  {:toc}
- 
-## REST Client
 
 The ThingsBoard REST API Client helps you interact with ThingsBoard REST API from your Java application.
 With Rest Client you can programmatically create assets, devices, customers, users and other entities and their relations in ThingsBoard.
  
 The recommended method for installing the Rest Client is with a build automation tool, like Maven. 
 The version of the REST Client depends on the version of the platform that you are using.   
+
+<hr>
   
 ## Community Edition REST Client
 
@@ -45,7 +45,12 @@ In order to download the REST Client dependency, you should add the following re
 </repositories>
 ```
 {: .copy-code}
+
+<hr>
+
 ### Basic Usage
+
+#### Authentication with credentials
 
 The next sample code shows how to instantiate ThingsBoard Client, perform login and get user details of current logged in user.
 
@@ -70,10 +75,41 @@ client.close();
 ```
 {: .copy-code}
 
-### Examples
+<hr>
 
-#### Fetch tenant devices
+#### Authentication with API Key
+
+{% assign sinceVersion = "4.3" %}
+{% include templates/since.md %}
+
+Alternatively, you can authenticate using an API key without the need for login/logout operations:
+
+```java
+// ThingsBoard REST API URL
+String url = "http://localhost:8080";
+
+// Your API key
+String apiKey = "YOUR_API_KEY_VALUE";
+
+// Creating new rest client with API key authentication
+RestClient client = RestClient.withApiKey(url, apiKey);
+
+// Get information of current user and print it
+client.getUser().ifPresent(System.out::println);
+
+// Close the client when done
+client.close();
+```
+{: .copy-code}
+
+<hr>
+
+## Examples
+
+### Fetch tenant devices
+
 The following sample code shows how to fetch tenant devices via page link.
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -101,8 +137,12 @@ client.close();
 ```
 {: .copy-code}
 
-#### Fetch tenant dashboards
+<hr>
+
+### Fetch tenant dashboards
+
 The following sample code shows how to fetch tenant dashboards via page link.
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -130,8 +170,12 @@ client.close();
 ```
 {: .copy-code}
 
-#### Fetch customer devices
+<hr>
+
+### Fetch customer devices
+
 The following sample code shows how to fetch customer devices via page link.
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -158,9 +202,12 @@ client.close();
 ```
 {: .copy-code}
 
-#### Count entities using Entity Data Query API
+<hr>
+
+### Count entities using Entity Data Query API
 
 The following sample code shows how to use Entity Data Query API to count total devices, total active devices.
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -207,7 +254,10 @@ client.close();
 ```
 {: .copy-code}
 
-#### Query entities using Entity Data Query API
+<hr>
+
+### Query entities using Entity Data Query API
+
 The following sample code shows how to use Entity Data Query API to get all active devices.
 
 ```java
@@ -271,9 +321,12 @@ client.close();
 ```
 {: .copy-code}
 
-#### Manage Device example
+<hr>
+
+### Manage Device example
 
 The following sample code demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -322,6 +375,9 @@ client.close();
 ```
 {: .copy-code}
 
-#### More examples
-You can find the example to learn how to use ThingsBoard REST Client **[here](https://github.com/thingsboard/tb-ce-rest-client-example)**.
+<hr>
+
+### More examples
+
+You can find the example to learn how to use ThingsBoard REST Client [here](https://github.com/thingsboard/tb-ce-rest-client-example){:target="_blank"}.
 
