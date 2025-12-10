@@ -22,6 +22,11 @@ For device-level MQTT details (authentication, QoS, payload format, etc.), refer
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+## Prerequisites
+
+In order to try examples from this documentation, you need to install an MQTT client tool. You can use the following 
+[instructions](/docs/{{docsPrefix}}reference/gateway-mqtt-api/#troubleshooting) to install `mosquitto_pub` and `mosquitto_sub` command-line tools.
+
 ## Device Connect API
 
 Use this API to inform ThingsBoard that a device behind the Gateway is now connected and ready to exchange data.
@@ -54,20 +59,8 @@ v1/gateway/connect
 **Only for MQTT v.5**
 
 It is recommended to wait for the PUBACK response to ensure that the device connection was successful.
-If something goes wrong during the connection, for example, the device limit is exceeded, the PUBACK will return with the 
-corresponding status code:
-
-`Client null sending CONNECT`
-
-`Client null received CONNACK (0)`
-
-`Client null sending PUBLISH (d0, q1, r0, m1, 'v1/gateway/connect', ... (41 bytes))`
-
-`Client null received PUBACK (Mid: 1, RC:151)`
-
-`Warning: Publish 1 failed: Quota exceeded.`
-
-`Client null sending DISCONNECT`
+If something goes wrong during the connection, for example, the device limit is exceeded, the PUBACK will return with 
+the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -121,7 +114,7 @@ v1/gateway/disconnect
 {% capture difference %}
 **Only for MQTT v.5**
 
-If something goes wrong during the connection, the PUBACK will return with the corresponding status code.
+If something goes wrong during the disconnecting, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -183,7 +176,7 @@ v1/gateway/attributes
 {% capture difference %}
 **Only for MQTT v.5**
 
-If something goes wrong during the connection, the PUBACK will return with the corresponding status code.
+If something goes wrong during the publishing, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -195,8 +188,7 @@ In this example, the hostname references live demo server.
 In order to publish client-side device attributes to ThingsBoard platform, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/attributes" -u "$ACCESS_TOKEN" -m \
-'{"Device A": { "fw_version": "1.0", "battery": 87 }}'
+mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/attributes" -u "$ACCESS_TOKEN" -m '{"Device A": { "fw_version": "1.0", "battery": 87 }}'
 ```
 {: .copy-code}
 
@@ -324,7 +316,7 @@ Fields:
 {% capture difference %}
 **Only for MQTT v.5**
 
-If something goes wrong during the connection, the PUBACK will return with the corresponding status code.
+If something goes wrong during the publishing, the PUBACK will return with the corresponding [status code](/docs/{{docsPrefix}}reference/mqtt-v5-errors-code/).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -336,12 +328,7 @@ In this example, the hostname references live demo server.
 In order to publish device telemetry to ThingsBoard platform, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/telemetry" -u "$ACCESS_TOKEN" -m \
-'{
-  "Device A": [
-    { "ts": 1700000000000, "values": { "temperature": 23.5, "humidity": 61 } }
-  ]
-}'
+mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/telemetry" -u "$ACCESS_TOKEN" -m '{"Device A": [{"ts": 1700000000000, "values": {"temperature": 23.5, "humidity": 61 }}]}'
 ```
 {: .copy-code}
 
@@ -435,13 +422,7 @@ In this example, the hostname references live demo server. Also, make sure that 
 In order to inform ThingsBoard platform to start claiming process for devices, one needs to publish following message:
 
 ```bash
-mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/claim" -u "$ACCESS_TOKEN" -m \
-'{
-  "Device A": {
-    "secretKey": "mySecret",
-    "durationMs": 60000
-  }
-}'
+mosquitto_pub -h "demo.thingsboard.io" -t "v1/gateway/claim" -u "$ACCESS_TOKEN" -m '{"Device A": {"secretKey": "mySecret", "durationMs": 60000}}'
 ```
 {: .copy-code}
 
