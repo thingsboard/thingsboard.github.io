@@ -55,10 +55,10 @@ Once your Valkey cluster is ready, update the cache configuration in `tbmq-cache
   #REDIS_JEDIS_CLUSTER_TOPOLOGY_REFRESH_ENABLED: "true"
   ```
 
-[1]: https://cloud.google.com/memorystore/docs/valkey/create-instances?utm_source=chatgpt.com "Create instances | Memorystore for Valkey | Google Cloud"
-[2]: https://cloud.google.com/memorystore/docs/valkey/product-overview?utm_source=chatgpt.com "Memorystore for Valkey overview - Google Cloud"
-[3]: https://cloud.google.com/memorystore/docs/valkey/networking?utm_source=chatgpt.com "Networking | Memorystore for Valkey | Google Cloud"
-[4]: https://cloud.google.com/memorystore/docs/valkey/instance-node-specification?utm_source=chatgpt.com "Instance and node specification | Memorystore for Valkey | Google Cloud"
-[5]: https://cloud.google.com/memorystore/docs/valkey/cluster-mode-enabled-and-disabled?utm_source=chatgpt.com "Enable and disable cluster mode | Memorystore for Valkey - Google Cloud"
-[6]: https://cloud.google.com/memorystore/docs/valkey/ha-and-replicas?utm_source=chatgpt.com "High availability and replicas | Memorystore for Valkey | Google Cloud"
-[7]: https://cloud.google.com/memorystore/docs/valkey/general-best-practices?utm_source=chatgpt.com "Best practices for Memorystore for Valkey - Google Cloud"
+[1]: https://cloud.google.com/memorystore/docs/valkey/create-instances "Create instances | Memorystore for Valkey | Google Cloud"
+[2]: https://cloud.google.com/memorystore/docs/valkey/product-overview "Memorystore for Valkey overview - Google Cloud"
+[3]: https://cloud.google.com/memorystore/docs/valkey/networking "Networking | Memorystore for Valkey | Google Cloud"
+[4]: https://cloud.google.com/memorystore/docs/valkey/instance-node-specification "Instance and node specification | Memorystore for Valkey | Google Cloud"
+[5]: https://cloud.google.com/memorystore/docs/valkey/cluster-mode-enabled-and-disabled "Enable and disable cluster mode | Memorystore for Valkey - Google Cloud"
+[6]: https://cloud.google.com/memorystore/docs/valkey/ha-and-replicas "High availability and replicas | Memorystore for Valkey | Google Cloud"
+[7]: https://cloud.google.com/memorystore/docs/valkey/general-best-practices "Best practices for Memorystore for Valkey - Google Cloud"
