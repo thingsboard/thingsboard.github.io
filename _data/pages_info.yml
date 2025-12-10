@@ -267,6 +267,9 @@
 "/docs/devices-library/rock960/":
   url: "/docs/devices-library/rock960/"
   redirect_from: []
+"/docs/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
 "/docs/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -1297,6 +1300,9 @@
 "/docs/paas/devices-library/rock960/":
   url: "/docs/paas/devices-library/rock960/"
   redirect_from: []
+"/docs/paas/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
 "/docs/paas/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -1663,6 +1669,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/rock960/":
   url: "/docs/paas/eu/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/"
   redirect_from: []
 "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/"
@@ -3111,6 +3120,9 @@
 "/docs/pe/devices-library/rock960/":
   url: "/docs/pe/devices-library/rock960/"
   redirect_from: []
+"/docs/pe/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
 "/docs/pe/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/pe/devices-library/socketsync-bluetooth-gateway/"
   redirect_from: []
@@ -3842,6 +3854,84 @@
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/"
@@ -5162,6 +5252,84 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"

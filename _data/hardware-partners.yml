@@ -117,6 +117,33 @@
         href: /docs/pe/devices-library/esp32-pico-kit/
   description: Designs a range of high-performance Wi-Fi+Bluetooth/BLE
     chipsets and modules.
+- name: Ezurio
+  type:
+    - Bluetooth LE
+    - LoRaWAN
+  industry:
+    - Smart Cities
+    - Retail
+    - Agriculture
+    - Transportation & Logistics
+    - Healthcare
+    - Environmental Monitoring
+  use-case:
+    - Environment Monitoring
+    - Smart Farming
+  hardware-types:
+    - Sensors
+    - Gateways
+  logo: /images/partners/ezurio-logo.png
+  page: /partners/hardware/ezurio
+  site:
+    href: https://www.ezurio.com/
+  links:
+    general-guide:
+      0:
+        label: Connect S26x LoRaWAN Temperature Sensor to ThingsBoard
+        href: /docs/devices-library/s26x-lorawan-temperature-sensor/
+  description: Turns design possibilities into reality with a comprehensive range of RF modules, system-on-modules, single board computers, internal antennas, IoT devices, and custom solutions. With decades of engineering expertise, Ezurio provides solutions that reduce development costs and time to market. Our global reach and unmatched support are backed by a resilient global supply chain that gives our customers the stability to overcome every design challenge with confidence. Turn design possibilities into reality with Ezurio, your connectivity expert.
 - name: Seeed Studio
   type:
     - Wi-Fi
