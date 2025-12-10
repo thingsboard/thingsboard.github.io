@@ -5,9 +5,11 @@ This guide explains how ThingsBoard versions are numbered, how long each version
 It’s written for platform administrators, SREs, DevOps engineers, and technical users who deploy and maintain ThingsBoard.
 
 ---
-## Thingsboard versioning
+
+## ThingsBoard versioning
+
 ThingsBoard version numbers reflect the scope of changes introduced in each release. This follows semantic versioning principles, helping you gauge the potential impact of upgrading.
-Thingsboard version numbers have four parts: <span class="code-light">MAJOR.MINOR.MAINTENANCE.PATCH</span>. For example, version <span class="code-light">4.2.1.0</span> indicates major version 4, minor version 2, maintenece 1 and patch level 0.
+ThingsBoard version numbers have four parts: <span class="code-light">MAJOR.MINOR.MAINTENANCE.PATCH</span>. For example, version <span class="code-light">4.2.1.0</span> indicates major version 4, minor version 2, maintenece 1 and patch level 0.
 
 The version number is incremented based on the level of change included in the release.
 
@@ -54,23 +56,34 @@ The version number is incremented based on the level of change included in the r
 <span class="code-light">4.2.1.3</span> — Hotfixes on top of <span class="code-light">4.2.1.0</span>; zero‑downtime within <span class="code-light">4.2.1.x</span>
 
 
-## Lifecycle & Support (How long versions are supported)
+## Lifecycle & Support (How long versions are supported?)
 
 ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. Customers using LTS releases can be confident that their critical systems will be protected and operate reliably.
 
-* **LTS declaration:** We announce a new **LTS** line each year; each LTS line is supported for **18 months** from initial LTS GA (e.g., from <span class="code-light">4.2.0.0</span> release date)
-  
-  Active support includes:
-    - Bug fixes, security patches
-    - New MAINTENANCE (…x.0) and PATCH (…x.y) releases as needed
-
-* **Major releases:** When breaking changes are introduced.
-
-* **Minor releases:** Typically every **three** months.
-
-* **Maintenance releases:** When bug fixes need an upgrade script.
-
-* **Patch releases:** When bug fixes don`t need an upgrade script.
+<table style="width:70%">
+  <thead>
+    <tr>
+      <td style="width: 20%"><b>Release Type</b></td>
+      <td style="width: 30%"><b>Description</b></td>
+      <td style="width: 30%"><b>Support Duration</b></td>
+      <td style="width: 20%"><b>Typical Frequency</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>LTS</b></td>
+      <td>Announced yearly; for stable, long-term production use.</td>
+      <td><b>18 months</b> from initial LTS GA (e.g., 4.2.0.0 release date)</td>
+      <td>Annually</td>
+    </tr>
+    <tr>
+      <td><b>Standard</b></td>
+      <td>Releases between LTS lines, including new features.</td>
+      <td><b>6 months</b> from initial GA date</td>
+      <td>Every three months (Minor)</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Choosing the Right Version
 
@@ -78,7 +91,7 @@ ThingsBoard maintains **Long‑Term Support (LTS)** lines for production users. 
 
 1. **Prefer the latest LTS line** in Active Support.
 
-2. To stay up to date with hotfixes, track the line’s PATCH updates only (same MAINTENANCE number, e.g., <span class="code-light">4.2.1.0</span> → <span class="code-light">4.2.1.3</span>).
+2. To stay up to date with hotfixes, track the line’s **PATCH** updates only (same MAINTENANCE number, e.g., <span class="code-light">4.2.1.0</span> → <span class="code-light">4.2.1.3</span>).
 
 3. **Schedule maintenance windows** to adopt new **MAINTENANCE** releases when needed (e.g., <span class="code-light">4.2.0.x</span> → <span class="code-light">4.2.1.0</span>).
 
