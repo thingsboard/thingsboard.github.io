@@ -1900,6 +1900,8 @@ description: "Get your IoT development services 3X faster and 2X lower TCO. We g
                     e.preventDefault();
                     form.innerHTML = '<p>Thank you! Your message has been received.</p>';
                     setTimeout(() => {}, Math.floor(Math.random() * 4000) + 3000);
+                } else {
+                    hpInput.removeAttribute("name");
                 }
             });
         }
@@ -2021,7 +2023,7 @@ description: "Get your IoT development services 3X faster and 2X lower TCO. We g
     jqueryDefer(
         function () {
             var $contactForm =  jQuery('.developmentServicesContactUsForm');
-            $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+            $contactForm.attr('action', 'https://formspree.io/f/xrbnqnna');
             $( document ).ready(function() {
                 populateUTMandClientIdFields();
                  $contactForm.find('.form-element .form-control').addClass("input--empty");

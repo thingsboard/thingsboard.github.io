@@ -1,0 +1,180 @@
+4.2.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-4.2.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.2.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-4.2.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.2.1pe.deb
+'4.2':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-4.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-4.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.2pe.deb
+'4.1':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-4.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-4.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.1pe.deb
+4.0.2:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-4.0.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.0.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-4.0.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.0.2pe.deb
+4.0.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-4.0.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.0.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-4.0.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.0.1pe.deb
+'4.0':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-4.0pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.0pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-4.0pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.0pe.deb
+3.9.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.9.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.9.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.9.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.9.1pe.deb
+'3.9':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.9pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.9pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.9pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.9pe.deb
+3.8.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.8.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.8.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.8.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.8.1pe.deb
+'3.8':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.8pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.8pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.8pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.8pe.deb
+'3.7':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.7pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.7pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.7pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.7pe.deb
+3.6.4:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.6.4pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.4pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.6.4pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.4pe.deb
+3.6.3:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.6.3pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.3pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.6.3pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.3pe.deb
+3.6.2:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.6.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.6.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.2pe.deb
+3.6.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.6.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.6.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.1pe.deb
+'3.6':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.6pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.6pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6pe.deb
+3.5.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.5.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.5.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.5.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.5.1pe.deb
+'3.5':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.5pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.5pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.5pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.5pe.deb
+3.4.4:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.4.4pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.4pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.4.4pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.4pe.deb
+3.4.3:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.4.3pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.3pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.4.3pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.3pe.deb
+3.4.2:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.4.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.4.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.2pe.deb
+3.4.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.4.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.4.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.1pe.deb
+'3.4':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.4pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.4pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4pe.deb
+3.3.4.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.3.4.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.4.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.3.4.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.4.1pe.deb
+3.3.4:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.3.4pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.4pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.3.4pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.4pe.deb
+3.3.3:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.3.3pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.3pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.3.3pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.3pe.deb
+3.3.2:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.3.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.3.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.2pe.deb
+3.3.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.3.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.3.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.1pe.deb
+'3.3':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.3pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.3pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3pe.deb
+3.2.2:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.2.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.2.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.2.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.2.2pe.deb
+3.2.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.2.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.2.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.2.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.2.1pe.deb
+'3.2':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.2pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.2pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.2pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.2pe.deb
+3.1.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.1.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.1.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.1.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.1.1pe.deb
+'3.1':
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.1pe.deb
+3.0.1:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.0.1pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.0.1pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.0.1pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.0.1pe.deb
+3.0.0:
+  centos-download: wget https://dist.thingsboard.io/thingsboard-3.0pe.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.0pe.rpm
+  ubuntu-download: wget https://dist.thingsboard.io/thingsboard-3.0pe.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.0pe.deб

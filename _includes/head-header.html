@@ -614,6 +614,54 @@
             }
         }
     </script>
+
+    <script async defer>
+        (function() {
+            try {
+                const url = new URL(window.location.href);
+                let params = {};
+                url.searchParams.forEach((value, key) => {
+                    if (key.startsWith('utm_')) {
+                        params[key] = value;
+                    }
+                });
+                if (Object.keys(params).length > 0) {
+                    localStorage.setItem('utm', JSON.stringify(params));
+                }
+            } catch (e) {}
+        })();
+        document.addEventListener('DOMContentLoaded', function() {
+            const utms = localStorage.getItem('utm');
+            let search = '';
+            if (utms) {
+                let utm = {};
+                try {
+                    utm = JSON.parse(utms);
+                } catch(e) {}
+                search = Object.keys(utm).map(key => `${key}=${encodeURIComponent(utm[key])}`).join('&');
+            }
+            if (search) {
+                const links = document.links;
+
+                const allowedDomains = [
+                    'https://thingsboard.cloud',
+                    'https://eu.thingsboard.cloud',
+                    'https://demo.thingsboard.io',
+                    'https://license.thingsboard.io'
+                ];
+
+                Array.from(links).forEach(link => {
+                    const currentHref = link.getAttribute('href');
+
+                    if (currentHref && allowedDomains.some(domain => currentHref.startsWith(domain))) {
+                        const separator = currentHref.includes('?') ? '&' : '?';
+                        const newHref = `${currentHref}${separator}${search}`;
+                        link.setAttribute('href', newHref);
+                    }
+                })
+            }
+        });
+    </script>
 </head>
 <body>
 <script>
