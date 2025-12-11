@@ -42,9 +42,36 @@ In order to download the REST Client dependency, you should add the following re
 
 ### Basic Usage
 
-#### Authentication with credentials
+#### Authentication with API Key
 
-The next sample code shows how to instantiate ThingsBoard Client, perform login and get user details of current logged in user.
+{% assign sinceVersion = "4.3" %}
+{% include templates/since.md %}
+
+You can authenticate using an API key without the need for login/logout operations:
+
+```java
+// ThingsBoard REST API URL
+String url = "http://localhost:8080";
+
+// Your API key
+String apiKey = "YOUR_API_KEY_VALUE";
+
+// Creating new rest client with API key authentication
+RestClient client = RestClient.withApiKey(url, apiKey);
+
+// Get information of current user and print it
+client.getUser().ifPresent(System.out::println);
+
+// Close the client when done
+client.close();
+```
+{: .copy-code}
+
+<hr>
+
+#### Authentication with credentials (deprecated)
+
+Alternatively, you can create a ThingsBoard Client instance, authenticate, and retrieve the data of the currently logged-in user.
 
 ```java
 // ThingsBoard REST API URL
@@ -69,37 +96,18 @@ client.close();
 
 <hr>
 
-#### Authentication with API Key
-
-{% assign sinceVersion = "4.3" %}
-{% include templates/since.md %}
-
-Alternatively, you can authenticate using an API key without the need for login/logout operations:
-
-```java
-// ThingsBoard REST API URL
-String url = "http://localhost:8080";
-
-// Your API key
-String apiKey = "YOUR_API_KEY_VALUE";
-
-// Creating new rest client with API key authentication
-RestClient client = RestClient.withApiKey(url, apiKey);
-
-// Get information of current user and print it
-client.getUser().ifPresent(System.out::println);
-
-// Close the client when done
-client.close();
-```
-{: .copy-code}
-
-<hr>
-
 ## Examples
 
-The examples below demonstrate how to use the API with standard username/password authentication.
-If you prefer to use an API key, simply replace the lines:
+The examples below demonstrate authentication using an API key.
+
+If you prefer to use username/password authentication, simply replace the following lines:
+
+```java
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
+```
+
+with:
 
 ```java
 String username = "tenant@thingsboard.org";
@@ -108,14 +116,9 @@ RestClient client = new RestClient(url);
 client.login(username, password);
 ```
 
-with the API key initialization:
-
-```java
-String apiKey = "YOUR_API_KEY_VALUE";
-RestClient client = RestClient.withApiKey(url, apiKey);
-```
-
 The rest of the logic remains exactly the same.
+
+> Don&#39;t forget to replace <span class="code-light">YOUR_API_KEY_VALUE</span> with your actual [API key](/docs/{{docsPrefix}}user-guide/security/api-keys/){:target="_blank"}.
 
 ### Get user permissions
 
@@ -125,11 +128,9 @@ The following sample code shows how to get allowed permissions of current logged
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Perform login with API key
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 // Get if user has generic read permission on device entities
 AllowedPermissionsInfo permissionsInfo = client.getAllowedPermissions().orElseThrow();
@@ -138,7 +139,6 @@ boolean hasDeviceReadPermission =
 System.out.println("Has generic devices read permission: " + hasDeviceReadPermission);
         
 // Perform logout of current user and close client
-client.logout();
 client.close();
 ```
 
@@ -152,13 +152,11 @@ The following sample code shows how to fetch tenant devices via page link.
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Default Tenant Administrator credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
+// Authentication using an API key
+String apiKey = "YOUR_API_KEY_VALUE";
 
-// Creating new rest client and auth with credentials
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Creating new rest client and auth with API key
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 PageData<Device> tenantDevices;
 PageLink pageLink = new PageLink(10);
@@ -170,7 +168,6 @@ do {
 } while (tenantDevices.hasNext());
 
 // Perform logout of current user and close the client
-client.logout();
 client.close();
 ```
 {: .copy-code}
@@ -185,13 +182,11 @@ The following sample code shows how to fetch tenant dashboards via page link.
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Default Tenant Administrator credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
+// Authentication using an API key
+String apiKey = "YOUR_API_KEY_VALUE";
 
-// Creating new rest client and auth with credentials
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Creating new rest client and auth with API key
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 PageData<DashboardInfo> pageData;
 PageLink pageLink = new PageLink(10);
@@ -203,7 +198,6 @@ do {
 } while (pageData.hasNext());
 
 // Perform logout of current user and close the client
-client.logout();
 client.close();
 ```
 {: .copy-code}
@@ -218,11 +212,9 @@ The following sample code shows how to fetch entity groups.
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Perform login with Customer User API key
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 // Iterate over all available entity group types
 for (EntityType type : EntityType.values()) {
@@ -232,7 +224,6 @@ for (EntityType type : EntityType.values()) {
 }
         
 // Perform logout of current user and close client
-client.logout();
 client.close();
 ```
 {: .copy-code}
@@ -246,11 +237,9 @@ The following sample code shows how to use Entity Data Query API to count total 
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Perform login with default Customer User API key
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 // Create entity filter to get all devices
 EntityTypeFilter typeFilter = new EntityTypeFilter();
@@ -283,7 +272,6 @@ Long totalActiveDevicesCount = client.countEntitiesByQuery(totalActiveDevicesQue
 System.out.println("Total devices by the second query: " + totalActiveDevicesCount);
         
 // Perform logout of current user and close the client
-client.logout();
 client.close();
 ```
 {: .copy-code}
@@ -298,11 +286,9 @@ The following sample code shows how to use Entity Data Query API to get all acti
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
-String username = "tenant@thingsboard.org";
-String password = "tenant";
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Perform login with default Customer User API key
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 // Create entity filter to get only devices
 EntityTypeFilter typeFilter = new EntityTypeFilter();
@@ -350,7 +336,6 @@ do {
 } while (entityPageData.hasNext());
 
 // Perform logout of current user and close client
-client.logout();
 client.close();
 ```
 {: .copy-code}
@@ -364,11 +349,9 @@ The following sample code demonstrates basic concepts of device management API (
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
 
-// Perform login with default Customer User credentials
-String username = "tenantg@thingsboard.org";
-String password = "tenant";
-RestClient client = new RestClient(url);
-client.login(username, password);
+// Perform login with default Customer User API key
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
 
 // Construct device object
 String newDeviceName = "Test Device";
@@ -403,7 +386,6 @@ attributes.forEach(System.out::println);
 client.deleteDevice(savedDevice.getId());
 
 // Perform logout of current user and close client
-client.logout();
 client.close();
 ```
 {: .copy-code}
@@ -441,8 +423,17 @@ tenantUser.setTenantId(tenant.getId());
 tenantUser = restClient.saveUser(tenantUser, false);
 restClient.activateUser(tenantUser.getId(), tenantPassword);
 
-// login with Tenant
-login(tenantUsername, tenantPassword);
+// create API key for Tenant User
+ApiKeyInfo apiKeyInfo = new ApiKeyInfo();
+apiKeyInfo.setUserId(tenantUser.getId());
+apiKeyInfo.setDescription(tenantUsername + " API key");
+ ApiKey savedApiKey = restClient.saveApiKey(apiKeyInfo);
+
+// API key value of Tenant User
+String apiKeyValue = savedApiKey.getValue();
+
+// re-init restClient with Tenant User's API key
+restClient = RestClient.withApiKey(url, apiKeyValue);
 
 // Loading Widget from file
 Path widgetFilePath = Paths.get("src/main/resources/custom_widget.json");
