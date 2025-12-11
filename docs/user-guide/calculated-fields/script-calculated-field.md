@@ -6,7 +6,6 @@ breadcrumbs: "true"
 breadcrumbs-steps: "1"
 hidetoc: "true"
 
-
 expression-script-calculated-fields-1:
   0:
     image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-ce.png

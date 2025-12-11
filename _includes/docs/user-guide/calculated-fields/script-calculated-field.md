@@ -1,4 +1,5 @@
-### Script calculated field
+* TOC 
+{:toc}
 
 For complex calculations, [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} is used.
 It enables advanced operations such as conditional statements, loops, and access to historical data.

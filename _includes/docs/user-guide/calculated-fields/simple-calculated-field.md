@@ -1,4 +1,5 @@
-### Simple calculated field
+* TOC
+{:toc}
 
 Simple calculated fields use basic arithmetic operations (+, -, *, /) and standard functions such as `sqrt` (square root), `pow` (power), `abs` (absolute value), etc.
 

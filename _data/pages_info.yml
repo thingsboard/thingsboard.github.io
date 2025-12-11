@@ -1979,12 +1979,6 @@
 "/docs/paas/eu/user-guide/calculated-fields/":
   url: "/docs/paas/eu/user-guide/calculated-fields/"
   redirect_from: []
-"/docs/paas/eu/user-guide/calculated-fields/script-calculated-field/":
-  url: "/docs/paas/eu/user-guide/calculated-fields/script-calculated-field/"
-  redirect_from: []
-"/docs/paas/eu/user-guide/calculated-fields/simple-calculated-field/":
-  url: "/docs/paas/eu/user-guide/calculated-fields/simple-calculated-field/"
-  redirect_from: []
 "/docs/paas/eu/user-guide/certificates/":
   url: "/docs/paas/eu/user-guide/certificates/"
   redirect_from: []
@@ -2527,12 +2521,6 @@
   redirect_from: []
 "/docs/paas/user-guide/calculated-fields/":
   url: "/docs/paas/user-guide/calculated-fields/"
-  redirect_from: []
-"/docs/paas/user-guide/calculated-fields/script-calculated-field/":
-  url: "/docs/paas/user-guide/calculated-fields/script-calculated-field/"
-  redirect_from: []
-"/docs/paas/user-guide/calculated-fields/simple-calculated-field/":
-  url: "/docs/paas/user-guide/calculated-fields/simple-calculated-field/"
   redirect_from: []
 "/docs/paas/user-guide/certificates/":
   url: "/docs/paas/user-guide/certificates/"
@@ -3748,12 +3736,6 @@
   redirect_from: []
 "/docs/pe/user-guide/calculated-fields/":
   url: "/docs/pe/user-guide/calculated-fields/"
-  redirect_from: []
-"/docs/pe/user-guide/calculated-fields/script-calculated-field/":
-  url: "/docs/pe/user-guide/calculated-fields/script-calculated-field/"
-  redirect_from: []
-"/docs/pe/user-guide/calculated-fields/simple-calculated-field/":
-  url: "/docs/pe/user-guide/calculated-fields/simple-calculated-field/"
   redirect_from: []
 "/docs/pe/user-guide/certificates/":
   url: "/docs/pe/user-guide/certificates/"
