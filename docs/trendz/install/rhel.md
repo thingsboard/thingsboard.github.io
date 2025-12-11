@@ -56,15 +56,11 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 
 ## Installation Steps
 
-### Step 1. Activate Trendz Analytics
-
-{% include templates/trendz/install/activate-trendz-license.md %}
-
-### Step 2. Install Java 17 (OpenJDK)
+### Step 1. Install Java 17 (OpenJDK)
 
 {% include templates/install/rhel-java-install.md %}
 
-### Step 3. Trendz Analytics service installation
+### Step 2. Trendz Analytics service installation
 
 Download installation package.
 
@@ -80,7 +76,7 @@ sudo rpm -Uvh trendz-{{ site.release.trendz_ver }}.rpm
 ```
 {: .copy-code}
 
-### Step 4. Configure Trendz database
+### Step 3. Configure Trendz database
 
 Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
 service from your cloud vendor.
@@ -156,7 +152,7 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
-### Step 5. Run installation script
+### Step 4. Run installation script
 
 Once Trendz service is installed and DB configuration is updated, you can execute the following script:
 
@@ -164,7 +160,7 @@ Once Trendz service is installed and DB configuration is updated, you can execut
 sudo /usr/share/trendz/bin/install/install.sh
 ```
 
-### Step 6. Start Trendz service
+### Step 5. Start Trendz service
 
 Execute the following command to start Trendz Analytics:
 
@@ -182,11 +178,11 @@ http://localhost:8888/trendz
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of
 the server or with a domain name. Also, check that port 8888 opened for public access.
 
-### Step 7. Sync ThingsBoard With Trendz
+### Step 6. Sync ThingsBoard With Trendz
 
 {% include templates/trendz/install/sync-with-tb.md %}
 
-### Step 8. Install Trendz Python Executor
+### Step 7. Install Trendz Python Executor
 
 To utilize all Trendz capabilities, such as Trendz Python Calculation Fields or Prediction Models, it is essential to
 install an additional service: the Trendz Python Executor, which can securely run Python code.

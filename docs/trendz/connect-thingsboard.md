@@ -16,7 +16,7 @@ to the latest version to access all Trendz and ThingsBoard features.
 
 To install Trendz for ThingsBoard 4.2.1 or older:
 
-1. Start from step 2 of the installation guide.
+1. Start from step 1 of the installation guide.
 2. Before the `Start Trendz service` step, configure `TRENDZ_LICENSE_SECRET` and `TB_API_URL`.
 3. Complete all other steps, except for `Sync ThingsBoard With Trendz`.
 4. Perform [post-installation steps](/docs/trendz/post-installation-steps).

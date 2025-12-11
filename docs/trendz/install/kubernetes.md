@@ -23,11 +23,7 @@ Ensure that the node meets specific CPU and RAM requirements, with the typical u
 
 ## Installation Steps
 
-### Step 1. Activate Trendz Analytics
-
-{% include templates/trendz/install/activate-trendz-license.md %}
-
-### Step 2. Clone Trendz Kubernetes scripts
+### Step 1. Clone Trendz Kubernetes scripts
 
 ```bash
 git clone https://github.com/thingsboard/trendz-k8s.git --depth 1
@@ -35,7 +31,7 @@ cd trendz-k8s
 ```
 {: .copy-code}
 
-### Step 3. Configure Trendz database
+### Step 2. Configure Trendz database
 
 Set up an external Postgresql database instance with an empty database named "trendz." This instance can be hosted on services like RDS (AWS) or as your stateful deployment.
 Ensure you have the following information:
@@ -58,7 +54,7 @@ nano trendz-secret.yml
 
 ```
 
-### Step 4. Running
+### Step 3. Running
 
 ```bash
 kubectl apply -f trendz-namespace.yml
@@ -71,7 +67,7 @@ kubectl apply -f trendz-python-executor-deployment.yml
 ```
 {: .copy-code}
 
-### Step 5. Check the logs
+### Step 4. Check the logs
 
 Now check the logs and be sure that the instance is started successfully.
 There should be a next line:
@@ -86,14 +82,14 @@ Where:
 
 * `trendz-pod-name` - trendz pod name obtained from the list of the running trendz pods.
 
-### Step 6. Set up a load balancer
+### Step 5. Set up a load balancer
 
 The last thing is to set up a load balancer to route requests to the Trendz instance. Just update your current load balancer config using reference from the `trendz-ingress.yml` file.
 
 **Do not apply this file, it is just an example.**
 Different environments have different requirements for these configurations, so you need to adjust these settings to your environment.
 
-### Step 7. Sync ThingsBoard With Trendz
+### Step 6. Sync ThingsBoard With Trendz
 
 {% include templates/trendz/install/sync-with-tb.md %}
 
