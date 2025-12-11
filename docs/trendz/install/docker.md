@@ -20,11 +20,7 @@ This guide will help you to install and start Trendz Analytics using Docker on L
 
 ## Installation Steps
 
-### Step 1. Activate Trendz Analytics
-
-{% include templates/trendz/install/activate-trendz-license.md %}
-
-### Step 2. Docker Compose setup
+### Step 1. Docker Compose setup
 
 Create a docker compose file for Trendz Analytics service:
 
@@ -108,7 +104,7 @@ Where:
 - `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}` - Trendz python script executor docker image
 - `SCRIPT_ENGINE_TIMEOUT` - Python script execution timeout
 
-### Step 3. Start Trendz service
+### Step 2. Start Trendz service
 
 {% assign serviceName = "trendz" %}
 {% include templates/install/docker/docker-compose-up.md %}
@@ -116,7 +112,7 @@ Where:
 After executing this command you can open `http://{your-host-ip}:8888` in your browser (for ex. `http://localhost:8888`).
 You should see Trendz login page.
 
-### Step 4. Sync ThingsBoard With Trendz
+### Step 3. Sync ThingsBoard With Trendz
 
 {% include templates/trendz/install/sync-with-tb.md %}
 

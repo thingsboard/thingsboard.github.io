@@ -34,15 +34,11 @@ Proceed here **only** if you have a compelling reason to use a combined Windows 
 
 ## Installation Steps
 
-### Step 1. Activate Trendz Analytics
-
-{% include templates/trendz/install/activate-trendz-license.md %}
-
-### Step 2. Install Java 17 (OpenJDK) 
+### Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/windows-java-install.md %}
 
-### Step 3. Trendz Analytics service installation
+### Step 2. Trendz Analytics service installation
 
 Download and extract the package.
 
@@ -53,7 +49,7 @@ https://dist.thingsboard.io/trendz-windows-{{ site.release.trendz_ver }}.zip
 
 **Note:** We assume you have extracted Trendz package to default location: *C:\Program Files (x86)\trendz*
 
-### Step 4. Configure Trendz database
+### Step 3. Configure Trendz database
 
 Trendz uses PostgreSQL as a database. You can install PostgreSQL on the same serverfor Trendz or use managed PostgreSQL 
 service from your cloud vendor.
@@ -94,7 +90,7 @@ datasource:
 ``` 
 {: .copy-code}
 
-### Step 5. Run installation script
+### Step 4. Run installation script
 
 Launch windows shell (Command Prompt) as Administrator. Change directory to your Trendz installation directory.
 
@@ -113,7 +109,7 @@ Installing Trendz Analytics...
 Trendz Analytics installed successfully!
 ```
 
-### Step 6. Start Trendz service
+### Step 5. Start Trendz service
 
 Now let's start the Trendz service!
 Open the command prompt as an Administrator and execute the following command:
@@ -146,11 +142,11 @@ http://localhost:8888/trendz
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
 the server or with a domain name. Also, check that port 8888 opened for public access.
 
-### Step 7. Sync ThingsBoard With Trendz
+### Step 6. Sync ThingsBoard With Trendz
 
 {% include templates/trendz/install/sync-with-tb.md %}
 
-### Step 8. Install Trendz Python Executor
+### Step 7. Install Trendz Python Executor
 
 To utilize all Trendz capabilities, such as Trendz Python Calculation Fields or Prediction Models, it is essential to
 install an additional service: the Trendz Python Executor, which can securely run Python code.
