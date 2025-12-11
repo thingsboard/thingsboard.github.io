@@ -8,7 +8,7 @@ Choosing the right architecture for your deployment depends on the infrastructur
 
 In the following sections, you can find total infrastructure cost calculations for ThingsBoard deployed using AWS.
 
-<b>Important notice:</b> All pricing below is approximate and provided as an example, based only on core infrastructure components costs (computing, storage, load-balancing). A production-grade environment typically requires additional operational services - such as backup tools, monitoring and secrets management - all of which will further increase the total cost. Please consult your cloud provider to get accurate pricing per your use case.
+<b>Important notice:</b> All pricing below is approximate and provided as an example, based only on core infrastructure components costs (computing, storage, load-balancing). A production-grade environment typically requires additional operational services, such as backup tools, monitoring and secrets management. All of these will further increase the total cost. Please consult your cloud provider to get accurate pricing per your use case.
 
 ## Key infrastructure characteristics
 
@@ -32,12 +32,12 @@ Your choice of deployment affects how easily you can install, manage, and grow y
             <td>Easiest to install.</td>
         </tr>
         <tr>
-            <td><strong>Single-AZ Scalable Microservices (Scenario B)</strong></td>
+            <td><strong>Single-Node Cluster (Scenario B)</strong></td>
             <td>Expected growth in devices and users, starting small.</td>
             <td>Provides a good balance of initial startup cost and future scalability.</td>
         </tr>
         <tr>
-            <td><strong>Multi-AZ High Availability Microservices (Scenario C)</strong></td>
+            <td><strong>High Availability Microservices (Scenario C)</strong></td>
             <td>Strict requirements for uptime (high-availability) and reliability (fault-tolerance).</td>
             <td>Ensures the system remains available even if one data center (Availability Zone) fails.</td>
         </tr>
@@ -48,15 +48,40 @@ Your choice of deployment affects how easily you can install, manage, and grow y
 
 * Standalone deployment scales vertically (adding more CPU/RAM to a single machine).
 
-* Microservice deployment scales horizontally (adding more servers).
+* Microservice deployment (MSA) scales horizontally (adding more servers).
 
-**Database and Performance Limits**:
+### Database topology approach
 
-It's important to plan for how much data you will save (persisted data points). The number of data points you can record per second is heavily influenced by your database choice.
+It is important to plan both amount of data you expect to store (persisted telemetry) and amount of data will be queried (dashboard widgets, API responses). The volume of data your system can write and read with sustainable performance is significantly influenced by your database choice.
 
-* Using Only PostgreSQL: If you plan to use PostgreSQL for all data, the recommended limit is 20,000 data points recorded per second.
+ThingsBoard supports two primary database topologies: SQL-only and Hybrid.
 
-* Using a Hybrid Database (PostgreSQL and Cassandra): This approach uses Cassandra for telemetry (high-volume time-series data) and PostgreSQL for other critical data (like device attributes and latest time-series). With this setup, you can scale telemetry write operations up to 1 million data points per second. Important Note: The 20,000 per second limit still applies to attribute updates, as these are written to PostgreSQL.
+1. **SQL-only topology** uses PostgreSQL exclusively for storing all ThingsBoard data, including entities and telemetry.
+  This approach simplifies architecture and maintenance, and best suited for environments with predictable data volume.
+2. **Hybrid topology** uses Cassandra database for historical time-series (telemetry) data, while PostgreSQL handles entity and latest telemetry data. Deploying a dedicated NoSQL database enables exclusive features, such as per-item telemetry retention, and provides more predictable storage management, but comes with increased architectural complexity and maintenance overhead.
+  This approach is best for environments with continuous telemetry and data volume growth, requiring optimized storage for historical time-series.
+
+#### Choosing the right approach
+
+There is no universal hard limit on the number of reads or writes a PostgreSQL-only topology can handle, nor is there a specific threshold where a Hybrid approach becomes mandatory. Performance relies heavily on use-case specifics, such as the number of devices, telemetry sending interval and volume, dashboard complexity, and the way telemetry is processed and stored.
+
+However, we generally recommend considering the Hybrid topology if any of the following characteristics match your ThingsBoard environment:
+
+- **Long retention periods (1 year or more) are required, and older data is frequently queried** (dashboards or API calls).
+  Cassandra offers more predictable and efficient long-term storage, especially when the total dataset grows into hundreds of gigabytes.
+- **Dashboards display complex widgets with multiple time-series on a single page**. That is especially relevant for dashboards with time windows spanning weeks, or using aggregations with large amount of data points and short grouping intervals.
+  ThingsBoard’s telemetry storage model is significantly more optimized for Cassandra when reading older or wide-range timestamp data.
+- **Different telemetry types require different retention periods.**
+  PostgreSQL supports only global TTL; Cassandra allows per-key or per-row TTL, enabling flexible retention strategies.
+
+Additionally, before opting for a Hybrid topology, keep in mind the architectural implications introduced by Cassandra:
+
+- **Your engineering team must be prepared to operate two distinct databases simultaneously**, and possess (or develop) expertise in Cassandra’s architecture and operational model.
+  Cassandra is a distributed database requiring specialized maintenance routines, which differ substantially from SQL systems. Its operational management requires unique processes and dedicated tools.
+- **Expect increased architectural complexity and higher infrastructure costs.**
+  While offering better efficiency for telemetry, Cassandra requires additional server resources and careful cluster management compared to a PostgreSQL-only deployment.
+
+While it is crucial to set up a suitable database architecture during initial deployment to ensure the best performance with minimal infrastructure and maintenance costs - note that it is possible to [migrate from PostgreSQL-only topology to a hybrid one](https://github.com/thingsboard/database-migrator) in case required.
 
 ## Deployment scenarios
 
@@ -78,7 +103,7 @@ You can further improve this architecture by applying optional addons, described
 
 - AWS EC2 Instance: `m7g.xlarge` (4 vCPUs, 16 GiB memory, ARM64 architecture)
 
-**Application Workloads:**
+**Application Components:**
 
 The following services run directly on the host:
 <table>
@@ -93,8 +118,8 @@ The following services run directly on the host:
         <td>Monolith ThingsBoard application</td>
     </tr>
     <tr>
-        <td>HAProxy</td>
-        <td>Lightweight proxy/load balancer for managing external traffic</td>
+        <td>Reverse Proxy</td>
+        <td>Generic proxy/load balancer for managing external traffic</td>
     </tr>
     <tr>
         <td>PostgreSQL</td>
@@ -149,13 +174,15 @@ Scenario A provides the simplest and most cost-efficient deployment path but is 
 
 This scenario is ideal for early-stage deployments but may require vertical scaling as system demands increase.
 
-### Scenario B (Scalable Deployment)
+### Scenario B (Single-Node Cluster)
 
-This reference targets horizontally scalable deployment. It is ideal for production environments anticipating future growth beyond initial operational loads. The architecture utilizes managed AWS services - including Amazon EKS, ELB, and RDS - to minimize operational overhead such as instance provisioning, patch management, and backup orchestration.
+This reference targets horizontally scalable deployment. While ThingsBoard within this environment still runs as a single instance (monolith), the overall architecture is fundamentally different from [Scenario A](#scenario-a-monolith). By deploying into a Kubernetes cluster (EKS), this setup achieves true horizontal scalability and self-healing capabilities.
+
+It is ideal for production environments anticipating future growth beyond initial operational loads. The architecture utilizes managed AWS services (including Amazon EKS, ELB, and RDS) to minimize operational overhead such as instance provisioning, patch management, and backup orchestration.
 
 The deployment pattern includes two configuration options, each optimized for varying data ingestion throughput requirements.
 
-#### Setup 1: General-Purpose Monolith in EKS
+#### Setup 1: General-Purpose Scalable Deployment
 
 For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS as entity and telemetry data storage. Public access to the Thingsboard application inside the cluster provided by ELB.
 
@@ -166,7 +193,7 @@ For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS
 - EKS cluster provisioned with a single worker node
 - Instance type: `m7g.xlarge` (4 vCPUs, 16 GiB memory, ARM64 architecture)
 
-**Application Workloads:**
+**Application Components:**
 
 The following containerized services are deployed to the compute node:
 <table>
@@ -234,7 +261,7 @@ The following containerized services are deployed to the compute node:
 
 *Estimated Total:* ~$282/month
 
-#### Setup 2: High-Capability Monolith in EKS
+#### Setup 2: High-Capability Scalable Deployment
 
 With increased telemetry write/read request rates, the architecture may be transitioned to a **hybrid database topology**. This approach separates entity data (PostgreSQL) from time-series data (Cassandra), enabling independent scaling of read- and write-heavy workloads.
 
@@ -296,9 +323,9 @@ This scenario is ideal for organizations anticipating future growth and requirin
 
 This deployment option is designed for production instances requiring high availability and fault tolerance. Additionally, as a result of scaled amount of ThingsBoard and third-party services, it can handle higher operational loads and data ingestion rates with increased server capacity.
 
-This scenario is a direct upgrade to [Scenario B](#scenario-b-scalable-deployment), featuring multiple replicas spanned across different Availability Zones in horizontal scaling manner. Like it's preceding scenario, the architecture leverages AWS managed services that provide similar perks of minimalized operational overhead of infrastructure provisioning, patch management, and backup orchestration. Similarly to [Scenario B](#scenario-b-scalable-deployment), there are two distinct configurations optimized for varying data ingestion requirements.
+This scenario is a direct upgrade to [Scenario B](#scenario-b-single-node-cluster), featuring multiple replicas spanned across different Availability Zones in horizontal scaling manner. Like it's preceding scenario, the architecture leverages AWS managed services that provide similar perks of minimalized operational overhead of infrastructure provisioning, patch management, and backup orchestration. Similarly to [Scenario B](#scenario-b-single-node-cluster), there are two distinct configurations optimized for varying data ingestion requirements.
 
-#### Setup 1: General-Purpose Cluster
+#### Setup 1: General-Purpose MSA Cluster
 
 For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS as entity and telemetry data storage. Public access to the Thingsboard application inside the cluster provided by ELB.
 
@@ -310,7 +337,7 @@ For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS
   - each of 3 worker nodes are deployed within corresponding Availability Zone
 - Instance type: `m7g.xlarge` (4 vCPUs, 16 GiB memory, ARM64 architecture)
 
-**Application Workloads:**
+**Application Components:**
 
 The following containerized services are deployed accross all compute nodes. Each service should utilize anti-affinity rules to ensure proper spreading accross Availability Zones:
 <table>
@@ -402,9 +429,9 @@ Elastic IP: 3 × $3.60/month - $11/month
 
 *Estimated Total:* ~$630/month
 
-#### Setup 2: High-Capability Cluster
+#### Setup 2: High-Capability MSA Cluster
 
-Similarly to [Scenario B](#scenario-b-scalable-deployment), the second configuration option transitions to a **hybrid database topology**. This enables independent scaling of read-heavy and write-heavy workloads.
+Similarly to [Scenario B](#scenario-b-single-node-cluster), the second configuration option transitions to a **hybrid database topology**. This enables independent scaling of read-heavy and write-heavy workloads.
 
 <object width="80%" data="/images/reference/deployment/scenario-c-hybrid.png"></object>
 
