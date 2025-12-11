@@ -100,13 +100,35 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 11. Using
+## Step 11. Configure Trendz (Optional)
+
+### 11.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### 11.2. Obtain and configure license key
+
+{% include templates/install/trendz/k8s-license-secret-trendz.md %}
+
+### 11.3. Create a Trendz database in the existing Azure Database
+
+{% include templates/install/trendz/azure/k8s-trendz-db-creating.md %}
+
+### 11.4. Trendz starting
+
+{% include templates/install/trendz/k8s-trendz-starting.md %}
+
+## Step 12. Using
 
 {% include templates/install/azure/using.md %}
 
-## Upgrading
+## Upgrading to new ThingsBoard version
 
 {% include templates/install/azure/upgrading-msa.md %}
+
+## Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 ## Next steps
 

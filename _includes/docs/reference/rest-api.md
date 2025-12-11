@@ -99,9 +99,11 @@ Using API keys
 To authenticate via API key, include it in the X-Authorization header with the "**ApiKey**" prefix:
 
 ```text
-X-Authorization: ApiKey YOUR_API_KEY_VALUE
+X-Authorization: ApiKey $YOUR_API_KEY_VALUE
 ```
 {: .copy-code}
+
+&#42; Replace **$YOUR_API_KEY_VALUE** with the API key.
 
 **Important:** API keys should only be used over HTTPS.
 

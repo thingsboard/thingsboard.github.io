@@ -98,6 +98,56 @@ client.close();
 
 ## Examples
 
+#### Authentication with API Key
+
+{% assign sinceVersion = "4.3" %}
+{% include templates/since.md %}
+
+Alternatively, you can authenticate using an API key without the need for login/logout operations:
+
+```java
+// ThingsBoard REST API URL
+String url = "http://localhost:8080";
+
+// Your API key
+String apiKey = "YOUR_API_KEY_VALUE";
+
+// Creating new rest client with API key authentication
+RestClient client = RestClient.withApiKey(url, apiKey);
+
+// Get information of current user and print it
+client.getUser().ifPresent(System.out::println);
+
+// Close the client when done
+client.close();
+```
+{: .copy-code}
+
+<hr>
+
+## Examples
+
+The examples below demonstrate how to use the API with standard username/password authentication.
+If you prefer to use an API key, simply replace the lines:
+
+```java
+String username = "tenant@thingsboard.org";
+String password = "tenant";
+RestClient client = new RestClient(url);
+client.login(username, password);
+```
+
+with the API key initialization:
+
+```java
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
+```
+
+The rest of the logic remains exactly the same.
+
+### Get user permissions
+
 The examples below demonstrate authentication using an API key.
 
 If you prefer to use username/password authentication, simply replace the following lines:
@@ -141,6 +191,7 @@ System.out.println("Has generic devices read permission: " + hasDeviceReadPermis
 // Perform logout of current user and close client
 client.close();
 ```
+{: .copy-code}
 
 <hr>
 
@@ -507,6 +558,7 @@ restClient.activateUser(user.getId(), userPassword);
 
 restClient.addEntitiesToEntityGroup(customer1Administrators.getId(), Collections.singletonList(user.getId()));
 ```
+{: .copy-code}
 
 <hr>
 
