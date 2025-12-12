@@ -5,8 +5,11 @@ category: Other devices
 connectivity: LTE
 vendor: Lansitec
 deviceImageFileName: cat1-macro-bluetooth-gateway.png
----
+hardwareTypes: Gateways
+industry: [Smart Cities, Smart Buildings]
+useCase: [Smart Office, Fleet Tracking]
 
+---
 * TOC
 {:toc}
 

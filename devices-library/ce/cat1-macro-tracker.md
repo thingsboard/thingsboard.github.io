@@ -5,8 +5,11 @@ category: Other devices
 connectivity: LTE
 vendor: Lansitec
 deviceImageFileName: cat1-macro-tracker.png
----
+hardwareTypes: Trackers
+industry: [Transportation & Logistics, Smart Cities, Security]
+useCase: Fleet Tracking
 
+---
 * TOC
 {:toc}
 

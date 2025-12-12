@@ -7,8 +7,11 @@ vendor: Lansitec
 deviceImageFileName: cat1-container-tracker.png
 docsPrefix: pe/
 docsTag: pe
----
+hardwareTypes: Trackers
+industry: [Transportation & Logistics, Smart Cities]
+useCase: Fleet Tracking
 
+---
 * TOC
 {:toc}
 

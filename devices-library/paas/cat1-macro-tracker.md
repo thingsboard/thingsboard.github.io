@@ -7,8 +7,11 @@ vendor: Lansitec
 deviceImageFileName: cat1-macro-tracker.png
 docsPrefix: paas/
 docsTag: paas
----
+hardwareTypes: Trackers
+industry: [Transportation & Logistics, Smart Cities, Security]
+useCase: Fleet Tracking
 
+---
 * TOC
 {:toc}
 

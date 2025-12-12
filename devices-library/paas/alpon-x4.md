@@ -2,14 +2,17 @@
 layout: devices-library-article
 title: How to connect ALPON X4 Edge Computer to ThingsBoard?
 category: Other devices
-connectivity: WIFI, Bluetooth, LTE, Ethernet
+connectivity: Ethernet/ WIFI/ Bluetooth/ LTE
 vendor: Sixfab
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: sixfab-alpon-x4.jpg
 docsPrefix: paas/
 docsTag: paas
----
+hardwareTypes: Gateways
+industry: [Industrial Manufacturing, Smart Cities, Smart Buildings, Energy Management, Environmental Monitoring, Security]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 
+---
 * TOC
 {:toc}
 

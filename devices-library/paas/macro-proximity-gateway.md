@@ -2,13 +2,16 @@
 layout: devices-library-article
 title: How to connect Macro Proximity Gateway to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: macro-proximity-gateway.png
 docsPrefix: paas/
 docsTag: paas
----
+hardwareTypes: Gateways
+industry: [Smart Cities, Industrial Manufacturing, Security]
+useCase: [Smart Office, Fleet Tracking]
 
+---
 * TOC
 {:toc}
 

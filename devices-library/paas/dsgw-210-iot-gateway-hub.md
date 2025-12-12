@@ -2,13 +2,16 @@
 layout: devices-library-article
 title: How to connect DSGW-210 Smart Gateway Hub to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: Bluetooth/ Zigbee/ LTE/ WIFI/ Ethernet
 vendor: Dusun
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: dsgw-210-iot-gateway-hub.jpg
 docsPrefix: paas/
----
+hardwareTypes: Gateways
+industry: [Smart Buildings, Industrial Manufacturing]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 
+---
 * TOC
 {:toc}
 

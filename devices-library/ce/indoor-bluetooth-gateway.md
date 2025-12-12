@@ -2,11 +2,14 @@
 layout: devices-library-article
 title: How to connect Indoor Bluetooth Gateway to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: Bluetooth/ LoRaWAN
 vendor: Lansitec
 deviceImageFileName: indoor-bluetooth-gateway.png
----
+hardwareTypes: Gateways
+industry: [Smart Buildings, Retail]
+useCase: [Smart Office, Fleet Tracking]
 
+---
 * TOC
 {:toc}
 

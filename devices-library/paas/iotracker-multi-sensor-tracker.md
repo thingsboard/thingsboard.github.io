@@ -2,15 +2,18 @@
 layout: devices-library-article
 title: How to connect ioTracker Multi-sensor tracker to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: ioThings
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: iotracker-multi-sensor-tracker.png
 converters20: true
 model: ioTracker
 docsPrefix: paas/
----
+hardwareTypes: Trackers
+industry: [Agriculture, Environmental Monitoring]
+useCase: [Fleet Tracking, Environment Monitoring]
 
+---
 * TOC
 {:toc}
 

@@ -5,8 +5,11 @@ category: Other devices
 connectivity: LTE
 vendor: Lansitec
 deviceImageFileName: cat1-badge-tracker.png
----
+hardwareTypes: Trackers
+industry: [Security, Smart Buildings]
+useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
 
+---
 * TOC
 {:toc}
 

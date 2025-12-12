@@ -2,11 +2,14 @@
 layout: devices-library-article
 title: How to connect UWB Anchor to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: uwb-anchor.png
----
+hardwareTypes: Trackers
+industry: [Smart Cities, Security, Transportation & Logistics]
+useCase: Fleet Tracking
 
+---
 * TOC
 {:toc}
 

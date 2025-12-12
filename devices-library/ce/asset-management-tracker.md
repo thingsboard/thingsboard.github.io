@@ -2,11 +2,14 @@
 layout: devices-library-article
 title: How to connect Asset Management Tracker to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: asset-management-tracker.png
----
+hardwareTypes: Sensors
+industry: [Transportation & Logistics, Smart Cities]
+useCase: Fleet Tracking
 
+---
 * TOC
 {:toc}
 

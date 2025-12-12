@@ -2,13 +2,16 @@
 layout: devices-library-article
 title: How to connect Container Tracker to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: container-tracker.png
 docsPrefix: pe/
 docsTag: pe
----
+hardwareTypes: Trackers
+industry: [Transportation & Logistics, Smart Cities]
+useCase: Fleet Tracking
 
+---
 * TOC
 {:toc}
 

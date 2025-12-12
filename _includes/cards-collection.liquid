@@ -71,6 +71,14 @@
             {%- for page in pages_in_dir -%}
                 {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
                 <h1>{{ deviceName }}</h1>
+                {% if page.industry %}
+                    <ul>
+                        {% for item in page.industry %}
+                            <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+
 
             {%- endfor -%}
         {%- endfor -%}

@@ -2,13 +2,16 @@
 layout: devices-library-article
 title: How to connect Valve Positioning Sensor to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: valve-positioning-sensor.png
 docsPrefix: pe/
 docsTag: pe
----
+hardwareTypes: Sensors
+industry: [Industrial Manufacturing, Smart Cities, Energy Management, Smart Buildings]
+useCase: [Smart energy, Smart Farming, Smart Irrigation]
 
+---
 * TOC
 {:toc}
 

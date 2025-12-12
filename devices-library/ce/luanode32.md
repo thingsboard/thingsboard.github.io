@@ -3,11 +3,14 @@ layout: devices-library-article
 title: How to connect LuaNode32 to ThingsBoard?
 category: Microcontrollers
 chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth, BLE
+connectivity: [HTTP, MQTT, WIFI, Bluetooth, BLE]
 vendor: NodeMCU
 deviceImageFileName: luanode32.jpg
----
+hardwareTypes: Microcontrollers
+industry: Industrial Manufacturing
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 
+---
 * TOC
 {:toc}
 

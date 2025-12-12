@@ -7,8 +7,11 @@ vendor: Lansitec
 deviceImageFileName: cat1-badge-tracker.png
 docsPrefix: pe/
 docsTag: pe
----
+hardwareTypes: Trackers
+industry: [Security, Smart Buildings]
+useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
 
+---
 * TOC
 {:toc}
 

@@ -2,11 +2,14 @@
 layout: devices-library-article
 title: How to connect Solar Bluetooth Gateway to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: solar-bluetooth-gateway.png
----
+hardwareTypes: Gateways
+industry: [Environmental Monitoring, Smart Cities]
+useCase: [Smart Office, Fleet Tracking]
 
+---
 * TOC
 {:toc}
 

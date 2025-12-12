@@ -3,13 +3,15 @@ layout: devices-library-article
 title: How to connect Raspberry Pi Zero W to ThingsBoard?
 category: Single-board computers
 chip: BCM2835
-connectivity: WIFI, Bluetooth, BLE
+connectivity: WIFI/ Bluetooth/ BLE
 vendor: Raspberry
 deviceImageFileName: raspberry-pi-zero-w.jpg
 docsPrefix: pe/
+hardwareTypes: Single-board computers
+industry: [Smart Cities, Retail, Healthcare, Smart Buildings, Environmental Monitoring]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
+
 ---
-
-
 * TOC
 {:toc}
 

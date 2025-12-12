@@ -2,15 +2,18 @@
 layout: devices-library-article
 title: How to connect Vicki Smart Radiator Thermostat to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: MClimate
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vicki-smart-radiator-thermostat.png
 converters20: true
 model: Vicki
 docsPrefix: paas/
----
+hardwareTypes: Sensors
+industry: [Smart Buildings, Smart Cities, Energy Management, Healthcare]
+useCase: [Smart energy, Smart Office, "Health Care: Smart Assisted Living Solution"]
 
+---
 * TOC
 {:toc}
 

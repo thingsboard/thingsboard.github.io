@@ -4,8 +4,12 @@ title: How to connect NCD Vibration Temperature Sensor to ThingsBoard?
 category: Other devices
 deviceImageFileName: ncd-vibration-sensor.png
 docsPrefix: paas/
----
+hardwareTypes: Sensors
+connectivity: [DigiMesh/ MQTT, WIFI, Ethernet]
+industry: [Industrial Manufacturing, Smart Cities, Environmental Monitoring, Energy Management]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, "Health Care: Smart Assisted Living Solution", Waste Management]
 
+---
 * TOC
 {:toc}
 

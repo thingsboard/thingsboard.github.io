@@ -2,12 +2,14 @@
 layout: devices-library-article
 title: How to connect Temco T3E-6CT to ThingsBoard?
 category: Other devices
-connectivity: HTTP, BACnet, Ethernet, WIFI, RS485
+connectivity: HTTP/ Ethernet/ WIFI/ BACnet/ RS485
 vendor: Temco Controls
 deviceImageFileName: temco-t3e-6ct.jpg
+hardwareTypes: Other devices
+industry: [Industrial Manufacturing, Smart Cities, Smart Buildings, Energy Management]
+useCase: [Smart energy, Smart Metering]
+
 ---
-
-
 * TOC
 {:toc}
 

@@ -2,14 +2,17 @@
 layout: devices-library-article
 title: How to connect VIBit to ThingsBoard?
 category: Other devices
-connectivity: Wi-Fi, Bluetooth 5.0, RS 485
+connectivity: Wi-Fi/RS-485/Bluetooth
 vendor: MachineAstro Pvt Ltd
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vibit-sensor-image.png
 docsPrefix: paas/
 docsTag: paas
----
+hardwareTypes: Sensors
+industry: [Industrial Manufacturing, Smart Cities, Security]
+useCase: [Fleet Tracking, Smart Retail, "Health Care: Smart Assisted Living Solution"]
 
+---
 * TOC
 {:toc}
 

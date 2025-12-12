@@ -7,9 +7,11 @@ connectivity: Ethernet
 vendor: Hardkernel
 deviceImageFileName: odroid-xu4.jpg
 docsPrefix: paas/
+hardwareTypes: Single-board computers
+industry: [Industrial Manufacturing, Energy Management]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
+
 ---
-
-
 * TOC
 {:toc}
 

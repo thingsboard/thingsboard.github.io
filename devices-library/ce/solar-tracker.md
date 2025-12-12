@@ -2,11 +2,14 @@
 layout: devices-library-article
 title: How to connect Solar Tracker to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: solar-tracker.png
----
+hardwareTypes: Trackers
+industry: [Energy Management, Agriculture, Smart Cities, Industrial Manufacturing]
+useCase: [Smart energy, Smart Farming]
 
+---
 * TOC
 {:toc}
 

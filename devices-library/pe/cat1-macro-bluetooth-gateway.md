@@ -7,8 +7,11 @@ vendor: Lansitec
 deviceImageFileName: cat1-macro-bluetooth-gateway.png
 docsPrefix: pe/
 docsTag: pe
----
+hardwareTypes: Gateways
+industry: [Smart Cities, Smart Buildings]
+useCase: [Smart Office, Fleet Tracking]
 
+---
 * TOC
 {:toc}
 

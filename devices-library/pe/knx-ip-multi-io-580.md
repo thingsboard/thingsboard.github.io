@@ -6,8 +6,11 @@ connectivity: KNX
 vendor: Weinzierl
 deviceImageFileName: knx-ip-multi-io-580.png
 docsPrefix: pe/
----
+hardwareTypes: Other devices
+industry: [Smart Buildings, Smart Cities, Industrial Manufacturing, Energy Management]
+useCase: [Smart energy, Smart Office, Smart Metering]
 
+---
 * TOC
 {:toc}
 

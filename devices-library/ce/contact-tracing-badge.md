@@ -2,11 +2,14 @@
 layout: devices-library-article
 title: How to connect Contact Tracing Badge to ThingsBoard?
 category: Other devices
-connectivity: LoRaWAN®
+connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: contact-tracing-badge.png
----
+hardwareTypes: Trackers
+industry: [Healthcare, Security]
+useCase: "Health Care: Smart Assisted Living Solution"
 
+---
 * TOC
 {:toc}
 

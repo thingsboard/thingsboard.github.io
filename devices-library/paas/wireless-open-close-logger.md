@@ -2,12 +2,15 @@
 layout: devices-library-article
 title: How to connect Wireless open/close logger to ThingsBoard?
 category: Other devices
-connectivity: CoAP, NB-IoT, BLE
+connectivity: BLE/ NB-IoT/ CoAP
 vendor: Efento
 deviceImageFileName: wireless-open-close-logger.png
 docsPrefix: paas/
----
+hardwareTypes: Sensors
+industry: [Smart Buildings, Industrial Manufacturing, Smart Cities, Environmental Monitoring]
+useCase: [Smart energy, Smart Office, Smart Retail, Smart Farming, Waste Management]
 
+---
 * TOC
 {:toc}
 

@@ -6,10 +6,11 @@ chip: Xilinx Zynq Z-7010
 connectivity: Ethernet
 vendor: Adapteva
 deviceImageFileName: the-parallella-board.png
+hardwareTypes: Single-board computers
+industry: [Industrial Manufacturing, Smart Cities, Healthcare, Smart Buildings, Retail]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 
 ---
-
-
 * TOC
 {:toc}
 
