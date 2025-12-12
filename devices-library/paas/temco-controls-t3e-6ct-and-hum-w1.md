@@ -6,7 +6,7 @@ connectivity: HTTP/ Ethernet/ WIFI/ BACnet/ RS485
 vendor: Temco Controls
 deviceImageFileName: temco-t3e-6ct.jpg
 docsPrefix: paas
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Industrial Manufacturing, Smart Cities, Smart Buildings, Energy Management]
 useCase: [Smart energy, Smart Metering]
 

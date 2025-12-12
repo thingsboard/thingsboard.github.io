@@ -7,7 +7,7 @@ connectivity: [HTTP, MQTT, WIFI, Bluetooth]
 vendor: Espressif
 deviceImageFileName: esp32-dev-kit-v4.jpg
 docsPrefix: pe/
-hardwareTypes: Microcontrollers
+hardwareType: Microcontrollers
 industry: Industrial Manufacturing
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

@@ -7,7 +7,7 @@ vendor: MachineAstro Pvt Ltd
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vibit-bp-sensor-image.png
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security]
 useCase: [Smart energy, Environment Monitoring, Fleet Tracking, Waste Management]
 

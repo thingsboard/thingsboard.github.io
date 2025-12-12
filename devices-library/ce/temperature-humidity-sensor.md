@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: temperature-humidity-sensor.png
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare, Industrial Manufacturing]
 useCase: [Environment Monitoring, Smart Office, Smart Farming, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Smart Irrigation, Waste Management]
 

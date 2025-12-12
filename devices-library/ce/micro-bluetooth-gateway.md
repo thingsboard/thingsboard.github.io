@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: micro-bluetooth-gateway.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Smart Buildings, Industrial Manufacturing, Security]
 useCase: [Smart Office, Fleet Tracking]
 

@@ -11,7 +11,7 @@ redirect_from:
     - "/docs/samples/esp32/"
     - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
     - "/docs/samples/esp32/ota/"
-hardwareTypes: Microcontrollers
+hardwareType: Microcontrollers
 industry: Industrial Manufacturing
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: compact-bluetooth-gateway.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Buildings, Smart Cities]
 useCase: [Smart Office, Fleet Tracking]
 

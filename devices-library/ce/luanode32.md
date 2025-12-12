@@ -6,7 +6,7 @@ chip: ESP32
 connectivity: [HTTP, MQTT, WIFI, Bluetooth, BLE]
 vendor: NodeMCU
 deviceImageFileName: luanode32.jpg
-hardwareTypes: Microcontrollers
+hardwareType: Microcontrollers
 industry: Industrial Manufacturing
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

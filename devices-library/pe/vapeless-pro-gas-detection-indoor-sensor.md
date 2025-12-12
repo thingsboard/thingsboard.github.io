@@ -9,7 +9,7 @@ deviceImageFileName: vapeless-pro-gas-detection-indoor-sensor.png
 converters20: true
 model: VapelessPro
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Security, Smart Buildings, Smart Cities]
 useCase: [Smart Office, Smart Metering, Environment Monitoring, "Health Care: Smart Assisted Living Solution"]
 

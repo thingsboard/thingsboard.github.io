@@ -7,7 +7,7 @@ vendor: IOTRouter
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: EG8200.png
 docsPrefix: paas/
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Industrial Manufacturing, Smart Cities, Energy Management, Environmental Monitoring, Transportation & Logistics]
 useCase: [Smart energy, Smart Metering]
 

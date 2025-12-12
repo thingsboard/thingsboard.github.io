@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: helmet-sensor.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security, Healthcare]
 useCase: "Health Care: Smart Assisted Living Solution"
 

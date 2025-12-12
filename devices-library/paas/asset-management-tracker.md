@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: asset-management-tracker.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Transportation & Logistics, Smart Cities]
 useCase: Fleet Tracking
 

@@ -11,7 +11,7 @@ redirect_from:
     - "/docs/samples/raspberry/gpio/"
     - "/docs/samples/raspberry/gpio-android-things/"
     - "/docs/samples/raspberry/temperature/"
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Retail, Healthcare, Smart Buildings, Industrial Manufacturing]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

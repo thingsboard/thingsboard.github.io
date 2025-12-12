@@ -7,7 +7,7 @@ connectivity: Ethernet
 vendor: Adapteva
 deviceImageFileName: the-parallella-board.png
 docsPrefix: paas/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Industrial Manufacturing, Smart Cities, Healthcare, Smart Buildings, Retail]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

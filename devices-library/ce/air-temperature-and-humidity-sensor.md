@@ -9,7 +9,7 @@ deviceImageFileName: air-temperature-and-humidity-sensor.png
 converters20: true
 model: Air_Temperature_Humidity_Sensor
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Industrial Manufacturing, Healthcare]
 useCase: [Environment Monitoring, Smart Office, Smart Farming, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Smart Irrigation, Waste Management]
 

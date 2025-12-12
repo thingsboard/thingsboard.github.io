@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: uwb-anchor.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Smart Cities, Security, Transportation & Logistics]
 useCase: Fleet Tracking
 

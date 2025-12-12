@@ -6,7 +6,7 @@ connectivity: BLE/ NB-IoT/ CoAP
 vendor: Efento
 deviceImageFileName: wireless-open-close-logger.png
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Buildings, Industrial Manufacturing, Smart Cities, Environmental Monitoring]
 useCase: [Smart energy, Smart Office, Smart Retail, Smart Farming, Waste Management]
 

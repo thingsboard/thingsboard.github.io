@@ -5,7 +5,7 @@ category: Single-board computers
 chip: Allwinner H6
 deviceImageFileName: orangepi2giot.png
 docsPrefix: paas/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 connectivity: "HTTP/ MQTT/ (GSM/GPRS)"
 industry: [Smart Cities, Transportation & Logistics]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]

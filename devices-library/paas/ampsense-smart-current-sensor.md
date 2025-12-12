@@ -9,7 +9,7 @@ deviceImageFileName: ampsense-smart-current-sensor.png
 converters20: true
 model: AmpSense
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Energy Management, Smart Buildings, Industrial Manufacturing, Smart Cities]
 useCase: [Smart energy, Smart Metering, Environment Monitoring]
 

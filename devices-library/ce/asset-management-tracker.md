@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: asset-management-tracker.png
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Transportation & Logistics, Smart Cities]
 useCase: Fleet Tracking
 

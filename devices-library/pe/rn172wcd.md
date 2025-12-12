@@ -7,7 +7,7 @@ vendor: Radionode
 deviceImageFileName: rn172wcd.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Industrial Manufacturing]
 useCase: [Environment Monitoring, Smart Office, Smart Retail, "Health Care: Smart Assisted Living Solution"]
 

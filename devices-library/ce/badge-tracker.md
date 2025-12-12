@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: badge-tracker.png
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Security, Smart Buildings]
 useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
 

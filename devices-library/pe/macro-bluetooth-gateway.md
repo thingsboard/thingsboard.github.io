@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: macro-bluetooth-gateway.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Smart Buildings]
 useCase: [Smart Office, Fleet Tracking]
 

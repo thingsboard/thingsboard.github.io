@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: macro-bluetooth-gateway.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Smart Buildings]
 useCase: [Smart Office, Fleet Tracking]
 

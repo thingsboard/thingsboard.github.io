@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: macro-proximity-gateway.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Industrial Manufacturing, Security]
 useCase: [Smart Office, Fleet Tracking]
 

@@ -7,7 +7,7 @@ vendor: ACE Automation
 deviceImageFileName: ace-iot-gateway.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Transportation & Logistics, Security, Environmental Monitoring]
 useCase: [Smart energy, Fleet Tracking, Smart Metering]
 

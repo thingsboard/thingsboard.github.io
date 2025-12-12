@@ -7,7 +7,7 @@ vendor: Milesight
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: am308.jpg
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare]
 useCase: [Environment Monitoring, Smart Office, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Smart Irrigation, Waste Management]
 

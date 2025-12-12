@@ -6,7 +6,7 @@ connectivity: HTTP/ MQTT/ Ethernet/ WIFI
 vendor: Teltonika
 deviceImageFileName: teltonika-rut955.jpeg
 docsPrefix: paas
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Transportation & Logistics, Smart Cities]
 useCase: [Smart energy, Fleet Tracking]
 

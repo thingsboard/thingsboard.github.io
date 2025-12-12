@@ -7,7 +7,7 @@ connectivity: WIFI/ Bluetooth
 vendor: LattePanda
 deviceImageFileName: lattepanda.jpg
 docsPrefix: pe/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Smart Buildings, Retail, Industrial Manufacturing, Healthcare]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

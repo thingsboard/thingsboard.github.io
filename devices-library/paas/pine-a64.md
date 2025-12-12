@@ -7,7 +7,7 @@ connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: PINE64
 deviceImageFileName: pine-a64.jpg
 docsPrefix: paas/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Industrial Manufacturing]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

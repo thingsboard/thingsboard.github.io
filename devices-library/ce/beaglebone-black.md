@@ -6,7 +6,7 @@ chip: Sitara AM3352B
 connectivity: HTTP/ MQTT/ Ethernet
 vendor: BeagleBoard
 deviceImageFileName: beagleboneblack.jpg
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: Industrial Manufacturing
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

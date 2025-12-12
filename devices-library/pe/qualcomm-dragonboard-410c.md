@@ -7,7 +7,7 @@ connectivity: WIFI/ Bluetooth/ GPS
 vendor: Qualcomm
 deviceImageFileName: qualcomm-dragonboard-410c.png
 docsPrefix: pe/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Smart Buildings]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

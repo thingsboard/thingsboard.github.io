@@ -9,7 +9,7 @@ deviceImageFileName: temphu-temperature-and-humidity-sensor.png
 converters20: true
 model: TempHu
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare, Agriculture]
 useCase: [Environment Monitoring, Smart Office, Smart Metering, "Health Care: Smart Assisted Living Solution"]
 

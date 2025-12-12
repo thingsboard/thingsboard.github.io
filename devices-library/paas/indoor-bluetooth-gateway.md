@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: indoor-bluetooth-gateway.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Buildings, Retail]
 useCase: [Smart Office, Fleet Tracking]
 

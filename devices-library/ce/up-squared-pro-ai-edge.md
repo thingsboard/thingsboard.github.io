@@ -6,7 +6,7 @@ chip: Intel Atom x7-E3950 Processor
 connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: Aaeon
 deviceImageFileName: up-squared-pro-ai-edge.png
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Industrial Manufacturing, Smart Cities, Healthcare, Retail]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

@@ -7,7 +7,7 @@ connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: Orange Pi
 deviceImageFileName: orange-pi-4.jpg
 docsPrefix: pe/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Industrial Manufacturing, Smart Cities]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

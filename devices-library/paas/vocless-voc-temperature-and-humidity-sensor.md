@@ -9,7 +9,7 @@ deviceImageFileName: vocless-voc-temperature-and-humidity-sensor.png
 converters20: true
 model: Vocless
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Buildings, Smart Cities, Environmental Monitoring]
 useCase: [Environment Monitoring, Smart Office, Smart Metering]
 

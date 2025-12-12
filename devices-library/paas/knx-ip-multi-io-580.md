@@ -7,7 +7,7 @@ vendor: Weinzierl
 deviceImageFileName: knx-ip-multi-io-580.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Smart Buildings, Smart Cities, Industrial Manufacturing, Energy Management]
 useCase: [Smart energy, Smart Office, Smart Metering]
 

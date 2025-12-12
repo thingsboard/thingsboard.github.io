@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: cat1-macro-tracker.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Transportation & Logistics, Smart Cities, Security]
 useCase: Fleet Tracking
 

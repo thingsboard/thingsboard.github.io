@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: tracking-label.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Transportation & Logistics, Retail, Smart Cities]
 useCase: Fleet Tracking
 

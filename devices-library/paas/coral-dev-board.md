@@ -7,7 +7,7 @@ connectivity: WIFI/ Bluetooth
 vendor: Google
 deviceImageFileName: coral-dev-board.jpg
 docsPrefix: paas/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Healthcare, Security, Industrial Manufacturing]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

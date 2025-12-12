@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: macro-proximity-gateway.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Industrial Manufacturing, Security]
 useCase: [Smart Office, Fleet Tracking]
 

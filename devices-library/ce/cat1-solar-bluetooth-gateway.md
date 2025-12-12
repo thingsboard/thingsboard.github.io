@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LTE
 vendor: Lansitec
 deviceImageFileName: cat1-solar-bluetooth-gateway.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Environmental Monitoring, Smart Cities]
 useCase: [Smart Office, Fleet Tracking]
 

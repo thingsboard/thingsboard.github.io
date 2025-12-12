@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: cat1-container-tracker.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Transportation & Logistics, Smart Cities]
 useCase: Fleet Tracking
 

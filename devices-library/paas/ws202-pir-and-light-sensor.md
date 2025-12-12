@@ -9,7 +9,7 @@ deviceImageFileName: ws202-pir-and-light-sensor.png
 docsPrefix: paas/
 converters20: true
 model: WS202
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Buildings, Environmental Monitoring]
 useCase: [Environment Monitoring, Smart Office, "Health Care: Smart Assisted Living Solution", Waste Management]
 

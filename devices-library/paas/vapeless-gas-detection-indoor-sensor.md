@@ -9,7 +9,7 @@ deviceImageFileName: vapeless-gas-detection-indoor-sensor.png
 converters20: true
 model: Vapeless
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Buildings, Smart Cities, Security]
 useCase: [Environment Monitoring, Smart Office, Smart Metering]
 

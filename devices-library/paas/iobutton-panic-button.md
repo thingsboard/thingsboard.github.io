@@ -9,7 +9,7 @@ deviceImageFileName: iobutton-panic-button.png
 converters20: true
 model: ioButton
 docsPrefix: paas/
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Security, Smart Buildings]
 useCase: "Health Care: Smart Assisted Living Solution"
 

@@ -6,7 +6,7 @@ chip: Rockchip RK3328
 connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: Banana Pi
 deviceImageFileName: banana-pi-bpi-m5.jpg
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Industrial Manufacturing, Smart Cities]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

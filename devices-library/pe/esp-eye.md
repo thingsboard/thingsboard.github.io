@@ -7,7 +7,7 @@ connectivity: [HTTP, MQTT, WIFI, Bluetooth]
 vendor: M5Stack
 deviceImageFileName: esp-eye.png
 docsPrefix: pe/
-hardwareTypes: Microcontrollers
+hardwareType: Microcontrollers
 industry: Security
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

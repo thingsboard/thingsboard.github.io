@@ -5,7 +5,7 @@ category: Other devices
 connectivity: HTTP/ MQTT/ Ethernet/ WIFI
 vendor: ACE Automation
 deviceImageFileName: ace-iot-gateway.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Transportation & Logistics, Security, Environmental Monitoring]
 useCase: [Smart energy, Fleet Tracking, Smart Metering]
 

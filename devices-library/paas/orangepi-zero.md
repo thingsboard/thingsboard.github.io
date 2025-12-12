@@ -5,7 +5,7 @@ category: Single-board computers
 chip: Allwinner H2+
 deviceImageFileName: orangepizero.png
 docsPrefix: paas/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 connectivity: HTTP/ MQTT/ WIFI
 industry: [Smart Cities, Environmental Monitoring]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]

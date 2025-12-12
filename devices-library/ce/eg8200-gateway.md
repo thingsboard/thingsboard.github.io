@@ -6,7 +6,7 @@ connectivity: 4G/LAN/WAN/WiFi
 vendor: IOTRouter
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: EG8200.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Industrial Manufacturing, Smart Cities, Energy Management, Environmental Monitoring, Transportation & Logistics]
 useCase: [Smart energy, Smart Metering]
 

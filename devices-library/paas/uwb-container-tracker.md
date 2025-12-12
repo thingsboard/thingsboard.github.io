@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: uwb-container-tracker.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Transportation & Logistics, Smart Cities, Security]
 useCase: Fleet Tracking
 

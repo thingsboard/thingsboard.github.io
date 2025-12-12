@@ -6,7 +6,7 @@ chip: Broadcom BCM2837B0
 connectivity: HTTP/ MQTT/ WIFI
 vendor: Raspberry
 deviceImageFileName: raspberrypi3bplus.jpg
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Buildings, Smart Cities]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

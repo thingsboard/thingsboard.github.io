@@ -9,7 +9,7 @@ deviceImageFileName: carbonless-co2-temperature-and-humidity-sensor.png
 converters20: true
 model: Carbonless
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare]
 useCase: [Environment Monitoring, Smart Office, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring]
 

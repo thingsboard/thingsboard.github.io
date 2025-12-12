@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: contact-tracing-badge.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Healthcare, Security]
 useCase: "Health Care: Smart Assisted Living Solution"
 

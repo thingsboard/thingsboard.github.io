@@ -9,7 +9,7 @@ deviceImageFileName: iotracker-multi-sensor-tracker.png
 converters20: true
 model: ioTracker
 docsPrefix: pe/
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Agriculture, Environmental Monitoring]
 useCase: [Fleet Tracking, Environment Monitoring]
 

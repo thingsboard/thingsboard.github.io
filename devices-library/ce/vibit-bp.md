@@ -6,7 +6,7 @@ connectivity: Wi-Fi/RS-485/Bluetooth
 vendor: MachineAstro Pvt Ltd
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vibit-bp-sensor-image.png
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security]
 useCase: [Smart energy, Environment Monitoring, Fleet Tracking, Waste Management]
 

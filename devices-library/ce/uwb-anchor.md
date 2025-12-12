@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: uwb-anchor.png
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Smart Cities, Security, Transportation & Logistics]
 useCase: Fleet Tracking
 

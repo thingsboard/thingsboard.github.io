@@ -5,7 +5,7 @@ category: Other devices
 connectivity: HTTP/ Ethernet/ WIFI/ BACnet/ RS485
 vendor: Temco Controls
 deviceImageFileName: temco-tstat10.jpg
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Smart Buildings, Industrial Manufacturing, Energy Management]
 useCase: [Smart energy, Smart Office, Smart Metering]
 

@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LTE
 vendor: Lansitec
 deviceImageFileName: cat1-compact-bluetooth-gateway.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Smart Buildings]
 useCase: [Smart Office, Fleet Tracking]
 

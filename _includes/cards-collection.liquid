@@ -58,7 +58,7 @@
         devices-library/pe-edge/
     " | split: "," -%}
 
-    <ul class="devices-library-list">
+    <div class="card-collection" id="card-collection">
         {%- for dir in dirs -%}
             {%- assign trimmed_dir = dir | strip -%}
 
@@ -71,17 +71,9 @@
             {%- for page in pages_in_dir -%}
                 {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
                 <h1>{{ deviceName }}</h1>
-                {% if page.industry %}
-                    <ul>
-                        {% for item in page.industry %}
-                            <li>{{ item }}</li>
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-
 
             {%- endfor -%}
         {%- endfor -%}
-    </ul>
+    </div>
 
 {% endif %}

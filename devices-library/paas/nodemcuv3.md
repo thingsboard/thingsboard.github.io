@@ -7,7 +7,7 @@ connectivity: HTTP/ MQTT/ WIFI
 vendor: NodeMCU
 deviceImageFileName: nodemcuv3.png
 docsPrefix: paas/
-hardwareTypes: Microcontrollers
+hardwareType: Microcontrollers
 industry: Smart Buildings
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

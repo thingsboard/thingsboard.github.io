@@ -8,7 +8,7 @@ hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vibit-sensor-image.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security]
 useCase: [Fleet Tracking, Smart Retail, "Health Care: Smart Assisted Living Solution"]
 

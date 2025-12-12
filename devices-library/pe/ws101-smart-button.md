@@ -7,7 +7,7 @@ vendor: Milesight
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: ws101-smart-button.png
 docsPrefix: pe/
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Smart Buildings, Smart Cities, Retail, Healthcare]
 useCase: [Smart Office, "Health Care: Smart Assisted Living Solution"]
 

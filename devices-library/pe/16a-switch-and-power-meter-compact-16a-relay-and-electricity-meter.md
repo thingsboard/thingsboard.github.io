@@ -9,7 +9,7 @@ deviceImageFileName: 16a-switch-and-power-meter-compact-16a-relay-and-electricit
 converters20: true
 model: 16A-Switch-Power-Meter
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Energy Management, Smart Buildings, Smart Cities, Industrial Manufacturing]
 useCase: [Smart energy, Smart Metering]
 

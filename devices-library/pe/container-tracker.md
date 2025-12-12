@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: container-tracker.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Transportation & Logistics, Smart Cities]
 useCase: Fleet Tracking
 

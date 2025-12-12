@@ -7,7 +7,7 @@ connectivity: WIFI/ Bluetooth/ BLE
 vendor: Raspberry
 deviceImageFileName: raspberry-pi-zero-w.jpg
 docsPrefix: pe/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Retail, Healthcare, Smart Buildings, Environmental Monitoring]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

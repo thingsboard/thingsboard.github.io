@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: uwb-badge-tracker.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Security, Transportation & Logistics, Smart Cities]
 useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
 

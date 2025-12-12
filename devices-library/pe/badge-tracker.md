@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: badge-tracker.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Security, Smart Buildings]
 useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
 

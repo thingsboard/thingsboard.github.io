@@ -6,7 +6,7 @@ chip: Pentium N3710
 connectivity: WIFI/ Bluetooth
 vendor: UDOO
 deviceImageFileName: udoo-x86-ultra.jpg
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Smart Buildings, Industrial Manufacturing, Healthcare, Retail]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

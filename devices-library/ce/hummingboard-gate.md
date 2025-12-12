@@ -6,7 +6,7 @@ chip: i.MX6DualLite
 connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: SolidRun
 deviceImageFileName: hummingboard-gate.png
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Energy Management, Transportation & Logistics]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

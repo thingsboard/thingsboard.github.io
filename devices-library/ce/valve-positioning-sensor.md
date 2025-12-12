@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LoRaWAN
 vendor: Lansitec
 deviceImageFileName: valve-positioning-sensor.png
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Energy Management, Smart Buildings]
 useCase: [Smart energy, Smart Farming, Smart Irrigation]
 

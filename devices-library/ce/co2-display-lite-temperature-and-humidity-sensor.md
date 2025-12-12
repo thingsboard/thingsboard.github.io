@@ -9,7 +9,7 @@ deviceImageFileName: co2-display-lite-temperature-and-humidity-sensor.png
 converters20: true
 model: CO2_Display_Lite
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare, Industrial Manufacturing]
 useCase: [Environment Monitoring, Smart Office, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management]
 

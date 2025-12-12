@@ -5,7 +5,7 @@ category: Other devices
 connectivity: Bluetooth/ LoRaWAN
 vendor: Lansitec
 deviceImageFileName: indoor-bluetooth-gateway.png
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Buildings, Retail]
 useCase: [Smart Office, Fleet Tracking]
 

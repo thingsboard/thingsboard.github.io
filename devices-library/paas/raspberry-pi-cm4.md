@@ -6,7 +6,7 @@ connectivity: LoRaWAN/ HTTP/ MQTT/ WIFI/ Bluetooth/ 4G
 vendor: Raspberry
 deviceImageFileName: elastel-eg500-02.png
 docsPrefix: paas/
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Industrial Manufacturing, Energy Management, Environmental Monitoring, Smart Cities]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

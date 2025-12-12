@@ -9,7 +9,7 @@ deviceImageFileName: positioning-water-leak-sensor.png
 converters20: true
 model: Positioning_Water_Leak_Sensor
 docsPrefix: paas/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Buildings, Smart Cities, Environmental Monitoring, Industrial Manufacturing]
 useCase: [Water Metering, Smart Farming, Smart Irrigation, Waste Management]
 

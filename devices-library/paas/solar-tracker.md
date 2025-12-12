@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: solar-tracker.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Energy Management, Agriculture, Smart Cities, Industrial Manufacturing]
 useCase: [Smart energy, Smart Farming]
 

@@ -7,7 +7,7 @@ connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: Huawei
 deviceImageFileName: hikey-970-development-board.jpeg
 docsPrefix: paas/
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Healthcare, Industrial Manufacturing, Smart Cities, Security, Retail]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

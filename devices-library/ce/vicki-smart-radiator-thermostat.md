@@ -9,7 +9,7 @@ deviceImageFileName: vicki-smart-radiator-thermostat.png
 converters20: true
 model: Vicki
 docsPrefix: pe/
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Smart Buildings, Smart Cities, Energy Management, Healthcare]
 useCase: [Smart energy, Smart Office, "Health Care: Smart Assisted Living Solution"]
 

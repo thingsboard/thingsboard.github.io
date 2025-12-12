@@ -6,7 +6,7 @@ connectivity: HTTP/ MQTT/ LTE/ NB-IoT/ LTE-M
 vendor: Fusion DAQ
 deviceImageFileName: mixed-input-8-channel-analog-cellular-logger.jpg
 docsPrefix: pe/
-hardwareTypes: Other devices
+hardwareType: Other devices
 industry: [Industrial Manufacturing, Environmental Monitoring]
 useCase: [Smart energy, Smart Metering]
 

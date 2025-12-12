@@ -6,7 +6,7 @@ chip: STM32MP157C
 connectivity: Ethernet/ WIFI/ Bluetooth
 vendor: Seeed Studio
 deviceImageFileName: odyssey-stm32mp157c.png
-hardwareTypes: Single-board computers
+hardwareType: Single-board computers
 industry: [Industrial Manufacturing, Smart Buildings]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

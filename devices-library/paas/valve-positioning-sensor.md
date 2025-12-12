@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: valve-positioning-sensor.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Sensors
+hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Energy Management, Smart Buildings]
 useCase: [Smart energy, Smart Farming, Smart Irrigation]
 

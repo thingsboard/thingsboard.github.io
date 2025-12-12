@@ -10,7 +10,7 @@ redirect_from:
     - "/docs/samples/arduino/"
     - "/docs/samples/arduino/temperature/"
     - "/docs/samples/arduino/sim808-htu21d/"
-hardwareTypes: Microcontrollers
+hardwareType: Microcontrollers
 industry: Industrial Manufacturing
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 

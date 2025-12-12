@@ -5,7 +5,7 @@ category: Other devices
 connectivity: LTE
 vendor: Lansitec
 deviceImageFileName: cat1-container-tracker.png
-hardwareTypes: Trackers
+hardwareType: Trackers
 industry: [Transportation & Logistics, Smart Cities]
 useCase: Fleet Tracking
 

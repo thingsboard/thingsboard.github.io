@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: socketsync-proximity-gateway.png
 docsPrefix: pe/
 docsTag: pe
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Smart Cities, Smart Buildings, Industrial Manufacturing, Security]
 useCase: [Smart Office, Fleet Tracking]
 

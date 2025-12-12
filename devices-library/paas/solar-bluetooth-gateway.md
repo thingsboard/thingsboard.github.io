@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: solar-bluetooth-gateway.png
 docsPrefix: paas/
 docsTag: paas
-hardwareTypes: Gateways
+hardwareType: Gateways
 industry: [Environmental Monitoring, Smart Cities]
 useCase: [Smart Office, Fleet Tracking]
 
