@@ -406,27 +406,28 @@ input:not(:placeholder-shown) + .searchButton
             display: flex
             flex-wrap: wrap
             gap: 6px
-            &:after
-              @media (min-width: 600px)
-                content: attr(data-tooltip)
-                position: absolute
-                top: 0
-                right: -10%
-                border-radius: 4px
-                background: rgba(0, 0, 0, 0.70)
-                backdrop-filter: blur(2px)
-                color: #fff
-                padding: 10px 16px
-                font-size: 14px
-                line-height: 24px
-                font-weight: 400
-                white-space: pre
-                opacity: 0
-                pointer-events: none
-                transition: opacity 0.3s
-                z-index: 1
-            &:hover:after
-              opacity: 1
+            &.tooltip
+              &:after
+                @media (min-width: 600px)
+                  content: attr(data-tooltip)
+                  position: absolute
+                  top: 0
+                  right: -10%
+                  border-radius: 4px
+                  background: rgba(0, 0, 0, 0.70)
+                  backdrop-filter: blur(2px)
+                  color: #fff
+                  padding: 10px 16px
+                  font-size: 14px
+                  line-height: 24px
+                  font-weight: 400
+                  white-space: pre
+                  opacity: 0
+                  pointer-events: none
+                  transition: opacity 0.3s
+                  z-index: 1
+              &:hover:after
+                opacity: 1
             .crisp
               display: inline-block
               font-size: 14px

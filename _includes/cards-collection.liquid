@@ -27,7 +27,7 @@
                     <div class="card-image">
                         <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
                     </div>
-                    <div class="crisp-container" data-tooltip="Industries:&#10;{{ card.industry | join: '&#10;' }}">
+                    <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}" data-tooltip="Industries:&#10;{{ card.industry | join: '&#10;' }}">
                         <span class="crisp">{{ card.industry[0] }}</span>
                         {% assign industrySize = card.industry | size %}
                         {% if industrySize > 1 %}
@@ -58,21 +58,55 @@
         devices-library/pe-edge/
     " | split: "," -%}
 
-    <div class="card-collection" id="card-collection">
+    <div class="devices-card-collection">
         {%- for dir in dirs -%}
             {%- assign trimmed_dir = dir | strip -%}
 
             {%- assign pages_in_dir = site.pages
                     | where_exp: "p", "p.path contains trimmed_dir"
             -%}
+            <div class="card-collection" id="{{ dir }}">
+                {%- for page in pages_in_dir -%}
+                    {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
+                    {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
+                    <a href="{{ page.url }}" class="card">
+                        <div class="card-wrapper">
+                            <div class="card-image">
+                                <img class="logo" src="{{ deviceImg }}" loading="lazy">
+                            </div>
+                            {% if page.industry %}
+                                {% assign industries = page.industry %}
 
-            <p>Количество страниц: {{ pages_in_dir | size }}</p>
+                                {% unless industries.first %}
+                                    {% assign industries = industries | split: "|" %}
+                                {% endunless %}
 
-            {%- for page in pages_in_dir -%}
-                {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
-                <h1>{{ deviceName }}</h1>
+                                {% assign industrySize = industries | size %}
 
-            {%- endfor -%}
+                                <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}"{% if industrySize > 1 %} data-tooltip="Industries:{% for item in industries %}&#10;{{ item }}{% endfor %}"{% endif %}>
+
+                                    <span class="crisp">{{ industries[0] }}</span>
+
+                                    {% if industrySize > 1 %}
+                                        <span class="crisp">+{{ industrySize | minus: 1 }}</span>
+                                    {% endif %}
+                                </div>
+
+                            {% endif %}
+                            <span class="card-title">{{ deviceName }}</span>
+                            <div class="card-link-wrapper">
+                                <span class="card-link" href="#">
+                                See connection guide
+                                <i class="fas fa-chevron-right arrow first blue-chevron"></i>
+                                <i class="fas fa-chevron-right arrow second blue-chevron"></i>
+                                <i class="fas fa-chevron-right arrow third blue-chevron"></i>
+                            </span>
+                            </div>
+                        </div>
+                    </a>
+
+                {%- endfor -%}
+            </div>
         {%- endfor -%}
     </div>
 
