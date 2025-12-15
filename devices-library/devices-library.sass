@@ -69,3 +69,26 @@
         position: absolute
         top: -55px
         right: -46px
+.card-collection
+  .pagination-wrapper
+    grid-column: span 4
+    @media (max-width: 600px)
+      grid-column: span 1
+#page-with-filter-content
+  .content-block
+    .cards-block
+      .cards-block-content
+        position: relative
+        z-index: 1
+      .not-found
+        z-index: 0
+      .card-collection
+        grid-template-columns: repeat(4, minmax(0, 1fr))
+        @media (max-width: 600px)
+          grid-template-columns: repeat(1, 1fr)
+        .card
+          .card-wrapper
+            .card-image
+              height: 140px
+              img
+                max-height: 140px

@@ -58,18 +58,18 @@
         devices-library/pe-edge/
     " | split: "," -%}
 
-    <div class="devices-card-collection">
+    <div class="devices-card-collection" id="devices-card-collection">
         {%- for dir in dirs -%}
             {%- assign trimmed_dir = dir | strip -%}
 
             {%- assign pages_in_dir = site.pages
                     | where_exp: "p", "p.path contains trimmed_dir"
             -%}
-            <div class="card-collection" id="{{ dir }}">
+            <div class="card-collection" id="card-collection" data-platform="{{ dir | replace: 'devices-library/', '' | replace: '/', '' }}">
                 {%- for page in pages_in_dir -%}
                     {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
                     {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
-                    <a href="{{ page.url }}" class="card">
+                    <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}" target="_blank">
                         <div class="card-wrapper">
                             <div class="card-image">
                                 <img class="logo" src="{{ deviceImg }}" loading="lazy">
@@ -106,6 +106,7 @@
                     </a>
 
                 {%- endfor -%}
+                {% include pagination.html %}
             </div>
         {%- endfor -%}
     </div>

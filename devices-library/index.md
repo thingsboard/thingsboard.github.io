@@ -2,91 +2,93 @@
 layout: page-with-filter
 title: Official Thingsboard hardware partners
 description: Meet our official hardware partners and explore IoT devices tailored for seamless ThingsBoard integration. Join the partnership program or find the right vendor for your IoT deployment needs.
-pagination: "true"
-containerId: "card-collection"
+containerId: "devices-card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
 itemsPerPage: "15"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
+not-found: "No devices have been found..."
 
 filterCollection:
-  - label: Device types
+  - label: Platform
+    selectPlatfrom: true
+    filters:
+      - label: Community Edition
+        platform: ce
+      - label: Professional Edition
+        platform: pe
+      - label: Cloud
+        platform: paas
+      - label: Edge
+        platform: edge
+      - label: Edge Professional Edition
+        platform: pe-edge
+  - label: Hardware types
     filters:
       - Microcontrollers
       - Single-board computers
+      - Gateways
+      - Sensors
+      - Trackers
       - Other devices
   - label: Connectivity
     filters:
       - HTTP
       - MQTT
-      - Ethernet
-      - Wi-Fi
-      - LoRaWAN
+      - WIFI
       - Bluetooth
-      - Sigfox
+      - BLE
+      - Ethernet
+      - GSM
+      - GPRS
+      - GPS
+      - LoRaWAN
       - 4G
       - LTE
+      - Zigbee
+      - LAN
+      - WAN
+      - SIGFOX
+      - 5G
+      - KNX
       - NB-IoT
       - LTE-M
-      - GNSS/GPS
+      - DigiMesh
       - BACnet
-      - Bluetooth 5.0
-      - Bluetooth LE
-      - CAN Bus
-      - CAT-1
-      - CAT-M/NB
-      - Cellular 4G Cat 4 and 4G Cat1
-      - DI and DO
-      - GPIO(UART/SPI/I2C)
-      - GSM/GPRS
-      - IEC 104
-      - LTEeSIM (eUICC)
-      - Modbus
-      - OPC UA
-      - PLC
-      - SMS
-      - Satellite (Iridium/Orbcom)
-      - USB
-      - Wi-Fi/BLE
-      - Wirepas
-      - 4G/LTE
-      - 5G/4G LTE
-      - KNX
-      - M-Bus
-      - Modbus TCP
-      - BLE
-      - LAN
-      - RS-232
       - RS-485
+      - UDP
+      - 3G
+      - CoAP
+      - MODBUS TCP
+      - HTTPS
   - label: Industry
     filters:
-      - Smart Cities
-      - Retail
-      - Agriculture
-      - Transportation & Logistics
-      - Healthcare
       - Industrial Manufacturing
-      - Smart Buildings
-      - Energy Management
       - Security
+      - Smart Buildings
       - Environmental Monitoring
+      - Smart Cities
+      - Transportation & Logistics
+      - Retail
+      - Healthcare
+      - Energy Management
+      - Agriculture
   - label: Use cases
     filters:
-      - Smart Energy
-      - Fleet Tracking
-      - Waste Management
-      - Smart Office
-      - Health Care
-      - Tank Level Monitoring
-      - Water Metering
-      - Smart Metering
-      - Smart Retail
-      - Air Quality Monitoring
-      - Smart Farming
-      - Smart Irrigation
-      - Environment Monitoring
       - Smart energy
+      - Environment Monitoring
+      - Smart Office
+      - Smart Retail
+      - Smart Farming
+      - Fleet Tracking
+      - 'Health Care: Smart Assisted Living Solution'
+      - Air Quality Monitoring
+      - Waste Management
+      - Tank Level Monitoring
+      - Smart Metering
+      - Smart Irrigation
+      - Water Metering
 
 ---
 

@@ -297,7 +297,12 @@ input:not(:placeholder-shown) + .searchButton
                   display: none
                 &.extra-filter.shown
                   display: flex
-                input
+                input[type="radio"]
+                  width: 18px
+                  height: 18px
+                input[type="radio"]:checked
+                  accent-color: #2A7DEC
+                input[type="checkbox"]
                   cursor: pointer
                   appearance: none
                   background-color: #fff
@@ -348,6 +353,8 @@ input:not(:placeholder-shown) + .searchButton
       .cards-block-content
         background: #FFF
       .card-collection
+        &.platform-hidden
+          display: none
         display: grid
         grid-template-columns: repeat(3, minmax(0, 1fr))
         gap: 16px
@@ -355,6 +362,8 @@ input:not(:placeholder-shown) + .searchButton
           max-width: 336px
           margin: 0 auto
           grid-template-columns: repeat(1, 1fr)
+        .card-wrapper
+          width: 100%
         .card
           position: relative
           display: flex
