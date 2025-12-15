@@ -4,35 +4,37 @@
 {% assign sinceVersion = "4.0.0" %}
 {% include templates/since.md %}
 
-**Calculated fields** allow Tenant administrators to perform real-time calculations on telemetry and attributes, enabling seamless data transformation without the need for [rule chains](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview){:target="_blank"} and extra logic blocks.
-By defining custom expressions or scripts, users can standardize data, and create new computed metrics dynamically. 
-This feature is particularly useful for optimizing data processing, improving analytics.
+**Calculated fields** are a mechanism for real-time data transformation, merging, and analysis that allows tenant administrators to perform computations directly as [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} and [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} are received.   
+This feature eliminates the need to create separate [Rule Chains](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview){:target="_blank"} or additional logic nodes for data processing, simplifies system configuration, and improves performance.
 
-&nbsp;
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/wBUcWMSH4QI" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
+Using expressions, scripts, or specialized processing modes, users can standardize data, generate new metrics, perform geospatial analytics, aggregate information, and automatically pass values between related entities.
 
-<br><b><font size="4">Key benefits</font></b>
+## Key benefits
 
-- **No additional logic in rule chains**: simplifies telemetry calculations without the need for complex rule chain configurations. 
-- **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/){:target="_blank"}, [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes/){:target="_blank"}, or [calculated fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields/){:target="_blank"} rule nodes, ensuring up-to-date insights.
+- **No additional logic in rule chains**: calculations are performed at the data ingestion stage, reducing the complexity of Rule Chains.
+- **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}, [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}, or [calculated fields](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#calculated-fields-node){:target="_blank"} rule nodes, ensuring up-to-date insights.
 - **Optimized performance**: reduces database queries by performing computations as data is received, improving system efficiency. 
 - **Cross-entity data merging**: calculate new values by combining data from multiple sources (devices, assets, etc.).
 - **Flexible output**: store the results as either [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [time series data](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}, depending on the use case.
 
-<br><b><font size="4">Use case examples</font></b>
+<hr>
 
-- **Combine telemetry from multiple sources**: calculate dew point from Device A&#39;s temperature and Device B&#39;s humidity, etc.
-- **Standardize measurement units**: convert temperature readings from Celsius to Fahrenheit or normalize pressure and voltage levels across different sensor models.
-- **Energy consumption tracking**: calculate power usage per hour to help optimize energy consumption and cost efficiency.
-- **Data smoothing**: compute rolling averages of environmental telemetry like humidity or temperature to reduce fluctuations in sensor readings.
-- **Predictive maintenance**: generate efficiency metrics for machines, such as air density calculations, to anticipate maintenance needs before failures occur.
-- **Custom business logic**: implement advanced calculations tailored to specific business needs, such as determining occupancy levels based on motion sensor data or adjusting device settings dynamically based on multiple telemetry inputs.
+## Common use cases
 
-<br><b><font size="4">Configuration levels</font></b>
+- **Combining telemetry from multiple sources** — calculating derived metrics (e.g., dew point) based on data from several devices. 
+- **Standardization and normalization** — converting measurement units and unifying parameters across different sensor models. 
+- **Energy analytics** — calculating hourly/daily consumption and identifying peak loads. 
+- **Smoothing and filtering** — applying rolling averages, statistical aggregations, and noise reduction to telemetry. 
+- **Predictive maintenance** — generating derived metrics and detecting potential failures based on trends. 
+- **Geofencing scenarios** — checking zone membership, generating ENTER/EXIT events, and monitoring route compliance. 
+- **Propagation** — automatically transferring attributes or telemetry to related entities for data synchronization. 
+- **Group data aggregation** — computing min/max/avg/sum/count for sets of related devices or assets. 
+- **Historical time-series analysis** — performing time window aggregation, trend analysis, and statistical evaluation. 
+- **Custom business logic** — combining complex conditions, implementing smart operating modes, and calculating domain-specific indicators.
+
+<hr>
+
+## Configuration levels
 
 Calculated fields can be applied at different levels within the system:
 - [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} or [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} level – the calculation is applied to a specific device or asset, allowing customized data processing per entity.
@@ -40,108 +42,30 @@ Calculated fields can be applied at different levels within the system:
 
 This flexibility allows users to either define unique calculations per entity or apply standardized logic across a group of similar entities, optimizing data processing and management.
 
-## Create new calculated field
+<hr>
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-> **Note:** To create calculated fields and access their data, make sure you have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to **create calculated fields**, as well as to **read and write attributes and telemetry**. Otherwise, this feature may be unavailable.
-{% endif %}
+## Calculated field types
 
-> **Note:** Only [tenants](/docs/{{docsPrefix}}user-guide/ui/tenants/){:target="_blank"} have access to configure and manage calculated fields.
-
-To create a calculated field, follow these steps:
-
-- Select to the **Entity** or **Profile** where the calculated field should be applied. 
-- In the entity details window, navigate to the "Calculated fields" tab. 
-- Click the "plus" icon button and select "Create new calculated field" from the dropdown menu.
-
-The calculated field configuration window will open — let&#39;s proceed with the setup.
-
-{% include images-gallery.html imageCollection="create-new-calculated-field" %}
-
-### General
-
-- **Name**: enter a descriptive title for the calculated field. 
-- **Type**: choose between:
-  - **Simple**: uses basic mathematical operations and functions. 
-  - **Script**: enables complex calculations using the [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} scripting language and can return multiple output values.
-- Use the **Debug mode** to track calculated field events, such as state changes and errors, for easier debugging and troubleshooting.
-
-{% assign feature = "components" %}
-{% include templates/debug-mode.md %}
-
-{% include images-gallery.html imageCollection="calculated-field-general" %}
-
-### Arguments
-
-To configure calculated field, you need to add at least one argument before proceeding.   
-Click the "**Add argument**" button and fill in the required fields:
-
-- **Argument name**: set the reference name for the variable in the expression.
-- **Entity type**: set the source of the variable, which can be:
-  - **Current entity**: refers to the same entity where the calculated field is applied. 
-    If the calculated field is created at the **Asset Profile** or **Device Profile** level, the calculation will be executed for each entity associated with that profile.
-  - Another **Device** or **Asset**: references a different device or asset for data processing.
-  - **Customer**: retrieves data from the associated customer entity.
-  - **Current tenant**: uses data from the tenant entity.
-  {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-  - **Current owner**: refers to the owner of the current entity and uses its data.
-  {% endif %}
-
-{% include images-gallery.html imageCollection="argument-name" %}
-
-Calculated fields use different types of arguments that determine what data will be used for calculations.
-
-- **Argument type**: define the data source:
-  - **Attribute**: uses static or semi-static key-value pairs associated with an entity (e.g., model, max temperature). 
-  - **Latest telemetry**: uses the most recent telemetry data from an entity (e.g., temperature, speed, voltage). 
-  - **Time series rolling**: uses historical time series data over a specified time window for trend analysis (Available only for [Script](#script-calculated-field) type).
-
-Select the desired argument type:
-
-{% capture calculatedfieldsargumenttype %}
-Attribute<small></small>%,%attribute%,%templates/calculated-fields/attribute-argument-type.md%br%
-Latest telemetry<small></small>%,%latestTelemetry%,%templates/calculated-fields/latest-telemetry-argument-type.md%br%
-Time series rolling<small>only for Script type</small>%,%timeSeriesRolling%,%templates/calculated-fields/time-series-rolling-argument-type.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="calculatedfieldsargumenttype" toggle-spec=calculatedfieldsargumenttype %}
-
-### Calculated fields
+ThingsBoard supports several types of calculated fields, each designed for a specific class of tasks:
 
 {% include calculated-fields-cards.liquid %}
 
-### Result
-
-After clicking the "Add" button, the calculated field will be added to your entity or profile.
-
-{% include images-gallery.html imageCollection="calculated-field-result" %}
-
-Let&#39;s check the debug events by clicking the "Events" icon button. The debugging window displays calculated field arguments and the computed result.
-
-> Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
-
-{% include images-gallery.html imageCollection="calculated-field-debug-events-2" %}
-
-## How calculated field output is processed {#calculated-field-output-processing}
-
-> **IMPORTANT**: When a calculated field produces an output, a new internal message — either `POST_TELEMETRY_REQUEST` or `POST_ATTRIBUTES_REQUEST`, depending on the output type — is created and pushed to the **Default Rule Chain** assigned to the target entity.  
-This means the output **does not bypass the rule engine**: it behaves like any other telemetry or attribute update.
-To ensure that the result is actually stored in the database, your rule chain **must include** a [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/) or [save attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes/) nodes.
-If these nodes are missing, the result **will not be saved** and will not appear in dashboards, widgets, or API responses.
+<hr>
 
 ## Data reprocessing
 
-{% if docsPrefix == null %}
-> The **telemetry data reprocessing** feature is available only in [ThingsBoard PE](https://thingsboard.io/docs/user-guide/install/pe/installation-options/){:target="_blank"} and [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} editions.
-
-{% endif %}
+<table style="width:auto">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>The <b>telemetry data reprocessing</b> feature is available only in <b>ThingsBoard PE</b> and <b>ThingsBoard Cloud</b> editions.</em></strong></td>
+     </tr>
+   </thead>
+</table> 
 
 **Calculated field reprocessing** is a mechanism that allows you to apply calculated field logic to historical data.   
 This is especially useful when you modify existing calculations or add new fields and want those changes to affect not only new data but also previously collected telemetry.
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 > **Note:** reprocessing cannot be applied to a calculated field that contains only attribute-based arguments. The Calculated field must include at least one argument based on a time series — either "Latest telemetry" or "Time series rolling" data.
-
-{% endif %}
 
 <b><font size="3">Key features</font></b>
 
@@ -149,44 +73,87 @@ This is especially useful when you modify existing calculations or add new field
 - **Flexible time range selection** — choose a specific time period for reprocessing.
 - **Store results as telemetry** — processed data is saved in ThingsBoard as telemetry, enabling further use in widgets, rules, or analytics.
 
-{% if docsPrefix == null %}
-Learn how to configure data reprocessing in the [ThingsBoard PE documentation](/docs/pe/user-guide/calculated-fields/#data-reprocessing){:target="_blank"}.
-{% endif %}
+<b><font size="4">How to configure</font></b>
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-<br><b><font size="4">How to configure</font></b>
-
-- Choose the target **Entity** or **Profile**, go to the "**Calculated fields**" tab, and either [create a new calculated field](#create-new-calculated-field) or select an existing one that needs historical telemetry reprocessing.
+- Choose the target **Entity** or **Profile**, go to the "**Calculated fields**" tab, and either [create a new calculated field](#creating-a-calculated-field) or select an existing one that needs historical telemetry reprocessing.
 - Click the "**Reprocess calculated field**" icon next to the desired field.
 - In the pop-up window, define the time interval for which you want to reprocess telemetry data.
 - Click "**Reprocess**" — the system will start recalculating and update historical telemetry data according to the latest logic.
-- Once the data reprocessing is complete, click "**Finish**".
+- Once the data reprocessing is complete, click **Finish**.
 
-{% include images-gallery.html imageCollection="how-to-configure-reprocessing" %}
+{% assign dataReprocessing = '
+    ===
+        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-1-pe.png,
+        title: Choose the target **Entity or Profile**, go to the **Calculated fields** tab, and either create a new calculated field or select an existing one that needs historical telemetry reprocessing.<br>Click the **Reprocess calculated field** icon next to the desired field.
+    ===
+        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-2-pe.png,
+        title: In the pop-up window, define the time interval for which you want to reprocess telemetry data, and click **Reprocess** — the system will start recalculating and update historical telemetry data according to the latest logic.
+    ===
+        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-3-pe.png,
+        title: Once the data reprocessing is complete, click **Finish**.
+'
+%}
 
-<br><b><font size="4">Example of using the data reprocessing feature</font></b>
+{% include images-gallery.liquid imageCollection=dataReprocessing %}
 
-Let&#39;s say you have a Smart Device that tracks real-time temperature and humidity and sends this data to ThingsBoard.
-At some point, you decide to start calculating the dew point using the Calculated field feature.
-As shown on the widget, that displays time series data for the Smart Device, the dew point was first calculated at 13:44:35. 
-Prior to that, no dew point calculations had been performed.
+<b><font size="4">Example of using the data reprocessing feature</font></b>
 
-{% include images-gallery.html imageCollection="reprocessing-example-1" %}
+Assume that the Smart Device sends temperature and humidity data in real time. Later, you configure a calculated field to compute the dew point.
+On the time series widget, you can see that dew point values start appearing only from 13:44:35 — before that moment, the calculation was not performed.
 
-To recalculate dew point values for a past period (before the calculation logic was introduced), follow these steps:
+{% assign reprocessingExample1 = '
+    ===
+        image: /images/user-guide/calculated-fields/reprocessing-example-1-pe.png,
+        title: On the time series widget, you can see that dew point values start appearing only from 13:44:35 — before that moment, the calculation was not performed.
+'
+%}
 
-{% include images-gallery.html imageCollection="reprocessing-example-2" showListImageTitles="true" %}
+{% include images-gallery.liquid imageCollection=reprocessingExample1 %}
 
-Dew point values have been recalculated for the historical period you specified during the reprocessing configuration.
+To recalculate the dew point for a historical period (before the calculated field was created), follow these steps:
 
-{% include images-gallery.html imageCollection="reprocessing-example-3" %}
+{% assign reprocessingExample2 = '
+    ===
+        image: /images/user-guide/calculated-fields/reprocessing-example-2-pe.png
+        title: Go to the **Calculated fields** tab of the corresponding **Smart Device**. Click the **Reprocess calculated field** icon in the row of the required field.
+    ===
+        image: /images/user-guide/calculated-fields/reprocessing-example-3-pe.png,
+        title: In the dialog window, specify the time interval for recalculation and click **Reprocess**.
+    ===
+        image: /images/user-guide/calculated-fields/reprocessing-example-4-pe.png,
+        title: After the process is completed, click **Finish**.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=reprocessingExample2 %}
+
+As a result, the **dewPoint** values will be generated and stored for the entire selected historical period.
+
+{% assign reprocessingExample3 = '
+    ===
+        image: /images/user-guide/calculated-fields/reprocessing-example-5-pe.png,
+        title: As a result, the **dewPoint** values will be generated and stored for the entire selected historical period.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=reprocessingExample3 %}
+
+<hr>
 
 ### Task manager
 
 The Task manager allows you to view the status of tasks, track their progress, see results, and identify any errors that occurred during data processing.
 
-{% include images-gallery.html imageCollection="task-manager" %}
-{% endif %}
+{% assign taskManager = '
+    ===
+        image: /images/user-guide/calculated-fields/task-manager-1-pe.png
+        title: The Task manager allows you to view the status of tasks, track their progress, see results, and identify any errors that occurred during data processing.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=taskManager %}
+
+<hr>
 
 ## Built-in methods for rolling arguments
 
@@ -241,6 +208,8 @@ var valueCountNaN = temperature.count(false); // Returns 4
 - **quality control**: detecting missing or outlier values with count() and std().
 - **energy efficiency monitoring**: summing up power consumption over a period to evaluate energy usage patterns.
 
+<hr>
+
 ## Merging time series arguments
 
 Time series rolling arguments can be **merged** to align timestamps across multiple datasets.
@@ -253,7 +222,7 @@ The result is a new rolling argument that contains a time window and an array of
 | `merge(other, settings)`     | Merges with another rolling argument. Aligns timestamps and filling missing values with the previous available value.     | Merged object with `timeWindow` and aligned values. |
 | `mergeAll(others, settings)` | Merges multiple rolling arguments. Aligns timestamps and filling missing values with the previous available value.        | Merged object with `timeWindow` and aligned values. |
 
-<br><b><font size="4">Parameters</font></b>
+<b><font size="4">Parameters</font></b>
 
 | Parameter            | Description                                                                                                                                                |
 |:---------------------|:-----------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -383,15 +352,42 @@ By aligning timestamps and filling missing values, merging enables:
 - **energy consumption analysis**: combines power usage data from various devices to provide a unified view of energy trends.
 - **predictive maintenance**: merges vibration, temperature, and operational status data to predict equipment failures.
 
+<hr>
+
+## Creating a calculated field
+
+{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
+
+<hr>
+
 ## Export / Import calculated field
 
 You can [export](#export-calculated-field) the calculated field to a JSON file and [import](#import-calculated-field) it into the same or another ThingsBoard instance.
 
 ### Export calculated field
 
-To export a calculated field, navigate to the "Calculated fields" tab of the target entity or profile and click the "Export" icon button located in the row of the specific calculated field.
+To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
 
-{% include images-gallery.html imageCollection="export-calculated-field" %}
+{% assign exportCalculatedFieldCE = '
+    ===
+        image: /images/user-guide/calculated-fields/export-calculated-field-1-ce.png,
+        title: To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+'
+%}
+
+{% assign exportCalculatedFieldPE = '
+    ===
+        image: /images/user-guide/calculated-fields/export-calculated-field-1-pe.png,
+        title: To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+'
+%}
+
+{% if docsPrefix == null %}
+{% include images-gallery.liquid imageCollection=exportCalculatedFieldCE %}
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=exportCalculatedFieldPE %}
+{% endif %}
 
 ### Import calculated field
 
@@ -411,120 +407,73 @@ Steps to import:
 
 - Click "Add" to complete the import.
 
-{% include images-gallery.html imageCollection="import-calculated-field-1" %}
+{% assign importCalculatedFieldCE = '
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-1-ce.png,
+        title: Navigate to the **Calculated fields** tab of the target entity or profile. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-2-ce.png,
+        title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-3-ce.png,
+        title: When importing, the edit window will open to allow modifications.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-4-ce.png,
+        title: Ensure the imported field is correctly applied and update any necessary parameters.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-5-ce.png,
+        title: Click **Add** to complete the import.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-6-ce.png,
+        title: You have imported the calculated field configuration.
+'
+%}
 
-## Examples
+{% assign importCalculatedFieldPE = '
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-1-pe.png
+        title: Navigate to the **Calculated fields** tab of the target entity or profile. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-2-pe.png
+        title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png
+        title: When importing, the edit window will open to allow modifications.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png
+        title: Ensure the imported field is correctly applied and update any necessary parameters.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-5-pe.png
+        title: Click **Add** to complete the import.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-6-pe.png
+        title: You have imported the calculated field configuration.
+'
+%}
 
-**Example 1: Dew point calculation**
+{% if docsPrefix == null %}
+{% include images-gallery.liquid imageCollection=importCalculatedFieldCE %}
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=importCalculatedFieldPE %}
+{% endif %}
 
-Suppose you have a smart device that monitors the current temperature and humidity in real time and sends this data to ThingsBoard. Based on these values, we need to calculate the dew point.
+<hr>
 
-This mathematical expression calculates the dew point using two arguments: temperature and humidity.
+## Calculated fields video overview
 
-```text
-(243.04 * (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature)) / (17.625 - (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature))))
-```
-{: .copy-code}
+Prefer visual learning? Watch this video to get a quick overview of how Calculated fields work in ThingsBoard. It explains the core capabilities, calculation types, and practical examples that help you process and transform data in real time.
 
-To implement this, follow these steps:
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/wBUcWMSH4QI" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
-{% include images-gallery.html imageCollection="example-dew-point-calculated-fields" showListImageTitles="true" %}
+<hr>
 
-<br>
+## Your feedback
 
-**Example 2: Fahrenheit to Celsius**
-
-Suppose you have a device that sends indoor temperature data in Fahrenheit.   
-This function converts the temperature value from Fahrenheit to Celsius, rounds the result to two decimal places, and returns it along with the most recent timestamp:
-
-<br>
-
-**function calculate(ctx, temperatureF) {**
-```js
-var temperatureC = (temperatureF - 32) / 1.8;
-return {
-    "ts": ctx.latestTs, 
-    "values": {
-        "temperatureC": toFixed(temperatureC, 2)
-    }
-}
-```
-{: .copy-code}
-**}**
-
-<br>
-To implement this, follow these steps:
-
-{% include images-gallery.html imageCollection="example-script-calculated-fields-1" showListImageTitles="true" %}
-
-<br>
-
-**Example 3: Air density calculation**
-
-Let&#39;s assume you have an asset called Building A that sends altitude value as an attribute, and a smart device located within it that sends temperature value as telemetry.
-
-Configure a calculated field using these values along with the function provided below. As a result, you&#39;ll obtain a computed air density value, saved as telemetry.
-
-<br>
-
-**function calculate(ctx, altitude, temperature) {**
-```js
-var avgTemperature = temperature.mean(); // Get average temperature
-var temperatureK = (avgTemperature - 32) * (5 / 9) + 273.15; // Convert Fahrenheit to Kelvin
-
-// Estimate air pressure based on altitude
-var pressure = 101325 * Math.pow((1 - 2.25577e-5 * altitude), 5.25588);
-
-// Air density formula
-var airDensity = pressure / (287.05 * temperatureK);
-
-return {
-    "airDensity": toFixed(airDensity, 2)
-};
-
-```
-{: .copy-code}
-**}**
-
-<br>
-To implement this, follow these steps:
-
-{% include images-gallery.html imageCollection="example-script-calculated-fields-2" showListImageTitles="true" %}
-
-<br>
-
-**Example 4: Freezer temperature analysis**
-
-This function merges temperature(time series rolling argument) data with the fridge's defrost(time series rolling argument) status.
-It then analyzes the merged data to identify instances where the fridge is not in defrost mode, yet the internal air temperature is too high ( > -5° C).
-
-<br>
-
-**function calculate(ctx, defrost, temperature) {**
-```js
-var merged = temperature.merge(defrost);
-var result = [];
-
-foreach(item: merged) {
-  if (item.v1 > -5.0 && item.v2 == 0) {
-    result.add({
-      ts: item.ts,
-      values: {
-        issue: {
-          temperature: item.v1,
-          defrostState: false
-        }
-      }
-    });
-  }
-}
-
-return result;
-```
-{: .copy-code}
-**}**
-
-<br>
-To implement this, follow these steps:
-
-{% include images-gallery.html imageCollection="example-script-calculated-fields-3" showListImageTitles="true" %}
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

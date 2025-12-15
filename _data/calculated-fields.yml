@@ -1,6 +1,18 @@
 simple-calculated-field:
   title: Simple calculated field
-  description: Simple calculated fields use basic arithmetic operations (+, -, *, /) and standard functions such as sqrt (square root), pow (power), abs (absolute value), etc.
+  description: Basic arithmetic expressions and standard functions.
 script-calculated-field:
   title: Script calculated field
-  description: For complex calculations, TBEL is used. It enables advanced operations such as conditional statements, loops, and access to historical data.
+  description: Complex computations using TBEL, with the ability to return multiple values.
+geofencing-calculated-field:
+  title: Geofencing calculated field
+  description: Determining an entity&#39;s position relative to geozones, detecting enter/exit events, and generating notifications.
+propagation-calculated-field:
+  title: Propagation calculated field
+  description: Automatic copying or transformation of data to related entities based on defined relation types.
+related-entities-aggregation-calculated-field:
+  title: Related entities aggregation calculated field
+  description: Aggregating data (min, max, avg, sum, count, etc.) from a group of related entities.
+time-series-data-aggregation-calculated-field:
+  title: Time series data aggregation calculated field
+  description: Analyzing and aggregating historical data using time windows.
