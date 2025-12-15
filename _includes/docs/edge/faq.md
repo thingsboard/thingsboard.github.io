@@ -423,7 +423,7 @@ function resetEdgeLoadMore(categoryId) {
                     </div>
                 </div>
                 <div class="edge-faq-question">
-                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How much hardware do I need to run Edge?</div>
+                    <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What hardware do I need to run Edge?</div>
                     <div class="edge-faq-answer">
                         <p>Less than you might think. Edge runs on:</p>
                         <ul>
