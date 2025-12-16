@@ -210,7 +210,9 @@ Execute the following command to delete all resources (including database):
 ```
 {: .copy-code}
 
-## Upgrading to new ThingsBoard version
+## Upgrading
+
+### Upgrading to new ThingsBoard version
 
 In case you would like to upgrade, please pull the *latest* changes from `master` branch:
 ```

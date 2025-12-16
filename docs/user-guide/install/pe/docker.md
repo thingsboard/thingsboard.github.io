@@ -118,6 +118,8 @@ Only ThingsBoard services<small>(without Trendz services)</small>%,%coreServices
 
 ## Upgrading
 
+### Upgrading to new ThingsBoard version
+
 When a new PE release is available, follow these steps to update your installation without losing data:
 
 {% capture old_manifests_info %}
@@ -137,7 +139,7 @@ docker compose up -d
 ```
 {: .copy-code}
 
-### Trendz
+### Upgrading to new Trendz version (Optional)
 
 Trendz Analytics have different version system, and should be updated separately from ThingsBoard platform main services.
 

@@ -209,7 +209,9 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/eks-validate.md %}
 
-## Upgrading to new ThingsBoard version
+## Upgrading
+
+### Upgrading to new ThingsBoard version
 
 {% include templates/install/aws/eks-upgrading.md %}
 

@@ -118,11 +118,13 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 {% include templates/install/azure/using.md %}
 
-## Upgrading to new ThingsBoard version
+## Upgrading
+
+### Upgrading to new ThingsBoard version
 
 {% include templates/install/azure/upgrading-msa.md %}
 
-## Upgrading to new Trendz version (Optional)
+### Upgrading to new Trendz version (Optional)
 
 {% include templates/install/trendz/k8s-trendz-upgrading.md %}
 

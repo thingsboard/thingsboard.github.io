@@ -75,6 +75,10 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 {% assign dockerComposeFileLocation = "" %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
+## Upgrading
+
+{% include templates/install/upgrade-docker-compose.md %}
+
 {% include templates/install/generate_certificate_docker-compose.md %}
 
 ## Next steps

@@ -113,7 +113,13 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 ## Upgrading
 
+### Upgrading to new ThingsBoard version
+
 {% include templates/install/gcp/upgrading-msa.md %}
+
+### Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 ## Next steps
 

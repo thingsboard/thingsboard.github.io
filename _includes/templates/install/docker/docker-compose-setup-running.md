@@ -97,5 +97,3 @@ Execute the following command to update particular or all services (pull newer d
 Where:
 
 - `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
-
-{% include templates/install/upgrade-docker-compose.md %}

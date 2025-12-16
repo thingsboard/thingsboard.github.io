@@ -127,7 +127,13 @@ You can read about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
 {% assign dockerComposeFileLocation = "-f $TB_SETUP/docker-compose.yml " %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
 
-### Trendz Upgrade
+## Upgrading
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-docker-compose.md %}
+
+### Upgrading to new Trendz version (Optional)
 
 Trendz Analytics have different version system, and should be updated separately from ThingsBoard platform main services.
 

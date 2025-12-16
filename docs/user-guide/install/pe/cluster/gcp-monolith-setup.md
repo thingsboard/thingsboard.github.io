@@ -121,7 +121,9 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 {% include templates/install/gcp/using.md %}
 
-## Upgrading to new ThingsBoard version
+## Upgrading
+
+### Upgrading to new ThingsBoard version
 
 {% include templates/install/gcp/upgrading-monolith.md %}
 
