@@ -41,11 +41,10 @@ At this moment you will see average measurement from all entities in the ThingsB
 We are glad to present the series of webinars about ThingsBoard Trendz Analytics functionality. 
 Learn more about Trendz Analytics features and how it helps to transform the IoT data into value for informed decision-making.
 
-&nbsp; 
-  
+&nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
