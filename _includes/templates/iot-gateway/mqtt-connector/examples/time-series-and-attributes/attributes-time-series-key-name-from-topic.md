@@ -29,7 +29,6 @@ Copy and paste the following configuration into the MQTT connector advanced conf
     "version": 5,
     "maxMessageNumberPerWorker": 10,
     "maxNumberOfWorkers": 100,
-    "sendDataOnlyOnChange": false,
     "keepAlive": 60,
     "cleanSession": true,
     "cleanStart": true,
@@ -66,6 +65,7 @@ Copy and paste the following configuration into the MQTT connector advanced conf
   "requestsMapping": {}
 }
 ```
+{:.copy-code}
 
 Let's review the key parts of this configuration:
 - The `topicFilter` is set to `sensors/demo-device/+/value`, where the `+` wildcard captures the dynamic sensor name.
@@ -76,7 +76,6 @@ between `sensors/demo-device/` and `/value`.
 - The `value` field uses `${value}` to extract the actual sensor value from the JSON payload.
 
 After applying this configuration, the MQTT connector will extract the sensor name from the topic and use it as the 
-key name for both time-series data and attributes. So you will see that the corresponding attribute and time series are 
-being updated correctly:
+key name for both time-series data. So you will see that the corresponding time series are being updated correctly:
 
 ![image](/images/gateway/mqtt-connector/examples/time-series-key-name-from-topic-overview.png)
