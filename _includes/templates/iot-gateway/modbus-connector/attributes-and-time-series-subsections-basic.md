@@ -72,7 +72,7 @@ Example of enum mapping configuration:
   "objectsCount": 1,
   "functionCode": 3,
   "variants": {
-    "0": "Sopped",
+    "0": "Stopped",
     "1": "Booting",
     "2": "Running"
   }
@@ -95,7 +95,7 @@ Example of enum mapping configuration for coil register:
 }
 ```
 
-Example of enum mapping configuration for RPC to Device call:
+Example of enum mapping configuration for `RPC to Device` call:
 ```json
 {
   "method": "getStatus",

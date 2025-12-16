@@ -87,32 +87,7 @@ Copy and paste the following configuration into the Modbus connector advanced co
           }
         ],
         "attributeUpdates": [],
-        "rpc": [
-          {
-            "tag": "getRelay",
-            "type": "bits",
-            "address": 1,
-            "objectsCount": 1,
-            "functionCode": 1,
-            "bitTargetType": "int",
-            "variants": {
-              "0": "OFF",
-              "1": "ON"
-            }
-          },
-          {
-            "tag": "getOperationalMode",
-            "type": "16int",
-            "address": 1,
-            "objectsCount": 1,
-            "functionCode": 3,
-            "variants": {
-              "1": "Normal Mode",
-              "2": "Service Mode",
-              "3": "Calibration Mode"
-            }
-          }
-        ]
+        "rpc": []
       }
     ]
   }
