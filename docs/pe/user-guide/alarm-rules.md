@@ -38,12 +38,14 @@ step-3-arguments-3:
 step-3-arguments-4:
     0:
         image: /images/user-guide/alarm-rules/step-3-arguments-4-pe.png
-        title: '<b>Argument name</b> — the identifier you will use in formulas and conditions.'
+        title: '<b>Argument name</b> — the identifier you will use in formulas and conditions.<br>After configuring the fields, click <b>Add</b>.'
+    1:
+        image: /images/user-guide/alarm-rules/step-3-arguments-5-pe.png
 
 step-4-creation-conditions-1:
     0:
         image: /images/user-guide/alarm-rules/step-4-creation-conditions-1-pe.png
-        title: 'This step defines the core logic of the alarm rule.<br>Click <b>Add creation condition</b> and configure the following parameters.'
+        title: 'This step defines the core logic of the alarm rule.<br>Click <b>Add trigger condition</b> and configure the following parameters.'
 
 step-4-creation-conditions-severity-1:
     0:
@@ -63,6 +65,8 @@ step-4-creation-condition-add-filter-1:
     3:
         image: /images/user-guide/alarm-rules/step-4-creation-condition-add-filter-4-pe.png
         title: '<b>Configure filters</b>:<br>- <b>Operation</b> — the comparison operator.<br>- <b>Value source</b> — select one of the following.<br>- <b>Value</b> — specify the value to compare against.<br>- After adding all required filters, click <b>Add</b> to save the condition.'
+    4:
+        image: /images/user-guide/alarm-rules/step-4-creation-condition-add-filter-5-pe.png
 
 step-4-creation-condition-types-1:
     0:
@@ -96,12 +100,12 @@ step-4-schedule-dynamic-mode-1:
 step-5-clear-conditions-1:
     0:
         image: /images/user-guide/alarm-rules/step-5-clear-conditions-1-pe.png
-        title: 'Click <b>Add clearing condition</b>.'
+        title: 'Click <b>Add clear condition</b>.'
 
 step-5-clearing-condition-add-filter-1:
     0:
         image: /images/user-guide/alarm-rules/step-5-clearing-condition-add-filter-1-pe.png
-        title: 'Click <b>Add clearing condition</b>.'
+        title: 'Click <b>Add condition</b>.'
     1:
         image: /images/user-guide/alarm-rules/step-5-clearing-condition-add-filter-2-pe.png
         title: 'Configure the alarm trigger logic by defining one or more filters. Click <b>Add argument filter</b>.'
@@ -171,7 +175,7 @@ import-alarm-rule-1:
         title: 'In the import dialog, drag and drop the JSON file or choose it manually. Click <b>Import</b> to upload the configuration.'
     2:
         image: /images/user-guide/alarm-rules/import-alarm-rule-3-pe.png
-        title: 'If the imported rule was created for a different entity, you may need to update the <b>Target entity type</b> and select the correct profile or entity.<br>Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment.<br>- Click <b>Add</b> to save the rule.'
+        title: 'If required, update the <b>target profile or entity</b>. Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment and update them if necessary. Finally, click <b>Add</b> to save the rule.'
 
 
 
@@ -192,7 +196,7 @@ alarm-rules-example-simple-1:
         title: 'In the <b>Arguments</b> section, add new argument.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-simple-4-pe.png
-        title: 'In the <b>Creation conditions</b> section, click <b>Add creation condition</b>.'
+        title: 'In the <b>Trigger conditions</b> section, click <b>Add trigger condition</b>.'
     4:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-simple-5-pe.png
         title: '- <b>Severity:</b> Critical<br>- Click <b>Add condition</b>.'
@@ -215,19 +219,19 @@ alarm-rules-example-simple-1:
 alarm-rule-example-clear-condition-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rule-example-clear-condition-1-pe.png
-        title: 'Go to the <b>High temperature</b> rule and open it for editing.'
+        title: 'Go to the <b>High Temperature</b> rule and open it for editing.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rule-example-clear-condition-2-pe.png
-        title: 'Scroll down to the <b>Clearing condition</b> section. Click <b>Add clearing condition</b>.'
+        title: 'Scroll down to the <b>Clear condition</b> section. Click <b>Add clear condition</b>.'
     2:
         image: /images/user-guide/alarm-rules/examples/alarm-rule-example-clear-condition-3-pe.png
-        title: 'In the <b>Clearing condition</b> section, click <b>Add clearing condition</b>.'
+        title: 'Click <b>Add condition</b>.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rule-example-clear-condition-4-pe.png
         title: 'Click <b>Add argument filter</b>.'
     4:
         image: /images/user-guide/alarm-rules/examples/alarm-rule-example-clear-condition-5-pe.png
-        title: '<b>Argument:</b> temperature; <b>Value type:</b> Numeric; <b>Operation:</b> less or equal; <b>Static value:</b> 4.'
+        title: '<b>Argument:</b> temperature; <b>Value type:</b> Numeric; <b>Operation:</b> less or equal; <b>Static value:</b> 4.<br>Click <b>Add</b>.'
     5:
         image: /images/user-guide/alarm-rules/examples/alarm-rule-example-clear-condition-6-pe.png
         title: 'Click <b>Save</b>.'
@@ -238,13 +242,13 @@ alarm-rule-example-clear-condition-1:
 alarm-rules-example-condition-duration-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-duration-1-pe.png
-        title: 'Go to the <b>High temperature</b> rule and open it for editing.'
+        title: 'Go to the <b>High Temperature</b> rule and open it for editing.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-duration-2-pe.png
-        title: 'Scroll down to the <b>Creation condition</b> section and edit the existing alarm condition.'
+        title: 'Scroll down to the <b>Trigger condition</b> section and edit the existing condition.'
     2:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-duration-3-pe.png
-        title: '<b>Condition type:</b> Duration; <b>Static value:</b> 1 minute.<br>Click <b>Save</b>.'
+        title: '<b>Condition type:</b> Duration; <b>Duration value:</b> 1 minute.<br>Click <b>Save</b>.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-duration-4-pe.png
         title: 'Apply changes.'
@@ -260,13 +264,13 @@ alarm-rules-example-condition-with-dynamic-duration-1:
 alarm-rules-example-condition-with-dynamic-duration-2:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-with-dynamic-duration-3-pe.png
-        title: 'Go to the <b>High temperature</b> rule and open it for editing.'
+        title: 'Go to the <b>High Temperature</b> rule and open it for editing.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-with-dynamic-duration-4-pe.png
         title: 'In the <b>Arguments</b> section, add new argument that will be used in the <b>Duration</b> condition.'
     2:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-with-dynamic-duration-5-pe.png
-        title: 'Scroll down to the <b>Creation condition</b> section and edit the existing alarm condition.'
+        title: 'Scroll down to the <b>Trigger condition</b> section and edit the existing condition.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-with-dynamic-duration-6-pe.png
         title: '<b>Condition type:</b> Duration; <b>Dynamic value:</b> <b>Argument</b> highTemperatureDurationThreshold; <b>Time unit:</b> minutes.<br>Click <b>Save</b>.'
@@ -277,13 +281,13 @@ alarm-rules-example-condition-with-dynamic-duration-2:
 alarm-rules-example-condition-repeating-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-repeating-1-pe.png
-        title: 'Go to the <b>High temperature</b> rule and open it for editing.'
+        title: 'Go to the <b>High Temperature</b> rule and open it for editing.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-repeating-2-pe.png
-        title: 'Scroll down to the <b>Creation condition</b> section and edit the existing alarm condition.'
+        title: 'Scroll down to the <b>Trigger condition</b> section and edit the existing condition.'
     2:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-repeating-3-pe.png
-        title: 'Set the condition type to "<b>Repeating</b>". Specify the <b>count of events</b>: 3. Save the condition.'
+        title: 'Condition type: "<b>Repeating</b>". <b>Count of events</b>: 3. Save the condition.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-condition-repeating-4-pe.png
         title: 'Apply changes.'
@@ -291,13 +295,13 @@ alarm-rules-example-condition-repeating-1:
 alarm-rules-example-schedule-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-schedule-1-pe.png
-        title: 'Go to the <b>High temperature</b> rule and open it for editing.'
+        title: 'Go to the <b>High Temperature</b> rule and open it for editing.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-schedule-2-pe.png
-        title: 'Open the schedule settings for the alarm&#39;s create condition.'
+        title: 'Open the schedule settings for the alarm&#39;s trigger condition.'
     2:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-schedule-3-pe.png
-        title: 'Select the schedule type: Active at a specific time.<br>Configure the rule to be active only on weekdays from 10:00 to 19:00. Click <b>Save</b>.'
+        title: 'Select the schedule type: <i>Active at a specific time</i>.<br>Configure the rule to be active only on weekdays from 10:00 to 19:00. Click <b>Save</b>.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-schedule-4-pe.png
         title: 'Apply changes.'
@@ -305,7 +309,7 @@ alarm-rules-example-schedule-1:
 alarm-rules-example-advanced-thresholds-1:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-1-pe.png
-        title: 'Add a <b>temperatureAlarmFlag</b> <b>server attribute</b> to the <b>Thermometer</b> device.'
+        title: 'Add a <b>temperatureAlarmFlag</b> <i>server attribute</i> to the <b>Thermometer</b> device.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-2-pe.png
         title: 'This attribute determines whether the alarm rule is active for the device.'
@@ -313,19 +317,19 @@ alarm-rules-example-advanced-thresholds-1:
 alarm-rules-example-advanced-thresholds-2:
     0:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-3-pe.png
-        title: 'Go to the <b>High temperature</b> rule and open it for editing.'
+        title: 'Go to the <b>High Temperature</b> rule and open it for editing.'
     1:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-4-pe.png
         title: 'In the <b>Arguments</b> section, add new argument that will be used in the <b>creation</b> condition.'
     2:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-5-pe.png
-        title: 'Scroll down to the <b>Creation condition</b> section and edit the existing alarm condition.'
+        title: 'Scroll down to the <b>Trigger condition</b> section and edit the existing condition.'
     3:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-6-pe.png
         title: 'Click <b>Add argument filter</b>.'
     4:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-7-pe.png
-        title: '<b>Argument:</b> temperatureAlarmFlag; <b>Value type:</b> Boolean; <b>Operation:</b> equal; <b>Static value:</b> True.<br>Click <b>Add</b>.'
+        title: '<b>Argument:</b> <i>temperatureAlarmFlag</i>; <b>Value type:</b> <i>Boolean</i>; <b>Operation:</b> <i>equal</i>; <b>Static value:</b> <i>True</i>.<br>Click <b>Add</b>.'
     5:
         image: /images/user-guide/alarm-rules/examples/alarm-rules-example-advanced-thresholds-8-pe.png
         title: 'Click <b>Save</b>.'

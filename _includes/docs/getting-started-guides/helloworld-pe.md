@@ -136,7 +136,7 @@ In this example, we will configure the alarm rule directly on the device "**My N
 
 In the **General** section, specify the **alarm type** — *High temperature* (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.
 
-<b><font size="4">Step 4.3 Add an argument</font></b>
+<b><font size="4">Step 4.3 Add argument</font></b>
 
 Before defining the alarm trigger condition, you must add at least one **argument** — the data source that the rule will use.
 
@@ -149,9 +149,9 @@ In the **Arguments** section, click **Add argument** and fill in:
 
 This creates the <span class="code-light">temperature</span> variable that will be used in the alarm rule conditions.
 
-<b><font size="4">Step 4.4 Configure the alarm creation condition</font></b>
+<b><font size="4">Step 4.4 Configure the alarm trigger condition</font></b>
 
-In the **Create condition** section, click **Add create condition**.
+In the **Trigger condition** section, click **Add trigger condition**.
 
 - **Severity:** *Critical*
 - **Condition** 
@@ -166,9 +166,7 @@ In the **Create condition** section, click **Add create condition**.
       - **Value source:** Static
       - **Value:** <span class="code-light">25</span>
     - Click **Add**. 
-
-  **Condition settings**
-  - **Condition type:** *Simple*
+  - **Type:** *Simple*
   - Click **Save**.
 
 As a result, the alarm will trigger immediately when the temperature exceeds **25°C**.
