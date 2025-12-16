@@ -12,28 +12,28 @@
 .edge-faq-category.active { display: block; }
 .edge-faq-question { border-bottom: 1.5px solid rgba(62,154,248,0.12); margin-bottom: 7px; }
 .edge-faq-question-title { 
-    font-size: 18px !important; 
-    font-weight: 500 !important; 
-    line-height: 30px !important; 
-    color: #212121 !important; 
-    padding: 22px 37px 22px 7px !important; 
-    cursor: pointer !important; 
-    position: relative !important; 
-    margin: 0 !important;
-    display: block !important;
+    font-size: 18px; 
+    font-weight: 500; 
+    line-height: 30px; 
+    color: #212121; 
+    padding: 22px 37px 22px 7px; 
+    cursor: pointer; 
+    position: relative; 
+    margin: 0;
+    display: block;
 }
-.edge-faq-question-title:hover { color: rgba(33, 33, 33, 0.78) !important; }
+.edge-faq-question-title:hover { color: rgba(33, 33, 33, 0.78) }
 .edge-faq-question-title:after { 
-    font-family: "Font Awesome 5 Free" !important; 
-    font-weight: 900 !important; 
-    color: rgba(0,0,0,0.38) !important; 
-    content: "\f078" !important; 
-    position: absolute !important; 
-    right: 8px !important; 
-    top: 22px !important; 
-    transition: transform 0.3s !important; 
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    color: rgba(0,0,0,0.38); 
+    content: "\f078"; 
+    position: absolute; 
+    right: 8px; 
+    top: 22px; 
+    transition: transform 0.3s; 
 }
-.edge-faq-question.open .edge-faq-question-title:after { transform: rotate(180deg) !important; }
+.edge-faq-question.open .edge-faq-question-title:after { transform: rotate(180deg); }
 .edge-faq-answer { 
     display: none; 
     padding: 5px 50px 25px 10px; 
@@ -41,13 +41,13 @@
     font-size: 14px; 
     line-height: 24px; 
 }
-.edge-faq-question.open .edge-faq-answer { display: block !important; }
+.edge-faq-question.open .edge-faq-answer { display: block; }
 .edge-faq-answer p, .edge-faq-answer li { font-size: 14px; color: #3D3D3D; line-height: 24px; }
 .edge-faq-answer a { color: #2A7DEC; text-decoration: none; }
 .edge-faq-answer a:hover { text-decoration: underline; }
 .edge-faq-answer ul { margin: 20px 0; padding-left: 30px; list-style: disc; }
 .edge-faq-answer li { margin-bottom: .75em; }
-.edge-faq-hidden { display: none !important; }
+.edge-faq-hidden { display: none; }
 .edge-faq-load-more { 
     border-bottom: 1.5px solid rgba(62,154,248,0.12);
     overflow: visible;

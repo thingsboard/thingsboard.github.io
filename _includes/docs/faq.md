@@ -13,28 +13,28 @@
 .tb-faq-category.active { display: block; }
 .tb-faq-question { border-bottom: 1.5px solid rgba(62,154,248,0.12); margin-bottom: 7px; }
 .tb-faq-question-title { 
-    font-size: 18px !important; 
-    font-weight: 500 !important; 
-    line-height: 30px !important; 
-    color: #212121 !important; 
-    padding: 22px 37px 22px 7px !important; 
-    cursor: pointer !important; 
-    position: relative !important; 
-    margin: 0 !important;
-    display: block !important;
+    font-size: 18px; 
+    font-weight: 500; 
+    line-height: 30px; 
+    color: #212121; 
+    padding: 22px 37px 22px 7px; 
+    cursor: pointer; 
+    position: relative; 
+    margin: 0;
+    display: block;
 }
-.tb-faq-question-title:hover { color: rgba(33, 33, 33, 0.78) !important; }
+.tb-faq-question-title:hover { color: rgba(33, 33, 33, 0.78); }
 .tb-faq-question-title:after { 
-    font-family: "Font Awesome 5 Free" !important; 
-    font-weight: 900 !important; 
-    color: rgba(0,0,0,0.38) !important; 
-    content: "\f078" !important; 
-    position: absolute !important; 
-    right: 8px !important; 
-    top: 22px !important; 
-    transition: transform 0.3s !important; 
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900; 
+    color: rgba(0,0,0,0.38); 
+    content: "\f078"; 
+    position: absolute; 
+    right: 8px; 
+    top: 22px; 
+    transition: transform 0.3s; 
 }
-.tb-faq-question.open .tb-faq-question-title:after { transform: rotate(180deg) !important; }
+.tb-faq-question.open .tb-faq-question-title:after { transform: rotate(180deg); }
 .tb-faq-answer { 
     display: none; 
     padding: 5px 50px 25px 10px; 
@@ -42,13 +42,13 @@
     font-size: 14px; 
     line-height: 24px; 
 }
-.tb-faq-question.open .tb-faq-answer { display: block !important; }
+.tb-faq-question.open .tb-faq-answer { display: block; }
 .tb-faq-answer p, .tb-faq-answer li { font-size: 14px; color: #3D3D3D; line-height: 24px; }
 .tb-faq-answer a { color: #2A7DEC; text-decoration: none; }
 .tb-faq-answer a:hover { text-decoration: underline; }
 .tb-faq-answer ul { margin: 20px 0; padding-left: 30px; list-style: disc; }
 .tb-faq-answer li { margin-bottom: .75em; }
-.tb-faq-hidden { display: none !important; }
+.tb-faq-hidden { display: none; }
 .tb-faq-load-more { 
     border-bottom: 1.5px solid rgba(62,154,248,0.12);
     overflow: visible;

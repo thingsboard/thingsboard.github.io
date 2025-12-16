@@ -13,28 +13,28 @@
 .tbmq-faq-category.active { display: block; }
 .tbmq-faq-question { border-bottom: 1.5px solid rgba(62,154,248,0.12); margin-bottom: 7px; }
 .tbmq-faq-question-title { 
-    font-size: 18px !important; 
-    font-weight: 500 !important; 
-    line-height: 30px !important; 
-    color: #212121 !important; 
-    padding: 22px 37px 22px 7px !important; 
-    cursor: pointer !important; 
-    position: relative !important; 
-    margin: 0 !important;
-    display: block !important;
+    font-size: 18px; 
+    font-weight: 500; 
+    line-height: 30px; 
+    color: #212121; 
+    padding: 22px 37px 22px 7px; 
+    cursor: pointer; 
+    position: relative; 
+    margin: 0;
+    display: block;
 }
-.tbmq-faq-question-title:hover { color: rgba(33, 33, 33, 0.78) !important; }
+.tbmq-faq-question-title:hover { color: rgba(33, 33, 33, 0.78) }
 .tbmq-faq-question-title:after { 
-    font-family: "Font Awesome 5 Free" !important; 
-    font-weight: 900 !important; 
-    color: rgba(0,0,0,0.38) !important; 
-    content: "\f078" !important; 
-    position: absolute !important; 
-    right: 8px !important; 
-    top: 22px !important; 
-    transition: transform 0.3s !important; 
+    font-family: "Font Awesome 5 Free"; 
+    font-weight: 900 ; 
+    color: rgba(0,0,0,0.38); 
+    content: "\f078"; 
+    position: absolute; 
+    right: 8px; 
+    top: 22px; 
+    transition: transform 0.3s; 
 }
-.tbmq-faq-question.open .tbmq-faq-question-title:after { transform: rotate(180deg) !important; }
+.tbmq-faq-question.open .tbmq-faq-question-title:after { transform: rotate(180deg); }
 .tbmq-faq-answer { 
     display: none; 
     padding: 5px 50px 25px 10px; 
@@ -42,7 +42,7 @@
     font-size: 14px; 
     line-height: 24px; 
 }
-.tbmq-faq-question.open .tbmq-faq-answer { display: block !important; }
+.tbmq-faq-question.open .tbmq-faq-answer { display: block; }
 .tbmq-faq-answer p, .tbmq-faq-answer li { font-size: 14px; color: #3D3D3D; line-height: 24px; }
 .tbmq-faq-answer a { color: #2A7DEC; text-decoration: none; }
 .tbmq-faq-answer a:hover { text-decoration: underline; }
@@ -90,7 +90,6 @@ function switchTbmqFaqTab(tabId) {
             <div class="tbmq-faq-tab" onclick="switchTbmqFaqTab('security')">Security and Reliability</div>
             <div class="tbmq-faq-tab" onclick="switchTbmqFaqTab('subscriptions')">Subscriptions & Messaging</div>
             <div class="tbmq-faq-tab" onclick="switchTbmqFaqTab('performance')">Performance and Scalability</div>
-            <div class="tbmq-faq-tab" onclick="switchTbmqFaqTab('storage')">Data Storage and Persistence</div>
             <div class="tbmq-faq-tab" onclick="switchTbmqFaqTab('licensing')">Licensing and Support</div>
         </div>
         <div class="tbmq-faq-answers">
@@ -228,6 +227,18 @@ function switchTbmqFaqTab(tabId) {
                             <li><b>Enhanced authentication</b> (MQTT 5.0)</li>
                         </ul>
                         <p>Authentication rules are defined in the database and evaluated during each connection attempt.</p>
+                    </div>
+                </div>
+                <div class="tbmq-faq-question">
+                    <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Where does TBMQ store data?</div>
+                    <div class="tbmq-faq-answer">
+                        <p>TBMQ integrates with <a href="https://kafka.apache.org/" target="_blank">Kafka</a>, <a href="https://redis.io/" target="_blank">Redis</a>, and <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a> to ensure reliable, high-performance data storage:</p>
+                        <ul>
+                            <li><b>Kafka</b> – handles unprocessed PUBLISH messages, persistent messages for Application clients, and stores client sessions and subscriptions.</li>
+                            <li><b>Redis</b> – stores Device persistent messages for fast access and recovery.</li>
+                            <li><b>PostgreSQL</b> – stores metadata such as user credentials, MQTT client credentials, system statistics, etc.</li>
+                        </ul>
+                        <p>This hybrid architecture ensures data durability, high availability, and efficient delivery across distributed systems.</p>
                     </div>
                 </div>
             </div>
@@ -410,20 +421,6 @@ function switchTbmqFaqTab(tabId) {
                     <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">How does TBMQ handle backpressure when clients are slow?</div>
                     <div class="tbmq-faq-answer">
                         <p>TBMQ implements an internal <b>backpressure management mechanism</b> to maintain stable performance when clients are unable to consume messages quickly. When a client’s network channel becomes non-writable, TBMQ temporarily pauses message delivery for that client. Once the channel becomes writable again, queued messages are delivered in the correct order. This design prevents slow consumers from impacting other clients, ensuring consistent throughput across the cluster.</p>
-                    </div>
-                </div>
-            </div>
-            <div id="tbmq-faq-cat-storage" class="tbmq-faq-category">
-                <div class="tbmq-faq-question">
-                    <div class="tbmq-faq-question-title" onclick="toggleTbmqFaq(this)">Where does TBMQ store data?</div>
-                    <div class="tbmq-faq-answer">
-                        <p>TBMQ integrates with <a href="https://kafka.apache.org/" target="_blank">Kafka</a>, <a href="https://redis.io/" target="_blank">Redis</a>, and <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a> to ensure reliable, high-performance data storage:</p>
-                        <ul>
-                            <li><b>Kafka</b> – handles unprocessed PUBLISH messages, persistent messages for Application clients, and stores client sessions and subscriptions.</li>
-                            <li><b>Redis</b> – stores Device persistent messages for fast access and recovery.</li>
-                            <li><b>PostgreSQL</b> – stores metadata such as user credentials, MQTT client credentials, system statistics, etc.</li>
-                        </ul>
-                        <p>This hybrid architecture ensures data durability, high availability, and efficient delivery across distributed systems.</p>
                     </div>
                 </div>
             </div>
