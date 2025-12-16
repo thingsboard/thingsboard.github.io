@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe-edge
-title: Edge Computing add-on
+title: ThingsBoard Edge
 description: Run ThingsBoard locally at the edge to process data near its source, reduce cloud costs, and maintain operations during connectivity issues
 ---
 

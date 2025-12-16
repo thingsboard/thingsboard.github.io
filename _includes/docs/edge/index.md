@@ -6,7 +6,7 @@
 
 {% if docsPrefix != 'pe/' %}
 <div class="ce-banner" id="ceBanner">
-  <span>Need white-labeling or premium features? <a href="/docs/{{docsPrefix}}edge/" target="_blank">Explore Edge Professional Edition documentation →</a></span>
+  <span>Looking for white-labeling or premium features? <a href="/docs/pe/edge/" target="_blank">Explore Edge Professional Edition documentation →</a></span>
   <button class="banner-close" aria-label="Close banner">×</button>
 </div>
 {% endif %}
@@ -28,7 +28,7 @@
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/getting-started/" target="_blank">
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg" alt="Getting started icon">
-            <div class="feature-title">Getting started</div>
+            <h3 class="feature-title">Getting started</h3>
             <div class="feature-text">
                 Set up your first Edge instance and connect a device. Takes 15-30 minutes.
             </div>
@@ -37,7 +37,7 @@
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/user-guide/install/{{docsPrefix}}edge/installation-options/" target="_blank">
             <img class="feature-logo" src="/images/feature-logo/install.svg" alt="Install icon">
-            <div class="feature-title">Installation</div>
+            <h3 class="feature-title">Installation</h3>
             <div class="feature-text">
                 Deploy on Docker, Ubuntu, CentOS, Windows, or Raspberry Pi.
             </div>
@@ -46,7 +46,7 @@
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/use-cases/overview/" target="_blank">
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg" alt="Tutorials icon">
-            <div class="feature-title">Use cases</div>
+            <h3 class="feature-title">Edge Use Cases</h3>
             <div class="feature-text">
                 Deployment scenarios, traffic reduction, and local data processing.
             </div>
@@ -55,7 +55,7 @@
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}edge/faq/" target="_blank">
             <img class="feature-logo" src="/images/feature-logo/faq.svg" alt="Question icon">
-            <div class="feature-title">FAQ</div>
+            <h3 class="feature-title">FAQ</h3>
             <div class="feature-text">
                 Common questions about Edge capabilities, limitations, and configuration.
             </div>
@@ -89,7 +89,7 @@
     }, 300);
     
     try {
-      sessionStorage.setItem('ceBannerClosed', 'true'); // Changed to sessionStorage
+      sessionStorage.setItem('ceBannerClosed', 'true');
     } catch (e) {
       console.warn('Could not save banner state:', e);
     }
@@ -100,7 +100,7 @@
     if (!banner) return;
     
     try {
-      if (sessionStorage.getItem('ceBannerClosed') === 'true') { // Changed to sessionStorage
+      if (sessionStorage.getItem('ceBannerClosed') === 'true') {
         banner.style.display = 'none';
         return;
       }
@@ -120,14 +120,14 @@
 /* Top banner */
 .ce-banner {
   position: relative;
-  top: -20px; 
+  top: -10px; 
   background: linear-gradient(135deg, #f8fbff 0%, #ffffff 100%);
   border: 1px solid #e3f2fd;
   border-left: 4px solid #1976D2;
   border-radius: 8px;
   padding: 8px 12px;
   margin: 0 0 0 0;
-  font-size: 14px;
+  font-size: 13px;
   color: #424242;
   display: flex;
   align-items: center;
@@ -176,13 +176,11 @@
   font-size: 16px;
   line-height: 1.6;
   color: #424242;
-  margin: 0 0 20px 0;
 }
 
 /* Benefits list */
 .benefits-list {
   padding: 0;
-  margin: 0 0 20px 0;
 }
 
 .benefits-list li {
@@ -194,13 +192,6 @@
   color: #424242;
 }
 
-.benefits-list li:before {
-  position: absolute;
-  left: 8px;
-  color: #1976D2;
-  font-weight: bold;
-}
-
 /* Learn more link */
 .learn-more {
   font-size: 15px;
@@ -209,7 +200,11 @@
 }
 
 .learn-more a {
+{% if docsPrefix != 'pe/' %}
   color: #1976D2;
+{% else %}
+  color: #009688;
+{% endif %}
   text-decoration: none;
   font-weight: 500;
 }
@@ -225,59 +220,21 @@ h2 {
   color: #1a1a1a;
   margin: 20px 0 24px 0;
 }
+/* Cards */
 
-/* Documentation cards grid */
-.doc-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-  margin: 0 0 20px 0;
-}
-
-.doc-card {
-  background: white;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  padding: 24px;
-  transition: all 0.2s ease;
-}
-
-.doc-card:hover {
-  border-color: #1976D2;
-  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.1);
-}
-
-.doc-card-icon {
-  width: 48px;
-  height: 48px;
-  background: #e3f2fd;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 16px;
-}
-
-.doc-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 0 0 12px 0;
-}
-
-.doc-card h3 a {
-  color: #1a1a1a;
+.doc-features .feature-card {
+  display: block;
   text-decoration: none;
+  color: inherit;
+  height: 100%;
+  padding: 16px;
 }
 
-.doc-card h3 a:hover {
-  color: #1976D2;
-}
-
-.doc-card p {
-  font-size: 14px;
-  line-height: 1.5;
-  color: #616161;
-  margin: 0;
+.doc-features .feature-title {
+  font-size: 18px !important;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0 0 4px 0 !important;
 }
 
 /* Commercial banner */
@@ -286,8 +243,8 @@ h2 {
   border: 1px solid #e3f2fd;
   border-left: 4px solid #1976D2;
   border-radius: 8px;
-  padding: 24px;
-  margin: 20px 0;
+  padding: 15px;
+  margin: 5px 0;
 }
 
 .commercial-banner h2 {
@@ -346,10 +303,6 @@ h2 {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .doc-cards-grid {
-    grid-template-columns: 1fr;
-  }
-  
   h1 {
     font-size: 28px;
   }
