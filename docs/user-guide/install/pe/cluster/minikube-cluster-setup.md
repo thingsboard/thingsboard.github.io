@@ -107,15 +107,11 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 {% include templates/install/trendz/pull_trendz.md %}
 
-### 8.2. Obtain and configure license key
-
-{% include templates/install/trendz/k8s-license-secret-trendz.md %}
-
-### 8.3. Create a Trendz database in the existing RDS instance
+### 8.2. Create a Trendz database in the existing RDS instance
 
 {% include templates/install/trendz/eks/k8s-trendz-db-creating.md %}
 
-### 8.4. Trendz starting
+### 8.3. Trendz starting
 
 {% include templates/install/trendz/k8s-trendz-starting.md %}
 

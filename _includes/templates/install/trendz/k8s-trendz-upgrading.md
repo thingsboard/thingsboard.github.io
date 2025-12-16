@@ -9,5 +9,3 @@ In case when database upgrade is needed, execute the following commands:
 
 Note: You may optionally stop the tb-node pods while you run the upgrade of the database. This will cause downtime, but will make sure that the DB state will be consistent after the update.
 Most of the updates do not require the tb-nodes to be stopped.
-
-
