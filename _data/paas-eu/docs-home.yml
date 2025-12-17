@@ -46,6 +46,7 @@ toc:
       path: /docs/paas/eu/user-guide/alarms/
     - title: Alarm rules
       path: /docs/paas/eu/user-guide/alarm-rules/
+      new: true
     - title: Calculated fields
       path: /docs/paas/eu/user-guide/calculated-fields/
     - title: Notification center
@@ -317,6 +318,8 @@ toc:
       path: /docs/paas/eu/user-guide/rbac/
     - title: Secrets storage
       path: /docs/paas/eu/user-guide/secrets-storage/
+    - title: API keys
+      path: /docs/paas/eu/user-guide/security/api-keys/
       new: true
     - title: Two-factor authentication
       path: /docs/paas/eu/user-guide/two-factor-authentication/

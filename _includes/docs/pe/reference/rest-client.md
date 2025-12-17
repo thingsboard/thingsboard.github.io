@@ -1,14 +1,14 @@
 * TOC
 {:toc}
- 
-## REST Client
 
 The ThingsBoard REST API Client helps you interact with ThingsBoard REST API from your Java application.
 With Rest Client you can programmatically create assets, devices, customers, users and other entities and their relations in ThingsBoard.
  
 The recommended method for installing the Rest Client is with a build automation tool, like Maven. 
 The version of the REST Client depends on the version of the platform that you are using.   
-  
+
+<hr>
+
 ## Professional Edition REST Client
 
 In order to add REST Client to your Maven/Gradle project, you should use the following dependency:
@@ -22,6 +22,7 @@ In order to add REST Client to your Maven/Gradle project, you should use the fol
     </dependency>
 </dependencies>
 ```
+{: .copy-code}
 
 Note: The REST Client is built on top of Spring RestTemplate and thus depends on Spring Web (5.1.5.RELEASE at the moment of writing this article).
 
@@ -35,8 +36,13 @@ In order to download the REST Client dependency, you should add the following re
     </repository>
 </repositories>
 ```
+{: .copy-code}
+
+<hr>
 
 ### Basic Usage
+
+#### Authentication with credentials
 
 The next sample code shows how to instantiate ThingsBoard Client, perform login and get user details of current logged in user.
 
@@ -61,9 +67,57 @@ client.close();
 ```
 {: .copy-code}
 
-### Examples
+<hr>
 
-#### Get user permissions
+#### Authentication with API Key
+
+{% assign sinceVersion = "4.3" %}
+{% include templates/since.md %}
+
+Alternatively, you can authenticate using an API key without the need for login/logout operations:
+
+```java
+// ThingsBoard REST API URL
+String url = "http://localhost:8080";
+
+// Your API key
+String apiKey = "YOUR_API_KEY_VALUE";
+
+// Creating new rest client with API key authentication
+RestClient client = RestClient.withApiKey(url, apiKey);
+
+// Get information of current user and print it
+client.getUser().ifPresent(System.out::println);
+
+// Close the client when done
+client.close();
+```
+{: .copy-code}
+
+<hr>
+
+## Examples
+
+The examples below demonstrate how to use the API with standard username/password authentication.
+If you prefer to use an API key, simply replace the lines:
+
+```java
+String username = "tenant@thingsboard.org";
+String password = "tenant";
+RestClient client = new RestClient(url);
+client.login(username, password);
+```
+
+with the API key initialization:
+
+```java
+String apiKey = "YOUR_API_KEY_VALUE";
+RestClient client = RestClient.withApiKey(url, apiKey);
+```
+
+The rest of the logic remains exactly the same.
+
+### Get user permissions
 
 The following sample code shows how to get allowed permissions of current logged in user and then check sample permission.
 
@@ -88,8 +142,12 @@ client.logout();
 client.close();
 ```
 
-#### Fetch user devices
+<hr>
+
+### Fetch user devices
+
 The following sample code shows how to fetch tenant devices via page link.
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -117,8 +175,12 @@ client.close();
 ```
 {: .copy-code}
 
-#### Fetch tenant dashboards
+<hr>
+
+### Fetch tenant dashboards
+
 The following sample code shows how to fetch tenant dashboards via page link.
+
 ```java
 // ThingsBoard REST API URL
 String url = "http://localhost:8080";
@@ -146,7 +208,9 @@ client.close();
 ```
 {: .copy-code}
 
-#### Fetch entity groups
+<hr>
+
+### Fetch entity groups
 
 The following sample code shows how to fetch entity groups.
 
@@ -173,7 +237,9 @@ client.close();
 ```
 {: .copy-code}
 
-#### Count entities using Entity Data Query API
+<hr>
+
+### Count entities using Entity Data Query API
 
 The following sample code shows how to use Entity Data Query API to count total devices, total active devices.
 ```java
@@ -222,7 +288,10 @@ client.close();
 ```
 {: .copy-code}
 
-#### Query entities using Entity Data Query API
+<hr>
+
+### Query entities using Entity Data Query API
+
 The following sample code shows how to use Entity Data Query API to get all active devices.
 
 ```java
@@ -286,7 +355,9 @@ client.close();
 ```
 {: .copy-code}
 
-#### Manage Device example
+<hr>
+
+### Manage Device example
 
 The following sample code demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
 ```java
@@ -337,7 +408,9 @@ client.close();
 ```
 {: .copy-code}
 
-### Some useful code snippets
+<hr>
+
+## Some useful code snippets
 
 ```java
 // ThingsBoard REST API URL
@@ -443,4 +516,9 @@ restClient.activateUser(user.getId(), userPassword);
 
 restClient.addEntitiesToEntityGroup(customer1Administrators.getId(), Collections.singletonList(user.getId()));
 ```
-You can find the example application **[here](https://github.com/thingsboard/tb-pe-rest-client-example)**.
+
+<hr>
+
+### More examples
+
+You can find the example application [here](https://github.com/thingsboard/tb-pe-rest-client-example){:target="_blank"}.
