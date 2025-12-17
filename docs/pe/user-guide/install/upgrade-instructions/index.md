@@ -17,11 +17,10 @@ active-menu-item-click: "true"
 </div>
 
 <div id="upgrade-links" class="upgrade-links">
-  <p style="margin-bottom: 10px"><a href="/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce">ThingsBoard instructions</a> for upgrading from Community Edition.</p>
+  <p style="margin-bottom: 10px">Summary table of supported upgrade instructions for ThingsBoard Professional Edition. To upgrade from Community Edition to Professional Edition, use the <a href="/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce">following instructions</a>.</p>
 </div>
 
-
-Upgrade instructions for the [older versions](/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/).
+<p id="upgrade-links-old" style="margin-bottom: 10px">Upgrade instructions for <a href="/docs/pe/user-guide/install/upgrade-instructions/old-upgrade-instructions/">versions older than 3.0</a>.</p>
 
 <script>
   (function () {
@@ -30,11 +29,13 @@ Upgrade instructions for the [older versions](/docs/pe/user-guide/install/upgrad
 
     var table = document.getElementById('upgrade-table');
     var links = document.getElementById('upgrade-links');
+    var oldLinks = document.getElementById('upgrade-links-old');
     if (!table || !links) return;
 
     if (!hasVersionParam) {
       table.parentNode.insertBefore(links, table);
     } else {
+      oldLinks.style.display = 'none';  
       if (links.previousElementSibling !== table) {
         table.insertAdjacentElement('afterend', links);
         links.style.marginTop = "20px";
