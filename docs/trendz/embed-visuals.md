@@ -29,7 +29,7 @@ Once widgets bundle imported, and you already have saved Trendz Visualization - 
 * In Trendz, open required visualization
 * Press **Share** button, and click `Copy link` button - sharable URL will be copied into the clipboard
 * Open required ThingsBoard Dashboard and press Edit button
-* Select **Advanced Analytics View Static** widget from **Advanced Analytics Bundle** and add it on the Dashboard
+* Select **Advanced analytics View Static** widget from **Advanced analytics Bundle** and add it on the Dashboard
 * Switch to **Advanced** tab of the widget and insert the copied URL from step 1
 * Save dashboard
 
