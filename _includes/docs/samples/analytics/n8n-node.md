@@ -335,27 +335,44 @@ Configure operations with **hardcoded values** directly in the node interface. P
 
 ---
 
-### Example 3: Dynamic Operations - Flow-Based Automation
+### Example 3: Dynamic Operations - Device Telemetry Query
 
-Pass data from previous nodes using **expressions** to create dynamic, data-driven workflows.
+Pass data between nodes using **expressions** to create dynamic, data-driven workflows. This example demonstrates how to find a device by name and retrieve its telemetry data.
 
 {% include images-gallery.html imageCollection="n8n-rule-chain-usecase" %}
 
-**Use Case**: Process ThingsBoard alarm webhook and fetch device attributes
+**Use Case**: Find device by name and fetch its complete telemetry history
 
 **Workflow Steps**:
-1. **Webhook Trigger** - Receive alarm data from ThingsBoard rule chain
-2. **ThingsBoard Node** - Get Attribute Keys
-   - **Entity ID**: `{{ $json.data[0].originator.id }}` *(dynamic from webhook)*
-   - **Entity Type**: `{{ $json.data[0].originator.entityType }}` *(dynamic from webhook)*
-   - **Scope**: SERVER_SCOPE
-3. **Process Results** - Pass attribute keys to downstream nodes for further processing
 
-**Real-World Scenario**: When a temperature alarm triggers in ThingsBoard, the webhook automatically extracts the device ID, fetches all configuration attributes, and includes them in a Slack/email notification to help operators quickly debug the issue.
+1. **Execute Workflow Trigger** - Start workflow with manual JSON input:
+   ```json
+   {
+     "deviceName": "Refrigerator"
+   }
+   ```
+
+2. **ThingsBoard Node** - Get a device by name
+   - **Resource**: Device
+   - **Operation**: Get by Name
+   - **Device Name**: `{{ $json.deviceName }}` *(dynamically references "Refrigerator" from trigger)*
+
+3. **ThingsBoard Node** - Timeseries keys
+   - **Entity ID**: `{{ $json.id.id }}` *(extracts device ID from previous node)*
+   - **Entity Type**: `{{ $json.id.entityType }}` *(extracts "DEVICE" from previous node)*
+
+4. **ThingsBoard Node** - Get timeseries
+   - **Entity ID**: `{{ $('Get a device by name').item.json.id.id }}` *(device ID from step 2)*
+   - **Entity Type**: `{{ $('Get a device by name').item.json.id.entityType }}` *(type from step 2)*
+   - **Keys**: `{{ $json.keys.join(',') }}` *(all keys from step 3)*
+   - **Start Time**: Custom timestamp (e.g., last 7 days)
+   - **End Time**: Current timestamp
+
+**Note**: This example uses Execute Workflow trigger for simplicity, but you can choose different trigger types to execute your workflow (Schedule, Webhook, Manual, HTTP Request, etc.) depending on your automation needs.
 
 **Common Dynamic Patterns**:
 - Processing ThingsBoard webhooks and rule engine outputs
-- Dynamic device operations based on alarm triggers
+- Dynamic device operations based on user input or external triggers
 - Building complex IoT automation pipelines with data flow
 - Integrating with external systems (Slack, email, databases, CRM)
 
