@@ -17,21 +17,17 @@ It is already integrated into ThingsBoard Cloud and can be used to analyze your 
 
 * **Improved time to market.** Save time on maintaining the platform or configuring its features.
 * **Reduced costs.** Infrastructure costs are shared between platform users.
-* **High availability.** The Trendz Analytics add-on uses a microservices architecture and is deployed across multiple availability zones.
+* **High availability.** The Trendz Analytics uses a microservices architecture and is deployed across multiple availability zones.
 * **Data durability.** The platform uses data replication and backup procedures to ensure you don't lose data.
 
 ## Prerequisites
 
-You need an active ThingsBoard Cloud account to activate the Trendz Analytics add-on. If you don't have a ThingsBoard Cloud account yet, please [sign up](https://thingsboard.cloud/signup).
+You need an active ThingsBoard Cloud account to activate the Trendz Analytics. If you don't have a ThingsBoard Cloud account yet, please [sign up](https://thingsboard.cloud/signup).
 
-## Activate Trendz Analytics add-on
+## Activate Trendz Analytics
 
-* Log in to your ThingsBoard Cloud account and select the appropriate **Plan and Billing** option:
-
-    * [Plan and Billing (North America)](https://thingsboard.cloud/billing)
-    * [Plan and Billing (Europe)](https://eu.thingsboard.cloud/billing)
-
-//TODO: Implement docs here
+Trendz Analytics is already connected to the ThingsBoard Cloud infrastructure, so the only step required to use Trendz is to activate it. 
+You can find out how to do this [here](/docs/trendz/activation/public-cloud)
 
 ## Next steps
 
