@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect VIBit to ThingsBoard?
 category: Other devices
 connectivity: Wi-Fi/RS-485/Bluetooth

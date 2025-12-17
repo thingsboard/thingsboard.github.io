@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Temperature & Humidity Sensor]({{deviceVendorLink}}){:target="_blank"} is designed based on the advanced LoRa modulation and powered by a lithium battery with a 5-year operation time. It offers a cost-effective LoRaWAN end device for a variety of applications.<br>
 Its IP65 enclosure and long operation time offer the benefit of low maintenance cost. Therefore, it is ideal for outdoor use. The sensor operation mode can be adjusted via LoRaWAN Network.<br>
 Lansitec sensor family is fully compatible and plug-andplay for LoRaWAN network operation. It can also work with the Lansitec wireless data transfer unit for the low-cost deployment.

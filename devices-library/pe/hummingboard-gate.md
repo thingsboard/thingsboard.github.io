@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect HummingBoard Gate to ThingsBoard?
 category: Single-board computers
 chip: i.MX6DualLite

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect LW001-BG PRO LoRaWAN Tracker to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN®

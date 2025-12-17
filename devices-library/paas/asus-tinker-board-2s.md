@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect ASUS Tinker Board 2S to ThingsBoard?
 category: Single-board computers
 chip: Rockchip RK3399

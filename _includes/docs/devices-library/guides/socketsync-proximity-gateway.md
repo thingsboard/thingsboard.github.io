@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [SocketSync Proximity Gateway]({{deviceVendorLink}}){:target="_blank"} is equipped with Bluetooth 5.0 and LoRaWAN capabilities. When a [Bluetooth beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"} comes into close proximity, the sensor activates buzzing and flashing.<br>
 It then transmits the beacon’s ID and received signal strength indicator (RSSI) to a LoRaWAN gateway. 
 The sensor calculates the distance based on the RSSI between the two devices. Additionally, the proximity sensor functions as a Bluetooth gateway, collecting messages from nearby Bluetooth beacons and forwarding them to the LoRaWAN gateway.<br>

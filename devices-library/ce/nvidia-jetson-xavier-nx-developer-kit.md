@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect NVIDIA Jetson Xavier NX Developer Kit to ThingsBoard?
 category: Single-board computers
 chip: NVIDIA CUDA

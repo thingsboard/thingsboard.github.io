@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Macro Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} receives data from nearby Bluetooth beacons, sensors, or controllers, restructures it, and forwards it to a server via Cat-1 connectivity.<br>
 It supports iBeacon, Eddystone, private protocols, and both scan and response features.<br>
 Powered by a 38,000 mAh low-discharge-rate battery, the gateway offers a battery life of over 5 years.<br>

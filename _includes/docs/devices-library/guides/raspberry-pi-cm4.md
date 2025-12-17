@@ -1,6 +1,5 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Elastel EG500](https://www.elastel.com/products/industrial-raspberry-pi/eg500-edge-computing-gateway/){:target="_blank"} is an Industrial Edge Computing Gateway powered by **Raspberry Pi CM4**.
 
 Perfect for use as an IoT Gateway, data acquisition device, Industrial Controller, or for Edge Computing applications.

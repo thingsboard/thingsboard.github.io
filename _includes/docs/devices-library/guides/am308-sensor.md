@@ -13,7 +13,6 @@
 '
  %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [AM300 series]({{deviceVendorLink}}){: target="_blank"} is a compact indoor ambiance monitoring sensor for measurement of temperature, humidity, light, CO2 concentration, barometric pressure, PM2.5, PM10 and motion. 
 The data will be shown on the E-ink screen in real-time, which helps to measure the indoor environment and comfort. 
 AM300 series is widely used for offices, stores, classrooms, hospitals, etc. Sensor data is transmitted using LoRaWAN ® technology. 

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect 16A Switch & Power Meter compact 16A relay and electricity meter to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN

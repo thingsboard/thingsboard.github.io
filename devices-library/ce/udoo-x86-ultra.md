@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Udoo x86 Ultra to ThingsBoard?
 category: Single-board computers
 chip: Pentium N3710

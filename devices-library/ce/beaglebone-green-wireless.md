@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect BeagleBone Green Wireless to ThingsBoard?
 category: Single-board computers
 chip: TI Sitara AM3358BZCZA100

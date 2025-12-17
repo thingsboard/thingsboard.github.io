@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UWB Anchor]({{deviceVendorLink}}){:target="_blank"} is designed using LoRaWAN and UWB technologies.<br>
 It works with surrounding UWB trackers to calculate distances between devices, regularly synchronizes time with other anchors, and transmits heartbeat data to the LoRaWAN gateway.<br>
 

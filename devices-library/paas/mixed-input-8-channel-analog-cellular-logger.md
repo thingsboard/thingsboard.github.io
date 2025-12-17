@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Mixed Input, 8-Channel Analog Cellular Logger to ThingsBoard?
 category: Other devices
 connectivity: HTTP/ MQTT/ LTE/ NB-IoT/ LTE-M

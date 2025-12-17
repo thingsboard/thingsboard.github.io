@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect uPesy ESP32 Wroom Low Power DevKit to ThingsBoard?
 category: Microcontrollers
 chip: ESP32

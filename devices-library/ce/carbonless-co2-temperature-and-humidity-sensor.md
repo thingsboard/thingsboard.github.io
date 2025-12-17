@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Carbonless CO2 temperature and humidity Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN

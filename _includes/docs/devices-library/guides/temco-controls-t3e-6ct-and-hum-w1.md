@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} is general purpose input / ouput modules for building 
 integrators. Available in several input/output configurations, the T3 module provide convenient termination for field 
 devices and interfacing to your HVAC, lighting, temperature sensors, and other typical building automation 

@@ -12,7 +12,6 @@
 
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The ACE Automation MQTT 4G GPS Gateway]({{deviceVendorLink}}){: target="_blank"} is a cutting-edge device that revolutionizes data communication and connectivity 
 for industrial and IoT applications. Equipped with 4G capabilities, this gateway ensures reliable and high-speed data 
 transmission over cellular networks, even in remote locations. It integrates GPS technology for real-time location 

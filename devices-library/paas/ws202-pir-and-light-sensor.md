@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN

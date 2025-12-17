@@ -1,6 +1,6 @@
 ---
 docsTag: "edge-pe"
-layout: devices-library-article
+layout: device
 title: How to install ThingsBoard Edge on reComputer R1000?
 category: Other devices
 connectivity: LoRaWAN/ Ethernet/ WIFI/ Bluetooth/ 4G

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Helmet Sensor to ThingsBoard?
 category: Other devices
 connectivity: Bluetooth/ LoRaWAN

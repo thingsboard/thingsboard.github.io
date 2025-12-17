@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect PINE A64 to ThingsBoard?
 category: Single-board computers
 chip: Allwinner A64

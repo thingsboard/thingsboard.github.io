@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The Sentrius™ RS26x]({{deviceVendorLink}}){: target="_blank"} s a battery powered IP67 temperature sensor platform that delivers HACCP level temperature monitoring with real time alerting for your food safety compliance. In addition to ensuring product safety, these intelligent devices avoid inventory loss, improve facility efficiency and save you time and money in automated day to day operations.  
 
 They are available in two variants: One with an internal temperature sensor, and a second that supports an external sensor probe.

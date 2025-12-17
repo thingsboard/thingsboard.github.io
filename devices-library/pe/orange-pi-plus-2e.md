@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Orange Pi Plus 2E to ThingsBoard?
 category: Single-board computers
 chip: Allwinner H3

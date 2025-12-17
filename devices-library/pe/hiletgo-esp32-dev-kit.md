@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect HiLetgo ESP32 Development Board to ThingsBoard?
 category: Microcontrollers
 chip: ESP32

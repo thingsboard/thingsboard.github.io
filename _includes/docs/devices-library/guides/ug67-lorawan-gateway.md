@@ -13,7 +13,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UG67 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} UG67 is a robust 8-channel outdoor LoRaWAN® gateway.  
 Adopting SX1302 LoRa chip and high-performance quad-core CPU, UG67 supports connection with more than 2000 nodes.  
 UG67 has line of sight up to 15 km and IP67 waterproof case, which is ideally suited to smart agriculture, smart metering and many other outdoor applications.  

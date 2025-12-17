@@ -67,44 +67,46 @@
             -%}
             <div class="card-collection" id="card-collection" data-platform="{{ dir | replace: 'devices-library/', '' | replace: '/', '' }}">
                 {%- for page in pages_in_dir -%}
-                    {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
-                    {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
-                    <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}" target="_blank">
-                        <div class="card-wrapper">
-                            <div class="card-image">
-                                <img class="logo" src="{{ deviceImg }}" loading="lazy">
-                            </div>
-                            {% if page.industry %}
-                                {% assign industries = page.industry %}
-
-                                {% unless industries.first %}
-                                    {% assign industries = industries | split: "|" %}
-                                {% endunless %}
-
-                                {% assign industrySize = industries | size %}
-
-                                <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}"{% if industrySize > 1 %} data-tooltip="Industries:{% for item in industries %}&#10;{{ item }}{% endfor %}"{% endif %}>
-
-                                    <span class="crisp">{{ industries[0] }}</span>
-
-                                    {% if industrySize > 1 %}
-                                        <span class="crisp">+{{ industrySize | minus: 1 }}</span>
-                                    {% endif %}
+                    {% assign pageFile = page.path | split: "/" | last %}
+                    {% if pageFile != 'guidelines.md' %}
+                        {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
+                        {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
+                        <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}" target="_blank">
+                            <div class="card-wrapper">
+                                <div class="card-image">
+                                    <img class="logo" src="{{ deviceImg }}" loading="lazy">
                                 </div>
+                                {% if page.industry %}
+                                    {% assign industries = page.industry %}
 
-                            {% endif %}
-                            <span class="card-title">{{ deviceName }}</span>
-                            <div class="card-link-wrapper">
+                                    {% unless industries.first %}
+                                        {% assign industries = industries | split: "|" %}
+                                    {% endunless %}
+
+                                    {% assign industrySize = industries | size %}
+
+                                    <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}"{% if industrySize > 1 %} data-tooltip="Industries:{% for item in industries %}&#10;{{ item }}{% endfor %}"{% endif %}>
+
+                                        <span class="crisp">{{ industries[0] }}</span>
+
+                                        {% if industrySize > 1 %}
+                                            <span class="crisp">+{{ industrySize | minus: 1 }}</span>
+                                        {% endif %}
+                                    </div>
+
+                                {% endif %}
+                                <span class="card-title">{{ deviceName }}</span>
+                                <div class="card-link-wrapper">
                                 <span class="card-link" href="#">
                                 See connection guide
                                 <i class="fas fa-chevron-right arrow first blue-chevron"></i>
                                 <i class="fas fa-chevron-right arrow second blue-chevron"></i>
                                 <i class="fas fa-chevron-right arrow third blue-chevron"></i>
                             </span>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-
+                        </a>
+                    {% endif %}
                 {%- endfor -%}
                 {% include pagination.html %}
             </div>

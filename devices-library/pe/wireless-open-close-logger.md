@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Wireless open/close logger to ThingsBoard?
 category: Other devices
 connectivity: BLE/ NB-IoT/ CoAP

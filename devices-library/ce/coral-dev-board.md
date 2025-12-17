@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Coral Dev Board to ThingsBoard?
 category: Single-board computers
 chip: Google Edge TPU ML

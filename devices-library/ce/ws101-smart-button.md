@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect WS101 LoRaWAN® Smart Button to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Badge Tracker to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN

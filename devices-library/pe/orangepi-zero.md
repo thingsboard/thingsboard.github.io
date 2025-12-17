@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect OrangePI Zero to ThingsBoard?
 category: Single-board computers
 chip: Allwinner H2+

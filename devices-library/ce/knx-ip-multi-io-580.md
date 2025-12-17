@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect KNX IP Multi IO 580 to ThingsBoard?
 category: Other devices
 connectivity: KNX

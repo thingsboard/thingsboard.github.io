@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect UG65 LoRaWAN® Semi-Industrial Gateway to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN/ HTTP/ MQTT/ LTE/ UDP/ 3G

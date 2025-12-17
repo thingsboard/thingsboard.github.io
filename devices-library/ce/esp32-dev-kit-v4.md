@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect ESP32 Dev Kit C V4 to ThingsBoard?
 category: Microcontrollers
 chip: ESP32

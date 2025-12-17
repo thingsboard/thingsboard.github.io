@@ -5,7 +5,7 @@ description: Meet our official hardware partners and explore IoT devices tailore
 containerId: "devices-card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
-itemsPerPage: "15"
+itemsPerPage: "16"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
 not-found: "No devices have been found..."

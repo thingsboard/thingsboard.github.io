@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Industrial Raspberry Pi EG500 to ThingsBoard?
 category: Single-board computers
 connectivity: LoRaWAN/ HTTP/ MQTT/ WIFI/ Bluetooth/ 4G

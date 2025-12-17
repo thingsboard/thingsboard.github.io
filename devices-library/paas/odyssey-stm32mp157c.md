@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect ODYSSEY STM32MP157C to ThingsBoard?
 category: Single-board computers
 chip: STM32MP157C

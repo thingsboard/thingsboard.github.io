@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [ioButton Panic button]({{deviceVendorLink}}){: target="_blank"} ioButton is a versatile solution, pre-
 configured for various emergency
 scenarios. When the panic button is

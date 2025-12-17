@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect ODROID-XU4 to ThingsBoard?
 category: Single-board computers
 chip: Samsung Exynos5422

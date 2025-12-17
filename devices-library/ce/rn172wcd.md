@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect RN172plus series to ThingsBoard?
 category: Other devices
 connectivity: Wi-Fi/ MODBUS TCP/ HTTP/HTTPS

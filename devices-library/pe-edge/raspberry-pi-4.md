@@ -1,6 +1,6 @@
 ---
 docsTag: "edge-pe"
-layout: devices-library-article
+layout: device
 title: How to install ThingsBoard Edge on Raspberry Pi 4?
 category: Single-board computers
 chip: Broadcom BCM2711

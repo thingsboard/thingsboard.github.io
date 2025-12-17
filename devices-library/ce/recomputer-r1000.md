@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect reComputer R1000 to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN/ Ethernet/ WIFI/ Bluetooth/ 4G

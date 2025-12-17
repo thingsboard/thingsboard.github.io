@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Vapeless Gas detection indoor Sensor]({{deviceVendorLink}}){: target="_blank"} The VAPELESS is advanced technology gas detection indoor sensor applied
 for the full sensing of the Vaping gases exhaust by the electronic cigarettes
 together with environment temperature and humidity. VAPELESS enclosed

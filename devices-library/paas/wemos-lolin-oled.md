@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect WeMos Lolin ESP32 OLED to ThingsBoard?
 category: Microcontrollers
 chip: ESP32

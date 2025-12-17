@@ -3,7 +3,6 @@
 {% assign thingsboardHost = "https://" | append: {{hostName}} %}
 
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [ALPON X4]({{deviceVendorLink}}){: target="_blank"} is a powerful and reliable edge computer for IoT and industrial applications developed by Sixfab. It features cloud management, LTE connectivity, and eSIM support for automatic network switching. Powered by a Raspberry Pi CM4 processor, up to 8GB LPDDR4 RAM, and 32GB eMMC storage, it ensures robust processing for demanding applications. With Cat4 LTE, Wi-Fi 2.4/5GHz, Bluetooth 5.0 BLE, and Gigabit Ethernet, the ALPON X4 guarantees seamless connectivity, even in challenging environments.
 
 Its rugged design operates from -20°C to +60°C, supports flexible power options like USB-PD Type-C, 9-30V DC, and optional PoE+, and offers DIN Rail or Wall Mount for easy deployment. Certified by CE, FCC, Verizon, AT&T, and more, it’s built for global scalability. The ALPON X4 powers industrial automation with PLC and Modbus, enables smart home and remote monitoring via ThingsBoard, supports digital signage, and optimizes energy efficiency for versatile IoT solutions.

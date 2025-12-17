@@ -10,7 +10,6 @@
 
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} offers dual-SIM cellular 
 connectivity, four Ethernet ports and Wi-Fi combined with RS232, RS485, USB interfaces and I/O for a wide variety of 
 professional application scenarios. This router is equipped with advanced RutOS software features such as Modbus, SNMP, 

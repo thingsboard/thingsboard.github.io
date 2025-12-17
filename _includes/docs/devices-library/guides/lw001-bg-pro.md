@@ -11,7 +11,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The [LW001-BG PRO]({{deviceVendorLink}}){: target="_blank"} is a wireless, smart, ultra–low-power indoor and outdoor LoRaWAN tracker.   
 It integrates **GPS**, **Bluetooth**, and **WiFi** positioning, supports multiple operating modes, and is suitable for a wide range of tracking applications.<br>
 

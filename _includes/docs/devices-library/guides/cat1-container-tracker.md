@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Container Tracker]({{deviceVendorLink}}){:target="_blank"} supports indoor and outdoor tracking, asset management with worldwide network coverage.<br>
 It has 5-year battery life (30 minutes report interval) and IP68 enclosure and is perfect for tracking container, pallets, and assets in a wide area.<br>
 

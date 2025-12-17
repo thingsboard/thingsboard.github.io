@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [VIBit-BP]({{deviceVendorLink}}){:target="_blank"} is a battery-powered, compact tri-axial vibration and temperature sensor designed for anomaly detection without the need for external power or wiring. It transmits data wirelessly via Bluetooth Low Energy (BLE), making it ideal for remote condition monitoring in industrial settings.<br><br><br><br><br>
 
 ## VIBit-BP Architecture

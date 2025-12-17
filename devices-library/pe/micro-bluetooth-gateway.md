@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Micro Bluetooth Gateway to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN

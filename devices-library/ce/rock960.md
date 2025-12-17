@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Rock960 to ThingsBoard?
 category: Single-board computers
 chip: Rockchip RK3399

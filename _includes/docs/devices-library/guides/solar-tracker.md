@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Solar Tracker]({{deviceVendorLink}}){:target="_blank"} is designed based on GNSS, Bluetooth and LoRaWAN for indoor and outdoor tracking.<br>
 It is powered with robust solar film and a 5300mAh rechargeable battery. 
 Users can adjust settings such as the GNSS report duration, heartbeat message period, beacon report interval, and asset receiving duration.<br>

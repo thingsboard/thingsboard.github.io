@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [AmpSense Smart current Sensor]({{deviceVendorLink}}){: target="_blank"} The AmpSense is advanced technology indoor sensor applied for the full sensing of the electric current magnitude through easily installed, split core and non-invasive current transformers and used indoors. The integrated advanced intelligent computational AI algorithm enables reliable capability of the measurement the magnitude.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}

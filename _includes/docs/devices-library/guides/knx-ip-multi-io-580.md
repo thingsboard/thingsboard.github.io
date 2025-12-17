@@ -7,7 +7,6 @@
   '
   %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The KNX IP Multi IO 580 (48I/O)](https://weinzierl.de/en/products/knx-ip-multi-io-580/){:target="_blank"} is a universal binary interface for building control. It provides 48 I/O lines. Each line can be used as binary input as well as binary output. The peripherals can be fed by an external voltage of 24 V⎓. Channels which are configured as inputs can be used to control lights or blinds via the KNX network. They also can be used to count impulses, e.g. as interface for energy meters. Channels which are configured as outputs can directly drive signal LEDs, external coupling relays.<br><br>
 
 ## Prerequisites

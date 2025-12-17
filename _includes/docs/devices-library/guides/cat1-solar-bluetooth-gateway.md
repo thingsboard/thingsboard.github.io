@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Solar Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} receives data from nearby [Bluetooth beacons](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"}, sensors, or controllers, restructures it, and forwards it to a server via Cat-1 connectivity.<br>
 It supports iBeacon, Eddystone, private protocols, and both scan and response features.<br>
 Equipped with a solar panel and a low-temperature rechargeable battery, the gateway is maintenance-free, even in harsh environmental conditions.<br>

@@ -1,0 +1,35 @@
+{% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
+{% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
+{% assign deviceHardwareType = page.hardwareType %}
+{% assign deviceConnectivity = page.connectivity | join: ", " %}
+{% assign deviceChip = page.chip %}
+{% assign deviceIndustry = page.industry | join: ", " %}
+{% assign deviceUseCase = page.useCase | join: ", " %}
+{% assign devicePlatforms = '' %}
+
+<div class="device-card">
+    <div class="device-img">
+        <img src="{{ deviceImg }}">
+    </div>
+    <div class="device-data">
+        <span class="device-name">{{ deviceName }}</span>
+        <ul class="device-data-list">
+            {% if deviceHardwareType %}
+                <li><span>Hardware type: </span>{{ deviceHardwareType }}</li>
+            {% endif %}
+            {% if deviceConnectivity %}
+                <li><span>Connectivity: </span>{{ deviceConnectivity }}</li>
+            {% endif %}
+            {% if deviceChip %}
+                <li><span>Chip: </span>{{ deviceChip }}</li>
+            {% endif %}
+            {% if deviceIndustry %}
+                <li><span>Industry: </span>{{ deviceIndustry }}</li>
+            {% endif %}
+            {% if deviceUseCase %}
+                <li><span>Use cases: </span>{{ deviceUseCase }}</li>
+            {% endif %}
+            <li><span>Platforms: </span>123</li>
+        </ul>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect ALPON X4 Edge Computer to ThingsBoard?
 category: Other devices
 connectivity: Ethernet/ WIFI/ Bluetooth/ LTE

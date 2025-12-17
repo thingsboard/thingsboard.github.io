@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect DSGW-210 Smart Gateway Hub to ThingsBoard?
 category: Other devices
 connectivity: Bluetooth/ Zigbee/ LTE/ WIFI/ Ethernet

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Banana Pi BPI-M5 to ThingsBoard?
 category: Single-board computers
 chip: Rockchip RK3328

@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect ACE MQTT 4G GPS Gateway to ThingsBoard?
 category: Other devices
 connectivity: HTTP/ MQTT/ Ethernet/ WIFI

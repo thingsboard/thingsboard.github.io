@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect UG67 LoRaWAN® Gateway to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN/ HTTP/ MQTT/ 4G/ UDP

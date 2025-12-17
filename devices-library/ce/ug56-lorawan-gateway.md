@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect UG56 LoRaWAN® Gateway to ThingsBoard?
 category: Other devices
 connectivity: LoRaWAN/ HTTP/ MQTT/ LTE/ 4G/ NB-IoT/ LTE-M/ UDP

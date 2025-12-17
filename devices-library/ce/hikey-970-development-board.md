@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Hikey 970 Development Board to ThingsBoard?
 category: Single-board computers
 chip: Kirin 970

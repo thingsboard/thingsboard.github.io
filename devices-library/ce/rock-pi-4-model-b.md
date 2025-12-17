@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Rock Pi 4 Model B to ThingsBoard?
 category: Single-board computers
 chip: Rockchip RK3399

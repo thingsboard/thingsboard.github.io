@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Raspberry Pi Pico W to ThingsBoard?
 category: Microcontrollers
 chip: RP2040

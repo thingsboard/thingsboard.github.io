@@ -1,0 +1,146 @@
+<!Doctype html>
+<html id="device" lang="en">
+
+{% include head-header.html %}
+
+<section id="hero" class="light-text">
+</section>
+
+<section id="encyclopedia">
+    <div id="docsContent" class="hasTocContent">
+        <div id="table-of-contents">
+            {% if hasTocContent == "true" %}
+            <span>On this page</span>
+            {% endif %}
+        </div>
+        <div id="content">
+            {% include device-card.liquid %}
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </div>
+</section>
+
+{% include footer.html %}
+
+{% include scroll-progress-button.liquid %}
+
+{% include cookie-consent.html %}
+
+<script>
+    jqueryDefer(function () {
+        var markdownTocs = null;
+        var contentAnchors = [];
+        var activeAnchor = null;
+        var firstAnchor = null;
+        var lastAnchor = null;
+
+        function updatePositions() {
+            contentAnchors = [];
+            markdownTocs.each(function (i) {
+                if (!$(this).hasClass('hide')) {
+                    var tocAnchor = $(this).children('a');
+                    var href = tocAnchor.attr('href');
+                    var contentAnchor = $('div#content ' + href);
+                    var top = Math.floor(contentAnchor.offset().top);
+                    var bottom;
+                    if (i < markdownTocs.length - 1) {
+                        var nextHref = null;
+                        for (let j = 1; j < markdownTocs.length; j++) {
+                            if (!$(markdownTocs[i + j]).hasClass('hide')) {
+                                nextHref = $(markdownTocs[i + j]).children('a').attr('href');
+                                break;
+                            }
+                        }
+                        var nextContentAnchor = $('div#content ' + nextHref);
+                        bottom = Math.floor(nextContentAnchor.offset().top);
+                    } else {
+                        bottom = $('div#content').offset().top + $('div#content').innerHeight();
+                    }
+                    var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
+                    contentAnchors.push(contentAnchorInfo);
+                    if (i === 0) {
+                        firstAnchor = contentAnchorInfo;
+                    }
+                    if (i === markdownTocs.length - 1) {
+                        lastAnchor = contentAnchorInfo;
+                    }
+                }
+            });
+        }
+
+        function findActiveContentToc() {
+            var top = $(window).scrollTop();
+            var bottom = top + $(window).height();
+            if (bottom === $('#encyclopedia').offset().top + $('#encyclopedia').innerHeight()) {
+                return lastAnchor;
+            } else {
+                bottom -= 154;
+                for (var i = 0; i < contentAnchors.length; i++) {
+                    var contentAnchor = contentAnchors[i];
+                    if (contentAnchor.top <= bottom &&
+                        contentAnchor.bottom > top) {
+                        return contentAnchor;
+                    }
+                }
+            }
+            return firstAnchor;
+        }
+
+        function updateActiveToc(init) {
+            updatePositions();
+            var newActiveAnchor = findActiveContentToc();
+            if (!activeAnchor || newActiveAnchor.href !== activeAnchor.href) {
+                activeAnchor = newActiveAnchor;
+                markdownTocs.removeClass('active');
+                activeAnchor.toc.addClass('active');
+                var tocTop = $('#table-of-contents').scrollTop() + 100;
+                var tocBottom = tocTop + $('#table-of-contents').innerHeight() - 200;
+                var activeTocTop = activeAnchor.toc.position().top;
+                var activeTocBottom = activeTocTop + activeAnchor.toc.children(':first').height();
+                if (tocTop > activeTocTop) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop -= 100;
+                } else if (tocBottom < activeTocBottom) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop += init ? -100 : 100;
+                }
+            }
+        }
+        $(document).ready(function () {
+            var tocs = $('#content > ul#markdown-toc');
+            var tableOfContents = $('#table-of-contents');
+            tableOfContents.append(tocs);
+
+            markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function () {
+                var tocAnchor = $(this).children('a');
+                var href = tocAnchor.attr('href');
+                if (!href.startsWith('#')) {
+                    return false;
+                } else {
+                    var contentAnchor = $('div#content ' + href);
+                    return contentAnchor.length > 0;
+                }
+            });
+            updateActiveToc(true);
+            $('#table-of-contents ul#markdown-toc > li > ul').each(function() {
+                let i = 0;
+                $(this).find('li').each(function() {
+                    var tocAnchor = $(this).children('a');
+                    if (!$(tocAnchor.attr('href')).parent().hasClass('panel-body')) return true;
+                    tocAnchor.attr('href', tocAnchor.attr('href') + i);
+                    tocAnchor.attr('id', tocAnchor.attr('id') + i++);
+                })
+            })
+        });
+
+        $(document).on("scroll", function() {
+            updateActiveToc(false);
+        });
+
+    });
+</script>
+
+</body>
+</html>
+

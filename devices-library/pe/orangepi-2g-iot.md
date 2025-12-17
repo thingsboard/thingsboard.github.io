@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect OrangePI 2G IoT to ThingsBoard?
 category: Single-board computers
 chip: Allwinner H6

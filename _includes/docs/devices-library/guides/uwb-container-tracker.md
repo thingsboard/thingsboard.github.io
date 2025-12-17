@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UWB Container Tracker]({{deviceVendorLink}}){:target="_blank"} is designed using LoRaWAN and UWB technologies.<br>
 It calculates the distance with anchors and forward the distance information to a LoRaWAN gateway to calculate its position in the server. The accuracy can be as low as 10cm.<br>
 

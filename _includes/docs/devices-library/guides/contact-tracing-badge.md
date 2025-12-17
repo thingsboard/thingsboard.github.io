@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Contact Tracing Badge]({{deviceVendorLink}}){:target="_blank"} is designed based on Bluetooth 5.0 and LoRaWAN technology. It uses RSSI for distance measurement and contact tracing.<br>
 The badge is mainly used for keeping social distance at the workplace or hospital and is especially useful during COVID-19.<br>
 Proximity detection function: the badge beeps when other badges approach. The badge can use vibration and sound to alert the user even without the LoRaWAN network.<br>

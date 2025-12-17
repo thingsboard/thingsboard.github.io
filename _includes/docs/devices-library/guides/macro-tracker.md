@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Macro Tracker]({{deviceVendorLink}}){:target="_blank"} is designed based on GNSS, Bluetooth and LoRaWAN for indoor and outdoor tracking. It is powered by 38,000mAh industrial battery with a standby time as long as 7 years. <br>
 Users can adjust settings such as the GNSS report duration, heartbeat message period, beacon report interval, and asset receiving duration.<br>
 

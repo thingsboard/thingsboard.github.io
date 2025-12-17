@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Valve Positioning Sensor]({{deviceVendorLink}}){:target="_blank"} leverages LoRa technology and a built-in magnet sensor to track valve rotation angles with 1° accuracy.<br> 
 This compact device measures both the direction and total number of turns, reporting real-time data to a LoRaWAN gateway.<br>
 With configurable heartbeat intervals and operating modes, plus support for FOTA over Bluetooth, it delivers reliable performance and minimal maintenance in industrial or municipal environments.<br>

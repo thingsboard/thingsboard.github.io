@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Macro Tracker]({{deviceVendorLink}}){:target="_blank"} is designed for both indoor and outdoor tracking, leveraging GNSS, Bluetooth, and Cat-1 technologies.
 It is powered by a 38,000 mAh industrial-grade battery, offering a standby time of up to 7 years.<br>
 Users can configure settings such as:

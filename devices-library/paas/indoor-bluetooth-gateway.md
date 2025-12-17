@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect Indoor Bluetooth Gateway to ThingsBoard?
 category: Other devices
 connectivity: Bluetooth/ LoRaWAN

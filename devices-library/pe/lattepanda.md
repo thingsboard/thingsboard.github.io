@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to connect LattePanda to ThingsBoard?
 category: Single-board computers
 chip: Intel Atom x5-Z8350

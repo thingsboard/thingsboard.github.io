@@ -1,5 +1,5 @@
 ---
-layout: devices-library-article
+layout: device
 title: How to install ThingsBoard Edge on NVIDIA Jetson Xavier NX Developer Kit?
 category: Single-board computers
 chip: NVIDIA CUDA
