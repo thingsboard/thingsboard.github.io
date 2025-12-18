@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ThingsBoard n8n Node
+title: ThingsBoard n8n node
 description: Seamless IoT workflow automation with ThingsBoard and n8n integration
 
 n8n-ai-agent-usecase:
@@ -12,11 +12,6 @@ n8n-save-attributes:
     0:
         image: /images/samples/analytics/n8n-node/save-entity-attributes.png
         title: 'Save entity attributes with fixed values using direct operations.'
-
-n8n-rule-chain-usecase:
-    0:
-        image: /images/samples/analytics/n8n-node/rule-chain-usecase.png
-        title: 'Dynamic workflow processing ThingsBoard alarm webhook.'
 
 thingsboard-n8n-node:
     0:

@@ -1876,6 +1876,9 @@
 "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/paas/eu/samples/analytics/n8n-node/":
+  url: "/docs/paas/eu/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/ollama/":
   url: "/docs/paas/eu/samples/analytics/ollama/"
   redirect_from: []
@@ -2417,6 +2420,9 @@
   redirect_from: []
 "/docs/paas/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/paas/samples/analytics/n8n-node/":
+  url: "/docs/paas/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/paas/samples/analytics/ollama/":
   url: "/docs/paas/samples/analytics/ollama/"
@@ -3639,6 +3645,9 @@
 "/docs/pe/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/pe/samples/analytics/n8n-node/":
+  url: "/docs/pe/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/pe/samples/analytics/ollama/":
   url: "/docs/pe/samples/analytics/ollama/"
   redirect_from: []
@@ -4428,6 +4437,9 @@
   - "/docs/samples/analytics/spark-integration-with-thingsboard/"
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/samples/analytics/n8n-node/":
+  url: "/docs/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/samples/analytics/ollama/nginx/":
   url: "/docs/samples/analytics/ollama/nginx/"

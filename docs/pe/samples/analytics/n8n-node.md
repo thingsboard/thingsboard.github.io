@@ -15,7 +15,7 @@ n8n-save-attributes:
 
 n8n-rule-chain-usecase:
     0:
-        image: /images/samples/analytics/n8n-node/rule-chain-usecase.png
+        image: /images/samples/analytics/n8n-node/rule-chain-use-case.png
         title: 'Dynamic workflow processing ThingsBoard alarm webhook.'
 
 thingsboard-n8n-node:
