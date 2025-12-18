@@ -67,8 +67,8 @@ services:
       TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
       REPORTS_SERVER_ENDPOINT_URL: http://tb-web-report:8383
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard
-      TRENDZ_DEFAULT_URL: http://trendz:8888
-      TRENDZ_DEFAULT_TB_URL: http://thingsboard-pe:8080
+      DEFAULT_TRENDZ_URL: http://trendz:8888
+      DEFAULT_TB_URL: http://thingsboard-pe:8080
       TB_QUEUE_TYPE: kafka
       TB_KAFKA_SERVERS: kafka:9092
     volumes:
