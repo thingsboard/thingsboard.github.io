@@ -22,7 +22,7 @@
 
     <div class="card-collection" id="card-collection">
         {% for card in finalCollection %}
-            <a class="card" href="{{ card.page }}" data-hardware-types="{{ card.hardware-types | join: '|' }}" data-connectivity="{{ card.type | join: '|' }}" data-industry="{{ card.industry | join: '|' }}" data-use-cases="{{ card.use-case | join: '|' }}" target="_blank">
+            <a class="card" href="{{ card.page }}" data-hardware-types="{{ card.hardware-types | join: '|' }}" data-connectivity="{{ card.type | join: '|' }}" data-industry="{{ card.industry | join: '|' }}" data-use-cases="{{ card.use-case | join: '|' }}">
                 <div class="card-wrapper">
                     <div class="card-image">
                         <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
@@ -69,9 +69,9 @@
                 {%- for page in pages_in_dir -%}
                     {% assign pageFile = page.path | split: "/" | last %}
                     {% if pageFile != 'guidelines.md' %}
-                        {% assign deviceName = page.title | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" %}
+                        {% assign deviceName = page.title | replace: "How to connect ", "" | replace: "How to install ThingsBoard Edge on ", "" | replace: " to ThingsBoard?", "" | replace: "?", "" %}
                         {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
-                        <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}" target="_blank">
+                        <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}">
                             <div class="card-wrapper">
                                 <div class="card-image">
                                     <img class="logo" src="{{ deviceImg }}" loading="lazy">

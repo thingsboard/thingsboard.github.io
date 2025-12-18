@@ -65,6 +65,42 @@
 <script>
     const DEFAULT_PLATFORM = 'ce';
 
+    const PLATFORM_LABELS = {
+        'ce': 'Community Edition',
+        'pe': 'Professional Edition',
+        'paas': 'Cloud',
+        'edge': 'Edge',
+        'pe-edge': 'Edge Professional Edition',
+    };
+
+    function getPlatformLabel(code) {
+        const key = (code || '').trim().toLowerCase();
+        return PLATFORM_LABELS[key] || key;
+    }
+
+    const URL_PARAM_PLATFORM = 'platform';
+    const URL_PARAM_QUERY = 'q';
+    const URL_PARAM_FILTER_PREFIX = 'f_';       
+    const URL_PARAM_ORDER = 'order';
+
+    function normalizeCatKey(cat) {
+        return (cat || '').trim().toLowerCase();
+    }
+
+    function splitCSV(v) {
+        return (v || '')
+            .split(',')
+            .map(s => decodeURIComponent(s.trim()))
+            .filter(Boolean);
+    }
+
+    function joinCSV(arr) {
+        return (arr || [])
+            .map(v => encodeURIComponent(String(v).trim()))
+            .filter(Boolean)
+            .join(',');
+    }
+
     const checkboxes = document.querySelectorAll('.big-filter-section-filter input[type="checkbox"]');
     const platformRadios = document.querySelectorAll('.big-filter-section-filter input[type="radio"]');
 
@@ -90,8 +126,6 @@
             if (fallback) fallback.checked = true;
         }
     }
-
-    ensurePlatformSelected();
 
     document.querySelectorAll('.big-filter-section').forEach(section => {
         const searchFilterInput = section.querySelector('#searchFilterInput');
@@ -205,8 +239,8 @@
         const byCat = {};
         checkboxes.forEach(cb => {
             if (!cb.checked) return;
-            const cat = (cb.dataset.cat || '').trim().toLowerCase();
-            const val = (cb.value || '').trim().toLowerCase();
+            const cat = normalizeCatKey(cb.dataset.cat);
+            const val = String(cb.value || '').trim();
             if (!cat || !val) return;
             (byCat[cat] ||= new Set()).add(val);
         });
@@ -253,7 +287,7 @@
                 if (set.size === 0) continue;
 
                 const cardVals = (card.getAttribute(`data-${cat}`) || '')
-                    .toLowerCase()
+                    .toString()
                     .split('|')
                     .map(s => s.trim())
                     .filter(Boolean);
@@ -266,20 +300,96 @@
         });
     }
 
-    function updateVisibility() {
-        ensurePlatformSelected();
-        updatePlatformVisibility();
-        applySearch();
-        applyFilter();
+    let selectedOrder = [];
+    let isApplyingFromUrl = false;
 
-        const selectedFilters = selectedOrder.filter(v =>
-            Array.from(checkboxes).some(cb => cb.checked && cb.value === v)
-        );
+    function readStateFromUrl() {
+        const params = new URLSearchParams(window.location.search);
 
-        crispsContainers.forEach(container => {
-            updateCrisps(selectedFilters, container);
+        const p = (params.get(URL_PARAM_PLATFORM) || '').trim().toLowerCase();
+        if (p) {
+            const radio = Array.from(platformRadios).find(r => (r.value || '').trim().toLowerCase() === p);
+            if (radio) {
+                platformRadios.forEach(r => r.checked = false);
+                radio.checked = true;
+            }
+        } else {
+            ensurePlatformSelected();
+        }
+
+        const q = (params.get(URL_PARAM_QUERY) || '').toString();
+        if (searchInput && q) searchInput.value = q;
+
+        checkboxes.forEach(cb => cb.checked = false);
+
+        const filtersByCat = {};
+        params.forEach((value, key) => {
+            if (!key.startsWith(URL_PARAM_FILTER_PREFIX)) return;
+            const cat = normalizeCatKey(key.slice(URL_PARAM_FILTER_PREFIX.length));
+            if (!cat) return;
+            filtersByCat[cat] = splitCSV(value);
         });
+
+        checkboxes.forEach(cb => {
+            const cat = normalizeCatKey(cb.dataset.cat);
+            const val = String(cb.value || '').trim();
+            if (!cat || !val) return;
+
+            const list = filtersByCat[cat];
+            if (Array.isArray(list) && list.includes(val)) cb.checked = true;
+        });
+
+        const orderStr = params.get(URL_PARAM_ORDER) || '';
+        const order = splitCSV(orderStr);
+
+        if (order.length > 0) {
+            selectedOrder = order.filter(v =>
+                Array.from(checkboxes).some(cb => String(cb.value || '').trim() === v)
+            );
+        } else {
+            selectedOrder = Array.from(checkboxes)
+                .filter(cb => cb.checked)
+                .map(cb => String(cb.value || '').trim())
+                .filter(Boolean);
+        }
     }
+
+    function writeStateToUrl() {
+        if (isApplyingFromUrl) return;
+
+        const params = new URLSearchParams(window.location.search);
+
+        Array.from(params.keys()).forEach(k => {
+            if (k === URL_PARAM_PLATFORM || k === URL_PARAM_QUERY || k === URL_PARAM_ORDER) return;
+            if (k.startsWith(URL_PARAM_FILTER_PREFIX)) params.delete(k);
+        });
+
+        const platform = getSelectedPlatform();
+        if (platform) params.set(URL_PARAM_PLATFORM, platform);
+        else params.delete(URL_PARAM_PLATFORM);
+
+        const q = (searchInput?.value || '').trim();
+        if (q) params.set(URL_PARAM_QUERY, q);
+        else params.delete(URL_PARAM_QUERY);
+
+        const byCat = getSelectedByCategory();
+        Object.entries(byCat).forEach(([cat, set]) => {
+            const values = Array.from(set);
+            if (values.length > 0) {
+                params.set(URL_PARAM_FILTER_PREFIX + cat, joinCSV(values));
+            }
+        });
+
+        const actualSelected = selectedOrder.filter(v =>
+            Array.from(checkboxes).some(cb => cb.checked && String(cb.value || '').trim() === v)
+        );
+        if (actualSelected.length > 0) params.set(URL_PARAM_ORDER, joinCSV(actualSelected));
+        else params.delete(URL_PARAM_ORDER);
+
+        const newUrl = window.location.pathname + (params.toString() ? `?${params.toString()}` : '') + window.location.hash;
+        history.replaceState(null, '', newUrl);
+    }
+
 
     const MAX_VISIBLE_CRISPS = 3;
 
@@ -333,13 +443,20 @@
         }
     }
 
-    function updateCrisps(selectedFilters, container) {
+    function updateCrisps(selectedFilters, container, selectedPlatform) {
         const clearAllBtn = container.querySelector('.search-crisps-clear-btn') || null;
         const toggleBtn = container.querySelector('.search-crisps-toggle-btn') || null;
 
         const wasExpanded = isExpanded(container);
 
         container.querySelectorAll('.crisp').forEach(el => el.remove());
+
+        if (selectedFilters.length > 0 && selectedPlatform) {
+            const platformCrisp = document.createElement('span');
+            platformCrisp.className = 'crisp crisp-platform';
+            platformCrisp.textContent = getPlatformLabel(selectedPlatform);
+            container.appendChild(platformCrisp);
+        }
 
         selectedFilters.forEach(filter => {
             const crisp = document.createElement('span');
@@ -352,9 +469,10 @@
             crisp.appendChild(close);
 
             close.addEventListener('click', () => {
-                const checkbox = Array.from(checkboxes).find(cb => cb.value === filter);
+                const checkbox = Array.from(checkboxes).find(cb => String(cb.value || '').trim() === filter);
                 if (checkbox) {
                     checkbox.checked = false;
+                    selectedOrder = selectedOrder.filter(v => v !== filter);
                     updateVisibility();
                     if (typeof window.render === 'function') window.render();
                 }
@@ -399,31 +517,42 @@
         }
     }
 
-    let selectedOrder = [];
+    function updateVisibility() {
+        ensurePlatformSelected();
+        updatePlatformVisibility();
+        applySearch();
+        applyFilter();
+
+        const selectedFilters = selectedOrder.filter(v =>
+            Array.from(checkboxes).some(cb => cb.checked && String(cb.value || '').trim() === v)
+        );
+
+        const selectedPlatform = getSelectedPlatform();
+
+        crispsContainers.forEach(container => {
+            updateCrisps(selectedFilters, container, selectedPlatform);
+        });
+
+        writeStateToUrl();
+    }
 
     checkboxes.forEach(cb => {
         cb.addEventListener('change', () => {
+            const v = String(cb.value || '').trim();
+            if (!v) return;
+
             if (cb.checked) {
-                if (!selectedOrder.includes(cb.value)) selectedOrder.push(cb.value);
+                if (!selectedOrder.includes(v)) selectedOrder.push(v);
             } else {
-                selectedOrder = selectedOrder.filter(v => v !== cb.value);
+                selectedOrder = selectedOrder.filter(x => x !== v);
             }
+
             updateVisibility();
             if (typeof window.render === 'function') window.render();
         });
     });
 
     platformRadios.forEach(radio => {
-        radio.addEventListener('click', () => {
-            if (radio.checked) return;
-
-            platformRadios.forEach(r => r.checked = false);
-            radio.checked = true;
-
-            updateVisibility();
-            if (typeof window.render === 'function') window.render();
-        });
-
         radio.addEventListener('change', () => {
             ensurePlatformSelected();
             updateVisibility();
@@ -432,7 +561,10 @@
     });
 
     if (searchInput) {
-        searchInput.addEventListener('input', updateVisibility);
+        searchInput.addEventListener('input', () => {
+            updateVisibility();
+            if (typeof window.render === 'function') window.render();
+        });
     }
 
     filterSectionLabels.forEach(label => {
@@ -442,17 +574,32 @@
         });
     });
 
-    updateVisibility();
+    (function initFromUrl() {
+        isApplyingFromUrl = true;
+        readStateFromUrl();
+        isApplyingFromUrl = false;
+
+        ensurePlatformSelected();
+
+        updateVisibility();
+        if (typeof window.render === 'function') window.render();
+    })();
 
     window.addEventListener('pageshow', (e) => {
         const nav = performance.getEntriesByType?.('navigation')?.[0];
         const isBackForward = nav && nav.type === 'back_forward';
         if (e.persisted || isBackForward) {
+            isApplyingFromUrl = true;
+            readStateFromUrl();
+            isApplyingFromUrl = false;
+
             ensurePlatformSelected();
             updateVisibility();
+            if (typeof window.render === 'function') window.render();
         }
     });
 </script>
+
 
 {% include footer.html %}
 
