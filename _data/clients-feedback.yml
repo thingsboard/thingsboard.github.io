@@ -123,6 +123,30 @@ smart-buildings:
   label: Smart Buildings
   icon: /images/smart-buildings-icon.svg
   feedback:
+    - author: Rifat Şeker
+      position: Founder
+      companyName: ARIOT
+      id: ariot
+      link: https://www.ariot.com.tr/
+      authorImage: /images/customers/ariot-person.webp
+      companyImage: /images/customers/ariot.svg
+      companyImageWidth: 80
+      companyImageHeight: 62
+      text:
+        0: 'Transforming compliance and patient safety through IoT-enabled real-time monitoring'
+        1: "At ARIOT, our mission with Medline Adana Hospital was to elevate their operational reliability to match their world-class JCI accreditation. By leveraging the flexibility of ThingsBoard combined with robust LoRaWAN infrastructure, we transformed their critical environmental monitoring from a reactive, manual process into a proactive, data-driven operation. This solution provided immediate value by ensuring 100% data integrity for compliance audits and eliminating the risk of high-value pharmaceutical spoilage through real-time alerting. Ultimately, we didn't just install sensors; we delivered peace of mind and a scalable digital backbone that secures patient safety and optimizes hospital efficiency around the clock."
+    - author: Duran ICTEN
+      position: IT Chief
+      companyName: Sensolyze GmbH
+      id: medline
+      link: https://www.medlineadana.com.tr/en/
+      authorImage: /images/customers/medline-person.webp
+      companyImage: /images/customers/medline.svg
+      companyImageWidth: 180
+      companyImageHeight: 62
+      text:
+        0: 'Ensuring absolute cold-chain integrity through real-time IoT visibility and alerts'
+        1: 'ARIOT transformed our JCI compliance from a manual burden into a digital asset. By deploying the ThingsBoard platform with Milesight LoRaWAN sensors, we eliminated human error and secured 100% data integrity for our critical cold chain. This solution gives us total visibility and immediate alerts, ensuring patient safety is never compromised.'
     - author: Andreas Brandl
       position: Founder & CEO
       companyName: Sensolyze GmbH

@@ -172,11 +172,15 @@
           height: 100%
           background-color: #F4F8FE
           z-index: -1
-          left: -100%
           top: 0
 
+        &.no-background
+          padding-top: 50px
+          &:before
+            background-color: #fff
+
         img
-          height: auto
+          //height: auto
           width: 658px
           border-radius: 25px
 
@@ -764,7 +768,9 @@
             line-height: 36px
 
         .authored-quote
-          padding: 0
+          padding: 50px 0
+          img
+            height: auto
 
         .statistics
           .block

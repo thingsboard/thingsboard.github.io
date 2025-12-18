@@ -74,6 +74,16 @@ itemsPerPage: "9"
             </div>
         </div>
         <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/ariot.webp');">
+                <a class="content" href="/case-studies/ariot">
+                    <img style="height: 75px" class="logo" src="/images/case-studies/ariot.svg" title="ARIOT IOT TEKNOLOJILERI" alt="ARIOT IOT TEKNOLOJILERI logo">
+                    <p>Smart Healthcare: How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tjk-solutions.webp');">
                 <a class="content" href="/case-studies/tjk-solutions">
                     <img class="logo" src="/images/case-studies/tjk-solutions.svg" title="TJK-Solutions" alt="TJK-Solutions logo">
