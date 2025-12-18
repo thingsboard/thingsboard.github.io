@@ -75,7 +75,7 @@ For example, the message listed below contains 5 data points, because the “jso
 
 **Data points storage days** are calculated for all time-series data points that are stored in the database. 
 Platform multiplies the number of data points by the number of days those data points will be stored. The TTL parameter is used to extract the number of days to store the data. 
-For example, if you store 3 data points for 30 days, this is 90 storage data point days.
+For example, if you store 3 data points for 30 days, this is 90 data point storage days.
 A System Administrator is able to configure default TTL using the "**Default Storage TTL Days**" parameter in the tenant profile.
 A Tenant Administrator is able to overwrite default TTL using the "**Save Timeseries**" ule node configuration or using the “TTL” parameter in the post telemetry request.
 
