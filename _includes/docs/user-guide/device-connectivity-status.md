@@ -104,6 +104,18 @@ All configuration is done using global parameters defined in **thingsboard.yml**
 
 - **state.defaultInactivityTimeoutInSec** - period of time after which a device is considered inactive by Device State service if no activities were reported. Value is set in seconds.
 Default value is 600 seconds (10 minutes). A user can overwrite this parameter for an individual device by setting the **inactivityTimeout** server-side attribute (value is set in milliseconds).
+
+{% capture difference %}
+**Please note:**
+<br>
+This parameter controls only how the core service detects a device’s connectivity status (the value is stored in **"active"** attribute of device); it does **not** affect the device session timeout.
+The device session inactivity timeout is configured separately via the **transport.sessions.inactivity_timeout** property.
+
+To avoid inconsistencies, we recommend keeping these two parameters in sync: the transport session inactivity timeout should be **greater than or equal to** the device inactivity timeout.
+
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 - **state.defaultStateCheckIntervalInSec** - interval for periodic checks of a device activity state, performed by a Device State service. Value is set in seconds. Default value is 60 seconds (1 minute).
 - **state.telemetryTtl** - time-to-live value for activity telemetry data. Value is set in milliseconds. Default value is 0 milliseconds (meaning time-to-live mechanism is disabled).
 {% if docsPrefix == 'pe/' %}
@@ -112,6 +124,7 @@ Default value is 600 seconds (10 minutes). A user can overwrite this parameter f
 {% endif %}
 - **transport.activity.reporting_strategy** - activity reporting strategy for transports. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is LAST.
 - **transport.sessions.report_timeout** - duration of a reporting period for transports. Value is set in milliseconds. Default value is 3000 milliseconds (3 seconds).
+- **transport.sessions.inactivity_timeout** - defines how long the device transport session will be opened after the last message arrives from the device. Value is set in milliseconds. Default value is 60000 milliseconds (10 min).
 
 ## Next steps
 
