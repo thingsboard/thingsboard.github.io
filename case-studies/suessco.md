@@ -23,7 +23,7 @@ description: Discover how SuessCo Sensors and ThingsBoard enable real-time monit
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/Ernst_Windhör.webp" title="SuessCo Sensors GmbH CEO Ernst Windhör" alt="Ernst Windhör" width="1316" height="848">
+        <img class="h-auto" src="/images/case-studies/Ernst_Windhör.webp" title="SuessCo Sensors GmbH CEO Ernst Windhör" alt="Ernst Windhör" width="1316" height="848">
         <div class="text">
             <h2>SuessCo Sensors GmbH</h2>
             <p class="quote">“Bridges are very often still monitored manually and it is also very time-consuming to check whether they are still in good condition or not.”</p>

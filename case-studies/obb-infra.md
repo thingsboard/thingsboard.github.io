@@ -45,7 +45,7 @@ description: Discover how ÖBB-Infrastruktur AG enhanced railway efficiency and 
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/Dominic_Winkler.webp" title="ÖBB-Infrastruktur AG IT Enterprise Architect Dominic Winkler" alt="Dominic Winkler" width="1316" height="848">
+        <img class="h-auto" src="/images/case-studies/Dominic_Winkler.webp" title="ÖBB-Infrastruktur AG IT Enterprise Architect Dominic Winkler" alt="Dominic Winkler" width="1316" height="848">
         <div class="text">
             <h2>ÖBB-Infrastruktur AG</h2>
             <p class="quote">“Thingsboard Edge gives us the invaluable ability to allow data to flow within our IT network without the need to bridge Firewalls and Public Internet.”</p>
