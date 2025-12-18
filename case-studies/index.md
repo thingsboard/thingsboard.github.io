@@ -43,6 +43,16 @@ itemsPerPage: "9"
         {% endfor %}
     </div>
     <section id="case-studies-clients">
+        <div class="client-card" id="Cold chain monitoring">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/ariot.webp');">
+                <a class="content" href="/case-studies/ariot">
+                    <img style="height: 75px" class="logo" src="/images/case-studies/ariot.svg" title="ARIOT IOT TEKNOLOJILERI" alt="ARIOT IOT TEKNOLOJILERI logo">
+                    <p>Smart Healthcare: How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" id="Industry 4.0">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/super-bock-group.webp');">
                 <a class="content" href="/case-studies/super-bock">
@@ -70,16 +80,6 @@ itemsPerPage: "9"
                     <p>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG <br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about digital transformation of ÖBB-Infrastruktur AG with ThingsBoard</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/ariot.webp');">
-                <a class="content" href="/case-studies/ariot">
-                    <img style="height: 75px" class="logo" src="/images/case-studies/ariot.svg" title="ARIOT IOT TEKNOLOJILERI" alt="ARIOT IOT TEKNOLOJILERI logo">
-                    <p>Smart Healthcare: How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</span>
                 </a>
             </div>
         </div>
