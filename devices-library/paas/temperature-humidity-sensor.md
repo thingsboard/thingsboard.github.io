@@ -9,7 +9,7 @@ docsPrefix: paas/
 docsTag: paas
 hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare, Industrial Manufacturing]
-useCase: [Environment Monitoring, Smart Office, Smart Farming, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Smart Irrigation, Waste Management]
+useCase: [Environment Monitoring, Smart Office, Smart Farming, Health Care, Air Quality Monitoring, Smart Irrigation, Waste Management]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

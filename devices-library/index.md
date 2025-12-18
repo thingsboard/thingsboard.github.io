@@ -82,7 +82,7 @@ filterCollection:
       - Smart Retail
       - Smart Farming
       - Fleet Tracking
-      - 'Health Care: Smart Assisted Living Solution'
+      - Health Care
       - Air Quality Monitoring
       - Waste Management
       - Tank Level Monitoring

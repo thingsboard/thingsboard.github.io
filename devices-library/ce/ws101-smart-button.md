@@ -9,7 +9,7 @@ deviceImageFileName: ws101-smart-button.png
 docsPrefix: pe/
 hardwareType: Other devices
 industry: [Smart Buildings, Smart Cities, Retail, Healthcare]
-useCase: [Smart Office, "Health Care: Smart Assisted Living Solution"]
+useCase: [Smart Office, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

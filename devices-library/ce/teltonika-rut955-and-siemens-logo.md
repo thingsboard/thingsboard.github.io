@@ -2,7 +2,7 @@
 layout: device
 title: How to connect Teltonika RUT955 to ThingsBoard?
 category: Other devices
-connectivity: HTTP/ MQTT/ Ethernet/ WIFI
+connectivity: [HTTP, MQTT, Ethernet, WIFI]
 vendor: Teltonika
 deviceImageFileName: teltonika-rut955.jpeg
 hardwareType: Other devices

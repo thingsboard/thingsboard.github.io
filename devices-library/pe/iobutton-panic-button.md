@@ -11,7 +11,7 @@ model: ioButton
 docsPrefix: pe/
 hardwareType: Other devices
 industry: [Security, Smart Buildings]
-useCase: "Health Care: Smart Assisted Living Solution"
+useCase: Health Care
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

@@ -7,7 +7,7 @@ vendor: Lansitec
 deviceImageFileName: cat1-badge-tracker.png
 hardwareType: Trackers
 industry: [Security, Smart Buildings]
-useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
+useCase: [Fleet Tracking, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

@@ -11,7 +11,7 @@ model: Vicki
 docsPrefix: paas/
 hardwareType: Sensors
 industry: [Smart Buildings, Smart Cities, Energy Management, Healthcare]
-useCase: [Smart energy, Smart Office, "Health Care: Smart Assisted Living Solution"]
+useCase: [Smart energy, Smart Office, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

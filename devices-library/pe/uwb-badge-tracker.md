@@ -9,7 +9,7 @@ docsPrefix: pe/
 docsTag: pe
 hardwareType: Trackers
 industry: [Security, Transportation & Logistics, Smart Cities]
-useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
+useCase: [Fleet Tracking, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

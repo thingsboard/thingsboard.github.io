@@ -2,14 +2,14 @@
 layout: device
 title: How to connect RN172plus series to ThingsBoard?
 category: Other devices
-connectivity: Wi-Fi/ MODBUS TCP/ HTTP/HTTPS
+connectivity: [Wi-Fi, MODBUS TCP, HTTP, HTTPS]
 vendor: Radionode
 deviceImageFileName: rn172wcd.png
 docsPrefix: paas/
 docsTag: paas
 hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Industrial Manufacturing]
-useCase: [Environment Monitoring, Smart Office, Smart Retail, "Health Care: Smart Assisted Living Solution"]
+useCase: [Environment Monitoring, Smart Office, Smart Retail, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

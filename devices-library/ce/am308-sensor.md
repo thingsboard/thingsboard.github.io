@@ -9,7 +9,7 @@ deviceImageFileName: am308.jpg
 docsPrefix: pe/
 hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare]
-useCase: [Environment Monitoring, Smart Office, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Smart Irrigation, Waste Management]
+useCase: [Environment Monitoring, Smart Office, Health Care, Air Quality Monitoring, Smart Irrigation, Waste Management]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

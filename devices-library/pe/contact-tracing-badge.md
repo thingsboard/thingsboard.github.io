@@ -9,7 +9,7 @@ docsPrefix: pe/
 docsTag: pe
 hardwareType: Trackers
 industry: [Healthcare, Security]
-useCase: "Health Care: Smart Assisted Living Solution"
+useCase: Health Care
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

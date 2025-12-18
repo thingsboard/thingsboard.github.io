@@ -2,7 +2,7 @@
 layout: device
 title: How to connect EG8200 Gateway to ThingsBoard?
 category: Other devices
-connectivity: 4G/LAN/WAN/WiFi
+connectivity: [4G, LAN, WAN, WiFi]
 vendor: IOTRouter
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: EG8200.png

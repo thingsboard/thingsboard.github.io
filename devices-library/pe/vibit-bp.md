@@ -2,7 +2,7 @@
 layout: device
 title: How to connect VIBit-BP to ThingsBoard?
 category: Other devices
-connectivity: Wi-Fi/RS-485/Bluetooth
+connectivity: [Wi-Fi, RS-485, Bluetooth]
 vendor: MachineAstro Pvt Ltd
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: vibit-bp-sensor-image.png

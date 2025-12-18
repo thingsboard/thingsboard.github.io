@@ -3,7 +3,7 @@ layout: device
 title: How to connect NodeMCU V3 to ThingsBoard?
 category: Microcontrollers
 chip: ESP8266
-connectivity: HTTP/ MQTT/ WIFI
+connectivity: [HTTP, MQTT, WIFI]
 vendor: NodeMCU
 deviceImageFileName: nodemcuv3.png
 redirect_from:
@@ -14,7 +14,7 @@ redirect_from:
     - "/docs/samples/nodemcu/temperature/"
 hardwareType: Microcontrollers
 industry: Smart Buildings
-useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, Health Care, Air Quality Monitoring, Waste Management, Tank Level Monitoring]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

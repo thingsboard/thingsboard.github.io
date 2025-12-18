@@ -11,7 +11,7 @@ model: VapelessPro
 docsPrefix: pe/
 hardwareType: Sensors
 industry: [Security, Smart Buildings, Smart Cities]
-useCase: [Smart Office, Smart Metering, Environment Monitoring, "Health Care: Smart Assisted Living Solution"]
+useCase: [Smart Office, Smart Metering, Environment Monitoring, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

@@ -11,7 +11,7 @@ model: TempHu
 docsPrefix: pe/
 hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare, Agriculture]
-useCase: [Environment Monitoring, Smart Office, Smart Metering, "Health Care: Smart Assisted Living Solution"]
+useCase: [Environment Monitoring, Smart Office, Smart Metering, Health Care]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"

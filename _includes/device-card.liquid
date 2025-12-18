@@ -4,7 +4,7 @@
 {% assign deviceConnectivity = page.connectivity | join: ", " %}
 {% assign deviceChip = page.chip %}
 {% assign deviceIndustry = page.industry | join: ", " %}
-{% assign deviceUseCase = page.useCase | join: ", " %}
+{% assign deviceUseCase = page.useCase %}
 {% assign devicePlatforms = '' %}
 
 <div class="device-card">
@@ -26,9 +26,24 @@
             {% if deviceIndustry and deviceIndustry.size > 0 %}
                 <li><span>Industry: </span>{{ deviceIndustry }}</li>
             {% endif %}
-            {% if deviceUseCase and deviceUseCase.size > 0 %}
-                <li><span>Use cases: </span>{{ deviceUseCase }}</li>
-            {% endif %}
+            {%- if deviceUseCase and deviceUseCase.size > 0 -%}
+                {%- capture use_cases_out -%}
+                    {%- for uc in deviceUseCase -%}
+                        {%- assign uc_name = uc | strip -%}
+                        {%- assign uc_slug = uc_name | downcase | replace: ' ', '-' -%}
+                        {%- assign uc_url  = '/use-cases/' | append: uc_slug | append: '/' -%}
+
+                        <a href="{{ uc_url }}">{{ uc_name }}</a>
+                        {%- unless forloop.last -%}, {% endunless -%}
+                    {%- endfor -%}
+                {%- endcapture -%}
+
+                <li>
+                    <span>Use cases: </span>{{- use_cases_out | strip -}}
+                </li>
+            {%- endif -%}
+
+
 
             {% assign urlParts = page.url | split: "/" | reject: "" %}
             {% assign deviceSlug = urlParts | last %}

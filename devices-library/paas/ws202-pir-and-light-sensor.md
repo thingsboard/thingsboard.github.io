@@ -11,7 +11,7 @@ converters20: true
 model: WS202
 hardwareType: Sensors
 industry: [Smart Buildings, Environmental Monitoring]
-useCase: [Environment Monitoring, Smart Office, "Health Care: Smart Assisted Living Solution", Waste Management]
+useCase: [Environment Monitoring, Smart Office, Health Care, Waste Management]
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 breadcrumbs-show: "2"
