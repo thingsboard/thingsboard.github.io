@@ -9,7 +9,9 @@ deviceImageFileName: iot-gateway-cell-1024.jpg
 hardwareType: Gateways
 industry: [Transportation & Logistics, Smart Cities, Security]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

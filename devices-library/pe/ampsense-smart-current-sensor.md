@@ -12,7 +12,9 @@ docsPrefix: pe/
 hardwareType: Sensors
 industry: [Energy Management, Smart Buildings, Industrial Manufacturing, Smart Cities]
 useCase: [Smart energy, Smart Metering, Environment Monitoring]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

@@ -1,7 +1,7 @@
 ---
 layout: page-with-filter
-title: Official Thingsboard hardware partners
-description: Meet our official hardware partners and explore IoT devices tailored for seamless ThingsBoard integration. Join the partnership program or find the right vendor for your IoT deployment needs.
+title: ThingsBoard Devices Library
+description: Device library and connecting guides
 containerId: "devices-card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
@@ -89,7 +89,6 @@ filterCollection:
       - Smart Metering
       - Smart Irrigation
       - Water Metering
-
 ---
 
 

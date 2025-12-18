@@ -7,6 +7,9 @@ vendor: Ezurio
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: s26x-lorawan-temperatures-sensor-1.png
 model: RS26x
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 
 * TOC

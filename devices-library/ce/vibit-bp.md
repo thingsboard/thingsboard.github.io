@@ -9,7 +9,9 @@ deviceImageFileName: vibit-bp-sensor-image.png
 hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security]
 useCase: [Smart energy, Environment Monitoring, Fleet Tracking, Waste Management]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

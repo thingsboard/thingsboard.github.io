@@ -10,7 +10,9 @@ docsTag: pe
 hardwareType: Gateways
 industry: [Smart Cities, Smart Buildings]
 useCase: [Smart Office, Fleet Tracking]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

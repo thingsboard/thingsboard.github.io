@@ -8,7 +8,9 @@ deviceImageFileName: badge-tracker.png
 hardwareType: Trackers
 industry: [Security, Smart Buildings]
 useCase: [Fleet Tracking, "Health Care: Smart Assisted Living Solution"]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

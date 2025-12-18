@@ -8,7 +8,9 @@ deviceImageFileName: cat1-solar-bluetooth-gateway.png
 hardwareType: Gateways
 industry: [Environmental Monitoring, Smart Cities]
 useCase: [Smart Office, Fleet Tracking]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

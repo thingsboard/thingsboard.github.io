@@ -6,7 +6,9 @@ chip: ESP8266
 connectivity: HTTP, MQTT, WIFI
 vendor: WeMos
 deviceImageFileName: wemos-d1-mini-esp8266.jpg
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 
 * TOC

@@ -10,7 +10,9 @@ docsTag: paas
 hardwareType: Sensors
 industry: [Transportation & Logistics, Smart Cities]
 useCase: Fleet Tracking
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

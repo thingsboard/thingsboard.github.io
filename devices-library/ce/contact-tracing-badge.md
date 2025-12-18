@@ -8,7 +8,9 @@ deviceImageFileName: contact-tracing-badge.png
 hardwareType: Trackers
 industry: [Healthcare, Security]
 useCase: "Health Care: Smart Assisted Living Solution"
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

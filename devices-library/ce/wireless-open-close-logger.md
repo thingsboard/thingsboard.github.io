@@ -8,7 +8,9 @@ deviceImageFileName: wireless-open-close-logger.png
 hardwareType: Sensors
 industry: [Smart Buildings, Industrial Manufacturing, Smart Cities, Environmental Monitoring]
 useCase: [Smart energy, Smart Office, Smart Retail, Smart Farming, Waste Management]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

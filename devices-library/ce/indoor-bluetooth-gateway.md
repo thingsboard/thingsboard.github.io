@@ -8,7 +8,9 @@ deviceImageFileName: indoor-bluetooth-gateway.png
 hardwareType: Gateways
 industry: [Smart Buildings, Retail]
 useCase: [Smart Office, Fleet Tracking]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

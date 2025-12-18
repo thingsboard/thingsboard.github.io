@@ -8,7 +8,9 @@ deviceImageFileName: solar-tracker.png
 hardwareType: Trackers
 industry: [Energy Management, Agriculture, Smart Cities, Industrial Manufacturing]
 useCase: [Smart energy, Smart Farming]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

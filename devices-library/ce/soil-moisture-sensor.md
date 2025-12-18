@@ -12,7 +12,9 @@ docsPrefix: pe/
 hardwareType: Sensors
 industry: [Agriculture, Smart Cities, Environmental Monitoring, Smart Buildings]
 useCase: [Smart Farming, Smart Irrigation]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

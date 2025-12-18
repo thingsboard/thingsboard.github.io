@@ -9,7 +9,9 @@ deviceImageFileName: asustinkerboards.jpg
 hardwareType: Single-board computers
 industry: [Retail, Smart Buildings, Smart Cities]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, "Health Care: Smart Assisted Living Solution", Air Quality Monitoring, Waste Management, Tank Level Monitoring]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

@@ -10,7 +10,9 @@ docsTag: pe
 hardwareType: Trackers
 industry: [Transportation & Logistics, Retail, Smart Cities]
 useCase: Fleet Tracking
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

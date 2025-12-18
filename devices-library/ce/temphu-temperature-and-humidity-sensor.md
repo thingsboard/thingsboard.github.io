@@ -12,7 +12,9 @@ docsPrefix: pe/
 hardwareType: Sensors
 industry: [Smart Cities, Smart Buildings, Environmental Monitoring, Healthcare, Agriculture]
 useCase: [Environment Monitoring, Smart Office, Smart Metering, "Health Care: Smart Assisted Living Solution"]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

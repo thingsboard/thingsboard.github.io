@@ -8,7 +8,9 @@ deviceImageFileName: mixed-input-8-channel-analog-cellular-logger.jpg
 hardwareType: Other devices
 industry: [Industrial Manufacturing, Environmental Monitoring]
 useCase: [Smart energy, Smart Metering]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

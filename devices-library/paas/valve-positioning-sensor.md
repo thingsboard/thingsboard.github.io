@@ -10,7 +10,9 @@ docsTag: paas
 hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Energy Management, Smart Buildings]
 useCase: [Smart energy, Smart Farming, Smart Irrigation]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

@@ -1,10 +1,7 @@
 <!Doctype html>
-<html id="device" lang="en">
+<html id="docs" lang="en">
 
 {% include head-header.html %}
-
-<section id="hero" class="light-text">
-</section>
 
 <section id="encyclopedia">
     <div id="docsContent" class="hasTocContent">
@@ -13,6 +10,9 @@
             <span>On this page</span>
             {% endif %}
         </div>
+        {% if page.breadcrumbs %}
+        {% include manual-breadcrumbs.liquid %}
+        {% endif %}
         <div id="content">
             {% include device-card.liquid %}
             {{ content }}
@@ -21,7 +21,6 @@
     </div>
 </section>
 
-{% include footer.html %}
 
 {% include scroll-progress-button.liquid %}
 

@@ -8,7 +8,9 @@ deviceImageFileName: ace-iot-gateway.png
 hardwareType: Gateways
 industry: [Smart Cities, Transportation & Logistics, Security, Environmental Monitoring]
 useCase: [Smart energy, Fleet Tracking, Smart Metering]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

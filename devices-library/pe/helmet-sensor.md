@@ -10,7 +10,9 @@ docsTag: pe
 hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security, Healthcare]
 useCase: "Health Care: Smart Assisted Living Solution"
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

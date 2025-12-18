@@ -8,6 +8,9 @@ hasIntegrationDeviceConfiguration: true
 deviceImageFileName: s26x-lorawan-temperatures-sensor-1.png
 model: RS26x
 docsPrefix: paas/
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 
 * TOC

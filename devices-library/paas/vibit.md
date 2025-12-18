@@ -11,7 +11,9 @@ docsTag: paas
 hardwareType: Sensors
 industry: [Industrial Manufacturing, Smart Cities, Security]
 useCase: [Fleet Tracking, Smart Retail, "Health Care: Smart Assisted Living Solution"]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

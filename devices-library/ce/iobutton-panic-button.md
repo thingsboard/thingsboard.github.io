@@ -12,7 +12,9 @@ docsPrefix: pe/
 hardwareType: Other devices
 industry: [Security, Smart Buildings]
 useCase: "Health Care: Smart Assisted Living Solution"
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

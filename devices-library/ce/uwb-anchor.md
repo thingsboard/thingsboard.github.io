@@ -8,7 +8,9 @@ deviceImageFileName: uwb-anchor.png
 hardwareType: Trackers
 industry: [Smart Cities, Security, Transportation & Logistics]
 useCase: Fleet Tracking
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

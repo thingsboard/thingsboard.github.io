@@ -8,6 +8,9 @@ hasIntegrationDeviceConfiguration: true
 deviceImageFileName: lw001-bg-pro.png
 docsPrefix: paas/
 docsTag: paas
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 
 * TOC

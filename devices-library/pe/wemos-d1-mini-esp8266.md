@@ -7,6 +7,9 @@ connectivity: HTTP, MQTT, WIFI
 vendor: WeMos
 deviceImageFileName: wemos-d1-mini-esp8266.jpg
 docsPrefix: pe/
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 
 * TOC

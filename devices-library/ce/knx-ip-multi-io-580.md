@@ -8,7 +8,9 @@ deviceImageFileName: knx-ip-multi-io-580.png
 hardwareType: Other devices
 industry: [Smart Buildings, Smart Cities, Industrial Manufacturing, Energy Management]
 useCase: [Smart energy, Smart Office, Smart Metering]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

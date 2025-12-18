@@ -8,7 +8,9 @@ deviceImageFileName: temco-t3e-6ct.jpg
 hardwareType: Other devices
 industry: [Industrial Manufacturing, Smart Cities, Smart Buildings, Energy Management]
 useCase: [Smart energy, Smart Metering]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

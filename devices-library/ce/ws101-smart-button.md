@@ -10,7 +10,9 @@ docsPrefix: pe/
 hardwareType: Other devices
 industry: [Smart Buildings, Smart Cities, Retail, Healthcare]
 useCase: [Smart Office, "Health Care: Smart Assisted Living Solution"]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

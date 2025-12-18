@@ -9,7 +9,9 @@ docsPrefix: paas
 hardwareType: Other devices
 industry: [Transportation & Logistics, Smart Cities]
 useCase: [Smart energy, Fleet Tracking]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

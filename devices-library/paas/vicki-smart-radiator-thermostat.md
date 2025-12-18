@@ -12,7 +12,9 @@ docsPrefix: paas/
 hardwareType: Sensors
 industry: [Smart Buildings, Smart Cities, Energy Management, Healthcare]
 useCase: [Smart energy, Smart Office, "Health Care: Smart Assisted Living Solution"]
-
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 * TOC
 {:toc}

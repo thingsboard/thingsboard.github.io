@@ -7,6 +7,9 @@ vendor: MOKO SMART
 hasIntegrationDeviceConfiguration: true
 deviceImageFileName: lw001-bg-pro.png
 docsPrefix: pe/
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
 ---
 
 * TOC
