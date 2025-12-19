@@ -43,7 +43,7 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/JT_McGibbon.webp" title="Vypin LLC General manager JT McGibbon" alt="JT McGibbon" width="1316" height="848">
+        <img class="h-auto" src="/images/case-studies/JT_McGibbon.webp" title="Vypin LLC General manager JT McGibbon" alt="JT McGibbon" width="1316" height="848">
         <div class="text">
             <h2>Vypin LLC</h2>
             <p class="quote">“I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.”</p>

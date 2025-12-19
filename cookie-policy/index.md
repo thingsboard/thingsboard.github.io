@@ -8,8 +8,9 @@ description:
 
 <h1 class="aboutus-title">Cookie Policy</h1>
 
-Cookies are activated and used during your browsing on this site. 
-These are small text ﬁles, usually numbers and letters, that do not create a security risk for your computer, tablet, or smartphone.
+Cookies and Local Storage are activated and used during your browsing on this site.
+Cookies are small text ﬁles, usually numbers and letters, that do not create a security risk for your computer, tablet, or smartphone.
+Local Storage is a similar mechanism used to store data, such as UTM tags, directly in your browser.
 
 Cookies allow us to:
 
@@ -43,8 +44,11 @@ See YourGPT privacy [page](https://yourgpt.ai/privacy) for more details.
 
 ### Other Cookies
 
- * **cookie-notice-dismissed** is used to store if the user clicked `Accept` button on the cookies banner or dismissed (X) it. This cookie has a 365 days timeout. 
-   Please note that by continuing to browse this site with the opened cookies banner, you agree the use of cookies, in accordance with our cookie policy.
+* **cookie-notice-dismissed** is used to store if the user clicked `Accept` button on the cookies banner or close (X) it. This cookie has a 365 days timeout.
+
+* **cloudServer** is used to store the last visited cloud region in the documentation. Possible values: `/docs/paas/eu/` (EU cloud) or `/docs/paas/` (North America cloud). This allows us to automatically open the correct (EU or North America) version of the documentation on your next visit. This cookie has a 365 days timeout.
+
+Please note that by continuing to browse this site with the opened cookies banner, you agree the use of cookies, in accordance with our cookie policy.
 
 
 
