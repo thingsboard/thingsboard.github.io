@@ -43,6 +43,16 @@ itemsPerPage: "9"
         {% endfor %}
     </div>
     <section id="case-studies-clients">
+        <div class="client-card" id="Cold chain monitoring">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/ariot.webp');">
+                <a class="content" href="/case-studies/ariot">
+                    <img style="height: 75px" class="logo" src="/images/case-studies/ariot.svg" title="ARIOT IOT TEKNOLOJILERI" alt="ARIOT IOT TEKNOLOJILERI logo">
+                    <p>Smart Healthcare: How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</span>
+                </a>
+            </div>
+        </div>
         <div class="client-card" id="Industry 4.0">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/super-bock-group.webp');">
                 <a class="content" href="/case-studies/super-bock">
@@ -63,26 +73,6 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Smart infrastructure">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/obb.webp');">
-                <a class="content" href="/case-studies/obb-infra">
-                    <img class="logo" src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo">
-                    <p>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG <br> &nbsp;</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about digital transformation of ÖBB-Infrastruktur AG with ThingsBoard</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/ariot.webp');">
-                <a class="content" href="/case-studies/ariot">
-                    <img style="height: 75px" class="logo" src="/images/case-studies/ariot.svg" title="ARIOT IOT TEKNOLOJILERI" alt="ARIOT IOT TEKNOLOJILERI logo">
-                    <p>Smart Healthcare: How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">How Medline Adana Hospital ensured patient safety and JCI compliance with ARIOT IOT TEKNOLOJILERI and TB</span>
-                </a>
-            </div>
-        </div>
         <div class="client-card" id="Smart city">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/tjk-solutions.webp');">
                 <a class="content" href="/case-studies/tjk-solutions">
@@ -90,6 +80,56 @@ itemsPerPage: "9"
                     <p>Securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about securing Critical Communication: How TJK-Solutions Uses ThingsBoard to Monitor Meshtastic Infrastructure in Disaster Response</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
+                <a class="content" href="/case-studies/xtelia">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo">
+                    <p>Smart signage at scale: X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Industry 4.0">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/dacor.webp');">
+                <a class="content" href="/case-studies/dacor">
+                    <img class="logo" src="/images/case-studies/dacor.svg" title="süc//dacor GmbH" alt="süc//dacor GmbH logo">
+                    <p>Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart city">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
+                <a class="content" href="/case-studies/iioote">
+                    <img style="height: 35px" class="logo" src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo">
+                    <p>From Prototyping to Commercial Services: How iiOOTE Scaled IoT with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about iiOOTE deploys LoRaWAN™ parking management with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart energy">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/comet.webp');">
+                <a class="content" href="/case-studies/comet">
+                    <img style="height: 42px" class="logo" src="/images/case-studies/comet.svg" title="co.met" alt="comet logo">
+                    <p>Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</span>
+                </a>
+            </div>
+        </div>
+        <div class="client-card" id="Smart infrastructure">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/obb.webp');">
+                <a class="content" href="/case-studies/obb-infra">
+                    <img class="logo" src="/images/case-studies/obb.svg" title="ÖBB-Infrastruktur AG" alt="ÖBB-Infrastruktur AG logo">
+                    <p>Smart railway infrastructure: digital transformation of ÖBB-Infrastruktur AG <br> &nbsp;</p>
+                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
+                    <span class="visually-hidden">about digital transformation of ÖBB-Infrastruktur AG with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -113,26 +153,6 @@ itemsPerPage: "9"
                 </a>
             </div>
         </div>
-        <div class="client-card" id="Industry 4.0">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/dacor.webp');">
-                <a class="content" href="/case-studies/dacor">
-                    <img class="logo" src="/images/case-studies/dacor.svg" title="süc//dacor GmbH" alt="süc//dacor GmbH logo">
-                    <p>Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Real-Time Production Monitoring for Automotive Supplier by süc//dacor GmbH Using ThingsBoard</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/x-telia.webp');">
-                <a class="content" href="/case-studies/xtelia">
-                    <img style="height: 35px" class="logo" src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo">
-                    <p>Smart signage at scale: X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</span>
-                </a>
-            </div>
-        </div>
         <div class="client-card" id="Smart agriculture">
             <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/agrolog.webp');">
                 <a class="content" href="/case-studies/agrolog">
@@ -140,16 +160,6 @@ itemsPerPage: "9"
                     <p>Revolutionizing Agriculture: How Supertech Agroline Built a Scalable IoT Platform with ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about Smart Farming Platform by Supertech Agroline and ThingsBoard</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/iioote.webp');">
-                <a class="content" href="/case-studies/iioote">
-                    <img style="height: 35px" class="logo" src="/images/case-studies/iioote.svg" title="iiOOTE" alt="iiOOTE logo">
-                    <p>From Prototyping to Commercial Services: How iiOOTE Scaled IoT with ThingsBoard</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about iiOOTE deploys LoRaWAN™ parking management with ThingsBoard</span>
                 </a>
             </div>
         </div>
@@ -190,16 +200,6 @@ itemsPerPage: "9"
                     <p>From Soil to Sensor: How Keners Revolutionized Farming with ThingsBoard<br> &nbsp;</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about From Soil to Sensor: How Keners Revolutionized Farming with ThingsBoard</span>
-                </a>
-            </div>
-        </div>
-        <div class="client-card" id="Smart energy">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url('/images/case-studies/comet.webp');">
-                <a class="content" href="/case-studies/comet">
-                    <img style="height: 42px" class="logo" src="/images/case-studies/comet.svg" title="co.met" alt="comet logo">
-                    <p>Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</p>
-                    <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
-                    <span class="visually-hidden">about Powering the future of utilities: co.met GmbH’s IoT breakthrough with ThingsBoard</span>
                 </a>
             </div>
         </div>

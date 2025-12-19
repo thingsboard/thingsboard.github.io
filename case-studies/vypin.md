@@ -12,13 +12,13 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
             <div class="text">
                 <p class="category">WAREHOUSE MONITORING</p>
                 <h1>Reliable T&H monitoring with WhereView (ThingsBoard)</h1>
-                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/vypin.webp')">
-                    <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo" width="144" height="58">
+                <div class="image inner" style="background-image: url('/images/case-studies/vypin.webp')">
+                    <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo" width="144" height="58">
                 </div>
                 <p>Vypin is a pharmaceutical company specializing in industrial IoT solutions aimed at enhancing safety, efficiency, and profitability for enterprises. Their products, such as Vypin Cloud™, provide critical data analytics, while their hardware automates data collection processes, eliminating outdated manual methods. Vypin’s solutions are easy to install and scale as businesses grow, offering decision-makers the tools they need to make informed choices without requiring technical expertise.</p>
             </div>
-            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/vypin.webp')">
-                <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo" width="144" height="58">
+            <div class="image large" style="background-image: url('/images/case-studies/vypin.webp')">
+                <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo" width="144" height="58">
             </div>
         </div>
     </section>
@@ -43,7 +43,7 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
         </div>
     </section>
     <section class="authored-quote">
-        <img src="https://img.thingsboard.io/case-studies/JT_McGibbon.webp" title="Vypin LLC General manager JT McGibbon" alt="JT McGibbon" width="1316" height="848">
+        <img class="h-auto" src="/images/case-studies/JT_McGibbon.webp" title="Vypin LLC General manager JT McGibbon" alt="JT McGibbon" width="1316" height="848">
         <div class="text">
             <h2>Vypin LLC</h2>
             <p class="quote">“I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.”</p>
@@ -108,21 +108,21 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 <h3>Real-time environmental monitoring</h3>
                 <p>To address temperature and humidity control, ThingsBoard provided an advanced monitoring system that continuously tracks environmental conditions. The solution features real-time dashboards that visualize temperature and humidity levels across multiple warehouse areas. If predefined thresholds are breached, automated alerts notify operators immediately, ensuring corrective actions are taken before critical failures occur.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/real_time_environmental_monitoring.webp" title="Real-time environmental monitoring" alt="Storage" width="900" height="480">
+            <img src="/images/case-studies/real_time_environmental_monitoring.webp" title="Real-time environmental monitoring" alt="Storage" width="900" height="480">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Automated alerting & compliance tracking</h3>
                 <p>ThingsBoard’s alerting system was customized to detect any anomalies in storage conditions. The platform now generates automatic reports that comply with FDA regulations, ensuring that all required data is logged and traceable. This reduces manual paperwork and the risk of non-compliance penalties.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/automated_alerting_compliance_tracking.webp" title="Automated alerting & compliance tracking" alt="Male investigating alert with laptop" width="900" height="480">
+            <img src="/images/case-studies/automated_alerting_compliance_tracking.webp" title="Automated alerting & compliance tracking" alt="Male investigating alert with laptop" width="900" height="480">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Seamless data synchronization & integration</h3>
                 <p>The ThingsBoard platform enables smooth integration with existing enterprise systems. Warehouse managers can now access all sensor data in a unified interface, eliminating inconsistencies between different monitoring tools and improving decision-making processes.</p>
             </div>
-            <img src="https://img.thingsboard.io/case-studies/seamless_data_synchronization_integration.webp" title="Seamless data synchronization & integration" alt="Synchronized devices and tablets" width="900" height="480">
+            <img src="/images/case-studies/seamless_data_synchronization_integration.webp" title="Seamless data synchronization & integration" alt="Synchronized devices and tablets" width="900" height="480">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -139,8 +139,8 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="/images/case-studies/entities-table.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -154,8 +154,8 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget" width="776" height="776">
+                <img src="/images/case-studies/alarms-table-2.webp" title="Thingsboard alarms table widget" alt="Thingsboard alarms table widget" width="776" height="776">
+                <img src="/images/case-studies/analogue-gauge.webp" title="Thingsboard analogue gauge widget" alt="Thingsboard analogue gauge widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -169,8 +169,8 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
+                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="/images/case-studies/line-chart.webp" title="Thingsboard line chart widget" alt="Thingsboard line chart widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -184,18 +184,18 @@ description: Discover how Vypin leveraged ThingsBoard's IoT platform to achieve 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="https://img.thingsboard.io/case-studies/apartment-image-map.webp" title="Thingsboard apartment image map widget" alt="Thingsboard apartment image map widget" width="776" height="776">
-                <img src="https://img.thingsboard.io/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
+                <img src="/images/case-studies/apartment-image-map.webp" title="Thingsboard apartment image map widget" alt="Thingsboard apartment image map widget" width="776" height="776">
+                <img src="/images/case-studies/status-widget-1.webp" title="Thingsboard status widget" alt="Thingsboard status widget" width="776" height="776">
             </div>
         </div>
         {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="https://img.thingsboard.io/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo" width="144" height="58">
+                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="/images/case-studies/vypin.svg" title="Vypin LLC" alt="Vypin LLC logo" width="144" height="58">
                 </div>
             </div>
         </div>
