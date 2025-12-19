@@ -203,7 +203,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>400B</td>
           <td>Data points storage days are calculated for all time-series data points that are stored to the database.<br>
           Platform multiplies number of data points by the number of days those data points will be stored.<br> 
-          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days</td>
+          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M data point storage days</td>
       </tr>
       <tr>
           <td>Alarms TTL</td>
