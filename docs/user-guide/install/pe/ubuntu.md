@@ -19,6 +19,21 @@ Hardware requirements depend on chosen database and amount of devices connected 
 To run ThingsBoard and PostgreSQL on a single machine you will need at least 4Gb of RAM.
 To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb of RAM.
 
+Also following system libraries should be installed: ibharfbuzz0b, fontconfig, fonts-dejavu-core.
+These packages are required for proper font rendering and text layout.
+
+To check if libraries are installed run:
+```bash
+dpkg -l libharfbuzz0b fontconfig fonts-dejavu-core
+```
+{: .copy-code}
+Expected result: installed packages will appear in the output with the status **ii**.<br>
+If some libraries are missing, or have a different status, install them using:
+```bash
+sudo apt update && sudo apt install -y libharfbuzz0b fontconfig fonts-dejavu-core
+```
+{: .copy-code}
+
 ## Step 1. Install Java 17 (OpenJDK) 
 
 {% include templates/install/ubuntu-java-install.md %}

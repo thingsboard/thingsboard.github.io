@@ -44,7 +44,7 @@ sudo dnf install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-9.
 To ensure proper installation process, execute the following command to install the necessary system fonts:
 
 ```bash
-sudo dnf install -y fontconfig dejavu-sans-fonts
+sudo dnf install -y harfbuzz fontconfig dejavu-sans-fonts
 ```
 {: .copy-code}
 
