@@ -109,15 +109,11 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 {% include templates/install/trendz/pull_trendz.md %}
 
-### 10.2. Obtain and configure license key
-
-{% include templates/install/trendz/k8s-license-secret-trendz.md %}
-
-### 10.3. Create a Trendz database in the existing Google Cloud SQL (PostgreSQL) Instance
+### 10.2. Create a Trendz database in the existing Google Cloud SQL (PostgreSQL) Instance
 
 {% include templates/install/trendz/gcp/k8s-trendz-db-creating.md %}
 
-### 10.4. Trendz starting
+### 10.3. Trendz starting
 
 {% include templates/install/trendz/k8s-trendz-starting.md %}
 
@@ -125,7 +121,9 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 {% include templates/install/gcp/using.md %}
 
-## Upgrading to new ThingsBoard version
+## Upgrading
+
+### Upgrading to new ThingsBoard version
 
 {% include templates/install/gcp/upgrading-monolith.md %}
 
