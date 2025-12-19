@@ -280,7 +280,7 @@ These steps are applicable for 1.14.0 Trendz Analytics version.
 {% capture tb_3_7_0_upgrade_note %}
 **Important note before upgrading to Trendz 1.15.0**
 
-After upgrade, it's necessary to sync with Trendz with ThingsBoard. You can find out how to do it [here]().
+After upgrade, it's necessary to sync with Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/ubuntu#step-6-sync-thingsboard-with-trendz).
 
 {% endcapture %}
 {% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
@@ -323,16 +323,12 @@ sudo service trendz start
 ```
 {: .copy-code}
 
-#### Sync with ThingsBoard
-
-//Todo describe the process here
-
 ### Windows {#windows-1150}
 
 {% capture tb_3_7_0_upgrade_note %}
 **Important note before upgrading to Trendz 1.15.0**
 
-After upgrade, it's necessary to sync with Trendz with ThingsBoard. You can find out how to do it [here]().
+After upgrade, it's necessary to sync with Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/windows#step-6-sync-thingsboard-with-trendz).
 {% endcapture %}
 {% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
 
@@ -368,10 +364,6 @@ C:\trendz>upgrade.bat --fromVersion=1.14.0
 net start trendz
 ```
 {: .copy-code}
-
-#### Sync with ThingsBoard
-
-//Todo describe the process here
 
 ## Upgrading to 1.14.0
 
