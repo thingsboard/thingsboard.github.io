@@ -275,6 +275,80 @@ This ensures centralized visibility across multi-level infrastructures.
 
 <hr>
 
+## View and manage alarms
+
+**Alarms page**
+
+To view and manage alarms, use the "Alarms" page in the left menu.
+Here you will see all alarms related to your entities: devices, assets, customers, etc., and alarms of your customers and users in the form of a list form, as well as the following information: creation time, source, alarm type, severity, [to whom assigned](#assign-alarm-to-user), and status of the alarm.
+By default, only active alarms for all time are displayed here. If necessary, apply a filter and time interval to see other results.
+To view more information about an alarm, click on the ellipsis (...) in the "Details" column of the alarm you want to view.
+
+{% include images-gallery.html imageCollection="find-alarms" %}
+
+<br>
+**Alarm widgets**
+
+Also, the ThingsBoard has handy widgets for visualizing alarms on the dashboard.
+
+The "**Alarms table**" widget allows you to conveniently display and manage alarms for selected entities based on a defined time window and filters.
+
+{% include images-gallery.html imageCollection="visualize-alarms-on-dashboard-1" %}
+
+The "**Alarm count**" widget displays the number of alarms based on the selected filter.
+
+{% include images-gallery.html imageCollection="visualize-alarms-on-dashboard-2" %}
+
+The filter setting allows you to:
+
+* Filter alarms by status using any combination of acknowledge/unacknowledge/active/clear;
+* Filter alarms by severity using any combination of severity levels;
+* Displaying a list of alarms by type;
+* Enable or disable search of the propagated alarms (only for "Alarms table" widget).
+
+How to add a widget to the monitoring panel, see this [document](/docs/{{docsPrefix}}user-guide/widgets/#adding-a-widget-to-the-dashboard).
+
+<br>
+**Alarms of a specific entity**
+
+To find alarms for a specific entity (in our case, device), you should:
+
+- Go to the entities page. In our case, these are the "Devices" page;
+- Click on the needed entity (device) to open its details;
+- Navigate to the "Alarms" tab.
+
+Here you will see all alarms related to this entity. Optionally, apply a filter and time interval.
+
+{% include images-gallery.html imageCollection="find-alarm-for-specific-device" %}
+
+Now let's consider what operations you can perform on alarms.
+
+### Acknowledge and/or clear alarm
+
+Alarms have four statuses: acknowledged/unacknowledged/active/clear.
+
+To acknowledge the alarm, click on the "Acknowledge" icon in the Alarms table widget or click on the "Acknowledge" button in the alarm details window on the "Alarms" page, or on the "Alarms" tab of the entity details window.
+
+{% include images-gallery.html imageCollection="acknowledge-alarm" %}
+
+To clear the alarm, click on the "Clear" icon in the Alarms table widget or click on the "Clear" button in the alarm details window.
+
+{% include images-gallery.html imageCollection="clear-alarm" %}
+
+### Alarm comments
+
+To find comments on a specific alarm, open the detailed information about the alarm by clicking on the ellipsis (...) in the "Details" column.
+Here you can view system comments, comments from other users, and leave your own.
+
+{% include images-gallery.html imageCollection="alarm-comments-1" %}
+
+There are two types of comments: user and system.
+Authorized users may add, edit, and delete their comments. System comments are non-editable grey-colored comments that describe alarm events such as changes to severity, alarm assignee etc.
+
+## Alarm management using REST API
+
+ThingsBoard provides REST API to manage and query alarms. See demo environment [Alarm REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) and general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
+
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}

@@ -1,14 +1,30 @@
-![image](/images/user-guide/rule-engine-2-0/nodes/flow-nodes/acknowledge-node.png)
+Acknowledges the incoming message and forwards it to the next node in the rule chain. This node
+explicitly [marks the message as successfully processed](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#message-processing-result){:target="_blank"}.
 
-The node will mark the message as successfully processed (acknowledged). See [message processing result](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#message-processing-result){:target="_blank"} for more details. 
-This indicates to rule engine that the message was successfully processed.
+## Configuration
 
-Useful if you don't want to reprocess the failed messages. 
-For example, the rule chain below will reprocess the failed messages only for important messages. 
-Failure of unimportant message will be simply ignored. 
+This node requires no configuration.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/acknowledge-failed.png)
+### JSON Schema
 
-> **Note:** We recommend the "acknowledge" rule node to be the last in the processing chain.
-Theoretically, you may add other rule nodes after the "acknowledge" one. However, this may cause the OOM errors. 
-For example, subsequent rule nodes may process messages slowly. Unprocessed messages will be stored in memory and will consume too much RAM
+```json
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EmptyNodeConfiguration",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}
+```
+{: .copy-code.expandable-3 }
+
+## Message processing algorithm
+
+1. The node receives the incoming message.
+2. The message is immediately acknowledged.
+3. The message is forwarded to the next nodes via the `Success` connection.
+
+## Output connections
+
+- **Success**
+    - The message was successfully acknowledged and forwarded.

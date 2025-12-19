@@ -19,8 +19,8 @@ In this part, we will add separate states for each device, simulate telemetry da
 Since we are using virtual devices, they do not send telemetry data to the ThingsBoard. However, we can simulate the transmission of such data in real time.
 To do this, we will use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"}.
 
-We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices.
-Then, we will save this telemetry in the database using the [save timeseries](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"} node.
+We will add a new [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"} with four [generator nodes](/docs/user-guide/rule-engine-2-0/nodes/action/generator/){:target="_blank"} that will periodically generate simple messages with random telemetry readings, unique to each of our devices.
+Then, we will save this telemetry in the database using the [save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/){:target="_blank"} node.
 Let&#39;s get started.
 
 
@@ -34,7 +34,7 @@ First, create the new rule chain:
 
 Now, let&#39;s add the necessary nodes:
 
-- Find the [generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} and drag it to the rule chain. With its help, we will generate telemetry values for further visualization on the dashboard. Name it "Indoor air quality data emulator", and set the number of messages to send to 100 and the sending period to 600;
+- Find the [generator node](/docs/user-guide/rule-engine-2-0/nodes/action/generator/){:target="_blank"} and drag it to the rule chain. With its help, we will generate telemetry values for further visualization on the dashboard. Name it "Indoor air quality data emulator", and set the number of messages to send to 100 and the sending period to 600;
 - Specify the device "SD-001" (Indoor Air Quality Sensor) as originator;
 - Copy the following script from the documentation:
 
@@ -123,16 +123,16 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 {% include images-gallery.html imageCollection="adding-new-rule-chain-5" %}
 
 <br>
-Four generator nodes have been added. Now, we need to route incoming messages from these nodes to the "[save timeseries](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}" node to save time-series data in the database.
+Four generator nodes have been added. Now, we need to route incoming messages from these nodes to the "[save time series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries/){:target="_blank"}" node to save time-series data in the database.
 
-- Find the "save timeseries" node and drag it to the rule chain;
+- Find the "save time series" node and drag it to the rule chain;
 - Name it "save time series", and click "Add".
 
 We have added all the necessary nodes.
 
 {% include images-gallery.html imageCollection="adding-new-rule-chain-6" %}
 
-Now, we need to connect the generator nodes to the "save timeseries" node for message routing:
+Now, we need to connect the generator nodes to the "save time series" node for message routing:
 
 {% include images-gallery.html imageCollection="adding-new-rule-chain-7" showListImageTitles="true" %}
 

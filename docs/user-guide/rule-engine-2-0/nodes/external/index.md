@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
-title: Rule Engine External nodes
-description: Rule Engine External Nodes
+title: External nodes
+description: Rule engine external nodes
 hidetoc: "true"
 breadcrumbs: "true"
 breadcrumbs-steps: "1"

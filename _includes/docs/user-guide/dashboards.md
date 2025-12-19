@@ -1,9 +1,10 @@
 * TOC 
 {:toc}
 
-## Prerequisites
-
-Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
+{% capture difference %}
+Before proceeding with this guide, it&#39;s recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/){:target="_blank"} guide to become familiar with ThingsBoard devices and widgets. This will enhance your learning experience and understanding of the concepts presented here.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Introduction
 
@@ -110,7 +111,7 @@ In the case of a time series widget, ThingsBoard fetches telemetry with a timest
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/3xRWm1W1IM4" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/3xRWm1W1IM4" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -227,6 +228,18 @@ You can edit the list of available aggregation functions. List the available agg
 
 {% include images-gallery.html imageCollection="hide-time-zone" %}
 
+*Available only when Aggregation is None*:
+
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+- **Max values**: Limits the number of data points rendered in time-series widgets within the selected time window. For self-hosted installations, this limit is configurable via the DASHBOARD_MAX_DATAPOINTS_LIMIT [parameter](/docs/user-guide/install/{{docsPrefix}}config/#ui-settings-parameters){:target="_blank"}.
+{% endif %}
+
+{% if docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+- **Max values**: Limits the number of data points rendered in time-series widgets within the selected time window.
+{% endif %}
+
+{% include images-gallery.html imageCollection="max-values" %}
+
 ### Filters
 
 Entity filters allow you to specify a filter for the list of entities resolved by the entity alias.
@@ -255,7 +268,7 @@ See more examples of how to use filters in this video:
 <br>
 <div id="video">
   <div id="video_wrapper">
-    <iframe src="https://www.youtube.com/embed/yTAhUpZiFkM?start=177" frameborder="0" allowfullscreen=""></iframe>
+    <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/yTAhUpZiFkM?start=177" frameborder="0" allowfullscreen=""></iframe>
   </div>
 </div>
 

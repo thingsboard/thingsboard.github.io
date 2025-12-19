@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: twilio sms
-description: Sends incoming message data as SMS message via Twilio service.
+description: Sends incoming message data as SMS to specified phone numbers via Twilio.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

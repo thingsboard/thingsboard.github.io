@@ -1,51 +1,206 @@
 ---
 layout: docwithnav-trendz
-title: Large Language Model (LLM) Configuration
-description: Step-by-step guide how to configure Large Language Model (LLM).
+title: Enable AI Features
+description: Step-by-step guide how to set uo AI Settings in Trendz
 
-trendz-assistance-use-own-model:
+ai-settings:
   0:
-    image: /images/trendz/ai/ai-model-configuration/use-own-model-1.png
-    title: To enable/configure your own model, it’s necessary to go Setting -> General -> AI Assistance
-
-trendz-assistance-ai-models:
-  0:
-    image: /images/trendz/ai/ai-model-configuration/ai-google-model.png
-    title: Google (Recommended)
+    image: /images/trendz/ai/settings/ai-settings-1.png
+    title: "Navigate to <b>Settings → AI Assistant</b> tab."
   1:
-    image: /images/trendz/ai/ai-model-configuration/ai-openai-model.png
-    title: Open AI
+    image: /images/trendz/ai/settings/ai-settings-2.png
+    title: "The <b>AI Features</b> section."
   2:
-    image: /images/trendz/ai/ai-model-configuration/ai-aws-model.png
-    title: Amazon Bedrock
+    image: /images/trendz/ai/settings/ai-settings-3.png
+    title: "The <b>AI Models</b> section."
+
+ai-models:
+  0:
+    image: /images/trendz/ai/settings/ai-models-1.png
+    title: "Click the <b>New AI Model</b> button."
+  1:
+    image: /images/trendz/ai/settings/ai-models-2.png
+    title: "Enter a <b>Name</b> (any label you wish to identify the model in the list)."
+  2:
+    image: /images/trendz/ai/settings/ai-models-3.png
+    title: "Choose a <b>Provider</b> (currently supported: `OPEN_AI`, `GOOGLE`, `AMAZON_BEDROCK`, `CUSTOM`)."
   3:
-    image: /images/trendz/ai/ai-model-configuration/ai-custom-model.png
-    title: Other Models (Custom)
+    image: /images/trendz/ai/settings/ai-models-4.png
+    title: "Enter the <b>Model Name</b> (specific to the provider)."
+  4:
+    image: /images/trendz/ai/settings/ai-models-5.png
+    title: "Provide additional parameters (like Base URL or API Key), depending on the provider."
+  5:
+    image: /images/trendz/ai/settings/ai-models-6.png
+    title: "Set the <b>Temperature</b> and <b>Top P</b> parameters."
+  6:
+    image: /images/trendz/ai/settings/ai-models-7.png
+    title: "Click <b>Save</b>."
+  7:
+    image: /images/trendz/ai/settings/ai-models-8.png
+    title: "If everything is set up correctly, you will see a success message."
+
+model-delete:
+  0:
+    image: /images/trendz/ai/settings/model-delete-1.png
+    title: "Actions → Delete."
+  1:
+    image: /images/trendz/ai/settings/model-delete-2.png
+    title: "Confirm."
+    
+model-edit:
+  0:
+    image: /images/trendz/ai/settings/model-edit-1.png
+    title: "Actions → Edit."
+  1:
+    image: /images/trendz/ai/settings/model-edit-2.png
+    title: "Change Properties → Save."
+
+ai-features:
+  0:
+    image: /images/trendz/ai/settings/ai-features-1.png
+    title: "To enable AI features, toggle <b>Enable AI Features</b> on."
+  1:
+    image: /images/trendz/ai/settings/ai-features-2.png
+    title: "<b>Use Single Model:</b> apply a single AI model for all features."
+  2:
+    image: /images/trendz/ai/settings/ai-features-3.png
+    title: "<b>Custom per Feature Configuration:</b> assign different AI models to specific features."
+  3:
+    image: /images/trendz/ai/settings/ai-features-4.png
+    title: "To switch between options, enable or disable <b>Use Single Model</b> checkbox."
+  4:
+    image: /images/trendz/ai/settings/ai-features-5.png
+    title: "If a feature is disabled, neither you nor other users will be able to access AI capabilities related to it."
+  5:
+    image: /images/trendz/ai/settings/ai-features-6.png
+    title: "Once all configurations are completed, click <b>Save</b> to apply the changes."
+
+providers:
+  0:
+    image: /images/trendz/ai/settings/providers-1.png
+    title: "Open AI."
+  1:
+    image: /images/trendz/ai/settings/providers-2.png
+    title: "Google (Recommended)."
+  2:
+    image: /images/trendz/ai/settings/providers-3.png
+    title: "Amazon Bedrock."
+  3:
+    image: /images/trendz/ai/settings/providers-4.png
+    title: "Other Models (Custom)."
+
 ---
 * TOC
 {:toc}
 
-To enable the AI features on the self-hosted Trendz application, or to not be related to the provided by cloud token limits, it is possible to configure your own large language model.
+Trendz proposes a wide range of features that rely on large language models (AI models).
 
-To enable/configure your own model, it’s necessary to go: *Setting* -> *General* -> *AI Assistant*
-{% include images-gallery.html imageCollection="trendz-assistance-use-own-model" %}
+For cloud installations, Trendz provides a default AI model with a limited number of requests available. To extend this 
+request limit or to enable additional AI features, you need to configure the **AI Settings** section.
 
-To use the own model it’s necessary to enable **Use own model**. After enabling the own model it’s possible to choose an AI provider and model. Additionally, it’s necessary to enter *API key* or
-*Access Key* and *Secret Key* (related to the chosen provider).
+## AI Settings
 
-⚠️ *Note*: each AI Assistance request uses around 10000 input tokens and 1000 output tokes. Token usage is related to the difficulty of request and provided topology size.
+Navigate to **Settings → AI Assistant** tab.
 
-Currently, Trendz could be integrated with the following models:
+This section contains two parts: the **AI Features** section and the **AI Models** section. Before configuring the 
+AI Features, you must add at least one AI Model.
+
+{% include images-gallery.html imageCollection="ai-settings" %}
+
+### AI Models
+
+To add a new AI model:
+
+1. Click the **New AI Model** button.
+2. Enter a **Name** (any label you wish to identify the model in the list).
+3. Choose a **Provider** (currently supported: `OPEN_AI`, `GOOGLE`, `AMAZON_BEDROCK`, `CUSTOM`).
+4. Enter the **Model Name** (specific to the provider).
+5. Provide additional parameters (like Base URL or API Key), depending on the provider.
+6. Set the **Temperature** and **Top P** parameters.
+7. Click **Save**.
+
+If everything is set up correctly, you will see a success message.
+
+{% include images-gallery.html imageCollection="ai-models" %}
+
+* **Temperature** determines how creative or deterministic the model is. A lower value (e.g., 0) produces more repetitive 
+and predictable responses, while a higher value increases creativity and diversity.
+* **Top P** (nucleus sampling) controls the probability distribution used when generating responses. Lower values 
+restrict the model to more likely outputs; higher values allow more variety.
+
+Once a model is created, you can add as many as you need - for instance, different models from multiple providers for different features.
+
+To delete a Model: Click **Actions → Delete → Confirm**.
+
+**Important:** If you delete a model that is already used in AI Features, the feature using this model will be disabled.
+
+{% include images-gallery.html imageCollection="model-delete" %}
+
+To edit a Model: Click **Actions → Edit → Change Properties → Save**.
+
+{% include images-gallery.html imageCollection="model-edit" %}
+
+### AI Features
+
+To enable AI features, toggle **Enable AI Features** on.
+
+Once enabled, you will see two configuration options:
+
+* **Use Single Model:** apply a single AI model for all features.
+* **Custom per Feature Configuration:** assign different AI models to specific features.
+
+To switch between options, enable or disable **Use Single Model** checkbox.
+
+If you select the single model option, the same model will be used for all AI functions. For more flexibility, you can 
+assign different models to the following features:
+
+1. **Prompts** - used for AI View Summary (learn more [here](/docs/trendz/ai-widget-summary/#trendz-widgets)).
+2. **View Assistant** - used for View Assistant features (learn more [here](/docs/trendz/ai-assistance-overview/)).
+3. **Metric Code Assistant** - used for Metric Explorer feature (learn more [here](/docs/trendz/metric/overview/)).
+
+Different features may require different model configurations:
+
+* **Quick models** - for fast responses (e.g., View Assistant)
+* **Cost-efficient models** - for lightweight tasks (e.g., Prompts)
+* **Advanced models** - for complex reasoning (e.g., Metric Code Assistant)
+
+If a feature is disabled, neither you nor other users will be able to access AI capabilities related to it.
+
+Once all configurations are completed, click **Save** to apply the changes.
+
+{% include images-gallery.html imageCollection="ai-features" %}
+
+## AI Model Providers Overview
+
+Currently, Trendz could be integrated with the following providers:
+
 * OPEN_AI
-* AMAZON_BEDROCK
 * GOOGLE
+* AMAZON_BEDROCK
 * CUSTOM (OpenAI API)
 
-{% include images-gallery.html imageCollection="trendz-assistance-ai-models" %}
+{% include images-gallery.html imageCollection="providers" %}
 
-⚠️ *Note*: to save any changes in the configuration it’s necessary to press the “Save” button.
+### Open AI
 
-## Google (Recommended):
+Please refer to the [Open AI API key documentation](https://platform.openai.com/api-keys) to find out how to create API keys for Open AI models.
+
+Supported models:
+* Gpt-4o (Recommended - high performance)
+  * Input (1m) token price: 2.5$
+  * Output (1m) token price: 10$
+* Gpt-4o-mini (Recommended - cost efficiency)
+  * Input (1m) token price: 0.15$
+  * Output (1m) token price: 0.6$
+* o3-mini (Recommended - cost efficiency, high performance but slow speed)
+  * Input (1m) token price: 1.1$
+  * Output (1m) token price: 4.4$
+* o4-mini (Recommended - cost efficiency, high performance but slow speed)
+  * Input (1m) token price: 1.1$
+  * Output (1m) token price: 4.4$
+
+### Google (Recommended):
 
 Please refer to the [Google API key documentation](https://ai.google.dev/gemini-api/docs/api-key) to find out how to create an API key for Google models.
 
@@ -66,25 +221,7 @@ Supported models:
   * Input (1m) token price: 0.3$
   * Output (1m) token price: 2.5$
 
-## Open AI
-
-Please refer to the [Open AI API key documentation](https://platform.openai.com/api-keys) to find out how to create API keys for Open AI models.
-
-Supported models:
-* Gpt-4o (Recommended - high performance)
-  * Input (1m) token price: 2.5$
-  * Output (1m) token price: 10$
-* Gpt-4o-mini (Recommended - cost efficiency)
-  * Input (1m) token price: 0.15$
-  * Output (1m) token price: 0.6$
-* o3-mini (Recommended - cost efficiency, high performance but slow speed)
-  * Input (1m) token price: 1.1$
-  * Output (1m) token price: 4.4$
-* o4-mini (Recommended - cost efficiency, high performance but slow speed)
-  * Input (1m) token price: 1.1$
-  * Output (1m) token price: 4.4$
-
-## Amazon Bedrock
+### Amazon Bedrock
 
 Please refer to [AWS API key documentation](https://docs.aws.amazon.com/bedrock/latest/userguide/getting-started-api.html) to find out how to create Access key IDs and Secret access keys.
 
@@ -121,7 +258,7 @@ Supported models:
     * Input (1m) token price: 3$
     * Output (1m) token price: 12$
 
-## Other Models (Custom)
+### Other Models (Custom)
 
 It’s possible to connect any model that supports the OpenAI API standard. To do this, choose the *Custom* provider,  
 enter the model URL, model name, and API key.

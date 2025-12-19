@@ -42,7 +42,32 @@ These steps are detailed in this [documentation]({{mobileGuide}}).
 
 To send a notification manually, follow these steps:
 
-{% include images-gallery.html imageCollection="notification-center-send-notification-1" showListImageTitles="true" %}
+**1.** Click the "<b>Send notification</b>" button in the top-right corner to open the new notification wizard.
+
+**2. Setup:**
+
+- Specify <b>recipients</b>
+- Select at least one <b>delivery method</b>.
+- Optionally:
+  - [Attach a report](/docs/{{docsPrefix}}user-guide/reporting/attaching-report-to-notification/){:target="_blank"} (available only for <b>Email</b> and <b>Slack</b> delivery methods).
+  - <b>Schedule the notification</b> for a later time.
+- Click "<b>Next</b>".
+
+**3. Compose:**
+
+- Configure the subject and message content for each selected delivery method.   
+- [Optionally] For the <b>Web</b> delivery method, you can add an <b>action button</b> to the notification:
+  - Enter the <b>button text</b>.
+  - Select the <b>action type</b> ("<b>Open dashboard</b>" or "<b>Open URL link</b>").
+  - <b>Specify the URL or dashboard</b> to be opened when the button is clicked.
+  - You can also display the icon in the notification and set its color.
+- Click "<b>Next</b>".
+
+**4. Review:**
+
+Here you can preview how your message will look. If everything is set up correctly, click "<b>Send</b>".
+
+{% include images-gallery.html imageCollection="notification-center-send-notification-1" %}
 
 The recipient will receive the notification in the ThingsBoard interface and can view it on the Notification center page or by clicking the bell icon in the top-right corner of the screen.
 Clicking the "Open this dashboard" button in the notification will open the corresponding dashboard.
@@ -398,7 +423,7 @@ The notification in ThingsBoard may look like this:
 
 ### Rule node
 
-The rule node template is used to send notifications from the '[send notification](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-notification-node)' rule node.
+The rule node template is used to send notifications from the '[send notification](/docs/user-guide/rule-engine-2-0/nodes/external/send-notification/)' rule node.
 You may use data or metadata from the incoming message to build the notification subject and body.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 

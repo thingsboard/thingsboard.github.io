@@ -110,7 +110,7 @@ In this expression, we simply have a single identifier (msg.temperature), which 
 in that the only purpose of the expression is to extract a property out of a variable or context object.
 
 TBEL can even be used for evaluating a boolean expression. 
-Assuming you are using TBEL in the Rule Engine to define a simple script [filter node](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#script-filter-node):
+Assuming you are using TBEL in the Rule Engine to define a simple script [filter node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/nodes/filter/script/):
 
 ```java
 return msg.temperature > 10;

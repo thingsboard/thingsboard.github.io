@@ -44,7 +44,7 @@ description: Discover how OXI TRADE optimized its alternative energy operations 
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/Vyacheslav-Shashkov.webp" title="OXI Trade CEO Vyacheslav Shashkov" alt="Vyacheslav Shashkov" width="1316" height="848">
+        <img class="h-auto" src="/images/case-studies/Vyacheslav-Shashkov.webp" title="OXI Trade CEO Vyacheslav Shashkov" alt="Vyacheslav Shashkov" width="1316" height="848">
         <div class="text">
             <h2>OXI TRADE</h2>
             <p class="quote">"Collaboration with ThingsBoard has been a significant step forward for OXI Company in the field of IoT infrastructure. The ThingsBoard platform has greatly simplified the process of connecting, managing, and monitoring our pellet burners. Thanks to ThingsBoard, we not only gained the ability to respond promptly to technical issues but also provided our partners and end-users with a convenient and reliable tool for managing the equipment. Overall, we are fully satisfied with the results of working with the ThingsBoard team, as our collaboration has allowed us to achieve the desired outcomes. We truly value the responsiveness and high quality of communication at every stage of our partnership."</p>

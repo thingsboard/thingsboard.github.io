@@ -43,7 +43,7 @@ description: Discover how co.met GmbH modernized smart metering and LoRaWAN serv
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/peter_backes.webp" title="co.met CEO Peter Backes" alt="Peter Backes" width="987" height="636">
+        <img class="h-auto" src="/images/case-studies/peter_backes.webp" title="co.met CEO Peter Backes" alt="Peter Backes" width="987" height="636">
         <div class="text">
             <h2>co.met GmbH</h2>
             <p class="quote">“We’re a meter operator and as such a service provider for energy distribution network carriers (electricity, gas, water and heat) and other meter operators. We provide SaaS-Solutions for the remote reading of meters, field force management (for meter fitters) and the administration of smart meter gateways. Additionally we’re a LoRa WAN car...<a target="_blank" href="/industries/smart-energy/?company=comet">read more</a></p>

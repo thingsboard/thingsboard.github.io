@@ -27,7 +27,7 @@ Create relationships between the **Warehouse A** asset and the **Indoor Thermome
 Since we are using virtual devices, they do not send telemetry data to the ThingsBoard. However, we can simulate the transmission of such data in real time.
 To do this, we will use [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/){:target="_blank"}.
 
-Let&#39;s add two [generator nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} that will periodically produce messages with random temperature readings. 
+Let&#39;s add two [generator nodes](/docs/user-guide/rule-engine-2-0/nodes/action/generator/){:target="_blank"} that will periodically produce messages with random temperature readings. 
 Ideally, such use cases should have a dedicated [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain){:target="_blank"}, but for simplicity, we&#39;ll use the **Root Rule Chain**.
 Route the messages from these nodes to the **device profile node**.
 

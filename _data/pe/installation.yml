@@ -3,7 +3,7 @@ abstract: "Documentation for installation and configuration of ThingsBoard Profe
 toc:
 - title: Installation options
   path: /docs/user-guide/install/pe/installation-options/
-- title: On premise
+- title: On-premises
   section:  
   - title: Ubuntu Server
     path: /docs/user-guide/install/pe/ubuntu/
@@ -54,4 +54,8 @@ toc:
   - title: Report service parameters
     path: /docs/user-guide/install/pe/report-service-config/
 - title: Upgrade instructions
-  path: /docs/user-guide/install/pe/upgrade-instructions/
+  section:
+  - title: Upgrade
+    path: /docs/pe/user-guide/install/upgrade-instructions/
+  - title: Upgrading from CE
+    path: /docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/

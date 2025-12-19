@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: twilio voice
-description: Sends voice messages via Twilio.
+description: Sends incoming message data as voice messages to specified phone numbers via Twilio text-to-speech service.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

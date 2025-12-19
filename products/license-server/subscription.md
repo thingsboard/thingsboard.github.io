@@ -10,7 +10,7 @@ description: Features and advantages of pay-as-you-go payment model
  
  <div id="video">  
      <div id="video_wrapper">
-         <iframe src="https://www.youtube.com/embed/dK-QDFGxWek" frameborder="0" allowfullscreen></iframe>
+         <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/dK-QDFGxWek" frameborder="0" allowfullscreen></iframe>
      </div>
  </div>
  <p></p>

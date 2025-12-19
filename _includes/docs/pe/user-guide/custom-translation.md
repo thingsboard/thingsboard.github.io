@@ -236,7 +236,7 @@ You can provide custom translations for new custom menu items or individual UI e
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/NQ92phUUsYM" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/NQ92phUUsYM" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -282,7 +282,7 @@ First, add the "Weather" dashboard to your instance:
 - [Download the dashboard configuration as a JSON file](/docs/user-guide/resources/weather_dashboard.json){:target="_blank"}.
 - [Import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
 
-For this dashboard, I&#39;m emulating telemetry data using a [Generator node](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node){:target="_blank"} with the function provided below:
+For this dashboard, I&#39;m emulating telemetry data using a [Generator node](/docs/user-guide/rule-engine-2-0/nodes/action/generator/){:target="_blank"} with the function provided below:
 
 ```js
 var temperature = toFixed(Math.random()*10 + 18, 2);

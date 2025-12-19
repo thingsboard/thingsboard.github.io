@@ -100,10 +100,76 @@ include-customer-entities:
         image: /images/user-guide/ui/devices/pe/include-customer-entities-2-pe.png
         title: 'When the switch is <b>disabled</b> — the table shows <b>only your own devices</b>.'
 
-device-details-page:
+make-device-group-public:
+    0:
+        image: /images/user-guide/ui/devices/pe/make-device-group-public-1-pe.png
+        title: 'Locate the desired device group in the list, and click the "<b>Make public</b>" icon next to it.'
+    1:
+        image: /images/user-guide/ui/devices/pe/make-device-group-public-2-pe.png
+        title: 'Confirm your action in the popup dialog.'
+
+make-device-group-private:
+    0:
+        image: /images/user-guide/ui/devices/pe/make-device-group-private-1-pe.png
+        title: 'To make the group private again, follow the same steps using the "<b>Make private</b>" icon.'
+    1:
+        image: /images/user-guide/ui/devices/pe/make-device-group-private-2-pe.png
+        title: 'Confirm your action in the popup dialog.'
+
+share-device-group:
+    0:
+        image: /images/user-guide/ui/devices/pe/share-device-group-1-pe.png
+        title: 'Locate the desired device group in the list, and click the "<b>Share</b>" icon next to it.'
+    1:
+        image: /images/user-guide/ui/devices/pe/share-device-group-2-pe.png
+        title: 'Select the <b>target customer</b> from the dropdown list. (Optional) Specify the <b>user group</b> within that customer to share the device group with. Confirm the action by clicking "<b>Share</b>".'
+
+copy-device-id:
+    0:
+        image: /images/user-guide/ui/devices/pe/copy-device-id-1-pe.png
+        title: 'Open the device&#39;s detail page by clicking on the device name in the list. Click the "<b>Copy device Id</b>" button.'
+
+copy-access-token:
+    0:
+        image: /images/user-guide/ui/devices/pe/copy-access-token-1-pe.png
+        title: 'To copy the device credentials, click on the “Copy Access Token” or “Copy MQTT Credentials” button (depending on your choice of device credentials type).'
+
+attributes:
+    0:
+        image: /images/user-guide/ui/devices/pe/device-attributes-1-pe.png
+        title: 'This tab displays the client, server, and shared attributes of the device. For example, serial number, model, and firmware version.'
+
+telemetry:
+    0:
+        image: /images/user-guide/ui/devices/pe/device-telemetry-1-pe.png
+        title: 'This tab shows the telemetry data that the device sends in real-time, such as sensor readings, status, and other measurable variables.'
+
+telemetry-add-manually:
+    0:
+        image: /images/user-guide/ui/devices/pe/device-telemetry-add-manually-1-pe.png
+        title: 'Click the "plus" icon in the top right corner of the window. In the new window, enter the key name, select the value type, and enter the value. Click "Add" button.'
+    1:
+        image: /images/user-guide/ui/devices/pe/device-telemetry-add-manually-2-pe.png
+        title: 'Telemetry has been added.'
+
+telemetry-delete:
+    0:
+        image: /images/user-guide/ui/devices/pe/device-telemetry-delete-1-pe.png
+        title: 'To delete telemetry, click the "trash can" icon next to the name of the telemetry key you want to delete;'
+    1:
+        image: /images/user-guide/ui/devices/pe/device-telemetry-delete-2-pe.png
+        title: 'Choose what you want to delete specifically: delete all data, delete all data except latest value, delete latest value, delete all data for time period. Confirm the deletion by clicking the "Apply" button.'
+
+alarms:
     0:
         image: /images/user-guide/ui/devices/pe/device-details-page-1-pe.png
         title: 'Click on the target device to open its <b>details window</b>.'
+
+device-details-page:
+  0:
+    image: /images/user-guide/ui/devices/pe/device-details-page-1-pe.png
+    title: 'Click on the target device to open its <b>details window</b>.'
+
 
 ---
 

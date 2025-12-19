@@ -20,10 +20,10 @@ notification-center-send-notification-1:
         title: 'At this step, <b>configure the subject and message content</b> for each selected delivery method.'
     4:
         image: /images/user-guide/notifications/notification-center-send-notification-5-pe.png
-        title: 'For the <b>Web</b> delivery method, you can add an <b>action button</b> to the notification:<br> - Enter the <b>button text</b>.<br> - Select the <b>action type</b> ("<b>Open dashboard</b>" or "<b>Open URL link</b>").<br> - <b>Specify the URL link or the dashboard</b> that should open when the button is clicked. <br>You can also display the icon in the notification and set its color.<br> Then, click "<b>Next</b>";'
+        title: 'For the <b>Web</b> delivery method, you can add an <b>action button</b> to the notification:<br> - Enter the <b>button text</b>.<br> - Select the <b>action type</b> ("<b>Open dashboard</b>" or "<b>Open URL link</b>").<br>- <b>Specify the URL or dashboard</b> to be opened when the button is clicked.<br> You can also display the icon in the notification and set its color.<br> Then, click "<b>Next</b>";'
     5:
         image: /images/user-guide/notifications/notification-center-send-notification-6-pe.png
-        title: 'Review the <b>notification preview</b> and <b>recipient list</b>.<br> Click "<b>Send</b>".'
+        title: 'Here you can preview how your message will look. If everything is set up correctly, click "<b>Send</b>".'
 
 notification-center-send-notification-2:
     0:

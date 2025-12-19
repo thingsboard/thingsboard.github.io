@@ -4,115 +4,311 @@ assignees:
 - vparomskiy
 title: Combine data from ThingsBoard and external databases
 description: Combine data from ThingsBoard and external SQL databases to compute metrics and analyze trends.
+
+settings-add:
+  0:
+    image: /images/trendz/datasource/external-datasources-settings-add-1.png
+    title: 'Go to <b>Settings</b>, then the <b>System</b> tab, under the <b>External Data Source</b> section, click <b>Add new data source</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-settings-add-2.png
+    title: 'Fill in the form with your database connection details and click the <b>Save</b> button.'
+
+settings-see:
+  0:
+    image: /images/trendz/datasource/external-datasources-settings-see-1.png
+    title: 'Under the <b>External Data Source</b> section, click <b>See all data sources</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-settings-see-2.png
+    title: 'Here you will see a table with two columns: <b>Data Source URL</b>, <b>Database type</b> and <b>Actions</b>.'
+
+settings-delete:
+  0:
+    image: /images/trendz/datasource/external-datasources-settings-delete-1.png
+    title: 'Under the <b>External Data Source</b> section, click <b>See all data sources</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-settings-delete-2.png
+    title: 'Click the three dots under the <b>Actions</b> column and click <b>Delete</b>.'
+  2:
+    image: /images/trendz/datasource/external-datasources-settings-delete-3.png
+    title: 'External datasource was deleted successfully.'
+
+settings-edit:
+  0:
+    image: /images/trendz/datasource/external-datasources-settings-edit-1.png
+    title: 'Click the three dots under the <b>Actions</b> column and click <b>Edit</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-settings-edit-2.png
+    title: 'Edit URL/Database Type/Login/Password. Click <b>Save</b>. Confirm the update, verifying which entities would be affected.'
+  2:
+    image: /images/trendz/datasource/external-datasources-settings-edit-3.png
+    title: 'If the database connection is established, you will see a success message; otherwise, you will see an error message.'
+  
+db-data:
+  0:
+    image: /images/trendz/datasource/external-datasources-db-data.png
+    title: 'Demo data from "building_consumption" table.'
+
+step-1:
+  0:
+    image: /images/trendz/datasource/external-datasources-step-1-1.png
+    title: 'Go to the <b>Business Entities</b> section and click <b>Add Business Entity</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-step-1-2.png
+    title: 'Enter <b>Name</b>, <b>Table Name</b>, <b>Entity Type</b> and <b>Datasource</b>.'
+
+step-2:
+  0:
+    image: /images/trendz/datasource/external-datasources-step-2-1.png
+    title: 'Go to the <b>Fields</b> section and click <b>Add field</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-step-2-2.png
+    title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b>, <b>Key</b> and set <b>Use Field as Business Entity Key</b>.'
+
+step-3:
+  0:
+    image: /images/trendz/datasource/external-datasources-step-3-1.png
+    title: 'Click <b>Add field</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-step-3-2.png
+    title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b>, <b>Key</b> and set <b>Use Field as Telemetry Timestamp</b>.'
+
+step-4:
+  0:
+    image: /images/trendz/datasource/external-datasources-step-4-1.png
+    title: 'Click <b>Add field</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-step-4-2.png
+    title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b> and <b>Key</b> for <b>heat_consumption</b> column.'
+  2:
+    image: /images/trendz/datasource/external-datasources-step-4-3.png
+    title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b> and <b>Key</b> for <b>energy_consumption</b> column.'
+
+step-5:
+  0:
+    image: /images/trendz/datasource/external-datasources-step-5-1.png
+    title: 'Go to the <b>Relations</b> section and click <b>Add relation</b>.'
+  1:
+    image: /images/trendz/datasource/external-datasources-step-5-2.png
+    title: 'Enter <b>Name</b>, <b>Direction</b>, <b>Selected Business Entity</b> and set <b>Enabled</b>.'
+  2:
+    image: /images/trendz/datasource/external-datasources-step-5-3.png
+    title: 'Click <b>Save</b>.'
+
+step-6:
+  0:
+    image: /images/trendz/datasource/external-datasources-step-6-1.png
+    title: 'Go to the home page. Click <b>Create View</b> and choose the <b>Table</b> view type.'
+  1:
+    image: /images/trendz/datasource/external-datasources-step-6-2.png
+    title: 'Drag and drop the business entity name field associated with the external business entity into the column section (<b>EM building</b>).'
+  2:
+    image: /images/trendz/datasource/external-datasources-step-6-3.png
+    title: 'Drag and drop any field from the external business entity into the column section (<b>energy_consumption</b>).'
+  3:
+    image: /images/trendz/datasource/external-datasources-step-6-4.png
+    title: 'Select date range with data.'
+  4:
+    image: /images/trendz/datasource/external-datasources-step-6-5.png
+    title: 'Click <b>Build Report</b>.'
+
 ---
 
 * TOC
 {:toc}
+ 
+## Overview
 
-ThingsBoard is a reliable platform to manage your IoT entities – from devices and assets to customers and users. All these entities produce data: attributes and telemetry information, stored and organized neatly in the system.
-Trendz lets you look at the data, calculate metrics, spot unusual patterns, and even predict what might happen next. But IoT solution is limited by data reported from sensors, there are other systems that can provide useful data for your business. 
-To support such cases we updated Trendz to work with more than just ThingsBoard data. You can now also pull data from external SQL databases into Trendz. 
-This means you can combine data from ThingsBoard with data from other systems and look at everything together in one place.
+The external datasource features are designed for:
 
-**For example:** if you have machine performance data in ThingsBoard and maintenance logs or factory production rates in an external SQL database, you can merge and analyze them together in Trendz. 
+* **Performance optimization**:
 
-In this article, we'll show you how this new feature works, give you some examples of how it can be helpful, and walk you through the setup process step by step. Let’s get started!
+  * Significantly reducing load on ThingsBoard.
+  * Increasing the speed of visualization builds.
+  * Optimizing Trendz resource usage, allowing more data to be shown without adding additional RAM to Trendz.
+* **Third-party integrations**:
 
-## Add external SQL datasource
-First step is to tell Trendz how to connect to your external SQL database.
+  * Ability to integrate with data outside the ThingsBoard system.
 
-* Got to **Settings** -> **External data sources**
-* Click **Add new datasource** button
-* Fill in the form with your database connection details like, url, login and password. For example
-  * **URL**: `jdbc:postgresql://localhost:5432/externaldb`
-  * **Login**: `postgres`
-  * **Password**: `postgres`
-* Save changes
+## External Datasource Table Format
 
-## Define external Business Entity
-Next step is to tell Trendz what data you want to pull from your external SQL database. Trendz has a concept of `Business Entity` that represents a group of ThingsBoard entities, like device/asset/customer. 
-Trendz also supports 'external' business entities that are not stored in ThingsBoard, but in external SQL database. Note that business entity is not a single entity or row in the table, 
-but a definition of a group of entities with same common parameters - type, attributes, telemetry fields. Finally, business entities are connected between each other with relations or foreign keys. All this information represent a `topology graph` in Trendz.
+Currently, Trendz supports the following database providers:
 
-To add exeternal business entity in Trendz topology follow these steps:
-* Go to **Business Entities** page in Trendz
-* Click **Add business entity** button
-* Configure `Criteria` tab
-  * `Name` - name of the business entity 
-  * `Entity type` = **EXTERNAL** - this is how Trendz knows that this business entity is not stored in ThingsBoard
-  * `Datasource` - select datasource that you added in previous step
-  * `Table` - type name of the table that should be used to pull data from
-* Configure `Fields` tab
-  * For each column in a table create a separate field under business entity
-  * `Name` - name of the field
-  * `Key` - column name in the table
-  * `Query type` = **TELEMETRY**
-  * For timestamp field in external table you must enable `Use Field as Telemetry Timestamp` checkbox
+* PostgreSQL (version 9.4+)
+* MySQL (version 5.0+)
+* MSSQL (version 2016+)
+* Oracle (version 9i+)
 
-Finally, we need to tell Trendz how external Business Entity conencted with other entities in ThignsBoard. For example, if you have a table with `device_id` column, you can use it to connect external business entity with ThingsBoard devices.
+Trendz can use a table from this datasource if:
 
-* Configure `Relations` tab
-  * Click **Add relation** button
-  * `Name` - set name of the relation
-  * `Direction` - set to **FROM**
-  * `Selected business entity` - select related ThingsBoard business entity from the list
-  * Enable created relation
-* Save changes
+1. The table contains a column with the Device/Asset ID.
+2. The table contains a column with a bigint timestamp in ms.
+3. All other columns can have any format.
 
-## Security and data visibility
-With the exciting capability to pull data from both ThingsBoard and external SQL tables into Trendz, it's essential that we address an important aspect: security and data visibility. 
-Users should be confident that their data remains protected and is shown only to those with the right permissions. Here's how it works:
+## Manage External SQL Datasource
 
-An external SQL table might have information for various entities in our system. When creating visualizations in Trendz that combine data from ThingsBoard and these external tables, we prioritize ensuring that users only see what they're allowed to see.
-ThingsBoard already has a system in place where specific user permissions are set for each entity. Trendz taps into these permissions. 
-Because Trendz understands how the external SQL table links to entities in ThingsBoard, it can smartly filter data from the external sources.
+The first step is to tell Trendz how to connect to your external SQL database.
 
-To give a clearer picture, consider this: Let's say we have an external SQL table storing maintenance history for every machine in a factory. 
-Each of these machines is also registered as an entity in ThingsBoard. 
-Now, if certain users are only given access to specific machines in ThingsBoard, when they view a Trendz visualization that combines machine data and maintenance history, they'll only see the maintenance details for the machines they have access to.
+### Add External SQL Datasource
 
-In this case, if we want to see what was an average maintenance period for factory equiment, Trendz will provide us with an average value based on the data that we have access to. 
-In essence, this setup ensures that data remains secure and visible only to the right eyes, maintaining a seamless and trusted user experience.
+To add a new external SQL datasource:
 
-## Data grouping and aggregation
-In this part we want to explain how Trendz mix data from ThignsBoard and external SQL datasources. To make it we will use a simple example: 
-Imagine you want to see a report showing the total maintenance duration for each type of equipment maintenance, broken down monthly for the past year. 
-We already have `Equipment` entity in ThingsBoard and `Maintenance` entity in external SQL database. And we alredy configured Trendz topology graph to connect these two entities via relation.
+* Go to **Settings**, then the **System** tab.
+* Under the **External Data Source** section, click **Add new data source**.
+* Fill in the form with your database connection details:
 
-To build such report we need to create a new visualization in Trendz, probably stacked bar chart nad add following fields into it:
-* Equipment serial number (from ThingsBoard) set to `uniq` aggregation.
-* Maintenance type (a text column from an external SQL table) with `uniq` aggregation.
-* Duration (an integer column from the same external SQL table) with `sum` aggregation.
+  * URL in JDBC format
+  * Database Type
+  * Login
+  * Password
+* Click the **Save** button.
 
-Here is a simplified process how Trendz will build this report:
-* Fetch list of equipment entities form ThignsBoard that are visible to current user.
-* Build SQL query to fetch data from external SQL table. This query will have `WHERE` clause to filter data only for equipment entities that we fetched from ThingsBoard.
-* Add configured filter conditions, time grouping and aggregation functions to the query.
+If a database connection is established, you will see a success message; otherwise, you will see an error message.
 
-Final query will look like this:
+{% include images-gallery.html imageCollection="settings-add" %}
+
+### See All External Datasources
+
+To see all external datasources:
+
+* Go to **Settings**, then the **System** tab.
+* Under the **External Data Source** section, click **See all data sources**.
+
+Here you will see a table with three columns: **Data Source URL**, **Database type** and **Actions**.
+
+{% include images-gallery.html imageCollection="settings-see" %}
+
+To delete an external datasource:
+
+* Click the three dots under the **Actions** column.
+* Click **Delete**.
+* Confirm the deletion, verifying which entities would be affected.
+
+{% include images-gallery.html imageCollection="settings-delete" %}
+
+To edit an external datasource:
+
+* Click the three dots under the **Actions** column.
+* Click **Edit**.
+* Edit URL/Database Type/Login/Password.
+* Confirm the update, verifying which entities would be affected.
+
+If the database connection is established, you will see a success message; otherwise, you will see an error message.
+
+{% include images-gallery.html imageCollection="settings-edit" %}
+
+## Define External Business Entity
+
+To use tables from external data sources, you need to add an external business entity.
+You can read more about business entities [here](/docs/trendz/business-entities).
+
+Here are 6 simple steps to create such a business entity:
+
+For demonstration purposes, we will create an external business entity to pull data from the following PostgreSQL table:
+
 ```sql
-SELECT
-  date_trunc('month', start_at) AS month_start,
-  maintenance_type,
-  SUM(duration) AS total_duration
-FROM
-  maintenance_history
-WHERE
-  equipment_id IN (:ids)
-  AND start_at > '2022-01-01'
-  AND start_at < '2023-01-01'
-GROUP BY
-  maintenance_type,
-  date_trunc('month', start_at);
+CREATE TABLE IF NOT EXISTS building_consumption (
+    id UUID PRIMARY KEY,
+    building_id UUID NOT NULL,
+    heat_consumption BIGINT NOT NULL,
+    energy_consumption BIGINT NOT NULL,
+    ts BIGINT NOT NULL
+);
 ```
 
-## Save incoming telemetry from ThingsBoard into external SQL table
-Certain telemetry formats can be difficult to fetch for reporting. At times, retrieving and aggregating data can consume a lot of time, affecting performance. 
-One effective solution is to utilize external SQL tables. ThingsBord Rule Engine is a palce where we define how incoming telemetry streams are processed in the ssytem. 
-By duplicating the incoming telemetry from Rule Engine into custom SQL table, we ensure the data is in an easily accessible format and properly configured indexes further enhance data fetching speeds.
-By registering this table as external business entity in Trendz, we can build reports faster, and utilize the flexibility Trendz offers for data visualization and analysis.
+{% include images-gallery.html imageCollection="db-data" %}
 
-Here is a brief concept how to make it happen:
-* Transform and Enrich Incoming Data: Before storing, enhance inciming telemetry event in ThingsBoard Rule Engine to suit your reporting needs.
-* Create custom rule node in Rule Engine: This node's job will be to save the telemetry data into the external SQL table.
-* Migrate historical data into the external SQL table: This step is optional, but if you want to build reports on historical data that you already have, you'll need to migrate it into the external SQL table.
+### Step 1: Add External Business Entity
+
+* Go to the **Business Entities** section.
+* Click **Add Business Entity**.
+* Enter any name that you want to see in the left section (*Building Consumption Data*).
+* Set **Entity Type** to "External".
+* Enter the table name from which you want to retrieve data (*building_consumption*). Note: table names are case-sensitive.
+* Choose the datasource from which you want to retrieve data.
+
+{% include images-gallery.html imageCollection="step-1" %}
+
+### Step 2: Add Key Entity Field
+
+* Go to the **Fields** tab.
+* Click **Add field**
+* Enter any name that you want to see in the fields section (*Building ID*).
+* Choose **String** as the field type.
+* Choose **Attribute** as the query type.
+* In the Key field, enter the column name that contains Device/Asset IDs from the specified table (*building_id*). Note: column names are case-sensitive.
+* Check the box **Use Field as Business Entity Key**.
+
+{% include images-gallery.html imageCollection="step-2" %}
+
+### Step 3: Add Timestamp Entity Field
+
+* Click **Add field**.
+* Enter any name that you want to see in the fields section (*Timestamp*).
+* Choose **Numeric** as the field type.
+* Choose **Telemetry** as the query type.
+* In the Key field, enter the column name containing the timestamp in ms for the data from the specified table (*ts*). Note: column names are case-sensitive.
+* Check the box **Use Field as Telemetry Timestamp**.
+
+{% include images-gallery.html imageCollection="step-3" %}
+
+### Step 4: Add Other Telemetry Entity Fields
+
+* Click **Add field**.
+* Enter any name that you want to see in the fields section (*Heat Consumption* / *Energy Consumption*).
+* Choose the appropriate field type for the data.
+* Choose **Telemetry** as the query type.
+* In the Key field, enter the column name of the data you want to use from the specified table (*heat_consumption* / *energy_consumption*). Note: column names are case-sensitive.
+
+Repeat Step 4 as many times as you need to add columns.
+To remove the current field, click the delete button in the upper-right corner.
+You can read more about the business entities tab [here](/docs/trendz/business-entities).
+
+{% include images-gallery.html imageCollection="step-4" %}
+
+### Step 5: Add Relations to ThingsBoard Business Entity
+
+* Go to the **Relations** tab.
+* Click **Add relation**.
+* Enter any name (*External*).
+* Set direction to **TO**.
+* Select the business entity you want to connect the external business entity with, the key column from Step 2 should contain the ID of the device/asset associated with the chosen business entity (*EM building*).
+* Check the **Enabled** box.
+* Click **Save**.
+
+{% include images-gallery.html imageCollection="step-5" %} 
+
+### Step 6: Verify by Building a Simple View
+
+Now you can create views associated with the external business entity.
+Note: in the view, it is necessary to use at least one entity from ThingsBoard.
+
+You can build the simplest view to verify that everything is set up properly:
+
+* Go to the home page.
+* Click **Create View** and choose the **Table** view type.
+* Drag and drop the business entity name field associated with the external business entity into the column section (*EM building*).
+* Drag and drop any field from the external business entity into the column section (*energy_consumption*).
+* Select date range with data.
+* Click **Build Report**.
+
+If the view is successfully built, then the external business entity was successfully set up.
+If any errors occur during the build, please validate Steps 1–6.
+
+**Important to highlight:** Trendz can use data from an external datasource only together with related data from ThingsBoard. It could be just item names or other data.
+
+{% include images-gallery.html imageCollection="step-6" %}
+
+## Security and Data Visibility
+
+Trendz ensures that users only see data they are permitted to access. Data from external SQL tables is filtered based on asset/device IDs,
+matching the permissions already set in ThingsBoard.
+
+When combining ThingsBoard and external data in visualizations, Trendz uses the entity links to filter external data. 
+For example, if an external table stores maintenance history for factory machines, users will only see maintenance details for machines they have access to in ThingsBoard.
+
+This approach ensures data security and provides accurate insights based solely on accessible data.
+
+## Next Steps
+ 
+{% assign currentGuide = "" %}{% include templates/trndz-guides-banner.md %}
+ 

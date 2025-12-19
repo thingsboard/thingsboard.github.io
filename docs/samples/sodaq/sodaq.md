@@ -259,7 +259,7 @@ After Dashboard creation navigate to Tracker details state to sets the limit val
 
 Once Rule chains and Dashboard set up you can trigger device to post the real data and verify that Integration and Rule chains work as expected.
 Advanced configuration guide below demonstrates step-by-step instruction how to configure the rule chains and how they actually work.
-This steps are optional and we recommend to navigate to [Next Steps](#next-steps) for beginners.
+These steps are optional and we recommend to navigate to [Next Steps](#next-steps) for beginners.
 
 ## Advanced Configuration (Optional)
 
@@ -273,16 +273,16 @@ Obviously, those headers should match for data flow to work properly.
 
 In this section, we explain the purpose of each node in this tutorial:
 
- - Node A: [**Originator attributes**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#originator-attributes) node.
+ - Node A: [**Originator attributes**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-attributes/) node.
    - This node add Message Originator Attributes (client\shared\server scope) and Latest Telemetry value into Message Metadata.
 
- - Node **B, C, D, E**: [**Filter Script**](/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) nodes.
-   - These nodes with different threshold test scripts. The particular script will return ** true ** if the condition is executed, otherwise, it will return ** false ** ".- Node B: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
- - Node **F, H, G, L**: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) nodes.
+ - Node **B, C, D, E**: [**Filter Script**](/docs/user-guide/rule-engine-2-0/nodes/filter/script/) nodes.
+   - These nodes with different threshold test scripts. The particular script will return **true** if the condition is executed, otherwise, it will return **false**.
+ - Node **F, H, G, L**: [**Create alarm**](/docs/user-guide/rule-engine-2-0/nodes/action/create-alarm/) nodes.
    - Creates or Updates an alarm if the specific published telemetry is not at expected range (filter script node returns True).
- - Node **G, I, K, M**: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
+ - Node **G, I, K, M**: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/nodes/action/clear-alarm/) node.
    - Clears alarm if it exists in case if the specific published telemetry is in an expected range (filter script node returns False).
- - Node **O**: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
+ - Node **O**: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/) node.
    - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms**.
 
 <br>

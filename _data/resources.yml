@@ -1,0 +1,180 @@
+4.2.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2.1/thingsboard-4.2.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.2.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2.1/thingsboard-4.2.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.2.1.deb
+'4.2':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2/thingsboard-4.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2/thingsboard-4.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.2.deb
+'4.1':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.1/thingsboard-4.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.1/thingsboard-4.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.1.deb
+4.0.2:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.0.2/thingsboard-4.0.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.0.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.0.2/thingsboard-4.0.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.0.2.deb
+4.0.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.0.1/thingsboard-4.0.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.0.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.0.1/thingsboard-4.0.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.0.1.deb
+'4.0':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.0/thingsboard-4.0.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.0.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.0/thingsboard-4.0.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.0.deb
+3.9.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.9.1/thingsboard-3.9.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.9.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.9.1/thingsboard-3.9.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.9.1.deb
+'3.9':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.9/thingsboard-3.9.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.9.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.9/thingsboard-3.9.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.9.deb
+3.8.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.8.1/thingsboard-3.8.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.8.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.8.1/thingsboard-3.8.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.8.1.deb
+'3.8':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.8/thingsboard-3.8.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.8.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.8/thingsboard-3.8.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.8.deb
+'3.7':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.7/thingsboard-3.7.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.7.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.7/thingsboard-3.7.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.7.deb
+3.6.4:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.4/thingsboard-3.6.4.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.4.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.4/thingsboard-3.6.4.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.4.deb
+3.6.3:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.3/thingsboard-3.6.3.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.3.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.3/thingsboard-3.6.3.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.3.deb
+3.6.2:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.2/thingsboard-3.6.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.2/thingsboard-3.6.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.2.deb
+3.6.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.1/thingsboard-3.6.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6.1/thingsboard-3.6.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.1.deb
+'3.6':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6/thingsboard-3.6.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.6.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.6/thingsboard-3.6.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.6.deb
+3.5.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.5.1/thingsboard-3.5.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.5.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.5.1/thingsboard-3.5.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.5.1.deb
+'3.5':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.5/thingsboard-3.5.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.5.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.5/thingsboard-3.5.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.5.deb
+3.4.4:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.4/thingsboard-3.4.4.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.4.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.4/thingsboard-3.4.4.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.4.deb
+3.4.3:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.3/thingsboard-3.4.3.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.3.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.3/thingsboard-3.4.3.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.3.deb
+3.4.2:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.2/thingsboard-3.4.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.2/thingsboard-3.4.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.2.deb
+3.4.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.1/thingsboard-3.4.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4.1/thingsboard-3.4.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.1.deb
+'3.4':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4/thingsboard-3.4.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.4.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.4/thingsboard-3.4.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.4.deb
+3.3.4.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.4.1/thingsboard-3.3.4.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.4.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.4.1/thingsboard-3.3.4.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.4.1.deb
+3.3.4:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.4/thingsboard-3.3.4.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.4.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.4/thingsboard-3.3.4.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.4.deb
+3.3.3:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.3/thingsboard-3.3.3.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.3.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.3/thingsboard-3.3.3.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.3.deb
+3.3.2:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.2/thingsboard-3.3.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.2/thingsboard-3.3.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.2.deb
+3.3.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.1/thingsboard-3.3.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3.1/thingsboard-3.3.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.1.deb
+'3.3':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3/thingsboard-3.3.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.3.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.3/thingsboard-3.3.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.3.deb
+3.2.2:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.2.2/thingsboard-3.2.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.2.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.2.2/thingsboard-3.2.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.2.2.deb
+3.2.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.2.1/thingsboard-3.2.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.2.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.2.1/thingsboard-3.2.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.2.1.deb
+'3.2':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.2/thingsboard-3.2.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.2.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.2/thingsboard-3.2.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.2.deb
+3.1.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.1.1/thingsboard-3.1.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.1.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.1.1/thingsboard-3.1.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.1.1.deb
+'3.1':
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.1/thingsboard-3.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.1/thingsboard-3.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.1.deb
+3.0.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.0.1/thingsboard-3.0.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.0.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.0.1/thingsboard-3.0.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.0.1.deb
+3.0.0:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.0/thingsboard-3.0.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-3.0.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v3.0/thingsboard-3.0.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-3.0.deb

@@ -1,4 +1,4 @@
-Unassigns the message entity from a customer.
+Unassigns the message originator from a customer.
 
 ## Configuration
 
@@ -22,6 +22,7 @@ Unassigns the message entity from a customer.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 

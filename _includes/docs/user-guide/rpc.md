@@ -75,7 +75,7 @@ You may design your [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/
 to process the incoming message using transformation, enrichment or any other 
 rule node [type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-types). 
 Once the incoming message is transformed to the response message, 
-one should use [RPC Call Reply](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#rpc-call-reply-node) node to send reply to the device.
+one should use [RPC Call Reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply/) node to send reply to the device.
 
 For example, let's modify root Rule Chain to process "getCurrentTime" client-side RPC and reply with the current time in milliseconds.
 We will use "Script" transformation node with the following JS code:
@@ -236,7 +236,7 @@ The message contains unique UUID based identifier that is stored in the "request
 You may design your [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain)
 to process the incoming message using transformation, enrichment or any other
 rule node [type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-types).
-Finally, one should use [RPC Call Request](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node to send the message to the device.
+Finally, one should use [RPC Call Request](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-request/) node to send the message to the device.
 
 You may also create the RPC using generator node:
 

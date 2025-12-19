@@ -38,7 +38,7 @@ device-objects:
         image: /images/lwm2m/choose-lwm2m-objects-2-pe.png
         title: 'Add objects from the drop-down list. The objects must be preloaded into the Resource library beforehand.'
 
-configure-mapping:
+configure-mapping-1:
     0:
         image: /images/lwm2m/configure-mapping-1-pe.png
         title: 'For the Device object (#3_1.2), check the "Attribute" box for resource #0 (Manufacturer), resource #1 (Model Number) and resource #2 (Serial Number) so that the server can track these values, receive updates, and store them as attributes in ThingsBoard.'
@@ -51,9 +51,16 @@ configure-mapping:
     3:
         image: /images/lwm2m/configure-mapping-4-pe.png
         title: 'For the Location object (#6_1.0), check the "Attribute" box for resource #0 (Latitude) and resource #1 (Longitude) so that the server can track these values, receive updates, and store them as attributes in ThingsBoard. Then, save changes.'
-    4:
+
+configure-mapping-2:
+    0:
         image: /images/lwm2m/configure-mapping-5-pe.png
-        title: ''
+        title: 'By default, the <b>Initialize attributes and telemetry using Observe strategy</b> option is <b>disabled</b>, which means attributes and telemetry are initialized by reading their values <b>one by one</b>; when <b>enabled</b>, they are initialized by subscribing to their values <b>using the selected Observe strategy</b>.'
+
+configure-mapping-3:
+    0:
+        image: /images/lwm2m/configure-mapping-6-pe.png
+        title: 'By default, the <b>observe strategy</b> is set to <b>Single</b>, but you can switch to <b>Composite all</b> or <b>Composite by object</b> to reduce traffic or group resources more efficiently. Then, click "Save" to apply the changes.'
 
 configure-mapping-observe-strategy:
      0:

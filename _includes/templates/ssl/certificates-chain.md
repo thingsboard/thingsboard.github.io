@@ -103,7 +103,7 @@ An optional company name []:
 To generate the intermediate certificate, use the following command. Don't forget to put the correct CN when prompted:
 
 ```bash
-openssl x509 -req -in intermediate.csr -out intermediateCert.pem -CA rootCert.pem -CAkey rootKey.pem -days 365 -sha256 -CAcreateserial
+openssl x509 -req -in intermediate.csr -out intermediateCert.pem -CA rootCert.pem -CAkey rootKey.pem -days 365 -sha256 -CAcreateserial -extfile <(echo "basicConstraints=CA:TRUE")
 ```
 {: .copy-code}
 

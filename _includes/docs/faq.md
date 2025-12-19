@@ -2,10 +2,22 @@
 {:toc}
 
 
-## What is ThingsBoard?
+{% if docsPrefix contains 'pe/' or docsPrefix contains 'paas/' %}
+## What is ThingsBoard Professional Edition?
+{% else %}
+## What is ThingsBoard Community Edition?
+{% endif %}
 
-ThingsBoard is an open-source server-side platform that allows you to monitor and control your IoT devices.
-It is free for both personal and commercial usage and you can deploy it anywhere. 
+ThingsBoard is a comprehensive open-source IoT platform designed for device connectivity, data collection, processing, visualization, and remote device management. It supports IoT protocols like MQTT, CoAP, HTTP, LWM2M and provides a flexible, scalable foundation for building both prototype and production-level IoT solutions.
+
+The platform is available in two main editions: Community Edition (CE) and Professional Edition (PE).<br>
+
+{% if docsPrefix contains 'pe/' or docsPrefix contains 'paas/' %}
+The **Professional Edition** is the enterprise-grade version tailored for commercial IoT deployments. It includes all the features of the Community Edition and adds advanced capabilities that help accelerate time-to-market, enhance security, improve scalability, and deliver a polished, production-ready solution. This edition is designed for businesses that require high performance, operational reliability, and premium features.<br>
+{% else %}
+The **Community Edition** is a free, open-source version. It is a powerful and scalable multi-tenant solution, ideal for teams looking to experiment, test hypotheses, build proof-of-concepts, or launch MVPs without upfront costs. It offers the flexibility and agility needed in development.<br>
+{% endif %}
+
 If this is your first experience with the platform we recommend to review [what-is-thingsboard](/docs/{{docsPrefix}}getting-started-guides/what-is-thingsboard/) 
 and [getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/).
 You can find more information on the dedicated page.
@@ -76,6 +88,22 @@ The data is stored in [Cassandra](https://cassandra.apache.org/) database. Cassa
 
 ThingsBoard is licensed under [Apache 2.0 License](https://en.wikipedia.org/wiki/Apache_License#Version_2.0).
 It is free for both personal and commercial usage and you can deploy it anywhere.
+
+## How can I check which version of ThingsBoard I’m currently using?
+
+{% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" %}
+ThingsBoard Cloud is a fully managed platform that is regularly updated to the latest version by the ThingsBoard team, so you don't need to worry about maintenance or upgrades.
+{% elsif page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
+There are several ways to check the platform version in ThingsBoard Professional Edition.  
+The easiest way is to log in as SysAdmin. On the home page, you will find a widget in the bottom-left corner of the screen displaying the current platform version and indicating whether an upgrade is available.
+
+Alternatively, if you don’t have access to the SysAdmin account, open [White-Labeling](/docs/{{docsPrefix}}user-guide/white-labeling/) tab from the side menu.  
+Enable the **Show platform name and version** option to see the current version of the platform.
+{% else %}
+There are several ways to check the platform version in ThingsBoard Community Edition.  
+The easiest way is to log in as SysAdmin. On the home page, you will find a widget in the bottom-left corner of the screen showing the current platform version and whether an upgrade is available.
+{% endif %}
+
 
 ## Can I replace the default ThingsBoard logo in the menu?
 

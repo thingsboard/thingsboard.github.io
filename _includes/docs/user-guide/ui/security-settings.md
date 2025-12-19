@@ -64,9 +64,9 @@ In this section, you can configure the **JSON Web Token** (JWT) parameters used 
 
 - **Signing key** – enter a Base64-encoded string representing at least 512 bits of data. This key is used to sign JWT tokens and verify their integrity. You can also generate a new key using the "Generate key" button.
 
-- **Token expiration time** – set the lifetime of JWT tokens in seconds. After this period, the token will expire and the user will need to authenticate again.
+- **Token expiration time** – set the lifetime of JWT tokens in seconds. After this period, the token will expire and the user will need to authenticate again.The default value is 9000 seconds. The minimal value is 60 seconds.
 
-- **Refresh token expiration time** – set the lifetime of refresh tokens in seconds. Refresh tokens allow users to obtain new JWT tokens without re-authenticating.
+- **Refresh token expiration time** – set the lifetime of refresh tokens in seconds. Refresh tokens allow users to obtain new JWT tokens without re-authenticating.The default value is 604800 seconds. The minimal value is 900 seconds.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/security-settings/security-settings-JWT-ce.png)

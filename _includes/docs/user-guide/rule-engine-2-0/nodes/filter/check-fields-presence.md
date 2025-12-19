@@ -12,7 +12,10 @@ Incoming message data must be a JSON object.
 * **Message field names** — optional. A set of **top-level** JSON field names to look for in the message data.
 * **Metadata field names** — optional. A set of metadata key names to look for in the message metadata.
 
-> Requirement: Although each set is optional, at least one of them must be provided with at least one field (i.e., at least one set must be non-empty).
+{% capture at_least_one_set_required_note %}
+Although each set is optional, at least one of them must be provided with at least one field (i.e., at least one set must be non-empty).
+{% endcapture %}
+{% include templates/info-banner.md content=at_least_one_set_required_note %}
 
 * **Check that all specified fields are present** — toggle.
     * **Enabled:** route `True` only if **all** listed message/metadata fields are present.
@@ -69,6 +72,7 @@ Incoming message data must be a JSON object.
   ]
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -78,8 +82,15 @@ Incoming message data must be a JSON object.
     * If **Check all keys** is disabled: route `True` if **any** listed field exists in data **or** metadata.
 3. Otherwise, route `False`. If an error occurs (e.g., payload is not a JSON object), route `Failure`.
 
-> * Only **top-level** keys are checked; nested paths (e.g., `sensor.temp`) are not supported.
-> * Presence means the **key exists**, regardless of its value (including `null` or empty string).
+{% capture top_level_keys_note %}
+Only **top-level** keys are checked; nested paths (e.g., `sensor.temp`) are not supported.
+{% endcapture %}
+{% include templates/info-banner.md content=top_level_keys_note %}
+
+{% capture presence_meaning_note %}
+Presence means the **key exists**, regardless of its value (including `null` or empty string).
+{% endcapture %}
+{% include templates/info-banner.md content=presence_meaning_note %}
 
 ## Output connections
 

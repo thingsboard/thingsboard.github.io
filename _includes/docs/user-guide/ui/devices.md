@@ -25,7 +25,7 @@ Explore a hands-on video course that provides detailed explanations on how to cr
 &nbsp;
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/65SoFceFDBE" frameborder="0" allowfullscreen></iframe>
+        <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/65SoFceFDBE" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 
@@ -38,12 +38,17 @@ Tenant administrators and users with appropriate permissions can create, edit, o
 ### Adding new device
 
 To add a new device:
-- Navigate to **Entities** &#10230; **Devices**. {% unless docsPrefix == null %}By default, you will see the "**All**" asset group.{% endunless %}
+- Navigate to **Entities** &#10230; **Devices**. {% unless docsPrefix == null %}By default, you will see the "**All**" device group.{% endunless %}
 - Click the "**+**" icon in the upper-right corner and select "**Add new device**" from drop-down menu.
 - In the device creation form, fill in the required fields:
     - **Name** – a unique name for the device.
     - **[Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}** – by default, the profile is set to "**default**", but you can choose a different profile if needed.
-- Optional fields such as label or description can be filled in if needed.
+    {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
+    - **Owner and groups:** Helps with organization and access control.
+      - **Owner**: Select the owner from the dropdown list. The device will be created at that owner’s level. By default, the field is pre-filled with the Customer or Tenant name based on where you add the device. You can change it before confirming adding.
+      - **Groups**: Optional field. Add the device to existing device groups or create a new one at the selected owner level. Note: every device is automatically added to the "**All**" group of that owner.      
+    {% endif %}
+- Optional fields such as **Label** or **Description** can be filled in if needed.
 - Click "**Add**".
 
 Device successfully created and is now available in the list.
@@ -70,6 +75,49 @@ To create a new device group:
 {% include images-gallery.html imageCollection="add-device-group-pe" showListImageTitles="true" %}
 
 <hr>
+
+### Managing device groups. How to add, move, remove.
+
+From the Devices page, you can add devices to groups, move them between groups, or remove them from a group. 
+
+The "All" device group always contains all devices at the selected owner level (Tenant or Customer).
+
+**Add a single device to groups:**
+- Open the [device details](#device-details) ➜ click **Manage owner and groups**.
+- In the dialog, adjust Owner if necessary and select groups to add or remove the device from.
+- Click **Save**.
+
+**Add multiple devices to one group:**
+- On the **Groups** tab, open any device group (e.g., "**All**").
+- Select devices using the checkboxes (on the left of their names).
+- Click the "**Add to group**" (plus-in-circle icon) in the top-right.
+- In **Add to group** window, choose **Select existing entity group** or **Create new entity group**.
+- Select an existing or create a new device group.
+- Click **Add** to confirm adding the devices to the group.
+
+{% capture multiple %}
+**Note:** This adds devices to the chosen group without removing them from other groups.
+{% endcapture %}
+{% include templates/info-banner.md content=multiple %}
+
+**Move devices to another group:**
+- Open a specific (non-**All**) group.
+- Select devices and click **Move to group** (two-arrow icon).
+- In "Move to group" window, choose **Select existing entity group** or **Create new entity group**.
+- Select an existing or create a new device group.
+- Click **Move** to confirm.
+
+This action removes devices from the current group and adds them to the selected group.
+
+**Remove devices from a group:**
+- Open a specific (non-**All**) group.
+- Select devices and click **Remove from group** (minus-in-circle icon) in the top-right.
+- Confirm removal.
+
+{% capture difference %}
+**Note:** Devices are not deleted; they remain in the owner’s "**All**" device group.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% endunless %}
 
@@ -145,11 +193,14 @@ You can assign the device to a specific [customer](/docs/user-guide/ui/customers
 > This step is crucial for ensuring data [access control](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"}. Each customer user will only see their own devices and will not have access to devices or data assigned to other customers.
 
 {% include images-gallery.html imageCollection="assign-device-to-customer" showListImageTitles="true" %}
+In the ThingsBoard Professional Edition (PE), you can assign devices using the [“Manage owner and groups”](https://thingsboard.io/docs/pe/user-guide/ui/devices/#manage-device-owner-and-groups){:target="_blank"} button in the device details. This allows you to not only assign ownership but also manage group memberships at the same time.
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Manage device owner and groups
 You can change a device’s owner (which can be either a Tenant or a Customer, see [glossary](https://thingsboard.io/docs/{{docsPrefix}}user-guide/rbac/#glossary){:target="_blank"}) to control who can access the device and its data. Changing the owner moves the device to the selected level and updates access based on groups.
+
+Unlike the Community Edition (CE), where you can only assign a device to a specific customer, in the Professional Edition (PE) you can also manage ownership and group memberships using the “Manage owner and groups” button.
 
 To do this:
 - Click the device to open its **Device details**.
@@ -175,9 +226,70 @@ On the "<b>Devices</b>" page there is an option "<b>Include customer entities</b
 
 {% include images-gallery.html imageCollection="include-customer-entities" showListImageTitles="true" %}
 
+## Share device
+You can share devices by adding them to a device group and then sharing the group with a customer.
+
+For detailed instructions, please see the section on how to [Share device group](#share-device-group).
+
 {% endif %}
 
 <hr>
+
+{% unless docsPrefix == null %}
+
+## Make device group public
+
+You can make a device group public to ensure that all data within it is accessible to everyone. This is ideal for:
+- Creating public demo dashboards that require access to device data.
+- Supporting open data use cases.
+
+> You cannot share an individual device directly — only the device group that contains it.
+
+To make a device group public:
+- Locate the desired device group in the list.
+- Click the "**Make public**" icon next to it.
+- Confirm your action in the popup dialog.
+
+{% include images-gallery.html imageCollection="make-device-group-public" %}
+
+> Once public, any dashboards or external systems referencing devices in this group will have access without requiring authentication.
+
+To make the group private again, follow the same steps using the "**Make private**" icon.
+
+{% include images-gallery.html imageCollection="make-device-group-private" %}
+
+## Share device group
+
+You can share a device group with one or more customers. This is useful, for example, when multiple customers need access to the same device.
+
+> You cannot share an individual device — only the device group that contains it.
+
+To share an device group:
+- Locate the desired device group in the list.
+- Click the "**Share**" icon next to it.
+- **Select the target customer** from the dropdown list.
+- (Optional) Specify the **user group** within that customer to share the device group with.
+- Confirm the action by clicking "**Share**".
+
+{% include images-gallery.html imageCollection="share-device-group" %}
+
+**Managing and Verifying Permissions**
+
+After a device group has been shared, you can view, edit, or revoke permissions at any time.
+
+1. From the "Device groups" list, click on the pencil button of the desired group to open the "Entity group details".
+
+2. Navigate to the Permissions tab.
+
+3. On this tab, you will see a complete list of all permissions granted for this group. Here you can:
+
+- **Add** a new permission: Click the "+" icon in the top right corner of the panel. A dialog window will appear where you can select a role and a user group to grant access to.
+
+- **Edit** an existing permission: Click the pencil icon next to the permission you want to modify.
+
+- **Delete** a permission: Click the trash can icon to remove access for that user group.
+
+{% endunless %}
 
 ## Device details
 

@@ -1,5 +1,3 @@
-# message type switch
-
 Routes incoming messages based on their message type. The message is forwarded through the output connection whose label exactly matches the message type **rule node connection
 label**.
 
@@ -20,6 +18,7 @@ There are no available configuration fields.
   "additionalProperties": false
 }
 ```
+{: .copy-code.expandable-3 }
 
 ## Message processing algorithm
 
@@ -83,10 +82,6 @@ There are no available configuration fields.
 | `generateReport`                 | Generate Report             |
 
 ## Examples
-
-The examples below show only the **relevant** fields of the incoming message. Unless explicitly stated otherwise, other message fields may have any values.
-
----
 
 ### Example 1 — Message type is `POST_TELEMETRY_REQUEST` → routed via `Post telemetry`
 

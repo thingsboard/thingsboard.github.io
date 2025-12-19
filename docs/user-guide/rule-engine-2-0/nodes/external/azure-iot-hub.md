@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: azure iot hub
-description: Publishes messages to Azure IoT Hub.
+description: publishes incoming message data to Azure IoT Hub using MQTT protocol with QoS 1 and support for SAS token and X.509 certificate authentication.
 breadcrumbs: "true"
 breadcrumbs-steps: "2"
 hidetoc: "true"

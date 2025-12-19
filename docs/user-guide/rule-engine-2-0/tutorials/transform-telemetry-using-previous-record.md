@@ -41,7 +41,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 ## Step 1: Adding enrichment node
 
-We will modify default rule chain and will an [**enrichment**](/docs/user-guide/rule-engine-2-0/enrichment-nodes/#originator-attributes) rule node to fetch previous telemetry value from the database and put it to the message metadata.
+We will modify default rule chain and will an [**enrichment**](/docs/user-guide/rule-engine-2-0/nodes/enrichment/originator-attributes/) rule node to fetch previous telemetry value from the database and put it to the message metadata.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/previous/rule-chain.png)
 
@@ -54,13 +54,13 @@ We will protect from this failure by setting the default previous counter on the
 
 ## Step 2: Default previous counter node
 
-This [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node will set the default counter to the metadata from the incoming message. This will be used to set default "delta" value to 0 on the next step.
+This [**transformation**](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/) node will set the default counter to the metadata from the incoming message. This will be used to set default "delta" value to 0 on the next step.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/previous/node-config-step-2.png)
 
 ## Step 3: Delta transformation node
 
-This [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node will calculate delta based on previous counter value from the metadata and current value from the message.
+This [**transformation**](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/) node will calculate delta based on previous counter value from the metadata and current value from the message.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/previous/node-config-step-3.png)
 

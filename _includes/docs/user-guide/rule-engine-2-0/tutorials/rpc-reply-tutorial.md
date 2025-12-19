@@ -1,14 +1,12 @@
 * TOC
 {:toc}
 
-
-In this tutorial, we will explain how to work with [RPC call reply](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#rpc-call-reply-node) node and also how to:
-- Create and connect different rule chains using [rule chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
-- Filter messages using filter [script](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/filter-nodes/#script-filter-node) node.
-- Transform incoming messages with transformation [script](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
-- Fetch latest telemetry data of related entities with [related entity data](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/enrichment-nodes/#related-attributes) node.
-- Log messages with [log](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#log-node) node.
-
+In this tutorial, we will explain how to work with [RPC call reply](/docs/user-guide/rule-engine-2-0/nodes/action/rpc-call-reply/) node and also how to:
+- Create and connect different rule chains using [rule chain](/docs/user-guide/rule-engine-2-0/nodes/flow/rule-chain/) node.
+- Filter messages using filter [script](/docs/user-guide/rule-engine-2-0/nodes/filter/script/) node.
+- Transform incoming messages with transformation [script](/docs/user-guide/rule-engine-2-0/nodes/transformation/script/) node.
+- Fetch latest telemetry data of related entities with [related entity data](/docs/user-guide/rule-engine-2-0/nodes/enrichment/related-entity-data/) node.
+- Log messages with [log](/docs/user-guide/rule-engine-2-0/nodes/action/log/) node.
 
 ## Intro
 We have 2 devices - controller and thermostat. We want to initiate [client-side RPC](/docs/{{docsPrefix}}user-guide/rpc/#client-side-rpc) call from controller and request related thermostat current temperature value.

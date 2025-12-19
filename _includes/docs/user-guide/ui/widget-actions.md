@@ -1219,78 +1219,145 @@ To perform an action you should click any of the nodes in the Entities hierarchy
 
 ### On HTML element click
 
-<i>* only in HTML widgets.</i>
+<table style="width:auto"><thead><tr><td style="text-align: center"><strong><em>Only for HTML widgets</em></strong></td></tr></thead></table> 
 
-ThingsBoard offers HTML widgets that allow full configuration by customizing an HTML code in their settings.
-To add an action to these widgets, you need to add an action identifier to the written code. Clicking on an item in the widget will then execute the configured action.
+**On HTML element click** allows you to trigger an action (navigate to a state, open a link, execute a custom action, etc.) when a user clicks on an element in the HTML layout of the widget.   
 
-**Example for HTML Card widget**
+<br><b><font size="3">How it works</font></b>
 
-In this example, we'll add an "HTML Card" widget to our dashboard. Clicking anywhere on the widget will perform the action. We also assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to the dashboard. Let's start setting up the action:
+When configuring **On HTML element click**, the `id` attribute is the link between the **HTML code** of the widget and the **action** defined in the widget&#39;s **Actions** tab.
 
-- Enter edit widget mode and open "Add action" window;
-- Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);
-- Find the "HTML widgets" widget bundle and click on it;
-- Select the "HTML Card" widget;
-- Navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window; 
-- Input a name for the action;
-- Select "On HTML element click" as the action source; 
-- Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu; 
-- After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} you'd like to be transitioned to;
-- When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now navigate to the "Appearance" tab of the widget. There you should see two fields: CSS and HTML;
-- In the HTML section, enter the action's ID which should be its name in a specific format:
+You can assign the `id` to any HTML element (e.g., `<div>`, `<span>`, `<p>`, `<h1>`, `<button>`). Typically, the `id` is applied to a container element (like `<p>` or `<div>`), so the entire block becomes clickable.   
 
-```text
-<div id='map' class='card'>Devices location</div>
+```html
+<p id="details" class="blue-box">
+    Current temperature: <span>22.5 °C</span>
+</p>
 ```
-{: .copy-code}
 
-where "_map_" is the name of the action and "_Devices location_" is the text which is going to be shown on the HTML Card widget. 
+<b><font size="3">Tips</font></b>
+- Works **only with HTML widgets**; for tables, charts, and others use their specific action sources ([On row click](#on-row-click), [On cell click](#on-cell-click), [On node selected](#on-node-selected), etc.).
+- `ID` must match **Name** exactly (case-sensitive).
+- For more advanced scenarios (dialogs, forms), use [Custom action with HTML template](#custom-action-with-html-template){:target="_blank"} / *widgetContext.dialogs* / *widgetContext.customDialog* in widgets that support it.
 
-- Afterwards, click the "Add" button;
-- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
+<b><font size="3">Configuration step by step</font></b>
+1. Enter **widget edit mode** → go to the **Actions** tab → click **+** (**Add action**). 
+2. In Action source, select **On HTML element click**.
+3. Set a **Name** (this will also serve as the **ID** for the HTML element).
+4. In **Action**, choose the action type (e.g., [Navigate to new dashboard state](#navigate-to-new-dashboard-state){:target="_blank"}) and specify the target state.
+5. Save the action (**Add**).
+6. Go to the **Appearance** tab → **HTML** section, and add an element with an `id` that **exactly matches** the action&#39;s Name. 
+7. Apply changes (**Apply**) and **save the dashboard**.
+
+After saving, ThingsBoard "listens" for clicks on the element with an id that matches the Name of the created action for that widget. If found, the chosen action type (navigate, update state, custom action, etc.) is executed.
+
+<br><b><font size="3">Example: Markdown/HTML Card widget — Click the blue area</font></b>
+
+**Preparation:**
+1. Add a [Markdown/HTML Card](/docs/{{docsPrefix}}user-guide/widgets/cards/markdown-html-card/){:target="_blank"} widget to your dashboard using the HTML and CSS provided below.  
+2. [Create a new dashboard state](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} with device **temperature details**.
+
+**Alternative:** You can [download a pre-configured dashboard](/docs/pe/user-guide/widgets/resources/smart_device_details.json){:target="_blank" download="smart_device_details.json"} with the Markdown/HTML Card widget and the details state already set up, then [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
+
+{% capture difference %}
+**Important:** After importing, update the **target entity** and **data key** in the widget&#39;s datasource.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+<b><font size="3">Add the Markdown/HTML Card</font></b>
+
+**Markdown/HTML pattern:**
+
+```html
+const entity = data[0];
+const color = entity.temperature > 25 ? "red" : entity.temperature > 20 ? 'green' : 'blue'
+const entityName = `### Temperature value card\n - Current entity: <span >${entity.entityName}</span>\n `
+const temp = `- Current temperature: <span style="color:${color};">${entity.temperature.toFixed(1)} °C</span>\n `
+return entityName + temp;
+```
+{:.copy-code}
+
+**Markdown/HTML CSS:**
+
+```css
+.office-card {
+  box-sizing: border-box;
+  padding: 16px;
+  margin: 6px 0;
+  text-align: center;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
+}
+
+.office-card h3 {
+  margin: 0 0 12px;
+  font-size: 24px;
+}
+
+.blue-box {
+  background: #2196F31A;
+  border: 2px solid #2196F3;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 8px 0;
+  font-weight: 700;
+}
+
+.green-box {
+  background: #4CAF501A;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 6px 0;
+  font-weight: 700;
+}
+
+.temp-value,
+.hum-value {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+```
+{:.copy-code.expandable-10}
+
+<b><font size="3">Add the action</font></b>
+
+1. Enter **widget edit mode** → go to the **Actions** tab → click **+** (**Add action**).
+2. Choose **Action source**: **On HTML element click**. 
+3. Enter **details** as the **action name**. 
+4. In **Action**, select **Navigate to new dashboard state**. 
+5. In **Target dashboard state**, select the state you [created earlier](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"}. 
+6. Click **Add** to save the action.
 
 {% include images-gallery.html imageCollection="on-html-element-click-1" %}
 
-To execute an action click anywhere on the widget. This will navigate you to a state where details of all devices are displayed.
+<b><font size="3">Add id to the HTML</font></b>
+
+1. Go to the **Appearance** tab → **HTML** section. 
+2. Add an element with the `id=details` to the `<p class="blue-box">` line.   
+   Replace it with:
+
+    ```text
+    <p id="details" class="blue-box">
+    ```
+    {: .copy-code}
+
+    This makes the entire blue-box block clickable and tied to the **details** action.
+
+3. Apply changes (**Apply**) and **save the dashboard**.
 
 {% include images-gallery.html imageCollection="on-html-element-click-2" %}
 
-**Example for HTML Value Card widget**
+<b><font size="3">Result</font></b>
 
-In this example, we'll add an "HTML Value Card" widget to our dashboard. When clicking on the widget title, an action will be performed. Let's start setting up the action:
-
-- Enter edit widget mode and open "Add action" window;
-- As an example for this manual, select "On HTML element click" action source;
-- Input a name for the action and select an icon that will represent a button. With this icon, action will be performed;
-- Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu;
-- After choosing an action type, the "Target dashboard state" drop-down menu appears. Select a previously [created state](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} you'd like to be transitioned to;
-- When the desired state has been selected, click the "Add" button at the bottom of the "Add action" window;
-- Now move to the Appearance cell of the widget;
-- In the HTML section enter an ID of the action which is its name in a format:
-
-```text
-<h1 id='map'>Devices location</h1>
-```
-{: .copy-code}
-
-where _map_ is the name of the action and _Devices location_ is the text that will be shown in the widget's header.
-
-- Afterwards, click the "Apply" button to save the widget settings;
-- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
+Clicking the **blue block with the current temperature** will execute the configured action and navigate to your target state.
 
 {% include images-gallery.html imageCollection="on-html-element-click-3" %}
-
-To execute an action, click on the widget title. This will navigate you to a state where details of all devices are displayed.
-
-{% include images-gallery.html imageCollection="on-html-element-click-4" %}
 
 ### Map widget action sources
 
 Map widget has unique action sources that need to be considered separately. 
 
-Let's start by adding a map widget, namely OpenStreetMap widget. We have a separate guide on [how to create and configure a map widget](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/){:target="_blank"}. Please, familiarize yourself with it first.
+Let&#39;s start by adding a map widget, namely OpenStreetMap widget. We have a separate guide on [how to create and configure a map widget](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/){:target="_blank"}. Please, familiarize yourself with it first.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
@@ -1299,7 +1366,7 @@ Let's start by adding a map widget, namely OpenStreetMap widget. We have a separ
 ![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
 {% endif %}
 
-Now it's time to add an action.
+Now it&#39;s time to add an action.
 All further explanations concerning actions assume that you have already added [a new state](/docs/{{docsPrefix}}user-guide/dashboards/#states){:target="_blank"} to the dashboard and familiarized yourself with the "[Add action](#add-action)" step. Therefore, we will proceed directly to the action configuration step.
 
 #### On circle click

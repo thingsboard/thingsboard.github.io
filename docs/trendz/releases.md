@@ -8,6 +8,32 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.14.0 (Now 6, 2025)
+
+**Improvements:**
+
+* Added Metric Explorer feature.
+* Added Native Calculation Fields.
+* Introduced new view type: AI Card.
+* Added ability to use multiple AI models.
+* Added ability to test prompts.
+* Added Markdown support in AI Summary module.
+* Added support for ARM architecture.
+* Added support for non-numerical calculation fields.
+* Added ability to install custom libraries in the Python Executor.
+* Added support for MSSQL, MySQL, and Oracle databases for external datasource logic.
+* Improved performance by prioritizing UI requests over background tasks.
+* Improved UI for anomaly models.
+ 
+**Bug fixes:**
+
+* Fixed average aggregation.
+* Fixed prompt and view summary task logic.
+* Fixed Python security issue.
+* Fixed state field logic.
+* Fixed tooltip visibility issues.
+* Fixed issue when a device became active after telemetry was sent.
+
 ## v1.13.2 (June 27, 2025)
 
 **Improvements:**
