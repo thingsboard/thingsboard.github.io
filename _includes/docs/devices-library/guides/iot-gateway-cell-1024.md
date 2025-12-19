@@ -22,6 +22,8 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
 
+{% include add-device-banner.liquid %}
+
 ## Create device on ThingsBoard
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-create-device-thingsboard-block.md %}

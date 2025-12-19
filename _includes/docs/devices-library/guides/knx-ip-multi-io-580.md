@@ -20,6 +20,8 @@ To continue with this guide we will need the following:
 - [ThingsBoard IoT Gateway](https://thingsboard.io/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+{% include add-device-banner.liquid %}
+
 ## Devices connection
 
 According to [the user manual](https://weinzierl.de/images/download/products/580/weinzierl-580-knx-ip-multi-io-5238-manual-en.pdf){:target="_blank"} from official site, firstly you need to wired connection between the controller and switch, shutter, and relay. The controller has to be connected to the network using LAN port. Also, you need to download and install the [ETS software](https://support.knx.org/hc/en-us/articles/4409114300178-ETS-v5-7-7){:target="_blank"} from the official website.

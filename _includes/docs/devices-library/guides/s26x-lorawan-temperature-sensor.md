@@ -24,6 +24,8 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+{% include add-device-banner.liquid %}
+
 ## Device connection
 
 Please follow the official RS26x Getting Started Guide: [Connecting RS26x to The Things Stack v3](https://www.ezurio.com/documentation/quick-start-guide-connecting-rs26x-to-the-things-stack-v3){: target="_blank"} and the official [RS26x User Guide](https://www.ezurio.com/documentation/user-guide-rs26x-series){: target="_blank"} to configure the sensor properly and connect it to The Things Stack.

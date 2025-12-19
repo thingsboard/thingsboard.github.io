@@ -28,6 +28,8 @@ To continue with this guide, we will need the following:
   - **Password**: cimcon
   - **Client ID**: VIBit Device BLE MAC (Bluetooth MAC address of the sensor)
 
+{% include add-device-banner.liquid %}
+
 ## Create Device profile on ThingsBoard
 
 First, create a new device profile in ThingsBoard that uses the **MQTT transport** and the standard MQTT topics for telemetry and attributes.

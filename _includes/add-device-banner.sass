@@ -1,0 +1,50 @@
+.add-device-banner
+  position: relative
+  width: 100%
+  background: #F4F8FE
+  border-radius: 16px
+  padding: 46px
+  overflow: hidden
+  img
+    position: absolute
+    right: 60px
+    top: -111px
+  .add-device-text
+    max-width: 500px
+    .add-device-banner-title
+      display: block
+      margin-bottom: 32px
+      font-size: 36px
+      font-weight: 500
+      line-height: 48px
+    .add-device-buttons
+      display: flex
+      gap: 16px
+      flex-wrap: wrap
+      .contact-us, .hardware-partners
+        font-size: 16px
+        font-weight: 500
+        line-height: 28px
+        border-radius: 6px
+        text-decoration: none
+        border: 1px solid #2A7DEC
+        transition: ease-in-out 0.3s
+        &:hover
+          text-decoration: none
+        @media (max-width: 600px)
+          width: 100%
+          text-align: center
+      .contact-us
+        color: #FFF
+        padding: 10px 31.5px
+        background: #2A7DEC
+        &:hover
+          background: transparent
+          color: #2A7DEC
+      .hardware-partners
+        padding: 10px 24px
+        color: #2A7DEC
+        background: transparent
+        &:hover
+          color: #FFF
+          background: #2A7DEC

@@ -22,6 +22,8 @@ To continue with this guide, we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
 
+{% include add-device-banner.liquid %}
+
 ## Import Rule chain
 
 Download [Teltonika Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="teltonika-rut955-rule-chain.json"} and import.

@@ -5,6 +5,8 @@ Professional Edition<br><small>(North America)</small>%,%prerequisitesNorthAmeri
 Professional Edition<br><small>(Europe)</small>%,%professionalEditionAmerica%,%templates/edge/devices-library/prerequisites-pe-europe.md%br%{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="prerequisites" toggle-spec=prerequisites %}
 
+{% include add-device-banner.liquid %}
+
 ### Starting Edge on the {{deviceName}}
 
 {% include /templates/edge/user-guide/starting-edge-on-device.md %}

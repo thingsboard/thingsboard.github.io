@@ -38,6 +38,8 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+{% include add-device-banner.liquid %}
+
 ## Gateway connection
 
 According to the [official user manual](https://resource.milesight.com/milesight/iot/document/ug67-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:

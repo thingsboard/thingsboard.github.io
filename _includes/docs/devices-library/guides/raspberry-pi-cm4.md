@@ -27,6 +27,8 @@ Also, you will require the following items:
 ![wiring1](/images/devices-library/basic/single-board-computers/raspberry-pi-cm4/wiring1.png)
 ![wiring2](/images/devices-library/basic/single-board-computers/raspberry-pi-cm4/wiring2.png)
 
+{% include add-device-banner.liquid %}
+
 ## Create device on ThingsBoard
 
 **1. In our example, we use ThingsBoard Cloud**

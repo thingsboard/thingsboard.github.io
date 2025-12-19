@@ -17,6 +17,8 @@ To continue with this guide, you will need the following:
 - **ALPON X4 Device**: Registered and activated on Sixfab Connect with an active internet connection. Refer to the [ALPON X4 Getting Started page](https://docs.sixfab.com/docs/alpon-x4-getting-started){: target="_blank"} setup instructions for details.
 - **Basic Knowledge**: Familiarity with IoT concepts, containerized applications, and ThingsBoard dashboards.
 
+{% include add-device-banner.liquid %}
+
 ## Create Device on ThingsBoard (Optional)
 
 The integration can create a device even if there is no device yet, so skip this step if you want.

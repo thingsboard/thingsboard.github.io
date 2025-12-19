@@ -27,6 +27,8 @@ To continue with this guide, we will need the following:
 - [ThingsBoard IoT Gateway](/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
 
+{% include add-device-banner.liquid %}
+
 ## Devices connection
 
 According to the [official user manual](https://assets.temcocontrols.com/products/humidity_and_temp_transmitters_with_waterproof_connector/brochure_pdf/HummidityTransmitterWithWaterproofConnector-1.pdf){: target="_blank"}, firstly you need to wired connection between the controller and the temperature 

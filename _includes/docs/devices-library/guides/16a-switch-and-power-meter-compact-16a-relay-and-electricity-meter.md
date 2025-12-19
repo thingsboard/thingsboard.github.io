@@ -25,6 +25,8 @@ To continue with this guide we will need the following:
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
 
+{% include add-device-banner.liquid %}
+
 ## Device connection
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}

@@ -31,6 +31,8 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+{% include add-device-banner.liquid %}
+
 ## Gateway connection
 
 According to the official user manual and this guide you can connect the gateway to the networkandthismanual mainly implements a process that simulate data, assemble it into JSON format, and report it totheThingsBoard through MQTT. 
