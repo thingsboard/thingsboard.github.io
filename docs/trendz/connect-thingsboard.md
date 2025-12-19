@@ -23,7 +23,7 @@ To install Trendz for ThingsBoard 4.2.1 or older:
 
 ### Configure License Secret
 
-To interact with ThingsBoard 4.2.1 or older, you need a Trendz license secret. If you do not have one, obtain it from the [ThingsBoard support team](//TODO find out where we have ThingsBoard support team).
+To interact with ThingsBoard 4.2.1 or older, you need a Trendz license secret key. If you do not have one, obtain it from the [ThingsBoard support team](/docs/contact-us).
 
 Edit the Trendz configuration file:
 

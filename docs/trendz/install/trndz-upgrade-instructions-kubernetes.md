@@ -100,4 +100,4 @@ kubectl scale deployment trendz-app-deployment --replicas=<pod-count>
 
 ### Step 9. Check synchronization status in ThingsBoard
 
-//TODO find out how to describe
+After upgrade, it's necessary to check sync status for Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/kubernetes#step-6-sync-thingsboard-with-trendz).
