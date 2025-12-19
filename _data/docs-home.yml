@@ -13,6 +13,7 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Alarm rules
     path: /docs/user-guide/alarm-rules/
+    new: true
   - title: Calculated fields
     path: /docs/user-guide/calculated-fields/
   - title: Notification center

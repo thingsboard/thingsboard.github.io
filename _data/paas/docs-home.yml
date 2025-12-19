@@ -46,6 +46,7 @@ toc:
       path: /docs/paas/user-guide/alarms/
     - title: Alarm rules
       path: /docs/paas/user-guide/alarm-rules/
+      new: true
     - title: Calculated fields
       path: /docs/paas/user-guide/calculated-fields/
     - title: Notification center

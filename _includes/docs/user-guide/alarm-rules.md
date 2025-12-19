@@ -22,11 +22,11 @@ You can create an alarm rule in two ways:
 
 **2. Inside a specific entity or profile**   
    You can also create a rule directly in the settings of a particular:
-   - Device 
-   - Asset 
-   - Device profile 
-   - Asset profile 
-   - Customer
+   - [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"}
+   - [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"}
+   - [Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}
+   - [Asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}
+   - [Customer](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"}
 
    Alarm rules are configured on the **Alarm rules** tab within the details of the selected entity or profile.
 
@@ -61,7 +61,7 @@ You can create an alarm rule in two ways:
 
 <b><font size="3">2.1 Alarm type</font></b>
 
-In the **General** section, specify the **alarm type** — the name and unique identifier of the alarm (for example, "High temperature").   
+In the **General** section, specify the **alarm type** — the name and unique identifier of the alarm (for example, "High Temperature").   
 The alarm type defines which event the alarm represents and allows ThingsBoard to determine whether a new alarm should be created or an existing active one should be updated.
 
 <b><font size="3">2.2 Target entity type (<i>only on the global Alarm rules page</i>)</font></b>
@@ -114,22 +114,22 @@ Defines what kind of data the argument will represent:
 
 <b><font size="3">Argument name</font></b>
 
-Enter a reference name — the identifier you will use in formulas and conditions (e.g., temperature, maxThreshold, deviceEnabled).
+Enter an argument name — the identifier you will use in formulas and conditions (e.g., temperature, maxThreshold, deviceEnabled).
 
-After configuring the fields, click **Add** to save the argument.
+After configuring the fields, click **Add**.
 
 {% include images-gallery.html imageCollection="step-3-arguments-4" %}
 
 <hr>
 
-### Step 4. Creation conditions
+### Step 4. Trigger conditions
 
 This step defines the core logic of the alarm rule:
 - **when** the alarm should be created,
 - **which severity** it receives, and
 - **when** the rule is active based on the schedule.
 
-Click **Add creation condition** and configure the following parameters:
+Click **Add trigger condition** and configure the following parameters:
 
 {% include images-gallery.html imageCollection="step-4-creation-conditions-1" %}
 
@@ -367,7 +367,7 @@ After selecting a mobile dashboard:
 
 <b><font size="3">Example use cases</font></b>
 
-- Diagnostic dashboard for **High temperature** alarms
+- Diagnostic dashboard for **High Temperature** alarms
 - Technician-focused dashboard with control buttons
 - Geolocation dashboard for mobile assets
 
@@ -378,14 +378,14 @@ After selecting a mobile dashboard:
 
 <hr>
 
-### Step 5. Clearing condition
+### Step 5. Clear condition
 
 The **Clear condition** defines the logic by which ThingsBoard automatically transitions an alarm into the **Cleared** state.
 
 If no clear condition is configured, the alarm will **never** clear automatically, even if the monitored values return to normal.   
 In such cases, the alarm can only be cleared manually — via the UI or API.
 
-Click **Add clearing condition** and configure the following parameters:
+Click **Add clear condition** and configure the following parameters:
 
 {% include images-gallery.html imageCollection="step-5-clear-conditions-1" %}
 
@@ -403,7 +403,7 @@ The Clear condition specifies **when an alarm is considered resolved** and can s
 
 <b><font size="3">Add clear condition</font></b>
 
-Click **Add clearing condition** to define the logic for clearing the alarm.
+Click **Add condition** to define the logic for clearing the alarm.
 
 Configure the clear condition by adding one or more filters.   
 Filters can be created manually or using TBEL script functions for more advanced scenarios.
@@ -597,8 +597,8 @@ or open the details page of the required device, asset, or profile, and navigate
 
 <b><font size="3">After importing</font></b>
 
-- If the imported rule was created for a different entity, you may need to update the **Target entity type** and select the correct profile or entity.
-- Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment.
+If required, update the **target profile or entity**.   
+Verify that all arguments, telemetry keys, and attributes used by the rule exist in the current environment and update them if necessary.
 
 <b><font size="3">Complete the import</font></b>
 
@@ -652,11 +652,11 @@ Create a **critical alarm** when the temperature exceeds **10°C**.
 <b><font size="3">Step 2. General section</font></b>
 
 In the **General** section, specify:
-- **Alarm type:** *High temperature*
+- **Alarm type:** *High Temperature*
 - Select the **Target entity type** - Device 
 - Specify the specific **entity** that the rule should apply to - Thermometer
 
-<b><font size="3">Step 3. Add an argument</font></b>
+<b><font size="3">Step 3. Add argument</font></b>
 
 - In the **Arguments** section, click **Add argument** and fill in:
   - **Argument name:** temperature
@@ -667,26 +667,25 @@ In the **General** section, specify:
 
 This creates a <span class="code-light">temperature</span> variable that you will use in the rule&#39;s logical condition.
 
-<b><font size="3">Step 4. Configure the create condition</font></b>
+<b><font size="3">Step 4. Configure the trigger condition</font></b>
 
-In the **Create condition** section, click **Add create condition**.
+In the **Trigger condition** section, click **Add trigger condition**.
 
 **Step 4.1 Severity**
 - **Severity:** *Critical*
 
 **Step 4.2 Condition**
 
-Click "<b>Add alarm creating condition</b>".   
+Click "<b>Add condition</b>".   
 
-In the filter configuration window, click **Add filter** and specify:
+In the filter configuration window, click **Add argument filter** and specify:
 - **Argument:** <span class="code-light">temperature</span>
 - **Value type:** *Numeric*
 - **Operation:** *greater than* 
 - **Value:** 10
 - Click **Add**
 
-**Condition settings**
-- **Condition type:** *Simple*
+**Type:** *Simple*
 - Click **Save**
 
 As a result, the alarm will be created immediately once the temperature exceeds **10°C**.
@@ -710,38 +709,36 @@ After saving, ThingsBoard will automatically create a critical alarm whenever th
 *Continuation of the example "[Simple alarm condition: temperature monitoring](#example-1-simple-alarm-condition-temperature-monitoring)"*
 
 **Scenario**   
-A refrigerator is used to store perishable products. After the critical **High temperature** alarm is triggered, it must be cleared automatically once the temperature returns to a safe level.
+A refrigerator is used to store perishable products. After the critical **High Temperature** alarm is triggered, it must be cleared automatically once the temperature returns to a safe level.
 
 **Goal**   
-Update the existing **High temperature** rule by adding a clear condition that sets the alarm to **Cleared** when the temperature is **≤ 4°C**.
+Update the existing **High Temperature** rule by adding a clear condition that sets the alarm to **Cleared** when the temperature is **≤ 4°C**.
 
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature rule</font></b>
+<b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
 - In the side menu, go to **Alarm** → **Alarm rules**.
-- Find the **High temperature** rule in the list.
+- Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<b><font size="3">Step 2. Configure the clear condition</font></b>
+<b><font size="3">Step 2. Configure clear condition</font></b>
 
-Scroll down to the **Clearing condition** section:
-- Click **Add clearing condition**.
-- Click "**Add alarm creating condition**" to open the configuration window.
+Scroll down to the **Clear condition** section:
+- Click **Add clear condition**.
+- Click "**Add condition**" to open the configuration window.
 
 <b><font size="3">Step 2.1 Add a filter</font></b>
 
-In the configuration window, click **Add filter** and specify:
+In the configuration window, click **Add argument filter** and specify:
 - **Argument:** <span class="code-light">temperature</span>
 - **Value type:** *Numeric*
 - **Operation:** *less or equal*
 - **Value:** 4
-- Click **Add**
 
-This condition defines the moment when the temperature returns to a safe level.
+This condition defines the moment when the temperature returns to a safe level. Click **Add**
 
-<b><font size="3">Step 2.2 Condition settings</font></b>
-- **Condition type:** *Simple*
+**Type:** *Simple*
 - Click **Save**
 
 After this, the alarm will be cleared as soon as the temperature drops to **4°C or below**.
@@ -755,7 +752,7 @@ Click **Apply** to save the updated rule.
 <b><font size="4">Result</font></b>
 
 After saving, ThingsBoard will:
-- create a **Critical** — **High temperature** alarm when the temperature exceeds **10°C**
+- create a **Critical** — **High Temperature** alarm when the temperature exceeds **10°C**
 - automatically clear the alarm when the temperature is **≤ 4°C**
 
 This configuration forms a complete alarm lifecycle, keeps the system state accurate, and eliminates the need for manual intervention.
@@ -769,23 +766,23 @@ This configuration forms a complete alarm lifecycle, keeps the system state accu
 *Continuation of the example "[Simple alarm condition: temperature monitoring](#example-1-simple-alarm-condition-temperature-monitoring)".*
 
 **Goal:**   
-Update the existing **High temperature** rule so that it triggers only when the temperature exceeds the threshold for a specified duration — for example, **1 minute**.
+Update the existing **High Temperature** rule so that it triggers only when the temperature exceeds the threshold for a specified duration — for example, **1 minute**.
 This mechanism helps avoid false alarms caused by short-term temperature spikes.
 
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature rule</font></b>
+<b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
 - In the side menu, go to **Alarm** → **Alarm rules**.
-- Find the **High temperature** rule in the list.
+- Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<b><font size="3">Step 2. Configure the create condition</font></b>
+<b><font size="3">Step 2. Configure trigger condition</font></b>
 
-Scroll down to the **Creating condition** section and edit the existing condition:
+Scroll down to the **Trigger condition** section and edit the existing condition:
 - **Condition type:** change *Simple* → **Duration**
 - **Duration value:** 1
-- **Time unit:** *minutes*
+- **Time unit:** *Minutes*
 - Click **Save** to apply the updated alarm condition settings.
 
 The alarm will now be triggered only if the temperature exceeds the threshold **continuously for 60 seconds**.
@@ -799,7 +796,7 @@ Click **Apply** to save the updated rule configuration.
 <b><font size="4">Result</font></b>
 
 After saving, ThingsBoard will:
-- create the **High temperature** alarm only when the temperature exceeds the threshold for **1 full minute**
+- create the **High Temperature** alarm only when the temperature exceeds the threshold for **1 full minute**
 - ignore short, random temperature spikes
 - provide a more stable alarm system with fewer false alerts
 
@@ -812,11 +809,11 @@ After saving, ThingsBoard will:
 *Continuation of the example "[Alarm condition with a duration](#example-3-alarm-condition-with-a-duration)".*
 
 **Scenario**   
-You already have a **High temperature** alarm configured to trigger when the temperature exceeds the threshold for **1 minute**.   
+You already have a **High Temperature** alarm configured to trigger when the temperature exceeds the threshold for **1 minute**.   
 In this example, we extend that logic by making the duration **dynamic** — meaning the duration required to trigger the alarm will be defined by a **server attribute** on the device.
 
 **Goal**   
-Update the High temperature rule so that:
+Update the High Temperature rule so that:
 - the alarm is created only when the temperature stays above the critical threshold for the duration specified in the device&#39;s <span class="code-light">highTemperatureDurationThreshold</span> [server attribute](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes){:target="_blank"}
 - the duration can be changed without editing the alarm rule — simply by updating the device’s attribute value
 
@@ -834,33 +831,33 @@ This value will be used by the alarm rule as the duration requirement.
 
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature rule</font></b>
+<b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
 - In the side menu, go to **Alarm** → **Alarm rules**.
-- Find the **High temperature** rule in the list.
+- Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<b><font size="3">Step 2. Add an argument</font></b>
+<b><font size="3">Step 2. Add argument</font></b>
 
 In the **Arguments** section:
 - Click **Add argument**
 - Fill in the fields:
-  - **Argument name:** highTemperatureDurationThreshold
   - **Entity type:** *Current entity* 
   - **Argument type:** *Attribute*
   - **Attribute scope:** *Server attributes* 
   - **Attribute key:** <span class="code-light">highTemperatureDurationThreshold</span>
+  - **Argument name:** highTemperatureDurationThreshold
 - Click **Add**
 
 You now have a dynamic variable that can be used in the **Duration** condition.
 
-<b><font size="3">Step 3. Configure the create condition</font></b>
+<b><font size="3">Step 3. Configure trigger condition</font></b>
 
-Scroll to the **Create condition** section and edit the existing condition:
+Scroll to the **Trigger condition** section and edit the existing condition:
 - **Condition type:** *Duration* 
-- **Value type:** change *Static* → **Dynamic** 
-- **Value:** select the argument <span class="code-light">highTemperatureDurationThreshold</span>
-- **Time unit:** *minutes*
+- **Value type:** change *Static* to **Dynamic** 
+- **Value:** specify the argument <span class="code-light">highTemperatureDurationThreshold</span>
+- **Unit:** *Minutes*
 - Click **Save** inside the condition block.
 
 From now on, the duration required to trigger the alarm is determined by the device attribute rather than a fixed number.
@@ -874,7 +871,7 @@ Click **Apply** to save the updated configuration.
 <b><font size="4">Result</font></b>
 
 After saving, ThingsBoard will:
-- create a **High temperature** alarm if the temperature:
+- create a **High Temperature** alarm if the temperature:
   - exceeds the threshold (e.g., >10°C), **and**
   - remains above it for the period defined in the <span class="code-light">highTemperatureDurationThreshold</span> attribute (e.g., 2 minutes)
 
@@ -889,22 +886,22 @@ This ensures the alarm responds only to **sustained deviations**, not to short-t
 *Continuation of the example "[Simple alarm condition: temperature monitoring](#example-1-simple-alarm-condition-temperature-monitoring)".*
 
 **Goal:**   
-Update the **High temperature** rule so that the alarm is created only when the threshold condition occurs a specified number of times in a row.
+Update the **High Temperature** rule so that the alarm is created only when the threshold condition occurs a specified number of times in a row.
 This helps filter out random sensor spikes and react only to repeated or consistent deviations.
 
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature rule</font></b>
+<b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
 - In the side menu, go to **Alarm** → **Alarm rules**.
-- Find the **High temperature** rule in the list.
+- Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
-<b><font size="3">Step 2. Edit the Create condition</font></b>
+<b><font size="3">Step 2. Edit the trigger condition</font></b>
 
-Update the existing alarm creation condition by changing the following parameters:
-- **Condition type:** set to *Repeating*
-- **Repeats count:** 3   
+Update the existing trigger condition by changing the following parameters:
+- **Condition type:** *Repeating*
+- **Count of events:** 3   
 Click **Save** to apply the changes.
 
 With this configuration, ThingsBoard will check whether the threshold condition occurs **three times in a row** before creating the alarm.
@@ -918,7 +915,7 @@ Click **Apply** to save the updated configuration.
 <b><font size="4">Result</font></b>
 
 After saving, ThingsBoard behaves as follows:
-- create the **High temperature** alarm only when the condition is met **3 times in a row**
+- create the **High Temperature** alarm only when the condition is met **3 times in a row**
 - Single or random temperature spikes will not trigger an alarm
 
 {% include images-gallery.html imageCollection="alarm-rules-example-condition-repeating-1" %}
@@ -930,20 +927,20 @@ After saving, ThingsBoard behaves as follows:
 *Continuation of the example "[Simple alarm condition: temperature monitoring](#example-1-simple-alarm-condition-temperature-monitoring)".*
 
 **Goal:**   
-Update the **High temperature** rule so that the alarm triggers **only during working hours**.
+Update the **High Temperature** rule so that the alarm triggers **only during working hours**.
 This is useful when monitoring is required only at certain times—for example, during staff working hours.
 
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature rule</font></b>
+<b><font size="3">Step 1. Open the High Temperature rule</font></b>
 
 - In the side menu, go to **Alarm** → **Alarm rules**.
-- Find the **High temperature** rule in the list.
+- Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
 <b><font size="3">Step 2. Configure the alarm rule schedule</font></b>
 
-Scroll to the **Create condition** section and open the **Schedule** settings.
+Scroll to the **Trigger condition** section and open the **Schedule** settings.
 - **Select the schedule type:** *Active at a specific time*
 - Configure the working hours:
   - **Timezone:** Europe/Kiev (UTC+02:00)
@@ -954,7 +951,7 @@ Scroll to the **Create condition** section and open the **Schedule** settings.
 - Click **Save** to apply the schedule configuration.
 
 With this setup, the rule is active **only on weekdays from 10:00 to 19:00**.
-Outside this interval, the system will **not** create a High temperature alarm, even if <span class="code-light">temperature > 10°C</span> is true.
+Outside this interval, the system will **not** create a **High Temperature** alarm, even if <span class="code-light">temperature > 10°C</span> is true.
 
 <b><font size="3">Step 3. Save the rule</font></b>
 
@@ -965,7 +962,7 @@ Click **Apply** to save the updated configuration.
 <b><font size="4">Result</font></b>
 
 After saving, ThingsBoard will:
-- activate the **High temperature** rule only on weekdays **from 10:00 to 19:00**
+- activate the **High Temperature** rule only on weekdays **from 10:00 to 19:00**
 - ignore temperature threshold violations that occur outside this time window
 
 {% include images-gallery.html imageCollection="alarm-rules-example-schedule-1" showListImageTitles="true" %}
@@ -977,7 +974,7 @@ After saving, ThingsBoard will:
 *Continuation of the example "[Simple alarm condition: temperature monitoring](#example-1-simple-alarm-condition-temperature-monitoring)".*
 
 **Goal:**   
-Update the **High temperature** rule by adding the ability to enable or disable the alarm using a server attribute at the device level.
+Update the **High Temperature** rule by adding the ability to enable or disable the alarm using a server attribute at the device level.
 
 In this example, the alarm should trigger **only when both conditions are true**:
 1. <span class="code-light">temperatureAlarmFlag == true</span>
@@ -999,10 +996,10 @@ This attribute determines whether the alarm rule is active for the device.
 
 <hr>
 
-<b><font size="3">Step 1. Open the High temperature alarm rule</font></b>
+<b><font size="3">Step 1. Open the High Temperature alarm rule</font></b>
 
 - In the side menu, go to **Alarm** → **Alarm rules**.
-- Find the **High temperature** rule in the list.
+- Find the **High Temperature** rule in the list.
 - Click the **Edit** icon (pencil) to open the rule editor.
 
 - <b><font size="3">Step 2. Add an argument</font></b>
@@ -1010,20 +1007,21 @@ This attribute determines whether the alarm rule is active for the device.
 In the **Arguments** section:
 - Click **Add argument**
 - Fill in the fields:
-  - **Argument name:** temperatureAlarmFlag 
   - **Entity type:** *Current entity* 
   - **Argument type:** *Attribute*
   - **Attribute scope:** *Server attributes*
   - **Attribute key:** <span class="code-light">temperatureAlarmFlag</span>
+  - **Argument name:** temperatureAlarmFlag
 - Click **Add**
 
 You now have a boolean variable that can be used in the alarm conditions.
 
-<b><font size="3">Step 3. Configure the create condition</font></b>
+<b><font size="3">Step 3. Configure the trigger condition</font></b>
 
-Scroll to the Create condition section and edit the existing condition.
+Scroll to the **Trigger condition** section and edit the existing condition.
 
-- Click **Add filter** and configure:
+Add another condition:
+- Click **Add argument filter** and configure:
   - **Argument:** <span class="code-light">temperatureAlarmFlag</span>
   - **Value type:** *Boolean* 
   - **Operation:** *equal* 
@@ -1041,7 +1039,7 @@ Click **Apply** to save the updated configuration.
 <b><font size="4">Result</font></b>
 
 After saving, ThingsBoard will:
-- create the High temperature alarm only if:
+- create the High Temperature alarm only if:
   - <span class="code-light">temperatureAlarmFlag == true</span>, and 
   - the <span class="code-light">temperature</span> exceeds **10°C**
 - ignore the rule entirely for this device if temperatureAlarmFlag == false, even when the threshold is exceeded

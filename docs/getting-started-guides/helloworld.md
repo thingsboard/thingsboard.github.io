@@ -135,27 +135,30 @@ step4:
         title: 'Go to the <b>Devices</b> page in the <b>Entities</b> section.<br>Click <b>My New Device</b> to open its details, and navigate to the <b>Alarm rules</b> tab.<br>Click the "<b>+</b>" button, and select <b>Create new alarm rule</b>.'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.<br>Add the argument — the data source that the rule will use when evaluating the conditions.'
+        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Now add the <b>alarm creation condition</b>.'
+        title: 'Add the argument — the data source that the rule will use when evaluating the conditions.'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
-        title: 'Specify the <b>severity</b> level as <b>Critical</b>, and click <b>Add condition</b>.'
+        title: 'Click <b>Add trigger condition</b>.'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
-        title: 'Click the <b>Add argument filter</b>.'
+        title: 'Keep the <b>Critical</b> severity level and click <b>Add condition</b>.'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
-        title: '<b>General:</b> <b>Argument:</b> temperature (the argument added earlier); <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b>; <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 25.<br>Click <b>Add</b>.'
+        title: 'Click the <b>Add argument filter</b>.'
     6:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
-        title: '<b>Condition type:</b> Simple.<br><b>Save</b> condition.'
+        title: '<b>General:</b> <b>Argument:</b> temperature (the argument added earlier); <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b>; <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 25.<br>Click <b>Add</b>.'
     7:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
-        title: 'Finally, click the <b>Add</b>.'
+        title: '<b>Type:</b> Simple.<br><b>Save</b> condition.'
     8:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
+        title: 'Finally, click the <b>Add</b>.'
+    9:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-10-ce.png
         title: 'The new alarm rule will be created and activated.'
 
 step5:
@@ -445,7 +448,7 @@ In this example, we will configure the alarm rule directly on the device "**My N
 
 In the **General** section, specify the **alarm type** — *High temperature* (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.
 
-<b><font size="4">Step 4.3 Add an argument</font></b>
+<b><font size="4">Step 4.3 Add argument</font></b>
 
 Before defining the alarm trigger condition, you must add at least one **argument** — the data source that the rule will use.
 
@@ -458,9 +461,9 @@ In the **Arguments** section, click **Add argument** and fill in:
 
 This creates the <span class="code-light">temperature</span> variable that will be used in the alarm rule conditions.
 
-<b><font size="4">Step 4.4 Configure the alarm creation condition</font></b>
+<b><font size="4">Step 4.4 Configure the alarm trigger condition</font></b>
 
-In the **Create condition** section, click **Add create condition**.
+In the **Trigger condition** section, click **Add trigger condition**.
 
 - **Severity:** *Critical*
 - **Condition**
@@ -475,9 +478,7 @@ In the **Create condition** section, click **Add create condition**.
       - **Value source:** Static
       - **Value:** <span class="code-light">25</span>
     - Click **Add**.
-
-  **Condition settings**
-  - **Condition type:** *Simple*
+  - **Type:** *Simple*
   - Click **Save**.
 
 As a result, the alarm will trigger immediately when the temperature exceeds **25°C**.
