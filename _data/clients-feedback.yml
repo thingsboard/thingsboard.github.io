@@ -128,8 +128,8 @@ smart-buildings:
       companyName: ARIOT
       id: ariot
       link: https://www.ariot.com.tr/
-      authorImage: /images/customers/ariot-person.webp
-      companyImage: /images/customers/ariot.svg
+      authorImage: https://img.thingsboard.io/customers/ariot-person.webp
+      companyImage: https://img.thingsboard.io/customers/ariot.svg
       companyImageWidth: 80
       companyImageHeight: 62
       text:
@@ -140,8 +140,8 @@ smart-buildings:
       companyName: Sensolyze GmbH
       id: medline
       link: https://www.medlineadana.com.tr/en/
-      authorImage: /images/customers/medline-person.webp
-      companyImage: /images/customers/medline.svg
+      authorImage: https://img.thingsboard.io/customers/medline-person.webp
+      companyImage: https://img.thingsboard.io/customers/medline.svg
       companyImageWidth: 180
       companyImageHeight: 62
       text:
