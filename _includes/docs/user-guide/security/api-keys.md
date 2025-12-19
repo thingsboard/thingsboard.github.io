@@ -69,11 +69,13 @@ In the user details view, the API keys tab provides full access to API key manag
 Include the API key in the **X-Authorization** header with the **ApiKey** prefix:
 
 ```text
-X-Authorization: ApiKey YOUR_API_KEY_VALUE
+X-Authorization: ApiKey $YOUR_API_KEY_VALUE
 ```
 {: .copy-code}
 
-Example using curl:
+&#42; Replace **$YOUR_API_KEY_VALUE** with the API key.
+
+<br>Example:
 
 ```text
 curl -X GET --header 'Accept: application/json' \

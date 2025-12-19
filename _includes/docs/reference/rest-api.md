@@ -37,7 +37,7 @@ http://$THINGSBOARD_HOST:PORT/swagger-ui.html
 ```
 {: .copy-code}
 
-Replace **$THINGSBOARD_HOST:PORT** with the address of your ThingsBoard deployment.
+&#42; Replace **$THINGSBOARD_HOST:PORT** with the address of your ThingsBoard deployment.
 {% endif %}
 
 {% if docsPrefix == "pe/" %}
@@ -84,7 +84,40 @@ If both are authorized, **JWT takes priority**.
 
 {% include images-gallery.html imageCollection="swagger-ui" %}
 
-### JWT authentication
+### API key authentication
+
+{% assign sinceVersion = "4.3" %}
+{% include templates/since.md %}
+
+API keys provide a simpler, automation-friendly alternative to JWT authentication.
+- **No login required:** You don&#39;t need to exchange passwords or manage token refresh loops
+- **Long-lived:** They remain valid indefinitely until you choose to remove them
+- **Revocable:** You can easily disable a specific key
+
+Using API keys
+
+To authenticate via API key, include it in the X-Authorization header with the "**ApiKey**" prefix:
+
+```text
+X-Authorization: ApiKey $YOUR_API_KEY_VALUE
+```
+{: .copy-code}
+
+&#42; Replace **$YOUR_API_KEY_VALUE** with the API key.
+
+**Important:** API keys should only be used over HTTPS.
+
+Example (curl)
+
+```text
+curl -X GET --header 'Accept: application/json' \
+            --header 'X-Authorization: ApiKey $YOUR_API_KEY_VALUE' \
+            'http://$THINGSBOARD_URL/api/auth/user'
+```
+
+<hr>
+
+### JWT authentication (deprecated)
 
 ThingsBoard uses [JWT](https://jwt.io/){:target="_blank"} tokens to authenticate API requests.
 
@@ -100,7 +133,7 @@ When you log in, your username and password are exchanged for two tokens:
 Expiration times are [configurable](/docs/user-guide/install/{{docsPrefix}}config/){:target="_blank"} in system settings:
 - <span class="code-light">JWT_TOKEN_EXPIRATION_TIME</span>
 - <span class="code-light">JWT_REFRESH_TOKEN_EXPIRATION_TIME</span>
-{% endif %}
+  {% endif %}
 
 <hr>
 
@@ -153,37 +186,6 @@ Once authenticated, use the obtained JWT token in the X-Authorization header for
 X-Authorization: Bearer $YOUR_JWT_TOKEN
 ```
 {: .copy-code}
-
-### API key authentication
-
-{% assign sinceVersion = "4.3" %}
-{% include templates/since.md %}
-
-API keys provide a simpler, automation-friendly alternative to JWT authentication.
-- **No login required:** You don&#39;t need to exchange passwords or manage token refresh loops
-- **Long-lived:** They remain valid indefinitely until you choose to remove them
-- **Revocable:** You can easily disable a specific key
-
-Using API keys
-
-To authenticate via API key, include it in the X-Authorization header with the "**ApiKey**" prefix:
-
-```text
-X-Authorization: ApiKey YOUR_API_KEY_VALUE
-```
-{: .copy-code}
-
-**Important:** API keys should only be used over HTTPS.
-
-Example (curl)
-
-```text
-curl -X GET --header 'Accept: application/json' \
-            --header 'X-Authorization: ApiKey $YOUR_API_KEY_VALUE' \
-            'http://$THINGSBOARD_URL/api/auth/user'
-```
-
-<hr>
 
 ## Additional tools
 
