@@ -277,14 +277,6 @@ These steps are applicable for 1.14.0 Trendz Analytics version.
 
 ### Ubuntu/CentOS {#ubuntucentos-1150}
 
-{% capture tb_3_7_0_upgrade_note %}
-**Important note before upgrading to Trendz 1.15.0**
-
-After upgrade, it's necessary to sync with Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/ubuntu#step-6-sync-thingsboard-with-trendz).
-
-{% endcapture %}
-{% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
-
 #### Trendz Analytics package download
 
 {% capture tabspec %}trendz-download-1-15-0
@@ -313,7 +305,7 @@ trendz-installation-1-8-0-centos,CentOS,shell,resources/1.15.0/trendz-centos-ins
 Execute regular upgrade script:
 
 ```bash
-sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.14.0
+sudo /usr/share/trendz/bin/install/upgrade.sh
 ```   
 
 #### Start the service
@@ -323,14 +315,11 @@ sudo service trendz start
 ```
 {: .copy-code}
 
+#### Sync Trendz with ThingsBoard
+
+After upgrade, it's necessary to sync Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/ubuntu#step-6-sync-thingsboard-with-trendz).
+
 ### Windows {#windows-1150}
-
-{% capture tb_3_7_0_upgrade_note %}
-**Important note before upgrading to Trendz 1.15.0**
-
-After upgrade, it's necessary to sync with Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/windows#step-6-sync-thingsboard-with-trendz).
-{% endcapture %}
-{% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
 
 #### Trendz Analytics package download
 
@@ -364,6 +353,10 @@ C:\trendz>upgrade.bat --fromVersion=1.14.0
 net start trendz
 ```
 {: .copy-code}
+
+#### Sync Trendz with ThingsBoard
+
+After upgrade, it's necessary to sync Trendz with ThingsBoard. You can find out how to do it [here](/docs/trendz/install/windows#step-6-sync-thingsboard-with-trendz).
 
 ## Upgrading to 1.14.0
 
