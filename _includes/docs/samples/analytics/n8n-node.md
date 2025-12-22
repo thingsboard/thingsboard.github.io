@@ -149,35 +149,28 @@ N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true n8n start
 
 ### Method 3: Docker installation
 
-For n8n running in Docker, use a custom Dockerfile to persist the installation across container restarts.
+**Step 1**: Create a directory for n8n and navigate to it:
 
-Create a `Dockerfile`:
-
-```dockerfile
-FROM n8nio/n8n:latest
-USER node
-RUN cd /home/node/.n8n && \
-    mkdir -p nodes && \
-    cd nodes && \
-    npm install n8n-nodes-thingsboard
+```bash
+mkdir n8n
+cd n8n
 ```
 {: .copy-code}
 
-Create or modify your `docker-compose.yml`:
+**Step 2**: Create a `docker-compose.yml` file in this directory:
 
 ```yaml
-version: "3.8"
-
 services:
   n8n:
-    build: .
+    image: n8nio/n8n:latest
     ports:
       - "5678:5678"
     environment:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
       - N8N_BASIC_AUTH_PASSWORD=password
-      # Uncomment the line below to use ThingsBoard node as AI Agent tool
+      # Uncomment the lines below to use ThingsBoard node as AI Agent tool
+      # - N8N_COMMUNITY_PACKAGES_ENABLED=true
       # - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
     volumes:
       - n8n_data:/home/node/.n8n
@@ -187,14 +180,21 @@ volumes:
 ```
 {: .copy-code}
 
-**AI Agent Tool Usage**: To use the ThingsBoard node as an AI Agent tool, uncomment the `N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true` line in the environment section above. See the [AI Agent Configuration](#ai-agent-configuration-optional) section for details.
+**AI Agent Tool Usage**: To use the ThingsBoard node as an AI Agent tool, uncomment the two environment variable lines in the environment section above. See the [AI Agent Configuration](#ai-agent-configuration-optional) section for details.
 
-Build and start the services:
+**Step 3**: Start the services:
 
 ```bash
-docker-compose up -d --build
+docker-compose up -d
 ```
 {: .copy-code}
+
+**Step 4**: After n8n starts, install the ThingsBoard node using the GUI method ([Method 1](#method-1-gui-installation-recommended-for-self-hosted)):
+
+1. Open n8n in your browser (`http://localhost:5678`)
+2. Navigate to **Settings** → **Community Nodes**
+3. Install `n8n-nodes-thingsboard`
+4. Refresh your browser
 
 ### Credentials configuration
 
@@ -382,6 +382,9 @@ Use the ThingsBoard node as a **tool for AI Agents** to enable intelligent, natu
         image: /images/samples/analytics/n8n-node/example-1-1-1.png
         title: Select ThingsBoard from the Tools list. Add **Get devices** and **Get timeseries** operations.
     ===
+        image: /images/samples/analytics/n8n-node/ai-agent-define-parameter.png
+        title: For tools with required or optional fields, the AI model intelligently determines parameter values based on conversation context. The model decides which values to pass automatically.
+    ===
         image: /images/samples/analytics/n8n-node/example-1-2.png
         title: Open the chat interface and write your natural language query.
 '
@@ -392,10 +395,11 @@ Use the ThingsBoard node as a **tool for AI Agents** to enable intelligent, natu
 **How it works**:
 1. User sends a chat message: *"What devices do I have and what's their telemetry?"*
 2. AI Agent (powered by Google Gemini, Anthropic, or OpenAI GPT-4) has access to ThingsBoard tools
-3. Agent autonomously calls:
+3. The AI model automatically determines which parameter values to pass based on the conversation context
+4. Agent autonomously calls:
    - `Get devices in ThingsBoard` → Retrieves device list
    - `Get timeseries in ThingsBoard` → Fetches latest telemetry
-4. Agent responds in natural language with the actual data
+5. Agent responds in natural language with the actual data
 
 **Natural language commands**:
 - *"Show me the temperature of my living room sensor"*
