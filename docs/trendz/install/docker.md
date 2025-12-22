@@ -115,10 +115,6 @@ docker compose up -d
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-## Post-installation steps
-
-{% include templates/trendz/install/post-installation-steps.md %}
-
 ## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

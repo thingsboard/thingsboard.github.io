@@ -238,10 +238,6 @@ cat /var/log/trendz/trendz.log | grep ERROR
 
 {% include templates/trendz/install/https-configuration.md %}
 
-## Post Installation Steps
-
-{% include templates/trendz/install/post-installation-steps.md %}
-
 ## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}
