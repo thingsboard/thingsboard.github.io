@@ -45,8 +45,8 @@ Once activated:
 [screenshot: Trendz Analytics in the left menu]
 
 You can access Trendz home page:
-* [ThingsBoard Cloud (US)](https://thingsboard.cloud/trendzAnalytics)
-* [ThingsBoard Cloud (EU)](https://eu.thingsboard.cloud/trendzAnalytics)
+* [ThingsBoard Cloud (US)](https://thingsboard.cloud/trendz/)
+* [ThingsBoard Cloud (EU)](https://eu.thingsboard.cloud/trendz/)
 
 ## Next Steps
 

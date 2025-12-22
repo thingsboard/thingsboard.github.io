@@ -56,7 +56,7 @@ https://{my-domain}/
 and Trendz web page would be loaded using following link
 
 ```bash
-https://{my-domain}/trendz
+https://{my-domain}/trendz/
 ```
 
 For enabling such configuration we have to update HAProxy config to route specific requests to Trendz service.
@@ -70,7 +70,7 @@ Locate **frontend https_in** section, add new access list that will match traffi
 
 ```bash
 ...
-acl trendz_acl path_beg /trendz path_beg /apiTrendz
+acl trendz_acl path_beg /trendz/ path_beg /apiTrendz/
 ....
 use_backend tb-trendz if trendz_acl
 ```

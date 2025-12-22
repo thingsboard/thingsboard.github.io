@@ -160,15 +160,6 @@ net stop trendz
 net start trendz
 ```
 
-Once started, you will be able to open Web UI using the following link:
-
-```bash
-http://localhost:8888/trendz
-```
-
-**Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
-the server or with a domain name. Also, check that port 8888 opened for public access.
-
 ### Step 6. Sync ThingsBoard With Trendz
 
 {% include templates/trendz/install/sync-with-tb.md %}
