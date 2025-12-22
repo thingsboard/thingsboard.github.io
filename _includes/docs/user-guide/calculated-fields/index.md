@@ -362,9 +362,9 @@ By aligning timestamps and filling missing values, merging enables:
 
 ## Export / Import calculated field
 
-You can [export](#export-calculated-field) the calculated field to a JSON file and [import](#import-calculated-field) it into the same or another ThingsBoard instance.
+You can **export** the calculated field to a JSON file and **import** it into the same or another ThingsBoard instance.
 
-### Export calculated field
+<br><b><font size="4">Export calculated field</font></b>
 
 To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
 
@@ -389,7 +389,7 @@ To export a calculated field, navigate to the <b>Calculated fields</b> tab of th
 {% include images-gallery.liquid imageCollection=exportCalculatedFieldPE %}
 {% endif %}
 
-### Import calculated field
+<br><b><font size="4">Import calculated field</font></b>
 
 You can import a calculated field configuration from a JSON configuration file.
 This feature is particularly useful when transferring calculated field configurations between entities or profiles, ensuring consistency and reducing manual setup efforts.
@@ -460,9 +460,42 @@ Steps to import:
 
 <hr>
 
-## Calculated fields video overview
+## Managing calculated fields
 
-Prefer visual learning? Watch this video to get a quick overview of how Calculated fields work in ThingsBoard. It explains the core capabilities, calculation types, and practical examples that help you process and transform data in real time.
+After a calculated field is created, it appears in the Calculated fields table.
+The list provides a quick overview of key parameters such as name, entity type, entity, and calculated field type.
+
+Each row includes an action panel that allows you to manage the calculated field:
+1. **Copy** — duplicate the configuration to quickly create a new calculated field.
+2. **Export** — download the configuration as a JSON file for backup or migration.
+3. **Events** — view execution events, including state changes and errors.
+4. **Debug** — enable debug mode and inspect detailed execution data.
+5. **Edit** — modify the calculated field configuration.
+6. **Delete** — remove the calculated field from the system.
+
+{% assign calculatedFieldsParametersCE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-1-ce.png
+'
+%}
+
+{% assign calculatedFieldsParametersPE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-1-pe.png
+'
+%}
+
+{% if docsPrefix == null %}
+{% include images-gallery.liquid imageCollection=calculatedFieldsParametersCE %}
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=calculatedFieldsParametersPE %}
+{% endif %}
+
+## Calculated fields overview video
+
+Prefer visual learning? Watch this short video for a quick introduction to **Calculated fields** in ThingsBoard.   
+It covers the core concepts, supported calculation types, and practical examples for processing and transforming data in real time.
 
 &nbsp;
 <div id="video">  

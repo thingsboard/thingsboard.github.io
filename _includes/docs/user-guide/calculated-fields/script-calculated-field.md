@@ -12,7 +12,7 @@ Script calculated fields support conditional logic, loops, working with historic
 
 <hr>
 
-## Calculated field configuration
+## Configuration
 
 Define the data sources, calculation logic, result format, and how it will be further processed in the system.
 
@@ -27,10 +27,10 @@ Define the data sources, calculation logic, result format, and how it will be fu
 
 To configure calculated field, you must add at least one argument.
 
-Click the **Add argument** and configure the following:
+Click **Add argument** and configure the following:
 
 <b><font size="3">Entity type</font></b>   
-Defines the data source:
+Defines the data source that will be used in calculations:
 - **Current entity**: refers to the same entity where the calculated field is applied. 
   If the calculated field is created at the **Asset Profile** or **Device Profile** level, the calculation will be executed for each entity associated with that profile.
 - Another **Device** or **Asset**: references a different device or asset for data processing.
@@ -72,8 +72,6 @@ In this section, the calculation function is defined using the variables specifi
 
 > The variable name that will store the calculation result is defined within the function itself.
 
-<br>
-
 Example: the function below uses the `temperature` and `humidity` arguments to calculate the dew point value.
 The calculation result will be stored in the variable `dewPoint`, rounding the value to one decimal places.
 
@@ -91,7 +89,7 @@ return {"dewPoint": dewPoint};
 
 {% assign scriptFunction = '
     ===
-        image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-ce.png
+        image: /images/user-guide/calculated-fields/script-calculated-fields-1-ce.png
         title: Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.
 '
 %}
@@ -148,6 +146,8 @@ Select how the result should be stored:
 
 {% include images-gallery.liquid imageCollection=scriptOutput %}
 
+<hr>
+
 {% include /docs/user-guide/calculated-fields/blocks/output-strategy.md %}
 
 <hr>
@@ -187,15 +187,32 @@ Let&#39;s check the debug events by clicking the **Events** icon button. The deb
 
 ### Example 1: Fahrenheit to Celsius
 
-<b><font size="3">Scenario</font></b>
+<b><font size="4">Scenario</font></b>
 
-The device sends the room temperature in degrees Fahrenheit (**temperature**).
-
+The device sends the room temperature in degrees Fahrenheit (**temperature**).   
 You need to convert the value to degrees Celsius, round the result to two decimal places, and store it as telemetry with the same timestamp.
 
 <hr>
 
-<b><font size="3">Calculation function</font></b>
+<b><font size="4">Configuration steps</font></b>
+
+Create a calculated field at the device level with the following parameters:
+
+<b><font size="3">General</font></b>
+- **Name:** C to F
+- **Type:** Script
+
+<b><font size="3">Arguments</font></b>
+
+Add an argument:
+- **Entity:** Current entity
+- **Argument type:** Latest telemetry
+- **Time series key:** temperature
+- **Argument name:** temperature
+
+<b><font size="3">Script</font></b>
+
+Insert the calculation function into the **Script** field:
 
 **function calculate(ctx, temperatureF) {**
 ```js
@@ -210,19 +227,12 @@ return {
 {: .copy-code}
 **}**
 
-<hr>
+<b><font size="3">Output</font></b>
 
-<b><font size="3">Configuration steps</font></b>
+- **Output type:** Time series
+- **Strategy**: Process right away
 
-- **Create a new calculated field** for the device and select the **Script** type.
-- In the **Arguments** section, add an argument:
-    - **Entity:** Current entity
-    - **Argument type:** Latest telemetry
-    - **Time series key:** temperature
-- Paste the calculation function into the **Script** field.
-- In the **Output** section, select:
-    - **Type:** Time series
-- Click **Add** to save the calculated field.
+Click **Add** to save the calculated field.
 
 {% assign exampleScript11 = '
     ===
@@ -241,9 +251,13 @@ return {
 
 <hr>
 
-<b><font size="3">Result</font></b>
+<b><font size="4">Result</font></b>
 
-In the **Events** pop-up window, you will see the input message with temperature and the output message with temperatureC.
+In the **Events** window, you will see:
+- the input message with **temperature**,
+- the output message with **temperatureC**.
+
+Both messages will have the same timestamp.
 
 {% assign exampleScript12 = '
     ===
@@ -251,13 +265,13 @@ In the **Events** pop-up window, you will see the input message with temperature
         title: Open the **Events** pop-up window of the calculated field.
     ===
         image: /images/user-guide/calculated-fields/script-example-15-ce.png
-        title: You will see the input message with temperature and the output message with temperatureC. Both messages will have the same timestamp (ctx.latestTs).
+        title: You will see the input message with **temperature** and the output message with **temperatureC**. Both messages will have the same timestamp.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=exampleScript12 %}
 
-In the **Latest telemetry** tab, the following key will appear: **airDensity**.
+In the **Latest telemetry** tab, the following key will appear: **temperatureC**.
 
 {% assign exampleScript13 = '
     ===

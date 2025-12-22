@@ -2,6 +2,12 @@
 
 Specify a clear and descriptive name for the calculated field that reflects its purpose.
 
+<b><font size="3">Entity type (only for the global Calculated fields page)</font></b>
+
+If you create a calculated field from the global **Calculated fields page**, you must additionally:
+- Select the **entity type**.
+- Specify the specific **entity** or **profile** to which the calculated field should be applied.
+
 <b><font size="3">Type</font></b>
 
 {{ calculatedFieldType }}

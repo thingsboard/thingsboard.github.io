@@ -11,7 +11,7 @@ Simple calculated fields use basic arithmetic operations (+, -, *, /) and standa
 
 <hr>
 
-## Calculated field configuration
+## Configuration
 
 Define the data sources, calculation logic, result format, and how it will be further processed in the system.
 
@@ -26,11 +26,11 @@ Define the data sources, calculation logic, result format, and how it will be fu
 
 To configure a calculated field, you must add at least one argument.
 
-Click **Add argument** and configure the following parameters:
+Click **Add argument** and configure the following:
 
 <b><font size="3">Entity type</font></b>   
-Defines the data source:
-- **Current entity**- the current entity to which the calculated field is applied.   
+Defines the data source that will be used in calculations:
+- **Current entity** - the current entity to which the calculated field is applied.   
   If the field is created at the **Device profile** or **Asset profile** level, the calculation is performed for each entity associated with that profile.
 - Another **Device** or **Asset** — another entity from which data is read.
 - **Customer** — the associated customer.
@@ -118,6 +118,8 @@ If not specified, the value will not be rounded.
 
 {% include images-gallery.liquid imageCollection=simpleOutput %}
 
+<hr>
+
 {% include /docs/user-guide/calculated-fields/blocks/output-strategy.md %}
 
 <hr>
@@ -157,49 +159,57 @@ Let&#39;s check the debug events by clicking the **Events** icon button. The deb
 
 ## Example: Dew point calculation
 
-<b><font size="3">Scenario</font></b>
+<b><font size="4">Scenario</font></b>
 
-Suppose you have a smart device that monitors the **current temperature and humidity** in real time and sends this data to ThingsBoard. 
-
-Based on these values, we need to calculate the **dew point**.
+The **Smart Device** sends **temperature** and **humidity** values in real time.   
+Based on these data, you need to calculate the **dew point** and store the result as telemetry.
 
 <hr>
 
+<b><font size="4">Configuration steps</font></b>
+
+Create a calculated field at the device level with the following parameters:
+
+<b><font size="3">General</font></b>
+- **Name:** Dew point calculation
+- **Type:** Simple
+
+<b><font size="3">Arguments</font></b>
+
+Add two arguments:
+
+**Argument 1**
+- **Entity type:** Current entity
+- **Argument type:** Latest telemetry
+- **Time series key:** temperature
+- **Argument name:** temperature
+
+**Argument 2**
+- **Entity type:** Current entity
+- **Argument type:** Latest telemetry
+- **Time series key:** humidity
+- **Argument name:** humidity
+
 <b><font size="3">Expression</font></b>
 
-This mathematical expression calculates the dew point using two arguments: temperature and humidity:
+The following mathematical expression, based on temperature and humidity values, is used to calculate the dew point.
 
 ```text
 (243.04 * (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature)) / (17.625 - (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature))))
 ```
 {: .copy-code}
 
-<hr>
+<b><font size="3">Output</font></b>
 
-<b><font size="3">Configuration steps</font></b>
+- **Output type:** Time series
+- **Strategy**: Process right away
 
-- **Create a new calculated field** for the device and select the **Simple** type.
-- - In the **Arguments** section, add an argument:
-  - **Entity type:** Current entity
-  - **Argument type:** Latest telemetry
-  - **Time series key:** temperature
-  - **Argument name:** temperature
-- Add a second argument:
-    - **Entity type:** Current entity
-    - **Argument type:** Latest telemetry
-    - **Time series key:** humidity
-    - **Argument name:** humidity
-- Insert the mathematical **expression** to calculate the dew point.
-- In the **Output** section, select:
-  - **Type:** Time series
-  - Specify the name of the calculated variable — **dewPoint** — under which the calculation result will be saved.
-- Click **Add** to save the calculated field.
-
+Click **Add** to save the calculated field.
 
 {% assign exampleSimple1 = '
     ===
         image: /images/user-guide/calculated-fields/simple-example-1-ce.png
-        title: **Create a new calculated field** for the device and select the **Simple** type.
+        title: Create a **"Simple"** calculated field at the device level.
     ===
         image: /images/user-guide/calculated-fields/simple-example-2-ce.png
         title: Add first argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i><br>Click **Add**.
@@ -219,14 +229,14 @@ This mathematical expression calculates the dew point using two arguments: tempe
 
 <hr>
 
-<b><font size="3">Result</font></b>
+<b><font size="4">Result</font></b>
 
-In the **Events** pop-up window, you can view the input arguments and the calculation result.
+In the **Events** window, you can view the input arguments and the calculation result.
 
 {% assign exampleSimple2 = '
     ===
         image: /images/user-guide/calculated-fields/simple-example-6-ce.png
-        title: In the **Events** pop-up window, you can view the input arguments and the calculation result.
+        title: In the **Events** window, you can view the input arguments and the calculation result.
     ===
         image: /images/user-guide/calculated-fields/simple-example-7-ce.png
 '
@@ -234,12 +244,12 @@ In the **Events** pop-up window, you can view the input arguments and the calcul
 
 {% include images-gallery.liquid imageCollection=exampleSimple2 %}
 
-Go to the **Latest telemetry** tab. You&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
+In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
 
 {% assign exampleSimple3 = '
     ===
         image: /images/user-guide/calculated-fields/simple-example-8-ce.png
-        title: Go to the **Latest telemetry** tab. You&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
+        title: In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
 '
 %}
 

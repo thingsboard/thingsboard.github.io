@@ -1,18 +1,24 @@
 simple-calculated-field:
+  img: /images/user-guide/calculated-fields/simple.svg
   title: Simple calculated field
   description: Basic arithmetic expressions and standard functions.
 script-calculated-field:
+  img: /images/user-guide/calculated-fields/script.svg
   title: Script calculated field
   description: Complex computations using TBEL, with the ability to return multiple values.
 geofencing-calculated-field:
+  img: /images/user-guide/calculated-fields/geofencing.svg
   title: Geofencing calculated field
   description: Determining an entity&#39;s position relative to geozones, detecting enter/exit events, and generating notifications.
 propagation-calculated-field:
+  img: /images/user-guide/calculated-fields/propagation.svg
   title: Propagation calculated field
   description: Automatic copying or transformation of data to related entities based on defined relation types.
 related-entities-aggregation-calculated-field:
+  img: /images/user-guide/calculated-fields/related.svg
   title: Related entities aggregation calculated field
   description: Aggregating data (min, max, avg, sum, count, etc.) from a group of related entities.
 time-series-data-aggregation-calculated-field:
+  img: /images/user-guide/calculated-fields/timeseries.svg
   title: Time series data aggregation calculated field
   description: Analyzing and aggregating historical data using time windows.

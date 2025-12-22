@@ -13,9 +13,9 @@ This type of calculated field allows you to synchronize attributes and telemetry
 
 <hr>
 
-## Calculated field configuration
+## Configuration
 
-Define the data sources, calculation logic, result format, and how it will be further processed in the system.
+Define the data sources, the propagation path and data, the output type, and the result processing strategy in the system.
 
 ### General
 
@@ -64,13 +64,12 @@ Two modes are available:
 #### Arguments only
 
 In this mode, propagation works as **direct data copying** with the option to rename the key before saving.   
-The value is delivered to the target entity under the key specified in the **Output key** field.
 
-Click **Add argument** and configure the following parameters:
+Click **Add argument** and configure the following:
 
 <b><font size="3">Entity type</font></b>   
-The data source is the current entity to which the calculated field is applied.   
-If the field is created at the **Device profile** or **Asset profile** level, the calculation is performed for each entity associated with that profile.
+The data source is the **current entity** to which the calculated field is applied.   
+If the field is created at the **Device profile** or **Asset profile** level, the propagation is applied to each entity associated with that profile.
 
 <b><font size="3">Argument type</font></b>   
 Defines which entity data will be used for the propagations:
@@ -82,7 +81,7 @@ Defines which entity data will be used for the propagations:
 The telemetry or attribute key whose value will be read.
 
 <b><font size="3">Output key</font></b>   
-The key under which the data will be saved in the target entity.
+The key under which the propagated data will be stored in the target entity.”
 
 <b><font size="3">Default value</font></b>   
 The default value used if the data is unavailable.
@@ -101,49 +100,47 @@ After configuring the parameters, click **Add**.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=propagationArgument %}
+{% include images-gallery.liquid imageCollection=propagationArgument %}
 
 <hr>
 
 #### Calculation result
 
-This mode allows you to compute complex values before sending them to a related entity.   
-It supports mathematical formulas, functions, logical expressions, and working with historical data.
+This mode allows you to perform custom calculations using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} on telemetry and attribute data before sending them to the related entity.
 
-**Add argument — configuration fields:**
-- **Entity type**: specify the data source for the variable, which can be:
-    - **Сurrent entity** — the entity on which the calculated field is created. If the field is created at the Device Profile or Asset Profile level, the calculation is executed for every entity associated with that profile.
-    - Another **Device** or **Asset**: references a different device or asset.
-    - **Customer**: retrieves data from the associated customer entity.
-    - **Current tenant**: uses data from the tenant entity.
-      {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-    - **Current owner**: refers to the owner of the current entity and uses its data.
-      {% endif %}
-- **Argument type**: defines which entity data will be used for the calculations:
-    - **Attribute**: uses static or semi-static key-value pairs associated with an entity (e.g., model, max temperature).
-    - **Latest telemetry**: uses the most recent telemetry data from an entity (e.g., temperature, speed, voltage).
-    - **Time series rolling**: uses historical time series data over a specified time window for trend analysis (Available only for [Script](#script-calculated-field) type).
+Click **Add argument** and configure the following:
+
+<b><font size="3">Entity type</font></b>   
+Specify the data source for the variable, which can be:
+- **Сurrent entity** — the entity on which the calculated field is created. If the field is created at the Device Profile or Asset Profile level, the calculation is executed for every entity associated with that profile.
+- Another **Device** or **Asset**: references a different device or asset.
+- **Customer**: retrieves data from the associated customer entity.
+- **Current tenant**: uses data from the tenant entity.
+- **Current owner**: refers to the owner of the current entity and uses its data.
+
+<b><font size="3">Argument type</font></b>   
+Defines which entity data will be used for the calculations:
+- **Attribute**: uses static or semi-static key-value pairs associated with an entity (e.g., model, max temperature).
+- **Latest telemetry**: uses the most recent telemetry data from an entity (e.g., temperature, speed, voltage).
+- **Time series rolling**: uses historical time series data over a specified time window for trend analysis.
 
 Select the desired argument type:
 
 {% capture calculatedfieldsargumenttype %}
-Attribute<small></small>%,%attribute%,%templates/calculated-fields/attribute-argument-type.md%br%
-Latest telemetry<small></small>%,%latestTelemetry%,%templates/calculated-fields/latest-telemetry-argument-type.md%br%
-Time series rolling<small></small>%,%timeSeriesRolling%,%templates/calculated-fields/time-series-rolling-argument-type.md{% endcapture %}
+Attribute<small></small>%,%attribute%,%templates/calculated-fields/propagation/attribute-argument-type.md%br%
+Latest telemetry<small></small>%,%latestTelemetry%,%templates/calculated-fields/propagation/latest-telemetry-argument-type.md%br%
+Time series rolling<small></small>%,%timeSeriesRolling%,%templates/calculated-fields/propagation/time-series-rolling-argument-type.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="calculatedfieldsargumenttype" toggle-spec=calculatedfieldsargumenttype %}
 
 <hr>
 
-<b><font size="3">Script</font></b>
+<b><font size="4">Script</font></b>
 
-Define the function that will perform the calculations using the arguments specified in the ["Data to propagate"](#data-to-propagate) section.
-After the computation is completed, the resulting value will be sent to the target entity.
+Define the function that performs the calculation based on the data specified in the [Arguments](#calculation-result) section. 
+After the calculation is executed, the resulting value will be propagated to the target entity.
 
-{% capture difference %}
-The variable name that stores the result must be defined directly inside the function body.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+> The variable name that stores the result must be defined directly inside the function body.
 
 **Example.** The provided script converts temperature readings (<span class="code-light">temperature</span>) from Fahrenheit to Celsius.   
 The calculation result is stored in the <span class="code-light">temperatureC</span> variable and propagated to the related entity (entities).
@@ -162,9 +159,6 @@ return {
 %}
 
 {% include images-gallery.liquid imageCollection=scriptFunction %}
-
-
-
 
 <hr>
 
@@ -206,7 +200,7 @@ Further processing and data persistence are carried out according to the selecte
 Select how the result should be stored:
 - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}. The function must return a JSON object or an array of objects containing the computed value — with or without an explicit <span class="code-light">ts</span> field.   
   To synchronize the result with the timestamp of the input data, use <span class="code-light">ts: ctx.latestTs</span> and assign it directly to the <span class="code-light">ts</span> field in the returned object.
-- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.The function must return a JSON object with the computed value **without a timestamp**.
+- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.The function must return a JSON object with the computed value **without a timestamp**.   
   Select the attribute storage scope: **Server**, **Client**, or **Shared attributes**.
 
 {% assign propagationOutput = '
@@ -220,6 +214,8 @@ Select how the result should be stored:
 %}
 
 {% include images-gallery.liquid imageCollection=propagationOutput %}
+
+<hr>
 
 {% include /docs/user-guide/calculated-fields/blocks/output-strategy.md %}
 
@@ -273,7 +269,7 @@ When the battery level changes, you need to automatically propagate the <span cl
 Create a calculated field on the device with the following configuration:
 
 <b><font size="3">General</font></b>
-- **Name:** Battery propagation
+- **Name:** Battery level propagation
 - **Type:** Propagation
 
 <b><font size="3">Propagation path to related entities</font></b>
