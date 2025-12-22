@@ -22,7 +22,6 @@ filterCollection:
       - Trackers
       - Other devices
       - Gateway
-      - Single Board Computer
   - label: Connectivity
     filters:
       - HTTP

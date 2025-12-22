@@ -5,7 +5,7 @@ category: Other devices
 deviceImageFileName: ncd-vibration-sensor.png
 docsPrefix: paas/
 hardwareType: Sensors
-connectivity: [DigiMesh/ MQTT, WIFI, Ethernet]
+connectivity: [DigiMesh, MQTT, WIFI, Ethernet]
 industry: [Industrial Manufacturing, Smart Cities, Environmental Monitoring, Energy Management]
 useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Health Care, Waste Management]
 breadcrumbs: "true"
