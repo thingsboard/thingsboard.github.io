@@ -2,15 +2,51 @@
 * TOC
 {:toc}
 
-An **MQTT Session** is a core concept that enables reliable communication between MQTT Clients and the Broker, even when network connections are unstable. This is especially important in IoT environments, where devices may disconnect and reconnect due to power-saving modes, connectivity issues, or network changes.
+An **MQTT session** is a core concept that enables reliable communication between MQTT clients and the Broker, even when network connections are unstable. This is especially important in IoT environments, where devices may disconnect and reconnect due to power-saving modes, connectivity issues, or network changes.
 
-An MQTT session stores state related to the interaction between a **Client** and the **Broker**. This state can be reused when the Client reconnects, allowing communication to continue without reinitializing everything from scratch.
+An MQTT session stores state related to the interaction between a **client** and the **Broker**. This state can be reused when the client reconnects, allowing communication to continue without reinitializing everything from scratch.
+
+Think of an MQTT session like a hotel reservation.
+- A **persistent** session is like a “booked room”: even if you go out for dinner (disconnect), your luggage (subscriptions and missed messages) stays in the room waiting for your return.
+- A **non-persistent** session is like a “walk-in”: if you leave the lobby, the hotel forgets you were ever there.
+
+## Persistent Session
+
+A persistent session preserves the session state after the client disconnects, allowing subscriptions and queued messages to be restored when the client reconnects.
+
+- Messages are retained only while the session is active. If the session expires before reconnection, any queued messages are discarded.
+- This mode improves reliability but introduces additional acknowledgments and storage, increasing overall system complexity.
+- A persistent session requires a **fixed Client ID**, which allows the Broker to correctly restore the session state.
+- **Offline message delivery works only for persistent sessions** and requires both the publisher and subscriber to use **QoS 1** or **QoS 2**. For applications where message loss is unacceptable, always combine persistent sessions with **QoS 1** or **QoS 2** ([QoS documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/qos/)).
+
+Typical use cases:
+
+- Devices with intermittent or unreliable network connectivity
+- Command-and-control scenarios where message delivery must be guaranteed
+- Backend APPLICATIONs that process critical data streams
+- Systems that require message continuity across client restarts or failovers
+
+## Non-Persistent Session
+
+A non-persistent (clean) session always starts with a fresh state. The Broker does not retain any session state when the client disconnects.
+
+- Subscriptions are not preserved and must be recreated on every connection.
+- Messages published while the client is offline are not stored or delivered later.
+- This mode has minimal overhead, as it does not require message acknowledgments or session storage.
+- Clean sessions are typically used with **QoS 0**, where low latency and simplicity are more important than guaranteed delivery.
+
+Typical use cases:
+
+- Simple telemetry publishing where occasional data loss is acceptable
+- Sensors publishing frequently updated values (temperature, humidity, status)
+- Short-lived clients, test tools, or diagnostic utilities
+- Scenarios where minimal latency and minimal Broker storage are preferred
 
 ## Session Configuration in MQTT v3.1.1 and MQTT v5.0
 
-Session management was significantly improved in **MQTT Version 5.0** compared to **MQTT Version 3.1.1**. While MQTT v3.1.1 provides only basic control over session persistence, MQTT v5.0 introduces more flexible and explicit mechanisms that are better suited for modern IoT systems with unstable networks and large numbers of clients.
+Session management was significantly improved in **MQTT version 5.0** compared to **MQTT version 3.1.1**. While MQTT v3.1.1 provides only basic control over session persistence, MQTT v5.0 introduces more flexible and explicit mechanisms that are better suited for modern IoT systems with unstable networks and large numbers of clients.
 
-The key change is that MQTT v5.0 replaces the single **CleanSession** flag with two separate properties: **Clean Start** and **Session Expiry Interval**. This allows Clients to precisely control *when* a session starts fresh and *how long* the Broker should keep session data after a disconnect.
+The key change is that MQTT v5.0 replaces the single **CleanSession** flag with two separate properties: **Clean Start** and **Session Expiry Interval**. This allows clients to precisely control *when* a session starts fresh and *how long* the Broker should keep session data after a disconnect.
 
 <table>
   <thead>
@@ -23,42 +59,34 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
   </thead>
   <tbody>
     <tr>
-      <td><b>Non-Persistent Session</b></td>
-      <td>
-        CleanSession = 1
-      </td>
+      <td><b>Non-persistent session</b></td>
+      <td>CleanSession = 1</td>
       <td>
         Clean Start = 1<br>
         Session Expiry Interval = 0
       </td>
       <td>
-        A new Session is always created. No subscriptions or messages are stored.
-        Messages published while the Client is offline are lost.
+        A new session is always created. No subscriptions or messages are stored.
+        Messages published while the client is offline are lost.
         Suitable for simple, real-time data where persistence is not required.
       </td>
     </tr>
-
     <tr>
-      <td><b>Persistent Session<br>(Finite Lifetime)</b></td>
-      <td>
-        CleanSession = 0
-      </td>
+      <td><b>Persistent session<br>(finite lifetime)</b></td>
+      <td>CleanSession = 0</td>
       <td>
         Clean Start = 0<br>
         Session Expiry Interval &gt; 0
       </td>
       <td>
-        Session State is preserved across disconnects for a defined period.
+        Session state is preserved across disconnects for a defined period.
         Subscriptions and queued messages are restored on reconnect.
         Ideal for intermittent connectivity with controlled resource usage.
       </td>
     </tr>
-
     <tr>
-      <td><b>Persistent Session<br>(Indefinite)</b></td>
-      <td>
-        CleanSession = 0
-      </td>
+      <td><b>Persistent session<br>(indefinite)</b></td>
+      <td>CleanSession = 0</td>
       <td>
         Clean Start = 0<br>
         Session Expiry Interval = 0xFFFFFFFF
@@ -69,80 +97,34 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
         to avoid unused sessions consuming resources.
       </td>
     </tr>
-
     <tr>
-      <td><b>Forced Session Reset</b></td>
-      <td>
-        CleanSession = 1
-      </td>
+      <td><b>Forced session reset</b></td>
+      <td>CleanSession = 1</td>
       <td>
         Clean Start = 1<br>
         Session Expiry Interval &gt; 0 (ignored)
       </td>
       <td>
-        Any existing Session is discarded immediately.
-        A new Session is created regardless of previous state.
+        Any existing session is discarded immediately.
+        A new session is created regardless of previous state.
         Useful for manual resets, troubleshooting, or reinitialization.
       </td>
     </tr>
   </tbody>
 </table>
 
-For details on viewing and managing MQTT sessions in the TBMQ UI, see [documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/sessions/).
+For details on viewing and managing MQTT sessions in the TBMQ UI, see the [documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/sessions/).
 
-## Persistent Session
+## TBMQ Architecture and Session State Management
 
-A persistent session preserves the Session State after the Client disconnects, allowing subscriptions and queued messages to be restored when the Client reconnects.
+TBMQ is designed to operate at scale in environments with highly diverse MQTT traffic patterns, ranging from lightweight IoT devices to high-throughput backend applications. To achieve predictable behavior under load, TBMQ combines MQTT session semantics with internal client classification (**Client Type**) and flow-control mechanisms (**Backpressure**).
 
-- Messages are retained only while the Session is active. If the Session expires before reconnection, any queued messages are discarded.
-- This mode improves reliability but introduces additional acknowledgments and storage, increasing overall system complexity.
-- A persistent session requires a **fixed Client ID**, which allows the Broker to correctly restore the Session State.
-- Offline message delivery works only when both the publisher and subscriber use **QoS 1** or **QoS 2**.
+Session state in TBMQ is not managed in isolation. Its lifecycle, persistence, and resource impact are influenced by how a client connects, how much data it produces or consumes, and how reliably messages must be delivered. This architecture allows TBMQ to balance **reliability**, **performance**, and **resource efficiency**, even when clients disconnect frequently or experience unstable network conditions.
 
-Typical use cases:
+### Client Types and Session Behavior
 
-- Devices with intermittent or unreliable network connectivity.
-- Command-and-control scenarios where message delivery must be guaranteed.
-- Backend APPLICATIONs that process critical data streams.
-- Systems that require message continuity across Client restarts or failovers.
-
-## Non-Persistent Session
-
-A non-persistent (clean) session always starts with a fresh state. The Broker does not retain any Session State when the Client disconnects.
-
-- Subscriptions are not preserved and must be recreated on every connection.
-- Messages published while the Client is offline are not stored or delivered later.
-- This mode has minimal overhead, as it does not require message acknowledgments or session storage.
-- Clean sessions are typically used with **QoS 0**, where low latency and simplicity are more important than guaranteed delivery.
-
-Typical use cases:
-
-- Simple telemetry publishing where occasional data loss is acceptable
-- Sensors publishing frequently updated values (temperature, humidity, status)
-- Short-lived Clients, test tools, or diagnostic utilities
-- Scenarios where minimal latency and minimal Broker storage are preferred
-
-## How QoS Affects Message Delivery in Persistent Sessions
-
-Message queuing works **only for persistent sessions** and requires both the publisher and subscriber to use **QoS 1 or QoS 2**.
-For applications where message loss is unacceptable, always combine **persistent sessions** with **QoS 1 or QoS 2**.
-
-- **QoS 0** messages are never queued by the Broker. If the Client is offline, these messages are immediately dropped.
-- **QoS 1** enables offline message storage and guarantees that messages are delivered *at least once* when the Client reconnects.
-- **QoS 2** provides the highest reliability by ensuring messages are delivered *exactly once*, even across disconnects.
-
-Read more about Quality of Service (QoS) [here](/docs/{{docsPrefix}}mqtt-broker/user-guide/qos/).
-
-## Session Handling in TBMQ Architecture
-
-Session handling in TBMQ is designed to balance **reliability**, **performance**, and **resource efficiency** at scale.  
-By combining MQTT session semantics with internal client classification and flow-control mechanisms, 
-TBMQ ensures predictable behavior for both high-frequency device traffic and large-scale data consumers, even under unstable network conditions.
-
-### Client Type
-
-TBMQ improves scalability and reliability by classifying Clients into two [types](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/): **DEVICE** and **APPLICATION**.  
-Each type has distinct traffic patterns and usage expectations, allowing TBMQ to apply tailored session persistence and message delivery strategies for efficient resource usage.
+TBMQ improves scalability and reliability by classifying clients into two types: **DEVICE** and **APPLICATION**.  
+Each [Client Type](/docs/{{docsPrefix}}mqtt-broker/user-guide/mqtt-client-type/) has distinct traffic patterns and usage expectations, allowing TBMQ to apply tailored session persistence and message delivery strategies for efficient resource usage.
 
 <table>
   <thead>
@@ -156,7 +138,7 @@ Each type has distinct traffic patterns and usage expectations, allowing TBMQ to
   <tbody>
     <tr>
       <td>DEVICE</td>
-      <td>Non-Persistent<br>(Clean Start)</td>
+      <td>Non-persistent<br>(Clean Start)</td>
       <td>
         Simple environmental monitoring.<br>
         Example: temperature sensor publishing every minute using QoS 0.
@@ -178,7 +160,7 @@ Each type has distinct traffic patterns and usage expectations, allowing TBMQ to
     </tr>
     <tr>
       <td>APPLICATION</td>
-      <td>Non-Persistent<br>(Clean Start)</td>
+      <td>Non-persistent<br>(Clean Start)</td>
       <td>
         Generally not recommended for data processing applications.
       </td>
@@ -202,10 +184,28 @@ Each type has distinct traffic patterns and usage expectations, allowing TBMQ to
 
 ### Backpressure
 
-Backpressure in TBMQ is used when a Client cannot consume messages fast enough, helping protect the Broker from overload.
+**Backpressure** is a flow-control mechanism that protects the Broker from overload when a client cannot consume messages fast enough.  
+It is triggered when the client’s network channel becomes non-writable or internal buffers reach configured limits.
 
-Backpressure behavior depends on the **session type**:
-- With **non-persistent sessions**, messages are dropped when the Client is slow, as no delivery guarantees are expected.
-- With **persistent sessions**, messages are preserved to maintain delivery guarantees, either by buffering (DEVICE clients) or pausing consumption at the infrastructure level (APPLICATION clients).
+For **non-persistent sessions**, messages are delivered only while the client is connected and writable. When backpressure occurs, messages are dropped immediately and no buffering or retries are performed, even for QoS 1 or QoS 2.
 
-For a detailed explanation, see the dedicated Backpressure [documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/backpressure/).
+In **persistent sessions**, messages are preserved to maintain delivery guarantees. Messages are buffered for **DEVICE** clients or consumption is paused for **APPLICATION** clients, and delivery resumes automatically once the client reconnects or becomes writable again.
+
+Backpressure behavior in TBMQ is controlled by broker-level limits such as the maximum number of persisted messages per session, session storage memory limits, and pause/resume thresholds for high-throughput consumers.
+
+For detailed configuration options and examples, see the dedicated [**Backpressure documentation**](/docs/{{docsPrefix}}mqtt-broker/user-guide/backpressure/).
+
+## Last Will Handling Based on Session State
+
+The **Last Will Message** is associated with an MQTT session and is published by the Broker when a client disconnects abnormally.  
+In MQTT v5.0, the **Will Delay Interval** adds session-aware control over when (and if) the Will Message is published.
+
+In a **non-persistent session**, the session ends immediately when the network connection is closed.
+- If the client disconnects abnormally, the Will Message is published **immediately**.
+- The Will Delay Interval has no practical effect, as the session does not survive the disconnect.
+- This behavior matches MQTT v3.1.1 semantics.
+
+In a **persistent session**, the session remains active after a disconnect, allowing the Will Delay Interval to take effect.
+- When the client disconnects abnormally, the Broker **delays publishing** the Will Message.
+- If the client reconnects and resumes the session **before the Will Delay Interval expires**, the Will Message is **not published**.
+- If the client does not reconnect in time, the Will Message is published when the delay expires.
