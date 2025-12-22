@@ -254,19 +254,30 @@ Let&#39;s check the debug events by clicking the **Events** icon button. The deb
 
 ## Example
 
-### Example 1: Copy device battery level to parent Asset
+### Example 1: Propagate device battery level to the parent Asset
 
 <b><font size="4">Use case</font></b>
 
-The Tracker device sends its battery level (for example, <span class="code-light">batteryLevel = 78</span>).   
-This device is linked to the **Vehicle** asset through a **Contains** relation.   
-When the battery level changes, you need to automatically propagate the <span class="code-light">batteryLevel</span> value to the **Vehicle** asset and store it as an attribute called **deviceBattery**.
+The **Tracker** device sends the battery charge level (**batteryLevel**).
+It is linked to the **Track 1** asset via the **Contains** relation.
 
-{% include images-gallery.html imageCollection="example-copy-device-battery-level-to-asset-1" showListImageTitles="true" %}
+You need to automatically propagate the batteryLevel value to the asset level and store it as an attribute named **deviceBattery**.
+
+{% assign examplePropagationPreparation11 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-11-ce.png
+        title: **Create a new calculated field** for the device and select the **Script** type.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-12-ce.png
+        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagationPreparation11 %}
 
 <b><font size="4">Configuration</font></b>
 
-Create a calculated field on the device with the following configuration:
+Create a calculated field at the device level with the following parameters:
 
 <b><font size="3">General</font></b>
 - **Name:** Battery level propagation
@@ -279,24 +290,46 @@ Create a calculated field on the device with the following configuration:
 <b><font size="3">Data to propagate</font></b>
 - **Mode:** **Arguments only**
 - **Add argument:**
-    - **Entity type:** Current entity
-    - **Argument type:** Latest telemetry
-    - **Time series key:** `batteryLevel`
-    - **Output key:** `deviceBattery`
-    - **Default value:** `0`
+  - **Entity type:** Current entity
+  - **Argument type:** Latest telemetry
+  - **Time series key:** batteryLevel
+  - **Output key:** deviceBattery
+  - **Default value:** 0
 
 <b><font size="3">Output</font></b>
-- **Type:** Attribute
+
+- **Output type:** Attribute
 - **Attribute scope:** Server attributes
-- **Strategy:** Process right away
-    - **Save to database**
-    - **Do updates only if the value changes**
+- **Strategy**: Process right away
 
-{% include images-gallery.html imageCollection="example-copy-device-battery-level-to-asset-2" showListImageTitles="true" %}
+Click **Add** to save the calculated field.
 
-Result
+{% assign examplePropagation11 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-13-ce.png
+        title: **Create a new calculated field** for the device and select the **Script** type.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-14-ce.png
+        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-15-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-16-ce.png
+        title: **Create a new calculated field** for the device and select the **Script** type.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-17-ce.png
+        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+'
+%}
 
-The following attribute will be stored on the Vehicle:
+{% include images-gallery.liquid imageCollection=examplePropagation11 %}
+
+<hr>
+
+<b><font size="4">Result</font></b>
+
+On the **Track 1** asset, the following attribute will be stored:
 
 ```json
 {
@@ -306,14 +339,69 @@ The following attribute will be stored on the Vehicle:
 
 {% include images-gallery.html imageCollection="example-copy-device-battery-level-to-asset-3" showListImageTitles="true" %}
 
+{% assign examplePropagation12 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-18-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-19-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-110-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagation12 %}
+
 <hr>
 
-### Example 2:
+### Example 2: Dew point calculation and propagation to a parent Asset
 
+<b><font size="4">Use case</font></b>
 
-The function below uses the <span class="code-light">temperature</span> and <span class="code-light">humidity</span> arguments to calculate the dew point value.   
-The calculation result will be stored in the variable <span class="code-light">dewPoint</span>, rounding the value to one decimal places.
+The device sends temperature and humidity values.
+You need to:
+- Calculate the **dew point**.
+- Propagate the result to the related asset.
+- Store it as an attribute.
 
+<hr>
+
+<b><font size="4">Configuration</font></b>
+
+Create a calculated field at the device level:
+
+<b><font size="3">General</font></b>
+- **Name:** Dew point propagation
+- **Type:** Propagation
+
+<b><font size="3">Propagation path to related entities</font></b>
+- **Relation direction:** Up to parent
+- **Relation type:** Contains
+
+<b><font size="3">Data to propagate</font></b>
+- **Mode:** Calculation result
+
+**Add two arguments:**
+
+**Argument 1**
+- **Entity type:** Current entity
+- **Argument type:** Latest telemetry
+- **Time series key:** temperature
+- **Argument name:** temperature
+
+**Argument 2**
+- **Entity type:** Current entity
+- **Argument type:** Latest telemetry
+- **Time series key:** humidity
+- **Argument name:** humidity
+
+<b><font size="3">Script</font></b>
+
+Insert the dew point calculation function into the **Script** field:
+
+**function calculate(ctx, temperatureF) {**
 ```js
 // Constants for Magnus formula
 var a = 17.625;
@@ -325,12 +413,123 @@ var dewPoint = toFixed((b * alpha) / (a - alpha), 1);
 return {"dewPoint": dewPoint};
 ```
 {: .copy-code}
+**}**
 
-{% include images-gallery.html imageCollection="expression-script-calculated-fields-1" %}
+<b><font size="3">Output</font></b>
+
+- **Output type:** Time series
+- **Strategy**: Process right away
+
+Click **Add** to save the calculated field.
+
+{% assign examplePropagation21 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-21-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-22-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-23-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-24-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-25-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-26-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-27-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-28-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagation21 %}
 
 <hr>
 
-### Example 3: Propagate boolean alert flag to multiple child devices
+<b><font size="4">Result</font></b>
+
+In the **Events** window, you will see:
+
+{% assign examplePropagation22 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-29-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagation22 %}
+
+On the related asset, a new telemetry key **dewPoint** will appear in the **Latest telemetry** tab.
+
+{% assign examplePropagation23 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation-example-210-ce.png
+        title: On the related asset, a new telemetry key **dewPoint** will appear in the **Latest telemetry** tab.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagation23 %}
+
+<hr>
+
+### Example 3: Propagate HVAC mode to multiple child devices
+
+The **Building A** asset has multiple child HVAC devices linked via the **Manages** relation.
+The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+
+You need to automatically propagate this value to all child HVAC devices.
+
+<hr>
+
+<b><font size="4">Configuration</font></b>
+
+Create a calculated field **at the Building A asset level**:
+
+<b><font size="3">General</font></b>
+- **Name:** Cooling propagation
+- **Type:** Propagation
+
+<b><font size="3">Propagation path to related entities</font></b>
+- **Relation direction:** Down to child
+- **Relation type:** Manages
+
+<b><font size="3">Data to propagate</font></b>
+- **Mode:** Arguments only
+
+**Add two arguments:**
+
+**Argument 1**
+- **Entity type:** Current entity
+- **Argument type:** Attribute
+- **Time series key:** hvacMode
+- **Argument name:** hvacMode
+- **Default value:** `off`
+
+<b><font size="3">Output</font></b>
+
+- **Output type:** Attribute
+- **Strategy**: Process right away
+
+Click **Add** to save the calculated field.
+
+
+
+
+
+
+
+
+
+
+
 
 The **Building A** asset has several child HVAC devices.   
 The devices **HVAC 1**, **HVAC 2**, and **HVAC 3** are linked to **Building A** through a **Manages** relation.   

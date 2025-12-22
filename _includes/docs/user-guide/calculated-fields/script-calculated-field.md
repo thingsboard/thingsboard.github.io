@@ -271,7 +271,7 @@ Both messages will have the same timestamp.
 
 {% include images-gallery.liquid imageCollection=exampleScript12 %}
 
-In the **Latest telemetry** tab, the following key will appear: **temperatureC**.
+In the **Latest telemetry** tab, the **temperatureC** key will appear.
 
 {% assign exampleScript13 = '
     ===
@@ -286,7 +286,7 @@ In the **Latest telemetry** tab, the following key will appear: **temperatureC**
 
 ### Example 2: Air density calculation
 
-<b><font size="3">Scenario</font></b>
+<b><font size="4">Scenario</font></b>
 
 The **Building A** asset has two associated devices:
 - **Smart Device** — sends the temperature value as telemetry (**temperature**).
@@ -294,16 +294,18 @@ The **Building A** asset has two associated devices:
 
 You need to calculate the **air density** based on these data and store the result as telemetry.
 
+<b><font size="4">Prerequisites</font></b>
+
 {% assign examplePrepareScript2 = '
     ===
         image: /images/user-guide/calculated-fields/script-example-prepare-1-ce.png
-        title: An asset **Building A**.
+        title: An asset: **Building A**.
     ===
         image: /images/user-guide/calculated-fields/script-example-prepare-2-ce.png
-        title: A **Smart Device** that sends the temperature value as telemetry.
+        title: A device: **Smart Device** (sends **temperature** telemetry)
     ===
         image: /images/user-guide/calculated-fields/script-example-prepare-3-ce.png
-        title: An **Altimeter** device that sends the altitude value as an attribute.
+        title: A device: **Altimeter** (sends **altitude** as an attribute)
 '
 %}
 
@@ -311,7 +313,38 @@ You need to calculate the **air density** based on these data and store the resu
 
 <hr>
 
-<b><font size="3">Calculation function</font></b>
+<b><font size="4">Configuration steps</font></b>
+
+Create a calculated field at the asset level with the following parameters:
+
+<b><font size="3">General</font></b>
+- **Name:** Air density calculation
+- **Type:** Script
+
+<b><font size="3">Arguments</font></b>
+
+Add two arguments:
+
+**Argument 1**
+- **Entity type:** Device
+- **Device name:** Smart Device
+- **Argument type:** Time series rolling
+- **Time series key:** temperature
+- **Argument name:** temperature
+- **Time window:** 15 minutes
+- **Max value:** 100
+
+**Argument 2**
+- **Entity type:** Device
+- **Device name:** Altimeter
+- **Argument type:** Attribute
+- **Attribute scope:** Shared attribute
+- **Attribute key:** altitude
+- **Argument name:** altitude
+
+<b><font size="3">Script</font></b>
+
+Paste the calculation function into the **Script** field:
 
 **function calculate(ctx, altitude, temperature) {**
 ```js
@@ -332,23 +365,12 @@ return {
 {: .copy-code}
 **}**
 
-<hr>
+<b><font size="3">Output</font></b>
 
-<b><font size="3">Configuration steps</font></b>
+- **Output type:** Time series
+- **Strategy**: Process right away
 
-- **Create a new calculated field** for the asset **Building A** and select the **Script** type.
-- In the **Arguments** section, add an argument:
-  - **Entity:** Smart Device 
-  - **Argument type:** Time series rolling 
-  - **Time series key:** temperature
-- Add a second argument:
-  - **Entity:** Altimeter 
-  - **Argument type:** Attribute 
-  - **Attribute key:** altitude
-- Paste the calculation function into the **Script** field. 
-- In the **Output** section, select:
-    - **Type:** Time series
-- Click **Add** to save the calculated field.
+Click **Add** to save the calculated field.
 
 {% assign exampleScript21 = '
     ===
@@ -373,14 +395,14 @@ return {
 
 <hr>
 
-<b><font size="3">Result</font></b>
+<b><font size="4">Result</font></b>
 
-In the **Events** pop-up window, you can view the input arguments and the calculation result.
+In the **Events** window, the arguments and the calculation result are displayed.
 
 {% assign exampleScript22 = '
     ===
         image: /images/user-guide/calculated-fields/script-example-26-ce.png
-        title: In the **Events** pop-up window, you can view the input arguments and the calculation result.
+        title: In the **Events** window, the arguments and the calculation result are displayed.
     ===
         image: /images/user-guide/calculated-fields/script-example-27-ce.png
 '
@@ -388,12 +410,12 @@ In the **Events** pop-up window, you can view the input arguments and the calcul
 
 {% include images-gallery.liquid imageCollection=exampleScript22 %}
 
-In the **Latest telemetry** tab, the following key will appear: **airDensity**.
+In the **Latest telemetry** tab of the **Building A** asset, the **airDensity** key will appear.
 
 {% assign exampleScript23 = '
     ===
         image: /images/user-guide/calculated-fields/script-example-28-ce.png
-        title: In the **Latest telemetry** tab of the **Building A**, the following key will appear: **airDensity**.
+        title: In the **Latest telemetry** tab of the **Building A** asset, the **airDensity** key will appear.
 '
 %}
 
@@ -403,21 +425,52 @@ In the **Latest telemetry** tab, the following key will appear: **airDensity**.
 
 ### Example 3: Freezer temperature analysis
 
-<b><font size="3">Scenario</font></b>
+<b><font size="4">Scenario</font></b>
 
-This example demonstrates how to analyze freezer operation based on two telemetry parameters:
-- **temperature** — internal temperature (rolling time series argument)
-- **defrost** — defrost mode status (rolling time series argument, 0 — off, 1 — on)
+This example demonstrates freezer operation analysis based on two telemetry parameters:
+- **temperature** — internal temperature (rolling time series)
+- **defrost** — defrost mode status
+  (0 — off, 1 — on)
 
 The goal is to detect situations where:
 - the freezer is **not** in defrost mode, **and**
 - the air temperature exceeds **-5 °C**.
 
-In such cases, you need to generate a telemetry event containing information about the issue.
+In such cases, the system should generate a telemetry event containing information about the issue.
 
 <hr>
 
-<b><font size="3">Calculation function</font></b>
+<b><font size="4">Configuration steps</font></b>
+
+Create a calculated field at the device level with the following parameters:
+
+<b><font size="3">General</font></b>
+- **Name:** Freezer temperature analysis
+- **Type:** Script
+
+<b><font size="3">Arguments</font></b>
+
+Add two arguments:
+
+**Argument 1**
+- **Entity type:** Current entity
+- **Argument type:** Time series rolling
+- **Time series key:** defrost
+- **Argument name:** defrost
+- **Time window:** 15 minutes
+- **Max value:** 100
+
+**Argument 2**
+- **Entity type:** Current entity
+- **Argument type:** Time series rolling
+- **Time series key:** temperature
+- **Argument name:** temperature
+- **Time window:** 15 minutes
+- **Max value:** 100
+
+<b><font size="3">Script</font></b>
+
+Paste the calculation function into the **Script** field:
 
 **function calculate(ctx, defrost, temperature) {**
 ```js
@@ -443,25 +496,12 @@ return result;
 {: .copy-code}
 **}**
 
-<hr>
+<b><font size="3">Output</font></b>
 
-<b><font size="3">Configuration steps</font></b>
+- **Output type:** Time series
+- **Strategy**: Process right away
 
-- **Create a new calculated field** for the device and select the **Script** type.
-- In the **Arguments** section, add an argument:
-  - **Entity type:** Current entity
-  - **Argument type:** Time series rolling
-  - **Time series key:** defrost 
-  - **Argument name:** defrost
-- Add a second argument:
-  - **Entity type:** Current entity 
-  - **Argument type:** Time series rolling 
-  - **Time series key:** temperature 
-  - **Argument name:** temperature
-- Paste the calculation function into the **Script** field.
-- In the **Output** section, select:
-    - **Type:** Time series
-- Click **Add** to save the calculated field.
+Click **Add** to save the calculated field.
 
 {% assign exampleScript31 = '
     ===
@@ -486,14 +526,14 @@ return result;
 
 <hr>
 
-<b><font size="3">Result</font></b>
+<b><font size="4">Result</font></b>
 
-In the **Events** pop-up window, you can view the input arguments and the calculation result.
+In the **Events** window, you can view the generated events.
 
 {% assign exampleScript32 = '
     ===
         image: /images/user-guide/calculated-fields/script-example-36-ce.png
-        title: In the **Events** pop-up window, you can view the input arguments and the calculation result.
+        title: In the **Events** window, you can view the generated events.
     ===
         image: /images/user-guide/calculated-fields/script-example-37-ce.png
 '
@@ -501,7 +541,19 @@ In the **Events** pop-up window, you can view the input arguments and the calcul
 
 {% include images-gallery.liquid imageCollection=exampleScript32 %}
 
-Go to the **Latest telemetry** tab. The **issue** key is the result of the calculation.
+the **Latest telemetry** tab, the issue key will appear, for example:
+
+```json
+{
+  "issue": {
+    "temperature": 0.8,
+    "defrostState": false
+  }
+}
+
+```
+
+This indicates that the freezer is in a potentially critical state.
 
 {% assign exampleScript33 = '
     ===

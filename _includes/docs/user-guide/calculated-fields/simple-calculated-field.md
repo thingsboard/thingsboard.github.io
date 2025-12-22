@@ -155,8 +155,6 @@ Let&#39;s check the debug events by clicking the **Events** icon button. The deb
 
 <hr>
 
-<hr>
-
 ## Example: Dew point calculation
 
 <b><font size="4">Scenario</font></b>
