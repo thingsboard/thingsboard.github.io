@@ -233,10 +233,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
-## Post Installation Steps
-
-{% include templates/trendz/install/post-installation-steps.md %}
-
 ## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

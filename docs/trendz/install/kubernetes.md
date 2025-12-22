@@ -85,9 +85,10 @@ nano trendz-secret.yml
 
 ```bash
 kubectl apply -f trendz-namespace.yml
-kubectl apply -f trendz-secret.yml
 kubectl apply -f trendz-app-config.yml
-kubectl apply -f trendz-app-statefulset.yml
+kubectl apply -f trendz-app-db-config.yml
+kubectl apply -f trendz-app-pvc.yml
+kubectl apply -f trendz-app-deployment.yml
 kubectl apply -f trendz-python-executor-config.yml
 kubectl apply -f trendz-python-executor-deployment.yml
 
@@ -123,10 +124,6 @@ Different environments have different requirements for these configurations, so 
 ## Authentication
 
 {% include templates/trendz/install/authentication.md %}
-
-## Post Installation Steps
-
-{% include templates/trendz/install/post-installation-steps.md %}
 
 ## Next steps
 
