@@ -134,7 +134,8 @@ Data mapping contains all the necessary settings for flexible data management.
 Reading attributes/time series<small></small>%,%readingattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/reading-attributes-and-time-series.md%br%
 Multiplier<small>in attributes/time series</small>%,%multiplierinattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/multiplier-in-attributes-and-time-series.md%br%
 Divider<small>in attributes/time series</small>%,%dividerinattributesandtimeseries%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/divider-in-attributes-and-time-series.md%br%
-Batch reading<small>(advanced configuration mode only)</small>%,%batchreading%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/batch-reading.md{% endcapture %}
+Batch reading<small>(advanced configuration mode only)</small>%,%batchreading%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/batch-reading.md%br%
+Enum mapping<small>(advanced configuration mode only)</small>%,%enummapping%,%templates/iot-gateway/modbus-connector/examples/time-series-and-attributes/enum-mapping.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="modbus-attributes-timeseries-examples" toggle-spec=modbus-attributes-timeseries-examples %}
 
 ### Requests mapping
