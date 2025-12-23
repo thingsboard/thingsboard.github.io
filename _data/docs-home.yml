@@ -210,6 +210,8 @@ toc:
     new: true
   - title: MCP Server
     path: /docs/samples/analytics/mcp-server-ai-insights/
+  - title: n8n node
+    path: /docs/samples/analytics/n8n-node/
     new: true
   - title: AI models
     path: /docs/samples/analytics/ai-models/
