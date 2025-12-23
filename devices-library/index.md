@@ -5,7 +5,7 @@ description: Device library and connecting guides
 containerId: "devices-card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
-itemsPerPage: "16"
+itemsPerPage: "18"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
 not-found: "No devices have been found..."

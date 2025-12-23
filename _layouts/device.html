@@ -1,25 +1,27 @@
 <!Doctype html>
-<html id="docs" lang="en">
+<html id="device" lang="en">
 
 {% include head-header.html %}
 
-<section id="encyclopedia">
-    <div id="docsContent" class="hasTocContent">
-        <div id="table-of-contents">
-            {% if hasTocContent == "true" %}
-            <span>On this page</span>
+<div id="docs">
+    <section id="encyclopedia">
+        <div id="docsContent" class="hasTocContent">
+            <div id="table-of-contents">
+                {% if hasTocContent == "true" %}
+                <span>On this page</span>
+                {% endif %}
+            </div>
+            {% if page.breadcrumbs %}
+            {% include manual-breadcrumbs.liquid %}
             {% endif %}
+            <div id="content">
+                {% include device-card.liquid %}
+                {{ content }}
+            </div>
+            {% include footer.html %}
         </div>
-        {% if page.breadcrumbs %}
-        {% include manual-breadcrumbs.liquid %}
-        {% endif %}
-        <div id="content">
-            {% include device-card.liquid %}
-            {{ content }}
-        </div>
-        {% include footer.html %}
-    </div>
-</section>
+    </section>
+</div>
 
 
 {% include scroll-progress-button.liquid %}

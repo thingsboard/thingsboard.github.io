@@ -451,7 +451,7 @@
 
         container.querySelectorAll('.crisp').forEach(el => el.remove());
 
-        if (selectedFilters.length > 0 && selectedPlatform) {
+        if (selectedPlatform) {
             const platformCrisp = document.createElement('span');
             platformCrisp.className = 'crisp crisp-platform';
             platformCrisp.textContent = getPlatformLabel(selectedPlatform);
