@@ -64,9 +64,9 @@ itemsPerPage: "9"
             </div>
         </div>
         <div class="client-card" id="Smart city">
-            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('/images/case-studies/kiotera.webp');">
+            <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%),url('https://img.thingsboard.io/case-studies/kiotera.webp');">
                 <a class="content" href="/case-studies/kiotera">
-                    <img class="logo" src="/images/case-studies/kiotera.svg" title="KIOTERA" alt="KIOTERA logo">
+                    <img class="logo" src="https://img.thingsboard.io/case-studies/kiotera.svg" title="KIOTERA" alt="KIOTERA logo">
                     <p>Fast paced IoT-Implementation: How Customers of KIOTERA profit from standardized IoT-solutions based on ThingsBoard</p>
                     <p class="link">Learn more <i class="fas fa-arrow-right"></i></p>
                     <span class="visually-hidden">about Fast-Paced IoT Implementation with KIOTERA on ThingsBoard</span>

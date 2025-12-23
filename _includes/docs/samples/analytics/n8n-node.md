@@ -97,16 +97,16 @@ For self-hosted n8n instances, you can install directly via the web interface:
 
 {% assign n8nGuiInstallation = '
     ===
-        image: /images/samples/analytics/n8n-node/n8n-gui-installation-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-1.png
         title: Open **n8n** in your browser. In the bottom-left corner, click the **three dots** button and select **Settings** from the dropdown menu.
    ===
-        image: /images/samples/analytics/n8n-node/n8n-gui-installation-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-2.png
         title: Go to the **Community Nodes** tab and click **Install a community node**.
    ===
-        image: /images/samples/analytics/n8n-node/n8n-gui-installation-3.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-3.png
         title: Enter the package name: `n8n-nodes-thingsboard` and click **Install**.
     ===
-        image: /images/samples/analytics/n8n-node/n8n-gui-installation-4.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/n8n-gui-installation-4.png
         title: Wait for the installation to complete. Then, refresh the browser page.
 '
 %}
@@ -216,16 +216,16 @@ The credentials are encrypted and stored securely by n8n. You can reuse the same
 
 {% assign n8nGuiInstallation = '
     ===
-        image: /images/samples/analytics/n8n-node/credentials-configuration-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-1.png
         title: In the top-left corner, click **+** and select **Credentials** from the dropdown menu.
     ===
-        image: /images/samples/analytics/n8n-node/credentials-configuration-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-2.png
         title: Search and select **ThingsBoard API** to connect to and click **Continue**.
     ===
-        image: /images/samples/analytics/n8n-node/credentials-configuration-3.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-3.png
         title: Fill in the required fields:<br>- **Base URL** — your ThingsBoard instance URL (without a trailing slash)<br>- **Username** — your ThingsBoard account username<br>- **Password** — your ThingsBoard account password.<br>Click **Save** to store the credentials.
     ===
-        image: /images/samples/analytics/n8n-node/credentials-configuration-4.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/credentials-configuration-4.png
         title: The credentials are encrypted and stored securely by n8n. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
 '
 %}
@@ -252,16 +252,16 @@ Note: the number of operations may differ between **Community Edition** and **Pr
 
 {% assign installationVerification = '
     ===
-        image: /images/samples/analytics/n8n-node/installation-verification-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-1.png
         title: In the top-right corner of the interface, click Create Workflow.
     ===
-        image: /images/samples/analytics/n8n-node/installation-verification-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-2.png
         title: On the workflow canvas, click the **+** button to open the list of available nodes.
     ===
-        image: /images/samples/analytics/n8n-node/installation-verification-3.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-3.png
         title: In the node search field, type **ThingsBoard**. The **ThingsBoard node** should appear in the search results. Click on it.
     ===
-        image: /images/samples/analytics/n8n-node/installation-verification-4.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/installation-verification-4.png
         title: A list of available **actions** will be displayed.
 '
 %}
@@ -376,16 +376,16 @@ Use the ThingsBoard node as a **tool for AI Agents** to enable intelligent, natu
 
 {% assign example1 = '
     ===
-        image: /images/samples/analytics/n8n-node/example-1-1-0.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-1-1-0.png
         title: Create a new workflow with AI Agent node. Choose your AI Model (Gemini, Anthropic, ChatGPT, etc.) and configure memory settings.
     ===
-        image: /images/samples/analytics/n8n-node/example-1-1-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-1-1-1.png
         title: Select ThingsBoard from the Tools list. Add **Get devices** and **Get timeseries** operations.
     ===
-        image: /images/samples/analytics/n8n-node/ai-agent-define-parameter.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/ai-agent-define-parameter.png
         title: For tools with required or optional fields, the AI model intelligently determines parameter values based on conversation context. The model decides which values to pass automatically.
     ===
-        image: /images/samples/analytics/n8n-node/example-1-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-1-2.png
         title: Open the chat interface and write your natural language query.
 '
 %}
@@ -494,16 +494,16 @@ This step simulates an external input (for example, webhook or API call).
 
 {% assign example31 = '
     ===
-        image: /images/samples/analytics/n8n-node/example-3-1-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-1.png
         title: Click **Add first step…** and select **Trigger manually**.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-1-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-2.png
         title: Click on the trigger node to open its configuration.
 ===
-        image: /images/samples/analytics/n8n-node/example-3-1-3.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-3.png
         title: In the top-right corner, click the **pencil** icon.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-1-4.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-1-4.png
         title: Paste the following JSON into the input field. **Save** the changes and **back to canvas**.
 '
 %}
@@ -533,22 +533,22 @@ This step retrieves the device entity from ThingsBoard using the name provided b
 
 {% assign example32 = '
     ===
-        image: /images/samples/analytics/n8n-node/example-3-2-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-1.png
         title: Click the **+** button to the right of the **trigger node**.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-2-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-2.png
         title: Find and select **ThingsBoard**
     ===
-        image: /images/samples/analytics/n8n-node/example-3-2-3.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-3.png
         title: Choose **Get a device by name** action.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-2-4.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-4.png
         title: Drag **deviceName** from the **INPUT** panel (left side) into the **Name** field. This creates a dynamic reference to the trigger input.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-2-5.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-5.png
         title: Click **Execute step**
     ===
-        image: /images/samples/analytics/n8n-node/example-3-2-6.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-2-6.png
         title: The node returns the full device object, including:<br>- device ID<br>- <span class="code-light">type</span><br>- additional metadata<br>**Back to canvas**.
 '
 %}
@@ -582,10 +582,10 @@ This step retrieves all available telemetry keys for the selected device.
 
 {% assign example33 = '
     ===
-        image: /images/samples/analytics/n8n-node/example-3-3-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-3-1.png
         title: - Click the **+** button to the right of the **Get a device by name** node.<br>- Select **ThingsBoard**<br>- Choose **Get timeseries keys** action.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-3-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-3-2.png
         title: - Set parameters dynamically:<br>- Entity ID<br>- Entity Type<br>You can drag these values directly from the **INPUT** panel (left side).<br>- Click **Execute step**<br>- **Back to canvas**
 '
 %}
@@ -618,10 +618,10 @@ This step retrieves the actual telemetry values using the keys obtained in Step 
 
 {% assign example34 = '
     ===
-        image: /images/samples/analytics/n8n-node/example-3-4-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-4-1.png
         title: Click the **+** button to the right of the trigger node.<br>Select **ThingsBoard**.<br>Choose **Get timeseries action**.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-4-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-4-2.png
         title: Configure parameters:<br>- **Entity ID**<br>- **Entity Type**<br>- **Keys (Comma Separated)**<br>You can drag these values directly from the **INPUT** panel (left side).<br>- Click **Execute step**.<br>- **Back to canvas**.
 '
 %}
@@ -644,13 +644,13 @@ This workflow dynamically:
 
 {% assign ruleChainUseCase = '
     ===
-        image: /images/samples/analytics/n8n-node/example-3-final-1.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-final-1.png
         title: Accepts a device name as input. Finds the corresponding device in ThingsBoard.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-final-2.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-final-2.png
         title: Discovers available telemetry keys.
     ===
-        image: /images/samples/analytics/n8n-node/example-3-final-3.png
+        image: https://img.thingsboard.io/samples/analytics/n8n-node/example-3-final-3.png
         title: Retrieves telemetry values for the specified time window.
 '
 %}

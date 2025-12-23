@@ -1,14 +1,14 @@
 smart-energy:
   label: Smart Energy
-  icon: /images/smart-energy-icon.svg
+  icon: https://img.thingsboard.io/smart-energy-icon.svg
   feedback:
     - author: Daniel Portero
       position: Cloud & App Development Manager
       companyName: Circutor
       id: circutor
       link: https://circutor.com/
-      authorImage: /images/customers/circutor-person.webp
-      companyImage: /images/customers/circutor.svg
+      authorImage: https://img.thingsboard.io/customers/circutor-person.webp
+      companyImage: https://img.thingsboard.io/customers/circutor.svg
       companyImageWidth: 138
       companyImageHeight: 32
       text:
@@ -20,8 +20,8 @@ smart-energy:
       companyName: Oneserve Limited
       id: oneserve
       link: https://oneserve.co.uk/
-      authorImage: /images/customers/oneserve-person.webp
-      companyImage: /images/customers/oneserve.svg
+      authorImage: https://img.thingsboard.io/customers/oneserve-person.webp
+      companyImage: https://img.thingsboard.io/customers/oneserve.svg
       companyImageWidth: 132
       companyImageHeight: 32
       text:
@@ -34,7 +34,7 @@ smart-energy:
       companyName: Nettra
       id: nettra
       link: https://www.nettra.tech/
-      companyImage: /images/customers/nettra.webp
+      companyImage: https://img.thingsboard.io/customers/nettra.webp
       companyImageWidth: 127
       companyImageHeight: 32
       text:
@@ -46,8 +46,8 @@ smart-energy:
       companyName: Berliner Energieinstitut GmbH
       id: berliner
       link: https://www.berliner-energieinstitut.de/
-      authorImage: /images/customers/bei-person.webp
-      companyImage: /images/customers/bei.svg
+      authorImage: https://img.thingsboard.io/customers/bei-person.webp
+      companyImage: https://img.thingsboard.io/customers/bei.svg
       companyImageWidth: 189
       companyImageHeight: 32
       text:
@@ -58,7 +58,7 @@ smart-energy:
       companyName: Environmental Energy Controls
       id: e2cbms
       link:  https://www.e2cbms.com/
-      companyImage: /images/customers/eec.svg
+      companyImage: https://img.thingsboard.io/customers/eec.svg
       companyImageWidth: 111
       companyImageHeight: 60
       text:
@@ -72,8 +72,8 @@ smart-energy:
       companyName: co.met GmbH
       id: comet
       link: https://www.co-met.info/
-      authorImage: /images/customers/comet-person.webp
-      companyImage: /images/customers/comet.svg
+      authorImage: https://img.thingsboard.io/customers/comet-person.webp
+      companyImage: https://img.thingsboard.io/customers/comet.svg
       companyImageWidth: 190
       companyImageHeight: 32
       text:
@@ -82,14 +82,14 @@ smart-energy:
         2: 'In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains. ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.'
 agriculture:
   label: Agriculture
-  icon: /images/agriculture-icon.svg
+  icon: https://img.thingsboard.io/agriculture-icon.svg
   feedback:
     - author: Jeppe Walther
       position: CTO
       companyName: Supertech Agroline
       id: supertech
       link: https://www.agrolog.io/
-      companyImage: /images/customers/supertech-agroline.svg
+      companyImage: https://img.thingsboard.io/customers/supertech-agroline.svg
       companyImageWidth: 122
       companyImageHeight: 36
       text:
@@ -100,7 +100,7 @@ agriculture:
       position: Founder & Managing Director
       companyName: Enviroeye
       id: enviroeye
-      companyImage: /images/customers/enviroeye.svg
+      companyImage: https://img.thingsboard.io/customers/enviroeye.svg
       companyImageWidth: 134
       companyImageHeight: 38
       text:
@@ -112,7 +112,7 @@ agriculture:
       companyName: Keners s.r.o.
       id: keners
       link: https://keners.sk/
-      companyImage: /images/customers/keners.svg
+      companyImage: https://img.thingsboard.io/customers/keners.svg
       companyImageWidth: 153
       companyImageHeight: 32
       text:
@@ -121,15 +121,15 @@ agriculture:
         2: 'We highly appreciate the support of the creators, their feedback is simply excellent!'
 smart-buildings:
   label: Smart Buildings
-  icon: /images/smart-buildings-icon.svg
+  icon: https://img.thingsboard.io/smart-buildings-icon.svg
   feedback:
     - author: Rifat Şeker
       position: Founder
       companyName: ARIOT
       id: ariot
       link: https://www.ariot.com.tr/
-      authorImage: /images/customers/ariot-person.webp
-      companyImage: /images/customers/ariot.svg
+      authorImage: https://img.thingsboard.io/customers/ariot-person.webp
+      companyImage: https://img.thingsboard.io/customers/ariot.svg
       companyImageWidth: 80
       companyImageHeight: 62
       text:
@@ -140,8 +140,8 @@ smart-buildings:
       companyName: Sensolyze GmbH
       id: medline
       link: https://www.medlineadana.com.tr/en/
-      authorImage: /images/customers/medline-person.webp
-      companyImage: /images/customers/medline.svg
+      authorImage: https://img.thingsboard.io/customers/medline-person.webp
+      companyImage: https://img.thingsboard.io/customers/medline.svg
       companyImageWidth: 180
       companyImageHeight: 62
       text:
@@ -152,8 +152,8 @@ smart-buildings:
       companyName: Sensolyze GmbH
       id: sensolyze
       link: https://www.sensolyze.com/
-      authorImage: /images/customers/sensolyze-person.webp
-      companyImage: /images/customers/sensolyze.svg
+      authorImage: https://img.thingsboard.io/customers/sensolyze-person.webp
+      companyImage: https://img.thingsboard.io/customers/sensolyze.svg
       companyImageWidth: 180
       companyImageHeight: 32
       text:
@@ -165,8 +165,8 @@ smart-buildings:
       companyName: mdeg GmbH
       id: mdeg
       link: https://www.mdeg-digital.com/
-      authorImage: /images/customers/mdeg-person.webp
-      companyImage: /images/customers/mdeg.webp
+      authorImage: https://img.thingsboard.io/customers/mdeg-person.webp
+      companyImage: https://img.thingsboard.io/customers/mdeg.webp
       companyImageWidth: 94
       companyImageHeight: 60
       text:
@@ -178,7 +178,7 @@ smart-buildings:
       companyName: Environmental Energy Controls
       id: e2cbms
       link: https://www.e2cbms.com/
-      companyImage: /images/customers/eec.svg
+      companyImage: https://img.thingsboard.io/customers/eec.svg
       companyImageWidth: 111
       companyImageHeight: 60
       text:
@@ -192,8 +192,8 @@ smart-buildings:
       companyName: Oneserve Limited
       id: oneserve
       link: https://oneserve.co.uk/
-      authorImage: /images/customers/oneserve-person.webp
-      companyImage: /images/customers/oneserve.svg
+      authorImage: https://img.thingsboard.io/customers/oneserve-person.webp
+      companyImage: https://img.thingsboard.io/customers/oneserve.svg
       companyImageWidth: 132
       companyImageHeight: 32
       text:
@@ -206,8 +206,8 @@ smart-buildings:
       companyName: BeaconZone
       id: beacon
       link: https://www.beaconzone.co.uk/
-      authorImage: /images/customers/beaconzone-person.webp
-      companyImage: /images/customers/beaconzone.svg
+      authorImage: https://img.thingsboard.io/customers/beaconzone-person.webp
+      companyImage: https://img.thingsboard.io/customers/beaconzone.svg
       companyImageWidth: 153
       companyImageHeight: 32
       text:
@@ -217,7 +217,7 @@ smart-buildings:
       position: Co-Founder & Executive Manager
       companyName: Conbee
       id: conbee
-      companyImage: /images/customers/conbee.svg
+      companyImage: https://img.thingsboard.io/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
       text:
@@ -228,7 +228,7 @@ smart-buildings:
       position: CTO
       companyName: TOURISTIC PLATFORM SYSTEMS SRL
       link: https://www.tps.company/
-      companyImage: /images/customers/tps.svg
+      companyImage: https://img.thingsboard.io/customers/tps.svg
       companyImageWidth: 65
       companyImageHeight: 60
       text:
@@ -236,15 +236,15 @@ smart-buildings:
         1: 'We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites.'
 smart-city:
   label: Smart City
-  icon: /images/smart-city-icon.svg
+  icon: https://img.thingsboard.io/smart-city-icon.svg
   feedback:
     - author: Klemen Pevec
       position: Head of Software Engineering
       companyName: Awake
       id: awake
       link: https://awakeboards.com/
-      authorImage: /images/customers/kemen-pevec.webp
-      companyImage: /images/customers/awake.webp
+      authorImage: https://img.thingsboard.io/customers/kemen-pevec.webp
+      companyImage: https://img.thingsboard.io/customers/awake.webp
       text:
         0: 'End-to-end rental management solution with IoT, multi-channel alerts, and branded interface.'
         1: 'We have reached out to ThingsBoard to build a rental operations dashboard for managing rental stations that offer our products. Additionally, we wanted to provide those stations with a ready-made interface for fleet and contract management. '
@@ -256,8 +256,8 @@ smart-city:
       companyName: X-TELIA
       id: xtelia
       link: https://en.x-telia.com/
-      authorImage: /images/customers/x-telia-person.webp
-      companyImage: /images/customers/x-telia.svg
+      authorImage: https://img.thingsboard.io/customers/x-telia-person.webp
+      companyImage: https://img.thingsboard.io/customers/x-telia.svg
       companyImageWidth: 160
       companyImageHeight: 32
       text:
@@ -271,8 +271,8 @@ smart-city:
       companyName: iiOOTE AB
       id: iioote
       link: https://www.iioote.com/
-      authorImage: /images/customers/iioote-person.webp
-      companyImage: /images/customers/iioote.svg
+      authorImage: https://img.thingsboard.io/customers/iioote-person.webp
+      companyImage: https://img.thingsboard.io/customers/iioote.svg
       companyImageWidth: 120
       companyImageHeight: 42
       text:
@@ -284,8 +284,8 @@ smart-city:
       companyName: Kiotera
       id: Kiotera
       link: https://kiotera.de/
-      authorImage: /images/customers/kiotera-person.webp
-      companyImage: /images/customers/kiotera.svg
+      authorImage: https://img.thingsboard.io/customers/kiotera-person.webp
+      companyImage: https://img.thingsboard.io/customers/kiotera.svg
       companyImageWidth: 166
       companyImageHeight: 60
       text:
@@ -296,7 +296,7 @@ smart-city:
       companyName: Ositech Communications, Inc.
       id: ositech
       link: https://ositech.com/
-      companyImage: /images/customers/ositech.svg
+      companyImage: https://img.thingsboard.io/customers/ositech.svg
       companyImageWidth: 145
       companyImageHeight: 36
       text:
@@ -306,7 +306,7 @@ smart-city:
       position: Co-Founder & Executive Manager
       companyName: Conbee
       id: conbee
-      companyImage: /images/customers/conbee.svg
+      companyImage: https://img.thingsboard.io/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
       text:
@@ -318,8 +318,8 @@ smart-city:
       companyName: IoT Squad
       id: iotsquad
       link: https://iotsquad.tech/
-      authorImage: /images/customers/iotsquad-tech-person.webp
-      companyImage: /images/customers/iot-squad.svg
+      authorImage: https://img.thingsboard.io/customers/iotsquad-tech-person.webp
+      companyImage: https://img.thingsboard.io/customers/iot-squad.svg
       companyImageWidth: 82
       companyImageHeight: 60
       text:
@@ -330,7 +330,7 @@ smart-city:
       companyName: MAKERS s. r. o.
       id: makers
       link: https://www.makers.sk/
-      companyImage: /images/customers/makers.svg
+      companyImage: https://img.thingsboard.io/customers/makers.svg
       companyImageWidth: 66
       companyImageHeight: 60
       text:
@@ -340,7 +340,7 @@ smart-city:
       companyName: Kalitec
       id: kalitec
       link: https://www.kalitec.com/
-      companyImage: /images/customers/kalitec.svg
+      companyImage: https://img.thingsboard.io/customers/kalitec.svg
       companyImageWidth: 166
       companyImageHeight: 60
       collapse: 'true'
@@ -358,15 +358,15 @@ smart-city:
         9: 'It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!'
 telecom:
   label: Telecom
-  icon: /images/telecom-icon.svg
+  icon: https://img.thingsboard.io/telecom-icon.svg
   feedback:
     - author: Tamati Iro
       position: VAS Manager
       companyName: Vodafone
       id: vodafone
       link: https://www.vodafone.co.ck/
-      authorImage: /images/customers/tamati-iro.webp
-      companyImage: /images/customers/vodafone.svg
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
       companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
@@ -383,7 +383,7 @@ telecom:
       companyName: T-Mobile Czech Republic a.s.
       id: tmobile
       link: https://www.t-mobile.cz/
-      companyImage: /images/customers/t-mobile.svg
+      companyImage: https://img.thingsboard.io/customers/t-mobile.svg
       companyImageWidth: 87
       companyImageHeight: 48
       text:
@@ -395,8 +395,8 @@ telecom:
       companyName: TEKTELIC Communications Inc.
       id: tektelic
       link: https://tektelic.com/
-      authorImage: /images/customers/tektelic-person.webp
-      companyImage: /images/customers/tektelic.svg
+      authorImage: https://img.thingsboard.io/customers/tektelic-person.webp
+      companyImage: https://img.thingsboard.io/customers/tektelic.svg
       companyImageWidth: 178
       companyImageHeight: 52
       text:
@@ -409,8 +409,8 @@ telecom:
       companyName: X-TELIA
       id: xtelia
       link: https://en.x-telia.com/
-      authorImage: /images/customers/x-telia-person.webp
-      companyImage: /images/customers/x-telia.svg
+      authorImage: https://img.thingsboard.io/customers/x-telia-person.webp
+      companyImage: https://img.thingsboard.io/customers/x-telia.svg
       companyImageWidth: 160
       companyImageHeight: 32
       text:
@@ -421,15 +421,15 @@ telecom:
         4: 'I can say that the dedication of ThingsBoard team blew me away. I look forward to building and deploying many new and exciting projects on ThingsBoard, as I know the team backing the platform is second to none in expertise and dedication.'
 industry40:
   label: Industry 4.0
-  icon: /images/industry40-icon.svg
+  icon: https://img.thingsboard.io/industry40-icon.svg
   feedback:
     - author: Andreas Kücker
       position: Manager Digital
       companyName: süc//dacor GmbH
       id: dacor
       link: https://dacor.de/
-      authorImage: /images/customers/andreas-kucker.webp
-      companyImage: /images/customers/dacor.svg
+      authorImage: https://img.thingsboard.io/customers/andreas-kucker.webp
+      companyImage: https://img.thingsboard.io/customers/dacor.svg
       companyImageWidth: 170
       companyImageHeight: 30
       collapse: "true"
@@ -444,8 +444,8 @@ industry40:
       companyName: Poliglot
       id: poliglot
       link: https://poligiot.com/
-      authorImage: /images/customers/poliglot-photo.webp
-      companyImage: /images/customers/poligiot.svg
+      authorImage: https://img.thingsboard.io/customers/poliglot-photo.webp
+      companyImage: https://img.thingsboard.io/customers/poligiot.svg
       companyImageWidth: 170
       companyImageHeight: 30
       noHeading: "true"
@@ -459,8 +459,8 @@ industry40:
       companyName: Vodafone
       id: vodafone
       link: https://www.vodafone.co.ck/
-      authorImage: /images/customers/tamati-iro.webp
-      companyImage: /images/customers/vodafone.svg
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
       companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
@@ -477,8 +477,8 @@ industry40:
       companyName: Utvyakta
       id: utvyakta
       link: https://www.utvyakta.com/
-      authorImage: /images/customers/utvyakta-person.webp
-      companyImage: /images/customers/utvyakta.svg
+      authorImage: https://img.thingsboard.io/customers/utvyakta-person.webp
+      companyImage: https://img.thingsboard.io/customers/utvyakta.svg
       companyImageWidth: 127
       companyImageHeight: 54
       text:
@@ -489,8 +489,8 @@ industry40:
       companyName: Farinia Group
       id: farinia
       link: https://www.farinia.com/
-      authorImage: /images/customers/farinia-person.webp
-      companyImage: /images/customers/farinia.svg
+      authorImage: https://img.thingsboard.io/customers/farinia-person.webp
+      companyImage: https://img.thingsboard.io/customers/farinia.svg
       companyImageWidth: 164
       companyImageHeight: 34
       text:
@@ -502,8 +502,8 @@ industry40:
       companyName: CITEVE
       id: citeve
       link: https://www.citeve.pt/
-      authorImage: /images/customers/citeve-person.webp
-      companyImage: /images/customers/citeve.webp
+      authorImage: https://img.thingsboard.io/customers/citeve-person.webp
+      companyImage: https://img.thingsboard.io/customers/citeve.webp
       companyImageWidth: 58
       companyImageHeight: 60
       text:
@@ -515,7 +515,7 @@ industry40:
       companyName: INSYS icom
       id: insys
       link: https://www.insys-icom.com/
-      companyImage: /images/customers/insys.svg
+      companyImage: https://img.thingsboard.io/customers/insys.svg
       companyImageWidth: 107
       companyImageHeight: 60
       text:
@@ -526,8 +526,8 @@ industry40:
       companyName: CH2i
       id: ch2i
       link: https://ch2i.eu/
-      authorImage: /images/customers/ch2i-person.webp
-      companyImage: /images/customers/ch2i.svg
+      authorImage: https://img.thingsboard.io/customers/ch2i-person.webp
+      companyImage: https://img.thingsboard.io/customers/ch2i.svg
       companyImageWidth: 71
       companyImageHeight: 60
       text:
@@ -537,7 +537,7 @@ industry40:
       companyName: IONA Tech
       id: iona
       link: https://https://www.iona.tech/
-      companyImage: /images/customers/iona-tech.svg
+      companyImage: https://img.thingsboard.io/customers/iona-tech.svg
       companyImageWidth: 130
       companyImageHeight: 60
       text:
@@ -549,7 +549,7 @@ industry40:
       companyName: ASG Tech AG
       id: asgtech
       link: https://www.asgtechsrl.it/
-      companyImage: /images/customers/asg-tech.svg
+      companyImage: https://img.thingsboard.io/customers/asg-tech.svg
       companyImageWidth: 170
       companyImageHeight: 60
       text:
@@ -558,15 +558,15 @@ industry40:
         2: 'Their careful estimation process significantly enhanced our understanding of the project scope, making planning and collaboration more effective. Additionally, their team attentively listened to our detailed requirements and skilfully transformed them into thoughtfully designed custom widgets. The development process was smooth, with regular updates and transparent communication.'
 warehouse-monitoring:
   label: Warehouse Monitoring
-  icon: /images/warehouse-monitoring-icon.svg
+  icon: https://img.thingsboard.io/warehouse-monitoring-icon.svg
   feedback:
     - author: Steven Kruse
       position: CEO
       companyName: SenseING GmbH
       id: senseing
       link: https://senseing.de/
-      authorImage: /images/customers/senseing-person.webp
-      companyImage: /images/customers/senseing.webp
+      authorImage: https://img.thingsboard.io/customers/senseing-person.webp
+      companyImage: https://img.thingsboard.io/customers/senseing.webp
       companyImageWidth: 162
       companyImageHeight: 54
       text:
@@ -578,8 +578,8 @@ warehouse-monitoring:
       companyName: Vypin LLC
       id: vypin
       link: https://www.vypin.com/
-      authorImage: /images/customers/vypin-person.webp
-      companyImage: /images/customers/vypin.svg
+      authorImage: https://img.thingsboard.io/customers/vypin-person.webp
+      companyImage: https://img.thingsboard.io/customers/vypin.svg
       companyImageWidth: 122
       companyImageHeight: 48
       text:
