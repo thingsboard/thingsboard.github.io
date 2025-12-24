@@ -11,7 +11,7 @@ With Trendz you can:
 - Predict system behavior and react beforehand
 - Identify anomalies in time series data
 - Define KPI using calculated fields, review dynamic and understand what affects it
-- Monitor how much time equipment spend in different states
+- Monitor how much time equipment spends in different states
 - Filter, group and aggregate data in different dimensions
 - Share the analysis with other users by embedding visualizations into a dashboard
 
