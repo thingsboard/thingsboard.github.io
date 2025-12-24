@@ -8,9 +8,17 @@
 
 2. Execute the following commands:
 
+{% if include.skipUpgrade %}
   ```bash
-  ./docker-stop-services.sh
+  ./docker-stop-services.sh  
+  ./docker-start-services.sh
+  ```
+{% else %}
+  ```bash
+  ./docker-stop-services.sh  
   ./docker-upgrade-tb.sh
   ./docker-start-services.sh
   ```
+{% endif %}
+
   {: .copy-code}
