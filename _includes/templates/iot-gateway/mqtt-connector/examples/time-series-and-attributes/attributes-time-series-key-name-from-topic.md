@@ -78,4 +78,4 @@ between `sensors/demo-device/` and `/value`.
 After applying this configuration, the MQTT connector will extract the sensor name from the topic and use it as the 
 key name for both time-series data. So you will see that the corresponding time series are being updated correctly:
 
-![image](/images/gateway/mqtt-connector/examples/time-series-key-name-from-topic-overview.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/time-series-key-name-from-topic-overview.png)

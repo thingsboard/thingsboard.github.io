@@ -98,4 +98,4 @@ Copy and paste the following configuration into the Modbus connector advanced co
 After applying this configuration, the `operational_mode` and `relay` registers will be mapped to their respective 
 human-readable strings in uplink data. This makes it easier to interpret the data received from the Modbus device:
 
-![image](/images/gateway/modbus-connector/examples/enum-mapping-overview.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/enum-mapping-overview.png)
