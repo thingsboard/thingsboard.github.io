@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-mqtt-broker
+layout: docwithnav-pe-mqtt-broker
 title: Non-Persistent and Persistent Sessions
 description: Explaining MQTT sessions.
 
@@ -25,4 +25,5 @@ persistent-session-demo:
 
 ---
 
+{% assign docsPrefix = "pe/" %}
 {% include docs/mqtt-broker/user-guide/clean-persistent-sessions.md %}

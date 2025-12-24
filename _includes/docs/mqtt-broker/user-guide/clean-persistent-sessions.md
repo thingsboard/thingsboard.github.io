@@ -51,7 +51,7 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
       <td style="width: 20%"><b>Session Type</b></td>
       <td style="width: 20%"><b>MQTT v3.1.1<br>Configuration</b></td>
       <td style="width: 25%"><b>MQTT v5.0<br>Configuration</b></td>
-      <td style="width: 35%"><b>Resulting Behavior & Typical Use</b></td>
+      <td style="width: 35%"><b>Explanation</b></td>
     </tr>
   </thead>
   <tbody>
@@ -64,12 +64,12 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
       </td>
       <td>
         A new session is always created. No subscriptions or messages are stored.
-        Messages published while the client is offline are lost.
+        Messages published while the Client is offline are lost.
         Suitable for simple, real-time data where persistence is not required.
       </td>
     </tr>
     <tr>
-      <td><b>Persistent session<br>(finite lifetime)</b></td>
+      <td><b>Persistent session</b></td>
       <td>CleanSession = 0</td>
       <td>
         Clean Start = 0<br>
@@ -77,38 +77,26 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
       </td>
       <td>
         Session state is preserved across disconnects for a defined period.
+        The maximum Session Expiry Interval in MQTT v5.0 is <b>4,294,967,295 seconds</b> (~136 years).
         Subscriptions and queued messages are restored on reconnect.
         Suitable for intermittent connectivity with controlled resource usage.
       </td>
     </tr>
     <tr>
-      <td><b>Persistent session<br>(indefinite)</b></td>
-      <td>CleanSession = 0</td>
+      <td><b>Session reuse without persistence<br>(MQTT v5.0)</b></td>
+      <td>-</td>
       <td>
         Clean Start = 0<br>
-        Session Expiry Interval = 0xFFFFFFFF
+        Session Expiry Interval = 0
       </td>
       <td>
-        Session persists indefinitely until explicitly cleared.
-        Provides maximum reliability but requires careful lifecycle management
-        to avoid unused sessions consuming resources.
-      </td>
-    </tr>
-    <tr>
-      <td><b>Forced session reset</b></td>
-      <td>CleanSession = 1</td>
-      <td>
-        Clean Start = 1<br>
-        Session Expiry Interval &gt; 0 (ignored)
-      </td>
-      <td>
-        Any existing session is discarded immediately.
-        A new session is created regardless of previous state.
-        Useful for manual resets, troubleshooting, or reinitialization.
+        The session is discarded immediately after disconnect, and no subscriptions or messages are retained offline.
+        In this mode, the session may reuse existing session state while the Client remains connected, whereas a <b>non-persistent session</b> always starts from a clean state on each connection.
       </td>
     </tr>
   </tbody>
 </table>
+
 
 For details on viewing and managing MQTT sessions in the TBMQ UI, see the [documentation](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/sessions/).
 
@@ -239,4 +227,19 @@ For **non-persistent sessions**, Message Expiry Interval has limited practical e
 - **Message Expiry Interval** controls how long an individual message is valid.
 - **Session Expiry Interval** controls how long the Session State is retained after disconnect.
 
-A message is **delivered only if both the Session still exists**, and he Message Expiry Interval has not expired.
+A message is delivered only if the Session still exists **and** the Message Expiry Interval has not expired.
+
+## Example: Demonstrating a Persistent Session
+
+This example shows how a **persistent session** works in practice using the TBMQ [**WebSocket Client**](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/).
+You will see that messages published while a Client is offline are **not lost** and are delivered when the Client reconnects.
+
+The screenshots below demonstrate a simple IoT-style scenario:
+1. One Client subscribes to a topic using a persistent session.
+2. The Client then disconnects.
+3. Another Client publishes messages to the same topic.
+4. When the first Client reconnects, it receives the messages that were published while it was offline.
+
+This behavior is possible only because the session is **persistent** and messages are delivered using **QoS 1** or **QoS 2**.
+
+{% include images-gallery.html imageCollection="persistent-session-demo" %}
