@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-paas-eu
 assignees:
 - stitenko
 title: Calculated fields
@@ -46,32 +46,6 @@ time-series-rolling-argument-type:
     1:
         image: /images/user-guide/calculated-fields/time-series-rolling-argument-type-2-pe.png
         title: 'A new argument has been added.'
-
-expression-simple-calculated-fields-1:
-    0:
-        image: /images/user-guide/calculated-fields/expression-simple-calculated-fields-1-pe.png
-        title: 'In the "Expression" section, enter the mathematical expression for the calculation using the variables defined in the "Arguments" section.'
-
-output-simple-1:
-    0:
-        image: /images/user-guide/calculated-fields/output-simple-1-pe.png
-        title: 'Select the output type as "Time series". Set a name to the variable that will store the calculation result. Optionally, specify the number of decimal places.'
-    1:
-        image: /images/user-guide/calculated-fields/output-simple-2-pe.png
-        title: 'Select the output type as "Attribute" and choose its scope: "Server attributes", "Client attributes", or "Shared attributes". Set a name to the variable that will store the calculation result. Optionally, set the number of decimal places.'
-
-expression-script-calculated-fields-1:
-    0:
-        image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-pe.png
-        title: 'Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.'
-
-output-script-1:
-    0:
-        image: /images/user-guide/calculated-fields/output-script-1-pe.png
-        title: 'Time series: function must return a JSON object or array with or without a timestamp containing the computed value.'
-    1:
-        image: /images/user-guide/calculated-fields/output-script-2-pe.png
-        title: 'Attribute: function must return a JSON object without timestamp information containing the computed value.'
 
 calculated-field-result:
     0:
@@ -236,6 +210,6 @@ example-script-calculated-fields-3:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
+{% assign docsPrefix = "paas/eu/" %}
 {% include get-hosts-name.html docsPrefix=docsPrefix %}
-{% include docs/user-guide/calculated-fields.md %}
+{% include docs/user-guide/calculated-fields/index.md %}

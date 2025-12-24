@@ -1,0 +1,6 @@
+simple-calculated-field:
+  title: Simple calculated field
+  description: Simple calculated fields use basic arithmetic operations (+, -, *, /) and standard functions such as sqrt (square root), pow (power), abs (absolute value), etc.
+script-calculated-field:
+  title: Script calculated field
+  description: For complex calculations, TBEL is used. It enables advanced operations such as conditional statements, loops, and access to historical data.
