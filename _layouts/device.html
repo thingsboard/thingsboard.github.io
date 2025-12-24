@@ -3,9 +3,24 @@
 
 {% include head-header.html %}
 
+{% assign docContentClassList='' %}
+{% if siteData[foundTOC].hidetoc == "true" or page.hidetoc == "true" %}
+{% assign docContentClassList = docContentClassList | append: 'noToc' %}
+{% endif %}
+
+{% assign docContentClassList = docContentClassList | append: ' hasTocContent' %}
+{% assign hasTocContent = "false" %}
+{% if content contains '<ul id="markdown-toc"' %}
+{% assign hasTocContent = "true" %}
+{% endif %}
+
+{% if page.table-of-contents == "false" %}
+{% assign docContentClassList = docContentClassList | append: ' noTableOfContents' %}
+{% endif %}
+
 <div id="docs">
     <section id="encyclopedia">
-        <div id="docsContent" class="hasTocContent">
+        <div id="docsContent" class="{{ docContentClassList }}">
             <div id="table-of-contents">
                 {% if hasTocContent == "true" %}
                 <span>On this page</span>
@@ -15,7 +30,13 @@
             {% include manual-breadcrumbs.liquid %}
             {% endif %}
             <div id="content">
-                {% include device-card.liquid %}
+                {% assign deviceCardsStatus = "true" %}
+                {% if page.device-card == "false" %}
+                    {% assign deviceCardsStatus = "false" %}
+                {% endif %}
+                {% if deviceCardsStatus == "true" %}
+                    {% include device-card.liquid %}
+                {% endif %}
                 {{ content }}
             </div>
             {% include footer.html %}
@@ -28,6 +49,7 @@
 
 {% include cookie-consent.html %}
 
+{% if hasTocContent == "true" %}
 <script>
     jqueryDefer(function () {
         var markdownTocs = null;
@@ -141,6 +163,8 @@
 
     });
 </script>
+
+{% endif %}
 
 </body>
 </html>

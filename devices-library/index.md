@@ -96,7 +96,7 @@ filterCollection:
     <div class="devices-wrapper">
         <div class="devices-hero-text">
             <h1>Welcome to the ThingsBoard Devices Library!</h1>
-            <p>The Devices Library is a collection of guides and code snippets that explain how to connect popular IoT development boards to the ThingsBoard platform. We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers. Device Library is a constantly extending resource. We encourage our community members to <a href="/docs/devices-library/guidelines/">contribute</a>.</p>
+            <p>The Devices Library is a collection of guides and code snippets that explain how to connect popular IoT development boards to the ThingsBoard platform. We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers. Device Library is a constantly extending resource. We encourage our community members to <a href="/devices-library/guidelines/">contribute</a>.</p>
         </div>
         <div class="devices-hero-banner">
             <p>Wish to integrate existing sensors?</p>

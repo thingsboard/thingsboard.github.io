@@ -8,11 +8,365 @@
 "/docs/contact-us/":
   url: "/docs/contact-us/"
   redirect_from: []
+"/docs/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/":
+  url: "/docs/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/"
+  redirect_from: []
+"/docs/devices-library/ace-iot-gateway-and-siemens-logo/":
+  url: "/docs/devices-library/ace-iot-gateway-and-siemens-logo/"
+  redirect_from: []
+"/docs/devices-library/air-temperature-and-humidity-sensor/":
+  url: "/docs/devices-library/air-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/devices-library/alpon-x4/":
+  url: "/docs/devices-library/alpon-x4/"
+  redirect_from: []
+"/docs/devices-library/am308-sensor/":
+  url: "/docs/devices-library/am308-sensor/"
+  redirect_from: []
+"/docs/devices-library/ampsense-smart-current-sensor/":
+  url: "/docs/devices-library/ampsense-smart-current-sensor/"
+  redirect_from: []
+"/docs/devices-library/arduino-nano-rp2040-connect/":
+  url: "/docs/devices-library/arduino-nano-rp2040-connect/"
+  redirect_from: []
+"/docs/devices-library/asset-management-tracker/":
+  url: "/docs/devices-library/asset-management-tracker/"
+  redirect_from: []
+"/docs/devices-library/asus-tinker-board-2s/":
+  url: "/docs/devices-library/asus-tinker-board-2s/"
+  redirect_from: []
+"/docs/devices-library/asus-tinker-board-s/":
+  url: "/docs/devices-library/asus-tinker-board-s/"
+  redirect_from: []
+"/docs/devices-library/badge-tracker/":
+  url: "/docs/devices-library/badge-tracker/"
+  redirect_from: []
+"/docs/devices-library/banana-pi-bpi-m5/":
+  url: "/docs/devices-library/banana-pi-bpi-m5/"
+  redirect_from: []
+"/docs/devices-library/beaglebone-black/":
+  url: "/docs/devices-library/beaglebone-black/"
+  redirect_from: []
+"/docs/devices-library/beaglebone-green-wireless/":
+  url: "/docs/devices-library/beaglebone-green-wireless/"
+  redirect_from: []
+"/docs/devices-library/carbonless-co2-temperature-and-humidity-sensor/":
+  url: "/docs/devices-library/carbonless-co2-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/devices-library/cat1-badge-tracker/":
+  url: "/docs/devices-library/cat1-badge-tracker/"
+  redirect_from: []
+"/docs/devices-library/cat1-compact-bluetooth-gateway/":
+  url: "/docs/devices-library/cat1-compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/cat1-container-tracker/":
+  url: "/docs/devices-library/cat1-container-tracker/"
+  redirect_from: []
+"/docs/devices-library/cat1-macro-bluetooth-gateway/":
+  url: "/docs/devices-library/cat1-macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/cat1-macro-tracker/":
+  url: "/docs/devices-library/cat1-macro-tracker/"
+  redirect_from: []
+"/docs/devices-library/cat1-solar-bluetooth-gateway/":
+  url: "/docs/devices-library/cat1-solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/co2-display-lite-temperature-and-humidity-sensor/":
+  url: "/docs/devices-library/co2-display-lite-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/devices-library/compact-bluetooth-gateway/":
+  url: "/docs/devices-library/compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/contact-tracing-badge/":
+  url: "/docs/devices-library/contact-tracing-badge/"
+  redirect_from: []
+"/docs/devices-library/container-tracker/":
+  url: "/docs/devices-library/container-tracker/"
+  redirect_from: []
+"/docs/devices-library/coral-dev-board/":
+  url: "/docs/devices-library/coral-dev-board/"
+  redirect_from: []
+"/docs/devices-library/dsgw-210-iot-gateway-hub/":
+  url: "/docs/devices-library/dsgw-210-iot-gateway-hub/"
+  redirect_from: []
+"/docs/devices-library/eg8200-gateway/":
+  url: "/docs/devices-library/eg8200-gateway/"
+  redirect_from: []
+"/docs/devices-library/esp-eye/":
+  url: "/docs/devices-library/esp-eye/"
+  redirect_from: []
+"/docs/devices-library/esp32-dev-kit-v1/":
+  url: "/docs/devices-library/esp32-dev-kit-v1/"
+  redirect_from: []
+"/docs/devices-library/esp32-dev-kit-v4/":
+  url: "/docs/devices-library/esp32-dev-kit-v4/"
+  redirect_from: []
+"/docs/devices-library/esp32-pico-kit/":
+  url: "/docs/devices-library/esp32-pico-kit/"
+  redirect_from: []
+"/docs/devices-library/helmet-sensor/":
+  url: "/docs/devices-library/helmet-sensor/"
+  redirect_from: []
+"/docs/devices-library/hikey-970-development-board/":
+  url: "/docs/devices-library/hikey-970-development-board/"
+  redirect_from: []
+"/docs/devices-library/hiletgo-esp32-dev-kit/":
+  url: "/docs/devices-library/hiletgo-esp32-dev-kit/"
+  redirect_from: []
+"/docs/devices-library/hummingboard-gate/":
+  url: "/docs/devices-library/hummingboard-gate/"
+  redirect_from: []
 "/docs/devices-library/":
   url: "/docs/devices-library/"
   redirect_from:
   - "/docs/samples/linkit-one/"
   - "/docs/samples/linkit-one/gps/"
+"/docs/devices-library/indoor-bluetooth-gateway/":
+  url: "/docs/devices-library/indoor-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/iobutton-panic-button/":
+  url: "/docs/devices-library/iobutton-panic-button/"
+  redirect_from: []
+"/docs/devices-library/iot-gateway-cell-1024/":
+  url: "/docs/devices-library/iot-gateway-cell-1024/"
+  redirect_from: []
+"/docs/devices-library/iotracker-multi-sensor-tracker/":
+  url: "/docs/devices-library/iotracker-multi-sensor-tracker/"
+  redirect_from: []
+"/docs/devices-library/knx-ip-multi-io-580/":
+  url: "/docs/devices-library/knx-ip-multi-io-580/"
+  redirect_from: []
+"/docs/devices-library/lattepanda/":
+  url: "/docs/devices-library/lattepanda/"
+  redirect_from: []
+"/docs/devices-library/lenovo-leez-sbc-p710/":
+  url: "/docs/devices-library/lenovo-leez-sbc-p710/"
+  redirect_from: []
+"/docs/devices-library/lrs10701/":
+  url: "/docs/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/devices-library/lrs20100/":
+  url: "/docs/devices-library/lrs20100/"
+  redirect_from: []
+"/docs/devices-library/luanode32/":
+  url: "/docs/devices-library/luanode32/"
+  redirect_from: []
+"/docs/devices-library/lw001-bg-pro/":
+  url: "/docs/devices-library/lw001-bg-pro/"
+  redirect_from: []
+"/docs/devices-library/m5stack-timer-camera-f/":
+  url: "/docs/devices-library/m5stack-timer-camera-f/"
+  redirect_from: []
+"/docs/devices-library/m5stack-timer-camera-x/":
+  url: "/docs/devices-library/m5stack-timer-camera-x/"
+  redirect_from: []
+"/docs/devices-library/macro-bluetooth-gateway/":
+  url: "/docs/devices-library/macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/macro-proximity-gateway/":
+  url: "/docs/devices-library/macro-proximity-gateway/"
+  redirect_from: []
+"/docs/devices-library/macro-tracker/":
+  url: "/docs/devices-library/macro-tracker/"
+  redirect_from: []
+"/docs/devices-library/micro-bluetooth-gateway/":
+  url: "/docs/devices-library/micro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/mixed-input-8-channel-analog-cellular-logger/":
+  url: "/docs/devices-library/mixed-input-8-channel-analog-cellular-logger/"
+  redirect_from: []
+"/docs/devices-library/ncd-vibration-temperature-sensor/":
+  url: "/docs/devices-library/ncd-vibration-temperature-sensor/"
+  redirect_from: []
+"/docs/devices-library/nodemcuv2/":
+  url: "/docs/devices-library/nodemcuv2/"
+  redirect_from: []
+"/docs/devices-library/nodemcuv3/":
+  url: "/docs/devices-library/nodemcuv3/"
+  redirect_from: []
+"/docs/devices-library/nvidia-jetson-nano-developer-kit/":
+  url: "/docs/devices-library/nvidia-jetson-nano-developer-kit/"
+  redirect_from: []
+"/docs/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
+"/docs/devices-library/odroid-xu4/":
+  url: "/docs/devices-library/odroid-xu4/"
+  redirect_from: []
+"/docs/devices-library/odyssey-stm32mp157c/":
+  url: "/docs/devices-library/odyssey-stm32mp157c/"
+  redirect_from: []
+"/docs/devices-library/orange-pi-4/":
+  url: "/docs/devices-library/orange-pi-4/"
+  redirect_from: []
+"/docs/devices-library/orange-pi-plus-2e/":
+  url: "/docs/devices-library/orange-pi-plus-2e/"
+  redirect_from: []
+"/docs/devices-library/orangepi-2g-iot/":
+  url: "/docs/devices-library/orangepi-2g-iot/"
+  redirect_from: []
+"/docs/devices-library/orangepi-zero/":
+  url: "/docs/devices-library/orangepi-zero/"
+  redirect_from: []
+"/docs/devices-library/pine-a64/":
+  url: "/docs/devices-library/pine-a64/"
+  redirect_from: []
+"/docs/devices-library/positioning-water-leak-sensor/":
+  url: "/docs/devices-library/positioning-water-leak-sensor/"
+  redirect_from: []
+"/docs/devices-library/qualcomm-dragonboard-410c/":
+  url: "/docs/devices-library/qualcomm-dragonboard-410c/"
+  redirect_from: []
+"/docs/devices-library/radxa-rock-pro/":
+  url: "/docs/devices-library/radxa-rock-pro/"
+  redirect_from: []
+"/docs/devices-library/raspberry-pi-3-model-B-plus/":
+  url: "/docs/devices-library/raspberry-pi-3-model-B-plus/"
+  redirect_from: []
+"/docs/devices-library/raspberry-pi-4/":
+  url: "/docs/devices-library/raspberry-pi-4/"
+  redirect_from: []
+"/docs/devices-library/raspberry-pi-cm4/":
+  url: "/docs/devices-library/raspberry-pi-cm4/"
+  redirect_from: []
+"/docs/devices-library/raspberry-pi-pico-w/":
+  url: "/docs/devices-library/raspberry-pi-pico-w/"
+  redirect_from: []
+"/docs/devices-library/raspberry-pi-zero-w/":
+  url: "/docs/devices-library/raspberry-pi-zero-w/"
+  redirect_from: []
+"/docs/devices-library/recomputer-r1000/":
+  url: "/docs/devices-library/recomputer-r1000/"
+  redirect_from: []
+"/docs/devices-library/recomputer-r1100/":
+  url: "/docs/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/devices-library/rn172wcd/":
+  url: "/docs/devices-library/rn172wcd/"
+  redirect_from: []
+"/docs/devices-library/rock-pi-4-model-b/":
+  url: "/docs/devices-library/rock-pi-4-model-b/"
+  redirect_from: []
+"/docs/devices-library/rock64/":
+  url: "/docs/devices-library/rock64/"
+  redirect_from: []
+"/docs/devices-library/rock960/":
+  url: "/docs/devices-library/rock960/"
+  redirect_from: []
+"/docs/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/devices-library/socketsync-bluetooth-gateway/":
+  url: "/docs/devices-library/socketsync-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/socketsync-proximity-gateway/":
+  url: "/docs/devices-library/socketsync-proximity-gateway/"
+  redirect_from: []
+"/docs/devices-library/soil-moisture-sensor/":
+  url: "/docs/devices-library/soil-moisture-sensor/"
+  redirect_from: []
+"/docs/devices-library/solar-bluetooth-gateway/":
+  url: "/docs/devices-library/solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/devices-library/solar-tracker/":
+  url: "/docs/devices-library/solar-tracker/"
+  redirect_from: []
+"/docs/devices-library/teltonika-rut955-and-siemens-logo/":
+  url: "/docs/devices-library/teltonika-rut955-and-siemens-logo/"
+  redirect_from: []
+"/docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/":
+  url: "/docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/"
+  redirect_from: []
+"/docs/devices-library/temco-controls-tstat-10/":
+  url: "/docs/devices-library/temco-controls-tstat-10/"
+  redirect_from: []
+"/docs/devices-library/temperature-humidity-sensor/":
+  url: "/docs/devices-library/temperature-humidity-sensor/"
+  redirect_from: []
+"/docs/devices-library/temphu-temperature-and-humidity-sensor/":
+  url: "/docs/devices-library/temphu-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/devices-library/the-parallella-board/":
+  url: "/docs/devices-library/the-parallella-board/"
+  redirect_from: []
+"/docs/devices-library/tracking-label/":
+  url: "/docs/devices-library/tracking-label/"
+  redirect_from: []
+"/docs/devices-library/udoo-x86-ultra/":
+  url: "/docs/devices-library/udoo-x86-ultra/"
+  redirect_from: []
+"/docs/devices-library/ug56-lorawan-gateway/":
+  url: "/docs/devices-library/ug56-lorawan-gateway/"
+  redirect_from: []
+"/docs/devices-library/ug65-lorawan-gateway/":
+  url: "/docs/devices-library/ug65-lorawan-gateway/"
+  redirect_from: []
+"/docs/devices-library/ug67-lorawan-gateway/":
+  url: "/docs/devices-library/ug67-lorawan-gateway/"
+  redirect_from: []
+"/docs/devices-library/up-squared-pro-ai-edge/":
+  url: "/docs/devices-library/up-squared-pro-ai-edge/"
+  redirect_from: []
+"/docs/devices-library/upesy-esp32-wroom-devkit/":
+  url: "/docs/devices-library/upesy-esp32-wroom-devkit/"
+  redirect_from: []
+"/docs/devices-library/upesy-esp32-wroom-low-power-devkit/":
+  url: "/docs/devices-library/upesy-esp32-wroom-low-power-devkit/"
+  redirect_from: []
+"/docs/devices-library/uwb-anchor/":
+  url: "/docs/devices-library/uwb-anchor/"
+  redirect_from: []
+"/docs/devices-library/uwb-asset-management-tracker/":
+  url: "/docs/devices-library/uwb-asset-management-tracker/"
+  redirect_from: []
+"/docs/devices-library/uwb-badge-tracker/":
+  url: "/docs/devices-library/uwb-badge-tracker/"
+  redirect_from: []
+"/docs/devices-library/uwb-container-tracker/":
+  url: "/docs/devices-library/uwb-container-tracker/"
+  redirect_from: []
+"/docs/devices-library/valve-positioning-sensor/":
+  url: "/docs/devices-library/valve-positioning-sensor/"
+  redirect_from: []
+"/docs/devices-library/vapeless-gas-detection-indoor-sensor/":
+  url: "/docs/devices-library/vapeless-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
+  url: "/docs/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/devices-library/vibit-bp/":
+  url: "/docs/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/devices-library/vibit/":
+  url: "/docs/devices-library/vibit/"
+  redirect_from: []
+"/docs/devices-library/vicki-smart-radiator-thermostat/":
+  url: "/docs/devices-library/vicki-smart-radiator-thermostat/"
+  redirect_from: []
+"/docs/devices-library/vocless-voc-temperature-and-humidity-sensor/":
+  url: "/docs/devices-library/vocless-voc-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/devices-library/vs-121/":
+  url: "/docs/devices-library/vs-121/"
+  redirect_from: []
+"/docs/devices-library/wemos-d1-mini-esp8266/":
+  url: "/docs/devices-library/wemos-d1-mini-esp8266/"
+  redirect_from: []
+"/docs/devices-library/wemos-d1-r2/":
+  url: "/docs/devices-library/wemos-d1-r2/"
+  redirect_from: []
+"/docs/devices-library/wemos-lolin-oled/":
+  url: "/docs/devices-library/wemos-lolin-oled/"
+  redirect_from: []
+"/docs/devices-library/wireless-open-close-logger/":
+  url: "/docs/devices-library/wireless-open-close-logger/"
+  redirect_from: []
+"/docs/devices-library/ws101-smart-button/":
+  url: "/docs/devices-library/ws101-smart-button/"
+  redirect_from: []
+"/docs/devices-library/ws202-pir-and-light-sensor/":
+  url: "/docs/devices-library/ws202-pir-and-light-sensor/"
+  redirect_from: []
 "/docs/domains/":
   url: "/docs/domains/"
   redirect_from: []
@@ -60,6 +414,18 @@
   redirect_from: []
 "/docs/edge/devices-library/":
   url: "/docs/edge/devices-library/"
+  redirect_from: []
+"/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
+"/docs/edge/devices-library/raspberry-pi-4/":
+  url: "/docs/edge/devices-library/raspberry-pi-4/"
+  redirect_from: []
+"/docs/edge/devices-library/recomputer-r1000/":
+  url: "/docs/edge/devices-library/recomputer-r1000/"
+  redirect_from: []
+"/docs/edge/devices-library/recomputer-r1100/":
+  url: "/docs/edge/devices-library/recomputer-r1100/"
   redirect_from: []
 "/docs/edge/edge-architecture/":
   url: "/docs/edge/edge-architecture/"
@@ -669,8 +1035,362 @@
   url: "/docs/paas/billing-info/"
   redirect_from:
   - "/products/paas/billing-info/"
+"/docs/paas/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/":
+  url: "/docs/paas/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/"
+  redirect_from: []
+"/docs/paas/devices-library/ace-iot-gateway-and-siemens-logo/":
+  url: "/docs/paas/devices-library/ace-iot-gateway-and-siemens-logo/"
+  redirect_from: []
+"/docs/paas/devices-library/air-temperature-and-humidity-sensor/":
+  url: "/docs/paas/devices-library/air-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/alpon-x4/":
+  url: "/docs/paas/devices-library/alpon-x4/"
+  redirect_from: []
+"/docs/paas/devices-library/am308-sensor/":
+  url: "/docs/paas/devices-library/am308-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/ampsense-smart-current-sensor/":
+  url: "/docs/paas/devices-library/ampsense-smart-current-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/arduino-nano-rp2040-connect/":
+  url: "/docs/paas/devices-library/arduino-nano-rp2040-connect/"
+  redirect_from: []
+"/docs/paas/devices-library/asset-management-tracker/":
+  url: "/docs/paas/devices-library/asset-management-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/asus-tinker-board-2s/":
+  url: "/docs/paas/devices-library/asus-tinker-board-2s/"
+  redirect_from: []
+"/docs/paas/devices-library/asus-tinker-board-s/":
+  url: "/docs/paas/devices-library/asus-tinker-board-s/"
+  redirect_from: []
+"/docs/paas/devices-library/badge-tracker/":
+  url: "/docs/paas/devices-library/badge-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/banana-pi-bpi-m5/":
+  url: "/docs/paas/devices-library/banana-pi-bpi-m5/"
+  redirect_from: []
+"/docs/paas/devices-library/beaglebone-black/":
+  url: "/docs/paas/devices-library/beaglebone-black/"
+  redirect_from: []
+"/docs/paas/devices-library/beaglebone-green-wireless/":
+  url: "/docs/paas/devices-library/beaglebone-green-wireless/"
+  redirect_from: []
+"/docs/paas/devices-library/carbonless-co2-temperature-and-humidity-sensor/":
+  url: "/docs/paas/devices-library/carbonless-co2-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/cat1-badge-tracker/":
+  url: "/docs/paas/devices-library/cat1-badge-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/cat1-compact-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/cat1-compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/cat1-container-tracker/":
+  url: "/docs/paas/devices-library/cat1-container-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/cat1-macro-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/cat1-macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/cat1-macro-tracker/":
+  url: "/docs/paas/devices-library/cat1-macro-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/cat1-solar-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/cat1-solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/co2-display-lite-temperature-and-humidity-sensor/":
+  url: "/docs/paas/devices-library/co2-display-lite-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/compact-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/contact-tracing-badge/":
+  url: "/docs/paas/devices-library/contact-tracing-badge/"
+  redirect_from: []
+"/docs/paas/devices-library/container-tracker/":
+  url: "/docs/paas/devices-library/container-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/coral-dev-board/":
+  url: "/docs/paas/devices-library/coral-dev-board/"
+  redirect_from: []
+"/docs/paas/devices-library/dsgw-210-iot-gateway-hub/":
+  url: "/docs/paas/devices-library/dsgw-210-iot-gateway-hub/"
+  redirect_from: []
+"/docs/paas/devices-library/eg8200-gateway/":
+  url: "/docs/paas/devices-library/eg8200-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/esp-eye/":
+  url: "/docs/paas/devices-library/esp-eye/"
+  redirect_from: []
+"/docs/paas/devices-library/esp32-dev-kit-v1/":
+  url: "/docs/paas/devices-library/esp32-dev-kit-v1/"
+  redirect_from: []
+"/docs/paas/devices-library/esp32-dev-kit-v4/":
+  url: "/docs/paas/devices-library/esp32-dev-kit-v4/"
+  redirect_from: []
+"/docs/paas/devices-library/esp32-pico-kit/":
+  url: "/docs/paas/devices-library/esp32-pico-kit/"
+  redirect_from: []
+"/docs/paas/devices-library/helmet-sensor/":
+  url: "/docs/paas/devices-library/helmet-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/hikey-970-development-board/":
+  url: "/docs/paas/devices-library/hikey-970-development-board/"
+  redirect_from: []
+"/docs/paas/devices-library/hiletgo-esp32-dev-kit/":
+  url: "/docs/paas/devices-library/hiletgo-esp32-dev-kit/"
+  redirect_from: []
+"/docs/paas/devices-library/hummingboard-gate/":
+  url: "/docs/paas/devices-library/hummingboard-gate/"
+  redirect_from: []
 "/docs/paas/devices-library/":
   url: "/docs/paas/devices-library/"
+  redirect_from: []
+"/docs/paas/devices-library/indoor-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/indoor-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/iobutton-panic-button/":
+  url: "/docs/paas/devices-library/iobutton-panic-button/"
+  redirect_from: []
+"/docs/paas/devices-library/iot-gateway-cell-1024/":
+  url: "/docs/paas/devices-library/iot-gateway-cell-1024/"
+  redirect_from: []
+"/docs/paas/devices-library/iotracker-multi-sensor-tracker/":
+  url: "/docs/paas/devices-library/iotracker-multi-sensor-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/knx-ip-multi-io-580/":
+  url: "/docs/paas/devices-library/knx-ip-multi-io-580/"
+  redirect_from: []
+"/docs/paas/devices-library/lattepanda/":
+  url: "/docs/paas/devices-library/lattepanda/"
+  redirect_from: []
+"/docs/paas/devices-library/lenovo-leez-sbc-p710/":
+  url: "/docs/paas/devices-library/lenovo-leez-sbc-p710/"
+  redirect_from: []
+"/docs/paas/devices-library/lrs10701/":
+  url: "/docs/paas/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/paas/devices-library/lrs20100/":
+  url: "/docs/paas/devices-library/lrs20100/"
+  redirect_from: []
+"/docs/paas/devices-library/luanode32/":
+  url: "/docs/paas/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/devices-library/lw001-bg-pro/"
+  redirect_from: []
+"/docs/paas/devices-library/m5stack-timer-camera-f/":
+  url: "/docs/paas/devices-library/m5stack-timer-camera-f/"
+  redirect_from: []
+"/docs/paas/devices-library/m5stack-timer-camera-x/":
+  url: "/docs/paas/devices-library/m5stack-timer-camera-x/"
+  redirect_from: []
+"/docs/paas/devices-library/macro-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/macro-proximity-gateway/":
+  url: "/docs/paas/devices-library/macro-proximity-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/macro-tracker/":
+  url: "/docs/paas/devices-library/macro-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/micro-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/micro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/mixed-input-8-channel-analog-cellular-logger/":
+  url: "/docs/paas/devices-library/mixed-input-8-channel-analog-cellular-logger/"
+  redirect_from: []
+"/docs/paas/devices-library/ncd-vibration-temperature-sensor/":
+  url: "/docs/paas/devices-library/ncd-vibration-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/nodemcuv2/":
+  url: "/docs/paas/devices-library/nodemcuv2/"
+  redirect_from: []
+"/docs/paas/devices-library/nodemcuv3/":
+  url: "/docs/paas/devices-library/nodemcuv3/"
+  redirect_from: []
+"/docs/paas/devices-library/nvidia-jetson-nano-developer-kit/":
+  url: "/docs/paas/devices-library/nvidia-jetson-nano-developer-kit/"
+  redirect_from: []
+"/docs/paas/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/paas/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
+"/docs/paas/devices-library/odroid-xu4/":
+  url: "/docs/paas/devices-library/odroid-xu4/"
+  redirect_from: []
+"/docs/paas/devices-library/odyssey-stm32mp157c/":
+  url: "/docs/paas/devices-library/odyssey-stm32mp157c/"
+  redirect_from: []
+"/docs/paas/devices-library/orange-pi-4/":
+  url: "/docs/paas/devices-library/orange-pi-4/"
+  redirect_from: []
+"/docs/paas/devices-library/orange-pi-plus-2e/":
+  url: "/docs/paas/devices-library/orange-pi-plus-2e/"
+  redirect_from: []
+"/docs/paas/devices-library/orangepi-2g-iot/":
+  url: "/docs/paas/devices-library/orangepi-2g-iot/"
+  redirect_from: []
+"/docs/paas/devices-library/orangepi-zero/":
+  url: "/docs/paas/devices-library/orangepi-zero/"
+  redirect_from: []
+"/docs/paas/devices-library/pine-a64/":
+  url: "/docs/paas/devices-library/pine-a64/"
+  redirect_from: []
+"/docs/paas/devices-library/positioning-water-leak-sensor/":
+  url: "/docs/paas/devices-library/positioning-water-leak-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/qualcomm-dragonboard-410c/":
+  url: "/docs/paas/devices-library/qualcomm-dragonboard-410c/"
+  redirect_from: []
+"/docs/paas/devices-library/radxa-rock-pro/":
+  url: "/docs/paas/devices-library/radxa-rock-pro/"
+  redirect_from: []
+"/docs/paas/devices-library/raspberry-pi-3-model-B-plus/":
+  url: "/docs/paas/devices-library/raspberry-pi-3-model-B-plus/"
+  redirect_from: []
+"/docs/paas/devices-library/raspberry-pi-4/":
+  url: "/docs/paas/devices-library/raspberry-pi-4/"
+  redirect_from: []
+"/docs/paas/devices-library/raspberry-pi-cm4/":
+  url: "/docs/paas/devices-library/raspberry-pi-cm4/"
+  redirect_from: []
+"/docs/paas/devices-library/raspberry-pi-pico-w/":
+  url: "/docs/paas/devices-library/raspberry-pi-pico-w/"
+  redirect_from: []
+"/docs/paas/devices-library/raspberry-pi-zero-w/":
+  url: "/docs/paas/devices-library/raspberry-pi-zero-w/"
+  redirect_from: []
+"/docs/paas/devices-library/recomputer-r1000/":
+  url: "/docs/paas/devices-library/recomputer-r1000/"
+  redirect_from: []
+"/docs/paas/devices-library/recomputer-r1100/":
+  url: "/docs/paas/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/paas/devices-library/rn172wcd/":
+  url: "/docs/paas/devices-library/rn172wcd/"
+  redirect_from: []
+"/docs/paas/devices-library/rock-pi-4-model-b/":
+  url: "/docs/paas/devices-library/rock-pi-4-model-b/"
+  redirect_from: []
+"/docs/paas/devices-library/rock64/":
+  url: "/docs/paas/devices-library/rock64/"
+  redirect_from: []
+"/docs/paas/devices-library/rock960/":
+  url: "/docs/paas/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/socketsync-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/socketsync-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/socketsync-proximity-gateway/":
+  url: "/docs/paas/devices-library/socketsync-proximity-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/soil-moisture-sensor/":
+  url: "/docs/paas/devices-library/soil-moisture-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/solar-bluetooth-gateway/":
+  url: "/docs/paas/devices-library/solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/solar-tracker/":
+  url: "/docs/paas/devices-library/solar-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/teltonika-rut955-and-siemens-logo/":
+  url: "/docs/paas/devices-library/teltonika-rut955-and-siemens-logo/"
+  redirect_from: []
+"/docs/paas/devices-library/temco-controls-t3e-6ct-and-hum-w1/":
+  url: "/docs/paas/devices-library/temco-controls-t3e-6ct-and-hum-w1/"
+  redirect_from: []
+"/docs/paas/devices-library/temco-controls-tstat-10-and-hum-w1/":
+  url: "/docs/paas/devices-library/temco-controls-tstat-10-and-hum-w1/"
+  redirect_from: []
+"/docs/paas/devices-library/temperature-humidity-sensor/":
+  url: "/docs/paas/devices-library/temperature-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/temphu-temperature-and-humidity-sensor/":
+  url: "/docs/paas/devices-library/temphu-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/the-parallella-board/":
+  url: "/docs/paas/devices-library/the-parallella-board/"
+  redirect_from: []
+"/docs/paas/devices-library/tracking-label/":
+  url: "/docs/paas/devices-library/tracking-label/"
+  redirect_from: []
+"/docs/paas/devices-library/udoo-x86-ultra/":
+  url: "/docs/paas/devices-library/udoo-x86-ultra/"
+  redirect_from: []
+"/docs/paas/devices-library/ug56-lorawan-gateway/":
+  url: "/docs/paas/devices-library/ug56-lorawan-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/ug65-lorawan-gateway/":
+  url: "/docs/paas/devices-library/ug65-lorawan-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/ug67-lorawan-gateway/":
+  url: "/docs/paas/devices-library/ug67-lorawan-gateway/"
+  redirect_from: []
+"/docs/paas/devices-library/up-squared-pro-ai-edge/":
+  url: "/docs/paas/devices-library/up-squared-pro-ai-edge/"
+  redirect_from: []
+"/docs/paas/devices-library/upesy-esp32-wroom-devkit/":
+  url: "/docs/paas/devices-library/upesy-esp32-wroom-devkit/"
+  redirect_from: []
+"/docs/paas/devices-library/upesy-esp32-wroom-low-power-devkit/":
+  url: "/docs/paas/devices-library/upesy-esp32-wroom-low-power-devkit/"
+  redirect_from: []
+"/docs/paas/devices-library/uwb-anchor/":
+  url: "/docs/paas/devices-library/uwb-anchor/"
+  redirect_from: []
+"/docs/paas/devices-library/uwb-asset-management-tracker/":
+  url: "/docs/paas/devices-library/uwb-asset-management-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/uwb-badge-tracker/":
+  url: "/docs/paas/devices-library/uwb-badge-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/uwb-container-tracker/":
+  url: "/docs/paas/devices-library/uwb-container-tracker/"
+  redirect_from: []
+"/docs/paas/devices-library/valve-positioning-sensor/":
+  url: "/docs/paas/devices-library/valve-positioning-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/vapeless-gas-detection-indoor-sensor/":
+  url: "/docs/paas/devices-library/vapeless-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
+  url: "/docs/paas/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/vibit-bp/":
+  url: "/docs/paas/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/paas/devices-library/vibit/":
+  url: "/docs/paas/devices-library/vibit/"
+  redirect_from: []
+"/docs/paas/devices-library/vicki-smart-radiator-thermostat/":
+  url: "/docs/paas/devices-library/vicki-smart-radiator-thermostat/"
+  redirect_from: []
+"/docs/paas/devices-library/vocless-voc-temperature-and-humidity-sensor/":
+  url: "/docs/paas/devices-library/vocless-voc-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/vs-121/":
+  url: "/docs/paas/devices-library/vs-121/"
+  redirect_from: []
+"/docs/paas/devices-library/wemos-d1-mini-esp8266/":
+  url: "/docs/paas/devices-library/wemos-d1-mini-esp8266/"
+  redirect_from: []
+"/docs/paas/devices-library/wemos-d1-r2/":
+  url: "/docs/paas/devices-library/wemos-d1-r2/"
+  redirect_from: []
+"/docs/paas/devices-library/wemos-lolin-oled/":
+  url: "/docs/paas/devices-library/wemos-lolin-oled/"
+  redirect_from: []
+"/docs/paas/devices-library/wireless-open-close-logger/":
+  url: "/docs/paas/devices-library/wireless-open-close-logger/"
+  redirect_from: []
+"/docs/paas/devices-library/ws101-smart-button/":
+  url: "/docs/paas/devices-library/ws101-smart-button/"
+  redirect_from: []
+"/docs/paas/devices-library/ws202-pir-and-light-sensor/":
+  url: "/docs/paas/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
 "/docs/paas/domains/":
   url: "/docs/paas/domains/"
@@ -682,8 +1402,362 @@
 "/docs/paas/eu/billing-info/":
   url: "/docs/paas/eu/billing-info/"
   redirect_from: []
+"/docs/paas/eu/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/":
+  url: "/docs/paas/eu/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ace-iot-gateway-and-siemens-logo/":
+  url: "/docs/paas/eu/devices-library/ace-iot-gateway-and-siemens-logo/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/air-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/air-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/alpon-x4/":
+  url: "/docs/paas/eu/devices-library/alpon-x4/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/am308-sensor/":
+  url: "/docs/paas/eu/devices-library/am308-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ampsense-smart-current-sensor/":
+  url: "/docs/paas/eu/devices-library/ampsense-smart-current-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/arduino-nano-rp2040-connect/":
+  url: "/docs/paas/eu/devices-library/arduino-nano-rp2040-connect/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/asset-management-tracker/":
+  url: "/docs/paas/eu/devices-library/asset-management-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/asus-tinker-board-2s/":
+  url: "/docs/paas/eu/devices-library/asus-tinker-board-2s/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/asus-tinker-board-s/":
+  url: "/docs/paas/eu/devices-library/asus-tinker-board-s/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/badge-tracker/":
+  url: "/docs/paas/eu/devices-library/badge-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/banana-pi-bpi-m5/":
+  url: "/docs/paas/eu/devices-library/banana-pi-bpi-m5/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/beaglebone-black/":
+  url: "/docs/paas/eu/devices-library/beaglebone-black/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/beaglebone-green-wireless/":
+  url: "/docs/paas/eu/devices-library/beaglebone-green-wireless/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/carbonless-co2-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/carbonless-co2-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/cat1-badge-tracker/":
+  url: "/docs/paas/eu/devices-library/cat1-badge-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/cat1-compact-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/cat1-compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/cat1-container-tracker/":
+  url: "/docs/paas/eu/devices-library/cat1-container-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/cat1-macro-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/cat1-macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/cat1-macro-tracker/":
+  url: "/docs/paas/eu/devices-library/cat1-macro-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/cat1-solar-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/cat1-solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/co2-display-lite-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/co2-display-lite-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/compact-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/contact-tracing-badge/":
+  url: "/docs/paas/eu/devices-library/contact-tracing-badge/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/container-tracker/":
+  url: "/docs/paas/eu/devices-library/container-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/coral-dev-board/":
+  url: "/docs/paas/eu/devices-library/coral-dev-board/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/dsgw-210-iot-gateway-hub/":
+  url: "/docs/paas/eu/devices-library/dsgw-210-iot-gateway-hub/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/eg8200-gateway/":
+  url: "/docs/paas/eu/devices-library/eg8200-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/esp-eye/":
+  url: "/docs/paas/eu/devices-library/esp-eye/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/esp32-dev-kit-v1/":
+  url: "/docs/paas/eu/devices-library/esp32-dev-kit-v1/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/esp32-dev-kit-v4/":
+  url: "/docs/paas/eu/devices-library/esp32-dev-kit-v4/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/esp32-pico-kit/":
+  url: "/docs/paas/eu/devices-library/esp32-pico-kit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/helmet-sensor/":
+  url: "/docs/paas/eu/devices-library/helmet-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/hikey-970-development-board/":
+  url: "/docs/paas/eu/devices-library/hikey-970-development-board/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/hiletgo-esp32-dev-kit/":
+  url: "/docs/paas/eu/devices-library/hiletgo-esp32-dev-kit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/hummingboard-gate/":
+  url: "/docs/paas/eu/devices-library/hummingboard-gate/"
+  redirect_from: []
 "/docs/paas/eu/devices-library/":
   url: "/docs/paas/eu/devices-library/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/indoor-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/iobutton-panic-button/":
+  url: "/docs/paas/eu/devices-library/iobutton-panic-button/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/iot-gateway-cell-1024/":
+  url: "/docs/paas/eu/devices-library/iot-gateway-cell-1024/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/iotracker-multi-sensor-tracker/":
+  url: "/docs/paas/eu/devices-library/iotracker-multi-sensor-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/knx-ip-multi-io-580/":
+  url: "/docs/paas/eu/devices-library/knx-ip-multi-io-580/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lattepanda/":
+  url: "/docs/paas/eu/devices-library/lattepanda/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lenovo-leez-sbc-p710/":
+  url: "/docs/paas/eu/devices-library/lenovo-leez-sbc-p710/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lrs10701/":
+  url: "/docs/paas/eu/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lrs20100/":
+  url: "/docs/paas/eu/devices-library/lrs20100/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/luanode32/":
+  url: "/docs/paas/eu/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/eu/devices-library/lw001-bg-pro/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/m5stack-timer-camera-f/":
+  url: "/docs/paas/eu/devices-library/m5stack-timer-camera-f/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/m5stack-timer-camera-x/":
+  url: "/docs/paas/eu/devices-library/m5stack-timer-camera-x/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/macro-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/macro-proximity-gateway/":
+  url: "/docs/paas/eu/devices-library/macro-proximity-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/macro-tracker/":
+  url: "/docs/paas/eu/devices-library/macro-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/micro-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/micro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/mixed-input-8-channel-analog-cellular-logger/":
+  url: "/docs/paas/eu/devices-library/mixed-input-8-channel-analog-cellular-logger/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ncd-vibration-temperature-sensor/":
+  url: "/docs/paas/eu/devices-library/ncd-vibration-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/nodemcuv2/":
+  url: "/docs/paas/eu/devices-library/nodemcuv2/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/nodemcuv3/":
+  url: "/docs/paas/eu/devices-library/nodemcuv3/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/nvidia-jetson-nano-developer-kit/":
+  url: "/docs/paas/eu/devices-library/nvidia-jetson-nano-developer-kit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/paas/eu/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/odroid-xu4/":
+  url: "/docs/paas/eu/devices-library/odroid-xu4/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/odyssey-stm32mp157c/":
+  url: "/docs/paas/eu/devices-library/odyssey-stm32mp157c/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/orange-pi-4/":
+  url: "/docs/paas/eu/devices-library/orange-pi-4/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/orange-pi-plus-2e/":
+  url: "/docs/paas/eu/devices-library/orange-pi-plus-2e/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/orangepi-2g-iot/":
+  url: "/docs/paas/eu/devices-library/orangepi-2g-iot/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/orangepi-zero/":
+  url: "/docs/paas/eu/devices-library/orangepi-zero/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/pine-a64/":
+  url: "/docs/paas/eu/devices-library/pine-a64/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/positioning-water-leak-sensor/":
+  url: "/docs/paas/eu/devices-library/positioning-water-leak-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/qualcomm-dragonboard-410c/":
+  url: "/docs/paas/eu/devices-library/qualcomm-dragonboard-410c/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/radxa-rock-pro/":
+  url: "/docs/paas/eu/devices-library/radxa-rock-pro/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/raspberry-pi-3-model-B-plus/":
+  url: "/docs/paas/eu/devices-library/raspberry-pi-3-model-B-plus/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/raspberry-pi-4/":
+  url: "/docs/paas/eu/devices-library/raspberry-pi-4/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/raspberry-pi-cm4/":
+  url: "/docs/paas/eu/devices-library/raspberry-pi-cm4/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/raspberry-pi-pico-w/":
+  url: "/docs/paas/eu/devices-library/raspberry-pi-pico-w/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/raspberry-pi-zero-w/":
+  url: "/docs/paas/eu/devices-library/raspberry-pi-zero-w/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/recomputer-r1000/":
+  url: "/docs/paas/eu/devices-library/recomputer-r1000/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/recomputer-r1100/":
+  url: "/docs/paas/eu/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rn172wcd/":
+  url: "/docs/paas/eu/devices-library/rn172wcd/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rock-pi-4-model-b/":
+  url: "/docs/paas/eu/devices-library/rock-pi-4-model-b/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rock64/":
+  url: "/docs/paas/eu/devices-library/rock64/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/rock960/":
+  url: "/docs/paas/eu/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/socketsync-proximity-gateway/":
+  url: "/docs/paas/eu/devices-library/socketsync-proximity-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/soil-moisture-sensor/":
+  url: "/docs/paas/eu/devices-library/soil-moisture-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/solar-bluetooth-gateway/":
+  url: "/docs/paas/eu/devices-library/solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/solar-tracker/":
+  url: "/docs/paas/eu/devices-library/solar-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/teltonika-rut955-and-siemens-logo/":
+  url: "/docs/paas/eu/devices-library/teltonika-rut955-and-siemens-logo/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/temco-controls-t3e-6ct-and-hum-w1/":
+  url: "/docs/paas/eu/devices-library/temco-controls-t3e-6ct-and-hum-w1/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/temco-controls-tstat-10-and-hum-w1/":
+  url: "/docs/paas/eu/devices-library/temco-controls-tstat-10-and-hum-w1/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/temperature-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/temperature-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/temphu-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/temphu-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/the-parallella-board/":
+  url: "/docs/paas/eu/devices-library/the-parallella-board/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/tracking-label/":
+  url: "/docs/paas/eu/devices-library/tracking-label/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/udoo-x86-ultra/":
+  url: "/docs/paas/eu/devices-library/udoo-x86-ultra/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ug56-lorawan-gateway/":
+  url: "/docs/paas/eu/devices-library/ug56-lorawan-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ug65-lorawan-gateway/":
+  url: "/docs/paas/eu/devices-library/ug65-lorawan-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ug67-lorawan-gateway/":
+  url: "/docs/paas/eu/devices-library/ug67-lorawan-gateway/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/up-squared-pro-ai-edge/":
+  url: "/docs/paas/eu/devices-library/up-squared-pro-ai-edge/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/upesy-esp32-wroom-devkit/":
+  url: "/docs/paas/eu/devices-library/upesy-esp32-wroom-devkit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/upesy-esp32-wroom-low-power-devkit/":
+  url: "/docs/paas/eu/devices-library/upesy-esp32-wroom-low-power-devkit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/uwb-anchor/":
+  url: "/docs/paas/eu/devices-library/uwb-anchor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/uwb-asset-management-tracker/":
+  url: "/docs/paas/eu/devices-library/uwb-asset-management-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/uwb-badge-tracker/":
+  url: "/docs/paas/eu/devices-library/uwb-badge-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/uwb-container-tracker/":
+  url: "/docs/paas/eu/devices-library/uwb-container-tracker/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/valve-positioning-sensor/":
+  url: "/docs/paas/eu/devices-library/valve-positioning-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vapeless-gas-detection-indoor-sensor/":
+  url: "/docs/paas/eu/devices-library/vapeless-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
+  url: "/docs/paas/eu/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vibit-bp/":
+  url: "/docs/paas/eu/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vibit/":
+  url: "/docs/paas/eu/devices-library/vibit/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vicki-smart-radiator-thermostat/":
+  url: "/docs/paas/eu/devices-library/vicki-smart-radiator-thermostat/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vocless-voc-temperature-and-humidity-sensor/":
+  url: "/docs/paas/eu/devices-library/vocless-voc-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/vs-121/":
+  url: "/docs/paas/eu/devices-library/vs-121/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/wemos-d1-mini-esp8266/":
+  url: "/docs/paas/eu/devices-library/wemos-d1-mini-esp8266/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/wemos-d1-r2/":
+  url: "/docs/paas/eu/devices-library/wemos-d1-r2/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/wemos-lolin-oled/":
+  url: "/docs/paas/eu/devices-library/wemos-lolin-oled/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/wireless-open-close-logger/":
+  url: "/docs/paas/eu/devices-library/wireless-open-close-logger/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ws101-smart-button/":
+  url: "/docs/paas/eu/devices-library/ws101-smart-button/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/":
+  url: "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
 "/docs/paas/eu/domains/":
   url: "/docs/paas/eu/domains/"
@@ -1775,8 +2849,362 @@
 "/docs/pe/api/":
   url: "/docs/pe/api/"
   redirect_from: []
+"/docs/pe/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/":
+  url: "/docs/pe/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/"
+  redirect_from: []
+"/docs/pe/devices-library/ace-iot-gateway-and-siemens-logo/":
+  url: "/docs/pe/devices-library/ace-iot-gateway-and-siemens-logo/"
+  redirect_from: []
+"/docs/pe/devices-library/air-temperature-and-humidity-sensor/":
+  url: "/docs/pe/devices-library/air-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/alpon-x4/":
+  url: "/docs/pe/devices-library/alpon-x4/"
+  redirect_from: []
+"/docs/pe/devices-library/am308-sensor/":
+  url: "/docs/pe/devices-library/am308-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/ampsense-smart-current-sensor/":
+  url: "/docs/pe/devices-library/ampsense-smart-current-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/arduino-nano-rp2040-connect/":
+  url: "/docs/pe/devices-library/arduino-nano-rp2040-connect/"
+  redirect_from: []
+"/docs/pe/devices-library/asset-management-tracker/":
+  url: "/docs/pe/devices-library/asset-management-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/asus-tinker-board-2s/":
+  url: "/docs/pe/devices-library/asus-tinker-board-2s/"
+  redirect_from: []
+"/docs/pe/devices-library/asus-tinker-board-s/":
+  url: "/docs/pe/devices-library/asus-tinker-board-s/"
+  redirect_from: []
+"/docs/pe/devices-library/badge-tracker/":
+  url: "/docs/pe/devices-library/badge-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/banana-pi-bpi-m5/":
+  url: "/docs/pe/devices-library/banana-pi-bpi-m5/"
+  redirect_from: []
+"/docs/pe/devices-library/beaglebone-black/":
+  url: "/docs/pe/devices-library/beaglebone-black/"
+  redirect_from: []
+"/docs/pe/devices-library/beaglebone-green-wireless/":
+  url: "/docs/pe/devices-library/beaglebone-green-wireless/"
+  redirect_from: []
+"/docs/pe/devices-library/carbonless-co2-temperature-and-humidity-sensor/":
+  url: "/docs/pe/devices-library/carbonless-co2-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/cat1-badge-tracker/":
+  url: "/docs/pe/devices-library/cat1-badge-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/cat1-compact-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/cat1-compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/cat1-container-tracker/":
+  url: "/docs/pe/devices-library/cat1-container-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/cat1-macro-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/cat1-macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/cat1-macro-tracker/":
+  url: "/docs/pe/devices-library/cat1-macro-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/cat1-solar-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/cat1-solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/co2-display-lite-temperature-and-humidity-sensor/":
+  url: "/docs/pe/devices-library/co2-display-lite-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/compact-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/compact-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/contact-tracing-badge/":
+  url: "/docs/pe/devices-library/contact-tracing-badge/"
+  redirect_from: []
+"/docs/pe/devices-library/container-tracker/":
+  url: "/docs/pe/devices-library/container-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/coral-dev-board/":
+  url: "/docs/pe/devices-library/coral-dev-board/"
+  redirect_from: []
+"/docs/pe/devices-library/dsgw-210-iot-gateway-hub/":
+  url: "/docs/pe/devices-library/dsgw-210-iot-gateway-hub/"
+  redirect_from: []
+"/docs/pe/devices-library/eg8200-gateway/":
+  url: "/docs/pe/devices-library/eg8200-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/esp-eye/":
+  url: "/docs/pe/devices-library/esp-eye/"
+  redirect_from: []
+"/docs/pe/devices-library/esp32-dev-kit-v1/":
+  url: "/docs/pe/devices-library/esp32-dev-kit-v1/"
+  redirect_from: []
+"/docs/pe/devices-library/esp32-dev-kit-v4/":
+  url: "/docs/pe/devices-library/esp32-dev-kit-v4/"
+  redirect_from: []
+"/docs/pe/devices-library/esp32-pico-kit/":
+  url: "/docs/pe/devices-library/esp32-pico-kit/"
+  redirect_from: []
+"/docs/pe/devices-library/helmet-sensor/":
+  url: "/docs/pe/devices-library/helmet-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/hikey-970-development-board/":
+  url: "/docs/pe/devices-library/hikey-970-development-board/"
+  redirect_from: []
+"/docs/pe/devices-library/hiletgo-esp32-dev-kit/":
+  url: "/docs/pe/devices-library/hiletgo-esp32-dev-kit/"
+  redirect_from: []
+"/docs/pe/devices-library/hummingboard-gate/":
+  url: "/docs/pe/devices-library/hummingboard-gate/"
+  redirect_from: []
 "/docs/pe/devices-library/":
   url: "/docs/pe/devices-library/"
+  redirect_from: []
+"/docs/pe/devices-library/indoor-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/indoor-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/iobutton-panic-button/":
+  url: "/docs/pe/devices-library/iobutton-panic-button/"
+  redirect_from: []
+"/docs/pe/devices-library/iot-gateway-cell-1024/":
+  url: "/docs/pe/devices-library/iot-gateway-cell-1024/"
+  redirect_from: []
+"/docs/pe/devices-library/iotracker-multi-sensor-tracker/":
+  url: "/docs/pe/devices-library/iotracker-multi-sensor-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/knx-ip-multi-io-580/":
+  url: "/docs/pe/devices-library/knx-ip-multi-io-580/"
+  redirect_from: []
+"/docs/pe/devices-library/lattepanda/":
+  url: "/docs/pe/devices-library/lattepanda/"
+  redirect_from: []
+"/docs/pe/devices-library/lenovo-leez-sbc-p710/":
+  url: "/docs/pe/devices-library/lenovo-leez-sbc-p710/"
+  redirect_from: []
+"/docs/pe/devices-library/lrs10701/":
+  url: "/docs/pe/devices-library/lrs10701/"
+  redirect_from: []
+"/docs/pe/devices-library/lrs20100/":
+  url: "/docs/pe/devices-library/lrs20100/"
+  redirect_from: []
+"/docs/pe/devices-library/luanode32/":
+  url: "/docs/pe/devices-library/luanode32/"
+  redirect_from: []
+"/docs/pe/devices-library/lw001-bg-pro/":
+  url: "/docs/pe/devices-library/lw001-bg-pro/"
+  redirect_from: []
+"/docs/pe/devices-library/m5stack-timer-camera-f/":
+  url: "/docs/pe/devices-library/m5stack-timer-camera-f/"
+  redirect_from: []
+"/docs/pe/devices-library/m5stack-timer-camera-x/":
+  url: "/docs/pe/devices-library/m5stack-timer-camera-x/"
+  redirect_from: []
+"/docs/pe/devices-library/macro-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/macro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/macro-proximity-gateway/":
+  url: "/docs/pe/devices-library/macro-proximity-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/macro-tracker/":
+  url: "/docs/pe/devices-library/macro-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/micro-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/micro-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/mixed-input-8-channel-analog-cellular-logger/":
+  url: "/docs/pe/devices-library/mixed-input-8-channel-analog-cellular-logger/"
+  redirect_from: []
+"/docs/pe/devices-library/ncd-vibration-temperature-sensor/":
+  url: "/docs/pe/devices-library/ncd-vibration-temperature-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/nodemcuv2/":
+  url: "/docs/pe/devices-library/nodemcuv2/"
+  redirect_from: []
+"/docs/pe/devices-library/nodemcuv3/":
+  url: "/docs/pe/devices-library/nodemcuv3/"
+  redirect_from: []
+"/docs/pe/devices-library/nvidia-jetson-nano-developer-kit/":
+  url: "/docs/pe/devices-library/nvidia-jetson-nano-developer-kit/"
+  redirect_from: []
+"/docs/pe/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/pe/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
+"/docs/pe/devices-library/odroid-xu4/":
+  url: "/docs/pe/devices-library/odroid-xu4/"
+  redirect_from: []
+"/docs/pe/devices-library/odyssey-stm32mp157c/":
+  url: "/docs/pe/devices-library/odyssey-stm32mp157c/"
+  redirect_from: []
+"/docs/pe/devices-library/orange-pi-4/":
+  url: "/docs/pe/devices-library/orange-pi-4/"
+  redirect_from: []
+"/docs/pe/devices-library/orange-pi-plus-2e/":
+  url: "/docs/pe/devices-library/orange-pi-plus-2e/"
+  redirect_from: []
+"/docs/pe/devices-library/orangepi-2g-iot/":
+  url: "/docs/pe/devices-library/orangepi-2g-iot/"
+  redirect_from: []
+"/docs/pe/devices-library/orangepi-zero/":
+  url: "/docs/pe/devices-library/orangepi-zero/"
+  redirect_from: []
+"/docs/pe/devices-library/pine-a64/":
+  url: "/docs/pe/devices-library/pine-a64/"
+  redirect_from: []
+"/docs/pe/devices-library/positioning-water-leak-sensor/":
+  url: "/docs/pe/devices-library/positioning-water-leak-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/qualcomm-dragonboard-410c/":
+  url: "/docs/pe/devices-library/qualcomm-dragonboard-410c/"
+  redirect_from: []
+"/docs/pe/devices-library/radxa-rock-pro/":
+  url: "/docs/pe/devices-library/radxa-rock-pro/"
+  redirect_from: []
+"/docs/pe/devices-library/raspberry-pi-3-model-B-plus/":
+  url: "/docs/pe/devices-library/raspberry-pi-3-model-B-plus/"
+  redirect_from: []
+"/docs/pe/devices-library/raspberry-pi-4/":
+  url: "/docs/pe/devices-library/raspberry-pi-4/"
+  redirect_from: []
+"/docs/pe/devices-library/raspberry-pi-cm4/":
+  url: "/docs/pe/devices-library/raspberry-pi-cm4/"
+  redirect_from: []
+"/docs/pe/devices-library/raspberry-pi-pico-w/":
+  url: "/docs/pe/devices-library/raspberry-pi-pico-w/"
+  redirect_from: []
+"/docs/pe/devices-library/raspberry-pi-zero-w/":
+  url: "/docs/pe/devices-library/raspberry-pi-zero-w/"
+  redirect_from: []
+"/docs/pe/devices-library/recomputer-r1000/":
+  url: "/docs/pe/devices-library/recomputer-r1000/"
+  redirect_from: []
+"/docs/pe/devices-library/recomputer-r1100/":
+  url: "/docs/pe/devices-library/recomputer-r1100/"
+  redirect_from: []
+"/docs/pe/devices-library/rn172wcd/":
+  url: "/docs/pe/devices-library/rn172wcd/"
+  redirect_from: []
+"/docs/pe/devices-library/rock-pi-4-model-b/":
+  url: "/docs/pe/devices-library/rock-pi-4-model-b/"
+  redirect_from: []
+"/docs/pe/devices-library/rock64/":
+  url: "/docs/pe/devices-library/rock64/"
+  redirect_from: []
+"/docs/pe/devices-library/rock960/":
+  url: "/docs/pe/devices-library/rock960/"
+  redirect_from: []
+"/docs/pe/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/socketsync-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/socketsync-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/socketsync-proximity-gateway/":
+  url: "/docs/pe/devices-library/socketsync-proximity-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/soil-moisture-sensor/":
+  url: "/docs/pe/devices-library/soil-moisture-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/solar-bluetooth-gateway/":
+  url: "/docs/pe/devices-library/solar-bluetooth-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/solar-tracker/":
+  url: "/docs/pe/devices-library/solar-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/tecmo-controls-t3e-6ct-and-hum-w1/":
+  url: "/docs/pe/devices-library/tecmo-controls-t3e-6ct-and-hum-w1/"
+  redirect_from: []
+"/docs/pe/devices-library/teltonika-rut-955-and-siemens-logo/":
+  url: "/docs/pe/devices-library/teltonika-rut-955-and-siemens-logo/"
+  redirect_from: []
+"/docs/pe/devices-library/temco-controls-tstat-10-and-hum-w1/":
+  url: "/docs/pe/devices-library/temco-controls-tstat-10-and-hum-w1/"
+  redirect_from: []
+"/docs/pe/devices-library/temperature-humidity-sensor/":
+  url: "/docs/pe/devices-library/temperature-humidity-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/temphu-temperature-and-humidity-sensor/":
+  url: "/docs/pe/devices-library/temphu-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/the-parallella-board/":
+  url: "/docs/pe/devices-library/the-parallella-board/"
+  redirect_from: []
+"/docs/pe/devices-library/tracking-label/":
+  url: "/docs/pe/devices-library/tracking-label/"
+  redirect_from: []
+"/docs/pe/devices-library/udoo-x86-ultra/":
+  url: "/docs/pe/devices-library/udoo-x86-ultra/"
+  redirect_from: []
+"/docs/pe/devices-library/ug56-lorawan-gateway/":
+  url: "/docs/pe/devices-library/ug56-lorawan-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/ug65-lorawan-gateway/":
+  url: "/docs/pe/devices-library/ug65-lorawan-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/ug67-lorawan-gateway/":
+  url: "/docs/pe/devices-library/ug67-lorawan-gateway/"
+  redirect_from: []
+"/docs/pe/devices-library/up-squared-pro-ai-edge/":
+  url: "/docs/pe/devices-library/up-squared-pro-ai-edge/"
+  redirect_from: []
+"/docs/pe/devices-library/upesy-esp32-wroom-devkit/":
+  url: "/docs/pe/devices-library/upesy-esp32-wroom-devkit/"
+  redirect_from: []
+"/docs/pe/devices-library/upesy-esp32-wroom-low-power-devkit/":
+  url: "/docs/pe/devices-library/upesy-esp32-wroom-low-power-devkit/"
+  redirect_from: []
+"/docs/pe/devices-library/uwb-anchor/":
+  url: "/docs/pe/devices-library/uwb-anchor/"
+  redirect_from: []
+"/docs/pe/devices-library/uwb-asset-management-tracker/":
+  url: "/docs/pe/devices-library/uwb-asset-management-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/uwb-badge-tracker/":
+  url: "/docs/pe/devices-library/uwb-badge-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/uwb-container-tracker/":
+  url: "/docs/pe/devices-library/uwb-container-tracker/"
+  redirect_from: []
+"/docs/pe/devices-library/valve-positioning-sensor/":
+  url: "/docs/pe/devices-library/valve-positioning-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/vapeless-gas-detection-indoor-sensor/":
+  url: "/docs/pe/devices-library/vapeless-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/vapeless-pro-gas-detection-indoor-sensor/":
+  url: "/docs/pe/devices-library/vapeless-pro-gas-detection-indoor-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/vibit-bp/":
+  url: "/docs/pe/devices-library/vibit-bp/"
+  redirect_from: []
+"/docs/pe/devices-library/vibit/":
+  url: "/docs/pe/devices-library/vibit/"
+  redirect_from: []
+"/docs/pe/devices-library/vicki-smart-radiator-thermostat/":
+  url: "/docs/pe/devices-library/vicki-smart-radiator-thermostat/"
+  redirect_from: []
+"/docs/pe/devices-library/vocless-voc-temperature-and-humidity-sensor/":
+  url: "/docs/pe/devices-library/vocless-voc-temperature-and-humidity-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/vs-121/":
+  url: "/docs/pe/devices-library/vs-121/"
+  redirect_from: []
+"/docs/pe/devices-library/wemos-d1-mini-esp8266/":
+  url: "/docs/pe/devices-library/wemos-d1-mini-esp8266/"
+  redirect_from: []
+"/docs/pe/devices-library/wemos-d1-r2/":
+  url: "/docs/pe/devices-library/wemos-d1-r2/"
+  redirect_from: []
+"/docs/pe/devices-library/wemos-lolin-oled/":
+  url: "/docs/pe/devices-library/wemos-lolin-oled/"
+  redirect_from: []
+"/docs/pe/devices-library/wireless-open-close-logger/":
+  url: "/docs/pe/devices-library/wireless-open-close-logger/"
+  redirect_from: []
+"/docs/pe/devices-library/ws101-smart-button/":
+  url: "/docs/pe/devices-library/ws101-smart-button/"
+  redirect_from: []
+"/docs/pe/devices-library/ws202-pir-and-light-sensor/":
+  url: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
 "/docs/pe/domains/":
   url: "/docs/pe/domains/"
@@ -1810,6 +3238,18 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/":
   url: "/docs/pe/edge/devices-library/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
+  url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/raspberry-pi-4/":
+  url: "/docs/pe/edge/devices-library/raspberry-pi-4/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/recomputer-r1000/":
+  url: "/docs/pe/edge/devices-library/recomputer-r1000/"
+  redirect_from: []
+"/docs/pe/edge/devices-library/recomputer-r1100/":
+  url: "/docs/pe/edge/devices-library/recomputer-r1100/"
   redirect_from: []
 "/docs/pe/edge/edge-architecture/":
   url: "/docs/pe/edge/edge-architecture/"
