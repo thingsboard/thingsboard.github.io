@@ -23,49 +23,99 @@ Json converter is default converter, it looks for deviceName, deviceType, attrib
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+In addition, you can send **multipart/form-data** requests while still using the `json` converter - no additional configuration is required. 
+The REST connector merges multipart fields into a single key-value object, so you can reference them the same way as with **application/json**.
 
-Mapping subsection looks like:
+Below are two equivalent requests. The first one sends data as `application/json`:
 
 ```json
-    {
-      "endpoint": "/test_device",
-      "HTTPMethod": [
-        "POST"
-      ],
-      "security":
-      {
-        "type": "basic",
-        "username": "user",
-        "password": "passwd"
-      },
-      "converter": {
-        "type": "json",
-        "deviceNameExpression": "Device ${name}",
-        "deviceTypeExpression": "default",
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "double",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "double",
-            "key": "humidity",
-            "value": "${hum}",
-            "tsField": "${timestampField}",
-            "dayfirst": true
-          }
-        ]
-      }
-    }
+{
+  "name": "SensorA",
+  "sensorModel": "TX100",
+  "temp": 23.5,
+  "hum": 56.2,
+  "timestampField": "10.11.24 14:30:00.000"
+}
 ```
+Send this request to the `/test_device` endpoint with the POST method, using Basic Auth (user / passwd):
+
+```bash
+curl -X POST http://127.0.0.1:5000/test_device \
+  -H "Content-Type: application/json" \
+  -u user:passwd \
+  -d '{
+        "name": "SensorA",
+        "sensorModel": "TX100",
+        "temp": 23.5,
+        "hum": 56.2,
+        "timestampField": "10.11.24 14:30:00.000"
+      }'
+```
+{: .copy-code}
+
+You can achieve the same result using a `multipart/form-data` request, where each field is sent as a separate part.
+Note: when using `curl -F`, `curl` automatically sets the `Content-Type: multipart/form-data; boundary=...` header.
+
+```bash
+curl -X POST "http://127.0.0.1:5000/test_device" \
+  -u "user:passwd" \
+  -F 'name=SensorA' \
+  -F 'sensorModel=TX100' \
+  -F 'temp=23.5' \
+  -F 'hum=56.2' \
+  -F 'timestampField=10.11.24 14:30:00.000'
+```
+{: .copy-code}
+
+{% capture difference %}
+**Notes:**
+1. **File uploads are not supported** for device attributes or telemetry. If a multipart request contains file parts, the gateway will ignore them and log an info message.
+2. **Multipart form fields are received as strings.** Values will be converted to boolean, integer, or double according to the configured field type in the `json` converter.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+This is how the mapping subsection for both examples above looks like:
+
+```json
+{
+  "endpoint": "/test_device",
+  "HTTPMethods": [
+    "POST"
+  ],
+  "security": {
+    "type": "basic",
+    "username": "user",
+    "password": "passwd"
+  },
+  "converter": {
+    "type": "json",
+    "deviceNameExpression": "Device ${name}",
+    "deviceTypeExpression": "default",
+    "attributes": [
+      {
+        "type": "string",
+        "key": "model",
+        "value": "${sensorModel}"
+      }
+    ],
+    "timeseries": [
+      {
+        "type": "double",
+        "key": "temperature",
+        "value": "${temp}"
+      },
+      {
+        "type": "double",
+        "key": "humidity",
+        "value": "${hum}",
+        "tsField": "${timestampField}",
+        "dayfirst": true
+      }
+    ]
+  }
+}
+```
+{: .copy-code}
 
 {% capture tsField %}
 **Note**: In **Mapping subsection** configuration section for `humidity` timeseries key illustrates how to use the `tsField` and
@@ -74,40 +124,41 @@ Mapping subsection looks like:
 {% include templates/info-banner.md content=tsField %}
 
 Also, you can combine values from HTTP request in attributes, telemetry and serverSideRpc section, for example:
-{% highlight json %}
+
+```json
 {
-      "endpoint": "/test_device",
-      "HTTPMethod": [
-        "POST"
-      ],
-      "security":
+  "endpoint": "/test_device",
+  "HTTPMethods": [
+    "POST"
+  ],
+  "security": {
+    "type": "basic",
+    "username": "user",
+    "password": "passwd"
+  },
+  "converter": {
+    "type": "json",
+    "deviceNameExpression": "Device ${name}",
+    "deviceTypeExpression": "default",
+    "attributes": [],
+    "timeseries": [
       {
-        "type": "basic",
-        "username": "user",
-        "password": "passwd"
+        "type": "double",
+        "key": "temperature",
+        "value": "${temp}"
       },
-      "converter": {
-        "type": "json",
-        "deviceNameExpression": "Device ${name}",
-        "deviceTypeExpression": "default",
-        "attributes": [],
-        "timeseries": [
-          {
-            "type": "double",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "double",
-            "key": "humidity",
-            "value": "${hum}"
-          },
-          {
-            "type": "string",
-            "key": "combine",
-            "value": "${hum}:${temp}"
-          }
-        ]
+      {
+        "type": "double",
+        "key": "humidity",
+        "value": "${hum}"
+      },
+      {
+        "type": "string",
+        "key": "combine",
+        "value": "${hum}:${temp}"
       }
-    }
-{% endhighlight %}
+    ]
+  }
+}
+```
+{: .copy-code}
