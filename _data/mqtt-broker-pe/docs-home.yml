@@ -50,6 +50,8 @@ toc:
       path: /docs/pe/mqtt-broker/user-guide/topics/
     - title: Quality of Service (QoS)
       path: /docs/pe/mqtt-broker/user-guide/qos/
+    - title: Non-Persistent and Persistent Sessions
+      path: /docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/
     - title: MQTT over WebSocket
       path: /docs/pe/mqtt-broker/user-guide/mqtt-over-ws/
     - title: Shared Subscriptions
@@ -60,8 +62,6 @@ toc:
       path: /docs/pe/mqtt-broker/user-guide/last-will/
     - title: Keep Alive
       path: /docs/pe/mqtt-broker/user-guide/keep-alive/
-    - title: Non-Persistent and Persistent Sessions
-      path: /docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/
 - title: Other Features
   new: true
   section:
