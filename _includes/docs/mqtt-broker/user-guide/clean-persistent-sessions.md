@@ -39,11 +39,20 @@ A non-persistent (clean) session always starts with a fresh state. The Broker do
 - This mode has minimal overhead, as it does not require message acknowledgments or session storage.
 - Clean sessions are typically used with **QoS 0**, where low latency and simplicity are more important than guaranteed delivery.
 
+## How the Broker Indicates an Existing Session
+
+When a Client connects, the Broker informs it whether a previous session already exists by setting the **Session Present** flag in the **CONNACK** packet.
+
+- **Session Present = true**. Indicates that the Broker has found an existing session for the given **Client ID** and has resumed it. Subscriptions and any stored session state are available to the Client.
+- **Session Present = false**. Indicates that no existing session was found and a new session has been created. The Client must subscribe again if needed.
+
+This flag is especially important for Clients using **persistent sessions**, as it allows them to determine whether they are resuming a previous session or starting from a clean state.
+
 ## Session Configuration in MQTT v3.1.1 and MQTT v5.0
 
 Session management was significantly improved in **MQTT version 5.0** compared to **MQTT version 3.1.1**. While MQTT v3.1.1 provides only basic control over session persistence, MQTT v5.0 introduces more flexible and explicit mechanisms that are better suited for modern IoT systems with unstable networks and large numbers of clients.
 
-The key change is that MQTT v5.0 replaces the single **CleanSession** flag with two separate properties: **Clean Start** and **Session Expiry Interval**. This allows clients to precisely control *when* a session starts fresh and *how long* the Broker should keep session data after a disconnect.
+The key change is that MQTT v5.0 replaces the single **Clean Session** flag with two separate properties: **Clean Start** and **Session Expiry Interval**. This allows clients to precisely control *when* a session starts fresh and *how long* the Broker should keep session data after a disconnect.
 
 <table>
   <thead>
@@ -57,7 +66,7 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
   <tbody>
     <tr>
       <td><b>Non-persistent session</b></td>
-      <td>CleanSession = 1</td>
+      <td>Clean Session = 1</td>
       <td>
         Clean Start = 1<br>
         Session Expiry Interval = 0
@@ -70,7 +79,7 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
     </tr>
     <tr>
       <td><b>Persistent session</b></td>
-      <td>CleanSession = 0</td>
+      <td>Clean Session = 0</td>
       <td>
         Clean Start = 0<br>
         Session Expiry Interval &gt; 0
@@ -80,18 +89,6 @@ The key change is that MQTT v5.0 replaces the single **CleanSession** flag with 
         The maximum Session Expiry Interval in MQTT v5.0 is <b>4,294,967,295 seconds</b> (~136 years).
         Subscriptions and queued messages are restored on reconnect.
         Suitable for intermittent connectivity with controlled resource usage.
-      </td>
-    </tr>
-    <tr>
-      <td><b>Session reuse without persistence<br>(MQTT v5.0)</b></td>
-      <td>-</td>
-      <td>
-        Clean Start = 0<br>
-        Session Expiry Interval = 0
-      </td>
-      <td>
-        The session is discarded immediately after disconnect, and no subscriptions or messages are retained offline.
-        In this mode, the session may reuse existing session state while the Client remains connected, whereas a <b>non-persistent session</b> always starts from a clean state on each connection.
       </td>
     </tr>
   </tbody>
@@ -193,6 +190,8 @@ persistent-session:
       limit: "${MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT:10000}"
       # TTL of persisted DEVICE messages in seconds. The current value corresponds to one week
       ttl: "${MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL:604800}"
+      # Kafka topic properties separated by semicolon for `tbmq.msg.app` topics
+      topic-properties: "${TB_KAFKA_APP_PERSISTED_MSG_TOPIC_PROPERTIES:retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1}"
       # If enabled, each message is published to persistent DEVICE client subscribers with flush. When disabled, the messages are buffered in the channel and are flushed once in a while
       write-and-flush: "${MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH:true}"
       # Number of messages buffered in the channel before the flush is made. Used when `MQTT_PERSISTENT_MSG_WRITE_AND_FLUSH` = false
@@ -229,7 +228,7 @@ For **non-persistent sessions**, Message Expiry Interval has limited practical e
 
 A message is delivered only if the Session still exists **and** the Message Expiry Interval has not expired.
 
-## Example: Demonstrating a Persistent Session
+## Demonstrating a Persistent Session
 
 This example shows how a **persistent session** works in practice using the TBMQ [**WebSocket Client**](/docs/{{docsPrefix}}mqtt-broker/user-guide/ui/websocket-client/).
 You will see that messages published while a Client is offline are **not lost** and are delivered when the Client reconnects.
