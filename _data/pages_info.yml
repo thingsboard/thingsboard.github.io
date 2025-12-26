@@ -972,6 +972,9 @@
 "/docs/mqtt-broker/user-guide/backpressure/":
   url: "/docs/mqtt-broker/user-guide/backpressure/"
   redirect_from: []
+"/docs/mqtt-broker/user-guide/clean-persistent-sessions/":
+  url: "/docs/mqtt-broker/user-guide/clean-persistent-sessions/"
+  redirect_from: []
 "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
   url: "/docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
   redirect_from: []
@@ -3668,6 +3671,9 @@
   redirect_from: []
 "/docs/pe/mqtt-broker/user-guide/backpressure/":
   url: "/docs/pe/mqtt-broker/user-guide/backpressure/"
+  redirect_from: []
+"/docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/":
+  url: "/docs/pe/mqtt-broker/user-guide/clean-persistent-sessions/"
   redirect_from: []
 "/docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/":
   url: "/docs/pe/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/"
