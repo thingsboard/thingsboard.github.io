@@ -10,21 +10,6 @@ We are interested in node "**Humidity**". We will use this node to retrieve the 
 
 Let's configure the humidity data in the OPC-UA connector. For this purpose, follow these steps:
 
-- Go to "**Entities**" → "**Gateways**" in the right sidebar.
-- Select your gateway.
-- Click on the "**Connectors**" tab.
-- Select the OPC-UA connector and click on the "**Data mapping**" tab.
-- Select data mapping with device to which you want to add time series data (if you don't know how to add a new device,
-  see the [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=opcua){:target="_blank"} guide
-  or [Data mapping](/docs/iot-gateway/config/opc-ua/#subsection-attributes-and-time-series) section of this guide with
-  respective examples).
-- In the opened data mapping windows, click on the "**pencil**" icon next to the "**Time series**" or "**Attributes**"
-  section.
-- Click on the "**Add time series**" button. Fill in the "**Key**" field with `Humidity`, also select
-  "**[Path](/docs/iot-gateway/config/opc-ua/#relative-path)**" in "**Type**" field, and fill in the "**Value**" field
-  with `${Humidity}`. This is a relative path to the node that contains the humidity data.
-- Remember to save your changes by clicking the "**Apply**" button.
-
 {% assign attributesAndTimeSeriesRelativePath = '
     ===
         image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
@@ -40,7 +25,7 @@ Let's configure the humidity data in the OPC-UA connector. For this purpose, fol
         title: In the opened data mapping windows, click on the "**pencil**" icon next to the "**Time series**" or "**Attributes**" section.
     ===
         image: /images/gateway/opc-ua-connector/examples/attributes-time-series-relative-path-3.png,
-        title: Click on the "**Add time series**" button. Fill in the "**Key**" field with `Humidity`, also select "**[Path](/docs/iot-gateway/config/opc-ua/#absolute-path)**" in "**Type**" field, and fill in the "**Value**" field with `${Root\.Objects\.DemoDevice\.Humidity}`. This is an absolute path to the node that contains the humidity data.
+        title: Click on the "**Add time series**" button. Fill in the "**Key**" field with `Humidity`, also select "**[Path](/docs/iot-gateway/config/opc-ua/#relative-path)**" in "**Type**" field, and fill in the "**Value**" field with `${Humidity}`. This is a relative path to the node that contains the humidity data.
     ===
         image: /images/gateway/opc-ua-connector/examples/attributes-time-series-absolute-path-4.png,
         title: Remember to save your changes by clicking the "**Apply**" button.
