@@ -1,14 +1,14 @@
 ---
 layout: docwithnav
 title: Geofencing calculated field
-description: For complex calculations, TBEL is used. It enables advanced operations such as conditional statements, loops, and access to historical data.
+description: For evaluating real-time GPS coordinates against defined zones to track entity presence (INSIDE/OUTSIDE) and detect zone transition events (ENTERED/LEFT).
 breadcrumbs: "true"
 breadcrumbs-steps: "1"
 hidetoc: "true"
 
 expression-script-calculated-fields-1:
   0:
-    image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-ce.png
+    image: /images/user-guide/calculated-fields/expression-script-function-1-ce.png
     title: 'Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.'
     
 output-script-1:

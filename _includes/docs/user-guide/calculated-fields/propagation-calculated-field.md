@@ -26,26 +26,25 @@ Define the data sources, the propagation path and data, the output type, and the
 
 ### Propagation path to related entities
 
-Defines a **single-level** path to the target entity that will receive the data.
+<b><font size="3">Relation direction</font></b>   
+Define the path to the entity to which the data will be propagated:
+- **Up to parent** — data is propagated to the parent entity.
+- **Down to child** — data is propagated to the child entity.
+
 Propagation works only with **direct relationships** — without recursion or multi-level traversal.
 
-<b><font size="3">Relation direction</font></b>   
-Specifies the direction for locating the target entity:
-- **Up to parent** — data is propagated to the parent entity.
-- **Down to child** — data is propagated to the child entity
-
 <b><font size="3">Relation type</font></b>   
-The relation type used to identify the target entity, for example:
+Used to identify the type of relationship between the target entity and the related entities, for example:
 - **Contains**
 - **Manages**
 - or **any custom relation types** defined in ThingsBoard
 
-If multiple entities match the selected direction and relation type, Propagation will send the defined data to **each** of them.
+If multiple entities match the selected relationship direction and relationship type, the data will be propagated to each of them.
 
 {% assign propagationPathToRelatedEntities = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-path-to-related-entities-1-ce.png
-        title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.
+        image: /images/user-guide/calculated-fields/propagation/propagation-path-to-related-entities-1-ce.png
+        title: Define the path to the entity to which the data will be propagated, as well as the relationship type between the entities.
 '
 %}
 
@@ -90,13 +89,10 @@ After configuring the parameters, click **Add**.
 
 {% assign propagationArgument = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-argument-1-ce.png
-        title: Click **Add argument**. The data source will be the current entity to which the calculated field is applied.
+        image: /images/user-guide/calculated-fields/propagation/propagation-argument-1-ce.png
+        title: Click **Add argument**.<br>The data source will be the current entity to which the calculated field is applied.<br>Specify the **argument type**, **time series key / attribute key**, **output key**, and **default value**, then click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/propagation-argument-2-ce.png
-        title: Specify the **argument type**, **time series key / attribute key**, **output key**, and **default value**, then click **Add**.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-argument-3-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-argument-2-ce.png
 '
 %}
 
@@ -118,6 +114,15 @@ Specify the data source for the variable, which can be:
 - **Current tenant**: uses data from the tenant entity.
 - **Current owner**: refers to the owner of the current entity and uses its data.
 
+{% assign propagationCalculationArgument = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-calculation-argument-1-ce.png
+        title: Click **Add argument** and select **entity type**. Then choose **argument type** to continue.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=propagationCalculationArgument %}
+
 <b><font size="3">Argument type</font></b>   
 Defines which entity data will be used for the calculations:
 - **Attribute**: uses static or semi-static key-value pairs associated with an entity (e.g., model, max temperature).
@@ -137,7 +142,7 @@ Time series rolling<small></small>%,%timeSeriesRolling%,%templates/calculated-fi
 
 <b><font size="4">Script</font></b>
 
-Define the function that performs the calculation based on the data specified in the [Arguments](#calculation-result) section. 
+Define the function that performs the calculation using the data specified in the [arguments](#calculation-result).   
 After the calculation is executed, the resulting value will be propagated to the target entity.
 
 > The variable name that stores the result must be defined directly inside the function body.
@@ -153,8 +158,8 @@ return {
 
 {% assign scriptFunction = '
     ===
-        image: /images/user-guide/calculated-fields/script-propagation-calculated-fields-1-ce.png
-        title: Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.
+        image: /images/user-guide/calculated-fields/propagation/propagation-script-1-ce.png
+        title: Define the function that performs the calculation using the data specified in the **arguments**. The variable name that will store the calculation result is defined within the function itself.
 '
 %}
 
@@ -194,21 +199,24 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 ### Output
 
 The calculation result is returned as a JSON object, where each key represents a computed value.   
-Further processing and data persistence are carried out according to the selected **output strategy**.
+Further processing and data persistence are carried out according to the selected [output strategy](#output-strategy).
 
 <b><font size="3">Output type</font></b>   
 Select how the result should be stored:
-- [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}. The function must return a JSON object or an array of objects containing the computed value — with or without an explicit <span class="code-light">ts</span> field.   
+- [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}. the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.
   To synchronize the result with the timestamp of the input data, use <span class="code-light">ts: ctx.latestTs</span> and assign it directly to the <span class="code-light">ts</span> field in the returned object.
-- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.The function must return a JSON object with the computed value **without a timestamp**.   
-  Select the attribute storage scope: **Server**, **Client**, or **Shared attributes**.
+- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.the function returns a JSON object **without timestamp** information containing the computed value.  
+  Also specify the scope: **Server**, **Client**, or **Shared** attributes.
+
+<b><font size="4">Save calculated field</font></b>   
+To finish adding the calculated field, click **Add**.
 
 {% assign propagationOutput = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-output-1-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-output-1-ce.png
         title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.
     ===
-        image: /images/user-guide/calculated-fields/propagation-output-2-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-output-2-ce.png
         title: Attribute: function must return a JSON object without timestamp information containing the computed value.
 '
 %}
@@ -223,27 +231,27 @@ Select how the result should be stored:
 
 ### Result
 
-After clicking the **Add** button, the calculated field will be added to your entity or profile.
+After the calculated field is created, data propagation starts automatically and is performed immediately after the relevant input data is received.
 
 {% assign propagationResult = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-result-1-ce.png
-        title: After clicking the **Add** button, the calculated field will be added to your entity or profile.
+        image: /images/user-guide/calculated-fields/propagation/propagation-result-1-ce.png
+        title: After the calculated field is created, data propagation starts automatically and is performed immediately after the relevant input data is received.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=propagationResult %}
 
-Let&#39;s check the debug events by clicking the **Events** icon button. The debugging window displays calculated field arguments and the computed result.
+To view debug events, click **Events**. In the debug window, you can see events with the input data and the calculated result.
 
 > Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
 
 {% assign propagationEvent = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-events-1-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-events-1-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/propagation-events-2-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-events-2-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -256,39 +264,41 @@ Let&#39;s check the debug events by clicking the **Events** icon button. The deb
 
 ### Example 1: Propagate device battery level to the parent Asset
 
-<b><font size="4">Use case</font></b>
+<b><font size="4">Scenario</font></b>
 
-The **Tracker** device sends the battery charge level (**batteryLevel**).
+The **Tracker** device sends the battery charge level (**batteryLevel**) to ThingsBoard.
 It is linked to the **Track 1** asset via the **Contains** relation.
 
 You need to automatically propagate the batteryLevel value to the asset level and store it as an attribute named **deviceBattery**.
 
 {% assign examplePropagationPreparation11 = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-11-ce.png
-        title: **Create a new calculated field** for the device and select the **Script** type.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-11-ce.png
+        title: The **Tracker** device sends the **battery charge level** to ThingsBoard.
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-12-ce.png
-        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-12-ce.png
+        title: The **Tracker** device linked to the **Track 1** asset via the **Contains** relation.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=examplePropagationPreparation11 %}
 
+<hr>
+
 <b><font size="4">Configuration</font></b>
 
-Create a calculated field at the device level with the following parameters:
+Create a calculated field at the **device level** with the following parameters:
 
 <b><font size="3">General</font></b>
 - **Name:** Battery level propagation
 - **Type:** Propagation
 
 <b><font size="3">Propagation path to related entities</font></b>
-- **Relation direction:** **Up to parent**
-- **Relation type:** **Contains**
+- **Relation direction:** Up to parent
+- **Relation type:** Contains
 
 <b><font size="3">Data to propagate</font></b>
-- **Mode:** **Arguments only**
+- **Mode:** Arguments only
 - **Add argument:**
   - **Entity type:** Current entity
   - **Argument type:** Latest telemetry
@@ -306,20 +316,20 @@ Click **Add** to save the calculated field.
 
 {% assign examplePropagation11 = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-13-ce.png
-        title: **Create a new calculated field** for the device and select the **Script** type.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-13-ce.png
+        title: **Create a new calculated field** for the device.
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-14-ce.png
-        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-14-ce.png
+        title: Name it **Battery level propagation**. Select the **Propagation** type.<br> **Propagation path to related entities:** **Relation direction**: Up to parent; **Relation type**: Contains.
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-15-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-15-ce.png
+        title: **Data to propagate:** Arguments only<br>Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** batteryLevel<br>- **Output key:** deviceBattery<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-16-ce.png
-        title: **Create a new calculated field** for the device and select the **Script** type.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-16-ce.png
+        title: **Output:** **Output type:** Attribute; **Attribute scope:** Server attributes.<br> **Strategy:** Process right away<br>Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-17-ce.png
-        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-17-ce.png
+        title: The calculated field has been added.
 '
 %}
 
@@ -329,7 +339,7 @@ Click **Add** to save the calculated field.
 
 <b><font size="4">Result</font></b>
 
-On the **Track 1** asset, the following attribute will be stored:
+The **deviceBattery** attribute will be propagated to and stored on the **Track 1** asset.
 
 ```json
 {
@@ -341,14 +351,8 @@ On the **Track 1** asset, the following attribute will be stored:
 
 {% assign examplePropagation12 = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-18-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-19-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-110-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-18-ce.png
+        title: The **deviceBattery** attribute will be propagated to and stored on the **Track 1** asset.
 '
 %}
 
@@ -358,19 +362,28 @@ On the **Track 1** asset, the following attribute will be stored:
 
 ### Example 2: Dew point calculation and propagation to a parent Asset
 
-<b><font size="4">Use case</font></b>
+<b><font size="4">Scenario</font></b>
 
-The device sends temperature and humidity values.
-You need to:
-- Calculate the **dew point**.
-- Propagate the result to the related asset.
-- Store it as an attribute.
+The **Smart Device** sends **temperature** and **humidity** values and is linked to the **Greenhouse** asset via the **Contains** relation.   
+You need to calculate the **dew point**, **propagate the result to the related asset**, and store it as an **attribute**.
+
+{% assign examplePropagation21 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-21-ce.png
+        title: The **Smart Device** sends **temperature** and **humidity** values to ThingsBoard.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-22-ce.png
+        title: The **Smart Device** linked to the **Greenhouse** asset via the **Contains** relation.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagation21 %}
 
 <hr>
 
 <b><font size="4">Configuration</font></b>
 
-Create a calculated field at the device level:
+Create a calculated field at the **device level**:
 
 <b><font size="3">General</font></b>
 - **Name:** Dew point propagation
@@ -422,56 +435,39 @@ return {"dewPoint": dewPoint};
 
 Click **Add** to save the calculated field.
 
-{% assign examplePropagation21 = '
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-21-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-22-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-23-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-24-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-25-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-26-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-27-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-    ===
-        image: /images/user-guide/calculated-fields/propagation-example-28-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=examplePropagation21 %}
-
-<hr>
-
-<b><font size="4">Result</font></b>
-
-In the **Events** window, you will see:
-
 {% assign examplePropagation22 = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-29-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-23-ce.png
+        title: **Create a new calculated field** for the device.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-24-ce.png
+        title: Name it **Dew point propagation**. Select the **Propagation** type.<br> **Propagation path to related entities:** **Relation direction**: Up to parent; **Relation type**: Contains.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-25-ce.png
+        title: Add first argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** humidity<br>- **Output key:** humidity<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-26-ce.png
+        title: Add a second argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** temperature<br>- **Output key:** temperature<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-27-ce.png
+        title: Insert the **dew point** calculation function into the **Script** field.<br>**Output type:** Time series<br>**Strategy:** Process right away.<br>Click **Add** to save the calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-28-ce.png
+        title: The calculated field has been added.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=examplePropagation22 %}
 
+<hr>
+
+<b><font size="4">Result</font></b>
+
 On the related asset, a new telemetry key **dewPoint** will appear in the **Latest telemetry** tab.
 
 {% assign examplePropagation23 = '
     ===
-        image: /images/user-guide/calculated-fields/propagation-example-210-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-29-ce.png
         title: On the related asset, a new telemetry key **dewPoint** will appear in the **Latest telemetry** tab.
 '
 %}
@@ -482,10 +478,24 @@ On the related asset, a new telemetry key **dewPoint** will appear in the **Late
 
 ### Example 3: Propagate HVAC mode to multiple child devices
 
+<b><font size="4">Scenario</font></b>
+
 The **Building A** asset has multiple child HVAC devices linked via the **Manages** relation.
 The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
 
 You need to automatically propagate this value to all child HVAC devices.
+
+{% assign examplePropagation31 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-31-ce.png
+        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-32-ce.png
+        title: The **Building A** asset has multiple child HVAC devices linked via the **Manages** relation.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=examplePropagation31 %}
 
 <hr>
 
@@ -520,56 +530,45 @@ Create a calculated field **at the Building A asset level**:
 
 Click **Add** to save the calculated field.
 
+{% assign examplePropagation32 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-33-ce.png
+        title: **Create a new calculated field** for the Building A asset.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-34-ce.png
+        title: Name it **Dew point propagation**. Select the **Propagation** type.<br> **Propagation path to related entities:** **Relation direction**: Down to child; **Relation type**: Manages.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-35-ce.png
+        title: Add an argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Attribute<br>- **Attribute key:** hvacMode<br>- **Output key:** hvacMode<br>- **Default mode:** off<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-36-ce.png
+        title: **Output type:** Attribute<br>**Strategy:** Process right away.<br>Click **Add** to save the calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-37-ce.png
+        title: The calculated field has been added.
+'
+%}
 
+{% include images-gallery.liquid imageCollection=examplePropagation32 %}
 
+<hr>
 
+<b><font size="4">Result</font></b>
 
+**Each child HVAC device** will receive the **hvacMode** attribute with the value **cooling**.
 
+{% assign examplePropagation33 = '
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-38-ce.png
+        title: **Each child HVAC device** will receive the **hvacMode** attribute with the value **cooling**.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-39-ce.png
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-example-39-1-ce.png
+'
+%}
 
-
-
-
-
-
-The **Building A** asset has several child HVAC devices.   
-The devices **HVAC 1**, **HVAC 2**, and **HVAC 3** are linked to **Building A** through a **Manages** relation.   
-The **hvacMode** attribute on the Building A level defines the HVAC operating mode (e.g., <span class="code-light">cooling</span>, <span class="code-light">heating</span>, <span class="code-light">off</span>).   
-The goal is to automatically propagate the <span class="code-light">hvacMode</span> value to all connected HVAC devices so they operate in the correct mode, such as **cooling**.
-
-Configuration
-
-Create a new **Calculated field** on the **Building A** asset with the following settings:
-
-<b><font size="3">General</font></b>
-- **Name:** Cooling propagation
-- **Type:** Propagation
-
-<b><font size="3">Propagation path to related entities</font></b>
-- **Relation direction:** **Down to child**
-- **Relation type:** **Manages**
-
-<b><font size="3">Data to propagate</font></b>
-- **Mode:** **Arguments only**
-
-**Add argument:**
-- **Entity type:** Current entity
-- **Argument type:** Attribute
-- **Attribute key:** `hvacMode`
-- **Output key:** `hvacMode`
-- **Default value:** `"off"`
-
-<b><font size="3">Output</font></b>
-- **Type:** Attribute
-
-<b><font size="3">Result</font></b>
-
-Each child HVAC device will receive the following attribute:
-
-```json
-{
-  "hvacMode": "cooling"
-}
-```
+{% include images-gallery.liquid imageCollection=examplePropagation33 %}
 
 <hr>
 

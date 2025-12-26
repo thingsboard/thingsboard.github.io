@@ -38,16 +38,14 @@ Defines the data source that will be used in calculations:
 - **Current tenant**: uses data from the tenant entity.
 - **Current owner**: refers to the owner of the current entity and uses its data.
 
-{% assign simpleExpression = '
+{% assign scriptArgument = '
     ===
-        image: /images/user-guide/calculated-fields/script-argument-1-ce.png
+        image: /images/user-guide/calculated-fields/script/script-argument-1-ce.png
         title: Click "Add argument" and fill in the required fields.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=simpleExpression %}
-
-{% include images-gallery.html imageCollection="argument-name" %}
+{% include images-gallery.liquid imageCollection=scriptArgument %}
 
 <b><font size="3">Argument type</font></b>   
 Defines the data type:
@@ -89,7 +87,7 @@ return {"dewPoint": dewPoint};
 
 {% assign scriptFunction = '
     ===
-        image: /images/user-guide/calculated-fields/script-calculated-fields-1-ce.png
+        image: /images/user-guide/calculated-fields/script/script-function-1-ce.png
         title: Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.
 '
 %}
@@ -125,22 +123,25 @@ Use either `ctx.args.<arg>` or direct parameter access depending on preference a
 
 ### Output
 
-The result is returned as a JSON object and processed according to the selected strategy.
+The result is returned as a JSON object and processed according to the selected [strategy](#output-strategy).
 
 <b><font size="3">Output type</font></b>   
 Select how the result should be stored:
 - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.
   > To align the result with the latest timestamp of the input arguments telemetry, use `ctx.latestTs` and assign it explicitly to the `ts` field in the returned object.
 - [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}: the function returns a JSON object **without timestamp** information containing the computed value.   
-  For attributes, also specify the scope: **Server**, **Client**, or **Shared attributes**.
+  Also specify the scope: **Server**, **Client**, or **Shared** attributes.
+
+<b><font size="4">Save calculated field</font></b>   
+To finish adding the calculated field, click **Add**.
 
 {% assign scriptOutput = '
     ===
-        image: /images/user-guide/calculated-fields/script-output-1-ce.png
-        title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.
+        image: /images/user-guide/calculated-fields/script/script-output-1-ce.png
+        title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-output-2-ce.png
-        title: Attribute: function must return a JSON object without timestamp information containing the computed value.
+        image: /images/user-guide/calculated-fields/script/script-output-2-ce.png
+        title: Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click **Add**.
 '
 %}
 
@@ -154,27 +155,27 @@ Select how the result should be stored:
 
 ### Result
 
-After clicking the **Add** button, the calculated field will be added to your entity or profile.
+After the calculated field is created, data calculation will start immediately once the relevant input data is received.
 
 {% assign scriptResult = '
     ===
-        image: /images/user-guide/calculated-fields/script-result-1-ce.png
-        title: After clicking the **Add** button, the calculated field will be added to your entity or profile.
+        image: /images/user-guide/calculated-fields/script/script-result-1-ce.png
+        title: After the calculated field is created, data calculation will start immediately once the relevant input data is received.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=scriptResult %}
 
-Let&#39;s check the debug events by clicking the **Events** icon button. The debugging window displays calculated field arguments and the computed result.
+To view debug events, click **Events**. In the debug window, you can see events with the input data and the calculated result.
 
 > Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
 
 {% assign scriptEvent = '
     ===
-        image: /images/user-guide/calculated-fields/script-events-1-ce.png
+        image: /images/user-guide/calculated-fields/script/script-events-1-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/script-events-2-ce.png
+        image: /images/user-guide/calculated-fields/script/script-events-2-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -196,7 +197,7 @@ You need to convert the value to degrees Celsius, round the result to two decima
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the device level with the following parameters:
+Create a calculated field at the **device level** with the following parameters:
 
 <b><font size="3">General</font></b>
 - **Name:** C to F
@@ -236,13 +237,13 @@ Click **Add** to save the calculated field.
 
 {% assign exampleScript11 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-11-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-11-ce.png
         title: **Create a new calculated field** for the device and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script-example-12-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-12-ce.png
         title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-example-13-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-13-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
 '
 %}
@@ -261,10 +262,10 @@ Both messages will have the same timestamp.
 
 {% assign exampleScript12 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-14-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-14-ce.png
         title: Open the **Events** pop-up window of the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/script-example-15-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-15-ce.png
         title: You will see the input message with **temperature** and the output message with **temperatureC**. Both messages will have the same timestamp.
 '
 %}
@@ -275,7 +276,7 @@ In the **Latest telemetry** tab, the **temperatureC** key will appear.
 
 {% assign exampleScript13 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-16-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-16-ce.png
         title: In the **Latest telemetry** tab, the following key will appear: **temperatureC** — the result of the calculation, which displays the temperature in degrees Celsius.
 '
 %}
@@ -298,13 +299,13 @@ You need to calculate the **air density** based on these data and store the resu
 
 {% assign examplePrepareScript2 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-prepare-1-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-prepare-1-ce.png
         title: An asset: **Building A**.
     ===
-        image: /images/user-guide/calculated-fields/script-example-prepare-2-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-prepare-2-ce.png
         title: A device: **Smart Device** (sends **temperature** telemetry)
     ===
-        image: /images/user-guide/calculated-fields/script-example-prepare-3-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-prepare-3-ce.png
         title: A device: **Altimeter** (sends **altitude** as an attribute)
 '
 %}
@@ -315,7 +316,7 @@ You need to calculate the **air density** based on these data and store the resu
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the asset level with the following parameters:
+Create a calculated field at the **asset level** with the following parameters:
 
 <b><font size="3">General</font></b>
 - **Name:** Air density calculation
@@ -374,19 +375,19 @@ Click **Add** to save the calculated field.
 
 {% assign exampleScript21 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-21-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-21-ce.png
         title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script-example-22-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-22-ce.png
         title: Add a first argument:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-example-23-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-23-ce.png
         title: Add a second argument:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute key:** <i>altitude</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-example-24-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-24-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/script-example-25-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-25-ce.png
         title: The calculated field has been added.
 '
 %}
@@ -401,10 +402,10 @@ In the **Events** window, the arguments and the calculation result are displayed
 
 {% assign exampleScript22 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-26-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-26-ce.png
         title: In the **Events** window, the arguments and the calculation result are displayed.
     ===
-        image: /images/user-guide/calculated-fields/script-example-27-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-27-ce.png
 '
 %}
 
@@ -414,7 +415,7 @@ In the **Latest telemetry** tab of the **Building A** asset, the **airDensity** 
 
 {% assign exampleScript23 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-28-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-28-ce.png
         title: In the **Latest telemetry** tab of the **Building A** asset, the **airDensity** key will appear.
 '
 %}
@@ -442,7 +443,7 @@ In such cases, the system should generate a telemetry event containing informati
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the device level with the following parameters:
+Create a calculated field at the **device level** with the following parameters:
 
 <b><font size="3">General</font></b>
 - **Name:** Freezer temperature analysis
@@ -505,19 +506,19 @@ Click **Add** to save the calculated field.
 
 {% assign exampleScript31 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-31-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-31-ce.png
         title: **Create a new calculated field** for the device and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script-example-32-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-32-ce.png
         title: Add first argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Time series rolling<br>- **Time series key:** defrost<br>- **Argument name:** defrost.<br>- Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-example-33-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-33-ce.png
         title: Add a second argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Time series rolling<br>- **Time series key:** temperature<br>- **Argument name:** temperature.<br>- Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-example-34-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-34-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/script-example-35-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-35-ce.png
         title: The calculated field has been added.
 '
 %}
@@ -532,10 +533,10 @@ In the **Events** window, you can view the generated events.
 
 {% assign exampleScript32 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-36-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-36-ce.png
         title: In the **Events** window, you can view the generated events.
     ===
-        image: /images/user-guide/calculated-fields/script-example-37-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-37-ce.png
 '
 %}
 
@@ -557,7 +558,7 @@ This indicates that the freezer is in a potentially critical state.
 
 {% assign exampleScript33 = '
     ===
-        image: /images/user-guide/calculated-fields/script-example-38-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-38-ce.png
         title: Go to the **Latest telemetry** tab. The **issue** key is the result of the calculation.
 '
 %}

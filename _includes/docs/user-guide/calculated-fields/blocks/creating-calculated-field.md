@@ -1,7 +1,7 @@
 
 Calculated fields can be created either **centrally** or **in the context of a specific entity or profile**, depending on where the calculation logic should be applied.
 
-> **Note:** The process of creating an alarm rule is the same for **Devices**, **Assets**, **Device profiles**, or **Asset profiles**.
+> **Note:** The process of creating a calculated field is the same for **Devices**, **Assets**, **Device profiles**, or **Asset profiles**.
 
 <b><font size="4">Where to create a calculated field</font></b>
 
@@ -13,7 +13,7 @@ Use the **Calculated fields page** to manage all calculated fields from a single
 
 **Steps:**
 - Open the **Calculated fields** page from the left-hand menu.
-- Click **+** → **Create new calculated field**.
+- Click "**+**" → **Create new calculated field**.
 - In the configuration window, specify the **target entity or profile** to which the calculated field will be applied.
 
 {% assign createCalculatedFieldCE2 = '

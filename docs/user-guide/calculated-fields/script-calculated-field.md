@@ -8,7 +8,7 @@ hidetoc: "true"
 
 expression-script-calculated-fields-1:
   0:
-    image: /images/user-guide/calculated-fields/expression-script-calculated-fields-1-ce.png
+    image: /images/user-guide/calculated-fields/expression-script-function-1-ce.png
     title: 'Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.'
     
 output-script-1:

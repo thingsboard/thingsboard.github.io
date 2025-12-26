@@ -56,13 +56,13 @@ After configuring the parameters, click **Add**.
 
 {% assign simpleArgument = '
     ===
-        image: /images/user-guide/calculated-fields/simple-argument-1-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-argument-1-ce.png
         title: Click **Add argument** and define the data source.
     ===
-        image: /images/user-guide/calculated-fields/simple-argument-2-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-argument-2-ce.png
         title: Specify the **entity type**, **time series key / attribute key**, **argument name**, and **default value**, then click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/simple-argument-3-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-argument-3-ce.png
 '
 %}
 
@@ -76,7 +76,7 @@ In the **Expression** section, enter the mathematical expression for the calcula
 
 {% assign simpleExpression = '
     ===
-        image: /images/user-guide/calculated-fields/simple-expression-1-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-expression-1-ce.png
         title: In the **Expression** section, enter the mathematical expression for the calculation using the variables defined in the **Arguments** section.
 '
 %}
@@ -87,16 +87,13 @@ In the **Expression** section, enter the mathematical expression for the calcula
 
 ### Output
 
-The calculation result can be stored either as [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} or as an [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.   
-Further processing and persistence depend on the selected [Output strategy](#output-strategy).
-
 <b><font size="3">Output type</font></b>   
 Select how the result should be stored:
-- **Time series** or 
-- **Attribute**.   
+- [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} or 
+- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}   
   For attributes, also specify the scope: **Server**, **Client**, or **Shared attributes**.
 
-<b><font size="3">Output type</font></b>   
+<b><font size="3">Time series key / Attribute key</font></b>   
 Specify the key under which the calculated value will be stored.
 
 <b><font size="3">Decimals (optional)</font></b>   
@@ -106,13 +103,18 @@ If not specified, the value will not be rounded.
 > **[Only for Time series]**<br>
 "**Use latest timestamp**" option — when enabled, the calculated value will be stored using the most recent timestamp from the arguments telemetry instead of the server time.
 
+Further processing and persistence depend on the selected [output strategy](#output-strategy).
+
+<b><font size="4">Save calculated field</font></b>   
+To finish adding the calculated field, click **Add**.
+
 {% assign simpleOutput = '
     ===
-        image: /images/user-guide/calculated-fields/simple-output-1-ce.png
-        title: Select the output type as **Time series**. Set a name to the variable that will store the calculation result. Optionally, specify the number of decimal places.
+        image: /images/user-guide/calculated-fields/simple/simple-output-1-ce.png
+        title: Select the output type as **Time series**.<br>Set a name to the variable that will store the calculation result.<br>To finish adding the calculated field, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/simple-output-2-ce.png
-        title: Select the output type as **Attribute** and choose its scope: **Server attributes**, **Client attributes**, or **Shared attributes**. Set a name to the variable that will store the calculation result. Optionally, set the number of decimal places.
+        image: /images/user-guide/calculated-fields/simple/simple-output-2-ce.png
+        title: Select the output type as **Attribute** and choose its scope: **Server attributes**, **Client attributes**, or **Shared attributes**.<br>Set a name to the variable that will store the calculation result.<br>To finish adding the calculated field, click **Add**.
 '
 %}
 
@@ -126,27 +128,27 @@ If not specified, the value will not be rounded.
 
 ### Result
 
-After clicking the **Add** button, the calculated field will be added to your entity or profile.
+After the calculated field is created, data calculation will start immediately once the relevant input data is received.
 
 {% assign scriptResult = '
     ===
-        image: /images/user-guide/calculated-fields/simple-result-1-ce.png
-        title: After clicking the **Add** button, the calculated field will be added to your entity or profile.
+        image: /images/user-guide/calculated-fields/simple/simple-result-1-ce.png
+        title: After the calculated field is created, data calculation will start immediately once the relevant input data is received.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=scriptResult %}
 
-Let&#39;s check the debug events by clicking the **Events** icon button. The debugging window displays calculated field arguments and the computed result.
+To view debug events, click **Events**. In the debug window, you can see events with the input data and the calculated result.
 
 > Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
 
 {% assign scriptEvent = '
     ===
-        image: /images/user-guide/calculated-fields/simple-events-1-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-events-1-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/simple-events-2-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-events-2-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -162,11 +164,20 @@ Let&#39;s check the debug events by clicking the **Events** icon button. The deb
 The **Smart Device** sends **temperature** and **humidity** values in real time.   
 Based on these data, you need to calculate the **dew point** and store the result as telemetry.
 
+{% assign exampleSimple1 = '
+    ===
+        image: /images/user-guide/calculated-fields/simple/simple-example-9-ce.png
+        title: The **Smart Device** sends **temperature** and **humidity** values in real time.  
+'
+%}
+
+{% include images-gallery.liquid imageCollection=exampleSimple1 %}
+
 <hr>
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the device level with the following parameters:
+Create a calculated field at the **device level** with the following parameters:
 
 <b><font size="3">General</font></b>
 - **Name:** Dew point calculation
@@ -204,26 +215,26 @@ The following mathematical expression, based on temperature and humidity values,
 
 Click **Add** to save the calculated field.
 
-{% assign exampleSimple1 = '
+{% assign exampleSimple2 = '
     ===
-        image: /images/user-guide/calculated-fields/simple-example-1-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-example-1-ce.png
         title: Create a **"Simple"** calculated field at the device level.
     ===
-        image: /images/user-guide/calculated-fields/simple-example-2-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-example-2-ce.png
         title: Add first argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i><br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/simple-example-3-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-example-3-ce.png
         title: Add a second argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>humidity</i><br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/simple-example-4-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-example-4-ce.png
         title: Insert the mathematical **expression** to calculate the dew point.<br>In the **Output** section<br>- Select **type:** <i>Time series</i>.<br>- Specify the name of the calculated variable — **dewPoint** — under which the calculation result will be saved.<br>Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/simple-example-5-ce.png
+        image: /images/user-guide/calculated-fields/simple/simple-example-5-ce.png
         title: The calculated field has been added.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=exampleSimple1 %}
+{% include images-gallery.liquid imageCollection=exampleSimple2 %}
 
 <hr>
 
@@ -231,27 +242,27 @@ Click **Add** to save the calculated field.
 
 In the **Events** window, you can view the input arguments and the calculation result.
 
-{% assign exampleSimple2 = '
-    ===
-        image: /images/user-guide/calculated-fields/simple-example-6-ce.png
-        title: In the **Events** window, you can view the input arguments and the calculation result.
-    ===
-        image: /images/user-guide/calculated-fields/simple-example-7-ce.png
-'
-%}
-
-{% include images-gallery.liquid imageCollection=exampleSimple2 %}
-
-In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
-
 {% assign exampleSimple3 = '
     ===
-        image: /images/user-guide/calculated-fields/simple-example-8-ce.png
-        title: In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
+        image: /images/user-guide/calculated-fields/simple/simple-example-6-ce.png
+        title: In the **Events** window, you can view the input arguments and the calculation result.
+    ===
+        image: /images/user-guide/calculated-fields/simple/simple-example-7-ce.png
 '
 %}
 
 {% include images-gallery.liquid imageCollection=exampleSimple3 %}
+
+In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
+
+{% assign exampleSimple4 = '
+    ===
+        image: /images/user-guide/calculated-fields/simple/simple-example-8-ce.png
+        title: In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=exampleSimple4 %}
 
 <hr>
 

@@ -9,6 +9,8 @@ This feature eliminates the need to create separate [Rule Chains](/docs/{{docsPr
 
 Using expressions, scripts, or specialized processing modes, users can standardize data, generate new metrics, perform geospatial analytics, aggregate information, and automatically pass values between related entities.
 
+<br>
+
 ## Key benefits
 
 - **No additional logic in rule chains**: calculations are performed at the data ingestion stage, reducing the complexity of Rule Chains.
@@ -26,7 +28,7 @@ Using expressions, scripts, or specialized processing modes, users can standardi
 - **Energy analytics** — calculating hourly/daily consumption and identifying peak loads. 
 - **Smoothing and filtering** — applying rolling averages, statistical aggregations, and noise reduction to telemetry. 
 - **Predictive maintenance** — generating derived metrics and detecting potential failures based on trends. 
-- **Geofencing scenarios** — checking zone membership, generating ENTER/EXIT events, and monitoring route compliance. 
+- **Geofencing** — evaluating real-time GPS coordinates against defined zones to track entity presence (INSIDE/OUTSIDE) and detect zone transition events (ENTERED/LEFT).
 - **Propagation** — automatically transferring attributes or telemetry to related entities for data synchronization. 
 - **Group data aggregation** — computing min/max/avg/sum/count for sets of related devices or assets. 
 - **Historical time-series analysis** — performing time window aggregation, trend analysis, and statistical evaluation. 

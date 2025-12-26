@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-**Related entities aggregation** — this type of calculated field performs data aggregation from related entities (devices, assets, customers, or the tenant) at a single relation level.
+Aggregate the **latest data** from multiple related entities (devices, assets, customers, or the tenant) and store the result in the target entity.
 
 Aggregation is executed only across **direct (single-level) relations**, ensuring precise and predictable selection of entities for processing.
 
@@ -13,32 +13,44 @@ Aggregation is executed only across **direct (single-level) relations**, ensurin
 
 <hr>
 
-## General
+## Configuration
 
-{% assign calculatedFieldType = "Select the **Related entities aggregation** calculated field type — it aggregates data from related entities (min, max, average, count, etc.)." %}
+Define the data sources, calculation logic, result format, and how it will be further processed in the system.
+
+### General
+
+{% assign calculatedFieldType = "Select the **Related Entities Aggregation** calculated field type — aggregation (average, minimum, maximum, sum, count, count unique) of the latest data from related entities." %}
 {% include /docs/user-guide/calculated-fields/blocks/general-configuration.md %}
 
 <hr>
 
-## Aggregation path to related entities
+### Aggregation path to related entities
 
-Defines a **single-level** path to the entities from which data will be retrieved for aggregation.   
-Only **direct relations** are supported between:
+ThingsBoard will collect data for aggregation from all entities that match the selected relationship direction and relationship type.
 
-**Device ↔ Asset ↔ Customer ↔ Tenant**
+<b><font size="3">Relation direction</font></b>   
+Define the path to the entities from which the data will be read:
+- **Down to child** — data is aggregated from child entities.
+- **Up to parent** — data is aggregated from parent entities.
 
-**Relation direction**
+Aggregation works only with direct (single-level) relationships, without recursion or multi-level traversal.
 
-Specifies the direction for locating the target entity:
-- **Up to parent** — data is propagated to the parent entity.
-- **Down to child** — data is propagated to the child entity
-
-**Relation type**
-
-The relation type used to identify the target entity, for example:
+<b><font size="3">Relation type</font></b>   
+Define the relationship type between the target entity and the related entities, for example:
 - **Contains**
 - **Manages**
 - or **any custom relation types** defined in ThingsBoard
+
+{% assign relatedPathToRelatedEntities = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-path-to-related-entities-1-ce.png
+        title: Define the path to the entities from which the data will be read for aggregation, as well as the relationship type between the target entity and the related entities.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedPathToRelatedEntities %}
+
+<hr>
 
 ### Arguments
 
@@ -46,22 +58,34 @@ Arguments define which data will be retrieved from the related entities before p
 
 Click **Add argument** and configure the following:
 
-**Argument settings**   
-(Data is fetched from related entities)
+<b><font size="3">Argument type</font></b>   
+Defines the data type:
+- **Attribute**: uses static or semi-static key-value pairs associated with an entity (e.g., model, max temperature).
+- **Latest telemetry**: uses the most recent telemetry data from an entity (e.g., temperature, speed, voltage).
 
-- **Argument type**: defines which entity data will be used for the calculations:
-    - **Latest telemetry** — the most recent telemetry value of the entity (for example, *temperature*, *speed*, *voltage*).
-    - **Attribute** — static or semi-static data associated with the entity (for example, *model*, *maxTemperature*).   
-      For attributes, also specify the scope: **Server**, **Client**, or **Shared attributes**.
-- **Time series key / Attribute key**   
-  The key of the data that will be read from the related entity.
-- **Argument name**   
-  A logical variable name used in Metrics and Filter expressions.
-- **Default value**   
-  A fallback value to use if the data source is unavailable.
-- Finally, click **Add** button.
+<b><font size="3">Time series key / Attribute key</font></b>   
+The telemetry or attribute key whose value will be read.
 
-{% include content-toggle.liquid content-toggle-id="simplecalculatedfieldsargumenttype" toggle-spec=simplecalculatedfieldsargumenttype %}
+<b><font size="3">Argument name</font></b>   
+The name of the variable used in the formula or script.
+
+<b><font size="3">Default value</font></b>   
+The default value used if the data is unavailable.
+
+After configuring the parameters, click **Add**.
+
+{% assign relatedArgument = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-1-ce.png
+        title: Click **Add argument** and define the data source.<br>Specify the **argument type**, **time series key / attribute key**, **argument name**, and **default value**.<br>Then click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-2-ce.png
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedArgument %}
+
+<hr>
 
 ### Metrics
 
@@ -69,62 +93,144 @@ Metrics define which aggregated values should be calculated based on the collect
 
 Click **Add metric** and configure the following:
 
-**Metric settings**
-- **Metric name**   
-  The key under which the aggregated result will be stored.
-- **Aggregation**   
-  Available aggregation functions:
-    - **Average**
-    - **Minimum**
-    - **Maximum**
-    - **Sum**
-    - **Count**
-    - **Count unique**
-- **Filter (on/off)**   
-  Allows filtering entities before aggregation.   
-  A filter is a function that must return a boolean value (<span class="code-light">true/false</span>) and may use any of the defined arguments.
-  Example:
+<b><font size="3">Metric name</font></b>      
+The key under which the aggregated result will be stored.
+
+<b><font size="3">Aggregation</font></b>   
+Available aggregation functions: **Average** / **Minimum** / **Maximum** / **Sum** / **Count** / **Count unique**
+
+<b><font size="3">Filter (on/off)</font></b>   
+Allows you to filter data before performing aggregation.
+
+The filter is defined as a function that returns a **boolean value** (<span class="code-light">true / false</span>) and can use any arguments specified in the configuration. If the function returns <span class="code-light">true</span>, the data is included in the aggregation; if it returns <span class="code-light">false</span>, the data is skipped.
+
+Example:
 
 ```js
 return temperature > 10 && status == "active";
 ```
+{:.copy-code}
 
-- **Value source**
-  Choose which value should be used in the metric:
-    - **Key** — use the argument value directly
-    - **Function** — use the result of a function (e.g., in Script-based aggregations)
-- **Argument name**
-  Select the argument that will serve as the data source for this metric.
+<b><font size="3">Value source</font></b>   
+Choose which value should be used in the metric:
+- **Key** — use the argument value directly
+- **Function** — use the result of a function (e.g., in Script-based aggregations)
 
-**Deduplication interval**
-This parameter defines the minimum time interval between two identical results.   
-If the result does not change within this interval, the system will not generate an update.
+<b><font size="3">Argument name</font></b>   
+Select the argument that will serve as the data source for this metric.
+
+{% assign relatedMetrics = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-1-ce.png
+        title: Click **Add metric** and configure the following:<br>Specify the **metric name** and select **aggregation** type.
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
+        title: Select **value source** (Key or Function) and set **argument name**.<br>Then click **Add**.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedMetrics %}
+
+<br><b><font size="4">Deduplication interval</font></b>
+
+**Deduplication interval** is the minimum time period between repeated aggregations.   
+It limits how often a calculated field can re-aggregate data from related entities in response to frequent updates.
+
+<b><font size="3">Why it is needed</font></b>   
+In **Related entities aggregation**, the results depend on multiple entities (for example, dozens or hundreds of devices). 
+If each of them reports telemetry frequently, the system could trigger aggregation too many times in a row. 
+The **Deduplication interval** helps "group" these triggers.
+
+<b><font size="3">How it works</font></b>   
+When updates from related entities arrive:
+- the first update triggers processing;
+- subsequent updates received within the **deduplication interval** do not trigger aggregation again;
+- once the interval ends, the system allows aggregation to run again (using the **latest available data**).
+
+{% assign relatedDeduplicationInterval = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-3-ce.png
+        title: **Deduplication interval** is the minimum time period between repeated aggregations. It limits how often a calculated field can re-aggregate data from related entities in response to frequent updates.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedDeduplicationInterval %}
+
+<hr>
 
 ### Output
 
 The calculated values are returned as a JSON object containing **keys** that represent the computed results, which are then used to store those values in the system.   
 Further processing and persistence depend on the selected [Output strategy](#output-strategy-1).
 
-- **Output type**   
-  Choose how the aggregated result will be stored:
-    - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: function must return a JSON object or array with or without a timestamp containing the computed value.
+<b><font size="3">Output type</font></b>   
+Choose how the aggregated result will be stored:
+- [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.
   > To align the result with the latest timestamp of the input arguments telemetry, use `ctx.latestTs` and assign it explicitly to the `ts` field in the returned object.
-    - [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}: function must return a JSON object **without timestamp** information containing the computed value.   
-      For attributes, also specify the scope: **Server**, **Client**, or **Shared attributes**.
-- **Decimals (optional)**   
-  The number of decimal places to round the result to. If left empty, no rounding is applied.
-- **Output strategy (optional)**   
-  Select how the result should be processed. By default, the value is processed and saved immediately.   
-  Learn more about the output strategy in the section [below](#output-strategy).
-- To finish adding the calculated field, click **Add**.
+- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}: the function returns a JSON object **without timestamp** information containing the computed value.   
+  For attributes, also specify the scope: **Server**, **Client**, or **Shared attributes**.
+
+<b><font size="3">Decimals (optional)</font></b>   
+The number of decimal places to round the result to. If left empty, no rounding is applied.
 
 > **[Only for Time series]**<br>
 "**Use latest timestamp**" option — when enabled, the calculated value will be saved using the latest timestamp from the arguments, rather than the server time.
 
-{% include images-gallery.html imageCollection="output-script-1" %}
+<b><font size="4">Save calculated field</font></b>   
+To finish adding the calculated field, click **Add**.
+
+{% assign relatedOutput = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-1-ce.png
+        title: Time series: the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.<br>To finish adding the calculated field, click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-2-ce.png
+        title: Attribute: the function returns a JSON object **without timestamp** information containing the computed value.<br>To finish adding the calculated field, click **Add**.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedOutput %}
 
 <hr>
 
 {% include /docs/user-guide/calculated-fields/blocks/output-strategy.md %}
 
 <hr>
+
+### Result
+
+After the calculated field is created, data aggregation will start running immediately after the relevant input data is received.
+
+{% assign relatedResult = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-result-1-ce.png
+        title: After the calculated field is created, data aggregation will start running immediately after the relevant input data is received.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedResult %}
+
+To view debug events, click **Events**. In the debug window, you can see events with the input data and the calculated result.
+
+> Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
+
+{% assign relatedEvents = '
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-events-1-ce.png
+        title: Check the debug events by clicking the "Events" icon button".
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-events-2-ce.png
+        title: The debugging window displays calculated field arguments and the computed result.
+    ===
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-events-3-ce.png
+'
+%}
+
+{% include images-gallery.liquid imageCollection=relatedEvents %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

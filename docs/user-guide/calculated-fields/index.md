@@ -107,7 +107,7 @@ example-dew-point-calculated-fields:
     
 example-script-calculated-fields-1:
     0:
-        image: /images/user-guide/calculated-fields/example-script-calculated-fields-1-ce.png
+        image: /images/user-guide/calculated-fields/example-script-function-1-ce.png
         title: 'Enter a title for the calculated field, and select the calculation type as "Script". In the "Arguments" section, click "Add argument". Set the argument name to "temperatureF", choose the "Current entity" as the entity type, set the argument type to "Latest telemetry", and the time series key to "temperature". Click "Add".'
     1:
         image: /images/user-guide/calculated-fields/example-script-calculated-fields-2-ce.png
@@ -127,7 +127,7 @@ example-script-calculated-fields-1:
 
 example-script-calculated-fields-2:
     0:
-        image: /images/user-guide/calculated-fields/example-2-script-calculated-fields-1-ce.png
+        image: /images/user-guide/calculated-fields/example-2-script-function-1-ce.png
         title: 'Enter a title for the calculated field, and select the calculation type as "Script". In the "Arguments" section, click "Add argument". Set the argument name to "altitude", choose asset "Building A" as the entity, and set "altitude" as the attribute key. Click "Add".'
     1:
         image: /images/user-guide/calculated-fields/example-2-script-calculated-fields-2-ce.png
@@ -150,7 +150,7 @@ example-script-calculated-fields-2:
 
 example-script-calculated-fields-3:
     0:
-        image: /images/user-guide/calculated-fields/example-3-script-calculated-fields-1-ce.png
+        image: /images/user-guide/calculated-fields/example-3-script-function-1-ce.png
         title: 'Enter a title for the calculated field, and select the calculation type as "Script". In the "Arguments" section, click "Add argument". Set the argument name to "defrost", choose "Current entity" as the entity type, set the argument type to "Time series rolling", and the time series key to "defrost". Click "Add".'
     1:
         image: /images/user-guide/calculated-fields/example-3-script-calculated-fields-2-ce.png

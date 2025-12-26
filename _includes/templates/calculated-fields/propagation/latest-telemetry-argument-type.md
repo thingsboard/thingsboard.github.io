@@ -8,10 +8,10 @@ A new argument has been added.
 
 {% assign latestTelemetryArgumentType = '
     ===
-        image: /images/user-guide/calculated-fields/script-latest-telemetry-argument-1-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-calculation-telemetry-argument-1-ce.png
         title: Select the **latest telemetry** argument type and specify the **time series key**. Optionally, define a default value. Finally, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script-latest-telemetry-argument-2-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-calculation-telemetry-argument-2-ce.png
         title: A new argument has been added.
 '
 %}
