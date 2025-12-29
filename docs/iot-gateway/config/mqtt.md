@@ -143,7 +143,6 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-
 ### Attributes and Time series
 
 The configuration in this subsection provides settings for processing data from MQTT topic/topics. These settings will be 
@@ -179,7 +178,8 @@ Device name/profile from message and JSON payload<small></small>%,%devicenameand
 Device name/profile from topic and JSON payload<small></small>%,%devicenameandprofiletopiconstantandjson%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-topic-and-constant-json.md%br%
 Device name/profile from message and BYTES payload<small></small>%,%devicenameandprofilemessageconstantantbytes%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/device-name-and-profile-message-and-constant-bytes.md%br%
 Attributes/Time series with JSON Path<small></small>%,%attributestimeseriesjsonpath%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/attributes-time-series-json-path.md%br%
-Attributes/Time series with Slices<small></small>%,%attributestimeseriesslices%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/attributes-time-series-bytes.md{% endcapture %}
+Attributes/Time series with Slices<small></small>%,%attributestimeseriesslices%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/attributes-time-series-bytes.md%br%
+Attributes/Time series key name from topic<small>(advanced configuration mode only)</small>%,%attributestimeserieskeytopic%,%templates/iot-gateway/mqtt-connector/examples/time-series-and-attributes/attributes-time-series-key-name-from-topic.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="mqtt-attributes-timeseries-examples" toggle-spec=mqtt-attributes-timeseries-examples %}
 
 
@@ -375,7 +375,6 @@ it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-met
 {% endcapture %}
 {% include templates/info-banner.md content=methodFilterOptions %}
 
-
 ### Usage examples
 
 {% capture difference %}
@@ -456,13 +455,11 @@ MQTT broker connections offer three distinct security types: [Anonymous](/docs/i
 **Anonymous** is the simplest option: no credentials are required to publish/subscribe on the MQTT broker.
 *not recommended for production*, because it allows unattended access.
 
-
-| **Parameter**        | **Default value**       | **Description**                                                                                      |
-|:---------------------|:------------------------|------------------------------------------------------------------------------------------------------|
-| broker.security      |                         | The broker security object specifies authentication type for establishing connection to MQTT broker. |
-| broker.security.type | **anonymous**           | Type of authentication.                                                                              |
-| ---                  |                         |                                                                                                      |
-
+| **Parameter**        | **Default value** | **Description**                                                                                      |
+|:---------------------|:------------------|------------------------------------------------------------------------------------------------------|
+| broker.security      |                   | The broker security object specifies authentication type for establishing connection to MQTT broker. |
+| broker.security.type | **anonymous**     | Type of authentication.                                                                              |
+| ---                  |                   |                                                                                                      |
 
 Example of the security configuration for **anonymous** authentication option.
 
@@ -478,15 +475,13 @@ Example of the security configuration for **anonymous** authentication option.
 **Basic** authentication option uses a **username** and **password** configured on the MQTT broker. 
 It’s a good default for most setups - just use strong, unique credentials.
 
-
-| **Parameter**                   | **Default value** | **Description**                                                                                   |
-|:--------------------------------|:------------------|---------------------------------------------------------------------------------------------------|
-| broker.security                 |                   | The broker security object specifies authentication type for establishing connection to MQTT broker.|
-| broker.security.type            | **basic**         | Type of authentication.                                                                           |
-| broker.security.username        | **username**      | Username that will be used for establishing connection with MQTT broker.                          |
-| broker.security.password        | **password**      | Password that will be used for establishing connection with MQTT broker.                          |
-| ---                             |                   |                                                                                                   |
-
+| **Parameter**            | **Default value** | **Description**                                                                                      |
+|:-------------------------|:------------------|------------------------------------------------------------------------------------------------------|
+| broker.security          |                   | The broker security object specifies authentication type for establishing connection to MQTT broker. |
+| broker.security.type     | **basic**         | Type of authentication.                                                                              |
+| broker.security.username | **username**      | Username that will be used for establishing connection with MQTT broker.                             |
+| broker.security.password | **password**      | Password that will be used for establishing connection with MQTT broker.                             |
+| ---                      |                   |                                                                                                      |
 
 Example of the security configuration for **basic** authentication option: 
 
@@ -575,11 +570,13 @@ Example of the device mapping configuration:
 | **Parameter**                         | **Description**                                                                                                                                                                                                                          |
 |:--------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | mapping[].attributes[]                | List of attributes that will be sent to the ThingsBoard platform instance.                                                                                                                                                               |
-| mapping[].attributes[].key            | Key name of the attribute in ThingsBoard. It can be specified as a static value.                                                                                                                                                         |
+| mapping[].attributes[].keySource      | (Optional, available since Gateway v.3.8.1) Source for attribute key name. Can be: `message` (default) or `topic`. See [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) for more information.                             |
+| mapping[].attributes[].key            | Key name of the attribute in ThingsBoard. It can be specified as a static value, JSON path or regular expression.                                                                                                                        |
 | mapping[].attributes[].type           | The type of attribute field (It could be one of the following `string`, `boolean`, `integer`, `double` or `Raw` if the **Payload type** `Bytes`).                                                                                        |
 | mapping[].attributes[].value          | The value of the attribute that will be sent to the platform device. It should be specified depending on the selected **Payload type** (`Bytes`, `JSON`, `CUSTOM`).                                                                      |
 | mapping[].attributes[].reportStrategy | (Optional) Report strategy for the attributes data. If not specified, the device report strategy will be used.                                                                                                                           |
 | mapping[].timeseries[]                | List of telemetry data that will be sent to the ThingsBoard platform instance.                                                                                                                                                           |
+| mapping[].timeseries[].keySource      | (Optional, available since Gateway v.3.8.1) Source for time series key name. Can be: `message` (default) or `topic`. See [Usage examples](/docs/iot-gateway/config/mqtt/#usage-examples) for more information.                           |
 | mapping[].timeseries[].key            | Key name of the telemetry data in ThingsBoard. It can be specified as a static value.                                                                                                                                                    |
 | mapping[].timeseries[].type           | The type of telemetry field (It could be one of the following `string`, `boolean`, `integer`, `double` or `Raw` if the **Payload type** `Bytes`).                                                                                        |
 | mapping[].timeseries[].value          | Value of the telemetry data that will be sent to the platform. It should be specified depending on the selected type (`json path`, `regular expressions` or `slices`).                                                                   |
@@ -622,24 +619,22 @@ Example of the attributes and telemetry configuration:
     "key": "combine",
     "value": "${hum}:${temp}"
   }
-],
+]
 ```
 {: .copy-code}
-
 
 ### Request mapping
 
 #### Device connect requests
 
-
-| **Parameter**                                                                                                                                    | **Description**                                                                                                                                                                                     |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| requestsMapping.connectRequests[].topicFilter                                                                                                    | The topic/topics the gateway will subscribe to and wait for device to publish the connect request.[Wildcards](#wildcard-usage) can be used for topic creation.                                      |
-| requestsMapping.connectRequests[].deviceInfo.deviceNameExpressionSource                                                                          | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
-| requestsMapping.connectRequests[].deviceInfo.deviceNameExpression                                                                                | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
-| requestsMapping.connectRequests[].deviceInfo.deviceProfileExpressionSource                                                                       | Source of the device profile to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                         |
-| requestsMapping.connectRequests[].deviceInfo.deviceProfileExpression                                                                             | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
-| ---                                                                                                                                              |                                                                                                                                                                                                     |
+| **Parameter**                                                              | **Description**                                                                                                                                                                                     |
+|:---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.connectRequests[].topicFilter                              | The topic/topics the gateway will subscribe to and wait for device to publish the connect request.[Wildcards](#wildcard-usage) can be used for topic creation.                                      |
+| requestsMapping.connectRequests[].deviceInfo.deviceNameExpressionSource    | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
+| requestsMapping.connectRequests[].deviceInfo.deviceNameExpression          | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| requestsMapping.connectRequests[].deviceInfo.deviceProfileExpressionSource | Source of the device profile to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                        |
+| requestsMapping.connectRequests[].deviceInfo.deviceProfileExpression       | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| ---                                                                        |                                                                                                                                                                                                     |
 
 Example of the connect request configuration:
 
@@ -662,13 +657,12 @@ Example of the connect request configuration:
 
 #### Device disconnect requests
 
-
-| **Parameter**                                                                                                                                     | **Description**                                                                                                                                                                                     |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| requestsMapping.disconnectRequests[].topicFilter                                                                                                  | The topic/topics the gateway will subscribe to and wait for device to publish the disconnect request.[Wildcards](#wildcard-usage) can be used for topic creation.                                   |
-| requestsMapping.disconnectRequests[].deviceInfo.deviceNameExpressionSource                                                                        | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
-| requestsMapping.disconnectRequests[].deviceInfo.deviceNameExpression                                                                              | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
-| ---                                                                                                                                               |                                                                                                                                                                                                     |
+| **Parameter**                                                              | **Description**                                                                                                                                                                                     |
+|:---------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.disconnectRequests[].topicFilter                           | The topic/topics the gateway will subscribe to and wait for device to publish the disconnect request.[Wildcards](#wildcard-usage) can be used for topic creation.                                   |
+| requestsMapping.disconnectRequests[].deviceInfo.deviceNameExpressionSource | Source of the device name to which the request will be sent to (can be `message`, `topic` or `constant`).                                                                                           |
+| requestsMapping.disconnectRequests[].deviceInfo.deviceNameExpression       | Expression used to extract the device name from the selected source (Message/Topic/Constant). Supports JSON path, regular expression, byte slice, or literal - see [expression](#expression-types). |
+| ---                                                                        |                                                                                                                                                                                                     |
 
 Example of the disconnect request configuration:
 
@@ -688,7 +682,6 @@ Example of the disconnect request configuration:
 {: .copy-code}
 
 #### Device attribute requests
-
 
 | **Parameter**                                                             | **Description**                                                                                                                                                                                        |
 |:--------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -728,16 +721,14 @@ Example of the attribute requests configuration:
 
 #### Device attribute updates
 
-
-| **Parameter**                                              | **Description**                                                                                                                                                            |
-|:-----------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| requestsMapping.attributeUpdates[].retain                  | Whether the attribute response message should be retained by the MQTT broker.                                                                                              |
-| requestsMapping.attributeUpdates[].deviceNameFilter        | Regular expression device name filter, used to determine which devices should receive attribute updates see [expression](#expression-types)                                |
-| requestsMapping.attributeUpdates[].attributeFilter         | Regular expression attribute name filter, used to determine which attributes should be updated see [expression](#expression-types)                                         |
-| requestsMapping.attributeUpdates[].topicExpression         | JSON-path expression used for creating topic address to send a message. Supports variables like `${deviceName}` and `${attributeKey}` see [expression](#expression-types). |
-| requestsMapping.attributeUpdates[].valueExpression         | JSON-path expression used for creating the message data that will be sent to the topic. Supports variables like `${attributeKey}` and `${attributeValue}` see [expression](#expression-types) .                    |
-| ---                                                        |                                                                                                                                                                            |
-
+| **Parameter**                                       | **Description**                                                                                                                                                                                 |
+|:----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.attributeUpdates[].retain           | Whether the attribute response message should be retained by the MQTT broker.                                                                                                                   |
+| requestsMapping.attributeUpdates[].deviceNameFilter | Regular expression device name filter, used to determine which devices should receive attribute updates see [expression](#expression-types)                                                     |
+| requestsMapping.attributeUpdates[].attributeFilter  | Regular expression attribute name filter, used to determine which attributes should be updated see [expression](#expression-types)                                                              |
+| requestsMapping.attributeUpdates[].topicExpression  | JSON-path expression used for creating topic address to send a message. Supports variables like `${deviceName}` and `${attributeKey}` see [expression](#expression-types).                      |
+| requestsMapping.attributeUpdates[].valueExpression  | JSON-path expression used for creating the message data that will be sent to the topic. Supports variables like `${attributeKey}` and `${attributeValue}` see [expression](#expression-types) . |
+| ---                                                 |                                                                                                                                                                                                 |
 
 Example of the attribute updates configuration:
 
@@ -765,17 +756,16 @@ There are two types of RPC requests supported by the MQTT connector:
 1. **Two-way (with response)** - The gateway sends a request to the device and waits for a response. This is useful when you need to get data back from the device.
 2. **One-way (without response)** - The gateway sends a request to the device without expecting a response. This is useful for simple commands that don't require confirmation.
 
-
-| **Parameter**                                                                         | **Description**                                                                                                                                                                                 |
-|:--------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| requestsMapping.serverSideRpc[].deviceNameFilter                                      | Regular expression device name filter, is used to determine which devices this RPC configuration applies to. See [expression](#expression-types)                                                |
-| requestsMapping.serverSideRpc[].methodFilter                                          | Regular expression method name filter, is used to determine which RPC methods this configuration applies to. See [expression](#expression-types)                                                |
-| requestsMapping.serverSideRpc[].requestTopicExpression                                | JSON-path expression, is used for creating topic address to send RPC request. Supports variables like `${deviceName}` and `${attributeKey}` applies to. See [expression](#expression-types)               |
-| requestsMapping.serverSideRpc[].responseTopicExpression                               | JSON-path expression, is used for creating topic address to subscribe for response message.  Supports variables like `${deviceName}` and `${attributeKey}` applies to. See [expression](#expression-types) |
-| requestsMapping.serverSideRpc[].responseTopicQoS                                      | Quality of Service level for the response topic subscription.                                                                                                                                   | 
-| requestsMapping.serverSideRpc[].responseTimeout                                       | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic.                                                  |
-| requestsMapping.serverSideRpc[].valueExpression                                       | JSON-path expression, is used for creating data for sending to broker. Supports variables like `${deviceName}` and `${attributeKey}` applies to. See [expression](#expression-types)                       |
-| ---                                                                                   |                                                                                                                                                                                                 |
+| **Parameter**                                           | **Description**                                                                                                                                                                                            |
+|:--------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| requestsMapping.serverSideRpc[].deviceNameFilter        | Regular expression device name filter, is used to determine which devices this RPC configuration applies to. See [expression](#expression-types)                                                           |
+| requestsMapping.serverSideRpc[].methodFilter            | Regular expression method name filter, is used to determine which RPC methods this configuration applies to. See [expression](#expression-types)                                                           |
+| requestsMapping.serverSideRpc[].requestTopicExpression  | JSON-path expression, is used for creating topic address to send RPC request. Supports variables like `${deviceName}` and `${attributeKey}` applies to. See [expression](#expression-types)                |
+| requestsMapping.serverSideRpc[].responseTopicExpression | JSON-path expression, is used for creating topic address to subscribe for response message.  Supports variables like `${deviceName}` and `${attributeKey}` applies to. See [expression](#expression-types) |
+| requestsMapping.serverSideRpc[].responseTopicQoS        | Quality of Service level for the response topic subscription.                                                                                                                                              | 
+| requestsMapping.serverSideRpc[].responseTimeout         | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic.                                                             |
+| requestsMapping.serverSideRpc[].valueExpression         | JSON-path expression, is used for creating data for sending to broker. Supports variables like `${deviceName}` and `${attributeKey}` applies to. See [expression](#expression-types)                       |
+| ---                                                     |                                                                                                                                                                                                            |
 
 The configuration for Device RPC methods is defined in the "serverSideRpc" section of the MQTT connector configuration:
 
@@ -954,7 +944,6 @@ _Payload example:_
 _Converted data:_
 `AM-1`
 `20`
-
 
 ## Troubleshooting
 

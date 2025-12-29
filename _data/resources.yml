@@ -1,3 +1,8 @@
+4.2.1.1:
+  centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2.1.1/thingsboard-4.2.1.1.rpm
+  centos-installation: sudo rpm -Uvh thingsboard-4.2.1.1.rpm
+  ubuntu-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2.1.1/thingsboard-4.2.1.1.deb
+  ubuntu-installation: sudo dpkg -i thingsboard-4.2.1.1.deb
 4.2.1:
   centos-download: wget https://github.com/thingsboard/thingsboard/releases/download/v4.2.1/thingsboard-4.2.1.rpm
   centos-installation: sudo rpm -Uvh thingsboard-4.2.1.rpm
