@@ -1957,6 +1957,9 @@
 "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/paas/eu/user-guide/alarm-rules/":
+  url: "/docs/paas/eu/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/alarms/":
   url: "/docs/paas/eu/user-guide/alarms/"
   redirect_from: []
@@ -2226,6 +2229,9 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/secrets-storage/":
   url: "/docs/paas/eu/user-guide/secrets-storage/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/security/api-keys/":
+  url: "/docs/paas/eu/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/paas/eu/user-guide/self-registration/":
   url: "/docs/paas/eu/user-guide/self-registration/"
@@ -2503,6 +2509,9 @@
 "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/paas/user-guide/alarm-rules/":
+  url: "/docs/paas/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/paas/user-guide/alarms/":
   url: "/docs/paas/user-guide/alarms/"
   redirect_from: []
@@ -2772,6 +2781,9 @@
   redirect_from: []
 "/docs/paas/user-guide/secrets-storage/":
   url: "/docs/paas/user-guide/secrets-storage/"
+  redirect_from: []
+"/docs/paas/user-guide/security/api-keys/":
+  url: "/docs/paas/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/paas/user-guide/self-registration/":
   url: "/docs/paas/user-guide/self-registration/"
@@ -3721,6 +3733,9 @@
 "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/pe/user-guide/alarm-rules/":
+  url: "/docs/pe/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/pe/user-guide/alarms/":
   url: "/docs/pe/user-guide/alarms/"
   redirect_from: []
@@ -4135,6 +4150,9 @@
 "/docs/pe/user-guide/secrets-storage/":
   url: "/docs/pe/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/pe/user-guide/security/api-keys/":
+  url: "/docs/pe/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/pe/user-guide/self-registration/":
   url: "/docs/pe/user-guide/self-registration/"
   redirect_from:
@@ -4231,6 +4249,9 @@
   redirect_from: []
 "/docs/pe/user-guide/ui/tenants/":
   url: "/docs/pe/user-guide/ui/tenants/"
+  redirect_from: []
+"/docs/pe/user-guide/ui/trendz-settings/":
+  url: "/docs/pe/user-guide/ui/trendz-settings/"
   redirect_from: []
 "/docs/pe/user-guide/ui/trip-animation-widget/":
   url: "/docs/pe/user-guide/ui/trip-animation-widget/"
@@ -4824,6 +4845,9 @@
   redirect_from: []
 "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/user-guide/alarm-rules/":
+  url: "/docs/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/user-guide/alarms/":
   url: "/docs/user-guide/alarms/"
@@ -5990,6 +6014,9 @@
   redirect_from: []
 "/docs/user-guide/scada/":
   url: "/docs/user-guide/scada/"
+  redirect_from: []
+"/docs/user-guide/security/api-keys/":
+  url: "/docs/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/user-guide/ssl/coap-access-token/":
   url: "/docs/user-guide/ssl/coap-access-token/"

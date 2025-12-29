@@ -40,29 +40,31 @@ toc:
     path: /docs/pe/solution-templates/waste-management/
 - title: Key concepts
   section:
+  - title: Alarms
+    path: /docs/pe/user-guide/alarms/
+  - title: Alarm rules
+    path: /docs/pe/user-guide/alarm-rules/
+    new: true
+  - title: Calculated fields
+    path: /docs/pe/user-guide/calculated-fields/
+  - title: Notification center
+    path: /docs/pe/user-guide/notifications/
   - title: Entities and Relations
     path: /docs/pe/user-guide/entities-and-relations/
-  - title: Tenant profiles
-    path: /docs/pe/user-guide/tenant-profiles/
   - title: Device profiles
     path: /docs/pe/user-guide/device-profiles/
   - title: Asset profiles
     path: /docs/pe/user-guide/asset-profiles/
+  - title: Tenant profiles
+    path: /docs/pe/user-guide/tenant-profiles/
   - title: Attributes
     path: /docs/pe/user-guide/attributes/
   - title: Time-series data
     path: /docs/pe/user-guide/telemetry/
-  - title: Calculated fields
-    path: /docs/pe/user-guide/calculated-fields/
-    new: true
-  - title: Alarms
-    path: /docs/pe/user-guide/alarms/
   - title: Remote commands to devices
     path: /docs/pe/user-guide/rpc/
   - title: OTA updates
     path: /docs/pe/user-guide/ota-updates/
-  - title: Notification center
-    path: /docs/pe/user-guide/notifications/
 - title: Dashboards
   section:
   - title: Overview
@@ -322,6 +324,8 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Secrets storage
     path: /docs/pe/user-guide/secrets-storage/
+  - title: API keys
+    path: /docs/pe/user-guide/security/api-keys/
     new: true
   - title: Two-factor authentication
     path: /docs/pe/user-guide/two-factor-authentication/
@@ -381,6 +385,8 @@ toc:
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
+  - title: Trendz settings
+    path: /docs/pe/user-guide/ui/trendz-settings/
 - title: Contribution guide
   section:
     - title: How to contribute your device integration guide

@@ -1,180 +1,279 @@
 * TOC
 {:toc}
 
-ThingsBoard provides the ability to create and manage alarms related to your entities: devices, assets, customers, etc.
-Alarms assist in promptly addressing issues, preventing potential negative consequences, and ensuring efficient system operation. 
+**Alarms** are a key tool for monitoring events related to your entities — devices, assets, customers, and other components of your system. The alarm mechanism allows you to quickly react to anomalies, condition violations, or critical state changes, helping prevent potential issues and ensuring stable, efficient system operation.
 
-For example, you may configure ThingsBoard to automatically create an alarm when the temperature sensor reading is above a certain threshold.
-Of course, this is a very simplified case, and real scenarios can be much more complex.
+For example, you can configure ThingsBoard to automatically create an alarm when the temperature exceeds a defined threshold. This is only a simple example — real-world scenarios may involve complex conditions, combined parameters, time intervals, aggregated data, or context-dependent logic.
 
-## Main concepts
+The foundation of the alarm mechanism lies in the conditions and logic defined in [Alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules){:target="_blank"}. These rules determine when an alarm should be created, updated, or cleared. Once the rules are configured, the system begins generating the corresponding alarms, which you can view, filter, and manage through the dedicated interface. For more details on creating and configuring rules, see the [Alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} section.
 
-Let's review the main concepts of the alarm below:
+This section focuses on the practical use of alarms, the available interface tools, and the best practices for working with them.
+
+<hr>
+
+## Notification about created or cleared an alarm
+
+The [Notification center](/docs/{{docsPrefix}}user-guide/notifications){:target="_blank"} in ThingsBoard is responsible for delivering alerts about alarm events and other system activity to the appropriate users.
+By default, you receive notifications for all alarms originating from your devices, as well as alarms created by customer entities (for Tenant Administrators).
+
+{% include images-gallery.html imageCollection="notification-about-alarm" %}
+
+The Notification center allows you to flexibly configure notification rules, defining who should receive notifications, under which conditions, and through which delivery channels.   
+Available delivery channels include:
+- ThingsBoard web interface
+- Email
+- SMS
+- [Slack](/docs/{{docsPrefix}}user-guide/notifications/#slack){:target="_blank"}
+- [Microsoft Teams](/docs/{{docsPrefix}}user-guide/notifications/#microsoft-teams){:target="_blank"}
+- [ThingsBoard in-app notifications](/docs/{{docsPrefix}}mobile/){:target="_blank"}
+
+Learn more about configuring the Notification сenter [here](/docs/{{docsPrefix}}user-guide/notifications){:target="_blank"}.
+
+<hr>
+
+## View and manage alarms
+
+<b><font size="4">Alarms page</font></b>
+
+Use the **Alarms** page in the left navigation menu to view and manage alarms. The page displays alarms related to your entities — devices, assets, customers, users — in a unified list that includes:
+- Creation time
+- Alarm source (Originator)
+- Alarm type
+- Severity
+- Assigned user
+- Status (active/cleared, acknowledged/unacknowledged)
+
+To view more information about an alarm, click the three dots (…) in the **Details** column of the alarm you want to inspect.
+
+By default, the page shows all active alarms. You can apply filters and time ranges to refine the results.
+
+{% include images-gallery.html imageCollection="find-alarms" %}
+
+<hr>
+
+<b><font size="4">Alarm widgets</font></b>
+
+ThingsBoard provides dedicated widgets for visualizing and managing alarms on dashboards:
+
+<b><font size="3">Alarms table widget</font></b>
+
+- Displays alarms for selected entities within a configurable time window
+- Supports filtering by type, severity, acknowledgment, and propagation
+- Allows performing alarm actions directly from the widget (acknowledge, clear, assign)
+
+{% include images-gallery.html imageCollection="visualize-alarms-on-dashboard-1" %}
+
+<b><font size="3">Alarm count widget</font></b>
+
+- Shows the number of alarms matching defined filters
+- Supports filtering by severity, status, and type
+- Commonly used for high-level monitoring dashboards
+
+{% include images-gallery.html imageCollection="visualize-alarms-on-dashboard-2" %}
+
+To learn how to add widgets to dashboards, see the [dashboard configuration](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} documentation.
+
+<hr>
+
+<b><font size="4">Alarms of a specific entity</font></b>
+
+View and manage alarms associated with a specific entity (for example, a device) directly on its details page.
+- Open the **Devices** page (or the corresponding entity type)
+- Select the desired entity
+- In the entity details view, go to the **Alarms** tab
+
+Here you can view and manage alarms that belong specifically to this entity.
+
+{% include images-gallery.html imageCollection="find-alarm-for-specific-device" %}
+
+Now let&#39;s consider what operations you can perform on alarms.
+
+<hr>
+
+## Alarm operations
+
+### Acknowledge and clear alarms
+
+Each alarm can have the following status dimensions:
+- **Acknowledged** / **Unacknowledged**
+- **Active** / **Cleared**
+
+You can acknowledge or clear alarms from:
+- The **Alarms** page
+- The **Alarms table** widget
+- The **Alarms** tab of an entity details page
+
+<b><font size="3">Acknowledge</font></b>
+
+Click **Acknowledge** to mark the alarm as reviewed. Acknowledgment does not affect alarm logic but helps operational workflows.
+
+{% include images-gallery.html imageCollection="acknowledge-alarm" %}
+
+<b><font size="3">Clear</font></b>
+
+{% include images-gallery.html imageCollection="clear-alarm" %}
+
+Click **Clear** to close the alarm. Clearing can be performed manually or automatically if a rule defines a clear condition.
+
+<hr>
+
+### Alarm comments
+
+To view or leave comments:
+- Open an **alarm&#39;s details** window by clicking the three dots (…) in the **Details** column.
+- Scroll to the **Activity** section.
+
+There are two types of comments:
+- **User comments** — added manually, can be edited or deleted by the author.
+- **System comments** — generated automatically (for example, when severity changes or an alarm is assigned). These are read-only and displayed in gray.
+
+Comments help maintain an audit trail of operator actions and system events.
+
+{% include images-gallery.html imageCollection="alarm-comments-1" %}
+
+<hr>
+
+## Key concepts
+
+Let&#39;s review the main concepts of the alarm below:
 
 ### Originator
 
-The alarm originator is an entity that causes the alarm. For example, "Device A" is the initiator of an alarm if ThingsBoard receives a temperature reading from it that exceeds the threshold value specified in the alarm rule, and it creates a "High Temperature" alarm.
+The **originator** is the entity that initiated the event leading to the alarm. For example, if a device sends telemetry that exceeds a configured threshold, that device becomes the originator of the alarm.
 
 ### Type
 
-Alarm type helps to identify the root cause of the alarm. It is set when [creating an alarm rule](#how-to-create-the-alarm). For example, "High Temperature" and "Low Humidity" are two different alarms.
+The alarm type is a semantic identifier describing the nature of the event (e.g. *High Temperature* or *Low Humidity*). 
+
+Alarm type defines alarm uniqueness within an entity.
 
 {% include images-gallery.html imageCollection="alarm-type" %}
 
 ### Severity
 
-Each alarm has severity which is either **Critical**, **Major**, **Minor**, **Warning**, or **Indeterminate** (sorted by priority in descending order). Also, set when [creating an alarm rule](#how-to-create-the-alarm).
+Indicates the criticality of the event. ThingsBoard supports five levels, listed from highest to lowest priority:
+- **Critical**
+- **Major**
+- **Minor**
+- **Warning**
+- **Indeterminate**
+
+Severity is assigned when an alarm is created and may be updated by rule logic.
 
 {% include images-gallery.html imageCollection="alarm-severity" %}
 
 ### Status
 
-Alarms in ThingsBoard can be **active** or **cleared**. The system can automatically clear an alarm if a predefined condition is met, though setting such an Alarm clear condition is optional. 
-Additionally, users have the option to manually clear alarms.
+An alarm has two primary dimensions:
+- **Active** / **Cleared**
+- **Acknowledged** / **Unacknowledged**
 
-Apart from the active and cleared states, ThingsBoard also monitors whether an alarm has been acknowledged by a user.
+Together, these dimensions form four possible alarm states:
+- *Active & Unacknowledged*
+- *Active & Acknowledged*
+- *Cleared & Unacknowledged*
+- *Cleared & Acknowledged*
 
-To summarize, there are four alarm statuses:
-* **Active unacknowledged (ACTIVE_UNACK)** - alarm is not cleared and not acknowledged yet;
-* **Active acknowledged (ACTIVE_ACK)** - alarm is not cleared but already acknowledged;
-* **Cleared unacknowledged (CLEARED_UNACK)** - alarm was already cleared but not yet acknowledged;
-* **Cleared acknowledged (CLEARED_ACK)** - alarm was already cleared and acknowledged.
-
-[Managing alarms](#view-and-manage-alarms) can be done through the "Alarms" page, via a dashboard widget, or within an entity's details tab.
+Alarms can be cleared either manually by a user or automatically when a predefined clear condition is satisfied. Configuring a clear condition is optional.
 
 ### Alarm uniqueness
 
-ThingsBoard identifies alarm using a combination of originator, type, and start time. 
-Thus, at a single point in time, there is only one active alarm with the same originator, type, and start time.
+ThingsBoard identifies an alarm using a combination of the **originator**, **type**, and **start time**.   
+This means that at any given moment, only one active alarm can exist with the same originator, type, and start time.
 
-Let's assume you have provisioned alarm rules to create a "HighTemperature" alarm when the temperature is greater than 20.
-And you also provisioned alarm rules to clear the "HighTemperature" alarm when the temperature is less than or equal to 20.   
+**Example:**   
+Suppose you configure a rule to create a "High Temperature" alarm when the temperature rises above 20, and a rule to clear the same alarm when the temperature is less than or equal to 20.
 
-Assuming the following sequence of events:
+Event sequence:   
+12:00 — temperature = 18 → no alarm   
+12:30 — temperature = 22 → **alarm is created** (**startTime = 12:30**)   
+13:00 — temperature = 25 → existing alarm updated   
+13:30 — temperature = 18 → **the alarm is cleared** (**endTime = 13:30**)
 
- * 12:00 - temperature equals 18
- * 12:30 - temperature equals 22
- * 13:00 - temperature equals 25
- * 13:30 - temperature equals 18
-
-So, a single "High Temperature" alarm will be generated with start time = 12:30 and end time = 13:00.
+As a result, the system produces a **single** "High Temperature" alarm with start time 12:30 and end time 13:30.
 
 ### Alarm timing details
 
-The alarm has a start time and a creation time. The alarm start time is determined by the moment the set threshold is exceeded (i.e., when the conditions for triggering the alarm first occurred), while the alarm creation time refers to the moment when the ThingsBoard system received telemetry from the device and processed it.
-By default, start time and creation time are the same.
+<b><font size="4">Alarm start time & Alarm creation time</font></b>
 
-However, a device may send telemetry with a timestamp from the past, for example, if it was offline or if it's transmitting data for a specific time period with a delay.
-And if the processing of this telemetry reveals that a threshold has been exceeded, ThingsBoard will generate an alarm. The alarm start time will be the timestamp of the message with the threshold value exceeded, and the alarm creation time will be the time ThingsBoard processed messages from the device.
-In this case, the start time and alarm creation time will be different.
+An alarm includes two key timestamps:
+- **Start time**. The moment when the alarm condition first becomes true. This reflects the actual event time based on the incoming telemetry.
+- **Creation time**. The moment when ThingsBoard receives and processes the telemetry and creates the alarm.
 
-Imagine we have an air quality monitoring system that tracks pollution levels. The threshold for triggering an alarm is set at 100 pollution units.
-- At 12:00, the sensor measures the pollution level, and it is 95 units — the alarm threshold is not exceeded.
-- At 12:05, the next measurement shows 105 pollution units -  the alarm threshold is exceeded.
-- At 12:08, the ThingsBoard receives data from the device, analyzes it, and registers the alarm. The alarm created time is 12:08, as that is the moment when the ThingsBoard system received and processed the device message.
-The alarm start time is 12:05 because that is the exact moment when the conditions for triggering the alarm were first met.
- 
-Thus, the alarm start time and the alarm creation time can differ, which is important to consider when analyzing the system's response to emerging events.
+In most cases, these timestamps match. However, they may differ when devices send delayed or backdated telemetry — for example, when operating offline or uploading data in batches.
+In this situation, the alarm start time reflects the timestamp of the telemetry that crossed the threshold, while the creation time is the moment when ThingsBoard processed that message. As a result, the start time and creation time may differ.
 
-Also, within the alarm's rule settings, you can define specific conditions under which the alarm is created:
+**Example with delayed telemetry**
 
-- **Simple** - if the threshold value is exceeded, an alarm is created immediately;
+An air-quality monitoring system has a pollution threshold of 100 units.
 
-{% include images-gallery.html imageCollection="alarm-creation-time-simple" %}
+**12:00** — sensor reports 95 → no alarm condition.   
+**12:05** — sensor reports 105 → **alarm condition becomes true**.   
+**12:08** — ThingsBoard receives and processes the data, **creating an alarm**.
 
-- **Duration** - an alarm will be created if the duration of exceeding the threshold value exceeds the specified value. For example, you allow a short-term increase in temperature in the room. But if the temperature remains elevated for more than 5 minutes, an alarm is created;
+Here:
+- **startTime = 12:05** (moment the threshold was actually exceeded)
+- **creationTime = 12:08** (moment the platform processed the telemetry)
 
-{% include images-gallery.html imageCollection="alarm-creation-time-duration" %} 
+This distinction is important for analyzing system reaction time and understanding event chronology.
 
-- **Repeating** - an alarm will be created if the threshold value is exceeded the specified number of times. For example, you allow the room temperature to rise above the threshold value four times. On the fifth occurrence, an alarm will be created.
+<b><font size="4">Alarm end time</font></b>
 
-{% include images-gallery.html imageCollection="alarm-creation-time-repeating" %}
+When an alarm is created, **endTime** initially equals startTime. If the condition continues triggering (e.g., additional telemetry crosses the threshold), the alarm’s endTime updates accordingly until the alarm is cleared.
 
-When ThingsBoard creates an alarm, in addition to the creation and start time, it also stores the **end time** of the alarm. By default, the start time and the end time are the same. 
-If the alarm trigger condition repeats, the platform updates the end time.
+**Types of alarm trigger conditions**
+
+Alarm rules allow choosing how the alarm creation moment is evaluated.
+- **Simple** — the alarm is created immediately when the threshold is exceeded.
+- **Duration** — the alarm is created only if the condition remains true for a specified period (for example, temperature above threshold for 5 minutes).
+- **Repeating** — the alarm is created after the condition occurs a defined number of times (for example, on the fifth exceedance).
 
 ### Assignee
 
-You can assign an alarm to a specific user so that, for example, he can respond to the elevated temperature in the room and take appropriate action.
+Alarms can be assigned to users responsible for resolving them. Assignment is available:
 
-You can assign an alarm to the user on the "Alarms" page, in the "Alarm Table" widget, or on the "Alarms" tab in the details window of the selected entity.
+- On the **Alarms page**
+- In the **Alarms table widget**
+- In an entity’s **Alarms tab**
 
 {% include images-gallery.html imageCollection="assignee-alarm-1" %}
 
 {% capture difference %}
-**Note**. To assign an alarm to a specific user, this user must be the owner of the device from which the alarm came.
+Note: A user can be assigned an alarm only if they have access rights to the corresponding entity.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Once the alarm is assigned, the user will receive a notification about it.
+Assigned users receive notifications according to their notification settings.
 
 {% include images-gallery.html imageCollection="assignee-alarm-2" %}
 
-### Propagation of alarms
+### Alarm propagation
 
-Suppose you have a topology where one Tenant has 1000 Customers and each Customer has 1000 Devices.
-Thus, you have 1M Devices in your server installation.
-You may want to design a dashboard that displays all active alarms on the Tenant and Customer level.
-To simplify the database queries and improve load time, ThingsBoard supports the propagation of the alarm.
-We can specify whether an alarm should be visible for parent entities or not.
-We can also optionally specify the relations that should be present between the parent entities and the originator for the alarm to propagate.
+Alarm propagation makes an alarm visible not only on its originator but across related entities according to hierarchy and rule configuration.
 
-Alarm propagation settings are available in the *advanced settings* of the alarm rule of the device profile.
+**How it works**
 
-{% include images-gallery.html imageCollection="propagation-settings" %}
+When an alarm is created, ThingsBoard:
+1. Identifies the originator
+2. Analyzes entity relations
+3. Applies propagation filters defined in the rule
+4. Displays the alarm on all relevant entities
 
-Let's look at an example of how it works. But first, we recommend reading the "[Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/)" guide. This will improve your understanding of ThingsBoard devices and dashboards and the concepts presented here.
+Each propagated alarm is not an independent copy — it is a representation of the same alarm shown for a different entity. The alarm state stays fully synchronized with the originator.
 
-Let's say you have multiple offices with numerous devices in them. However, you only want to see alarms from devices that are associated with a specific office.
-Let's create a dashboard that will display alarms only from devices that are related to Office A.
+**Example scenario**
 
-To find devices related to Office A, go to the "Assets" page, click on the needed asset and navigate to the "Relations" tab in the asset details window.
-The following devices relations to the Office A: Thermometer A1, Thermometer B1, Thermometer B2, and Thermometer C3.
+Hierarchy: **Tenant → Customer A → Office A (Asset) → Device A1**
 
-{% include images-gallery.html imageCollection="relations-to-asset" %}
+If propagation is enabled and Device A1 triggers an alarm:
+- Alarm appears on **Device A1**
+- Propagates to **Office A**
+- Becomes visible to **Customer A**
+- May propagate further to **Tenant**
 
-In order for the alarm created on the device to propagate further, in the alarm rule settings of the device profile, check the box "**Propagate alarm to related entities**". Additionally, you can specify relation types for alarm propagation.
+This ensures centralized visibility across multi-level infrastructures.
 
-{% include images-gallery.html imageCollection="propagate-alarm-to-related-entities" %}
-
-Now, create a dashboard. Before adding a widget, create an alias that will filter the selected asset - "Office A".
-
-{% include images-gallery.html imageCollection="propagate-alias" %}
-
-Add the Alarms table widget. Specify the previously created alias as the alarm source.
-Be sure to activate the "**Search propagated alarms**" option.
-
-{% include images-gallery.html imageCollection="add-alarms-widget" %}
-
-Now, send telemetry to one of the devices that exceeds the threshold value specified in the alarm rule to trigger an alarm.
-
-{% include images-gallery.html imageCollection="propagate-send-telemetry" %}
-
-An alarm has been created on the device, and thanks to our settings, the alarm has propagated to the related asset. You can also see the created alarm on the "Alarms" tab   the asset details window.
-
-{% include images-gallery.html imageCollection="propagate-alarm-created" %}
-
-Now that you know the theory, let's proceed to practical tutorials.
-
-## How to create the alarm?
-
-You must define parameters and rules according to which the alarm will be triggered.
-
-The easiest way to create an alarm is to use the **alarm rules** in the **Device profile**. By following [this guide](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules), you can easily configure the rules for creating alarms for most of your tasks.
-
-Device Profile alarm rules are not limited to basic conditions. They are flexible enough to handle more complex logic, enabling you to combine multiple parameters, thresholds, or states into a single alarm definition. This makes them suitable for both simple monitoring scenarios (such as temperature exceeding a limit) and advanced workflows (such as combining device attributes and telemetry, and time conditions).
-
-## Notification about created or cleared an alarm
-
-To send notifications, including alarms, there is the ThingsBoard [Notification Center](/docs/{{docsPrefix}}user-guide/notifications).
-By default, you will receive notifications about all your alarms and alarms of your customers.
-The Notification Center allows you to flexibly configure rules for sending notifications about alarms to end users through the ThingsBoard web interface, email, Slack, Microsoft Teams, or SMS.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications).
-
-{% include images-gallery.html imageCollection="notification-about-alarm" %}
-
-Alternatively, you can configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/), using the [Send Email](/docs/user-guide/rule-engine-2-0/nodes/external/send-email/) and [Send SMS](/docs/user-guide/rule-engine-2-0/nodes/external/send-sms/) rule nodes or others from the [External Nodes](/docs/user-guide/rule-engine-2-0/nodes/external/) to configure.
-You can find an example of how to send an email to a user using the rules engine [here](/docs/user-guide/rule-engine-2-0/tutorials/send-email/).
+<hr>
 
 ## View and manage alarms
 
@@ -244,8 +343,19 @@ Here you can view system comments, comments from other users, and leave your own
 {% include images-gallery.html imageCollection="alarm-comments-1" %}
 
 There are two types of comments: user and system.
-Authorized users may add, edit, and delete their comments. System comments are non-editable grey-colored comments that describe alarm events such as changes to severity, alarm assignee etc. 
+Authorized users may add, edit, and delete their comments. System comments are non-editable grey-colored comments that describe alarm events such as changes to severity, alarm assignee etc.
 
 ## Alarm management using REST API
 
 ThingsBoard provides REST API to manage and query alarms. See demo environment [Alarm REST API](https://demo.thingsboard.io/swagger-ui.html#/alarm-controller) and general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

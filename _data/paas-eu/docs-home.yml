@@ -42,6 +42,15 @@ toc:
       path: /docs/paas/eu/solution-templates/waste-management/
 - title: Key concepts
   section:
+    - title: Alarms
+      path: /docs/paas/eu/user-guide/alarms/
+    - title: Alarm rules
+      path: /docs/paas/eu/user-guide/alarm-rules/
+      new: true
+    - title: Calculated fields
+      path: /docs/paas/eu/user-guide/calculated-fields/
+    - title: Notification center
+      path: /docs/paas/eu/user-guide/notifications/
     - title: Entities and Relations
       path: /docs/paas/eu/user-guide/entities-and-relations/
     - title: Device profiles
@@ -52,17 +61,10 @@ toc:
       path: /docs/paas/eu/user-guide/attributes/
     - title: Time-series data
       path: /docs/paas/eu/user-guide/telemetry/
-    - title: Calculated fields
-      path: /docs/paas/eu/user-guide/calculated-fields/
-      new: true
-    - title: Alarms
-      path: /docs/paas/eu/user-guide/alarms/
     - title: Remote commands to devices
       path: /docs/paas/eu/user-guide/rpc/
     - title: OTA updates
       path: /docs/paas/eu/user-guide/ota-updates/
-    - title: Notification center
-      path: /docs/paas/eu/user-guide/notifications/
 - title: Dashboards
   section:
     - title: Overview
@@ -324,6 +326,8 @@ toc:
       path: /docs/paas/eu/user-guide/rbac/
     - title: Secrets storage
       path: /docs/paas/eu/user-guide/secrets-storage/
+    - title: API keys
+      path: /docs/paas/eu/user-guide/security/api-keys/
       new: true
     - title: Two-factor authentication
       path: /docs/paas/eu/user-guide/two-factor-authentication/

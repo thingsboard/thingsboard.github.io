@@ -8,290 +8,293 @@ redirect_from: "/docs/samples/"
 
 step1:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
         title: 'Log in to ThingsBoard and navigate to the "Devices" page of the "Entities" section.'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png 
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-2-ce.png 
         title: 'Click on the "+" icon in the top right corner of the table and select "Add new device" from drop-down menu.'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
         title: 'Enter a device name (e.g., "My New Device") No other changes required at this time. Click "Add".'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
         title: 'A window for checking the device connection will open — we&#39;ll skip this step for now and return to connection checking in the next step.'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
         title: 'Congratulations, you&#39;ve added your first device! As you add more devices, they will be added at the top of the table, as the table automatically sorts devices by their creation time, with the newest ones listed first.'
 
 step11:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png 
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-6-ce.png 
         title: 'You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.'
 
 step2:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
         title: 'Click on your device, then click the "Check connectivity” button in the "Device details" window.'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
         title: 'In the opened window, choose your messaging protocol and operating system. Install any necessary client tools and copy the provided command.'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
         title: 'Execute the copied command in Terminal. Once telemetry data (e.g., temperature readings) is successfully published, the device status will change from "Inactive" to "Active," and you&#39;ll see the data displayed. You can now close the connectivity window.'
 
 step21:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
         title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings.'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
         title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
 
 step31:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/create-dashboard-1-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-1-ce.png
         title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu.'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/create-dashboard-2-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-2-ce.png
         title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add".'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/create-dashboard-3-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-3-ce.png
         title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner.'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/create-dashboard-4-ce.png
+        image: /images/helloworld/getting-started-ce/create-dashboard-4-ce.png
         title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
 
 step32:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-0-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-0-ce.png
         title: 'Enter dashboard edit mode. Simply open the dashboard and click the "Edit mode" button found in the upper right corner of the screen;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-1-ce.png
         title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-2-ce.png
         title: 'Find the "Tables" widget bundle and click on it;'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-3-ce.png
         title: 'Select the "Entities table" widget;'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-4-ce.png
         title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" as the data source in the "Device" field. The "name" key has already been added to the "Columns" section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
     5:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
         title: 'Click on the newly appeared data key input field. A list of available data keys will open. Select "temperature" data key;'
     6:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-6-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-6-ce.png
         title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
     7:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-7-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-7-ce.png
         title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.'
 
 step33:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-1-ce.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-2-ce.png
         title: 'Find the "Charts" widget bundle and click on it;'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-3-ce.png
         title: 'Select the "Time series сhart" widget;'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-4-ce.png
         title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. In the "Series" section, specify the data key "temperature" to start monitoring the temperature values of the device. Then, click "Add";'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-5-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-5-ce.png
         title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default. Click "Save" to apply changes;'
 
 step33_2:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-6-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-6-ce.png
         title: 'You can also adjust the time interval for displaying data in the widget, change the aggregation function, and specify the grouping interval. To do this, open the Time window and make the necessary adjustments. Update the time window settings by clicking the "Update" button.'
 
 step34:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-1-ce.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-2-ce.png
         title: 'Find the "Alarm widgets" bundle and click on it;'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-3-ce.png
         title: 'Select "Alarms table" widget;'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
         title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. Next, we will configure the filters. All alarms have specific severities and statuses. Mark those you want to see in the widget. If none are marked, all alarms will be displayed regardless of their status or severity;'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
         title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'   
     5:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-6-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-6-ce.png
         title: 'Scroll down, find the "Alarms table" widget, and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
 
 step4:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'Go to the "Device profiles" page of the "Profiles" section. Then click on the default device profile row to open its details;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-1-ce.png
+        title: 'Go to the <b>Devices</b> page in the <b>Entities</b> section.<br>Click <b>My New Device</b> to open its details, and navigate to the <b>Alarm rules</b> tab.<br>Click the "<b>+</b>" button, and select <b>Create new alarm rule</b>.'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
+        title: 'In the <b>General</b> section, specify the <b>alarm type</b> — <i>High temperature</i> (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
-        title: 'Click "Add alarm rule" button;' 
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
+        title: 'Add the argument — the data source that the rule will use when evaluating the conditions.'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
-        title: 'Specify alarm type and click the "+" icon to add alarm rule condition;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
+        title: 'Click <b>Add trigger condition</b>.'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
-        title: 'Click the "Add key filter" button to specify a condition;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
+        title: 'Keep the <b>Critical</b> severity level and click <b>Add condition</b>.'
     5:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
-        title: 'Select a key type, enter a key name, and select a value type. Then, click "Add" button in the "Filters" section;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
+        title: 'Click the <b>Add argument filter</b>.'
     6:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
-        title: 'Select an operation and enter a threshold value. Click "Add" button in the lower right corner;'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
+        title: '<b>General:</b> <b>Argument:</b> temperature (the argument added earlier); <b>Value type:</b> Numeric<br><b>Filters:</b> Click <b>Add</b>; <b>Operation:</b> greater than; <b>Value source:</b> Static; <b>Value:</b> 25.<br>Click <b>Add</b>.'
     7:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
-        title: 'Click "Save";'
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
+        title: '<b>Type:</b> Simple.<br><b>Save</b> condition.'
     8:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-10-ce.png
-        title: 'Finally, click "Apply changes".'        
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
+        title: 'Finally, click the <b>Add</b>.'
+    9:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-10-ce.png
+        title: 'The new alarm rule will be created and activated.'
 
 step5:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-5-create-alarm-1-ce.png
-        title: 'Notice that the new temperature telemetry causes a new active alarm;'
+        image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-1-ce.png
+        title: 'As soon as a new <b>temperature</b> value goes above the threshold, a new active alarm will appear on the dashboard.'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-5-create-alarm-2-ce.png
-        title: 'You may acknowledge and clear alarms using the "Alarms table" widget;'
+        image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-2-ce.png
+        title: 'You can <b>acknowledge</b> and <b>clear</b> alarms using the <b>Alarm table</b> widget.'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
-        title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'   
+        image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
+        title: 'After the alarm is created, you will also receive a notification in the <b>Notification center</b>. Click the bell icon in the top-right corner to view the latest notifications.'
 
 notification-center:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/notification-center-getting-started-1-ce.png
+        image: /images/helloworld/getting-started-ce/notification-center-getting-started-1-ce.png
         title: 'The ThingsBoard Notification center allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.'
 
 step71:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-1-ce.png
         title: 'Navigate to the Customers page. Click the "+" sign to add a customer;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-2-ce.png
         title: 'Input customer title and click "Add".'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
         title: 'The new customer has been created.'
 
 step72:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-1-ce.png
         title: 'Open "Devices" page, then select your device to open its details;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-2-ce.png
         title: 'Click "Assign to customer" button;'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
         title: 'Select the customer to whom you want to assign the device, and then click "Assign";'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
         title: 'You have changed the owner of the device. In the "Customer" column, you can see the owners name of the device;'
 
 step72_1:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
         title: 'Navigate to "Customers" page to make sure that the device is assigned to your customer. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
         title: 'The device is with your client.'
 
 step72_2:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
         title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-9-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-9-ce.png
         title: 'Input device name (for example, "Thermostat") and select the customer in the "Assign to customer" field to whom you want to assign the new device. Then, click "Add";'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
         title: 'Close check connectivity window;'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-11-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-11-ce.png
         title: 'The device has been created, and it immediately belongs to the selected customer.'
 
 step73:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-3-ce.png
         title: 'Open "Dashboards" page. Mark your dashboard and click the "Assign dashboards" icon;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-4-ce.png
         title: 'Mark "My New Customer" and click "Assign";'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-5-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-5-ce.png
         title: 'Navigate to the "Customers" page. Click "Manage customer dashboards" icon for "My New Customer";'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-6-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-6-ce.png
         title: '"My New Dashboard" is assigned to your customer.'
 
 step74:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-user-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-1-ce.png
         title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-user-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-2-ce.png
         title: 'Click the "Add user" icon in the top right corner of the table;'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-user-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-3-ce.png
         title: 'Specify email that you will use to login as a customer user and click "Add";'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-user-4-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-4-ce.png
         title: 'Copy the activation link and save it to a safe place. You will use it later to set the password. Click "OK";'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-user-6-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-6-ce.png
         title: 'Click on the created user to open details. Click "pencil" icon to enter edit mode;'
     5:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-create-customer-user-7-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-7-ce.png
         title: 'Select your "My New Dashboard" as default dashboard and check "Always fullscreen". Apply changes.'
 
 step75:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
         title: 'Paste the previously copied link into a new browser tab and press the "Enter" key. Now create a password by entering it twice and clicking "Create Password".'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You are now logged in as a customer user. You may browse the data and acknowledge/clear alarms.'
 
 mqttWindows:
     0:
-        image: https://img.thingsboard.io/helloworld/hello-world-step-3-item-1.png
+        image: /images/helloworld/hello-world-step-3-item-1.png
         title: 'Create new MQTT Client with the properties listed in screenshots below.' 
     1:
-        image: https://img.thingsboard.io/helloworld/hello-world-step-3-item-2.png
+        image: /images/helloworld/hello-world-step-3-item-2.png
         title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.' 
 
 mosquitto-windows:
     0:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-1.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-1.png
         title: 'Press the Win + X, then select "System". Then click on the "System" page;'
     1:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-2.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-2.png
         title: 'Navigate to the "About" section, then click "Advanced system settings";'
     2:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-3.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-3.png
         title: 'In the "System Properties" pop-up window, click "Environment Variables" button on the "Advanced" tab;'
     3:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-4.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-4.png
         title: 'In the "Environment Variables" pop-up window, select the "Path", then click on the "Edit" button;'
     4:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-5.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-5.png
         title: 'In the "Edit environment variable" pop-up window click on the "New" button and add the path to the directory containing &#39;mosquitto_pub.exe&#39; and &#39;mosquitto_sub.exe&#39; (&#39;C:\Program Files\mosquitto&#39; by default). Click "OK" button;'
     5:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-6.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-6.png
         title: 'Click "OK" button to save changes in the environment variables;'
     6:
-        image: https://img.thingsboard.io/helloworld/getting-started-pe/mosquitto-windows-7.png
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-7.png
         title: 'Finally, click "OK" button to apply all changes in the system properties.'
 
 ---
@@ -312,6 +315,8 @@ This guide demonstrates basic usage of popular ThingsBoard features. You will le
 
 For simplicity, we&#39;ll visualize data from a temperature sensor.
 
+<hr>
+
 ## Video tutorial
 
 Prefer visual learning? Check out our step-by-step getting started video tutorial:
@@ -325,6 +330,8 @@ Prefer visual learning? Check out our step-by-step getting started video tutoria
 
 {% include templates/prerequisites.md %}
 
+<hr>
+
 ## Step 1. Provision device
 
 Let&#39;s add a device that sends temperature data to ThingsBoard:
@@ -337,11 +344,12 @@ You will also receive a notification upon adding devices. Click the bell icon (t
 
 [Learn more about notifications here](#step-6-alarm-notifications).
 
-<br>
 **Additional provisioning methods**
 - [Bulk provisioning](/docs/user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
 - [Device provisioning](/docs/user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
 - [REST API](/docs/api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
+
+<hr>
 
 ## Step 2. Connect device
 
@@ -351,6 +359,8 @@ Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 <br>
 Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
+
+<hr>
 
 ## Step 3. Create dashboard
 
@@ -416,24 +426,86 @@ To use dynamic entities (for example, devices of a certain type or related to a 
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
 You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
+<hr>
+
 ## Step 4. Configure alarm rules
 
-We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to raise the alarm when the temperature reading exceeds 25 degrees.
-To do this, we should edit the device profile and add a new alarm rule. 
-The "My New Device" is using the "Default" device profile.
-We recommend creating dedicated [device profiles](/docs/user-guide/device-profiles/){:target="_blank"} for each corresponding device type, but we&#39;ll skip this step here for simplicity.
+We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} feature to define a rule that triggers when the temperature exceeds **25°C**.   
+Alarm rules can be configured either at the **device level** or at the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} level used by the target device.
 
-{% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
+> **Recommendation:** If the same rule needs to be applied to multiple devices, create it at the **Device profile** level.   
+This ensures centralized alarm logic management, simplifies maintenance, and eliminates configuration duplication.
+
+In this example, we will configure the alarm rule directly on the device "**My New Device**".
+
+<br><b><font size="4">Step 4.1 Open the device settings</font></b>
+- Go to the **Devices** page in the **Entities** section.
+- Click **My New Device** to open its details.
+- Navigate to the **Alarm rules** tab.
+- Click the "**+**" button and select **Create new alarm rule**.
+
+<b><font size="4">Step 4.2 Configure the General parameters</font></b>
+
+In the **General** section, specify the **alarm type** — *High temperature* (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.
+
+<b><font size="4">Step 4.3 Add argument</font></b>
+
+Before defining the alarm trigger condition, you must add at least one **argument** — the data source that the rule will use.
+
+In the **Arguments** section, click **Add argument** and fill in:
+- **Entity type:** *Current entity*
+- **Argument type:** *Latest telemetry*
+- **Time series key:** <span class="code-light">temperature</span>
+- **Argument name:** temperature
+- Click **Add**.
+
+This creates the <span class="code-light">temperature</span> variable that will be used in the alarm rule conditions.
+
+<b><font size="4">Step 4.4 Configure the alarm trigger condition</font></b>
+
+In the **Trigger condition** section, click **Add trigger condition**.
+
+- **Severity:** *Critical*
+- **Condition**
+  - Click **Add condition**.
+  - In the configuration window, click **Add argument filter** and specify:
+    - **General** block:
+      - **Argument:** temperature (the argument added earlier)
+      - **Value type:** *Numeric*
+    - **Filters** block:
+      - Click **Add**
+      - **Operation:** *greater than*
+      - **Value source:** Static
+      - **Value:** <span class="code-light">25</span>
+    - Click **Add**.
+  - **Type:** *Simple*
+  - Click **Save**.
+
+As a result, the alarm will trigger immediately when the temperature exceeds **25°C**.
+
+<b><font size="4">Save the rule</font></b>
+
+Click the **Add** button to save the new alarm creation rule.
+
+The rule takes effect immediately after it is saved.
+
+{% include images-gallery.html imageCollection="step4" %}
+
+We also recommend reviewing the [alarm rule configuration examples](/docs/{{docsPrefix}}user-guide/alarm-rules/#examples-of-alarm-rule-configurations/){:target="_blank"}
+
+<hr>
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
-and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
-Note that the temperature value should be 26 or higher to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
+Now that the alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), you need to send new telemetry data from the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
+
+> **Important:** The alarm will be created only when the temperature value exceeds the threshold of 25°C defined in the alarm creation condition.
+
+**What happens after sending telemetry**
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms){:target="_blank"}.
+<hr>
 
 ## Step 6. Alarm notifications
 
@@ -447,6 +519,8 @@ Additionally, [ThingsBoard Mobile Application](/docs/mobile/){:target="_blank"} 
 Follow [this guide](/docs/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications. 
 
 Enjoy exploring ThingsBoard!
+
+<hr>
 
 ## Step 7. Assign device and dashboard to customer
 
@@ -496,9 +570,13 @@ Finally, log in to ThingsBoard as a customer user.
 
 {% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
+<hr>
+
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
+
+<hr>
 
 ## Your feedback
 
