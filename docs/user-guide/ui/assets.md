@@ -72,7 +72,7 @@ unassign-from-customer:
 
 asset-details-page:
     0:
-        image: /images/user-guide/ui/assets/asset-details-page-1-ce.png
+        image: https://img.thingsboard.io/user-guide/ui/assets/asset-details-page-1-ce.png
         title: 'Clicking on an asset opens a window where you can access and manage various aspects of that asset.'
 
 ---

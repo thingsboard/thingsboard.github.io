@@ -86,7 +86,7 @@ delete-customer-user-1:
 
 customer-details-page:
     0:
-        image: /images/user-guide/ui/customers/ce/customer-details-page-1-ce.png
+        image: https://img.thingsboard.io/user-guide/ui/customers/ce/customer-details-page-1-ce.png
         title: 'Clicking on a customer opens a details window where you can view and manage all aspects related to that customer.'
 
 ---
