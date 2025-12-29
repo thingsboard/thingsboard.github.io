@@ -312,6 +312,84 @@ Let's look at how we can configure this section for different file extensions:
         ]
   ```
 
+#### Subsection "converter"
+
+This configuration section is **optional** and is used only when you want to process incoming data with a custom FTP converter instead of the built-in **FTPUplinkConverter**.
+
+Typical use cases:
+
+- Files with **extensions not supported** by default (.txt, .csv, .json), or Supported extensions, but with a different data structure, for example:
+  - CSV files without a header line
+  - CSV lines where fields are located at fixed column positions
+  
+In this example, we show a configuration for a **CSV file without headers**, where device name, attributes and telemetry values are taken by column index.
+
+| **Parameter**              | **Example value**             | **Description**                                                                                         |
+|----------------------------|-------------------------------|---------------------------------------------------------------------------------------------------------|
+| converter.type             | **custom**                    | Tells the FTP connector to use a custom converter instead of the default one.                           |
+| converter.extension        | **CustomFTPtUplinkConverter** | Name of the Python class that implements the custom converter.                                          |
+| converter.extension-config | **object**                    | Arbitrary configuration for the custom converter. This object is passed as-is to the converter on init. |
+
+**extension-config** fields used in this example
+
+| **Parameter**      | **Example value** | **Description**                                                                                        |
+|--------------------|-------------------| ------------------------------------------------------------------------------------------------------ |
+| devicePatternName  | **0**             | Column index used to resolve the device name (here: value from column `0`).                            |
+| devicePatternType  | **1**             | Column index or literal used to resolve the device type (here: value from column `1`).                 |
+| attributes         | **array**         | List of attribute mappings. Each item describes how to read an attribute value from a specific column. |
+| timeseries         | **array**         | List of timeseries mappings. Each item describes how to read a telemetry value from a specific column. |
+
+Each item in attributes / timeseries has the following fields:
+
+| **Field** | **Example value**                   | **Description**                                                             |
+|-----------|-------------------------------------| --------------------------------------------------------------------------- |
+| key       | **meterAddress**                    | Attribute / telemetry key that will appear in ThingsBoard.                  |
+| column    | **0**                               | Zero-based column index in the CSV line from which the value will be taken. |
+| type      | **string** / **int** / **double**   | Value type. The custom converter will cast the raw string to this type.     |
+
+
+{% capture difference %}
+The exact behavior will depend on your own `CustomFTPtUplinkConverter` implementation, but this configuration shows a working example for headerless CSV files.
+You will most likely change the mapping values (devicePatternName, devicePatternType, attributes, timeseries) to match your file format, but the parameter names and structure must remain the same.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Mapping subsection in the configuration looks like:  
+
+```json
+{
+  "converter": {
+    "type": "custom",
+    "extension": "CustomFTPtUplinkConverter",
+    "extension-config": {
+      "devicePatternName": 0,
+      "devicePatternType": 1,
+      "attributes": [
+        {
+          "key": "meterAddress",
+          "column": 0,
+          "type": "string"
+        }
+      ],
+      "timeseries": [
+        {
+          "key": "meterReading",
+          "column": 2,
+          "type": "double"
+        },
+        {
+          "key": "batteryAlert",
+          "column": 3,
+          "type": "int"
+        }
+      ]
+    }
+  }
+}
+```
+{:.copy-code}
+
+
 ### Section "attributeUpdates"
 
 
