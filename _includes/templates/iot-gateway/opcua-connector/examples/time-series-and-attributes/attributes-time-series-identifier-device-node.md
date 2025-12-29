@@ -10,13 +10,13 @@ As an example, we will use Prosys OPC-UA Simulation Server, which is available a
 
 We are interested in node "**Humidity**". We will use this node to retrieve the humidity data.
 
-Let's configure the humidity data in the OPC-UA connector, using [relative paths](/docs/iot-gateway/config/opc-ua/#relative-path):
+Let's configure the humidity data in the OPC-UA connector, using [relative paths](/docs/iot-gateway/config/opc-ua/#relative-path).
 For this purpose, follow these steps:
 
 {% assign attributesAndTimeSeriesRelativePathIdentifierDeviceNode = '
     ===
         image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-1.png,
-        title: Go to "**Entities**" → "**Gateways**" in the right sidebar and select your gateway.
+        title: Go to "**Entities**" → "**Gateways**" in the left sidebar and select your gateway.
     ===
         image: /images/gateway/opc-ua-connector/examples/device-name-and-profile-absolute-path-2.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
