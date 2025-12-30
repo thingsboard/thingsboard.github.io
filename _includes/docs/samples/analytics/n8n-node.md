@@ -57,7 +57,7 @@ ThingsBoard's Rule Engine is great for IoT-specific automation. But when you nee
 - Export data to **databases** (PostgreSQL, Snowflake, ClickHouse) for analytics
 - Create tickets in **Jira**, **ServiceNow**, or other ticketing systems
 - Sync device data with **CRMs** (Salesforce, HubSpot) or **ERPs**
-- Let non-technical users query devices via **AI chat**
+- Let non-technical users write query via **AI chat**
 
 ## Requirements
 
@@ -121,45 +121,6 @@ Before you start, make sure n8n is already running. Check the [official n8n docs
 %}
 
 {% include images-gallery.liquid imageCollection=n8nGuiInstallation %}
-
-<details>
-<summary><b>Alternative: npm or Docker installation</b></summary>
-
-<br>**Via npm** (for local installations):
-
-```bash
-mkdir -p ~/.n8n/nodes && cd ~/.n8n/nodes
-npm install @thingsboard/n8n-nodes-thingsboard
-
-# Start n8n with community packages enabled
-N8N_COMMUNITY_PACKAGES_ENABLED=true n8n start
-```
-{: .copy-code}
-
-<br>**Via Docker**:
-
-Add to your `docker-compose.yml` and install via GUI after container starts:
-
-```yaml
-services:
-  n8n:
-    image: n8nio/n8n:latest
-    ports:
-      - "5678:5678"
-    environment:
-      - N8N_COMMUNITY_PACKAGES_ENABLED=true
-      # Uncomment the line below to use ThingsBoard as AI Agent tool
-      # - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
-    volumes:
-      - n8n_data:/home/node/.n8n
-volumes:
-  n8n_data:
-```
-{: .copy-code}
-
-Then use the GUI method above to install the node.
-
-</details>
 
 ### Configure AI Agent Support (Optional)
 
@@ -274,29 +235,12 @@ Good for:
 Give an AI agent access to ThingsBoard operations. Users can then ask questions in plain English instead of building workflows.
 
 Good for:
-- Non-technical users querying device data
+- Non-technical users querying entities, data, etc
 - Support teams troubleshooting issues
 
 **Setup required**: See [AI Agent Configuration](#configure-ai-agent-support-optional) above.
 
 Check out the [examples below](#usage-examples) to see both approaches in action.
-
-## What You Can Do
-
-The node supports {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}61 operations across 8 resource types{% else %}51 operations across 7 resource types{% endif %}:
-
-- **Devices** - Create, find, delete devices; assign to customers
-- **Assets** - Manage assets and profiles
-- **Customers** - Create customers and manage relationships
-- **Dashboards** - Create and configure dashboards
-- **Telemetry** - Read/write attributes and time-series data
-- **Alarms** - Query alarms by severity, type, or device
-- **Relations** - Navigate relationships between entities
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-- **Entity Groups** - Manage groups and query group members
-{% endif %}
-
-See the full operation list in the [npm docs](https://www.npmjs.com/package/@thingsboard/n8n-nodes-thingsboard){: target="_blank"} or explore them in n8n's node picker.
 
 ## Common Workflow Patterns
 
@@ -306,19 +250,18 @@ See the full operation list in the [npm docs](https://www.npmjs.com/package/@thi
 
 **Customer onboarding automation**: CRM webhook (new customer) → Create devices and dashboard → Assign to customer
 
-**AI-powered device queries**: Chat → AI Agent → ThingsBoard operations → Natural language response
+**AI-powered queries**: Chat → AI Agent → ThingsBoard operations → Natural language response
 
 ## Usage Examples
 
 This section provides practical examples demonstrating the three usage patterns of the ThingsBoard n8n node.
 
-### Example 1: AI Agent for Non-Technical Users
+### Example 1: AI Agent
 
-**Real-world scenario**: Your facilities manager isn't technical but needs to check device status, query sensor data, and update configurations. Instead of learning APIs, they can just ask questions in plain English.
+**Real-world scenario**: Ask questions in plain text to check entities, their status, query data, update configurations, etc.
 
 **Why this matters**:
-- Support teams can troubleshoot without developer help
-- Managers can self-serve reports without waiting for engineers
+- Just ask what you need (“Which devices are offline?”, “Show today’s temperature”) and the node handles the technical part for you.
 - Reduces bottlenecks in your IoT operations
 
 **Setup**: Use the ThingsBoard node as a **tool for AI Agents** to enable conversational IoT control
@@ -489,30 +432,7 @@ Fetch the telemetry data using the time range from the Code node.
 
 ---
 
-<b><font size="3">Step 5: Convert telemetry to file format</font></b>
-
-Transform the JSON data into a file that can be uploaded to S3.
-
-**Configuration**:
-- Click **+** → **Convert to File**
-- **Mode**: Choose how to convert (e.g., JSON)
-- **File Name**: Set a dynamic filename with date (optional)
-- Click **Execute node**
-
-{% assign example25 = '
-    ===
-        image: /images/samples/analytics/n8n-node/example-2-9.png
-        title: Add **Convert to File** node and configure the output format.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=example25 %}
-
-<br>**What you got**: Telemetry data packaged as a downloadable file ready for cloud storage.
-
----
-
-<b><font size="3">Step 6: Upload to AWS S3</font></b>
+<b><font size="3">Step 5: Build your logic with uploading to AWS S3</font></b>
 
 Finally, upload the file to your S3 bucket.
 
