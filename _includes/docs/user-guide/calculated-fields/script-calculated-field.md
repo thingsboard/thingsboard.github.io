@@ -177,6 +177,10 @@ To view debug events, click **Events**. In the debug window, you can see events 
     ===
         image: /images/user-guide/calculated-fields/script/script-events-2-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-events-3-ce.png
+    ===
+        image: /images/user-guide/calculated-fields/script/script-events-4-ce.png
 '
 %}
 
@@ -184,7 +188,9 @@ To view debug events, click **Events**. In the debug window, you can see events 
 
 <hr>
 
-## Examples
+## Usage examples
+
+To help you get started, here are three common configuration patterns applied to real-world scenarios.
 
 ### Example 1: Fahrenheit to Celsius
 
@@ -254,34 +260,16 @@ Click **Add** to save the calculated field.
 
 <b><font size="4">Result</font></b>
 
-In the **Events** window, you will see:
-- the input message with **temperature**,
-- the output message with **temperatureC**.
-
-Both messages will have the same timestamp.
+In the device&#39;s **Latest telemetry** tab, the calculated temperature value in degrees Celsius will appear under the **temperatureC** key.
 
 {% assign exampleScript12 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-14-ce.png
-        title: Open the **Events** pop-up window of the calculated field.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-15-ce.png
-        title: You will see the input message with **temperature** and the output message with **temperatureC**. Both messages will have the same timestamp.
+        image: /images/user-guide/calculated-fields/script/script-example-16-ce.png
+        title: In the device&#39;s **Latest telemetry** tab, the calculated temperature value in degrees Celsius will appear under the **temperatureC** key.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=exampleScript12 %}
-
-In the **Latest telemetry** tab, the **temperatureC** key will appear.
-
-{% assign exampleScript13 = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-16-ce.png
-        title: In the **Latest telemetry** tab, the following key will appear: **temperatureC** — the result of the calculation, which displays the temperature in degrees Celsius.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=exampleScript13 %}
 
 <hr>
 
@@ -398,29 +386,16 @@ Click **Add** to save the calculated field.
 
 <b><font size="4">Result</font></b>
 
-In the **Events** window, the arguments and the calculation result are displayed.
+In the **Latest telemetry** tab of the **Building A** asset, the calculated value will appear under the **airDensity** key.
 
 {% assign exampleScript22 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-26-ce.png
-        title: In the **Events** window, the arguments and the calculation result are displayed.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-27-ce.png
+        image: /images/user-guide/calculated-fields/script/script-example-28-ce.png
+        title: In the **Latest telemetry** tab of the **Building A** asset, the calculated value will appear under the **airDensity** key.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=exampleScript22 %}
-
-In the **Latest telemetry** tab of the **Building A** asset, the **airDensity** key will appear.
-
-{% assign exampleScript23 = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-28-ce.png
-        title: In the **Latest telemetry** tab of the **Building A** asset, the **airDensity** key will appear.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=exampleScript23 %}
 
 <hr>
 
@@ -542,7 +517,7 @@ In the **Events** window, you can view the generated events.
 
 {% include images-gallery.liquid imageCollection=exampleScript32 %}
 
-the **Latest telemetry** tab, the issue key will appear, for example:
+the **Latest telemetry** tab, the **issue** key will appear, for example:
 
 ```json
 {
@@ -554,7 +529,7 @@ the **Latest telemetry** tab, the issue key will appear, for example:
 
 ```
 
-This indicates that the freezer is in a potentially critical state.
+This indicates that the freezer is in a potentially **critical** state.
 
 {% assign exampleScript33 = '
     ===

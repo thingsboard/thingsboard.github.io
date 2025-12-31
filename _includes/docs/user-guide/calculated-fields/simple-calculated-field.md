@@ -150,6 +150,10 @@ To view debug events, click **Events**. In the debug window, you can see events 
     ===
         image: /images/user-guide/calculated-fields/simple/simple-events-2-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
+    ===
+        image: /images/user-guide/calculated-fields/simple/simple-events-3-ce.png
+    ===
+        image: /images/user-guide/calculated-fields/simple/simple-events-4-ce.png
 '
 %}
 
@@ -210,7 +214,9 @@ The following mathematical expression, based on temperature and humidity values,
 
 <b><font size="3">Output</font></b>
 
-- **Output type:** Time series
+- **Output type**: Time series
+- **Time series key**: dewPoint
+- **Decimals by default**: 1
 - **Strategy**: Process right away
 
 Click **Add** to save the calculated field.
@@ -239,19 +245,6 @@ Click **Add** to save the calculated field.
 <hr>
 
 <b><font size="4">Result</font></b>
-
-In the **Events** window, you can view the input arguments and the calculation result.
-
-{% assign exampleSimple3 = '
-    ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-6-ce.png
-        title: In the **Events** window, you can view the input arguments and the calculation result.
-    ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-7-ce.png
-'
-%}
-
-{% include images-gallery.liquid imageCollection=exampleSimple3 %}
 
 In the **Latest telemetry** tab, you&#39;ll see the **temperature** and **humidity** telemetry values from the device, along with **dewPoint** — the calculated dew point result.
 

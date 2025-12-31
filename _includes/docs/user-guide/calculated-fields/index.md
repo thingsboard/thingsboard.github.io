@@ -5,42 +5,18 @@
 {% include templates/since.md %}
 
 **Calculated fields** are a mechanism for real-time data transformation, merging, and analysis that allows tenant administrators to perform computations directly as [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} and [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} are received.   
-This feature eliminates the need to create separate [Rule Chains](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview){:target="_blank"} or additional logic nodes for data processing, simplifies system configuration, and improves performance.
 
 Using expressions, scripts, or specialized processing modes, users can standardize data, generate new metrics, perform geospatial analytics, aggregate information, and automatically pass values between related entities.
 
-<br>
-
-## Key benefits
-
-- **No additional logic in rule chains**: calculations are performed at the data ingestion stage, reducing the complexity of Rule Chains.
-- **Real-time computations**: triggers calculations as incoming telemetry and attributes are processed by the [save time series](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-timeseries-node){:target="_blank"}, [save attributes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#save-attributes-node){:target="_blank"}, or [calculated fields](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#calculated-fields-node){:target="_blank"} rule nodes, ensuring up-to-date insights.
-- **Optimized performance**: reduces database queries by performing computations as data is received, improving system efficiency. 
-- **Cross-entity data merging**: calculate new values by combining data from multiple sources (devices, assets, etc.).
-- **Flexible output**: store the results as either [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} or [time series data](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}, depending on the use case.
-
-<hr>
-
-## Common use cases
-
-- **Combining telemetry from multiple sources** — calculating derived metrics (e.g., dew point) based on data from several devices. 
-- **Standardization and normalization** — converting measurement units and unifying parameters across different sensor models. 
-- **Energy analytics** — calculating hourly/daily consumption and identifying peak loads. 
-- **Smoothing and filtering** — applying rolling averages, statistical aggregations, and noise reduction to telemetry. 
-- **Predictive maintenance** — generating derived metrics and detecting potential failures based on trends. 
-- **Geofencing** — evaluating real-time GPS coordinates against defined zones to track entity presence (INSIDE/OUTSIDE) and detect zone transition events (ENTERED/LEFT).
-- **Propagation** — automatically transferring attributes or telemetry to related entities for data synchronization. 
-- **Group data aggregation** — computing min/max/avg/sum/count for sets of related devices or assets. 
-- **Historical time-series analysis** — performing time window aggregation, trend analysis, and statistical evaluation. 
-- **Custom business logic** — combining complex conditions, implementing smart operating modes, and calculating domain-specific indicators.
+ThingsBoard supports [calculated field reprocessing](#data-reprocessing), which allows you to apply the same calculation logic to historical telemetry data and generate missing or updated results for a selected time range.
 
 <hr>
 
 ## Configuration levels
 
-Calculated fields can be applied at different levels within the system:
-- [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} or [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"} level – the calculation is applied to a specific device or asset, allowing customized data processing per entity.
-- [Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} or [Asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"} level: if a calculated field is created at the profile level, it will be executed for each entity associated with that profile.
+Calculated fields can be applied at two different levels within the system:
+- Entity Level: At this level, the calculation is applied to a single, specific entity - [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} or [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"}.
+- Profile Level: When a calculated field is defined within a [Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} or [Asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}, the logic is inherited by every entity associated with that profile.
 
 This flexibility allows users to either define unique calculations per entity or apply standardized logic across a group of similar entities, optimizing data processing and management.
 
@@ -368,19 +344,26 @@ You can **export** the calculated field to a JSON file and **import** it into th
 
 <br><b><font size="4">Export calculated field</font></b>
 
-To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+A calculated field can be exported either from the global **Calculated fields page** or from the **Calculated fields tab** of the target **entity or profile** to which the field is applied.   
+Click the **Export** button located in the corresponding calculated field row.
 
 {% assign exportCalculatedFieldCE = '
     ===
         image: /images/user-guide/calculated-fields/export-calculated-field-1-ce.png,
-        title: To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+        title: Navigate to the <b>Calculated fields</b> page and click the <b>Export<b> button located in the row of the specific calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/export-calculated-field-2-ce.png,
+        title: Navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
 '
 %}
 
 {% assign exportCalculatedFieldPE = '
     ===
         image: /images/user-guide/calculated-fields/export-calculated-field-1-pe.png,
-        title: To export a calculated field, navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
+        title: Navigate to the <b>Calculated fields</b> page and click the <b>Export<b> button located in the row of the specific calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/export-calculated-field-2-pe.png,
+        title: Navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
 '
 %}
 
@@ -397,68 +380,68 @@ You can import a calculated field configuration from a JSON configuration file.
 This feature is particularly useful when transferring calculated field configurations between entities or profiles, ensuring consistency and reducing manual setup efforts.
 
 Steps to import:
-- Navigate to the "Calculated fields" tab of the target entity or profile.
-- Click the "plus" icon button, and select "**Import calculated field**" from the dropdown menu;
-- Upload the JSON file containing the calculated field configuration and click "Import";
-- Verify the imported configuration: when importing, the edit window will open to allow modifications.
-  > **Note**: ensure the imported field is correctly applied and update any necessary parameters.
-  > * if you import calculated field on any entity, no error occurs, since the original entity where it was created is not preserved during export.
-  > * if the referenced entity is the current entity, no error occurs.
-  > * if a referenced entity does not exist in your tenant, it will be highlighted as an error in the argument where it is used.
-  > * if the referenced entity is the current tenant and you import it into another tenant, it will automatically adjust to the new tenant without errors.
-
-- Click "Add" to complete the import.
 
 {% assign importCalculatedFieldCE = '
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-1-ce.png,
-        title: Navigate to the **Calculated fields** tab of the target entity or profile. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
+        title: Navigate to the **Calculated fields** page. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-2-ce.png,
         title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-3-ce.png,
-        title: When importing, the edit window will open to allow modifications.
+        title: The edit window will open, allowing you to **specify the entity or profile** to which the calculated field will be applied.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-4-ce.png,
-        title: Ensure the imported field is correctly applied and update any necessary parameters.
+        title: If there are any problems with arguments, they will be highlighted.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-5-ce.png,
-        title: Click **Add** to complete the import.
+        title: Ensure the imported field is correctly applied and update any necessary parameters.
     ===
         image: /images/user-guide/calculated-fields/import-calculated-field-6-ce.png,
+        title: Click **Add** to complete the import.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-7-ce.png,
         title: You have imported the calculated field configuration.
 '
 %}
 
 {% assign importCalculatedFieldPE = '
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-1-pe.png
-        title: Navigate to the **Calculated fields** tab of the target entity or profile. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
+        image: /images/user-guide/calculated-fields/import-calculated-field-1-pe.png,
+        title: Navigate to the **Calculated fields** page. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-2-pe.png
+        image: /images/user-guide/calculated-fields/import-calculated-field-2-pe.png,
         title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png
-        title: When importing, the edit window will open to allow modifications.
+        image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png,
+        title: The edit window will open, allowing you to **specify the entity or profile** to which the calculated field will be applied.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png
+        image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png,
+        title: If there are any problems with arguments, they will be highlighted.
+    ===
+        image: /images/user-guide/calculated-fields/import-calculated-field-5-pe.png,
         title: Ensure the imported field is correctly applied and update any necessary parameters.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-5-pe.png
+        image: /images/user-guide/calculated-fields/import-calculated-field-6-pe.png,
         title: Click **Add** to complete the import.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-6-pe.png
+        image: /images/user-guide/calculated-fields/import-calculated-field-7-pe.png,
         title: You have imported the calculated field configuration.
 '
 %}
 
 {% if docsPrefix == null %}
-{% include images-gallery.liquid imageCollection=importCalculatedFieldCE %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=importCalculatedFieldCE %}
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 {% include images-gallery.liquid imageCollection=importCalculatedFieldPE %}
 {% endif %}
+
+> **Note**: ensure the imported field is correctly applied and update any necessary parameters:
+  - if the referenced entity is the current entity, no error occurs. 
+  - if a referenced entity does not exist in your tenant, it will be highlighted as an error in the argument where it is used. 
+  - if the referenced entity is the current tenant and you import it into another tenant, it will automatically adjust to the new tenant without errors.
 
 <hr>
 
@@ -467,23 +450,25 @@ Steps to import:
 After a calculated field is created, it appears in the Calculated fields table.
 The list provides a quick overview of key parameters such as name, entity type, entity, and calculated field type.
 
-Each row includes an action panel that allows you to manage the calculated field:
-1. **Copy** — duplicate the configuration to quickly create a new calculated field.
-2. **Export** — download the configuration as a JSON file for backup or migration.
-3. **Events** — view execution events, including state changes and errors.
-4. **Debug** — enable debug mode and inspect detailed execution data.
-5. **Edit** — modify the calculated field configuration.
+Each calculated field includes an action panel for managing the field:
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}1. **Data reprocessing** - applying the calculated field logic to historical data.{% endif %}
+2. **Copy** — duplicate the configuration to quickly create a new calculated field.
+3. **Export** — download the configuration as a JSON file for backup or migration.
+4. **Events** — view execution events, including state changes and errors.
+5. **Debug** — enable debug mode and inspect detailed execution data.
 6. **Delete** — remove the calculated field from the system.
 
 {% assign calculatedFieldsParametersCE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-fields-parameters-1-ce.png
+        title: Each calculated field includes an action panel for managing the field.
 '
 %}
 
 {% assign calculatedFieldsParametersPE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-fields-parameters-1-pe.png
+        title: Each calculated field includes an action panel for managing the field.
 '
 %}
 
@@ -492,6 +477,63 @@ Each row includes an action panel that allows you to manage the calculated field
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
 {% include images-gallery.liquid imageCollection=calculatedFieldsParametersPE %}
+{% endif %}
+
+<b><font size="4">View detailed information of the calculated field</font></b>
+
+Click the calculated field to view its details.
+
+{% assign calculatedFieldsParameters2CE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-2-ce.png
+        title: Click the calculated field to view its details.
+'
+%}
+
+{% assign calculatedFieldsParameters2PE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-2-pe.png
+        title: Click the calculated field to view its details.
+'
+%}
+
+{% if docsPrefix == null %}
+{% include images-gallery.liquid imageCollection=calculatedFieldsParameters2CE %}
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=calculatedFieldsParameters2PE %}
+{% endif %}
+
+<b><font size="4">Modify the calculated field</font></b>
+
+To modify the calculated field, click it to open the details view, then click the orange **pencil** button.   
+After making your changes, click the orange **check** button to apply the updates.
+
+{% assign calculatedFieldsParameters3CE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-3-ce.png
+        title: To modify the calculated field, click it to open the details view, then click the orange **pencil** button.   
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-4-ce.png
+        title: After making your changes, click the orange **check** button to apply the updates.
+'
+%}
+
+{% assign calculatedFieldsParameters3PE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-3-pe.png
+        title: To modify the calculated field, click it to open the details view, then click the orange **pencil** button.   
+    ===
+        image: /images/user-guide/calculated-fields/calculated-fields-parameters-4-pe.png
+        title: After making your changes, click the orange **check** button to apply the updates.
+'
+%}
+
+{% if docsPrefix == null %}
+{% include images-gallery.liquid imageCollection=calculatedFieldsParameters3CE %}
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=calculatedFieldsParameters3PE %}
 {% endif %}
 
 ## Calculated fields overview video

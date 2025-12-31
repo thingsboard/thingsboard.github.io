@@ -260,7 +260,9 @@ To view debug events, click **Events**. In the debug window, you can see events 
 
 <hr>
 
-## Example
+## Usage examples
+
+To help you get started, here are three common configuration patterns applied to real-world scenarios.
 
 ### Example 1: Propagate device battery level to the parent Asset
 
@@ -463,12 +465,12 @@ Click **Add** to save the calculated field.
 
 <b><font size="4">Result</font></b>
 
-On the related asset, a new telemetry key **dewPoint** will appear in the **Latest telemetry** tab.
+On the related asset, the dew point value calculated and propagated from the Smart Device will be displayed in the **Latest telemetry** tab under the **dewPoint** key.
 
 {% assign examplePropagation23 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-example-29-ce.png
-        title: On the related asset, a new telemetry key **dewPoint** will appear in the **Latest telemetry** tab.
+        title: On the related asset, the dew point value calculated and propagated from the Smart Device will be displayed in the **Latest telemetry** tab under the **dewPoint** key.
 '
 %}
 
