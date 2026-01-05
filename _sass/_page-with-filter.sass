@@ -459,13 +459,15 @@ input:not(:placeholder-shown) + .searchButton
             display: flex
             flex-wrap: wrap
             gap: 6px
+            position: relative
             &.tooltip
               &:after
                 @media (min-width: 600px)
                   content: attr(data-tooltip)
                   position: absolute
                   top: 0
-                  right: -10%
+                  left: calc(100% + 8px)
+                  transform: translateY(-40%)
                   border-radius: 4px
                   background: rgba(0, 0, 0, 0.70)
                   backdrop-filter: blur(2px)

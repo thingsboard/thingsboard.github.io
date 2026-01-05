@@ -27,9 +27,11 @@
                     <div class="card-image">
                         <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
                     </div>
+
+                    {% assign industrySize = card.industry | size %}
+
                     <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}" data-tooltip="Industries:&#10;{{ card.industry | join: '&#10;' }}">
                         <span class="crisp">{{ card.industry[0] }}</span>
-                        {% assign industrySize = card.industry | size %}
                         {% if industrySize > 1 %}
                             <span class="crisp">+{{ industrySize | minus: 1 }}</span>
                         {% endif %}
