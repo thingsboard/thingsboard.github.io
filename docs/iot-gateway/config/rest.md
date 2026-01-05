@@ -28,95 +28,98 @@ Example listed below will create a server on a localhost using 5000 port.
 Connector will use basic HTTP authorization using username and password.  
 Then, connector will create endpoints from a list of endpoints using endpoints from mapping section. See more info in a description below.  
 
-{% capture restConf %}
+```json
 {
-  "host": "127.0.0.1",
-  "port": 5000,
-  "SSL": false,
-  "security": {
-    "cert": "~/ssl/cert.pem",
-    "key": "~/ssl/key.pem"
+  "server": {
+    "host": "127.0.0.1",
+    "port": 5000,
+    "security": {
+      "cert": "~/ssl/cert.pem",
+      "key": "~/ssl/key.pem"
+    }
   },
-  "mapping":[
+  "mapping": [
     {
       "endpoint": "/test_device",
       "HTTPMethods": [
         "POST"
       ],
-      "security":
-      {
+      "security": {
         "type": "basic",
         "username": "user",
         "password": "passwd"
       },
       "converter": {
         "type": "json",
-        "deviceNameExpression": "Device ${name}",
-        "deviceTypeExpression": "default",
+        "deviceInfo": {
+          "deviceNameExpression": "Device ${name}",
+          "deviceNameExpressionSource": "request",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
         "attributes": [
           {
-            "type": "string",
             "key": "model",
+            "type": "string",
             "value": "${sensorModel}"
           }
         ],
         "timeseries": [
           {
-            "type": "double",
             "key": "temperature",
+            "type": "double",
             "value": "${temp}"
           },
           {
-            "type": "double",
             "key": "humidity",
-            "value": "${hum}",
-            "converter": "CustomConverter"
+            "type": "double",
+            "value": "${hum}"
+          },
+          {
+            "key": "combine",
+            "type": "string",
+            "value": "${hum}:${temp}"
           }
         ]
       }
     },
     {
-      "endpoint": "/test",
+      "endpoint": "/anon2",
       "HTTPMethods": [
-        "GET",
         "POST"
       ],
-      "security":
-      {
+      "security": {
         "type": "anonymous"
       },
       "converter": {
         "type": "custom",
-        "class": "CustomConverter",
-        "deviceNameExpression": "Device 2",
-        "deviceTypeExpression": "default",
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "Model2"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "double",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "double",
-            "key": "humidity",
-            "value": "${hum}"
-          }
-        ]
+        "deviceInfo": {
+          "deviceNameExpression": "SuperAnonDevice",
+          "deviceNameExpressionSource": "constant",
+          "deviceProfileExpressionSource": "constant",
+          "deviceProfileExpression": "default"
+        },
+        "extension": "CustomRestUplinkConverter",
+        "extensionConfig": {
+          "key": "Totaliser",
+          "datatype": "float",
+          "fromByte": 0,
+          "toByte": 4,
+          "byteorder": "big",
+          "signed": true,
+          "multiplier": 1
+        }
       }
     }
-  ]
+  ],
+  "requestsMapping": {
+    "attributeRequests": [],
+    "attributeUpdates": [],
+    "serverSideRpc": []
+  }
 }
-
-{% endcapture %}
-{% include code-toggle.liquid code=restConf params="conf|.copy-code.expandable-20" %}
-
+```
+{:.copy-code.expandable-15}
 
 ### General section
 {% capture restconnectorsecuritytogglespec %}
@@ -245,6 +248,7 @@ The **attributeRequests** section will look like:
   }
 ]
 ```
+{: .copy-code}
 
 Also, you can request multiple attributes at once. Simply add one more JSON-path to 
 attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
@@ -266,6 +270,7 @@ will look like:
   }
 ]
 ```
+{: .copy-code}
 
 ### Attribute update section
 
@@ -318,8 +323,8 @@ The **attributeUpdates** section will look like:
         "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
       }
   ],
-
 ```
+{: .copy-code}
 
 ### Server side RPC section
 
@@ -383,6 +388,7 @@ Examples for both methods provided below.
     }
   ]
 ```
+{: .copy-code}
 
 Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
 it manually. To use them, make sure you set all required parameters (in the case of REST Connector, these are the following:

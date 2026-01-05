@@ -8,14 +8,18 @@
 |---
 
 Configuration section will look like:
+
 ```json
 {
-  "host": "127.0.0.1",
-  "port": "5000",
-  "SSL": true,
-  "security": {
-    "cert": "~/ssl/cert.pem",
-    "key": "~/ssl/key.pem"
+  "server": {
+    "host": "127.0.0.1",
+    "port": 5000,
+    "SSLVerify": true,
+    "security": {
+      "cert": "~/ssl/cert.pem",
+      "key": "~/ssl/key.pem"
+    }
   }
 }
 ```
+{: .copy-code}

@@ -12,11 +12,13 @@ The REST Connector waits for HTTP requests with the Authorization header that co
 Security section in configuration file will look like this: 
 
 ```json
-    "security": {
-      "type": "basic",
-      "username": "username",
-      "password": "password"
-    }
+{
+  "security": {
+    "type": "basic",
+    "username": "username",
+    "password": "password"
+  }
+}
 ```
 
 Also, make sure that your request have `Authorization` header with provided credentials.
