@@ -1,6 +1,6 @@
 Every telemetry and attribute parameter comes with built-in `get` and `set` RPC methods, so you don’t need to configure them manually.
 
-Additionally, you can use the reserved RPC methods to access any node on the OPC-UA server-even if it doesn’t belong to a specific device. This is especially useful when management or control nodes are located outside the device’s node tree.
+Additionally, you can use the reserved RPC methods to access any node on the OPC-UA server - even if it doesn’t belong to a specific device. This is especially useful when management or control nodes are located outside the device’s node tree.
 We will set the device node to `Root\.Objects\.DemoDevice`, but we will access the `TextMessage` node located at `Root\.Objects\.DemoDeviceInfo\.TextMessage`, which is outside the device node tree.
 As an example, we will use Prosys OPC-UA Simulation Server, which is 
 available at `opc.tcp://0.0.0.0:53530/OPCUA/SimulationServer`. The server has the following structure:
