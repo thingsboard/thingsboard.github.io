@@ -9,11 +9,11 @@ description: ThingsBoard Demo Server Privacy Policy
 <p style="text-align: center; font-size: 1.5em; font-weight: bold;">PRIVACY POLICY</p>
 <br>
 <h2> Privacy Policy Statement on the Use of this Service (Website)</h2>
-<p style="font-size: 0.8em; color: grey">As of November 18, 2025</p> 
+<p style="font-size: 0.8em; color: grey">As of December 22, 2025</p> 
 <br>
 
 <p> <b>1. Definition of Policy</b> </p> 
-1.1 The following Privacy Policy is adopted by ThingsBoard, Inc. (“ThingsBoard” or “We”) in regard to the use of ThingsBoard Demo Server Platform ("Live Demo", "Community Edition Demo Cloud") and related web pages and services (the <b>“Service”</b>), excluding affiliated websites covered by independent privacy policies. This Privacy Policy applies to information collected through the Service and otherwise (for example, if you contact us directly). However, it does not cover any information, whether personal or not, that may be collected through other websites or in other venues. Your use of the Service and our remaining services is subject to this Privacy Policy, which may be updated periodically to reflect changes in how we collect, use, and/or share information.</p>
+<p> 1.1 The following Privacy Policy is adopted by ThingsBoard, Inc. (“ThingsBoard” or “We”) in regard to the use of ThingsBoard Demo Server Platform ("Live Demo", "Community Edition Demo Cloud") and related web pages and services (the <b>“Service”</b>), excluding affiliated websites covered by independent privacy policies. This Privacy Policy applies to information collected through the Service and otherwise (for example, if you contact us directly). However, it does not cover any information, whether personal or not, that may be collected through other websites or in other venues. Your use of the Service and our remaining services is subject to this Privacy Policy, which may be updated periodically to reflect changes in how we collect, use, and/or share information.</p>
 
 <p> 1.2 It is your responsibility to review this Privacy Policy together with the actual date of the change. Please check this Privacy Policy each time you use our Service to ensure you are aware of any changes in our practices. Your continued use of the Service will signify your acceptance of any changes to our Privacy Policy.</p>
 
