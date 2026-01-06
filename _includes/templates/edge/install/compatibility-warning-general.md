@@ -1,6 +1,6 @@
 {% capture update_server_first %}
 <details>
-<summary style="font-size: 16px; font-weight: bold; cursor: pointer;">Version Compatibility Rules - Read before proceeding</summary>
+<summary style="font-size: 16px; font-weight: semibold; cursor: pointer;">Version Compatibility Rules - Read before proceeding</summary>
 <p></p>
 {% if page.url contains 'upgrade-instructions' %}
 <p>Before upgrading ThingsBoard Edge, ensure that <b>ThingsBoard Server</b> is <a href="/docs/user-guide/install/{{docsPrefix}}upgrade-instructions/" target="_blank">updated to the latest version</a>.</p>

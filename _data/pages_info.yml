@@ -5323,8 +5323,128 @@
 "/docs/user-guide/install/pe/edge/rpi/":
   url: "/docs/user-guide/install/pe/edge/rpi/"
   redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-3-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-4-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-5-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-6-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-7-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-8-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-9-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v4-0-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v4-1-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v4-2-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
 "/docs/user-guide/install/pe/edge/upgrade-instructions/":
   url: "/docs/user-guide/install/pe/edge/upgrade-instructions/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-3-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-4-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-5-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-6-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-7-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-8-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-9-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v4-0-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v4-1-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v4-2-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/ubuntu/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-3-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-4-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-5-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-6-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-7-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-8-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-9-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v4-0-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v4-1-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v4-2-x/":
+  url: "/docs/user-guide/install/pe/edge/upgrade-instructions/windows/v4-2-x/"
   redirect_from: []
 "/docs/user-guide/install/pe/edge/windows/":
   url: "/docs/user-guide/install/pe/edge/windows/"

@@ -106,9 +106,15 @@
                             </a>
 
                             <div class="releases-table-content-item upgrade-link">
+                            {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/?version={{ version }}" target="_blank">
+                                    Upgrade
+                                </a>
+                            {% else %}
                                 <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/?version={{ version }}" target="_blank">
                                     Upgrade
                                 </a>
+                            {% endif %}
                             </div>
 
                         </div>

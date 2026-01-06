@@ -15,15 +15,15 @@
             {% for item in versionsCollection %}
                 {% assign version = item[0] %}
 
+                {%- comment -%}Filter versions based on edition{%- endcomment -%}
                 {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
-                    {% assign parts_check = version | split: "." %}
-
-                    {% if parts_check.size < 4 %}
-                        {% assign versionNum = version | replace: ".", "" | times: 1 %}
-                        {% if versionNum <= 334 %}
-                            {% continue %}
-                        {% endif %}
-                    {% endif %}
+                    {% unless item[1].release-date-edge %}
+                        {% continue %}
+                    {% endunless %}
+                {% else %}
+                    {% unless item[1].release-date %}
+                        {% continue %}
+                    {% endunless %}
                 {% endif %}
 
                 {% assign parts = version | split: "." %}
@@ -50,6 +50,10 @@
 
                 {% if docsPrefix == "pe/" and item[1].release-date-pe %}
                     {% assign date = item[1].release-date-pe | replace: " ", "-" | downcase %}
+                {% elsif docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                    {% if item[1].release-date-edge %}
+                        {% assign date = item[1].release-date-edge | replace: " ", "-" | downcase %}
+                    {% endif %}
                 {% endif %}
 
                 {% assign hashLinkRelease = "#" | append: hashLinkReleaseBase | append: "v" | append: hashBase | append: "-" | append: date %}
@@ -68,8 +72,12 @@
                         </div>
                         <div class="releases-table-content-item">
                             {% assign releaseDate = item[1].release-date %}
-                            {% if item[1].release-date-pe %}
+                            {% if docsPrefix == "pe/" and item[1].release-date-pe %}
                                 {% assign releaseDate = item[1].release-date-pe %}
+                            {% elsif docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                {% if item[1].release-date-edge %}
+                                    {% assign releaseDate = item[1].release-date-edge %}
+                                {% endif %}
                             {% endif %}
 
                             {%- assign month_map =  "January:Jan,February:Feb,March:Mar,April:Apr,May:May,June:Jun,July:Jul,August:Aug,September:Sep,October:Oct,November:Nov,December:Dec" | split: "," -%}
@@ -88,7 +96,15 @@
                             </time>
                         </div>
                         <div class="releases-table-content-item">
-                            v{{ item[1].upgradable-from }}
+                            {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                {% if item[1].upgradable-from-edge %}
+                                    v{{ item[1].upgradable-from-edge }}
+                                {% else %}
+                                    v{{ item[1].upgradable-from }}
+                                {% endif %}
+                            {% else %}
+                                v{{ item[1].upgradable-from }}
+                            {% endif %}
                             {%- if docsPrefix == "pe/" -%}PE
                             {%- elsif docsPrefix == "edge/" -%}Edge
                             {%- elsif docsPrefix == "pe/edge/" -%}PE Edge
@@ -122,38 +138,36 @@
                         {% assign hashLinkUpgrade = "#" | append: hashLinkUpgradeBase | append: hashBase %}
 
                         <div class="releases-table-content-item upgrade-instructions">
-                        {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
-                                <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
-                            </a>
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
-                                <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
-                            </a>
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
-                                <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
-                            </a>
-                            <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
-                                <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
-                            </a>
-                        {% else %}
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
-                                <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
-                            </a>
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
-                                <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
-                            </a>
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
-                                <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
-                            </a>
-                            <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
-                                <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
-                            </a>
-                            {% if docsPrefix != "edge/" and docsPrefix != "pe/edge/" %}
-                            <a class="right-link" href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/docker-compose/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Compose Instructions">
-                                <img width="24" height="24" src="/images/install/cluster/docker-compose.svg" alt="Docker Compose Instructions">
-                            </a>
+                            {% if docsPrefix == "edge/" or docsPrefix == "pe/edge/" %}
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
+                                    <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
+                                </a>
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
+                                    <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
+                                </a>
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
+                                    <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
+                                </a>
+                                <a href="/docs/user-guide/install/{{ docsPrefix }}upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
+                                    <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
+                                </a>
+                            {% else %}
+                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/ubuntu/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Ubuntu Instructions">
+                                    <img src="/images/ubuntu.svg" alt="Upgrade Ubuntu Instructions">
+                                </a>
+                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/centos/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="CentOS Instructions">
+                                    <img src="/images/centos.svg" alt="Upgrade CentOS Instructions">
+                                </a>
+                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/windows/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Windows Instructions">
+                                    <img src="/images/windows.svg" alt="Upgrade Windows Instructions">
+                                </a>
+                                <a href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/docker/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Instructions">
+                                    <img src="/images/docker.svg" alt="Upgrade Docker Instructions">
+                                </a>
+                                <a class="right-link" href="/docs/{{ docsPrefix }}user-guide/install/upgrade-instructions/docker-compose/{{ versionFamily }}/{{ hashLinkUpgrade }}" data-tooltip="Docker Compose Instructions">
+                                    <img width="24" height="24" src="/images/install/cluster/docker-compose.svg" alt="Docker Compose Instructions">
+                                </a>
                             {% endif %}
-                        {% endif %}
                         </div>
                     </div>
                 </div>
