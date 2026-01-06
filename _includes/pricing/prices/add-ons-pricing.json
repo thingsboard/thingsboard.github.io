@@ -1,0 +1,41 @@
+{
+  "public-cloud": {
+    "edge": {
+      "faq": "",
+      "price": "$29/month"
+    },
+    "trendz": {
+      "faq": "",
+      "price": "$10/month"
+    },
+    "wl": {
+      "faq": ""
+    }
+  },
+  "private-cloud": {
+    "edge": {
+      "faq": "",
+      "price": "$249/month"
+    },
+    "trendz": {
+      "faq": "",
+      "price": "$449/month"
+    },
+    "wl": {
+      "faq": ""
+    }
+  },
+  "pay-as-you-go": {
+    "edge": {
+      "faq": "",
+      "price": "$19/month"
+    },
+    "trendz": {
+      "faq": "",
+      "price": "$29/month"
+    },
+    "wl": {
+      "faq": ""
+    }
+  }
+}

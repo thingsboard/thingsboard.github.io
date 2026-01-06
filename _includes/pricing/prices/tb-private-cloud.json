@@ -1,8 +1,6 @@
 {
   "enterpriseBytesPerDataPoint": 36,
   "extraStorageCostPerGB": 0.5,
-  "devEnvironments": 299,
-  "testEnvironments": 299,
   "mobileApp": 99,
   "mobileAppSetup": 1000,
   "plans": [
@@ -15,7 +13,13 @@
       "extraDevicePrice": 0.1,
       "database": "NoSQL",
       "replicationFactor": 3,
-      "bytesPerDataPoint": 30
+      "bytesPerDataPoint": 30,
+      "devQaExtraInstancePrice": 100,
+      "edgeMonthPrice": 249,
+      "edgeInstancesIncluded": 10,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 449,
+      "trendzExtraDevicePrice": 0.03
     },
     {
       "name": "Growth",
@@ -26,7 +30,13 @@
       "extraDevicePrice": 0.09,
       "database": "NoSQL",
       "replicationFactor": 3,
-      "bytesPerDataPoint": 30
+      "bytesPerDataPoint": 30,
+      "devQaExtraInstancePrice": 100,
+      "edgeMonthPrice": 379,
+      "edgeInstancesIncluded": 20,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 659,
+      "trendzExtraDevicePrice": 0.03
     },
     {
       "name": "Scale",
@@ -37,7 +47,13 @@
       "extraDevicePrice": 0.08,
       "database": "NoSQL",
       "replicationFactor": 3,
-      "bytesPerDataPoint": 30
+      "bytesPerDataPoint": 30,
+      "devQaExtraInstancePrice": 100,
+      "edgeMonthPrice": 679,
+      "edgeInstancesIncluded": 30,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 1199,
+      "trendzExtraDevicePrice": 0.03
     }
   ]
 }

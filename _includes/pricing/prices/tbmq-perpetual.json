@@ -1,0 +1,10 @@
+{
+  "basePrice": 2999,
+  "includedSessions": 10000,
+  "extraSessionsPrice": 0.25,
+  "includedThroughput": 1000,
+  "extraThroughputPrice": 0.5,
+  "includedProdInstances": 1,
+  "extraProdInstancesPrice": 1999,
+  "extraDevInstancesPrice": 999
+}
