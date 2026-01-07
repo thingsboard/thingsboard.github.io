@@ -75,6 +75,34 @@ This setting is available when you create an Asset Profile and in the Asset Prof
 ![image](/images/user-guide/asset-profile/asset-profile-queue-2-pe.png)
 {% endif %}
 
+## Asset profile details
+
+Clicking an asset profile opens a detailed view where you can access and manage all aspects of that profile.
+
+{% include images-gallery.html imageCollection="asset-profile-details-page" %}
+
+<b><font size="3">Details</font></b>   
+This tab contains the core configuration of the asset profile — general settings that define behavior and default parameters for all assets using this profile. Here you can configure the profile name, default dashboard, default rule chain, visual settings, and metadata that apply to all associated assets.
+
+<b><font size="3">Calculated fields</font></b>   
+Displays fields whose values are automatically computed using formulas based on asset attributes or telemetry. Calculated fields defined at the profile level are inherited by all assets using this profile, enabling consistent generation of derived metrics without modifying data sources.
+
+<b><font size="3">Alarm rules</font></b>   
+Contains alarm rules configured for the asset profile. These rules define:
+
+- trigger conditions
+- severity levels
+- alarm creation and clearing logic
+- propagation and optional automated actions
+
+All assets assigned to this profile follow the same alarm logic, simplifying monitoring and management.
+
+<b><font size="3">Audit log</font></b>   
+Shows a list of all user actions related to this asset profile — configuration changes, rule updates, and other modifications. Useful for traceability, compliance, and reviewing history of changes at the profile level.
+
+<b><font size="3">Version control</font></b>   
+Provides Git-based versioning features for the asset profile. You can export, commit, and restore profile configurations, allowing structured change management, backups, and collaboration.
+
 ## Related guides
 
 You can use the following links to check out the related guides:
@@ -96,3 +124,10 @@ You can use the following links to check out the related guides:
  - [Assets](/docs/paas/user-guide/ui/assets/)
  - [Entities and Relations](/docs/paas/user-guide/entities-and-relations/)
   {% endif %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

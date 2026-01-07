@@ -23,7 +23,7 @@ description: Learn how Berliner Energieinstitut launched a fully custom energy I
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/david-eitzinger.webp" title="Berliner Energieinstitut Managing Director David Eitzinger" alt="David Eitzinger" width="987" height="636">
+        <img class="h-auto" src="/images/case-studies/david-eitzinger.webp" title="Berliner Energieinstitut Managing Director David Eitzinger" alt="David Eitzinger" width="987" height="636">
         <div class="text">
             <h2>Berliner Energieinstitut GmbH</h2>
             <p class="quote">“We were struggling trying to implement our own IOT infrastructure when ThingsBoard suddenly appeared. Immediately we started testing and were amazed with the feature completeness, stability and ease of use of this great platform, although it was only in version 1.0 and had been released just days prior. Our business needed some spec...<a target="_blank" href="/industries/smart-energy/?company=berliner">read more</a></p>

@@ -101,7 +101,24 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include templates/install/configure-monitoring-docker-compose.md %}
 
-## Step 9. Running
+## Step 9. Enable Trendz Analytics (optional)
+
+In order to start Trendz Analytics addon, please edit the configuration file:
+
+```bash
+nano .env
+```
+{: .copy-code}
+
+You'll need to make sure that `TRENDZ_ENABLED` variable set to `true`:
+
+```bash
+TRENDZ_ENABLED=true
+```
+
+You can read about Trendz Analytics [here](/docs/trendz/what-is-trendz/).
+
+## Step 10. Running
 
 ### Create and check required host volumes
 {% include templates/install/docker/docker-compose-setup-volumes.md %}
@@ -109,6 +126,29 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 ### Install and run ThingsBoard
 {% assign dockerComposeFileLocation = "-f $TB_SETUP/docker-compose.yml " %}
 {% include templates/install/docker/docker-compose-setup-running.md %}
+
+## Upgrading
+
+### Upgrading to new ThingsBoard version
+
+{% include templates/install/upgrade-docker-compose.md %}
+
+### Upgrading to new Trendz version (Optional)
+
+Trendz Analytics have different version system, and should be updated separately from ThingsBoard platform main services.
+
+To update Trendz, it's necessary to edit .env file to set "TRENDZ_VERSION" to target version (e.g. set it to {{ site.release.trendz_ver }} if you are upgrading to the latest). Then, execute the following commands:
+
+```bash
+./docker-stop-services.sh
+./docker-upgrade-trendz.sh
+./docker-start-services.sh
+```
+{: .copy-code}
+
+Note that you can upgrade Trendz from any version to the latest (for example, 1.12.0 -> {{ site.release.trendz_ver }} etc).
+
+{% include templates/install/generate_certificate_docker-compose.md %}
 
 ## Next steps
 

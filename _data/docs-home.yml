@@ -13,6 +13,7 @@ toc:
     path: /docs/user-guide/alarms/
   - title: Alarm rules
     path: /docs/user-guide/alarm-rules/
+    new: true
   - title: Calculated fields
     path: /docs/user-guide/calculated-fields/
     new: true
@@ -212,6 +213,8 @@ toc:
     new: true
   - title: MCP Server
     path: /docs/samples/analytics/mcp-server-ai-insights/
+  - title: n8n node
+    path: /docs/samples/analytics/n8n-node/
     new: true
   - title: AI models
     path: /docs/samples/analytics/ai-models/
@@ -302,6 +305,9 @@ toc:
     - title: Secrets storage
       path: /docs/pe/user-guide/secrets-storage/
       pe: true
+    - title: API keys
+      path: /docs/user-guide/security/api-keys/
+      new: true
     - title: Two-factor authentication
       path: /docs/user-guide/two-factor-authentication/
     - title: OAuth 2.0
