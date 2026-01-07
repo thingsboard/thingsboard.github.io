@@ -33,7 +33,7 @@ description: IoT solution for real-time data analysis, anomaly detection, predic
             <div class="content">
                 <h3 class="header">Predict failures and forecast utilization</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/predict-screen.png" alt="predict screen">
+                    <img src="https://img.thingsboard.io/trendz/predict-screen.png" alt="predict screen">
                 </div>
                 <p class="text">For better decision making, resource planning and reducing cost business requires answers to 3 main questions: What will happen, When, and Why?</p>
                 <p class="accent-text">Trendz provides an answer</p>
@@ -41,7 +41,7 @@ description: IoT solution for real-time data analysis, anomaly detection, predic
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="prediction">
-                    <img src="/images/trendz/predict-screen.png" alt="predict screen">
+                    <img src="https://img.thingsboard.io/trendz/predict-screen.png" alt="predict screen">
                 </div>
             </div>
         </main>
@@ -67,14 +67,14 @@ description: IoT solution for real-time data analysis, anomaly detection, predic
             <div class="content">
                 <h3 class="header">Detection Anomalies</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/anomalies-screen.png" alt="anomalies screen">
+                    <img src="https://img.thingsboard.io/trendz/anomalies-screen.png" alt="anomalies screen">
                 </div>
                 <p class="text">Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.</p>
                 <a id="Products_TA_StartAnalysis2" href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe gtm_button">Start Analysis</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="anomalies">
-                    <img src="/images/trendz/anomalies-screen.png" alt="anomalies screen">
+                    <img src="https://img.thingsboard.io/trendz/anomalies-screen.png" alt="anomalies screen">
                 </div>
             </div>
         </main>
@@ -101,7 +101,7 @@ description: IoT solution for real-time data analysis, anomaly detection, predic
             <div class="content">
                 <h3 class="header">Share securely</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/dashboard-screen.png" alt="dashboard screen">
+                    <img src="https://img.thingsboard.io/trendz/dashboard-screen.png" alt="dashboard screen">
                 </div>
                 <div class="text">
                     <span>Share visualized insights with your users by:</span>
@@ -116,7 +116,7 @@ description: IoT solution for real-time data analysis, anomaly detection, predic
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="dashboard">
-                    <img src="/images/trendz/dashboard-screen.png" alt="dashboard screen">
+                    <img src="https://img.thingsboard.io/trendz/dashboard-screen.png" alt="dashboard screen">
                 </div>
             </div>
         </main>

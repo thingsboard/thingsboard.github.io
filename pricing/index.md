@@ -768,31 +768,31 @@ defaultActivePricingSection: thingsboard-pe-options
                         <tbody>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-is-automatic-backup">Automatic backups</td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-is-included-in-the-monthly-subscription-fee">24/7 Monitoring</td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td>Production support</td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td>Engineering support </td>
                                 <td><a href="/docs/contact-us/">Contact us</a></td>
                                 <td><a href="/docs/contact-us/">Contact us</a></td>
                                 <td><a href="/docs/contact-us/">Contact us</a></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-are-the-database-options-in-each-plan">NoSQL Database</td>
@@ -803,59 +803,59 @@ defaultActivePricingSection: thingsboard-pe-options
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-are-custom-data-retention-policies">Custom data retention policies</td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-does-geo-region-deployment-selection-include">Geo-region deployment choice</td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-does-multi-az-database-replication-mean">Multi-AZ database replication</td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td>Priority Support Channel</td>
                                 <td></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-are-high-availability-services-available-as-an-add-on">High availability services</td>
                                 <td></td>
                                 <td></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-can-i-choose-a-specific-maintenance-window">Maintenance window picking</td>
                                 <td></td>
                                 <td></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td data-faq-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations">Service reviews & architecture consults</td>
                                 <td></td>
                                 <td></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                             <tr>
                                 <td>Dedicated customer success engineer</td>
                                 <td></td>
                                 <td></td>
                                 <td></td>
-                                <td><img src="/images/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
+                                <td><img src="https://img.thingsboard.io/pricing/pricing-checkmark-icon.svg" alt="Checkmark icon" title="Option included in plan"></td>
                             </tr>
                         </tbody>
                     </table>
