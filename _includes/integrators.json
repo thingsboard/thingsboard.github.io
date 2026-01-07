@@ -1080,6 +1080,18 @@
     }
   },
   {
+    "type": ["Africa"],
+    "country": ["Senegal"],
+    "name": "Witniss IoT",
+    "contact": {
+      "href": "bassirou.ba@witniss-iot.com"
+    },
+    "site": {
+      "href": "witniss-iot.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["India"],
     "name": "YuDash Systems Pvt. Ltd.",
