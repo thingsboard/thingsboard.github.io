@@ -1,14 +1,14 @@
 * TOC
 {:toc}
 
-For complex calculations, [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} (ThingsBoard Expression Language) is used.   
-Script calculated fields support conditional logic, loops, working with historical data, and can return multiple results in a single execution.
+Script calculated fields use [TBEL](/docs/{{docsPrefix}}user-guide/tbel/){:target="_blank"} (ThingsBoard Expression Language) to perform advanced, real-time computations on telemetry and attributes. Unlike Simple fields, Script fields support conditional logic, loops, working with historical time series windows, and returning multiple results in a single execution.
 
-<hr>
-
-## Creating a calculated field
-
-{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
+Use "Script" calculated fields when you need logic that goes beyond a single math expression, such as:
+- Multi-step calculations (e.g., dew point, air density, efficiency metrics)
+- Conditional rules (e.g., generate status flags based on multiple inputs)
+- Multi-output results (e.g., compute several derived values at once)
+- Event generation (e.g., produce anomaly events with timestamps)
+- Rolling analytics using historical windows (e.g., rolling average, trend detection, smoothing)
 
 <hr>
 
@@ -25,115 +25,24 @@ Define the data sources, calculation logic, result format, and how it will be fu
 
 ### Arguments
 
-To configure calculated field, you must add at least one argument.
+For a Simple calculated field, arguments can be either [Latest telemetry](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=latestTelemetry#arguments){:target="_blank"}, [Attribute](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#arguments){:target="_blank"}, or [time series rolling](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=timeSeriesRolling#arguments){:target="_blank"}).   
+The data source can be **Current entity**, another **Device/Asset**, the **Customer**, the **Current tenant**, or the **Current owner**.
 
-Click **Add argument** and configure the following:
-
-<b><font size="3">Entity type</font></b>   
-Defines the data source that will be used in calculations:
-- **Current entity**: refers to the same entity where the calculated field is applied. 
-  If the calculated field is created at the **Asset Profile** or **Device Profile** level, the calculation will be executed for each entity associated with that profile.
-- Another **Device** or **Asset**: references a different device or asset for data processing.
-- **Customer**: retrieves data from the associated customer entity.
-- **Current tenant**: uses data from the tenant entity.
-- **Current owner**: refers to the owner of the current entity and uses its data.
-
-{% assign scriptArgument = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-argument-1-ce.png
-        title: Click "Add argument" and fill in the required fields.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=scriptArgument %}
-
-<b><font size="3">Argument type</font></b>   
-Defines the data type:
-- **Attribute**: uses static or semi-static key-value pairs associated with an entity (e.g., model, max temperature).
-- **Latest telemetry**: uses the most recent telemetry data from an entity (e.g., temperature, speed, voltage).
-- **Time series rolling**: uses historical time series data over a specified time window for trend analysis.
-
-Select the desired argument type:
-
-{% capture calculatedfieldsargumenttype %}
-Attribute<small></small>%,%attribute%,%templates/calculated-fields/script/attribute-argument-type.md%br%
-Latest telemetry<small></small>%,%latestTelemetry%,%templates/calculated-fields/script/latest-telemetry-argument-type.md%br%
-Time series rolling<small></small>%,%timeSeriesRolling%,%templates/calculated-fields/script/time-series-rolling-argument-type.md{% endcapture %}
-
-{% include content-toggle.liquid content-toggle-id="calculatedfieldsargumenttype" toggle-spec=calculatedfieldsargumenttype %}
+For more information about arguments, their types, and configuration parameters, see the [Arguments](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#arguments){:target="_blank"} section in the Calculated Fields documentation.
 
 <hr>
 
 ### Script
 
-In this section, the calculation function is defined using the variables specified in the ["Arguments"](#arguments) section.
-
-> The variable name that will store the calculation result is defined within the function itself.
-
-Example: the function below uses the `temperature` and `humidity` arguments to calculate the dew point value.
-The calculation result will be stored in the variable `dewPoint`, rounding the value to one decimal places.
-
-```js
-// Constants for Magnus formula
-var a = 17.625;
-var b = 243.04;
-
-var alpha = ((a * temperature) / (b + temperature)) + Math.log(humidity / 100.0);
-var dewPoint = toFixed((b * alpha) / (a - alpha), 1);
-
-return {"dewPoint": dewPoint};
-```
-{: .copy-code}
-
-{% assign scriptFunction = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-function-1-ce.png
-        title: Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=scriptFunction %}
-
-Script calculated fields require the definition of a `calculate(ctx, ...)` function. This function receives the `ctx` object and arguments declared in the configuration.
-
-```javascript
-function calculate(ctx, arg1, arg2, ...): object | object[]
-```
-
-- `ctx`: context object that stores `latestTs` and provides access to all configured arguments.
-
-  Context structure:
-    - `ctx.latestTs`: the most recent timestamp (in milliseconds) from the arguments telemetry. Useful for aligning the result with the incoming data time instead of the server time.
-    - `ctx.args`: an object that contains all declared arguments, where each argument can be accessed using `.` notation:
-        - **single value arguments** (attribute or latest telemetry):
-            - `ctx.args.<arg>.ts`: timestamp of the argument.
-            - `ctx.args.<arg>.value`: actual value of the argument.
-        - **time series rolling arguments**:
-            - `ctx.args.<arg>.timeWindow`: object with `startTs` and `endTs` timestamps.
-            - `ctx.args.<arg>.values`: array of `{ ts, value }` records representing timestamped telemetry.
-            - `ctx.args.<arg>.<method>`: call built-in aggregation methods such as `mean()`, `sum()`, `min()`, `max()`, `first()`, `last()`, `merge(...)`, and others.
-      > For more details, refer to the [time series rolling argument](#arguments).
-- `arg1, arg2, ...`: direct access to arguments by name as function parameters. This can be useful for cleaner or more concise expressions. These arguments may be:
-    - single value arguments (attribute or latest telemetry arguments): telemetry value may be of type boolean, int64 (long), double, string, or JSON.
-    - time series rolling arguments: objects that contain time series data within a defined time window.
-
-Use either `ctx.args.<arg>` or direct parameter access depending on preference and context clarity.
+{% include docs/user-guide/calculated-fields/blocks/script-calculation.md %}
 
 <hr>
 
 ### Output
 
-The result is returned as a JSON object and processed according to the selected [strategy](#output-strategy).
+The calculation result is stored either as a [time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} or an [attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}.   
 
-<b><font size="3">Output type</font></b>   
-Select how the result should be stored:
-- [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"}: the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.
-  > To align the result with the latest timestamp of the input arguments telemetry, use `ctx.latestTs` and assign it explicitly to the `ts` field in the returned object.
-- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"}: the function returns a JSON object **without timestamp** information containing the computed value.   
-  Also specify the scope: **Server**, **Client**, or **Shared** attributes.
-
-<b><font size="4">Save calculated field</font></b>   
-To finish adding the calculated field, click **Add**.
+For more details about output types and processing strategies, see the [Output](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#output){:target="_blank"} section.
 
 {% assign scriptOutput = '
     ===
@@ -149,83 +58,67 @@ To finish adding the calculated field, click **Add**.
 
 <hr>
 
-{% include /docs/user-guide/calculated-fields/blocks/output-strategy.md %}
-
-<hr>
-
-### Result
-
-After the calculated field is created, data calculation will start immediately once the relevant input data is received.
-
-{% assign scriptResult = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-result-1-ce.png
-        title: After the calculated field is created, data calculation will start immediately once the relevant input data is received.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=scriptResult %}
-
-To view debug events, click **Events**. In the debug window, you can see events with the input data and the calculated result.
-
-> Please note that ThingsBoard stores all debug events for a calculated field during the first 15 minutes after creation. After that, only error events are saved.
-
-{% assign scriptEvent = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-events-1-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
-    ===
-        image: /images/user-guide/calculated-fields/script/script-events-2-ce.png
-        title: The debugging window displays calculated field arguments and the computed result.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-events-3-ce.png
-    ===
-        image: /images/user-guide/calculated-fields/script/script-events-4-ce.png
-'
-%}
-
-{% include images-gallery.liquid imageCollection=scriptEvent %}
-
-<hr>
-
 ## Usage examples
 
 To help you get started, here are three common configuration patterns applied to real-world scenarios.
 
 ### Example 1: Fahrenheit to Celsius
 
-<b><font size="4">Scenario</font></b>
+<b><font size="4">Scenario</font></b>   
+A device reports indoor temperature in degrees Fahrenheit as telemetry under the <span class="code-light">temperature</span> key.
 
-The device sends the room temperature in degrees Fahrenheit (**temperature**).   
-You need to convert the value to degrees Celsius, round the result to two decimal places, and store it as telemetry with the same timestamp.
+<b><font size="4">Goal</font></b>   
+Convert the temperature to degrees Celsius, round the result to two decimal places, and store it as telemetry under the <span class="code-light">temperatureC</span> key using the same timestamp as the incoming data.
+
+<hr>
+
+<b><font size="4">Calculated field configuration</font></b>   
+[Download the "Fahrenheit to Celsius" calculated field configuration](/docs/user-guide/resources/calculated-fields/script/f_to_c_script_cf.json){:target="_blank" download="f_to_c_script_cf.json"}.
 
 <hr>
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the **device level** with the following parameters:
+<b><font size="3">1. Import demo device</font></b>
 
-<b><font size="3">General</font></b>
-- **Name:** C to F
-- **Type:** Script
+Import a device that publishes temperature telemetry.
+1. Download the CSV file: [fahrenheit-to-celsius-calculation-device-data.csv](/docs/user-guide/resources/calculated-fields/script/fahrenheit-to-celsius-calculation-device-data.csv){:target="_blank" download="fahrenheit-to-celsius-calculation-device-data.csv"}
+2. Go to the **Devices** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
 
-<b><font size="3">Arguments</font></b>
+**CSV includes:**
+- **Name:** Smart Device
+- **Type:** smart-device
+- **Time series:** <span class="code-light">temperature</span>
 
-Add an argument:
-- **Entity:** Current entity
-- **Argument type:** Latest telemetry
-- **Time series key:** temperature
-- **Argument name:** temperature
+{% assign exampleScript1 = '
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-1-ce.png
+        title: Go to the **Devices** and **import** device configurations from a CSV file.<br>>CSV includes:<br>Name: Smart Device; Type: smart-device; Time series: temperature
+'
+%}
 
-<b><font size="3">Script</font></b>
+{% include images-gallery.liquid imageCollection=exampleScript1 %}
 
-Insert the calculation function into the **Script** field:
+<hr>
 
-**function calculate(ctx, temperatureF) {**
+<b><font size="3">2. Apply the calculated field to the device profile</font></b>
+
+When importing the device, the **smart-device** device profile is created automatically and assigned to it.   
+Configure the calculated field on this profile so it runs for all devices using it.
+
+1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/script/f_to_c_script_cf.json){:target="_blank" download="f_to_c_script_cf.json"}.
+2. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.   
+   Apply a calculated field to the "smart-device" profile, which is automatically created during device import. This field will apply to all devices associated with this profile.
+
+This configuration reads the Fahrenheit value from <span class="code-light">temperatureF</span> key, converts it to Celsius, and stores the result as a new <span class="code-light">temperatureC</span> telemetry key.
+
+**Script used in this example:**
+
+**function calculate(ctx, altitude, temperature) {**
 ```js
-var temperatureC = (temperature - 32) / 1.8;
+var temperatureC = (temperatureF - 32) / 1.8;
 return {
-    "ts": ctx.latestTs, 
+    "ts": ctx.latestTs,
     "values": {
         "temperatureC": toFixed(temperatureC, 2)
     }
@@ -234,108 +127,163 @@ return {
 {: .copy-code}
 **}**
 
-<b><font size="3">Output</font></b>
-
-- **Output type:** Time series
-- **Strategy**: Process right away
-
-Click **Add** to save the calculated field.
-
-{% assign exampleScript11 = '
+{% assign exampleScript2 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-11-ce.png
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-2-ce.png
         title: **Create a new calculated field** for the device and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-12-ce.png
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-3-ce.png
         title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-13-ce.png
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-4-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-5-ce.png
+        title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-6-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=exampleScript11 %}
+{% include images-gallery.liquid imageCollection=exampleScript2 %}
 
 <hr>
 
 <b><font size="4">Result</font></b>
 
-In the device&#39;s **Latest telemetry** tab, the calculated temperature value in degrees Celsius will appear under the **temperatureC** key.
+In the device&#39;s "Latest telemetry" tab, the calculated temperature appears as a new telemetry key: <span class="code-light">temperatureC</span>.
 
-{% assign exampleScript12 = '
+{% assign exampleScript3 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-16-ce.png
-        title: In the device&#39;s **Latest telemetry** tab, the calculated temperature value in degrees Celsius will appear under the **temperatureC** key.
+        image: /images/user-guide/calculated-fields/script/script-cf-example-1-7-ce.png
+        title: In the device&#39;s "Latest telemetry" tab, the calculated temperature appears as a new telemetry key: **temperatureC**.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=exampleScript12 %}
+{% include images-gallery.liquid imageCollection=exampleScript3 %}
 
 <hr>
 
 ### Example 2: Air density calculation
 
-<b><font size="4">Scenario</font></b>
+<b><font size="4">Scenario</font></b>   
+The Building A asset has two associated devices:
+- Smart Device — publishes temperature as telemetry (<span class="code-light">temperature</span>)
+- Altimeter — provides altitude as an attribute (<span class="code-light">altitude</span>)
 
-The **Building A** asset has two associated devices:
-- **Smart Device** — sends the temperature value as telemetry (**temperature**).
-- **Altimeter** — sends the altitude value as an attribute (**altitude**).
+<b><font size="4">Goal</font></b>   
+Calculate the air density based on the average temperature over the last 15 minutes and the altitude, and store the result as a new telemetry value under the <span class="code-light">airDensity</span> key for Building A.
 
-You need to calculate the **air density** based on these data and store the result as telemetry.
+<hr>
 
-<b><font size="4">Prerequisites</font></b>
-
-{% assign examplePrepareScript2 = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-prepare-1-ce.png
-        title: An asset: **Building A**.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-prepare-2-ce.png
-        title: A device: **Smart Device** (sends **temperature** telemetry)
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-prepare-3-ce.png
-        title: A device: **Altimeter** (sends **altitude** as an attribute)
-'
-%}
-
-{% include images-gallery.liquid imageCollection=examplePrepareScript2 %}
+<b><font size="4">Calculated field configuration</font></b>   
+[Click to download the "Air density calculation" field configuration](/docs/user-guide/resources/calculated-fields/script/air_density_calculation_cf.json){:target="_blank" download="air_density_calculation_cf.json"}.
 
 <hr>
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the **asset level** with the following parameters:
+<b><font size="3">1. Import demo device</font></b>
 
-<b><font size="3">General</font></b>
-- **Name:** Air density calculation
-- **Type:** Script
+Import two devices: one publishing temperature telemetry and one providing altitude as an attribute.
+1. Download the CSV file: [air-density-calculation-device-data.csv](/docs/user-guide/resources/calculated-fields/script/air-density-calculation-device-data.csv){:target="_blank" download="air-density-calculation-device-data.csv"}
+2. Go to the **Devices** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
 
-<b><font size="3">Arguments</font></b>
+<b><font size="3">CSV includes:</font></b>
 
-Add two arguments:
+**Device 1**
+- Name: Smart Device
+- Type: smart-device
+- Time series: <span class="code-light">temperature</span>
 
-**Argument 1**
-- **Entity type:** Device
-- **Device name:** Smart Device
-- **Argument type:** Time series rolling
-- **Time series key:** temperature
-- **Argument name:** temperature
-- **Time window:** 15 minutes
-- **Max value:** 100
+**Device 2**
+- Name: Altimeter
+- Type: height-sensor
+- Server attribute: <span class="code-light">altitude</span>
+ 
+{% assign exampleScript4 = '
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-1-ce.png
+        title: An asset: **Building A**.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-2-ce.png
+        title: A device: **Smart Device** (sends **temperature** telemetry)
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-3-ce.png
+        title: A device: **Smart Device** (sends **temperature** telemetry)
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-4-ce.png
+        title: A device: **Altimeter** (sends **altitude** as an attribute)
+'
+%}
 
-**Argument 2**
-- **Entity type:** Device
-- **Device name:** Altimeter
-- **Argument type:** Attribute
-- **Attribute scope:** Shared attribute
-- **Attribute key:** altitude
-- **Argument name:** altitude
+{% include images-gallery.liquid imageCollection=exampleScript4 %}
 
-<b><font size="3">Script</font></b>
+<hr>
 
-Paste the calculation function into the **Script** field:
+<b><font size="3">2. Import demo asset</font></b>
 
-**function calculate(ctx, altitude, temperature) {**
+Import the asset that represents the building.
+1. Download the CSV file: [air-density-calculation-asset-data.csv](/docs/user-guide/resources/calculated-fields/script/air-density-calculation-asset-data.csv){:target="_blank" download="air-density-calculation-asset-data.csv"}
+2. Go to **Assets** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
+
+**CSV includes:**
+- **Name:** Building A
+- **Type:** building
+
+{% assign exampleScript5 = '
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-5-ce.png
+        title: An asset: **Building A**.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=exampleScript5 %}
+
+<hr>
+
+<b><font size="3">3. Apply the calculated field to the asset profile</font></b>
+
+Configure the calculated field on the building asset profile so it applies to Building A.
+1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/script/air_density_calculation_cf.json){:target="_blank" download="air_density_calculation_cf.json"}.
+2. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.   
+
+This calculated field:
+- reads <span class="code-light">temperature</span> telemetry from Smart Device using Time series rolling
+- reads <span class="code-light">altitude</span> from Altimeter as an attribute
+- calculates air density
+- stores the output as telemetry on the asset
+
+{% assign exampleScript6 = '
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-6-ce.png
+        title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-7-ce.png
+        title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-8-ce.png
+        title: Add a first argument:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-9-ce.png
+        title: Add a second argument:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute key:** <i>altitude</i>.<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-10-ce.png
+        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-11-ce.png
+        title: The calculated field has been added.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=exampleScript6 %}
+
+<br>
+
+**Script used in this example:**
+
+function calculate(ctx, altitude, temperature) {
 ```js
 var avgTemperature = temperature.mean(); // Get average temperature
 var temperatureK = (avgTemperature - 32) * (5 / 9) + 273.15; // Convert Fahrenheit to Kelvin
@@ -352,103 +300,91 @@ return {
 
 ```
 {: .copy-code}
-**}**
-
-<b><font size="3">Output</font></b>
-
-- **Output type:** Time series
-- **Strategy**: Process right away
-
-Click **Add** to save the calculated field.
-
-{% assign exampleScript21 = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-21-ce.png
-        title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-22-ce.png
-        title: Add a first argument:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-23-ce.png
-        title: Add a second argument:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute key:** <i>altitude</i>.<br>Click **Add**.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-24-ce.png
-        title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-25-ce.png
-        title: The calculated field has been added.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=exampleScript21 %}
+}
 
 <hr>
 
 <b><font size="4">Result</font></b>
 
-In the **Latest telemetry** tab of the **Building A** asset, the calculated value will appear under the **airDensity** key.
+In the **Latest telemetry** tab of the **Building A** asset, the calculated value appears under the <span class="code-light">airDensity</span> key.
 
-{% assign exampleScript22 = '
+{% assign exampleScript7 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-28-ce.png
-        title: In the **Latest telemetry** tab of the **Building A** asset, the calculated value will appear under the **airDensity** key.
+        image: /images/user-guide/calculated-fields/script/script-cf-example-2-12-ce.png
+        title: In the **Latest telemetry** tab of the **Building A** asset, the calculated value appears under the **airDensity** key.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=exampleScript22 %}
+{% include images-gallery.liquid imageCollection=exampleScript7 %}
 
 <hr>
 
 ### Example 3: Freezer temperature analysis
 
-<b><font size="4">Scenario</font></b>
+<b><font size="4">Scenario</font></b>   
+This example demonstrates freezer operation monitoring using two telemetry parameters:
+temperature- <span class="code-light">defrost</span> — defrost mode status (0 = off, 1 = on)
 
-This example demonstrates freezer operation analysis based on two telemetry parameters:
-- **temperature** — internal temperature (rolling time series)
-- **defrost** — defrost mode status
-  (0 — off, 1 — on)
+The goal is to detect cases where:
+- the freezer is **not** in defrost mode (defrost = 0), and
+- the temperature is **above -5°C**
 
-The goal is to detect situations where:
-- the freezer is **not** in defrost mode, **and**
-- the air temperature exceeds **-5 °C**.
+When such a condition occurs, the system should generate an **event-like telemetry record** containing issue details.
 
-In such cases, the system should generate a telemetry event containing information about the issue.
+<hr>
+
+<b><font size="4">Goal</font></b>   
+Generate a telemetry event under the <span class="code-light">issue</span> key whenever the freezer temperature exceeds -5°C while defrost mode is OFF.
 
 <hr>
 
 <b><font size="4">Configuration steps</font></b>
 
-Create a calculated field at the **device level** with the following parameters:
+<b><font size="3">1. Import demo device</font></b>
 
-<b><font size="3">General</font></b>
-- **Name:** Freezer temperature analysis
-- **Type:** Script
+Import a device that publishes both telemetry keys.
+1. Download the CSV file: [freezer-temperature-analysis-device-data.csv](/docs/user-guide/resources/calculated-fields/script/freezer-temperature-analysis-device-data.csv){:target="_blank" download="freezer-temperature-analysis-device-data.csv"}
+2. Go to the **Devices** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
 
-<b><font size="3">Arguments</font></b>
+<b><font size="3">CSV includes:</font></b>
 
-Add two arguments:
+**CSV includes:**
+- Name: Smart Device
+- Type: smart-device
+- Time series: <span class="code-light">temperature</span>
+- Time series: <span class="code-light">defrost</span>
 
-**Argument 1**
-- **Entity type:** Current entity
-- **Argument type:** Time series rolling
-- **Time series key:** defrost
-- **Argument name:** defrost
-- **Time window:** 15 minutes
-- **Max value:** 100
+{% assign exampleScript8 = '
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-1-ce.png
+        title: An asset: **Building A**.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-2-ce.png
+        title: A device: **Smart Device** (sends **temperature** telemetry)
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-3-ce.png
+        title: A device: **Smart Device** (sends **temperature** telemetry)
+'
+%}
 
-**Argument 2**
-- **Entity type:** Current entity
-- **Argument type:** Time series rolling
-- **Time series key:** temperature
-- **Argument name:** temperature
-- **Time window:** 15 minutes
-- **Max value:** 100
+{% include images-gallery.liquid imageCollection=exampleScript8 %}
 
-<b><font size="3">Script</font></b>
+<hr>
 
-Paste the calculation function into the **Script** field:
+<b><font size="3">2. Apply the calculated field to the device profile</font></b>
 
-**function calculate(ctx, defrost, temperature) {**
+Configure the calculated field on the "smart-device" device profile so it runs for Smart Device.
+1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/script/freezer_temperature_analysis_cf.json){:target="_blank" download="freezer_temperature_analysis_cf.json"}.
+2. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
+
+This configuration:
+- reads rolling telemetry for both <span class="code-light">temperature</span> and <span class="code-light">defrost</span>
+- aligns timestamps using `merge()`
+- generates a telemetry record for each detected issue
+
+**Script used in this example:**
+
+function calculate(ctx, altitude, temperature) {
 ```js
 var merged = temperature.merge(defrost);
 var result = [];
@@ -472,52 +408,35 @@ return result;
 {: .copy-code}
 **}**
 
-<b><font size="3">Output</font></b>
-
-- **Output type:** Time series
-- **Strategy**: Process right away
-
-Click **Add** to save the calculated field.
-
-{% assign exampleScript31 = '
+{% assign exampleScript9 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-31-ce.png
-        title: **Create a new calculated field** for the device and select the **Script** type.
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-32-ce.png
-        title: Add first argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Time series rolling<br>- **Time series key:** defrost<br>- **Argument name:** defrost.<br>- Click **Add**.
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-33-ce.png
-        title: Add a second argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Time series rolling<br>- **Time series key:** temperature<br>- **Argument name:** temperature.<br>- Click **Add**.
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        title: Add a first argument:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-34-ce.png
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        title: Add a second argument:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute key:** <i>altitude</i>.<br>Click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-35-ce.png
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: The calculated field has been added.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=exampleScript31 %}
+{% include images-gallery.liquid imageCollection=exampleScript9 %}
 
 <hr>
 
 <b><font size="4">Result</font></b>
 
-In the **Events** window, you can view the generated events.
-
-{% assign exampleScript32 = '
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-36-ce.png
-        title: In the **Events** window, you can view the generated events.
-    ===
-        image: /images/user-guide/calculated-fields/script/script-example-37-ce.png
-'
-%}
-
-{% include images-gallery.liquid imageCollection=exampleScript32 %}
-
-the **Latest telemetry** tab, the **issue** key will appear, for example:
+In the device&#39;s **Latest telemetry** tab, the issue key appears when the condition is met, for example:
 
 ```json
 {
@@ -529,16 +448,16 @@ the **Latest telemetry** tab, the **issue** key will appear, for example:
 
 ```
 
-This indicates that the freezer is in a potentially **critical** state.
+This indicates the freezer is in a potentially critical state and may require attention.
 
-{% assign exampleScript33 = '
+{% assign exampleScript10 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-example-38-ce.png
-        title: Go to the **Latest telemetry** tab. The **issue** key is the result of the calculation.
+        image: /images/user-guide/calculated-fields/script/script-cf-example-3-10-ce.png
+        title: In the device&#39;s **Latest telemetry** tab, the issue key appears when the condition is met. This indicates the freezer is in a potentially critical state and may require attention.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=exampleScript33 %}
+{% include images-gallery.liquid imageCollection=exampleScript10 %}
 
 <hr>
 

@@ -1,0 +1,40 @@
+{
+  "type": "PROPAGATION",
+  "name": "Battery level propagation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767358944102
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "PROPAGATION",
+    "arguments": {
+      "deviceBatteryLevel": {
+        "refEntityKey": {
+          "key": "batteryLevel",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": "no data"
+      }
+    },
+    "expression": null,
+    "output": {
+      "type": "ATTRIBUTES",
+      "scope": "SERVER_SCOPE",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "sendAttributesUpdatedNotification": false,
+        "updateAttributesOnlyOnValueChange": true,
+        "saveAttribute": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    },
+    "relation": {
+      "direction": "TO",
+      "relationType": "Contains"
+    },
+    "applyExpressionToResolvedArguments": false
+  }
+}

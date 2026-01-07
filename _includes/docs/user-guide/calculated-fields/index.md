@@ -4,11 +4,12 @@
 {% assign sinceVersion = "4.0.0" %}
 {% include templates/since.md %}
 
-**Calculated fields** are a mechanism for real-time data transformation, merging, and analysis that allows tenant administrators to perform computations directly as [telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} and [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} are received.   
+<br>
 
-Using expressions, scripts, or specialized processing modes, users can standardize data, generate new metrics, perform geospatial analytics, aggregate information, and automatically pass values between related entities.
+Calculated fields let you compute new telemetry/attributesin real time — without building extra rule chain logic.
+They run automatically when telemetry/attributes are saved, read data from selected sources, execute the calculation, and write the result back as telemetry/attributes (optionally via Rule Chains).
 
-ThingsBoard supports [calculated field reprocessing](#data-reprocessing), which allows you to apply the same calculation logic to historical telemetry data and generate missing or updated results for a selected time range.
+In addition to real-time processing, ThingsBoard supports calculated field [reprocessing](#data-reprocessing), which allows you to apply the same calculation logic to historical telemetry data and generate missing or updated results for a selected time range.
 
 <hr>
 
@@ -22,11 +23,192 @@ This flexibility allows users to either define unique calculations per entity or
 
 <hr>
 
-## Calculated field types
+## Types
 
 ThingsBoard supports several types of calculated fields, each designed for a specific class of tasks:
 
 {% include calculated-fields-cards.liquid %}
+
+<hr>
+
+## Configuration
+
+> To create calculated fields and access their results, you must have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to create calculated fields and read and write attributes and telemetry.
+
+### Creating a calculated field
+
+{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
+
+<hr>
+
+### General
+
+<b><font size="3">Title</font></b>   
+Enter a clear, descriptive name for the calculated field that reflects its purpose.
+
+<b><font size="3">Entity type</font></b>   
+Select the entity type and the specific entity or profile where the calculated field will be applied.
+
+<b><font size="3">Type</font></b>   
+Select the calculated field type from the list.
+
+{% assign typeOfCalculatedField = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-general-1-ce.png
+        title: Enter a <b>descriptive name</b> for the calculated field and select its <b>type</b>.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=typeOfCalculatedField %}
+
+<hr>
+
+### Arguments
+
+Arguments define which data the calculated field reads and exposes as variables for the calculation logic. Each argument maps to a specific data source (attributes or telemetry) from a selected entity, so it can be referenced in a Simple expression, TBEL script, or other calculated field types.
+
+<b><font size="4">Entity type</font></b>   
+Define where the data is read from:
+- **Current entity** — the same device/asset (device profile/asset profile) to which the calculated field is applied.   
+  If the field is created at the **Device profile** or **Asset profile** level, the calculation is performed for each entity associated with that profile.
+- Another **Device / Asset** — a specific referenced entity 
+- **Customer** — the customer associated with the entity 
+- **Current tenant** — the tenant entity 
+- **Current owner** — the owner of the current entity 
+- **Related entities** (for specific calculated field types) — entities resolved dynamically via relations
+
+{% assign arguments = '
+    ===
+        image: /images/user-guide/calculated-fields/script/script-argument-1-ce.png
+        title: Defines the data source that will be used in calculations.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=arguments %}
+
+<br><b><font size="4">Argument types</font></b>
+
+Calculated fields support the following argument types:
+
+{% capture calculatedfieldsargumenttype %}
+Attribute<small></small>%,%attribute%,%templates/calculated-fields/attribute-argument-type.md%br%
+Latest telemetry<small></small>%,%latestTelemetry%,%templates/calculated-fields/latest-telemetry-argument-type.md%br%
+Time series rolling<small>for Script-based calculations and specific aggregation modes</small>%,%timeSeriesRolling%,%templates/calculated-fields/time-series-rolling-argument-type.md{% endcapture %}
+
+{% include content-toggle.liquid content-toggle-id="calculatedfieldsargumenttype" toggle-spec=calculatedfieldsargumenttype %}
+
+### Calculation
+
+Calculated fields support multiple calculation models depending on the selected type. A calculation can be defined as a single expression, a TBEL script, a geospatial zone evaluation, a value propagation to related entities, or an aggregation (either across related entities using their latest values, or over historical time series data within fixed intervals). 
+
+### Output
+
+Regardless of the type, the calculated field produces one or more output values that are then stored as telemetry or attributes and processed according to the configured [output strategy](#output-strategy) (immediately or via Rule Chains).
+
+The result can be stored as:
+- [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} — the function returns a JSON object or an array of JSON objects **with or without a timestamp** containing the computed value(s).
+- [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} — the function returns a JSON object **without timestamp information** containing the computed value(s). Attributes can be stored in **Server** or **Shared** scope.
+
+<hr>
+
+{% include /docs/user-guide/calculated-fields/blocks/output-strategy.md %}
+
+## Debug 
+
+ThingsBoard provides built-in tools that help you validate and troubleshoot calculated fields in real time.
+
+<br><b><font size="3">Enable debug mode</font></b> (_&#42; recommended during development_)
+
+Each calculated field can be switched to Debug mode. When enabled, ThingsBoard records execution details for every run, including the input arguments that triggered the execution (e.g. incoming telemetry or attribute updates) and the calculation result or any execution problems (script errors, missing arguments, invalid values).
+
+{% assign enableDebug = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-1-ce.png
+        title: Enable/manage debug mode when creating a calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-2-ce.png
+        title: Enable/manage debug mode for an existing calculated field.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=enableDebug %}
+
+{% include templates/debug-mode.md %}
+
+<br><b><font size="3">Review debug events</font></b>
+
+Click the **Events** icon in the calculated field row to view recorded debug events
+
+Each event includes:
+- **Entity ID** — the ID of the entity where the calculated field was executed (the target entity)
+- **Message ID** — unique execution identifier
+- **Message type** — indicates which type of internal request triggered the calculated field execution
+- **Arguments** — the resolved argument values used during execution, including timestamps where applicable
+- **Result** — generated output by the calculated field
+- **Error** — execution failure reason (appears if the execution failed)
+
+{% assign reviewDebug = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-1-ce.png
+        title: Click the **Events** icon in the calculated field row to view recorded debug events
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-2-ce.png
+'
+%}
+
+{% include images-gallery.liquid imageCollection=reviewDebug %}
+
+### Testing mode for script-based calculated fields
+
+For script-based calculated fields (for example, Script, Propagation (Calculation result mode), ThingsBoard provides a **Test script function (TBEL)** mode that helps you validate execution using real input data before applying changes.
+
+This allows you to:
+- re-run the calculation using the same input data
+- temporarily modify argument data or script logic (_without saving configuration changes_)
+- validate output JSON structure and timestamps
+- see the exact script execution output
+- quickly reproduce errors and fix the logic
+
+**How it works:**
+
+Click **Test with this message** in the event row to run the testing function.
+- **Left panel — Script editor**   
+  Shows the TBEL calculate(ctx, ...) function used by the calculated field. You can modify the script directly in this window.
+- **Top-right panel — Arguments**   
+  Displays the list of arguments used in the calculation. You can adjust the argument value, type, and timestamp to simulate different incoming data. 
+- **Bottom-right panel — Output** 
+  Shows the result returned by the script after execution (or an error message if execution fails).
+
+{% assign reviewDebug1 = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-1-ce.png
+        title: Click **Test with this message** in the event row to run the testing function.
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-2-ce.png
+        title: **Left panel — Script editor**. Shows the TBEL calculate(ctx, ...) function used by the calculated field. You can modify the script directly in this window.<br>**Top-right panel — Arguments**. Displays the list of arguments used in the calculation. You can adjust the argument value, type, and timestamp to simulate different incoming data.<br>**Bottom-right panel — Output**. Shows the result returned by the script after execution (or an error message if execution fails).
+'
+%}
+
+{% include images-gallery.liquid imageCollection=reviewDebug1 %}
+
+**Workflow:**
+- Update the script and/or the argument values.
+- Click Test to execute the function with the provided inputs.
+- Review the Output section to confirm the returned JSON structure and values.
+- When the result is correct, click Save to keep the changes.
+- If needed, apply the changes to the calculated field configuration to activate the updated logic.
+
+{% assign reviewDebug2 = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-3-ce.png
+        title: **1.** Update the **script** and/or the **argument values**.<br>**2.** Click **Test** to execute the function with the provided inputs.<br>**3.** Review the Output section to confirm the returned JSON structure and values.<br>**4.** When the result is correct, click Save to keep the changes.
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-4-ce.png
+        title: **5.** If needed, apply the changes to the calculated field configuration to activate the updated logic.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=reviewDebug2 %}
 
 <hr>
 
@@ -332,12 +514,6 @@ By aligning timestamps and filling missing values, merging enables:
 
 <hr>
 
-## Creating a calculated field
-
-{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
-
-<hr>
-
 ## Export / Import calculated field
 
 You can **export** the calculated field to a JSON file and **import** it into the same or another ThingsBoard instance.
@@ -447,8 +623,7 @@ Steps to import:
 
 ## Managing calculated fields
 
-After a calculated field is created, it appears in the Calculated fields table.
-The list provides a quick overview of key parameters such as name, entity type, entity, and calculated field type.
+Use the "Calculated fields" page to manage all calculated fields from a single place.
 
 Each calculated field includes an action panel for managing the field:
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}1. **Data reprocessing** - applying the calculated field logic to historical data.{% endif %}
