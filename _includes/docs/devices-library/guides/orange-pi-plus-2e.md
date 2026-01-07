@@ -48,3 +48,4 @@ The Orange Pi Plus 2E is a powerful single-board computer that boasts an Allwinn
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

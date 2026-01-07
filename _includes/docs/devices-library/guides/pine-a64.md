@@ -46,3 +46,4 @@ The PINE A64 is a single-board computer based on the Allwinner A64 SoC, featurin
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

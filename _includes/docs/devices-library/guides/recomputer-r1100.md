@@ -265,3 +265,4 @@ The command must be executed in the same directory in which the docker-compose.y
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
 {% endif %}
 
+{% include add-device-banner.liquid %}

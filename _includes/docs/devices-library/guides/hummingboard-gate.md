@@ -49,3 +49,4 @@ MX6 processor and offers a range of connectivity options, including Ethernet, WI
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

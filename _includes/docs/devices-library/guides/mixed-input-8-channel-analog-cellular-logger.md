@@ -25,7 +25,6 @@ To continue with this guide we will need the following:
 
 - [ThingsBoard account](https://{{hostName}})
 
-{% include add-device-banner.liquid %}
 
 ## Create device on ThingsBoard
 
@@ -44,3 +43,4 @@ To continue with this guide we will need the following:
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

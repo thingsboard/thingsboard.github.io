@@ -47,3 +47,4 @@ The Coral Dev Board is a single-board computer with a removable system-on-module
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

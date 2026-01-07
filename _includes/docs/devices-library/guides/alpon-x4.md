@@ -17,7 +17,6 @@ To continue with this guide, you will need the following:
 - **ALPON X4 Device**: Registered and activated on Sixfab Connect with an active internet connection. Refer to the [ALPON X4 Getting Started page](https://docs.sixfab.com/docs/alpon-x4-getting-started){: target="_blank"} setup instructions for details.
 - **Basic Knowledge**: Familiarity with IoT concepts, containerized applications, and ThingsBoard dashboards.
 
-{% include add-device-banner.liquid %}
 
 ## Create Device on ThingsBoard (Optional)
 
@@ -243,3 +242,4 @@ Verify that telemetry data is received and displayed in ThingsBoard:
 This guide demonstrated how to integrate the ALPON X4 with ThingsBoard using MQTT for real-time data collection and device control. By following the steps, you created a device in ThingsBoard, deployed an MQTT client on Sixfab Connect, and verified telemetry data.
 
 For further assistance, refer to the [ThingsBoard documentation](https://thingsboard.io/docs/){:.copy-code} or contact [Sixfab support](https://sixfab.com/contact/){:.copy-code}.
+{% include add-device-banner.liquid %}

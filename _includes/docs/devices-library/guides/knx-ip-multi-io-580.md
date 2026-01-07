@@ -20,7 +20,6 @@ To continue with this guide we will need the following:
 - [ThingsBoard IoT Gateway](https://thingsboard.io/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Devices connection
 
@@ -315,3 +314,4 @@ For this purpose, you can create your own dashboard with your custom widgets or 
 With the knowledge in this guide, you can easily connect your KNX IP Multi IO 580 controller with switch, shutter, and relay to ThingsBoard. After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
 
 Explore the platform [documentation](https://thingsboard.io/docs/){: target="_blank"} to learn more about key concepts and features.
+{% include add-device-banner.liquid %}

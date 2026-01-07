@@ -54,3 +54,4 @@ The module is designed for portable and autonomous electronics and Internet of T
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
  
+{% include add-device-banner.liquid %}

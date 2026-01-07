@@ -54,3 +54,4 @@ ESP32 has integrated antenna and power amplifier, low noise amplifier, filter an
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
  
+{% include add-device-banner.liquid %}

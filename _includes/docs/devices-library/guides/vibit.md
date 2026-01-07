@@ -24,7 +24,6 @@ To continue with this guide, we will need the following:
   - **Password**: cimcon
   - **Client ID**: VIBit Device BLE MAC (Bluetooth MAC address of the sensor)
 
-{% include add-device-banner.liquid %}
 
 ## Create Device profile on ThingsBoard
 
@@ -145,3 +144,4 @@ Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"
 ## Conclusion
 
 Integrating VIBit with ThingsBoard using MQTT Basic authentication ensures secure and efficient monitoring of industrial equipment, facilitating predictive maintenance and reducing downtime. The combination of real-time data transmission and comprehensive dashboards empowers maintenance teams to make informed decisions.
+{% include add-device-banner.liquid %}

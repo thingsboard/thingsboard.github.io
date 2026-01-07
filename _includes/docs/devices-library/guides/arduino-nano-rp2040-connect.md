@@ -54,3 +54,4 @@ Develop robust embedded AI solutions with minimal effort using the Arduino Nano 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

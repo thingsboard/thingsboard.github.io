@@ -60,3 +60,4 @@ It has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

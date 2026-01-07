@@ -48,3 +48,4 @@ The Orange Pi 4 is a powerful single-board computer (SBC) that features a hexa-c
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

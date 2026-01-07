@@ -27,7 +27,6 @@ Also, you will require the following items:
 ![wiring1](/images/devices-library/basic/single-board-computers/raspberry-pi-cm4/wiring1.png)
 ![wiring2](/images/devices-library/basic/single-board-computers/raspberry-pi-cm4/wiring2.png)
 
-{% include add-device-banner.liquid %}
 
 ## Create device on ThingsBoard
 
@@ -140,3 +139,4 @@ By following this guide, you can easily integrate Elastel IIoT gateways with Thi
 
 - Learn more about [**Elastel Edge Devices**](https://www.elastel.com/products/){:target="_blank"}.
 - Explore ThingsBoard [**Documentation**](https://thingsboard.io/docs/pe/){:target="_blank"} for advanced features and concepts.
+{% include add-device-banner.liquid %}

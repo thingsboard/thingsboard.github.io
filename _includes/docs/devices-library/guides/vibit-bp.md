@@ -28,7 +28,6 @@ To continue with this guide, we will need the following:
   - **Password**: cimcon
   - **Client ID**: VIBit Device BLE MAC (Bluetooth MAC address of the sensor)
 
-{% include add-device-banner.liquid %}
 
 ## Create Device profile on ThingsBoard
 
@@ -183,3 +182,4 @@ Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"
 ## Conclusion
 
 Integrating VIBit-BP with ThingsBoard using MQTT authentication offers a wireless, battery-powered solution for monitoring equipment health, enabling predictive maintenance without the constraints of wiring or external power sources. The seamless data transmission and visualization capabilities enhance operational efficiency and equipment reliability.
+{% include add-device-banner.liquid %}

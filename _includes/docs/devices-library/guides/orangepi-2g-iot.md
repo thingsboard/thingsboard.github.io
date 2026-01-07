@@ -46,3 +46,4 @@ Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

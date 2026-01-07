@@ -53,3 +53,4 @@ WiFi is enabled via the use of an Infineon CYW43439 wireless chip.
 
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

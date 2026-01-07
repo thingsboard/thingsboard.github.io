@@ -22,7 +22,6 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
 
-{% include add-device-banner.liquid %}
 
 ## Create device on ThingsBoard
 
@@ -55,3 +54,4 @@ If you have any problems or doubts, please do not hesitate in contact to EXXN su
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

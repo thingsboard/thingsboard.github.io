@@ -49,3 +49,4 @@ The ASUS Tinker Board 2S is a powerful and versatile single board computer.
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

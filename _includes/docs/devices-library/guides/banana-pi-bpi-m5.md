@@ -49,3 +49,4 @@ The Banana Pi BPI-M5 is a powerful single-board computer that comes with either 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

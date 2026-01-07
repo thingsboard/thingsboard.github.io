@@ -52,3 +52,4 @@ It also supports image transmission via Wi-Fi and debugging through a Micro-USB 
 ## Conclusion
 
  {% include /docs/devices-library/blocks/basic/conclusion-block.md %} 
+{% include add-device-banner.liquid %}

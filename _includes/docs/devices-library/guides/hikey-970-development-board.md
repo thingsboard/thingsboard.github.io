@@ -49,3 +49,4 @@ The Hikey 970 Development Board is a powerful single-board computer designed for
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

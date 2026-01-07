@@ -48,3 +48,4 @@ The UP Squared Pro AI Edge is a high-performance single-board computer designed 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

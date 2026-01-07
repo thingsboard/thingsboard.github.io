@@ -49,3 +49,4 @@ All this makes it ideal for enabling embedded computing and Internet of Things (
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

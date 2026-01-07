@@ -54,3 +54,4 @@ The unit allows to either host the application or to offload all Wi-Fi networkin
 
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

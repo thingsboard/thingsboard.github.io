@@ -27,7 +27,6 @@ To continue with this guide, we will need the following:
 - [ThingsBoard IoT Gateway](/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Devices connection
 
@@ -92,3 +91,4 @@ sensor to ThingsBoard. After connecting the devices to the gateway, you will be 
 from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features.
+{% include add-device-banner.liquid %}

@@ -49,3 +49,4 @@ The ODROID-XU4 is a powerful single-board computer designed for computing tasks 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

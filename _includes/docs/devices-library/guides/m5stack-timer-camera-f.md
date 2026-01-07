@@ -55,3 +55,4 @@ The on-board LED status indicator and reset button facilitate program developmen
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}   
+{% include add-device-banner.liquid %}

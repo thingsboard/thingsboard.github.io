@@ -47,3 +47,4 @@ The NVIDIA Jetson Nano Developer Kit is a small, powerful computer that lets you
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

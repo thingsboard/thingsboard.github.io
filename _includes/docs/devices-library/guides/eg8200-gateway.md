@@ -31,7 +31,6 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Gateway connection
 
@@ -153,3 +152,4 @@ Click the created device and find the latest telemetry data received by the plat
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

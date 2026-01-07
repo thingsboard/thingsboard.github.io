@@ -48,3 +48,4 @@ Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin h
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

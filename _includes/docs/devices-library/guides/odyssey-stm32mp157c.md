@@ -47,3 +47,4 @@ ODYSSEY STM32MP157C is a single-board computer with an STM32MP157C processor, 2G
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

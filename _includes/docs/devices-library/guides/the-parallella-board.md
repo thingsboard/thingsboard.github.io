@@ -46,3 +46,4 @@ The Parallella Board is a single-board computer based on the Xilinx Zynq Z-7010 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

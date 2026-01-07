@@ -48,3 +48,4 @@ It is based on Quad Core 64-bit new-generation x86 processors made by Intel®, d
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -24,7 +24,6 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Device connection
 
@@ -206,3 +205,4 @@ Now you can easily connect your RS26x LoRaWAN temperature sensor and start sendi
 
 To go further, explore the [ThingsBoard documentation](https://thingsboard.io/docs/pe/){:target="_blank"} to learn more about key features, such as creating more [dashboards](https://thingsboard.io/docs/pe/user-guide/dashboards/){:target="_blank"} and leveragin additional widgets to visualize your telemetry, or setting up [alarm rules](https://thingsboard.io/docs/pe/user-guide/alarm-rules/){:target="_blank"} to monitor device behavior in real time.
 
+{% include add-device-banner.liquid %}

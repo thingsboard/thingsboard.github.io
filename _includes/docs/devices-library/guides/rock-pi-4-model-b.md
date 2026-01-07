@@ -48,3 +48,4 @@ Rock Pi 4 Model B is a powerful single-board computer with a Rockchip RK3399 pro
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

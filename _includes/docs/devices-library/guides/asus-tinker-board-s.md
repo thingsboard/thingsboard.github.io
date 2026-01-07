@@ -48,3 +48,4 @@ supply. Enhanced I2S pin with Slave mode and an improved software API for better
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

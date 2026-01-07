@@ -50,3 +50,4 @@ The Rock64 runs a variety of operating systems, including Debian, Ubuntu, and An
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -17,7 +17,6 @@ To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Configuration
 
@@ -29,3 +28,4 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/check-data-on-thingsboard-cat-1-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/conclusion-cat-1-block.md %}
+{% include add-device-banner.liquid %}

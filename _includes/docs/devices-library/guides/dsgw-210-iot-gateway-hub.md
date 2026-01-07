@@ -20,7 +20,6 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Product Summary
 
@@ -125,3 +124,4 @@ Error indicator
 ## Contact Us
 
 For other concerns about the integration, please consult *sales@dusunremotes.com*
+{% include add-device-banner.liquid %}

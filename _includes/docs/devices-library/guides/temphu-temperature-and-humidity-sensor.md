@@ -30,7 +30,6 @@ To continue with this guide we will need the following:
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
 
-{% include add-device-banner.liquid %}
 
 ## Device connection
 
@@ -69,3 +68,4 @@ Go to the **Latest telemetry** tab to see the latest telemetry data received fro
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

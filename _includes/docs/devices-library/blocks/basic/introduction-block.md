@@ -35,4 +35,3 @@ To continue with this guide, we will need the following:
 
 {% endif %}
 
-{% include add-device-banner.liquid %}

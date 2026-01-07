@@ -51,3 +51,4 @@ This makes it an ideal platform for learning, prototyping, and building a wide r
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

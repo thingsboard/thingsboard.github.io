@@ -54,3 +54,4 @@ The sizes and location of contacts in both types of boards are the same.
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

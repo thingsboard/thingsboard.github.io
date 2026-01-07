@@ -6,12 +6,18 @@
   padding: 46px
   overflow: hidden
   max-width: 1400px
+  margin-top: 30px
   img
     position: absolute
     right: 60px
     top: -111px
+    z-index: 0
+    @media screen and (max-width: 950px)
+      display: none
   .add-device-text
-    max-width: 500px
+    position: relative
+    z-index: 1
+    max-width: 700px
     .add-device-banner-title
       display: block
       margin-bottom: 32px
@@ -21,7 +27,8 @@
     .add-device-buttons
       display: flex
       gap: 16px
-      flex-wrap: wrap
+      @media screen and (max-width: 700px)
+        flex-direction: column
       .contact-us, .hardware-partners
         font-size: 16px
         font-weight: 500
@@ -32,7 +39,7 @@
         transition: ease-in-out 0.3s
         &:hover
           text-decoration: none
-        @media (max-width: 600px)
+        @media screen and (max-width: 700px)
           width: 100%
           text-align: center
       .contact-us

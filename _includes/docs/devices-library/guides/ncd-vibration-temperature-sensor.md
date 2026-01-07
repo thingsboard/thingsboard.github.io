@@ -585,3 +585,4 @@ Finally, our dashboard is displayed as follows:
 This tutorial explained the basic, step-by-step process of integrating the NCD Industrial IoT Wireless Vibration and Temperature Sensor with ThingsBoard Cloud, enabling you to manage and visualize the vibration and temperature variables sent by the NCD sensor.
 
 After successfully connecting the NCD Industrial IoT Wireless Vibration and Temperature Sensor to the ThingsBoard platform, you can expand its functionality by setting up thresholds and alarms for sensor data, enabling notifications via email, SMS, or web when thresholds are exceeded. You can manage users by adding them with specific roles and permissions, allowing customized access to devices and dashboards. 
+{% include add-device-banner.liquid %}

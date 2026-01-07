@@ -22,7 +22,6 @@ To continue with this guide, we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Import Rule chain
 
@@ -231,3 +230,4 @@ integration to retrieve data from devices connected to {{deviceName}}.
 After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features. 
+{% include add-device-banner.liquid %}

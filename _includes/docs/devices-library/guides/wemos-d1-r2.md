@@ -54,3 +54,4 @@ WeMos is distinguished by its low cost and ease of connection and programming.
 
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

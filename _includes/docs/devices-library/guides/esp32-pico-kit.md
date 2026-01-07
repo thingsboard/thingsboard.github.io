@@ -52,3 +52,4 @@ Official documentation is available [here](https://docs.espressif.com/projects/e
 
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

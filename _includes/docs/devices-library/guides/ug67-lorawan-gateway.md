@@ -38,7 +38,6 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-{% include add-device-banner.liquid %}
 
 ## Gateway connection
 
@@ -96,3 +95,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include add-device-banner.liquid %}

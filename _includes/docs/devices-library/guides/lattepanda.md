@@ -51,3 +51,4 @@ The LattePanda is a single-board computer based on the Intel Atom x5-Z8350 proce
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

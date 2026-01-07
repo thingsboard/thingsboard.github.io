@@ -49,3 +49,4 @@ The Lenovo Leez SBC P710 is a single-board computer designed for makers and deve
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

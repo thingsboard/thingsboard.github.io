@@ -53,3 +53,4 @@ In this guide, we will discuss how to connect the ESP32-based boards to ThingsBo
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}
