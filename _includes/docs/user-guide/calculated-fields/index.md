@@ -6,20 +6,28 @@
 
 <br>
 
-Calculated fields let you compute new telemetry/attributesin real time — without building extra rule chain logic.
-They run automatically when telemetry/attributes are saved, read data from selected sources, execute the calculation, and write the result back as telemetry/attributes (optionally via Rule Chains).
+Calculated fields allow you to transform raw data into actionable insights in real time. 
+Think of Calculated Fields as a built-in "logic layer" for your IoT entities. 
+Instead of just storing raw data, you can automatically generate high-value metrics as soon as data arrives.
 
-In addition to real-time processing, ThingsBoard supports calculated field [reprocessing](#data-reprocessing), which allows you to apply the same calculation logic to historical telemetry data and generate missing or updated results for a selected time range.
-
-<hr>
-
-## Configuration levels
+By combining data from **multiple sources** — such as incoming telemetry, existing entity attributes, or even data from related assets — you can execute custom logic the moment your data arrives.
+The resulting output is automatically stored as either **time-series data** or **attributes**, ensuring your calculated insights are immediately ready for visualization, reporting, or further automation.
+ 
+To support complex workflows, calculated field execution can be **chained**: the output of one field can automatically trigger the execution of another, allowing you to build sophisticated data processing pipelines step-by-step.
 
 Calculated fields can be applied at two different levels within the system:
 - Entity Level: At this level, the calculation is applied to a single, specific entity - [Device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} or [Asset](/docs/{{docsPrefix}}user-guide/ui/assets/){:target="_blank"}.
 - Profile Level: When a calculated field is defined within a [Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} or [Asset profile](/docs/{{docsPrefix}}user-guide/asset-profiles/){:target="_blank"}, the logic is inherited by every entity associated with that profile.
 
 This flexibility allows users to either define unique calculations per entity or apply standardized logic across a group of similar entities, optimizing data processing and management.
+
+In addition to real-time processing, ThingsBoard supports calculated field [reprocessing](#data-reprocessing), which allows you to apply the same calculation logic to historical telemetry data and generate missing or updated results for a selected time range.
+
+<hr>
+
+### Creating a calculated field
+
+{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
 
 <hr>
 
@@ -33,24 +41,13 @@ ThingsBoard supports several types of calculated fields, each designed for a spe
 
 ## Configuration
 
-> To create calculated fields and access their results, you must have [permissions](/docs/{{docsPrefix}}user-guide/rbac/){:target="_blank"} to create calculated fields and read and write attributes and telemetry.
-
-### Creating a calculated field
-
-{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
-
-<hr>
-
 ### General
 
-<b><font size="3">Title</font></b>   
-Enter a clear, descriptive name for the calculated field that reflects its purpose.
+General configuration fields are
 
-<b><font size="3">Entity type</font></b>   
-Select the entity type and the specific entity or profile where the calculated field will be applied.
-
-<b><font size="3">Type</font></b>   
-Select the calculated field type from the list.
+- **Title** — Name for the calculated field that reflects its purpose.
+- **Entity type** - the entity or entity profile where the calculated field will be applied
+- **Type** - the calculated field [type](#types).
 
 {% assign typeOfCalculatedField = '
     ===
@@ -67,7 +64,7 @@ Select the calculated field type from the list.
 
 Arguments define which data the calculated field reads and exposes as variables for the calculation logic. Each argument maps to a specific data source (attributes or telemetry) from a selected entity, so it can be referenced in a Simple expression, TBEL script, or other calculated field types.
 
-<b><font size="4">Entity type</font></b>   
+<b><font size="3">Entity type</font></b>   
 Define where the data is read from:
 - **Current entity** — the same device/asset (device profile/asset profile) to which the calculated field is applied.   
   If the field is created at the **Device profile** or **Asset profile** level, the calculation is performed for each entity associated with that profile.
@@ -86,7 +83,7 @@ Define where the data is read from:
 
 {% include images-gallery.liquid imageCollection=arguments %}
 
-<br><b><font size="4">Argument types</font></b>
+<br><b><font size="3">Argument types</font></b>
 
 Calculated fields support the following argument types:
 
