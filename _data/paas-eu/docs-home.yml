@@ -49,6 +49,7 @@ toc:
       new: true
     - title: Calculated fields
       path: /docs/paas/eu/user-guide/calculated-fields/
+      new: true
     - title: Notification center
       path: /docs/paas/eu/user-guide/notifications/
     - title: Entities and Relations

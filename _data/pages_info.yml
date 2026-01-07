@@ -4872,8 +4872,26 @@
 "/docs/user-guide/bulk-provisioning/":
   url: "/docs/user-guide/bulk-provisioning/"
   redirect_from: []
+"/docs/user-guide/calculated-fields/geofencing-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/geofencing-calculated-field/"
+  redirect_from: []
 "/docs/user-guide/calculated-fields/":
   url: "/docs/user-guide/calculated-fields/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/propagation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/propagation-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/related-entities-aggregation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/related-entities-aggregation-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/script-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/script-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/simple-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/simple-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/time-series-data-aggregation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/time-series-data-aggregation-calculated-field/"
   redirect_from: []
 "/docs/user-guide/certificates/":
   url: "/docs/user-guide/certificates/"

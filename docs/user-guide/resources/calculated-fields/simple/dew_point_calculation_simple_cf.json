@@ -1,0 +1,44 @@
+{
+  "type": "SIMPLE",
+  "name": "Dew point calculation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767602540753
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SIMPLE",
+    "arguments": {
+      "humidity": {
+        "refEntityKey": {
+          "key": "humidity",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      },
+      "temperature": {
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "expression": "(243.04 * (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature)) / (17.625 - (ln(humidity / 100) + 17.625 * temperature / (243.04 + temperature))))",
+    "output": {
+      "type": "TIME_SERIES",
+      "name": "dewPoint",
+      "decimalsByDefault": 1,
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    },
+    "useLatestTs": false
+  }
+}

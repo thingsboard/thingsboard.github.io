@@ -42,29 +42,30 @@ toc:
       path: /docs/paas/solution-templates/waste-management/
 - title: Key concepts
   section:
-    - title: Alarms
-      path: /docs/paas/user-guide/alarms/
-    - title: Alarm rules
-      path: /docs/paas/user-guide/alarm-rules/
-      new: true
-    - title: Calculated fields
-      path: /docs/paas/user-guide/calculated-fields/
-    - title: Notification center
-      path: /docs/paas/user-guide/notifications/
-    - title: Entities and Relations
-      path: /docs/paas/user-guide/entities-and-relations/
-    - title: Device profiles
-      path: /docs/paas/user-guide/device-profiles/
-    - title: Asset profiles
-      path: /docs/paas/user-guide/asset-profiles/
-    - title: Attributes
-      path: /docs/paas/user-guide/attributes/
-    - title: Time-series data
-      path: /docs/paas/user-guide/telemetry/
-    - title: Remote commands to devices
-      path: /docs/paas/user-guide/rpc/
-    - title: OTA updates
-      path: /docs/paas/user-guide/ota-updates/
+  - title: Alarms
+    path: /docs/paas/user-guide/alarms/
+  - title: Alarm rules
+    path: /docs/paas/user-guide/alarm-rules/
+  - title: Calculated fields
+    new: true
+    path: /docs/paas/user-guide/calculated-fields/
+    new: true
+  - title: Notification center
+    path: /docs/paas/user-guide/notifications/
+  - title: Entities and Relations
+    path: /docs/paas/user-guide/entities-and-relations/
+  - title: Device profiles
+    path: /docs/paas/user-guide/device-profiles/
+  - title: Asset profiles
+    path: /docs/paas/user-guide/asset-profiles/
+  - title: Attributes
+    path: /docs/paas/user-guide/attributes/
+  - title: Time-series data
+    path: /docs/paas/user-guide/telemetry/
+  - title: Remote commands to devices
+    path: /docs/paas/user-guide/rpc/
+  - title: OTA updates
+    path: /docs/paas/user-guide/ota-updates/
 - title: Dashboards
   section:
     - title: Overview
