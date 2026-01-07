@@ -1,0 +1,16 @@
+{
+    "name": "Platform",
+    "price": 4999,
+    "includedDevices": 1000,
+    "maxMsgPerMin": 50000,
+    "extraDevicePrice": 1,
+    "includedProdInstances": 1,
+    "extraProdInstancePrice": 4999,
+    "devQaExtraInstancePrice": 999,
+    "edgeMonthPrice": 849,
+    "edgeInstancesIncluded": 2,
+    "extraEdgePrice": 399,
+    "trendzMonthPrice": 1499,
+    "trendzExtraDevicePrice": 0.3,
+    "offlineModePrice": 19999
+}
