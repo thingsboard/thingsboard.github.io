@@ -1,0 +1,12 @@
+{
+  "basePrice": 15,
+  "includedSessions": 100,
+  "extraSessionsPrice": 0.05,
+  "includedThroughput": 100,
+  "extraThroughputPrice": 0.1,
+  "includedProdInstances": 1,
+  "extraProdInstancesPrice": 100,
+  "extraDevInstancesPrice": 50,
+  "whiteLabelingPrice": 100,
+  "priorityHelpDeskPrice": 300
+}

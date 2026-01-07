@@ -1,0 +1,67 @@
+{
+  "mobileApp": 99,
+  "mobileAppSetup": 1000,
+  "plans": [
+    {
+      "name": "Maker",
+      "price": 10,
+      "includedDevices": 10,
+      "includedProdInstances": 1,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 0,
+      "edgeInstancesIncluded": 1,
+      "trendzMonthPrice": 0
+    },
+    {
+      "name": "Prototype",
+      "price": 39,
+      "includedDevices": 50,
+      "includedProdInstances": 1,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 19,
+      "edgeInstancesIncluded": 1,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 29
+    },
+    {
+      "name": "Pilot",
+      "price": 99,
+      "includedDevices": 100,
+      "includedProdInstances": 1,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 49,
+      "edgeInstancesIncluded": 2,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 89
+    },
+    {
+      "name": "Startup",
+      "price": 299,
+      "includedDevices": 500,
+      "includedProdInstances": 2,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 89,
+      "edgeInstancesIncluded": 3,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 149
+    },
+    {
+      "name": "Business",
+      "price": 499,
+      "includedDevices": 1000,
+      "extraDevicePrice": 0.1,
+      "includedProdInstances": 3,
+      "extraProdInstancePrice": 100,
+      "devQaExtraInstancePrice": 50,
+      "edgeMonthPrice": 139,
+      "edgeInstancesIncluded": 4,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 239,
+      "trendzExtraDevicePrice": 0.03
+    }
+  ]
+}
