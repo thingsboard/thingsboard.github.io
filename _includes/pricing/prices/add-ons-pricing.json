@@ -2,11 +2,11 @@
   "public-cloud": {
     "edge": {
       "faq": "",
-      "price": "$29/month"
+      "price": "$9/month"
     },
     "trendz": {
       "faq": "",
-      "price": "$10/month"
+      "price": "$29/month"
     },
     "wl": {
       "faq": ""
@@ -28,11 +28,11 @@
   "pay-as-you-go": {
     "edge": {
       "faq": "",
-      "price": "$19/month"
+      "price": "$7/month"
     },
     "trendz": {
       "faq": "",
-      "price": "$29/month"
+      "price": "$12/month"
     },
     "wl": {
       "faq": ""

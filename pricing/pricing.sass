@@ -79,6 +79,172 @@
               font-weight: 500
               line-height: 24px
               color: #2A7DEC
+
+  .top-ups-section
+    padding: 80px 0
+    background-color: #F4F8FE
+
+    .top-ups-header
+      margin-bottom: 48px
+      h2
+        font-size: 36px
+        font-weight: 500
+        line-height: 48px
+        color: #212121
+        margin-bottom: 16px
+      p
+        font-size: 16px
+        font-weight: 400
+        line-height: 28px
+        color: #757575
+
+    .top-ups-content
+      display: flex
+      gap: 80px
+      @media (max-width: 1100px)
+        flex-direction: column
+        gap: 48px
+
+    .top-ups-column
+      flex: 1
+      h3
+        font-size: 28px
+        font-weight: 500
+        line-height: 44px
+        color: #212121
+        margin-bottom: 24px
+
+    .top-ups-list
+      display: flex
+      flex-direction: column
+
+    .top-up-item
+
+      &:last-child
+        border-bottom: none
+
+      .top-up-header
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 2px 0
+        cursor: pointer
+        transition: opacity 0.2s ease
+
+      .top-up-title
+        display: flex
+        align-items: center
+        gap: 8px
+        span
+          font-size: 16px
+          font-weight: 500
+          line-height: 24px
+          color: #212121
+
+        .chevron-icon
+          transition: transform 0.3s ease
+          transform: rotate(180deg)
+
+      .top-up-price
+        background-color: #fff
+        color: #212121
+        font-size: 14px
+        font-weight: 500
+        line-height: 24px
+        padding: 10px 20px
+        border-radius: 4px
+        width: 310px
+        text-align: center
+        @media (max-width: 599px)
+          width: unset
+          min-width: 120px
+
+      .top-up-details
+        max-height: 0
+        overflow: hidden
+        transition: max-height 0.3s ease, opacity 0.3s ease, padding 0.3s ease
+        opacity: 0
+        padding: 0
+
+      .detail-row
+        display: flex
+        align-items: center
+        justify-content: space-between
+        padding: 2px 0
+        padding-left: 16px
+
+        .detail-label
+          font-size: 14px
+          font-weight: 400
+          line-height: 24px
+          color: #3D3D3D
+
+        .detail-value
+          font-size: 14px
+          font-weight: 400
+          line-height: 24px
+          padding: 10px 20px
+          color: #3D3D3D
+          background-color: #FBFCFF
+          width: 310px
+          text-align: center
+          @media (max-width: 599px)
+            min-width: 120px
+
+      &:not(.expanded)
+        .top-up-title
+          .chevron-icon
+            transform: rotate(180deg)
+
+      &.expanded
+        .top-up-title
+          .chevron-icon
+            transform: rotate(0deg)
+
+        .top-up-details
+          max-height: 200px
+          opacity: 1
+
+  @media (max-width: 768px)
+    .top-ups-section
+      padding: 60px 0
+      .top-ups-header
+        h2
+          font-size: 28px
+          line-height: 36px
+      .top-ups-column
+        h3
+          font-size: 24px
+          line-height: 36px
+
+  @media (max-width: 599px)
+    .top-ups-section
+      padding: 40px 0
+      .top-ups-header
+        margin-bottom: 32px
+        h2
+          font-size: 24px
+          line-height: 32px
+        p
+          font-size: 14px
+          line-height: 24px
+      .top-ups-column
+        h3
+          font-size: 20px
+          line-height: 30px
+          margin-bottom: 16px
+      .top-up-item
+        .top-up-header
+          padding: 12px 0
+        .top-up-title
+          span
+            font-size: 14px
+        .detail-row
+          gap: 4px
+          .detail-value
+            width: unset
+            text-align: left
+
 html#pricing
   header
     background-color: unset
@@ -351,11 +517,8 @@ html#pricing
         font-size: 14px
         line-height: 24px
         color: #707275
-        @media (min-height: 1260px)
-          margin-bottom: 32px
         p
           font-size: 14px
-          min-height: 48px
           &.no-min-height
             min-height: unset
 
@@ -430,6 +593,7 @@ html#pricing
           height: 18px
           width: 18px
           margin-left: -32px
+          margin-top: 3px
         &.plus-icon
           &:before
             background: url("/images/pricing/pricing-plus-icon.svg") no-repeat
@@ -603,7 +767,6 @@ html#pricing
         padding-bottom: 0
       .pricing-content-header
         padding-top: 20px
-        margin-bottom: 16px
         display: flex
         justify-content: space-between
         align-items: center
@@ -719,9 +882,6 @@ html#pricing
           .row > div
             @media (max-width: 1400px)
               margin-bottom: 16px
-          @media (min-height: 1260px)
-            &.pricing-community
-              margin-bottom: 30vh
           .cards-row
             display: flex
             justify-content: space-between
@@ -744,11 +904,11 @@ html#pricing
             .pricing-square
               height: 480px
               box-shadow: unset
+              align-content: center
               &.unset-height
                 height: unset
               @media (min-height: 1260px)
                 height: 564px
-                align-content: center
               @media (max-width: 1919px)
                 height: auto
               @media (max-width: 1279px)
@@ -772,7 +932,7 @@ html#pricing
               &.popular
                 position: relative
                 width: 290px
-                height: 477px
+                height: 487px
                 border: 1px solid #2A7DEC
                 box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
                 @media (min-height: 1260px)
@@ -842,6 +1002,7 @@ html#pricing
               box-shadow: 0 26px 40px 0 rgba(42, 125, 236, 0.08)
               padding: 46px
               margin-bottom: 80px
+              margin-top: 80px
               h3
                 margin-bottom: 16px
               p
@@ -877,6 +1038,7 @@ html#pricing
                     height: 18px
                     width: 18px
                     margin-left: -32px
+                    margin-top: 3px
                     @media (max-width)
                       filter: blur(8px)
             .benefits
@@ -936,6 +1098,8 @@ html#pricing
           text-align: center
         .btn-pricing
           margin-bottom: 16px
+          font-size: 18px
+          height: 48px
           min-width: 200px
           line-height: 28px
           border: solid 1px #2A7DEC

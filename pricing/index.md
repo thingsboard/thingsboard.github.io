@@ -83,26 +83,20 @@ defaultActivePricingSection: thingsboard-pe-options
     <div class="pricing-div">
         <div class="container">
             <div class="pricing-section pricing-community always-display active" id="community">
-                <div class="row justify-content-center">
-                    <div class="pricing-square">
-                        <h2>Community Edition</h2>
-                        <div class="pricing-square-description">
-                            <p>100% Open-source</p>
-                        </div>
-                        <h4 class="pricing-square-price no-sign">
-                            YES, IT'S FREE
-                        </h4>
-                        <div>
-                            <a id="Pricing_CE_Install" class="button btn-pricing gtm_button" href="/docs/user-guide/install/installation-options/">
-                                Install
-                            </a>
-                        </div>
-                        <div class="pricing-square-item">Unlimited devices and assets</div>
-                        <div class="pricing-square-item">Unlimited software updates</div>
-                        <div class="pricing-square-item">Ability to contribute</div>
-                        <div class="pricing-square-item" data-faq-id="ce-out-of-box-support">
-                            Community support
-                        </div>
+                <div class="crd-container">
+                    <div class="crd">
+                        <h3>Your free ticket to IoT</h3>
+                        <p>Get started with Community Edition (CE): a free, open-source (Apache 2.0) IoT platform. It provides a powerful, scalable, multi-tenant solution for collecting, processing, visualizing, and managing your IoT data and devices with maximum agility.</p>
+                        <ul>
+                            <li>Unlimited devices and assets</li>
+                            <li>Unlimited software updates</li>
+                            <li>Ability to contribute</li>
+                            <li>Community support</li>
+                        </ul>
+                        <a class="button btn-pricing gtm_button" href="/docs/user-guide/install/installation-options/">
+                            Install
+                            <span class="visually-hidden">Thingsboard Community Edition</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -142,12 +136,12 @@ defaultActivePricingSection: thingsboard-pe-options
             <div class="pricing-section pricing-cloud active" id="northAmerica">
                 <div class="cards-row">
                     <div class="pricing-square">
-                        <h2>Maker</h2>
+                        <h2>Free</h2>
                         <div class="pricing-square-description">
                             <p>Start exploring features</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            $10
+                            $0
                             <span>/month</span>
                         </h4>
                         <div>
@@ -155,19 +149,43 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Start Free
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 30 devices</div>
-                        <div class="pricing-square-item">Up to 30 assets</div>
+                        <div class="pricing-square-item">Up to 5 devices</div>
+                        <div class="pricing-square-item">Up to 5 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
-                    <div class="pricing-square popular">
-                        <span class="popular-badge">POPULAR</span>
+                    <div class="pricing-square">
                         <h2>Prototype</h2>
                         <div class="pricing-square-description">
                             <p>For PoCs and MVPs</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $49
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 50 devices</div>
+                        <div class="pricing-square-item">Up to 50 assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">50M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Help desk
+                        </div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                    </div>
+                    <div class="pricing-square popular">
+                        <span class="popular-badge">POPULAR</span>
+                        <h2>Pilot</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $149
@@ -175,43 +193,45 @@ defaultActivePricingSection: thingsboard-pe-options
                         </h4>
                         <div>
                             <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
+                                Get started
                             </a>
                         </div>
                         <div class="pricing-square-item">Up to 100 devices</div>
                         <div class="pricing-square-item">Up to 100 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Community support
+                            Help desk
                         </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
                         <h2>Startup</h2>
                         <div class="pricing-square-description">
-                            <p>For upcoming IoT Unicorns</p>
+                            <p>Defined long term projects</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $399
                             <span>/month</span>
                         </h4>
                         <div>
-                            <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
+                                Get started
                             </a>
                         </div>
                         <div class="pricing-square-item">Up to 500 devices</div>
                         <div class="pricing-square-item">Up to 500 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Help desk
+                            Priority help desk
                         </div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
                         <h2>Business</h2>
                         <div class="pricing-square-description">
-                            <p>Defined long term projects</p>
+                            <p>Built for scalable IoT growth</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $749
@@ -219,41 +239,20 @@ defaultActivePricingSection: thingsboard-pe-options
                         </h4>
                         <div>
                             <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
-                            </a>
-                        </div>
-                        <div class="pricing-square-item">Up to 1 000 devices</div>
-                        <div class="pricing-square-item">Up to 1 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Priority help desk
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
-                    </div>
-                    <div class="pricing-square">
-                        <h2>Business+</h2>
-                        <div class="pricing-square-description">
-                            <p>Built for scalable IoT growth</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $1 099
-                            <span>/month</span>
-                        </h4>
-                        <div>
-                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
+                                Get started
                             </a>
                         </div>
                         <div class="pricing-square-item">Up to 2 000 devices</div>
                         <div class="pricing-square-item">Up to 2 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-white-labeling">$0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
-                        <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
+                        <h2 class="no-margin">Ready to scale past 1 000 devices?</h2>
                         <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
                     </div>
                 </div>
@@ -261,12 +260,12 @@ defaultActivePricingSection: thingsboard-pe-options
             <div class="pricing-section pricing-cloud" id="europe">
                 <div class="cards-row">
                     <div class="pricing-square">
-                        <h2>Maker</h2>
+                        <h2>Free</h2>
                         <div class="pricing-square-description">
                             <p>Start exploring features</p>
                         </div>
                         <h4 class="pricing-square-price">
-                            €9
+                            €0
                             <span>/month</span>
                         </h4>
                         <div>
@@ -274,62 +273,89 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Start Free
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 30 devices</div>
-                        <div class="pricing-square-item">Up to 30 assets</div>
+                        <div class="pricing-square-item">Up to 5 devices</div>
+                        <div class="pricing-square-item">Up to 5 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Community support
                         </div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
-                    <div class="pricing-square popular">
-                        <span class="popular-badge">POPULAR</span>
+                    <div class="pricing-square">
                         <h2>Prototype</h2>
                         <div class="pricing-square-description">
                             <p>For PoCs and MVPs</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            €45
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <a id="Pricing_PE_Cloud_Prototype" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                Get started
+                            </a>
+                        </div>
+                        <div class="pricing-square-item">Up to 50 devices</div>
+                        <div class="pricing-square-item">Up to 50 assets</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">50M data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
+                            Help desk
+                        </div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                    </div>
+                    <div class="pricing-square popular">
+                        <span class="popular-badge">POPULAR</span>
+                        <h2>Pilot</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
                         </div>
                         <h4 class="pricing-square-price">
                             €145
                             <span>/month</span>
                         </h4>
                         <div>
-                            <a id="Pricing_PE_Cloud_Prototype" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
-                                Get Started
+                            <a id="Pricing_PE_Cloud_Startup" class="button btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                Get started
                             </a>
                         </div>
                         <div class="pricing-square-item">Up to 100 devices</div>
                         <div class="pricing-square-item">Up to 100 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Community support
+                            Help desk
                         </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
                         <h2>Startup</h2>
                         <div class="pricing-square-description">
-                            <p>For upcoming IoT Unicorns</p>
+                            <p>Defined long term projects</p>
                         </div>
                         <h4 class="pricing-square-price">
                             €385
                             <span>/month</span>
                         </h4>
                         <div>
-                            <a id="Pricing_PE_Cloud_Startup" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
-                                Get Started
+                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
+                                Get started
                             </a>
                         </div>
                         <div class="pricing-square-item">Up to 500 devices</div>
                         <div class="pricing-square-item">Up to 500 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Help desk
+                            Priority help desk
                         </div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
                         <h2>Business</h2>
                         <div class="pricing-square-description">
-                            <p>Defined long term projects</p>
+                            <p>Built for scalable IoT growth</p>
                         </div>
                         <h4 class="pricing-square-price">
                             €725
@@ -337,41 +363,20 @@ defaultActivePricingSection: thingsboard-pe-options
                         </h4>
                         <div>
                             <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://eu.thingsboard.cloud/signup">
-                                Get Started
-                            </a>
-                        </div>
-                        <div class="pricing-square-item">Up to 1 000 devices</div>
-                        <div class="pricing-square-item">Up to 1 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Priority help desk
-                        </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
-                    </div>
-                    <div class="pricing-square">
-                        <h2>Business+</h2>
-                        <div class="pricing-square-description">
-                            <p>Built for scalable IoT growth</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            €1 065
-                            <span>/month</span>
-                        </h4>
-                        <div>
-                            <a id="Pricing_PE_Cloud_Business" class="button secondary btn-pricing gtm_button" href="https://thingsboard.cloud/signup">
-                                Get Started
+                                Get started
                             </a>
                         </div>
                         <div class="pricing-square-item">Up to 2 000 devices</div>
                         <div class="pricing-square-item">Up to 2 000 assets</div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">2B data points/month</div>
+                        <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
+                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-white-labeling">$0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
-                        <h2 class="no-margin">Ready to scale past 2 000 devices?</h2>
+                        <h2 class="no-margin">Ready to scale past 1 000 devices?</h2>
                         <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
                     </div>
                 </div>
@@ -380,12 +385,237 @@ defaultActivePricingSection: thingsboard-pe-options
         <div class="additional-content">
             <div class="plan-calculator-block md-hide">
                 <div class="text">
-                    <h2 class="no-margin">Ready to scale past 2&nbsp;000 devices?</h2>
+                    <h2 class="no-margin">Ready to scale past 1&nbsp;000 devices?</h2>
                 </div>
                 <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
         </div>
         <div class="add-ons" data-product-name="public-cloud"></div>
+        <div class="top-ups-section">
+            <div class="top-ups-header">
+                <h2>Top-ups</h2>
+                <p>Boost capacity beyond your plan's limits to scale on demand and avoid hard caps.</p>
+            </div>
+            <div class="top-ups-content">
+                <div class="top-ups-column">
+                    <h3>Entities</h3>
+                    <div class="top-ups-list">
+                        <div class="top-up-item expanded">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Extra Device pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="15">$15</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Devices</span>
+                                    <span class="detail-value">+50 Devices</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Assets</span>
+                                    <span class="detail-value">+50 Assets</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Extra Customer pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="10">$10</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Customers</span>
+                                    <span class="detail-value">+10 Customers</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Users</span>
+                                    <span class="detail-value">+10 Users</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Extra Integration pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="10">$10</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Integrations</span>
+                                    <span class="detail-value">+1 Integration</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Converters</span>
+                                    <span class="detail-value">+3 Converters</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Extra Rule Chain</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="10">$10</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Rule Chains</span>
+                                    <span class="detail-value">+1 Rule Chain</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Extra Calculated Field</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="5">$5</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Max Calculated Fields per entity</span>
+                                    <span class="detail-value">+1 Calculated Field</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-ups-column">
+                    <h3>API calls</h3>
+                    <div class="top-ups-list">
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Traffic pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="5">$5</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Transport messages</span>
+                                    <span class="detail-value">+2.5M Transport messages</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">Transport data points</span>
+                                    <span class="detail-value">+5M Transport data points</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Compute pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="25">$25</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Rule engine executions</span>
+                                    <span class="detail-value">+5M Rule engine executions</span>
+                                </div>
+                                <div class="detail-row">
+                                    <span class="detail-label">JS function executions</span>
+                                    <span class="detail-value">+1M JS function executions</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Storage pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="10">$10</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Data points storage days</span>
+                                    <span class="detail-value">+1B Data points storage days</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Alarm pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="1">$1</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Alarms created</span>
+                                    <span class="detail-value">+1000 Alarms created</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>Email pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="1">$1</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">Emails</span>
+                                    <span class="detail-value">+1000 Emails</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="top-up-item">
+                            <div class="top-up-header">
+                                <div class="top-up-title">
+                                    <span>SMS pack</span>
+                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="top-up-price" data-price="15">$15</div>
+                            </div>
+                            <div class="top-up-details">
+                                <div class="detail-row">
+                                    <span class="detail-label">SMS</span>
+                                    <span class="detail-value">+100 SMS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
@@ -683,7 +913,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             '20be6f50-a18e-11e9-8e16-03828ff5271c',
                             '7ef31a80-a18e-11e9-8e16-03828ff5271c',
                             'Maker', null)">
-                                Start free
+                                Get started
                             </button>
                         </div>
                         <div class="pricing-square-item">10 devices</div>
@@ -695,11 +925,38 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
-                    <div class="pricing-square popular">
-                        <span class="popular-badge">POPULAR</span>
+                    <div class="pricing-square">
                         <h2>Prototype</h2>
                         <div class="pricing-square-description">
                             <p>For PoCs and MVPs</p>
+                        </div>
+                        <h4 class="pricing-square-price">
+                            $39
+                            <span>/month</span>
+                        </h4>
+                        <div>
+                            <button id="Pricing_PE_SM_Maker" class="button secondary btn-pricing gtm_button"
+                                    onClick="getLicense(event,
+                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
+                            '7ef31a80-a18e-11e9-8e16-03828ff5271c',
+                            'Prototype', null)">
+                                Get started
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">50 devices</div>
+                        <div class="pricing-square-item">50 assets</div>
+                        <div class="pricing-square-item">1 production instance</div>
+                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
+                            Community support
+                        </div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                        <div class="pricing-square-item no-icon">&nbsp;</div>
+                    </div>
+                    <div class="pricing-square popular">
+                        <span class="popular-badge">POPULAR</span>
+                        <h2>Pilot</h2>
+                        <div class="pricing-square-description">
+                            <p>For upcoming IoT Unicorns</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $99
@@ -718,15 +975,15 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">100 assets</div>
                         <div class="pricing-square-item">1 production instance</div>
                         <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Community support
+                            Help desk
                         </div>
-                        <div class="pricing-square-item"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
                         <h2>Startup</h2>
                         <div class="pricing-square-description">
-                            <p>For upcoming IoT Unicorns</p>
+                            <p>Defined long term projects</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $299
@@ -745,15 +1002,15 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">500 assets</div>
                         <div class="pricing-square-item">2 production instances</div>
                         <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Help desk
+                            Priority help desk
                         </div>
-                        <div class="pricing-square-item"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
                         <h2>Business</h2>
                         <div class="pricing-square-description">
-                            <p>Defined long term projects</p>
+                            <p>Built for scalable IoT growth</p>
                         </div>
                         <h4 class="pricing-square-price">
                             $499
@@ -774,35 +1031,8 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item"><b>White labeling</b></div>
-                        <div class="pricing-square-item no-icon">&nbsp;</div>
-                    </div>
-                    <div class="pricing-square">
-                        <h2>Business+</h2>
-                        <div class="pricing-square-description">
-                            <p>Built for scalable IoT growth</p>
-                        </div>
-                        <h4 class="pricing-square-price">
-                            $799
-                            <span>/month</span>
-                        </h4>
-                        <div>
-                            <button id="Pricing_PE_SM_BusinessPlus" class="button secondary btn-pricing gtm_button"
-                                    onClick="getLicense(event,
-                            '20be6f50-a18e-11e9-8e16-03828ff5271c',
-                            '34530df0-a198-11e9-8e16-03828ff5271c',
-                            'Business+', null)">
-                                Get started
-                            </button>
-                        </div>
-                        <div class="pricing-square-item">2 000 devices</div>
-                        <div class="pricing-square-item">2 000 assets</div>
-                        <div class="pricing-square-item">3 production instances</div>
-                        <div class="pricing-square-item" data-faq-id="pe-pay-as-you-go-support-included">
-                            Priority help desk
-                        </div>
-                        <div class="pricing-square-item"><b>White labeling</b></div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-private-cloud-what-happens-if-i-exceed-my-included-device-limit">$0.1 per extra device</div>
+                        <div class="pricing-square-item highlight">White labeling</div>
+                        <div class="pricing-square-item plus-icon highlight">$0.1 per extra device</div>
                     </div>
                 </div>
                 <div class="additional-content no-margin-bottom">

@@ -15,8 +15,8 @@
     },
     {
       "name": "Prototype",
-      "price": 99,
-      "includedDevices": 100,
+      "price": 39,
+      "includedDevices": 50,
       "includedProdInstances": 1,
       "extraProdInstancePrice": 100,
       "devQaExtraInstancePrice": 50,
@@ -26,10 +26,10 @@
       "trendzMonthPrice": 29
     },
     {
-      "name": "Startup",
-      "price": 299,
-      "includedDevices": 500,
-      "includedProdInstances": 2,
+      "name": "Pilot",
+      "price": 99,
+      "includedDevices": 100,
+      "includedProdInstances": 1,
       "extraProdInstancePrice": 100,
       "devQaExtraInstancePrice": 50,
       "edgeMonthPrice": 49,
@@ -38,10 +38,10 @@
       "trendzMonthPrice": 89
     },
     {
-      "name": "Business",
-      "price": 499,
-      "includedDevices": 1000,
-      "includedProdInstances": 3,
+      "name": "Startup",
+      "price": 299,
+      "includedDevices": 500,
+      "includedProdInstances": 2,
       "extraProdInstancePrice": 100,
       "devQaExtraInstancePrice": 50,
       "edgeMonthPrice": 89,
@@ -50,9 +50,9 @@
       "trendzMonthPrice": 149
     },
     {
-      "name": "Business+",
-      "price": 799,
-      "includedDevices": 2000,
+      "name": "Business",
+      "price": 499,
+      "includedDevices": 1000,
       "extraDevicePrice": 0.1,
       "includedProdInstances": 3,
       "extraProdInstancePrice": 100,

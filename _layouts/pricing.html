@@ -58,8 +58,10 @@
                 toggle.checked = true;
                 document.querySelectorAll(`#thingsboard-cloud .billing-toggle.solution-selector .label-text`).forEach(elem => elem.classList.toggle('selected'));
             }
+            setTopUpsCurrency('eur');
         } else {
             document.getElementById('Pricing_PE_Cloud_NorthAmerica')?.classList.add("defaultselection");
+            setTopUpsCurrency('usd');
         }
     }
 
@@ -127,9 +129,11 @@
         if (!event.target.checked) {
             solutionId = 'cloud-north-america';
             cookieValue = '/docs/paas/';
+            setTopUpsCurrency('usd');
         } else {
             solutionId = 'cloud-europe';
             cookieValue = '/docs/paas/eu/';
+            setTopUpsCurrency('eur');
         }
         setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
         setCloudServerHref();
@@ -445,6 +449,46 @@
             `
             });
     }
+
+
+    let topUpsCurrentCurrency = 'usd'
+    function initTopUps() {
+        const topUpItems = document.querySelectorAll('.top-up-item');
+
+        topUpItems.forEach(item => {
+            const header = item.querySelector('.top-up-header');
+
+            header.addEventListener('click', () => {
+                const isExpanded = item.classList.contains('expanded');
+
+                if (isExpanded) {
+                    item.classList.remove('expanded');
+                } else {
+                    item.classList.add('expanded');
+                }
+            });
+        });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initTopUps);
+    } else {
+        initTopUps();
+    }
+    function setTopUpsCurrency(currency) {
+        topUpsCurrentCurrency = currency;
+        const priceElements = document.querySelectorAll('.top-ups-section .top-up-price');
+
+        priceElements.forEach(el => {
+            const price = el.dataset.price;
+            if (currency === 'eur') {
+                el.textContent = `€${price}`;
+            } else {
+                el.textContent = `$${price}`;
+            }
+        });
+    }
+
 
     const infoIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M5.49976 3.5H4.49976V2.5H5.49976V3.5ZM5.49976 4.5H4.49976V7.5H5.49976V4.5ZM4.99976 1C2.79426 1 0.999756 2.7945 0.999756 5C0.999756 7.2055 2.79426 9 4.99976 9C7.20526 9 8.99976 7.2055 8.99976 5C8.99976 2.7945 7.20526 1 4.99976 1ZM4.99976 0C7.76126 0 9.99976 2.2385 9.99976 5C9.99976 7.7615 7.76126 10 4.99976 10C2.23826 10 -0.000244141 7.7615 -0.000244141 5C-0.000244141 2.2385 2.23826 0 4.99976 0Z" fill="black" fill-opacity="0.76"/></svg>`;
     const chevronUpIcon = `<svg class="chevron-icon" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" fill="none"><path d="M1.41 7.41L6 2.83L10.59 7.41L12 6L6 0L0 6L1.41 7.41Z" fill="currentColor"/></svg>`;
