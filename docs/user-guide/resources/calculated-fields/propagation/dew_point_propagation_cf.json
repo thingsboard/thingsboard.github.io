@@ -1,0 +1,46 @@
+{
+  "type": "PROPAGATION",
+  "name": "Dew point propagation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767427593218
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "PROPAGATION",
+    "arguments": {
+      "humidity": {
+        "refEntityKey": {
+          "key": "humidity",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      },
+      "temperature": {
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "expression": "// Constants for Magnus formula\nvar a = 17.625;\nvar b = 243.04;\n\nvar alpha = ((a * temperature) / (b + temperature)) + Math.log(humidity / 100.0);\nvar dewPoint = toFixed((b * alpha) / (a - alpha), 1);\n\nreturn {\"dewPoint\": dewPoint};",
+    "output": {
+      "type": "TIME_SERIES",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    },
+    "relation": {
+      "direction": "TO",
+      "relationType": "Contains"
+    },
+    "applyExpressionToResolvedArguments": true
+  }
+}
