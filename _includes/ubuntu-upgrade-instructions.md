@@ -1,10 +1,17 @@
+{%- assign platform = "ThingsBoard CE" -%}
 {%- assign current_version = include.version -%}
+{%- assign current_version_with_platform = current_version -%}
 {%- assign previous_version = include.prev_version -%}
 {%- assign update_status = include.update_status | default: "true" -%}
 {%- assign applicable_versions = include.applicable_versions -%}
 {%- assign manual_version_upgrade = include.manual_version_upgrade | default: "false" -%}
 {%- assign manual_version_upgrade_label = include.manual_version_upgrade_label -%}
 {%- assign x_status = include.x -%}
+
+{% if docsPrefix == "pe/" %}
+{%- assign platform = "ThingsBoard PE" -%}
+{%- assign current_version_with_platform = current_version | append: "pe" -%}
+{% endif %}
 
 {%- assign curr_parts = current_version | split: "." -%}
 {%- assign prev_parts = previous_version | split: "." -%}
@@ -28,7 +35,7 @@
 {%- assign prev_major = prev_parts[0] -%}
 {%- assign prev_minor = prev_parts[1] -%}
 
-### Upgrading ThingsBoard CE to {{ current_version }}
+### Upgrading {{ platform }} to {{ current_version }}
 
 {%- if x_status == "true" -%}
 {%- assign prev_version_label = prev_major | append: "." | append: prev_minor | append: ".x" -%}
@@ -36,17 +43,30 @@
 {%- assign prev_version_label = previous_version -%}
 {%- endif -%}
 
+{% if docsPrefix == "pe/" %}
+{%- assign prev_version_label = prev_version_label | append: "PE" -%}
+{% endif %}
+
+{% assign platform_hash = "#upgrading-thingsboard-ce-to-" %}
+{% if docsPrefix == "pe/" %}
+{%- assign platform_hash = "#upgrading-thingsboard-pe-to-" -%}
+{% endif %}
+
 {%- if use_external_link -%}
-{%- assign prev_version_href = "/docs/user-guide/install/upgrade-instructions/ubuntu/v" | append: previous_version_path | append: "/#upgrading-thingsboard-ce-to-" | append: previous_version_anchor -%}
+{%- assign prev_version_href = "/docs/" | append: docsPrefix | append: "user-guide/install/upgrade-instructions/ubuntu/v" | append: previous_version_path | append: "/" | append: platform_hash | append: previous_version_anchor -%}
 {%- else -%}
-{%- assign prev_version_href = "#upgrading-thingsboard-ce-to-" | append: previous_version_anchor -%}
+{%- assign prev_version_href = platform_hash | append: previous_version_anchor -%}
 {%- endif -%}
 
 {% capture difference %}
 **NOTE:**
 <br>
 These upgrade steps are applicable for ThingsBoard version {{ prev_version_label }}{% if applicable_versions %}{% assign versions = applicable_versions | split: "," %}{% for v in versions %} and ThingsBoard version {{ v | strip }}{% endfor %}{% endif %}.
-In order to upgrade to {{ current_version }} you need to [**upgrade to {{ prev_version_label }} first**]({{ prev_version_href }}).
+In order to upgrade to {{ current_version_with_platform | upcase }} you need to [**upgrade to {{ prev_version_label }} first**]({{ prev_version_href }}).
+{%- if docsPrefix == "pe/" -%}
+<br>
+[**Prepare**](#prepare-for-upgrading-thingsboard) for upgrading ThingsBoard.
+{%- endif -%}
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -57,14 +77,21 @@ In order to upgrade to {{ current_version }} you need to [**upgrade to {{ prev_v
 {% include templates/install/tb-350-update.md %}
 {% endif %}
 
-#### ThingsBoard package download
+#### {{ platform }} package download
 
+{% if docsPrefix == "pe/" %}
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/{{ current_version }}/thingsboard-{{ current_version }}.deb
+wget https://dist.thingsboard.io/thingsboard-{{ current_version_with_platform }}.deb
 ```
 {: .copy-code}
+{% else %}
+```bash
+wget https://github.com/thingsboard/thingsboard/releases/download/{{ current_version_with_platform }}/thingsboard-{{ current_version_with_platform }}.deb
+```
+{: .copy-code}
+{% endif %}
 
-#### ThingsBoard service upgrade
+#### {{ platform }} service upgrade
 
 * Stop ThingsBoard service if it is running.
 
@@ -73,8 +100,12 @@ sudo service thingsboard stop
 ```
 {: .copy-code}
 
+{% if docsPrefix == "pe/" %}
+* Install Thingsboard Web Report component as described [here](/docs/user-guide/install/pe/ubuntu/#step-9-install-thingsboard-webreport-component).
+{% endif %}
+
 ```bash
-sudo dpkg -i thingsboard-{{ current_version }}.deb
+sudo dpkg -i thingsboard-{{ current_version_with_platform }}.deb
 ```
 {: .copy-code}
 
