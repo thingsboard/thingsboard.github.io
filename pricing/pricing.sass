@@ -1,6 +1,6 @@
 
 .container
-  &:first-of-type
+  &.top
     margin-bottom: 24px
   &.no-padding
     padding: 0
@@ -31,6 +31,7 @@
       font-size: 36px
       line-height: 48px
       font-weight: 500
+      margin-bottom: 6px
       @media (max-width: 599px)
         font-size: 28px
 
@@ -59,6 +60,9 @@
             width: 66px
             height: 66px
         .text
+          display: flex
+          flex-direction: column
+          justify-content: space-between
           h3
             font-size: 24px
             font-weight: 500
@@ -900,7 +904,7 @@ html#pricing
                 @media (max-width: 1280px)
                   flex-basis: calc(50% - 8px)
             &.margin-bottom
-              margin-bottom: 100px
+              margin-bottom: 50px
             .pricing-square
               height: 480px
               box-shadow: unset
@@ -954,7 +958,6 @@ html#pricing
                   font-size: 12px
                   line-height: 21px
                 .button
-                  width: 100%
                   font-weight: 400
               &.additional
                 display: none
@@ -971,6 +974,8 @@ html#pricing
           .crd-container
             margin-bottom: 0
             padding-bottom: 100px
+            &.no-padding
+              padding-bottom: 0
             &.padding-top
               padding-top: 40px
             h3
@@ -1181,7 +1186,6 @@ html#pricing
             font-size: 36px
             line-height: 48px
             font-weight: 500
-            margin-bottom: 24px
             @media (max-width: 599px)
               font-size: 28px
 

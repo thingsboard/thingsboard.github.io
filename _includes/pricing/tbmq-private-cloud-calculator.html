@@ -9,7 +9,7 @@
                     <button class="mode-tab" data-mode="advanced">
                         Advanced
                         <span class="tooltip">
-                            <img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
+                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
                             <span class="tooltip-text">Enable network traffic configuration</span>
                         </span>
                     </button>
@@ -20,7 +20,7 @@
                     <div class="input-label-group xs-row">
                         <label for="tbmqPc-sessions" class="label">
                             Sessions
-                            <span class="tooltip"><img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
                                 <span class="tooltip-text">Total unique logical states managed by the broker (identified by Client ID). Active connections and disconnected clients with persistent sessions both occupy quota slots.</span>
                             </span>
                         </label>
@@ -42,7 +42,7 @@
                     <div class="input-label-group xs-row">
                         <label for="tbmqPc-throughput" class="label">
                             Throughput (msg/sec)
-                            <span class="tooltip"><img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
+                            <span class="tooltip"><img src="/images/pricing/info-icon.svg" alt="Hint icon">
                                 <span class="tooltip-text">Combined number of MQTT PUBLISH packets processed per second, including both incoming (publisher) and outgoing (subscriber) messages.</span>
                             </span>
                         </label>
@@ -64,7 +64,7 @@
                     <p class="label">
                         Add-ons
                         <span class="tooltip">
-                            <img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
+                            <img src="/images/pricing/info-icon.svg" alt="Hint icon">
                             <span class="tooltip-text">Unlock advanced optional modules to extend platform functionality.</span>
                         </span>
                     </p>
@@ -74,8 +74,8 @@
                                 <span class="addon-title">
                                     Multi-AZ Deployment
                                     <span class="tooltip">
-                                        <img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
-                                        <span class="tooltip-text">Recurring monthly cost for high availability (HA) and fault tolerance with deployment across multiple AZs and a guaranteed uptime SLA.</span>
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Enable high availability (HA) and fault tolerance with deployment across multiple AZs and a guaranteed uptime SLA.</span>
                                     </span>
                                 </span>
                                 <label class="toggle-switch">
@@ -90,8 +90,8 @@
                                 <span class="addon-title">
                                     Dev & QA Instances
                                     <span class="tooltip">
-                                        <img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
-                                        <span class="tooltip-text">Recurring monthly cost for dedicated instances used exclusively for development, testing, and QA environments.</span>
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Separate environments for development, testing, and CI/CD pipelines.</span>
                                     </span>
                                 </span>
                                 <label class="toggle-switch">
@@ -114,8 +114,8 @@
                                 <span class="addon-title">
                                     Network Traffic
                                     <span class="tooltip">
-                                        <img src="https://img.thingsboard.io/pricing/info-icon.svg" alt="Hint icon">
-                                        <span class="tooltip-text">Recurring monthly cost for network traffic exceeding the subscription plan number.</span>
+                                        <img src="/images/pricing/info-icon.svg" alt="Hint icon">
+                                        <span class="tooltip-text">Expand your data transfer capacity beyond the included lmit to ensure uninterrupted connectivity as your message volume scales.</span>
                                     </span>
                                 </span>
                                 <label class="toggle-switch">
@@ -123,7 +123,7 @@
                                     <span class="slider round"></span>
                                 </label>
                             </div>
-                            <p class="addon-description"><span id="tbmqPcNetworkIncludedText">10</span> GB included, add more as you scale.</p>
+                            <p class="addon-description"><span id="tbmqPcNetworkIncludedText">200</span> GB included, add more as you scale.</p>
                             <div class="addon-counter hidden" data-addon-counter="networkTraffic">
                                 <label>Extra Traffic (GB)</label>
                                 <div class="stepper-control">
@@ -419,7 +419,7 @@
                 <div class="section-content">
                     ${tbmqPcCreateItem('Included Sessions', formatNumber(plan.includedSessions), 'Number of sessions covered by the subscription base price.')}
                     ${tbmqPcCreateItem('Included Throughput', `${formatNumber(plan.includedThroughput)} msg/sec`, 'Amount of throughput covered by the subscription base price.')}
-                    ${tbmqPcCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>', 'Customization of the platform interface with your corporate branding.')}
+                    ${tbmqPcCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>')}
                     ${tbmqPcCreateItem('Uptime SLA', slaValueHtml, 'The guaranteed minimum monthly uptime for the Private Cloud service, excluding scheduled maintenance.')}
                     ${tbmqPcCreateItem('Base Price', formatCurrency(plan.basePrice), 'Monthly subscription fee before extras and add-ons.')}`;
 
@@ -446,16 +446,16 @@
         if (isAnnual) totalTooltip = `(${totalTooltip}) - 10% Annual Discount`;
 
         tbmqPcUi.results.innerHTML = `
-            <div class="results-scroll-container">
-                <div class="card-header">
-                    <div class="header-top">
-                        <h3>Calculation summary</h3>
-                        <div class="header-actions">
-                            <div id="tbmqPcCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
-                            <div id="tbmqPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
-                        </div>
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbmqPcCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="tbmqPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
                     </div>
                 </div>
+            </div>
+            <div class="results-scroll-container">
                 ${detailsHtml}
                 <div class="addons-separator"><span>Add-ons</span></div>
                 ${addOnsHtml}
@@ -518,9 +518,9 @@
 
         if (tbmqPcState.addons.devQa.enabled && breakdown.devQa) {
             html += `
-                <div class="results-section expandable collapsed" data-section="devQa">
+                <div class="results-section expandable" data-section="devQa">
                     <div class="section-header" data-toggle="devQa">
-                        <span class="section-title-with-chevron">Dev & QA Instances ${chevronDownIcon}</span>
+                        <span class="section-title-with-chevron">Dev & QA Instances ${chevronUpIcon}</span>
                         <span class="section-value">
                             ${formatCurrency(breakdown.devQa.totalCost)}
                             <span class="tooltip">${infoIcon}<span class="tooltip-text">Recurring monthly cost for dedicated instances used exclusively for development, testing, and QA environments.</span></span>
@@ -544,9 +544,9 @@
         if (tbmqPcState.isAdvancedMode) {
             if (tbmqPcState.addons.networkTraffic.enabled && breakdown.networkTraffic) {
                 html += `
-                    <div class="results-section expandable collapsed" data-section="networkTraffic">
+                    <div class="results-section expandable" data-section="networkTraffic">
                         <div class="section-header" data-toggle="networkTraffic">
-                            <span class="section-title-with-chevron">Network traffic ${chevronDownIcon}</span>
+                            <span class="section-title-with-chevron">Network traffic ${chevronUpIcon}</span>
                             <span class="section-value">
                                 ${formatCurrency(breakdown.networkTraffic.totalCost)}
                                 <span class="tooltip">${infoIcon}<span class="tooltip-text">Recurring monthly cost for network traffic exceeding the subscription plan number.</span></span>
@@ -768,14 +768,32 @@
             });
         });
 
-        tbmqPcUi.inputs.sessions.addEventListener('input', e => {
-            tbmqPcState.sessions = Math.max(TBMQ_PC_SESSIONS_MIN, parseInt(e.target.value) || TBMQ_PC_SESSIONS_MIN);
-            tbmqPcUi.inputs.sessions.value = tbmqPcState.sessions;
+        // --- SPLIT INPUT/CHANGE LISTENERS START ---
+
+        // 1. Sessions
+        const onSessionsInput = (val) => {
+            let calcVal = parseInt(val);
+            if(isNaN(calcVal)) calcVal = TBMQ_PC_SESSIONS_MIN;
+
+            tbmqPcState.sessions = Math.max(TBMQ_PC_SESSIONS_MIN, calcVal);
+
             tbmqPcUi.inputs.sessionsSlider.value = Math.min(tbmqPcSessionsRealToSlider(tbmqPcState.sessions), TBMQ_PC_SESSIONS_SLIDER_MAX);
             sliderProgress(tbmqPcUi.inputs.sessionsSlider);
             tbmqPcCalculate();
             tbmqPcDebouncedGTM();
-        });
+        };
+        const onSessionsBlur = (e) => {
+            let val = parseInt(e.target.value) || TBMQ_PC_SESSIONS_MIN;
+            val = Math.max(TBMQ_PC_SESSIONS_MIN, val);
+            tbmqPcState.sessions = val;
+            e.target.value = val;
+
+            tbmqPcUi.inputs.sessionsSlider.value = Math.min(tbmqPcSessionsRealToSlider(val), TBMQ_PC_SESSIONS_SLIDER_MAX);
+            sliderProgress(tbmqPcUi.inputs.sessionsSlider);
+            tbmqPcCalculate();
+        };
+        tbmqPcUi.inputs.sessions.addEventListener('input', e => onSessionsInput(e.target.value));
+        tbmqPcUi.inputs.sessions.addEventListener('change', onSessionsBlur);
 
         tbmqPcUi.inputs.sessionsSlider.addEventListener('input', e => {
             tbmqPcState.sessions = tbmqPcSessionsSliderToReal(parseFloat(e.target.value));
@@ -785,14 +803,30 @@
             tbmqPcDebouncedGTM();
         });
 
-        tbmqPcUi.inputs.throughput.addEventListener('input', e => {
-            tbmqPcState.throughput = Math.max(TBMQ_PC_THROUGHPUT_MIN, parseInt(e.target.value) || TBMQ_PC_THROUGHPUT_MIN);
-            tbmqPcUi.inputs.throughput.value = tbmqPcState.throughput;
+        // 2. Throughput
+        const onThroughputInput = (val) => {
+            let calcVal = parseInt(val);
+            if(isNaN(calcVal)) calcVal = TBMQ_PC_THROUGHPUT_MIN;
+
+            tbmqPcState.throughput = Math.max(TBMQ_PC_THROUGHPUT_MIN, calcVal);
+
             tbmqPcUi.inputs.throughputSlider.value = Math.min(tbmqPcThroughputRealToSlider(tbmqPcState.throughput), TBMQ_PC_THROUGHPUT_SLIDER_MAX);
             sliderProgress(tbmqPcUi.inputs.throughputSlider);
             tbmqPcCalculate();
             tbmqPcDebouncedGTM();
-        });
+        };
+        const onThroughputBlur = (e) => {
+            let val = parseInt(e.target.value) || TBMQ_PC_THROUGHPUT_MIN;
+            val = Math.max(TBMQ_PC_THROUGHPUT_MIN, val);
+            tbmqPcState.throughput = val;
+            e.target.value = val;
+
+            tbmqPcUi.inputs.throughputSlider.value = Math.min(tbmqPcThroughputRealToSlider(val), TBMQ_PC_THROUGHPUT_SLIDER_MAX);
+            sliderProgress(tbmqPcUi.inputs.throughputSlider);
+            tbmqPcCalculate();
+        };
+        tbmqPcUi.inputs.throughput.addEventListener('input', e => onThroughputInput(e.target.value));
+        tbmqPcUi.inputs.throughput.addEventListener('change', onThroughputBlur);
 
         tbmqPcUi.inputs.throughputSlider.addEventListener('input', e => {
             tbmqPcState.throughput = tbmqPcThroughputSliderToReal(parseFloat(e.target.value));
@@ -815,6 +849,15 @@
             });
         });
         tbmqPcUi.inputs.devInstances?.addEventListener('input', e => {
+             // Calc but no overwrite
+            let val = parseInt(e.target.value);
+            tbmqPcState.addons.devQa.instances = isNaN(val) ? 1 : Math.max(1, val);
+            tbmqPcUpdateDevQaMinusBtn();
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+        tbmqPcUi.inputs.devInstances?.addEventListener('change', e => {
+             // Enforce and overwrite
             let val = Math.max(1, parseInt(e.target.value) || 1);
             e.target.value = val;
             tbmqPcState.addons.devQa.instances = val;
@@ -830,6 +873,15 @@
             });
         });
         tbmqPcUi.inputs.networkTraffic?.addEventListener('input', e => {
+            // Calc but no overwrite
+            let val = parseInt(e.target.value);
+            tbmqPcState.addons.networkTraffic.extraGb = isNaN(val) ? 1 : Math.max(1, val);
+            tbmqPcUpdateNetworkMinusBtn();
+            tbmqPcCalculate();
+            tbmqPcDebouncedGTM();
+        });
+        tbmqPcUi.inputs.networkTraffic?.addEventListener('change', e => {
+             // Enforce and overwrite
             let val = Math.max(1, parseInt(e.target.value) || 1);
             e.target.value = val;
             tbmqPcState.addons.networkTraffic.extraGb = val;

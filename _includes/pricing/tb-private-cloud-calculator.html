@@ -774,20 +774,20 @@
 
         tbPcUi.results.classList.remove('hidden');
         tbPcUi.results.innerHTML = `
-            <div class="results-scroll-container">
-                <div class="card-header">
-                    <div class="header-top">
-                        <h3>Calculation summary</h3>
-                        <div class="header-actions">
-                            <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy calculation summary</span></div>
-                            <div id="tbPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
-                        </div>
-                    </div>
-                    <div class="optimal-plan-row">
-                        <span>Optimal plan:</span>
-                        <span class="plan-link">${plan.name}</span>
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy calculation summary</span></div>
+                        <div id="tbPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
                     </div>
                 </div>
+                <div class="optimal-plan-row">
+                    <span>Optimal plan:</span>
+                    <span class="plan-link">${plan.name}</span>
+                </div>
+            </div>
+            <div class="results-scroll-container">
                 ${planDetailsHtml}
                 <div class="addons-separator"><span>Add-ons</span></div>
                 ${addOnsSectionsHtml}
@@ -828,7 +828,7 @@
         if (inputs.addons.edgeComputing.enabled && breakdown.edgeComputing) {
             const edge = breakdown.edgeComputing;
             html += `
-                <div class="results-section expandable collapsed" data-section="edgeComputing">
+                <div class="results-section expandable" data-section="edgeComputing">
                     <div class="section-header" data-toggle="edgeComputing">
                         <span class="section-title-with-chevron">Edge Computing ${chevronUpIcon}</span>
                         <span class="section-value">
@@ -856,7 +856,7 @@
         if (inputs.addons.trendzAnalytics.enabled && breakdown.trendzAnalytics) {
             const trendz = breakdown.trendzAnalytics;
             html += `
-                <div class="results-section expandable collapsed" data-section="trendzAnalytics">
+                <div class="results-section expandable" data-section="trendzAnalytics">
                     <div class="section-header" data-toggle="trendzAnalytics">
                         <span class="section-title-with-chevron">Trendz Analytics ${chevronUpIcon}</span>
                         <span class="section-value">
@@ -905,7 +905,7 @@
         if (inputs.addons.devQaInstances.enabled && breakdown.devQaInstances) {
             const devQa = breakdown.devQaInstances;
             html += `
-                <div class="results-section expandable collapsed" data-section="devQaInstances">
+                <div class="results-section expandable" data-section="devQaInstances">
                     <div class="section-header" data-toggle="devQaInstances">
                         <span class="section-title-with-chevron">Dev & QA Instances ${chevronUpIcon}</span>
                         <span class="section-value">
@@ -939,16 +939,16 @@
 
         tbPcUi.results.classList.remove('hidden');
         tbPcUi.results.innerHTML = `
-            <div class="results-scroll-container">
-                <div class="card-header">
-                    <div class="header-top">
-                        <h3>Calculation summary</h3>
-                        <div class="header-actions">
-                            <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy calculation summary</span></div>
-                        </div>
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy calculation summary</span></div>
                     </div>
-                    <h4 class="wrap">Your setup is seriously impressive. It's time for an Enterprise solution!</h4>
                 </div>
+                <h4 class="wrap">Your setup is seriously impressive. It's time for an Enterprise solution!</h4>
+            </div>
+            <div class="results-scroll-container">
                 <div class="results-section">
                     <div class="section-content show">
                         ${tbPcCreateItem('Data Points Rate', `${formatNumber(totalDataPointsPerMinute)} points/minute`)}
@@ -1090,7 +1090,7 @@
 
         const contactButton = document.getElementById('tbPcContactUs');
         if (contactButton) {
-            contactButton.href = `/docs/contact-us/?subject=${encodeURIComponent('Private Cloud Plan')}&message=${encodeURIComponent(message)}`;
+            contactButton.href = `/docs/contact-us/?subject=${encodeURIComponent('Private Cloud')}&message=${encodeURIComponent(message)}`;
         }
     };
 

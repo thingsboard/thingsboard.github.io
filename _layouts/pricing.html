@@ -76,6 +76,10 @@
             window.history.replaceState(null, '', window.location.href.replace('calculatorPerpetual', ''));
             tbSmPUi.openBtn.click();
         }
+        if (Object.hasOwn(params, 'calculatorPayg') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
+            window.history.replaceState(null, '', window.location.href.replace('calculatorPayg', ''));
+            tbSmUi.openBtn.click();
+        }
 
         let sectionId = params['section'] || params['active'];
         if (!sectionId) {

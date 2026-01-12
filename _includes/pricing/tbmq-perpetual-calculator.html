@@ -188,10 +188,7 @@
     }
 
     const tbmqPerpUpdateUI = () => {
-        tbmqPerpUi.inputs.prod.value = tbmqPerpState.prodInstances;
         tbmqPerpUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbmqPerpState.prodInstances <= tbmqPerpetualPlan.includedProdInstances;
-
-        tbmqPerpUi.inputs.dev.value = tbmqPerpState.devInstances;
         tbmqPerpUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbmqPerpState.devInstances <= 0;
     };
 
@@ -199,8 +196,10 @@
         if (type === 'prod') {
             const min = tbmqPerpetualPlan.includedProdInstances;
             tbmqPerpState.prodInstances = action === 'increment' ? tbmqPerpState.prodInstances + 1 : Math.max(min, tbmqPerpState.prodInstances - 1);
+            tbmqPerpUi.inputs.prod.value = tbmqPerpState.prodInstances;
         } else if (type === 'dev') {
             tbmqPerpState.devInstances = action === 'increment' ? tbmqPerpState.devInstances + 1 : Math.max(0, tbmqPerpState.devInstances - 1);
+            tbmqPerpUi.inputs.dev.value = tbmqPerpState.devInstances;
         }
         tbmqPerpCalculate();
         tbmqPerpSendGTM();
@@ -246,22 +245,22 @@
 
     const tbmqPerpDisplay = ({ plan, extraSessions, extraSessionsCost, extraThroughput, extraThroughputCost, extraProd, extraProdCost, extraDev, extraDevCost, totalPrice }) => {
         let resultsHtml = `
-            <div class="results-scroll-container">
-                <div class="card-header">
-                    <div class="header-top">
-                        <h3>Calculation summary</h3>
-                        <div class="header-actions">
-                            <div id="tbmqPerpCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
-                            <div id="tbmqPerpDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
-                        </div>
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="tbmqPerpCopyBtn" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="tbmqPerpDownloadBtn" class="icon-button" title="Download">${downloadIcon}</div>
                     </div>
                 </div>
+            </div>
+            <div class="results-scroll-container">
                 <div class="results-section">
                     <div class="section-content show">
                         ${tbmqPerpCreateItem('Included Sessions', formatNumber(plan.includedSessions), 'Number of sessions covered by the perpetual license base price.')}
                         ${tbmqPerpCreateItem('Included Throughput', `${formatNumber(plan.includedThroughput)} msg/sec`, 'Amount of throughput covered by the perpetual license base price.')}
                         ${tbmqPerpCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances), 'Number of production instances covered by the perpetual license base price.')}
-                        ${tbmqPerpCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>', 'Customization of the platform interface with your corporate branding.')}
+                        ${tbmqPerpCreateItem('White Labeling', '<span class="badge enabled">Enabled</span>')}
                         ${tbmqPerpCreateItem('Support', '<span class="support-priority">Priority Help Desk</span>', 'Prioritized ticket handling via a high-priority queue managed by the expert team.')}
                         ${tbmqPerpCreateItem('Base Price', formatCurrency(plan.basePrice), 'One-time license fee before extras and add-ons.')}`;
 
@@ -374,9 +373,12 @@
             tbmqPerpSendGTM();
         });
 
-        const onSessionsChange = (val) => {
-            tbmqPerpState.sessions = Math.max(TBMQ_PERP_SESSIONS_MIN, parseInt(val) || TBMQ_PERP_SESSIONS_MIN);
-            tbmqPerpUi.inputs.sessions.value = tbmqPerpState.sessions;
+        const onSessionsInput = (val) => {
+            let calcVal = parseInt(val);
+            if (isNaN(calcVal)) calcVal = TBMQ_PERP_SESSIONS_MIN;
+
+            tbmqPerpState.sessions = Math.max(TBMQ_PERP_SESSIONS_MIN, calcVal);
+
             const sliderVal = Math.min(tbmqPerpSessionsRealToSlider(tbmqPerpState.sessions), TBMQ_PERP_SESSIONS_SLIDER_MAX);
             tbmqPerpUi.inputs.sessionsSlider.value = sliderVal;
             sliderProgress(tbmqPerpUi.inputs.sessionsSlider);
@@ -384,7 +386,21 @@
             tbmqPerpSendGTM();
         };
 
-        tbmqPerpUi.inputs.sessions.addEventListener('input', e => onSessionsChange(e.target.value));
+        const onSessionsBlur = (e) => {
+            let val = parseInt(e.target.value) || TBMQ_PERP_SESSIONS_MIN;
+            val = Math.max(TBMQ_PERP_SESSIONS_MIN, val);
+            tbmqPerpState.sessions = val;
+            e.target.value = val;
+
+            const sliderVal = Math.min(tbmqPerpSessionsRealToSlider(val), TBMQ_PERP_SESSIONS_SLIDER_MAX);
+            tbmqPerpUi.inputs.sessionsSlider.value = sliderVal;
+            sliderProgress(tbmqPerpUi.inputs.sessionsSlider);
+            tbmqPerpCalculate();
+        };
+
+        tbmqPerpUi.inputs.sessions.addEventListener('input', e => onSessionsInput(e.target.value));
+        tbmqPerpUi.inputs.sessions.addEventListener('change', onSessionsBlur);
+
         tbmqPerpUi.inputs.sessionsSlider.addEventListener('input', e => {
             const sliderVal = parseFloat(e.target.value);
             tbmqPerpState.sessions = tbmqPerpSessionsSliderToReal(sliderVal);
@@ -394,9 +410,13 @@
             tbmqPerpSendGTM();
         });
 
-        const onThroughputChange = (val) => {
-            tbmqPerpState.throughput = Math.max(TBMQ_PERP_THROUGHPUT_MIN, parseInt(val) || TBMQ_PERP_THROUGHPUT_MIN);
-            tbmqPerpUi.inputs.throughput.value = tbmqPerpState.throughput;
+
+        const onThroughputInput = (val) => {
+            let calcVal = parseInt(val);
+            if (isNaN(calcVal)) calcVal = TBMQ_PERP_THROUGHPUT_MIN;
+
+            tbmqPerpState.throughput = Math.max(TBMQ_PERP_THROUGHPUT_MIN, calcVal);
+
             const sliderVal = Math.min(tbmqPerpThroughputRealToSlider(tbmqPerpState.throughput), TBMQ_PERP_THROUGHPUT_SLIDER_MAX);
             tbmqPerpUi.inputs.throughputSlider.value = sliderVal;
             sliderProgress(tbmqPerpUi.inputs.throughputSlider);
@@ -404,7 +424,21 @@
             tbmqPerpSendGTM();
         };
 
-        tbmqPerpUi.inputs.throughput.addEventListener('input', e => onThroughputChange(e.target.value));
+        const onThroughputBlur = (e) => {
+            let val = parseInt(e.target.value) || TBMQ_PERP_THROUGHPUT_MIN;
+            val = Math.max(TBMQ_PERP_THROUGHPUT_MIN, val);
+            tbmqPerpState.throughput = val;
+            e.target.value = val;
+
+            const sliderVal = Math.min(tbmqPerpThroughputRealToSlider(val), TBMQ_PERP_THROUGHPUT_SLIDER_MAX);
+            tbmqPerpUi.inputs.throughputSlider.value = sliderVal;
+            sliderProgress(tbmqPerpUi.inputs.throughputSlider);
+            tbmqPerpCalculate();
+        };
+
+        tbmqPerpUi.inputs.throughput.addEventListener('input', e => onThroughputInput(e.target.value));
+        tbmqPerpUi.inputs.throughput.addEventListener('change', onThroughputBlur);
+
         tbmqPerpUi.inputs.throughputSlider.addEventListener('input', e => {
             const sliderVal = parseFloat(e.target.value);
             tbmqPerpState.throughput = tbmqPerpThroughputSliderToReal(sliderVal);
@@ -413,6 +447,7 @@
             tbmqPerpCalculate();
             tbmqPerpSendGTM();
         });
+
 
         const bindStepper = (stepper, type) => {
             stepper.querySelectorAll('.stepper-btn').forEach(btn => {
@@ -423,19 +458,29 @@
         bindStepper(tbmqPerpUi.steppers.dev, 'dev');
 
         tbmqPerpUi.inputs.prod.addEventListener('input', e => {
-            tbmqPerpState.prodInstances = Math.max(tbmqPerpetualPlan.includedProdInstances, parseInt(e.target.value) || 1);
-            e.target.value = tbmqPerpState.prodInstances;
-            tbmqPerpUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbmqPerpState.prodInstances <= tbmqPerpetualPlan.includedProdInstances;
+            let val = parseInt(e.target.value);
+            tbmqPerpState.prodInstances = isNaN(val) ? tbmqPerpetualPlan.includedProdInstances : Math.max(1, val);
             tbmqPerpCalculate();
             tbmqPerpSendGTM();
         });
+        tbmqPerpUi.inputs.prod.addEventListener('change', e => {
+            let val = parseInt(e.target.value) || tbmqPerpetualPlan.includedProdInstances;
+            tbmqPerpState.prodInstances = Math.max(tbmqPerpetualPlan.includedProdInstances, val);
+            e.target.value = tbmqPerpState.prodInstances;
+            tbmqPerpCalculate();
+        });
 
         tbmqPerpUi.inputs.dev.addEventListener('input', e => {
-            tbmqPerpState.devInstances = Math.max(0, parseInt(e.target.value) || 0);
-            e.target.value = tbmqPerpState.devInstances;
-            tbmqPerpUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbmqPerpState.devInstances <= 0;
+            let val = parseInt(e.target.value);
+            tbmqPerpState.devInstances = isNaN(val) ? 0 : Math.max(0, val);
             tbmqPerpCalculate();
             tbmqPerpSendGTM();
+        });
+        tbmqPerpUi.inputs.dev.addEventListener('change', e => {
+            let val = parseInt(e.target.value) || 0;
+            tbmqPerpState.devInstances = Math.max(0, val);
+            e.target.value = tbmqPerpState.devInstances;
+            tbmqPerpCalculate();
         });
 
         window.addEventListener('resize', tbmqPerpInitTicks);
