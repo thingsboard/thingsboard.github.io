@@ -86,7 +86,7 @@ wget https://dist.thingsboard.io/thingsboard-{{ current_version_with_platform }}
 {: .copy-code}
 {% else %}
 ```bash
-wget https://github.com/thingsboard/thingsboard/releases/download/{{ current_version_with_platform }}/thingsboard-{{ current_version_with_platform }}.deb
+wget https://github.com/thingsboard/thingsboard/releases/download/v{{ current_version_with_platform }}/thingsboard-{{ current_version_with_platform }}.deb
 ```
 {: .copy-code}
 {% endif %}
