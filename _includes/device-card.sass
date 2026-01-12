@@ -1,0 +1,39 @@
+#docsContent
+  .device-card
+    max-width: 740px
+    display: flex
+    align-items: center
+    gap: 32px
+    border-radius: 16px
+    border: 1px solid rgba(0, 0, 0, 0.08)
+    padding: 21px
+    margin-bottom: 20px
+    @media (max-width: 600px)
+      flex-direction: column
+    .device-img
+      img
+        max-width: 275px
+    .device-data
+      .device-name
+        display: block
+        font-size: 18px
+        font-weight: 500
+        line-height: 30px
+        margin-bottom: 12px
+      ul
+        max-width: 400px
+        padding-left: 0
+        margin: 0
+        display: flex
+        flex-direction: column
+        gap: 4px
+        li
+          margin-bottom: 0
+          list-style: none
+          color: rgba(0, 0, 0, 0.76)
+          font-size: 14px
+          line-height: 24px
+          font-weight: 400
+          span
+            font-weight: 500
+

@@ -1,0 +1,49 @@
+{
+  "type": "ENTITY_AGGREGATION",
+  "name": "Temperature aggregation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767710676740
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "ENTITY_AGGREGATION",
+    "arguments": {
+      "temperature": {
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "metrics": {
+      "avgTemperature": {
+        "function": "AVG",
+        "input": {
+          "type": "key",
+          "key": "temperature"
+        }
+      }
+    },
+    "interval": {
+      "type": "HOUR",
+      "tz": "Europe/Kiev"
+    },
+    "watermark": null,
+    "produceIntermediateResult": false,
+    "output": {
+      "type": "TIME_SERIES",
+      "decimalsByDefault": 1,
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}

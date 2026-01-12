@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Import Trendz bundle into ThingsBoard
-description: Import Trendz bundle into ThingsBoard
+title: Import Advanced analytics Bundle into ThingsBoard
+description: Import Advanced analytics Bundle into ThingsBoard
 
 tb-trendz-3.5-resource-lib-update:
   0:
@@ -23,10 +23,26 @@ tb-trendz-3.5-resource-lib-update:
 * TOC
 {:toc}
 
-All visualizations created in Trendz Analytics could be added on ThingsBoard Dashboards. We created special `Trendz widget bundle` for ThingsBoard - widgets collection that should be imported into ThingsBoard `Widget Library`.
+All visualizations created in Trendz Analytics could be added on ThingsBoard Dashboards. 
+We created special `Advanced analytics Bundle` for ThingsBoard - widgets collection that should be imported into ThingsBoard `Widgets library`.
 You can use them to add views from Trendz into ThingsBoard dashboards and share analysis results with other users.
 
-## Import Trendz widget bundle
+{% capture trendz_info %}
+From ThingsBoard 4.3+ and Trendz 1.15+, the bundle name is `Advanced analytics Bundle`, and this bundle is a system bundle.
+
+For older versions, you can find the bundle at the tenant level with the name `Trendz Bundle` (after successful import).
+{% endcapture %}
+{% include templates/info-banner.md content=trendz_info %}
+
+## Import Advanced analytics Bundle
+
+### ThingsBoard 4.3+ and Trendz 1.15+
+
+Starting from ThingsBoard 4.3 and Trendz 1.15, Trendz widgets are now managed at the sysadmin level and are upgraded automatically. 
+Starting from these versions, there are no additional actions required from the user to import this bundle. The only requirement is:
+Trendz should be connected to ThingsBoard. You can find out how to do it [here](/docs/trendz/install/ubuntu#step-6-sync-thingsboard-with-trendz).
+
+If Trendz is synced with ThingsBoard, you can find the system bundle `Advanced analytics Bundle` in the `Widgets library`.
 
 ### ThingsBoard 3.4+ and Trendz 1.9+
 You can import Trendz bundle to the ThingsBoard via Trendz UI: 

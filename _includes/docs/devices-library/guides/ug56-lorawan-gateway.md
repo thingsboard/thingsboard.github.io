@@ -11,7 +11,6 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.
 
 Industrial-Grade Design
@@ -33,6 +32,7 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+
 ## Gateway connection
 
 According to the [official user manual](https://resource.milesight.com/milesight/iot/document/ug56-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
@@ -52,7 +52,7 @@ According to the [official user manual](https://resource.milesight.com/milesight
 
 {% assign gatewayGeneralSettings = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
+        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
         title: Now you have ability to configure the gateway.
 '%}
 
@@ -64,7 +64,7 @@ Go to the "**Packet Forwarder**" page in the left menu and save '**Gateway EUI**
 
 {% assign gatewayPacketForwarderTab = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
+        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
         title: Open "**Packet Forwarder**" in the left menu and save '**Gateway EUI**' and '**Gateway ID**', we will need them to create a gateway on network server.
 '%}
 
@@ -88,3 +88,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include add-device-banner.liquid %}

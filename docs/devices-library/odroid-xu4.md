@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect ODROID-XU4 to ThingsBoard?
-category: Single-board computers
-chip: Samsung Exynos5422
-connectivity: Ethernet
-vendor: Hardkernel
-deviceImageFileName: odroid-xu4.jpg
-
+layout: docwithnav
+title: "How to connect ODROID-XU4 to ThingsBoard?"
+redirect_to: "/devices-library/ce/odroid-xu4/"
 ---
-
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/odroid-xu4.md %}

@@ -3,7 +3,6 @@
 {% assign thingsboardHost = "https://" | append: {{hostName}} %}
 
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [ALPON X4]({{deviceVendorLink}}){: target="_blank"} is a powerful and reliable edge computer for IoT and industrial applications developed by Sixfab. It features cloud management, LTE connectivity, and eSIM support for automatic network switching. Powered by a Raspberry Pi CM4 processor, up to 8GB LPDDR4 RAM, and 32GB eMMC storage, it ensures robust processing for demanding applications. With Cat4 LTE, Wi-Fi 2.4/5GHz, Bluetooth 5.0 BLE, and Gigabit Ethernet, the ALPON X4 guarantees seamless connectivity, even in challenging environments.
 
 Its rugged design operates from -20°C to +60°C, supports flexible power options like USB-PD Type-C, 9-30V DC, and optional PoE+, and offers DIN Rail or Wall Mount for easy deployment. Certified by CE, FCC, Verizon, AT&T, and more, it’s built for global scalability. The ALPON X4 powers industrial automation with PLC and Modbus, enables smart home and remote monitoring via ThingsBoard, supports digital signage, and optimizes energy efficiency for versatile IoT solutions.
@@ -18,6 +17,7 @@ To continue with this guide, you will need the following:
 - **ALPON X4 Device**: Registered and activated on Sixfab Connect with an active internet connection. Refer to the [ALPON X4 Getting Started page](https://docs.sixfab.com/docs/alpon-x4-getting-started){: target="_blank"} setup instructions for details.
 - **Basic Knowledge**: Familiarity with IoT concepts, containerized applications, and ThingsBoard dashboards.
 
+
 ## Create Device on ThingsBoard (Optional)
 
 The integration can create a device even if there is no device yet, so skip this step if you want.
@@ -26,14 +26,14 @@ The integration can create a device even if there is no device yet, so skip this
 
 1. Access your [ThingsBoard instance]({{ thingsboardHost }}){: target="_blank"}.
 2. Navigate to **Entities > Devices** in the sidebar.
-![Create Device on ThingsBoard 1](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/1.png)
+![Create Device on ThingsBoard 1](/images/devices-library/ready-to-go-devices/alpon-x4/1.png)
 
 ### Add a New Device
 
 1. Click on the “+” icon in the top right corner of the table and select "Add new device".
-![Create Device on ThingsBoard 2](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/2.png)
+![Create Device on ThingsBoard 2](/images/devices-library/ready-to-go-devices/alpon-x4/2.png)
 2. Enter the device name (e.g., `ALPON_X4`). No other changes are required at this time.
-![Create Device on ThingsBoard 3](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/3.png)
+![Create Device on ThingsBoard 3](/images/devices-library/ready-to-go-devices/alpon-x4/3.png)
 3. Click **Add** and close the window. The device is created.
 
 
@@ -44,12 +44,12 @@ To transfer data from the ALPON X4 to ThingsBoard via an external MQTT broker, y
 ### Create an MQTT Integration
 
 1. Log in to ThingsBoard. Go to the **Integrations center** -> **Integrations** page.
-   ![Create an MQTT Integration 1](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/5.png)
+   ![Create an MQTT Integration 1](/images/devices-library/ready-to-go-devices/alpon-x4/5.png)
 2. Click "plus" icon to add a new integration.
 3. Select "**MQTT**" as the integration type.
-   ![Create an MQTT Integration 2](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/6.png)
+   ![Create an MQTT Integration 2](/images/devices-library/ready-to-go-devices/alpon-x4/6.png)
 4. Select "**TBEL**" as the Downlink data converter.
-   ![Create an MQTT Integration 3](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/7.png)
+   ![Create an MQTT Integration 3](/images/devices-library/ready-to-go-devices/alpon-x4/7.png)
 5. Copy and paste the following code into the decoder function window and click "**Next**".
 
 ```
@@ -92,7 +92,7 @@ return result;
    - **Port**: `1883`
    - **Topic**: `v1/devices/+/telemetry`
      This filter determines which topics the integration will listen to.
-     ![Create an MQTT Integration 4](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/8.png)
+     ![Create an MQTT Integration 4](/images/devices-library/ready-to-go-devices/alpon-x4/8.png)
     - Click **Add** button.
 
 ### Understand the Topic Filter
@@ -206,7 +206,7 @@ docker build --platform=linux/arm64 -t thingsboard-mqtt-alpon-x4:latest .
 ### Upload the Docker Image
 
 1. Log in to the Sixfab Connect platform and navigate to the container registry section.
-![Upload the Docker Image 1](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/9.png)
+![Upload the Docker Image 1](/images/devices-library/ready-to-go-devices/alpon-x4/9.png)
 2. Click on **+ Add Container** and follow the prompts to push the container to the Sixfab Registry.
 
 > Visit the [Manage & Deploy Applications](https://docs.sixfab.com/docs/alpon-x4-manage-and-deploy-applications){:target="_blank"} page for all necessary details on pushing your container image to the Sixfab Registry.
@@ -224,10 +224,10 @@ docker build --platform=linux/arm64 -t thingsboard-mqtt-alpon-x4:latest .
      - `MQTT_PORT`: `1883`
      - `CLIENT_ID`: alponx4
      - `TOPIC`: `v1/devices/ALPON_X4/telemetry`
-     ![Deployment Configuration 1](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/10.png)
+     ![Deployment Configuration 1](/images/devices-library/ready-to-go-devices/alpon-x4/10.png)
 
 5. Click the “+ Deploy” button to start the container.
-![Deployment Configuration 2](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/11.png)
+![Deployment Configuration 2](/images/devices-library/ready-to-go-devices/alpon-x4/11.png)
 
 ## Check Data on ThingsBoard
 
@@ -235,10 +235,11 @@ Verify that telemetry data is received and displayed in ThingsBoard:
 1. Log in to your ThingsBoard instance.
 2. Navigate to **Entities > Devices** and select your ALPON X4 device.
 3. Go to the **Latest Telemetry** tab to view the temperature and humidity data sent.
-![Check Data on ThingsBoard 1](https://img.thingsboard.io/devices-library/ready-to-go-devices/alpon-x4/12.png)
+![Check Data on ThingsBoard 1](/images/devices-library/ready-to-go-devices/alpon-x4/12.png)
 
 ## Conclusion
 
 This guide demonstrated how to integrate the ALPON X4 with ThingsBoard using MQTT for real-time data collection and device control. By following the steps, you created a device in ThingsBoard, deployed an MQTT client on Sixfab Connect, and verified telemetry data.
 
 For further assistance, refer to the [ThingsBoard documentation](https://thingsboard.io/docs/){:.copy-code} or contact [Sixfab support](https://sixfab.com/contact/){:.copy-code}.
+{% include add-device-banner.liquid %}

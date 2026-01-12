@@ -1,15 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect reComputer R1000 to ThingsBoard?
-category: Other devices
-connectivity: Ethernet, WIFI, Bluetooth, 4G
-chip: R1000
-vendor: Seeed Studio
-deviceImageFileName: recomputer-r1000.png
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect reComputer R1000 to ThingsBoard?"
+redirect_to: "/devices-library/paas/recomputer-r1000/"
 ---
-
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/recomputer-r1000.md %}

@@ -3,7 +3,7 @@ trendz:
     title: Docker (Linux or Mac OS)
     description: This guide will help you to install and start Trendz Analytics using Docker on Linux or Mac OS.
     link: /docs/trendz/install/docker/
-    icon: https://img.thingsboard.io/install/platform/docker-linux-macos.svg
+    icon: /images/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
     imageTitleAttribute: Install Trendz Analytics using Docker on Linux or macOS
     imageWidth: 170
@@ -12,25 +12,25 @@ trendz:
     title: Docker (Windows)
     description: This guide will help you to install and start Trendz Analytics using Docker on Windows.
     link: /docs/trendz/install/docker-windows/
-    icon: https://img.thingsboard.io/install/platform/docker-windows.svg
+    icon: /images/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
     imageTitleAttribute: Install Trendz Analytics using Docker on Windows
     imageWidth: 96
     imageHeight: 36
   2:
     title: Ubuntu Server
-    description: This guide describes how to install Trendz Analytics on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+    description: This guide describes how to install Trendz Analytics on Ubuntu 22.04 LTS / Ubuntu 24.04 LTS.
     link: /docs/trendz/install/ubuntu/
-    icon: https://img.thingsboard.io/install/platform/ubuntu.svg
+    icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo
     imageTitleAttribute: Install Trendz Analytics on Ubuntu Server
     imageWidth: 36
     imageHeight: 36
   3:
     title: CentOS/RHEL Server
-    description: This guide describes how to install Trendz Analytics on RHEL/CentOS 7/8.
+    description: This guide describes how to install Trendz Analytics on RHEL/CentOS 8/9.
     link: /docs/trendz/install/rhel/
-    icon: https://img.thingsboard.io/install/platform/centos-redhat.svg
+    icon: /images/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
     imageTitleAttribute: Install Trendz Analytics on CentOS, RHEL.
     imageWidth: 94
@@ -39,25 +39,25 @@ trendz:
     title: Windows
     description: This guide describes how to install Trendz Analytics on a Windows machine.
     link: /docs/trendz/install/windows/
-    icon: https://img.thingsboard.io/install/platform/windows.svg
+    icon: /images/install/platform/windows.svg
     alt: Windows logo
     imageTitleAttribute: Install Trendz Analytics on Windows.
     imageWidth: 35
     imageHeight: 36
   5:
-    title: Trendz Cloud
-    description: Activate Trendz Analytics Cloud with your account to explore powerful data visualization and analytics.
+    title: Cloud
+    description: Activate Trendz Analytics with your ThingsBoard Cloud account.
     link: /docs/trendz/install/cloud/
-    icon: https://img.thingsboard.io/install/platform/trendz-cloud.svg
-    alt: Trendz Cloud logo
-    imageTitleAttribute: Activate Trendz Analytics Cloud
+    icon: /images/install/platform/trendz-cloud.svg
+    alt: ThingsBoard Cloud logo
+    imageTitleAttribute: Activate Trendz Analytics on ThingsBoard Cloud
     imageWidth: 58
     imageHeight: 36
   6:
     title: Kubernetes
     description: Deploy Trendz on your Kubernetes cluster with node affinity and resource limits. 4 CPU & 8GB RAM per instance.
     link: /docs/trendz/install/kubernetes/
-    icon: https://img.thingsboard.io/install/platform/kubernetes.svg
+    icon: /images/install/platform/kubernetes.svg
     alt: Kubernetes logo
     imageTitleAttribute: Deploy Trendz on your Kubernetes cluster
     imageWidth: 38

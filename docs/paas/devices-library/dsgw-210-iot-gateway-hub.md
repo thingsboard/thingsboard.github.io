@@ -1,16 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect DSGW-210 Smart Gateway Hub to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: Dusun
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: dsgw-210-iot-gateway-hub.jpg
-docsPrefix: paas/
+layout: docwithnav-paas
+title: "How to connect DSGW-210 Smart Gateway Hub to ThingsBoard?"
+redirect_to: "/devices-library/paas/dsgw-210-iot-gateway-hub/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/dsgw-210-iot-gateway-hub.md %}

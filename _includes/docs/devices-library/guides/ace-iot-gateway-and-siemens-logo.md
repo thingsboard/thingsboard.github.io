@@ -12,7 +12,6 @@
 
 
 ## Introduction
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The ACE Automation MQTT 4G GPS Gateway]({{deviceVendorLink}}){: target="_blank"} is a cutting-edge device that revolutionizes data communication and connectivity 
 for industrial and IoT applications. Equipped with 4G capabilities, this gateway ensures reliable and high-speed data 
 transmission over cellular networks, even in remote locations. It integrates GPS technology for real-time location 
@@ -27,6 +26,7 @@ To continue with this guide, we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
 
+
 ## Import Rule chain
 
 Download [ACE Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
@@ -35,26 +35,26 @@ To import rule chain from а JSON file, you should:
 
 {% assign importRuleChainPE = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-pe.png,
         title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-pe.png,
         title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-pe.png,
         title: Rule chain is imported.
 '
 %}
 
 {% assign importRuleChainCE = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-ce.png,
         title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-ce.png,
         title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-ce.png,
         title: Rule chain is imported.
 '
 %}
@@ -71,32 +71,32 @@ Now, we are ready to create device profile. For this, follow steps below:
 
 {% assign createDeviceProfilePE = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-pe.png,
 		title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-pe.png,
 		title: Input **Name** field with **"ACE routers"** value, and select **"ACE routers"** imported rule chain from the step above;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-pe.png,
 		title: Click on **"Transport configuration"** tab, select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**, click on **"Add"** button;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-pe.png,
 		title: Device Profile created.
     '
 %}
 
 {% assign createDeviceProfileCE = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-ce.png,
 		title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-ce.png,
 		title: Input **Name** field with **"ACE routers"** value, and select **"ACE routers"** imported rule chain from the step above;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-ce.png,
 		title: Click on **"Transport configuration"** tab, select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**, click on **"Add"** button;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-ce.png,
 		title: Device Profile created.
     '
 %}
@@ -113,32 +113,32 @@ For simplicity, we will provide the device manually using the UI:
 
 {% assign provisionDevicePE = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-pe.png,
 		title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-pe.png,
 		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-pe.png,
 		title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field. Click **"Add"** button;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-pe.png,
 		title: Device added.
     '
 %}
 
 {% assign provisionDeviceCE = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-ce.png,
 		title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-ce.png,
 		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-ce.png,
 		title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field. Click **"Add"** button;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-ce.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-ce.png,
 		title: Device added.
     '
 %}
@@ -190,14 +190,14 @@ Follow the next steps:
 
 In our case, we have the following settings:
 
-![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/modbus-tcp-settings.png)
+![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/modbus-tcp-settings.png)
 
 For configuring MQTT connection, follow the next steps:
 * Go to **Gateway** > **MQTT Configuration** > **MQTT Broker** (tab);
 * Fill in all required fields with correct credentials and other information for broker access;
 * Click on **"Save & Apply"** button.
 
-![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/mqtt-broker-settings.png)
+![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/mqtt-broker-settings.png)
 
 The next thing we have to do is configure MQTT topics for receiving and sending data:
 * Go to **Gateway** > **MQTT Configuration** > **MQTT Broker** (tab);
@@ -208,7 +208,7 @@ The next thing we have to do is configure MQTT topics for receiving and sending 
 
 In case Siemens LOGO!, we have the following topics list:
 
-![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/topic-list.png)
+![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/topic-list.png)
 
 If you are using Siemens LOGO! too, you can use the following configuration:
 {% capture gatewayCode %}
@@ -310,3 +310,4 @@ integration to retrieve data from devices connected to ACE Automation MQTT 4G GP
 After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features. 
+{% include add-device-banner.liquid %}

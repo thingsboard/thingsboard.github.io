@@ -1,0 +1,423 @@
+{
+  "title": "Warehouse Equipment Tracking Dashboard",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "a0a1e643-8fed-8382-ca4f-39dd5f0091c3": {
+        "typeFullFqn": "system.map",
+        "type": "latest",
+        "sizeX": 8.5,
+        "sizeY": 6,
+        "config": {
+          "datasources": [],
+          "showTitle": false,
+          "backgroundColor": "rgba(0, 0, 0, 0)",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "mapType": "geoMap",
+            "layers": [
+              {
+                "label": "{i18n:widgets.maps.layer.roadmap}",
+                "provider": "openstreet",
+                "layerType": "OpenStreetMap.Mapnik"
+              },
+              {
+                "label": "{i18n:widgets.maps.layer.satellite}",
+                "provider": "openstreet",
+                "layerType": "Esri.WorldImagery"
+              },
+              {
+                "label": "{i18n:widgets.maps.layer.hybrid}",
+                "provider": "openstreet",
+                "layerType": "Esri.WorldImagery",
+                "referenceLayer": "openstreetmap_hybrid"
+              }
+            ],
+            "imageSource": null,
+            "markers": [
+              {
+                "dsType": "entity",
+                "dsLabel": "",
+                "dsDeviceId": null,
+                "dsEntityAliasId": "7769d4d8-9585-0d5f-93e5-66415be9db1c",
+                "dsFilterId": null,
+                "additionalDataSources": null,
+                "additionalDataKeys": null,
+                "label": {
+                  "show": true,
+                  "type": "pattern",
+                  "pattern": "${entityName}"
+                },
+                "tooltip": {
+                  "show": true,
+                  "trigger": "click",
+                  "autoclose": true,
+                  "type": "pattern",
+                  "pattern": "<b>${entityName}</b><br/><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><b>Temperature:</b> ${temperature} °C<br/><small>See tooltip settings for details</small>",
+                  "offsetX": 0,
+                  "offsetY": -1
+                },
+                "click": {
+                  "type": "doNothing"
+                },
+                "groups": null,
+                "edit": {
+                  "enabledActions": [
+                    "move"
+                  ],
+                  "attributeScope": "SERVER_SCOPE",
+                  "snappable": false
+                },
+                "xKey": {
+                  "name": "latitude",
+                  "type": "timeseries",
+                  "label": "latitude",
+                  "color": "#2196f3",
+                  "settings": {}
+                },
+                "yKey": {
+                  "name": "longitude",
+                  "type": "timeseries",
+                  "label": "longitude",
+                  "color": "#2196f3",
+                  "settings": {}
+                },
+                "markerType": "shape",
+                "markerShape": {
+                  "shape": "markerShape1",
+                  "size": 34,
+                  "color": {
+                    "type": "constant",
+                    "color": "#307FE5"
+                  }
+                },
+                "markerIcon": {
+                  "iconContainer": "iconContainer1",
+                  "icon": "mdi:lightbulb-on",
+                  "size": 48,
+                  "color": {
+                    "type": "constant",
+                    "color": "#307FE5"
+                  }
+                },
+                "markerImage": {
+                  "type": "image",
+                  "image": "/assets/markers/shape1.svg",
+                  "imageSize": 34
+                },
+                "markerOffsetX": 0.5,
+                "markerOffsetY": 1,
+                "markerClustering": {
+                  "enable": false,
+                  "zoomOnClick": true,
+                  "maxZoom": null,
+                  "maxClusterRadius": 80,
+                  "zoomAnimation": true,
+                  "showCoverageOnHover": true,
+                  "spiderfyOnMaxZoom": false,
+                  "chunkedLoad": false,
+                  "lazyLoad": true,
+                  "useClusterMarkerColorFunction": false,
+                  "clusterMarkerColorFunction": null
+                }
+              }
+            ],
+            "polygons": [
+              {
+                "dsType": "entity",
+                "dsLabel": "",
+                "dsDeviceId": null,
+                "dsEntityAliasId": "030502c4-afe2-4a7b-2de1-14e8c87904fa",
+                "dsFilterId": null,
+                "additionalDataSources": null,
+                "additionalDataKeys": null,
+                "label": {
+                  "show": false,
+                  "type": "pattern",
+                  "pattern": "${entityName}"
+                },
+                "tooltip": {
+                  "show": false,
+                  "trigger": "click",
+                  "autoclose": true,
+                  "type": "pattern",
+                  "pattern": "<b>${entityName}</b><br/><br/><b>TimeStamp:</b> ${ts:7}",
+                  "offsetX": 0,
+                  "offsetY": -1
+                },
+                "click": {
+                  "type": "doNothing"
+                },
+                "groups": null,
+                "edit": {
+                  "enabledActions": [],
+                  "attributeScope": "SERVER_SCOPE",
+                  "snappable": false
+                },
+                "fillType": "color",
+                "fillColor": {
+                  "type": "constant",
+                  "color": "rgba(51,136,255,0.2)"
+                },
+                "fillStripe": {
+                  "weight": 3,
+                  "color": {
+                    "type": "constant",
+                    "color": "#8f8f8f"
+                  },
+                  "spaceWeight": 9,
+                  "spaceColor": {
+                    "type": "constant",
+                    "color": "rgba(143,143,143,0)"
+                  },
+                  "angle": 45
+                },
+                "fillImage": {
+                  "type": "image",
+                  "image": "/assets/widget-preview-empty.svg",
+                  "preserveAspectRatio": true,
+                  "opacity": 1,
+                  "angle": 0,
+                  "scale": 1
+                },
+                "strokeColor": {
+                  "type": "constant",
+                  "color": "#3388ff"
+                },
+                "strokeWeight": 3,
+                "polygonKey": {
+                  "name": "perimeter",
+                  "label": "perimeter",
+                  "type": "attribute",
+                  "settings": {},
+                  "color": "#2196f3"
+                }
+              }
+            ],
+            "circles": [],
+            "polylines": [],
+            "additionalDataSources": [],
+            "controlsPosition": "topleft",
+            "zoomActions": [
+              "scroll",
+              "doubleClick",
+              "controlButtons"
+            ],
+            "scales": [],
+            "dragModeButton": false,
+            "fitMapBounds": true,
+            "useDefaultCenterPosition": false,
+            "defaultCenterPosition": "0,0",
+            "defaultZoomLevel": 18,
+            "mapPageSize": 16384,
+            "mapActionButtons": [],
+            "background": {
+              "type": "color",
+              "color": "#fff",
+              "overlay": {
+                "enabled": false,
+                "color": "rgba(255,255,255,0.72)",
+                "blur": 3
+              }
+            },
+            "padding": "8px"
+          },
+          "title": "Map",
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "widgetCss": "",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "configMode": "advanced",
+          "titleFont": null,
+          "titleColor": null,
+          "margin": "0px",
+          "borderRadius": "0px",
+          "iconSize": "24px",
+          "titleIcon": "map",
+          "iconColor": "#1F6BDD",
+          "actions": {}
+        },
+        "row": 0,
+        "col": 0,
+        "id": "a0a1e643-8fed-8382-ca4f-39dd5f0091c3"
+      },
+      "f4e23751-d6f7-d38a-e2d2-ea30ea8fcb65": {
+        "typeFullFqn": "system.cards.attributes_card",
+        "type": "latest",
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "7769d4d8-9585-0d5f-93e5-66415be9db1c",
+              "dataKeys": [
+                {
+                  "name": "warehouseAreaEvent",
+                  "type": "timeseries",
+                  "label": "Last transition event",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "aggregationType": "NONE",
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "warehouseAreaStatus",
+                  "type": "timeseries",
+                  "label": "Current status",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "aggregationType": "NONE",
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {},
+          "title": "Fork lifts",
+          "decimals": null,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "dropShadow": true,
+          "enableFullscreen": true,
+          "widgetStyle": {},
+          "widgetCss": "",
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "f4e23751-d6f7-d38a-e2d2-ea30ea8fcb65"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Warehouse Equipment Tracking Dashboard",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "a0a1e643-8fed-8382-ca4f-39dd5f0091c3": {
+                "sizeX": 17,
+                "sizeY": 12,
+                "row": 0,
+                "col": 7
+              },
+              "f4e23751-d6f7-d38a-e2d2-ea30ea8fcb65": {
+                "sizeX": 7,
+                "sizeY": 6,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "layoutType": "default",
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%",
+              "minColumns": 24,
+              "viewFormat": "grid",
+              "autoFillHeight": true,
+              "rowHeight": 70,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "7769d4d8-9585-0d5f-93e5-66415be9db1c": {
+        "id": "7769d4d8-9585-0d5f-93e5-66415be9db1c",
+        "alias": "Fork Lifts",
+        "filter": {
+          "type": "deviceType",
+          "resolveMultiple": true,
+          "deviceTypes": [
+            "forklift"
+          ],
+          "deviceNameFilter": ""
+        }
+      },
+      "030502c4-afe2-4a7b-2de1-14e8c87904fa": {
+        "id": "030502c4-afe2-4a7b-2de1-14e8c87904fa",
+        "alias": "Warehouse Buildings",
+        "filter": {
+          "type": "assetType",
+          "resolveMultiple": true,
+          "assetTypes": [
+            "warehouse"
+          ],
+          "assetNameFilter": ""
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 10000,
+        "timewindowMs": 600000
+      },
+      "aggregation": {
+        "type": "AVG"
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)",
+      "showDashboardLogo": false,
+      "dashboardLogoUrl": null,
+      "hideToolbar": false,
+      "showFilters": true,
+      "showUpdateDashboardImage": true,
+      "dashboardCss": ""
+    }
+  },
+  "name": "Warehouse Equipment Tracking Dashboard",
+  "resources": []
+}

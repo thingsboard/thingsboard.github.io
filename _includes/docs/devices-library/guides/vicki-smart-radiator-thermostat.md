@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The MClimate Vicki Smart Radiator Thermostat]({{deviceVendorLink}}){: target="_blank"} is tailored specifically to improve energy efficiency, achieve substantial cost savings and reduce the CO2 footprint within all types of buildings through its remote temperature control capabilities and innovative data analytics. With seamless integration into various heating systems, the device has 99% compatibility ensuring effortless installation.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
@@ -23,6 +22,7 @@
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -56,9 +56,10 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](https://img.thingsboard.io/devices-library/lorawan-vicki-data.png)
+![LoRaWAN device data](/images/devices-library/lorawan-vicki-data.png)
 
 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -22,34 +22,12 @@
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('.pagination-wrapper').forEach(wrapper => {
-            const containerId = wrapper.dataset.containerId;
-            const filterSelector = wrapper.dataset.filterSelector;
-            const itemsSelector = wrapper.dataset.itemsToPaginate;
-            const itemsPerPage = parseInt(wrapper.dataset.itemsPerPage, 10);
-            const searchSelector = wrapper.dataset.search;
+    (function () {
+        if (window.__TB_PAGINATION_INIT__) return;
+        window.__TB_PAGINATION_INIT__ = true;
 
-            const container = document.getElementById(containerId);
-            const filterControl = document.querySelectorAll(filterSelector);
-            const searchControl = searchSelector ? document.querySelector(searchSelector) : null;
-
-            if (!container || !filterControl) return;
-
-            const paginationContainer = wrapper.querySelector('.pagination-container');
-            const showMoreBtn = wrapper.querySelector('#showMoreBtn');
-            const paginationControls = wrapper.querySelector('#pagination-controls');
-            const paginationStatus = wrapper.querySelector('#paginationStatus');
-
-            function scrollToBLock() {
-                const yOffset = -200;
-                const y = container.getBoundingClientRect().top + window.pageYOffset + yOffset;
-
-                window.scrollTo({
-                    top: y,
-                    behavior: 'smooth'
-                });
-            }
+        document.addEventListener('DOMContentLoaded', function () {
+            const paginationInstances = [];
 
             function debounce(fn, delay = 150) {
                 let timer;
@@ -59,151 +37,182 @@
                 };
             }
 
-            let activePages = [1];
+            function resolveContainer(wrapper) {
+                const local = wrapper.closest('.card-collection');
+                if (local) return local;
 
-            const doRender = function () {
-                const allItems = Array.from(container.querySelectorAll(itemsSelector));
-                const filteredCards = allItems.filter(card =>
-                    !card.classList.contains('success-story-promo') &&
-                    !card.classList.contains('filter-hidden') &&
-                    !card.classList.contains('search-hidden')
-                );
+                const containerId = wrapper.dataset.containerId;
+                if (!containerId) return null;
+                return document.getElementById(containerId);
+            }
 
-                allItems.forEach(card => card.classList.add('pagination-hidden'));
-                activePages.forEach(page => {
-                    const start = (page - 1) * itemsPerPage;
-                    const end = start + itemsPerPage;
-                    const pageItems = filteredCards.slice(start, end);
-                    pageItems.forEach(card => card.classList.remove('pagination-hidden'));
-                });
+            function initPagination(wrapper) {
+                const container = resolveContainer(wrapper);
+                if (!container) return;
 
-                const promoBlock = document.getElementById('successStoryBlock');
-                if (promoBlock) {
-                    promoBlock.remove();
-                    if (filteredCards.length > 0) {
-                        promoBlock.style.display = '';
-                        promoBlock.classList.remove('pagination-hidden');
-                        if (activePages.length > 1) {
-                            const insertionPoint = filteredCards[itemsPerPage - 1];
-                            if (insertionPoint) insertionPoint.after(promoBlock);
-                        } else {
-                            const visible = filteredCards.filter(card => !card.classList.contains('pagination-hidden'));
-                            if (visible.length > 0) visible[visible.length - 1].after(promoBlock);
-                        }
-                    } else {
-                        promoBlock.style.display = 'none';
+                const filterSelector = wrapper.dataset.filterSelector;
+                const itemsSelector = wrapper.dataset.itemsToPaginate;
+                const itemsPerPage = parseInt(wrapper.dataset.itemsPerPage, 10);
+                const searchSelector = wrapper.dataset.search;
+
+                const filterControl = filterSelector ? document.querySelectorAll(filterSelector) : [];
+                const searchControl = searchSelector ? document.querySelector(searchSelector) : null;
+
+                if (!itemsSelector || !itemsPerPage || Number.isNaN(itemsPerPage)) return;
+
+                const paginationContainer = wrapper.querySelector('.pagination-container');
+                const showMoreBtn = wrapper.querySelector('#showMoreBtn');
+                const paginationControls = wrapper.querySelector('#pagination-controls');
+                const paginationStatus = wrapper.querySelector('#paginationStatus');
+
+                function scrollToBLock() {
+                    const yOffset = -200;
+                    const y = container.getBoundingClientRect().top + window.pageYOffset + yOffset;
+                    window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+
+                let activePages = [1];
+
+                const doRender = function () {
+                    if (container.classList.contains('card-collection') && container.classList.contains('platform-hidden')) {
+                        if (paginationContainer) paginationContainer.classList.add('hidden');
+                        return;
                     }
-                }
 
-                const pageCount = Math.ceil(filteredCards.length / itemsPerPage);
-                if (filteredCards.length === 0) {
-                    if (paginationContainer) paginationContainer.classList.add('hidden');
-                    return;
-                }
-                if (paginationContainer) paginationContainer.classList.remove('hidden');
+                    const allItems = Array.from(container.querySelectorAll(itemsSelector));
 
-                const minPage = Math.min(...activePages);
-                const maxPage = Math.max(...activePages);
+                    const filteredCards = allItems.filter(card =>
+                        !card.classList.contains('success-story-promo') &&
+                        !card.classList.contains('filter-hidden') &&
+                        !card.classList.contains('search-hidden')
+                    );
 
-                if (showMoreBtn) showMoreBtn.classList.toggle('hidden', maxPage >= pageCount);
+                    allItems.forEach(card => card.classList.add('pagination-hidden'));
+                    activePages.forEach(page => {
+                        const start = (page - 1) * itemsPerPage;
+                        const end = start + itemsPerPage;
+                        filteredCards.slice(start, end).forEach(card => card.classList.remove('pagination-hidden'));
+                    });
 
-                if (paginationStatus) {
-                    paginationStatus.textContent = activePages.length > 1
-                        ? `Pages ${minPage}-${maxPage} of ${pageCount}`
-                        : `Page ${minPage} of ${pageCount}`;
-                }
+                    const pageCount = Math.ceil(filteredCards.length / itemsPerPage);
 
-                paginationControls.innerHTML = "";
+                    if (filteredCards.length === 0) {
+                        if (paginationContainer) paginationContainer.classList.add('hidden');
+                        return;
+                    }
+                    if (paginationContainer) paginationContainer.classList.remove('hidden');
 
-                for (let i = 1; i <= pageCount; i++) {
-                    const isActive = activePages.includes(i);
-                    const li = document.createElement('li');
-                    li.className = `page-item ${isActive ? 'active' : ''}`;
-                    const a = document.createElement('a');
-                    a.className = 'page-link';
-                    a.href = '#';
-                    a.innerText = i;
-                    a.addEventListener('click', (e) => {
+                    const minPage = Math.min(...activePages);
+                    const maxPage = Math.max(...activePages);
+
+                    if (showMoreBtn) showMoreBtn.classList.toggle('hidden', maxPage >= pageCount);
+
+                    if (paginationStatus) {
+                        paginationStatus.textContent = activePages.length > 1
+                            ? `Pages ${minPage}-${maxPage} of ${pageCount}`
+                            : `Page ${minPage} of ${pageCount}`;
+                    }
+
+                    if (!paginationControls) return;
+                    paginationControls.innerHTML = "";
+
+                    for (let i = 1; i <= pageCount; i++) {
+                        const isActive = activePages.includes(i);
+                        const li = document.createElement('li');
+                        li.className = `page-item ${isActive ? 'active' : ''}`;
+                        const a = document.createElement('a');
+                        a.className = 'page-link';
+                        a.href = '#';
+                        a.innerText = i;
+                        a.addEventListener('click', (e) => {
+                            e.preventDefault();
+                            activePages = [i];
+                            doRender();
+                            scrollToBLock();
+                        });
+                        li.appendChild(a);
+                        paginationControls.appendChild(li);
+                    }
+
+                    const isPrevDisabled = minPage <= 1;
+                    const prevLi = document.createElement('li');
+                    prevLi.className = `page-item ${isPrevDisabled ? 'disabled' : ''}`;
+                    const prevLink = document.createElement('a');
+                    prevLink.className = 'page-link';
+                    prevLink.href = '#';
+                    prevLink.addEventListener('click', (e) => {
                         e.preventDefault();
-                        activePages = [i];
+                        if (isPrevDisabled) return;
+                        activePages = [minPage - 1];
                         doRender();
                         scrollToBLock();
                     });
-                    li.appendChild(a);
-                    paginationControls.appendChild(li);
+                    prevLi.appendChild(prevLink);
+                    paginationControls.insertBefore(prevLi, paginationControls.firstChild);
+
+                    const isNextDisabled = maxPage >= pageCount;
+                    const nextLi = document.createElement('li');
+                    nextLi.className = `page-item ${isNextDisabled ? 'disabled' : ''}`;
+                    const nextLink = document.createElement('a');
+                    nextLink.className = 'page-link';
+                    nextLink.href = '#';
+                    nextLink.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        if (isNextDisabled) return;
+                        activePages = [maxPage + 1];
+                        doRender();
+                        scrollToBLock();
+                    });
+                    nextLi.appendChild(nextLink);
+                    paginationControls.appendChild(nextLi);
+                };
+
+                const debouncedRender = debounce(doRender, 100);
+
+                if (showMoreBtn) {
+                    showMoreBtn.addEventListener('click', function () {
+                        const pageCount = Math.ceil(
+                            container.querySelectorAll(
+                                `${itemsSelector}:not(.filter-hidden):not(.success-story-promo):not(.search-hidden)`
+                            ).length / itemsPerPage
+                        );
+                        const maxPage = Math.max(...activePages);
+                        if (maxPage < pageCount) {
+                            activePages.push(maxPage + 1);
+                            doRender();
+                        }
+                    });
                 }
 
-                const isPrevDisabled = minPage <= 1;
-                const prevLi = document.createElement('li');
-                prevLi.className = `page-item ${isPrevDisabled ? 'disabled' : ''}`;
-                const prevLink = document.createElement('a');
-                prevLink.className = 'page-link';
-                prevLink.href = '#';
-                prevLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (isPrevDisabled) return;
-                    activePages = [minPage - 1];
-                    doRender();
-                    scrollToBLock();
-                });
-                prevLi.appendChild(prevLink);
-                paginationControls.insertBefore(prevLi, paginationControls.firstChild);
+                if (filterControl && filterControl.length) {
+                    filterControl.forEach((item) => {
+                        item.addEventListener('click', function () {
+                            activePages = [1];
+                            debouncedRender();
+                        });
+                    });
+                }
 
-                const isNextDisabled = maxPage >= pageCount;
-                const nextLi = document.createElement('li');
-                nextLi.className = `page-item ${isNextDisabled ? 'disabled' : ''}`;
-                const nextLink = document.createElement('a');
-                nextLink.className = 'page-link';
-                nextLink.href = '#';
-                nextLink.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    if (isNextDisabled) return;
-                    activePages = [maxPage + 1];
-                    doRender();
-                    scrollToBLock();
-                });
-                nextLi.appendChild(nextLink);
-                paginationControls.appendChild(nextLi);
+                if (searchControl) {
+                    searchControl.addEventListener('input', function () {
+                        activePages = [1];
+                        debouncedRender();
+                    });
+                }
+
+                paginationInstances.push({ render: doRender });
+
+                debouncedRender();
+            }
+
+            document.querySelectorAll('.pagination-wrapper').forEach(initPagination);
+
+            const prevRender = window.render;
+            window.render = function () {
+                if (typeof prevRender === 'function') prevRender();
+                paginationInstances.forEach(inst => inst.render());
             };
-
-            window.render = doRender;
-
-            const debounceTimer = 100;
-
-            const debouncedRenderFilter = debounce(doRender, debounceTimer);
-            const debouncedRenderSearch = debounce(doRender, debounceTimer);
-            const debouncedInitialRender = debounce(doRender, debounceTimer);
-
-            if (showMoreBtn) {
-                showMoreBtn.addEventListener('click', function () {
-                    const pageCount = Math.ceil(
-                        container.querySelectorAll(
-                            `${itemsSelector}:not(.filter-hidden):not(.success-story-promo):not(.search-hidden)`
-                        ).length / itemsPerPage
-                    );
-                    const maxPage = Math.max(...activePages);
-                    if (maxPage < pageCount) {
-                        activePages.push(maxPage + 1);
-                        doRender();
-                    }
-                });
-            }
-
-            filterControl.forEach((item) => {
-                item.addEventListener('click', function () {
-                    activePages = [1];
-                    debouncedRenderFilter();
-                });
-            });
-
-            if (searchControl) {
-                searchControl.addEventListener('input', function () {
-                    activePages = [1];
-                    debouncedRenderSearch();
-                });
-            }
-
-            debouncedInitialRender();
         });
-    });
+    })();
 </script>
+

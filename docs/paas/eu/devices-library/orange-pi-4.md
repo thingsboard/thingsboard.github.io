@@ -1,18 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect Orange Pi 4 to ThingsBoard?
-category: Single-board computers
-chip: Rockchip RK3399
-connectivity: Ethernet, WIFI, Bluetooth
-vendor: Orange Pi
-deviceImageFileName: orange-pi-4.jpg
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect Orange Pi 4 to ThingsBoard?"
+redirect_to: "/devices-library/paas/orange-pi-4/"
 ---
-
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsTag=page.docsTag %}
-{% include /docs/devices-library/guides/orange-pi-4.md %}

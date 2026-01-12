@@ -8,7 +8,6 @@
   '
   %}
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 **CPU**: 2 Cores A7@1.2G<br>
 **Memory**: 512M<br>
 **eMMC**: 4G<br>
@@ -32,6 +31,7 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+
 ## Gateway connection
 
 According to the official user manual and this guide you can connect the gateway to the networkandthismanual mainly implements a process that simulate data, assemble it into JSON format, and report it totheThingsBoard through MQTT. 
@@ -42,22 +42,22 @@ According to the official user manual and this guide you can connect the gateway
 
 **A.** Wiring EG8200 with Sensor
 
-![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/wiring.png)
+![image](/images/devices-library/ready-to-go-devices/eg8200-gateway/wiring.png)
 
 **B.** Visit default IP address 192.168.88.1.of EG8200 to Configure for reading temperature and humidity data.
 
 {% assign collectModbusRTUData = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/1.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/1.png,
         title: Drag out a **modbus read** node.
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/2.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/2.png,
         title: Configure the sensor parameters and choose RS485-1.
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/3.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/3.png,
         title: Drag out the **inject node** and **debug node** from the left node bar to trigger the process.
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/4.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/4.png,
         title: Click the inject node will show that the temperature and humidity data of the sensor are printed in the log bar on the right.
 '
 %}
@@ -71,7 +71,7 @@ The identifiers of the data points on the platform and the KEY names in JSON for
 
 {% assign encapsulateDataToConformPlatform = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/5.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/5.png,
         title: The identifiers of the data points on the platform and the KEY names in JSON format reported by the EG8200 are consistent. Therefore, in this example, the data collected by the EG8200 is named as the KEY value for JSON formatting.
 '
 %}
@@ -92,7 +92,7 @@ Add a new MQTT publishing node, refer to the second step of platform configurati
 
 {% assign mqttReporting = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/6.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/6.png,
         title: Add a new MQTT publishing node, refer to the second step of platform configuration to configure the MQTT link information.
 '
 %}
@@ -110,10 +110,10 @@ Add a new MQTT publishing node, refer to the second step of platform configurati
 
 {% assign addDevice = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/7.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/7.png,
         title: Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section. Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu.
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/8.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/8.png,
         title: Enter a device name and click "Add".
 '
 %}
@@ -126,10 +126,10 @@ Click on the created device and fill in the configuration information in the fol
 
 {% assign configureMQTT = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/9.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/9.png,
         title: Click on the created device and fill in the configuration information in the following figure into the gateway.
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/10.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/10.png,
         title: The device ID is the MQTT client ID and the access token is the MQTT username.
 '
 %}
@@ -142,7 +142,7 @@ Click the created device and find the latest telemetry data received by the plat
 
 {% assign verifyDataTransmission = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/eg8200-gateway/11.png,
+        image: /images/devices-library/ready-to-go-devices/eg8200-gateway/11.png,
         title: Click the created device and find the latest telemetry data received by the platform.
 '
 %}
@@ -152,3 +152,4 @@ Click the created device and find the latest telemetry data received by the plat
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -1,14 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect Valve Positioning Sensor to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: Lansitec
-deviceImageFileName: valve-positioning-sensor.png
+layout: docwithnav
+title: "How to connect Valve Positioning Sensor to ThingsBoard?"
+redirect_to: "/devices-library/ce/valve-positioning-sensor/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/valve-positioning-sensor.md %}

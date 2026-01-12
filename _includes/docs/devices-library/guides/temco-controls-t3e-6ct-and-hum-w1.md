@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} is general purpose input / ouput modules for building 
 integrators. Available in several input/output configurations, the T3 module provide convenient termination for field 
 devices and interfacing to your HVAC, lighting, temperature sensors, and other typical building automation 
@@ -23,6 +22,7 @@ To continue with this guide, we will need the following:
 {{ prerequisites }}
 - [ThingsBoard IoT Gateway](/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
+
 
 ## Devices connection
 
@@ -37,10 +37,10 @@ over Ethernet. For this purpose, use the following steps:
 
 {% assign configuringDevice = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
+        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
         title: Connect T3E-6CT to PC by Ethernet cable and start T3000 software. Click the button "**Search**" to scan your network, the following view will appear;
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-configuring-2.png,
+        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-configuring-2.png,
         title: When T3E-6CT will discover, close the view.
 ' 
 %}
@@ -64,9 +64,9 @@ Device Telemetry Tab:
 - Navigate to the telemetry tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
 {% else %}
-![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
 {% endif %}
 
 Let’s display Temco T3E-6CT time series on a dashboard. For this purpose, you can create your own dashboard with your 
@@ -85,3 +85,4 @@ sensor to ThingsBoard. After connecting the devices to the gateway, you will be 
 from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features.
+{% include add-device-banner.liquid %}

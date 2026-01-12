@@ -13,7 +13,6 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UG67 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} UG67 is a robust 8-channel outdoor LoRaWAN® gateway.  
 Adopting SX1302 LoRa chip and high-performance quad-core CPU, UG67 supports connection with more than 2000 nodes.  
 UG67 has line of sight up to 15 km and IP67 waterproof case, which is ideally suited to smart agriculture, smart metering and many other outdoor applications.  
@@ -39,6 +38,7 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+
 ## Gateway connection
 
 According to the [official user manual](https://resource.milesight.com/milesight/iot/document/ug67-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
@@ -58,7 +58,7 @@ According to the [official user manual](https://resource.milesight.com/milesight
 
 {% assign gatewayGeneralSettings = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
+        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
         title: Now you have ability to configure the gateway.
 '%}
 
@@ -66,7 +66,7 @@ According to the [official user manual](https://resource.milesight.com/milesight
 
 {% assign gatewayPacketForwarderTab = '
     ===
-        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
+        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
         title: Open **Packet Forwarder** in the left menu and save **Gateway EUI** and **Gateway ID**, we will need them to create a gateway on network server.  
 '%}
 
@@ -95,3 +95,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include add-device-banner.liquid %}

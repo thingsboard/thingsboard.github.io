@@ -1,0 +1,10 @@
+{
+  "name": "Zone",
+  "description": null,
+  "image": null,
+  "defaultRuleChainId": null,
+  "defaultDashboardId": null,
+  "defaultQueueName": null,
+  "defaultEdgeRuleChainId": null,
+  "default": false
+}

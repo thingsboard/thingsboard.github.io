@@ -8,7 +8,30 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
-## v1.14.0 (Now 6, 2025)
+## v1.15.0 (January 20, 2026)
+
+**Improvements:**
+
+* Implemented bidirectional communication between Trendz and ThingsBoard.
+* Switched Trendz communication with ThingsBoard from JWT tokens to API tokens; removed signing key.
+* Implemented licensing logic v2.
+* Migrated Trendz Widget Bundle and JS summary module to sysadmin-level.
+* Implemented auto-update for Trendz Widget Bundle and JS summary module.
+* Added Advanced Analytics View widget, replacing Trendz View Static and Trendz View Latest widgets.
+* Unified Trendz update scripts to match ThingsBoard style.
+* Added more information on the Task page.
+* Removed external font dependencies.
+* Improved anomaly model build and refresh performance.
+
+**Bug fixes:**
+
+* Fixed anomalies model rebuild functionality
+* Fixed horizontal chart layout rendering on dashboards
+* Fixed loader duplication issue in Mozilla Firefox
+* Fixed freeze issue under high load.
+* Resolved all critical and high severity vulnerabilities.
+
+## v1.14.0 (November 6, 2025)
 
 **Improvements:**
 

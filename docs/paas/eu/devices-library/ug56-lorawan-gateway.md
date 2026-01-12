@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect UG56 LoRaWAN® Gateway to ThingsBoard?
-category: Other devices
-connectivity: HTTP, MQTT, UDP, NB-IoT, LTE-M, LoRaWAN®
-vendor: Milesight
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: ug56-lorawan-gateway.png
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect UG56 LoRaWAN® Gateway to ThingsBoard?"
+redirect_to: "/devices-library/paas/ug56-lorawan-gateway/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsTag=page.docsTag %}
-{% include /docs/devices-library/guides/ug56-lorawan-gateway.md %}

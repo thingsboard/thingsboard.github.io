@@ -44,16 +44,25 @@
                                 </div>
                             </li>
                         {% endif %}
-                        {% for filter in item.filters %}
-                            <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
-                                <input class="pagination-render-trigger" type="checkbox" id="{{ filter }}" value="{{ filter }}" data-cat="{{ item.label | downcase | replace: ' ', '-' }}">
-                                <label class="pagination-render-trigger" for="{{ filter }}">{{ filter }}</label>
-                            </li>
-                        {% endfor %}
-                        {% if filters.size > 10 %}
-                            <li>
-                                <button type="button" class="toggle-extra-btn">More</button>
-                            </li>
+                        {% if item.selectPlatfrom %}
+                            {% for selectFilter in item.filters %}
+                                <li class="big-filter-section-filter">
+                                    <input class="pagination-render-trigger" id="{{ selectFilter.platform }}" type="radio" value="{{ selectFilter.platform }}" data-cat="{{ selectFilter.platform }}">
+                                    <label class="pagination-render-trigger" for="{{ selectFilter.platform }}">{{ selectFilter.label }}</label>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            {% for filter in item.filters %}
+                                <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
+                                    <input class="pagination-render-trigger" type="checkbox" id="{{ filter }}" value="{{ filter }}" data-cat="{{ item.label | downcase | replace: ' ', '-' }}">
+                                    <label class="pagination-render-trigger" for="{{ filter }}">{{ filter }}</label>
+                                </li>
+                            {% endfor %}
+                            {% if filters.size > 10 %}
+                                <li>
+                                    <button type="button" class="toggle-extra-btn">More</button>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     </ul>
                 </div>

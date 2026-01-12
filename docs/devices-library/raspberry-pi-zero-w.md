@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect Raspberry Pi Zero W to ThingsBoard?
-category: Single-board computers
-chip: BCM2835
-connectivity: WIFI, Bluetooth, BLE
-vendor: Raspberry
-deviceImageFileName: raspberry-pi-zero-w.jpg
-
+layout: docwithnav
+title: "How to connect Raspberry Pi Zero W to ThingsBoard?"
+redirect_to: "/devices-library/ce/raspberry-pi-zero-w/"
 ---
-
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/raspberry-pi-zero-w.md %}
