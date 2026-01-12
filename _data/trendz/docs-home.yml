@@ -99,7 +99,7 @@ toc:
   section:
     - title: Trendz AI Assistant
       path: /docs/trendz/ai-assistance-overview/
-    - title: AI Assistant Widget
+    - title: Advanced analytics Chat Assistant widget
       path: /docs/trendz/ai-assistance-widget/
     - title: AI Widget Summary
       path: /docs/trendz/ai-widget-summary/
@@ -109,7 +109,7 @@ toc:
       path: /docs/trendz/custom-ai-model-configuration/
 - title: Share views
   section:
-    - title: Trendz widget bundle
+    - title: Advanced analytics Bundle
       path: /docs/trendz/trendz-bundle/
     - title: Add on dashboard
       path: /docs/trendz/embed-visuals/

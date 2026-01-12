@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
-title: AI Assistance Widget
-description: Step-by-step guide to interact with Trendz AI Assistance Widget.
+title: Advanced analytics Chat Assistant widget
+description: Step-by-step guide to interact with Advanced analytics Chat Assistant widget.
 
 trendz-assistance-chat-example:
   0: 
@@ -59,10 +59,10 @@ trendz-assistance-add-chat-widget:
     title: Click + Add widget
   1:
     image: /images/trendz/ai/chat-widget/add-chat-widget-2.png
-    title: Select Trendz Bundle
+    title: Select Advanced analytics Bundle
   2:
     image: /images/trendz/ai/chat-widget/add-chat-widget-3.png
-    title: Select Trendz Chat Assistant
+    title: Select Advanced analytics Chat Assistant
   3:
     image: /images/trendz/ai/chat-widget/add-chat-widget-4.png
     title: Choose the second alias as the Entity alias. Add Name as the Data key.
@@ -127,7 +127,7 @@ It can be added to a dashboard in ThingsBoard and provides an easy way to ask qu
 
 Below, we will provide a detailed guide on how to use the assistant with aliases.
 
-## Trendz Chat Assistant with Alias
+## Advanced analytics Chat Assistant with Alias
 
 ### Step 1. Creating a Dashboard
   * Go to Dashboards -> Add Dashboard -> Create New Dashboard.
@@ -158,14 +158,15 @@ Below, we will provide a detailed guide on how to use the assistant with aliases
 
 {% include images-gallery.html imageCollection="trendz-assistance-add-table" %}
 
-### Step 4. Adding Trendz Chat Assistant Widget
+### Step 4. Adding advanced Analytics Chat Assistant Widget
+
   * Click **+ Add widget**.
-  * Select **Trendz Bundle**. (If you do not see Trendz Bundle, refer to the [Trendz Bundle page](/docs/trendz/trendz-bundle/).
-  * Select **Trendz Chat Assistant**.
+  * Select **Advanced analytics Bundle**.
+  * Select **Advanced analytics Chat Assistant**.
   * Choose the second alias as the **Entity alias**.
   * Add *Name* as the **Data key**.
   * Go to the Appearance section and enter **Filter name** fields, then click **Add**.
-  * Ensure the Trendz Chat Assistant Widget is added. Click **Save**.
+  * Ensure the Advanced analytics Chat Assistant Widget is added. Click **Save**.
 
 {% include images-gallery.html imageCollection="trendz-assistance-add-chat-widget" %}
 
