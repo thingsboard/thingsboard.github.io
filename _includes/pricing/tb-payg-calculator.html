@@ -24,12 +24,11 @@
                             <input type="range" id="sm-devicesSlider" min="0" max="5" step="0.01" value="0" class="slider" data-sm-slider="devices">
                             <div class="tick-marks">
                                 <div class="tick-mark" data-index="0"><span class="tick"></span><span class="tick-label">10</span></div>
-                                <div class="tick-mark" data-index="1"><span class="tick"></span><span class="tick-label">100</span></div>
-                                <div class="tick-mark" data-index="2"><span class="tick"></span><span class="tick-label">500</span></div>
-                                <div class="tick-mark" data-index="3"><span class="tick"></span><span class="tick-label">1K</span></div>
-                                <div class="tick-mark" data-index="4"><span class="tick"></span><span class="tick-label">2K</span></div>
-                                <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
-                            </div>
+                                <div class="tick-mark" data-index="1"><span class="tick"></span><span class="tick-label">50</span></div>
+                                <div class="tick-mark" data-index="2"><span class="tick"></span><span class="tick-label">100</span></div>
+                                <div class="tick-mark" data-index="3"><span class="tick"></span><span class="tick-label">500</span></div>
+                                <div class="tick-mark" data-index="4"><span class="tick"></span><span class="tick-label">1K</span></div>
+                                <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>                            </div>
                         </div>
                     </div>
                     <div class="instances-section">
@@ -43,7 +42,7 @@
                                 </h4>
                                 <p id="smProdInstancesDescription">Maker includes 1 instance. Choose Prototype plan to add more for high availability (HA) and reliability.</p>
                             </div>
-                            <div class="stepper-control" id="smProdInstancesStepper">
+                            <div class="stepper-control unset-width" id="smProdInstancesStepper">
                                 <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease production instances">−</button>
                                 <input type="number" value="1" min="1" id="smProdInstances" aria-label="Production instances count" disabled>
                                 <button type="button" class="stepper-btn plus" data-action="increment" disabled aria-label="Increase production instances">+</button>
@@ -59,7 +58,7 @@
                                 </h4>
                                 <p id="smDevInstancesDescription">Choose Prototype plan to add dev instances. Safely test new features without impacting your live data.</p>
                             </div>
-                            <div class="stepper-control" id="smDevInstancesStepper">
+                            <div class="stepper-control unset-width" id="smDevInstancesStepper">
                                 <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease development instances">−</button>
                                 <input type="number" value="0" min="0" id="smDevInstances" aria-label="Development instances count" disabled>
                                 <button type="button" class="stepper-btn plus" data-action="increment" disabled aria-label="Increase development instances">+</button>
@@ -67,7 +66,7 @@
                         </div>
                         <div class="white-labeling-prompt" id="smWhiteLabelingPrompt">
                             <span class="prompt-text">Need White Labeling?</span>
-                            <button type="button" class="prompt-link" id="smChoosePrototype">Choose Prototype Plan</button>
+                            <button type="button" class="prompt-link" id="smChoosePrototype">Choose Pilot Plan</button>
                         </div>
                     </div>
                     <div class="input-group addons">
@@ -97,7 +96,7 @@
                                 <p class="addon-description" id="smEdgeDescription">Process data where it is collected.</p>
                                 <div class="addon-counter hidden" data-sm-addon-counter="edgeComputing" id="smEdgeCounter">
                                     <label>Edge Instances</label>
-                                    <div class="stepper-control">
+                                    <div class="stepper-control unset-width">
                                         <button type="button" class="stepper-btn minus" data-action="decrement" disabled aria-label="Decrease edge instances">−</button>
                                         <input type="number" value="1" min="1" id="smEdgeInstances" aria-label="Edge instances count">
                                         <button type="button" class="stepper-btn plus" data-action="increment" aria-label="Increase edge instances">+</button>
@@ -152,26 +151,42 @@
 </div>
 <script>
     const tbSmPlans = {{ smPlans }};
-    const TB_SM_THRESHOLDS = [10, 100, 500, 1000, 2000];
+    const TB_SM_THRESHOLDS = [10, 50, 100, 500, 1000];
     const TB_SM_MAX_DEVICES = 1000000;
+    const TB_SM_ENTERPRISE_THRESHOLD = 50000;
     const TB_SM_DESCRIPTIONS = {
-        Maker: { production: 'Maker includes 1 instance. Choose Prototype plan to add more for high availability (HA) and reliability.', development: 'Choose Prototype plan to add dev instances. Safely test new features without impacting your live data.' },
-        Prototype: { production: 'Your plan includes 1 instance. Add a 2nd instance for high availability (HA) to prevent downtime.', development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.' },
-        Startup: { production: 'Your 2 instances provide HA. Add more to scale your application and handle a larger processing load.', development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.' },
-        Business: { production: 'Your plan includes 3 instances for HA. Add more at any time to horizontally scale your solution.', development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.' },
-        'Business+': { production: 'Your plan includes 3 instances for HA. Add more at any time to horizontally scale your solution.', development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.' }
+        Maker: {
+            production: 'Maker includes 1 instance. Choose Prototype plan to add more for high availability (HA) and reliability.',
+            development: 'Choose Prototype plan to add dev instances. Safely test new features without impacting your live data.'
+        },
+        Prototype: {
+            production: 'Your plan includes 1 instance. Add a 2nd instance for high availability (HA) to prevent downtime.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        },
+        Pilot: {
+            production: 'Your plan includes 1 instance. Add a 2nd instance for high availability (HA) to prevent downtime.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        },
+        Startup: {
+            production: 'Your 2 instances provide HA. Add more to scale your application and handle a larger processing load.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        },
+        Business: {
+            production: 'Your plan includes 3 instances for HA. Add more at any time to horizontally scale your solution.',
+            development: 'Add dedicated instances for your dev, test, and CI/CD workflows. Keep your production data clean.'
+        }
     };
 
     let tbSmState = {
-        clipboardMessage: '', // Renamed to match external downloadSummary util
+        clipboardMessage: '',
         currentPlan: null,
         debounceTimer: null,
         deviceCount: 10,
         prodInstances: 1,
         devInstances: 0,
         addons: {
-            edge: { enabled: true, count: 1 },
-            trendz: { enabled: true },
+            edge: { enabled: false, count: 1 },
+            trendz: { enabled: false },
             mobile: { enabled: false }
         }
     };
@@ -220,9 +235,7 @@
     };
 
     const tbSmCopy = (btn) => copyToClipboard(btn, tbSmState.clipboardMessage);
-
     const tbSmDownload = () => {
-        // Calls the external global downloadSummary function with our state
         if (typeof downloadSummary === 'function') {
             downloadSummary(tbSmState);
         }
@@ -230,25 +243,25 @@
 
     const tbSmGetPlan = (devices) => {
         if (devices <= 10) return tbSmPlans.plans.find(p => p.name === 'Maker');
-        if (devices <= 100) return tbSmPlans.plans.find(p => p.name === 'Prototype');
+        if (devices <= 50) return tbSmPlans.plans.find(p => p.name === 'Prototype');
+        if (devices <= 100) return tbSmPlans.plans.find(p => p.name === 'Pilot');
         if (devices <= 500) return tbSmPlans.plans.find(p => p.name === 'Startup');
-        if (devices <= 1000) return tbSmPlans.plans.find(p => p.name === 'Business');
-        return tbSmPlans.plans.find(p => p.name === 'Business+');
+        return tbSmPlans.plans.find(p => p.name === 'Business');
     };
 
     const tbSmSliderToDevices = (value) => {
         if (value <= 4) {
             return TB_SM_THRESHOLDS[Math.min(Math.round(value), TB_SM_THRESHOLDS.length - 1)];
         }
-        return Math.round(2000 + (value - 4) * (TB_SM_MAX_DEVICES - 2000));
+        return Math.round(1000 + (value - 4) * (TB_SM_MAX_DEVICES - 1000));
     };
 
     const tbSmDevicesToSlider = (devices) => {
-        if (devices <= 2000) {
+        if (devices <= 1000) {
             const index = TB_SM_THRESHOLDS.findIndex(t => devices <= t);
             return index !== -1 ? index : 4;
         }
-        return 4 + (devices - 2000) / (TB_SM_MAX_DEVICES - 2000);
+        return 4 + (devices - 1000) / (TB_SM_MAX_DEVICES - 1000);
     };
 
     function tbSmInitTicks() {
@@ -257,14 +270,12 @@
             if (!container) return;
             const sliderInput = container.querySelector('input.slider');
             if (!sliderInput) return;
-
             const sliderWidth = sliderInput.offsetWidth;
             const thumbWidth = 25;
             let trackRatio = 0;
             if (sliderWidth > 0) {
                 trackRatio = thumbWidth / sliderWidth;
             }
-
             container.querySelectorAll('.tick-mark').forEach((tick, index, arr) => {
                 const relativePos = index / (arr.length - 1);
                 const percent = ((trackRatio / 2) + (relativePos * (1 - trackRatio))) * 100;
@@ -275,7 +286,8 @@
 
     const tbSmUpdateUI = (plan) => {
         const isMaker = plan.name === 'Maker';
-        const descriptions = TB_SM_DESCRIPTIONS[plan.name] || TB_SM_DESCRIPTIONS['Business+'];
+        const hasWL = plan.wl === true;
+        const descriptions = TB_SM_DESCRIPTIONS[plan.name] || TB_SM_DESCRIPTIONS['Business'];
         tbSmUi.desc.prod.textContent = descriptions.production;
         tbSmUi.desc.dev.textContent = descriptions.development;
 
@@ -296,7 +308,8 @@
         setStepperState(tbSmUi.steppers.prod, tbSmUi.inputs.prod, tbSmState.prodInstances, plan.includedProdInstances, isMaker);
         setStepperState(tbSmUi.steppers.dev, tbSmUi.inputs.dev, tbSmState.devInstances, 0, isMaker);
 
-        tbSmUi.wrappers.wlPrompt.classList.toggle('hidden', !isMaker);
+        // Show WL prompt only if current plan doesn't have WL
+        tbSmUi.wrappers.wlPrompt.classList.toggle('hidden', hasWL);
         tbSmUpdateAddons(plan);
     };
 
@@ -312,14 +325,13 @@
                 toggle.disabled = true;
                 if (counterEl) counterEl.classList.add('hidden');
                 if (descEl) descEl.textContent = 'Process data where it is collected.';
-                tbSmState.addons[key].enabled = true;
                 if (tbSmState.addons[key].count) tbSmState.addons[key].count = 1;
             } else {
                 card.classList.remove('addon-free');
                 if (badge) badge.classList.add('hidden');
                 toggle.disabled = false;
+                toggle.checked = isEnabled;
                 card.classList.toggle('active', isEnabled);
-
                 if (key === 'edge') {
                     if (isEnabled) {
                         tbSmState.addons.edge.count = Math.max(tbSmState.addons.edge.count, plan.edgeInstancesIncluded);
@@ -384,17 +396,25 @@
 
     const tbSmCalculate = () => {
         const devices = tbSmState.deviceCount;
+
+        // Check if enterprise threshold reached
+        if (devices >= TB_SM_ENTERPRISE_THRESHOLD) {
+            tbSmDisplayEnterprise(devices);
+            return;
+        }
+
         const plan = tbSmGetPlan(devices);
         tbSmState.currentPlan = plan;
         tbSmUpdateUI(plan);
 
         const isMaker = plan.name === 'Maker';
-        const isBusinessPlus = plan.name === 'Business+';
+        const isBusiness = plan.name === 'Business';
+        const hasWL = plan.wl === true;
 
         let totalPrice = plan.price;
         let extraDevices = 0, extraDevicesCost = 0;
 
-        if (isBusinessPlus && devices > plan.includedDevices) {
+        if (isBusiness && devices > plan.includedDevices) {
             extraDevices = devices - plan.includedDevices;
             extraDevicesCost = extraDevices * plan.extraDevicePrice;
             totalPrice += extraDevicesCost;
@@ -409,7 +429,7 @@
 
         const breakdown = {};
 
-        if (tbSmState.addons.edge.enabled) {
+        if (tbSmState.addons.edge.enabled || isMaker) {
             if (isMaker) {
                 breakdown.edge = { isFree: true, cost: 0, total: 1, included: 1 };
             } else {
@@ -422,14 +442,21 @@
             }
         }
 
-        if (tbSmState.addons.trendz.enabled) {
+        if (tbSmState.addons.trendz.enabled || isMaker) {
             if (isMaker) {
-                breakdown.trendz = { isFree: true, cost: 0 };
+                breakdown.trendz = { isFree: true, cost: 0, includedDevices: plan.includedDevices };
             } else {
-                const trendzExtraCost = (isBusinessPlus && extraDevices > 0 && plan.trendzExtraDevicePrice) ? extraDevices * plan.trendzExtraDevicePrice : 0;
+                const trendzExtraCost = (isBusiness && extraDevices > 0 && plan.trendzExtraDevicePrice) ? extraDevices * plan.trendzExtraDevicePrice : 0;
                 const trendzTotal = plan.trendzMonthPrice + trendzExtraCost;
                 totalPrice += trendzTotal;
-                breakdown.trendz = { isFree: false, base: plan.trendzMonthPrice, extra: extraDevices, extraCost: trendzExtraCost, cost: trendzTotal };
+                breakdown.trendz = {
+                    isFree: false,
+                    base: plan.trendzMonthPrice,
+                    includedDevices: plan.includedDevices,
+                    extra: extraDevices,
+                    extraCost: trendzExtraCost,
+                    cost: trendzTotal
+                };
             }
         }
 
@@ -438,18 +465,46 @@
             breakdown.mobile = { cost: tbSmPlans.mobileApp, setup: tbSmPlans.mobileAppSetup };
         }
 
-        tbSmDisplay({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusinessPlus });
+        tbSmDisplay({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusiness, hasWL });
     };
 
-    const tbSmCreateItem = (label, value, tooltip, noTooltip) => `
+    const tbSmCreateItem = (label, value, tooltip, skipPlaceholder) => `
         <div class="result-item">
             <span class="result-label">${label}:</span>
-            <span class="result-value${noTooltip ? ' no-tooltip' : ''}">
-                ${value}${tooltip ? `<span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltip}</span></span>` : ''}
+            <span class="result-value">
+                ${value}${tooltip ? `<span class="tooltip">${infoIcon}<span class="tooltip-text">${tooltip}</span></span>` : (skipPlaceholder ? '' : `<span class="tooltip-placeholder"></span>`)}
             </span>
         </div>`;
 
-    const tbSmDisplay = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusinessPlus }) => {
+    const tbSmDisplayEnterprise = (devices) => {
+        tbSmUi.results.innerHTML = `
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}</div>
+                    </div>
+                </div>
+                <h4 class="wrap">Your setup is seriously impressive.</h4>
+            </div>
+            <div class="results-scroll-container">
+                <div class="results-section">
+                    <div class="section-header">
+                        <span class="section-title">Requested Devices:</span>
+                        <span class="section-value">${formatNumber(devices)}</span>
+                    </div>
+                </div>
+                <p class="contact-us-text">Please contact our sales team for a custom solution tailored to your needs.</p>
+            </div>
+            <div class="results-footer">
+                <a id="smContactUs" href="/docs/contact-us/" class="button">Contact Us</a>
+            </div>`;
+
+        tbSmState.clipboardMessage = `Enterprise Request\n- Devices: ${formatNumber(devices)}\n\nPlease contact sales for a custom solution.`;
+        document.getElementById('smCopyButton')?.addEventListener('click', e => tbSmCopy(e.currentTarget));
+    };
+
+    const tbSmDisplay = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusiness, hasWL }) => {
         let detailsHtml = `
             <div class="results-section expandable" data-section="planDetails">
                 <div class="section-header" data-toggle="planDetails">
@@ -460,28 +515,27 @@
                     </span>
                 </div>
                 <div class="section-content">
-                    ${tbSmCreateItem('Included Devices', formatNumber(plan.includedDevices), null, true)}
+                    ${tbSmCreateItem('Included Devices', formatNumber(plan.includedDevices))}
                     ${tbSmCreateItem('Included Prod Instances', formatNumber(plan.includedProdInstances))}
-                    ${tbSmCreateItem('White Labeling', `<span class="badge ${isMaker ? 'disabled' : 'enabled'}">${isMaker ? 'Disabled' : 'Enabled'}</span>`)}
+                    ${tbSmCreateItem('White Labeling', `<span class="badge ${hasWL ? 'enabled' : 'disabled'}">${hasWL ? 'Enabled' : 'Disabled'}</span>`, null, true)}
                     ${tbSmCreateItem('Base Price', formatCurrency(plan.price), 'Monthly base price')}
         `;
 
-        if (isBusinessPlus && extraDevices > 0) {
+        if (isBusiness && extraDevices > 0) {
             detailsHtml += tbSmCreateItem('Extra Devices', formatNumber(extraDevices), 'Devices beyond included');
-            detailsHtml += tbSmCreateItem('Extra Cost', formatCurrency(extraDevicesCost), `${formatNumber(extraDevices)} × ${formatCurrency(plan.extraDevicePrice)}`);
+            detailsHtml += tbSmCreateItem('Extra Devices Cost', formatCurrency(extraDevicesCost), `${formatNumber(extraDevices)} × ${formatCurrency(plan.extraDevicePrice)}`);
         }
         if (!isMaker && extraProd > 0) {
-            detailsHtml += tbSmCreateItem('Extra Prod Instances', formatNumber(extraProd), 'Additional instances');
-            detailsHtml += tbSmCreateItem('Extra Prod Cost', formatCurrency(extraProdCost), `${formatNumber(extraProd)} × ${formatCurrency(plan.extraProdInstancePrice)}`);
+            detailsHtml += tbSmCreateItem('Extra Prod Instances', formatNumber(extraProd), 'Additional production instances');
+            detailsHtml += tbSmCreateItem('Extra Prod Instances Cost', formatCurrency(extraProdCost), `${formatNumber(extraProd)} × ${formatCurrency(plan.extraProdInstancePrice)}`);
         }
         if (!isMaker && tbSmState.devInstances > 0) {
-            detailsHtml += tbSmCreateItem('Dev Instances', formatNumber(tbSmState.devInstances));
-            detailsHtml += tbSmCreateItem('Dev Cost', formatCurrency(devCost), `${formatNumber(tbSmState.devInstances)} × ${formatCurrency(plan.devQaExtraInstancePrice)}`);
+            detailsHtml += tbSmCreateItem('Extra Dev Instances', formatNumber(tbSmState.devInstances), 'Development/QA instances');
+            detailsHtml += tbSmCreateItem('Extra Dev Instances Cost', formatCurrency(devCost), `${formatNumber(tbSmState.devInstances)} × ${formatCurrency(plan.devQaExtraInstancePrice)}`);
         }
-
         detailsHtml += '</div></div>';
 
-        const addonsHtml = Object.keys(breakdown).length ? tbSmGenAddons(breakdown, plan, isMaker) : '';
+        const addonsHtml = tbSmGenAddons(breakdown, plan, isMaker);
 
         let tooltips = [`${formatCurrency(plan.price)} (base)`];
         if (extraDevicesCost) tooltips.push(`${formatCurrency(extraDevicesCost)} (extra devices)`);
@@ -492,20 +546,20 @@
         if (breakdown.mobile) tooltips.push(`${formatCurrency(breakdown.mobile.cost)} (Mobile)`);
 
         tbSmUi.results.innerHTML = `
-            <div class="results-scroll-container">
-                <div class="card-header">
-                    <div class="header-top">
-                        <h3>Calculation summary</h3>
-                        <div class="header-actions">
-                            <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}</div>
-                            <div id="smDownloadButton" class="icon-button" title="Download">${downloadIcon}</div>
-                        </div>
-                    </div>
-                    <div class="optimal-plan-row">
-                        <span>Subscription plan:</span>
-                        <span class="plan-link">${plan.name}</span>
+            <div class="card-header">
+                <div class="header-top">
+                    <h3>Calculation summary</h3>
+                    <div class="header-actions">
+                        <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="smDownloadButton" class="icon-button" title="Download">${downloadIcon}</div>
                     </div>
                 </div>
+                <div class="optimal-plan-row">
+                    <span>Subscription plan:</span>
+                    <span class="plan-link">${plan.name}</span>
+                </div>
+            </div>
+            <div class="results-scroll-container">
                 ${detailsHtml}
                 <div class="addons-separator"><span>Add-ons</span></div>
                 ${addonsHtml}
@@ -529,55 +583,77 @@
 
     const tbSmGenAddons = (breakdown, plan, isMaker) => {
         let html = '';
-        const section = (id, title, valueHtml, classes, extraContent) => `
-            <div class="results-section ${classes}" data-section="${id}">
-                <div class="section-header" ${classes.includes('expandable') ? `data-toggle="${id}"` : ''}>
-                    <span class="section-title-with-chevron ${classes.includes('disabled') ? 'addon-disabled-chevron' : ''}">
-                        ${title} ${classes.includes('expandable') ? chevronUpIcon : chevronDownIcon}
+
+        const section = (id, title, valueHtml, isExpandable, extraContent) => `
+            <div class="results-section ${isExpandable ? 'expandable' : ''}" data-section="${id}">
+                <div class="section-header" ${isExpandable ? `data-toggle="${id}"` : ''}>
+                    <span class="${isExpandable ? 'section-title-with-chevron' : 'section-title'}">
+                        ${title} ${isExpandable ? chevronUpIcon : ''}
                     </span>
                     ${valueHtml}
                 </div>
                 ${extraContent || ''}
             </div>`;
 
-        const addButton = (id, cost) => `
+        const addButton = (id, cost) => {
+            const title = id === 'edgeComputing' ? 'Edge Computing' : id === 'trendzAnalytics' ? 'Trendz Analytics' : 'White-labeled Mobile App';
+            const isMobile = id === 'mobileApp';
+            return `
             <div class="results-section inactive">
                 <div class="section-header">
-                    <span class="section-title-with-chevron">${id === 'edgeComputing' ? 'Edge Computing' : id === 'trendzAnalytics' ? 'Trendz Analytics' : 'White-labeled Mobile App'} ${chevronDownIcon}</span>
+                    <span class="${isMobile ? 'section-title' : 'section-title-with-chevron'}">${title} ${isMobile ? '' : chevronDownIcon}</span>
                     <span class="add-to-plan-btn" data-sm-addon="${id}">Add (${formatCurrency(cost)})</span>
                 </div>
             </div>`;
+        };
 
+        // Edge Computing
         if (tbSmState.addons.edge.enabled && breakdown.edge) {
             const edge = breakdown.edge;
             if (edge.isFree) {
-                html += section('edgeComputing', 'Edge Computing', `<span class="section-value strikethrough">${formatCurrency(19)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Free with Maker</span></span></span>`, 'expandable', `<div class="section-content">${tbSmCreateItem('Included Edges', 1, null, true)}</div>`);
+                html += section('edgeComputing', 'Edge Computing', `<span class="section-value strikethrough">${formatCurrency(7)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Free with Maker</span></span></span>`, true, `<div class="section-content">${tbSmCreateItem('Included Edges', 1)}</div>`);
             } else {
-                const content = `<div class="section-content">${tbSmCreateItem('Add-on Base Price', formatCurrency(edge.base))}${tbSmCreateItem('Included Edges', edge.included)}${edge.extra ? tbSmCreateItem('Extra Edges', edge.extra) + tbSmCreateItem('Extra Edges Cost', formatCurrency(edge.extraCost)) : ''}</div>`;
-                html += section('edgeComputing', 'Edge Computing', `<span class="section-value">${formatCurrency(edge.cost)}</span>`, 'expandable', content);
+                let content = `<div class="section-content">`;
+                content += tbSmCreateItem('Included Edges', edge.included);
+                content += tbSmCreateItem('Add-on Base Price', formatCurrency(edge.base), 'Monthly Edge Computing fee');
+                if (edge.extra) {
+                    content += tbSmCreateItem('Extra Edges', edge.extra, 'Additional edge instances');
+                    content += tbSmCreateItem('Extra Edges Cost', formatCurrency(edge.extraCost), `${edge.extra} × ${formatCurrency(plan.extraEdgePrice)}`);
+                }
+                content += '</div>';
+                html += section('edgeComputing', 'Edge Computing', `<span class="section-value">${formatCurrency(edge.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Total Edge Computing cost</span></span></span>`, true, content);
             }
         } else if (!isMaker) {
             html += addButton('edgeComputing', plan.edgeMonthPrice);
         }
 
+        // Trendz Analytics - always expandable when enabled
         if (tbSmState.addons.trendz.enabled && breakdown.trendz) {
             const trendz = breakdown.trendz;
             if (trendz.isFree) {
-                html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value strikethrough">${formatCurrency(29)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Free with Maker</span></span></span>`, '');
+                html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value strikethrough">${formatCurrency(12)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Free with Maker</span></span></span>`, true, `<div class="section-content">${tbSmCreateItem('Included Devices', plan.includedDevices)}</div>`);
             } else {
-                const hasExtra = trendz.extra > 0;
-                const content = hasExtra ? `<div class="section-content">${tbSmCreateItem('Add-on Base Price', formatCurrency(trendz.base))}${tbSmCreateItem('Extra Devices', trendz.extra)}${tbSmCreateItem('Extra Devices Cost', formatCurrency(trendz.extraCost))}</div>` : '';
-                html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value">${formatCurrency(trendz.cost)}</span>`, hasExtra ? 'expandable' : '', content);
+                let content = `<div class="section-content">`;
+                content += tbSmCreateItem('Included Devices', formatNumber(trendz.includedDevices));
+                content += tbSmCreateItem('Add-on Base Price', formatCurrency(trendz.base), 'Monthly Trendz Analytics fee');
+                if (trendz.extra > 0) {
+                    content += tbSmCreateItem('Extra Devices', formatNumber(trendz.extra), 'Devices beyond included');
+                    content += tbSmCreateItem('Extra Devices Cost', formatCurrency(trendz.extraCost), `${formatNumber(trendz.extra)} × ${formatCurrency(plan.trendzExtraDevicePrice)}`);
+                }
+                content += '</div>';
+                html += section('trendzAnalytics', 'Trendz Analytics', `<span class="section-value">${formatCurrency(trendz.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Total Trendz Analytics cost</span></span></span>`, true, content);
             }
         } else if (!isMaker) {
             html += addButton('trendzAnalytics', plan.trendzMonthPrice);
         }
 
+        // Mobile App - no chevron, no expandable content (just simple row)
         if (tbSmState.addons.mobile.enabled && breakdown.mobile) {
-            html += `<div class="results-section"><div class="section-header"><span class="section-title">White-labeled Mobile App</span><span class="section-value">${formatCurrency(breakdown.mobile.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Monthly: ${formatCurrency(tbSmPlans.mobileApp)}<br>Setup: ${formatCurrency(tbSmPlans.mobileAppSetup)}</span></span></span></div></div>`;
+            html += section('mobileApp', 'White-labeled Mobile App', `<span class="section-value">${formatCurrency(breakdown.mobile.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Monthly: ${formatCurrency(tbSmPlans.mobileApp)}<br>Setup fee: ${formatCurrency(tbSmPlans.mobileAppSetup)} (one-time)</span></span></span>`, false, '');
         } else if (!isMaker) {
             html += addButton('mobileApp', tbSmPlans.mobileApp);
         }
+
         return html;
     };
 
@@ -590,6 +666,7 @@
                 if (chevron) chevron.outerHTML = section.classList.contains('collapsed') ? chevronDownIcon : chevronUpIcon;
             });
         });
+
         tbSmUi.results.querySelectorAll('.add-to-plan-btn').forEach(btn => {
             btn.addEventListener('click', e => {
                 e.stopPropagation();
@@ -603,8 +680,8 @@
     const tbSmUpdateClipboard = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice }) => {
         let msg = `Plan: ${plan.name} (${formatCurrency(plan.price)})\n- Devices: ${formatNumber(devices)}\n- Prod Instances: ${formatNumber(tbSmState.prodInstances)}\n- Dev Instances: ${formatNumber(tbSmState.devInstances)}\n`;
         if (extraDevices) msg += `- Extra Devices: ${formatNumber(extraDevices)} (${formatCurrency(extraDevicesCost)})\n`;
-        if (extraProd) msg += `- Extra Prod: ${formatNumber(extraProd)} (${formatCurrency(extraProdCost)})\n`;
-        if (tbSmState.devInstances) msg += `- Dev Cost: ${formatCurrency(devCost)}\n`;
+        if (extraProd) msg += `- Extra Prod Instances: ${formatNumber(extraProd)} (${formatCurrency(extraProdCost)})\n`;
+        if (tbSmState.devInstances) msg += `- Dev Instances Cost: ${formatCurrency(devCost)}\n`;
         if (Object.keys(breakdown).length) {
             msg += '\nAdd-ons:\n';
             if (breakdown.edge) msg += breakdown.edge.isFree ? '- Edge: FREE\n' : `- Edge: ${formatCurrency(breakdown.edge.cost)} (Total: ${breakdown.edge.total})\n`;
@@ -643,14 +720,26 @@
         tbSmUi.modal.addEventListener('click', e => e.target === tbSmUi.modal && closeModal(tbSmUi.modal));
 
         tbSmUi.resetBtn.addEventListener('click', () => {
-            tbSmState = { clipboardMessage: '', currentPlan: null, debounceTimer: null, deviceCount: 10, prodInstances: 1, devInstances: 0, addons: { edge: { enabled: true, count: 1 }, trendz: { enabled: true }, mobile: { enabled: false } } };
+            tbSmState = {
+                clipboardMessage: '',
+                currentPlan: null,
+                debounceTimer: null,
+                deviceCount: 10,
+                prodInstances: 1,
+                devInstances: 0,
+                addons: {
+                    edge: { enabled: false, count: 1 },
+                    trendz: { enabled: false },
+                    mobile: { enabled: false }
+                }
+            };
             tbSmUi.inputs.devices.value = 10;
             tbSmUi.inputs.slider.value = 0;
             tbSmUi.inputs.prod.value = 1;
             tbSmUi.inputs.dev.value = 0;
             tbSmUi.inputs.edge.value = 1;
-            tbSmUi.toggles.edge.checked = true;
-            tbSmUi.toggles.trendz.checked = true;
+            tbSmUi.toggles.edge.checked = false;
+            tbSmUi.toggles.trendz.checked = false;
             tbSmUi.toggles.mobile.checked = false;
             sliderProgress(tbSmUi.inputs.slider);
             tbSmCalculate();
@@ -659,7 +748,7 @@
 
         const onDevicesChange = (val) => {
             let devices = Math.max(1, Math.min(TB_SM_MAX_DEVICES, parseInt(val) || 1));
-            if (devices <= 2000) devices = TB_SM_THRESHOLDS.find(t => devices <= t) || 2000;
+            if (devices <= 1000) devices = TB_SM_THRESHOLDS.find(t => devices <= t) || 1000;
             tbSmState.deviceCount = devices;
             tbSmUi.inputs.devices.value = devices;
             tbSmUi.inputs.slider.value = tbSmDevicesToSlider(devices);
@@ -703,7 +792,8 @@
             tbSmState.prodInstances = Math.max(tbSmState.currentPlan.includedProdInstances, parseInt(e.target.value) || 1);
             e.target.value = tbSmState.prodInstances;
             tbSmUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbSmState.prodInstances <= tbSmState.currentPlan.includedProdInstances;
-            tbSmCalculate(); tbSmSendGTM();
+            tbSmCalculate();
+            tbSmSendGTM();
         });
 
         tbSmUi.inputs.dev.addEventListener('change', e => {
@@ -711,7 +801,8 @@
             tbSmState.devInstances = Math.max(0, parseInt(e.target.value) || 0);
             e.target.value = tbSmState.devInstances;
             tbSmUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbSmState.devInstances <= 0;
-            tbSmCalculate(); tbSmSendGTM();
+            tbSmCalculate();
+            tbSmSendGTM();
         });
 
         tbSmUi.inputs.edge.addEventListener('change', e => {
@@ -719,7 +810,8 @@
             tbSmState.addons.edge.count = Math.max(tbSmState.currentPlan.edgeInstancesIncluded, parseInt(e.target.value) || 1);
             e.target.value = tbSmState.addons.edge.count;
             tbSmUi.steppers.edge.querySelector('[data-action="decrement"]').disabled = tbSmState.addons.edge.count <= tbSmState.currentPlan.edgeInstancesIncluded;
-            tbSmCalculate(); tbSmSendGTM();
+            tbSmCalculate();
+            tbSmSendGTM();
         });
 
         tbSmUi.wrappers.chooseProto.addEventListener('click', () => onDevicesChange(100));
@@ -730,5 +822,6 @@
 
         window.addEventListener('resize', tbSmInitTicks);
     };
+
     tbSmInit();
 </script>
