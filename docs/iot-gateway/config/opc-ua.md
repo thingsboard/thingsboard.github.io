@@ -154,6 +154,7 @@ Device name/profile with Absolute Path<small></small>%,%devicenameandprofileabso
 Device name/profile with Relative Path<small></small>%,%devicenameandprofilerelativepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/device-name-and-profile-relative-path.md%br%
 Device name/profile with Identifier<small></small>%,%devicenameandprofileidentifier%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/device-name-and-profile-identifier.md%br%
 Attributes/Time series with Relative Path<small></small>%,%attributestimeseriesrelativepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-relative-path.md%br%
+Attributes/Time series with Relative Path and Identifier device node<small></small>%,%attributestimeseriesrelativepathdevicenode%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-identifier-device-node.md%br%
 Attributes/Time series with Absolute Path<small></small>%,%attributestimeseriesabsolutepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-absolute-path.md%br%
 Attributes/Time series with Identifier<small></small>%,%attributestimeseriesidentifier%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-identifier.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcua-attributes-timeseries-examples" toggle-spec=opcua-attributes-timeseries-examples %}
@@ -236,6 +237,7 @@ Attribute Updates<small>with Absolute Path</small>%,%sharedabsolute%,%templates/
 Attribute Updates<small>with Identifier</small>%,%sharedidentifier%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/shared-attributes-with-identifier.md%br%
 RPC to Device<small></small>%,%rpctodevice%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/rpc-to-device.md%br%
 Reserved RPCs<small></small>%,%reservedrpc%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/reserved-rpc.md%br%
+Reserved RPCs to foreign nodes<small></small>%,%reservedrpctoforeignnodes%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/reserved-rpc-foreign-node.md%br%
 RPC to Connector<small></small>%,%rpctoconnector%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/rpc-to-connector.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcua-shared-attributes-rpc-examples" toggle-spec=opcua-shared-attributes-rpc-examples %}
 
