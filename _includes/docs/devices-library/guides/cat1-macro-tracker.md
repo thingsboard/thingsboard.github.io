@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Macro Tracker]({{deviceVendorLink}}){:target="_blank"} is designed for both indoor and outdoor tracking, leveraging GNSS, Bluetooth, and Cat-1 technologies.
 It is powered by a 38,000 mAh industrial-grade battery, offering a standby time of up to 7 years.<br>
 Users can configure settings such as:
@@ -22,6 +21,7 @@ To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
+
 ## Configuration
 
 You will need to have access to ThingsBoard Professional Edition. The easiest way is to use [ThingsBoard Cloud](https://thingsboard.io/installations/choose-region/){:target="_blank"} server.
@@ -32,3 +32,4 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/check-data-on-thingsboard-cat-1-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/conclusion-cat-1-block.md %}
+{% include add-device-banner.liquid %}

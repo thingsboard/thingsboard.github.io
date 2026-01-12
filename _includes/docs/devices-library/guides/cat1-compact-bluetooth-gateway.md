@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Compact Bluetooth Gateway](https://www.lansitec.com/products/cat-1-compact-bluetooth-gateway/){:target="_blank"} receives nearby Bluetooth beacons, sensors, or controllers&#39; data, restructure, and forward it to a server via Cat-1.<br>
 It supports iBeacon, Eddystone, private protocols, and the scan and response feature.<br>
 The integrated 600mAh lithium-ion rechargeable battery provides an operational duration of approximately 10 hours of operation when no external power source is available.<br>
@@ -17,6 +16,7 @@ The integrated 600mAh lithium-ion rechargeable battery provides an operational d
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -28,3 +28,4 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/check-data-on-thingsboard-cat-1-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/conclusion-cat-1-block.md %}
+{% include add-device-banner.liquid %}

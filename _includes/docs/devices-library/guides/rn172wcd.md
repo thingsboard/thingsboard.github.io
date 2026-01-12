@@ -11,7 +11,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The [RN172WCD]({{deviceVendorLink}}){: target="_blank"} by RADIONODE is a versatile Wi-Fi sensor data transmitter designed for real-time environmental monitoring in industrial, commercial, and laboratory settings.   
 It supports a wide range of UA series sensors, including gas detectors (CO₂, O₂, NH₃, etc.), thermal sensors (PT100, thermocouples), and analog transmitters (4–20 mA, 0–1 V), enabling flexible deployment across various applications.   
 With Wi-Fi (IEEE 802.11 b/g), MODBUS TCP, and HTTP/HTTPS connectivity, the device seamlessly transmits data to cloud platforms like Radionode365, local servers, or PLCs for centralized monitoring. Additional features include a built-in buzzer, dual-color LED indicators, and a 4-digit display for real-time readings and alerts.   
@@ -22,6 +21,7 @@ The RN172WCD also supports remote configuration via Telnet and offers robust ala
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Create device on ThingsBoard
 
@@ -356,3 +356,4 @@ A sample dashboard featuring the Indoor temperature chart card, Indoor humidity 
 You can [download this dashboard in JSON format](/docs/devices-library/resources/dashboards/rn172plus/temp-and-rh-dashboard.json){:target="_blank" download="temp-and-rh-dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your own ThingsBoard instance.
 
 ![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-20.png)
+{% include add-device-banner.liquid %}

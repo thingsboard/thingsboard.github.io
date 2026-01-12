@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect reComputer R1100 to ThingsBoard?
-category: Other devices
-connectivity: Ethernet, WIFI, Bluetooth, 4G, LoRaWAN®, Zigbee
-chip: R1100
-vendor: Seeed Studio
-deviceImageFileName: recomputer-r1100.webp
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect reComputer R1100 to ThingsBoard?"
+redirect_to: "/devices-library/paas/recomputer-r1100/"
 ---
-
-
-
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/recomputer-r1100.md %}

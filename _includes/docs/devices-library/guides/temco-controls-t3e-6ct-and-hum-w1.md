@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} is general purpose input / ouput modules for building 
 integrators. Available in several input/output configurations, the T3 module provide convenient termination for field 
 devices and interfacing to your HVAC, lighting, temperature sensors, and other typical building automation 
@@ -23,6 +22,7 @@ To continue with this guide, we will need the following:
 {{ prerequisites }}
 - [ThingsBoard IoT Gateway](/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
+
 
 ## Devices connection
 
@@ -85,3 +85,4 @@ sensor to ThingsBoard. After connecting the devices to the gateway, you will be 
 from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features.
+{% include add-device-banner.liquid %}

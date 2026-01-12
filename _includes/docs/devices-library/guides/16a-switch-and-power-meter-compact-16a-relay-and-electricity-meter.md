@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The MClimate 16A Switch & Power Meter compact 16A relay and electricity meter]({{deviceVendorLink}}){: target="_blank"} is small enough to fit behind most wall switches and power equipment, enabling you to automate, track, and control your electrical appliances. This is possible as the device has 4 terminals L, N, N, Lout, and it works in a way that connects and disconnects Lout from L. With an overheating protection mechanism, FUOTA (Firmware Upgrades Over The Air), and operation in LoRaWAN Class C, the MClimate 16ASPM is ideal for rapid building retrofitting.
   
 
@@ -24,6 +23,7 @@
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -63,3 +63,4 @@ Go to the **Latest telemetry** tab to see the latest telemetry data received fro
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

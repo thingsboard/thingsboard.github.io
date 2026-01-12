@@ -68,6 +68,15 @@
     <link href="/css/industries.css" rel="stylesheet">
     {% elsif page.url contains '/partners/' %}
     <link href="/css/partners.css" rel="stylesheet">
+    {% elsif page.url contains '/devices-library/ce'
+        or page.url contains '/devices-library/pe'
+        or page.url contains '/devices-library/paas'
+        or page.url contains '/devices-library/edge'
+        or page.url contains '/devices-library/pe-edge'
+        or page.url contains '/devices-library/guidelines/' %}
+    <link href="/css/device.css" rel="stylesheet">
+    {% elsif page.url contains '/devices-library/' %}
+    <link href="/css/devices-library.css" rel="stylesheet">
     {% elsif page.url contains '/use-cases/' or cssTag == 'use-case' %}
     <link href="/css/use-cases.css" rel="stylesheet">
     {% elsif page.url == '/pricing/' %}
@@ -709,6 +718,9 @@
             </li>
             <li class="nav-docs" data-submenu-id="nav-docs">
                 <span class="main-menu-link" onclick="listburg('nav-docs')">Docs</span>
+            </li>
+            <li class="nav-devices">
+                <a class="main-menu-link" id="devices-link" href="/devices-library/" style="cursor: pointer;">Devices Library</a>
             </li>
             <li class="nav-blog">
                 <a class="main-menu-link" id="blog-link" href="/blog/" style="cursor: pointer;">Blog</a>

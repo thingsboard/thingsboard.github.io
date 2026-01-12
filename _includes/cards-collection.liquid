@@ -1,49 +1,118 @@
-{% assign firstCompaniesInList = page.firstCompaniesInList | split: "%" %}
+{% if page.url == "/partners/hardware/" %}
+    {% assign firstCompaniesInList = page.firstCompaniesInList | split: "%" %}
 
-{% assign sortedCollection = site.data.hardware-partners | sort: 'name' %}
+    {% assign sortedCollection = site.data.hardware-partners | sort: 'name' %}
 
-{% assign priorityCollection = "" | split: "" %}
-{% for pname in firstCompaniesInList %}
-    {% assign company = sortedCollection | where: "name", pname | first %}
-    {% if company %}
-        {% assign priorityCollection = priorityCollection | push: company %}
-    {% endif %}
-{% endfor %}
+    {% assign priorityCollection = "" | split: "" %}
+    {% for pname in firstCompaniesInList %}
+        {% assign company = sortedCollection | where: "name", pname | first %}
+        {% if company %}
+            {% assign priorityCollection = priorityCollection | push: company %}
+        {% endif %}
+    {% endfor %}
 
-{% assign remainingCollection = "" | split: "" %}
-{% for company in sortedCollection %}
-    {% unless firstCompaniesInList contains company.name %}
-        {% assign remainingCollection = remainingCollection | push: company %}
-    {% endunless %}
-{% endfor %}
+    {% assign remainingCollection = "" | split: "" %}
+    {% for company in sortedCollection %}
+        {% unless firstCompaniesInList contains company.name %}
+            {% assign remainingCollection = remainingCollection | push: company %}
+        {% endunless %}
+    {% endfor %}
 
-{% assign finalCollection = priorityCollection | concat: remainingCollection %}
+    {% assign finalCollection = priorityCollection | concat: remainingCollection %}
 
-<div class="card-collection" id="card-collection">
-    {% for card in finalCollection %}
-        <a class="card" href="{{ card.page }}" data-hardware-types="{{ card.hardware-types | join: '|' }}" data-connectivity="{{ card.type | join: '|' }}" data-industry="{{ card.industry | join: '|' }}" data-use-cases="{{ card.use-case | join: '|' }}" target="_blank">
-            <div class="card-wrapper">
-                <div class="card-image">
-                    <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
-                </div>
-                <div class="crisp-container" data-tooltip="Industries:&#10;{{ card.industry | join: '&#10;' }}">
-                    <span class="crisp">{{ card.industry[0] }}</span>
+    <div class="card-collection" id="card-collection">
+        {% for card in finalCollection %}
+            <a class="card" href="{{ card.page }}" data-hardware-types="{{ card.hardware-types | join: '|' }}" data-connectivity="{{ card.type | join: '|' }}" data-industry="{{ card.industry | join: '|' }}" data-use-cases="{{ card.use-case | join: '|' }}">
+                <div class="card-wrapper">
+                    <div class="card-image">
+                        <img class="logo" src="{{ card.logo }}" alt="{{ card.name }} logo" loading="lazy">
+                    </div>
+
                     {% assign industrySize = card.industry | size %}
-                    {% if industrySize > 1 %}
-                        <span class="crisp">+{{ industrySize | minus: 1 }}</span>
-                    {% endif %}
-                </div>
-                <p class="card-title">{{ card.name }}</p>
-                <p class="card-description">{{ card.description }}</p>
-                <div class="card-link-wrapper">
+
+                    <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}" data-tooltip="Industries:&#10;{{ card.industry | join: '&#10;' }}">
+                        <span class="crisp">{{ card.industry[0] }}</span>
+                        {% if industrySize > 1 %}
+                            <span class="crisp">+{{ industrySize | minus: 1 }}</span>
+                        {% endif %}
+                    </div>
+                    <p class="card-title">{{ card.name }}</p>
+                    <p class="card-description">{{ card.description }}</p>
+                    <div class="card-link-wrapper">
                     <span class="card-link" href="#">
                         See integration guides
                         <i class="fas fa-chevron-right arrow first blue-chevron"></i>
                         <i class="fas fa-chevron-right arrow second blue-chevron"></i>
                         <i class="fas fa-chevron-right arrow third blue-chevron"></i>
                     </span>
+                    </div>
                 </div>
+            </a>
+        {% endfor %}
+    </div>
+{% elsif page.url == "/devices-library/" %}
+
+    {%- assign dirs = "
+        devices-library/ce/,
+        devices-library/pe/,
+        devices-library/paas/,
+        devices-library/edge/,
+        devices-library/pe-edge/
+    " | split: "," -%}
+
+    <div class="devices-card-collection" id="devices-card-collection">
+        {%- for dir in dirs -%}
+            {%- assign trimmed_dir = dir | strip -%}
+
+            {%- assign pages_in_dir = site.pages
+                    | where_exp: "p", "p.path contains trimmed_dir"
+            -%}
+            <div class="card-collection" id="card-collection" data-platform="{{ dir | replace: 'devices-library/', '' | replace: '/', '' }}">
+                {%- for page in pages_in_dir -%}
+                    {% assign pageFile = page.path | split: "/" | last %}
+                    {% if pageFile != 'guidelines.md' %}
+                        {% assign deviceName = page.title | replace: "How to connect ", "" | replace: "How to install ThingsBoard Edge on ", "" | replace: " to ThingsBoard?", "" | replace: "?", "" %}
+                        {% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
+                        <a href="{{ page.url }}" class="card"  data-hardware-types="{{ page.hardwareType | join: '|' }}" data-connectivity="{{ page.connectivity | join: '|' }}" data-industry="{{ page.industry | join: '|' }}" data-use-cases="{{ page.useCase | join: '|' }}">
+                            <div class="card-wrapper">
+                                <div class="card-image">
+                                    <img class="logo" src="{{ deviceImg }}" loading="lazy">
+                                </div>
+                                {% if page.industry %}
+                                    {% assign industries = page.industry %}
+
+                                    {% unless industries.first %}
+                                        {% assign industries = industries | split: "|" %}
+                                    {% endunless %}
+
+                                    {% assign industrySize = industries | size %}
+
+                                    <div class="crisp-container{% if industrySize > 1 %} tooltip{% endif %}"{% if industrySize > 1 %} data-tooltip="Industries:{% for item in industries %}&#10;{{ item }}{% endfor %}"{% endif %}>
+
+                                        <span class="crisp">{{ industries[0] }}</span>
+
+                                        {% if industrySize > 1 %}
+                                            <span class="crisp">+{{ industrySize | minus: 1 }}</span>
+                                        {% endif %}
+                                    </div>
+
+                                {% endif %}
+                                <span class="card-title">{{ deviceName }}</span>
+                                <div class="card-link-wrapper">
+                                <span class="card-link" href="#">
+                                See connection guide
+                                <i class="fas fa-chevron-right arrow first blue-chevron"></i>
+                                <i class="fas fa-chevron-right arrow second blue-chevron"></i>
+                                <i class="fas fa-chevron-right arrow third blue-chevron"></i>
+                            </span>
+                                </div>
+                            </div>
+                        </a>
+                    {% endif %}
+                {%- endfor -%}
+                {% include pagination.html %}
             </div>
-        </a>
-    {% endfor %}
-</div>
+        {%- endfor -%}
+    </div>
+
+{% endif %}

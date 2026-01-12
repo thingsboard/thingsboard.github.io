@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} Bacnet programmable controller is a low-cost high
 performance programmable controller. With an I/O configuration, it can be extended through external I/O modules to
 form a complete building automation solution. There are five relays and two analog outputs as well as
@@ -27,6 +26,7 @@ To continue with this guide, we will need the following:
 {{ prerequisites }}
 - [ThingsBoard IoT Gateway](/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}
+
 
 ## Devices connection
 
@@ -91,3 +91,4 @@ sensor to ThingsBoard. After connecting the devices to the gateway, you will be 
 from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features.
+{% include add-device-banner.liquid %}

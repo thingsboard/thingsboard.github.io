@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Container Tracker]({{deviceVendorLink}}){:target="_blank"} supports indoor and outdoor tracking, asset management with worldwide network coverage.<br>
 It has 5-year battery life (30 minutes report interval) and IP68 enclosure and is perfect for tracking container, pallets, and assets in a wide area.<br>
 
@@ -16,6 +15,7 @@ It has 5-year battery life (30 minutes report interval) and IP68 enclosure and i
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -27,3 +27,4 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/check-data-on-thingsboard-cat-1-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/conclusion-cat-1-block.md %}
+{% include add-device-banner.liquid %}

@@ -1,19 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect CO2 Display lite Temperature and humidity sensor to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: MClimate
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: co2-display-lite-temperature-and-humidity-sensor.png
-converters20: true
-model: CO2_Display_Lite
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect CO2 Display lite Temperature and humidity sensor to ThingsBoard?"
+redirect_to: "/devices-library/paas/co2-display-lite-temperature-and-humidity-sensor/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/co2-display-lite-temperature-and-humidity-sensor.md %}

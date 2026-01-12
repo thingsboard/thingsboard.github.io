@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Tracking Label]({{deviceVendorLink}}){:target="_blank"} say goodbye to lost shipments and untraceable assets with Lansitec&#39;s ultra-thin Tracking Label. Combining GNSS, Bluetooth 5.0, and LoRaWAN technology, this disposable tracking solution provides reliable indoor and outdoor positioning for packages, pallets, and containers.<br>
 Whether you&#39;re shipping goods across the globe or simply managing inventory within a warehouse, the Tracking Label&#39;s 3-axis accelerometer and automatic BLE/GNSS switching ensure efficient power use without compromising on accuracy.<br>
 With up to three years of battery life (based on six GNSS reports per day) and an IP66 rating, this label is built to stand up to harsh conditions and lengthy transit times — giving you the confidence to monitor and manage your assets from end to end.
@@ -19,6 +18,7 @@ With up to three years of battery life (based on six GNSS reports per day) and a
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -40,3 +40,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

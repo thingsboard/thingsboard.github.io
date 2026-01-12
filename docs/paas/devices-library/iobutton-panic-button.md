@@ -1,18 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect ioButton Panic button to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: ioThings
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: iobutton-panic-button.png
-converters20: true
-model: ioButton
-docsPrefix: paas/
+layout: docwithnav-paas
+title: "How to connect ioButton Panic button to ThingsBoard?"
+redirect_to: "/devices-library/paas/iobutton-panic-button/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/iobutton-panic-button.md %}

@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Radxa Rock Pro is a single-board computer based on the Rockchip RK3188 SoC with four ARM Cortex-A9 cores, providing good performance for general computing tasks.
  It has 2GB of DDR3 RAM and support for various interfaces such as USB2.0, HDMI, and Ethernet.
  It can run various operating systems such as Android and Linux, making it suitable for various projects such as media centers, home automation, and more.
@@ -49,3 +48,4 @@ The Radxa Rock Pro is a single-board computer based on the Rockchip RK3188 SoC w
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

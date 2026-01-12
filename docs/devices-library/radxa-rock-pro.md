@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect Radxa Rock Pro to ThingsBoard?
-category: Single-board computers
-chip: Rockchip RK3188
-connectivity: WIFI, Bluetooth, Ethernet
-vendor: Radxa
-deviceImageFileName: radxa-rock-pro.jpg
-
+layout: docwithnav
+title: "How to connect Radxa Rock Pro to ThingsBoard?"
+redirect_to: "/devices-library/ce/radxa-rock-pro/"
 ---
-
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/radxa-rock-pro.md %}

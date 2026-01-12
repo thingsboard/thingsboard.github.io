@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Indoor Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} is based on Bluetooth 5.0 technology and LoRaWAN.<br>
 It receives nearby [Bluetooth beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"} messages and transmits them to the server through LoRaWAN. With LoRaWAN technology, there is no network usage fee for long-distance transmission.<br><br>
 
@@ -18,6 +17,7 @@ It receives nearby [Bluetooth beacon](https://www.lansitec.com/products/bluetoot
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -39,3 +39,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

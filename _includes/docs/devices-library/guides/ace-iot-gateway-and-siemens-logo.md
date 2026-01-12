@@ -12,7 +12,6 @@
 
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The ACE Automation MQTT 4G GPS Gateway]({{deviceVendorLink}}){: target="_blank"} is a cutting-edge device that revolutionizes data communication and connectivity 
 for industrial and IoT applications. Equipped with 4G capabilities, this gateway ensures reliable and high-speed data 
 transmission over cellular networks, even in remote locations. It integrates GPS technology for real-time location 
@@ -26,6 +25,7 @@ harnessing real-time data. Simplify your connectivity and data management with t
 To continue with this guide, we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
+
 
 ## Import Rule chain
 
@@ -310,3 +310,4 @@ integration to retrieve data from devices connected to ACE Automation MQTT 4G GP
 After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
 
 Explore the platform [documentation](/docs/{{page.docsPrefix}}){: target="_blank"} to learn more about key concepts and features. 
+{% include add-device-banner.liquid %}

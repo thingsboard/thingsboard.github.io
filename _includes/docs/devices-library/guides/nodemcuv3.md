@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 The NodeMCU is quite a popular development board that is broadly implemented across the internet world.   
 It is based on the ESP-12E Wi-Fi module that is perfectly associated with the combination of elements of easy programming with Arduino IDE as well as Wi-Fi capability.  
@@ -55,3 +54,4 @@ The unit allows to either host the application or to offload all Wi-Fi networkin
 
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

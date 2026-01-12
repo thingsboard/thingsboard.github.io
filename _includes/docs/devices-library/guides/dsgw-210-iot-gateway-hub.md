@@ -11,7 +11,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [DSGW-210 Smart Gateway Hub]({{deviceVendorLink}}){: target="_blank"} is IoT gateway with multiple protocol and edge computing function. It provides reliable connectivity for a wide range of wireless IoT devices. The gateway’s modular architecture provides the ability to customize many gateway features including Cellular, Bluetooth, Wi-Fi, Ethernet, USB, ZigBee, Z-wave and Li battery backup.
 <br><br><br>
 
@@ -20,6 +19,7 @@
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Product Summary
 
@@ -124,3 +124,4 @@ Error indicator
 ## Contact Us
 
 For other concerns about the integration, please consult *sales@dusunremotes.com*
+{% include add-device-banner.liquid %}

@@ -13,7 +13,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px; margin-right: 2em;"}
 [UG65 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a robust 8-channel indoor LoRaWAN® gateway. Adopting SX1302 LoRa chip and high-performance quad-core CPU, UG65 supports connection with more than 2000 nodes.  
 
 Key features:  
@@ -40,6 +39,7 @@ After doing steps described in this guide you will have a connected and configur
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Gateway connection
 
@@ -97,3 +97,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include add-device-banner.liquid %}

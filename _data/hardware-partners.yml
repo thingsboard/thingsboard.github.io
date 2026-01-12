@@ -165,7 +165,7 @@
     - Smart Retail
     - Smart Energy
   hardware-types:
-    - Single Board Computer
+    - Single-board computers
   logo: /images/partners/seeed.webp
   page: /partners/hardware/seeed
   site:
@@ -558,6 +558,38 @@
     want to focus on their own applications and core competencies rather than the
     underlying hardware platform or production logistics when creating products for
     the IoT.
+- name: Sensy32
+  type:
+    - Bluetooth LE
+    - Wi-Fi
+  industry:
+    - Smart Cities
+    - Agriculture
+    - Industrial Manufacturing
+    - Smart Buildings
+    - Energy Management
+    - Environmental Monitoring
+  use-case:
+    - Smart Energy
+    - Environment Monitoring
+    - Smart Retail
+    - Smart Farming
+    - Air Quality Monitoring
+  hardware-types:
+    - Microcontrollers
+    - Sensors
+    - Gateways
+    - Other devices
+  logo: /images/partners/sensy32-logo.svg
+  page: /partners/hardware/sensy32
+  site:
+    href: https://sensy32.io/
+  links:
+    single-board-computers-guides:
+      0:
+        label: Connect Sensy32 to ThingsBoard
+        href: /docs/devices-library/sensy32/
+  description: All-in-One Sensor IoT Board with LCD designed for sensor enthusiasts, developers, and IoT creators. Powered by ESP32-S3 and packed with a wide array of sensors, it enables seamless monitoring, analysis, and visualization of real-world data. Backed by a robust ESP32-S3 Wifi and Bluetooth module, Sensy32 is not just a board; it's a gateway to endless possibilities.
 - name: DECODE
   type:
     - GSM/GPRS

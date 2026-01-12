@@ -8,7 +8,6 @@
 {% assign thingsboardInstanceLink = "https://" | append: hostName %}
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The EXXN IoT Gateway is a versatile device with an ARM processor that can be adapted to a variety of use cases, including monitoring environmental sensors, energy consumption, radon gas levels, marine environments, and edge computing.
 <br>
 <br>
@@ -22,6 +21,7 @@ The EXXN IoT Gateway is a versatile device with an ARM processor that can be ada
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
+
 
 ## Create device on ThingsBoard
 
@@ -54,3 +54,4 @@ If you have any problems or doubts, please do not hesitate in contact to EXXN su
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

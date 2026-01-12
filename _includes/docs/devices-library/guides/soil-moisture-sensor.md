@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [AgroSense LoRaWAN® Soil Moisture Sensor]({{deviceVendorLink}}){: target="_blank"} measures the Humidity at the range of 12-bit ADC, -40℃ to 85℃with capacitive method ，also with highly waterproof performance tested to IP68, making it widely applicable in agricultural environmental sensing scenarios to support the smart agricultural production.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
@@ -23,6 +22,7 @@
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -62,3 +62,4 @@ Go to the **Latest telemetry** tab to see the latest telemetry data received fro
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

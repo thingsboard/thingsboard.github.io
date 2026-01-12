@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 ODYSSEY STM32MP157C is a single-board computer with an STM32MP157C processor, 2GB DDR3L RAM, and 16GB eMMC flash storage.
  It also features Gigabit Ethernet, WIFI, Bluetooth, and an array of connectors for peripherals and expansion.
 
@@ -48,3 +47,4 @@ ODYSSEY STM32MP157C is a single-board computer with an STM32MP157C processor, 2G
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

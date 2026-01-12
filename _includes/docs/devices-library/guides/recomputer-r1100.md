@@ -8,7 +8,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The [reComputer R1100]({{deviceVendorLink}}){: target="_blank"}, powered by Raspberry Pi CM4, is an adaptable edge IoT gateway with AI capabilities. 
 It features comprehensive industrial interfaces (2x Ethernet, 2xUSB, 2xRS485, 2xRS232, 2xDI and 2xDO) and flexible wireless connectivity options (4G, LoRa®, Wi-Fi/BLE), making it ideal for diverse industrial applications
 
@@ -266,3 +265,4 @@ The command must be executed in the same directory in which the docker-compose.y
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
 {% endif %}
 
+{% include add-device-banner.liquid %}

@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [VIBit-BP]({{deviceVendorLink}}){:target="_blank"} is a battery-powered, compact tri-axial vibration and temperature sensor designed for anomaly detection without the need for external power or wiring. It transmits data wirelessly via Bluetooth Low Energy (BLE), making it ideal for remote condition monitoring in industrial settings.<br><br><br><br><br>
 
 ## VIBit-BP Architecture
@@ -28,6 +27,7 @@ To continue with this guide, we will need the following:
   - **Username**: sensor
   - **Password**: cimcon
   - **Client ID**: VIBit Device BLE MAC (Bluetooth MAC address of the sensor)
+
 
 ## Create Device profile on ThingsBoard
 
@@ -182,3 +182,4 @@ Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"
 ## Conclusion
 
 Integrating VIBit-BP with ThingsBoard using MQTT authentication offers a wireless, battery-powered solution for monitoring equipment health, enabling predictive maintenance without the constraints of wiring or external power sources. The seamless data transmission and visualization capabilities enhance operational efficiency and equipment reliability.
+{% include add-device-banner.liquid %}
