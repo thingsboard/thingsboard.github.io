@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 The FDQ-99900 MI-8 is a compact, 24-bit data acquisition system (DAQ) designed to measure up to ten external sensors then log values locally to an SD card or push data to the cloud over a cellular data connection.  
 Advanced triggering functionality allows the MI-8 to conserve storage space and network data by only transmitting events of interest.  
@@ -25,6 +24,7 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 
 - [ThingsBoard account](https://{{hostName}})
+
 
 ## Create device on ThingsBoard
 
@@ -43,3 +43,4 @@ To continue with this guide we will need the following:
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

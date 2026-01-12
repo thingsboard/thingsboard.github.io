@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect NVIDIA Jetson Nano Developer Kit to ThingsBoard?
-category: Single-board computers
-chip: NVIDIA CUDA
-connectivity: Ethernet, WIFI, Bluetooth
-vendor: NVIDIA
-deviceImageFileName: nvidia-jetson-nano-developer-kit.jpg
-docsPrefix: pe/
+layout: docwithnav-pe
+title: "How to connect NVIDIA Jetson Nano Developer Kit to ThingsBoard?"
+redirect_to: "/devices-library/pe/nvidia-jetson-nano-developer-kit/"
 ---
-
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/nvidia-jetson-nano-developer-kit.md %}

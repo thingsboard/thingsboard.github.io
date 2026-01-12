@@ -1,18 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect AmpSense Smart current Sensor to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: NanoSensorics
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: ampsense-smart-current-sensor.png
-converters20: true
-model: AmpSense
-docsPrefix: pe/
+layout: docwithnav
+title: "How to connect AmpSense Smart current Sensor to ThingsBoard?"
+redirect_to: "/devices-library/ce/ampsense-smart-current-sensor/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/ampsense-smart-current-sensor.md %}

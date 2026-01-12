@@ -1,17 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect LW001-BG PRO LoRaWAN Tracker to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: MOKO SMART
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: lw001-bg-pro.png
-docsPrefix: paas/
-docsTag: paas
+layout: docwithnav-paas
+title: "How to connect LW001-BG PRO LoRaWAN Tracker to ThingsBoard?"
+redirect_to: "/devices-library/paas/lw001-bg-pro/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/lw001-bg-pro.md %}

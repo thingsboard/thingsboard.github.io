@@ -1,15 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect ESP32 PICO KIT to ThingsBoard?
-category: Microcontrollers
-chip: ESP32
-connectivity: HTTP, MQTT, WIFI, Bluetooth
-vendor: Espressif
-deviceImageFileName: esp32-pico-kit.png
+layout: docwithnav
+title: "How to connect ESP32 PICO KIT to ThingsBoard?"
+redirect_to: "/devices-library/ce/esp32-pico-kit/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/esp32-pico-kit.md %}

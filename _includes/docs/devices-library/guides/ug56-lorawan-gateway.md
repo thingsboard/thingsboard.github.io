@@ -11,7 +11,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.
 
 Industrial-Grade Design
@@ -32,6 +31,7 @@ After doing steps described in this guide you will have a connected and configur
 To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Gateway connection
 
@@ -88,3 +88,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include add-device-banner.liquid %}

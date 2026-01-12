@@ -11,7 +11,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The [LW001-BG PRO]({{deviceVendorLink}}){: target="_blank"} is a wireless, smart, ultra–low-power indoor and outdoor LoRaWAN tracker.   
 It integrates **GPS**, **Bluetooth**, and **WiFi** positioning, supports multiple operating modes, and is suitable for a wide range of tracking applications.<br>
 
@@ -25,6 +24,7 @@ This device is ideal for optimizing logistics processes, asset management, wareh
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -102,3 +102,4 @@ To add the dashboard to ThingsBoard, follow the next steps:
 <br><b><font size="4">Import Dashboard</font></b>
 
 You can [download this example dashboard in JSON format](/docs/devices-library/resources/dashboards/lw001-bg-pro/lw001-bg_pro_lorawan_tracker_dashboard.json){:target="_blank" download="lw001-bg_pro_lorawan_tracker_dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
+{% include add-device-banner.liquid %}

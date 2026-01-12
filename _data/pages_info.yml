@@ -28,10 +28,7 @@
   redirect_from: []
 "/docs/devices-library/arduino-nano-rp2040-connect/":
   url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from:
-  - "/docs/samples/arduino/"
-  - "/docs/samples/arduino/temperature/"
-  - "/docs/samples/arduino/sim808-htu21d/"
+  redirect_from: []
 "/docs/devices-library/asset-management-tracker/":
   url: "/docs/devices-library/asset-management-tracker/"
   redirect_from: []
@@ -100,19 +97,12 @@
   redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v1/":
   url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from:
-  - "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-  - "/docs/samples/esp32/"
-  - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-  - "/docs/samples/esp32/ota/"
+  redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v4/":
   url: "/docs/devices-library/esp32-dev-kit-v4/"
   redirect_from: []
 "/docs/devices-library/esp32-pico-kit/":
   url: "/docs/devices-library/esp32-pico-kit/"
-  redirect_from: []
-"/docs/devices-library/guidelines/":
-  url: "/docs/devices-library/guidelines/"
   redirect_from: []
 "/docs/devices-library/helmet-sensor/":
   url: "/docs/devices-library/helmet-sensor/"
@@ -126,6 +116,11 @@
 "/docs/devices-library/hummingboard-gate/":
   url: "/docs/devices-library/hummingboard-gate/"
   redirect_from: []
+"/docs/devices-library/":
+  url: "/docs/devices-library/"
+  redirect_from:
+  - "/docs/samples/linkit-one/"
+  - "/docs/samples/linkit-one/gps/"
 "/docs/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/devices-library/indoor-bluetooth-gateway/"
   redirect_from: []
@@ -188,12 +183,7 @@
   redirect_from: []
 "/docs/devices-library/nodemcuv3/":
   url: "/docs/devices-library/nodemcuv3/"
-  redirect_from:
-  - "/docs/samples/esp8266/"
-  - "/docs/samples/esp8266/temperature/"
-  - "/docs/samples/esp8266/gpio/"
-  - "/docs/samples/nodemcu/"
-  - "/docs/samples/nodemcu/temperature/"
+  redirect_from: []
 "/docs/devices-library/nvidia-jetson-nano-developer-kit/":
   url: "/docs/devices-library/nvidia-jetson-nano-developer-kit/"
   redirect_from: []
@@ -235,11 +225,7 @@
   redirect_from: []
 "/docs/devices-library/raspberry-pi-4/":
   url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from:
-  - "/docs/samples/raspberry/"
-  - "/docs/samples/raspberry/gpio/"
-  - "/docs/samples/raspberry/gpio-android-things/"
-  - "/docs/samples/raspberry/temperature/"
+  redirect_from: []
 "/docs/devices-library/raspberry-pi-cm4/":
   url: "/docs/devices-library/raspberry-pi-cm4/"
   redirect_from: []
@@ -381,11 +367,6 @@
 "/docs/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/devices-library/":
-  url: "/docs/devices-library/"
-  redirect_from:
-  - "/docs/samples/linkit-one/"
-  - "/docs/samples/linkit-one/gps/"
 "/docs/domains/":
   url: "/docs/domains/"
   redirect_from: []
@@ -431,8 +412,8 @@
 "/docs/edge/config/subscribe-to-attribute/":
   url: "/docs/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/edge/devices-library/guidelines/":
-  url: "/docs/edge/devices-library/guidelines/"
+"/docs/edge/devices-library/":
+  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -445,9 +426,6 @@
   redirect_from: []
 "/docs/edge/devices-library/recomputer-r1100/":
   url: "/docs/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/edge/devices-library/":
-  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/edge-architecture/":
   url: "/docs/edge/edge-architecture/"
@@ -1153,9 +1131,6 @@
 "/docs/paas/devices-library/esp32-pico-kit/":
   url: "/docs/paas/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/devices-library/guidelines/":
-  url: "/docs/paas/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/devices-library/helmet-sensor/":
   url: "/docs/paas/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1167,6 +1142,9 @@
   redirect_from: []
 "/docs/paas/devices-library/hummingboard-gate/":
   url: "/docs/paas/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/devices-library/":
+  url: "/docs/paas/devices-library/"
   redirect_from: []
 "/docs/paas/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/devices-library/indoor-bluetooth-gateway/"
@@ -1414,9 +1392,6 @@
 "/docs/paas/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/devices-library/":
-  url: "/docs/paas/devices-library/"
-  redirect_from: []
 "/docs/paas/domains/":
   url: "/docs/paas/domains/"
   redirect_from:
@@ -1523,9 +1498,6 @@
 "/docs/paas/eu/devices-library/esp32-pico-kit/":
   url: "/docs/paas/eu/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/eu/devices-library/guidelines/":
-  url: "/docs/paas/eu/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/eu/devices-library/helmet-sensor/":
   url: "/docs/paas/eu/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1537,6 +1509,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/hummingboard-gate/":
   url: "/docs/paas/eu/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/":
+  url: "/docs/paas/eu/devices-library/"
   redirect_from: []
 "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/"
@@ -1783,9 +1758,6 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/"
-  redirect_from: []
-"/docs/paas/eu/devices-library/":
-  url: "/docs/paas/eu/devices-library/"
   redirect_from: []
 "/docs/paas/eu/domains/":
   url: "/docs/paas/eu/domains/"
@@ -2979,9 +2951,6 @@
 "/docs/pe/devices-library/esp32-pico-kit/":
   url: "/docs/pe/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/pe/devices-library/guidelines/":
-  url: "/docs/pe/devices-library/guidelines/"
-  redirect_from: []
 "/docs/pe/devices-library/helmet-sensor/":
   url: "/docs/pe/devices-library/helmet-sensor/"
   redirect_from: []
@@ -2993,6 +2962,9 @@
   redirect_from: []
 "/docs/pe/devices-library/hummingboard-gate/":
   url: "/docs/pe/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/pe/devices-library/":
+  url: "/docs/pe/devices-library/"
   redirect_from: []
 "/docs/pe/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/pe/devices-library/indoor-bluetooth-gateway/"
@@ -3240,9 +3212,6 @@
 "/docs/pe/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/pe/devices-library/":
-  url: "/docs/pe/devices-library/"
-  redirect_from: []
 "/docs/pe/domains/":
   url: "/docs/pe/domains/"
   redirect_from: []
@@ -3273,8 +3242,8 @@
 "/docs/pe/edge/config/subscribe-to-attribute/":
   url: "/docs/pe/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/pe/edge/devices-library/guidelines/":
-  url: "/docs/pe/edge/devices-library/guidelines/"
+"/docs/pe/edge/devices-library/":
+  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -3287,9 +3256,6 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/recomputer-r1100/":
   url: "/docs/pe/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/pe/edge/devices-library/":
-  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/edge-architecture/":
   url: "/docs/pe/edge/edge-architecture/"

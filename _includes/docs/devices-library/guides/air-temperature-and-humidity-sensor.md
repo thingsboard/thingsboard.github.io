@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [AgroSense LoRaWAN® Temperature & Humidity Sensor]({{deviceVendorLink}}){: target="_blank"} uses the AHT20 sensor, to measures temperature and humidity in the atmosphere at the range of -40℃ to 85℃ and 0 to 100 %RH with accuracy ±0.2℃ and ±0.2%RH respectively, also with highly waterproof performance tested to IP68, making it widely applicable in agricultural environmental sensing scenarios to support the smart agricultural production.
 
 The sensor benefits from LoRaWAN , which ensures stability and reliability. It is capable of covering a long transmission range while maintaining low power consumption. Unlike wireline devices, it is battery-powered, reducing the workload and complexity of deployment, design and development for end-users that can work via powering it , and setting the configuration in the cloud server, for LoRaWAN® remote monitoring.  It monitors the air temperature and humidity and report them every 1 hour.  
@@ -25,6 +24,7 @@ The sensor benefits from LoRaWAN , which ensures stability and reliability. It i
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -64,3 +64,4 @@ Go to the **Latest telemetry** tab to see the latest telemetry data received fro
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

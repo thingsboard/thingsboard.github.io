@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 The feature packed Arduino Nano RP2040 Connect brings the new Raspberry Pi RP2040 microcontroller to the Nano form factor.  
 Make the most of the dual core 32-bit Arm® Cortex®-M0+ to make Internet of Things projects with Bluetooth and WiFi connectivity thanks to the U-blox Nina W102 module.  
@@ -55,3 +54,4 @@ Develop robust embedded AI solutions with minimal effort using the Arduino Nano 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

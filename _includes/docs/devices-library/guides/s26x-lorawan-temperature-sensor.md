@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The Sentrius™ RS26x]({{deviceVendorLink}}){: target="_blank"} s a battery powered IP67 temperature sensor platform that delivers HACCP level temperature monitoring with real time alerting for your food safety compliance. In addition to ensuring product safety, these intelligent devices avoid inventory loss, improve facility efficiency and save you time and money in automated day to day operations.  
 
 They are available in two variants: One with an internal temperature sensor, and a second that supports an external sensor probe.
@@ -24,6 +23,7 @@ They are available in two variants: One with an internal temperature sensor, and
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Device connection
 
@@ -205,3 +205,4 @@ Now you can easily connect your RS26x LoRaWAN temperature sensor and start sendi
 
 To go further, explore the [ThingsBoard documentation](https://thingsboard.io/docs/pe/){:target="_blank"} to learn more about key features, such as creating more [dashboards](https://thingsboard.io/docs/pe/user-guide/dashboards/){:target="_blank"} and leveragin additional widgets to visualize your telemetry, or setting up [alarm rules](https://thingsboard.io/docs/pe/user-guide/alarm-rules/){:target="_blank"} to monitor device behavior in real time.
 
+{% include add-device-banner.liquid %}

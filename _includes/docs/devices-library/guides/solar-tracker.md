@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Solar Tracker]({{deviceVendorLink}}){:target="_blank"} is designed based on GNSS, Bluetooth and LoRaWAN for indoor and outdoor tracking.<br>
 It is powered with robust solar film and a 5300mAh rechargeable battery. 
 Users can adjust settings such as the GNSS report duration, heartbeat message period, beacon report interval, and asset receiving duration.<br>
@@ -19,6 +18,7 @@ Users can adjust settings such as the GNSS report duration, heartbeat message pe
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -40,3 +40,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -8,7 +8,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The [reComputer R1000]({{deviceVendorLink}}){: target="_blank"} edge IoT controller is built on the high-performance Raspberry Pi CM4 platform, featuring a quad-core A72 processor with a maximum support of 8GB RAM and 32GB eMMC. Equipped with dual Ethernet interfaces that can be flexibly configured, it also includes 3 isolated RS485 channels supporting BACnet, Modbus RTU, Modbus TCP/IP protocols. With robust IoT network communication capabilities, the R1000 series supports multiple wireless communication options including 4G, LoRa®, Wi-Fi/BLE, allowing for flexible configurations to serve as corresponding wireless gateways. This controller is well-suited for remote device management, energy management, and various other scenarios in the field of smart buildings.
 
 ## Integration with ThingsBoard
@@ -261,3 +260,4 @@ The command must be executed in the same directory in which the docker-compose.y
 {% else %}  
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCE %}
 {% endif %}
+{% include add-device-banner.liquid %}

@@ -1,0 +1,93 @@
+{% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
+{% assign deviceName = page.title | replace: "How to install ThingsBoard Edge on ", "" | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" | replace: "?", "" %}
+{% assign deviceHardwareType = page.hardwareType %}
+{% assign deviceConnectivity = page.connectivity | join: ", " %}
+{% assign deviceChip = page.chip %}
+{% assign deviceIndustry = page.industry | join: ", " %}
+{% assign deviceUseCase = page.useCase %}
+{% assign devicePlatforms = '' %}
+
+<div class="device-card">
+    <div class="device-img">
+        <img src="{{ deviceImg }}">
+    </div>
+    <div class="device-data">
+        <span class="device-name">{{ deviceName }}</span>
+        <ul class="device-data-list">
+            {% if deviceHardwareType and deviceHardwareType.size > 0 %}
+                <li><span>Hardware type: </span>{{ deviceHardwareType }}</li>
+            {% endif %}
+            {% if deviceConnectivity and deviceConnectivity.size > 0 %}
+                <li><span>Connectivity: </span>{{ deviceConnectivity }}</li>
+            {% endif %}
+            {% if deviceChip and deviceChip.size > 0 %}
+                <li><span>Chip: </span>{{ deviceChip }}</li>
+            {% endif %}
+            {% if deviceIndustry and deviceIndustry.size > 0 %}
+                <li><span>Industry: </span>{{ deviceIndustry }}</li>
+            {% endif %}
+            {%- if deviceUseCase and deviceUseCase.size > 0 -%}
+                {%- capture use_cases_out -%}
+                    {%- for uc in deviceUseCase -%}
+                        {%- assign uc_name = uc | strip -%}
+                        {%- assign uc_slug = uc_name | downcase | replace: ' ', '-' -%}
+                        {%- assign uc_url  = '/use-cases/' | append: uc_slug | append: '/' -%}
+
+                        <a href="{{ uc_url }}">{{ uc_name }}</a>
+                        {%- unless forloop.last -%}, {% endunless -%}
+                    {%- endfor -%}
+                {%- endcapture -%}
+
+                <li>
+                    <span>Use cases: </span>{{- use_cases_out | strip -}}
+                </li>
+            {%- endif -%}
+
+
+
+            {% assign urlParts = page.url | split: "/" | reject: "" %}
+            {% assign deviceSlug = urlParts | last %}
+
+
+            {% assign allPlatforms = "ce,pe,paas,edge,pe-edge" | split: "," %}
+            {% assign foundPlatforms = "" | split: "" %}
+
+            {% for plat in allPlatforms %}
+                {% assign targetUrl = "/devices-library/" | append: plat | append: "/" | append: deviceSlug | append: "/" %}
+                {% assign exists = false %}
+
+                {% for p in site.pages %}
+                    {% if p.url == targetUrl %}
+                        {% assign exists = true %}
+                        {% break %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if exists %}
+                    {% assign foundPlatforms = foundPlatforms | push: plat %}
+                {% endif %}
+            {% endfor %}
+
+            <li>
+                <span>Platforms: </span>
+
+                {% if foundPlatforms.size > 0 %}
+                    {% for plat in foundPlatforms %}
+                        {% capture platformLabel -%}
+                            {% case plat -%}
+                                {% when "ce" -%}Community Edition
+                                {% when "pe" -%}Professional Edition
+                                {% when "paas" -%}Cloud
+                                {% when "edge" -%}Edge
+                                {% when "pe-edge" -%}Edge Professional Edition
+                            {% endcase -%}
+                        {%- endcapture -%}{{ platformLabel | strip }}{% unless forloop.last %}, {% endunless %}
+                    {% endfor %}
+                {% else %}
+                    —
+                {% endif %}
+            </li>
+
+        </ul>
+    </div>
+</div>

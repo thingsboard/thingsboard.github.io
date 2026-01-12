@@ -7,7 +7,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Cat-1 Badge Tracker]({{deviceVendorLink}}){:target="_blank"} is designed based on GNSS, Bluetooth 5.0, and Cat-1 technology.<br>
 It supports indoor and outdoor tracking. The badge is mainly used for personnel and asset management.<br> 
 The build-in 3-axis accelerator could be used for determining the motion status of the terminal to help save battery life and enhance user experience.<br>
@@ -17,6 +16,7 @@ The build-in 3-axis accelerator could be used for determining the motion status 
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -28,3 +28,4 @@ The alternative option is to install ThingsBoard using [installation guide](/doc
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/check-data-on-thingsboard-cat-1-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/cat1/conclusion-cat-1-block.md %}
+{% include add-device-banner.liquid %}

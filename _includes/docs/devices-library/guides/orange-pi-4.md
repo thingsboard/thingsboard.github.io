@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Orange Pi 4 is a powerful single-board computer (SBC) that features a hexa-core Rockchip RK3399 ARM Cortex-A72/A53 CPU, 4GB of RAM, and Gigabit Ethernet.
  It also features Wi-Fi and Bluetooth connectivity, as well as support for 4K Ultra HD video playback.
  The board also includes a USB 3.0 port, two USB 2.0 ports, and an HDMI 2.0a port.
@@ -49,3 +48,4 @@ The Orange Pi 4 is a powerful single-board computer (SBC) that features a hexa-c
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

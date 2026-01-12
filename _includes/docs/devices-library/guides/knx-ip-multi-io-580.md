@@ -7,7 +7,6 @@
   '
   %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The KNX IP Multi IO 580 (48I/O)](https://weinzierl.de/en/products/knx-ip-multi-io-580/){:target="_blank"} is a universal binary interface for building control. It provides 48 I/O lines. Each line can be used as binary input as well as binary output. The peripherals can be fed by an external voltage of 24 V⎓. Channels which are configured as inputs can be used to control lights or blinds via the KNX network. They also can be used to count impulses, e.g. as interface for energy meters. Channels which are configured as outputs can directly drive signal LEDs, external coupling relays.<br><br>
 
 ## Prerequisites
@@ -20,6 +19,7 @@ To continue with this guide we will need the following:
 - [ETS software](https://support.knx.org/hc/en-us/articles/4409114300178-ETS-v5-7-7){: target="_blank"} installed
 - [ThingsBoard IoT Gateway](https://thingsboard.io/docs/iot-gateway/installation/){: target="_blank"} installed
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Devices connection
 
@@ -314,3 +314,4 @@ For this purpose, you can create your own dashboard with your custom widgets or 
 With the knowledge in this guide, you can easily connect your KNX IP Multi IO 580 controller with switch, shutter, and relay to ThingsBoard. After connecting the devices to the gateway, you will be able to see and process the data coming from the devices on the ThingsBoard.
 
 Explore the platform [documentation](https://thingsboard.io/docs/){: target="_blank"} to learn more about key concepts and features.
+{% include add-device-banner.liquid %}

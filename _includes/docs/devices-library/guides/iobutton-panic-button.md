@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [ioButton Panic button]({{deviceVendorLink}}){: target="_blank"} ioButton is a versatile solution, pre-
 configured for various emergency
 scenarios. When the panic button is
@@ -31,6 +30,7 @@ By default, the ioButton sends a heartbeat message every 4 hours.
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -70,3 +70,4 @@ Go to the **Latest telemetry** tab to see the latest telemetry data received fro
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

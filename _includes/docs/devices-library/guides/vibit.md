@@ -10,7 +10,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [VIBit]({{deviceVendorLink}}){:target="_blank"} is a compact, rugged, tri-axial vibration, temperature, and acoustic sensor designed for industrial anomaly detection. It supports Wi-Fi connectivity and integrates seamlessly with the MachineAstro VIBit Application for configuration and monitoring.<br><br><br><br><br>
 
 ## Prerequisites
@@ -24,6 +23,7 @@ To continue with this guide, we will need the following:
   - **Username**: sensor
   - **Password**: cimcon
   - **Client ID**: VIBit Device BLE MAC (Bluetooth MAC address of the sensor)
+
 
 ## Create Device profile on ThingsBoard
 
@@ -144,3 +144,4 @@ Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"
 ## Conclusion
 
 Integrating VIBit with ThingsBoard using MQTT Basic authentication ensures secure and efficient monitoring of industrial equipment, facilitating predictive maintenance and reducing downtime. The combination of real-time data transmission and comprehensive dashboards empowers maintenance teams to make informed decisions.
+{% include add-device-banner.liquid %}

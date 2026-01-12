@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Compact Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} is based on Bluetooth5.0 technology and LoRaWAN. It receives nearby [Bluetooth beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"} messages and transmits them to the server through LoRaWAN.<br>
 The built-in 600mAh rechargeable battery makes it last about 10 hours when not powered. The standby time can be significantly extended by changing Bluetooth receiving settings.<br><br>
 
@@ -18,6 +17,7 @@ The built-in 600mAh rechargeable battery makes it last about 10 hours when not p
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -39,3 +39,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

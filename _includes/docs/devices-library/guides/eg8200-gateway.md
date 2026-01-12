@@ -8,7 +8,6 @@
   '
   %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 **CPU**: 2 Cores A7@1.2G<br>
 **Memory**: 512M<br>
 **eMMC**: 4G<br>
@@ -31,6 +30,7 @@ EG series products abstract complex hardware interfaces, different industrial ne
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Gateway connection
 
@@ -152,3 +152,4 @@ Click the created device and find the latest telemetry data received by the plat
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

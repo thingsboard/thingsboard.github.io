@@ -1,6 +1,5 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Elastel EG500](https://www.elastel.com/products/industrial-raspberry-pi/eg500-edge-computing-gateway/){:target="_blank"} is an Industrial Edge Computing Gateway powered by **Raspberry Pi CM4**.
 
 Perfect for use as an IoT Gateway, data acquisition device, Industrial Controller, or for Edge Computing applications.
@@ -27,6 +26,7 @@ Also, you will require the following items:
 
 ![wiring1](/images/devices-library/basic/single-board-computers/raspberry-pi-cm4/wiring1.png)
 ![wiring2](/images/devices-library/basic/single-board-computers/raspberry-pi-cm4/wiring2.png)
+
 
 ## Create device on ThingsBoard
 
@@ -139,3 +139,4 @@ By following this guide, you can easily integrate Elastel IIoT gateways with Thi
 
 - Learn more about [**Elastel Edge Devices**](https://www.elastel.com/products/){:target="_blank"}.
 - Explore ThingsBoard [**Documentation**](https://thingsboard.io/docs/pe/){:target="_blank"} for advanced features and concepts.
+{% include add-device-banner.liquid %}
