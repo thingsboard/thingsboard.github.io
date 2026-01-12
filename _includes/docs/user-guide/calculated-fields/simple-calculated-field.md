@@ -83,13 +83,13 @@ Import a device that publishes temperature and humidity telemetry.
 
 {% assign examplePropagation21 = '
     ===
-        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-1-ce.png
         title: Go to the Devices and Import device configurations from a CSV file.
     ===
-        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-2-ce.png
         title: CSV includes:<br>Name: Smart Device; Type: smart-device; Time series: humidity; Time series: temperature
     ===
-        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-3-ce.png
         title: Smart Device has been added.
 '
 %}
@@ -117,19 +117,19 @@ This configuration reads <span class="code-light">temperature</span> and <span c
 
 {% assign exampleSimple2 = '
     ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-1-ce.png
         title: Create a **"Simple"** calculated field at the device level.
     ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-2-ce.png
         title: Add first argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i><br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-3-ce.png
         title: Add a second argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>humidity</i><br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-4-ce.png
         title: Insert the mathematical **expression** to calculate the dew point.<br>In the **Output** section<br>- Select **type:** <i>Time series</i>.<br>- Specify the name of the calculated variable — **dewPoint** — under which the calculation result will be saved.<br>Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-5-ce.png
         title: The calculated field has been added.
 '
 %}
@@ -144,7 +144,7 @@ The dew point is calculated and saved as telemetry on the Smart Device under the
 
 {% assign exampleSimple3 = '
     ===
-        image: /images/user-guide/calculated-fields/simple/simple-example-8-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-8-ce.png
         title: The dew point is calculated and saved as telemetry on the Smart Device under the <span class="code-light">dewPoint</span> key.
 '
 %}

@@ -101,7 +101,7 @@ filterCollection:
         <div class="devices-hero-banner">
             <p>Wish to integrate existing sensors?</p>
             <a href="/docs/getting-started-guides/connectivity/">See instruction</a>
-            <img src="/images/devices-library-icon.svg" width="210" height="210" alt="Hardware partner icon">
+            <img src="https://img.thingsboard.io/devices-library-icon.svg" width="210" height="210" alt="Hardware partner icon">
         </div>
     </div>
 </div>

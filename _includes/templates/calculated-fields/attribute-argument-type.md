@@ -11,7 +11,7 @@ Uses **static** or **semi-static data** stored as entity attributes
 
 {% assign attributeArgumentType = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-attribute-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-attribute-argument-1-ce.png
         title: Select the **attribute** argument type, choose the **attribute scope**, specify the **attribute key**, and set the **argument name**. Optionally, define a default value. Click **Add** to add the argument.
 '
 %}

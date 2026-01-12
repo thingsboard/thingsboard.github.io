@@ -21,7 +21,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: /images/partners/efento.webp
+  logo: https://img.thingsboard.io/partners/efento.webp
   page: /partners/hardware/efento
   site:
     href: https://getefento.com/
@@ -59,7 +59,7 @@
     - Gateways
     - Sensors
     - Other devices
-  logo: /images/partners/teltonika-networks.webp
+  logo: https://img.thingsboard.io/partners/teltonika-networks.webp
   page: /partners/hardware/teltonika
   site:
     href: https://teltonika-networks.com/?utm_source=iotplatform&utm_medium=referral&utm_content=thingsboard
@@ -100,7 +100,7 @@
   hardware-types:
     - Microcontrollers
     - Single-board computers
-  logo: /images/partners/espressif.webp
+  logo: https://img.thingsboard.io/partners/espressif.webp
   page: /partners/hardware/espressif
   site:
     href: https://www.espressif.com/
@@ -134,7 +134,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: /images/partners/ezurio-logo.png
+  logo: https://img.thingsboard.io/partners/ezurio-logo.png
   page: /partners/hardware/ezurio
   site:
     href: https://www.ezurio.com/
@@ -166,7 +166,7 @@
     - Smart Energy
   hardware-types:
     - Single-board computers
-  logo: /images/partners/seeed.webp
+  logo: https://img.thingsboard.io/partners/seeed.webp
   page: /partners/hardware/seeed
   site:
     href: https://www.seeedstudio.com/
@@ -228,7 +228,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: /images/partners/milesight-logo.webp
+  logo: https://img.thingsboard.io/partners/milesight-logo.webp
   page: /partners/hardware/milesight
   site:
     href: https://www.milesight.com/
@@ -293,7 +293,7 @@
     - Sensors
     - Trackers
     - Other devices
-  logo: /images/partners/smartico.webp
+  logo: https://img.thingsboard.io/partners/smartico.webp
   page: /partners/hardware/smartico
   site:
     href: https://www.smartico.biz/en/
@@ -357,7 +357,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/DCT-Logo-Standard-Color-01.webp
+  logo: https://img.thingsboard.io/partners/DCT-Logo-Standard-Color-01.webp
   page: /partners/hardware/digitalcomtech
   site:
     href: https://www.digitalcomtech.com/
@@ -395,7 +395,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/nettra.webp
+  logo: https://img.thingsboard.io/partners/nettra.webp
   page: /partners/hardware/nettra
   site:
     href: https://nettra.tech/
@@ -429,7 +429,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/solandtec.webp
+  logo: https://img.thingsboard.io/partners/solandtec.webp
   page: /partners/hardware/solandtec
   site:
     href: https://solandtec.com/
@@ -472,7 +472,7 @@
   hardware-types:
     - Trackers
     - Gateways
-  logo: /images/partners/actility.webp
+  logo: https://img.thingsboard.io/partners/actility.webp
   page: /partners/hardware/actility
   site:
     href: https://www.actility.com/
@@ -509,7 +509,7 @@
     - Sensors
     - Trackers
     - Other devices
-  logo: /images/partners/sodaq.webp
+  logo: https://img.thingsboard.io/partners/sodaq.webp
   page: /partners/hardware/sodaq
   site:
     href: https://sodaq.com/
@@ -542,7 +542,7 @@
   hardware-types:
     - Single-board computers
     - Sensors
-  logo: /images/partners/sensiedge_logo.webp
+  logo: https://img.thingsboard.io/partners/sensiedge_logo.webp
   page: /partners/hardware/sensiedge
   site:
     href: https://www.sensiedge.com/
@@ -580,7 +580,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/sensy32-logo.svg
+  logo: https://img.thingsboard.io/partners/sensy32-logo.svg
   page: /partners/hardware/sensy32
   site:
     href: https://sensy32.io/
@@ -619,7 +619,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/decode.webp
+  logo: https://img.thingsboard.io/partners/decode.webp
   page: /partners/hardware/decode
   site:
     href: https://www.decode.rs/
@@ -660,7 +660,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: /images/partners/tektelic.webp
+  logo: https://img.thingsboard.io/partners/tektelic.webp
   page: /partners/hardware/tektelic
   site:
     href: https://tektelic.com/
@@ -695,7 +695,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: /images/partners/logo-akkr8.webp
+  logo: https://img.thingsboard.io/partners/logo-akkr8.webp
   page: /partners/hardware/akkr8
   site:
     href: https://www.akkr8.io/
@@ -734,7 +734,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/roltek_logo_dark.webp
+  logo: https://img.thingsboard.io/partners/roltek_logo_dark.webp
   page: /partners/hardware/roltek
   site:
     href: https://www.roltek.com.tr/
@@ -786,7 +786,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/radionode-logo.png
+  logo: https://img.thingsboard.io/partners/radionode-logo.png
   page: /partners/hardware/radionode
   site:
     href: https://en.radionode365.com/kr/
@@ -820,7 +820,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/kernel_logo.webp
+  logo: https://img.thingsboard.io/partners/kernel_logo.webp
   page: /partners/hardware/kernelgroup
   site:
     href: https://www.kernelgroup.it/
@@ -880,7 +880,7 @@
     - Single-board computers
     - Gateways
     - Other devices
-  logo: /images/partners/bliiot-logo.webp
+  logo: https://img.thingsboard.io/partners/bliiot-logo.webp
   page: /partners/hardware/beilai
   site:
     href: https://www.iot-solution.com/
@@ -917,7 +917,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: /images/partners/machineastro-logo.png
+  logo: https://img.thingsboard.io/partners/machineastro-logo.png
   page: /partners/hardware/machineastro
   site:
     href: https://machineastro.com/
@@ -943,7 +943,7 @@
     - Assisted Living
   hardware-types:
     - Sensors
-  logo: /images/partners/mclimate-logo.png
+  logo: https://img.thingsboard.io/partners/mclimate-logo.png
   page: /partners/hardware/mclimate
   site:
     href: https://mclimate.eu/
@@ -988,7 +988,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: /images/partners/senquip.webp
+  logo: https://img.thingsboard.io/partners/senquip.webp
   page: /partners/hardware/senquip
   site:
     href: https://www.senquip.com
@@ -1035,7 +1035,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/dusun.webp
+  logo: https://img.thingsboard.io/partners/dusun.webp
   page: /partners/hardware/dusun
   site:
     href: https://www.dusuniot.com/
@@ -1073,7 +1073,7 @@
   hardware-types:
     - Single-board computers
     - Other devices
-  logo: /images/partners/monoZ.webp
+  logo: https://img.thingsboard.io/partners/monoZ.webp
   page: /partners/hardware/monoz
   site:
     href: https://monoz.io/
@@ -1108,7 +1108,7 @@
     - Gateways
     - Sensors
     - Other devices
-  logo: /images/partners/exxn.webp
+  logo: https://img.thingsboard.io/partners/exxn.webp
   page: /partners/hardware/exxn
   site:
     href: https://exxn.es/en/
@@ -1148,7 +1148,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/FusionDAQ-Nav-Logo.webp
+  logo: https://img.thingsboard.io/partners/FusionDAQ-Nav-Logo.webp
   page: /partners/hardware/fusiondaq
   site:
     href: https://fusiondaq.com/
@@ -1180,7 +1180,7 @@
   hardware-types:
     - Sensors
     - Gateways
-  logo: /images/partners/Yobiiq_Logo_Primary.webp
+  logo: https://img.thingsboard.io/partners/Yobiiq_Logo_Primary.webp
   page: /partners/hardware/yobiiq
   site:
     href: https://yobiiq.com/
@@ -1215,7 +1215,7 @@
   hardware-types:
     - Gateways
     - Other devices
-  logo: /images/partners/yudash_logo.webp
+  logo: https://img.thingsboard.io/partners/yudash_logo.webp
   page: /partners/hardware/yudash
   site:
     href: https://www.yudash.com/
@@ -1268,7 +1268,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/moko-smart-logo.webp
+  logo: https://img.thingsboard.io/partners/moko-smart-logo.webp
   page: /partners/hardware/mokosmart
   site:
     href: https://www.mokosmart.com/
@@ -1308,7 +1308,7 @@
     - Tank Level Monitoring
   hardware-types:
     - Sensors
-  logo: /images/partners/netvox-logo.webp
+  logo: https://img.thingsboard.io/partners/netvox-logo.webp
   page: /partners/hardware/netvox
   site:
     href: http://www.netvox.com.tw/
@@ -1358,7 +1358,7 @@
     - Single-board computers
     - Sensors
     - Gateways
-  logo: /images/partners/ncd-logo.webp
+  logo: https://img.thingsboard.io/partners/ncd-logo.webp
   page: /partners/hardware/ncd
   site:
     href: https://ncd.io/
@@ -1399,7 +1399,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/temco-controls-logo.webp
+  logo: https://img.thingsboard.io/partners/temco-controls-logo.webp
   page: /partners/hardware/temcocontrols
   site:
     href: https://temcocontrols.com/
@@ -1436,7 +1436,7 @@
     - Tank Level Monitoring
   hardware-types:
     - Sensors
-  logo: /images/partners/senso-8-logo.png
+  logo: https://img.thingsboard.io/partners/senso-8-logo.png
   page: /partners/hardware/arwin-technology-limited
   site:
     href: https://www.senso8.com/
@@ -1482,7 +1482,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: /images/partners/atomsenses-logo.webp
+  logo: https://img.thingsboard.io/partners/atomsenses-logo.webp
   page: /partners/hardware/atomsenses
   site:
     href: https://www.atomsenses.com/
@@ -1526,7 +1526,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/digicom-logo.webp
+  logo: https://img.thingsboard.io/partners/digicom-logo.webp
   page: /partners/hardware/digicom
   site:
     href: https://www.digicom.it/
@@ -1582,7 +1582,7 @@
     - Gateways
     - Trackers
     - Other devices
-  logo: /images/partners/mikrotik-logo.webp
+  logo: https://img.thingsboard.io/partners/mikrotik-logo.webp
   page: /partners/hardware/mikrotik
   site:
     href: https://mikrotik.com/
@@ -1636,7 +1636,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: /images/partners/lansitec-logo.webp
+  logo: https://img.thingsboard.io/partners/lansitec-logo.webp
   page: /partners/hardware/lansitec
   site:
     href: https://www.lansitec.com/
@@ -1771,7 +1771,7 @@
   hardware-types:
     - Gateway
     - Single-board computers
-  logo: /images/partners/elastel-logo.webp
+  logo: https://img.thingsboard.io/partners/elastel-logo.webp
   page: /partners/hardware/elastel
   site:
     href: https://www.elastel.com/
@@ -1821,7 +1821,7 @@
     - Sensors
     - Gateways
     - Trackers
-  logo: /images/partners/dragino-logo.webp
+  logo: https://img.thingsboard.io/partners/dragino-logo.webp
   page: /partners/hardware/dragino
   site:
     href: http://www.dragino.com/
@@ -1864,7 +1864,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/haltian-logo.webp
+  logo: https://img.thingsboard.io/partners/haltian-logo.webp
   page: /partners/hardware/haltian
   site:
     href: https://haltian.com/
@@ -1918,7 +1918,7 @@
     - Single-board computers
     - Gateways
     - Trackers
-  logo: /images/partners/sixfab-logo.webp
+  logo: https://img.thingsboard.io/partners/sixfab-logo.webp
   page: /partners/hardware/sixfab
   site:
     href: https://sixfab.com/alpon
@@ -1952,7 +1952,7 @@
   hardware-types:
     - Trackers
     - Sensors
-  logo: /images/partners/iothings-logo.png
+  logo: https://img.thingsboard.io/partners/iothings-logo.png
   page: /partners/hardware/iothings
   site:
     href: https://iotracker.eu/
@@ -1994,7 +1994,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/ace-automation-logo.webp
+  logo: https://img.thingsboard.io/partners/ace-automation-logo.webp
   page: /partners/hardware/ace-plc
   site:
     href: https://aceautomation.eu/
@@ -2027,7 +2027,7 @@
     - Smart Irrigation
   hardware-types:
     - Sensors
-  logo: /images/partners/makerfabs-logo.png
+  logo: https://img.thingsboard.io/partners/makerfabs-logo.png
   page: /partners/hardware/agrosense-makerfabs
   site:
     href: https://www.makerfabs.com/agrosense
@@ -2084,7 +2084,7 @@
     - Microcontrollers
     - Gateways
     - Other devices
-  logo: /images/partners/iotrouter-logo.png
+  logo: https://img.thingsboard.io/partners/iotrouter-logo.png
   page: /partners/hardware/iotrouter
   site:
     href: http://www.iotrouter.com/
@@ -2137,7 +2137,7 @@
     - Sensors
     - Gateways
     - Other devices
-  logo: /images/partners/weinzierl-logo.svg
+  logo: https://img.thingsboard.io/partners/weinzierl-logo.svg
   page: /partners/hardware/weinzierl
   site:
     href: https://weinzierl.de/en/

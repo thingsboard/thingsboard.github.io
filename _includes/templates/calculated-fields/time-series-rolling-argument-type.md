@@ -11,7 +11,7 @@ Uses **historical time series data** over a specified time window for trend anal
 
 {% assign rollingArgumentType = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-rolling-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-rolling-argument-1-ce.png
         title: Select the **time series rolling** argument type and specify the **time series key**. Define the **time window for data collection** and the maximum number of values to be processed, then click **Add**.
 '
 %}

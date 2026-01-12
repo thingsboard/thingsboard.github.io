@@ -28,26 +28,26 @@ The new **IoT Gateway device** will be featured at the top of the **“ThingsBoa
 
 {% assign modbusConnectorPE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1100/14-connector-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1100/14-connector-pe.webp,
         title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/6-add-connector-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/6-add-connector-pe.webp,
         title: To add a **Connector**, click the **“+”** button. In the pop-up window, select the **MODBUS** option in the **“Type”** field and enter the  name of the connector in the **“Name”** field. Click the **“Add”** button to proceed.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/7-advanced-config-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/7-advanced-config-pe.webp,
         title: To make further adjustments, click on the newly added **Connector** and select the **“Advanced”** tab and the **“Configuration”** sub-tab on the right side of the **"MODBUS Configuration"** screen.
 '
 %}
 
 {% assign modbusConnectorCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1100/10-connector.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1100/10-connector.webp,
         title: On the **“ThingsBoard IoT Gateways”** dashboards page, click the **“Connectors”** button.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/6-add-connector.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/6-add-connector.webp,
         title: To add a **Connector**, click the **“+”** button. In the pop-up window, select the **MODBUS** option in the **“Type”** field and enter the  name of the connector in the **“Name”** field. Click the **“Add”** button to proceed.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/7-advanced-config.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/7-advanced-config.webp,
         title: To make further adjustments, click on the newly added **Connector** and select the **“Advanced”** tab and the **“Configuration”** sub-tab on the right side of the **"MODBUS Configuration"** screen.
 '
 %}
@@ -143,20 +143,20 @@ Start installation of the **IoT Gateway** on the **reComputer R1100**:
 
 {% assign downloadYMLPE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1100/15-gw-list-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1100/15-gw-list-pe.webp,
         title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1100).
     ===
-        image: /images/devices-library/edge/recomputer-r1100/16-launch-command.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1100/16-launch-command.webp,
         title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
 '
 %}
 
 {% assign downloadYMLCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1100/11-gw-list.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1100/11-gw-list.webp,
         title: Go back to the **“ThingsBoard IoT Gateways”** dashboard page and click on the newly added **Gateway device** (reComputer R1100).
     ===
-        image: /images/devices-library/edge/recomputer-r1100/12-launch-command.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1100/12-launch-command.webp,
         title: On the **Gateway device** page, click the **“Launch command”** button and download **docker-compose.yml** for your gateway.
 '
 %}
@@ -200,7 +200,7 @@ nano docker-compose.yml
 
 * Copy the content of the previously downloaded **docker-compose.yml** file, and paste it into the new one via the terminal:
 
-![image](/images/devices-library/edge/recomputer-r1100/copy-paste-configs.webp)
+![image](https://img.thingsboard.io/devices-library/edge/recomputer-r1100/copy-paste-configs.webp)
 
 * Save the **docker-compose.yml** file and press **CTRL+S** to save it. To close the file press **CTRL+X**.
 
@@ -219,42 +219,42 @@ The command must be executed in the same directory in which the docker-compose.y
 
 ## Visualize Incoming Data with the Dashboard
 
-![image](/images/devices-library/edge/recomputer-r1100/r1100-logo.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1100** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
+![image](https://img.thingsboard.io/devices-library/edge/recomputer-r1100/r1100-logo.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1100** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
 
 {% assign dashboardPE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/11-create-new-dashboard-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/11-create-new-dashboard-pe.webp,
         title: Go to the **Dashboards** section, click the **“+”** icon and select **"Create new dashboard"** option.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/12-enter-name-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/12-enter-name-pe.webp,
         title: In the pop-up window, enter the dashboard **title**. Other fields are optional. Click the **"Add"** button to proceed.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/13-configure-dashboard-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/13-configure-dashboard-pe.webp,
         title: Once you have created the dashboard, it will be automatically opened. Click the **"Add widget"** button and select the widget you require. For example, open the **“Charts”** widget bundle and elect the **Line chart**.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/14-widget-configuration-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/14-widget-configuration-pe.webp,
         title: In the **"Add Widget"** pop-up window, select the **Device** (in our case, Siemens LOGO!) as the **Datasource**. Please verify that the **Series Key** is the same as the one entered in the **Advanced Configuration** settings of the connector. As an example, we have utilized the designation **"temp"**. Consequently, the series key must be **"temp"** as well. Click the **“Add”** button.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/15-dashboard-pe.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/15-dashboard-pe.webp,
         title: You will now be able to see the real-time data on the dashboard.
 '
 %}
 
 {% assign dashboardCE = '
     ===
-        image: /images/devices-library/edge/recomputer-r1000/11-create-new-dashboard.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/11-create-new-dashboard.webp,
         title: Go to the **Dashboards** section, click the **“+”** icon and select **"Create new dashboard"** option.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/12-enter-name.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/12-enter-name.webp,
         title: In the pop-up window, enter the dashboard **title**. Other fields are optional. Click the **"Add"** button to proceed.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/13-configure-dashboard.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/13-configure-dashboard.webp,
         title: Once you have created the dashboard, it will be automatically opened. Click the **"Add widget"** button and select the widget you require. For example, open the **“Charts”** widget bundle and elect the **Line chart**.
     ===
-        image: /images/devices-library/edge/recomputer-r1000/14-widget-configuration.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/14-widget-configuration.webp,
         title: In the **"Add Widget"** pop-up window, select the **Device** (in our case, Siemens LOGO!) as the **Datasource**. Please verify that the **Series Key** is the same as the one entered in the **Advanced Configuration** settings of the connector. As an example, we have utilized the designation **"temp"**. Consequently, the series key must be **"temp"** as well. Click the **“Add”** button..
     ===
-        image: /images/devices-library/edge/recomputer-r1000/15-dashboard.webp,
+        image: https://img.thingsboard.io/devices-library/edge/recomputer-r1000/15-dashboard.webp,
         title: You will now be able to see the real-time data on the dashboard.
 '
 %}

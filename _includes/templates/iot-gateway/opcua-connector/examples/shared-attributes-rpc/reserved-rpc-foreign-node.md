@@ -5,7 +5,7 @@ We will set the device node to `Root\.Objects\.DemoDevice`, but we will access t
 As an example, we will use Prosys OPC-UA Simulation Server, which is 
 available at `opc.tcp://0.0.0.0:53530/OPCUA/SimulationServer`. The server has the following structure:
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-server-structure-overview-4.png)
 
 We’re interested in the "**TextMessage**" which has the "**[Path](/docs/iot-gateway/config/opc-ua/#absolute-path)**" - `Root\.Objects\.DemoDeviceInfo\.TextMessage`, 
 and does not belong to the device node tree. We added this node as a telemetry parameter
@@ -37,7 +37,7 @@ Response:
 ```
 {: .copy-code}
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-foreign-nodes-result-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-foreign-nodes-result-1.png)
 
 So, the `get` method returns the current value of the textmessage node, and we can see that the textmessage is `HI`.
 
@@ -62,7 +62,7 @@ Response:
 
 And as you can see, from the screenshot below, the textmessage telemetry value has changed to `New Message`:
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-set-foreign-nodes-result-1.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-set-foreign-nodes-result-1.png)
 
 Also, let's check the value of the textmessage telemetry again:
 
@@ -78,7 +78,7 @@ Response:
 ```
 {: .copy-code}
 
-![image](/images/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-foreign-nodes-result-2.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/examples/opc-ua-reserved-rpc-get-foreign-nodes-result-2.png)
 
 Full configuration for OPC-UA connector for the examples above will look like this:
 

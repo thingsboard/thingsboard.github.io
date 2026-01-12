@@ -1,4 +1,4 @@
-{% assign deviceImg = "/images/devices-library/" | append: page.deviceImageFileName %}
+{% assign deviceImg = "https://img.thingsboard.io/devices-library/" | append: page.deviceImageFileName %}
 {% assign deviceName = page.title | replace: "How to install ThingsBoard Edge on ", "" | replace: "How to connect ", "" | replace: " to ThingsBoard?", "" | replace: "?", "" %}
 {% assign deviceHardwareType = page.hardwareType %}
 {% assign deviceConnectivity = page.connectivity | join: ", " %}

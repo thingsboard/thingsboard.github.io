@@ -5,29 +5,29 @@ description: How To Activate Self-Hosted Trendz
 
 login:
   0:
-    image: /images/trendz/activation/self-hosted/login-1.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/login-1.png
     title: 'Open the <b>ThingsBoard License Portal</b> and sign in with your ThingsBoard account as a sysadmin.'
   1:
-    image: /images/trendz/activation/self-hosted/login-2.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/login-2.png
     title: 'Go to the <b>Subscriptions</b> tab or <b>Perpetual licenses</b> tab (depends on your subscription type).'
 
 enable:
   0:
-    image: /images/trendz/activation/self-hosted/enable-1.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/enable-1.png
     title: 'In the list of licensed installations, select the ThingsBoard instance for which you want to enable Trendz and click on it to open the instance profile'
   1:
-    image: /images/trendz/activation/self-hosted/enable-2.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/enable-2.png
     title: 'Click <b>Manage Add-ons</b>.'
   2:
-    image: /images/trendz/activation/self-hosted/enable-3.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/enable-3.png
     title: 'Scroll down and enable the <b>Trendz Analytics</b> checkbox.'
   3:
-    image: /images/trendz/activation/self-hosted/enable-4.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/enable-4.png
     title: 'Click <b>Next</b> in the lower right corner.'
 
 complete-payment:
   0:
-    image: /images/trendz/activation/self-hosted/complete-payment.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/complete-payment.png
     title: 'On the Summary screen, verify the selected plan and full price. If everything is correct, click <b>Update</b> and complete the payment.'
 ---
 

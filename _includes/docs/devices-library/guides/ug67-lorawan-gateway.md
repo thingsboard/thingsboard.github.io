@@ -58,7 +58,7 @@ According to the [official user manual](https://resource.milesight.com/milesight
 
 {% assign gatewayGeneralSettings = '
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
         title: Now you have ability to configure the gateway.
 '%}
 
@@ -66,7 +66,7 @@ According to the [official user manual](https://resource.milesight.com/milesight
 
 {% assign gatewayPacketForwarderTab = '
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
         title: Open **Packet Forwarder** in the left menu and save **Gateway EUI** and **Gateway ID**, we will need them to create a gateway on network server.  
 '%}
 

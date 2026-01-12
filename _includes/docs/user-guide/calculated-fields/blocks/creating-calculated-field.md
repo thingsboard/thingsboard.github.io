@@ -6,20 +6,20 @@ The process of creating a calculated field is the same for [Devices](/docs/pe/us
 
 {% assign createCalculatedFieldCE2 = '
     ===
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/create-new-calculated-field-1-ce.png
         title: Open the **Calculated fields** page from the left-hand menu. Click **+** → **Create new calculated field**.
     ===
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/create-new-calculated-field-2-ce.png
         title: In the configuration window, specify the **entity or profile** to which the calculated field will be applied.
 '
 %}
 
 {% assign createCalculatedFieldPE2 = '
     ===
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
         title: Open the **Calculated fields** page from the left-hand menu. Click **+** → **Create new calculated field**.
     ===
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/create-new-calculated-field-2-pe.png
         title: In the configuration window, specify the **target entity or profile** to which the calculated field will be applied.
 '
 %}

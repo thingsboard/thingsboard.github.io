@@ -64,7 +64,7 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/devices-library/io-button-lorawan-device-data.png)
+![LoRaWAN device data](https://img.thingsboard.io/devices-library/io-button-lorawan-device-data.png)
 
 
 ## Conclusion

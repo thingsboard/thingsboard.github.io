@@ -10,7 +10,7 @@ Uses the most recent **latest telemetry value** for the specified time series ke
 
 {% assign latestTelemetryArgumentType = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-latest-telemetry-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-latest-telemetry-argument-1-ce.png
         title: Select the **latest telemetry** argument type and specify the **time series key**. Optionally, define a default value. Finally, click **Add**.
 '
 %}

@@ -42,7 +42,7 @@ Define the relationship type between the target entity and the related entities 
 
 {% assign relatedPathToRelatedEntities = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-path-to-related-entities-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-path-to-related-entities-1-ce.png
         title: Define the path to the entities from which the data will be read for aggregation, as well as the relationship type between the target entity and the related entities.
 '
 %}
@@ -65,10 +65,10 @@ For more details about arguments and configuration, see the [Arguments](/docs/us
 
 {% assign relatedArgument = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-1-ce.png
         title: Click **Add argument** and define the data source.<br>Specify the **argument type**, **time series key / attribute key**, **argument name**, and **default value**.<br>Then click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-2-ce.png
 '
 %}
 
@@ -99,10 +99,10 @@ return temperature > 10 && status == "active";
 
 {% assign relatedMetrics = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-1-ce.png
         title: Click **Add metric** and configure the following:<br>Specify the **metric name** and select **aggregation** type.
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
         title: Select **value source** (Key or Function) and set **argument name**.<br>Then click **Add**.
 '
 %}
@@ -124,7 +124,7 @@ This prevents excessive reprocessing and reduces system load in high-frequency e
 
 {% assign relatedDeduplicationInterval = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-3-ce.png
         title: **Deduplication interval** is the minimum time period between repeated aggregations. It limits how often a calculated field can re-aggregate data from related entities in response to frequent updates.
 '
 %}
@@ -145,10 +145,10 @@ For more details about output types and processing strategies, see the [Output](
 
 {% assign relatedOutput = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-1-ce.png
         title: Time series: the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.<br>To finish adding the calculated field, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-2-ce.png
         title: Attribute: the function returns a JSON object **without timestamp** information containing the computed value.<br>To finish adding the calculated field, click **Add**.
 '
 %}
@@ -191,13 +191,13 @@ Import multiple smart devices that publish temperature telemetry.
 
 {% assign exampleRelatedEntities1 = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
         title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
         title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
         title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
 '
 %}
@@ -217,7 +217,7 @@ Import the asset that represents the building.
 
 {% assign exampleRelatedEntities2 = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
         title: Import an asset that represents the building.
 '
 %}
@@ -236,7 +236,7 @@ These relations define the set of child entities whose telemetry will be aggrega
 
 {% assign examplePropagation33 = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
         title: Create a relationship between the **Building A** asset and the **smart devices**.
 '
 %}
@@ -258,25 +258,25 @@ This field will:
 
 {% assign examplePropagation34 = '
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
         title: Check the debug events by clicking the "Events" icon button".
 '
 %}
@@ -293,7 +293,7 @@ The Building A asset stores the aggregated telemetry values, such as:
 
 {% assign examplePropagation33 = '
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-13-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-13-ce.png
         title: The Building A asset stores the aggregated telemetry values, such as:<br>- avgTemperature — average temperature across all sensors<br>- maxTemperature — maximum temperature measured by one of the sensors
 '
 %}

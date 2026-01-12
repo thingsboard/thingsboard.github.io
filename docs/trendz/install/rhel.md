@@ -7,29 +7,29 @@ description: Installing ThingsBoard Trendz Analytics  on CentOS/RHEL
 
 trendz-settings:
   0:
-    image: /images/trendz/install/sync/trendz-settings-1.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-settings-1.png
     title: "Log in to <b>ThingsBoard</b> as a <b>Sysadmin</b>."
   1:
-    image: /images/trendz/install/sync/trendz-settings-2.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-settings-2.png
     title: "Open the <b>Trendz Settings</b> page."
   2:
-    image: /images/trendz/install/sync/trendz-settings-3.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-settings-3.png
     title: "If you see the message <b>\"Synchronization completed successfully\"</b>, the synchronization has been completed automatically and no further action is required."
 trendz-sync:
   0:
-    image: /images/trendz/install/sync/trendz-sync-1.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-sync-1.png
     title: "If you see an error message, follow these steps."
   1:
-    image: /images/trendz/install/sync/trendz-sync-2.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-sync-2.png
     title: "Enter the correct <b>Trendz internal URL</b> and <b>ThingsBoard internal URL</b>."
   2:
-    image: /images/trendz/install/sync/trendz-sync-3.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-sync-3.png
     title: "Click <b>Save configuration</b>."
   3:
-    image: /images/trendz/install/sync/trendz-sync-4.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-sync-4.png
     title: "Click <b>Retry discovery</b>."
   4:
-    image: /images/trendz/install/sync/trendz-sync-5.png
+    image: https://img.thingsboard.io/trendz/install/sync/trendz-sync-5.png
     title: "Once the message <b>\"Synchronization completed successfully\"</b> appears, the synchronization is complete."
 
 ---

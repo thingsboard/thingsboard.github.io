@@ -33,7 +33,7 @@ For simplicity, we will create the device manually using the UI.
 
 Your device has been successfully added.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-1.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-1.png)
 
 ## Install required Payload decoders
 
@@ -41,19 +41,19 @@ After adding the device we need to create an Integration for creating the device
 
 - Click the integrations tab and start to add an integration by pressing the “+” sign.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-2.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-2.png)
 
 - Click the integrations tab and start to add an integration by selecting an integration type.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-3.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-3.png)
 
 - Here we are selecting the HTTP for our RN172 device.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-4.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-4.png)
 
 - Then add a name for the integration.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-5.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-5.png)
 
 The next step is to <b>create a data converter</b> for our device.
 
@@ -284,13 +284,13 @@ return decodePayload(payload, metadata);
 ```
 {:.copy-code.expandable-12}
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-6.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-6.png)
 
 - Then completed the integration setup.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-7.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-7.png)
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-8.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-8.png)
 
 ## Connect device to ThingsBoard
 
@@ -298,24 +298,24 @@ return decodePayload(payload, metadata);
 - Run the RadioNode terminal program
 - Enter the password radionode114 and enter the console menu.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-9.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-9.png)
 
 - In the network setup we can add the Wi-Fi SSID and Password.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-10.png))
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-10.png))
 
 - Go to the "2. System Setup" menu and select "B. Set Destination of HTTP". 
 - Select "2:CUSTOMER_V2" from the three destinations. 
 
 This means the data will be sent to the custom server V2.<br>
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-11.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-11.png)
 
 - From the **Integration** tab of ThingsBoard, copy **HTTP endpoint URL** to set in the Radionode terminal program.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-12.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-12.png)
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-13.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-13.png)
 
 Go to the "4. HTTP Destination Setup" menu and select "A. Set Host URL:thingsboard.cloud" Select "D.Set HTTP DATAIN : endpoint from the integration", "E.Set HTTP TIMESTAMP:endpoint from the integration", "F.Set HTTP BACKUPIN :endpoint from the integration".
 
@@ -323,7 +323,7 @@ Go to the "4. HTTP Destination Setup" menu and select "A. Set Host URL:thingsboa
 
 Once the device is connected, On the devices page you can check the latest telemetry.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-14.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-14.png)
 
 ## Setting up the Dashboard
 
@@ -331,29 +331,29 @@ Now configure the dashboard by adding the necessary widgets.
 
 - Go to the **Dashboards** page and press the **+** button to create a new Dashboard.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-15.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-15.png)
 
 - **Enter a name** for the Dashboard and then click the **Add** button.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-16.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-16.png)
 
 After creation, the dashboard will open automatically, and you can start adding widgets right away. Click **Add widget**.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-17.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-17.png)
 
 ThingsBoard provides many widget options to choose from. For example, select a **Time series chart** from the **Charts** widget bundle to visualize data from your device.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-18.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-18.png)
 
 - In the widget settings, you can define the display [time window](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window){:target="_blank"}. 
 - In the **Datasource** field, specify your device whose data you want to display. If you need to add another data series, click **Add series**.   
 - Once configured, click **Add**. Don&#39;t forget to save the dashboard.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-19.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-19.png)
 
 A sample dashboard featuring the Indoor temperature chart card, Indoor humidity chart card, and Temperature and Humidity history line chart.
 
 You can [download this dashboard in JSON format](/docs/devices-library/resources/dashboards/rn172plus/temp-and-rh-dashboard.json){:target="_blank" download="temp-and-rh-dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your own ThingsBoard instance.
 
-![image](/images/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-20.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/rn172wcd/rn172wcd-20.png)
 {% include add-device-banner.liquid %}

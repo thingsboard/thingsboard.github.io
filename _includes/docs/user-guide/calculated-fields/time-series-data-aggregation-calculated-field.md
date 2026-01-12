@@ -41,10 +41,10 @@ For each argument:
 
 {% assign timeSeriesAggrArgument = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-argument-1-ce.png
         title: Click "Add argument" and fill in the required fields.
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-argument-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-argument-2-ce.png
 '
 %}
 
@@ -67,10 +67,10 @@ For each metric:
 
 {% assign timeSeriesAggrMetric = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-1-ce.png
         title: Allows you to shift the start of each interval by a specified offset.
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-2-ce.png
         title: Allows you to shift the start of each interval by a specified offset.
 '
 %}
@@ -96,7 +96,7 @@ Specifies the time zone used to align interval boundaries. This is essential for
 
 {% assign timeSeriesDataAggregationInterval = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-interval-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-interval-1-ce.png
         title: Click "Add argument" and fill in the required fields.
 '
 %}
@@ -115,7 +115,7 @@ Useful when telemetry arrives slightly after boundaries or when aligning with ex
 
 {% assign advancedIntervalOption1 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-1-ce.png
         title: Shifts the start of each interval by a fixed offset.
 '
 %}
@@ -128,7 +128,7 @@ If late telemetry belongs to the finished interval, the system recalculates the 
 
 {% assign advancedIntervalOption2 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-2-ce.png
         title: Defines how long the system waits for telemetry that arrives late after an interval ends.   
 '
 %}
@@ -142,7 +142,7 @@ Calculates aggregates during the current (not yet finished) interval and stores 
 
 {% assign advancedIntervalOption3 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-3-ce.png
         title: Calculates aggregates during the current (not yet finished) interval and stores intermediate values.
 '
 %}
@@ -161,7 +161,7 @@ For more details about output types and processing strategies, see the [Output](
 
 {% assign timeSeriesDataAggrOutput = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-output-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-output-1-ce.png
         title: The calculated values are returned as a JSON object whose keys match the configured Metric names, and they are stored as time series keys.
 '
 %}
@@ -204,13 +204,13 @@ Import multiple smart devices that publish temperature telemetry.
 
 {% assign exampleRelatedEntities1 = '
 ===
-image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
+image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
 title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
 ===
-image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
+image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
 title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
 ===
-image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
+image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
 title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
 '
 %}
@@ -230,7 +230,7 @@ Import the asset that represents the building.
 
 {% assign exampleRelatedEntities2 = '
 ===
-image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
+image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
 title: Import an asset that represents the building.
 '
 %}
@@ -249,7 +249,7 @@ These relations define the set of child entities whose telemetry will be aggrega
 
 {% assign examplePropagation33 = '
 ===
-image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
+image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
 title: Create a relationship between the **Building A** asset and the **smart devices**.
 '
 %}
@@ -271,25 +271,25 @@ This field will:
 
 {% assign examplePropagation34 = '
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
 title: Check the debug events by clicking the "Events" icon button".
 '
 %}
@@ -306,7 +306,7 @@ The Building A asset stores the aggregated telemetry values, such as:
 
 {% assign examplePropagation33 = '
 ===
-/images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-13-ce.png
+https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-13-ce.png
 title: The Building A asset stores the aggregated telemetry values, such as:<br>- avgTemperature — average temperature across all sensors<br>- maxTemperature — maximum temperature measured by one of the sensors
 '
 %}

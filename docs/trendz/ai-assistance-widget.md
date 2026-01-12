@@ -5,92 +5,92 @@ description: Step-by-step guide to interact with Advanced analytics Chat Assista
 
 trendz-assistance-chat-example:
   0: 
-    image: /images/trendz/ai/chat-widget/chat-widget-example-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/chat-widget-example-1.png
     title:
   1: 
-    image: /images/trendz/ai/chat-widget/chat-widget-example-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/chat-widget-example-2.png
     title:
 
 trendz-assistance-create-dashboard:
   0:
-    image: /images/trendz/ai/chat-widget/create-dashboard.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/create-dashboard.png
     title: 
 
 trendz-assistance-set-up-alias:
   0:
-    image: /images/trendz/ai/chat-widget/set-up-alias-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/set-up-alias-1.png
     title: Go to Aliases -> Add Alias
   1:
-    image: /images/trendz/ai/chat-widget/set-up-alias-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/set-up-alias-2.png
     title: Enter an Alias Name, choose Filter Type as "Asset type", select the desired asset type, and click Add
   2:
-    image: /images/trendz/ai/chat-widget/set-up-alias-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/set-up-alias-3.png
     title: Add a second alias - enter Alias Name, choose Filter Type as "Entity from dashboard state", enter State entity parameter name as "default" and click Add
   3:
-    image: /images/trendz/ai/chat-widget/set-up-alias-4.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/set-up-alias-4.png
     title: Ensure that you have two aliases and click Save
 
 trendz-assistance-add-table:
   0:
-    image: /images/trendz/ai/chat-widget/add-table-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-1.png
     title: Click Add Widget, select "Tables"
   1:
-    image: /images/trendz/ai/chat-widget/add-table-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-2.png
     title: Select "Entities table"
   2:
-    image: /images/trendz/ai/chat-widget/add-table-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-3.png
     title: Choose the first alias as the entity alias and click Add action
   3:
-    image: /images/trendz/ai/chat-widget/add-table-4.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-4.png
     title: Add new action
   4:
-    image: /images/trendz/ai/chat-widget/add-table-5.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-5.png
     title: Set Action source as "On row click", set any name, set State entity parameter name as "default" and click Save
   5:
-    image: /images/trendz/ai/chat-widget/add-table-6.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-6.png
     title: Click Save and ensure one action is added
   6:
-    image: /images/trendz/ai/chat-widget/add-table-7.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-table-7.png
     title: Click Add to finalize
 
 trendz-assistance-add-chat-widget:
   0:
-    image: /images/trendz/ai/chat-widget/add-chat-widget-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-chat-widget-1.png
     title: Click + Add widget
   1:
-    image: /images/trendz/ai/chat-widget/add-chat-widget-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-chat-widget-2.png
     title: Select Advanced analytics Bundle
   2:
-    image: /images/trendz/ai/chat-widget/add-chat-widget-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-chat-widget-3.png
     title: Select Advanced analytics Chat Assistant
   3:
-    image: /images/trendz/ai/chat-widget/add-chat-widget-4.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-chat-widget-4.png
     title: Choose the second alias as the Entity alias. Add Name as the Data key.
   4:
-    image: /images/trendz/ai/chat-widget/add-chat-widget-5.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/add-chat-widget-5.png
     title: Go to the Appearance section and enter Filter name fields, then click Add.
 
 trendz-assistance-ai-chat-interaction:
   0:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-1.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-1.png
     title: Click on the desired asset, then click "START AI CHAT".
   1:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-2.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-2.png
     title: In the pop-up window, ask questions about the selected asset.
   2:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-3.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-3.png
     title: See the result.
   3:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-4.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-4.png
     title: The current version of the AI Assistant supports memory and ongoing conversations, so you can ask follow-up questions or provide additional specifications.
   4:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-5.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-5.png
     title: To start a new conversation, click the "New Conversation" button.
   5:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-6.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-6.png
     title: You can always return to a previous conversations using the dropdown under the "Current Chat" label.
   6:
-    image: /images/trendz/ai/chat-widget/ai-chat-interaction-7.png
+    image: https://img.thingsboard.io/trendz/ai/chat-widget/ai-chat-interaction-7.png
     title: You can view messages or save generated views in the "Chats" tab by selecting chats with a "Dashboard Origin".
 
 ---

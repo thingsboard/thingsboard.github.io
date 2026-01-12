@@ -8,15 +8,15 @@ hidetoc: "true"
 
 expression-simple-calculated-fields-1:
   0:
-    image: /images/user-guide/calculated-fields/expression-simple-calculated-fields-1-ce.png
+    image: https://img.thingsboard.io/user-guide/calculated-fields/expression-simple-calculated-fields-1-ce.png
     title: 'In the "Expression" section, enter the mathematical expression for the calculation using the variables defined in the "Arguments" section.'
     
 output-simple-1:
   0:
-    image: /images/user-guide/calculated-fields/output-simple-1-ce.png
+    image: https://img.thingsboard.io/user-guide/calculated-fields/output-simple-1-ce.png
     title: 'Select the output type as "Time series". Set a name to the variable that will store the calculation result. Optionally, specify the number of decimal places.'
   1:
-    image: /images/user-guide/calculated-fields/output-simple-2-ce.png
+    image: https://img.thingsboard.io/user-guide/calculated-fields/output-simple-2-ce.png
     title: 'Select the output type as "Attribute" and choose its scope: "Server attributes", "Client attributes", or "Shared attributes". Set a name to the variable that will store the calculation result. Optionally, set the number of decimal places.'
 
 ---

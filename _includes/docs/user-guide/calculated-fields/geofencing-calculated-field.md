@@ -45,7 +45,7 @@ Enter the exact time series key names (for example, _latitude / longitude_ or _l
 
 {% assign geofencingEntityCoordinates = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-entity-coordinates-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-entity-coordinates-1-ce.png
         title: Specifies the input data for the calculation. You must map the timeseries keys from the incoming telemetry that represent the entity&#39;s GPS location.
 '
 %}
@@ -66,7 +66,7 @@ Click **Add zone group** to create a new group.
 
 {% assign geofencingZoneGroupsAdd = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-add-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-add-1-ce.png
         title: A zone group is a logical category that bundles one or more physical zones (e.g., "Parking", "Restricted", "Loading") into an aggregated status check. The field evaluates all zones in the group to determine the entity’s position.<br>Click **Add zone group** to configure a new group.
 '
 %}
@@ -86,7 +86,7 @@ We recommend using **camelCase** (e.g., _restrictedArea_ instead of _Restricted 
 
 {% assign geofencingZoneGroupsName = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-name-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-name-1-ce.png
         title: The zone group **Name** is used as a prefix for the generated geofencing telemetry keys (for example, **Name** + **Status** and **Name** + **Event**).
 '
 %}
@@ -110,7 +110,7 @@ You can select a specific **Device**, **Asset**, or **Customer**, but this is ge
 
 {% assign geofencingZoneGroupsEntityType = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-entity-type-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-entity-type-1-ce.png
         title: When you configure a group, the system needs to know where the zone definitions (the polygons) are stored. This is determined by the Entity Type (Source) setting.
 '
 %}
@@ -191,7 +191,7 @@ To find zones for a vehicle (Source Entity) that belongs to a fleet:
 
 {% assign geofencingPathFromEntityToZones = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-path-from-entity-to-zones-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-path-from-entity-to-zones-1-ce.png
         title: This section defines the precise "road map" the system follows to find the zone entities.<br>The path starts from the **Source Entity** (the Device or Asset running this Calculated Field) and follows the relations you specify.
 '
 %}
@@ -208,7 +208,7 @@ Specify the name of the **server-side attribute key** (on the selected source en
 
 {% assign geofencingZoneGroupsPerimeterAttributeKey = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-perimeter-attribute-key-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-perimeter-attribute-key-1-ce.png
         title: Specify the name of the **server-side attribute key** (on the selected source entity) that stores the zone geometry.
 '
 %}
@@ -235,7 +235,7 @@ This setting controls which telemetry the calculated field generates for the zon
 
 {% assign geofencingZoneGroupsReportStrategy = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-report-strategy-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-report-strategy-1-ce.png
         title: This setting controls what telemetry data the calculated field generates for the group.
 '
 %}
@@ -278,7 +278,7 @@ Query the _Parking Area_ asset to list all _Vehicle_ entities that currently hav
 
 {% assign geofencingCreateRelationsWithMatchedZones = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-create-relations-with-matched-zones-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-create-relations-with-matched-zones-1-ce.png
         title: This feature is disabled by default. When enabled, the calculated field automatically creates relations between your Source Entity and the specific Zone Entity it is currently inside.
 '
 %}
@@ -313,7 +313,7 @@ Defines how long the system waits before re-checking the database for updates in
 
 {% assign geofencingOutput = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-refresh-interval-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-refresh-interval-1-ce.png
         title: This setting controls how frequently the system updates the cache for dynamically found zones. You can disable, increase, or decrease this interval to balance data freshness against system performance.
 '
 %}
@@ -345,10 +345,10 @@ Example for a group named **restrictedArea**:
 
 {% assign geofencingOutput = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-output-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-output-1-ce.png
         title: The **Geofencing** calculated field generates internal variables based on your **Zone Group Names** and the selected **Report strategy**. In this section, you map those variables to final output keys stored as **Telemetry (Time series)**.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-output-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-output-2-ce.png
         title: The **Geofencing** calculated field generates internal variables based on your **Zone Group Names** and the selected **Report strategy**. In this section, you map those variables to final output keys stored as **Attributes**.
 '
 %}
@@ -389,7 +389,7 @@ Detect when the dog leaves its safe zone and generate:
 
 {% assign petTrackingUsageExample = '
     ===
-       image: /images/user-guide/calculated-fields/geofencing/pet-tracking-example-1.png
+       image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/pet-tracking-example-1.png
        title: You are building a pet tracking solution. Each dog collar has a unique “Home Zone” defined by the owner (e.g., a 40-meter radius around their specific house).'
 %}
 
@@ -419,16 +419,16 @@ Import **two devices** — each device represents a tracker built into a dog col
 
 {% assign geofencingExample1 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-4-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -449,13 +449,13 @@ This calculated field will evaluate whether each dog is inside its own **safeZon
 
 {% assign geofencingExample2 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-5-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-6-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-6-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-7-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-7-ce.png
         title: Check the debug events by clicking the "Events" icon button".
 '
 %}
@@ -476,7 +476,7 @@ The dashboard includes:
   - the last transition event (**ENTERED / LEFT**)
 
 {% assign geofencingExample3 = '
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-10-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-10-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -495,16 +495,16 @@ This confirms that self-geofencing is working correctly for each device.
 
 {% assign geofencingExample4 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-11-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-11-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-12-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-12-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-13-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-13-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-14-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-14-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -530,7 +530,7 @@ Detect when a forklift leaves the perimeter of its assigned building, and genera
 
 {% assign warehouseEquipmentExample1 = '    
     ===
-        image: /images/user-guide/calculated-fields/geofencing/warehouse-equipment-example-2.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/warehouse-equipment-example-2.png
         title: You manage a large distribution center. You have 2 forklifts, and each forklift is assigned to a specific “Warehouse Building” asset.'
 %}
 
@@ -558,16 +558,16 @@ Import **two devices** — each device represents a tracker installed in a forkl
 
 {% assign warehouseEquipmentExample2 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-13-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-13-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-14-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-14-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-15-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-15-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -593,16 +593,16 @@ Import **two devices** — each device represents a tracker installed in a forkl
 
 {% assign warehouseEquipmentExample3 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-16-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-16-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-17-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-17-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-18-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-18-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-19-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-19-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -621,7 +621,7 @@ This relation is used by the calculated field to resolve the assigned building z
 
 {% assign warehouseEquipmentExample4 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-20-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-20-ce.png
         title: Check the debug events by clicking the "Events" icon button".
 '
 %}
@@ -642,13 +642,13 @@ This calculated field checks whether each forklift is located inside the perimet
 
 {% assign warehouseEquipmentExample5 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-21-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-21-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-22-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-22-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-23-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-23-ce.png
         title: Check the debug events by clicking the "Events" icon button".
 '
 %}
@@ -670,7 +670,7 @@ The dashboard includes:
 
 {% assign warehouseEquipmentExample6 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-24-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-24-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -689,16 +689,16 @@ This confirms that geofencing based on a direct device-to-asset association is w
 
 {% assign geofencingExample4 = '
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-25-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-25-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-26-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-26-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-27-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-27-ce.png
         title: Check the debug events by clicking the "Events" icon button".
     ===
-        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-28-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-28-ce.png
         title: The debugging window displays calculated field arguments and the computed result.
 '
 %}
@@ -720,7 +720,7 @@ A logistics company manages a fleet of trucks. Each fleet must comply with compl
 
 {% assign complexFleetManagementExample = '    
     ===
-       image: /images/user-guide/calculated-fields/geofencing/complex-fleet-management-example-3.png
+       image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/complex-fleet-management-example-3.png
        title: A logistics company manages a fleet of trucks. Each fleet must comply with complex rules involving multiple different types of areas simultaneously.'
 %}
 

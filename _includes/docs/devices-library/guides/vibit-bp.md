@@ -14,7 +14,7 @@
 
 ## VIBit-BP Architecture
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-bp-architecture.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-bp-architecture.png)
 
 ## Prerequisites
 
@@ -44,16 +44,16 @@ First, create a new device profile in ThingsBoard that uses the **MQTT transport
 
 {% assign createDeviceProfile = '
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-1.png,
         title: Navigate to **Device profiles** page under the **Profiles** section, click the "**plus**" button, and then select "**Add new device profile**" from drop-down menu.
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-2.png,
         title: Enter **MQTT** as the device profile name. Click "**Next: Transport configuration**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-3.png,
         title: Select **MQTT** as transport type. Leave default **MQTT device topic filters**. Click **Add** to create device profile.
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-profile-4.png,
         title: The device profile is created.
 '
 %}
@@ -76,16 +76,16 @@ First, create a new device profile in ThingsBoard that uses the **MQTT transport
 
 {% assign createDevice = '
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-1.png,
         title: Navigate to **Devices** page under the **Entities** section. Click on "**+**" to add a new device, and then select "**Add new device**" from drop-down menu.
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-2.png,
         title: Enter a name using the VIBit Sensor BLE MAC address (e.g., "F4B3B1A1EFAC"). Select the previously created **MQTT** device profile in the "Device profile" field. Click **Next: Credentials** button.
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-3.png,
         title: On the **Credentials** tab:<br> - Select **MQTT Basic** as the credential type.<br> - Use the **BLE MAC address of the VIBit device** as the **Client ID**.<br> - Enter **sensor** as the **Username**.<br> - Enter **cimcon** as the **Password**.<br> - Click **Add** button to create the device.
     ===
-        image: /images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-create-device-4.png,
         title: The device is created.
 '
 %}
@@ -98,31 +98,31 @@ To enable communication between the VIBit-BP sensor and the VIBit-BP BLE Gateway
 
 - Connect Laptop and BLE Gateway using Ethernet cable to establish the connection between Gateway and Laptop. Open the iEdge360 platform using default IP (IP: 192.168.1.100, Subnet: 255.255.255.0) and Login with the Credentials shared by the CIMCON Team and navigate to the **Device** tab.
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/7.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/7.png)
 
 **Note**: Contact CIMCON Support team for the login Credentials.
 
 <br>
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/8.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/8.png)
 
 <br>
 
 - Click the + icon to add a new device.
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/9.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/9.png)
 
 <br>
 
 - In the **Add Device** popup, select **VIBit_BP** as the protocol.
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/10.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/10.png)
 
 <br>
 
 - Enter a timeout value (e.g., 60 seconds) and click the check icon to scan for BLE devices.
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/11.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/11.png)
 
 <br>
 
@@ -133,19 +133,19 @@ To enable communication between the VIBit-BP sensor and the VIBit-BP BLE Gateway
   - Select the destination as Cloud Integration Name. (e.g., **CIM_Cloud**)
   - Open a UUID section and insert the Device ID, which was copied from ThingsBoard. (It's a device id exists on Thingbsoard) 
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/12.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/12.png)
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/13.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/13.png)
 
 ## Integrate BLE Gateway with ThingsBoard
 
 - In iEdge360, go to the "**Integration** tab.
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/14.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/14.png)
 
 - Click the "**+**" icon and select **CIM_Cloud** as the transport.
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/15.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/15.png)
 
 - Provide a name (e.g., Thingsboard) and click **Save**.
 - In the newly created CIM_Cloud transport, enter:
@@ -156,7 +156,7 @@ To enable communication between the VIBit-BP sensor and the VIBit-BP BLE Gateway
   - **User**: sensor
   - **Password**: cimcon
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/16.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/16.png)
 
 - Configure incoming and outgoing messages:
   - Incoming: Topic v1/devices/me/attribute, Type Attribute
@@ -172,7 +172,7 @@ This completes the setup to stream sensor data securely from the BLE gateway to 
   - 3-axis acceleration and velocity FFT
   - Temperature readings
 
-![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/17.png)
+![image](https://img.thingsboard.io/devices-library/ready-to-go-devices/machine-astro/vibit-bp/17.png)
 
 {% capture difference %}
 Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} to visualize data trends and analyze equipment health over time.

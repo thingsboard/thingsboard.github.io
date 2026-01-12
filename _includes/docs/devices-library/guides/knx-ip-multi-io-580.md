@@ -35,19 +35,19 @@ First we need to create project and add device to our topology, for this purpose
 
 {% assign KnxIpMultiScreenshot1 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-1.png,
         title: In the opened ETS main window, create new project (use default setting for creating, except "**Name**" field);
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-2.png,
         title: Under the projects tabs bar click on "**Buildings**" dropdown list and select "**Topology**" from the list.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-3.png,
         title: Right click on "**1 New area**" subitem and select "**+ Add**" button from the dropdown list, and click on "Devices" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-4.png,
         title: In the window that opens at the bottom side, use the search field to look for "**Multi 580**". Double click on found device. New device will be added.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-5.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-5.png,
         title: After device installation, drag and drop it to the sidebar above "**1 New area**". Device added.
 '
 %}
@@ -60,13 +60,13 @@ After adding device to topology new area, we need to configure device. To do thi
 
 {% assign KnxIpMultiScreenshot2 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-6.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-6.png,
         title: Click on added device, on the right sidebar, select "**Properties**" tab and click on "**IP**" button. Select "**Use a static IP address**" option and fill in "**IP Address**", "**Subnet Mask**", "**Default Gateway**" fields with your corresponding controller (you can find controller IP address on the built-in display) and network settings.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-7.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-7.png,
         title: Click on "**Settings**" button under "**Properties**" tab and fill in "**Individual Address**" with "**1.0.1**", click on "**Park**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-8.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-8.png,
         title: On the right side of the main window, click on the "**Down arrow**" button near "**Download**" button and select "**Download all**". Controller configuration settings should be saved.
 '
 %}
@@ -79,22 +79,22 @@ To read data from the Weinzierl KNX IP Multi IO 580 (48I/O) after configuring, w
 
 {% assign KnxIpMultiScreenshot3 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-9.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-9.png,
         title: Under the projects tabs bar click on "Topology" dropdown list and select "Group Addresses" from the list. Click on "Add Main Groups" and in the opened modal window fill in "Name" field with "Main" value, click "OK" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-11.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-11.png,
         title: Click on "Add Middle Groups" and in the opened modal window fill in "Name" field with "Middle" value, click "OK" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-13.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-13.png,
         title: Click on "Add Group Addresses" and in the opened modal window fill in "Name" field with "Relay" value, click "OK" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-15.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-15.png,
         title: Click on "Add Group Addresses" and in the opened modal window fill in "Name" field with "Relay 2" value, click "OK" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-17.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-17.png,
         title: Click on "Add Group Addresses" and in the opened modal window fill in "Name" field with "Up/Dn" value, click "OK" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-19.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-19.png,
         title: Click on "Add Group Addresses" and in the opened modal window fill in "Name" field with "Stop/Step" value, click "OK" button.
 '
 %}
@@ -107,10 +107,10 @@ The next step, we need to enable device channels by specifying his type. To do t
 
 {% assign KnxIpMultiScreenshot4 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-21.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-21.png,
         title: Click on added device in the left sidebar and select "**Parameters**" tab in the side right window. Select "**Channel**" tab.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-22.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-22.png,
         title: Select "Shutter Actuator" for "**Channel function 1**", "**Switching Actuator**" for "**Channel function 2**" and "**Channel function 3**". You can find added Group Objects in the "**Group Objects**" tab.
 '
 %}
@@ -133,13 +133,13 @@ The last thing that we need to do is set group objects ability to read and write
 
 {% assign KnxIpMultiScreenshot5_1 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-24.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-24.png,
         title: In the "**Group Objects**" tab click on first group object and in the right sidebar in the section "**Flags**" enable **Write** and **Read**. Repeat this actions for the rest group objects.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-25.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-25.png,
         title: In the "**Group Objects**" tab right click on first group object (Jalousie 1: Drive stop) and select "**Link with…**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-26.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-26.png,
         title: In the opened modal window click on "…" button, in the opened window select "0/0/4" group address. Repeat this action for the rest group objects.
 '
 %}
@@ -148,7 +148,7 @@ The last thing that we need to do is set group objects ability to read and write
 
 {% assign KnxIpMultiScreenshot5_2 = '
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-27.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-screenshot-27.png,
         title: On the right side of the main window, click on the "**Down arrow**" button near "**Download**" button and select "**Download all**". Controller configuration settings should be saved.
 '
 %}
@@ -159,44 +159,44 @@ The last thing that we need to do is set group objects ability to read and write
 
 {% assign creatingGatewayCE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-1-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-1-ce.png,
         title: Open the ThingsBoard in your browser and log in. Go to "**Entities**" > "**Gateways**" tab in the sidebar and click on "**+**" button. Fill in "**Name**" and "**Device profile**" fields and click "**Create**" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-2-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-2-ce.png,
         title: Start gateway using launch command;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-ce.png,
         title: The gateway has been created. Click on the "**Connectors configuration**" button in the sidebar menu;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-ce.png,
         title: Click on "**+**" button to add a new connector;
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-1-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-1-ce.png,
         title: Select "**KNX**" connector type, fill in the "**Name**" field, disable filling configuration with default values and click "**Add**" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-2-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-2-ce.png,
         title: In the created connector, go to "**Advanced**" section and paste the JSON configuration below. Replace host and port configuration parameter values with the device&#39;s host and port. Click on "**Save**" button
 '
 %}
 
 {% assign creatingGatewayPE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-1-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-1-pe.png,
         title: Open the ThingsBoard in your browser and log in. Go to "**Entities**" > "**Gateways**" tab in the sidebar and click on "**+**" button. Fill in "**Name**" and "**Device profile**" fields and click "**Create**" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-2-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-2-pe.png,
         title: Start gateway using launch command;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-3-pe.png,
         title: The gateway has been created. Click on the "**Connectors configuration**" button in the sidebar menu;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-gateway-configuring-4-pe.png,
         title: Click on "**+**" button to add a new connector;
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-1-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-1-pe.png,
         title: Select "**KNX**" connector type, fill in the "**Name**" field, disable filling configuration with default values and click "**Add**" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-2-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-io-gateway-configuring-2-pe.png,
         title: In the created connector, go to "**Advanced**" section and paste the JSON configuration below. Replace host and port configuration parameter values with the device&#39;s host and port. Click on "**Save**" button.
 '
 %}
@@ -295,18 +295,18 @@ Once you have successfully done all the steps above and Gateway sent data, you c
 - Navigate to the "Latest telemetry" tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-pe.png)
+![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-pe.png)
 {% else %}  
-![imageCe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-ce.png)
+![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-ce.png)
 {% endif %}
 
 Let&#39;s display KNX IP Multi IO 580 time series on a dashboard. 
 For this purpose, you can create your own dashboard with your custom widgets or [use a ready-made dashboard](/docs/user-guide/resources/knx_ip_multi_io_580.json){:target="_blank" download="knx_ip_multi_io_580.json"} and simply [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-pe.png)
+![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-pe.png)
 {% else %}  
-![imageCe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-ce.png)
+![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-ce.png)
 {% endif %}
 
 ## Conclusion

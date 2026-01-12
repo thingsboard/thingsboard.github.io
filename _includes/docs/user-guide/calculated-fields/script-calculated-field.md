@@ -46,10 +46,10 @@ For more details about output types and processing strategies, see the [Output](
 
 {% assign scriptOutput = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-output-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-output-1-ce.png
         title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-output-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-output-2-ce.png
         title: Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click **Add**.
 '
 %}
@@ -92,7 +92,7 @@ Import a device that publishes temperature telemetry.
 
 {% assign exampleScript1 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.<br>>CSV includes:<br>Name: Smart Device; Type: smart-device; Time series: temperature
 '
 %}
@@ -129,19 +129,19 @@ return {
 
 {% assign exampleScript2 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-2-ce.png
         title: **Create a new calculated field** for the device and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-3-ce.png
         title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-4-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-5-ce.png
         title: Add an argument:<br>- **Entity:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-6-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-6-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** Time series.<br>- Click **Add** to save the calculated field. The calculated field has been added.
 '
 %}
@@ -156,7 +156,7 @@ In the device&#39;s "Latest telemetry" tab, the calculated temperature appears a
 
 {% assign exampleScript3 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-7-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-7-ce.png
         title: In the device&#39;s "Latest telemetry" tab, the calculated temperature appears as a new telemetry key: **temperatureC**.
 '
 %}
@@ -204,16 +204,16 @@ Import two devices: one publishing temperature telemetry and one providing altit
  
 {% assign exampleScript4 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-1-ce.png
         title: An asset: **Building A**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-2-ce.png
         title: A device: **Smart Device** (sends **temperature** telemetry)
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-3-ce.png
         title: A device: **Smart Device** (sends **temperature** telemetry)
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-4-ce.png
         title: A device: **Altimeter** (sends **altitude** as an attribute)
 '
 %}
@@ -234,7 +234,7 @@ Import the asset that represents the building.
 
 {% assign exampleScript5 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-5-ce.png
         title: An asset: **Building A**.
 '
 %}
@@ -257,22 +257,22 @@ This calculated field:
 
 {% assign exampleScript6 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-6-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-6-ce.png
         title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-7-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-7-ce.png
         title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-8-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-8-ce.png
         title: Add a first argument:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-9-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-9-ce.png
         title: Add a second argument:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute key:** <i>altitude</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-10-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-10-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-11-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-11-ce.png
         title: The calculated field has been added.
 '
 %}
@@ -310,7 +310,7 @@ In the **Latest telemetry** tab of the **Building A** asset, the calculated valu
 
 {% assign exampleScript7 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-12-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-12-ce.png
         title: In the **Latest telemetry** tab of the **Building A** asset, the calculated value appears under the **airDensity** key.
 '
 %}
@@ -356,13 +356,13 @@ Import a device that publishes both telemetry keys.
 
 {% assign exampleScript8 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-1-ce.png
         title: An asset: **Building A**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-2-ce.png
         title: A device: **Smart Device** (sends **temperature** telemetry)
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-3-ce.png
         title: A device: **Smart Device** (sends **temperature** telemetry)
 '
 %}
@@ -410,22 +410,22 @@ return result;
 
 {% assign exampleScript9 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: **Create a new calculated field** for the asset **Building A** and select the **Script** type.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: Add a first argument:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** <i>temperature</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: Add a second argument:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute key:** <i>altitude</i>.<br>Click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: Paste the calculation function into the **Script** field.<br>- In the **Output** section, select **type:** <i>Time series</i>.<br>- Click **Add** to save the calculated field.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: The calculated field has been added.
 '
 %}
@@ -452,7 +452,7 @@ This indicates the freezer is in a potentially critical state and may require at
 
 {% assign exampleScript10 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-10-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-10-ce.png
         title: In the device&#39;s **Latest telemetry** tab, the issue key appears when the condition is met. This indicates the freezer is in a potentially critical state and may require attention.
 '
 %}

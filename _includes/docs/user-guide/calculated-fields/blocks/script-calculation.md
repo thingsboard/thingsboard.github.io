@@ -46,7 +46,7 @@ Arguments are also passed as function parameters (`arg1`, `arg2`, ...), so you c
 
 {% assign scriptFunction = '
 ===
-image: /images/user-guide/calculated-fields/script/script-function-1-ce.png
+image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-function-1-ce.png
 title: Define a function that will perform calculations using the variables defined in the "Arguments" section. The variable name that will store the calculation result is defined within the function itself.
 '
 %}

@@ -37,10 +37,10 @@ over Ethernet. For this purpose, use the following steps:
 
 {% assign configuringDevice = '
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-configuring-1.png,
         title: Connect T3E-6CT to PC by Ethernet cable and start T3000 software. Click the button "**Search**" to scan your network, the following view will appear;
     ===
-        image: /images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-configuring-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-configuring-2.png,
         title: When T3E-6CT will discover, close the view.
 ' 
 %}
@@ -64,9 +64,9 @@ Device Telemetry Tab:
 - Navigate to the telemetry tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
+![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
 {% else %}
-![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
+![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
 {% endif %}
 
 Let’s display Temco T3E-6CT time series on a dashboard. For this purpose, you can create your own dashboard with your 
