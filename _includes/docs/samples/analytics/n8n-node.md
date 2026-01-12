@@ -1,28 +1,63 @@
 * TOC
 {:toc}
 
-[n8n](https://n8n.io/){: target="_blank"} is a workflow automation platform with a [fair-code license](https://docs.n8n.io/reference/license/){: target="_blank"} that combines traditional business process automation with AI capabilities.
+[n8n](https://n8n.io/){: target="_blank"} is a workflow automation platform that lets you connect ThingsBoard to hundreds of other services.
 
-The [ThingsBoard n8n Node](https://github.com/thingsboard/thingsboard-n8n-node){: target="_blank"} provides deep and native integration between n8n and the ThingsBoard IoT Platform, enabling you to manage IoT infrastructure directly from [n8n workflows](https://n8n.io/){: target="_blank"}.
+The [ThingsBoard n8n Node](https://github.com/thingsboard/thingsboard-n8n-node){: target="_blank"} gives you direct access to your IoT entities, telemetry, and alarms from n8n workflows.
 
 - **Manage IoT devices, assets, and customers** directly from n8n workflows
 - **Access and manipulate telemetry data** in real-time with attribute and time-series operations
 - **Monitor alarms** and create automated responses based on alarm severity and type
 - **Navigate entity relationships** to understand your IoT infrastructure topology
 - **Build AI-powered IoT automation** using n8n AI Agents with natural language commands
-- **Automate complex IoT workflows** with {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}61 operations across 8 resources{% else %}51 operations across 7 resources{% endif %}
+
+## Quick Start: Your First Workflow
+
+Here's what you can build in 5 minutes - a real-world data pipeline that exports IoT telemetry to cloud storage.
+
+**Scenario**: Every day at midnight, automatically export the last 24 hours of device telemetry to AWS S3 as JSON files for data warehousing, analytics, or compliance archival.
+
+**The Workflow**:
+```
+Schedule (Daily at 00:00 UTC)
+    ↓
+Code node (calculate last 24h time range in MS)
+    ↓
+ThingsBoard: Get device by a name
+    ↓
+ThingsBoard: Get timeseries data for device
+    ↓
+Convert to File (JSON format)
+    ↓
+Upload to AWS S3
+```
+
+{% assign quickExample = '
+    ===
+        image: /images/samples/analytics/n8n-node/quick-example.png
+        title: The complete workflow showing all nodes: Schedule trigger → Code (time calc) → Get device → Get timeseries → Convert to file → AWS S3 upload.
+    ===
+        image: /images/samples/analytics/n8n-node/quick-example-result.png
+        title: Successful execution result showing the telemetry data exported to S3 as a JSON file.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=quickExample %}
+
+This is a production-ready pattern used for IoT data archival, analytics pipelines, and compliance logging.
+
+Want to see the full step-by-step walkthrough with code details? Jump to [Example 2: Daily Telemetry Export to AWS S3](#example-2-daily-telemetry-export-to-aws-s3) after installation.
 
 ## When to use n8n with ThingsBoard
 
-ThingsBoard already provides powerful automation capabilities through its Rule Engine.  
-However, **n8n complements ThingsBoard** by enabling advanced workflow automation that goes beyond IoT-specific logic.
+ThingsBoard's Rule Engine is great for IoT-specific automation. But when you need to connect to external systems that ThingsBoard doesn't integrate with natively, n8n fills the gap.
 
-Use **n8n with ThingsBoard** when you need:
-- Integration with **external business systems** (CRM, ERP, Google Sheets, Slack, Email, Databases)
-- **Human-in-the-loop** workflows (approvals, notifications, AI decisions)
-- **Scheduled and batch operations**
-- Complex orchestration across **multiple systems**
-- **AI-driven automation** using natural language
+**Use n8n when you need to**:
+- Archive telemetry to **AWS S3**, **Google Cloud Storage**, or **Azure Blob** for data warehousing
+- Export data to **databases** (PostgreSQL, Snowflake, ClickHouse) for analytics
+- Create tickets in **Jira**, **ServiceNow**, or other ticketing systems
+- Sync device data with **CRMs** (Salesforce, HubSpot) or **ERPs**
+- Let non-technical users write query via **AI chat**
 
 ## Requirements
 
@@ -52,48 +87,22 @@ Before you begin, ensure you have the following:
 
 ## Installation
 
-This section describes all available methods for installing the **ThingsBoard n8n Community Node**.
+Before you start, make sure n8n is already running. Check the [official n8n docs](https://docs.n8n.io/){: target="_blank"} if you need to install it first.
 
-### Prerequisites
-
-Make sure that n8n is already installed and running.
-Installation instructions are available in the official [n8n documentation](https://docs.n8n.io/){: target="_blank"}.
-
-### AI Agent Configuration (Optional)
+### Install the ThingsBoard Node
 
 {% capture difference %}
-**Note:** If you are using the ThingsBoard node only as a regular workflow node (not for AI Agents), you can skip this step.
+**Note:** Community nodes require `N8N_COMMUNITY_PACKAGES_ENABLED=true` in your n8n environment. Most n8n installations have this enabled by default. If you can't access the Community Nodes section in Settings, you'll need to set this variable before starting n8n.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-If you plan to use the ThingsBoard node as a **tool for AI Agents**, you must enable community node tool usage in n8n.   
-Add the following environment variables:
+**Recommended: Use the n8n GUI** (for self-hosted instances):
 
-```text
-N8N_COMMUNITY_PACKAGES_ENABLED=true
-N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
-```
-{: .copy-code}
-
-**How to set these:**
-- **GUI Self-Hosted**  
-  The variables must be set before starting n8n. It is not possible to configure them via the UI. Set them in your shell profile or system environment.
-- **Local/npm installation**   
-  Export the variables in your shell before running `n8n start` (see [Method 2](#method-2-manual-installation-npm)).
-- **Docker**   
-  Add the variables to the `docker-compose.yml` file in the environment section (see [Method 3](#method-3-docker-installation)).
-
-### Method 1: GUI installation (Recommended for Self-Hosted)
-
-For self-hosted n8n instances, you can install directly via the web interface:
-
-1. Open **n8n** in your browser. 
-2. In the bottom-left corner, click the **three dots** button and select **Settings** from the dropdown menu. 
-3. Go to the **Community Nodes** tab. 
-4. Click **Install a community node**. 
-5. Enter the package name: `n8n-nodes-thingsboard` and click **Install**. 
-6. Wait for the installation to complete. 
-7. Refresh the browser page.
+1. Open n8n in your browser
+2. Click the **three dots** (bottom-left) → **Settings** → **Community Nodes**
+3. Click **Install a community node**
+4. Enter: `@thingsboard/n8n-nodes-thingsboard` and click **Install**
+5. Refresh your browser
 
 {% assign n8nGuiInstallation = '
     ===
@@ -104,7 +113,7 @@ For self-hosted n8n instances, you can install directly via the web interface:
         title: Go to the **Community Nodes** tab and click **Install a community node**.
    ===
         image: /images/samples/analytics/n8n-node/n8n-gui-installation-3.png
-        title: Enter the package name: `n8n-nodes-thingsboard` and click **Install**.
+        title: Enter the package name: `@thingsboard/n8n-nodes-thingsboard` and click **Install**.
     ===
         image: /images/samples/analytics/n8n-node/n8n-gui-installation-4.png
         title: Wait for the installation to complete. Then, refresh the browser page.
@@ -113,105 +122,34 @@ For self-hosted n8n instances, you can install directly via the web interface:
 
 {% include images-gallery.liquid imageCollection=n8nGuiInstallation %}
 
-**Note**: This method requires owner/admin permissions and is only available for self-hosted n8n (not n8n Cloud).
+### Configure AI Agent Support (Optional)
 
-**AI Agent Tool Usage**: To use the ThingsBoard node as an AI Agent tool, you must set the `N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true` environment variable before starting n8n. This cannot be configured via the GUI - see the [AI Agent Configuration](#ai-agent-configuration-optional) section above.
+Skip this if you're only using the node in regular workflows (not with AI agents).
 
-### Method 2: Manual installation (npm)
+To let AI agents use ThingsBoard as a tool, add this **additional** environment variable before starting n8n:
 
-For local n8n installations, install the node via npm:
-
-```bash
-# Create and navigate to the nodes directory
-mkdir -p ~/.n8n/nodes
-cd ~/.n8n/nodes
-
-# Install the ThingsBoard node
-npm install n8n-nodes-thingsboard
+```text
+N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
 ```
 {: .copy-code}
 
-After installation, restart n8n:
+**How to set it**:
+- **Docker**: Add to `docker-compose.yml` environment section (along with `N8N_COMMUNITY_PACKAGES_ENABLED=true`)
+- **npm/local**: Export in your shell: `N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true n8n start`
 
-```bash
-# If running n8n directly
-n8n start
-```
-{: .copy-code}
+### Configure Credentials
 
-To use the ThingsBoard node as an AI Agent Tool, restart n8n with the environment variable:
+Connect n8n to your ThingsBoard instance:
 
-```bash
-# If running n8n directly
-N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true n8n start
-```
-{: .copy-code}
+1. Click **+** (top-left) → **Credentials**
+2. Search for **ThingsBoard API** → **Continue**
+3. Fill in your ThingsBoard details:
+   - **Base URL**: Your instance URL (e.g., {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
+   - **Username**: Your email
+   - **Password**: Your password
+4. Click **Save**
 
-### Method 3: Docker installation
-
-**Step 1**: Create a directory for n8n and navigate to it:
-
-```bash
-mkdir n8n
-cd n8n
-```
-{: .copy-code}
-
-**Step 2**: Create a `docker-compose.yml` file in this directory:
-
-```yaml
-services:
-  n8n:
-    image: n8nio/n8n:latest
-    ports:
-      - "5678:5678"
-    environment:
-      - N8N_BASIC_AUTH_ACTIVE=true
-      - N8N_BASIC_AUTH_USER=admin
-      - N8N_BASIC_AUTH_PASSWORD=password
-      # Uncomment the lines below to use ThingsBoard node as AI Agent tool
-      # - N8N_COMMUNITY_PACKAGES_ENABLED=true
-      # - N8N_COMMUNITY_PACKAGES_ALLOW_TOOL_USAGE=true
-    volumes:
-      - n8n_data:/home/node/.n8n
-
-volumes:
-  n8n_data:
-```
-{: .copy-code}
-
-**AI Agent Tool Usage**: To use the ThingsBoard node as an AI Agent tool, uncomment the two environment variable lines in the environment section above. See the [AI Agent Configuration](#ai-agent-configuration-optional) section for details.
-
-**Step 3**: Start the services:
-
-```bash
-docker-compose up -d
-```
-{: .copy-code}
-
-**Step 4**: After n8n starts, install the ThingsBoard node using the GUI method ([Method 1](#method-1-gui-installation-recommended-for-self-hosted)):
-
-1. Open n8n in your browser (`http://localhost:5678`)
-2. Navigate to **Settings** → **Community Nodes**
-3. Install `n8n-nodes-thingsboard`
-4. Refresh your browser
-
-### Credentials configuration
-
-Before using the ThingsBoard node, configure your connection credentials:
-
-1. In the top-left corner, click **+** and select **Credentials** from the dropdown menu.
-2. Search and select **ThingsBoard API** to connect to and click **Continue**.
-3. Fill in the required fields:
-   - **Base URL** — your ThingsBoard instance URL (without a trailing slash) (for example {% if docsPrefix == nil %}`https://demo.thingsboard.io`{% elsif docsPrefix == "paas/eu/" %}`https://eu.thingsboard.cloud`{% elsif docsPrefix == "pe/" or docsPrefix == "paas/" %}`https://thingsboard.cloud`{% endif %})
-   - **Username** — your ThingsBoard account username (email)
-   - **Password** — your ThingsBoard account password
-4. Click **Save** to store the credentials.
-
-{% capture difference %}
-The credentials are encrypted and stored securely by n8n. You can reuse the same credentials across multiple ThingsBoard nodes in different workflows.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+These credentials work across all ThingsBoard nodes in your workflows.
 
 
 {% assign n8nGuiInstallation = '
@@ -232,23 +170,15 @@ The credentials are encrypted and stored securely by n8n. You can reuse the same
 
 {% include images-gallery.liquid imageCollection=n8nGuiInstallation %}
 
-### Installation Verification
+### Verify Installation
 
-After installing the node and restarting n8n, follow these steps to verify that the ThingsBoard n8n Node has been successfully installed and is available:
+After installing the node and restarting n8n, verify the ThingsBoard node is available:
 
-1. **Open n8n in your browser**
-   Typically, the n8n interface is available at [http://localhost:5678](http://localhost:5678){:target="_blank"}    
-   (or via a custom domain/port if modified in your configuration).
-2. **Create a new workflow**   
-   In the top-right corner of the interface, click Create Workflow.
-3. **Add a new node**   
-   On the workflow canvas, click the **+** button to open the list of available nodes.
-4. **Find the ThingsBoard node**   
-   In the node search field, type **ThingsBoard**. The **ThingsBoard node** should appear in the search results. Click on it.
-5. **Verify node availability**   
-   A list of available **actions** will be displayed.
-
-Note: the number of operations may differ between **Community Edition** and **Professional Edition**.
+1. **Open n8n** in your browser (typically [http://localhost:5678](http://localhost:5678){:target="_blank"})
+2. **Create a new workflow** - Click **Create Workflow** in the top-right corner
+3. **Add a node** - Click the **+** button on the workflow canvas
+4. **Search for ThingsBoard** - Type "ThingsBoard" in the search field
+5. **Verify it appears** - You should see the ThingsBoard node with available actions
 
 {% assign installationVerification = '
     ===
@@ -268,111 +198,73 @@ Note: the number of operations may differ between **Community Edition** and **Pr
 
 {% include images-gallery.liquid imageCollection=installationVerification %}
 
-If you don&#39;t see the node:
-- Verify the npm installation completed without errors
-- Ensure you restarted n8n after installation
-- Check n8n logs for any loading errors
+**Note**: The number of operations may differ between Community Edition and Professional Edition.
 
-## Usage
+**If you don't see the node**:
+- Verify `N8N_COMMUNITY_PACKAGES_ENABLED=true` is set
+- Check that npm installation completed without errors
+- Restart n8n after installation
+- Check n8n logs for loading errors
 
-The ThingsBoard node supports two usage modes:
+## How to Use the Node
 
-{% include images-gallery.html imageCollection="thingsboard-n8n-node" %}
+{% assign n8nUsageNode = '
+    ===
+        image: /images/samples/analytics/n8n-node/thingsboard-n8n-node.png
+        title: A ThingsBoard Node and a ThingsBoard Tool for AI Agent.
+'
+%}
 
-### 1. As a Standard Node
+{% include images-gallery.html imageCollection=n8nUsageNode %}
 
-Add the **ThingsBoard node** to your workflow canvas to directly perform IoT operations. This is the traditional workflow approach where you configure operations manually.
 
-**Use cases:**
-- **Direct Operations**: Configure operations with fixed values (e.g., save specific attributes to a device on a schedule)
-- **Dynamic Operations**: Pass data from previous nodes using expressions (e.g., process alarm webhook → extract entity ID → get attributes → send notification)
 
-**Operation Modes**: For create operations (Device, Asset, Dashboard), you can choose:
-- **Params Mode**: Use simple form fields (name, type, label, customer ID)
-- **JSON Mode**: Paste a complete ThingsBoard entity JSON object
+There are two ways to use the ThingsBoard node:
 
-### 2. As a Tool for AI Agents
+### 1. Regular Workflow Node
 
-Connect ThingsBoard operations to an **AI Agent node** to enable conversational IoT control with natural language commands.
+Drag the ThingsBoard node onto your canvas and configure what you want to do (get devices, save telemetry, create alarms, etc.).
 
-**Use case**: *"Show me all devices"* → Agent calls ThingsBoard → Natural language response
+Good for:
+- Scheduled tasks (daily reports, health checks)
+- Webhooks (incoming sensor data, external triggers)
+- Multi-step workflows (get device → fetch telemetry → send to Slack)
 
-**Prerequisites**: See the [AI Agent Configuration](#ai-agent-configuration-optional) section above for environment variable setup.
+### 2. AI Agent Tool
 
-*Screenshot showing ThingsBoard as a tool in AI Agent configuration will be added here*
+Give an AI agent access to ThingsBoard operations. Users can then ask questions in plain English instead of building workflows.
 
-See [Usage Examples](#usage-examples) below for detailed walkthroughs with screenshots.
+Good for:
+- Non-technical users querying entities, data, etc
+- Support teams troubleshooting issues
 
-## Available Operations
+**Setup required**: See [AI Agent Configuration](#configure-ai-agent-support-optional) above.
 
-The ThingsBoard n8n node provides comprehensive IoT operations organized by resource type:
+Check out the [examples below](#usage-examples) to see both approaches in action.
 
-- **Device Operations** - Create, retrieve, delete, and manage devices with customer assignments
-- **Asset Operations** - Full asset lifecycle management with profiles and assignments
-- **Customer Operations** - Create and manage customers and customer-entity relationships
-- **Dashboard Operations** - Create and manage dashboards and their configurations
-- **Telemetry Operations** - Get/save attributes and time-series data with TTL settings
-- **Alarm Operations** - Fetch and monitor alarms by severity, type, or originator
-- **Relation Operations** - Navigate entity relationships with bidirectional support
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-- **Entity Group Operations** - Manage entity groups and query entities by group
-{% endif %}
+## Common Workflow Patterns
 
-For a complete list of operations, see the [node documentation on npm](https://www.npmjs.com/package/n8n-nodes-thingsboard){: target="_blank"} or explore available operations in the n8n node interface.
+**Archive telemetry to cloud storage**: Schedule (daily) → Code (calc time range) → Get timeseries → Convert to file → S3/GCS upload
 
-## Common Integration Patterns
+**Create tickets from alarms**: Webhook (alarm) → Check severity → Create Jira/ServiceNow ticket
 
-Here are proven workflow patterns for different automation scenarios:
+**Customer onboarding automation**: CRM webhook (new customer) → Create devices and dashboard → Assign to customer
 
-### Pattern 1: IoT Data Pipeline
-```
-Webhook → ThingsBoard (Save Telemetry) → Process Data → Save Attributes
-```
-Receive sensor data via webhook, save to ThingsBoard, process it, and update device attributes.
-
-### Pattern 2: Device Management
-```
-Schedule Trigger → Get Tenant Devices → Filter Inactive → Send Alert
-```
-Daily check for inactive devices and send notifications to administrators.
-
-### Pattern 3: Data Export
-```
-ThingsBoard (Get Timeseries) → Transform Data → Google Sheets / Database
-```
-Export telemetry data for reporting and analysis in external systems.
-
-### Pattern 4: Intelligent Monitoring
-```
-AI Agent ← Chat Interface
-    ↓
-ThingsBoard Tools (Get/Save/Delete operations)
-    ↓
-Automated device management based on natural language commands
-```
-Enable non-technical users to manage IoT infrastructure through conversational AI.
+**AI-powered queries**: Chat → AI Agent → ThingsBoard operations → Natural language response
 
 ## Usage Examples
 
 This section provides practical examples demonstrating the three usage patterns of the ThingsBoard n8n node.
 
-### Example 1: AI Agent Tool - Conversational IoT Control
+### Example 1: AI Agent
 
-Use the ThingsBoard node as a **tool for AI Agents** to enable intelligent, natural language IoT automation.
+**Real-world scenario**: Ask questions in plain text to check entities, their status, query data, update configurations, etc.
 
-**Workflow Configuration**:
+**Why this matters**:
+- Just ask what you need (“Which devices are offline?”, “Show today’s temperature”) and the node handles the technical part for you.
+- Reduces bottlenecks in your IoT operations
 
-1. **Create a new workflow with AI Agent node**
-   - Choose your AI Model (Gemini, Anthropic, ChatGPT, etc.)
-   - Configure memory settings
-
-2. **Add ThingsBoard Tools**
-   - Select ThingsBoard from the Tools list
-   - Add **Get devices** and **Get timeseries** operations
-
-3. **Open chat and interact**
-   - Open the chat interface
-   - Write your natural language query
+**Setup**: Use the ThingsBoard node as a **tool for AI Agents** to enable conversational IoT control
 
 {% assign example1 = '
     ===
@@ -393,94 +285,231 @@ Use the ThingsBoard node as a **tool for AI Agents** to enable intelligent, natu
 {% include images-gallery.liquid imageCollection=example1 %}
 
 **How it works**:
-1. User sends a chat message: *"What devices do I have and what's their telemetry?"*
-2. AI Agent (powered by Google Gemini, Anthropic, or OpenAI GPT-4) has access to ThingsBoard tools
-3. The AI model automatically determines which parameter values to pass based on the conversation context
-4. Agent autonomously calls:
-   - `Get devices in ThingsBoard` → Retrieves device list
-   - `Get timeseries in ThingsBoard` → Fetches latest telemetry
-5. Agent responds in natural language with the actual data
+1. User asks: *"Which freezers in the warehouse are showing temperatures above -10°C?"*
+2. AI Agent (powered by Google Gemini, Anthropic, or OpenAI) automatically:
+   - Calls `Get devices` to find all freezer devices
+   - Calls `Get timeseries` for temperature readings
+   - Filters results and responds in plain language
+3. No code, no API knowledge needed
 
-**Natural language commands**:
-- *"Show me the temperature of my living room sensor"*
-- *"Which devices are offline right now?"*
-- *"Update the threshold on device X to 30 degrees"*
-- *"Send me an alert if any temperature exceeds 25°C"*
+**Real queries your team can ask**:
+- *"Show me all devices that haven't sent data in the last 24 hours"*
+- *"What's the current temperature of Freezer 3?"*
+- *"Which sensors are in Building A?"*
+- *"Get me the last week of humidity data for all warehouse sensors"*
 
-The AI agent understands context and calls the appropriate ThingsBoard operations automatically!
+This democratizes IoT access - anyone can query your infrastructure without knowing ThingsBoard's API.
 
 ---
 
-### Example 2: Direct Operations - Fixed Values
+### Example 2: Daily Telemetry Export to AWS S3
 
-Configure operations with **hardcoded values** directly in the node interface. Perfect for scheduled tasks and testing.
+**Real-world scenario**: Every night, export device telemetry to S3, but also enrich it with device metadata from your CRM, convert to Parquet format for Athena, and trigger a Lambda function to update your data warehouse. One workflow, multiple outputs.
 
-{% include images-gallery.html imageCollection="n8n-save-attributes" %}
+**Why use n8n instead of ThingsBoard's native export**:
+- **Multi-destination** - Send the same data to S3 + Snowflake + email report in one workflow
+- **Data transformation** - Enrich telemetry with business context (customer names, locations from CRM)
+- **Custom formats** - Convert to Parquet, Avro, or CSV with specific schemas for your analytics tools
+- **Conditional logic** - Export only specific devices, filter by customer tier, or aggregate before storage
+- **Integration chains** - After S3 upload → Trigger AWS Lambda → Update tracking database → Send Slack notification
 
-**Use Case**: Save configuration attributes to a specific device on a schedule
+---
+
+<b><font size="4">Building the workflow</font></b>
+
+<b><font size="3">Step 1: Create a new workflow and add Schedule Trigger</font></b>
+
+Start by creating a new workflow and adding a Schedule Trigger to run the export daily at midnight UTC.
 
 **Configuration**:
-- **Resource**: Telemetry
-- **Operation**: Save Entity Attributes
-- **Entity Type**: DEVICE
-- **Entity ID**: `2d2c8cc0-d75a-11f0-9e9b-db8ef79a21ad` *(hardcoded)*
-- **Scope**: SERVER_SCOPE
-- **Attributes JSON**: Direct JSON input
+- Click **Add first step…** → Select **Schedule Trigger**
+- Set **Trigger Interval**: Every day at 00:00 (midnight)
+- This ensures your export runs automatically every 24 hours
 
-```json
-{
-  "stringKey": "value1",
-  "booleanKey": true,
-  "doubleKey": 42.0,
-  "longKey": 73,
-  "jsonKey": {
-    "someNumber": 42,
-    "someArray": [1, 2, 3],
-    "someNestedObject": {"key": "value"}
-  }
-}
+{% assign example21 = '
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-1.png
+        title: Create a new workflow and select **Schedule Trigger** to run the export daily.
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-2.png
+        title: Configure the trigger to run every day at 00:00 UTC (midnight).
+'
+%}
+
+{% include images-gallery.liquid imageCollection=example21 %}
+
+<br>**What you just did**: Set up automated daily execution at midnight UTC.
+
+---
+
+<b><font size="3">Step 2: Add Code node for time range calculation</font></b>
+
+ThingsBoard's API requires timestamps in milliseconds. Add a Code node to calculate the exact 24-hour time range.
+
+**Configuration**:
+- Click **+** after the Schedule node → Select **Code**
+- Paste the following code:
+
+```javascript
+const DAY_MS = 24 * 60 * 60 * 1000;  // 24 hours in milliseconds
+const endTsMs = new Date($input.first().json.timestamp).getTime()  // Current time in MS
+const startTsMs = endTsMs - DAY_MS;  // 24 hours ago in MS
+
+return [{ startTsMs, endTsMs }];  // Pass to next node
 ```
+{: .copy-code}
 
-**Typical Use Cases**:
-- Daily configuration updates on a schedule
-- Testing API operations during development
-- One-time bulk data migrations
-- Periodic attribute updates with fixed values
+- Click **Execute node** to test
 
----
+{% assign example22 = '
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-3.png
+        title: Add a **Code** node after the Schedule Trigger.
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-4.png
+        title: Paste the time calculation code and click **Execute node** to test it.
+'
+%}
 
-### Example 3: Dynamic operations - device telemetry query
+{% include images-gallery.liquid imageCollection=example22 %}
 
-This example demonstrates how to build a dynamic, data-driven workflow in n8n by passing data between nodes using expressions.   
-You will learn how to:
-- accept dynamic input (device name), 
-- find a device in ThingsBoard by its name, 
-- retrieve available telemetry keys, 
-- query telemetry data for that device.
-
-<b><font size="3">Use case</font></b>
-
-Find a device by name and retrieve its telemetry data dynamically.
-
-This pattern is commonly used when:
-- device identifiers are not known in advance,
-- workflows are triggered by external input (webhooks, chat, API calls),
-- you want to reuse the same workflow for different devices.
+<br>**What you got**: Two timestamps (startTsMs and endTsMs) representing exactly 24 hours of data.
 
 ---
 
-<b><font size="4">Workflow steps</font></b>
+<b><font size="3">Step 3: Get device by name from ThingsBoard</font></b>
 
-<b><font size="3">Step 1: Trigger — manual JSON input</font></b>
+Now retrieve the device you want to export telemetry for.
 
-This step simulates an external input (for example, webhook or API call).
+**Configuration**:
+- Click **+** → **ThingsBoard** → **Get a device by name**
+- **Device Name**: Enter your device name (e.g., "Temperature Sensor 1")
+- Click **Execute node**
 
-**Configuration**
-- Click **Add first step…** 
-- Select **Trigger manually** 
-- Click on the trigger node to open its configuration 
-- In the top-right corner, click the **pencil** icon 
-- Paste the following JSON into the input field:
+{% assign example23 = '
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-5.png
+        title: Add ThingsBoard node and select **Get a device by name**.
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-6.png
+        title: Enter the device name and execute to retrieve the device object.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=example23 %}
+
+<br>**What you got**: The full device object including ID, type, and metadata needed for the next step.
+
+---
+
+<b><font size="3">Step 4: Get timeseries data for the device</font></b>
+
+Fetch the telemetry data using the time range from the Code node.
+
+**Configuration**:
+- Click **+** → **ThingsBoard** → **Get timeseries**
+- Drag values from the **INPUT panel** (left side):
+  - **Entity ID**: From "Get a device by name" → id → id
+  - **Entity Type**: From "Get a device by name" → id → entityType
+  - **Start timestamp**: From Code node → startTsMs
+  - **End timestamp**: From Code node → endTsMs
+  - **Keys**: Enter the telemetry keys you want (e.g., "temperature,humidity")
+- Click **Execute node**
+
+{% assign example24 = '
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-7.png
+        title: Add ThingsBoard **Get timeseries** node.
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-8.png
+        title: Configure with device ID, entity type, and time range from previous nodes. Execute to fetch telemetry data.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=example24 %}
+
+<br>**What you got**: The last 24 hours of telemetry data for your device in JSON format.
+
+---
+
+<b><font size="3">Step 5: Build your logic with uploading to AWS S3</font></b>
+
+Finally, upload the file to your S3 bucket.
+
+**Configuration**:
+- Click **+** → **AWS S3**
+- **Operation**: Upload
+- **Bucket Name**: Your S3 bucket name
+- **File Name**: Use expressions for datestamped names (e.g., `telemetry-{{ $now.format('yyyy-MM-dd') }}.json`)
+- Configure AWS credentials
+- Click **Execute node**
+
+{% assign example26 = '
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-10.png
+        title: Add **AWS S3** node and configure upload settings with your bucket name and credentials.
+    ===
+        image: /images/samples/analytics/n8n-node/example-2-11.png
+        title: Execute the workflow to see the file successfully uploaded to S3.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=example26 %}
+
+<br>**What you got**: Your telemetry data successfully uploaded to S3 with a datestamped filename.
+
+---
+
+<b><font size="4">Final result</font></b>
+
+You've built a complete automated data pipeline that:
+1. Runs every night at midnight UTC
+2. Calculates the exact 24-hour time window
+3. Fetches device telemetry from ThingsBoard
+4. Converts it to a file format
+5. Uploads to AWS S3 with predictable naming
+
+**What you get**:
+- Daily JSON files in S3: `s3://my-bucket/telemetry-2024-12-23.json`
+- Automated backups without manual intervention
+- Data ready for AWS Athena queries or data pipeline ingestion
+- Complete audit trail of daily exports
+
+**What makes this powerful**:
+n8n acts as the orchestration layer between ThingsBoard and your data ecosystem. You're not just exporting data - you're building a complete data pipeline with transformations, enrichments, and multi-system integration that ThingsBoard alone can't handle.
+
+**Next steps - extend this workflow**:
+- **Add multiple destinations**: After "Convert to File", split to also send to Snowflake, Google Sheets, or email
+- **Enrich the data**: Before S3 upload, join with CRM data or add business context
+- **Conditional routing**: Route high-value customers to premium storage, others to standard
+- **Trigger downstream actions**: After S3 upload → Trigger AWS Lambda → Update inventory system → Notify team
+
+---
+
+### Example 3: Webhook-Triggered Device Query
+
+**Real-world scenario**: Your customer portal has a "Get Device Status" button. When clicked, it needs to fetch real-time telemetry for whatever device the customer owns - you don't know which device in advance.
+
+**Why this pattern?** Most real workflows are dynamic:
+- Mobile apps that query devices by name (not hardcoded IDs)
+- Chatbots that respond to "check temperature in Room 405"
+- External systems triggering reports for specific assets
+- Customer-facing dashboards that filter by user
+
+**What you'll learn**: How to chain ThingsBoard operations together, passing data between nodes (device name → device ID → telemetry keys → actual data).
+
+---
+
+<b><font size="4">Building the workflow</font></b>
+
+<b><font size="3">Step 1: Set up the trigger (simulating a webhook)</font></b>
+
+We'll use a manual trigger to simulate what would normally be a webhook from your customer portal.
+
+**Configuration**:
+- Click **Add first step…** → **Trigger manually**
+- Click the trigger node → Click **pencil icon** (top-right)
+- Paste this JSON (simulating incoming webhook data):
 
 ```json
 {
@@ -499,7 +528,7 @@ This step simulates an external input (for example, webhook or API call).
     ===
         image: /images/samples/analytics/n8n-node/example-3-1-2.png
         title: Click on the trigger node to open its configuration.
-===
+    ===
         image: /images/samples/analytics/n8n-node/example-3-1-3.png
         title: In the top-right corner, click the **pencil** icon.
     ===
@@ -510,25 +539,21 @@ This step simulates an external input (for example, webhook or API call).
 
 {% include images-gallery.liquid imageCollection=example31 %}
 
-<br><b><font size="4">Result</font></b>
-
-The workflow now has an input parameter <span class="code-light">deviceName</span> that will be used in subsequent steps.
+<br>**What you just did**: Created a workflow input that accepts a device name. In production, this would come from a webhook, API call, or chat message.
 
 ---
 
-<b><font size="3">Step 2: ThingsBoard — Get device by name</font></b>
+<b><font size="3">Step 2: Find the device in ThingsBoard</font></b>
 
-This step retrieves the device entity from ThingsBoard using the name provided by the trigger.
+Now we need to look up the device by name to get its ID (since most ThingsBoard operations need the device ID, not the name).
 
-**Configuration**
-- Click the **+** button to the right of the **trigger node**
-- Find and select **ThingsBoard**
-- Choose **Get device by name** action
-- In the **Parameters** panel:
-  - Drag <span class="code-light">deviceName</span> from the **INPUT** panel (left side) into the **Name** field   
-  This creates a dynamic reference to the trigger input.
+**Configuration**:
+- Click **+** next to the trigger node → **ThingsBoard** → **Get device by name**
+- Drag `deviceName` from the **INPUT panel** (left) into the **Name** field
 
-- Click **Execute step**
+  *This creates a dynamic link - the node will use whatever device name was in the trigger*
+
+- Click **Execute step** to test it
 - **Back to canvas**
 
 {% assign example32 = '
@@ -555,27 +580,19 @@ This step retrieves the device entity from ThingsBoard using the name provided b
 
 {% include images-gallery.liquid imageCollection=example32 %}
 
-<br><b><font size="4">Result</font></b>
-
-The node returns the full device object, including:
-- Device ID
-- Type
-- Additional metadata
+<br>**What you got**: The full device object - including the ID we need for the next steps.
 
 ---
 
-<b><font size="3">Step 3: ThingsBoard — Get timeseries keys</font></b>
+<b><font size="3">Step 3: Discover what telemetry this device has</font></b>
 
-This step retrieves all available telemetry keys for the selected device.
+Before we can fetch telemetry, we need to know what keys are available (temperature? humidity? battery?). This step finds that out.
 
-**Configuration**
-- Click the **+** button to the right of the **Get a device by name** node.
-- Select **ThingsBoard**
-- Choose **Get timeseries keys** action
-- Set parameters dynamically:
-  - Entity ID 
-  - Entity Type   
-  You can drag these values directly from the **INPUT** panel (left side)   
+**Configuration**:
+- Click **+** → **ThingsBoard** → **Get timeseries keys**
+- Drag **Entity ID** and **Entity Type** from the **INPUT panel** (left)
+
+  *We're using the device info from Step 2 automatically*
 
 - Click **Execute step**
 - **Back to canvas**
@@ -592,17 +609,15 @@ This step retrieves all available telemetry keys for the selected device.
 
 {% include images-gallery.liquid imageCollection=example33 %}
 
-<br><b><font size="4">Result</font></b>
-
-The node returns a list of telemetry keys available for the device (e.g. temperature, humidity).
+<br>**What you got**: A list of available telemetry keys (like `temperature`, `humidity`, etc.)
 
 ---
 
-<b><font size="3">Step 4: ThingsBoard — Get timeseries data</font></b>
+<b><font size="3">Step 4: Fetch the actual telemetry data</font></b>
 
-This step retrieves the actual telemetry values using the keys obtained in Step 3.
+Finally, get the actual sensor readings using the keys we just discovered.
 
-**Configuration**
+**Configuration**:
 - Click the **+** button to the right of the **Get timeseries keys** node.
 - Select **ThingsBoard**
 - Choose **Get timeseries** action
@@ -611,7 +626,7 @@ This step retrieves the actual telemetry values using the keys obtained in Step 
   - Get a device by name -> id -> **entityType** to **Entity Type**
   - Get timeseries keys -> **timeseriesKeys** to **Keys (Comma Separated)**
 
-    **Note**: The **Keys** field accepts a comma-separated string. Since **timeseriesKeys** returns an array, you need to convert it using the `.join(',')` operation.
+  **Note**: The Keys field needs comma-separated values. Since Step 3 returns an array, you'll need to join it: `{{ $json.timeseriesKeys.join(',') }}`
 
 - Click **Execute step**
 - **Back to canvas**
@@ -628,19 +643,19 @@ This step retrieves the actual telemetry values using the keys obtained in Step 
 
 {% include images-gallery.liquid imageCollection=example34 %}
 
-<br><b><font size="4">Result</font></b>
-
-The workflow returns time-series telemetry data for the selected device and time range.
+<br>**What you got**: Real telemetry data! Temperature, humidity, or whatever sensors this device has.
 
 ---
 
-<b><font size="4">Final result</font></b>
+<b><font size="4">Why this matters</font></b>
 
-This workflow dynamically:
-1. Accepts a device name as input 
-2. Finds the corresponding device in ThingsBoard 
-3. Discovers available telemetry keys 
-4. Retrieves telemetry values for the specified time window
+You just built a completely reusable workflow. Change the input from "Refrigerator" to "Freezer 3" and it works automatically. No hardcoded IDs, no changes needed.
+
+**This pattern unlocks**:
+1. Customer portals - each user sees their own devices
+2. Chatbots - "check the AC in Room 405" just works
+3. Mobile apps - query any device by name
+4. Multi-tenant systems - same workflow, different data
 
 {% assign ruleChainUseCase = '
     ===
@@ -657,14 +672,12 @@ This workflow dynamically:
 
 {% include images-gallery.liquid imageCollection=ruleChainUseCase %}
 
-<b><font size="4">Notes and best practices</font></b>
+<b><font size="4">Next steps</font></b>
 
-- Although this example uses **Trigger manually**, the same workflow can be triggered by:
-  - Webhook
-  - Schedule 
-  - HTTP Request 
-  - Chat / AI Agent 
-- Always prefer **dynamic expressions** over hardcoded IDs for reusable workflows
+- Replace the manual trigger with a **Webhook** to connect your customer portal
+- Add a **Slack** or **Email** node at the end to send the telemetry data
+- Use a **Schedule** trigger to run this hourly for monitoring
+- Connect to an **AI Agent** so users can ask "check device X" in chat
 
 ## API Reference
 
@@ -672,7 +685,7 @@ The ThingsBoard n8n node is built on top of the ThingsBoard REST API. For detail
 
 ## Links
 
-- **npm Package**: [n8n-nodes-thingsboard](https://www.npmjs.com/package/n8n-nodes-thingsboard){: target="_blank"}
+- **npm Package**: [@thingsboard/n8n-nodes-thingsboard](https://www.npmjs.com/package/@thingsboard/n8n-nodes-thingsboard){: target="_blank"}
 - **GitHub Repository**: [thingsboard/thingsboard-n8n-node](https://github.com/thingsboard/thingsboard-n8n-node){: target="_blank"}
 - **n8n Documentation**: [docs.n8n.io](https://docs.n8n.io/){: target="_blank"}
 - **n8n Community**: [community.n8n.io](https://community.n8n.io/){: target="_blank"}
