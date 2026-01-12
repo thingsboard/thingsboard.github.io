@@ -211,8 +211,8 @@ The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics.
 
 ## Prerequisites
 
-You will need to have a Trendz Analytics server up and running.
-The easiest way is to use [Trendz Cloud](/docs/trendz/install/cloud/) SaaS.
+You will need to have a Trendz Analytics up and running.
+The easiest way is to use [Trendz Analytics add-on in ThingsBoard Cloud](/docs/trendz/install/cloud/) SaaS.
 
 Alternatively, you can install Trendz Analytics using the [Installation Guide](/docs/trendz/install/installation-options/).
 
@@ -226,12 +226,12 @@ The full set of fields and relationships used in this guide is shown below:
 
 Once the Trendz Service is up and running, you can sign in to the Trendz UI using the following URL:
 
-* Trendz Cloud (North America): [https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz)
-* Trendz Cloud (Europe): [https://eu.thingsboard.cloud/trendz](https://eu.thingsboard.cloud/trendz)
-* Self-hosted Trendz: [http://localhost:8888](http://localhost:8888)
+* ThingsBoard Cloud (North America): [https://thingsboard.cloud/trendz/](https://thingsboard.cloud/trendz/)
+* ThingsBoard Cloud (Europe): [https://eu.thingsboard.cloud/trendz/](https://eu.thingsboard.cloud/trendz/)
+* Self-hosted Trendz: [http://localhost:8888/trendz/](http://localhost:8888/trendz/)
 
-You can log in using Tenant Administrator credentials from ThingsBoard. Trendz uses ThingsBoard as an authentication service.
-Any Tenant Administrator or Customer User can sign in to the Trendz UI using the same login/password they use in ThingsBoard.
+You can log in using Tenant Administrator credentials from ThingsBoard. Any Tenant Administrator or Customer User can 
+sign in to the Trendz UI using the same login/password they use in ThingsBoard.
 
 {% include images-gallery.html imageCollection="discover-topology" %}
 

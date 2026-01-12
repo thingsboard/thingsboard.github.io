@@ -13,10 +13,6 @@ description: Add Trendz widgets on dashboard
 All interactive visualizations created with the Trendz Analytics Platform could be shared with other users and embed on ThingsBoard Dashboards 
 or external sites. In this guide, you will learn how to do this. 
 
-## Prerequisites
-
-You should [import Trendz widget bundle into ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard). If you are using ThingsBoard Cloud - you should already have required bundle imported into ThingsBoard.
-
 ## Add visualization on ThingsBoard Dashboard
 
 ### Add using share wizard
@@ -33,7 +29,7 @@ Once widgets bundle imported, and you already have saved Trendz Visualization - 
 * In Trendz, open required visualization
 * Press **Share** button, and click `Copy link` button - sharable URL will be copied into the clipboard
 * Open required ThingsBoard Dashboard and press Edit button
-* Select **Trendz View Static** widget from **Trendz Bundle** and add it on the Dashboard
+* Select **Advanced analytics View Static** widget from **Advanced analytics Bundle** and add it on the Dashboard
 * Switch to **Advanced** tab of the widget and insert the copied URL from step 1
 * Save dashboard
 

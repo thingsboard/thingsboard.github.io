@@ -19,7 +19,7 @@ trendz:
     imageHeight: 36
   2:
     title: Ubuntu Server
-    description: This guide describes how to install Trendz Analytics on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
+    description: This guide describes how to install Trendz Analytics on Ubuntu 22.04 LTS / Ubuntu 24.04 LTS.
     link: /docs/trendz/install/ubuntu/
     icon: /images/install/platform/ubuntu.svg
     alt: Ubuntu logo
@@ -28,7 +28,7 @@ trendz:
     imageHeight: 36
   3:
     title: CentOS/RHEL Server
-    description: This guide describes how to install Trendz Analytics on RHEL/CentOS 7/8.
+    description: This guide describes how to install Trendz Analytics on RHEL/CentOS 8/9.
     link: /docs/trendz/install/rhel/
     icon: /images/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
@@ -45,12 +45,12 @@ trendz:
     imageWidth: 35
     imageHeight: 36
   5:
-    title: Trendz Cloud
-    description: Activate Trendz Analytics Cloud with your account to explore powerful data visualization and analytics.
+    title: Cloud
+    description: Activate Trendz Analytics with your ThingsBoard Cloud account.
     link: /docs/trendz/install/cloud/
     icon: /images/install/platform/trendz-cloud.svg
-    alt: Trendz Cloud logo
-    imageTitleAttribute: Activate Trendz Analytics Cloud
+    alt: ThingsBoard Cloud logo
+    imageTitleAttribute: Activate Trendz Analytics on ThingsBoard Cloud
     imageWidth: 58
     imageHeight: 36
   6:
