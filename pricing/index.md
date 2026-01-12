@@ -6,7 +6,7 @@ defaultActivePricingSection: thingsboard-pe-options
 
 ---
 
-<div class="container">
+<div class="container top">
     <div class="pricing-header">
         <div class="pricing-hero">
             <div class="pricing-hero-content">
@@ -62,14 +62,14 @@ defaultActivePricingSection: thingsboard-pe-options
                     data-faq-link-size="70%">Community Edition</h3>
             </div>
             <div id="Pricing_TBMQ_PE"
-                 class="solution thingsboard-pe tbmq-pe gtm_button"
+                 class="solution thingsboard-pe tbmq-pe active defaultselection gtm_button"
                  data-product-id="tbmq-pe"
                  onClick="activateProductSection('tbmq-pe')">
                 <h3 id="Pricing_TBMQ_PE" class="gtm_button" data-faq-id="tbmq-payg-sm-definition"
                     data-faq-link-size="70%">Self-managed</h3>
             </div>
             <div id="Pricing_TBMQ_PrivateCloud"
-                 class="solution thingsboard-private-cloud tbmq-private-cloud active defaultselection gtm_button"
+                 class="solution thingsboard-private-cloud tbmq-private-cloud gtm_button"
                  data-product-id="tbmq-private-cloud"
                  onClick="activateProductSection('tbmq-private-cloud')">
                 <h3 id="Pricing_TBMQ_PrivateCloud" class="gtm_button" data-faq-id="tbmq-stand-for"
@@ -400,7 +400,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div class="top-ups-column">
                     <h3>Entities</h3>
                     <div class="top-ups-list">
-                        <div class="top-up-item expanded">
+                        <div class="top-up-item">
                             <div class="top-up-header">
                                 <div class="top-up-title">
                                     <span>Extra Device pack</span>
@@ -460,23 +460,6 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <div class="detail-row">
                                     <span class="detail-label">Converters</span>
                                     <span class="detail-value">+3 Converters</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="top-up-item">
-                            <div class="top-up-header">
-                                <div class="top-up-title">
-                                    <span>Extra Rule Chain</span>
-                                    <svg class="chevron-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M5 12.5L10 7.5L15 12.5" stroke="#212121" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
-                                </div>
-                                <div class="top-up-price" data-price="10">$10</div>
-                            </div>
-                            <div class="top-up-details">
-                                <div class="detail-row">
-                                    <span class="detail-label">Rule Chains</span>
-                                    <span class="detail-value">+1 Rule Chain</span>
                                 </div>
                             </div>
                         </div>
@@ -1047,7 +1030,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div class="add-ons" data-product-name="pay-as-you-go"></div>
             </div>
             <div class="pricing-section" id="perpetual">
-                <div class="crd-container">
+                <div class="crd-container no-padding">
                     <div class="crd">
                         <h3>Own Your IoT Solution. Perpetually.</h3>
                         <p class="subtitle">The one-time, enterprise-grade license for maximum security, permanent data control, and predictable costs. </p>
@@ -1583,6 +1566,8 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div class="faq-section-option" id="securityAndCompliance" onClick="switchFaqSection('securityAndCompliance', this)">Security & Compliance</div>
                 <div class="faq-section-option" id="trialsCancellationsAndRefunds" onClick="switchFaqSection('trialsCancellationsAndRefunds', this)">Trials, Cancellations & Refunds</div>
                 <div class="faq-section-option" id="supportAndAssistance" onClick="switchFaqSection('supportAndAssistance', this)">Support & Assistance</div>
+                <div class="faq-section-option" id="trendz" onClick="switchFaqSection('trendz', this)">Trendz</div>
+                <div class="faq-section-option" id="edge" onClick="switchFaqSection('edge', this)">Edge</div>
             </div>
             <div class="answers">
                 <div id="faq-thingsboard-cloud-general" class="pi-accordion active">
@@ -1923,6 +1908,177 @@ defaultActivePricingSection: thingsboard-pe-options
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
                         <div class="container">
                             <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-thingsboard-cloud-trendz" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="trendz-what-is" data-title="What is Trendz?">
+                        <div class="container">
+                            <p>Trendz is an add-on for advanced IoT Data Analytics. It allows you to analyze, detect anomalies, and predict outcomes — all in one unified analytics workspace that works seamlessly with ThingsBoard. You can check pricing in the Plan calculator.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-pricing-plans" data-title="What pricing plans does Trendz offer?">
+                        <div class="container">
+                            <p>Trendz pricing depends on your ThingsBoard model. You can check the relevant pricing in the Plan Calculator on this page.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-additional-costs" data-title="Are there any additional costs beyond the subscription fee?">
+                        <div class="container">
+                            <p>No, all standard features are included in the subscription. However, additional services like professional support may incur extra costs.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-license-compatibility" data-title="Can ThingsBoard and Trendz Analytics have different license types?">
+                        <div class="container">
+                            <p>No, ThingsBoard and Trendz Analytics must have the same license type to function correctly. Trendz Analytics automatically detects all devices and assets from your ThingsBoard instance, along with their relationships.</p>
+                            <p>It analyzes all entities without the option to select specific ones; all entities will be analyzed and added to the 'business entity' column.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-standalone-usage" data-title="Can I use Trendz without ThingsBoard?">
+                        <div class="container">
+                            <p>No, you cannot use Trendz without ThingsBoard. Trendz automatically detects and analyzes all entities from your ThingsBoard instance. Without ThingsBoard, Trendz has no data source to work with, making it incompatible for use on its own.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-activate-cancel" data-title="How to activate or cancel Trendz subscription?">
+                        <div class="container">
+                            <p>To activate your Trendz license, follow this path:</p>
+                            <p><b>Billing page &rarr; ThingsBoard license details &rarr; Manage Add-ons &rarr; Enable the checkbox for Trendz &rarr; Save the changes.</b></p>
+                            <p>If you cancel your subscription before the billing period ends, the funds for the remaining period will stay on your balance but will not be refundable.</p>
+                        </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-white-labeling" data-title="Is white labeling available out of the box?">
+                        <div class="container">
+                            <p>White labeling functionality is available starting from the <b>Prototype</b> subscription.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-free-trial" data-title="Do you offer a free trial for Trendz?">
+                        <div class="container">
+                            <p>ThingsBoard Public Cloud Free plan includes Trendz for free. If you need a free trial for other subscriptions, please <a href="/docs/contact-us/">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-support-included" data-title="What support is included in my plan?">
+                        <div class="container">
+                            <p>The <b>Maker</b> and <b>Prototype</b> subscriptions include Community-level support. Starting from the <b>Startup</b> subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.</p>
+                            <p><i>Note: Community support is a free initiative provided by the Trendz team and other contributors as a voluntary effort. While our engineers often assist with community requests during their free time, this support comes with no formal obligation. We highly encourage users to consult the documentation for guidance.</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-thingsboard-cloud-edge" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-cloud-what-is" data-title="What is Edge Computing add-on?">
+                        <div class="container">
+                            <p>The Edge Computing add-on enables local data processing at remote sites through ThingsBoard Edge PE instances. Edge runs independently with offline capability and automatically syncs with your central ThingsBoard PE Server when connectivity returns.</p>
+                            <p>It is available for all ThingsBoard PE deployments: Cloud, Private Cloud, and self-managed.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-cloud-pricing-plans" data-title="What pricing plans does Edge Computing add-on offer?">
+                        <div class="container">
+                            <p>Edge Computing add-on pricing depends on your ThingsBoard model. Check the relevant pricing in the Plan Calculator.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-cloud-compatibility" data-title="Does Edge work with both ThingsBoard PE and CE?">
+                        <div class="container">
+                            <p>Edge edition must match your ThingsBoard Server edition:</p>
+                            <ul>
+                                <li><b>Edge PE</b> connects to ThingsBoard PE Server.</li>
+                                <li><b>Edge CE</b> connects to ThingsBoard CE Server.</li>
+                            </ul>
+                            <p>Note: Community Editions are free and open-source.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-cloud-standalone" data-title="Can I use Edge without ThingsBoard?">
+                        <div class="container">
+                            <p>No, Edge PE requires a ThingsBoard PE Server (Cloud, Private Cloud, or self-managed) to provision devices, sync configurations, and exchange data. However, it processes data locally and can operate offline when the connection drops.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-cloud-free-trial" data-title="Do you offer a free trial for Edge?">
+                        <div class="container">
+                            <p>You can start with the <b>Free</b> plan (limited to 5 devices) with the Edge Computing add-on permanently enabled. This lets you explore Edge PE features at no cost.</p>
+                            <p>For larger deployments, you can upgrade to paid plans with higher device limits and additional features.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-cloud-capacity" data-title="Can Edge handle my device volume?">
+                        <div class="container">
+                            <p>We recommend up to 1,000 devices per Edge instance based on typical edge hardware and connectivity constraints. You can exceed this number depending on your hardware capabilities. For more capacity, deploy multiple Edge instances or, starting with version 4.0, cluster Edge nodes for high availability.</p>
+                        </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-instances-included" data-title="How many edge instances are included in Edge Computing add-on?">
+                        <div class="container">
+                            <p>The number of included Edge instances depends on your subscription plan. Additional instances can be purchased separately. Check your plan details or <a href="/docs/contact-us/">contact us</a> for specifics.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-inclusions" data-title="What's included in the Edge Computing add-on price?">
+                        <div class="container">
+                            <p>The Edge add-on includes: software license, software updates (duration varies by license type), and support level based on your ThingsBoard PE plan. Hardware and infrastructure are not included — you provide your own edge hardware.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-activate-cancel" data-title="How to activate or cancel Edge Computing add-on license?">
+                        <div class="container">
+                            <p>To activate your Edge Computing add-on, log in to the License Portal and follow this path:</p>
+                            <p><b>ThingsBoard license details &rarr; Manage Add-ons &rarr; Enable the checkbox for Edge Computing add-on &rarr; Save the changes.</b></p>
+                            <p>If you cancel your license before the billing period ends, the funds for the remaining period will stay on your balance but will not be refundable.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-hardware" data-title="What hardware is required to run Edge Instance?">
+                        <div class="container">
+                            <p>Edge runs on any machine meeting these minimums:</p>
+                            <ul>
+                                <li><b>Light workloads:</b> 1GB+ RAM, 2 CPU cores, 10GB storage (e.g., Raspberry Pi).</li>
+                                <li><b>Heavy use:</b> 4GB+ RAM, 4+ CPU cores, 20GB+ storage (e.g., Industrial PCs, Edge servers, VMs).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-billing" data-title="How is Edge Computing add-on billed?">
+                        <div class="container">
+                            <p>Edge Computing add-on is billed monthly, along with your main ThingsBoard subscription. The price depends on your plan plus any additional instances you purchase.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-protocols" data-title="I have devices that use proprietary protocols. Can Edge connect to them?">
+                        <div class="container">
+                            <p>Yes. Edge natively supports MQTT, CoAP, HTTP, SNMP, and LwM2M. For other protocols, use:</p>
+                            <ul>
+                                <li>The <b>ThingsBoard IoT Gateway</b> to bridge legacy devices. The Gateway supports Modbus, BACnet, OPC-UA, and more, and is available at no extra cost.</li>
+                                <li>The <b>Platform Integrations</b> to connect via OPC-UA, ChirpStack, and 30+ other systems using the converter library.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-ui-customization" data-title="Is UI customization available out of the box?">
+                        <div class="container">
+                            <p>The Edge Computing add-on includes UI customization out of the box, such as white-labeling (custom branding throughout the interface) and custom menu configuration — both available without code changes.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-security" data-title="Is my Edge instance secure?">
+                        <div class="container">
+                            <p>Security depends on your infrastructure setup, but Edge provides built-in authentication, role-based access control, and encryption.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-updates" data-title="Are software updates included?">
+                        <div class="container">
+                            <p>Yes. Software updates are included with active Edge licenses:</p>
+                            <ul>
+                                <li><b>Subscription licenses:</b> Receive updates throughout the subscription period.</li>
+                                <li><b>Perpetual licenses:</b> Include 1 year of updates, renewable annually.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-expiration" data-title="What happens when my Edge subscription expires?">
+                        <div class="container">
+                            <p>Your Edge instance will stop functioning when the license expires. You'll need to renew your Edge license to continue using the instance.</p>
+                            <p>For <b>perpetual licenses</b>, only updates and support expire — the Edge instance continues running.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-upgrade-ce-pe" data-title="Can I upgrade from Edge CE to Edge PE?">
+                        <div class="container">
+                            <p>Yes, but you'll need to upgrade your entire system: upgrade your ThingsBoard Server from CE to PE, purchase the Edge Computing add-on, and reinstall Edge using PE packages. Please <a href="/docs/contact-us/">contact us</a> for migration assistance.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-separate-license" data-title="Do I need a separate license to use Edge Computing add-on?">
+                        <div class="container">
+                            <p>No. Once you have an active ThingsBoard PE license (Cloud, Private Cloud, or self-managed), you can purchase and activate the Edge Computing add-on directly. The add-on itself serves as the license for your Edge instances. No additional licensing is required.</p>
                         </div>
                     </div>
                 </div>
@@ -2425,6 +2581,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div class="faq-section-option" id="trialsCancellationsAndRefunds" onClick="switchFaqSection('trialsCancellationsAndRefunds', this)">Trials, Cancellations & Refunds</div>
                 <div class="faq-section-option" id="supportAndAssistance" onClick="switchFaqSection('supportAndAssistance', this)">Support & Assistance</div>
                 <div class="faq-section-option" id="edge" onClick="switchFaqSection('edge', this)">Edge</div>
+                <div class="faq-section-option" id="trendz" onClick="switchFaqSection('trendz', this)">Trendz</div>
             </div>
             <div class="answers">
                 <div id="faq-pe-pay-as-you-go-general" class="pi-accordion active">
@@ -2724,60 +2881,205 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                 </div>
                 <div id="faq-pe-pay-as-you-go-edge" class="pi-accordion">
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-model" data-title="What is the Pay-As-You-Go (PAYG) model for ThingsBoard Edge?">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-payg-what-is" data-title="What is Edge Computing add-on?">
                         <div class="container">
-                            <p>The PAYG model allows users to pay based on their actual usage of ThingsBoard Edge services. It's ideal for projects with variable workloads or businesses seeking scalability without long-term commitments.</p>
+                            <p>The Edge Computing add-on enables local data processing at remote sites through ThingsBoard Edge PE instances. Edge runs independently with offline capability and automatically syncs with your central ThingsBoard PE Server when connectivity returns.</p>
+                            <p>It is available for all ThingsBoard PE deployments: Cloud, Private Cloud, and self-managed.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-for-whom" data-title="Who should consider the PAYG model?">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-payg-pricing-plans" data-title="What pricing plans does Edge Computing add-on offer?">
                         <div class="container">
-                            <p>Organizations experiencing fluctuating IoT workloads, startups scaling their operations, or businesses preferring flexible pricing without upfront investments.</p>
+                            <p>Edge Computing add-on pricing depends on your ThingsBoard model. Check the relevant pricing in the Plan Calculator.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-compatibility" data-title="What ThingsBoard Edge compatibility means?">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-payg-compatibility" data-title="Does Edge work with both ThingsBoard PE and CE?">
                         <div class="container">
-                            <p>ThingsBoard Edge Community Edition is able to connect only to ThingsBoard Community Edition server.<br>ThingsBoard Edge Professional Edition is able to connect only to ThingsBoard Professional Edition server (it can be ThingsBoard Cloud or on-premise instances).<br>ThingsBoard Edge Community Edition cannot be connected to ThingsBoard Professional Edition and vice versa.</p>
+                            <p>Edge edition must match your ThingsBoard Server edition:</p>
+                            <ul>
+                                <li><b>Edge PE</b> connects to ThingsBoard PE Server.</li>
+                                <li><b>Edge CE</b> connects to ThingsBoard CE Server.</li>
+                            </ul>
+                            <p>Note: Community Editions are free and open-source.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-self-managed" data-title="What is a self-managed subscription?">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-payg-standalone" data-title="Can I use Edge without ThingsBoard?">
                         <div class="container">
-                            <p>A self-managed subscription allows you to host and manage Edge on your own edge infrastructure. You are responsible for the installation, configuration, and ongoing management of the system, while the ThingsBoard team provides the software and necessary documentation to support the process.</p>
+                            <p>No, Edge PE requires a ThingsBoard PE Server (Cloud, Private Cloud, or self-managed) to provision devices, sync configurations, and exchange data. However, it processes data locally and can operate offline when the connection drops.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-purchase" data-title="How can I buy a self-managed subscription?">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-payg-free-trial" data-title="Do you offer a free trial for Edge?">
                         <div class="container">
-                            <p>To purchase a self-managed subscription, you can acquire a license through your <a href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed installation guides.</p>
+                            <p>You can start with the <b>Free</b> plan (limited to 10 devices) with the Edge Computing add-on permanently enabled. This lets you explore Edge PE features at no cost.</p>
+                            <p>For larger deployments, you can upgrade to paid plans with higher device limits and additional features.</p>
                         </div>
                     </div>
-                    <div class="item" data-tag="h4" data-item-id="edge-pay-as-you-go-license" data-title="What does it mean to get the license?">
+                    <div class="item" data-tag="h4" data-item-id="edge-addon-payg-capacity" data-title="Can Edge handle my device volume?">
                         <div class="container">
-                            <p>Each license comes with a unique license key (activation code) that is automatically generated in your <a href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the Edge by following our detailed installation guides.</p>
+                            <p>We recommend up to 1,000 devices per Edge instance based on typical edge hardware and connectivity constraints. You can exceed this number depending on your hardware capabilities. For more capacity, deploy multiple Edge instances or, starting with version 4.0, cluster Edge nodes for high availability.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
                         <h4 class="title">Load more FAQ</h4>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="edge-pay-as-you-go-limitations" data-title="Are there any limitations in the PAYG model?">
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-instances-included" data-title="How many edge instances are included in Edge Computing add-on?">
                         <div class="container">
-                            <p>There are limitations in the PAYG model, particularly concerning the number of devices and assets.</p>
+                            <p>The number of included Edge instances depends on your subscription plan. Additional instances can be purchased separately. Check your plan details or <a href="/docs/contact-us/">contact us</a> for specifics.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="edge-pay-as-you-go-optional-support" data-title="What is optional support?">
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-inclusions" data-title="What's included in the Edge Computing add-on price?">
                         <div class="container">
-                            <p>This means that Edge support is not bundled with the license. For now, we provide basic support to customers with more than 25 Edge licenses of any type.</p>
+                            <p>The Edge add-on includes: software license, software updates (duration varies by license type), and support level based on your ThingsBoard PE plan. Hardware and infrastructure are not included — you provide your own edge hardware.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="edge-pay-as-you-go-refund-delivery" data-title="Refund and Delivery Policy">
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-activate-cancel" data-title="How to activate or cancel Edge Computing add-on license?">
                         <div class="container">
-                            <p><strong>Refund Policy</strong></p>
-                            <p>The License fee is non-refundable, regardless of any circumstances. Customers may manage their subscription plans: update or cancel them. Once the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour), a positive Amount due with the remaining credits will appear in the Billing section of the License portal. This sum is deducted from the Total fee whenever a particular customer purchases a new plan or a perpetual license.</p>
-                            <p><strong>Delivery Policy</strong></p>
-                            <p>The software is available for download and installation from our website. See <a href="https://thingsboard.io/docs/user-guide/install/pe/installation-options/">Installation Guides</a> for more details. In order to activate the software, you will need to obtain the license key. Instructions on how to obtain and use the license key are provided in the installation guide. See <a href="https://www.youtube.com/watch?v=dK-QDFGxWek">How-to get pay-as-you-go</a> subscription or <a href="https://www.youtube.com/watch?v=GPe0lHolWek">How-to get a perpetual license</a> for more details. Please <a href="https://thingsboard.io/docs/contact-us/">contact us</a> if you have any questions or require support.</p>
+                            <p>To activate your Edge Computing add-on, log in to the License Portal and follow this path:</p>
+                            <p><b>ThingsBoard license details &rarr; Manage Add-ons &rarr; Enable the checkbox for Edge Computing add-on &rarr; Save the changes.</b></p>
+                            <p>If you cancel your license before the billing period ends, the funds for the remaining period will stay on your balance but will not be refundable.</p>
                         </div>
                     </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="edge-pay-as-you-go-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-hardware" data-title="What hardware is required to run Edge Instance?">
                         <div class="container">
-                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                            <p>Edge runs on any machine meeting these minimums:</p>
+                            <ul>
+                                <li><b>Light workloads:</b> 1GB+ RAM, 2 CPU cores, 10GB storage (e.g., Raspberry Pi).</li>
+                                <li><b>Heavy use:</b> 4GB+ RAM, 4+ CPU cores, 20GB+ storage (e.g., Industrial PCs, Edge servers, VMs).</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-billing" data-title="How is Edge Computing add-on billed?">
+                        <div class="container">
+                            <p>Edge Computing add-on is billed monthly, along with your main ThingsBoard subscription. The price depends on your plan plus any additional instances you purchase.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-protocols" data-title="I have devices that use proprietary protocols. Can Edge connect to them?">
+                        <div class="container">
+                            <p>Yes. Edge natively supports MQTT, CoAP, HTTP, SNMP, and LwM2M. For other protocols, use:</p>
+                            <ul>
+                                <li>The <b>ThingsBoard IoT Gateway</b> to bridge legacy devices. The Gateway supports Modbus, BACnet, OPC-UA, and more, and is available at no extra cost.</li>
+                                <li>The <b>Platform Integrations</b> to connect via OPC-UA, ChirpStack, and 30+ other systems using the converter library.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-ui-customization" data-title="Is UI customization available out of the box?">
+                        <div class="container">
+                            <p>The Edge Computing add-on includes UI customization out of the box, such as white-labeling (custom branding throughout the interface) and custom menu configuration — both available without code changes.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-security" data-title="Is my Edge instance secure?">
+                        <div class="container">
+                            <p>Security depends on your infrastructure setup, but Edge provides built-in authentication, role-based access control, and encryption.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-updates" data-title="Are software updates included?">
+                        <div class="container">
+                            <p>Yes. Software updates are included with active Edge licenses:</p>
+                            <ul>
+                                <li><b>Subscription licenses:</b> Receive updates throughout the subscription period.</li>
+                                <li><b>Perpetual licenses:</b> Include 1 year of updates, renewable annually.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-expiration" data-title="What happens when my Edge subscription expires?">
+                        <div class="container">
+                            <p>Your Edge instance will stop functioning when the license expires. You'll need to renew your Edge license to continue using the instance.</p>
+                            <p>For <b>perpetual licenses</b>, only updates and support expire — the Edge instance continues running.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-upgrade-ce-pe" data-title="Can I upgrade from Edge CE to Edge PE?">
+                        <div class="container">
+                            <p>Yes, but you'll need to upgrade your entire system: upgrade your ThingsBoard Server from CE to PE, purchase the Edge Computing add-on, and reinstall Edge using PE packages. Please <a href="/docs/contact-us/">contact us</a> for migration assistance.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-separate-license" data-title="Do I need a separate license to use Edge Computing add-on?">
+                        <div class="container">
+                            <p>No. Once you have an active ThingsBoard PE license (Cloud, Private Cloud, or self-managed), you can purchase and activate the Edge Computing add-on directly. The add-on itself serves as the license for your Edge instances. No additional licensing is required.</p>
+                        </div>
+                    </div>
+                </div>
+                <div id="faq-pe-pay-as-you-go-trendz" class="pi-accordion">
+                    <div class="item" data-tag="h4" data-item-id="trendz-payg-what-is" data-title="What is Trendz?">
+                        <div class="container">
+                            <p>Trendz is an add-on for advanced IoT Data Analytics. It allows you to analyze, detect anomalies, and predict outcomes — all in one unified analytics workspace that works seamlessly with ThingsBoard. You can check pricing in the <a target="_blank" href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&solution=pe-perpetual&calculatorPayg">Plan Calculator</a>.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-payg-pricing-plans" data-title="What pricing plans does Trendz offer?">
+                        <div class="container">
+                            <p>Trendz pricing depends on your ThingsBoard model. You can check the relevant pricing in the <a target="_blank" href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&solution=pe-perpetual&calculatorPayg">Plan Calculator</a> on this page.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-payg-activate-cancel" data-title="How to activate or cancel Trendz license?">
+                        <div class="container">
+                            <p>To activate your Trendz license, log in to the License Portal and follow this path:</p>
+                            <p><b>ThingsBoard license details &rarr; Manage Add-ons &rarr; Enable the checkbox for Trendz &rarr; Save the changes.</b></p>
+                            <p>If you cancel your license before the billing period ends, the funds for the remaining period will stay on your balance but will not be refundable.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-payg-additional-fees" data-title="Is there an additional payment for the software use besides the license fee?">
+                        <div class="container">
+                            <p>No, we do not charge extra unless you want an additional service that we offer, such as:</p>
+                            <ul>
+                                <li>Professional support</li>
+                                <li>Custom development and consulting</li>
+                                <li>Training</li>
+                                <li>Managed services</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-payg-pe-vs-ce" data-title="Does Trendz work with both ThingsBoard PE and CE?">
+                        <div class="container">
+                            <p>No, Trendz can be integrated with ThingsBoard Professional Edition (PE), but it is not available in ThingsBoard Community Edition (CE).</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="trendz-payg-license-types" data-title="Can ThingsBoard and Trendz Analytics have different license types?">
+                        <div class="container">
+                            <p>No, ThingsBoard and Trendz Analytics must have the same license type to function correctly. Trendz Analytics automatically detects all devices and assets from your ThingsBoard instance, along with their relationships.</p>
+                            <p>It analyzes all entities without the option to select specific ones. You can't select specific devices or assets; all entities will be analyzed and added to the 'business entity' column.</p>
+                        </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-standalone" data-title="Can I use Trendz without ThingsBoard?">
+                        <div class="container">
+                            <p>No, you cannot use Trendz without ThingsBoard. Trendz automatically detects and analyzes all entities from your ThingsBoard instance. Without ThingsBoard, Trendz has no data source to work with, making it incompatible for use on its own.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-white-labeling" data-title="Is white labeling available out of the box?">
+                        <div class="container">
+                            <p>White labeling functionality is available starting from the <b>Prototype</b> subscription.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-free-trial" data-title="Do you offer a free trial for Trendz?">
+                        <div class="container">
+                            <p>ThingsBoard Maker includes Trendz for free. If you need a free trial for other subscriptions, <a href="/docs/contact-us/">Contact us</a> for details.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-support-types" data-title="What support is included in my plan?">
+                        <div class="container">
+                            <p>The <b>Maker</b> and <b>Prototype</b> subscriptions include Community-level support. Starting from the <b>Startup</b> subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.</p>
+                            <p><i>Community support is a free initiative provided by the Trendz team and other contributors as a voluntary effort. While our engineers often assist with community requests during their free time, this support comes with no formal obligation from the Trendz team. We highly encourage users to consult the documentation for guidance.</i></p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-server-location" data-title="Which server should Trendz Analytics be installed on?">
+                        <div class="container">
+                            <p>Trendz can be installed on the same server as your ThingsBoard instance or on a separate server, depending on your preferences and infrastructure.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-backup" data-title="Can I back up my Trendz instance?">
+                        <div class="container">
+                            <p>Yes, backups depend on your database and storage setup.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-security" data-title="Is my Trendz instance secure?">
+                        <div class="container">
+                            <p>Security depends on your infrastructure setup, but Trendz provides built-in authentication, role-based access control, and encryption.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-installation-help" data-title="How can I get help with installation and setup?">
+                        <div class="container">
+                            <p>If your subscription plan includes basic support and you have access to the Support Portal, the Trendz support team can assist with system deployment as part of basic support. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under basic support.</p>
+                            <p>If your subscription plan does not include basic support, we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                 </div>
