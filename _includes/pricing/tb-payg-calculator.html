@@ -18,7 +18,7 @@
                                     <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
                                 </span>
                             </label>
-                            <input id="sm-devices" type="number" value="10" min="1" max="1000000" class="input input-right" data-sm-input="devices">
+                            <input id="sm-devices" type="number" value="10" min="1" max="100000" class="input input-right" data-sm-input="devices">
                         </div>
                         <div class="slider-container snap-slider">
                             <input type="range" id="sm-devicesSlider" min="0" max="5" step="0.01" value="0" class="slider" data-sm-slider="devices">
@@ -28,7 +28,8 @@
                                 <div class="tick-mark" data-index="2"><span class="tick"></span><span class="tick-label">100</span></div>
                                 <div class="tick-mark" data-index="3"><span class="tick"></span><span class="tick-label">500</span></div>
                                 <div class="tick-mark" data-index="4"><span class="tick"></span><span class="tick-label">1K</span></div>
-                                <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>                            </div>
+                                <div class="tick-mark" data-index="5"><span class="tick"></span><span class="tick-label infinity">&#8734;</span></div>
+                            </div>
                         </div>
                     </div>
                     <div class="instances-section">
@@ -152,7 +153,7 @@
 <script>
     const tbSmPlans = {{ smPlans }};
     const TB_SM_THRESHOLDS = [10, 50, 100, 500, 1000];
-    const TB_SM_MAX_DEVICES = 1000000;
+    const TB_SM_MAX_DEVICES = 100000;
     const TB_SM_ENTERPRISE_THRESHOLD = 50000;
     const TB_SM_DESCRIPTIONS = {
         Maker: {
@@ -308,7 +309,6 @@
         setStepperState(tbSmUi.steppers.prod, tbSmUi.inputs.prod, tbSmState.prodInstances, plan.includedProdInstances, isMaker);
         setStepperState(tbSmUi.steppers.dev, tbSmUi.inputs.dev, tbSmState.devInstances, 0, isMaker);
 
-        // Show WL prompt only if current plan doesn't have WL
         tbSmUi.wrappers.wlPrompt.classList.toggle('hidden', hasWL);
         tbSmUpdateAddons(plan);
     };
@@ -397,7 +397,6 @@
     const tbSmCalculate = () => {
         const devices = tbSmState.deviceCount;
 
-        // Check if enterprise threshold reached
         if (devices >= TB_SM_ENTERPRISE_THRESHOLD) {
             tbSmDisplayEnterprise(devices);
             return;
@@ -493,14 +492,39 @@
                         <span class="section-title">Requested Devices:</span>
                         <span class="section-value">${formatNumber(devices)}</span>
                     </div>
+                    <div class="result-item" style="display: flex; justify-content: space-between; padding: 4px 0;">
+                        <span class="result-label" style="font-size: 14px; color: #707275;">Production Instances:</span>
+                        <span class="result-value" style="font-size: 14px; font-weight: 500; color: #212121;">${formatNumber(tbSmState.prodInstances)}</span>
+                    </div>
+                    <div class="result-item" style="display: flex; justify-content: space-between; padding: 4px 0;">
+                        <span class="result-label" style="font-size: 14px; color: #707275;">Development Instances:</span>
+                        <span class="result-value" style="font-size: 14px; font-weight: 500; color: #212121;">${formatNumber(tbSmState.devInstances)}</span>
+                    </div>
                 </div>
-                <p class="contact-us-text">Please contact our sales team for a custom solution tailored to your needs.</p>
+                <br>
+                <p class="contact-us-text"><b>Please contact our sales team for a custom solution tailored to your needs.</b></p>
             </div>
             <div class="results-footer">
                 <a id="smContactUs" href="/docs/contact-us/" class="button">Contact Us</a>
             </div>`;
 
-        tbSmState.clipboardMessage = `Enterprise Request\n- Devices: ${formatNumber(devices)}\n\nPlease contact sales for a custom solution.`;
+        let msg = `Self-managed Pay-as-you-go request \n- Devices: ${formatNumber(devices)}\n`;
+
+        msg += `- Production Instances: ${formatNumber(tbSmState.prodInstances)}\n`;
+        msg += `- Development Instances: ${formatNumber(tbSmState.devInstances)}\n`;
+
+        if (tbSmState.addons.edge.enabled) msg += `- Add-on: Edge Computing\n`;
+        if (tbSmState.addons.trendz.enabled) msg += `- Add-on: Trendz Analytics \n`;
+        if (tbSmState.addons.mobile.enabled) msg += `- Add-on: White-labeled Mobile App\n`;
+
+        tbSmState.clipboardMessage = msg;
+
+        const contactBtn = document.getElementById('smContactUs');
+        if (contactBtn) {
+            const subject = 'ThingsBoard Products';
+            contactBtn.href = `/docs/contact-us/?subject=${encodeURIComponent(subject)}&message=${encodeURIComponent(msg)}`;
+        }
+
         document.getElementById('smCopyButton')?.addEventListener('click', e => tbSmCopy(e.currentTarget));
     };
 
@@ -607,7 +631,6 @@
             </div>`;
         };
 
-        // Edge Computing
         if (tbSmState.addons.edge.enabled && breakdown.edge) {
             const edge = breakdown.edge;
             if (edge.isFree) {
@@ -627,7 +650,6 @@
             html += addButton('edgeComputing', plan.edgeMonthPrice);
         }
 
-        // Trendz Analytics - always expandable when enabled
         if (tbSmState.addons.trendz.enabled && breakdown.trendz) {
             const trendz = breakdown.trendz;
             if (trendz.isFree) {
@@ -647,7 +669,6 @@
             html += addButton('trendzAnalytics', plan.trendzMonthPrice);
         }
 
-        // Mobile App - no chevron, no expandable content (just simple row)
         if (tbSmState.addons.mobile.enabled && breakdown.mobile) {
             html += section('mobileApp', 'White-labeled Mobile App', `<span class="section-value">${formatCurrency(breakdown.mobile.cost)}<span class="tooltip">${infoIcon}<span class="tooltip-text">Monthly: ${formatCurrency(tbSmPlans.mobileApp)}<br>Setup fee: ${formatCurrency(tbSmPlans.mobileAppSetup)} (one-time)</span></span></span>`, false, '');
         } else if (!isMaker) {
