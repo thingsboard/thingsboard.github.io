@@ -149,8 +149,8 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Start Free
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 5 devices</div>
-                        <div class="pricing-square-item">Up to 5 assets</div>
+                        <div class="pricing-square-item">5 devices</div>
+                        <div class="pricing-square-item">5 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Community support
@@ -172,11 +172,11 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 50 devices</div>
-                        <div class="pricing-square-item">Up to 50 assets</div>
+                        <div class="pricing-square-item">50 devices</div>
+                        <div class="pricing-square-item">50 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">50M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Help desk
+                            Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -196,8 +196,8 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 100 devices</div>
-                        <div class="pricing-square-item">Up to 100 assets</div>
+                        <div class="pricing-square-item">100 devices</div>
+                        <div class="pricing-square-item">100 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Help desk
@@ -219,13 +219,13 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 500 devices</div>
-                        <div class="pricing-square-item">Up to 500 assets</div>
+                        <div class="pricing-square-item">500 devices</div>
+                        <div class="pricing-square-item">500 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -242,8 +242,8 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 2 000 devices</div>
-                        <div class="pricing-square-item">Up to 2 000 assets</div>
+                        <div class="pricing-square-item">1 000 devices</div>
+                        <div class="pricing-square-item">1 000 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Priority help desk
@@ -252,7 +252,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-white-labeling">$0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
-                        <h2 class="no-margin">Ready to scale past 1 000 devices?</h2>
+                        <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
                         <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
                     </div>
                 </div>
@@ -273,8 +273,8 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Start Free
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 5 devices</div>
-                        <div class="pricing-square-item">Up to 5 assets</div>
+                        <div class="pricing-square-item">5 devices</div>
+                        <div class="pricing-square-item">5 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">10M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Community support
@@ -296,11 +296,11 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 50 devices</div>
-                        <div class="pricing-square-item">Up to 50 assets</div>
+                        <div class="pricing-square-item">50 devices</div>
+                        <div class="pricing-square-item">50 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">50M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
-                            Help desk
+                            Community support
                         </div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
@@ -320,8 +320,8 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 100 devices</div>
-                        <div class="pricing-square-item">Up to 100 assets</div>
+                        <div class="pricing-square-item">100 devices</div>
+                        <div class="pricing-square-item">100 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">100M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Help desk
@@ -343,13 +343,13 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 500 devices</div>
-                        <div class="pricing-square-item">Up to 500 assets</div>
+                        <div class="pricing-square-item">500 devices</div>
+                        <div class="pricing-square-item">500 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">500M data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Priority help desk
                         </div>
-                        <div class="pricing-square-item" data-faq-id="tb-cloud-white-labeling"><b>White labeling</b></div>
+                        <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
                         <div class="pricing-square-item no-icon">&nbsp;</div>
                     </div>
                     <div class="pricing-square">
@@ -366,8 +366,8 @@ defaultActivePricingSection: thingsboard-pe-options
                                 Get started
                             </a>
                         </div>
-                        <div class="pricing-square-item">Up to 2 000 devices</div>
-                        <div class="pricing-square-item">Up to 2 000 assets</div>
+                        <div class="pricing-square-item">1 000 devices</div>
+                        <div class="pricing-square-item">1 000 assets</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-device-msg-data-storage-limits-for-plans">1B data points/month</div>
                         <div class="pricing-square-item" data-faq-id="tb-cloud-support-included">
                             Priority help desk
@@ -376,7 +376,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-white-labeling">$0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
-                        <h2 class="no-margin">Ready to scale past 1 000 devices?</h2>
+                        <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
                         <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
                     </div>
                 </div>
@@ -385,7 +385,7 @@ defaultActivePricingSection: thingsboard-pe-options
         <div class="additional-content">
             <div class="plan-calculator-block md-hide">
                 <div class="text">
-                    <h2 class="no-margin">Ready to scale past 1&nbsp;000 devices?</h2>
+                    <h2 class="no-margin">Require dedicated infrastructure <br> for unique enterprise needs?</h2>
                 </div>
                 <button onclick="switchToPrivateCloud()" id="see_private_cloud_options" class="button gtm_button">See Private Cloud Options</button>
             </div>
@@ -880,7 +880,7 @@ defaultActivePricingSection: thingsboard-pe-options
         </div>
         <div class="pricing-div">
             <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
-                <div class="cards-row margin-bottom flex-square">
+                <div class="cards-row margin-bottom">
                     <div class="pricing-square">
                         <h2>Maker</h2>
                         <div class="pricing-square-description">
@@ -1877,7 +1877,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-thingsboard-cloud-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The Maker and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br></p>
+                            <p>The Free and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br></p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
@@ -1960,7 +1960,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The <b>Maker</b> and <b>Prototype</b> subscriptions include Community-level support. Starting from the <b>Startup</b> subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.</p>
+                            <p>The <b>Free</b> and <b>Prototype</b> subscriptions include Community-level support. Starting from the <b>Startup</b> subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.</p>
                             <p><i>Note: Community support is a free initiative provided by the Trendz team and other contributors as a voluntary effort. While our engineers often assist with community requests during their free time, this support comes with no formal obligation. We highly encourage users to consult the documentation for guidance.</i></p>
                         </div>
                     </div>
