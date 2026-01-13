@@ -9,11 +9,22 @@ Uses **historical time series data** over a specified time window for trend anal
 - Define the **time window** for data collection, which determines the period over which historical telemetry is gathered for calculations.
 - Set the **maximum number of values** to be processed (This setting is configured in the [Tenant profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage){:target="_blank"} by the system administrator.)
 
-{% assign rollingArgumentType = '
+{% assign rollingArgumentTypeCE = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-rolling-argument-1-ce.png
-        title: Select the **time series rolling** argument type and specify the **time series key**. Define the **time window for data collection** and the maximum number of values to be processed, then click **Add**.
+        image: /images/user-guide/calculated-fields/argument-time-series-rolling-1-ce.png
+        title: Select the **time series rolling** argument type (3), specify the **time series key** (4), and set the **argument name** (5). Define the **time window for data collection** (6) and the maximum number of values (7) to be processed, then click **Add** (8).
 '
 %}
 
-{% include images-gallery.liquid imageCollection=rollingArgumentType %}
+{% assign rollingArgumentTypePE = '
+    ===
+        image: /images/user-guide/calculated-fields/argument-time-series-rolling-1-pe.png
+        title: Select the **time series rolling** argument type (3), specify the **time series key** (4), and set the **argument name** (5). Define the **time window for data collection** (6) and the maximum number of values (7) to be processed, then click **Add** (8).
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=rollingArgumentTypePE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=rollingArgumentTypeCE %}
+{% endif %}

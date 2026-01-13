@@ -4548,6 +4548,18 @@
 "/docs/sitemap/":
   url: "/docs/sitemap/"
   redirect_from: []
+"/docs/trendz/activation/how-to/":
+  url: "/docs/trendz/activation/how-to/"
+  redirect_from: []
+"/docs/trendz/activation/private-cloud/":
+  url: "/docs/trendz/activation/private-cloud/"
+  redirect_from: []
+"/docs/trendz/activation/public-cloud/":
+  url: "/docs/trendz/activation/public-cloud/"
+  redirect_from: []
+"/docs/trendz/activation/self-hosted/":
+  url: "/docs/trendz/activation/self-hosted/"
+  redirect_from: []
 "/docs/trendz/ai-assistance-overview/":
   url: "/docs/trendz/ai-assistance-overview/"
   redirect_from: []
@@ -4667,6 +4679,9 @@
   redirect_from: []
 "/docs/trendz/install/kubernetes/":
   url: "/docs/trendz/install/kubernetes/"
+  redirect_from: []
+"/docs/trendz/install/old-docker-migrate/":
+  url: "/docs/trendz/install/old-docker-migrate/"
   redirect_from: []
 "/docs/trendz/install/python-executor-configuration/":
   url: "/docs/trendz/install/python-executor-configuration/"

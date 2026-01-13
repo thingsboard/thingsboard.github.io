@@ -9,11 +9,22 @@ Uses **static** or **semi-static data** stored as entity attributes
 - Set the **argument name** - the variable name used in the script logic.
 - Optionally, set **default value** for attribute.
 
-{% assign attributeArgumentType = '
+{% assign attributeArgumentTypeCE = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-attribute-argument-1-ce.png
-        title: Select the **attribute** argument type, choose the **attribute scope**, specify the **attribute key**, and set the **argument name**. Optionally, define a default value. Click **Add** to add the argument.
+        image: /images/user-guide/calculated-fields/argument-attribute-1-ce.png
+        title: Select the **attribute** argument type (3), choose the **attribute scope** (4), specify the **attribute key** (5), and set the **argument name** (6). Optionally, define a default value (7). Click **Add** (8) to add the argument.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=attributeArgumentType %}
+{% assign attributeArgumentTypePE = '
+    ===
+        image: /images/user-guide/calculated-fields/argument-attribute-1-pe.png
+        title: Select the **attribute** argument type (3), choose the **attribute scope** (4), specify the **attribute key** (5), and set the **argument name** (6). Optionally, define a default value (7). Click **Add** (8) to add the argument.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=attributeArgumentTypePE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=attributeArgumentTypeCE %}
+{% endif %}

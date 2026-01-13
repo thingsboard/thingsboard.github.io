@@ -14,12 +14,8 @@ Use "Propagation" when you need to:
 
 ## Configuration
 
-Define the propagation path, the data to propagate, and the output type for the results.
-
-### General
-
-{% assign calculatedFieldType = "Select **Propagation** — this calculated field type propagates data from the current entity to related entities based on relation direction and relation type." %}
-{% include /docs/user-guide/calculated-fields/blocks/general-configuration.md %}
+{% assign calculatedFieldType = "**Propagation**" %}
+{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
 
 <hr>
 
@@ -39,7 +35,7 @@ Defines the relationship type between the target entity and the related entities
 
 {% assign propagationPathToRelatedEntities = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-path-to-related-entities-1-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-path-to-related-entities-1-ce.png
         title: Define the path to the entity to which the data will be propagated, as well as the relationship type between the entities.
 '
 %}
@@ -60,11 +56,11 @@ Two modes are available:
 
 {% assign propagationArgument = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/data-to-propagate-1-ce.png
-        title: Click **Add argument**.
+        image: /images/user-guide/calculated-fields/propagation/data-to-propagate-1-ce.png
+        title: Click **Add argument** (1).
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/data-to-propagate-2-ce.png
-        title: The data source will be the current entity to which the calculated field is applied.<br>Specify the **argument type**, **time series key / attribute key**, **output key**, and **default value**, then click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/data-to-propagate-2-ce.png
+        title: The data source will be the current entity to which the calculated field is applied.<br>Specify the **argument type** (2), **time series key / attribute key** (3), **output key** (4), and **default value** (5), then click **Add** (6).
 '
 %}
 
@@ -82,13 +78,13 @@ The sequence of actions is as follows:
 
 {% assign propagationArgument = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/data-to-propagate-3-ce.png
-        title: Click **Add argument**.
+        image: /images/user-guide/calculated-fields/propagation/data-to-propagate-3-ce.png
+        title: Switch to **Calculation result** mode (1). Click **Add argument** (2).
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/data-to-propagate-4-ce.png
-        title: The data source will be the **current entity** to which the calculated field is applied.<br>Specify the **argument type**, **time series key / attribute key**, **output key**, and **default value**, then click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/data-to-propagate-4-ce.png
+        title: The data source will be the **current entity** (3) to which the calculated field is applied.<br>Specify the **argument type** (4), **time series key / attribute key** (5), **output key** (6), and **default value** (7), then click **Add** (8).
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/data-to-propagate-5-ce.png
+        image: /images/user-guide/calculated-fields/propagation/data-to-propagate-5-ce.png
         title: Provide a TBEL script that will calculate a new value based on the defined arguments.
 '
 %}
@@ -111,7 +107,7 @@ For more details about output types and processing strategies, see the [Output](
 
 <hr>
 
-## Usage examples
+## Examples
 
 To help you get started, here are three common configuration patterns applied to real-world scenarios.
 
@@ -140,14 +136,8 @@ Import a device that publishes battery telemetry.
 
 {% assign examplePropagateDeviceBattery1 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-11-ce.png
-        title: The **Tracker** device sends the **battery charge level** to ThingsBoard.
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-12-ce.png
-        title: The **Tracker A** device linked to the **Track 1** asset via the **Contains** relation.
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-13-ce.png
-        title: The **Tracker A** device linked to the **Track 1** asset via the **Contains** relation.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-1-ce.png
+        title: Import a device that publishes **battery level** telemetry.
 '
 %}
 
@@ -167,11 +157,8 @@ Import an asset that represents the tracked truck.
 
 {% assign examplePropagateDeviceBattery2 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-14-ce.png
-        title: The **Tracker** device sends the **battery charge level** to ThingsBoard.
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-15-ce.png
-        title: The **Tracker** device linked to the **Track 1** asset via the **Contains** relation.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-2-ce.png
+        title: Import the demonstration asset Truck 1.
 '
 %}
 
@@ -191,8 +178,8 @@ This relation is used by the propagation calculated field to locate the parent e
 
 {% assign examplePropagateDeviceBattery4 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-16-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-3-ce.png
+        title: The **Tracker** device linked to the **Track 1** asset via the **Contains** relation.
 '
 %}
 
@@ -202,23 +189,25 @@ This relation is used by the propagation calculated field to locate the parent e
 
 <b><font size="3">4. Apply the Propagation calculated field to the device profile</font></b>
 
-Configure a **Propagation** calculated field on the "tracker" device profile (created automatically during device import), so it runs for Tracker A.
+Configure a **Propagation** calculated field in the **tracker** device profile (automatically created during device import) so that it works for Tracker A.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/propagation/battery_level_propagation_cf.json){:target="_blank" download="battery_level_propagation_cf.json"}.
-2. Open the "tracker" device profile.
-3. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
+2. Go to the "Calculated fields" tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
 
-This configuration propagates the latest telemetry value of <span class="code-light">batteryLevel</span> to the parent asset.
+This configuration propagates the latest telemetry value of <span class="code-light">batteryLevel</span> to the parent asset (**Truck 1**).
 
 {% assign examplePropagateDeviceBattery4 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-17-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-4-ce.png
+        title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-18-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-5-ce.png
+        title: Apply the calculated field to the **tracker** profile so it runs for all devices using it.<br>Propagation path to related entities: Relation direction: Up to parent; Relation type: Contains
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-19-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-6-ce.png
+        title: Argument settings:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** batteryLevel<br>- **Output key:** deviceBatteryLevel<br>- **Default value:** no data.
+    ===
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-7-ce.png
+        title: The output value will be stored as a server-side **attribute**.<br>Click **Add** to save the calculated field.
 '
 %}
 
@@ -232,7 +221,7 @@ The <span class="code-light">deviceBatteryLevel</span> attribute is propagated a
 
 {% assign examplePropagation12 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-1-result-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-8-ce.png
         title: The **deviceBatteryLevel** attribute is propagated and stored on the **Truck 1** asset as a **server-side attribute**.
 '
 %}
@@ -262,19 +251,12 @@ Import a device that publishes temperature and humidity telemetry.
 **CSV includes:**
 - **Name:** Smart Device
 - **Type:** smart-device
-- **Time series:** <span class="code-light">humidity</span>
-- **Time series:** <span class="code-light">temperature</span>
+- **Time series:** <span class="code-light">humidity</span>, <span class="code-light">temperature</span>
 
 {% assign examplePropagation21 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-1-ce.png
-        title: Go to the Devices and Import device configurations from a CSV file.
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-2-ce.png
-        title: CSV includes:<br>Name: Smart Device; Type: smart-device; Time series: humidity; Time series: temperature
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-3-ce.png
-        title: Smart Device has been added.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-1-ce.png
+        title: Import a device that publishes **temperature** and **humidity** telemetry.
 '
 %}
 
@@ -294,8 +276,8 @@ Import the asset that represents the greenhouse.
 
 {% assign examplePropagation22 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-4-ce.png
-        title: The **Tracker** device sends the **battery charge level** to ThingsBoard.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-2-ce.png
+        title: Import the demonstration asset Greenhouse A.
 '
 %}
 
@@ -305,8 +287,6 @@ Import the asset that represents the greenhouse.
 
 <b><font size="3">3. Create a relation between the asset and the device</font></b>
 
-Create a relation so the calculated field can resolve the target asset.
-
 Create a relationship between the **Greenhouse A** asset and the **Smart Device**:
 - Relation direction: **From**
 - Relation type: **Contains**
@@ -315,8 +295,8 @@ This relation allows the calculated field to locate the parent asset when propag
 
 {% assign examplePropagation23 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-5-ce.png
-        title: The **Tracker** device sends the **battery charge level** to ThingsBoard.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-3-ce.png
+        title: Create a relationship between the **Greenhouse A** asset and the **Smart Device**.
 '
 %}
 
@@ -326,32 +306,28 @@ This relation allows the calculated field to locate the parent asset when propag
 
 <b><font size="3">4. Apply the calculated field to the device profile</font></b>
 
-Configure the calculated field on the **smart-device** device profile (created automatically during device import), so it runs for Smart Device.
+Configure the calculated field on the "smart-device" device profile (created automatically during device import), so it runs for Smart Device.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/propagation/dew_point_propagation_cf.json){:target="_blank" download="dew_point_propagation_cf.json"}.
-2. Open the "**smart-device**" device profile.
-3. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
+3. Go to the "Calculated fields" tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
 
-This configuration propagates the latest telemetry value of <span class="code-light">dewPoint</span> to the parent asset.
+This scenario calculates the dew point value from the specified input data. The value is propagated and stored as telemetry on the parent asset (**Greenhouse A**) under the <span class="code-light">dewPoint</span> key.
 
 {% assign examplePropagation24 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-6-ce.png
-        title: Import the calculated field configuration.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-4-ce.png
+        title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-7-ce.png
-        title: Name **Dew point propagation**.<br>Specify **smart-device** entity<br>Propagation path to related entities:<br>**Relation direction**: Up to parent; **Relation type**: Contains.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-5-ce.png
+        title: Apply the calculated field to the **smart-device** profile so it runs for all devices using it.<br>Propagation path to related entities: **Relation direction**: Up to parent; **Relation type**: Contains.<br><br>**Data to propagate:** switch to **Calculation result** mode.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-8-ce.png
-        title: First argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** humidity<br>- **Output key:** humidity<br>Click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-6-ce.png
+        title: First argument settings:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** humidity<br>- **Argument name:** humidity.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-9-ce.png
-        title: Second argument:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** temperature<br>- **Output key:** temperature<br>Click **Add**.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-7-ce.png
+        title: Second argument settings:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** temperature<br>- **Argument name:** temperature.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-10-ce.png
-        title: The provided script will calculate a new dew point value based on the defined arguments.
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-11-ce.png
-        title: The calculated field has been imported.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-8-ce.png
+        title: This scenario calculates the dew point value from the specified input data. The value is propagated and stored as telemetry on the parent asset under the **dewPoint** key.<br>Click **Add** to save the calculated field.
 '
 %}
 
@@ -365,7 +341,7 @@ The calculated value is propagated to the **Greenhouse A** asset and stored as a
 
 {% assign examplePropagation25 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-2-12-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-9-ce.png
         title: The calculated value is propagated to the **Greenhouse A** asset and stored as a **telemetry** under the key **dewPoint**.
 '
 %}
@@ -387,8 +363,6 @@ Automatically propagate the <span class="code-light">hvacMode</span> attribute f
 <b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>
-
-Import HVAC devices that will receive the propagated value.
 1. Download the CSV file: [propagate-hvac-mode-device-data.csv](/docs/user-guide/resources/calculated-fields/propagation/propagate-hvac-mode-device-data.csv){:target="_blank" download="propagate-hvac-mode-device-data.csv"}
 2. Go to the **Devices** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
 
@@ -398,8 +372,8 @@ Import HVAC devices that will receive the propagated value.
 
 {% assign examplePropagation31 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-1-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-1-ce.png
+        title: Go to the **Devices** and **import** device configurations from a CSV file.
 '
 %}
 
@@ -415,18 +389,12 @@ Import an asset that represents the building.
 **CSV includes:**
 - **Name:** Building A
 - **Type:** building
-- **Server attributes:** hvacMode
+- **Server attributes:** <span class="code-light">hvacMode</span>
 
 {% assign examplePropagation32 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-2-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-3-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-4-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-2-ce.png
+        title: The imported **Building A** asset publishes the **hvacMode** value as an attribute.
 '
 %}
 
@@ -436,7 +404,7 @@ Import an asset that represents the building.
 
 <b><font size="3">3. Create a relation between the asset and the devices</font></b>
 
-Create a relationship between the **Building A** asset and the **smart devices**.
+Create a relationship between the **Building A** asset and the **room devices**.
 - Relation direction: **From**
 - Relation type: **Manages**
 
@@ -444,8 +412,8 @@ This relation is used by the propagation calculated field to locate the parent e
 
 {% assign examplePropagation33 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-5-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-3-ce.png
+        title: Create a relationship between the **Building A** asset and the **room devices**.
 '
 %}
 
@@ -453,28 +421,24 @@ This relation is used by the propagation calculated field to locate the parent e
 
 <hr>
 
-<b><font size="3">4. Apply the calculated field to the device profile</font></b>
+<b><font size="3">4. Apply the calculated field to the asset profile</font></b>
 
-Configure a **Propagation** calculated field on the "tracker" device profile (created automatically during device import), so it runs for Tracker A.
+Configure a **Propagation** calculated field on the "building" asset profile (created automatically during asset import), so it runs for Building A.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/propagation/cooling_propagation_cf.json){:target="_blank" download="cooling_propagation_cf.json"}.
-2. Open the "tracker" device profile.
 3. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
 
-This configuration propagates the latest telemetry value of <span class="code-light">batteryLevel</span> to the parent asset.
+This configuration propagates the attribute value of <span class="code-light">hvacMode</span> to the child devices.
 
 {% assign examplePropagation34 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-6-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-4-ce.png
+        title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-7-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-5-ce.png
+        title: Apply the calculated field to the **building** profile so it runs for all asset using it.<br>Propagation path to related entities: **Relation direction**: Down to child; **Relation type**: Manages
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-8-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-9-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-6-ce.png
+        title: Argument settings.<br>The propagated value will be stored on devices as an attribute.<br>Click <b>Add</b> to save the calculated field.
 '
 %}
 
@@ -484,16 +448,16 @@ This configuration propagates the latest telemetry value of <span class="code-li
 
 <b><font size="4">Result</font></b>
 
-**Each child HVAC device** will receive the **hvacMode** attribute with the value **cooling**.
+Each HVAC device received the <span class="code-light">hvacMode</span> attribute with the value **cooling**.
 
 {% assign examplePropagation33 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-10-ce.png
-        title: **Each child HVAC device** will receive the **hvacMode** attribute with the value **cooling**.
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-7-ce.png
+        title: Each HVAC device received the **hvacMode** attribute with the value **cooling**.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-11-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-8-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/propagation/propagation-cf-example-3-12-ce.png
+        image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-9-ce.png
 '
 %}
 
