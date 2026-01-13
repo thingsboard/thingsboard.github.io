@@ -35,7 +35,7 @@ Click **Add argument** and fill in the required fields:
 
 {% assign timeSeriesAggrArgument = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-argument-1-ce.png
         title: Click **Add argument** (1) and fill in the required fields:<br>- **Time series key** (2) — the telemetry key whose data will be aggregated (for example, temperature, power, voltage)<br>- **Argument name** (3) — the variable name referenced by metrics.<br>Then click **Add** (4).
 '
 %}
@@ -58,7 +58,7 @@ Click the **Add metric** button and fill in the required fields:
 
 {% assign timeSeriesAggrMetric = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-metric-1-ce.png
         title: Click the **Add metric** button (1) and fill in the required fields:<br>- **Metric name** (2): output telemetry key name (e.g., tempAvg, tempMax)<br>- **Aggregation** (3): Average / Min / Max / Sum / Count / Count unique<br>- **Argument name** (4): the argument whose value is being aggregated.<br>- **Default value** (5): used if the interval contains no data<br>Then click **Add** (6).
 '
 %}
@@ -76,7 +76,7 @@ Example: **every 1 hour** produces results at 00:00, 01:00, 02:00, etc.
 
 {% assign timeSeriesDataAggregationInterval = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-interval-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggregation-interval-1-ce.png
         title: Defines how often aggregation runs and how time boundaries are aligned.
 '
 %}
@@ -93,7 +93,7 @@ Useful when telemetry arrives slightly after boundaries or when aligning with ex
 
 {% assign advancedIntervalOption1 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-1-ce.png
         title: Shifts the start of each interval by a fixed offset (e.g., +10 minutes → 00:10, 01:10…).   
 '
 %}
@@ -106,7 +106,7 @@ If late telemetry belongs to that interval, the system recalculates the result t
 
 {% assign advancedIntervalOption2 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-2-ce.png
         title: Defines how long the system waits for late telemetry after an interval ends.
 '
 %}
@@ -120,7 +120,7 @@ Calculates aggregates during the current (not yet finished) interval and stores 
 
 {% assign advancedIntervalOption3 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-agr-advanced-interval-3-ce.png
         title: Calculates aggregates during the current (not yet finished) interval and stores intermediate values.
 '
 %}
@@ -176,13 +176,13 @@ Import a device that publishes <span class="code-light">power</span> and <span c
 
 {% assign exampleTimeSeriesDataAggregation1 = '
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-2-ce.png
         title: Name: Energy Meter 1<br>Type: energy-meter<br>Time series: power, energy
     ===
-        image: /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-3-ce.png
         title: The imported device that publishes **power** and **energy** telemetry.
 '
 %}
@@ -215,28 +215,28 @@ Ensure the calculated field is configured as:
 
 {% assign exampleTimeSeriesDataAggregation4 = '
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-4-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-4-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-5-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-5-ce.png
         title: Apply the calculated field to the **energy-meter** device profile.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-6-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-6-ce.png
         title: First argument settings:<br>- **Time series key:** energy<br>- **Argument name:** energy.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-7-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-7-ce.png
         title: Second argument settings:<br>- **Time series key:** power<br>- **Argument name:** power.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-8-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-8-ce.png
         title: First metric settings:<br>- **Metric name:** energyHourlySum<br>- **Aggregation:** Sum<br>- **Argument name:** energy.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-9-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-9-ce.png
         title: Second metric settings:<br>- **Metric name:** powerHourlyAvg<br>- **Aggregation:** Average<br>- **Argument name:** power.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-10-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-10-ce.png
         title: Third metric settings:<br>- **Metric name:** powerHourlyMax<br>- **Aggregation:** Maximum<br>- **Argument name:** power.
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-11-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-11-ce.png
         title: Aggregation interval: Hour; Time zone: use your reporting time zone.<br>The computed values are stored as telemetry (time series) keys.<br>Click **Add** to save the calculation field.
 '
 %}
@@ -265,7 +265,7 @@ Example output for one interval:
 
 {% assign examplePropagation33 = '
     ===
-        /images/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-12-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/time-series-data-aggregation/time-series-data-aggr-cf-example-1-12-ce.png
         title: On the **Energy Meter 1** device, the aggregated values are stored as telemetry (time series) keys:<br>- **powerHourlyAvg**  — hourly average power usage<br>- **powerHourlyMax** —  hourly peak power usage<br>- **energyHourlySum** — hourly energy consumption
 '
 %}

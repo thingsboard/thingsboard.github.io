@@ -11,14 +11,14 @@ Uses **static** or **semi-static data** stored as entity attributes
 
 {% assign attributeArgumentTypeCE = '
     ===
-        image: /images/user-guide/calculated-fields/argument-attribute-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/argument-attribute-1-ce.png
         title: Select the **attribute** argument type (3), choose the **attribute scope** (4), specify the **attribute key** (5), and set the **argument name** (6). Optionally, define a default value (7). Click **Add** (8) to add the argument.
 '
 %}
 
 {% assign attributeArgumentTypePE = '
     ===
-        image: /images/user-guide/calculated-fields/argument-attribute-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/argument-attribute-1-pe.png
         title: Select the **attribute** argument type (3), choose the **attribute scope** (4), specify the **attribute key** (5), and set the **argument name** (6). Optionally, define a default value (7). Click **Add** (8) to add the argument.
 '
 %}

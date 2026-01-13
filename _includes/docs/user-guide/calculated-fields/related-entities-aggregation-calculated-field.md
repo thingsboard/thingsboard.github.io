@@ -38,7 +38,7 @@ Define the relationship type between the target entity and the related entities 
 
 {% assign relatedPathToRelatedEntities = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-path-to-related-entities-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-path-to-related-entities-1-ce.png
         title: Define the path to the entities from which the data will be read for aggregation, as well as the relationship type between the target entity and the related entities.
 '
 %}
@@ -61,7 +61,7 @@ For more details about arguments and configuration, see the [Arguments](/docs/us
 
 {% assign relatedArgument = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-1-ce.png
         title: Click **Add argument** (1) and fill in the required fields:<br>select the **Argument type** (2), specify the **Time series key / Attribute key** (3) to read data from, enter the **Argument name** (4) that will be used in the metrics, and set the **Default value** (5).<br>Then click **Add** (6).”
 '
 %}
@@ -93,7 +93,7 @@ return temperature > 10 && status == "active";
 
 {% assign relatedMetrics = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-1-ce.png
         title: Click **Add metric** (1) and configure the following:<br>specify the **metric name** (2), select the **aggregation type** (3), optionally enable a **filter** (4), choose the **value source** (Key or Function) (5), and enter the **argument name** (6) that will be used as the data source.<br>Then click **Add** (7).
 '
 %}
@@ -115,7 +115,7 @@ This prevents excessive reprocessing and reduces system load in high-frequency e
 
 {% assign relatedDeduplicationInterval = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
         title: **Deduplication interval** is the minimum time period between repeated aggregations. It limits how often a calculated field can re-aggregate data from related entities in response to frequent updates.
 '
 %}
@@ -179,13 +179,13 @@ Import multiple smart devices that publish <span class="code-light">temperature<
 
 {% assign exampleRelatedEntities1 = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
         title: Name: Smart Device 1<br>Type: sensor<br>Time series: temperature
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
         title: Imported smart devices that publish **temperature** telemetry.
 '
 %}
@@ -205,7 +205,7 @@ Import the asset that represents the building.
 
 {% assign exampleRelatedEntities2 = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
         title: Import the demonstration asset Building A.
 '
 %}
@@ -224,7 +224,7 @@ These relations define the set of related entities whose telemetry will be aggre
 
 {% assign examplePropagation33 = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
         title: Create relationships between Building A and all smart sensors: Relationship direction: From (Devices &#8702; Building A); Relationship type: Manages
 
 '
@@ -247,22 +247,22 @@ The field will:
 
 {% assign examplePropagation34 = '
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
         title: Apply the calculated field to the **building** asset profile.<br>Propagation path to related entities: **Relation direction**: Down to child; **Relation type**: Manages.
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
         title: Argument settings:<br>- **Argument type:** Latest telemetry<br>- **Time series key:** temperature<br>- **Argument name:** temperature<br>- **Default value:** 0.
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
         title: First metric settings:<br>- **Metric name:** avgTemperature<br>- **Aggregation:** Average<br>- **Value source:** key<br>- **Argument name:** temperature.
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
         title: Second metric settings:<br>- **Metric name:** maxTemperature<br>- **Aggregation:** Maximum<br>- **Value source:** key<br>- **Argument name:** temperature.
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
         title: Deduplication interval: 60 seconds.<br>The output value will be stored as a telemetry. Click **Add** to save the calculation field.
 '
 %}
@@ -286,7 +286,7 @@ Example:
 
 {% assign examplePropagation33 = '
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
+        https://img.thingsboard.io/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
         title: The Building A asset stores the aggregated telemetry values, such as:<br>- **avgTemperature** — average temperature across all sensors<br>- **maxTemperature** — maximum temperature measured by one of the sensors
 '
 %}

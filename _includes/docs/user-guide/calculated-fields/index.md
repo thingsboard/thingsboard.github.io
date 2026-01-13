@@ -34,14 +34,14 @@ The process of creating a calculated field is the same for [Devices](/docs/pe/us
 
 {% assign createCalculatedFieldCE = '
     ===
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/create-new-calculated-field-1-ce.png
         title: Open the **Calculated fields** page from the left-hand menu.<br>Click **+** &#8702; **Create new calculated field**.
 '
 %}
 
 {% assign createCalculatedFieldPE = '
     ===
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
         title: Open the **Calculated fields** page from the left-hand menu.<br>Click **+** &#8702; **Create new calculated field**.
 '
 %}
@@ -74,14 +74,14 @@ The "General" section defines the basic configuration of the calculated field:
 
 {% assign typeOfCalculatedFieldCE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-general-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-general-1-ce.png
         title: Enter a <b>descriptive name</b> for the calculated field, select the entity or entity profile to which the calculated field will be applied, and choose calculated field <b>type</b>.
 '
 %}
 
 {% assign typeOfCalculatedFieldPE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-general-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-general-1-pe.png
         title: Enter a <b>descriptive name</b> for the calculated field, select the entity or entity profile to which the calculated field will be applied, and choose calculated field <b>type</b>.
 '
 %}
@@ -112,14 +112,14 @@ Define where the data is read from:
 
 {% assign argumentsCE = '
     ===
-        image: /images/user-guide/calculated-fields/argument-name-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/argument-name-1-ce.png
         title: Click the **Add argument** button (1) and fill in the required fields:<br>Defines the data source (2) that will be used in calculations.<br>Choose the desired argument type (3).
 '
 %}
 
 {% assign argumentsPE = '
     ===
-        image: /images/user-guide/calculated-fields/argument-name-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/argument-name-1-pe.png
         title: Click the **Add argument** button (1) and fill in the required fields:<br>Defines the data source (2) that will be used in calculations.<br>Choose the desired argument type (3).
 '
 %}
@@ -157,20 +157,20 @@ The result can be stored as:
 
 {% assign outputCE = '
     ===
-        image: /images/user-guide/calculated-fields/output-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/output-1-ce.png
         title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/output-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/output-2-ce.png
         title: Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click **Add**.
 '
 %}
 
 {% assign outputPE = '
     ===
-        image: /images/user-guide/calculated-fields/output-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/output-1-pe.png
         title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click **Add**.
     ===
-        image: /images/user-guide/calculated-fields/output-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/output-2-pe.png
         title: Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click **Add**.
 '
 %}
@@ -195,20 +195,20 @@ Each calculated field can be switched to Debug mode. When enabled, ThingsBoard r
 
 {% assign enableDebugCE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-enable-debug-1-ce.png
         title: Enable/manage debug mode when creating a calculated field.
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-enable-debug-2-ce.png
         title: Enable/manage debug mode for an existing calculated field.
 '
 %}
 
 {% assign enableDebugPE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-enable-debug-1-pe.png
         title: Enable/manage debug mode when creating a calculated field.
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-enable-debug-2-pe.png
         title: Enable/manage debug mode for an existing calculated field.
 '
 %}
@@ -235,19 +235,19 @@ Each event includes:
 
 {% assign reviewDebugCE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-review-debug-events-1-ce.png
         title: Click the **Events** icon in the calculated field row to view recorded debug events
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-review-debug-events-2-ce.png
 '
 %}
 
 {% assign reviewDebugPE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-review-debug-events-1-pe.png
         title: Click the **Events** icon in the calculated field row to view recorded debug events
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-review-debug-events-2-pe.png
 '
 %}
 
@@ -280,20 +280,20 @@ Click **Test with this message** in the event row to run the testing function.
 
 {% assign reviewDebug1CE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-1-ce.png
         title: Click **Test with this message** in the event row to run the testing function.
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-2-ce.png
         title: **Left panel — Script editor**. Shows the TBEL calculate(ctx, ...) function used by the calculated field. You can modify the script directly in this window.<br>**Top-right panel — Arguments**. Displays the list of arguments used in the calculation. You can adjust the argument value, type, and timestamp to simulate different incoming data.<br>**Bottom-right panel — Output**. Shows the result returned by the script after execution (or an error message if execution fails).
 '
 %}
 
 {% assign reviewDebug1PE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-1-pe.png
         title: Click **Test with this message** in the event row to run the testing function.
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-2-pe.png
         title: **Left panel — Script editor**. Shows the TBEL calculate(ctx, ...) function used by the calculated field. You can modify the script directly in this window.<br>**Top-right panel — Arguments**. Displays the list of arguments used in the calculation. You can adjust the argument value, type, and timestamp to simulate different incoming data.<br>**Bottom-right panel — Output**. Shows the result returned by the script after execution (or an error message if execution fails).
 '
 %}
@@ -313,20 +313,20 @@ Click **Test with this message** in the event row to run the testing function.
 
 {% assign reviewDebug2CE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-3-ce.png
         title: **1.** Update **script** and/or **argument values**.<br>**2.** Click **Test** to run the function.<br>**3.** Review Output JSON<br>**4.** Click **Save** to apply changes.
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-4-ce.png
         title: **5.** If needed, apply changes to the calculated field configuration.
 '
 %}
 
 {% assign reviewDebug2PE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-3-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-3-pe.png
         title: **1.** Update **script** and/or **argument values**.<br>**2.** Click **Test** to run the function.<br>**3.** Review Output JSON<br>**4.** Click **Save** to apply changes.
     ===
-        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-4-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-field-debug-test-mode-4-pe.png
         title: **5.** If needed, apply changes to the calculated field configuration.
 '
 %}
@@ -380,13 +380,13 @@ This is especially useful when you modify existing calculations or add new field
 
 {% assign dataReprocessing = '
     ===
-        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/how-to-configure-reprocessing-1-pe.png,
         title: Choose the target **Entity or Profile**, go to the **Calculated fields** tab, and either create a new calculated field or select an existing one that needs historical telemetry reprocessing.<br>Click the **Reprocess calculated field** icon next to the desired field.
     ===
-        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/how-to-configure-reprocessing-2-pe.png,
         title: In the pop-up window, define the time interval for which you want to reprocess telemetry data, and click **Reprocess** — the system will start recalculating and update historical telemetry data according to the latest logic.
     ===
-        image: /images/user-guide/calculated-fields/how-to-configure-reprocessing-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/how-to-configure-reprocessing-3-pe.png,
         title: Once the data reprocessing is complete, click **Finish**.
 '
 %}
@@ -400,7 +400,7 @@ On the time series widget, you can see that dew point values start appearing onl
 
 {% assign reprocessingExample1 = '
     ===
-        image: /images/user-guide/calculated-fields/reprocessing-example-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/reprocessing-example-1-pe.png,
         title: On the time series widget, you can see that dew point values start appearing only from 13:44:35 — before that moment, the calculation was not performed.
 '
 %}
@@ -411,13 +411,13 @@ To recalculate the dew point for a historical period (before the calculated fiel
 
 {% assign reprocessingExample2 = '
     ===
-        image: /images/user-guide/calculated-fields/reprocessing-example-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/reprocessing-example-2-pe.png
         title: Go to the **Calculated fields** tab of the corresponding **Smart Device**. Click the **Reprocess calculated field** icon in the row of the required field.
     ===
-        image: /images/user-guide/calculated-fields/reprocessing-example-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/reprocessing-example-3-pe.png,
         title: In the dialog window, specify the time interval for recalculation and click **Reprocess**.
     ===
-        image: /images/user-guide/calculated-fields/reprocessing-example-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/reprocessing-example-4-pe.png,
         title: After the process is completed, click **Finish**.
 '
 %}
@@ -428,7 +428,7 @@ As a result, the **dewPoint** values will be generated and stored for the entire
 
 {% assign reprocessingExample3 = '
     ===
-        image: /images/user-guide/calculated-fields/reprocessing-example-5-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/reprocessing-example-5-pe.png,
         title: As a result, the **dewPoint** values will be generated and stored for the entire selected historical period.
 '
 %}
@@ -443,7 +443,7 @@ The Task manager allows you to view the status of tasks, track their progress, s
 
 {% assign taskManager = '
     ===
-        image: /images/user-guide/calculated-fields/task-manager-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/task-manager-1-pe.png
         title: The Task manager allows you to view the status of tasks, track their progress, see results, and identify any errors that occurred during data processing.
 '
 %}
@@ -662,20 +662,20 @@ Click the **Export** button located in the corresponding calculated field row.
 
 {% assign exportCalculatedFieldCE = '
     ===
-        image: /images/user-guide/calculated-fields/export-calculated-field-1-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/export-calculated-field-1-ce.png,
         title: Navigate to the <b>Calculated fields</b> page and click the <b>Export<b> button located in the row of the specific calculated field.
     ===
-        image: /images/user-guide/calculated-fields/export-calculated-field-2-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/export-calculated-field-2-ce.png,
         title: Navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
 '
 %}
 
 {% assign exportCalculatedFieldPE = '
     ===
-        image: /images/user-guide/calculated-fields/export-calculated-field-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/export-calculated-field-1-pe.png,
         title: Navigate to the <b>Calculated fields</b> page and click the <b>Export<b> button located in the row of the specific calculated field.
     ===
-        image: /images/user-guide/calculated-fields/export-calculated-field-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/export-calculated-field-2-pe.png,
         title: Navigate to the <b>Calculated fields</b> tab of the target entity or profile and click the <b>Export<b> button located in the row of the specific calculated field.
 '
 %}
@@ -696,50 +696,50 @@ Steps to import:
 
 {% assign importCalculatedFieldCE = '
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-1-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-1-ce.png,
         title: Navigate to the **Calculated fields** page. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-2-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-2-ce.png,
         title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-3-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-3-ce.png,
         title: The edit window will open, allowing you to **specify the entity or profile** to which the calculated field will be applied.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-4-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-4-ce.png,
         title: If there are any problems with arguments, they will be highlighted.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-5-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-5-ce.png,
         title: Ensure the imported field is correctly applied and update any necessary parameters.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-6-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-6-ce.png,
         title: Click **Add** to complete the import.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-7-ce.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-7-ce.png,
         title: You have imported the calculated field configuration.
 '
 %}
 
 {% assign importCalculatedFieldPE = '
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-1-pe.png,
         title: Navigate to the **Calculated fields** page. Click the "**+**" icon button, and select **Import calculated field** from the dropdown menu.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-2-pe.png,
         title: In the opened window, upload the JSON file with the calculated field configuration and click **Import**.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-3-pe.png,
         title: The edit window will open, allowing you to **specify the entity or profile** to which the calculated field will be applied.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-4-pe.png,
         title: If there are any problems with arguments, they will be highlighted.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-5-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-5-pe.png,
         title: Ensure the imported field is correctly applied and update any necessary parameters.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-6-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-6-pe.png,
         title: Click **Add** to complete the import.
     ===
-        image: /images/user-guide/calculated-fields/import-calculated-field-7-pe.png,
+        image: https://img.thingsboard.io/user-guide/calculated-fields/import-calculated-field-7-pe.png,
         title: You have imported the calculated field configuration.
 '
 %}
@@ -772,14 +772,14 @@ Each calculated field includes an action panel for managing the field:
 
 {% assign calculatedFieldsParametersCE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-1-ce.png
         title: Each calculated field includes an action panel for managing the field.
 '
 %}
 
 {% assign calculatedFieldsParametersPE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-1-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-1-pe.png
         title: Each calculated field includes an action panel for managing the field.
 '
 %}
@@ -797,14 +797,14 @@ Click the calculated field to view its details.
 
 {% assign calculatedFieldsParameters2CE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-2-ce.png
         title: Click the calculated field to view its details.
 '
 %}
 
 {% assign calculatedFieldsParameters2PE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-2-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-2-pe.png
         title: Click the calculated field to view its details.
 '
 %}
@@ -823,20 +823,20 @@ After making your changes, click the orange **check** button to apply the update
 
 {% assign calculatedFieldsParameters3CE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-3-ce.png
         title: To modify the calculated field, click it to open the details view, then click the orange **pencil** button.   
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-4-ce.png
         title: After making your changes, click the orange **check** button to apply the updates.
 '
 %}
 
 {% assign calculatedFieldsParameters3PE = '
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-3-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-3-pe.png
         title: To modify the calculated field, click it to open the details view, then click the orange **pencil** button.   
     ===
-        image: /images/user-guide/calculated-fields/calculated-fields-parameters-4-pe.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/calculated-fields-parameters-4-pe.png
         title: After making your changes, click the orange **check** button to apply the updates.
 '
 %}

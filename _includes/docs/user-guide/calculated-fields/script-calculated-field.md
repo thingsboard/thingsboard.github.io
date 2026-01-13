@@ -76,7 +76,7 @@ Import a device that publishes temperature telemetry.
 
 {% assign exampleScript1 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-1-ce.png
         title: Import a device that publishes temperature telemetry.
 '
 %}
@@ -110,16 +110,16 @@ return {
 
 {% assign exampleScript2 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-2-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-3-ce.png
         title: Apply the calculated field to the **smart-device** profile so it runs for all devices using it.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-4-ce.png
         title: Argument settings:<br>- **Entity type:** Current entity<br>- **Argument type:** Latest telemetry<br>- **Time series key:** temperatureF<br>- **Argument name:** temperatureF.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-5-ce.png
         title: The specified <b>script</b> converts the temperature value from Fahrenheit to Celsius and stores the result under the <b>temperatureC</b> telemetry key.<br>Click <b>Add</b> to save the calculated field.
 '
 %}
@@ -134,7 +134,7 @@ On the "Latest telemetry" tab of the Smart Device, the calculated temperature va
 
 {% assign exampleScript3 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-1-6-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-6-ce.png
         title: On the "Latest telemetry" tab of the Smart Device, the calculated temperature value in Celsius is displayed under a new telemetry key: **temperatureC**.
 '
 %}
@@ -186,16 +186,16 @@ Import two devices: one publishing temperature telemetry and one providing altit
  
 {% assign exampleScript4 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-2-ce.png
         title: **Servet attribute:** altitude<br>**Time series:** temperature
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-3-ce.png
         title: The imported **Altimeter** device publishes **altitude** as a server-side attribute.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-4-ce.png
         title: The imported **Smart Device** publishes **temperature** as telemetry data.
 '
 %}
@@ -216,7 +216,7 @@ Import the asset that represents the building.
 
 {% assign exampleScript5 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-5-ce.png
         title: Import the demonstration asset Building A.
 '
 %}
@@ -262,19 +262,19 @@ return {
 
 {% assign exampleScript6 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-6-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-6-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-7-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-7-ce.png
         title: Apply the calculated field to the **building** profile so it runs for all asset using it.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-8-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-8-ce.png
         title: First argument settings:<br>- **Entity:** Altimeter<br>- **Argument type:** Attribute<br>- **Attribute scope:** Server attribute<br>- **Attribute key:** altitude<br>- **Argument name:** altitude
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-9-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-9-ce.png
         title: Second argument settings:<br>- **Entity:** Smart Device<br>- **Argument type:** Time series rolling<br>- **Time series key:** temperature<br>- **Argument name:** temperature<br>- **Time window:** 15 minutes
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-10-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-10-ce.png
         title: The specified <b>script</b> calculates the air density and stores the result under the <b>airDensity</b> key.<br>Click <b>Add</b> to save the calculated field.
 '
 %}
@@ -289,7 +289,7 @@ In the "Latest telemetry" tab of the Building A asset, the calculated value appe
 
 {% assign exampleScript7 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-2-11-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-2-11-ce.png
         title: In the **Latest telemetry** tab of the **Building A** asset, the calculated value appears under the **airDensity** key.
 '
 %}
@@ -334,7 +334,7 @@ Import a device that publishes **temperature** and **defrost** data as telemetry
 
 {% assign exampleScript8 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-1-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-1-ce.png
         title: Import a device that publishes **temperature** and **defrost** data as telemetry.
 '
 %}
@@ -384,19 +384,19 @@ return result;
 <br>
 {% assign exampleScript9 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-2-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-2-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-3-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-3-ce.png
         title: Apply the calculated field to the **smart-device** profile so it runs for all devices using it.
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-4-ce.png
         title: First argument settings:<br>- **Entity type:** Current entity<br>- **Argument type:** Time series rolling<br>- **Time series key:** defrost<br>- **Argument name:** defrost<br>- **Time window:** 15 minutes
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-5-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-5-ce.png
         title: Second argument settings:<br>- **Entity type:** Current entity<br>- **Argument type:** Time series rolling<br>- **Attribute key:** temperature<br>- **Argument name:** temperature<br>- **Time window:** 15 minutes
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-6-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-6-ce.png
         title: The function aligns the temperature and defrost state data by timestamp, and then selects only the moments when the temperature is higher than -5°C and defrost is off.<br>As a result, you get a list of such moments with the timestamp, the **temperature** value, and a **defrostState: false** flag (or an empty list if no such moments exist).<br>Click **Add** to save the calculated field.
 '
 %}
@@ -423,7 +423,7 @@ This indicates the freezer is in a potentially critical state and may require at
 
 {% assign exampleScript10 = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-cf-example-3-7-ce.png
+        image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-7-ce.png
         title: In the **Latest telemetry** tab of the Smart Device, the issue key appears when the condition is met. This indicates the freezer is in a potentially critical state and may require attention.
 '
 %}
