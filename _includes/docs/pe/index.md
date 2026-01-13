@@ -65,7 +65,7 @@
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
-        <a class="feature-card" href="/docs/{{docsPrefix}}devices-library/">
+        <a class="feature-card" href="/devices-library/?platform={{ docsPrefix | replace: "/", "" | replace: "paaseu", "paas" }}">
             <img class="feature-logo" src="/images/feature-logo/devices-library.svg" alt="Guides icon">
             <div class="feature-title">Devices library</div>
             <div class="feature-text">
