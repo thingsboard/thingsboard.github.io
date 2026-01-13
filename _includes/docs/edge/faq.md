@@ -148,7 +148,8 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What is ThingsBoard Edge {{edgeName}}?</div>
                     <div class="edge-faq-answer">
                         {% if docsPrefix == "pe/edge/" %}
-                        <p><b>ThingsBoard Edge Professional Edition (PE)</b> is the commercial tier of our edge computing solution. While the Community Edition provides core edge functionality, PE adds enterprise features needed for production deployments at scale.</p>
+                        <p>ThingsBoard Professional Edition is the commercial version of ThingsBoard, an advanced IoT platform designed for production and enterprise IoT solutions.</p>
+                        <p>It offers comprehensive features including white-labeling, role-based access control (RBAC), advanced integrations, and enterprise-grade capabilities.</p>
                         {% else %}
                         <p><b>ThingsBoard Edge Community Edition (CE)</b> is a free, open-source platform designed specifically for edge computing scenarios. It provides essential capabilities for managing and analyzing IoT data at the edge, while staying seamlessly synchronized with the ThingsBoard Server (Cloud or On-premise).</p>
                         {% endif %}
@@ -286,7 +287,7 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">How do I start a free trial?</div>
                     <div class="edge-faq-answer">
                         <p>Community Edition is free and open-source - no trial needed. <a href="/docs/user-guide/install/{{docsPrefix}}installation-options/" target="_blank">Download</a> and use it indefinitely at no cost.</p>
-                        <p>For Professional Edition, start a 30-day trial of the <b>Maker</b> plan with Edge Computing add-on enabled. You'll have full access to Edge PE features.</p>
+                        <p>For Professional Edition, you can start with the <b>Free</b> plan, which is limited in terms of the number of devices, but which has Edge Computing add-on permanently enabled. This allows you to try out the add-on features free of charge.</p>
                     </div>
                 </div>
             </div>
@@ -491,7 +492,8 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">What support options are available for the {{edgeName}}?</div>
                     <div class="edge-faq-answer">
                         {% if docsPrefix == "pe/edge/" %}
-                        <p>All subscriptions include optional support.</p>
+                        <p>Starting from version 4.2, we offer <a href="/docs/{{docsPrefix}}releases/release-policy/" target="_blank">Long-Term Support (LTS)</a> versions for production users with extended security updates and stability improvements.</p>
+                        <p>You can always <a href="/docs/contact-us/" target="_blank">contact us</a> with any questions.</p>
                         <p>Also, support can be provided by the <b>ThingsBoard community</b></p>
                         {% else %}
                         <p>Support for the <b>Community Edition</b> is primarily community-driven, including:</p>
@@ -508,6 +510,7 @@ function resetEdgeLoadMore(categoryId) {
                     <div class="edge-faq-question-title" onclick="toggleEdgeFaq(this)">Do you offer 24/7 customer support?</div>
                     <div class="edge-faq-answer">
                         <p>Yes, we do provide 24/7 support. If this is what you're looking for, please <a href="/docs/contact-us/" target="_blank">contact us</a> for a more detailed discussion about your specific needs.</p>
+                        <p>Also, starting from version 4.2, we offer <a href="/docs/{{docsPrefix}}releases/release-policy/" target="_blank">Long-Term Support (LTS)</a> versions for production users with extended security updates and stability improvements.</p>
                     </div>
                 </div>
                 {% else %}

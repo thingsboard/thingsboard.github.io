@@ -343,7 +343,8 @@ function resetLoadMore(categoryId) {
                 <div class="tb-faq-question tb-faq-hidden">
                     <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">Can I try add-ons before purchasing?</div>
                     <div class="tb-faq-answer">
-                        <p>Yes,you can start a 30-day trial of the <b>Maker</b> plan with <b>Edge Computing</b> and <b>Trendz add-ons enabled</b>. You'll have full access to add-ons features.</p>
+                        <p>You can start with the <b>Free</b> plan, which is limited in terms of the number of devices, but which has Edge Computing and Trendz add-ons permanently enabled. This allows you to try out the add-on features free of charge.</p>
+                        <p>For larger deployments, you can upgrade to paid plans with higher device limits and additional features.</p>
                     </div>
                 </div>
                 <div class="tb-faq-load-more" onclick="loadMoreTbFaq(this)">
@@ -705,10 +706,11 @@ function resetLoadMore(categoryId) {
             </div>
             <div id="tb-faq-cat-support" class="tb-faq-category">
                 <div class="tb-faq-question">
-                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What support is available for CE?</div>
+                    <div class="tb-faq-question-title" onclick="toggleTbFaq(this)">What support is available for ThingsBoard?</div>
                     <div class="tb-faq-answer">
                         {% if page.docsPrefix contains "paas/" or docsPrefix contains "paas/" or page.docsPrefix == "pe/" or docsPrefix == "pe/" %}
-                        <p>Support varies by plan: Cloud Maker/Prototype (community support), Startup+ (email support with SLA), Growth+ (priority support), Enterprise (dedicated support team).</p>
+                        <p>Starting from version 4.2, we offer <a href="/docs/{{docsPrefix}}releases/release-policy/" target="_blank">Long-Term Support (LTS)</a> versions for production users with extended security updates and stability improvements.</p>
+                        <p>You can always <a href="/docs/contact-us/" target="_blank">contact us</a> with any questions. Community support is available to all users.</p>
                         {% else %}
                         <p>The ThingsBoard team does not provide dedicated support for Community Edition users. Support is community-driven through <a href="https://github.com/thingsboard/thingsboard" target="_blank">GitHub</a> (report issues, contribute), <a href="https://stackoverflow.com/questions/tagged/thingsboard" target="_blank">Stack Overflow</a> (developer questions), <a href="/docs/{{docsPrefix}}" target="_blank">Documentation</a> (guides and tutorials), <a href="https://www.youtube.com/thingsboard" target="_blank">Youtube channel</a> (tutorials).</p>
                         {% endif %}
