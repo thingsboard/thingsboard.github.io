@@ -17,12 +17,8 @@ Use "Related entities aggregation" when you need to compute a "group-level" metr
 
 ## Configuration
 
-Define the related entity set, which data to read, which aggregation metrics to calculate, and how to store the result.
-
-### General
-
-{% assign calculatedFieldType = "Select the **Related Entities Aggregation** — aggregates latest values from related entities using functions such as **Average**, **Minimum**, **Maximum**, **Sum**, **Count**, **Count unique**." %}
-{% include /docs/user-guide/calculated-fields/blocks/general-configuration.md %}
+{% assign calculatedFieldType = "**Related entities aggregation**" %}
+{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
 
 <hr>
 
@@ -55,8 +51,8 @@ Define the relationship type between the target entity and the related entities 
 
 The arguments define the data that will be retrieved from each related entity for aggregation.
 
-For each argument, configure:
-- **Argument type**: [Latest telemetry](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=latestTelemetry#arguments){:target="_blank"}, [Attribute](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#arguments){:target="_blank"}
+Click **Add argument** and fill in the required fields:
+- **Argument type**: [Latest telemetry](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=latestTelemetry#arguments){:target="_blank"} or [Attribute](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#arguments){:target="_blank"}
 - **Time series key / Attribute key**: the key to read
 - **Argument name**: variable name used in metrics
 - **Default value**: fallback if data is missing
@@ -66,9 +62,7 @@ For more details about arguments and configuration, see the [Arguments](/docs/us
 {% assign relatedArgument = '
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-1-ce.png
-        title: Click **Add argument** and define the data source.<br>Specify the **argument type**, **time series key / attribute key**, **argument name**, and **default value**.<br>Then click **Add**.
-    ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-argument-2-ce.png
+        title: Click **Add argument** (1) and fill in the required fields:<br>select the **Argument type** (2), specify the **Time series key / Attribute key** (3) to read data from, enter the **Argument name** (4) that will be used in the metrics, and set the **Default value** (5).<br>Then click **Add** (6).”
 '
 %}
 
@@ -100,10 +94,7 @@ return temperature > 10 && status == "active";
 {% assign relatedMetrics = '
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-1-ce.png
-        title: Click **Add metric** and configure the following:<br>Specify the **metric name** and select **aggregation** type.
-    ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
-        title: Select **value source** (Key or Function) and set **argument name**.<br>Then click **Add**.
+        title: Click **Add metric** (1) and configure the following:<br>specify the **metric name** (2), select the **aggregation type** (3), optionally enable a **filter** (4), choose the **value source** (Key or Function) (5), and enter the **argument name** (6) that will be used as the data source.<br>Then click **Add** (7).
 '
 %}
 
@@ -124,7 +115,7 @@ This prevents excessive reprocessing and reduces system load in high-frequency e
 
 {% assign relatedDeduplicationInterval = '
     ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-3-ce.png
+        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-metrics-2-ce.png
         title: **Deduplication interval** is the minimum time period between repeated aggregations. It limits how often a calculated field can re-aggregate data from related entities in response to frequent updates.
 '
 %}
@@ -143,36 +134,33 @@ Enable **Use latest timestamp** to store the result using the most recent argume
 
 For more details about output types and processing strategies, see the [Output](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#output){:target="_blank"} section.
 
-{% assign relatedOutput = '
-    ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-1-ce.png
-        title: Time series: the function returns a JSON object or array, **with or without a timestamp**, containing the calculated value.<br>To finish adding the calculated field, click **Add**.
-    ===
-        image: /images/user-guide/calculated-fields/related-entities/related-entities-aggregation-output-2-ce.png
-        title: Attribute: the function returns a JSON object **without timestamp** information containing the computed value.<br>To finish adding the calculated field, click **Add**.
-'
-%}
-
-{% include images-gallery.liquid imageCollection=relatedOutput %}
-
 <hr>
 
-## Example 1: Aggregate temperature values from multiple child devices
+## Example: Aggregate temperature values from multiple child devices
 
 <b><font size="4">Scenario</font></b>   
 Multiple temperature sensor devices are installed in **Building A** and continuously publish telemetry values.
 
 <b><font size="4">Goal</font></b>   
-Collect the temperature telemetry from all related sensors and calculate:
-- the **average temperature** in the building
-- the **maximum temperature** in the building
+Collect temperature telemetry from all sensors related to Building A and compute:
+- <span class="code-light">avgTemperature</span> — average temperature in the building
+- <span class="code-light">maxTemperature</span> — maximum temperature in the building
 
-Store both results on **Building A**.
+Store both values as **telemetry** on the **Building A** asset.
+
+<hr>
+
+What you will configure
+
+You will apply an "Aggregation" calculated field to the Building A asset that:
+- reads the latest temperature value from related devices (child sensors)
+- computes average and maximum
+- writes the results back to Building A as telemetry keys <span class="code-light">avgTemperature</span> and <span class="code-light">maxTemperature</span>.
 
 <hr>
 
 <b><font size="4">Calculated field configuration</font></b>   
-[Download the "Related entities aggregation" calculated field configuration file.](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/temperature_aggregation_cf.json){:target="_blank" download="temperature_aggregation_cf.json"}.
+[Download the "Related entities aggregation" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/temperature_aggregation_cf.json){:target="_blank" download="temperature_aggregation_cf.json"}.
 
 <hr>
 
@@ -180,9 +168,9 @@ Store both results on **Building A**.
 
 <b><font size="3">1. Import demo devices</font></b>
 
-Import multiple smart devices that publish temperature telemetry.
-1. Download the CSV file: [related-entities-aggregation-device-data.csv](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/related-entities-aggregation-device-data.csv){:target="_blank" download="related-entities-aggregation-device-data.csv"}
-2. Go to the **Devices** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
+Import multiple smart devices that publish <span class="code-light">temperature</span> telemetry.
+1. Download the CSV file: [device-data-with-temperature-telemetry.csv](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/device-data-with-temperature-telemetry.csv){:target="_blank" download="device-data-with-temperature-telemetry.csv"}
+2. Go to the **Devices** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file
 
 **CSV includes:**
 - **Name:** Smart Device 1
@@ -192,13 +180,13 @@ Import multiple smart devices that publish temperature telemetry.
 {% assign exampleRelatedEntities1 = '
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-1-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+        title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-2-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+        title: Name: Smart Device 1<br>Type: sensor<br>Time series: temperature
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-3-ce.png
-        title: The **hvacMode** attribute on the asset level defines the operating mode of the devices (_cooling_, _heating_, _off_).
+        title: Imported smart devices that publish **temperature** telemetry.
 '
 %}
 
@@ -208,7 +196,7 @@ Import multiple smart devices that publish temperature telemetry.
 <b><font size="3">2. Import demo asset</font></b>
 
 Import the asset that represents the building.
-1. Download the CSV file: [related-entities-aggregation-asset-data.csv](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/related-entities-aggregation-asset-data.csv){:target="_blank" download="related-entities-aggregation-asset-data.csv"}
+1. Download the CSV file: [building-asset-data.csv](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/building-asset-data.csv){:target="_blank" download="building-asset-data.csv"}
 2. Go to **Assets** and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file.
 
 **CSV includes:**
@@ -218,7 +206,7 @@ Import the asset that represents the building.
 {% assign exampleRelatedEntities2 = '
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-4-ce.png
-        title: Import an asset that represents the building.
+        title: Import the demonstration asset Building A.
 '
 %}
 
@@ -228,16 +216,17 @@ Import the asset that represents the building.
 
 <b><font size="3">3. Create relations between the asset and devices</font></b>
 
-Create a relationship between the **Building A** asset and the **smart devices**.
-- Relation direction: **From**
-- Relation type: **Manages**
+Create relationships between Building A and all smart sensors:
+- **Relation direction:** From (Device &#8702; Building A)
+- **Relation type:** Manages
 
-These relations define the set of child entities whose telemetry will be aggregated.
+These relations define the set of related entities whose telemetry will be aggregated.
 
 {% assign examplePropagation33 = '
     ===
         image: /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-5-ce.png
-        title: Create a relationship between the **Building A** asset and the **smart devices**.
+        title: Create relationships between Building A and all smart sensors: Relationship direction: From (Devices &#8702; Building A); Relationship type: Manages
+
 '
 %}
 
@@ -247,54 +236,58 @@ These relations define the set of child entities whose telemetry will be aggrega
 
 <b><font size="3">4. Apply the calculated field to the asset</font></b>
 
-Configure a **Related entities aggregation** calculated field directly on the **Building A** asset.
+Apply the **Related Entities Aggregation** calculated field to the **Building A** asset.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/temperature_aggregation_cf.json){:target="_blank" download="temperature_aggregation_cf.json"}.
-2. Go to the Calculated fields tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
+2. Go to the "Calculated fields" tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
 
-This field will:
-- read the latest temperature value from all child devices
-- compute aggregated metrics (average and maximum)
-- store the results on Building A
+The field will:
+- read latest temperature value from all child devices
+- compute avg/max
+- store results on Building A
 
 {% assign examplePropagation34 = '
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-6-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-7-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        title: Apply the calculated field to the **building** asset profile.<br>Propagation path to related entities: **Relation direction**: Down to child; **Relation type**: Manages.
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-8-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        title: Argument settings:<br>- **Argument type:** Latest telemetry<br>- **Time series key:** temperature<br>- **Argument name:** temperature<br>- **Default value:** 0.
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-9-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        title: First metric settings:<br>- **Metric name:** avgTemperature<br>- **Aggregation:** Average<br>- **Value source:** key<br>- **Argument name:** temperature.
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-10-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        title: Second metric settings:<br>- **Metric name:** maxTemperature<br>- **Aggregation:** Maximum<br>- **Value source:** key<br>- **Argument name:** temperature.
     ===
         /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-11-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
-    ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
-        title: Check the debug events by clicking the "Events" icon button".
+        title: Deduplication interval: 60 seconds.<br>The output value will be stored as a telemetry. Click **Add** to save the calculation field.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=examplePropagation34 %}
 
+> (Optional) Enable [Debug mode](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#debug){:target="_blank"} and review execution events using the **Events** icon.
+
 <hr>
 
 <b><font size="4">Result</font></b>
 
-The Building A asset stores the aggregated telemetry values, such as:
+The Building A asset stores aggregated telemetry such as:
 - <span class="code-light">avgTemperature</span> — average temperature across all sensors
-- <span class="code-light">maxTemperature</span> — maximum temperature measured by one of the sensors
+- <span class="code-light">maxTemperature</span> — maximum temperature reported by any sensor
+
+Example:
+```json
+{ "avgTemperature": 22.7, "maxTemperature": 25.1 }
+```
 
 {% assign examplePropagation33 = '
     ===
-        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-13-ce.png
-        title: The Building A asset stores the aggregated telemetry values, such as:<br>- avgTemperature — average temperature across all sensors<br>- maxTemperature — maximum temperature measured by one of the sensors
+        /images/user-guide/calculated-fields/related-entities/related-entities-cf-example-1-12-ce.png
+        title: The Building A asset stores the aggregated telemetry values, such as:<br>- **avgTemperature** — average temperature across all sensors<br>- **maxTemperature** — maximum temperature measured by one of the sensors
 '
 %}
 

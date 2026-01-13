@@ -8,15 +8,12 @@ description: Calculated fields
 create-new-calculated-field:
     0:
         image: /images/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
-        title: 'To create a calculated field, select to the Entity or Profile where the calculated field should be applied. In the entity details window, navigate to the "Calculated fields" tab. Click the "plus" icon button and select "Create new calculated field" from the dropdown menu.'
-    1:
-        image: /images/user-guide/calculated-fields/create-new-calculated-field-2-pe.png
-        title: 'The calculated field configuration window will open — let&#39;s proceed with the setup.'
+        title: 'To create a calculated field, select to the Entity or Profile where the calculated field should be applied. In the entity details window, navigate to the "Calculated fields" tab. Click the "plus" icon button and select "Create new calculated field" from the dropdown menu.<br>The calculated field configuration window will open — let&#39;s proceed with the setup.'
 
 calculated-field-general:
     0:
         image: /images/user-guide/calculated-fields/calculated-field-general-1-pe.png
-        title: 'Enter a title for the calculated field, and select the calculation type: Simple or Script.'
+        title: 'Enter a <b>descriptive name</b> for the calculated field, select the entity or entity profile to which the calculated field will be applied, and choose calculated field <b>type</b>.'
 
 argument-name:
     0:
@@ -47,10 +44,28 @@ time-series-rolling-argument-type:
         image: /images/user-guide/calculated-fields/time-series-rolling-argument-type-2-pe.png
         title: 'A new argument has been added.'
 
-calculated-field-result:
+calculated-field-output:
     0:
-        image: /images/user-guide/calculated-fields/calculated-field-result-1-pe.png
-        title: 'After clicking the "Add" button, the calculated field will be added to your entity or profile.'
+        image: /images/user-guide/calculated-fields/script/script-output-1-pe.png
+        title: 'Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click <b>Add</b>.'
+    1:
+        image: /images/user-guide/calculated-fields/script/script-output-2-pe.png
+        title: 'Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click <b>Add</b>.'
+
+calculated-field-enable-debug:
+    0:
+        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-1-pe.png
+        title: 'Enable/manage debug mode when creating a calculated field.'
+    1:
+        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-2-pe.png
+        title: 'Enable/manage debug mode for an existing calculated field.'
+
+calculated-field-review-debug-1:
+    0:
+        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-1-pe.png
+        title: 'Click the <b>Events</b> icon in the calculated field row to view recorded debug events.'
+    1:
+        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-2-pe.png
 
 how-to-configure-reprocessing:
     0:

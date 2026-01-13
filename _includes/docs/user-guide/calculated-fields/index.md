@@ -27,7 +27,31 @@ In addition to real-time processing, ThingsBoard supports calculated field [repr
 
 ### Creating a calculated field
 
-{% include /docs/user-guide/calculated-fields/blocks/creating-calculated-field.md %}
+The process of creating a calculated field is the same for [Devices](/docs/pe/user-guide/ui/devices/){:target="_blank"}, [Assets](/docs/pe/user-guide/ui/assets/){:target="_blank"}, [Device profiles](/docs/pe/user-guide/device-profiles/){:target="_blank"}, or [Asset profiles](http://10.7.1.72:4000/docs/pe/user-guide/asset-profiles/){:target="_blank"}.
+
+- Open the "Calculated fields" page from the left-hand menu.
+- Click "+" &#8702; "Create new calculated field".
+
+{% assign createCalculatedFieldCE = '
+    ===
+        image: /images/user-guide/calculated-fields/create-new-calculated-field-1-ce.png
+        title: Open the **Calculated fields** page from the left-hand menu.<br>Click **+** &#8702; **Create new calculated field**.
+'
+%}
+
+{% assign createCalculatedFieldPE = '
+    ===
+        image: /images/user-guide/calculated-fields/create-new-calculated-field-1-pe.png
+        title: Open the **Calculated fields** page from the left-hand menu.<br>Click **+** &#8702; **Create new calculated field**.
+'
+%}
+
+{% if docsPrefix == null %}
+{% include images-gallery.liquid imageCollection=createCalculatedFieldCE %}
+{% endif %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
+{% include images-gallery.liquid imageCollection=createCalculatedFieldPE %}
+{% endif %}
 
 <hr>
 
@@ -43,26 +67,38 @@ ThingsBoard supports several types of calculated fields, each designed for a spe
 
 ### General
 
-General configuration fields are
+The "General" section defines the basic configuration of the calculated field:
+- **Title** — descriptive name for the calculated field that reflects its purpose.
+- **Entity type** - the target entity or entity profile where the calculated field will be applied.
+- **Type** - the calculated field [type](#types) that defines the calculation model and available configuration blocks.
 
-- **Title** — Name for the calculated field that reflects its purpose.
-- **Entity type** - the entity or entity profile where the calculated field will be applied
-- **Type** - the calculated field [type](#types).
-
-{% assign typeOfCalculatedField = '
+{% assign typeOfCalculatedFieldCE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-field-general-1-ce.png
-        title: Enter a <b>descriptive name</b> for the calculated field and select its <b>type</b>.
+        title: Enter a <b>descriptive name</b> for the calculated field, select the entity or entity profile to which the calculated field will be applied, and choose calculated field <b>type</b>.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=typeOfCalculatedField %}
+{% assign typeOfCalculatedFieldPE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-general-1-pe.png
+        title: Enter a <b>descriptive name</b> for the calculated field, select the entity or entity profile to which the calculated field will be applied, and choose calculated field <b>type</b>.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=typeOfCalculatedFieldPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=typeOfCalculatedFieldCE %}
+{% endif %}
 
 <hr>
 
 ### Arguments
 
 Arguments define which data the calculated field reads and exposes as variables for the calculation logic. Each argument maps to a specific data source (attributes or telemetry) from a selected entity, so it can be referenced in a Simple expression, TBEL script, or other calculated field types.
+
+Click the **Add argument** button and fill in the required fields:
 
 <b><font size="3">Entity type</font></b>   
 Define where the data is read from:
@@ -74,14 +110,25 @@ Define where the data is read from:
 - **Current owner** — the owner of the current entity 
 - **Related entities** (for specific calculated field types) — entities resolved dynamically via relations
 
-{% assign arguments = '
+{% assign argumentsCE = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-argument-1-ce.png
-        title: Defines the data source that will be used in calculations.
+        image: /images/user-guide/calculated-fields/argument-name-1-ce.png
+        title: Click the **Add argument** button (1) and fill in the required fields:<br>Defines the data source (2) that will be used in calculations.<br>Choose the desired argument type (3).
 '
 %}
 
-{% include images-gallery.liquid imageCollection=arguments %}
+{% assign argumentsPE = '
+    ===
+        image: /images/user-guide/calculated-fields/argument-name-1-pe.png
+        title: Click the **Add argument** button (1) and fill in the required fields:<br>Defines the data source (2) that will be used in calculations.<br>Choose the desired argument type (3).
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=argumentsPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=argumentsCE %}
+{% endif %}
 
 <br><b><font size="3">Argument types</font></b>
 
@@ -96,7 +143,9 @@ Time series rolling<small>for Script-based calculations and specific aggregation
 
 ### Calculation
 
-Calculated fields support multiple calculation models depending on the selected type. A calculation can be defined as a single expression, a TBEL script, a geospatial zone evaluation, a value propagation to related entities, or an aggregation (either across related entities using their latest values, or over historical time series data within fixed intervals). 
+Calculated fields support multiple calculation models depending on the selected type. A calculation can be defined as a single expression, a TBEL script, a geospatial zone evaluation, a value propagation to related entities, or an aggregation.
+
+For more details about the capabilities and configuration options, refer to the documentation for the corresponding calculated field [type](#types).
 
 ### Output
 
@@ -105,6 +154,32 @@ Regardless of the type, the calculated field produces one or more output values 
 The result can be stored as:
 - [Time series](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} — the function returns a JSON object or an array of JSON objects **with or without a timestamp** containing the computed value(s).
 - [Attribute](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} — the function returns a JSON object **without timestamp information** containing the computed value(s). Attributes can be stored in **Server** or **Shared** scope.
+
+{% assign outputCE = '
+    ===
+        image: /images/user-guide/calculated-fields/output-1-ce.png
+        title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/output-2-ce.png
+        title: Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click **Add**.
+'
+%}
+
+{% assign outputPE = '
+    ===
+        image: /images/user-guide/calculated-fields/output-1-pe.png
+        title: Time series: function must return a JSON object or array with or without a timestamp containing the computed value.<br>To finish adding the calculated field, click **Add**.
+    ===
+        image: /images/user-guide/calculated-fields/output-2-pe.png
+        title: Attribute: function must return a JSON object without timestamp information containing the computed value.<br>To finish adding the calculated field, click **Add**.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=outputPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=outputCE %}
+{% endif %}
 
 <hr>
 
@@ -118,7 +193,7 @@ ThingsBoard provides built-in tools that help you validate and troubleshoot calc
 
 Each calculated field can be switched to Debug mode. When enabled, ThingsBoard records execution details for every run, including the input arguments that triggered the execution (e.g. incoming telemetry or attribute updates) and the calculation result or any execution problems (script errors, missing arguments, invalid values).
 
-{% assign enableDebug = '
+{% assign enableDebugCE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-field-enable-debug-1-ce.png
         title: Enable/manage debug mode when creating a calculated field.
@@ -128,7 +203,21 @@ Each calculated field can be switched to Debug mode. When enabled, ThingsBoard r
 '
 %}
 
-{% include images-gallery.liquid imageCollection=enableDebug %}
+{% assign enableDebugPE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-1-pe.png
+        title: Enable/manage debug mode when creating a calculated field.
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-enable-debug-2-pe.png
+        title: Enable/manage debug mode for an existing calculated field.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=enableDebugPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=enableDebugCE %}
+{% endif %}
 
 {% include templates/debug-mode.md %}
 
@@ -144,7 +233,7 @@ Each event includes:
 - **Result** — generated output by the calculated field
 - **Error** — execution failure reason (appears if the execution failed)
 
-{% assign reviewDebug = '
+{% assign reviewDebugCE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-1-ce.png
         title: Click the **Events** icon in the calculated field row to view recorded debug events
@@ -153,9 +242,22 @@ Each event includes:
 '
 %}
 
-{% include images-gallery.liquid imageCollection=reviewDebug %}
+{% assign reviewDebugPE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-1-pe.png
+        title: Click the **Events** icon in the calculated field row to view recorded debug events
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-review-debug-events-2-pe.png
+'
+%}
 
-### Testing mode for script-based calculated fields
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=reviewDebugPE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=reviewDebugCE %}
+{% endif %}
+
+<br><b><font size="4">Testing mode for script-based calculated fields</font></b>
 
 For script-based calculated fields (for example, Script, Propagation (Calculation result mode), ThingsBoard provides a **Test script function (TBEL)** mode that helps you validate execution using real input data before applying changes.
 
@@ -176,7 +278,7 @@ Click **Test with this message** in the event row to run the testing function.
 - **Bottom-right panel — Output** 
   Shows the result returned by the script after execution (or an error message if execution fails).
 
-{% assign reviewDebug1 = '
+{% assign reviewDebug1CE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-1-ce.png
         title: Click **Test with this message** in the event row to run the testing function.
@@ -186,7 +288,21 @@ Click **Test with this message** in the event row to run the testing function.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=reviewDebug1 %}
+{% assign reviewDebug1PE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-1-pe.png
+        title: Click **Test with this message** in the event row to run the testing function.
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-2-pe.png
+        title: **Left panel — Script editor**. Shows the TBEL calculate(ctx, ...) function used by the calculated field. You can modify the script directly in this window.<br>**Top-right panel — Arguments**. Displays the list of arguments used in the calculation. You can adjust the argument value, type, and timestamp to simulate different incoming data.<br>**Bottom-right panel — Output**. Shows the result returned by the script after execution (or an error message if execution fails).
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=reviewDebug1PE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=reviewDebug1CE %}
+{% endif %}
 
 **Workflow:**
 - Update the script and/or the argument values.
@@ -195,17 +311,41 @@ Click **Test with this message** in the event row to run the testing function.
 - When the result is correct, click Save to keep the changes.
 - If needed, apply the changes to the calculated field configuration to activate the updated logic.
 
-{% assign reviewDebug2 = '
+{% assign reviewDebug2CE = '
     ===
         image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-3-ce.png
-        title: **1.** Update the **script** and/or the **argument values**.<br>**2.** Click **Test** to execute the function with the provided inputs.<br>**3.** Review the Output section to confirm the returned JSON structure and values.<br>**4.** When the result is correct, click Save to keep the changes.
+        title: **1.** Update **script** and/or **argument values**.<br>**2.** Click **Test** to run the function.<br>**3.** Review Output JSON<br>**4.** Click **Save** to apply changes.
     ===
         image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-4-ce.png
-        title: **5.** If needed, apply the changes to the calculated field configuration to activate the updated logic.
+        title: **5.** If needed, apply changes to the calculated field configuration.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=reviewDebug2 %}
+{% assign reviewDebug2PE = '
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-3-pe.png
+        title: **1.** Update **script** and/or **argument values**.<br>**2.** Click **Test** to run the function.<br>**3.** Review Output JSON<br>**4.** Click **Save** to apply changes.
+    ===
+        image: /images/user-guide/calculated-fields/calculated-field-debug-test-mode-4-pe.png
+        title: **5.** If needed, apply changes to the calculated field configuration.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=reviewDebug2PE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=reviewDebug2CE %}
+{% endif %}
+
+<hr>
+
+## Rule Engine integration
+
+Calculated fields are integrated with ThingsBoard [Rule Engine](/docs/user-guide/rule-engine-2-0/overview/){:target="_blank"}, the platform&#39;s flexible system for routing and processing messages.
+The execution is seamlessly integrated into your data workflow, triggered automatically whenever telemetry or attributes are processed by the following rule nodes:
+- [Save Time Series](/docs/user-guide/rule-engine-2-0/nodes/action/save-timeseries){:target="_blank"}: Triggers calculations when new telemetry is persisted.
+- [Save Attributes](/docs/user-guide/rule-engine-2-0/nodes/action/save-attributes){:target="_blank"}: Triggers calculations when client, shared, or server-side attributes are updated.
+- [Calculated Fields](/docs/user-guide/rule-engine-2-0/nodes/action/calculated-fields){:target="_blank"}: A dedicated node used to manually invoke field evaluations or facilitate complex chaining.
 
 <hr>
 
@@ -297,7 +437,7 @@ As a result, the **dewPoint** values will be generated and stored for the entire
 
 <hr>
 
-### Task manager
+<br><b><font size="3">Task manager</font></b>
 
 The Task manager allows you to view the status of tasks, track their progress, see results, and identify any errors that occurred during data processing.
 
