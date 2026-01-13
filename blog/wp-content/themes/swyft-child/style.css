@@ -1593,6 +1593,22 @@ header .logo {
     box-shadow: 0 18px 16px -10px rgba(42,125,236,.25)
 }
 
+@media (min-width: 1281px) and (max-width: 1650px) {
+	header .head-menu ul li {
+		padding: 0px !important;
+	}
+	header .head-menu ul li a {
+		font-size: 14px;
+	}
+	header .head-menu ul a,header .head-menu ul span.main-menu-link {
+		font-size: 14px !important;
+	}
+	header .header-buttons .n-button {
+		width: 90px;
+		font-size: 14px;
+	}
+}
+
 @media screen and (max-width: 1500px) {
     header {
         margin:unset;
@@ -5076,6 +5092,84 @@ blockquote p{
 
 .cs-read-next article{
 	box-shadow: 0px 0px 18.188px 0px #CECECE;
+}
+
+.tbmq-block {
+	padding: 32px;
+	border-radius: 12px;
+	border: 1px solid rgba(31, 139, 77, 0.24);
+	background: linear-gradient(
+	  to right,
+	  #F6FAF8 0%,
+	  #DCF6E7 100%
+	);
+}
+
+.tbmq-block p {
+	margin-bottom: 0px;
+}
+
+.tbmq-block .tbmq-block-title, .tbmq-block-text {
+	color: #343434;
+}
+
+.tbmq-block .tbmq-block-title {
+	font-size: 24px;
+	font-weight: 500;
+	line-height: 27.429px;
+	letter-spacing: 0.06px;
+}
+
+.tbmq-block .tbmq-block-text {
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 24px;
+	letter-spacing: 0.04px;
+}
+
+.tbmq-button-primary, .tbmq-button-secondary {
+	padding: 10px 16px;
+	border: 1px solid #1F8B4D;
+	border-radius: 6px;
+	font-size: 16px;
+	font-weight: 500;
+	line-height: 28px;
+	text-decoration: none;
+	width: fit-content;
+	text-align: center;
+	transition: ease-in-out 0.3s;
+}
+
+.tbmq-button-primary {
+	text-decoration-color: #FFF;
+	background: #1F8B4D;
+	color: #FFF;
+}
+
+.tbmq-button-primary:hover, .tbmq-button-secondary:hover {
+	text-decoration: none;
+}
+
+.tbmq-button-primary:hover {
+	color: #1F8B4D;
+	background: transparent;
+}
+
+.tbmq-button-secondary:hover {
+	color: #FFF;
+	background: #1F8B4D;
+}
+
+.tbmq-button-secondary {
+	background: transparent;
+	color: #1F8B4D;
+	text-decoration-color: #1F8B4D;
+}
+
+@media (max-width: 500px) {
+	.tbmq-button-primary, .tbmq-button-secondary {
+		width: 100%;
+	}
 }
 
 
