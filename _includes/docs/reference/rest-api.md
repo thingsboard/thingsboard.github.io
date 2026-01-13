@@ -91,12 +91,18 @@ If both are authorized, **JWT takes priority**.
 
 API keys provide a simpler, automation-friendly alternative to JWT authentication.
 - **No login required:** You don&#39;t need to exchange passwords or manage token refresh loops
-- **Long-lived:** They remain valid indefinitely until you choose to remove them
+- **Long-lived:** They stay active indefinitely or until the expiration date you choose
 - **Revocable:** You can easily disable a specific key
+
+{% capture difference %}
+**Note:** Use the **API keys** tab in the ThingsBoard UI to create and manage them.
+For more details, see the [full documentation](/docs/{{ docsPrefix }}user-guide/security/api-keys/){: target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Using API keys
 
-To authenticate via API key, include it in the X-Authorization header with the "**ApiKey**" prefix:
+To authenticate via the API key, include it in the X-Authorization header with the "**ApiKey**" prefix:
 
 ```text
 X-Authorization: ApiKey $YOUR_API_KEY_VALUE
