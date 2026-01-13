@@ -26,6 +26,11 @@ return {"dewPoint": dewPoint};
 The function uses the <span class="code-light">temperature</span> and <span class="code-light">humidity</span> arguments to calculate the dew point value.
 The calculation result will be stored in the variable <span class="code-light">dewPoint</span>, rounding the value to one decimal places.
 
+<b><font size="4">Direct argument access</font></b>   
+Arguments are also passed as function parameters (`arg1`, `arg2`, ...), so you can use them directly (for example, temperature, humidity) for cleaner scripts.
+
+> Use either direct parameters or `ctx.args.<arg>` depending on clarity and your preferred style.
+
 <br><b><font size="4">Context object (ctx)</font></b>
 
 The `ctx` object provides metadata and access to argument values:
@@ -38,11 +43,6 @@ The `ctx` object provides metadata and access to argument values:
         - `ctx.args.<arg>.timeWindow` — object with start and end timestamps `{ startTs, endTs }`.
         - `ctx.args.<arg>.values` — array of `{ ts, value }` records representing timestamped telemetry.
         - `ctx.args.<arg>.<method>()` — built-in methods such as `mean()`, `sum()`, `min()`, `max()`, `first()`, `last()`, `merge()`, and others.
-
-<b><font size="4">Direct argument access</font></b>   
-Arguments are also passed as function parameters (`arg1`, `arg2`, ...), so you can use them directly (for example, temperature, humidity) for cleaner scripts.
-
-> Use either direct parameters or `ctx.args.<arg>` depending on clarity and your preferred style.
 
 {% assign scriptFunction = '
 ===

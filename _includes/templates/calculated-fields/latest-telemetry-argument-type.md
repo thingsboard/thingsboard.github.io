@@ -8,11 +8,22 @@ Uses the most recent **latest telemetry value** for the specified time series ke
 - Set the **argument name** - the variable name used in the script logic.
 - Optionally, set **default value** for time series.
 
-{% assign latestTelemetryArgumentType = '
+{% assign latestTelemetryArgumentTypeCE = '
     ===
-        image: /images/user-guide/calculated-fields/script/script-latest-telemetry-argument-1-ce.png
-        title: Select the **latest telemetry** argument type and specify the **time series key**. Optionally, define a default value. Finally, click **Add**.
+        image: /images/user-guide/calculated-fields/argument-latest-telemetry-1-ce.png
+        title: Select the **latest telemetry** (3) argument type, specify the **time series key** (4), and set the **argument name** (5). Optionally, define a default value (6). Finally, click **Add** (7).
 '
 %}
 
-{% include images-gallery.liquid imageCollection=latestTelemetryArgumentType %}
+{% assign latestTelemetryArgumentTypePE = '
+    ===
+        image: /images/user-guide/calculated-fields/argument-latest-telemetry-1-pe.png
+        title: Select the **latest telemetry** (3) argument type, specify the **time series key** (4), and set the **argument name** (5). Optionally, define a default value (6). Finally, click **Add** (7).
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
+{% include images-gallery.liquid imageCollection=latestTelemetryArgumentTypePE %}
+{% else %}  
+{% include images-gallery.liquid imageCollection=latestTelemetryArgumentTypeCE %}
+{% endif %}
