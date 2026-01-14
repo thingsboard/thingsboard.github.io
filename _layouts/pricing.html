@@ -29,7 +29,6 @@
 
     jqueryDefer(function () {
         initPricingState();
-        generateAddOnsCards();
     });
 
     function initPricingState() {
@@ -59,9 +58,11 @@
                 document.querySelectorAll(`#thingsboard-cloud .billing-toggle.solution-selector .label-text`).forEach(elem => elem.classList.toggle('selected'));
             }
             setTopUpsCurrency('eur');
+            generateAddOnsCards('eur');
         } else {
             document.getElementById('Pricing_PE_Cloud_NorthAmerica')?.classList.add("defaultselection");
             setTopUpsCurrency('usd');
+            generateAddOnsCards('usd');
         }
     }
 
@@ -134,10 +135,12 @@
             solutionId = 'cloud-north-america';
             cookieValue = '/docs/paas/';
             setTopUpsCurrency('usd');
+            generateAddOnsCards('usd');
         } else {
             solutionId = 'cloud-europe';
             cookieValue = '/docs/paas/eu/';
             setTopUpsCurrency('eur');
+            generateAddOnsCards('eur');
         }
         setCookie("cloudServer", cookieValue, {expires: 365, path: '/'});
         setCloudServerHref();
@@ -416,10 +419,24 @@
         window.location.href = window.location.protocol + "//" + window.location.host + window.location.pathname + '?section=thingsboard-pe-options&product=thingsboard-private-cloud'
     }
 
-    function generateAddOnsCards() {
+    function generateAddOnsCards(currency = 'usd') {
         document.querySelectorAll('.add-ons').forEach(elem => {
             const product = elem.dataset.productName;
             const addOnsPricing = {{ addons }};
+
+            const getPrice = (item) => {
+                if (item && item.price) {
+                    if (typeof item.price === 'object') {
+                        return item.price[currency] || item.price['usd'];
+                    }
+                    return item.price;
+                }
+                return "<span>$99/month</span> ($1 000 one time setup fee)";
+            };
+
+            const edgePrice = getPrice(addOnsPricing[product].edge);
+            const trendzPrice = getPrice(addOnsPricing[product].trendz);
+            const wlPrice = getPrice(addOnsPricing[product].wl);
 
             elem.innerHTML = `
                 <h2>Add-ons</h2>
@@ -430,7 +447,7 @@
                         <div class="text">
                             <h3 data-faq-id="${addOnsPricing[product].edge.faq}" data-faq-link-size="50%">Edge Computing</h3>
                             <p>Process data where it is collected</p>
-                            <p>Starting from <span>${addOnsPricing[product].edge.price}</span></p>
+                            <p>Starting from <span>${edgePrice}</span></p>
                         </div>
                     </div>
                     <div class="card">
@@ -438,7 +455,7 @@
                         <div class="text">
                             <h3 data-faq-id="${addOnsPricing[product].trendz.faq}" data-faq-link-size="50%">Trendz Analytics</h3>
                             <p>Advanced analytics for your solution</p>
-                            <p>Starting from <span>${addOnsPricing[product].trendz.price}</span></p>
+                            <p>Starting from <span>${trendzPrice}</span></p>
                         </div>
                     </div>
                     <div class="card">
@@ -446,12 +463,12 @@
                         <div class="text">
                             <h3 data-faq-id="${addOnsPricing[product].wl.faq}" data-faq-link-size="50%">White-labeled Mobile App</h3>
                             <p>Сustomizable mobile application </p>
-                            <p><span>$99/month</span> ($1 000 one time setup fee)</p>
+                            <p>${wlPrice}</p>
                         </div>
                     </div>
                 </div>
             `
-            });
+        });
     }
 
 
