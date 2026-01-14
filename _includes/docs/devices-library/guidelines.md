@@ -1,4 +1,4 @@
-If you want to add your device to Devices Library, please follow the steps below:  
+If you want to add your device to Device library, please follow the steps below:  
 
 1. Create a structured guide, preferable headers structure is the following:  
     
@@ -19,6 +19,6 @@ If you want to add your device to Devices Library, please follow the steps below
 3. If you decided to use **markdown** or **txt** format - please put your guide with **images/screenshots** to the archive or GitHub repository.  
 4. Submit the guide to [**devices@thingsboard.io**](mailto:devices@thingsboard.io) for review.  
 5. We will review your guide and may modify it, if necessary, to ensure its accuracy and quality.  
-6. The guide will be added to Devices Library, and the rest of the community will be able to connect your device to ThingsBoard.  
+6. The guide will be added to Device library, and the rest of the community will be able to connect your device to ThingsBoard.  
 
 Please do not hesitate to contact us if you have any questions or feedback.  

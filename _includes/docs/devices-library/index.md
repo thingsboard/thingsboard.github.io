@@ -152,9 +152,9 @@
     {% endfor %}
 </ul>
 
-<h1 style="font-size: 28px;">Welcome to the ThingsBoard Devices Library!</h1>
+<h1 style="font-size: 28px;">Welcome to the ThingsBoard Device library!</h1>
 
-The Devices Library is a collection of guides and code snippets that explain how to connect popular IoT **development boards** to the ThingsBoard platform.
+The Device library is a collection of guides and code snippets that explain how to connect popular IoT **development boards** to the ThingsBoard platform.
 We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers.
 Device Library is a constantly extending resource. We encourage our community members to [contribute](/docs/{{page.docsPrefix}}devices-library/guidelines/).
 

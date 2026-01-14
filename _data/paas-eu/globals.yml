@@ -11,7 +11,7 @@ docs-header:
 - toc: docs-home
   title: Documentation
 - toc: devices-library
-  title: Devices Library
+  title: Device library
 - toc: guides
   title: Guides
 - toc: api

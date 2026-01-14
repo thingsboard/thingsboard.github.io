@@ -59,7 +59,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/devices-library/?platform=ce">
             <img class="feature-logo" src="/images/feature-logo/devices-library.svg" alt="Guides icon">
-            <div class="feature-title">Devices library</div>
+            <div class="feature-title">Device library</div>
             <div class="feature-text">
                 Learn how to connect different devices to ThingsBoard.
             </div>

@@ -1,7 +1,7 @@
 ---
 docsTag: "pe"
 layout: devicelibrary
-title: Devices Library
+title: Device library
 description: Device library and connecting guides
 notitle: "true"
 docsPrefix: "pe/"

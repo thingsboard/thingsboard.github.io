@@ -65,7 +65,7 @@
                     {% for headertoc in siteData.globals.docs-header %}
                         {% assign toc = siteData[headertoc.toc] %}
                         {% assign active = "false" %}
-                        {% if toc.bigheader == "Devices Library"%}
+                        {% if toc.bigheader == "Device library"%}
                             {% assign active = "true" %}
                             {% assign activeHeaderToc = headertoc %}
                         {% endif %}
