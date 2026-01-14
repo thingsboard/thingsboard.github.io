@@ -28,19 +28,19 @@ To continue with this guide we will need the following:
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Connect device to ThingsBoard 
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-configuration-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-configuration-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-check-data-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-check-data-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

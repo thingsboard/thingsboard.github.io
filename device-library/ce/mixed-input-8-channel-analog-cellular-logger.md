@@ -16,4 +16,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/mixed-input-8-channel-analog-cellular-logger.md %}
+{% include /docs/device-library/guides/mixed-input-8-channel-analog-cellular-logger.md %}

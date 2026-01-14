@@ -17,4 +17,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/lw001-bg-pro.md %}
+{% include /docs/device-library/guides/lw001-bg-pro.md %}

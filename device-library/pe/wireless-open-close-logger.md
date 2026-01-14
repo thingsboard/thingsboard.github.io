@@ -17,4 +17,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/wireless-open-close-logger.md %}
+{% include /docs/device-library/guides/wireless-open-close-logger.md %}

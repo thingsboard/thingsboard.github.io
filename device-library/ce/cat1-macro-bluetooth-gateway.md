@@ -16,4 +16,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/cat1-macro-bluetooth-gateway.md %}
+{% include /docs/device-library/guides/cat1-macro-bluetooth-gateway.md %}

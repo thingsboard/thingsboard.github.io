@@ -16,5 +16,5 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/knx-ip-multi-io-580.md %}
+{% include /docs/device-library/guides/knx-ip-multi-io-580.md %}
 

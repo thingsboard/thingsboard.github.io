@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/rock-pi-4-model-b.md %}
+{% include /docs/device-library/guides/rock-pi-4-model-b.md %}

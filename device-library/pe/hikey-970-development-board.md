@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/hikey-970-development-board.md %}
+{% include /docs/device-library/guides/hikey-970-development-board.md %}

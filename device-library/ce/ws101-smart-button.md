@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/ws101-smart-button.md %}
+{% include /docs/device-library/guides/ws101-smart-button.md %}

@@ -118,9 +118,7 @@
   redirect_from: []
 "/docs/devices-library/":
   url: "/docs/devices-library/"
-  redirect_from:
-  - "/docs/samples/linkit-one/"
-  - "/docs/samples/linkit-one/gps/"
+  redirect_from: []
 "/docs/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/devices-library/indoor-bluetooth-gateway/"
   redirect_from: []

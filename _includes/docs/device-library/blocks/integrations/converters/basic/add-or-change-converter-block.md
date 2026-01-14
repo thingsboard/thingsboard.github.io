@@ -13,7 +13,7 @@
 {% assign integrationTypeForLink = integrationType | upcase %}
 {% endif %}
 
-{% assign converterFilePath = "/docs/devices-library/blocks/integrations/converters/basic/" | append: integrationType | append: "-uplink-converter.js" %}
+{% assign converterFilePath = "/docs/device-library/blocks/integrations/converters/basic/" | append: integrationType | append: "-uplink-converter.js" %}
 {% assign uplinkConverterLink = "https://raw.githubusercontent.com/thingsboard/data-converters/refs/heads/release/latest/VENDORS/" | append: page.vendor | append: "/" | append: page.model | append: "/" | append: integrationTypeForLink | append: "/uplink/converter.json" %}
 
 ### Uplink converter in ThingsBoard integration
@@ -26,7 +26,7 @@ Download the JSON file with the uplink converter settings by clicking the button
 
 [Download uplink converter for {{ integrationTypeCorrectName }} integration.]({{ uplinkConverterLink }}){: target="_blank" download="converter.json" .button }
 
-{% include /docs/devices-library/blocks/integrations/converters/basic/import-uplink-converter-for-integration-type.md integration-type=integrationType integration-type-correct-name=integrationTypeCorrectName %}
+{% include /docs/device-library/blocks/integrations/converters/basic/import-uplink-converter-for-integration-type.md integration-type=integrationType integration-type-correct-name=integrationTypeCorrectName %}
 
 {% else %}
 
@@ -36,7 +36,7 @@ To do this you can add code to "*Decoding block*", it locates between comments "
 
 
 {% capture customDecodingCodeCapture %}
-{% assign customDecodingCodeFilePath = "/docs/devices-library/blocks/integrations/converters/custom-decoding/" | append: page.name | replace: ".md", ".js" %}
+{% assign customDecodingCodeFilePath = "/docs/device-library/blocks/integrations/converters/custom-decoding/" | append: page.name | replace: ".md", ".js" %}
 {% include {{ customDecodingCodeFilePath }} %}
 {% endcapture %}
 

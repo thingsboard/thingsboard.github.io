@@ -20,7 +20,7 @@ To add a gateway, follow next steps:
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 {% assign articleFilename = page.name |  replace: ".md", "" %}
-{% assign guideFilePath = "/docs/devices-library/blocks/integrations/devices-configuration/" | append: articleFilename | append: "-chirpstack-block.md" %}
+{% assign guideFilePath = "/docs/device-library/blocks/integrations/devices-configuration/" | append: articleFilename | append: "-chirpstack-block.md" %}
 
 {% include {{ guideFilePath }} %}
 
@@ -193,4 +193,4 @@ To check integration connection you can do the following:
 
 If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
 
-![Check integration connection](/images/device-library/basic/integrations/check-integration-started.png)
+![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)

@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/dsgw-210-iot-gateway-hub.md %}
+{% include /docs/device-library/guides/dsgw-210-iot-gateway-hub.md %}

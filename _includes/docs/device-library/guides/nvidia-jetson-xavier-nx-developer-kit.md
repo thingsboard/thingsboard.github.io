@@ -21,7 +21,7 @@
 The NVIDIA Jetson Xavier NX Developer Kit is a powerful, compact AI computer that delivers up to 21 TOPS of accelerated computing in a small form factor.
  It's designed for autonomous machines, industrial robots, and embedded systems that require high-performance AI at the edge.
 
-{% include /docs/devices-library/blocks/basic/introduction-block.md %}
+{% include /docs/device-library/blocks/basic/introduction-block.md %}
 
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
 ## Starting Edge on the {{deviceName}} {#starting-edge-on-device}
@@ -35,11 +35,11 @@ The NVIDIA Jetson Xavier NX Developer Kit is a powerful, compact AI computer tha
 ## Create device on ThingsBoard {#create-device-on-thingsboard}
 {% endif %}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools {#install-required-libraries-and-tools}
 
-{% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
 {% assign hostName = "NVIDIA_JETSON_XAVIER_NX_IP_ADDRESS" %}
@@ -48,12 +48,12 @@ The NVIDIA Jetson Xavier NX Developer Kit is a powerful, compact AI computer tha
 ## Connect device to ThingsBoard {#connect-device-to-thingsboard}
 {% endif %}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
 ## Synchronize device state using client and shared attribute requests {#synchronize-device-state-using-client-and-shared-attribute-requests}
-{% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 {% if page.docsPrefix == "pe/edge/" or page.docsPrefix == "edge/" %}
 ## Check data on ThingsBoard Edge {#check-data-on-thingsboard-edge}
@@ -61,17 +61,17 @@ The NVIDIA Jetson Xavier NX Developer Kit is a powerful, compact AI computer tha
 ## Check data on ThingsBoard {#check-data-on-thingsboard}
 {% endif %}
 
-{% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
 ## Control device using shared attributes  {#control-device-using-shared-attributes}
 
-{% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
 ## Control device using RPC {#control-device-using-rpc}
 
-{% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/using-rpc-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

@@ -15,43 +15,43 @@ Make the most of the dual core 32-bit Arm® Cortex®-M0+ to make Internet of Thi
 Dive into real-world projects with the onboard accelerometer, gyroscope, RGB LED and microphone.  
 Develop robust embedded AI solutions with minimal effort using the Arduino Nano RP2040 Connect.
 
-{% include /docs/devices-library/blocks/basic/introduction-block.md %}
+{% include /docs/device-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/microcontrollers/nano-connect-arduino-library-install-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/nano-connect-arduino-library-install-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
 ## Connect device to ThingsBoard 
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/rp2040-general-code-to-program-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/rp2040-general-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

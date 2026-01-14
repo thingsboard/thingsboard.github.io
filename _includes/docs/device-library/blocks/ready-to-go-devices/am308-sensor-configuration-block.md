@@ -13,7 +13,7 @@ Depending on the network server, you may also need to provide join type (OTAA), 
 
 To configure device via NFC, you will need to hold your smartphone like on the picture below:  
 
-![NFC zone](/images/device-library/ready-to-go-devices/am308/am308-connect.png)  
+![NFC zone](/images/devices-library/ready-to-go-devices/am308/am308-connect.png)  
 <br>
 
 To read and write configuration on the device you may follow next steps on your smartphone:  
@@ -37,6 +37,6 @@ To read and write configuration on the device you may follow next steps on your 
 
 The developer also provides the possibility of connecting through a computer if necessary:
 
-![Device connect](/images/device-library/ready-to-go-devices/am308/am308-connect-to-pc.png)
+![Device connect](/images/devices-library/ready-to-go-devices/am308/am308-connect-to-pc.png)
 
 See the [manual](https://resource.milesight.com/milesight/iot/document/am300-series-user-guide-en.pdf){: target="_blank"} for details.

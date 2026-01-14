@@ -17,4 +17,4 @@ breadcrumbs-show: "2"
 * TOC
 {:toc}
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/ace-iot-gateway-and-siemens-logo.md %}
+{% include /docs/device-library/guides/ace-iot-gateway-and-siemens-logo.md %}

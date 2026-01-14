@@ -70,9 +70,9 @@ Once you have successfully done all the steps above and Gateway sent data, you c
 - Navigate to the "Latest telemetry" tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/device-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-pe.png)
 {% else %}  
-![imageCe](/images/device-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/temco-tstat10/temco-tstat10-device-1-ce.png)
 {% endif %}
 
 Let&#39;s display Temco Tstat10 time series on a dashboard. For this purpose, you can create your own dashboard with your 

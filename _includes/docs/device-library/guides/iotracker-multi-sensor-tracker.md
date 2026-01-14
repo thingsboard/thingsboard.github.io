@@ -4,7 +4,7 @@
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/devices-library/ug56-lorawan-gateway/){:target="_blank"})
+- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/device-library/ug56-lorawan-gateway/){:target="_blank"})
 - Configured integration on networks server and ThingsBoard
 - [Network Server account](#device-connection)
 '
@@ -44,7 +44,7 @@ To continue with this guide we will need the following:
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 
 {% assign articleFilename = page.name |  replace: ".md", "" %}
-{% assign guideFilePath = "/docs/devices-library/blocks/ready-to-go-devices/" | append: articleFilename | append: "-configuration-block.md" %}
+{% assign guideFilePath = "/docs/device-library/blocks/ready-to-go-devices/" | append: articleFilename | append: "-configuration-block.md" %}
 
 {% include {{ guideFilePath }} %}
 
@@ -59,7 +59,7 @@ TheThingsIndustries,
 Loriot
 '%}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-integration-types=targetIntegrationTypes %}
+{% include /docs/device-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-integration-types=targetIntegrationTypes %}
 
 
 ## Check data on ThingsBoard
@@ -70,10 +70,10 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/device-library/io-tracker-device-data.png)
+![LoRaWAN device data](/images/devices-library/io-tracker-device-data.png)
 
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

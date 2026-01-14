@@ -2,4 +2,4 @@ bigheader: "Device library"
 abstract: "Some part of devices that can be connected to ThingsBoard and connection guides for them."
 toc:
 - title: Device library
-  path: /docs/devices-library/
+  path: /docs/device-library/

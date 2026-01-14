@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/upesy-esp32-low-power-dev-kit.md %}
+{% include /docs/device-library/guides/upesy-esp32-low-power-dev-kit.md %}

@@ -20,4 +20,4 @@ breadcrumbs-show: "2"
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
 {% assign peDocsPrefix = "pe/" %}
-{% include /docs/devices-library/guides/raspberry-pi-4.md %}
+{% include /docs/device-library/guides/raspberry-pi-4.md %}

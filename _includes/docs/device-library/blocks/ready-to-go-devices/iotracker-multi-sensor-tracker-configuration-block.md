@@ -29,7 +29,7 @@ Depending on the network server, you may also need to provide join type (OTAA) a
 ### 2. LoRaWAN Menu
 
 From the **Main menu**, tap **Configuration** to access LoRaWAN functions.  
-![LoRaWAN menu screenshot](/images/device-library/io-things-lorawan-menu.png)
+![LoRaWAN menu screenshot](/images/devices-library/io-things-lorawan-menu.png)
 
 ### Change LoRaWAN Keys
 
@@ -37,7 +37,7 @@ From the **Main menu**, tap **Configuration** to access LoRaWAN functions.
 - Enter your new LoRaWAN **DevEUI**, **AppEUI**, and **AppKey**.
 - Click **Update**.
 - **Reboot** the device to activate the new keys.  
-  ![Change LoRaWAN keys screenshot](/images/device-library/io-things-lorawan-lorakeys.png)
+  ![Change LoRaWAN keys screenshot](/images/devices-library/io-things-lorawan-lorakeys.png)
 
 ### Check LoRaWAN Status
 
@@ -46,4 +46,4 @@ From the **Main menu**, tap **Configuration** to access LoRaWAN functions.
 - **Join Status**: **JOINED** or **NOT JOINED**.
 - **Last Uplink**: timestamp, payload, message type, DataRate, channel, TxPower, TxToA, UpCntr.
 - **Last Downlink**: timestamp, payload, DataRate, RxSlot, port, RSSI, SNR, ACK flag, DownCntr.  
-  ![LoRaWAN status overview screenshot](/images/device-library/io-things-lorawan-overview.png)
+  ![LoRaWAN status overview screenshot](/images/devices-library/io-things-lorawan-overview.png)

@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/uwb-asset-management-tracker.md %}
+{% include /docs/device-library/guides/uwb-asset-management-tracker.md %}

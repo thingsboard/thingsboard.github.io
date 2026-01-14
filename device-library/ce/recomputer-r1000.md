@@ -14,4 +14,4 @@ breadcrumbs-steps: "2"
 breadcrumbs-show: "2"
 ---
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/recomputer-r1000.md %}
+{% include /docs/device-library/guides/recomputer-r1000.md %}

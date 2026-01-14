@@ -6,7 +6,7 @@
 {% for integrationType in targetIntegrationTypes %}
     {% assign integrationType = integrationType | strip_newlines %}
     {% assign integrationTypeLower = integrationType | replace: ' ', '' | strip_newlines | downcase %}
-    {% assign guideFilePath = "/docs/devices-library/blocks/integrations/basic/thingsboard-add-device-" | append: integrationTypeLower | append: "-integration-block.md" %}
+    {% assign guideFilePath = "/docs/device-library/blocks/integrations/basic/thingsboard-add-device-" | append: integrationTypeLower | append: "-integration-block.md" %}
     {% assign contentToggleConfiguration = contentToggleConfiguration | append: integrationType | append: '%,%' | append: integrationTypeLower | append: '%,%' | append: guideFilePath | append: '%br%' %}
 {% endfor %}
 

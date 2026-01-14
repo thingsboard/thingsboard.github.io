@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/am308-sensor.md %}
+{% include /docs/device-library/guides/am308-sensor.md %}

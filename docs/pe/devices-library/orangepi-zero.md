@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-pe
 title: "How to connect OrangePI Zero to ThingsBoard?"
-redirect_to: "/devices-library/pe/orangepi-zero/"
+redirect_to: "/device-library/pe/orangepi-zero/"
 ---

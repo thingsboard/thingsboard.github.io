@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/hiletgo-esp32-dev-kit.md %}
+{% include /docs/device-library/guides/hiletgo-esp32-dev-kit.md %}

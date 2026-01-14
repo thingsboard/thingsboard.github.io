@@ -15,4 +15,4 @@ breadcrumbs-steps: "2"
 breadcrumbs-show: "2"
 ---
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/recomputer-r1100.md %}
+{% include /docs/device-library/guides/recomputer-r1100.md %}

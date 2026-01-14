@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/udoo-x86-ultra.md %}
+{% include /docs/device-library/guides/udoo-x86-ultra.md %}

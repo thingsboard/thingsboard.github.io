@@ -1,7 +1,7 @@
 ---
 layout: page-with-filter
-title: ThingsBoard Device library
-description: Device library and connecting guides
+title: ThingsBoard Device Library
+description: Device Library and connecting guides
 containerId: "devices-card-collection"
 filterSelector: ".pagination-render-trigger"
 itemsSelector: ".card"
@@ -95,8 +95,8 @@ filterCollection:
 <div class="devices-hero">
     <div class="devices-wrapper">
         <div class="devices-hero-text">
-            <h1>Welcome to the ThingsBoard Device library!</h1>
-            <p>The Device library is a collection of guides and code snippets that explain how to connect popular IoT development boards to the ThingsBoard platform. We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers. Device Library is a constantly extending resource. We encourage our community members to <a href="/device-library/guidelines/">contribute</a>.</p>
+            <h1>Welcome to the ThingsBoard Device Library!</h1>
+            <p>The Device Library is a collection of guides and code snippets that explain how to connect popular IoT development boards to the ThingsBoard platform. We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers. Device Library is a constantly extending resource. We encourage our community members to <a href="/device-library/guidelines/">contribute</a>.</p>
         </div>
         <div class="devices-hero-banner">
             <p>Wish to integrate existing sensors?</p>

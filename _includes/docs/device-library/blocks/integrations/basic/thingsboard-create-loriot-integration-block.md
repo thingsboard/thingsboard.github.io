@@ -26,7 +26,7 @@ To add a gateway, you can follow next steps:
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 {% assign articleFilename = page.name |  replace: ".md", "" %}
-{% assign guideFilePath = "/docs/devices-library/blocks/integrations/devices-configuration/" | append: articleFilename | append: "-loriot-block.md" %}
+{% assign guideFilePath = "/docs/device-library/blocks/integrations/devices-configuration/" | append: articleFilename | append: "-loriot-block.md" %}
 
 {% include {{ guideFilePath }} %}
 
@@ -187,13 +187,13 @@ To check integration connection you can do the following:
 
 If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
 
-![Check integration connection](/images/device-library/basic/integrations/check-integration-started.png)
+![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)
 
 ### Troubleshooting
 
 If you see the next error message, that means the output was not created automatically.
 
-![Check integration connection](/images/device-library/basic/integrations/loriot/loriot-integration-error-pe.png)
+![Check integration connection](/images/devices-library/basic/integrations/loriot/loriot-integration-error-pe.png)
 
 You can configure it manually:
 

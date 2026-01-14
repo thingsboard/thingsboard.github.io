@@ -67,7 +67,7 @@
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/device-library/?platform={{ docsPrefix | replace: "/", "" | replace: "paaseu", "paas" }}">
             <img class="feature-logo" src="/images/feature-logo/devices-library.svg" alt="Guides icon">
-            <div class="feature-title">Device library</div>
+            <div class="feature-title">Device Library</div>
             <div class="feature-text">
                 Learn how to connect different devices to {{platformName}}.
             </div>

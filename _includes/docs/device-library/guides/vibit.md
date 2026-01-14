@@ -1,7 +1,7 @@
 {% assign deviceName = "VIBit" %}
 {% assign deviceVendorLink = "https://machineastro.com/vibit/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
-{% assign officialManualLink = "/docs/devices-library/resources/manuals/vibit.pdf" %}
+{% assign officialManualLink = "/docs/device-library/resources/manuals/vibit.pdf" %}
 {% assign prerequisites = '
 - [Sensor user guide](' | append: officialManualLink | append: '){: target="_blank"}
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -100,17 +100,17 @@ First, create a new device profile in ThingsBoard that uses the **MQTT transport
 - Open the VIBit Mobile Application on your smartphone.
 - The VIBit mobile application can connect to any ThingsBoard platform by selecting the "**Custom**" option from the drop-down menu and entering either the static public IP address or the HTTPS domain name. Below is one sample image.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-1.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-1.png)
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-2.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-2.png)
 
 - Go to Connect Section on the application. It will display list of VIBit sensors available in the Bluetooth Range.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-3.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-3.png)
 
 - Search the respective device and click on the **Connect** button. (Assuming that Device is already exists on the Thingsboard.)
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-4.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-4.png)
 
 - Configure the sensor&#39;s Wi-Fi settings using the app:
   - Enter the Wi-Fi SSID and password.
@@ -118,13 +118,13 @@ First, create a new device profile in ThingsBoard that uses the **MQTT transport
   - Enter the MQTT **Username** as sensor, **Password** as cimcon, and **Client ID** as the BLE MAC address.
   - Save the settings to apply the configurations.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-5.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-5.png)
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-6.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-6.png)
 
 - Check Cloud and Wi-Fi Connectivity Status in the Mobile Application.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-7.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-7.png)
 
 ### Check Data on ThingsBoard
 
@@ -134,7 +134,7 @@ First, create a new device profile in ThingsBoard that uses the **MQTT transport
   - FFT Timeseries Data
   - Temperature and acoustic readings
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-8.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit/vibit-mobile-app-8.png)
 
 {% capture difference %}
 Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} to visualize data trends and analyze equipment health over time.

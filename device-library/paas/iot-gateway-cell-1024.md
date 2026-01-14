@@ -18,4 +18,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/iot-gateway-cell-1024.md %}
+{% include /docs/device-library/guides/iot-gateway-cell-1024.md %}

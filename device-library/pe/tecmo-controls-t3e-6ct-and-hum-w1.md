@@ -17,4 +17,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/temco-controls-t3e-6ct-and-hum-w1.md %}
+{% include /docs/device-library/guides/temco-controls-t3e-6ct-and-hum-w1.md %}

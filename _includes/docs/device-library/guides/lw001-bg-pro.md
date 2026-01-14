@@ -28,7 +28,7 @@ To continue with this guide we will need the following:
 
 ## Configuration
 
-![{{deviceName}}](/images/device-library/ready-to-go-devices/lw001-bg-pro/mklora-app-qr-code.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](/images/devices-library/ready-to-go-devices/lw001-bg-pro/mklora-app-qr-code.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 0px"}
 To connect the device and start sending data, both the device and the network server must be configured. Users can configure the device using the MKLora application.   
 To download the MKLora app, scan the QR code on the left or follow the [provided link](https://play.google.com/store/apps/details?id=com.moko.mklora&pcampaignid=web_share){:target="_blank"}.
 
@@ -59,13 +59,13 @@ TheThingsIndustries,
 Loriot
 '%}
 
-{% include /docs/devices-library/blocks/integrations/devices-configuration/lw001-bg-pro/thingsboard-create-lw001-bg-pro-device-block.liquid target-integration-types=targetIntegrationTypes %}
+{% include /docs/device-library/blocks/integrations/devices-configuration/lw001-bg-pro/thingsboard-create-lw001-bg-pro-device-block.liquid target-integration-types=targetIntegrationTypes %}
 
 {% capture lw001bgproconfig %}
-ChirpStack<small>Recommended</small>%,%%,%templates/docs/devices-library/blocks/integrations/devices-configuration/lw001-bg-pro-chirpstack-block.md%br%
-TheThingsStack<small></small>%,%%,%templates/docs/devices-library/blocks/integrations/devices-configuration/lw001-bg-pro-thethingsstack-block.md%br%
-TheThingsIndustries<small></small>%,%%,%templates/docs/devices-library/blocks/integrations/devices-configuration/lw001-bg-pro-thethingsindustries-block.md%br%
-Loriot<small></small>%,%%,%templates/docs/devices-library/blocks/integrations/devices-configuration/lw001-bg-pro-loriot-block.md{% endcapture %}
+ChirpStack<small>Recommended</small>%,%%,%templates/docs/device-library/blocks/integrations/devices-configuration/lw001-bg-pro-chirpstack-block.md%br%
+TheThingsStack<small></small>%,%%,%templates/docs/device-library/blocks/integrations/devices-configuration/lw001-bg-pro-thethingsstack-block.md%br%
+TheThingsIndustries<small></small>%,%%,%templates/docs/device-library/blocks/integrations/devices-configuration/lw001-bg-pro-thethingsindustries-block.md%br%
+Loriot<small></small>%,%%,%templates/docs/device-library/blocks/integrations/devices-configuration/lw001-bg-pro-loriot-block.md{% endcapture %}
 
 ## Create Dashboard on ThingsBoard  
 
@@ -101,5 +101,5 @@ To add the dashboard to ThingsBoard, follow the next steps:
 
 <br><b><font size="4">Import Dashboard</font></b>
 
-You can [download this example dashboard in JSON format](/docs/devices-library/resources/dashboards/lw001-bg-pro/lw001-bg_pro_lorawan_tracker_dashboard.json){:target="_blank" download="lw001-bg_pro_lorawan_tracker_dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
+You can [download this example dashboard in JSON format](/docs/device-library/resources/dashboards/lw001-bg-pro/lw001-bg_pro_lorawan_tracker_dashboard.json){:target="_blank" download="lw001-bg_pro_lorawan_tracker_dashboard.json"} and [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it into your ThingsBoard instance.
 {% include add-device-banner.liquid %}

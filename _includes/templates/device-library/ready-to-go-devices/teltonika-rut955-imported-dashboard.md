@@ -1,6 +1,6 @@
 ### Import dashboard
 
-Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rtu955-dashboard.json){:target="_blank" download="teltonika-rut955-dashboard.json"} and import it.
+Download [Check Device Data Dashboard](/docs/device-library/resources/dashboards/ready-to-go-devices/teltonika-rtu955-dashboard.json){:target="_blank" download="teltonika-rut955-dashboard.json"} and import it.
 
 You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
  on the **“+”** button in the upper right corner of the page and choose **“Import dashboard”**. The dashboard import window 
@@ -39,7 +39,7 @@ Then, choose a device with name My device from dropdown list and save entity ali
 If you did everything right, you have to see the following dashboard:
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/device-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-dashboard.png)
+![imagePe](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-dashboard.png)
 {% else %}  
-![imageCe](/images/device-library/ready-to-go-devices/teltonika-rut955/teltonika-dashboard-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-dashboard-ce.png)
 {% endif %}

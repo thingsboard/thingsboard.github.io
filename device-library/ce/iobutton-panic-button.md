@@ -20,4 +20,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/iobutton-panic-button.md %}
+{% include /docs/device-library/guides/iobutton-panic-button.md %}

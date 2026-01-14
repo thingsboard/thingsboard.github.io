@@ -21,43 +21,43 @@ It has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good
 - **Built-in battery charger**: The uPesy ESP32 Wroom Low Power DevKit has a built-in charger that allows you to charge a Li-Ion/Li-Polymer battery via the USB connector.  
 - **Reliable** : High quality board designed in France. Each uPesy ESP32 Wroom Low Power DevKit board is individually tested to make sure it work properly! It comes with MicroPython already installed.  
 
-{% include /docs/devices-library/blocks/basic/introduction-block.md %}
+{% include /docs/device-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/microcontrollers/esp32-arduino-library-install-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/esp32-arduino-library-install-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
 ## Connect device to ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/general-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

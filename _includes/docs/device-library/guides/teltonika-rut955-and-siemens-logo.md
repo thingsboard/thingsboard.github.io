@@ -25,7 +25,7 @@ To continue with this guide, we will need the following:
 
 ## Import Rule chain
 
-Download [Teltonika Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="teltonika-rut955-rule-chain.json"} and import.
+Download [Teltonika Rule Chain](/docs/device-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="teltonika-rut955-rule-chain.json"} and import.
 
 To import rule chain from а JSON file, you should:
 
@@ -177,12 +177,12 @@ LOGO! has long since established itself as an intelligent logic module in small 
 
 In our case, the following diagram for data reading and preparation was created in LOGO! Soft Comfort:
 <br><br>
-![](/images/device-library/ready-to-go-devices/teltonika-rut955/siemens-logo-diagram.png)
+![](/images/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-diagram.png)
 <br><br>
 
 Don't forget to enable TCP connection.
 <br><br>
-![](/images/device-library/ready-to-go-devices/teltonika-rut955/siemens-logo-tcp-enable.png)
+![](/images/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-tcp-enable.png)
 <br><br>
 
 Also, we have to add Modbus slave device configuration. To do this, follow the steps below:
@@ -195,7 +195,7 @@ Also, we have to add Modbus slave device configuration. To do this, follow the s
 
 In our case, we have the following settings:
 
-![](/images/device-library/ready-to-go-devices/teltonika-rut955/teltonika-modbus-tcp-master.png)
+![](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-modbus-tcp-master.png)
 
 The next thing we have to do is configure the Data Sender. To do this, follow the steps below:
 1. Go to **Services** > **Data to Server**;
@@ -205,7 +205,7 @@ The next thing we have to do is configure the Data Sender. To do this, follow th
 
 In our case, we have the following settings:
 
-![](/images/device-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-data-sender.png)
+![](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-data-sender.png)
 
 If you did everything right, you have to receive the following MQTT message:
 ```json
@@ -214,7 +214,7 @@ If you did everything right, you have to receive the following MQTT message:
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
 
 {% capture readytogodevicestogglespec %}
 Imported Dashboard%,%importedDashboard%,%templates/device-library/ready-to-go-devices/teltonika-rut955-imported-dashboard.md%br%

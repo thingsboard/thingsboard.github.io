@@ -16,43 +16,43 @@ The built-in 270mAh battery provides more than one month of battery life with ti
 The module supports Wi-Fi image transfer and USB port debugging, and the HY2.0-4P output on the bottom can be used to expand other peripherals.  
 The on-board LED status indicator and reset button facilitate program development and debugging.  
 
-{% include /docs/devices-library/blocks/basic/introduction-block.md %}
+{% include /docs/device-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/microcontrollers/m5stack-arduino-library-install-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/m5stack-arduino-library-install-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
 ## Connect device to ThingsBoard 
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/camera-code-to-program-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/camera-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
+{% include /docs/device-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}   
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}   
 {% include add-device-banner.liquid %}

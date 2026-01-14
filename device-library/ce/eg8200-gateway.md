@@ -17,4 +17,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/eg8200-gateway.md %}
+{% include /docs/device-library/guides/eg8200-gateway.md %}

@@ -16,4 +16,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/ncd-vibration-temperature-sensor.md %}
+{% include /docs/device-library/guides/ncd-vibration-temperature-sensor.md %}

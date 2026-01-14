@@ -7,7 +7,7 @@
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [WS202 PIR & Light Sensor user manual](' | append: officialManualLink | append: '){: target="_blank"}
 - Smartphone with NFC-enabled and Milesight ToolBox application ([Android](https://play.google.com/store/apps/details?id=com.ursalinknfc){: target="_blank"}/[iOS](https://itunes.apple.com/app/id1518748039){: target="_blank"})
-- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/devices-library/ug56-lorawan-gateway/){:target="_blank"})
+- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/device-library/ug56-lorawan-gateway/){:target="_blank"})
 - Configured integration on networks server and ThingsBoard
 - [Network Server account](#device-connection)
 '
@@ -42,7 +42,7 @@ Afterward, it can be provisioned to ThingsBoard.
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 
 {% assign articleFilename = page.name |  replace: ".md", "" %}
-{% assign guideFilePath = "/docs/devices-library/blocks/ready-to-go-devices/" | append: articleFilename | append: "-configuration-block.md" %}
+{% assign guideFilePath = "/docs/device-library/blocks/ready-to-go-devices/" | append: articleFilename | append: "-configuration-block.md" %}
 
 {% include {{ guideFilePath }} %}
 
@@ -57,11 +57,11 @@ TheThingsIndustries,
 Loriot
 '%}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-integration-types=targetIntegrationTypes %}
+{% include /docs/device-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-integration-types=targetIntegrationTypes %}
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/ws202-pir-and-light-sensor-check-data-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/ws202-pir-and-light-sensor-check-data-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

@@ -20,4 +20,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/vocless-voc-temperature-and-humidity-sensor.md %}
+{% include /docs/device-library/guides/vocless-voc-temperature-and-humidity-sensor.md %}

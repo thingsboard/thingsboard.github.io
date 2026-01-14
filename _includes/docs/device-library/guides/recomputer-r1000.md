@@ -196,7 +196,7 @@ nano docker-compose.yml
 
 * Copy the content of the previously downloaded **docker-compose.yml** file, and paste it into the new one via the terminal:
 
-![image](/images/device-library/edge/recomputer-r1000/10-copy-paste-configs.webp)
+![image](/images/devices-library/edge/recomputer-r1000/10-copy-paste-configs.webp)
 
 * Save the **docker-compose.yml** file and press **CTRL+S** to save it. To close the file press **CTRL+X**.
 
@@ -215,7 +215,7 @@ The command must be executed in the same directory in which the docker-compose.y
 
 ## Visualize Incoming Data with the Dashboard
 
-![image](/images/device-library/edge/recomputer-r1000/logo-and-recomputer-r1000.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1000** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
+![image](/images/devices-library/edge/recomputer-r1000/logo-and-recomputer-r1000.webp){: style="float: left; max-width: 300px; max-height: 300px; margin: 0px 30px 0px 0px"}Once the **ThingsBoard Edge** and **IoT Gateway** are running on the **Computer R1000** and the **ModBus connector** transfers data, you can visualize it on the **Dashboard** on your **Edge instance**:
 
 {% assign dashboardPE = '
     ===

@@ -1,6 +1,6 @@
 {% assign vendorLowerCase = page.vendor | downcase %}
 {% assign deviceNameInPath = page.deviceImageFileName | split: "." | first %}
-{% assign converterFilePath = "/docs/devices-library/blocks/integrations/external-platforms/" | append: vendorLowerCase | append: "/thethingsstack/" | append: deviceNameInPath | append: "-uplink-converter.md" %}
+{% assign converterFilePath = "/docs/device-library/blocks/integrations/external-platforms/" | append: vendorLowerCase | append: "/thethingsstack/" | append: deviceNameInPath | append: "-uplink-converter.md" %}
 
 ### Add a gateway on The Things Stack Community Edition
 

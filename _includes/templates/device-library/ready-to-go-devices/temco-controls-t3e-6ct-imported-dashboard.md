@@ -1,6 +1,6 @@
 ### Import dashboard
 
-Download [Check Device Data Dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="temco-t3e-6ct-dashboard.json"} and import it.
+Download [Check Device Data Dashboard](/docs/device-library/resources/dashboards/ready-to-go-devices/temco-t3e-6ct-dashboard.json){:target="_blank" download="temco-t3e-6ct-dashboard.json"} and import it.
 
 You can import a dashboard in JSON format. To do this, you should go to the Dashboard group, click on the "**+**" button in the upper-right corner of the page and choose "**Import dashboard**".
 The dashboard import window will appear, prompting you to upload the JSON file and click "**Import**".
@@ -38,7 +38,7 @@ Then, choose the created device from dropdown list and save entity alias. Now, y
 If you did everything right, you should see the following dashboard:
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/device-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-pe.png)
 {% else %}  
-![imageCe](/images/device-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-dashboard-ce.png)
 {% endif %}

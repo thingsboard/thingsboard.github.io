@@ -295,18 +295,18 @@ Once you have successfully done all the steps above and Gateway sent data, you c
 - Navigate to the "Latest telemetry" tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/device-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-pe.png)
 {% else %}  
-![imageCe](/images/device-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/check-data-knx-ip-multi-io-1-ce.png)
 {% endif %}
 
 Let&#39;s display KNX IP Multi IO 580 time series on a dashboard. 
 For this purpose, you can create your own dashboard with your custom widgets or [use a ready-made dashboard](/docs/user-guide/resources/knx_ip_multi_io_580.json){:target="_blank" download="knx_ip_multi_io_580.json"} and simply [import](/docs/{{docsPrefix}}user-guide/dashboards/#import-dashboard){:target="_blank"} it.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/device-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-pe.png)
 {% else %}  
-![imageCe](/images/device-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/knx-ip-multi-io/knx-ip-multi-dashboard-1-ce.png)
 {% endif %}
 
 ## Conclusion

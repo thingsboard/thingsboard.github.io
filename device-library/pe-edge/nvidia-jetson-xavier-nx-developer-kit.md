@@ -19,4 +19,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/nvidia-jetson-xavier-nx-developer-kit.md %}
+{% include /docs/device-library/guides/nvidia-jetson-xavier-nx-developer-kit.md %}

@@ -89,12 +89,12 @@ TheThingsIndustries,
 Loriot
 '%}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-integration-block.liquid target-integration-types=targetIntegrationTypes %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-integration-block.liquid target-integration-types=targetIntegrationTypes %}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-check-integration-connection.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-check-integration-connection.md %}
 
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/lora-gateway-conclusion-block.md %}
 {% include add-device-banner.liquid %}

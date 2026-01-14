@@ -17,4 +17,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/coral-dev-board.md %}
+{% include /docs/device-library/guides/coral-dev-board.md %}

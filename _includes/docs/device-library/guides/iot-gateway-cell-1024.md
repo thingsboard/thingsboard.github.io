@@ -25,19 +25,19 @@ To continue with this guide we will need the following:
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-create-device-thingsboard-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-create-device-thingsboard-block.md %}
 
 ## Connect device to ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-configuration-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-configuration-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-check-data-on-thingsboard-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-check-data-on-thingsboard-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-using-rpc-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/iot-gateway-cell-1024-using-rpc-block.md %}
 
 ## Additional info
 Here you can find some additional links, that can be useful.  
@@ -53,5 +53,5 @@ If you have any problems or doubts, please do not hesitate in contact to EXXN su
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

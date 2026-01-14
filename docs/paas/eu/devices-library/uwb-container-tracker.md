@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas-eu
 title: "How to connect UWB Container Tracker to ThingsBoard?"
-redirect_to: "/devices-library/paas/uwb-container-tracker/"
+redirect_to: "/device-library/paas/uwb-container-tracker/"
 ---

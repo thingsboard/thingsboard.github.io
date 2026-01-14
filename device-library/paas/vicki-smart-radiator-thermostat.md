@@ -20,4 +20,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/vicki-smart-radiator-thermostat.md %}
+{% include /docs/device-library/guides/vicki-smart-radiator-thermostat.md %}

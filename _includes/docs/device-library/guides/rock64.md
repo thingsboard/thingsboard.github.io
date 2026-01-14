@@ -16,38 +16,38 @@ The Rock64 is a single-board computer designed to provide a powerful and efficie
 The Rock64 runs a variety of operating systems, including Debian, Ubuntu, and Android, which makes it an excellent choice for developers, hobbyists, and DIY enthusiasts looking to build anything from media centers to home automation systems.
  Its compact form factor, powerful performance, and versatile connectivity make it a valuable addition to any project that requires a reliable and efficient computing solution.
 
-{% include /docs/devices-library/blocks/basic/introduction-block.md %}
+{% include /docs/device-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 ## Connect device to ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
-{% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/using-rpc-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

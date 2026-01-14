@@ -1,7 +1,7 @@
 {% assign deviceName = "VIBit-BP" %}
 {% assign deviceVendorLink = "https://machineastro.com/vibit-battery-powered/" %}
 {% assign thingsboardHost = "https://" | append: hostName %}
-{% assign officialManualLink = "/docs/devices-library/resources/manuals/vibit-bp.pdf" %}
+{% assign officialManualLink = "/docs/device-library/resources/manuals/vibit-bp.pdf" %}
 {% assign prerequisites = '
 - [Sensor user guide](' | append: officialManualLink | append: '){: target="_blank"}
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
@@ -14,7 +14,7 @@
 
 ## VIBit-BP Architecture
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-bp-architecture.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/vibit-bp-architecture.png)
 
 ## Prerequisites
 
@@ -98,31 +98,31 @@ To enable communication between the VIBit-BP sensor and the VIBit-BP BLE Gateway
 
 - Connect Laptop and BLE Gateway using Ethernet cable to establish the connection between Gateway and Laptop. Open the iEdge360 platform using default IP (IP: 192.168.1.100, Subnet: 255.255.255.0) and Login with the Credentials shared by the CIMCON Team and navigate to the **Device** tab.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/7.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/7.png)
 
 **Note**: Contact CIMCON Support team for the login Credentials.
 
 <br>
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/8.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/8.png)
 
 <br>
 
 - Click the + icon to add a new device.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/9.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/9.png)
 
 <br>
 
 - In the **Add Device** popup, select **VIBit_BP** as the protocol.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/10.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/10.png)
 
 <br>
 
 - Enter a timeout value (e.g., 60 seconds) and click the check icon to scan for BLE devices.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/11.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/11.png)
 
 <br>
 
@@ -133,19 +133,19 @@ To enable communication between the VIBit-BP sensor and the VIBit-BP BLE Gateway
   - Select the destination as Cloud Integration Name. (e.g., **CIM_Cloud**)
   - Open a UUID section and insert the Device ID, which was copied from ThingsBoard. (It's a device id exists on Thingbsoard) 
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/12.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/12.png)
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/13.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/13.png)
 
 ## Integrate BLE Gateway with ThingsBoard
 
 - In iEdge360, go to the "**Integration** tab.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/14.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/14.png)
 
 - Click the "**+**" icon and select **CIM_Cloud** as the transport.
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/15.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/15.png)
 
 - Provide a name (e.g., Thingsboard) and click **Save**.
 - In the newly created CIM_Cloud transport, enter:
@@ -156,7 +156,7 @@ To enable communication between the VIBit-BP sensor and the VIBit-BP BLE Gateway
   - **User**: sensor
   - **Password**: cimcon
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/16.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/16.png)
 
 - Configure incoming and outgoing messages:
   - Incoming: Topic v1/devices/me/attribute, Type Attribute
@@ -172,7 +172,7 @@ This completes the setup to stream sensor data securely from the BLE gateway to 
   - 3-axis acceleration and velocity FFT
   - Temperature readings
 
-![image](/images/device-library/ready-to-go-devices/machine-astro/vibit-bp/17.png)
+![image](/images/devices-library/ready-to-go-devices/machine-astro/vibit-bp/17.png)
 
 {% capture difference %}
 Use the [Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} to visualize data trends and analyze equipment health over time.

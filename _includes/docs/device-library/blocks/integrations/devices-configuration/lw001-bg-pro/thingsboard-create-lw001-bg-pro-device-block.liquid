@@ -7,7 +7,7 @@
 {% for integrationType in targetIntegrationTypes %}
     {% assign integrationType = integrationType | strip_newlines %}
     {% assign integrationTypeLower = integrationType | replace: ' ', '' | strip_newlines | downcase %}
-    {% assign guideFilePath = "/docs/devices-library/blocks/integrations/devices-configuration/lw001-bg-pro/lw001-bg-pro-" | append: integrationTypeLower | append: "-block.md" %}
+    {% assign guideFilePath = "/docs/device-library/blocks/integrations/devices-configuration/lw001-bg-pro/lw001-bg-pro-" | append: integrationTypeLower | append: "-block.md" %}
     {% assign contentToggleConfiguration = contentToggleConfiguration | append: integrationType | append: '%,%' | append: integrationTypeLower | append: '%,%' | append: guideFilePath | append: '%br%' %}
 {% endfor %}
 

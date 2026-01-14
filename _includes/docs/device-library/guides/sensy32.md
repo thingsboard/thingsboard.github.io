@@ -12,7 +12,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/device-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [The Sensy32]({{deviceVendorLink}}){: target="_blank"} is an IoT board designed for sensor enthusiasts, developers, and IoT creators.   
 Powered by ESP32-S3 and packed with a wide array of sensors, it enables seamless monitoring, analysis, and visualization of real-world data.   
 
@@ -224,7 +224,7 @@ Now it&#39;s time to program the board to read data, display it on the Sensy boa
 
 To do this, you can use the code below. It contains all required functionality for this guide.
 
-> Click to download the **source code**: [thingsboard.ino](/docs/devices-library/resources/sensy32/thingsboard.ino){:target="_blank" download="thingsboard.ino"}
+> Click to download the **source code**: [thingsboard.ino](/docs/device-library/resources/sensy32/thingsboard.ino){:target="_blank" download="thingsboard.ino"}
 
 {% capture difference %}
 ⚠️ Don&#39;t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
@@ -274,7 +274,7 @@ To do this, you can either create your own dashboard using custom widgets or imp
 In this example we will upload a ready-to-use dashboard. You can also customize it or create your own.
 
 To import the ready-to-use dashboard, follow these steps:
-- First download the [My Dashboard](/docs/devices-library/resources/dashboards/sensy32/sensy32-demo-dashboard.json){:target="_blank" download="sensy32-demo-dashboard.json"} file.
+- First download the [My Dashboard](/docs/device-library/resources/dashboards/sensy32/sensy32-demo-dashboard.json){:target="_blank" download="sensy32-demo-dashboard.json"} file.
 
 {% assign importDashboard = '
     ===

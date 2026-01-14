@@ -16,4 +16,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/helmet-sensor.md %}
+{% include /docs/device-library/guides/helmet-sensor.md %}

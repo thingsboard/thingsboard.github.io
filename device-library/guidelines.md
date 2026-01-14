@@ -7,4 +7,4 @@ device-card: "false"
 ---
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guidelines.md %}
+{% include /docs/device-library/guidelines.md %}

@@ -13,39 +13,39 @@ Orange Pi Zero is an open-source single-board computer. It is very compact with 
 Android 4.4, Ubuntu, Debian. Orange Pi Zero uses the AllWinner H2 SoC, and has 256MB/512MB DDR3 SDRAM(256MB version is
 Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin headers, etc. lt is powered through USB OTG.
 
-{% include /docs/devices-library/blocks/basic/introduction-block.md %}
+{% include /docs/device-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 ## Connect device to ThingsBoard
 
-{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+{% include /docs/device-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
 
-{% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
+{% include /docs/device-library/blocks/single-board-computers/using-rpc-block.md %}
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

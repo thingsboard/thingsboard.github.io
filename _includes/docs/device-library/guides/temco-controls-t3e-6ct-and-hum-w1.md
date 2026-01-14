@@ -64,9 +64,9 @@ Device Telemetry Tab:
 - Navigate to the telemetry tab.
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix contains "paas/" or docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![imagePe](/images/device-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
+![imagePe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-pe.png)
 {% else %}
-![imageCe](/images/device-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
+![imageCe](/images/devices-library/ready-to-go-devices/temco-t3e-6ct/temco-t3e-6ct-device-1-ce.png)
 {% endif %}
 
 Let’s display Temco T3E-6CT time series on a dashboard. For this purpose, you can create your own dashboard with your 

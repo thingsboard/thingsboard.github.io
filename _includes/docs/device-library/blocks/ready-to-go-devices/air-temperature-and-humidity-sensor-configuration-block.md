@@ -10,4 +10,4 @@ To add a device to the network server and retrieve data from it, you will need t
 
 > **Note:** You can find the values of these keys on the label located on the side of the device (see example image below).
 
-![Example of device keys on the side panel of the device](/images/device-library/device_keys_agrosense.png)
+![Example of device keys on the side panel of the device](/images/devices-library/device_keys_agrosense.png)

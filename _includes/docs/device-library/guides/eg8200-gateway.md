@@ -42,7 +42,7 @@ According to the official user manual and this guide you can connect the gateway
 
 **A.** Wiring EG8200 with Sensor
 
-![image](/images/device-library/ready-to-go-devices/eg8200-gateway/wiring.png)
+![image](/images/devices-library/ready-to-go-devices/eg8200-gateway/wiring.png)
 
 **B.** Visit default IP address 192.168.88.1.of EG8200 to Configure for reading temperature and humidity data.
 
@@ -151,5 +151,5 @@ Click the created device and find the latest telemetry data received by the plat
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/device-library/blocks/basic/conclusion-block.md %}
 {% include add-device-banner.liquid %}

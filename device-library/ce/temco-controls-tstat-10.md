@@ -16,4 +16,4 @@ breadcrumbs-show: "2"
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/temco-controls-tstat-10-and-hum-w1.md %}
+{% include /docs/device-library/guides/temco-controls-tstat-10-and-hum-w1.md %}

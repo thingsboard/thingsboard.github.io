@@ -29,7 +29,7 @@ To continue with this guide, we will need the following:
 
 ## Import Rule chain
 
-Download [ACE Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
+Download [ACE Rule Chain](/docs/device-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
 
 To import rule chain from а JSON file, you should:
 
@@ -190,14 +190,14 @@ Follow the next steps:
 
 In our case, we have the following settings:
 
-![](/images/device-library/ready-to-go-devices/ace-iot-gateway/modbus-tcp-settings.png)
+![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/modbus-tcp-settings.png)
 
 For configuring MQTT connection, follow the next steps:
 * Go to **Gateway** > **MQTT Configuration** > **MQTT Broker** (tab);
 * Fill in all required fields with correct credentials and other information for broker access;
 * Click on **"Save & Apply"** button.
 
-![](/images/device-library/ready-to-go-devices/ace-iot-gateway/mqtt-broker-settings.png)
+![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/mqtt-broker-settings.png)
 
 The next thing we have to do is configure MQTT topics for receiving and sending data:
 * Go to **Gateway** > **MQTT Configuration** > **MQTT Broker** (tab);
@@ -208,7 +208,7 @@ The next thing we have to do is configure MQTT topics for receiving and sending 
 
 In case Siemens LOGO!, we have the following topics list:
 
-![](/images/device-library/ready-to-go-devices/ace-iot-gateway/topic-list.png)
+![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/topic-list.png)
 
 If you are using Siemens LOGO! too, you can use the following configuration:
 {% capture gatewayCode %}
@@ -294,7 +294,7 @@ config topics
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
+{% include /docs/device-library/blocks/ready-to-go-devices/check-data-on-thingsboard-block.md %}
 
 {% capture readytogodevicestogglespec %}
 Imported Dashboard%,%importedDashboard%,%templates/device-library/ready-to-go-devices/ace-gateway-imported-dashboard.md%br%
