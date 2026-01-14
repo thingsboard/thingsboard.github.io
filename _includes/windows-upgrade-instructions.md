@@ -76,7 +76,13 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 #### {{ platform }} package download
 
 {% if docsPrefix == "pe/" %}
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-{{ current_version }}pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-{{ current_version }}pe.exe).
+{% assign upgrade_package = "thingsboard-windows-" %}
+{% if legacy_zip == "true" %}
+{% assign upgrade_package = upgrade_package | append: current_version | append: "pe.zip" %}
+{% else %}
+{% assign upgrade_package = upgrade_package | append: "setup-" | append: current_version | append: "pe.exe" %}
+{% endif %}
+Download ThingsBoard PE installation package for Windows: [{{ upgrade_package }}](https://dist.thingsboard.io/{{ upgrade_package }}).
 {% else %}
 Download ThingsBoard installation file for Windows: [thingsboard-windows-{{ current_version }}.zip](https://github.com/thingsboard/thingsboard/releases/download/v{{ current_version }}/thingsboard-windows-{{ current_version }}.zip).
 {% endif %}
