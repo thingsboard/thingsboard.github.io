@@ -1,5 +1,5 @@
-bigheader: "Device library"
+bigheader: "Device Library"
 abstract: "Some part of devices that can be connected to ThingsBoard and connection guides for them."
 toc:
-- title: Device library
+- title: Device Library
   path: /device-library/paas/
