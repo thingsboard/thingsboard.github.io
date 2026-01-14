@@ -119,9 +119,10 @@ The Tracker A device sends its battery charge level (<span class="code-light">ba
 <b><font size="4">Goal</font></b>   
 Automatically propagate the device battery level to the related Truck 1 asset and store it as a server-side attribute under a new key: <span class="code-light">deviceBatteryLevel</span>.
 
-<hr>
+<b><font size="4">Calculated field configuration</font></b>   
+[Download the "Battery level propagation" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/propagation/battery_level_propagation_cf.json){:target="_blank" download="battery_level_propagation_cf.json"}.
 
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo device</font></b>
 
@@ -134,6 +135,8 @@ Import a device that publishes battery telemetry.
 - **Type:** tracker
 - **Time series:** <span class="code-light">batteryLevel</span>
 
+> **Important note about the CSV:** the column type for the <span class="code-light">batteryLevel</span> key must be set to "**Time series**".
+
 {% assign examplePropagateDeviceBattery1 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-1-ce.png
@@ -143,9 +146,7 @@ Import a device that publishes battery telemetry.
 
 {% include images-gallery.liquid imageCollection=examplePropagateDeviceBattery1 %}
 
-<hr>
-
-<b><font size="3">2. Import demo asset</font></b>
+<br><b><font size="3">2. Import demo asset</font></b>
 
 Import an asset that represents the tracked truck.
 1. Download the CSV file: [battery-level-asset-data.csv](/docs/user-guide/resources/calculated-fields/propagation/battery-level-asset-data.csv){:target="_blank" download="battery-level-asset-data.csv"}
@@ -164,9 +165,7 @@ Import an asset that represents the tracked truck.
 
 {% include images-gallery.liquid imageCollection=examplePropagateDeviceBattery2 %}
 
-<hr>
-
-<b><font size="3">3. Create a relation between the asset and the device</font></b>
+<br><b><font size="3">3. Create a relation between the asset and the device</font></b>
 
 Create a relation so the calculated field can resolve the target asset.
 
@@ -176,18 +175,16 @@ Create a relationship between the **Track 1** asset and the **Tracker A** device
 
 This relation is used by the propagation calculated field to locate the parent entity.
 
-{% assign examplePropagateDeviceBattery4 = '
+{% assign examplePropagateDeviceBattery3 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-3-ce.png
         title: The **Tracker** device linked to the **Track 1** asset via the **Contains** relation.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagateDeviceBattery4 %}
+{% include images-gallery.liquid imageCollection=examplePropagateDeviceBattery3 %}
 
-<hr>
-
-<b><font size="3">4. Apply the Propagation calculated field to the device profile</font></b>
+<br><b><font size="3">4. Apply the Propagation calculated field to the device profile</font></b>
 
 Configure a **Propagation** calculated field in the **tracker** device profile (automatically created during device import) so that it works for Tracker A.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/propagation/battery_level_propagation_cf.json){:target="_blank" download="battery_level_propagation_cf.json"}.
@@ -213,20 +210,18 @@ This configuration propagates the latest telemetry value of <span class="code-li
 
 {% include images-gallery.liquid imageCollection=examplePropagateDeviceBattery4 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 The <span class="code-light">deviceBatteryLevel</span> attribute is propagated and stored on the **Truck 1** asset as a **server-side attribute**.
 
-{% assign examplePropagation12 = '
+{% assign examplePropagateDeviceBattery5 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-1-8-ce.png
         title: The **deviceBatteryLevel** attribute is propagated and stored on the **Truck 1** asset as a **server-side attribute**.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation12 %}
+{% include images-gallery.liquid imageCollection=examplePropagateDeviceBattery5 %}
 
 <hr>
 
@@ -238,9 +233,10 @@ A Smart Device sends <span class="code-light">temperature</span> and <span class
 <b><font size="4">Goal</font></b>   
 Calculate the **dew point**, propagate the result to the related asset (**Greenhouse A**), and store it as a **telemetry**.
 
-<hr>
+<b><font size="4">Calculated field configuration</font></b>   
+[Download the "Dew point propagation" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/propagation/dew_point_propagation_cf.json){:target="_blank" download="dew_point_propagation_cf.json"}.
 
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo device</font></b>
 
@@ -253,18 +249,18 @@ Import a device that publishes temperature and humidity telemetry.
 - **Type:** smart-device
 - **Time series:** <span class="code-light">humidity</span>, <span class="code-light">temperature</span>
 
-{% assign examplePropagation21 = '
+> **Important note about the CSV:** the column type for the <span class="code-light">humidity</span> and <span class="code-light">temperature</span> keys must be set to "**Time series**".
+
+{% assign exampleDewPointPropagation1 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-1-ce.png
         title: Import a device that publishes **temperature** and **humidity** telemetry.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation21 %}
+{% include images-gallery.liquid imageCollection=exampleDewPointPropagation1 %}
 
-<hr>
-
-<b><font size="3">2. Import demo asset</font></b>
+<br><b><font size="3">2. Import demo asset</font></b>
 
 Import the asset that represents the greenhouse.
 1. Download the CSV file: [dew-point-calculation-and-propagation-asset-data.csv](/docs/user-guide/resources/calculated-fields/propagation/dew-point-calculation-and-propagation-asset-data.csv){:target="_blank" download="dew-point-calculation-and-propagation-asset-data.csv"}
@@ -274,18 +270,16 @@ Import the asset that represents the greenhouse.
 - **Name:** Greenhouse A
 - **Type:** greenhouse
 
-{% assign examplePropagation22 = '
+{% assign exampleDewPointPropagation2 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-2-ce.png
         title: Import the demonstration asset Greenhouse A.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation22 %}
+{% include images-gallery.liquid imageCollection=exampleDewPointPropagation2 %}
 
-<hr>
-
-<b><font size="3">3. Create a relation between the asset and the device</font></b>
+<br><b><font size="3">3. Create a relation between the asset and the device</font></b>
 
 Create a relationship between the **Greenhouse A** asset and the **Smart Device**:
 - Relation direction: **From**
@@ -293,18 +287,16 @@ Create a relationship between the **Greenhouse A** asset and the **Smart Device*
 
 This relation allows the calculated field to locate the parent asset when propagating output.
 
-{% assign examplePropagation23 = '
+{% assign exampleDewPointPropagation3 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-3-ce.png
         title: Create a relationship between the **Greenhouse A** asset and the **Smart Device**.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation23 %}
+{% include images-gallery.liquid imageCollection=exampleDewPointPropagation3 %}
 
-<hr>
-
-<b><font size="3">4. Apply the calculated field to the device profile</font></b>
+<br><b><font size="3">4. Apply the calculated field to the device profile</font></b>
 
 Configure the calculated field on the "smart-device" device profile (created automatically during device import), so it runs for Smart Device.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/propagation/dew_point_propagation_cf.json){:target="_blank" download="dew_point_propagation_cf.json"}.
@@ -312,7 +304,7 @@ Configure the calculated field on the "smart-device" device profile (created aut
 
 This scenario calculates the dew point value from the specified input data. The value is propagated and stored as telemetry on the parent asset (**Greenhouse A**) under the <span class="code-light">dewPoint</span> key.
 
-{% assign examplePropagation24 = '
+{% assign exampleDewPointPropagation4 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-4-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
@@ -331,22 +323,20 @@ This scenario calculates the dew point value from the specified input data. The 
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation24 %}
+{% include images-gallery.liquid imageCollection=exampleDewPointPropagation4 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 The calculated value is propagated to the **Greenhouse A** asset and stored as a **telemetry** under the key <span class="code-light">dewPoint</span>.
 
-{% assign examplePropagation25 = '
+{% assign exampleDewPointPropagation5 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-2-9-ce.png
         title: The calculated value is propagated to the **Greenhouse A** asset and stored as a **telemetry** under the key **dewPoint**.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation25 %}
+{% include images-gallery.liquid imageCollection=exampleDewPointPropagation5 %}
 
 <hr>
 
@@ -358,9 +348,10 @@ The Building A asset manages multiple child HVAC devices linked via the _Manages
 <b><font size="4">Goal</font></b>   
 Automatically propagate the <span class="code-light">hvacMode</span> attribute from Building A to all related HVAC devices.
 
-<hr>
+<b><font size="4">Calculated field configuration</font></b>   
+[Download the "Propagate HVAC mode" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/propagation/cooling_propagation_cf.json){:target="_blank" download="cooling_propagation_cf.json"}.
 
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>
 1. Download the CSV file: [propagate-hvac-mode-device-data.csv](/docs/user-guide/resources/calculated-fields/propagation/propagate-hvac-mode-device-data.csv){:target="_blank" download="propagate-hvac-mode-device-data.csv"}
@@ -378,9 +369,8 @@ Automatically propagate the <span class="code-light">hvacMode</span> attribute f
 %}
 
 {% include images-gallery.liquid imageCollection=examplePropagation31 %}
-<hr>
 
-<b><font size="3">2. Import demo asset</font></b>
+<br><b><font size="3">2. Import demo asset</font></b>
 
 Import an asset that represents the building.
 1. Download the CSV file: [propagate-hvac-mode-asset-data.csv](/docs/user-guide/resources/calculated-fields/propagation/propagate-hvac-mode-asset-data.csv){:target="_blank" download="propagate-hvac-mode-asset-data.csv"}
@@ -390,6 +380,8 @@ Import an asset that represents the building.
 - **Name:** Building A
 - **Type:** building
 - **Server attributes:** <span class="code-light">hvacMode</span>
+
+> **Important note about the CSV:** the column type for the <span class="code-light">hvacMode</span> keys must be set to "**Server attributes**".
 
 {% assign examplePropagation32 = '
     ===
@@ -419,9 +411,7 @@ This relation is used by the propagation calculated field to locate the parent e
 
 {% include images-gallery.liquid imageCollection=examplePropagation33 %}
 
-<hr>
-
-<b><font size="3">4. Apply the calculated field to the asset profile</font></b>
+<br><b><font size="3">4. Apply the calculated field to the asset profile</font></b>
 
 Configure a **Propagation** calculated field on the "building" asset profile (created automatically during asset import), so it runs for Building A.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/propagation/cooling_propagation_cf.json){:target="_blank" download="cooling_propagation_cf.json"}.
@@ -444,13 +434,11 @@ This configuration propagates the attribute value of <span class="code-light">hv
 
 {% include images-gallery.liquid imageCollection=examplePropagation34 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 Each HVAC device received the <span class="code-light">hvacMode</span> attribute with the value **cooling**.
 
-{% assign examplePropagation33 = '
+{% assign examplePropagation35 = '
     ===
         image: /images/user-guide/calculated-fields/propagation/propagation-cf-example-3-7-ce.png
         title: Each HVAC device received the **hvacMode** attribute with the value **cooling**.
@@ -461,7 +449,7 @@ Each HVAC device received the <span class="code-light">hvacMode</span> attribute
 '
 %}
 
-{% include images-gallery.liquid imageCollection=examplePropagation33 %}
+{% include images-gallery.liquid imageCollection=examplePropagation35 %}
 
 <hr>
 

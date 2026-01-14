@@ -148,8 +148,6 @@ Collect temperature telemetry from all sensors related to Building A and compute
 
 Store both values as **telemetry** on the **Building A** asset.
 
-<hr>
-
 What you will configure
 
 You will apply an "Aggregation" calculated field to the Building A asset that:
@@ -157,14 +155,10 @@ You will apply an "Aggregation" calculated field to the Building A asset that:
 - computes average and maximum
 - writes the results back to Building A as telemetry keys <span class="code-light">avgTemperature</span> and <span class="code-light">maxTemperature</span>.
 
-<hr>
-
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Related entities aggregation" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/temperature_aggregation_cf.json){:target="_blank" download="temperature_aggregation_cf.json"}.
 
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>
 
@@ -176,6 +170,8 @@ Import multiple smart devices that publish <span class="code-light">temperature<
 - **Name:** Smart Device 1
 - **Type:** sensor
 - **Time series:** <span class="code-light">temperature</span>
+
+> **Important note about the CSV:** the column type for the <span class="code-light">temperature</span> key must be set to "**Time series**".
 
 {% assign exampleRelatedEntities1 = '
     ===
@@ -191,9 +187,8 @@ Import multiple smart devices that publish <span class="code-light">temperature<
 %}
 
 {% include images-gallery.liquid imageCollection=exampleRelatedEntities1 %}
-<hr>
 
-<b><font size="3">2. Import demo asset</font></b>
+<br><b><font size="3">2. Import demo asset</font></b>
 
 Import the asset that represents the building.
 1. Download the CSV file: [building-asset-data.csv](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/building-asset-data.csv){:target="_blank" download="building-asset-data.csv"}
@@ -212,9 +207,7 @@ Import the asset that represents the building.
 
 {% include images-gallery.liquid imageCollection=exampleRelatedEntities2 %}
 
-<hr>
-
-<b><font size="3">3. Create relations between the asset and devices</font></b>
+<br><b><font size="3">3. Create relations between the asset and devices</font></b>
 
 Create relationships between Building A and all smart sensors:
 - **Relation direction:** From (Device &#8702; Building A)
@@ -232,9 +225,7 @@ These relations define the set of related entities whose telemetry will be aggre
 
 {% include images-gallery.liquid imageCollection=examplePropagation33 %}
 
-<hr>
-
-<b><font size="3">4. Apply the calculated field to the asset</font></b>
+<br><b><font size="3">4. Apply the calculated field to the asset</font></b>
 
 Apply the **Related Entities Aggregation** calculated field to the **Building A** asset.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/related-entities-aggregation/temperature_aggregation_cf.json){:target="_blank" download="temperature_aggregation_cf.json"}.
@@ -271,9 +262,7 @@ The field will:
 
 > (Optional) Enable [Debug mode](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#debug){:target="_blank"} and review execution events using the **Events** icon.
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 The Building A asset stores aggregated telemetry such as:
 - <span class="code-light">avgTemperature</span> — average temperature across all sensors

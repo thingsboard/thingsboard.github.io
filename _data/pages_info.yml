@@ -4318,6 +4318,9 @@
 "/docs/reference/mqtt-sparkplug-api/":
   url: "/docs/reference/mqtt-sparkplug-api/"
   redirect_from: []
+"/docs/reference/mqtt-v5-errors-code/":
+  url: "/docs/reference/mqtt-v5-errors-code/"
+  redirect_from: []
 "/docs/reference/msa/":
   url: "/docs/reference/msa/"
   redirect_from: []
