@@ -167,8 +167,10 @@ var tb = (function () {
 				const sectionId = sectionIdArr[sectionIdArr.length -1];
 				switchFaqSection(sectionId);
 				const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
-				if (Array.from(questionEl.parentNode.children).indexOf(questionEl) > 6) {
-					loadMoreFaq(questionEl.parentNode.children[6]);
+				var $parent = $(questionEl).parent();
+				var $loadMoreBtn = $parent.find('.load-more');
+				if ($(questionEl).hasClass('hidden') && $loadMoreBtn.length) {
+					loadMoreFaq($loadMoreBtn[0]);
 				}
                 setTimeout(()=>openFaqNode(nodeId));
             });
