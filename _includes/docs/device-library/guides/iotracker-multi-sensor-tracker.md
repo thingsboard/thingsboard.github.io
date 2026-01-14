@@ -4,7 +4,7 @@
 {% assign thingsboardHost = "https://" | append: hostName %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/device-library/ug56-lorawan-gateway/){:target="_blank"})
+- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/device-library/pe/ug56-lorawan-gateway/){:target="_blank"})
 - Configured integration on networks server and ThingsBoard
 - [Network Server account](#device-connection)
 '

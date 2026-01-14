@@ -7,7 +7,7 @@
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [WS202 PIR & Light Sensor user manual](' | append: officialManualLink | append: '){: target="_blank"}
 - Smartphone with NFC-enabled and Milesight ToolBox application ([Android](https://play.google.com/store/apps/details?id=com.ursalinknfc){: target="_blank"}/[iOS](https://itunes.apple.com/app/id1518748039){: target="_blank"})
-- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/docs/pe/device-library/ug56-lorawan-gateway/){:target="_blank"})
+- LoRaWAN® gateway (in our case [UG56 LoRaWAN® Gateway](/device-library/pe/ug56-lorawan-gateway/){:target="_blank"})
 - Configured integration on networks server and ThingsBoard
 - [Network Server account](#device-connection)
 '
