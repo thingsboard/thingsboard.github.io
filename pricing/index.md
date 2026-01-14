@@ -249,7 +249,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             Priority help desk
                         </div>
                         <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-white-labeling">$0.30 per extra device</div>
+                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-exceed-plan-limits">$0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
                         <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
@@ -373,7 +373,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             Priority help desk
                         </div>
                         <div class="pricing-square-item highlight" data-faq-id="tb-cloud-white-labeling">White labeling</div>
-                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-white-labeling">$0.30 per extra device</div>
+                        <div class="pricing-square-item plus-icon highlight" data-faq-id="tb-cloud-exceed-plan-limits">€0.30 per extra device</div>
                     </div>
                     <div class="pricing-square additional">
                         <h2 class="no-margin">Require dedicated infrastructure for unique enterprise needs?</h2>
@@ -1578,17 +1578,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What pricing plans does ThingsBoard Cloud offer?">
                         <div class="container">
-                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes support for up to 30 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
+                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes up to 5 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-structure" data-title="How is ThingsBoard Cloud pricing structured?">
                         <div class="container">
-                            <p>Pricing is based on the number of connected devices and the volume of messages they generate, with a fixed monthly fee per plan. Learn more about the subscription plans <a href="/docs/paas/subscription/">here</a>.</p>
+                            <p>Pricing is based on the number of connected devices and the volume of messages they generate. Each plan has a fixed monthly fee, with the option to purchase additional entity packs and API call packs. In this case, the total monthly cost consists of the base fee for the selected plan plus additional charges for extra features. More details are available on the <a href="/docs/paas/subscription/">subscription plans</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-api-rate-limits" data-title="Are there any API or rate limits?">
                         <div class="container">
-                            <p>Yes, each plan has specific API and rate limits. You can review the detailed limits for each plan <a href="/docs/paas/subscription/">here</a>.</p>
+                            <p>Yes, each plan includes specific API and rate limits. If needed, you can extend these limits by purchasing additional API call packs. Detailed limits for each plan are available on the <a href="/docs/paas/subscription/">subscription plans</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-free-trial" data-title="Do you offer a free trial?">
@@ -1623,17 +1623,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-additional-costs" data-title="Are there any additional costs beyond the subscription fee?">
                         <div class="container">
-                            <p>No, all standard features are included in the subscription. However, additional services such as application configuration, integrations, or consulting may incur extra costs.</p>
+                            <p>No, all standard features are included in the subscription. However, additional services such as application configuration, integrations, or consulting may incur extra costs. In addition, if you exceed the limits of your selected plan, you can purchase extra entity packs and API call packs for an additional fee.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-exceed-plan-limits" data-title="What happens if I exceed my plan’s limits?">
                         <div class="container">
-                            <p>If you exceed your limits, you may need to upgrade to a higher plan or reduce your usage.</p>
+                            <p>If you exceed your limits, you may need to upgrade to a higher plan or reduce your usage. You can also purchase additional entity packs and API call packs; however, extra devices can only be purchased with the Business plan. If you reach the device limit, you will need to upgrade your plan.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-custom-plan" data-title="Can I create a custom plan with the ability to choose limits for devices, assets, users, etc.?">
                         <div class="container">
-                            <p>ThingsBoard Cloud does not offer fully customizable plans with user-defined limits.</p>
+                            <p>ThingsBoard Cloud offers predefined base plans that can be further customized with additional entity packs and API call packs.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-short-term-project" data-title="Can I purchase ThingsBoard Cloud for a short-term project?">
@@ -1654,6 +1654,11 @@ defaultActivePricingSection: thingsboard-pe-options
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-us-to-eu" data-title="I need to move from US cloud to EU. How to achieve that?">
                         <div class="container">
                             <p>Technically, you have to follow the same flow as for How to migrate from the Cloud to a self-service platform copy. Please, <a href="/docs/contact-us/">contact us</a> in case migration assistence needed.</p>
+                        </div>
+                    </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-what-is-included-in-the-white-labeled-mobile-app-add-on" data-title="What is included in the White-Labeled Mobile App add-on?">
+                        <div class="container">
+                            <p>The White-Labeled Mobile App add-on provides you with a branded version of the ThingsBoard Mobile application. This includes your company’s name, logo, colors, and other branding elements. The cost is $99 per month, plus a one-time setup fee of $1,000 to cover branding and configuration.</p>
                         </div>
                     </div>
                 </div>
@@ -1703,12 +1708,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-charge-for-data-transfer-api-calls-msg-processing" data-title="Do you charge for data transfer, API calls, or message processing?">
                         <div class="container">
-                            <p>Each plan includes predefined usage limits; exceeding those may require an upgrade. API and Rate limits detals <a href="/docs/paas/subscription/">here</a>.</p>
+                            <p>Each plan includes predefined usage limits that you can find <a href="/docs/paas/subscription/">here</a>. You can also purchase additional entity and API call packs if required.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-custom-plan" data-title="Can I create a custom plan with the ability to choose limits for devices, assets, users, etc.?">
                         <div class="container">
-                            <p>ThingsBoard Cloud does not offer fully customizable plans with user-defined limits.</p>
+                            <p>ThingsBoard Cloud offers predefined base plans that can be further customized with additional entity packs and API call packs.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-refund" data-title="Can I get a refund if I cancel my subscription?">
@@ -1745,17 +1750,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-handle-overages" data-title="How does ThingsBoard Cloud handle overages?">
                         <div class="container">
-                            <p>If you exceed your limits, you may need to upgrade to a higher plan.</p>
+                            <p>If you exceed your limits, you may need to upgrade to a higher plan or purchase additional entity and API call packs.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-increase-resource-limits" data-title="Can I increase my resource limits if needed?">
                         <div class="container">
-                            <p>Yes, you can upgrade your plan at any time to increase limits.</p>
+                            <p>Yes, you can upgrade your plan at any time to increase your limits, or you can purchase additional entity and API call packs as needed.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-white-labeling" data-title="Is white labeling available out of the box?">
                         <div class="container">
-                            <p>White labeling functionality is available starting from the Prototype subscription.</p>
+                            <p>White labeling functionality is available starting from the Pilot subscription.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -1768,7 +1773,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-telemetry-storage-billing" data-title="How is telemetry data storage billed?">
                         <div class="container">
-                            <p>Storage is included in your plan, but exceeding limits may require an upgrade of subscription. Limits vary by plan. See details <a href="/docs/paas/subscription/">here</a>.</p>
+                            <p>Storage is included in your plan, but exceeding the limits may require upgrading your subscription or purchasing an additional storage pack. Storage limits vary by plan, you may see details <a href="/docs/paas/subscription/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-dashboard-costs" data-title="Are there additional costs for dashboards and visualization?">
@@ -1778,17 +1783,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-api-charges" data-title="Do you charge for API requests?">
                         <div class="container">
-                            <p>API usage is included in your plan, but rate limits apply based on your selected tier.</p>
+                            <p>API usage is included in your plan, but rate limits apply based on your selected tier. If needed, you can purchase additional API call packs to extend these limits.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-api-limits-exceed" data-title="What happens if I exceed my plan's API limits?">
                         <div class="container">
-                            <p>API access may be throttled until the next billing cycle, or you can upgrade to a higher plan.</p>
+                            <p>API access may be throttled until the next billing cycle, or you can upgrade to a higher plan. Alternatively, you can purchase additional API call packs to extend your access.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-users-limits-per-acc" data-title="Is there a limit on the number of users per account?">
                         <div class="container">
-                            <p>Each plan has a predefined number of users. Limits vary by plan; details can be found on our plans definition <a href="/docs/paas/subscription/">page</a>.</p>
+                            <p>Each plan has a predefined number of users. Limits vary by plan; details can be found on our <a href="/docs/paas/subscription/">plans definition page</a>. If needed, you can purchase additional user packs to increase the number of users.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-domain-certificate" data-title="Where can I put a domain certificate?">
@@ -1877,7 +1882,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-thingsboard-cloud-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-included" data-title="What support is included in my plan?">
                         <div class="container">
-                            <p>The Free and Prototype subscriptions include Community-level support.<br>Starting from the Startup subscription, customers gain access to the ThingsBoard Support Portal for direct communication with the support team.<br></p>
+                            <p>All paid subscriptions provide access to the ThingsBoard Support Portal, allowing customers to submit support tickets and communicate directly with the support team. Startup and Business plans also include priority support.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
@@ -1897,7 +1902,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-priority-support" data-title="Can I get priority support with my plan?">
                         <div class="container">
-                            <p>Priority support is available for Private Cloud subscriptions based on the Service Level Agreement (SLA).</p>
+                            <p>Priority support is included with the Startup and Business plans.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-response-times" data-title="What response times can I expect for support tickets?">

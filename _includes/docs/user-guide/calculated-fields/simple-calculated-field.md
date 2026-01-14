@@ -61,14 +61,10 @@ The Smart Device sends <span class="code-light">temperature</span> and <span cla
 <b><font size="4">Goal</font></b>   
 Calculate the dew point and store the result as telemetry under the <span class="code-light">dewPoint</span> key on the same device.
 
-<hr>
-
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Dew point calculation" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/simple/dew_point_calculation_simple_cf.json){:target="_blank" download="dew_point_calculation_simple_cf.json"}.
 
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo device</font></b>
 
@@ -81,6 +77,8 @@ Import a device that publishes temperature and humidity telemetry.
 - **Type:** smart-device
 - **Time series:** <span class="code-light">humidity</span>, <span class="code-light">temperature</span>
 
+> **Important note about the CSV:** the column type for the <span class="code-light">humidity</span> and <span class="code-light">temperature</span> keys must be set to "**Time series**".
+
 {% assign exampleSimple1 = '
     ===
         image: https://img.thingsboard.io/user-guide/calculated-fields/simple/simple-example-1-ce.png
@@ -90,9 +88,7 @@ Import a device that publishes temperature and humidity telemetry.
 
 {% include images-gallery.liquid imageCollection=exampleSimple1 %}
 
-<hr>
-
-<b><font size="3">2. Apply the calculated field to the device profile</font></b>
+<br><b><font size="3">2. Apply the calculated field to the device profile</font></b>
 
 During the Smart Device import, a "smart-device" profile is automatically created and assigned to it.   
 Apply the calculated field to this profile so it runs for all devices that use the same profile.
@@ -132,9 +128,7 @@ Output settings:
 
 {% include images-gallery.liquid imageCollection=exampleSimple2 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 The dew point is calculated and saved as telemetry on the Smart Device under the <span class="code-light">dewPoint</span> key.
 

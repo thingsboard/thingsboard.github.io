@@ -48,7 +48,7 @@ Map the incoming telemetry keys that represent the entity&#39;s GPS position.
 
 {% assign geofencingEntityCoordinates = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-entity-coordinates-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-entity-coordinates-1-ce.png
         title: Specifies the input data for the calculation. You must map the timeseries keys from the incoming telemetry that represent the entity&#39;s GPS location.
 '
 %}
@@ -69,7 +69,7 @@ Click **Add zone group** to configure a new group.
 
 {% assign geofencingZoneGroupsAdd = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-add-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-add-1-ce.png
         title: A **Zone Group** is a logical container that bundles one or more physical zones (polygons/circles) into a single evaluation.<br>Click **Add zone group** to configure a new group.
 '
 %}
@@ -95,7 +95,7 @@ Best practice: use camelCase (e.g., <span class="code-light">restrictedArea</spa
 
 {% assign geofencingZoneGroupsName = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-name-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-name-1-ce.png
         title: The zone group **Name** is used as a prefix for the generated geofencing telemetry keys (for example, **Name** + **Status** and **Name** + **Event**).
 '
 %}
@@ -118,7 +118,7 @@ Choose where zone geometry definitions (polygons/circles) are stored:
 
 {% assign geofencingZoneGroupsEntityType = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-entity-type-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-entity-type-1-ce.png
         title: When you configure a group, the system needs to know where the zone definitions (the polygons) are stored. This is determined by the Entity Type (Source) setting.
 '
 %}
@@ -199,7 +199,7 @@ To find zones for a vehicle (Source Entity) that belongs to a fleet:
 
 {% assign geofencingPathFromEntityToZones = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-path-from-entity-to-zones-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-path-from-entity-to-zones-1-ce.png
         title: This section defines the precise "road map" the system follows to find the zone entities.<br>The path starts from the **Source Entity** (the Device or Asset running this Calculated Field) and follows the relations you specify.
 '
 %}
@@ -214,7 +214,7 @@ Specify the server-side attribute key on zone entities that stores the geometry.
 
 {% assign geofencingZoneGroupsPerimeterAttributeKey = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-perimeter-attribute-key-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-perimeter-attribute-key-1-ce.png
         title: Specify the server-side attribute key on zone entities that stores the geometry.
 '
 %}
@@ -252,7 +252,7 @@ This setting controls which telemetry the calculated field generates for the zon
 
 {% assign geofencingZoneGroupsReportStrategy = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-report-strategy-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-report-strategy-1-ce.png
         title: This setting controls what telemetry data the calculated field generates for the group.
 '
 %}
@@ -292,7 +292,7 @@ List which entities are currently inside a specific zone.
 
 {% assign geofencingCreateRelationsWithMatchedZones = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-create-relations-with-matched-zones-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-create-relations-with-matched-zones-1-ce.png
         title: When enabled, the calculated field automatically creates/removes relations between the source entity and zones the entity is currently inside.
 '
 %}
@@ -322,7 +322,7 @@ Controls how often ThingsBoard refreshes the cached list of discovered zones:
 
 {% assign geofencingOutput = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-zone-groups-refresh-interval-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-zone-groups-refresh-interval-1-ce.png
         title: Controls how often ThingsBoard refreshes the cached list of discovered zones.
 '
 %}
@@ -358,6 +358,14 @@ You are building a pet tracking solution. Each dog collar tracker sends GPS coor
 
 Each dog has a unique zone (e.g., Buddy and Rex live in different locations), so the geofence geometry must be stored on the device itself.
 
+{% assign petTrackingUsageExample = '
+    ===
+        image: /images/user-guide/calculated-fields/geofencing/pet-tracking-example-1.png
+        title: You are building a pet tracking solution. Each dog collar has a unique “Home Zone” defined by the owner (e.g., a 40-meter radius around their specific house).'
+%}
+
+{% include images-gallery.liquid imageCollection=petTrackingUsageExample %}
+
 <b><font size="4">Goal</font></b>   
 Detect when the dog enters/leaves its safe zone and generate:
 - presence status (INSIDE / OUTSIDE)
@@ -366,17 +374,7 @@ Detect when the dog enters/leaves its safe zone and generate:
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Pet Tracker" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/geofencing/pets-tracking-dashboard.json){:target="_blank" download="pets-tracking-dashboard.json"}.
 
-{% assign petTrackingUsageExample = '
-    ===
-       image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/pet-tracking-example-1.png
-       title: You are building a pet tracking solution. Each dog collar has a unique “Home Zone” defined by the owner (e.g., a 40-meter radius around their specific house).'
-%}
-
-{% include images-gallery.liquid imageCollection=petTrackingUsageExample %}
-
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>   
 Import **two devices** — each device represents a tracker built into a dog collar. These devices will publish GPS coordinates as telemetry and a server-side <span class="code-light">safeZone</span> attribute that contains the home zone coordinates in the form of a circle.
@@ -391,30 +389,28 @@ Import **two devices** — each device represents a tracker built into a dog col
 
 > **Important notes about the CSV:**
 - The CSV delimiter must be <b><span class="code-light">;</span></b>.
-- **latitude** and **longitude** are **time series** keys that define the dog&#39;s current coordinates.
-- **safeZone** is a **server-side attribute** that defines the zone perimeter as a circle.
+- <span class="code-light">latitude</span> and <span class="code-light">longitude</span> are **time series** keys that define the dog&#39;s current coordinates.
+- <span class="code-light">safeZone</span> is a **server-side attribute** that defines the zone perimeter as a circle.
 
-{% assign geofencingExample1 = '
+{% assign petTrackingUsageExample2 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-2-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-2-ce.png
         title: The CSV delimiter must be **;**
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-3-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-3-ce.png
         title: **Time series:** latitude, longitude, **Server attribute:** safeZone
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-4-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-4-ce.png
         title: Imported devices that publish GPS coordinates as telemetry.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=geofencingExample1 %}
+{% include images-gallery.liquid imageCollection=petTrackingUsageExample2 %}
 
-<hr>
-
-<b><font size="3">2. Apply the calculated field to the device profile</font></b>   
+<br><b><font size="3">2. Apply the calculated field to the device profile</font></b>   
 When importing the devices, the "pet-tracking" profile is created automatically and assigned to them.
 Apply the calculated field to this profile so it runs for all devices using it.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/geofencing/pets-tracking-example-geofencing-cf.json){:target="_blank" download="pets-tracking-example-geofencing-cf.json"}.
@@ -422,29 +418,27 @@ Apply the calculated field to this profile so it runs for all devices using it.
 
 This calculated field evaluates whether each dog is inside its own <span class="code-light">safeZone</span> and generates status/events accordingly.
 
-{% assign geofencingExample2 = '
+{% assign petTrackingUsageExample3 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-5-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-5-ce.png
         title: Go to the **Calculated fields** tab and import the calculated field configuration.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-6-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-6-ce.png
         title: Apply the calculated field to the **pet-tracking** profile so it runs for all devices using it.<br>Entity coordinates: latitude, longitude
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-7-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-7-ce.png
         title: Geofencing zone group settings.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-8-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-8-ce.png
         title: The output values must be saved as telemetry.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=geofencingExample2 %}
+{% include images-gallery.liquid imageCollection=petTrackingUsageExample3 %}
 
 (Optional) Enable [Debug mode](/docs/user-guide/calculated-fields/?calculatedfieldsargumenttype=attribute#debug){:target="_blank"} and inspect execution via the **Events** button.
 
-<hr>
-
-<b><font size="3">3. Import the demo dashboard</font></b>   
+<br><b><font size="3">3. Import the demo dashboard</font></b>   
 Import the dashboard JSON to monitor devices:
 - [Download the dashboard configuration file](/docs/user-guide/resources/calculated-fields/geofencing/pets-tracking-dashboard.json){:target="_blank" download="pets-tracking-dashboard.json"}.
 - Go to the **Dashboards** page and [import](/docs/pe/user-guide/dashboards/#import-dashboard/){:target="_blank"} the JSON file with dashboard configuration.
@@ -456,35 +450,33 @@ The dashboard includes:
   - The most recent safe zone transition event (**ENTERED / LEFT**)
 
 {% assign geofencingExample3 = '
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-9-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-9-ce.png
         title: Import the demo dashboard.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=geofencingExample3 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 As you move the dogs&#39; markers outside of or back into the home zone:
 - status updates (INSIDE / OUTSIDE)
 - event updates (ENTERED / LEFT)
 
-{% assign geofencingExample4 = '
+{% assign petTrackingUsageExample4 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-10-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-10-ce.png
         title: As you move the dogs&#39; markers outside of or back into the home zone:<br>- status updates (INSIDE / OUTSIDE)<br>- event updates (ENTERED / LEFT)
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-11-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-11-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-12-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-12-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-13-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-13-ce.png
 '
 %}
 
-{% include images-gallery.liquid imageCollection=geofencingExample4 %}
+{% include images-gallery.liquid imageCollection=petTrackingUsageExample4 %}
 
 <hr>
 
@@ -494,6 +486,14 @@ As you move the dogs&#39; markers outside of or back into the home zone:
 You manage a large distribution center. You have **two forklifts**. Each forklift tracker publishes GPS telemetry (<span class="code-light">latitude</span>, <span class="code-light">longitude</span>).   
 The **warehouse** asset publishes the geofence perimeter as an attribute.
 
+{% assign warehouseEquipmentExample1 = '    
+    ===
+        image: /images/user-guide/calculated-fields/geofencing/warehouse-equipment-example-2.png
+        title: You manage a large distribution center. You have 2 forklifts, and each forklift is assigned to a specific “Warehouse Building” asset.'
+%}
+
+{% include images-gallery.liquid imageCollection=warehouseEquipmentExample1 %}
+
 <b><font size="4">Goal</font></b>   
 Detect when a forklift leaves the perimeter of its assigned building, and generate:
 - the current presence status (**INSIDE / OUTSIDE**)
@@ -502,17 +502,7 @@ Detect when a forklift leaves the perimeter of its assigned building, and genera
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Warehouse equipment" calculated field configuration (JSON).](/docs/user-guide/resources/calculated-fields/geofencing/warehouse-equipment-example-geofencing-cf.json){:target="_blank" download="warehouse-equipment-example-geofencing-cf.json"}.
 
-{% assign warehouseEquipmentExample1 = '    
-    ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/warehouse-equipment-example-2.png
-        title: You manage a large distribution center. You have 2 forklifts, and each forklift is assigned to a specific “Warehouse Building” asset.'
-%}
-
-{% include images-gallery.liquid imageCollection=warehouseEquipmentExample1 %}
-
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>   
 Import **two devices** — each device represents a tracker installed in a forklift. The devices publish GPS coordinates as telemetry.
@@ -524,29 +514,29 @@ Import **two devices** — each device represents a tracker installed in a forkl
 - **Type:** forklift
 - **Time series:** <span class="code-light">latitude</span>, <span class="code-light">longitude</span>
 
-> **Important notes about the CSV:** The CSV delimiter must be <b><span class="code-light">;</span></b>.
+> **Important notes about the CSV:** 
+- the CSV delimiter must be <b><span class="code-light">;</span></b>.
+- the column type for the <span class="code-light">latitude</span> and <span class="code-light">longitude</span> keys must be set to "**Time series**".
 
 {% assign warehouseEquipmentExample2 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-2-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-2-ce.png
         title: The CSV delimiter must be **;**
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-2-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-2-ce.png
         title: **Time series:** latitude, longitude
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-3-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-3-ce.png
         title: Imported devices that publish GPS coordinates as telemetry.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=warehouseEquipmentExample2 %}
 
-<hr>
-
-<b><font size="3">2. Import demo asset</font></b>   
+<br><b><font size="3">2. Import demo asset</font></b>   
 
 - Download the CSV file: [warehouse-equipment-example-asset-data.csv](/docs/user-guide/resources/calculated-fields/geofencing/warehouse-equipment-example-asset-data.csv){:target="_blank" download="warehouse-equipment-example-asset-data.csv"}
 - Go to the **Assets** page and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file into your ThingsBoard instance:
@@ -556,20 +546,20 @@ Import **two devices** — each device represents a tracker installed in a forkl
 - **Type:** warehouse
 - **Server attribute:** <span class="code-light">perimeter</span>
 
-> **Important notes about the CSV:** The CSV delimiter must be <b><span class="code-light">;</span></b>.
+> **Important notes about the CSV:** 
+- the CSV delimiter must be <b><span class="code-light">;</span></b>.
+- the column type for the <span class="code-light">perimeter</span> key must be set to "**Server attribute**".
 
 {% assign warehouseEquipmentExample3 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-4-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-4-ce.png
         title: The Warehouse A asset publishes the geofence perimeter as an attribute.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=warehouseEquipmentExample3 %}
 
-<hr>
-
-<b><font size="3">3. Create relations</font></b>
+<br><b><font size="3">3. Create relations</font></b>
 
 Create a relationship between the **Warehouse Building A** asset and the **Forklift A** and **Forklift B** devices:
 - Relation direction: **From**
@@ -579,16 +569,14 @@ This relation is used by the calculated field to resolve the assigned building z
 
 {% assign warehouseEquipmentExample4 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-5-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-5-ce.png
         title: Create a relationship between the **Warehouse Building A** asset and the **Forklift A** and **Forklift B** devices.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=warehouseEquipmentExample4 %}
 
-<hr>
-
-<b><font size="3">4. Apply the calculated field to the device profile</font></b>   
+<br><b><font size="3">4. Apply the calculated field to the device profile</font></b>   
 When importing the devices, the "forklift" profile is created automatically and assigned to them.
 Apply the calculated field to this profile so it runs for all devices using it.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/geofencing/warehouse-equipment-example-geofencing-cf.json){:target="_blank" download="warehouse-equipment-example-geofencing-cf.json"}.
@@ -598,25 +586,23 @@ This calculated field resolves the warehouse zone via relations and generates st
 
 {% assign warehouseEquipmentExample5 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-6-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-6-ce.png
         title: Go to the "Calculated fields" tab and import the configuration.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-7-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-7-ce.png
         title: Apply the calculated field to the **forklift** device profile so it runs for all devices using it.<br>Entity coordinates: latitude, longitude
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-8-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-8-ce.png
         title: Geofencing zone group settings.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-9-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-9-ce.png
         title: The output values must be saved as telemetry.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=warehouseEquipmentExample5 %}
 
-<hr>
-
-<b><font size="3">5. Import the dashboard</font></b>   
+<br><b><font size="3">5. Import the dashboard</font></b>   
 Import the dashboard to monitor forklifts in real time.
 - [Download the dashboard configuration file](/docs/user-guide/resources/calculated-fields/geofencing/warehouse_equipment_tracking_dashboard.json){:target="_blank" download="warehouse_equipment_tracking_dashboard.json"}.
 - Go to the **Dashboards** page and [import](/docs/pe/user-guide/dashboards/#import-dashboard/){:target="_blank"} the JSON file with dashboard configuration.
@@ -629,16 +615,14 @@ The dashboard includes:
 
 {% assign warehouseEquipmentExample6 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-10-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-10-ce.png
         title: Import the dashboard to monitor forklifts in real time.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=warehouseEquipmentExample6 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 When you move the forklift markers outside of or back into the perimeter of **Warehouse Building A**, the **Forklifts** widget is updated automatically:
 - the presence status is updated,
@@ -646,20 +630,20 @@ When you move the forklift markers outside of or back into the perimeter of **Wa
 
 This confirms that geofencing based on a direct device-to-asset association is working correctly.
 
-{% assign geofencingExample4 = '
+{% assign warehouseEquipmentExample6 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-11-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-11-ce.png
         title: When you move the forklift markers outside of or back into the perimeter of **Warehouse Building A**, the **Forklifts** widget is updated automatically:<br>- the presence status is updated,<br>- transition events are generated when boundary crossings occur.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-12-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-12-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-13-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-13-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-14-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-2-14-ce.png
 '
 %}
 
-{% include images-gallery.liquid imageCollection=geofencingExample4 %}
+{% include images-gallery.liquid imageCollection=warehouseEquipmentExample6 %}
 
 <hr>
 
@@ -670,13 +654,13 @@ A logistics company operates a fleet of trucks. Each truck must be monitored aga
 
 {% assign complexFleetManagementExample = '    
     ===
-       image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/complex-fleet-management-example-3.png
+       image: /images/user-guide/calculated-fields/geofencing/complex-fleet-management-example-3.png
        title: A logistics company manages a fleet of trucks. Each fleet must comply with complex rules involving multiple different types of areas simultaneously.'
 %}
 
 {% include images-gallery.liquid imageCollection=complexFleetManagementExample %}
 
-<b><font size="4">Scenario</font></b>   
+<b><font size="4">Goal</font></b>   
 Track two independent conditions for each truck simultaneously:
 - **Service area** — whether the truck is currently **INSIDE/OUTSIDE** its assigned service zone.
 - **Restricted area** — detect if the truck **ENTERED/LEFT** any no-go zone.
@@ -687,9 +671,10 @@ This example uses two Zone Groups inside a single Geofencing calculated field. B
 
 > **Note (visualization only):** Zone assets may include a zoneType server attribute (for example, allowed / restricted) used only for map color-coding. The calculated field logic relies on relation types, not on zoneType.
 
-<hr>
+<b><font size="4">Calculated field configuration</font></b>   
+[Download the "Fleet Geofencing" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/geofencing/complex-fleet-management-example-geofencing-cf.json){:target="_blank" download="complex-fleet-management-example-geofencing-cf.json"}.
 
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>   
 Import **two devices** — each represents a tracker installed in a truck. Devices publish GPS coordinates as telemetry.
@@ -701,29 +686,29 @@ Import **two devices** — each represents a tracker installed in a truck. Devic
 - **Type:** truck
 - **Time series:** <span class="code-light">latitude</span>, <span class="code-light">longitude</span>
 
-> **Important notes about the CSV:** The CSV delimiter must be <b><span class="code-light">;</span></b>.
+> **Important notes about the CSV:**
+- the CSV delimiter must be <b><span class="code-light">;</span></b>. 
+- the column type for the <span class="code-light">latitude</span> and <span class="code-light">longitude</span> keys must be set to "**Time series**".
 
 {% assign complexFleetManagementExample2 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-1-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-1-ce.png
         title: Go to the **Devices** and **import** device configurations from a CSV file.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-2-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-1-2-ce.png
         title: The CSV delimiter must be **;**
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-2-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-2-ce.png
         title: **Time series:** latitude, longitude
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-3-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-3-ce.png
         title: Imported devices that publish GPS coordinates as telemetry.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=complexFleetManagementExample2 %}
 
-<hr>
-
-<b><font size="3">2. Import demo asset</font></b>   
+<br><b><font size="3">2. Import demo asset</font></b>   
 Import assets representing the fleet and zones.
 - Download the CSV file: [complex-fleet-management-example-assets-data.csv](/docs/user-guide/resources/calculated-fields/geofencing/complex-fleet-management-example-assets-data.csv){:target="_blank" download="complex-fleet-management-example-assets-data.csv"}
 - Go to the "Assets" page and [import](/docs/user-guide/bulk-provisioning/){:target="_blank"} the CSV file into your ThingsBoard instance:
@@ -733,29 +718,29 @@ Import assets representing the fleet and zones.
 - **Type:** zone, fleet
 - **Server attribute:** <span class="code-light">perimeter</span>, <span class="code-light">zoneType</span>
 
-> **Important notes about the CSV:** The CSV delimiter must be <b><span class="code-light">;</span></b>.
+> **Important notes about the CSV:** 
+- the CSV delimiter must be <b><span class="code-light">;</span></b>.
+- the column type for the <span class="code-light">perimeter</span> and <span class="code-light">zoneType</span> keys must be set to "**Server attribute**".
 
-{% assign warehouseEquipmentExample3 = '
+{% assign complexFleetManagementExample3 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-4-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-4-ce.png
         title: Go to the **Assets** and **import** asset configurations from a CSV file.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-5-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-5-ce.png
         title: The CSV delimiter must be **;**
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-6-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-6-ce.png
         title: **Server attribute:** zoneType, perimeter
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-7-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-7-ce.png
         title: Imported assets.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=warehouseEquipmentExample3 %}
+{% include images-gallery.liquid imageCollection=complexFleetManagementExample3 %}
 
-<hr>
-
-<b><font size="3">3. Create relations</font></b>   
+<br><b><font size="3">3. Create relations</font></b>   
 Create the relations used by the calculated field to discover the fleet and its zones.
 
 1. Link trucks to the fleet:
@@ -775,45 +760,41 @@ Create the relations used by the calculated field to discover the fleet and its 
 
 {% assign warehouseEquipmentExample4 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-8-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-8-ce.png
         title: Create a relationship.
 '
 %}
 
 {% include images-gallery.liquid imageCollection=warehouseEquipmentExample4 %}
 
-<hr>
-
-<b><font size="3">4. Apply the calculated field to the device profile</font></b>   
+<br><b><font size="3">4. Apply the calculated field to the device profile</font></b>   
 When importing the devices, the "truck" device profile is created automatically and assigned to them.
 Apply the calculated field to this profile so it runs for all trucks using it.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/geofencing/complex-fleet-management-example-geofencing-cf.json){:target="_blank" download="complex-fleet-management-example-geofencing-cf.json"}
 2. Go to the "Calculated fields" tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.
 
-{% assign warehouseEquipmentExample5 = '
+{% assign complexFleetManagementExample4 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-9-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-9-ce.png
         title: Go to the "Calculated fields" tab and import the configuration.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-10-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-10-ce.png
         title: Apply the calculated field to the **forklift** device profile so it runs for all devices using it.<br>Entity coordinates: latitude, longitude
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-11-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-11-ce.png
         title: Geofencing zone group settings.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-12-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-12-ce.png
         title: Geofencing zone group settings.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-13-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-13-ce.png
         title: The output values must be saved as telemetry.<br>Click **Add** to save the calculation field.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=warehouseEquipmentExample5 %}
+{% include images-gallery.liquid imageCollection=complexFleetManagementExample4 %}
 
-<hr>
-
-<b><font size="3">5. Import the dashboard</font></b>   
+<br><b><font size="3">5. Import the dashboard</font></b>   
 Import the dashboard for real-time monitoring.
 - [Download the dashboard configuration file](/docs/user-guide/resources/calculated-fields/geofencing/fleet_trucks_tracking_dashboard.json){:target="_blank" download="fleet_trucks_tracking_dashboard.json"}.
 - Go to the "Dashboards" page and [import](/docs/pe/user-guide/dashboards/#import-dashboard/){:target="_blank"} the JSON file with dashboard configuration.
@@ -825,40 +806,38 @@ The dashboard includes:
   - current restrictedAreaStatus 
   - last restrictedAreaEvent (ENTERED / LEFT)
 
-{% assign warehouseEquipmentExample6 = '
+{% assign complexFleetManagementExample5 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-14-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-14-ce.png
         title: Import the dashboard to monitor truck in real time.
 '
 %}
 
-{% include images-gallery.liquid imageCollection=warehouseEquipmentExample6 %}
+{% include images-gallery.liquid imageCollection=complexFleetManagementExample5 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 As you move truck markers across zone boundaries:
 - serviceAreaStatus updates as **INSIDE / OUTSIDE**
 - restrictedAreaEvent is generated on transitions (**ENTERED / LEFT**)
 - both conditions are tracked independently for the same truck at the same time, without state conflicts.
 
-{% assign geofencingExample4 = '
+{% assign complexFleetManagementExample6 = '
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-15-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-15-ce.png
         title: As you move truck markers across zone boundaries:<br>- serviceAreaStatus updates as **INSIDE / OUTSIDE**<br>- restrictedAreaEvent is generated on transitions (**ENTERED / LEFT**)<br>- both conditions are tracked independently for the same truck at the same time, without state conflicts.
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-16-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-16-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-17-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-17-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-18-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-18-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-19-ce.png
+        image: /images/user-guide/calculated-fields/geofencing/geofencing-cf-example-3-19-ce.png
 '
 %}
 
-{% include images-gallery.liquid imageCollection=geofencingExample4 %}
+{% include images-gallery.liquid imageCollection=complexFleetManagementExample6 %}
 
 <hr>
 

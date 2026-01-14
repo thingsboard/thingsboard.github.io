@@ -54,14 +54,10 @@ A device reports indoor temperature in **degrees Fahrenheit** as telemetry under
 <b><font size="4">Goal</font></b>   
 Convert <span class="code-light">temperatureF</span> to **degrees Celsius**, round to two decimal places, and store the result as telemetry under the <span class="code-light">temperatureC</span> key using the same timestamp as the incoming data.
 
-<hr>
-
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Fahrenheit to Celsius" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/script/f_to_c_script_cf.json){:target="_blank" download="f_to_c_script_cf.json"}.
 
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo device</font></b>
 
@@ -74,6 +70,8 @@ Import a device that publishes temperature telemetry.
 - **Type:** smart-device
 - **Time series:** <span class="code-light">temperatureF</span>
 
+> **Important note about the CSV:** the column type for the <span class="code-light">temperatureF</span> key must be set to "**Time series**".
+
 {% assign exampleScript1 = '
     ===
         image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-1-1-ce.png
@@ -83,9 +81,7 @@ Import a device that publishes temperature telemetry.
 
 {% include images-gallery.liquid imageCollection=exampleScript1 %}
 
-<hr>
-
-<b><font size="3">2. Apply the calculated field to the device profile</font></b>
+<br><b><font size="3">2. Apply the calculated field to the device profile</font></b>
 
 1. [Download the calculated field configuration file (JSON)](/docs/user-guide/resources/calculated-fields/script/f_to_c_script_cf.json){:target="_blank" download="f_to_c_script_cf.json"}.
 2. Go to the "Calculated fields" tab and [import](/docs/user-guide/calculated-fields/#export--import-calculated-field){:target="_blank"} the configuration.   
@@ -106,7 +102,7 @@ return {
 }
 ```
 {: .copy-code}
-**}**
+}
 
 {% assign exampleScript2 = '
     ===
@@ -126,9 +122,7 @@ return {
 
 {% include images-gallery.liquid imageCollection=exampleScript2 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 On the "Latest telemetry" tab of the Smart Device, the calculated temperature value in Celsius is displayed under a new telemetry key: <span class="code-light">temperatureC</span>.
 
@@ -157,14 +151,10 @@ Calculate air density based on:
 
 Store the result as a new telemetry value under the <span class="code-light">airDensity</span> key on Building A.
 
-<hr>
-
 <b><font size="4">Calculated field configuration</font></b>   
 [Click to download the "Air density calculation" field configuration (JSON)](/docs/user-guide/resources/calculated-fields/script/air_density_calculation_cf.json){:target="_blank" download="air_density_calculation_cf.json"}.
 
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo device</font></b>
 
@@ -183,6 +173,10 @@ Import two devices: one publishing temperature telemetry and one providing altit
 - **Name:** Altimeter
 - **Type:** height-sensor
 - **Server attribute:** <span class="code-light">altitude</span>
+
+> **Important notes about the CSV:**
+- the column type for the <span class="code-light">temperature</span> key must be set to "**Time series**".
+- the column type for the <span class="code-light">altitude</span> key must be set to "**Server attribute**".
  
 {% assign exampleScript4 = '
     ===
@@ -202,9 +196,7 @@ Import two devices: one publishing temperature telemetry and one providing altit
 
 {% include images-gallery.liquid imageCollection=exampleScript4 %}
 
-<hr>
-
-<b><font size="3">2. Import demo asset</font></b>
+<br><b><font size="3">2. Import demo asset</font></b>
 
 Import the asset that represents the building.
 1. Download the CSV file: [air-density-calculation-asset-data.csv](/docs/user-guide/resources/calculated-fields/script/air-density-calculation-asset-data.csv){:target="_blank" download="air-density-calculation-asset-data.csv"}
@@ -223,9 +215,7 @@ Import the asset that represents the building.
 
 {% include images-gallery.liquid imageCollection=exampleScript5 %}
 
-<hr>
-
-<b><font size="3">3. Apply the calculated field to the asset profile</font></b>
+<br><b><font size="3">3. Apply the calculated field to the asset profile</font></b>
 
 Apply the calculated field to the "building" asset profile, so it runs for Building A.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/script/air_density_calculation_cf.json){:target="_blank" download="air_density_calculation_cf.json"}.
@@ -281,9 +271,7 @@ return {
 
 {% include images-gallery.liquid imageCollection=exampleScript6 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 In the "Latest telemetry" tab of the Building A asset, the calculated value appears under the <span class="code-light">airDensity</span> key.
 
@@ -312,14 +300,10 @@ Generate an event-like telemetry record under the issue key whenever:
 
 When the condition is met, store an "issue record" with a timestamp.
 
-<hr>
-
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Freezer temperature analysis" calculated field configuration (JSON)](/docs/user-guide/resources/calculated-fields/script/freezer_temperature_analysis_cf.json){:target="_blank" download="freezer_temperature_analysis_cf.json"}.
 
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo device</font></b>
 
@@ -332,6 +316,8 @@ Import a device that publishes **temperature** and **defrost** data as telemetry
 - **Type:** smart-device
 - **Time series:** <span class="code-light">temperature</span>, <span class="code-light">defrost</span>
 
+> **Important note about the CSV:** the column type for the <span class="code-light">temperature</span> and <span class="code-light">defrost</span> keys must be set to "**Time series**".
+
 {% assign exampleScript8 = '
     ===
         image: https://img.thingsboard.io/user-guide/calculated-fields/script/script-cf-example-3-1-ce.png
@@ -341,9 +327,7 @@ Import a device that publishes **temperature** and **defrost** data as telemetry
 
 {% include images-gallery.liquid imageCollection=exampleScript8 %}
 
-<hr>
-
-<b><font size="3">2. Apply the calculated field to the device profile</font></b>
+<br><b><font size="3">2. Apply the calculated field to the device profile</font></b>
 
 Apply the calculated field to the "smart-device" profile so it runs for the freezer device(s).
 
@@ -403,9 +387,7 @@ return result;
 
 {% include images-gallery.liquid imageCollection=exampleScript9 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 In the "Latest telemetry" tab of the Smart Device, the issue key appears when the condition is met, for example:
 

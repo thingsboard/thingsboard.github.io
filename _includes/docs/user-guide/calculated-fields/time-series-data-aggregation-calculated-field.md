@@ -154,14 +154,10 @@ Compute hourly aggregates from historical telemetry and store them as new time s
 
 This produces reporting-ready KPIs and reduces dashboard/API load by storing pre-aggregated metrics instead of computing them on the fly.
 
-<hr>
-
 <b><font size="4">Calculated field configuration</font></b>   
 [Download the "Time series data aggregation" calculated field configuration file (JSON)](/docs/user-guide/resources/calculated-fields/time-series-data-aggregation/hourly_energy_kpis.json){:target="_blank" download="hourly_energy_kpis.json"}.
 
-<hr>
-
-<b><font size="4">Configuration steps</font></b>
+<br><b><font size="4">Configuration steps</font></b>
 
 <b><font size="3">1. Import demo devices</font></b>
 
@@ -173,6 +169,8 @@ Import a device that publishes <span class="code-light">power</span> and <span c
 - **Name:** Energy Meter 1
 - **Type:** energy-meter
 - **Time series:** <span class="code-light">power</span>, <span class="code-light">energy</span>
+
+> **Important note about the CSV:** the column type for the <span class="code-light">power</span> and <span class="code-light">energy</span> keys must be set to "**Time series**".
 
 {% assign exampleTimeSeriesDataAggregation1 = '
     ===
@@ -189,11 +187,9 @@ Import a device that publishes <span class="code-light">power</span> and <span c
 
 {% include images-gallery.liquid imageCollection=exampleTimeSeriesDataAggregation1 %}
 
-> Note: make sure the device already has historical telemetry for at least 1–2 hours, otherwise the first aggregation interval may use default values.
+> **Note:** make sure the device already has historical telemetry for at least 1–2 hours, otherwise the first aggregation interval may use default values.
 
-<hr>
-
-<b><font size="3">2. Apply the calculated field to the device</font></b>
+<br><b><font size="3">2. Apply the calculated field to the device</font></b>
 
 Apply the **Time series data aggregation** calculated field to the **Energy Meter 1** device.
 1. [Download the calculated field configuration file](/docs/user-guide/resources/calculated-fields/time-series-data-aggregation/hourly_energy_kpis.json){:target="_blank" download="hourly_energy_kpis.json"}.
@@ -243,9 +239,7 @@ Ensure the calculated field is configured as:
 
 {% include images-gallery.liquid imageCollection=exampleTimeSeriesDataAggregation4 %}
 
-<hr>
-
-<b><font size="4">Result</font></b>
+<br><b><font size="4">Result</font></b>
 
 > New values will be calculated at the beginning of the next hour (in my case, at 13:00).
 
