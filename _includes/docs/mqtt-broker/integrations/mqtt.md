@@ -16,7 +16,7 @@ MQTT Integration processes messages and forwards them to an external MQTT broker
 3. **TBMQ Integration Executor processes the message**, formats it accordingly, and forwards it to the external MQTT broker or system.
 4. **External system receives the message** and processes the data as needed.
 
-![image](/images/mqtt-broker/integrations/tbmq-mqtt-integration.png)
+![image](https://img.thingsboard.io/mqtt-broker/integrations/tbmq-mqtt-integration.png)
 
 ## Prerequisites
 

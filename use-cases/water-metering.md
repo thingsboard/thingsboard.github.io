@@ -48,7 +48,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases-energy.svg" class="svg-animation" alt="Water metering solution architecture" title="Water metering solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases-energy.svg" class="svg-animation" alt="Water metering solution architecture" title="Water metering solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -176,11 +176,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/scada/water-1.svg" alt="Water valve" title="Water valve"></div>
-            <div class="application-image"><img src="/images/usecases/water-metering/industrial-1.svg" alt="Industrial" title="Industrial facilities"></div>
-            <div class="application-image"><img src="/images/usecases/water-metering/smart-building-1.svg" alt="Building" title="Smart buildings"></div>
-            <div class="application-image"><img src="/images/usecases/smart-office/hospitality-1.svg" alt="Hospitality" title="Hospitality & resorts"></div>
-            <div class="application-image"><img src="/images/usecases/water-metering/irrigation-1.svg" alt="Irrigation" title="Agriculture & irrigation"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada/water-1.svg" alt="Water valve" title="Water valve"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/water-metering/industrial-1.svg" alt="Industrial" title="Industrial facilities"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/water-metering/smart-building-1.svg" alt="Building" title="Smart buildings"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-office/hospitality-1.svg" alt="Hospitality" title="Hospitality & resorts"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/water-metering/irrigation-1.svg" alt="Irrigation" title="Agriculture & irrigation"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -195,7 +195,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada/water-2.svg" alt="Water valve" title="Water valve"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada/water-2.svg" alt="Water valve" title="Water valve"></div>
             <div class="text-block">
                 <h3>Municipal water services</h3>
                 <p>By using IoT-based water metering, municipalities can automate meter readings and billing processes, gain insight into consumption trends across entire cities, and react instantly to issues such as leaks or overuse.</p>
@@ -206,10 +206,10 @@ contactUsModal: "true"
                 <h3>Industrial facilities</h3>
                 <p>Industries benefit from accurate water monitoring to stay compliant with strict environmental standards and to manage utility costs more effectively through predictive consumption insights.</p>
             </div>
-            <div class="image"><img src="/images/usecases/water-metering/industrial-2.svg" alt="Industrial" title="Industrial facilities"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/water-metering/industrial-2.svg" alt="Industrial" title="Industrial facilities"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/water-metering/smart-building-2.svg" alt="Building" title="Smart buildings"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/water-metering/smart-building-2.svg" alt="Building" title="Smart buildings"></div>
             <div class="text-block">
                 <h3>Smart buildings</h3>
                 <p>Water metering in smart buildings enables facility managers to fine-tune plumbing infrastructure, minimize waste through real-time monitoring, and improve the overall experience and sustainability for occupants.</p>
@@ -220,10 +220,10 @@ contactUsModal: "true"
                 <h3>Hospitality & resorts</h3>
                 <p>Hotels and resorts can monitor water usage across various zones or guest areas to implement sustainable practices, reduce operating costs, and engage guests in eco-conscious initiatives.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-office/hospitality-2.svg" alt="Hospitality" title="Hospitality & resorts"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-office/hospitality-2.svg" alt="Hospitality" title="Hospitality & resorts"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/water-metering/irrigation-2.svg" alt="Irrigation" title="Agriculture & irrigation"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/water-metering/irrigation-2.svg" alt="Irrigation" title="Agriculture & irrigation"></div>
             <div class="text-block">
                 <h3>Agriculture & irrigation</h3>
                 <p>Farmers can leverage real-time data to optimize irrigation schedules, reduce unnecessary water usage, and improve crop yields while maintaining environmental responsibility.</p>
@@ -238,7 +238,7 @@ contactUsModal: "true"
         <p>With a low-code approach, intuitive dashboards, and comprehensive alerting mechanisms, ThingsBoard serves as a cornerstone for digital transformation in water resource management. Whether you're scaling for a city or optimizing a single facility, this solution adapts to your needs— one drop at a time.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -358,15 +358,15 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/water-metering/water-metering-1.webp' alt='IoT water monitoring dashboard with real-time meter data, consumption chart, and alert notifications' title='IoT-based smart water metering dashboard for real-time monitoring and consumption analytics'/>",
-                "<img src='/images/usecases/water-metering/water-metering-2.webp' alt='hingsBoard IoT dashboard for water metering with real-time consumption graph, smart devices, and meter analytics' title='Smart water consumption tracking with ThingsBoard IoT platform — daily usage trends, device status, and meter readings'/>",
-                "<img src='/images/usecases/water-metering/water-metering-6.webp' alt='ThingsBoard interface for editing smart water meter device details with active alerts and status overview' title='Edit IoT water meter device information and monitor active consumption alarms in ThingsBoard' data-bg='#A4A4A4'/>",
-                "<img src='/images/usecases/water-metering/water-metering-7.webp' alt='ThingsBoard customer management interface displaying smart water metering clients with contact details' title='Manage smart water metering customers in ThingsBoard with email, address, and contact information'/>",
-                "<img src='/images/usecases/water-metering/water-metering-4.webp' alt='IoT water metering dashboard with critical alerts for exceeded consumption thresholds and real-time device data in ThingsBoard' title='ThingsBoard IoT platform showing critical smart meter alerts and active status of water monitoring devices'/>",
-                "<img src='/images/usecases/water-metering/water-metering-5.webp' alt='hingsBoard alarm configuration panel showing system thresholds and email or SMS notification settings' title='Configure smart alarm thresholds and notification channels in ThingsBoard IoT platform'/>",
-                "<img src='/images/usecases/water-metering/water-metering-3.webp' alt='Detailed IoT water meter monitoring on ThingsBoard dashboard with usage graph, location map, alerts, and installation info' title='ThingsBoard smart metering dashboard showing real-time water usage, device alerts, and geolocation tracking'/>",
-                "<img src='/images/usecases/water-metering/water-metering-8.webp' alt='ThingsBoard dashboard with water meter consumption data, leakage indicators, and active customer alarms' title='Monitor water meter status and customer-specific consumption alerts in ThingsBoard IoT platform'/>",
-                "<img src='/images/usecases/water-metering/water-metering-9.webp' alt='ThingsBoard rule chain flow diagram for water consumption processing and alarm generation' title='IoT rule chain in ThingsBoard for calculating consumption, managing alarms, and posting telemetry'/>"
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-1.webp' alt='IoT water monitoring dashboard with real-time meter data, consumption chart, and alert notifications' title='IoT-based smart water metering dashboard for real-time monitoring and consumption analytics'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-2.webp' alt='hingsBoard IoT dashboard for water metering with real-time consumption graph, smart devices, and meter analytics' title='Smart water consumption tracking with ThingsBoard IoT platform — daily usage trends, device status, and meter readings'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-6.webp' alt='ThingsBoard interface for editing smart water meter device details with active alerts and status overview' title='Edit IoT water meter device information and monitor active consumption alarms in ThingsBoard' data-bg='#A4A4A4'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-7.webp' alt='ThingsBoard customer management interface displaying smart water metering clients with contact details' title='Manage smart water metering customers in ThingsBoard with email, address, and contact information'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-4.webp' alt='IoT water metering dashboard with critical alerts for exceeded consumption thresholds and real-time device data in ThingsBoard' title='ThingsBoard IoT platform showing critical smart meter alerts and active status of water monitoring devices'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-5.webp' alt='hingsBoard alarm configuration panel showing system thresholds and email or SMS notification settings' title='Configure smart alarm thresholds and notification channels in ThingsBoard IoT platform'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-3.webp' alt='Detailed IoT water meter monitoring on ThingsBoard dashboard with usage graph, location map, alerts, and installation info' title='ThingsBoard smart metering dashboard showing real-time water usage, device alerts, and geolocation tracking'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-8.webp' alt='ThingsBoard dashboard with water meter consumption data, leakage indicators, and active customer alarms' title='Monitor water meter status and customer-specific consumption alerts in ThingsBoard IoT platform'/>",
+                "<img src='https://img.thingsboard.io/usecases/water-metering/water-metering-9.webp' alt='ThingsBoard rule chain flow diagram for water consumption processing and alarm generation' title='IoT rule chain in ThingsBoard for calculating consumption, managing alarms, and posting telemetry'/>"
             ];
             return images[index];
         }

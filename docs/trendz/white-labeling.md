@@ -7,40 +7,40 @@ description: Trendz White Labeling configuration - set color schema, logo and ot
 
 trendz-white-labeling-section:
   0:
-    image: /images/trendz/trendz-white-labeling-settings.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-settings.png
     title: 'White labeling section in Trendz analytics settings'
 
 trendz-white-labeling-logo:
   0:
-    image: /images/trendz/trendz-white-labeling-logo.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-logo.png
     title: 'Change Trendz analytics logo settings'
 
 trendz-white-labeling-title:
   0:
-    image: /images/trendz/trendz-white-labeling-title.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-title.png
     title: 'Change Trendz analytics tab title'
 
 trendz-white-labeling-url-path:
   0:
-    image: /images/trendz/trendz-white-labeling-path-cloud.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-path-cloud.png
     title: 'Change loading URL path in Trenzd Cloud'
   1:
-    image: /images/trendz/trendz-white-labeling-path-self.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-path-self.png
     title: 'Change Trendz analytics loading URL path in self hosted installation'
 
 trendz-white-labeling-color-scheme:
   0:
-    image: /images/trendz/trendz-white-labeling-color-scheme.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-color-scheme.png
     title: 'Change Trendz analytics color scheme'
 
 trendz-white-labeling-additional-color-settings:
   0:
-    image: /images/trendz/trendz-white-labeling-additional-color-settings.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-additional-color-settings.png
     title: 'Set Trendz analytics additional color settings'
 
 trendz-white-labeling-help-user-mode:
   0:
-    image: /images/trendz/trendz-white-labeling-help-user-mode.png
+    image: https://img.thingsboard.io/trendz/trendz-white-labeling-help-user-mode.png
     title: 'Trendz analytics сheck box for help user mode'
 ---
 

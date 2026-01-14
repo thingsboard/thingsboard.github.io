@@ -7,43 +7,43 @@ description: How to build accurate prediction of time series data. Explore avail
 
 trendz-models-page:
   0:
-    image: /images/trendz/create-model.png
+    image: https://img.thingsboard.io/trendz/create-model.png
     title: 'To access the prediction models tool, click on the icon labeled “Prediction Models” located on the left side of the workspace.'
 
 trendz-accuracy-page:
  0:
-  image: /images/trendz/accuracy-summary.png
+  image: https://img.thingsboard.io/trendz/accuracy-summary.png
   title: 'Accuracy Summary section provides an overall evaluation of the prediction model`s performance, expressed as a percentage, and explains how closely the predicted telemetry values align with the actual values.'
 
 trendz-accuracy-real-data:
  0:
-  image: /images/trendz/accuracy-real-data.png
+  image: https://img.thingsboard.io/trendz/accuracy-real-data.png
   title: This chart displays the prediction data for a specific segment (selected via a drop-down list) alongside the corresponding original historical telemetry.
 
 trendz-accuracy-confidence-band:
  0:
-  image: /images/trendz/accuracy-confidence-band.png
+  image: https://img.thingsboard.io/trendz/accuracy-confidence-band.png
   title: This chart illustrates the prediction’s accuracy, defined as the percentage difference (error function) between the expected and actual values for a given telemetry.
 
 trendz-confidence-level:
  0:
-  image: /images/trendz/accuracy-confidence-level.png
+  image: https://img.thingsboard.io/trendz/accuracy-confidence-level.png
   title: This chart shows the prediction’s accuracy as a binary feature.
 
 trendz-forecasting-energy-example:
  0:
-  image: /images/trendz/prediction-config-example.png
+  image: https://img.thingsboard.io/trendz/prediction-config-example.png
  1:
-  image: /images/trendz/prediction-accuracy-example.png
+  image: https://img.thingsboard.io/trendz/prediction-accuracy-example.png
   
 trendz-prediction-job-example:
  0: 
-  image: /images/trendz/prediction-jobs-example.png
+  image: https://img.thingsboard.io/trendz/prediction-jobs-example.png
 
 
 trendz-prediction-line-chart-example:
  0: 
-  image: /images/trendz/prediction-line-chart-example.png
+  image: https://img.thingsboard.io/trendz/prediction-line-chart-example.png
 ---
 
 * TOC
@@ -61,7 +61,7 @@ With Trendz, you can enable predictions for any data fields, including calculate
 
 Time-series prediction empowers businesses to make data-driven decisions, optimize operations, and proactively address challenges based on future trends identified in their data.
 
-To access the prediction models tool, click on the icon![image](/images/trendz/models-icon.png)labeled “Prediction Models” located on the left side of the workspace.
+To access the prediction models tool, click on the icon![image](https://img.thingsboard.io/trendz/models-icon.png)labeled “Prediction Models” located on the left side of the workspace.
 
 Within this section, a table lists all created prediction models, along with key details. You can open, modify, or perform other actions on any of these fields. To create a new telemetry forecast, click the “Create model” button.
 
@@ -157,7 +157,7 @@ In the Advanced Settings of the prediction model configuration, you can define l
 *Example:* Suppose you are creating a prediction model to estimate water temperature telemetry values. To ensure the predicted values remain within realistic bounds, such as **0°C to 100°C**, you can configure limits in the Advanced Settings. Enable the **Set Limits** option, then set the **MIN field to 0** and the **MAX field to 100**. 
 This configuration ensures that all predicted telemetry values will be restricted to the range of 0°C to 100°C.
 
-![image](/images/trendz/models-advanced-settings.png)
+![image](https://img.thingsboard.io/trendz/models-advanced-settings.png)
 
 ## Accuracy Tab
 
@@ -173,7 +173,7 @@ To calculate the accuracy of your prediction model, you must specify the followi
 1. Select the device(s) for which the system will evaluate prediction accuracy.
 2. Choose how the system should determine accuracy thresholds: **AUTO** - system automatically analyzes your prediction data and fills the required fields for optimal accuracy calculation. **MANUAL** -  you manually provide the necessary data for the accuracy calculation (below is a detailed explanation of each metric and its parameters.).
 
-![image](/images/trendz/accuracy-config.png)
+![image](https://img.thingsboard.io/trendz/accuracy-config.png)
 
 By carefully configuring these settings, you can tailor Trendz prediction models to generate precise and actionable forecasts based on your specific requirements. 
 Once you’ve filled in the required inputs, click on the **Get Accuracy** button. The system will calculate the accuracy for your prediction model based on the selected parameters. 
@@ -203,7 +203,7 @@ Otherwise, the result is “false.” Accuracy is calculated per time unit for e
 * **Acceptable Value Error:** The maximum allowable difference in values.
 * **Acceptable Time Error:** The maximum allowable time difference.
 
-![image](/images/trendz/accuracy-confidence-level-param.png)
+![image](https://img.thingsboard.io/trendz/accuracy-confidence-level-param.png)
 
 *Let's consider the example* – you have a device, a Fuel Gauge, that measures telemetry such as the Remaining Fuel Level in liters (L). You want to predict the remaining fuel level in a tank for the next 14 days. From business prospective it is totally fine if the actual value is within ±20 L from the predicted value.
 Also, it is fine if forecasted value is delayed in time for 2 hours. You can specify the Acceptable Value Error as 20 (L) and the Acceptable Time Error as 2 (hours) according to the mentioned features of your case.
@@ -223,7 +223,7 @@ The min, max, and accuracy (average) values displayed on the chart are aggregate
 * **MAX:** The maximum acceptable value.
 * **PERCENTILE:** The percentile of best values to consider.
 
-![image](/images/trendz/accuracy-confidence-band-param.png)
+![image](https://img.thingsboard.io/trendz/accuracy-confidence-band-param.png)
 
 *Let’s consider the example* - imagine you have a device called an **Energy Meter** that measures how much energy is used, in units called kilowatt-hours (kWh). Now, we know some basic facts about energy consumption: First, energy consumption can never be less than 0 kWh. It’s impossible to have negative energy usage. So, the **minimum value (MIN) is set to 0**. 
 Second, your system has a maximum limit of 50 kWh. If the consumption goes above this, the system will break. This means the **maximum value (MAX) is set to 50**.

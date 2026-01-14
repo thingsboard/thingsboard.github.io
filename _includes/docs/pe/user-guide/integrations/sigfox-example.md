@@ -30,7 +30,7 @@ We assume you have completed the following guides and reviewed the articles list
 We will operate with device that has name "Thermostat A" which will be
 automatically created in the process of integration work.
 
-![image](/images/user-guide/integrations/sigfox/sigfox-device.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-device.png)
 
 **Note**: a shared attribute of this device has to be created.
 
@@ -42,18 +42,18 @@ In order for integration to work, downlink and uplink converters should be creat
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
 
 - Import following files: [**uplink converter**](/docs/user-guide/resources/sigfox/uplink-sigfox-converter.json),
  [**downlink converter**](/docs/user-guide/resources/sigfox/downlink-sigfox-converter.json).
 
 Uplink converter should look like this:
 
-![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter.png) 
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-uplink-converter.png) 
 
 Downlink converter should look like this:
 
-![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-uplink-converter.png)
 
 ### Creating integration
 
@@ -61,7 +61,7 @@ Integration should look like this:
 
 - Go to **Integrations** -> **Add new Integration**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
 
 - Fill in the fields with the input data shown in the following table: 
 
@@ -103,7 +103,7 @@ Integration should look like this:
    </tbody>
 </table> 
 
-![image](/images/user-guide/integrations/sigfox/sigfox-create-integration.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-create-integration.png)
 
 ## Message flow
 
@@ -117,11 +117,11 @@ The following screenshots show how the above Rule Chains should look like:
 
 - **To SigFox integration**:
 
-![image](/images/user-guide/integrations/sigfox/sigfox-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-rule-chain.png)
 
 - **Root Rule Chain**:
 
-![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
 
 Download and [**import**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-import) the attached json
  [**file**](/docs/user-guide/integrations/tutorials/resources/sigfox/to-sigfox-integration.json) for the
@@ -140,7 +140,7 @@ Configuration:
 
 - Name : **To SigFox integration**
 
-![image](/images/user-guide/integrations/sigfox/add-to-sigfox-integration-chain.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/add-to-sigfox-integration-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -153,7 +153,7 @@ In this rule chain, you will create 2 nodes as it will be explained in the follo
 - Add the **Check existence filter** node and connect it to the **Input** node with a relation type **Success**.
   This rule node checks if incoming updated attribute is "status" or not. 
 
-![image](/images/user-guide/integrations/sigfox/check-status-field.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/check-status-field.png)
 
 - Fill in the fields with the input data shown in the following table: 
 
@@ -180,7 +180,7 @@ In this rule chain, you will create 2 nodes as it will be explained in the follo
 - Add the **Integration downlink** node and connect it to the **Check existence filter** node with a relation type
  **Success**. This rule node pushes message to specified integration. 
  
- ![image](/images/user-guide/integrations/sigfox/push-to-integration.png)
+ ![image](https://img.thingsboard.io/user-guide/integrations/sigfox/push-to-integration.png)
 
 - Fill in the fields with the input data shown in the following table: 
 
@@ -213,11 +213,11 @@ The initial root Rule Chain has been modified by adding the following node:
 
 - Select the Rule Chain field: **To SigFox integration**.
 
-![image](/images/user-guide/integrations/sigfox/add-rule-chain-node.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/add-rule-chain-node.png)
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
-![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
 
 ## Conclusion
 

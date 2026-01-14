@@ -6,7 +6,7 @@ The device should be in devices list. You can check the data by clicking the dev
 
 {% assign checkTelemetryOnDevice = '
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/check-telemetry-on-device.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/check-telemetry-on-device.png,
         title: Open "Devices" page in "Entities" section. The device should be in devices list. You can check the data by clicking the device and navigate to the "Attributes" or "Latest telemetry" tab.
 '
 %}
@@ -25,13 +25,13 @@ To do this, follow these steps:
 
 {% assign editAlias = '
     ===
-        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-1-pe.png,
         title: Open the dashboard and enter edit mode. Click the "Entity aliases" icon, then in the pop-up window click the "Edit alias" icon next to the alias.
     ===
-        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-2-pe.png,
         title: In edit alias window select your device from dropdown list and save entity alias.
     ===
-        image: /images/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/alias/edit-alias-for-vs-121-sensor-3-pe.png,
         title: Apply all changes.
 '
 %}
@@ -44,7 +44,7 @@ Example of the dashboard with data:
 
 {% assign dashboard = '
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/vs121-example-of-the-dashboard-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/vs121-example-of-the-dashboard-pe.png,
         title: Example of the dashboard with data.
 '
 %}

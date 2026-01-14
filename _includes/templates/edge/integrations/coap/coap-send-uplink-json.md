@@ -6,7 +6,7 @@ echo -e -n '{"deviceName": "SN-001", "deviceType": "default", "temperature": 25.
 {: .copy-code}
 * Replace **`$YOUR_COAP_ENDPOINT_URL`** with the corresponding value.
 
-![image](/images/pe/edge/integrations/coap/terminal-coap-json-payload-1-edge.webp)
+![image](https://img.thingsboard.io/pe/edge/integrations/coap/terminal-coap-json-payload-1-edge.webp)
 
 To view the uplink message:
 * Go to the **Integrations center > Integrations** section and click on the integration

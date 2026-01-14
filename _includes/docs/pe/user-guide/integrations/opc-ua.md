@@ -10,7 +10,7 @@
 
 OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
-<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/opc-ua-integration.svg"></object>
 
 ## OPC-UA integration tutorial
 
@@ -112,20 +112,20 @@ Destination node is detected using the *deviceName* field of the incoming messag
  - Open the "**Integrations center**" section -> "**Integrations**" page and click `+` icon to create new integration.
  - From the list of available types, select "**OPC-UA**" as the integration type.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-1.png)
 
  - The next steps is to add the recently created uplink and downlink converters.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-2.png)
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-3.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-3.png)
 
 - Specify host: **hostname/IP** (see [Prerequisites](#prerequisites));
 - Specify port: **port** (see [Prerequisites](#prerequisites));
 - Security: **None** (can be *Basic128Rsa15* / *Basic256* / *Basic256Sha256* / *None*);
 - Identity: **Anonymous** (can be *Anonymous* / *Username*).
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-4.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-4.png)
 
 - Mapping:
      - MappingType: **Fully Qualified Name** (can be *Fully Qualified Name* / *ID*);
@@ -142,18 +142,18 @@ Destination node is detected using the *deviceName* field of the incoming messag
 
 - Click "**Add**".
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-5.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-5.png)
 
 The OPC-UA integration has been added. 
 
 The [OPC-UA server](#prerequisites) simulates sending telemetry from devices to ThingsBoard. If you have done everything correctly, 10 new devices should appear on the "**Devices**" page as a result of the integration. Please make sure of this.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-devices-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-devices-1.png)
 
 Open the details of any airconditioner and navigate to the "**Latest telemetry**" tab.
 You will see that telemetry values are frequently updated.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-devices-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-devices-2.png)
 
 ### Airconditioners Rule Chain
 
@@ -185,21 +185,21 @@ To visualize the Airconditioners data and test RPC commands, we will create the 
 - To import this JSON file, click the `+` icon in the upper right corner of the screen and select "**Import dashboard**";
 - Drag and drop downloaded JSON file to the **Import dashboard** window. Click "Import".
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-1.png)
 
  - Open the **Airconditioners** dashboard;
  - You will see the telemetry till the last minute from all the 10 airconditioners;
  - Open any Airconditioner details page by clicking on the details button in the Entities widget;
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-2.png)
 
  - You will find the Airconditioner status light green. Try to switch off the airconditioner by clicking on the **On/Off Round switch**;
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-4.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-4.png)
 
  - The Airconditioner status light will turn into grey, the temperature will start rising, the humidity will start increasing and the power consumption will stop.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-5.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-5.png)
 
 ## Video tutorial
 

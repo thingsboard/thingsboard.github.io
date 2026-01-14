@@ -3,7 +3,7 @@ liveDemo:
     title: North America
     description: ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
     link: https://thingsboard.cloud/signup
-    icon: /images/thingsboard_pe_small_icon.svg
+    icon: https://img.thingsboard.io/thingsboard_pe_small_icon.svg
     alt: Thingsboard PE logo
     imageTitleAttribute: ThingsBoard Professional Edition
     imageWidth: 39
@@ -12,7 +12,7 @@ liveDemo:
     title: Europe
     description: ThingsBoard Cloud is a fully managed, scalable and fault-tolerant platform for your IoT applications.
     link: https://eu.thingsboard.cloud/signup
-    icon: /images/thingsboard_pe_small_icon.svg
+    icon: https://img.thingsboard.io/thingsboard_pe_small_icon.svg
     alt: Thingsboard PE logo
     imageTitleAttribute: ThingsBoard Professional Edition
     imageWidth: 39
@@ -22,7 +22,7 @@ onPremise:
     title: Docker (Linux or Mac OS)
     description: This guide will help you to install and start ThingsBoard Professional Edition using Docker and Docker Compose on Linux or Mac OS
     link: /docs/user-guide/install/pe/docker/
-    icon: /images/install/platform/docker-linux-macos.svg
+    icon: https://img.thingsboard.io/install/platform/docker-linux-macos.svg
     alt: Docker logo with Linux and macOS icons
     imageTitleAttribute: Install ThingsBoard Professional Edition using Docker on Linux or macOS
     imageWidth: 170
@@ -31,7 +31,7 @@ onPremise:
     title: Docker (Windows)
     description: This guide will help you to install and start ThingsBoard Professional Edition using Docker on Windows.
     link: /docs/user-guide/install/pe/docker-windows/
-    icon: /images/install/platform/docker-windows.svg
+    icon: https://img.thingsboard.io/install/platform/docker-windows.svg
     alt: Docker logo with Windows icon
     imageTitleAttribute: Install ThingsBoard Professional Edition using Docker on Windows
     imageWidth: 96
@@ -40,7 +40,7 @@ onPremise:
     title: Ubuntu Server
     description: Install ThingsBoard Professional Edition on Ubuntu 20.04 / 22.04 / 24.04 with PostgreSQL or Cassandra, depending on your setup.
     link: /docs/user-guide/install/pe/ubuntu/
-    icon: /images/install/platform/ubuntu.svg
+    icon: https://img.thingsboard.io/install/platform/ubuntu.svg
     alt: Ubuntu logo
     imageTitleAttribute: Install ThingsBoard Professional Edition on Ubuntu Server
     imageWidth: 36
@@ -49,7 +49,7 @@ onPremise:
     title: CentOS/RHEL Server
     description: Set up ThingsBoard Professional Edition on RHEL, CentOS, Alma, Rocky, or Oracle Linux with required system resources.
     link: /docs/user-guide/install/pe/rhel/
-    icon: /images/install/platform/centos-redhat.svg
+    icon: https://img.thingsboard.io/install/platform/centos-redhat.svg
     alt: CentOS and Red Hat logos
     imageTitleAttribute: Install ThingsBoard Professional Edition on CentOS, RHEL, Alma, Rocky, or Oracle Linux
     imageWidth: 94
@@ -58,7 +58,7 @@ onPremise:
     title: Windows
     description: Install ThingsBoard Professional Edition on Windows 10/11 with at least PostgreSQL or Cassandra, depending on usage.
     link: /docs/user-guide/install/pe/windows/
-    icon: /images/install/platform/windows.svg
+    icon: https://img.thingsboard.io/install/platform/windows.svg
     alt: Windows logo
     imageTitleAttribute: Install ThingsBoard Professional Edition on Windows 10 or 11
     imageWidth: 35
@@ -67,7 +67,7 @@ onPremise:
     title: Cluster setup
     description: Set up ThingsBoard Professional Edition in cluster mode using Minikube, OpenShift, Docker Compose with Kubernetes.
     link: /docs/user-guide/install/pe/cluster-setup/
-    icon: /images/install/platform/cluster-pe.svg
+    icon: https://img.thingsboard.io/install/platform/cluster-pe.svg
     alt: Cluster and Kubernetes icons
     imageTitleAttribute: Set up ThingsBoard Professional Edition cluster with Kubernetes or Minikube
     imageWidth: 88
@@ -77,7 +77,7 @@ cloud:
     title: AWS
     description: This guide will help you to setup ThingsBoard Professional Edition in AWS EC2 instance & AWS EKS platform.
     link: /docs/user-guide/install/pe/aws/
-    icon: /images/install/cloud/aws.svg
+    icon: https://img.thingsboard.io/install/cloud/aws.svg
     alt: AWS logo
     imageTitleAttribute: Set up ThingsBoard Professional Edition using AWS EC2 or EKS
     imageWidth: 58
@@ -86,7 +86,7 @@ cloud:
     title: Azure
     description: Here you can find scripts for different deployment scenarios using Azure AKS platform.
     link: /docs/user-guide/install/pe/azure/
-    icon: /images/install/cloud/azure.svg
+    icon: https://img.thingsboard.io/install/cloud/azure.svg
     alt: Microsoft Azure logo
     imageTitleAttribute: Deploy ThingsBoard Professional Edition on Microsoft Azure
     imageWidth: 123
@@ -95,7 +95,7 @@ cloud:
     title: DigitalOcean
     description: This guide describes how to install ThingsBoard Professional Edition on DigitalOcean.
     link: /docs/user-guide/install/pe/digital-ocean/
-    icon: /images/install/cloud/digitalocean.svg
+    icon: https://img.thingsboard.io/install/cloud/digitalocean.svg
     alt: DigitalOcean logo
     imageTitleAttribute: Install ThingsBoard Professional Edition on DigitalOcean
     imageWidth: 36
@@ -104,7 +104,7 @@ cloud:
     title: Google Cloud Platform
     description: This guide will help you to setup ThingsBoard Professional Edition in GCP VM instance & scenarios using GCP infrastructure.
     link: /docs/user-guide/install/pe/gcp/
-    icon: /images/install/cloud/gcp.svg
+    icon: https://img.thingsboard.io/install/cloud/gcp.svg
     alt: Google Cloud Platform logo
     imageTitleAttribute: Deploy ThingsBoard Professional Edition on Google Cloud infrastructure
     imageWidth: 40
@@ -113,7 +113,7 @@ cloud:
     title: IBM Cloud
     description: Installing ThingsBoard Professional Edition from IBM Cloud Marketplace.
     link: /docs/user-guide/install/pe/ibm-cloud/
-    icon: /images/install/cloud/ibm-cloud.svg
+    icon: https://img.thingsboard.io/install/cloud/ibm-cloud.svg
     alt: IBM Cloud logo
     imageTitleAttribute: IBM Cloud support coming soon
     imageWidth: 40
@@ -123,7 +123,7 @@ cloud:
     title: Alibaba Cloud
     description: Installing ThingsBoard Professional Edition on Alibaba Cloud.
     link: /docs/user-guide/install/pe/alibaba-cloud/
-    icon: /images/install/cloud/alibaba.svg
+    icon: https://img.thingsboard.io/install/cloud/alibaba.svg
     alt: Alibaba Cloud logo
     imageTitleAttribute: Alibaba Cloud support coming soon
     imageWidth: 58

@@ -1,0 +1,34 @@
+{
+  "type": "SCRIPT",
+  "name": "F to C",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767627797392
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SCRIPT",
+    "arguments": {
+      "temperatureF": {
+        "refEntityKey": {
+          "key": "temperatureF",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "expression": "var temperatureC = (temperatureF - 32) / 1.8;\nreturn {\n    \"ts\": ctx.latestTs, \n    \"values\": {\n        \"temperatureC\": toFixed(temperatureC, 2)\n    }\n}",
+    "output": {
+      "type": "TIME_SERIES",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}

@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The NVIDIA Jetson Nano Developer Kit is a small, powerful computer that lets you run multiple neural networks in parallel for applications like image classification, object detection, and speech processing.
  It's ideal for makers and developers who want to create intelligent devices at the edge.
 
@@ -48,3 +47,4 @@ The NVIDIA Jetson Nano Developer Kit is a small, powerful computer that lets you
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

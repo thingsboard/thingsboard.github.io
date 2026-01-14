@@ -7,54 +7,54 @@ description: How to track real-time OEE scores for manufacturing plants using da
 
 oee-score-dashboard:
   0:
-    image: /images/trendz/guide/oee_score/oee_score_industrial_plant.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/oee_score_industrial_plant.png
     title: 'Dashboard with OEE score tracking on factory'
 
 oee-score-availability-calculation:
   0:
-    image: /images/trendz/guide/oee_score/OEE_create_view_St1_1.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_create_view_St1_1.png
     title: 'Create line chart in Trendz'
   1:
-    image: /images/trendz/guide/oee_score/OEE_add_fields_St1_2.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_add_fields_St1_2.png
     title: 'Configure availability chart to track downtime events'
   2:
-    image: /images/trendz/guide/oee_score/OEE_calculated_St1_3.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_calculated_St1_3.png
     title: 'Use States to track how much time assembly line was operational'
   3:
-    image: /images/trendz/guide/oee_score/OEE_final_view_St1_4.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_final_view_St1_4.png
     title: 'Dynamic of amount of time machines were operational'
 
 oee-score-downtime-reasons: 
   0:
-    image: /images/trendz/guide/oee_score/OEE_add_fields_St2_1.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_add_fields_St2_1.png
     title: 'Create bar chart with top 5 downtime reasons for each assembly line'
   1:
-    image: /images/trendz/guide/oee_score/OEE_settings_St2_2.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_settings_St2_2.png
     title: 'Set calculated field to compute top 5 downtime reasons'
   2:
-    image: /images/trendz/guide/oee_score/OEE_final_view_St2_3.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_final_view_St2_3.png
     title: 'Top 5 downtime reasons for each assembly line'
 
 oee-score-production-speed-vs-planned:
   0:
-    image: /images/trendz/guide/oee_score/OEE_add_fields_St3_1.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_add_fields_St3_1.png
     title: 'Create line chart with production speed comparison to planned production'
   1:
-    image: /images/trendz/guide/oee_score/OEE_batch_calculation_St3_2.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_batch_calculation_St3_2.png
     title: 'Set calculated field to compute performance metric'
   2:
-    image: /images/trendz/guide/oee_score/OEE_final_view_St3_3.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_final_view_St3_3.png
     title: 'Hourly production speed of the plant'
     
 oee-score-quality-score:
   0:
-    image: /images/trendz/guide/oee_score/OEE_add_fields_St4_1.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_add_fields_St4_1.png
     title: 'Create line chart that shows percent of damaged parts'
   1:
-    image: /images/trendz/guide/oee_score/OEE_calculated_St4_2.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_calculated_St4_2.png
     title: 'Set calculated field to compute quality score based on amount of damaged parts'
   2:
-    image: /images/trendz/guide/oee_score/OEE_final_view_St4_3.png
+    image: https://img.thingsboard.io/trendz/guide/oee_score/OEE_final_view_St4_3.png
     title: 'Track amount of rejected details and overall quality score of the plant'
 
 ---

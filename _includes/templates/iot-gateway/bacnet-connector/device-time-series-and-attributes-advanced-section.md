@@ -37,9 +37,9 @@ Example:
 
 {% assign deviceAttrTimeseriesAdvanced = '
     ===
-        image: /images/gateway/bacnet-connector/bacnet-subsection-time-series-advanced-1-ce.png,
+        image: https://img.thingsboard.io/gateway/bacnet-connector/bacnet-subsection-time-series-advanced-1-ce.png,
     ===
-        image: /images/gateway/bacnet-connector/bacnet-subsection-attributes-advanced-1-ce.png
+        image: https://img.thingsboard.io/gateway/bacnet-connector/bacnet-subsection-attributes-advanced-1-ce.png
     '
 %}
 

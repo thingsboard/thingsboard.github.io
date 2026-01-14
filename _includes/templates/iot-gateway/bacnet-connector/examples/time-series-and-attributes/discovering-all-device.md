@@ -93,4 +93,4 @@ messages from all devices. After receiving the IAm message, the connector will a
 device found with the specified templates and start reading data from the objects. The screenshot below shows what the 
 device list looks like after automatic discovery:
 
-![image](/images/gateway/bacnet-connector/examples/discovered-devices-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/discovered-devices-overview.png)

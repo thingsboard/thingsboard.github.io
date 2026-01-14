@@ -14,8 +14,8 @@ Card widget allows visualizing the single important metrics and monitors its dyn
 
 ## Video Tutorial
 
-&nbsp;
-
+&nbsp; 
+  
 <div id="video">  
     <div id="video_wrapper">
         <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/ZXORc5nipgg" frameborder="0" allowfullscreen></iframe>
@@ -30,8 +30,9 @@ For creating simple Card view:
 * drag and drop the field that you would like to monitor in the **Main Value** column;
 * select required aggregation type
 
-![image](/images/trendz/card-simple.png)
+![image](https://img.thingsboard.io/trendz/card-simple.png)
 
+![image](https://img.thingsboard.io/trendz/card-simple-view.png)
 
 ## Compare with other value
 
@@ -40,26 +41,28 @@ And we ant compare it with how many products already produced.
 
 * Add the value for comparison in the **Compared value** column;
 
-![image](/images/trendz/card-compare.png)
+![image](https://img.thingsboard.io/trendz/card-compare.png)
 
+![image](https://img.thingsboard.io/trendz/card-compare-view.png)
 
 The compared value will present the difference between these two figures in percentage.
 
 ## Compare with previous interval
 
-We can also compare current value with the previous interval. If we want show how much coffee beans consumed in
+We can also compare current value with the previous interval. If we want show how much coffee beans consumed in 
 this month compared to the previous month:
 
 * For the field in the **Compared value** section enable **Local Date**
 * Select **Prev Month** time range
 * For the main view time range set **This Month**
 
-![image](/images/trendz/card-local-config.png)
+![image](https://img.thingsboard.io/trendz/card-local-config.png)
 
+![image](https://img.thingsboard.io/trendz/card-local.png)
 
 The compared value will present the difference between these two figures in percentage.
 
 ## Card title
 
-While creating the card you can give it a meaningful name for quick navigation.
+While creating the card you can give it a meaningful name for quick navigation. 
 To do that, open the setting section in the right bottom corner and add Name in the Title section.

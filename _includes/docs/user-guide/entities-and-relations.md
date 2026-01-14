@@ -65,7 +65,7 @@ Let’s also assume we want to support multiple fields with hundreds of sensors.
 
 The following diagram explains how those entities are configured and stored in ThingsBoard:
 
-![image](/images/user-guide/entities-and-relations.svg)
+![image](https://img.thingsboard.io/user-guide/entities-and-relations.svg)
 
 
 See ["add and delete assets"](/docs/pe/user-guide/ui/assets/#add-and-delete-assets) and ["manage asset relations"](/docs/pe/user-guide/ui/assets/#manage-asset-relations)

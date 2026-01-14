@@ -16,7 +16,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [WS101 Smart Button]({{deviceVendorLink}}){: target="_blank"} is a LoRaWAN®-based smart button for wireless controls, triggers and alarms.  
 WS101 supports multiple press actions, all of which can be defined by the user to control devices or trigger scenes.
 WS101 can be widely used in smart homes, smart offices, schools, warehouses, etc.  
@@ -31,6 +30,7 @@ LoRaWAN® enables encrypted radio transmissions over long distances while consum
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -64,3 +64,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

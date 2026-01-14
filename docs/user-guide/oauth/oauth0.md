@@ -28,20 +28,20 @@ To apply the configurations properly, we need to obtain the **clientName**,  **c
 For these reasons we first go for the [OAuth0 Management Console](https://auth0.auth0.com/).  
 First we need to create the application. 
 
-![image](/images/user-guide/oauth-2-support/oauth0/Application-to-create.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/oauth0/Application-to-create.png)
 
 Then we need to specify the application name and application type.  
 The application name equals the **clientName**. The Application type is a **Regular Web Application**. 
 
-![image](/images/user-guide/oauth-2-support/oauth0/Application-creation.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/oauth0/Application-creation.png)
 
 Afters, you need to specify the technology being used. Please, specify the **Java Spring Security**.  
 
-![image](/images/user-guide/oauth-2-support/oauth0/Application-creation-specify-type.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/oauth0/Application-creation-specify-type.png)
 
 Then we are forwarded to the application information page. There we can found the **clientName**, **clientId** and the **clientSecret**. 
 
-![image](/images/user-guide/oauth-2-support/oauth0/Application-Details-1.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/oauth0/Application-Details-1.png)
 
 For the allowed callback URLs we need to specify the redirect URI for the instance of ours.   
 The **redirect URI** needs to be specified in the next format:  
@@ -53,7 +53,7 @@ The **redirect URI** needs to be specified in the next format:
 Where under the domain, please, specify the current **domain** of yours and for the **port** please specify the port to have an HTTP access to the ThingsBoard instance of yours.   
 For the example reasons, the domain of my is the localhost, and the port is being the default ThingsBoard installation port 80.  
 
-![image](/images/user-guide/oauth-2-support/oauth0/Application-Details-2.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/oauth0/Application-Details-2.png)
 
 So that we have received three values which are required to be inserted for the **thingsboard.yml** of ours.  
 
@@ -77,7 +77,7 @@ SECURITY_OAUTH2_DEFAULT_USER_INFO_URI
 
 Up to date list of those can be found on the bottom of application page.
 
-![image](/images/user-guide/oauth-2-support/oauth0/Application-Details-3.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/oauth0/Application-Details-3.png)
 
 For the example of ours, we have set the Auth0 application domain to the tbsupport.eu.auth0.com, so that the next values are being used:
 

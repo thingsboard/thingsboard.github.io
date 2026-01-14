@@ -12,4 +12,4 @@ The table below describes the parameters required to configure UDP connection fo
 | pollPeriod            | **5000**                 | Period in milliseconds for checking the attributes and the telemetry                                            |
 | ---                   
 
-![image](/images/gateway/modbus-connector/udp-server-configuration-section-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/udp-server-configuration-section-advanced-1-ce.png)

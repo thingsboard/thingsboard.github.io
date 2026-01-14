@@ -11,4 +11,4 @@ You can configure additional settings like: TLS connection, byte order, word ord
 | Model name      |                 |
 | ---             
 
-![image](/images/gateway/modbus-connector/advanced-connection-settings-slave-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/advanced-connection-settings-slave-advanced-1-ce.png)

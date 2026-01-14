@@ -6,19 +6,19 @@ To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
         title: Login to the cloud and open your console.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
         title: Select the "**Go to gateways**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
         title: Press the "**Register gateway**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
         title: Put information about the gateway (gateway EUI) and click the "Register gateway" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
         title: The gateway is added. Copy and save "**Gateway Server address**", we will need it later. 
 '%}
 
@@ -38,16 +38,16 @@ Now we need to configure integration on The Things Industries. to do this please
 
 {% assign addIntegrationSteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-1.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-1.png,
         title: Open your console and click on the "<b>Create an application</b>".
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-2.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-2.png,
         title: Fill in the required fields about the application. Then click "**Create application**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-3.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-3.png,
         title: Go to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-4.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-4.png,
         title: Copy and save the <b>password</b> (API key) (after leaving the page it won&#39;t be displayed).
 '%}
 
@@ -148,16 +148,16 @@ return result;
 
 {% assign createTTIIntegration = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/1-create-tti-integration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/1-create-tti-integration.png,
         title: Click "**plus**" icon in the upper right corner to add new integration. Select type "**The Things Industries Integration**". Then, click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/2-create-tti-integration-uplink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/2-create-tti-integration-uplink.png,
         title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/3-create-tti-integration-downlink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/3-create-tti-integration-downlink.png,
         title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/4-create-tti-integration-configuration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/4-create-tti-integration-configuration.png,
         title: Next, fill in the fields with your parameters. After, press "**Add**" button.  
 '
 %}
@@ -184,4 +184,4 @@ To check integration connection you can do the following:
 
 If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
 
-![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)
+![Check integration connection](https://img.thingsboard.io/devices-library/basic/integrations/check-integration-started.png)

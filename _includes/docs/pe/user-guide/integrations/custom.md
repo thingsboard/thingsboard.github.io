@@ -33,7 +33,7 @@ Before setting up a custom integration, you need to create an Uplink and a Downl
 
 Let's create uplink converter.
 
-![image](/images/user-guide/integrations/remote/custom-converter.gif)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/custom-converter.gif)
 
 **NOTE**: Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. 
 It is highly recommended to turn the Debug mode off when done debugging. 
@@ -90,7 +90,7 @@ In case you have another use case, please refer to the following [instructions](
  
 Let's create custom integration. 
 
-![image](/images/user-guide/integrations/remote/custom-integration.gif)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/custom-integration.gif)
 
 Notice that **Execute remotely** is enabled automatically when we choose **Custom** type and we enable **Debug mode**.
 

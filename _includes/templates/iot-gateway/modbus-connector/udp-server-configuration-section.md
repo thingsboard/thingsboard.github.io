@@ -16,4 +16,4 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/modbus-connector/udp-server-configuration-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/udp-server-configuration-section-1-ce.png)

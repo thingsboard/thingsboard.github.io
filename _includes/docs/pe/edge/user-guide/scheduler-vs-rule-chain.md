@@ -27,7 +27,7 @@ Read more about [Rule Engine](/docs/pe/user-guide/rule-engine-2-0/overview/){: t
 
 ### The Comparison Matrix 
 
-![comparison-matrix](/images/pe/edge/user-guide/scheduler/comparison-matrix.webp){: style="display: block; margin: auto; max-width: 700px"}
+![comparison-matrix](https://img.thingsboard.io/pe/edge/user-guide/scheduler/comparison-matrix.webp){: style="display: block; margin: auto; max-width: 700px"}
 
 ### When to Use Each One?
 
@@ -44,7 +44,7 @@ Read more about [Rule Engine](/docs/pe/user-guide/rule-engine-2-0/overview/){: t
 
 To create enhanced automation logic on your Edge, use both **Scheduler events** and **Rule Chain templates**. 
 
-![both-features-logic](/images/pe/edge/user-guide/scheduler/both-feature-logic.webp){: style="display: block; margin: auto; max-width: 750px"}
+![both-features-logic](https://img.thingsboard.io/pe/edge/user-guide/scheduler/both-feature-logic.webp){: style="display: block; margin: auto; max-width: 750px"}
 
 #### Use Case
 

@@ -47,7 +47,7 @@ Response:
 {"result":{"value":false}}
 ```
 
-![image](/images/gateway/modbus-connector/examples/reserved-rpc-result-1.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/reserved-rpc-result-1.png)
 
 So, the `get` method returns the current value of the relay register, and we can see that the relay is off.
 
@@ -70,7 +70,7 @@ Response:
 
 And as you can see, from the screenshot below, the relay telemetry value has changed to `1`:
 
-![image](/images/gateway/modbus-connector/examples/reserved-rpc-result-2.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/reserved-rpc-result-2.png)
 
 Also, let’s check the value of the relay telemetry again: it is `true` 
 now because, in the Modbus connector, booleans come from integers — `0` = `false`, `1` = `true` 
@@ -86,7 +86,7 @@ Response:
 {"result":{"value":true}}
 ```
 
-![image](/images/gateway/modbus-connector/examples/reserved-rpc-result-3.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/reserved-rpc-result-3.png)
 
 Full configuration for Modbus connector for the examples above will look like this:
 

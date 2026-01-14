@@ -93,13 +93,33 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 10. Using
+## Step 10. Configure Trendz (Optional)
+
+### 10.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### 10.2. Create a Trendz database in the existing Google Cloud SQL (PostgreSQL) Instance
+
+{% include templates/install/trendz/gcp/k8s-trendz-db-creating.md %}
+
+### 10.3. Trendz starting
+
+{% include templates/install/trendz/k8s-trendz-starting.md %}
+
+## Step 11. Using
 
 {% include templates/install/gcp/using.md %}
 
 ## Upgrading
 
+### Upgrading to new ThingsBoard version
+
 {% include templates/install/gcp/upgrading-msa.md %}
+
+### Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 ## Next steps
 

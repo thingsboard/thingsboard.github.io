@@ -40,7 +40,7 @@ The gateway will:
 4. Subscribe to the topic `data/response` to wait for a response
 5. Return the response to ThingsBoard when received
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-1.png)
 
 ### Example 2: Get current light level with no response (One Way RPC)
 
@@ -57,7 +57,7 @@ The gateway will:
 3. Send a message to the topic `data/get_light_level` with the specified parameters
 4. Not wait for any response since no response topic was specified
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-2.png)
 
 ### Example 3: SET new light level (One Way RPC)
 
@@ -74,7 +74,7 @@ The gateway will:
 3. Send a message to the topic `data/set_light_level` with the value "90"
 4. Not wait for any response since no response topic was specified
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-3.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-3.png)
 
 ### Example 4: Check updated light level (Two Way RPC with response)
 
@@ -87,7 +87,7 @@ get requestTopicExpression=data/get_light_level;responseTopicExpression=data/res
 
 The gateway will process this request as in Example 1, and you should see the updated light level value in the response.
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-4.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-reserved-rpc-4.png)
 
 If you are using advanced configuration mode, you can use the following configuration:
 

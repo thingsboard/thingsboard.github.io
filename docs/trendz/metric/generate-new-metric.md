@@ -5,262 +5,262 @@ description: Generate new metrics using Trendz Metric Explorer
 
 metric-definition:
   0:
-    image: /images/trendz/metric/new-metric/metric-definition.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-definition.png
     title: "A Metric Definition is an object that describes a future metric. Basically, it includes <b>Metric Name</b>, <b>Metric Description</b> and <b>How to calculate metrics</b>."
 
 generated-metric:
   0:
-    image: /images/trendz/metric/new-metric/generated-metric-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/generated-metric-1.png
     title: "A Generated Metric is an implemented metric definition. It contains Python code that can be executed."
   1:
-    image: /images/trendz/metric/new-metric/generated-metric-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/generated-metric-2.png
     title: "A generated metric does not represent points in ThingsBoard."
 
 native-calculation:
   0:
-    image: /images/trendz/metric/new-metric/native-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/native-calculation-1.png
     title: "Each metric can be converted into a <b>Native Calculation Field</b>. This field contains the code from the metric that is already integrated into the Trendz ecosystem."
   1:
-    image: /images/trendz/metric/new-metric/native-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/native-calculation-2.png
     title: "At this level, we still do not have points in ThingsBoard."  
   2:
-    image: /images/trendz/metric/new-metric/native-calculation-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/native-calculation-3.png
     title: "But we can use this Calculation Field as a real-time Calculation Field."
 
 native-calculation-with-telemetry:
    0:
-      image: /images/trendz/metric/new-metric/native-calculation-with-telemetry.png
+      image: https://img.thingsboard.io/trendz/metric/new-metric/native-calculation-with-telemetry.png
       title: "Native Calculation field with set up a <b>reprocess</b> and <b>refresh job</b>. It has telemetry in ThingsBoard."
 
 create-new-metric:
   0:
-    image: /images/trendz/metric/new-metric/create-new-metric-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-new-metric-1.png
     title: "Choose the business entity for which the metric will be generated."
   1:
-    image: /images/trendz/metric/new-metric/create-new-metric-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-new-metric-2.png
     title: "Choose the item on which the metric will be tested."
   2:
-    image: /images/trendz/metric/new-metric/create-new-metric-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-new-metric-3.png
     title: "Choose the timerange on which the metric will be tested."
   3:
-    image: /images/trendz/metric/new-metric/create-new-metric-4.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-new-metric-4.png
     title: "Click <b>+ New Metric</b>."
 
 ai-suggestions:
   0:
-    image: /images/trendz/metric/new-metric/ai-suggestions-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-suggestions-1.png
     title: "The AI agent will propose six different metrics based on your telemetries and topology."
   1:
-    image: /images/trendz/metric/new-metric/ai-suggestions-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-suggestions-2.png
     title: "You can check each metric by clicking on it - you will see a metric definition (name, description, and how it’s calculated) and use cases."
   2:
-    image: /images/trendz/metric/new-metric/ai-suggestions-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-suggestions-3.png
     title: "If you don’t like the generated metrics, click <b>Refresh Ideas</b> to generate new AI suggestions."
   3:
-    image: /images/trendz/metric/new-metric/ai-suggestions-4.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-suggestions-4.png
     title: "If you like a metric, click <b>Implement Field</b>."
   4:
-    image: /images/trendz/metric/new-metric/ai-suggestions-5.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-suggestions-5.png
     title: "Then you will be redirected to the <b>Generated Metric Overview</b> tab."
 
 ai-suggestions-without-ai:
   0:
-    image: /images/trendz/metric/new-metric/ai-suggestions-without-ai.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-suggestions-without-ai.png
     title: "AI Suggestions are disabled if the AI Feature <b>Metric Code Assistant</b> is not enabled."
 
 create-manually:
   0:
-    image: /images/trendz/metric/new-metric/create-manually-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-manually-1.png
     title: "To switch to <b>Create Manually</b> option, click <b>Create Manually</b> button."
   1:
-    image: /images/trendz/metric/new-metric/create-manually-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-manually-2.png
     title: "If you want to generate a metric without AI, just submit a <b>Field Name</b>."
   2:
-    image: /images/trendz/metric/new-metric/create-manually-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-manually-3.png
     title: "If you want to generate it with AI, click the checkbox <b>Use AI to create metric</b>, and then fill in these fields <b>Description and Computation Logic</b> and <b>Use Relations</b>."
   3:
-    image: /images/trendz/metric/new-metric/create-manually-4.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-manually-4.png
     title: "When everything is submitted, click <b>Create Custom Field</b>."
   4:
-    image: /images/trendz/metric/new-metric/create-manually-5.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-manually-5.png
     title: "Then you will be redirected to the <b>Generated Metric Overview</b> tab."
 
 create-manually-without-ai:
   0:
-    image: /images/trendz/metric/new-metric/create-manually-without-ai.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-manually-without-ai.png
     title: "Generate with AI is disabled if the AI Feature <b>Metric Code Assistant</b> is not enabled."
 
 code-editor:
   0:
-    image: /images/trendz/metric/new-metric/code-editor-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/code-editor-1.png
     title: "Once the code is modified, you can save it using the <b>Save Changes</b> button."
   1:
-    image: /images/trendz/metric/new-metric/code-editor-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/code-editor-2.png
     title: "Once the code is modified, you can revert changes using the <b>Cancel Changes</b> button."
   2:
-    image: /images/trendz/metric/new-metric/code-editor-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/code-editor-3.png
     title: "If the code has problems, you’ll see a red cross next to the line with the issue."
 
 test-code:
   0:
-    image: /images/trendz/metric/new-metric/test-code-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/test-code-1.png
     title: "To test code, press the <b>Run Test</b> button."
   1:
-    image: /images/trendz/metric/new-metric/test-code-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/test-code-2.png
     title: "Then you’ll be redirected to the graph."
 
 show-logs:
   0:
-    image: /images/trendz/metric/new-metric/show-logs.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/show-logs.png
     title: "To access the log section, click the <b>Logs</b> button in the upper-left corner of the screen."
 
 show-details:
   0:
-    image: /images/trendz/metric/new-metric/show-details.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/show-details.png
     title: "To view the Metric Definition from which this metric was created, click the <b>Metric Details</b> button."
 
 ai-chat-send:
   0:
-    image: /images/trendz/metric/new-metric/ai-chat-send-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-send-1.png
     title: "Type new message in the text field."
   1:
-    image: /images/trendz/metric/new-metric/ai-chat-send-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-send-2.png
     title: "Review the new generated code with applied by AI changes."
 
 ai-chat-review:
   0:
-    image: /images/trendz/metric/new-metric/ai-chat-review-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-review-1.png
     title: "Click on your past messages."
   1:
-    image: /images/trendz/metric/new-metric/ai-chat-review-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-review-2.png
     title: "Review the code that was generated by AI after this message."
       
 ai-chat-edit:
   0:
-    image: /images/trendz/metric/new-metric/ai-chat-edit-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-edit-1.png
     title: "Click the Edit button next to your message."
   1:
-    image: /images/trendz/metric/new-metric/ai-chat-edit-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-edit-2.png
     title: "Modify the text and confirm the update."
   2:
-    image: /images/trendz/metric/new-metric/ai-chat-edit-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-edit-3.png
     title: "Review the new generated code with your applied changes."
       
 ai-chat-clear:
   0:
-    image: /images/trendz/metric/new-metric/ai-chat-clear-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-clear-1.png
     title: "Click the Clear History button."
   1:
-    image: /images/trendz/metric/new-metric/ai-chat-clear-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-clear-2.png
     title: "Confirm the action by clicking Clear."
   2:
-    image: /images/trendz/metric/new-metric/ai-chat-clear-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-chat-clear-3.png
     title: "See empty chat."
 
 ai-assistance-without-ai:
   0:
-    image: /images/trendz/metric/new-metric/ai-assistance-without-ai.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/ai-assistance-without-ai.png
     title: "The AI assistant is disabled if the AI Feature <b>Metric Code Assistant</b> is not enabled."
   
 create-calculation:
   0:
-    image: /images/trendz/metric/new-metric/create-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-calculation-1.png
     title: "Click <b>Save Calculation</b>."
   1:
-    image: /images/trendz/metric/new-metric/create-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-calculation-2.png
     title: "Enter the <b>Calculation Name</b> (shown in Trendz) and <b>Calculation Key</b> (shown in ThingsBoard)."
   2:
-    image: /images/trendz/metric/new-metric/create-calculation-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-calculation-3.png
     title: "Click <b>Save</b>."
   3:
-    image: /images/trendz/metric/new-metric/create-calculation-4.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/create-calculation-4.png
     title: "Now the calculation field is saved in Trendz but still does not have telemetry points in ThingsBoard."
 
 run-reprocess:
   0:
-    image: /images/trendz/metric/new-metric/run-reprocess-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/run-reprocess-1.png
     title: "Click the <b>Run</b> button to start the process."
   1:
-    image: /images/trendz/metric/new-metric/run-reprocess-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/run-reprocess-2.png
     title: "Select the <b>time range</b> for reprocessing (this defines the period of data to be saved to ThingsBoard)."
   2:
-    image: /images/trendz/metric/new-metric/run-reprocess-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/run-reprocess-3.png
     title: "Choose the <b>items</b> to include in the save operation (you can select the current item, all items, or a subset of items)."
   3:
-    image: /images/trendz/metric/new-metric/run-reprocess-4.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/run-reprocess-4.png
     title: "Click <b>Run</b> to begin the task."
   4:
-    image: /images/trendz/metric/new-metric/run-reprocess-5.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/run-reprocess-5.png
     title: "Wait until the reprocess task completes. You can navigate to other metrics while the process is running."
 
 metric-rename:
   0:
-    image: /images/trendz/metric/new-metric/metric-rename-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-rename-1.png
     title: "Click the <b>Change Name</b> button next to the metric name."
   1:
-    image: /images/trendz/metric/new-metric/metric-rename-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-rename-2.png
     title: "Enter a new name and click <b>Save</b>."
   2:
-    image: /images/trendz/metric/new-metric/metric-rename-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-rename-3.png
     title: "The metric name was changed."
 
 metric-delete:
   0:
-    image: /images/trendz/metric/new-metric/metric-delete-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-delete-1.png
     title: "Click the <b>Delete</b> button next to the metric name."
   1:
-    image: /images/trendz/metric/new-metric/metric-delete-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-delete-2.png
     title: "Click <b>Delete</b> again to confirm."
   2:
-    image: /images/trendz/metric/new-metric/metric-delete-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/metric-delete-3.png
     title: "The metric was deleted."
 
 open-calculation:
   0:
-    image: /images/trendz/metric/new-metric/open-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/open-calculation-1.png
     title: "Click <b>Open Calculation</b> button."
   1:
-    image: /images/trendz/metric/new-metric/open-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/open-calculation-2.png
     title: "The calculation field was opened."
 
 associated-calculation:
   0:
-    image: /images/trendz/metric/new-metric/associated-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/associated-calculation-1.png
     title: 'If the code of the associated Calculation Field was modified, you will see the warning <b>"Calculation field is not synced with the metric"</b>.'
   1:
-    image: /images/trendz/metric/new-metric/associated-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/associated-calculation-2.png
     title: 'If the metric itself was changed, you will see the warning <b>"Calculation field is outdated and needs to be updated"</b>.'
 
 update-calculation:
   0:
-    image: /images/trendz/metric/new-metric/update-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/update-calculation-1.png
     title: "Click <b>Save calculation</b> button."
   1:
-    image: /images/trendz/metric/new-metric/update-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/update-calculation-2.png
     title: "Choose <b>Update existing calculation</b> option and click <b>Save</b> button to update the associated Calculation Field."
   2:
-    image: /images/trendz/metric/new-metric/update-calculation-3.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/update-calculation-3.png
     title: "Choose <b>Create new calculation</b> option and click <b>Save</b> button to create new Calculation Field."
 
 tabs-create-calculation:
   0:
-    image: /images/trendz/metric/new-metric/tabs-create-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/tabs-create-calculation-1.png
     title: "If a Native Calculation isn't created for the chosen metric, you will be prompted to create a Calculation Field from it."  
   1:
-    image: /images/trendz/metric/new-metric/tabs-create-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/tabs-create-calculation-2.png
     title: "If a Native Calculation isn't created for the chosen metric, you will be prompted to create a Calculation Field from it."  
 
 tabs-reprocess-calculation:
   0:
-    image: /images/trendz/metric/new-metric/tabs-reprocess-calculation-1.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/tabs-reprocess-calculation-1.png
     title: "If a Native Calculation was created from the chosen metric but has no points in the selected time range, you will be prompted to run a reprocess job to save data points to ThingsBoard."
   1:
-    image: /images/trendz/metric/new-metric/tabs-reprocess-calculation-2.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/tabs-reprocess-calculation-2.png
     title: "If a Native Calculation was created from the chosen metric but has no points in the selected time range, you will be prompted to run a reprocess job to save data points to ThingsBoard."
 
 tabs-with-data:
   0:
-    image: /images/trendz/metric/new-metric/tabs-with-data.png
+    image: https://img.thingsboard.io/trendz/metric/new-metric/tabs-with-data.png
     title: "Once telemetry is saved to ThingsBoard, you can check the generated data on each tab."
 
 ---

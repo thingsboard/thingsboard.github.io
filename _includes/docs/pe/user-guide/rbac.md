@@ -14,7 +14,7 @@ Similarly, you can restrict access to sensitive information, increasing business
 
 ### ThingsBoard Community Edition
 
-![image](/images/user-guide/security/rbac/TB_CE.png)
+![image](https://img.thingsboard.io/user-guide/security/rbac/TB_CE.png)
 
 ThingsBoard Community Edition supports a straight-forward security model with three main roles: *System administrator*, *Tenant administrator*, and *Customer user*. 
 A system administrator is able to manage tenants, while a tenant administrator manages devices, dashboards, customers, and other entities that belong to a particular tenant.
@@ -23,7 +23,7 @@ ThingsBoard Community Edition functionality is sufficient for a lot of simple us
 
 ### ThingsBoard Professional Edition
 
-![image](/images/user-guide/security/rbac/TB_PE.png)
+![image](https://img.thingsboard.io/user-guide/security/rbac/TB_PE.png)
 
 ThingsBoard Professional Edition brings much more flexibility in terms of user, customer, and role management. 
 It is designed to cover use cases for businesses and enterprises with multiple user groups that have different permissions but may interact with the same devices and assets. 
@@ -116,7 +116,7 @@ A role maps each <b>resource type</b> to a list of <b>allowed operations</b>. Yo
 
 Let&#39;s use the diagram below to see how roles work.
 
-![image](/images/user-guide/security/rbac/roles.png)
+![image](https://img.thingsboard.io/user-guide/security/rbac/roles.png)
 
 - <b>User group 1</b> with the <b>Read device only</b> role has access <b>only to devices</b>. They can <b>view</b> devices but <b>cannot delete, edit, or add</b> devices. They do not have access to any other object types.
 - <b>User group 2</b> has two roles: <b>Read device only</b> and <b>Dashboards & widgets administrator</b>.
@@ -136,7 +136,7 @@ Open the **Roles** page of the **Security** section.
   - **Group** — a permission set that you link to a **specific entity group** for a **specific user group**.
 - Select the **permissions** (resource + allowed operations), then click "**Save**".
 
-![image](/images/user-guide/security/rbac/add-generic-role.png)
+![image](https://img.thingsboard.io/user-guide/security/rbac/add-generic-role.png)
 
 Now let&#39;s look at each type of role separately.
 
@@ -154,7 +154,7 @@ Let&#39;s look at an example to see how the generic role works depending on wher
 
 <br>
 
-![image](/images/user-guide/security/rbac/generic-role.svg)
+![image](https://img.thingsboard.io/user-guide/security/rbac/generic-role.svg)
 
 <br><b><font size="3">We have:</font></b>
 
@@ -274,7 +274,7 @@ Let&#39;s consider an example to better understand how a group role works.
 
 <br>
 
-![image](/images/user-guide/security/rbac/group-role.svg)
+![image](https://img.thingsboard.io/user-guide/security/rbac/group-role.svg)
 
 <br><b><font size="3">We have:</font></b>
 
@@ -371,7 +371,7 @@ Let&#39;s start by creating a "Supervisor Dashboards" group:
 
 {% include images-gallery.html imageCollection="supervisors-add-dashboard-group" %}
 
-[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-dashboards-group.gif">)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-dashboards-group.gif">)
 
 Next we should create two roles to implement this use case:
 
@@ -385,7 +385,7 @@ Next we should create two roles to implement this use case:
 
 {% include images-gallery.html imageCollection="supervisors-create-generic-role" %}
 
-[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-role1.gif"> )
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role1.gif"> )
 
  * "Entity Group Administrator" - the **group role** that allows all operations for the group.
 1. Again, click the "plus" icon in the upper right corner of the "Roles" page screen;
@@ -396,7 +396,7 @@ Next we should create two roles to implement this use case:
 
 {% include images-gallery.html imageCollection="supervisors-create-group-role" %}
 
-[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-role2.gif">)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role2.gif">)
 
 Now let's assign those roles to the "Supervisors" group.
 1. Navigate to the "Users" page -> "Groups" tab and click on the "+" sign (Add entity group) at the top right of the screen;
@@ -408,7 +408,7 @@ Now let's assign those roles to the "Supervisors" group.
 
 {% include images-gallery.html imageCollection="supervisors-assign-roles-to-supervisors-group" %}
 
-[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-user-group.gif">)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-user-group.gif">)
 
 **Facility Managers**
 
@@ -424,7 +424,7 @@ Now, as Facility Manager, we can log in, design dashboards, provision devices, a
 
 {% include images-gallery.html imageCollection="supervisors-add-new-user" %}
 
-[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-building-a.gif">  )
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-building-a.gif">  )
 
 **End Users**
 
@@ -439,7 +439,7 @@ Let's log in as customer user Jane Smith (created in a previous guide), Building
 
 {% include images-gallery.html imageCollection="supervisors-end-users" %}
 
-[//]: # (![image]&#40;/images/user-guide/security/smart-buildings-building-a-dashboards.png&#41;)
+[//]: # (![image]&#40;https://img.thingsboard.io/user-guide/security/smart-buildings-building-a-dashboards.png&#41;)
 
 Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in.
 So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.
@@ -455,7 +455,7 @@ Bob is not allowed to perform any server-side API calls, only browsing the data.
 
 {% include images-gallery.html imageCollection="supervisors-create-read-only-user" %}
 
-[//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-read-only-user.gif">)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-read-only-user.gif">)
 
 ## Video tutorial
 

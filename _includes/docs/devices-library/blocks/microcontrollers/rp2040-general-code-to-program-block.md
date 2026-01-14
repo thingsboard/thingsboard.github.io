@@ -416,7 +416,7 @@ Send data part in code (By default the example sends random value for **temperat
 Then upload the code to the device by pressing Upload button or keyboard combination Ctrl+U.  
 {% assign codeByUploadButton='
     ===
-        image: /images/devices-library/basic/arduino-ide/upload.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/upload.png
 ' 
 %}
 {% include images-gallery.liquid imageCollection=codeByUploadButton %}

@@ -29,16 +29,16 @@ After that, the ThingsBoard interface will switch to the selected language.
 
 {% assign changeLanguagePE = '
     ===
-        image: /images/user-guide/custom-translation/change-language-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-1-pe.png,
         title: Navigate to your profile by clicking on the three dots in the top right corner of the screen and select "Account".
     ===
-        image: /images/user-guide/custom-translation/change-language-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-2-pe.png,
         title: Click on the "Language" field and choose desired system language from the drop-down list.
     ===
-        image: /images/user-guide/custom-translation/change-language-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-3-pe.png,
         title: Click the "Save" button to apply the changes;
     ===
-        image: /images/user-guide/custom-translation/change-language-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/change-language-4-pe.png,
         title: After that, the ThingsBoard interface will switch to the selected language.
 '
 %}
@@ -61,16 +61,16 @@ As you continue adding more translations, the progress indicator will automatica
 
 {% assign addNewLanguagePE = '
     ===
-        image: /images/user-guide/custom-translation/add-new-language-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-1-pe.png,
         title: Go to the "Custom translation" tab of the "White labeling" page. Click the "Add new language" button in the upper-right corner.
     ===
-        image: /images/user-guide/custom-translation/add-new-language-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-2-pe.png,
         title: Select the desired language from the list.
     ===
-        image: /images/user-guide/custom-translation/add-new-language-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-3-pe.png,
         title: You can immediately upload a JSON file with a translation map for quick localization setup, or leave this step for later and gradually fill in the translations. Then, click "Add".
     ===
-        image: /images/user-guide/custom-translation/add-new-language-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/add-new-language-4-pe.png,
         title: The new language has been successfully added. You and your users can now use it as the interface language for your instance. Since the JSON file I provided includes only a limited set of translation keys, the translation progress is currently at 5%. As you continue adding more translations, the progress indicator will automatically increase.
 '
 %}
@@ -81,7 +81,7 @@ As you continue adding more translations, the progress indicator will automatica
 
 Go to the "**White labeling**" page and open the "**Custom translation**" tab. Here you&#39;ll see a list of available languages and their translation progress indicated in percentages.
 
-![image](/images/user-guide/custom-translation/main-page-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/custom-translation/main-page-1-pe.png)
 
 {% capture difference %}
 **Please note:** The initial list of custom translations is created by the system administrator. A tenant cannot delete the system&#39;s custom translations but can make changes to them and add new translations.
@@ -101,10 +101,10 @@ Just below, you&#39;ll see a table with three columns:
 
 {% assign translationEditor = '
     ===
-        image: /images/user-guide/custom-translation/translation-editor-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/translation-editor-1-pe.png,
         title: Click the "pencil" icon button next to the language you want to open the editor menu.
     ===
-        image: /images/user-guide/custom-translation/translation-editor-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/translation-editor-2-pe.png,
         title: You&#39;ll see a table with three columns: The term key, which links an interface element to a translation; Input field for the key value in English. This value will be used as a fallback for all languages that don&#39;t have a specific translation for this key; Input field for the key value in the selected language.
 '
 %}
@@ -121,16 +121,16 @@ Below the translation map, you&#39;ll find convenient filters to help you locate
 
 {% assign translationEditor = '
     ===
-        image: /images/user-guide/custom-translation/term-filters-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/term-filters-1-pe.png,
         title: The "**Translated**" filter displays keys that already have a translation for the selected localization.
     ===
-        image: /images/user-guide/custom-translation/term-filters-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/term-filters-2-pe.png,
         title: The "**Untranslated**" shows keys that are still missing translations.
     ===
-        image: /images/user-guide/custom-translation/term-filters-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/term-filters-3-pe.png,
         title: The "**Customized**" filter highlights only the keys whose translations have been manually modified by the user.
     ===
-        image: /images/user-guide/custom-translation/term-filters-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/term-filters-4-pe.png,
         title: The "**Added key**" shows the keys that were manually added to the localization file.
 '
 %}
@@ -148,10 +148,10 @@ To add a new translation key, go to the translation map of the desired language 
 
 {% assign addingNewTranslationKey = '
     ===
-        image: /images/user-guide/custom-translation/adding-new-translation-key-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/adding-new-translation-key-1-pe.png,
         title: Go to the translation map of the desired language and click the "plus" icon in the top-right corner.
     ===
-        image: /images/user-guide/custom-translation/adding-new-translation-key-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/adding-new-translation-key-2-pe.png,
         title: A new row will appear in the table below. Fill in the fields with the appropriate values — enter the key, its English value, and the value for the selected language. Then click anywhere outside the input field to apply the changes.
 '
 %}
@@ -164,13 +164,13 @@ Let&#39;s take a look at how to edit an existing translation for a terminology k
 
 {% assign manualAdditionOfTranslationPE = '
     ===
-        image: /images/user-guide/custom-translation/modify-current-translation-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/modify-current-translation-1-pe.png,
         title: Go to the language editing menu and use the search to find the key you want to edit.
     ===
-        image: /images/user-guide/custom-translation/modify-current-translation-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/modify-current-translation-2-pe.png,
         title: Update the translation for that key.
 ===
-        image: /images/user-guide/custom-translation/modify-current-translation-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/modify-current-translation-3-pe.png,
         title: Then click anywhere outside the input field to apply the changes.
 '
 %}
@@ -181,10 +181,10 @@ To reset the translation value of a key to the one defined by the system adminis
 
 {% assign clearCustomTranslationPE = '
     ===
-        image: /images/user-guide/custom-translation/clear-custom-translation-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/clear-custom-translation-1-pe.png,
         title: To reset the translation value of a key to the one defined by the system administrator, click the "broom" icon in that key&#39;s row.
     ===
-        image: /images/user-guide/custom-translation/clear-custom-translation-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/clear-custom-translation-2-pe.png,
         title: The translation has been reset to the default value.
 '
 %}
@@ -203,7 +203,7 @@ This option is useful if you have a large number of translation keys, and creati
 
 {% assign customTranslationInJsonPE = '
     ===
-        image: /images/user-guide/custom-translation/upload-translation-from-json-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/upload-translation-from-json-1-pe.png,
         title: Go to the language editing menu and switch to the "Advanced" tab. Insert translation map with keys and their corresponding translations in JSON format. Then, click "Save".
 '
 %}
@@ -263,7 +263,7 @@ To add custom translations:
 
 > **Note**: If the **i18n** structure is used as the title of a UI element, but the corresponding key is not included in the translation map, the **i18n** string itself will be displayed as-is.
 
-<object width="70%" data="/images/user-guide/custom-translation/i18n.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/custom-translation/i18n.png"></object>
 
 > **Tips**:
 - Always add translations for all required languages.
@@ -296,10 +296,10 @@ return { msg: msg, metadata: metadata, msgType: msgType };
 
 {% assign dashboardDataSource = '
     ===
-        image: /images/user-guide/custom-translation/dashboard-data-source-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-data-source-1-pe.png,
         title: For this dashboard, I&#39;m emulating telemetry data using a Generator node.
     ===
-        image: /images/user-guide/custom-translation/dashboard-data-source-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-data-source-2-pe.png,
         title: The generator node emulates telemetry using the specified function.
 '
 %}
@@ -310,7 +310,7 @@ Also, don&#39;t forget to update the data source for your dashboard.
 
 {% assign dashboardDataSource2 = '
     ===
-        image: /images/user-guide/custom-translation/dashboard-data-source-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/dashboard-data-source-3-pe.png,
         title: Also, don&#39;t forget to update the data source for your dashboard.
 '
 %}
@@ -340,7 +340,7 @@ custom.weather-dashboard.title
 
 {% assign internationalizationDashboardTitle1 = '
     ===
-        image: /images/user-guide/custom-translation/internationalization-dashboard-title-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-dashboard-title-1-pe.png,
         title: Go to the "Custom translations" tab. Add a new key and enter its value in English and German.
 '
 %}
@@ -363,16 +363,16 @@ Since I&#39;m using English as my interface language, the dashboard title appear
 
 {% assign internationalizationDashboardTitle2 = '
     ===
-        image: /images/user-guide/custom-translation/internationalization-dashboard-title-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-dashboard-title-2-pe.png,
         title: Navigate to the "Dashboards" page. and open the dashboard details.
     ===
-        image: /images/user-guide/custom-translation/internationalization-dashboard-title-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-dashboard-title-3-pe.png,
         title: Enter edit mode.
     ===
-        image: /images/user-guide/custom-translation/internationalization-dashboard-title-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-dashboard-title-4-pe.png,
         title: Replace the title field text with a key using the i18n structure: the i18n prefix followed by the translation key, wrapped in curly braces. Then, save your changes.
     ===
-        image: /images/user-guide/custom-translation/internationalization-dashboard-title-5-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-dashboard-title-5-pe.png,
         title: I&#39;m using English as my interface language, so the dashboard title is displayed in English.
 '
 %}
@@ -385,7 +385,7 @@ You should see the dashboard title displayed in German according to the translat
 
 {% assign internationalizationDashboardTitle3 = '
     ===
-        image: /images/user-guide/custom-translation/internationalization-dashboard-title-6-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-dashboard-title-6-pe.png,
         title: Now, either switch to your user&#39;s account where the interface language is set to German, or simply change your own interface language to German. You should see the dashboard title displayed in German according to the translation map — which means everything is working as expected.
 '
 %}
@@ -408,7 +408,7 @@ First, add the keys along with their corresponding values in English and the sel
 
 {% assign internationalizationWidgetElements = '
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-1-pe.png,
         title: Add the keys along with their corresponding values in English and the selected language (in our case German).
 '
 %}
@@ -431,25 +431,25 @@ After that, save your changes.
 
 {% assign internationalizationWidgetElements2 = '
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-2-pe.png,
         title: Now navigate to the "Weather" dashboard and enter its edit mode.
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-3-pe.png,
         title: Enter the "Temperature and Humidity history" widget edit mode.
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-4-pe.png,
         title: Assign the added internationalization keys as labels for the temperature and humidity telemetry keys.
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-5-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-5-pe.png,
         title: Use the same values as labels for the Y axes of the temperature and humidity keys. 
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-6-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-6-pe.png,
         title: Now set the translation key for the widget title: {i18n:custom.weather-dashboard.temp-hum-widget-title}
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-7-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-7-pe.png,
         title: After that, save your changes.
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-8-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-8-pe.png,
         title: .
 '
 %}
@@ -461,7 +461,7 @@ As you can see, all elements of the "Temperature and Humidity history" widget ar
 
 {% assign internationalizationWidgetElements3 = '
     ===
-        image: /images/user-guide/custom-translation/internationalization-widget-elements-9-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/internationalization-widget-elements-9-pe.png,
         title: Switch to the user who has German set as their interface language. As you can see, all elements of the "Temperature and Humidity history" widget are now displayed in German.
 '
 %}
@@ -480,13 +480,13 @@ First, add the required custom translation keys to the translation map, and then
 
 {% assign dewPointCustomTranslationKeys = '
     ===
-        image: /images/user-guide/custom-translation/dew-point-custom-translation-keys-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/dew-point-custom-translation-keys-1-pe.png,
         title: Add the required custom translation keys to the translation map
     ===
-        image: /images/user-guide/custom-translation/dew-point-custom-translation-keys-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/dew-point-custom-translation-keys-2-pe.png,
         title: User interface in English
     ===
-        image: /images/user-guide/custom-translation/dew-point-custom-translation-keys-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/dew-point-custom-translation-keys-3-pe.png,
         title: User interface in German.
 '
 %}
@@ -511,7 +511,7 @@ Custom translations can be used in widget functions — for example, in the "HTM
 
 {% assign customTranslationHtmlValueCardWidget = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-1-pe.png,
         title: Add the required custom translation keys to the translation map of the selected language.
 '
 %}
@@ -565,16 +565,16 @@ Custom translations can be used in widget functions — for example, in the "HTM
 
 {% assign customTranslationHtmlValueCardWidget2 = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-2-pe.png,
         title: Open the dashboard in edit mode and click the "Add widget" button.
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-3-pe.png,
         title: Select the "HTML Value Card" widget from the "Cards" widgets bundle.
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-4-pe.png,
         title: Specify the device that sends temperature readings as the data source, along with the corresponding telemetry key.
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-5-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-5-pe.png,
         title: Go to the "Appearance" tab. Use your own code or copy the one provided below and paste it into the "HTML" field and click "Add". Then, save the dashboard.
 '
 %}
@@ -586,7 +586,7 @@ Now check the result. The value displayed in the HTML card will dynamically upda
 
 {% assign customTranslationHtmlValueCardWidget3 = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-6-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-6-pe.png,
         title: Now check the result. The value displayed in the HTML card will dynamically update based on the incoming telemetry data.
 '
 %}
@@ -598,7 +598,7 @@ For a user whose interface language is set to German, the widget will also be di
 
 {% assign customTranslationHtmlValueCardWidget3 = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-html-value-card-widget-7-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-html-value-card-widget-7-pe.png,
         title: Click the "Add widget" button.
 '
 %}
@@ -624,7 +624,7 @@ Let&#39;s take a look at one such example.
 
 {% assign customTranslationCellContentFunction = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-1-pe.png,
         title: Add the required custom translation keys to the translation map of the selected language.
 '
 %}
@@ -647,13 +647,13 @@ Let&#39;s take a look at one such example.
 
 {% assign customTranslationCellContentFunction2 = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-2-pe.png,
         title: Open the dashboard in edit mode and click the "Add widget" button.
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-3-pe.png,
         title: Select the "Entities table" widget from the "Tables" widgets bundle.
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-4-pe.png,
         title: Specify the device that sends temperature readings as the data source. Then, add three columns to display the device name, its temperature value in degrees Celsius, and the temperature range.
 '
 %}
@@ -681,13 +681,13 @@ if(value>=25){
 
 {% assign customTranslationCellContentFunction3 = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-5-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-5-pe.png,
         title: Open the configuration for the key of the last column.
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-6-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-6-pe.png,
         title: Use the data post-processing function provided below to display the temperature range value retrieved from a custom translation key. Then, click "Save".
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-7-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-7-pe.png,
         title: Click "Add" to add widget on the dashboard. Then, save dashboard.
 '
 %}
@@ -698,10 +698,10 @@ Check the result. The value in the column responsible for temperature readings w
 
 {% assign customTranslationCellContentFunction4 = '
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-8-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-8-pe.png,
         title: Check the result. If the temperature value is less than or equal to 19 degrees, the "Temperature range" column will display "Low temperature".
     ===
-        image: /images/user-guide/custom-translation/custom-translation-in-cell-content-function-9-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/custom-translation-in-cell-content-function-9-pe.png,
         title: If the temperature value is between 19 and 25 degrees, the "Temperature range" column will display "Normal temperature".
 '
 %}
@@ -714,10 +714,10 @@ If at any time you need to delete a language or reset its translations to the de
 
 {% assign deleteLanguage = '
     ===
-        image: /images/user-guide/custom-translation/delete-language-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/delete-language-1-pe.png,
         title: Tto delete a language or reset its translations to the default version, simply click the trash bin icon next to the corresponding language.
     ===
-        image: /images/user-guide/custom-translation/delete-language-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/custom-translation/delete-language-2-pe.png,
         title: Confirm the deletion in the dialog window.
 '
 %}

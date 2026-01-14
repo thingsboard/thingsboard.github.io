@@ -16,7 +16,7 @@ In this guide you may also mention (refer to) any other public source as an exam
 All the steps should be numerated and provided with a clear flow of realization with examples in screenshots/pictures.
 
 * Store your integration .md file in a directory: "/docs/user-guide/integrations/"
-* Store all of your images for your guide in a separate directory of your integration: "/images/user-guide/integrations/YOUR_INTEGRATION_NAME/"
+* Store all of your images for your guide in a separate directory of your integration: "https://img.thingsboard.io/user-guide/integrations/YOUR_INTEGRATION_NAME/"
 {% endcapture %}
 
 {% include templates/info-banner.md content=domain_owner_note %}
@@ -47,7 +47,7 @@ Choose one of the suitable methods of integration according to Connectivity diag
 <br>
 <br>
 
-<object width="80%" data="/images/connectivity.svg"></object>
+<object width="80%" data="https://img.thingsboard.io/connectivity.svg"></object>
 
 #### Integration method
 

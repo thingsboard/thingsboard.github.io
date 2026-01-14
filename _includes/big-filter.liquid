@@ -7,13 +7,13 @@
                 <span class="big-filter-header-label">Filters</span>
             </div>
             <div class="close-filter-button">
-                <img src="/images/s-close-icon.svg" alt="Close icon">
+                <img src="https://img.thingsboard.io/s-close-icon.svg" alt="Close icon">
             </div>
         </div>
         <div class="search-crisps mobile">
             <div class="search-crisps-clear-btn pagination-render-trigger">
                 Clear All
-                <img class="search-crisps-clear-btn-close" src="/images/s-close-icon.svg" alt="Close icon">
+                <img class="search-crisps-clear-btn-close" src="https://img.thingsboard.io/s-close-icon.svg" alt="Close icon">
             </div>
             <div class="search-crisps-toggle-btn" style="display: none;">
                 <span class="toggle-label">Hide</span>
@@ -38,22 +38,31 @@
                                 <div class="search-item">
                                     <input id="searchFilterInput" type="text" placeholder="Search..." />
                                     <span class="searchButton">
-                                    <img class="searchButtonIcon" src="/images/search.svg" alt="Search icon">
-                                    <img class="searchButtonCloseIcon" src="/images/s-close-icon.svg">
+                                    <img class="searchButtonIcon" src="https://img.thingsboard.io/search.svg" alt="Search icon">
+                                    <img class="searchButtonCloseIcon" src="https://img.thingsboard.io/s-close-icon.svg">
                                 </span>
                                 </div>
                             </li>
                         {% endif %}
-                        {% for filter in item.filters %}
-                            <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
-                                <input class="pagination-render-trigger" type="checkbox" id="{{ filter }}" value="{{ filter }}" data-cat="{{ item.label | downcase | replace: ' ', '-' }}">
-                                <label class="pagination-render-trigger" for="{{ filter }}">{{ filter }}</label>
-                            </li>
-                        {% endfor %}
-                        {% if filters.size > 10 %}
-                            <li>
-                                <button type="button" class="toggle-extra-btn">More</button>
-                            </li>
+                        {% if item.selectPlatfrom %}
+                            {% for selectFilter in item.filters %}
+                                <li class="big-filter-section-filter">
+                                    <input class="pagination-render-trigger" id="{{ selectFilter.platform }}" type="radio" value="{{ selectFilter.platform }}" data-cat="{{ selectFilter.platform }}">
+                                    <label class="pagination-render-trigger" for="{{ selectFilter.platform }}">{{ selectFilter.label }}</label>
+                                </li>
+                            {% endfor %}
+                        {% else %}
+                            {% for filter in item.filters %}
+                                <li class="big-filter-section-filter{% if forloop.index0 >= 10 %} extra-filter{% endif %}">
+                                    <input class="pagination-render-trigger" type="checkbox" id="{{ filter }}" value="{{ filter }}" data-cat="{{ item.label | downcase | replace: ' ', '-' }}">
+                                    <label class="pagination-render-trigger" for="{{ filter }}">{{ filter }}</label>
+                                </li>
+                            {% endfor %}
+                            {% if filters.size > 10 %}
+                                <li>
+                                    <button type="button" class="toggle-extra-btn">More</button>
+                                </li>
+                            {% endif %}
                         {% endif %}
                     </ul>
                 </div>

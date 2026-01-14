@@ -37,4 +37,4 @@ return result;
 
 Choose "Create new" and paste copied code to the Decoder function section. Click "Next";
 
-![image](/images/pe/edge/integrations/http/add-http-integration-template-2-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/add-http-integration-template-2-edge.png)

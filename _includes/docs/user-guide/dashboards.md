@@ -13,10 +13,10 @@ With ThingsBoard dashboards, users can adapt interfaces to their specific needs,
 These dashboards aren't limited to a single data source; they can display data from various entities, including devices, assets, and more. Plus, you can assign dashboards to specific Customers, ensuring that the right individuals or teams have access to the data they need.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/dashboards/overview/dashboard-introduction-ce.png)
+![image](https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-introduction-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/dashboards/overview/dashboard-introduction.png)
+![image](https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-introduction.png)
 {% endif %}
 
 Dashboards in ThingsBoard provide users with the following capabilities:
@@ -386,15 +386,15 @@ For the state to be named after the entity, use **${entityName}** as the name of
 A Tenant Administrator or Customer User can **generate a report** from the currently opened dashboard in **PDF**, **PNG**, or **JPEG** format.
 - Click the "**Export Dashboard**" button, located on the right side of the dashboard toolbar.
 
-<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-1-pe.png"></object>
+<object width="40%" data="https://img.thingsboard.io/user-guide/dashboards/overview/generate-report-from-dashboard-1-pe.png"></object>
 
 - In the expanded drop-down menu, select the desired export format. 
 
-<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-2-pe.png"></object>
+<object width="40%" data="https://img.thingsboard.io/user-guide/dashboards/overview/generate-report-from-dashboard-2-pe.png"></object>
 
 - The report generation process will start automatically.
 
-<object width="40%" data="/images/user-guide/dashboards/overview/generate-report-from-dashboard-3-pe.png"></object>
+<object width="40%" data="https://img.thingsboard.io/user-guide/dashboards/overview/generate-report-from-dashboard-3-pe.png"></object>
 
 And finally, the report file will be automatically downloaded and saved to your PC.
 

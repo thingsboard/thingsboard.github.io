@@ -24,31 +24,31 @@ Follow these steps:
 
 {% assign deviceNameDisconnectJson = '
     ===
-        image: /images/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/device-name-and-profile-message-json-1.png,
         title: Go to "**Entities**" - "**Gateways**" on the left sidebar and select your gateway.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-gateway.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/mqtt-gateway-configuring-11-ce.png,
         title: Select the MQTT connector, click on the "**Basic**". Click the "**Add mapping**" under "**Requests mapping**" section to add new disconnect request mapping.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-1.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-1.png,
         title: Select "**Disconnect request**" in the **Request type** field, enter the "**Topic filter**" as `sensor/disconnect`.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-2.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-2.png,
         title: Select source type for **Name** field as `Message`. In Value, enter `${serialNumber}` for the device name.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-3.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-3.png,
         title: Remember to save your changes by clicking the designated button.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-4.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-4.png,
         title: Select "**Disconnect request**" in the **Request type** field then fill the "**Topic filter**" with `sensor/+/disconnect`.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-5.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-5.png,
         title: Select source type for **Name** field as `Topic`. In Value, enter `(?<=sensor/)(.*?)(?=/disconnect)` for the device name.
     ===
-        image: /images/gateway/mqtt-connector/examples/disconnect-request-6.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/examples/disconnect-request-6.png,
         title: Remember to save your changes by clicking the designated button.
 '
 %}
@@ -57,7 +57,7 @@ Follow these steps:
 
 Let's demonstrate how to use these disconnect request configurations with two examples:
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-1-disconnect.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-1-disconnect.png)
 
 ### Example 1: Device name from message payload
 
@@ -70,7 +70,7 @@ mosquitto_pub -h 127.0.0.1 -p 1884 -t "sensor/disconnect" -m '{"serialNumber": "
 
 This message contains the device name in the JSON payload, which is extracted using the `${serialNumber}` JSON path. After processing this message, ThingsBoard will mark the device `SN-001` as disconnected.
 
-![image](/images/gateway/mqtt-connector/examples/result-device-overview-2-disconnect.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/examples/result-device-overview-2-disconnect.png)
 
 ### Example 2: Device name from topic
 

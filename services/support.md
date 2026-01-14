@@ -44,15 +44,15 @@ redirect_from: "docs/services/support/"
                                 </p>
                                 <ul>
                                     <li>
-                                        <img class="filter-icon" src="/images/feature-logo/guides.svg" alt="Documentation icon">
+                                        <img class="filter-icon" src="https://img.thingsboard.io/feature-logo/guides.svg" alt="Documentation icon">
                                         <a href="/docs">Read documentation</a>
                                     </li>
                                     <li>
-                                        <img src="/images/pricing/yootube-icon.svg" alt="YouTube icon">
+                                        <img src="https://img.thingsboard.io/pricing/yootube-icon.svg" alt="YouTube icon">
                                         <span>Subscribe to our <a href="https://www.youtube.com/c/thingsboard">YouTube channel</a></span>
                                     </li>
                                     <li>
-                                        <img src="/images/pricing/education-icon.svg" alt="Education icon">
+                                        <img src="https://img.thingsboard.io/pricing/education-icon.svg" alt="Education icon">
                                         <span>Keep an eye on our <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO">free Education course updates</a></span>
                                     </li>
                                 </ul>

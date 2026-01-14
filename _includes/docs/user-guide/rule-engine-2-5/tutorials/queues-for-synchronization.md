@@ -25,38 +25,38 @@ In addition, you need to have at least one device provisioned in your environmen
 
 ## Step 1: Creating the rule chain
 
-![Rule chain image](/images/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
+![Rule chain image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
 
 We will add two generator nodes that will generate seven messages each. First generator will produce a message with the counter value of 101.
 The second one - with the value of 10. So the result should be 777.
 
-![First generator image](/images/user-guide/rule-engine-2-5/tutorials/generator1.png)
-![Second generator image](/images/user-guide/rule-engine-2-5/tutorials/generator2.png)
+![First generator image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/generator1.png)
+![Second generator image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/generator2.png)
 
 Both messages will be put into the **SequentialByOriginator** queue. It uses the [message submit strategy](/docs/user-guide/rule-engine-2-5/queues/#submit-settings/) 
 **SEQUENTIAL_BY_ORIGINATOR** which means that the subsequent message will start being processed when the preceding message is acknowledged (is processed and deleted from the queue) based on the originator.
 
 We will get the present "counter" value using **originator attributes** node. **Tell failure if any of the attributes are missing** is currently disabled because the device does not have the required attribute and will cause an error.
 This attribute will be set to the device after the first message reaches the **save attributes** node.
-![Originator attributes node image](/images/user-guide/rule-engine-2-5/tutorials/sync_originator_attributes.png)
+![Originator attributes node image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_originator_attributes.png)
 
 The calculations will be done using **script** node. 
 
-![Script node image](/images/user-guide/rule-engine-2-5/tutorials/sync_counter_script.png)
+![Script node image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_counter_script.png)
 
 The last step will be to save the new counter value using **save attributes** node.
 
-![Save attributes node image](/images/user-guide/rule-engine-2-5/tutorials/sync_save_counter_attribute.png)
+![Save attributes node image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_save_counter_attribute.png)
 
 ## Step 2: Validation the rule chain logic
 
 Let's check that our logic is correct by saving the Rule Chain. The generators will automatically produce 14 messages:
 
-![Events image](/images/user-guide/rule-engine-2-5/tutorials/sync_events.png)
+![Events image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_events.png)
 
 The final counter value that is persisted for a device is:
 
-![Device attributes image](/images/user-guide/rule-engine-2-5/tutorials/sync_result.png)
+![Device attributes image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_result.png)
 
 That means that our logic works correctly.
 

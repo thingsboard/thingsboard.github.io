@@ -12,20 +12,20 @@ They contain important credentials, such as **Edge Secret**, **Edge Key**, etc. 
 
 {% assign presetConfigPE = '
     ===
-        image: /images/edge/user-guide/edge-install/4-install-instructions-pe.webp,
+        image: https://img.thingsboard.io/edge/user-guide/edge-install/4-install-instructions-pe.webp,
         title: Go to the **Edge management > Instances** section of your **ThingsBoard Professional Edition** instance, and click on the **Instance**. Then, click the **"Install & Connect Instructions"** button.
     ===
-        image: /images/edge/user-guide/edge-install/5-docker-pe.webp,
+        image: https://img.thingsboard.io/edge/user-guide/edge-install/5-docker-pe.webp,
         title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and **copy the configuration lines**.
 '
 %}
 
 {% assign presetConfigCE = '
     ===
-        image: /images/edge/user-guide/edge-install/4-install-instructions.webp,
+        image: https://img.thingsboard.io/edge/user-guide/edge-install/4-install-instructions.webp,
         title: Go to the **Edge management > Instances** section of your **ThingsBoard Community Edition** instance, and click on the **Instance**. Then, click the **"Install & Connect Instructions"** button.
     ===
-        image: /images/edge/user-guide/edge-install/5-docker.webp,
+        image: https://img.thingsboard.io/edge/user-guide/edge-install/5-docker.webp,
         title: On the **"Install & Connect Instructions"** pop-up window, select the **"Docker"** tab and **copy the configuration lines**.
 '
 %}

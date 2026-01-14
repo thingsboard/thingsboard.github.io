@@ -44,7 +44,7 @@ Choose one of this options, depending on how you want your splash screen to look
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="/images/mobile/pe/splash_screen_sizes_template.png" title="Splash screen icon layout" alt="Splash screen icon layout">
+        <img width="" src="https://img.thingsboard.io/mobile/pe/splash_screen_sizes_template.png" title="Splash screen icon layout" alt="Splash screen icon layout">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Splash screen icon layout</span>
     </div>
 </div>

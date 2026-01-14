@@ -116,10 +116,10 @@ Latitude,Longitude
 ```
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/widgets/maps/marker-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/widgets/maps/marker-1-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/user-guide/widgets/maps/marker-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/widgets/maps/marker-1-pe.png)
 {% endif %}
 
 #### Place marker on map
@@ -380,10 +380,10 @@ The polygon is a flat shape defined by a finite number of points.
 It can be used to mark areas such as buildings, fields, service areas, visualize coverage areas or restricted regions, etc.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/widgets/maps/polygon-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/widgets/maps/polygon-1-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/user-guide/widgets/maps/polygon-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/widgets/maps/polygon-1-pe.png)
 {% endif %}
 
 <br>
@@ -592,10 +592,10 @@ Circle coordinates must follow this format:
 ``` 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/widgets/maps/circle-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/widgets/maps/circle-1-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/user-guide/widgets/maps/circle-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/widgets/maps/circle-1-pe.png)
 {% endif %}
 
 #### Add circle

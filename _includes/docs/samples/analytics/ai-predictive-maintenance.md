@@ -25,7 +25,7 @@ This document describes a ThingsBoard solution that turns raw device telemetry i
 
 ### Architecture
 
-![image](/images/samples/analytics/iot-anomaly-detection-diagram.svg)
+![image](https://img.thingsboard.io/samples/analytics/iot-anomaly-detection-diagram.svg)
 
 ### Prerequisites
 

@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Vocless VOC temperature and humidity Sensor]({{deviceVendorLink}}){: target="_blank"} The Vocless is advanced technology indoor sensor applied for the full sensing of the intensity of the volatile organic compounds (VOC), temperature and humidity. The integrated advanced intelligent computational AI algorithm enables reliable capability of the measurement the magnitude of the VOC Index, temperature and humidity.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
@@ -23,6 +22,7 @@
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -56,9 +56,10 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/devices-library/lorawan-vocless-data.png)
+![LoRaWAN device data](https://img.thingsboard.io/devices-library/lorawan-vocless-data.png)
 
 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -28,10 +28,10 @@ First, add a gateway device to your ThingsBoard instance by following these step
 
 {% assign createNewGatewayDevice = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-1-ce.png,
         title: Go to "**Entities**" > "**Gateways**" tab.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-2-ce.png,
         title: Click the "**+**" button, enter the gateway device name (e.g., "My Gateway"), and select the device profile. Click on "**Create**" button.
 '
 %}
@@ -52,10 +52,10 @@ To launch the gateway, use the following steps:
 
 {% assign remoteCreateGatewayDocker = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-3-ce.png,
         title: Select and click on newly created gateway, click on **"Launch command"** button in the top right corner.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-4-ce.png,
         title: Click to download `docker-compose.yml` file to your PC, copy command and execute it in your terminal.
 '
 %}
@@ -64,7 +64,7 @@ To launch the gateway, use the following steps:
 
 After running gateway docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/launch-gateway-docker.png)
+![](https://img.thingsboard.io/gateway/dashboard/launch-gateway-docker.png)
 
 ## Step 2. Enable remote logging
 
@@ -73,10 +73,10 @@ use the following steps:
 
 {% assign enableRemoteLogging = '
     ===
-        image: /images/gateway/dashboard/general-configuration-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/general-configuration-1-ce.png,
         title: On selected gateway page, click on **"General configuration"** button on the right panel.
     ===
-        image: /images/gateway/dashboard/general-configuration-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/general-configuration-2-ce.png,
         title: Navigate to the "**Logs**" tab. Enable the "**Remote logging**" toggle. Select "**DEBUG**" in the "**Log level**" drop-down menu. Click on the "**Save**" button to apply changes.
 '
 %}
@@ -103,10 +103,10 @@ To review the data uploaded from your gateway, use the following steps:
 
 {% assign checkDeviceData = '
     ===
-        image: /images/gateway/dashboard/review-gateway-statistics-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/review-gateway-statistics-1-ce.png,
         title: Navigate to the **Entities** > **Devices** page and click on the created device. This will open the device details page. From there, switch to the **"Attributes"** tab to view the attributes that were configured in the connector.
     ===
-        image: /images/gateway/dashboard/review-gateway-statistics-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/review-gateway-statistics-2-ce.png,
         title: To view real-time telemetry data from the device, navigate to the "**Latest Telemetry**" tab. Here, you will find the telemetry data being sent by the device, including metrics like "**humidity**" and "**temperature**". This tab provides real-time device telemetry updates.
 '
 %}

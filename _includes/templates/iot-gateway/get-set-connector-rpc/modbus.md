@@ -26,7 +26,7 @@ get type=16int;functionCode=3;objectsCount=1;address=1;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/modbus-get-set-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/modbus-get-set-rpc-1.png)
 {: refdef}
 
 ### SET method
@@ -58,7 +58,7 @@ set type=16int;functionCode=6;objectsCount=1;address=2;value=80;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/modbus-get-set-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/modbus-get-set-rpc-2.png)
 {: refdef}
 
 Let's check the result. To read the value of the register with the address 2, run this query:
@@ -74,7 +74,7 @@ get type=16int;functionCode=3;objectsCount=1;address=2;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/modbus-get-set-rpc-3.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/modbus-get-set-rpc-3.png)
 {: refdef}
 
 As you can see, the value has been successfully written.

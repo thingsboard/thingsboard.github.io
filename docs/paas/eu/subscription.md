@@ -7,13 +7,13 @@ description: Features and advantages of subscription payment model
 
 cancel-my-subscription:
     0:
-        image: /images/subscriptions/cancel-my-subscription-1-paas-eu.png
+        image: https://img.thingsboard.io/subscriptions/cancel-my-subscription-1-paas-eu.png
         title: 'Log in to ThingsBoard EU Cloud as a Tenant Administrator. After logging in, go to account settings by clicking the three-dot icon in the upper-right corner of the screen and selecting "Account" from the dropdown menu;'
     1:
-        image: /images/subscriptions/cancel-my-subscription-2-paas-eu.png
+        image: https://img.thingsboard.io/subscriptions/cancel-my-subscription-2-paas-eu.png
         title: 'Under the "Profile" tab, click the orange "Delete account" button;'
     2:
-        image: /images/subscriptions/cancel-my-subscription-3-paas-eu.png
+        image: https://img.thingsboard.io/subscriptions/cancel-my-subscription-3-paas-eu.png
         title: 'Follow the guidelines to cancel your subscription. Confirm the action by clicking the "I understand the consequences, delete account" button.'
 
 ---
@@ -204,7 +204,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>400B</td>
           <td>Data points storage days are calculated for all time-series data points that are stored to the database.<br>
           Platform multiplies number of data points by the number of days those data points will be stored.<br> 
-          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days</td>
+          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M data point storage days</td>
       </tr>
       <tr>
           <td>Alarms TTL</td>

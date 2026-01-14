@@ -10,7 +10,7 @@ The table below describes the parameters required to configure TCP connection fo
 | deviceProfile | **default**       | Device profile of the current slave               |
 | ---           
 
-![image](/images/gateway/modbus-connector/tcp-master-connections-advanced-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/tcp-master-connections-advanced-ce.png)
 
 <br>
 Example:

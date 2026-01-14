@@ -62,41 +62,41 @@ For example, if the system launches at the 15-second mark, that's also when the 
 If period duration is set to 15 seconds, this period will end at 30 seconds and the next one would start.
 This pattern repeats in a cycle while ThingsBoard is running.
 
-![image](/images/user-guide/activity-reporting-periods.png)
+![image](https://img.thingsboard.io/user-guide/activity-reporting-periods.png)
 
 ### First and last activity events
 
 - **First event**: first activity received during a reporting period.
 - **Last event**: last activity received during a reporting period.
 
-![image](/images/user-guide/first-and-last-activity-events.png)
+![image](https://img.thingsboard.io/user-guide/first-and-last-activity-events.png)
 
 > **Note**: If there is only one activity, then it is considered to be both first and last at the same time.
 
-![image](/images/user-guide/one-event-both-first-and-last.png)
+![image](https://img.thingsboard.io/user-guide/one-event-both-first-and-last.png)
 
 ### Activity reporting strategies
 
 - **ALL**: all activities are reported to Device State service immediately.
 
-![image](/images/user-guide/activity-strategy-all.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-all.png)
 
 - **FIRST**: only first activity is reported immediately to Device State service.
 
-![image](/images/user-guide/activity-strategy-first.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-first.png)
 
 > **Note**: Last activity will still be reported if there were no activities for a reporting period.
 
-![image](/images/user-guide/first-strategy-reporting-last-event.png)
+![image](https://img.thingsboard.io/user-guide/first-strategy-reporting-last-event.png)
 
 - **LAST**: only last activity is reported to Device State service. Activity is reported when reporting period ends.
 
-![image](/images/user-guide/activity-strategy-last.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-last.png)
 
 - **FIRST_AND_LAST**: both first and last activities are reported to Device State service.
   First activity is reported immediately, last activity is reported when reporting period ends.
 
-![image](/images/user-guide/activity-strategy-first-and-last.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-first-and-last.png)
 
 ## Configuration
 
@@ -104,6 +104,18 @@ All configuration is done using global parameters defined in **thingsboard.yml**
 
 - **state.defaultInactivityTimeoutInSec** - period of time after which a device is considered inactive by Device State service if no activities were reported. Value is set in seconds.
 Default value is 600 seconds (10 minutes). A user can overwrite this parameter for an individual device by setting the **inactivityTimeout** server-side attribute (value is set in milliseconds).
+
+{% capture difference %}
+**Please note:**
+<br>
+This parameter controls only how the core service detects a device’s connectivity status (the value is stored in **"active"** attribute of device); it does **not** affect the device session timeout.
+The device session inactivity timeout is configured separately via the **transport.sessions.inactivity_timeout** property.
+
+To avoid inconsistencies, we recommend keeping these two parameters in sync: the transport session inactivity timeout should be **greater than or equal to** the device inactivity timeout.
+
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 - **state.defaultStateCheckIntervalInSec** - interval for periodic checks of a device activity state, performed by a Device State service. Value is set in seconds. Default value is 60 seconds (1 minute).
 - **state.telemetryTtl** - time-to-live value for activity telemetry data. Value is set in milliseconds. Default value is 0 milliseconds (meaning time-to-live mechanism is disabled).
 {% if docsPrefix == 'pe/' %}
@@ -112,6 +124,7 @@ Default value is 600 seconds (10 minutes). A user can overwrite this parameter f
 {% endif %}
 - **transport.activity.reporting_strategy** - activity reporting strategy for transports. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is LAST.
 - **transport.sessions.report_timeout** - duration of a reporting period for transports. Value is set in milliseconds. Default value is 3000 milliseconds (3 seconds).
+- **transport.sessions.inactivity_timeout** - defines how long the device transport session will be opened after the last message arrives from the device. Value is set in milliseconds. Default value is 60000 milliseconds (10 min).
 
 ## Next steps
 

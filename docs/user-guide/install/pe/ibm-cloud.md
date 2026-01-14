@@ -5,4 +5,4 @@ description: Installing ThingsBoard PE from IBM Cloud Marketplace
 
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)

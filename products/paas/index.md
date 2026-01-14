@@ -16,35 +16,35 @@ description:
       <div id="cards" class="row">
         <div class="col-lg-6">
           <div>
-            <img src="/images/paas/improved-time.svg" alt="Improved time to market" width="98" height="103">
+            <img src="https://img.thingsboard.io/paas/improved-time.svg" alt="Improved time to market" width="98" height="103">
             <h2>Improved time to market</h2>
             <p>Save time on maintenance of the platform or configuration of the features.</p>
           </div>
         </div>
         <div class="col-lg-6">
           <div>
-            <img src="/images/paas/advanced-features.svg" alt="Advanced features" width="96" height="104">
+            <img src="https://img.thingsboard.io/paas/advanced-features.svg" alt="Advanced features" width="96" height="104">
             <h2>Advanced features</h2>
             <p>Platform supports all <a href="/products/thingsboard-pe/">Professional Edition</a> features and advanced <a href="/docs/paas/domains/">domain management</a>.</p>
           </div>
         </div>
         <div class="col-lg-6">
           <div>
-            <img src="/images/paas/reduced-costs.svg" alt="Reduced costs" width="100" height="106">
+            <img src="https://img.thingsboard.io/paas/reduced-costs.svg" alt="Reduced costs" width="100" height="106">
             <h2>Reduced costs</h2>
             <p>The cost of the cluster infrastructure is shared between the users of the platform.</p>
           </div>
         </div>
         <div class="col-lg-6">
           <div>
-            <img src="/images/paas/high-availability.svg" alt="High availability" width="100" height="106">
+            <img src="https://img.thingsboard.io/paas/high-availability.svg" alt="High availability" width="100" height="106">
             <h2>High availability</h2>
             <p>ThingsBoard Cloud uses microservices architecture and is deployed in multiple availability zones.</p>
           </div>
         </div>
         <div class="col-lg-6">
           <div>
-            <img src="/images/paas/data-durability.svg" alt="Data durability" width="92" height="106">
+            <img src="https://img.thingsboard.io/paas/data-durability.svg" alt="Data durability" width="92" height="106">
             <h2>Data durability</h2>
             <p>Platform uses data replication and backup procedures to make sure you don’t lose the data.</p>
           </div>

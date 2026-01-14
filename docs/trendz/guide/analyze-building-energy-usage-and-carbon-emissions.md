@@ -7,91 +7,91 @@ description: How to optimize energy usage in the building and reduce carbon emis
 
 energy-analytic-dashboard:
   0:
-    image: /images/trendz/guide/building_energy/energy_consumption_analytic_dashboard.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_consumption_analytic_dashboard.png
     title: 'Dashboard for energy usage analysis of the building'
 
 energy-consumption-by-source-table:
   0:
-    image: /images/trendz/guide/building_energy/energy_sources_final_table.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_sources_final_table.png
     title: 'Energy consumption by sources table in the building'
   1:
-    image: /images/trendz/guide/building_energy/energy_sources_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_sources_configuration.png
     title: 'Add required fields to the table configuration'
   2:
-    image: /images/trendz/guide/building_energy/energy_sources_calculate_cost.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_sources_calculate_cost.png
     title: 'Compute total electricity cost for each energy source'
   3:
-    image: /images/trendz/guide/building_energy/energy_sources_filtering.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_sources_filtering.png
     title: 'Add filtering options to the table to enable drill down analytics'
   4:
-    image: /images/trendz/guide/building_energy/energy_sources_default_sort.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_sources_default_sort.png
     title: 'Sort final table to total energy cost in descending order'
 
 energy-consumption-by-areas-table:
   0:
-    image: /images/trendz/guide/building_energy/energy_areas_final_table.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_areas_final_table.png
     title: 'Table with total electricity consumption in different areas inside the building'
 
 energy-compare-sources-bar:
   0:
-    image: /images/trendz/guide/building_energy/energy_compare_sources_bar_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_compare_sources_bar_configuration.png
     title: 'Comparison bar chart configuration'
   1:
-    image: /images/trendz/guide/building_energy/energy_compare_sources_bar_chart.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_compare_sources_bar_chart.png
     title: 'Compare energy consumers on bar chart'
     
 energy-compare-time-ranges:
   0:
-    image: /images/trendz/guide/building_energy/energy_consumption_compare_time_ranges_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_consumption_compare_time_ranges_configuration.png
     title: 'Add Month and Year date fields to compare electricity consumption in different time ranges'
   1:
-    image: /images/trendz/guide/building_energy/energy_consumption_compare_time_ranges_filters.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_consumption_compare_time_ranges_filters.png
     title: 'Add filtering options to focus on important places'
   2:
-    image: /images/trendz/guide/building_energy/energy_consumption_compare_time_ranges_bar.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/energy_consumption_compare_time_ranges_bar.png
     title: 'Compare electricity consumption in different time ranges on bar chart'
 
 co2_emission_card_with_trend:
   0:
-    image: /images/trendz/guide/building_energy/co2_emission_transform_formula_for_energy.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/co2_emission_transform_formula_for_energy.png
     title: 'Add calculated field to compute carbon emissions based on energy consumption'
   1:
-    image: /images/trendz/guide/building_energy/co2_emission_compare_with_prev_interval.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/co2_emission_compare_with_prev_interval.png
     title: 'Enable comparison with previous interval to see trend'
   2:
-    image: /images/trendz/guide/building_energy/co2_emission_card_with_trend_and_dynamic.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/co2_emission_card_with_trend_and_dynamic.png
     title: 'CO2 emissions card with trend and dynamic over last 7 days'
 
 building_energy_dashboard:
   0:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_add_new.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_add_new.png
     title: 'Create new dashboard in ThingsBoard'
   1:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_config.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_config.png
     title: 'Set name to - Energy consumption report'
   2:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_add_aliases.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_add_aliases.png
     title: 'Configure required dashboard aliases'
   3:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_all_buildings_alias.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_all_buildings_alias.png
     title: 'Use All Asset by type aliases to display all buildings in the dashboard'
   4:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_add_table.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_add_table.png
     title: 'Add table that shows all buildings in the system'
   5:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_configure_table.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_configure_table.png
     title: 'Connect it with buildings alias'
   6:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_row_click_for_building.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_row_click_for_building.png
     title: 'Add Row-click event in buildings table'
   7:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_rowclick_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_rowclick_configuration.png
     title: 'Row click event should update filters in all widgets on the dashboard'
   8:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_add_trendz_views.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_add_trendz_views.png
     title: 'Add all views from Trendz into new dashboard'
   9:
-    image: /images/trendz/guide/building_energy/building_electricity_dashboard_add_trendz_confg.png
+    image: https://img.thingsboard.io/trendz/guide/building_energy/building_electricity_dashboard_add_trendz_confg.png
     title: 'Configure Trendz views to enable fitlering by building'
 
 ---

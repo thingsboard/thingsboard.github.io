@@ -11,7 +11,7 @@ Designed as a distributed, horizontally scalable system that provides capacity g
 
 In some scenarios, Kafka can be used instead of a message queue, in cases where there is no stable connection between the device and an instance.
 
-![image](/images/user-guide/integrations/kafka/Kafka_main.png)
+![image](https://img.thingsboard.io/user-guide/integrations/kafka/Kafka_main.png)
 
 ## Required environment
 Before you start setting up the integration, you should already have a prepared Broker Kafka server. This is either a local installation or a cloud solution. If you haven't installed Kafka Broker yet, there is an example of basic installation of Kafka Broker locally on [our site](https://thingsboard.io/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service). If you need to use a cloud solution, then you can consider [Kafka Confluent](https://www.confluent.io/), on the basis of which examples will be built in this guide.

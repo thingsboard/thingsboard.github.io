@@ -1,0 +1,37 @@
+{
+  "type": "GEOFENCING",
+  "name": "Safe Area Geofencing",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": true,
+    "allEnabledUntil": 0
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "GEOFENCING",
+    "entityCoordinates": {
+      "latitudeKeyName": "latitude",
+      "longitudeKeyName": "longitude"
+    },
+    "zoneGroups": {
+      "safeArea": {
+        "perimeterKeyName": "safeZone",
+        "reportStrategy": "REPORT_TRANSITION_EVENTS_AND_PRESENCE_STATUS",
+        "createRelationsWithMatchedZones": false
+      }
+    },
+    "scheduledUpdateEnabled": false,
+    "scheduledUpdateInterval": 0,
+    "output": {
+      "type": "TIME_SERIES",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}

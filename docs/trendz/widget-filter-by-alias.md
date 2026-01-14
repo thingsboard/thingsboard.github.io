@@ -21,7 +21,7 @@ so here are brief steps:
 * Create **all_devices** alias that resolves all devices with type **Machine**
 * Create **selected_device** alias with type **entity form dashboard state** - this alias hold reference to selected device
 
-![image](/images/trendz/embed-tb-alias.png)
+![image](https://img.thingsboard.io/trendz/embed-tb-alias.png)
  
 * Add **Entity List** widget and use **all_devices** alias as a datasource
 * Configure **On row click** action that will save selected device to **selected_device** alias 
@@ -39,15 +39,15 @@ Return to ThingsBoard Dashboard:
 * Set **selected_device** as a datasource for Trendz View
 * Use **name** as a key from alias
 
-![image](/images/trendz/embed-trndz-alias.png)
+![image](https://img.thingsboard.io/trendz/embed-trndz-alias.png)
 
 * Switch to **Advanced** tab
 * Insert link to view into **View URL**
 * Insert **Machine** into **Filter Name** - content of this field should be the same as it typed in Trendz View Filter
 * Save Dashboard
 
-![image](/images/trendz/embed-trndz-filter-name.png)
-![image](/images/trendz/embed-tb-filter-name.png)
+![image](https://img.thingsboard.io/trendz/embed-trndz-filter-name.png)
+![image](https://img.thingsboard.io/trendz/embed-tb-filter-name.png)
 
 Now, every time when **selected_device** alias updated, value if its Entity Name would be inserted into Trendz View filter.
 
@@ -55,7 +55,7 @@ If multiple filters configured in Trendz View - system will match required filte
 
 <div class="image-block">
     <div class="image-wrapper">
-       <video poster="/images/trendz/embed-trndz-alias.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
+       <video poster="https://img.thingsboard.io/trendz/embed-trndz-alias.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
             <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-alias-connect.webm" type="video/webm">                 
         </video> 
     </div>

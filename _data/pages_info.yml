@@ -28,10 +28,7 @@
   redirect_from: []
 "/docs/devices-library/arduino-nano-rp2040-connect/":
   url: "/docs/devices-library/arduino-nano-rp2040-connect/"
-  redirect_from:
-  - "/docs/samples/arduino/"
-  - "/docs/samples/arduino/temperature/"
-  - "/docs/samples/arduino/sim808-htu21d/"
+  redirect_from: []
 "/docs/devices-library/asset-management-tracker/":
   url: "/docs/devices-library/asset-management-tracker/"
   redirect_from: []
@@ -100,19 +97,12 @@
   redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v1/":
   url: "/docs/devices-library/esp32-dev-kit-v1/"
-  redirect_from:
-  - "/docs/samples/ble/raspberry-esp32-xiaomi-sensor-htu21d/"
-  - "/docs/samples/esp32/"
-  - "/docs/samples/esp32/gpio-control-pico-kit-dht22-sensor/"
-  - "/docs/samples/esp32/ota/"
+  redirect_from: []
 "/docs/devices-library/esp32-dev-kit-v4/":
   url: "/docs/devices-library/esp32-dev-kit-v4/"
   redirect_from: []
 "/docs/devices-library/esp32-pico-kit/":
   url: "/docs/devices-library/esp32-pico-kit/"
-  redirect_from: []
-"/docs/devices-library/guidelines/":
-  url: "/docs/devices-library/guidelines/"
   redirect_from: []
 "/docs/devices-library/helmet-sensor/":
   url: "/docs/devices-library/helmet-sensor/"
@@ -126,6 +116,11 @@
 "/docs/devices-library/hummingboard-gate/":
   url: "/docs/devices-library/hummingboard-gate/"
   redirect_from: []
+"/docs/devices-library/":
+  url: "/docs/devices-library/"
+  redirect_from:
+  - "/docs/samples/linkit-one/"
+  - "/docs/samples/linkit-one/gps/"
 "/docs/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/devices-library/indoor-bluetooth-gateway/"
   redirect_from: []
@@ -156,6 +151,9 @@
 "/docs/devices-library/luanode32/":
   url: "/docs/devices-library/luanode32/"
   redirect_from: []
+"/docs/devices-library/lw001-bg-pro/":
+  url: "/docs/devices-library/lw001-bg-pro/"
+  redirect_from: []
 "/docs/devices-library/m5stack-timer-camera-f/":
   url: "/docs/devices-library/m5stack-timer-camera-f/"
   redirect_from: []
@@ -185,12 +183,7 @@
   redirect_from: []
 "/docs/devices-library/nodemcuv3/":
   url: "/docs/devices-library/nodemcuv3/"
-  redirect_from:
-  - "/docs/samples/esp8266/"
-  - "/docs/samples/esp8266/temperature/"
-  - "/docs/samples/esp8266/gpio/"
-  - "/docs/samples/nodemcu/"
-  - "/docs/samples/nodemcu/temperature/"
+  redirect_from: []
 "/docs/devices-library/nvidia-jetson-nano-developer-kit/":
   url: "/docs/devices-library/nvidia-jetson-nano-developer-kit/"
   redirect_from: []
@@ -232,11 +225,7 @@
   redirect_from: []
 "/docs/devices-library/raspberry-pi-4/":
   url: "/docs/devices-library/raspberry-pi-4/"
-  redirect_from:
-  - "/docs/samples/raspberry/"
-  - "/docs/samples/raspberry/gpio/"
-  - "/docs/samples/raspberry/gpio-android-things/"
-  - "/docs/samples/raspberry/temperature/"
+  redirect_from: []
 "/docs/devices-library/raspberry-pi-cm4/":
   url: "/docs/devices-library/raspberry-pi-cm4/"
   redirect_from: []
@@ -263,6 +252,12 @@
   redirect_from: []
 "/docs/devices-library/rock960/":
   url: "/docs/devices-library/rock960/"
+  redirect_from: []
+"/docs/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/devices-library/sensy32/":
+  url: "/docs/devices-library/sensy32/"
   redirect_from: []
 "/docs/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/devices-library/socketsync-bluetooth-gateway/"
@@ -375,11 +370,6 @@
 "/docs/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/devices-library/":
-  url: "/docs/devices-library/"
-  redirect_from:
-  - "/docs/samples/linkit-one/"
-  - "/docs/samples/linkit-one/gps/"
 "/docs/domains/":
   url: "/docs/domains/"
   redirect_from: []
@@ -425,8 +415,8 @@
 "/docs/edge/config/subscribe-to-attribute/":
   url: "/docs/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/edge/devices-library/guidelines/":
-  url: "/docs/edge/devices-library/guidelines/"
+"/docs/edge/devices-library/":
+  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -439,9 +429,6 @@
   redirect_from: []
 "/docs/edge/devices-library/recomputer-r1100/":
   url: "/docs/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/edge/devices-library/":
-  url: "/docs/edge/devices-library/"
   redirect_from: []
 "/docs/edge/edge-architecture/":
   url: "/docs/edge/edge-architecture/"
@@ -1147,9 +1134,6 @@
 "/docs/paas/devices-library/esp32-pico-kit/":
   url: "/docs/paas/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/devices-library/guidelines/":
-  url: "/docs/paas/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/devices-library/helmet-sensor/":
   url: "/docs/paas/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1161,6 +1145,9 @@
   redirect_from: []
 "/docs/paas/devices-library/hummingboard-gate/":
   url: "/docs/paas/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/devices-library/":
+  url: "/docs/paas/devices-library/"
   redirect_from: []
 "/docs/paas/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/devices-library/indoor-bluetooth-gateway/"
@@ -1191,6 +1178,9 @@
   redirect_from: []
 "/docs/paas/devices-library/luanode32/":
   url: "/docs/paas/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/paas/devices-library/m5stack-timer-camera-f/":
   url: "/docs/paas/devices-library/m5stack-timer-camera-f/"
@@ -1290,6 +1280,12 @@
   redirect_from: []
 "/docs/paas/devices-library/rock960/":
   url: "/docs/paas/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/devices-library/sensy32/":
+  url: "/docs/paas/devices-library/sensy32/"
   redirect_from: []
 "/docs/paas/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/devices-library/socketsync-bluetooth-gateway/"
@@ -1402,9 +1398,6 @@
 "/docs/paas/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/devices-library/":
-  url: "/docs/paas/devices-library/"
-  redirect_from: []
 "/docs/paas/domains/":
   url: "/docs/paas/domains/"
   redirect_from:
@@ -1511,9 +1504,6 @@
 "/docs/paas/eu/devices-library/esp32-pico-kit/":
   url: "/docs/paas/eu/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/paas/eu/devices-library/guidelines/":
-  url: "/docs/paas/eu/devices-library/guidelines/"
-  redirect_from: []
 "/docs/paas/eu/devices-library/helmet-sensor/":
   url: "/docs/paas/eu/devices-library/helmet-sensor/"
   redirect_from: []
@@ -1525,6 +1515,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/hummingboard-gate/":
   url: "/docs/paas/eu/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/":
+  url: "/docs/paas/eu/devices-library/"
   redirect_from: []
 "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/indoor-bluetooth-gateway/"
@@ -1555,6 +1548,9 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/luanode32/":
   url: "/docs/paas/eu/devices-library/luanode32/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/lw001-bg-pro/":
+  url: "/docs/paas/eu/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/paas/eu/devices-library/m5stack-timer-camera-f/":
   url: "/docs/paas/eu/devices-library/m5stack-timer-camera-f/"
@@ -1654,6 +1650,12 @@
   redirect_from: []
 "/docs/paas/eu/devices-library/rock960/":
   url: "/docs/paas/eu/devices-library/rock960/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/paas/eu/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/paas/eu/devices-library/sensy32/":
+  url: "/docs/paas/eu/devices-library/sensy32/"
   redirect_from: []
 "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/paas/eu/devices-library/socketsync-bluetooth-gateway/"
@@ -1766,9 +1768,6 @@
 "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/paas/eu/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/paas/eu/devices-library/":
-  url: "/docs/paas/eu/devices-library/"
-  redirect_from: []
 "/docs/paas/eu/domains/":
   url: "/docs/paas/eu/domains/"
   redirect_from: []
@@ -1858,6 +1857,9 @@
 "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/eu/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/paas/eu/samples/analytics/n8n-node/":
+  url: "/docs/paas/eu/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/paas/eu/samples/analytics/ollama/":
   url: "/docs/paas/eu/samples/analytics/ollama/"
   redirect_from: []
@@ -1935,6 +1937,9 @@
   redirect_from: []
 "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/eu/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/paas/eu/user-guide/alarm-rules/":
+  url: "/docs/paas/eu/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/paas/eu/user-guide/alarms/":
   url: "/docs/paas/eu/user-guide/alarms/"
@@ -2206,6 +2211,9 @@
 "/docs/paas/eu/user-guide/secrets-storage/":
   url: "/docs/paas/eu/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/paas/eu/user-guide/security/api-keys/":
+  url: "/docs/paas/eu/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/paas/eu/user-guide/self-registration/":
   url: "/docs/paas/eu/user-guide/self-registration/"
   redirect_from: []
@@ -2400,6 +2408,9 @@
 "/docs/paas/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/paas/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/paas/samples/analytics/n8n-node/":
+  url: "/docs/paas/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/paas/samples/analytics/ollama/":
   url: "/docs/paas/samples/analytics/ollama/"
   redirect_from: []
@@ -2478,6 +2489,9 @@
   redirect_from: []
 "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/paas/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/paas/user-guide/alarm-rules/":
+  url: "/docs/paas/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/paas/user-guide/alarms/":
   url: "/docs/paas/user-guide/alarms/"
@@ -2749,6 +2763,9 @@
 "/docs/paas/user-guide/secrets-storage/":
   url: "/docs/paas/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/paas/user-guide/security/api-keys/":
+  url: "/docs/paas/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/paas/user-guide/self-registration/":
   url: "/docs/paas/user-guide/self-registration/"
   redirect_from: []
@@ -2955,9 +2972,6 @@
 "/docs/pe/devices-library/esp32-pico-kit/":
   url: "/docs/pe/devices-library/esp32-pico-kit/"
   redirect_from: []
-"/docs/pe/devices-library/guidelines/":
-  url: "/docs/pe/devices-library/guidelines/"
-  redirect_from: []
 "/docs/pe/devices-library/helmet-sensor/":
   url: "/docs/pe/devices-library/helmet-sensor/"
   redirect_from: []
@@ -2969,6 +2983,9 @@
   redirect_from: []
 "/docs/pe/devices-library/hummingboard-gate/":
   url: "/docs/pe/devices-library/hummingboard-gate/"
+  redirect_from: []
+"/docs/pe/devices-library/":
+  url: "/docs/pe/devices-library/"
   redirect_from: []
 "/docs/pe/devices-library/indoor-bluetooth-gateway/":
   url: "/docs/pe/devices-library/indoor-bluetooth-gateway/"
@@ -2999,6 +3016,9 @@
   redirect_from: []
 "/docs/pe/devices-library/luanode32/":
   url: "/docs/pe/devices-library/luanode32/"
+  redirect_from: []
+"/docs/pe/devices-library/lw001-bg-pro/":
+  url: "/docs/pe/devices-library/lw001-bg-pro/"
   redirect_from: []
 "/docs/pe/devices-library/m5stack-timer-camera-f/":
   url: "/docs/pe/devices-library/m5stack-timer-camera-f/"
@@ -3098,6 +3118,12 @@
   redirect_from: []
 "/docs/pe/devices-library/rock960/":
   url: "/docs/pe/devices-library/rock960/"
+  redirect_from: []
+"/docs/pe/devices-library/s26x-lorawan-temperature-sensor/":
+  url: "/docs/pe/devices-library/s26x-lorawan-temperature-sensor/"
+  redirect_from: []
+"/docs/pe/devices-library/sensy32/":
+  url: "/docs/pe/devices-library/sensy32/"
   redirect_from: []
 "/docs/pe/devices-library/socketsync-bluetooth-gateway/":
   url: "/docs/pe/devices-library/socketsync-bluetooth-gateway/"
@@ -3210,9 +3236,6 @@
 "/docs/pe/devices-library/ws202-pir-and-light-sensor/":
   url: "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
   redirect_from: []
-"/docs/pe/devices-library/":
-  url: "/docs/pe/devices-library/"
-  redirect_from: []
 "/docs/pe/domains/":
   url: "/docs/pe/domains/"
   redirect_from: []
@@ -3243,8 +3266,8 @@
 "/docs/pe/edge/config/subscribe-to-attribute/":
   url: "/docs/pe/edge/config/subscribe-to-attribute/"
   redirect_from: []
-"/docs/pe/edge/devices-library/guidelines/":
-  url: "/docs/pe/edge/devices-library/guidelines/"
+"/docs/pe/edge/devices-library/":
+  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/":
   url: "/docs/pe/edge/devices-library/nvidia-jetson-xavier-nx-developer-kit/"
@@ -3257,9 +3280,6 @@
   redirect_from: []
 "/docs/pe/edge/devices-library/recomputer-r1100/":
   url: "/docs/pe/edge/devices-library/recomputer-r1100/"
-  redirect_from: []
-"/docs/pe/edge/devices-library/":
-  url: "/docs/pe/edge/devices-library/"
   redirect_from: []
 "/docs/pe/edge/edge-architecture/":
   url: "/docs/pe/edge/edge-architecture/"
@@ -3555,6 +3575,9 @@
   url: "/docs/pe/reference/"
   redirect_from:
   - "/docs/pe/user-guide/rule-engine-2-0/architecture/"
+"/docs/pe/releases/release-policy/":
+  url: "/docs/pe/releases/release-policy/"
+  redirect_from: []
 "/docs/pe/releases/releases-table/":
   url: "/docs/pe/releases/releases-table/"
   redirect_from: []
@@ -3611,6 +3634,9 @@
   redirect_from: []
 "/docs/pe/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/pe/samples/analytics/mcp-server-ai-insights/"
+  redirect_from: []
+"/docs/pe/samples/analytics/n8n-node/":
+  url: "/docs/pe/samples/analytics/n8n-node/"
   redirect_from: []
 "/docs/pe/samples/analytics/ollama/":
   url: "/docs/pe/samples/analytics/ollama/"
@@ -3684,6 +3710,9 @@
   redirect_from: []
 "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/pe/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
+  redirect_from: []
+"/docs/pe/user-guide/alarm-rules/":
+  url: "/docs/pe/user-guide/alarm-rules/"
   redirect_from: []
 "/docs/pe/user-guide/alarms/":
   url: "/docs/pe/user-guide/alarms/"
@@ -3827,6 +3856,84 @@
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/"
@@ -4021,6 +4128,9 @@
 "/docs/pe/user-guide/secrets-storage/":
   url: "/docs/pe/user-guide/secrets-storage/"
   redirect_from: []
+"/docs/pe/user-guide/security/api-keys/":
+  url: "/docs/pe/user-guide/security/api-keys/"
+  redirect_from: []
 "/docs/pe/user-guide/self-registration/":
   url: "/docs/pe/user-guide/self-registration/"
   redirect_from:
@@ -4117,6 +4227,9 @@
   redirect_from: []
 "/docs/pe/user-guide/ui/tenants/":
   url: "/docs/pe/user-guide/ui/tenants/"
+  redirect_from: []
+"/docs/pe/user-guide/ui/trendz-settings/":
+  url: "/docs/pe/user-guide/ui/trendz-settings/"
   redirect_from: []
 "/docs/pe/user-guide/ui/trip-animation-widget/":
   url: "/docs/pe/user-guide/ui/trip-animation-widget/"
@@ -4324,6 +4437,9 @@
 "/docs/samples/analytics/mcp-server-ai-insights/":
   url: "/docs/samples/analytics/mcp-server-ai-insights/"
   redirect_from: []
+"/docs/samples/analytics/n8n-node/":
+  url: "/docs/samples/analytics/n8n-node/"
+  redirect_from: []
 "/docs/samples/analytics/ollama/nginx/":
   url: "/docs/samples/analytics/ollama/nginx/"
   redirect_from: []
@@ -4431,6 +4547,18 @@
   redirect_from: []
 "/docs/sitemap/":
   url: "/docs/sitemap/"
+  redirect_from: []
+"/docs/trendz/activation/how-to/":
+  url: "/docs/trendz/activation/how-to/"
+  redirect_from: []
+"/docs/trendz/activation/private-cloud/":
+  url: "/docs/trendz/activation/private-cloud/"
+  redirect_from: []
+"/docs/trendz/activation/public-cloud/":
+  url: "/docs/trendz/activation/public-cloud/"
+  redirect_from: []
+"/docs/trendz/activation/self-hosted/":
+  url: "/docs/trendz/activation/self-hosted/"
   redirect_from: []
 "/docs/trendz/ai-assistance-overview/":
   url: "/docs/trendz/ai-assistance-overview/"
@@ -4552,11 +4680,11 @@
 "/docs/trendz/install/kubernetes/":
   url: "/docs/trendz/install/kubernetes/"
   redirect_from: []
-"/docs/trendz/install/python-executor-configuration-linux/":
-  url: "/docs/trendz/install/python-executor-configuration-linux/"
+"/docs/trendz/install/old-docker-migrate/":
+  url: "/docs/trendz/install/old-docker-migrate/"
   redirect_from: []
-"/docs/trendz/install/python-executor-configuration-windows/":
-  url: "/docs/trendz/install/python-executor-configuration-windows/"
+"/docs/trendz/install/python-executor-configuration/":
+  url: "/docs/trendz/install/python-executor-configuration/"
   redirect_from: []
 "/docs/trendz/install/rhel/":
   url: "/docs/trendz/install/rhel/"
@@ -4708,6 +4836,9 @@
 "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/":
   url: "/docs/user-guide/advanced-guides-for-working-with-dashboard/advanced-dashboard-guide-lesson-5/"
   redirect_from: []
+"/docs/user-guide/alarm-rules/":
+  url: "/docs/user-guide/alarm-rules/"
+  redirect_from: []
 "/docs/user-guide/alarms/":
   url: "/docs/user-guide/alarms/"
   redirect_from:
@@ -4731,8 +4862,26 @@
 "/docs/user-guide/bulk-provisioning/":
   url: "/docs/user-guide/bulk-provisioning/"
   redirect_from: []
+"/docs/user-guide/calculated-fields/geofencing-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/geofencing-calculated-field/"
+  redirect_from: []
 "/docs/user-guide/calculated-fields/":
   url: "/docs/user-guide/calculated-fields/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/propagation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/propagation-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/related-entities-aggregation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/related-entities-aggregation-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/script-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/script-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/simple-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/simple-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/time-series-data-aggregation-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/time-series-data-aggregation-calculated-field/"
   redirect_from: []
 "/docs/user-guide/certificates/":
   url: "/docs/user-guide/certificates/"
@@ -5147,6 +5296,84 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-3-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-4-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-5-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-6-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-7-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-8-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-9-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-0-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-1-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
@@ -5795,6 +6022,9 @@
   redirect_from: []
 "/docs/user-guide/scada/":
   url: "/docs/user-guide/scada/"
+  redirect_from: []
+"/docs/user-guide/security/api-keys/":
+  url: "/docs/user-guide/security/api-keys/"
   redirect_from: []
 "/docs/user-guide/ssl/coap-access-token/":
   url: "/docs/user-guide/ssl/coap-access-token/"

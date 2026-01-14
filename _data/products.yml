@@ -2,7 +2,7 @@
   fulltitle: ThingsBoard Community Edition
   description: ThingsBoard Documentation
   tag: ce
-  icon: /images/thingsboard-cm-icon.svg
+  icon: https://img.thingsboard.io/thingsboard-cm-icon.svg
   path: /docs/
   guides: /docs/guides/
   getStarted: /docs/getting-started-guides/helloworld/
@@ -11,7 +11,7 @@
   fulltitle: ThingsBoard Professional Edition
   description: ThingsBoard Documentation
   tag: pe
-  icon: /images/thingsboard-p-icon.svg
+  icon: https://img.thingsboard.io/thingsboard-p-icon.svg
   path: /docs/pe/
   guides: /docs/pe/guides/
   getStarted: /docs/pe/getting-started-guides/helloworld/
@@ -20,7 +20,7 @@
   fulltitle: ThingsBoard Cloud
   description: ThingsBoard Documentation
   tag: paas
-  icon: /images/thingsboard-c-icon.svg
+  icon: https://img.thingsboard.io/thingsboard-c-icon.svg
   path: /docs/paas/
   guides: /docs/paas/guides/
   getStarted: /docs/paas/getting-started-guides/helloworld/
@@ -29,21 +29,21 @@
   fulltitle: ThingsBoard Edge
   description: ThingsBoard Edge Documentation
   tag: edge
-  icon: /images/thingsboard-e-icon.svg
+  icon: https://img.thingsboard.io/thingsboard-e-icon.svg
   path: /docs/edge/
   docsPrefix: /docs/edge/
 - title: PE Edge
   fulltitle: ThingsBoard PE Edge
   description: ThingsBoard PE Edge Documentation
   tag: edge-pe
-  icon: /images/thingsboard-e-icon.svg
+  icon: https://img.thingsboard.io/thingsboard-e-icon.svg
   path: /docs/pe/edge/
   docsPrefix: /docs/pe/edge/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
   description: ThingsBoard Documentation
   tag: gw
-  icon: /images/gateway-icon.svg
+  icon: https://img.thingsboard.io/gateway-icon.svg
   path: /docs/iot-gateway/
   docsPrefix: /docs/iot-gateway/
   getStarted: /docs/iot-gateway/getting-started/
@@ -51,13 +51,13 @@
   fulltitle: ThingsBoard License Server
   description: ThingsBoard Documentation
   tag: license
-  icon: /images/license-icon.svg
+  icon: https://img.thingsboard.io/license-icon.svg
   path: /products/license-server/
 - title: Trendz Analytics
   fulltitle: Trendz Analytics
   description: Trendz Documentation
   tag: trendz
-  icon: /images/trendz-icon.svg
+  icon: https://img.thingsboard.io/trendz-icon.svg
   path: /docs/trendz/
   docsPrefix: /docs/trendz/
   getStarted: /docs/trendz/getting-started/
@@ -65,7 +65,7 @@
   fulltitle: ThingsBoard Mobile Application
   description: Mobile Application Documentation
   tag: mobile
-  icon: /images/tb-mobile-icon.svg
+  icon: https://img.thingsboard.io/tb-mobile-icon.svg
   path: /docs/mobile/
   docsPrefix: /docs/mobile/
   getStarted: /docs/mobile/getting-started/
@@ -73,7 +73,7 @@
   fulltitle: ThingsBoard PE Mobile Application
   description: PE Mobile Application Documentation
   tag: mobile-pe
-  icon: /images/tb-pe-mobile-icon.svg
+  icon: https://img.thingsboard.io/tb-pe-mobile-icon.svg
   path: /docs/pe/mobile/
   docsPrefix: /docs/pe/mobile/
   getStarted: /docs/pe/mobile/getting-started/
@@ -81,7 +81,7 @@
   fulltitle: MQTT Broker
   description: MQTT Broker Documentation
   tag: mqtt-broker
-  icon: /images/tbmq-icon.svg
+  icon: https://img.thingsboard.io/tbmq-icon.svg
   path: /docs/mqtt-broker/
   docsPrefix: /docs/mqtt-broker/
   getStarted: /docs/mqtt-broker/getting-started/

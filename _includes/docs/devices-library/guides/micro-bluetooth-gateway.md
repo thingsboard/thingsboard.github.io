@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Micro Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} is designed based on LoRaWAN and Bluetooth 5.0 technology. It receives nearby [beacon](https://www.lansitec.com/products/bluetooth-beacon/){:target="_blank"} information and forwards it to a LoRaWAN gateway. It is powered by 8000mAh industrial battery with a standby time as long as 6 years (Bluetooth receive duration is 60s in every one hour LoRa report interval).
 
 ## Prerequisites
@@ -17,6 +16,7 @@
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -38,3 +38,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The BeagleBone Green Wireless is a low-cost, open-source, single-board computer based on the BeagleBone Black design.  
  It includes Wi-Fi and Bluetooth connectivity, and is ideal for IoT applications and other projects that require wireless communication.  
 
@@ -48,3 +47,4 @@ The BeagleBone Green Wireless is a low-cost, open-source, single-board computer 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -1,7 +1,7 @@
 
 {% assign installESP8266='
     ===
-        image: /images/devices-library/basic/microcontrollers/esp8266-arduino-ide-board-manager.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/esp8266-arduino-ide-board-manager.png,
         title: Put ESP8266 into search field and install esp8266 by Espressif Community.
 ' %}
 
@@ -16,7 +16,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 {% assign esp8266ArduinoPreferences='
     ===
-        image: /images/devices-library/basic/arduino-ide/preferences.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/preferences.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp8266ArduinoPreferences %}

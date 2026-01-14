@@ -30,7 +30,7 @@ IoT devices connect to ThingsBoard server via MQTT and issue "publish" commands 
 Size of single publish message is approximately 100 bytes. 
 [MQTT](http://mqtt.org/) is lightweight publish/subscribe messaging protocol and offers a number of advantages over HTTP request/response protocol.
  
-![image](/images/reference/performance/performance-diagram-0.svg)
+![image](https://img.thingsboard.io/reference/performance/performance-diagram-0.svg)
 
 ThingsBoard server processes MQTT publish messages and stores them to Cassandra asynchronously.
 The server may also push data to websocket subscriptions from the Web UI dashboards (if present).
@@ -56,7 +56,7 @@ Quick refactoring of the service implementation resulted in more than 10X perfor
 
 We have decided to move to AWS EC2 instances to be able to share both results and tests we executed. We start running tests on [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instance (4 vCPUs and 7.5 Gb of RAM) with Cassandra and ThingsBoard services co-located.
 
-![image](/images/reference/performance/performance-diagram-1.svg)
+![image](https://img.thingsboard.io/reference/performance/performance-diagram-1.svg)
 
 Test specification:
 
@@ -66,7 +66,7 @@ Test specification:
  
 First test results were obviously unacceptable:
 
-![image](/images/reference/performance/single_node_no_fix_stats.png) 
+![image](https://img.thingsboard.io/reference/performance/single_node_no_fix_stats.png) 
  
 
 The huge response time above was caused by the fact that the server was simply not able to process 10 K messages per second and they are getting queued.
@@ -76,7 +76,7 @@ Initially, our guessing regarding poor performance was because of the heavy load
 But in fact, during load testing, we have seen that CPU in particular moments was idle for a couple of seconds. 
 This 'pause' event was happening every 3-7 seconds, see chart below.
  
-![image](/images/reference/performance/single_node_no_fix_rps.png) 
+![image](https://img.thingsboard.io/reference/performance/single_node_no_fix_rps.png) 
 
 As a next step, we have decided to do the thread dump during these pauses. 
 We were expecting to see threads that are blocked and this could give us some clue what is happening while pauses. 
@@ -129,9 +129,9 @@ poolingOptions
 
 Test results after the applied changes are listed below.
 
-![image](/images/reference/performance/single_node_with_fix_stats.png)
+![image](https://img.thingsboard.io/reference/performance/single_node_with_fix_stats.png)
  
-![image](/images/reference/performance/single_node_with_fix_rps.png) 
+![image](https://img.thingsboard.io/reference/performance/single_node_with_fix_rps.png) 
 
 The results were much better, but far from even 1 million messages per minute. We have not seen pauses in CPU load during our tests on c4.xlarge anymore.
 CPU load was high (80-95%) during the entire test. We have done couple thread dumps to verify that cassandra driver does not await available connections 
@@ -142,15 +142,15 @@ and indeed we have not seen this issue anymore.
 We have decided to run the same tests on twice as more powerful node [c4.2xlarge](http://www.ec2instances.info/?selected=c4.2xlarge) with 8 vCPUs and 15Gb of RAM.
 The performance increase was not linear and the CPU was still loaded (80-90%).
 
-![image](/images/reference/performance/single_node_x2_with_fix_stats.png)
+![image](https://img.thingsboard.io/reference/performance/single_node_x2_with_fix_stats.png)
 
 We have noticed a significant improvement in response time. After significant peak on the start of the test maximum response time was within 200ms and average response time was ~ 50ms. 
 
-![image](/images/reference/performance/single_node_x2_with_fix_time.png)
+![image](https://img.thingsboard.io/reference/performance/single_node_x2_with_fix_time.png)
 
 Number of requests per second was around 10K
 
-![image](/images/reference/performance/single_node_x2_with_fix_rps.png)
+![image](https://img.thingsboard.io/reference/performance/single_node_x2_with_fix_rps.png)
 
 We have also executed test on [c4.4xlarge](http://www.ec2instances.info/?selected=c4.4xlarge) with 16 vCPUs and 30Gb of RAM but have not noticed significant improvements and decided to separate ThingsBoard server and move Cassandra to three nodes cluster.
 
@@ -162,7 +162,7 @@ So, we decided to move Cassandra to three [c4.xlarge](http://www.ec2instances.in
 and launch gatling stress test tool from two separate [c4.xlarge](http://www.ec2instances.info/?selected=c4.xlarge) instances simultaneously 
 to minimize the possible affect on latency and throughput by thirdparty.
 
-![image](/images/reference/performance/performance-diagram-2.svg)
+![image](https://img.thingsboard.io/reference/performance/performance-diagram-2.svg)
 
 Test specification:
 
@@ -172,9 +172,9 @@ Test specification:
 
 The statistics of two simultaneous test runs launched on different client machines is listed below.
  
-![image](/images/reference/performance/cluster_stats.png)
-![image](/images/reference/performance/cluster_rps.png)
-![image](/images/reference/performance/cluster_responses_ps.png)
+![image](https://img.thingsboard.io/reference/performance/cluster_stats.png)
+![image](https://img.thingsboard.io/reference/performance/cluster_rps.png)
+![image](https://img.thingsboard.io/reference/performance/cluster_responses_ps.png)
 
 Based on the data from two simultaneous test runs we have reached **30 000 published messages per second** which is equal to **1.8 million per minute**.
 

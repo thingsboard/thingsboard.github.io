@@ -44,7 +44,7 @@ Creating a SCADA symbol in ThingsBoard involves an SVG file along with several c
 
 Assume we want to transform the SVG file shown below into an interactive SCADA symbol:
 
-<img src="/images/user-guide/scada/fan.svg" alt="FAN SVG" width="300" height="300">
+<img src="https://img.thingsboard.io/user-guide/scada/fan.svg" alt="FAN SVG" width="300" height="300">
 
 *Figure: Static SVG image including a fan, text label, and two buttons.*
 
@@ -69,7 +69,7 @@ Next, we will outline the steps to achieve this functionality.
 
 - Right-click on the SVG file shown below and select "Save image as" to save the file to your PC:
 
-<img src="/images/user-guide/scada/fan.svg" alt="FAN SVG" width="300" height="300">
+<img src="https://img.thingsboard.io/user-guide/scada/fan.svg" alt="FAN SVG" width="300" height="300">
 
 - Navigate to the "Resources" page of the "SCADA symbols" section and click the "Upload SCADA symbol" button;
 - Drop the `fan.svg` file in the appropriate field, or upload it from a folder on your computer, rename it to "Fan", and click "Upload".
@@ -1011,7 +1011,7 @@ You can download the SCADA symbol with all settings. To do this, click the "Down
 <br>
 Here is an example of a configured SCADA symbol:
 
-<img src="/images/user-guide/scada/configured_fan.svg" alt="FAN SVG" width="300" height="300">
+<img src="https://img.thingsboard.io/user-guide/scada/configured_fan.svg" alt="FAN SVG" width="300" height="300">
 
 ### Widget's test
 

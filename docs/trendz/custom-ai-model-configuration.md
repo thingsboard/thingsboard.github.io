@@ -5,89 +5,89 @@ description: Step-by-step guide how to set uo AI Settings in Trendz
 
 ai-settings:
   0:
-    image: /images/trendz/ai/settings/ai-settings-1.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-settings-1.png
     title: "Navigate to <b>Settings → AI Assistant</b> tab."
   1:
-    image: /images/trendz/ai/settings/ai-settings-2.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-settings-2.png
     title: "The <b>AI Features</b> section."
   2:
-    image: /images/trendz/ai/settings/ai-settings-3.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-settings-3.png
     title: "The <b>AI Models</b> section."
 
 ai-models:
   0:
-    image: /images/trendz/ai/settings/ai-models-1.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-1.png
     title: "Click the <b>New AI Model</b> button."
   1:
-    image: /images/trendz/ai/settings/ai-models-2.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-2.png
     title: "Enter a <b>Name</b> (any label you wish to identify the model in the list)."
   2:
-    image: /images/trendz/ai/settings/ai-models-3.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-3.png
     title: "Choose a <b>Provider</b> (currently supported: `OPEN_AI`, `GOOGLE`, `AMAZON_BEDROCK`, `CUSTOM`)."
   3:
-    image: /images/trendz/ai/settings/ai-models-4.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-4.png
     title: "Enter the <b>Model Name</b> (specific to the provider)."
   4:
-    image: /images/trendz/ai/settings/ai-models-5.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-5.png
     title: "Provide additional parameters (like Base URL or API Key), depending on the provider."
   5:
-    image: /images/trendz/ai/settings/ai-models-6.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-6.png
     title: "Set the <b>Temperature</b> and <b>Top P</b> parameters."
   6:
-    image: /images/trendz/ai/settings/ai-models-7.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-7.png
     title: "Click <b>Save</b>."
   7:
-    image: /images/trendz/ai/settings/ai-models-8.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-models-8.png
     title: "If everything is set up correctly, you will see a success message."
 
 model-delete:
   0:
-    image: /images/trendz/ai/settings/model-delete-1.png
+    image: https://img.thingsboard.io/trendz/ai/settings/model-delete-1.png
     title: "Actions → Delete."
   1:
-    image: /images/trendz/ai/settings/model-delete-2.png
+    image: https://img.thingsboard.io/trendz/ai/settings/model-delete-2.png
     title: "Confirm."
     
 model-edit:
   0:
-    image: /images/trendz/ai/settings/model-edit-1.png
+    image: https://img.thingsboard.io/trendz/ai/settings/model-edit-1.png
     title: "Actions → Edit."
   1:
-    image: /images/trendz/ai/settings/model-edit-2.png
+    image: https://img.thingsboard.io/trendz/ai/settings/model-edit-2.png
     title: "Change Properties → Save."
 
 ai-features:
   0:
-    image: /images/trendz/ai/settings/ai-features-1.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-features-1.png
     title: "To enable AI features, toggle <b>Enable AI Features</b> on."
   1:
-    image: /images/trendz/ai/settings/ai-features-2.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-features-2.png
     title: "<b>Use Single Model:</b> apply a single AI model for all features."
   2:
-    image: /images/trendz/ai/settings/ai-features-3.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-features-3.png
     title: "<b>Custom per Feature Configuration:</b> assign different AI models to specific features."
   3:
-    image: /images/trendz/ai/settings/ai-features-4.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-features-4.png
     title: "To switch between options, enable or disable <b>Use Single Model</b> checkbox."
   4:
-    image: /images/trendz/ai/settings/ai-features-5.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-features-5.png
     title: "If a feature is disabled, neither you nor other users will be able to access AI capabilities related to it."
   5:
-    image: /images/trendz/ai/settings/ai-features-6.png
+    image: https://img.thingsboard.io/trendz/ai/settings/ai-features-6.png
     title: "Once all configurations are completed, click <b>Save</b> to apply the changes."
 
 providers:
   0:
-    image: /images/trendz/ai/settings/providers-1.png
+    image: https://img.thingsboard.io/trendz/ai/settings/providers-1.png
     title: "Open AI."
   1:
-    image: /images/trendz/ai/settings/providers-2.png
+    image: https://img.thingsboard.io/trendz/ai/settings/providers-2.png
     title: "Google (Recommended)."
   2:
-    image: /images/trendz/ai/settings/providers-3.png
+    image: https://img.thingsboard.io/trendz/ai/settings/providers-3.png
     title: "Amazon Bedrock."
   3:
-    image: /images/trendz/ai/settings/providers-4.png
+    image: https://img.thingsboard.io/trendz/ai/settings/providers-4.png
     title: "Other Models (Custom)."
 
 ---

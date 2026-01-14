@@ -12,7 +12,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [ioTracker Multi-sensor tracker]({{deviceVendorLink}}){: target="_blank"} ioTracker is a compact multi‑sensor LoRaWAN® tracker with built‑in temperature, light, shock, tilt, optional humidity and pressure sensors for versatile environment monitoring.  
 The ioTracker contains multiple pre-set
 configurations, which can cover many use
@@ -37,6 +36,7 @@ outdoor situation.
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -70,9 +70,10 @@ To do this, open **Entities** menu section and select **Devices**.
 Click on the device name to open the device details page.  
 Go to the **Latest telemetry** tab to see the latest telemetry data received from the device.  
 
-![LoRaWAN device data](/images/devices-library/io-tracker-device-data.png)
+![LoRaWAN device data](https://img.thingsboard.io/devices-library/io-tracker-device-data.png)
 
 
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

@@ -5,7 +5,7 @@ description: TBMQ MQTT Client types overview
 
 mqtt-client-type:
   0:
-    image: /images/mqtt-broker/features/application-client-warning.png
+    image: https://img.thingsboard.io/mqtt-broker/features/application-client-warning.png
     title: 'Application client warning for non-persistent client'
 
 ---

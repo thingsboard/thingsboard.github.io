@@ -44,13 +44,13 @@ you can use the "Advanced" configuration mode.
 
 You can switch between these modes using the toggle button at the top of the configuration page:
 
-![image](/images/gateway/opc-ua-connector/opc-ua-modes-toggle.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-modes-toggle.png)
 
 ## General settings
 
 {% include /templates/iot-gateway/connector-commons/general-settings.md %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-general-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-general-basic-1-ce.png)
 
 {% capture difference %}
 The General tab in settings is the same for both the basic and advanced configurations.
@@ -96,16 +96,16 @@ report strategy:
       period;
     - **On received** - sends data to ThingsBoard after receiving data from the device (default strategy).
 
-![image](/images/gateway/opc-ua-connector/opc-ua-data-mapping-overview.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-data-mapping-overview.png)
 
 To add a new device, use the following steps:
 
 {% assign addingDevice = '
     ===
-        image: /images/gateway/opc-ua-connector/adding-device-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/adding-device-1.png,
         title: Click the **+ Add mapping** button.
     ===
-        image: /images/gateway/opc-ua-connector/adding-device-2.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/adding-device-2.png,
         title: Provide the following fields in the opened model window: Device node, Device name and Profile name (all of them can be `path` or `identifier`).
 '
 %}
@@ -143,7 +143,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-attributes-timeseries-overview.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-attributes-timeseries-overview.png)
 
 {% include /templates/iot-gateway/opcua-connector/opcua-attr-and-time-series-basic-section.md %}
 
@@ -154,6 +154,7 @@ Device name/profile with Absolute Path<small></small>%,%devicenameandprofileabso
 Device name/profile with Relative Path<small></small>%,%devicenameandprofilerelativepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/device-name-and-profile-relative-path.md%br%
 Device name/profile with Identifier<small></small>%,%devicenameandprofileidentifier%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/device-name-and-profile-identifier.md%br%
 Attributes/Time series with Relative Path<small></small>%,%attributestimeseriesrelativepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-relative-path.md%br%
+Attributes/Time series with Relative Path and Identifier device node<small></small>%,%attributestimeseriesrelativepathdevicenode%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-identifier-device-node.md%br%
 Attributes/Time series with Absolute Path<small></small>%,%attributestimeseriesabsolutepath%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-absolute-path.md%br%
 Attributes/Time series with Identifier<small></small>%,%attributestimeseriesidentifier%,%templates/iot-gateway/opcua-connector/examples/time-series-and-attributes/attributes-time-series-identifier.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcua-attributes-timeseries-examples" toggle-spec=opcua-attributes-timeseries-examples %}
@@ -198,7 +199,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-attribute-updates-overview.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-attribute-updates-overview.png)
 
 {% include /templates/iot-gateway/opcua-connector/device-attribute-updates-basic-section.md %}
 
@@ -218,7 +219,7 @@ More usage examples can be found in the [Usage examples](/docs/iot-gateway/confi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/opc-ua-connector/opc-ua-rpc-overview.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-rpc-overview.png)
 
 {% include /templates/iot-gateway/opcua-connector/device-rpc-basic-section.md %}
 
@@ -236,6 +237,7 @@ Attribute Updates<small>with Absolute Path</small>%,%sharedabsolute%,%templates/
 Attribute Updates<small>with Identifier</small>%,%sharedidentifier%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/shared-attributes-with-identifier.md%br%
 RPC to Device<small></small>%,%rpctodevice%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/rpc-to-device.md%br%
 Reserved RPCs<small></small>%,%reservedrpc%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/reserved-rpc.md%br%
+Reserved RPCs to foreign nodes<small></small>%,%reservedrpctoforeignnodes%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/reserved-rpc-foreign-node.md%br%
 RPC to Connector<small></small>%,%rpctoconnector%,%templates/iot-gateway/opcua-connector/examples/shared-attributes-rpc/rpc-to-connector.md{% endcapture %}
 {% include content-toggle.liquid content-toggle-id="opcua-shared-attributes-rpc-examples" toggle-spec=opcua-shared-attributes-rpc-examples %}
 

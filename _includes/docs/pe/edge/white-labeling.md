@@ -15,23 +15,23 @@ The **white labeling** feature supports particular **hierarchy**.
 The tenant can override the configurations set by the system administrator,
 tenant-set configurations can be overridden by the customer, and so on.
 
- ![hierarchy_scheme](/images/edge/user-guide/white-labeling/hierarchy.webp){: style="display: block; margin: auto; max-height: 400px"}
+ ![hierarchy_scheme](https://img.thingsboard.io/edge/user-guide/white-labeling/hierarchy.webp){: style="display: block; margin: auto; max-height: 400px"}
 
 Similarly, **white-labeling** configurations are propagated to the **Edge instances**:
 
 * **Tenant-Owned Edge:** If the edge is owned by a **tenant**, the white labeling settings are retrieved from the **tenant level** and merged with those from the system administrator. 
 
-![tenant-owned-edge](/images/edge/user-guide/white-labeling/hierarchy-edge-tenant.webp){: style="display: block; margin: auto; max-height: 280px"}
+![tenant-owned-edge](https://img.thingsboard.io/edge/user-guide/white-labeling/hierarchy-edge-tenant.webp){: style="display: block; margin: auto; max-height: 280px"}
 
 * **Customer-Owned Edge:** If the edge is owned by a **customer**, the white labeling settings are taken from the **customer** of the edge and merged with those from the tenant and system administrator.
  
-![customer-owned-edge](/images/edge/user-guide/white-labeling/hierarchy-edge-customer.webp){: style="display: block; margin: auto; max-height: 390px"}
+![customer-owned-edge](https://img.thingsboard.io/edge/user-guide/white-labeling/hierarchy-edge-customer.webp){: style="display: block; margin: auto; max-height: 390px"}
 
 However, the displayed interface depends on the **account** used to log in to an **Edge** instance.
 
 _**For example:** When a user logs in to a **customer-owned Edge** with the **tenant account**, that user will see the interface for a **tenant**._
 
-![interface](/images/edge/user-guide/white-labeling/interface.webp){: style="display: block; margin: auto; max-height: 400px"}
+![interface](https://img.thingsboard.io/edge/user-guide/white-labeling/interface.webp){: style="display: block; margin: auto; max-height: 400px"}
 
 ## Edge Login Page
 
@@ -48,7 +48,7 @@ The appearance of the **Edge login page** depends on the **ownership** only.
 
 _**For example:** When a user logs in to the **customer-owned Edge**, the **customer's** white-labeling login configurations are applied._
 
-![edge-login-page](/images/edge/user-guide/white-labeling/edge-login-page.webp){: style="display: block; margin: auto; max-height: 450px"}
+![edge-login-page](https://img.thingsboard.io/edge/user-guide/white-labeling/edge-login-page.webp){: style="display: block; margin: auto; max-height: 450px"}
 
 ## Other Configurations
 

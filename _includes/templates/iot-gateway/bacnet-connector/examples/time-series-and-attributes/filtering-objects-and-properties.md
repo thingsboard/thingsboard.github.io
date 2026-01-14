@@ -61,4 +61,4 @@ After saving the changes and starting the connector, you can see that the corres
 platform, and its telemetry has started to fill with the filtered data. The screenshot below shows an example of how 
 the device telemetry looks like after applying the filtering configuration:
 
-![image](/images/gateway/bacnet-connector/examples/filtering-objects-and-properties-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/filtering-objects-and-properties-overview.png)

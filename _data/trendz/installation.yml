@@ -3,7 +3,7 @@ abstract: "Documentation for installation and configuration of Trendz Analytics.
 toc:
 - title: Installation options
   path: /docs/trendz/install/installation-options/
-- title: Trendz Cloud
+- title: Cloud
   path: /docs/trendz/install/cloud/
 - title: On-premises
   section:
@@ -26,14 +26,6 @@ toc:
   - title: Kubernetes
     path: /docs/trendz/install/trndz-upgrade-instructions-kubernetes/
 - title: Python Executor Configuration
-  section:
-  - title: Windows
-    path: /docs/trendz/install/python-executor-configuration-windows/
-  - title: Linux or Mac OS
-    path: /docs/trendz/install/python-executor-configuration-linux/
-- title: Connect Trendz to Thingsboard
-  path: /docs/trendz/connect-thingsboard/
+  path: /docs/trendz/install/python-executor-configuration/
 - title: Configuration properties
   path: /docs/trendz/configuration-properties/
-- title: Post-installation steps
-  path: /docs/trendz/post-installation-steps/

@@ -29,7 +29,7 @@ Response:
 {"result": {"value":  "inactive"}}
 ```
 
-![image](/images/gateway/bacnet-connector/examples/reserved-rpc-result-1.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/reserved-rpc-result-1.png)
 
 So, the `GET` method returns the current value of the relay, and we can see that the relay is off.
 
@@ -52,7 +52,7 @@ Response:
 
 And as you can see, from the screenshot below, the relay telemetry value has changed to `1`:
 
-![image](/images/gateway/bacnet-connector/examples/reserved-rpc-result-2.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/reserved-rpc-result-2.png)
 
 Also, let’s check the value of the relay telemetry again:
 
@@ -66,7 +66,7 @@ Response:
 {"result": {"value":  "active"}}
 ```
 
-![image](/images/gateway/bacnet-connector/examples/reserved-rpc-result-3.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/reserved-rpc-result-3.png)
 
 Full configuration for BACnet connector for the examples above will look like this 
 (**make sure to use the right device host and port**):

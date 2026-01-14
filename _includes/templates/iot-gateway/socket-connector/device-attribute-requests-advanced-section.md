@@ -34,4 +34,4 @@ will look like this:
 This means that we have to send the following message to request two shared attributes:
 `atr sharedAttribute sharedAttribute1`
 
-![image](/images/gateway/socket-connector/socket-subsection-attribute-request-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/socket-connector/socket-subsection-attribute-request-advanced-1-ce.png)

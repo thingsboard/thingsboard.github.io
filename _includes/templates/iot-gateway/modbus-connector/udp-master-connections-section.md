@@ -4,4 +4,4 @@ The following parameters are used to configure UDP connection for the slave:
 - **Port** - port of the Modbus server for connection.
 - **Method** - type of a framer, either **Socket** or **RTU**.
 
-![image](/images/gateway/modbus-connector/udp-server-connection-section.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/udp-server-connection-section.png)

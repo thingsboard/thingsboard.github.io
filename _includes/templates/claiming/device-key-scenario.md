@@ -11,7 +11,7 @@ To add more time, you should increase the value of the parameter **caffeine.spec
 
 ThingsBoard server stores Claiming Information for the duration of the validity of the key. See diagram below.
 
-![image](/images/user-guide/claiming-devices/device-side-key-diagram.png)
+![image](https://img.thingsboard.io/user-guide/claiming-devices/device-side-key-diagram.png)
 
 Device may send Claiming Information to TB using all supported transport protocols. The message body has two parameters: **secretKey** and **durationMs**, which may be optionally specified. 
 The **secretKey** parameter adds security to the claiming process.

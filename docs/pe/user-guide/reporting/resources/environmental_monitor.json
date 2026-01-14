@@ -1191,7 +1191,7 @@
               "viewFormat": "grid",
               "autoFillHeight": true,
               "rowHeight": 70,
-              "backgroundImageUrl": "tb-image;/api/images/tenant/dew-point.jpg",
+              "backgroundImageUrl": "tb-image;/apihttps://img.thingsboard.io/tenant/dew-point.jpg",
               "mobileAutoFillHeight": false,
               "mobileRowHeight": 70
             }
@@ -1256,7 +1256,7 @@
   "name": "Environmental Monitor",
   "resources": [
     {
-      "link": "/api/images/tenant/dew-point.jpg",
+      "link": "/apihttps://img.thingsboard.io/tenant/dew-point.jpg",
       "title": "dew-point.jpg",
       "type": "IMAGE",
       "subType": "IMAGE",

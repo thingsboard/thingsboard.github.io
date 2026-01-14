@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -157,11 +157,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/air-quality/cities-1.svg" alt="Smart cities" title="Smart cities"></div>
-            <div class="application-image"><img src="/images/usecases/air-quality/industrial-1.svg" alt="Industrial zones" title="Industrial zones"></div>
-            <div class="application-image"><img src="/images/usecases/air-quality/logistics-1.svg" alt="Transportation & logistics" title="Transportation & logistics"></div>
-            <div class="application-image"><img src="/images/usecases/air-quality/education-1.svg" alt="Education & research" title="Education & research"></div>
-            <div class="application-image"><img src="/images/usecases/air-quality/development-1.svg" alt="Real estate development" title="Real estate development"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/air-quality/cities-1.svg" alt="Smart cities" title="Smart cities"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/air-quality/industrial-1.svg" alt="Industrial zones" title="Industrial zones"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/air-quality/logistics-1.svg" alt="Transportation & logistics" title="Transportation & logistics"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/air-quality/education-1.svg" alt="Education & research" title="Education & research"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/air-quality/development-1.svg" alt="Real estate development" title="Real estate development"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -176,7 +176,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/air-quality/cities-2.svg" alt="Smart cities" title="Smart cities"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/air-quality/cities-2.svg" alt="Smart cities" title="Smart cities"></div>
             <div class="text-block">
                 <h3>Smart cities</h3>
                 <p>ThingsBoard enables city authorities to deploy scalable sensor networks and automate air quality alarms, helping protect public health and enforce clean air regulations in real time.</p>
@@ -187,10 +187,10 @@ contactUsModal: "true"
                 <h3>Industrial zones</h3>
                 <p>Manufacturers use ThingsBoard to monitor emissions through customizable dashboards and rule-based automation, ensuring regulatory compliance and minimizing environmental risks.</p>
             </div>
-            <div class="image"><img src="/images/usecases/air-quality/industrial-2.svg" alt="Industrial zones" title="Industrial zones"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/air-quality/industrial-2.svg" alt="Industrial zones" title="Industrial zones"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/air-quality/logistics-2.svg" alt="Transportation & logistics" title="Transportation & logistics"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/air-quality/logistics-2.svg" alt="Transportation & logistics" title="Transportation & logistics"></div>
             <div class="text-block">
                 <h3>Transportation & logistics</h3>
                 <p>Enable landlords and tenants to monitor and reduce energy bills through transparent usage tracking.</p>
@@ -201,10 +201,10 @@ contactUsModal: "true"
                 <h3>Education & research</h3>
                 <p>Academic institutions benefit from ThingsBoard’s real-time data visualization and open API, integrating environmental data into curriculum, research projects, and citizen science initiatives.</p>
             </div>
-            <div class="image"><img src="/images/usecases/air-quality/education-2.svg" alt="Education & research" title="Education & research"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/air-quality/education-2.svg" alt="Education & research" title="Education & research"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/air-quality/development-2.svg" alt="Real estate development" title="Real estate development"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/air-quality/development-2.svg" alt="Real estate development" title="Real estate development"></div>
             <div class="text-block">
                 <h3>Real estate development</h3>
                 <p>Developers leverage ThingsBoard’s remote monitoring, public dashboards, and analytics to showcase air quality metrics as a selling point for eco-friendly properties.</p>
@@ -219,7 +219,7 @@ contactUsModal: "true"
         <p>ThingsBoard’s air quality monitoring solution offers a scalable, real-time IoT-based platform for environmental intelligence. It connects pollution sensors with cloud dashboards, alarms, and data storage to empower cities, industries, and institutions to act on air quality insights. Its flexibility, open protocol support, and customizable visualization make it ideal for public health, regulatory compliance, and green initiatives.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -340,13 +340,13 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/air-quality/aiq-1.webp' alt='Interactive AQI heatmap of Los Angeles on the ThingsBoard IoT Platform' title='AQI map of Los Angeles monitored via ThingsBoard'/>",
-                "<img src='/images/usecases/air-quality/aiq-2.webp' alt='Live PM10 air quality metrics for Beverly Hills on ThingsBoard dashboard' title='PM10 air quality levels in Beverly Hills displayed in ThingsBoard'/>",
-                "<img src='/images/usecases/air-quality/aiq-3.webp' alt='List of IoT dashboards for air quality monitoring in ThingsBoard' title='Manage air quality dashboards in ThingsBoard'/>",
-                "<img src='/images/usecases/air-quality/aiq-4.webp' alt='IoT air quality sensors and alerts visualized on ThingsBoard map dashboard' title='Live air quality sensors and alerts across LA in ThingsBoard'/>",
-                "<img src='/images/usecases/air-quality/aiq-5.webp' alt='Sensor metrics for Beverly Hills including AQI and battery on ThingsBoard' title='Sensor data for Beverly Hills – AQI, battery and status'/>",
-                "<img src='/images/usecases/air-quality/aiq-6.webp' data-bg='#A4A4A4' alt='Sensor registration form with ID and GPS fields in ThingsBoard' title='Create a new air quality sensor in ThingsBoard'/>",
-                "<img src='/images/usecases/air-quality/aiq-7.webp' data-bg='#A4A4A4' alt='ThingsBoard interface for configuring IoT alarm thresholds' title='Configure alert rules for sensor battery and connection'/>"
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-1.webp' alt='Interactive AQI heatmap of Los Angeles on the ThingsBoard IoT Platform' title='AQI map of Los Angeles monitored via ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-2.webp' alt='Live PM10 air quality metrics for Beverly Hills on ThingsBoard dashboard' title='PM10 air quality levels in Beverly Hills displayed in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-3.webp' alt='List of IoT dashboards for air quality monitoring in ThingsBoard' title='Manage air quality dashboards in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-4.webp' alt='IoT air quality sensors and alerts visualized on ThingsBoard map dashboard' title='Live air quality sensors and alerts across LA in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-5.webp' alt='Sensor metrics for Beverly Hills including AQI and battery on ThingsBoard' title='Sensor data for Beverly Hills – AQI, battery and status'/>",
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-6.webp' data-bg='#A4A4A4' alt='Sensor registration form with ID and GPS fields in ThingsBoard' title='Create a new air quality sensor in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/air-quality/aiq-7.webp' data-bg='#A4A4A4' alt='ThingsBoard interface for configuring IoT alarm thresholds' title='Configure alert rules for sensor battery and connection'/>"
             ];
             return images[index];
         }

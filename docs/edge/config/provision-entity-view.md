@@ -5,12 +5,12 @@ description: Provision Entity View from cloud to edge
 
 edgeEntityViews:
     0:
-        image: /images/edge/sync/ce-edge-entity-views-1.png
+        image: https://img.thingsboard.io/edge/sync/ce-edge-entity-views-1.png
     1:
-        image: /images/edge/sync/ce-edge-entity-views-2.png
+        image: https://img.thingsboard.io/edge/sync/ce-edge-entity-views-2.png
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 #### Entity Views management
 

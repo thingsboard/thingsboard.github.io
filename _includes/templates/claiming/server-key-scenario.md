@@ -9,7 +9,7 @@ Assuming Tenant Admin knows the list of DevEUIs (LoRaWAN) or any other device id
 it is possible to generate a random Secret Key per device and upload this key to ThingsBoard as a server-side attribute using [REST API](/docs/{{docsPrefix}}reference/rest-api/) or UI.
 Once this is done, tenant admin can email those keys to the Customer, or put them inside the device package box. 
 
-![image](/images/user-guide/claiming-devices/server-side-key-diagram.png)
+![image](https://img.thingsboard.io/user-guide/claiming-devices/server-side-key-diagram.png)
 
 In order to provision device Secret Key, Tenant Administrator should set server-side attribute "claimingData" like the following value:
 

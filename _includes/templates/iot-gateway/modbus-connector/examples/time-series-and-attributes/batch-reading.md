@@ -79,4 +79,4 @@ Copy and paste the following configuration into the Modbus connector advanced co
 After saving the changes and starting the connector, you see that the corresponding telemetry is being updated 
 correctly:
 
-![image](/images/gateway/modbus-connector/examples/batch-reading-overview.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/batch-reading-overview.png)

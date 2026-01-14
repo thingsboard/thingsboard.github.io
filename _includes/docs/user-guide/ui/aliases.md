@@ -7,7 +7,7 @@ They can range from a simple reference to a single device to a complex search qu
 
 In this tutorial, aliases will be used in the system according to the scheme shown below. And all devices transmit telemetry values - "temperature".
 
-![image](/images/user-guide/ui/alias/alias-scheme.png)
+![image](https://img.thingsboard.io/user-guide/ui/alias/alias-scheme.png)
 
 ## Prerequisites
 

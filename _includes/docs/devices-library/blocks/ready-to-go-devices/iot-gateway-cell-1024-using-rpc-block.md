@@ -1,6 +1,6 @@
 {% assign sendRpcCommand = '
     ===
-        image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-rpc-button.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-rpc-button.png,
         title: It is possible to send commands to the device to execute certain tasks. The parameters of the method must be in JSON format.
 '
 %}

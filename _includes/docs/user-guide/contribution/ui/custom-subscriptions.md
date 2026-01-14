@@ -647,7 +647,7 @@ self.onDataUpdated = function() {
 
 As a result, a subscription will be created to count devices in the system and count active devices (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/count-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/count-subscription.png)
 
 
 ##### Subscription for attributes/telemetry
@@ -734,7 +734,7 @@ self.onDataUpdated = function() {
 
 As a result a subscription to the **temperature** and **active** keys will be created **only** for active devices (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
 
 ##### Subscription with PageLink
 Let's create a custom subscription to the latest **temperature** key value that is **greater** than 30 with two entities on the page:
@@ -834,7 +834,7 @@ function subscribeForPaginatedData(pageLink) {
 
 As a result, a subscription to the **temperature** and **active** keys will be created using PageLink (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/page-link-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/page-link-subscription.png)
 
 ##### Subscription for telemetry time series
 
@@ -910,7 +910,7 @@ self.onDataUpdated = function() {
 
 As a result, a subscription to the **temperature** telemetry time-series will be created (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/timeseries-subscrition.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/timeseries-subscrition.png)
 
 
 ##### Subscription for alarms
@@ -1002,7 +1002,7 @@ self.onDataUpdated = function() {
 
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/alarm-subscription.png)
 
 ##### Subscription with post-processing
 
@@ -1031,7 +1031,7 @@ First of all, we need to create a custom setting schema that will contain user's
    ]
  }
 ```
-![image](/images/user-guide/contribution/widgets/post-processing-function.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/post-processing-function.png)
 
 Now let's create a custom subscription. For clarity, we will add two fields: one contains the original value and the second one contains the processed value:
 ```javascript
@@ -1121,7 +1121,7 @@ self.onDataUpdated = function() {
 ...
 ```
 The subscription is ready now let's convert weight telemetry from kilograms into grams:
-![image](/images/user-guide/contribution/widgets/post-processing-function-example.png)
-![image](/images/user-guide/contribution/widgets/post-processing-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/post-processing-function-example.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/post-processing-subscription.png)
 
 As you can see, despite subscribing to the same key twice, the output shows different values because one of them was additionally transformed using the post-processing function.

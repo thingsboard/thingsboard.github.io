@@ -1,14 +1,14 @@
 smart-energy:
   label: Smart Energy
-  icon: /images/smart-energy-icon.svg
+  icon: https://img.thingsboard.io/smart-energy-icon.svg
   feedback:
     - author: Daniel Portero
       position: Cloud & App Development Manager
       companyName: Circutor
       id: circutor
       link: https://circutor.com/
-      authorImage: /images/customers/circutor-person.webp
-      companyImage: /images/customers/circutor.svg
+      authorImage: https://img.thingsboard.io/customers/circutor-person.webp
+      companyImage: https://img.thingsboard.io/customers/circutor.svg
       companyImageWidth: 138
       companyImageHeight: 32
       text:
@@ -20,8 +20,8 @@ smart-energy:
       companyName: Oneserve Limited
       id: oneserve
       link: https://oneserve.co.uk/
-      authorImage: /images/customers/oneserve-person.webp
-      companyImage: /images/customers/oneserve.svg
+      authorImage: https://img.thingsboard.io/customers/oneserve-person.webp
+      companyImage: https://img.thingsboard.io/customers/oneserve.svg
       companyImageWidth: 132
       companyImageHeight: 32
       text:
@@ -34,7 +34,7 @@ smart-energy:
       companyName: Nettra
       id: nettra
       link: https://www.nettra.tech/
-      companyImage: /images/customers/nettra.webp
+      companyImage: https://img.thingsboard.io/customers/nettra.webp
       companyImageWidth: 127
       companyImageHeight: 32
       text:
@@ -46,8 +46,8 @@ smart-energy:
       companyName: Berliner Energieinstitut GmbH
       id: berliner
       link: https://www.berliner-energieinstitut.de/
-      authorImage: /images/customers/bei-person.webp
-      companyImage: /images/customers/bei.svg
+      authorImage: https://img.thingsboard.io/customers/bei-person.webp
+      companyImage: https://img.thingsboard.io/customers/bei.svg
       companyImageWidth: 189
       companyImageHeight: 32
       text:
@@ -58,7 +58,7 @@ smart-energy:
       companyName: Environmental Energy Controls
       id: e2cbms
       link:  https://www.e2cbms.com/
-      companyImage: /images/customers/eec.svg
+      companyImage: https://img.thingsboard.io/customers/eec.svg
       companyImageWidth: 111
       companyImageHeight: 60
       text:
@@ -72,8 +72,8 @@ smart-energy:
       companyName: co.met GmbH
       id: comet
       link: https://www.co-met.info/
-      authorImage: /images/customers/comet-person.webp
-      companyImage: /images/customers/comet.svg
+      authorImage: https://img.thingsboard.io/customers/comet-person.webp
+      companyImage: https://img.thingsboard.io/customers/comet.svg
       companyImageWidth: 190
       companyImageHeight: 32
       text:
@@ -82,14 +82,14 @@ smart-energy:
         2: 'In the above mentioned roles we face a lot of use cases, ranging from the mere visualization of telemetry data to the necessity to trigger events using rule chains. ThingsBoard is a mighty tool and yet easy to use. It meets our requirements perfectly and far better than any other solution we’ve been testing so far. We and our customers appreciate it’s professional look, functionality and speed of reaction . The ThingsBoard Team has proven to be a very reliable partner, open for improvements and very quick to offer satisfying solutions if needed.'
 agriculture:
   label: Agriculture
-  icon: /images/agriculture-icon.svg
+  icon: https://img.thingsboard.io/agriculture-icon.svg
   feedback:
     - author: Jeppe Walther
       position: CTO
       companyName: Supertech Agroline
       id: supertech
       link: https://www.agrolog.io/
-      companyImage: /images/customers/supertech-agroline.svg
+      companyImage: https://img.thingsboard.io/customers/supertech-agroline.svg
       companyImageWidth: 122
       companyImageHeight: 36
       text:
@@ -100,7 +100,7 @@ agriculture:
       position: Founder & Managing Director
       companyName: Enviroeye
       id: enviroeye
-      companyImage: /images/customers/enviroeye.svg
+      companyImage: https://img.thingsboard.io/customers/enviroeye.svg
       companyImageWidth: 134
       companyImageHeight: 38
       text:
@@ -112,7 +112,7 @@ agriculture:
       companyName: Keners s.r.o.
       id: keners
       link: https://keners.sk/
-      companyImage: /images/customers/keners.svg
+      companyImage: https://img.thingsboard.io/customers/keners.svg
       companyImageWidth: 153
       companyImageHeight: 32
       text:
@@ -121,19 +121,43 @@ agriculture:
         2: 'We highly appreciate the support of the creators, their feedback is simply excellent!'
 smart-buildings:
   label: Smart Buildings
-  icon: /images/smart-buildings-icon.svg
+  icon: https://img.thingsboard.io/smart-buildings-icon.svg
   feedback:
+    - author: Rifat Şeker
+      position: Founder
+      companyName: ARIOT
+      id: ariot
+      link: https://www.ariot.com.tr/
+      authorImage: https://img.thingsboard.io/customers/ariot-person.webp
+      companyImage: https://img.thingsboard.io/customers/ariot.svg
+      companyImageWidth: 80
+      companyImageHeight: 62
+      text:
+        0: 'Transforming compliance and patient safety through IoT-enabled real-time monitoring.'
+        1: "At ARIOT, our mission with Medline Adana Hospital was to elevate their operational reliability to match their world-class JCI accreditation. By leveraging the flexibility of ThingsBoard combined with robust LoRaWAN infrastructure, we transformed their critical environmental monitoring from a reactive, manual process into a proactive, data-driven operation. This solution provided immediate value by ensuring 100% data integrity for compliance audits and eliminating the risk of high-value pharmaceutical spoilage through real-time alerting. Ultimately, we didn't just install sensors; we delivered peace of mind and a scalable digital backbone that secures patient safety and optimizes hospital efficiency around the clock."
+    - author: Duran ICTEN
+      position: IT Chief
+      companyName: Sensolyze GmbH
+      id: medline
+      link: https://www.medlineadana.com.tr/en/
+      authorImage: https://img.thingsboard.io/customers/medline-person.webp
+      companyImage: https://img.thingsboard.io/customers/medline.svg
+      companyImageWidth: 180
+      companyImageHeight: 62
+      text:
+        0: 'Ensuring absolute cold-chain integrity through real-time IoT visibility and alerts.'
+        1: 'ARIOT transformed our JCI compliance from a manual burden into a digital asset. By deploying the ThingsBoard platform with Milesight LoRaWAN sensors, we eliminated human error and secured 100% data integrity for our critical cold chain. This solution gives us total visibility and immediate alerts, ensuring patient safety is never compromised.'
     - author: Andreas Brandl
       position: Founder & CEO
       companyName: Sensolyze GmbH
       id: sensolyze
       link: https://www.sensolyze.com/
-      authorImage: /images/customers/sensolyze-person.webp
-      companyImage: /images/customers/sensolyze.svg
+      authorImage: https://img.thingsboard.io/customers/sensolyze-person.webp
+      companyImage: https://img.thingsboard.io/customers/sensolyze.svg
       companyImageWidth: 180
       companyImageHeight: 32
       text:
-        0: 'We are providing Digital Office Solutions for Workspace Managers and Office Planners that help them to better understand how their Spaces are used'
+        0: 'We are providing Digital Office Solutions for Workspace Managers and Office Planners that help them to better understand how their Spaces are used.'
         1: 'When we started with ThingsBoard we mainly used it for core messaging and the dashboard functionality. Large parts of the business logic was done by an external backend connecting to ThingsBoard using the API. Within the first two releases of the new Rule Engine, we were able to migrate basically everything to the platform.'
         2: 'I want to congratulate the team for the huge effort they have put into the solution. The concept of the rule engine and the available nodes are very well thought through and support a wide range of applications. And - probably most important - Andrew and his team listens closely to the needs and requirements of their customers. And you clearly see that in the product. We can commend this product to anybody looking for a flexible and stable IoT Solution and are looking forward to work with the team in the future.'
     - author: Christoph Beck
@@ -141,8 +165,8 @@ smart-buildings:
       companyName: mdeg GmbH
       id: mdeg
       link: https://www.mdeg-digital.com/
-      authorImage: /images/customers/mdeg-person.webp
-      companyImage: /images/customers/mdeg.webp
+      authorImage: https://img.thingsboard.io/customers/mdeg-person.webp
+      companyImage: https://img.thingsboard.io/customers/mdeg.webp
       companyImageWidth: 94
       companyImageHeight: 60
       text:
@@ -154,7 +178,7 @@ smart-buildings:
       companyName: Environmental Energy Controls
       id: e2cbms
       link: https://www.e2cbms.com/
-      companyImage: /images/customers/eec.svg
+      companyImage: https://img.thingsboard.io/customers/eec.svg
       companyImageWidth: 111
       companyImageHeight: 60
       text:
@@ -168,8 +192,8 @@ smart-buildings:
       companyName: Oneserve Limited
       id: oneserve
       link: https://oneserve.co.uk/
-      authorImage: /images/customers/oneserve-person.webp
-      companyImage: /images/customers/oneserve.svg
+      authorImage: https://img.thingsboard.io/customers/oneserve-person.webp
+      companyImage: https://img.thingsboard.io/customers/oneserve.svg
       companyImageWidth: 132
       companyImageHeight: 32
       text:
@@ -182,8 +206,8 @@ smart-buildings:
       companyName: BeaconZone
       id: beacon
       link: https://www.beaconzone.co.uk/
-      authorImage: /images/customers/beaconzone-person.webp
-      companyImage: /images/customers/beaconzone.svg
+      authorImage: https://img.thingsboard.io/customers/beaconzone-person.webp
+      companyImage: https://img.thingsboard.io/customers/beaconzone.svg
       companyImageWidth: 153
       companyImageHeight: 32
       text:
@@ -193,7 +217,7 @@ smart-buildings:
       position: Co-Founder & Executive Manager
       companyName: Conbee
       id: conbee
-      companyImage: /images/customers/conbee.svg
+      companyImage: https://img.thingsboard.io/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
       text:
@@ -204,7 +228,7 @@ smart-buildings:
       position: CTO
       companyName: TOURISTIC PLATFORM SYSTEMS SRL
       link: https://www.tps.company/
-      companyImage: /images/customers/tps.svg
+      companyImage: https://img.thingsboard.io/customers/tps.svg
       companyImageWidth: 65
       companyImageHeight: 60
       text:
@@ -212,17 +236,17 @@ smart-buildings:
         1: 'We are very satisfied with the functionality of the IoT platform. The numerous dashboards available and the flexibility of the product allow us to develop our project dedicated to Cultural Heritage. Through the platform, we have managed to put all the sensors in the Museums in communication in order to deliver a powerful data collection and analysis tool to be delivered to the administrators of cultural sites.'
 smart-city:
   label: Smart City
-  icon: /images/smart-city-icon.svg
+  icon: https://img.thingsboard.io/smart-city-icon.svg
   feedback:
     - author: Klemen Pevec
       position: Head of Software Engineering
       companyName: Awake
       id: awake
       link: https://awakeboards.com/
-      authorImage: /images/customers/kemen-pevec.webp
-      companyImage: /images/customers/awake.webp
+      authorImage: https://img.thingsboard.io/customers/kemen-pevec.webp
+      companyImage: https://img.thingsboard.io/customers/awake.webp
       text:
-        0: 'End-to-end rental management solution with IoT, multi-channel alerts, and branded interface'
+        0: 'End-to-end rental management solution with IoT, multi-channel alerts, and branded interface.'
         1: 'We have reached out to ThingsBoard to build a rental operations dashboard for managing rental stations that offer our products. Additionally, we wanted to provide those stations with a ready-made interface for fleet and contract management. '
         2: 'The solution needed to support rental contracts, performance reporting for rental centers, fleet management, geofencing, internal incident reporting, and multi-channel notifications (SMS, email, WhatsApp), along with real-time IoT connectivity to our products via MQTT.'
         3: 'Given time constraints, we chose to outsource the development so our internal team could focus on other priorities. Working with the ThingsBoard team proved to be efficient, with just the right level of collaboration needed to deliver an optimal outcome.'
@@ -232,8 +256,8 @@ smart-city:
       companyName: X-TELIA
       id: xtelia
       link: https://en.x-telia.com/
-      authorImage: /images/customers/x-telia-person.webp
-      companyImage: /images/customers/x-telia.svg
+      authorImage: https://img.thingsboard.io/customers/x-telia-person.webp
+      companyImage: https://img.thingsboard.io/customers/x-telia.svg
       companyImageWidth: 160
       companyImageHeight: 32
       text:
@@ -247,40 +271,32 @@ smart-city:
       companyName: iiOOTE AB
       id: iioote
       link: https://www.iioote.com/
-      authorImage: /images/customers/iioote-person.webp
-      companyImage: /images/customers/iioote.svg
+      authorImage: https://img.thingsboard.io/customers/iioote-person.webp
+      companyImage: https://img.thingsboard.io/customers/iioote.svg
       companyImageWidth: 120
       companyImageHeight: 42
       text:
         0: 'iiOOTE is an independent systems integrator with deep knowledge and broad international network in the IoT LPWAN ecosystem.'
         1: 'During our evaluation of several different IoT platforms we decided using ThingsBoard Community Edition to quickly get started with testing of our concept solutions. Since it offers an easy way to get access to data from all our sensors and supports building dashboards for visualization.'
         2: 'However, we soon discovered that ThingsBoard also fulfilled our need to build commercial services. With increasing number of sensors, customers and requirements we have migrated to ThingsBoard Professional Edition with a lot more functionality for larger deployments and multiple customers. And we will add additional servers as our customers grow.'
-    - author: Kalitec
-      companyName: Kalitec
-      id: kalitec
-      link: https://www.kalitec.com/
-      companyImage: /images/customers/kalitec.svg
+    - author: Dr. Michael Schwerter
+      position: Head of Product
+      companyName: Kiotera
+      id: Kiotera
+      link: https://kiotera.de/
+      authorImage: https://img.thingsboard.io/customers/kiotera-person.webp
+      companyImage: https://img.thingsboard.io/customers/kiotera.svg
       companyImageWidth: 166
       companyImageHeight: 60
-      collapse: 'true'
-      collapseIndex: 7
       text:
-        0: 'Very professional in its approach to projects'
-        1: 'Custom Development'
-        2: 'The ThingsBoard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.'
-        3: 'They helped us implement our IoT solutions for major transport industry clients, and all projects were completed on time and on budget. Their solutions architect also improved how we use the platform to get the most out of what ThingsBoard has to give.'
-        4: 'The communication with the team is fluid, and requests are handled quickly. Has the maker of the platform, they are the best to help you in developing and implementing your requirements.'
-        5: 'Service Monitoring and Tech Support'
-        6: 'I cannot remember the last time our services were unavailable. The team monitors our infrastructure closely so we can sleep tight at night. They are also very responsive when we have technical questions or need guidance when implementing a new feature in our IoT devices.'
-        7: 'ThingsBoard Platform'
-        8: 'ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.'
-        9: 'It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!'
+        0: 'Fast time-to-value: modular IoT solutions in days with ThingsBoard.'
+        1: 'ThingsBoard enables us to use a modular approach in our solutions, allowing our customers to implement IoT-Solutions in a matter of days. These modules are based on standardized, proven building blocks that combine industrial gateways, tried-and-tested sensors, rule chains and visualizations refined through many years of project experience.'
     - author: Daniel Bartozzi
       position: VP Engineering
       companyName: Ositech Communications, Inc.
       id: ositech
       link: https://ositech.com/
-      companyImage: /images/customers/ositech.svg
+      companyImage: https://img.thingsboard.io/customers/ositech.svg
       companyImageWidth: 145
       companyImageHeight: 36
       text:
@@ -290,7 +306,7 @@ smart-city:
       position: Co-Founder & Executive Manager
       companyName: Conbee
       id: conbee
-      companyImage: /images/customers/conbee.svg
+      companyImage: https://img.thingsboard.io/customers/conbee.svg
       companyImageWidth: 158
       companyImageHeight: 40
       text:
@@ -302,8 +318,8 @@ smart-city:
       companyName: IoT Squad
       id: iotsquad
       link: https://iotsquad.tech/
-      authorImage: /images/customers/iotsquad-tech-person.webp
-      companyImage: /images/customers/iot-squad.svg
+      authorImage: https://img.thingsboard.io/customers/iotsquad-tech-person.webp
+      companyImage: https://img.thingsboard.io/customers/iot-squad.svg
       companyImageWidth: 82
       companyImageHeight: 60
       text:
@@ -314,23 +330,43 @@ smart-city:
       companyName: MAKERS s. r. o.
       id: makers
       link: https://www.makers.sk/
-      companyImage: /images/customers/makers.svg
+      companyImage: https://img.thingsboard.io/customers/makers.svg
       companyImageWidth: 66
       companyImageHeight: 60
       text:
         0: 'MAKERS s. r. o. is a Slovak IoT solutions software house.'
         1: 'While building the Smart City solution for OMS, a. s. we were looking for IoT platform serving as core backend for our solutions. ThingsBoard became our first clear choice. It contains necessary business functionality and support all needed technologies/protocols which we required. Later on, ThingsBoard became the heart of the upcoming solution. In any implementation of complex systems cooperation and support are crucial to success achievement. We are glad that we found stable partners in design, implementation and deployment of ThingsBoard in the Smart City solution.'
+    - author: Kalitec
+      companyName: Kalitec
+      id: kalitec
+      link: https://www.kalitec.com/
+      companyImage: https://img.thingsboard.io/customers/kalitec.svg
+      companyImageWidth: 166
+      companyImageHeight: 60
+      collapse: 'true'
+      collapseIndex: 7
+      text:
+        0: 'Very professional in its approach to projects.'
+        1: 'Custom Development'
+        2: 'The ThingsBoard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.'
+        3: 'They helped us implement our IoT solutions for major transport industry clients, and all projects were completed on time and on budget. Their solutions architect also improved how we use the platform to get the most out of what ThingsBoard has to give.'
+        4: 'The communication with the team is fluid, and requests are handled quickly. Has the maker of the platform, they are the best to help you in developing and implementing your requirements.'
+        5: 'Service Monitoring and Tech Support'
+        6: 'I cannot remember the last time our services were unavailable. The team monitors our infrastructure closely so we can sleep tight at night. They are also very responsive when we have technical questions or need guidance when implementing a new feature in our IoT devices.'
+        7: 'ThingsBoard Platform'
+        8: 'ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.'
+        9: 'It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!'
 telecom:
   label: Telecom
-  icon: /images/telecom-icon.svg
+  icon: https://img.thingsboard.io/telecom-icon.svg
   feedback:
     - author: Tamati Iro
       position: VAS Manager
       companyName: Vodafone
       id: vodafone
       link: https://www.vodafone.co.ck/
-      authorImage: /images/customers/tamati-iro.webp
-      companyImage: /images/customers/vodafone.svg
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
       companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
@@ -347,7 +383,7 @@ telecom:
       companyName: T-Mobile Czech Republic a.s.
       id: tmobile
       link: https://www.t-mobile.cz/
-      companyImage: /images/customers/t-mobile.svg
+      companyImage: https://img.thingsboard.io/customers/t-mobile.svg
       companyImageWidth: 87
       companyImageHeight: 48
       text:
@@ -359,8 +395,8 @@ telecom:
       companyName: TEKTELIC Communications Inc.
       id: tektelic
       link: https://tektelic.com/
-      authorImage: /images/customers/tektelic-person.webp
-      companyImage: /images/customers/tektelic.svg
+      authorImage: https://img.thingsboard.io/customers/tektelic-person.webp
+      companyImage: https://img.thingsboard.io/customers/tektelic.svg
       companyImageWidth: 178
       companyImageHeight: 52
       text:
@@ -373,8 +409,8 @@ telecom:
       companyName: X-TELIA
       id: xtelia
       link: https://en.x-telia.com/
-      authorImage: /images/customers/x-telia-person.webp
-      companyImage: /images/customers/x-telia.svg
+      authorImage: https://img.thingsboard.io/customers/x-telia-person.webp
+      companyImage: https://img.thingsboard.io/customers/x-telia.svg
       companyImageWidth: 160
       companyImageHeight: 32
       text:
@@ -385,21 +421,21 @@ telecom:
         4: 'I can say that the dedication of ThingsBoard team blew me away. I look forward to building and deploying many new and exciting projects on ThingsBoard, as I know the team backing the platform is second to none in expertise and dedication.'
 industry40:
   label: Industry 4.0
-  icon: /images/industry40-icon.svg
+  icon: https://img.thingsboard.io/industry40-icon.svg
   feedback:
     - author: Andreas Kücker
       position: Manager Digital
       companyName: süc//dacor GmbH
       id: dacor
       link: https://dacor.de/
-      authorImage: /images/customers/andreas-kucker.webp
-      companyImage: /images/customers/dacor.svg
+      authorImage: https://img.thingsboard.io/customers/andreas-kucker.webp
+      companyImage: https://img.thingsboard.io/customers/dacor.svg
       companyImageWidth: 170
       companyImageHeight: 30
       collapse: "true"
       collapseIndex: 4
       text:
-        0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing"
+        0: "Enhancing production transparency with IoT-driven monitoring in automotive component manufacturing."
         1: "A well-established medium-sized company specializes in the machining of profiles used in roof opening systems and sunroofs for the automotive sector. The machining process is semi-automated, but lacked the capability to transmit production data. Our client had a need for greater transparency in their manufacturing process, especially regarding downtime and productivity tracking."
         2: 'To address this requirement, we implemented a solution that involves integrating a trigger within the machine’s program. This trigger, connected via cable, captures the power status of the milling motor and transmits this data to an IoT module. From there, we wirelessly transmit the data over LoRaWAN technology. The collected data is then processed and aggregated in our Thingsboard platform, allowing us to present it in an understandable dashboard format for production management and control purposes.'
         3: "The aggregated data is presented in a digital twin format on a dashboard, which accurately reflects the layout of the manufacturing facility, including the various machines on the floor. Each machine displays the status of its milling motors, and some machines operate with two milling heads. Performance metrics, such as efficiency and the number of production cycles (representing the produced units), are indicated with color-coded values. Green values indicate good performance, orange suggests suboptimal performance, and red signals poor performance. This visual representation enables the plant manager to quickly identify machines that may require optimization or attention."
@@ -408,8 +444,8 @@ industry40:
       companyName: Poliglot
       id: poliglot
       link: https://poligiot.com/
-      authorImage: /images/customers/poliglot-photo.webp
-      companyImage: /images/customers/poligiot.svg
+      authorImage: https://img.thingsboard.io/customers/poliglot-photo.webp
+      companyImage: https://img.thingsboard.io/customers/poligiot.svg
       companyImageWidth: 170
       companyImageHeight: 30
       noHeading: "true"
@@ -423,8 +459,8 @@ industry40:
       companyName: Vodafone
       id: vodafone
       link: https://www.vodafone.co.ck/
-      authorImage: /images/customers/tamati-iro.webp
-      companyImage: /images/customers/vodafone.svg
+      authorImage: https://img.thingsboard.io/customers/tamati-iro.webp
+      companyImage: https://img.thingsboard.io/customers/vodafone.svg
       companyImageWidth: 170
       collapse: "true"
       collapseIndex: 4
@@ -441,8 +477,8 @@ industry40:
       companyName: Utvyakta
       id: utvyakta
       link: https://www.utvyakta.com/
-      authorImage: /images/customers/utvyakta-person.webp
-      companyImage: /images/customers/utvyakta.svg
+      authorImage: https://img.thingsboard.io/customers/utvyakta-person.webp
+      companyImage: https://img.thingsboard.io/customers/utvyakta.svg
       companyImageWidth: 127
       companyImageHeight: 54
       text:
@@ -453,8 +489,8 @@ industry40:
       companyName: Farinia Group
       id: farinia
       link: https://www.farinia.com/
-      authorImage: /images/customers/farinia-person.webp
-      companyImage: /images/customers/farinia.svg
+      authorImage: https://img.thingsboard.io/customers/farinia-person.webp
+      companyImage: https://img.thingsboard.io/customers/farinia.svg
       companyImageWidth: 164
       companyImageHeight: 34
       text:
@@ -466,8 +502,8 @@ industry40:
       companyName: CITEVE
       id: citeve
       link: https://www.citeve.pt/
-      authorImage: /images/customers/citeve-person.webp
-      companyImage: /images/customers/citeve.webp
+      authorImage: https://img.thingsboard.io/customers/citeve-person.webp
+      companyImage: https://img.thingsboard.io/customers/citeve.webp
       companyImageWidth: 58
       companyImageHeight: 60
       text:
@@ -479,7 +515,7 @@ industry40:
       companyName: INSYS icom
       id: insys
       link: https://www.insys-icom.com/
-      companyImage: /images/customers/insys.svg
+      companyImage: https://img.thingsboard.io/customers/insys.svg
       companyImageWidth: 107
       companyImageHeight: 60
       text:
@@ -490,8 +526,8 @@ industry40:
       companyName: CH2i
       id: ch2i
       link: https://ch2i.eu/
-      authorImage: /images/customers/ch2i-person.webp
-      companyImage: /images/customers/ch2i.svg
+      authorImage: https://img.thingsboard.io/customers/ch2i-person.webp
+      companyImage: https://img.thingsboard.io/customers/ch2i.svg
       companyImageWidth: 71
       companyImageHeight: 60
       text:
@@ -501,11 +537,11 @@ industry40:
       companyName: IONA Tech
       id: iona
       link: https://https://www.iona.tech/
-      companyImage: /images/customers/iona-tech.svg
+      companyImage: https://img.thingsboard.io/customers/iona-tech.svg
       companyImageWidth: 130
       companyImageHeight: 60
       text:
-        0: 'Expertise, attention to detail, and client satisfaction'
+        0: 'Expertise, attention to detail, and client satisfaction.'
         1: "We have found the ThingsBoard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running."
         2: 'We worked with the ThingsBoard Development Unit to unlock some additional features with custom software that helped us tailor the ThingsBoard solution to our needs.'
         3: 'Throughout the development journey, the TBU exhibited professionalism, clear communication, and a genuine commitment to our success. We wholeheartedly recommend the ThingsBoard Development Unit for their expertise, attention to detail, and client satisfaction. We look forward to future collaborations.'
@@ -513,28 +549,28 @@ industry40:
       companyName: ASG Tech AG
       id: asgtech
       link: https://www.asgtechsrl.it/
-      companyImage: /images/customers/asg-tech.svg
+      companyImage: https://img.thingsboard.io/customers/asg-tech.svg
       companyImageWidth: 170
       companyImageHeight: 60
       text:
-        0: "Exceptional experience working with ThingsBoard's unit"
+        0: "Exceptional experience working with ThingsBoard's unit."
         1: "We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess."
         2: 'Their careful estimation process significantly enhanced our understanding of the project scope, making planning and collaboration more effective. Additionally, their team attentively listened to our detailed requirements and skilfully transformed them into thoughtfully designed custom widgets. The development process was smooth, with regular updates and transparent communication.'
 warehouse-monitoring:
   label: Warehouse Monitoring
-  icon: /images/warehouse-monitoring-icon.svg
+  icon: https://img.thingsboard.io/warehouse-monitoring-icon.svg
   feedback:
     - author: Steven Kruse
       position: CEO
       companyName: SenseING GmbH
       id: senseing
       link: https://senseing.de/
-      authorImage: /images/customers/senseing-person.webp
-      companyImage: /images/customers/senseing.webp
+      authorImage: https://img.thingsboard.io/customers/senseing-person.webp
+      companyImage: https://img.thingsboard.io/customers/senseing.webp
       companyImageWidth: 162
       companyImageHeight: 54
       text:
-        0: 'Innovative IoT solutions for automated temperature monitoring and documentation in food logistics'
+        0: 'Innovative IoT solutions for automated temperature monitoring and documentation in food logistics.'
         1: "With ThingsBoard, we can offer our customers a customised IoT platform that has been specially developed for monitoring temperature and storage conditions in food logistics. One of the platform's greatest strengths is its low-code approach, which allows us to implement complex solutions with minimal development effort. Thanks to its flexibility and scalability, we can integrate a variety of sensor solutions and visualise the data in real time."
         2: 'In addition to fulfilling customer requirements, we also use ThingsBoard for internal use cases, such as controlling our production. This dual use emphasises the versatility and robustness of the platform. It is impossible to imagine our product range without ThingsBoard.'
     - author: JT McGibbon
@@ -542,12 +578,12 @@ warehouse-monitoring:
       companyName: Vypin LLC
       id: vypin
       link: https://www.vypin.com/
-      authorImage: /images/customers/vypin-person.webp
-      companyImage: /images/customers/vypin.svg
+      authorImage: https://img.thingsboard.io/customers/vypin-person.webp
+      companyImage: https://img.thingsboard.io/customers/vypin.svg
       companyImageWidth: 122
       companyImageHeight: 48
       text:
-        0: 'Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers'
+        0: 'Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers.'
         1: 'I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.'
       feedbackLink:
         label: "Read Vypin's case study."

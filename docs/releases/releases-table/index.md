@@ -1,6 +1,6 @@
 ---
 layout: docwithnav
-title: ThingsBoard Releases table
+title: ThingsBoard Releases
 description: ThingsBoard architecture
 table-of-contents: "false"
 ---

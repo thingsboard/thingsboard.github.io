@@ -48,7 +48,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG"  loading="lazy" data-src="/images/usecases/health-care/health-care-solution-structure.svg" alt="Health care solution structure">
+        <img id="schemeSVG"  loading="lazy" data-src="https://img.thingsboard.io/usecases/health-care/health-care-solution-structure.svg" alt="Health care solution structure">
     </div>
 </section>
 <section class="health-solution-structure">
@@ -200,11 +200,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/health-care/hospital-1.svg" alt="Hospital"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/sport-complex-1.svg" alt="Sport complex"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/rehabilitation-center-1.svg" alt="Rehabilitation center"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/factories-1.svg" alt="Factory"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/prison-1.svg" alt="Prison"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/hospital-1.svg" alt="Hospital"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/sport-complex-1.svg" alt="Sport complex"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/rehabilitation-center-1.svg" alt="Rehabilitation center"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/factories-1.svg" alt="Factory"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/prison-1.svg" alt="Prison"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -219,7 +219,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/health-care/hospital-2.svg" alt="Water valve"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/hospital-2.svg" alt="Water valve"></div>
             <div class="text-block">
                 <h3>Hospitals and healthcare facilities</h3>
                 <p>Real-time monitoring of patients' conditions, tracking vital signs, managing wards and departments, and setting up alerts for timely response by medical staff to any health deterioration.</p>
@@ -230,10 +230,10 @@ contactUsModal: "true"
                 <h3>Rehabilitation centers</h3>
                 <p>Monitoring the condition of patients undergoing rehabilitation after surgery or injuries. The system can track recovery progress, transmit data to doctors, and set reminders for physical therapy.</p>
             </div>
-            <div class="image"><img src="/images/usecases/health-care/sport-complex-2.svg" alt="Oil pump"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/sport-complex-2.svg" alt="Oil pump"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/health-care/rehabilitation-center-2.svg" alt="Food conveyor"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/rehabilitation-center-2.svg" alt="Food conveyor"></div>
             <div class="text-block">
                 <h3>Prisons and correctional facilities</h3>
                 <p>Monitoring the health of inmates with vital sign tracking, smoke detectors, and access control systems. The system can also monitor movements and support facility security.</p>
@@ -244,10 +244,10 @@ contactUsModal: "true"
                 <h3>Sports complexes and fitness centers</h3>
                 <p>Maintaining optimal conditions in gyms and locker rooms, monitoring the health of visitors (e.g., heart rate), and setting up emergency alerts if someone’s health deteriorates during workouts.</p>
             </div>
-            <div class="image"><img src="/images/usecases/health-care/factories-2.svg" alt="Chemical plant"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/factories-2.svg" alt="Chemical plant"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/health-care/prison-2.svg" alt="Power plant"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/health-care/prison-2.svg" alt="Power plant"></div>
             <div class="text-block">
                 <h3>Factories and industrial sites</h3>
                 <p>Ensuring employee safety by monitoring working conditions (temperature, gas emissions, noise, humidity) and controlling equipment status to respond promptly to emergency situations.</p>
@@ -262,7 +262,7 @@ contactUsModal: "true"
         <p>This smart assisted living solution on ThingsBoard provides a comprehensive approach to resident and facility management, with robust monitoring capabilities, intuitive zoning and device management, and customizable alerts for both health and environmental conditions. The solution empowers caregivers and administrators to respond quickly, keep environments safe, and provide the highest standard of care for residents.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -366,15 +366,15 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/health-care/resident-overview.webp' alt='Resident overview dialog of dashboard'/>",
-                "<img src='/images/usecases/health-care/resident-alarm.webp' alt='Resident alarm configuration dialog of dashboard'/>",
-                "<img src='/images/usecases/health-care/real-time-resident-alarm.webp' alt='Real time resident alarm state of dashboard'/>",
-                "<img src='/images/usecases/health-care/room-alarm-configuration.webp' alt='Room alarm configuration state of dashboard'/>",
-                "<img src='/images/usecases/health-care/resident-list-management.webp' alt='Resident list management state of dashboard'/>",
-                "<img src='/images/usecases/health-care/zone-and-floor-management.webp' alt='Zone and floor management state of dashboard'/>",
-                "<img src='/images/usecases/health-care/room-and-device-layout.webp' alt='Room and device layout state of dashboard'/>",
-                "<img src='/images/usecases/health-care/device-addition.webp' alt='Device addition state of dashboard'/>",
-                "<img src='/images/usecases/health-care/room-configuration.webp' alt='Room configuration state of dashboard'/>"
+                "<img src='https://img.thingsboard.io/usecases/health-care/resident-overview.webp' alt='Resident overview dialog of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/resident-alarm.webp' alt='Resident alarm configuration dialog of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/real-time-resident-alarm.webp' alt='Real time resident alarm state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/room-alarm-configuration.webp' alt='Room alarm configuration state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/resident-list-management.webp' alt='Resident list management state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/zone-and-floor-management.webp' alt='Zone and floor management state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/room-and-device-layout.webp' alt='Room and device layout state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/device-addition.webp' alt='Device addition state of dashboard'/>",
+                "<img src='https://img.thingsboard.io/usecases/health-care/room-configuration.webp' alt='Room configuration state of dashboard'/>"
             ];
             return images[index];
         }

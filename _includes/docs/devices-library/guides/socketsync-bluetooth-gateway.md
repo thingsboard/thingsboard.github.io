@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [SocketSync Bluetooth Gateway]({{deviceVendorLink}}){:target="_blank"} is designed based on BLE and LoRa technology. With the advanced LoRa technology and built-in BLE module, the BLE gateway receivesand reports the Bluetooth devices messages to the LoRaWAN gateway.<br>
 The parameter settings, such as the heartbeat period, LoRaWAN work mode, and sensor data to send in a Bluetooth message, are adjustable as per customers&#39; requirements.<br><br>
 
@@ -18,6 +17,7 @@ The parameter settings, such as the heartbeat period, LoRaWAN work mode, and sen
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -39,3 +39,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

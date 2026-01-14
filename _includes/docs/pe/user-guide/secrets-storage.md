@@ -53,7 +53,7 @@ Once Secrets are created, you and other users with the appropriate permissions c
 
 Fields that support using a Secret display a key icon.
 
-<object width="35%" data="/images/user-guide/security/secrets-storage/password.png"></object> 
+<object width="35%" data="https://img.thingsboard.io/user-guide/security/secrets-storage/password.png"></object> 
 
 <br>
 
@@ -80,7 +80,7 @@ To delete a Secret:
 > **Note**: The Secret cannot be deleted if it&#39;s used by other entities on the platform.   
 First, remove all references to the Secret from the listed entities, then try deleting it again.
 
-<object width="70%" data="/images/user-guide/security/secrets-storage/delete-secret-3-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/security/secrets-storage/delete-secret-3-pe.png"></object>
 
 ## Next steps
 

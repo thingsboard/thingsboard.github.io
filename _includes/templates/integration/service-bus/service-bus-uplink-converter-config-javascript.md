@@ -31,4 +31,4 @@ return result;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-uplink-converter-java-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-uplink-converter-java-1-pe.png)

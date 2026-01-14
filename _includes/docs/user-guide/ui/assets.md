@@ -175,15 +175,45 @@ You can later unassign the asset or reassign it to another customer if needed.
 
 ## Asset details
 
-Clicking on an asset opens a window where you can access and manage various aspects of that asset:
-- Copy the **asset Id** to the clipboard using the "**Copy asset Id**" button.
-- Manage server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} of the asset.
-- Perform additional computations on telemetry and attributes using the [Calculated fields](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"} feature.
-- View current and historical [alarms](/docs/{{docsPrefix}}user-guide/alarms){:target="_blank"} of the asset.
-- Browse asset-related **events**, such as errors, warnings, and other key lifecycle moments.
-- Manage [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations){:target="_blank"} between this asset and other entities, such as devices, dashboards, etc.
-- Track user actions and changes related to the asset in the [Audit log](/docs/{{docsPrefix}}user-guide/audit-log/){:target="_blank"}.
-- Use the ThingsBoard [Version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} system to export and restore the asset as part of Git-based object management.
+Clicking on an asset opens a window where you can access and manage various aspects of that asset.
+
+{% include images-gallery.html imageCollection="asset-details-page" %}
+
+<b><font size="3">Copy asset ID</font></b>   
+Allows you to quickly retrieve the asset’s unique UUID. Click Copy asset Id to copy it to your clipboard. The ID is used in API calls, integrations, and scripts.
+
+<b><font size="3">Attributes</font></b>
+
+This tab displays client, server, and shared [attributes](/docs/{{docsPrefix}}user-guide/attributes/){:target="_blank"} — static or semi-static key-value pairs related to the asset. Examples include location, category, configuration parameters, and other metadata.
+
+<b><font size="3">Latest telemetry</font></b>
+
+Shows the [latest telemetry](/docs/{{docsPrefix}}user-guide/telemetry/){:target="_blank"} values associated with the asset. Telemetry may come from linked devices or be added manually for modeling purposes.
+- **Adding telemetry:** Click the "**+**" icon, enter the key name, value type, and value.
+- **Deleting telemetry:** Click the trash icon, choose the deletion mode (all data, latest value, all except latest, or by time period), and confirm.
+
+<b><font size="3">Calculated fields</font></b>   
+Displays fields whose values are computed from existing attributes or telemetry using formulas. This allows you to define derived parameters without modifying the device firmware. Learn more about Calculated fields [here](/docs/{{docsPrefix}}user-guide/calculated-fields/){:target="_blank"}.
+
+<b><font size="3">Alarm rules</font></b>   
+Contains the alarm rules configured for the asset. You can review thresholds, triggering logic, and configured alarm actions that apply to this asset. Learn more about configuring alarm rules [here](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"}.
+
+<b><font size="3">Alarms</font></b>    
+Shows all active and historical [alarms](/docs/{{docsPrefix}}user-guide/alarms/){:target="_blank"} related to the asset. Allows tracking of warnings, operational issues, and critical events affecting the asset.
+
+<b><font size="3">Events</font></b>   
+Displays system events associated with the asset, such as logs, warnings, errors, and other lifecycle-related activity. Useful for diagnostics and operational analysis.
+
+<b><font size="3">Relations</font></b>   
+Shows all directed [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations){:target="_blank"} between this asset and other entities, such as devices, dashboards, assets, and rule chains. Helps understand how the asset interacts within the system structure.
+
+<b><font size="3">Audit logs</font></b>   
+Provides a [record of user actions](/docs/{{docsPrefix}}user-guide/audit-log/){:target="_blank"} related to the asset — creation, updates, configuration changes, and deletions. Used for auditing and change tracking.
+
+<b><font size="3">Version control</font></b>   
+Enables exporting and restoring asset-related entities using the Git-backed [version control](/docs/{{docsPrefix}}user-guide/version-control/){:target="_blank"} service. Supports backup, collaboration, and configuration versioning.
+
+<hr>
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
 ## Manage asset owner and groups
@@ -308,3 +338,16 @@ From the Assets page, you can create, view, edit, and delete relations between a
 **Note:** Deleting a relation does **not** delete the related entities; it only deletes the relation.
 {% endcapture %}
 {% include templates/info-banner.md content=rel_remove %}
+
+<hr>
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
+
+## Your feedback
+
+Don&#39;t hesitate to star ThingsBoard on [github](https://github.com/thingsboard/thingsboard){:target="_blank"} to help us spread the word.
+If you have any questions about this sample, please [contact us](/docs/contact-us/){:target="_blank"}.

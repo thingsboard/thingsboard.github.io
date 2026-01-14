@@ -7,108 +7,108 @@ description: Combine data from ThingsBoard and external SQL databases to compute
 
 settings-add:
   0:
-    image: /images/trendz/datasource/external-datasources-settings-add-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-add-1.png
     title: 'Go to <b>Settings</b>, then the <b>System</b> tab, under the <b>External Data Source</b> section, click <b>Add new data source</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-settings-add-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-add-2.png
     title: 'Fill in the form with your database connection details and click the <b>Save</b> button.'
 
 settings-see:
   0:
-    image: /images/trendz/datasource/external-datasources-settings-see-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-see-1.png
     title: 'Under the <b>External Data Source</b> section, click <b>See all data sources</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-settings-see-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-see-2.png
     title: 'Here you will see a table with two columns: <b>Data Source URL</b>, <b>Database type</b> and <b>Actions</b>.'
 
 settings-delete:
   0:
-    image: /images/trendz/datasource/external-datasources-settings-delete-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-delete-1.png
     title: 'Under the <b>External Data Source</b> section, click <b>See all data sources</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-settings-delete-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-delete-2.png
     title: 'Click the three dots under the <b>Actions</b> column and click <b>Delete</b>.'
   2:
-    image: /images/trendz/datasource/external-datasources-settings-delete-3.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-delete-3.png
     title: 'External datasource was deleted successfully.'
 
 settings-edit:
   0:
-    image: /images/trendz/datasource/external-datasources-settings-edit-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-edit-1.png
     title: 'Click the three dots under the <b>Actions</b> column and click <b>Edit</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-settings-edit-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-edit-2.png
     title: 'Edit URL/Database Type/Login/Password. Click <b>Save</b>. Confirm the update, verifying which entities would be affected.'
   2:
-    image: /images/trendz/datasource/external-datasources-settings-edit-3.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-settings-edit-3.png
     title: 'If the database connection is established, you will see a success message; otherwise, you will see an error message.'
   
 db-data:
   0:
-    image: /images/trendz/datasource/external-datasources-db-data.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-db-data.png
     title: 'Demo data from "building_consumption" table.'
 
 step-1:
   0:
-    image: /images/trendz/datasource/external-datasources-step-1-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-1-1.png
     title: 'Go to the <b>Business Entities</b> section and click <b>Add Business Entity</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-step-1-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-1-2.png
     title: 'Enter <b>Name</b>, <b>Table Name</b>, <b>Entity Type</b> and <b>Datasource</b>.'
 
 step-2:
   0:
-    image: /images/trendz/datasource/external-datasources-step-2-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-2-1.png
     title: 'Go to the <b>Fields</b> section and click <b>Add field</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-step-2-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-2-2.png
     title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b>, <b>Key</b> and set <b>Use Field as Business Entity Key</b>.'
 
 step-3:
   0:
-    image: /images/trendz/datasource/external-datasources-step-3-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-3-1.png
     title: 'Click <b>Add field</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-step-3-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-3-2.png
     title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b>, <b>Key</b> and set <b>Use Field as Telemetry Timestamp</b>.'
 
 step-4:
   0:
-    image: /images/trendz/datasource/external-datasources-step-4-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-4-1.png
     title: 'Click <b>Add field</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-step-4-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-4-2.png
     title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b> and <b>Key</b> for <b>heat_consumption</b> column.'
   2:
-    image: /images/trendz/datasource/external-datasources-step-4-3.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-4-3.png
     title: 'Enter <b>Name</b>, <b>Field Type</b>, <b>Query Type</b> and <b>Key</b> for <b>energy_consumption</b> column.'
 
 step-5:
   0:
-    image: /images/trendz/datasource/external-datasources-step-5-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-5-1.png
     title: 'Go to the <b>Relations</b> section and click <b>Add relation</b>.'
   1:
-    image: /images/trendz/datasource/external-datasources-step-5-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-5-2.png
     title: 'Enter <b>Name</b>, <b>Direction</b>, <b>Selected Business Entity</b> and set <b>Enabled</b>.'
   2:
-    image: /images/trendz/datasource/external-datasources-step-5-3.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-5-3.png
     title: 'Click <b>Save</b>.'
 
 step-6:
   0:
-    image: /images/trendz/datasource/external-datasources-step-6-1.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-6-1.png
     title: 'Go to the home page. Click <b>Create View</b> and choose the <b>Table</b> view type.'
   1:
-    image: /images/trendz/datasource/external-datasources-step-6-2.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-6-2.png
     title: 'Drag and drop the business entity name field associated with the external business entity into the column section (<b>EM building</b>).'
   2:
-    image: /images/trendz/datasource/external-datasources-step-6-3.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-6-3.png
     title: 'Drag and drop any field from the external business entity into the column section (<b>energy_consumption</b>).'
   3:
-    image: /images/trendz/datasource/external-datasources-step-6-4.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-6-4.png
     title: 'Select date range with data.'
   4:
-    image: /images/trendz/datasource/external-datasources-step-6-5.png
+    image: https://img.thingsboard.io/trendz/datasource/external-datasources-step-6-5.png
     title: 'Click <b>Build Report</b>.'
 
 ---

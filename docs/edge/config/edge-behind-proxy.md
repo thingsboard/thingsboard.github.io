@@ -5,7 +5,7 @@ description: Detailed instructions on how to connect ThingsBoard Edge to ThingsB
 
 configs:
     0:
-        image: /images/edge/config/edge-behind-proxy/docker-with-proxy.webp
+        image: https://img.thingsboard.io/edge/config/edge-behind-proxy/docker-with-proxy.webp
 
 ---
 {% assign docsPrefix = "edge/" %}

@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="IoT Fleet Tracking solution architecture" title="IoT Fleet Tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="IoT Fleet Tracking solution architecture" title="IoT Fleet Tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -147,11 +147,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/urban-1.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/emergency-1.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/municipal-1.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/rental-1.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/logistics-1.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/urban-1.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/emergency-1.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/municipal-1.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/rental-1.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/logistics-1.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -166,7 +166,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/urban-2.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/urban-2.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
             <div class="text-block">
                 <h3>Urban and intercity transportation</h3>
                 <p>The system enables real-time tracking of buses, ensuring adherence to schedules and routes. This improves passenger safety and allows rapid response to unexpected issues such as delays or breakdowns.</p>
@@ -177,10 +177,10 @@ contactUsModal: "true"
                 <h3>Emergency and fire services</h3>
                 <p>The system displays the exact location and current status of each vehicle, including speed and fuel level. It enables dispatchers to quickly coordinate on-site actions and reduce emergency response times.</p>
             </div>
-            <div class="image"><img src="/images/usecases/fleet-tracking/emergency-2.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/emergency-2.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/municipal-2.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/municipal-2.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
             <div class="text-block">
                 <h3>Municipal and construction services</h3>
                 <p>The solution tracks actual machine operation time, identifies idle periods, and monitors areas of activity. This leads to more efficient resource management and reduced operational costs.</p>
@@ -191,10 +191,10 @@ contactUsModal: "true"
                 <h3>Rental and leasing companies</h3>
                 <p>The IoT platform tracks how and where vehicles are used, detects misuse, and helps prevent theft. This increases trust in the service and enhances the customer experience.</p>
             </div>
-            <div class="image"><img src="/images/usecases/fleet-tracking/rental-2.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/rental-2.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/logistics-2.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/logistics-2.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
             <div class="text-block">
                 <h3>Logistics and delivery</h3>
                 <p>IoT monitoring provides transparency of delivery routes, reduces the risk of route deviations, and ensures schedule compliance. This is especially critical for companies handling time-sensitive or temperature-controlled shipments.</p>
@@ -210,7 +210,7 @@ contactUsModal: "true"
         <p>The IoT fleet tracking system powered by ThingsBoard provides real-time visibility into fleet operations, enabling automated alarms, insightful analytics, and seamless integration with business systems. This scalable solution helps organizations optimize performance, reduce costs, and make smarter, data-driven decisions through a reliable and flexible IoT platform.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -331,12 +331,12 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-1.webp' alt='ThingsBoard interface showing bus status, speed, fuel level, and location on the map' title='Real-time bus monitoring using ThingsBoard platform'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-2.webp' alt='ThingsBoard interface showing historical route and movement playback for Bus A on the map' title='Bus A route playback and history visualization in ThingsBoard' data-bg='#A4A4A4'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-3.webp' alt='ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events' title='Real-time telemetry dashboard for Bus A in ThingsBoard'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-4.webp' alt='ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations' title='Bus B telemetry and route analytics dashboard in ThingsBoard'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-5.webp' alt='ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map' title='Bus C status monitoring and stop event tracking in ThingsBoard'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-6.webp' alt='ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map' title='Bus D refueling status and stop alert monitoring in ThingsBoard'/>"
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/fleet-tracking-1.webp' alt='ThingsBoard interface showing bus status, speed, fuel level, and location on the map' title='Real-time bus monitoring using ThingsBoard platform'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/fleet-tracking-2.webp' alt='ThingsBoard interface showing historical route and movement playback for Bus A on the map' title='Bus A route playback and history visualization in ThingsBoard' data-bg='#A4A4A4'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/fleet-tracking-3.webp' alt='ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events' title='Real-time telemetry dashboard for Bus A in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/fleet-tracking-4.webp' alt='ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations' title='Bus B telemetry and route analytics dashboard in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/fleet-tracking-5.webp' alt='ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map' title='Bus C status monitoring and stop event tracking in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/fleet-tracking-6.webp' alt='ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map' title='Bus D refueling status and stop alert monitoring in ThingsBoard'/>"
             ];
             return images[index];
         }

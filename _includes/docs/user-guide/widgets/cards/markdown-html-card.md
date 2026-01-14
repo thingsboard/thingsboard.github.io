@@ -83,7 +83,7 @@ Use the following **Markdown/HTML pattern**:
 
 **Result:**
 
-![image](/images/user-guide/widgets/cards/markdown-html-card/markdown-html-pattern.png)
+![image](https://img.thingsboard.io/user-guide/widgets/cards/markdown-html-card/markdown-html-pattern.png)
 
 [Download this widget](/docs/pe/user-guide/widgets/resources/markdown_html_card_temperature_value_card.json){:target="_blank" download="markdown_html_card_temperature_value_card.json"} and [import](/docs/{{docsPrefix}}user-guide/widgets/#import-widget){:target="_blank"} it into your dashboard.
 
@@ -134,7 +134,7 @@ return entityName + temp;
 
 **Result:**
 
-![image](/images/user-guide/widgets/cards/markdown-html-card/markdown-html-value-function.png)
+![image](https://img.thingsboard.io/user-guide/widgets/cards/markdown-html-card/markdown-html-value-function.png)
 
 [Download this widget](/docs/pe/user-guide/widgets/resources/markdown_html_card_temperature_value_card_2.json){:target="_blank" download="markdown_html_card_temperature_value_card.json"} and [import](/docs/{{docsPrefix}}user-guide/widgets/#import-widget){:target="_blank"} it into your dashboard.
 
@@ -228,7 +228,7 @@ These rules apply only inside this widget’s container, so they won’t leak in
 
 **Result:**
 
-![image](/images/user-guide/widgets/cards/markdown-html-card/content-styling-css.png)
+![image](https://img.thingsboard.io/user-guide/widgets/cards/markdown-html-card/content-styling-css.png)
 
 [Download this widget](/docs/pe/user-guide/widgets/resources/markdown_html_card_with_css.json){:target="_blank" download="markdown_html_card_with_css.json"} and [import](/docs/{{docsPrefix}}user-guide/widgets/#import-widget){:target="_blank"} it into your dashboard.
 
@@ -257,10 +257,10 @@ The {{widgetName}} widget supports the following actions:
 Create a compact office info card.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/widgets/cards/markdown-html-card/office-information-card-ce.png)
+![image](https://img.thingsboard.io/user-guide/widgets/cards/markdown-html-card/office-information-card-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix contains "paas/" %}
-![image](/images/user-guide/widgets/cards/markdown-html-card/office-information-card.png)
+![image](https://img.thingsboard.io/user-guide/widgets/cards/markdown-html-card/office-information-card.png)
 {% endif %}
 
 <br><b><font size="4">Step 1. Prepare the entity</font></b>

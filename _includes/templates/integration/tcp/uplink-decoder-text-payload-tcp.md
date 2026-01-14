@@ -67,4 +67,4 @@ return result;
 <br>
 Paste the copied script to the decoder function section. Then, click "**Next**";
 
-![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-text-tbel-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-text-tbel-pe.png)

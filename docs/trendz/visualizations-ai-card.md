@@ -34,7 +34,7 @@ The AI Card presents the next key elements (numbered in the screenshot):
 4. **Predicted Data (Dashed Line):** Extends past the current date to show the forecasted trend for the remainder of your selected period.
 5. **Previous Period Trend Area (Shaded Region):** Displays the cumulative trend from the previous equivalent period, providing a visual baseline for comparison against current data
 6. **AI Summary:** An automatically generated interpretation based on analysis of the previous period, current data, and predictions. The summary is created using your selected AI prompt.
-![image](/images/trendz/base-ai-card.png)
+![image](https://img.thingsboard.io/trendz/base-ai-card.png)
 
 ## AI Card Configuration
 
@@ -49,7 +49,7 @@ To change the prediction method:
 2. Navigate to the Prediction section
 3. Select your desired method from the available options
    
-![image](/images/trendz/ai-card-prediction.png)
+![image](https://img.thingsboard.io/trendz/ai-card-prediction.png)
 
 **Prediction Time Range**
 
@@ -77,7 +77,7 @@ The AI prompt determines the focus and content of your generated summary, so you
 
 You can create custom prompts tailored to your specific use cases. Learn more in the [Trendz AI Prompts Overview](/docs/trendz/ai-assistance-prompts)
 
-![image](/images/trendz/ai-card-summary.png)
+![image](https://img.thingsboard.io/trendz/ai-card-summary.png)
 
 ### Value Color Threshold Logic
 
@@ -87,11 +87,11 @@ The current cumulative value displayed at the top of the card changes color base
 
 * **Blue (Normal Performance):** The value appears in blue when the absolute percentage change is within the threshold range (10% by default). This indicates stable, expected performance.
 
-![image](/images/trendz/ai-card-threshold-normal.png)
+![image](https://img.thingsboard.io/trendz/ai-card-threshold-normal.png)
 
 * **Red (Significant Deviation):** The value appears in red when the absolute percentage change exceeds the threshold (more than 10% by default). This signals a significant deviation or performance shift requiring attention.
 
-![image](/images/trendz/ai-card-threshold-deviation.png)
+![image](https://img.thingsboard.io/trendz/ai-card-threshold-deviation.png)
 
 **Customizing the Threshold**
 
@@ -102,4 +102,4 @@ You can adjust the sensitivity of the color-coding system through the **Value Co
   * Example: Set to 20% for less frequent alerts on larger changes only
 * Unset: Disables color-coding entirely. The current cumulative value displays without color highlighting, regardless of the percentage difference.
 
-![image](/images/trendz/ai-card-threshold-config.png)
+![image](https://img.thingsboard.io/trendz/ai-card-threshold-config.png)

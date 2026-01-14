@@ -4,7 +4,7 @@ So, the device was added and if it sends any data - it should appear in **Device
 To check it you may open **Devices** page in **Entities** section. 
 The device should be in devices list. You can check the data by click on it and open tab **Attributes** or **Latest telemetry**.
 
-![Check telemetry on device](/images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/check-telemetry-on-device.png)
+![Check telemetry on device](https://img.thingsboard.io/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/check-telemetry-on-device.png)
 
 <br>
 In order to get more user-friendly view - you can use [dashboards](/docs/pe/user-guide/dashboards){: target="_blank"}.  
@@ -16,4 +16,4 @@ You can download a simple dashboard for this device, it is configured to display
 
 Example of the dashboard with data:
 
-![Dashboard](/images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/example-of-the-dashboard-pe.png)
+![Dashboard](https://img.thingsboard.io/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/example-of-the-dashboard-pe.png)

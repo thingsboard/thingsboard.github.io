@@ -14,7 +14,7 @@ The table below describes the parameters required to configure serial connection
 | deviceProfile | **default**       | Device profile of the current slave                                                                                      |
 | ---           
 
-![image](/images/gateway/modbus-connector/serial-master-connections-advanced-ce.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/serial-master-connections-advanced-ce.png)
 
 <br>
 Example:

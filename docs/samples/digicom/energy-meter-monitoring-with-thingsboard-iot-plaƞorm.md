@@ -11,13 +11,13 @@ hidetoc: "true"
 * TOC
 {:toc}
 
-![image](/images/samples/digicom/head1.png)
+![image](https://img.thingsboard.io/samples/digicom/head1.png)
 
 Digicom devices are designed to interoperate with ThingsBoard IoT platforms by providing the necessary settings and functionalities to be easily integrated, allowing you to create dashboards where data and telemetry can be displayed and monitored.
 
 This tutorial is intended to be an integration guide focused on setting up a professional monitoring application, covering the basic aspects of your Digicom device and the corresponding ThingsBoard configuration using the MQTT protocol integration
 
-![image](/images/samples/digicom/scenario1.png)
+![image](https://img.thingsboard.io/samples/digicom/scenario1.png)
 
 The described scenario includes your Digicom device being connected to an MQTT broker and ThingsBoard being subscribed to those data streams through an MQTT integration, thus converting the payloads into its message format through a specific Data Converter.
 
@@ -37,7 +37,7 @@ We will start by defining the data ingress section. [MQTT Integration](/docs/{{d
 
 Go to the "**Integrations center**" section -> "**Integrations**" page and click "**plus**" button to create new integration. Select type "**MQTT**". Click "**Next**";
 
-![image](/images/samples/digicom/integ-mqtt-1.png)
+![image](https://img.thingsboard.io/samples/digicom/integ-mqtt-1.png)
 
 <br>
 At the next step, give a name to the [Uplink data converter](/docs/{{docsPrefix}}user-guide/integrations/#uplink-data-converter){:target="_blank"}, select "**TBEL**", delete the whole content of the function Decoder.
@@ -92,12 +92,12 @@ return result;
 ```
 {:.copy-code.expandable-10}
 
-![image](/images/samples/digicom/integ-mqtt-2.png)
+![image](https://img.thingsboard.io/samples/digicom/integ-mqtt-2.png)
 
 <br>
 Click "**Skip**" in the [Downlink data converter](/docs/{{docsPrefix}}user-guide/integrations/#downlink-data-converter){:target="_blank"} tab.
 
-![image](/images/samples/digicom/integ-mqtt-3.png)
+![image](https://img.thingsboard.io/samples/digicom/integ-mqtt-3.png)
 
 <br>
 Fill in the "**Connection**" tab:
@@ -115,18 +115,18 @@ digicom/+/data/modbus
 
 Click on "**Check connection**" if you want to test it first.
 
-![image](/images/samples/digicom/integ-mqtt-4.png)
+![image](https://img.thingsboard.io/samples/digicom/integ-mqtt-4.png)
 
 <br>
 Click "**Add**" to finish the integration setup.
 
-![image](/images/samples/digicom/integ-mqtt-5.png)
+![image](https://img.thingsboard.io/samples/digicom/integ-mqtt-5.png)
 
 <br>
 If the connection is successful, the status of your MQTT integration will be "**Active**". Otherwise, it will remain "Inactive" until the first connection with the external broker takes place.   
 If the connection does not succeed, double-check the address, port, and credentials later.
 
-![image](/images/samples/digicom/integ-mqtt-6.png)
+![image](https://img.thingsboard.io/samples/digicom/integ-mqtt-6.png)
 
 ## Check and test the data converter
 
@@ -135,12 +135,12 @@ From here, we can simulate and test the conversion process even before receiving
 
 Go to the "**Data converters**" page of the "**Integration center**" section. Click on the "**Modbus Data**" conveter, and then enter edit mode.
 
-![image](/images/samples/digicom/test-data-converter-1.png)
+![image](https://img.thingsboard.io/samples/digicom/test-data-converter-1.png)
 
 <br>
 Once edit mode is active, the "**Test decoder function**" button will become available. Click on it to access the Test environment.
 
-![image](/images/samples/digicom/test-data-converter-2.png)
+![image](https://img.thingsboard.io/samples/digicom/test-data-converter-2.png)
 
 <br>
 Copy the JSON packet code from the below table into the "**Payload content**" tab, then click on "**Test**" button, and check the "**Output**" tab.
@@ -190,7 +190,7 @@ Copy the JSON packet code from the below table into the "**Payload content**" ta
 {:.copy-code.expandable-10}
 
 
-![image](/images/samples/digicom/test-data-converter-3.png)
+![image](https://img.thingsboard.io/samples/digicom/test-data-converter-3.png)
 
 <br>
 If everything has been correctly set up until now, you will see the result of the transformation process:
@@ -234,48 +234,48 @@ Let's switch to the device setup.
 
 Log in into your device. Enter **Username** and **Password**. Then, click "**Login**" button.
 
-![image](/images/samples/digicom/log1.png)
+![image](https://img.thingsboard.io/samples/digicom/log1.png)
 
 <br>
 This guide will use the Modbus functionalities to read from an Electric Energy Meter and transmit that data to ThingsBoard through the MQTT protocol.
 We will concentrate on the Modbus and MQTT setup sections, assuming that the device is already correctly configured for Internet access and that the Modbus physical connections are correctly carried out.   
 Select "**Modbus**" – "**COM Configuration**" from the drop-down menu.
 
-![image](/images/samples/digicom/modbus_serial1.png)
+![image](https://img.thingsboard.io/samples/digicom/modbus_serial1.png)
 
 <br>
 Set the Modbus serial interface **enabled**, set **type**, **speed** and **data format** as for the Energy Meter operating parameters.   
 Click on "**Save**" button.
 
-![image](/images/samples/digicom/Immagine-11.png)
+![image](https://img.thingsboard.io/samples/digicom/Immagine-11.png)
 
 <br>
 Go to the "**Modbus**" –> "**Modbus Master**" from the drop-down menu.   
 Click on "**Add**" button.
 
-![image](/images/samples/digicom/Immagine-13.png)
+![image](https://img.thingsboard.io/samples/digicom/Immagine-13.png)
 
 <br>
 Set the Modbus Master profile to **enabled**, set **Name**, **ID**, **Connection type**, **COM type** and **settings**, **rates** and **register formats**. Set the **Data Destination** to **MQTT**, then click "**Save**" button.
 
-![image](/images/samples/digicom/Immagine-14.png)
+![image](https://img.thingsboard.io/samples/digicom/Immagine-14.png)
 
 <br>
 Now we will define 4 sample sets of data values (Voltage, Current, Frequency and kVA) be read from the Energy Meter and sent to ThingsBoard as timeseries, for later representation and dashboarding.   
 Click on "**Requests**" button.
 
-![image](/images/samples/digicom/slave1.png)
+![image](https://img.thingsboard.io/samples/digicom/slave1.png)
 
 <br>
 We fill in the needed parameters for the Voltage (**Volts**) values and click "**Save**" button.
 
-![image](/images/samples/digicom/Immagine-16.png)
+![image](https://img.thingsboard.io/samples/digicom/Immagine-16.png)
 
 <br>
 Repeat the previous steps for Current (**Ampere**), Frequency (**Hertz**) and Power (**kVA**) by clicking on "**Add**" button.   
 The final result will look as below.
 
-![image](/images/samples/digicom/Immagine-17.png)
+![image](https://img.thingsboard.io/samples/digicom/Immagine-17.png)
 
 <br>
 If everything is correct the **Value** column will show coherent measurement data being updated at the given Scan rate.
@@ -284,7 +284,7 @@ By clicking on "**Test**" an immediate data value read can be issued.
 <br>
 Select **Modbus** – **MQTT Configuration** from the drop-down menu.
 
-![image](/images/samples/digicom/modqtt1.png)
+![image](https://img.thingsboard.io/samples/digicom/modqtt1.png)
 
 <br>
 Fill in the MQTT destination parameters for our external Broker, like **Server Address** and **Port Number**, **Username** and **Password** (in this example our MQTT Broker is set for using **MQTT Basic Authentication**).   
@@ -297,18 +297,18 @@ digicom/<device SN>/data/modbus
 
 Click on "**Save**" button.
 
-![image](/images/samples/digicom/modqtt2.png)
+![image](https://img.thingsboard.io/samples/digicom/modqtt2.png)
 
 <br>
 In order to start the newly configured processes it is needed to restart the device.   
 Select **Device** – "**Reboot**" from the drop-down menu.   
 
-![image](/images/samples/digicom/reb1.png)
+![image](https://img.thingsboard.io/samples/digicom/reb1.png)
 
 <br>
 Click on "**Reboot**" and **confirm**.
 
-![image](/images/samples/digicom/reb2.png)
+![image](https://img.thingsboard.io/samples/digicom/reb2.png)
 
 Wait for the device to become operational again, then go back to ThingsBoard account and check the device appearing in the "**Devices**" page.
 
@@ -317,7 +317,7 @@ Wait for the device to become operational again, then go back to ThingsBoard acc
 Go to the "**Devices**" page of the "**Entities**" section from menu bar on the left.
 A new [device](/docs/{{docsPrefix}}user-guide/ui/devices/){:target="_blank"} should appear as soon as it has published the first data to the external MQTT broker on which ThingsBoard is connected too.
 
-![image](/images/samples/digicom/check-device-1.png)
+![image](https://img.thingsboard.io/samples/digicom/check-device-1.png)
 
 <br>
 Check data telemetries and attributes.
@@ -327,7 +327,7 @@ This panel shows the latest values of the measurements the Data converter has ex
 Navigate to the "**Attributes**" tab.
 This panel shows the latest Client and Server attributes the Data converter has extracted from the data stream.
 
-![image](/images/samples/digicom/check-device-2.png)
+![image](https://img.thingsboard.io/samples/digicom/check-device-2.png)
 
 <br>
 So, with those data in the system we can now proceed and create a simple Dashboard.
@@ -339,23 +339,23 @@ ThingsBoard offers a powerful feature – the ability to create and customize in
 Navigate to the "**Dashboards**" page through the main menu on the left of the screen. Click the "**+**" sign in the upper right corner of the screen, and select "**Create new dashboard**" from the drop-down menu.
 In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "**Add**".
 
-![image](/images/samples/digicom/dashboard-energy-meter-1.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-1.png)
 
 <br>
 After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it.   
 Click the "**Add widget**" button at the top of the screen or click the large "**Add new widget**" icon in the center of the screen (if this is your first widget on this dashboard).
 
-![image](/images/samples/digicom/dashboard-energy-meter-2.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-2.png)
 
 <br>
 Find the "**Analogue gauges**" widget bundle and click on it.
 
-![image](/images/samples/digicom/dashboard-energy-meter-3.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-3.png)
 
 <br>
 Select the "**Radial gauge**" widget.
 
-![image](/images/samples/digicom/dashboard-energy-meter-4.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-4.png)
 
 <br>
 The "Add Widget" window will appear. Specify the device "**50012345**" as the data source in the "**Device**" field. 
@@ -366,18 +366,18 @@ If you want to customize further, go to the "**Advanced**" and go deeper in the 
 
 Click on "**Add**".
 
-![image](/images/samples/digicom/dashboard-energy-meter-5.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-5.png)
 
 <br>
 You have added a widget that displays the current power readings.
 
-![image](/images/samples/digicom/dashboard-energy-meter-6.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-6.png)
 
 <br>
 Similarly, add additional widgets for the three other available telemetry values (data keys) and position them appropriately on the dashboard.   
 Once you have completed the configuration, click "**Save**" to save the dashboard.
 
-![image](/images/samples/digicom/dashboard-energy-meter-7.png)
+![image](https://img.thingsboard.io/samples/digicom/dashboard-energy-meter-7.png)
 
 ## More references and guides
 

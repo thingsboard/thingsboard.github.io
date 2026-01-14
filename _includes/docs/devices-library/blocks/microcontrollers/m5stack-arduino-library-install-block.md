@@ -10,7 +10,7 @@ https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_in
 
 {% assign esp32ArduinoPreferences='
     ===
-        image: /images/devices-library/basic/arduino-ide/preferences.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/preferences.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}
@@ -19,7 +19,7 @@ Next, go to **Tools** > **Board** > **Board Manager** and install the ***M5Stack
 
 {% assign m5StackBoardManager='
     ===
-        image: /images/devices-library/basic/microcontrollers/m5stack-arduino-ide-board-manager.png
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/m5stack-arduino-ide-board-manager.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=m5StackBoardManager %}

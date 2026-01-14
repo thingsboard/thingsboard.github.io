@@ -3,7 +3,7 @@ clusterSetup:
     title: Docker Compose
     description: This guide will help you to setup ThingsBoard Professional Edition in cluster mode using Docker Compose tool.
     link: /docs/user-guide/install/pe/cluster/docker-compose-setup/
-    icon: /images/install/cluster/docker-compose.svg
+    icon: https://img.thingsboard.io/install/cluster/docker-compose.svg
     alt: Docker Compose logo
     imageTitleAttribute: Set up ThingsBoard in cluster mode using Docker Compose
     imageWidth: 36
@@ -12,7 +12,7 @@ clusterSetup:
     title: Minikube
     description: This guide will help you to setup ThingsBoard Professional Edition in cluster mode using Minikube tool.
     link: /docs/user-guide/install/pe/cluster/minikube-cluster-setup/
-    icon: /images/install/cluster/minikube.svg
+    icon: https://img.thingsboard.io/install/cluster/minikube.svg
     alt: Minikube logo
     imageTitleAttribute: Deploy ThingsBoard cluster using Minikube tool
     imageWidth: 36

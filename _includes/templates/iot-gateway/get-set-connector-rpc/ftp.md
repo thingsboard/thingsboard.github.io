@@ -23,7 +23,7 @@ get filePath=./light_level.txt;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/ftp-get-set-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/ftp-get-set-rpc-1.png)
 {: refdef}
 
 ### SET method
@@ -52,7 +52,7 @@ set filePath=./light_level.txt;value=80;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/ftp-get-set-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/ftp-get-set-rpc-2.png)
 {: refdef}
 
 Also, let's check the value of the room light level after setting it using the GET method. To do this, simply 
@@ -69,5 +69,5 @@ get filePath=./light_level.txt;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/ftp-get-set-rpc-3.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/ftp-get-set-rpc-3.png)
 {: refdef}

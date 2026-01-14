@@ -17,4 +17,4 @@ return result;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-downlink-converter-tbel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-downlink-converter-tbel-1-pe.png)

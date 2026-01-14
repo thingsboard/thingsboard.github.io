@@ -19,7 +19,7 @@ Allowed values for **Group By** field are:
 * Hour
 * Minute 
 
-![image](/images/trendz/date-raw-group.png)
+![image](https://img.thingsboard.io/trendz/date-raw-group.png)
 
 
 You can have more control on date intervals by selecting other available Date aggregation options:

@@ -8,7 +8,7 @@ This feature enables you to send commands to/from devices and receive the result
 In this guide, we will configure an RPC command to get telemetry data from OrangePI immediately. If you are 
 using the imported dashboard, there's no need for additional configuration, as the dashboard already includes the following widget:
 
-![one-way-rpc-widget](/images/devices-library/basic/single-board-computers/one-way-rpc-widget.png)
+![one-way-rpc-widget](https://img.thingsboard.io/devices-library/basic/single-board-computers/one-way-rpc-widget.png)
 
 
 💡 If you're creating a new dashboard, you can use the **“RPC Button”** widget for one-way RPC communication, which is located in the **“Control widgets”** bundle.
@@ -48,7 +48,7 @@ def main():
 When you click the **RPC button**, the device will immediately send telemetry (CPU %, Processes number, etc.). 
 You can see this reflected in your dashboard, as shown in the chart below.
 
-![timeseries-rpc-widget](/images/devices-library/basic/single-board-computers/timeseries-rpc-widget.png)
+![timeseries-rpc-widget](https://img.thingsboard.io/devices-library/basic/single-board-computers/timeseries-rpc-widget.png)
 
 Also, if you did everything right, you should see the following console output:
 

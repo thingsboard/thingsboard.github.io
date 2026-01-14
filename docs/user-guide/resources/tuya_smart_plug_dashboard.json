@@ -205,7 +205,7 @@
           "widgetStyle": {
             "borderBottom": "solid 1px #aaa",
             "borderRight": "solid 1px #aaa",
-            "backgroundImage": "url(https://thingsboard.io/images/dashboards/smart-building/energy-bg.jpg)",
+            "backgroundImage": "url(https://img.thingsboard.io/dashboards/smart-building/energy-bg.jpg)",
             "backgroundSize": "cover",
             "backgroundPosition": "center"
           },

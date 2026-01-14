@@ -17,7 +17,7 @@ the central server that manages all communication between clients.
 The broker is responsible for receiving messages from publishers, determining which subscribers are interested in those messages, and reliably delivering them according to the protocol’s rules. 
 In this way, the broker acts as the backbone of the MQTT system, ensuring seamless, secure, and efficient message exchange.
 
-![image](/images/mqtt-broker/user-guide/mqtt/mqtt_broker.svg)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/mqtt/mqtt_broker.svg)
 
 ### MQTT Clients
 

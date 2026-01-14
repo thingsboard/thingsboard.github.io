@@ -5,15 +5,15 @@ description: Smart office template overview
 redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
 solution-highlights:
     0:
-        image: /images/solutions/smart_office/smart-office-1.png
+        image: https://img.thingsboard.io/solutions/smart_office/smart-office-1.png
     1:
-        image: /images/solutions/smart_office/smart-office-2.png
+        image: https://img.thingsboard.io/solutions/smart_office/smart-office-2.png
     2:
-        image: /images/solutions/smart_office/smart-office-3.png
+        image: https://img.thingsboard.io/solutions/smart_office/smart-office-3.png
     3:
-        image: /images/solutions/smart_office/smart-office-4.png
+        image: https://img.thingsboard.io/solutions/smart_office/smart-office-4.png
     4:
-        image: /images/solutions/smart_office/smart-office-5.png
+        image: https://img.thingsboard.io/solutions/smart_office/smart-office-5.png
 
 ---
 

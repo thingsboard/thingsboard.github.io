@@ -12,11 +12,11 @@ redirect_from: "docs/services/trainings/"
         <div class="trainings-hero-top">
             <h1 class="trainings-h1">ThingsBoard training sessions</h1>
             <div class="trainings-hero-top-images">
-                <img src="/images/trainings/thingsboard-home-page.png" class="trainings-hero-image" alt="Thingsboard dashboards and menus">
-                <img src="/images/trainings/thingsboard-tenant-list.png" class="trainings-hero-image-2" alt="Thingsboard tenant list">
-                <img src="/images/trainings/thingsboard-alarm-list.png" class="trainings-hero-image-3" alt="Thingsboard alarm list">
-                <img src="/images/trainings/thingsboard-scada-example.png" class="trainings-hero-image-4" alt="Thingsboard SCADA">
-                <img src="/images/trainings/thingsboard-rule-chains-list.png" class="trainings-hero-image-5" alt="Thingsboard rule chains list">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-home-page.png" class="trainings-hero-image" alt="Thingsboard dashboards and menus">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-tenant-list.png" class="trainings-hero-image-2" alt="Thingsboard tenant list">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-alarm-list.png" class="trainings-hero-image-3" alt="Thingsboard alarm list">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-scada-example.png" class="trainings-hero-image-4" alt="Thingsboard SCADA">
+                <img src="https://img.thingsboard.io/trainings/thingsboard-rule-chains-list.png" class="trainings-hero-image-5" alt="Thingsboard rule chains list">
             </div>
         </div>
         <div class="trainings-contact">
@@ -42,15 +42,15 @@ redirect_from: "docs/services/trainings/"
                     <span class="course-name">Who is this for</span>
                     <ul>
                         <li>
-                            <img src="/images/trainings/icon_people.svg" alt="Users icon">
+                            <img src="https://img.thingsboard.io/trainings/icon_people.svg" alt="Users icon">
                             <span>Teams of <b>up to 8 people</b> who need to learn at the same pace.</span>
                         </li>
                         <li>
-                            <img src="/images/trainings/icon_trophy.svg" alt="Trophy icon">
+                            <img src="https://img.thingsboard.io/trainings/icon_trophy.svg" alt="Trophy icon">
                             <span>Individuals ready to get a <b>solid foundation and fully leverage</b> ThingsBoard.</span>
                         </li>
                         <li>
-                            <img src="/images/trainings/icon_target-line.svg" alt="Target icon">
+                            <img src="https://img.thingsboard.io/trainings/icon_target-line.svg" alt="Target icon">
                             <span>Those eager to quickly create <b>top-notch solutions</b>.</span>
                         </li>
                     </ul>
@@ -59,7 +59,7 @@ redirect_from: "docs/services/trainings/"
                     <span class="course-name">Primary goals of the training</span>
                     <ul>
                         <li>
-                            <img src="/images/trainings/icon_arrow-growth.svg" alt="Graph icon">
+                            <img src="https://img.thingsboard.io/trainings/icon_arrow-growth.svg" alt="Graph icon">
                             <span>Enhance your <b>experience</b> with ThingsBoard. </span>
                         </li>
                         <li>
@@ -67,7 +67,7 @@ redirect_from: "docs/services/trainings/"
                             <span>Answer <b>practical questions</b> related to your specific use cases. </span>
                         </li>
                         <li>
-                            <img src="/images/trainings/akar-icons_reduce.svg" alt="Akar icons">
+                            <img src="https://img.thingsboard.io/trainings/akar-icons_reduce.svg" alt="Akar icons">
                             <span>Reduce your <b>time-to-market</b> for IoT products or solutions.</span>
                         </li>
                     </ul>

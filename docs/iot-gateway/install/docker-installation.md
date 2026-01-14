@@ -19,13 +19,13 @@ The alternative option is to install the ThingsBoard locally using the [installa
 
 {% assign downloadConfigurationFile = '
    ===
-      image: /images/gateway/install/gateway-download-configuration-file-1-ce.png,
+      image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-1-ce.png,
       title: Go to the "**Entities**" > "**Gateways**" page and click the "**plus**" icon in the upper right corner to add a new gateway.
    ===
-      image: /images/gateway/install/gateway-download-configuration-file-2-ce.png,
+      image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-2-ce.png,
       title: In the opened modal window input the gateway name, specify the "**default**" device profile, and click "**Create**".
    ===
-      image: /images/gateway/install/gateway-download-configuration-file-3-ce.png,
+      image: https://img.thingsboard.io/gateway/install/gateway-download-configuration-file-3-ce.png,
       title: The "**Launch command**" window will open. Click the "**Download**" button to download a docker-compose file for your gateway.
 '
 %}
@@ -45,7 +45,7 @@ docker compose up
 
 {% assign startGateway = '
     ===
-        image: /images/gateway/install/start-gateway-1-ce.png,
+        image: https://img.thingsboard.io/gateway/install/start-gateway-1-ce.png,
 '
 %}
 

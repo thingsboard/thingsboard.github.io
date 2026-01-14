@@ -1,19 +1,5 @@
 ---
-layout: devices-library-article
-title: How to connect Vapeless Gas detection indoor Sensor to ThingsBoard?
-category: Other devices
-connectivity: LoRaWAN®
-vendor: NanoSensorics
-hasIntegrationDeviceConfiguration: true
-deviceImageFileName: vapeless-gas-detection-indoor-sensor.png
-converters20: true
-model: Vapeless
-docsPrefix: paas/eu/
-docsTag: paas-eu
+layout: docwithnav-paas-eu
+title: "How to connect Vapeless Gas detection indoor Sensor to ThingsBoard?"
+redirect_to: "/devices-library/paas/vapeless-gas-detection-indoor-sensor/"
 ---
-
-* TOC
-{:toc}
-
-{% include get-hosts-name.html docsTag=page.docsTag %}
-{% include /docs/devices-library/guides/vapeless-gas-detection-indoor-sensor.md %}

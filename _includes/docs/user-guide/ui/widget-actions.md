@@ -1360,10 +1360,10 @@ Map widget has unique action sources that need to be considered separately.
 Let&#39;s start by adding a map widget, namely OpenStreetMap widget. We have a separate guide on [how to create and configure a map widget](/docs/{{docsPrefix}}user-guide/ui/trip-animation-widget/){:target="_blank"}. Please, familiarize yourself with it first.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-![image](/images/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/actions/guide/map-widget-action-sources-1-pe.png)
 {% endif %}
 
 Now it&#39;s time to add an action.

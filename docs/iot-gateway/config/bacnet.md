@@ -46,13 +46,13 @@ you can use the "**Advanced**" configuration mode.
 
 You can switch between these modes using the toggle button at the top of the configuration page:
 
-![image](/images/gateway/bacnet-connector/bacnet-modes-toggle.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-modes-toggle.png)
 
 ## General settings
 
 {% include /templates/iot-gateway/connector-commons/general-settings.md %}
 
-![image](/images/gateway/bacnet-connector/bacnet-general-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-general-basic-1-ce.png)
 
 {% capture difference %}
 The General tab in settings is the same for both the basic and advanced configurations.
@@ -84,7 +84,7 @@ All configuration parameters list, and their detailed description can be found i
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/bacnet-advanced-application-settings.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-advanced-application-settings.png)
 
 ## Data mapping
 
@@ -149,7 +149,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/attribute-updates-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/attribute-updates-overview.png)
 
 {% include /templates/iot-gateway/bacnet-connector/device-attribute-updates-basic-section.md %}
 
@@ -172,7 +172,7 @@ More usage examples can be found in the [Example usage](/docs/iot-gateway/config
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/rpc-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/rpc-overview.png)
 
 {% include /templates/iot-gateway/bacnet-connector/device-rpc-basic-section.md %}
 
@@ -205,7 +205,7 @@ Let’s look at the example of the EDE file parsing configuration.
 We will use an EDE file exported from YABE (Yet Another BACnet Explorer) application. The file contains the
 description of a BACnet device with several objects. The file looks like this:
 
-![image](/images/gateway/bacnet-connector/ede-file-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/ede-file-overview.png)
 
 Now let’s configure the BACnet connector to use this EDE file. In the advanced configuration mode, paste the following
 connector configuration (**make sure to use the correct path to your EDE file**):
@@ -240,7 +240,7 @@ update device attributes, and send RPC commands to the device. As you can see on
 has automatically created the device with the name and profile from the EDE file, as well as all the attributes and time
 series from the file:
 
-![image](/images/gateway/bacnet-connector/ede-device-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/ede-device-overview.png)
 
 ## Advanced configuration
 
@@ -264,7 +264,15 @@ The application configuration parameters are used to configure the gateway in th
 | application.deviceDiscoveryTimeoutInSec (in sec)       | **5**                   | Timeout for discovering devices.                                                                                      |
 | application.devicesDiscoverPeriodSeconds (in sec)      | **30**                  | Period of time when the connector will try to discover BACnet devices.                                                |
 | application.devicesRescanObjectsPeriodSeconds (in sec) | **60**                  | The period of time when the connector will try to reread device objects that it failed to read last time.             |
+| application.loadProprietaryDevices *                   | **false**               | Allow dynamically loading proprietary devices from extensions.                                                        |
 | ---                                                    |                         |                                                                                                                       |
+
+{% capture difference %}
+\* -- Feature available from Gateway v.3.8.0 and only in advanced configuration mode. You need to upload your 
+proprietary device extension to the `/extensions/bacnet/proprietary` folder of the IoT Gateway installation directory. 
+You can also find an example of such a proprietary device [here](https://github.com/thingsboard/thingsboard-gateway/blob/master/thingsboard_gateway/extensions/bacnet/proprietary/desigo_cc.py){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Example of the application configuration:
 

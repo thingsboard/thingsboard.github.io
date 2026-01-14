@@ -66,7 +66,7 @@ container to access the host machine's network.
 This simulation server provides a predefined set of nodes that we can use to mimic a real industrial device. 
 Its structure looks like this:
 
-![image](/images/gateway/opc-ua-connector/guides/opc-ua-server-structure-overview.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/guides/opc-ua-server-structure-overview.png)
 
 In our example, we’ll focus on the following nodes:
 
@@ -93,10 +93,10 @@ First, add a gateway device to your ThingsBoard instance by following these step
 
 {% assign createNewGatewayDevice = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-1-ce.png,
         title: Go to "**Entities**" > "**Gateways**" tab.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-2-ce.png,
         title: Click the "**+**" button, enter the gateway device name (e.g., "My Gateway"), and select the device profile. Click on "**Create**" button.
 '
 %}
@@ -107,10 +107,10 @@ To launch the gateway, use the following steps:
 
 {% assign remoteCreateGatewayDocker = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-3-ce.png,
         title: Select and click on newly created gateway, click on **"Launch command"** button in the top right corner.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-4-ce.png,
         title: Click to download `docker-compose.yml` file to your PC, copy command and execute it in your terminal.
 '
 %}
@@ -119,7 +119,7 @@ To launch the gateway, use the following steps:
 
 After running gateway docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/launch-gateway-docker.png)
+![](https://img.thingsboard.io/gateway/dashboard/launch-gateway-docker.png)
 
 ## Step 2. Add new OPC-UA connector
 
@@ -128,19 +128,19 @@ created gateway. To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click on "**Connectors configuration**" button on the right panel;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Click the "**+ Add connector**" button;
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
         title: Choose "**OPCUA**" connector type from the dropdown, fill in "**Name**" field, choose "**Logging level**" to "**INFO**", turn off the "**Fill configuration with default values**" option and click on "**Add**" button;
     ===
-        image: /images/gateway/opc-ua-connector/guides/connector-configuration.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/guides/connector-configuration.png,
         title: Choose “**Advanced**” configuration mode, click on “**Configuration**” tab and paste connector configuration (_you can find it under these steps_).
     ===
-        image: /images/gateway/opc-ua-connector/guides/connector-configuration-save.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/guides/connector-configuration-save.png,
         title: Click on “**Save**” button to apply changes.
 '
 %}
@@ -237,10 +237,10 @@ To review the data uploaded from your gateway, use the following steps:
 
 {% assign checkDeviceData = '
     ===
-        image: /images/gateway/opc-ua-connector/guides/review-device-data-1.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/guides/review-device-data-1.png,
         title: Navigate to the **Entities** > **Devices** page and click on the created device "**OPC-UA PLC**" as we named it in the “**deviceNameExpression**” field . This will open the device details page. From there, switch to the **"Attributes"** tab to view the attributes that were configured in the connector.
     ===
-        image: /images/gateway/opc-ua-connector/guides/review-device-data-2.png,
+        image: https://img.thingsboard.io/gateway/opc-ua-connector/guides/review-device-data-2.png,
         title: To view real-time telemetry data from the device, navigate to the “**Latest Telemetry**” tab. Here, you will find the telemetry data being sent by the device, including metrics like “**humidity**”, “**temperature**” and “**pressure**”. This tab provides real-time device telemetry updates.
 '
 %}

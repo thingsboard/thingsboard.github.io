@@ -34,7 +34,7 @@ Replace the "path" value with the "NodeId" value. This is a relative path from d
 <br>
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-simulation-server-4.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-simulation-server-4.png)
 {: refdef}
 
 In this example, the **timeseries** section would look like this:
@@ -57,11 +57,11 @@ In this example, the **timeseries** section would look like this:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/opc-ua-connector/opc-ua-subsection-time-series-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/opc-ua-connector/opc-ua-subsection-time-series-advanced-1-ce.png)
 {: refdef}
 
 You should be able to see the telemetry you have sent to ThingsBoard in the **Latest telemetry** section of your device:
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-3.png)
+![image](https://img.thingsboard.io/gateway/gateway-opc-ua-attributes-3.png)
 {: refdef}

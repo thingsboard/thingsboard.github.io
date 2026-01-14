@@ -7,4 +7,4 @@ GRPC - provides GRPC configuration:
 - Min time between pings - minimum amount of time (in milliseconds) the server should wait between sending keepalive ping messages.
 - Min ping interval without data - minimum amount of time (in milliseconds) the server should wait between sending keepalive ping messages when there is no data being sent or received.
 
-![](/images/gateway/dashboard/gateway-dashboard-grpc-conf.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-grpc-conf.png)

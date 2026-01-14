@@ -11,4 +11,4 @@ All configuration parameters list, and their detailed description can be found i
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/bacnet-application-basic-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-application-basic-1-ce.png)

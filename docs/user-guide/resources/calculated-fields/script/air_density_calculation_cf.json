@@ -1,0 +1,51 @@
+{
+  "type": "SCRIPT",
+  "name": "Air density calculation",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767685314488
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "SCRIPT",
+    "arguments": {
+      "altitude": {
+        "refEntityId": {
+          "entityType": "DEVICE",
+          "id": "2a243b00-ead0-11f0-9cd7-0f3ea7d51746"
+        },
+        "refEntityKey": {
+          "key": "altitude",
+          "type": "ATTRIBUTE",
+          "scope": "SERVER_SCOPE"
+        },
+        "defaultValue": ""
+      },
+      "temperature": {
+        "refEntityId": {
+          "entityType": "DEVICE",
+          "id": "2a21f110-ead0-11f0-9cd7-0f3ea7d51746"
+        },
+        "refEntityKey": {
+          "key": "temperature",
+          "type": "TS_ROLLING"
+        },
+        "limit": 100,
+        "timeWindow": 900000
+      }
+    },
+    "expression": "var avgTemperature = temperature.mean(); // Get average temperature\nvar temperatureK = (avgTemperature - 32) * (5 / 9) + 273.15; // Convert Fahrenheit to Kelvin\n\n// Estimate air pressure based on altitude\nvar pressure = 101325 * Math.pow((1 - 2.25577e-5 * altitude), 5.25588);\n\n// Air density formula\nvar airDensity = pressure / (287.05 * temperatureK);\n\nreturn {\n    \"airDensity\": toFixed(airDensity, 2)\n};",
+    "output": {
+      "type": "TIME_SERIES",
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}

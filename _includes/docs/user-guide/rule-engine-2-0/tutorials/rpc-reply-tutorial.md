@@ -32,7 +32,7 @@ Configuration:
 
 - Name : **Related thermostat temperature**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
 
 New Rule Chain is created. Press on the rule chain row to open it.
 
@@ -52,9 +52,9 @@ Configuration:
 - Source attribute key: **temperature**
 - Target key: **roomTemperature**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-data-to-fetch.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-entity-data-config-relations-query.png)
 
 ##### Add transformation node: script 
 Add transformation **script** node and connect it to the **related entity data** node.
@@ -72,7 +72,7 @@ Configuration:
   ```
   {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
 
 ##### Add action node: RPC call reply
 **RPC call reply** node takes RPC requestId from message metadata. This id used to identify incoming RPC call. 
@@ -84,14 +84,14 @@ Configuration:
 - Name : **Send response**
 - Request ID : **requestId**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
 
 <br>
 <br>
 
 This rule chain is ready and we should save it. Here is how **Related thermostat temperature** rule chain should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
 
 
 ### Connect Rule Chains
@@ -115,7 +115,7 @@ Configuration:
   ```
   {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/filter-rpc-request.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/filter-rpc-request.png)
 
 After this, all incoming messages with message type **RPC Request from Device** will be routed to this node. 
 Inside this node, function will filter only allowed RPC requests with **method** == **getCurrentTemperature**
@@ -129,7 +129,7 @@ Configuration:
 - Rule Chain: **Related thermostat temperature**
 - Forward message to the originator's default rule chain: **Disabled**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/add-rule-chain-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/add-rule-chain-node.png)
 
 Now, all messages that satisfy configured filter will be routed to **Related thermostat temperature** Rule Chain
 
@@ -147,14 +147,14 @@ Configuration:
   ```
   {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
 
 <br>
 <br>
 
 Changes in the **Root Rule Chain** are finished and we should save it. Here is how **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-chain-view.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-chain-view.png)
 
 
 ## Verify configuration
@@ -164,7 +164,7 @@ Let's start with publishing "temperature" telemetry for **Thermostat A** device.
 
 - To trigger telemetry upload let's go to **Check connectivity** tab of the device page and copy **curl** command to publish telemetry for our thermostat device.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-curl-command.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-curl-command.png)
 
 - Execute the copied command:
 

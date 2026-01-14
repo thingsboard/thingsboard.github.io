@@ -2,10 +2,10 @@ To install ThingsBoard Arduino SDK - we will need to do the following steps:
 
 {% assign libraryInstallation = '
     ===
-        image: /images/devices-library/basic/arduino-ide/tools-manage-libraries.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/tools-manage-libraries.png
         title: Go to "**Tools**" tab and click on "**Manage libraries**".
     ===
-        image: /images/devices-library/basic/arduino-ide/manage-libraries-thingsboard.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/manage-libraries-thingsboard.png
         title: Put "**ThingsBoard**" into the search box and press "***INSTALL***" button for the found library.
 ' 
 %}
@@ -26,10 +26,10 @@ Also, for boards, based on ESP8266 or RP2040 chip we should install the "mbedtls
 
 {% assign mbedtlsInstallation='
     ===
-        image: /images/devices-library/basic/arduino-ide/install-mbedtls.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/install-mbedtls.png,
         title: Put into library search field "**mbedtls**" and install the library - "***Seeed_Arduino_mbedtls by Peter Yang***"
     ===
-        image: /images/devices-library/basic/arduino-ide/install-arduino-timer.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/install-arduino-timer.png,
         title: Put into library search field "**arduino-timer**" and install the library - "***arduino-timer by Michael Contreras***"
 '%}
 
@@ -43,7 +43,7 @@ Also, to control display we should install the Adafruit SSD1306 library.
 
 {% assign oledInstallation='
     ===
-        image: /images/devices-library/basic/arduino-ide/install-adafruit-ssd1306.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/install-adafruit-ssd1306.png,
         title: Put into library search field "**Adafruit SSD1306**" and install the library - "**Adafruit SSD1306 by Adafruit**"
 '%}
 
@@ -57,7 +57,7 @@ Also, for boards, based on RP2040 chip we should install the "WiFiNINA" library.
 
 {% assign wifininaInstallation='
     ===
-        image: /images/devices-library/basic/arduino-ide/install-wifinina.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/install-wifinina.png,
         title: Put into library search field "**WiFiNINA**" and install the library - "**WiFiNINA by Arduino**"
 '%}
 

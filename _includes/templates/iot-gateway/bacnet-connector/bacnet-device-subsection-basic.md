@@ -1,6 +1,6 @@
 To add a new device, click the "**plus**" icon:
 
-![image](/images/gateway/bacnet-connector/bacnet-gateway-configuring-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-gateway-configuring-1-ce.png)
 
 Provide the following fields in the opened model window:
 - **Host** - the host of the device;
@@ -32,4 +32,4 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/bacnet-connector/bacnet-gateway-configuring-2-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-gateway-configuring-2-ce.png)

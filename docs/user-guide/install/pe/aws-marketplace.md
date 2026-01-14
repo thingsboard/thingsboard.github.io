@@ -31,7 +31,7 @@ Before completing your subscription, please carefully review all the information
 
 - **Terms and conditions** – By completing your subscription, you are confirming that you have read, understood, and agree to **End User License Agreement (EULA)** and the **AWS Customer Agreement**.
 
-![image](/images/user-guide/install/aws-marketplace-pe/BYOL-subscribe.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/BYOL-subscribe.png)
 
 After carefully reviewing this information, click the **Subscribe** button to proceed with your subscription.
 
@@ -51,7 +51,7 @@ On the configuration page, you will see a list of options, including **Service, 
 
 - **Region** - Specify the AWS region where you want to deploy ThingsBoard Professional Edition.
 
-![image](/images/user-guide/install/aws-marketplace-pe/service-setup.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/service-setup.png)
 
 When all options are set, click **Launch from EC2** to continue.
 
@@ -66,7 +66,7 @@ On December 31, 2025, AWS Marketplace will stop supporting the ability to copy A
 
 On the **Launch instance** page, you will see the **Name and tags** section, where you can assign a name to your instance. The **ThingsBoard Professional Edition (BYOL) AMI** details are also available here, including its name, description, and publishing information. Verify that the correct AMI is selected, and then proceed to the next step to configure your instance.
 
-![image](/images/user-guide/install/aws-marketplace-pe/setup-configuration.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/setup-configuration.png)
 
 ### Step 2.3. Instance Type and Key Pair configuration
 
@@ -78,7 +78,7 @@ For optimal performance, we recommend an instance with at least **8GB of RAM** a
 {% endcapture %}
 {% include templates/info-banner.md content=vm-min-req %}
 
-![image](/images/user-guide/install/aws-marketplace-pe/instance-type-and-key-pair-configuration.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/instance-type-and-key-pair-configuration.png)
 
 You can select existing **Key Pair** or create new one for your instance. Make sure you have access to the key file before you proceed. We will use the key file later in this guide. 
 
@@ -93,29 +93,29 @@ We recommend to use **Create security group** option to create predefined list o
 - **9090 (TCP)** – Remote Integration service.
 - **5683–5688 (UDP)** – CoAP and LwM2M protocols.
 
-![image](/images/user-guide/install/aws-marketplace-pe/network-settings-configuration.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/network-settings-configuration.png)
 
 ### Step 2.5. Storage Configuration
 
 Specify the storage options for the instance. For this instruction we will use the default configuration with 20 GIB of gp2 storage.
 
-![image](/images/user-guide/install/aws-marketplace-pe/storage-configuration.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/storage-configuration.png)
 
 ### Step 2.6. Launch instance
 
 Once all configurations are completed, open the **Summary** window to review your settings. After verifying that everything is correct, click the **Launch instance** button to start the **ThingsBoard PE** instance.
 
-![image](/images/user-guide/install/aws-marketplace-pe/summary-launch.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/summary-launch.png)
 
 ### Step 2.7. Obtain your Public IP and EC2 Instance ID
 
 When the instance state change to the **Running** and all **Status checks** will be finished, you can go to the **EC2 Instances** page and click on **Instance ID** to see **Instance Summary**.
 
-![image](/images/user-guide/install/aws-marketplace-pe/instanceId.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/instanceId.png)
 
 Please save your **Instance ID** and **Public DNS** name to a safe place. We will use them later in this guide.
 
-![image](/images/user-guide/install/aws-marketplace-pe/instance-summary.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/instance-summary.png)
 
 On the image above example instance has this **Public DNS** name:
 

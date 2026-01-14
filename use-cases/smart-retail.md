@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart retail solution architecture" title="Smart retail solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart retail solution architecture" title="Smart retail solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -157,11 +157,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-retail/pharmacy-1.svg" alt="Pharmacy Chains" title="Pharmacy Chains"></div>
-            <div class="application-image"><img src="/images/usecases/smart-retail/fuel-1.svg" alt="Convenience Stores at Fuel Stations" title="Convenience Stores at Fuel Stations"></div>
-            <div class="application-image"><img src="/images/usecases/smart-retail/logistics-1.svg" alt="Logistics and Cold Chain Warehouses" title="Logistics and Cold Chain Warehouses"></div>
-            <div class="application-image"><img src="/images/usecases/smart-retail/cafeterias-1.svg" alt="Hospital Cafeterias and Institutional Kitchens" title="Hospital Cafeterias and Institutional Kitchens"></div>
-            <div class="application-image"><img src="/images/usecases/smart-retail/court-1.svg" alt="Food Courts and Restaurant Chains" title="Food Courts and Restaurant Chains"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-retail/pharmacy-1.svg" alt="Pharmacy Chains" title="Pharmacy Chains"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-retail/fuel-1.svg" alt="Convenience Stores at Fuel Stations" title="Convenience Stores at Fuel Stations"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-retail/logistics-1.svg" alt="Logistics and Cold Chain Warehouses" title="Logistics and Cold Chain Warehouses"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-retail/cafeterias-1.svg" alt="Hospital Cafeterias and Institutional Kitchens" title="Hospital Cafeterias and Institutional Kitchens"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-retail/court-1.svg" alt="Food Courts and Restaurant Chains" title="Food Courts and Restaurant Chains"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -176,7 +176,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-retail/pharmacy-2.svg" alt="Pharmacy Chains" title="Pharmacy Chains"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-retail/pharmacy-2.svg" alt="Pharmacy Chains" title="Pharmacy Chains"></div>
             <div class="text-block">
                 <h3>Pharmacy Chains</h3>
                 <p>Smart retail solution enable pharmacy networks to ensure safe medication storage by monitoring refrigeration units, maintaining regulatory compliance, and detecting unauthorized access.</p>
@@ -187,10 +187,10 @@ contactUsModal: "true"
                 <h3>Convenience Stores at Fuel Stations</h3>
                 <p>Convenience stores benefit from automated monitoring of refrigeration, security alarms, and predictive maintenance based on real-time telemetry data.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-retail/fuel-2.svg" alt="Convenience Stores at Fuel Stations" title="Convenience Stores at Fuel Stations"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-retail/fuel-2.svg" alt="Convenience Stores at Fuel Stations" title="Convenience Stores at Fuel Stations"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-retail/logistics-2.svg" alt="Logistics and Cold Chain Warehouses" title="Logistics and Cold Chain Warehouses"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-retail/logistics-2.svg" alt="Logistics and Cold Chain Warehouses" title="Logistics and Cold Chain Warehouses"></div>
             <div class="text-block">
                 <h3>Logistics and Cold Chain Warehouses</h3>
                 <p>The platform helps logistics operators maintain precise environmental conditions, monitor access points, and comply with food safety standards across their storage facilities.</p>
@@ -201,10 +201,10 @@ contactUsModal: "true"
                 <h3>Hospital Cafeterias and Institutional Kitchens</h3>
                 <p>Institutional kitchens use smart retail solution to ensure food safety, prevent equipment failures, and optimize stock levels through smart shelf monitoring.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-retail/cafeterias-2.svg" alt="Hospital Cafeterias and Institutional Kitchens" title="Hospital Cafeterias and Institutional Kitchens"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-retail/cafeterias-2.svg" alt="Hospital Cafeterias and Institutional Kitchens" title="Hospital Cafeterias and Institutional Kitchens"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-retail/court-2.svg" alt="Food Courts and Restaurant Chains" title="Food Courts and Restaurant Chains"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-retail/court-2.svg" alt="Food Courts and Restaurant Chains" title="Food Courts and Restaurant Chains"></div>
             <div class="text-block">
                 <h3>Food Courts and Restaurant Chains</h3>
                 <p>Restaurants and food courts can leverage ThingsBoard to track equipment health, detect fire risks, and monitor access to restricted areas in real time.</p>
@@ -220,7 +220,7 @@ contactUsModal: "true"
         <p>Smart retail solution by ThingsBoard is a comprehensive solution that enables centralized monitoring of store operations, improves safety through automated alarms and incident logging, and reduces costs related to equipment failures and product spoilage. By streamlining incident response and automating routine checks, it also enhances staff efficiency. More than just data visualization, this solution transforms retail infrastructure into an intelligent, predictive, and adaptive environment that drives value for both customers and businesses.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -327,13 +327,13 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-retail/smart-retail-1.webp' alt='ThingsBoard dashboard displaying supermarket locations and active critical alarms on the map' title='Overview of supermarket monitoring with critical and major alerts'/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-2.webp' alt='Critical motion sensor and list of active alarms for Supermarket S1 in ThingsBoard interface' title='Device and alarm status for Supermarket S1'/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-3.webp' alt='ThingsBoard interface showing Supermarket S1 floor plan with critical motion sensor alerts and alarm chart' title='Floor plan of Supermarket S1 with device states and motion sensor data'/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-4.webp' alt='Dashboard view of Supermarket S2 with critical door sensor and major chiller alarm' title='Device overview and alarms in Supermarket S2'/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-5.webp' alt='Supermarket S2 layout with freezer temperature monitoring and no active alarms' title='Temperature graph for freezer in Supermarket S2'/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-6.webp' alt='Critical door sensor and multiple major temperature alarms in Supermarket S3 on ThingsBoard' title='Supermarket S3 device list and alarm summary'/>",
-                "<img src='/images/usecases/smart-retail/smart-retail-7.webp' alt='Dashboard showing temperature fluctuations of chiller in Supermarket S3 on ThingsBoard' title='Supermarket S3 floor plan and temperature trend for chiller'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-1.webp' alt='ThingsBoard dashboard displaying supermarket locations and active critical alarms on the map' title='Overview of supermarket monitoring with critical and major alerts'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-2.webp' alt='Critical motion sensor and list of active alarms for Supermarket S1 in ThingsBoard interface' title='Device and alarm status for Supermarket S1'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-3.webp' alt='ThingsBoard interface showing Supermarket S1 floor plan with critical motion sensor alerts and alarm chart' title='Floor plan of Supermarket S1 with device states and motion sensor data'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-4.webp' alt='Dashboard view of Supermarket S2 with critical door sensor and major chiller alarm' title='Device overview and alarms in Supermarket S2'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-5.webp' alt='Supermarket S2 layout with freezer temperature monitoring and no active alarms' title='Temperature graph for freezer in Supermarket S2'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-6.webp' alt='Critical door sensor and multiple major temperature alarms in Supermarket S3 on ThingsBoard' title='Supermarket S3 device list and alarm summary'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-retail/smart-retail-7.webp' alt='Dashboard showing temperature fluctuations of chiller in Supermarket S3 on ThingsBoard' title='Supermarket S3 floor plan and temperature trend for chiller'/>",
             ];
             return images[index];
         }

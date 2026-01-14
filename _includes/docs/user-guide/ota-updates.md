@@ -10,7 +10,7 @@ ThingsBoard will notify devices about the available update and provide a protoco
 The platform tracks status of the update and stores history of the updates. 
 As a platform user, you may monitor the update process using the dashboard.
 <br>
-<object data="/images/user-guide/firmware/firmware-anim3.svg"></object>
+<object data="https://img.thingsboard.io/user-guide/firmware/firmware-anim3.svg"></object>
 <br>
 
 ## Provision OTA package to ThingsBoard repository

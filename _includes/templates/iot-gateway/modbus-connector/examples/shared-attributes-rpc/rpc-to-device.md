@@ -25,22 +25,22 @@ these steps:
 
 {% assign rpcToDevice = '
     ===
-        image: /images/gateway/modbus-connector/examples/select-created-gateway.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-created-gateway.png,
         title: Go to "**Entities**" → "**Gateways**" in the left sidebar and select your gateway.
     ===
-        image: /images/gateway/modbus-connector/examples/select-connector-configuration.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-connector-configuration.png,
         title: Click on the "**Connectors configuration**" button on the right side menu.
     ===
-        image: /images/gateway/modbus-connector/examples/select-device-configuration.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/select-device-configuration.png,
         title: Select the created Modbus connector and click on the "**Master Connections**" tab. Make sure you have configured and connected device (if you don’t know how to do it, see [Getting Started](/docs/iot-gateway/getting-started/?connectorsCreation=modbus){:target="_blank"} guide or [Connection settings](/docs/iot-gateway/config/modbus/#connection-settings) and [Data mapping](/docs/iot-gateway/config/modbus/#data-mapping) sections of this guide). Click on the “**Pencil**” icon on a device you want to configure attribute updates for.
     ===
-        image: /images/gateway/modbus-connector/examples/rpc-to-device-1.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/rpc-to-device-1.png,
         title: Scroll down to the "**RPC requests**" section and click on the "**Pencil**" icon to edit the RPC methods.
     ===
-        image: /images/gateway/modbus-connector/examples/rpc-to-device-2.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/rpc-to-device-2.png,
         title: Click on the "**Add request**" button. Fill in the "**Method**" field with `getTemperature`, select the "Type" as "16int", "**Function code**" as "**03 - Read Multiple Holding Registers**", fill in the "Objects count" field with `1`, and in the "**Address**" field enter "**0**".
     ===
-        image: /images/gateway/modbus-connector/examples/rpc-to-device-3.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/examples/rpc-to-device-3.png,
         title: Remember to save your changes by clicking the "**Apply**" button.
 '
 %}
@@ -56,7 +56,7 @@ getTemperature
 
 Response:
 
-![image](/images/gateway/modbus-connector/examples/rpc-to-device-4.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/examples/rpc-to-device-4.png)
 
 Full configuration for Modbus connector for the example above will look like this:
 

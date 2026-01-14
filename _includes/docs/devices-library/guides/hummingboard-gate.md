@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The HummingBoard Gate is a single-board computer designed for IoT and home automation.  
  It comes with a powerful NXP i.  
 MX6 processor and offers a range of connectivity options, including Ethernet, WIFI, and Bluetooth.  
@@ -50,3 +49,4 @@ MX6 processor and offers a range of connectivity options, including Ethernet, WI
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

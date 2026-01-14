@@ -22,7 +22,7 @@ For simplicity, we&#39;ll concentrate on a single office in Building A, equipped
 Let&#39;s begin with the basics: add new entities, establish relationships between them, and display our buildings in the OpenStreet Map and Entities table widgets.
 After completing the first guide, you will have a dashboard that looks like this:
 
-![image](/images/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/lesson-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/lesson-1/lesson-1-pe.png)
 
 {% include templates/prerequisites-pe.md %}
 
@@ -148,7 +148,7 @@ So, let&#39;s start with the preparatory work - adding building images and attri
 ### Upload building images
 
 Building images need to be uploaded to the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/#upload-image){:target="_blank"}, which serves as a centralized repository for storing and managing images.
-They will be used in the tooltip of the map widget. You can use the [Building A](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/645-5th-Ave-New-York.png){:target="_blank"} and [Building B](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/641-E-54th-St-New-York.png){:target="_blank"} images from this guide or upload your own images.
+They will be used in the tooltip of the map widget. You can use the [Building A](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/645-5th-Ave-New-York.png){:target="_blank"} and [Building B](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/641-E-54th-St-New-York.png){:target="_blank"} images from this guide or upload your own images.
 
 {% include images-gallery.html imageCollection="adding-buildings-images" showListImageTitles="true" %}
 
@@ -254,7 +254,7 @@ return '<div style="display:flex;flex-direction:column;font-family:\'Roboto\';fo
 
 {% include images-gallery.html imageCollection="adding-maps-widget-4" %}
 
-- In the "Marker image" section, turn off the "Use marker image function" option, and add a custom marker image. Click "Browse from gallery" and upload new image marker. Use [provided custom marker image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-icon.svg){:target="_blank"} or upload your own marker image. Set the marker image size to 60 pixels;
+- In the "Marker image" section, turn off the "Use marker image function" option, and add a custom marker image. Click "Browse from gallery" and upload new image marker. Use [provided custom marker image](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-icon.svg){:target="_blank"} or upload your own marker image. Set the marker image size to 60 pixels;
 
 {% include images-gallery.html imageCollection="adding-maps-widget-5" %}
 
@@ -312,7 +312,7 @@ Let&#39;s make our dashboard more appealing by customizing its appearance. We wi
 **Setting a custom background image**
 
 Transform the look of your dashboard by adding a custom background image for the "Buildings" state. This visual enhancement not only makes the interface more engaging but also aligns it with your branding or aesthetic preferences.
-You can use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/district-night-background.png){:target="_blank"} or your own.
+You can use [the image from this tutorial](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/district-night-background.png){:target="_blank"} or your own.
 
 {% include images-gallery.html imageCollection="background-image-building-state" showListImageTitles="true" %}
 

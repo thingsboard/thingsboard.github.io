@@ -8,7 +8,7 @@ A SCADA (Supervisory Control and Data Acquisition) system template for automatin
 The use of SCADA systems allows operators to monitor drilling parameters in real time, control equipment, and prevent emergency situations. ThingsBoard, as an IoT platform, enables the collection, processing, and visualization of data from sensors and controllers, making drilling safer, more efficient, and more predictable.
 
 <br>
-<object width="100%" data="/images/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/solutions/scada-drilling-system/scada-systems-in-drilling-scheme.svg"></object>
 
 ## Install solution template
 
@@ -39,7 +39,7 @@ As part of this solution, we have developed a comprehensive SCADA Oil & Gas Dril
 Operators can manage equipment (pump, rotor, preventer), analyze the condition of the drilling rig, drill bit, and drilling mud, and track load and vibration levels.
 The system features interactive graphs, alarm logs, and notifications, helping to prevent accidents and enhance operational efficiency.
 
-![image](/images/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png)
+![image](https://img.thingsboard.io/solutions/scada-drilling-system/go-to-drilling-dashboard-2-pe.png)
 
 **Dashboard structure:**
 
@@ -67,7 +67,7 @@ The mobile view demonstrates the flexibility of the dashboard, allowing you to m
 
 {% include images-gallery.html imageCollection="scada-mobile" %}
 
-<object width="40%" data="/images/solutions/scada-drilling-system/drilling-tablet-and-mobile.png"></object>
+<object width="40%" data="https://img.thingsboard.io/solutions/scada-drilling-system/drilling-tablet-and-mobile.png"></object>
 
 ## Conclusion
 

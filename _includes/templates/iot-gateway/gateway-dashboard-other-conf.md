@@ -9,4 +9,4 @@ Other - in this tab, you can configure additional gateway parameters:
   - Max payload size in bytes-defines the largest message the gateway can process at once, ensuring stable performance and preventing oversized data from causing errors.
   - Min packet size to send-defines the smallest message size the gateway will transmit, preventing the sending of packets that are too small or incomplete.
 
-![](/images/gateway/dashboard/gateway-dashboard-other-conf.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-other-conf.png)

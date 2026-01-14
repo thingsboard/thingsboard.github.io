@@ -27,7 +27,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to automatically send
   
  Please review the integration diagram to learn more. 
  
-  ![image](/images/user-guide/integrations/mqtt-integration.svg)
+  ![image](https://img.thingsboard.io/user-guide/integrations/mqtt-integration.svg)
 
 ## Prerequisites 
 
@@ -43,7 +43,7 @@ We assume you have completed the following guides and reviewed the articles list
 We will operate with Temperature sensor device that has name "Thermostat-A" and type "thermostat" which will be
 automatically created in the process of integration work.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-device.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-device.png)
 
 ## Getting started
 
@@ -53,22 +53,22 @@ In order for integration to work, downlink and uplink converters should be creat
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter** 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png)
 
 - Import following files: [**uplink converter**](/docs/user-guide/resources/sensor_uplink_converter.json),
  [**downlink converter**](/docs/user-guide/resources/sensor_downlink_converter.json).
 
 You can check them like this:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-check-converters.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-check-converters.png)
 
 Uplink converter should look like this:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-uplink-converter.png) 
 
 Downlink converter should look like this:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-downlink-converter.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-downlink-converter.png)
 
 
 ### Creating integration
@@ -78,7 +78,7 @@ Integration should look like this:
 
 - Go to **Integrations** -> **Add new Integration**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/add-new-integration.png)
 
 - Fill in the fields with the input data shown in the following table: 
 
@@ -170,8 +170,8 @@ Integration should look like this:
 
 - After filling all fields click the **ADD** button. 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-1.png)
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-create-integration-2.png)
 
 ### Setting up dashboard
 
@@ -214,7 +214,7 @@ Note: device emulator should be put in the folder where node-modules is situated
 
 ### Work demonstration
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-work-demonstration.png) 
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-work-demonstration.png) 
 
 Using a control widget (in this case, a knob) leads to value change on the dashboard.
 
@@ -227,25 +227,25 @@ In this section, we explain the purpose of each node in this tutorial.
 
 ### Modifying rule chain
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-root-rule-chain.png) 
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-root-rule-chain.png) 
 
   * **Node A**: Originator attributes enrichment node
       
     * Puts client attribute deviceName into metadata
     
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-A.png) 
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-A.png) 
     
   * **Node B**: Script Transformation Node
       
      * Puts deviceName from metadata to message parameters
      
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-B.png)
+    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-B.png)
 
   * **Node C**: Integration Downlink node
   
     * Sends message to integration
     
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
+    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-node-C.png) 
 
 You can download and [**import**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-chains-importexport) attached
  json [**file**](/docs/user-guide/resources/mqtt-downlink-root-rule-chain.json) with a rule chain for this tutorial.

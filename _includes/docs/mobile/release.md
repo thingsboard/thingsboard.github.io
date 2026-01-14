@@ -30,17 +30,17 @@ Do not edit **configs.json** manually. Always manage settings in **Mobile center
 
 {% assign releaseRedownloadConfigCE = '
     ===
-        image: /images/mobile/release-redownload-config-1-ce.png,
+        image: https://img.thingsboard.io/mobile/release-redownload-config-1-ce.png,
     ===
-        image: /images/mobile/release-redownload-config-2-ce.png,
+        image: https://img.thingsboard.io/mobile/release-redownload-config-2-ce.png,
 '
 %}
 
 {% assign releaseRedownloadConfigPE = '
     ===
-        image: /images/mobile/pe/release-redownload-config-1-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/release-redownload-config-1-pe.png,
     ===
-        image: /images/mobile/pe/release-redownload-config-2-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/release-redownload-config-2-pe.png,
 '
 %}
 

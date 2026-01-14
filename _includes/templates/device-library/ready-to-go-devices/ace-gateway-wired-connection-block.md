@@ -17,7 +17,7 @@ IP address of your PC.
 3. Go to the **ACE-GTW-MQTT** web interface with your browser by entering its IP address: 192.168.8.1.
 4. Enter the username and password.
 
-![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/wired-connection.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wired-connection.png)
 <br><br>
 
 **For macOS:**
@@ -26,7 +26,7 @@ IP address of your PC.
 3. Go to the **ACE-GTW-MQTT** web interface with your browser by entering its IP address: 192.168.8.1.
 4. Enter the username and password.
 
-![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-macos-ip.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-macos-ip.png)
 <br><br>
 
 **For Ubuntu Linux**:
@@ -35,5 +35,5 @@ IP address of your PC.
 3. Go to the **ACE-GTW-MQTT** web interface with your browser by entering its IP address: 192.168.8.1.
 4. Enter the username and password.
 
-![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-linux-ip.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-linux-ip.png)
 <br><br>

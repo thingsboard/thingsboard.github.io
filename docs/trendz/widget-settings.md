@@ -7,12 +7,12 @@ description: Widget settings description
 
 trendz-widget-automated-refresh:
   0:
-    image: /images/trendz/trendz-widget-auto-refresh-data.png
+    image: https://img.thingsboard.io/trendz/trendz-widget-auto-refresh-data.png
     title: 'Trendz widget data refresh settings'
 
 trendz-widget-filter-change-event:
   0:
-    image: /images/trendz/trendz-widget-filter-change-event.png
+    image: https://img.thingsboard.io/trendz/trendz-widget-filter-change-event.png
     title: 'Trendz widget filter change event'
 
 ---

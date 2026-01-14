@@ -15,25 +15,25 @@ The purpose of this guide is to outline how to register mokosmart LoRaWAN end de
 
 **Step 1**: Power on gateway, and connect to gateway WIFI, access to the Web GUI, get the gateway ID on the "FUNCTAION-Server Access" page of Web GUI.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-1.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-1.png)
 
 **Step 2**: Login in TTN account, choose the corresponding cluster, Here select US915 frequency plan as example, so the cluster will be North America 1.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-2.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-2.png)
 
 **Step 3**: Go to gateway console on the home page.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-3.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-3.png)
 
 **Step 4**: Register new gateway:
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-4.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-4.png)
 
 <br>
 
 - Fill in the gateway ID got in step 1:
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-5.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-5.png)
 
 <br>
 
@@ -41,17 +41,17 @@ The purpose of this guide is to outline how to register mokosmart LoRaWAN end de
 - Choose the frequency plan United States 902-928 MHz as your plan; 
 - Click the "Register gateway" to finish gateway register.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-6.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-6.png)
 
 **Step 5**: Configure gateway’s parameter on the "FUNCTION-Server Access" page of Web GUI.
 
 - Get the gateway server address in gateway General setting page.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-7.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-7.png)
 
 - Fill in the server address in MKGW2 Web GUI page, the port will be 1700.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-8.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-8.png)
 
 
 - Select the Frequency as your plan, here choose 915, and channel must be same as the configuration in TTN, we choose FSB2 in Step 4, so here we select channel US915_CH08-15.
@@ -60,13 +60,13 @@ The purpose of this guide is to outline how to register mokosmart LoRaWAN end de
 
 - Check the status in gateway Web GUI, if it’s green, it means the gateway connect to server successfully, if it’s red, it means the gateway doesn't connect to the server.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-9.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-9.png)
 
 <br>
 
 - Check the status on TTN platform.
 
-![image](/images/samples/moko-smart/add-gateway-on-ttn-10.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-gateway-on-ttn-10.png)
 
 <br>
 
@@ -79,25 +79,25 @@ The purpose of this guide is to outline how to register mokosmart LoRaWAN end de
 
 **Step 1**: Open your console and click on the "Create an application".
 
-![image](/images/samples/moko-smart/create-application-on-ttn-1.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-application-on-ttn-1.png)
 
 <br>
 
 **Step 2**: Fill in the required fields about the application. Then click "Create application" button.
 
-![image](/images/samples/moko-smart/create-application-on-ttn-2.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-application-on-ttn-2.png)
 
 <br>
 
 **Step 3**: Go to the "Integrations" -> open the "MQTT" page in the left menu. Then, click on the "Generate new API key" button.
 
-![image](/images/samples/moko-smart/create-application-on-ttn-3.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-application-on-ttn-3.png)
 
 <br>
 
 **Step 4**: Copy and save the password (API key) (after leaving the page it won't be displayed).
 
-![image](/images/samples/moko-smart/create-application-on-ttn-4.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-application-on-ttn-4.png)
 
 <br>
 
@@ -105,7 +105,7 @@ The purpose of this guide is to outline how to register mokosmart LoRaWAN end de
 
 - Go to the "**Integrations**" page of the "**Integrations center**" section. Click "**plus**" icon in the upper right corner to add new integration. Select "**The Things Stack Community**" as the integration type. Then, click "**Next**".
 
-![image](/images/samples/moko-smart/create-integration-in-thingsboard-1.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-integration-in-thingsboard-1.png)
 
 - Paste the following script to the Decoder function section. Click "**Next**".
 
@@ -193,15 +193,15 @@ return result;
 ```
 {:.copy-code.expandable-15}
 
-![image](/images/samples/moko-smart/create-integration-in-thingsboard-2.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-integration-in-thingsboard-2.png)
 
 - Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
 
-![image](/images/samples/moko-smart/create-integration-in-thingsboard-3.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-integration-in-thingsboard-3.png)
 
 - Next, fill in the fields with your parameters. After, press "**Add**" button.
 
-![image](/images/samples/moko-smart/create-integration-in-thingsboard-4.png)
+![image](https://img.thingsboard.io/samples/moko-smart/create-integration-in-thingsboard-4.png)
 
 ## Add Device
 
@@ -209,7 +209,7 @@ return result;
 - Go to the application console - "End devices" page;
 - Click "Register end device".
 
-![image](/images/samples/moko-smart/add-device-1.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-1.png)
 
 <br>
 
@@ -218,7 +218,7 @@ return result;
 - Select frequency plan (the frequency plan should be totally same as your gateway frequency plan);
 - Select LoRaWan version as v1.0.3.
 
-![image](/images/samples/moko-smart/add-device-2.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-2.png)
 
 <br>
 
@@ -226,7 +226,7 @@ return result;
 
 **Step 4**: After JoinEUI is confirmed, enter the DevEUI and AppKEY, for MOKO device, you can get the DevEUI on the package label, and the AppKEY for device is 2B 7E 15 16 28 AE D2 A6 AB F7 15 88 09 CF 4F 3C by default. Or you can connect to the device via “MKLora” APP and read the DevEUI and AppKEY from the APP.
 
-![image](/images/samples/moko-smart/add-device-3.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-3.png)
 
 <br>
 
@@ -234,19 +234,19 @@ return result;
 
 **Step 6**: Check the status of device on TTN.
 
-![image](/images/samples/moko-smart/add-device-4.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-4.png)
 
 <br>
 
 And you can also check the live data, if there is payload uploaded means the device already connect to the server.
 
-![image](/images/samples/moko-smart/add-device-5.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-5.png)
 
 <br>
 
 **Step 7**: Navigate to Payload formatters, get the decoder from the [moko github_link](https://github.com/LoRaWAN-Product-Decoder/MOKOSMART-LoRaWAN-Product-Decoder/tree/main/LW006){:target="_blank"}, copy the related decoder and paste it. And then save it.
 
-![image](/images/samples/moko-smart/add-device-6.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-6.png)
 
 <br>
 
@@ -254,7 +254,7 @@ And you can also check the live data, if there is payload uploaded means the dev
 
 - Devices registered in TTN were registered in ThingsBoard in the "Latest telemetry" section you will the update data from the device.
 
-![image](/images/samples/moko-smart/add-device-7.png)
+![image](https://img.thingsboard.io/samples/moko-smart/add-device-7.png)
 
 ## Add Dashboard
 
@@ -267,7 +267,7 @@ A dashboard in ThingsBoard allows users to visualize and monitor data collected 
 
 {% assign addindDashboard = '
     ===
-        image: /images/samples/moko-smart/add-dashboard-1.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-dashboard-1.png,
         title: Navigate to the "**Dashboards**" page through the main menu on the left of the screen. Click the "**+**" sign in the upper right corner of the screen, and select "**Create new dashboard**" from the drop-down menu. In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "**Add**";
 '
 %}
@@ -278,19 +278,19 @@ A dashboard in ThingsBoard allows users to visualize and monitor data collected 
 
 {% assign addingBatteryLevelWidget = '
     ===
-        image: /images/samples/moko-smart/add-widget-1.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-1.png,
         title: Click the "**+ Add widget**" button at the top of the screen or click the large "**Add new widget**" icon in the center of the screen (if this is your first widget on this dashboard);
     ===
-        image: /images/samples/moko-smart/add-widget-2.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-2.png,
         title: Find the "**Status indicators**" widget bundle and click on it;
     ===
-        image: /images/samples/moko-smart/add-widget-3.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-3.png,
         title: Select the "**Battery level**" widget;
     ===
-        image: /images/samples/moko-smart/add-widget-4.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-4.png,
         title: The "Add widget" window will appear. Specify the "**lw006test**" device as the datasource and "**batt_level**" data ket as the variable that you want to monitor. Click "**Add**";
     ===
-        image: /images/samples/moko-smart/add-widget-5.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-5.png,
         title: You have added a widget that displays the battery level.
 '
 %}
@@ -301,22 +301,22 @@ A dashboard in ThingsBoard allows users to visualize and monitor data collected 
 
 {% assign addingMapWidget = '
     ===
-        image: /images/samples/moko-smart/add-widget-6.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-6.png,
         title: Click the "**+ Add widget**" button at the top of the screen to add another one widget;
     ===
-        image: /images/samples/moko-smart/add-widget-7.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-7.png,
         title: Find the "**Maps**" widget bundle and click on it;
     ===
-        image: /images/samples/moko-smart/add-widget-8.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-8.png,
         title: Select the "**Google map**" widget;
     ===
-        image: /images/samples/moko-smart/add-widget-9.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-9.png,
         title: The "Add widget" window will appear. Select "Device" as the datasource type. Specify the "**lw006test**" device as the datasource. Add "**latitude**" and "**longitude**" as time series data keys. Click "**Add**";
     ===
-        image: /images/samples/moko-smart/add-widget-10.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-10.png,
         title: To save the dashboard, click "**Save**" button in the upper right corner;
     ===
-        image: /images/samples/moko-smart/add-widget-11.png,
+        image: https://img.thingsboard.io/samples/moko-smart/add-widget-11.png,
         title: You have added a widget that displays the device&#39;s location on a map.
 '
 %}

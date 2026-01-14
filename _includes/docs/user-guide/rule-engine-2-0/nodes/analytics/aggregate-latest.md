@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest.png)
 
 Periodically does aggregation of child entities attributes or latest timeseries for specified set of parent entities.
 
@@ -18,7 +18,7 @@ Message of type **POST_TELEMETRY_REQUEST** is generated for each parent entity a
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-config.png)
 
 - **Execution period value/time unit** - specifies period of aggregation task.
 - **Entities** - specifies set of parent entities for which aggregation should be performed. Can be: 
@@ -32,7 +32,7 @@ In case of **Group of entities** child entities selected from the entity group i
 
 Mapping Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-mapping-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-mapping-config.png)
 
 - **Latest telemetry** - specifies whether value of child latest telemetry or attribute should be aggregated.
 - **Source telemetry/attribute** - child latest telemetry or attribute key name.  
@@ -64,6 +64,6 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>

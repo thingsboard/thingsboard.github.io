@@ -6,7 +6,7 @@ The heat pump controls the pool temperature and operates automatically based on 
 * turn off if the pool temperature exceeds the target set on the heat pump, or if the outdoor temperature is above the defined threshold.
 * turn on if both the pool temperature and outdoor temperature fall below their respective target values.
 
-![image](/images/solutions/swimming_pool_scada_system/scada-devices/heat-pump.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-devices/heat-pump.png)
 
 The following settings are available for the heat pump:
 
@@ -22,7 +22,7 @@ The following settings are available for the heat pump:
 
 Manage the circulation of water throughout the pool by turning the pump on or off.
 
-![image](/images/solutions/swimming_pool_scada_system/scada-devices/water-pump.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-devices/water-pump.png)
 
 <br>
 
@@ -30,7 +30,7 @@ Manage the circulation of water throughout the pool by turning the pump on or of
 
 Ensure the water pH levels are within optimal ranges by managing the filtration and chemical treatment process. Pressing the pH filter will open the pH filter diagram in a popup window.
 
-![image](/images/solutions/swimming_pool_scada_system/scada-devices/ph-filter.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-devices/ph-filter.png)
 
 <br>
 
@@ -38,7 +38,7 @@ Ensure the water pH levels are within optimal ranges by managing the filtration 
 
 Allow for efficient debris removal from the pool. The filter supports multiple functions, including filtration, wasting, backwashing, recirculation and rinsing, all of which can be controlled remotely via the SCADA system.
 
-![image](/images/solutions/swimming_pool_scada_system/scada-devices/sand-filter.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-devices/sand-filter.png)
 
 <br>
 
@@ -46,7 +46,7 @@ Allow for efficient debris removal from the pool. The filter supports multiple f
 
 Measure the water level in the pool, providing critical data to maintain optimal water levels and detect potential leaks.
 
-![image](/images/solutions/swimming_pool_scada_system/scada-devices/water-level-meter.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-devices/water-level-meter.png)
 
 <br>
 
@@ -54,4 +54,4 @@ Measure the water level in the pool, providing critical data to maintain optimal
 
 Allow for precise control of water flow between different sections of the pool system. Pressing the valve will open or close it.
 
-![image](/images/solutions/swimming_pool_scada_system/scada-devices/valve.png)
+![image](https://img.thingsboard.io/solutions/swimming_pool_scada_system/scada-devices/valve.png)

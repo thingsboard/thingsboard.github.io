@@ -31,10 +31,10 @@ contactUsModal: "true"
 <section class="smart-energy-overview">
     <div class="img-comp-container">
         <div class="img-comp-img">
-            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-1.webp" alt="ThingsBoard dashboard in light theme showing energy data from smart meters" title="Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters">
+            <img class="traditional-background" src="https://img.thingsboard.io/usecases/smart-energy/smart-energy-1.webp" alt="ThingsBoard dashboard in light theme showing energy data from smart meters" title="Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters">
         </div>
         <div class="img-comp-img img-comp-overlay">
-            <img class="traditional-background" src="/images/usecases/smart-energy/smart-energy-2.webp" alt="ThingsBoard dashboard in dark theme with smart meter data visualization" title="Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions">
+            <img class="traditional-background" src="https://img.thingsboard.io/usecases/smart-energy/smart-energy-2.webp" alt="ThingsBoard dashboard in dark theme with smart meter data visualization" title="Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions">
         </div>
     </div>
 </section>
@@ -55,7 +55,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
     <div class="smart-energy-benefits section-padding">
         <div class="section-header">
@@ -175,11 +175,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-energy/factory-1.svg" alt="Factory" title="Industrial facilities and factories"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/buildings-1.svg" alt="Buildings" title="Commercial buildings and offices"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="School" title="Educational institutions and campuses"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/data-centers-1.svg" alt="Data centers" title="Data centers"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall" title="Shopping malls and retail chains"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/factory-1.svg" alt="Factory" title="Industrial facilities and factories"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/buildings-1.svg" alt="Buildings" title="Commercial buildings and offices"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/education-1.svg" alt="School" title="Educational institutions and campuses"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/data-centers-1.svg" alt="Data centers" title="Data centers"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/malls-1.svg" alt="Mall" title="Shopping malls and retail chains"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -194,7 +194,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/factory-2.svg" alt="Factory" title="Industrial facilities and factories"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-energy/factory-2.svg" alt="Factory" title="Industrial facilities and factories"></div>
             <div class="text-block">
                 <h3>Industrial facilities and factories</h3>
                 <p>Tracking energy usage of heavy machinery, identifying inefficiencies, and improving power distribution for safer and more cost-effective production processes.</p>
@@ -205,10 +205,10 @@ contactUsModal: "true"
                 <h3>Commercial buildings and offices</h3>
                 <p>Optimizing HVAC, lighting, and equipment usage across floors and departments, with real-time monitoring to reduce energy waste and operational costs.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-energy/buildings-2.svg" alt="Buildings" title="Commercial buildings and offices"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-energy/buildings-2.svg" alt="Buildings" title="Commercial buildings and offices"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/education-2.svg" alt="School" title="Educational institutions and campuses"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-energy/education-2.svg" alt="School" title="Educational institutions and campuses"></div>
             <div class="text-block">
                 <h3>Educational institutions and campuses</h3>
                 <p>Controlling power consumption in classrooms, labs, and dormitories, scheduling energy use based on occupancy, and ensuring sustainability targets are met.</p>
@@ -219,10 +219,10 @@ contactUsModal: "true"
                 <h3>Data centers</h3>
                 <p>Maintaining stable voltage, temperature, and load balancing to ensure uninterrupted operations while reducing electricity consumption and cooling costs.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-energy/data-centers-2.svg" alt="Data centers" title="Data centers"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-energy/data-centers-2.svg" alt="Data centers" title="Data centers"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-energy/malls-2.svg" alt="Mall" title="Shopping malls and retail chains"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-energy/malls-2.svg" alt="Mall" title="Shopping malls and retail chains"></div>
             <div class="text-block">
                 <h3>Shopping malls and retail chains</h3>
                 <p>Monitoring energy usage across multiple locations, managing peak hours, and controlling lighting and HVAC systems automatically for higher efficiency.</p>
@@ -334,11 +334,11 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-energy/smart-energy-1.webp' alt='ThingsBoard dashboard in light theme showing energy data from smart meters' title='Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-3.webp' alt='Smart Meter A dashboard on the 1st floor showing voltage, frequency, amperage, and energy consumption' title='Smart Meter A on the 1st floor: real-time monitoring of voltage, frequency, current and weekly energy usage with one active high voltage alarm'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-4.webp' alt='Smart Meter B dashboard on the 2nd floor with energy data and real-time frequency' title='Smart Meter B on the 2nd floor: displays live voltage, frequency, amperage and energy consumption. No active alarms detected'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-5.webp' alt='Smart Meter C dashboard on the 3rd floor showing real-time energy metrics and critical alarm' title='Smart Meter C on the 3rd floor: visualization of voltage, frequency, current and consumption, with one unacknowledged low voltage alarm'/>",
-                "<img src='/images/usecases/smart-energy/smart-energy-2.webp' alt='ThingsBoard dashboard in dark theme with smart meter data visualization' title='Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-energy/smart-energy-1.webp' alt='ThingsBoard dashboard in light theme showing energy data from smart meters' title='Smart energy monitoring dashboard in light mode: real-time voltage, amperage, consumption, and critical alarms for three smart meters'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-energy/smart-energy-3.webp' alt='Smart Meter A dashboard on the 1st floor showing voltage, frequency, amperage, and energy consumption' title='Smart Meter A on the 1st floor: real-time monitoring of voltage, frequency, current and weekly energy usage with one active high voltage alarm'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-energy/smart-energy-4.webp' alt='Smart Meter B dashboard on the 2nd floor with energy data and real-time frequency' title='Smart Meter B on the 2nd floor: displays live voltage, frequency, amperage and energy consumption. No active alarms detected'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-energy/smart-energy-5.webp' alt='Smart Meter C dashboard on the 3rd floor showing real-time energy metrics and critical alarm' title='Smart Meter C on the 3rd floor: visualization of voltage, frequency, current and consumption, with one unacknowledged low voltage alarm'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-energy/smart-energy-2.webp' alt='ThingsBoard dashboard in dark theme with smart meter data visualization' title='Smart energy monitoring in dark mode: ThingsBoard interface displaying real-time metrics and alarm conditions'/>",
             ];
             return images[index];
         }

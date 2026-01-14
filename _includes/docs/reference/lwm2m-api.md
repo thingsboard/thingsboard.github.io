@@ -453,10 +453,10 @@ To store resource as the attribute:
 **Example:** Let&#39;s configure the platform to read the **LwM2M resource** */3/0/2* (Device Serial Number) and store it in ThingsBoard as an attribute named "*serialNumber*".
 
 {% if docsPrefix == null %}
-![image](/images/lwm2m/read-lwm2m-resources-attributes-ce.png)
+![image](https://img.thingsboard.io/lwm2m/read-lwm2m-resources-attributes-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/lwm2m/read-lwm2m-resources-attributes-pe.png)
+![image](https://img.thingsboard.io/lwm2m/read-lwm2m-resources-attributes-pe.png)
 {% endif %}
 
 #### Observing attributes for real-time updates
@@ -467,10 +467,10 @@ To do this, check the "**Observe**" box for the desired resource. This will subs
 **Example:** Let&#39;s monitor the LwM2M Resource */3/0/15* (Timezone) and store its value as the "*timezone*" attribute.
 
 {% if docsPrefix == null %}
-![image](/images/lwm2m/observe-lwm2m-resources-ce.png)
+![image](https://img.thingsboard.io/lwm2m/observe-lwm2m-resources-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/lwm2m/observe-lwm2m-resources-pe.png)
+![image](https://img.thingsboard.io/lwm2m/observe-lwm2m-resources-pe.png)
 {% endif %}
 
 With this setup, the *timezone* attribute in ThingsBoard will always contain the latest value of the *Timezone* resource.
@@ -502,10 +502,10 @@ To store resource as the telemetry:
 **For example**, let&#39;s configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free), and to store them as time series data in ThingsBoard:
 
 {% if docsPrefix == null %}
-![image](/images/lwm2m/read-lwm2m-resources-time-series-ce.png)
+![image](https://img.thingsboard.io/lwm2m/read-lwm2m-resources-time-series-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" or docsPrefix == "paas/eu/" %}
-![image](/images/lwm2m/read-lwm2m-resources-time-series-pe.png)
+![image](https://img.thingsboard.io/lwm2m/read-lwm2m-resources-time-series-pe.png)
 {% endif %}
 
 ### Execute LwM2M operation using the ThingsBoard RPC command

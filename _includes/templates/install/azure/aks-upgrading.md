@@ -1,5 +1,3 @@
-## Upgrading to new ThingsBoard version
-
 Merge your local changes with the latest release branch from the repo you have used in the [Step 1](#step-1-clone-thingsboard-ce-k8s-scripts-repository).
 
 

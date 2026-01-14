@@ -17,7 +17,7 @@ UDP Integration allows to stream data from devices which use a UDP protocol to T
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/udp-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/udp-integration.svg)
 
 ## Prerequisites
 
@@ -61,7 +61,7 @@ On the machine, where UDP Integration is running, port **11560** must be opened 
 
 Go to the "**Integrations**" page of the "**Integrations center**" section. Click "plus" button to start adding new integration. Select type "**UDP**" integration and click "**Next**";
 
-![image](/images/user-guide/integrations/udp/udp-integration-setup-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-1-pe.png)
 
 <br>
 **2. Uplink data converter**. 
@@ -83,7 +83,7 @@ Hex payload<br>%,%hex%,%templates/integration/udp/uplink-decoder-hex-payload.md{
 
 At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty. Click "**Skip**";
 
-![image](/images/user-guide/integrations/udp/udp-integration-setup-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-3-pe.png)
 
 <br>
 **4. Connection**.
@@ -130,7 +130,7 @@ Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endca
 Once you go to "**Devices**" page you should find a **SN-001** device provisioned by the UDP integration.
 Click the device, navigate to the "**Latest telemetry**" tab to see the "temperature" key and its value (25.7) there and also the "humidity" key and its value (69) there as well.
 
-![image](/images/user-guide/integrations/udp/udp-integration-add-device-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-add-device-pe.png)
 
 ## Advanced usage: downlink
 
@@ -150,16 +150,16 @@ To add a downlink data converter to the UDP integration, follow these steps:
 
 {% assign udpAddDownlinkConverter = '
   ===
-    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-1-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-tbel-1-pe.png,
     title: Go to the "**Integrations**" page, click UDP integration to open its details, and enter integration editing mode by clicking the "pencil" icon;
   ===
-    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-2-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-tbel-2-pe.png,
     title: Enter a name for the downlink data converter and click "**Create new converter**";
   ===
-    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-3-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-tbel-3-pe.png,
     title: Paste the script to the encoder function section, and click "Add";
   ===
-    image: /images/user-guide/integrations/udp/udp-add-downlink-converter-tbel-4-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-tbel-4-pe.png,
     title: Apply changes.
 '
 %}
@@ -179,13 +179,13 @@ When integration configured and ready to use, we need to go to "Rule Chains" pag
 
 {% assign ruleChainDownlink = '
   ===
-    image: /images/user-guide/integrations/udp/rule-chain-downlink-1-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-downlink-1-pe.png,
     title: In the Root Rule Chain editor, find the "**integration downlink**" node and drag it to the rule chain;
   ===
-    image: /images/user-guide/integrations/udp/rule-chain-downlink-2-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-downlink-2-pe.png,
     title: Name it "**UDP Downlink**", specify our "**UDP integration**", and click "Add";
   ===
-    image: /images/user-guide/integrations/udp/rule-chain-downlink-3-pe.png,
+    image: https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-downlink-3-pe.png,
     title: Drag the connection from the "message type switch" node to the "UDP integration" node with "**Attributes updated**" and "**Post attributes**" labels. Save all changes;
 '
 %}
@@ -198,13 +198,13 @@ To test downlink, create some **shared attribute** on your device:
 
 {% assign ruleChainDownlink = '
     ===
-        image: /images/user-guide/integrations/udp/udp-add-shared-attribute-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-shared-attribute-1-pe.png,
         title: Go to the "**Devices**" page. Click your device and navigate to the "**Attributes**" tab. Select the "**Shared attributes**" option, and click the "**plus**" icon;
     ===
-        image: /images/user-guide/integrations/udp/udp-add-shared-attribute-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-shared-attribute-2-pe.png,
         title: Enter the attribute name, and its value (for example, the key name is "**firmware**", value: "**v1.1**") and click "Save";
     ===
-        image: /images/user-guide/integrations/udp/udp-add-shared-attribute-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/udp/udp-add-shared-attribute-3-pe.png,
 '
 %}
 
@@ -219,7 +219,7 @@ echo -e 'SN-001,default,temperature,25.7,humidity,69' | nc -w10 -u 127.0.0.1 115
 
 You should get the following response from the ThingsBoard in the terminal:
 
-![image](/images/user-guide/integrations/udp/terminal-add-attribute.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/terminal-add-attribute.png)
 
 {% capture difference %}
 **Note**

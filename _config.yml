@@ -1,7 +1,7 @@
 title: ThingsBoard
 name: ThingsBoard
 author: thingsboard
-logo: /images/thingsboard_logo.png
+logo: https://img.thingsboard.io/thingsboard_logo.png
 url: https://thingsboard.io
 
 twitter:
@@ -56,9 +56,9 @@ defaults:
       path: ""
     values:
       image:
-        path: /images/thingsboard_logo.png
-        twitter: /images/thingsboard_logo.png
-        facebook: /images/thingsboard_logo.png
+        path: https://img.thingsboard.io/thingsboard_logo.png
+        twitter: https://img.thingsboard.io/thingsboard_logo.png
+        facebook: https://img.thingsboard.io/thingsboard_logo.png
       version: "v1.0"
       githubbranch: "master"
       docsbranch: "master"
@@ -82,12 +82,12 @@ collections:
 release:
   branch: release-4.2
   branch_major_next: master
-  ver: 4.2.1
-  ce_ver: 4.2.1
-  ce_tag: v4.2.1
-  ce_full_ver: 4.2.1
-  pe_ver: 4.2.1pe
-  pe_full_ver: 4.2.1PE
+  ver: 4.2.1.1
+  ce_ver: 4.2.1.1
+  ce_tag: v4.2.1.1
+  ce_full_ver: 4.2.1.1
+  pe_ver: 4.2.1.1pe
+  pe_full_ver: 4.2.1.1PE
   wd_examples_commit: v4.2.1
   # >>> EDGE
   edge_ver: 4.2
@@ -102,4 +102,4 @@ release:
   pe_dart_client_ver: 4.0.0
   broker_full_ver: 2.2.0
   broker_branch: release-2.2.0
-  trendz_ver: 1.14.0
+  trendz_ver: 1.15.0

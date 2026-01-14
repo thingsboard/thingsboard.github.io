@@ -4,98 +4,98 @@ title: OPC-UA Integration
 description: OPC-UA Integration Guide
 addConverter:
     0:
-        image: /images/pe/edge/integrations/opc-ua/add-converter-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/add-converter-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-converter-step-2.webp
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/opc-ua/modify-converter-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/modify-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/modify-converter-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/modify-converter-step-2.webp
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/opc-ua/add-downlink-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-downlink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/add-downlink-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-downlink-step-2.webp
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-0.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-integration-template-step-0.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-integration-template-step-1.webp
     2:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-integration-template-step-2.webp
     3:
-        image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-integration-template-step-3.webp
     4:
-      image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-4.webp
+      image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-integration-template-step-4.webp
     5:
-      image: /images/pe/edge/integrations/opc-ua/add-integration-template-step-5.webp
+      image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/add-integration-template-step-5.webp
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/downlink-rule-step-1.webp
     1:
-        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/downlink-rule-step-2.webp
     2:
-        image: /images/pe/edge/integrations/opc-ua/downlink-rule-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/downlink-rule-step-3.webp
 
 airconditionersDashboard:
     0:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-1.webp
         title: 'Go to the <b>Dashboard</b> section and select the <b>"Groups"</b> tab. Click the <b>"Add entity group"</b> button to create a new <b>Air conditioner</b> group.'
     1:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-2.webp
         title: 'Open the newly created <b>Air conditioner</b> group.'
     2:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-3.webp
         title: 'Click the <b>"Import dashboard"</b> button and browse for recently downloaded "airconditioners_dashboard.json" file. To proceed, click the <b>"Import"</b> button.'
     3:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-4.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-4.webp
         title: 'In the <b>Edge</b> instance, go to the <b>Edge management > Instances</b> section and click the <b>Manage edge dashboard groups</b> button.'
     4:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-5.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-step-5.webp
         title: 'Click the <b>"Assign to edge"</b> button and select the <b>Air conditioner</b> group from the drop-down menu to assign it to the <b>Edge</b>.'
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/assign-integration-step-1.webp
         title: 'Add the <b>endpointHost</b> attribute to the <b>Edge</b> and set the <b>192.168.2.153</b> value as your <b>Edge</b>.'
     1:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/assign-integration-step-2.webp
         title: 'Click the <b>Manage Integrations</b> button of <b>Edge</b> entity.'
     2:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/assign-integration-step-3.webp
         title: 'Assign the <b>Integration</b> to the <b>Edge</b>.'
     3:
-        image: /images/pe/edge/integrations/opc-ua/assign-integration-step-4.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/assign-integration-step-4.webp
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open the <b>Integrations</b> page. The placeholder is going to be replaced by the attribute value'
 
 device:
     0:
-        image: /images/pe/edge/integrations/opc-ua/device.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/device.png
 
 deviceTelemetry:
     0:
-        image: /images/pe/edge/integrations/opc-ua/device-telemetry.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/device-telemetry.png
 
 airconditionersDashboardOnEdge:
     0:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-on-edge-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-on-edge-step-1.png
     1:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-dashboard-on-edge-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-dashboard-on-edge-step-2.png
 
 airconditionersDetails:
     0:
-        image: /images/pe/edge/integrations/opc-ua/airconditioners-details.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/airconditioners-details.png
 
 rpcDownlink:
     0:
-        image: /images/pe/edge/integrations/opc-ua/rpc-downlink-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/rpc-downlink-step-1.png
     1:
-        image: /images/pe/edge/integrations/opc-ua/rpc-downlink-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/opc-ua/rpc-downlink-step-2.png
 
 ---
 
@@ -110,7 +110,7 @@ rpcDownlink:
 
 **OPC UA Integration** allows you to stream data from the OPC UA server to ThingsBoard Edge and converts the device payloads to the ThingsBoard Edge format.
 
-<object width="100%" style="display: block; margin: auto; max-width: max-content" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
+<object width="100%" style="display: block; margin: auto; max-width: max-content" data="https://img.thingsboard.io/user-guide/integrations/opc-ua-integration.svg"></object>
 
 In this tutorial, we will configure the integration between **ThingsBoard Edge** and **OPC-UA** 
 to get the air conditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html){: target="_blank"} 

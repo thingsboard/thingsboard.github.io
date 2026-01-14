@@ -1,0 +1,70 @@
+{
+  "type": "ENTITY_AGGREGATION",
+  "name": "Hourly energy KPIs",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767868303486
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "ENTITY_AGGREGATION",
+    "arguments": {
+      "energy": {
+        "refEntityKey": {
+          "key": "energy",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      },
+      "power": {
+        "refEntityKey": {
+          "key": "power",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "metrics": {
+      "energyHourlySum": {
+        "function": "SUM",
+        "input": {
+          "type": "key",
+          "key": "energy"
+        }
+      },
+      "powerHourlyAvg": {
+        "function": "AVG",
+        "input": {
+          "type": "key",
+          "key": "power"
+        }
+      },
+      "powerHourlyMax": {
+        "function": "MAX",
+        "input": {
+          "type": "key",
+          "key": "power"
+        }
+      }
+    },
+    "interval": {
+      "type": "HOUR",
+      "tz": "Europe/Kiev"
+    },
+    "watermark": null,
+    "produceIntermediateResult": false,
+    "output": {
+      "type": "TIME_SERIES",
+      "decimalsByDefault": 1,
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 0,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}

@@ -40,29 +40,32 @@ toc:
     path: /docs/pe/solution-templates/waste-management/
 - title: Key concepts
   section:
+  - title: Alarms
+    path: /docs/pe/user-guide/alarms/
+  - title: Alarm rules
+    path: /docs/pe/user-guide/alarm-rules/
+    new: true
+  - title: Calculated fields
+    path: /docs/pe/user-guide/calculated-fields/
+    new: true
+  - title: Notification center
+    path: /docs/pe/user-guide/notifications/
   - title: Entities and Relations
     path: /docs/pe/user-guide/entities-and-relations/
-  - title: Tenant profiles
-    path: /docs/pe/user-guide/tenant-profiles/
   - title: Device profiles
     path: /docs/pe/user-guide/device-profiles/
   - title: Asset profiles
     path: /docs/pe/user-guide/asset-profiles/
+  - title: Tenant profiles
+    path: /docs/pe/user-guide/tenant-profiles/
   - title: Attributes
     path: /docs/pe/user-guide/attributes/
   - title: Time-series data
     path: /docs/pe/user-guide/telemetry/
-  - title: Calculated fields
-    path: /docs/pe/user-guide/calculated-fields/
-    new: true
-  - title: Alarms
-    path: /docs/pe/user-guide/alarms/
   - title: Remote commands to devices
     path: /docs/pe/user-guide/rpc/
   - title: OTA updates
     path: /docs/pe/user-guide/ota-updates/
-  - title: Notification center
-    path: /docs/pe/user-guide/notifications/
 - title: Dashboards
   section:
   - title: Overview
@@ -238,6 +241,8 @@ toc:
     new: true
   - title: MCP Server
     path: /docs/pe/samples/analytics/mcp-server-ai-insights/
+  - title: n8n node
+    path: /docs/pe/samples/analytics/n8n-node/
     new: true
   - title: AI models
     path: /docs/pe/samples/analytics/ai-models/
@@ -320,6 +325,8 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Secrets storage
     path: /docs/pe/user-guide/secrets-storage/
+  - title: API keys
+    path: /docs/pe/user-guide/security/api-keys/
     new: true
   - title: Two-factor authentication
     path: /docs/pe/user-guide/two-factor-authentication/
@@ -379,6 +386,8 @@ toc:
     path: /docs/pe/user-guide/ui/microsoft-teams-settings/
   - title: Mail server
     path: /docs/pe/user-guide/ui/mail-settings/
+  - title: Trendz settings
+    path: /docs/pe/user-guide/ui/trendz-settings/
 - title: Contribution guide
   section:
     - title: How to contribute your device integration guide
@@ -395,12 +404,12 @@ toc:
           path: /docs/pe/user-guide/contribution/ui/custom-subscriptions/
         - title: Advanced widget development
           path: /docs/pe/user-guide/contribution/ui/advanced-development/
-- title: Releases
+- title: Versions & Support
   section:
-    - title: Releases table
+    - title: Releases
       path: /docs/pe/releases/releases-table/
-    - title: Versioning and Release Policy
-      path: /docs/releases/release-policy/
+    - title: Release & Support Policy
+      path: /docs/pe/releases/release-policy/
     - title: Roadmap
       path: /docs/pe/releases/roadmap/
 - title: Troubleshooting

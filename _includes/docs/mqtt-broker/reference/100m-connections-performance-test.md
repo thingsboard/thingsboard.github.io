@@ -7,7 +7,7 @@ This procedure holds great significance, particularly when operating under subst
 Within this article, we will show the steps taken to ensure that TBMQ can reliably handle about **100M** connected clients 
 while effectively managing a throughput of **6M MQTT publish messages per second**.
 
-![image](/images/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
+![image](https://img.thingsboard.io/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
 
 ## Test methodology
 
@@ -242,7 +242,7 @@ After a period of time, all clients successfully establish connections, and each
 To gauge the progress, we can examine the `client_session` (after [Kafka topics renaming [1]](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.client.session`) 
 Kafka topic. This topic provides an approximate count of the connected sessions.
 
-![image](/images/mqtt-broker/reference/topics/100m-mqtt-clients.png)
+![image](https://img.thingsboard.io/mqtt-broker/reference/topics/100m-mqtt-clients.png)
 
 Once all the runners are ready, the orchestrator notifies the cluster is ready and the message publishing is started.
 

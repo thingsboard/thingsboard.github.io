@@ -25,7 +25,7 @@ get objectType=analogValue;objectId=1;propertyId=presentValue;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/bacnet-get-set-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/bacnet-get-set-rpc-1.png)
 {: refdef}
 
 # SET method
@@ -60,7 +60,7 @@ set objectType=analogValue;objectId=1;propertyId=presentValue;value=30.9;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/bacnet-get-set-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/bacnet-get-set-rpc-2.png)
 {: refdef}
 
 Also, let's check the value of the room light level after setting it using the GET method. To do this, simply
@@ -77,5 +77,5 @@ get objectType=analogValue;objectId=1;propertyId=presentValue;
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/get-set-connector-rpc/bacnet-get-set-rpc-3.png)
+![image](https://img.thingsboard.io/gateway/get-set-connector-rpc/bacnet-get-set-rpc-3.png)
 {: refdef}

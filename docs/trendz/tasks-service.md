@@ -34,7 +34,7 @@ To see your tasks, go to the Tasks section in the main menu. Here, you will find
 * Run custom prompt
 * Generate view summary
 
-![image](/images/trendz/tasks-types.png)
+![image](https://img.thingsboard.io/trendz/tasks-types.png)
 
 **Stop All Tasks** button is designed to immediately stop all running executions of tasks in the system. This action terminates any tasks that are currently in progress but does not delete the tasks themselves or affect their configurations.
 
@@ -57,7 +57,7 @@ Within the task details, you can also manage tasks by:
 
 The Tasks section helps you easily monitor and control the execution of tasks, keeping your system running smoothly. From the task details, you can quickly go to the related entity for further management.
 
-![image](/images/trendz/tasks-go-to-entity.png)
+![image](https://img.thingsboard.io/trendz/tasks-go-to-entity.png)
 
 ## Executions Tab
 
@@ -66,5 +66,5 @@ The tab lists all executions, allowing you to filter them by their status: **All
 For each execution, you can see details such as: **Time Started, Duration, Time Finished, Status.**
 This tab is crucial for monitoring the performance and health of your tasks, enabling you to quickly identify and address any issues that arise during execution.
 
-![image](/images/trendz/tasks-executions.png)
+![image](https://img.thingsboard.io/trendz/tasks-executions.png)
 

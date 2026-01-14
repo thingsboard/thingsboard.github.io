@@ -50,7 +50,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -168,11 +168,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-irrigation/agriculture-1.svg" alt="Precision agriculture" title="Precision agriculture"></div>
-            <div class="application-image"><img src="/images/usecases/smart-irrigation/greenhouse-1.svg" alt="Smart greenhouses" title="Smart greenhouses"></div>
-            <div class="application-image"><img src="/images/usecases/smart-irrigation/parks-1.svg" alt="Municipal parks & landscaping" title="Municipal parks & landscaping"></div>
-            <div class="application-image"><img src="/images/usecases/smart-irrigation/fields-1.svg" alt="Golf courses & sports fields" title="Golf courses & sports fields"></div>
-            <div class="application-image"><img src="/images/usecases/smart-irrigation/research-1.svg" alt="Agri-Tech research & experimental farms" title="Agri-Tech research & experimental farms"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/agriculture-1.svg" alt="Precision agriculture" title="Precision agriculture"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/greenhouse-1.svg" alt="Smart greenhouses" title="Smart greenhouses"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/parks-1.svg" alt="Municipal parks & landscaping" title="Municipal parks & landscaping"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/fields-1.svg" alt="Golf courses & sports fields" title="Golf courses & sports fields"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/research-1.svg" alt="Agri-Tech research & experimental farms" title="Agri-Tech research & experimental farms"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -187,7 +187,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-irrigation/agriculture-2.svg" alt="Precision agriculture" title="Precision agriculture"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/agriculture-2.svg" alt="Precision agriculture" title="Precision agriculture"></div>
             <div class="text-block">
                 <h3>Precision agriculture</h3>
                 <p>Covers the need for data-driven water management by providing real-time moisture analytics, alarming, and automated irrigation, improving crop yield while reducing resource waste.</p>
@@ -198,10 +198,10 @@ contactUsModal: "true"
                 <h3>Smart greenhouses</h3>
                 <p>Fulfills the demand for microclimate-based watering by supporting multi-zone sensor management and conditional scheduling, ensuring healthy plant growth with minimal manual intervention.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-irrigation/greenhouse-2.svg" alt="Smart greenhouses" title="Smart greenhouses"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/greenhouse-2.svg" alt="Smart greenhouses" title="Smart greenhouses"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-irrigation/parks-2.svg" alt="Municipal parks & landscaping" title="Municipal parks & landscaping"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/parks-2.svg" alt="Municipal parks & landscaping" title="Municipal parks & landscaping"></div>
             <div class="text-block">
                 <h3>Municipal parks & landscaping</h3>
                 <p>Solves the challenge of wide-area water efficiency by offering centralized dashboard control, alarm notifications, and device management for public green spaces.</p>
@@ -212,10 +212,10 @@ contactUsModal: "true"
                 <h3>Golf courses & sports fields</h3>
                 <p>Addresses the requirement for uniform turf quality with zone-specific moisture monitoring, historical analytics, and rule-based irrigation triggers to maintain optimal soil conditions.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-irrigation/fields-2.svg" alt="Golf courses & sports fields" title="Golf courses & sports fields"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/fields-2.svg" alt="Golf courses & sports fields" title="Golf courses & sports fields"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-irrigation/research-2.svg" alt="Agri-Tech research & experimental farms" title="Agri-Tech research & experimental farms"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-irrigation/research-2.svg" alt="Agri-Tech research & experimental farms" title="Agri-Tech research & experimental farms"></div>
             <div class="text-block">
                 <h3>Agri-Tech research & experimental farms</h3>
                 <p>Meets the need for accurate environmental data collection and testing flexibility by enabling detailed telemetry tracking, custom rule chains, and rapid integration of new devices.</p>
@@ -230,7 +230,7 @@ contactUsModal: "true"
         <p>The smart irrigation solution built on ThingsBoard empowers users to manage irrigation processes intelligently, reduce water waste, and maintain crop health with precision. Leveraging real-time data collection, powerful automation, and rich visualizations, it enables scalable deployments across diverse sectors—from agriculture to urban landscapes. With its flexible architecture and low-code configurability, the solution can be rapidly deployed, customized, and expanded as needs grow.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -351,14 +351,14 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-1.webp' data-bg='#F9FAFF' alt='Satellite view of crop fields with real-time moisture levels and chart in ThingsBoard' title='Soil moisture monitoring for wheat and corn fields using ThingsBoard'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-2.webp' data-bg='#A9AAAC' alt='Field configuration form for setting crop type and moisture range in ThingsBoard' title='Add a new field and define crop type and soil moisture thresholds'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-3.webp' data-bg='#A9AAAC' alt='Edit field details with boundary selection and moisture settings in ThingsBoard' title='Update field boundaries and soil moisture limits for precision farming'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-4.webp' data-bg='#F9FAFF' alt='Dashboard showing irrigation status, alarms, field map, and moisture statistics in ThingsBoard' title='Irrigation and soil monitoring dashboard for smart agriculture'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-5.webp' data-bg='#A9AAAC' alt='Dialog to add a new soil moisture sensor on the map in ThingsBoard' title='Register a new soil moisture sensor and assign a label'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-6.webp' data-bg='#A9AAAC' alt='Form to create an automated irrigation schedule based on consumption or time' title='Define irrigation rules by water usage or duration for field automation'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-7.webp' data-bg='#F9FAFF' alt='Active and cleared alarms for soil moisture and battery levels in ThingsBoard' title='View and manage critical alerts from field sensors in the irrigation system'/>",
-                "<img src='/images/usecases/smart-irrigation/smart-irrigation-8.webp' data-bg='#F9FAFF' alt='Dashboard view for a second field showing multiple active alarms and irrigation tasks' title='Monitor critical issues and manage irrigation for corn field using ThingsBoard'/>"
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-1.webp' data-bg='#F9FAFF' alt='Satellite view of crop fields with real-time moisture levels and chart in ThingsBoard' title='Soil moisture monitoring for wheat and corn fields using ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-2.webp' data-bg='#A9AAAC' alt='Field configuration form for setting crop type and moisture range in ThingsBoard' title='Add a new field and define crop type and soil moisture thresholds'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-3.webp' data-bg='#A9AAAC' alt='Edit field details with boundary selection and moisture settings in ThingsBoard' title='Update field boundaries and soil moisture limits for precision farming'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-4.webp' data-bg='#F9FAFF' alt='Dashboard showing irrigation status, alarms, field map, and moisture statistics in ThingsBoard' title='Irrigation and soil monitoring dashboard for smart agriculture'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-5.webp' data-bg='#A9AAAC' alt='Dialog to add a new soil moisture sensor on the map in ThingsBoard' title='Register a new soil moisture sensor and assign a label'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-6.webp' data-bg='#A9AAAC' alt='Form to create an automated irrigation schedule based on consumption or time' title='Define irrigation rules by water usage or duration for field automation'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-7.webp' data-bg='#F9FAFF' alt='Active and cleared alarms for soil moisture and battery levels in ThingsBoard' title='View and manage critical alerts from field sensors in the irrigation system'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-irrigation/smart-irrigation-8.webp' data-bg='#F9FAFF' alt='Dashboard view for a second field showing multiple active alarms and irrigation tasks' title='Monitor critical issues and manage irrigation for corn field using ThingsBoard'/>"
             ];
             return images[index];
         }

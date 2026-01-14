@@ -5,79 +5,79 @@ description: HTTP integration guide
 
 downlink-rule:
     0:
-        image: /images/pe/edge/integrations/http/downlink-rule-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-rule-1-edge.png
         title: 'Go to the <b>Edge management</b> > <b>Rule chain templates</b> section and click on the "<b>Edge Root Rule Chain</b>" to open it.'
     1:
-        image: /images/pe/edge/integrations/http/downlink-rule-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-rule-2-edge.png
         title: 'Create an &#39;<b>integration downlink</b>&#39; node. Specify your integration in the settings;'
     2:
-        image: /images/pe/edge/integrations/http/downlink-rule-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-rule-3-edge.png
         title: 'Set the <b>"Attributes Updated"</b> and <b>"Post attributes"</b> links from the &#39;<b>message type switch</b>&#39; node to the &#39;<b>integration downlink</b>&#39; node. When the attribute is created or changes are made to the attribute, the downlink message is sent to the integration. Apply the changes.'
 
 assign-integration:
     0:
-        image: /images/pe/edge/integrations/http/assign-integration-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-1-edge.png
         title: 'Go to the <b>Edge management > Instances</b> section, click on your edge instance to open the <b>"Edge details"</b> window, and navigate to the <b>"Attributes"</b> tab. Click the <b>"plus"</b> button to add a new <b>server attribute</b> to the Edge.'
     1:
-        image: /images/pe/edge/integrations/http/assign-integration-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-2-edge.png
         title: 'Enter the new attribute name - <b>"baseUrl</b>, and set the value <b>IP:port</b>. Then click the <b>"Add"</b> button.'
     2:
-        image: /images/pe/edge/integrations/http/assign-integration-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-3-edge.png
         title: 'The <b>"baseUrl"</b> server attribute is now added to the edge.'
     3:
-        image: /images/pe/edge/integrations/http/assign-integration-4-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-4-edge.png
         title: 'To assign the integration to the Edge, click the <b>"Manage edge integrations"</b> button.'
     4:
-        image: /images/pe/edge/integrations/http/assign-integration-5-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-5-edge.png
         title: 'Click the <b>"+"</b> button at the top right of the corner. Select your integration from the drop-down menu and click the <b>"Assign"</b> button.'
     5:
-        image: /images/pe/edge/integrations/http/assign-integration-6-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-6-edge.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. You should see your integration. Click on it.'
     6:
-        image: /images/pe/edge/integrations/http/assign-integration-7-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-7-edge.png
         title: 'In the <b>"Integration details"</b> window, the <b>${{baseUrl}}</b> placeholder will be replaced with the value of the attribute.'
 
 send-uplink:
     0:
-        image: /images/pe/edge/integrations/http/send-uplink-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/send-uplink-1-edge.png
         title: 'Go to the <b>Integrations center > Integrations</b> section. Find your HTTP integration and click on it and copy the <b>"HTTP endpoint URL"</b>. Send the uplink message using the command from the tutorial;'
     1:
-        image: /images/pe/edge/integrations/http/send-uplink-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/send-uplink-2-edge.png
         title: 'Go to the <b>"Events"</b> tab. There you will find an uplink message with the status &#39;OK&#39;. To see the message, click the three dots in the <b>"Message"</b> column.'
 
 device:
     0:
-        image: /images/pe/edge/integrations/http/device-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/device-1-edge.png
         title: 'To see the created device with data, go to the <b>Entities > Devices</b> section on the Edge.'
 
 converter-events:
     0:
-        image: /images/pe/edge/integrations/http/converter-events-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/converter-events-1-edge.png
         title: 'Go to the <b>Integrations center > Data converters</b> section, click on the uplink converter to open the <b>"Data converter details"</b> window, and select the "<b>Events</b>" tab. There you will find an uplink message.'
     1:
-        image: /images/pe/edge/integrations/http/converter-events-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/converter-events-2-edge.png
         title: 'To see the incoming message to the converter, click the three dots in the <b>"In"</b> column.'
     2:
-        image: /images/pe/edge/integrations/http/converter-events-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/converter-events-3-edge.png
         title: 'To see the outgoing message from the converter, click the three dots in the <b>"Out"</b> column.'
 
 send-again-message:
     0:
-        image: /images/pe/edge/integrations/http/downlink-responce-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-responce-1-edge.png
         title: 'Send again the uplink message to the HTTP integration;'
     1:
-        image: /images/pe/edge/integrations/http/downlink-responce-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-responce-2-edge.png
         title: 'We will receive a response from the ThingsBoard in the terminal.'
 
 downlink-converter-message:
     0:
-        image: /images/pe/edge/integrations/http/downlink-converter-message-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-converter-message-1-edge.png
         title: 'Go to the <b>Integrations center > Data converters</b> section, click on the downlink converter to open the <b>"Data converter details"</b> window, and select the <b>"Events"</b> tab. There you will find a downlink message.'
     1:
-        image: /images/pe/edge/integrations/http/downlink-converter-message-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-converter-message-2-edge.png
         title: 'Click the three dots in the <b>In</b> column to see the message that came from the integration to the converter.'
     2:
-        image: /images/pe/edge/integrations/http/downlink-converter-message-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-converter-message-3-edge.png
         title: 'Click the three dots in the <b>Out</b> column to see the message sent to the device after processing by the converter.'
 
 ---
@@ -108,7 +108,7 @@ Follow the steps below to add the **HTTP integration**:
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-![image](/images/pe/edge/integrations/http/add-http-integration-template-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/add-http-integration-template-1-edge.png)
 
 - The next step is to create an **Uplink data converter**. 
 
@@ -140,7 +140,7 @@ JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-do
     In this example, we will use the placeholder **$\{\{baseUrl\}\}** for **Base URL**.
   - Then click the **"Add"** button.
 
-![image](/images/pe/edge/integrations/http/add-http-integration-template-4-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/add-http-integration-template-4-edge.png)
 
 **HTTP integration** is created.
 
@@ -180,15 +180,15 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\
 ```
 {: .copy-code} 
 
-![image](/images/pe/edge/integrations/http/send-uplink-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/send-uplink-1-edge.png)
 
 Now, select the **"Events"** tab in your HTTP integration. If you have done everything correctly, you will see an uplink message with the status **'OK'**. To see the message itself, click on the three dots in the **"Message"** column.
 
-![image](/images/pe/edge/integrations/http/send-uplink-2-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/send-uplink-2-edge.png)
 
 When you sent the message, a new device was created. The created device with data can be seen in the **Entities > Devices** section on the **Edge**:
 
-![image](/images/pe/edge/integrations/http/device-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/device-1-edge.png)
 
 You can also view the received data in the **Uplink Converter**. In the **"In"** and **"Out"** blocks of the "**Events**" tab:
 
@@ -201,11 +201,11 @@ Now let's check the downlink functionality.
 Let's add a **'firmware'** shared attribute. Go to the **"Devices"** section, select your device, and open the "**Attributes**" tab on the **ThingsBoard Edge**. Select the **"Shared attributes"** scope and click the **"plus"** button to create new attribute.
 Then set the **attribute name** and **value** (_e.g., the key name is 'firmware', value: '01052020.v1.1'_), and **save** the data.
 
-![image](/images/pe/edge/integrations/http/add-shared-attribute-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/add-shared-attribute-1-edge.png)
 
 To make sure that downlink message is sent to integration, check the **Events** tab of the integration:
 
-![image](/images/pe/edge/integrations/http/downlink-message-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/http/downlink-message-1-edge.png)
 
 Now we need to send another message to the **HTTP integration**.
 Use the same command you used before. Remember to replace **$DEVICE_NAME** and **$YOUR_HTTP_ENDPOINT_URL** with the corresponding values.

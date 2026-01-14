@@ -1,4 +1,4 @@
-![image](/images/gateway/mqtt-connector/workers-settings-1-ce.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connector/workers-settings-1-ce.png)
 
 1. **Max messages queue per worker**<br/>
 How many MQTT messages one worker handles in a single turn before letting others run. 

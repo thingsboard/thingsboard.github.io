@@ -9,7 +9,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Rock64 is a single-board computer designed to provide a powerful and efficient computing solution in a small form factor.
  It is built around a Rockchip RK3328 quad-core ARM Cortex-A53 processor, which offers reliable performance and energy efficiency.
  The board features 1GB, 2GB, or 4GB of LPDDR3 RAM, as well as a microSD card slot for expandable storage.
@@ -51,3 +50,4 @@ The Rock64 runs a variety of operating systems, including Debian, Ubuntu, and An
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

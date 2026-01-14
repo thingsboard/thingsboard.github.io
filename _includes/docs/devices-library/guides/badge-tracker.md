@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Badge Tracker]({{deviceVendorLink}}){:target="_blank"} achieve seamless personnel and asset tracking with the Lansitec Badge Tracker.<br>
 Combining GNSS, Bluetooth 5.0, and LoRaWAN technology, this sleek device provides accurate real-time positioning both indoors and outdoors—perfect for managing workforce, visitors, and critical assets across large facilities.<br>
 The built-in 3-axis accelerometer intelligently detects movement or falls, conserving battery when the device is idle and alerting you to unauthorized or emergency situations.<br>
@@ -20,6 +19,7 @@ With a maximum of five months standby time and no additional network fees, the B
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -41,3 +41,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

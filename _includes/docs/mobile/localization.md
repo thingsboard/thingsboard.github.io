@@ -35,7 +35,7 @@ intl_en.arb
 ...
 ```
 
-![image](/images/mobile/localization-l10n-folder.png)
+![image](https://img.thingsboard.io/mobile/localization-l10n-folder.png)
 
 ### Step 2: Create a language file
 

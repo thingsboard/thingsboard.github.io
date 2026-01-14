@@ -1,0 +1,59 @@
+{
+  "enterpriseBytesPerDataPoint": 36,
+  "extraStorageCostPerGB": 0.5,
+  "mobileApp": 99,
+  "mobileAppSetup": 1000,
+  "plans": [
+    {
+      "name": "Launch",
+      "price": 1499,
+      "includedDevices": 5000,
+      "maxMsgPerMin": 50000,
+      "storage": 512,
+      "extraDevicePrice": 0.1,
+      "database": "NoSQL",
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 30,
+      "devQaExtraInstancePrice": 100,
+      "edgeMonthPrice": 249,
+      "edgeInstancesIncluded": 10,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 449,
+      "trendzExtraDevicePrice": 0.03
+    },
+    {
+      "name": "Growth",
+      "price": 2199,
+      "includedDevices": 25000,
+      "maxMsgPerMin": 100000,
+      "storage": 1024,
+      "extraDevicePrice": 0.09,
+      "database": "NoSQL",
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 30,
+      "devQaExtraInstancePrice": 100,
+      "edgeMonthPrice": 379,
+      "edgeInstancesIncluded": 20,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 659,
+      "trendzExtraDevicePrice": 0.03
+    },
+    {
+      "name": "Scale",
+      "price": 3999,
+      "includedDevices": 50000,
+      "maxMsgPerMin": 500000,
+      "storage": 2048,
+      "extraDevicePrice": 0.08,
+      "database": "NoSQL",
+      "replicationFactor": 3,
+      "bytesPerDataPoint": 30,
+      "devQaExtraInstancePrice": 100,
+      "edgeMonthPrice": 679,
+      "edgeInstancesIncluded": 30,
+      "extraEdgePrice": 39,
+      "trendzMonthPrice": 1199,
+      "trendzExtraDevicePrice": 0.03
+    }
+  ]
+}

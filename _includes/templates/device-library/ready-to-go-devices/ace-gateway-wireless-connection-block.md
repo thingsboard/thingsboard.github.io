@@ -14,17 +14,17 @@
 
 {% assign wirelessConnection = '
     ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-1.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-2.png,
 	===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-3.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-4.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-5.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-5.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-6.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/wireless-connection-6.png,
 '
 %}
 

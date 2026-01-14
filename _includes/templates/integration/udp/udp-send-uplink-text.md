@@ -5,4 +5,4 @@ echo -e 'SN-001,default,temperature,25.7,humidity,69' | nc -w5 -u 127.0.0.1 1156
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/udp/terminal-text.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/terminal-text.png)

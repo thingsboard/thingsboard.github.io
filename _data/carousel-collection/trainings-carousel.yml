@@ -6,7 +6,7 @@
       faIcon: "far fa-clock"
       text: "8 hours"
     1:
-      src: "/images/trainings/icon_hat-graduation.svg"
+      src: "https://img.thingsboard.io/trainings/icon_hat-graduation.svg"
       text: "4 sessions"
   title: "Data visualization"
   description: "Clear and simple introduction to data visualization tools and how to create custom widgets"
@@ -20,7 +20,7 @@
       faIcon: "far fa-clock"
       text: "2 hours"
     1:
-      src: "/images/trainings/icon_hat-graduation.svg"
+      src: "https://img.thingsboard.io/trainings/icon_hat-graduation.svg"
       text: "1 session"
   title: "ThingsBoard administration"
   description: "Basic understanding of installation, configuration, and maintenance for effective platform administration."
@@ -34,7 +34,7 @@
       faIcon: "far fa-clock"
       text: "8 hours"
     1:
-      src: "/images/trainings/icon_hat-graduation.svg"
+      src: "https://img.thingsboard.io/trainings/icon_hat-graduation.svg"
       text: "4 sessions"
   title: "SCADA system"
   description: "Detailed guide to creating dashboards for SCADA systems, including layout and configuration settings."
@@ -48,7 +48,7 @@
       faIcon: "far fa-clock"
       text: "12 hours"
     1:
-      src: "/images/trainings/icon_hat-graduation.svg"
+      src: "https://img.thingsboard.io/trainings/icon_hat-graduation.svg"
       text: "6 sessions"
   title: "Platform management and security"
   description: "Comprehensive overview of rule engine, alarm management, security model, and API usage."

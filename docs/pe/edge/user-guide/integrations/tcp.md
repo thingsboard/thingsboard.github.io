@@ -6,81 +6,81 @@ docsPrefix: pe/edge/
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/tcp/add-converter-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/add-converter-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-converter-step-2.webp
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/tcp/modify-converter-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/modify-converter-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/modify-converter-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/modify-converter-step-2.webp
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/tcp/add-downlink-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-downlink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/add-downlink-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-downlink-step-2.webp
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-0.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-integration-template-step-0.webp
     1:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-integration-template-step-1.webp
     2:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-integration-template-step-2.webp
     3:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-integration-template-step-3.webp
     4:
-        image: /images/pe/edge/integrations/tcp/add-integration-template-step-4.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-integration-template-step-4.webp
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/tcp/downlink-rule-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/downlink-rule-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/downlink-rule-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/downlink-rule-step-2.webp
 
 assignIntegration:
   0:
-    image: /images/pe/edge/integrations/tcp/assign-integration-step-1.webp
+    image: https://img.thingsboard.io/pe/edge/integrations/tcp/assign-integration-step-1.webp
     title: 'Go to the <b>Edge management > Instances</b> section and click the <b>Manage edge integrations</b> button.'
   1:
-    image: /images/pe/edge/integrations/tcp/assign-integration-step-2.webp
+    image: https://img.thingsboard.io/pe/edge/integrations/tcp/assign-integration-step-2.webp
     title: 'On the Integration page, click the <b>"Assign to edge"</b> button. In the <b>"Assign the Integration to the Edge"</b> pop-up window, select the integration from the drop-down menu and click the <b>"Assign"</b> button.'
   2:
-    image: /images/pe/edge/integrations/tcp/assign-integration-step-3.webp
+    image: https://img.thingsboard.io/pe/edge/integrations/tcp/assign-integration-step-3.webp
     title: 'Login to your <b>ThingsBoard Edge</b> instance and go to the <b>Integrations center > Integrations</b> section. Confirm the <b>TCP integration</b> on the <b>Edge</b>.'
 
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/tcp/send-uplink-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/send-uplink-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/send-uplink-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/send-uplink-step-2.webp
 
 device:
     0:
-        image: /images/pe/edge/integrations/tcp/device.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/device.webp
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/tcp/converter-events-step-1.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/converter-events-step-1.webp
     1:
-        image: /images/pe/edge/integrations/tcp/converter-events-step-2.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/converter-events-step-2.webp
     2:
-        image: /images/pe/edge/integrations/tcp/converter-events-step-3.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/converter-events-step-3.webp
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/tcp/add-shared-attribute.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/add-shared-attribute.webp
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/tcp/downlink-message.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/downlink-message.webp
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/tcp/downlink-terminal.webp
+        image: https://img.thingsboard.io/pe/edge/integrations/tcp/downlink-terminal.webp
 
 ---
 
@@ -99,7 +99,7 @@ downlinkTerminal:
 
 To learn more, review the integration diagram:
 
-![image](/images/user-guide/integrations/tcp-integration.svg){: style="display: block; margin: auto"} 
+![image](https://img.thingsboard.io/user-guide/integrations/tcp-integration.svg){: style="display: block; margin: auto"} 
 
 ### Prerequisites
 

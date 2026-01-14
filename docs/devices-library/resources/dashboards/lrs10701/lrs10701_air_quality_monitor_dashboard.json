@@ -1,6 +1,6 @@
 {
   "title": "LRS10701 Air Quality Monitor",
-  "image": "tb-image;/api/images/tenant/iaq_rside_led.png",
+  "image": "tb-image;/apihttps://img.thingsboard.io/tenant/iaq_rside_led.png",
   "mobileHide": false,
   "mobileOrder": null,
   "configuration": {

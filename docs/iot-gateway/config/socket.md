@@ -51,7 +51,7 @@ Additional information about the report strategy can be found [here](/docs/iot-g
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/gateway/socket-connector/socket-general-basic-section-1-ce.png)
+![image](https://img.thingsboard.io/gateway/socket-connector/socket-general-basic-section-1-ce.png)
 
 {% capture difference %}
 The settings are the same for both the basic and advanced configurations.

@@ -10,6 +10,7 @@ itemsPerPage: "15"
 searchControl: "#searchCompanyInput"
 customTitle: "true"
 firstCompaniesInList: "Milesight%Seeed Studio%Lansitec%Shenzhen Beilai Technology Co., Ltd.%MikroTik%MOKO SMART"
+not-found: "No partners have been found..."
 
 filterCollection:
   - label: Hardware types
@@ -21,7 +22,6 @@ filterCollection:
       - Trackers
       - Other devices
       - Gateway
-      - Single Board Computer
   - label: Connectivity
     filters:
       - HTTP
@@ -106,7 +106,7 @@ filterCollection:
         <div class="hardware-hero-banner">
             <p>Want to become ThingsBoard Hardware Partner?</p>
             <a href="/partners/hardware/program/">Apply for program</a>
-            <img src="/images/hardware-partners-icon.svg" width="210" height="210" alt="Hardware partner icon">
+            <img src="https://img.thingsboard.io/hardware-partners-icon.svg" width="210" height="210" alt="Hardware partner icon">
         </div>
     </div>
 </div>

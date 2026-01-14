@@ -37,7 +37,7 @@ contactUsModal: "true"
 <section class="scada-solution-structure addedBanner">
     <h2>Solution structure</h2>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/scada-energy-management/scada-energy-management-structure.svg"  alt="SCADA oil and gas drilling solution structure">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/scada-energy-management/scada-energy-management-structure.svg"  alt="SCADA oil and gas drilling solution structure">
     </div>
     <div class="use-cases-solution-structure-cards">
         <div class="use-cases-solution-structure-card">
@@ -77,56 +77,56 @@ contactUsModal: "true"
                 <h3>Power generation and renewable energy sources</h3>
                 <p>These symbols represent different energy sources used in SCADA systems for real-time monitoring and control. They include solar panels, wind turbines, and fuel generators, which are essential for tracking energy generation, efficiency, and performance of renewable and backup power sources.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/power-gen.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/power-gen.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>Power distribution and circuit protection</h3>
                 <p>This category includes essential components responsible for managing electrical flow and ensuring system safety. It consists of circuit breakers, voltage relays, and stabilizers that help prevent overloads, regulate voltage supply, and maintain stable power distribution.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/power-distr.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/power-distr.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>Energy measurement</h3>
                 <p>SCADA systems require precise real-time data collection on energy usage to ensure efficient power monitoring and optimization. This group includes various energy meters that provide multi-rate measurement capabilities, helping operators track power consumption accurately and make data-driven decisions for energy efficiency.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/power-msrmt.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/power-msrmt.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>Consumption analysis</h3>
                 <p>Understanding how energy is distributed and consumed across different sectors is crucial for effective SCADA operations. This group consists of consumer representation symbols that help categorize and analyze power usage in industrial, residential, and commercial environments, providing insights into consumption patterns.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/consumption-anals.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/consumption-anals.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>Power control and transformation</h3>
                 <p>Symbols in this group allow for effective power conversion and distribution within the grid. Transformers, inverters, and transmission infrastructure are included to facilitate efficient power management, ensuring stable energy supply across different voltage levels.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/power-control.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/power-control.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>Electrical control and connectivity</h3>
                 <p>SCADA systems require connectivity and user control points for seamless operation. This group includes power sockets, switches, distribution boards, and battery monitoring tools, enabling interactive control and reliable energy storage management.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/electrical-conect.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/electrical-conect.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>Environmental monitoring and system indicators</h3>
                 <p>These symbols support real-time environmental tracking and status indications for operational insights. They include temperature monitoring scales and energy system controllers, which enhance automation and provide essential data for system optimization.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/env-monitoring.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/env-monitoring.svg">
         </div>
         <div class="scada-key-function-block">
             <div class="key-function-description">
                 <h3>System connectivity and network flow</h3>
                 <p>These symbols allow SCADA users to visualize energy flow and system interconnections. Connectors, cross junctions, and elbow connectors are used to represent electrical pathways, helping in grid architecture visualization and network structure planning.</p>
             </div>
-            <img src="/images/usecases/scada-energy-management/sys-connectivity.svg">
+            <img src="https://img.thingsboard.io/usecases/scada-energy-management/sys-connectivity.svg">
         </div>
     </div>
 </section>
@@ -257,11 +257,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/scada-energy-management/indust.svg"></div>
-            <div class="application-image"><img src="/images/usecases/scada-energy-management/smart.svg"></div>
-            <div class="application-image"><img src="/images/usecases/scada-energy-management/renewable.svg"></div>
-            <div class="application-image"><img src="/images/usecases/scada-energy-management/data-centers.svg"></div>
-            <div class="application-image"><img src="/images/usecases/scada-energy-management/utilites.svg"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/indust.svg"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/smart.svg"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/renewable.svg"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/data-centers.svg"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/utilites.svg"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -276,7 +276,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada-energy-management/indust-2.svg"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/indust-2.svg"></div>
             <div class="text-block">
                 <h3>Industrial facilities</h3>
                 <p>Monitoring and optimizing energy usage in manufacturing plants.</p>
@@ -287,10 +287,10 @@ contactUsModal: "true"
                 <h3>Smart buildings</h3>
                 <p>Enhancing energy efficiency in commercial and residential structures.</p>
             </div>
-            <div class="image"><img src="/images/usecases/scada-energy-management/smart-2.svg"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/smart-2.svg"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada-energy-management/renewable-2.svg"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/renewable-2.svg"></div>
             <div class="text-block">
                 <h3>Renewable energy plants</h3>
                 <p>Managing solar and wind energy production.</p>
@@ -301,10 +301,10 @@ contactUsModal: "true"
                 <h3>Data centers</h3>
                 <p>Ensuring stable power supply and backup power management.</p>
             </div>
-            <div class="image"><img src="/images/usecases/scada-energy-management/data-centers-2.svg"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/data-centers-2.svg"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/scada-energy-management/utilites-2.svg"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/scada-energy-management/utilites-2.svg"></div>
             <div class="text-block">
                 <h3>Utilities and power grids</h3>
                 <p>Supervising grid operations and power distribution.</p>
@@ -413,16 +413,16 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/scada-energy-management/1.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/2.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/3.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/4.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/5.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/6.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/7.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/8.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/9.webp'/>",
-                "<img src='/images/usecases/scada-energy-management/10.webp'/>"
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/1.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/2.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/3.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/4.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/5.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/6.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/7.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/8.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/9.webp'/>",
+                "<img src='https://img.thingsboard.io/usecases/scada-energy-management/10.webp'/>"
             ];
             return images[index];
         }

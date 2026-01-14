@@ -137,7 +137,7 @@ To go to the "Building B" state:
 <br>
 **Adding a background image for the building state**
 
-Let's add a background image for the new state to make it visually more attractive. You can use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-background.png){:target="_blank"} or upload your own image.
+Let's add a background image for the new state to make it visually more attractive. You can use [the image from this tutorial](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/building-background.png){:target="_blank"} or upload your own image.
 
 {% include images-gallery.html imageCollection="background-image-building-state" showListImageTitles="true" %}
 
@@ -404,7 +404,7 @@ Navigate to the "Office A" state by selecting the appropriate office in the "Off
 
 {% include images-gallery.html imageCollection="navigate-to-office-state-2" showListImageTitles="true" %}
 
-Add a background image for this state. You already know how to do it. Use [the image from this tutorial](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-room.png){:target="_blank"} or upload your own image.
+Add a background image for this state. You already know how to do it. Use [the image from this tutorial](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-room.png){:target="_blank"} or upload your own image.
 
 {% include images-gallery.html imageCollection="background-image-office-state" %}
 
@@ -637,7 +637,7 @@ Coordinates of the devices used in this example:
 
 Now we need to upload the Office A plan and the Office B plan as graphic files to the [Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery){:target="_blank"} and add links to them as server attributes for the "Office A" and "Office B" assets, respectively.
 
-For Office A use [the provided Office A plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-a-plan.png){:target="_blank"} or upload your own image.
+For Office A use [the provided Office A plan image](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-a-plan.png){:target="_blank"} or upload your own image.
 
 - Go to the "Image gallery" page of the "Resources" section;
 - Click "Upload image" button. This will open a new window for uploading the image. Here, you can either drag and drop your office plan image file or select it through a file explorer. Then, click "Upload";
@@ -649,7 +649,7 @@ We have added a new attribute with a link to the image of the Office A plan.
 
 {% include images-gallery.html imageCollection="add-office-plan-1" %}
 
-Similarly, upload the Office B plan image to the Image gallery, and add a link to it for "Office B" asset as a server attribute. Use the [provided Office B plan image](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-b-plan.png){:target="_blank"} or upload your own image.
+Similarly, upload the Office B plan image to the Image gallery, and add a link to it for "Office B" asset as a server attribute. Use the [provided Office B plan image](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/office-b-plan.png){:target="_blank"} or upload your own image.
 
 {% include images-gallery.html imageCollection="add-office-plan-2" %}
 
@@ -696,7 +696,7 @@ The label text used in the example:
 
 - Use the marker image function to display the marker image with the corresponding index, depending on the device type:
   - Copy marker image function from the documentation and paste it into the "Marker image function" field.
-  - Remove default markers, and upload new markers for each device type. Image markers are used in these examples: [Indoor Air Quality Sensor](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-indoor-air-quality-default.svg){:target="_blank"}, [Energy Sensor](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-energy-default.svg){:target="_blank"}, and [Water Flow Meter](/images/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-water-default.svg){:target="_blank"}.
+  - Remove default markers, and upload new markers for each device type. Image markers are used in these examples: [Indoor Air Quality Sensor](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-indoor-air-quality-default.svg){:target="_blank"}, [Energy Sensor](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-energy-default.svg){:target="_blank"}, and [Water Flow Meter](https://img.thingsboard.io/user-guide/advanced-guides-for-working-with-dashboard/images-from-tutorial/sensor-water-default.svg){:target="_blank"}.
 
 {% capture difference %}
 **Please note:**

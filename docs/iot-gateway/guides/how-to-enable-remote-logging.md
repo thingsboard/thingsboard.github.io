@@ -23,7 +23,7 @@ To activate and set logging level, please follow next steps:
  - Select **Shared Attributes** from an **Entity attribute** scope list.  
  - Click "**+**" button (add new attribute).  
  <br>
-  ![](/images/gateway/add-shared-attributes-gateway.png)
+  ![](https://img.thingsboard.io/gateway/add-shared-attributes-gateway.png)
  - In "Add attribute" window fill fields with the following values: 
     - The **name** field must be **RemoteLoggingLevel**
     - The **value** field sets the logging level, the values can be as follows:
@@ -36,13 +36,13 @@ To activate and set logging level, please follow next steps:
  NONE
 ```
   
-  ![](/images/gateway/add-remote-logging-level-attribute-1.png)
+  ![](https://img.thingsboard.io/gateway/add-remote-logging-level-attribute-1.png)
  - Click **Add**
-  ![](/images/gateway/add-remote-logging-level-attribute-2.png)
+  ![](https://img.thingsboard.io/gateway/add-remote-logging-level-attribute-2.png)
  - Launch your gateway in case it is not running **[Optional]**.  
  - Open the **Latest telemetry** tab of your gateway device, and you will see the new telemetry key -- **LOGS**.  
   <br><br>
-  ![](/images/gateway/logs-telemetry.png)
+  ![](https://img.thingsboard.io/gateway/logs-telemetry.png)
   <br>
   <br>
   
@@ -53,16 +53,16 @@ So we will be able to investigate all logs, not only the latest one.
 To do this we use following steps:
 
   - Check **LOGS** key and click "**Show on widget**" button:
-  ![](/images/gateway/show-logs-on-widget.png)
+  ![](https://img.thingsboard.io/gateway/show-logs-on-widget.png)
 
   - We will use the default **Cards** widget:
-  ![](/images/gateway/add-logs-to-dashboard.png)
+  ![](https://img.thingsboard.io/gateway/add-logs-to-dashboard.png)
 
   - Choose **Timeseries table** Card widget and add it to the Dashboard. It can be either the new one or the existing dashboard.
-  ![](/images/gateway/create-new-dashboard-for-logs.png)
+  ![](https://img.thingsboard.io/gateway/create-new-dashboard-for-logs.png)
 
   - As a result now we can monitor the status of the gateway device from ThingsBoard environment.
-  ![](/images/gateway/logs-dashboard.png) 
+  ![](https://img.thingsboard.io/gateway/logs-dashboard.png) 
 
 ## Next steps
 

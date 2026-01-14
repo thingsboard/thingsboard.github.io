@@ -9,7 +9,6 @@
 '
 %}
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [Helmet Sensor]({{deviceVendorLink}}){:target="_blank"} is designed based on GNSS, Bluetooth5.0 and LoRaWAN technology. It supports indoor and outdoor tracking.<br>
 It supports various features which contribute to easy management in industrial settings. Its built-in 3-axis accelerator could be used for determining the motion status of the terminal. Therefore, it can help save battery and enhance user experience. It is suitable for the following use cases: visitor management, factory worker tracking, construction worker tracking, vehicle tracking etc.<br><br>
 
@@ -18,6 +17,7 @@ It supports various features which contribute to easy management in industrial s
 To continue with this guide we will need the following:
 {{prerequisites}}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 ## Configuration
 
@@ -39,3 +39,4 @@ Loriot
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/check-data-on-thingsboard-block.md %}
 
 {% include /docs/devices-library/blocks/integrations/external-platforms/lansitec/conclusion-block.md %}
+{% include add-device-banner.liquid %}

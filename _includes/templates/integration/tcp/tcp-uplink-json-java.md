@@ -39,4 +39,9 @@ return result;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
+{% if docsPrefix == "pe/" %}
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-paas.png)
+{% endif %}

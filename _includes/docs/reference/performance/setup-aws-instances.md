@@ -5,17 +5,17 @@ Operating system is Linux, image *Ubuntu 20 LTS*. Architecture x64 or ARM depend
 Assign Elastic IP to get permanent access to the instances between restarts.
 We need at least two instances: first is to run ThingsBoard itself and second is to run the Performance test application.   
 
-![ThingsBoard and Performance test instances](/images/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "ThingsBoard and Performance test instances")
+![ThingsBoard and Performance test instances](https://img.thingsboard.io/reference/performance-aws-instances/method/setup/performance_test_aws_instances.png "ThingsBoard and Performance test instances")
 
 At the beginning, the firewall does not allow to connect your instances. Lest open the necessary ports to enable connectivity between instances and your admin machine.  
 
 Let's setup the network Security groups for both instances and open TCP ports 22 (SSH), 8080 (HTTP), 1883 (MQTT), 9999 (JMX) for inbound rules for source IPs (office, home, perf-test).
 
-![Setup network security group for performance test](/images/reference/performance-aws-instances/method/setup/performance_test_network_security_group.png "Setup network security group for performance test")
+![Setup network security group for performance test](https://img.thingsboard.io/reference/performance-aws-instances/method/setup/performance_test_network_security_group.png "Setup network security group for performance test")
 
 As fas as we experience the number of rules will affect the network performance, so another good option is to allow the "All traffic" for the trusted IPs and local network IP subnet.
 
-![Security group inbound rules](/images/reference/performance-aws-instances/method/setup/performance_test_network_security_group_inbound_rules.png)
+![Security group inbound rules](https://img.thingsboard.io/reference/performance-aws-instances/method/setup/performance_test_network_security_group_inbound_rules.png)
 
 
 #### Step 2. Setup SSH to the instance.

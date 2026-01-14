@@ -29,11 +29,11 @@ Unfortunately Gatling.io framework doesn’t support MQTT protocol out-of-the-bo
 
 The problem with the default scenario of the unofficial Gatling-MQTT plugin is that each time when some data is published, a client waits for reply from server and sends MQTT disconnect. So, the message sequence looks like this: 
 
-![image](/images/reference/performance-tools/connect-publish-disconnect.png)
+![image](https://img.thingsboard.io/reference/performance-tools/connect-publish-disconnect.png)
 
 This approach is very resource consuming and gives minimal benefits comparing to HTTP or other protocols. This behaviour is normal for HTTP requests-response model, but not for MQTT. The typical MQTT session is maintained for certain time and multiple MQTT publish messages are sent and received between client and MQTT broker. Of course, there are other types of MQTT messages, but they were out of scope for our tests. In our scenario, load testing of the IOT platform must be done in the following way:
 
-![image](/images/reference/performance-tools/connect-publish-publish-publish-disconnect.png)
+![image](https://img.thingsboard.io/reference/performance-tools/connect-publish-publish-publish-disconnect.png)
 
 So once we have connected a device to the IOT platform that acts as an MQTT broker, we will reuse session and publish MQTT messages using the same session. Sure, the session could be recreated at some point, but not every time we would like to publish a message to the server. 
 
@@ -165,13 +165,13 @@ For the guys who prefer Java and Maven there is a maven plugin - **gatling-maven
 
 This plugin finds *Simulation* files in your project, compiles and runs them. Results will be stored inside of the target folder in a pretty format that you are able to inspect after the run:
 
-![image](/images/reference/performance-tools/gatling-indicators.png)
+![image](https://img.thingsboard.io/reference/performance-tools/gatling-indicators.png)
 
-![image](/images/reference/performance-tools/gatling-statistics.png)
+![image](https://img.thingsboard.io/reference/performance-tools/gatling-statistics.png)
 
-![image](/images/reference/performance-tools/gatling-number-of-requests-per-second.png)
+![image](https://img.thingsboard.io/reference/performance-tools/gatling-number-of-requests-per-second.png)
 
-![image](/images/reference/performance-tools/gatling-number-of-responses-per-second.png)
+![image](https://img.thingsboard.io/reference/performance-tools/gatling-number-of-responses-per-second.png)
 
 To run the tests you simply can type: 
 

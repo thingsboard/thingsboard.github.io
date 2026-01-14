@@ -15,29 +15,17 @@ active-menu-item-click: "true"
   {% include upgrade-instructions-table.liquid %}
 </div>
 
-<div id="upgrade-links" class="upgrade-links">
-  <p style="margin-bottom: 10px"><a href="/docs/user-guide/install/pe/upgrade-instructions/upgrade-from-ce">ThingsBoard instructions</a> for upgrading from Community Edition.</p>
-</div>
-
-
-Upgrade instructions for the [older versions](/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/).
+<p id="upgrade-links-old" style="margin-bottom: 10px">Upgrade instructions for <a href="/docs/user-guide/install/upgrade-instructions/old-upgrade-instructions/">versions older than 3.0</a>.</p>
 
 <script>
   (function () {
     var urlParams = new URLSearchParams(window.location.search);
     var hasVersionParam = urlParams.has('version');
 
-    var table = document.getElementById('upgrade-table');
-    var links = document.getElementById('upgrade-links');
-    if (!table || !links) return;
+    var oldLinks = document.getElementById('upgrade-links-old');
 
-    if (!hasVersionParam) {
-      table.parentNode.insertBefore(links, table);
-    } else {
-      if (links.previousElementSibling !== table) {
-        table.insertAdjacentElement('afterend', links);
-        links.style.marginTop = "20px";
-      }
-    }
+    if (hasVersionParam) {
+      oldLinks.style.display = 'none';  
+    } 
   })();
 </script>

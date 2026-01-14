@@ -65,7 +65,7 @@ Several parameters define the relation hierarchy between the entities:
     * **“Manages”:** Indicates that the entity is responsible for another entity (_e.g., Asset A manages Device A_).
 
 The entity relations diagram can appear as follows: 
-![image](/images/edge/user-guide/relations.webp){: style="display: block; margin: auto; max-width: 600px; max-height: 600px"}
+![image](https://img.thingsboard.io/edge/user-guide/relations.webp){: style="display: block; margin: auto; max-width: 600px; max-height: 600px"}
 
 ## Next steps
 

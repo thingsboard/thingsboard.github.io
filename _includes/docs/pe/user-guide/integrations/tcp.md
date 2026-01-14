@@ -17,7 +17,7 @@ TCP Integration allows to stream data from devices which use a TCP transport pro
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/tcp-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp-integration.svg)
 
 ## Prerequisites
 
@@ -60,7 +60,7 @@ On the machine, where TCP Integration is running, port **10560** must be opened 
 
 Go to the "**Integrations**" page of the "**Integrations center**" section. Click "plus" button to start adding new integration. Select type "**TCP**" integration and click "**Next**";
 
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-1-pe.png)
 
 <br>
 **2. Uplink data converter**. 
@@ -88,7 +88,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 
 At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty. Click "**Skip**";
 
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-3-pe.png)
 
 <br>
 **4. Connection**.
@@ -139,7 +139,7 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.m
 Going to the "**Devices**" page you should find a **SN-002** device provisioned by the TCP integration.
 Click on the device, navigate to the "**Latest telemetry**" tab to see "**temperature**" key and its value (25.7) there.
 
-![image](/images/user-guide/integrations/tcp/tcp-integration-create-device-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-create-device-1-pe.png)
 
 If your payload contains "**humidity**" telemetry, you should see "humidity" key and its value (69) there as well.
 
@@ -163,16 +163,16 @@ To add a downlink data converter to the TCP integration, follow these steps:
 
 {% assign tcpAddDownlinkConverter = '
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-1-pe.png,
         title: Go to the "**Integrations**" page, click TCP integration to open its details, and enter integration editing mode by clicking the "pencil" icon;
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-2-pe.png,
         title: Enter a name for the downlink data converter and click "**Create new converter**";
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-3-pe.png,
         title: Paste the script to the encoder function section, and click "Add";
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-4-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-tbel-4-pe.png,
         title: Apply changes.
 '
 %}
@@ -192,10 +192,10 @@ When integration configured and ready to use, we need to go to the "Rule Chains"
 
 {% assign tcpRuleChainDownlink = '
     ===
-        image: /images/user-guide/integrations/tcp/tcp-rule-chain-downlink-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-rule-chain-downlink-pe.png,
         title: Open the "Root Rule Chain", find the "**integration downlink**" node and drag it to the rule chain. Name it "**TCP integration downlink**", specify **TCP integration**, and click "Add";
     ===
-        image: /images/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-pe.png,
         title: After this steps, we need to tap on a right grey circle of rule node "**message type switch**" and drag this circle to left side of "**integration downlink**", here lets choose **Attributes Updated**, tap "**Add**" and save Root Rule Chain.
 '
 %}
@@ -208,13 +208,13 @@ To test downlink, create some **shared attribute** on your device:
 
 {% assign testDownlink = '
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-shared-attribute-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-shared-attribute-1-pe.png,
         title: Go to the "**Devices**" page. Click your **SN-002** device and navigate to the "**Attributes**" tab. Select the "**Shared attributes**" option, and click the "**plus**" icon;
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-shared-attribute-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-shared-attribute-2-pe.png,
         title: Enter the attribute name, and its value (for example, the key name is "**firmware**", value: "**v1.1**") and click "Save";
     ===
-        image: /images/user-guide/integrations/tcp/tcp-add-shared-attribute-3-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-shared-attribute-3-pe.png,
 '
 %}
 
@@ -229,16 +229,16 @@ echo -e 'SN-002,default,temperature,25.7\nSN-002,default,humidity,69' | nc -w60 
 
 You should get the following response from the ThingsBoard in the terminal:
 
-![image](/images/user-guide/integrations/tcp/tcp-terminal-send-downlink-message.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-terminal-send-downlink-message.png)
 
 Received data and data that was sent can be viewed in the downlink converter. In the "**In**" block of the "**Events**" tab, we see what data entered. The "**Out**" field displays messages to device.
 
 {% assign eventsTab = '
     ===
-        image: /images/user-guide/integrations/tcp/tcp-downlink-converter-events-in-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-downlink-converter-events-in-pe.png,
         title: Received data and data that was sent can be viewed in the downlink converter. In the "**In**" block of the "**Events**" tab, we see what data entered.
     ===
-        image: /images/user-guide/integrations/tcp/tcp-downlink-converter-events-out-pe.png,
+        image: https://img.thingsboard.io/user-guide/integrations/tcp/tcp-downlink-converter-events-out-pe.png,
         title: The "**Out**" field displays messages to device.
 '
 %}

@@ -1,0 +1,26 @@
+---
+layout: device
+title: How to connect NodeMCU V3 to ThingsBoard?
+category: Microcontrollers
+chip: ESP8266
+connectivity: [HTTP, MQTT, WIFI]
+vendor: NodeMCU
+deviceImageFileName: nodemcuv3.png
+redirect_from:
+    - "/docs/samples/esp8266/"
+    - "/docs/samples/esp8266/temperature/"
+    - "/docs/samples/esp8266/gpio/"
+    - "/docs/samples/nodemcu/"
+    - "/docs/samples/nodemcu/temperature/"
+hardwareType: Microcontrollers
+industry: Smart Buildings
+useCase: [Smart energy, Environment Monitoring, Smart Office, Smart Retail, Smart Farming, Fleet Tracking, Health Care, Air Quality Monitoring, Waste Management, Tank Level Monitoring]
+breadcrumbs: "true"
+breadcrumbs-steps: "2"
+breadcrumbs-show: "2"
+---
+* TOC
+{:toc}
+
+{% include get-hosts-name.html %}
+{% include /docs/devices-library/guides/nodemcuv3.md %}

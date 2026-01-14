@@ -5,12 +5,12 @@ description: TBMQ Shared Subscriptions feature overview
 
 shared-subscription-group:
   0:
-    image: /images/mqtt-broker/user-guide/shared-sub-group.png
+    image: https://img.thingsboard.io/mqtt-broker/user-guide/shared-sub-group.png
     title: 'Shared Subscription group'
 
 shared-subscription-groups:
   0:
-    image: /images/mqtt-broker/user-guide/shared-sub-groups.png
+    image: https://img.thingsboard.io/mqtt-broker/user-guide/shared-sub-groups.png
     title: 'Similar Shared Subscription groups with different client types'
 
 ---

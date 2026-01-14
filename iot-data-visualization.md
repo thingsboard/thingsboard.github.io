@@ -14,12 +14,12 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
         </div>
         <div class="images">
             <div class="circle-bg"></div>
-            <img src="/images/visualization/bar-chart.svg" class="visualization-hero-image" alt="Thingsboard dashboards and menus">
-            <img src="/images/visualization/cold_water_usage.webp" class="visualization-hero-image-2" alt="Cold water usage value-chart card">
-            <img src="/images/visualization/route_history.webp" class="visualization-hero-image-3" alt="Trip animation map">
-            <img src="/images/visualization/moisture_himidity.webp" class="visualization-hero-image-4" alt="Moisture and humidity line chart">
-            <img src="/images/visualization/energy_sources.webp" class="visualization-hero-image-5" alt="Energy source pie chart">
-            <img src="/images/visualization/slider.webp" class="visualization-hero-image-6" alt="Slider widget">
+            <img src="https://img.thingsboard.io/visualization/bar-chart.svg" class="visualization-hero-image" alt="Thingsboard dashboards and menus">
+            <img src="https://img.thingsboard.io/visualization/cold_water_usage.webp" class="visualization-hero-image-2" alt="Cold water usage value-chart card">
+            <img src="https://img.thingsboard.io/visualization/route_history.webp" class="visualization-hero-image-3" alt="Trip animation map">
+            <img src="https://img.thingsboard.io/visualization/moisture_himidity.webp" class="visualization-hero-image-4" alt="Moisture and humidity line chart">
+            <img src="https://img.thingsboard.io/visualization/energy_sources.webp" class="visualization-hero-image-5" alt="Energy source pie chart">
+            <img src="https://img.thingsboard.io/visualization/slider.webp" class="visualization-hero-image-6" alt="Slider widget">
         </div>
     </section>
     <section class="visualization-definition">
@@ -27,7 +27,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <h2>What is data visualization in IoT?</h2>
             <p>IoT Data visualization is the process of turning raw device data into visual formats like charts, graphs, and gauges to help users quickly understand patterns and trends. In ThingsBoard, you can create real-time dashboards using a variety of widgets—charts, tables, SCADA symbols, and more—for monitoring and control. Dashboards support responsive layouts, navigation flows, and can be easily shared with customers.</p>
         </div>
-        <img data-src="/images/visualization/visualization-scheme.svg" src="/images/visualization/visualization-scheme.svg" class="svg-animation" alt="Visualization scheme">
+        <img data-src="https://img.thingsboard.io/visualization/visualization-scheme.svg" src="https://img.thingsboard.io/visualization/visualization-scheme.svg" class="svg-animation" alt="Visualization scheme">
     </section>
     <section class="visualization-implementation">
         <h2>How data visualization is implemented in ThingsBoard</h2>
@@ -39,7 +39,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row">
                 <div class="card">
                     <div class="image-container">
-                        <img class="svg-animation" data-src="/images/visualization/cards.svg" src="/images/visualization/cards.svg" alt="Card widgets">
+                        <img class="svg-animation" data-src="https://img.thingsboard.io/visualization/cards.svg" src="https://img.thingsboard.io/visualization/cards.svg" alt="Card widgets">
                     </div>
                     <div class="content">
                         <h4>Cards</h4>
@@ -48,7 +48,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 </div>
                 <div class="card">
                     <div class="image-container">
-                        <img class="svg-animation" data-src="/images/visualization/charts.svg" src="/images/visualization/charts.svg" alt="Charts widgets">
+                        <img class="svg-animation" data-src="https://img.thingsboard.io/visualization/charts.svg" src="https://img.thingsboard.io/visualization/charts.svg" alt="Charts widgets">
                     </div>
                     <div class="content">
                         <h4>Charts</h4>
@@ -59,7 +59,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row">
                 <div class="card">
                     <div class="image-container">
-                        <img class="svg-animation" data-src="/images/visualization/control.svg" src="/images/visualization/control.svg" alt="Control and status widgets">
+                        <img class="svg-animation" data-src="https://img.thingsboard.io/visualization/control.svg" src="https://img.thingsboard.io/visualization/control.svg" alt="Control and status widgets">
                     </div>
                     <div class="content">
                         <h4>Control & Status widgets</h4>
@@ -68,7 +68,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 </div>
                 <div class="card">
                     <div class="image-container">
-                        <img class="svg-animation" data-src="/images/visualization/gauges.svg" src="/images/visualization/gauges.svg" alt="Gauges widgets">
+                        <img class="svg-animation" data-src="https://img.thingsboard.io/visualization/gauges.svg" src="https://img.thingsboard.io/visualization/gauges.svg" alt="Gauges widgets">
                     </div>
                     <div class="content">
                         <h4>Gauges</h4>
@@ -88,7 +88,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row">
                 <div class="card">
                     <div class="image-container">
-                        <img class="svg-animation" data-src="/images/visualization/SCADA-high-perf-section.svg" src="/images/visualization/SCADA-high-perf-section.svg" alt="SCADA high performance widgets">
+                        <img class="svg-animation" data-src="https://img.thingsboard.io/visualization/SCADA-high-perf-section.svg" src="https://img.thingsboard.io/visualization/SCADA-high-perf-section.svg" alt="SCADA high performance widgets">
                     </div>
                     <div class="content">
                         <h4>High-performance</h4>
@@ -97,7 +97,7 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 </div>
                 <div class="card">
                     <div class="image-container">
-                        <img class="svg-animation" data-src="/images/visualization/SCADA-traditional-section.svg" src="/images/visualization/SCADA-traditional-section.svg" alt="SCADA traditional widgets">
+                        <img class="svg-animation" data-src="https://img.thingsboard.io/visualization/SCADA-traditional-section.svg" src="https://img.thingsboard.io/visualization/SCADA-traditional-section.svg" alt="SCADA traditional widgets">
                     </div>
                     <div class="content">
                         <h4>Traditional</h4>
@@ -117,9 +117,9 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row">
                 <div class="card">
                     <div class="image-container solution-template">
-                        <img src="/images/visualization/placeholder.png" alt="placeholder">
-                        <img class="al1" src="/images/visualization/assisted-living-1.webp" alt="Assisted living widgets">
-                        <img class="al2" src="/images/visualization/assisted-living-2.webp" alt="Assisted living widgets">
+                        <img src="https://img.thingsboard.io/visualization/placeholder.png" alt="placeholder">
+                        <img class="al1" src="https://img.thingsboard.io/visualization/assisted-living-1.webp" alt="Assisted living widgets">
+                        <img class="al2" src="https://img.thingsboard.io/visualization/assisted-living-2.webp" alt="Assisted living widgets">
                     </div>
                     <div class="content">
                         <h4>Health care</h4>
@@ -128,9 +128,9 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
                 </div>
                 <div class="card">
                     <div class="image-container solution-template">
-                        <img src="/images/visualization/placeholder.png" alt="placeholder">
-                        <img class="d1" src="/images/visualization/energy_1.webp" alt="Energy SCADA widgets">
-                        <img class="d2" src="/images/visualization/energy_2.webp" alt="Energy SCADA widgets">
+                        <img src="https://img.thingsboard.io/visualization/placeholder.png" alt="placeholder">
+                        <img class="d1" src="https://img.thingsboard.io/visualization/energy_1.webp" alt="Energy SCADA widgets">
+                        <img class="d2" src="https://img.thingsboard.io/visualization/energy_2.webp" alt="Energy SCADA widgets">
                     </div>
                     <div class="content">
                         <h4>SCADA Energy management</h4>
@@ -150,11 +150,11 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row no-margin">
                 <div class="card image-only">
                     <div class="image-container layouts no-border">
-                        <img src="/images/visualization/placeholder.png" alt="placeholder">
-                        <img class="layout1 large" src="/images/visualization/layouts_macbook.webp" alt="Macbook layout">
-                        <img class="layout2 large" src="/images/visualization/layouts_iphone.webp" alt="iPhone layout">
-                        <img class="layout3 large" src="/images/visualization/layouts_ipad.webp" alt="iPad layout">
-                        <img class="layout small" src="/images/visualization/layouts_image.webp" alt="Layouts">
+                        <img src="https://img.thingsboard.io/visualization/placeholder.png" alt="placeholder">
+                        <img class="layout1 large" src="https://img.thingsboard.io/visualization/layouts_macbook.webp" alt="Macbook layout">
+                        <img class="layout2 large" src="https://img.thingsboard.io/visualization/layouts_iphone.webp" alt="iPhone layout">
+                        <img class="layout3 large" src="https://img.thingsboard.io/visualization/layouts_ipad.webp" alt="iPad layout">
+                        <img class="layout small" src="https://img.thingsboard.io/visualization/layouts_image.webp" alt="Layouts">
                     </div>
                 </div>
             </div>
@@ -181,10 +181,10 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row no-margin">
                 <div class="card image-only">
                     <div class="image-container customers no-border">
-                        <img src="/images/visualization/placeholder.png" alt="placeholder">
-                        <img class="customerA" src="/images/visualization/customer_a.webp" alt="Customer A dashboard">
-                        <img class="customerB" src="/images/visualization/customer_b.webp" alt="Customer B dashboard">
-                        <img class="customerC" src="/images/visualization/customer_c.webp" alt="Customer C dashboard">
+                        <img src="https://img.thingsboard.io/visualization/placeholder.png" alt="placeholder">
+                        <img class="customerA" src="https://img.thingsboard.io/visualization/customer_a.webp" alt="Customer A dashboard">
+                        <img class="customerB" src="https://img.thingsboard.io/visualization/customer_b.webp" alt="Customer B dashboard">
+                        <img class="customerC" src="https://img.thingsboard.io/visualization/customer_c.webp" alt="Customer C dashboard">
                     </div>
                 </div>
             </div>
@@ -211,9 +211,9 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
             <div class="row no-margin">
                 <div class="card image-only">
                     <div class="image-container custom no-border">
-                        <img class="left" src="/images/visualization/left_img.webp" alt="Person on image map widget">
-                        <img class="arrow" src="/images/visualization/arrow.svg" alt="Arrow">
-                        <img class="right" src="/images/visualization/guest_info.webp" alt="Person information widget">
+                        <img class="left" src="https://img.thingsboard.io/visualization/left_img.webp" alt="Person on image map widget">
+                        <img class="arrow" src="https://img.thingsboard.io/visualization/arrow.svg" alt="Arrow">
+                        <img class="right" src="https://img.thingsboard.io/visualization/guest_info.webp" alt="Person information widget">
                     </div>
                 </div>
             </div>
@@ -235,10 +235,10 @@ description: Explore powerful IoT data visualization with ThingsBoard. Build int
     </section>
     <section class="widgets">
         <div class="widgets-slide">
-            <img src="/images/visualization/widgets_part.webp" alt="Thingsboard widgets">
+            <img src="https://img.thingsboard.io/visualization/widgets_part.webp" alt="Thingsboard widgets">
         </div>
         <div class="widgets-slide">
-            <img src="/images/visualization/widgets_part.webp" alt="Thingsboard widgets">
+            <img src="https://img.thingsboard.io/visualization/widgets_part.webp" alt="Thingsboard widgets">
         </div>
     </section>
     <section class="visualize-with-tb">

@@ -38,7 +38,7 @@ Let's move on to setting up the integration between the ThingsBoard platform and
 
 - Click "**Next**".
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/loriot/loriot-add-integration-1-pe.png)
 
 <br>
 
@@ -91,7 +91,7 @@ Let's return to configuring the integration:
   > **Example**: If the entity name is set as Device $eui, and the incoming message contains: **"EUI": "BE7A000000000552"**, the converter will replace $eui with "BE7A000000000552". The final device name will be: "Device BE7A000000000552".
   - Use the existing script for parsing and transforming data, or provide your own custom script.
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-2-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/loriot/loriot-add-integration-2-1-pe.png)
 
 - **Advanced decoding parameters**" section: 
   - The **Device profile**, **Device label**, **Customer name**, and **Device group name** fields are not mandatory, and you can also use the $ pattern to populate them dynamically.
@@ -99,7 +99,7 @@ Let's return to configuring the integration:
   - In the **Update only keys list** section, define keys whose values will be saved to the database only if they have changed from the previous incoming message.This applies to both Attributes and Telemetry, helping optimize data storage.
 - Once the uplink converter is set up, click "**Next**".
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-2-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/loriot/loriot-add-integration-2-2-pe.png)
 
 <br>
 
@@ -107,7 +107,7 @@ Let's return to configuring the integration:
 
 At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "**Downlink data converter**" field empty. Click "**Skip**".
 
-![image](/images/user-guide/integrations/loriot/loriot-add-integration-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/loriot/loriot-add-integration-3-pe.png)
 
 <br>
 

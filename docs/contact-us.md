@@ -10,7 +10,7 @@ notitle: "true"
         header.style.backgroundColor = '#F4F8FE';
         header.style.boxShadow = 'none';
         const contentEl = document.getElementById('content');
-        contentEl.style.backgroundImage = "url('/images/contact-us-bg.svg')";
+        contentEl.style.backgroundImage = "url('https://img.thingsboard.io/contact-us-bg.svg')";
         contentEl.style.backgroundPosition = "center";
         contentEl.style.backgroundRepeat = "no-repeat";
         contentEl.style.backgroundSize = "contain";
@@ -286,7 +286,7 @@ notitle: "true"
         function () {
             $( document ).ready(function() {
                 var $contactForm =  $('#ContactUs');
-                $contactForm.attr('action', 'https://formspree.io/f/xbjvbeln');
+                $contactForm.attr('action', 'https://formspree.io/f/xrbnqnna');
                 populateUTMandClientIdFields();
                /*  $('html, body').animate({
                             scrollTop: $('#contact-form').offset().top - 200

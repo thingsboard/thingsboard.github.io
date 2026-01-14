@@ -12,14 +12,14 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
             <div class="text">
                 <p class="category">SMART CITY</p>
                 <h1>Smart signage at scale: X-TELIA deploys LoRaWAN™ parking management with ThingsBoard</h1>
-                <div class="image inner" style="background-image: url('/images/case-studies/x-telia.webp')">
-                    <img src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo" width="126" height="56">
+                <div class="image inner" style="background-image: url('https://img.thingsboard.io/case-studies/x-telia.webp')">
+                    <img src="https://img.thingsboard.io/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo" width="126" height="56">
                 </div>
                 <p>X-TELIA is a global leader in the design and manufacturing of LoRaWAN® IoT solutions. With a mission to simplify IoT deployments, X-TELIA provides end-to-end wireless solutions that include high-performance gateways, sensors, and network infrastructure. Their products are known for their carrier-grade reliability, scalability, and efficiency, supporting diverse use cases from smart cities to industrial IoT.</p>
                 <p>Their portfolio includes smart parking, street lighting, air quality monitoring, asset tracking, and other mission-critical applications. Through a unique combination of infrastructure ownership, integration capabilities, and vertical-specific expertise, X-TELIA plays a pivotal role in accelerating the adoption of IoT across Canada.</p>
             </div>
-            <div class="image large" style="background-image: url('/images/case-studies/x-telia.webp')">
-                <img src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo" width="126" height="56">
+            <div class="image large" style="background-image: url('https://img.thingsboard.io/case-studies/x-telia.webp')">
+                <img src="https://img.thingsboard.io/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo" width="126" height="56">
             </div>
         </div>
     </section>
@@ -44,7 +44,7 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
         </div>
     </section>
     <section class="authored-quote">
-        <img src="/images/case-studies/eric-bourbeau.webp" title="Président fondateur & Founder and CEO" alt="Eric Bourbeau" width="658" height="424">
+        <img src="https://img.thingsboard.io/case-studies/eric-bourbeau.webp" title="Président fondateur & Founder and CEO" alt="Eric Bourbeau" width="658" height="424">
         <div class="text">
             <h2>X-TELIA</h2>
             <p class="quote">“We were looking for a robust and scalable IoT platform to help us deploy leading edge LoRaWAN™-based IoT projects. <br> We landed a contract to deploy a city-wide network of solar/wireless variable message “No Parking” signs to manage on-street parking for snow removal operations. The deadline to develop, test and deploy the overall solution was very tight and included penalties for late delivery...<a target="_blank" href="/industries/smart-buildings/?company=xtelia">read more</a></p>
@@ -117,28 +117,28 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 <h3>Seamless MQTT integration</h3>
                 <p>ThingsBoard engineers collaborated directly with X-TELIA’s developers to build a resilient MQTT-based communication protocol. This enabled fast, real-time data exchange between the LoRaWAN™ infrastructure and the IoT platform.</p>
             </div>
-            <img src="/images/case-studies/x-telia-1.webp" title="Seamless MQTT integration" alt="Seamless MQTT integration" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/x-telia-1.webp" title="Seamless MQTT integration" alt="Seamless MQTT integration" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Custom widget development</h3>
                 <p>The ThingsBoard team created a purpose-built dashboard widget for intuitive signage control. This allowed operators to activate or deactivate “No Parking” signs across the city with a single click and full visibility.</p>
             </div>
-            <img src="/images/case-studies/x-telia-2.webp" title="Custom widget development" alt="Custom widget development" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/x-telia-2.webp" title="Custom widget development" alt="Custom widget development" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Turnkey PE instance deployment</h3>
                 <p>ThingsBoard Professional Edition was deployed under tight deadlines with production-grade reliability. Its scalable architecture allowed rapid deployment without compromising stability or performance.</p>
             </div>
-            <img src="/images/case-studies/x-telia-3.webp" title="Turnkey PE instance deployment" alt="Turnkey PE instance deployment" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/x-telia-3.webp" title="Turnkey PE instance deployment" alt="Turnkey PE instance deployment" width="450" height="240">
         </div>
         <div class="block">
             <div class="text">
                 <h3>Expert technical support</h3>
                 <p>Throughout the project, the ThingsBoard team provided high-touch technical assistance. Their dedication and close cooperation were key to the successful and timely launch of the solution.</p>
             </div>
-            <img src="/images/case-studies/x-telia-4.webp" title="Expert technical support" alt="Expert technical support" width="450" height="240">
+            <img src="https://img.thingsboard.io/case-studies/x-telia-4.webp" title="Expert technical support" alt="Expert technical support" width="450" height="240">
         </div>
     </section>
     {% include contact-us-banner.liquid linkLabel='Use cases' link='/iot-use-cases/' %}
@@ -156,8 +156,8 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/maps-widgets.webp" title="Thingsboard maps widgets widget" alt="Thingsboard maps widgets widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -172,8 +172,8 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
-                <img src="/images/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
+                <img src="https://img.thingsboard.io/case-studies/time-series-chart.webp" title="Thingsboard time series chart widget" alt="Thingsboard time series chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-scada-energy.webp" title="Thingsboard HP SCADA energy widgets" alt="Thingsboard HP SCADA energy widgets" width="388" height="388">
             </div>
         </div>
         <div class="block">
@@ -188,8 +188,8 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/entities-table-3.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
-                <img src="/images/case-studies/parking-status-widget.webp" title="Thingsboard parking-status-widget" alt="Thingsboard parking-status-widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/entities-table-3.webp" title="Thingsboard entities table widget" alt="Thingsboard entities table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/parking-status-widget.webp" title="Thingsboard parking-status-widget" alt="Thingsboard parking-status-widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -204,8 +204,8 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
-                <img src="/images/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/digital_gauges.webp" title="Thingsboard digital gauges widgets" alt="Thingsboard digital gauges widgets" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-curcuit-breaker.webp" title="Thingsboard HP curcuit breaker widget" alt="Thingsboard HP curcuit breaker widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -220,8 +220,8 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
-                <img src="/images/case-studies/hp-centrifugal-pump.webp" title="Thingsboard HP centrifugal-pump widget" alt="Thingsboard HP centrifugal-pump widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/bar-chart.webp" title="Thingsboard bar chart widget" alt="Thingsboard bar chart widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hp-centrifugal-pump.webp" title="Thingsboard HP centrifugal-pump widget" alt="Thingsboard HP centrifugal-pump widget" width="776" height="776">
             </div>
         </div>
         <div class="block">
@@ -236,8 +236,8 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
-                <img src="/images/case-studies/map-widget.webp" title="Thingsboard map widget" alt="Thingsboard map widget" width="582" height="582">
+                <img src="https://img.thingsboard.io/case-studies/notification-widget.webp" title="Thingsboard notification widget" alt="Thingsboard notification widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/map-widget.webp" title="Thingsboard map widget" alt="Thingsboard map widget" width="582" height="582">
             </div>
         </div>
         <div class="block">
@@ -252,18 +252,18 @@ description: Discover how X-TELIA partnered with ThingsBoard to deliver a smart 
                 </ul>
             </div>
             <div class="image-container">
-                <img src="/images/case-studies/hierarchy-widget.webp" title="Thingsboard hierarchy widget" alt="Thingsboard hierarchy widget" width="776" height="776">
-                <img src="/images/case-studies/roles-table.webp" title="Thingsboard roles table widget" alt="Thingsboard roles table widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/hierarchy-widget.webp" title="Thingsboard hierarchy widget" alt="Thingsboard hierarchy widget" width="776" height="776">
+                <img src="https://img.thingsboard.io/case-studies/roles-table.webp" title="Thingsboard roles table widget" alt="Thingsboard roles table widget" width="776" height="776">
             </div>
         </div>
         {% include services-banner.liquid %}
     </section>
     <section class="contact">
-        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(/images/case-studies/handshake.webp)">
+        <div class="bg-wrap" style="background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%), url(https://img.thingsboard.io/case-studies/handshake.webp)">
             <div class="outer-frame">
                 <div class="inner-frame">
-                    <img src="/images/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
-                    <img src="/images/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo" width="126" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/thingsboard.svg" title="ThingsBoard logo" alt="ThingsBoard logo" width="298" height="56">
+                    <img src="https://img.thingsboard.io/case-studies/x-telia.svg" title="X-TELIA" alt="X-TELIA logo" width="126" height="56">
                 </div>
             </div>
         </div>

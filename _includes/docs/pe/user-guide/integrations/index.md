@@ -24,7 +24,7 @@ At the moment ThingsBoard supports various integration protocols. Most popular a
 Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
 AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT or AMQP.
 
-![image](/images/user-guide/integrations/overview/create-integration-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/create-integration-1.png)
 
 The list of platform integrations is constantly growing, however, the general integration concepts are the same and explained below.  
 
@@ -48,7 +48,7 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
 
 <br>
 
-<object width="100%" data="/images/user-guide/integrations/integrations-overview.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/user-guide/integrations/integrations-overview.svg"></object>
  
 ## Uplink data converter
 
@@ -86,14 +86,14 @@ To create a generic Uplink data converter suitable for all integration types, fo
 
 {% include templates/tbel-vs-js.md %}
 
-![image](/images/user-guide/integrations/overview/adding-uplink-converter-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/adding-uplink-converter-1.png)
 
 - Configure **advanced decoding parameters**:
   - To prevent unnecessary updates for telemetry or attribute values, you can use the "**Update only keys list**" field. Keys specified in this list will only be updated if their values have changed compared to the previous ones. If a listed key appears in the converted message but its value remains the same, the update will be skipped.
   > **Please note** that in a cluster setup, values, associated with keys specified in the "Update only keys list" field may be updated more than once if a message is received by a different integration executor nodes. The same behavior is expected if the converter configuration has been updated.  
 - Once everything is set up, click the "**Add**" button to create and save the new converter.
 
-![image](/images/user-guide/integrations/overview/adding-uplink-converter-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/adding-uplink-converter-2.png)
 
 ### Typed Uplink data converter
 
@@ -109,7 +109,7 @@ To create the Uplink data converter for an integration that supports the **new u
 
 {% include templates/tbel-vs-js.md %}
 
-![image](/images/user-guide/integrations/overview/uplink-converter-20-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/uplink-converter-20-1.png)
 
 - Configure **advanced decoding parameters**:
   - The **Device profile**, **Device label**, **Customer name**, and **Device group name** fields are not mandatory, and you can also use the **$** pattern to populate them dynamically.
@@ -120,7 +120,7 @@ To create the Uplink data converter for an integration that supports the **new u
   > **Please note** that in a cluster setup, values, associated with keys specified in the "Update only keys list" field may be updated more than once if a message is received by a different integration executor nodes. The same behavior is expected if the converter configuration has been updated.
 - Once everything is set up, click the "**Add**" button to create and save the new converter.
 
-![image](/images/user-guide/integrations/overview/uplink-converter-20-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/uplink-converter-20-2.png)
 
 ### Test decoder function
 
@@ -130,10 +130,10 @@ This allows you to simulate how your converter will handle real payloads and fin
 
 {% assign testDecoderFunctionWindow = '
     ===
-        image: /images/user-guide/integrations/overview/test-payload-decoder-1.png,
+        image: https://img.thingsboard.io/user-guide/integrations/overview/test-payload-decoder-1.png,
         title: Click the "**Test payload decoder**" button to validate the decoding logic used to process incoming device data.
     ===
-        image: /images/user-guide/integrations/overview/test-payload-decoder-2.png,
+        image: https://img.thingsboard.io/user-guide/integrations/overview/test-payload-decoder-2.png,
         title: Test decoder function window.
 '
 %}
@@ -237,7 +237,7 @@ To create the Downlink data converter, follow these steps:
 
 - Click the "**Add**" button to create and save your new converter.
 
-![image](/images/user-guide/integrations/overview/add-downlink-converter.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/add-downlink-converter.png)
 
 <br>
 Downlink Converter is basically a user defined function with the following signature:
@@ -299,7 +299,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/overview/downlink-
 
 In order to invoke the downlink processing by the integration, tenant administrator should configure the rule chain similar to the one below:
 
-![image](/images/user-guide/integrations/downlink-rule-chain-example-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/downlink-rule-chain-example-pe.png)
 
 The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink-example-rule-chain.json){:target="_blank"}.
 
@@ -326,13 +326,13 @@ To access the Converters library:
 
 {% assign convertersLibrary = '
     ===
-        image: /images/user-guide/integrations/overview/converters-library-1.png,
+        image: https://img.thingsboard.io/user-guide/integrations/overview/converters-library-1.png,
         title: Navigate to the "**Integrations**" page under the "**Integrations center**" section. Click the "**plus**" icon button to start creating a new integration. Select one of the integrations that currently support the converters library. Click "**Next**" to proceed.
     ===
-        image: /images/user-guide/integrations/overview/converters-library-2.png,
+        image: https://img.thingsboard.io/user-guide/integrations/overview/converters-library-2.png,
         title: Switch to the "**Library**" option. From the dropdown menu, choose the **device vendor**. Then select the specific **sensor model** you are using. The corresponding decoder function will be automatically loaded into the editor.
     ===
-        image: /images/user-guide/integrations/overview/converters-library-3.png,
+        image: https://img.thingsboard.io/user-guide/integrations/overview/converters-library-3.png,
         title: If needed, configure advanced decoding options. Click "**Next**". Continue the process to finalize the integration setup.
 '
 %}
@@ -358,7 +358,7 @@ where
 ㅤ**&#42; TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_URL** – URL of your GitHub (or other Git-based) repository<br>
 ㅤ**&#42; TB_INTEGRATIONS_CONVERTERS_LIBRARY_REPO_BRANCH** – The branch name you want ThingsBoard to pull the converters from (e.g., main, develop, or any custom branch name)
 
-![image](/images/user-guide/integrations/overview/terminal-custom-repo-converters-library.png)
+![image](https://img.thingsboard.io/user-guide/integrations/overview/terminal-custom-repo-converters-library.png)
 
 Once configured, ThingsBoard will pull device decoder functions directly from your custom Git repository.
 {% endif %}
@@ -387,7 +387,7 @@ Cons:
 * low level of isolation;
 * can&#39;t access local MQTT brokers or OPC-UA servers if ThingsBoard is deployed in the cloud.
 
-<object width="100%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/user-guide/integrations/embeded-integrations-overview.svg"></object>
 
 ### Remote integrations
 
@@ -409,7 +409,7 @@ Cons:
 
 Learn how to configure integration to run remotely using [this guide](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations){:target="_blank"}.
 
-<object width="100%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/user-guide/integrations/remote-integrations-overview.svg"></object>
 
 ## Platform Integrations vs IoT Gateway
 

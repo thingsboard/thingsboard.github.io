@@ -13,15 +13,15 @@ You don't need to explicitly define aggregation rules and pre-compute value for 
 In this example we just add 2 fields - **Building name** and **Energy Consumption**. We do not have any aggregation rules in the Rule Engine. 
 Trendz knows what Energy Meters are registered in each building, so energy meters divided into a separate groups for each building.
 
-![image](/images/trendz/data-grouping-simple.png)
+![image](https://img.thingsboard.io/trendz/data-grouping-simple.png)
 
 We see total consumption for the last year. Now let's group data by quarters - add **Date** field with **quarter** type:
 
-![image](/images/trendz/data-grouping-quarter.png)
+![image](https://img.thingsboard.io/trendz/data-grouping-quarter.png)
 
 Finally, lets deep dive and see total consumption separated by room number - add **Room Number** attribute from **Apartment** Business Entity:
 
-![image](/images/trendz/data-grouping-room.png)
+![image](https://img.thingsboard.io/trendz/data-grouping-room.png)
 
 
 ## Next Steps

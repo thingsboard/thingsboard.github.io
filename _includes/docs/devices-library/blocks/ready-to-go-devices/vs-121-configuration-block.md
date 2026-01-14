@@ -21,7 +21,7 @@ Follow the steps below:
 
 {% assign milesightLogin = '
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/milesight-login.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/milesight-login.png,
         title: Use username (admin) and custom password to log in to the sensor web GUI.
 '
 %}
@@ -36,10 +36,10 @@ To obtain the necessary parameters, follow these steps:
 
 {% assign milesightInterface = '
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/milesight-interface-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/milesight-interface-1.png,
         title: Go to the **IoT** page in the left panel and navigate to the **LoRa** tab. Make a note of **Device EUI** and **App EUI**. Generate and enter a new password in hexadecimal format in the **Application Key** field and note it;
     ===
-        image: /images/devices-library/ready-to-go-devices/vs121-device/milesight-interface-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/vs121-device/milesight-interface-2.png,
         title: Scroll down and click on the **Save** button.
 '
 %}

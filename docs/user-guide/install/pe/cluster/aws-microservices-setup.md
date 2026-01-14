@@ -7,68 +7,68 @@ description: ThingsBoard IoT platform microservices setup with Kubernetes in AWS
 
 rdsSetup:
     0:
-        image: /images/install/cloud/aws/rds-1.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-1.png
         title: 'Make sure your PostgreSQL version is latest 16.x.'
     1:
-        image: /images/install/cloud/aws/rds-2.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-2.png
         title: 'Keep your PostgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
     2:
-        image: /images/install/cloud/aws/rds-3.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-3.png
         title: 'Use "Provisioned IOPS" for better performance.'
     3:
-        image: /images/install/cloud/aws/rds-4.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-4.png
         title: 'Make sure your PostgreSQL RDS instance is accessible from the ThingsBoard cluster; The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC and use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
     4:
-        image: /images/install/cloud/aws/rds-5.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-5.png
         title: 'Make sure you use "thingsboard" as initial database name.'
     5:
-        image: /images/install/cloud/aws/rds-6.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-6.png
         title: 'Disable "auto minor version update".'  
 
 rdsEndpointUrl:
     0:
-        image: /images/install/cloud/aws/rds-endpoint-url.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-endpoint-url.png
         title: 'Once the database switch to the "Available" state, navigate to the "Connectivity and Security" and copy the endpoint value. We will refer to it later in this guide using **YOUR_RDS_ENDPOINT_URL**.'
 
 mskSetup:
     0:
-        image: /images/install/cloud/aws/msk-1.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-1.png
         title: 'Make sure your Apache Kafka version is 3.7.x.'
     1:
-        image: /images/install/cloud/aws/msk-2.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-2.png
         title: 'Make sure your MSK instance is accessible from the ThingsBoard cluster. The easiest way to achieve this is to deploy the MSK instance in the same VPC. We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet.'
     2:
-        image: /images/install/cloud/aws/msk-3.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-3.png
         title: 'Use m5.large or similar instance types.'
     3:
-        image: /images/install/cloud/aws/msk-4.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-4.png
         title: 'Choose default security settings. Make sure "Plaintext" mode is enabled.'
     4:
-        image: /images/install/cloud/aws/msk-5.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-5.png
         title: 'Use either the "<b>Basic monitoring</b>" or "<b>Enhanced topic-level monitoring</b>" settings.'
 
 mskConnectionParams:
     0:
-        image: /images/install/cloud/aws/msk-connection-params.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-connection-params.png
         title: 'Once the MSK cluster switch to the "Active" state, navigate to "Details" and click "View client information".'
     1:
-        image: /images/install/cloud/aws/msk-connection-params2.png
+        image: https://img.thingsboard.io/install/cloud/aws/msk-connection-params2.png
         title: 'Copy bootstrap server information in plaintext. We will refer to it later in this guide using **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.'
 
 redisSetup:
     0:
-        image: /images/install/cloud/aws/valkey-1.png
+        image: https://img.thingsboard.io/install/cloud/aws/valkey-1.png
         title: 'Specify <b>Valkey Engine version 8.x</b> and node type with at least 1 GB of RAM.'
     1:
-        image: /images/install/cloud/aws/valkey-3.png
+        image: https://img.thingsboard.io/install/cloud/aws/valkey-3.png
         title: 'Make sure your <b>Valkey cluster</b> is accessible from the <b>ThingsBoard cluster</b>. The easiest way to achieve this is by <b>deploying the Valkey cluster in the same VPC</b>. We also recommend using <b>private subnets</b>. Use your <b>group ID</b>.'
     2:
-        image: /images/install/cloud/aws/valkey-2.png
+        image: https://img.thingsboard.io/install/cloud/aws/valkey-2.png
         title: 'Disable the "<b>Enable automatic backups</b>" option.'
 
 redisEndpointUrl:
     0:
-        image: /images/install/cloud/aws/valkey-4.png
+        image: https://img.thingsboard.io/install/cloud/aws/valkey-4.png
         title: 'Once the <b>Valkey cluster</b> switches to the "<b>Available" state</b>, navigate to the "<b>Details</b>" section and copy the "<b>Endpoint</b>" field <b>without the ":6379" port suffix</b> – this is the <b>Valkey endpoint</b> for ThingsBoard.'
 
 ---
@@ -145,6 +145,8 @@ Recommended CPU/memory resources allocation:
 - TB Web UI: 0.3 CPU / 0.5Gi memory
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
+- Trendz (Optional): 2 CPU / 4Gi memory
+- Trendz Python Executor (Optional): 1 CPU / 4Gi memory
 
 ## Step 10. Installation
 
@@ -189,11 +191,33 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-## Step 13. Validate the setup
+## Step 13. Configure Trendz (Optional)
+
+### 13.1. Pull Trendz images from docker hub
+
+{% include templates/install/trendz/pull_trendz.md %}
+
+### 13.2. Create a Trendz database in the existing RDS instance
+
+{% include templates/install/trendz/eks/k8s-trendz-db-creating.md %}
+
+### 13.3. Trendz starting
+
+{% include templates/install/trendz/k8s-trendz-starting.md %}
+
+## Step 14. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
+## Upgrading
+
+### Upgrading to new ThingsBoard version
+
 {% include templates/install/aws/eks-upgrading.md %}
+
+### Upgrading to new Trendz version (Optional)
+
+{% include templates/install/trendz/k8s-trendz-upgrading.md %}
 
 {% include templates/install/aws/eks-deletion.md %}
 

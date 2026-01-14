@@ -9,7 +9,7 @@ Persistent DEVICE clients are well-suited for P2P messaging because they use a s
 to ensure reliable message delivery even if the client is temporarily offline. The tests involved scaling the infrastructure while progressively increasing
 the load from 200,000 to **1,000,000 messages per second**, demonstrating TBMQ’s scalability and consistent performance.
 
-![image](/images/mqtt-broker/reference/p2p-test/tbmq-perf-test-diagram.png)
+![image](https://img.thingsboard.io/mqtt-broker/reference/p2p-test/tbmq-perf-test-diagram.png)
 
 ## Test methodology
 

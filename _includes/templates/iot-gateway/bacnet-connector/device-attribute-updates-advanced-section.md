@@ -21,4 +21,4 @@ This subsection in configuration file looks like:
 ],
 ```
 
-![image](/images/gateway/bacnet-connector/bacnet-subsection-attribute-updates-advanced-1-ce.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/bacnet-subsection-attribute-updates-advanced-1-ce.png)

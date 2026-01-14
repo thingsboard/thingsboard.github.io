@@ -26,7 +26,7 @@ Entity View contains the following information:
  - **Time series keys** - list of time series data keys that are accessible to the viewer;
  - **Attribute keys** - list of attribute names that are accessible to the viewer;
 
-![image](/images/user-guide/entity-views/new-entity-view.png) 
+![image](https://img.thingsboard.io/user-guide/entity-views/new-entity-view.png) 
 
 It is important to understand how TB handles telemetry and attribute updates, and how these changes affect Entity Views.
 
@@ -47,7 +47,7 @@ For performance reasons, target entity attributes are not propagated to entity v
 You can enable automatic propagation by configuring a "copy to view" rule node in your rule chain and linking "Post attributes" and "Attributes Updated"
 messages to the new rule node.
 
-![image](/images/user-guide/entity-views/rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/entity-views/rule-chain.png)
 
 ## Future improvements
 

@@ -32,10 +32,10 @@ contactUsModal: "true"
 <section class="smart-farming-overview">
     <div class="img-comp-container">
         <div class="img-comp-img">
-            <img class="traditional-background" src="/images/usecases/smart-farming/smart-farming-2.webp" alt="Silos monitoring dashboard in dark mode with temperature graphs, crop levels, and alarm logs in ThingsBoard" title="Silo monitoring (dark mode) – live telemetry, graphs, and alerts via ThingsBoard IoT platform">
+            <img class="traditional-background" src="https://img.thingsboard.io/usecases/smart-farming/smart-farming-2.webp" alt="Silos monitoring dashboard in dark mode with temperature graphs, crop levels, and alarm logs in ThingsBoard" title="Silo monitoring (dark mode) – live telemetry, graphs, and alerts via ThingsBoard IoT platform">
         </div>
         <div class="img-comp-img img-comp-overlay">
-            <img class="traditional-background" src="/images/usecases/smart-farming/smart-farming-1.webp" alt="Silos monitoring dashboard in light mode showing crop level, temperature, moisture, and alarms using ThingsBoard" title="Silo monitoring (light mode) – real-time crop level, temperature, and alarm tracking in ThingsBoard">
+            <img class="traditional-background" src="https://img.thingsboard.io/usecases/smart-farming/smart-farming-1.webp" alt="Silos monitoring dashboard in light mode showing crop level, temperature, moisture, and alarms using ThingsBoard" title="Silo monitoring (light mode) – real-time crop level, temperature, and alarm tracking in ThingsBoard">
         </div>
     </div>
 </section>
@@ -55,7 +55,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart energy solution architecture" title="Smart energy solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -143,11 +143,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-farming/grain-1.svg" alt="Grain & oilseed storage" title="Grain & oilseed storage"></div>
-            <div class="application-image"><img src="/images/usecases/smart-farming/orchards-1.svg" alt="Viticulture & orchards" title="Viticulture & orchards"></div>
-            <div class="application-image"><img src="/images/usecases/environment-monitoring/agriculture-1.svg" alt="Greenhouse farming" title="Greenhouse farming"></div>
-            <div class="application-image"><img src="/images/usecases/smart-farming/logistics-1.svg" alt="Agri-logistics & cold chain" title="Agri-logistics & cold chain"></div>
-            <div class="application-image"><img src="/images/usecases/smart-farming/sheep-1.svg" alt="Livestock farming" title="Livestock farming"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-farming/grain-1.svg" alt="Grain & oilseed storage" title="Grain & oilseed storage"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-farming/orchards-1.svg" alt="Viticulture & orchards" title="Viticulture & orchards"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/environment-monitoring/agriculture-1.svg" alt="Greenhouse farming" title="Greenhouse farming"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-farming/logistics-1.svg" alt="Agri-logistics & cold chain" title="Agri-logistics & cold chain"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-farming/sheep-1.svg" alt="Livestock farming" title="Livestock farming"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -162,7 +162,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-farming/grain-2.svg" alt="Grain & oilseed storage" title="Grain & oilseed storage"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-farming/grain-2.svg" alt="Grain & oilseed storage" title="Grain & oilseed storage"></div>
             <div class="text-block">
                 <h3>Grain & oilseed storage</h3>
                 <p>Enables remote monitoring of fuel tanks with automated alarms and minimal maintenance requirements.</p>
@@ -173,10 +173,10 @@ contactUsModal: "true"
                 <h3>Viticulture & orchards</h3>
                 <p>Tracks fuel levels in fleet tankers and depots, integrated with GPS and routing systems.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-farming/orchards-2.svg" alt="Viticulture & orchards" title="Viticulture & orchards"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-farming/orchards-2.svg" alt="Viticulture & orchards" title="Viticulture & orchards"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/environment-monitoring/agriculture-2.svg" alt="Greenhouse farming" title="Greenhouse farming"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/environment-monitoring/agriculture-2.svg" alt="Greenhouse farming" title="Greenhouse farming"></div>
             <div class="text-block">
                 <h3>Greenhouse farming</h3>
                 <p>Tracks water or fertilizer tank levels on farms, with location-based analysis and consumption forecasting.</p>
@@ -187,10 +187,10 @@ contactUsModal: "true"
                 <h3>Agri-logistics & cold chain</h3>
                 <p>Monitors chemical storage tanks for compliance and safety in industrial environments.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-farming/logistics-2.svg" alt="Agri-logistics & cold chain" title="Agri-logistics & cold chain"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-farming/logistics-2.svg" alt="Agri-logistics & cold chain" title="Agri-logistics & cold chain"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-farming/sheep-2.svg" alt="Livestock farming" title="Livestock farming"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-farming/sheep-2.svg" alt="Livestock farming" title="Livestock farming"></div>
             <div class="text-block">
                 <h3>Livestock farming</h3>
                 <p>Manages city tanks for drinking water or chemicals with centralized monitoring and regulatory reporting.</p>
@@ -205,7 +205,7 @@ contactUsModal: "true"
         <p>Smart farming with ThingsBoard offers a complete end-to-end IoT solution for agricultural operations. From field to storage, it unifies device connectivity, real-time analytics, control systems, and user-friendly dashboards. By adopting this solution, agri-businesses can boost productivity, ensure compliance, minimize losses, and gain full transparency over their entire value chain.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -326,11 +326,11 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-farming/smart-farming-1.webp' alt='Silos monitoring dashboard in light mode showing crop level, temperature, moisture, and alarms using ThingsBoard' title='Silo monitoring (light mode) – real-time crop level, temperature, and alarm tracking in ThingsBoard'/>",
-                "<img src='/images/usecases/smart-farming/smart-farming-2.webp' data-bg='#092035' alt='Silos monitoring dashboard in dark mode with temperature graphs, crop levels, and alarm logs in ThingsBoard' title='Silo monitoring (dark mode) – live telemetry, graphs, and alerts via ThingsBoard IoT platform'/>",
-                "<img src='/images/usecases/smart-farming/smart-farming-3.webp' alt='Silo A dashboard with real-time charts for moisture, temperature, crop level, and alarm log in ThingsBoard' title='Monitor Silo A – live temperature, crop fill level, moisture, and alerts'/>",
-                "<img src='/images/usecases/smart-farming/smart-farming-4.webp' alt='Silo B dashboard showing moisture, crop level, temperature graph, and active critical alarms in ThingsBoard' title='Silo B status – high temperature warnings, real-time monitoring of environmental and crop data'/>",
-                "<img src='/images/usecases/smart-farming/smart-farming-5.webp' alt='Silo C dashboard with temperature and moisture tracking, crop level chart, and no current alarms in ThingsBoard' title='Silo C live monitoring – stable environmental conditions, no alarms'/>"
+                "<img src='https://img.thingsboard.io/usecases/smart-farming/smart-farming-1.webp' alt='Silos monitoring dashboard in light mode showing crop level, temperature, moisture, and alarms using ThingsBoard' title='Silo monitoring (light mode) – real-time crop level, temperature, and alarm tracking in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-farming/smart-farming-2.webp' data-bg='#092035' alt='Silos monitoring dashboard in dark mode with temperature graphs, crop levels, and alarm logs in ThingsBoard' title='Silo monitoring (dark mode) – live telemetry, graphs, and alerts via ThingsBoard IoT platform'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-farming/smart-farming-3.webp' alt='Silo A dashboard with real-time charts for moisture, temperature, crop level, and alarm log in ThingsBoard' title='Monitor Silo A – live temperature, crop fill level, moisture, and alerts'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-farming/smart-farming-4.webp' alt='Silo B dashboard showing moisture, crop level, temperature graph, and active critical alarms in ThingsBoard' title='Silo B status – high temperature warnings, real-time monitoring of environmental and crop data'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-farming/smart-farming-5.webp' alt='Silo C dashboard with temperature and moisture tracking, crop level chart, and no current alarms in ThingsBoard' title='Silo C live monitoring – stable environmental conditions, no alarms'/>"
             ];
             return images[index];
         }

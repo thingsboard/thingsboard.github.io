@@ -23,7 +23,11 @@ Prefer visual learning? Check out our step-by-step getting started video tutoria
     </div>
 </div>
 
+<hr>
+
 {% include templates/prerequisites-pe.md %}
+
+<hr>
 
 ## Step 1. Provision device
 
@@ -33,17 +37,18 @@ To add a new device, follow these steps:
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
 
-You will also receive a notification upon adding devices. Click the bell icon (top right) to view notifications.
+You will also receive a notification upon adding devices. Click the **bell icon** (top right) to view notifications.
 
 {% include images-gallery.html imageCollection="step11" %}
 
 [Learn more about notifications here](#step-6-alarm-notifications).
 
-<br>
 **Additional provisioning methods**
 - [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/){:target="_blank"}: Import multiple devices via CSV through the UI.
 - [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/){:target="_blank"}: Configure devices to self-register automatically. 
 - [REST API](/docs/{{docsPrefix}}api/){:target="_blank"} provisioning: Manage devices programmatically through APIs.
+
+<hr>
 
 ## Step 2. Connect device
 
@@ -53,6 +58,8 @@ Let&#39;s verify your device&#39;s connection to ThingsBoard:
 
 <br>
 Explore [ThingsBoard API reference](/docs/{{docsPrefix}}api){:target="_blank"}. Here you will find more detailed information about all supported protocols for connecting devices.
+
+<hr>
 
 ## Step 3. Create dashboard
 
@@ -118,23 +125,86 @@ To use dynamic entities (for example, devices of a certain type or related to a 
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
 You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/){:target="_blank"}.
 
+<hr>
+
 ## Step 4. Configure alarm rules
 
-We&#39;ll use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} feature to define a rule that triggers an alarm when the temperature exceeds 25 °C.
-Alarm rules are configured in the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} used by the target device. 
+We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} feature to define a rule that triggers when the temperature exceeds **25°C**.   
+Alarm rules can be configured either at the **device level** or at the [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"} level used by the target device.
 
-In our example, "My new device" uses the "default" device profile. While it&#39;s best practice to create separate profiles for each device type, we&#39;ll skip that step here for simplicity.
+> **Recommendation:** If the same rule needs to be applied to multiple devices, create it at the **Device profile** level.   
+This ensures centralized alarm logic management, simplifies maintenance, and eliminates configuration duplication.
 
-{% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
+In this example, we will configure the alarm rule directly on the device "**My New Device**".
+
+<br><b><font size="4">Step 4.1 Open the device settings</font></b>
+- Go to the **Devices** page in the **Entities** section.
+- Click **My New Device** to open its details.
+- Navigate to the **Alarm rules** tab.
+- Click the "**+**" button and select **Create new alarm rule**.
+
+<b><font size="4">Step 4.2 Configure the General parameters</font></b>
+
+In the **General** section, specify the **alarm type** — *High temperature* (or any other name you prefer) — which serves as both the name and the unique identifier of the alarm.
+
+<b><font size="4">Step 4.3 Add argument</font></b>
+
+Before defining the alarm trigger condition, you must add at least one **argument** — the data source that the rule will use.
+
+In the **Arguments** section, click **Add argument** and fill in:
+- **Entity type:** *Current entity*
+- **Argument type:** *Latest telemetry*
+- **Time series key:** <span class="code-light">temperature</span>
+- **Argument name:** temperature
+- Click **Add**.
+
+This creates the <span class="code-light">temperature</span> variable that will be used in the alarm rule conditions.
+
+<b><font size="4">Step 4.4 Configure the alarm trigger condition</font></b>
+
+In the **Trigger condition** section, click **Add trigger condition**.
+
+- **Severity:** *Critical*
+- **Condition** 
+  - Click **Add condition**.
+  - In the configuration window, click **Add argument filter** and specify:
+    - **General** block:
+      - **Argument:** temperature (the argument added earlier)
+      - **Value type:** *Numeric*
+    - **Filters** block:
+      - Click **Add**
+      - **Operation:** *greater than* 
+      - **Value source:** Static
+      - **Value:** <span class="code-light">25</span>
+    - Click **Add**. 
+  - **Type:** *Simple*
+  - Click **Save**.
+
+As a result, the alarm will trigger immediately when the temperature exceeds **25°C**.
+
+<b><font size="4">Save the rule</font></b>
+
+Click the **Add** button to save the new alarm creation rule.
+
+The rule takes effect immediately after it is saved.
+
+{% include images-gallery.html imageCollection="step4" %}
+
+We also recommend reviewing the [alarm rule configuration examples](/docs/{{docsPrefix}}user-guide/alarm-rules/#examples-of-alarm-rule-configurations){:target="_blank"}
+
+<hr>
 
 ## Step 5. Create alarm
 
-Now, our alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), and we should send new telemetry on behalf of the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
-> Note that the temperature value should be **26 or higher** to raise the alarm. Once we send a new temperature reading, we should immediately see a new alarm on our dashboard.
+Now that the alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)), you need to send new telemetry data from the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
+
+> **Important:** The alarm will be created only when the temperature value exceeds the threshold of 25°C defined in the alarm creation condition.
+
+**What happens after sending telemetry**
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules){:target="_blank"} and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms){:target="_blank"}.
+<hr>
 
 ## Step 6. Alarm notifications
 
@@ -148,6 +218,8 @@ Additionally, [ThingsBoard PE Mobile Application](/docs/pe/mobile/){:target="_bl
 Follow [this guide](/docs/pe/mobile/getting-started/){:target="_blank"} to install the ThingsBoard mobile app and set up notifications.
 
 Enjoy exploring ThingsBoard!
+
+<hr>
 
 ## Step 7. Share dashboard with customers
 
@@ -211,9 +283,13 @@ To learn more about permissions and role-based access control (RBAC), click [her
 
 {% include images-gallery.html imageCollection="step75" %}
 
+<hr>
+
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
+
+<hr>
 
 ## Your feedback
 

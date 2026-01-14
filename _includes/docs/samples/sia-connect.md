@@ -28,7 +28,7 @@ docker run -it -p 4840:4840 thingsboard/tb-gw-opcua-server:latest
 
 After running the docker image, you will see the following logs in your terminal:
 
-![image](/images/user-guide/integrations/sia-connect/terminal-opc-ua.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sia-connect/terminal-opc-ua.png)
 
 ## Setup SIA Connect
 

@@ -217,7 +217,7 @@ Few things to notice:
 - Import following json file: [**SODAQ UDP Uplink Data Converter**](/docs/user-guide/resources/sodaq/sodaq_udp_uplink_data_converter.json) (left click on the link and then 'Ctrl+S' to download)
 as described on the following screencast:
 
-<img data-gifffer="/images/user-guide/integrations/sodaq/import-udp-converter_updated.gif" alt="import udp converter updated">
+<img data-gifffer="https://img.thingsboard.io/user-guide/integrations/sodaq/import-udp-converter_updated.gif" alt="import udp converter updated">
 
 ## Step 2. Integration configuration
 
@@ -226,7 +226,7 @@ as described on the following screencast:
   Please, note that you should copy **Integration key** and **Integration secret** as described in the [**UDP Integration Setup**](/docs/user-guide/integrations/udp/#udp-integration-setup) guide.
 
 
-<img data-gifffer="/images/user-guide/integrations/sodaq/create-udp-integration.gif" alt="create udp integration">
+<img data-gifffer="https://img.thingsboard.io/user-guide/integrations/sodaq/create-udp-integration.gif" alt="create udp integration">
 
 - Fill in the fields with the input data shown in the following table:
 
@@ -299,7 +299,7 @@ Navigate to Integration Debug Events and check that data real arrives and is pro
 
 Device with name **357518080211964** should be created.
 
-<img data-gifffer="/images/user-guide/integrations/sodaq/validate-udp-integration.gif" alt="validate udp integration">
+<img data-gifffer="https://img.thingsboard.io/user-guide/integrations/sodaq/validate-udp-integration.gif" alt="validate udp integration">
 
 ## Next steps
 

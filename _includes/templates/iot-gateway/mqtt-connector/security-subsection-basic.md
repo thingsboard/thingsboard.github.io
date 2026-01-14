@@ -4,7 +4,7 @@ consider certificate-based authentication.
 
 {% assign securityBasic = '
     ===
-        image: /images/gateway/mqtt-connector/security-basic-basic-subsection-1-ce.png,
+        image: https://img.thingsboard.io/gateway/mqtt-connector/security-basic-basic-subsection-1-ce.png,
     '
 %}
 

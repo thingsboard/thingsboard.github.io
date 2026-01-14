@@ -20,7 +20,7 @@ PC.
 6. After logging in, you must set a new password for security reasons. You will not be able to interact with the router’s WebUI until the default password is changed;
 7. Next, the Configuration Wizard will help you set up some of the router's main operational parameters.
 
-![](/images/devices-library/ready-to-go-devices/teltonika-rut955/wired-connection-1.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/wired-connection-1.png)
 <br><br>
 
 **For macOS:**
@@ -32,7 +32,7 @@ PC.
 6. After logging in, you must set a new password for security reasons. You will not be able to interact with the router’s WebUI until the default password is changed;
 7. Next, the Configuration Wizard will help you set up some of the router's main operational parameters.
 
-![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-macos-ip.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-macos-ip.png)
 <br><br>
 
 **For Ubuntu Linux:**
@@ -44,5 +44,5 @@ PC.
 6. After logging in, you must set a new password for security reasons. You will not be able to interact with the router’s WebUI until the default password is changed;
 7. Next, the Configuration Wizard will help you set up some of the router's main operational parameters.
 
-![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-linux-ip.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-linux-ip.png)
 <br><br>

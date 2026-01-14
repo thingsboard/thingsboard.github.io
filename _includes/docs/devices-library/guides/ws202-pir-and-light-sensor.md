@@ -15,7 +15,6 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [WS202 PIR & Light Sensor]({{deviceVendorLink}}){: target="_blank"} is a PIR sensor based on passive infrared technology to detect a motion or occupancy.  
 WS202 can detect whether there is a movement within the range of 6-8 m.  
 Besides, WS202 equips with a light sensor which can link PIR detection results to trigger scenes.  
@@ -31,6 +30,7 @@ LoRaWAN® enables encrypted radio transmissions over long distances while consum
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
+
 
 
 ## Device connection
@@ -64,3 +64,4 @@ Loriot
 ## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include add-device-banner.liquid %}

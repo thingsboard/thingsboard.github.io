@@ -17,10 +17,10 @@ The table below describes the parameters for this purpose:
 
 {% assign advancedConnectionSettings = '
     ===
-        image: /images/gateway/modbus-connector/advanced-connection-settings-1-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/advanced-connection-settings-1-ce.png,
         title: Click on the "**Advanced connection settings**" subsection to open it;
     ===
-        image: /images/gateway/modbus-connector/advanced-connection-settings-2-ce.png,
+        image: https://img.thingsboard.io/gateway/modbus-connector/advanced-connection-settings-2-ce.png,
         title: Make the necessary settings.
 '
 %}
@@ -37,4 +37,4 @@ parameters required to configure TLS connection:
 | Server hostname                 | Server hostname (Should match with hostname in certificate) |
 | ---                             |                                                             |
 
-![image](/images/gateway/modbus-connector/tls-connection.png)
+![image](https://img.thingsboard.io/gateway/modbus-connector/tls-connection.png)

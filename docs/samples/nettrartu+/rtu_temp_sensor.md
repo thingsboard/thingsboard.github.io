@@ -19,7 +19,7 @@ The RTU+ is easly configurable via a [RTU+ Configuration Interface](https://nett
 
 Once you complete this sample/tutorial, you will see your sensor data on a dashboard like the following on the right.
 <br><br>
-![image](/images/samples/nettrartu+/nettrartu+.png)   ![image](/images/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
+![image](https://img.thingsboard.io/samples/nettrartu+/nettrartu+.png)   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 
 ## Prerequisites
 
@@ -40,7 +40,7 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 The following picture summarizes the connections for this simple project:
 <br><br>
 
-![image](/images/samples/nettrartu+/rtu_temp_sensor/connection_diagram.png)
+![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/connection_diagram.png)
 
 ## ThingsBoard configuration
 
@@ -53,12 +53,12 @@ Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). S
 1. Go to *"Devices"* section. 
 2. Click *"+"* button and create a device with the name **"RTU+"**. Set *"Device type"* to **"default"**.
 <br><br>
-![image](/images/samples/nettrartu+/device.png)
+![image](https://img.thingsboard.io/samples/nettrartu+/device.png)
 <br><br>
 3. Once device created, open its details and click *"Manage credentials"*.
 4. Copy auto-generated access token from the *"Access token"* field. Please save this device token. It will be referred to later as **$RTU_DEMO_TOKEN**.
 <br><br>
- ![image](/images/samples/nettrartu+/credentials.png)
+ ![image](https://img.thingsboard.io/samples/nettrartu+/credentials.png)
 
 ### Dashboard
 
@@ -78,11 +78,11 @@ Use import/export [instructions](/docs/user-guide/ui/dashboards/#iot-dashboard-i
    3. Select the USB port *"Puerto"* you have connected the RTU+, *"Baud rate":* **"9600"** (by default), and *"Paridad":* **"Sin paridad"**. 
    4. Click *"Connect"*.
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/serial_connection.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/serial_connection.png)
 
    Once you are connected you should see this icon :
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/connected.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/connected.png)
 
 ## RTU+ configuration
 
@@ -95,7 +95,7 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 3. Tick the box **"DHCP"** as shown in next image. 
 4. Save clicking *"Aplicar cambios"*.
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/ethernet_conf.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/ethernet_conf.png)
 
 ### MQTT
 
@@ -120,12 +120,12 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 
 5. Click *"Aplicar cambios"* to save.
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/mqtt_conf.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/mqtt_conf.png)
 
    You should see in *"Estado"*: *"Conectado"* (MQTT status: Connected)
    (It could take some minutes the first time)
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/status.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/status.png)
 
 ### Time
 
@@ -133,7 +133,7 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 
 2. Click *"Configurar Hora"*.
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/configure_time.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/configure_time.png)
 
 ### Analog input
 
@@ -145,13 +145,13 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
    Select *"Corriente"* in *"Entrada Analógica 0: "*. Fill *"X0"* with **"819"** and *"X1"* with **"4096"**. Fill *"Y0"* with minimum sensor temperature and *"Y1"* with maximum sensor temperature.<br>
    Example: Sensor Range: -10°C to 100°C. *"X0" = 819*, *"Y0" = -10*, *"X1" = 4096* and *"Y1" = 100*
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/current_input.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/current_input.png)
 
    If your temperature sensor output range is between **0-20V** :<br>
    Select *"Tensión"* in *"Entrada Analógica 0: "*. Fill *"X0"* with **"0"** and *"X1"* with **"4096"**. Fill *"Y0"* with minimum sensor temperature and *"Y1"* with maximum sensor temperature.<br>
    Example: Sensor Range: -10°C to 100°C. *"X0" = 0*, *"Y0" = -10*, *"X1" = 4096* and *"Y1" = 100*
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/voltage_input.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/voltage_input.png)
 
 3. Click *"Aplicar cambios"* to save.
 
@@ -196,11 +196,11 @@ while(1)
 1. Go to *"Nettra-C"* 
 2. Import the script clicking *"Cargar"*. If you want to make your own script, you can see the [Nettra C](https://nettra.tech) user manual.
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/import_script.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/import_script.png)
 
 3. Compile and save the script in the RTU+ by clicking *"Compilar y Aplicar"*.
 
-   ![image](/images/samples/nettrartu+/rtu_temp_sensor/script_running.png)
+   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/script_running.png)
 
 ## Data visualization
 
@@ -209,12 +209,12 @@ Finally, open ThingsBoard Web UI in the Live Demo server with same user and pass
 Go to *"Devices"* section and locate *"RTU+ Device"*, open device details and switch to *"Latest telemetry"* tab.
 If all is configured correctly you should be able to see latest values of *"temperature"* in the table.<br><br>
 
-![image](/images/samples/nettrartu+/rtu_temp_sensor/telemetry_table.png)
+![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/telemetry_table.png)
 
 After, open *"Dashboards"* section then locate and open *"RTU+"* dashboard.
 As a result, you will see a time-series chart displaying temperature level (similar to dashboard image in the introduction).<br><br>
 
-![image](/images/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
+![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 
 ## See also
 

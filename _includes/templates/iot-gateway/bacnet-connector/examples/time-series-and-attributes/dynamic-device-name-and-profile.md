@@ -48,7 +48,7 @@ In this configuration:
 After applying this configuration, the device will be created with a name and profile that reflect its specific 
 properties. The screenshot below shows how the device appears in ThingsBoard with the dynamic name and profile:
 
-![image](/images/gateway/bacnet-connector/examples/dynamic-device-name-and-profile-overview.png)
+![image](https://img.thingsboard.io/gateway/bacnet-connector/examples/dynamic-device-name-and-profile-overview.png)
 
 As you can see, the device name is generated based on the `objectName` and `address`, and the device profile is based 
 on the `vendorId`.

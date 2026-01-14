@@ -18,7 +18,7 @@ To access the calculated fields tool, click on the icon **√x**  labeled "Calcu
 Within this section, a table lists all created calculated fields, along with key details. You can open, modify, or perform other actions on any of these fields.
 To create a new calculated field, click the "Create Calculation Field" button.
 
-![image](/images/trendz/calculations/calculated-field-create.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-field-create.png)
 
 
 ## Function Tab
@@ -54,7 +54,7 @@ Aggregation function applied to a grouped dataset. Find more details about [Aggr
 For details on writing functions for [Calculated Fields](/docs/trendz/calculations/overview/#examples), refer to the corresponding documentation section.
 Choose to work with aggregated or raw data by enabling [batch mode](/docs/trendz/calculations/batch/)  as needed.
 
-![image](/images/trendz/calculations/calculated-function-tab.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-function-tab.png)
 
 
 
@@ -75,7 +75,7 @@ The Input section allows you to define and understand the data that will be used
 
 This setup makes sure the data is defined correctly, allowing for accurate calculations and useful insights.
 
-![image](/images/trendz/calculations/calculated-input-tab.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-input-tab.png)
 
 
 
@@ -89,7 +89,7 @@ When you click "Run test," you will access the Output tab, featuring the followi
 
 ***Logs:*** Shows logs similar to those in the browser console.
 
-![image](/images/trendz/calculations/calculated-output-tab.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-output-tab.png)
 
 
 
@@ -112,7 +112,7 @@ var fahrenheit = celsius*1.8 + 32;
 return fahrenheit;
 {% endhighlight %}   
 
-![image](/images/trendz/calculations/calculated-simple.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-simple.png)
 
 **Multiple fields for calculation**
 
@@ -134,7 +134,7 @@ var size = uniq(apartment.area);
     return (energy + heat) / size;
 {% endhighlight %}   
 
-![image](/images/trendz/calculations/calculated-complex-config.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-complex-config.png)
 
 **Get original field value**
 
@@ -164,7 +164,7 @@ If a field with the same name or key already exists, the system will notify you 
 
 During the saving process, you have the option to "Enable" the calculated field. When enabled, the calculated field will be recorded as telemetry in ThingsBoard with the specified parameters.
 
-![image](/images/trendz/calculations/calculated-enable.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-enable.png)
 
 For more details, refer to the [Save Metric to ThingsBoard](/docs/trendz/calculations/save-to-thingsboard/) section.
 
@@ -187,7 +187,7 @@ Once saved, you can modify your calculations as needed. Here's how the process w
 * *Future Data:* Without running the Reprocess Task, the updated calculation only applies to new data recorded after re-saving, leaving historical data unchanged.
 * *How to Run the Reprocess Task:* Go to the Tasks tab and click the “Run Reprocess Task” button to apply the updated calculation to all relevant historical data.
 
-![image](/images/trendz/calculations/calculated-reprocess-task.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-reprocess-task.png)
 
 This functionality ensures seamless management of calculations, consistently reflecting updates across all areas where the calculation is applied.
 
@@ -200,7 +200,7 @@ Once you have created and saved a calculation in Trendz, it can be used in view 
 * *Business Entities List:* Calculations created by a tenant will appear in the list of business entities under the name provided during creation. This allows for easy selection and integration into view fields.
 * *Telemetry Display for Customers:* Once enabled, the calculated data becomes visible to end users as telemetry. It will be displayed under the key name defined in the calculation, making it accessible in dashboards and widgets.
 
-![image](/images/trendz/calculations/calculated-view-fields.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-view-fields.png)
 
 **Using the Calculation in Views**
 
@@ -210,13 +210,13 @@ Simply select the desired calculation to include it in the view field. The data 
 * *ThingsBoard Data (TB):* Calculations saved as telemetry in ThingsBoard can be displayed in view fields for historical or periodically updated data. These calculations update according to the schedule set in the task settings.
 * *Real-Time Data (RT):* For immediate data needs, real-time calculations can be utilized. Note that RT calculations might take longer to process than batch-calculated data.
 
-![image](/images/trendz/calculations/calculated-real-time.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-real-time.png)
 
 **Editing and Managing Calculations:**
 
 To adjust or manage a calculation after adding it to a view field, access the calculation settings directly from the view field configuration by pressing the "Go to calculation field" button.
 
-![image](/images/trendz/calculations/calculated-go-to-calculation.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-go-to-calculation.png)
 
 
 ## Disabled Calculation
@@ -224,7 +224,7 @@ To adjust or manage a calculation after adding it to a view field, access the ca
 If a calculated field is disabled isn't saved in ThingsBoard as telemetry, it will appear normally in the list of business entity fields.
 However, when you drag this field into the chart-building area, a red bell icon will appear next to it. By clicking on the red bell icon, you can go directly to the created calculated field, where you can enable it as telemetry.
 
-![image](/images/trendz/calculations/calculated-disabled-bell.png)
+![image](https://img.thingsboard.io/trendz/calculations/calculated-disabled-bell.png)
 
 By following these steps, you can effectively use created calculations within view fields, making sure your data analysis is both complete and exact.
 

@@ -31,7 +31,7 @@ We will modify default rule chain and will add [**transformation**](/docs/user-g
 We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
 Please note that we have removed irrelevant rule nodes from the root rule chain as well.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/transformation/rule-chain.png)
 
 Let's assume the data that arrive to a system may or may not have the "temperature" field. 
 We will treat all data that does not have "temperature" field as valid. In order to do this we will use the following function
@@ -53,9 +53,9 @@ return {msg: msg, metadata: metadata, msgType: msgType};
 
 Let's check that our script is correct by using built-in "Test transformer function" button
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/node-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/transformation/node-config.png)
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/transformation/test-function.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/transformation/test-function.png)
 
 You can check few more cases, for example when temperature is not set.
 
@@ -63,7 +63,7 @@ You can check few more cases, for example when temperature is not set.
 
 Download and import attached json [**file**](/docs/user-guide/resources/transformation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
 ## Next steps
 

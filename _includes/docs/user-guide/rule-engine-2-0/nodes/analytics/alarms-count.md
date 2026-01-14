@@ -6,7 +6,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
 
 Count alarms when receives input message about new alarm. The input message may be 'ALARM', 'ALARM_ACK', 'ALARM_CLEAR', or 'ENTITY_CREATED' and 'ENTITY_UPDATED' message about the alarm. 
 Executes count query based on the alarm count mappings and the originator of the message (device, asset, etc.) 
@@ -17,14 +17,14 @@ Message of type **POST_TELEMETRY_REQUEST** is generated for each entity and alar
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config-new.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config-new.png)
 
 - **Count alarms for propagation entities** - if enabled, will count alarms not only for originator of the alarm, but also for all propagated entities.
 - **Alarms count mappings** - table of mapping configurations specifying rules used to count alarms.
 
 Mapping Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
 
 - **Target telemetry** - name of the target telemetry key of the entity used to store alarms count result.
 - **Status filter** - list of allowed alarm statuses used to filter alarms. If not specified alarms with any status will be selected.
@@ -39,6 +39,6 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>

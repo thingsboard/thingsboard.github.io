@@ -1,4 +1,4 @@
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node.png)
 
 **Deduplicate messages within the same Originator entity for a configurable period based on a specified deduplication strategy.** 
 
@@ -9,8 +9,8 @@ Deduplication strategies:
 
 Configuration:
 {% if docsPrefix == null %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-ce.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-ce.png"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix contains "paas/") %}
-<object width="70%" data="/images/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-pe.png"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-nodes/deduplication-node-2-pe.png"></object>
 {% endif %}

@@ -2635,7 +2635,7 @@
               "viewFormat": "grid",
               "autoFillHeight": false,
               "rowHeight": 70,
-              "backgroundImageUrl": "tb-image;/api/images/tenant/pressure.jpg",
+              "backgroundImageUrl": "tb-image;/apihttps://img.thingsboard.io/tenant/pressure.jpg",
               "mobileAutoFillHeight": false,
               "mobileRowHeight": 70
             }

@@ -15,7 +15,7 @@ This guide describes how Trendz uses entities from ThingsBoard, like asset, devi
 Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
 Here is how our topology will look like:
 
-![image](/images/reference/pe-demo/smart-metering-model.svg)
+![image](https://img.thingsboard.io/reference/pe-demo/smart-metering-model.svg)
 
 
 In fact, Trendz operates with this topology as with the flat table that has columns for all attributes/telemetry from all Devices/Assets in this topology.
@@ -75,7 +75,7 @@ Follow the steps below:
 4. **Disable Unwanted Relations:** For each unwanted relation, uncheck the **Enabled** checkbox to deactivate it.
 5. **Save Changes:** Click the **Save** button to apply your changes.
 
-![image](/images/trendz/be-enable-relation.png)
+![image](https://img.thingsboard.io/trendz/be-enable-relation.png)
 
 This process ensures that only the necessary relations are active, preventing conflicts and enabling accurate report generation.
 

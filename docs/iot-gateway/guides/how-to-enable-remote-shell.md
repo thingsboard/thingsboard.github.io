@@ -36,13 +36,13 @@ To enable the remote shell feature, configure the corresponding parameter in the
 
 {% assign enableRemoteShell = '
     ===
-        image: /images/gateway/remote-shell/remote-shell-1.png,
+        image: https://img.thingsboard.io/gateway/remote-shell/remote-shell-1.png,
         title: Go to the **Entities** > **Gateways** tab and click on the desired gateway.
     ===
-        image: /images/gateway/remote-shell/remote-shell-2.png,
+        image: https://img.thingsboard.io/gateway/remote-shell/remote-shell-2.png,
         title: Click on the **"General configuration"** button on the right panel.
     ===
-        image: /images/gateway/remote-shell/remote-shell-3.png,
+        image: https://img.thingsboard.io/gateway/remote-shell/remote-shell-3.png,
         title: In the opened window, navigate to the **General** tab and enable the **"Remote shell"** option. Click on the **"Save"** button to apply the changes.
 '
 %}
@@ -55,10 +55,10 @@ To navigate to the remote shell, follow these steps:
 
 {% assign navigateToRemoteShell = '
     ===
-        image: /images/gateway/remote-shell/remote-shell-4.png,
+        image: https://img.thingsboard.io/gateway/remote-shell/remote-shell-4.png,
         title: On the selected gateway page, click on the **"Remote shell"** button on the right panel.
     ===
-        image: /images/gateway/remote-shell/remote-shell-5.png,
+        image: https://img.thingsboard.io/gateway/remote-shell/remote-shell-5.png,
         title: Now you can see the shell interface (_connection setups automatically_).
 '
 %}
@@ -67,7 +67,7 @@ To navigate to the remote shell, follow these steps:
 
 For example, we run **ls** command to get the list of files and directories in the current directory:
 
-![](/images/gateway/remote-shell/remote-shell-6.png)
+![](https://img.thingsboard.io/gateway/remote-shell/remote-shell-6.png)
 ## Next steps
 
 Explore guides related to main ThingsBoard features:

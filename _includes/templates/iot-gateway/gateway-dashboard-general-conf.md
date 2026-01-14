@@ -14,4 +14,4 @@ General - this tab contains the main settings, namely:
   - On value change or report period - sends gateway status when the value changes or report period.
   - On received - sends gateway status after receiving data from the device (default strategy).
 
-![](/images/gateway/dashboard/gateway-dashboard-general-conf.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-general-conf.png)

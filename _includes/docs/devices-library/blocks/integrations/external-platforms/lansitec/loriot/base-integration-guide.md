@@ -10,19 +10,19 @@ To add a gateway, you can follow next steps:
 
 {% assign loriotAddGateway = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-1.png,
         title: Login to Loriot server. Open the "**Sample network**" or create a new one in the "**Networks**" section.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-2.png,
         title: Click on the "**Add Gateway**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-3.png,
         title: Scroll down and select "**MultiTech Conduit AEP**".
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-4.png,
         title: Scroll up and put information about the gateway **MAC Address** (Just remove **FFFF** or **FFFE** in the middle of **gateway EUI**) into **eth0 MAC address** and gateway EUI to **Custom EUI** field.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-5.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-add-gateway-5.png,
         title: The gateway is added. You can see its status - disconnected.
 '
 %}
@@ -37,16 +37,16 @@ To add a device, you can follow next steps:
 
 {% assign loriotAddGateway = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-1.png,
         title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-2.png,
         title: Go to the "**Applications**" page in left menu.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-3.png,
         title: Open your application, in our case it is "**SampleApp**".
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-4.png,
         title: Go to the "**Enroll Device**" page. Fill in the fields, with a configuration from your device. Then click the "**Enroll**" button.
 '
 %}
@@ -78,16 +78,16 @@ Now, navigate to the "**Integrations**" page under the "**Integrations center**"
 
 {% assign ttnsAddGateway = '
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-1.png,
         title: Click "**plus**" icon button in the upper right corner to add new integration. Select type "**Loriot**". Then, click "**Next**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-2.png,
         title: Paste the previously copied script to the Decoder function section. Click "**Next**" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-3.png,
         title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**"button.
     ===
-        image: /images/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/lansitec-lorawan/loriot-intergration-4.png,
         title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}

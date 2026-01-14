@@ -4,43 +4,43 @@ title: Configure white-labeling in ThingsBoard PE Mobile Application
 
 login-white-labeling:
  0:
-  image: /images/mobile/pe/white-labeling-1.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-1.png
   title: 'For tenant level settings input domain in the <b>Domain name</b> field'
  1:
-  image: /images/mobile/pe/white-labeling-2.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-2.png
   title: 'Enter base url in the <b>Base URL</b> field (includes protocol scheme <b>http</b> or <b>https</b> and port if it differs from standard one <b>80</b> or <b>443</b>)'
  2:
-  image: /images/mobile/pe/white-labeling-3.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-3.png
   title: 'Upload desired logo image to the <b>Logo</b> field'
  3:
-  image: /images/mobile/pe/white-labeling-4.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-4.png
   title: 'Specify your logo height if necessary in the <b>Logo height</b> field'
  4:
-  image: /images/mobile/pe/white-labeling-5.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-5.png
   title: 'Select primary color palette in the <b>Primary palette</b> field'
  5:
-  image: /images/mobile/pe/white-labeling-6.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-6.png
   title: 'Click <b>Save</b> button to apply changes'
 
 login-white-labeling-result:
  0:
-  image: /images/mobile/pe/white-labeling-7.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-7.png
   title: 'You should see your logo image on the top of the login form. Buttons and background should be colored according to the selected color palette.'
 
 white-labeling:
  0:
-  image: /images/mobile/pe/white-labeling-8.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-8.png
   title: 'Upload desired logo image to the <b>Logo</b> field'
  1:
-  image: /images/mobile/pe/white-labeling-9.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-9.png
   title: 'Select primary color palette in the <b>Primary palette</b> field'
  2:
-  image: /images/mobile/pe/white-labeling-10.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-10.png
   title: 'Click <b>Save</b> button to apply changes'
 
 white-labeling-result:
  0:
-  image: /images/mobile/pe/white-labeling-11.png
+  image: https://img.thingsboard.io/mobile/pe/white-labeling-11.png
   title: 'You should see your logo image on the top bar of the home screen. Buttons and icons should be colored according to the selected color palette.'
 
 ---

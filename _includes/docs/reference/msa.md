@@ -7,7 +7,7 @@ This article consist of high level diagram, description of data flow between var
 
 ## Architecture diagram
 
- <object width="80%" data="/images/reference/msa-architecture.svg"></object> 
+ <object width="80%" data="https://img.thingsboard.io/reference/msa-architecture.svg"></object> 
   
 ## Transport Microservices
 
