@@ -63,4 +63,4 @@ To do this - we need to press the pen icon and select entity aliases, select ali
 Then, choose a device with name My device from dropdown list and save entity alias. Now, you should be able to see the data from the device. 
 
 If you did everything right, you have to see the following dashboard:
-![dashboard](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)
+![dashboard](/images/device-library/basic/single-board-computers/minicomputer-dashboard.png)
