@@ -137,44 +137,117 @@ var tb = (function () {
 	var CSS_BROWSER_HACK_DELAY = 25;
 
 	$(document).ready(function(){
-		// Safari chokes on the animation here, so...
 		if (navigator.userAgent.indexOf('Chrome') == -1 && navigator.userAgent.indexOf('Safari') != -1){
-			var hackStyle = newDOMElement('style');
+			const hackStyle = newDOMElement('style');
 			hackStyle.innerHTML = '.pi-accordion .wrapper{transition: none}';
 			body.append(hackStyle);
 		}
-		// Gross.
 
 		$('.pi-accordion').each(function () {
-			var accordion = this;
-			var content = this.innerHTML;
-			var container = newDOMElement('div', 'container');
+			const accordion = this;
+			const content = this.innerHTML;
+			const container = newDOMElement('div', 'container');
 			container.innerHTML = content;
 			$(accordion).empty();
 			accordion.appendChild(container);
 			CollapseBox($(container), 0);
 		});
 
-        $('[data-faq-id]').each(function () {
-            var faqAnchor = this;
-            var nodeId = this.getAttribute('data-faq-id');
-            var fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
-            var faqLink = newDOMElement('a', 'faq-link');
-            $(faqLink).css('fontSize', fontSize);
-            faqAnchor.appendChild(faqLink);
-            $(faqLink).click(function() {
-				const sectionIdArr = document.querySelector(`div[data-item-id="${nodeId}"]`).parentElement.parentElement.id.split('-');
-				const sectionId = sectionIdArr[sectionIdArr.length -1];
-				switchFaqSection(sectionId);
-				const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
-				var $parent = $(questionEl).parent();
-				var $loadMoreBtn = $parent.find('.load-more');
-				if ($(questionEl).hasClass('hidden') && $loadMoreBtn.length) {
-					loadMoreFaq($loadMoreBtn[0]);
+		$('[data-faq-id]').each(function () {
+			let faqAnchor = this;
+			let nodeId = this.getAttribute('data-faq-id');
+			let fontSize = this.getAttribute('data-faq-link-size') || 'smaller';
+			let faqLink = newDOMElement('a', 'faq-link');
+			$(faqLink).css('fontSize', fontSize);
+			let contentSource = document.querySelector('div[data-item-id="' + nodeId + '"] .container');
+
+			if (contentSource) {
+				let tooltip = newDOMElement('div', 'faq-tooltip');
+				let fullText = $(contentSource).text().trim().replace(/\s+/g, ' ');
+				let charsPerLine = 28;
+				let maxLines = 5;
+				let maxChars = charsPerLine * maxLines;
+
+				if (fullText.length > maxChars) {
+					let truncatedText = fullText.substring(0, maxChars);
+					let lastSpaceIndex = truncatedText.lastIndexOf(' ');
+					if (lastSpaceIndex > maxChars - 20) {
+						truncatedText = truncatedText.substring(0, lastSpaceIndex);
+					}
+
+					let tooltipContent = newDOMElement('p');
+					tooltipContent.textContent = truncatedText;
+					let readMoreLink = newDOMElement('a', 'read-more-link');
+					readMoreLink.href = 'javascript:void(0)';
+					readMoreLink.textContent = '...read more';
+					tooltipContent.appendChild(readMoreLink);
+
+					tooltip.appendChild(tooltipContent);
+
+					$(readMoreLink).on('click', function(e) {
+						e.stopPropagation();
+						e.preventDefault();
+						navigateToFaq(nodeId);
+					});
+				} else {
+					let clonedContent = $(contentSource).clone();
+					clonedContent.find('a').attr('target', '_blank');
+					$(tooltip).html(clonedContent.html());
 				}
-                setTimeout(()=>openFaqNode(nodeId));
-            });
-        });
+
+				$(tooltip).on('click', function(e) {
+					if (!$(e.target).is('a') && !$(e.target).hasClass('read-more-link')) {
+						e.stopPropagation();
+					}
+				});
+
+				faqLink.appendChild(tooltip);
+			}
+
+			faqAnchor.appendChild(faqLink);
+			$(faqLink).on('click', function() {
+				navigateToFaq(nodeId);
+			});
+		});
+
+		function navigateToFaq(nodeId) {
+			const faqElement = document.querySelector(`div[data-item-id="${nodeId}"]`);
+			if (!faqElement) return;
+
+			const faqSection = faqElement.closest('section[id^="faq-"]');
+			if (faqSection) {
+				const containerId = faqSection.id.replace('faq-', '');
+
+				if (typeof currentFaqContainer !== 'undefined' && containerId !== currentFaqContainer) {
+					const productIdMap = {
+						'thingsboard-ce': 'thingsboard-ce',
+						'thingsboard-cloud': 'thingsboard-cloud',
+						'thingsboard-private-cloud': 'thingsboard-private-cloud',
+						'pe-pay-as-you-go': 'thingsboard-pe',
+						'tbmq-ce': 'tbmq-ce',
+						'tbmq-private-cloud': 'tbmq-private-cloud',
+						'tbmq-pe-pay-as-you-go': 'tbmq-pe'
+					};
+
+					const productId = productIdMap[containerId];
+					if (productId && typeof activateProductSection === 'function') {
+						activateProductSection(productId);
+					}
+				}
+			}
+
+			const sectionIdArr = faqElement.parentElement.parentElement.id.split('-');
+			const sectionId = sectionIdArr[sectionIdArr.length - 1];
+			switchFaqSection(sectionId);
+
+			const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
+			var $parent = $(questionEl).parent();
+			var $loadMoreBtn = $parent.find('.load-more');
+			if ($(questionEl).hasClass('hidden') && $loadMoreBtn.length) {
+				loadMoreFaq($loadMoreBtn[0]);
+			}
+			setTimeout(() => openFaqNode(nodeId));
+		}
 
 		setYAH();
 
@@ -239,12 +312,7 @@ var tb = (function () {
 
 	function CollapseBox(container, index){
 		container.children('.item').each(function(){
-			// build the TOC DOM
-			// the animated open/close is enabled by having each item's content exist in the flow, at its natural height,
-			// enclosed in a wrapper with height = 0 when closed, and height = contentHeight when open.
 			var item = this;
-			// var paddingLeft = 20 * index;
-            // $(item).css('paddingLeft', paddingLeft + 'px');
             $(item).attr('data-level-index', index);
 
 			// only add content wrappers to containers, not to links
