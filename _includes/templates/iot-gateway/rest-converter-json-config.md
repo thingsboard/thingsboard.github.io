@@ -44,7 +44,7 @@ Send this request to the `/test_device` endpoint with the POST method, using Bas
 ```bash
 curl -X POST http://127.0.0.1:5000/test_device \
   -H "Content-Type: application/json" \
-  -u user:passwd \
+  -u username:password \
   -d '{
         "name": "SensorA",
         "sensorModel": "TX100",
@@ -60,7 +60,7 @@ Note: when using `curl -F`, `curl` automatically sets the `Content-Type: multipa
 
 ```bash
 curl -X POST "http://127.0.0.1:5000/test_device" \
-  -u "user:passwd" \
+  -u "username:password" \
   -F 'name=SensorA' \
   -F 'sensorModel=TX100' \
   -F 'temp=23.5' \
@@ -86,8 +86,8 @@ This is how the mapping subsection for both examples above looks like:
   ],
   "security": {
     "type": "basic",
-    "username": "user",
-    "password": "passwd"
+    "username": "username",
+    "password": "password"
   },
   "converter": {
     "type": "json",
@@ -139,8 +139,8 @@ Also, you can combine values from HTTP request in attributes, telemetry and serv
   ],
   "security": {
     "type": "basic",
-    "username": "user",
-    "password": "passwd"
+    "username": "username",
+    "password": "password"
   },
   "converter": {
     "type": "json",
