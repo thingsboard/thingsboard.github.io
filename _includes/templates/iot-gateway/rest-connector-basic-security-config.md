@@ -20,6 +20,7 @@ Security section in configuration file will look like this:
   }
 }
 ```
+{: .copy-code}
 
 Also, make sure that your request have `Authorization` header with provided credentials.
 

@@ -33,6 +33,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
   "server": {
     "host": "127.0.0.1",
     "port": 5000,
+    "SSL": false,
     "security": {
       "cert": "~/ssl/cert.pem",
       "key": "~/ssl/key.pem"
@@ -279,7 +280,7 @@ ThingsBoard allows to provision device attributes and fetch some of them from th
 You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
-The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
+The "**attributeUpdates**" configuration allows configuring the format of the corresponding attribute update messages. 
 
 | **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
 |:-|:-|-

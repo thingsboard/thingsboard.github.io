@@ -7,8 +7,8 @@ A custom converter is converter written for some device:
 | type                          | **custom**                    | Provides information to connector that custom converter will be uses for converting data from request.                          |
 | deviceNameExpression          | **SuperAnonDevice**           | Device name.                                                                                                                    |
 | deviceNameExpressionSource    | **constant**                  | Device name source.                                                                                                             |
-| deviceProfileExpressionSource | **constant**                  | Device profile source.                                                                                                          |
-| deviceProfileExpression       | **default**                   | Device profile name.                                                                                                            |
+| deviceProfileExpressionSource | **constant**                  | Device profile source. It can be constant or request.                                                                           |
+| deviceProfileExpression       | **default**                   | Device profile name. It can be constant or request.                                                                                                           |
 | extension                     | **CustomRESTUplinkConverter** | Name of custom converter class.                                                                                                 |
 | extension-config              |                               | Configuration, for custom converter (You can put anything, there. It will be passed to the converter object on initialization). |
 | key                           | **Totaliser**                 |                                                                                                                                 |
