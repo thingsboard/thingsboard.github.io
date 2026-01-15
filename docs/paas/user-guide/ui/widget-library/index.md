@@ -1,0 +1,11 @@
+---
+layout: docwithnav-paas
+title: Widgets Library
+description: ThingsBoard Dashboard Widgets Library
+
+---
+
+{% assign docsPrefix = "paas/" %}
+{% include get-hosts-name.html docsPrefix=docsPrefix %}
+{% include docs/user-guide/ui/widget-library/index.md %}
+{% include widget-cards.liquid %}
