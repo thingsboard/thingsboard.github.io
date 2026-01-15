@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas-eu
 title: "How to connect 16A Switch & Power Meter compact 16A relay and electricity meter to ThingsBoard?"
-redirect_to: "/device-library/paas/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/"
+redirect_to: "/device-library/paas-eu/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/"
 ---
