@@ -28,7 +28,7 @@ should pop up, and you will be prompted to upload the JSON file and click **“I
 
 Below, you can find the dashboard JSON file:
 
-[Check and control device data dashboard](/docs/devices-library/resources/dashboards/ready-to-go-devices/ace-dashboard.json){:target="_blank" download="ace-dashboard.json"}
+[Check and control device data dashboard](/docs/device-library/resources/dashboards/ready-to-go-devices/ace-dashboard.json){:target="_blank" download="ace-dashboard.json"}
 
 After importing, we should choose an entity alias for our device.  
 To do this - we need to press the pen icon and select entity aliases, select alias **"My device"** and open it for editing by pressing the pen icon.    

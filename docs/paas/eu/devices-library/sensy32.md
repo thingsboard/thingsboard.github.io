@@ -14,4 +14,4 @@ docsTag: paas-eu
 {:toc}
 
 {% include get-hosts-name.html docsTag=page.docsTag %}
-{% include /docs/devices-library/guides/sensy32.md %}
+{% include /docs/device-library/guides/sensy32.md %}

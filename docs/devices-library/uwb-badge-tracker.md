@@ -1,5 +1,5 @@
 ---
 layout: docwithnav
 title: "How to connect UWB Badge Tracker to ThingsBoard?"
-redirect_to: "/devices-library/ce/uwb-badge-tracker/"
+redirect_to: "/device-library/ce/uwb-badge-tracker/"
 ---

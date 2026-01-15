@@ -1,5 +1,5 @@
 ---
 layout: docwithnav
 title: "How to connect Helmet Sensor to ThingsBoard?"
-redirect_to: "/devices-library/ce/helmet-sensor/"
+redirect_to: "/device-library/ce/helmet-sensor/"
 ---

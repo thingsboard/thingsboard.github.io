@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-edge
-title: ThingsBoard Devices Library
-description: Device library and connecting guides
-redirect_to: "/devices-library/?platform=edge"
+title: ThingsBoard Device Library
+description: Device Library and connecting guides
+redirect_to: "/device-library/?platform=edge"
 ---

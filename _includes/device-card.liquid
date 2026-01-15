@@ -53,7 +53,7 @@
             {% assign foundPlatforms = "" | split: "" %}
 
             {% for plat in allPlatforms %}
-                {% assign targetUrl = "/devices-library/" | append: plat | append: "/" | append: deviceSlug | append: "/" %}
+                {% assign targetUrl = "/device-library/" | append: plat | append: "/" | append: deviceSlug | append: "/" %}
                 {% assign exists = false %}
 
                 {% for p in site.pages %}
