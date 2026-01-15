@@ -47,8 +47,8 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
       ],
       "security": {
         "type": "basic",
-        "username": "user",
-        "password": "passwd"
+        "username": "username",
+        "password": "password"
       },
       "converter": {
         "type": "json",
