@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas-eu
 title: "How to connect Tracking Label to ThingsBoard?"
-redirect_to: "/devices-library/paas/tracking-label/"
+redirect_to: "/device-library/paas/tracking-label/"
 ---

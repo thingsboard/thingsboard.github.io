@@ -12,4 +12,4 @@ deviceImageFileName: sensy32.svg
 {:toc}
 
 {% include get-hosts-name.html %}
-{% include /docs/devices-library/guides/sensy32.md %}
+{% include /docs/device-library/guides/sensy32.md %}

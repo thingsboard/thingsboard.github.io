@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-pe
 title: "How to connect RS26x LoRaWAN Temperature Sensor to ThingsBoard?"
-redirect_to: "/devices-library/pe/s26x-lorawan-temperature-sensor/"
+redirect_to: "/device-library/pe/s26x-lorawan-temperature-sensor/"
 ---

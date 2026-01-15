@@ -13,4 +13,4 @@ docsPrefix: paas/
 {:toc}
 
 {% include get-hosts-name.html docsPrefix=page.docsPrefix %}
-{% include /docs/devices-library/guides/sensy32.md %}
+{% include /docs/device-library/guides/sensy32.md %}

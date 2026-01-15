@@ -1142,14 +1142,12 @@ defaultActivePricingSection: thingsboard-pe-options
                 </div>
             </div>
         </div>
-
         <div class="pricing-div padding-bottom">
             <div class="pricing-section tbmq-pay-as-you-go active" id="tbmqPayAsYouGo">
                 {% include pricing/tbmq-payg-calculator.html %}
             </div>
             <div class="pricing-section tbmq-perpetual" id="tbmqPerpetual">
                 {% include pricing/tbmq-perpetual-calculator.html %}
-
                 <div class="crd-container">
                     <div class="benefits">
                         <h3>Why choose a Perpetual License?</h3>

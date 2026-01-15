@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-pe
 title: "How to connect UWB Asset Management Tracker to ThingsBoard?"
-redirect_to: "/devices-library/pe/uwb-asset-management-tracker/"
+redirect_to: "/device-library/pe/uwb-asset-management-tracker/"
 ---

@@ -1,10 +1,4 @@
 ---
-"/docs/samples/linkit-one/":
-  url: "/docs/devices-library/"
-  redirect_from: "/docs/samples/linkit-one/"
-"/docs/samples/linkit-one/gps/":
-  url: "/docs/devices-library/"
-  redirect_from: "/docs/samples/linkit-one/gps/"
 "/docs/user-guide/edge-computing/":
   url: "/docs/edge/getting-started-guides/what-is-edge/"
   redirect_from: "/docs/user-guide/edge-computing/"

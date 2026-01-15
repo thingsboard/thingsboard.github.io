@@ -50,14 +50,14 @@
             </a>
         {% endfor %}
     </div>
-{% elsif page.url == "/devices-library/" %}
+{% elsif page.url == "/device-library/" %}
 
     {%- assign dirs = "
-        devices-library/ce/,
-        devices-library/pe/,
-        devices-library/paas/,
-        devices-library/edge/,
-        devices-library/pe-edge/
+        device-library/ce/,
+        device-library/pe/,
+        device-library/paas/,
+        device-library/edge/,
+        device-library/pe-edge/
     " | split: "," -%}
 
     <div class="devices-card-collection" id="devices-card-collection">
@@ -67,7 +67,7 @@
             {%- assign pages_in_dir = site.pages
                     | where_exp: "p", "p.path contains trimmed_dir"
             -%}
-            <div class="card-collection" id="card-collection" data-platform="{{ dir | replace: 'devices-library/', '' | replace: '/', '' }}">
+            <div class="card-collection" id="card-collection" data-platform="{{ dir | replace: 'device-library/', '' | replace: '/', '' }}">
                 {%- for page in pages_in_dir -%}
                     {% assign pageFile = page.path | split: "/" | last %}
                     {% if pageFile != 'guidelines.md' %}

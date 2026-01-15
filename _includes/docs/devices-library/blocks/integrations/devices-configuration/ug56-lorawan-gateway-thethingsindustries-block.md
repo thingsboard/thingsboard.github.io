@@ -1,1 +1,0 @@
-{% include /docs/devices-library/blocks/integrations/devices-configuration/milesight-lorawan-gateway-thethingsindustries-block.md %}

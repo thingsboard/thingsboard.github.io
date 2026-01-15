@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas
 title: "How to connect Rock64 to ThingsBoard?"
-redirect_to: "/devices-library/paas/rock64/"
+redirect_to: "/device-library/paas/rock64/"
 ---
