@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas
 title: "How to connect M5Stack Timer Camera F to ThingsBoard?"
-redirect_to: "/devices-library/paas/m5stack-timer-camera-f/"
+redirect_to: "/device-library/paas/m5stack-timer-camera-f/"
 ---

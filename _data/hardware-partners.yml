@@ -108,13 +108,13 @@
     microcontrollers-guides:
       0:
         label: ESP32 Dev Kit V1
-        href: /docs/pe/devices-library/esp32-dev-kit-v1/
+        href: /device-library/pe/esp32-dev-kit-v1/
       1:
         label: ESP32 Dev Kit C V4
-        href: /docs/pe/devices-library/esp32-dev-kit-v4/
+        href: /device-library/pe/esp32-dev-kit-v4/
       2:
         label: ESP32 PICO KIT
-        href: /docs/pe/devices-library/esp32-pico-kit/
+        href: /device-library/pe/esp32-pico-kit/
   description: Designs a range of high-performance Wi-Fi+Bluetooth/BLE
     chipsets and modules.
 - name: Ezurio
@@ -142,7 +142,7 @@
     general-guide:
       0:
         label: Connect S26x LoRaWAN Temperature Sensor to ThingsBoard
-        href: /docs/devices-library/s26x-lorawan-temperature-sensor/
+        href: /device-library/ce/s26x-lorawan-temperature-sensor/
   description: Turns design possibilities into reality with a comprehensive range of RF modules, system-on-modules, single board computers, internal antennas, IoT devices, and custom solutions. With decades of engineering expertise, Ezurio provides solutions that reduce development costs and time to market. Our global reach and unmatched support are backed by a resilient global supply chain that gives our customers the stability to overcome every design challenge with confidence. Turn design possibilities into reality with Ezurio, your connectivity expert.
 - name: Seeed Studio
   type:
@@ -185,14 +185,14 @@
     single-board-computers-guides:
       0:
         label: ODYSSEY STM32MP157C
-        href: https://thingsboard.io/docs/pe/devices-library/odyssey-stm32mp157c/
+        href: https://thingsboard.io/device-library/pe/odyssey-stm32mp157c/
     gateway-guides:
       1:
         label: reComputer R1000
-        href: /docs/edge/devices-library/recomputer-r1000/
+        href: /device-library/edge/recomputer-r1000/
       2:
         label: reComputer R1100
-        href: /docs/edge/devices-library/recomputer-r1100/
+        href: /device-library/edge/recomputer-r1100/
   description: Whether you are a developer, technical supplier, or industry player,
     we provide products and services for your IoT needs.
 - name: Milesight
@@ -246,27 +246,27 @@
     sensor-guides:
       0:
         label: AM308 Lorawan 9-IN-1 IAQ Sensor
-        href: /docs/pe/devices-library/am308-sensor/
+        href: /device-library/pe/am308-sensor/
       1:
         label: WS202 PIR & Light LoRaWAN® Sensor
-        href: /docs/pe/devices-library/ws202-pir-and-light-sensor/
+        href: /device-library/pe/ws202-pir-and-light-sensor/
     gateway-guides:
       0:
         label: UG56 LoRaWAN® Gateway
-        href: /docs/pe/devices-library/ug56-lorawan-gateway/
+        href: /device-library/pe/ug56-lorawan-gateway/
       1:
         label: UG65 LoRaWAN® Semi-Industrial Gateway
-        href: /docs/pe/devices-library/ug65-lorawan-gateway/
+        href: /device-library/pe/ug65-lorawan-gateway/
       2:
         label: UG67 LoRaWAN® Gateway
-        href: /docs/pe/devices-library/ug67-lorawan-gateway/
+        href: /device-library/pe/ug67-lorawan-gateway/
     other-devices-guides:
       0:
         label: WS101 LoRaWAN® Smart Button
-        href: /docs/pe/devices-library/ws101-smart-button/
+        href: /device-library/pe/ws101-smart-button/
       1:
         label: VS121 AI workplace sensor
-        href: /docs/pe/devices-library/vs-121/
+        href: /device-library/pe/vs-121/
   description: Leading innovator in IoT technologies such as sensing,
     LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array
     of advanced products, like dependable gateways, indoor air quality sensors, occupancy
@@ -588,7 +588,7 @@
     single-board-computers-guides:
       0:
         label: Connect Sensy32 to ThingsBoard
-        href: /docs/devices-library/sensy32/
+        href: /device-library/ce/sensy32/
   description: All-in-One Sensor IoT Board with LCD designed for sensor enthusiasts, developers, and IoT creators. Powered by ESP32-S3 and packed with a wide array of sensors, it enables seamless monitoring, analysis, and visualization of real-world data. Backed by a robust ESP32-S3 Wifi and Bluetooth module, Sensy32 is not just a board; it's a gateway to endless possibilities.
 - name: DECODE
   type:
@@ -794,7 +794,7 @@
     general-guides:
       0:
         label: Connect the RN172plus series to the Thingboard
-        href: /docs/devices-library/rn172wcd/
+        href: /device-library/ce/rn172wcd/
   description: Radionode is a global leader in environmental monitoring solutions, offering advanced sensors and IoT platforms for industries like life sciences, cold chain logistics, agriculture, construction, and smart buildings. Its LoRaWAN RN320 series features long battery life, ePaper display, alarms, and microSD backup, while the UA-Series USB sensors support  36+ gases and parameters with calibration-ready, plug-and-play design. With the Radionode365 cloud, users gain real-time monitoring, alerts, and predictive insights.
 - name: Kernel Sistemi
   type:
@@ -925,10 +925,10 @@
     gateway-guides:
       0:
         label: VIBit integration guide
-        href: /docs/devices-library/vibit/
+        href: /device-library/ce/vibit/
       1:
         label: VIBit-BP integration guide
-        href: /docs/devices-library/vibit-bp/
+        href: /device-library/ce/vibit-bp/
   description: MachineAstro provides AI-powered predictive maintenance and energy analytics solutions. Our VIBit wireless vibration & temperature sensors enable real-time machine condition monitoring. The iEdge360 platform delivers 400+ fault diagnostics, anomaly detection, and energy insights. Our AI video analytics ensures workplace safety with fire, smoke, and PPE compliance monitoring.
 - name: MClimate
   type:
@@ -951,13 +951,13 @@
     gateway-guides:
       0:
         label: Connect the MClimate 16A Switch & Power Meter compact 16A relay and electricity meter to ThingsBoard
-        href: /docs/pe/devices-library/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/
+        href: /device-library/pe/16a-switch-and-power-meter-compact-16a-relay-and-electricity-meter/
       1:
         label: Connect the MClimate CO2 Display lite to ThingsBoard
-        href: /docs/pe/devices-library/co2-display-lite-temperature-and-humidity-sensor/
+        href: /device-library/pe/co2-display-lite-temperature-and-humidity-sensor/
       2:
         label: Connect the MClimate Vicki Smart Radiator Thermostat to ThingsBoard
-        href: /docs/pe/devices-library/vicki-smart-radiator-thermostat/
+        href: /device-library/pe/vicki-smart-radiator-thermostat/
   description: Europe-based company specializing in the development of IoT hardware devices and software solutions that prioritize energy efficiency, air quality, and water loss prevention to make any building smart. Our goal is through partnerships with global entities, technology providers, end-users, and institutions, to retrofit buildings into sustainable places that enhance the well-being and health of their occupants. Moreover, we aid companies in measuring buildings'  data and achieving their ESG goals along the way. We bring best-in-class complete smart solutions in combination with operational excellence, fast response time, and reliable logistics to our partners. Our core philosophy revolves around fostering strong, transparent relationships with our partners and distributors based on our commitment to maintain the highest standards.
 - name: Senquip
   type:
@@ -1043,7 +1043,7 @@
     gateway-guides:
       0:
         label: DSGW-210 Smart Gateway Hub
-        href: /docs/pe/devices-library/dsgw-210-iot-gateway-hub/
+        href: /device-library/pe/dsgw-210-iot-gateway-hub/
   description: Provides various kinds of gateways, hardware products and IOT
     service
 - name: monoZ
@@ -1279,7 +1279,7 @@
         href: /docs/samples/moko-smart/moko-smart-guide/
       1:
         label: How to connect LW001-BG PRO LoRaWAN Tracker to ThingsBoard?
-        href: /docs/devices-library/lw001-bg-pro/
+        href: /device-library/ce/lw001-bg-pro/
   description: Leading manufacturer and provider of ODM,
     OEM, and IoT devices in China. Established in 2013, created its own IoT brand,
     which specializes in Bluetooth Low Energy, LoRaWAN, Wi-Fi, RFID, GPS,
@@ -1366,7 +1366,7 @@
     sensor-guides:
       0:
         label: NCD Vibration Temperature Sensor
-        href: /docs/pe/devices-library/ncd-vibration-temperature-sensor/
+        href: /device-library/pe/ncd-vibration-temperature-sensor/
   description: IoT Hardware Design and Development Company specializing
     in Wireless IoT sensors. It offers a wide range of plug-and-play devices for monitoring
     temperature, humidity, pressure, energy, acceleration, gas, and industrial I/O.
@@ -1407,10 +1407,10 @@
     other-devices-guides:
       0:
         label: Temco T3E-6CT
-        href: /docs/devices-library/temco-controls-t3e-6ct-and-hum-w1/
+        href: /device-library/ce/temco-controls-t3e-6ct-and-hum-w1/
       1:
         label: Temco Tstat10
-        href: /docs/devices-library/temco-controls-tstat-10/
+        href: /device-library/ce/temco-controls-tstat-10/
   description: Specializes in manufacturing low-cost sensors and
     controllers for the HVAC industry. We proudly provide solutions with no license
     or recurring fees to our customers from all over the world. Both our software
@@ -1444,10 +1444,10 @@
     sensor-guides:
       0:
         label: LRS10701 LoRaWAN IAQ Sensor
-        href: /docs/devices-library/lrs10701/
+        href: /device-library/ce/lrs10701/
       1:
         label: LRS20100 LoRaWAN Temperature and Humidity Sensor
-        href: /docs/devices-library/lrs20100/
+        href: /device-library/ce/lrs20100/
   description: SENSO8 is the registered product trademark of Arwin Technology Limited.
     We were founded in 2015 at the Hong Kong Science Park. Our team, with over 20
     years of Fortune 500 expertise, delivers end-to-end solutions from embedded design
@@ -1644,90 +1644,90 @@
     sensor-guides:
       0:
         label: Asset Management Tracker
-        href: /docs/devices-library/asset-management-tracker/
+        href: /device-library/ce/asset-management-tracker/
       1:
         label: Helmet Sensor
-        href: /docs/devices-library/helmet-sensor/
+        href: /device-library/ce/helmet-sensor/
       2:
         label: Temperature and Humidity Sensor
-        href: /docs/devices-library/temperature-humidity-sensor/
+        href: /device-library/ce/temperature-humidity-sensor/
       3:
         label: Valve Positioning Sensor
-        href: /docs/paas/devices-library/valve-positioning-sensor/
+        href: /device-library/paas/valve-positioning-sensor/
     trackers-guides:
       0:
         label: Badge Tracker
-        href: /docs/devices-library/badge-tracker/
+        href: /device-library/ce/badge-tracker/
       1:
         label: Cat-1 Badge Tracker
-        href: /docs/devices-library/cat1-badge-tracker/
+        href: /device-library/ce/cat1-badge-tracker/
       2:
         label: Cat-1 Container Tracker
-        href: /docs/devices-library/cat1-container-tracker/
+        href: /device-library/ce/cat1-container-tracker/
       3:
         label: Cat-1 Macro Tracker
-        href: /docs/devices-library/cat1-macro-tracker/
+        href: /device-library/ce/cat1-macro-tracker/
       4:
         label: Contact Tracing Badge
-        href: /docs/devices-library/contact-tracing-badge/
+        href: /device-library/ce/contact-tracing-badge/
       5:
         label: Container Tracker
-        href: /docs/devices-library/container-tracker/
+        href: /device-library/ce/container-tracker/
       6:
         label: Macro Tracker
-        href: /docs/devices-library/macro-tracker/
+        href: /device-library/ce/macro-tracker/
       7:
         label: Solar Tracker
-        href: /docs/devices-library/solar-tracker/
+        href: /device-library/ce/solar-tracker/
       8:
         label: Tracking Label
-        href: /docs/devices-library/tracking-label/
+        href: /device-library/ce/tracking-label/
       9:
         label: UWB Asset Management Tracker
-        href: /docs/devices-library/uwb-asset-management-tracker/
+        href: /device-library/ce/uwb-asset-management-tracker/
       10:
         label: UWB Anchor
-        href: /docs/devices-library/uwb-anchor/
+        href: /device-library/ce/uwb-anchor/
       11:
         label: UWB Badge Tracker
-        href: /docs/devices-library/uwb-badge-tracker/
+        href: /device-library/ce/uwb-badge-tracker/
       12:
         label: UWB Container Tracker
-        href: /docs/devices-library/uwb-container-tracker/
+        href: /device-library/ce/uwb-container-tracker/
     gateway-guides:
       1:
         label: Cat-1 Compact Bluetooth Gateway
-        href: /docs/devices-library/cat1-compact-bluetooth-gateway/
+        href: /device-library/ce/cat1-compact-bluetooth-gateway/
       2:
         label: Cat-1 Macro Bluetooth Gateway
-        href: /docs/devices-library/cat1-macro-bluetooth-gateway/
+        href: /device-library/ce/cat1-macro-bluetooth-gateway/
       3:
         label: Cat-1 Solar Bluetooth Gateway
-        href: /docs/devices-library/cat1-solar-bluetooth-gateway/
+        href: /device-library/ce/cat1-solar-bluetooth-gateway/
       4:
         label: Compact Bluetooth Gateway
-        href: /docs/devices-library/compact-bluetooth-gateway/
+        href: /device-library/ce/compact-bluetooth-gateway/
       5:
         label: Indoor Bluetooth Gateway
-        href: /docs/devices-library/indoor-bluetooth-gateway/
+        href: /device-library/ce/indoor-bluetooth-gateway/
       6:
         label: Macro Bluetooth Gateway
-        href: /docs/devices-library/macro-bluetooth-gateway/
+        href: /device-library/ce/macro-bluetooth-gateway/
       7:
         label: Macro Proximity Gateway
-        href: /docs/devices-library/macro-proximity-gateway/
+        href: /device-library/ce/macro-proximity-gateway/
       8:
         label: Micro Bluetooth Gateway
-        href: /docs/devices-library/micro-bluetooth-gateway/
+        href: /device-library/ce/micro-bluetooth-gateway/
       9:
         label: Socketsync Bluetooth Gateway
-        href: /docs/devices-library/socketsync-bluetooth-gateway/
+        href: /device-library/ce/socketsync-bluetooth-gateway/
       10:
         label: Socketsync Proximity Gateway
-        href: /docs/devices-library/socketsync-proximity-gateway/
+        href: /device-library/ce/socketsync-proximity-gateway/
       11:
         label: Solar Bluetooth Gateway
-        href: /docs/devices-library/solar-bluetooth-gateway/
+        href: /device-library/ce/solar-bluetooth-gateway/
   description: Forefront of technological innovation, specializing
     in the provision of affordable, compact, and highly efficient hardware designed
     to accurately locate people, resources, and assets. Our unique approach combines
@@ -1779,7 +1779,7 @@
     gateway-guides:
       0:
         label: Industrial Raspberry Pi EG500
-        href: /docs/devices-library/raspberry-pi-cm4/
+        href: /device-library/ce/raspberry-pi-cm4/
   description: Technology-driven company providing IIoT products and
     services globally. With 10+ years of industry experience, developed
     series Open, High-performance, Reliable, and Easy-to-use IIoT devices like Industrial
@@ -1926,7 +1926,7 @@
     gateway-guides:
       0:
         label: ALPON X4 Edge Computer
-        href: /docs/devices-library/alpon-x4/
+        href: /device-library/ce/alpon-x4/
   description: Builds modular, always online, industrial-grade edge computers
     based on Raspberry Pi, designed for real-world deployments. Our ALPON™ devices
     integrate seamlessly with ThingsBoard and support remote fleet provisioning, resilient
@@ -1960,11 +1960,11 @@
     trackers-guides:
       0:
         label: ioTracker Multi-sensor tracker
-        href: /docs/pe/devices-library/iotracker-multi-sensor-tracker/
+        href: /device-library/pe/iotracker-multi-sensor-tracker/
     other-devices-guides:
       0:
         label: ioButton Panic button
-        href: /docs/pe/devices-library/iobutton-panic-button/
+        href: /device-library/pe/iobutton-panic-button/
   description: The company behind the ioTracker and ioButton, is a Dutch
     company and was established in 2016 by three technology enthusiasts with a professional
     background in electronics, security, IT and telecom. We mainly operate in the
@@ -2002,7 +2002,7 @@
     gateway-guides:
       0:
         label: Connect ACE MQTT 4G GPS Gateway
-        href: /docs/devices-library/ace-iot-gateway-and-siemens-logo/
+        href: /device-library/ce/ace-iot-gateway-and-siemens-logo/
   description: Designs compact PLCs, touchscreen HMIs, and LTE/4G
     MQTT gateways. The “Nano ACE” series stands out for its ultra-low power consumption,
     compact form factor, and PCB-mount version. Our HMIs are powerful, affordable,
@@ -2035,13 +2035,13 @@
     sensor-guides:
       0:
         label: AgroSense Air Temperature and Humidity Sensor
-        href: /docs/pe/devices-library/air-temperature-and-humidity-sensor/
+        href: /device-library/pe/air-temperature-and-humidity-sensor/
       1:
         label: AgroSense Positioning Water Leak Sensor
-        href: /docs/pe/devices-library/positioning-water-leak-sensor/
+        href: /device-library/pe/positioning-water-leak-sensor/
       2:
         label: AgroSense Soil Moisture Sensor
-        href: /docs/pe/devices-library/soil-moisture-sensor/
+        href: /device-library/pe/soil-moisture-sensor/
   description: Professional open-source hardware provider based in
     Shenzhen, China, offering end-to-end support from concept design, prototyping,
     small-batch manufacturing, to full-scale production. We are especially experienced
@@ -2092,7 +2092,7 @@
     gateway-guides:
       0:
         label: Connect EG8200 Gateway
-        href: /docs/pe/devices-library/eg8200-gateway/
+        href: /device-library/pe/eg8200-gateway/
   description: Established in 2015, high-tech enterprise specializing
     in the research, development, production, and sales of industrial IoT Edge Gateway,
     HMI, Remote IO, AI Edge Box, and other digital integration products and solutions.
@@ -2145,7 +2145,7 @@
     other-devices-guides:
       0:
         label: Connect KNX IP Multi IO 580
-        href: /docs/devices-library/knx-ip-multi-io-580/
+        href: /device-library/ce/knx-ip-multi-io-580/
   description: We develop, produce, and market complex software and
     hardware components for building system technology. Our focus lies in building
     networks based on the KNX standard. Because of this focus, we cover the KNX system
