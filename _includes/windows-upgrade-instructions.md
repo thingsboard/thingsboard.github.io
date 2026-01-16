@@ -76,6 +76,7 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 
 #### {{ platform }} package download
 
+{% assign upgrade_package = "" %}
 {% if docsPrefix == "pe/" %}
 {% assign upgrade_package = "thingsboard-windows-" %}
 {% if zip == "true" %}
@@ -99,7 +100,7 @@ net stop thingsboard
 
 * Make a backup of previous ThingsBoard{% if docsPrefix == "pe/"%} PE{% endif %} configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 {% if docsPrefix == "pe/" %}
-* Run the **thingsboard-windows-setup-{{ current_version }}pe.exe**.
+* Run the **{{ upgrade_package }}**.
 {% endif %}
 {% if docsPrefix != "pe/" %}
 * Remove ThingsBoard install dir.
@@ -110,12 +111,14 @@ net stop thingsboard
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 {% endif %}
 
+{% if update_status == "true" %}
 {% capture difference %}
 **NOTE:**
 <br>
 Scripts listed above should be executed using Administrator Role.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
+{% endif %}
 
 {% if update_status == "true" %}
 Execute regular upgrade script:
