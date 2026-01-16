@@ -22,7 +22,7 @@
         {% assign githubLabel = "Star thingsboard/thingsboard-edge on GitHub" %}
         {% assign platformQuery = platformQuery | replace: "ce", "pe-edge" %}
     {% endif %}
-    {% if docsTag == "pe" %}
+    {% if docsTag == "pe" or docsTag == "mobile-pe" %}
         {% assign platformQuery = platformQuery | replace: "ce", "pe" %}
     {% endif %}
     {% if docsTag == "paas" %}
@@ -201,6 +201,51 @@
                 }
             }
         }
+    </script>
+    <script>
+        (function () {
+            if (typeof setCookie !== "function" || typeof getCookie !== "function") return;
+
+            function setLastPlatformQuery(platformQuery) {
+                setCookie("tb_last_platform_query", platformQuery, { expires: 365, path: "/" });
+            }
+
+            function getLastPlatformQuery() {
+                return getCookie("tb_last_platform_query");
+            }
+
+            function normalizePlatformQuery(q) {
+                if (!q) return "";
+                q = String(q).trim();
+                if (!q) return "";
+                if (!q.startsWith("?")) q = "?" + q;
+                return q;
+            }
+
+            function applyDeviceLibraryLink() {
+                const link = document.getElementById("devices-link");
+                if (!link) return;
+
+                const generated = normalizePlatformQuery(link.getAttribute("data-platform-query"));
+                const saved = normalizePlatformQuery(getLastPlatformQuery());
+
+                if (generated) {
+                    setLastPlatformQuery(generated);
+                    link.href = "/device-library/" + generated;
+                    return;
+                }
+
+                if (saved) {
+                    link.href = "/device-library/" + saved;
+                }
+            }
+
+            if (document.readyState === "loading") {
+                document.addEventListener("DOMContentLoaded", applyDeviceLibraryLink);
+            } else {
+                applyDeviceLibraryLink();
+            }
+        })();
     </script>
     <script async defer>
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
@@ -731,7 +776,15 @@
                 <span class="main-menu-link" onclick="listburg('nav-docs')">Docs</span>
             </li>
             <li class="nav-devices">
-                <a class="main-menu-link" id="devices-link" href="/device-library/{{ platformQuery }}" style="cursor: pointer;">Device Library</a>
+                <a
+                        class="main-menu-link"
+                        id="devices-link"
+                        href="/device-library/?platform=ce"
+                        data-platform-query="{{ platformQuery }}"
+                        style="cursor: pointer;"
+                >
+                    Device Library
+                </a>
             </li>
             <li class="nav-blog">
                 <a class="main-menu-link" id="blog-link" href="/blog/" style="cursor: pointer;">Blog</a>
