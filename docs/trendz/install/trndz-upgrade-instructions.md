@@ -277,6 +277,17 @@ These steps are applicable for 1.14.0 Trendz Analytics version.
 
 ### Ubuntu/CentOS {#ubuntucentos-1150}
 
+{% capture tb_3_7_0_upgrade_note %}
+**Important note before upgrading to Trendz 1.15.0**
+
+If you are using Trendz behind **HAProxy**, make sure that the paths **`/trendz/`** and **`/apiTrendz/`** are routed to 
+the Trendz backend instead of **`/trendz`** and **`/apiTrendz`**. 
+
+Additionally, we highly recommend adding Trendz to the **ThingsBoard HAProxy configuration** so that Trendz is accessible from the **same domain as ThingsBoard**.
+
+{% endcapture %}
+{% include templates/warn-banner.md content=tb_3_7_0_upgrade_note %}
+
 #### Trendz Analytics package download
 
 {% capture tabspec %}trendz-download-1-15-0

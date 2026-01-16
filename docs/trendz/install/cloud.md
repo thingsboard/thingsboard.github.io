@@ -27,7 +27,7 @@ You need an active ThingsBoard Cloud account to activate the Trendz Analytics. I
 ## Activate Trendz Analytics
 
 Trendz Analytics is already connected to the ThingsBoard Cloud infrastructure, so the only step required to use Trendz is to activate it. 
-You can find out how to do this [here](/docs/trendz/activation/public-cloud)
+You can find out how to do this [here](/docs/trendz/activation/cloud)
 
 ## Next steps
 

@@ -4549,17 +4549,14 @@
 "/docs/sitemap/":
   url: "/docs/sitemap/"
   redirect_from: []
+"/docs/trendz/activation/cloud/":
+  url: "/docs/trendz/activation/cloud/"
+  redirect_from: []
 "/docs/trendz/activation/how-to/":
   url: "/docs/trendz/activation/how-to/"
   redirect_from: []
-"/docs/trendz/activation/private-cloud/":
-  url: "/docs/trendz/activation/private-cloud/"
-  redirect_from: []
-"/docs/trendz/activation/public-cloud/":
-  url: "/docs/trendz/activation/public-cloud/"
-  redirect_from: []
-"/docs/trendz/activation/self-hosted/":
-  url: "/docs/trendz/activation/self-hosted/"
+"/docs/trendz/activation/self-managed/":
+  url: "/docs/trendz/activation/self-managed/"
   redirect_from: []
 "/docs/trendz/ai-assistance-overview/":
   url: "/docs/trendz/ai-assistance-overview/"

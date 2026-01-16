@@ -4,8 +4,6 @@ toc:
 - title: How to Activate Trendz
   path: /docs/trendz/activation/how-to/
 - title: ThingsBoard Cloud
-  path: /docs/trendz/activation/public-cloud/
-- title: ThingsBoard Private Cloud
-  path: /docs/trendz/activation/private-cloud/
-- title: Self-Hosted ThingsBoard (PE)
-  path: /docs/trendz/activation/self-hosted/
+  path: /docs/trendz/activation/cloud/
+- title: Self-Managed ThingsBoard (PE)
+  path: /docs/trendz/activation/self-managed/

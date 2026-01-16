@@ -63,6 +63,14 @@ This section describes how to activate Trendz for a ThingsBoard self-hosted envi
 
 {% include images-gallery.html imageCollection="complete-payment" %}
 
+### Step 4. Restart ThingsBoard
+
+Finally, it's necessary to restart ThingsBoard service, to fetch the newest subscription information.
+
+## Pricing
+
+You can find out up-to-date prices on Trendz add-on in the [pricing page](/pricing/?section=thingsboard-pe-options&product=thingsboard-pe). Calculate your pricing, based on your ThingsBoard self-managed setup.
+
 ## Next Steps
 
 * Follow our [Installation guide](/docs/trendz/install/installation-options) to install Trendz on your environment.
