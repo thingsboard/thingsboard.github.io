@@ -6,6 +6,7 @@
 {%- assign applicable_versions = include.applicable_versions -%}
 {%- assign manual_version_upgrade = include.manual_version_upgrade | default: "false" -%}
 {%- assign manual_version_upgrade_label = include.manual_version_upgrade_label -%}
+{%- assign zip = include.zip | default: "false" -%}
 {%- assign x_status = include.x -%}
 
 {% if docsPrefix == "pe/" %}
@@ -77,7 +78,7 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 
 {% if docsPrefix == "pe/" %}
 {% assign upgrade_package = "thingsboard-windows-" %}
-{% if legacy_zip == "true" %}
+{% if zip == "true" %}
 {% assign upgrade_package = upgrade_package | append: current_version | append: "pe.zip" %}
 {% else %}
 {% assign upgrade_package = upgrade_package | append: "setup-" | append: current_version | append: "pe.exe" %}
