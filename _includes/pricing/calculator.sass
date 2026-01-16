@@ -68,12 +68,11 @@ $bg-white: #fff
     white-space: unset
 
   .card-header
-    margin-bottom: 16px
     .header-top
       display: flex
       justify-content: space-between
       align-items: center
-      margin-bottom: 16px
+      margin-bottom: 32px
     h3
       font-size: 28px
       line-height: 44px
@@ -81,11 +80,13 @@ $bg-white: #fff
       font-weight: 400
       color: #202021
     h4
-      font-size: 16px
-      line-height: 24px
+      font-size: 20px
+      line-height: 32px
       font-weight: 400
       color: #717274
       margin: 0
+      padding-bottom: 24px
+      border-bottom: 1px solid #E0E1E2
       &.wrap
         white-space: normal
     .header-actions
@@ -134,11 +135,31 @@ $bg-white: #fff
         font-size: 18px
         font-weight: 500
         color: $primary-color
+    &.enterprise-header
+      h3
+        font-size: 28px
+        line-height: 44px
+        font-weight: 400
+        color: #202021
+      h4
+        font-size: 18px
+        line-height: 28px
+        font-weight: 400
+        color: #202021
 
   .contact-us-text
     font-size: 14px
     color: #717274
     margin-bottom: 16px
+    &.enterprise-text
+      font-size: 14px
+      line-height: 28px
+      font-weight: 400
+      color: #202021
+      margin-top: 16px
+      margin-bottom: 0
+      padding-top: 16px
+      border-top: 1px solid #E0E1E2
 
   .instances-section
     margin-bottom: 24px
@@ -703,6 +724,7 @@ $bg-white: #fff
         .result-value
           font-size: 14px
           line-height: 24px
+          font-weight: 500
           color: $text-muted
           display: flex
           align-items: center

@@ -147,11 +147,8 @@
     const tbSmPPlan = {{ perpPlans }};
     const TB_SMP_MIN_DEVICES = 1000;
     const TB_SMP_MAX_DEVICES = 1000000;
-    // Slider thresholds for visual reference (not snapping)
     const TB_SMP_SLIDER_MARKS = [1000, 5000, 10000, 20000, TB_SMP_MAX_DEVICES];
 
-    // --- SLIDER SCALING LOGIC ---
-    // Linear up to 20k (breakpoint), then mapped from (20k-25k) to (20k-1M)
     const PERP_SLIDER_BREAKPOINT = 20000;
     const PERP_SLIDER_MAX_INTERNAL = 25000;
     const PERP_REAL_MAX = 1000000;
@@ -235,10 +232,8 @@
 
             container.querySelectorAll('.tick-mark').forEach((tick) => {
                 const tickVal = parseInt(tick.dataset.val);
-                // Calculate position based on internal slider scale
                 const relativePos = (tickVal - min) / range;
 
-                // Visual correction for thumb width
                 const percent = ((trackRatio / 2) + (relativePos * (1 - trackRatio))) * 100;
                 tick.style.left = percent + '%';
             });
@@ -260,7 +255,6 @@
     const tbSmPUpdateAddons = () => {
         const plan = tbSmPPlan;
 
-        // Edge
         tbSmPUi.cards.edge.classList.toggle('active', tbSmPState.addons.edge.enabled);
         tbSmPUi.toggles.edge.checked = tbSmPState.addons.edge.enabled;
         if (tbSmPState.addons.edge.enabled) {
@@ -319,23 +313,19 @@
 
         let totalPrice = plan.price;
 
-        // Extra devices
         const extraDevices = Math.max(0, devices - plan.includedDevices);
         const extraDevicesCost = extraDevices * plan.extraDevicePrice;
         totalPrice += extraDevicesCost;
 
-        // Extra prod instances
         const extraProd = Math.max(0, tbSmPState.prodInstances - plan.includedProdInstances);
         const extraProdCost = extraProd * plan.extraProdInstancePrice;
         totalPrice += extraProdCost;
 
-        // Dev instances
         const devCost = tbSmPState.devInstances * plan.devQaExtraInstancePrice;
         totalPrice += devCost;
 
         const breakdown = {};
 
-        // Edge Computing
         if (tbSmPState.addons.edge.enabled) {
             const count = tbSmPState.addons.edge.count;
             const extraEdges = Math.max(0, count - plan.edgeInstancesIncluded);
@@ -352,7 +342,6 @@
             };
         }
 
-        // Trendz Analytics
         if (tbSmPState.addons.trendz.enabled) {
             const trendzExtraCost = extraDevices > 0 ? extraDevices * plan.trendzExtraDevicePrice : 0;
             const trendzTotal = plan.trendzMonthPrice + trendzExtraCost;
@@ -365,7 +354,6 @@
             };
         }
 
-        // Offline Mode
         if (tbSmPState.addons.offline.enabled) {
             totalPrice += plan.offlineModePrice;
             breakdown.offline = { cost: plan.offlineModePrice };
@@ -487,7 +475,6 @@
                 </div>
             </div>`;
 
-        // Edge Computing
         if (tbSmPState.addons.edge.enabled && breakdown.edge) {
             const edge = breakdown.edge;
             const content = `<div class="section-content">
@@ -500,7 +487,6 @@
             html += addButton('edge', 'Edge Computing', plan.edgeMonthPrice);
         }
 
-        // Trendz Analytics
         if (tbSmPState.addons.trendz.enabled && breakdown.trendz) {
             const trendz = breakdown.trendz;
             const hasExtra = trendz.extraDevices > 0;
@@ -514,7 +500,6 @@
             html += addButton('trendz', 'Trendz Analytics', plan.trendzMonthPrice);
         }
 
-        // Offline Mode
         if (tbSmPState.addons.offline.enabled && breakdown.offline) {
             html += `<div class="results-section">
                 <div class="section-header">
@@ -638,7 +623,6 @@
         tbSmPUi.inputs.slider.addEventListener('input', e => {
             let sliderVal = parseFloat(e.target.value);
 
-            // Map slider -> real
             let realVal = tbSmFromSliderToReal(sliderVal);
 
             tbSmPState.deviceCount = realVal;

@@ -768,9 +768,6 @@
             });
         });
 
-        // --- SPLIT INPUT/CHANGE LISTENERS START ---
-
-        // 1. Sessions
         const onSessionsInput = (val) => {
             let calcVal = parseInt(val);
             if(isNaN(calcVal)) calcVal = TBMQ_PC_SESSIONS_MIN;
@@ -803,7 +800,6 @@
             tbmqPcDebouncedGTM();
         });
 
-        // 2. Throughput
         const onThroughputInput = (val) => {
             let calcVal = parseInt(val);
             if(isNaN(calcVal)) calcVal = TBMQ_PC_THROUGHPUT_MIN;
@@ -849,7 +845,6 @@
             });
         });
         tbmqPcUi.inputs.devInstances?.addEventListener('input', e => {
-             // Calc but no overwrite
             let val = parseInt(e.target.value);
             tbmqPcState.addons.devQa.instances = isNaN(val) ? 1 : Math.max(1, val);
             tbmqPcUpdateDevQaMinusBtn();
@@ -857,7 +852,6 @@
             tbmqPcDebouncedGTM();
         });
         tbmqPcUi.inputs.devInstances?.addEventListener('change', e => {
-             // Enforce and overwrite
             let val = Math.max(1, parseInt(e.target.value) || 1);
             e.target.value = val;
             tbmqPcState.addons.devQa.instances = val;
@@ -873,7 +867,6 @@
             });
         });
         tbmqPcUi.inputs.networkTraffic?.addEventListener('input', e => {
-            // Calc but no overwrite
             let val = parseInt(e.target.value);
             tbmqPcState.addons.networkTraffic.extraGb = isNaN(val) ? 1 : Math.max(1, val);
             tbmqPcUpdateNetworkMinusBtn();
@@ -881,7 +874,6 @@
             tbmqPcDebouncedGTM();
         });
         tbmqPcUi.inputs.networkTraffic?.addEventListener('change', e => {
-             // Enforce and overwrite
             let val = Math.max(1, parseInt(e.target.value) || 1);
             e.target.value = val;
             tbmqPcState.addons.networkTraffic.extraGb = val;
