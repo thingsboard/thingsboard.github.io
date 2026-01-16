@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
-title: How To Activate Trendz on ThingsBoard Cloud
-description: How To Activate Trendz on ThingsBoard Cloud
+title: How To Activate Trendz on ThingsBoard Public Cloud
+description: How To Activate Trendz on ThingsBoard Public Cloud
 
 step-1:
   0:
@@ -46,7 +46,7 @@ step-3:
 * TOC
 {:toc}
 
-This guide describes how to activate Trendz in your ThingsBoard Cloud environment via the Billing page.
+This guide describes how to activate Trendz in your ThingsBoard public Cloud environment via the Billing page.
 
 ## Activation Steps
 
@@ -88,33 +88,16 @@ This guide describes how to activate Trendz in your ThingsBoard Cloud environmen
 
 You can access the Trendz interface using the following links:
 
-* [Trendz Cloud (US)](https://thingsboard.cloud/trendz/) 
-* [Trendz Cloud (EU)](https://eu.thingsboard.cloud/trendz/)
+* [Trendz Cloud (US)](https://thingsboard.cloud/trendz/){:target="_blank"} 
+* [Trendz Cloud (EU)](https://eu.thingsboard.cloud/trendz/){:target="_blank"}
 
 {% include templates/trendz/install/topology-discovery.md %} 
 
 ## Pricing
 
-You can find out up-to-date prices on Trendz add-on in the [pricing page](/pricing/?section=thingsboard-pe-options&product=thingsboard-cloud). Calculate your pricing, based on your ThingsBoard self-managed setup.
+You can find out up-to-date prices on Trendz add-on in the ThingsBoard billing page as it is shown on [step-3](#step-3-activate-plan).
 
-## ThingsBoard Private Cloud
-
-If you need a fully managed, isolated cluster with SLA-backed uptime guarantees, **ThingsBoard Private Cloud** might be the right solution for you.
-
-### What are the benefits of Private Cloud?
-
-* **Zero DevOps overhead** – no servers to set up, patch or monitor.
-* **Guaranteed availability** – written SLA of 99.9 – 99.99 %, with service-credit remedies.
-* **Faster time-to-market** – we stand up production clusters in 1-2 hours, not weeks.
-* **Scalability** – Kubernetes-based plans grow as device traffic spikes.
-* **Predictable cost** – one all-inclusive monthly fee replaces cap-ex plus staffing.
-
-### Get Started
-
-Ready to explore Private Cloud options?
-
-- **[Use our calculator](/pricing/?section=thingsboard-pe-options&product=thingsboard-private-cloud)** - Estimate the best plan for your needs
-- **[Contact us](/docs/contact-us)** - Our team will help you find the best solution tailored to your requirements
+If you have any questions about anything, just **[contact us](/docs/contact-us)** - our team will help you find the best solution tailored to your requirements.
 
 ## Next Steps
 

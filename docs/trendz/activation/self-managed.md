@@ -29,6 +29,14 @@ complete-payment:
   0:
     image: /images/trendz/activation/self-hosted/complete-payment.png
     title: 'On the Summary screen, verify the selected plan and full price. If everything is correct, click <b>Update</b> and complete the payment.'
+
+pricing:
+  0:
+    image: /images/trendz/activation/self-hosted/self-managed-1.png
+    title: 'You can find out up-to-date prices on Trendz add-on in the <b>pricing page</b>.'
+  1:
+    image: /images/trendz/activation/self-hosted/self-managed-2.png
+    title: 'Calculate your pricing, based on your ThingsBoard self-managed setup.'
 ---
 
 * TOC
@@ -69,7 +77,11 @@ Finally, it's necessary to restart ThingsBoard service, to fetch the newest subs
 
 ## Pricing
 
-You can find out up-to-date prices on Trendz add-on in the [pricing page](/pricing/?section=thingsboard-pe-options&product=thingsboard-pe). Calculate your pricing, based on your ThingsBoard self-managed setup.
+You can find out up-to-date prices on Trendz add-on in the [pricing page](/pricing/?section=thingsboard-pe-options&product=thingsboard-pe).
+
+{% include images-gallery.html imageCollection="pricing" %}
+
+If you have any questions about anything, just **[contact us](/docs/contact-us)** - our team will help you find the best solution tailored to your requirements.
 
 ## Next Steps
 
