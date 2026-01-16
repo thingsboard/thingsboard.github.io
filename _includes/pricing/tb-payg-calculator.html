@@ -18,7 +18,7 @@
                                     <span class="tooltip-text">The total number of IoT devices that will connect to ThingsBoard</span>
                                 </span>
                             </label>
-                            <input id="sm-devices" type="number" value="10" min="1" max="100000" class="input input-right" data-sm-input="devices">
+                            <input id="sm-devices" type="number" value="10" min="1" max="150000" class="input input-right" data-sm-input="devices">
                         </div>
                         <div class="slider-container snap-slider">
                             <input type="range" id="sm-devicesSlider" min="0" max="5" step="0.01" value="0" class="slider" data-sm-slider="devices">
@@ -153,7 +153,7 @@
 <script>
     const tbSmPlans = {{ smPlans }};
     const TB_SM_THRESHOLDS = [10, 50, 100, 500, 1000];
-    const TB_SM_MAX_DEVICES = 100000;
+    const TB_SM_MAX_DEVICES = 150000;
     const TB_SM_ENTERPRISE_THRESHOLD = 50000;
     const TB_SM_DESCRIPTIONS = {
         Maker: {
@@ -476,48 +476,51 @@
         </div>`;
 
     const tbSmDisplayEnterprise = (devices) => {
+        let msg = `Self-managed Pay-as-you-go Enterprise Request\n`;
+        msg += `- Devices: ${formatNumber(devices)}\n`;
+        msg += `- Prod Instances: ${formatNumber(tbSmState.prodInstances)}\n`;
+        msg += `- Development Instances: ${formatNumber(tbSmState.devInstances)}\n`;
+
+        const hasAddons = tbSmState.addons.edge.enabled || tbSmState.addons.trendz.enabled || tbSmState.addons.mobile.enabled;
+        if (hasAddons) {
+            msg += `\nAdd-ons:\n`;
+            if (tbSmState.addons.edge.enabled) {
+                msg += `- Edge Computing: ${tbSmState.addons.edge.count} instance(s)\n`;
+            }
+            if (tbSmState.addons.trendz.enabled) {
+                msg += `- Trendz Analytics: Enabled\n`;
+            }
+            if (tbSmState.addons.mobile.enabled) {
+                msg += `- White-labeled Mobile App: Enabled\n`;
+            }
+        }
+
+        tbSmState.clipboardMessage = msg;
+
         tbSmUi.results.innerHTML = `
-            <div class="card-header">
+            <div class="card-header enterprise-header">
                 <div class="header-top">
-                    <h3>Calculation summary</h3>
+                    <h3>Deployment Summary</h3>
                     <div class="header-actions">
-                        <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}</div>
+                        <div id="smCopyButton" class="icon-button" title="Copy">${copyIcon}<span class="tooltip-text">Copy deployment summary</span></div>
+                        <div id="smDownloadButton" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
                     </div>
                 </div>
-                <h4 class="wrap">Your setup is seriously impressive.</h4>
+                <h4 class="wrap">You are building at an impressive scale.</h4>
             </div>
             <div class="results-scroll-container">
                 <div class="results-section">
-                    <div class="section-header">
-                        <span class="section-title">Requested Devices:</span>
-                        <span class="section-value">${formatNumber(devices)}</span>
-                    </div>
-                    <div class="result-item" style="display: flex; justify-content: space-between; padding: 4px 0;">
-                        <span class="result-label" style="font-size: 14px; color: #707275;">Production Instances:</span>
-                        <span class="result-value" style="font-size: 14px; font-weight: 500; color: #212121;">${formatNumber(tbSmState.prodInstances)}</span>
-                    </div>
-                    <div class="result-item" style="display: flex; justify-content: space-between; padding: 4px 0;">
-                        <span class="result-label" style="font-size: 14px; color: #707275;">Development Instances:</span>
-                        <span class="result-value" style="font-size: 14px; font-weight: 500; color: #212121;">${formatNumber(tbSmState.devInstances)}</span>
+                    <div class="section-content show">
+                        ${tbSmCreateItem('Devices', formatNumber(devices), null, true)}
+                        ${tbSmCreateItem('Prod Instances', formatNumber(tbSmState.prodInstances), null, true)}
+                        ${tbSmCreateItem('Development Instances', formatNumber(tbSmState.devInstances), null, true)}
                     </div>
                 </div>
-                <br>
-                <p class="contact-us-text"><b>Please contact our sales team for a custom solution tailored to your needs.</b></p>
+                <p class="contact-us-text enterprise-text">You have reached a tier where economies of scale apply. Let's talk about aligning our pricing structure with your specific rollout schedule and volume requirements.</p>
             </div>
             <div class="results-footer">
-                <a id="smContactUs" href="/docs/contact-us/" class="button">Contact Us</a>
+                <a id="smContactUs" href="/docs/contact-us/" class="button">Get Enterprise Quote</a>
             </div>`;
-
-        let msg = `Self-managed Pay-as-you-go request \n- Devices: ${formatNumber(devices)}\n`;
-
-        msg += `- Production Instances: ${formatNumber(tbSmState.prodInstances)}\n`;
-        msg += `- Development Instances: ${formatNumber(tbSmState.devInstances)}\n`;
-
-        if (tbSmState.addons.edge.enabled) msg += `- Add-on: Edge Computing\n`;
-        if (tbSmState.addons.trendz.enabled) msg += `- Add-on: Trendz Analytics \n`;
-        if (tbSmState.addons.mobile.enabled) msg += `- Add-on: White-labeled Mobile App\n`;
-
-        tbSmState.clipboardMessage = msg;
 
         const contactBtn = document.getElementById('smContactUs');
         if (contactBtn) {
@@ -526,6 +529,7 @@
         }
 
         document.getElementById('smCopyButton')?.addEventListener('click', e => tbSmCopy(e.currentTarget));
+        document.getElementById('smDownloadButton')?.addEventListener('click', tbSmDownload);
     };
 
     const tbSmDisplay = ({ plan, devices, extraDevices, extraDevicesCost, extraProd, extraProdCost, devCost, breakdown, totalPrice, isMaker, isBusiness, hasWL }) => {

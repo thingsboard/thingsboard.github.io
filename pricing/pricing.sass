@@ -368,7 +368,7 @@ html#pricing
                 display: block
               div.item, div.load-more
                 border-bottom: 1.5px solid #3E9AF81F
-                overflow: visible
+
                 &.hidden
                   display: none
                 &:not(:last-of-type)
@@ -463,6 +463,11 @@ html#pricing
                   &:hover
                     .clipboard-btn
                       display: inline-block
+              div.item
+                transition: background-color 0.3s ease
+                &.highlight-answer
+                  animation: highlightFade 2s ease-out forwards
+
               div.load-more
                 & > h4.title
                   color: #0094FF
@@ -1462,3 +1467,15 @@ html#pricing
   #pricingContent .container
     max-width: unset
     width: 100%
+
+
+@keyframes highlightFade
+  0%
+    background-color: #F4F8FE
+    border-radius: 12px
+  70%
+    background-color: #F4F8FE
+    border-radius: 12px
+  100%
+    background-color: transparent
+    border-radius: 0

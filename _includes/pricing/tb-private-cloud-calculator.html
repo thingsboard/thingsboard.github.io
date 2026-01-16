@@ -160,7 +160,7 @@
 
     const TB_PC_SLIDER_BREAKPOINT = 100000;
     const TB_PC_SLIDER_MAX = 120000;
-    const TB_PC_REAL_MAX = 1000000;
+    const TB_PC_REAL_MAX = 400000;
 
     const tbPcSliderToReal = (sliderVal) => {
         if (sliderVal <= TB_PC_SLIDER_BREAKPOINT) return sliderVal;
@@ -939,36 +939,76 @@
 
         tbPcUi.results.classList.remove('hidden');
         tbPcUi.results.innerHTML = `
-            <div class="card-header">
+            <div class="card-header enterprise-header">
                 <div class="header-top">
-                    <h3>Calculation summary</h3>
+                    <h3>Deployment Summary</h3>
                     <div class="header-actions">
-                        <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy calculation summary</span></div>
+                        <div id="tbPcCopyBtn" class="icon-button" title="Copy summary">${copyIcon}<span class="tooltip-text">Copy deployment summary</span></div>
+                        <div id="tbPcDownloadBtn" class="icon-button" title="Download">${downloadIcon}<span class="tooltip-text">Download summary</span></div>
                     </div>
                 </div>
-                <h4 class="wrap">Your setup is seriously impressive. It's time for an Enterprise solution!</h4>
+                <h4 class="wrap">You are building at an impressive scale.</h4>
             </div>
             <div class="results-scroll-container">
                 <div class="results-section">
                     <div class="section-content show">
-                        ${tbPcCreateItem('Data Points Rate', `${formatNumber(totalDataPointsPerMinute)} points/minute`)}
-                        ${tbPcCreateItem('Estimated Storage', `${formatNumber(totalStorageNeededInGB, 2)} GB`)}
+                        ${tbPcCreateItem('Devices', formatNumber(totalDevices, 0), null, true)}
+                        ${tbPcCreateItem('Data Points Rate', `${formatNumber(totalDataPointsPerMinute)} points/minute`, null, true)}
+                        ${tbPcCreateItem('Estimated storage', `${formatNumber(totalStorageNeededInGB, 2)} GB`, null, true)}
                     </div>
                 </div>
-                <p class="contact-us-text">Please contact our sales team for a custom Enterprise solution.</p>
+                <p class="contact-us-text enterprise-text">You have reached a tier where economies of scale apply. Let's talk about aligning our pricing structure with your specific rollout schedule and volume requirements.</p>
             </div>
             <div class="results-footer">
-                <a id="tbPcContactUs" class="button" href="/docs/contact-us/">Contact Us</a>
+                <a id="tbPcContactUs" class="button" href="/docs/contact-us/">Get Enterprise Quote</a>
             </div>`;
 
-        tbPcUpdateClipboard({
-            isEnterprise: true,
-            totalDataPointsPerMinute,
-            totalDevices,
-            storageNeededInGB: totalStorageNeededInGB
-        }, inputs);
+        tbPcUpdateEnterpriseClipboard(inputs, totalDataPointsPerMinute, totalDevices, totalStorageNeededInGB);
 
         document.getElementById('tbPcCopyBtn')?.addEventListener('click', e => tbPcCopy(e.currentTarget));
+        document.getElementById('tbPcDownloadBtn')?.addEventListener('click', tbPcDownload);
+    };
+
+    const tbPcUpdateEnterpriseClipboard = (inputs, totalDataPointsPerMinute, totalDevices, storageNeededInGB) => {
+        let message = `Private Cloud Enterprise Request\n`;
+        message += `- Devices: ${formatNumber(totalDevices, 0)}\n`;
+        message += `- Data Points Rate: ${formatNumber(totalDataPointsPerMinute, 2)} points/min\n`;
+        message += `- Estimated Storage: ${formatNumber(storageNeededInGB, 2)} GB\n`;
+
+        message += `\nDevice Profiles:\n`;
+        inputs.deviceProfiles.forEach((p, index) => {
+            message += `Profile ${index + 1}:\n`;
+            message += `  - Devices: ${formatNumber(p.devices, 0)}\n`;
+            message += `  - Messages: ${formatNumber(p.messages, 0)} per ${p.messageUnit}\n`;
+            message += `  - Data Points: ${formatNumber(p.dataPoints, 0)}\n`;
+            message += `  - Retention: ${formatNumber(p.retention, 0)} months\n`;
+        });
+
+        const { addons } = inputs;
+        const hasAddons = addons.edgeComputing.enabled || addons.trendzAnalytics.enabled || addons.mobileApp.enabled || addons.devQaInstances.enabled;
+
+        if (hasAddons) {
+            message += `\nAdd-ons:\n`;
+            if (addons.edgeComputing.enabled) {
+                message += `- Edge Computing: ${addons.edgeComputing.instances} instance(s)\n`;
+            }
+            if (addons.trendzAnalytics.enabled) {
+                message += `- Trendz Analytics: Enabled\n`;
+            }
+            if (addons.mobileApp.enabled) {
+                message += `- White-labeled Mobile App: Enabled\n`;
+            }
+            if (addons.devQaInstances.enabled) {
+                message += `- Dev & QA Instances: ${addons.devQaInstances.instances} instance(s)\n`;
+            }
+        }
+
+        tbPcState.clipboardMessage = message;
+
+        const contactButton = document.getElementById('tbPcContactUs');
+        if (contactButton) {
+            contactButton.href = `/docs/contact-us/?subject=${encodeURIComponent('Private Cloud')}&message=${encodeURIComponent(message)}`;
+        }
     };
 
     const tbPcInitExpandable = () => {

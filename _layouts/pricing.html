@@ -12,7 +12,7 @@
     </div>
 </section>
 
-
+{% include scroll-progress-button.liquid %}
 
 {% include footer.html %}
 
@@ -71,7 +71,7 @@
         const navEntries = performance.getEntriesByType('navigation');
 
         if (Object.hasOwn(params, 'calculator') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
-            elements.openCalculatorBtn.click();
+            tbPcUi.openBtn.click();
         }
         if (Object.hasOwn(params, 'calculatorPerpetual') && !(navEntries.length > 0 && navEntries[0].type === 'reload')) {
             window.history.replaceState(null, '', window.location.href.replace('calculatorPerpetual', ''));
