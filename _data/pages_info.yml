@@ -2342,6 +2342,10 @@
 "/docs/paas/":
   url: "/docs/paas/"
   redirect_from: []
+"/docs/paas/legacy-subscriptions/":
+  url: "/docs/paas/legacy-subscriptions/"
+  redirect_from:
+  - "/products/paas/subscription/"
 "/docs/paas/mobile-center/applications/":
   url: "/docs/paas/mobile-center/applications/"
   redirect_from: []

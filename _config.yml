@@ -37,12 +37,28 @@ incremental: true
 
 exclude:
   - .idea
-#  - docs
-#  - blog
-#  - careers
-#  - case-study
-#  - case-studies
-#  - _includes/docs
+  - _careers
+  - _data
+  - _layouts
+  - _scripts
+  - blog
+  - careers
+  - case-studies
+  - case-study
+  - company
+  - use-cases
+  - docs/devices-library
+  - docs/getting-started-guides
+  - docs/iot-gateway
+  - docs/tutorials
+  - docs/trendz
+  - docs/private-cloud
+  - docs/mobile-center
+  - docs/mobile
+  - docs/releases
+  - docs/edge
+  - docs/mqtt-broker
+  - docs/pe
 
 safe: false
 lsi: false
