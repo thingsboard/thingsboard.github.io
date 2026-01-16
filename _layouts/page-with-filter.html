@@ -68,7 +68,8 @@
     const PLATFORM_LABELS = {
         'ce': 'Community Edition',
         'pe': 'Professional Edition',
-        'paas': 'Cloud',
+        'paas': 'Cloud (North America)',
+        'paas-eu': 'Cloud (Europe)',
         'edge': 'Edge',
         'pe-edge': 'Edge Professional Edition',
     };
@@ -452,6 +453,7 @@
         container.querySelectorAll('.crisp').forEach(el => el.remove());
 
         if (selectedPlatform) {
+            setCookie("tb_last_platform_query", `?platform=${selectedPlatform}`, { expires: 365, path: "/" });
             const platformCrisp = document.createElement('span');
             platformCrisp.className = 'crisp crisp-platform';
             platformCrisp.textContent = getPlatformLabel(selectedPlatform);
