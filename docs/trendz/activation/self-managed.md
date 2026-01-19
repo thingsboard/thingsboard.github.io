@@ -32,10 +32,10 @@ complete-payment:
 
 pricing:
   0:
-    image: /images/trendz/activation/self-hosted/self-managed-1.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/self-managed-1.png
     title: 'You can find out up-to-date prices on Trendz add-on in the <b>pricing page</b>.'
   1:
-    image: /images/trendz/activation/self-hosted/self-managed-2.png
+    image: https://img.thingsboard.io/trendz/activation/self-hosted/self-managed-2.png
     title: 'Calculate your pricing, based on your ThingsBoard self-managed setup.'
 ---
 

@@ -6,10 +6,10 @@ After the first login to Trendz, you need to discover topology to allow Trendz t
 
 {% assign topology-discovery = '
 ===
-image: /images/trendz/install/topology/topology-discovery-1.png,
+image: https://img.thingsboard.io/trendz/install/topology/topology-discovery-1.png,
 title: Click the <b>Discover Topology</b> button to start topology discovery process.
 ===
-image: /images/trendz/install/topology/topology-discovery-2.png,
+image: https://img.thingsboard.io/trendz/install/topology/topology-discovery-2.png,
 title: Click the <b>Finish</b> button to close topology discovery page and unlock the main Trendz functionality.
 '
 %}

@@ -8,10 +8,10 @@ This approach significantly reduces the risk of unauthorized access, even if use
 ThingsBoard supports multiple 2FA verification methods, which can be enabled and configured by administrators and selectively activated by tenants.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") or (docsPrefix == "paas/eu/") %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
 {% endif %}
 
 ## Two-factor authentication methods
