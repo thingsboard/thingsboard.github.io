@@ -103,7 +103,7 @@ environment-monitoring:
 
 smart-office:
   0:
-    src: "/images/usecases/smart-office/smart-office-1.webp"
+    src: "/images/usecases/smart-office/smart-office-1-v2.webp"
     alt: "HVAC switch, temperature and power chart, device list, and floor plan with sensor locations"
     imageTitleAttribute: "HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard"
     width: 2048
