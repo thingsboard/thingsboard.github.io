@@ -36,7 +36,7 @@
   icon: /images/case-fam-icon.svg
 - id: site-fleet-tracking
   title: Site fleet tracking
-  link: /use-cases/fleet-tracking/
+  link: /use-cases/site-fleet-tracking/
   icon: /images/site-fleet-tracking-icon.svg
 - id: smart-metering
   title: Smart metering
