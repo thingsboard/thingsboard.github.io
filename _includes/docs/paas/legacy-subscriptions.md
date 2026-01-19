@@ -1,35 +1,23 @@
----
-layout: docwithnav-paas-eu
-assignees:
-- ashvayka
-title: ThingsBoard EU Cloud Subscription plans definition
-description: Features and advantages of subscription payment model
-
-cancel-my-subscription:
-    0:
-        image: /images/subscriptions/cancel-my-subscription-1-paas-eu.png
-        title: 'Log in to ThingsBoard EU Cloud as a Tenant Administrator. After logging in, go to account settings by clicking the three-dot icon in the upper-right corner of the screen and selecting "Account" from the dropdown menu;'
-    1:
-        image: /images/subscriptions/cancel-my-subscription-2-paas-eu.png
-        title: 'Under the "Profile" tab, click the orange "Delete account" button;'
-    2:
-        image: /images/subscriptions/cancel-my-subscription-3-paas-eu.png
-        title: 'Follow the guidelines to cancel your subscription. Confirm the action by clicking the "I understand the consequences, delete account" button.'
-
----
-{% assign docsPrefix = "paas/eu/" %}
-{% include get-hosts-name.html docsTag="paas-eu" %}
-
 * TOC
 {:toc}
 
-ThingsBoars EU Cloud provides subscription plans based on the **pay-as-you-go** model.
+  
+**Legacy Content**: This page documents subscription plans for accounts created prior to **January 20, 2026**. 
 
-Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [calculated fields limits](#calculated-fields-limits), [white labeling](#white-labeling) and the level of support you get.   
+**Why upgrade?** Our new subscription plans offer greater flexibility, allowing you to [top-up](/docs/{{docsPrefix}}subscriptions/#top-ups) entity and API limits on demand. 
+They also let you enable ThingsBoard Edge and Trendz Analytics as [add-ons](/docs/{{docsPrefix}}subscriptions/#add-ons), so you can manage your entire IoT infrastructure in one place.
+
+Ready to switch? Please refer to the [how-to switch to the new subscription plans](#how-to-switch-to-the-new-subscription-plans) page.
+
+These plans are no longer available for new subscriptions. 
+To view current tiers and limits, please visit the [**up-to-date subscriptions**](/docs/paas/subscription/) page.
+
+
+Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [calculated fields limits](#calculated-fields-limits), [white labeling](#white-labeling) and the level of support you get.
 
 ## Entity limits
 
-Please see table below to compare the entity limits of the subscription plans.
+Please see table below to compare the entity limits of the **legacy** subscription plans.
 
 <table>
   <thead>
@@ -128,10 +116,9 @@ Please see table below to compare the entity limits of the subscription plans.
   </tbody>
 </table>
 
-
 ## API limits
 
-Please see table below to compare the API limits of the subscription plans. The values are monthly API limits, unless stated otherwise.
+Please see table below to compare the API limits of the **legacy** subscription plans. The values are monthly API limits, unless stated otherwise.
 
 <table>
   <thead>
@@ -258,7 +245,7 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
 
 ## Calculated fields limits
 
-Please see the table below to compare the calculated fields limits across subscription plans.
+Please see the table below to compare the calculated fields limits across **legacy** subscription plans.
 
 <table>
   <thead>
@@ -324,13 +311,13 @@ Please see the table below to compare the calculated fields limits across subscr
 ## Rate limits
 
 The platform’s rate-limiting policy preserves predictable service quality and reinforces operational resilience under peak
-load. Controls are enforced at both the tenant level (aggregate activity across all devices and users) and the individual 
-device level, using consolidated time windows—per second, per minute, and per hour—to balance burst tolerance with 
-sustained throughput ceilings. Thresholds are plan-dependent (Maker, Prototype, Startup, Business, Business+) and scale 
+load. Controls are enforced at both the tenant level (aggregate activity across all devices and users) and the individual
+device level, using consolidated time windows—per second, per minute, and per hour—to balance burst tolerance with
+sustained throughput ceilings. Thresholds are plan-dependent (Maker, Prototype, Startup, Business, Business+) and scale
 in line with expected traffic profiles to ensure fair multitenant consumption and SLA adherence.
 
-If the workload exceeds the allocated limits, the corresponding requests will be rejected by the platform for the time 
-being until the rate limits return to within the policy. Additionally, the platform also notifies tenant administrators 
+If the workload exceeds the allocated limits, the corresponding requests will be rejected by the platform for the time
+being until the rate limits return to within the policy. Additionally, the platform also notifies tenant administrators
 when a limit breach occurs.
 
 <table>
@@ -535,15 +522,35 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
 
 ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
 See feature [documentation](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
-See [managing domain](/docs/{{docsPrefix}}domains/){:target="_blank"} for more details. 
+See [managing domain](/products/{{docsPrefix}}domains/){:target="_blank"} for more details. 
 
-The white-labeling feature is available for **Prototype** and **Startup** subscription plans.
+The white-labeling feature is available for **Prototype**, **Startup** and **Business** **legacy** subscription plans.
+
+## How to switch to the new subscription plans?
+
+While our research indicates that **90% of existing customers** are fully covered by their current legacy plans, many users may find the new **pay-as-you-go + top-ups** model more attractive and cost-effective.
+
+The main advantage of switching is **flexibility**. Instead of upgrading to a significantly higher subscription tier solely to increase a specific limit (e.g., API calls or SMS counts), the new model allows you to purchase Top-ups for the specific resources you need.
+
+**Top-up Availability**:
+
+* **General Top-ups**: The ability to top-up API limits and general entities (like Alarms, Rule Chains, etc.) is available starting from the Pilot plan.
+
+* **Device & Asset Top-ups**: The ability to top-up the maximum number of Devices and Assets is exclusive to the Business plan.
+
+**Switch in 2 clicks**
+
+Transitioning to the new model is seamless and requires no migration of data.
+
+1. Navigate to **"Plan and Billing"** in the left main menu.
+2. Click the **"Update plan"** button.
+3. Select your desired new tier and confirm.
 
 ## How to cancel my subscription?
 
-To terminate your ThingsBoard EU Cloud subscription, follow these steps:
+To terminate your ThingsBoard Cloud subscription, follow these steps:
 
-- Log in to ThingsBoard EU Cloud as Tenant Administrator;
+- Log in to ThingsBoard Cloud as Tenant Administrator;
 - Go to account settings by clicking the **three-dot icon** in the upper-right corner of the screen and selecting "**Account**" from the dropdown menu;
 - Under the "**Profile**" tab, click the orange "**Delete account**" button;
 - Follow the instructions to cancel your subscription;

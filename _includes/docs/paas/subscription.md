@@ -1,29 +1,7 @@
----
-layout: docwithnav-paas
-assignees:
-- ashvayka
-title: ThingsBoard Cloud Subscription plans definition
-description: Features and advantages of subscription payment model
-redirect_from: "/products/paas/subscription/"
-
-cancel-my-subscription:
-    0:
-        image: /images/subscriptions/cancel-my-subscription-1-paas-eu.png
-        title: 'Log in to ThingsBoard Cloud as a Tenant Administrator. After logging in, go to account settings by clicking the three-dot icon in the upper-right corner of the screen and selecting "Account" from the dropdown menu;'
-    1:
-        image: /images/subscriptions/cancel-my-subscription-2-paas-eu.png
-        title: 'Under the "Profile" tab, click the orange "Delete account" button;'
-    2:
-        image: /images/subscriptions/cancel-my-subscription-3-paas-eu.png
-        title: 'Follow the guidelines to cancel your subscription. Confirm the action by clicking the "I understand the consequences, delete account" button.'
-
----
-{% assign docsPrefix = "paas/" %}
-
 * TOC
 {:toc}
 
-ThingsBoars Cloud provides subscription plans based on the flexible **pay-as-you-go** model.
+ThingsBoars {{cloudPrefix}} Cloud provides subscription plans based on the flexible **pay-as-you-go** model.
 Designed for scalability, these plans allow you to [top-up](#top-ups) entity and API limits on demand and enable **ThingsBoard Edge** and **Trendz Analytics** as add-ons—empowering you to manage your entire IoT infrastructure in one place.
 
 Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [calculated fields limits](#calculated-fields-limits), [white labeling](#white-labeling) and the level of support you get.
@@ -589,8 +567,8 @@ when a limit breach occurs.
 where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion.
 
 ## Top-ups
- 
-If you reach a specific limit within your subscription plan, you rarely need to upgrade to a higher tier. 
+
+If you reach a specific limit within your subscription plan, you rarely need to upgrade to a higher tier.
 Instead, you can purchase specific **Top-up packs** to increase individual limits instantly.
 
 **Note:** Top-ups are recurring monthly additions to your base plan.
@@ -613,23 +591,22 @@ These packs allow you to scale the number of managed entities and integrations w
     <tr>
       <td>Extra Device Pack</td>
       <td>+50 Devices, +50 Assets</td>
-      <td>$15</td>
-      <td>$15</td>
+      <td>{{cloudCurrency}}15</td>
     </tr>
     <tr>
       <td>Extra Customer Pack</td>
       <td>+10 Customers, +10 Users</td>
-      <td>$10</td>
+      <td>{{cloudCurrency}}10</td>
     </tr>
     <tr>
       <td>Extra Integration Pack</td>
       <td>+1 Integration, +1 Converter</td>
-      <td>$10</td>
+      <td>{{cloudCurrency}}10</td>
     </tr>
     <tr>
       <td>Extra Calculated Field</td>
       <td>+1 to max number of Calculated Fields per entity</td>
-      <td>$5</td>
+      <td>{{cloudCurrency}}5</td>
     </tr>
   </tbody>
 </table>
@@ -652,32 +629,32 @@ These packs allow you to extend the operational capacity of your solution, ensur
     <tr>
       <td>Traffic Pack</td>
       <td>+2.5M Transport Messages, +5M Transport Data Points</td>
-      <td>$5</td>
+      <td>{{cloudCurrency}}5</td>
     </tr>
     <tr>
       <td>Compute Pack</td>
       <td>+5M Rule Engine Executions, +1M JavaScript Executions</td>
-      <td>$25</td>
+      <td>{{cloudCurrency}}25</td>
     </tr>
     <tr>
       <td>Storage Pack</td>
       <td>+1B Data Points Storage Days</td>
-      <td>$10</td>
+      <td>{{cloudCurrency}}10</td>
     </tr>
     <tr>
       <td>Alarm Pack</td>
       <td>+1K alarms created per month</td>
-      <td>$1</td>
+      <td>{{cloudCurrency}}1</td>
     </tr>
     <tr>
       <td>Email Pack</td>
       <td>+1K emails sent per month</td>
-      <td>$1</td>
+      <td>{{cloudCurrency}}1</td>
     </tr>
     <tr>
       <td>SMS Pack</td>
       <td>+100 SMS sent per month</td>
-      <td>$15</td>
+      <td>{{cloudCurrency}}15</td>
     </tr>
   </tbody>
 </table>
@@ -690,11 +667,23 @@ These packs allow you to extend the operational capacity of your solution, ensur
 
 ### White labeling
 
-ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
-See feature [documentation](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily. 
-See [managing domain](/products/{{docsPrefix}}domains/){:target="_blank"} for more details. 
+ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required.
+See feature [documentation](/docs/{{docsPrefix}}user-guide/white-labeling/){:target="_blank"} for more details. ThingsBoard Cloud extends white-labeling feature with ability to configure own domain name easily.
+See [managing domain](/products/{{docsPrefix}}domains/){:target="_blank"} for more details.
 
 The white-labeling add-on is automatically enabled starting from the **Pilot** plan.
+
+### Edge Computing
+
+The **Edge Computing** add-on brings intelligence and data processing capabilities directly to the field. 
+It allows you to run a local instance of the platform on-premises, ensuring that your critical operations continue even during a total loss of internet connectivity to the cloud.
+See product [homepage](/products/thingsboard-edge/){:target="_blank"} for more details.
+
+### Trendz Analytics
+
+The **Trendz Analytics** add-on is a powerful business intelligence tool designed to convert your raw IoT data into actionable insights. 
+It goes beyond basic visualization, allowing you to perform complex calculations, identify patterns, and predict future trends using advanced statistical models.
+See product [homepage](/products/trendz/){:target="_blank"} for more details.
 
 ## How to cancel my subscription?
 

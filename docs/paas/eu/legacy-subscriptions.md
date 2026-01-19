@@ -2,7 +2,7 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: ThingsBoard US Cloud Legacy Subscription plans
+title: ThingsBoard EU Cloud Legacy Subscription plans
 description: Features and advantages of subscription payment model
 redirect_from: "/products/paas/subscription/"
 
@@ -18,6 +18,7 @@ cancel-my-subscription:
         title: 'Follow the guidelines to cancel your subscription. Confirm the action by clicking the "I understand the consequences, delete account" button.'
 
 ---
-{% assign docsPrefix = "paas/" %}
+{% assign docsPrefix = "paas/eu/" %}
+{% include get-hosts-name.html docsTag="paas-eu" %}
 
 {% include docs/paas/legacy-subscriptions.md %}

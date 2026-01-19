@@ -1791,6 +1791,10 @@
 "/docs/paas/eu/":
   url: "/docs/paas/eu/"
   redirect_from: []
+"/docs/paas/eu/legacy-subscriptions/":
+  url: "/docs/paas/eu/legacy-subscriptions/"
+  redirect_from:
+  - "/products/paas/subscription/"
 "/docs/paas/eu/mobile-center/applications/":
   url: "/docs/paas/eu/mobile-center/applications/"
   redirect_from: []
@@ -1910,9 +1914,11 @@
 "/docs/paas/eu/solution-templates/water-metering/":
   url: "/docs/paas/eu/solution-templates/water-metering/"
   redirect_from: []
-"/docs/paas/eu/subscription/":
-  url: "/docs/paas/eu/subscription/"
-  redirect_from: []
+"/docs/paas/eu/subscriptions/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from:
+  - "/products/paas/eu/subscription/"
+  - "/docs/paas/eu/subscription/"
 "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -2469,10 +2475,11 @@
 "/docs/paas/solution-templates/water-metering/":
   url: "/docs/paas/solution-templates/water-metering/"
   redirect_from: []
-"/docs/paas/subscription/":
-  url: "/docs/paas/subscription/"
+"/docs/paas/subscriptions/":
+  url: "/docs/paas/subscriptions/"
   redirect_from:
   - "/products/paas/subscription/"
+  - "/docs/paas/subscription/"
 "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []

@@ -2,9 +2,12 @@
 layout: docwithnav-paas
 assignees:
 - ashvayka
-title: ThingsBoard US Cloud Legacy Subscription plans
+title: ThingsBoard US Cloud Subscription plans definition
 description: Features and advantages of subscription payment model
-redirect_from: "/products/paas/subscription/"
+redirect_from: 
+  - "/products/paas/subscription/"
+  - "/docs/paas/subscription/"  
+
 
 cancel-my-subscription:
     0:
@@ -19,5 +22,7 @@ cancel-my-subscription:
 
 ---
 {% assign docsPrefix = "paas/" %}
+{% assign cloudPrefix = "US" %}
+{% assign cloudCurrency = "$" %}
 
-{% include docs/paas/legacy-subscriptions.md %}
+{% include docs/paas/subscription.md %}

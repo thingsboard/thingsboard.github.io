@@ -56,6 +56,9 @@
 "/docs/paas/eu/user-guide/":
   url: "/docs/paas/eu/guides/"
   redirect_from: "/docs/paas/eu/user-guide/"
+"/products/paas/subscription/":
+  url: "/docs/paas/subscriptions/"
+  redirect_from: "/products/paas/subscription/"
 "/docs/paas/eu/reference/coap-api":
   url: "/docs/paas/eu/reference/coap-api/"
   redirect_from: "/docs/paas/eu/reference/coap-api"
@@ -71,6 +74,12 @@
 "/docs/samples/monitoring/facilities-monitoring-poc/":
   url: "/docs/pe/solution-templates/smart-office/"
   redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
+"/products/paas/eu/subscription/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from: "/products/paas/eu/subscription/"
+"/docs/paas/eu/subscription/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from: "/docs/paas/eu/subscription/"
 "/docs/paas/eu/user-guide/ui/asset-profiles":
   url: "/docs/paas/eu/user-guide/asset-profiles/"
   redirect_from: "/docs/paas/eu/user-guide/ui/asset-profiles"
@@ -101,9 +110,6 @@
 "/docs/paas/user-guide/":
   url: "/docs/paas/guides/"
   redirect_from: "/docs/paas/user-guide/"
-"/products/paas/subscription/":
-  url: "/docs/paas/subscription/"
-  redirect_from: "/products/paas/subscription/"
 "/docs/paas/reference/coap-api":
   url: "/docs/paas/reference/coap-api/"
   redirect_from: "/docs/paas/reference/coap-api"
@@ -116,6 +122,9 @@
 "/docs/paas/reference/snmp-api":
   url: "/docs/paas/reference/snmp-api/"
   redirect_from: "/docs/paas/reference/snmp-api"
+"/docs/paas/subscription/":
+  url: "/docs/paas/subscriptions/"
+  redirect_from: "/docs/paas/subscription/"
 "/docs/paas/user-guide/ui/asset-profiles":
   url: "/docs/paas/user-guide/asset-profiles/"
   redirect_from: "/docs/paas/user-guide/ui/asset-profiles"
