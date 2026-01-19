@@ -1,0 +1,52 @@
+{
+  "type": "ENTITY_AGGREGATION",
+  "name": "Daily consumption",
+  "debugSettings": {
+    "failuresEnabled": true,
+    "allEnabled": false,
+    "allEnabledUntil": 1767622422622
+  },
+  "configurationVersion": 0,
+  "configuration": {
+    "type": "ENTITY_AGGREGATION",
+    "arguments": {
+      "consumption": {
+        "refEntityKey": {
+          "key": "consumption",
+          "type": "TS_LATEST"
+        },
+        "defaultValue": ""
+      }
+    },
+    "metrics": {
+      "dailyConsumption": {
+        "function": "SUM",
+        "input": {
+          "type": "key",
+          "key": "consumption"
+        },
+        "defaultValue": 0
+      }
+    },
+    "interval": {
+      "type": "DAY",
+      "tz": "Europe/Kiev"
+    },
+    "watermark": {
+      "duration": 86400
+    },
+    "produceIntermediateResult": false,
+    "output": {
+      "type": "TIME_SERIES",
+      "decimalsByDefault": 2,
+      "strategy": {
+        "type": "IMMEDIATE",
+        "ttl": 31536000,
+        "saveTimeSeries": true,
+        "saveLatest": true,
+        "sendWsUpdate": true,
+        "processCfs": true
+      }
+    }
+  }
+}
