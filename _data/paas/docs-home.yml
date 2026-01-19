@@ -378,6 +378,6 @@ toc:
     - title: Mail server
       path: /docs/paas/user-guide/ui/mail-settings/
 - title: Subscriptions
-  path: /docs/paas/subscription/
+  path: /docs/paas/subscriptions/
 - title: Plan and billing
   path: /docs/paas/billing-info/
