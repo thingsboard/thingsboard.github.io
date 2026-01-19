@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas-eu
 title: "How to connect UWB Anchor to ThingsBoard?"
-redirect_to: "/device-library/paas/uwb-anchor/"
+redirect_to: "/device-library/paas-eu/uwb-anchor/"
 ---

@@ -24,29 +24,29 @@
   },
   "private-cloud": {
     "edge": {
-      "faq": "",
+      "faq": "tb-private-cloud-edge-addon-cloud-what-is",
       "price": "$249/month"
     },
     "trendz": {
-      "faq": "",
+      "faq": "tb-private-cloud-trendz-what-is",
       "price": "$449/month"
     },
     "wl": {
-      "faq": "",
+      "faq": "tb-private-cloud-what-is-included-in-the-white-labeled-mobile-app-add-on",
       "price": "<span>$99/month</span> ($1 000 one time setup fee)"
     }
   },
   "pay-as-you-go": {
     "edge": {
-      "faq": "",
+      "faq": "edge-addon-payg-what-is",
       "price": "$7/month"
     },
     "trendz": {
-      "faq": "",
+      "faq": "trendz-payg-what-is",
       "price": "$12/month"
     },
     "wl": {
-      "faq": "",
+      "faq": "pe-pay-as-you-go-what-is-included-in-the-white-labeled-mobile-app-add-on",
       "price": "<span>$99/month</span> ($1 000 one time setup fee)"
     }
   }

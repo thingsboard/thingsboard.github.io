@@ -257,6 +257,12 @@
 			<td> db password</td>
 		</tr>
 		<tr>
+			<td>redis.username</td>
+			<td>REDIS_USERNAME</td>
+			<td></td>
+			<td> Redis username for ACL authentication (Redis 6.0+). Leave empty for legacy password-only auth</td>
+		</tr>
+		<tr>
 			<td>redis.ssl.enabled</td>
 			<td>TB_REDIS_SSL_ENABLED</td>
 			<td>false</td>
@@ -477,16 +483,16 @@
 		<tr>
 			<td>coap.dtls.connection_id_length</td>
 			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
-			<td></td>
+			<td>8</td>
 			<td> CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2
- Default: 8
+ Default: off. <br>
  Control usage of DTLS connection ID length (CID).
- - 'off' to deactivate it.
- - 'on' to activate Connection ID support (same as CID 0 or more 0).
- - A positive value defines generated CID size in bytes.
- - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
- - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
- - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+ <ul> <li> 'off' to deactivate it. </li>
+ <li> 'on' to activate Connection ID support (same as CID 0 or more 0). </li>
+ <li> A positive value defines generated CID size in bytes.</li>
+ <li> A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).</li>
+ <li> A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used</li>
+ <li> A value that are > 4: MultiNodeConnectionIdGenerator is used</li> </ul></td>
 		</tr>
 		<tr>
 			<td>coap.dtls.max_transmission_unit</td>
@@ -829,6 +835,12 @@
 			<td>TB_QUEUE_KAFKA_HOUSEKEEPER_TOPIC_PROPERTIES</td>
 			<td>retention.ms:604800000;segment.bytes:52428800;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
 			<td> Kafka properties for Housekeeper tasks topic</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topics_cache_ttl_ms</td>
+			<td>TB_QUEUE_KAFKA_TOPICS_CACHE_TTL_MS</td>
+			<td>300000</td>
+			<td> Topics cache TTL in milliseconds. 5 minutes by default</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>

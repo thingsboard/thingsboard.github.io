@@ -1,7 +1,6 @@
 tocs:
 - docs-home
 - getting-started
-- device-library
 - guides
 - api
 - faq
@@ -10,8 +9,6 @@ docs-header:
   title: Getting Started
 - toc: docs-home
   title: Documentation
-- toc: device-library
-  title: Device Library
 - toc: guides
   title: Guides
 - toc: api

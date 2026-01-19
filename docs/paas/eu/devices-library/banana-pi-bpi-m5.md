@@ -1,5 +1,5 @@
 ---
 layout: docwithnav-paas-eu
 title: "How to connect Banana Pi BPI-M5 to ThingsBoard?"
-redirect_to: "/device-library/paas/banana-pi-bpi-m5/"
+redirect_to: "/device-library/paas-eu/banana-pi-bpi-m5/"
 ---

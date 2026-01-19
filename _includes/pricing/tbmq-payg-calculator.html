@@ -231,9 +231,6 @@
     }
 
     const tbmqPaygUpdateUI = () => {
-        // Note: We deliberately do NOT update inputs.prod.value or dev.value here
-        // to avoid overwriting user input while they are typing.
-
         tbmqPaygUi.steppers.prod.querySelector('[data-action="decrement"]').disabled = tbmqPaygState.prodInstances <= tbmqPaygPlan.includedProdInstances;
         tbmqPaygUi.steppers.dev.querySelector('[data-action="decrement"]').disabled = tbmqPaygState.devInstances <= 0;
 
@@ -245,11 +242,9 @@
         if (type === 'prod') {
             const min = tbmqPaygPlan.includedProdInstances;
             tbmqPaygState.prodInstances = action === 'increment' ? tbmqPaygState.prodInstances + 1 : Math.max(min, tbmqPaygState.prodInstances - 1);
-            // safe to force value update on button click
             tbmqPaygUi.inputs.prod.value = tbmqPaygState.prodInstances;
         } else if (type === 'dev') {
             tbmqPaygState.devInstances = action === 'increment' ? tbmqPaygState.devInstances + 1 : Math.max(0, tbmqPaygState.devInstances - 1);
-            // safe to force value update on button click
             tbmqPaygUi.inputs.dev.value = tbmqPaygState.devInstances;
         }
         tbmqPaygCalculate();
@@ -326,10 +321,8 @@
         const subscriptionValueClass = isInitialState ? 'section-value strikethrough' : 'section-value';
         const supportClass = supportLevel === 'Priority Help Desk' ? 'support-priority' : '';
 
-        // LOGIC UPDATE: Base price strikethrough depends on paying state
         const basePriceClass = isInitialState ? 'strikethrough-text' : '';
 
-        // LOGIC UPDATE: Button label
         const buttonLabel = totalPrice > 0 ? 'Get Started' : 'Try 30 days for free';
 
         let detailsHtml = `
@@ -541,16 +534,12 @@
             tbmqPaygSendGTM();
         });
 
-        // --- SPLIT INPUT HANDLERS START ---
 
-        // 1. Sessions
         const onSessionsInput = (val) => {
-            // For calculation: Use min if invalid/empty, but DON'T update DOM value
             let calcVal = parseInt(val);
             if(isNaN(calcVal)) calcVal = TB_MQ_MIN;
 
             tbmqPaygState.sessions = Math.max(TB_MQ_MIN, calcVal);
-            // Sync slider (one way)
             tbmqPaygUi.inputs.sessionsSlider.value = tbmqPaygValueToSlider(tbmqPaygState.sessions, TB_MQ_SESSION_MARKS);
             sliderProgress(tbmqPaygUi.inputs.sessionsSlider);
             tbmqPaygCalculate();
@@ -558,11 +547,10 @@
         };
 
         const onSessionsBlur = (e) => {
-            // Strict enforcement on Blur
             let val = parseInt(e.target.value) || TB_MQ_MIN;
             val = Math.max(TB_MQ_MIN, val);
             tbmqPaygState.sessions = val;
-            e.target.value = val; // Force UI update
+            e.target.value = val;
 
             tbmqPaygUi.inputs.sessionsSlider.value = tbmqPaygValueToSlider(val, TB_MQ_SESSION_MARKS);
             sliderProgress(tbmqPaygUi.inputs.sessionsSlider);
@@ -570,9 +558,8 @@
         };
 
         tbmqPaygUi.inputs.sessions.addEventListener('input', e => onSessionsInput(e.target.value));
-        tbmqPaygUi.inputs.sessions.addEventListener('change', onSessionsBlur); // Handles "Enter" and "Blur"
+        tbmqPaygUi.inputs.sessions.addEventListener('change', onSessionsBlur);
 
-        // 2. Throughput
         const onThroughputInput = (val) => {
             let calcVal = parseInt(val);
             if(isNaN(calcVal)) calcVal = TB_MQ_MIN;
@@ -598,25 +585,20 @@
         tbmqPaygUi.inputs.throughput.addEventListener('input', e => onThroughputInput(e.target.value));
         tbmqPaygUi.inputs.throughput.addEventListener('change', onThroughputBlur);
 
-        // 3. Prod Instances
         tbmqPaygUi.inputs.prod.addEventListener('input', e => {
-            // Allow empty or partial input for UI
             let val = parseInt(e.target.value);
-            // For State: if invalid, assume included amount
             tbmqPaygState.prodInstances = isNaN(val) ? tbmqPaygPlan.includedProdInstances : Math.max(1, val);
 
             tbmqPaygCalculate();
             tbmqPaygSendGTM();
         });
         tbmqPaygUi.inputs.prod.addEventListener('change', e => {
-            // Enforce Min
             let val = parseInt(e.target.value) || tbmqPaygPlan.includedProdInstances;
             tbmqPaygState.prodInstances = Math.max(tbmqPaygPlan.includedProdInstances, val);
             e.target.value = tbmqPaygState.prodInstances;
             tbmqPaygCalculate();
         });
 
-        // 4. Dev Instances
         tbmqPaygUi.inputs.dev.addEventListener('input', e => {
             let val = parseInt(e.target.value);
             tbmqPaygState.devInstances = isNaN(val) ? 0 : Math.max(0, val);
@@ -629,13 +611,10 @@
             e.target.value = tbmqPaygState.devInstances;
             tbmqPaygCalculate();
         });
-        // --- SPLIT INPUT HANDLERS END ---
 
-
-        // Slider Listeners (kept mostly same, but ensure they update input values)
         tbmqPaygUi.inputs.sessionsSlider.addEventListener('input', e => {
             tbmqPaygState.sessions = tbmqPaygSliderToValue(parseFloat(e.target.value), TB_MQ_SESSION_MARKS);
-            tbmqPaygUi.inputs.sessions.value = tbmqPaygState.sessions; // Slider ALWAYS updates Input
+            tbmqPaygUi.inputs.sessions.value = tbmqPaygState.sessions;
             sliderProgress(e.target);
             tbmqPaygCalculate();
             tbmqPaygSendGTM();
@@ -643,7 +622,7 @@
 
         tbmqPaygUi.inputs.throughputSlider.addEventListener('input', e => {
             tbmqPaygState.throughput = tbmqPaygSliderToValue(parseFloat(e.target.value), TB_MQ_THROUGHPUT_MARKS);
-            tbmqPaygUi.inputs.throughput.value = tbmqPaygState.throughput; // Slider ALWAYS updates Input
+            tbmqPaygUi.inputs.throughput.value = tbmqPaygState.throughput;
             sliderProgress(e.target);
             tbmqPaygCalculate();
             tbmqPaygSendGTM();

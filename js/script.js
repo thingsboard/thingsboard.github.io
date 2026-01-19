@@ -164,7 +164,7 @@ var tb = (function () {
 			if (contentSource) {
 				let tooltip = newDOMElement('div', 'faq-tooltip');
 				let fullText = $(contentSource).text().trim().replace(/\s+/g, ' ');
-				let charsPerLine = 28;
+				let charsPerLine = 24;
 				let maxLines = 5;
 				let maxChars = charsPerLine * maxLines;
 
@@ -240,13 +240,7 @@ var tb = (function () {
 			const sectionId = sectionIdArr[sectionIdArr.length - 1];
 			switchFaqSection(sectionId);
 
-			const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
-			var $parent = $(questionEl).parent();
-			var $loadMoreBtn = $parent.find('.load-more');
-			if ($(questionEl).hasClass('hidden') && $loadMoreBtn.length) {
-				loadMoreFaq($loadMoreBtn[0]);
-			}
-			setTimeout(() => openFaqNode(nodeId));
+			openFaqNode(nodeId);
 		}
 
 		setYAH();
@@ -283,7 +277,7 @@ var tb = (function () {
 		}
 	}
 
-    function openFaqNode(nodeId) {
+	function openFaqNode(nodeId) {
 		$('.pi-accordion > .container > div[data-item-id]').each(function () {
 			if ($(this).hasClass('on')) {
 				var thisWrapper = $(this).find('.wrapper').eq(0);
@@ -292,14 +286,42 @@ var tb = (function () {
 				thisWrapper.css({height: 0});
 			}
 		});
-        tb.openAccordionItem(nodeId);
-        document.getElementById(nodeId).scrollIntoView({
-			behavior: 'auto',
-			block: 'center',
-			inline: 'center'
-		});
-        reportFaqNode(nodeId);
-    }
+
+		const questionEl = document.querySelector(`div[data-item-id="${nodeId}"]`);
+		if (questionEl) {
+			var $parent = $(questionEl).parent();
+			var $loadMoreBtn = $parent.find('.load-more');
+			if ($(questionEl).hasClass('hidden') && $loadMoreBtn.length) {
+				loadMoreFaq($loadMoreBtn[0]);
+			}
+		}
+
+		tb.openAccordionItem(nodeId);
+
+		setTimeout(() => {
+			const targetElement = document.getElementById(nodeId);
+			if (targetElement) {
+				const headerOffset = 100;
+				const elementPosition = targetElement.getBoundingClientRect().top;
+				const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+				window.scrollTo({
+					top: offsetPosition,
+					behavior: 'smooth'
+				});
+
+				targetElement.classList.remove('highlight-answer');
+				void targetElement.offsetWidth;
+				targetElement.classList.add('highlight-answer');
+
+				setTimeout(() => {
+					targetElement.classList.remove('highlight-answer');
+				}, 2500);
+			}
+		}, 50);
+
+		reportFaqNode(nodeId);
+	}
 
     function reportFaqNode(nodeId) {
 		if (checkGTagDataLayer() || !nodeId) {
@@ -315,7 +337,6 @@ var tb = (function () {
 			var item = this;
             $(item).attr('data-level-index', index);
 
-			// only add content wrappers to containers, not to links
 			var isContainer = item.tagName === 'DIV';
 
 			var titleText = item.getAttribute('data-title');

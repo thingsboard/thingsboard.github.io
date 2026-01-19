@@ -1239,7 +1239,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-pe-difference" data-title="How does the Community Edition differ from Professional Edition?">
                         <div class="container">
-                            <p>Community Edition includes essential features for IoT device management, data collection, visualization, and rule processing. The Professional Edition offers advanced features such as white-labeling, RBAC, integrations, etc. You can find a more detailed comparison <a href="/products/thingsboard-pe/">here</a>.</p>
+                            <p>Community Edition includes essential features for IoT device management, data collection, visualization, and rule processing. The Professional Edition offers advanced features such as white-labeling, RBAC, integrations, etc. You can find a more detailed comparison <a target="_blank" href="/products/thingsboard-pe/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-connect-devices-limit" data-title="Is there a limit on the number of devices I can connect?">
@@ -1249,7 +1249,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="possible-migrate-ce-to-pe-sm" data-title="Is it possible to migrate from the Community Edition to the self-managed ThingsBoard Professional Edition?">
                         <div class="container">
-                            <p>Yes, you can upgrade from ThingsBoard Community Edition to Professional Edition without losing telemetry data and/or configurations. The upgrade process preserves your existing setup, ensuring a seamless transition. However, <b>please note</b> that any custom modifications made directly to the source code of the Community Edition will be removed during the upgrade process. For more information about the migration procedure, please <a href="/docs/contact-us/">contact us</a>.</p>
+                            <p>Yes, you can upgrade from ThingsBoard Community Edition to Professional Edition without losing telemetry data and/or configurations. The upgrade process preserves your existing setup, ensuring a seamless transition. However, <b>please note</b> that any custom modifications made directly to the source code of the Community Edition will be removed during the upgrade process. For more information about the migration procedure, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -1257,17 +1257,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="possible-migrate-ce-to-cloud" data-title="Is it possible to migrate from the Community Edition to the ThingsBoard Cloud?">
                         <div class="container">
-                            <p>Yes, migration from the Community Edition to ThingsBoard Cloud is possible but is not 100% automatic. We recommend to use <a href="/docs/user-guide/version-control/#usage">version control</a> feature to migrate all entities. Then you may transfer telemetry data using the <a href="/docs/reference/rest-api/">REST API</a>. For more information about the migration procedure, please <a href="/docs/contact-us/">contact us</a>.</p>
+                            <p>Yes, migration from the Community Edition to ThingsBoard Cloud is possible but is not 100% automatic. We recommend to use <a target="_blank" href="/docs/user-guide/version-control/#usage">version control</a> feature to migrate all entities. Then you may transfer telemetry data using the <a target="_blank" href="/docs/reference/rest-api/">REST API</a>. For more information about the migration procedure, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-clustering" data-title="Does the Community Edition support clustering?">
                         <div class="container">
-                            <p>Yes, clustering is fully supported in the Community Edition. You can find more details about deployment scenarios <a href="/docs/reference/iot-platform-deployment-scenarios/">here</a>.</p>
+                            <p>Yes, clustering is fully supported in the Community Edition. You can find more details about deployment scenarios <a target="_blank" href="/docs/reference/iot-platform-deployment-scenarios/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-customize" data-title="Can I customize and modify the Community Edition?">
                         <div class="container">
-                            <p>Yes, the source code is available on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>, and you can fork and modify it according to your requirements. By the way, please consider starring our repository★</p>
+                            <p>Yes, the source code is available on <a target="_blank" href="https://github.com/thingsboard/thingsboard">GitHub</a>, and you can fork and modify it according to your requirements. By the way, please consider starring our repository★</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-internet-connection" data-title="Do I need an internet connection to use the Community Edition?">
@@ -1279,7 +1279,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-thingsboard-ce-installationAndDeployment" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="how-to-install-ce" data-title="How do I install ThingsBoard Community Edition?">
                         <div class="container">
-                            <p>Installation guides are available in the <a href="/docs/user-guide/install/installation-options/?ceInstallType=onPremise">documentation</a>. The Community Edition can be installed in monolith or microservice cluster mode, and supports deployment on Docker, Kubernetes, or directly on Linux/Windows OS.</p>
+                            <p>Installation guides are available in the <a target="_blank" href="/docs/user-guide/install/installation-options/?ceInstallType=onPremise">documentation</a>. The Community Edition can be installed in monolith or microservice cluster mode, and supports deployment on Docker, Kubernetes, or directly on Linux/Windows OS.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="where-to-install-ce" data-title="Where can I install the Community Edition?">
@@ -1289,7 +1289,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-database-support" data-title="What databases does the Community Edition support?">
                         <div class="container">
-                            <p>The Community Edition supports pure SQL or a hybrid SQL + NoSQL (for telemetry storage) . For more details on database options, you can check <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">here</a>.</p>
+                            <p>The Community Edition supports pure SQL or a hybrid SQL + NoSQL (for telemetry storage) . For more details on database options, you can check <a target="_blank" href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">here</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="official-docker-ce" data-title="Is there an official Docker image for Community Edition?">
@@ -1299,12 +1299,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-on-raspberry-edge" data-title="Can I run the Community Edition on Raspberry Pi or other edge devices?">
                         <div class="container">
-                            <p>Yes, but performance may be limited due to hardware constraints. You can check details <a href="/docs/user-guide/install/installation-options/">here</a>.</p>
+                            <p>Yes, but performance may be limited due to hardware constraints. You can check details <a target="_blank" href="/docs/user-guide/install/installation-options/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-multi-tenancy" data-title="Does the Community Edition support multi-tenancy?">
                         <div class="container">
-                            <p>Yes, the ThingsBoard Community Edition supports <a href="/docs/user-guide/ui/tenants/">multi-tenancy</a> out of the box.</p>
+                            <p>Yes, the ThingsBoard Community Edition supports <a target="_blank" href="/docs/user-guide/ui/tenants/">multi-tenancy</a> out of the box.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -1312,7 +1312,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-scale-deployment" data-title="How can I scale a Community Edition deployment?">
                         <div class="container">
-                            <p>You can scale the Community Edition horizontally by using a <a href="/docs/reference/msa/">microservice</a> deployment.</p>
+                            <p>You can scale the Community Edition horizontally by using a <a target="_blank" href="/docs/reference/msa/">microservice</a> deployment.</p>
                         </div>
                     </div>
                 </div>
@@ -1320,13 +1320,13 @@ defaultActivePricingSection: thingsboard-pe-options
                     <div class="item" data-tag="h4" data-item-id="ce-features" data-title="What features are included in ThingsBoard Community Edition?">
                         <div class="container">
                             <p>
-                                The Community Edition includes device and asset management, data visualization, rule engine automation, and API integrations. You can find all features and descriptions <a href="/docs/">here</a>.
+                                The Community Edition includes device and asset management, data visualization, rule engine automation, and API integrations. You can find all features and descriptions <a target="_blank" href="/docs/">here</a>.
                             </p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-exclusive-features" data-title="What features are exclusive to the Professional Edition?">
                         <div class="container">
-                            <p>The Professional Edition offers advanced features such as white-labeling, RBAC, advanced rule engine capabilities, platform integrations, etc. You can find a more detailed comparison <a href="/products/thingsboard-pe/">here</a>.</p>
+                            <p>The Professional Edition offers advanced features such as white-labeling, RBAC, advanced rule engine capabilities, platform integrations, etc. You can find a more detailed comparison <a target="_blank" href="/products/thingsboard-pe/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-white-labeling-support" data-title="Does the Community Edition support white-labeling?">
@@ -1336,12 +1336,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-other-build-in-security-features" data-title="Are there any built-in security features?">
                         <div class="container">
-                            <p>Yes, the Community Edition supports secure <a href="/docs/user-guide/device-credentials/">device connectivity</a> options, <a href="/docs/user-guide/oauth-2-support/">OAuth</a> configuration, and <a href="/docs/domains/">domain management</a>.</p>
+                            <p>Yes, the Community Edition supports secure <a target="_blank" href="/docs/user-guide/device-credentials/">device connectivity</a> options, <a target="_blank" href="/docs/user-guide/oauth-2-support/">OAuth</a> configuration, and <a target="_blank" href="/docs/domains/">domain management</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-third-party-systems" data-title="Can I integrate third-party systems with Community Edition?">
                         <div class="container">
-                            <p>Yes, you can integrate the ThingsBoard Community Edition with third-party systems through REST APIs or Rule Engine. Please note that the Professional Edition of the platform provides more integration option via <a href="/docs/user-guide/integrations/">platform integrations</a>.</p>
+                            <p>Yes, you can integrate the ThingsBoard Community Edition with third-party systems through REST APIs or Rule Engine. Please note that the Professional Edition of the platform provides more integration option via <a target="_blank" href="/docs/user-guide/integrations/">platform integrations</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-automate-device-management-telemetry-processing" data-title="Can I automate device management and telemetry processing?">
@@ -1354,17 +1354,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-ota-support" data-title="Does Community Edition support OTA (Over-the-Air) firmware updates?">
                         <div class="container">
-                            <p>Yes, the Community Edition supports <a href="/docs/user-guide/ota-updates/">OTA</a> (Over-the-Air) firmware updates.</p>
+                            <p>Yes, the Community Edition supports <a target="_blank" href="/docs/user-guide/ota-updates/">OTA</a> (Over-the-Air) firmware updates.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-mobile-app" data-title="Is there a mobile app for Community Edition?">
                         <div class="container">
-                            <p>Yes, there is an <a href="/products/mobile/">mobile app</a> for the Community Edition, based on the Flutter SDK. It is free of charge and open-source under Apache 2.0 license.</p>
+                            <p>Yes, there is an <a target="_blank" href="/products/mobile/">mobile app</a> for the Community Edition, based on the Flutter SDK. It is free of charge and open-source under Apache 2.0 license.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-ai-ml-integrations" data-title="Does Community Edition support AI or machine learning integrations?">
                         <div class="container">
-                            <p>Not natively, but you can use it with <a href="/products/trendz/">Trendz Analytics</a> or integrate external AI/ML services via APIs or use </p>
+                            <p>Not natively, but you can use it with <a target="_blank" href="/products/trendz/">Trendz Analytics</a> or integrate external AI/ML services via APIs or use </p>
                         </div>
                     </div>
                 </div>
@@ -1376,14 +1376,14 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-purchase-additional-support" data-title="Can I purchase additional support for the Community Edition?">
                         <div class="container">
-                            <p>Depending on the type of support you are looking for, the ThingsBoard team may be able to offer certain types of additional support packages. To discuss your unique case and requirements, please <a href="/docs/contact-us/">contact us</a>.</p>
+                            <p>Depending on the type of support you are looking for, the ThingsBoard team may be able to offer certain types of additional support packages. To discuss your unique case and requirements, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-help-issue" data-title="Where can I get help if I run into issues?">
                         <div class="container">
-                            <p><a href="https://github.com/thingsboard/">GitHub</a> (report issues, contribute)</p>
-                            <p><a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> (for developer-related questions)</p>
-                            <p><a href="/docs/">Documentation & Tutorials</a></p>
+                            <p><a target="_blank" href="https://github.com/thingsboard/">GitHub</a> (report issues, contribute)</p>
+                            <p><a target="_blank" href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> (for developer-related questions)</p>
+                            <p><a target="_blank" href="/docs/">Documentation & Tutorials</a></p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-request-custom-feature" data-title="Can I request custom features or improvements?">
@@ -1393,12 +1393,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-pay-for-development" data-title="Can I pay for additional features to be developed?">
                         <div class="container">
-                            <p>The ThingsBoard team can propose application configuration services. To discuss your unique case and requirements, please <a href="/docs/contact-us/">contact us</a>.</p>
+                            <p>The ThingsBoard team can propose application configuration services. To discuss your unique case and requirements, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="ce-soft-updates" data-title="Are software updates available for Community Edition?">
                         <div class="container">
-                            <p>Yes, updates for all <a href="/docs/reference/releases/">versions</a> are available.</p>
+                            <p>Yes, updates for all <a target="_blank" href="/docs/reference/releases/">versions</a> are available.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -1406,22 +1406,22 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-tb-developers-paid-service" data-title="Can I get ThingsBoard developers to help with my Community Edition deployment?">
                         <div class="container">
-                            <p>Yes, you can request such assistance as an additional paid service. Please, <a href="/docs/contact-us/">contact us</a> to discuss how we can help.</p>
+                            <p>Yes, you can request such assistance as an additional paid service. Please, <a target="_blank" href="/docs/contact-us/">contact us</a> to discuss how we can help.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-bug-found" data-title="What should I do if I find a bug in Community Edition?">
                         <div class="container">
-                            <p>You can report it on <a href="https://github.com/thingsboard/">GitHub</a>, and the open-source community may help fix it.</p>
+                            <p>You can report it on <a target="_blank" href="https://github.com/thingsboard/">GitHub</a>, and the open-source community may help fix it.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-contribute" data-title="Can I contribute to the development of ThingsBoard Community Edition?">
                         <div class="container">
-                            <p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/">GitHub</a>.</p>
+                            <p>Yes! Pull requests and contributions are welcome on <a target="_blank" href="https://github.com/thingsboard/">GitHub</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="ce-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
                         <div class="container">
-                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                            <p>Yes, we offer custom <a target="_blank" href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
                         </div>
                     </div>
                 </div>
@@ -1445,12 +1445,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="migrate-pe-to-enterprise" data-title="How do I migrate from Professional Edition to Enterprise?">
                         <div class="container">
-                            <p>Migration depends on factors such as whether you are migrating to a self-managed system or ThingsBoard Cloud, the version, source code changes, and more. Please <a href="/docs/contact-us/">contact us</a> for personalized suggestions and a clear strategy on how to perform the migration.</p>
+                            <p>Migration depends on factors such as whether you are migrating to a self-managed system or ThingsBoard Cloud, the version, source code changes, and more. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for personalized suggestions and a clear strategy on how to perform the migration.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="enterprise-trial" data-title="Can I get a trial of the Enterprise Edition before upgrading?">
                         <div class="container">
-                            <p>Yes, we offer a one-month trial on ThingsBoard Cloud for users considering an upgrade. If you would like to try the system in self-managed mode, please <a href="/docs/contact-us/">contact us</a>.</p>
+                            <p>Yes, we offer a one-month trial on ThingsBoard Cloud for users considering an upgrade. If you would like to try the system in self-managed mode, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                 </div>
@@ -1499,12 +1499,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="edge-community-installation" data-title="How can I install ThingsBoard Edge Community Edition?">
                         <div class="container">
-                            <p>You can install the Community Edition following the <a href="https://thingsboard.io/docs/user-guide/install/edge/installation-options/">installation guides</a> available in the official documentation.</p>
+                            <p>You can install the Community Edition following the <a target="_blank" href="https://thingsboard.io/docs/user-guide/install/edge/installation-options/">installation guides</a> available in the official documentation.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="edge-community-system-requirements" data-title="What are the system requirements for deploying the Community Edition?">
                         <div class="container">
-                            <p>The Community Edition is compatible with various operating systems, including Linux, Windows, and macOS. Specific requirements depend on the deployment method and can be found in the <a href="https://thingsboard.io/docs/user-guide/install/edge/installation-options/">installation guide</a>.</p>
+                            <p>The Community Edition is compatible with various operating systems, including Linux, Windows, and macOS. Specific requirements depend on the deployment method and can be found in the <a target="_blank" href="https://thingsboard.io/docs/user-guide/install/edge/installation-options/">installation guide</a>.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -1512,7 +1512,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-community-docker-support" data-title="Does the Community Edition support Docker deployment?">
                         <div class="container">
-                            <p>Yes, ThingsBoard Edge Community Edition supports Docker. Detailed instructions for Docker-based installation are provided in the <a href="https://thingsboard.io/docs/user-guide/install/edge/docker/">Docker deployment</a> guide.</p>
+                            <p>Yes, ThingsBoard Edge Community Edition supports Docker. Detailed instructions for Docker-based installation are provided in the <a target="_blank" href="https://thingsboard.io/docs/user-guide/install/edge/docker/">Docker deployment</a> guide.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-community-core-features" data-title="What core features are available in the Community Edition?">
@@ -1576,17 +1576,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-plans" data-title="What pricing plans does ThingsBoard Cloud offer?">
                         <div class="container">
-                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes up to 5 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a href="/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
+                            <p>ThingsBoard Cloud offers flexible monthly subscription plans, with tiers based on the number of devices and the volume of messages they generate. We support 5 predefined plans to cater to different needs. The beginner plan includes up to 5 devices and 10 million data points. For more details, visit the ThingsBoard Cloud <a target="_blank" href="/pricing/?product=thingsboard-cloud">pricing</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pricing-structure" data-title="How is ThingsBoard Cloud pricing structured?">
                         <div class="container">
-                            <p>Pricing is based on the number of connected devices and the volume of messages they generate. Each plan has a fixed monthly fee, with the option to purchase additional entity packs and API call packs. In this case, the total monthly cost consists of the base fee for the selected plan plus additional charges for extra features. More details are available on the <a href="/docs/paas/subscription/">subscription plans</a> page.</p>
+                            <p>Pricing is based on the number of connected devices and the volume of messages they generate. Each plan has a fixed monthly fee, with the option to purchase additional entity packs and API call packs. In this case, the total monthly cost consists of the base fee for the selected plan plus additional charges for extra features. More details are available on the <a target="_blank" href="/docs/paas/subscription/">subscription plans</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-api-rate-limits" data-title="Are there any API or rate limits?">
                         <div class="container">
-                            <p>Yes, each plan includes specific API and rate limits. If needed, you can extend these limits by purchasing additional API call packs. Detailed limits for each plan are available on the <a href="/docs/paas/subscription/">subscription plans</a> page.</p>
+                            <p>Yes, each plan includes specific API and rate limits. If needed, you can extend these limits by purchasing additional API call packs. Detailed limits for each plan are available on the <a target="_blank" href="/docs/paas/subscription/">subscription plans</a> page.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-free-trial" data-title="Do you offer a free trial?">
@@ -1594,13 +1594,13 @@ defaultActivePricingSection: thingsboard-pe-options
                             <p>Yes, we offer a free 30-day trial to let you explore ThingsBoard Cloud before committing to a paid plan.</p>
                         </div>
                     </div>
-                    <div class="load-more" onClick="loadMoreFaq(this)">
-                        <h4 class="title">Load more FAQ</h4>
-                    </div>
-                    <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-what-included-in-free-trial" data-title="What is included in the free trial?">
+                    <div class="item" data-tag="h4" data-item-id="tb-cloud-what-included-in-free-trial" data-title="What is included in the free trial?">
                         <div class="container">
                             <p>The free trial includes access to all core features and Trendz Analytics tool with limited usage of devices, messages, and storage.</p>
                         </div>
+                    </div>
+                    <div class="load-more" onClick="loadMoreFaq(this)">
+                        <h4 class="title">Load more FAQ</h4>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-upgrade-downgrade-plan" data-title="Can I upgrade or downgrade my plan at any time?">
                         <div class="container">
@@ -1641,17 +1641,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-how-cancel-supscription" data-title="How to cancel my subscription?">
                         <div class="container">
-                            <p>Kindly refer to the guide <a href="/docs/paas/eu/subscription/#how-to-cancel-my-subscription">here</a>.</p>
+                            <p>Kindly refer to the guide <a target="_blank" href="/docs/paas/eu/subscription/#how-to-cancel-my-subscription">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="migrate-cloud-to-sm" data-title="How to migrate from the Cloud to a self-managed platform instance?">
                         <div class="container">
-                            <p>We recommend using the <a href="/docs/user-guide/version-control/">Version control</a> feature to migrate your configurations. Telemetry data export can be achieved via REST API. Please, <a href="/docs/contact-us/">contact us</a> in case migration assistence needed.</p>
+                            <p>We recommend using the <a target="_blank" href="/docs/user-guide/version-control/">Version control</a> feature to migrate your configurations. Telemetry data export can be achieved via REST API. Please, <a target="_blank" href="/docs/contact-us/">contact us</a> in case migration assistence needed.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-us-to-eu" data-title="I need to move from US cloud to EU. How to achieve that?">
                         <div class="container">
-                            <p>Technically, you have to follow the same flow as for How to migrate from the Cloud to a self-service platform copy. Please, <a href="/docs/contact-us/">contact us</a> in case migration assistence needed.</p>
+                            <p>Technically, you have to follow the same flow as for How to migrate from the Cloud to a self-service platform copy. Please, <a target="_blank" href="/docs/contact-us/">contact us</a> in case migration assistence needed.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-what-is-included-in-the-white-labeled-mobile-app-add-on" data-title="What is included in the White-Labeled Mobile App add-on?">
@@ -1663,27 +1663,27 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-thingsboard-cloud-billingAndPayments" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="how-tb-cloud-billing-works" data-title="How does billing work for ThingsBoard Cloud?">
                         <div class="container">
-                            <p>Billing is handled via Stripe and is charged monthly based on your selected plan. You can also pay annually with card or wire transfer. Please <a href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
+                            <p>Billing is handled via Stripe and is charged monthly based on your selected plan. You can also pay annually with card or wire transfer. Please <a target="_blank" href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-payment-methods" data-title="What payment methods do you accept?">
                         <div class="container">
-                            <p>We accept credit and debit cards through Stripe. You can also pay annually with card or wire transfer. Please <a href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
+                            <p>We accept credit and debit cards through Stripe. You can also pay annually with card or wire transfer. Please <a target="_blank" href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-use-wire-instead-of-card" data-title="I cannot pay by card, may we use wire instead?">
                         <div class="container">
-                            <p>Sure. In this case, you must reach out to our sales team via <a href="/docs/contact-us/">contact us</a>. If you have ongoing communication with the account manager or success manager on our end, please refer your request to that person.</p>
+                            <p>Sure. In this case, you must reach out to our sales team via <a target="_blank" href="/docs/contact-us/">contact us</a>. If you have ongoing communication with the account manager or success manager on our end, please refer your request to that person.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-pay-monthly-or-annually" data-title="Can I pay monthly or annually?">
                         <div class="container">
-                            <p>We currently offer only a monthly subscription with automatic payments via Stripe. For annual payments, please <a href="/docs/contact-us/">contact</a> our team to arrange a wire transfer invoice.</p>
+                            <p>We currently offer only a monthly subscription with automatic payments via Stripe. For annual payments, please <a target="_blank" href="/docs/contact-us/">contact</a> our team to arrange a wire transfer invoice.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-volueme-discounts" data-title="Do you offer volume discounts for large deployments?">
                         <div class="container">
-                            <p>We offer Private Cloud plans for large-scale deployments with 10% discounts for annual payments; <a href="/docs/contact-us/">contact us</a> for details.</p>
+                            <p>We offer Private Cloud plans for large-scale deployments with 10% discounts for annual payments; <a target="_blank" href="/docs/contact-us/">contact us</a> for details.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-billing-history-invoices" data-title="How do I view my billing history and invoices?">
@@ -1706,7 +1706,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-charge-for-data-transfer-api-calls-msg-processing" data-title="Do you charge for data transfer, API calls, or message processing?">
                         <div class="container">
-                            <p>Each plan includes predefined usage limits that you can find <a href="/docs/paas/subscription/">here</a>. You can also purchase additional entity and API call packs if required.</p>
+                            <p>Each plan includes predefined usage limits that you can find <a target="_blank" href="/docs/paas/subscription/">here</a>. You can also purchase additional entity and API call packs if required.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-custom-plan" data-title="Can I create a custom plan with the ability to choose limits for devices, assets, users, etc.?">
@@ -1726,14 +1726,14 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-how-to-bill-my-customers" data-title="How to bill my customers on Cloud?">
                         <div class="container">
-                            <p>Currently, ThingsBoard Cloud does not provide a built-in billing module to charge end customers. However, you can create custom dashboards with backend integration between ThingsBoard and the payment system of your choice to set up billing for your application. If you would like our assistance with setting up billing, please <a href="/docs/contact-us/">contact us</a>, and we’ll be happy to propose such a configuration as an additional service.</p>
+                            <p>Currently, ThingsBoard Cloud does not provide a built-in billing module to charge end customers. However, you can create custom dashboards with backend integration between ThingsBoard and the payment system of your choice to set up billing for your application. If you would like our assistance with setting up billing, please <a target="_blank" href="/docs/contact-us/">contact us</a>, and we’ll be happy to propose such a configuration as an additional service.</p>
                         </div>
                     </div>
                 </div>
                 <div id="faq-thingsboard-cloud-usageAndLimits" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-device-msg-data-storage-limits-for-plans" data-title="What are the device, message, and data storage limits for each plan?">
                         <div class="container">
-                            <p>Limits vary by plan; details can be found on our plans definition <a href="/docs/paas/subscription/">page</a>.</p>
+                            <p>Limits vary by plan; details can be found on our plans definition <a target="_blank" href="/docs/paas/subscription/">page</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-device-usage-calculation" data-title="How is device usage calculated?">
@@ -1766,12 +1766,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-migration-to-sm-support" data-title="What support options are available for migrating to a self-managed system instead of switching to the Enterprise plan?">
                         <div class="container">
-                            <p>You can perform the migration on your own using the Version Control feature to transfer your configurations. Telemetry data can be exported via the REST API. Alternatively, the ThingsBoard team can provide additional migration assistance. Please <a href="/docs/contact-us/">contact us</a> for more details.</p>
+                            <p>You can perform the migration on your own using the Version Control feature to transfer your configurations. Telemetry data can be exported via the REST API. Alternatively, the ThingsBoard team can provide additional migration assistance. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for more details.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-telemetry-storage-billing" data-title="How is telemetry data storage billed?">
                         <div class="container">
-                            <p>Storage is included in your plan, but exceeding the limits may require upgrading your subscription or purchasing an additional storage pack. Storage limits vary by plan, you may see details <a href="/docs/paas/subscription/">here</a>.</p>
+                            <p>Storage is included in your plan, but exceeding the limits may require upgrading your subscription or purchasing an additional storage pack. Storage limits vary by plan, you may see details <a target="_blank" href="/docs/paas/subscription/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-dashboard-costs" data-title="Are there additional costs for dashboards and visualization?">
@@ -1791,12 +1791,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-users-limits-per-acc" data-title="Is there a limit on the number of users per account?">
                         <div class="container">
-                            <p>Each plan has a predefined number of users. Limits vary by plan; details can be found on our <a href="/docs/paas/subscription/">plans definition page</a>. If needed, you can purchase additional user packs to increase the number of users.</p>
+                            <p>Each plan has a predefined number of users. Limits vary by plan; details can be found on our <a target="_blank" href="/docs/paas/subscription/">plans definition page</a>. If needed, you can purchase additional user packs to increase the number of users.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-domain-certificate" data-title="Where can I put a domain certificate?">
                         <div class="container">
-                            <p>ThingsBoard automatically provisions certificates for your domain name using Let's Encrypt. Refer to the guide <a href="/docs/paas/domains/">here</a>. Custom certificate provisioning is available exclusively for Enterprise Cloud subscribers upon request.</p>
+                            <p>ThingsBoard automatically provisions certificates for your domain name using Let's Encrypt. Refer to the guide <a target="_blank" href="/docs/paas/domains/">here</a>. Custom certificate provisioning is available exclusively for Enterprise Cloud subscribers upon request.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-cloud-tenant-uptime-tracking" data-title="How can I track the uptime of my tenant?">
@@ -1848,7 +1848,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-thingsboard-cloud-trialsCancellationsAndRefunds" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-free-trial-start" data-title="How do I start a free trial?">
                         <div class="container">
-                            <p>Simply sign up on our website—no credit card required (<a href="https://thingsboard.cloud/signup">North America</a> or <a href="https://eu.thingsboard.cloud/signup">EU</a>).</p>
+                            <p>Simply sign up on our website—no credit card required (<a target="_blank" href="https://thingsboard.cloud/signup">North America</a> or <a target="_blank" href="https://eu.thingsboard.cloud/signup">EU</a>).</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-free-trial-end" data-title="What happens when my free trial ends?">
@@ -1863,7 +1863,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-subscription-cancel" data-title="How to cancel my subscription?">
                         <div class="container">
-                            <p>Kindly refer to the guide <a href="/docs/paas/eu/subscription/#how-to-cancel-my-subscription">here</a>.</p>
+                            <p>Kindly refer to the guide <a target="_blank" href="/docs/paas/eu/subscription/#how-to-cancel-my-subscription">here</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-subscription-cancel-impact" data-title="What happens if I cancel my subscription before the billing period ends?">
@@ -1885,17 +1885,17 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-24-7" data-title="Do you offer 24/7 customer support?">
                         <div class="container">
-                            <p>Yes, we do provide 24/7 support. If this is what you're looking for, please <a href="/docs/contact-us/">contact us</a> for a more detailed discussion about your specific needs.</p>
+                            <p>Yes, we do provide 24/7 support. If this is what you're looking for, please <a target="_blank" href="/docs/contact-us/">contact us</a> for a more detailed discussion about your specific needs.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-billing" data-title="How can I contact ThingsBoard support for billing-related issues?">
                         <div class="container">
-                            <p>You can use the <a href="/docs/contact-us/">contact us</a> form and select the "Other" topic. Our account managers will assist you with any billing-related issues.</p>
+                            <p>You can use the <a target="_blank" href="/docs/contact-us/">contact us</a> form and select the "Other" topic. Our account managers will assist you with any billing-related issues.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-knowledge-base" data-title="Is there a knowledge base or self-service support portal?">
                         <div class="container">
-                            <p>All of our <a href="/docs/paas/">documentation</a> is available on our website, with no hidden information. Additionally, you can use our Github issues for community support.</p>
+                            <p>All of our <a target="_blank" href="/docs/paas/">documentation</a> is available on our website, with no hidden information. Additionally, you can use our Github issues for community support.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-priority-support" data-title="Can I get priority support with my plan?">
@@ -1910,7 +1910,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tb-cloud-support-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
                         <div class="container">
-                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                            <p>Yes, we offer custom <a target="_blank" href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
                         </div>
                     </div>
                 </div>
@@ -1958,7 +1958,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-free-trial" data-title="Do you offer a free trial for Trendz?">
                         <div class="container">
-                            <p>ThingsBoard Public Cloud Free plan includes Trendz for free. If you need a free trial for other subscriptions, please <a href="/docs/contact-us/">Contact us</a> for details.</p>
+                            <p>ThingsBoard Public Cloud Free plan includes Trendz for free. If you need a free trial for other subscriptions, please <a target="_blank" href="/docs/contact-us/">Contact us</a> for details.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-support-included" data-title="What support is included in my plan?">
@@ -2011,7 +2011,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-instances-included" data-title="How many edge instances are included in Edge Computing add-on?">
                         <div class="container">
-                            <p>The number of included Edge instances depends on your subscription plan. Additional instances can be purchased separately. Check your plan details or <a href="/docs/contact-us/">contact us</a> for specifics.</p>
+                            <p>The number of included Edge instances depends on your subscription plan. Additional instances can be purchased separately. Check your plan details or <a target="_blank" href="/docs/contact-us/">contact us</a> for specifics.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-inclusions" data-title="What's included in the Edge Computing add-on price?">
@@ -2076,7 +2076,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-upgrade-ce-pe" data-title="Can I upgrade from Edge CE to Edge PE?">
                         <div class="container">
-                            <p>Yes, but you'll need to upgrade your entire system: upgrade your ThingsBoard Server from CE to PE, purchase the Edge Computing add-on, and reinstall Edge using PE packages. Please <a href="/docs/contact-us/">contact us</a> for migration assistance.</p>
+                            <p>Yes, but you'll need to upgrade your entire system: upgrade your ThingsBoard Server from CE to PE, purchase the Edge Computing add-on, and reinstall Edge using PE packages. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for migration assistance.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-cloud-separate-license" data-title="Do I need a separate license to use Edge Computing add-on?">
@@ -2239,7 +2239,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-service-reviews-and-architecture-consultations" data-title="What is included in service reviews and architecture consultations?">
                         <div class="container">
                             <p>Service reviews and architecture consultations are a specialized, ongoing service available exclusively to ThingsBoard Private Cloud customers. These sessions provide structured, high-level guidance from a senior ThingsBoard engineer who collaborates with your team regularly. You’ll receive proactive recommendations on best practices, performance tuning, and scalable architecture design tailored to your evolving use case. <br><br></p>
-                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement. <a href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Contact us</a> for more details.</p>
+                            <p>This service is not included by default and can be purchased separately for customers who require advanced architectural guidance and regular expert engagement. <a target="_blank" href="/docs/contact-us/?subject=Private%20Cloud&message=Architecture%20reviews%20and%20consults">Contact us</a> for more details.</p>
                         </div>
                     </div>
                 </div>
@@ -2404,7 +2404,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-rest-websocket-api-rate-limits" data-title="Are there REST / WebSocket API rate limits?">
                         <div class="container">
-                            <p>Yes. Per tenant, device and user limits prevent abuse and protect cluster health. The full tables are published <a href="/docs/private-cloud/subscription/">here</a>.</p>
+                            <p>Yes. Per tenant, device and user limits prevent abuse and protect cluster health. The full tables are published <a target="_blank" href="/docs/private-cloud/subscription/">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tb-private-cloud-are-there-limits-on-dashboards-widgets-rule-chains-or-alarms" data-title="Are there limits on dashboards, widgets, rule chains, or alarms?">
@@ -2529,7 +2529,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-thingsboard-private-cloud-trialsCancellationsAndRefunds" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-is-there-a-trial-option-for-private-cloud" data-title="Is there a trial option for Private Cloud?">
                         <div class="container">
-                            <p>Trial access is available on <a href="/installations/choose-region/">ThingsBoard Cloud</a>, which allows you to explore the core features and capabilities of ThingsBoard without setup overhead.</p>
+                            <p>Trial access is available on <a target="_blank" href="/installations/choose-region/">ThingsBoard Cloud</a>, which allows you to explore the core features and capabilities of ThingsBoard without setup overhead.</p>
                             <p>For ThingsBoard Private Cloud, trials are not applicable due to the use of dedicated infrastructure and custom deployment.</p>
                         </div>
                     </div>
@@ -2567,6 +2567,27 @@ defaultActivePricingSection: thingsboard-pe-options
                             <p>This approach ensures consistent architecture, SLA alignment, and reliability without complicating plan configurations.</p>
                         </div>
                     </div>
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-edge-addon-cloud-what-is" data-title="What is Edge Computing add-on?">
+                        <div class="container">
+                            <p>The Edge Computing add-on enables local data processing at remote sites through ThingsBoard Edge PE instances. Edge runs independently with offline capability and automatically syncs with your central ThingsBoard PE Server when connectivity returns.</p>
+                            <p>It is available for all ThingsBoard PE deployments: Cloud, Private Cloud, and self-managed.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-edge-addon-cloud-pricing-plans" data-title="What pricing plans does Edge Computing add-on offer?">
+                        <div class="container">
+                            <p>Edge Computing add-on pricing depends on your ThingsBoard model. Check the relevant pricing in the <a href="/pricing/?section=thingsboard-pe-options&product=thingsboard-private-cloud&calculator/">Plan Calculator</a>.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-trendz-what-is" data-title="What is Trendz?">
+                        <div class="container">
+                            <p>Trendz is an add-on for advanced IoT Data Analytics. It allows you to analyze, detect anomalies, and predict outcomes — all in one unified analytics workspace that works seamlessly with ThingsBoard. You can check pricing in the Plan calculator.</p>
+                        </div>
+                    </div>
+                    <div class="item" data-tag="h4" data-item-id="tb-private-cloud-trendz-pricing-plans" data-title="What pricing plans does Trendz offer?">
+                        <div class="container">
+                            <p>Trendz pricing depends on your ThingsBoard model. You can check the relevant pricing in the <a href="/pricing/?section=thingsboard-pe-options&product=thingsboard-private-cloud&calculator/">Plan Calculator</a> on this page.</p>
+                        </div>
+                    </div>
                     <div class="item" data-tag="h4" data-item-id="tb-private-cloud-what-is-included-in-the-white-labeled-mobile-app-add-on" data-title="What is included in the White-Labeled Mobile App add-on?">
                         <div class="container">
                             <p>The White-Labeled Mobile App add-on provides you with a branded version of the ThingsBoard Mobile application. This includes your company’s name, logo, colors, and other branding elements. The cost is $99 per month, plus a one-time setup fee of $1,000 to cover branding and configuration.</p>
@@ -2595,22 +2616,22 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-purchase" data-title="How can I buy a self-managed subscription?">
                         <div class="container">
-                            <p>To purchase a self-managed subscription, you can acquire a license through your <a href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed installation guides.</p>
+                            <p>To purchase a self-managed subscription, you can acquire a license through your <a target="_blank" href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed installation guides.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-purchase-perpetual-license" data-title="How to purchase a Perpetual license?">
                         <div class="container">
-                            <p>If you would like to explore the Perpetual option, please <a href="/docs/contact-us/">contact our sales team</a></p>
+                            <p>If you would like to explore the Perpetual option, please <a target="_blank" href="/docs/contact-us/">contact our sales team</a></p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-license" data-title="What does it mean to get the license?">
                         <div class="container">
-                            <p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed installation guides.</p>
+                            <p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a target="_blank" href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed installation guides.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-subscription-plans" data-title="What self-managed subscription plans does ThingsBoard offer?">
                         <div class="container">
-                            <p>ThingsBoard offers flexible monthly subscription plans, with tiers based on the number of devices and assets. We support 5 predefined plans to cater to different needs. The beginner plan includes support for up to 10 devices. For more details, visit the ThingsBoard <a href="/pricing/?product=thingsboard-pe">pricing page</a>.</p>
+                            <p>ThingsBoard offers flexible monthly subscription plans, with tiers based on the number of devices and assets. We support 5 predefined plans to cater to different needs. The beginner plan includes support for up to 10 devices. For more details, visit the ThingsBoard <a target="_blank" href="/pricing/?product=thingsboard-pe">pricing page</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-differences" data-title="How do the self-managed subscription plans differ?">
@@ -2638,12 +2659,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-limits" data-title="What happens if I exceed the device or asset limits in my plan?">
                         <div class="container">
-                            <p>If you exceed your plan's limits, you will need to upgrade to a higher-tier plan.</p>
+                            <p>If you exceed your plan’s limits, you will need to upgrade to a higher-tier plan. With the Business plan, you can also purchase additional devices on a monthly basis at a rate of $0.10 per extra device.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-cloud-to-self-managed" data-title="Can I migrate from a ThingsBoard Cloud subscription to a self-managed license?">
                         <div class="container">
-                            <p>Please, <a href="/docs/contact-us/">contact us</a> in case migration assistance is needed.</p>
+                            <p>Please, <a target="_blank" href="/docs/contact-us/">contact us</a> in case migration assistance is needed.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-self-managed-features" data-title="Are all ThingsBoard features included in every plan?">
@@ -2653,7 +2674,8 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-license-multi-location" data-title="Can I use my license across multiple locations or instances?">
                         <div class="container">
-                            <p>By default, each license includes a single platform instance, meaning you can install it on one server. A server can be a virtual machine, a running Docker container, or a single OS process. If you need to run the platform across multiple locations or instances in a cluster, you can purchase additional instances within your license to scale as needed.</p>
+                            <p>A platform instance can be installed on a single server, which may be a virtual machine, a running Docker container, or a single OS process. If you need to run the platform across multiple locations or as part of a clustered deployment, you can purchase additional instances for any plan as required. <br><br></p>
+                            <p>By default, each license includes a predefined number of platform instances. The Maker, Prototype, and Pilot plans include one instance, the Startup plan includes two instances, and the Business plan includes three instances.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-subscription-to-perpetual" data-title="Is it possible to jump from subscription to perpetual?">
@@ -2666,26 +2688,31 @@ defaultActivePricingSection: thingsboard-pe-options
                             <p>Yes! You can migrate your license by activating or deactivating it on the License Server. To move to a new server, deactivate the current instance, install the software on the new server, and reuse your existing license key. Be sure to back up your data if you want to maintain the same environment. Note: The license system prevents running ThingsBoard Professional Edition on multiple servers at the same time unless you purchase additional instances.</p>
                         </div>
                     </div>
+                    <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-what-is-included-in-the-white-labeled-mobile-app-add-on" data-title="What is included in the White-Labeled Mobile App add-on?">
+                        <div class="container">
+                            <p>The White-Labeled Mobile App add-on provides you with a branded version of the ThingsBoard Mobile application. This includes your company’s name, logo, colors, and other branding elements. The cost is $99 per month, plus a one-time setup fee of $1,000 to cover branding and configuration.</p>
+                        </div>
+                    </div>
                 </div>
                 <div id="faq-pe-pay-as-you-go-billingAndPayments" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-billing-process" data-title="How does billing work for self-managed subscriptions?">
                         <div class="container">
-                            <p>Billing is handled via Stripe and is charged monthly based on your selected plan. You can also pay annually with card or wire transfer. Please <a href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
+                            <p>Billing is handled via Stripe and is charged monthly based on your selected plan. You can also pay annually with card or wire transfer. Please <a target="_blank" href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-payment-methods" data-title="What payment methods do you accept?">
                         <div class="container">
-                            <p>We accept credit and debit cards through Stripe. You can also pay annually with card or wire transfer. Please <a href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
+                            <p>We accept credit and debit cards through Stripe. You can also pay annually with card or wire transfer. Please <a target="_blank" href="/docs/contact-us/">contact us</a> to receive a custom invoice.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-wire-payment" data-title="I cannot pay by card, may we use wire instead?">
                         <div class="container">
-                            <p>Sure. In this case, you must reach out to our sales team via <a href="/docs/contact-us/">contact us</a>. If you have ongoing communication with the account manager or success manager on our end, please refer your request to that person.</p>
+                            <p>Sure. In this case, you must reach out to our sales team via <a target="_blank" href="/docs/contact-us/">contact us</a>. If you have ongoing communication with the account manager or success manager on our end, please refer your request to that person.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-annual-payment" data-title="Do you offer an annual payment option?">
                         <div class="container">
-                            <p>We currently offer only a monthly subscription with automatic payments via Stripe. For annual payments, please <a href="/docs/contact-us/">contact</a> our team to arrange a wire transfer invoice.</p>
+                            <p>We currently offer only a monthly subscription with automatic payments via Stripe. For annual payments, please <a target="_blank" href="/docs/contact-us/">contact</a> our team to arrange a wire transfer invoice.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-payment-failure" data-title="What happens if my payment fails?">
@@ -2713,7 +2740,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-multiple-licenses" data-title="Do you offer discounts for multiple licenses?">
                         <div class="container">
-                            <p>Contact our <a href="/docs/contact-us/">sales team</a> for bulk pricing options.</p>
+                            <p>Contact our <a target="_blank" href="/docs/contact-us/">sales team</a> for bulk pricing options.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-subscription-expiry" data-title="What happens if I don’t renew my subscription?">
@@ -2728,24 +2755,25 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-additional-fees" data-title="Is there an additional payment for the software use besides the license fee?">
                         <div class="container">
-                            <p>No, we do not charge extra unless you want an additional service that we offer: professional support, custom development and consulting, training, or managed service.</p>
+                            <p>No, we do not charge extra unless you want an additional service that we offer: professional support, Custom development and consulting, Training, or Managed service. </p>
                         </div>
                     </div>
                 </div>
                 <div id="faq-pe-pay-as-you-go-usageDeploymentsAndLimits" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-device-asset-limits" data-title="What are the device and asset limits for each plan?">
                         <div class="container">
-                            <p>Maker: Up to 10 devices and 10 assets<br>Prototype: Up to 100 devices and 100 assets<br>Startup: Up to 500 devices and 500 assets<br>Business: 1000 devices and assets<br>Business+: 2000 devices and assets included, each extra device can be purchased at $0,10 rate.</p>
+                            <p>Maker: 10 devices<br>Prototype: 50 devices<br>Pilot: 100 devices<br>Startup: 500 devices<br>Business: 1000 devices, with the option to purchase additional devices at $0.10 per device per month</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-exceed-limits" data-title="What happens if I exceed my plan’s device or asset limit?">
                         <div class="container">
-                            <p>You will need to upgrade to a higher-tier plan.</p>
+                            <p>You will need to upgrade to a higher-tier plan. With the Business plan, you also have the option to purchase additional devices at $0.10 per device per month.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-multiple-servers" data-title="Can I use my license on multiple servers?">
                         <div class="container">
-                            <p>By default, each license includes a single platform instance, meaning you can install it on one server. A server can be a virtual machine, a running Docker container, or a single OS process. If you need to run the platform across multiple locations or instances in a cluster, you can purchase additional instances within your license to scale as needed.</p>
+                            <p>A platform instance can be installed on a single server, which may be a virtual machine, a running Docker container, or a single OS process. If you need to run the platform across multiple locations or as part of a clustered deployment, you can purchase additional instances for any plan as required. <br><br></p>
+                            <p>By default, each license includes a predefined number of platform instances. The Maker, Prototype, and Pilot plans include one instance, the Startup plan includes two instances, and the Business plan includes three instances.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-api-storage-fees" data-title="Does ThingsBoard charge for API calls or storage?">
@@ -2755,12 +2783,12 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-internet-requirement" data-title="Do I need an internet connection to use the self-managed license?">
                         <div class="container">
-                            <p>Yes, an internet connection is required for periodic license verification. The system checks the license once per hour, and if the connection is not restored within 24 hours, the platform may shut down. This process ensures proper license management while allowing temporary connectivity issues. For more details, please refer to the license check <a href="/products/license-server/#architecture">description</a>. Offline mode is also possible as an add-on to the Perpetual license. <a href="/docs/contact-us/">Contact our sales team</a> to know more.</p>
+                            <p>Yes, an internet connection is required for periodic license verification. The system checks the license once per hour, and if the connection is not restored within 24 hours, the platform may shut down. This process ensures proper license management while allowing temporary connectivity issues. For more details, please refer to the license check <a target="_blank" href="/products/license-server/#architecture">description</a>. Offline mode is also possible as an add-on to the Perpetual license. <a target="_blank" href="/docs/contact-us/">Contact our sales team</a> to know more.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-offline-access" data-title="Can I run offline?">
                         <div class="container">
-                            <p>By default, the platform requires active Internet access or at least access to license portal from your host machine. If Offline access is a must, please <a href="/docs/contact-us/">contact us</a> to discuss options.</p>
+                            <p>By default, the platform requires active Internet access or at least access to license portal from your host machine. If Offline access is a must, please <a target="_blank" href="/docs/contact-us/">contact us</a> to discuss options.</p>
                         </div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)">
@@ -2783,7 +2811,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-telemetry-storage" data-title="How is telemetry data stored in self-managed ThingsBoard?">
                         <div class="container">
-                            <p>ThingsBoard supports PostgreSQL or PostgreSQL + Cassandra (Hybrid mode) for telemetry storage. For more details on database options, you can check <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">here</a>.</p>
+                            <p>ThingsBoard supports PostgreSQL or PostgreSQL + Cassandra (Hybrid mode) for telemetry storage. For more details on database options, you can check <a target="_blank" href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach">here</a>.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-multi-tenancy" data-title="Does ThingsBoard support multi-tenancy?">
@@ -2793,7 +2821,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="pe-pay-as-you-go-customer-billing" data-title="How to charge my customers?">
                         <div class="container">
-                            <p>So far, the ThingsBoard platform does not provide a billing module to charge end customers. At the same time, the platform exposes the <a href="https://thingsboard.cloud/swagger-ui/#/usage-info-controller">Usage API</a> that can be used by the external payment software to generate invoices.</p>
+                            <p>So far, the ThingsBoard platform does not provide a billing module to charge end customers. At the same time, the platform exposes the <a target="_blank" href="https://thingsboard.cloud/swagger-ui/#/usage-info-controller">Usage API</a> that can be used by the external payment software to generate invoices.</p>
                         </div>
                     </div>
                 </div>
@@ -2825,7 +2853,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-vulnerability-fixes" data-title="Where can I find the logged vulnerability fixes matrix: version + list of fixes?">
                         <div class="container">
-                            <p>Please stay tuned with our <a href="/docs/pe/reference/releases/">Release notes</a>. Critical vulnerabilities or security issues are mentioned in separate line items. Less threatful vulnerabilities appear as a single record (“Vulnerability fixes”) stating that, at the release date, the version is free of known HIGH and some MEDIUM CVEs.</p>
+                            <p>Please stay tuned with our <a target="_blank" href="/docs/pe/reference/releases/">Release notes</a>. Critical vulnerabilities or security issues are mentioned in separate line items. Less threatful vulnerabilities appear as a single record (“Vulnerability fixes”) stating that, at the release date, the version is free of known HIGH and some MEDIUM CVEs.</p>
                         </div>
                     </div>
                 </div>
@@ -2837,7 +2865,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-cancel-subscription" data-title="What happens if I cancel my subscription?">
                         <div class="container">
-                            <p>Your license will become inactive, and your ThingsBoard instance will be stopped</p>
+                            <p>Your license will become inactive, and your ThingsBoard instance will be stopped.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-switch-perpetual" data-title="Can I switch from a subscription license to a perpetual license?">
@@ -2854,32 +2882,33 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-pe-pay-as-you-go-supportAndAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-support-included" data-title="What support is included in my subscription?">
                         <div class="container">
-                            <p>- Maker and Prototype: Community support.<br>- Startup: Support with 36-hour response time during regular working shifts via Support Portal.<br>&#8195;Please note: Support for the Startup plan becomes available from the second month of usage.<br>- Business and Business+: Support with 12-hour response time during regular working shifts via Support Portal.</p>
+                            <p>- Maker and Prototype: Community support.<br>- Startup: Support with 36-hour response time during regular working shifts via Support Portal.<br>&#8195;Please note: Support for the Startup plan becomes available from the second month of usage.<br>- Business: Support with 12-hour response time during regular working shifts via Support Portal.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-24-7-support" data-title="Do you offer 24/7 support?">
                         <div class="container">
-                            <p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a href="/docs/contact-us/">contact us</a> for more details.</p>
+                            <p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for more details.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-installation-help" data-title="How can I get help with installation and setup?">
                         <div class="container">
-                            <p>If your subscription plan includes response time support and you have access to the Support Portal, the ThingsBoard support team can assist with system deployment as part of the subscription. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under included support. If your subscription plan does not include support, then we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a href="/docs/contact-us/">contact us</a>.</p>
+                            <p>If your subscription plan includes response time support and you have access to the Support Portal, the ThingsBoard support team can assist with system deployment as part of the subscription. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under included support. If your subscription plan does not include support, then we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-contact-support" data-title="How do I contact support?">
                         <div class="container">
-                            <p>Users of Startup and higher subscriptions, as well as perpetual license holders, are automatically added to the ThingsBoard <a href="https://thingsboard-portal.atlassian.net/servicedesk/customer/portal/1">Support Portal</a> after purchasing a license.</p>
+                            <p>Users of Startup and higher subscriptions, as well as perpetual license holders, are automatically added to the ThingsBoard <a target="_blank" href="https://thingsboard-portal.atlassian.net/servicedesk/customer/portal/1">Support Portal</a> after purchasing a license.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-support-issues" data-title="What issues are included in subscription support?">
                         <div class="container">
-                            <p>"Access to the ThingsBoard Support Portal is available for users with Startup and higher subscriptions, as well as perpetual license holders. Without the need for a separate support agreement, all support inquiries are seamlessly managed through a unified queue, ensuring efficient handling of your requests. Our support team is dedicated to providing an initial response within 24 hours to address your needs promptly.<br><br>The support service includes assistance with installation and migration for default deployments, as well as resolving any questions related to the platform's out-of-the-box functionalities, as detailed in our documentation. For specialized services such as consulting, code reviews, health assessments, or development projects, we offer tailored solutions to meet your specific requirements. Should your request involve additional expertise, our support engineers will guide you to the best resources to ensure your success."</p>
+                            <p>Access to the ThingsBoard Support Portal is available for users with Startup and higher subscriptions, as well as perpetual license holders. Without the need for a separate support agreement, all support inquiries are seamlessly managed through a unified queue, ensuring efficient handling of your requests. Our support team is dedicated to providing an initial response within 24 hours to address your needs promptly. <br><br></p>
+                            <p>The support service includes assistance with installation and migration for default deployments, as well as resolving any questions related to the platform's out-of-the-box functionalities, as detailed in our documentation. For specialized services such as consulting, code reviews, health assessments, or development projects, we offer tailored solutions to meet your specific requirements. Should your request involve additional expertise, our support engineers will guide you to the best resources to ensure your success.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="pe-pay-as-you-go-development-services" data-title="Can you provide an IoT development service tailored to my specific needs?">
                         <div class="container">
-                            <p>Yes, we offer custom <a href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
+                            <p>Yes, we offer custom <a target="_blank" href="/services/development-services/">IoT development services</a> designed to match your exact requirements. Whether you need a full-featured IoT platform, scalable architecture, or specific integrations, our IoT development team can help you accelerate time-to-market and reduce internal workload while ensuring long-term maintainability.</p>
                         </div>
                     </div>
                 </div>
@@ -2892,7 +2921,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item" data-tag="h4" data-item-id="edge-addon-payg-pricing-plans" data-title="What pricing plans does Edge Computing add-on offer?">
                         <div class="container">
-                            <p>Edge Computing add-on pricing depends on your ThingsBoard model. Check the relevant pricing in the Plan Calculator.</p>
+                            <p>Edge Computing add-on pricing depends on your ThingsBoard model. Check the relevant pricing in the <a href="/pricing/?product=thingsboard-pe&calculatorPayg">Plan Calculator</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="edge-addon-payg-compatibility" data-title="Does Edge work with both ThingsBoard PE and CE?">
@@ -2926,7 +2955,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-instances-included" data-title="How many edge instances are included in Edge Computing add-on?">
                         <div class="container">
-                            <p>The number of included Edge instances depends on your subscription plan. Additional instances can be purchased separately. Check your plan details or <a href="/docs/contact-us/">contact us</a> for specifics.</p>
+                            <p>The number of included Edge instances depends on your subscription plan. Additional instances can be purchased separately. Check your plan details or <a target="_blank" href="/docs/contact-us/">contact us</a> for specifics.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-inclusions" data-title="What's included in the Edge Computing add-on price?">
@@ -2991,7 +3020,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-upgrade-ce-pe" data-title="Can I upgrade from Edge CE to Edge PE?">
                         <div class="container">
-                            <p>Yes, but you'll need to upgrade your entire system: upgrade your ThingsBoard Server from CE to PE, purchase the Edge Computing add-on, and reinstall Edge using PE packages. Please <a href="/docs/contact-us/">contact us</a> for migration assistance.</p>
+                            <p>Yes, but you'll need to upgrade your entire system: upgrade your ThingsBoard Server from CE to PE, purchase the Edge Computing add-on, and reinstall Edge using PE packages. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for migration assistance.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="edge-addon-payg-separate-license" data-title="Do I need a separate license to use Edge Computing add-on?">
@@ -3003,7 +3032,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <div id="faq-pe-pay-as-you-go-trendz" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="trendz-payg-what-is" data-title="What is Trendz?">
                         <div class="container">
-                            <p>Trendz is an add-on for advanced IoT Data Analytics. It allows you to analyze, detect anomalies, and predict outcomes — all in one unified analytics workspace that works seamlessly with ThingsBoard. You can check pricing in the <a target="_blank" href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&solution=pe-perpetual&calculatorPayg">Plan Calculator</a>.</p>
+                            <p>Trendz is an add-on for advanced IoT Data Analytics. It allows you to analyze, detect anomalies, and predict outcomes — all in one unified analytics workspace that works seamlessly with ThingsBoard. You can check pricing in the <a target="_blank"  href="/pricing/?section=thingsboard-pe-options&product=thingsboard-pe&solution=pe-perpetual&calculatorPayg">Plan Calculator</a>.</p>
                         </div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="trendz-payg-pricing-plans" data-title="What pricing plans does Trendz offer?">
@@ -3055,7 +3084,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-free-trial" data-title="Do you offer a free trial for Trendz?">
                         <div class="container">
-                            <p>ThingsBoard Maker includes Trendz for free. If you need a free trial for other subscriptions, <a href="/docs/contact-us/">Contact us</a> for details.</p>
+                            <p>ThingsBoard Maker includes Trendz for free. If you need a free trial for other subscriptions, <a target="_blank" href="/docs/contact-us/">Contact us</a> for details.</p>
                         </div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="trendz-payg-support-types" data-title="What support is included in my plan?">
@@ -3370,7 +3399,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-additional-limits" data-title="Are there any additional limits?">
                         <div class="container">
-                            <p>Yes, TBMQ Private Cloud subscription has sessions, messages, and storage limits. See subscription <a href="/docs/mqtt-broker/subscription/">documentation</a> for more details.</p>
+                            <p>Yes, TBMQ Private Cloud subscription has sessions, messages, and storage limits. See subscription <a target="_blank" href="/docs/mqtt-broker/subscription/">documentation</a> for more details.</p>
                         </div>
                     </div>
                 </div>
@@ -3442,7 +3471,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Yes, TBMQ Community Edition can be used for commercial purposes. You can develop and deploy IoT solutions based on the Community Edition as part of your business operations. It is distributed under the Apache 2.0 license, which allows commercial use without the license or royalty fees.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-diff-pe" data-title="How does the Community Edition differ from Professional Edition?">
-                        <div class="container"><p>Community Edition includes essential MQTT broker features with full support for MQTT 3.x and MQTT 5.0. The Professional Edition offers advanced features such as White Labeling, RBAC, Single sign-on, etc. You can find a more detailed comparison <a href="/products/mqtt-broker/">here</a>.</p></div>
+                        <div class="container"><p>Community Edition includes essential MQTT broker features with full support for MQTT 3.x and MQTT 5.0. The Professional Edition offers advanced features such as White Labeling, RBAC, Single sign-on, etc. You can find a more detailed comparison <a target="_blank" href="/products/mqtt-broker/">here</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-session-limits" data-title="Is there a limit on the number of sessions I can connect?">
                         <div class="container"><p>No, there are no programmatic limits, but performance depends on your server(s) capacity.</p></div>
@@ -3452,13 +3481,13 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)"><h4 class="title">Load more FAQ</h4></div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-migration-pe" data-title="Is it possible to migrate from the Community Edition to the self-managed TBMQ Professional Edition?">
-                        <div class="container"><p>Yes, you can upgrade from TBMQ Community Edition to Professional Edition without losing any data and/or configurations. The upgrade process preserves your existing setup, ensuring a seamless transition. However, please note that any custom modifications made directly to the source code of the Community Edition will be removed during the upgrade process. For more information about the migration procedure, please <a href="/docs/contact-us/">contact us</a>.</p></div>
+                        <div class="container"><p>Yes, you can upgrade from TBMQ Community Edition to Professional Edition without losing any data and/or configurations. The upgrade process preserves your existing setup, ensuring a seamless transition. However, please note that any custom modifications made directly to the source code of the Community Edition will be removed during the upgrade process. For more information about the migration procedure, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-clustering" data-title="Does the Community Edition support clustering?">
-                        <div class="container"><p>Yes, clustering is fully supported in the Community Edition. You can find more details about deployment scenarios <a href="/docs/mqtt-broker/install/deployment-options/">here</a>.</p></div>
+                        <div class="container"><p>Yes, clustering is fully supported in the Community Edition. You can find more details about deployment scenarios <a target="_blank" href="/docs/mqtt-broker/install/deployment-options/">here</a>.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-customize" data-title="Can I customize and modify the Community Edition?">
-                        <div class="container"><p>Yes, the source code is available on <a href="https://github.com/thingsboard/tbmq">GitHub</a>, and you can fork and modify it according to your requirements. By the way, please consider starring our <a href="https://github.com/thingsboard/tbmq">repository★</a>.</p></div>
+                        <div class="container"><p>Yes, the source code is available on <a target="_blank" href="https://github.com/thingsboard/tbmq">GitHub</a>, and you can fork and modify it according to your requirements. By the way, please consider starring our <a target="_blank" href="https://github.com/thingsboard/tbmq">repository★</a>.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-internet" data-title="Do I need an internet connection to use the Community Edition?">
                         <div class="container"><p>No, you can run it completely offline if needed.</p></div>
@@ -3466,16 +3495,16 @@ defaultActivePricingSection: thingsboard-pe-options
                 </div>
                 <div id="faq-tbmq-ce-installationAndDeployment" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-install-guide" data-title="How do I install TBMQ Community Edition?">
-                        <div class="container"><p>Installation guides are available in the <a href="/docs/mqtt-broker/install/installation-options/">documentation</a>. The Community Edition can be installed in monolith or cluster mode, and supports deployment on Docker and Kubernetes.</p></div>
+                        <div class="container"><p>Installation guides are available in the <a target="_blank" href="/docs/mqtt-broker/install/installation-options/">documentation</a>. The Community Edition can be installed in monolith or cluster mode, and supports deployment on Docker and Kubernetes.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-install-location" data-title="Where can I install the Community Edition?">
                         <div class="container"><p>You can install the Community Edition on your virtual machine, local servers, or any cloud provider infrastructure of your choice.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-db-support" data-title="What databases does the Community Edition support?">
-                        <div class="container"><p>The Community Edition supports Kafka, Redis/Valkey, and PostgreSQL. For more details on database options, you can check <a href="/docs/mqtt-broker/architecture/">here</a>.</p></div>
+                        <div class="container"><p>The Community Edition supports Kafka, Redis/Valkey, and PostgreSQL. For more details on database options, you can check <a target="_blank" href="/docs/mqtt-broker/architecture/">here</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-docker" data-title="Is there an official Docker image for Community Edition?">
-                        <div class="container"><p>Yes, official Docker images are available on <a href="https://hub.docker.com/r/thingsboard/tbmq">Docker Hub</a>.</p></div>
+                        <div class="container"><p>Yes, official Docker images are available on <a target="_blank" href="https://hub.docker.com/r/thingsboard/tbmq">Docker Hub</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-multitenancy" data-title="Does the Community Edition support multi-tenancy?">
                         <div class="container"><p>No, the TBMQ Community Edition does not support multi-tenancy.</p></div>
@@ -3486,10 +3515,10 @@ defaultActivePricingSection: thingsboard-pe-options
                 </div>
                 <div id="faq-tbmq-ce-featuresAndLimitations" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-features-list" data-title="What features are included in TBMQ Community Edition?">
-                        <div class="container"><p>The Community Edition includes all essential MQTT broker features with full support for MQTT 3.x and MQTT 5.0. You can find all features and descriptions <a href="/docs/mqtt-broker/">here</a>.</p></div>
+                        <div class="container"><p>The Community Edition includes all essential MQTT broker features with full support for MQTT 3.x and MQTT 5.0. You can find all features and descriptions <a target="_blank" href="/docs/mqtt-broker/">here</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-pe-exclusive" data-title="What features are exclusive to the Professional Edition?">
-                        <div class="container"><p>The Professional Edition offers advanced features such as White Labeling, RBAC, Single sign-on, etc. You can find a more detailed comparison <a href="/products/mqtt-broker/">here</a>.</p></div>
+                        <div class="container"><p>The Professional Edition offers advanced features such as White Labeling, RBAC, Single sign-on, etc. You can find a more detailed comparison <a target="_blank" href="/products/mqtt-broker/">here</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-white-label" data-title="Does the Community Edition support white-labeling?">
                         <div class="container"><p>No, white-labeling is available only in the Professional Edition.</p></div>
@@ -3498,37 +3527,37 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Yes, the Community Edition supports secure MQTT connectivity, authentication, and authorization for MQTT clients.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-integrations" data-title="Can I integrate third-party systems with Community Edition?">
-                        <div class="container"><p>Yes, you can integrate the TBMQ Community Edition with third-party systems through <a href="/docs/mqtt-broker/integrations/">platform integrations</a>.</p></div>
+                        <div class="container"><p>Yes, you can integrate the TBMQ Community Edition with third-party systems through <a target="_blank" href="/docs/mqtt-broker/integrations/">platform integrations</a>.</p></div>
                     </div>
                 </div>
                 <div id="faq-tbmq-ce-supportAndCommunityAssistance" class="pi-accordion">
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-support" data-title="Is there out-of-the-box support from TBMQ team for Community Edition users?">
-                        <div class="container"><p>The TBMQ team does not provide dedicated support for Community Edition users. However, users can access community-driven resources such as <a href="https://github.com/thingsboard/tbmq/discussions">forums</a>, <a href="/docs/mqtt-broker/">documentation</a>, and <a href="https://github.com/thingsboard/tbmq">GitHub</a> for assistance.</p></div>
+                        <div class="container"><p>The TBMQ team does not provide dedicated support for Community Edition users. However, users can access community-driven resources such as <a target="_blank" href="https://github.com/thingsboard/tbmq/discussions">forums</a>, <a target="_blank" href="/docs/mqtt-broker/">documentation</a>, and <a target="_blank" href="https://github.com/thingsboard/tbmq">GitHub</a> for assistance.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-paid-support" data-title="Can I purchase additional support for the Community Edition?">
-                        <div class="container"><p>Depending on the type of support you are looking for, the TBMQ team may be able to offer certain types of additional support packages. To discuss your unique case and requirements, please <a href="/docs/contact-us/">contact us</a>.</p></div>
+                        <div class="container"><p>Depending on the type of support you are looking for, the TBMQ team may be able to offer certain types of additional support packages. To discuss your unique case and requirements, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-help" data-title="Where can I get help if I run into issues?">
-                        <div class="container"><p><a href="https://github.com/thingsboard/tbmq/issues">GitHub</a> (report issues, contribute)<br><a href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> (for developer-related questions)<br><a href="/docs/mqtt-broker/">Documentation & Tutorials</a></p></div>
+                        <div class="container"><p><a target="_blank" href="https://github.com/thingsboard/tbmq/issues">GitHub</a> (report issues, contribute)<br><a target="_blank" href="https://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> (for developer-related questions)<br><a target="_blank" href="/docs/mqtt-broker/">Documentation & Tutorials</a></p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-feature-request" data-title="Can I request custom features or improvements?">
-                        <div class="container"><p>Yes, you are welcome to submit feature requests on <a href="https://github.com/thingsboard/tbmq/issues">GitHub</a>. After the product team reviews them, they may be added to the backlog.</p></div>
+                        <div class="container"><p>Yes, you are welcome to submit feature requests on <a target="_blank" href="https://github.com/thingsboard/tbmq/issues">GitHub</a>. After the product team reviews them, they may be added to the backlog.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-dev-services" data-title="Can I pay for additional features to be developed?">
-                        <div class="container"><p>The TBMQ team can propose application configuration services. To discuss your unique case and requirements, please <a href="/docs/contact-us/">contact us</a>.</p></div>
+                        <div class="container"><p>The TBMQ team can propose application configuration services. To discuss your unique case and requirements, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p></div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)"><h4 class="title">Load more FAQ</h4></div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-updates" data-title="Are software updates available for Community Edition?">
-                        <div class="container"><p>Yes, updates for all <a href="https://github.com/thingsboard/tbmq/releases">versions</a> are available.</p></div>
+                        <div class="container"><p>Yes, updates for all <a target="_blank" href="https://github.com/thingsboard/tbmq/releases">versions</a> are available.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-dev-assist" data-title="Can I get TBMQ developers to help with my Community Edition deployment?">
-                        <div class="container"><p>Yes, you can request such assistance as an additional paid service. Please, <a href="/docs/contact-us/">contact us</a> to discuss how we can help.</p></div>
+                        <div class="container"><p>Yes, you can request such assistance as an additional paid service. Please, <a target="_blank" href="/docs/contact-us/">contact us</a> to discuss how we can help.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-bug-report" data-title="What should I do if I find a bug in Community Edition?">
-                        <div class="container"><p>You can report it on <a href="https://github.com/thingsboard/tbmq/issues">GitHub</a>, and the open-source community may help fix it.</p></div>
+                        <div class="container"><p>You can report it on <a target="_blank" href="https://github.com/thingsboard/tbmq/issues">GitHub</a>, and the open-source community may help fix it.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-ce-contribute" data-title="Can I contribute to the development of TBMQ Community Edition?">
-                        <div class="container"><p>Yes! Pull requests and contributions are welcome on <a href="https://github.com/thingsboard/tbmq">GitHub</a>.</p></div>
+                        <div class="container"><p>Yes! Pull requests and contributions are welcome on <a target="_blank" href="https://github.com/thingsboard/tbmq">GitHub</a>.</p></div>
                     </div>
                 </div>
                 <div id="faq-tbmq-ce-upgradingToEnterpriseEdition" class="pi-accordion">
@@ -3539,7 +3568,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>* White labeling<br>* RBAC<br>* SSO<br>* Audit logs, etc.<br>TBMQ Professional Edition is designed for production and enterprise IoT solutions, offering comprehensive features to meet all your potential needs.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-migration-strategy" data-title="How do I migrate from Community Edition to Enterprise?">
-                        <div class="container"><p>Migration depends on factors such as the version, source code changes, and more. Please <a href="/docs/contact-us/">contact us</a> for personalized suggestions and a clear strategy on how to perform the migration.</p></div>
+                        <div class="container"><p>Migration depends on factors such as the version, source code changes, and more. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for personalized suggestions and a clear strategy on how to perform the migration.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-ce-pe-trial" data-title="Can I get a trial of the Enterprise Edition before upgrading?">
                         <div class="container"><p>Yes, we offer a one-month trial for default subscription plan in self-managed mode.</p></div>
@@ -3576,10 +3605,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>A self-managed subscription allows you to host and manage TBMQ on your own infrastructure, either on-premises or in the cloud. You are responsible for the installation, configuration, and ongoing management of the system, while TBMQ team provides the software and necessary documentation to support the process.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-buy" data-title="How can I buy a self-managed subscription?">
-                        <div class="container"><p>To purchase a self-managed subscription, you can acquire a license through your <a href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed <a href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
+                        <div class="container"><p>To purchase a self-managed subscription, you can acquire a license through your <a target="_blank" href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed <a target="_blank" href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-license-meaning" data-title="What does it mean to get the license?">
-                        <div class="container"><p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed <a href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
+                        <div class="container"><p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a target="_blank" href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed <a target="_blank" href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-plans" data-title="What self-managed subscription plans does TBMQ offer?">
                         <div class="container"><p>TBMQ Professional Edition operates on a flexible, consumption-based licensing model rather than using predefined subscription tiers. We offer a single Pay-as-you-go (PAYG) subscription model for self-managed deployments. This structure provides complete control over your licensing costs, as your monthly fee is calculated precisely based on the capacity you configure in the calculator for Sessions, Throughput, and Instances. This ensures you only pay for the exact resources and features you require, allowing your deployment to scale dynamically without being restricted by fixed plan limits.</p></div>
@@ -3601,7 +3630,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Yes, the TBMQ Self-managed Pay-as-you-go model is explicitly designed for complete flexibility. You can adjust your licensed capacity for Sessions, Throughput, and Instances at any time using the self-managed calculator. Any changes you make will take effect immediately and will be reflected proportionally in your next monthly billing cycle. This allows you to dynamically scale your resources up or down to perfectly match your deployment's current demands.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-exceed-limits" data-title="What happens if I exceed the total messages per second or session limit in my subscription?">
-                        <div class="container"><p>If your TBMQ deployment exceeds the licensed limit for either Sessions or Throughput messages per second, the broker software will enforce the capacity defined in your license key. This typically means that new client connections or incoming messages will be rejected, or your deployment performance may be throttled until usage falls back below the purchased capacity. To maintain continuous service and prevent disruption, we recommend proactively monitoring your capacity usage and adjusting your licensed limits via the <a href="https://license.thingsboard.io/">License Portal</a> before reaching your peak operational thresholds.</p></div>
+                        <div class="container"><p>If your TBMQ deployment exceeds the licensed limit for either Sessions or Throughput messages per second, the broker software will enforce the capacity defined in your license key. This typically means that new client connections or incoming messages will be rejected, or your deployment performance may be throttled until usage falls back below the purchased capacity. To maintain continuous service and prevent disruption, we recommend proactively monitoring your capacity usage and adjusting your licensed limits via the <a target="_blank" href="https://license.thingsboard.io/">License Portal</a> before reaching your peak operational thresholds.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-features" data-title="Are all TBMQ features included in the subscription?">
                         <div class="container"><p>Yes, all core TBMQ features are included. The only exception to the comprehensive feature set is White Labeling, which is available as an optional add-on that can be purchased separately.</p></div>
@@ -3624,10 +3653,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>We accept credit and debit cards through Stripe.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-wire" data-title="I cannot pay by card, may we use wire instead?">
-                        <div class="container"><p>Sure. In this case, you must reach out to our sales team via <a href="/docs/contact-us/">contact us</a>. If you have ongoing communication with the account manager or success manager on our end, please refer your request to that person.</p></div>
+                        <div class="container"><p>Sure. In this case, you must reach out to our sales team via <a target="_blank" href="/docs/contact-us/">contact us</a>. If you have ongoing communication with the account manager or success manager on our end, please refer your request to that person.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-annual" data-title="Do you offer an annual payment option?">
-                        <div class="container"><p>We currently offer only a monthly subscription with automatic payments via Stripe. For annual payments, please <a href="/docs/contact-us/">contact</a> our team to arrange a wire transfer invoice.</p></div>
+                        <div class="container"><p>We currently offer only a monthly subscription with automatic payments via Stripe. For annual payments, please <a target="_blank" href="/docs/contact-us/">contact</a> our team to arrange a wire transfer invoice.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-failed-payment" data-title="What happens if my payment fails?">
                         <div class="container"><p>If a payment fails, Stripe will retry the charge several times. If unsuccessful, your license will be suspended.</p></div>
@@ -3643,7 +3672,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Yes, Stripe automatically prorates the charges when you change plans.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-discounts" data-title="Do you offer discounts for multiple licenses?">
-                        <div class="container"><p>Contact our <a href="/docs/contact-us/">sales team</a> for bulk pricing options.</p></div>
+                        <div class="container"><p>Contact our <a target="_blank" href="/docs/contact-us/">sales team</a> for bulk pricing options.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-renew-fail" data-title="What happens if I don’t renew my subscription?">
                         <div class="container"><p>Your license will become inactive, and your TBMQ instance will be suspended.</p></div>
@@ -3700,10 +3729,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>No, but you may be charged by your cloud provider for resource usage.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-internet-connection" data-title="Do I need an internet connection to use the self-managed license?">
-                        <div class="container"><p>Yes, an internet connection is required for periodic license verification. The system checks the license once per hour, and if the connection is not restored within 24 hours, the platform may shut down. This process ensures proper license management while allowing temporary connectivity issues. For more details, please refer to the license check <a href="/docs/mqtt-broker/install/license-server/#architecture">description</a>.</p></div>
+                        <div class="container"><p>Yes, an internet connection is required for periodic license verification. The system checks the license once per hour, and if the connection is not restored within 24 hours, the platform may shut down. This process ensures proper license management while allowing temporary connectivity issues. For more details, please refer to the license check <a target="_blank" href="/docs/mqtt-broker/install/license-server/#architecture">description</a>.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-offline" data-title="Can I run offline?">
-                        <div class="container"><p>By default, the platform requires active Internet access or at least access to license portal from your host machine. If Offline access is a must, please <a href="/docs/contact-us/">contact us</a> to discuss options.</p></div>
+                        <div class="container"><p>By default, the platform requires active Internet access or at least access to license portal from your host machine. If Offline access is a must, please <a target="_blank" href="/docs/contact-us/">contact us</a> to discuss options.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-payg-cloud-agnostic" data-title="Can I move my deployment between cloud providers?">
                         <div class="container"><p>Yes, self-managed TBMQ is cloud-agnostic and can be migrated as needed.</p></div>
@@ -3729,7 +3758,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>No, we do not do it for many reasons. Firstly, as a broker vendor, we cannot disclose detected vulnerabilities of certain versions of the platform as the disclosure affects the safety of our existing customers who use that particular version. Secondly, the self-declared pentest is less trustworthy as it is in the vendor’s interest to come up with clean results and you never know whether to believe them or not. Lastly, the penetration test makes more sense to be conducted over a ready-to-use end client software/application to define weak spots (if any). It is the Licensee’s responsibility to order independent testing.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-vulnerability-matrix" data-title="Where can I find the logged vulnerability fixes matrix: version + list of fixes?">
-                        <div class="container"><p>Please stay tuned with our <a href="/docs/mqtt-broker/reference/releases/">Release notes</a>. Critical vulnerabilities or security issues are mentioned in separate line items. Less threatful vulnerabilities appear as a single record (“Vulnerability fixes”) stating that, at the release date, the version is free of known HIGH and some MEDIUM CVEs.</p></div>
+                        <div class="container"><p>Please stay tuned with our <a target="_blank" href="/docs/mqtt-broker/reference/releases/">Release notes</a>. Critical vulnerabilities or security issues are mentioned in separate line items. Less threatful vulnerabilities appear as a single record (“Vulnerability fixes”) stating that, at the release date, the version is free of known HIGH and some MEDIUM CVEs.</p></div>
                     </div>
                 </div>
                 <div id="faq-tbmq-pe-pay-as-you-go-trialsCancellationsAndRefunds" class="pi-accordion">
@@ -3751,13 +3780,13 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>The included Support tier for the TBMQ Self-managed Subscription is tied to the total monthly cost of the license. The foundational Community support tier (which provides access to our public knowledge base and forums) is included when the total subscription cost is less than $300. Once the total subscription cost reaches or exceeds $300, the Direct Help Desk tier is automatically unlocked, providing ticketed access to our expert team. Alternatively, the Direct Help Desk tier can be accessed immediately by purchasing the Priority Help Desk add-on, regardless of the subscription's total monthly cost.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-support-247" data-title="Do you offer 24/7 support?">
-                        <div class="container"><p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a href="/docs/contact-us/">contact us</a> for more details.</p></div>
+                        <div class="container"><p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for more details.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-install-help" data-title="How can I get help with installation and setup?">
-                        <div class="container"><p>If your subscription includes response time support and you have access to the Support Portal, the TBMQ support team can assist with system deployment as part of the subscription. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under included support. If your subscription plan does not include support, then we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a href="/docs/contact-us/">contact us</a>.</p></div>
+                        <div class="container"><p>If your subscription includes response time support and you have access to the Support Portal, the TBMQ support team can assist with system deployment as part of the subscription. However, this applies only if you follow recommended installation methods and architecture. Custom installation scripts or non-recommended deployment scenarios are not covered under included support. If your subscription plan does not include support, then we recommend using our documentation, tutorials, and optional professional services. To discuss options, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-contact-support" data-title="How do I contact support?">
-                        <div class="container"><p>The method for contacting support depends on your current license tier. If you are using the Community support tier, support is provided via self-service resources, including our comprehensive public documentation, knowledge base, and peer-to-peer forums. If you have the Direct Help Desk or Priority Help Desk tier (which is included when your subscription cost is over $300 or purchased as an add-on), you will access support through our dedicated ticketed system via the <a href="https://thingsboard-portal.atlassian.net/servicedesk/customer/portal/1">Support portal</a>, where requests are managed directly by our TBMQ expert team.</p></div>
+                        <div class="container"><p>The method for contacting support depends on your current license tier. If you are using the Community support tier, support is provided via self-service resources, including our comprehensive public documentation, knowledge base, and peer-to-peer forums. If you have the Direct Help Desk or Priority Help Desk tier (which is included when your subscription cost is over $300 or purchased as an add-on), you will access support through our dedicated ticketed system via the <a target="_blank" href="https://thingsboard-portal.atlassian.net/servicedesk/customer/portal/1">Support portal</a>, where requests are managed directly by our TBMQ expert team.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-payg-support-scope" data-title="What issues are included in subscription support?">
                         <div class="container"><p>Access to our dedicated Support Portal is included with the Direct Help Desk and Priority Help Desk support tiers, as well as for Perpetual license holders. The support service includes expert assistance with platform installation and migration for default deployments, along with resolving any questions related to the platform's out-of-the-box functionalities, as detailed in our documentation. All support inquiries are managed through a single queue, and our commitment is to provide an initial response within 24 hours to address your needs promptly. For specialized services such as custom consulting, code reviews, health assessments, or bespoke development projects, tailored solutions are available; our support engineers will efficiently guide you to the best resources if a request falls outside the standard platform scope.</p></div>
@@ -3786,17 +3815,17 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>The perpetual license includes full access to TBMQ Professional Edition features, such as MQTT 3.x and MQTT 5.0 support, White labeling, RBAC, SSO, and more. It also provides access to standard documentation, support, and updates for a specified period. Additional features or services, such as extended support or custom development, may be available for an extra fee.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-buy" data-title="How can I buy a perpetual license?">
-                        <div class="container"><p>To purchase a perpetual license, you can acquire a license through your <a href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed <a href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
+                        <div class="container"><p>To purchase a perpetual license, you can acquire a license through your <a target="_blank" href="https://license.thingsboard.io/">License Server</a> account. Each license comes with a unique activation key, which allows you to deploy and run the system by following our detailed <a target="_blank" href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-license-meaning" data-title="What does it mean to get the license?">
-                        <div class="container"><p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed <a href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
+                        <div class="container"><p>Licensing is applicable to self-hosted platform versions only. Each license comes with a unique license key (activation code) that is automatically generated in your <a target="_blank" href="https://license.thingsboard.io/">License Server</a> account. Using this license key, you can deploy and run the system by following our detailed <a target="_blank" href="/docs/mqtt-broker/install/installation-options/">installation guides</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-aim" data-title="What is the perpetual license aim for?">
                         <div class="container"><p>The Perpetual License includes a single license key (activation code) for one licensed deployment. This license allows the deployment of predefined number of instances of TBMQ Professional Edition.</p></div>
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)"><h4 class="title">Load more FAQ</h4></div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-servers" data-title="How many servers can I have with the Perpetual license?">
-                        <div class="container"><p>The Perpetual License initially includes a base of one licensed Production Instance. If your deployment needs to scale horizontally for increased performance, fault tolerance, or High Availability (HA), you can purchase additional Production or Development Instances at any time. This scaling enables you to permanently expand your licensed instance count, allowing for seamless horizontal scaling across your infrastructure while ensuring continuous compliance with your license terms. For purchasing details or specialized capacity needs, please <a href="/docs/contact-us/">contact our sales team</a>.</p></div>
+                        <div class="container"><p>The Perpetual License initially includes a base of one licensed Production Instance. If your deployment needs to scale horizontally for increased performance, fault tolerance, or High Availability (HA), you can purchase additional Production or Development Instances at any time. This scaling enables you to permanently expand your licensed instance count, allowing for seamless horizontal scaling across your infrastructure while ensuring continuous compliance with your license terms. For purchasing details or specialized capacity needs, please <a target="_blank" href="/docs/contact-us/">contact our sales team</a>.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-min-cost" data-title="What is the minimum configuration and cost for a TBMQ Perpetual license?">
                         <div class="container"><p>The minimum configuration for the TBMQ Perpetual license is defined by the capacity included in the Base Price. The minimum cost is a one-time fee of $2,999.00.<br>This minimum configuration includes the following licensed resources:<br>* 10,000 Sessions<br>* 1,000 messages per second (msg/sec) Throughput<br>* 1 Production Instance</p></div>
@@ -3805,7 +3834,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Yes, you are responsible for deploying and managing TBMQ on your own infrastructure.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-exceed-limits" data-title="What happens if I exceed the total messages per second or session limit in my subscription?">
-                        <div class="container"><p>If your TBMQ deployment exceeds the licensed limit for either Sessions or Throughput messages per second, the broker software will enforce the capacity defined in your license key. This typically means that new client connections or incoming messages will be rejected, or your deployment performance may be throttled until usage falls back below the purchased capacity. To maintain continuous service and prevent disruption, we recommend proactively monitoring your capacity usage and adjusting your licensed limits via the <a href="https://license.thingsboard.io/">License Portal</a> before reaching your peak operational thresholds.</p></div>
+                        <div class="container"><p>If your TBMQ deployment exceeds the licensed limit for either Sessions or Throughput messages per second, the broker software will enforce the capacity defined in your license key. This typically means that new client connections or incoming messages will be rejected, or your deployment performance may be throttled until usage falls back below the purchased capacity. To maintain continuous service and prevent disruption, we recommend proactively monitoring your capacity usage and adjusting your licensed limits via the <a target="_blank" href="https://license.thingsboard.io/">License Portal</a> before reaching your peak operational thresholds.</p></div>
                     </div>
                 </div>
                 <div id="faq-tbmq-pe-perpetual-billingAndPayments" class="pi-accordion">
@@ -3816,7 +3845,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>The so-called license ‘renewal’ does not refer to the license itself but rather corresponds to Support service and access to the Latest releases. Perpetual license unlocks support service and access to newer versions for 1 year. After the initial year, one can prolong this option.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-renewal-fee" data-title="What is the renewal fee per year?">
-                        <div class="container"><p>The annual renewal fee for the Perpetual License depends on the total value of your license. <a href="/docs/contact-us/">Contact us</a> for more details.</p></div>
+                        <div class="container"><p>The annual renewal fee for the Perpetual License depends on the total value of your license. <a target="_blank" href="/docs/contact-us/">Contact us</a> for more details.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-no-renew" data-title="What happens to my license if I don't pay for the renewal?">
                         <div class="container"><p>Your current license will remain active, allowing you to continue using the platform seamlessly. By renewing your license, you'll gain access to the latest version releases and ongoing support to enhance your experience.</p></div>
@@ -3826,16 +3855,16 @@ defaultActivePricingSection: thingsboard-pe-options
                     </div>
                     <div class="load-more" onClick="loadMoreFaq(this)"><h4 class="title">Load more FAQ</h4></div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-missed-renewal" data-title="If I miss 1 year and then decide to prolong, how much should I pay?">
-                        <div class="container"><p>If you miss the renewal for one year and then decide to renew, you will need to pay the yearly renewal fee for the missed period, in addition to the fee for the new period. If you miss 6 months after the initial expiration date, you can still renew by paying the annual fee, and the renewal will be calculated based on the original expiration date of your license, not from the moment you choose to renew. If you require further clarifications on this, please <a href="/docs/contact-us/">contact us</a>, and we will be happy to explain.</p></div>
+                        <div class="container"><p>If you miss the renewal for one year and then decide to renew, you will need to pay the yearly renewal fee for the missed period, in addition to the fee for the new period. If you miss 6 months after the initial expiration date, you can still renew by paying the annual fee, and the renewal will be calculated based on the original expiration date of your license, not from the moment you choose to renew. If you require further clarifications on this, please <a target="_blank" href="/docs/contact-us/">contact us</a>, and we will be happy to explain.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-extra-fees" data-title="Is there an additional payment for the software use besides the license fee?">
                         <div class="container"><p>No, we do not charge extra unless you want an additional service that we offer: professional support, Custom development and consulting, Training, or Managed service.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-refund" data-title="Can I request a refund after purchasing the license?">
-                        <div class="container"><p>Since the Perpetual License is a one-time purchase granting lifetime access, all sales are final. However, we encourage customers to explore our subscription options before committing to a perpetual license. Subscriptions provide full access to TBMQ Professional Edition, allowing you to evaluate its features and scalability. If you need guidance on selecting the best licensing option for your needs, our <a href="/docs/contact-us/">sales team</a> is happy to assist you.</p></div>
+                        <div class="container"><p>Since the Perpetual License is a one-time purchase granting lifetime access, all sales are final. However, we encourage customers to explore our subscription options before committing to a perpetual license. Subscriptions provide full access to TBMQ Professional Edition, allowing you to evaluate its features and scalability. If you need guidance on selecting the best licensing option for your needs, our <a target="_blank" href="/docs/contact-us/">sales team</a> is happy to assist you.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-bulk-discount" data-title="Do you offer discounts for multiple licenses?">
-                        <div class="container"><p><a href="/docs/contact-us/">Contact our sales team</a> for bulk pricing options.</p></div>
+                        <div class="container"><p><a target="_blank" href="/docs/contact-us/">Contact our sales team</a> for bulk pricing options.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-instance-price" data-title="What is the price for extra Production and Development Instances?">
                         <div class="container"><p>Additional Production and Development Instances are priced at a fixed rate of $1999 and $999 per instance, respectively, as a one-time purchase. This allows you to scale your fault-tolerance and dedicated testing environments as needed, ensuring you only pay for the extra nodes you license.</p></div>
@@ -3877,7 +3906,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Yes, the Perpetual License is a commercial product defined by the specific Sessions, Throughput, and Instance count you purchase. These limits are set by your licensed capacity, and the software will enforce them to ensure compliance. However, the TBMQ Professional Edition is engineered for indefinite scalability to meet your long-term growth. You are not locked into your initial configuration: you can permanently expand your licensed capacity at any time by making a new one-time purchase of additional Sessions, Throughput, and Instances. This ensures the license can always be scaled to support your evolving operational demands, constrained only by your total purchased capacity.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-offline" data-title="Can I run offline?">
-                        <div class="container"><p>By default, the platform requires active Internet access or at least access to License server from your host machine. If Offline access is a must, please <a href="/docs/contact-us/">contact us</a> to discuss options.</p></div>
+                        <div class="container"><p>By default, the platform requires active Internet access or at least access to License server from your host machine. If Offline access is a must, please <a target="_blank" href="/docs/contact-us/">contact us</a> to discuss options.</p></div>
                     </div>
                     <div class="item hidden" data-tag="h4" data-item-id="tbmq-perp-backup" data-title="Can I back up my TBMQ deployment?">
                         <div class="container"><p>Yes. You can back up your TBMQ deployment to preserve configurations, data, and system state.</p></div>
@@ -3900,10 +3929,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>No, we do not do it for many reasons. Firstly, as a broker vendor, we cannot disclose detected vulnerabilities of certain versions of the platform as the disclosure affects the safety of our existing customers who use that particular version. Secondly, the self-declared pentest is less trustworthy as it is in the vendor’s interest to come up with clean results and you never know whether to believe them or not. Lastly, the penetration test makes more sense to be conducted over a ready-to-use end client software/application to define weak spots (if any). It is the Licensee’s responsibility to order independent testing.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-vuln-matrix" data-title="Where can I find the logged vulnerability fixes matrix: version + list of fixes?">
-                        <div class="container"><p>Please stay tuned with our <a href="/docs/mqtt-broker/reference/releases/">Release notes</a>. Critical vulnerabilities or security issues are mentioned in separate line items. Less threatful vulnerabilities appear as a single record (“Vulnerability fixes”) stating that, at the release date, the version is free of known HIGH and some MEDIUM CVEs.</p></div>
+                        <div class="container"><p>Please stay tuned with our <a target="_blank" href="/docs/mqtt-broker/reference/releases/">Release notes</a>. Critical vulnerabilities or security issues are mentioned in separate line items. Less threatful vulnerabilities appear as a single record (“Vulnerability fixes”) stating that, at the release date, the version is free of known HIGH and some MEDIUM CVEs.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-license-data" data-title="What data does ThingsBoard collect for license verification?">
-                        <div class="container"><p>During the first launch of ThingsBoard PE, built-in License Server Client generates an “Activate Instance Request” to the License Server. This request contains the license key and version info about the current platform installation. License Server looks up the subscription info based on the license key and replies with the instance id, subscription plan data, and some magic bytes. License Client stores this information locally and uses instance id and some magic bytes for the next license check requests. More details <a href="/docs/mqtt-broker/install/license-server/">here</a>.</p></div>
+                        <div class="container"><p>During the first launch of ThingsBoard PE, built-in License Server Client generates an “Activate Instance Request” to the License Server. This request contains the license key and version info about the current platform installation. License Server looks up the subscription info based on the license key and replies with the instance id, subscription plan data, and some magic bytes. License Client stores this information locally and uses instance id and some magic bytes for the next license check requests. More details <a target="_blank" href="/docs/mqtt-broker/install/license-server/">here</a>.</p></div>
                     </div>
                 </div>
                 <div id="faq-tbmq-pe-perpetual-trialsCancellationsAndRefunds" class="pi-accordion">
@@ -3914,7 +3943,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Cancellation of the perpetual license means the license key will be removed from the License Server. Once the license key is removed, the TBMQ environment using this key will be stopped immediately.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-convert-trial" data-title="Can I convert a trial instance into a perpetual license?">
-                        <div class="container"><p>Yes, you can convert your self-managed subscription to a perpetual license by purchasing the perpetual license and replacing the license key in the configuration files. For more details, please <a href="/docs/contact-us/">contact us</a>.</p></div>
+                        <div class="container"><p>Yes, you can convert your self-managed subscription to a perpetual license by purchasing the perpetual license and replacing the license key in the configuration files. For more details, please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-refunds" data-title="Do you offer refunds for perpetual license purchases?">
                         <div class="container"><p>No, refunds are not offered for perpetual license purchases.</p></div>
@@ -3928,19 +3957,19 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="container"><p>Access to our dedicated Support Portal is included with the Direct Help Desk and Priority Help Desk support tiers, as well as for Perpetual license holders. The support service includes expert assistance with platform installation and migration for default deployments, along with resolving any questions related to the platform's out-of-the-box functionalities, as detailed in our documentation. All support inquiries are managed through a single queue, and our commitment is to provide an initial response within 24 hours to address your needs promptly. For specialized services such as custom consulting, code reviews, health assessments, or bespoke development projects, tailored solutions are available; our support engineers will efficiently guide you to the best resources if a request falls outside the standard platform scope.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-additional-support" data-title="Can I purchase additional support for my perpetual license?">
-                        <div class="container"><p>Yes, you can purchase additional services such as managed services, advanced SLAs, consultancy, development, and training. For more details, please <a href="/docs/contact-us/">contact our sales team</a>.</p></div>
+                        <div class="container"><p>Yes, you can purchase additional services such as managed services, advanced SLAs, consultancy, development, and training. For more details, please <a target="_blank" href="/docs/contact-us/">contact our sales team</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-24-7" data-title="Do you offer 24/7 support?">
-                        <div class="container"><p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a href="/docs/contact-us/">contact us</a> for more details.</p></div>
+                        <div class="container"><p>Yes, we can provide 24/7 support as part of our managed services with an additional signed SLA. Please <a target="_blank" href="/docs/contact-us/">contact us</a> for more details.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-maintenance" data-title="Do you provide full maintenance services for TBMQ deployed on my infrastructure?">
-                        <div class="container"><p>Yes, we offer full maintenance services for instances deployed on your infrastructure. These services can be customized based on your needs and are provided under an additional SLA, ensuring regular monitoring, updates, and issue resolution. For more details please <a href="/docs/contact-us/">contact us</a>.</p></div>
+                        <div class="container"><p>Yes, we offer full maintenance services for instances deployed on your infrastructure. These services can be customized based on your needs and are provided under an additional SLA, ensuring regular monitoring, updates, and issue resolution. For more details please <a target="_blank" href="/docs/contact-us/">contact us</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-contact-support" data-title="How do I contact support?">
-                        <div class="container"><p>If your license is a Perpetual License or if you have the Direct Help Desk or Priority Help Desk tier on your subscription, you will access support through our dedicated ticketed system managed directly by our TBMQ expert team. You can log in and submit requests via the <a href="https://thingsboard-portal.atlassian.net/servicedesk/customer/portal/1">Support portal</a>.</p></div>
+                        <div class="container"><p>If your license is a Perpetual License or if you have the Direct Help Desk or Priority Help Desk tier on your subscription, you will access support through our dedicated ticketed system managed directly by our TBMQ expert team. You can log in and submit requests via the <a target="_blank" href="https://thingsboard-portal.atlassian.net/servicedesk/customer/portal/1">Support portal</a>.</p></div>
                     </div>
                     <div class="item" data-tag="h4" data-item-id="tbmq-perp-setup-help" data-title="How can I get help with installation and setup?">
-                        <div class="container"><p>All perpetual license packages provide dedicated support with predefined response time and access to the ThingsBoard Support Portal. Our expert support team is available to assist you with system deployment by following our recommended <a href="/docs/mqtt-broker/install/installation-options/">installation methods</a> and architecture, ensuring a smooth and efficient setup. For custom installation scripts or alternative deployment scenarios, additional support options are available and you can <a href="/docs/contact-us/">contact us</a> to discuss your needs.</p></div>
+                        <div class="container"><p>All perpetual license packages provide dedicated support with predefined response time and access to the ThingsBoard Support Portal. Our expert support team is available to assist you with system deployment by following our recommended <a target="_blank" href="/docs/mqtt-broker/install/installation-options/">installation methods</a> and architecture, ensuring a smooth and efficient setup. For custom installation scripts or alternative deployment scenarios, additional support options are available and you can <a target="_blank" href="/docs/contact-us/">contact us</a> to discuss your needs.</p></div>
                     </div>
                 </div>
             </div>
