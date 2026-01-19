@@ -305,7 +305,7 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-office/smart-office-1.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
+                "<img src='/images/usecases/smart-office/smart-office-1-v2.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
                 "<img src='/images/usecases/smart-office/smart-office-2.webp' alt='Energy consumption, power and current charts with wind turbine background' title='Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms'/>",
                 "<img src='/images/usecases/smart-office/smart-office-3.webp' alt='HVAC control with state, airflow history, and temperature targets' title='ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time'/>",
                 "<img src='/images/usecases/smart-office/smart-office-5.webp' alt='Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking' title='Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform'/>",

@@ -11,39 +11,21 @@ smart-farming:
 
 fleet-tracking:
   0:
-    src: "/images/usecases/fleet-tracking/fleet-tracking-1.webp"
+    src: "/images/usecases/fleet-tracking/site-fleet-tracking-1.webp"
     alt: "ThingsBoard interface showing bus status, speed, fuel level, and location on the map"
     imageTitleAttribute: "Real-time bus monitoring using ThingsBoard platform"
     width: 1819
     height: 966
   1:
-    src: "/images/usecases/fleet-tracking/fleet-tracking-2.webp"
+    src: "/images/usecases/fleet-tracking/site-fleet-tracking-2.webp"
     alt: "ThingsBoard interface showing historical route and movement playback for Bus A on the map"
     imageTitleAttribute: "Bus A route playback and history visualization in ThingsBoard"
     width: 1819
     height: 966
   2:
-    src: "/images/usecases/fleet-tracking/fleet-tracking-3.webp"
+    src: "/images/usecases/fleet-tracking/site-fleet-tracking-3.webp"
     alt: "ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events"
     imageTitleAttribute: "Real-time telemetry dashboard for Bus A in ThingsBoard"
-    width: 1819
-    height: 966
-  3:
-    src: "/images/usecases/fleet-tracking/fleet-tracking-4.webp"
-    alt: "ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations"
-    imageTitleAttribute: "Bus B telemetry and route analytics dashboard in ThingsBoard"
-    width: 1819
-    height: 966
-  4:
-    src: "/images/usecases/fleet-tracking/fleet-tracking-5.webp"
-    alt: "ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map"
-    imageTitleAttribute: "Bus C status monitoring and stop event tracking in ThingsBoard"
-    width: 1819
-    height: 966
-  5:
-    src: "/images/usecases/fleet-tracking/fleet-tracking-6.webp"
-    alt: "ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map"
-    imageTitleAttribute: "Bus D refueling status and stop alert monitoring in ThingsBoard"
     width: 1819
     height: 966
 
@@ -121,7 +103,7 @@ environment-monitoring:
 
 smart-office:
   0:
-    src: "/images/usecases/smart-office/smart-office-1.webp"
+    src: "/images/usecases/smart-office/smart-office-1-v2.webp"
     alt: "HVAC switch, temperature and power chart, device list, and floor plan with sensor locations"
     imageTitleAttribute: "HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard"
     width: 2048

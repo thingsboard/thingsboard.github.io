@@ -48,9 +48,9 @@
   name: "Smart Office"
   description: "Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities."
   media:
-    image: "https://img.thingsboard.io/usecases/smart-office/video/smart-office-v2.png"
+    image: "/images/usecases/smart-office/smart-office-1-v2.webp"
     alt: "See more about Smart Office"
-    video: ["https://video.thingsboard.io/usecases/smart-office-v2.mp4", "https://video.thingsboard.io/usecases/smart-office-v2.webm"]
+    video: ["https://video.thingsboard.io/usecases/smart-office-v3.mp4", "https://video.thingsboard.io/usecases/smart-office-v3.webm"]
   href: "/use-cases/smart-office/"
 6:
   type: "General"
@@ -81,12 +81,12 @@
   href: "/use-cases/smart-farming/"
 9:
   type: "General"
-  name: "Fleet Tracking"
-  description: "ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards."
+  name: "Site Fleet Tracking"
+  description: "Monitor excavators, haul trucks, and machinery across industrial or mining zones in real time using ThingsBoard. Leverage geofencing, calculated fields, and smart alarms to track fuel usage, detect zone violations, and optimize equipment efficiency — all without rule chains. Explore how this zero-code solution boosts operational safety and control."
   media:
-    image: "https://img.thingsboard.io/usecases/fleet-tracking/video/fleet-tracking.png"
+    image: "/images/usecases/fleet-tracking/site-fleet-tracking-1.webp"
     alt: "Fleet tracking dashboard"
-    video: ["https://video.thingsboard.io/usecases/fleet-tracking.mp4", "https://video.thingsboard.io/usecases/fleet-tracking.webm"]
+    video: ["https://video.thingsboard.io/usecases/site-fleet-tracking.mp4", "https://video.thingsboard.io/use-cases/site-fleet-tracking.webm"]
   href: "/use-cases/fleet-tracking/"
 10:
   type: "General"
