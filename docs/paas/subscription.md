@@ -547,7 +547,38 @@ Instead, you can purchase specific **Top-up packs** to increase individual limit
 
 These packs allow you to scale the number of managed entities and integrations within your environment.
 
-TODO
+<table>
+  <thead>
+      <tr>
+          <td style="width: 30%"><b>Top-up name</b></td>
+          <td style="width: 50%"><b>Added capacity</b></td>
+          <td style="width: 10%"><b>Cost</b></td>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Extra Device Pack</td>
+      <td>+50 Devices, +50 Assets</td>
+      <td>$15</td>
+      <td>$15</td>
+    </tr>
+    <tr>
+      <td>Extra Customer Pack</td>
+      <td>+10 Customers, +10 Users</td>
+      <td>$10</td>
+    </tr>
+    <tr>
+      <td>Extra Integration Pack</td>
+      <td>+1 Integration, +1 Converter</td>
+      <td>$10</td>
+    </tr>
+    <tr>
+      <td>Extra Calculated Field</td>
+      <td>+1 to max number of Calculated Fields per entity</td>
+      <td>$5</td>
+    </tr>
+  </tbody>
+</table>
 
 **Availability:** Extra Device pack is available starting from the **Business** plan. Other entity top-ups are available starting from the **Pilot** plan.
 
@@ -555,7 +586,49 @@ TODO
 
 These packs allow you to extend the operational capacity of your solution, ensuring smooth data processing and communication.
 
-TODO
+<table>
+  <thead>
+      <tr>
+          <td style="width: 30%"><b>Top-up name</b></td>
+          <td style="width: 60%"><b>Added capacity</b></td>
+          <td style="width: 10%"><b>Cost</b></td>
+      </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Traffic Pack</td>
+      <td>+2.5M Transport Messages, +5M Transport Data Points</td>
+      <td>$5</td>
+    </tr>
+    <tr>
+      <td>Compute Pack</td>
+      <td>+5M Rule Engine Executions, +1M JavaScript Executions</td>
+      <td>$25</td>
+    </tr>
+    <tr>
+      <td>Storage Pack</td>
+      <td>+1B Data Points Storage Days</td>
+      <td>$10</td>
+    </tr>
+    <tr>
+      <td>Alarm Pack</td>
+      <td>+1K alarms created per month</td>
+      <td>$1</td>
+    </tr>
+    <tr>
+      <td>Email Pack</td>
+      <td>+1K emails sent per month</td>
+      <td>$1</td>
+    </tr>
+    <tr>
+      <td>SMS Pack</td>
+      <td>+100 SMS sent per month</td>
+      <td>$15</td>
+    </tr>
+  </tbody>
+</table>
+
+<br>
 
 **Availability:** All Usage & API top-ups are available starting from the **Pilot** plan.
 
