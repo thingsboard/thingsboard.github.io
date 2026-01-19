@@ -1,64 +1,64 @@
 - id: smart-energy
   title: Smart energy
   link: /use-cases/smart-energy/
-  icon: /images/case-eng-icon.svg
+  icon: https://img.thingsboard.io/case-eng-icon.svg
 - id: scada
   title: SCADA Swimming pool
   link: /use-cases/scada/
-  icon: /images/case-scada-icon.svg
+  icon: https://img.thingsboard.io/case-scada-icon.svg
 - id: scada-oil-and-gas-drilling-system
   title: SCADA Oil and gas drilling system
   link: /use-cases/scada-oil-and-gas-drilling-system/
-  icon: /images/case-scada-drilling-system-icon.svg
+  icon: https://img.thingsboard.io/case-scada-drilling-system-icon.svg
 - id: scada-energy-management
   title: SCADA Energy management
   link: /use-cases/scada-energy-management/
-  icon: /images/case-scada-energy-management.svg
+  icon: https://img.thingsboard.io/case-scada-energy-management.svg
 - id: environment-monitoring
   title: Environment monitoring
   link: /use-cases/environment-monitoring/
-  icon: /images/case-env-icon.svg
+  icon: https://img.thingsboard.io/case-env-icon.svg
 - id: smart-office
   title: Smart office
   link: /use-cases/smart-office/
-  icon: /images/case-off-icon.svg
+  icon: https://img.thingsboard.io/case-off-icon.svg
 - id: water-metering
   title: Water metering
   link: /use-cases/water-metering/
-  icon: /images/case-wat-icon.svg
+  icon: https://img.thingsboard.io/case-wat-icon.svg
 - id: smart-retail
   title: Smart retail
   link: /use-cases/smart-retail/
-  icon: /images/case-ret-icon.svg
+  icon: https://img.thingsboard.io/case-ret-icon.svg
 - id: smart-farming
   title: Smart farming
   link: /use-cases/smart-farming/
-  icon: /images/case-fam-icon.svg
+  icon: https://img.thingsboard.io/case-fam-icon.svg
 - id: site-fleet-tracking
   title: Site fleet tracking
   link: /use-cases/fleet-tracking/
-  icon: /images/site-fleet-tracking-icon.svg
+  icon: https://img.thingsboard.io/site-fleet-tracking-icon.svg
 - id: smart-metering
   title: Smart metering
   link: /use-cases/smart-metering/
-  icon: /images/case-met-icon.svg
+  icon: https://img.thingsboard.io/case-met-icon.svg
 - id: health-care
   title: Health care
   link: /use-cases/health-care/
-  icon: /images/case-health-care-icon.svg
+  icon: https://img.thingsboard.io/case-health-care-icon.svg
 - id: air-quality-monitoring
   title: Air quality monitoring
   link: /use-cases/air-quality-monitoring/
-  icon: /images/case-aq-icon.svg
+  icon: https://img.thingsboard.io/case-aq-icon.svg
 - id: smart-irrigation
   title: Smart irrigation
   link: /use-cases/smart-irrigation/
-  icon: /images/smart-irrigation.svg
+  icon: https://img.thingsboard.io/smart-irrigation.svg
 - id: waste-management
   title: Waste management
   link: /use-cases/waste-management/
-  icon: /images/case-waste-icon.svg
+  icon: https://img.thingsboard.io/case-waste-icon.svg
 - id: tank-level-monitoring
   title: Tank level monitoring
   link: /use-cases/tank-level-monitoring/
-  icon: /images/case-level-icon.svg
+  icon: https://img.thingsboard.io/case-level-icon.svg

@@ -48,7 +48,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart office solution architecture" title="Smart office solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="Smart office solution architecture" title="Smart office solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -136,11 +136,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/smart-energy/malls-1.svg" alt="Mall" title="Smart retail"></div>
-            <div class="application-image"><img src="/images/usecases/smart-office/manufacturing-1.svg" alt="Manufacturing" title="Manufacturing"></div>
-            <div class="application-image"><img src="/images/usecases/health-care/hospital-1.svg" alt="Hospital" title="Healthcare"></div>
-            <div class="application-image"><img src="/images/usecases/smart-office/hospitality-1.svg" alt="Hospitality" title="Hospitality"></div>
-            <div class="application-image"><img src="/images/usecases/smart-energy/education-1.svg" alt="Education" title="Education"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/malls-1.svg" alt="Mall" title="Smart retail"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-office/manufacturing-1.svg" alt="Manufacturing" title="Manufacturing"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/health-care/hospital-1.svg" alt="Hospital" title="Healthcare"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-office/hospitality-1.svg" alt="Hospitality" title="Hospitality"></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/smart-energy/education-1.svg" alt="Education" title="Education"></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -155,7 +155,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-office/mall-2.svg" alt="Mall" title="Smart retail"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-office/mall-2.svg" alt="Mall" title="Smart retail"></div>
             <div class="text-block">
                 <h3>Smart retail</h3>
                 <p>Energy consumption monitoring, climate automation in shopping areas, and lighting control.</p>
@@ -166,10 +166,10 @@ contactUsModal: "true"
                 <h3>Manufacturing</h3>
                 <p>Energy audits, airflow monitoring, and smart overload notifications.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-office/manufacturing-2.svg" alt="Manufacturing" title="Manufacturing"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-office/manufacturing-2.svg" alt="Manufacturing" title="Manufacturing"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-office/hospital-2.svg" alt="Hospital" title="Healthcare"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-office/hospital-2.svg" alt="Hospital" title="Healthcare"></div>
             <div class="text-block">
                 <h3>Healthcare</h3>
                 <p>Microclimate control in patient rooms, occupancy monitoring, and tracking of CO₂ levels and temperature.</p>
@@ -180,10 +180,10 @@ contactUsModal: "true"
                 <h3>Hospitality</h3>
                 <p>Room automation, personalized climate control, and monitoring of CO₂ levels and space occupancy.</p>
             </div>
-            <div class="image"><img src="/images/usecases/smart-office/hospitality-2.svg" alt="Hospitality" title="Hospitality"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-office/hospitality-2.svg" alt="Hospitality" title="Hospitality"></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/smart-office/education-2.svg" alt="Education" title="Education"></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/smart-office/education-2.svg" alt="Education" title="Education"></div>
             <div class="text-block">
                 <h3>Education</h3>
                 <p>Managing comfort and resource usage in educational facilities.</p>
@@ -198,7 +198,7 @@ contactUsModal: "true"
         <p>The smart office project demonstrates how the integration of IoT and ThingsBoard can significantly enhance office building management. It’s more than just a dashboard — it’s a powerful tool for improving efficiency, safety, and comfort. The solution is easily scalable, integrable, and customizable to fit any business needs. With ThingsBoard, you don’t just monitor your office — you take control of it.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">  
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">  
     </div>
 </section>
 
@@ -305,11 +305,11 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/smart-office/smart-office-1-v2.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
-                "<img src='/images/usecases/smart-office/smart-office-2.webp' alt='Energy consumption, power and current charts with wind turbine background' title='Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms'/>",
-                "<img src='/images/usecases/smart-office/smart-office-3.webp' alt='HVAC control with state, airflow history, and temperature targets' title='ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time'/>",
-                "<img src='/images/usecases/smart-office/smart-office-5.webp' alt='Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking' title='Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform'/>",
-                "<img src='/images/usecases/smart-office/smart-office-4.webp' alt='Water consumption statistics and battery discharge graph with office contact info' title='Water meter dashboard: shows water usage per minute, historical consumption, battery voltage over time, and device contact information'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-1-v2.webp' alt='HVAC switch, temperature and power chart, device list, and floor plan with sensor locations' title='HVAC system dashboard: includes temperature control knob, power chart, connected devices, and interactive floor plan in ThingsBoard'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-2.webp' alt='Energy consumption, power and current charts with wind turbine background' title='Energy monitoring dashboard with consumption statistics, real-time current and voltage tracking, and no active alarms'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-3.webp' alt='HVAC control with state, airflow history, and temperature targets' title='ThingsBoard dashboard for HVAC: displays airflow, target temperature, device state, and alarm history over time'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-5.webp' alt='Smart sensor dashboard with temperature, humidity, CO2, TVOC, and occupancy tracking' title='Environmental monitoring via smart sensor: tracks temperature, humidity, air quality, and room occupancy in ThingsBoard platform'/>",
+                "<img src='https://img.thingsboard.io/usecases/smart-office/smart-office-4.webp' alt='Water consumption statistics and battery discharge graph with office contact info' title='Water meter dashboard: shows water usage per minute, historical consumption, battery voltage over time, and device contact information'/>",
             ];
             return images[index];
         }

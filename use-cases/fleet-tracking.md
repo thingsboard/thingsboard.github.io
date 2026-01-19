@@ -49,7 +49,7 @@ contactUsModal: "true"
         </div>
     </div>
     <div class="scheme">
-        <img id="schemeSVG" loading="lazy" data-src="/images/usecases/smart-use-cases.svg" class="svg-animation" alt="IoT Fleet Tracking solution architecture" title="IoT Fleet Tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
+        <img id="schemeSVG" loading="lazy" data-src="https://img.thingsboard.io/usecases/smart-use-cases.svg" class="svg-animation" alt="IoT Fleet Tracking solution architecture" title="IoT Fleet Tracking solution architecture: IoT devices connect via gateways to the cloud for processing, visualization, and automation">
     </div>
 </section>
 
@@ -187,11 +187,11 @@ contactUsModal: "true"
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/mining-1.svg" alt="Mining & quarrying" title="Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics."></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/dumpsites-1.svg" alt="Material yards & dumpsites" title=" Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas."></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/construction-1.svg" alt="Construction sites" title="Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety."></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/infrastructure-1.svg" alt="Infrastructure projects" title="Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds."></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/forest-1.svg" alt="Forestry operations" title="Use geofencing to protect environmental boundaries and track equipment in remote forest sectors."></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/mining-1.svg" alt="Mining & quarrying" title="Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics."></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/dumpsites-1.svg" alt="Material yards & dumpsites" title=" Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas."></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/construction-1.svg" alt="Construction sites" title="Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety."></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/infrastructure-1.svg" alt="Infrastructure projects" title="Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds."></div>
+            <div class="application-image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/forest-1.svg" alt="Forestry operations" title="Use geofencing to protect environmental boundaries and track equipment in remote forest sectors."></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
@@ -206,7 +206,7 @@ contactUsModal: "true"
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/mining-2.svg" alt="Mining & quarrying" title="Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics."></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/mining-2.svg" alt="Mining & quarrying" title="Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics."></div>
             <div class="text-block">
                 <h3>Mining & quarrying</h3>
                 <p>Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics.</p>
@@ -217,10 +217,10 @@ contactUsModal: "true"
                 <h3>Material yards & dumpsites</h3>
                 <p>Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas.</p>
             </div>
-            <div class="image"><img src="/images/usecases/fleet-tracking/dumpsites-2.svg" alt="Material yards & dumpsites" title="Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas."></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/dumpsites-2.svg" alt="Material yards & dumpsites" title="Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas."></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/construction-2.svg" alt="Construction sites" title="Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety."></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/construction-2.svg" alt="Construction sites" title="Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety."></div>
             <div class="text-block">
                 <h3>Construction sites</h3>
                 <p>Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety.</p>
@@ -231,10 +231,10 @@ contactUsModal: "true"
                 <h3>Infrastructure projects</h3>
                 <p>Monitors chemical storage tanks for compliance and safety in industrial environments.</p>
             </div>
-            <div class="image"><img src="/images/usecases/fleet-tracking/infrastructure-2.svg" alt="Infrastructure projects" title="Monitors chemical storage tanks for compliance and safety in industrial environments."></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/infrastructure-2.svg" alt="Infrastructure projects" title="Monitors chemical storage tanks for compliance and safety in industrial environments."></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/forest-2.svg" alt="Forestry operations" title="Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds."></div>
+            <div class="image"><img src="https://img.thingsboard.io/usecases/fleet-tracking/forest-2.svg" alt="Forestry operations" title="Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds."></div>
             <div class="text-block">
                 <h3>Forestry operations</h3>
                 <p>Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds.</p>
@@ -252,7 +252,7 @@ contactUsModal: "true"
         <p>Whether applied to clay mines or other heavy equipment scenarios, this solution offers unmatched operational clarity and scalability.</p>
     </div>
     <div class="summary-icon">
-        <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
+        <img src="https://img.thingsboard.io/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
     </div>
 </section>
 
@@ -373,16 +373,16 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/fleet-tracking/site-fleet-tracking-1.webp' alt='This dashboard displays a full satellite map of the mine with real-time overlays for each vehicle. Vehicles are color-coded by type and zone, while the right panel shows a live machine list with fuel status and operational state. KPIs summarize daily consumption, number of vehicles in each zone, and triggered alarms. It enables full operational awareness at a glance.'/>",
-                "<img src='/images/usecases/fleet-tracking/zone-l1.webp' alt='Focused on Excavator A, this dashboard tracks its speed, fuel level, and operational alarms. The map zooms into the loading zone, while the sidebar lists alarms for low fuel and hydraulic pressure. Operators can easily monitor zone-specific performance and address machine-level issues in context.'/>",
-                "<img src='/images/usecases/fleet-tracking/zone-u1.webp' alt='Displays Excavator B actively working in the unloading area with fuel and minor speed violations. Alarms are logged instantly. This dashboard provides quick access to machine status and zone compliance — a key element for high-traffic unloading areas.'/>",
-                "<img src='/images/usecases/fleet-tracking/zone-r1.webp' alt='This screen shows Haul Truck B parked in a restricted zone, triggering a critical overload alarm. The map provides immediate zone context, and the alarm panel flags violations in real time. This visual enforcement helps prevent unsafe operation or zone breaches.'/>",
-                "<img src='/images/usecases/fleet-tracking/excavator-b.webp' alt='A telemetry-rich screen featuring fuel usage, fuel level, pressure, and route playback. Historical data and live metrics provide clear insight into machine performance and workload, while alarm logs support proactive maintenance.'/>",
-                "<img src='/images/usecases/fleet-tracking/haul-truck-a.webp' alt='Highlights repeated speed limit violations, fuel burn, and load data. The route history is shown with all zone transitions. This enables supervisors to analyze driver behavior, optimize travel paths, and reduce excess wear or unsafe driving.'/>",
-                "<img src='/images/usecases/fleet-tracking/haul-truck-b.webp' alt='Shows a vehicle in a restricted zone with 28-ton load and no movement. An active overload alarm is triggered. This dashboard is essential for spotting inefficient use of assets or safety violations that need immediate action.'/>",
-                "<img src='/images/usecases/fleet-tracking/excavator-a.webp' alt='Monitors hydraulic pressure, movement, and fuel trends. Alarm logs indicate repeated pressure spikes. Used in tandem with maintenance schedules, this helps detect early signs of mechanical stress.'/>",
-                "<img src='/images/usecases/fleet-tracking/haul-truck-c.webp' alt='Vehicle is detected outside of the mine’s geofence, triggering a critical perimeter breach alarm. Combined with a low-fuel warning, the system prompts immediate resolution — reducing risk and ensuring operational boundaries are respected.'/>",
-                "<img src='/images/usecases/fleet-tracking/calc-fields.webp' alt='The admin interface shows all backend logic built through calculated fields — fuel formulas, geofence status, speed over limits, etc. Everything is visual, editable, and instantly applied to the data model — zero Rule Chains required. This low-code logic layer drastically reduces setup complexity and speeds up scaling across fleets.'/>"
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/site-fleet-tracking-1.webp' alt='This dashboard displays a full satellite map of the mine with real-time overlays for each vehicle. Vehicles are color-coded by type and zone, while the right panel shows a live machine list with fuel status and operational state. KPIs summarize daily consumption, number of vehicles in each zone, and triggered alarms. It enables full operational awareness at a glance.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/zone-l1.webp' alt='Focused on Excavator A, this dashboard tracks its speed, fuel level, and operational alarms. The map zooms into the loading zone, while the sidebar lists alarms for low fuel and hydraulic pressure. Operators can easily monitor zone-specific performance and address machine-level issues in context.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/zone-u1.webp' alt='Displays Excavator B actively working in the unloading area with fuel and minor speed violations. Alarms are logged instantly. This dashboard provides quick access to machine status and zone compliance — a key element for high-traffic unloading areas.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/zone-r1.webp' alt='This screen shows Haul Truck B parked in a restricted zone, triggering a critical overload alarm. The map provides immediate zone context, and the alarm panel flags violations in real time. This visual enforcement helps prevent unsafe operation or zone breaches.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/excavator-b.webp' alt='A telemetry-rich screen featuring fuel usage, fuel level, pressure, and route playback. Historical data and live metrics provide clear insight into machine performance and workload, while alarm logs support proactive maintenance.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/haul-truck-a.webp' alt='Highlights repeated speed limit violations, fuel burn, and load data. The route history is shown with all zone transitions. This enables supervisors to analyze driver behavior, optimize travel paths, and reduce excess wear or unsafe driving.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/haul-truck-b.webp' alt='Shows a vehicle in a restricted zone with 28-ton load and no movement. An active overload alarm is triggered. This dashboard is essential for spotting inefficient use of assets or safety violations that need immediate action.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/excavator-a.webp' alt='Monitors hydraulic pressure, movement, and fuel trends. Alarm logs indicate repeated pressure spikes. Used in tandem with maintenance schedules, this helps detect early signs of mechanical stress.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/haul-truck-c.webp' alt='Vehicle is detected outside of the mine’s geofence, triggering a critical perimeter breach alarm. Combined with a low-fuel warning, the system prompts immediate resolution — reducing risk and ensuring operational boundaries are respected.'/>",
+                "<img src='https://img.thingsboard.io/usecases/fleet-tracking/calc-fields.webp' alt='The admin interface shows all backend logic built through calculated fields — fuel formulas, geofence status, speed over limits, etc. Everything is visual, editable, and instantly applied to the data model — zero Rule Chains required. This low-code logic layer drastically reduces setup complexity and speeds up scaling across fleets.'/>"
             ];
             return images[index];
         }
