@@ -100,7 +100,11 @@ net stop thingsboard
 
 * Make a backup of previous ThingsBoard{% if docsPrefix == "pe/"%} PE{% endif %} configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 {% if docsPrefix == "pe/" %}
-* Run the **{{ upgrade_package }}**.
+{% if zip == "true" %}
+* Copy content of the **{{ upgrade_package }}** to the same location.
+{% else %}
+* Run the installation package **{{ upgrade_package }}**
+{% endif %}
 {% endif %}
 {% if docsPrefix != "pe/" %}
 * Remove ThingsBoard install dir.
