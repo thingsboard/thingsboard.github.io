@@ -49,7 +49,7 @@ Temperature & Humidity sensors template includes:
 
 The Temperature & Humidity dashboard displays telemetry data from multiple sensors and provides tools for alarm management and device configuration.
 
-![image](/images/solutions/temperature-sensors/temperature-humidity-sensors-template-1.png)
+![image](https://img.thingsboard.io/solutions/temperature-sensors/temperature-humidity-sensors-template-1.png)
 
 Using the dashboard, you can:
 - Add new sensors
