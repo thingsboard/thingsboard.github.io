@@ -4827,6 +4827,12 @@
 "/docs/user-guide/calculated-fields/":
   url: "/docs/user-guide/calculated-fields/"
   redirect_from: []
+"/docs/user-guide/calculated-fields/script-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/script-calculated-field/"
+  redirect_from: []
+"/docs/user-guide/calculated-fields/simple-calculated-field/":
+  url: "/docs/user-guide/calculated-fields/simple-calculated-field/"
+  redirect_from: []
 "/docs/user-guide/certificates/":
   url: "/docs/user-guide/certificates/"
   redirect_from: []
