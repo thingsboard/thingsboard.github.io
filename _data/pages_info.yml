@@ -1791,6 +1791,10 @@
 "/docs/paas/eu/":
   url: "/docs/paas/eu/"
   redirect_from: []
+"/docs/paas/eu/legacy-subscriptions/":
+  url: "/docs/paas/eu/legacy-subscriptions/"
+  redirect_from:
+  - "/products/paas/subscription/"
 "/docs/paas/eu/mobile-center/applications/":
   url: "/docs/paas/eu/mobile-center/applications/"
   redirect_from: []
@@ -1870,8 +1874,8 @@
 "/docs/paas/eu/solution-templates/air-quality-monitoring/":
   url: "/docs/paas/eu/solution-templates/air-quality-monitoring/"
   redirect_from: []
-"/docs/paas/eu/solution-templates/fleet-tracking/":
-  url: "/docs/paas/eu/solution-templates/fleet-tracking/"
+"/docs/paas/eu/solution-templates/assisted-living/":
+  url: "/docs/paas/eu/solution-templates/assisted-living/"
   redirect_from: []
 "/docs/paas/eu/solution-templates/fuel-level-monitoring/":
   url: "/docs/paas/eu/solution-templates/fuel-level-monitoring/"
@@ -1885,12 +1889,16 @@
 "/docs/paas/eu/solution-templates/scada-energy-management/":
   url: "/docs/paas/eu/solution-templates/scada-energy-management/"
   redirect_from: []
+"/docs/paas/eu/solution-templates/site-fleet-tracking/":
+  url: "/docs/paas/eu/solution-templates/site-fleet-tracking/"
+  redirect_from: []
 "/docs/paas/eu/solution-templates/smart-irrigation/":
   url: "/docs/paas/eu/solution-templates/smart-irrigation/"
   redirect_from: []
 "/docs/paas/eu/solution-templates/smart-office/":
   url: "/docs/paas/eu/solution-templates/smart-office/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/paas/eu/solution-templates/smart-retail/":
   url: "/docs/paas/eu/solution-templates/smart-retail/"
   redirect_from: []
@@ -1906,9 +1914,11 @@
 "/docs/paas/eu/solution-templates/water-metering/":
   url: "/docs/paas/eu/solution-templates/water-metering/"
   redirect_from: []
-"/docs/paas/eu/subscription/":
-  url: "/docs/paas/eu/subscription/"
-  redirect_from: []
+"/docs/paas/eu/subscriptions/":
+  url: "/docs/paas/eu/subscriptions/"
+  redirect_from:
+  - "/products/paas/eu/subscription/"
+  - "/docs/paas/eu/subscription/"
 "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/eu/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -2425,8 +2435,8 @@
 "/docs/paas/solution-templates/air-quality-monitoring/":
   url: "/docs/paas/solution-templates/air-quality-monitoring/"
   redirect_from: []
-"/docs/paas/solution-templates/fleet-tracking/":
-  url: "/docs/paas/solution-templates/fleet-tracking/"
+"/docs/paas/solution-templates/assisted-living/":
+  url: "/docs/paas/solution-templates/assisted-living/"
   redirect_from: []
 "/docs/paas/solution-templates/fuel-level-monitoring/":
   url: "/docs/paas/solution-templates/fuel-level-monitoring/"
@@ -2440,12 +2450,16 @@
 "/docs/paas/solution-templates/scada-energy-management/":
   url: "/docs/paas/solution-templates/scada-energy-management/"
   redirect_from: []
+"/docs/paas/solution-templates/site-fleet-tracking/":
+  url: "/docs/paas/solution-templates/site-fleet-tracking/"
+  redirect_from: []
 "/docs/paas/solution-templates/smart-irrigation/":
   url: "/docs/paas/solution-templates/smart-irrigation/"
   redirect_from: []
 "/docs/paas/solution-templates/smart-office/":
   url: "/docs/paas/solution-templates/smart-office/"
-  redirect_from: []
+  redirect_from:
+  - "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/paas/solution-templates/smart-retail/":
   url: "/docs/paas/solution-templates/smart-retail/"
   redirect_from: []
@@ -2461,10 +2475,11 @@
 "/docs/paas/solution-templates/water-metering/":
   url: "/docs/paas/solution-templates/water-metering/"
   redirect_from: []
-"/docs/paas/subscription/":
-  url: "/docs/paas/subscription/"
+"/docs/paas/subscriptions/":
+  url: "/docs/paas/subscriptions/"
   redirect_from:
   - "/products/paas/subscription/"
+  - "/docs/paas/subscription/"
 "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/":
   url: "/docs/paas/tutorials/function-based-on-telemetry-from-two-devices/"
   redirect_from: []
@@ -3649,8 +3664,8 @@
 "/docs/pe/solution-templates/air-quality-monitoring/":
   url: "/docs/pe/solution-templates/air-quality-monitoring/"
   redirect_from: []
-"/docs/pe/solution-templates/fleet-tracking/":
-  url: "/docs/pe/solution-templates/fleet-tracking/"
+"/docs/pe/solution-templates/assisted-living/":
+  url: "/docs/pe/solution-templates/assisted-living/"
   redirect_from: []
 "/docs/pe/solution-templates/fuel-level-monitoring/":
   url: "/docs/pe/solution-templates/fuel-level-monitoring/"
@@ -3663,6 +3678,9 @@
   redirect_from: []
 "/docs/pe/solution-templates/scada-energy-management/":
   url: "/docs/pe/solution-templates/scada-energy-management/"
+  redirect_from: []
+"/docs/pe/solution-templates/site-fleet-tracking/":
+  url: "/docs/pe/solution-templates/site-fleet-tracking/"
   redirect_from: []
 "/docs/pe/solution-templates/smart-irrigation/":
   url: "/docs/pe/solution-templates/smart-irrigation/"
