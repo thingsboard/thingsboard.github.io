@@ -422,6 +422,60 @@ when a limit breach occurs.
           <td>Total number of telemetry messages received by any of the transport microservices for all devices</td>
       </tr>
       <tr>
+          <td>Gateway Transport messages (All connected devices)</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute,<br>and capped at 60,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Total number of messages received by the transport microservice for all devices connected via particular gateway</td>
+      </tr>
+      <tr>
+          <td>Gateway Telemetry Transport messages (All connected  devices)</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute,<br>and capped at 30,000 per hour</td>
+          <td>Up to 500 per second,<br>not exceeding 15,000 per minute,<br>and capped at 180,000 per hour</td>
+          <td>Up to 500 per second,<br>not exceeding 15,000 per minute,<br>and capped at 180,000 per hour</td>
+          <td>Up to 500 per second,<br>not exceeding 15,000 per minute,<br>and capped at 180,000 per hour</td>
+          <td>Up to 500 per second,<br>not exceeding 15,000 per minute,<br>and capped at 180,000 per hour</td>
+          <td>Total number of telemetry messages received by the transport microservice for all devices connected via particular gateway</td>
+      </tr>
+      <tr>
+          <td>Gateway Telemetry Transport data points (All connected devices)</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute,<br>and capped at 60,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 360,000 per hour</td>
+          <td>Total number of telemetry data points received by the transport microservice for all devices connected via particular gateway</td>
+      </tr> 
+      <tr>
+          <td>Gateway Transport messages (Gateway system messages)</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Total number of messages received by the transport microservice for a particular gateway excluding related devices: statistics, debug logs, configuration updates</td>
+      </tr>
+      <tr>
+          <td>Gateway Telemetry Transport messages (Gateway system messages)</td>
+          <td>Up to 50 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Total number of telemetry messages received by the transport microservice for a particular gateway: statistics, debug logs, other telemetry</td>
+      </tr>
+      <tr>
+          <td>Gateway Telemetry Transport data points (Gateway system messages)</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Total number of telemetry data points received by the transport microservice for a particular gateway: statistics, debug logs, other telemetry</td>
+      </tr>
+      <tr>
           <td>REST requests (Tenant)</td>
           <td>Up to 100 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
