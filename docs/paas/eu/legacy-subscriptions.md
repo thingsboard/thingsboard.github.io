@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-paas-eu
 assignees:
 - ashvayka
 title: ThingsBoard EU Cloud Legacy Subscription plans

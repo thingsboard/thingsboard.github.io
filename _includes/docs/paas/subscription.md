@@ -6,7 +6,7 @@ Designed for scalability, these plans allow you to [top-up](#top-ups) entity and
 
 Main characteristics of the subscription plan are: [entity limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#entity-limits), [api limits](/docs/{{docsPrefix}}user-guide/tenant-profiles/#api-limits--usage), [calculated fields limits](#calculated-fields-limits), [white labeling](#white-labeling) and the level of support you get.
 
-**Looking for older plan details?** This page covers subscription tiers introduced on Jan 20, 2026. For accounts created prior to this date, please review the [legacy subscriptions](/docs/paas/legacy-subscriptions) page.
+**Looking for older plan details?** This page covers subscription tiers introduced on Jan 20, 2026. For accounts created prior to this date, please review the [legacy subscriptions](/docs/{{docsPrefix}}legacy-subscriptions) page.
 
 ## Entity limits
 
