@@ -340,90 +340,90 @@ when a limit breach occurs.
   <thead>
       <tr>
           <td><b>Parameter name</b></td>
-          <td><b>Maker</b></td>
+          <td><b>Free</b></td>
           <td><b>Prototype</b></td>
+          <td><b>Pilot</b></td>
           <td><b>Startup</b></td>
           <td><b>Business</b></td>
-          <td><b>Business+</b></td>
           <td><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
       <tr>
           <td>All Transport messages (Tenant)</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 140,000 per hour</td>
-          <td>Up to 2,000 per second,<br>not exceeding 60,000 per minute,<br>and capped at 1,400,000 per hour</td>
-          <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 6,000,000 per hour</td>
-          <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 12,000,000 per hour</td>
-          <td>Up to 40,000 per second,<br>not exceeding 1,200,000 per minute,<br>and capped at 24,000,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute,<br>and capped at 75,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 750,000 per hour</td>
+          <td>Up to 2,000 per second,<br>not exceeding 60,000 per minute,<br>and capped at 1,500,000 per hour</td>
+          <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,500,000 per hour</td>
+          <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 15,000,000 per hour</td>
           <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Telemetry Transport messages (Tenant)</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 70,000 per hour</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute,<br>and capped at 35,000 per hour</td>
+          <td>Up to 500 per second,<br>not exceeding 15,000 per minute,<br>and capped at 350,000 per hour</td>
           <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 700,000 per hour</td>
           <td>Up to 5,000 per second,<br>not exceeding 150,000 per minute,<br>and capped at 3,500,000 per hour</td>
           <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,000,000 per hour</td>
-          <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 14,000,000 per hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Tenant)</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 140,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute,<br>and capped at 70,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 700,000 per hour</td>
           <td>Up to 2,000 per second,<br>not exceeding 60,000 per minute,<br>and capped at 1,400,000 per hour</td>
           <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,000,000 per hour</td>
           <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 14,000,000 per hour</td>
-          <td>Up to 40,000 per second,<br>not exceeding 1,200,000 per minute,<br>and capped at 28,000,000 per hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>            
       <tr>
           <td>All Transport messages (Device)</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
           <td>Total number of messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport messages (Device)</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 50 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 600 per minute,<br>and capped at 7,000 per hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Device)</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
-          <td>Up to 200 per second,<br>not exceeding 6,000 per minute,<br>and capped at 14,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 200 per second,<br>not exceeding 2,000 per minute,<br>and capped at 15,000 per hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Integration messages (Tenant)</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 70,000 per hour</td>
-          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 700,000 per hour</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute,<br>and capped at 30,000 per hour</td>
+          <td>Up to 500 per second,<br>not exceeding 15,000 per minute,<br>and capped at 350,000 per hour</td>
+          <td>Up to 1,000 per second,<br>not exceeding 30,000 per minute,<br>and capped at 750,000 per hour</td>
           <td>Up to 5,000 per second,<br>not exceeding 150,000 per minute,<br>and capped at 3,500,000 per hour</td>
-          <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,000,000 per hour</td>
-          <td>Up to 20,000 per second,<br>not exceeding 600,000 per minute,<br>and capped at 14,000,000 per hour</td>
+          <td>Up to 10,000 per second,<br>not exceeding 300,000 per minute,<br>and capped at 7,500,000 per hour</td>
           <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Integration messages (Device)</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
-          <td>Up to 100 per second,<br>not exceeding 3,000 per minute,<br>and capped at 7,000 per hour</td>
+          <td>Up to 50 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute,<br>and capped at 15,000 per hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for all devices</td>
       </tr>
       <tr>
           <td>REST requests (Tenant)</td>
-          <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
+          <td>Up to 100 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
           <td>Up to 100 per second,<br>not exceeding 2,000 per minute</td>
@@ -432,7 +432,7 @@ when a limit breach occurs.
       </tr>
       <tr>
           <td>REST requests (Customer)</td>
-          <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
+          <td>Up to 50 per second,<br>not exceeding 500 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
           <td>Up to 50 per second,<br>not exceeding 1,000 per minute</td>
@@ -441,7 +441,7 @@ when a limit breach occurs.
       </tr>
       <tr>
           <td>WS updates per session</td>
-          <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
+          <td>Up to 1,000 per second,<br>not exceeding 5,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
           <td>Up to 1,000 per second,<br>not exceeding 10,000 per minute</td>
@@ -450,44 +450,44 @@ when a limit breach occurs.
       </tr>
       <tr>
           <td>WS Sessions (Tenant)</td>
+          <td>50</td>
+          <td>100</td>
           <td>1K</td>
-          <td>1K</td>
-          <td>1K</td>
-          <td>1K</td>
-          <td>1K</td>
+          <td>2K</td>
+          <td>4K</td>
           <td>Maximum number of Web socket sessions for the tenant</td>
       </tr>
       <tr>
           <td>WS Subscriptions (Tenant)</td>
+          <td>1K</td>
+          <td>2K</td>
+          <td>4K</td>
           <td>20K</td>
-          <td>20K</td>
-          <td>20K</td>
-          <td>20K</td>
-          <td>20K</td>
+          <td>40K</td>
           <td>Maximum number of Web socket subscriptions for the tenant</td>
       </tr>
       <tr>
           <td>WS Sessions (Customer)</td>
+          <td>25</td>
+          <td>50</td>
           <td>500</td>
-          <td>500</td>
-          <td>500</td>
-          <td>500</td>
-          <td>500</td>
+          <td>1K</td>
+          <td>2K</td>
           <td>Maximum number of Web socket sessions for the сustomer</td>
       </tr>
       <tr>
           <td>WS Subscriptions (Customer)</td>
+          <td>500</td>
+          <td>1K</td>
+          <td>2K</td>
           <td>10K</td>
-          <td>10K</td>
-          <td>10K</td>
-          <td>10K</td>
-          <td>10K</td>
+          <td>20K</td>
           <td>Maximum number of Web socket subscription for the сustomer</td>
       </tr>
       <tr>
           <td>WS Sessions (Public user)</td>
-          <td>250</td>
-          <td>250</td>
+          <td>20</td>
+          <td>100</td>
           <td>250</td>
           <td>250</td>
           <td>250</td>
@@ -495,8 +495,8 @@ when a limit breach occurs.
       </tr>
       <tr>
           <td>WS Subscriptions (Public user)</td>
-          <td>5K</td>
-          <td>5K</td>
+          <td>500</td>
+          <td>1K</td>
           <td>5K</td>
           <td>5K</td>
           <td>5K</td>
@@ -504,8 +504,8 @@ when a limit breach occurs.
       </tr> 
       <tr>
           <td>WS Sessions (Regular user)</td>
-          <td>100</td>
-          <td>100</td>
+          <td>10</td>
+          <td>50</td>
           <td>100</td>
           <td>100</td>
           <td>100</td>
@@ -513,8 +513,8 @@ when a limit breach occurs.
       </tr>
       <tr>
           <td>WS Subscriptions (Regular user)</td>
-          <td>2K</td>
-          <td>2K</td>
+          <td>200</td>
+          <td>1K</td>
           <td>2K</td>
           <td>2K</td>
           <td>2K</td>
@@ -522,8 +522,8 @@ when a limit breach occurs.
       </tr>
       <tr>
           <td>WS queue message (Session)</td>
-          <td>500</td>
-          <td>500</td>
+          <td>100</td>
+          <td>250</td>
           <td>500</td>
           <td>500</td>
           <td>500</td>
