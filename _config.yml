@@ -112,10 +112,10 @@ release:
   pe_edge_ver: 4.2pe
   pe_edge_full_ver: 4.2.0EDGEPE
   # <<< EDGE
-  ce_flutter_app_ver: 1.6.0
-  pe_flutter_app_ver: 1.6.0
-  ce_dart_client_ver: 4.0.0
-  pe_dart_client_ver: 4.0.0
+  ce_flutter_app_ver: 1.8.0
+  pe_flutter_app_ver: 1.8.0
+  ce_dart_client_ver: 4.1.0
+  pe_dart_client_ver: 4.1.0
   broker_full_ver: 2.2.0
   broker_branch: release-2.2.0
   trendz_ver: 1.15.0
