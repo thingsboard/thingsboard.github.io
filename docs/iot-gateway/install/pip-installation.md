@@ -79,7 +79,7 @@ First, add a gateway device to your ThingsBoard instance by following these step
 {% assign createNewGatewayDevice = '
   ===
     image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
-    title: Go to the "**Dashboards**" page and open the "**ThingsBoard IoT Gateways**" dashboard;
+    title: Go to the "**Entities-Gateways**" page and open the "**ThingsBoard IoT Gateways**" dashboard;
   ===
     image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
     title: Click the "**plus**" icon in the upper right corner to add a new gateway. Input the gateway name (e.g., "My Gateway"), and select the default device profile. Click "Create".
@@ -131,10 +131,10 @@ nano /etc/thingsboard-gateway/config/tb_gateway.json
 
 {% assign configureGatewayLogs = '
     ===
-        image: /images/gateway/install/configure-gateway-1-ce.png,
+        image: /images/gateway/install/configure-gateway-4-ce.png,
         title: Click the "**General configuration**" button;
     ===
-        image: /images/gateway/install/configure-gateway-4-ce.png,
+        image: /images/gateway/install/configure-gateway-5-ce.png,
         title: Navigate to the "**Logs**" tab and replace the "**File path**" field value to `/var/log/thingsboard-gateway` in all tabs. Then, click "**Save**".
 '
 %}
