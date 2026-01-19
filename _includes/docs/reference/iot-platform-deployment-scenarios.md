@@ -95,7 +95,9 @@ The deployment pattern includes two configuration options, each tailored to diff
 
 For the simplest, most cost-efficient setup, all components, including the database and proxy, are hosted on a single server. This configuration is ideal for prototyping, development environments, or small-scale production workloads where ease of management and cost are the primary concerns.
 
-<object width="80%" data="/images/reference/deployment/scenario-a-basic.png"></object>
+<br>
+<object data="/images/reference/deployment/scenario-a-basic.svg"></object>
+<br>
 
 You can further improve this architecture by applying optional addons, described below.
 
@@ -157,7 +159,9 @@ However, Kafka can be added as a supplemental component to handle bursts of tele
 
 This configuration separates the application stack from the data storage, leveraging AWS RDS service for database management. This offers improved resilience, automated backups, and patching for the database layer, while keeping the application deployment simple.
 
-<object width="80%" data="/images/reference/deployment/scenario-a-optional.png"></object>
+<br>
+<object data="/images/reference/deployment/scenario-a-optional.svg"></object>
+<br>
 
 **Architectural Modifications:**
 
@@ -186,7 +190,9 @@ The deployment pattern includes two configuration options, each optimized for va
 
 For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS as entity and telemetry data storage. Public access to the Thingsboard application inside the cluster provided by ELB.
 
-<object width="80%" data="/images/reference/deployment/scenario-b-sql.png"></object>
+<br>
+<object data="/images/reference/deployment/scenario-b-sql.svg"></object>
+<br>
 
 **Compute Resources:**
 
@@ -265,7 +271,9 @@ The following containerized services are deployed to the compute node:
 
 With increased telemetry write/read request rates, the architecture may be transitioned to a **hybrid database topology**. This approach separates entity data (PostgreSQL) from time-series data (Cassandra), enabling independent scaling of read- and write-heavy workloads.
 
-<object width="80%" data="/images/reference/deployment/scenario-b-hybrid.png"></object>
+<br>
+<object data="/images/reference/deployment/scenario-b-hybrid.svg"></object>
+<br>
 
 **Architectural Modifications:**
 
@@ -329,7 +337,9 @@ This scenario is a direct upgrade to [Scenario B](#scenario-b-single-node-cluste
 
 For workloads with moderate data ingestion rates, this setup utilizes Amazon RDS as entity and telemetry data storage. Public access to the Thingsboard application inside the cluster provided by ELB.
 
-<object width="80%" data="/images/reference/deployment/scenario-c-sql.png"></object>
+<br>
+<object data="/images/reference/deployment/scenario-c-sql.svg"></object>
+<br>
 
 **Compute Resources:**
 
@@ -433,7 +443,9 @@ Elastic IP: 3 × $3.60/month - $11/month
 
 Similarly to [Scenario B](#scenario-b-single-node-cluster), the second configuration option transitions to a **hybrid database topology**. This enables independent scaling of read-heavy and write-heavy workloads.
 
-<object width="80%" data="/images/reference/deployment/scenario-c-hybrid.png"></object>
+<br>
+<object data="/images/reference/deployment/scenario-c-hybrid.svg"></object>
+<br>
 
 **Architectural Modifications:**
 
