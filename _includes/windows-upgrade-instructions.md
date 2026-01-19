@@ -74,7 +74,7 @@ In order to upgrade to {{ current_version_with_platform | upcase }} you need to 
 {% include templates/install/tb-350-update.md %}
 {% endif %}
 
-#### {{ platform }} package download
+#### ThingsBoard{% if docsPrefix == "pe/" %} PE{% endif %} package download
 
 {% assign upgrade_package = "" %}
 {% if docsPrefix == "pe/" %}
@@ -89,7 +89,7 @@ Download ThingsBoard PE installation package for Windows: [{{ upgrade_package }}
 Download ThingsBoard installation file for Windows: [thingsboard-windows-{{ current_version }}.zip](https://github.com/thingsboard/thingsboard/releases/download/v{{ current_version }}/thingsboard-windows-{{ current_version }}.zip).
 {% endif %}
 
-#### {{ platform }} service upgrade
+#### ThingsBoard{% if docsPrefix == "pe/" %} PE{% endif %} service upgrade
 
 * Stop ThingsBoard service if it is running.
 

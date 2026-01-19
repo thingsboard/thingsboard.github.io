@@ -85,7 +85,7 @@ sudo dnf install -y postgresql16-contrib
 {% include templates/install/tb-350-update.md %}
 {% endif %}
 
-#### {{ platform }} package download
+#### ThingsBoard{% if docsPrefix == "pe/" %} PE{% endif %} package download
 
 {% if docsPrefix == "pe/" %}
 ```bash
@@ -99,7 +99,7 @@ wget https://github.com/thingsboard/thingsboard/releases/download/v{{ current_ve
 {: .copy-code}
 {% endif %}
 
-#### {{ platform }} service upgrade
+#### ThingsBoard{% if docsPrefix == "pe/" %} PE{% endif %} service upgrade
 
 * Stop ThingsBoard service if it is running.
 
