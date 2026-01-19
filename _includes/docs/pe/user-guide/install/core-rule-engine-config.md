@@ -204,6 +204,12 @@
 			<td>5:3600</td>
 			<td> Limit that prohibits resetting the password for the user too often. The value of the rate limit. By default, no more than 5 requests per hour</td>
 		</tr>
+		<tr>
+			<td>server.rest.rule_engine.response_timeout</td>
+			<td>DEFAULT_RULE_ENGINE_RESPONSE_TIMEOUT</td>
+			<td>10000</td>
+			<td> Default timeout for waiting response of REST API request to Rule Engine in milliseconds</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -368,6 +374,18 @@
 			<td> Enable/disable access to Tenant Administrators JWT token by System Administrator or Customer Users JWT token by Tenant Administrator</td>
 		</tr>
 		<tr>
+			<td>security.api_key.value_prefix</td>
+			<td>SECURITY_API_KEY_VALUE_PREFIX</td>
+			<td>tb_</td>
+			<td> Prefix for the auto-generated API key. For example, tb_Ood4dQMxWvMH-76z3E_Cv0mZaBWT0Clk3hRSO0P_jNQ</td>
+		</tr>
+		<tr>
+			<td>security.api_key.value_bytes_size</td>
+			<td>SECURITY_API_KEY_VALUE_PREFIX</td>
+			<td>64</td>
+			<td> Length of the auto-generated API key. Max is 255</td>
+		</tr>
+		<tr>
 			<td>security.user_login_case_sensitive</td>
 			<td>SECURITY_USER_LOGIN_CASE_SENSITIVE</td>
 			<td>true</td>
@@ -517,7 +535,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.2</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-4.3</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 		<tr>
@@ -792,7 +810,14 @@
 			<td>cassandra.query.use_ts_key_value_partitioning_on_read</td>
 			<td>USE_TS_KV_PARTITIONING_ON_READ</td>
 			<td>true</td>
-			<td> Enable/Disable timestamp key-value partioning on read queries</td>
+			<td> Enable/Disable timestamp key-value partitioning on read queries</td>
+		</tr>
+		<tr>
+			<td>cassandra.query.use_ts_key_value_partitioning_on_read_max_estimated_partition_count</td>
+			<td>USE_TS_KV_PARTITIONING_ON_READ_MAX_ESTIMATED_PARTITION_COUNT</td>
+			<td>40</td>
+			<td> Safety trigger to fall back to use_ts_key_value_partitioning_on_read as true if estimated partitions count is greater than safety trigger value.
+ It helps to prevent building huge partition list (OOM) for corner cases (like from 0 to infinity) and prefer fewer reads strategy from NoSQL database</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.ts_key_value_partitions_max_cache_size</td>
@@ -1283,6 +1308,18 @@
 			<td> Default value - 1 day</td>
 		</tr>
 		<tr>
+			<td>sql.ttl.api_keys.enabled</td>
+			<td>SQL_TTL_API_KEYS_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable TTL (Time To Live) for expired api keys records</td>
+		</tr>
+		<tr>
+			<td>sql.ttl.api_keys.checking_interval_ms</td>
+			<td>SQL_TTL_API_KEYS_CHECKING_INTERVAL_MS</td>
+			<td>86400000</td>
+			<td> Default value - 1 day</td>
+		</tr>
+		<tr>
 			<td>sql.relations.max_level</td>
 			<td>SQL_RELATIONS_MAX_LEVEL</td>
 			<td>50</td>
@@ -1519,14 +1556,14 @@
 			<td>false</td>
 			<td> Close transport session if RPC delivery timed out. If enabled, RPC will be reverted to the queued state.
  Note:
- - For MQTT transport:
-   - QoS level 0: This feature does not apply, as no acknowledgment is expected, and therefore no timeout is triggered.
-   - QoS level 1: This feature applies, as an acknowledgment is expected.
-   - QoS level 2: Unsupported.
- - For CoAP transport:
-   - Confirmable requests: This feature applies, as delivery confirmation is expected.
-   - Non-confirmable requests: This feature does not apply, as no delivery acknowledgment is expected.
- - For HTTP and SNPM transports: RPC is considered delivered immediately, and there is no logic to await acknowledgment.</td>
+ <ul><li> For MQTT transport:
+   <ul><li> QoS level 0: This feature does not apply, as no acknowledgment is expected, and therefore no timeout is triggered.</li>
+   <li> QoS level 1: This feature applies, as an acknowledgment is expected.</li>
+   <li> QoS level 2: Unsupported.</li></ul></li>
+ <li> For CoAP transport:
+   <ul><li> Confirmable requests: This feature applies, as delivery confirmation is expected.</li>
+   <li> Non-confirmable requests: This feature does not apply, as no delivery acknowledgment is expected.</li></ul></li>
+ <li> For HTTP and SNPM transports: RPC is considered delivered immediately, and there is no logic to await acknowledgment.</li></ul></td>
 		</tr>
 		<tr>
 			<td>actors.statistics.enabled</td>
@@ -2263,6 +2300,18 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
+			<td>cache.specs.apiKeys.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_API_KEYS_TTL</td>
+			<td>1440</td>
+			<td> API keys cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.specs.apiKeys.maxSize</td>
+			<td>CACHE_SPECS_API_KEYS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
 			<td>cache.specs.downlink.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_DOWNLINK_TTL</td>
 			<td>1440</td>
@@ -2478,6 +2527,30 @@
 			<td>1000000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
+		<tr>
+			<td>cache.tbResourceData.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_RESOURCE_DATA_TTL</td>
+			<td>10080</td>
+			<td> TB resource data cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.tbResourceData.maxSize</td>
+			<td>CACHE_SPECS_RESOURCE_DATA_MAX_SIZE</td>
+			<td>100000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.userAuthDetails.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_USER_AUTH_DETAILS_TTL</td>
+			<td>120</td>
+			<td> User auth details cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.userAuthDetails.maxSize</td>
+			<td>CACHE_SPECS_USER_AUTH_DETAILS_MAX_SIZE</td>
+			<td>200000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -2580,25 +2653,25 @@
 			<td>redis.sentinel.master</td>
 			<td>REDIS_MASTER</td>
 			<td></td>
-			<td> name of the master node</td>
+			<td> Name of the master node</td>
 		</tr>
 		<tr>
 			<td>redis.sentinel.sentinels</td>
 			<td>REDIS_SENTINELS</td>
 			<td></td>
-			<td> comma-separated list of "host:port" pairs of sentinels</td>
+			<td> Comma-separated list of "host:port" pairs of sentinels</td>
 		</tr>
 		<tr>
 			<td>redis.sentinel.password</td>
 			<td>REDIS_SENTINEL_PASSWORD</td>
 			<td></td>
-			<td> password to authenticate with sentinel</td>
+			<td> Password to authenticate with sentinel</td>
 		</tr>
 		<tr>
 			<td>redis.sentinel.useDefaultPoolConfig</td>
 			<td>REDIS_USE_DEFAULT_POOL_CONFIG</td>
 			<td>true</td>
-			<td> if set false will be used pool config build from values of the pool config section</td>
+			<td> If set false will be used pool config build from values of the pool config section</td>
 		</tr>
 		<tr>
 			<td>redis.db</td>
@@ -2611,6 +2684,12 @@
 			<td>REDIS_PASSWORD</td>
 			<td></td>
 			<td> db password</td>
+		</tr>
+		<tr>
+			<td>redis.username</td>
+			<td>REDIS_USERNAME</td>
+			<td></td>
+			<td> Redis username for ACL authentication (Redis 6.0+). Leave empty for legacy password-only auth</td>
 		</tr>
 		<tr>
 			<td>redis.ssl.enabled</td>
@@ -3510,10 +3589,10 @@
 			<td>LAST</td>
 			<td> This property specifies the strategy for reporting activity events within each reporting period.
  The accepted values are 'FIRST', 'LAST', 'FIRST_AND_LAST' and 'ALL'.
- - 'FIRST': Only the first activity event in each reporting period is reported.
- - 'LAST': Only the last activity event in the reporting period is reported.
- - 'FIRST_AND_LAST': Both the first and last activity events in the reporting period are reported.
- - 'ALL': All activity events in the reporting period are reported.</td>
+ <ul><li> 'FIRST': Only the first activity event in each reporting period is reported.</li>
+ <li> 'LAST': Only the last activity event in the reporting period is reported.</li>
+ <li> 'FIRST_AND_LAST': Both the first and last activity events in the reporting period are reported.</li>
+ <li> 'ALL': All activity events in the reporting period are reported.</li></ul></td>
 		</tr>
 		<tr>
 			<td>transport.json.type_cast_enabled</td>
@@ -3801,16 +3880,16 @@
 		<tr>
 			<td>transport.lwm2m.dtls.connection_id_length</td>
 			<td>LWM2M_DTLS_CONNECTION_ID_LENGTH</td>
-			<td></td>
-			<td> CoAP DTLS connection ID length for LWM2M. RFC 9146, Connection Identifier for DTLS 1.2
- Default: 8
+			<td>8</td>
+			<td> LWM2M DTLS connection ID length for LWM2M. RFC 9146, Connection Identifier for DTLS 1.2
+ Default: off. <br>
  Control usage of DTLS connection ID length (CID).
- - 'off' to deactivate it.
- - 'on' to activate Connection ID support (same as CID 0 or more 0).
- - A positive value defines generated CID size in bytes.
- - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
- - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
- - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+ <ul> <li> 'off' to deactivate it. </li>
+ <li> 'on' to activate Connection ID support (same as CID 0 or more 0). </li>
+ <li> A positive value defines generated CID size in bytes.</li>
+ <li> A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic). </li>
+ <li> A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used </li>
+ <li> A value that are > 4: MultiNodeConnectionIdGenerator is used </li> </ul></td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.server.id</td>
@@ -3917,7 +3996,7 @@
 		<tr>
 			<td>transport.lwm2m.bootstrap.id</td>
 			<td>LWM2M_SERVER_ID_BS</td>
-			<td>null</td>
+			<td>0</td>
 			<td> Default value in LwM2M client after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)</td>
 		</tr>
 		<tr>
@@ -4155,6 +4234,12 @@
 			<td> Thread pool size for scheduler that executes device querying tasks</td>
 		</tr>
 		<tr>
+			<td>transport.snmp.batch_retries</td>
+			<td>SNMP_BOOTSTRAP_RETRIES</td>
+			<td>8</td>
+			<td> Maximum number of retry attempts for a single SNMP devices batch during bootstrap.</td>
+		</tr>
+		<tr>
 			<td>transport.stats.enabled</td>
 			<td>TB_TRANSPORT_STATS_ENABLED</td>
 			<td>true</td>
@@ -4181,7 +4266,7 @@
 		<tr>
 			<td>transport.gateway.dashboard.sync.branch</td>
 			<td>TB_GATEWAY_DASHBOARD_SYNC_BRANCH</td>
-			<td>release/4.0.0</td>
+			<td>release/4.3.0</td>
 			<td> Branch of gateways dashboard repository to work with</td>
 		</tr>
 		<tr>
@@ -4248,16 +4333,16 @@
 		<tr>
 			<td>coap.dtls.connection_id_length</td>
 			<td>COAP_DTLS_CONNECTION_ID_LENGTH</td>
-			<td></td>
+			<td>8</td>
 			<td> CoAP DTLS connection ID length. RFC 9146, Connection Identifier for DTLS 1.2
- Default: 8
+ Default: off. <br>
  Control usage of DTLS connection ID length (CID).
- - 'off' to deactivate it.
- - 'on' to activate Connection ID support (same as CID 0 or more 0).
- - A positive value defines generated CID size in bytes.
- - A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).
- - A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used
- - A value that are > 4: MultiNodeConnectionIdGenerator is used</td>
+ <ul> <li> 'off' to deactivate it. </li>
+ <li> 'on' to activate Connection ID support (same as CID 0 or more 0). </li>
+ <li> A positive value defines generated CID size in bytes.</li>
+ <li> A value of 0 means we accept using CID but will not generate one for foreign peer (enables support but not for incoming traffic).</li>
+ <li> A value between 0 and <= 4: SingleNodeConnectionIdGenerator is used</li>
+ <li> A value that are > 4: MultiNodeConnectionIdGenerator is used</li> </ul></td>
 		</tr>
 		<tr>
 			<td>coap.dtls.max_transmission_unit</td>
@@ -4282,13 +4367,13 @@
  In order to negotiate smaller maximum fragment lengths,
  clients MAY include an extension of type "max_fragment_length" in the (extended) client hello.
  The "extension_data" field of this extension SHALL contain:
- enum {
+ <pre> enum {
    2^9(1) == 512,
    2^10(2) == 1024,
    2^11(3) == 2048,
    2^12(4) == 4096,
    (255)
- } MaxFragmentLength;
+ } MaxFragmentLength; </pre>
  TLS already requires clients and servers to support fragmentation of handshake messages.</td>
 		</tr>
 		<tr>
@@ -4499,7 +4584,7 @@
 		<tr>
 			<td>device.connectivity.gateway.image_version</td>
 			<td>DEVICE_CONNECTIVITY_GATEWAY_IMAGE_VERSION</td>
-			<td>3.7-stable</td>
+			<td>3.8-stable</td>
 			<td> The docker tag for thingsboard/tb-gateway image used in docker-compose file for gateway launch</td>
 		</tr>
 	</tbody>
@@ -4600,6 +4685,15 @@
 			<td> Number of milliseconds to wait before resending failed batch of edge events to edge</td>
 		</tr>
 		<tr>
+			<td>edges.storage.misordering_compensation_millis</td>
+			<td>EDGES_MISORDERING_COMPENSATION_MILLIS</td>
+			<td>60000</td>
+			<td> Time (in milliseconds) to subtract from the start timestamp when fetching edge events.
+ This compensates for possible misordering between `created_time` (used for partitioning)
+ and `seqId` (used for sorting). Without this, events with smaller seqId but larger created_time
+ might be skipped, especially across partition boundaries.</td>
+		</tr>
+		<tr>
 			<td>edges.max_high_priority_queue_size_per_session</td>
 			<td>EDGES_MAX_HIGH_PRIORITY_QUEUE_SIZE_PER_SESSION</td>
 			<td>10000</td>
@@ -4647,25 +4741,48 @@
 			<td>600000</td>
 			<td> How often to report edge communication stats in milliseconds</td>
 		</tr>
+	</tbody>
+</table>
+
+
+##  Trendz parameters
+
+<table>
+	<thead>
 		<tr>
-			<td>license.secret</td>
-			<td>TB_LICENSE_SECRET</td>
-			<td></td>
-			<td> license secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)</td>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
 		</tr>
+	</thead>
+	<tbody>
 		<tr>
-			<td>license.instance_data_file</td>
-			<td>TB_LICENSE_INSTANCE_DATA_FILE</td>
-			<td>instance-license.data</td>
-			<td> Instance data is auto-generated and is used to identify particular ThingsBoard Instance.
- Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.
- Please make sure that thingsboard process has access to the instance data file, in case you use absolute path.</td>
-		</tr>
-		<tr>
-			<td>license.stats.enabled</td>
-			<td>TB_ANONYMOUS_USAGE_REPORTING</td>
+			<td>trendz.enabled</td>
+			<td>TRENDZ_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable anonymous usage statistics collection.</td>
+			<td> Enable/disable Trendz synchronization</td>
+		</tr>
+		<tr>
+			<td>trendz.default_tb_url</td>
+			<td>DEFAULT_TB_URL</td>
+			<td></td>
+			<td> Default ThingsBoard URL used for startup synchronization</td>
+		</tr>
+		<tr>
+			<td>trendz.default_trendz_url</td>
+			<td>DEFAULT_TRENDZ_URL</td>
+			<td></td>
+			<td> Default Trendz URL used for startup synchronization</td>
+		</tr>
+		<tr>
+			<td>trendz.request_timeout_ms</td>
+			<td>TRENDZ_REQUEST_TIMEOUT_MS</td>
+			<td>15000</td>
+			<td> Request timeout in ms</td>
+		</tr>
+		<tr>
+			<td>trendz.usage_request_timeout_ms</td>
+			<td>TRENDZ_USAGE_REQUEST_TIMEOUT_MS</td>
+			<td>3000</td>
+			<td> Usage request timeout in ms</td>
 		</tr>
 	</tbody>
 </table>
@@ -4782,6 +4899,12 @@
 			<td>SWAGGER_GROUP_NAME</td>
 			<td>thingsboard</td>
 			<td> The group name (definition) on the API doc UI page.</td>
+		</tr>
+		<tr>
+			<td>swagger.doc_expansion</td>
+			<td>SWAGGER_DOC_EXPANSION</td>
+			<td>list</td>
+			<td> Control the initial display state of API operations and tags (none or list)</td>
 		</tr>
 	</tbody>
 </table>
@@ -5246,6 +5369,12 @@
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
 			<td>1000</td>
 			<td> Time to wait for the stats-loading requests to Kafka to finish</td>
+		</tr>
+		<tr>
+			<td>queue.kafka.topics_cache_ttl_ms</td>
+			<td>TB_QUEUE_KAFKA_TOPICS_CACHE_TTL_MS</td>
+			<td>300000</td>
+			<td> Topics cache TTL in milliseconds. 5 minutes by default</td>
 		</tr>
 		<tr>
 			<td>queue.partitions.hash_function_name</td>

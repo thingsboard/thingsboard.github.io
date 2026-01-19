@@ -394,6 +394,12 @@
 			<td> Time to wait for the stats-loading requests to Kafka to finis</td>
 		</tr>
 		<tr>
+			<td>queue.kafka.topics_cache_ttl_ms</td>
+			<td>TB_QUEUE_KAFKA_TOPICS_CACHE_TTL_MS</td>
+			<td>300000</td>
+			<td> Topics cache TTL in milliseconds. 5 minutes by default</td>
+		</tr>
+		<tr>
 			<td>queue.partitions.hash_function_name</td>
 			<td>TB_QUEUE_PARTITIONS_HASH_FUNCTION_NAME</td>
 			<td>murmur3_128</td>
