@@ -17,26 +17,22 @@
   upgradable-from: "4.0.2"
   release-date: Jul 3 2025
   x: "true"
-  applicable-versions: "3.9x"
   windows:
     zip: "true"
 4.0.2:
   upgradable-from: "3.9.1"
   release-date: Jul 3 2025
   x: "true"
-  applicable-versions: "4.0x"
   windows:
     zip: "true"
 4.0.1:
   upgradable-from: "3.9.1"
   release-date: Apr 22 2025
   x: "true"
-  applicable-versions: "4.0x"
 4.0.0:
   upgradable-from: "3.9.1"
   release-date: Apr 15 2025
   x: "true"
-  applicable-versions: "4.0x"
 3.9.1:
   upgradable-from: "3.9"
   release-date: Feb 19 2025

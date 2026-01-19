@@ -37,6 +37,8 @@
 
 {% if os == "windows" %}
 {% include windows-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade zip=data.windows.zip applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
+{% elsif os == "ubuntu" %}
+{% include ubuntu-upgrade-instructions.md version=display_version prev_version=display_prev_version x=data.x update_status=data.upgrade applicable_versions=applicable_versions manual_version_upgrade=data.manual-version-upgrade manual_version_upgrade_label=data.manual-version-upgrade-label %}
 {% endif %}
 {% endif %}
 
