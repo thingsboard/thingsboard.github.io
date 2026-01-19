@@ -68,6 +68,9 @@
 "/docs/paas/eu/reference/snmp-api":
   url: "/docs/paas/eu/reference/snmp-api/"
   redirect_from: "/docs/paas/eu/reference/snmp-api"
+"/docs/samples/monitoring/facilities-monitoring-poc/":
+  url: "/docs/pe/solution-templates/smart-office/"
+  redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/paas/eu/user-guide/ui/asset-profiles":
   url: "/docs/paas/eu/user-guide/asset-profiles/"
   redirect_from: "/docs/paas/eu/user-guide/ui/asset-profiles"
@@ -164,9 +167,6 @@
 "/docs/pe/user-guide/rule-engine-2-0/architecture/":
   url: "/docs/pe/reference/"
   redirect_from: "/docs/pe/user-guide/rule-engine-2-0/architecture/"
-"/docs/samples/monitoring/facilities-monitoring-poc/":
-  url: "/docs/pe/solution-templates/smart-office/"
-  redirect_from: "/docs/samples/monitoring/facilities-monitoring-poc/"
 "/docs/pe/user-guide/ui/asset-profiles":
   url: "/docs/pe/user-guide/asset-profiles/"
   redirect_from: "/docs/pe/user-guide/ui/asset-profiles"

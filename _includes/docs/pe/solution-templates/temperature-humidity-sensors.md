@@ -4,63 +4,120 @@
 
 {% include templates/solution-templates.md %}
 
-Temperature & Humidity sensors template represents a generic monitoring solution suitable for multiple applications.
-With this template you get an interactive dashboard with ability to manage sensors and user-friendly alarms configuration.
+The **Temperature & Humidity sensors** solution template provides a ready-to-use monitoring system for tracking environmental conditions. With a single installation action, the template deploys a fully functional solution that includes dashboards, devices, alarms, users, and access control.
 
-Solution automatically creates a customer and two customer users.
-Those users will have the dashboard assigned to them, and the user will see the dashboard in full screen mode.
+This template allows you to evaluate and demonstrate the solution from an End User perspective immediately, without configuring rule chains, dashboards, or device profiles manually.
+
+The solution is suitable for proof-of-concept deployments as well as a foundation for production IoT applications such as smart buildings, offices, retail, and cold chain monitoring.
 
 {% include images-gallery.html imageCollection="solution-highlights" %}
 
+## Key application areas
+
+This solution template can be used as a baseline for:
+- **Smart Home**. Monitoring indoor climate conditions and automating HVAC systems.
+- **Smart Office**. Improving comfort and productivity by maintaining optimal temperature and humidity levels.
+- **Retail and Cold Chain**. Monitoring refrigerators and storage units to detect temperature violations and prevent product spoilage.
+
+## Install solution template
+
+To understand how the Temperature & Humidity sensors solution works, start by installing the solution template.
+
+You will need access to ThingsBoard Professional Edition. The easiest way is to use the [ThingsBoard Cloud](/installations/choose-region/){:target="_blank"}. Alternatively, you can install ThingsBoard using the [Professional Edition installation guide](/docs/user-guide/install/pe/installation-options/){:target="_blank"}.
+
+- Go to the **Solution templates** page.
+- Find **Temperature & Humidity sensors** and click **Install**.
+- Follow the provided configuration instructions.
+- Once the installation is complete, click **Close**.
+- The **Temperature & Humidity** dashboard opens automatically.
+
+After installation, a fully functional simulation for monitoring environmental conditions is created automatically. No devices, integrations, or custom code are required to start exploring the solution.
+
+{% include images-gallery.html imageCollection="install-solution-template" %}
+
+## System components
+
+Temperature & Humidity sensors template includes:
+- **Dashboard**. The Temperature & Humidity dashboard provides real-time visualization of sensor telemetry, alarm management, sensor configuration, and an interactive map with device locations.
+- **Devices**. The solution includes two pre-provisioned demo temperature sensor devices that are already connected and immediately provide demo telemetry data.
+- **Device Profile and Logic**. A predefined Temperature Sensor device profile is included with built-in logic and preconfigured alarms for high temperature and low humidity conditions. 
+- **Customers and Users**. The system contains one demo customer (Customer D) and two read-only customer users with predefined role-based access control.
+
+**Edge Support.** The solution can optionally be deployed to [ThingsBoard Edge](/docs/edge/){:target="_blank"} for local data processing and reduced latency.
+
 ## Dashboard
 
-As part of this solution, we have created the "Temperature & Humidity" dashboard that displays data from multiple sensors. You may use the dashboard to:
+The Temperature & Humidity dashboard displays telemetry data from multiple sensors and provides tools for alarm management and device configuration.
 
-* add new sensors;
-* change the location of the sensors;
-* configure the alarm thresholds;
-* browse historical data.
+![image](/images/solutions/temperature-sensors/temperature-humidity-sensors-template-1.png)
 
-The dashboard has two states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms.
-You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location.
+Using the dashboard, you can:
+- Add new sensors
+- Place sensors on the map
+- Configure alarm thresholds
+- Browse historical telemetry data
+- Manage sensor settings
 
-You may always customize the "Temperature & Humidity" dashboard using dashboard development [guide](/docs/{{docsPrefix}}user-guide/dashboards/).
+<b><font size="3">Dashboard states</font></b>
+
+The dashboard consists of two states:
+- **Main state.** Displays a table of all sensors and their locations on the map.
+- **Sensor Details state.** Opens when a sensor row is selected.   
+  Allows viewing historical temperature and humidity data, editing sensor parameters, and changing location.
+
+The dashboard can be fully customized using the ThingsBoard [dashboard](/docs/{{docsPrefix}}user-guide/dashboards/){:target="_blank"} development tools.
 
 ## Devices
 
-We have already created two sensors and loaded some demo data for them. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) 
-for the list of created devices and their credentials.
+Two demo devices are created automatically: 
+- **Sensor T1** (owned by **Tenant**) 
+- **Sensor C1** (owned by **Customer D**)
 
-Solution expects that the sensor device will upload "temperature" and "humidity" values.
-The most simple example of the expected payload is in JSON format:
+The solution expects devices to publish telemetry data in JSON format using the following keys:
 
 ```json
-{"temperature":  42, "humidity":  73}
+{
+  "temperature": 42,
+  "humidity": 73
+}
 ```
 {: .copy-code}
 
-You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
-See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
+[Other connectivity options](/docs/{{docsPrefix}}getting-started-guides/connectivity/){:target="_blank"} (MQTT, CoAP, LwM2M, etc.) are supported as well.
 
 ## Alarms
 
-Alarms are generated using two Alarm rules in the "Temperature Sensor" [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/). 
-User may turn alarms on and off as well as configure the alarm thresholds via the "Temperature & Humidity" dashboard using "Edit Sensor" form.
+Alarm generation is handled by [alarm rules](/docs/{{docsPrefix}}user-guide/alarm-rules/){:target="_blank"} configured in the **Temperature Sensor** [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/){:target="_blank"}.
+
+| Entity Profile     | Alarm Type       | Severity |
+| ------------------ | ---------------- | -------- |
+| Temperature Sensor | High Temperature | Critical |
+| Temperature Sensor | Low Humidity     | Major    |
+
+Alarm thresholds and enable/disable state can be modified directly from the dashboard using the **Edit Sensor** action.
 
 {% include images-gallery.html imageCollection="solution-alarms" %}
 
 ## Customers
 
-"Sensor C1" is assigned to a newly created customer "Customer A".
-You may notice that "Customer A" has two users, and the "Temperature & Humidity" dashboard is accessible for those users.
-You may create more [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/) and more [Users](/docs/{{docsPrefix}}user-guide/ui/users/) via administration UI.
+To demonstrate multi-tenancy and data isolation, the solution creates a sample customer:
+- Customer name: Customer D
+- Assigned device: Sensor C1
 
-## Role Based Access Control (RBAC)
+**Customer users**
 
-We have created two users for "Customer A" customer. See solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template) for the list of created users and their passwords.
-Those users are members of the "Customer Administrator" group. So, they have access to all entities of the Customer, including device "Sensor C1". 
-The device "Sensor T1" is not assigned to "Customer A". So, it is available only to tenant administrators (you).
+The following users are created and assigned to Customer D:
+- Toni Collier (toni.collier@thingsboard.io)
+- Sheri Addison (sheri.addison@thingsboard.io)
 
-The idea is to have one "Temperature & Humidity" dashboard for all users for multiple customers. Customer users should be able to browse, but should not be able to edit the dashboard.
-To achive this, we create "Customer dashboards" group that is shared with the customer users using "Read Only" role. This group contains the "Temperature & Humidity" dashboard. 
-You may add other dashboards to this group, if you want to share more dashboards with the same users. See [Advanced RBAC for IoT](/docs/{{docsPrefix}}user-guide/rbac/) for more information. 
+These users:
+- Have read-only access to the dashboard
+- Can only see devices owned by **Customer D**
+- Do not have permissions to modify dashboards or tenant-level entities
+
+Additional [Customers](/docs/{{docsPrefix}}user-guide/ui/customers/){:target="_blank"} and [Users](/docs/{{docsPrefix}}user-guide/ui/users/){:target="_blank"} can be created via the administration UI. Device ownership can be reassigned to make sensors visible to specific customers.
+
+## Conclusion
+
+The Temperature & Humidity Sensors solution template delivers an out-of-the-box monitoring solution with real-time visualization, configurable alarms, and built-in access control. 
+It enables fast onboarding and serves as a solid foundation for both demonstrations and production environmental monitoring use cases.
