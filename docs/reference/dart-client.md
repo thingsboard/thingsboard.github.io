@@ -90,6 +90,35 @@ void main() async {
 ```
 {: .copy-code}
 
+
+### API key authentication (from ThingsBoard 4.3+)
+The following code sample demonstrates how to use API key authentication with ThingsBoard REST API.
+Make sure you have created an API key for your user before running the example. Also, ensure to replace
+`'tb_your_api_key'` with your actual API key value and the `thingsBoardApiEndpoint` variable with your ThingsBoard instance URL.
+``` dart
+const thingsBoardApiEndpoint = 'http://localhost:8080';
+const apiKey = 'tb_your_api_key';
+void main() async {
+  try {
+    final tbClient = ThingsboardClient(thingsBoardApiEndpoint, apiKey: apiKey);
+
+    var deviceName = getRandomString(30);
+
+    var device = Device(deviceName, 'default');
+    device.additionalInfo = {'description': 'My test device!'};
+    var savedDevice = await tbClient.getDeviceService().saveDevice(device);
+    print('savedDevice: $savedDevice');
+    var foundDevice =
+        await tbClient.getDeviceService().getDeviceInfo(savedDevice.id!.id!);
+    print(foundDevice);
+  } catch (e, s) {
+    print('Error: $e');
+    print('Stack: $s');
+  }
+}
+```
+{: .copy-code}
+
 ### Examples
 
 #### Fetch tenant devices
