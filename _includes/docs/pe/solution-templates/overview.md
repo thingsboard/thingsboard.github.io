@@ -1,35 +1,65 @@
 
 * TOC 
 {:toc}
-  
-ThingsBoard Cloud provides convenient IoT solution templates to reduce time-to-market for your IoT products.
-The template includes interactive dashboards, processing logic, sample devices, users and all other required [entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/). 
-You can treat template as a complete PoC/MVP. 
 
-This guide covers basic operations with solution templates.
+ThingsBoard provides IoT Solution Templates to significantly reduce the time-to-market for your IoT products.   
+Each solution template represents a ready-to-use PoC or MVP and includes:
+- Preconfigured interactive dashboards
+- Data processing and business logic
+- Sample devices and users
+- All required platform [entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/) and relations
+
+Solution templates allow you to quickly evaluate a use case, demonstrate functionality, or use them as a baseline for further customization.
 
 {% include templates/solution-templates.md %}
 
-## Browse solution templates
+Browse available solution templates by navigating to the "<b>Solution templates</b>" menu item.
 
-As a tenant administrator, you may perform the following actions over solution templates
+{% include images-gallery.html imageCollection="open-solution-templates-page" %}
 
-{% include images-gallery.html imageCollection="browse-solution-templates" showListImageTitles="true" %}
+## Managing solution templates
 
-## Install solution template
+> Only Tenant Administrators can manage solution templates.
 
-{% include images-gallery.html imageCollection="install-solution-template" showListImageTitles="true" %}
+For each solution template, the following actions are available:
 
-## Remove solution template
+### View details
 
-Navigate to the "Solution templates" menu item. Locate the template and use "Delete" button. 
-This will delete all [entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/) that were created during the installation. 
-Please note that entities that you might have created through the solution dashboard (users, devices, etc) will not be deleted automatically.  
+Open the template description using the **Details** button.
 
-{% include images-gallery.html imageCollection="remove-solution-template" %}
+{% include images-gallery.html imageCollection="view-details" %}
 
-## Connect real devices
+### Install solution
 
-The template instruction includes information about the payload that solution expects to receive from device to function properly. 
-The instruction also contains sample commands to push the data. Those commands use valid credentials of the auto-generated devices.
-We recommend to use those commands to get familiar with the solution. Use [How to connect your device?](/docs/{{docsPrefix}}getting-started-guides/connectivity/) guide afterwards.
+Install the template using the **Install** button.   
+
+Once solution is installed, you will be automatically forwarded to the main dashboard of the corresponding template, and the instructions dialog will appear.   
+Browse the instructions and use **Close** button to start using the solution.
+
+{% include images-gallery.html imageCollection="install-solution" %}
+
+### View instructions
+
+Solution instructions are auto-generated once the template is installed. You may open them using **Instructions** button.
+
+{% include images-gallery.html imageCollection="view-instructions" %}
+
+### Delete solution
+
+Remove the installed solution and all [entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/){:target="_blank"} created during the installation using the **Delete** button.
+
+> Please note that entities that you might have created through the solution dashboard (users, devices, etc) will not be deleted automatically.
+
+{% include images-gallery.html imageCollection="delete-solution" %}
+
+## Connecting Real Devices
+
+Each solution template includes detailed instructions describing:
+- Expected telemetry and attribute payload formats
+- Required keys and data structure
+- Example commands for sending data to the platform
+
+The provided examples use **auto-generated devices and credentials** created during template installation.   
+We recommend using these examples first to understand how the solution works.
+
+Afterwards, refer to the [How to connect your device](/docs/{{docsPrefix}}getting-started-guides/connectivity/){:target="_blank"} guide to connect real devices using production credentials.
