@@ -1,7 +1,7 @@
 ---
 layout: use-case
-title: How to Track Your Fleet in Real Time with the ThingsBoard IoT Platform
-description: Track, analyze, and optimize your fleet in real time with the ThingsBoard IoT platform. Unlock smarter operations across logistics, transport, and service industries.
+title: Geofencing-Based Excavator & Truck Tracking for Clay Mines
+description: Explore how ThingsBoard enables safe and efficient vehicle tracking on clay mine sites using calculated fields, geofencing zones, and zero rule chain logic.
 notitle: "true"
 customTitle: "true"
 includeAdvantages: "true"
@@ -9,22 +9,22 @@ contactUsModal: "true"
 
 ---
 
-{% include usecase-nav.html usecase="fleet-tracking" %}
+{% include usecase-nav.html usecase="site-fleet-tracking" %}
 <div id="scada-fullpage" onclick="this.style.display='none'; document.body.style.overflow='unset'"><div class="image"></div><div class="close-icon"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M25.3337 8.5465L23.4537 6.6665L16.0003 14.1198L8.54699 6.6665L6.66699 8.5465L14.1203 15.9998L6.66699 23.4532L8.54699 25.3332L16.0003 17.8798L23.4537 25.3332L25.3337 23.4532L17.8803 15.9998L25.3337 8.5465Z"></path></svg></div></div>
-<h1 class="usecase-title">IoT Fleet Tracking System</h1>
+<h1 class="usecase-title">Site fleet tracking monitoring solution</h1>
 <section class="fleet-tracking-about">
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">Managing a fleet today means more than just tracking locations — it’s about real-time control, smart decisions, and operational speed. The ThingsBoard IoT platform makes this possible by uniting tracking, analytics, and automation in one powerful solution, helping companies eliminate blind spots and stay ahead in a fast-paced industry.</p>
+                <p class="text">Clay mining operations present a high-risk, high-movement environment, where visibility, safety, and fuel efficiency are critical. Coordinating fleets of excavators and haul trucks across loading, unloading, and restricted zones requires more than GPS — it demands precision logic and real-time automation.</p>
             </div>
             <div class="demo-button">
                 <a id="UseCases_FleetTracking_ViewLiveDemo" target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button gtm_button">View live demo</a>
             </div>
         </div>
         <div class="long">
-            <p>The ThingsBoard IoT platform supports industry-standard protocols and seamless device integration, enabling continuous collection, processing, and visualization of data from every vehicle in your fleet. Critical alarms like speeding, breakdowns, or fuel drops are detected automatically, triggering alarms and actions that help you stay in control — without manual intervention.</p>
-            <p>As a result, the ThingsBoard-based IoT fleet tracking system helps businesses boost efficiency, ensure safety, and make smarter, data-driven decisions. From daily operations to long-term planning, you get the visibility and automation needed to scale with confidence — whether you're running public transit, logistics, or service delivery fleets.</p>        
+            <p>ThingsBoard delivers a robust answer to this challenge. Built with scalability, real-time analytics, and geospatial control at its core, the platform transforms how mine operators monitor and manage their equipment — all without using Rule Chains.</p>
+            <p>This Clay Mine Site solution leverages calculated fields, geofencing logic, and alarm rules only to streamline configuration, reduce deployment time, and drive intelligent insights from the ground up. With zero-code automation and dynamic dashboards, operations become more predictable, safer, and easier to scale.</p>        
         </div>
     </div>
 </section>
@@ -36,16 +36,16 @@ contactUsModal: "true"
 {% include contact-us-banner.liquid %}
 
 <section class="fleet-tracking-solution-structure">
-    <h2>Solution structure of IoT fleet tracking</h2>
+    <h2>Solution structure of the site fleet tracking monitoring solution</h2>
     <div class="about-text">
         <div class="short">
             <div class="block">
-                <p class="text">Each bus or vehicle is equipped with IoT devices or telematics modules connected to GPS units, speed sensors, fuel level indicators, and other sensors. These devices periodically transmit telemetry data (such as speed, coordinates, fuel level, and alarms) via MQTT, HTTP, or CoAP.</p>
+                <p class="text">The solution architecture consists of GPS-enabled excavators and haul trucks, transmitting telemetry to ThingsBoard via MQTT or HTTP protocols. Devices report location, fuel levels, speed, pressure, and more.</p>
             </div>
         </div>
         <div class="long">
-            <p>The ThingsBoard IoT platform receives this data and registers each device as a unique entity. Real-time processing is handled by the built-in Rule Engine, which detects critical alarms like speeding, fuel drops, or prolonged stops.</p>
-            <p>Once processed, the data is presented on interactive dashboards, offering maps, performance graphs, and detailed alarm logs.</p>
+            <p>Instead of traditional rule chains, all processing is handled by Calculated Fields, allowing operations teams to configure logic like: zone detection via Geofencing Calculated Fields, fuel burn rate and hydraulic pressure thresholds, speed analysis and usage KPIs, machine state transitions (idle, working, unloading).</p>
+            <p>All alerts are configured through Alarm Rules, creating a clean, no-code environment that is easy to maintain and adapt across multiple sites.</p>
         </div>
     </div>
     <div class="scheme">
@@ -55,9 +55,9 @@ contactUsModal: "true"
 
 <section class="dashboard-structure section-padding">
     <div class="section-header">
-        <h2>IoT fleet tracking dashboard structure</h2>
+        <h2>Dashboard structure of the site fleet tracking monitoring solution</h2>
         <p>
-            The ThingsBoard dashboard for <a href="/docs/pe/solution-templates/fleet-tracking/">fleet tracking</a> is intuitive and organized into several key components that provide full visibility into fleet operations.
+            The solution includes a set of modular dashboards designed to give mine operators full situational control — from zone-level events to individual machine analytics. The primary Mine Overview Dashboard presents a full satellite view of the site with color-coded zones (Loading, Unloading, Restricted), live machine positions, fuel levels, and telemetry streams. Interactive widgets highlight: machines per zone, fuel usage per day, active alarms with severity, zone-specific transitions and KPIs
         </p>
     </div>
     <div class="dashboard-structure-block">
@@ -65,60 +65,100 @@ contactUsModal: "true"
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Fleet overview dashboard state</h3>
+                        <h3>Main Overview Dashboard</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>The main dashboard displays a table listing all buses with their current status, speed, and fuel level. A live map visualizes each vehicle's location using color-coded markers. Statuses include On route, Broken, and Refueling, helping operators quickly assess conditions. Below, an alarm log highlights alarms like speeding or low fuel.</p>
+                        <p>This dashboard displays a full satellite map of the mine with real-time overlays for each vehicle. Vehicles are color-coded by type and zone, while the right panel shows a live machine list with fuel status and operational state. KPIs summarize daily consumption, number of vehicles in each zone, and triggered alarms. It enables full operational awareness at a glance.</p>
                     </div>
                 </div>
             </div>
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Bus route history state</h3>
+                        <h3>Zone L1 – Loading Area</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Each vehicle has a dedicated route history window showing its movement over the past day. The route is displayed as a line on the map, with playback controls for reviewing trips in sequence. This allows fleet managers to analyze travel patterns and detect route deviations or stops.</p>
+                        <p>Focused on Excavator A, this dashboard tracks its speed, fuel level, and operational alarms. The map zooms into the loading zone, while the sidebar lists alarms for low fuel and hydraulic pressure. Operators can easily monitor zone-specific performance and address machine-level issues in context.</p>
                     </div>
                 </div>
             </div>
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Bus A details state</h3>
+                        <h3>Zone U1 – Unloading Area</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Bus A is currently on the road, moving actively along its route. The dashboard shows frequent speed changes and steady fuel consumption. Several critical alarms were triggered, mostly related to speeding and low fuel.</p>
+                        <p>Displays Excavator B actively working in the unloading area with fuel and minor speed violations. Alarms are logged instantly. This dashboard provides quick access to machine status and zone compliance — a key element for high-traffic unloading areas.</p>
                     </div>
                 </div>
             </div>
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Bus B details state</h3>
+                        <h3>Zone R1 – Restricted Area</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Bus B is on the move, following a consistent route pattern. Speed trends are regular, and fuel usage decreases steadily. The system logged multiple critical alarms, including speeding and one low fuel alarm.</p>
+                        <p>This screen shows Haul Truck B parked in a restricted zone, triggering a critical overload alarm. The map provides immediate zone context, and the alarm panel flags violations in real time. This visual enforcement helps prevent unsafe operation or zone breaches.</p>
                     </div>
                 </div>
             </div>
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Bus C details state</h3>
+                        <h3>Excavator B – Machine Dashboard</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Bus C is currently in the Broken state, indicating that the vehicle is not operational. The dashboard shows no movement or speed activity, while the fuel level remains stable. A warning alarm has been triggered, noting that the bus has stopped and requires attention.</p>
+                        <p>A telemetry-rich screen featuring fuel usage, fuel level, pressure, and route playback. Historical data and live metrics provide clear insight into machine performance and workload, while alarm logs support proactive maintenance.</p>
                     </div>
                 </div>
             </div>
             <div class="expansion-block">
                 <div class="expansion-panel">
                     <div class="expansion-header">
-                        <h3>Bus D details state</h3>
+                        <h3>Haul Truck A – Behavior Dashboard</h3>
                     </div>
                     <div class="expansion-content">
-                        <p>Bus D is currently in the Refueling state, with no movement detected. The fuel level graph shows a consistent increase, reaching full capacity. A warning alarm has been registered, indicating the bus is stopped during the refueling process.</p>
+                        <p>Highlights repeated speed limit violations, fuel burn, and load data. The route history is shown with all zone transitions. This enables supervisors to analyze driver behavior, optimize travel paths, and reduce excess wear or unsafe driving.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Haul Truck B – Idle & Overload State</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Shows a vehicle in a restricted zone with 28-ton load and no movement. An active overload alarm is triggered. This dashboard is essential for spotting inefficient use of assets or safety violations that need immediate action.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Excavator A – Performance Analysis</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Monitors hydraulic pressure, movement, and fuel trends. Alarm logs indicate repeated pressure spikes. Used in tandem with maintenance schedules, this helps detect early signs of mechanical stress.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Haul Truck C – Out-of-Zone Alert</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>Vehicle is detected outside of the mine’s geofence, triggering a critical perimeter breach alarm. Combined with a low-fuel warning, the system prompts immediate resolution — reducing risk and ensuring operational boundaries are respected.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="expansion-block">
+                <div class="expansion-panel">
+                    <div class="expansion-header">
+                        <h3>Calculated Fields Panel</h3>
+                    </div>
+                    <div class="expansion-content">
+                        <p>The admin interface shows all backend logic built through calculated fields — fuel formulas, geofence status, speed over limits, etc. Everything is visual, editable, and instantly applied to the data model — zero Rule Chains required. This low-code logic layer drastically reduces setup complexity and speeds up scaling across fleets.</p>
                     </div>
                 </div>
             </div>
@@ -128,86 +168,88 @@ contactUsModal: "true"
 
 <section class="applications applications-additional summary-margin section-padding">
     <div class="section-header">
-        <h2>Applications of IoT fleet tracking system</h2>
-        <p>The IoT fleet tracking system can be adapted for various industries:</p>
+        <h2>Applications of the site fleet tracking monitoring solution</h2>
+        <p>A solution like this is perfectly suited for a variety of industrial and logistics use cases where zone-based automation, fleet safety, and machine telemetry matter:</p>
     </div>
     <div class="applications-container-large">
         <div class="text-row-top">
             <div class="text-block">
-                <h3>Urban and intercity transportation</h3>
-                <p>The system enables real-time tracking of buses, ensuring adherence to schedules and routes. This improves passenger safety and allows rapid response to unexpected issues such as delays or breakdowns.</p>
+                <h3>Mining & quarrying</h3>
+                <p>Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics.</p>
             </div>
             <div class="text-block">
-                <h3>Municipal and construction services</h3>
-                <p>The solution tracks actual machine operation time, identifies idle periods, and monitors areas of activity. This leads to more efficient resource management and reduced operational costs.</p>
+                <h3>Construction sites</h3>
+                <p>Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety.</p>
             </div>
             <div class="text-block">
-                <h3>Logistics and delivery</h3>
-                <p>IoT monitoring provides transparency of delivery routes, reduces the risk of route deviations, and ensures schedule compliance. This is especially critical for companies handling time-sensitive or temperature-controlled shipments.</p>
+                <h3>Forestry operations</h3>
+                <p>Use geofencing to protect environmental boundaries and track equipment in remote forest sectors.</p>
             </div>
         </div>
         <div class="images-row">
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/urban-1.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/emergency-1.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/municipal-1.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/rental-1.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
-            <div class="application-image"><img src="/images/usecases/fleet-tracking/logistics-1.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/mining-1.svg" alt="Mining & quarrying" title="Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics."></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/dumpsites-1.svg" alt="Material yards & dumpsites" title=" Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas."></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/construction-1.svg" alt="Construction sites" title="Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety."></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/infrastructure-1.svg" alt="Infrastructure projects" title="Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds."></div>
+            <div class="application-image"><img src="/images/usecases/fleet-tracking/forest-1.svg" alt="Forestry operations" title="Use geofencing to protect environmental boundaries and track equipment in remote forest sectors."></div>
         </div>
         <div class="text-row-bottom">
             <div class="text-block">
-                <h3>Emergency and fire services</h3>
-                <p>The system displays the exact location and current status of each vehicle, including speed and fuel level. It enables dispatchers to quickly coordinate on-site actions and reduce emergency response times.</p>
+                <h3>Material yards & dumpsites</h3>
+                <p> Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas.</p>
             </div>
             <div class="text-block">
-                <h3>Rental and leasing companies</h3>
-                <p>The IoT platform tracks how and where vehicles are used, detects misuse, and helps prevent theft. This increases trust in the service and enhances the customer experience.</p>
+                <h3>Infrastructure projects</h3>
+                <p>Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds.</p>
             </div>
         </div>
     </div>
     <div class="applications-container-small">
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/urban-2.svg" alt="Urban and intercity transportation" title="Urban and intercity transportation"></div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/mining-2.svg" alt="Mining & quarrying" title="Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics."></div>
             <div class="text-block">
-                <h3>Urban and intercity transportation</h3>
-                <p>The system enables real-time tracking of buses, ensuring adherence to schedules and routes. This improves passenger safety and allows rapid response to unexpected issues such as delays or breakdowns.</p>
+                <h3>Mining & quarrying</h3>
+                <p>Track machines across loading, transport, and restricted zones using automated alarms and fuel analytics.</p>
             </div>
         </div>
         <div class="application-block">
             <div class="text-block">
-                <h3>Emergency and fire services</h3>
-                <p>The system displays the exact location and current status of each vehicle, including speed and fuel level. It enables dispatchers to quickly coordinate on-site actions and reduce emergency response times.</p>
+                <h3>Material yards & dumpsites</h3>
+                <p>Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas.</p>
             </div>
-            <div class="image"><img src="/images/usecases/fleet-tracking/emergency-2.svg" alt="Emergency and fire services" title="Emergency and fire services"></div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/dumpsites-2.svg" alt="Material yards & dumpsites" title="Automate alerts when haul trucks or loaders enter, leave, or overload in processing areas."></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/municipal-2.svg" alt="Municipal and construction services" title="Municipal and construction services"></div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/construction-2.svg" alt="Construction sites" title="Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety."></div>
             <div class="text-block">
-                <h3>Municipal and construction services</h3>
-                <p>The solution tracks actual machine operation time, identifies idle periods, and monitors areas of activity. This leads to more efficient resource management and reduced operational costs.</p>
+                <h3>Construction sites</h3>
+                <p>Monitor heavy machinery in temporary or mobile zones, ensuring route compliance and operational safety.</p>
             </div>
         </div>
         <div class="application-block">
             <div class="text-block">
-                <h3>Rental and leasing companies</h3>
-                <p>The IoT platform tracks how and where vehicles are used, detects misuse, and helps prevent theft. This increases trust in the service and enhances the customer experience.</p>
+                <h3>Infrastructure projects</h3>
+                <p>Monitors chemical storage tanks for compliance and safety in industrial environments.</p>
             </div>
-            <div class="image"><img src="/images/usecases/fleet-tracking/rental-2.svg" alt="Rental and leasing companies" title="Rental and leasing companies"></div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/infrastructure-2.svg" alt="Infrastructure projects" title="Monitors chemical storage tanks for compliance and safety in industrial environments."></div>
         </div>
         <div class="application-block">
-            <div class="image"><img src="/images/usecases/fleet-tracking/logistics-2.svg" alt="Logistics and delivery" title="Logistics and delivery"></div>
+            <div class="image"><img src="/images/usecases/fleet-tracking/forest-2.svg" alt="Forestry operations" title="Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds."></div>
             <div class="text-block">
-                <h3>Logistics and delivery</h3>
-                <p>IoT monitoring provides transparency of delivery routes, reduces the risk of route deviations, and ensures schedule compliance. This is especially critical for companies handling time-sensitive or temperature-controlled shipments.</p>
+                <h3>Forestry operations</h3>
+                <p>Gain visibility over fleet movement across bridges, tunnels, or time-sensitive zones during large-scale builds.</p>
             </div>
         </div>
     </div>
 </section>
 
 
-<section class="summary">
+<section class="summary fleet-tracking">
     <div class="summary-text">
-        <h2>Summary of IoT fleet tracking</h2>
-        <p>The IoT fleet tracking system powered by ThingsBoard provides real-time visibility into fleet operations, enabling automated alarms, insightful analytics, and seamless integration with business systems. This scalable solution helps organizations optimize performance, reduce costs, and make smarter, data-driven decisions through a reliable and flexible IoT platform.</p>
+        <h2>Summary of the site fleet tracking monitoring solution</h2>
+        <p>ThingsBoard’s Clay Mine Monitoring Solution sets a new benchmark for no-code industrial IoT. By eliminating Rule Chains and relying solely on calculated fields and alarm rules, it reduces configuration overhead, speeds up deployment, and empowers teams to operate smarter and safer.</p>
+        <p>The platform provides everything needed for real-time tracking, performance analysis, geofencing control, and automated alerts — all through a powerful and flexible dashboard layer.</p>
+        <p>Whether applied to clay mines or other heavy equipment scenarios, this solution offers unmatched operational clarity and scalability.</p>
     </div>
     <div class="summary-icon">
         <img src="/images/usecases/health-care/summary.svg" alt="Text summary icon" title="Text summary icon">
@@ -331,12 +373,16 @@ contactUsModal: "true"
 
         function getImage(index) {
             const images = [
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-1.webp' alt='ThingsBoard interface showing bus status, speed, fuel level, and location on the map' title='Real-time bus monitoring using ThingsBoard platform'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-2.webp' alt='ThingsBoard interface showing historical route and movement playback for Bus A on the map' title='Bus A route playback and history visualization in ThingsBoard' data-bg='#A4A4A4'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-3.webp' alt='ThingsBoard dashboard displaying real-time and historical data for Bus A, including speed, fuel level, route history, and critical events' title='Real-time telemetry dashboard for Bus A in ThingsBoard'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-4.webp' alt='ThingsBoard dashboard displaying Bus B speed, fuel level, historical route, and tracking events including critical speed limit violations' title='Bus B telemetry and route analytics dashboard in ThingsBoard'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-5.webp' alt='ThingsBoard dashboard showing Bus C with zero speed, constant fuel level, stop event warning, and static location on the map' title='Bus C status monitoring and stop event tracking in ThingsBoard'/>",
-                "<img src='/images/usecases/fleet-tracking/fleet-tracking-6.webp' alt='ThingsBoard dashboard showing Bus D with full fuel level, no movement, stop warning, and current location on the map' title='Bus D refueling status and stop alert monitoring in ThingsBoard'/>"
+                "<img src='/images/usecases/fleet-tracking/site-fleet-tracking-1.webp' alt='This dashboard displays a full satellite map of the mine with real-time overlays for each vehicle. Vehicles are color-coded by type and zone, while the right panel shows a live machine list with fuel status and operational state. KPIs summarize daily consumption, number of vehicles in each zone, and triggered alarms. It enables full operational awareness at a glance.'/>",
+                "<img src='/images/usecases/fleet-tracking/zone-l1.webp' alt='Focused on Excavator A, this dashboard tracks its speed, fuel level, and operational alarms. The map zooms into the loading zone, while the sidebar lists alarms for low fuel and hydraulic pressure. Operators can easily monitor zone-specific performance and address machine-level issues in context.'/>",
+                "<img src='/images/usecases/fleet-tracking/zone-u1.webp' alt='Displays Excavator B actively working in the unloading area with fuel and minor speed violations. Alarms are logged instantly. This dashboard provides quick access to machine status and zone compliance — a key element for high-traffic unloading areas.'/>",
+                "<img src='/images/usecases/fleet-tracking/zone-r1.webp' alt='This screen shows Haul Truck B parked in a restricted zone, triggering a critical overload alarm. The map provides immediate zone context, and the alarm panel flags violations in real time. This visual enforcement helps prevent unsafe operation or zone breaches.'/>",
+                "<img src='/images/usecases/fleet-tracking/excavator-b.webp' alt='A telemetry-rich screen featuring fuel usage, fuel level, pressure, and route playback. Historical data and live metrics provide clear insight into machine performance and workload, while alarm logs support proactive maintenance.'/>",
+                "<img src='/images/usecases/fleet-tracking/haul-truck-a.webp' alt='Highlights repeated speed limit violations, fuel burn, and load data. The route history is shown with all zone transitions. This enables supervisors to analyze driver behavior, optimize travel paths, and reduce excess wear or unsafe driving.'/>",
+                "<img src='/images/usecases/fleet-tracking/haul-truck-b.webp' alt='Shows a vehicle in a restricted zone with 28-ton load and no movement. An active overload alarm is triggered. This dashboard is essential for spotting inefficient use of assets or safety violations that need immediate action.'/>",
+                "<img src='/images/usecases/fleet-tracking/excavator-a.webp' alt='Monitors hydraulic pressure, movement, and fuel trends. Alarm logs indicate repeated pressure spikes. Used in tandem with maintenance schedules, this helps detect early signs of mechanical stress.'/>",
+                "<img src='/images/usecases/fleet-tracking/haul-truck-c.webp' alt='Vehicle is detected outside of the mine’s geofence, triggering a critical perimeter breach alarm. Combined with a low-fuel warning, the system prompts immediate resolution — reducing risk and ensuring operational boundaries are respected.'/>",
+                "<img src='/images/usecases/fleet-tracking/calc-fields.webp' alt='The admin interface shows all backend logic built through calculated fields — fuel formulas, geofence status, speed over limits, etc. Everything is visual, editable, and instantly applied to the data model — zero Rule Chains required. This low-code logic layer drastically reduces setup complexity and speeds up scaling across fleets.'/>"
             ];
             return images[index];
         }

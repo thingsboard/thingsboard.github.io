@@ -34,10 +34,10 @@
   title: Smart farming
   link: /use-cases/smart-farming/
   icon: /images/case-fam-icon.svg
-- id: fleet-tracking
-  title: IoT Fleet Tracking
+- id: site-fleet-tracking
+  title: Site fleet tracking
   link: /use-cases/fleet-tracking/
-  icon: /images/case-trk-icon.svg
+  icon: /images/site-fleet-tracking-icon.svg
 - id: smart-metering
   title: Smart metering
   link: /use-cases/smart-metering/
