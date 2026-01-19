@@ -4562,8 +4562,8 @@
 "/docs/trendz/activation/public-cloud/":
   url: "/docs/trendz/activation/public-cloud/"
   redirect_from: []
-"/docs/trendz/activation/self-hosted/":
-  url: "/docs/trendz/activation/self-hosted/"
+"/docs/trendz/activation/self-managed/":
+  url: "/docs/trendz/activation/self-managed/"
   redirect_from: []
 "/docs/trendz/ai-assistance-overview/":
   url: "/docs/trendz/ai-assistance-overview/"

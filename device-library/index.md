@@ -18,8 +18,10 @@ filterCollection:
         platform: ce
       - label: Professional Edition
         platform: pe
-      - label: Cloud
+      - label: Cloud (North America)
         platform: paas
+      - label: Cloud (Europe)
+        platform: paas-eu
       - label: Edge
         platform: edge
       - label: Edge Professional Edition

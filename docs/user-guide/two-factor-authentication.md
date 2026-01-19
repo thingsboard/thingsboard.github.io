@@ -5,96 +5,140 @@ assignees:
 title: Two-factor authentication
 description: Two-factor authentication using ThingsBoard
 
-two-factor-authentication-password-and-authentication:
+2fa-configuration:
     0:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-1-ce.png
-        title: 'Log in to ThingsBoard with basic credentials. In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Account";'
+        image: /images/user-guide/two-factor-authentication/2fa-configure-1-ce.png
+        title: 'Log in as a System administrator.<br>- Navigate to <b>Security</b> &#8702; <b>Two-factor authentication</b> (1).<br>- Enable and configure one or more 2FA verification methods (2).'
     1:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-2-ce.png
-        title: 'Navigate to the "Security" tab. Activate the convenient verification method. One can activate multiple providers. Save changes.'
+        image: /images/user-guide/two-factor-authentication/2fa-configure-2-ce.png
+        title: '- Optional, configure provider-specific options (3).<br>-Click <b>Save</b>.'
 
-two-factor-authentication-app:
+2fa-enforce-1:
     0:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-1-ce.png
-        title: 'Toggle to enable authentication with the external app;'
+        image: /images/user-guide/two-factor-authentication/2fa-enforce-1-ce.png
+        title: '- Log in as a System administrator.<br>- Navigate to <b>Security</b> &#8702; <b>Two-factor authentication</b> (1).<br>- Enable <b>Enforce two-factor authentication</b> (2).'
     1:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-2-ce.png
-        title: 'Install and open the authenticator app on your mobile device;'
+        image: /images/user-guide/two-factor-authentication/2fa-enforce-2-ce.png
+        title: '- Select the user group for which 2FA should be enforced (3).'
     2:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-3-ce.png
-        title: 'Scan the QR code using the application;'
-    3:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-4-ce.png
-        title: 'Enter the 6-digit code from authenticator;'
-    4:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-5-ce.png
-        title: 'The next time the user logs in, he/she will need to provide the code rendered by the application. Click "Done";'
-    5:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-6-ce.png
-        title: '2FA by Authentication app is enabled;'
-    6:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-7-ce.png
-        title: 'While login, on the first step the user enters the email and password. Afterward, user should enter the security code from the authenticator app.'
+        image: /images/user-guide/two-factor-authentication/2fa-enforce-3-ce.png
+        title: 'Click <b>Save</b> (4).'
 
-two-factor-authentication-sms:
+2fa-enforce-2:
     0:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-1-ce.png
-        title: 'Toggle to enable authentication by SMS;'
-    1:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-2-ce.png
-        title: 'Enter the valid phone number and expect to receive a verification short message;'
-    2:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-4-ce.png
-        title: 'Input the 6-digit code from your verification SMS;'
-    3:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-5-ce.png
-        title: 'The next time the user logs in, he/she will need to enter the code from SMS. Click "Done";'
-    4:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-6-ce.png
-        title: '2FA by SMS is enabled;'
-    5:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-sms-7-ce.png
-        title: 'While login, on the first step the user enters the email and password. Afterward, user should enter the security code from your SMS.'
+        image: /images/user-guide/two-factor-authentication/2fa-enforce-4-ce.png
+        title: '- Enforce 2FA for Tenant administrators (1).<br>- Use the tenant/tenant profile selector (2) to define the 2FA scope.<br>- Specify specific tenants or tenant profiles (3). If the list is empty, the policy applies to all tenants or tenant profiles.'
 
-two-factor-authentication-email:
+2fa-password-and-authentication:
     0:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-1-ce.png
-        title: 'Toggle to enable authentication by email;'
+        image: /images/user-guide/two-factor-authentication/2fa-password-and-authentication-1-ce.png
+        title: 'Log in to ThingsBoard.<br>Open the user menu (three dots) (1) in the top-right corner and select "Account" (2).'
     1:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-2-ce.png
-        title: 'Enter an email to receive a secret code;'
-    2:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-3-ce.png
-        title: 'Enter the 6-digit code from your verification email;'
-    3:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-4-ce.png
-        title: 'Click "Done";'
-    4:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-5-ce.png
-        title: '2FA by email is enabled;'
-    5:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-email-6-ce.png
-        title: 'While login, on your first step the user enters the email and password. Afterward, user should enter the security code from your mailbox.'
+        image: /images/user-guide/two-factor-authentication/2fa-password-and-authentication-2-ce.png
+        title: 'Navigate to the "Security" tab (3). Enable one or more available 2FA methods and complete the setup steps (4).'
 
-two-factor-authentication-backup-code:
+2fa-app-1:
     0:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-1-ce.png
-        title: 'Toggle to enable authentication with backup code;'
+        image: /images/user-guide/two-factor-authentication/2fa-app-1-ce.png
+        title: 'Enable authentication via Authenticator app (1).'
     1:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-2-ce.png
-        title: 'Once turned on, the codes will be available on the screen. The user can download them (txt) or print them. Each backup code can be used once;'
+        image: /images/user-guide/two-factor-authentication/2fa-app-2-ce.png
+        title: 'Open the authenticator app on your mobile device (2), and click "Next" (3).'
     2:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-3-ce.png
-        title: '2FA by backup code is enabled;'
+        image: /images/user-guide/two-factor-authentication/2fa-app-3-ce.png
+        title: 'Scan the displayed QR code with your verification app (4).'
     3:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-4-ce.png
-        title: 'While regular login process, after email and password step click “Try another way” button;'
+        image: /images/user-guide/two-factor-authentication/2fa-app-4-ce.png
+        title: 'Enter the 6-digit code generated by the app (5), and click "Next" (6).'
     4:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-5-ce.png
-        title: 'Select a way to verify with a backup code;'
+        image: /images/user-guide/two-factor-authentication/2fa-app-5-ce.png
+        title: 'Click "Done" (7).'
     5:
-        image: /images/user-guide/two-factor-authentication/two-factor-authentication-backup-code-6-ce.png
-        title: 'Enter the 8-digit code from your backup codes list;'
+        image: /images/user-guide/two-factor-authentication/2fa-app-6-ce.png
+        title: '2FA via Authentication app is enabled.'
+
+2fa-app-2:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-app-7-ce.png
+        title: 'During sign-in, the user first enters their email and password (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-app-8-ce.png
+        title: 'After that, the user must enter the security code generated by the authenticator app (2), and click "Continue" (3).'
+
+2fa-sms-1:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-sms-1-ce.png
+        title: 'Enable authentication via SMS (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-sms-2-ce.png
+        title: 'Enter the valid phone number (2), and click "Send code" (3).'
+    2:
+        image: /images/user-guide/two-factor-authentication/2fa-sms-3-ce.png
+        title: 'Input the 6-digit code from your verification SMS (4), then click "Activate" (5).'
+    3:
+        image: /images/user-guide/two-factor-authentication/2fa-sms-4-ce.png
+        title: 'The next time the user logs in, he/she will need to enter the code from SMS. Click "Done" (6);'
+    4:
+        image: /images/user-guide/two-factor-authentication/2fa-sms-5-ce.png
+        title: '2FA via SMS is enabled.'
+
+2fa-sms-2:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-app-7-ce.png
+        title: 'During sign-in, the user first enters their email and password (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-sms-6-ce.png
+        title: 'After that, the user must enter the security code from the SMS message (2), and click "Continue" (3).'
+
+2fa-email-1:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-email-1-ce.png
+        title: 'Enable authentication via Email (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-email-2-ce.png
+        title: 'Enter an email to receive a secret code (2), and click "Send code" (3).'
+    2:
+        image: /images/user-guide/two-factor-authentication/2fa-email-3-ce.png
+        title: 'Enter the 6-digit code from your verification email (4), then click "Activate" (5).'
+    3:
+        image: /images/user-guide/two-factor-authentication/2fa-email-4-ce.png
+        title: 'Click "Done" (6).'
+    4:
+        image: /images/user-guide/two-factor-authentication/2fa-email-5-ce.png
+        title: '2FA via email is enabled;'
+
+2fa-email-2:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-app-7-ce.png
+        title: 'During sign-in, the user first enters their email and password (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-email-6-ce.png
+        title: 'After that, the user must enter the security code from the incoming email in their mailbox (2), and click "Continue" (3).'
+
+2fa-backup-code-1:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-backup-codes-1-ce.png
+        title: 'Enable authentication via backup codes (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-backup-codes-2-ce.png
+        title: 'Download or print the generated backup codes (2) and store them securely. Click "Done" (3).'
+    2:
+        image: /images/user-guide/two-factor-authentication/2fa-backup-codes-3-ce.png
+        title: '2FA via backup codes is enabled.'
+
+2fa-backup-code-2:
+    0:
+        image: /images/user-guide/two-factor-authentication/2fa-app-7-ce.png
+        title: 'During sign-in, the user first enters their email and password (1).'
+    1:
+        image: /images/user-guide/two-factor-authentication/2fa-backup-codes-4-ce.png
+        title: 'Click "Try another way" (2).'
+    2:
+        image: /images/user-guide/two-factor-authentication/2fa-backup-codes-5-ce.png
+        title: 'Select "Backup code" (3).'
+    3:
+        image: /images/user-guide/two-factor-authentication/2fa-backup-codes-6-ce.png
+        title: 'After that, the user must enter a valid 8-digit code from their backup codes list (4), and click "Continue" (5).'
 
 ---
 
