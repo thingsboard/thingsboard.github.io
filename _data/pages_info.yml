@@ -3895,6 +3895,9 @@
 "/docs/pe/releases/releases-table/v4-2-x/":
   url: "/docs/pe/releases/releases-table/v4-2-x/"
   redirect_from: []
+"/docs/pe/releases/releases-table/v4-3-x/":
+  url: "/docs/pe/releases/releases-table/v4-3-x/"
+  redirect_from: []
 "/docs/pe/releases/roadmap/":
   url: "/docs/pe/releases/roadmap/"
   redirect_from: []
@@ -4135,6 +4138,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/centos/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/centos/v4-3-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v3-0-x/"
   redirect_from: []
@@ -4174,6 +4180,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker/v4-3-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
   redirect_from: []
@@ -4212,6 +4221,9 @@
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/"
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/"
@@ -4259,6 +4271,9 @@
 "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
   redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/"
+  redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/upgrade-from-ce/"
   redirect_from: []
@@ -4300,6 +4315,9 @@
   redirect_from: []
 "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/":
   url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-2-x/"
+  redirect_from: []
+"/docs/pe/user-guide/install/upgrade-instructions/windows/v4-3-x/":
+  url: "/docs/pe/user-guide/install/upgrade-instructions/windows/v4-3-x/"
   redirect_from: []
 "/docs/pe/user-guide/mail-templates/":
   url: "/docs/pe/user-guide/mail-templates/"
@@ -4698,6 +4716,9 @@
   redirect_from: []
 "/docs/releases/releases-table/v4-2-x/":
   url: "/docs/releases/releases-table/v4-2-x/"
+  redirect_from: []
+"/docs/releases/releases-table/v4-3-x/":
+  url: "/docs/releases/releases-table/v4-3-x/"
   redirect_from: []
 "/docs/releases/roadmap/":
   url: "/docs/releases/roadmap/"
@@ -5578,6 +5599,9 @@
 "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/centos/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/centos/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/centos/v4-3-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker/v3-0-x/"
   redirect_from: []
@@ -5617,6 +5641,9 @@
 "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker/v4-3-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v3-0-x/"
   redirect_from: []
@@ -5655,6 +5682,9 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/docker-compose/v4-3-x/"
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/":
   url: "/docs/user-guide/install/upgrade-instructions/"
@@ -5701,6 +5731,9 @@
 "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-2-x/"
   redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/ubuntu/v4-3-x/"
+  redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v3-0-x/"
   redirect_from: []
@@ -5739,6 +5772,9 @@
   redirect_from: []
 "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/":
   url: "/docs/user-guide/install/upgrade-instructions/windows/v4-2-x/"
+  redirect_from: []
+"/docs/user-guide/install/upgrade-instructions/windows/v4-3-x/":
+  url: "/docs/user-guide/install/upgrade-instructions/windows/v4-3-x/"
   redirect_from: []
 "/docs/user-guide/install/vc-executor-config/":
   url: "/docs/user-guide/install/vc-executor-config/"

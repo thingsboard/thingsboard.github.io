@@ -1,3 +1,9 @@
+4.3.0:
+  upgradable-from: "4.2.1.x"
+  release-date: Jan 20 2026
+  lts: "true"
+  upgrade: "true"
+  x: "true"
 4.2.1.1:
   upgradable-from: "4.2.1"
   release-date: Dec 24 2025
