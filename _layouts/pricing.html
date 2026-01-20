@@ -246,13 +246,53 @@
         $("div.pricing-content").css("display", "none");
     }
 
-    function getLicense(event, productId, planId, productName, coupon) {
+    function getLicense(event, productId, planId, productName, coupon, extraDeviceCount, extraSessionCount, extraThroughputCount, extraInstanceCount,
+                        extraDevInstanceCount, edgeEnabled, extraEdgeCount, trendzEnabled, whiteLabelingAddonEnabled, priorityHelpDeskEnabled,
+                        offlineLicenseEnabled) {
         event.preventDefault();
-        let url = "https://license.thingsboard.io/signup?createSubscription=true";
+        let url = "https://pe.tbqa.cloud:1443/signup?createSubscription=true";
         url += "&productId="+productId;
         url += "&planId="+planId;
         if (coupon) {
             url += "&coupon="+coupon;
+        }
+        let items = {};
+        if (extraDeviceCount && extraDeviceCount !== '0') {
+            items.extraDeviceCount = Number(extraDeviceCount);
+        }
+        if (extraSessionCount && extraSessionCount !== '0') {
+            items.extraSessionCount = Number(extraSessionCount);
+        }
+        if (extraThroughputCount && extraThroughputCount !== '0') {
+            items.extraThroughputCount = Number(extraThroughputCount);
+        }
+        if (extraInstanceCount && extraInstanceCount !== '0') {
+            items.extraInstanceCount = Number(extraInstanceCount);
+        }
+        if (extraDevInstanceCount && extraDevInstanceCount !== '0') {
+            items.extraDevInstanceCount = Number(extraDevInstanceCount);
+        }
+        if (edgeEnabled && edgeEnabled === 'true') {
+            items.edgeEnabled = true;
+        }
+        if (extraEdgeCount && extraEdgeCount !== '0') {
+            items.extraEdgeCount = Number(extraEdgeCount);
+        }
+        if (trendzEnabled && trendzEnabled === 'true') {
+            items.trendzEnabled = true;
+        }
+        if (whiteLabelingAddonEnabled && whiteLabelingAddonEnabled === 'true') {
+            items.whiteLabelingAddonEnabled = true;
+        }
+        if (priorityHelpDeskEnabled && priorityHelpDeskEnabled === 'true') {
+            items.priorityHelpDeskEnabled = true;
+        }
+        if (offlineLicenseEnabled && offlineLicenseEnabled === 'true') {
+            items.offlineLicenseEnabled = true;
+        }
+        const itemsStr = JSON.stringify(items);
+        if (itemsStr !== '{}') {
+            url += "&items="+encodeURIComponent(itemsStr);
         }
         reportPriceLink(url, productName + '/' + productId);
         window.open(url, "_blank");
