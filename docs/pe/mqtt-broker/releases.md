@@ -8,7 +8,7 @@ description: TBMQ Professional Edition Releases
 * TOC
 {:toc}
 
-## v2.2.0 (November ?, 2025) {#v220PE}
+## v2.2.0 (January 20, 2026) {#v220PE}
 
 This release includes all features, improvements, and bug fixes from [TBMQ CE v2.2](/docs/mqtt-broker/releases/#v220-september-1-2025), along with the following Professional Edition exclusive updates:
 
