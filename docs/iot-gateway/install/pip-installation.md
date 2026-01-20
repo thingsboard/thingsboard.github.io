@@ -141,7 +141,7 @@ nano /etc/thingsboard-gateway/config/tb_gateway.json
 
 {% include images-gallery.liquid imageCollection=configureGatewayLogs %}
 
-**7. You can check installation with this command**. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
+**7. You can check installation with this command**. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/):*
 
 ```bash
 thingsboard-gateway
@@ -158,3 +158,14 @@ thingsboard-gateway
 %}
 
 {% include images-gallery.liquid imageCollection=configureCorrectGateway %}
+
+## Next steps
+
+Explore guides related to main ThingsBoard features:
+
+ - [Getting Started](/docs/iot-gateway/getting-started/) with ThingsBoard IoT Gateway.
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
